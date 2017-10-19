@@ -21,7 +21,7 @@ of repetitive work. You already know how to do it, so let's create the additiona
 
 2. Click on the menu button for *Public Pages* and select *Add Public Page*.
 
-3. Enter "About Us" for the *Name*.
+3. Enter "Book a Trip for the *Name*.
 
 4. Select *1 Column* for the layout.
 
