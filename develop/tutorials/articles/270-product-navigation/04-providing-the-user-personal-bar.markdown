@@ -82,7 +82,7 @@ In this tutorial, you'll learn how to customize the User Personal Bar.
 
 6. Specify the service rank for your portlet so it overrides the default
    portlet provided in Liferay. To do this, set the following property in your
-   `@Component` declaration:
+   `@Component` declaration in the class that implements the ViewPortletProvider:
 
         property= {"service.ranking:Integer=10"}
 
