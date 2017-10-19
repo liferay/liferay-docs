@@ -83,11 +83,13 @@ exposing the ADT functionality to users. You'll walk through these steps now:
 
         </resource-action-mapping>
 
-3. The resource actions that we added in step two need to be picked up when the module is deployed so that Liferay will read the file and create the necessary records. In order to ensure that the resource actions are found during the deployment process we add a `portlet.properties` file to the /resources folder with the details of where to fine the resource actioncs configuration file. 
+3. Next, you need to make sure that Liferay can find the updated `default.xml` 
+    with the new resource action when you deploy the module. Create a file 
+    named `portlet.prtoperies` in the `/resources` folder and add the following
+    contents providing the path to your `default.xml`:
 
-	include-and-override=portlet-ext.properties
-
-	resource.actions.configs=resource-actions/default.xml
+    	include-and-override=portlet-ext.properties
+	    resource.actions.configs=resource-actions/default.xml
 
 4. Now that your portlet officially supports ADTs, you'll want to expose the
    ADT option to your users. Just include the
