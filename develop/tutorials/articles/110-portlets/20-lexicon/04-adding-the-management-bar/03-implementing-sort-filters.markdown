@@ -224,4 +224,4 @@ The Management Bar Sort Filters are finished!
 
 [Implementing a Management Bar Navigation Filter](/develop/tutorials/-/knowledge_base/7-0/implementing-a-management-bar-navigation-filter)
 
-[Disabling the Management Bar](/develop/tutorials/-/knowledge_base/7-0/disabli g-the-management-bar)
+[Disabling the Management Bar](/develop/tutorials/-/knowledge_base/7-0/disabling-the-management-bar)
