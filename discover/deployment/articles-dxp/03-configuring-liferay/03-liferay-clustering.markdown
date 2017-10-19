@@ -147,11 +147,11 @@ and either of those environments can also be clustered.
 
 <!-- Have a Google doc for this: https://docs.google.com/document/d/19oaISXylCyKueuMkIjCKtnrNuyhbvrkMJZvyGQLPIpk/edit#heading=h.ayvbwz8pwsz0 -->
 
-For more information on how to cluster ElasticSearch, see 
-[ElasticSearch's distributed cluster setup](https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html). 
+For more information on how to cluster Elasticsearch, see 
+[Elasticsearch's distributed cluster setup](https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html). 
 
 Once @product@ servers have been properly configured as a cluster and the same
-for ElasticSearch, change @product@ from *embedded* mode to *remote* mode. On
+for Elasticsearch, change @product@ from *embedded* mode to *remote* mode. On
 the first connection, the two sets of clustered servers communicate with
 each other the list of all IP addresses; in case of a node going down, the
 proper failover protocols will enable. Queries and indices can continue to be
