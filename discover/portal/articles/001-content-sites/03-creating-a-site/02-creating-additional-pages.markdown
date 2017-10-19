@@ -11,7 +11,7 @@ of repetitive work. You already know how to do it, so let's create the additiona
 
 3. Enter "Lunar Guides" for the *Name*.
 
-4. Select *3 Columns* for the layout.
+4. Select *1 Column* for the layout.
 
 5. Click *Add Page*.
 
@@ -23,7 +23,7 @@ of repetitive work. You already know how to do it, so let's create the additiona
 
 3. Enter "About Us" for the *Name*.
 
-4. Select *3 Columns* for the layout.
+4. Select *1 Column* for the layout.
 
 5. Click *Add Page*.
 

@@ -1,4 +1,4 @@
-#Page Templates 
+# Page Templates 
 
 When you're doing repetitive work you want to do anything you can to speed it 
 up and reduce the amount of repeat work you need to do to complete your task. 
