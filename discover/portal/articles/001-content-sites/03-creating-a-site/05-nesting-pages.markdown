@@ -1,24 +1,35 @@
 # Nesting Pages
 
-To continue creating your site, you need to create some additional pages as 
-Child Pages of an existing page. This is called "nesting" pages In Liferay, you 
-can nest pages down to a virtually unlimited level, with sub-pages of sub-pages
-of sub-pages and so on.
+When creating sites, you'll likely encounter situations in which you want to 
+nest pages under other pages. Such child pages (also called nested pages) let 
+you create page hierarchies to organize content and functionality. For example, 
+the pages for each lunar guide should be nested under the Lunar Guides page. 
+Although this is a simple use case, note that pages in @product@ can be nested 
+to virtually unlimited levels. This lets your site support even the most 
+demanding hierarchies. 
+
+In this article, you'll nest the existing lunar guide page for Cody under the 
+Lunar Guides page. You'll then create more lunar guide pages as child pages of 
+the same Lunar Guides page. 
 
 ## Creating Child Pages
 
-There are two ways that you can create a Child Page. The most common way is to 
-create a new page as a Child Page of an existing page. In other cases, you can 
-also turn an existing page into a Child Page. Since you already created a page 
-that you want to move down a level, let's start there.
+There are two ways to create a child page in @product@: 
 
-### Creating Sub-pages with drag and drop
+1.  Create a new page as a child page of an existing page. This is the most 
+    common way to create a child page.
 
-1. Open the main menu.
+2.  Turn an existing page into a child page of another existing page. You can 
+    even do this via drag and drop. 
 
-2. Go to *Lunar Resort* &rarr; *Navigation*.
+You'll start with the second option, since you already created a page (Cody) 
+that you want nest under the Lunar Guides page. 
 
-3. Click and hold on *Cody* and drag it so that it nests under *Lunar Guides*.
+### Creating Child Pages with Drag and Drop
+
+1.  Open the Main Menu and select *Lunar Resort* &rarr; *Navigation*. 
+
+2.  Drag and drop *Cody* and so that it nests under *Lunar Guides*.
 
 ![Figure x: Nesting a page with drag and drop.](../../../images/001-drag-cody.png)
 
