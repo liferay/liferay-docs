@@ -1,27 +1,24 @@
 # Displaying Guestbook Status
 
 The Guestbook Admin application's main view currently has a search container
-with two columns: the guestbook name and the guestbook actions dropdown. 
+with two columns: the guestbook name and the guestbook actions button. 
 
 ![Figure 1: The Guestbook Admin's main view currently shows the name of the guestbook and its actions button.](../../../../images/lp-workflow-admin-nostatus.png)
 
-Add a third column, right between the two existing ones: call it *Status*.
+1.  Add a third column between the two existing ones: call it *Status*. Open
 
-Open
+        guestbook-web/src/main/reosurces/META-INF/resources/guestbookadminportlet/view.jsp
 
-    guestbook-web/src/main/reosurces/META-INF/resources/guestbookadminportlet/view.jsp
+2.  Find the existing `search-container-column` definitions:
 
+        <liferay-ui:search-container-column-text property="name" />
 
-Find the existing `search-container-column` definitions:
+        <liferay-ui:search-container-column-jsp align="right"
+            path="/guestbookadminportlet/guestbook_actions.jsp" />
 
-    <liferay-ui:search-container-column-text property="name" />
+3.  Put the following new column between the existing columns: 
 
-    <liferay-ui:search-container-column-jsp align="right"
-        path="/guestbookadminportlet/guestbook_actions.jsp" />
-
-Put the following new column between the existing columns: 
-
-    <liferay-ui:search-container-column-status property="status" />
+        <liferay-ui:search-container-column-status property="status" />
 
 Save the file and wait for the `web` module to redeploy. With the addition of
 one line in the JSP, the Guestbook Admin application now displays the

@@ -1,8 +1,7 @@
 # Setting the Guestbook Status 
 
-Before now, the status of all added guestbooks was set automatically to
-approved. Now you'll set it to draft, because that's what @product@'s workflow
-framework needs. 
+Before now, you set the status of all added guestbooks to approved in the
+service layer. Now you'll set it to draft and pass it to the workflow framework. 
 
 1.  From `guestbook-service`, open `GuestbookLocalServiceImpl` and add the
     status fields below the existing setter methods in the `addGuestbook`
@@ -56,7 +55,7 @@ following the `deleteGuestbook` method. Here's the first half of it:
 
 		guestbookPersistence.update(guestbook);
 
-If this method is being called, it's because your entity is returning from the
+If this method is called, it's because your entity is returning from the
 workflow framework, and it's time to update the status values in the database.
 Set the status fields, then persist the updated entity to the database. Before
 saving, finish the method:

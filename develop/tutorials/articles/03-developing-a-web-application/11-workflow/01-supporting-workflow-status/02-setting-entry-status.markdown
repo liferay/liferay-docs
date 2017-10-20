@@ -1,18 +1,18 @@
 # Setting the Entry Workflow Status
 
-Set the status fields, introduce entries to the workflow framework, and add the
-`updateStatus` method to the `EntryLocalServiceImpl`. It works the same as it
-did for guestbooks.
+Now you'll set the status fields, introduce entries to the workflow framework,
+and add the `updateStatus` method to `EntryLocalServiceImpl`. It works the
+same as it did for guestbooks.
 
-Add the following line in the `addGuestbookEntry` method, immediately following
-the current setter methods (e.g., `entry.setMessage(message)`):
+Add the following lines in the `addEntry` method, immediately after the
+current setter methods (e.g., `entry.setMessage(message)`):
 
     entry.setStatus(WorkflowConstants.STATUS_DRAFT);
     entry.setStatusByUserId(userId);
     entry.setStatusByUserName(user.getFullName());
     entry.setStatusDate(serviceContext.getModifiedDate(null));
 
-Still in the `addGuestbookEntry` method, place the following code right before
+Still in the `addEntry` method, place the following code right before
 the `return` statement:
 
     WorkflowHandlerRegistryUtil.startWorkflowInstance(entry.getCompanyId(), 

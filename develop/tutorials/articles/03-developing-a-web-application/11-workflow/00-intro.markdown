@@ -2,29 +2,27 @@
 
 The Guestbook application accepts submissions from guest users, so there's no
 telling what people could post. Illegal data, objectionable content, the entire
-contents of Don Quixote, all of these and more are possibilities. You can make
+contents of Don Quixote: all of these and more are possibilities. You can make
 sure user posts don't run afoul of the law or policy by enabling *workflow* in
 your application. 
 
-Workflow is a review process meant to ensure that a submitted entity doesn't
-reach the *approved* status before it's reviewed. In the Guestbook Application's
-code, an initially submitted entry should be marked as a *draft* and sent
-through the workflow framework. It comes back to the application code ready to
-have any relevant fields updated in the database based on its status. The status
-of each entity should also be used in the view layer to ensure that only
-reviewed entities are displayed to end users.
+Workflow is a review process that ensures a submitted entity isn't published
+before it's reviewed. To prevent posting objectionable content, an initially
+submitted Guestbook entry should be marked as a *draft* and sent through the
+workflow framework. It comes back to the application code ready to have any
+relevant fields updated in the database based on its status. The view layer must
+filter entities by status to display only reviewed entities.
 
 +$$$
 
 **Note:** The exact review process is defined separately from the code that
 enables workflow. An XML file provides the definition of a workflow in
 @product@. If you're a Liferay Digital Enterprise subscriber, you have access to
-the [Kaleo Workflow
-Designer](/discover/portal/-/knowledge_base/7-0/kaleo-designer), which offers a
-convenient drag-and-drop user interface for designing workflow definition files.
-@product@ is shipped with a workflow definition called the *Single Approver*
-definition, but you can write your own workflow definitions according to your
-organization's requirements. 
+the [Kaleo Workflow Designer](/discover/portal/-/knowledge_base/7-0/kaleo-designer), 
+which offers a convenient drag-and-drop user interface for designing workflow
+definition files. @product@ comes with a workflow definition called the *Single
+Approver* definition, but you can write your own workflow definitions according
+to your organization's requirements. 
 
 A few additional definitions are included in @product@'s source code, which you
 can use to see how workflow definitions are defined. To discover how to access
@@ -33,8 +31,8 @@ these files, see
 
 $$$
 
-This Learning Path instructs the reader in workflow-enabling the Guestbook
-App's `Guestbook` and `Entry` entities to ensure that only approved content is
+This section instructs the reader in workflow-enabling the Guestbook App's
+`Guestbook` and `Entry` entities to ensure that only approved content is
 published after review.
 
 ![Figure 1: Enable workflow in your assets, just like @product@'s own assets.](../../../images/workflow-config.png)
