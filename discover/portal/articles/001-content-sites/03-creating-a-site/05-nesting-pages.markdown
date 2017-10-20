@@ -17,7 +17,7 @@ the same Lunar Guides page.
 There are two ways to create a child page in @product@: 
 
 1.  Create a new page as a child page of an existing page. This is the most 
-    common way to create a child page.
+    common way.
 
 2.  Turn an existing page into a child page of another existing page. You can 
     even do this via drag and drop. 
@@ -27,41 +27,46 @@ that you want nest under the Lunar Guides page.
 
 ### Creating Child Pages with Drag and Drop
 
+Using a site's *Navigation* menu, you can nest pages via drag and drop. 
+@product@ immediately applies any changes you make here to the site's navigation 
+structure. Follow these steps to nest the *Cody* page under the *Lunar Guides* 
+page: 
+
 1.  Open the Main Menu and select *Lunar Resort* &rarr; *Navigation*. 
 
-2.  Drag and drop *Cody* and so that it nests under *Lunar Guides*.
+2.  Drag and drop the page *Cody* and so that it nests under the *Lunar Guides* 
+    page.
 
-![Figure x: Nesting a page with drag and drop.](../../../images/001-drag-cody.png)
+    ![Figure x: Nesting a page with drag and drop.](../../../images/001-drag-cody.png)
 
-Pages can be dragged around and rearranged using the *Navigation* menu. Any 
-changes made here are immediately applied to the main navigation structure. So 
-now, the *Cody* page has been removed from the top level navigation, and can 
-now be found as a sub-page of *Lunar Guides*.
+3.  Refresh the page. The new page hierarchy now appears in the navigation bar. 
 
-![Figure x: The new nav hierarchy.](../../../images/001-nav-hierarchy-1.png)
+    ![Figure x: The page *Cody* is now nested under *Lunar Guides* page.](../../../images/001-nav-hierarchy-1.png)
 
-### Creating New Sub-pages
+Nice work! Next, you'll create the rest of the pages for the lunar guides as 
+child pages of the *Lunar Guides* page--Cody is about to have some company. 
 
-Now you're going to create three more Lunar Guides pages. Each will be nested 
-under the *Lunar Guides* page and each will be created using the *Lunar Guide 
-Page* template.
+### Creating New Child Pages
 
-1. Click on the menu for *Lunar Guides*.
+The Lunar Resort's other lunar guides--Jim, Steve, and Russ--also need pages 
+nested under the *Lunar Guides* page. You'll create these pages directly as 
+child pages. Follow these steps to do so: 
 
-2. Select *Add Child Page*
+1.  In the *Lunar Resort* &rarr; *Navigation* menu, click the *Options* button 
+    (![Options](../../../images/icon-options.png)) for *Lunar Guides* and select 
+    *Add Child Page*. 
 
-3. Name the page "Jim" and set the *Type* as *Lunar Guide Page*.
+2.  Name the page *Jim* and set its type as *Lunar Guide Page*. 
 
-4. Leave *Inherit Changes* set to "Yes".
+3.  Leave *Inherit Changes* set to *YES*, and click *Add Page*. 
 
-5. Click *Add Page*
+4.  Repeat these steps to create pages for Steve and Russ. 
 
-6. Repeat these steps to create additional pages for "Steve" and "Russ".
+@product@ creates each page from the template, with the Blogs app in the right 
+column and an empty space in the left column. Each page also appears in the 
+navigation bar under the *Lunar Guides* page. 
 
-Each page is created as specified by the template, with the Blogs to the right
-and an empty space to the left.
+![Figure x: Cody is no longer lonely!](../../../images/001-all-nested-pages.png)
 
-![Figure x: All the nested pages.](../../../images/001-all-nested-pages.png)
-
-Now that all of the pages are created, let's take a closer look at navigation 
-and the various features of Liferay's Breadcrumb and Navigation portlets.
+Now that you've created all the pages, you'll learn more about site navigation 
+and the various features of Liferay's Breadcrumb and Navigation apps. 
