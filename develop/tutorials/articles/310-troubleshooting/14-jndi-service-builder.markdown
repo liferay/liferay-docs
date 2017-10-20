@@ -1,4 +1,4 @@
-# Using JNDI from Service Builder [](id=using-jndi-from-service-builder)
+# Connecting to JNDI Data Sources from Service Builder [](id=connecting-to-jndi-data-sources-from-service-builder)
 
 There may be cases in which @product@'s application server defines a JNDI data 
 source that you want to use from a 
