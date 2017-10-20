@@ -62,11 +62,26 @@ Here are the class imports for the code above:
     import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
 
 In traditional Java EE environments, you can access the application server's
-`javax.naming` API directly. In @product@'s OSGi environment, you must use
+JNDI API directly. In @product@'s OSGi environment, you must use
 @product@'s classloader to access it. The example code sets @product@'s
 classloader on the thread to access the classes needed to use JNDI. After
 working with the data source, the code reinstates the thread's original
 classloader.
+
++$$$
+
+**Note**: Attempts to use an application server's JNDI API from an OSGi bundle
+without using @product@'s classloader results in
+`java.lang.ClassNotFoundException`s. For example, here's an exception from
+attempting to use Apache Tomcat's JNDI API without using @product@'s
+classloader:
+
+    javax.naming.NoInitialContextException: Cannot instantiate class:
+    org.apache.naming.java.javaURLContextFactory [Root exception is
+    java.lang.ClassNotFoundException:
+    org.apache.naming.java.javaURLContextFactory]
+
+$$$
 
 You can use similar code to access a data source from your application. Make
 sure to substitute `jdbc/TestDB` with your data source name and invoke SQL
@@ -74,11 +89,10 @@ statements as you desire.
 
 How you define a JNDI data source depends on your application server. If you
 need help defining a JNDI data source, see your application server's
-documentation. If you're running Tomcat, for  example, see 
-[Tomcat's JNDI Datasource HOW-TO](https://tomcat.apache.org/tomcat-8.0-doc/jndi-datasource-examples-howto.html).
+documentation. 
 
 Configure @product@ with your external data source following
-[@product@'s manual installation documentation](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-manually#manual-configuration).
+[@product@'s manual installation documentation regarding your application server](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-manually#manual-configuration).
 
 ## Related Topics [](id=related-topics)
 
