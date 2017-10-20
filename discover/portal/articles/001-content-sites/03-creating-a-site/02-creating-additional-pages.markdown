@@ -1,34 +1,53 @@
 # Creating Additional Pages
 
-In order to create a full featured site, sometimes you need to do a little bit
-of repetitive work. You already know how to do it, so let's create the additional pages that we'll need for our site.
+The Lunar Resort needs two more pages: 
 
-## The "Lunar Guides" Page
+-   Lunar Guides: A page that lists the guides employed by the Lunar Resort.
+-   Book a Trip: A page for booking a trip to the Lunar Resort.
 
-1. In the main menu, go to *Navigation* for *The Lunar Resort*.
+You'll create these pages using the same steps you used to create the existing 
+pages. 
+<!-- 
+Double-check the page layouts for these pages to make sure they're as intended, 
+and not just copied over from the earlier instructions.
+-->
 
-2. Click on the menu button for *Public Pages* and select *Add Public Page*.
+## Creating the Lunar Guides Page
 
-3. Enter "Lunar Guides" for the *Name*.
+1.  Open the main menu, and expand the *Navigation* menu for *The Lunar Resort*. 
 
-4. Select *1 Column* for the layout.
+2.  In the Navigation menu, click the *Options* button 
+    (![Options](../../../images/icon-options.png)) for *Public Pages* and select 
+    *Add Public Page*. 
 
-5. Click *Add Page*.
 
-## The "Book a Trip"" Page
+3.  Enter *Lunar Guides* for the *Name*.
 
-1. Back in the main menu, go to *Navigation* for *The Lunar Resort*.
+4.  For the layout, select *3 Columns*. 
 
-2. Click on the menu button for *Public Pages* and select *Add Public Page*.
+5.  Leave the other options on their default settings, and click *Add Page*. 
 
-3. Enter "Book a Trip for the *Name*.
+## Creating the Book a Trip Page
 
-4. Select *1 Column* for the layout.
+1.  Open the main menu, and expand the *Navigation* menu for *The Lunar Resort*. 
 
-5. Click *Add Page*.
+2.  In the Navigation menu, click the *Options* button 
+    (![Options](../../../images/icon-options.png)) for *Public Pages* and select 
+    *Add Public Page*. 
 
-## Arranging pages
+3.  Enter *Book a Trip* for the *Name*.
 
-While viewing your pages, you can rearrange the order by dragging and dropping them in the main navigation. Rearrange your pages to match this order:
+4.  For the layout, select *3 Columns*. 
 
-![Figure x: Page navigation order.](../../../images/001-final-menu.png)
+5.  Leave the other options on their default settings, and click *Add Page*. 
+
+## Arranging Pages
+
+The new pages now appear in the navigation bar alongside the other pages. If 
+these pages are out of your preferred order, you can rearrange them via drag and 
+drop. Rearrange the pages to match this order: 
+
+![Figure x: Reorder the pages in the navigation bar.](../../../images/001-final-menu.png)
+
+Great! Now that you have your site's pages, you'll add some applications to 
+them. 
