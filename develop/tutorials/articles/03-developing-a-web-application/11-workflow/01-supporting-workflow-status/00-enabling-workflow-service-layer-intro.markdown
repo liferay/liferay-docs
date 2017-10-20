@@ -1,4 +1,4 @@
-# Supporting Workflow at the Service Layer 
+# Supporting Workflow at the Service Layer [](id=supporting-workflow-at-the-service-layer)
 
 When you 
 [asset enabled the Guestbook Application](/develop/tutorials/-/knowledge_base/7-0/assets-integrating-with-liferays-framework),

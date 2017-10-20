@@ -1,4 +1,4 @@
-# Retrieving Guestbooks and Entries by Status 
+# Retrieving Guestbooks and Entries by Status [](id=retrieving-guestbooks-and-entries-by-status)
 
 The service implementation for both entities now supports adding the status
 fields to the database tables. There's one more update to make in the service

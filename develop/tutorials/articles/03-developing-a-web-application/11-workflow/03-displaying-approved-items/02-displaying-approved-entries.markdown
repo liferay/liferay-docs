@@ -1,4 +1,4 @@
-# Displaying Approved Entries
+# Displaying Approved Entries [](id=displaying-approved-entries)
 
 The Guestbook application needs to be updated so that only guestbooks and
 entries with a status of *approved* appear in the UI.

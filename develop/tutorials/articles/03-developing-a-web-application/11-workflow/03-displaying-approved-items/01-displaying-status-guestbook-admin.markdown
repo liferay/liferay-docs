@@ -1,4 +1,4 @@
-# Displaying Guestbook Status
+# Displaying Guestbook Status [](id=displaying-guestbook-status)
 
 The Guestbook Admin application's main view currently has a search container
 with two columns: the guestbook name and the guestbook actions button. 

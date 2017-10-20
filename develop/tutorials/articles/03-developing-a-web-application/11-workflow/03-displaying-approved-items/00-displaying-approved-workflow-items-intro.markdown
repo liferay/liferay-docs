@@ -1,4 +1,4 @@
-# Displaying Approved Workflow Items 
+# Displaying Approved Workflow Items [](id=displaying-approved-workflow-items)
 
 There's not much left to do. Both entities in the guestbook project's back-end
 are workflow enabled, so it's time to update the UI. The Guestbook Admin portlet

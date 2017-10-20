@@ -1,4 +1,4 @@
-## Creating a Workflow Handler for Guestbook Entries 
+# Creating a Workflow Handler for Guestbook Entries [](id=creating-a-workflow-handler-for-guestbook-entries)
 
 The entry's workflow handler is almost identical to the guestbook's. Create
 a new class in the `com.liferay.docs.guestbook.workflow` package of the
