@@ -4,16 +4,15 @@ Have you ever wondered what would happen to an entity during the Staging
 process? Does Staging recognize the change? If so, how does it handle the
 update?
 
-This article lists use cases that you'd face for each Liferay entity. The tables
-are broken into three columns:
+This article lists use cases that you'd face for each Liferay entity. The use
+case tables are broken into three columns:
 
 - *Related entity:* the entity that is attached/related to the table's main
   entity. For example, in the Web Content Article (main entity) table, an
   attached entity could be a structure.
-- *Action performed:* the type of modification completed on the attached/related
-  entity.
+- *Action performed:* the type of modification completed on the related entity.
 - *How does Staging handle this?:* how the Staging framework handles the
-  modification.
+  action performed.
 
 Navigate to the entity section you're interested in.
 
@@ -49,7 +48,7 @@ content (WC) article are handled during the Staging process.
 |                               | File entry's permissions are modified | No changes to WC article.
 | Page link contained in WC | WC article is published | The page is imported; publishing won't fail if page is missing but users will get a warning message for a potential broken link.
 |                           | WC article is deleted | No changes.
-|                           | Page is deleted | A message displays warning that there may be a broken link.
+|                           | Page is deleted | The article will be published. A message displays warning that there may be a broken link.
 |                           | Page's friendly URL is modified | No changes.
 | Site link (not pointing to specific page) contained in WC | WC article is exported | If the page exists, export the reference to it.
 |                           | WC article is imported | Validate that the page exists.
@@ -80,8 +79,8 @@ content (WC) article are handled during the Staging process.
 | WC permissions | WC article is deleted | The permissions are deleted.
 |                | WC article is exported | The permissions are exported.
 |                | WC article's permissions are modified | The article is marked as modified and is published.
-|                | WC role is created/modified/deleted | The article is reindexed, both in staging and on the live site (because we are indexing the roles which can view an entity).
-|                | WC team is created/modified/deleted | The article is reindexed, both in staging and on the live site (because we are indexing the roles which can view an entity).
+|                | WC role is created/modified/deleted | The article is reindexed, both in Staging and on the live site (because we are indexing the roles which can view an entity).
+|                | WC team is created/modified/deleted | The article is reindexed, both in Staging and on the live site (because we are indexing the roles which can view an entity).
 | Locales | The locales of the portal/site change | The article is imported properly, adding the value for the new default language from the previous default language.
 | Asset entry | WC article is deleted | The asset entry is deleted.
 |             | WC article is exported | No changes.
@@ -148,6 +147,6 @@ content (WC) feed are handled during the Staging process.
 | Page | Page's friendly URL is modified | The link to the page still works.
 |      | Portlet is removed from page | The feed can live without a portlet ID; the portlet will be removed upon publication.
 | Display page | WC article with display pages is configured | The page, Asset Publisher portlet, and content are published.
-|              | Display page is deleted | The page and its content is deleted.
+|              | Display page is deleted | The page and its content are deleted.
 |              | WC article is deleted | The article deletion is published; the display page is not affected.
 |              | WC article with a display page is added but the page was not published earlier and it's not included in the publication | The page reference is validated and the publication fails when the page is not there. A message displays explaining this to the user.
