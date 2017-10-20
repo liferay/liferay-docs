@@ -63,7 +63,7 @@ file:
 Open the Web Content entry from System Settings and you'll see what looks like
 multiple single value entries for *Charactersblacklist*: 
 
-![Figure 3: The Web Content System Settings entry has many *Charactersblacklist* fields.](../../../images/config-web-content-blacklist.png)
+![Figure 2: The Web Content System Settings entry has many *Charactersblacklist* fields.](../../../images/config-web-content-blacklist.png)
 
 In the configuration file, this is really a single key with an array of 
 comma-separated values: 
@@ -73,7 +73,7 @@ comma-separated values:
 ### Escaping Characters [](id=escaping-characters)
 
 Double quotes (`"`) and equals signs (`=`) must be *escaped* in `.config` files. 
-*Escaping* is using another character to denote that a character shouldn't be used 
+Escaping is using another character to denote that a character shouldn't be used 
 in its normal way. Since double quotes and equals signs are already used in 
 `.config` files, escaping them tells the framework not to read them the normal 
 way, but to pass them through as part of the value. Use a `\` to escape 
@@ -90,7 +90,7 @@ Once you have a configuration file, deploy it so @product@ recognizes it and
 updates the targeted configuration values. 
 
 To deploy the `.config` file, place it in your 
-[Liferay Home's](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
+[Liferay Home's](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) 
 `osgi/configs` folder. To change the configuration further, you can edit the 
 `.config` file directly or use System Settings. 
 
@@ -118,7 +118,7 @@ settings. To accomplish this, deploy a `.config` file to *one* node. @product@
 uses an internal system for making sure all the nodes in the cluster hear about
 the configuration change and apply it.
 
-## Factory Configurations
+## Factory Configurations [](id=factory-configurations)
 
 Configurations supporting multiple independent occurrences of the same
 configuration entry are known as *factory configurations*.
@@ -130,7 +130,7 @@ and JAX-RS web
 services](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs). These
 services must use a [CXF
 Endpoint](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs#cxf-endpoints),
-which is a context path where the web services are deployed and accessible.
+which is a context path where the web services are deployed and accessed.
 Endpoints can be created via factory configuration by navigating to the CXF
 Endpoints System Settings Entry (System Settings &rarr; Foundation &rarr; CXF
 Endpoints). Using the Add button (![Add](../../../images/icon-add.png)), the
@@ -144,7 +144,7 @@ $$$
 If a service is meant to support factory configuration, its System Settings
 entry has an Add button (![Add](../../../images/icon-add.png)).
 
-![Figure x: If a System Settings entry has an Add button, it's suitable
+![Figure 3: If a System Settings entry has an Add button, it's suitable
 for factory configuration.](../../../images/factory-configuration-entry.png)
 
 As with regular old single-instance configurations, you can accomplish factory
@@ -188,8 +188,12 @@ for its subname, like
 
     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-a6f67e48-6dca-49c6-bf6b-8fd5e6016b2d.config
 
-This is simply to guarantee that the file has a unique name. It's recommended to
-rename the exported file to use a more descriptive subname. 
+This is simply to guarantee that the file has a unique name. If you're exporting
+the configuration file for deployment in a *separate @product@ system*, you can
+rename the exported file to use a more descriptive subname. If you rename the
+file and deploy it to the same system from which it was exported, the new
+subname marks it as an entirely new configuration. You'll end up with an
+additional configuration instance in this case, not just a renamed one.
 
 $$$
 
