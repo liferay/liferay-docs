@@ -7,7 +7,7 @@ update?
 This article lists use cases that you'd face for each Liferay entity. The tables
 are broken into three columns:
 
-- *Updated entity:* the entity that is attached/related to the table's main
+- *Related entity:* the entity that is attached/related to the table's main
   entity. For example, in the Web Content Article (main entity) table, an
   attached entity could be a structure.
 - *Action performed:* the type of modification completed on the attached/related
@@ -19,16 +19,17 @@ Navigate to the entity section you're interested in.
 
 ## Web Content
 
-
+Each section below describes how Staging handles a specific web content entity
+and the various actions that can be performed on its attached/related entities.
 
 ### Web Content Article
 
 The following table describes how entities that are attached/related to a web
 content (WC) article are handled during the Staging process.
 
-| Updated entity | Action performed | How does Staging handle this?     
+| Related entity | Action performed | How does Staging handle this?     
 | :------------- | :--------------  | :----------------------------
-| Folder | WC article is moved into/out of folder | The article is marked as modified and will be published by default.
+| Folder | WC article is moved into/out of folder | The article is marked as modified and will be published.
 | WC structure | WC article is published | Structure (and its parent structure) and template are published.
 |              | Structure is modified | All articles using it are reindexed. The structure will be published.
 |              | Parent structure is modified  | All articles using the structure or child structure are reindexed. The structure will be published.
@@ -50,20 +51,20 @@ content (WC) article are handled during the Staging process.
 |                           | WC article is deleted | No changes.
 |                           | Page is deleted | A message displays warning that there may be a broken link.
 |                           | Page's friendly URL is modified | No changes.
-| Site link contained in WC | WC article is exported | If the page exists, export the reference to it.
+| Site link (not pointing to specific page) contained in WC | WC article is exported | If the page exists, export the reference to it.
 |                           | WC article is imported | Validate that the page exists.
 |                           | WC article is deleted | No changes.
 |                           | Page is deleted | The Web Content feature handles this action behind-the-scenes.
 |                           | Page's friendly URL is modified | The Web Content feature handles this action behind-the-scenes.
 | Virtual hosts | WC article is published | The site's virtual host is updated.
 |               | WC article is deleted | No changes.
-| Expando | WC article is deleted | The expando value is deleted.
-|         | WC article is exported | The expando values are exported with the columns.
-|         | WC article is imported | The expando values are imported. Columns are updated/added if they don't exist in the target system. If the expando table does not exist, it is created.
-|         | Expando value is modified | The article is marked as modified and it will be published by default.
-|         | Expando properties are modified | The article is updated.
-|         | Expando column is deleted | The article is updated.
-|         | Expando locales are modified | The expando locale is independent of the web content's locale; they depend on the portal languages. They shouldn't be validated when publishing.
+| Custom field (Expando) contained in WC | WC article is deleted | The custom field value is deleted.
+|         | WC article is exported | The custom field values are exported with the columns.
+|         | WC article is imported | The custom field values are imported. Columns are updated/added if they don't exist in the target system. If the Expando table does not exist, it is created.
+|         | Custom field value is modified | The article is marked as modified and it will be published.
+|         | Custom field properties are modified | The article is updated.
+|         | Custom field column is deleted | The article is updated.
+|         | Custom field locales are modified | The Custom field's locale is independent of the web content's locale; they depend on the portal languages. They shouldn't be validated when publishing.
 | WC article deletion | WC article is deleted in Staging | The deletion is propagated and the article is deleted in the live site.
 |                     | WC article is moved to trash in Staging  | The deletion is propagated and the article is deleted in the live site.
 |                     | WC article is restored from trash | The article is published again.
@@ -78,31 +79,31 @@ content (WC) article are handled during the Staging process.
 |            | Rating is modified | The rating is published by default (without the article, unless the article has also been modified, in which case the rating is also propagated).
 | WC permissions | WC article is deleted | The permissions are deleted.
 |                | WC article is exported | The permissions are exported.
-|                | WC article's permissions are modified | The article is marked as modified and is published by default.
+|                | WC article's permissions are modified | The article is marked as modified and is published.
 |                | WC role is created/modified/deleted | The article is reindexed, both in staging and on the live site (because we are indexing the roles which can view an entity).
 |                | WC team is created/modified/deleted | The article is reindexed, both in staging and on the live site (because we are indexing the roles which can view an entity).
 | Locales | The locales of the portal/site change | The article is imported properly, adding the value for the new default language from the previous default language.
 | Asset entry | WC article is deleted | The asset entry is deleted.
 |             | WC article is exported | No changes.
 |             | WC article is imported | The asset entry is created or updated.
-| Asset categories | WC article is deleted | 
-|                  | WC article is exported | 
-|                  | WC article is imported | No changes.
+| Asset categories | WC article is deleted | No changes.
+|                  | WC article is exported | The categories are exported.
+|                  | WC article is imported | The categories are created or updated.
 |                  | Category is deleted | The article is reindexed, but not published.
 |                  | Category is modified or moved | The article is reindexed, but not published.
 |                  | Category's permissions are changed | The article is reindexed, but not published.
 | Asset tags | WC article is deleted | No changes.
 |                  | WC article is exported | The tags are exported.
 |                  | WC article is imported | The tags are created or updated.
-|                  | Tag is deleted | The deletion is published by default (article should be reindexed, but not published).
-|                  | Tag is merged with other tag | The merge is published by default (article should be reindexed, but not published).
-|                  | Tag is modified | The tag is published by default (article should be reindexed, but not published).
+|                  | Tag is deleted | The deletion is published (article should be reindexed, but not published).
+|                  | Tag is merged with other tag | The merge is published (article should be reindexed, but not published).
+|                  | Tag is modified | The tag is published (article should be reindexed, but not published).
 | Asset links (current site) | WC article is deleted | The assets are deleted.
 |                            | WC article is exported | The link is exported, but missing references are not added to related content.
 |                            | WC article is imported | The asset links with existing assets are imported.
 |                            | Related asset is deleted | The asset is ignored.
 |                            | Related asset is modified | The modified asset is published.
-|                            | Link to other asset is deleted from the other asset | The other asset is published by default, and it updates the asset link on import.
+|                            | Link to other asset is deleted from the other asset | The other asset is published, and it updates the asset link on import.
 |                            | Link is deleted | 
 | Asset links (parent or global site) | WC article is deleted | The assets are deleted.
 |                            | WC article is exported | The link is exported, but missing references are not added to related content.
@@ -117,7 +118,7 @@ content (WC) article are handled during the Staging process.
 The following table describes how entities that are attached/related to a web
 content (WC) folder are handled during the Staging process.
 
-| Updated Entity | Action performed | How does Staging handle this?     
+| Related Entity | Action performed | How does Staging handle this?     
 | :------------- | :--------------  | :----------------------------
 | Parent folder | Parent folder is modified | The articles residing in the folder are published.
 | WC structure | Structure residing in folder is deleted | The structure can not be deleted if it is being used by a folder.
@@ -137,7 +138,7 @@ content (WC) folder are handled during the Staging process.
 The following table describes how entities that are attached/related to a web
 content (WC) feed are handled during the Staging process.
 
-| Updated Entity | Action performed | How does Staging handle this?     
+| Related Entity | Action performed | How does Staging handle this?     
 | :------------- | :--------------  | :----------------------------
 | WC structure | Feed is exported | The structures and their reliant templates are exported too. If the structure or template doesn't exist, they are not exported.
 |              | Feed is imported | The structures and their reliant templates are added/updated.
