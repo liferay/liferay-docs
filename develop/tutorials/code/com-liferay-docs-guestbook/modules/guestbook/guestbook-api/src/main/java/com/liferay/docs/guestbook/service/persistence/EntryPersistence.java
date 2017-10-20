@@ -705,56 +705,61 @@ public interface EntryPersistence extends BasePersistence<Entry> {
 	public int countByStatus(int status);
 
 	/**
-	* Returns all the entries where groupId = &#63; and status = &#63;.
+	* Returns all the entries where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @return the matching entries
 	*/
-	public java.util.List<Entry> findByG_S(long groupId, int status);
+	public java.util.List<Entry> findByG_G_S(long groupId, long guestbookId,
+		int status);
 
 	/**
-	* Returns a range of all the entries where groupId = &#63; and status = &#63;.
+	* Returns a range of all the entries where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* <p>
 	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @param start the lower bound of the range of entries
 	* @param end the upper bound of the range of entries (not inclusive)
 	* @return the range of matching entries
 	*/
-	public java.util.List<Entry> findByG_S(long groupId, int status, int start,
-		int end);
+	public java.util.List<Entry> findByG_G_S(long groupId, long guestbookId,
+		int status, int start, int end);
 
 	/**
-	* Returns an ordered range of all the entries where groupId = &#63; and status = &#63;.
+	* Returns an ordered range of all the entries where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* <p>
 	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @param start the lower bound of the range of entries
 	* @param end the upper bound of the range of entries (not inclusive)
 	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
 	* @return the ordered range of matching entries
 	*/
-	public java.util.List<Entry> findByG_S(long groupId, int status, int start,
-		int end,
+	public java.util.List<Entry> findByG_G_S(long groupId, long guestbookId,
+		int status, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator<Entry> orderByComparator);
 
 	/**
-	* Returns an ordered range of all the entries where groupId = &#63; and status = &#63;.
+	* Returns an ordered range of all the entries where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* <p>
 	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @param start the lower bound of the range of entries
 	* @param end the upper bound of the range of entries (not inclusive)
@@ -762,157 +767,170 @@ public interface EntryPersistence extends BasePersistence<Entry> {
 	* @param retrieveFromCache whether to retrieve from the finder cache
 	* @return the ordered range of matching entries
 	*/
-	public java.util.List<Entry> findByG_S(long groupId, int status, int start,
-		int end,
+	public java.util.List<Entry> findByG_G_S(long groupId, long guestbookId,
+		int status, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator<Entry> orderByComparator,
 		boolean retrieveFromCache);
 
 	/**
-	* Returns the first entry in the ordered set where groupId = &#63; and status = &#63;.
+	* Returns the first entry in the ordered set where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the first matching entry
 	* @throws NoSuchEntryException if a matching entry could not be found
 	*/
-	public Entry findByG_S_First(long groupId, int status,
+	public Entry findByG_G_S_First(long groupId, long guestbookId, int status,
 		com.liferay.portal.kernel.util.OrderByComparator<Entry> orderByComparator)
 		throws NoSuchEntryException;
 
 	/**
-	* Returns the first entry in the ordered set where groupId = &#63; and status = &#63;.
+	* Returns the first entry in the ordered set where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the first matching entry, or <code>null</code> if a matching entry could not be found
 	*/
-	public Entry fetchByG_S_First(long groupId, int status,
+	public Entry fetchByG_G_S_First(long groupId, long guestbookId, int status,
 		com.liferay.portal.kernel.util.OrderByComparator<Entry> orderByComparator);
 
 	/**
-	* Returns the last entry in the ordered set where groupId = &#63; and status = &#63;.
+	* Returns the last entry in the ordered set where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the last matching entry
 	* @throws NoSuchEntryException if a matching entry could not be found
 	*/
-	public Entry findByG_S_Last(long groupId, int status,
+	public Entry findByG_G_S_Last(long groupId, long guestbookId, int status,
 		com.liferay.portal.kernel.util.OrderByComparator<Entry> orderByComparator)
 		throws NoSuchEntryException;
 
 	/**
-	* Returns the last entry in the ordered set where groupId = &#63; and status = &#63;.
+	* Returns the last entry in the ordered set where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the last matching entry, or <code>null</code> if a matching entry could not be found
 	*/
-	public Entry fetchByG_S_Last(long groupId, int status,
+	public Entry fetchByG_G_S_Last(long groupId, long guestbookId, int status,
 		com.liferay.portal.kernel.util.OrderByComparator<Entry> orderByComparator);
 
 	/**
-	* Returns the entries before and after the current entry in the ordered set where groupId = &#63; and status = &#63;.
+	* Returns the entries before and after the current entry in the ordered set where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* @param entryId the primary key of the current entry
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the previous, current, and next entry
 	* @throws NoSuchEntryException if a entry with the primary key could not be found
 	*/
-	public Entry[] findByG_S_PrevAndNext(long entryId, long groupId,
-		int status,
+	public Entry[] findByG_G_S_PrevAndNext(long entryId, long groupId,
+		long guestbookId, int status,
 		com.liferay.portal.kernel.util.OrderByComparator<Entry> orderByComparator)
 		throws NoSuchEntryException;
 
 	/**
-	* Returns all the entries that the user has permission to view where groupId = &#63; and status = &#63;.
+	* Returns all the entries that the user has permission to view where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @return the matching entries that the user has permission to view
 	*/
-	public java.util.List<Entry> filterFindByG_S(long groupId, int status);
+	public java.util.List<Entry> filterFindByG_G_S(long groupId,
+		long guestbookId, int status);
 
 	/**
-	* Returns a range of all the entries that the user has permission to view where groupId = &#63; and status = &#63;.
+	* Returns a range of all the entries that the user has permission to view where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* <p>
 	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @param start the lower bound of the range of entries
 	* @param end the upper bound of the range of entries (not inclusive)
 	* @return the range of matching entries that the user has permission to view
 	*/
-	public java.util.List<Entry> filterFindByG_S(long groupId, int status,
-		int start, int end);
+	public java.util.List<Entry> filterFindByG_G_S(long groupId,
+		long guestbookId, int status, int start, int end);
 
 	/**
-	* Returns an ordered range of all the entries that the user has permissions to view where groupId = &#63; and status = &#63;.
+	* Returns an ordered range of all the entries that the user has permissions to view where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* <p>
 	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link EntryModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @param start the lower bound of the range of entries
 	* @param end the upper bound of the range of entries (not inclusive)
 	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
 	* @return the ordered range of matching entries that the user has permission to view
 	*/
-	public java.util.List<Entry> filterFindByG_S(long groupId, int status,
-		int start, int end,
+	public java.util.List<Entry> filterFindByG_G_S(long groupId,
+		long guestbookId, int status, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator<Entry> orderByComparator);
 
 	/**
-	* Returns the entries before and after the current entry in the ordered set of entries that the user has permission to view where groupId = &#63; and status = &#63;.
+	* Returns the entries before and after the current entry in the ordered set of entries that the user has permission to view where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* @param entryId the primary key of the current entry
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the previous, current, and next entry
 	* @throws NoSuchEntryException if a entry with the primary key could not be found
 	*/
-	public Entry[] filterFindByG_S_PrevAndNext(long entryId, long groupId,
-		int status,
+	public Entry[] filterFindByG_G_S_PrevAndNext(long entryId, long groupId,
+		long guestbookId, int status,
 		com.liferay.portal.kernel.util.OrderByComparator<Entry> orderByComparator)
 		throws NoSuchEntryException;
 
 	/**
-	* Removes all the entries where groupId = &#63; and status = &#63; from the database.
+	* Removes all the entries where groupId = &#63; and guestbookId = &#63; and status = &#63; from the database.
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	*/
-	public void removeByG_S(long groupId, int status);
+	public void removeByG_G_S(long groupId, long guestbookId, int status);
 
 	/**
-	* Returns the number of entries where groupId = &#63; and status = &#63;.
+	* Returns the number of entries where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @return the number of matching entries
 	*/
-	public int countByG_S(long groupId, int status);
+	public int countByG_G_S(long groupId, long guestbookId, int status);
 
 	/**
-	* Returns the number of entries that the user has permission to view where groupId = &#63; and status = &#63;.
+	* Returns the number of entries that the user has permission to view where groupId = &#63; and guestbookId = &#63; and status = &#63;.
 	*
 	* @param groupId the group ID
+	* @param guestbookId the guestbook ID
 	* @param status the status
 	* @return the number of matching entries that the user has permission to view
 	*/
-	public int filterCountByG_S(long groupId, int status);
+	public int filterCountByG_G_S(long groupId, long guestbookId, int status);
 
 	/**
 	* Caches the entry in the entity cache if it is enabled.
