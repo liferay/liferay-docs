@@ -269,17 +269,58 @@ the issue.
     the JAR to your plugin's `WEB-INF/lib` folder at compile time and adds the JAR
     to the plugin WAB at deployment. 
 
-+$$$
+#### Understanding Excluded JARs [](id=understanding-excluded-jars)
 
-**Note**: The portal property `module.framework.web.generator.excluded.paths`
-declares JAR file paths that are excluded from all @product@ generated WABs.
-All JARs listed for this property are excluded from the WABs, even if the
-plugins listed the JAR in their `portal-dependency-jars` property. Exercise
-great care if you modify the `module.framework.web.generator.excluded.paths`
-property. Altering the property can result in undefined behavior and might
-adversely affect your @product@ run time environment. 
+[Portal property `module.framework.web.generator.excluded.paths`](http://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module Framework)
+declares JARs that are stripped from all @product@ generated WABs. These JARs
+are excluded from WABs because @product@ provides them already. All JARs listed
+for this property are excluded from the WABs, even if the plugins listed the JAR
+in their `portal-dependency-jars` property. 
 
-$$$
+If your plugin requires different versions of the packages @product@ exports,
+you must include them in JARs named differently from the ones
+`module.framework.web.generator.excluded.paths` excludes. 
+
+For example, @product@'s
+[`system.packages.extra.bnd` file](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/core/portal-bootstrap/system.packages.extra.bnd)
+exports Spring Framework version 4.1.9 packages:
+
+    Export-Package:\
+        ...
+        org.springframework.*;version='4.1.9',\
+        ...
+
+@product@ uses the `module.framework.web.generator.excluded.paths` portal
+property to exclude their JARs.
+
+    module.framework.web.generator.excluded.paths=\
+        ...
+        WEB-INF/lib/spring-aop.jar,\
+        WEB-INF/lib/spring-aspects.jar,\
+        WEB-INF/lib/spring-beans.jar,\
+        WEB-INF/lib/spring-context.jar,\
+        WEB-INF/lib/spring-context-support.jar,\
+        WEB-INF/lib/spring-core.jar,\
+        WEB-INF/lib/spring-expression.jar,\
+        WEB-INF/lib/spring-jdbc.jar,\
+        WEB-INF/lib/spring-jms.jar,\
+        WEB-INF/lib/spring-orm.jar,\
+        WEB-INF/lib/spring-oxm.jar,\
+        WEB-INF/lib/spring-tx.jar,\
+        WEB-INF/lib/spring-web.jar,\
+        WEB-INF/lib/spring-webmvc.jar,\
+        WEB-INF/lib/spring-webmvc-portlet.jar,\
+        ...
+
+To use a different Spring Framework version in your WAB, you must name the
+corresponding Spring Framework JARs differently from the glob-patterned JARs
+`module.framework.web.generator.excluded.paths` lists. 
+
+For example, to use Spring Framework version 3.0.7's Spring AOP JAR, include it
+in your plugin's `WEB-INF/lib` but name it something other than
+`spring-aop.jar`. Adding the version to the JAR name (i.e.,
+`spring-aop-3.0.7.RELEASE.jar`) differentiates it from the excluded JAR and
+prevents it from being stripped from the WAB. 
 
 #### Using Packages @product@ Doesn't Export [](id=using-packages-liferay-portal-doesnt-export)
 

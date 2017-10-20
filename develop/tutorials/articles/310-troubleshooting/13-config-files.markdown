@@ -1,36 +1,32 @@
 # Using Files to Configure @product@ Modules [](id=using-files-to-configure-product-modules)
 
-@product@ uses the
+@product@ uses 
+[Felix File Install](http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html)
+to monitor file system folders for new/updated configuration files, and the
 [Felix OSGi implementation](http://felix.apache.org/)
 of
 [Configuration Admin](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html)
-to let you use files to configure module service components. @product@ uses 
-[Felix File Install](http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html)
-to monitor file system folders for new/updated configuration files. 
+to let you use files to configure module service components. 
 
-To learn how to work with configuration files, first see the tutorial 
+To learn how to work with configuration files, first review 
 [Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files). 
-Then see these sections below: 
-
--   [Configuration File Formats](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-liferay-portal-modules#configuration-file-formats)
--   [Naming Configuration Files](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-liferay-portal-modules#naming-configuration-files)
--   [Resolving Configuration File Deployment Failures](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-liferay-portal-modules#resolving-configuration-file-deployment-failures)
 
 ## Configuration File Formats [](id=configuration-file-formats)
 
-There are two different file formats you can use for configuration files: 
+There are two different configuration file formats: 
 
 -   `.cfg`: An older, simple format that only supports string values as 
     properties. 
--   `.config`: A format that supports type information and other non-string 
-    values in its properties, in addition to strings. 
+-   `.config`: A format that supports strings, type information, and other
+    non-string values in its properties. 
 
-Although @product@ supports both formats, we recommend you use `.config` files 
-for their flexibility. A `.cfg` file lacks type information and usually needs a 
-properties utility class with functions like `getInt(String)`, 
-`getDouble(String)`, and so on. Since `.config` files can include type 
-information, using them eliminates this need. The articles below provide
-a detailed explanation of these file formats, including their syntax: 
+Although @product@ supports both formats, we recommend `.config` files 
+for their flexibility. Since `.cfg` file lacks type information, if you want to
+store anything but a String, you'll need a properties utility class that casts
+the Strings to their proper types (and you must carefully document properties
+that aren't Strings). Since `.config` files can include type information, using
+them eliminates this need. The articles below provide a detailed explanation of
+these file formats, including their syntax: 
 
 -   [Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
 -   [Configuration file (`.config`) syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config)

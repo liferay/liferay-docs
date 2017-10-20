@@ -59,7 +59,7 @@ After that, make your modifications. Just make sure you mimic the host module's
 folder structure when overriding its JAR. If you're overriding Liferay's login
 application's `login.jsp` for example, you'd put your own `login.jsp` in 
 
-    my-jsp-fragment/src/main/resource/META-INF/resource/login.jsp
+    my-jsp-fragment/src/main/resources/META-INF/resources/login.jsp
 
 If you need to post-process the output, you can update the pattern to include 
 @product@'s buffering mechanism. Below is an example that overrides the 

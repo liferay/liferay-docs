@@ -162,8 +162,8 @@ Follow these steps to build and deploy your theme:
 If you're using Velocity as your template language, you'll notice this message 
 on your server console when deploying your theme:
 
-*Support of Velocity is deprecated. Update theme to use FreeMarker for forward 
-compatibility.*
+*Support of Velocity is deprecated. Update your theme to use FreeMarker for 
+forward compatibility.*
 
 It's recommended that you migrate to using Freemarker for your theme templates. 
 For more details, please see the 
