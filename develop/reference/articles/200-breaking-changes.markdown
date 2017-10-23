@@ -1314,7 +1314,8 @@ The tag `liferay-ui:icon` can replace the call to the previous tags. All the
 previous tags have been converted into Java classes that implement the methods
 that the `icon` tag requires.
 
-See the modules `portlet-configuration-icon-*` in the `modules/addons` folder.
+See the modules `portlet-configuration-icon-*` in the
+`modules/apps/web-experience/portlet-configuration` folder.
 
 #### Why was this change made? [](id=why-was-this-change-made-35)
 
