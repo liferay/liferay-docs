@@ -75,7 +75,7 @@ public class CheckLinks {
 						resultsNumber = resultsNumber + 1;
 
 						System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
-								article.getName() + ":" + in.getLineNumber() + "\n" +
+								article.getPath() + ":" + in.getLineNumber() + "\n" +
 								" Line: " + line);
 
 					}
@@ -181,8 +181,10 @@ public class CheckLinks {
 	 * @param  article the article containing the line
 	 * @param  in the line number reader
 	 * @return the header ID
+	 * @throws IOException if an IO exception occurred
 	 */
-	private static String extractHeader(String line, File article, LineNumberReader in) {
+	private static String extractHeader(String line, File article, LineNumberReader in)
+			throws IOException {
 
 		int begIndex = line.lastIndexOf("/") + 1;
 		int endIndex = line.indexOf(")", begIndex);
@@ -195,7 +197,7 @@ public class CheckLinks {
 			resultsNumber = resultsNumber + 1;
 
 			System.out.println(resultsNumber + ". " + "**CORRUPT URL FORMATTING**\n"
-					+ "File: " + article.getName() + ":" + in.getLineNumber() + "\n" +
+					+ "File: " + article.getPath() + ":" + in.getLineNumber() + "\n" +
 					" Line: " + line);
 		}
 
@@ -209,8 +211,10 @@ public class CheckLinks {
 	 * @param  lineNumber the line number
 	 * @param  fileName the article's name
 	 * @return the LDN URL
+	 * @throws IOException if an IO exception occurred
 	 */
-	private static String extractLdnUrl(String line, int lineNumber, String fileName) {
+	private static String extractLdnUrl(String line, int lineNumber, File article)
+			throws IOException {
 
 		int begIndex = line.indexOf("](/") + 2;
 		int endIndex = line.indexOf(")", begIndex);
@@ -223,7 +227,7 @@ public class CheckLinks {
 			resultsNumber = resultsNumber + 1;
 
 			System.out.println(resultsNumber + ". " + "**CORRUPT URL FORMATTING**\n"
-					+ "File: " + fileName + ":" + lineNumber + "\n" +
+					+ "File: " + article.getPath() + ":" + lineNumber + "\n" +
 					" Line: " + line);
 		}
 
@@ -366,8 +370,10 @@ public class CheckLinks {
 	 * @param  lineNumber the line number
 	 * @return <code>true</code> if the LDN URL is valid; <code>false</code>
 	 *         otherwise
+	 * @throws IOException if an IO exception occurred
 	 */
-	private static boolean isLdnUrlValid(String url, String fileName, int lineNumber) {
+	private static boolean isLdnUrlValid(String url, File article, int lineNumber)
+			throws IOException {
 
 		NodeList list = new NodeList();
 		boolean validLDNURL = false;
@@ -379,7 +385,7 @@ public class CheckLinks {
 			resultsNumber = resultsNumber + 1;
 
 			System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
-					fileName + ":" + lineNumber + "\n" +
+					article.getPath() + ":" + lineNumber + "\n" +
 					" Line: " + ldnArticle);	
 		}
 
@@ -398,7 +404,7 @@ public class CheckLinks {
 				resultsNumber = resultsNumber + 1;
 
 				System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
-						fileName + ":" + lineNumber + "\n" +
+						article.getPath() + ":" + lineNumber + "\n" +
 						" Line: " + ldnArticle);
 			}
 			else {
@@ -421,9 +427,10 @@ public class CheckLinks {
 	 * @param  secondaryHeader the secondary header ID
 	 * @return <code>true</code> if the URL is valid; <code>false</code>
 	 *         otherwise
+	 * @throws IOException if an IO exception occurred
 	 */
 	private static boolean isUrlValid(String line, File article, LineNumberReader in,
-			String primaryHeader, String secondaryHeader) {
+			String primaryHeader, String secondaryHeader) throws IOException {
 
 		boolean validURL = false;
 		ArrayList<List<String>> headers = new ArrayList<List<String>>();
@@ -457,8 +464,8 @@ public class CheckLinks {
 		else if (checkLegacyLinks && (line.contains("/6-2/") || line.contains("/6-1/")) &&
 				(count2 < 2 && count3 < 2)) {
 
-			String ldnUrl = extractLdnUrl(line, in.getLineNumber(), article.getName());
-			validURL = isLdnUrlValid(ldnUrl, article.getName(), in.getLineNumber());
+			String ldnUrl = extractLdnUrl(line, in.getLineNumber(), article);
+			validURL = isLdnUrlValid(ldnUrl, article, in.getLineNumber());
 		}
 		else {
 			validURL = true;
