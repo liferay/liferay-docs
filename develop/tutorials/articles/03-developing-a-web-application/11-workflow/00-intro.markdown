@@ -52,3 +52,4 @@ There are five steps to enabling workflow:
 The first three steps happen in the service layer, so that's a good place to
 start.
 
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/supporting-workflow-at-the-service-layer">Let's Go!<span class="icon-circle-arrow-right"></span></a>

@@ -1,5 +1,9 @@
 # Retrieving Guestbooks and Entries by Status [](id=retrieving-guestbooks-and-entries-by-status)
 
+<div class="learn-path-step">
+    <p>Supporting Workflow at the Service Layer<br>Step 3 of 3</p>
+</div>
+
 The service implementation for both entities now supports adding the status
 fields to the database tables. There's one more update to make in the service
 layer, but to understand why, you must think about the view layer. When the

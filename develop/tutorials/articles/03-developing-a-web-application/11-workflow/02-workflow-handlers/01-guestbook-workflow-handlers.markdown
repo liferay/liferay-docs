@@ -1,5 +1,9 @@
 # Creating a Workflow Handler for Guestbooks [](id=creating-a-workflow-handler-for-guestbooks)
 
+<div class="learn-path-step">
+    <p>Handling Workflow<br>Step 1 of 2</p>
+</div>
+
 Each workflow enabled entity needs a `WorkflowHandler`. Create a new package in
 the `guestboook-service` module called `com.liferay.docs.guestbook.workflow`,
 then create the `GuestbokWorkflowHandler` class in it. Extend

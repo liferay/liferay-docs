@@ -1,5 +1,9 @@
 # Displaying Guestbook Status [](id=displaying-guestbook-status)
 
+<div class="learn-path-step">
+    <p>Displaying Approved Workflow Items<br>Step 1 of 2</p>
+</div>
+
 The Guestbook Admin application's main view currently has a search container
 with two columns: the guestbook name and the guestbook actions button. 
 
