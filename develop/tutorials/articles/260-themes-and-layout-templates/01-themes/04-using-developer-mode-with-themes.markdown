@@ -97,7 +97,7 @@ To set Developer Mode manually, you must point to `portal-developer.properties`
 as shown in the last section. Add the `portal-ext.properties` file to your app 
 server's bundle and add the following line:
 
-    include-and-override=portal.developer.properties
+    include-and-override=portal-developer.properties
  
 `portal-developer.properties` provides the majority of the settings you'll need 
 for smooth development. To disable the cache for FreeMarker templates, you must 
