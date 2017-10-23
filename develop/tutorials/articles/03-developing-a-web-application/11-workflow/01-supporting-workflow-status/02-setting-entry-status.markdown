@@ -1,5 +1,9 @@
 # Setting the Entry Workflow Status [](id=setting-the-entry-workflow-status)
 
+<div class="learn-path-step">
+    <p>Supporting Workflow at the Service Layer<br>Step 2 of 3</p>
+</div>
+
 Now you'll set the status fields, introduce entries to the workflow framework,
 and add the `updateStatus` method to `EntryLocalServiceImpl`. It works the
 same as it did for guestbooks.

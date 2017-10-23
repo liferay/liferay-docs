@@ -1,5 +1,9 @@
 # Setting the Guestbook Status [](id=setting-the-guestbook-status)
 
+<div class="learn-path-step">
+    <p>Supporting Workflow at the Service Layer<br>Step 1 of 3</p>
+</div>
+
 Before now, you set the status of all added guestbooks to approved in the
 service layer. Now you'll set it to draft and pass it to the workflow framework. 
 

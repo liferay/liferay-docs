@@ -1,5 +1,9 @@
 # Creating a Workflow Handler for Guestbook Entries [](id=creating-a-workflow-handler-for-guestbook-entries)
 
+<div class="learn-path-step">
+    <p>Handling Workflow<br>Step 2 of 2</p>
+</div>
+
 The entry's workflow handler is almost identical to the guestbook's. Create
 a new class in the `com.liferay.docs.guestbook.workflow` package of the
 `guestbook-service` module. Name it `EntryWorkflowHandler` and extend
