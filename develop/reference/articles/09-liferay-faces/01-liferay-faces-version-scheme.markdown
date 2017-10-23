@@ -10,9 +10,9 @@ Provides a suite of JSF components that utilize [AlloyUI](http://alloyui.com/).
 
 |Branch|Example Artifact|AlloyUI|JSF API|Additional Info|
 |------|----------------|-------|-------|---------------|
-|[master (3.0.x)](https://github.com/liferay/liferay-faces-alloy/tree/master)|com.liferay.faces.alloy-3.0.0.jar|3.0.x|2.2+|*AlloyUI 3.0.x is the version that comes bundled with Liferay Portal 7.0.*|
-|[2.0.x](https://github.com/liferay/liferay-faces-alloy/tree/2.0.x)|com.liferay.faces.alloy-2.0.0.jar|2.0.x|2.1+|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
-|[1.0.x](https://github.com/liferay/liferay-faces-alloy/tree/1.0.x)|com.liferay.faces.alloy-1.0.0.jar|2.0.x|1.2|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
+|[master (3.x)](https://github.com/liferay/liferay-faces-alloy/tree/master)|com.liferay.faces.alloy-3.0.0.jar|3.0.x|2.2+|*AlloyUI 3.0.x is the version that comes bundled with Liferay Portal 7.0.*|
+|[2.x](https://github.com/liferay/liferay-faces-alloy/tree/2.x)|com.liferay.faces.alloy-2.0.0.jar|2.0.x|2.1+|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
+|[1.x](https://github.com/liferay/liferay-faces-alloy/tree/1.x)|com.liferay.faces.alloy-1.0.0.jar|2.0.x|1.2|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
 
 ## Liferay Faces Bridge [](id=liferay-faces-bridge)
 
@@ -22,11 +22,11 @@ for JSR 286 (Portlet 2.0) and JSR 362 (Portlet 3.0).
 
 |Branch|Example Artifacts|Portlet API|JSF API|JCP Specification|Additional Info|
 |------|-----------------|:-----------:|:-------:|:-----------------:|---------------|
-|API: [master (5.0.x)](https://github.com/liferay/liferay-faces-bridge-api/tree/master)<br/>IMPL: [5.0.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/master)|com.liferay.faces.bridge.api-5.0.0.jar<br/>com.liferay.faces.bridge.impl-5.0.0.jar|3.0|2.2|[JSR 378](https://www.jcp.org/en/jsr/detail?id=378)|*The Expert Group began work in September 2015 and the Specification is currently under development.*|
-|API: [4.0.x](https://github.com/liferay/liferay-faces-bridge-api/tree/4.0.x)<br/>IMPL: [4.0.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/4.0.x)|com.liferay.faces.bridge.api-4.0.0.jar<br/>com.liferay.faces.bridge.impl-4.0.0.jar|2.0|2.2|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329)|*Includes non-standard bridge extensions for JSF 2.2.*|
-|API: [3.0.x](https://github.com/liferay/liferay-faces-bridge-api/tree/3.0.x)<br/>IMPL: [3.0.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/3.0.x)|com.liferay.faces.bridge.api-3.0.0.jar<br/>com.liferay.faces.bridge.impl-3.0.0.jar|2.0|2.1|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329)|*Includes non-standard bridge extensions for JSF 2.1.*|
-|API: [2.0.x](https://github.com/liferay/liferay-faces-bridge-api/tree/2.0.x)<br/>IMPL: [2.0.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/2.0.x)|com.liferay.faces.bridge.api-2.0.0.jar<br/>com.liferay.faces.bridge.impl-2.0.0.jar|2.0|1.2|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329) (MR1)|*Includes support for Maintenance Release 1 (MR1).*|
-|1.0.x|N/A|1.0|1.2|[JSR 301](https://www.jcp.org/en/jsr/detail?id=301)|*N/A (Not Applicable) since Liferay Faces Bridge has never implemented JSR 301.*|
+|API: [5.x](https://github.com/liferay/liferay-faces-bridge-api/tree/5.x)<br/>IMPL: [5.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/5.x)|com.liferay.faces.bridge.api-5.0.0.jar<br/>com.liferay.faces.bridge.impl-5.0.0.jar|3.0|2.2|[JSR 378](https://www.jcp.org/en/jsr/detail?id=378)|*The Expert Group began work in September 2015 and the Specification is currently under development.*|
+|API: [4.x](https://github.com/liferay/liferay-faces-bridge-api/tree/4.x)<br/>IMPL: [4.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/4.x)|com.liferay.faces.bridge.api-4.0.0.jar<br/>com.liferay.faces.bridge.impl-4.0.0.jar|2.0|2.2|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329)|*Includes non-standard bridge extensions for JSF 2.2.*|
+|API: [3.x](https://github.com/liferay/liferay-faces-bridge-api/tree/3.x)<br/>IMPL: [3.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/3.x)|com.liferay.faces.bridge.api-3.0.0.jar<br/>com.liferay.faces.bridge.impl-3.0.0.jar|2.0|2.1|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329)|*Includes non-standard bridge extensions for JSF 2.1.*|
+|API: [2.x](https://github.com/liferay/liferay-faces-bridge-api/tree/2.x)<br/>IMPL: [2.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/2.x)|com.liferay.faces.bridge.api-2.0.0.jar<br/>com.liferay.faces.bridge.impl-2.0.0.jar|2.0|1.2|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329) (MR1)|*Includes support for Maintenance Release 1 (MR1).*|
+|1.x|N/A|1.0|1.2|[JSR 301](https://www.jcp.org/en/jsr/detail?id=301)|*N/A (Not Applicable) since Liferay Faces Bridge has never implemented JSR 301.*|
 
 ## Liferay Faces Bridge Ext [](id=liferay-faces-bridge-ext)
 
@@ -36,12 +36,12 @@ and also takes advantage of Liferay-specific features such as friendly URLs.
 
 |Branch           |Example Artifact                  |&nbsp;&nbsp;Liferay Portal API&nbsp;&nbsp;|&nbsp;&nbsp;Bridge API&nbsp;&nbsp;|&nbsp;&nbsp;Portlet API&nbsp;&nbsp;|JSF API|
 |-----------------|------------------------------------|:--------------:|:----------:|:-----------:|:-------:|
-|*6.0.x (planned)*|*com.liferay.faces.bridge.ext-6.0.0.jar*|*Future*         |*5.0.x*     |*3.0*        |*2.2*    |
-|[master (5.0.x)](https://github.com/liferay/liferay-faces-bridge-ext/tree/master)|com.liferay.faces.bridge.ext-5.0.0.jar|7.0.x|4.0.x|2.0|2.2|
-|[4.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/4.0.x)|RESERVED|N/A|N/A|N/A|N/A|
-|[3.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/3.0.x)|com.liferay.faces.bridge.ext-3.0.0.jar|6.2.x|4.0.x|2.0|2.2|
-|[2.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/2.0.x)|com.liferay.faces.bridge.ext-2.0.0.jar|6.2.x|3.0.x|2.0|2.1|
-|[1.0.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/1.0.x)|com.liferay.faces.bridge.ext-1.0.0.jar|6.2.x|2.0.x|2.0|1.2|
+|[6.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/6.x)|com.liferay.faces.bridge.ext-6.0.0.jar|*Future*|5.x|3.0|2.2|
+|[5.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/5.x)|com.liferay.faces.bridge.ext-5.0.0.jar|7.0.x|4.x|2.0|2.2|
+|[4.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/4.x)|RESERVED|N/A|N/A|N/A|N/A|
+|[3.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/3.x)|com.liferay.faces.bridge.ext-3.0.0.jar|6.2.x|4.x|2.0|2.2|
+|[2.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/2.x)|com.liferay.faces.bridge.ext-2.0.0.jar|6.2.x|3.x|2.0|2.1|
+|[1.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/1.x)|com.liferay.faces.bridge.ext-1.0.0.jar|6.2.x|2.x|2.0|1.2|
 
 ## Liferay Faces Metal [](id=liferay-faces-metal)
 
@@ -50,7 +50,7 @@ Provides a suite of JSF components that utilize
 
 |Branch|Example Artifact|&nbsp;&nbsp;MetalJS&nbsp;&nbsp;|&nbsp;&nbsp;JSF API&nbsp;&nbsp;|Additional Info|
 |------|----------------|:---------:|:-------:|---------------|
-|[master (1.0.x)](https://github.com/liferay/liferay-faces-metal/tree/master)|com.liferay.faces.metal-1.0.0.jar|1.0.x|2.2+|*Metal.js 1.0.x is the version that comes bundled with Liferay Portal 7.0.*|
+|[master (1.x)](https://github.com/liferay/liferay-faces-metal/tree/master)|com.liferay.faces.metal-1.0.0.jar|1.0.x|2.2+|*Metal.js 1.x is the version that comes bundled with Liferay Portal 7.0.*|
 
 ## Liferay Faces Portal [](id=liferay-faces-portal)
 
@@ -59,9 +59,9 @@ Provides a suite of JSF components that are based on the JSP tags provided by
 
 |Branch|Example Artifact|Liferay Portal API&nbsp;&nbsp;|&nbsp;&nbsp;JSF API|
 |------|----------------|:------------------:|:-------:|
-|[master (3.0.x)](https://github.com/liferay/liferay-faces-portal/tree/master)|com.liferay.faces.portal-3.0.0.jar|7.0.x|2.2+|
-|[2.0.x](https://github.com/liferay/liferay-faces-portal/tree/2.0.x)|com.liferay.faces.portal-2.0.0.jar|6.2.x|2.1+|
-|[1.0.x](https://github.com/liferay/liferay-faces-portal/tree/1.0.x)|com.liferay.faces.portal-1.0.0.jar|6.2.x|1.2|
+|[3.x](https://github.com/liferay/liferay-faces-portal/tree/3.x)|com.liferay.faces.portal-3.0.0.jar|7.0.x|2.2+|
+|[2.x](https://github.com/liferay/liferay-faces-portal/tree/2.x)|com.liferay.faces.portal-2.0.0.jar|6.2.x|2.1+|
+|[1.x](https://github.com/liferay/liferay-faces-portal/tree/1.x)|com.liferay.faces.portal-1.0.0.jar|6.2.x|1.2|
 
 ## Liferay Faces Util [](id=liferay-faces-util)
 
@@ -70,9 +70,9 @@ sub-projects that comprise Liferay Faces.
 
 |Branch|Example Artifact|&nbsp;&nbsp;JSF API|
 |------|----------------|:-------:|
-|[master (3.0.x)](https://github.com/liferay/liferay-faces-util/tree/master)|com.liferay.faces.util-3.0.0.jar|2.2|
-|[2.0.x](https://github.com/liferay/liferay-faces-util/tree/2.0.x)|com.liferay.faces.util-2.0.0.jar|2.1|
-|[1.0.x](https://github.com/liferay/liferay-faces-util/tree/1.0.x)|com.liferay.faces.util-1.0.0.jar|1.2|
+|[3.x](https://github.com/liferay/liferay-faces-util/tree/3.x)|com.liferay.faces.util-3.0.0.jar|2.2|
+|[2.x](https://github.com/liferay/liferay-faces-util/tree/2.x)|com.liferay.faces.util-2.0.0.jar|2.1|
+|[1.x](https://github.com/liferay/liferay-faces-util/tree/1.x)|com.liferay.faces.util-1.0.0.jar|1.2|
 
 Now that you know all about the Liferay Faces versioning scheme, you may be
 curious as to how these components interact with each other. Refer to the
