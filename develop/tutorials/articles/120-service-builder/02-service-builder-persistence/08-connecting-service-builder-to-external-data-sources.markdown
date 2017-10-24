@@ -1,4 +1,4 @@
-# Connecting to External Data Sources in Service Builder [](id=connecting-to-jndi-data-sources-from-service-builder)
+# Connecting Service Builder to External Data Sources [](id=connecting-service-builder-to-external-data-sources)
 
 There may be cases in which you want to use a data source other than @product@'s
 data source. The data source might be configured as a JNDI data source on

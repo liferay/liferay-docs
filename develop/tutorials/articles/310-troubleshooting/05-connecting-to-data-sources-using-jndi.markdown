@@ -79,4 +79,4 @@ $$$
 
 ## Related Topics [](id=related-topics)
 
-[Connecting to JNDI Data Sources from Service Builder](/develop/tutorials/-/knowledge_base/7-0/connecting-to-jndi-data-sources-from-service-builder)
+[Connecting Service Builder to External Data Sources](/develop/tutorials/-/knowledge_base/7-0/connecting-service-builder-to-external-data-sources)
