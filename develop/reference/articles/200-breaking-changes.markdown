@@ -470,23 +470,23 @@ one.
 
 ---------------------------------------
 
-### Removed Support for Velocity in Themes
+### Removed Support for Velocity in Themes [](id=removed-support-for-velocity-in-themes)
 - **Date:** 2017-Oct-19
 - **JIRA Ticket:** LPS-74379
 
-#### What changed?
+#### What changed? [](id=what-changed-9)
 
 - Themes can no longer use Velocity for templates.
 - Some helper methods have been removed from the public APIs
 `com.liferay.portal.kernel.util.ThemeHelper` and
 `com.liferay.taglib.util.ThemeUtil`.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-9)
 
 This affects anyone who has themes using Velocity templates or is using the
 removed methods.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-9)
 
 If you have a theme using Velocity, consider migrating it to FreeMarker for
 better maintenance and improved security.
@@ -495,7 +495,7 @@ If you are using the removed methods, consider using the
 `com.liferay.portal.kernel.template.Template` functionality directly to process
 templates.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-9)
 
 Velocity was deprecated in Liferay Portal 7.0 and the recommendation was to
 migrate to FreeMarker. Also, Velocity has had no new releases for a long time.
