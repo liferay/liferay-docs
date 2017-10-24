@@ -1,7 +1,7 @@
 # Understanding the Liferay Faces Version Scheme [](id=understanding-the-liferay-faces-version-scheme)
 
-In this tutorial, you'll learn which Liferay Faces artifacts should be used with
-your portlet and explore the Liferay Faces versioning scheme, and what
+In this article, you'll learn which Liferay Faces artifacts should be used with
+your portlet and explore the Liferay Faces versioning scheme by discovering what
 each component of a version means. For Liferay Portal 6.2, there are two
 supported version schemes. The first "older" version scheme is supported from
 previous Liferay versions up to Liferay Portal 6.2. This version scheme is
@@ -15,9 +15,9 @@ the newer version scheme.
 
 The [Liferay Faces Archetype portlet](http://liferayfaces.org) can be used to
 determine the Liferay Faces artifacts and versions that you should include in
-your portlet. Select your preferred version of Liferay Portal, JSF, optionally a
-component suite, and your preferred build tool, and the portlet will provide you
-with both a command to generate your portlet from a maven archetype and a list
+your portlet. Select your preferred Liferay Portal version, JSF version,
+component suite (optional), and build tool, and the portlet will provide you
+with both a command to generate your portlet from a Maven archetype and a list
 of dependencies that can be copied into your build files. In the next section,
 you'll be provided with compatibility information about each version of the
 Liferay Faces artifacts after GA6.
@@ -94,7 +94,7 @@ in action.
 
 ## Example Configurations [](id=example-configurations)
 
-### Liferay Portal 7.0: AlloyUI 3.0 / Liferay Faces Portal 3 / Portlet 2.0 / JSF 2.2 [](id=liferay-portal-7-0-alloyui-3-0-liferay-faces-portal-3--portlet-2-0--jsf-2-2)
+### Liferay Portal 7.0: AlloyUI 3.0 / Liferay Faces Portal 3 / Portlet 2.0 / JSF 2.2 [](id=example-configuration-liferay-portal-7-0)
 
     <dependencies>
         <dependency>
@@ -119,7 +119,7 @@ in action.
         </dependency>
     </dependencies>
 
-### Liferay Portal 6.2: AlloyUI 2.0 / Liferay Faces Portal 2 / Portlet 2.0 / JSF 2.2 [](id=liferay-portal-6-2-alloyui-2-0-liferay-faces-portal-2--portlet-2-0--jsf-2-2)
+### Liferay Portal 6.2: AlloyUI 2.0 / Liferay Faces Portal 2 / Portlet 2.0 / JSF 2.2 [](id=example-configuration-liferay-portal-6-2)
 
     <dependencies>
         <dependency>
@@ -144,7 +144,7 @@ in action.
         </dependency>
     </dependencies>
 
-### Liferay Portal 6.2: AlloyUI 2.0 / Liferay Faces Portal 2 / Portlet 2.0 / JSF 2.1 [](id=liferay-portal-6-2-alloyui-2-0-liferay-faces-portal-2--portlet-2-0--jsf-2-1)
+### Liferay Portal 6.2: AlloyUI 2.0 / Liferay Faces Portal 2 / Portlet 2.0 / JSF 2.1 [](id=example-configuration-2-liferay-portal-6-2)
 
     <dependencies>
         <dependency>
@@ -169,7 +169,7 @@ in action.
         </dependency>
     </dependencies>
 
-### Apache Pluto 3.0: Portlet 3.0 / JSF 2.2 [](id=apache-pluto-3-0-portlet-3-0--jsf-2-2)
+### Apache Pluto 3.0: Portlet 3.0 / JSF 2.2 [](id=example-configuration-apache-pluto-3-0)
 
 	<dependencies>
 		<dependency>
