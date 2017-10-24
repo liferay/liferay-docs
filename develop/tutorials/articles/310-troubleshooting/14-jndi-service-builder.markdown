@@ -1,22 +1,55 @@
-# Connecting to JNDI Data Sources from Service Builder [](id=connecting-to-jndi-data-sources-from-service-builder)
+# Connecting to External Data Sources in Service Builder [](id=connecting-to-jndi-data-sources-from-service-builder)
 
-There may be cases in which @product@'s application server defines a JNDI data 
-source that you want to use from a 
-[Liferay Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder) 
-module. Follow these steps to use such a data source: 
+There may be cases in which you want to use a data source other than @product@'s
+data source. The data source might be configured as a JNDI data source on
+@product@'s app server and might be local or remote. This tutorial shows how to
+connect
+[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+to such a data source. Here's how: 
 
-1.  Create a Spring bean that points to the JNDI data source you want to use. To
-    do this, create a file called `ext-spring.xml` in your Service Builder
-    module's `src/main/resources/META-INF/spring` folder. In this file, define
-    the following: 
+1.  If @product@'s application server defines the data source using JNDI, skip
+    this step. Otherwise, specify the data source in a `portal-ext.properties`
+    file. Distinguish it from @product@'s default data source by giving it a
+    prefix other than `jdbc.default.`. This example uses prefix `jdbc.ext.`:
 
-    -   A data source factory Spring bean for the JNDI data source you want to
-    use. 
+        jdbc.ext.driverClassName=org.mariadb.jdbc.Driver
+        jdbc.ext.password=userpassword
+        jdbc.ext.url=jdbc:mariadb://localhost/external?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+        jdbc.ext.username=yourusername
+
+2.  Create a Spring bean that points to the data source. To do this, create an
+    `ext-spring.xml` file in your Service Builder module's
+    `src/main/resources/META-INF/spring` folder or in your traditional portlet's
+    `WEB-INF/src/META-INF` folder. Define the following elements: 
+
+    -   A data source factory Spring bean for the data source. Specify the data 
+        source based on how it's defined.
+        -   **JNDI**: Specify an arbitrary property prefix and prepend the 
+            prefix to a JNDI name property key. Here's an example:
+
+                <bean class="com.liferay.portal.dao.jdbc.spring.DataSourceFactoryBean"
+                    id="liferayDataSourceFactory">
+                    <property name="propertyPrefix" value="custom." />
+                    <property name="properties">
+                        <props>
+                            <prop key="custom.jndi.name">jdbc/externalDataSource</prop>
+                        </props>
+                    </property>
+                </bean>
+
+        -   **Portal Properties**: Specify a property prefix that matches the   
+            prefix (e.g., `jdbc.ext.`) you used in `portal-ext.properties`.
+
+                <bean class="com.liferay.portal.dao.jdbc.spring.DataSourceFactoryBean"
+                    id="liferayDataSourceFactory">
+                    <property name="propertyPrefix" value="jdbc.ext." />
+                </bean>
+
     -   A @product@ data source bean that refers to the data source factory
-    Spring bean.  
+        Spring bean.  
     -   An alias for the @product@ data source bean. 
 
-    Here's an example: 
+    Here's an example `ext-spring.xml` that points to a JNDI data source: 
 
         <?xml version="1.0"?>
 
@@ -54,14 +87,29 @@ module. Follow these steps to use such a data source:
            <alias alias="extDataSource" name="liferayDataSource" />
         </beans>
 
-    The XML code above overrides data source bean `liferayDataSource` with one
-    that refers to a JNDI data source named `jdbc/externalDataSource`.
-    Alias `extDataSource` refers to the
-    `liferayDataSource` data source bean. The example `service.xml` file uses the alias to refer
-    to the data source bean. 
+    The `liferayDataSourceFactory` above refers to a JNDI data source named
+    `jdbc/externalDataSource`. If the data source was specified via data source
+    properties in a `portal-ext.properties` file, the bean would require only a
+    `propertyPrefix` property that matches the data source property prefix.
+    
+    The data source bean `liferayDataSource` is overridden with one
+    that refers to the `liferayDataSourceFactory` bean. The override affects
+    this bundle (module or
+    [Web Application Bundle](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)) 
+    only. 
 
-2.  In your Service Builder module's `service.xml` file, specify the data
-    source alias `extDataSource` as your entity's data source. Here's an example: 
+    Alias `extDataSource` refers to the `liferayDataSource` data source bean. 
+    
+    +$$$
+    
+    **Note**: To use an external data source in multiple Service Builder
+    bundles, you must override the `liferayDataSource` bean in each bundle. 
+    
+    $$$
+
+2.  In your Service Builder module's `service.xml` file, set your entity's
+    data source to the `liferayDataSource` alias you specified in your
+    `ext-spring.xml` file. Here's an example: 
 
         <?xml version="1.0"?>
         <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN"
@@ -71,36 +119,29 @@ module. Follow these steps to use such a data source:
             <namespace>TestDB</namespace>
             <entity local-service="true" name="Foo" table="testdata" data-source="extDataSource"
                     remote-service="false" uuid="false">
-   	            <column name="id" db-name="id" primary="true" type="long" />
-   	            <column name="foo" db-name="foo" type="String" />
-   	            <column name="bar" db-name="bar" type="long" />
+                   <column name="id" db-name="id" primary="true" type="long" />
+                   <column name="foo" db-name="foo" type="String" />
+                   <column name="bar" db-name="bar" type="long" />
             </entity>
         </service-builder>
 
-    Note the following `<entity>` tag attributes from this example: 
+    Note the example's `<entity>` tag attributes: 
 
-    -   `data-source`: The data source's name. You can choose whatever name you
-        want. You'll create a Spring bean with the same name that points to the
-        JNDI data source you want to use. 
-    -   `table`: The name of the database table that corresponds to your
-        entity. 
+    -   `data-source`: The `liferayDataSource` alias your `ext-spring.xml`
+        specified.
+    -   `table`: Your entity's database table. 
 
-        Also note that in each of your entity's `<column> tags`, you must set
-        the `db-name` attribute to the name of that entity's database column.
+    Also note that your entity's `<column>`s must have a `db-name` attribute set to the column name.
 
-3.  Run Service Builder. To do this via the command line for a Gradle project, 
-    navigate to your Service Builder module project's root folder and run 
-    `gradlew buildService`. Note that you can also run Service Builder from 
-    within Liferay @ide@. For more information on this, see 
-    [the tutorial on running Service Builder](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code). 
+3.  [Run Service Builder](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code).
 
-Now your Service Builder services use the JNDI data source. You can implement
+Now your Service Builder services use the data source. You can
 [use the services in your business logic](/develop/tutorials/-/knowledge_base/7-0/business-logic-with-service-builder)
-the same way regardless of the underlying data source. 
+as you always have regardless of the underlying data source. 
 
 ## Related Topics [](id=related-topics)
 
-[Connecting to Data Sources Using JNDI](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi)
+[Connecting to JNDI Data Sources](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi)
 
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
 
