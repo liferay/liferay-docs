@@ -1,17 +1,17 @@
 # Liferay Faces Version Scheme [](id=liferay-faces-version-scheme)
 
 In this article, you'll learn which Liferay Faces artifacts should be used with
-your portlet and explore the Liferay Faces versioning scheme and what each
-component of a version means. Once you have the versioning scheme mastered, you
-can view several example configurations.
+your portlet and explore the Liferay Faces versioning scheme by discovering what
+each component of a version means. Once you have the versioning scheme mastered,
+you can view several example configurations.
 
 ## Using The Liferay Faces Archetype Portlet [](id=using-the-liferay-faces-archetype-portlet)
 
 The [Liferay Faces Archetype portlet](http://liferayfaces.org) can be used to
-determine the Liferay Faces artifacts and versions that you should include in
-your portlet. Select your preferred version of Liferay Portal, JSF, optionally a
-component suite, and your preferred build tool, and the portlet will provide you
-with both a command to generate your portlet from a maven archetype and a list
+determine the Liferay Faces artifacts and versions that you must include in
+your portlet. Select your preferred Liferay Portal version, JSF version,
+component suite (optional), and build tool, and the portlet will provide you
+with both a command to generate your portlet from a Maven archetype and a list
 of dependencies that can be copied into your build files. In the next section,
 you'll be provided with compatibility information about each version of the
 Liferay Faces artifacts.
@@ -88,7 +88,7 @@ in action.
 
 ## Example Configurations [](id=example-configurations)
 
-### Liferay Portal 7.0: AlloyUI 3.0 / Liferay Faces Portal 3 / Portlet 2.0 / JSF 2.2 [](id=liferay-portal-7-0-alloyui-3-0-liferay-faces-portal-3--portlet-2-0--jsf-2-2)
+### Liferay Portal 7.0: AlloyUI 3.0 / Liferay Faces Portal 3 / Portlet 2.0 / JSF 2.2 [](id=example-configuration-liferay-portal-7-0)
 
     <dependencies>
         <dependency>
@@ -113,7 +113,7 @@ in action.
         </dependency>
     </dependencies>
 
-### Apache Pluto 3.0: Portlet 3.0 / JSF 2.2 [](id=apache-pluto-3-0-portlet-3-0--jsf-2-2)
+### Apache Pluto 3.0: Portlet 3.0 / JSF 2.2 [](id=example-configuration-apache-pluto-3-0)
 
     <dependencies>
         <dependency>
