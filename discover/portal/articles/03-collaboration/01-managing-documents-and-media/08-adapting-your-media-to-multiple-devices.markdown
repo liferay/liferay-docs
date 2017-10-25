@@ -18,7 +18,7 @@ device that consumes it. It runs on both Liferay Portal CE 7.0 and Liferay DXP.
 uses adapted images, but content that existed previously still uses original 
 images. To adapt these old content entries you must manually edit each of them. 
 This can be time consuming. To automate this process, you can deploy the 
-[`adaptive-media-image-content-transformer-backwards-compaitibility` module](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-content-transformer-backwards-compatibility).
+[`adaptive-media-image-content-transformer-backwards-compatibility` module](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-content-transformer-backwards-compatibility).
 
 Note that all transformations are performed both at startup and when a user
 views it. This can affect the performance. Therefore we recommend that you run
