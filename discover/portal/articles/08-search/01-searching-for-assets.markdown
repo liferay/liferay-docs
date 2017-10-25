@@ -1,6 +1,6 @@
 # Searching for Assets
 
-As explained in the introduction to this section, all indexed assets can be
+As explained in the [introduction to this section](LINK), all indexed assets can be
 returned as search results. Since any developer can create their own assets,
 your @product@ instance might have additional asset types beyond the ones that
 @product@ ships with by default. 
@@ -23,20 +23,21 @@ $$$
 
 **Versioning Note:** If there are multiple versions of a piece of content, the
 latest approved version is the only one searched.
+<!-- IS THIS A SEARCH THING OR AN INDEXING DECISION THAT'S UP TO THE COMPONENT
+TEAM?-->
 
 $$$
+
 Searching for Assets https://github.com/rbohl/liferay-docs/blob/lrdocs-3595-new-search-portlet/discover/portal/articles/08-search/00-intro.markdown#searching-for-assets-
 
-
-## Search Bar and configuring Search Bar
+## Search Bar
 
 The search bar is where users enter the search context. It's pretty
 straightforward. Users enter search terms, click enter or on the magnifying
 glass icon, and they're taken to a maximized view of the search portlet
 displaying any results and facets that apply.
 
-
-## Entering terms in the search bar. 
+### Entering Search Terms 
 
 @product@, backed by Elasticsearch, supports *full text search*. It does not,
 however, support advanced search syntax, such as Elasticsearch's [query string
@@ -45,8 +46,7 @@ That means you can't search specific fields, use wildcards like *\**, or boolean
 operators like *AND/OR/NOT*. Liferay is considering enabling the use of string
 queries out of the box in a future version of @product@.
 
-
-## Title prefix searching, e.g. “engineer” finds titles with “engineering”, “engineered”
+### Title prefix searching, e.g. “engineer” finds titles with “engineering”, “engineered”
 
 One of the cool features of @product@ search is *prefix* searching. For example,
 if you're searching in a site for classical musicians, you might search for the
@@ -55,6 +55,8 @@ word in them, but also other variants of the word, like *instruments*,
 *instrumental*, and *instrumentation*.
 
 ![Figure x: Searching for *data* in @product@'s Search application also returns *database*.](../../images/search-prefix.png)
+
+### Configuring the Search Bar
 
 ## Spell Checking user Queries https://github.com/rbohl/liferay-docs/blob/lrdocs-3595-new-search-portlet/discover/portal/articles/08-search/01-default-search-behavior.markdown#spell-checking-user-queries-
 
@@ -116,6 +118,7 @@ haystack. To learn more, read the next article on how facets let users narrow
 down search results to find just what they were looking for.
 -->
 
-## Search Display Page - good way to segway into Search Results section
+<!-- For 7.1 only ## Search Display Page - good way to segway into Search
+Results section -->
 
 
