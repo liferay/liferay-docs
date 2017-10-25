@@ -1,18 +1,18 @@
-# Sample Modules [](id=sample-modules)
+# Sample Projects [](id=sample-modules)
 
 +$$$
 
 **Note:** This section of articles does not provide documentation for *all*
-sample modules residing in the `liferay-blade-samples` repo. The documentation
+sample projects residing in the `liferay-blade-samples` repo. The documentation
 for these samples is in progress and will grow over time.
 
 $$$
 
-Liferay provides sample modules that target different integration points in
-@product@. These modules reside in the
+Liferay provides sample projects that target different integration points in
+@product@. These projects reside in the
 [liferay-blade-samples](https://github.com/liferay/liferay-blade-samples)
 Github repository and can be easily copy/pasted to your local environment. The
-sample modules are grouped into three different parent folders based on the
+sample projects are grouped into three different parent folders based on the
 build tools used to generate them:
 
 - `gradle`
@@ -29,6 +29,6 @@ The Gradle and Maven tool folders mix WAR samples with the other sample types
 
 $$$
 
-For more information on these sample modules, visit the 
-[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+For more information on these sample projects, visit the 
+[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 tutorial.

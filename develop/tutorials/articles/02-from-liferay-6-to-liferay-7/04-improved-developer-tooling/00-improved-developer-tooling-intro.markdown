@@ -304,7 +304,7 @@ Liferay has worked hard to make @product@ IDE-agnostic. There are Liferay module
 developers who use IntelliJ and some enjoy using NetBeans.
 
 Finally, you can copy and modify 
-[Liferay sample modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules) 
+[Liferay sample projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules) 
 to serve as templates in place of the Blade templates. They're available for
 these build systems:
 
