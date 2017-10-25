@@ -115,7 +115,7 @@ already be be exported if Liferay intended for it to be available.
 
 In this case, the class belongs to Java's `rt.jar` but the package isn't
 specified in the OSGi Framework's boot delegation list. `rt.jar`'s `java.*`
-packages are its only ones available on the classpath automatically; its other
+packages are the only ones available on the classpath automatically; other
 packages must be specified in the boot delegation list to get on the classpath.
 
 Here's how to add packages to the boot delegation list:

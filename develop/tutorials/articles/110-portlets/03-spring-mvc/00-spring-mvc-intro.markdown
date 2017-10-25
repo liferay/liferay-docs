@@ -27,7 +27,7 @@ Spring MVC framework is designed for Java EE. Therefore, it expects a WAR layout
 and requires Java EE resources such as the `WEB-INF/web.xml` descriptor. 
 
 Because Liferay supports the OSGi WAB (Web Application Bundler) standard for
-deployment, you can deploy your WAR and it will run as expected in the OSGi
+deployment, you can deploy your WAR and it runs as expected in the OSGi
 runtime. Here are the high points on why that works in @product-ver@:
 
 -   The Liferay auto-deploy process runs, adding the `PortletServlet` and
