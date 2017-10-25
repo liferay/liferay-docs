@@ -58,8 +58,8 @@ After upgrading your plugins you can consider optimizations such as these:
     to leverage Declarative Services, extendability, and more
     [modularity benefits](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers).
 -   Using the
-    [Liferay Lexicon](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app)
-    design language to apply a clean consistent application user experience. 
+    [Lexicon](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app),
+    to apply a clean consistent application user experience. 
 
 See the
 [optimization tutorials](/develop/tutorials/-/knowledge_base/7-0/optimizing-plugins-for-liferay-7)

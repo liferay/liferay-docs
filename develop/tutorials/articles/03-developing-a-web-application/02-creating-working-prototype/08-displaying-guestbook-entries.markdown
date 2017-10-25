@@ -176,11 +176,3 @@ that adds and saves guestbook entries.
 The way you're saving the entries isn't the best way to persist data in your 
 application. Next, you'll use Service Builder to generate your persistence 
 classes and the methods you need to store your application data in the database. 
-
-## Next Steps [](id=next-steps)
-
-Here are more tutorials that you might find interesting:
-
-[Creating Liferay Applications](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-applications)
-
-[Creating Liferay Components](/develop/tutorials/-/knowledge_base/7-0/creating-liferay-components)

@@ -135,7 +135,7 @@ Contains imports for layout styles and variables.
 
 ### _liferay_custom.scss [](id=liferaycustom-scss)
 
-Contains Liferay styles that are compiled in the same scope as Bootstrap/Lexicon.
+Contains @product@ styles that are compiled in the same scope as Bootstrap/Lexicon.
 
 **It's recommended that you NOT overwrite this file.**
 

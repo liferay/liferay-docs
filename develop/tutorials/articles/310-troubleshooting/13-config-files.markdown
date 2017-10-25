@@ -116,7 +116,7 @@ issue:
     java.io.IOException: Unexpected token 78; expected: 61 (line=0, pos=107)
 
 To resolve this, fix the 
-[configuration file's syntax](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-liferay-portal-modules#configuration-file-formats). 
+[configuration file's syntax](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-product-modules#configuration-file-formats). 
 
 Great! Now you know how to configure module components using configuration 
 files. 
