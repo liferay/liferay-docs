@@ -133,7 +133,7 @@ Once you have a configuration file, deploy it so @product@ recognizes it and
 updates the targeted configuration values. 
 
 To deploy the `.config` file, place it in your 
-[Liferay Home's](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
+[Liferay Home's](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) 
 `osgi/configs` folder. To change the configuration further, you can edit the 
 `.config` file directly or use System Settings. 
 

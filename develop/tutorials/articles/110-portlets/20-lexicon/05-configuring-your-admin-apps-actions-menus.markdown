@@ -11,7 +11,7 @@ For example, the web content application has the actions menu shown below:
 
 The changes covered in this tutorial do not refer to actions menus associated 
 with entities. For those, see 
-[Applying Lexicon Patterns to Your Forms, Navigation, and Search](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-patterns-to-forms-navigation-and-search#applying-lexicon-patterns-to-forms-navigation-and-search). 
+[Applying Lexicon Patterns to Your Forms, Navigation, and Search](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-patterns-to-forms-navigation-and-search). 
 
 This tutorial shows how to configure the actions menu in your admin app. The
 first step is to create the `PortletConfigurationIconFactory` class.
