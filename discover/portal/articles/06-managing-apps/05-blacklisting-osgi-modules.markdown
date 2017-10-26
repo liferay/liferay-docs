@@ -22,7 +22,8 @@ Follow these steps to blacklist a module:
 
 2.  In the configuration file, add `blacklistBundleSymbolicNames=` followed by
     the symbolic names of OSGi modules to uninstall or to keep from installing.
-    The modules can be from LPKG, JAR, WAR, or WAR wrapper files. (Be very careful that there are no spaces or anything after any line.)
+    The modules can be from LPKG, JAR, WAR, or WAR wrapper files. Refrain from
+    using any extra spaces or trailing whitespace. 
 
 3.  Copy the configuration file into the 
     `[Liferay_Home]/osgi/configs` folder to deploy it. 
