@@ -1,32 +1,31 @@
 # Understanding System Configuration Files [](id=understanding-system-configuration-files)
 
-@product@'s [System Settings
-application](/discover/portal/-/knowledge_base/7-0/system-settings) is
-convenient for making system-scoped configuration changes and setting default
+@product@'s 
+[System Settings application](/discover/portal/-/knowledge_base/7-0/system-settings) 
+is convenient for making system-scoped configuration changes and setting default
 configurations for other
 [scopes](/discover/portal/-/knowledge_base/7-0/configuring-liferay#configuration-scope).
-But there's another supported configuration approach: configuration files.
-Configuration files are useful for transferring configurations from
-pre-production systems to production systems, or between any other @product@
-systems. Sometimes application developers might even choose to distribute the
-default configuration for their application via configuration file. Whatever the
-reason, configuration files are a straightforward way of configuring @product@.
+But there's another supported configuration approach: configuration files. You
+can use configuration files to transfer configurations from pre-production
+systems to production systems, or between any other @product@ systems. Sometimes
+developers choose to distribute the default configuration for their applications
+via configuration file. Whatever the reason, configuration files are
+a straightforward way of configuring @product@.
 
 ## Creating Configuration Files [](id=creating-configuration-files)
 
 System Settings provides an
 [*Export*](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations)
 option that becomes available once you modify a configuration entry. Exporting
-lets you download a `.config` file with all of the entry's settings in a
-`key=value` format, and it's the recommended way to create `.config` files for
-@product@. All available configuration keys and values are exported for an entry,
-even if only one value was changed. It's possible to export either a single
-configuration entry or the entire set of modified configurations in @product@.
+is the recommended way to create `.config` files: you download a `.config` file
+containing the entry's settings in a `key=value` format. @product@ exports an
+entry's total available configuration keys and values, even if only one value
+was changed. You can export a single configuration entry or the entire set of
+modified configurations in @product@.
 
-Configuration files in @product@ must be named using a unique identifier so that
-configuration files for different entries don't conflict. For example, this is
-the name of the configuration file for the Journal Service entry, which backs
-Liferay's Web Content capabilities:
+To avoid a file name conflict, name configuration files using a unique
+identifier. For example, the Journal Service entry, which backs Liferay's Web
+Content capabilities, has this file name:
 
     com.liferay.journal.configuration.JournalServiceConfiguration.config
 
@@ -36,10 +35,9 @@ Configuration files use the `.config` property value format defined by the [Apac
 Felix Configuration Admin
 framework](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html).
 
-@product@ also supports the `.cfg` file format, which is common in some OSGi
-environments. However, `.config` files are preferable, as they allow for
-multi-valued properties and the ability to specify a property value's type. The
-syntax described below is for `.config` files.
+The `.cfg` file format is common in OSGi environments, so @product@ supports it,
+but `.config` files are preferable. You can specify a property value's type, and
+have multi-valued properties. The syntax described below is for `.config` files.
 
 ### Key/Value Syntax [](id=key-value-syntax)
 
@@ -53,7 +51,7 @@ modifications.
 
 ### Multi-Value Settings [](id=multi-value-settings)
 
-Some configuration entries have properties that accept multiple values. For
+Configuration entries can have properties that accept multiple values. For
 example, a configuration property for specifying supported file extensions needs
 more than one value. Here's how to write a multi-value setting in a `.config`
 file: 
@@ -76,7 +74,7 @@ Double quotes (`"`) and equals signs (`=`) must be *escaped* in `.config` files.
 Escaping is using another character to denote that a character shouldn't be used 
 in its normal way. Since double quotes and equals signs are already used in 
 `.config` files, escaping them tells the framework not to read them the normal 
-way, but to pass them through as part of the value. Use a `\` to escape 
+way, but to pass them through as part of the value. Use a `\\` to escape 
 characters in the `.config` file: 
 
     charactersblacklist=["&","\"","\="]
@@ -104,9 +102,8 @@ type has *B* just before the value to mark it as a boolean type:
 
     addDefaultStructures=B"true"
 
-If you see type markers in `.config` files (they'll show up under certain
-conditions), you can safely ignore them. The example included above functions
-identically without the type marker: 
+If you see type markers in `.config` files, you can safely ignore them. The
+example included above functions identically without the type marker: 
 
     addDefaultStructures="true"
 
@@ -115,54 +112,49 @@ identically without the type marker:
 In a clustered environment, each node needs the same configuration values for
 each entry. For example, all nodes should use the same *Blogs* configuration
 settings. To accomplish this, deploy a `.config` file to *one* node. @product@
-uses an internal system for making sure all the nodes in the cluster hear about
-the configuration change and apply it.
+uses an internal system that appies the change to all nodes in the cluster. 
 
 ## Factory Configurations [](id=factory-configurations)
 
 Configurations supporting multiple independent occurrences of the same
-configuration entry are known as *factory configurations*.
+configuration entry are called *factory configurations*.
 
 +$$$
 
-**Factory Configuration Example:** @product@ supports the publication of [JAX-WS
-and JAX-RS web
-services](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs). These
-services must use a [CXF
-Endpoint](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs#cxf-endpoints),
+**Factory Configuration Example:** @product@ supports the publication of 
+[JAX-WS and JAX-RS web services](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs). 
+These services must use a 
+[CXF Endpoint](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs#cxf-endpoints),
 which is a context path where the web services are deployed and accessed.
 Endpoints can be created via factory configuration by navigating to the CXF
 Endpoints System Settings Entry (System Settings &rarr; Foundation &rarr; CXF
-Endpoints). Using the Add button (![Add](../../../images/icon-add.png)), the
-administrator enters the desired configuration values and repeats the process,
-adding as many CXF Endpoint configurations as needed. The creation of CXF
-Endpoint configurations also creates CXF Endpoints themselves. This is how
-factory configuration works. 
+Endpoints). Using the Add button (![Add](../../../images/icon-add.png)), 
+enter the desired configuration values and repeat the process, adding as many
+CXF Endpoint configurations as needed. Creating CXF Endpoint configurations also
+creates CXF Endpoints themselves. This is how factory configuration works. 
 
 $$$
 
 If a service is meant to support factory configuration, its System Settings
 entry has an Add button (![Add](../../../images/icon-add.png)).
 
-![Figure 3: If a System Settings entry has an Add button, it's suitable
-for factory configuration.](../../../images/factory-configuration-entry.png)
+![Figure 3: If a System Settings entry has an Add button, it's suitable for factory configuration.](../../../images/factory-configuration-entry.png)
 
-As with regular old single-instance configurations, you can accomplish factory
+As with single-instance configurations, you can accomplish factory
 configuration in the System Settings interface (as described in the example
-above) or via configuration files. Once you determine that you need to write a
-factory configuration file, how do you do it? It's all in the name. A standard
-single-instance configuration file is named like this:
+above) or via configuration files. Once you determine you must write a factory
+configuration file. Name a standard single-instance configuration file like
+this:
 
     my.service.ServiceConfiguration.config
 
-If this service supported factory configuration, how would you name it
-differently? Liferay uses a convention of calling the first instance of the
-configuration `-default.config`:
+If your service supports factory configuration, use Liferay's convention
+of calling the first instance of the configuration `-default.config`:
 
     my.service.ServiceConfiguration-default.config
 
-The next instance would contain a unique *subname* (something other than
-*default*). It's smart to use a descriptive name:
+The next instance contains a unique *subname* (something other than *default*).
+It's smart to use a descriptive name:
 
     my.service.ServiceConfiguration-port9080.config
 
@@ -188,10 +180,10 @@ for its subname, like
 
     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-a6f67e48-6dca-49c6-bf6b-8fd5e6016b2d.config
 
-This is simply to guarantee that the file has a unique name. If you're exporting
+This is to guarantee that the file has a unique name. If you're exporting
 the configuration file for deployment in a *separate @product@ system*, you can
 rename the exported file to use a more descriptive subname. If you rename the
-file and deploy it to the same system from which it was exported, the new
+file and deploy it to the same system it was exported from, the new
 subname marks it as an entirely new configuration. You'll end up with an
 additional configuration instance in this case, not just a renamed one.
 
