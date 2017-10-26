@@ -18,7 +18,7 @@ coffee mugs, and tee-shirts. They even offer to burn media files onto DVDs.
 Let's explore how the media team shows off the guest's pics and videos on a
 site.
 
-## Creating a Media Page
+## Creating a Media Page [](id=creating-a-media-page)
 
 The media team creates a page for each guest party. Team members can customize
 each page to focus on each party's media. Each party's media page will have a

@@ -19,7 +19,7 @@ groups of users to store, organize, and share files. And no matter what kinds of
 files you work with, the fundamentals of granting file operation permissions is
 the same. Let's explore how to do this for the Lunar Resort.
 
-## Granting File Permissions and Roles
+## Granting File Permissions and Roles [](id=granting-file-permissions-and-roles)
 
 The Lunar Resort needs to manage carefully who can add, view, and update groups
 of files. The resort stores in their Documents and Media libraries all kinds of
@@ -67,7 +67,7 @@ and Media library, you need a place for that role to manage Lunar Resort guest
 media. A Documents and Media folder fits the bill. In the folder we'll create,
 the role will add, organize, and share the guest media files. 
 
-## Using the Add Menu
+## Using the Add Menu [](id=using-the-add-menu)
 
 Open the Menu, click on your site's name, and navigate to *Content &rarr;
 Documents and Media* for your site. The Documents and Media screen appears and
@@ -124,7 +124,7 @@ Library applies the metadata fields associated with the document type to your
 document. On selecting a document type, you're prompted to fill in the fields
 associated with it. 
 
-## Creating Folders
+## Creating Folders [](id=creating-folders)
 
 Let's continue with our example and create folders to organize the Lunar Resort
 guest photos and videos that we'll upload. From the document library's Add menu,
@@ -153,7 +153,7 @@ workflow settings.
 You've created a folder named *Resort Guest Media*. You can now specify its
 permissions. 
 
-## Setting Folder Permissions
+## Setting Folder Permissions [](id=setting-folder-permissions)
 
 Since we only want the *Resort Guest Media Manager* role to manage files in it, 
 we must fine tune the folder's permissions. Click on the folder's *Actions* icon (![Actions](../../../../images/icon-actions.png)) and select the *Permissions* 
@@ -218,7 +218,7 @@ In your Document Library's *Resort Guest Media* folder, you've created a
 subfolder named *Spacey Party*. Next, let's add the Spacey's photos to the
 subfolder.
 
-## Adding Multiple Documents
+## Adding Multiple Documents [](id=adding-multiple-documents)
 
 There are a few different ways you can add image files, or any file for that
 matter. You can add them one at a time or add multiple files simultaneously.
@@ -243,7 +243,7 @@ taken back to the folder you're adding files to.
 
 ![Figure 4: Documents and Media conveniently lets you add multiple files at once.](../../../../images/dm-add-multiple-files.png)
 
-## Using the Documents and Media Management Bar
+## Using the Documents and Media Management Bar [](id=using-the-documents-and-media-management-bar)
 
 Documents and Media lists your current folder's subfolders and file entries. A
 *file entry* is the Document Library's representation of a file. It wraps the
@@ -302,7 +302,7 @@ check-out and check-in is explained in
 
 ![Figure 6: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../../../images/dm-file-entry-details.png)
 
-## Viewing File Previews
+## Viewing File Previews [](id=viewing-file-previews)
 
 You've added several files to the *Spacey Party* folder. In the Document Library,
 each file has a file entry view. To open its file entry view, click the file's

@@ -60,7 +60,7 @@ horizontal line (![Controls](../../../images/icon-content-insert-controls.png)).
 To insert an image, click the icon that depicts the mountain silhouette. The
 image file selector screen appears. It lets you choose an existing image or
 upload a new one. You can also drag-and-drop image files into the content area.
-If you like an image, but want to modify it a bit, use the [Image Editor](/discover/portal/-/knowledge_base/7-0/publishing-files#editing-images).
+If you like an image, but want to modify it a bit, use the [Image Editor](/discover/portal/-/knowledge_base/7-0/editing-images).
 Select an existing image from the Documents and Media 
 repository and click the pencil icon (![Pencil](../../../images/icon-edit-pencil.png)) 
 in the bottom right corner of the preview window, to open the Image Editor. Any 
@@ -114,7 +114,7 @@ alternative to dragging and dropping an image, you can click the *Select File*
 button to use the image selector to choose an existing image attached to the
 blog, an image file from Documents and Media, or an image outside the
 @product@ instance. You can browse to an image file and upload it. If you select 
-an image from Documents and Media, you have the option to use the [Image Editor](/discover/portal/-/knowledge_base/7-0/publishing-files#editing-images) 
+an image from Documents and Media, you have the option to use the [Image Editor](/discover/portal/-/knowledge_base/7-0/editing-images) 
 to customize and edit the image for your cover. Once you've selected the image 
 from Documents and Media, you can access the Image Editor by clicking the pencil 
 icon (![Pencil](../../../images/icon-edit-pencil.png)) in the bottom right 
