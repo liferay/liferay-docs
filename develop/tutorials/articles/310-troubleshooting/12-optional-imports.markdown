@@ -40,15 +40,15 @@ steps to add it:
         )
         public class OptionalPackageConsumer implements Foo {...}
 
-3.  Create a second component to act as a controller of the first component. The 
+3.  Create a second component to act as a controller of the first component. The
     second component checks the classloader for the optional class on the
     classpath. It handles both cases appropriately. If it's not there, this
     means you must catch any `ClassNotFoundException`. For example: 
 
         @Component
         public class OptionalPackageConsumerStarter {
-   	        @Activate
-   	        void activate(ComponentContext componentContext) {
+            @Activate
+            void activate(ComponentContext componentContext) {
                 try {
                     Class.forName(com.liferay.demo.foo.Foo.class.getName());
 
@@ -65,12 +65,12 @@ component is enabled. This check is automatically performed whenever there are
 any wiring changes to the module containing these components (Declarative 
 Services components are always restarted when there are wiring changes). 
 
-As above, if you install the module when the optional dependency is missing from 
-@product@'s OSGi runtime, your controller component catches a 
-`ClassNotFoundException` and logs a warning or info message (or takes whatever 
-other action you implement to handle this case). If you install the optional 
-dependency, refreshing your module triggers the OSGi bundle lifecycle events 
-that trigger your controller's `activate` method and the check for the optional 
+As above, if you install the module when the optional dependency is missing from
+@product@'s OSGi runtime, your controller component catches a
+`ClassNotFoundException` and logs a warning or info message (or takes whatever
+other action you implement to handle this case). If you install the optional
+dependency, refreshing your module triggers the OSGi bundle lifecycle events
+that trigger your controller's `activate` method and the check for the optional
 dependency. Since the dependency exists, your client component uses it. 
 
 Note that you can refresh a bundle from @product@'s Gogo shell with this 
