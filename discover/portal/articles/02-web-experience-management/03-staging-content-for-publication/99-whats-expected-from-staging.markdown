@@ -1,24 +1,23 @@
 # What's Expected from Staging?
 
-Have you ever wondered what would happen to an entity during the Staging
-process? Does Staging recognize the change? If so, how does it handle the
-update?
+Have you ever wondered what happens to an entity during the Staging process?
+Does Staging recognize the change? If so, how does it handle the update?
 
-This article lists use cases that you'd face for each Liferay entity. The use
-case tables are broken into three columns:
+This article lists use cases for each Liferay entity. The use case tables have
+three columns:
 
-- *Related entity:* the entity that is attached/related to the table's main
+- *Related entity:* the entity attached/related to the table's main
   entity. For example, in the Web Content Article (main entity) table, an
   attached entity could be a structure.
 - *Action performed:* the type of modification completed on the related entity.
 - *How does Staging handle this?:* how the Staging framework handles the
   action performed.
 
-Navigate to the entity section you're interested in.
+Navigate to the entity section you want.
 
 ## Web Content
 
-Each section below describes how Staging handles a specific web content entity
+The sections below describe how Staging handles a specific web content entity
 and the various actions that can be performed on its attached/related entities.
 
 ### Web Content Article
@@ -26,7 +25,7 @@ and the various actions that can be performed on its attached/related entities.
 The following table describes how entities that are attached/related to a web
 content (WC) article are handled during the Staging process.
 
-| Related entity | Action performed | How does Staging handle this?     
+| Related entity | Action performed | How does Staging handle this? 
 | :------------- | :--------------  | :----------------------------
 | Folder | WC article is moved into/out of folder | The article is marked as modified and will be published.
 | WC structure | WC article is published | Structure (and its parent structure) and template are published.
