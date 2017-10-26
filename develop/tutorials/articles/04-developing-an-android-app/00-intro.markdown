@@ -1,4 +1,4 @@
-# Writing an Android App for @product@
+# Writing an Android App for @product@ [](id=writing-an-android-app-for-product)
 
 Users expect to access @product@ content from their mobile devices. As an 
 intrepid developer, you naturally want to turn these expectations into reality. 
