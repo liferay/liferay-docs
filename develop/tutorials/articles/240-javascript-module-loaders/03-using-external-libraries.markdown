@@ -104,7 +104,7 @@ Now you know how to adapt external libraries for Liferay's JavaScript Loaders.
 
 ## Related Topics [](id=related-topics)
 
-[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-liferay-portals-loaders)
+[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders)
 
 [Liferay AMD Module Loader](/develop/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader)
 

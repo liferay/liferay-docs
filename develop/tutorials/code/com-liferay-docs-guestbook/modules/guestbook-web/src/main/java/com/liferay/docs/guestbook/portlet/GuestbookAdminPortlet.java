@@ -12,7 +12,7 @@ import org.osgi.service.component.annotations.Reference;
 
 import com.liferay.docs.guestbook.model.Guestbook;
 import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
-import com.liferay.docs.guestbook.service.GuestbookService;
+import com.liferay.docs.guestbook.service.GuestbookLocalService;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.service.ServiceContext;
@@ -120,10 +120,10 @@ public class GuestbookAdminPortlet extends MVCPortlet {
           }
 
           
-          private GuestbookService _guestbookService;
+          private GuestbookLocalService _guestbookService;
           
           @Reference(unbind = "-")
-          protected void setGuestbookService(GuestbookService guestbookService) {
+          protected void setGuestbookService(GuestbookLocalService guestbookService) {
           _guestbookService = guestbookService;
 
           }

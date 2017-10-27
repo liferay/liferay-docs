@@ -33,7 +33,7 @@
 
 	<%
 		List<Guestbook> guestbooks = GuestbookLocalServiceUtil
-					.getGuestbooks(scopeGroupId);
+					.getGuestbooks(scopeGroupId,WorkflowConstants.STATUS_APPROVED);
 			for (int i = 0; i < guestbooks.size(); i++) {
 				Guestbook curGuestbook = (Guestbook) guestbooks.get(i);
 				String cssClass = StringPool.BLANK;
@@ -78,10 +78,12 @@
     
         </aui:button-row>
 
-        <liferay-ui:search-container total="<%=EntryLocalServiceUtil.getEntriesCount()%>">
+        <liferay-ui:search-container total="<%=EntryLocalServiceUtil.getEntriesCount(scopeGroupId.longValue(), 
+                        guestbookId, WorkflowConstants.STATUS_APPROVED)%>">
         <liferay-ui:search-container-results
-            results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId.longValue(),
-                            guestbookId, searchContainer.getStart(),
+            results="<%=EntryLocalServiceUtil.getEntries(scopeGroupId.longValue(), guestbookId, 
+                            WorkflowConstants.STATUS_APPROVED, 
+                            searchContainer.getStart(), 
                             searchContainer.getEnd())%>" />
 
         <liferay-ui:search-container-row

@@ -18,8 +18,8 @@ Facebook.
 Like many websites you may visit, any site running on Liferay can be set up to 
 use Facebook for sign in. This makes it easier for users to sign in to your 
 site, since they won't need to remember another user name and password. See the
-[article](/discover/deployment/-/knowledge_base/7-0/facebook-connect-single-sign-on-authentication) 
-in the Discover/Deployment section for information on using Facebook to sign 
+[article](/discover/deployment/-/knowledge_base/7-0/facebook-connect-single-sign-on-authentication)
+in the Discover/Deployment section for information on using Facebook to sign
 into Liferay. 
 
 ### Using Your Application as Facebook Applications [](id=using-your-portlets-as-facebook-applications)

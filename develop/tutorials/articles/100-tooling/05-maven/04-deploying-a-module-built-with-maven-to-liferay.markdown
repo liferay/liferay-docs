@@ -1,4 +1,4 @@
-# Deploying a Module Built with Maven to @product@
+# Deploying a Module Built with Maven to @product@ [](id=deploying-a-module-built-with-maven-to-product)
 
 There are two ways to deploy a Maven-built Liferay module:
 

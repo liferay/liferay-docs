@@ -86,7 +86,7 @@ Continue on to see how this is done.
     Your Maven JAR is generated in your project's `/target` folder. You can
     deploy it manually into @product@'s `/deploy` folder, or you can configure
     your project to deploy automatically to @product@ by following the
-    [Deploying a Module Built with Maven to @product@](/develop/tutorials/-/knowledge_base/7-0/deploying-a-module-built-with-maven-to-liferay-portal)
+    [Deploying a Module Built with Maven to @product@](/develop/tutorials/-/knowledge_base/7-0/deploying-a-module-built-with-maven-to-product)
     tutorial.
 
 Fantastic! You've configured your Liferay Maven project to package itself into a

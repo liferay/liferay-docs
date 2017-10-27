@@ -83,7 +83,7 @@ Your first step is to examine the custom module projects that extend popular
 [Liferay Blade Samples](https://github.com/liferay/liferay-blade-samples)
 repository. For
 more information on these sample projects, see the
-[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 tutorial. Usable extension points are also documented throughout Liferay's
 Developer Network categorized by the @product@ section involved. For example,
 [Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)

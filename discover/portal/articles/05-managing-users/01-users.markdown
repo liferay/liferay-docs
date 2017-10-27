@@ -218,7 +218,7 @@ initials in the default avatars. Just enter
     users.image.default.use.initials=false
 
 in a `portal-ext.properties` file placed in your 
-[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
+[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) 
 folder. Once you restart @product@, the new default images will be used to
 generate user avatars.
 

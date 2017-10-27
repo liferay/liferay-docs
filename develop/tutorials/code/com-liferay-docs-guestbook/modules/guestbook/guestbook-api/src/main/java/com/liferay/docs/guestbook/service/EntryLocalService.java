@@ -160,6 +160,10 @@ public interface EntryLocalService extends BaseLocalService,
 		java.lang.String message, ServiceContext serviceContext)
 		throws PortalException, SystemException;
 
+	public Entry updateStatus(long userId, long guestbookId, long entryId,
+		int status, ServiceContext serviceContext)
+		throws PortalException, SystemException;
+
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public ActionableDynamicQuery getActionableDynamicQuery();
 
@@ -194,6 +198,10 @@ public interface EntryLocalService extends BaseLocalService,
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public int getEntriesCount(long groupId, long guestbookId);
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public int getEntriesCount(long groupId, long guestbookId, int status)
+		throws SystemException;
 
 	/**
 	* Returns the OSGi service identifier.
@@ -265,6 +273,10 @@ public interface EntryLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public List<Entry> getEntries(long groupId, long guestbookId, int start,
 		int end, OrderByComparator<Entry> obc);
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public List<Entry> getEntries(long groupId, long guestbookId, int status,
+		int start, int end) throws SystemException;
 
 	/**
 	* Returns all the entries matching the UUID and company.

@@ -165,7 +165,7 @@ Workspace's functionality.
 
 Maven Workspace also lets you deploy your projects to @product@ using Maven. See
 the
-[Deploying a Module Built with Maven to @product@](/develop/tutorials/-/knowledge_base/7-0/deploying-a-module-built-with-maven-to-liferay-portal)
+[Deploying a Module Built with Maven to @product@](/develop/tutorials/-/knowledge_base/7-0/deploying-a-module-built-with-maven-to-product)
 tutorial for more information.
 
 Want to leverage Maven Workspace's testing infrastructure so you can simulate

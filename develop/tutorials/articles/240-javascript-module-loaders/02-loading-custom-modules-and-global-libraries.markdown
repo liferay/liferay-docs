@@ -1,4 +1,4 @@
-# Configuring Modules for @product@'s Loaders
+# Configuring Modules for @product@'s Loaders [](id=configuring-modules-for-products-loaders)
 
 To load your modules in @product@, you need to know when they are needed, where 
 they are located at build time, if you want to bundle them together or load them 

@@ -51,7 +51,13 @@ entity's service methods. Follow these steps:
 
         assetEntryLocalService.deleteEntry(assetEntry);
 
-4.  Finally, organize your imports, save the file, and run Service Builder. 
+4.  Organize your imports, save the file, and run Service Builder. 
+
+5.  Finally, add these language keys to the
+    `guestbook-web/src/main/resource/content/Language.properties` file:
+
+        model.resource.com.liferay.docs.guestbook.model.Guestbook=Guestbook
+        model.resource.com.liferay.docs.guestbook.model.Entry=Guestbook Entry
 
 Excellent! You've asset-enabled your guestbook and guestbook entry entities at
 the service layer. Your next step is to implement asset renderers for these

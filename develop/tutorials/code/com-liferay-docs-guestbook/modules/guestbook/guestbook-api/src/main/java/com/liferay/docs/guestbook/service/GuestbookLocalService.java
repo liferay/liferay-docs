@@ -160,6 +160,9 @@ public interface GuestbookLocalService extends BaseLocalService,
 		java.lang.String name, ServiceContext serviceContext)
 		throws PortalException, SystemException;
 
+	public Guestbook updateStatus(long userId, long guestbookId, int status,
+		ServiceContext serviceContext) throws PortalException, SystemException;
+
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public ActionableDynamicQuery getActionableDynamicQuery();
 
@@ -264,6 +267,10 @@ public interface GuestbookLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public List<Guestbook> getGuestbooks(long groupId, int start, int end,
 		OrderByComparator<Guestbook> obc);
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public List<Guestbook> getGuestbooks(long groupId, int status)
+		throws SystemException;
 
 	/**
 	* Returns all the guestbooks matching the UUID and company.
