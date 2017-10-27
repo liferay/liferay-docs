@@ -67,9 +67,10 @@ Here are the steps for setting up @product@ to act as a SAML Identity Provider:
 	If you're making a test configuration, use the password *liferay*. When
     you enter all the required information, click *Save*.
 
-	Note that the SAML keystore is created by the SAML app's keystore
-	manager. As described above, this keystore has two storage options, file
-	system storage (the default) and documents and media storage. 
+    When you create the certificate and private key, you also create a keystore
+    if one doesn't already exist. As described above, this keystore has two
+    storage options: file system storage (the default) and Documents and Media
+    storage. 
  
 4.  After you click *Save*, you can click *Replace Certificate* at any time to
     replace the current certificate with a new one if your old one has expired
@@ -110,7 +111,7 @@ The *Identity Provider* tab includes these options:
 produced is signed.
 
 **SSL Required:** When this box is checked, any SAML messages that are *not*
-sent over SSL are rejected. This does not affect how URLs are generated.
+sent over SSL are rejected. This affects URLs in the generated metadata. 
 
 **Require Authn Request Signature?:** When this box is checked, each Authn
 Request must be signed by the sending Service Provider. In most cases, this
@@ -148,7 +149,7 @@ Before adding a Service Provider (SP), verify you've completed these tasks:
     d. **Session Maximum Age:** has been set. If set to `0`, then the SSO has an 
        unlimited duration. 
 
-    e. **Session Timeout:** Specify the maximum idle time of the SAML SSO session.    
+    e. **Session Timeout:** Specify the maximum idle time of the SAML SSO session. 
 
 3. Once the *Enabled* checkbox has been checked, the IdP is now live, and you can
    generate the required metadata. This URL is the default location of
@@ -168,7 +169,8 @@ the *Add Service Provider* button to add a SAML Service Provider.
 
 The New Service Provider page includes these options:
 
-**Name:** The name of the Service Provider with which to connect.
+**Name:** The name of the Service Provider with which to connect. The name can
+be anything; it's purely cosmetic.
 
 **Entity ID:** The Service Provider's entity ID. This value must match the
 entity ID declared in the Service Provider metadata.
@@ -183,7 +185,7 @@ assertion issued by the Identity Provider should be considered expired.
 file or you can manually upload the Service Provider metadata XML file. If you
 provide a URL, the XML file is automatically retrieved and periodically
 polled for updates. The update interval can be configured in
-`portlet.properties` with the `saml.metadata.refresh.interval` property which
+System Settings with the `saml.metadata.refresh.interval` property which
 specifies a number of seconds. If fetching the metadata XML file by URL fails,
 you can't enable the Service Provider connection. If the Identity Provider
 server cannot access the metadata via URL, you can upload the XML file manually.
@@ -230,15 +232,15 @@ line. Each line is an expression that gets parsed. Examples:
     static:[attributeName]=[attributeValue]
     expando:[userCustomFieldName] 
 
-**Keep Alive URL:** If users are logged into several @product@ SP instances via
-a @product@ IdP, their sessions can be kept alive as long as they keep a
-browser window open to one of them. Configure this only if the SP is @product@.
-The URL is `https://[host name]/c/portal/saml/keep_alive`. 
-
 Note that the full namespace depends on the attribute name. Attribute
 namespaces can be very useful. Use them, for example, when you have an Expando
 attribute that might otherwise create an attribute with the same name as some
 other attribute.
+
+**Keep Alive URL:** If users are logged into several @product@ SP instances via
+a @product@ IdP, their sessions can be kept alive as long as they keep a
+browser window open to one of them. Configure this only if the SP is @product@.
+The URL is `https://[SP host name]/c/portal/saml/keep_alive`. 
 
 ### Checkpoint [](id=checkpoint-0)
 

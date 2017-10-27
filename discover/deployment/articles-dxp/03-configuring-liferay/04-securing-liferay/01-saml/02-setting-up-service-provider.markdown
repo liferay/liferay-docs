@@ -170,12 +170,12 @@ Identity Provider to re-authenticate the user before verifying the user.
 **Metadata:** You can either provide a URL to the Identity Provider metadata
 XML file or you can manually upload it. If you provide a URL, the XML file is
 automatically retrieved and periodically polled for updates. You can change the
-update interval in `portlet.properties` by modifying the
+update interval in System Settings by modifying the
 `saml.metadata.refresh.interval` property which specifies a number of seconds.
 If fetching the metadata XML file by URL fails, you can't enable the Identity
 Provider connection. If the metadata is inaccessible via URL, you can upload the
-XML file manually. In this case, the metadata XML file is not 
-updated automatically. 
+XML file manually. In this case, the metadata XML file is not updated
+automatically. 
 
 **Name Identifier Format:** Choose the Name Identifier Format used in the SAML
 Response. This should be set according to what the Service Provider expects to
@@ -194,11 +194,11 @@ if you want to map a response attribute named `mail` to the @product@ attribute
 Available @product@ attributes are: `emailAddress`, `screenName`, `firstName`,
 `lastName`, `modifiedDate`, and `uuid`.
 
-**Keep Alive URL:** If users are logged into several @product@ SP instances via
-a @product@ IdP, their sessions can be kept alive as long as they keep a
-browser window open to one of them. Configure this only if the SP is @product@.
-The URL is `https://[host name]/c/portal/saml/keep_alive`. On the @product@ SP,
-configure this URL the same way, but point back to this IdP. 
+**Keep Alive URL:** If users are logged into several @product@ IdP instances via
+a @product@ SP, their sessions can be kept alive as long as they keep a browser
+window open to one of them. Configure this only if the IdP is @product@. The URL
+is `https://[host name]/c/portal/saml/keep_alive`. On the @product@ IdP,
+configure this URL the same way, but point back to this SP. 
 
 Save your changes when you are finished configuring the @product@ instance as a
 service provider. There is no need to restart the server and the changes will be
