@@ -6,104 +6,116 @@ Content Display Pages.
 
 ## Content Display Pages
 
-Content Display Pages are a way that you can give content a "home." You can also
-use them for some cool content tricks. You can create a stock *Content Display
-Page* from a template, or you can configure any Asset Publisher to make a page 
-function as a Content Display Page.
+Content Display Pages are a way that you can give content a "home." Content in 
+Liferay lives in the Web Content library, and can be displayed on any page 
+within the site, but with Content Display Pages, you provide a specific page 
+which is only used for viewing content. You can craft a single page which is 
+the home for multiple pieces of content, or you can create a single display
+page for a single piece of content. First, let's create a simple content display
+page which can be used for one piece of content.
 
-### Configuring Asset Publishers
+### Creating a Content Display Page
 
-First configure the Asset Publisher on the right to function as the 
-primary display.
+First, you'll create the content display page. 
 
-1.  Go to the Activities page.
+1. Open the main menu.
 
-2.  Open the Configuration menu for the Asset Publisher on the right side.
+2. Open the *Navigation* section. 
 
-3.  In *Asset Selection* scroll down to *Filter* and open it.
+3. Click the menu option next to *Public Pages* and select *Add Public Page*.
 
-4.  Set *Show only assets with Activities as its display page* to *Yes*. 
+4. For the *Name* enter "Hazard Disclaimer."
 
-5.  Open *Display Settings*
+5. For the *Type* select *Content Display Page* from under *Templates*.
 
-6.  For the *Display Template* select *Full Content*.
+6. Set *Hide from Navigation Menu* to *Yes*.
 
-7.  For the *Number of Items to Display* change it to 1.
+7. Set *Inherit Changes* to *No*.
 
-8.  Set *Set as the Default Asset Publisher for This Page* select *Yes*.
+8. Click *Add Page*.
 
-    This is the most important step in configuring a Content Display Page. If a
-    page has an Asset Display Template set as the default for the page, any 
-    content can be displayed in it.
+This creates a Content Display Page that is hidden from the main navigation. 
+Once you're done setting everything up, the only way to access the page will be
+to click on a link to the content.
 
-9.  Set *Show Metadata Descriptions* to *No*.
+### Creating Content to Display
 
-10. Click Save.
+Now, create the content to be displayed on the page.
 
-Most of the configuration options are self explanatory. Next, configure the Asset Publisher on the left to function as an Asset Selector.
+1. Go to *Content* &rarr; *Web Content* in Site Administration.
 
-1. Open the Configuration menu.
+2. Click the `+` button in the bottom right corner of the screen and select
+    *Basic Web Content*.
 
-2. In *Asset Selection* scroll down to *Filter* and open it.
+3. For the *Title* enter "Hazard Disclaimer"
 
-3. Set *Show only assets with Activities as its display page* to *Yes*. 
+4. For the content, enter the following:
 
-4. Open *Display Settings*
+        Potential Hazards of Space Travel and Lunar Exploration include but are not limited to:
+        
+        Accidental ejection from airlock into the cold vacuum of space
+        Spacesuit failure
+        Spacecraft engine explosion
+        Running and jumping so fast that you achieve escape velocity and are no longer bound by the moon's gravity
+        Accidental exposure alien spores or eggs
+        Collisions with stray meteorites
+        Excess exposure to solar radiation
+        Muscular atrophy
+        
+        Neither the The Space Program, The Lunar Resort nor any of the their subsidiaries are responsible for injury or harm caused by these or similar accidents.
 
-5. For *Display Template* select *Title List*.
+5. Open the *Display Page* section and click *Choose*.
 
-6. For *Asset Link Behavior* select *View in Context*
+6. Select the *Hazard Disclaimer* page.
 
-7. Click Save.
+7. Click *Publish*.
 
-The Asset Publishers are configured, but there's no content configured for this
-page. Next you'll create content that uses a Content Display Page.
+Now you have the content created, next you'll configure the link to the content
+to display which will direct users to the content display page.
 
-## Creating Content with a Display Page
+### Using Content Display Pages
 
-Any content can have a display page set for it, and any page can be a display
-page if it has a properly configured Asset Publisher on it. Next, you'll create
-three content items to be displayed here.
+To display the content, add an Asset Publisher to the booking page and configure
+it to display a link to our new web content in context.
 
-1. Go to the *Web Content* page in *Site Administration*.
+1.  Go to the *Book a Trip* page.
 
-2. Click the `+` and select *Basic Web Content*.
+2.  Open the *Add* menu.
 
-You'll need to repeat this three times. The content will only have a title and
-an image.
+3.  Add a *Content Management* &rarr; *Asset Publisher* to the page.
 
-1. For the first item, set the *Title* as "Lunar Rover Racing".
+4.  Click on the title of the Asset Publisher to edit it and change it to 
+    "Waivers and Disclaimers"
 
-2. Add the `lunar-rover.png` image.
+5.  Open the Asset Publisher *Configuration*.
 
-3. Scroll down and for Display page, click *Choose* and select *Activities*.
+6.  Under *Asset Selection* choose *Manual*
 
-4. Click *Publish*.
+7.  Open *Asset Entries* and click *Select* and choose *Basic Web Content*
 
-5. For the second item, name it "Lunar Golf" and add the `lunar-golf.png` image,
-    set the Content Display Page to *Activities* and click *Publish*.
+![Figure x: Selecting individual content for display.](../../images/001-select-basic-web-content.png)
 
-6. For the third item, name it "Lunar Spelunking" and add the 
-    `lunar-spelunking.png` image, set the Content Display Page to *Activities* 
-    and click *Publish*.
+8.  On the next page, select *Hazard Disclaimer*.
 
-## Housekeeping and Final Test
+9.  Click *Save*.
 
-Now to add a few finishing touches.
+10. Click on *Display Settings*.
 
-1. Go back to the *Activities* page.
+11. Under *Asset Link Behavior* select *View in Context*.
 
-2. In the lefthand Asset Publisher, click the Portlet Title, and change it to
-    *Choose an Activity* and click the checkbox.
-    
-3. On the right side, open the *Look and Feel Configuration* and change the
-    *Decoration* to *Barebone*.
-    
-Now that your page looks great, test it out - 
+12. Click *Save* and close the configuration window.
 
-1. Click on a title and that content will display in the publisher to the right.
+You will see the content with a link that will take you to the display page:
 
-![Figure x: Final Activities Page.](../../../images/001-activities-page.png)
+![Figure x: Your content in the asset publisher.](../../images/001-view-disclaimer.png)
 
-Congratulations, you've finished creating the Activities page, and configured a
-dynamic content display.
+### Viewing Content in Context
+
+Now that you created the content, created the display page, and configured the
+content in the Asset Publisher to link to the display page, you can see your 
+content displayed in context. The content display page also provides you with a 
+friendly URL to your content that you can share.
+
+Right now you're using the default configuration for the display page, but you 
+could also configure your content display page to look however you want, or turn
+an existing page into a content display page. That's what you'll do next.
