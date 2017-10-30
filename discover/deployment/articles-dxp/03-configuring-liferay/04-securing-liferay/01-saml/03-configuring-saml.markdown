@@ -30,12 +30,7 @@ The SAML Admin UI remains the place for creating the company-scoped
 configuration instances.
 
 Note that there is also a system wide configuration, represented by the
-`SamlConfiguration` metatype. This uses the 
-[Configuration API](/develop/tutorials/-/knowledge_base/7-0/configuration)
-which means default values for those properties are set in 
-[System Settings](/discover/portal/-/knowledge_base/7-0/system-settings) or
-through 
-[`.config` files (or `.cfg` files)](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files).
+`SamlConfiguration` metatype. 
 
 If you used Liferay 6.2, please note that the following system wide properties
 were removed:
