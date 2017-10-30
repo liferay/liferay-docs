@@ -1,4 +1,4 @@
-# What's Expected from Staging?
+# What's Expected from Staging? [](id=whats-expected-from-staging)
 
 Have you ever wondered what happens to an entity during the Staging process?
 Does Staging recognize the change? If so, how does it handle the update?
@@ -15,12 +15,12 @@ three columns:
 
 Navigate to the entity section you want.
 
-## Web Content
+## Web Content [](id=web-content)
 
 The sections below describe how Staging handles a specific web content entity
 and the various actions that can be performed on its attached/related entities.
 
-### Web Content Article
+### Web Content Article [](id=web-content-article)
 
 The following table describes how entities that are attached/related to a web
 content (WC) article are handled during the Staging process.
@@ -111,7 +111,7 @@ content (WC) article are handled during the Staging process.
 |                            | Link to other asset is deleted from the other asset | No changes.
 |                            | Link is deleted | 
 
-### Web Content Folder
+### Web Content Folder [](id=web-content-folder)
 
 The following table describes how entities that are attached/related to a web
 content (WC) folder are handled during the Staging process.
@@ -131,7 +131,7 @@ content (WC) folder are handled during the Staging process.
 |           | Folder with a workflow restriction is deleted | The workflow is not affected by the folder deletion; the deletion is included for publication.
 |           | Folder's workflow restriction is deactivated | The folder should fall back to using no workflow. The folder is updated and included for publication.
 
-### Web Content Feed
+### Web Content Feed [](id=web-content-feed)
 
 The following table describes how entities that are attached/related to a web
 content (WC) feed are handled during the Staging process.
