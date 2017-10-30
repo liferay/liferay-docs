@@ -616,10 +616,10 @@ There are a few things to keep in mind when using environment tokens:
   existing credentials are used when they create a token file. 
 
 - If the credentials of the LCS user who generated the token become invalid, 
-  then the token must be regenerated and used to reconnect to LCS. For example, 
-  credentials become invalid when the LCS user who generated the token leaves 
-  the LCS project or becomes an LCS Environment Manager or LCS Environment 
-  Viewer in a different environment. 
+  then a new token must be generated and used to reconnect to LCS. Credentials 
+  become invalid when the LCS user who generated the token leaves the LCS 
+  project, or becomes an LCS Environment Manager or LCS Environment Viewer in a 
+  different environment. 
 
 So why bother with environment tokens at all? Besides the benefit of simplifying 
 the LCS connection process, using environment tokens is valuable in auto-scaling 
