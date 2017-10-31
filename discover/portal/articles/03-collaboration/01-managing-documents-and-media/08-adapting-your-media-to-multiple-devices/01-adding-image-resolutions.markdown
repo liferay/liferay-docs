@@ -33,7 +33,7 @@ like mobile phones, tablets, laptops, and desktops. If most users use one device
 resolution to target that device. 
 
 To add a new resolution, click the *Add* icon 
-(![Add new resolution](../../../images/icon-add.png)) on the Adaptive Media 
+(![Add new resolution](../../../../images/icon-add.png)) on the Adaptive Media 
 configuration page and provide the following information: 
 
 -   **Name**: The resolution's name (this must be unique). This can be 
