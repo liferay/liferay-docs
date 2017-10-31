@@ -71,4 +71,4 @@ generated images.
 
 $$$
 
-![Figure 1: Specify an Identifier for an image resolution to make it available to the APIs.](../../../../images/adaptive-media-new-img-resolution.png) 
+![Figure 1: The form for adding a new Adaptive Media resolution.](../../../../images/adaptive-media-new-img-resolution.png)
