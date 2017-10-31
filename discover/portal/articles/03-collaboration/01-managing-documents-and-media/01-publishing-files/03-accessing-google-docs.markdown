@@ -2,10 +2,10 @@
 
 You can access files stored in Google applications, such as Google Drive&trade; 
 and Google Photos&trade;, through the Document Library. This integration isn't 
-available by default, but you can get it by installing the Liferay Google 
-Drive&trade; Plugin from the [Marketplace](https://web.liferay.com/marketplace). 
+available by default, but you can get it by installing the Liferay Plugin for 
+Google Drive&trade; from the [Marketplace](https://web.liferay.com/marketplace). 
 
-**Important:** The Liferay Google Drive&trade; Plugin is a Labs application.
+**Important:** The Liferay Plugin for Google Drive&trade; is a Labs application.
 Apps designated as Labs are experimental and not supported by Liferay. They're
 released to accelerate the availability of useful and cutting-edge features. 
 This status may change without notice. Please download and use Labs apps at your 
@@ -43,7 +43,7 @@ Start by enabling the Google API Picker in a Google developer project.
 5.  In the list of Google APIs, find the *Google API Picker* and enable it.
     @product@ uses the API to access Google documents. 
 
-Next you'll create credentials to use with the Google API. 
+Next you must create credentials to use with the Google API. 
 
 ## Step 2: Create Credentials [](id=step-2-create-credentials)
 
@@ -88,7 +88,7 @@ OAuth client ID and public API access key.
 Your @product@ instance is ready to access Google documents from the Document
 Library. 
 
-## Linking to Google Docs [](id=linking-to-google-docs)
+## Linking to Google Docs&trade; [](id=linking-to-google-docs)
 
 In your Document Library, you can create file entries that link to Google
 documents, such as files stored in Google Drive&trade; or photos saved to
@@ -101,7 +101,7 @@ except for file selection. Clicking on the *Select File* button for Google docs
 brings up Google's file picker to select files from your Google Drive&trade; or 
 your photos. Select the Google file you want to link to and click *Publish*. 
 
-![Figure 1: You can select files from Google Drive or your photos.](../../../../images/dm-google-select-a-file.png)
+![Figure 1: You can select files from Google Drive&trade; or your photos.](../../../../images/dm-google-select-a-file.png)
 
 A new file entry appears for the Google document you linked to. You can view the
 file entry as you would any file entry. Contents of the Google doc show in the
@@ -112,6 +112,4 @@ Checkin/Checkout/Cancel Checkout options.
 
 ![Figure 2: The Google doc file entry view displays the file's information and provides a preview of it.](../../../../images/dm-google-doc-file-entry.png)
 
-You now know how to access Google Docs&trade; from your document libraries. Next,
-you'll learn about displaying files by publishing Lunar Resort guest photos on
-site pages. 
+Now you know how to access Google Docs&trade; from your document libraries.

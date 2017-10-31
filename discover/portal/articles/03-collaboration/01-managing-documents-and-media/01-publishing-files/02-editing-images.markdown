@@ -103,6 +103,3 @@ filters.
 You can learn more about that in the [Expanding the image editor tutorial](URL)
 
 -->
-
-Next, let's explore how you can access Google documents from your document 
-libraries.

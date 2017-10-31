@@ -203,4 +203,4 @@ collaborating on the newsletter.
 
 Following Wilma Carwin's demonstration, you've learned how to map your local
 file manager to a Document Library folder and collaborate on files from your
-desktop environment. 
+desktop environment.

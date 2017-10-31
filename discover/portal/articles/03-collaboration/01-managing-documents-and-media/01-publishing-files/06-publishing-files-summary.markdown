@@ -9,6 +9,3 @@ mastered checking out and checking in new file versions using the basic
 download/upload technique and by mapping your local file manager to the Document
 Library, for seamless file editing. Congratulations on your document management
 accomplishments!
-
-Now that we know the basic functionality of the Documents and Media portlet,
-let's explore using document types and metadata.

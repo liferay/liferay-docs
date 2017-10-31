@@ -97,10 +97,10 @@ to learn how to add access to them.
 default document type, "Basic Document," to apply to. By default, basic
 documents are not described by any metadata sets.
 
-**Google Docs**: available through an additional Liferay Google Drive&trade;
-Plugin from the [Marketplace](https://web.liferay.com/marketplace). This option
-lets you create a file entry that links to a Google document. The section
-[Accessing Google Docs](/discover/portal/-/knowledge_base/7-0/accessing-google-docs)
+**Google Docs**: available through an additional Liferay Plugin for Google 
+Drive&trade; from the [Marketplace](https://web.liferay.com/marketplace). This 
+option lets you create a file entry that links to a Google document. The section
+[Accessing Google Docs&trade;](/discover/portal/-/knowledge_base/7-0/accessing-google-docs)
 explains how to use this feature.
 
 The remaining items in the Add menu are default [document 
@@ -430,5 +430,4 @@ specific set of files for your site. You assigned users to the role and created
 a Documents and Media folder named *Resort Guest Media* for them to add and
 organize files. Then as a member of the role, you added a subfolder named
 *Spacey Party* and added files to it. And just now, you viewed individual file
-entry information and actions. Next, let's see how you can make adjustments to
-images  in the document library.
+entry information and actions.

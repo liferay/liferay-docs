@@ -106,7 +106,4 @@ The Media Gallery and Documents and Media apps are at your service to show
 off your Document Library files. The Lunar Resort's Souvenir and Memorabilia
 group enjoys patron reactions to the great pics and videos that Snappy takes of
 them. And the salespeople are more than happy to plaster the pictures onto
-clothing and accessories to make a handsome commission. 
-
-Next, we'll step out of the Lunar Resort's Souvenir and Memorabilia group and
-Document Library file collaboration.
+clothing and accessories to make a handsome commission.
