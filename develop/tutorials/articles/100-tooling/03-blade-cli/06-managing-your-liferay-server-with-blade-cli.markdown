@@ -7,7 +7,7 @@ Liferay server.
 Make sure you're in a Liferay Workspace and have a bundle installed and
 configured in the workspace before testing the Blade CLI commands on your own.
 To learn more about installing a Liferay server in a Liferay Workspace, see the
-[Creating a Liferay Workspace with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide)
+[Creating a Liferay Workspace with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide)
 section. The following Blade CLI commands are covered in this sub-section:
 
 - `server`
