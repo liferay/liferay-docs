@@ -287,7 +287,7 @@ For example, to build the WSDD for the Bookmarks app, first navigate to the
 `liferay-portal/modules/apps/collaboration/bookmarks/bookmarks-service` folder 
 in your terminal. Then run the following command:
 
-    `../../../../../gradlew buildWSDD`
+    ../../../../../gradlew buildWSDD
 
 Next, deploy the 
 `liferay-portal/tools/sdk/dist/com.liferay.bookmarks.service-wsdd-[version].jar` 
