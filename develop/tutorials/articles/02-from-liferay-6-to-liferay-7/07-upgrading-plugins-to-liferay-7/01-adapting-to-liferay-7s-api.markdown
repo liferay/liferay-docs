@@ -10,7 +10,7 @@ to explain what changed, why it changed, and how to adapt to it.
 
 Going above and beyond documentation, Liferay provides the Code Upgrade Tool in 
 [Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-ide) 
-(versions 3.1 milestones and newer). Here's what the Code Upgrade Tool does: 
+(versions 3.1+). Here's what the Code Upgrade Tool does: 
 
 - Identifies code affected by the API changes.
 - Describes each API change related to the code.
