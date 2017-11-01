@@ -36,6 +36,8 @@ version, for faster performance and to store more files.
 system separate from Liferay to store files.
 
 **DBStore (Database Storage)**: stores files in the @product@ database.
+DBStore's file (stored as a blob) size limit is 1 gigabyte. To store such large
+files, use Simple File System Store or Advanced File System Store. 
 
 **JCRStore (Java Content Repository)**: stores files to a JSR-170
 compliant document repository. You can use any JCR client to access the

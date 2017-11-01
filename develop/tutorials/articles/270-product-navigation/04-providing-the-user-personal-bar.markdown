@@ -30,10 +30,11 @@ following snippet into your `portal_normal.ftl`:
 
 $$$
 
-In this tutorial, you'll learn how to customize the User Personal Bar.
+In this tutorial, you'll learn how to customize the User Personal Bar. You'll
+create a single Java class where you'll specify a portlet to replace the
+existing default portlet.
 
-1. Create a generic OSGi module using your favorite third party tool, or use
-   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). 
+1. [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module).
 
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package.
@@ -43,7 +44,8 @@ In this tutorial, you'll learn how to customize the User Personal Bar.
         @Component(
             immediate = true,
             property = {
-                "model.class.name=" + PortalUserPersonalBarApplicationType.UserPersonalBar.CLASS_NAME
+                "model.class.name=" + PortalUserPersonalBarApplicationType.UserPersonalBar.CLASS_NAME,
+                "service.ranking:Integer=10"
             },
             service = ViewPortletProvider.class
         )
@@ -54,42 +56,41 @@ In this tutorial, you'll learn how to customize the User Personal Bar.
     Bar. You may recall from the
     [Portlet Providers](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
     tutorial that you can request portlets in several different ways (e.g.,
-    *Edit*, *Browse*, etc.). Since you're only wanting the User Personal Bar to
-    display your portlet, you'll always have the `service` element be
-    `ViewPortletProvider.class`.
+    *Edit*, *Browse*, etc.).
 
-    The example annotation provided above is the one provided for Liferay's
-    current User Personal Bar in the
-    `ProductNavigationUserPersonalBarViewPortletProvider` class.
+    You should also specify the service rank for your new portlet so it
+    overrides the default one provided by @product@. Make sure to set the
+    `service.ranking:Integer` property to a number that is ranked higher than
+    the portlet being used by default.
 
-4. Extend the
+     Since you're only wanting the User Personal Bar to display your portlet,
+     you'll always have the `service` element be `ViewPortletProvider.class`.
+
+4. Update the class's declaration to extend the
    [BasePortletProvider](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
-   abstract class and implement `ViewPortletProvider`.
+   abstract class and implement `ViewPortletProvider`:
 
-5. Specify the portlet you'd like to provide in the User Personal Bar by using
-   the following method in your class:
+       public class ExampleViewPortletProvider extends BasePortletProvider implements ViewPortletProvider {
+
+5. Specify the portlet you'd like to provide in the User Personal Bar by
+   declaring the following method in your class:
 
         @Override
         public String getPortletName() {
-            return ProductNavigationUserPersonalBarPortletKeys.
-                PRODUCT_NAVIGATION_USER_PERSONAL_BAR;
+            return PORTLET_NAME;
         }
 
-    This example snippet provides the
-    `com_liferay_product_navigation_user_personal_bar_web_portlet_ProductNavigationPersonalBarPortlet`.
-    In summary, you're providing a portlet based on Liferay's request for one
-    that can be viewed in the User Personal Bar.
-
-6. Specify the service rank for your portlet so it overrides the default
-   portlet provided in Liferay. To do this, set the following property in your
-   `@Component` declaration:
-
-        property= {"service.ranking:Integer=10"}
-
-    Make sure to replace the integer with a number that is ranked higher than
-    the portlet being used by default. 
+    You should replace the `PORTLET_NAME` text with the portlet you want to
+    provide Liferay when it requests one to be viewed in the User Personal Bar.
+    For example, Liferay declares
+    `com_liferay_product_navigation_user_personal_bar_web_portlet_ProductNavigationPersonalBarPortlet`
+    for its default User Personal Bar portlet.
 
 You've successfully provided a portlet to be displayed in the User Personal Bar.
 If you'd like to inspect the entire module used for Liferay's default User
 Personal Bar, see
 [product-navigation-user-personal-bar-web](https://github.com/liferay/liferay-portal/tree/7.0.2-ga3/modules/apps/web-experience/product-navigation/product-navigation-user-personal-bar-web).
+Besides the `*ViewPortletProvider` class, this module contains two classes
+defining constants and a portlet class defining the default portlet to provide.
+Although these additional classes are not required, your module should have
+access to the portlet you want to provide.

@@ -98,7 +98,7 @@ Your first step is to examine the custom module projects that extend popular
 [Liferay Blade Samples](https://github.com/liferay/liferay-blade-samples)
 repository. For
 more information on these sample projects, see the
-[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 tutorial. Usable extension points are also documented throughout Liferay's
 Customer Portal categorized by the @product@ section involved. For example,
 [Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
@@ -637,30 +637,11 @@ the following code to that file:
 
 Be sure to place this code within the existing `<Context>` tags.
 
-## Licensing and Contributing [](id=licensing-and-contributing)
+## Summary [](id=summary)
 
-@product@ is Open Source software licensed under the 
-[LGPL 2.1 license](http://www.gnu.org/licenses/lgpl-2.1.html).
-If you reuse any code snippet and redistribute it, whether publicly or to a
-specific customer, make sure your modifications are compliant with the license.
-One common way is to make the source code of your modifications are available to
-the community under the same license. Make sure you read the license text
-yourself to find the option that best fits your needs. 
-
-If your goal in making changes is fixing a bug or improving @product@, it could
-be of interest to a broader audience. Consider contributing it back to the
-project. That benefits all users of the product including you, since you won't
-have to maintain the changes with each newly released version of @product@. You
-can notify Liferay of bugs or improvements at
-[issues.liferay.com](http://issues.liferay.com). Check out the
-[Participate](/participate/contribute-a-feature) section of
-[dev.liferay.com](https://dev.liferay.com), to learn all the ways that you can
-contribute to Liferay projects. 
-
-In summary, an Ext plugin is a powerful way to extend @product@. There are no
-limits to what you can customize, so use it carefully. Before using
-an Ext plugin, see if you can implement all or part of the desired functionality
-through
+An Ext plugin is a powerful way to extend @product@. There are no limits to what
+you can customize, so use it carefully. Before using an Ext plugin, see if you
+can implement all or part of the desired functionality through
 [Application Display Templates](/develop/tutorials/-/knowledge_base/7-0/application-display-templates)
 or a different plugin type. OSGi modules offer you a lot of extension
 capabilities themselves, without introducing the complexity that's inherent with

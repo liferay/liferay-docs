@@ -92,9 +92,21 @@ documenting. -Cody -->
     `images-dxp` folders that are not used in their corresponding Markdown
     articles.
 
--   `check-links`: (no DXP target) Checks LDN links (CE articles only) to ensure
-    they're pointing at an existing LDN article. A list of invalid links are
-    listed if any are found.
+-   `check-links`: (no DXP target) Checks links (CE articles only) on the
+    current checked out liferay-docs branch to ensure all links point to
+    existing header IDs (header IDs are used to formulate links). A list of
+    invalid links are listed if any are found.
+
+    This target can be executed before publishing to the live site since it
+    scans the local liferay-docs repo. This also means that links pointing to
+    articles **not** hosted in the current repo (e.g., a link pointing to 6.2
+    documentation residing in an article hosted on the `7.0.x` branch) cannot
+    be validated and, therefore, will not be checked.
+
+    You can check legacy links that are already published to LDN by adding the
+    `-Dlegacy.links=true` parameter to your `check-links` execution. This checks
+    all links pointing to articles in the current branch **and** all legacy
+    links hosted on LDN.
 
 -   `dist-article-ce`: Creates a ZIP file for importing the specified article
     (``-Darticle=...``), its images, and supporting structure to a Knowledge

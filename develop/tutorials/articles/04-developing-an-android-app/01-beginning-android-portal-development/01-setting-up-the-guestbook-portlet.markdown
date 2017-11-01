@@ -19,7 +19,7 @@ This page also has links to the JDK installation instructions.
 First, download a @product@ Tomcat bundle from 
 [liferay.com](https://www.liferay.com/). 
 Then 
-[click here](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
+[click here](/discover/deployment/-/knowledge_base/7-0/installing-product)
 and follow the instructions to install the bundle. To follow @product@ best 
 practices, you should create a `bundles` folder and unzip it there. The bundle's 
 root folder is referred to as *Liferay Home* and is named according to the 

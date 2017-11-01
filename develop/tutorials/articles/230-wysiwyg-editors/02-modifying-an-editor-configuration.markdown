@@ -50,7 +50,7 @@ provided below.
         @Component(
             property = {
                 "editor.config.key=contentEditor", "editor.name=alloyeditor",
-                "editor.name=ckeditor", "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
+                "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
                 "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet", "service.ranking:Integer=100"
             },
 			
@@ -58,11 +58,11 @@ provided below.
         )
 
     This annotation declares that the following service is applied for the
-    AlloyEditor and CKEditor identified by their `contentEditor` configuration
-    key. Two portlet names are specified (Blogs and Blogs Admin), which means
-    the service applies to all editors in those portlets. Lastly, the service
-    ranking is listed, which prioritizes this service over others that are
-    currently deployed in @product@.
+    AlloyEditor identified by the `contentEditor` configuration key. Two portlet
+    names are specified (Blogs and Blogs Admin), which means the service applies
+    to all editors in those portlets. Lastly, the service ranking is listed,
+    which prioritizes this service over others that are currently deployed in
+    @product@.
 
 4.  Now that you've specified which editor configurations you want to modify,
     you must specify what about them must change. Add the following method to
@@ -93,8 +93,21 @@ provided below.
 
         JSONObject toolbars = jsonObject.getJSONObject("toolbars");
 
-    This gets the editor's toolbar. Now that you've retrieved the toolbar, you
-    can modify it. You'll do this next.
+    This gets the editor's toolbar.
+
+    +$$$
+
+    **Note:** This toolbar configuration is only applicable for the AlloyEditor.
+    If you choose a configuration that is supported by multiple editors, you
+    could apply it to them all. To do this, you could specify all the editors
+    (e.g., `"editor.name=alloyeditor"`, `"editor.name=ckeditor"`,
+    `ckeditor_bbcode` etc.) in the `@Component` annotation  of your
+    `EditorConfigContributor` implementation, as you did in step 3.
+
+    $$$
+
+    Now that you've retrieved the toolbar, you can modify it. You'll do this
+    next.
 
 6.  You'll modify the editor's toolbar by adding a camera button. To complete
     this, extract the *Add* buttons out of your toolbar configuration object as
@@ -117,8 +130,8 @@ provided below.
     you've implemented in the `populateConfigJSONObject` method.
 
 Your Java class is complete! The only thing left to do is generate the module's
-JAR file and copy it to your Portal's `osgi/modules` directory. Once the module
-is installed and activated in your Portal's service registry, your new editor
+JAR file and copy it to your Portal's `deploy` folder. Once the module is
+installed and activated in your Portal's service registry, your new editor
 configuration is available for use.
 
 @product@ supports several different types of WYSIWYG editors, which include
