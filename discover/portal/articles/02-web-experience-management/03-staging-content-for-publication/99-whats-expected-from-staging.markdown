@@ -15,6 +15,47 @@ three columns:
 
 Navigate to the entity section you want.
 
+## Asset Publisher
+
+The following table describes how entities that are displayed by the Asset
+Publisher (AP) are handled on the staged and live sites during the Staging
+process.
+
+The related entities that apply to this table are listed below:
+
+- Blog entry
+- Bookmark
+- Calendar event
+- Calendar resource
+- Knowledge Base article
+- Documents and Media entities
+    - Basic Document
+    - Contract
+    - Marketing Banner
+    - Online Training
+    - Sales Presentation
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Any entity from list above | Entity added to staged site | Entity displays in staged AP, but not live AP.
+|                            | Entity published to live site | Entity displays on both staged and live AP.
+|                            | Entity edited on staged site | Updated entity displays in staged AP, but not live AP.
+|                            | Updated entity published to live site | Updated entity displays on both staged and live AP.
+|                            | Entity deleted on the staged site | Entity does not display in staged AP, but does in live AP.
+|                            | Deleted entity published to live site | Deleted entity does not display on both staged and live AP.
+| Dynamic asset selection | AP is published | Content according to the dynamic selection is published.
+|                         | Dynamic selection is edited and AP is published again | Content according to the dynamic selection is published again.
+|                         | AP content is deleted | Content deletions are published by default, regardless of the AP.
+|                         | AP removed from page | Once the page is published, the AP is removed. Content is not affected.
+|                         | Dynamic selection exported is turned off | Content is not published with AP, but previously published content remains intact.
+|                         | Dynamic export limit is changed | Content specified in the dynamic export limit is published for display in AP.
+| Manual asset selection | AP is published | Content according to the manual selection is published.
+|                        | Manual selection is changed and AP is published again | Content according to the manual selection is published again.
+|                        | Manual selection content is deleted | Content according to the manual selection is deleted and not displayed in the AP.
+|                        | AP removed from page | Once the page is published, the AP is removed. Content is not affected.
+|                        | Manual selection exported is turned off | AP does not publish any content.
+|                        | No limit for manual export | AP publishes the exact same manually selected content.
+
 ## Web Content [](id=web-content)
 
 The sections below describe how Staging handles a specific web content entity
