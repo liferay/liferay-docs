@@ -1,7 +1,7 @@
 # Connecting to JNDI Data Sources [](id=connecting-to-data-sources-using-jndi)
 
 Connecting to an application server's JNDI data sources from @product@'s OSGi
-environment is almost the same as connecting to them from within Java EE
+environment is almost the same as connecting to them from the Java EE
 environment. In an OSGi environment, the only difference is that you must use
 @product@'s class loader to load the application server's JNDI classes. The
 following code demonstrates this.
@@ -76,6 +76,9 @@ without using @product@'s classloader:
     org.apache.naming.java.javaURLContextFactory]
 
 $$$
+
+An easier way to work with databases is to 
+[connect to them using Service Builder](/develop/tutorials/-/knowledge_base/7-0/connecting-service-builder-to-external-data-sources). 
 
 ## Related Topics [](id=related-topics)
 

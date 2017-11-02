@@ -1,11 +1,10 @@
 # Connecting Service Builder to External Data Sources [](id=connecting-service-builder-to-external-data-sources)
 
-There may be cases in which you want to use a data source other than @product@'s
-data source. The data source might be configured as a JNDI data source on
-@product@'s app server and might be local or remote. This tutorial shows how to
-connect
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
-to such a data source. Here's how: 
+Sometimes you want to use a data source other than @product@'s. To do this, the
+data source must be defined in `portal-ext.properties` or configured as a JNDI
+data source on @product@'s app server. This tutorial shows how to connect
+[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder) to
+a data source. Here's how: 
 
 1.  If @product@'s application server defines the data source using JNDI, skip
     this step. Otherwise, specify the data source in a `portal-ext.properties`
@@ -22,8 +21,8 @@ to such a data source. Here's how:
     `src/main/resources/META-INF/spring` folder or in your traditional portlet's
     `WEB-INF/src/META-INF` folder. Define the following elements: 
 
-    -   A data source factory Spring bean for the data source. Specify the data 
-        source based on how it's defined.
+    -   A data source factory Spring bean for the data source. It's different
+    based on the type: 
         -   **JNDI**: Specify an arbitrary property prefix and prepend the 
             prefix to a JNDI name property key. Here's an example:
 
@@ -46,7 +45,7 @@ to such a data source. Here's how:
                 </bean>
 
     -   A @product@ data source bean that refers to the data source factory
-        Spring bean.  
+        Spring bean. 
     -   An alias for the @product@ data source bean. 
 
     Here's an example `ext-spring.xml` that points to a JNDI data source: 
@@ -91,20 +90,20 @@ to such a data source. Here's how:
     `jdbc/externalDataSource`. If the data source was specified via data source
     properties in a `portal-ext.properties` file, the bean would require only a
     `propertyPrefix` property that matches the data source property prefix.
-    
+ 
     The data source bean `liferayDataSource` is overridden with one
     that refers to the `liferayDataSourceFactory` bean. The override affects
     this bundle (module or
     [Web Application Bundle](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)) 
     only. 
 
-    Alias `extDataSource` refers to the `liferayDataSource` data source bean. 
-    
+    The alias `extDataSource` refers to the `liferayDataSource` data source bean. 
+ 
     +$$$
-    
+ 
     **Note**: To use an external data source in multiple Service Builder
     bundles, you must override the `liferayDataSource` bean in each bundle. 
-    
+ 
     $$$
 
 2.  In your Service Builder module's `service.xml` file, set your entity's
@@ -127,8 +126,8 @@ to such a data source. Here's how:
 
     Note the example's `<entity>` tag attributes: 
 
-    -   `data-source`: The `liferayDataSource` alias your `ext-spring.xml`
-        specified.
+    -   `data-source`: The `liferayDataSource` alias `ext-spring.xml`
+        specifies.
     -   `table`: Your entity's database table. 
 
     Also note that your entity's `<column>`s must have a `db-name` attribute set to the column name.
