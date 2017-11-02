@@ -39,21 +39,21 @@ Let's begin!
     **Note:** The following key lengths are supported by the available
     encryption algorithms:
 
-    - *AES:* 128, 192, and 256 bit keys
+    - *AES:* 128, 192, and 256-bit keys
     - *Blowfish:* 32-448 bit keys
     - *DESede (Triple DES):* 56, 112, or 168 bit keys (Liferay places an
-      artificial limit on the minimum key length and does not support the 56 bit
+      artificial limit on the minimum key length and does not support the 56-bit
       key length)
 
-    For example, if you're using a Unix based OS, you can use the following
-    command to generate a 128 bit AES key.
+    For example, you can use [OpenSSL](https://www.openssl.org/) to generate a
+    128-bit AES key:
 
         openssl enc -aes-128-cbc -k abc123 -P -md sha1
 
     $$$
 
-2.  You must allow the connection between the configured IPs of your portal
-    instances and the Staging server. Open both of your app servers'
+2.  You must allow the connection between the configured IPs of your app servers
+    and the Staging server. Open both of your app servers'
     `portal-ext.properties` files and add the following properties:
 
         tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,STAGING_IP
@@ -67,25 +67,27 @@ Let's begin!
 
 4.  Configure the *TunnelAuthVerifier* property for your nodes' app servers. You
     can do this one of two ways:
-    
+
     - **Via `.config` file (recommended):** In the `LIFERAY_HOME/osgi/configs`
-    folder of one of your node @product@ instances, create (if necessary) a
-    `com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.config`
-    file and insert the properties listed below. Creating one `.config` file
-    configures all cluster nodes, which ensures they're all configured the same
-    way.
+      folder of one of your node @product@ instances, create (if necessary) a
+      `com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.config`
+      file and insert the properties listed below. Creating one `.config` file
+      configures all cluster nodes, which ensures they're all configured the
+      same way. For more information on `.config` files, see the
+      [Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
+      article.
 
         enabled=true
         hostsAllowed=127.0.0.1,SERVER_IP,STAGING_IP
         serviceAccessPolicyName=SYSTEM_USER_PASSWORD
         urlsIncludes=/api/liferay/do
-    
+
     - **Via System Settings:** Navigate to the *Control Panel* &rarr;
-    *Configuration* &rarr; System Settings* &rarr; *Foundation* &rarr; *Tunnel
-    Auth Verifiers*. Click on the */api/liferay/do* configuration entry and add
-    the Staging IP address to the *Hosts allowed* field. If you choose to configure
-    the *TunnelAuthVerifier* this way, you **must** do this for all nodes (e.g.,
-    App Server 1 and App Server 2).
+      *Configuration* &rarr; System Settings* &rarr; *Foundation* &rarr; *Tunnel
+      Auth Verifiers*. Click on the */api/liferay/do* configuration entry and
+      add the Staging IP address to the *Hosts allowed* field. If you choose to
+      configure the *TunnelAuthVerifier* this way, you **must** do this for all
+      nodes (e.g., App Server 1 and App Server 2).
 
 5.  On your Staging instance, navigate to the Site Administration portion of the
     Product Menu and select *Publishing* &rarr; *Staging*. Then select *Remote
@@ -93,7 +95,7 @@ Let's begin!
 
     ![Figure 2: When selecting the Remote Staging radio button, you're given a list of options to configure.](../../images/remote-staging-menu.png)
 
-6.  For the Remote Host/IP field, insert the balancer's IP of your Web tier.
+6.  For the Remote Host/IP field, insert the balancer's IP of your web tier.
     Configuring the Staging instance with the balancer's IP ensures the
     availability of the environment at the time of publication from staging to
     live.
@@ -105,7 +107,9 @@ Let's begin!
     for the same database and are shared between nodes.
 
     To find the remote site ID, navigate to the Site Administration portion of
-    the Product Menu and select *Site Settings*. The Site ID field of the
+    the Product Menu and select *Site Settings*. The Site ID field in the
     General tab holds the site's ID.
 
-That's it! You've configured remote staging in your clustered environemnt.
+9. Save the Remote Live settings.
+
+That's it! You've configured remote staging in your clustered environment.
