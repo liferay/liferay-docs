@@ -490,5 +490,3 @@ If your situation fits the scenario described above, follow these steps:
 Great! Now you know how to configure Liferay either as a SAML identity provider
 or a service provider. You also know how to configure the Liferay SAML in a
 clustered environment.
-
--->
