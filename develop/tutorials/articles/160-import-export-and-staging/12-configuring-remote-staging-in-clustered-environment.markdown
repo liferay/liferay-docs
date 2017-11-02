@@ -54,7 +54,7 @@ Let's begin!
 
 2.  You must allow the connection between the configured IPs of your app servers
     and the Staging server. Open both of your app servers'
-    `portal-ext.properties` files and add the following properties:
+    `portal-ext.properties` file and add the following properties:
 
         tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,STAGING_IP
         tunnel.servlet.https.required=false
@@ -77,17 +77,17 @@ Let's begin!
       [Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
       article.
 
-        enabled=true
-        hostsAllowed=127.0.0.1,SERVER_IP,STAGING_IP
-        serviceAccessPolicyName=SYSTEM_USER_PASSWORD
-        urlsIncludes=/api/liferay/do
+            enabled=true
+            hostsAllowed=127.0.0.1,SERVER_IP,STAGING_IP
+            serviceAccessPolicyName=SYSTEM_USER_PASSWORD
+            urlsIncludes=/api/liferay/do
 
     - **Via System Settings:** Navigate to the *Control Panel* &rarr;
-      *Configuration* &rarr; System Settings* &rarr; *Foundation* &rarr; *Tunnel
-      Auth Verifiers*. Click on the */api/liferay/do* configuration entry and
-      add the Staging IP address to the *Hosts allowed* field. If you choose to
-      configure the *TunnelAuthVerifier* this way, you **must** do this for all
-      nodes (e.g., App Server 1 and App Server 2).
+      *Configuration* &rarr; *System Settings* &rarr; *Foundation* &rarr;
+      *Tunnel Auth Verifiers*. Click on the */api/liferay/do* configuration
+      entry and add the Staging IP address to the *Hosts allowed* field. If you
+      choose to configure the *TunnelAuthVerifier* this way, you **must** do
+      this for all nodes (e.g., App Server 1 and App Server 2).
 
 5.  On your Staging instance, navigate to the Site Administration portion of the
     Product Menu and select *Publishing* &rarr; *Staging*. Then select *Remote
@@ -102,13 +102,12 @@ Let's begin!
 
 7.  Enter the port on which the balancer is running into the Remote Port field.
 
-8.  Insert the remote site ID of your app servers into the Remote Side ID field.
+8.  Insert the remote site ID of your app servers into the Remote Site ID field.
     The site ID of all your app servers are the same since they are configured
     for the same database and are shared between nodes.
 
-    To find the remote site ID, navigate to the Site Administration portion of
-    the Product Menu and select *Site Settings*. The Site ID field in the
-    General tab holds the site's ID.
+    Navigate to the Site Administration portion of the Product Menu and select
+    *Site Settings* to find the site ID.
 
 9. Save the Remote Live settings.
 
