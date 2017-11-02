@@ -1,4 +1,4 @@
-# Searching for Assets
+# Searching for Assets [](id=searching-for-assets)
 
 As explained in the [introduction to this section](LINK), all indexed assets can be
 returned as search results. Since any developer can create their own assets,
@@ -28,16 +28,14 @@ TEAM?-->
 
 $$$
 
-Searching for Assets https://github.com/rbohl/liferay-docs/blob/lrdocs-3595-new-search-portlet/discover/portal/articles/08-search/00-intro.markdown#searching-for-assets-
+## Search Bar [](id=search-bar)
 
-## Search Bar
+The search bar is where users enter the search context. Users enter search
+terms, hit their *Enter* button (or click the magnifying glass icon), and
+they're taken to a maximized view of the search portlet displaying any results
+and facets that apply.
 
-The search bar is where users enter the search context. It's pretty
-straightforward. Users enter search terms, click enter or on the magnifying
-glass icon, and they're taken to a maximized view of the search portlet
-displaying any results and facets that apply.
-
-### Entering Search Terms 
+### Entering Search Terms [](id=entering-search-terms)
 
 @product@, backed by Elasticsearch, supports *full text search*. It does not,
 however, support advanced search syntax, such as Elasticsearch's [query string
@@ -46,29 +44,33 @@ That means you can't search specific fields, use wildcards like *\**, or boolean
 operators like *AND/OR/NOT*. Liferay is considering enabling the use of string
 queries out of the box in a future version of @product@.
 
-### Title prefix searching, e.g. “engineer” finds titles with “engineering”, “engineered”
+### Prefix Searching [](id=prefix-searching)
 
-One of the cool features of @product@ search is *prefix* searching. For example,
-if you're searching in a site for classical musicians, you might search for the
-term *instrument*. This search will of course return documents with the full
-word in them, but also other variants of the word, like *instruments*,
+One of the cool features of @product@ search is *prefix* searching. If you're
+searching in a site for classical musicians, you might search for the term
+*instrument*. This search of course returns documents with the full word in
+them, but it also returns other variants of the word, like *instruments*,
 *instrumental*, and *instrumentation*.
 
-![Figure x: Searching for *data* in @product@'s Search application also returns *database*.](../../images/search-prefix.png)
+![Figure 1: Searching for *data* in @product@'s Search application also returns
+*database*.](../../images/search-prefix.png)
 
-### Configuring the Search Bar
-
-## Spell Checking user Queries https://github.com/rbohl/liferay-docs/blob/lrdocs-3595-new-search-portlet/discover/portal/articles/08-search/01-default-search-behavior.markdown#spell-checking-user-queries-
-
+<!-- A 7.1 feature, not 7.0 ### Configuring the Search Bar [](id=configuring-the-search-bar) -->
 ## Spell Checking User Queries [](id=spell-checking-user-queries)
-CONTEXT NOT PROVIDED
-Next to the Other Settings tab lives the Spell Check Settings tab. Here you can
-configure the Search application to help users when their initial query doesn't
-yield many results.
+
+Spell check settings allow administrators to configure the Search application so
+that if a user types a search term that doesn't return many results, the user
+can be prompted to improve their search. 
+
+To configure the spell check settings, click the options
+(![Options](../../images/icon-options.png)) button and select *Configuration*.
+The tab displayed is *Display Settings*, and next to it is the Spell Check
+Settings tab. Here you can configure the Search application to help users when
+their initial query doesn't yield many results.
 
 ![Figure 2: Configure the spell check settings to allow for user input mistakes and help lead users to results.](../../images/search-spell-check-settings.png)
 
-There's really three main settings here:
+There are three main settings here:
 
 **Display "Did you mean..." if the number of search results does not meet the
 threshold.**
@@ -106,17 +108,6 @@ $$$
 In addition to enabling or disabling any of these settings, the thresholds for
 all of the spell check settings can also be changed to produce the desired
 behavior.
-<!--Any notes about performance or other warnings with these numbers? -->
-
-<!--Search is a powerful component of @product@'s asset framework. Administrators
-can customize the display options for content, and configure the spell check
-settings to ensure users don't go away feeling frustrated after an unsuccessful
-search query. Facets are Another important component of @product@'s search
-functionality for the opposite situation, where users might be overwhelmed by
-the number of search results, and unable to find the proverbial needle in the
-haystack. To learn more, read the next article on how facets let users narrow
-down search results to find just what they were looking for.
--->
 
 <!-- For 7.1 only ## Search Display Page - good way to segway into Search
 Results section -->

@@ -1,4 +1,4 @@
-# Searching for Assets
+# Search [](id=search)
 
 Sites built on @product@ often feature lots of content split over lots of asset
 types. Web content articles, documents and media files, and blogs entries are
@@ -10,10 +10,10 @@ class](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search#in
 For the purposes of this documentation article, just assume any content type in
 @product@ is an asset, and you're probably correct.
 
-Q: Include a list of oob asset types in portal? I don't think we have this
-anywhere.
+<!-- Q: Include a list of oob asset types in portal? I don't think we have this
+anywhere. -->
 
-## Searching the Index, not the Database
+## Searching the Index, not the Database [](id=searching-the-index-not-the-database)
 
 @product@ stores its data in a database, so you might incorrectly assume that
 you're directly searching the database when you use @product@'s search portlet.
@@ -27,11 +27,10 @@ deleted from the database. When you enter a search term in @product@, nothing
 happens in the database, because the documents are already indexed on the
 Elasticsearch server, and that's where the search is executed.
 
-Why add the complexity of a search engine rather than search in the database
-directly? For performance reasons and for some of the features that search
-engines provide, like algorithms that give you the ability to use relevancy
-scores. For more technical details, see the
-[Introduction to
+It's worth adding the complexity of a search engine, rather than searching the
+database directly, for performance reasons and for some of the features that
+search engines provide, like algorithms that give you the ability to use
+relevancy scores. For more technical details, see the [Introduction to
 Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
 developer article.
 
@@ -51,25 +50,26 @@ Searching is simple and straghtforward. Find a search portlet (there's one
 embedded in every page by default), enter a term in the search bar, and click
 *Enter*.
 
-![Figure x: There's a search bar embedded on all @product@ pages by default.](../../images/search-bar.png)
+![Figure 1: There's a search bar embedded on all @product@ pages by default.](../../images/search-bar.png)
 
 A results page is displayed. If there are hits to search engine documents,
 you'll see them as search results in the right hand column. In the left hand
 column you'll see search facets.
 
-![Figure x: There's a search bar embedded on all @product@ pages by default.](../../images/search-results.png)
+![Figure 2: There's a search bar embedded on all @product@ pages by default.](../../images/search-results.png)
 
 The search bar, search results, and search facets make up three powerful
 features in @product@'s search UI.
 
-### Search Bar
+### Search Bar [](id=search-bar)
 
 The search bar is simple: it's where you enter *search terms*. Search terms are
 the text you send to the search engine to match against the documents in the
 index. The documents that are returned are where this gets interesting.
 
-### Search Results and Relevance
-
+### Search Results and Relevance [](id=search-results-and-relevance)
+IS THIS BETTER HERE OR IN THE SEARCH RESULTS ARTICLE? probably keep this brief
+and put most of the detail in the search results article.
 The search term is processed by an algorithm in the search engine, and search
 results are returned to users in order of relevance. Relevance is determined by
 a document's *score*, generated against the search query. The higher the score,
@@ -90,9 +90,10 @@ If the search term appears with greater frequency in the field of one document
 than is the case for the same field in other documents, the score will be
 higher. However, if it's a long field (like a *content* field for a Blogs Entry
 document) then the presence of the search term is discounted. Its presence in a
-shorter field (like a *title* field) produces a higher relevance score.
+shorter field (like a *title* field) produces a higher relevance score. See [the
+Search Results article](LINK) for a longer discussion of relevancy.
 
-### Search Facets
+### Search Facets [](id=search-facets)
 
 If you have a running @product@ server with some content in it, enter a search
 term in the search bar. Use a search term you know will match some of the
@@ -100,7 +101,7 @@ content. You'll see a page with results on the right and a collection of
 *facets*, with the number of search results for each facet (in parentheses) on
 the left. 
 
-![Figure 1: *Sites* and *Asset Entries* are two of the facet sets you'll encounter. They let you drill down to results that contain the search terms you entered.](../../images/search-faceted-search.png)
+![Figure 3: *Sites* and *Asset Entries* are two of the facet sets you'll encounter. They let you drill down to results that contain the search terms you entered.](../../images/search-faceted-search.png)
 
 Facets allow users of the Search application to filter search results. Think of
 facets as buckets that hold matching search results. You might want to see the
