@@ -1,4 +1,4 @@
-# Configuring Remote Staging in a Clustered Environment
+# Configuring Remote Staging in a Clustered Environment [](id=configuring-remote-staging-in-a-clustered-environment)
 
 If you're running @product@ as a
 [clustered environment](/discover/deployment/-/knowledge_base/7-0/liferay-clustering),
