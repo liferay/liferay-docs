@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -26,13 +26,19 @@ public interface Importer {
 
 	public long getGroupId();
 
+	public String getTargetClassName();
+
 	public long getTargetClassPK();
 
 	public void importResources() throws Exception;
 
 	public boolean isCompanyGroup() throws Exception;
 
+	public boolean isDeveloperModeEnabled();
+
 	public boolean isExisting();
+
+	public void setAppendVersion(boolean appendVersion);
 
 	public void setCompanyId(long companyId);
 
@@ -49,6 +55,8 @@ public interface Importer {
 	public void setTargetClassName(String className);
 
 	public void setTargetValue(String targetValue);
+
+	public void setUpdateModeEnabled(boolean updateModeEnabled);
 
 	public void setVersion(String version);
 

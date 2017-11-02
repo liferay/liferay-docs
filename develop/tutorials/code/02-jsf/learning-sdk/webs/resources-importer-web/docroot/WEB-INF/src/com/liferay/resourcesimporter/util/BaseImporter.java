@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
  * This library is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the Free
@@ -142,6 +142,11 @@ public abstract class BaseImporter implements Importer {
 	}
 
 
+	public String getTargetClassName() {
+		return targetClassName;
+	}
+
+
 	public long getTargetClassPK() {
 		return targetClassPK;
 	}
@@ -168,8 +173,18 @@ public abstract class BaseImporter implements Importer {
 	}
 
 
+	public boolean isDeveloperModeEnabled() {
+		return developerModeEnabled;
+	}
+
+
 	public boolean isExisting() {
 		return existing;
+	}
+
+
+	public void setAppendVersion(boolean appendVersion) {
+		this.appendVersion = appendVersion;
 	}
 
 
@@ -210,6 +225,11 @@ public abstract class BaseImporter implements Importer {
 
 	public void setTargetValue(String targetValue) {
 		this.targetValue = targetValue;
+	}
+
+
+	public void setUpdateModeEnabled(boolean updateModeEnabled) {
+		this.updateModeEnabled = updateModeEnabled;
 	}
 
 
@@ -254,6 +274,7 @@ public abstract class BaseImporter implements Importer {
 		return null;
 	}
 
+	protected boolean appendVersion;
 	protected long companyId;
 	protected boolean developerModeEnabled;
 	protected boolean existing;
@@ -264,6 +285,7 @@ public abstract class BaseImporter implements Importer {
 	protected String targetClassName;
 	protected long targetClassPK;
 	protected String targetValue;
+	protected boolean updateModeEnabled;
 	protected long userId;
 	protected String version;
 

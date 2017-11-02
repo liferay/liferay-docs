@@ -31,7 +31,7 @@
 
 		<copy todir="${portlet.dir}">
 			<fileset
-				dir="${sdk.dir}/tools/portlet_tmpl"
+				dir="${sdk.dir}/tools/templates/portlet_tmpl"
 			/>
 		</copy>
 
@@ -66,7 +66,7 @@
 					<then>
 						<copy todir="${portlet.dir}">
 							<fileset
-								dir="${sdk.dir}/tools/portlet_jsf_tmpl"
+								dir="${sdk.dir}/tools/templates/portlet_jsf_tmpl"
 							/>
 						</copy>
 					</then>
@@ -74,7 +74,7 @@
 
 				<copy overwrite="true" todir="${portlet.dir}">
 					<fileset
-						dir="${sdk.dir}/tools/portlet_${portlet.framework}_tmpl"
+						dir="${sdk.dir}/tools/templates/portlet_${portlet.framework}_tmpl"
 					/>
 				</copy>
 			</then>
@@ -129,7 +129,7 @@ speed-filters-enabled=false
 				</replaceregexp>
 
 				<replace file="${portlet.dir}/docroot/WEB-INF/portlet.xml">
-					<replacetoken><![CDATA[<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>]]></replacetoken>
+					<replacetoken><![CDATA[<portlet-class>com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet</portlet-class>]]></replacetoken>
 					<replacevalue><![CDATA[<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>]]></replacevalue>
 				</replace>
 
@@ -153,34 +153,54 @@ speed-filters-enabled=false
 		</if>
 
 		<if>
-			<equals arg1="${portlet.framework}" arg2="scala" />
+			<equals arg1="${portlet.framework}" arg2="spring_mvc" />
 			<then>
 				<move
-					file="${portlet.dir}/docroot/WEB-INF/src/ScalaPortlet.scala"
-					tofile="${portlet.dir}/docroot/WEB-INF/src/${portlet.java.package.name}/${portlet.java.class.name}ScalaPortlet.scala"
+					file="${portlet.dir}/docroot/WEB-INF/jsp/view.jsp"
+					tofile="${portlet.dir}/docroot/WEB-INF/jsp/${portlet.name}/view.jsp"
+				/>
+
+				<move
+					file="${portlet.dir}/docroot/WEB-INF/spring-context/portlet-context.xml"
+					tofile="${portlet.dir}/docroot/WEB-INF/spring-context/portlet/${portlet.name}-portlet.xml"
+				/>
+
+				<move
+					file="${portlet.dir}/docroot/WEB-INF/src/PortletViewController.java"
+					tofile="${portlet.dir}/docroot/WEB-INF/src/${portlet.java.package.name}/${portlet.java.class.name}PortletViewController.java"
 				/>
 
 				<echo file="${portlet.dir}/docroot/WEB-INF/liferay-plugin-package.properties" append="true">
 
-portal-dependency-jars=scala-library.jar</echo>
-
-				<replace file="${portlet.dir}/docroot/WEB-INF/portlet.xml">
-					<replacetoken><![CDATA[<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>]]></replacetoken>
-					<replacevalue><![CDATA[<portlet-class>@portlet.java.package.name@.@portlet.java.class.name@Portlet</portlet-class>]]></replacevalue>
-				</replace>
-
-				<replaceregexp match="&lt;/icon&gt;(.*)&lt;/footer-portlet-javascript&gt;" replace="&lt;/icon&gt;" flags="s">
-					<fileset
-						dir="${portlet.dir}/docroot/WEB-INF"
-						includes="liferay-portlet.xml"
-					/>
-				</replaceregexp>
+portal-dependency-jars=aopalliance.jar,commons-logging.jar,jstl-api.jar,jstl-impl.jar,spring-aop.jar,spring-beans.jar,spring-context.jar,spring-core.jar,spring-expression.jar,spring-web.jar,spring-webmvc.jar,spring-webmvc-portlet.jar</echo>
 
 				<replace file="${portlet.dir}/docroot/WEB-INF/liferay-portlet.xml">
 					<replacetoken><![CDATA[</icon>]]></replacetoken>
 					<replacevalue><![CDATA[</icon>
-		<ajaxable>false</ajaxable>]]></replacevalue>
+		<requires-namespaced-parameters>false</requires-namespaced-parameters>]]></replacevalue>
 				</replace>
+
+				<replace file="${portlet.dir}/docroot/WEB-INF/portlet.xml">
+					<replacetoken><![CDATA[<portlet-class>com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet</portlet-class>]]></replacetoken>
+					<replacevalue><![CDATA[<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>]]></replacevalue>
+				</replace>
+
+				<replace file="${portlet.dir}/docroot/WEB-INF/portlet.xml">
+					<replacetoken><![CDATA[<name>view-template</name>]]></replacetoken>
+					<replacevalue><![CDATA[<name>contextConfigLocation</name>]]></replacevalue>
+				</replace>
+
+				<replace file="${portlet.dir}/docroot/WEB-INF/portlet.xml">
+					<replacetoken><![CDATA[<value>/view.jsp</value>]]></replacetoken>
+					<replacevalue><![CDATA[<value>/WEB-INF/spring-context/portlet/@portlet.name@-portlet.xml</value>]]></replacevalue>
+				</replace>
+
+				<delete includeemptydirs="true">
+					<fileset
+						dir="${portlet.dir}/docroot"
+						includes="view.jsp"
+					/>
+				</delete>
 			</then>
 		</if>
 
@@ -197,7 +217,7 @@ portal-dependency-jars=scala-library.jar</echo>
 portal-dependency-jars=vaadin.jar</echo>
 
 				<replace file="${portlet.dir}/docroot/WEB-INF/portlet.xml">
-					<replacetoken><![CDATA[<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>]]></replacetoken>
+					<replacetoken><![CDATA[<portlet-class>com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet</portlet-class>]]></replacetoken>
 					<replacevalue><![CDATA[<portlet-class>com.vaadin.terminal.gwt.server.ApplicationPortlet2</portlet-class>]]></replacevalue>
 				</replace>
 
@@ -235,6 +255,9 @@ portal-dependency-jars=vaadin.jar</echo>
 		</if>
 
 		<replace dir="${portlet.dir}">
+			<replacefilter token="@app.server.tomcat.manager.password@" value="${app.server.tomcat.manager.password}" />
+			<replacefilter token="@app.server.tomcat.manager.user@" value="${app.server.tomcat.manager.user}" />
+			<replacefilter token="@jmx.remote.port@" value="${jmx.remote.port}" />
 			<replacefilter token="@plugin.type.dir@" value="${plugin.type.dir}" />
 			<replacefilter token="@portlet.display.name@" value="${portlet.display.name}" />
 			<replacefilter token="@portlet.java.class.name@" value="${portlet.java.class.name}" />
