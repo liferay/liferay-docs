@@ -1,6 +1,6 @@
 # Configuring Remote Staging in a Clustered Environment
 
-If you have a @product@ instance running as a
+If you're running @product@ as a
 [clustered environment](/discover/deployment/-/knowledge_base/7-0/liferay-clustering),
 and you want to use remote staging, you must configure it properly for a
 seamless experience. In this tutorial, you'll learn how to set up remote staging
@@ -9,7 +9,8 @@ you have
 
 - a Staging instance with database configurations and a file repository
   different from the cluster nodes.
-- a balancer responsible for the traffic between the cluster's nodes.
+- a balancer responsible for managing the traffic flow between the cluster's
+  nodes.
 - two nodes that call two app servers (e.g., *App Server 1* and *App Server 2*),
   both of which are connected to the same database.
 
@@ -62,12 +63,49 @@ Let's begin!
     the property for and the *STAGING_IP* must be replaced by the IP of the
     Staging instance.
 
-    <!-- Restart both portal instances for the new properties to take effect. -->
+3.  Restart both app servers for the new properties to take effect.
 
-3.  Configure the *TunnelAuthVerifier* property for your node's app servers. To
-    do this, navigate to the *Control Panel* &rarr; *Configuration* &rarr;
-    *System Settings* &rarr; *Foundation* &rarr; *Tunnel Auth Verifiers*. Click
-    on the */api/liferay/do* configuration entry and add the Staging IP address
-    to the *Hosts allowed* field.
+4.  Configure the *TunnelAuthVerifier* property for your nodes' app servers. You
+    can do this one of two ways:
+    
+    - **Via `.config` file (recommended):** In the `LIFERAY_HOME/osgi/configs`
+    folder of one of your node @product@ instances, create (if necessary) a
+    `com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.config`
+    file and insert the properties listed below. Creating one `.config` file
+    configures all cluster nodes, which ensures they're all configured the same
+    way.
 
-4.  
+        enabled=true
+        hostsAllowed=127.0.0.1,SERVER_IP,STAGING_IP
+        serviceAccessPolicyName=SYSTEM_USER_PASSWORD
+        urlsIncludes=/api/liferay/do
+    
+    - **Via System Settings:** Navigate to the *Control Panel* &rarr;
+    *Configuration* &rarr; System Settings* &rarr; *Foundation* &rarr; *Tunnel
+    Auth Verifiers*. Click on the */api/liferay/do* configuration entry and add
+    the Staging IP address to the *Hosts allowed* field. If you choose to configure
+    the *TunnelAuthVerifier* this way, you **must** do this for all nodes (e.g.,
+    App Server 1 and App Server 2).
+
+5.  On your Staging instance, navigate to the Site Administration portion of the
+    Product Menu and select *Publishing* &rarr; *Staging*. Then select *Remote
+    Live*.
+
+    ![Figure 2: When selecting the Remote Staging radio button, you're given a list of options to configure.](../../images/remote-staging-menu.png)
+
+6.  For the Remote Host/IP field, insert the balancer's IP of your Web tier.
+    Configuring the Staging instance with the balancer's IP ensures the
+    availability of the environment at the time of publication from staging to
+    live.
+
+7.  Enter the port on which the balancer is running into the Remote Port field.
+
+8.  Insert the remote site ID of your app servers into the Remote Side ID field.
+    The site ID of all your app servers are the same since they are configured
+    for the same database and are shared between nodes.
+
+    To find the remote site ID, navigate to the Site Administration portion of
+    the Product Menu and select *Site Settings*. The Site ID field of the
+    General tab holds the site's ID.
+
+That's it! You've configured remote staging in your clustered environemnt.
