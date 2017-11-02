@@ -189,7 +189,7 @@ optimize, but be careful: objects have relationships, and some objects
 you wouldn't expect to affect performance may do so indirectly because
 of their relationships to other objects.
 
-## Remove unused data from the database using Liferay's API (Step 4) [](id=remove-unused-data-from-the-database-using-liferays-api-step-4)
+## Remove unused data from the database using Liferay's API (Step 3) [](id=remove-unused-data-from-the-database-using-liferays-api-step-3)
 
 Never run SQL directly on your database because you can miss
 relationships, creating orphaned objects and performance problems.
@@ -272,7 +272,7 @@ Here are some common optimizations you can make:
         different lifecycle, and aren't deleted when the portlet is
         removed from a template.
 
-## Execute the upgrade process (Step 5) [](id=execute-the-upgrade-process-step-5)
+## Execute the upgrade process (Step 4) [](id=execute-the-upgrade-process-step-4)
 
 One of the upgrade improvements made in DXP is improved upgrade time
 logging. An upgrade process now looks like this::
