@@ -204,7 +204,7 @@ service references on the fly.
 1.  Create a configuration file named after the referencing component. Here's 
     the example component's configuration file name: 
 
-        override.my.service.reference.OverrideMyServiceReference.config
+        override.my.service.reference.portlet.OverrideMyServiceReferencePortlet.config
  
     +$$$
 
