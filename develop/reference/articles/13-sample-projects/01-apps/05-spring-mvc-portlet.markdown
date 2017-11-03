@@ -25,7 +25,7 @@ the steps to accomplish this:
 2.  Run `mvn clean install` on `maven/parent.bnd.bundle.plugin`.
 3.  Run `mvn clean install -N` in the root `liferay-blade-samples/maven` folder.
 
-Now this sample can be built successfully.
+Now you can build this sample successfully.
 
 $$$
 
