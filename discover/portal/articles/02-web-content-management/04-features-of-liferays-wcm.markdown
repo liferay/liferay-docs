@@ -278,6 +278,14 @@ provides the ability to customize permissions in more detail. Select the *More
 Options* link next to the drop down button and you'll find the different
 activities you can grant or deny to your web content.
 
+While you can set permissions here, they will be ignored unless Web Content 
+Article permissions are activated in your Portal Properties. To activate the 
+permission check for Web Content Articles you need to set the 
+`journal.article.view.permission.check.enabled=` to `true` in your
+`portal-ext.properties` file, and restart Liferay. Once it is activated, any 
+permissions you set in the article's configuration will be checked before 
+displaying the article.
+
 **Custom fields:** customize metadata about the web content. The fields can
 represent anything you like, such as the web content's author or creation date.
 If custom fields have been defined for web content (which can be done from the
