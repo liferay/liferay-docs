@@ -1290,19 +1290,19 @@ always required, but it was hidden by the `ServiceContext` object.
 
 The following tags have been removed:
 
-- `portlet:icon-close`
-- `portlet:icon-configuration`
-- `portlet:icon-edit`
-- `portlet:icon-edit-defaults`
-- `portlet:icon-edit-guest`
-- `portlet:icon-export-import`
-- `portlet:icon-help`
-- `portlet:icon-maximize`
-- `portlet:icon-minimize`
-- `portlet:icon-portlet-css`
-- `portlet:icon-print`
-- `portlet:icon-refresh`
-- `portlet:icon-staging`
+- `liferay-portlet:icon-close`
+- `liferay-portlet:icon-configuration`
+- `liferay-portlet:icon-edit`
+- `liferay-portlet:icon-edit-defaults`
+- `liferay-portlet:icon-edit-guest`
+- `liferay-portlet:icon-export-import`
+- `liferay-portlet:icon-help`
+- `liferay-portlet:icon-maximize`
+- `liferay-portlet:icon-minimize`
+- `liferay-portlet:icon-portlet-css`
+- `liferay-portlet:icon-print`
+- `liferay-portlet:icon-refresh`
+- `liferay-portlet:icon-staging`
 
 #### Who is affected? [](id=who-is-affected-35)
 
@@ -1314,7 +1314,8 @@ The tag `liferay-ui:icon` can replace the call to the previous tags. All the
 previous tags have been converted into Java classes that implement the methods
 that the `icon` tag requires.
 
-See the modules `portlet-configuration-icon-*` in the `modules/addons` folder.
+See the modules `portlet-configuration-icon-*` in the
+`modules/apps/web-experience/portlet-configuration` folder.
 
 #### Why was this change made? [](id=why-was-this-change-made-35)
 

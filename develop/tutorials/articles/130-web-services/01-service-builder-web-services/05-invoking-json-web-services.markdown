@@ -1,11 +1,9 @@
 # Invoking JSON Web Services [](id=invoking-json-web-services)
 
-You can invoke Liferay's JSON web service API in languages other than Java, such
-as Beanshell, Groovy, JavaScript, Python, and Ruby. You can also invoke it via 
-URL or 
-[cURL](http://curl.haxx.se/). 
-Additionally, Liferay provides a handy JSON web services page that allows you to 
-browse and invoke service methods. 
+If you know the URL and are connected to the internet, invoke Liferay's JSON web
+service API in any language you want or directly with the URL or
+[cURL](http://curl.haxx.se/). Additionally, Liferay provides a handy JSON web
+services page that allows you to browse and invoke service methods. 
 
 If you're running Liferay locally on port 8080, you can find the JSON web 
 services page at 
