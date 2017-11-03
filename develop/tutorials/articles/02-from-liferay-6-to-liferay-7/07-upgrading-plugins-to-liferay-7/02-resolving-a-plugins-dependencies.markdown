@@ -132,7 +132,7 @@ The following links provide proxy details:
 - [Ant/Ivy](http://ant.apache.org/ivy/) - See documentation on proxy configuration, the `Setproxy` task, and [resolvers](http://ant.apache.org/ivy/history/latest-milestone/settings/resolvers.html)
 - [Maven](/develop/tutorials/-/knowledge_base/7-0/creating-a-maven-repository)
 - [Liferay Workspace \(Gradle\)](/develop/tutorials/-/knowledge_base/7-0/setting-proxy-requirements-for-liferay-workspace)
-- [Setting proxies in Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/setting-proxy-requirements-for-liferay-ide)
+- [Setting proxies in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/setting-proxy-requirements-for-liferay-ide)
 
 $$$
 

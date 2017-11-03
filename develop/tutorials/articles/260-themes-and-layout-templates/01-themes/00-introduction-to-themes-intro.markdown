@@ -39,7 +39,7 @@ foundation, you can then make your customizations to the theme files. To modify
 the theme, mirror the folder structure of the files you wish to change 
 and copy them into your theme. Place the modified files in the `src` folder 
 of your theme if using the Liferay Theme Generator, or copy them into the 
-`webapp` folder of your theme if using Liferay IDE. Build the theme to apply 
+`webapp` folder of your theme if using Liferay @ide@. Build the theme to apply 
 the changes.
 
 Once your theme is developed it is packaged as a WAR (Web application ARchive)

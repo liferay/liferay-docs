@@ -38,19 +38,19 @@ exposing the ADT functionality to users. You'll walk through these steps now:
     implementing ADTs for your custom portlet. View the list below for a
     detailed explanation for each method defined specifically for ADTs:
 
-   - **getClassName():** Defines the type of entry your portlet is rendering.
-   - **getName():** Declares the name of your ADT type (typically, the name of
-   the portlet).
-   - **getResourceName():** Specifies which resource is using the ADT (e.g., a
-   portlet) for permission checking. This method must return the portlet's
-   [Fully Qualified Portlet ID](/participate/liferaypedia/-/wiki/Main/Fully+Qualified+Portlet+ID)
-   \(FQPI\).
-   - **getTemplateVariableGroups():** Defines the variables exposed in the
-   template editor.
+    - **getClassName():** Defines the type of entry your portlet is rendering.
+    - **getName():** Declares the name of your ADT type (typically, the name of
+    the portlet).
+    - **getResourceName():** Specifies which resource is using the ADT (e.g., a
+    portlet) for permission checking. This method must return the portlet's
+    [Fully Qualified Portlet ID](/participate/liferaypedia/-/wiki/Main/Fully+Qualified+Portlet+ID)
+    \(FQPI\).
+    - **getTemplateVariableGroups():** Defines the variables exposed in the
+    template editor.
 
-   As an example `*PortletDisplayTemplateHandler` implementation, you can look
-   at
-   [WikiPortletDisplayTemplateHandler.java](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/wiki/wiki-web/src/main/java/com/liferay/wiki/web/internal/portlet/template/WikiPortletDisplayTemplateHandler.java).
+    As an example `*PortletDisplayTemplateHandler` implementation, you can look
+    at
+    [WikiPortletDisplayTemplateHandler.java](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/wiki/wiki-web/src/main/java/com/liferay/wiki/web/internal/portlet/template/WikiPortletDisplayTemplateHandler.java).
 
 2. Since the ability to add ADTs is new to your portlet, you must configure
    permissions so that administrative users can grant permissions to the roles
