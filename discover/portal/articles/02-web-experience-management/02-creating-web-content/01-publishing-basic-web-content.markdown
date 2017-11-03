@@ -295,6 +295,21 @@ provides the ability to customize permissions in more detail. Select the *More
 Options* link below the drop down button and you'll find the different
 activities you can grant or deny to your web content article.
 
+While you can set permissions here, they will be ignored unless Web Content 
+Article permissions are activated in your System Configuration. To activate the 
+permission check for Web Content Articles: 
+
+1. Go to the *Control Panel* &rarr; *Configuration* &rarr; *System Settings*.
+
+2. Search or browse for *Web Content (Default Settings for All Instances)*.
+
+3. Check the box labeled *Article view permissions check enabled*.
+
+4. Click Save.
+
+Once it is activated, any permissions you set in the article's configuration 
+will be checked before displaying the article.
+
 Before you display your web content, you'll learn how to localize it to cater to
 different language speaking users.
 
