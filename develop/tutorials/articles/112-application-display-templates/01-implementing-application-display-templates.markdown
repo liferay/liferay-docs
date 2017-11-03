@@ -83,7 +83,15 @@ exposing the ADT functionality to users. You'll walk through these steps now:
 
         </resource-action-mapping>
 
-3. Now that your portlet officially supports ADTs, you'll want to expose the
+3. Next, you need to make sure that Liferay can find the updated `default.xml` 
+    with the new resource action when you deploy the module. Create a file 
+    named `portlet.prtoperies` in the `/resources` folder and add the following
+    contents providing the path to your `default.xml`:
+
+    	include-and-override=portlet-ext.properties
+	    resource.actions.configs=resource-actions/default.xml
+
+4. Now that your portlet officially supports ADTs, you'll want to expose the
    ADT option to your users. Just include the
    `<liferay-ui:ddm-template-selector>` tag in the JSP file you're using to
    control your portlet's configuration.
@@ -116,7 +124,7 @@ exposing the ADT functionality to users. You'll walk through these steps now:
     As an example JSP, see the Wiki application's
     [configuration.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/wiki/wiki-web/src/main/resources/META-INF/resources/wiki/configuration.jsp). 
 
-4. You must now extend your view code to render your portlet with the selected
+5. You must now extend your view code to render your portlet with the selected
    ADT. This allows you to decide which part of your view will be rendered by
    the ADT and what will be available in the template context.
 
