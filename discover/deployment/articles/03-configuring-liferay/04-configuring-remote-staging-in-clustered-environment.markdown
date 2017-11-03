@@ -11,8 +11,8 @@ you have
   different from the cluster nodes.
 - a balancer responsible for managing the traffic flow between the cluster's
   nodes.
-- two nodes that call two app servers (e.g., *App Server 1* and *App Server 2*),
-  both of which are connected to the same database.
+- two nodes that call two Liferay app servers (e.g., *App Server 1* and *App
+  Server 2*), both of which are connected to the same database.
 
 ![Figure 1: This is the assumed setup for your clustered environment.](../../images/remote-staging-clustering.png)
 
