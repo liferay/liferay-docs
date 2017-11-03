@@ -59,7 +59,7 @@ given condition is met:
     });
 
 The configuration above specifies that this module should be loaded
-automatically, if the developer requests the `aui-test` module under the given
+automatically, if the developer requests the `my-test` module under the given
 condition.
 
 Next you can learn how to load a module.
