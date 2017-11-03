@@ -1,4 +1,4 @@
-# Liferay Enterprise Search
+# Liferay Enterprise Search [](id=liferay-enterprise-search)
 
 
 Article 7: Liferay Enterprise Search

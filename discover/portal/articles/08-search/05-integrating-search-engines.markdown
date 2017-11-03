@@ -1,4 +1,4 @@
-# Supported Search Engines
+# Supported Search Engines [](id=supported-search-engines)
 
 Article 6: Available Search Engine Integrations
 Elasticsearch
