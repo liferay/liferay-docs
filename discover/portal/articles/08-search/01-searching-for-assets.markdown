@@ -1,9 +1,10 @@
 # Searching for Assets [](id=searching-for-assets)
 
-As explained in the [introduction to this section](LINK), all indexed assets can be
-returned as search results. Since any developer can create their own assets,
-your @product@ instance might have additional asset types beyond the ones that
-@product@ ships with by default. 
+As explained in the [Search
+introduction](/discover/portal/-/knowledge_base/7-0/search), all indexed assets
+can be returned as search results. Since any developer can create their own
+assets, your @product@ instance might have additional asset types beyond the
+ones that @product@ ships with by default. 
 
 +$$$
 
@@ -21,9 +22,9 @@ $$$
 
 +$$$
 
-**Versioning Note:** If there are multiple versions of a piece of content, the
-latest approved version is the only one searched.
-<!-- IS THIS A SEARCH THING OR AN INDEXING DECISION THAT'S UP TO THE COMPONENT
+**Versioning Note:** If there are multiple versions of the same content, the
+latest approved version is the only one searched.  <!-- IS THIS A SEARCH THING
+OR AN INDEXING DECISION THAT'S UP TO THE COMPONENT
 TEAM?-->
 
 $$$
@@ -35,32 +36,38 @@ terms, hit their *Enter* button (or click the magnifying glass icon), and
 they're taken to a maximized view of the search portlet displaying any results
 and facets that apply.
 
+![Figure x: The Search application displays just the search bar in its default view,
+beckoning users to enter the search context.](../../images/search-bar.png)
+
 ### Entering Search Terms [](id=entering-search-terms)
 
 @product@, backed by Elasticsearch, supports *full text search*. It does not,
 however, support advanced search syntax, such as Elasticsearch's [query string
 syntax](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax).
 That means you can't search specific fields, use wildcards like *\**, or boolean
-operators like *AND/OR/NOT*. Liferay is considering enabling the use of string
-queries out of the box in a future version of @product@.
+operators like *AND/OR/NOT*. Liferay is weighing the costs and benefits of
+enabling the use of string queries out of the box in a future version of
+@product@.
 
 ### Prefix Searching [](id=prefix-searching)
 
-One of the cool features of @product@ search is *prefix* searching. If you're
-searching in a site for classical musicians, you might search for the term
-*instrument*. This search of course returns documents with the full word in
-them, but it also returns other variants of the word, like *instruments*,
-*instrumental*, and *instrumentation*.
+*Prefix* searching is cool. If you're searching in a site for classical
+musicians, you might search for the term *instrument*. This search of course
+returns documents with the full word in them, but it also returns other variants
+of the word, like *instruments*, *instrumental*, and *instrumentation*.
 
 ![Figure 1: Searching for *data* in @product@'s Search application also returns
 *database*.](../../images/search-prefix.png)
+
+Another way to ensure users see results is using the spell check settings.
 
 <!-- A 7.1 feature, not 7.0 ### Configuring the Search Bar [](id=configuring-the-search-bar) -->
 ## Spell Checking User Queries [](id=spell-checking-user-queries)
 
 Spell check settings allow administrators to configure the Search application so
-that if a user types a search term that doesn't return many results, the user
-can be prompted to improve their search. 
+that if a user types a search term that doesn't return many results (for
+example, a slightly misspelled wordd), the user can be prompted to improve their
+search. 
 
 To configure the spell check settings, click the options
 (![Options](../../images/icon-options.png)) button and select *Configuration*.
@@ -105,9 +112,8 @@ effective.
 
 $$$
 
-In addition to enabling or disabling any of these settings, the thresholds for
-all of the spell check settings can also be changed to produce the desired
-behavior.
+In addition to enabling or disabling the spell check settings, thresholds for
+all of the settings are changeable, to produce the desired behavior.
 
 <!-- For 7.1 only ## Search Display Page - good way to segway into Search
 Results section -->

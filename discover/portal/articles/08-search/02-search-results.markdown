@@ -2,7 +2,8 @@
 
 The ideal search experience involves a user entering a search term, waiting an
 infinitesimally small amount of time, and having the perfectly matching asset
-delivered to them at the top of a list of extremely relevant hits. Like this:
+delivered to them at the top of a list of other extremely relevant hits. Like
+this:
 
 ![Figure 1: The goal is to return the perfect results to users searching your site.](../../images/search-results-perfect.png)
 
@@ -38,15 +39,14 @@ tab displayed is *Display Settings*.
 The Scope setting is really important here. By default, searching is done on
 *This Site*, which means only the assets associated with the site where the
 search is executed. To expand the scope of the search to the entire @product@
-instance, select *Everything*, To let the user choose which scope they want
+instance, select *Everything*. To let the user choose which scope they want
 to search, select *Let the User Choose*.
 
 ![Figure 2: The *Let the User Choose* scope option enables a drop-down menu in the search bar where users can set the scope of their search.](../../images/search-scope.png)
 
-The list of facet settings on this page is also quite important. To learn more
-about facets and their configuration options read
-[here](/discover/portal/-/knowledge_base/7-0/facet-settings)<!--USE CORRECT LINK
--->. 
+The list of facet settings on this page is also quite important. Learn more
+about facets and their configuration options in a [separate
+article](/discover/portal/-/knowledge_base/7-0/configuyring-facets).
 
 For more display options, click the *Other Settings* tab. There are several
 options:
@@ -55,22 +55,16 @@ options:
 : Display results as [search
 documents](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
 Never use this in production. Developers use this feature to view search
-responses in their document-based format. Part of a developer's job when writing
-search indexers is to convert documents (the objects that get indexed) to the
-actual object and back again. This option allows developers to see how their
-objects are being indexed.
-
-+$$$
-
-**Note:** You can view the search result in its document form by enabling the
-Search application's *Display Results in Document Form* configuration setting
-and then expanding individual results by clicking the *+* symbol to the left of
-their titles.
+responses in their indexed, document-based format. Part of a developer's job
+when writing [search
+indexers](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search#indexers)
+is to convert documents (the objects that get indexed) to the actual object and
+back again. This option allows developers to see how their objects are being
+indexed. Once enabled, expand each individual result whose document form you'd
+like to view by clicking the *Details...* link below the result summary.
 
 ![Figure 3: Viewing results in their document form lets you inspect exactly
 what's being indexed for a particular asset. This screenshot shows just a small portion of one document.](../../images/search-result-document.png)
-
-$$$
 
 **View in Context**
 : When an asset is clicked, show it in its native application. For example, if
@@ -92,9 +86,9 @@ is for backward compatibility only: developers are encouraged to re-design their
 search code, and then custom assets are aggregated with native @product@ assets
 seamlessly.
 
-To learn about returning suggestions for better search terms (for example, "Did
-you mean...") if not enough results are returned, read [here](LINK TO SPELL
-CHECK CONFIG).
+For further reading, check out how to [return suggestions for better search
+terms](/discover/portal/-/knowledge_base/7-0/searching-for-assets#spell-checking-user-queries)
+(for example, "Did you mean...") when not enough results are returned initially.
 
 ## Filtering Results with Facets [](id=filtering-results-with-facets)
 
@@ -105,7 +99,7 @@ enter a search term, are presented with a list of results and search facets,
 which you can think of as buckets that group results together if they share a
 common characteristic.
 
-Administrators can configure facets. Read [here](LINK) to learn how.
+Administrators can configure facets. Read about [configuring facets](/discover/portal/-/knowledge_base/7-0/configuring-facets) to learn more.
 
 ## Search Results Relevance [](id=search-results-relevance)
 
@@ -115,7 +109,7 @@ calculated by the search engine. There are numerous factors contributing to the
 total score of a returned document. This section aims to give an overview and
 provide general understanding on the calculation of relevance. 
 
-The relevancy scoring approach used in @product@ can be distilled into three
+The relevance scoring approach used in @product@ can be distilled into three
 principles:
 
 1.  Term Frequency: If a term appears more than once in the fields of a
@@ -133,7 +127,7 @@ principles:
 3.  Field-Length Norm: Matches from shorter fields, like title, score higher
     than those in longer fields, like content.
 
-Show one good picture with a series of results that include TF IDF FLN 
+<!-- Show one good picture with a series of results that include TF IDF FLN  -->
 
 Those principles determine the order of results returned in the search portlet.
 To look in depth at the relative contribution of each to a result set's
@@ -181,3 +175,5 @@ Here's what to expect from search results in a staging environment:
 - 
 
 THIS WON'T BE DIFFERENT FOR REMOTE OR LOCAL, AS PERTAINS TO SEARCH, RIGHT?
+
+Add highlighting and discussion of Result Summaries

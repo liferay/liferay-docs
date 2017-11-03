@@ -12,8 +12,9 @@ common characteristic. Think of facets as buckets that hold search results that
 share something in common. You might want to see the results from all the
 buckets (the master results list you're first presented), but after scanning the
 results, you might decide the results from just one of the buckets better
-represent what you're looking for. So what facets are included in @product by
-default?
+represent what you're looking for (for example, all the results from a
+particular site, or all the results that are Blogs Entries). So what facets are
+included in @product by default?
 
 - Site
 - Asset type
@@ -26,8 +27,6 @@ default?
 In this article, explore how facets are used by end users, and learn how
 administrators can configure facets for their use case.
 
-So how do users make the most of facets?
-
 ## Using Facets [](id=using-facets)
 
 After a search is executed, clicking on a specific site from the Site facet
@@ -35,8 +34,9 @@ filters the search results to only display assets within the specified site.
 Clicking on a specific user filters the search results to only display assets
 added by the specified user. The frequency with which the term was found for
 each facet is listed in parentheses after the facet. Sometimes, viewing assets
-with certain [tags or categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
-a certain way may be helpful to you, and there are facets for those, too.
+with certain [tags or
+categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+is helpful.
 
 ![Figure 2: Asset tag facets let you see how many assets contain the terms for which you searched *and* contain certain tags. Click on a specific tag to see only content to which the tag has been applied.](../../images/faceted-search-tags.png)
 
