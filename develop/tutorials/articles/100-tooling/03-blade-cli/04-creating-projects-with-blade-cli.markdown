@@ -91,7 +91,11 @@ command. When generating a project using Blade CLI, there is no downloading,
 which means internet access is not required.
 
 Blade CLI can also create the same project with Maven by specifying the `-b
-maven` parameter.
+maven` parameter. Using Blade CLI's Maven option isn't the only way leverage
+Liferay's Maven project templates; you can also generate them using Maven
+archetypes. See Liferay's
+[Project Templates](/develop/reference/-/knowledge_base/7-0/project-templates)
+articles to see how.
 
 When using Blade CLI, you'll have to manually edit your project's component
 class. Blade CLI gives you the ability to specify the class's name, but all
