@@ -16,6 +16,9 @@ or
         -Dpackage=[packageName] \
         -DclassName=[className]
 
+You can also insert the `-b maven` parameter to the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `soy-portlet`. Suppose you want to
 create an Soy portlet project called `my-soy-portlet-project` with a package
 name of `com.liferay.docs.soyportlet` and a class name of `MySoyPortlet`. Also,

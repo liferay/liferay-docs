@@ -15,6 +15,9 @@ or
         -Dpackage=[packageName] \
         -DclassName=[className]
 
+You can also insert the `-b maven` parameter to the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `npm-portlet`. Suppose you want to
 create an npm portlet project called `my-npm-portlet` with a package name of
 `com.liferay.npm` and a class name of `MyNpmPortlet`. Also, you'd like to create

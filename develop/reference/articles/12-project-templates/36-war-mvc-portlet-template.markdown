@@ -14,6 +14,9 @@ or
         -DartifactId=[projectName]
         -Dpackage=[packageName]
 
+You can also insert the `-b maven` parameter to the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `war-mvc-portlet`. Suppose you want to
 create a WAR MVC portlet project called `my-war-mvc-portlet-project` with a
 package name of `com.liferay.docs.war.mvc` and a class name of

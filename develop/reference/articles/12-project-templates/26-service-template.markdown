@@ -16,6 +16,9 @@ or
         -DclassName=[className]
         -DserviceName=[serviceName]
 
+You can also insert the `-b maven` parameter to the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `service`. Suppose you want to create a
 service project called `my-service-project` with a package name of
 `com.liferay.docs.service` and a class name of `Service`. Also, you'd like to

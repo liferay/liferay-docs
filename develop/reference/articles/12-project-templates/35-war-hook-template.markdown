@@ -15,6 +15,9 @@ or
         -Dpackage=[packageName] \
         -DclassName=[className]
 
+You can also insert the `-b maven` parameter to the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `war-hook`. Suppose you want to create
 a WAR hook project called `my-war-hook-project` with a package name of
 `com.liferay.docs` and a class name of `MyWarHook`. You could run the following

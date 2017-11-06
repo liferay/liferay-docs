@@ -16,6 +16,9 @@ or
         -Dpackage=[packageName] \
         -DclassName=[className]
 
+You can also insert the `-b maven` parameter to the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `template-context-contributor`. Suppose
 you want to create a template context contributor project called
 `my-template-context-contributor` with a package name of

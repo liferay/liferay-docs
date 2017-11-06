@@ -16,6 +16,9 @@ or
         -Dpackage=[packageName] \
         -DclassName=[className]
 
+You can also insert the `-b maven` parameter to the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `rest`. Suppose you want to create a
 RESTful web service project called `my-rest-project` with a package name of
 `com.liferay.docs.application` and a class name prefix of `Rest`. You could run

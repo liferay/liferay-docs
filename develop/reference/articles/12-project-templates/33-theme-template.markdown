@@ -51,8 +51,8 @@ this:
     - `[gradlew|pom.xml]`
 
 The generated theme is functional and is deployable to a @product@ instance. To
-build upon the generated app, modify the project by adding logic and additional
-files to the folders outlined above. You can visit the
+build upon the generated project, modify the project by adding logic and
+additional files to the folders outlined above. You can visit the
 [simple-theme](/develop/reference/-/knowledge_base/7-0/theme) project for a more
 expanded sample of a theme. Likewise, see the
 [Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)

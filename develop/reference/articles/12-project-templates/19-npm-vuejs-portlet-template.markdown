@@ -15,6 +15,9 @@ or
         -Dpackage=[packageName] \
         -DclassName=[className]
 
+You can also insert the `-b maven` parameter to the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `npm-vuejs-portlet`. Suppose you want
 to create an npm Vue.js portlet project called `my-npm-vuejs-portlet` with a
 package name of `com.liferay.npm.vuejs` and a class name of

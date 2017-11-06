@@ -15,6 +15,9 @@ or
         -Dpackage=[packageName] \
         -DcontributorType=[contributorType]
 
+You can also insert the `-b maven` parameter to the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `theme-contributor`. Suppose you want
 to create a theme contributor project called `my-theme-contributor` with a
 package name of `com.liferay.docs.theme.contributor` and a contributor type of
