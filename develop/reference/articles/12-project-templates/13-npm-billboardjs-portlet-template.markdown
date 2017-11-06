@@ -69,7 +69,6 @@ this:
                         - `init.jsp`
                         - `view.jsp`
     - `.babelrc`
-    - `.gitignore`
     - `.npmbundlerrc`
     - `bnd.bnd`
     - `[build.gradle|pom.xml]`

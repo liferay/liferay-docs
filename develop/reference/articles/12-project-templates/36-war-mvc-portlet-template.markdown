@@ -70,7 +70,6 @@ this:
                     - `web.xml`
                 - `init.jsp`
                 - `view.jsp`
-    - `.gitignore`
     - `[build.gradle|pom.xml]`
     - `[gradlew|mvnw]`
 

@@ -57,7 +57,6 @@ this:
                     - `liferay-hook.xml`
                     - `liferay-plugin-package.properties`
                     - `web.xml`
-    - `.gitignore`
     - `[build.gradle|pom.xml]`
     - `[gradlew|mvnw]`
 
