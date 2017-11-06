@@ -4,10 +4,30 @@
 
 The Spring MVC portlet provides a way to add various different fields into the
 database and display them in a table. This project is a Spring MVC based portlet
-WAR that implements the same functionality as the `service-builder/foo-web`
+WAR that implements the same functionality as the `apps/service-builder/foo-web`
 sample project. It manages JSP pages for display, uses a Spring-annotated
-portlet class, and invokes the `service-builder/foo-api` module to call
+portlet class, and invokes the `apps/service-builder/foo-api` module to call
 services.
+
++$$$
+
+**Note:** If you're planning to package this sample using Maven, you must
+complete a few additional steps to avoid build errors. This sample relies on the
+`service-builder/foo-api` module. Since the `foo-api` bundle is not available on
+Liferay's CDN repo or Maven Central, this sample can not reference it, resulting
+in build failures.
+
+To satisfy this dependency, you must install the bundle dependency to your local
+`~/.m2 repo`, along with the parent BND plugin and root Maven project. Here are
+the steps to accomplish this:
+
+1.  Run `mvn clean install` on `maven/apps/service-builder/foo-api`.
+2.  Run `mvn clean install` on `maven/parent.bnd.bundle.plugin`.
+3.  Run `mvn clean install -N` in the root `liferay-blade-samples/maven` folder.
+
+Now you can build this sample successfully.
+
+$$$
 
 ![Figure 1: Click *Add* and fill out the sample fields to generate a custom entry in the portlet's table.](../../../images/spring-mvc-portlet.png)
 

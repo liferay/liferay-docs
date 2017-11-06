@@ -22,10 +22,24 @@ Follow these steps to blacklist a module:
 
 2.  In the configuration file, add `blacklistBundleSymbolicNames=` followed by
     the symbolic names of OSGi modules to uninstall or to keep from installing.
-    The modules can be from LPKG, JAR, WAR, or WAR wrapper files. 
+    The modules can be from LPKG, JAR, WAR, or WAR wrapper files.
+    Extra spaces can short-circuit lists or invalidate the configuration entry. 
+
+    The following blacklist uninstalls the Liferay Marketplace and Liferay
+    Sharepoint Connector LPKGs:
+
+        blacklistBundleSymbolicNames=["Liferay\ Marketplace","Liferay\ Sharepoint\ Connector"]
+        
+    **Important**: Configuration values must not contain any extra spaces.
 
 3.  Copy the configuration file into the 
     `[Liferay_Home]/osgi/configs` folder to deploy it. 
+
++$$$
+
+**Note**: Blacklisting an LPKG uninstalls all of its internal modules. 
+
+$$$
 
 @product@ removes installed modules on the blacklist. Blacklisted modules can't
 be installed. The @product@ log reports each module uninstallation. 
@@ -33,7 +47,7 @@ be installed. The @product@ log reports each module uninstallation.
 To reinstall blacklisted modules, follow these steps:
 
 1.  Open the configuration file
-    `com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration`.
+    `com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config`.
 
 2.  Remove the symbolic names of the modules from the
     `blacklistBundleSymbolicNames` list.
