@@ -20,17 +20,13 @@ public class ResetImagesDiscover {
 		String source = FileUtils.readFileToString(markdownfile);
 
 		String find = "\\!\\[Figure " + "[0-9]:";
-		System.out.println("find: " + find);
 		String replace = "\\!\\[Figure " + "x:";
-		System.out.println("replace: " + replace);
 		
 		Pattern pattern = Pattern.compile(find);
 		Matcher matcher = pattern.matcher(source);
 		String output = matcher.replaceAll(replace);
 		
 		find = "\\!\\[Figure " + "[0-9][0-9]:";
-		System.out.println("find: " + find);
-		System.out.println("replace: " + replace);
 
 		pattern = Pattern.compile(find);
 		matcher = pattern.matcher(output);
