@@ -44,7 +44,7 @@ description, read on to learn more!
 
 ## Prerequisites for Asset Enabling and Application
 
-In order to create an Asset, your application will need to have a couple of 
+In order to asset enable your application, you will need to have a couple of 
 pieces in place. First, and most fundamental, your application needs to store 
 data which can be classified as an asset. Most applications will meet this 
 requirement as they store and model some kind of data to serve their function,
