@@ -15,7 +15,7 @@ Here's how to apply Liferay's CSS builder to your Maven project.
         <plugin>
             <groupId>com.liferay</groupId>
             <artifactId>com.liferay.css.builder</artifactId>
-            <version>1.0.28</version>
+            <version>2.0.1</version>
             <executions>
                 <execution>
                     <id>default-build</id>
