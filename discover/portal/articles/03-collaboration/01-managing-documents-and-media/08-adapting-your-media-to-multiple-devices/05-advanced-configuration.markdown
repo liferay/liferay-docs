@@ -39,11 +39,8 @@ adjective for "worker").
 
 The *Adaptive Media Image* configuration can be different for each virtual 
 instance. It contains only this option: 
-<!-- 
-Are there any default settings in this list? I'm assuming so, otherwise you'd 
-have to manually populate it for Adaptive Media to work at all.
--->
 
 -   **MimeTypes:** A list of the image MIME types that Adaptive Media supports. 
     If an image is uploaded and its MIME type isn't in this list, then Adaptive 
-    Media ignores the image. 
+    Media ignores the image. By default, this list is populated with many common 
+    MIME types. 

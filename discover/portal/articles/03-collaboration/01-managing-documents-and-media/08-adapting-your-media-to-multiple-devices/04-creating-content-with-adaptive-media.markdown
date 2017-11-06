@@ -80,15 +80,9 @@ is used as a fallback in case the adapted images aren't available.
 To use adapted images in 
 [structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content), 
 content creators must manually include an image field in the web content's 
-structure. Then they can add the image field to the matching template by 
-selecting it on the left side of the editor. Here's an example image field 
-included in a template: 
-<!-- 
-So they have to add the exact same image field to both the structure and the 
-template? 
-
-And the image field must contain the data-fileentryid attribute?
--->
+structure. Then they can reference that image field in the matching template by 
+selecting it on the left side of the editor. Here's an example snippet of an 
+image field named `Imagecrrf` included in a template: 
 
     <#if Imagecrrf.getData()?? && Imagecrrf.getData() !="">
       <img data-fileentryid="${Imagecrrf.getAttribute("fileEntryId")}" 
@@ -104,13 +98,8 @@ content's HTML in the editor's code view, you should see something like this:
 
 Note that there's an `<img>` tag with a `data-fileentryid` attribute. Adaptive 
 Media uses the file entry ID to automatically replace the `<img>` element with a 
-`<picture>` element that contains the available adapted images and the optimal 
-device for each of them.
-<!-- 
-How does it include the device? I'm assuming this looks something like the code
-at the end of the previous section, which doesn't include any device info. It 
-just lists the resolutions, and the original image as a fallback.
--->
+`<picture>` element that contains the available adapted images for each 
+resolution (see the `<picture>` example above).
 
 ## Staging Adapted Images [](id=staging-adapted-images)
 
@@ -122,13 +111,8 @@ functionality. Adaptive Media includes adapted images in staged content when
 published, and can update those images to match any new resolutions. 
 
 Similarly, when content that contains adapted images is exported, Adaptive Media 
-exports those images in the LAR file. When a LAR file that contains adapted 
-images is imported, the content is updated to use the those adapted images.
-<!-- 
-If it's importing content that contains adapted images, how is it updating the 
-content to use those images? Doesn't the imported content already use the 
-adapted images?
---> 
+exports those images in the LAR file. That LAR file can then be imported to 
+restore or transfer that content, along with its adapted images.
 
 Note that Adaptive Media doesn't regenerate adapted images during export/import 
 or the publication of staged content. To improve performance, Adaptive Media 
