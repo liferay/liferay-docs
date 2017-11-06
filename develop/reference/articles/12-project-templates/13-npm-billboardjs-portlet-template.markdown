@@ -15,7 +15,7 @@ or
         -Dpackage=[packageName] \
         -DclassName=[className]
 
-You can also insert the `-b maven` parameter to the Blade command to generate a
+You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
 
 The template for this kind of project is `npm-billboardjs-portlet`. Suppose you

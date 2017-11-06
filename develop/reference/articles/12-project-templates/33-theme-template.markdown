@@ -13,6 +13,9 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.theme \
         -DartifactId=[projectName]
 
+You can also insert the `-b maven` parameter in the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `theme`. Suppose you want to create a
 theme project called `my-theme-project` as a WAR file. You could run the
 following command to accomplish this:
