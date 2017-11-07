@@ -36,7 +36,7 @@ terms, hit their *Enter* button (or click the magnifying glass icon), and
 they're taken to a maximized view of the search portlet displaying any results
 and facets that apply.
 
-![Figure x: The Search application displays just the search bar in its default view,
+![Figure 1: The Search application displays just the search bar in its default view,
 beckoning users to enter the search context.](../../images/search-bar.png)
 
 ### Entering Search Terms [](id=entering-search-terms)
@@ -53,10 +53,11 @@ enabling the use of string queries out of the box in a future version of
 
 *Prefix* searching is cool. If you're searching in a site for classical
 musicians, you might search for the term *instrument*. This search of course
-returns documents with the full word in them, but it also returns other variants
-of the word, like *instruments*, *instrumental*, and *instrumentation*.
+returns documents with the full word in them, but it also returns variants with
+*instruments* as the prefix. For example, results with *instruments*,
+*instrumental*, and *instrumentation* would also be returned.
 
-![Figure 1: Searching for *data* in @product@'s Search application also returns
+![Figure 2: Searching for *data* in @product@'s Search application also returns
 *database*.](../../images/search-prefix.png)
 
 Another way to ensure users see results is using the spell check settings.
@@ -66,7 +67,7 @@ Another way to ensure users see results is using the spell check settings.
 
 Spell check settings allow administrators to configure the Search application so
 that if a user types a search term that doesn't return many results (for
-example, a slightly misspelled wordd), the user can be prompted to improve their
+example, a slightly misspelled werd), the user can be prompted to improve their
 search. 
 
 To configure the spell check settings, click the options
@@ -75,7 +76,7 @@ The tab displayed is *Display Settings*, and next to it is the Spell Check
 Settings tab. Here you can configure the Search application to help users when
 their initial query doesn't yield many results.
 
-![Figure 2: Configure the spell check settings to allow for user input mistakes and help lead users to results.](../../images/search-spell-check-settings.png)
+![Figure 3: Configure the spell check settings to allow for user input mistakes and help lead users to results.](../../images/search-spell-check-settings.png)
 
 There are three main settings here:
 

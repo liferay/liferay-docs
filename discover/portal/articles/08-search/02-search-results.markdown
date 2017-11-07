@@ -21,7 +21,9 @@ user interface. This article covers the following topics:
 - [Understanding search results relevance](#search-results-relevance)
 - [Filtering search results with facets](#filtering-results-with-facets)
 - [The effect of permissions on search results](#permissions-and-search-results)
-- [How search results works in the staging environment](#search-and-staging)
+- [Search results in the staging environment](#search-and-staging)
+- [Search results summaries](#result-summaries)
+- [Search term highlighting](#highlighting)
 
 Search results, called *hits* in the backend search infrastructure, are
 philosophical entities, really. To some, they're the end of the road, the
@@ -36,7 +38,7 @@ detail. Configure the application's display options by clicking its options menu
 (![Options](../../images/icon-options.png)) and selecting *Configuration*. The
 tab displayed is *Display Settings*.
 
-The Scope setting is really important here. By default, searching is done on
+The Scope setting is really important. By default, searching is done on
 *This Site*, which means only the assets associated with the site where the
 search is executed. To expand the scope of the search to the entire @product@
 instance, select *Everything*. To let the user choose which scope they want
@@ -46,7 +48,7 @@ to search, select *Let the User Choose*.
 
 The list of facet settings on this page is also quite important. Learn more
 about facets and their configuration options in a [separate
-article](/discover/portal/-/knowledge_base/7-0/configuyring-facets).
+article](/discover/portal/-/knowledge_base/7-0/configuring-facets).
 
 For more display options, click the *Other Settings* tab. There are several
 options:
@@ -118,7 +120,6 @@ principles:
     search engine. It's like the corresponding entity in the database, but may
     not include all of the same fields.
     Example: 
-    ![Figure 4: Search relevance goes up with the frequency of the term in a document's fields.](../../images/search-results-term-freq.png)
 
 2.  Inverse Document Frequency: Matching terms that are rare in the index
     provide a higher relevance score than those that are more common.
@@ -145,7 +146,7 @@ for each result:
 
 The results are returned in JSON format:
 
-![Figure 5: The scoring explanation of search results, displayed in JSON.](../../images/search-results-scoring-json.png)
+![Figure 4: The scoring explanation of search results, displayed in JSON.](../../images/search-results-scoring-json.png)
 
 A logical outcome of these three scoring principles is that *title is king*. A
 match in the title field will produce a good score, because of the field length
@@ -161,19 +162,87 @@ See the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsea
 
 It's important that users lacking permission to view an asset also can't see it
 in the search results.
+AWAITING FEEDBACK
 
 ## Search and Staging [](id=search-and-staging)
 
-@product@ supports the concept of [staging](LINK), where content is first placed
-in a preview and testing environment before being published for consumption by
-end users (on the live site). When content is added to the search index, it's
-marked so that the search API can decipher whether an item is live or not. In
-the live version of the site, it's quite simple: only content that's marked for
-the live site is searchable. 
+@product@ supports the concept of
+[staging](/discover/portal/-/knowledge_base/7-0/staging-content-for-publication),
+where content is first placed in a preview and testing environment before being
+published for consumption by end users (on the live site). Content added to the
+search index is marked so that the search API can decipher whether an item is
+live or not. In the live version of the site, it's quite simple: only content
+that's marked for the live site is searchable. 
 
 Here's what to expect from search results in a staging environment:
-- 
 
-THIS WON'T BE DIFFERENT FOR REMOTE OR LOCAL, AS PERTAINS TO SEARCH, RIGHT?
+- *Local staging*:
+- *Remote staging*:
 
-Add highlighting and discussion of Result Summaries
+## Result Summaries [](id=result-summaries)
+
+Search results must be displayed to users to be useful. If each result was
+displayed in its JSON document form, users would faint and User Experience
+Designers around the world might spontaneously combust. Liferay values end users
+and User Experience Designers alike, so a list of result summaries is returned
+instead. 
+
+![Figure 5: Highlighting is useful for drawing attention to your search terms,
+where they appear in the result summary.](../../images/search-highlight-summary.png)
+
+So what's included in a result summary? The information from a document that the
+asset's developer felt is most useful to end users searching for the asset.
+That means that each asset can have different fields included in their search
+result summaries. For assets with text content, a common summary format is to
+include the title and the content of the asset. The title is displayed first.
+The asset type (for example, Document in the example image above) is always
+displayed on the second line, and a snippet of the content that includes a match
+to the search term on the last line. Some assets, like Documents and Media
+documents, display the description field if no content is available to display.
+
+Users are different. Only the user's full name and the asset type (User) are
+displayed in user result summaries.
+
+![Figure 6: User summaries contain only the user's full name.](../../images/search-user.png)
+
+For assets that contain other assets (Web Content, Documents & Media, and
+Bookmarks folders) or whose content is not amenable to display (Dynamic Data
+List Records and Calendar Events), it makes more sense to display the title
+asset type and description in results summaries. There'd never be anything in a
+content field for these assets.
+
+![Figure 7: Documents and Media, Web Content, and Bookmarks folders include
+titles and descriptions in their summaries.](../../images/search-folder.png)
+
+Bookmarks entries show the title and the URL.
+
+![Figure 8: Bookmarks Entries summaries show the title and the URL.](../../images/search-bookmarks.png)
+
+## Highlighting [](id=highlighting)
+
+By now you've probably noticed that search terms appearing in the summary are
+<mark>highlighted</mark>. 
+
+![Figure 9: Some document summaries have lots of highlights, if the search term matches text that appears in the summary.](../../images/search-highlights.png)
+
+Highlighting is a helpful visual cue that hints at why the result is returned,
+but beware. A hit can score well, and thus be returned near the top of the
+results, without having any highlights. That's because not all indexed fields
+appear in the summary. Consider a user named Arthur C. Clarke. He has an email
+address of acc@authors.org, which is searchable. Because results summaries for
+users only contain the full name of the user, searching for Mr. Clarke by his
+email address returns the user, but no term is highlighted. 
+
+![Figure 10: Results that match the search term won't always have highlights.](../../images/search-no-highlights.png)
+
+There are additional cases where search results won't have highlighting, so
+don't automatically assume the Search application is revolting if you see
+results summaries with no highlighted terms in them. On the other hand, if the
+search results list returns a list of results that display only "I'm sorry,
+[Your Name], I'm afraid I can't do that"<sup>[1](#footnote1)</sup>, then the
+Search application is definitely revolting. Kill your @product@ instance
+immediately and/or hide under your desk until the AI revolution is thwarted or
+completed.
+
+<a name="footnote1">1</a> This is a nod to [HAL 9000](http://www.imdb.com/title/tt0062622/quotes), supercomputer of *2001: A Space Odyssey* fame. 
+

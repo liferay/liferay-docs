@@ -7,14 +7,13 @@ parentheses) on the left.
 
 ![Figure 1: *Sites* and *Asset Entries* are two of the facet sets you'll encounter. They let you drill down to results that contain the search terms you entered.](../../images/search-faceted-search.png)
 
-Facets allow users of the Search application to filter search results by some
-common characteristic. Think of facets as buckets that hold search results that
-share something in common. You might want to see the results from all the
-buckets (the master results list you're first presented), but after scanning the
-results, you might decide the results from just one of the buckets better
-represent what you're looking for (for example, all the results from a
-particular site, or all the results that are Blogs Entries). So what facets are
-included in @product by default?
+Facets allow users to filter search results by some common characteristic. Think
+of facets as buckets that hold search results that share something in common.
+You might want to see the results from all the buckets (the master results list
+you're first presented), but after scanning the results, you might decide the
+results from just one of the buckets better represent what you're looking for
+(for example, all the results from a particular site, or all the results that
+are Blogs Entries). So what facets are included in @product@ by default?
 
 - Site
 - Asset type
@@ -65,11 +64,10 @@ drill down into the search results). To remove any of the facets from the
 filtering of results, click the *Any...* link for the facet type. The following
 two figures illustrate how this works.
 
-![Figure 4: After clicking the *Web Content* type in the Asset Types facet, only Web
-Content Article is listed.](../../images/search-facet-wc.png).
+![Figure 4: After clicking the *Web Content Article* type in the Asset Types facet, it's the only asset type listed.](../../images/search-facet-wc.png).
 
 ![Figure 5: Click the *Any Asset* link to clear the filtering for a facet. Now
-all the available asset types are available.](../../images/search-facet-any.png)
+all the available asset types are visible.](../../images/search-facet-any.png)
 
 The default facet behavior is quite useful, but you can configure the facets to
 your liking.

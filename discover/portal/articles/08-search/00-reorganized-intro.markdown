@@ -9,8 +9,8 @@ API](/develop/tutorials/-/knowledge_base/7-0/asset-framework) and have an
 class](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search#indexersdefined).
 Any content that has these features can be searched in the @product@ Search
 application. 
-<!-- Q: Include a list of oob asset types in portal? I don't think we have this
-anywhere. -->
+
+![Figure 1: There are many searchable out-of-the-box asset types.](../../images/search-assets.png)
 
 ## Searching the Index, not the Database [](id=searching-the-index-not-the-database)
 
@@ -49,13 +49,13 @@ Searching is simple and straghtforward. Find a search portlet (there's one
 embedded in every page by default), enter a term in its search bar, and click
 *Enter*.
 
-![Figure 1: There's a search bar embedded on all @product@ pages by default.](../../images/search-bar.png)
+![Figure 2: There's a search bar embedded on all @product@ pages by default.](../../images/search-bar.png)
 
 A results page is displayed. If there are hits to search engine documents,
 you'll see them as search results in the right hand column. In the left hand
 column you'll see search facets.
 
-![Figure 2: There's a search bar embedded on all @product@ pages by default.](../../images/search-results.png)
+![Figure 3: There's a search bar embedded on all @product@ pages by default.](../../images/search-results.png)
 
 The search bar, search results, and search facets make up three powerful
 features in @product@'s search UI.
@@ -95,7 +95,7 @@ for a longer discussion of relevance.
 
 Facets are a core feature of the @prodcut@ Search application.
 
-![Figure 3: *Sites* and *Asset Entries* are two of the facet sets you'll encounter. They let you drill down to results that contain the search terms you entered.](../../images/search-faceted-search.png)
+![Figure 4: *Sites* and *Asset Entries* are two of the facet sets you'll encounter. They let you drill down to results that contain the search terms you entered.](../../images/search-faceted-search.png)
 
 Facets allow users of the Search application to filter search results. Think of
 facets as buckets that hold similar search results. You might want to see the
@@ -115,4 +115,5 @@ You've probably used something similar on any number of sites, especially with
 online commerce. You search for an item, are presented with a list of results,
 and a list of buckets you can click to further refine the search results,
 without entering additional search terms. Search facets work the same way in
-@product@.
+@product@. Facets are, of course,
+[configurable](/discover/portal/-/knowledge_base/7-0/configuring-facets).
