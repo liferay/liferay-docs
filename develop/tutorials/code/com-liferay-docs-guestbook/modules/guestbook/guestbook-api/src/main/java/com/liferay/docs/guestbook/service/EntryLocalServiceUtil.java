@@ -170,6 +170,16 @@ public class EntryLocalServiceUtil {
 			message, serviceContext);
 	}
 
+	public static com.liferay.docs.guestbook.model.Entry updateStatus(
+		long userId, long guestbookId, long entryId, int status,
+		com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateStatus(userId, guestbookId, entryId, status,
+			serviceContext);
+	}
+
 	public static com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery getActionableDynamicQuery() {
 		return getService().getActionableDynamicQuery();
 	}
@@ -213,6 +223,11 @@ public class EntryLocalServiceUtil {
 
 	public static int getEntriesCount(long groupId, long guestbookId) {
 		return getService().getEntriesCount(groupId, guestbookId);
+	}
+
+	public static int getEntriesCount(long groupId, long guestbookId, int status)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEntriesCount(groupId, guestbookId, status);
 	}
 
 	/**
@@ -305,6 +320,12 @@ public class EntryLocalServiceUtil {
 		long groupId, long guestbookId, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator<com.liferay.docs.guestbook.model.Entry> obc) {
 		return getService().getEntries(groupId, guestbookId, start, end, obc);
+	}
+
+	public static java.util.List<com.liferay.docs.guestbook.model.Entry> getEntries(
+		long groupId, long guestbookId, int status, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEntries(groupId, guestbookId, status, start, end);
 	}
 
 	/**

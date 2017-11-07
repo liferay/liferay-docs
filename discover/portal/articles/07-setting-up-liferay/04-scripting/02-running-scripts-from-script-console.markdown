@@ -63,11 +63,8 @@ should see that all users (except the default user and your user) have been
 updated. 
 
 That's all that's needed to run scripts and to access the Liferay service layer.
-For an example of a script that accesses OSGi services from Liferay's module
-framework, please see
-[Using Custom Java Tools in the Script Engine](/discover/deployment/-/knowledge_base/7-0/using-custom-java-tools-in-the-script-engine).
-There are, however, some things to keep in mind when working with the script
-console: 
+
+Keep these things in mind when working with the script console: 
 
 - There is no undo.
 - There is no preview.

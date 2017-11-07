@@ -506,6 +506,26 @@ breaking change entry.
 
 $$$
 
+In addition to embedding applications in templates, you can embed a template 
+within another template. This allows for reusable code, JS library imports, 
+scripts, or macros. The template that you embed should be a generic template
+with no structure assigned to it. To create a template with no structure,
+leave the structure field empty when you create the template. To reference a template from within another template, you will need the Template Key.
+
+![Figure x: You can find the Template Key when view the Edit page for a template..](../../../images/find-template-key.png)
+
+Below are examples of embedding template in FreeMarker and Velocity:
+
+**FreeMarker**
+
+    <#include "${templatesPath}/[template-key]" />    
+
+**Velocity**
+
+    #parse ("$templatesPath/[template-key]")
+
+ 
+
 Liferay's taglibs are also accessible to web content administrators developing
 in FreeMarker. There is no need to instantiate these taglibs within your
 FreeMarker template; they're already provided for you automatically. You can

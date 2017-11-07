@@ -173,6 +173,16 @@ public class GuestbookLocalServiceWrapper implements GuestbookLocalService,
 	}
 
 	@Override
+	public com.liferay.docs.guestbook.model.Guestbook updateStatus(
+		long userId, long guestbookId, int status,
+		com.liferay.portal.kernel.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _guestbookLocalService.updateStatus(userId, guestbookId, status,
+			serviceContext);
+	}
+
+	@Override
 	public com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery getActionableDynamicQuery() {
 		return _guestbookLocalService.getActionableDynamicQuery();
 	}
@@ -322,6 +332,13 @@ public class GuestbookLocalServiceWrapper implements GuestbookLocalService,
 		long groupId, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator<com.liferay.docs.guestbook.model.Guestbook> obc) {
 		return _guestbookLocalService.getGuestbooks(groupId, start, end, obc);
+	}
+
+	@Override
+	public java.util.List<com.liferay.docs.guestbook.model.Guestbook> getGuestbooks(
+		long groupId, int status)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _guestbookLocalService.getGuestbooks(groupId, status);
 	}
 
 	/**

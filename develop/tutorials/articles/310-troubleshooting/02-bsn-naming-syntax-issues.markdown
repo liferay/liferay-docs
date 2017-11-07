@@ -21,7 +21,7 @@ deployment, Liferay's OSGi Runtime framework throws an
 
 For example, if you deploy a plugin WAR that has no `Bundle-SymbolicName` header
 in its `liferay-plugin-package.properties`, the
-[WAB Generator](/develop/reference/-/knowledge_base/7-0/using-the-wab-generator)
+[WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
 uses the WAR's name as the WAB's `Bundle-SymbolicName`. If the WAR's name has a
 space in it (e.g., `space-program-theme v1.war`) an
 `IllegalContextNameException` occurs on deployment.
@@ -42,4 +42,4 @@ However you set your a `Bundle-SymbolicName`, refrain from using spaces.
 
 ## Related Topics [](id=related-topics)
 
-[Using the WAB Generator](/develop/reference/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)

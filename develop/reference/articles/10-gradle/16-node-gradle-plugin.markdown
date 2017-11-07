@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "3.1.1"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "3.2.1"
     }
 
     repositories {
@@ -118,7 +118,7 @@ Property Name | Type | Default Value | Description
 `inheritProxy` | `boolean` | `true` | Whether to set the `http_proxy`, `https_proxy`, and `no_proxy` environment variables in the Node.js invocation based on the values of the system properties `https.proxyHost`, `https.proxyPort`, `https.proxyUser`, `https.proxyPassword`, `https.nonProxyHosts`, `https.proxyHost`, `https.proxyPort`, `https.proxyUser`, `https.proxyPassword`, and `https.nonProxyHosts`. If these environment variables are already set, their values will not be overwritten.
 `nodeDir` | `File` | <p>**If [`node.download`](#download) is `true`:** [`node.nodeDir`](#nodedir)</p><p>**Otherwise:** `null`</p> | The directory that contains the executable to invoke. If `null`, the executable must be available in the system `PATH`.
 `npmInstallRetries` | `int` | `0` | The number of times the `node_modules` is deleted and `npm install` is retried in case the Node.js invocation defined by this task fails. This can help solving corrupted `node_modules` directories by re-downloading the project's dependencies.
-`workingDir` | `File` | `project.projectDir` | The working directory to use in the Node.js invocation.
+<a name="workingdir"></a>`workingDir` | `File` | `project.projectDir` | The working directory to use in the Node.js invocation.
 
 The properties of type `File` support any type that can be resolved by
 [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
@@ -250,10 +250,17 @@ The purpose of this task is to publish a package to the
 extend [`ExecuteNpmTask`](#executenpmtask) in order to execute the command
 [`npm publish`](https://docs.npmjs.com/cli/publish).
 
-These tasks generate a new temporary `package.json` file in the root of the
-project directory, based on the values provided for the task properties. If the
-project already includes a custom `package.json` file, it is easier to use
-`npm publish` directly.
+These tasks generate a new temporary `package.json` file in the directory
+assigned to the [`workingDir`](#workingdir) property; then the `npm publish`
+command is executed. If the `package.json` file in that location does not exist,
+the one in the root of the project directory (if found) is copied; otherwise, a
+new file is created.
+
+The `package.json` is then processed by adding the values provided by the task
+properties, if not already present in the file itself. It is still possible to
+override one or more fields of the `package.json` file with the values provided
+by the task properties by adding one or more keys (e.g., `"version"`) to the
+`overriddenPackageJsonKeys` property.
 
 #### Task Properties [](id=task-properties-5)
 
@@ -271,6 +278,14 @@ Property Name | Type | Default Value | Description
 `npmEmailAddress` | `String` | `null` | The email address of the npmjs.com user that publishes the package.
 `npmPassword` | `String` | `null` | The password of the npmjs.com user that publishes the package.
 `npmUserName` | `String` | `null` | The name of the npmjs.com user that publishes the package.
+`overriddenPackageJsonKeys` | `Set<String>` | `[]` | The field values to override in the generated `package.json` file.
+ 
+#### Task Methods [](id=task-methods-1)
+ 
+ Method | Description
+ ------ | -----------
+ `PublishNodeModuleTask overriddenPackageJsonKeys(Iterable<String> overriddenPackageJsonKeys)` | Adds field values to override in the generated `package.json` file.
+ `PublishNodeModuleTask overriddenPackageJsonKeys(String... overriddenPackageJsonKeys)` | Adds field values to override in the generated `package.json` file.
 
 ### npmRun${script} Task [](id=npmrunscript-task)
 
@@ -285,6 +300,10 @@ Property Name | Default Value
 
 If the [`java`](https://docs.gradle.org/current/userguide/java_plugin.html)
 plugin is applied and the `package.json` file declares a script named `"build"`,
-then the script is executed before the `classes` task but after the
+the script is executed before the `classes` task but after the
 [`processResources`](https://docs.gradle.org/4.0/userguide/java_plugin.html#sec:java_resources)
 task.
+
+If the [`lifecycle-base`](https://docs.gradle.org/current/javadoc/org/gradle/language/base/plugins/LifecycleBasePlugin.html)
+plugin is applied and the `package.json` file declares a script named `test`,
+the script is executed when running the `check` task.

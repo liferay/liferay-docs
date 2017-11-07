@@ -26,9 +26,9 @@ flexibility. Spring MVC portlets must be packaged as WAR artifacts because the
 Spring MVC framework is designed for Java EE. Therefore, it expects a WAR layout
 and requires Java EE resources such as the `WEB-INF/web.xml` descriptor. 
 
-Because Liferay supports the OSGi WAB standard for deployment, you can deploy
-your WAR and it will run as expected in the OSGi runtime. Here are the high
-points on why that works in @product-ver@:
+Because Liferay supports the OSGi WAB (Web Application Bundler) standard for
+deployment, you can deploy your WAR and it runs as expected in the OSGi
+runtime. Here are the high points on why that works in @product-ver@:
 
 -   The Liferay auto-deploy process runs, adding the `PortletServlet` and
     `PlugincontextListener` configurations to the `WEB-INF/web.xml` file.
@@ -43,9 +43,90 @@ points on why that works in @product-ver@:
 You'll still need to provide the Liferay descriptor files `liferay-display.xml`
 and `liferay-portlet.xml`, and you'll need a `portlet.xml` descriptor.
 
-Develop a Spring MVC portlet WAR file with the appropriate descriptor files, and
-let the auto-deploy process and Liferay's WAB generator take care of converting
-your project to a Liferay-ready WAB.
+Develop a Spring MVC portlet WAR file with the appropriate descriptor files. 
+
+Import class packages your portlet's descriptor files reference by adding the
+packages to an `Import-Package` header in the
+`liferay-plugin-package.properties` file. 
+
+Here's an example `Import-Package` header:
+
+    Import-Package:\
+        org.springframework.beans.factory.xml,\
+        org.springframework.context.config,\
+        org.springframework.security.config,\
+        org.springframework.web.servlet.config
+
+The auto-deploy process and Liferay's WAB generator convert your project to a
+Liferay-ready WAB. The WAB generator detects your class's `import` statements
+and adds all external packages to the WAB's `Import-Package` header. The
+generator merges packages from your plugin's `liferay-plugin-package.properties`
+into the header also. 
+
+If you depend on a package from Java's `rt.jar` other than a `java.*` package,
+override
+[portal property `org.osgi.framework.bootdelegation`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
+and add it to the property's list. Go [here](/develop/tutorials/-/knowledge_base/7-0/resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles#case-4-the-missing-class-belongs-to-a-java-runtime-package)
+for details. 
+
++$$$
+
+**Note**: Spring MVC portlets whose embedded JARs contain properties files
+(e.g., `spring.handlers`, `spring.schemas`, `spring.tooling`) might be affected
+by issue
+[LPS-75212](https://issues.liferay.com/browse/LPS-75212).
+The last JAR that has properties files is the only JAR whose properties are
+added to the resulting WAB's classpath. Properties in other JARs aren't added. 
+
+For example, suppose that a portlet has several JARs containing these
+properties files:
+
+-   `WEB-INF/src/META-INF/spring.handlers`
+-   `WEB-INF/src/META-INF/spring.schemas`
+-   `WEB-INF/src/META-INF/spring.tooling`
+
+The properties from the last JAR processed are the only ones added to the
+classpath. The properties files must be on the classpath in order for the
+module to use them.
+
+To add all the properties files to the classpath, you can combine them into one
+of each type (e.g., one `spring.handlers`, one `spring.schemas`, and one
+`spring.tooling`) and add them to `WEB-INF/src`. 
+
+Here's a shell script that combines these files:
+
+    cat /dev/null > docroot/WEB-INF/src/META-INF/spring.handlers
+    cat /dev/null > docroot/WEB-INF/src/META-INF/spring.schemas
+    cat /dev/null > docroot/WEB-INF/src/META-INF/spring.tooling
+    for jar in $(find docroot/WEB-INF/lib/ -name '*.jar'); do
+    for file in $(unzip -l $jar | grep -F META-INF/spring. | awk '
+    { print $4 } 
+    '); do
+    if [ "META-INF/spring.tld" != "$file" ]; then
+    unzip -p $jar $file >> docroot/WEB-INF/src/$file
+    echo >> docroot/WEB-INF/src/$file
+    fi
+    done
+    done
+
+You can modify and use the shell script to add your JAR's properties files to
+the classpath. 
+
+$$$
+
++$$$
+
+**Note**: If you want to use a Spring Framework version different from the
+version @product@ provides, you must name your Spring Framework JARs
+differently from the ones
+[portal property `module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
+excludes. If you don't rename your Spring Framework JARs, the WAB generator
+assumes you're using @product@'s Spring Framework JARs and excludes yours from
+the generated WAB.
+[Understanding Excluded JARs](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#understanding-excluded-jars)
+explains how to detect @product@'s Spring Framework version. 
+
+$$$
 
 Now get into the details of configuring a Spring MVC portlet for Liferay.
 
@@ -243,7 +324,7 @@ defining the Liferay roles used in the portlet.
 Then there's the `liferay-plugin-package.properties`. These properties describe
 the Liferay plugin, declare its resources, and specify its security related
 parameters. The DTD is found
-[here](@platform-ref@/7.0-latest/definitions/liferay-plugin-package_7_0_0.dtd.html)
+[here](@platform-ref@/7.0-latest/definitions/liferay-plugin-package_7_0_0.dtd.html).
 
     name=example-portlet
     module-group-id=liferay
@@ -256,11 +337,12 @@ parameters. The DTD is found
     licenses=LGPL
     version=1
 
-In the `liferay-plugin-package.properties` file you can also add OSGi metadata,
-which is properly placed in the `MANIFEST.MF` file when you deploy your
-WAR file. 
+In the `liferay-plugin-package.properties` file, you can also add OSGi metadata
+which the
+[Liferay WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+adds to the `MANIFEST.MF` file when you deploy your WAR file. 
 
-Find all of Liferay's DTDs [here](@platform-ref@/7.0-latest/definitions/)
+Find all of Liferay's DTDs [here](@platform-ref@/7.0-latest/definitions/).
 
 ## Calling Services from Spring MVC [](id=calling-services-from-spring-mvc)
 

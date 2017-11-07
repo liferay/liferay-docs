@@ -49,7 +49,7 @@ steps:
 
         <entity name="Entry" local-service="true" remote-service="true" uuid="true">
 
-3.  In the *Gradle Tasks* window on the right-hand side of Liferay IDE, expand
+3.  In the *Gradle Tasks* window on the right-hand side of Liferay @ide@, expand
     the service module's build folder. Run Service Builder by double-clicking
     *buildService*. When Service Builder finishes, refresh the `guestbook-api`
     and `guestbook-service` modules in the Project Explorer. 
@@ -246,7 +246,7 @@ Follow these steps to do so:
 3.  In the *Gradle Tasks* window on the right-hand side of Liferay @ide@, expand 
     the service module's *build* folder. Build the WSDD by double-clicking 
     *buildWSDD*. If `buildWSDD` is missing, shut down your server and then 
-    restart Liferay IDE. The `buildWSDD` command appears as described. 
+    restart Liferay @ide@. The `buildWSDD` command appears as described. 
 
     The WSDD builder generates a WSDD JAR file in the `guestbook-service` 
     module's `build/libs` folder. Because this folder isn't visible in @ide@,
@@ -264,7 +264,7 @@ Follow these steps to do so:
 
         com-liferay-docs-guestbook/bundles/deploy
 
-    Return to Liferay IDE and check the console to make sure deployment 
+    Return to Liferay @ide@ and check the console to make sure deployment 
     completes successfully. 
 
 5.  Go to 

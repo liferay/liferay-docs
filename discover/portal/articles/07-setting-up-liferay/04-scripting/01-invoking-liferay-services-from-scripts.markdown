@@ -1,16 +1,14 @@
 # Invoking Liferay Services From Scripts [](id=invoking-liferay-services-from-scripts)
 
-In many cases, you'll want to invoke one or more of Liferay's many services.
-This is possible from each of the supported scripting languages. Of course, the
-syntax is different for each language. 
+Many scripting scenarios require invoking @product@'s services.
 
-To illustrate the correct syntax for interacting with Liferay services, let's
-look at a simple example that uses Liferay's `UserLocalService` API to retrieve
-a list of users and then prints their names to Liferay's log file. We'll
-initially implement the example in Java pseudo-code:
+To illustrate the correct syntax for interacting with Liferay services, consider
+a simple example that uses the `UserLocalService` API to retrieve a list of
+users and print their names to Liferay's log file. We'll initially
+implement the example in Java pseudo-code:
 
-    import com.liferay.portal.model.User;
-    import com.liferay.portal.service.UserLocalServiceUtil;
+    import com.liferay.portal.kernel.model.User;
+    import com.liferay.portal.kernel.service.UserLocalServiceUtil;
     import java.util.List;
 
     ...
@@ -24,7 +22,10 @@ initially implement the example in Java pseudo-code:
 
     ...
 
-Remember that @product@'s script engine only supports Groovy by default. If you
+@product@'s script engine only supports Groovy by default. In later versions,
+support may be added for other scripting languages. 
+
+<!--If you
 want to try out the non-Groovy examples below, you need to install the
 appropriate modules:
 
@@ -58,16 +59,16 @@ because Beanshell doesn't support the use of Java Generics:
     }
  
 Next, we'll show the same thing in Groovy, another scripting language designed
-to be similar to Java. 
+to be similar to Java. -->
 
 ## Groovy [](id=groovy)
 
-Groovy is also based on Java. It's even easier than Beanshell because any code
-written in Java also runs in Groovy. This means we can execute the exact same
-code from our Java example without any changes:
+Groovy is based on Java, and code written in Java also runs in Groovy. This
+means we can execute the exact same code from our Java example without any
+changes:
 
-    import com.liferay.portal.model.User;
-    import com.liferay.portal.service.UserLocalServiceUtil;
+    import com.liferay.portal.kernel.model.User;
+    import com.liferay.portal.kernel.service.UserLocalServiceUtil;
     import java.util.List;
 
     int userCount = UserLocalServiceUtil.getUsersCount();
@@ -80,7 +81,7 @@ code from our Java example without any changes:
 Of course, we could make this somewhat Groovier by simplifying the program as
 follows: 
 
-    import com.liferay.portal.service.UserLocalServiceUtil
+    import com.liferay.portal.kernel.service.UserLocalServiceUtil
 
     userCount = UserLocalServiceUtil.getUsersCount()
     users = UserLocalServiceUtil.getUsers(0, userCount)
@@ -88,7 +89,10 @@ follows:
         System.out.println("User Name: " + user.getFullName())
     }
  
-Liferay's script engine supports more than just Java-like languages. Despite the
+Liferay's services can be easily accessed from the script console. Next, let's
+look at some practical uses for @product@'s script engine.
+
+<!-- Liferay's script engine supports more than just Java-like languages. Despite the
 name, you should be aware that JavaScript bears little resemblance to Java, but
 you can still use it in Liferay's script engine. 
 
@@ -133,11 +137,7 @@ implemented with the following code:
 
     for user in users:
         print user.getFullName()
-
-As you can see, Liferay's services can be accessed from any of these languages.
-Next, let's look at some practical examples of how you can use Liferay's script
-engine.
-
+-->
 ## Related Topics [](id=related-topics)
 
 [Running Scripts From the Script Console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console)

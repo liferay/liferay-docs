@@ -88,7 +88,7 @@ which means internet access is not required.
 When using Blade CLI, you'll have to manually edit your project's component
 class. Blade CLI gives you the ability to specify the class's name, but all
 other contents of the class can only be edited after the class is created. See
-the [Creating Modules with Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide)
+the [Creating Modules with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide)
 tutorial for further details and important dependency information on component
 classes.
 
@@ -107,7 +107,7 @@ learning best practices on structuring their modules to accomplish specific
 tasks in @product@. These samples can be found in the
 [liferay-blade-samples](https://github.com/liferay/liferay-blade-samples) Github
 repository. You can also learn more about these samples by visiting the
-[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 article.
 
 You can generate these samples using Blade CLI for convenience, instead of
