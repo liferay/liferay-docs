@@ -6,7 +6,7 @@ just a few examples. Most content types in @product@ are *assets*. Under the
 hood, assets use the [Asset
 API](/develop/tutorials/-/knowledge_base/7-0/asset-framework) and have an
 [Indexer
-class](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search#indexersdefined).
+class](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search#indexers).
 Any content that has these features can be searched in the @product@ Search
 application. 
 
