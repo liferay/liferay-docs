@@ -1,27 +1,36 @@
 # Server Administration
 
-The Server Administration page of the Control Panel lets you perform various
-tasks related to the portal server itself that aren't directly related to the
-resources in the portal. Clicking the link makes this clear: you're immediately
-presented with a graph showing the resources available in the JVM.
+The Server Administration application (accessed by clicking *Control Panel
+&rarr; Configuration &rarr; Server Administration*) lets you perform tasks
+related to the @product@ server that aren't directly related to the system's.
+Clicking the link makes this clear: you're immediately presented with a graph
+showing the resources available in the JVM.
+
+![Figure x: Server Administration is where you configure and monitor many aspects of
+the server.](../../../images/server-admin-resources.png)
 
 +$$$
 
-**Note:** You can use Liferay Connected Services (LCS) to obtain additional 
-performance metrics for your portal servers. See the 
-[LCS documentation](/discover/deployment/-/knowledge_base/6-2/managing-liferay-with-liferay-connected-services) 
-for more information.
+**Note:** Liferay DXP customers can use Liferay Connected Services (LCS) to
+obtain additional performance metrics. See the [LCS
+documentation](/discover/deployment/-/knowledge_base/7-0/managing-liferay-with-liferay-connected-services) for more information.
 
 $$$
 
 ## Resources [](id=resources)
 
-The first tab is called *Resources*. This tab contains the aforementioned graph
-plus several server wide actions that an administrator can execute. These
-include the following:
+The Resources tab contains several server wide actions that an administrator can
+execute. These include the following:
 
 **Run the garbage collector:** You can send in a request to the JVM to begin the
 garbage collection task.
+
+<!-- Ask team about this -->
+**Generate a thread dump**: Useful during performance testing, generate a thread
+dump which can be examined later to determine the presence and locations of any
+deadlocks. Note that you need to add a logger category for
+`com.liferay.server.admin.web.internal.portlet.action.EditServerMVCActionCommand`
+and set it to `INFO` before generating a thread dump.
 
 **Clear content cached by this VM:** You can send in a request to the JVM to
 clear content stored in the local cache. Ehcache usage is split into two groups:
@@ -56,13 +65,10 @@ portal performance so try to do this at non-peak times.
 **Reindex all spell check indexes:** You can send in a request to regenerate all
 spell check indexes.
 
-**Reset preview and thumbnail files for the Documents and Media portlet:** You
-can send in a request to reset the preview and thumbnail files for each item in
-your portal's Documents and Media libraries.
+**Reindex com.liferay...SomeEntity**: Reindex a single entity individually.
 
-**Generate Thread Dump:** If you are performance testing, you can generate a
-thread dump which can be examined later to determine if there are any deadlocks
-and where they might be.
+
+Verification Actions
 
 **Verify database tables of all plugins:** You can check all tables against
 their indexes for accuracy of data retrieval.
@@ -78,12 +84,24 @@ check that all site memberships are in accord with the site membership policies;
 if they are not, the necessary changes (such as removing users from forbidden
 sites) are made.
 
-**Clean up Permissions:** This process removes the assignment of some
+Clean Up Actions
+
+**Reset preview and thumbnail files for the Documents and Media portlet:** You
+can send in a request to reset the preview and thumbnail files for each item in
+your portal's Documents and Media libraries.
+
+**Clean up permissions:** This process removes the assignment of some
 permissions on the Guest, User, and Power User roles to simplify the management
 of "User Customizable Pages". Notably, the "Add To Page" permissions is removed
 from the Guest and User roles for all portlets. Likewise, the same permission is
 reduced in scope for Power Users from portal wide to scoped to "User Personal
 Site."
+
+**Clean up portlet preferences**: This process removes all orphaned portlet
+preferences that belong to page revisions. Portlet preferences that belong to a
+portlet that does not belong to a page revision will be removed. Portlet
+preferences that belong to runtime portlets will also be removed.
+<!--Really this is just the tooltip copied into the docs -->
 
 ## Log Levels [](id=log-levels)
 
@@ -92,45 +110,43 @@ modify the log levels for any class hierarchy in the portal. If you have custom
 code you have deployed which isn't in the list, you can use the *Add Category*
 tab to add it. If you change the log level near the top of the class hierarchy
 (such as at `com.liferay`), all the classes under that hierarchy will have their
-log levels changed. If you are testing something specific, it is much better to
-be as specific as you can when you change log levels. Modifying them too high in
-the hierarchy generates a lot more log messages than you need.
+log levels changed. If testing something specific, be as specific as possible.
+Modifications unnecessarily high in the hierarchy generate too many messages to
+be useful.
 
 ## Properties [](id=properties)
 
 Liferay and the JVM contain many settings which are defined as properties. There
-are two subtabs of the properties tab of the Server Administration page: one
-showing system properties and one showing portal properties.
+are two subtabs of the properties tab of the Server Administration page: System
+Properties and Portal Properties.
 
 The system properties tab shows an exhaustive list of system properties for the
 JVM, as well as many Liferay system properties. This information can be used for
 debugging purposes or to check the configuration of the currently running
 portal.
 
-The portal properties tab tab shows an exhaustive list of the portal properties.
-These properties can be customized; you can peruse the full list of customizable
-properties online at
-[http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html).
-If you need to check the current value of a particular property, it can be
-viewed from this screen without having to shut down the portal or open any
-properties files.
+The portal properties tab tab shows an exhaustive list of the current portal
+property values, so you don't have to shut down @product@ or open the properties
+file directly. Portal properties are customizable; you can peruse the full list
+of available properties at
+[ttps://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html](https://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html).
 
 ## CAPTCHA [](id=captcha)
 
-By default, Liferay ships with its own simple CAPTCHA service which is designed
-to thwart bots from registering for accounts on sites powered by Liferay. If you
-want to instead use Google's reCAPTCHA service, you can enable this setting from
-the CAPTCHA tab of the Server Administration page.
+By default, @product@ ships with its own CAPTCHA service which is designed to
+thwart bots from registering for accounts on sites powered by @prodcut@. If you
+want to instead use Google's reCAPTCHA service, enable it from the CAPTCHA tab
+of Server Administration.
 
-Simply check the *Enable ReCAPTCHA* box and enter your public and private keys
-into the provided fields, then click *Save*. Liferay Portal will then use
-reCAPTCHA instead of simple CAPTCHA.
+Check the *Enable ReCAPTCHA* box and enter your public and private keys into the
+provided fields, then click *Save*. @product@ will then use reCAPTCHA instead of
+the native CAPTCHA solution.
 
 ## Data Migration [](id=data-migration)
 
-If you are upgrading from a previous release of Liferay Portal or if you need to
-migrate your data from one system to another, the Data Migration tab helps you
-to do that without your developers having to write custom scripts.
+If you are upgrading from a previous release of @product@ or migrating data from
+one system to another, the Data Migration tab helps you to do that without your
+developers having to write custom scripts.
 
 The first section lets you copy your entire Liferay database from the current
 database under which it is running to the database you specify in this set of
@@ -139,21 +155,13 @@ be on Liferay's classpath), the JDBC URL of the database to which you'll be
 copying your data and the credentials of a user with access to that database.
 Once you have all of this information entered, click *Execute* to copy the data.
 
-The next section helps you migrate your documents. If you want to move off of
-the Jackrabbit JSR-170 repository to the file system, or to the Jackrabbit
-repository from the file system, or to any of the other repositories supported
-by the Documents and Media library, you can do so very easily. Make sure you
-have already set up your `portal-ext.properties` file so the hook is properly
-configured before running this migration. Select the Document Library hook that
-represents the location to which you want your documents to be migrated, then
-click *Execute*. Your documents will be migrated to the new repository. You can
-then shut down Liferay, make the new repository the default in the
+The next section helps you migrate your documents. Make sure you have already
+set up your `portal-ext.properties` file so the hook is properly configured
+before running this migration. Select the Document Library hook that represents
+the location to which you want your documents to be migrated, then click
+*Execute*. Your documents will be migrated to the new repository. You can then
+shut down Liferay, make the new repository the default in the
 `portal-ext.properties` file, and then restart.
-
-You can migrate images from the Image Gallery in the same manner. (In Liferay
-6.0 and previous versions, the Document Library and Image Gallery were distinct
-repositories. In Liferay 6.1 and later versions, these have been combined into a
-single Documents and Media repository.)
 
 ## File Uploads [](id=file-uploads)
 
@@ -167,13 +175,12 @@ portal.
 
 ## Mail [](id=mail)
 
-Instead of using your Liferay server's `portal-ext.properties` file to configure
-a mail server, you can configure a mail server from the Mail tab of the Server
-Configuration section of the Control Panel. If your portal is to receive mail
-(see, for example, our coverage of the [Message Boards portlet](/discover/portal/-/knowledge_base/6-2/discuss-ask-and-answer-using-the-message-boards)
-), you can connect a POP mail server. If your portal is to send mail, which is
-useful for sending notifications to users, you can connect to an SMTP server.
-We highly recommend setting up mail servers for your portal.
+Instead of using a `portal-ext.properties` file to configure a mail server, you
+can configure a mail server from the Mail tab of the Server Configuration
+section of the Control Panel. If your portal is to receive mail, you can connect
+a POP mail server. If your portal is to send mail, which is useful for sending
+notifications to users, you can connect to an SMTP server. We highly recommend
+setting up mail servers for your portal.
 
 Note that if you configure mail server settings here in the Control Panel, these
 settings will override any mail server settings in your `portal-ext.properties`
@@ -182,7 +189,7 @@ file.
 ## External Services [](id=external-services)
 
 Liferay Portal enables users to upload and share content via the Documents and
-Media library, a customizable and permissionable online repository. Users can
+Media library, a customizable and permissions-enabled online repository. Users can
 upload files of any type to the Documents and Media library. Liferay ships with
 PDFBox and uses it to generate automatic previews for certain types of
 documents, by default. You can also install three additional tools that offer
@@ -236,7 +243,7 @@ or from the Control Panel. To enable OpenOffice/LibreOffice in your
 `portal-ext.properties` file, add the following line:
 
     openoffice.server.enabled=true
-    
+
 If OpenOffice or LibreOffice is running on another server or on a non-default
 port, you must also specify these values. The default values are as follows:
 
@@ -290,11 +297,9 @@ executables are correct.
 Note that some older versions of ImageMagick are unable to properly run with
 Liferay. If this is the case, update to the latest version (ImageMagick 6.7.9-6
 2012-09-25 Q16 or later). To check for the latest ImageMagick versions, visit
-[http://www.imagemagick.org/script/binary-releases.php](http://www.imagemagick.org/script/binary-releases.php).
-See
-[LPS-30291](http://issues.liferay.com/browse/LPS-30291)
-for information on efforts to identify incompatible application versions with
-Liferay.
+[ImageMagick's website](http://www.imagemagick.org/script/binary-releases.php).
+See [LPS-30291](http://issues.liferay.com/browse/LPS-30291) for information on
+efforts to identify incompatible application versions with Liferay.
 
 ### Xuggler configuration [](id=xuggler-configuration)
 
@@ -321,22 +326,18 @@ audio and video files.
 
 ## Script [](id=script)
 
-Liferay includes a scripting console which lets administrators execute migration
-or management code instantly. Several scripting languages are supported,
-including JavaScript, Groovy, Python, Ruby and Beanshell. This guide contains a
-[chapter](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/using-scripting-for-advanced-flexibilit-liferay-portal-6-2-user-guide-19-en)
-that explains how to use Liferay's scripting console and provides some examples.
-For further information about Liferay's APIs, please refer to LDN's
-[Reference](https://www.liferay.com/documentation/liferay-portal/6.2/development)
-guide, [*Liferay in Action*](http://manning.com/sezov), or Liferay's
-[Javadocs](http://docs.liferay.com/portal/6.2/javadocs).
+The Script tab includes a scripting console for executing migration or
+management code. The Groovy scripting language is supported out of the box. For
+more information, see the [Scripting
+article](/discover/portal/-/knowledge_base/7-0/using-liferays-script-engine) for
+more information on how to use the scripting console and examples.
 
 ## Shutdown [](id=shutdown)
 
 If you ever need to shut down your Liferay Portal server while users are logged
 in, you can use the Shutdown tab to inform your logged-in users of the impending
 shutdown. You can define the number of minutes until the shutdown and a custom
-message that will be displayed.
+message to display.
 
 Users will see your message at the top of their portal pages for the duration of
 time you specified. When the time expires, all portal pages will display a
