@@ -66,3 +66,7 @@ Comment Add Screenlet delegates some events to a class that implements
 
 - `onAddCommentSuccess(CommentEntry commentEntry)`: Called when the Screenlet 
   successfully adds a comment to the asset. 
+
+- `error(Exception e, String userAction)`: Called when an error occurs in the 
+  process. The `userAction` argument distinguishes the specific action in which 
+  the error occurred. 

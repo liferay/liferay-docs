@@ -30,7 +30,7 @@ build a theme. You'll learn how to do this next.
                         <execution>
                             <phase>generate-resources</phase>
                             <goals>
-                                <goal>build-theme</goal>
+                                <goal>build</goal>
                             </goals>
                             <configuration>
                                 <diffsDir>${maven.war.src}</diffsDir>
@@ -54,7 +54,7 @@ build a theme. You'll learn how to do this next.
     - The
       [`executions` tag](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag)
       configures the Theme Builder to run during the `generate-resources` phase
-      of your Maven project's build lifecycle. The `build-theme`
+      of your Maven project's build lifecycle. The `build`
       [goal](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#A_Build_Phase_is_Made_Up_of_Plugin_Goals)
       is defined for that lifecycle phase.
     - The
@@ -78,10 +78,10 @@ build a theme. You'll learn how to do this next.
             <version>${com.liferay.css.builder.version}</version>
             <executions>
                 <execution>
-                    <id>default-build-css</id>
+                    <id>default-build</id>
                     <phase>compile</phase>
                     <goals>
-                        <goal>build-css</goal>
+                        <goal>build</goal>
                     </goals>
                 </execution>
             </executions>
@@ -171,11 +171,11 @@ build a theme. You'll learn how to do this next.
 6.  Configure the properties for your project in its `pom.xml` file:
 
         <properties>
-            <com.liferay.css.builder.version>1.0.20</com.liferay.css.builder.version>
-            <com.liferay.frontend.css.common.version>2.0.1</com.liferay.frontend.css.common.version>
-            <com.liferay.frontend.theme.styled.version>2.0.13</com.liferay.frontend.theme.styled.version>
-            <com.liferay.frontend.theme.unstyled.version>2.0.13</com.liferay.frontend.theme.unstyled.version>
-            <com.liferay.portal.tools.theme.builder.version>1.0.0</com.liferay.portal.tools.theme.builder.version>
+            <com.liferay.css.builder.version>1.0.28</com.liferay.css.builder.version>
+            <com.liferay.frontend.css.common.version>2.0.4</com.liferay.frontend.css.common.version>
+            <com.liferay.frontend.theme.styled.version>2.0.27</com.liferay.frontend.theme.styled.version>
+            <com.liferay.frontend.theme.unstyled.version>2.1.14</com.liferay.frontend.theme.unstyled.version>
+            <com.liferay.portal.tools.theme.builder.version>1.1.4</com.liferay.portal.tools.theme.builder.version>
         </properties>
 
     The properties above set the versions for the CSS and Theme Builder plugins

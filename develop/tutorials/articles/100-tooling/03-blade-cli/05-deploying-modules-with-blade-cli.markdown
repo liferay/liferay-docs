@@ -12,6 +12,11 @@ command to deploy it to @product@:
 You can also deploy all modules in a folder by running the `deploy` command from
 the parent folder (e.g., `[WORKSPACE_ROOT]/modules`).
 
+The `deploy` command is intended for modules that are built into a JAR file. If
+you've created a WAR style project (e.g., projects based on the Blade templates
+`spring-mvc-portlet`, `theme`, etc.), you'll need to deploy it using a different
+tool like Gradle (e.g., `./gradlew deploy`).
+
 If you run into errors during the build/deploy process of your module, check to
 make sure your workspace is accounting for the
 [appropriate certificates](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#certification-issues-in-liferay-workspace).
@@ -22,10 +27,14 @@ deploys your module to that Liferay instance. Blade communicates with
 directly to the OSGi container using Felix File Install commands. The command
 uses the default `11311` port by default.
 
+<!--
 You can also specify a custom port to deploy your module to using the `-p`
 parameter followed by the port number. For instance, you could run `blade deploy
--p 8090` to deploy to port 8090. You can also watch the deployed module for
-changes by specifying the `-w` parameter.
+-p 8090` to deploy to port 8090.
+-->
+
+You can also watch the deployed module for changes by specifying the `-w`
+parameter.
 
     blade deploy -w
 

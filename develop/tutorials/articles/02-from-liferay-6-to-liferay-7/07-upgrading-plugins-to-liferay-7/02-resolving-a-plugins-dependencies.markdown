@@ -230,10 +230,18 @@ In @product-ver@, the `portal-dependency-jars` property is deprecated and
 behaves differently from previous versions. Because importing and exporting Java
 packages has replaced wholesale use of JARs, modules and WABs can import
 packages without concerning themselves with JARs. This means that @product@
-can't make available to plugins the same Java classes it did in the past. For a
-list of packages @product-ver@ exports to modules, look at the
-`META-INF/system.packages.extra.bnd` file in
-`[LIFERAY_HOME]/osgi/core/com.liferay.portal.bootstrap.jar`. 
+can't make available to plugins the same Java classes it did in the past. 
+
+These files list the packages @product-ver@ exports:
+
+-   `modules/core/portal-bootstrap/system.packages.extra.bnd` file in the
+    [GitHub repository](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/core/portal-bootstrap/system.packages.extra.bnd).
+    It lists exported packages on separate lines, making them easy to read.
+-   `META-INF/system.packages.extra.mf` file in
+    `[LIFERAY_HOME]/osgi/core/com.liferay.portal.bootstrap.jar`. The file is
+    available in @product@ bundles. It lists exported packages in a paragraph
+    wrapped at 70 columns--they're harder to read here than in the
+    `system.packages.extra.bnd` file. 
 
 If you're still using the `portal-dependency-jars` property, you may run into
 one of the scenarios below. Follow the instructions below the scenario to fix
@@ -261,17 +269,58 @@ the issue.
     the JAR to your plugin's `WEB-INF/lib` folder at compile time and adds the JAR
     to the plugin WAB at deployment. 
 
-+$$$
+#### Understanding Excluded JARs [](id=understanding-excluded-jars)
 
-**Note**: The portal property `module.framework.web.generator.excluded.paths`
-declares JAR file paths that are excluded from all @product@ generated WABs.
-All JARs listed for this property are excluded from the WABs, even if the
-plugins listed the JAR in their `portal-dependency-jars` property. Exercise
-great care if you modify the `module.framework.web.generator.excluded.paths`
-property. Altering the property can result in undefined behavior and might
-adversely affect your @product@ run time environment. 
+[Portal property `module.framework.web.generator.excluded.paths`](http://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module Framework)
+declares JARs that are stripped from all @product@ generated WABs. These JARs
+are excluded from WABs because @product@ provides them already. All JARs listed
+for this property are excluded from the WABs, even if the plugins listed the JAR
+in their `portal-dependency-jars` property. 
 
-$$$
+If your plugin requires different versions of the packages @product@ exports,
+you must include them in JARs named differently from the ones
+`module.framework.web.generator.excluded.paths` excludes. 
+
+For example, @product@'s
+[`system.packages.extra.bnd` file](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/core/portal-bootstrap/system.packages.extra.bnd)
+exports Spring Framework version 4.1.9 packages:
+
+    Export-Package:\
+        ...
+        org.springframework.*;version='4.1.9',\
+        ...
+
+@product@ uses the `module.framework.web.generator.excluded.paths` portal
+property to exclude their JARs.
+
+    module.framework.web.generator.excluded.paths=\
+        ...
+        WEB-INF/lib/spring-aop.jar,\
+        WEB-INF/lib/spring-aspects.jar,\
+        WEB-INF/lib/spring-beans.jar,\
+        WEB-INF/lib/spring-context.jar,\
+        WEB-INF/lib/spring-context-support.jar,\
+        WEB-INF/lib/spring-core.jar,\
+        WEB-INF/lib/spring-expression.jar,\
+        WEB-INF/lib/spring-jdbc.jar,\
+        WEB-INF/lib/spring-jms.jar,\
+        WEB-INF/lib/spring-orm.jar,\
+        WEB-INF/lib/spring-oxm.jar,\
+        WEB-INF/lib/spring-tx.jar,\
+        WEB-INF/lib/spring-web.jar,\
+        WEB-INF/lib/spring-webmvc.jar,\
+        WEB-INF/lib/spring-webmvc-portlet.jar,\
+        ...
+
+To use a different Spring Framework version in your WAB, you must name the
+corresponding Spring Framework JARs differently from the glob-patterned JARs
+`module.framework.web.generator.excluded.paths` lists. 
+
+For example, to use Spring Framework version 3.0.7's Spring AOP JAR, include it
+in your plugin's `WEB-INF/lib` but name it something other than
+`spring-aop.jar`. Adding the version to the JAR name (i.e.,
+`spring-aop-3.0.7.RELEASE.jar`) differentiates it from the excluded JAR and
+prevents it from being stripped from the WAB. 
 
 #### Using Packages @product@ Doesn't Export [](id=using-packages-liferay-portal-doesnt-export)
 
@@ -324,8 +373,18 @@ Experience Management App Suite is already installed (which is the case for a
 [App Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps) 
 is a sure-fire way to verify existing module installations. 
 
+## Using @product@'s Tag Library Definitions [](id=using-portals-tag-library-definitions)
+
+Before adding Tag Library Definition (TLD) files to your plugin, check @product@
+for them. The @product@ web application folder `WEB-INF/TLD` has over twenty
+TLDs, including Struts TLDs. 
+
+You can use @product@'s TLDs in a traditional plugin by adding them to the
+`portal-dependency-tlds` property in the plugin's
+`liferay-plugin-package.properties` file. 
+
 Way to go! You've fixed class imports and resolved dependencies on all the 
-modules your plugin uses. 
+modules and tag libraries your plugin uses. 
 
 ## Related Topics [](id=related-topics)
 

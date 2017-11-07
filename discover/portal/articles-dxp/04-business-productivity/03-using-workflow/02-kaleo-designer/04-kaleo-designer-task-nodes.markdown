@@ -16,8 +16,7 @@ already. Open its settings and give it a name as described above. Then double
 click *Actions* in the task's Settings pane.
 
 You can define a notification (often Task Assignee is appropriate), or write a
-script defining an action that's triggered for your task in Beanshell, DRL,
-Groovy, JavaScript, Python, or Ruby.
+Groovy script defining an action that's triggered for your task.
 
 Next learn about creating Assignments for your task nodes. 
 

@@ -1290,19 +1290,19 @@ always required, but it was hidden by the `ServiceContext` object.
 
 The following tags have been removed:
 
-- `portlet:icon-close`
-- `portlet:icon-configuration`
-- `portlet:icon-edit`
-- `portlet:icon-edit-defaults`
-- `portlet:icon-edit-guest`
-- `portlet:icon-export-import`
-- `portlet:icon-help`
-- `portlet:icon-maximize`
-- `portlet:icon-minimize`
-- `portlet:icon-portlet-css`
-- `portlet:icon-print`
-- `portlet:icon-refresh`
-- `portlet:icon-staging`
+- `liferay-portlet:icon-close`
+- `liferay-portlet:icon-configuration`
+- `liferay-portlet:icon-edit`
+- `liferay-portlet:icon-edit-defaults`
+- `liferay-portlet:icon-edit-guest`
+- `liferay-portlet:icon-export-import`
+- `liferay-portlet:icon-help`
+- `liferay-portlet:icon-maximize`
+- `liferay-portlet:icon-minimize`
+- `liferay-portlet:icon-portlet-css`
+- `liferay-portlet:icon-print`
+- `liferay-portlet:icon-refresh`
+- `liferay-portlet:icon-staging`
 
 #### Who is affected? [](id=who-is-affected-35)
 
@@ -1314,7 +1314,8 @@ The tag `liferay-ui:icon` can replace the call to the previous tags. All the
 previous tags have been converted into Java classes that implement the methods
 that the `icon` tag requires.
 
-See the modules `portlet-configuration-icon-*` in the `modules/addons` folder.
+See the modules `portlet-configuration-icon-*` in the
+`modules/apps/web-experience/portlet-configuration` folder.
 
 #### Why was this change made? [](id=why-was-this-change-made-35)
 
@@ -4319,3 +4320,44 @@ tag.
 This change was made as a part of the ongoing strategy to deprecate unused tags.
 
 ---------------------------------------
+
+### Build Auto Upgrade [](id=build-auto-upgrade)
+- **Date:** 2017-Aug-17
+- **JIRA Ticket:** LPS-73967
+
+#### What changed? [](id=what-changed-108)
+
+The `build.auto.upgrade` property in `service.properties` for Liferay Portal 6.x
+Service Builder portlets applies Liferay Service schema changes on rebuilding
+the services and redeploying the portlets.
+
+Since 7.0, the per portlet property `build.auto.upgrade` is deprecated.
+
+This change reintroduces Build Auto Upgrade in a new global property
+`schema.module.build.auto.upgrade` in the
+`[Liferay_Home]/portal-developer.properties` file.
+
+Setting global property `schema.module.build.auto.upgrade` to `true` applies
+module schema changes  for redeployed modules whose service build numbers have
+incremented. The `build.number` property in the module's `service.properties`
+file indicates the service build number.
+
+#### Who is affected? [](id=who-is-affected-108)
+
+This feature is available for developers to use in development only.
+
+**WARNING**: DO NOT USE the Build Auto Upgrade feature in production. Liferay
+DOES NOT support Build Auto Upgrade in production.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-108)
+
+To use this feature in development, set  global property
+`schema.module.build.auto.upgrade` in
+`[Liferay_Home]/portal-developer.properties` to `true`, increment your module's
+`build.number` in the `service.properties` file, and deploy the module.
+
+#### Why was this change made? [](id=why-was-this-change-made-108)
+
+This change was made so that 7.0 developers could test database schema changes
+on the fly, without having to write upgrade processes.
+

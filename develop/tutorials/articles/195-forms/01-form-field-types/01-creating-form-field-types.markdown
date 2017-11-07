@@ -143,7 +143,7 @@ implementing the `DDMFormFieldType` service (`service=...`).
 
 `ddm.form.field.type.icon`
 : The icon to be used for the field type. Choosing one of the 
-[Lexicon Experience Language icons](http://liferay.github.io/lexicon/content/icons-lexicon/) makes your form
+[Lexicon icons](https://liferay.github.io/clay/content/icons-lexicon/) makes your form
 field blends in with the existing form field types.
 
 `ddm.form.field.type.js.class.name`

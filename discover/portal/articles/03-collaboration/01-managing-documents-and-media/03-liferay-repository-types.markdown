@@ -20,7 +20,7 @@ and navigate to *Control Panel &rarr; Configuration &rarr; System Settings*. Fro
 System Settings, navigate to *Platform* and then search for and select
 the entry *Simple File System Store*. For the store’s *Root dir* value,
 specify a path relative to the 
-[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
+[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
 or an absolute path; then click the *Update* button. The document
 library store switches immediately to the new root folder.
 
@@ -36,6 +36,8 @@ version, for faster performance and to store more files.
 system separate from Liferay to store files.
 
 **DBStore (Database Storage)**: stores files in the @product@ database.
+DBStore's file (stored as a blob) size limit is 1 gigabyte. To store such large
+files, use Simple File System Store or Advanced File System Store. 
 
 **JCRStore (Java Content Repository)**: stores files to a JSR-170
 compliant document repository. You can use any JCR client to access the
@@ -168,6 +170,13 @@ compliant document repository. By default, Jackrabbit is configured to store the
 documents on the local file system where Liferay is installed, in the
 `[Liferay Home]/liferay/jackrabbit` folder. Inside this folder is Jackrabbit's
 configuration file, called `repository.xml`. 
+
++$$$
+
+**Note:** JCR Store is deprecated as of Liferay DXP Fix Pack 14 and Liferay 
+Portal CE 7.0 GA4.
+
+$$$
 
 Using the default settings, the JCR store is not very different from the file
 system stores, except you can use any JCR client to access the files. You can,

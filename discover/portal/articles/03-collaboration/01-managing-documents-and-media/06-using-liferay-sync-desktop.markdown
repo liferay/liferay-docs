@@ -1,13 +1,13 @@
 # Using Liferay Sync on Your Desktop [](id=using-liferay-sync-on-your-desktop)
 
-Liferay Sync synchronizes files between your Liferay sites and desktop devices.
-It lets you work with your files without using a browser. The Sync clients also
-ensure that the files are updated with the latest changes made by other users.
-To use Liferay Sync in your desktop environment, you must install the Sync
-desktop client. It's currently available for Windows and Mac OS. The Sync client
-stores files locally so that they're always available, even when you're offline.
-Files are automatically synchronized upon your client's reconnection to your 
-Liferay instance. 
+Liferay Sync synchronizes files between your @product@ sites and desktop 
+devices. It lets you work with your files without using a browser. The Sync 
+clients also ensure that the files are updated with the latest changes made by 
+other users. To use Liferay Sync in your desktop environment, you must install 
+the Sync desktop client. It's currently available for Windows and Mac OS. The 
+Sync client stores files locally so that they're always available, even when 
+you're offline. Files are automatically synchronized upon your client's 
+reconnection to your @product@ instance. 
 
 On your desktop devices, Liferay Sync creates a new folder structure that it 
 uses to synchronize files. You can treat the files the same as you do any 
@@ -17,7 +17,7 @@ what Sync is doing. The native menu and task bar integration keep Sync controls
 within easy reach. 
 
 This guide walks you through setting up and using the Liferay Sync client on
-your desktop. Before proceeding, check with your Liferay instance or site 
+your desktop. Before proceeding, check with your @product@ instance or site 
 administrator to ensure that Sync is enabled for your sites. You then need to 
 install the Sync client on your desktop device. The next section walks you 
 through installing the client. 
@@ -34,7 +34,7 @@ To install the Liferay Sync client on Windows, you must have administrator
 privileges. Upon launching the Windows application installer, you're prompted
 to choose an install location. Select an appropriate location and click
 *Install*. Sync automatically starts after the installation finishes. The first
-time Sync runs, you need to configure it to connect and sync with your Liferay 
+time Sync runs, you need to configure it to connect and sync with your @product@ 
 instance. The configuration steps are shown below, after the Mac installation
 instructions. 
 
@@ -65,16 +65,27 @@ Next, you'll configure the Sync client.
 Now that you've installed Sync, you're ready to configure it! The configuration 
 steps for Sync on Windows and Mac are identical. 
 
-1. Open Sync and enter your Liferay instance's address along with your account 
-   credentials. Click *Sign In* when you're finished. 
+1.  Open Sync and enter your @product@ instance's address along with your 
+    account credentials. Click *Sign In* when you're finished. 
 
-    ![Figure 2: The first time you run Liferay Sync, you need to tell it how to communicate with your Liferay server.](../../../images/sync-setup-01.png)
+    ![Figure 2: The first time you run Liferay Sync, you need to tell it how to communicate with your @product@ server.](../../../images/sync-setup-01.png)
 
-2. Select the sites you want to sync with. You can search for a site in the 
-   *Search* bar above the site list. If you want to sync all the subfolders of 
-   your selected sites, click *Proceed* and move on to the next step. 
+    When connecting to a server via HTTPS, an error appears if the certificate 
+    can't be verified. Choosing *Proceed Anyway* bypasses verification and 
+    leaves the connection open to compromise. Liferay Sync attempts to read the 
+    certificates specified in the Java Control Panel 
+    ([see section 20.4.5](https://docs.oracle.com/javase/8/docs/technotes/guides/deploy/jcp.html#A1152831)). 
+    If Java isn't installed, you can also put your certificates in 
+    `[user.home]/.liferay-sync-3/certificates`. Liferay Sync will trust all 
+    certificates in this folder. 
 
-    ![Figure 3: Select the sites you want to sync with. Clicking a site's gear icon opens another window where you can choose to sync with only specific subfolders in that site.](../../../images/sync-setup-02.png) 
+    ![Figure 3: When connecting over HTTPS, Liferay Sync produces an error if it can't verify the security certificate. Choosing *Proceed Anyway* bypasses verification and leaves the connection open to compromise.](../../../images/sync-certificate-error.png)
+
+2.  Select the sites you want to sync with. You can search for a site in the 
+    *Search* bar above the site list. If you want to sync all the subfolders of 
+    your selected sites, click *Proceed* and move on to the next step. 
+
+    ![Figure 4: Select the sites you want to sync with. Clicking a site's gear icon opens another window where you can choose to sync with only specific subfolders in that site.](../../../images/sync-setup-02.png) 
 
     To sync only specific folders in a site, first click the site's gear icon. 
     In the window that appears, all folders are selected by default. Unselect 
@@ -86,30 +97,30 @@ steps for Sync on Windows and Mac are identical.
     until the minus sign appears. Click *Select* when you're finished with your 
     selections, and then click *Proceed* to move on to the next step. 
 
-    ![Figure 4: Choose the site's subfolders that you want to sync with. The checkbox with the minus sign indicates that not all of the *registration* folder's subfolders are selected.](../../../images/sync-select-folders.png)
+    ![Figure 5: Choose the site's subfolders that you want to sync with. The checkbox with the minus sign indicates that not all of the *registration* folder's subfolders are selected.](../../../images/sync-select-folders.png)
 
-3. Specify the local folder your Liferay instance will sync with. This folder 
-   will be used exclusively for Sync: Sync creates it and it must not conflict 
-   with any existing local folder. The Sync folder's default name is the 
-   instance's host name, and its default location is the user's documents 
-   folder. For example, since the instance in the following screenshots runs 
-   locally at the address `http://localhost:8080/`, Sync creates a Sync folder 
-   named *localhost* in the user's documents folder. You can, of course, specify 
-   any unique name and location for the Sync folder. Click *Start Syncing* to 
-   begin syncing files. 
+3.  Specify the local folder your @product@ instance will sync with. This folder 
+    will be used exclusively for Sync: Sync creates it and it must not conflict 
+    with any existing local folder. The Sync folder's default name is the 
+    instance's host name, and its default location is the user's documents 
+    folder. For example, since the instance in the following screenshots runs 
+    locally at the address `http://localhost:8080/`, Sync creates a Sync folder 
+    named *localhost* in the user's documents folder. You can, of course, 
+    specify any unique name and location for the Sync folder. Click *Start 
+    Syncing* to begin syncing files. 
 
-    ![Figure 5: Specify your local Sync folder's name and location.](../../../images/sync-setup-03.png)
+    ![Figure 6: Specify your local Sync folder's name and location.](../../../images/sync-setup-03.png)
 
-4. Celebrate! You've successfully set up Liferay Sync! Sync congratulates you on 
-   setting it up and begins to sync files from the sites you selected to your 
-   local Sync folder. Note, completing the initial synchronization may take a 
-   significant amount of time, depending on the amount of data being 
-   transferred. You can safely close the window as syncing continues in the 
-   background. To view the local Sync folder, click *Open Folder*. To open 
-   Sync's preferences, click the small gray text *advanced setup* near the 
-   top-right. 
+4.  Celebrate! You've successfully set up Liferay Sync! Sync congratulates you 
+    on setting it up and begins to sync files from the sites you selected to 
+    your local Sync folder. Note, completing the initial synchronization may 
+    take a significant amount of time, depending on the amount of data being 
+    transferred. You can safely close the window as syncing continues in the 
+    background. To view the local Sync folder, click *Open Folder*. To open 
+    Sync's preferences, click the small gray text *advanced setup* near the 
+    top-right. 
 
-    ![Figure 6: Congratulations, you've successfully set up Liferay Sync!](../../../images/sync-setup-04.png)
+    ![Figure 7: Congratulations, you've successfully set up Liferay Sync!](../../../images/sync-setup-04.png)
 
 Next, you'll learn how to use the Liferay Sync desktop client. 
 
@@ -119,27 +130,27 @@ When Liferay Sync is running its icon appears in your task bar (Windows) or menu
 bar (Mac). Clicking this icon opens a menu that lets you work with and manage 
 Liferay Sync. 
 
-![Figure 7: The Liferay Sync menu in the Windows task bar and Mac menu bar gives you quick access to Sync.](../../../images/sync-toolbar-01.png)
+![Figure 8: The Liferay Sync menu in the Windows task bar and Mac menu bar gives you quick access to Sync.](../../../images/sync-toolbar-01.png)
 
 The top of this menu shows your Sync status. If all your selected sites are 
 synced, then your status is *Synced*. 
 
 Below your Sync status, the menu lists three shortcuts for accessing your 
-Liferay instance's files: 
+@product@ instance's files: 
 
 - **Open Sync Folder:** Select a site to open its local Sync folder. 
-- **View Website:** Select a site to view the page in Liferay that contains its 
-  Documents and Media app. 
+- **View Website:** Select a site to view the page in @product@ that contains 
+  its Documents and Media app. 
 - **Recent Files:** Lists recently created and modified files in the 
   repositories you can access. 
 
-Note that if you sync with two or more Liferay instances, Sync shows each at the 
-top of the menu instead of your Sync status. Mouse over each instance to reveal 
-a submenu with that instance's Sync status and file shortcuts. 
+Note that if you sync with two or more @product@ instances, Sync shows each at 
+the top of the menu instead of your Sync status. Mouse over each instance to 
+reveal a submenu with that instance's Sync status and file shortcuts. 
 
-![Figure 8: When you sync with more than one Liferay instance, Sync shows submenus for each.](../../../images/sync-toolbar-02.png)
+![Figure 9: When you sync with more than one @product@ instance, Sync shows submenus for each.](../../../images/sync-toolbar-02.png)
 
-Lastly, regardless of how many Liferay instances you sync with, the menu lists 
+Lastly, regardless of how many @product@ instances you sync with, the menu lists 
 the following three options: 
 
 - **Preferences:** Open Sync's preferences. 
@@ -151,13 +162,13 @@ on your machine.
 
 ### Using Sync Preferences [](id=using-sync-preferences)
 
-You can use Sync's preferences to add/remove Liferay instances to sync with, 
+You can use Sync's preferences to add/remove @product@ instances to sync with, 
 edit connection settings, and control Sync's basic behavior. Open Sync's 
 preferences by clicking the Sync icon in the task bar (Windows) or menu bar 
 (Mac OS) and selecting *Preferences*. A preference screen for your instance 
 accounts displays. This is the *Accounts* tab in *Preferences*. 
 
-![Figure 9: The Preferences menu's *Accounts* tab lets you manage syncing with sites per account.](../../../images/sync-preferences-accounts-01.png)
+![Figure 10: The Preferences menu's *Accounts* tab lets you manage syncing with sites per account.](../../../images/sync-preferences-accounts-01.png)
 
 The *Accounts* tab contains the following:
 
@@ -196,10 +207,10 @@ general behavior. It lists the following options:
 - **Automatically check for updates:** automatically check for new client 
   versions. You can click the *Check Now* button to check for updates manually. 
 
-![Figure 10: The Preferences menu's *General* tab contains settings for Sync's general behavior.](../../../images/sync-preferences-general-01.png)
+![Figure 11: The Preferences menu's *General* tab contains settings for Sync's general behavior.](../../../images/sync-preferences-general-01.png)
 
 Lastly, the Preferences menu's *Network* tab lets you control how Sync transfers 
-data with your Liferay instances. It contains the following options: 
+data with your @product@ instances. It contains the following options: 
 
 - **Download Rate:** To limit the rate at which Sync downloads data, select 
   *Limit to* and then specify the rate. 
@@ -210,15 +221,15 @@ data with your Liferay instances. It contains the following options:
 - **Enable LAN Syncing:** Whether to download updates from other desktop clients 
   on the same local network before downloading from the server. This can help 
   reduce server load and increase data transfer speeds. Note that LAN syncing 
-  only works when enabled in the Liferay instance by the administrator, and in 
+  only works when enabled in the @product@ instance by the administrator, and in 
   other clients. 
 
-![Figure 11: The Preferences menu's *Network* tab contains settings for Sync's data transfer behavior.](../../../images/sync-desktop-prefs-network.png)
+![Figure 12: The Preferences menu's *Network* tab contains settings for Sync's data transfer behavior.](../../../images/sync-desktop-prefs-network.png)
 
-Note that your Liferay instance's administrator can also limit the 
-download/upload rate from the Liferay instance. In this case, the Liferay 
+Note that your @product@ instance's administrator can also limit the 
+download/upload rate from the @product@ instance. In this case, the @product@ 
 instance's settings take precedent. For example, if you set a 5.0 MB/s download 
-rate in the client but the Liferay instance's download limit is 2.0 MB/s, the 
+rate in the client but the @product@ instance's download limit is 2.0 MB/s, the 
 latter takes precedence. Also, the client's rate applies across all its 
 accounts. For example, if the client connects to three accounts and its download 
 rate is 5.0 MB/s, then the sum of the download rate for all three accounts never 
@@ -229,7 +240,7 @@ with the files in your Sync folder.
 
 ### Using Your Local Sync Folder [](id=using-your-local-sync-folder)
 
-Once you configure and run Sync, Sync automatically uploads to your Liferay 
+Once you configure and run Sync, Sync automatically uploads to your @product@ 
 instance any files you add or modify in your Sync folder. Sync also downloads to 
 your Sync folder any file changes by other users. If you delete a file in your 
 Sync folder, Sync also deletes it from the instance and other clients. You 
@@ -241,9 +252,9 @@ recovering deleted files is impossible.
 
 +$$$
 
-**Warning:** Deleting a file in your Sync folder also deletes it in the Liferay 
-instance and in other clients. If you accidentally delete a file, it can be 
-recovered from the instance's Recycle Bin. The Recycle Bin is enabled by 
+**Warning:** Deleting a file in your Sync folder also deletes it in the 
+@product@ instance and in other clients. If you accidentally delete a file, it 
+can be recovered from the instance's Recycle Bin. The Recycle Bin is enabled by 
 default. File recovery is, however, impossible if the instance or site 
 administrator has disabled the Recycle Bin. 
 
@@ -252,9 +263,9 @@ $$$
 You can run through the following exercise to familiarize yourself with how to 
 create, edit, download, and upload files with Sync. First, open your Sync folder 
 in your file manager and create a new file called `README.txt`. Enter the word 
-`test` in this file. Next, make sure you can access this file in your Liferay 
-site. Go to the site you want to sync with and navigate to its Documents 
-and Media app. It lists your `README.txt` file.
+`test` in this file. Next, make sure you can access this file in your @product@ 
+site. Go to the site you want to sync with and navigate to its Documents and 
+Media app. It lists your `README.txt` file.
 
 Download the `README.txt` file to a convenient location on your machine. Open 
 the file and check that it still says `test`. Now open the `README.txt` file in 
@@ -263,7 +274,7 @@ synced, go back to your browser and refresh the page with your Documents and
 Media app. Click on the *README.txt* file's name, look at the file information 
 displayed, and check that the file's version number has been incremented. 
 
-![Figure 12: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../../images/sync-file-edit-01.png)
+![Figure 13: Updating a file through Liferay Sync increments the file's version number. You can view a file's version number through the web interface.](../../../images/sync-file-edit-01.png)
 
 If you download and open the `README.txt` file again, it now says `second test`.
 Your edit was uploaded to the site! You can be confident that this edit was also

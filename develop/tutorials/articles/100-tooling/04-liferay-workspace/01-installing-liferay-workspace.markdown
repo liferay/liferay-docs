@@ -11,9 +11,11 @@ tutorial.
 Follow the steps below to download and install Liferay Workspace:
 
 1.  Download the
-    [Liferay Workspace installer](https://sourceforge.net/projects/lportal/files/Liferay%20Workspace)
-    that corresponds with your operating system (e.g., Windows, MacOS, or
-    Linux).
+    [Liferay Workspace installer](https://sourceforge.net/projects/lportal/files/Liferay%20Workspace).
+    Make sure to select the version folder (for example, 1.5.0.1) and then
+    select the Workspace version corresponding to your operating system (e.g.,
+    Windows, MacOS, or Linux). Do **not** select the large green download
+    button; this downloads Liferay Portal instead.
 
 2.  Run the installer. Click *Next* to step through the installer's
     introduction.
@@ -32,9 +34,9 @@ Follow the steps below to download and install Liferay Workspace:
     +$$$
 
     **Note:** You'll be prompted for your liferay.com username and password
-    before downloading the Liferay DXP bundle. After providing your credentials,
-    they're stored in your `~/.gradle/gradle.properties` file. The credentials
-    are used by your workspace if you ever decide to redownload a DXP bundle.
+    before downloading the Liferay DXP bundle. Your credentials are not saved
+    locally; they're saved as a token in the `~/.liferay` folder. The token is
+    used by your workspace if you ever decide to redownload a DXP bundle.
     Furthermore, the bundle that is downloaded in your workspace is also copied
     to your `~/.liferay/bundles` folder, so if you decide to initialize another
     @product@ instance of the same version, the bundle is not re-downloaded. See

@@ -6,9 +6,17 @@ or form complete books or guides. It even lets you import article source files
 written in Markdown. It's [workflow-enabled](/discover/portal/-/knowledge_base/7-0/using-workflow), 
 so you can require articles to be approved before they are published. 
 Additionally, the Knowledge Base app lets administrators create article 
-templates that help users follow a common outline. With this application, you
-can create and manage your own knowledge base, full of information relevant to
-your users.
+templates that help users follow a common outline. With this application, you 
+can create and manage your own knowledge base, full of information relevant to 
+your users. 
+
++$$$
+
+**Note:** [Staging](/discover/portal/-/knowledge_base/7-0/staging-content-for-publication) 
+is supported in both Knowledge Base content and portlet configurations since 
+Liferay DXP Fix Pack 14 and Liferay Portal CE GA4.
+
+$$$
 
 Here are the key features of the Knowledge Base:
 

@@ -181,8 +181,8 @@ The `type` attribute supports the following types:
 - number: Adds a number selector.
 - range: Adds a range slider.
 - resource: Adds a `liferay-ui:input-resource` component.
-- toggle-card: Adds a [Toggle Card](http://liferay.github.io/lexicon/content/toggles/#toggleCard)
-- toggle-switch: Adds a [Toggle Switch](http://liferay.github.io/lexicon/content/toggles/#toggle-switch)
+- toggle-card: Adds a [Toggle Card](https://liferay.github.io/clay/content/toggles/#toggleCard)
+- toggle-switch: Adds a [Toggle Switch](https://liferay.github.io/clay/content/toggles/#toggle-switch)
 - url: Adds a URL input field.
 
 For a full list of all the attributes available for the `<aui:input>` tag, check

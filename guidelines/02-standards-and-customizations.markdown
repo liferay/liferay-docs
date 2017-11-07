@@ -92,9 +92,21 @@ documenting. -Cody -->
     `images-dxp` folders that are not used in their corresponding Markdown
     articles.
 
--   `check-links`: (no DXP target) Checks LDN links (CE articles only) to ensure
-    they're pointing at an existing LDN article. A list of invalid links are
-    listed if any are found.
+-   `check-links`: (no DXP target) Checks links (CE articles only) on the
+    current checked out liferay-docs branch to ensure all links point to
+    existing header IDs (header IDs are used to formulate links). A list of
+    invalid links are listed if any are found.
+
+    This target can be executed before publishing to the live site since it
+    scans the local liferay-docs repo. This also means that links pointing to
+    articles **not** hosted in the current repo (e.g., a link pointing to 6.2
+    documentation residing in an article hosted on the `7.0.x` branch) cannot
+    be validated and, therefore, will not be checked.
+
+    You can check legacy links that are already published to LDN by adding the
+    `-Dlegacy.links=true` parameter to your `check-links` execution. This checks
+    all links pointing to articles in the current branch **and** all legacy
+    links hosted on LDN.
 
 -   `dist-article-ce`: Creates a ZIP file for importing the specified article
     (``-Darticle=...``), its images, and supporting structure to a Knowledge
@@ -502,6 +514,54 @@ Well, there you have it--the do's and don'ts of ordered lists.
 to HTML, using your editor's Pegdown converter or by viewing your document
 blob on Github. That way you can be sure any ordered lists you have, preserve
 their consinutous numbering.
+
+### Including Video Tutorials
+
+You may need to include a video tutorial in a developer tutorial or User Guide 
+article. To display video tutorials in the markdown, an Administrator must first 
+upload the video tutorial (in MP4 and WEBM formats) to the Documents and Media 
+repository on LDN. Videos are organized into two folders: `/Develop-videos` for 
+developer tutorials and `/User-admin-videos` for User Guide articles. The 
+video's title should be the same for both formats, and include the `.mp4` || 
+`.webm` extension in the document name, as shown in the configuration below:
+
+    getting-started-with-liferay-ide.mp4
+
+Once the videos are uploaded, you can include them in the markdown. First 
+add a thumbnail of the video to the images folder. Thumbnails should be 
+250px by 141px (to roughly match the 16x9 aspect ratio). Typically, thumbnails 
+are title cards as shown in the figure below:
+
+![Liferay-video-thumbnail image](./images/liferay-video-thumbnail.png)
+
+Add the following markup after the first paragraph to include the thumbnail:
+
+    <div class="video-link">
+    <img src="../../../images/vid-ide-thumbnail.png" alt="video-thumbnail"/>
+    </div>
+
+The `<div>` **must use the `video-link` class for the tutorial to render 
+properly.** Finally, you can include the video.
+
+We use the HTML5 video tag to include multiple sources of our video. Add this 
+markup to the bottom of the article, just before the *Related Topics* section:
+
+    <div class="video-tag" data-name="Getting Started with Liferay IDE">
+      <video width="100%" height="100%" controls>
+        <source src="https://dev.liferay.com/documents/10184/367132/getting-started-with-liferay-ide.mp4" type="video/mp4">
+        <source src="https://dev.liferay.com/documents/10184/367132/getting-started-with-liferay-ide.webm" type="video/webm">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+
+The wrapping `<div>` tag **must use the `video-tag` class and provide a 
+`data-name` value**. The `data-name` attribute is used as the title for the 
+video player. The `src` attributes point to the video formats. If one format 
+isn't supported, the other will be delivered. If neither is supported, the user 
+receives the notification text.
+
+View the video by clicking the thumbnail on the right-side 
+(or bottom on mobile) of the article.
 
 ### Markdown Metadata
 

@@ -3,25 +3,27 @@
 +$$$
 
 **Ext plugins are deprecated for @product-ver@ and should only be used if
-absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0 Fix
-Pack 16+.**
+absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0
+Service Pack (SP) 4+.**
 
-<!-- The next SP release that supports Ext plugins should be documented above.
-We still must decide if we want to include the necessary fix pack and
-workaround. -Cody -->
-
-<!-- Add reminders in use case tutorials involving core classes about what core
-classes are, and how to find them. Use same link provided in list below. -Cody
--->
+**For those upgrading via fix packs, Ext plugins are deployable to Liferay
+Digital Enterprise 7.0 Fix Pack 16+. If you haven't upgraded to SP4+ and are
+using a Tomcat app server, visit the		
+[App Server Configuration](#app-server-configuration) section for details on		
+modifications required to allow Ext plugins to function properly in that		
+environment.**
 
 The following app servers are supported for Ext plugin development in
 @product@:
 
 - Tomcat 8.0
+
+<!--
 - JBoss EAP 7.0
 - Wildfly 10.0
 - WebLogic 12.2
 - WebSphere 8.5.5
+-->
 
 In most cases, Ext plugins are no longer necessary. There are, however, certain
 cases that require the use of an Ext plugin. Liferay only supports the following
@@ -32,28 +34,17 @@ Ext plugin use cases:
   [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
   instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
   overridden beans are still relevant if converting your legacy Ext plugin
-  ([tutorial]()).
+  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255605)).
 - Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
   the [Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
   section
-  ([tutorial]()).
+  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255575)).
 - Modifying @product@'s `web.xml` file
-  ([tutorial]()).
+  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255591)).
 - Adding to @product@'s `web.xml` file
-  ([tutorial]()).
+  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255563)).
 
 Refer to each use case's linked tutorial for further information on that topic.
-
-<!--
-If you're using the Tomcat app server, visit the
-[App Server Configuration](#app-server-configuration) section for details on
-modifications required to allow Ext plugins to function properly in that
-environment.
--->
-
-<!-- Remove the above text (and linked section) if we decide to not refer to
-fix pack support. This will not be necessary in the next SP that supports Ext
-plugins. -Cody -->
 
 $$$
 
@@ -107,7 +98,7 @@ Your first step is to examine the custom module projects that extend popular
 [Liferay Blade Samples](https://github.com/liferay/liferay-blade-samples)
 repository. For
 more information on these sample projects, see the
-[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 tutorial. Usable extension points are also documented throughout Liferay's
 Customer Portal categorized by the @product@ section involved. For example,
 [Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
@@ -630,11 +621,11 @@ Now, perform these actions on your server:
 
 Next, you'll learn about Liferay's licensing and contributing standards.
 
-<!--
 ## App Server Configuration [](id=app-server-configuration)
 
-If you're using the Tomcat app server, you must modify your app server's
-`conf/Catalina/localhost/ROOT.xml` file. Add the following code to that file:
+If you're using the Tomcat app server and have not upgraded to Liferay DE SP4+,
+you must modify your app server's `conf/Catalina/localhost/ROOT.xml` file. Add
+the following code to that file:
 
     <Resources>
         <PreResources
@@ -645,32 +636,12 @@ If you're using the Tomcat app server, you must modify your app server's
     </Resources>
 
 Be sure to place this code within the existing `<Context>` tags.
--->
 
-## Licensing and Contributing [](id=licensing-and-contributing)
+## Summary [](id=summary)
 
-@product@ is Open Source software licensed under the 
-[LGPL 2.1 license](http://www.gnu.org/licenses/lgpl-2.1.html).
-If you reuse any code snippet and redistribute it, whether publicly or to a
-specific customer, make sure your modifications are compliant with the license.
-One common way is to make the source code of your modifications are available to
-the community under the same license. Make sure you read the license text
-yourself to find the option that best fits your needs. 
-
-If your goal in making changes is fixing a bug or improving @product@, it could
-be of interest to a broader audience. Consider contributing it back to the
-project. That benefits all users of the product including you, since you won't
-have to maintain the changes with each newly released version of @product@. You
-can notify Liferay of bugs or improvements at
-[issues.liferay.com](http://issues.liferay.com). Check out the
-[Participate](/participate/contribute-a-feature) section of
-[dev.liferay.com](https://dev.liferay.com), to learn all the ways that you can
-contribute to Liferay projects. 
-
-In summary, an Ext plugin is a powerful way to extend @product@. There are no
-limits to what you can customize, so use it carefully. Before using
-an Ext plugin, see if you can implement all or part of the desired functionality
-through
+An Ext plugin is a powerful way to extend @product@. There are no limits to what
+you can customize, so use it carefully. Before using an Ext plugin, see if you
+can implement all or part of the desired functionality through
 [Application Display Templates](/develop/tutorials/-/knowledge_base/7-0/application-display-templates)
 or a different plugin type. OSGi modules offer you a lot of extension
 capabilities themselves, without introducing the complexity that's inherent with

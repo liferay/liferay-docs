@@ -269,7 +269,9 @@ appear in the form as defaults for those fields.
 displays helpful information. If you would like to provide text for the tooltip
 you may enter it here.
 
-**Indexable:** Select *Yes* to enable Liferay to index your field for search.
+**Indexable:** Select *Yes* to enable @product@ to index your field for search.
+
+**Localizable:** Select *Yes* to enable @product@ to localize your field.
 
 **Repeatable:** Select *Yes* to make your field repeatable. Your users can then
 add as many copies of this field as they like. For example, if you're creating a
@@ -503,6 +505,26 @@ context. For more information about why the theme variable was removed for
 breaking change entry.
 
 $$$
+
+In addition to embedding applications in templates, you can embed a template 
+within another template. This allows for reusable code, JS library imports, 
+scripts, or macros. The template that you embed should be a generic template
+with no structure assigned to it. To create a template with no structure,
+leave the structure field empty when you create the template. To reference a template from within another template, you will need the Template Key.
+
+![Figure x: You can find the Template Key when view the Edit page for a template..](../../../images/find-template-key.png)
+
+Below are examples of embedding template in FreeMarker and Velocity:
+
+**FreeMarker**
+
+    <#include "${templatesPath}/[template-key]" />    
+
+**Velocity**
+
+    #parse ("$templatesPath/[template-key]")
+
+ 
 
 Liferay's taglibs are also accessible to web content administrators developing
 in FreeMarker. There is no need to instantiate these taglibs within your

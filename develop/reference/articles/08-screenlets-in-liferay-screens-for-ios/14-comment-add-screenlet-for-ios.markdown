@@ -46,6 +46,11 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `remote-first` | The Screenlet sends the data to the Liferay instance. If this succeeds, the Screenlet also stores the data in the local cache. If a connection issue occurs, the Screenlet stores the data to the local cache and sends it to the Liferay instance when the connection is restored. If an error occurs, the Screenlet uses the listener to notify the developer. | Use this policy to send the most recent version of the data when connected, and store the data for later synchronization when there's no connection. |
 | `cache-first` | The Screenlet sends the data to the local cache, then sends it to the Liferay instance. If sending the data to the Liferay instance fails, the Screenlet still stores the data locally and then notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and store local (but possibly outdated) data. |
 
+## Required Attributes [](id=required-attributes)
+
+- `className`
+- `classPK`
+
 ## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |

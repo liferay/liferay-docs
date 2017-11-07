@@ -30,9 +30,10 @@ compatible and can be copied to the new 3.1 version.
 
     You may be prompted for your liferay.com username and password before
     downloading the @ide@ installer. Since @ide@ includes access to @product@,
-    you must verify that you have rights to use it. After providing your
-    credentials, they're stored in your `~/.gradle/gradle.properties` file. The
-    credentials are used by your @ide@'s
+    you must verify that you have rights to use it.
+
+    Your credentials are not saved locally; they're saved as a token in the
+    `~/.liferay` folder. The token is used by your @ide@'s
     [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
     if you ever decide to redownload a @product@ bundle. Furthermore, the
     @product@ bundle that was downloaded in your workspace is also copied to
@@ -41,6 +42,14 @@ compatible and can be copied to the new 3.1 version.
     the
     [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/adding-a-liferay-bundle-to-a-workspace)
     for more information on this topic.
+
+    **Important:** The token generator currently has problems with certain
+    special characters contained in a password, which fails the token
+    generation. This is a bug and will be fixed in the next release of Liferay
+    @ide@. Visit the
+    [Generating a Workspace Token Manually](#generating-a-workspace-token-manually)
+    section to follow a manual process to generate a token if you're unable to
+    complete it automatically using the installer.
 
 3.  Run the installer. You may need to allow permission for the installer to run,
     depending on your operating system and where you want to install it.
@@ -78,23 +87,35 @@ section.
 
 ## Install Liferay @ide@ into Eclipse Environment [](id=install-liferay-developer-studio-into-eclipse-environment)
 
-**Important:** This is not available for the latest 3.1 version of @ide@.
+To install @ide@ using an update URL, follow these steps:
 
-To install Liferay @ide@ into an existing Eclipse environment, follow these
-steps:
+1.  In Eclipse, go to *Help* &rarr; *Install New Software...*. 
+
+2.  In the *Work with* field, copy in the URL
+    http://releases.liferay.com/tools/ide/latest/stable/.
+
+3.  You'll see the @ide@ components in the list below. Check them off and click
+    *Next*.
+
+4.  Accept the terms of the agreements. Click *Next*, and @ide@ is installed.
+    Like other Eclipse plugins, you must restart Eclipse to use them.
+
+Liferay @ide@ is now installed in your existing Eclipse environment.
+
+## Install Liferay @ide@ into Eclipse from a ZIP File [](id=install-liferay-ide-into-eclipse-from-a-zip-file)
+
+To install @ide@ using a Zip file, follow these steps:
 
 1.  Go to the
     [Liferay @ide@](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
-    downloads page. From the drop-down menu, select *Archived Feature Update
-    Site* and click *Download*.
-
-    The Archived Product Update Site is used to update an existing @ide@
-    environment to the most recent release. You'll cover this later.
+    downloads page. From the drop-down menu, select *Developer Studio Update
+    Site Zip* and click *Download*.
 
 2.  In Eclipse, go to *Help* &rarr; *Install New Software...*. 
 
-3.  In the *Add Site* dialog, click the *Archive* button and browse to the
-    location of the downloaded Liferay @ide@ `.zip` file. Then press *OK*.
+3.  In the *Add* dialog, click the *Archive* button and browse to the
+    location of the downloaded Liferay @ide@ Update Site `.zip` file. Then press
+    *OK*.
 
 4.  You'll see the @ide@ components in the list below. Check them off and click
     *Next*.
@@ -106,57 +127,39 @@ steps:
 
 Awesome! You've installed Liferay @ide@ in your existing Eclipse environment.
 
-## Update Liferay @ide@ [](id=update-liferay-developer-studio)
+## Generating a Workspace Token Manually [](id=generating-a-workspace-token-manually)
 
-**Important:** This is not available for the latest 3.1 version of @ide@.
+The Liferay @ide@ 3.1 release contains a few issues with generating a token
+used to store your Liferay credentials. If you run into an issue with generating
+your token automatically, you can follow the steps below to manually create one.
 
-If you're already using Liferay @ide@ but need to update your environment,
-follow the steps below:
+1.  Navigate to [www.liferay.com](https://www.liferay.com/) and log in to your
+    account.
 
-1.  Go to the
-    [Liferay @ide@](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
-    downloads page. From the selector, choose *Archived Product Update Site* and
-    click *Download*.
+2.  Click the Options button (![Options](../../../images-dxp/icon-liferay-options.png))
+    and select *Account Home*.
 
-2.  Navigate to *Help* &rarr; *Update Liferay Developer Studio...*.
+3.  Select *Account Settings* from the left menu.
 
-3.  Select *Browse* and select the `.zip` file you downloaded in step 1. Then
-    select *Update*.
+4.  Click *Authorization Tokens* from the right menu under the Miscellaneous
+    heading.
 
-You're now on the latest version of Liferay @ide@!
+    ![Figure 4: You can manually create your workspace token in the Authorization Tokens menu.](../../../images-dxp/authorization-tokens-option.png)
 
-Now that you've learned how to install and update your Liferay @ide@
-environment, you can begin developing Liferay products.
+5.  Select *Add Token*, give it a device name, and click *Generate*. The device
+    name can be set to any string; it's for bookkeeping purposes only.
 
-<!-- The information below should be uncommented when Dev Studio 3.1 is
-available to update from original GA release. Since Dev Studio must be
-reinstalled when upgrading from 3.0 to 3.1, this should not be documented. -Cody
--->
+6.  Create a file named `~/.liferay/token` and copy the generated token into
+    that file.
 
-<!--
+    ![Figure 5: The generated token is available to copy.](../../../images-dxp/generated-token.png)
 
-Update Liferay @ide@
+    Make sure there are no new lines or white space in the file. It should only
+    be one line.
 
-If you already have @ide@ installed, you can easily update it using an update
-site URL.
-
-1.  Select *Help* &rarr; *Install New Software*. 
-
-2.  In your browser, go to the
-    [Liferay @ide@](https://web.liferay.com/group/customer/dxp/downloads/developer-tools)
-    page. Copy the URL to the update site.
-
-    [Figure 1: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../../images/liferay-ide-download.png)
-
-3.  Go back to Eclipse and click the *Add* button to add a repository. 
-
-4.  Type *Liferay IDE* into the Name field and paste the URL into the Location 
-    field. 
-
-5.  You'll see the Liferay @ide@ components in the list below. Check them off and
-    click *Next*. 
-
-6.  Accept the terms of the agreements and click *Next*, and Liferay @ide@ is
-    installed. Like other Eclipse plugins you'll have to restart Eclipse to
-    enable it.
--->
+You've successfully generated your token manually and it's now available for
+your installer to access. If you haven't run the installer, you can do so now.
+If you've already run the installer, you can set the DXP bundle to download
+in the `gradle.properties` file of your workspace. See the
+[Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
+tutorial for details.

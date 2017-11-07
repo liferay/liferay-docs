@@ -29,7 +29,7 @@ The Liferay AMD Module loader works with JavaScript modules that are in the AMD
 format. Here is a basic example of the definition of an AMD module:
 
 
-    define('my-dialog', ['my-node', 'my-plugin-base'], function(myNode, myPluginBase) {
+    Liferay.Loader.define('my-dialog', ['my-node', 'my-plugin-base'], function(myNode, myPluginBase) {
         return {
             log: function(text) {
                 console.log('module my-dialog: ' + text);
@@ -40,7 +40,7 @@ format. Here is a basic example of the definition of an AMD module:
 You can specify to load the module when another module is triggered or when a
 given condition is met:
 
-    define('my-dialog', ['my-node', 'my-plugin-base'], function(myNode, myPluginBase) {
+    Liferay.Loader.define('my-dialog', ['my-node', 'my-plugin-base'], function(myNode, myPluginBase) {
         return {
             log: function(text) {
                 console.log('module my-dialog: ' + text);
@@ -66,11 +66,11 @@ Next you can learn how to load a module.
 
 ## Loading a Module [](id=loading-a-module)
 
-Loading a module is as easy as passing the module name to the `require` method.
+Loading a module is as easy as passing the module name to the `Liferay.Loader.require` method.
 The example below loads a module called `my-dialog`:
 
 
-    require('my-dialog', function(myDialog) {
+    Liferay.Loader.require('my-dialog', function(myDialog) {
         // your code here
     }, function(error) {
         console.error(error);
@@ -91,11 +91,11 @@ example below maps the `liferay` and `liferay2` modules to `liferay@1.0.0`:
 Mapping a module changes its name to the value specified in the map. Take this
 require value for example:
 
-    require('liferay/html/js/autocomplete'...)
+    Liferay.Loader.require('liferay/html/js/autocomplete'...)
 
 Under the hood, this is the same as the value shown below:
 
-    require('liferay@1.0.0/html/js/autocomplete'...)
+    Liferay.Loader.require('liferay@1.0.0/html/js/autocomplete'...)
 
 ## Using Liferay AMD Module Loader in @product@ [](id=using-liferay-amd-module-loader-in-liferay)
 
@@ -103,8 +103,8 @@ Tools, like the [Liferay AMD Module Config Generator](https://github.com/liferay
 have been integrated into @product@ to make it easy for developers to create 
 and load modules. Here's how it works:
 
-1. The Module Config Generator scans your code and looks for AMD module 
-   `define(...)` statements.
+1. The Module Config Generator scans your code and looks for AMD module
+   `Liferay.Loader.define(...)` statements.
 
 2. It then names the module if it is not named already.
 
@@ -131,4 +131,4 @@ Now you know all about the Liferay AMD Module Loader!
 
 ## Related Topics [](id=related-topics)
 
-[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-liferay-portals-loaders)
+[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders)

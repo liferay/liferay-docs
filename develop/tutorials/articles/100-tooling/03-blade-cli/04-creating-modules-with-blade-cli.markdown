@@ -107,7 +107,7 @@ learning best practices on structuring their modules to accomplish specific
 tasks in @product@. These samples can be found in the
 [liferay-blade-samples](https://github.com/liferay/liferay-blade-samples) Github
 repository. You can also learn more about these samples by visiting the
-[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 article.
 
 You can generate these samples using Blade CLI for convenience, instead of
@@ -117,10 +117,10 @@ this, use the following syntax:
     blade samples <NAME>
 
 For example, if you wanted to generate the
-[blade.portlet.ds](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.portlet.ds)
+[portlet-ds](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/ds-portlet)
 sample, you could execute
 
-    blade samples blade.portlet.ds
+    blade samples ds-portlet
 
 For a full listing of all the available Blade samples, run
 

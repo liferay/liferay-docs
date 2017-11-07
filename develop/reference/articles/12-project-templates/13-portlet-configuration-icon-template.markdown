@@ -61,5 +61,5 @@ The generated module is functional and is deployable to a @product@ instance. Th
 generated module, by default, creates a sample link in the Hello World portlet's
 Options menu. To build upon the generated app, modify the project by adding
 logic and additional files to the folders outlined above. You can visit the
-[blade.portlet.configuration.icon](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/blade.portlet.configuration.icon)
+[portlet-configuration-icon](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/extensions/portlet-configuration-icon)
 sample project for a more expanded sample of a portlet configuration icon.

@@ -301,10 +301,19 @@ different language speaking users.
 ### Localizing Web Content [](id=localizing-web-content)
 
 When you create a new piece of web content, you have the ability to choose a
-default language. At the top of the New Web Content screen, you'll see options
-to change the default language and add a translation. If you click *Change*, you
-can select your default language from a large number of languages @product@
-supports.
+default language. First, you'll need to change the system configuration to 
+enable the option to change the default language. Go to the *Control Panel* 
+&rarr; *System Settings*. From *System Settings* scroll through the available 
+configurations or use the search bar to find *Web Content Administration*. From 
+there you can check the box to enable *Changeable Default Language* and save 
+your configuration.
+
+![Figure X: This blog entry has links to three Related Assets: one web content and two message board entries.](../../../images/changeable-default-language.png)
+
+After you enable changes to the default language, you'll see options at the top
+of the New Web Content Screen to change the default language and add a 
+translation. If you click *Change*, you can select your default language from a 
+large number of languages @product@ supports.
 
 ![Figure 9: You have many translation languages to choose from for your web content.](../../../images/web-content-default-language.png)
 
@@ -533,20 +542,20 @@ the Asset Publisher, or from the Site Administration interface.
 
 +$$$ 
 
-**Note:** If you're using a mobile device or tablet and you'd like to view your
-page the way your users will see it (i.e., without all the app controls and
-icons), go up to the top Control Menu and select the *Edit Controls* icon
-(![Edit Controls](../../../images/icon-edit-controls.png)). This makes all those
-extra controls you see as a Liferay administrator disappear. You'll also notice
-the icon is crossed out when the Edit Controls are disabled. If you need to use
-the controls again, just select the icon again to return to the original format.
+**Note:** If you're using a mobile device or tablet and you'd like to view your 
+page the way your users will see it (i.e., without all the app controls and 
+icons), go up to the top Control Menu and select the *Toggle Controls* icon
+(![Toggle Controls](../../../images/icon-edit-controls.png)). This makes all 
+those extra controls you see as a Liferay administrator disappear. You'll also 
+notice the icon is crossed out when the Toggle Controls are disabled. If you 
+need to use the controls again, just select the icon again to return to the 
+original format.
 
-This button is not displayed when viewing the page from a desktop computer.
-This is because apps displayed from a desktop computer hide their controls by
-default, and can be rendered by hovering over the app. To test out your page
-from different devices, select the *Simulation* button
-(![Simulation](../../../images/icon-simulation.png)) from the right corner of
-the top Control Menu.
+This button is not displayed when viewing the page from a desktop computer. This 
+is because apps displayed from a desktop computer hide their controls by 
+default, and can be rendered by hovering over the app. To test out your page 
+from different devices, select the *Simulation* button (![Simulation](../../../images/icon-simulation.png)) 
+from the right corner of the top Control Menu.
 
 $$$
 

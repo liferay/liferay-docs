@@ -90,8 +90,8 @@ WYSIWYG | Provided as an add-on module. [Click here](https://web.liferay.com/mar
 ### UX Enhancements [](id=ux-enhancements)
 
 The UX in @product-ver@ is different than previous versions. It's the first
-version to use Liferay's new 
-[Lexicon Design Language](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Lexicon). 
+version to use [Lexicon](https://liferay.github.io/clay/), a web implementation 
+of Liferay's new [Lexicon Experience Language](https://lexicondesign.io/). 
 Social Office components in @product-ver@ use Lexicon for a consistent UX. This 
 also means that certain Social Office components may not be where you expect 
 them in @product-ver@. 
@@ -233,7 +233,7 @@ its description:
 - `socialOffice:hideTasksLayout`: hides all pages that contained the Tasks 
   portlet. 
 
-- `socialOffice:updateSocialSiteTheme`: restores the default theme for all 
+- `socialOffice:updateTheme`: restores the default theme for all 
   pages. Unless you customized the Social Office theme, you should use the 
   default @product-ver@ theme. 
 

@@ -167,9 +167,9 @@ To blacklist a portlet from SPA, follow these steps:
 
 1. Open your portlet class.
 
-2. Set the `_singlePageApplication` property to false:
+2. Set the `com.liferay.portlet.single-page-application` property to false:
 
-        _singlePageApplication = false;
+        com.liferay.portlet.single-page-application=false
         
    If you prefer, you can set this property to false in your `portlet.xml` 
    instead by adding the following property to the `<portlet>` section:
@@ -269,7 +269,7 @@ Now you know how to configure and use SPA in @product@!
 
 ## Related Topics [](id=related-topics)
 
-[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-liferay-portals-loaders)
+[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders)
 
 [Preparing your JavaScript Files for ES2015](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015)
 

@@ -19,9 +19,9 @@ the template shown below:
 
     // Assuming your "module" will be exported as "mylibrary"
     (function (root, factory) {
-        if (typeof define === 'function' && define.amd) {
+        if (typeof Liferay.Loader.define === 'function' && Liferay.Loader.define.amd) {
             // AMD. Register as a "named" module.
-            define('mylibrary', [], factory);
+            Liferay.Loader.define('mylibrary', [], factory);
         } else if (typeof module === 'object' && module.exports) {
             // Node. Does not work with strict CommonJS, but
             // only CommonJS-like environments that support module.exports,
@@ -48,8 +48,8 @@ can use the following steps:
 1.  Add a `<script>` tag with the following content before loading your module:
 
         <script>
-            define._amd = define.amd;
-            define.amd = false;
+            Liferay.Loader.define._amd = Liferay.Loader.define.amd;
+            Liferay.Loader.define.amd = false;
         </script>
 
 2.  Next, add a `<script>` tag to load the module itself. Below is an example 
@@ -62,7 +62,7 @@ can use the following steps:
     following `<script>` tag:
 
         <script>
-            define.amd = define._amd;
+            Liferay.Loader.define.amd = Liferay.Loader.define._amd;
         </script>
 
 This approach lets you load your modules as browser globals. Next, you can learn 
@@ -77,12 +77,12 @@ these steps to use your library:
     [Configuring Libraries to Support UMD](/develop/tutorials/-/knowledge_base/7-0/using-external-libraries#configuring-libraries-to-support-umd)
     section. Below is an example configuration:
 
-        define('mylibrary', [], factory);
+        Liferay.Loader.define('mylibrary', [], factory);
 
-2.  Remove the UMD wrapper `if (typeof define === 'function' && define.amd)` or 
+2.  Remove the UMD wrapper `if (typeof Liferay.Loader.define === 'function' && Liferay.Loader.define.amd)` or
     update the UMD wrapper to match the one below:
 
-        if (false && typeof define === 'function' && define.amd)
+        if (false && typeof Liferay.Loader.define === 'function' && Liferay.Loader.define.amd)
 
 3.  Configure your bundle's build task to run the `configJSModules` task over 
     the library.
@@ -104,7 +104,7 @@ Now you know how to adapt external libraries for Liferay's JavaScript Loaders.
 
 ## Related Topics [](id=related-topics)
 
-[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-liferay-portals-loaders)
+[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders)
 
 [Liferay AMD Module Loader](/develop/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader)
 

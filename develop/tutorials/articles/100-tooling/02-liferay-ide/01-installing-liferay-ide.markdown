@@ -28,22 +28,19 @@ Congratulations! You've installed Liferay @ide@!
 If you already have an Eclipse environment that you're using for other
 things, it's easy to add Liferay @ide@ to your existing Eclipse installation. 
 
-1.  Select *Help* &rarr; *Install New Software*. 
-
-2.  In your browser, go to the
+1.  In your browser, go to the
     [Liferay @ide@](https://www.liferay.com/downloads/liferay-projects/liferay-ide)
     page. Copy the URL to the update site you're interested in (stable or
     milestone). 
 
-    ![Figure 1: Liferay provides two update sites: stable for those who want a well-tested environment, and milestone for those who like the bleeding edge.](../../../images/liferay-ide-download.png)
+    ![Figure 1: Liferay provides an update site, which provides the latest stable, well-tested environment.](../../../images/liferay-ide-download.png)
 
-3.  Go back to Eclipse and click the *Add* button to add a repository. 
+2.  Select *Help* &rarr; *Install New Software*. 
 
-4.  Type *Liferay IDE* into the Name field and paste the URL into the Location 
-    field. 
+3.  In the *Work with* field, copy in the URL.
 
-5.  You'll see the Liferay @ide@ components in the list below. Check them off and
-    click *Next*. 
+5.  You'll see the Liferay @ide@ components in the list below. Check them off
+    and click *Next*. 
 
 6.  Accept the terms of the agreements and click *Next*, and Liferay @ide@ is
     installed. Like other Eclipse plugins you'll have to restart Eclipse to
@@ -51,7 +48,7 @@ things, it's easy to add Liferay @ide@ to your existing Eclipse installation.
 
 ## Install Liferay @ide@ into Eclipse from a ZIP File [](id=install-liferay-ide-into-eclipse-from-a-zip-file)
 
-To install Liferay @ide@ into Eclipse from a `.zip` file, follow these steps: 
+To install Liferay @ide@ into Eclipse from a Zip file, follow these steps: 
 
 1.  Go to the
     [Liferay @ide@](https://www.liferay.com/downloads/liferay-projects/liferay-ide)
@@ -60,8 +57,8 @@ To install Liferay @ide@ into Eclipse from a `.zip` file, follow these steps:
 
 2.  In Eclipse, go to *Help* &rarr; *Install New Software...*. 
 
-3.  In the *Add Site* dialog, click the *Archive* button and browse to the
-    location of the downloaded Liferay @ide@ `.zip` file.
+3.  In the *Add* dialog, click the *Archive* button and browse to the location
+    of the downloaded Liferay @ide@ Zip file.
 
 4.  You'll see the Liferay @ide@ components in the list below. Check them off and
     click *Next*. 

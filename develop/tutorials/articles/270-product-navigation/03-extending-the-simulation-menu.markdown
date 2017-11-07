@@ -36,6 +36,12 @@ a panel app for the already present hidden category.
    your panel app, move on to learn how to tweak it so it customizes the
    Simulation Menu.
 
+   You can easily generate a Simulation Panel App by using Blade CLI's
+   [Simulation Panel Entry template](/develop/reference/-/knowledge_base/7-0/simulation-panel-entry-template).
+   You can also refer to the
+   [Simulation Panel App sample](/develop/reference/-/knowledge_base/7-0/simulation-panel-app)
+   for a working example.
+
 2. Since this tutorial assumes you're providing more functionality to the
    existing simulation category, set the simulation category in the
    `panel.category.key` of the `@Component` annotation:

@@ -6,7 +6,7 @@ Administration* area of the Control Panel. Then click on *Script*. This is
 @product@'s script console. Change the script type to *Groovy* and replace the
 code in the script console with the following: 
 
-    number = com.liferay.portal.service.UserLocalServiceUtil.getUsersCount(); 
+    number = com.liferay.portal.kernel.service.UserLocalServiceUtil.getUsersCount(); 
     out.println(number); 
 
 Click the *Execute* button and check the script console or the log for the
@@ -63,11 +63,8 @@ should see that all users (except the default user and your user) have been
 updated. 
 
 That's all that's needed to run scripts and to access the Liferay service layer.
-For an example of a script that accesses OSGi services from Liferay's module
-framework, please see
-[Using Custom Java Tools in the Script Engine](/discover/deployment/-/knowledge_base/7-0/using-custom-java-tools-in-the-script-engine).
-There are, however, some things to keep in mind when working with the script
-console: 
+
+Keep these things in mind when working with the script console: 
 
 - There is no undo.
 - There is no preview.
@@ -105,14 +102,14 @@ The predefined variables can all be very useful when you're creating scripts.
 The `actionRequest` variable can be especially useful, as this script
 demonstrates:
 
-    import com.liferay.portal.util.*
+    import com.liferay.portal.kernel.util.*
 
     company = PortalUtil.getCompany(actionRequest)
-    out.println("Current company: ${company.getName()}\n")
+    out.println("Current Company:${company.getName()}\n")
 
-    out.println("User info:")
-    userInfo.each{ 
-            k, v -> out.println("${k}:${v}") 
+    out.println("User Info:")
+    userInfo.each { 
+            k,v -> out.println("${k}:${v}") 
     }
 
 ![Figure 1: Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the current user.](../../../images/groovy-script-current-user-info.png)
@@ -123,9 +120,9 @@ The output of the script console is rendered as HTML content. Thus, you can
 embed HTML markup in your outputs to change their look and feel. Here's an
 example:
 
-    import com.liferay.portal.service.*
+    import com.liferay.portal.kernel.service.*
 
-    number = com.liferay.portal.service.UserLocalServiceUtil.getUsersCount();
+    number = com.liferay.portal.kernel.service.UserLocalServiceUtil.getUsersCount();
     out.println(
             """	
                     <div style="background-color:black; text-align: center">
@@ -176,8 +173,8 @@ can be switched so that the script can make permanent updates to the database.
 Here's an example Groovy script that show the preview mode concept in action:
 
     import java.util.Calendar
-    import com.liferay.portal.service.*
-    import com.liferay.portal.model.*
+    import com.liferay.portal.kernel.service.*
+    import com.liferay.portal.kernel.model.*
     import com.liferay.portal.kernel.dao.orm.*
     import static com.liferay.portal.kernel.workflow.WorkflowConstants.*
 
@@ -222,7 +219,7 @@ To bypass this limitation, you can send the output of the script console to a
 custom file instead of to the console itself or to the Liferay log. For example,
 consider this script:
 
-    import com.liferay.portal.service.*
+    import com.liferay.portal.kernel.service.*
     import com.liferay.portal.kernel.dao.orm.*
 
     // Output management

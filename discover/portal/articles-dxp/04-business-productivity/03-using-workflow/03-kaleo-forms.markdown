@@ -67,9 +67,9 @@ you're unsure how that works.
 +$$$
 
 **Kaleo Forms Display was removed from @product-ver@:** In prior versions of
-@product@ (for example, see
+Liferay Portal EE (for example, see
 [here](/discover/portal/-/knowledge_base/6-2/kaleo-forms-display)), A Kaleo
-Forms Display portlet could be added to a site page in @product@, so users with
+Forms Display portlet could be added to a site page, so users with
 access to the page and the proper permissions could add, delete, and submit
 Kaleo Processes. No capabilities have been removed from the Kaleo stack in
 @product-ver@, but the Kaleo Forms Display portlet was removed. This means that

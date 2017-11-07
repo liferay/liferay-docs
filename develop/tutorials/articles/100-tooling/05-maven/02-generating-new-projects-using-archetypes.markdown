@@ -13,9 +13,8 @@ At the time of this writing, Liferay provides just under 40 Maven archetypes for
 you to use; expect this number to continue growing! These archetypes are
 generated from the Central Repository, unless you've configured for them to be
 generated from another remote repository (e.g., 
-[Liferay Repository](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts#liferay-repository)).
-You can view the Liferay-provided Maven archetypes by running the following
-command:
+[Liferay Repository](https://repository.liferay.com). You can view the
+Liferay-provided Maven archetypes by running the following command:
 
     mvn archetype:generate -Dfilter=liferay
 

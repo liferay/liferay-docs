@@ -1,4 +1,4 @@
-# Configuring Modules for @product@'s Loaders
+# Configuring Modules for @product@'s Loaders [](id=configuring-modules-for-products-loaders)
 
 To load your modules in @product@, you need to know when they are needed, where 
 they are located at build time, if you want to bundle them together or load them 
@@ -226,10 +226,19 @@ tutorial.
 You can also use the module in a generic JavaScript:
 
     <script>
-    require('module-name', function (moduleName) {
+    Liferay.Loader.require('module-name', function (moduleName) {
       // variable `moduleName` is available here
     });
     </script>
+
++$$$
+
+**Note:** Using `Liferay.Loader.require` rather than just `require` is safer if
+you plan to hide the Loader by disabling the `exposeGlobal` option. 
+
+In @product@ 7.1, `exposeGlobal` will be disabled by default.
+
+$$$
 
 Now you know how to load your custom JavaScript modules and global libraries in 
 @product@!

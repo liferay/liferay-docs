@@ -39,7 +39,7 @@ Searching for Liferay module services is also easy. The Javadocs for modules are
 hosted on Liferay's Nexus repository, and can be viewed by downloading and
 extracting the module's `*javadoc.jar` file. You can learn move about how a
 module's Java API is organized by reading the
-[Java API](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules#java-api)
+[Java APIs](/develop/reference/-/knowledge_base/7-0/development-reference#java-apis)
 section.
 
 Here's an example of how to find services for a bookmarks entry:
