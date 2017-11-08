@@ -2,9 +2,8 @@
 
 The Server Administration application (accessed by clicking *Control Panel
 &rarr; Configuration &rarr; Server Administration*) lets you perform tasks
-related to the @product@ server that aren't directly related to the system's.
-Clicking the link makes this clear: you're immediately presented with a graph
-showing the resources available in the JVM.
+related to the @product@ server. Clicking the link makes this clear: you're
+immediately presented with a graph showing the resources available in the JVM.
 
 ![Figure x: Server Administration is where you configure and monitor many aspects of
 the server.](../../../images/server-admin-resources.png)
@@ -17,102 +16,114 @@ documentation](/discover/deployment/-/knowledge_base/7-0/managing-liferay-with-l
 
 $$$
 
+The Server Administration functionality is broken into several tabs:
+
+- [Resources](#resources)
+- [Log Levels](#log-levels)
+- [Properties](#properties)
+- [CAPTCHA](#captcha)
+- [Data Migration](#data-migration)
+- [File Uploads](#file-uploads)
+- [Mail](#mail)
+- [External Services](#external-services)
+- [Script](#script)
+- [Shutdown](#shutdown)
+
 ## Resources [](id=resources)
 
 The Resources tab contains several server wide actions that an administrator can
 execute. These include the following:
 
-**Run the garbage collector:** You can send in a request to the JVM to begin the
-garbage collection task.
+**Run the garbage collector**
+: Send in a request to the JVM to begin the garbage collection task.
 
-<!-- Ask team about this -->
-**Generate a thread dump**: Useful during performance testing, generate a thread
-dump which can be examined later to determine the presence and locations of any
-deadlocks. Note that you need to add a logger category for
+**Generate a thread dump**
+: Useful during performance testing, generate a thread dump which can be
+examined later to determine the presence and locations of any deadlocks. Note
+that you need to add a logger category for
 `com.liferay.server.admin.web.internal.portlet.action.EditServerMVCActionCommand`
 and set it to `INFO` before generating a thread dump.
 
-**Clear content cached by this VM:** You can send in a request to the JVM to
-clear content stored in the local cache. Ehcache usage is split into two groups:
-local JVM scope and cluster scope. This action only clears the content of the
-local Ehcache.
+**Clear content cached by this VM**
+: Send in a request to the JVM to clear content stored in the local cache.
+Ehcache usage is split into two groups: local JVM scope and cluster scope. This
+action only clears the content of the local Ehcache.
 
-**Clear content cached across the cluster:** You can send in a request to the
-JVM to clear content cached across the entire cluster. This action clears the
-content of the clustered Ehcache.
+**Clear content cached across the cluster**
+: Send in a request to the JVM to clear content cached across the entire
+cluster. This action clears the content of the clustered Ehcache.
 
-**Clear the database cache:** You can send in a request to the JVM to clear the
-database cache. Liferay uses Ehcache mainly, but not only, at the persistence
-layer for caching objects obtained from the database. This action only clears
-the database result cache.
+**Clear the database cache**
+: Send in a request to the JVM to clear the database cache. Liferay uses Ehcache
+mainly, but not only, at the persistence layer for caching objects obtained from
+the database. This action only clears the database result cache.
 
-**Clear the direct servlet cache:** You can send in a request to the JVM to
-clear the direct servlet cache. The direct servlet context is a feature that
-optimizes JSP serving performance by caching and accessing the generated
-servlets directly instead of accessing them over the application server's
-dispatcher chain. This is only suitable for cases where no filter is required
-for the JSPs. For production mode, this cache should be enabled to improve
-performance. In case emergency fixes need to be applied, this action allows an
-administrator to manually clear out the cache to force JSPs to reload. For
-development mode, the direct servlet context should be disabled to allow JSP
-servlets to be reloaded on the fly. See the Direct Servlet Context section of
-the `portal.properties` file for details.
+**Clear the direct servlet cache**
+: Send in a request to the JVM to clear the direct servlet cache. The direct
+servlet context is a feature that optimizes JSP serving performance by caching
+and accessing the generated servlets directly instead of accessing them over the
+application server's dispatcher chain. This is only suitable for cases where no
+filter is required for the JSPs. For production mode, this cache should be
+enabled to improve performance. In case emergency fixes need to be applied, this
+action allows an administrator to manually clear out the cache to force JSPs to
+reload. For development mode, the direct servlet context should be disabled to
+allow JSP servlets to be reloaded on the fly. See the Direct Servlet Context
+section of the `portal.properties` file for details.
 
-**Reindex all search indexes:** You can send in a request to regenerate all
-search indexes. If you are not using a Solr search server this will impact
-portal performance so try to do this at non-peak times.
+**Reindex all search indexes**
+: Send in a request to regenerate all search indexes. If you are not using a
+Solr search server this will impact portal performance so try to do this at
+non-peak times.
 
-**Reindex all spell check indexes:** You can send in a request to regenerate all
-spell check indexes.
+**Reindex all spell check indexes**
+: Send in a request to regenerate all spell check indexes.
 
-**Reindex com.liferay...SomeEntity**: Reindex a single entity individually.
+**Reindex com.liferay...SomeEntity**
+: Reindex a single entity.
 
+**Verify database tables of all plugins**
+: Check all tables against their indexes for accuracy of data retrieval.
 
-Verification Actions
+**Verify Membership Policies**
+: Check that existing site membership policies have been correctly applied and
+automatically make updates if necessary. For example, suppose that someone
+manually changed the Liferay database or that the Liferay database was hacked,
+resulting in a user being assigned to a site in violation of a site membership
+policy. When the *Verify Membership Policies* button is clicked, the verify
+methods of all the site membership policies that have been implemented are
+triggered. These methods check that all site memberships are in accord with the
+site membership policies; if they are not, the necessary changes (such as
+removing users from forbidden sites) are made.
 
-**Verify database tables of all plugins:** You can check all tables against
-their indexes for accuracy of data retrieval.
+**Reset preview and thumbnail files for the Documents and Media portlet**
+: You can send in a request to reset the preview and thumbnail files for each
+item in your portal's Documents and Media libraries.
 
-**Verify Membership Policies**: You can check that existing site membership
-policies have been correctly applied and automatically make updates if
-necessary. For example, suppose that someone manually changed the Liferay
-database or that the Liferay database was hacked, resulting in a user being
-assigned to a site in violation of a site membership policy. When the *Verify
-Membership Policies* button is clicked, the verify methods of all the site
-membership policies that have been implemented are triggered. These methods
-check that all site memberships are in accord with the site membership policies;
-if they are not, the necessary changes (such as removing users from forbidden
-sites) are made.
+**Clean up permissions**
+: This process removes the assignment of some permissions on the Guest, User,
+and Power User roles to simplify the management of "User Customizable Pages".
+Notably, the "Add To Page" permissions is removed from the Guest and User roles
+for all portlets. Likewise, the same permission is reduced in scope for Power
+Users from portal wide to scoped to "User Personal Site."
+<!-- Is this all? How would a user know exactly what permissions are removed if
+we don't tell them? -->
 
-Clean Up Actions
-
-**Reset preview and thumbnail files for the Documents and Media portlet:** You
-can send in a request to reset the preview and thumbnail files for each item in
-your portal's Documents and Media libraries.
-
-**Clean up permissions:** This process removes the assignment of some
-permissions on the Guest, User, and Power User roles to simplify the management
-of "User Customizable Pages". Notably, the "Add To Page" permissions is removed
-from the Guest and User roles for all portlets. Likewise, the same permission is
-reduced in scope for Power Users from portal wide to scoped to "User Personal
-Site."
-
-**Clean up portlet preferences**: This process removes all orphaned portlet
-preferences that belong to page revisions. Portlet preferences that belong to a
-portlet that does not belong to a page revision will be removed. Portlet
-preferences that belong to runtime portlets will also be removed.
+**Clean up portlet preferences**
+: Remove orphaned portlet preferences. This action removes portlet preferences
+for any portlet that does not belong to a page revision, and for runtime
+portlets.
 <!--Really this is just the tooltip copied into the docs -->
 
 ## Log Levels [](id=log-levels)
 
 The Log Levels tab of the Server Administration page allows you to dynamically
 modify the log levels for any class hierarchy in the portal. If you have custom
-code you have deployed which isn't in the list, you can use the *Add Category*
-tab to add it. If you change the log level near the top of the class hierarchy
-(such as at `com.liferay`), all the classes under that hierarchy will have their
-log levels changed. If testing something specific, be as specific as possible.
-Modifications unnecessarily high in the hierarchy generate too many messages to
-be useful.
+code deployed that's not in the list, use the *Add Category* tab to add it. If
+you change the log level near the top of the class hierarchy (such as at
+`com.liferay`), all the classes under that hierarchy will have their log levels
+changed. If testing something specific, make you log level adjustment as
+specifically as possible. Modifications unnecessarily high in the hierarchy
+generate too many messages to be useful.
 
 ## Properties [](id=properties)
 
@@ -189,26 +200,25 @@ file.
 ## External Services [](id=external-services)
 
 Liferay Portal enables users to upload and share content via the Documents and
-Media library, a customizable and permissions-enabled online repository. Users can
-upload files of any type to the Documents and Media library. Liferay ships with
-PDFBox for generating automatic previews for certain types of
-documents. You can also install three additional tools that offer
-higher quality previews and document conversion functionality: OpenOffice or
-LibreOffice, ImageMagick and Xuggler. With Liferay configured to use these
-tools, you can generate automatic previews for many types of files including text
-files, office suite files, PDFs, images, audio files and videos. Users will also
-be able to use the conversion functionality to download documents in a variety
-of formats. Please see the [Automatic Previews and Metadata](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata)
-section for more information.
+Media library, a customizable and permissions-enabled online repository. Users
+can upload files of any type to the Documents and Media library. Liferay ships
+with PDFBox for generating automatic previews for certain types of documents.
+You can also install three additional tools that offer higher quality previews
+and document conversion functionality: OpenOffice or LibreOffice, ImageMagick
+and Xuggler. With Liferay configured to use these tools, you can generate
+automatic previews for many types of files including text files, office suite
+files, PDFs, images, audio files and videos. Users will also be able to use the
+conversion functionality to download documents in a variety of formats. Please
+see the [article on publishing files in
+@product@](/discover/portal/-/knowledge_base/7-0/publishing-files).
 
 LibreOffice is available here: [LibreOffice](http://www.libreoffice.org),
 ImageMagick is available here: [ImageMagick](http://www.imagemagick.org), and
 Xuggler is available here: [Xuggler](http://xuggle.com/xuggler/). Make sure to
 choose the correct versions of these applications for your operating system. We
-recommend that you install the latest stable versions. LibreOffice 3.6,
-ImageMagick 6.7.7, and Xuggler 5.4 work with Liferay 6.2. You need to install
-LibreOffice and ImageMagick manually but you can install Xuggler from Liferay's
-Server Administration Control Panel interface.
+recommend that you install the latest stable versions. LibreOffice and
+ImageMagick must be installed manually, but you can install Xuggler from
+the Control Panel.
 
 +$$$
 
@@ -274,7 +284,7 @@ click *Save*. Now Liferay can perform many types of document conversions.
 
 ### ImageMagick configuration [](id=imagemagick-configuration)
 
-Install the correct version of [*ImageMagick*](http://www.imagemagick.org) for
+Install the correct version of [ImageMagick](http://www.imagemagick.org) for
 your operating system. It should include the installation of Ghostscript. Then
 configure Liferay to use ImageMagick either in `portal-ext.properties` or
 from the Control Panel. To enable ImageMagick in your `portal-ext.properties`
