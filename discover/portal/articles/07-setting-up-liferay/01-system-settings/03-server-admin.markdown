@@ -191,8 +191,8 @@ file.
 Liferay Portal enables users to upload and share content via the Documents and
 Media library, a customizable and permissions-enabled online repository. Users can
 upload files of any type to the Documents and Media library. Liferay ships with
-PDFBox and uses it to generate automatic previews for certain types of
-documents, by default. You can also install three additional tools that offer
+PDFBox for generating automatic previews for certain types of
+documents. You can also install three additional tools that offer
 higher quality previews and document conversion functionality: OpenOffice or
 LibreOffice, ImageMagick and Xuggler. With Liferay configured to use these
 tools, you can generate automatic previews for many types of files including text
@@ -237,10 +237,10 @@ Liferay, you can start it in server mode with the following command:
     soffice --headless --accept="socket,host=127.0.0.1,port=8100;urp;"
     --nofirststartwizard
 
-Once OpenOffice or LibreOffice has been installed and is running in server mode,
-you can configure Liferay to use it either in your `portal-ext.properties` file
-or from the Control Panel. To enable OpenOffice/LibreOffice in your
-`portal-ext.properties` file, add the following line:
+Once OpenOffice or LibreOffice is installed and running in server mode,
+configure Liferay to use it either in `portal-ext.properties` or from the
+Control Panel. To enable OpenOffice/LibreOffice in your `portal-ext.properties`
+file, add the following line:
 
     openoffice.server.enabled=true
 
@@ -274,10 +274,9 @@ click *Save*. Now Liferay can perform many types of document conversions.
 
 ### ImageMagick configuration [](id=imagemagick-configuration)
 
-Once you've installed the correct version of
-[*ImageMagick*](http://www.imagemagick.org) for your operating system, which
-should include the installation of Ghostscript, you need to configure Liferay to
-use ImageMagick. You can do this either in your `portal-ext.properties` file or
+Install the correct version of [*ImageMagick*](http://www.imagemagick.org) for
+your operating system. It should include the installation of Ghostscript. Then
+configure Liferay to use ImageMagick either in `portal-ext.properties` or
 from the Control Panel. To enable ImageMagick in your `portal-ext.properties`
 file, add the following lines and make sure the search path points to the
 directories for the ImageMagick and Ghostscript executables. You may also need
@@ -295,18 +294,15 @@ for ImageMagick and verify the paths to the ImageMagick and Ghostscript
 executables are correct.
 
 Note that some older versions of ImageMagick are unable to properly run with
-Liferay. If this is the case, update to the latest version (ImageMagick 6.7.9-6
-2012-09-25 Q16 or later). To check for the latest ImageMagick versions, visit
-[ImageMagick's website](http://www.imagemagick.org/script/binary-releases.php).
-See [LPS-30291](http://issues.liferay.com/browse/LPS-30291) for information on
-efforts to identify incompatible application versions with Liferay.
+Liferay, so update to the latest version. To check for the latest ImageMagick
+versions, visit [ImageMagick's
+website](http://www.imagemagick.org/script/binary-releases.php).
 
 ### Xuggler configuration [](id=xuggler-configuration)
 
-Since Liferay 6.1.1+, you can install Xuggler completely from the Control Panel.
-Navigate to the *Server Administration* &rarr; *External Services* page. From
-the dropdown, select the Xuggler `.jar` file that matches your operating system.
-Then click on *Install*. 
+Install Xuggler from the Control Panel. Navigate to the *Server Administration*
+&rarr; *External Services* page. From the dropdown, select the Xuggler `.jar`
+file that matches your operating system. Then click on *Install*. 
 
 In order to use Xuggler, you must restart your application server and enable
 Xuggler for your portal. You can enable Xuggler either from the Control Panel or
