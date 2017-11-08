@@ -3,19 +3,19 @@
 Adaptive Media has some advanced configuration options that are available in 
 System Settings. Open the Control Panel and go to *Configuration* &rarr; 
 *System Settings*, then select the *Collaboration* tab. There are two 
-configurations for Adaptive Media: *Adaptive Media* and *Adaptive Media Image*. 
+configurations for Adaptive Media: *Adaptive Media*, and *Adaptive Media Image*. 
 
 The *Adaptive Media* configuration affects all virtual instances and is related 
 to Adaptive Media's asynchronous processing. These values can be modified to 
 improve performance for specific scenarios or use cases. The following 
 configuration options are available: 
 
--   **Max processors:** The maximum number of processors (CPUs) that can 
-    process adapted images. The default value is `10`. 
+-   **Max processes:** The maximum number of processes for generating adapted 
+    media. The default value is `10`. 
 
--   **Core processors:** The number of processors (CPUs) always available to 
-    process adapted images. The default value is `5`. This setting can't exceed 
-    the *Max processors* setting. 
+-   **Core processes:** The number of processes always available for generating 
+    adapted media. The default value is `5`. This setting can't exceed the *Max 
+    processes* setting. 
 
 The *Adaptive Media Image* configuration can be different for each virtual 
 instance. It contains only this option: 
