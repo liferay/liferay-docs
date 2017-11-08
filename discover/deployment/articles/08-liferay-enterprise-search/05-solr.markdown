@@ -116,13 +116,13 @@ adapter.
 **Liferay Digital Enterprise:** Using the [App
 Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps) to
 deactivate the Elasticsearch adapter bundle, as described below, is easy and
-effective. If you're on Fix Pack 30 or above, following those instructions is
-all you need to know. However, there's a limitation related to the patching
-process for Liferay Digital Enterprise 7.0, present in all versions below Fix
-Pack 30. If you install a patch that replaces the `Liferay Foundation.lpkg`, the
-Elasticsearch adapter is reinstalled and started automatically. Because of this,
-you must deactivate the Elasticsearch bundle after each patch, using the method
-described below.
+effective. If your installation is updated, that's all you need to do. However,
+there's a [bug](https://issues.liferay.com/browse/LPS-74456) related to the
+patching process for Liferay Digital Enterprise 7.0, present in all versions
+below Fix Pack 31. If you install a patch that replaces the `Liferay
+Foundation.lpkg`, the Elasticsearch adapter is reinstalled and started
+automatically. Because of this, you must deactivate the Elasticsearch bundle
+after each patch.
 
 $$$
 
