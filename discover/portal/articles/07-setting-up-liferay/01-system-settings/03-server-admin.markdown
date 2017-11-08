@@ -1,11 +1,11 @@
-# Server Administration
+# Server Administration [](id=server-administration)
 
 The Server Administration application (accessed by clicking *Control Panel
 &rarr; Configuration &rarr; Server Administration*) lets you perform tasks
 related to the @product@ server. Clicking the link makes this clear: you're
 immediately presented with a graph showing the resources available in the JVM.
 
-![Figure x: Server Administration is where you configure and monitor many aspects of
+![Figure 1: Server Administration is where you configure and monitor many aspects of
 the server.](../../../images/server-admin-resources.png)
 
 +$$$
