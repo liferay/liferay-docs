@@ -186,8 +186,15 @@ When an entity is sent to the workflow framework, (via the
 database table. This `delete` call ensures there are no orphaned entries in the
 `workflowinstancelinks` table.
 
-Once you've accounted for workflow status in your service layer, there's only
-one thing left to do: update the user interface.
+Note, to get the `WorkflowInstanceLocalService` injected into your
+`*LocalServiceBaseImpl`, so you can call its methods in the `LocalServiceImpl`,
+add this to your entity declaration in `service.xml`:
+
+		<reference entity="WorkflowInstanceLink" package-path="com.liferay.portal" />
+
+Save your work and runs Service Builder. Once you've accounted for workflow
+status in your service layer, there's only one thing left to do: update the user
+interface.
 
 ## Workflow Status and the View Layer [](id=workflow-status-and-the-view-layer)
 
