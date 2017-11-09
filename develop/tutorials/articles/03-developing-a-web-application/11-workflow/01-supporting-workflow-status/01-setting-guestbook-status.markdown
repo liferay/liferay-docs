@@ -88,7 +88,25 @@ Asset Publisher or the Search portlet.
 Organize imports (*[CTRL]+[SHIFT]+O*) and save your work. Then run the
 `buildService` Gradle task.
 
-Now the guestbook entity's service layer populates the status fields in the
-database and sends the entity into the workflow framework. Do the same thing for
-guestbook entries next.
+There's one more update to make, this time in the `deleteGuestbook` method. Here
+you need to make sure the workflow system's database tables get cleaned up, to
+avoid leaving orphaned database entries when the backing entity is deleted.
+Before making the method call, open `service.xml` and add the following tag
+below the existing `<reference>` tags:
+
+    <reference entity="WorkflowInstanceLink" package-path="com.liferay.portal" />
+
+Save and run Service Builder. The `WorkflowInstanceLinkLocalService`
+service is injected into a protected variable in `GuesbookLocalServiceBaseImpl`.
+Since `GuestbookLocalServiceImpl` extends the base class, it's available to use
+directly. Back in `GuesbookLocalServiceImpl`, find the `deleteGuestbook` method
+and put this method call right before the `return` statement:
+
+    workflowInstanceLinkLocalService.deleteWorkflowInstanceLinks(
+        guestbook.getCompanyId(), guestbook.getGroupId(),
+        Guestbook.class.getName(), guestbook.getGuestbookId());
+
+Save the file, and that's it. Now the guestbook entity's service layer populates
+the status fields in the database, sends the entity into the workflow framework,
+and cleans up when it's deleted. Do the same thing for guestbook entries next.
 
