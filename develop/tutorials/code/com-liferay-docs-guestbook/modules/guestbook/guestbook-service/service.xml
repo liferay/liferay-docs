@@ -50,6 +50,7 @@
 		
 		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
 		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		<reference entity="WorkflowInstanceLink" package-path="com.liferay.portal" />
 		
 
 	</entity>
@@ -95,6 +96,7 @@
 
 		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
 		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		<reference entity="WorkflowInstanceLink" package-path="com.liferay.portal" />
 		
 
 	</entity>
