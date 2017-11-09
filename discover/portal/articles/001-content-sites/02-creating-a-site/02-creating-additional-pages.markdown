@@ -1,4 +1,4 @@
-# Creating Additional Pages
+# Building the Lunar Guides and Book a Trip Pages
 
 The Lunar Resort needs two more pages: 
 
@@ -14,38 +14,38 @@ and not just copied over from the earlier instructions.
 
 ## Creating the Lunar Guides Page
 
-1.  Open the main menu, and expand the *Navigation* menu for *The Lunar Resort*. 
+1.  Open the main menu and expand the *Navigation* menu for *The Lunar Resort*. 
 
 2.  In the Navigation menu, click the *Options* button 
     (![Options](../../../images/icon-options.png)) for *Public Pages* and select 
     *Add Public Page*. 
 
 
-3.  Enter *Lunar Guides* for the *Name*.
+3.  Enter *Lunar Guides* for the Name.
 
 4.  For the layout, select *3 Columns*. 
 
-5.  Leave the other options on their default settings, and click *Add Page*. 
+5.  Leave the other options on their default settings and click *Add Page*. 
 
 ## Creating the Book a Trip Page
 
-1.  Open the main menu, and expand the *Navigation* menu for *The Lunar Resort*. 
+1.  Open the main menu and expand the *Navigation* menu for *The Lunar Resort*. 
 
 2.  In the Navigation menu, click the *Options* button 
-    (![Options](../../../images/icon-options.png)) for *Public Pages* and select 
+    (![Options](../../../images/icon-options.png)) for Public Pages and select 
     *Add Public Page*. 
 
-3.  Enter *Book a Trip* for the *Name*.
+3.  Enter *Book a Trip* for the Name.
 
 4.  For the layout, select *3 Columns*. 
 
-5.  Leave the other options on their default settings, and click *Add Page*. 
+5.  Leave the other options on their default settings and click *Add Page*. 
 
 ## Arranging Pages
 
-The new pages now appear in the navigation bar alongside the other pages. If 
-these pages are out of your preferred order, you can rearrange them via drag and 
-drop. Rearrange the pages to match this order: 
+The new pages now appear in the navigation bar with the other pages. If these
+pages are out of your preferred order, you can rearrange them via drag and drop.
+Rearrange the pages to match this order: 
 
 ![Figure x: Reorder the pages in the navigation bar.](../../../images/001-final-menu.png)
 

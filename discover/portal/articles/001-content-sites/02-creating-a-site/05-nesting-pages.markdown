@@ -1,12 +1,12 @@
 # Nesting Pages
 
-When creating sites, you'll likely encounter situations in which you want to 
-nest pages under other pages. Such child pages (also called nested pages) let 
-you create page hierarchies to organize content and functionality. For example, 
-the pages for each lunar guide should be nested under the Lunar Guides page. 
-Although this is a simple use case, note that pages in @product@ can be nested 
-to virtually unlimited levels. This lets your site support even the most 
-demanding hierarchies. 
+When creating sites, you'll likely encounter situations where you want to nest
+pages under other pages. Such child pages (also called nested pages) let you
+create page hierarchies to organize content and functionality. For example, the
+pages for each lunar guide should be nested under the Lunar Guides page.
+Although this is a simple use case, note that pages in @product@ can be nested
+to unlimited levels. This lets your site support even the most demanding
+hierarchies, so long as you can design a UI to handle it. 
 
 In this article, you'll nest the existing lunar guide page for Cody under the 
 Lunar Guides page. You'll then create more lunar guide pages as child pages of 
@@ -22,8 +22,8 @@ There are two ways to create a child page in @product@:
 2.  Turn an existing page into a child page of another existing page. You can 
     even do this via drag and drop. 
 
-You'll start with the second option, since you already created a page (Cody) 
-that you want nest under the Lunar Guides page. 
+You'll start with the second option, since you already created a page (Cody)
+that you want to nest under the Lunar Guides page. 
 
 ### Creating Child Pages with Drag and Drop
 
@@ -44,13 +44,13 @@ page:
     ![Figure x: The page *Cody* is now nested under *Lunar Guides* page.](../../../images/001-nav-hierarchy-1.png)
 
 Nice work! Next, you'll create the rest of the pages for the lunar guides as 
-child pages of the *Lunar Guides* page--Cody is about to have some company. 
+child pages of the *Lunar Guides* page. Cody is about to have some company. 
 
 ### Creating New Child Pages
 
 The Lunar Resort's other lunar guides--Jim, Steve, and Russ--also need pages 
 nested under the *Lunar Guides* page. You'll create these pages directly as 
-child pages. Follow these steps to do so: 
+child pages: 
 
 1.  In the *Lunar Resort* &rarr; *Navigation* menu, click the *Options* button 
     (![Options](../../../images/icon-options.png)) for *Lunar Guides* and select 
