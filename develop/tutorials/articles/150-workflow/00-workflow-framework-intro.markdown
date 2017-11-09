@@ -174,6 +174,18 @@ For an example of a fully implemented `updateStatus` method, see the
 `com.liferay.portlet.blogs.service.impl.BlogsEntryLocalServiceImpl` class in
 `portal-impl`.
 
+Before leaving the service layer, add a call to `deleteWorkflowInstanceLinks`
+in the `deleteEntity` method. Here's what it looks like:
+
+    workflowInstanceLinkLocalService.deleteWorkflowInstanceLinks(
+        fooEntity.getCompanyId(), fooEntity.getGroupId(),
+        FooEntity.class.getName(), fooEntity.getFooEntityId());
+
+When an entity is sent to the workflow framework, (via the
+`startWorkflowInstance` call), an entry is created in the `workflowinstancelink`
+database table. This `delete` call ensures there are no orphaned entries in the
+`workflowinstancelinks` table.
+
 Once you've accounted for workflow status in your service layer, there's only
 one thing left to do: update the user interface.
 
