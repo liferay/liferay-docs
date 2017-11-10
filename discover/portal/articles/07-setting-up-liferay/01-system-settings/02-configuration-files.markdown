@@ -59,7 +59,7 @@ file:
     multiValueSetting=["Value 1","Value 2", ...]
 
 Do not use a space character between values (after the comma). An errant space
-characters can cause a failure to load the property.
+character can cause a failure to load the property.
 
 Open the Web Content entry from System Settings and you'll see what looks like
 multiple single value entries for *Charactersblacklist*: 
@@ -92,7 +92,7 @@ beneficial to escape spaces inside values to avoid problems.
 
 In the above example, a `\` is used before each space character to ensure it's
 read and processed properly. If you don't escape spaces yourself, the framework
-will add the backslash for you after deployment.
+adds the backslash for you after deployment.
 
 ### Deploying a Configuration File [](id=deploying-a-configuration-file)
 
