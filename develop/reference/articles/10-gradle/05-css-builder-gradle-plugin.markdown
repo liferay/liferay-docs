@@ -109,6 +109,10 @@ JDK, you must use the fallback Ruby compiler. You can do this two ways:
 - Otherwise, set `buildCSS.sassCompilerClassName='ruby'` in the project's
   `build.gradle` file.
 
+The `sass.compiler.class.name=ruby` Gradle property only works for modules, so
+if you're using the Ruby compiler in a WAR project (e.g., theme), you must use
+the second option.
+
 Be aware that the Ruby-based compiler doesn't perform as well as the native
 compiler, so expect longer compile times.
 
