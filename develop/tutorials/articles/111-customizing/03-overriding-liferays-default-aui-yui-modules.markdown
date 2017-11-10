@@ -8,7 +8,7 @@ To override a default YUI/AUI module, you must create an OSGi module that
 provides two things:
 
 - A copy of the original module's JavaScript file with your modifications 
-  applied.
+  applied
 - A `config.js` file that specifies the modified JavaScript file's path and the 
   module to override
 
@@ -25,12 +25,13 @@ Follow these steps:
 
 3. Apply your modifications and save the file.
 
-4. Now that you've made your modifications to the copy, you must create a 
-    `config.js` file to apply your override. Add the `config.js` file to your 
-    module's `src/main/resources/META-INF/resources/js` folder. The example 
-    `config.js` file below overrides @product@'s `liferay-session` module with a 
-    custom `liferay-session-override` module. You can follow this same pattern 
-    to create your module's `config.js` file:
+4. Now that you've made your modifications to the copy, you must 
+    [write your module's configuration file](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders#writing-the-configuration-file) 
+    to apply your override. Add the `config.js` file to your module's 
+    `src/main/resources/META-INF/resources/js` folder. The example `config.js` 
+    file below overrides @product@'s `liferay-session` module with a custom 
+    `liferay-session-override` module. You can follow this same pattern to 
+    create your module's `config.js` file:
 
         ;(function() {
 
@@ -78,3 +79,5 @@ Now you know how to override @product@'s default YUI/AUI modules!
 [Overriding Core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)
 
 [Overriding App JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
+
+[Configuring Modules for @product@'s Module Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders)
