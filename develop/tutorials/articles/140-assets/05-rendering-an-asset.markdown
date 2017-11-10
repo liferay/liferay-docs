@@ -44,21 +44,18 @@ description, read on to learn more!
 
 ## Prerequisites for Asset Enabling and Application
 
-In order to asset enable your application, you will need to have a couple of 
-pieces in place. First, and most fundamental, your application needs to store 
-data which can be classified as an asset. Most applications will meet this 
-requirement as they store and model some kind of data to serve their function,
-and if an application doesn't have some entity which it stores that could be
-used as an asset, there's not need to asset enable it to begin with.
+To asset-enable your application, you need two things: 
 
-Second, your application needs to have an Admin Portlet. Generally this will be 
-a panel app, but it must be a portlet that is noninstanceable: 
-`com.liferay.portlet.instanceable=false`. A panel app is a interface for 
-configuring your application within Liferay's Control Panel. Creating a panel 
-app enables the creation of `edit` links for your application which is required 
-for asset enabling your application. If your application does not currently 
-include a panel app, see our tutorial on [Adding Custom Panel Apps](/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)
-to learn how to add one.
+1.  The application must store asset data. Applications that store a data model
+    meet this requirement.
+
+2.  The application must have an Admin Portlet: a non-instanceable interface
+    for configuring the application in @product@'s Control Panel. Creating
+    a panel app enables the creation of `edit` links for your application which
+    is required for asset enabling your application. If your application does
+    not currently include a panel app, see our tutorial on 
+    [Adding Custom Panel Apps](/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)
+    to learn how to add one.
 
 Now that you have all that taken care of, you can move on to creating an Asset 
 Renderer.
