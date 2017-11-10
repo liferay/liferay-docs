@@ -1,45 +1,41 @@
 # Environment Variables [](id=environment-variables)
 
-Most cloud-based environments use environment variables to configure images. You
-can use environment variables to configure @product@ too. They let you override
-@product@
-[portal properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html).
-This capability facilitates deploying custom configured @product@ instances in
-cloud-based containers and virtual machines. 
+You can use environment variables to configure @product@, which is especially
+useful in cloud-based environments. 
 
 +$$$
 
-**Important**: This capability is for Linux and Unix operating systems only--It's not available on Windows. 
+**Important**: This capability is for Linux and Unix operating systems only:
+it's not available on Windows. 
 
 $$$
 
 +$$$
 
-**Note**: Environment variables can only override portal properties
-([defined in `portal.properties`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html))--they cannot override
-[system properties ](@platform-ref@/7.0-latest/propertiesdoc/system.properties.html)
+**Note**: Environment variables can only override portal properties ([defined in
+`portal.properties`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html));
+they cannot override 
+[system properties](@platform-ref@/7.0-latest/propertiesdoc/system.properties.html) 
 or configurations from `.config` files. 
 
 $$$
 
 ## Overriding Portal Properties [](id=overriding-portal-properties)
 
-Overriding portal properties with environment variables is straightforward. Just
-follow these operating system (OS) and Liferay environment variable name
-guidelines:
+To override portal properties, follow these operating system (OS) and Liferay
+environment variable name guidelines:
 
 OS environment variable names:
 -   Consist of uppercase letters, digits, and `_` (underscore) characters only
 -   Must not start with a digit
 
 Liferay  environment variable names:
--   Must follow the OS environment variable name guidelines (above)
--   Must start with the prefix `Liferay_`
+-   Must follow the OS environment variable name guidelines 
+-   Must start with the prefix `LIFERAY_`
 -   Characters that violate the OS guidelines must be encoded
     using one of the following methods:
     -   [`CharPool` constants](#encoding-with-charpool-constants)
     -   [Unicode code points](#encoding-with-unicode-code-points)
- 
 
 ### Encoding with CharPool Constants [](id=encoding-with-charpool-constants)
 
@@ -65,10 +61,12 @@ Encoding steps:
 1.  Prefix the variable with `LIFERAY_`.
 
     `LIFERAY_setup.wizard.enabled=false`
+
 2.  Encode the period characters with the `CharPool` constant name `PERIOD`,
     surrounded by a pair of `_` characters.
 
     `LIFERAY_setup_PERIOD_wizard_PERIOD_enabled=false`
+
 3.  Convert all letters to uppercase.
 
 Environment variable:
@@ -88,21 +86,25 @@ Encoding steps:
 1.  Prefix the variable with `LIFERAY_`.
 
     `LIFERAY_setup.database.driverClassName[mysql]=com.mysql.jdbc.Driver`
+
 2.  Use `CharPool` constant names surrounded by `_` characters:
     -   `.` &rarr; `_PERIOD_`
     -   `C` &rarr; `_UPPER_CASE_C_`
     -   `N` &rarr; `_UPPER_CASE_N_`
     -   `[` &rarr; `_OPEN_BRACKET_`
     -   `]` &rarr; `_CLOSE_BRACKET_`
-    
+ 
     `LIFERAY_setup_PERIOD_database_PERIOD_driver_UPPER_CASE_C_lass_UPPER_CASE_N_ame_OPEN_BRACKET_mysql_CLOSE_BRACKET_=com.mysql.jdbc.Driver`
+
 3.  Remove underscores from all constant names.
+
     -   `_UPPER_CASE_C_` &rarr; `_UPPERCASEC_`
     -   `_UPPER_CASE_N_` &rarr; `_UPPERCASEN_`
     -   `_OPEN_BRACKET_` &rarr; `_OPENBRACKET_`
     -   `_CLOSE_BRACKET_` &rarr; `_CLOSEBRACKET_`
-    
+ 
     `LIFERAY_setup_PERIOD_database_PERIOD_driver_UPPERCASEC_lass_UPPERCASEN_ame_OPENBRACKET_mysql_CLOSEBRACKET_=com.mysql.jdbc.Driver`
+
 4.  Convert all letters to uppercase.
 
 Environment variable:
@@ -115,7 +117,9 @@ Unicode offers more character encodings than `CharPool` and produces shorter
 variable names. But Unicode code points are cryptic. 
 
 Follow these rules to encode with Unicode:
-1.  Look up the [character code points](https://unicode-table.com/en/).
+
+1.  Look up the [character code points](https://unicode-table.com/en/). 
+
 2.  Replace each character with a code point wrapped in a pair of `_`
     characters.
 
@@ -131,9 +135,11 @@ Portal property:
     setup.database.driverClassName[mysql]=com.mysql.jdbc.Driver
 
 Encoding steps:
+
 1.  Prefix the variable with `LIFERAY_`.
 
     `LIFERAY_setup.database.driverClassName[mysql]=com.mysql.jdbc.Driver`
+
 2.  Use `CharPool` constant names surrounded by `_` characters to encode the
     following characters:
     -   `.` &rarr; `_46_`
@@ -143,6 +149,7 @@ Encoding steps:
     -   `]` &rarr; `_93_`
 
     `LIFERAY_setup_46_database_46_driver_67_lass_78_ame_91_mysql_93_=com.mysql.jdbc.Driver`
+
 3.  Convert all letters to uppercase.
 
 Environment variable:
@@ -151,7 +158,7 @@ Environment variable:
 
 Congratulations! You know how to use environment variables to configure
 @product@. It's easier than ever to configure and deploy @product@ images in
-virtual machines and cloud containers.  
+virtual machines and cloud containers. 
 
 ## Related Topics [](id=related-topics)
 
