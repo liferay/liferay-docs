@@ -15,6 +15,9 @@ or
         -Dpackage=[packageName] \
         -DclassName=[className]
 
+You can also insert the `-b maven` parameter in the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `control-menu-entry`. Suppose you want to
 create a control menu entry project called `my-control-menu-entry-project` with
 a package name of `com.liferay.docs.entry.control.menu` and a class name of

@@ -16,6 +16,9 @@ or
         -Dpackage=[packageName] \
         -DapiPath=[apiPath]
 
+You can also insert the `-b maven` parameter in the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `service-builder`. Suppose you want to
 create a Service Builder project called `tasks` with a package name of
 `com.liferay.docs.tasks`. You could run the following command to accomplish
