@@ -1,18 +1,18 @@
 # Configuring Remote Staging in a Clustered Environment [](id=configuring-remote-staging-in-a-clustered-environment)
 
 If you're running @product@ as a
-[clustered environment](/discover/deployment/-/knowledge_base/7-0/liferay-clustering),
+[clustered environment](/discover/deployment/-/knowledge_base/7-0/liferay-clustering)
 and you want to use remote staging, you must configure it properly for a
 seamless experience. In this tutorial, you'll learn how to set up remote staging
 in an example clustered environment scenario. The example environment assumes
 you have
 
-- a Staging instance with database configurations and a file repository
-  different from the cluster nodes.
-- a balancer responsible for managing the traffic flow between the cluster's
-  nodes.
-- two nodes that call two Liferay app servers (e.g., *App Server 1* and *App
-  Server 2*), both of which are connected to the same database.
+- A Staging instance with database configurations and a file repository
+  different from the cluster nodes
+- A balancer responsible for managing the traffic flow between the cluster's
+  nodes
+- Two nodes that call two Liferay app servers (e.g., *App Server 1* and *App
+  Server 2*), both of which are connected to the same database
 
 ![Figure 1: This is the assumed setup for your clustered environment.](../../images/remote-staging-clustering.png)
 
@@ -22,7 +22,7 @@ this tutorial to work with your specific configuration.
 
 Let's begin!
 
-1.  You should secure the communication made between your nodes and Staging
+1.  You must secure the communication made between your nodes and Staging
     server. Add the following property to both app servers' and Staging server's
     `portal-ext.properties` file:
 
@@ -54,26 +54,26 @@ Let's begin!
 
 2.  You must allow the connection between the configured IPs of your app servers
     and the Staging server. Open both of your app servers'
-    `portal-ext.properties` file and add the following properties:
+    `portal-ext.properties` files and add the following properties:
 
         tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,STAGING_IP
         tunnel.servlet.https.required=false
 
     The *SERVER_IP* must be replaced by the current instance's IP you're setting
-    the property for and the *STAGING_IP* must be replaced by the IP of the
-    Staging instance.
+    the property for and the *STAGING_IP* must be replaced by the staging
+    instance's IP.
 
 3.  Restart both app servers for the new properties to take effect.
 
-4.  Configure the *TunnelAuthVerifier* property for your nodes' app servers. You
-    can do this one of two ways:
+4.  Configure the *TunnelAuthVerifier* property for your nodes' app servers.
+    There are two ways to do this:
 
-    - **Via `.config` file (recommended):** In the `LIFERAY_HOME/osgi/configs`
+    - **Use a `.config` file (recommended):** In the `$LIFERAY_HOME/osgi/configs`
       folder of one of your node @product@ instances, create (if necessary) a
       `com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.config`
       file and insert the properties listed below. Creating one `.config` file
-      configures all cluster nodes, which ensures they're all configured the
-      same way. For more information on `.config` files, see the
+      configures all cluster nodes the same way. For more information on
+      `.config` files, see the
       [Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
       article.
 
