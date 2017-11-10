@@ -1,4 +1,4 @@
-# npm Billboard.js Portlet Template
+# npm Billboard.js Portlet Template [](id=npm-billboard-js-portlet-template)
 
 In this article, you'll learn how to create an npm Billboard.js portlet as a
 Liferay module. To create an npm Billboard.js portlet via the command line using

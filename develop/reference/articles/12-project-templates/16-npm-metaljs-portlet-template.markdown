@@ -1,4 +1,4 @@
-# npm Metal.js Portlet Template
+# npm Metal.js Portlet Template [](id=npm-metal-js-portlet-template)
 
 In this article, you'll learn how to create an npm Metal.js portlet as a
 Liferay module. To create an npm Metal.js portlet via the command line using

@@ -1,4 +1,4 @@
-# npm Isomorphic Portlet Template
+# npm Isomorphic Portlet Template [](id=npm-isomorphic-portlet-template)
 
 In this article, you'll learn how to create an npm Isomorphic portlet as a Liferay
 module. To create an npm Isomorphic portlet via the command line using Blade CLI or

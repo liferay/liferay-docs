@@ -1,4 +1,4 @@
-# npm jQuery Portlet Template
+# npm jQuery Portlet Template [](id=npm-jquery-portlet-template)
 
 In this article, you'll learn how to create an npm jQuery portlet as a Liferay
 module. To create an npm jQuery portlet via the command line using Blade CLI or

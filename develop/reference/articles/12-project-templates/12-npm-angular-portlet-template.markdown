@@ -1,4 +1,4 @@
-# npm Angular Portlet Template
+# npm Angular Portlet Template [](id=npm-angular-portlet-template)
 
 In this article, you'll learn how to create an npm Angular portlet as a Liferay
 module. To create an npm Angular portlet via the command line using Blade CLI or

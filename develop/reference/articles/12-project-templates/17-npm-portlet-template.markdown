@@ -1,4 +1,4 @@
-# npm Portlet Template
+# npm Portlet Template [](id=npm-portlet-template)
 
 In this article, you'll learn how to create an npm portlet as a Liferay module.
 To create an npmportlet via the command line using Blade CLI or Maven, use one

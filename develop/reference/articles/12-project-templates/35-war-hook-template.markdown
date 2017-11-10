@@ -1,4 +1,4 @@
-# WAR Hook Template
+# WAR Hook Template [](id=war-hook-template)
 
 In this article, you'll learn how to create a Liferay WAR hook project. To
 create a Liferay WAR hook via the command line using Blade CLI or Maven, use one
