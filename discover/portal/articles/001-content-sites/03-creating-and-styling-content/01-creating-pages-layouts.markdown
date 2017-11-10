@@ -1,12 +1,11 @@
 # Creating Basic Content
 
-Earlier we created some basic content without a lot of context. Now you have 
-the context of how and where you're creating content in the site. Next, use the 
-same principles you used to create content for the front page to create some
-articles for the *About Us* page.
+Earlier we created some content without knowing where it would go. Now you have
+the context of how the site is organized. Next, use the same principles for
+creating content on the front page to create articles for the *About Us* page.
 
-On the *About Us* page you'll add some brief information about the Lunar Resort 
-and other related Space Program initiatives.
+On the *About Us* page, you'll add information about the Lunar Resort and other
+related Space Program initiatives.
 
 ## Creating the About Us Page Content
 
