@@ -105,14 +105,6 @@ and Power User roles to simplify the management of "User Customizable Pages".
 Notably, the "Add To Page" permissions is removed from the Guest and User roles
 for all portlets. Likewise, the same permission is reduced in scope for Power
 Users from portal wide to scoped to "User Personal Site."
-<!-- Is this all? How would a user know exactly what permissions are removed if
-we don't tell them? -->
-
-**Clean up portlet preferences**
-: Remove orphaned portlet preferences. This action removes portlet preferences
-for any portlet that does not belong to a page revision, and for runtime
-portlets.
-<!--Really this is just the tooltip copied into the docs -->
 
 ## Log Levels [](id=log-levels)
 
