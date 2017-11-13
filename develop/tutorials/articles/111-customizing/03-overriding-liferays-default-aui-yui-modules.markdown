@@ -8,19 +8,27 @@ To override a default YUI/AUI module, you can create a custom AUI module that
 provides two things:
 
 - A copy of the original module's JavaScript file with your modifications 
-  applied
-- A `config.js` file that specifies the modified JavaScript file's path, the 
-  module to override, and to use the custom module instead of the original.
+applied
+- A `config.js` file that specifies the modified JavaScript file's path, the
+module to override <!--it overrides-->, and to use 
+the custom module instead of the original <!--and that (when?) the custom 
+module should be used instead of the original-->
+
+The guidelines say that the introduction shouldn't end immediately after the
+bullet points, but I think it works in this case. Alternatively, something like 
+"This allows users to override the default functionality while preserving the 
+original module in a separate folder."
 
 Follow these steps:
 
 1. [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
     to override the original one. For example, you can create a module named 
-    `session-js-override-web` to override @product@'s `session.js` file.
+    `session-js-override-web` to override @product@'s `session.js` file 
+<!--module?-->.
      
 2. Create a `src/main/resources/META-INF/resources/js` folder in your module, 
-    copy the original JavaScript file into it, and rename it. For example, you 
-    can create a copy of the `session.js` module and rename it 
+    copy the original JavaScript file into it, and rename it. For 
+    example, you can create a copy of the `session.js` module and rename it 
     `session-override.js`.
 
 3. Apply your modifications and save the file.
