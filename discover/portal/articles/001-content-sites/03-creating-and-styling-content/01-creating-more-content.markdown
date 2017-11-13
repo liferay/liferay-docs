@@ -1,4 +1,4 @@
-# Creating Basic Content
+# Creating More Content
 
 Earlier we created some content without knowing where it would go. Now you have
 the context of how the site is organized. Next, use the same principles for
@@ -9,100 +9,69 @@ related Space Program initiatives.
 
 ## Creating the About Us Page Content
 
-For the next content that you're adding, you'll use a slightly different method.
-Earlier you created through Site Administration and then added it to a page. You
-can also create content displays on pages where you want the content, and then 
-add the content directly in place.
+Recall that you created the Welcome page's content in Site Administration and 
+then added it to the page. You'll use a slightly different method to create the 
+About Us page's content. Specifically, you'll add a Web Content Display app to 
+the page and then create the content directly in that app. 
 
-1. Go to the *About Us* page.
+First, add a Web Content Display app to each column on the page: 
 
-2. Open the *Add* menu.
+1.  Go to the *About Us* page. 
+2.  Open the *Add* menu. 
+3.  Add a *Web Content Display* app to each of the page's three columns. 
 
-3. Add a *Web Content Display* to each of the three columns.
+Now you'll add web content to each Web Content Display app: 
 
-4. Click the '+' button in the Web Content Display on the left side and select
-    *Basic Web Content*.
+1.  In the portlet bar of the left column's Web Content Display app, click the 
+    *Add* button 
+    (![Add](../../../images/icon-portlet-add-control.png)) and select *Basic Web 
+    Content*. This takes you to the app's web content creation page. The content 
+    you create here only appears in this app, on this page. 
 
-![Figure x: Creating content in context.](../../../images/001-content-on-page.png)
+    ![Figure x: You can create basic web content directly in the Web Content Display app.](../../../images/001-content-on-page.png)
 
-### The Lunar Resort Content
+2.  Enter the following information for the following fields:
 
-Now you are taken to the web content creation page, but in the context of that
-application in the About Us page.
+    - **Title:** The Lunar Resort
+    - **Summary:** Information about the Lunar Resort
+    - **Content**: The Lunar Resort is an all-inclusive, one of a kind vacation 
+    spot with attractions and activities unlike anything you've ever seen or 
+    done before.
 
-1. For the *Title* enter "The Lunar Resort"
+3.  With your cursor still in the Content field one line below the text you 
+    just entered, click the plus button and select the image icon. Select 
+    `lunar-resort-logo.png`. 
 
-2. For the *Summary* enter "Information about the Lunar Resort"
+4.  Resize the image if necessary, then click *Publish*.
 
-3. For the *Body* enter
- 
-    The Lunar Resort is an all-inclusive one of a kind vacation spot with
-    attractions and activities unlike anything you've ever seen or done before.
+The Web Content Display app in the left column now contains your content. 
 
-4. Click the '+' button to insert an image and insert the 
-    'lunar-resort-logo.png'
+To add content in the remaining Web Content Display apps, repeat the above steps 
+for each app but add different information in step two, and a different image in 
+step three. 
 
-5. Resize the image as necessary.
+1.  Add this for the Web Content Display app in the middle column: 
 
-6. Click *Publish*.
+    - **Title:** The Space Program
+    - **Summary:** Information about the Space Program
+    - **Content:** The Space Program is our parent company and contains our 
+    research, development, and exploration divisions. You can learn more about 
+    the Space Program here. 
+    - Add the image `space-program-logo.png`. 
 
-You'll see the first piece of content added. Now create two more.
+2.  Add this for the Web Content Display app in the right column: 
 
-### The Space Program Content
+    - **Title:** S.P.A.C.E.
+    - **Summary:** Information about S.P.A.C.E.
+    - **Content:** The Space Program Academy of Continuing Education 
+    (S.P.A.C.E.) is the Space Program's educational wing. You can visit its 
+    lunar campus during your Lunar Resort stay. 
+    - Add the image `space-logo.png`. 
 
-Next, create the article for the parent company The Space Program.
+Great! The About Us page is now complete and provides all the information that 
+the Lunar Resort's visitors need. 
 
-1. Click the '+' button in the Web Content Display on the middle side and select
-    *Basic Web Content*.
+![Figure x: The complete About Us page looks awesome!](../../../images/001-final-about-us.png)
 
-1. For the *Title* enter "The Space Program"
-
-2. For the *Summary* enter "Information about the Space Program"
-
-3. For the *Body* enter
- 
-    The Space Program is our parent company and contains our research and
-    development and exploration divisions. You can learn more about the Space
-    Program here.
-
-4. Click the '+' button to insert an image and insert the 
-    'space-program-logo.png'
-
-5. Resize the image as necessary.
-
-6. Click *Publish*.
-
-### S.P.A.C.E. Content
-
-Finally create the article for the Space Program Academy of Continuing 
-Education.
-
-1. Click the '+' button in the Web Content Display on the middle side and select
-    *Basic Web Content*.
-
-1. For the *Title* enter "S.P.A.C.E"
-
-2. For the *Summary* enter "Information about S.P.A.C.E."
-
-3. For the *Body* enter
- 
-    S.P.A.C.E.: The Space Program Academy of Continuing Education is the
-    educational wing of the Space Program. They provide educational services and
-    you can visit their lunar campus during your Lunar Resort stay.
-
-4. Click the '+' button to insert an image and insert the 
-    'space-logo.png'
-
-5. Resize the image as necessary.
-
-6. Click *Publish*.
-
-## Completed Content
-
-Check out the completed content on the page. This page is complete and provides 
-all the information we need to for our visitors.
-
-![Figure x: Completed About Us page.](../../../images/001-final-about-us.png)
-
-Next you'll create content with Structures and Templates and publish it using
-Asset Publishers and Web Content Displays.
+Next, you'll learn how to use @product@'s Documents and Media features to manage 
+files in your portal. 
