@@ -16,6 +16,9 @@ or
         -DclassName=[className] \
         -DserviceWrapperClass=[serviceWrapperClass]
 
+You can also insert the `-b maven` parameter in the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `service-wrapper`. Suppose you want to
 create a service wrapper project called `service-override` with a package name of
 `com.liferay.docs.serviceoverride` and a class name of

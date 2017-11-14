@@ -16,6 +16,9 @@ or
         -Dpackage=[packageName] \
         -DclassName=[className]
 
+You can also insert the `-b maven` parameter in the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `portlet-configuration-icon`. Suppose
 you want to create a portlet configuration icon project called
 `my-portlet-config-icon` with a package name of

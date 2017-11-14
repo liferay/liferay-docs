@@ -13,6 +13,9 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.theme \
         -DartifactId=[projectName]
 
+You can also insert the `-b maven` parameter in the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `theme`. Suppose you want to create a
 theme project called `my-theme-project` as a WAR file. You could run the
 following command to accomplish this:
@@ -51,8 +54,8 @@ this:
     - `[gradlew|pom.xml]`
 
 The generated theme is functional and is deployable to a @product@ instance. To
-build upon the generated app, modify the project by adding logic and additional
-files to the folders outlined above. You can visit the
+build upon the generated project, modify the project by adding logic and
+additional files to the folders outlined above. You can visit the
 [simple-theme](/develop/reference/-/knowledge_base/7-0/theme) project for a more
 expanded sample of a theme. Likewise, see the
 [Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)

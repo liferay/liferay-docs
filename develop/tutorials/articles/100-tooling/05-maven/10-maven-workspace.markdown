@@ -192,7 +192,7 @@ must update the Bundle Support plugin configured in your workspace's root
     <plugin>
         <groupId>com.liferay</groupId>
         <artifactId>com.liferay.portal.tools.bundle.support</artifactId>
-        <version>3.2.0</version>
+        <version>3.2.1</version>
         ...
     </plugin>
 
