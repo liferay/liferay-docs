@@ -106,6 +106,11 @@ Notably, the "Add To Page" permissions is removed from the Guest and User roles
 for all portlets. Likewise, the same permission is reduced in scope for Power
 Users from portal wide to scoped to "User Personal Site."
 
+**Clean up portlet preferences**
+: In some uncommon scenarios, portlet preferences can become orphaned in the
+@product@ database. Run this operation to clean up the orphaned database
+entries.
+
 ## Log Levels [](id=log-levels)
 
 The Log Levels tab of the Server Administration page allows you to dynamically
