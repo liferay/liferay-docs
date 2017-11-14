@@ -1,37 +1,100 @@
-# Troubleshooting [](id=troubleshooting)
+# Troubleshooting FAQ [](id=troubleshooting)
 
 When coding on any platform, you can sometimes run into issues that have no
 clear resolution. This can be particularly frustrating. If you have issues
 building, deploying, or running modules, you want to resolve them fast. These
-tutorials help you to troubleshoot problems that arise based on the underlying
-OSGi platform, and then correct them. 
+frequently asked questions and answers help you troubleshoot problems that arise
+based on the underlying OSGi platform, and then correct them. 
 
-## Module Troubleshooting
+Here are the troubleshooting sections:
 
-- How to resolve bundle requirements?
+-   [Troubleshooting Modules](#troubleshooting-modules)
+-   [Troubleshooting Services and Components](#troubleshooting-services-and-components)
 
-- How to resolve an IllegalContextNameException caused by a Bundle-SymbolicName syntax issue?
+## Troubleshooting Modules [](id=troubleshooting-modules)
 
-- How to configure dependencies on @product@ artifacts?
+### How can I configure dependencies on @product@ artifacts? [](id=how-can-i-configure-dependencies-on-product-artifacts)
+ 
+Follow the
+[instructions for configuring dependencies on @product@ modules](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
 
-- How to connect to a JNDI data source?
+### What are optional package imports and how can I specify them? [](id=what-are-optional-package-imports-and-how-can-i-specify-them)
 
-- How to adjust logging for a module?
+When developing @product@ modules, you can declare *optional* package imports.
+An optional package import is one your module can use if it's available, but can
+still function without it.
+[Specifying optional package imports](/develop/tutorials/-/knowledge_base/7-0/declaring-optional-import-package-requirements)
+is straightforward. 
 
-- How to implement logging?
+### How can I connect to a JNDI data source from my module? [](id=how-can-i-connect-to-a-jndi-data-source-from-my-module)
 
-- What are optional dependencies and how do I specify them?
+Connecting to an application server's JNDI data sources from @product@'s OSGi
+environment is almost the same as connecting to them from the Java EE
+environment. In an OSGi environment, the only difference is that you must
+[use @product@'s class loader to load the application server's JNDI classes](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi). 
 
-- Why aren't my module's JavaScript and CSS changes showing?
+### My module has an `Unresolved requirement`. What can I do? [](id=my-module-has-an-unresolved-requirement-what-can-i-do)
 
-- Why aren't my fragment's JSP overrides showing?
+If one of your bundles imports a package that no other bundle in the Liferay
+OSGi runtime exports, @product@ reports an unresolved requirement:
 
-- How to detect unresolved OSGi components?
+    ! could not resolve the bundles: ...
+    Unresolved requirement: Import-Package: ...
+    ...
+    Unresolved requirement: Require-Capability ...
 
-- How to use files to configure @product@ modules?
+To satisfy the requirement,
+[find a module that provides the capability, add it to your build file's dependencies, and deploy it](/develop/tutorials/-/knowledge_base/7-0/resolving-bundle-requirements). 
 
-- What is the safest way to call non-OSGi code that uses OSGi services?
+### An `IllegalContextNameException` reports that my bundle's context name does not follow `Bundle-SymbolicName` syntax. How can I fix the context name? [](id=an-illegalcontextnameexception-reports-that-my-bundles-context-name-does-no)
 
-- Can @product@ startup be configured to retry JDBC connections if the database isn't ready? 
+[Adjust the `Bundle-SymbolicName` to adhere to the syntax](/develop/tutorials/-/knowledge_base/7-0/resolving-bundle-symbolicname-syntax-issues). 
 
-- How to use OSGi services from Ext Plugins?
+### Why aren't my module's JavaScript and CSS changes showing? [](id=why-arent-my-modules-javascript-and-css-changes-showing)
+
+Incorrect component properties or stale browser cache can prevent JavaScript and CSS changes from showing.
+[These issues are easy to find and fix](/develop/tutorials/-/knowledge_base/7-0/why-arent-my-modules-javascript-and-css-changes-showing). 
+
+### Why aren't my fragment's JSP overrides showing? [](id=why-arent-my-fragments-jsp-overrides-showing)
+
+[Make sure your `Fragment-Host`'s bundle version is compatible with the host's bundle version](/develop/tutorials/-/knowledge_base/7-0/why-arent-jsp-overrides-i-made-using-fragments-showing). 
+
+### The application server and database started, but @product@ failed to connect to the database. What happened and how can I fix this? [](id=the-application-server-and-database-started-but-product-failed-to-connect-t)
+
+@product@ initialization can fail while attempting to connect to a database server that isn't ready.
+[Configuring @product@ startup to retry JDBC connections](/develop/tutorials/-/knowledge_base/7-0/portal-failed-to-initialize-because-the-database-wasnt-ready)
+facilitates connecting @product@ to databases. 
+
+### How can I adjust my module's logging? [](id=how-can-i-adjust-my-modules-logging)
+
+Follow the
+[tutorial for adjusting module logging](/develop/tutorials/-/knowledge_base/7-0/adjusting-module-logging). 
+
+### How can I implement logging in my module or plugin? [](id=how-can-i-implement-logging-in-my-module-or-plugin)
+
+[Use Simple Logging Facade for Java \(SLF4J\) to log messages](/develop/tutorials/-/knowledge_base/7-0/implementing-logging).
+
+## Troubleshooting Services and Components [](id=troubleshooting-services-and-components)
+
+### How can I detect unresolved OSGi components? [](id=how-can-i-detect-unresolved-osgi-components)
+
+@product@ module components that use Service Builder use Dependency Manager (DM)
+and most other @product@ module components use Declarative Services (DS).
+[Gogo shell commands and tools help you find and inspect unsatisfied component references for DM and DS components](/develop/tutorials/-/knowledge_base/7-0/detecting-unresolved-osgi-components). 
+
+### What is the safest way to call non-OSGi code that uses OSGi services? [](id=what-is-the-safest-way-to-call-non-osgi-code-that-uses-osgi-services)
+
+Go
+[here](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-product-modules)
+to learn how to call non-OSGi code safely. 
+
+### How can I use files to configure modules? [](id=how-can-i-use-files-to-configure-modules)
+
+Go
+[here](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-product-modules)
+to learn how to use files to configure @product@ modules. 
+
+### How can I use OSGi services from Ext Plugins? [](id=how-can-i-use-osgi-services-from-ext-plugins)
+
+[The registry API lets Ext Plugins use OSGi services ](/develop/tutorials/-/knowledge_base/7-0/using-osgi-services-from-ext-plugins). 
+ 
