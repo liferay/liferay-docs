@@ -15,8 +15,8 @@ Here are the troubleshooting sections:
 
 ### How can I configure dependencies on @product@ artifacts? [](id=how-can-i-configure-dependencies-on-product-artifacts)
  
-Follow the
-[instructions for configuring dependencies on @product@ modules](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
+See
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
 
 ### What are optional package imports and how can I specify them? [](id=what-are-optional-package-imports-and-how-can-i-specify-them)
 
@@ -67,8 +67,8 @@ facilitates connecting @product@ to databases.
 
 ### How can I adjust my module's logging? [](id=how-can-i-adjust-my-modules-logging)
 
-Follow the
-[tutorial for adjusting module logging](/develop/tutorials/-/knowledge_base/7-0/adjusting-module-logging). 
+See
+[Adjusting Module Logging](/develop/tutorials/-/knowledge_base/7-0/adjusting-module-logging). 
 
 ### How can I implement logging in my module or plugin? [](id=how-can-i-implement-logging-in-my-module-or-plugin)
 
@@ -84,15 +84,13 @@ and most other @product@ module components use Declarative Services (DS).
 
 ### What is the safest way to call non-OSGi code that uses OSGi services? [](id=what-is-the-safest-way-to-call-non-osgi-code-that-uses-osgi-services)
 
-Go
-[here](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-product-modules)
-to learn how to call non-OSGi code safely. 
+See
+[Calling Non-OSGi Code that Uses OSGi Services](/develop/tutorials/-/knowledge_base/7-0/calling-non-osgi-code-that-uses-osgi-services). 
 
 ### How can I use files to configure modules? [](id=how-can-i-use-files-to-configure-modules)
 
-Go
-[here](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-product-modules)
-to learn how to use files to configure @product@ modules. 
+See
+[Using Files to Configure @product@ Modules](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-product-modules). 
 
 ### How can I use OSGi services from Ext Plugins? [](id=how-can-i-use-osgi-services-from-ext-plugins)
 
