@@ -163,7 +163,7 @@ menu (![Insert](../../../images/icon-content-insert-controls.png)).
 
 ![Figure 5: When you highlight text in the wiki page editor, a formatting toolbar appears. You can apply common markups to the text, make it a list item or a link, or remove existing markup.](../../../images/wiki-page-highlight-content-text.png)
 
-If you need to modify an image for your wiki, use the [Image Editor](/discover/portal/-/knowledge_base/7-0/publishing-files#editing-images).
+If you need to modify an image for your wiki, use the [Image Editor](/discover/portal/-/knowledge_base/7-0/editing-images).
 Click the `+` icon and select the mountain silhouette to add an image. Select an
 existing image from the Documents and Media repository, and click the pencil
 icon (![Pencil](../../../images/icon-edit-pencil.png)) in the bottom right
