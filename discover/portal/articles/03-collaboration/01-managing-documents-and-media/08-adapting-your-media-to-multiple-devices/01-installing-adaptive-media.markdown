@@ -1,0 +1,87 @@
+# Installing Adaptive Media
+
+You can install Adaptive Media from 
+[Liferay Marketplace](https://web.liferay.com/marketplace) 
+for Liferay Portal CE 7.0 and Liferay DXP. To find the app, search for *Adaptive 
+Media* on Liferay Marketplace. For instructions on installing apps via Liferay 
+Marketplace, see the article 
+[Using the Liferay Marketplace](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
+
+Installing Adaptive Media installs all its modules. Some modules are mandatory 
+and must be enabled for Adaptive Media to function, while others are optional 
+and can be disabled. The Adaptive Media API modules are mandatory. These modules 
+export packages for the other modules to consume. Disabling an API module 
+therefore disables any other modules that depend on it. Here's a list of the 
+Adaptive Media API modules: 
+
+-   Liferay Adaptive Media API
+-   Liferay Adaptive Media Content Transformer API
+-   Liferay Adaptive Media Image API
+-   Liferay Adaptive Media Image Item Selector API 
+
+The Adaptive Media core modules are also mandatory, and must be enabled to 
+ensure that Adaptive Media works as expected: 
+
+-   Liferay Adaptive Media Document Library
+-   Liferay Adaptive Media Document Library Item Selector Web
+-   Liferay Adaptive Media Document Library Web
+-   Liferay Adaptive Media Image Content Transformer
+-   Liferay Adaptive Media Image Implementation
+-   Liferay Adaptive Media Image Item Selector Implementation
+-   Liferay Adaptive Media Image JS Web
+-   Liferay Adaptive Media Image Service
+-   Liferay Adaptive Media Image Taglib
+-   Liferay Adaptive Media Image Web
+-   Liferay Adaptive Media Item Selector Upload Web
+-   Liferay Adaptive Media Web
+
+The Adaptive Media Blogs modules are optional. These modules apply Adaptive 
+Media to Blogs to ensure that blog entries can use adapted images. These modules 
+also ensure that Adaptive Media can process any images uploaded to Blogs. Here's 
+a list of these modules: 
+
+-   Liferay Adaptive Media Blogs Editor Configuration
+-   Liferay Adaptive Media Blogs Item Selector Web
+-   Liferay Adaptive Media Blogs Web
+-   Liferay Adaptive Media Blogs Web Fragment
+
+The Adaptive Media Journal modules are optional. These modules apply Adaptive 
+Media to web content to ensure that the web content articles can use adapted 
+images: 
+
+-   Liferay Adaptive Media Journal Editor Configuration
+-   Liferay Adaptive Media Journal Web
+
+There are two more optional modules included in Adaptive Media that you should 
+be aware of: 
+
+-   **Liferay Adaptive Media Image Content Transformer Backwards Compatibility:** 
+    Ensures that content created before the Adaptive Media installation can use 
+    adapted images without the need to manually edit that content. If you're 
+    using Adaptive Media in a new @product@ installation that doesn't have old 
+    content, or your old content doesn't need adapted images, you can disable 
+    this module. 
+
+-   **Liferay Adaptive Media Document Library Thumbnails:** Lets thumbnails in 
+    Documents and Media use adapted images. For this to work, you must first 
+    [migrate the original thumbnails to adapted images](/develop/tutorials/-/knowledge_base/7-0/migrating-documents-and-media-thumbnails-to-adaptive-media). 
+    We highly recommend that you enable this module, but it's not mandatory. 
+
+Great! Now you know the mandatory and optional modules that come with Adaptive 
+Media. The next section discusses the installation requirements for using 
+animated GIFs with Adaptive Media. If you don't need to use GIFs, you can skip 
+ahead to the article on adding image resolutions to Adaptive Media. 
+
+## Processing Animated GIFs
+
+To process animated GIFs, Adaptive Media uses an external tool called 
+[Gifsicle](https://www.lcdf.org/gifsicle). 
+This tool ensures that the animation works when the GIF is scaled to different 
+resolutions. You must manually install Gifsicle in the server, and ensure that 
+it's reachable from the `PATH` environment variable. Once it's installed, you 
+must enable it in Adaptive Media's 
+[advanced configuration options](/discover/portal/-/knowledge_base/7-0/advanced-configuration-options). 
+
+If Gifsicle isn't installed and `image/gif` is included as a supported MIME type 
+in the advanced configuration options, Adaptive Media scales only a single frame 
+of the GIF. This results in a static image in place of the animated GIF. 
