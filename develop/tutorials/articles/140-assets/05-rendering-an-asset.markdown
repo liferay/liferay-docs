@@ -42,6 +42,24 @@ renderer can be customized to fit your needs.
 If you want to create an asset and make it do more than display its title and
 description, read on to learn more!
 
+## Prerequisites for Asset Enabling and Application
+
+To asset-enable your application, you need two things: 
+
+1.  The application must store asset data. Applications that store a data model
+    meet this requirement.
+
+2.  The application must have an Admin Portlet: a non-instanceable interface
+    for configuring the application in @product@'s Control Panel. Creating
+    a panel app enables the creation of `edit` links for your application which
+    is required for asset enabling your application. If your application does
+    not currently include a panel app, see our tutorial on 
+    [Adding Custom Panel Apps](/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)
+    to learn how to add one.
+
+Now that you have all that taken care of, you can move on to creating an Asset 
+Renderer.
+
 ## Creating an Asset Renderer [](id=creating-an-asset-renderer)
 
 An asset renderer lets you provide your own HTML for your asset. The

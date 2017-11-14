@@ -1,4 +1,4 @@
-# Introduction to Liferay Search [](id=introduction-to-liferay-search)
+# Search [](id=introduction-to-liferay-search)
 
 Liferay stores its information in a database. If you need to search for data,
 why not search the database directly? Why add the complexity of a search
