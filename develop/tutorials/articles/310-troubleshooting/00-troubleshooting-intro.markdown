@@ -8,10 +8,10 @@ based on the underlying OSGi platform, and then correct them.
 
 Here are the troubleshooting sections:
 
--   [Troubleshooting Modules](#troubleshooting-modules)
--   [Troubleshooting Services and Components](#troubleshooting-services-and-components)
+-   [Modules](#troubleshooting-modules)
+-   [Services and Components](#troubleshooting-services-and-components)
 
-## Troubleshooting Modules [](id=troubleshooting-modules)
+## Modules [](id=troubleshooting-modules)
 
 ### How can I configure dependencies on @product@ artifacts? [](id=how-can-i-configure-dependencies-on-product-artifacts)
  
@@ -74,7 +74,7 @@ Follow the
 
 [Use Simple Logging Facade for Java \(SLF4J\) to log messages](/develop/tutorials/-/knowledge_base/7-0/implementing-logging).
 
-## Troubleshooting Services and Components [](id=troubleshooting-services-and-components)
+## Services and Components [](id=troubleshooting-services-and-components)
 
 ### How can I detect unresolved OSGi components? [](id=how-can-i-detect-unresolved-osgi-components)
 
