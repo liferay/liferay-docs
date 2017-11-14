@@ -108,8 +108,8 @@ types](/participate/liferaypedia/-/wiki/Main/document+types)
 that are each described by a unique [metadata 
 set](/participate/liferaypedia/-/wiki/Main/Metadata+Set). When you add a 
 document belonging to a specific document type, a form appears for picking the 
-file to upload and entering the data defined by the document type's metadata set. 
-The *Contract* type appears below as an example. 
+file to upload and entering the data defined by the document type's metadata 
+set. The *Contract* type appears below as an example. 
 
 **Contract**: lets you upload a file that you would like the "Contract" document
 type to apply to. This document type is intended to be used to describe legal
@@ -252,9 +252,9 @@ information and metadata with the file. File entries are displayed using icons,
 by default. You can select either icon
 (![Icon](../../../../images/icon-icon-style.png)), descriptive
 (![Descriptive](../../../../images/icon-descriptive-style.png)), or list
-(![List](../../../../images/icon-list-style.png)) display style. The icon display
-style shows a file as a cover image. If the file is an image type file, the
-image is used as the file entry's cover image. If the file isn't an image,
+(![List](../../../../images/icon-list-style.png)) display style. The icon 
+display style shows a file as a cover image. If the file is an image type file, 
+the image is used as the file entry's cover image. If the file isn't an image,
 Documents and Media displays a generic image for that file type. Also displayed
 with each file icon is the file's suffix (e.g., *JPG* for a file ending in
 `.jpg`), last modification timestamp, name, and status (e.g., *Approved*,
@@ -266,9 +266,10 @@ the file entries in rows.
 ![Figure 5: Documents and Media's lists files using several display styles: icon (as shown here), descriptive, and list. And breadcrumbs show the current folder's path in the library.](../../../../images/dm-images-in-admin.png)
 
 To see the current folder's details click the *Information* icon
-(![**i**](../../../../images/icon-information.png)). An area with the folder's name
-appears. It shows the number of items in the folder. It also shows a *Subscribe*
-icon ![Subscribe](../../../../images/icon-star.png) you can select to get
+(![**i**](../../../../images/icon-information.png)). An area with the folder's 
+name appears. It shows the number of items in the folder. It also shows a 
+*Subscribe* icon 
+(![Subscribe](../../../../images/icon-star.png)) you can select to get
 notifications about files added to or modified in the folder. Lastly, the
 Actions icon lists actions you can perform on the current folder. Above the
 Information icon and Display Styles is a *Search* that enables you to find files
@@ -292,35 +293,35 @@ descending order.
 
 From the list view, Documents and Media lets you act on one or more files at
 once. When you select a checkbox for one or more files, the following action
-icons appear: ![Action Icons](../../../../images/dm-action-icons.png). Describing
-them from left to right, the X is for canceling file checkout, the secured lock
-is for file check-out, the unsecured lock is for file check-in, the arrows are
-for moving the files, and the trash can is for moving files to the Recycle Bin.
-You can also move selected files to a subfolder via drag and drop. File
-check-out and check-in is explained in
+icons appear: ![Action Icons](../../../../images/dm-action-icons.png). 
+Describing them from left to right, the X is for canceling file checkout, the 
+secured lock is for file check-out, the unsecured lock is for file check-in, the 
+arrows are for moving the files, and the trash can is for moving files to the 
+Recycle Bin. You can also move selected files to a subfolder via drag and drop. 
+File check-out and check-in is explained in
 [Collaborating on Files](/discover/portal/-/knowledge_base/7-0/collaborating-on-files).
 
 ![Figure 6: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../../../images/dm-file-entry-details.png)
 
 ## Viewing File Previews [](id=viewing-file-previews)
 
-You've added several files to the *Spacey Party* folder. In the Document Library,
-each file has a file entry view. To open its file entry view, click the file's
-name. The screen's central viewing area displays a preview image of the file. If
-the file is an image file, its image is displayed. If a preview plugin for the
-file type is installed, the plugin displays an image (e.g., the opening scene of
-a video file or a presentation's first slide) for the file. If there are no
-preview plugins for the file, @product@ displays a generic image based on the
-file's type. Let's take a moment and consider file preview plugins and some of
-the powerful features they offer. 
+You've added several files to the *Spacey Party* folder. In the Document 
+Library, each file has a file entry view. To open its file entry view, click the 
+file's name. The screen's central viewing area displays a preview image of the 
+file. If the file is an image file, its image is displayed. If a preview plugin 
+for the file type is installed, the plugin displays an image (e.g., the opening 
+scene of a video file or a presentation's first slide) for the file. If there 
+are no preview plugins for the file, @product@ displays a generic image based on 
+the file's type. Let's take a moment and consider file preview plugins and some 
+of the powerful features they offer. 
 
 Whenever possible, @product@ generates previews of documents added to the 
 Document Library. Out of the box, @product@ only ships with Java-based APIs to
 generate previews for documents. The only tool available that is 100% Java and
-has a compatible license to be distributed with @product@ is PDFBox. If you upload
-a PDF file to Documents and Media, @product@ generates a preview for the PDF in a
-separate thread. This process may last only a few seconds for a small file. The
-larger the file, the longer it takes.
+has a compatible license to be distributed with @product@ is PDFBox. If you 
+upload a PDF file to Documents and Media, @product@ generates a preview for the 
+PDF in a separate thread. This process may last only a few seconds for a small 
+file. The larger the file, the longer it takes.
 
 While a default implementation of image generation for document previews and
 thumbnails is provided via PDFBox, you must install and configure some
@@ -340,8 +341,7 @@ and video previews, lets you play audio and video files in your browser, and
 extracts thumbnails from video files. You can configure the tools via portal
 properties you can set in the Control Panel's Server Administration screen or in
 a `portal-ext.properties` file. To learn how to use these tools, refer to
-[Configuring
-@product@](/discover/portal/-/knowledge_base/7-0/configuring-liferay).
+[Configuring @product@](/discover/portal/-/knowledge_base/7-0/configuring-liferay).
 
 You can view a document with a customized viewer that allows you to navigate
 through the different pages of the document and read its content. In addition,
@@ -404,12 +404,13 @@ checkout if it is checked out.
 **Move to the Recycle Bin**: Remove the file from the Documents and Media
 library to the Recycle Bin. 
 
-Click the *Information* icon (![**i**](../../../../images/icon-information.png)) 
-to view the file entry details. The top portion of this area lists the file's 
-version number, status, modification timestamp, and name of the user who last 
-modified it. Next are links to download the file and links to show its URL and 
-WebDAV URL. You can specify the WebDAV URL as the file name when opening the 
-document from a desktop environment.
+Click the *Information* icon 
+(![**i**](../../../../images/icon-information.png)) to view the file entry 
+details. The top portion of this area lists the file's version number, status, 
+modification timestamp, and name of the user who last modified it. Next are 
+links to download the file and links to show its URL and WebDAV URL. You can 
+specify the WebDAV URL as the file name when opening the document from a desktop 
+environment.
 
 The section *Automatically Extracted Metadata* lists any and all metadata that's
 been extracted automatically from the file. When adding new documents or viewing
@@ -430,4 +431,6 @@ specific set of files for your site. You assigned users to the role and created
 a Documents and Media folder named *Resort Guest Media* for them to add and
 organize files. Then as a member of the role, you added a subfolder named
 *Spacey Party* and added files to it. And just now, you viewed individual file
-entry information and actions.
+entry information and actions. 
+
+Next, you'll learn how to edit images in @product@. 

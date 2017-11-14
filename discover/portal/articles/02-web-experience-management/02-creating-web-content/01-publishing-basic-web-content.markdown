@@ -130,11 +130,12 @@ it, controls for inserting an image, table, or horizontal line
 insert an image, select the icon that depicts a mountain silhouette. The image
 file selector screen appears, allowing you to choose an existing image or upload
 a new one. If you select an existing image in your Documents and Media 
-repository, you can access the [image editor](/discover/portal/-/knowledge_base/7-0/editing-images), 
-via the pencil icon (![Pencil](../../../images/icon-edit-pencil.png)) in 
-the bottom right corner of the preview window, to make changes to the image.
-Once you've made edits, a copy of the image is automatically created for you to 
-use in your web content.
+repository, you can access the 
+[image editor](/discover/portal/-/knowledge_base/7-0/editing-images), 
+via the pencil icon 
+(![Pencil](../../../images/icon-edit-pencil.png)) in the bottom right corner of 
+the preview window, to make changes to the image. Once you've made edits, a copy 
+of the image is automatically created for you to use in your web content. 
 
 ![Figure 3: You can access the image editor through the item selector window.](../../../images/image-editor-preview-window.png)
 

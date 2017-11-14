@@ -184,14 +184,14 @@ WebDAV URL of the folder you'd like to access in the Server Address field, click
 *Connect* and you should be prompted for your @product@ credentials.
 
 On Linux, you must slightly modify the WebDAV URL of your folder in your file
-manager. For KDE's Dolphin, change the URL's protocol so that it says
-`webdav://` instead of `http://`. For GNOME's Nautilus, change the URL's
+manager. For KDE's Dolphin, change the URL's protocol so that it says 
+`webdav://` instead of `http://`. For GNOME's Nautilus, change the URL's 
 protocol so that it says `dav://` instead of `http://`. Then press *Enter* and
 you're prompted for your @product@ credentials.
 
-Note that @product@ increments the version numbers of files edited and
-uploaded via WebDAV so you don't have to worry that using your file manager will
-bypass the functionality of @product@'s web interface. 
+Note that @product@ increments the version numbers of files edited and uploaded 
+via WebDAV so you don't have to worry that using your file manager will bypass 
+the functionality of @product@'s web interface. 
 
 Lunar rover race instructor Wilma Carwin doesn't mind editing her Documents and
 Media files from her computer's file manager, because it's convenient and
@@ -203,4 +203,4 @@ collaborating on the newsletter.
 
 Following Wilma Carwin's demonstration, you've learned how to map your local
 file manager to a Document Library folder and collaborate on files from your
-desktop environment.
+desktop environment. 

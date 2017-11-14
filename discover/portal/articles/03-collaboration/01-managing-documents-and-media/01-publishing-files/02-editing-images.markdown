@@ -14,11 +14,11 @@ Lucky for you, @product@ now comes with its own built-in image editor.
 A crop here and there, a little bit more contrast, and some adjustments in 
 saturation, and boom! The image is ready to go.   
 
-Since Liferay Portal CE 7.0 GA2 and Liferay DXP 7.0, users have been able to
-edit images within portal instances. To access the image editor, go to the 
-Documents and Media repository and locate the image you want to edit. Click the 
-Actions icon (![Actions](../../../../images/icon-actions.png)) and select 
-*Edit With Image Editor*.
+Since Liferay Portal CE 7.0 GA2 and Liferay DXP 7.0, users can edit images 
+within portal instances. To access the image editor, go to the Documents and 
+Media repository and locate the image you want to edit. Click the Actions icon 
+(![Actions](../../../../images/icon-actions.png)) and select *Edit With Image 
+Editor*.
 
 ![Figure 1: You can access the image editor through the Documents and Media repository.](../../../../images/image-editor-docs-and-media.png)
 
@@ -103,3 +103,6 @@ filters.
 You can learn more about that in the [Expanding the image editor tutorial](URL)
 
 -->
+
+Next, you'll learn how to access Google Docs&trade; through the Document 
+Library. 

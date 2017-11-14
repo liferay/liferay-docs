@@ -33,8 +33,8 @@ named *Spacey Party*. Next, click the *Add* icon
 appears on the page and shows your Home folder's files by default. Since we want
 to focus on the Spacey party's files, let's configure the app to show files from
 the *Spacey Party* folder. Click the app's Options icon
-(![Options](../../../../images/icon-app-options.png)) and select *Configuration*.
-The Configuration window appears and shows the *Setup* tab.
+(![Options](../../../../images/icon-app-options.png)) and select 
+*Configuration*. The Configuration window appears and shows the *Setup* tab.
 
 The Setup tab's Display Settings section provides checkboxes to enable showing
 each file's actions, gallery navigation links (for paging through media files),
@@ -106,4 +106,6 @@ The Media Gallery and Documents and Media apps are at your service to show
 off your Document Library files. The Lunar Resort's Souvenir and Memorabilia
 group enjoys patron reactions to the great pics and videos that Snappy takes of
 them. And the salespeople are more than happy to plaster the pictures onto
-clothing and accessories to make a handsome commission.
+clothing and accessories to make a handsome commission. 
+
+Next, you'll learn how to collaborate on files with other users. 
