@@ -27,7 +27,7 @@ images that weren't generated while it was disabled (see the
 [Generating Missing Image Resolutions](/discover/portal/-/knowledge_base/7-0/managing-image-resolutions#generating-missing-image-resolutions) 
 section for instructions on this). 
 
-## Editing Image Resolutions
+## Editing Image Resolutions [](id=editing-image-resolutions)
 
 You can't edit an image resolution that already has adapted images. This 
 prevents odd behavior (of the adapted images--you're still free to be as odd as 

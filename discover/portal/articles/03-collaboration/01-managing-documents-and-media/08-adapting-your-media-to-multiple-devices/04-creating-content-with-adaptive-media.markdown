@@ -75,7 +75,7 @@ This example uses three different images, each with a different resolution. A
 `source` tag defines each of these images. Also note the original image (`img`) 
 is used as a fallback in case the adapted images aren't available. 
 
-## Using Adapted Images in Structured Web Content
+## Using Adapted Images in Structured Web Content [](id=using-adapted-images-in-structured-web-content)
 
 To use adapted images in 
 [structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content), 

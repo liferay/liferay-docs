@@ -1,4 +1,4 @@
-# Installing Adaptive Media
+# Installing Adaptive Media [](id=installing-adaptive-media)
 
 You can install Adaptive Media from 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
@@ -72,7 +72,7 @@ Media. The next section discusses the installation requirements for using
 animated GIFs with Adaptive Media. If you don't need to use GIFs, you can skip 
 ahead to the article on adding image resolutions to Adaptive Media. 
 
-## Processing Animated GIFs
+## Processing Animated GIFs [](id=processing-animated-gifs)
 
 To process animated GIFs, Adaptive Media uses an external tool called 
 [Gifsicle](https://www.lcdf.org/gifsicle). 
