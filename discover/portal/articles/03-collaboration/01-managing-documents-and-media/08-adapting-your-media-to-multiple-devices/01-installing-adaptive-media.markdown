@@ -64,7 +64,7 @@ be aware of:
 
 -   **Liferay Adaptive Media Document Library Thumbnails:** Lets thumbnails in 
     Documents and Media use adapted images. For this to work, you must first 
-    [migrate the original thumbnails to adapted images](/develop/tutorials/-/knowledge_base/7-0/migrating-documents-and-media-thumbnails-to-adaptive-media). 
+    [migrate the original thumbnails to adapted images](/discover/portal/-/knowledge_base/7-0/migrating-documents-and-media-thumbnails-to-adaptive-media). 
     We highly recommend that you enable this module, but it's not mandatory. 
 
 Great! Now you know the mandatory and optional modules that come with Adaptive 
