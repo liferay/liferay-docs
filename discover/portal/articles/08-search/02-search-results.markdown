@@ -1,9 +1,8 @@
 # Search Results [](id=search-results)
 
 The ideal search experience involves a user entering a search term, waiting an
-infinitesimally small amount of time, and having the perfectly matching asset
-delivered to them at the top of a list of other extremely relevant hits. Like
-this:
+infinitesimal amount of time, and having the perfectly matching asset delivered
+to them at the top of a list of other extremely relevant hits. Like this:
 
 ![Figure 1: The goal is to return the perfect results to users searching your site.](../../images/search-results-perfect.png)
 
@@ -128,8 +127,6 @@ principles:
 3.  Field-Length Norm: Matches from shorter fields, like title, score higher
     than those in longer fields, like content.
 
-<!-- Show one good picture with a series of results that include TF IDF FLN  -->
-
 Those principles determine the order of results returned in the search portlet.
 To look in depth at the relative contribution of each to a result set's
 documents, access Elasticsearch's API via URL, like this generalized form:
@@ -138,7 +135,7 @@ documents, access Elasticsearch's API via URL, like this generalized form:
 
 Consider a specific example for an Elasticsearch running on `localhost:9200`,
 with an index name of `liferay-20116`, with a type of `LiferayDocumentType`, and
-searching the title field for the word *ziti*.  Importantly, the `explain`
+searching the title field for the word *ziti*. Importantly, the `explain`
 option is appended to the URL, ensuring that the scoring details are returned
 for each result:
 
@@ -160,9 +157,19 @@ See the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsea
 
 ## Permissions and Search Results [](id=permissions-and-search-results)
 
-It's important that users lacking permission to view an asset also can't see it
-in the search results.
-AWAITING FEEDBACK
+@product@ includes a robust [role-based permissions
+system](/discover/portal/-/knowledge_base/7-0/roles-and-permissions). It's
+important that users lacking permission to view an asset also can't see it in
+the search results. A logged in user with the Site Administrator role will
+likely see more search results than a guest user to the site. To understand
+whether a user has permissions to see an asset in the search results, the answer
+to this question must be *yes*:
+
+*Does the user occupy a role that has VIEW permission on an asset?*
+
+If the user has VIEW permission on an asset, then the asset is returned in the
+search results.
+<!-- What about assets who have setPermissionAware(false), like WikiNode-->
 
 ## Search and Staging [](id=search-and-staging)
 
@@ -174,10 +181,16 @@ search index is marked so that the search API can decipher whether an item is
 live or not. In the live version of the site, it's quite simple: only content
 that's marked for the live site is searchable. 
 
-Here's what to expect from search results in a staging environment:
+In the staged version of the site, all content, whether live or staged, is
+searchable.
 
-- *Local staging*:
-- *Remote staging*:
+<!--@product@ implements its staging functionality by creating a copy of the entire
+index when staging is enabled. for the live site, and one for the staged site.
+The live site index includes all documents that include the field
+`stagingGroup:false`. Published content automatically including a field in each
+document called `stagingGroup`, which is either `true` or `false`. If set to
+false, the document is searchable in the live site. Documents only in the
+staging site -->
 
 ## Result Summaries [](id=result-summaries)
 
@@ -207,8 +220,8 @@ displayed in user result summaries.
 
 For assets that contain other assets (Web Content, Documents & Media, and
 Bookmarks folders) or whose content is not amenable to display (Dynamic Data
-List Records and Calendar Events), it makes more sense to display the title
-asset type and description in results summaries. There'd never be anything in a
+List Records and Calendar Events), it makes more sense to display the title,
+asset type, and description in results summaries. There'd never be anything in a
 content field for these assets.
 
 ![Figure 7: Documents and Media, Web Content, and Bookmarks folders include
