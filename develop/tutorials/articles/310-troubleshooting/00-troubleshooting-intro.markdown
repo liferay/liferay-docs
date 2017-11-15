@@ -52,8 +52,7 @@ To satisfy the requirement,
 
 ### Why aren't my module's JavaScript and CSS changes showing? [](id=why-arent-my-modules-javascript-and-css-changes-showing)
 
-Incorrect component properties or stale browser cache can prevent JavaScript and CSS changes from showing.
-[These issues are easy to find and fix](/develop/tutorials/-/knowledge_base/7-0/why-arent-my-modules-javascript-and-css-changes-showing). 
+[Incorrect component properties or stale browser cache can prevent JavaScript and CSS changes from showing](/develop/tutorials/-/knowledge_base/7-0/why-arent-my-modules-javascript-and-css-changes-showing). 
 
 ### Why aren't my fragment's JSP overrides showing? [](id=why-arent-my-fragments-jsp-overrides-showing)
 
