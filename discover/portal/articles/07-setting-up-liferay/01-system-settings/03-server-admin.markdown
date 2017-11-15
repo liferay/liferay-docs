@@ -152,24 +152,23 @@ the native CAPTCHA solution.
 
 ## Data Migration [](id=data-migration)
 
-If you are upgrading from a previous release of @product@ or migrating data from
-one system to another, the Data Migration tab helps you to do that without your
-developers having to write custom scripts.
+Use the functionality in the Data Migration tab to upgrade @product@ or migrate
+its data from one system to another, without writing custom scripts.
 
-The first section lets you copy your entire Liferay database from the current
-database under which it is running to the database you specify in this set of
-fields. You'll need to enter the driver class name (and the driver will need to
-be on Liferay's classpath), the JDBC URL of the database to which you'll be
-copying your data and the credentials of a user with access to that database.
-Once you have all of this information entered, click *Execute* to copy the data.
+The first section, under *Migrate data from one database to another.* was useful
+in past versions of @product@ for copying the entire @product@ database to a new
+database. However, the database migration tool cannot be used in the current
+version of @product@. It does not work as expected, and will be removed in the
+next version of @product@.
 
-The next section helps you migrate your documents. Make sure you have already
-set up your `portal-ext.properties` file so the hook is properly configured
-before running this migration. Select the Document Library hook that represents
-the location to which you want your documents to be migrated, then click
-*Execute*. Your documents will be migrated to the new repository. You can then
-shut down Liferay, make the new repository the default in the
-`portal-ext.properties` file, and then restart.
+The second section, *Migrate documents from one repository to another.*, helps
+you migrate your documents to a new repository. Before running this operation,
+[configure the repository
+hook](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration)
+in a `portal-ext.properties` file. Then, in Server Administration, select the
+Document Library hook that represents the location to which you want your
+documents to be migrated and click *Execute*. Shut down @product@ and make the
+new repository the default in the `portal-ext.properties` file, then restart.
 
 ## File Uploads [](id=file-uploads)
 
