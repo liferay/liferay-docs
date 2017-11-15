@@ -75,7 +75,7 @@ First create a Java interface to represent the configuration and its default
 values. Using a Java interface allows for an advanced type system for each
 configuration option. Here is an example of such an interface:
 
-    @Meta.OCD(id = "com.foo.bar.MyAppConfiguration")
+    @Meta.OCD(id = "com.liferay.docs.exampleconfig.ExampleConfiguration")
     public interface MyAppConfiguration {
 
         @Meta.AD(
