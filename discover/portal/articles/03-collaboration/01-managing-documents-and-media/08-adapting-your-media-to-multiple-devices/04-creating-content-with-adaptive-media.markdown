@@ -119,5 +119,4 @@ or the publication of staged content. To improve performance, Adaptive Media
 instead reuses the existing adapted images. 
 
 Awesome! Now you know how create content that contains adapted images. You also 
-know how Adaptive Media includes adapted images in the content's HTML. Next, 
-you'll learn some advanced configuration options for Adaptive Media. 
+know how Adaptive Media includes adapted images in the content's HTML. 
