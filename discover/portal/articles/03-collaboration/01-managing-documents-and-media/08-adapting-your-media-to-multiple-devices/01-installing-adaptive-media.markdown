@@ -57,10 +57,13 @@ be aware of:
 
 -   **Liferay Adaptive Media Image Content Transformer Backwards Compatibility:** 
     Ensures that content created before the Adaptive Media installation can use 
-    adapted images without the need to manually edit that content. If you're 
-    using Adaptive Media in a new @product@ installation that doesn't have old 
-    content, or your old content doesn't need adapted images, you can disable 
-    this module. 
+    adapted images without the need to manually edit that content. This is 
+    accomplished by transforming the images both at startup and when a user 
+    views the content, which can negatively affect performance. We therefore 
+    recommend that you run some performance tests before using this module in 
+    production. You can disable this module if you don't have old content, are 
+    experiencing performance problems, or your old content doesn't need adapted 
+    images. 
 
 -   **Liferay Adaptive Media Document Library Thumbnails:** Lets thumbnails in 
     Documents and Media use adapted images. For this to work, you must first 

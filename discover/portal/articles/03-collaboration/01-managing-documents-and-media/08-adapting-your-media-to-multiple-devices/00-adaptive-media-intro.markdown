@@ -26,17 +26,3 @@ high-resolution image. You can find the Adaptive Media app on
 for Liferay Portal CE 7.0 and Liferay DXP. 
 
 In this section, you'll learn how to manage and use Adaptive Media in @product@. 
-
-+$$$
-
-**Note:** Once Adaptive Media is installed, all content from that point onward 
-uses adapted images, but content that existed previously still uses original 
-images. To adapt these old content entries, you must manually edit each of them. 
-This can be time consuming. To automate this process, you can deploy the 
-[`adaptive-media-image-content-transformer-backwards-compatibility` module](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-content-transformer-backwards-compatibility). 
-
-Note that all transformations are performed both at startup and when a user 
-views it. This can affect the performance. Therefore we recommend that you run 
-some performance tests before using this module in production. 
-
-$$$
