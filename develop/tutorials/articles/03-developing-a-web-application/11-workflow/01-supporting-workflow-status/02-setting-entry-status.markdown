@@ -61,7 +61,7 @@ service layer. Thus you'll need a corresponding `updateStatus` method here in
 Organize imports (*[CTRL]+[SHIFT]+O*), save your work, and run Service Builder.
 
 As with Guestbooks, you must add a call  to `deleteWorkflowInstanceLinks` in the
-entry's delete method, to avoid leaving orhaned database entries in the
+entry's delete method to avoid leaving orphaned database entries in the
 `workflowinstancelinks` table. First add the following `<reference>` tag to
 `service.xml`, this time in the `entry` entity section, below the existing
 reference tags:
