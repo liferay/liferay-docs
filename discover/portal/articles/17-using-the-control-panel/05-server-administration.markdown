@@ -267,17 +267,20 @@ click *Save*. Now Liferay can perform many types of document conversions.
 
 ### ImageMagick configuration [](id=imagemagick-configuration)
 
-To configure ImageMagick to generate image and PDF previews:
+To configure ImageMagick to generate image and PDF previews, you must install it
+and its dependency, Ghostscript. This differs by operating system: on Linux,
+they're likely already installed. On Mac, they may be installed. On Windows,
+it's likely they're not already installed. 
 
-1. Download and install [*ImageMagick*](http://www.imagemagick.org).
+1.  Download and install [*ImageMagick*](http://www.imagemagick.org).
 
-2. Download and install [*Ghostscript*](http://www.ghostscript.com).
+2.  Download and install [*Ghostscript*](http://www.ghostscript.com).
 
 Next, you can enable ImageMagick through the Control Panel or your 
-`portal-ext.properties`. To enable ImageMagick through our properties files, 
-add the following lines to your `portal-ext.properties`, and make sure the 
-search path points to the directories for the ImageMagick and Ghostscript 
-executables. You may also need to configure the path for fonts used by 
+`portal-ext.properties`. To enable ImageMagick through properties files, 
+add the following lines to your `portal-ext.properties` and make sure the search
+path points to the directories containing the ImageMagick and Ghostscript
+executables. You may also need to configure the path for fonts used by
 Ghostscript when in Mac or Unix environments.
 
     imagemagick.enabled=true
@@ -287,19 +290,17 @@ Ghostscript when in Mac or Unix environments.
 
 To enable ImageMagick from the Control Panel:
 
-1. Navigate to the *Server Administration* &rarr; *External Services* page. 
+1.  Navigate to the *Server Administration* &rarr; *External Services* page. 
 
-2. Check the *Enabled* checkbox for ImageMagick and verify the paths to the 
+2.  Check the *Enabled* checkbox for ImageMagick and verify the paths to the 
     ImageMagick and Ghostscript executables are correct.
 
-Note that some older versions of ImageMagick are unable to properly run with
-Liferay. If this is the case, update to the latest version (ImageMagick 6.7.9-6
-2012-09-25 Q16 or later). To check for the latest ImageMagick versions, visit
+Note that some older versions of ImageMagick don't run properly with Liferay. If
+this is the case, update to the latest version (ImageMagick 6.7.9-6 2012-09-25
+Q16 or later). To check for the latest ImageMagick versions, visit
 [http://www.imagemagick.org/script/binary-releases.php](http://www.imagemagick.org/script/binary-releases.php).
-See
-[LPS-30291](http://issues.liferay.com/browse/LPS-30291)
-for information on efforts to identify incompatible application versions with
-Liferay.
+See [LPS-30291](http://issues.liferay.com/browse/LPS-30291) for information on
+efforts to identify incompatible application versions with Liferay.
 
 ### Xuggler configuration [](id=xuggler-configuration)
 
