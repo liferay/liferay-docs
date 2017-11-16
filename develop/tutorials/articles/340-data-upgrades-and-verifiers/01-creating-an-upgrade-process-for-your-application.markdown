@@ -207,10 +207,6 @@ present):
 
     package com.liferay.mycustommodule.upgrade;
 
-    import com.liferay.mycustommodule.upgrade.v1_1_0.UpgradeFoo;
-    import com.liferay.mycustommodule.upgrade.v2_0_0.UpgradeFoo;
-    import com.liferay.mycustommodule.upgrade.v2_0_0.UpgradeBar;
-
     import com.liferay.portal.upgrade.registry.UpgradeStepRegistrator;
 
     import org.osgi.service.component.annotations.Component;
@@ -231,7 +227,7 @@ present):
             registry.register(
                 "com.liferay.mycustommodule", "1.1.0", "2.0.0",
                 new com.liferay.mycustommodule.upgrade.v2_0_0.UpgradeFoo(),
-                new UpgradeBar());
+                new com.liferay.mycustommodule.upgrade.v2_0_0.UpgradeBar());
         }
 
     }

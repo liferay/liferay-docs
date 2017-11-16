@@ -56,7 +56,10 @@ example, a configuration property for specifying supported file extensions needs
 more than one value. Here's how to write a multi-value setting in a `.config`
 file: 
 
-    multiValueSetting=["Value 1", "Value 2", ...]
+    multiValueSetting=["Value 1","Value 2", ...]
+
+Do not use a space character between values (after the comma). An errant space
+character can cause a failure to load the property.
 
 Open the Web Content entry from System Settings and you'll see what looks like
 multiple single value entries for *Charactersblacklist*: 
@@ -74,13 +77,22 @@ Double quotes (`"`) and equals signs (`=`) must be *escaped* in `.config` files.
 Escaping is using another character to denote that a character shouldn't be used 
 in its normal way. Since double quotes and equals signs are already used in 
 `.config` files, escaping them tells the framework not to read them the normal 
-way, but to pass them through as part of the value. Use a `\\` to escape 
+way, but to pass them through as part of the value. Use a `\` to escape 
 characters in the `.config` file: 
 
     charactersblacklist=["&","\"","\="]
 
 This setting illustrates a multi-value setting with a regular, unescaped 
 character (`&`), and two escaped ones (`\"` and `\=`). 
+
+Along with the mandatory escaping of double quotes and equals characters, it's
+beneficial to escape spaces inside values to avoid problems.
+
+    blacklistBundleSymbolicNames=["Liferay\ Marketplace","Liferay\ Sharepoint\ Connector"]
+
+In the above example, a `\` is used before each space character to ensure it's
+read and processed properly. If you don't escape spaces yourself, the framework
+adds the backslash for you after deployment.
 
 ### Deploying a Configuration File [](id=deploying-a-configuration-file)
 

@@ -18,11 +18,13 @@ filter entities by status to display only reviewed entities.
 **Note:** The exact review process is defined separately from the code that
 enables workflow. An XML file provides the definition of a workflow in
 @product@. If you're a Liferay Digital Enterprise subscriber, you have access to
-the [Kaleo Workflow Designer](/discover/portal/-/knowledge_base/7-0/kaleo-designer), 
-which offers a convenient drag-and-drop user interface for designing workflow
-definition files. @product@ comes with a workflow definition called the *Single
-Approver* definition, but you can write your own workflow definitions according
-to your organization's requirements. 
+the Kaleo Workflow Designer, which offers a convenient drag-and-drop user
+interface for designing workflow definition files. You can read more about this
+in Liferay DXP's
+[documentation](https://customer.liferay.com/documentation/7.0/admin/-/official_documentation/portal/kaleo-designer).
+@product@ comes with a workflow definition called the *Single Approver*
+definition, but you can write your own workflow definitions according to your
+organization's requirements. 
 
 A few additional definitions are included in @product@'s source code, which you
 can use to see how workflow definitions are defined. To discover how to access

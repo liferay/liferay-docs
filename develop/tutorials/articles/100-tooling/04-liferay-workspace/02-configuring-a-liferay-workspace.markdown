@@ -28,7 +28,7 @@ The top-level files/folder of a Liferay workspace are outlined below:
 - `settings.gradle`: applies plugins to the workspace and configures its
   dependencies.
 
-The build/properties files included in your workspace's root directory sets your
+The build/properties files included in your workspace's root folder sets your
 workspace's Gradle properties and facilitates the build processes of your
 modules.
 
@@ -66,7 +66,7 @@ root folder. There are several configurable properties for your workspace's
 Liferay instance. You can set the version of the Liferay bundle you'd like to
 generate and install by setting the download URL for the
 `liferay.workspace.bundle.url` property
-(e.g., `http://downloads.sourceforge.net/project/lportal/Liferay%20Portal/7.0.2%20GA3/liferay-ce-portal-tomcat-7.0-ga3-20160804222206210.zip`).
+(e.g., `http://downloads.sourceforge.net/project/lportal/Liferay%20Portal/7.0.4%20GA5/liferay-ce-portal-tomcat-7.0-ga5-20171018150113838.zip`).
 You can also set the folder where your Liferay bundle is generated with the
 `liferay.workspace.home.dir` property. It's set to `bundles` by default.
 
@@ -74,7 +74,7 @@ You can download a Liferay DXP bundle for your workspace if you're a DXP
 subscriber. Do this by setting the `liferay.workspace.bundle.url` property to a
 ZIP hosted on *api.liferay.com*. For example,
 
-`liferay.workspace.bundle.url=https://api.liferay.com/downloads/portal/7.0.10.4/liferay-dxp-digital-enterprise-tomcat-7.0-sp4-20170705142422877.zip`
+`liferay.workspace.bundle.url=https://api.liferay.com/downloads/portal/7.0.10.6/liferay-dxp-digital-enterprise-tomcat-7.0-sp6-20171010144253003.zip`
 
 <!-- I formatted the above snippet differently to avoid providing a link.
 -Cody-->
@@ -111,7 +111,7 @@ following command:
 
     ./gradlew distBundle[Zip|Tar]
 
-Your distribution file is available from the workspace's `/build` directory.
+Your distribution file is available from the workspace's `/build` folder.
 
 +$$$
 

@@ -35,7 +35,7 @@ these file formats, including their syntax:
 ## Naming Configuration Files [](id=naming-configuration-files)
 
 Before you
-[create a configuration file](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files#creating-and-deploying-a-configuration-file),
+[create a configuration file](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files#creating-configuration-files),
 you should determine whether multiple instances of the component can be created, 
 or if the component is intended to be a singleton. Follow these steps to make 
 that determination:

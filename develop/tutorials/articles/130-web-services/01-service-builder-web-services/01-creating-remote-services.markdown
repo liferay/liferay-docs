@@ -131,7 +131,7 @@ Builder project in a Liferay Workspace, do the following in the workspace's
 
     This repository hosts the WSDD Builder library, its transitive dependencies, 
     and other Liferay libraries. Note that if you created your Service Builder 
-    project with the `service-builder` template in Blade or Liferay IDE, then 
+    project with the `service-builder` template in Blade CLI or Liferay @ide@, then 
     your `settings.gradle` file should already contain this. 
 
 3. Add this code to the end of the file: 
@@ -173,7 +173,7 @@ Builder project in a Liferay Workspace, do the following in the workspace's
             }
         }
 
-4. Refresh the Liferay Workspace's Gradle project. Close and restart Liferay IDE 
+4. Refresh the Liferay Workspace's Gradle project. Close and restart Liferay @ide@ 
    if you're using it. 
 
 Now that you've installed the WSDD Builder plugin, you're ready to build and 
@@ -215,7 +215,7 @@ do this.
 To build the WSDD, you must run the `buildWSDD` Gradle task in your `*-service` 
 module. Exactly how you do this depends on your development tools: 
 
-- **Liferay IDE:** From the Liferay Workspace perspective's *Gradle Tasks* pane 
+- **Liferay @ide@:** From the Liferay Workspace perspective's *Gradle Tasks* pane 
   (typically on the right), open your `*-service` module's *build* folder and 
   double-click *buildWSDD*. 
 - **Command Line:** Navigate to your `*-service` module and run 
@@ -287,7 +287,7 @@ For example, to build the WSDD for the Bookmarks app, first navigate to the
 `liferay-portal/modules/apps/collaboration/bookmarks/bookmarks-service` folder 
 in your terminal. Then run the following command:
 
-    `../../../../../gradlew buildWSDD`
+    ../../../../../gradlew buildWSDD
 
 Next, deploy the 
 `liferay-portal/tools/sdk/dist/com.liferay.bookmarks.service-wsdd-[version].jar` 
