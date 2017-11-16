@@ -73,7 +73,7 @@ ID into your @product@ instance's Google Apps configuration.
 To call Google's APIs, you must configure @product@ with your Google project's
 OAuth client ID and public API access key:
 
-1.  Navigate to *Control Panel* &rarr; *Configuration &rarr; *Instance 
+1.  Navigate to *Control Panel* &rarr; *Configuration* &rarr; *Instance 
     Settings*. 
 
 2.  Click the *Miscellaneous* tab and expand the *Google Apps* section. 
