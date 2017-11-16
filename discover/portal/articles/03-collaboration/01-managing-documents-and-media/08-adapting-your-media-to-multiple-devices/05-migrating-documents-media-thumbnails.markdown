@@ -1,13 +1,9 @@
 # Migrating Documents and Media Thumbnails to Adaptive Media [](id=migrating-documents-and-media-thumbnails-to-adaptive-media)
 
-[Adaptive Media](/discover/portal/-/knowledge_base/7-0/adapting-your-media-across-multiple-devices) 
-creates a separate version of your uploaded images for each image resolution 
-that you specify, ensuring that the viewer receives an image optimized for their 
-device. You can provide this same optimized user experience in Documents and 
-Media by migrating existing Documents and Media thumbnails to adapted images. 
-
-This tutorial walks you through the process of migrating your Documents and 
-Media thumbnails to adapted images. 
+@product@ automatically generates thumbnails for images in Documents and Media. 
+Once you deploy the Adaptive Media app, however, @product@ won't display these 
+thumbnails until you migrate them to Adaptive Media. This article walks you 
+through this migration process. 
 
 +$$$
 
@@ -16,13 +12,14 @@ this article.
 
 $$$
 
-You'll get started by creating the replacement image resolutions. 
+You'll get started by creating image resolutions for the thumbnails in Adaptive 
+Media. 
 
 ## Adding the Replacement Image Resolutions [](id=adding-the-replacement-image-resolutions)
 
 To migrate the existing Documents and Media thumbnails, you must add new image 
 resolutions in Adaptive Media that have maximum height and maximum width values 
-that are the same as the values specified in the following portal properties: 
+that match the values specified in the following portal properties: 
 
     dl.file.entry.thumbnail.max.height
 
@@ -56,13 +53,6 @@ Media thumbnails to Adaptive Media images. As mentioned in
 [the Adaptive Media installation guide](/discover/portal/-/knowledge_base/7-0/installing-adaptive-media), 
 the module *Liferay Adaptive Media Document Library Thumbnails* (which is 
 included in the Adaptive Media app) enables this functionality. 
-
-+$$$
-
-**Note:** Once you deploy the Adaptive Media app, @product@ won't display 
-Documents and Media thumbnails until you migrate them to Adaptive Media images. 
-
-$$$
 
 There are two different ways to migrate the Documents and Media thumbnails to 
 Adaptive Media: 
