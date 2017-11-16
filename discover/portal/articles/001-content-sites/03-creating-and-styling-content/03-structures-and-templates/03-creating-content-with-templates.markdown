@@ -1,40 +1,58 @@
-# Creating Content With Structures and Templates
+# Creating Content with Structures and Templates
 
-You created the Structure which defines the data fields that a user will 
-provide to create content. Then you created a Template which provides the
-structure and layout for those fields. Now you need to fill out those data fields to create content.
+Now that you have a template for your structure, you can use that structure to 
+create content. Remember, the template formats the structure's content for 
+display.
 
-## Creating Content With Custom Types
+Follow these steps to create your content: 
 
-1.  Open *Site Administration* &rarr; *The Lunar Resort* &rarr; *Web Content*.
+1.  Open the *Menu* 
+    (![Product Menu](../../../../images/icon-menu.png)) and select *The Lunar 
+    Resort* &rarr; *Content* &rarr; *Web Content*. 
 
-2.  Click the `+` button in the bottom corner.
+2.  Click the *Add* icon 
+    (![Add](../../../../images/icon-add.png)) at the bottom-right of the page 
+    and select *Lunar Guides List*. This takes you to the New Web Content form 
+    for your structure. Note that the fields and field groups you defined in the 
+    structure are all here.
 
-3.  Select *Lunar Guides List*
+3.  For both *Title* fields, enter *Choose Your Lunar Guide*. Don't worry about 
+    the duplication. The first Title field is default for all web content. 
+    You'll use the Web Content Display app to prevent it from showing, therefore 
+    showing only your structure's title field. This lets you use the template to 
+    style the field's content, rather than apps that display web content. 
 
-Does this form look familiar? It's all of the fields that you defined when you
-created the Structure.
+4.  Fill out a field group for each lunar guide: *Cody*, *Jim*, *Russ*, and 
+    *Steve*. For each *Image* field, select the guide's image from the images 
+    you uploaded earlier. For each *Link to Page* field, click *Select* to open 
+    the dialog that lets you select a page in your site. In this dialog, click 
+    *Lunar Guides*, select the guide's page, and click *Select*. 
+<!-- These images weren't included in the earlier upload instructions -->
 
-4.  Set the Title as "Choose Your Lunar Guide:"
+5.  Click *Publish*.
 
-5.  Enter the names respectively for all of the guides - Cody, Jim, Russ, and 
-    Steve.
+The content now exists, but you still need to publish it on a page in your site. 
+Follow these instructions to do so:
 
-6.  Select the appropriate image for each guide from the images that we updated 
-    earlier.
+1.  Go to the *Lunar Guides* page.
 
-7.  Click Publish.
+2.  Click the *Add* icon 
+    (![Add](../../../../images/icon-add-app.png)) at the top-right of the page 
+    and expand *Content*. 
 
-Now the content is completed, but you still need to publish it on a page.
+3.  Drag the content *Choose Your Lunar Guide* to the page. This displays your 
+    content in a Web Content Display app. 
 
-8.  Go to the Lunar Guides page.
+4.  Note that your content contains duplicate titles. You'll fix this now. Click 
+    the Web Content Display app's *Options* button 
+    (![Options](../../../../images/icon-app-options.png)) and select *Look and 
+    Feel Configuration*. In the *General* tab, select *Barebone* for 
+    *Application Decorators*, then click *Save*. The only title that remains is 
+    the one you defined in your structure and styled in your template. 
 
-9.  Open the *Add* menu and select *Content*.
+5.  Now you can test the content to see how it works. Click a guide's picture 
+    or name to go to that guide's page in the hierarchy. 
 
-10.  Drag the *Lunar Guides* content to the page.
+Great! Next, you'll learn how to integrate JavaScript into your templates. 
 
-Now you can test the content to see how it works. Clicking on each picture or 
-name will link to that guide's page in the hierarchy.
-
-![Figure x: The completed Lunar Guides content.](../../../images/001-lunar-guides-final.png)
-
+![Figure x: The lunar guides, at your service!](../../../../images/001-lunar-guides-final.png)

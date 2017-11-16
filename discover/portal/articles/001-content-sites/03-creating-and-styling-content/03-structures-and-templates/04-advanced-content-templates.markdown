@@ -1,48 +1,67 @@
-# Advanced Content Templates
+# Advanced Templates
 
-Our previous template used CSS, HTML, and Freemarker to create styled content.
-Next, you'll use Javascript to create a more interactive element.
+The template you created for lunar guides used CSS, HTML, and FreeMarker to 
+style and format the corresponding structure's fields. Templates in @product@ 
+can also use JavaScript. This lets you create complex, interactive content. To 
+illustrate this, you'll create a new structure, and then create its template 
+using JavaScript. 
+<!-- Introduce the example, e.g. the booking form -->
 
-## Creating the new Structure
+## Creating the Structure
 
-The structure will actually be simpler this time. It will contain just an image 
-and text. Create it now.
+The structure for the booking form is relatively simple--it only needs a Text 
+field and an Image field. Follow these steps to create it:
 
-1. Go to the Structure page - *The Lunar Resort* &rarr; *Web Content* &rarr; *Structures* (from the top menu).
+1.  Open the *Menu* 
+    (![Product Menu](../../../../images/icon-menu.png)) and select *The Lunar 
+    Resort* &rarr; *Content* &rarr; *Web Content*. 
 
-2. Click the `+` icon to create a new structure.
+2.  At the top-right of the screen, select *Options* 
+    (![Options](../../../../images/icon-options.png)) &rarr; *Structures*.
 
-3. For the *Name* enter "Booking Form"
+3.  Click the *Add* icon 
+    (![Add](../../../../images/icon-add.png)) at the bottom-right of the page. 
 
-4. In the *Fields* section add a *Text* and an *Image*.
+4.  Name the structure *Booking Form*. 
 
-5. Click on the Text field to open its settings.
+5.  Add a *Text* field to the canvas. Below that field, add an *Image* field. 
 
-6. Set the *Field Label* to "Button Text" and the *Name* to "buttontext".
+6.  Set the Text field's *Field Label* to *Button Text*. Set the field's *Name* 
+    to *buttontext*.
 
-7. For the Image, leave the field label as *Image* and set the *Name* as
-    "bgimage".
+7.  Set the Image field's *Name* to *bgimage*. Leave the field's Field Label 
+    alone. 
 
-![Figure x: The finished structure](../../../../images/001-booking-form.png)
+    ![Figure x: The Booking Form structure contains a Text field above an Image field.](../../../../images/001-booking-form.png)
 
-Now that the structure is complete, you can move on the Template.
+8.  Click *Save*. 
+
+Now that the structure is complete, you can move on the template.
 
 ## Creating the Template
 
-For the template, you will need to style the text and image and also add a 
-Javascript function for submitting the booking.
+The booking form's template styles the text and image, and also contains a 
+JavaScript function that submits the booking. Follow these steps to create this 
+template:
 
-1. Go to the Template page - *The Lunar Resort* &rarr; *Web Content* &rarr; 
-    *Templates*.
+1.  Open the the *Menu* 
+    (![Product Menu](../../../../images/icon-menu.png)) and select *The Lunar 
+    Resort* &rarr; *Content* &rarr; *Web Content*. 
 
-2. Click the `+` icon to create a new template.
+2.  At the top-right of the screen, select *Options* 
+    (![Options](../../../../images/icon-options.png)) &rarr; *Templates*. 
 
-3. For the *Name* enter "Booking Form".
+3.  Click the *Add* icon 
+    (![Add](../../../../images/icon-add.png)) at the bottom-right of the page. 
 
-4. Open *Details* and select *Booking Form* for the *Structure*.
+4.  Name the template *Booking Form*. 
 
-5. In the code field, we'll start with the bottom this time. First enter the
-    script in the bottom:
+5.  Open the *Details* section and select *Booking Form* for the *Structure*. 
+    In the *Language* field, leave *FreeMarker* selected. 
+
+6.  Now you're ready to create the template's script. First, you'll add a 
+    JavaScript function that triggers a popup when called. In the *Script* 
+    section, delete any existing code and add this code: 
 
         <script>
         function bookNow() {
@@ -50,28 +69,27 @@ Javascript function for submitting the booking.
           popup.classList.toggle("show");
         }
         </script>
-
-    This creates a function named "bookNow" that triggers a popup when it is 
-    called. Next, we'll the main body of the template.
     
-6. Paste in the main section next:
+7.  Now you'll add a `div` named `popup` that operates on the `bookNow` function 
+    when clicked. This `div` retrieves the `buttontext` from the structure, and 
+    sets the `popuptext` to display in the function. Everything is namespaced
+    so that you can create the styles accordingly. Add this code now, **above** 
+    the `bookNow` function: 
 
         <div class="main" onclick="bookNow()">
           <button>${buttontext.getData()}</button>
           <span class="popuptext" id="myPopup">You have successfully booked your trip!    <br />  See you on the moon!</span>
         </div>
-    
-    This creates a div named "popup" which fires on the "bookNow" function when
-    clicked. It retrieves the `buttontext` from the structure, and also sets
-    the "popuptext" which will display in the function. Everything is namespaced
-    so that you can create the styles accordingly.
 
-7. Finally let's add the styles class by class.
-
-    First the styles for the main div:
+8.  Finally, you'll add the styles. The following code first defines the styles 
+    for the main `div` and the button. Next, it defines the style for the area 
+    that appears when the `bookNow` function is called (note that its initial 
+    visibility is `hidden`). Finally, when the function runs, the `.show` class 
+    becomes active and the visibility is set to `visible`. Add this code 
+    **above** the existing code in the editor:
 
         <style>
-         .main {
+          .main {
             text-align: center;
             width: 100%;
             margin: auto;
@@ -80,9 +98,6 @@ Javascript function for submitting the booking.
             height: 350px;
             background-image: url("${bgimage.getData()}");
         }
-
-    Next the button styles:
-    
         button {
             position: relative;
             top: 110px;
@@ -95,10 +110,6 @@ Javascript function for submitting the booking.
             background-color: #65b6f0;
             color: white;
         }
-    
-    After that, the style for the area that will appear when the function is
-    called. Notice that its initial visibility is set to "hidden".
-    
         .popup .popuptext {
             visibility: hidden;
             width: 450px;
@@ -114,54 +125,59 @@ Javascript function for submitting the booking.
             margin-left: -220px;
             font-size: 150%;
         }
-
-    Finally, when the function runs, the `.show` class will become active and
-    this style will set the visibility to `vibisible`
-    
         .popup .show {
             visibility: visible;
         }
         </style>
 
-That covers the template creation, but we also need to create the content to
-fill it out.
+Awesome! Now you have a template for the booking form. You're ready to use the 
+structure and template to create some content. 
 
 ## Creating the Content
 
-The content for this template is pretty simple - a background image and your
-button text.
+Like the structure, content for this structure and template is simple. It can 
+only contain an image and button text. Follow these steps to create such content 
+now:
 
-1. Go back to the main *Web Content Page*.
+1.  Open the the *Menu* 
+    (![Product Menu](../../../../images/icon-menu.png)) and select *The Lunar 
+    Resort* &rarr; *Content* &rarr; *Web Content*. 
 
-2. Click the `+` button and select *Booking Form* which will appear in the list 
-    now.
+2.  Click the *Add* icon 
+    (![Add](../../../../images/icon-add.png)) at the bottom-right of the page 
+    and select *Booking Form*. 
 
-3. For the title enter "Booking Form"
+3.  Enter *Booking Form* for the title. 
 
-4. For *Button Text* enter "Book Now!"
+4.  Enter *Book Now!* for the button text. 
 
-5. For the image, click *Select* and go the the *Documents and Media* tab.
+5.  For the image, select the `booking-image.png` that you uploaded earlier. 
+<!-- No instructions earlier for uploading this image -->
 
-6. Select the `booking-image.png` that you uploaded earlier.
-
-7. Click *Publish*.
+6.  Click *Publish*.
 
 Now, all you need to do is add it to the page.
 
-## Demonstrate the Content
+## Displaying the Content
 
-1. Navigate to the Lunar Resort site and the *Book a Trip* page.
+1.  Navigate to the Lunar Resort's *Book a Trip* page. 
 
-2. Open the add menu.
+2.  Click the *Add* icon 
+    (![Add](../../../../images/icon-add-app.png)) at the top-right of the page 
+    and expand *Content*. 
 
-3. Drag the *Booking Form* content onto the page.
+3.  Drag the *Booking Form* content onto the page. 
+<!-- In which column? The page is 3 column. -->
 
-4. Open the *Look and Feel Configuration*.
+4.  Open the *Look and Feel Configuration* of the Web Content Display app that 
+    contains your content. 
 
-5. Set the border style to *Barebones* and click *Save.
+5.  On the *General* tab, set *Application Decorators* to *Barebone* and click 
+    *Save*. 
 
-6. Refresh the page.
+6.  Refresh the page, and then test out your button.
+<!-- Insert screenshot once the template is fixed -->
 
-7. Test out your button!
-
-
+Great! Now you know how to use structures and templates to create and style web 
+content. Next, you'll learn about some other ways to publish content in 
+@product@. 

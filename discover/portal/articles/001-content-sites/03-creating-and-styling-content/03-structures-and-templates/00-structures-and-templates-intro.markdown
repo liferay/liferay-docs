@@ -1,24 +1,24 @@
 # Web Content Structures and Templates
 
-In @product@, you can create new web content types and layouts using Structures
-and Templates. A Web Content Structure defines the type of items that will be in
-your content, and the template applies the necessary styles and logic to those 
-items.
+In @product@, you can use *structures* and *templates* to create new web content 
+types and layouts. A structure defines the type of items in your content, such 
+as text, images, calendar items, checkboxes, links, and more. Structures are 
+based on @product@'s forms functionality. When creating content based on a 
+structure, you must fill out that structure's fields. 
 
-The Structure is based on Liferay's Forms functionality. You use it to 
-provide a list of the types of data that will in the new web content types, 
-including text, images, calendar items, radio or checkboxes, links, and many
-other types of data. Whatever fields you determine will define that web content
-article type, and you'll be able to fill them in when you create the content.
+A template uses a templating language to display a structure's items. This lets 
+you apply styles and logic to create complex or interactive content. You can 
+create templates in 
+[Freemarker](http://freemarker.org/) 
+or 
+[Velocity](http://velocity.apache.org/). 
+The template can contain CSS, HTML, Javascript, and elements of the templating 
+language it uses. 
 
-The Template is Freemarker or Velocity based and enables you to use the provided
-data to create complex or interactive content. The template can contain CSS, 
-HTML, Javascript, and elements of the templating language you're using.
+Before getting started with structures and templates, you should know something 
+important--you might want to sit down for this--you've actually already used 
+them! Basic Web Content is a type of web content defined by a structure and a 
+template. Now you'll use structures and templates to create something a little 
+more intricate. 
 
-So far, you've actually been using a completed web content Structure/Template
-combination - Basic Web Content is based on the same principles that you'll
-use to create something a little more intricate.
-
-![Figure x: IMAGE](../../../images/.png)
-
-
+![Figure x: IMAGE](../../../../images/.png)

@@ -1,38 +1,45 @@
-# Creating Web Content Templates
+# Creating Templates
 
-You created a Web Content Structure, but it won't be very useful without a
-template to go with it and tell it how to display and style the items inside of 
-it. Now you'll use the Freemarker Templating language to create the necessary framework to display the content.
+Structures, like the one you created in the previous step, aren't useful without 
+a template to style and display its items. Now you'll use the 
+[FreeMarker](http://freemarker.apache.org/) 
+templating language to create a template. 
 
-## Creating Your First Web Content Template
+Follow these steps to create your template: 
 
-1. Go to Web Content for The Lunar Resort in Site Administration.
+1.  Open the *Menu* 
+    (![Product Menu](../../../../images/icon-menu.png)) and select *The Lunar 
+    Resort* &rarr; *Content* &rarr; *Web Content*. 
 
-2. Open the menu in the top right and select *Templates*.
+2.  At the top-right of the screen, select *Options* 
+    (![Options](../../../../images/icon-options.png)) &rarr; *Templates*. 
 
-3. Click the '+' button to create a new template.
+3.  Click the *Add* icon 
+    (![Add](../../../../images/icon-add.png)) at the bottom-right of the page to 
+    begin creating a new template. This takes you to the template creation 
+    page. 
 
-Now you'll find yourself on the Template creation page. In the Details section, 
-you'll need to specify a name, choose a templating language, and link the 
-Template to the Structure that it's intended to work with. In the Script 
-section you'll use the Template editor to create your template with CSS, HTML, 
-Javascript, and your templating language of choice (in this case, you will be 
-choosing Freemarker). The sidebar will also provide variables that you can 
-quickly drag into the code area. After you link a Structure, you can even 
-directly access the Structure's field from the sidebar.
+4.  Name the template *Lunar Guides List*. 
 
-1. Set the *Name* as "Lunar Guides List".
+5.  Now you must select the structure that this template works with. Open the
+    *Details* section, click the *Select* button under *Structure*, and select 
+    the *Lunar Guides List* structure. Click *OK* when prompted. 
 
-2. Open *Details*, click *Select* under *Structure* and select the
-    *Lunar Guides List* structure.
+6.  Next, select the template's language. Still in the *Details* section, make 
+    sure *FreeMarker* is selected for the *Language* field (it should be 
+    selected by default). FreeMarker uses the FreeMarker Template Language 
+    (FTL), which uses HTML, interpolations (`${...}`), and FTL tags. FreeMarker 
+    templates can also include CSS. For more information on FTL, see 
+    [the FreeMarker documentation](http://freemarker.apache.org/docs/dgui_quickstart_template.html). 
+    Note that @product@ also supports Velocity and Extensible Stylesheet 
+    Language. 
 
-First create the CSS for the content. You'll be using a simple grid layout to 
-define the positions of all the fields. You'll also define the styles for the
-text headings.
-
-3. Clear the code pane.
-
-4. Insert the following code into the code pane:
+7.  Now you're ready to create the script. First you'll insert the CSS. This 
+    example uses a four column, two row grid layout to define the field 
+    positions. The content appears only in columns two and four--the other two 
+    columns exist for spacing. This example also defines the text heading 
+    styles. In the *Script* section, replace the code in the editor with the 
+    following: 
 
         <style>
            .wrapper {
@@ -76,62 +83,58 @@ text headings.
           max-width: 355px;
         }
         </style>    
-    
-You created a 4 column, 2 row grid. The content will only be in columns 2 and 
-4, while the other two rows exist for spacing. There are a number of other ways 
-you could achieve the same result.
 
-Next you need to add in the HTML portion. The sidebar can help you with adding 
-the fields with the appropriate variables. *General Variables* provides quick 
-access to universal information for your instance. *Fields* provides access to 
-the variables that are defined by your Structure. Mousing over a field will 
-display it's name. Clicking on a field will add the code to retrieve that data into your code.
+8.  Now you're ready to create the template's HTML. Like the structure, you can 
+    use the sidebar to the left of the editor to insert fields in the editor. 
+    Doing so automatically inserts fields with the appropriate variables. 
+    *General Variables* provides quick access to universal information for your 
+    @product@ instance. *Fields* provides access to the variables that your 
+    structure defines. Mousing over a field displays its variable name. Clicking 
+    a field adds the code in the editor that retrieves that field's data. 
 
-![Figure x: IMAGE](../../../../images/001-field-mouse-over.png)
+    ![Figure x: A field's tooltip shows that field's variable name.](../../../../images/001-field-mouse-over.png)
 
-5. Add the following code block below the style section:
+    In this example, however, you'll use copy and paste to add the following 
+    code. This code gets the field values that the user entered, styles the text 
+    and images, and puts all the information into divs as defined in your CSS. 
+    Add this code in the editor, below the closing `</style>` tag: 
 
         <h1>${title.getData()}</h1>
 
         <div class="wrapper">
-          <a class="item-one" href="${link1.getFriendlyUrl()}">
+          <a class="item-one" href="${name1.link1.getFriendlyUrl()}">
           <h2>${name1.getData()}</h2>
-            <#if image1.getData()?? && image1.getData() != "">
-        	 <img alt="${image1.getAttribute("alt")}" src="${image1.getData()}" />
+            <#if name1.image1.getData()?? && name1.image1.getData() != "">
+              <img alt="${name1.image1.getAttribute("alt")}" src="${name1.image1.getData()}" />
             </#if>
           </a>
 
-          <a class="item-two" href="${link2.getFriendlyUrl()}">
+          <a class="item-two" href="${name2.link2.getFriendlyUrl()}">
           <h2>${name2.getData()}</h2>
-            <#if image2.getData()?? && image2.getData() != "">
-        	 <img alt="${image2.getAttribute("alt")}" src="${image2.getData()}" />
+            <#if name2.image2.getData()?? && name2.image2.getData() != "">
+              <img alt="${name2.image2.getAttribute("alt")}" src="${name2.image2.getData()}" />
             </#if>
           </a>
 
         <hr />
-          
-          <a class="item-three" href="${link3.getFriendlyUrl()}">
+
+          <a class="item-three" href="${name3.link3.getFriendlyUrl()}">
           <h2>${name3.getData()}</h2>
-            <#if image3.getData()?? && image3.getData() != "">
-        	 <img alt="${image3.getAttribute("alt")}" src="${image3.getData()}" />
+            <#if name3.image3.getData()?? && name3.image3.getData() != "">
+              <img alt="${name3.image3.getAttribute("alt")}" src="${name3.image3.getData()}" />
             </#if>
           </a>
 
-          <a class="item-four" href="${link4.getFriendlyUrl()}">
+          <a class="item-four" href="${name4.link4.getFriendlyUrl()}">
           <h2>${name4.getData()}</h2>
-            <#if image4.getData()?? && image4.getData() != "">
-        	  <img alt="${image4.getAttribute("alt")}" src="${image4.getData()}" />
+            <#if name4.image4.getData()?? && name4.image4.getData() != "">
+              <img alt="${name4.image4.getAttribute("alt")}" src="${name4.image4.getData()}" />
             </#if>
           </a>
 
         </div>
 
-This code gets the field values that the user entered, styles the text and 
-image, and puts all the information into divs as defined in your CSS.
+9.  Click *Save*. 
 
-6. Click *Publish* to save your work.
-
-It's as simple as that. Create some styles, create some HTML, use the fairly 
-simple Freemarker functions to retrieve the necessary data, and you have a 
-template. Next you'll need to create the content that fills out the template.
-
+Great! Now you have a template for displaying your structure's items. Next, 
+you'll create some content that leverages your structure and template. 

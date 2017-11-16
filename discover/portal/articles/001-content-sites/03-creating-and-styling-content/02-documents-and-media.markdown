@@ -1,96 +1,102 @@
 # Using Documents and Media
 
-@product@'s Documents and Media features provides tools for uploading, 
-organizing, and displaying various types of documents and images. You can use
-it for collaborating on files like text documents or spreadsheets, managing 
-collections of images, or simply use to store the images you reference in your
-web content. In fact, you already have a few files in your Documents and Media
-Library -- the images that you uploaded as part of the document creation 
-process.
+@product@'s Documents and Media features provide tools for uploading, 
+organizing, and displaying various types of documents and media, including 
+images, audio, and video. For example, you can use Documents and Media for 
+collaborating on files like text documents or spreadsheets, managing collections 
+of images, or simply storing the images that your web content references. 
+
+You've been using Documents and Media without knowing it. The images you added 
+when creating web content were automatically added to the Documents and Media 
+library. But there's a more efficient way to add images to Documents and Media. 
+You can add many images at once, directly in the Documents and Media library. 
+This saves you a step when creating content that uses those images. Working 
+directly in the Documents and Media library also lets you organize your files in 
+folders just as you would on a traditional desktop environment. 
+
+Now you'll take advantage of these features in the Lunar Resort. 
 
 ## Adding Files
 
-Previously you added files directly in the Web Content creation process. This 
-is a quick way do manage images, but it limits your organizational options and
-in many case, you want to upload an image that is not related to a Web Content
-article. Now let's add some new files that we'll need later to your Documents 
-and Media.
+You still need to create more content in the Lunar Resort, and this content 
+needs images. You'll upload all these images now in the Documents and Media 
+library:
 
-1. Open the main menu.
+1.  Open the *Menu* 
+    (![Product Menu](../../../images/icon-menu.png)) and select *The Lunar 
+    Resort* &rarr; *Content* &rarr; *Documents and Media*. The Documents and 
+    Media screen appears and displays the Documents and Media library's Home 
+    folder (its root folder). Note that the images you added while creating 
+    content earlier are all here.
 
-2. Go to *The Lunar Resort* &rarr; *Content* &rarr; *Documents and Media*.
+    ![Figure x: The Documents and Media library's Home folder contains the Lunar Resort's existing images.](../../../images/001-existing-images.png)
 
-3. Click the `+` button and select *Add Multiple Documents*.
+2.  Click the *Add* icon 
+    (![Add](../../../images/icon-add.png)) at the bottom-right of the page and 
+    select *Multiple Documents*. 
 
-![Figure x: Content Images.](../../../images/001-existing-images.png)
+3.  Use the *Add Multiple Documents* screen to add the images `moon-image1.jpg`, 
+    `moon-image2.jpg`, and `moon-image3.jpg`. You can either drag and drop the 
+    files from your file system to the box, or click *Select Files* to select 
+    the files via a file manager window. If you wish, you can also categorize 
+    and describe the files. Click *Publish* to complete the upload. 
 
-Here you can either drag files into the box in your browser or click *Select
-Files* to open a file manager window to select files. You can also add 
-categorization or description information to all the files at once on this page.
-If you use the *Add Basic Document* option, you can add one file at a time and
-add information to that file by itself.
+    ![Figure x: The Documents and Media library lets you add multiple documents at once.](../../../images/001-add-multiple-documents.png)
 
-3. Using your preferred method, add the `moon-image1.jpg`, `moon-image2.jpg`,
-    and `moon-image3.jpg`. 
-    
-4. Click *Publish*.
-
-Just like that you've successfully added files to your library. You'll use those
-in a minute to create some content, but first we should probably organize all 
-of these files a little better.
+Great! The Lunar Resort's Documents and Media library now contains more 
+images--enough to warrant organizing them in folders. 
 
 ## Adding Folders
 
-The root folder of your Media Library is getting a little crowded. Before you 
-do anything else, you should create a bit more organization so that content 
-creators and administrators have an easier time finding any documents that 
-they're looking for.
+Your Documents and Media library is now a bit more crowded. It's time to 
+organize it with folders. Besides basic file organization, you can also use 
+folders for managing access to files via permissions. 
 
-1. Click the `+` button and select *Folder*.
+Follow these steps to add some folders to the Lunar Resort's Documents and Media 
+library: 
 
-2. On the next screen, for the *Name* enter "Web Content Images", and for the
-    *Description* enter "Images used in Lunar Resort Web Content."
+1.  Return to the Documents and Media library's Home folder. 
 
-3. Click *Save*.
+2.  Click the *Add* icon 
+    (![Add](../../../images/icon-add.png)) at the bottom-right of the page and 
+    select *Folder*. 
 
-Back in the main Documents and Media page, you now have a folder available. 
-Folders can be used for basic organization, and also for managing access to 
-files through permissions.
+3.  Name the folder *Web Content Images*, and give it the description *Images 
+    used in Lunar Resort Web Content*. 
 
-Let's add another folder to go with the other images you uploaded.
+4.  Click *Save*. This returns you to the Documents and Media library's Home 
+    folder, where your new folder is now available. 
 
-1. Go back to the root folder of Documents and Media.
+5.  Repeat the steps above to add a folder named *Frontpage Images* to the Home 
+    folder. 
 
-2. Repeat the steps from above to add another Folder.
-
-3. Name the folder *Frontpage Images*.
+Sweet! The Lunar Resort's Documents and Media library now contains two folders. 
+You'll use them to organize images next. 
 
 ## Organizing Media
 
-To add files to folders, select the files that you want to move using, and drag 
-them to the folder. Do that now:
+Before moving your files into the new folders, it's important to know that you 
+can move files that are currently in use, without issue. For example, if a piece 
+of web content uses an image, and you move that image to a different Documents 
+and Media folder, you don't need to update that web content with the image's new 
+location. @product@ maintains such file connections for you. 
 
-1. Check the boxes for the `lunar-resort.png`, `space.png`, and 
-    `space-program.png` currently in the root folder of the Documents
-    and Media library.
-    
-2. Drag and drop the files to the folder you created.
+Follow these steps to move files to your new folders: 
 
-![Figure x: Dragging files into a folder.](../../../images/001-drag-files.png)
+1.  Return to the Documents and Media library's Home folder and check the boxes 
+    on the images `lunar-resort.png`, `space.png`, and `space-program.png`. 
 
-3. On the next screen, you can change which files are included or their 
-    destination, leave everything the same and click *Move*.
+2.  Drag and drop the selected images to the Web Content Images folder. 
 
-$$$
+    ![Figure x: The Documents and Media library lets you drag and drop files into a folder.](../../../images/001-drag-files.png)
 
-Note: You just moved some files that were currently in use, so you might be 
-concerned that you'll need to update any references. Liferay keeps all of those
-connections up to date behind the scenes, so you'll never need to update web
-content because you moved an image.
+3.  The next screen lets you review and confirm the move. It also lets you 
+    change which files are included, and their destination. Leave the default 
+    selections and click *Move*. 
 
-$$$
+4.  Repeat these steps to move the Home folder's remaining files to the 
+    *Frontpage Images* folder. 
 
-4. Repeat these steps to add the remaining files in the root folder to 
-    *Frontpage Images*.
-    
-    
+Well done! Now your Documents and Media library contains the images you need for 
+creating more content. You also learned how to upload and manage files in 
+Documents and Media. Next, you'll learn about more ways to publish content. 
