@@ -280,29 +280,40 @@ click *Save*. Now Liferay can perform many types of document conversions.
 
 ### ImageMagick configuration [](id=imagemagick-configuration)
 
-Install the correct version of [ImageMagick](http://www.imagemagick.org) for
-your operating system. It should include the installation of Ghostscript. Then
-configure Liferay to use ImageMagick either in `portal-ext.properties` or
-from the Control Panel. To enable ImageMagick in your `portal-ext.properties`
-file, add the following lines and make sure the search path points to the
-directories for the ImageMagick and Ghostscript executables. You may also need
-to configure the path for fonts used by Ghostscript when in Mac or Unix
-environments.
+Before configuring ImageMagick to generate image and PDF previews in @product@,
+install it and its dependency, Ghostscript. This differs by operating system: on
+Linux, both are likely already installed. On Mac, they may be installed. On
+Windows, it's likely they're not already installed. 
+
+1.  Download and install [*ImageMagick*](http://www.imagemagick.org).
+
+2.  Download and install [*Ghostscript*](http://www.ghostscript.com).
+
+Once installed, enable ImageMagick through the Control Panel or a
+`portal-ext.properties` file. If using `portal-ext.properties`, add the
+following lines and make sure the search path points to the directories
+containing the ImageMagick and Ghostscript executables. You may also need to
+configure the path for fonts used by Ghostscript when in Mac or Unix
+environments
 
     imagemagick.enabled=true
     imagemagick.global.search.path[apple]=/opt/local/bin:/opt/local/share/ghostscript/fonts:/opt/local/share/fonts/urw-fonts
     imagemagick.global.search.path[unix]=/usr/local/bin:/usr/local/share/ghostscript/fonts:/usr/local/share/fonts/urw-fonts
     imagemagick.global.search.path[windows]=C:\\Program Files\\ImageMagick
 
-To enable ImageMagick from the Control Panel, navigate to the *Server
-Administration* &rarr; *External Services* page, check the *Enabled* checkbox
-for ImageMagick and verify the paths to the ImageMagick and Ghostscript
-executables are correct.
+To enable ImageMagick from the Control Panel:
 
-Note that some older versions of ImageMagick are unable to properly run with
-Liferay, so update to the latest version. To check for the latest ImageMagick
-versions, visit [ImageMagick's
-website](http://www.imagemagick.org/script/binary-releases.php).
+1.  Navigate to the *Server Administration* &rarr; *External Services* page. 
+
+2.  Check *Enabled* for ImageMagick and verify the paths to the 
+    ImageMagick and Ghostscript executables are correct.
+
+Some older versions of ImageMagick don't run properly with Liferay. If
+this is the case, update to the latest version (ImageMagick 6.7.9-6 2012-09-25
+Q16 or later). To check for the latest ImageMagick versions, visit
+[ImageMagick's website](http://www.imagemagick.org/script/binary-releases.php).
+See [LPS-30291](http://issues.liferay.com/browse/LPS-30291) for information on
+efforts to identify incompatible application versions with Liferay.
 
 ### Xuggler configuration [](id=xuggler-configuration)
 
