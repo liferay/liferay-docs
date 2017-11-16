@@ -413,9 +413,9 @@ The `FooLocalService` interface in the API module contains these methods:
 
 The `FooLocalServiceBaseImpl` class in the service module implements each of
 these methods. See
-[here](https://github.com/liferay/liferay-blade-samples/blob/master/gradle/apps/service-builder/foo-api/src/main/java/com/liferay/blade/samples/servicebuilder/service/FooLocalService.java#L156-L166)
+[here](https://github.com/liferay/liferay-blade-samples/blob/master/gradle/apps/service-builder/basic/basic-api/src/main/java/com/liferay/blade/samples/servicebuilder/service/FooLocalService.java#L156-L166)
 and
-[here](https://github.com/liferay/liferay-blade-samples/blob/master/gradle/apps/service-builder/foo-service/src/main/java/com/liferay/blade/samples/servicebuilder/service/base/FooLocalServiceBaseImpl.java#L247-L330)
+[here](https://github.com/liferay/liferay-blade-samples/blob/master/gradle/apps/service-builder/basic/basic-service/src/main/java/com/liferay/blade/samples/servicebuilder/service/base/FooLocalServiceBaseImpl.java#L247-L330)
 for details.
 
 The implementation of `FooLocalService.dynamicQuery()` uses

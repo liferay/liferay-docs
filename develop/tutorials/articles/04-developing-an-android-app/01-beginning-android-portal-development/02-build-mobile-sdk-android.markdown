@@ -19,7 +19,7 @@ can use to build your own Mobile SDKs. For the builder to generate the classes
 that can call a non-core app's remote services, those services must be available 
 and accompanied by a Web Service Deployment Descriptor (WSDD). To learn how the 
 Guestbook portlet's remote services and WSDD were generated, see the section 
-[Creating Your App's Web Services](/develop/tutorials/-/knowledge_base/7-0/creating-your-apps-web-services) 
+[Generating Web Services](/develop/tutorials/-/knowledge_base/7-0/generating-web-services) 
 in the web application Learning Path. Since the Guestbook portlet's web services 
 already exist, you don't need to generate them. Just remember that you must 
 generate web services when developing your own portlets. 

@@ -190,6 +190,10 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 
 		assetEntryLocalService.deleteEntry(assetEntry);
 
+		workflowInstanceLinkLocalService.deleteWorkflowInstanceLinks(
+			guestbook.getCompanyId(), guestbook.getGroupId(),
+			Guestbook.class.getName(), guestbook.getGuestbookId());
+
 		return guestbook;
 	}
 
