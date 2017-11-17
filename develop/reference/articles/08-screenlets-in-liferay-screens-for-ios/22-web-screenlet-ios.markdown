@@ -36,38 +36,50 @@ The Default Theme uses an iOS `WKWebView` for displaying the web page.
 
 ## Configuration [](id=configuration)
 
-Web Screenlet has a `WebScreenletConfigurationBuilder` object that lets you 
-supply the parameters that the Screenlet needs to work. In the view controller 
-that uses the Screenlet, you must create this object and set it to the Screenlet 
-instance before calling the Screenlet's `load` method. You create the 
-configuration object using the constructor 
-`WebScreenletConfigurationBuilder(<url>)`, where `<url>` is the web page's URL 
-string. 
-
-The resulting `WebScreenletConfigurationBuilder` object has the following 
-methods, which let you supply the described configuration parameters: 
+Web Screenlet has `WebScreenletConfiguration` and 
+`WebScreenletConfigurationBuilder` objects that you can use together to supply 
+the parameters that the Screenlet needs to work. 
+`WebScreenletConfigurationBuilder` has the following methods, which let you 
+supply the described configuration parameters: 
 
 | Method | Returns | Explanation |
 |-----------|-----------|-------------| 
 | `addJs(localFile: String)` | `WebScreenletConfigurationBuilder` | Adds a local JavaScript file with the supplied filename. |
 | `addCss(localFile: String)` | `WebScreenletConfigurationBuilder` | Adds a local CSS file with the supplied filename. |
-| `addJs(url: String)` | `WebScreenletConfigurationBuilder` | Adds a CSS file from the supplied URL. |
-| `addCss(url: String)` | `WebScreenletConfigurationBuilder` | Adds a JavaScript file from the supplied URL. |
+| `addJs(url: String)` | `WebScreenletConfigurationBuilder` | Adds a JavaScript file from the supplied URL. |
+| `addCss(url: String)` | `WebScreenletConfigurationBuilder` | Adds a CSS file from the supplied URL. |
 | `set(webType: WebType)` | `WebScreenletConfigurationBuilder` | Sets the [`WebType`](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-ios#webtype). |
 | `enableCordova()` | `WebScreenletConfigurationBuilder` | Enables Cordova inside the Web Screenlet. |
 | `load()` | `WebScreenletConfiguration` | Returns the `WebScreenletConfiguration` object that you can set to the Screenlet instance. |
 
 +$$$
 
-**Note:** If you want to add comments into the scripts use the `/**/` notation. 
+**Note:** If you want to add comments in the scripts, use the `/**/` notation. 
 
 $$$
 
-After setting the configuration parameters, you must set the 
-`WebScreenletConfiguration` object to the Screenlet's `configuration` property, 
-then call the Screenlet's `load()` method. Here's an example snippet from a view 
-controller in which the Web Screenlet instance is `webScreenlet`, and the 
-`WebScreenletConfiguration` object is `webScreenletConfiguration`: 
+To use `WebScreenletConfiguration` and `WebScreenletConfigurationBuilder` to set 
+the parameters you need for Web Screenlet, follow these steps in a view 
+controller that uses Web Screenlet: 
+
+1.  Use the constructor `WebScreenletConfigurationBuilder(<url>)`, where `<url>` 
+    is the web page's URL string, to create a `WebScreenletConfigurationBuilder` 
+    object. 
+
+2.  Call the `WebScreenletConfigurationBuilder` methods to set the parameters 
+    that you need. 
+
+3.  Call the `WebScreenletConfigurationBuilder` instance's `load()` method, 
+    which returns a `WebScreenletConfiguration` object. 
+
+4.  Set the `WebScreenletConfiguration` object to the Web Screenlet instance's 
+    `configuration` property. 
+
+5.  Call the Web Screenlet instance's `load()` method. 
+
+Here's an example snippet of these steps from a view controller in which the Web 
+Screenlet instance is `webScreenlet`, and the `WebScreenletConfiguration` object 
+is `webScreenletConfiguration`: 
 
     ...
     @IBOutlet weak var webScreenlet: WebScreenlet!
@@ -102,7 +114,7 @@ controller in which the Web Screenlet instance is `webScreenlet`, and the
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
-| `autoLoad` | `boolean` | Whether the page automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
+| `autoLoad` | `boolean` | Whether to load the page automatically when the Screenlet appears in the app's UI. The default value is `true`. |
 | `loggingEnabled` | `boolean` | Whether logging is enabled. |
 | `isScrollEnabled` | `boolean` | Whether to enable scrolling on the page inside the Screenlet. |
 
