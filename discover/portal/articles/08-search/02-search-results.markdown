@@ -7,11 +7,14 @@ to them at the top of a list of other extremely relevant hits. Like this:
 ![Figure 1: The goal is to return the perfect results to users searching your site.](../../images/search-results-perfect.png)
 
 The developers of each asset control much about how the asset's information is
-stored in the search engine (this process is called *indexing*), and how its
-information is searched and returned in the search results. Developers who
-dislike how a particular asset behaves in search can use an *Indexer Post
-Processor* to modify the asset's indexing behavior, and how search queries are
-constructed to look up the assets in @product@.
+stored in the search engine (this process is called
+[*indexing*](/develop/tutorials/-/knowledge_base/7-0/understanding-search-and-indexing)),
+and how its information is searched and returned in the search results.
+Developers who dislike how a particular asset behaves in search can use an
+[*Indexer Post
+Processor*](/develop/reference/-/knowledge_base/7-0/indexer-post-processor) to
+modify the asset's indexing behavior, and how search queries are constructed to
+look up the assets in @product@.
 
 There are also ways to influence the way search results are displayed from the
 user interface. This article covers the following topics:
@@ -24,10 +27,9 @@ user interface. This article covers the following topics:
 - [Search results summaries](#result-summaries)
 - [Search term highlighting](#highlighting)
 
-Search results, called *hits* in the backend search infrastructure, are
-philosophical entities, really. To some, they're the end of the road, the
-destination. To others, they're just the beginning of the journey. Either way,
-you can configure how they're displayed.
+Search results, called *hits* in the backend search infrastructure, are the end
+of the road, the destination, to some users. To others, they're just the
+beginning of the journey. Either way, you can configure how they're displayed.
 
 ## Configuring Results Display [](id=configuring-results-display)
 
@@ -169,7 +171,7 @@ to this question must be *yes*:
 
 If the user has VIEW permission on an asset, then the asset is returned in the
 search results.
-<!-- What about assets who have setPermissionAware(false), like WikiNode-->
+<!-- What about assets whose indexers have setPermissionAware(false), like WikiNode-->
 
 ## Search and Staging [](id=search-and-staging)
 
@@ -242,7 +244,7 @@ Highlighting is a helpful visual cue that hints at why the result is returned,
 but beware. A hit can score well, and thus be returned near the top of the
 results, without having any highlights. That's because not all indexed fields
 appear in the summary. Consider a user named Arthur C. Clarke. He has an email
-address of acc@authors.org, which is searchable. Because results summaries for
+address of *acc@authors.org*, which is searchable. Because results summaries for
 users only contain the full name of the user, searching for Mr. Clarke by his
 email address returns the user, but no term is highlighted. 
 
