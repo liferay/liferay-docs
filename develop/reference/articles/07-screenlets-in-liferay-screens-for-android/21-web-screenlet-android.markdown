@@ -133,7 +133,7 @@ is `configuration`. Also note that this example enables Cordova via a
 ## Listener [](id=listener)
 
 Web Screenlet delegates some events to an object or class that 
-implements its  
+implements its 
 [`WebListener` interface](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/web/WebListener.java). 
 This interface extends the 
 [`BaseCacheListener` interface](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/interactor/listener/BaseCacheListener.java). 
