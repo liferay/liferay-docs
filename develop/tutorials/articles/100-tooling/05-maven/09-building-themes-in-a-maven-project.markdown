@@ -171,10 +171,10 @@ build a theme. You'll learn how to do this next.
 6.  Configure the properties for your project in its `pom.xml` file:
 
         <properties>
-            <com.liferay.css.builder.version>1.0.28</com.liferay.css.builder.version>
+            <com.liferay.css.builder.version>2.0.1</com.liferay.css.builder.version>
             <com.liferay.frontend.css.common.version>2.0.4</com.liferay.frontend.css.common.version>
-            <com.liferay.frontend.theme.styled.version>2.0.27</com.liferay.frontend.theme.styled.version>
-            <com.liferay.frontend.theme.unstyled.version>2.1.14</com.liferay.frontend.theme.unstyled.version>
+            <com.liferay.frontend.theme.styled.version>2.0.28</com.liferay.frontend.theme.styled.version>
+            <com.liferay.frontend.theme.unstyled.version>2.2.5</com.liferay.frontend.theme.unstyled.version>
             <com.liferay.portal.tools.theme.builder.version>1.1.4</com.liferay.portal.tools.theme.builder.version>
         </properties>
 

@@ -16,7 +16,7 @@ Your custom property values and actions are live.
 
 ## Related Topics [](id=related-topics)
 
-[Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
 
 [Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
 

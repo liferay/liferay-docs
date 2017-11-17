@@ -16,7 +16,7 @@ To use the plugin, include it in your `pom.xml` file:
             <plugin>
                 <groupId>com.liferay</groupId>
                 <artifactId>com.liferay.portal.tools.service.builder</artifactId>
-                <version>1.0.160</version>
+                <version>1.0.174</version>
                 <configuration>
                 </configuration>
             </plugin>

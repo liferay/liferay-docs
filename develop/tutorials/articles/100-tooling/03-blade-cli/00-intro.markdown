@@ -17,7 +17,7 @@ sub-commands are callable in the Blade CLI environment:
 - *help*: Gives help on a specific command.
 - *init*: Initializes a new Liferay Workspace.
 - *install*: Installs a bundle into Liferay's module framework.
-- *open*: Opens or imports a file or project in Liferay IDE.
+- *open*: Opens or imports a file or project in Liferay @ide@.
 - *samples*: Generates a sample project.
 - *server*: Starts or stops server defined by your Liferay project.
 - *sh*: Connects to Liferay and executes Gogo command and returns output.

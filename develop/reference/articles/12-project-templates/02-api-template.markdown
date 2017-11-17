@@ -15,6 +15,9 @@ or
         -Dpackage=[packageName] \
         -DclassName=[className]
 
+You can also insert the `-b maven` parameter in the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `api`. The `api` template creates a
 simple `api` module with an empty public interface. For example, suppose you
 want to create an API project called `my-api-project` with a package name of

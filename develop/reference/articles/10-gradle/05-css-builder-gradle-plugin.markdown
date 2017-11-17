@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "2.1.5"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "2.1.6"
     }
 
     repositories {
@@ -109,6 +109,10 @@ JDK, you must use the fallback Ruby compiler. You can do this two ways:
 - Otherwise, set `buildCSS.sassCompilerClassName='ruby'` in the project's
   `build.gradle` file.
 
+The `sass.compiler.class.name=ruby` Gradle property only works for modules, so
+if you're using the Ruby compiler in a WAR project (e.g., theme), you must use
+the second option.
+
 Be aware that the Ruby-based compiler doesn't perform as well as the native
 compiler, so expect longer compile times.
 
@@ -140,7 +144,7 @@ manually adding a dependency to the `cssBuilder` configuration:
 
 ```gradle
 dependencies {
-    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "2.0.0"
+    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "2.0.1"
 }
 ```
 

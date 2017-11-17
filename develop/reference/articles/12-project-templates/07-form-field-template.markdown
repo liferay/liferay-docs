@@ -15,6 +15,9 @@ or
         -Dpackage=[packageName] \
         -DclassName=[className]
 
+You can also insert the `-b maven` parameter in the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `form-field`. Suppose you want to
 create a form field project called `my-form-field-project` with a package name
 of `com.liferay.docs.form.field` and a class name prefix of `MyFormField`. You

@@ -138,6 +138,14 @@ Now your Service Builder services use the data source. You can
 [use the services in your business logic](/develop/tutorials/-/knowledge_base/7-0/business-logic-with-service-builder)
 as you always have regardless of the underlying data source. 
 
++$$$
+
+**Note**: Only one data source can be used in a Service Builder module.  To use
+three different external data sources with Service Builder, for example, you
+must create three different Service Builder modules, one for each data source.
+
+$$$
+
 ## Related Topics [](id=related-topics)
 
 [Connecting to JNDI Data Sources](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi)

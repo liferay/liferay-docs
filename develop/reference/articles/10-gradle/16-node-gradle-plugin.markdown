@@ -280,7 +280,7 @@ Property Name | Type | Default Value | Description
 `npmUserName` | `String` | `null` | The name of the npmjs.com user that publishes the package.
 `overriddenPackageJsonKeys` | `Set<String>` | `[]` | The field values to override in the generated `package.json` file.
  
- #### Task Methods
+#### Task Methods [](id=task-methods-1)
  
  Method | Description
  ------ | -----------
