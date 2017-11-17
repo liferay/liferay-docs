@@ -72,7 +72,11 @@ controller in which the Web Screenlet instance is `webScreenlet`, and the
     ...
     @IBOutlet weak var webScreenlet: WebScreenlet!
     ...
-    let webScreenletConfiguration = WebScreenletConfigurationBuilder(url: "/web/westeros-hybrid/companynews").addCss(localFile: "blogs").addJs(localFile: "blogs").load()
+    let webScreenletConfiguration = 
+            WebScreenletConfigurationBuilder(url: "/web/westeros-hybrid/companynews")
+                .addCss(localFile: "blogs")
+                .addJs(localFile: "blogs")
+                .load()
     webScreenlet.configuration = webScreenletConfiguration
     webScreenlet.load()
     webScreenlet.delegate = self
