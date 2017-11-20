@@ -20,7 +20,9 @@ services are built.
 3. Click the *+* button to the right of the list of finders and name the new
    finder *Name* and give it the return type *Collection*. 
 
-4. Click the *Build Services* button from the top right of the screen. By doing
+4. Expand *Name* finder and click on *Finder Columns* and add *name* column.
+
+5. Click the *Build Services* button from the top right of the screen. By doing
    this, you'll rebuild the services you built previously. 
 
 The new finder you created will aid in finding a guestbook table by name,
