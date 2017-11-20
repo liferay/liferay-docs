@@ -1,10 +1,10 @@
 # Measuring Social Activity [](id=measuring-social-activity)
 
 When you have a lot of user interaction on your web site, it can be helpful to
-try to separate the signal from the noise. Liferay contains a lot of
+try to separate the signal from the noise. @product@ contains a lot of
 applications which end users can use to communicate with each other and provide
 information. Some of this information is good and helpful and some of it can be
-rather unhelpful. Using Liferay's Social Activity feature helps show which
+rather unhelpful. Using @product@'s Social Activity feature helps show which
 users are making real, valuable contributions.
 
 ![Figure 1: The Social Activity page of the Control Panel allows you to enable social activity for assets and specify points for participation and contributions.](../../../images/social-activity.png)
@@ -88,4 +88,3 @@ community-created content. It allows you easily to recognize users who are major
 contributors, and it indicates to new users whose advice may be most
 trustworthy. Social Activity is easy to set up and can be configured differently
 for each site, increasing the flexibility of your website.
-

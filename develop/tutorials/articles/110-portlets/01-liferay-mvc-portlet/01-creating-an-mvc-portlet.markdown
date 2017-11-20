@@ -340,7 +340,7 @@ organizing your imports in one JSP file, to configuring URLs that direct
 processing to your code in the portlet class. 
 
 It's a good practice to put all your Java imports, tag library declarations, and
-variable initializations into an `init.jsp` file. If you use Liferay IDE to
+variable initializations into an `init.jsp` file. If you use Liferay @ide@ to
 create your Web module, these taglib declarations and initializations are
 automatically added to your `init.jsp`:
 

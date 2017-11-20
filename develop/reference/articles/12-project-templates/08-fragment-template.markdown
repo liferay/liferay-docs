@@ -20,6 +20,9 @@ or
         -Dpackage=[packageName] \
         -DclassName=[className]
 
+You can also insert the `-b maven` parameter in the Blade command to generate a
+Maven project using Blade CLI.
+
 The template for this kind of project is `fragment`. Suppose you want to create
 a fragment project called `my-fragment-project` with a host bundle symbolic name
 of `com.liferay.login.web` and host bundle version of `1.0.0`. You could run the

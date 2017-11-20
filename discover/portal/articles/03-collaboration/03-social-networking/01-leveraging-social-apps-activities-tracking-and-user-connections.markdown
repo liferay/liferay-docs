@@ -1,43 +1,68 @@
 # Leveraging Social Applications, Activities Tracking, and User Connections [](id=leveraging-social-applications-activities-tracking-and-user-connections)
 
-Liferay has many apps available for social interaction and collaboration.
-Some of these apps are designed to help you work together as a team, while
-others are designed to foster social interactions between team members at your
+@product@ has many apps available for social interaction and collaboration. Some
+of these apps are designed to help you work together as a team, while others are 
+designed to foster social interactions between team members at your 
 organization.
 
-Some of the social networking apps should be used on your site's public
-pages, while others should be used as part of a user's personal site. As you
-might expect, the apps intended for a personal page foster simple social
-interactions, while the ones that can be placed on any site help teams interact
-and improve productivity.
+Out-of-the box, @product@ includes these social apps: 
+
+- Activities
+- Group Statistics
+- User Statistics
+- Requests
+
+The following social apps are available in Liferay's Social Networking app on 
+Liferay Marketplace: 
+
+- Summary
+- Wall
+- Friends
+- Members
+- Friends' Activities
+- Members' Activities
+- Meetups
+- Maps
+
+Liferay's Social Networking app is available for both Liferay Portal CE and 
+Liferay DXP: 
+
+- [Liferay CE Social Networking](https://web.liferay.com/marketplace/-/mp/application/15196233)
+- [Liferay Social Networking (DXP)](https://web.liferay.com/marketplace/-/mp/application/15188348)
+
+Some of the social networking apps should be used on your site's public pages, 
+while others should be used as part of a user's personal site. As you might 
+expect, the apps intended for a personal page foster simple social interactions, 
+while the ones that can be placed on any site help teams interact and improve 
+productivity. 
 
 Unless otherwise noted, these apps have minimal configuration options. Some of
 them provide additional options for customizing feed lengths or display styles.
 Additional styling changes can be made through custom CSS.
 
-## Liferay's Social Tools in Action [](id=liferays-social-tools-in-action)
+## @product@'s Social Tools in Action [](id=liferays-social-tools-in-action)
 
-To get started with Liferay's social features, you first want to add social apps
-to your users' public personal pages. You can set things up any way you want,
-but for simplicity's sake, this example shows something that's fairly similar to
-the original Facebook layout. You'll give your users a way to send and receive
-connection request using their Profile and Dashboard pages. 
+To get started with @product@'s social features, you first want to add social 
+apps to your users' public personal pages. You can set things up any way you 
+want, but for simplicity's sake, this example shows something that's fairly 
+similar to the original Facebook layout. You'll give your users a way to send 
+and receive connection request using their Profile and Dashboard pages. 
 
 ### Setting up Users' Personal Pages [](id=setting-up-users-personal-pages)
 
-Before you start adding apps to pages, you should configure Liferay so that
+Before you start adding apps to pages, you should configure @product@ so that
 everyone (or some subset of everyone) has the same social features. You can do
 this in two ways: 
 
-**User Groups:** You can create a user group site by placing users into a group.
-The pages and apps defined by the user group site are copied to members'
-personal sites. This lets you control whether users can modify pages, and you can
-push changes out to users in the future. Once the site template is assigned to a
-user group, you can make it so all users are members of this group. The
-advantage of this is that it can be managed entirely through the interface, and
-it's easy to configure. If you base your user group's site on a template, you
-can use the *Enable propagation of changes from the site template* option to
-manage all user pages by changing the template. This is the recommended way to
+**User Groups:** You can create a user group site by placing users into a group. 
+The pages and apps defined by the user group site are copied to members' 
+personal sites. This lets you control whether users can modify pages, and you 
+can push changes out to users in the future. Once the site template is assigned 
+to a user group, you can make it so all users are members of this group. The 
+advantage of this is that it can be managed entirely through the interface, and 
+it's easy to configure. If you base your user group's site on a template, you 
+can use the *Enable propagation of changes from the site template* option to 
+manage all user pages by changing the template. This is the recommended way to 
 manage personal pages across the portal. 
 
 **Portal Properties Configuration:** The legacy way to do this is with the
@@ -52,7 +77,8 @@ Private Layouts* and *Default User Public Layouts* in the [properties documentat
 Because it's the recommended method, use the user group method to create the
 layouts. As an administrator, go to the Control Panel and select
 *Site Templates* from under the *Sites* section. Click *Add* (![Add](../../../images/icon-add.png)) 
-and fill out the form. Call your new site template *Social Layout Public*. Click *Save*.
+and fill out the form. Call your new site template *Social Layout Public*. Click 
+*Save*.
 
 ![Figure 1: You can give your site template a custom name and description and also specify several configuration settings..](../../../images/social-networking-site-template.png)
 
@@ -114,8 +140,8 @@ There are many ways that social networks connect users. These generally involve
 some kind of mutual interest or experience. On a site like Facebook, you can
 connect with people from school, from work or from other personal connections.
 On a music based networking site like Last.fm, you can connect with people who
-have similar tastes to yours. With Liferay's social networking, collaboration is
-the key to connection. 
+have similar tastes to yours. With @product@'s social networking, collaboration 
+is the key to connection. 
 
 The Site Members Directory can provide a simple way for users to connect. If you
 have a site dedicated to Lunar Resort astronauts, you can place a Site Members
@@ -142,31 +168,20 @@ of our connection being forced or arbitrary, we've connected based on our direct
 interaction and share a common interest--just like people did before they had
 the Internet.
 
+## Using @product@'s Social Apps [](id=using-the-core-liferay-social-apps)
 
-## Using the Core Liferay Social Apps [](id=using-the-core-liferay-social-apps)
+@product@'s social apps provide a default implementation of @product@'s social 
+API. However, this only scratches the surface of the platform's capability. It's 
+also possible to develop your own implementation of @product@'s social API to 
+use different social relationships. Please refer to 
+[the @product@ Developer Tutorials](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development) 
+or the  [Javadocs](http://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/social/kernel/service/package-summary.html)
+for information about @product@'s social API. 
 
-Out-of-the box, Liferay provides seven social apps:
-
-- Activities
-- Group Statistics
-- Meetups 
-- Requests
-- Summary
-- User Statistics
-- Wall
-
-These apps provide a default implementation of Liferay's social API. You may use
-them out of the box, but they really only scratch the surface of the platform's
-capability. It's also possible to develop your own implementation of Liferay's
-social API to use different social relationships. Please refer to the [Liferay
-Developer Tutorials](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development) 
-or the [Javadocs](http://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/social/kernel/service/package-summary.html)
-for information about Liferay's social API. 
-
-Probably the core Social application is Activities. It displays information
+The core social application in @product@ is Activities. It displays information
 about user activity on the site where you added the app. User activities tracked
 include updates to the Documents and Media library, blog posts, message boards
-posts, wiki pages, and bookmarks.  Liferay also tracks information about web
+posts, wiki pages, and bookmarks. @product@ also tracks information about web
 content but only displays this information if the logged-in user is a site
 administrator. This application provides a summary of recent site activity. You
 can use it on a site's public or private pages to show what site members have
@@ -179,7 +194,7 @@ activities of a single user.
 Note that the app provides links to the assets listed in the feed.  The links to
 the assets won't work, however, unless there's a way to display the assets on
 the page. For example, suppose that the user Joe Bloggs uploaded a document
-called *Lunar Resort happenings for August* to a site. An Activites app on that
+called *Lunar Resort happenings for August* to a site. An Activities app on that
 site would show a link to the *Lunar Resort happenings for August* document.
 
 In addition to the Activities application, there are several other social
@@ -196,17 +211,18 @@ meetup, which lets the organizer keep track of who's coming.
 The options for creating a meetup are essentially the same as those for creating
 a calendar event.
 
-The Wall application provides a place for users to leave messages on other users'
-profiles. The messages can only be plain text as no formatting or HTML is
+The Wall application provides a place for users to leave messages on other 
+users' profiles. The messages can only be plain text as no formatting or HTML is
 supported. Once a post is added to a user's wall, that user can delete it
 or respond to it with a quick link to post on the original poster's wall.
 
-"Friend" is only the default social relationship as implemented by Liferay's
+*Friend* is only the default social relationship as implemented by @product@'s
 social portlets. You can design things so that users are automatically connected
 through Site and Organization membership. And there are many other relationship
 types beyond Friend: your developers can take advantage of these by using
-Liferay's social API. 
+@product@'s social API. 
 
-Now that you've got all these social applications running on your system, you
+Now that you have all these social applications running on your system, you 
 might wonder: how can I measure social interaction? How do I identify the best
-contributors to my site? Liferay has an answer: social activity measurements.
+contributors to my site? @product@ has the answer: social activity measurements. 
+This is discussed next. 
