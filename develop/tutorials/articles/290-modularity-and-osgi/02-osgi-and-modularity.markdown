@@ -24,7 +24,7 @@ benefits to modular development on DXP:
 - You can use your existing developer tools and environment to develop modules. 
 
 There are many benefits to modular software development with OSGi, and we can
-only scratch the surface here. Once you start developing modules, you may find
+only scratch the surface here. Once you start developing modules, you might find
 it hard to go back to developing any other way. 
 
 ## Modules [](id=modules)
@@ -35,7 +35,8 @@ structure are shown: you can
 [create modules](/develop/tutorials/-/knowledge_base/7-0/starting-module-development) 
 like these anytime. 
 
-These modules collectively provide a command that greets the user with the string he or she passes in.
+These modules collectively provide a command that takes a String and uses it in
+a greeting.
 
 ### API [](id=api)
 
