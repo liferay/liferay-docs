@@ -70,13 +70,14 @@ template:
         }
         </script>
     
-7.  Now you'll add a `div` named `popup` that operates on the `bookNow` function 
-    when clicked. This `div` retrieves the `buttontext` from the structure, and 
-    sets the `popuptext` to display in the function. Everything is namespaced
-    so that you can create the styles accordingly. Add this code now, **above** 
-    the `bookNow` function: 
+7.  Now you'll add a `div` named `popup` which contains a `span` named 
+    `popuptext` that operates on the `bookNow` function 
+    when clicked. This `span` retrieves the `buttontext` from the structure, 
+    and sets the `popuptext` to display in the function. Everything is 
+    namespaced so that you can create the styles accordingly. Add this code now,
+     **above** the `bookNow` function: 
 
-        <div class="main" onclick="bookNow()">
+        <div class="popup" onclick="bookNow()">
           <button>${buttontext.getData()}</button>
           <span class="popuptext" id="myPopup">You have successfully booked your trip!    <br />  See you on the moon!</span>
         </div>
@@ -89,7 +90,7 @@ template:
     **above** the existing code in the editor:
 
         <style>
-          .main {
+        .popup {
             text-align: center;
             width: 100%;
             margin: auto;
@@ -98,6 +99,7 @@ template:
             height: 350px;
             background-image: url("${bgimage.getData()}");
         }
+
         button {
             position: relative;
             top: 110px;
@@ -110,6 +112,7 @@ template:
             background-color: #65b6f0;
             color: white;
         }
+
         .popup .popuptext {
             visibility: hidden;
             width: 450px;
@@ -125,6 +128,7 @@ template:
             margin-left: -220px;
             font-size: 150%;
         }
+
         .popup .show {
             visibility: visible;
         }
@@ -151,7 +155,8 @@ now:
 
 4.  Enter *Book Now!* for the button text. 
 
-5.  For the image, select the `booking-image.png` that you uploaded earlier. 
+5.  For the image, click *Select* and then upload and *Add* select the 
+    `booking-image.png`. 
 <!-- No instructions earlier for uploading this image -->
 
 6.  Click *Publish*.
