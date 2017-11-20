@@ -126,8 +126,22 @@ methods:
 
 -   `- onWebLoad:url:`: Called when the Screenlet loads the page. 
 
+        func onWebLoad(_ screenlet: WebScreenlet, url: String) {
+            ...
+        }
+
 -   `- screenlet:onScriptMessageNamespace:onScriptMessage:`: Called when the 
     `WKWebView` sends a message. 
 
+        func screenlet(_ screenlet: WebScreenlet,
+                   onScriptMessageNamespace namespace: String,
+                   onScriptMessage message: String) {
+            ...
+        }
+
 -   `- screenlet:onError:`: Called when an error occurs in the process. The 
     `NSError` object describes the error. 
+
+        func screenlet(_ screenlet: WebScreenlet, onError error: NSError) {
+            ...
+        }
