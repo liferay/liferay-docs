@@ -20,8 +20,8 @@ your iOS app.
 
 ## Inserting Web Screenlet in Your App
 
-The process for inserting Web Screenlet in your app is the same as that of 
-[any Screenlet](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps#inserting-and-configuring-screenlets-in-ios-apps): 
+The process for inserting Web Screenlet in your app is the same as 
+[that of any Screenlet](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps#inserting-and-configuring-screenlets-in-ios-apps): 
 
 1.  In Interface Builder, insert a new view (`UIView`) in a new view controller. 
     This new view should be nested under the view controller's existing view. 
@@ -32,35 +32,142 @@ The process for inserting Web Screenlet in your app is the same as that of
 3.  Set any constraints that you want for the Screenlet in the scene. 
 
 The exact steps for configuring Web Screenlet, however, are unique to Web 
-Screenlet. You'll do this next. 
+Screenlet. First, you'll conform your view controller to Web Screenlet's 
+delegate protocol. 
 
-## Configuring Web Screenlet
+## Conforming to Web Screenlet's Delegate Protocol
 
 As with any Screenlet, you must conform the view controller's class to the 
 Screenlet's delegate protocol. For Web Screenlet, this means you must conform 
 the class of the view controller that contains it to the `WebScreenletDelegate` 
-protocol. 
+protocol. Follow these steps to do so: 
 
-<!-- Explain delegate methods -->
+1.  Import `LiferayScreens` and set your view controller to adopt the 
+    `WebScreenletDelegate` protocol: 
 
-    class ViewController: UIViewController, WebScreenletDelegate {
+        import UIKit
+        import LiferayScreens
 
-        ...
+        class ViewController: UIViewController, WebScreenletDelegate {...
+
+2.  Implement the `WebScreenletDelegate` method `onWebLoad(_:url:)`. Since this 
+    method is called when the Screenlet loads the page, how you implement it 
+    depends on what (if anything) you want to happen at that time. Its arguments 
+    are the `WebScreenlet` instance and the page URL. This example simply prints 
+    a message to the console indicating that the page was loaded: 
 
         func onWebLoad(_ screenlet: WebScreenlet, url: String) {
             // Called when the page is loaded
+            print("\(url) was just loaded")
         }
+
+3.  Implement the `WebScreenletDelegate` method `screenlet(_:onError:)`. This 
+    method is called when an error occurs loading the page, and therefore 
+    includes the `NSError` object. This lets you log or print the error, as well 
+    as perform any other processing you want to happen when an error occurs. For 
+    example, this implementation prints a message containing the error's 
+    description: 
 
         func screenlet(_ screenlet: WebScreenlet, onError error: NSError) {
-            //Called when an error occurs in the process. The `NSError` object describes the error
+            print("Failed to load the page: \(error.localizedDescription)")
         }
 
-        func screenlet(_ screenlet: WebScreenlet, 
-            onScriptMessageNamespace namespace: String, onScriptMessage message: String) {
-                //Called when we want to notify a message from the WKWebView used in the view
+4.  Implement the `WebScreenletDelegate` method 
+    `screenlet(_:onScriptMessageNamespace:onScriptMessage:)`. This method is 
+    called when 
+    [the `WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview) 
+    in the Screenlet sends a message. This method's arguments include the 
+    message's namespace and the message. How you implement this method depends 
+    on what you want to happen when the message is sent. For example, you could 
+    perform a segue and include the message as the segue's `sender`: 
+
+        func screenlet(_ screenlet: WebScreenlet,
+            onScriptMessageNamespace namespace: String,
+            onScriptMessage message: String) {
+
+            performSegue(withIdentifier: "detail", sender: message)
         }
 
-        ...
-    }
+5.  Get a reference to the Web Screenlet on your storyboard by using Interface 
+    Builder to create an outlet to it in your view controller. It's a best 
+    practice to name a Screenlet outlet after the Screenlet it references, or 
+    simply `screenlet`. Here's an example Web Screenlet outlet: 
 
-<!-- Get a Web Screenlet reference, then do the configuration from the ref -->
+        @IBOutlet weak var webScreenlet: WebScreenlet!
+
+6.  In the view controller's `viewDidLoad()` method, use the Web Screenlet 
+    reference you just created to set the view controller as the Screenlet's 
+    delegate. To do this, add the following line of code just below the 
+    `super.viewDidLoad()` call: 
+
+        self.webScreenlet?.delegate = self
+
+Next, you'll use the same Web Screenlet reference to set the Screenlet's 
+parameters. 
+
+## Setting Web Screenlet's Parameters
+
+Web Screenlet has `WebScreenletConfiguration` and 
+`WebScreenletConfigurationBuilder` objects that you can use together to supply 
+the parameters that the Screenlet needs to work. These parameters include the 
+URL of the page to load, and the location of any JavaScript or CSS files that 
+you want to use to customize the page. You'll set most of these parameters via 
+`WebScreenletConfigurationBuilder`'s methods. 
+
++$$$
+
+**Note:** For a full list of `WebScreenletConfigurationBuilder`'s methods, and a  description of each, see the table in 
+[the Configuration section](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-ios#configuration) 
+of Web Screenlet's reference doc. 
+
+$$$
+
+To use `WebScreenletConfiguration` and `WebScreenletConfigurationBuilder` to set 
+the parameters you need for Web Screenlet, follow these steps in the 
+`viewDidLoad()` method of a view controller that uses Web Screenlet: 
+
+1.  Use the constructor `WebScreenletConfigurationBuilder(<url>)`, where `<url>` 
+    is the web page's URL string, to create a `WebScreenletConfigurationBuilder` 
+    object. If the page is a @product@ page that requires authentication, then 
+    the user must be logged in via 
+    [Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios) 
+    or a `SessionContext` method, and you must provide a relative URL to the 
+    `WebScreenletConfigurationBuilder` constructor. For example, if the full 
+    URL to such a page is `http://your.liferay.instance/web/guest/blog`, then 
+    the URL you must supply to the constructor is `/web/guest/blog`. For any 
+    other page that doesn't require @product@ authentication, you must supply 
+    the full URL to the constructor. 
+
+2.  Call the `WebScreenletConfigurationBuilder` methods to set the parameters 
+    that you need. If the URL you supplied to the 
+    `WebScreenletConfigurationBuilder` constructor is to a page that doesn't 
+    require @product@ authentication, then you must call the method 
+    `set(webType: .other)`. 
+
+    +$$$
+
+    **Note:** The default `WebType` setting is `.liferayAuthenticated`, which 
+    is required to load @product@ pages that need authentication to access. If 
+    you need to set this manually, call `set(webType: .liferayAuthenticated)`.
+
+    $$$
+
+3.  Call the `WebScreenletConfigurationBuilder` instance's `load()` method, 
+    which returns a `WebScreenletConfiguration` object. 
+
+4.  Set the `WebScreenletConfiguration` object to the Web Screenlet instance's 
+    `configuration` property. 
+
+5.  Call the Web Screenlet instance's `load()` method. 
+
+Here's an example snippet of these steps from a view controller in which the Web 
+Screenlet instance is `webScreenlet`, and the `WebScreenletConfiguration` object 
+is `webScreenletConfiguration`: 
+
+    let webScreenletConfiguration = 
+            WebScreenletConfigurationBuilder(url: "/web/westeros-hybrid/companynews")
+                .addCss(localFile: "blogs")
+                .addJs(localFile: "blogs")
+                .load()
+    webScreenlet.configuration = webScreenletConfiguration
+    webScreenlet.load()
