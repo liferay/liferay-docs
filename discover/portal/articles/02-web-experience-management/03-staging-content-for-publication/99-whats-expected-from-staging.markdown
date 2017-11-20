@@ -15,6 +15,35 @@ three columns:
 
 Navigate to the entity section you want.
 
+## Application Display Template (ADT)
+
+The following table describes how entities characterized by an ADT are handled
+by the Staging framework.
+
+The related entities that apply to this table are listed below:
+
+- Asset Publisher
+- Blogs
+- Breadcrumb
+- Categories Navigation
+- Documents and Media
+- Language Selector
+- Navigation
+- RSS Publisher
+- Site Map
+- Tags Navigation
+- Wiki
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Any entity from list above | ADT is added to entity | The ADT is published. ADTs and their related entities are handled separately by Staging.
+|                            | Entity's ADT is modified | The ADT is changed and published.
+|                            | Entity's ADT is deleted | The ADT deletion is published, removing it from the live site.
+|                            | Existing ADT on live site is selected for entity | The entity portlet and its pages are published. If the page the entity resides on is published, its ADT is published too.
+|                            | ADT referenced from entity is updated | The ADT is marked as modified and published.
+|                            | ADT referenced from entity is deleted | The ADT is deleted on the live site and the entity falls back to the default template.
+|                            | Entity with ADT is removed from page | The ADT is unaffected and is removed with the entity when the page is published.
+
 ## Asset Publisher
 
 The following table describes how entities that are displayed by the Asset
