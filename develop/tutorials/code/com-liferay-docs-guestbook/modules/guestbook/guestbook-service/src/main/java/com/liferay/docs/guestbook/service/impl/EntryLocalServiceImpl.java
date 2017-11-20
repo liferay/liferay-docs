@@ -189,6 +189,10 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 
 		assetEntryLocalService.deleteEntry(assetEntry);
 
+		workflowInstanceLinkLocalService.deleteWorkflowInstanceLinks(
+			entry.getCompanyId(), entry.getGroupId(),
+			Entry.class.getName(), entry.getEntryId());
+
 		return entry;
 	}
 

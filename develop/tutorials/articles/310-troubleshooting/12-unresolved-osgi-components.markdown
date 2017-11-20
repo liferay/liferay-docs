@@ -13,14 +13,30 @@ and
 [Dependency Manager](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager.html) 
 are Apache Felix projects. 
 
+The troubleshooting instructions are divided into these sections:
+
+-   [Declarative Services Components](#declarative-services-components)
+    -   [Declarative Services Unsatisfied Component Scanner](#declarative-services-unsatisfied-component-scanner)
+    -   [ds:unsatisfied Command](#ds-unsatisfied-command)
+-   [Service Builder Components](#service-builder-components)
+    -   [Unavailable Component Scanner](#unavailable-component-scanner)
+    -   [ServiceProxyFactory](#serviceproxyfactory)
+
+## Declarative Services Components [](id=declarative-services-components)
+
 Start with DS, since most @product@ components, apart from Service Builder
 components, are DS components. Suppose one of your bundle's components has an
 unsatisfied service reference. How can you detect this? Two ways: 
 
-- You can enable an Declarative Services Unsatisfied Component Scanner to report
-  unsatisfied references automatically or 
+-   You can enable a
+    [Declarative Services Unsatisfied Component Scanner](#declarative-services-unsatisfied-component-scanner)
+    to report unsatisfied references automatically or 
 
-- You can check for them manually.
+-   You can use the
+    [Gogo shell command `ds:unsatisfied`](#ds-unsatisfied-command)
+    to check for them manually.
+
+### Declarative Services Unsatisfied Component Scanner [](id=declarative-services-unsatisfied-component-scanner)
 
 +$$$
 
@@ -57,6 +73,8 @@ The message above warns that service component
 unsatisfied reference to a component of type `ItemSelectorHelper`. The
 referencing component's ID (SCR ID) is `3333` and the component belongs to
 bundle `631`. 
+
+### ds:unsatisfied Command [](id=ds-unsatisfied-command)
 
 Another way to detect unsatisfied component references is to invoke the Gogo
 shell command `ds:unsatisfied`. 
@@ -132,6 +150,13 @@ database schema but forget to trigger an upgrade (for information on creating
 database upgrade processes for your @product@ applications, see the tutorial 
 [Creating an Upgrade Process for Your App](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)). 
 
+These features detect unresolved Service Builder related components. 
+
+-   [Unavailable Component Scanner](#unavailable-component-scanner)
+-   [ServiceProxyFactory](#serviceproxyfactory)
+
+### Unavailable Component Scanner [](id=unavailable-component-scanner)
+
 The Liferay Foundation application suite's Unavailable Component Scanner reports
 missing components in modules that use Service Builder. Here are the steps for
 enabling the scanner:
@@ -167,6 +192,8 @@ Builder components in separate modules.
 Digital Enterprise Fix 7.0 Pack 24 and Liferay CE Portal 7.0 GA5.
 
 $$$
+
+### ServiceProxyFactory [](id=serviceproxyfactory)
 
 @product@'s logs report unresolved Service Builder components too. For example,
 @product@ logs an error when a Service Proxy Factory can't create a new instance

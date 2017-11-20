@@ -60,7 +60,25 @@ service layer. Thus you'll need a corresponding `updateStatus` method here in
 
 Organize imports (*[CTRL]+[SHIFT]+O*), save your work, and run Service Builder.
 
-Now both entities support the status of the entity. There's one more update to
-make in the local service implementation classes: adding getter methods that
-take the status as a parameter. Later you'll use these methods in the view layer
-so you can display only approved guestbooks and entries. 
+As with Guestbooks, you must add a call  to `deleteWorkflowInstanceLinks` in the
+entry's delete method to avoid leaving orphaned database entries in the
+`workflowinstancelinks` table. First add the following `<reference>` tag to
+`service.xml`, this time in the `entry` entity section, below the existing
+reference tags:
+
+    <reference entity="WorkflowInstanceLink" package-path="com.liferay.portal" />
+
+Save, run Service Builder, and then add the following method call to the
+`deleteEntry` method in `EntryLocalServiceImpl`, right before the `return`
+statement:
+
+    workflowInstanceLinkLocalService.deleteWorkflowInstanceLinks(
+        entry.getCompanyId(), entry.getGroupId(),
+        Entry.class.getName(), entry.getEntryId());
+
+Now both entities support the status of the entity and can handle it as it
+enters the workflow framework and as it returns from the workflow framework.
+There's one more update to make in the local service implementation classes:
+adding getter methods that take the status as a parameter. Later you'll use
+these methods in the view layer so you can display only approved guestbooks and
+entries. 
