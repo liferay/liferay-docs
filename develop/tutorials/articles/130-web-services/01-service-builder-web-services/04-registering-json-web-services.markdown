@@ -75,6 +75,20 @@ Next, you'll learn how to form a mapped URL for the remote service so you can
 access it. 
 
 ## Mapping and Naming Conventions [](id=mapping-and-naming-conventions)
+{{
+
+This topic needs some clean up. There are 2 pairs of confusing names used here:
+
+- `json.web.service.context.path`: is this `context-path` or `context-name`?
+- `json.web.service.context.name`: is this `context-name` or `context-path`?
+- `context-name`: used in the URL syntax
+- `context-path`: used in its own bullet
+- `app-context-name`: another odd name used in the `service-class-name` bullet
+
+Also, please replace the `journal` example with the `suprasurf` example. Having
+two examples showing different things only causes more confusions. 
+
+}}
 
 You can form the mapped URL of an exposed service by following the naming
 convention below:
