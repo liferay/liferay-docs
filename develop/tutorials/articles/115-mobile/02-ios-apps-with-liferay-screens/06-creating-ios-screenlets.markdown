@@ -46,12 +46,10 @@ Screenlet and its functionality.
 
 Where you should create your Screenlet depends on how you plan to use it. If you
 want to reuse or redistribute it, you should create it in an empty Cocoa Touch
-Framework project in Xcode. You can then use CocoaPods to publish it. The
-section
-[Publish Your Themes Using CocoaPods](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#publish-your-themes-using-cocoapods)
-in the tutorial 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
-explains how to publish an iOS Screenlet. Even though that section refers to
+Framework project in Xcode. You can then use CocoaPods to publish it. The 
+tutorial 
+[Packaging iOS Themes](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes)
+explains how to publish an iOS Screenlet. Even though that tutorial refers to
 Themes, the steps for preparing Screenlets for publication are the same. If you
 don't plan to reuse or redistribute your Screenlet, create it in your app's
 Xcode project. 
@@ -386,7 +384,7 @@ For reference, the sample Add Bookmark Screenlet's final code is
 
 You're done! Your Screenlet is a ready-to-use component that you can add to your 
 storyboard. You can even 
-[package it](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#publish-your-themes-using-cocoapods) 
+[package it](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes) 
 to contribute to the Screens project or distribute it with CocoaPods. Now you 
 know how to create iOS Screenlets! 
 
