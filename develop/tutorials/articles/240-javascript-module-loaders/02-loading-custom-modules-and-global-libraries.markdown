@@ -36,8 +36,8 @@ To use the loaders you must first define your modules. This metadata, known as
 the *module definition*, provides details such as dependencies, name and 
 location, when they should be loaded, and more.
 
-The module is defined using a configuration file. @product@ uses `config.js` as a
-naming convention, but you can use whatever name you prefer.
+The module is defined using a configuration file. @product@ uses `config.js` as 
+a naming convention, but you can use whatever name you prefer.
 
 You must specify your configuration file's location in your bundle's `bnd.bnd` 
 file, so @product@ knows where to access it. You'll learn how to do this next.
@@ -81,7 +81,8 @@ Follow these steps to define your module:
     
     **YUI and AlloyUI modules:**  Use the `YUI.applyConfig` mechanism to provide 
     the module information. Note that AUI modules use the AUI mechanism built on
-    top of the existing YUI mechanism: `AUI().applyConfig`.
+    top of the existing YUI mechanism: `AUI().applyConfig`. You can also use 
+    this mechanism to [override @product@'s default YUI/AUI modules](/develop/tutorials/-/knowledge_base/7-0/overriding-liferays-default-yui-and-aui-modules).
 
     **AMD or global libraries**: Use the `Liferay.Loader.addModule` mechanism to 
     provide the module information.
@@ -248,3 +249,5 @@ Now you know how to load your custom JavaScript modules and global libraries in
 [Preparing your JavaScript Files for ES2015](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015)
 
 [Using ES2015 Modules in your Portlet](/develop/tutorials/-/knowledge_base/7-0/using-es2015-modules-in-your-portlet)
+
+[Overriding @product@'s Default YUI and AUI Modules](/develop/tutorials/-/knowledge_base/7-0/overriding-liferays-default-yui-and-aui-modules)

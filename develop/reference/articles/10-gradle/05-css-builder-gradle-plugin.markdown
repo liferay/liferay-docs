@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "2.1.6"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "2.1.7"
     }
 
     repositories {
@@ -74,6 +74,7 @@ Property Name | Default Value
 [`classpath`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:classpath) | [`project.configurations.cssBuilder`](#liferay-css-builder-dependency)
 [`defaultCharacterEncoding`](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/JavaExec.html#setDefaultCharacterEncoding\(java.lang.String\)) | `"UTF-8"`
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.css.builder.CSSBuilder"`
+[`systemProperties`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:systemProperties) | `["sass.compiler.jni.clean.temp.dir", true]`
 
 #### Task Properties [](id=task-properties)
 
@@ -144,7 +145,7 @@ manually adding a dependency to the `cssBuilder` configuration:
 
 ```gradle
 dependencies {
-    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "2.0.1"
+    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "2.0.2"
 }
 ```
 
