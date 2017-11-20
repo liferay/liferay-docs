@@ -124,13 +124,13 @@ Web Screenlet delegates some events to an object that conforms to the
 `WebScreenletDelegate` protocol. This protocol lets you implement the following 
 methods:
 
--   `- onWebLoad:url:`: Called when the Screenlet loads the page. 
+-   `onWebLoad(_:url:)`: Called when the Screenlet loads the page. 
 
         func onWebLoad(_ screenlet: WebScreenlet, url: String) {
             ...
         }
 
--   `- screenlet:onScriptMessageNamespace:onScriptMessage:`: Called when the 
+-   `screenlet(_:onScriptMessageNamespace:onScriptMessage:)`: Called when the 
     `WKWebView` sends a message. 
 
         func screenlet(_ screenlet: WebScreenlet,
@@ -139,7 +139,7 @@ methods:
             ...
         }
 
--   `- screenlet:onError:`: Called when an error occurs in the process. The 
+-   `screenlet(_:onError:)`: Called when an error occurs in the process. The 
     `NSError` object describes the error. 
 
         func screenlet(_ screenlet: WebScreenlet, onError error: NSError) {
