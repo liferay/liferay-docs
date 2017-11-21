@@ -16,7 +16,7 @@ Here are the troubleshooting sections:
 ### How can I configure dependencies on @product@ artifacts? [](id=how-can-i-configure-dependencies-on-product-artifacts)
  
 See
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
 
 ### What are optional package imports and how can I specify them? [](id=what-are-optional-package-imports-and-how-can-i-specify-them)
 
