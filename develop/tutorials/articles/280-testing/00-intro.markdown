@@ -6,9 +6,8 @@ with standard test frameworks support test driven development and help you
 reach quality milestones. Here are the ways Liferay facilitates testing:
 
 - [Unit testing](/develop/tutorials/-/knowledge_base/7-0/unit-testing-with-junit):
-    Using JUnit to unit test @product@ modules and traditional plugins in Gradle
-    and Maven build environments and in IDEs that have JUnit plugins is
-    seamless. 
+    Using JUnit to unit test @product@ modules in Gradle and Maven build
+    environments and in IDEs that have JUnit plugins is seamless. 
 - [Integration testing](/develop/tutorials/-/knowledge_base/7-0/arquillian-integration-test-example):
     The
     [Arquillian Extension for Liferay](/develop/tutorials/-/knowledge_base/7-0/arquillian-extension-for-liferay-example)
