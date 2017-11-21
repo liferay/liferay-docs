@@ -36,6 +36,11 @@ The Default Theme uses an iOS `WKWebView` for displaying the web page.
 
 ## Configuration [](id=configuration)
 
+To learn how to use Web Screenlet, follow the steps in the tutorial 
+[Rendering Web Pages in Your iOS App](rendering-web-pages-in-your-ios-app). 
+That tutorial gives detailed instructions for using the configuration items 
+described here. 
+
 Web Screenlet has `WebScreenletConfiguration` and 
 `WebScreenletConfigurationBuilder` objects that you can use together to supply 
 the parameters that the Screenlet needs to work. 
@@ -57,42 +62,6 @@ supply the described configuration parameters:
 **Note:** If you want to add comments in the scripts, use the `/**/` notation. 
 
 $$$
-
-To use `WebScreenletConfiguration` and `WebScreenletConfigurationBuilder` to set 
-the parameters you need for Web Screenlet, follow these steps in a view 
-controller that uses Web Screenlet: 
-
-1.  Use the constructor `WebScreenletConfigurationBuilder(<url>)`, where `<url>` 
-    is the web page's URL string, to create a `WebScreenletConfigurationBuilder` 
-    object. 
-
-2.  Call the `WebScreenletConfigurationBuilder` methods to set the parameters 
-    that you need. 
-
-3.  Call the `WebScreenletConfigurationBuilder` instance's `load()` method, 
-    which returns a `WebScreenletConfiguration` object. 
-
-4.  Set the `WebScreenletConfiguration` object to the Web Screenlet instance's 
-    `configuration` property. 
-
-5.  Call the Web Screenlet instance's `load()` method. 
-
-Here's an example snippet of these steps from a view controller in which the Web 
-Screenlet instance is `webScreenlet`, and the `WebScreenletConfiguration` object 
-is `webScreenletConfiguration`: 
-
-    ...
-    @IBOutlet weak var webScreenlet: WebScreenlet!
-    ...
-    let webScreenletConfiguration = 
-            WebScreenletConfigurationBuilder(url: "/web/westeros-hybrid/companynews")
-                .addCss(localFile: "blogs")
-                .addJs(localFile: "blogs")
-                .load()
-    webScreenlet.configuration = webScreenletConfiguration
-    webScreenlet.load()
-    webScreenlet.delegate = self
-    ...
 
 ### WebType [](id=webtype)
 

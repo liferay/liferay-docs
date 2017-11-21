@@ -1,4 +1,4 @@
-# Rendering Web Pages in Your iOS App
+# Rendering Web Pages in Your iOS App [](id=rendering-web-pages-in-your-ios-app)
 
 The 
 [Rendering Web Content](/develop/tutorials/-/knowledge_base/7-0/rendering-web-content-in-your-ios-app) 
@@ -18,7 +18,7 @@ displaying web pages in your iOS apps.
 In this tutorial, you'll learn how to use Web Screenlet to display web pages in 
 your iOS app. 
 
-## Inserting Web Screenlet in Your App
+## Inserting Web Screenlet in Your App [](id=inserting-web-screenlet-in-your-app)
 
 The process for inserting Web Screenlet in your app is the same as 
 [that of any Screenlet](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps#inserting-and-configuring-screenlets-in-ios-apps): 
@@ -35,7 +35,7 @@ The exact steps for configuring Web Screenlet, however, are unique to Web
 Screenlet. First, you'll conform your view controller to Web Screenlet's 
 delegate protocol. 
 
-## Conforming to Web Screenlet's Delegate Protocol
+## Conforming to Web Screenlet's Delegate Protocol [](id=conforming-to-web-screenlets-delegate-protocol)
 
 As with any Screenlet, you must conform the view controller's class to the 
 Screenlet's delegate protocol. For Web Screenlet, this means you must conform 
@@ -105,7 +105,7 @@ protocol. Follow these steps to do so:
 Next, you'll use the same Web Screenlet reference to set the Screenlet's 
 parameters. 
 
-## Setting Web Screenlet's Parameters
+## Setting Web Screenlet's Parameters [](id=setting-web-screenlets-parameters)
 
 Web Screenlet has `WebScreenletConfiguration` and 
 `WebScreenletConfigurationBuilder` objects that you can use together to supply 
@@ -116,7 +116,8 @@ you want to use to customize the page. You'll set most of these parameters via
 
 +$$$
 
-**Note:** For a full list of `WebScreenletConfigurationBuilder`'s methods, and a  description of each, see the table in 
+**Note:** For a full list of `WebScreenletConfigurationBuilder`'s methods, and a 
+description of each, see the table in 
 [the Configuration section](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-ios#configuration) 
 of Web Screenlet's reference doc. 
 
@@ -139,16 +140,17 @@ the parameters you need for Web Screenlet, follow these steps in the
     the full URL to the constructor. 
 
 2.  Call the `WebScreenletConfigurationBuilder` methods to set the parameters 
-    that you need. If the URL you supplied to the 
-    `WebScreenletConfigurationBuilder` constructor is to a page that doesn't 
-    require @product@ authentication, then you must call the method 
-    `set(webType: .other)`. 
+    that you need. 
 
     +$$$
 
-    **Note:** The default `WebType` setting is `.liferayAuthenticated`, which 
-    is required to load @product@ pages that need authentication to access. If 
-    you need to set this manually, call `set(webType: .liferayAuthenticated)`.
+    **Note:** If the URL you supplied to the `WebScreenletConfigurationBuilder` 
+    constructor is to a page that doesn't require @product@ authentication, then 
+    you must call the `WebScreenletConfigurationBuilder` method 
+    `set(webType: .other)`. This is because the default `WebType` setting is 
+    `.liferayAuthenticated`, which is required to load @product@ pages that need 
+    authentication to access. If you need to set `.liferayAuthenticated` 
+    manually, call `set(webType: .liferayAuthenticated)`. 
 
     $$$
 
@@ -160,14 +162,36 @@ the parameters you need for Web Screenlet, follow these steps in the
 
 5.  Call the Web Screenlet instance's `load()` method. 
 
-Here's an example snippet of these steps from a view controller in which the Web 
-Screenlet instance is `webScreenlet`, and the `WebScreenletConfiguration` object 
-is `webScreenletConfiguration`: 
+Here's an example snippet of these steps in the `viewDidLoad()` method of a view 
+controller in which the Web Screenlet instance is `webScreenlet`, and the 
+`WebScreenletConfiguration` object is `webScreenletConfiguration`: 
 
-    let webScreenletConfiguration = 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.webScreenlet?.delegate = self
+
+        let webScreenletConfiguration = 
             WebScreenletConfigurationBuilder(url: "/web/westeros-hybrid/companynews")
                 .addCss(localFile: "blogs")
                 .addJs(localFile: "blogs")
                 .load()
-    webScreenlet.configuration = webScreenletConfiguration
-    webScreenlet.load()
+        webScreenlet.configuration = webScreenletConfiguration
+        webScreenlet.load()
+    }
+
+The relative URL `/web/westeros-hybrid/companynews` supplied to the 
+`WebScreenletConfigurationBuilder` constructor, and the lack of a 
+`set(webType: .other)` call, indicates that this Web Screenlet instance loads a 
+@product@ page that requires authentication. The `addCss` and `addJs` calls add 
+local CSS and JavaScript files, respectively. Both files are named `blogs`. 
+
+Great! Now you know how to use Web Screenlet in your iOS apps. 
+
+## Related Topics [](id=related-topics)
+
+[Web Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-ios)
+
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
+
+[Rendering Web Content in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/rendering-web-content-in-your-ios-app)
