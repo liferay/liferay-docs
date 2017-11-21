@@ -21,7 +21,7 @@ Image resolutions are enabled by default. But if you need to enable a disabled
 resolution, click that resolution's *Actions* menu 
 (![Actions](../../../../images/icon-actions.png)) and select *Enable*. 
 
-Note that while a resolution is disabled, it doesn't generate adapted images for 
+While a resolution is disabled, it doesn't generate adapted images for 
 new image uploads. After enabling a resolution, you should generate the adapted 
 images that weren't generated while it was disabled (see the 
 [Generating Missing Image Resolutions](/discover/portal/-/knowledge_base/7-0/managing-image-resolutions#generating-missing-image-resolutions) 
@@ -31,11 +31,8 @@ section for instructions on this).
 
 You can't edit an image resolution that already has adapted images. This 
 prevents odd behavior (of the adapted images--you're still free to be as odd as 
-you want). For example, if you could change the values of a resolution that 
-already had adapted images, those images wouldn't be regenerated for the new 
-values. Adaptive Media would then use the resolution's new values to generate 
-adapted images for any newly uploaded images, resulting in two sets of images 
-for that resolution--odd indeed. 
+you want). This is because any changes would only be applied to images uploaded 
+after the edit, creating an inconsistent set of adapted images. Odd indeed.
 
 Therefore, editing an image resolution is only possible if Adaptive Media hasn't 
 yet generated adapted images for it. If you need to change the values of a 
@@ -45,10 +42,9 @@ resolutions.
 
 ## Deleting Image Resolutions [](id=deleting-image-resolutions)
 
-Before deleting an image resolution, make sure that you really want to delete 
-it. When you delete an image resolution, its adapted images are also deleted and 
-can no longer be used or referenced in any content. Also, you can't undo the 
-deletion of a resolution. 
+Be careful when deleting an image resolution, as any adapted 
+images it created will be irretreivably lost and will not be automatically 
+replaced by new image resolutions you create.
 
 Follow these steps to delete an image resolution:
 
@@ -61,13 +57,9 @@ Follow these steps to delete an image resolution:
 
 ## Generating Missing Adapted Images [](id=generating-missing-image-resolutions)
 
-There may be cases where Adaptive Media hasn't generated all the images you need 
-for one or more image resolutions. For example, when a resolution is disabled, 
-it doesn't generate adapted images. To generate adapted images for images 
-uploaded while it was disabled, you must enable it and then manually generate 
-the missing adapted images. Similarly, Adaptive Media doesn't generate adapted 
-images for images uploaded prior to a resolution's creation; you must manually 
-generate the missing adapted images. 
+If Adaptive Media hasn't generated all the images you need--say, if new imagery 
+was uploaded either before a new image resolution was created or while the 
+resolution was disabled--you will have to generate the missing images manually.
 
 ![Figure 1: The *Adapted Images* column shows the percentage of images that are adapted for each resolution. ](../../../../images/adaptive-media-coverage.png)
 
@@ -82,7 +74,7 @@ There are two ways to manually generate missing adapted images:
 
 ## The Recycle Bin and Adapted Images [](id=recycling-adapted-images)
 
-You can't explicitly move adapted images to the Recycle Bin. But if the original 
+You can't move adapted images directly to the Recycle Bin. But if the original 
 image is in the Recycle Bin, the corresponding adapted images behave as if they 
 are in the Recycle Bin and users can't view them. 
 

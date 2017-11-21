@@ -26,10 +26,9 @@ instance. It contains only this option:
     many common MIME types. 
 
 -   **Gifsicle:** To scale animated GIFs, Adaptive Media uses an external tool 
-    called 
-    [Gifsicle](https://www.lcdf.org/gifsicle/). 
-    For this to work, you must first install Gifsicle in the server, ensure that 
-    it's reachable from the `PATH` environment variable, and then enable this 
-    setting. If Gifsicle isn't installed and `image/gif` is included as a 
-    supported MIME type, Adaptive Media scales only a single frame of the GIF. 
-    This results in a static image in place of the animated GIF. 
+    called [Gifsicle](https://www.lcdf.org/gifsicle/). First install Gifsicle 
+    in the server, ensure that it's reachable from the `PATH` environment 
+    variable, and then click the box next to "Gifsicle Enabled." If Gifsicle 
+    isn't installed and `image/gif` is included as a supported MIME type, 
+    Adaptive Media scales only a single frame of the GIF. This results in a 
+    static image in place of the animated GIF.

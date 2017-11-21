@@ -17,8 +17,7 @@ $$$
 
 Once you create a resolution, Adaptive Media automatically generates copies of 
 newly uploaded images in that resolution. Images uploaded before you create the 
-resolution aren't affected. To apply a new resolution to previously 
-uploaded images, you must adapt the remaining images separately (see the 
+resolution aren't affected and must be adapted separately (see the 
 [Generating Missing Image Resolutions](/discover/portal/-/knowledge_base/7-0/managing-image-resolutions#generating-missing-image-resolutions) 
 section for details). 
 

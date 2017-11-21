@@ -2,17 +2,15 @@
 
 You can install Adaptive Media from 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
-for Liferay Portal CE 7.0 and Liferay DXP. To find the app, search for *Adaptive 
-Media* on Liferay Marketplace. For instructions on installing apps via Liferay 
-Marketplace, see the article 
+for Liferay Portal CE 7.0 and Liferay DXP. From the Marketplace, search for 
+*Adaptive Media* and follow the installation instructions at 
 [Using the Liferay Marketplace](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
 
 Installing Adaptive Media installs all its modules. Some modules are mandatory 
-and must be enabled for Adaptive Media to function, while others are optional 
-and can be disabled. The Adaptive Media API modules are mandatory. These modules 
-export packages for the other modules to consume. Disabling an API module 
-therefore disables any other modules that depend on it. Here's a list of the 
-Adaptive Media API modules: 
+and must be enabled for Adaptive Media to function, while others can be 
+disabled. The Adaptive Media API modules, which export packages for the other 
+modules to consume, are mandatory; disabling one also disables any other 
+modules that depend on it. Here's a list of the Adaptive Media API modules: 
 
 -   Liferay Adaptive Media API
 -   Liferay Adaptive Media Content Transformer API
@@ -35,10 +33,9 @@ ensure that Adaptive Media works as expected:
 -   Liferay Adaptive Media Item Selector Upload Web
 -   Liferay Adaptive Media Web
 
-The Adaptive Media Blogs modules are optional. These modules apply Adaptive 
-Media to Blogs to ensure that blog entries can use adapted images. These modules 
-also ensure that Adaptive Media can process any images uploaded to Blogs. Here's 
-a list of these modules: 
+The Adaptive Media Blogs modules, which ensure that images uploaded to  blog 
+entries can be processed and adapted, are optional. Here's a list of these 
+modules: 
 
 -   Liferay Adaptive Media Blogs Editor Configuration
 -   Liferay Adaptive Media Blogs Item Selector Web
@@ -46,14 +43,12 @@ a list of these modules:
 -   Liferay Adaptive Media Blogs Web Fragment
 
 The Adaptive Media Journal modules are optional. These modules apply Adaptive 
-Media to web content to ensure that the web content articles can use adapted 
-images: 
+Media to web content articles: 
 
 -   Liferay Adaptive Media Journal Editor Configuration
 -   Liferay Adaptive Media Journal Web
 
-There are two more optional modules included in Adaptive Media that you should 
-be aware of: 
+There are two more optional modules included in Adaptive Media: 
 
 -   **Liferay Adaptive Media Image Content Transformer Backwards Compatibility:** 
     Ensures that content created before the Adaptive Media installation can use 
