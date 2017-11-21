@@ -44,6 +44,17 @@ The related entities that apply to this table are listed below:
 |                            | ADT referenced from entity is deleted | The ADT is deleted on the live site and the entity falls back to the default template.
 |                            | Entity with ADT is removed from page | The ADT is unaffected and is removed with the entity when the page is published.
 
+## Asset Resources
+
+The following table describes how asset tags and asset categories are handled by
+the Staging framework.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Asset Category | Category moved into/out of vocabulary or another parent category | The category is marked as modified and is published.
+|                | Vocabulary/parent category holding categories is deleted | All categories in the vocabulary/parent category are deleted, removing them from live site.
+| Asset Tag | Two or more tags are merged into one tag | Merged tags are deleted, removing them from live site.
+
 ## Asset Publisher
 
 The following table describes how entities that are displayed by the Asset
@@ -84,6 +95,96 @@ The related entities that apply to this table are listed below:
 |                        | AP removed from page | Once the page is published, the AP is removed. Content is not affected.
 |                        | Manual selection exported is turned off | The AP does not publish any content.
 |                        | No limit for manual export | The AP publishes the exact same manually selected content.
+
+## Calendar
+
+The sections below describe how Staging handles a specific Calendar entity and
+the various actions that can be performed on its attached/related entities.
+
+### Calendar Instance
+
+The following table describes how entities that are attached/related to a
+Calendar instance are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Calendar resource | Resource is created | The calendar is modified and published.
+|                   | Resource is modified | The calendar is modified and published.
+|                   | Resource is deleted | The calendar is modified and published.
+| Tags | Tag for calendar is created | The tag is available on live site.
+| Related assets | Web content added to calendar as related asset | The web content's event link is available on live site.
+
+### Calendar Booking
+
+The following table describes how entities that are attached/related to a
+Calendar booking are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Calendar | Event is added | The event displays on live site.
+|          | Event is added under new calendar | The event displays on live site.
+|          | Calendar that contains booking is deleted | The booking is deleted.
+|          | Calendar that contains booking is updated | The booking is not affected.
+|          | Calendar booking is updated | The booking is published. The calendar is unaffected by changes in its bookings.
+|          | Calendar booking is deleted | The booking is deleted. The calendar is unaffected by changes in its bookings.
+|          | Calendar booking is moved to different calendar | If the booking was in the staging site and moved to another site's calendar, then the live version of the original booking is deleted when published. If the booking was moved into a site that is in the staging site, then it's not visible until publishing.
+|          | Staged site is invited to event | The event is added to the staging site and an admin can accept the invite.
+|          | Non-staging site is invited to event | The event only displays on live site after changes have been published.
+|          | Staged site invites user calendar to event | The user does not receive an invitation until the staging site publishes the event to the live site.
+| Calendar booking | Calendar booking is deleted after the event has occurred | The event is removed from the live site.
+| Parent calendar booking | Parent calendar booking is deleted | The parent and its children are deleted once published.
+|                         | Parent booking is changed | The parent booking is changed and published. The children are updated with the new changes. Their statuses should be preserved, except if the parent start/end time changes; in this case, children go back to pending. The reminder times of the children are never affected. If the parent or child is in the staging site, their changes should only propagate when it's published.
+|                         | Child booking is deleted | Child bookings cannot be deleted.
+|                         | Child booking is changed | The child booking is changed and published. The parent booking is unaffected.
+|                         | Child booking's parent is changed | The child booking is changed and published.
+| Calendar resource | Calendar resource is updated | The Calendar event is published with the correct resource.
+|                   | Calendar event is published after resources were added to the Calendar | The event only remains under the site's Calendar.
+|                   | Calendar resource is assigned to Calendar booking | If the resource is in the staging site, it will only appear on the booking once the resource's site is published. If the booking is in the staging site, the resource will only appear on the booking once the booking's site is published.
+|                   | Calendar resource is removed while it's assigned to Calendar booking | If the resource is in the staging site, the resource will be removed from the booking only when the resource's site is published. If the calendar booking is in the staging site, the resource will be removed from the live site immediately, even if the booking's site is not published. Otherwise, the resource is removed from the booking with no other changes.
+|                   | Calendar booking is deleted | This does not affect the Calendar resource.
+|                   | Calendar booking is updated | The booking changes are published, but the update does not affect the resource.
+|                   | Calendar resource is updated while assigned to Calendar booking | The resource is updated and published. The booking is not affected.
+| Workflow | Page is published with Calendar event in a workflow | The event is pending on the live site until approval and new publication.
+|          | User is invited to Calendar event on staged site in a workflow | The user doesn't receive a Calendar event invite until approval and new publication.
+
+### Calendar Notification Template
+
+The following table describes how entities that are attached/related to a
+Calendar notification template are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Calendar | User published event with an invitation | The user receives the invitation.
+|          | User configures reminder email | The user receives the reminder.
+| Page link | Invitation notification received | The user has the link to the Calendar event.
+|           | Reminder notification received | The user has the link to the Calendar event.
+|           | Invitation template contains link to staged page | The template is published. The page URL must point to the live site's page during publication.
+|           | Page link is removed from invitation template | The template is published with the removed page link.
+|           | Referenced page is deleted from invitation template | The template is published, but possibly with a broken link.
+|           | Referenced page is modified in invitation template | The page is published with no affect on the template.
+|           | Reminder template contains link to staged page | The template is published. The page URL must point to the live site's page during publication.
+|           | Page link is removed from reminder template | The template is published with the removed page link.
+|           | Referenced page is deleted from reminder template | The template is published, but possibly with a broken link.
+|           | Referenced page is modified in reminder template | The page is published with no affect on the template.
+| Site link (not pointing to specific page) | Invitation notification received | The template body contains the correct site URL.
+|                                           | Reminder notification received | The template body contains the correct site URL.
+|                                           | Site link added to invitation template | The template is published.
+|                                           | Site link added to invitation template and invitation is received | The URL points to the site.
+|                                           | Site link removed from invitation template | The template is updated and published; the site is not affected by the change.
+|                                           | Site referenced in invitation's site link is deleted | The template is not affected by the change.
+|                                           | Site referenced in invitation's site link is updated | The template is not affected by the change.
+|                                           | Site link added to reminder template | The template is published.
+|                                           | Site link removed from reminder template | The template is updated and published; the site is not affected by the change.
+|                                           | Site referenced in reminder's site link is deleted | The template is not affected by the change.
+|                                           | Site referenced in reminder's site link is updated | The template is not affected by the change.
+| Embedded image | Embedded image added to invitation template | The image is published with the template.
+|                | Embedded image referenced in invitation template is deleted | The template is published even if the image is not available.
+|                | Embedded image removed from invitation template | The template is published and the image is not affected.
+|                | Invitation template containing embedded image is updated | The template is published and the image is not affected.
+|                | Embedded image added to reminder template | The image is published with the template.
+|                | Embedded image referenced in reminder template is deleted | The template is published even if the image is not available.
+|                | Embedded image removed from reminder template | The template is published and the image is not affected.
+|                | Reminder template containing embedded image is updated | The template is published and the image is not affected.
 
 ## Web Content [](id=web-content)
 
