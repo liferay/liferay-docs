@@ -16,7 +16,7 @@ Here are the troubleshooting sections:
 ### How can I configure dependencies on @product@ artifacts? [](id=how-can-i-configure-dependencies-on-product-artifacts)
  
 See
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
 
 ### What are optional package imports and how can I specify them? [](id=what-are-optional-package-imports-and-how-can-i-specify-them)
 
@@ -32,6 +32,14 @@ Connecting to an application server's JNDI data sources from @product@'s OSGi
 environment is almost the same as connecting to them from the Java EE
 environment. In an OSGi environment, the only difference is that you must
 [use @product@'s class loader to load the application server's JNDI classes](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi). 
+
+### How can I make sure my module works?
+
+[The Testing tutorials demonstrate several ways to test @product@ modules](/develop/tutorials/-/knowledge_base/7-0/testing):
+
+- Unit testing
+- Integration testing
+- Functional testing  
 
 ### My module has an `Unresolved requirement`. What can I do? [](id=my-module-has-an-unresolved-requirement-what-can-i-do)
 
