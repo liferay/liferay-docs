@@ -142,4 +142,77 @@ $$$
 
 To use `WebScreenletConfiguration` and `WebScreenletConfiguration.Builder` to 
 set the parameters you need for Web Screenlet, follow these steps in the 
-`onCreate` method of an activity that uses Web Screenlet: 
+activity or fragment method where you initialize that activity or fragment. This 
+is typically `onCreate` in activities, and `onCreateView` in fragments. You 
+could, however, do this in other methods appropriate for your use case. 
+
+Follow these steps to configure Web Screenlet in your activity or fragment 
+class: 
+
+1.  Use the constructor `WebScreenletConfiguration.Builder(<url>)`, where 
+    `<url>` is the web page's URL string, to create a 
+    `WebScreenletConfiguration.Builder` object. If the page is a @product@ page 
+    that requires authentication, then the user must be logged in via 
+    [Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android) 
+    or a `SessionContext` method, and you must provide a relative URL to the 
+    `WebScreenletConfiguration.Builder` constructor. For example, if the full 
+    URL to such a page is `http://your.liferay.instance/web/guest/blog`, then 
+    the URL you must supply to the constructor is `/web/guest/blog`. For any 
+    other page that doesn't require @product@ authentication, you must supply 
+    the full URL to the constructor. 
+
+2.  Call the `WebScreenletConfiguration.Builder` methods to set the parameters 
+    that you need. 
+
+    +$$$
+
+    **Note:** If the URL you supplied to the `WebScreenletConfiguration.Builder` 
+    constructor is to a page that doesn't require @product@ authentication, then 
+    you must call the `WebScreenletConfiguration.Builder` method 
+    `setWebType(WebScreenletConfiguration.WebType.OTHER)`. This is because the 
+    default `WebType` setting is `LIFERAY_AUTHENTICATED`, which is required to 
+    load @product@ pages that need authentication to access. If you need to set 
+    `LIFERAY_AUTHENTICATED` manually, call 
+    `setWebType(WebScreenletConfiguration.WebType.LIFERAY_AUTHENTICATED)`. 
+
+    $$$
+
+3.  Call the `WebScreenletConfiguration.Builder` instance's `load()` method, 
+    which returns a `WebScreenletConfiguration` object. 
+
+4.  Use the `setWebScreenletConfiguration` method to set the 
+    `WebScreenletConfiguration` object to the Web Screenlet instance. 
+
+5.  Call the Web Screenlet instance's `load()` method. 
+
+Here's an example snippet of these steps in the `onCreate()` method of an 
+activity in which the Web Screenlet instance is `screenlet`, and the 
+`WebScreenletConfiguration` object is `webScreenletConfiguration`: 
+
+    WebScreenletConfiguration webScreenletConfiguration =
+                new WebScreenletConfiguration.Builder("/web/westeros-hybrid/companynews")
+                    .addRawCss(R.raw.portletcss, "portlet.css")
+                    .addLocalCss("gallery.css")
+                    .addLocalJs("gallery.js")
+                    .load();
+
+            screenlet.setWebScreenletConfiguration(webScreenletConfiguration);
+            screenlet.load();
+
+The relative URL `/web/westeros-hybrid/companynews` supplied to the 
+`WebScreenletConfiguration.Builder` constructor, and the lack of a 
+`setWebType(WebScreenletConfiguration.WebType.OTHER)` call, indicates that this 
+Web Screenlet instance loads a @product@ page that requires authentication. The 
+`addRawCss` method adds the CSS file `portlet.css` from the `res/raw` folder. 
+The `addLocalCss` and `addLocalJs` methods add the local files `gallery.css` and 
+`gallery.js`, respectively. 
+
+Great! Now you know how to use Web Screenlet in your Android apps. 
+
+## Related Topics
+
+[Web Screenlet for Android](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-android)
+
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
+
+[Rendering Web Content in Your Android App](/develop/tutorials/-/knowledge_base/7-0/rendering-web-content-in-your-android-app)

@@ -37,7 +37,7 @@ The Default Theme uses an iOS `WKWebView` for displaying the web page.
 ## Configuration [](id=configuration)
 
 To learn how to use Web Screenlet, follow the steps in the tutorial 
-[Rendering Web Pages in Your iOS App](rendering-web-pages-in-your-ios-app). 
+[Rendering Web Pages in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-ios-app). 
 That tutorial gives detailed instructions for using the configuration items 
 described here. 
 

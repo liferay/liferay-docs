@@ -29,9 +29,14 @@ in your page to customize its content from the server side.
 
 - Default
 
-![Figure 1: The Web Screenlet with the Default Viewset.](../../images/screens-android-webscreenlet.png)
+![Figure 1: The Web Screenlet with the Default View Set.](../../images/screens-android-webscreenlet.png)
 
 ## Configuration [](id=configuration)
+
+To learn how to use Web Screenlet, follow the steps in the tutorial 
+[Rendering Web Pages in Your Android App](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-android-app). 
+That tutorial gives detailed instructions for using the configuration items 
+described here. 
 
 Web Screenlet has `WebScreenletConfiguration` and 
 `WebScreenletConfiguration.Builder` classes that you can use together to supply 
@@ -56,46 +61,6 @@ supply the described configuration parameters:
 **Note:** If you want to add comments in the scripts, use the `/**/` notation. 
 
 $$$
-
-To use `WebScreenletConfiguration` and `WebScreenletConfiguration.Builder` to 
-set the parameters you need for Web Screenlet, follow these steps in an activity 
-or fragment that uses Web Screenlet: 
-
-1.  Use the constructor `WebScreenletConfiguration.Builder(<url>)`, where 
-    `<url>` is the web page's URL string, to create a 
-    `WebScreenletConfiguration.Builder` object. 
-
-2.  Call the `WebScreenletConfiguration.Builder` methods to set the parameters 
-    that you need. 
-
-3.  Call the `WebScreenletConfiguration.Builder` instance's `load()` method, 
-    which returns a `WebScreenletConfiguration` object. 
-
-4.  Use the `setWebScreenletConfiguration` method to set the 
-    `WebScreenletConfiguration` object to the Web Screenlet instance. 
-
-5.  Call the Web Screenlet instance's `load()` method. 
-
-Here's an example snippet of these steps from an activity in which the Web 
-Screenlet instance is `webScreenlet`, and the `WebScreenletConfiguration` object 
-is `configuration`. Also note that this example enables Cordova via a 
-`CordovaLifeCycleObserver`: 
-
-    ...
-    observer = new CordovaLifeCycleObserver();
-
-    WebScreenlet webScreenlet = (WebScreenlet) findViewById(R.id.portlet_user_profile);
-
-    WebScreenletConfiguration configuration =
-        new WebScreenletConfiguration.Builder("/web/westeros-hybrid/userprofile")
-                .enableCordova(observer)
-                .addRawCss(R.raw.user_profile_portlet_css, "user_profile_portlet_css.css")
-                .addRawJs(R.raw.user_profile_portlet_js, "user_profile_portlet_js.js")
-                .load();
-
-    webScreenlet.setWebScreenletConfiguration(configuration);
-    webScreenlet.load();
-    ...
 
 ### WebType [](id=webtype)
 
