@@ -1,6 +1,6 @@
-# Service Builder Application Using External Database via JDBC
+# Service Builder Application Using External Database via JDBC [](id=service-builder-application-using-external-database-via-jdbc)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 This sample demonstrates how to connect a Liferay Service Builder application to
 an external database via a JDBC connection. Here, an external database means any
@@ -55,10 +55,11 @@ application.
             </category>
         </log4j:configuration>
 
-This XML file defines the log level for the classes in the
-`com.liferay.blade.samples.jdbcservicebuilder.service.impl` package. The
-`com.liferay.blade.samples.jdbcservicebuilder.service.impl.CountryLocalServiceImpl`
-is the class that will produce log messages when the sample portlet is viewed.
+    This XML file defines the log level for the classes in the
+    `com.liferay.blade.samples.jdbcservicebuilder.service.impl` package. The
+    `com.liferay.blade.samples.jdbcservicebuilder.service.impl.CountryLocalServiceImpl`
+    is the class that will produce log messages when the sample portlet is
+    viewed.
 
 Now your sample is ready for deployment! Make sure to build and deploy each of
 the three modules that comprise the sample application:
@@ -67,7 +68,7 @@ the three modules that comprise the sample application:
 - `jdbc-service`
 - `jdbc-web`
 
-After these modules have been deployed, add the `-web` portlet to a Liferay
+After these modules have been deployed, add the `-web` portlet to a @product@
 page.
 
 ![Figure 1: This sample prints out the values previously inputted into the database.](../../../../images/jdbc-sb-sample.png)
@@ -75,7 +76,7 @@ page.
 A sample table is printed in the portlet's view, representing the info inputted
 into the database.
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample demonstrates two ways to access data from an external database
 defined by a JDBC connection:
@@ -85,7 +86,12 @@ defined by a JDBC connection:
 - read data using the helper methods that Service Builder generates in your
   application's persistence layer.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+
+Once you've added the `-web` portlet to a page, the
+`CountryLocalService.useJDBC` method is invoked. This method accesses the
+database defined by the JDBC connection you specified and logs information about
+the rows in the `country` table to @product@'s log.
 
 The first way of accessing data from the external database is to extract it
 directly from the raw data source by explicitly specifying a SQL query. This
@@ -95,8 +101,8 @@ method obtains the Spring-defined data source that's injected into the
 source. This is the technique used by the sample application to write the data
 to @product@'s log.
 
-The second way of accessing data from the external database is read data using
-the helper methods that Service Builder generates in your application's
+The second way of accessing data from the external database is to read data
+using the helper methods that Service Builder generates in your application's
 persistence layer. This technique is demonstrated by the `UseJDBC.getCountries`
 method which first obtains an instance of the `CountryLocalService` OSGi service
 and then invokes `countryLocalService.getCountries`. The

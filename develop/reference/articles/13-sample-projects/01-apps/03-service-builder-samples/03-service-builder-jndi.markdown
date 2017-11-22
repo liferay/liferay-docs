@@ -1,6 +1,6 @@
-# Service Builder Application Using External Database via JNDI
+# Service Builder Application Using External Database via JNDI [](id=service-builder-application-using-external-database-via-jndi)
 
-## What does this sample do when it's deployed?
+## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 This sample demonstrates how to connect a Liferay Service Builder application to
 an external database via a JNDI connection. Here, an external database means any
@@ -70,10 +70,11 @@ application.
             </category>
         </log4j:configuration>
 
-This XML file defines the log level for the classes in the
-`com.liferay.blade.samples.jndiservicebuilder.service.impl` package. The
-`com.liferay.blade.samples.jndiservicebuilder.service.impl.RegionLocalServiceImpl`
-is the class that will produce log messages when the sample portlet is viewed.
+    This XML file defines the log level for the classes in the
+    `com.liferay.blade.samples.jndiservicebuilder.service.impl` package. The
+    `com.liferay.blade.samples.jndiservicebuilder.service.impl.RegionLocalServiceImpl`
+    is the class that will produce log messages when the sample portlet is
+    viewed.
 
 Now your sample is ready for deployment! Make sure to build and deploy each of
 the three modules that comprise the sample application:
@@ -85,12 +86,12 @@ the three modules that comprise the sample application:
 After these modules have been deployed, add the `jndi-web` portlet to a
 @product@ page.
 
-[!Figure 1: This sample prints out the values previously inputted into the database.](../../../../images/jndi-sb-sample.png)
+![Figure 1: This sample prints out the values previously inputted into the database.](../../../../images/jndi-sb-sample.png)
 
 A sample table is printed in the portlet's view, representing the info inputted
 into the database.
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample demonstrates two ways to access data from an external database
 defined by a JNDI connection:
@@ -100,7 +101,7 @@ defined by a JNDI connection:
 - read data using the helper methods that Service Builder generates in your
   application's persistence layer.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 Once you've added the `jndi-web` portlet to a page, the
 `RegionLocalServiceUtil.useJNDI` method is invoked. This method accesses the
