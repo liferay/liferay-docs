@@ -2,8 +2,8 @@
 
 ## Requirements [](id=requirements)
 
--   Xcode 9
--   iOS 9 SDK
+-   Xcode 9.0
+-   iOS 11 SDK
 -   Liferay Portal CE 7.0, or Liferay DXP 
 -   Liferay Screens Compatibility Plugin (for 
     [Liferay Portal CE 7.0](http://www.liferay.com/marketplace/-/mp/application/54365664) 
@@ -13,6 +13,11 @@
 ## Compatibility [](id=compatibility)
 
 - iOS 9 and above
+
+## Xamarin requirements
+
+- Visual Studio 7.2
+- Mono .NET framework 5.4.1.6
 
 ## Features [](id=features)
 
