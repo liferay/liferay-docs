@@ -74,7 +74,7 @@ deploying the application.
 
 This XML file defines the log level for the classes in the
 `com.liferay.blade.samples.jndiservicebuilder.service.impl` package. The
-`com.liferay.blade.samples.jndiservicebuilder.service.impl.CountryLocalServiceImpl`
+`com.liferay.blade.samples.jndiservicebuilder.service.impl.RegionLocalServiceImpl`
 is the class that will produce log messages when the BLADE sample portlet is
 viewed.
 
@@ -88,7 +88,7 @@ application:
 - `jndi-web`
 
 2. After these modules have been deployed, add the `jndi-web` portlet to a
-Liferay page. When you view the page, the `RegionLocalServiceUtil.useJDBC`
+Liferay page. When you view the page, the `RegionLocalServiceUtil.useJNDI`
 method will be invoked. This method accesses the database defined by the JNDI
 connection you specified and logs information about the rows in the `region`
 table to Liferay's log. Check Liferay's log to make sure that the database
@@ -99,7 +99,7 @@ connection is working correctly.
 This BLADE sample demonstrates two ways to access data from an external database
 defined by a JNDI data source. The first way is to extract data directly from
 the raw data source by explicitly specifying a SQL query. This technique is
-demonstrated by the `RegionLocalServiceImpl.useJDBC` method. That method obtains
+demonstrated by the `RegionLocalServiceImpl.useJNDI` method. That method obtains
 the Spring-defined data source that's injected into the `regionPersistence`
 bean, opens a new connection, and reads data from the data source. This is the
 technique used by the sample application to write the data to Liferay's log.
