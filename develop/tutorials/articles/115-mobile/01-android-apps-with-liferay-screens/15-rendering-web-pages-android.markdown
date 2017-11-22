@@ -1,4 +1,4 @@
-# Rendering Web Pages in Your Android App
+# Rendering Web Pages in Your Android App [](id=rendering-web-pages-in-your-android-app)
 
 The 
 [Rendering Web Content](/develop/tutorials/-/knowledge_base/7-0/rendering-web-content-in-your-android-app) 
@@ -18,7 +18,7 @@ displaying web pages in your Android apps.
 In this tutorial, you'll learn how to use Web Screenlet to display web pages in 
 your Android app. 
 
-## Inserting Web Screenlet in Your App
+## Inserting Web Screenlet in Your App [](id=inserting-web-screenlet-in-your-app)
 
 Inserting Web Screenlet in your app is the same as 
 [inserting any Screenlet in your app](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps): 
@@ -54,7 +54,7 @@ Inserting Web Screenlet in your app is the same as
 
 Next, you'll implement Web Screenlet's listener. 
 
-## Implementing Web Screenlet's Listener
+## Implementing Web Screenlet's Listener [](id=implementing-web-screenlets-listener)
 
 To use any Screenlet in an activity or fragment, you must also implement the 
 Screenlet's listener in that activity or fragment's class. Web Screenlet's 
@@ -122,7 +122,7 @@ class of the activity or fragment you want Web Screenlet to appear in:
 Next, you'll use the same Web Screenlet reference to set the Screenlet's 
 parameters. 
 
-## Setting Web Screenlet's Parameters
+## Setting Web Screenlet's Parameters [](id=setting-web-screenlets-parameters)
 
 Web Screenlet has `WebScreenletConfiguration` and 
 `WebScreenletConfiguration.Builder` objects that you can use together to supply 
@@ -209,7 +209,7 @@ The `addLocalCss` and `addLocalJs` methods add the local files `gallery.css` and
 
 Great! Now you know how to use Web Screenlet in your Android apps. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Web Screenlet for Android](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-android)
 
