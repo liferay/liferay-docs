@@ -13,6 +13,11 @@
 
 - Android SDK 4.0 (API Level 15) and above
 
+## Xamarin requirements
+
+- Visual Studio 7.2
+- Mono .NET framework 5.4.1.6
+
 ## Features [](id=features)
 
 Web Screenlet lets you display any web page. It also lets you customize the web 
