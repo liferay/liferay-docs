@@ -93,7 +93,7 @@ protocol. Follow these steps to do so:
     practice to name a Screenlet outlet after the Screenlet it references, or 
     simply `screenlet`. Here's an example Web Screenlet outlet: 
 
-        @IBOutlet weak var webScreenlet: WebScreenlet!
+        @IBOutlet weak var webScreenlet: WebScreenlet?
 
 6.  In the view controller's `viewDidLoad()` method, use the Web Screenlet 
     reference you just created to set the view controller as the Screenlet's 
