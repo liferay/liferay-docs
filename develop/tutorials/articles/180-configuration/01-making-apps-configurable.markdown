@@ -76,7 +76,7 @@ values. Using a Java interface allows for an advanced type system for each
 configuration option. Here is an example of such an interface:
 
     @Meta.OCD(id = "com.liferay.docs.exampleconfig.ExampleConfiguration")
-    public interface MyAppConfiguration {
+    public interface ExampleConfiguration {
 
         @Meta.AD(
             deflt = "blue",
