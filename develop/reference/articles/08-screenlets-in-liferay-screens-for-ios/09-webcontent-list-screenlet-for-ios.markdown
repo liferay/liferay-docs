@@ -15,7 +15,7 @@
 
 - iOS 9 and above
 
-## Xamarin requirements
+## Xamarin Requirements [](id=xamarin-requirements)
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6

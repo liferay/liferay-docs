@@ -86,4 +86,6 @@ reference documents:
 - [**PDF Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/pdf-display-screenlet-for-android) 
   Shows a single PDF file from a Liferay instance's Documents and Media Library. 
 
-- [**Web Screenlet:**](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-android) Lets you display any web page. It also lets you customize the web page through injection of local and remote JavaScript and CSS files.
+- [**Web Screenlet:**](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-android) 
+  Displays any web page. You can also customize the web page through injection 
+  of local and remote JavaScript and CSS files. 
