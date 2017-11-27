@@ -148,4 +148,21 @@ The Campaign Content Display application, like the User Segment Content Display
 application, allows site administrators to preview the different assets that
 will be displayed for different campaigns.
 
+## Asset Publisher
+
+The Asset Publisher is part of Liferay's Web Experience Management suite, not 
+Audience Targeting, but it serves an important function with Audience Targeting.
+When Audience Targeting is installed, the Asset Publisher gains an additional 
+configuration option: *User Segments Filter*. The User Segments Filter enables 
+the Asset Publisher to display content to users based on their User Segments. 
+In this way, the Asset Publisher provides one of the most important pieces of  
+Audience Targeting: a means of displaying content based on your user segments 
+and campaigns.
+
+When *User Segments Filter* is activated, the only assets that will be 
+displayed are those which match the filters configured in the portlet and are 
+categorized under any of the user segments for the current user. Assets which 
+are not categorized with User Segments will not display in any asset publisher 
+with the *User Segments Filter* enabled.
+
 Next you'll learn how to simulate your user segments and campaigns.
