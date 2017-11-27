@@ -310,6 +310,16 @@ permission check for Web Content Articles:
 Once it is activated, any permissions you set in the article's configuration 
 will be checked before displaying the article.
 
++$$$
+
+**Version Note:** Configuration of this property is only available with Fix Pack
+de-13 installed. If you do not have the latest fix packs installed, set the 
+`journal.article.view.permission.check.enabled=` to `true` in your 
+`portal-ext.properties` file, and restart Liferay to activate the permission 
+check.
+
+$$$
+
 Before you display your web content, you'll learn how to localize it to cater to
 different language speaking users.
 
