@@ -1,0 +1,74 @@
+# Sending Form Entries through a Workflow
+
+@product@ has a [workflow
+feature](/discover/portal/-/knowledge_base/7-0/using-workflow) that directs
+submitted content through a workflow process before it's published. Most content
+is configured to use workflow at the instance scope or at the site scope.
+
+Figure of Workflow Configuration in Instance settings
+
+The Forms application is different. There are so many use cases for forms, and
+there could be so many per site, that it's not likely a site- or instance-scoped
+workflow configuration will serve your needs well. Therefore, The Forms
+application lets you specify the workflow that's used for *each form*. What this
+means is that every entry that a form user submits will go through a workflow
+process before it's published. Configure workflow for a form in its Settings
+window.
+
+## Enabling Workflow in a Form
+
+To enable workflow in a form: 
+
+- Open the form's editor by navigating to
+*Site Administration &rarr; Content &rarr; Forms*, and clicking on the form
+you're interested in.
+
+Figure
+
+- Click the Options button (![Options](../../../images/icon-option.png)) and
+    choose *Settings*.
+
+Figure of Settings Window
+
+- The Settings window has a *Select a Workflow* dropdown. Find the workflow
+    you're interested in, select it, and then click *Done*.
+
+Figure of dropdown
+
+## Testing the Workflow
+
+Test the workflow process by submitting a form entry. If you're using the Single
+Approver workflow that ships with @product@ and you're the administrative user,
+you'll see a notification come in after submitting the form entry, alerting you
+that there's a form record to review. 
+
+Next go find the form entry in the Forms application:
+
+- Go back to the Forms application in Site Administration.
+- Click the Form's Actions button (![Actions](../../../images/icon-actions.png))
+    and select *View Entries*.
+
+Figure of the Pending entry
+
+The entry is currently marked *Pending*. Now approve the form record:
+
+- Navigate to *My Account &rarr; My Workflow tasks*.
+- Click the *Assigned to My Roles* tab.
+- Click on the form entry.
+- Click the Actions button (![Actions](../../../images/icon-actions.png)) and
+    choose *Assign to Me*.
+- Click *Done*.
+- Click the Actions button (![Actions](../../../images/icon-actions.png)) again,
+    then click *Approve*.
+- Click *Done* again.
+
+Navigate back to the View Entries screen for the form, and now the entry is
+marked as *Approved*. 
+
+Figure of approved entry.
+
+## Example: Win a Free, All-Inclusive Trip to the Lunar Resort
+
+Write the example
+
+
