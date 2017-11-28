@@ -192,6 +192,8 @@ Great! Now you know how to use Web Screenlet in your iOS apps.
 
 [Web Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-ios)
 
+[Using Web Screenlet with Cordova in Your iOS App](/develop/reference/-/knowledge_base/7-0/using-web-screenlet-with-cordova-in-your-ios-app)
+
 [Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
 
 [Rendering Web Content in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/rendering-web-content-in-your-ios-app)
