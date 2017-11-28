@@ -286,6 +286,36 @@ template are handled during the Staging process.
 |               | DDM structure is edited and published to live via site page | The edited structure is available on the live site.
 |               | DDM template is added to a DDM structure | The template is available on the live site.
 
+## Polls
+
+The sections below describe how Staging handles a specific polls entity and the
+various actions that can be performed on its attached/related entities.
+
+### Polls Choice
+
+The following table describes how entities that are attached/related to a Polls
+choice are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Polls question | New question is created with choices | The question and accompanying choices are published.
+|                | Question is updated | The question is marked as modified and published.
+|                | Choice is updated | The question is marked as modified and published with the updated choice.
+|                | New choice is added to question | The question is marked as modified and published with the new choice.
+|                | Question is deleted | The question and its accompanying choices are deleted and published.
+
+### Polls Vote
+
+The following table describes how entities that are attached/related to a Polls
+vote are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Polls choice | Vote is added to the choice | The vote is published.
+|              | Choice is updated | The question and accompanying choice are updated and published.
+| Polls question | Question is deleted | The question and its accompanying choices and votes are deleted and published.
+|                | Question is updated | The question is modified and published; the accompanying votes are not affected.
+
 ## Web Content [](id=web-content)
 
 The sections below describe how Staging handles a specific web content entity
