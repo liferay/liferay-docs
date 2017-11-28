@@ -186,6 +186,106 @@ Calendar notification template are handled during the Staging process.
 |                | Embedded image removed from reminder template | The template is published and the image is not affected.
 |                | Reminder template containing embedded image is updated | The template is published and the image is not affected.
 
+## DDL
+
+The sections below describe how Staging handles a specific DDL entity and the
+various actions that can be performed on its attached/related entities. For more
+information on DDLs, see the
+[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists)
+article.
+
+### DDL Record
+
+The following table describes how entities that are attached/related to a DDL
+record are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| DDL record set | DDL record is added | The DDL record is published.
+|                | DDL record is edited | The modified DDL record is published.
+|                | DDL record is deleted | The DDL record deletion is published.
+|                | DDL record is submitted on live site | The DDL record does not appear on the staged site.
+|                | DDL record is deleted on live site | The deleted DDL record is still present on the staged site.
+| File entry from DDM form | User attaches file via Docs & Media field | The attached file cannot be viewed until the DDL list is published to the live site.
+| Page from DDM form | Display portlet is configured to display in Form view | The currently selected list does not affect the Form view until it's published to the live site.
+|                    | Display portlet is configured to display in Spreadsheet view | The currently selected list does not affect the Spreadsheet view until it's published to the live site.
+|                    | Display portlet has no specific layout configurations | The currently selected list returns back to default view after it's published to the live site.
+|                    | New DDL list is selected in Display portlet | The new DDL list is not visible on live site until it's published.
+|                    | DDL list name is edited | The new name is available once it's published to the live site.
+
+### DDL Record Version
+
+The following table describes how entities that are attached/related to a DDL
+record version are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| DDL record | DDL record version is deleted | A new version number is generated on the live site.
+| Workflow | DDL record is pending in workflow | The workflow is not present on the live site until it's approved an published.
+
+### DDL Record Set
+
+The following table describes how entities that are attached/related to a DDL
+record set are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| DDM structure | DDM structure is created | The new structure can only be viewed/edited on the staged site until it's published.
+|               | DDM structure is edited | The edit is not reflected in the DDL list on the live site until it's published.
+| DDM template | DDL list is configured to have a form template | The form template and its field(s) and data definition field(s) are visible in any new DDL record after publishing them to the live site.
+|              | DDL Form template is removed | The default structure is displayed for DDL records after publishing the deletion to the live site.
+|              | DDL list is configured to have a display template | The display template format is displayed for any new DDL record once it's published to the live site.
+|              | DDL display template is removed | The default structure is displayed for DDL records after publishing the deletion to the live site.
+| DDL record set (in Forms scope) | Form entry is submitted in staged site | The entry is not visible in the live site's Product Menu (*Content* &rarr; *Forms*) until it's published to the live site.
+|                                 | Form entry is submitted in live site | The entry is only visible in the live site's Product Menu (*Content* &rarr; *Forms*).
+|                                 | Form entry is deleted in live site | The entry is not removed from the live site's Product Menu (*Content* &rarr; *Forms*) until the deletion is published to the live site.
+|                                 | Form entry is edited from Forms Admin portlet | The edited form is no display on live site until it's published to the live site.
+|                                 | Form entry is deleted from Forms Admin portlet | The deleted form is still present on the staged site.
+
+### Forms
+
+The following table describes how entities that are attached/related to a DDL
+record set are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Workflow | Form entry is submitted | The entry does not display on the live site until it's approved.
+
+## DDM Structures and Templates
+
+The sections below describe how Staging handles DDM structures and templates and
+the various actions that can be performed on its attached/related entities. DDM
+structures and templates are typically used with web content. Visit the
+[Web Content](web-content) section for additional information on how Staging
+handles these entities when attached to web content.
+
+### DDM Structure
+
+The following table describes how entities that are attached/related to a DDM
+structure are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| DDM parent structure | Child structure is created | The parent structure is published with the new child structure.
+|                      | Child structure is modified | The parent structure is published with the edited child structure.
+|                      | Child structure is deleted | The parent structure is published to account for the removed child structure.
+| DDM data provider | Data provider is added | The data provider is not added to the live site.
+|                   | Data provider referencing a form | The data provider is added to the live site.
+|                   | Data provider with form reference is modified | The data provider is modified on the live site.
+|                   | Data provider with form reference is deleted | The data provider remains on the live site.
+| DDM form layout | New form is selected on staging site | The new form is visible on the live site.
+
+### DDM Template
+
+The following table describes how entities that are attached/related to a DDM
+template are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| DDM structure | DDM structure is edited and published to live via Admin portlet | The edited structure is available on the live site.
+|               | DDM structure is edited and published to live via site page | The edited structure is available on the live site.
+|               | DDM template is added to a DDM structure | The template is available on the live site.
+
 ## Web Content [](id=web-content)
 
 The sections below describe how Staging handles a specific web content entity
