@@ -143,4 +143,8 @@ Awesome! Now you know how to find adapted images.
 
 ## Related Topics [](id=related-topics)
 
+[Displaying Adapted Images in Your App](/develop/tutorials/-/knowledge_base/7-0/displaying-adapted-images-in-your-app)
 
+[Changing Adaptive Media's Image Processing](/develop/tutorials/-/knowledge_base/7-0/changing-adaptive-medias-image-processing)
+
+[Adapting Your Media Across Multiple Devices](/discover/portal/-/knowledge_base/7-0/adapting-your-media-across-multiple-devices)

@@ -339,4 +339,8 @@ Great! Now you know how to customize Adaptive Media's image scaling.
 
 ## Related Topics [](id=related-topics)
 
+[Displaying Adapted Images in Your App](/develop/tutorials/-/knowledge_base/7-0/displaying-adapted-images-in-your-app)
 
+[Finding Adapted Images](/develop/tutorials/-/knowledge_base/7-0/finding-adapted-images)
+
+[Adapting Your Media Across Multiple Devices](/discover/portal/-/knowledge_base/7-0/adapting-your-media-across-multiple-devices)
