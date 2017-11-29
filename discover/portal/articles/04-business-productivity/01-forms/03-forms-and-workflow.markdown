@@ -70,6 +70,30 @@ Entries screen.](../../../images/forms-view-entries-status.png)
 
 ## Example: Win a Free, All-Inclusive Trip to the Lunar Resort
 
-Write the example
+The Lunar Resort is giving away a free, all-inclusive trip to several lucky
+families. All they need to do is click the *I Want a Free Trip* link from the
+site homepage, and they're directed to a form they can fill out and submit in
+under three minutes:
 
+![Figure x: The Lunar Resort Giveaway form is ready to be filled out.](../../images/lunar-resort-giveaway.png)
+
+The Lunar Resort wants to summarily exclude folks who don't meet certain
+qualifications:
+
+- Exclude families with more than five persons in the household.
+- Prioritize families who've never visited The Lunar resort before.
+- Exclude anyone who's on the resort's naughty list, appropriately titled "The
+    Dark Side of the Moon".
+
+To compile a list of finalists, each form entry should go through a workflow
+with one review task. The Single Approver workflow that ships with @product@
+works nicely for this.
+
+After creating the form in the above image, assign the Single Approver workflow
+to it in the form's Settings window, as described in the last section. Publish
+the form, then fill out and submit an entry. The administrative user receives a
+notification that a form record was submitted. Go to My Workflow Tasks and
+complete the review. 
+
+![Figure x: Assign a workflow to a form in several steps.](../../../images/lunar-resort-giveaway-workflow.gif)
 
