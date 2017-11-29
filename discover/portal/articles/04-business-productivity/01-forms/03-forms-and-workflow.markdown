@@ -77,8 +77,7 @@ under three minutes:
 
 ![Figure 6: The Lunar Resort Giveaway form is ready to be filled out.](../../../images/lunar-resort-giveaway.png)
 
-The Lunar Resort wants to summarily exclude folks who don't meet certain
-qualifications:
+The Lunar Resort wants to exclude folks who don't meet certain qualifications:
 
 - Exclude families with more than five persons in the household.
 - Prioritize families who've never visited The Lunar resort before.
