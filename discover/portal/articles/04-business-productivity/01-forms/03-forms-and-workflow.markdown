@@ -5,15 +5,16 @@ feature](/discover/portal/-/knowledge_base/7-0/using-workflow) that directs
 submitted content through a workflow process before it's published. Most content
 is configured to use workflow at the instance scope or at the site scope.
 
-Figure of Workflow Configuration in Instance settings
+![Figure x: Workflow is enabled in the Control Panel or in Site Administration
+for most @product@ assets.](../../../images/workflow-configuration.png)
 
-The Forms application is different. There are so many use cases for forms, and
-there could be so many per site, that it's not likely a site- or instance-scoped
-workflow configuration will serve your needs well. Therefore, The Forms
-application lets you specify the workflow that's used for *each form*. What this
-means is that every entry that a form user submits will go through a workflow
-process before it's published. Configure workflow for a form in its Settings
-window.
+The Forms application is different, and that's why it doesn't appear in the
+above image. There are so many use cases for forms, and there could be so many
+per site, that it's not likely a site- or instance-scoped workflow configuration
+will serve your needs well. Therefore, The Forms application lets you specify
+the workflow that's used for *each form*. What this means is that every entry
+that a form user submits will go through a workflow process before it's
+published. Configure workflow for a form in its Settings window.
 
 ## Enabling Workflow in a Form
 
@@ -23,17 +24,18 @@ To enable workflow in a form:
 *Site Administration &rarr; Content &rarr; Forms*, and clicking on the form
 you're interested in.
 
-Figure
+    ![Figure x: Navigate directly to a form to enable workflow.](../../../images/forms-list.png)
 
 - Click the Options button (![Options](../../../images/icon-option.png)) and
     choose *Settings*.
 
-Figure of Settings Window
+    ![Figure x: Enable workflow for each form in its Settings window.](../../../images/form-settings.png)
 
 - The Settings window has a *Select a Workflow* dropdown. Find the workflow
     you're interested in, select it, and then click *Done*.
 
-Figure of dropdown
+    ![Figure x: Select the form's workflow using the Select a Workflow dropdown
+menu.](../../../images/forms-workflow.png)
 
 ## Testing the Workflow
 
@@ -47,8 +49,6 @@ Next go find the form entry in the Forms application:
 - Go back to the Forms application in Site Administration.
 - Click the Form's Actions button (![Actions](../../../images/icon-actions.png))
     and select *View Entries*.
-
-Figure of the Pending entry
 
 The entry is currently marked *Pending*. Now approve the form record:
 
@@ -65,7 +65,8 @@ The entry is currently marked *Pending*. Now approve the form record:
 Navigate back to the View Entries screen for the form, and now the entry is
 marked as *Approved*. 
 
-Figure of approved entry.
+![Figure x: Each entry's status is visible in the Forms application's View
+Entries screen.](../../../images/forms-view-entries-status.png)
 
 ## Example: Win a Free, All-Inclusive Trip to the Lunar Resort
 
