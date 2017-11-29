@@ -1,15 +1,15 @@
 # Using the NPMResolver API in Your Portlets [](id=using-the-npmresolver-api-in-your-portlets)
 <!-- Need to update release version once it's known -->
-While developing npm-based portlets, you may need to retrieve an OSGi bundle's 
-npm information. Since Liferay Portal CE GA6 and Liferay DXP Fix Pack ?, 
-@product@'s 
+Since the release of Liferay Portal CE GA6 and Liferay DXP Fix 
+Pack ?, @product@'s 
 [`NPMResolver` OSGi component](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html) 
-exposes an OSGi bundle's npm package descriptors, stored in the `NPMRegistry`, 
-so you can access their information in your server code. This lets you resolve 
-an OSGi bundle's npm packages and its dependency npm packages and modules in 
-your npm-based portlets.
+exposes an OSGi bundle's npm package descriptors,which may needed for  
+develooping npm-based portlets. The descriptors are stored in the 
+`NPMRegistry`, and can be accessed in your server code. This 
+lets you resolve an OSGi bundle's npm packages and its dependency npm packages 
+and modules in your npm-based portlets.
 
-To use the `NPMResolver` in your portlet follow these steps:
+To enable the `NPMResolver` in your portlet follow these steps:
 
 1.  Add the import below to your portlet's Component class:
 
@@ -27,14 +27,13 @@ To use the `NPMResolver` in your portlet follow these steps:
 
 +$$$
 
-**Note:** The `NPMResolver` reference is tied directly to the OSGi bundle's 
-`package.json` file, and can therefore only be used to retrieve npm 
-module/package information provided by the OSGi bundle's `package.json`. You 
-can't use the `NPMResolver` to retrieve npm package information for another OSGi 
-bundle.
+**Note:** Because the `NPMResolver` reference is tied directly to the OSGi 
+bundle's `package.json` file, it can only be used to retrieve npm 
+module/package information from that file. You can't use the `NPMResolver` to 
+retrieve npm package information for other OSGi bundles.
 
 $$$
  
-Now that the `NPMResolver` is added to your portlet, you can use it to retrieve 
-your OSGi bundle's npm package and module information. This section of tutorials 
-shows how to use the `NPMResolver` APIs in your npm-based portlet projects.
+Now that the `NPMResolver` is added to your portlet, see the following 
+tutorials in this section for instructions on retreiving your OSGi bundle's npm 
+package and module information.

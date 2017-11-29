@@ -3,7 +3,7 @@
 The 
 [`NPMResolver` OSGi component](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html) 
 provides two methods for retrieving an OSGi bundle's dependency npm package 
-descriptors--
+descriptors:
 [`getDependencyJSPackage()`](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html#getDependencyJSPackage) 
 to retrieve dependency npm packages and 
 [`resolveModuleName()`](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html#resolveModuleName) 
@@ -20,7 +20,7 @@ methods, using the `package.json` below for reference:
     	.
     }
     
-To obtain an OSGi bundle's npm dependency package, pass the dependency package's 
+To obtain an OSGi bundle's npm dependency package, pass the package's
 name in as the `getDependencyJSPackage()` method's argument. The example below 
 resolves the `react` dependency package:
 

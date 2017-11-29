@@ -4,17 +4,16 @@ The
 [`JSPackage` interface](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/JSPackage.html) 
 exposes the OSGi bundle's npm package name, version, modules, default entry 
 point, etc. You can use this information to make your code easier to maintain. 
-An example use case is covered in the next section.
+An example use case is covered below.
 
 ## Using an Alias to Reference a Module's Package [](id=using-an-alias-to-reference-a-modules-package)
 
 By default, @product@ automatically composes an npm module's JavaScript variable 
 based on its name. For example, the module `my-package@1.0.0` translates to the 
-variable `myPackage100` for the `<aui:script>` tag's `require` attribute. 
-Instead, you can use the `JSPackage` interface to obtain the module's package 
-name and create an alias to reference it. This ensures that you don't have to 
-update the code each time a new version of the OSGi bundle's npm package is 
-released.
+variable `myPackage100` for the `<aui:script>` tag's `require` attribute. To 
+avoid having to update the code each time a new version of the OSGi bundles's 
+npm package is released, you can use the `JSPackage` interface to obtain the 
+module's package name and create an alias to reference it.
 
 Follow these steps:
 
@@ -23,7 +22,7 @@ Follow these steps:
 
         JSPackage jsPackage = _npmResolver.getJSPackage();
 
-2.  Next, grab the npm package's resolved ID (the current package version, 
+2.  Grab the npm package's resolved ID (the current package version, 
     in the format `<package name>@<version>`, defined in the OSGi module's 
     `package.json`) using the 
     [`getResolvedId()` method](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/JSPackage.html#getResolvedId) 
@@ -47,7 +46,7 @@ Follow these steps:
         import com.liferay.frontend.js.loader.modules.extender.npm.JSPackage;
         import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 
-5.  Next, in the portlet's JSP, retrieve the aliased attribute 
+5.  In the portlet's JSP, retrieve the aliased attribute 
     (`bootstrapRequire` in the example):
 
         <%
