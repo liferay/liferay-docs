@@ -1,4 +1,4 @@
-# Adaptive Media
+# Adaptive Media [](id=adaptive-media)
 
 The Adaptive Media app on 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 

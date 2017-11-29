@@ -1,4 +1,10 @@
-# Displaying Adapted Images in Your App
+# Displaying Adapted Images in Your App [](id=displaying-adapted-images-in-your-app)
+
++$$$
+
+**Note:** This documentation is currently in beta. 
+
+$$$
 
 Adaptive Media offers a convenient taglib to display adapted images in your 
 apps. This taglib is in 
@@ -39,3 +45,9 @@ and if you look at the generated markup you can see that it uses the `<picture>`
 tag.
 
 ![Figure 1: The Adaptive Media sample app shows all the site's adapted images.](../../images/adaptive-media-sample.png)
+
+Well done! Now you know how to display adapted images in your app. 
+
+## Related Topics [](id=related-topics)
+
+

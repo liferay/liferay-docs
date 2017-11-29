@@ -1,4 +1,10 @@
-# Finding Adapted Images
+# Finding Adapted Images [](id=finding-adapted-images)
+
++$$$
+
+**Note:** This documentation is currently in beta. 
+
+$$$
 
 Adaptive Media offers a Java API that lets developers obtain adapted images 
 based on certain search criteria and filters. This API's entry point is 
@@ -23,7 +29,7 @@ when reading the source code.
 
 Next, you'll see different examples of getting adapted images. 
 
-## Getting the Adapted Images for a Specific File Version
+## Getting the Adapted Images for a Specific File Version [](id=getting-the-adapted-images-for-a-specific-file-version)
 
 To get the adapted images for a specific file version, you must do the 
 following: 
@@ -76,7 +82,7 @@ or the content length by invoking
 the image's height by invoking 
 `adaptiveMedia.getValueOptional(AMImageAttribute.AM_IMAGE_ATTRIBUTE_HEIGHT)`. 
 
-## Getting the Adapted Images for a Specific Image Resolution
+## Getting the Adapted Images for a Specific Image Resolution [](id=getting-the-adapted-images-for-a-specific-image-resolution)
 
 There may be scenarios where you want only the adapted images generated for a 
 specific image resolution. The `AMImageFinder` lets you get such images by 
@@ -95,7 +101,7 @@ disabled. Note that the compiler won't let you chain with the method
             amImageQueryBuilder -> amImageQueryBuilder.forFileVersion(fileVersion)
                 .forConfiguration("hd-resolution").done());
 
-## Getting Adapted Images in a Specific Order
+## Getting Adapted Images in a Specific Order [](id=getting-adapted-images-in-a-specific-order)
 
 You can also get adapted images for a specific `fileEntry` or `fileVersion`, 
 ordered by certain attributes. For example, you may want to get all the adapted 
@@ -109,7 +115,7 @@ image width:
                 .orderBy(AMImageAttribute.AM_IMAGE_ATTRIBUTE_WIDTH, AMImageQueryBuilder.SortOrder.ASC)
                 .done());
 
-## Getting Adapted Images with Fuzzy Attributes
+## Getting Adapted Images with Fuzzy Attributes [](id=getting-adapted-images-with-fuzzy-attributes)
 
 Adaptive Media also lets you get adapted images with *fuzzy attributes*. This 
 means that you can ask for adapted images whose height is around 200px, or whose 
@@ -132,3 +138,9 @@ similar to 400px:
 Imagine that there are four enabled image resolutions that have generated 
 adapted images with the widths 150px, 350px, 600px, and 900px. Using this code 
 returns the following order in the stream:  350px, 600px, 150px, 900px. 
+
+Awesome! Now you know how to find adapted images. 
+
+## Related Topics [](id=related-topics)
+
+

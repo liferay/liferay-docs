@@ -1,4 +1,10 @@
-# Changing Adaptive Media's Image Processing
+# Changing Adaptive Media's Image Processing [](id=changing-adaptive-medias-image-processing)
+
++$$$
+
+**Note:** This documentation is currently in beta. 
+
+$$$
 
 As described in 
 [the Adaptive Media user guide](/discover/portal/-/knowledge_base/7-0/adapting-your-media-across-multiple-devices), 
@@ -61,7 +67,7 @@ selection. Also note that if the image scaler is registered for specific MIME
 types and has a higher `service.ranking`, it's more likely to be chosen than if 
 it's registered for the special MIME type `*` or has a lower `service.ranking`. 
 
-## Changing Adaptive Media's Image Scaling for a Particular MIME Type
+## Changing Adaptive Media's Image Scaling for a Particular MIME Type [](id=changing-adaptive-medias-image-scaling-for-a-particular-mime-type)
 
 Now that you know how Adaptive Media scales images, you'll learn how to 
 customize that scaling. As an example, you'll learn how to alter the scaling of 
@@ -227,7 +233,7 @@ properties in the same component as follows:
         service = {AMImageScaler.class}
     )
 
-## Replace Adaptive Media's GIF Image Scaling
+## Replace Adaptive Media's GIF Image Scaling [](id=replace-adaptive-medias-gif-image-scaling)
 
 Adaptive Media's default image scaler for GIF images is based on 
 [gifsicle](https://www.lcdf.org/gifsicle/). 
@@ -281,7 +287,7 @@ This new `SampleAMGIFImageScaler` component replaces the default
 higher service ranking (`SampleAMGIFImageScaler`'s service ranking is `100`, and 
 `AMGIFImageScaler`'s is `0`, which is the default value if non specified). 
 
-## Replacing Adaptive Media's Default Image Scaler
+## Replacing Adaptive Media's Default Image Scaler [](id=replacing-adaptive-medias-default-image-scaler)
 
 You can also replace Adaptive Media's default image scaler, 
 `AMDefaultImageScaler`. This default scaler is used for an image as long as 
@@ -328,3 +334,9 @@ Here's an example of such a class:
         }
 
     }
+
+Great! Now you know how to customize Adaptive Media's image scaling. 
+
+## Related Topics [](id=related-topics)
+
+
