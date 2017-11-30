@@ -11,7 +11,7 @@ resources available in the JVM.
 
 **Note:** Liferay DXP customers can use Liferay Connected Services (LCS) to
 obtain additional performance metrics. If you're a DXP customer, see the
-[LCS documentation](/discover/deployment/-/knowledge_base/7-0/managing-liferay-with-liferay-connected-services)
+[LCS documentation](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services)
 for more information.
 
 $$$

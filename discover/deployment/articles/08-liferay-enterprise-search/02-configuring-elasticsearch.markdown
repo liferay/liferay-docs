@@ -505,9 +505,9 @@ node or cluster, it detects that port `9300` is taken and switches to port
 `9301`. If you then set Liferay's Elasticsearch adapter to remote mode, it 
 continues to look for Elasticsearch at the default port (`9300`).
 
-Now that you have Elasticsearch configured for use with @product@, if you're a
-@product@ customer, you can read
-[here](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-with-shield)
+Now you have Elasticsearch configured for use. If you're a Liferay DXP customer,
+you can read
+[here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/securing-elasticsearch-with-shield)
 to learn about configuring Shield to secure your Elasticsearch data. 
 
 ## Related Topics [](id=related-topics)
