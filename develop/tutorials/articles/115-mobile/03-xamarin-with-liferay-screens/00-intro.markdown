@@ -1,4 +1,4 @@
-# Using Xamarin with Liferay Screens
+# Using Xamarin with Liferay Screens [](id=using-xamarin-with-liferay-screens)
 
 As of Liferay Screens 3.0, you can use 
 [Xamarin](https://www.xamarin.com/) 

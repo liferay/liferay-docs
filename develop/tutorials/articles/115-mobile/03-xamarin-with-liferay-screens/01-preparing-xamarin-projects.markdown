@@ -1,4 +1,4 @@
-# Preparing Xamarin Projects for Liferay Screens
+# Preparing Xamarin Projects for Liferay Screens [](id=preparing-xamarin-projects-for-liferay-screens)
 
 +$$$
 
@@ -21,7 +21,7 @@ do this.
 
 $$$
 
-## Requirements and Example Projects
+## Requirements and Example Projects [](id=requirements-and-example-projects)
 
 Liferay Screens for Xamarin includes the bindings necessary to use all 
 Screenlets included with Screens. The following software is required: 
@@ -67,7 +67,7 @@ To check your configuration, do the following:
 
 Next, you'll set up communication with @product@. 
 
-## Configuring Communication with @product@
+## Configuring Communication with @product@ [](id=configuring-communication-with-product)
 
 Before using Liferay Screens, you must configure your project to communicate 
 with your @product@ instance. To do this, you must provide your project with the 

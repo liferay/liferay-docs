@@ -1,4 +1,4 @@
-# Using Screenlets in Xamarin Apps
+# Using Screenlets in Xamarin Apps [](id=using-screenlets-in-xamarin-apps)
 
 +$$$
 
@@ -17,7 +17,7 @@ Using Screenlets is very straightforward. This tutorial shows you how to insert
 and configure Screenlets in your Xamarin app. You'll be a Screenlet master in no 
 time! 
 
-## Xamarin.iOS
+## Xamarin.iOS [](id=xamarin-ios)
 
 First, insert a `UIView` in your storyboard (in Visual Studio's iOS Designer or 
 Xcode's Interface Builder). Note that if you're editing an XIB file, you must 
@@ -37,7 +37,7 @@ delegate. For Liferay's Screenlets, the delegate methods are listed in each
 Screenlet's 
 [reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios). 
 
-## Xamarin.Android
+## Xamarin.Android [](id=xamarin-android)
 
 First, open your app's layout AXML file and insert the Screenlet in your 
 activity or fragment layout. For example, the following screenshot shows Login 
@@ -70,7 +70,7 @@ Screenlet's
 That's all there is to it! Awesome! Now you know how to use Screenlets in your 
 Xamarin apps. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Preparing Xamarin Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-xamarin-projects-for-liferay-screens)
 

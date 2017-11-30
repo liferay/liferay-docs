@@ -1,4 +1,4 @@
-# Using Views in Xamarin.Android
+# Using Views in Xamarin.Android [](id=using-views-in-xamarin-android)
 
 +$$$
 
@@ -156,5 +156,5 @@ To use the Default or Westeros View Set, inherit `default_theme` or
 That's it! Great! Now you know how to use Views to spruce up your Android 
 Screenlets. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
