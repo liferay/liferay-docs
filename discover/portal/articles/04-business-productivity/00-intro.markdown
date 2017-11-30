@@ -29,18 +29,6 @@ $$$
 
 ## Which Form Builder Should I Use?
 
-Liferay Forms gives you a lot of control over how your form is displayed,
-allowing you to make [form
-pages](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#creating-form-pages),
-and adjust the [form
-layout](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#form-layouts)
-of the fields. These styling elements are enough for most forms. Over time, more
-features will be added to Liferay Forms so that DDL might someday become
-obsolete, in favor of a single form building application, Liferay Forms. If
-you're a heavy user of DDL, don't worry, Liferay is committed to preserving and
-enhancing the features provided by DDL; they just might be moved to Liferay Forms. Now is the time to familiarize yourself with Liferay Forms and
-begin using it for all your form building needs, except for the narrow use cases
-described above.
 Liferay Forms is a relatively new application, first appearing in @product@
 version 7.0. It's intended to be the default form builder in @product@. If you
 can use Liferay Forms for your use case, you should.
@@ -52,6 +40,17 @@ should I use Dynamic Data Lists?". That's the question we'll answer here.
     you need to display the data in the user interface.
 
 - Use DDL if you need to style your lists and forms with templates.
+
+- Use DDL if there's a field type you need that's not included (yet) in Liferay
+    Forms. The field types included in DDL that *are not* in Liferay Forms at
+    the time of this writing include:
+        - Geolocation
+        - Web Content
+        - Documents and Media
+        - Link to Page
+
+        It's important to note that these (and more!) form field types will be
+        included in future versions of the Liferay Forms application.
 
 Liferay Forms gives you a lot of control over how your form is displayed,
 allowing you to make [form
