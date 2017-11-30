@@ -9,10 +9,7 @@ $$$
 You can use a Liferay Screens *View* to set a Screenlet's look and feel 
 independent of the Screenlet's core functionality. Liferay's Screenlets come 
 with several Views, and more are being developed by Liferay and the community. 
-The Screenlet reference documentation for 
-[Android](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
-and
-[iOS](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-iOS) 
+[The Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
 lists the Views available for each Screenlet included with Screens. This 
 tutorial shows you how to use Views in Xamarin.Android. 
 
