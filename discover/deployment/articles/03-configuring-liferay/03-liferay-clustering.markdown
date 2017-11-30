@@ -86,13 +86,13 @@ Enabling a read-writer database is simple. In your `portal-ext.properties` file,
 configure two different data sources for @product@ to use, one for reading, and
 one for writing:
 
-    jdbc.read.jndi.name=**your read pool**
+    jdbc.read.jndi.name=**your read JNDI name**
     jdbc.read.driverClassName=com.mysql.jdbc.Driver
     jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
     jdbc.read.username=**your user name**
     jdbc.read.password=**your password**
-    
-    jdbc.write.jndi.name=**your read write pool**
+
+    jdbc.write.jndi.name=**your read-write JNDI name**
     jdbc.write.driverClassName=com.mysql.jdbc.Driver
     jdbc.write.url=jdbc:mysql://dbreadwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
     jdbc.write.username=**your user name**
