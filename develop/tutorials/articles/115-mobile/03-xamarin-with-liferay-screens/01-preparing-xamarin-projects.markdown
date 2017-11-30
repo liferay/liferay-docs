@@ -63,7 +63,9 @@ To check your configuration, do the following:
     `LiferayScreens` file. Open that file in the Assembly Browser. You should 
     then see all the available files from Liferay Screens for Xamarin. 
 
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/k59s0FYD9GY" frameborder="0" allowfullscreen></iframe>
+
 
 Next, you'll set up communication with @product@. 
 
@@ -78,7 +80,9 @@ following information:
 - Your @product@ instance's version.
 - Any other information required by specific Screenlets. 
 
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kBojqzvtzDs" frameborder="0" allowfullscreen></iframe>
+
 
 Fortunately, this is straightforward. Do the following in your Xamarin projects: 
 
@@ -162,6 +166,6 @@ Super! Your Xamarin projects are ready for Liferay Screens.
 
 [Using Screenlets in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-xamarin-apps)
 
-[Using Views in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-0/using-views-in-xamarin-apps)
+[Using Views in Xamarin.Android](/develop/tutorials/-/knowledge_base/7-0/using-views-in-xamarin-android)
 
-[Creating Xamarin Views for the Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-xamarin-views-for-the-screenlets)
+[Using Themes in Xamarin.iOS](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-xamarin-ios)

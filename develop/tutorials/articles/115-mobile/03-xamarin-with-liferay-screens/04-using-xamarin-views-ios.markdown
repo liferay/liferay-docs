@@ -24,7 +24,7 @@ There are two ways to install a Theme:
 2.  If the Theme isn't available through NuGet, you can drag and drop the 
     Theme's folder into your project. 
 
-To use the installed Theme, specify its name in the *Theme Name* property field
+To use the installed Theme, specify its name in the *Theme Name* property field 
 of the *Base Screenlet*. Each Screenlet's available Themes are listed in the 
 *Themes* section of the Screenlet's 
 [reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios). 
@@ -38,3 +38,8 @@ Screenlets in your iOS app.
 
 ## Related Topics [](id=related-topics)
 
+[Preparing Xamarin Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-xamarin-projects-for-liferay-screens)
+
+[Using Screenlets in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-xamarin-apps)
+
+[Using Views in Xamarin.Android](/develop/tutorials/-/knowledge_base/7-0/using-views-in-xamarin-android)

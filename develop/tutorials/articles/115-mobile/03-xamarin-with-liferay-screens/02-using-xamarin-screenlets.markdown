@@ -24,7 +24,9 @@ Xcode's Interface Builder). Note that if you're editing an XIB file, you must
 insert a `UIView` inside the XIB's parent `UIView`. The following video, for 
 example, shows Login Screenlet inserted in an storyboard. 
 
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y95XwdpCZVQ" frameborder="0" allowfullscreen></iframe>
+
 
 Next, set the Screenlet's attributes. If it's a Liferay Screenlet, refer to the 
 [Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
@@ -74,12 +76,6 @@ Xamarin apps.
 
 [Preparing Xamarin Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-xamarin-projects-for-liferay-screens)
 
-[Screenlets in Liferay Screens for iOS](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-iOS)
+[Using Views in Xamarin.Android](/develop/tutorials/-/knowledge_base/7-0/using-views-in-xamarin-android)
 
-[Screenlets in Liferay Screens for Android](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android)
-
-[Using Views in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-0/using-views-in-xamarin-apps)
-
-[Creating Xamarin Views for the Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-xamarin-views-for-the-screenlets)
-
-[Using offline mode in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-xamarin-apps)
+[Using Themes in Xamarin.iOS](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-xamarin-ios)
