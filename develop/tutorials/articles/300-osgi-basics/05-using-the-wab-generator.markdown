@@ -22,13 +22,22 @@ Generator. The WAB Generator transforms a general WAR-style plugin into a WAB
 during its deployment process. So what exactly does the WAB Generator do to a
 WAR file to transform it into a WAB?
 
-The WAB Generator detects packages a plugin's JSPs and descriptor files
-reference. The descriptor files include `web.xml`, `liferay-web.xml`,
-`portlet.xml`, `liferay-portlet.xml`, and `liferay-hook.xml`. The WAB Generator
-verifies whether the detected packages are in the plugin's `WEB-INF/classes`
-folder or in a JAR file in the plugin's `WEB-INF/lib` folder. Packages that
-aren't found in either location are added to an `Import-Package` header in the
-WAB's `META-INF/MANIFEST.MF` file. 
+The WAB Generator detects packages referenced in a plugin WAR's JSPs, descriptor files, and
+classes (in `WEB-INF/classes` and embedded JARs). The
+descriptor files include `web.xml`, `liferay-web.xml`, `portlet.xml`,
+`liferay-portlet.xml`, and `liferay-hook.xml`. The WAB Generator verifies
+whether the detected packages are in the plugin's `WEB-INF/classes` folder or in
+a JAR file in the plugin's `WEB-INF/lib` folder. Packages that aren't found in
+either location are added to an `Import-Package` header in the WAB's
+`META-INF/MANIFEST.MF` file. 
+
+You must explicitly import a package using an `Import-Package` header in the
+plugin's `liferay-plugin-package.properties` file if the package is only
+referenced in these types of locations:
+-   Unrecognized descriptor file
+-   Custom or unrecognized descriptor element or attribute
+-   Reflection code
+-   Class loader code
 
 The WAB folder structure and WAR folder structure differ. Consider the following
 folder structure of a WAR-style portlet:
