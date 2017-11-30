@@ -22,18 +22,19 @@ Generator. The WAB Generator transforms a general WAR-style plugin into a WAB
 during its deployment process. So what exactly does the WAB Generator do to a
 WAR file to transform it into a WAB?
 
-The WAB Generator detects packages referenced in a plugin WAR's JSPs, descriptor files, and
-classes (in `WEB-INF/classes` and embedded JARs). The
-descriptor files include `web.xml`, `liferay-web.xml`, `portlet.xml`,
+The WAB Generator detects packages referenced in a plugin WAR's JSPs, descriptor
+files, and classes (in `WEB-INF/classes` and embedded JARs). The descriptor
+files include `web.xml`, `liferay-web.xml`, `portlet.xml`,
 `liferay-portlet.xml`, and `liferay-hook.xml`. The WAB Generator verifies
 whether the detected packages are in the plugin's `WEB-INF/classes` folder or in
-a JAR file in the plugin's `WEB-INF/lib` folder. Packages that aren't found in
+an embedded JAR in the `WEB-INF/lib` folder. Packages that aren't found in
 either location are added to an `Import-Package` header in the WAB's
 `META-INF/MANIFEST.MF` file. 
 
-You must explicitly import a package using an `Import-Package` header in the
-plugin's `liferay-plugin-package.properties` file if the package is only
-referenced in these types of locations:
+To import a package that is only referenced in the following types of locations,
+you must add an `Import-Package` OSGi header to the plugin's
+`WEB-INF/liferay-plugin-package.properties` file and add the package to the
+header's list of values.
 -   Unrecognized descriptor file
 -   Custom or unrecognized descriptor element or attribute
 -   Reflection code
@@ -42,43 +43,45 @@ referenced in these types of locations:
 The WAB folder structure and WAR folder structure differ. Consider the following
 folder structure of a WAR-style portlet:
 
-    - my-war-portlet
-        - src
-            - main
-                - java
-                - webapp
-                    - WEB-INF
-                        - resources
-                        - views
-                        - faces-config.xml
-                        - liferay-display.xml
-                        - liferay-plugin-package.properties
-                        - liferay-portlet.xml
-                        - portlet.xml
-                        - web.xml
+- my-war-portlet
+    - src
+        - main
+            - java
+            - webapp
+                - WEB-INF
+                    - classes
+                    - lib
+                    - resources
+                    - views
+                    - faces-config.xml
+                    - liferay-display.xml
+                    - liferay-plugin-package.properties
+                    - liferay-portlet.xml
+                    - portlet.xml
+                    - web.xml
 
 When a WAR-style portlet is deployed to @product@ and processed by the WAB
 Generator, the portlet's folder structure is transformed to something like this
 
-    - my-war-portlet-that-is-now-a-wab
-        - META-INF
-            - MANIFEST.MF
-        - WEB-INF
-            - classes
-            - lib
-            - resources
-            - views
-            - faces-config.xml
-            - liferay-display.xml
-            - liferay-plugin-package.properties
-            - liferay-portlet.xml
-            - portlet.xml
-            - web.xml
+- my-war-portlet-that-is-now-a-wab
+    - META-INF
+        - MANIFEST.MF
+    - WEB-INF
+        - classes
+        - lib
+        - resources
+        - views
+        - faces-config.xml
+        - liferay-display.xml
+        - liferay-plugin-package.properties
+        - liferay-portlet.xml
+        - portlet.xml
+        - web.xml
 
 The major difference is the addition of the `META-INF/MANIFEST.MF` file. The WAB
 Generator automatically generates an OSGi-ready `MANIFEST.MF` file. If you want
 to affect the content of the manifest file, you can place BND directives and
-OSGi headers directly into the `WEB-INF/liferay-plugin-package.properties` file.
+OSGi headers directly into the `liferay-plugin-package.properties` file.
 A `bnd.bnd` and/or a build-time plugin (e.g., `bnd-maven-plugin`) should not be
 provided for your WAR plugin, because the generated WAB cannot make use of them.
 
