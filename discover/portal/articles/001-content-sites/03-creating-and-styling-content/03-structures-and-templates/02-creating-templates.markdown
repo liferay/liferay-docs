@@ -1,9 +1,9 @@
 # Creating Templates
 
-Structures, like the one you created in the previous step, aren't useful without 
-a template to style and display its items. Now you'll use the 
-[FreeMarker](http://freemarker.apache.org/) 
-templating language to create a template. 
+Structures, like the one you created in the previous step, need templates to
+style and display their items. Now you'll use the
+[FreeMarker](http://freemarker.apache.org/) templating language to create
+a template. 
 
 Follow these steps to create your template: 
 
@@ -16,17 +16,16 @@ Follow these steps to create your template:
 
 3.  Click the *Add* icon 
     (![Add](../../../../images/icon-add.png)) at the bottom-right of the page to 
-    begin creating a new template. This takes you to the template creation 
-    page. 
+    begin creating a new template. 
 
 4.  Name the template *Lunar Guides List*. 
 
-5.  Now you must select the structure that this template works with. Open the
+5.  Now you must select a structure to link with this template. Open the
     *Details* section, click the *Select* button under *Structure*, and select 
     the *Lunar Guides List* structure. Click *OK* when prompted. 
 
-6.  Next, select the template's language. Still in the *Details* section, make 
-    sure *FreeMarker* is selected for the *Language* field (it should be 
+6.  Next, select the template's language. Still in the Details section, make 
+    sure *FreeMarker* is selected for the Language field (it should be 
     selected by default). FreeMarker uses the FreeMarker Template Language 
     (FTL), which uses HTML, interpolations (`${...}`), and FTL tags. FreeMarker 
     templates can also include CSS. For more information on FTL, see 
@@ -37,9 +36,9 @@ Follow these steps to create your template:
 7.  Now you're ready to create the script. First you'll insert the CSS. This 
     example uses a four column, two row grid layout to define the field 
     positions. The content appears only in columns two and four--the other two 
-    columns exist for spacing. This example also defines the text heading 
-    styles. In the *Script* section, replace the code in the editor with the 
-    following: 
+    columns exist for spacing. This example also defines the text heading
+    styles. In the *Script* section, replace the code in the editor with this
+    code: 
 
         <style>
            .wrapper {
@@ -84,20 +83,20 @@ Follow these steps to create your template:
         }
         </style>    
 
-8.  Now you're ready to create the template's HTML. Like the structure, you can 
-    use the sidebar to the left of the editor to insert fields in the editor. 
-    Doing so automatically inserts fields with the appropriate variables. 
-    *General Variables* provides quick access to universal information for your 
-    @product@ instance. *Fields* provides access to the variables that your 
-    structure defines. Mousing over a field displays its variable name. Clicking 
-    a field adds the code in the editor that retrieves that field's data. 
+8.  Now you're ready to create the template's HTML. Like the structure, you can
+    use the sidebar to the editor's left to insert fields in the editor. Doing
+    so automatically inserts fields with the appropriate variables. *General
+    Variables* provides quick access to universal information for your @product@
+    instance. *Fields* provides access to the variables that your structure
+    defines. Mousing over a field displays its variable name. Clicking a field
+    adds the code in the editor that retrieves that field's data. 
 
     ![Figure x: A field's tooltip shows that field's variable name.](../../../../images/001-field-mouse-over.png)
 
-    In this example, however, you'll use copy and paste to add the following 
-    code. This code gets the field values that the user entered, styles the text 
-    and images, and puts all the information into divs as defined in your CSS. 
-    Add this code in the editor, below the closing `</style>` tag: 
+    In this example, however, you'll copy and paste the following code. This
+    code gets the field values that the user entered, styles the text and
+    images, and puts all the information into divs as defined in your CSS. Add
+    this code in the editor, below the closing `</style>` tag: 
 
         <h1>${title.getData()}</h1>
 

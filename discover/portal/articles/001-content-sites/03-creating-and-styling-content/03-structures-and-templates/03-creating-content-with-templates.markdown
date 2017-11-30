@@ -17,10 +17,10 @@ Follow these steps to create your content:
     structure are all here.
 
 3.  For both *Title* fields, enter *Choose Your Lunar Guide*. Don't worry about 
-    the duplication. The first Title field is default for all web content. 
-    You'll use the Web Content Display app to prevent it from showing, therefore 
-    showing only your structure's title field. This lets you use the template to 
-    style the field's content, rather than apps that display web content. 
+    the duplication. The first Title field is default for all web content.
+    You'll use the Web Content Display app to show only your structure's title
+    field. This lets you use the template to style the field's content, rather
+    than apps that display web content. 
 
 4.  Fill out a field group for each lunar guide: *Cody*, *Jim*, *Russ*, and 
     *Steve*. For each *Image* field, select the guide's image from the images 
@@ -31,8 +31,8 @@ Follow these steps to create your content:
 
 5.  Click *Publish*.
 
-The content now exists, but you still need to publish it on a page in your site. 
-Follow these instructions to do so:
+The content now exists, but you must still publish it on a page in your
+site. Follow these instructions to do so:
 
 1.  Go to the *Lunar Guides* page.
 

@@ -27,9 +27,9 @@ field and an Image field. Follow these steps to create it:
 5.  Add a *Text* field to the canvas. Below that field, add an *Image* field. 
 
 6.  Set the Text field's *Field Label* to *Button Text*. Set the field's *Name* 
-    to *buttontext*.
+    to `buttontext`.
 
-7.  Set the Image field's *Name* to *bgimage*. Leave the field's Field Label 
+7.  Set the Image field's *Name* to `bgimage`. Leave the field's Field Label 
     alone. 
 
     ![Figure x: The Booking Form structure contains a Text field above an Image field.](../../../../images/001-booking-form.png)
@@ -59,8 +59,8 @@ template:
 5.  Open the *Details* section and select *Booking Form* for the *Structure*. 
     In the *Language* field, leave *FreeMarker* selected. 
 
-6.  Now you're ready to create the template's script. First, you'll add a 
-    JavaScript function that triggers a popup when called. In the *Script* 
+6.  Now you're ready to create the template's script. First, you'll add
+    a JavaScript function that triggers a pop-up when called. In the *Script*
     section, delete any existing code and add this code: 
 
         <script>
@@ -69,10 +69,10 @@ template:
           popup.classList.toggle("show");
         }
         </script>
-    
-7.  Now you'll add a `div` named `popup` which contains a `span` named 
+ 
+7.  Now you'll add a `div` named `popup` containing a `span` named 
     `popuptext` that operates on the `bookNow` function 
-    when clicked. This `span` retrieves the `buttontext` from the structure, 
+    when clicked. This `span` retrieves the `buttontext` from the structure 
     and sets the `popuptext` to display in the function. Everything is 
     namespaced so that you can create the styles accordingly. Add this code now,
      **above** the `bookNow` function: 
@@ -157,7 +157,6 @@ now:
 
 5.  For the image, click *Select* and then upload and *Add* select the 
     `booking-image.png`. 
-<!-- No instructions earlier for uploading this image -->
 
 6.  Click *Publish*.
 
