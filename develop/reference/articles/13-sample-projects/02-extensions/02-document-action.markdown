@@ -34,7 +34,7 @@ There are four Java classes used in this sample:
 - `BladeActionConfigurationIcon`: Adds the new context menu option to the
    Document Detail screen options (![Options](../../../images/icon-options.png))
    (top right corner) of the Documents and Media Admin portlet. See the
-   [Configuring Your App's Actions Menu](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app#configuring-your-apps-actions-menu)
+   [Configuring Your Admin App's Actions Menu](/develop/tutorials/-/knowledge_base/7-0/configuring-your-admin-apps-actions-menu)
    tutorial for more details.
 - `BladeActionDisplayContext`: Adds the
    [Display Context](/participate/liferaypedia/-/wiki/Main/Display+Context)
