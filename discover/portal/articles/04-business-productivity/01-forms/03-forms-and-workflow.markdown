@@ -1,20 +1,20 @@
 # Sending Form Entries through a Workflow [](id=sending-form-entries-through-a-workflow)
 
 @product@ has a [workflow
-feature](/discover/portal/-/knowledge_base/7-0/using-workflow) that directs
-submitted content through a workflow process before it's published. Most content
-is configured to use workflow at the instance scope or at the site scope.
+feature](/discover/portal/-/knowledge_base/7-0/using-workflow) that directs a
+submitted asset through a workflow process before it's published. Most assets
+are configured to use workflow at the instance or site level.
 
 ![Figure 1: Workflow is enabled in the Control Panel or in Site Administration
 for most @product@ assets.](../../../images/workflow-configuration.png)
 
-The Forms application is different, and that's why it doesn't appear in the
-above image. There are so many use cases for forms, and there could be so many
-per site, that it's not likely a site- or instance-scoped workflow configuration
-will serve your needs well. Therefore, The Forms application lets you specify
-the workflow that's used for *each form*. What this means is that every entry
-that a form user submits will go through a workflow process before it's
-published. Configure workflow for a form in its Settings window.
+Forms is different, and that's why its assets don't appear in the above image.
+There are so many use cases for forms, and there could be so many per site, that
+a site- or instance-scoped workflow configuration won't serve your needs well.
+Therefore, The Forms application lets you configure the workflow that's used for
+*each form*. That means that each submitted form record will go through a
+workflow process before being marked as *Approved*. Configure workflow for a
+form in its Settings window.
 
 ## Enabling Workflow in a Form [](id=enabling-workflow-in-a-form)
 
@@ -71,7 +71,7 @@ Entries screen.](../../../images/forms-view-entries-status.png)
 ## Example: Win a Free, All-Inclusive Trip to the Lunar Resort [](id=example-win-a-free-all-inclusive-trip-to-the-lunar-resort)
 
 The Lunar Resort is giving away a free, all-inclusive trip to several lucky
-families. All they need to do is click the *I Want a Free Trip* link from the
+families. All a user must do is click the *I Want a Free Trip* link from the
 site homepage, and they're directed to a form they can fill out and submit in
 under three minutes:
 
