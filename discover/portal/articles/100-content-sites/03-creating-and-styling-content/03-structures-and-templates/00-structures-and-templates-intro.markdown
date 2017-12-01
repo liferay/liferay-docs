@@ -16,5 +16,3 @@ Before getting started with structures and templates, you should know something
 important: you've actually already used them! Basic Web Content is a type of web
 content defined by a structure and a template. Now you'll use structures and
 templates to create something a little more intricate. 
-
-![Figure x: IMAGE](../../../../images/.png)

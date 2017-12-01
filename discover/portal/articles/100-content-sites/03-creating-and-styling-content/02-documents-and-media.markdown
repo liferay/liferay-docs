@@ -35,11 +35,12 @@ library:
     (![Add](../../../images/icon-add.png)) at the bottom-right of the page and 
     select *Multiple Documents*. 
 
-3.  Use the *Add Multiple Documents* screen to add the images `moon-image1.jpg`, 
-    `moon-image2.jpg`, and `moon-image3.jpg`. You can either drag and drop the 
-    files from your file system to the box, or click *Select Files* to select 
-    the files via a file manager window. If you wish, you can also categorize 
-    and describe the files. Click *Publish* to complete the upload. 
+3.  Use the *Add Multiple Documents* screen to add the images 
+    `moon-image1.jpg`, `moon-image2.jpg`, `moon-image3.jpg` and 
+    `booking-image.png`. You can either drag and drop the files from your file 
+    system to the box, or click *Select Files* to select the files via a file 
+    manager window. If you wish, you can also categorize and describe the 
+    files. Click *Publish* to complete the upload. 
 
     ![Figure x: The Documents and Media library lets you add multiple documents at once.](../../../images/001-add-multiple-documents.png)
 
