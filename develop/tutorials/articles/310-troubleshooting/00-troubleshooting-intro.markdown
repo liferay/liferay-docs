@@ -33,7 +33,7 @@ environment is almost the same as connecting to them from the Java EE
 environment. In an OSGi environment, the only difference is that you must
 [use @product@'s class loader to load the application server's JNDI classes](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi). 
 
-### How can I make sure my module works?
+### How can I make sure my module works? [](id=how-can-i-make-sure-my-module-works)
 
 [The Testing tutorials demonstrate several ways to test @product@ modules](/develop/tutorials/-/knowledge_base/7-0/testing):
 
