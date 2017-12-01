@@ -22,9 +22,11 @@ Installing @product@ manually requires these basic steps:
 
 +$$$
 
-**Note:** You'll see the term *Liferay Home* used in this installation guide.
-*Liferay Home* refers to the folder containing your tc Server instance and some
-@product@-specific folders:. `data`, `deploy`, `licenses`, and `osgi` folders. 
+**Note:** You'll see the term
+[*Liferay Home*](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-product#liferay-home)
+used in this installation guide. *Liferay Home* refers to the folder containing
+your tc Server instance and some @product@-specific folders:. `data`, `deploy`,
+`licenses`, and `osgi` folders. 
 
 $$$
 
