@@ -1,4 +1,4 @@
-# Overriding @product@'s' Default YUI and AUI Modules [](id=overriding-liferays-default-yui-and-aui-modules)
+# Overriding @product@'s Default YUI and AUI Modules [](id=overriding-liferays-default-yui-and-aui-modules)
 
 @product@ contains several default YUI/AUI modules. You may need to override
 functionality provided by these module's scripts. It's possible to 

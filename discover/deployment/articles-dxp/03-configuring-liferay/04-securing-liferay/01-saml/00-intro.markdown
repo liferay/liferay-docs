@@ -1,4 +1,4 @@
-# SAML [](id=saml-0)
+# What is SAML? [](id=what-is-saml)
 
 The @product@'s SAML (Security Assertion Markup Language) adapter lets you
 execute Single Sign On (SSO) and Single Log Off (SLO) in your deployment. Each
