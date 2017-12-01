@@ -149,8 +149,8 @@ Only the following core services are available:
 - `ReleaseLocalService`
 - `ServiceComponentLocalService`
 
-No other services are provided! Therefore, any service deployed to this Slim
-Runtime that depends on services other than these won't work.
+The Slim Runtime provides no other services! To test your services, therefore,
+you must deploy modules that provide the capabilities they depend on. 
 
 ## Service Builder [](id=service-builder)
 
@@ -294,8 +294,8 @@ contacts service.
 
     }
 
-Note how it uses OSGi Declarative Services to reference an instance of Liferay
-Core's `CounterLocalService` and Contacts API's `EntryLocalService`.
+Note how it uses OSGi Declarative Services to reference an instance of Portal
+Kernel's `CounterLocalService` and Contacts API's `EntryLocalService`.
 
 ## Related Topics [](id=related-topics)
 

@@ -33,6 +33,14 @@ environment is almost the same as connecting to them from the Java EE
 environment. In an OSGi environment, the only difference is that you must
 [use @product@'s class loader to load the application server's JNDI classes](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi). 
 
+### How can I make sure my module works?
+
+[The Testing tutorials demonstrate several ways to test @product@ modules](/develop/tutorials/-/knowledge_base/7-0/testing):
+
+- Unit testing
+- Integration testing
+- Functional testing  
+
 ### My module has an unresolved requirement. What can I do? [](id=my-module-has-an-unresolved-requirement-what-can-i-do)
 
 If one of your bundles imports a package that no other bundle in the Liferay

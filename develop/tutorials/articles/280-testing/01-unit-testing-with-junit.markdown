@@ -9,8 +9,8 @@ applications.
 
 JUnit integrates with build environments such as Maven and Gradle. JUnit plugins
 are available in IDEs such as Eclipse, IntelliJ, and NetBeans. And of course,
-JUnit is available in 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace). 
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace) 
+supports running JUnit tests. 
 
 This tutorial covers the following topics:
 
@@ -241,6 +241,10 @@ Unit testing involves these things:
 - Executing the tests
 
 - Analyzing test results
+
+Add JUnit as a dependency. Here's a dependency on JUnit in Gradle:
+
+    testCompile group: "junit", name: "junit", version: "4.12"
 
 If your tests require accessing classes outside the module, declare them as
 `testCompile`
