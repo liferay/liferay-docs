@@ -14,6 +14,8 @@ Follow these steps to create your template:
 2.  At the top-right of the screen, select *Options* 
     (![Options](../../../../images/icon-options.png)) &rarr; *Templates*. 
 
+![Figure x: Select Templates from the menu.](../../images/001-template-menu.png)
+
 3.  Click the *Add* icon 
     (![Add](../../../../images/icon-add.png)) at the bottom-right of the page to 
     begin creating a new template. 
@@ -23,6 +25,8 @@ Follow these steps to create your template:
 5.  Now you must select a structure to link with this template. Open the
     *Details* section, click the *Select* button under *Structure*, and select 
     the *Lunar Guides List* structure. Click *OK* when prompted. 
+
+![Figure x: Template details.](../../images/001-template-details.png)
 
 6.  Next, select the template's language. Still in the Details section, make 
     sure *FreeMarker* is selected for the Language field (it should be 

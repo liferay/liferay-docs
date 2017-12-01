@@ -37,7 +37,7 @@ and not just copied over from the earlier instructions.
 
 3.  Enter *Book a Trip* for the Name.
 
-4.  For the layout, select *3 Columns*. 
+4.  For the layout, select *1 Column*. 
 
 5.  Leave the other options on their default settings and click *Add Page*. 
 

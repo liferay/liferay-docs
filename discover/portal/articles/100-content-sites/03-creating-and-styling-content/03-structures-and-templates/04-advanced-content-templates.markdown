@@ -171,7 +171,6 @@ Now, all you need to do is add it to the page.
     and expand *Content*. 
 
 3.  Drag the *Booking Form* content onto the page. 
-<!-- In which column? The page is 3 column. -->
 
 4.  Open the *Look and Feel Configuration* of the Web Content Display app that 
     contains your content. 
@@ -180,7 +179,10 @@ Now, all you need to do is add it to the page.
     *Save*. 
 
 6.  Refresh the page, and then test out your button.
-<!-- Insert screenshot once the template is fixed -->
+
+![Figure x: Template before click.](../../images/001-adv-template-final1.png)
+
+![Figure x: Template after click.](../../images/001-adv-template-final2.png)
 
 Great! Now you know how to use structures and templates to create and style web 
 content. Next, you'll learn about some other ways to publish content in 
