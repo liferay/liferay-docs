@@ -16,12 +16,12 @@ own discretion.
 
 $$$
 
-You must configure your @product@ instance's access to Google's Picker API, 
-which is called to access files stored on Google's servers. Invoking the Google 
-Picker API requires unique API keys and a client ID. The API keys are used for 
-accessing public data and the client ID is used for authenticating and 
-authorizing user access to non-public data. To get the keys and client ID, you 
-must use a Google developer project. This takes three steps: 
+You must configure @product@ to access Google's Picker API, which accesses files
+stored on Google's servers. Invoking the Google Picker API requires unique API
+keys and a client ID. The API keys are for accessing public data and the
+client ID is for authenticating and authorizing user access to non-public
+data. To get the keys and client ID, you must use a Google developer project.
+This takes three steps: 
 
 - **Step 1: Enable the Google Picker API**
 - **Step 2: Create Credentials**
@@ -47,8 +47,8 @@ Next, you must create credentials to use with the Google API.
 
 ## Step 2: Create Credentials [](id=step-2-create-credentials)
 
-1.  In the Google Developer Console, navigate to the *Credentials* screen for 
-    APIs & services. 
+1.  In the Google Developer Console, navigate to the *Credentials* screen for
+    APIs &amp; services. 
 
 2.  Create a new OAuth client ID for a *Web application*. Specify the following
     attributes:
@@ -63,10 +63,10 @@ Next, you must create credentials to use with the Google API.
 3.  Create a new API key. Restrict the key to HTTP referrers (web sites), and 
     set it to accept requests from your @product@ instance's URL. 
 
-Your new OAuth client ID and public API access key now appear on the Credentials 
-screen. Keep this screen open so you can easily reference these values as you 
-specify them in @product@. All that's left is to enter the API key and client 
-ID into your @product@ instance's Google Apps configuration. 
+Your new OAuth client ID and public API access key now appear on the Credentials
+screen. Keep this screen open to reference these values as you specify them in
+@product@. All that's left is to enter the API key and client ID into
+@product@'s Google Apps configuration. 
 
 ## Step 3: Configure @product@'s Google Apps Settings [](id=step-3-configure-liferays-google-apps-settings)
 
