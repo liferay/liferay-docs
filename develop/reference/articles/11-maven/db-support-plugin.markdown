@@ -1,4 +1,4 @@
-# DB Support Plugin
+# DB Support Plugin [](id=db-support-plugin)
 
 The DB Support Gradle plugin lets you run the Liferay DB Support tool to execute
 certain actions on a local @product@ database. The following actions are
@@ -7,7 +7,7 @@ available:
 - Cleans the Liferay database from the Service Builder tables and rows of a
   module.
 
-## Usage
+## Usage [](id=usage)
 
 To use the plugin, include it in your `pom.xml` file:
 
@@ -25,7 +25,7 @@ To use the plugin, include it in your `pom.xml` file:
         </plugins>
     </build>
 
-## Goals
+## Goals [](id=goals)
 
 The plugin adds one Maven goal to your project:
 
@@ -33,7 +33,7 @@ Name | Description
 ---- | -----------
 `db-support:clean-service-builder` |  Cleans the @product@ database from the Service Builder tables and rows of a module.
 
-## Available Parameters
+## Available Parameters [](id=available-parameters)
 
 You can set the following parameters in the `<configuration>` section of the
 POM:
