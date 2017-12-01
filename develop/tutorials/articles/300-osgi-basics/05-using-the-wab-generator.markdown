@@ -8,7 +8,7 @@ because their frameworks are designed for Java EE. Therefore, they expect a WAR
 layout and require Java EE resources such as the `WEB-INF/web.xml` descriptor.
 
 Liferay provides a way for these WAR-styled plugins to be deployed and treated
-like OSGi modules by Liferay's OSGi runtime. They can be converted to *WAB*s.
+like OSGi modules by Liferay's OSGi runtime. They can be converted to *WABs*.
 
 @product-ver@ supports the OSGi Web Application Bundle (WAB) standard for
 deployment of Java EE style WARs. Simply put, a WAB is an archive that has a WAR
@@ -39,6 +39,18 @@ header's list of values.
 -   Custom or unrecognized descriptor element or attribute
 -   Reflection code
 -   Class loader code
+
++$$$
+
+**Note**: A
+[known issue](https://issues.liferay.com/browse/LPS-76229)
+is preventing packages referenced in `web.xml` file `listener-class` elements
+from being detected and added to WAB `META-INF/MANIFEST.MF` file
+`Import-Package` headers. To import such packages, add them to an
+`Import-Package` header in the plugin's
+`WEB-INF/liferay-plugin-package.properties` file.
+
+$$$
 
 The WAB folder structure and WAR folder structure differ. Consider the following
 folder structure of a WAR-style portlet:
