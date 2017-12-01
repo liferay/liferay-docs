@@ -39,30 +39,32 @@ delegate. For Liferay's Screenlets, the delegate methods are listed in each
 Screenlet's 
 [reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios). 
 
-	public partial class ViewController : UIViewController, ILoginScreenletDelegate
+For example, here's a view controller that implements `LoginScreenletDelegate`: 
+
+    public partial class ViewController : UIViewController, LoginScreenletDelegate
     {
-    	protected ViewController(IntPtr handle) : base(handle) {}
-    	
-    	public override void ViewDidLoad()
-    	{
-    		base.ViewDidLoad();
-    	
-    		/* Set the Screenlet's attributes */
-    		this.loginScreenlet.ThemeName = "demo";
-    	
-    		/* Listen for events the Screenlet triggers */
-    		this.loginScreenlet.Delegate = this;
-    	}
-    	
-    	...
-    	
-    	/* Delegate methods */
-    	
-    	[Export("screenlet:onLoginResponseUserAttributes:")]
-    	public virtual void OnLoginResponseUserAttributes(BaseScreenlet screenlet, NSDictionary<NSString, NSObject> attributes)
-    	{
-    		...
-    	}
+        protected ViewController(IntPtr handle) : base(handle) {}
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            /* Set the Screenlet's attributes */
+            this.loginScreenlet.ThemeName = "demo";
+
+            /* Listen for events the Screenlet triggers */
+            this.loginScreenlet.Delegate = this;
+        }
+
+        ...
+
+        /* Delegate methods */
+
+        [Export("screenlet:onLoginResponseUserAttributes:")]
+        public virtual void OnLoginResponseUserAttributes(BaseScreenlet screenlet, NSDictionary<NSString, NSObject> attributes)
+        {
+            ...
+        }
     }
 
 ## Xamarin.Android [](id=xamarin-android)
