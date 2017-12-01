@@ -295,9 +295,8 @@ provides the ability to customize permissions in more detail. Select the *More
 Options* link below the drop down button and you'll find the different
 activities you can grant or deny to your web content article.
 
-While you can set permissions here, they will be ignored unless Web Content 
-Article permissions are activated in your System Configuration. To activate the 
-permission check for Web Content Articles: 
+While you can set permissions here, they are ignored unless you activate Web
+Content Article permissions in your System Configuration: 
 
 1. Go to the *Control Panel* &rarr; *Configuration* &rarr; *System Settings*.
 
@@ -305,17 +304,17 @@ permission check for Web Content Articles:
 
 3. Check the box labeled *Article view permissions check enabled*.
 
-4. Click Save.
+4. Click *Save*.
 
-Once it is activated, any permissions you set in the article's configuration 
-will be checked before displaying the article.
+Once it is activated, any permissions you set in the article's configuration are
+checked before displaying the article.
 
 +$$$
 
-**Version Note:** Configuration of this property is only available with Fix Pack
+**Version Note:** This property is only available with Fix Pack
 de-13 installed. If you do not have the latest fix packs installed, set the 
 `journal.article.view.permission.check.enabled=` to `true` in your 
-`portal-ext.properties` file, and restart Liferay to activate the permission 
+`portal-ext.properties` file and restart Liferay to activate the permission 
 check.
 
 $$$
