@@ -36,7 +36,7 @@ can use Liferay Forms for your use case, you should.
 So the question "Which form builder should I use?" can be restated to "When
 should I use Dynamic Data Lists?". That's the question we'll answer here.
 
-- Use Dynamic Data Lists (DDL) if you need a way for users to enter data, and
+- Use Dynamic Data Lists (DDL) if you need a way for users to enter data, *and*
     you need to display the data in the user interface.
 
 - Use DDL if you need to style your lists and forms with templates.
