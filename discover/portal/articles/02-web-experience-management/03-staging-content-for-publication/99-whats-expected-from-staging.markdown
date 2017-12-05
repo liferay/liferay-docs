@@ -286,6 +286,109 @@ template are handled during the Staging process.
 |               | DDM structure is edited and published to live via site page | The edited structure is available on the live site.
 |               | DDM template is added to a DDM structure | The template is available on the live site.
 
+## Document Library
+
+The section below describes how Staging handles a specific document library (DL)
+entity and the various actions that can be performed on its attached/related
+entities.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| DL folder | Document moved into/out of a folder (workflow disabled) | The document is updated is published.
+|           | Document moved into/out of a folder (workflow enabled) | The document inherits the workflow configuration of its folder.
+|           | Folder is modified | The modified folder is published.
+|           | Folder is deleted | The folder and all files/folders contained within it are deleted.
+|           | Folder restriction is changed | The folder and its entries are changed and published.
+|           | Folder's permissions are modified | The folder is published.
+|           | Folder is moved into/out of another folder (workflow disabled) | The folder and its file entries are updated and published.
+|           | Folder is moved into/out of another folder (workflow enabled) | The folder and its file entries follow the configured workflow.
+|           | Folder's workflow restrictions are changed | The folder is updated and published.
+|           | Folder with workflow restriction is deleted | The folder deletion is published; the workflow is not affected by the folder deletion.
+|           | Folder's workflow restriction is deactivated | The folder is updated and published; the folder falls back to using no workflow.
+| DL file entry | File entry is added | The file entry is published.
+|               | File entry is deleted | The file entry deletion is published.
+|               | File entry is updated (adding new file version) | The latest approved file version is published.
+|               | Add a new type for file entry | The file entry is published.
+|               | File entry is restored from Recycle Bin | The file entry is published.
+| DL file version | Add new file version (editing the file) | The latest approved file version is published.
+|                 | Delete latest approved file version | The deletion is published.
+|                 | Delete file version that is not the latest | No changes.
+| DL file shortcut | File shortcut is added | The shortcut is published.
+|                  | File shortcut is deleted | The deletion is published.
+|                  | File shortcut is restored from Recycle Bin | The shortcut is published.
+|                  | File shortcut's target file is changed | The shortcut on the live site redirects to the new target file.
+|                  | File shortcut's target file is deleted | The shortcut and target file deletions are published.
+| DL file entry type | File entry type is added | The new file entry type is published.
+|                    | File entry type is updated | The updated file entry type is published.
+|                    | File entry type is deleted | The file entry type deletion is published.
+|                    | Delete file entry type that belongs to file entry | Not allowed; file entry type cannot be deleted, so nothing is published.
+|                    | Update a file entry type assigned to a file entry | A new file version is created and published.
+| Folder | External folder is updated | No changes.
+| Entities accessed through WebDAV | Staging folder is set up to be accessed with WebDAV | The folder is published.
+|                                  | New file is added to folder from the desktop through WebDAV | The file is added on the staging site and included in publication; however, it's not added immediately.
+|                                  | File is deleted from folder on the desktop through WebDAV | The file is deleted on the staging site and the deletion is published to the live site.
+|                                  | File is removed from the Documents & Media portlet through WebDAV | The file is deleted on the desktop and the deletion is published.
+|                                  | Live folder is set up to be accessed with WebDAV | The user can access the folder's contents on the desktop.
+|                                  | File is added to the live folder on the desktop | The file cannot be added since it has a write protection.
+| Repository | Repository definition is added | The definition is published.
+|            | Folder or file entry is published | The repository's metadata is published.
+|            | Repository metadata is updated in @product@ | The repository definition is published.
+|            | Repository definition is deleted | The deletion is published.
+|            | Repository is exported/imported | All the repository's entries are exported/imported too.
+| Repository entry | New repository entry is created | The entry is published when the repository definition is published.
+|                  | Repository entry is deleted | The repository entry is immediately deleted even before publication.
+| Expando (custom field) | File version is deleted | The custom field value is deleted.
+|                        | Latest file version is exported | The custom field values are exported with the columns.
+|                        | File version is imported | The custom field values are imported. Columns are updated/added if they don't exist in the target system. If the custom field's table does not exist, it's created.
+|                        | Custom field value is modified | The new file version is created and published.
+|                        | Custom field value is modified for a Document Library folder | The folder is updated and published.
+|                        | Expando column is deleted | The file entry is updated and published.
+|                        | Custom field value is deleted | The file entry is published.
+| Deletions | File entry is deleted | The file entry deletion is published.
+|           | File entry is moved to Recycle Bin | The file entry's removal is published.
+|           | File entry is restored from Recycle Bin | The file entry is published again.
+|           | Folder is deleted | The folder and its contents are deleted and those deletions are published.
+|           | Folder is moved to Recycle Bin | The folder and its contents are removed and those removals are published.
+|           | Folder is restored from Recycle Bin | The folder and its contents are restored and published.
+| Comments | File entry is deleted | The file entry deletion is published.
+|          | File entry is exported | The comments are not exported with the file entry.
+|          | File entry is imported | The comments are not imported with the file entry.
+|          | Comment is modified | The modified comment is not published.
+|          | Comment is deleted | The comment deletion is not published.
+| Ratings | File entry is deleted | The file entry deletion is published.
+|         | File entry is exported | The ratings are not exported with the file entry.
+|         | File entry is imported | The ratings are not imported with the file entry.
+|         | Rating is modified | The modified rating is not published.
+| Permissions | File entry is deleted | The permissions are deleted and published.
+|             | File entry is exported | The permissions are exported.
+|             | File entry is imported | The permissions are imported.
+|             | File entry's permissions are modified | The file entry is marked as modified and published.
+|             | Role is created | The file entry is reindexed in both the staging and live sites.
+|             | Role is modified | The file entry is reindexed in both the staging and live sites.
+|             | Role is deleted | The file entry is reindexed in both the staging and live sites.
+|             | Team is created | The file entry is reindexed in both the staging and live sites.
+|             | Team is modified | The file entry is reindexed in both the staging and live sites.
+|             | Team is deleted | The file entry is reindexed in both the staging and live sites.
+| Asset entry | File entry is exported | No changes.
+|             | File entry is imported | The asset entry is created automatically.
+|             | File entry is deleted | The asset entry deletion is published.
+| Asset category | Category is added | The category is published.
+|                | Category is added to file entry | The file entry is updated and published.
+|                | Category is updated | The category is published.
+|                | Category is deleted | The category deletion is published.
+|                | File entry's category is deleted  | The file entry is updated and published.
+|                | Category is removed from file entry, but not deleted | The file entry is updated and published.
+| Asset tag | File entry with tags is exported | The tags are exported with the file entry.
+|           | File entry with tags is imported | The tags are imported with the file entry.
+|           | Tag is added to file entry | The file entry is updated and published.
+|           | Tag is removed from file entry | The file entry is updated and published.
+| Asset link | New asset link is created with file entry | The file entry is updated and published.
+|            | Asset link is removed between a file entry and another entity | The file entry is updated and published.
+|            | File entry is exported | The asset link is exported.
+|            | File entry is imported | The asset link is imported if the target is there; if not, it's skipped.
+
+<!-- Staging support for comments and ratings is deprecated in 7.0. -Cody -->
+
 ## Polls
 
 The sections below describe how Staging handles a specific polls entity and the
