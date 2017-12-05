@@ -24,8 +24,8 @@ $$$
     @product@ installation. Alternatively, choose your own entity ID. Then
     click *Save* and a new section entitled Certificate and Private Key appears.
 
-3.  The Certificate and Private Key is for creating a keystore for SAML. Enter
-    the following information:
+3.  The Certificate and Private Key section is for creating a keystore for SAML. 
+    Press "Create Certificate" and enter the following information:
 
     - Your common name (your first and last name)
     - The name of your organization
@@ -115,6 +115,8 @@ the session on the Service Provider but does not initiate single logout.
 
     c. *Metadata URL*: The IdP's metadata as a URL or as an XML file.
 
+    d. If the IdP is another Liferay DXP instance, then ensure its corresponding Service Provider Connection for this SP is enabled.
+
 3. On the *General* tab, the *Enabled* checkbox has been checked.
 
 4. Once *Enabled* checkbox has been checked, the service provider's metadata
@@ -150,7 +152,10 @@ even if the Identity Provider metadata indicates that it's not required.
 **SSL Required:** When this box is checked, any SAML messages that are not sent
 over HTTPS are rejected. This does not affect how URLs are generated.
 
-The Identity Provider Connection page includes these options:
+## Changing the SAML Identity Provider Connection Settings [](id=changing-the-saml-identity-provider-connection-settings)
+
+If you'd like to configure @product@'s SAML Identity Provider Settings, navigate to
+the Identity Provider Connection tab of the SAML Admin portlet.
 
 **Name:** The name of the Identity Provider with which to connect.
 
@@ -193,10 +198,10 @@ if you want to map a response attribute named `mail` to the @product@ attribute
 Available @product@ attributes are: `emailAddress`, `screenName`, `firstName`,
 `lastName`, `modifiedDate`, and `uuid`.
 
-**Keep Alive URL:** If users are logged into several @product@ IdP instances via
-a @product@ SP, their sessions can be kept alive as long as they keep a browser
+**Keep Alive URL:** If users are logged into several @product@ SP instances via
+a @product@ IdP, their sessions can be kept alive as long as they keep a browser
 window open to one of them. Configure this only if the IdP is @product@. The URL
-is `https://[host name]/c/portal/saml/keep_alive`. On the @product@ IdP,
+is `https://[IdP host name]/c/portal/saml/keep_alive`. On the @product@ IdP,
 configure this URL the same way, but point back to this SP. 
 
 Save your changes when you are finished configuring the @product@ instance as a
@@ -235,7 +240,18 @@ clustered @product@ environment, follow the steps in this section. Before
 proceeding, make sure that the following assumptions apply to your scenario.
 
 If you're running a multi-node cluster behind a load balancer, follow these
-steps to enable all the nodes as SPs:
+steps to enable all the nodes as SPs.
+
+Before you begin, give thought to the type of keystore manager you would like 
+your cluster to use.
+
+To select a keystore manager, go to *Control Panel* &rarr; *System Settings*
+&rarr; *SAML KeyStoreManager Implementation Configuration*. There, the options
+are *Filesystem Keystore Manager* and *Document Library Keystore Manager*.
+
+All nodes in the cluster should be configured to use the same Keystore Manager.
+
+If using the Filesystem Keystore Manager (the default):
 
 1.  Configure each node of your [@product@
     cluster](/discover/deployment/-/knowledge_base/7-0/liferay-clustering) as a SAML
@@ -247,19 +263,6 @@ steps to enable all the nodes as SPs:
     contains the valid or self-signed certificate managed by the SAML Provider
     app.
 
-    Note: The keystore file and its default location can vary according to the
-    keystore manager defined by the `saml.keystore.manager.impl` property.
-    Here's the relevant section of the Liferay SAML 2.0 Provider app's
-    `portlet.properties` file:
-
-        #
-        # Set the name of a class that implements
-        # com.liferay.saml.credential.KeyStoreManager. This class is used to load and
-        # save the keystore.
-        #
-        #saml.keystore.manager.impl=com.liferay.saml.credential.DLKeyStoreManagerImpl
-        saml.keystore.manager.impl=com.liferay.saml.credential.FileSystemKeyStoreManagerImpl
-
 3.  Verify that the service provider metadata has been generated to be used
     either as a URL or an XML file. The metadata is the same for all nodes
     because of the same database back-end. The IdP's request goes through the
@@ -269,6 +272,9 @@ steps to enable all the nodes as SPs:
     and each of them can respond to web requests and handle the SAML protocol.
     To test your SSO solution, sign into @product@ via your load balancer,
     navigate to a few pages of a few different sites, and then log out.
+
+If using the Document Library Keystore Manager then you can skip step 3 because 
+the keystore file is stored into the database shared by all the nodes.
 
 Now you know how to configure @product@ either as a SAML identity provider
 or a service provider. You also know how to configure SAML in a
