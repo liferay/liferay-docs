@@ -5,14 +5,14 @@ The Server Administration application (accessed by clicking *Control Panel
 related to the @product@ server. Clicking the link displays a graph showing the 
 resources available in the JVM.
 
-![Figure 1: Server Administration is where you configure and monitor many aspects of
-the server.](../../../images/server-admin-resources.png)
+![Figure 1: Server Administration is where you configure and monitor many aspects of the server.](../../../images/server-admin-resources.png)
 
 +$$$
 
 **Note:** Liferay DXP customers can use Liferay Connected Services (LCS) to
-obtain additional performance metrics. See the [LCS
-documentation](/discover/deployment/-/knowledge_base/7-0/managing-liferay-with-liferay-connected-services) for more information.
+obtain additional performance metrics. If you're a DXP customer, see the
+[LCS documentation](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services)
+for more information.
 
 $$$
 
@@ -124,7 +124,7 @@ The portal properties tab shows an exhaustive list of the current portal
 property values, so you don't have to shut down @product@ or open the properties
 file directly. Portal properties are customizable; you can peruse the full list
 of available properties at
-[ttps://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html](https://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html).
+[https://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html](https://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html).
 
 ## CAPTCHA [](id=captcha)
 
@@ -295,9 +295,9 @@ To enable ImageMagick from the Control Panel:
 
 Some older versions of ImageMagick don't run properly with @product@. If this is
 the case, update to the latest version (ImageMagick 6.7.9-6 2012-09-25 Q16 or
-later). To check for the latest ImageMagick versions, visit [ImageMagick's
-website](http://www.imagemagick.org/script/binary-releases.php). See
-[LPS-30291](http://issues.liferay.com/browse/LPS-30291) for information on
+later). To check for the latest ImageMagick versions, visit
+[ImageMagick's website](http://www.imagemagick.org/script/binary-releases.php).
+See [LPS-30291](http://issues.liferay.com/browse/LPS-30291) for information on
 efforts to identify incompatible application versions with @product@.
 
 ### Xuggler configuration [](id=xuggler-configuration)
@@ -327,8 +327,8 @@ audio and video files.
 The Script tab includes a scripting console for executing migration or
 management code. The Groovy scripting language is supported out of the box. For
 more information, see the 
-[Scripting article](/discover/portal/-/knowledge_base/7-0/using-liferays-script-engine) for
-more information on how to use the scripting console and examples.
+[Scripting article](/discover/portal/-/knowledge_base/7-0/using-liferays-script-engine)
+for more information on how to use the scripting console and examples.
 
 ## Shutdown [](id=shutdown)
 

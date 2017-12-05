@@ -67,7 +67,7 @@ App | &nbsp;Social Office 3.x | &nbsp;@product-ver@ |
 Announcements | UI enhancements | Although the Announcements app is included in @product-ver@, the UI enhancements from Social Office 3.x aren't. See [the Announcements app's documentation](/discover/portal/-/knowledge_base/7-0/sending-alerts-and-announcements) for instructions on using the app in @product-ver@. |
 Document Library File Version Comments | Versioning Improvements | Provided as an add-on module. The [*Module Installation* section below](/discover/deployment/-/knowledge_base/7-0/upgrading-social-office#module-installation) contains a link to this module. |
 Notifications | Various enhancements | Included |
-Chat | Various enhancements | [Click here](https://web.liferay.com/marketplace/-/mp/application/15184463) to get this app for Liferay DXP. Note that Chat isn't available for Liferay Portal CE. |
+Chat | Various enhancements | This app is available for [Liferay DXP](https://web.liferay.com/marketplace/-/mp/application/15184463) and [Liferay Portal CE](https://web.liferay.com/marketplace/-/mp/application/15392476). |
 Bookmarks | Various enhancements | Included |
 Activities | Various enhancements | Included |
 
@@ -131,52 +131,54 @@ To enable Social Office functionality in your @product-ver@ installation, you
 should first install a few extra modules. Deploy these modules as you would any 
 other @product-ver@ module: 
 
-- **Social Office Upgrade module:** Provides a set of actions that you can run 
-  to upgrade your Social Office installation. The next section shows you how to 
-  run these actions. 
-  [Click here](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.social.office.upgrade/) 
-  to get this module. This module is the same for Liferay Portal CE and Liferay 
-  DXP. 
+-   **Social Office Upgrade module:** Provides a set of actions that you can run 
+    to upgrade your Social Office installation. The next section shows you how 
+    to run these actions. 
+    [Click here](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.social.office.upgrade/) 
+    to get this module. This module is the same for Liferay Portal CE and Liferay 
+    DXP. 
 
-- **Social Office Upgrade Association module (optional):** When the Social 
-  Office User role was granted to a user in previous versions of Liferay Portal, 
-  Social Office automatically used a site template to create public and private 
-  pages for that user. The Social Office Upgrade Association module retains this 
-  behavior (the upgrade retains the Social Office User role). 
-  [Click here](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.social.office.upgrade.association/) 
-  to get this module. This module is the same for Liferay Portal CE and Liferay 
-  DXP. 
+-   **Social Office Upgrade Association module (optional):** When the Social 
+    Office User role was granted to a user in previous versions of Liferay 
+    Portal, Social Office automatically used a site template to create public 
+    and private pages for that user. The Social Office Upgrade Association 
+    module retains this behavior (the upgrade retains the Social Office User 
+    role). 
+    [Click here](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.social.office.upgrade.association/) 
+    to get this module. This module is the same for Liferay Portal CE and 
+    Liferay DXP. 
 
-- **Document Library File Version Comments module:** By default, @product-ver@ 
-  users can only comment on documents in a Documents and Media repository. In 
-  Social Office, however, users could also comment on document versions. This 
-  module retains the Social Office behavior. 
-  [Click here](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.document.library.file.version.discussion.web/) 
-  to get this module. This module is the same for Liferay Portal CE and Liferay 
-  DXP. 
+-   **Document Library File Version Comments module:** By default, @product-ver@ 
+    users can only comment on documents in a Documents and Media repository. In 
+    Social Office, however, users could also comment on document versions. This 
+    module retains the Social Office behavior. 
+    [Click here](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.document.library.file.version.discussion.web/) 
+    to get this module. This module is the same for Liferay Portal CE and 
+    Liferay DXP. 
 
-- **Chat:** Enables Social Office chat in Liferay DXP. 
-  [Click here](https://web.liferay.com/marketplace/-/mp/application/15184463) 
-  to get this app. Note that Chat isn't available for Liferay Portal CE. 
+-   **Chat:** Enables Social Office chat. This app is available for 
+    [Liferay DXP](https://web.liferay.com/marketplace/-/mp/application/15184463) 
+    and 
+    [Liferay Portal CE](https://web.liferay.com/marketplace/-/mp/application/15392476). 
 
-- **Private Messaging:** Enables Social Office Private Messaging in 
-  @product-ver@. Although the first three GA releases (GA1, GA2, GA3) of Liferay 
-  Portal 7.0 CE contain this app, it will be removed in GA4 and instead released 
-  on Liferay Marketplace. To get this app for Liferay DXP, which doesn't contain 
-  it, 
-  [click here](https://web.liferay.com/marketplace/-/mp/application/83559411). 
+-   **Private Messaging:** Enables Social Office Private Messaging in 
+    @product-ver@. Although the first three GA releases (GA1, GA2, GA3) of 
+    Liferay Portal 7.0 CE contain this app, it will be removed in GA4 and 
+    instead released on Liferay Marketplace. To get this app for Liferay DXP, 
+    which doesn't contain it, 
+    [click here](https://web.liferay.com/marketplace/-/mp/application/83559411). 
 
-- **Events List:** Enables Social Office Events Display in @product-ver@. 
-  [Click here](https://web.liferay.com/marketplace/-/mp/application/83511066) 
-  to get this app for Liferay Portal CE 
-  [or here](https://web.liferay.com/marketplace/-/mp/application/83511153) 
-  for Liferay DXP. 
+-   **Events List:** Enables Social Office Events Display in @product-ver@. 
+    [Click here](https://web.liferay.com/marketplace/-/mp/application/83511066) 
+    to get this app for Liferay Portal CE 
+    [or here](https://web.liferay.com/marketplace/-/mp/application/83511153) 
+    for Liferay DXP. 
 
-- **WYSIWYG:** Enables the Social Office WYSIWYG app. 
-  [Click here](https://web.liferay.com/marketplace/-/mp/application/15502123) 
-  to get this app for Liferay Portal CE 
-  [or here](https://web.liferay.com/marketplace/-/mp/application/15503342) 
-  for Liferay DXP. 
+-   **WYSIWYG:** Enables the Social Office WYSIWYG app. 
+    [Click here](https://web.liferay.com/marketplace/-/mp/application/15502123) 
+    to get this app for Liferay Portal CE 
+    [or here](https://web.liferay.com/marketplace/-/mp/application/15503342) 
+    for Liferay DXP. 
 
 Once you've installed these modules, you're ready to proceed with the upgrade. 
 Onward! 

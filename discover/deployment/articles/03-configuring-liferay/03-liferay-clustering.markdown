@@ -86,28 +86,32 @@ Enabling a read-writer database is simple. In your `portal-ext.properties` file,
 configure two different data sources for @product@ to use, one for reading, and
 one for writing:
 
+    jdbc.read.jndi.name=**your read JNDI name**
     jdbc.read.driverClassName=com.mysql.jdbc.Driver
     jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
     jdbc.read.username=**your user name**
     jdbc.read.password=**your password**
-    
+
+    jdbc.write.jndi.name=**your read-write JNDI name**
     jdbc.write.driverClassName=com.mysql.jdbc.Driver
-    jdbc.write.url=jdbc:mysql://dbwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    jdbc.write.url=jdbc:mysql://dbreadwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
     jdbc.write.username=**your user name**
     jdbc.write.password=**your password**
 
-Of course, specify the user name and password to your database in the above
-configuration.
+Of course, specify the JNDI name, user name, and password to each of your
+databases in the above configuration.
 
 After this, enable the read-writer database configuration by uncommenting the
-Spring configuration file which enables it in your `spring.configs` property:
+Spring configuration file which enables it in your
+`spring.infrastructure.configs` property:
 
-    spring.configs=\
+    spring.infrastructure.configs=\
     [..]
     META-INF/dynamic-data-source-spring.xml,\
     [..]
 
-You can find the full `spring.config` list in the `portal.properties`
+You can find the full `spring.infrastructure.configs` list in the
+`portal.properties`
 [documentation](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Spring).
 
 The next time you start @product@, it uses the two data sources you have
