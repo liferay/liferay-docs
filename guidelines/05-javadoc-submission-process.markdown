@@ -27,7 +27,8 @@ this way:
 1.  Write Javadoc for code areas that you have deep knowledge for. Be sure to
     follow the
     [Javadoc Guidelines](https://dev.liferay.com/participate/javadoc-guidelines)
-    when writing Javadoc to ensure the quickest review times.
+    when writing Javadoc to ensure comprehensive descriptions and consistent
+    style.
 
 2.  Insert an `@review` tag below each Javadoc entry that you provide. This will
     be searched for by the Knowledge Management (KM) team after it's merged to
@@ -59,7 +60,8 @@ published:
 1.  Write Javadoc for code areas that you have deep knowledge on. Be sure to
     follow the
     [Javadoc Guidelines](https://dev.liferay.com/participate/javadoc-guidelines)
-    when writing Javadoc to ensure the quickest review times.
+    when writing Javadoc to ensure comprehensive descriptions and consistent
+    style.
 
 2.  Send a pull request containing the new Javadoc to the KM member (tech
     writer) that represents your team. If you're unsure who you should send the
@@ -78,7 +80,8 @@ below to contribute:
 1.  Write Javadoc for code areas that you have deep knowledge on. Be sure to
     follow the
     [Javadoc Guidelines](https://dev.liferay.com/participate/javadoc-guidelines)
-    when writing Javadoc to ensure the quickest review times.
+    when writing Javadoc to ensure comprehensive descriptions and consistent
+    style.
 
 2.  Send a pull request containing the new Javadoc to
     [`codyhoag`](https://github.com/codyhoag).
