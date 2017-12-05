@@ -101,7 +101,7 @@ to complete to ensure Javadoc is properly formatted and ready for submission:
   [here](https://dev.liferay.com/participate/javadoc-guidelines#formattingAndBuildingJavadoc)
   for more information.
 - Ensure no source formatting violations were introduced while editing. To check
-  this, run source formatter on your local changes. For example, the steps below
+  this, run Source Formatter on your local changes. For example, the steps below
   can be used when reviewing a submission in `liferay-portal`:
     1. Navigate to `liferay-portal/portal-impl` using a command line tool.
     2. Run `ant format-source-local-changes`.
