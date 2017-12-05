@@ -39,8 +39,7 @@ $$$
     - The key length in bits (2048 is the default)
     - The key password
 
-    If you're configuring an example setup, use the password *liferay*. When
-    you enter all the required information, click *Save*.
+    When you enter all the required information, click *Save*.
 
 4.  After you clicked *Save*, check that you can view information about your
     certificate or download your certificate. If you can, you successfully
@@ -50,11 +49,11 @@ $$$
 	- *General*:
     This tab enables or disables SAML IdP and manages the required keystore.
     
-    - *Service Provider*: (*not Identity Provider!*)    
-    This tab manages basic and advanced configurations for the SP.
+    - *Service Provider*: This tab manages basic and advanced configurations for
+      the SP.
  
-    - *Identity Provider Connection*: (*not Service Provider Connections!*) 
-    This tab manages connections to the IdP. There can be only one IdP connection.
+    - *Identity Provider Connection*: This tab manages connections to the IdP.
+      There can be only one IdP connection.
 
     Note that these options are different than if you were setting up @product@ as
     an Identity Provider.
@@ -141,7 +140,7 @@ to expire very quickly.
 
 **LDAP Import Enabled:** When this box is checked, user information is imported
 from the configured LDAP connection based on the resolved NameID. LDAP
-connections can be configured from Portal Settings.
+connections can be configured from Instance Settings.
 
 **Sign Authn Requests:** When this box is checked, the AuthnRequest is signed
 even if the Identity Provider metadata indicates that it's not required.
@@ -235,16 +234,8 @@ If you want to use the Liferay SAML 2.0 Provider app as an SSO solution for a
 clustered @product@ environment, follow the steps in this section. Before
 proceeding, make sure that the following assumptions apply to your scenario.
 
-Suppose that your clustered @product@ environment consists of multiple @product@
-nodes that sit behind a load balancer. Your @product@ nodes could be @product@
-Tomcat bundles, for example. Your load balancer could be software like Apache
-web server or hardware like F5 BIG-IP. Suppose further that you want want the
-nodes of your @product@ cluster to serve as SAML Service Providers. And suppose
-that you have a third-party participating as the SAML Identity Provider. (For
-testing purposes, you could create a separate @product@ installation to serve as
-the SAML IdP.)
-
-If your situation fits the scenario described above, follow these steps:
+If you're running a multi-node cluster behind a load balancer, follow these
+steps to enable all the nodes as SPs:
 
 1.  Configure each node of your [@product@
     cluster](/discover/deployment/-/knowledge_base/7-0/liferay-clustering) as a SAML
