@@ -124,44 +124,44 @@ has some differences compared to native code:
 -   Protocols in Swift are analogous to interfaces in C#:
 
         // Swift
-        protocol PrintSelf {
-            func ToString() -> String
+        protocol DoThings {
+            func MyMethod() -> String
         }
 
         // C#
-        interface PrintSelf
+        interface DoThings
         {
-            string PrintString();
+            string MyMethod();
         }
 
 -   Initializers in Swift are analogous to constructors in C#:
 
         // Swift
-        class Pet {
-            var name : String = ""
+        class MyClass {
+            var myVar : String = ""
 
-            init(name : String) {
-                self.name = name
+            init(myVar : String) {
+                self.myVar = myVar
             }
         }
 
-        var spot = Pet(name: "Spot")
+        var testing = MyClass(myVar: "Test")
 
         // C#
-        class Pet {
-            protected string name = "";
+        class MyClass {
+            protected string myVar = "";
 
-            public Pet() {}
+            public MyClass() {}
 
-            public Pet(string name) {
-                this.name = name;
+            public MyClass(string myVar) {
+                this.myVar = myVar;
             }
         }
 
-        var spot = new Pet(name: "Spot");
+        var testing = new MyClass(myVar: "Test");
 
 To learn more about language equivalents between Swift and C#, see 
-[this quick reference](https://download.microsoft.com/download/4/6/9/469501F4-5F6B-4E51-897C-9A216CFB30A3/SwiftCSharpPoster.pdf).
+[this quick reference](https://download.microsoft.com/download/4/6/9/469501F4-5F6B-4E51-897C-9A216CFB30A3/SwiftCSharpPoster.pdf). 
 
 ## Language Equivalents between Java and C#
 
@@ -169,12 +169,12 @@ To extend or implement a class or interface, Java requires that you use those
 keywords, while C# doesn't:
 
     // Java
-    class Car extends Vehicle implements Actions {
+    class Bird extends Vertebrate implements Actions {
         ...
     }
 
     // C#
-    class Car : Vehicle, Actions {
+    class Bird : Vertebrate, Actions {
         ...
     }
 
