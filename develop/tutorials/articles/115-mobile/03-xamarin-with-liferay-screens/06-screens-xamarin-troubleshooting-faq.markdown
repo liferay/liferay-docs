@@ -1,8 +1,8 @@
 # Liferay Screens for Xamarin Troubleshooting and FAQs
 
-Even though Liferay developed Screens for Xamarin with great care, you may still
-run into some common issues. Here are solutions and tips for solving these
-issues. You'll also find answers to common questions about Screens for Xamarin.
+Even though Liferay developed Screens for Xamarin with great care, you may still 
+run into some common issues. Here are solutions and tips for solving these 
+issues. You'll also find answers to common questions about Screens for Xamarin. 
 
 ## General Troubleshooting
 
@@ -117,38 +117,26 @@ has some differences compared to native code:
 -   Pascal case convention:
 
     C# code is usually written in Pascal case. However, you should use Camel 
-    case for protected instance fields or parameters.
+    case for protected instance fields or parameters. 
+
 ## Language Equivalents between Swift and C#
 
-This section is to explain what equivalents exists between Swift and C#:
+-   Protocols in Swift are analogous to interfaces in C#:
 
--   Protocols:
-    
-    | Swift | C# |
-    |:-----:| --:|
-    | protocol | interface |
-
-    Swift:
-
+        // Swift
         protocol PrintSelf {
             func ToString() -> String
         }
 
-    C#:
-
+        // C#
         interface PrintSelf
         {
             string PrintString();
         }
 
--   Initializers:
+-   Initializers in Swift are analogous to constructors in C#:
 
-    | Swift | C# |
-    |:-----:| --:|
-    | init | constructor |
-
-    Swift:
-
+        // Swift
         class Pet {
             var name : String = ""
 
@@ -159,8 +147,7 @@ This section is to explain what equivalents exists between Swift and C#:
 
         var spot = Pet(name: "Spot")
 
-    C#:
-
+        // C#
         class Pet {
             protected string name = "";
 
@@ -173,47 +160,37 @@ This section is to explain what equivalents exists between Swift and C#:
 
         var spot = new Pet(name: "Spot");
 
-If you want to learn more about language equivalents between Swift and C#, 
-please see 
-[this pdf](https://download.microsoft.com/download/4/6/9/469501F4-5F6B-4E51-897C-9A216CFB30A3/SwiftCSharpPoster.pdf).
+To learn more about language equivalents between Swift and C#, see 
+[this quick reference](https://download.microsoft.com/download/4/6/9/469501F4-5F6B-4E51-897C-9A216CFB30A3/SwiftCSharpPoster.pdf).
 
 ## Language Equivalents between Java and C#
 
-This section is to explain what equivalents exist between Java and C#:
+To extend or implement a class or interface, Java requires that you use those 
+keywords, while C# doesn't:
 
--   Java `extends` and `implements` keywords:
+    // Java
+    class Car extends Vehicle implements Actions {
+        ...
+    }
 
-    If you want to extend or implement a class from another, you have to do it 
-    this way:
-    
-    Java: 
+    // C#
+    class Car : Vehicle, Actions {
+        ...
+    }
 
-        class Car extends Vehicle implements Actions {
-            ...
-        }
-
-
-    C#:
-
-        class Car : Vehicle, Actions {
-            ...
-        }
-
-If you want to learn more about language equivalents between Java and C#, please 
-see 
-[this pdf](https://www.google.es/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwj9i4jp1OjXAhUQkRQKHaDtA0kQFggnMAA&url=http%3A%2F%2Fdownload.microsoft.com%2Fdownload%2FD%2FE%2FE%2FDEE91FC0-7AA9-4F6E-9FFA-8658AA0FA080%2FCSharp%2520for%2520Java%2520Developers%2520-%2520Cheat%2520Sheet.pdf&usg=AOvVaw1i0RzOcmyol7LhD59k9cUE).    
+To learn more about language equivalents between Java and C#, see 
+[the C# for Java developers cheat sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjbr8bgz_XXAhWMMyYKHeUPA5wQFgg7MAA&url=http%3A%2F%2Fdownload.microsoft.com%2Fdownload%2FD%2FE%2FE%2FDEE91FC0-7AA9-4F6E-9FFA-8658AA0FA080%2FCSharp%2520for%2520Java%2520Developers%2520-%2520Cheat%2520Sheet.pdf&usg=AOvVaw1i0RzOcmyol7LhD59k9cUE). 
 
 ## FAQs
 
 1.  Do I have to use Visual Studio?
 
-    It's not necessary to use Visual Studio for Xamarin development. You can use 
-    Xamarin Studio or Visual Studio Code instead. But we strongly recommend, 
-    however, that you use Visual Studio. 
+    No, but we strongly recommend it. If you wish, however, you can use Xamarin 
+    Studio or Visual Studio Code instead. 
     
-2.  What's the meaning of `[Export(...)]` below delegate method names?
+2.  What's the meaning of `[Export(...)]` below delegate method names? 
 
-    According to Xamarin documentation, this attribute is applied to properties 
-    and methods in classes that derive from NSObject to export the value to the 
-    Objective-C world. This can be used either to respond to messages or to 
-    override an Objective-C method. 
+    In short, this attribute makes properties and methods available in 
+    Objective-C. 
+    [Xamarin's documentation](https://developer.xamarin.com/api/type/MonoTouch.Foundation.ExportAttribute/) 
+    explains this attribute in detail. 
