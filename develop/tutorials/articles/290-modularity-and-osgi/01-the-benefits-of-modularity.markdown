@@ -59,7 +59,7 @@ Can modularity benefit software too? Yes! The following sections show you how:
 
 Java applications have predominantly been monolithic: they're developed in large
 code bases. In a monolith, it's difficult to avoid tight coupling of classes.
-Modular application design, conversely, facilitate loose coupling, making the
+Modular application design, conversely, facilitates loose coupling, making the
 code easier to maintain. It's much easier and more fun to develop small amounts
 of cohesive code in modules. Here are some key benefits of developing modular
 software. 
@@ -119,7 +119,7 @@ the app's function and required capabilities:
 
 *Required capabilities*:
 - Translates user words to text 
-- Uses a selected computer voice to speak users. 
+- Uses a selected computer voice to speak to users. 
 - Interacts with users based on a script of instructions that include
     questions, commands, requests, and confirmations. 
 
