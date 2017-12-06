@@ -1,10 +1,10 @@
-# Liferay Screens for Xamarin Troubleshooting and FAQs
+# Liferay Screens for Xamarin Troubleshooting and FAQs [](id=liferay-screens-for-xamarin-troubleshooting-and-faqs)
 
 Even though Liferay developed Screens for Xamarin with great care, you may still 
 run into some common issues. Here are solutions and tips for solving these 
 issues. You'll also find answers to common questions about Screens for Xamarin. 
 
-## General Troubleshooting
+## General Troubleshooting [](id=general-troubleshooting)
 
 Before delving into specific issues, you should first make sure that you've 
 installed the correct versions of Visual Studio and the Mono .NET framework. 
@@ -25,7 +25,7 @@ If you get stuck at any point, you can post your question on our
 [forum](https://www.liferay.com/community/forums/-/message_boards/category/42706063). 
 We're happy to assist you! 
 
-## Common Issues
+## Common Issues [](id=common-issues)
 
 This section contains information on common issues that can occur when using 
 Liferay Screens for Xamarin.
@@ -84,7 +84,7 @@ Liferay Screens for Xamarin.
             ...
         }
 
-## DataType Mapping
+## DataType Mapping [](id=datatype-mapping)
 
 For a better understanding about Xamarin code and example apps, see this list to 
 compare type mapping between platforms. You must write Xamarin apps in C#, which 
@@ -119,7 +119,7 @@ has some differences compared to native code:
     C# code is usually written in Pascal case. However, you should use Camel 
     case for protected instance fields or parameters. 
 
-## Language Equivalents between Swift and C#
+## Language Equivalents between Swift and C# [](id=language-equivalents-between-swift-and-c)
 
 -   Protocols in Swift are analogous to interfaces in C#:
 
@@ -163,7 +163,7 @@ has some differences compared to native code:
 To learn more about language equivalents between Swift and C#, see 
 [this quick reference](https://download.microsoft.com/download/4/6/9/469501F4-5F6B-4E51-897C-9A216CFB30A3/SwiftCSharpPoster.pdf). 
 
-## Language Equivalents between Java and C#
+## Language Equivalents between Java and C# [](id=language-equivalents-between-java-and-c)
 
 To extend or implement a class or interface, Java requires that you use those 
 keywords, while C# doesn't:
@@ -181,7 +181,7 @@ keywords, while C# doesn't:
 To learn more about language equivalents between Java and C#, see 
 [the C# for Java developers cheat sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjbr8bgz_XXAhWMMyYKHeUPA5wQFgg7MAA&url=http%3A%2F%2Fdownload.microsoft.com%2Fdownload%2FD%2FE%2FE%2FDEE91FC0-7AA9-4F6E-9FFA-8658AA0FA080%2FCSharp%2520for%2520Java%2520Developers%2520-%2520Cheat%2520Sheet.pdf&usg=AOvVaw1i0RzOcmyol7LhD59k9cUE). 
 
-## FAQs
+## FAQs [](id=faqs)
 
 1.  Do I have to use Visual Studio?
 
@@ -194,3 +194,13 @@ To learn more about language equivalents between Java and C#, see
     Objective-C. 
     [Xamarin's documentation](https://developer.xamarin.com/api/type/MonoTouch.Foundation.ExportAttribute/) 
     explains this attribute in detail. 
+
+## Related Topics [](id=related-topics)
+
+[Preparing Xamarin Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-xamarin-projects-for-liferay-screens)
+
+[Using Screenlets in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-xamarin-apps)
+
+[Using Views in Xamarin.Android](/develop/tutorials/-/knowledge_base/7-0/using-views-in-xamarin-android)
+
+[Using Themes in Xamarin.iOS](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-xamarin-ios)
