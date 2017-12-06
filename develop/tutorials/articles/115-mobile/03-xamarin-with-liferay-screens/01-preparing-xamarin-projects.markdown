@@ -31,9 +31,9 @@ Screenlets included with Screens. The following software is required:
 - [Liferay Portal CE 7.0, or Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
 - [Liferay Screens NuGet package](https://www.nuget.org/packages/LiferayScreens)
 
-Also, 
+Also note that if you get confused or stuck while using Screens for Xamarin, 
 [the official Liferay Screens repository](https://github.com/liferay/liferay-screens) 
-contains two sample Xamarin projects: 
+contains two sample Xamarin projects that you can reference: 
 
 -   [**Showcase-Android:**](https://github.com/liferay/liferay-screens/tree/develop/xamarin/Samples/Showcase-Android) 
     An example app for Xamarin.Android containing all the currently available Screenlets. 
@@ -43,25 +43,24 @@ contains two sample Xamarin projects:
 
 ## Install Liferay Screens in Xamarin Solutions [](id=install-liferay-screens-in-xamarin-solutions)
 
-The easiest way to install Liferay Screens and its dependencies in Xamarin is 
-following these steps to use NuGet.org from our solution: 
+Follow these steps to install Liferay Screens in your Xamarin project: 
 
 1.  Open your project in Visual Studio. 
 
-2.  Right click the *Packages* folder and then select *Add packages...*. 
+2.  Right click your project's *Packages* folder and then select *Add packages...*. 
 
 3.  Look for *LiferayScreens* and install the latest version. 
 
-4.  Accept all its dependencies. They are necessary to use the library in 
-    Xamarin. 
+4.  Accept the license agreements for any dependencies. These are necessary to 
+    use Liferay Screens in Xamarin. 
 
-To check your configuration, do the following: 
+5.  Check your configuration one of these ways: 
 
--   Rebuild and execute the sample project and import a Liferay Screens class 
-    (like `LoginScreenlet`). 
--   In your project, select *References* &rarr; *From Packages* and look for the 
-    `LiferayScreens` file. Open that file in the Assembly Browser. You should 
-    then see all the available files from Liferay Screens for Xamarin. 
+    -   Rebuild and execute your project, and import a Liferay Screens path 
+        (e.g., `Com.Liferay.Mobile.Screens.Auth.Login`). 
+    -   In your project, select *References* &rarr; *From Packages* and look for 
+        the `LiferayScreens*` file. Open that file in the Assembly Browser. You 
+        should then see all the available Liferay Screens files. 
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/k59s0FYD9GY" frameborder="0" allowfullscreen></iframe>
@@ -102,7 +101,6 @@ Fortunately, this is straightforward. Do the following in your Xamarin projects:
 
         </resources>
 
-    
 -   For Xamarin.iOS, create a new file called `liferay-server-context.plist` in 
     the `Resources` folder. Add the following code to this file: 
 
@@ -150,7 +148,7 @@ Form Screenlet and DDL List Screenlet to interact with a @product@ instance's
 DDLs: 
 
     <!-- Change these values for your portal installation -->
-    
+
     <integer name="liferay_recordset_id">20935</integer>
     <string name="liferay_recordset_fields">Title</string>
 

@@ -16,3 +16,11 @@ The tutorials in this section show you how to develop hybrid mobile apps using
 Liferay Screens and Xamarin. You'll start by preparing your Xamarin project for 
 Screens. You'll then learn how to use Screenlets in Xamarin, as well as how to 
 customize their appearance, and more. 
+
++$$$
+
+**Note:** These tutorials assume that you know how to use Xamarin. If you need 
+assistance with Xamarin, see 
+[its documentation](https://developer.xamarin.com/). 
+
+$$$

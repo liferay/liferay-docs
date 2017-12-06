@@ -7,8 +7,8 @@
 $$$
 
 You can start using Screenlets once you've  [prepared](/develop/tutorials/-/knowledge_base/7-0/preparing-xamarin-projects-for-liferay-screens) 
-your Xamarin project to use Liferay Screens. There are plenty of Screenlets 
-available and they're described in the Screenlet reference documentation: 
+your Xamarin project to use Liferay Screens. The Screenlet reference 
+documentation describes the available Screenlets: 
 
 -   [Screenlets in Liferay Screens for Android](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android)
 -   [Screenlets in Liferay Screens for iOS](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios)
@@ -19,83 +19,115 @@ time!
 
 ## Xamarin.iOS [](id=xamarin-ios)
 
-First, insert a `UIView` in your storyboard (in Visual Studio's iOS Designer or 
-Xcode's Interface Builder). Note that if you're editing an XIB file, you must 
-insert a `UIView` inside the XIB's parent `UIView`. The following video, for 
-example, shows Login Screenlet inserted in an storyboard. 
+Follow these steps to insert Screenlets in your Xamarin.iOS app:
+
+1.  Insert a view (`UIView`) in your storyboard (in Visual Studio's iOS Designer 
+    or Xcode's Interface Builder). Note that if you're editing an XIB file, you 
+    must insert the view inside the XIB's parent view. 
+
+2.  Set the view's class to the class of the Screenlet you want to use. For 
+    example, Login Screenlet's class is `LoginScreenlet`. If you're using 
+    Xamarin Designer for iOS in Visual Studio, you must also give the view a 
+    name so you can refer to it in your view controller's code. 
+
+    For example, the following video shows the first two steps for inserting 
+    Login Screenlet in a Xamarin Designer for iOS storyboard. 
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y95XwdpCZVQ" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/y95XwdpCZVQ" frameborder="0" allowfullscreen></iframe>
 
+3.  Configure the Screenlet's behavior in your app by implementing the 
+    Screenlet's delegate in your view controller. To configure your app to 
+    listen for events the Screenlet triggers, implement the Screenlet's delegate 
+    methods and register the view controller as the delegate. Make sure to 
+    annotate each delegate method with `[Export(...)]`. This ensures the method 
+    can be called from Objective-C, which is required for it to work in Screens. 
+    You should also set any Screenlet attributes you need. Each Liferay 
+    Screenlet's 
+    [reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
+    lists its available attributes and delegate methods. 
 
-Next, set the Screenlet's attributes. If it's a Liferay Screenlet, refer to the 
-[Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
-to learn the Screenlet's required and supported attributes. 
+    For example, here's a view controller that implements Login Screenlet's 
+    delegate, `ILoginScreenletDelegate`. Note that the `ViewDidLoad()` method 
+    sets the Screenlet's `ThemeName` attribute and registers the view controller 
+    as the delegate. This view controller also implements the 
+    `OnLoginResponseUserAttributes` method, which is called upon successful 
+    login. Also note this method's `[Export(...)]` annotation: 
 
-To configure your app to listen for events the Screenlet triggers, override the 
-Screenlet's delegate methods in your view controller. Make sure to implement all 
-the methods you need. Then register your view controller as the Screenlet's 
-delegate. For Liferay's Screenlets, the delegate methods are listed in each 
-Screenlet's 
-[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios). 
-
-For example, here's a view controller that implements `LoginScreenletDelegate`: 
-
-    public partial class ViewController : UIViewController, LoginScreenletDelegate
-    {
-        protected ViewController(IntPtr handle) : base(handle) {}
-
-        public override void ViewDidLoad()
+        public partial class ViewController : UIViewController, ILoginScreenletDelegate
         {
-            base.ViewDidLoad();
+            protected ViewController(IntPtr handle) : base(handle) {}
 
-            /* Set the Screenlet's attributes */
-            this.loginScreenlet.ThemeName = "demo";
+            public override void ViewDidLoad()
+            {
+                base.ViewDidLoad();
 
-            /* Listen for events the Screenlet triggers */
-            this.loginScreenlet.Delegate = this;
-        }
+                // Set the Screenlet's attributes
+                this.loginScreenlet.ThemeName = "demo";
 
-        ...
+                // Registers this view controller as the delegate 
+                this.loginScreenlet.Delegate = this;
+            }
 
-        /* Delegate methods */
-
-        [Export("screenlet:onLoginResponseUserAttributes:")]
-        public virtual void OnLoginResponseUserAttributes(BaseScreenlet screenlet, NSDictionary<NSString, NSObject> attributes)
-        {
             ...
+
+            // Delegate methods
+
+            [Export("screenlet:onLoginResponseUserAttributes:")]
+            public virtual void OnLoginResponseUserAttributes(BaseScreenlet screenlet, 
+                NSDictionary<NSString, NSObject> attributes)
+            {
+                ...
+            }
         }
-    }
+
+See 
+[the Showcase-iOS app](https://github.com/liferay/liferay-screens/tree/develop/xamarin/Samples/Showcase-iOS/ViewController)
+for more examples of view controllers that use Liferay's Screenlets. 
 
 ## Xamarin.Android [](id=xamarin-android)
 
-First, open your app's layout AXML file and insert the Screenlet in your 
-activity or fragment layout. For example, the following screenshot shows Login 
-Screenlet in an activity's `FrameLayout`. 
+Follow these steps to insert Screenlets in your Xamarin.Android app: 
 
-![Figure 1: Here's Login Screenlet in an activity's layout in Visual Studio.](../../../images/screens-xamarin-android-insert-screenlet.png)
+1.  Open your app's layout AXML file and insert the Screenlet's XML in your 
+    activity or fragment layout. For example, here's Login Screenlet's XML in an 
+    activity's `FrameLayout`: 
 
-Next, set the Screenlet's attributes. If it's a Liferay Screenlet, refer to the 
-[Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
-to learn the Screenlet's required and supported attributes. This screenshot 
-shows Login Screenlet's attributes being set: 
+        <?xml version="1.0" encoding="utf-8"?>
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.liferay.mobile.screens.auth.login.LoginScreenlet
+                android:id="@+id/login_screenlet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:basicAuthMethod="email"/>
+        </FrameLayout>
 
-![Figure 2: You can set a Screenlet's attributes via the app's layout AXML file.](../../../images/screens-xamarin-android-screenlet-attributes.png)
+2.  Set the Screenlet's attributes. If it's a Liferay Screenlet, refer to the 
+    [Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
+    to learn the Screenlet's required and supported attributes. This screenshot 
+    shows Login Screenlet's attributes being set: 
 
-To configure your app to listen for events the Screenlet triggers, implement the 
-Screenlet's listener interface in your activity or fragment class. Refer to the 
-[Screenlet's reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
-to learn its listener interface. Then register your activity or fragment as the 
-Screenlet's listener. For example, the activity class in the following 
-screenshot implements Login Screenlet's `LoginListener` interface, and registers 
-itself to listen for the Screenlet's events. 
+    ![Figure 1: You can set a Screenlet's attributes via the app's layout AXML file.](../../../images/screens-xamarin-android-screenlet-attributes.png)
 
-![Figure 3: Implement the Screenlet's listener in your activity or fragment class.](../../../images/screens-xamarin-android-screenlet-listener.png)
+3.  To configure your app to listen for events the Screenlet triggers, implement 
+    the Screenlet's listener interface in your activity or fragment class. Refer 
+    to the 
+    [Screenlet's reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
+    to learn its listener interface. Then register your activity or fragment as 
+    the Screenlet's listener. For example, the activity class in the following 
+    screenshot implements Login Screenlet's `LoginListener` interface, and 
+    registers itself to listen for the Screenlet's events. 
 
-Make sure to implement all methods required by the Screenlet's listener 
-interface. For Liferay's Screenlets, the listener methods are listed in each 
-Screenlet's 
-[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android). 
+    ![Figure 2: Implement the Screenlet's listener in your activity or fragment class.](../../../images/screens-xamarin-android-screenlet-listener.png)
+
+4.  Make sure to implement all methods required by the Screenlet's listener 
+    interface. For Liferay's Screenlets, the listener methods are listed in each 
+    Screenlet's 
+    [reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android). 
 
 That's all there is to it! Awesome! Now you know how to use Screenlets in your 
 Xamarin apps. 
