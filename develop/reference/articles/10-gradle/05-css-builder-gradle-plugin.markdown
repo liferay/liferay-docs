@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "2.0.1"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "2.1.7"
     }
 
     repositories {
@@ -74,11 +74,13 @@ Property Name | Default Value
 [`classpath`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:classpath) | [`project.configurations.cssBuilder`](#liferay-css-builder-dependency)
 [`defaultCharacterEncoding`](https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/JavaExec.html#setDefaultCharacterEncoding\(java.lang.String\)) | `"UTF-8"`
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.css.builder.CSSBuilder"`
+[`systemProperties`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:systemProperties) | `["sass.compiler.jni.clean.temp.dir", true]`
 
 #### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
+`appendCssImportTimestamps` | `boolean` | `true` | Whether to append the current timestamp to the URLs in the `@import` CSS at-rules. It sets the `sass.append.css.import.timestamps` argument.
 `cssFiles` | `FileCollection` | \- | The SCSS files to compile. *(Read-only)*
 `dirNames` | `List<String>` | `["/"]` | The name of the directories, relative to [`docrootDir`](#docrootdir), which contain the SCSS files to compile. All sub-directories are searched for SCSS files as well. It sets the `sass.dir` argument.
 <a name="docrootdir"></a>`docrootDir` | `File` | `null` | The base directory that contains the SCSS files to compile. It sets the `sass.docroot.dir` argument.
@@ -96,10 +98,21 @@ Property Name | Type | Default Value | Description
 
 **Note:** Liferay's CSS Builder is supported for Oracle's JDK and uses a native
 compiler for increased speed. If you're using an IBM JDK, you may experience
-issues when building your SASS files (e.g., when building a theme). It's
+issues when building your Sass files (e.g., when building a theme). It's
 recommended to switch to using the Oracle JDK, but if you prefer using the IBM
-JDK, you must use the fallback Ruby compiler. To do this, set the
-`sassCompilerClassName` property to `ruby`.
+JDK, you must use the fallback Ruby compiler. You can do this two ways:
+
+- If you're working in a
+  [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+  or using the
+  [Liferay Gradle Plugins](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins)
+  plugin, set `sass.compiler.class.name=ruby` in your `gradle.properties` file.
+- Otherwise, set `buildCSS.sassCompilerClassName='ruby'` in the project's
+  `build.gradle` file.
+
+The `sass.compiler.class.name=ruby` Gradle property only works for modules, so
+if you're using the Ruby compiler in a WAR project (e.g., theme), you must use
+the second option.
 
 Be aware that the Ruby-based compiler doesn't perform as well as the native
 compiler, so expect longer compile times.
@@ -132,7 +145,7 @@ manually adding a dependency to the `cssBuilder` configuration:
 
 ```gradle
 dependencies {
-    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "1.0.28"
+    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "2.0.2"
 }
 ```
 
@@ -146,6 +159,6 @@ configuration:
 
 ```gradle
 dependencies {
-    cssBuilder group: "com.liferay", name: "com.liferay.frontend.css.common", version: "2.0.1"
+    portalCommonCSS group: "com.liferay", name: "com.liferay.frontend.css.common", version: "2.0.1"
 }
 ```

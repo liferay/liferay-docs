@@ -42,6 +42,28 @@ renderer can be customized to fit your needs.
 If you want to create an asset and make it do more than display its title and
 description, read on to learn more!
 
+## Prerequisites for Asset Enabling and Application [](id=prerequisites-for-asset-enabling-and-application)
+
+To asset-enable your application, you need two things: 
+
+1.  The application must store asset data. Applications that store a data model
+    meet this requirement.
+
+2. The application must contain at least one non-instanceable portlet. `Edit` 
+    links for the asset cannot be generated without a non-instanceable portlet.
+
+Some applications may consist of only one non-instanceable portlet, while others
+may consist of a both instanceable and non-instanceable portlets. If your 
+application does not currently include a non-instanceable portlet, adding a 
+configuration interface through a panel app will both enhance the usability of 
+the application, and meet the requirement for adding a non-instanceable 
+component to the application. See our tutorial on 
+[Adding Custom Panel Apps](/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)
+to learn how to add one.
+
+Now that you have all that taken care of, you can move on to creating an Asset 
+Renderer.
+
 ## Creating an Asset Renderer [](id=creating-an-asset-renderer)
 
 An asset renderer lets you provide your own HTML for your asset. The
@@ -662,7 +684,7 @@ renderer factory.
         }
 
     You can find a list of all available Lexicon icons at
-    [http://liferay.github.io/lexicon/content/icons-lexicon/](http://liferay.github.io/lexicon/content/icons-lexicon/).
+    [https://liferay.github.io/clay/content/icons-lexicon/](https://liferay.github.io/clay/content/icons-lexicon/).
 
 7.  Add methods that generate URLs to add and view the asset.
 

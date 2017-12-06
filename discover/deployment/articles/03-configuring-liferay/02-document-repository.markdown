@@ -15,7 +15,7 @@ System Settings, open the *Menu*
 Configuration &rarr; System Settings*. From System Settings, navigate to
 *Platform* and then search for and select the entry *Simple File System Store*.
 For the store's *Root dir* value, specify a path relative to
-[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
+[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
 or an absolute path; then click the *Update* button. The document library store
 switches immediately to the new folder. 
 
@@ -192,6 +192,13 @@ documents on the local file system where @product@ is installed, in the
 `[Liferay Home]/liferay/jackrabbit` folder. Inside this folder is Jackrabbit's
 configuration file, called `repository.xml`. 
 
++$$$
+
+**Note:** JCR Store is deprecated as of Liferay DXP Digital Enterprise Fix Pack
+14 and Liferay Portal CE 7.0 GA4.
+
+$$$
+
 Using the default settings, the JCR store is not very different from the file
 system stores, except you can use any JCR client to access the files. You can,
 however, modify Jackrabbit's configuration so it stores files in a database that
@@ -245,7 +252,7 @@ store, because you're storing documents in a database instead of on the file
 system. But it does have the benefit of clustering well.
 For example, you can store documents and media files in your @product@ instance's
 database using DBStore. To enable DBStore, add the following [`dl.store.impl`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Document%20Library%20Service)
-portal property to a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home):
+portal property to a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home):
 
     dl.store.impl=com.liferay.portal.store.db.DBStore
 

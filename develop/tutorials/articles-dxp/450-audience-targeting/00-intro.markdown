@@ -23,8 +23,8 @@ These extension points include
 
 Audience Targeting extensions are created using OSGi modules. There are
 convenient Blade CLI templates for creating these projects, but you can create
-the modules any way you want. To use the templates, see the [Blade CLI
-tutorials](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
+the modules any way you want. To use the templates, see the
+[Blade CLI tutorials](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
 
 In this section's tutorials, you'll learn how to create these extension points
 for your Audience Targeting application.

@@ -58,8 +58,8 @@ After upgrading your plugins you can consider optimizations such as these:
     to leverage Declarative Services, extendability, and more
     [modularity benefits](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers).
 -   Using the
-    [Liferay Lexicon](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app)
-    design language to apply a clean consistent application user experience. 
+    [Lexicon](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app),
+    to apply a clean consistent application user experience. 
 
 See the
 [optimization tutorials](/develop/tutorials/-/knowledge_base/7-0/optimizing-plugins-for-liferay-7)
@@ -144,6 +144,7 @@ paths for 6.2 plugins and features.
 
  Feature | Upgrade path | Optimizations (optional) |
  :----------------- | :----------- | :----------------------- |
+ JNDI data source | [Use @product@'s classloader to access the app server's JNDI API](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi) | None |
  Resources Importer | [Update the Resources Importer](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes#updating-the-resources-importer) | None |
  Services - Invoke a service from @product@ Core or another portlet or module | [Implement a Service Tracker](/develop/tutorials/-/knowledge_base/7-0/service-trackers) | [Invoke Liferay services from a module](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services) |
  Services - Module dependency | Copy `x-service.jar` to `WEB-INF/lib` | - [Migrate to Gradle/Maven](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications) and [add dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) on the OSGi service |

@@ -4,7 +4,7 @@
 <img src="guidelines/images/liferayDeveloperNetworkSmallerEdit7.jpg" alt="Liferay Docs Icon">
 </a>
 
-[![Join the chat at https://gitter.im/rotty3000/blade](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/liferay/liferay-docs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Slack Status](https://community-chat.liferay.com/badge.svg)](https://liferay-community.slack.com/messages/C5XE4BH3Q/)
 
 Welcome to Liferay's official documentation project, the home of
 [Liferay Developer Network](https://dev.liferay.com) articles. All articles are
@@ -50,6 +50,10 @@ GitHub.
     </tr>
     <tr>
     <td>&nbsp;master&nbsp;</td>
+    <td>&nbsp;7.1</td>
+    </tr>
+    <tr>
+    <td>&nbsp;7.0.x&nbsp;</td>
     <td>&nbsp;7.0</td>
     </tr>
     <tr>

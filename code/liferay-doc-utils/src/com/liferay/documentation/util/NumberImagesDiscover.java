@@ -14,11 +14,9 @@ public class NumberImagesDiscover {
 		File markdownfile = new File(markdownFilePath);
 
 		String source = FileUtils.readFileToString(markdownfile);
-		String find = "\\!\\[Figure x:";
-		System.out.println("find: " + find);
+		String find = "\\!\\[Figure [x|X]:";
 		int fignum = 1;
 		String replace = "\\!\\[Figure " + fignum + ":";
-		System.out.println("replace: " + replace);
 
 		//
 		// Compiles the given regular expression into a pattern
@@ -44,7 +42,6 @@ public class NumberImagesDiscover {
 			matcher = pattern.matcher(output);
 			fignum++;
 			replace = "\\!\\[Figure " + fignum + ":";
-			System.out.println("replace: " + replace);
 			output = matcher.replaceFirst(replace);
 		}
 

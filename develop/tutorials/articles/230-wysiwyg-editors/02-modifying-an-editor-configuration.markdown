@@ -44,32 +44,29 @@ provided below.
     [EditorConfigContributor](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.html)
     interface.
 
-    <!-- Change the Javadoc link above to the Javadoc listed on
-    docs.liferay.com, when 7.0 Javadoc is available. -Cody -->
-
     The following code is a sample of what the `@Component` annotation could
     look like when modifying an editor's configuration:
 
         @Component(
             property = {
                 "editor.config.key=contentEditor", "editor.name=alloyeditor",
-                "editor.name=ckeditor", "javax.portlet.name=33",
-                "javax.portlet.name=161", "service.ranking:Integer=100"
+                "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
+                "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet", "service.ranking:Integer=100"
             },
 			
             service = EditorConfigContributor.class
         )
 
-    This annotation declares that the following service will be applied for the
-    AlloyEditor and CKEditor identified by their `contentEditor` configuration
-    key. Two portlet names are specified, which means that the service applies
+    This annotation declares that the following service is applied for the
+    AlloyEditor identified by the `contentEditor` configuration key. Two portlet
+    names are specified (Blogs and Blogs Admin), which means the service applies
     to all editors in those portlets. Lastly, the service ranking is listed,
     which prioritizes this service over others that are currently deployed in
-    Portal.
+    @product@.
 
-4.  Now that you've specified which editor configurations you want to modify, you
-    need to specify what about them you'd like to change. Add the following
-    method to your new class:
+4.  Now that you've specified which editor configurations you want to modify,
+    you must specify what about them must change. Add the following method to
+    your new class:
 
         @Override
         public void populateConfigJSONObject(
@@ -79,6 +76,13 @@ provided below.
 
         }
 
+    This method updates the original configuration JSON object with a new
+    configuration. It can even update or delete the original configuration, or
+    any other configuration introduced by another `EditorConfigContributor`.
+    The configuration object contains the configuration to be directly used by
+    the editor. This means that the configuration object used for this editor
+    may differ from other editors used in @product@.
+    
     Currently, this method does nothing. You need to add some logic, which
     you'll do next.
 
@@ -89,13 +93,28 @@ provided below.
 
         JSONObject toolbars = jsonObject.getJSONObject("toolbars");
 
-6.  Now that the `JSONObject` holds your editor's configuration, you can modify
-    the configuration. For instance, suppose you'd like to add a button to your
-    editor's toolbar. To complete this, you'd need to extract the *Add* buttons
-    out of your toolbar configuration object as a
+    This gets the editor's toolbar.
+
+    +$$$
+
+    **Note:** This toolbar configuration is only applicable for the AlloyEditor.
+    If you choose a configuration that is supported by multiple editors, you
+    could apply it to them all. To do this, you could specify all the editors
+    (e.g., `"editor.name=alloyeditor"`, `"editor.name=ckeditor"`,
+    `ckeditor_bbcode` etc.) in the `@Component` annotation  of your
+    `EditorConfigContributor` implementation, as you did in step 3.
+
+    $$$
+
+    Now that you've retrieved the toolbar, you can modify it. You'll do this
+    next.
+
+6.  You'll modify the editor's toolbar by adding a camera button. To complete
+    this, extract the *Add* buttons out of your toolbar configuration object as
+    a
     [JSONArray](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/json/JSONArray.html),
-    and then add the button to that `JSONArray`. For example, the following code 
-    would add a *Camera* button to the editor's toolbar:
+    and then add the button to that `JSONArray`. The following code adds a
+    *Camera* button to the editor's toolbar:
 
         if (toolbars != null) {
             JSONObject toolbarAdd = toolbars.getJSONObject("add");
@@ -111,14 +130,14 @@ provided below.
     you've implemented in the `populateConfigJSONObject` method.
 
 Your Java class is complete! The only thing left to do is generate the module's
-JAR file and copy it to your Portal's `osgi/modules` directory. Once the module
-is installed and activated in your Portal's service registry, your new editor
+JAR file and copy it to your Portal's `deploy` folder. Once the module is
+installed and activated in your Portal's service registry, your new editor
 configuration is available for use.
 
 @product@ supports several different types of WYSIWYG editors, which include
 (among others):
 
-- [AlloyEditor](http://alloyeditor.com/api/)
+- [AlloyEditor](https://alloyeditor.com/api/1.4.1/)
 - [CKEditor](http://docs.ckeditor.com/#!/api/CKEDITOR.config)
 - [TinyMCE](http://www.tinymce.com/wiki.php/Configuration)
 

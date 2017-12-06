@@ -54,7 +54,7 @@ encrypted passwords in the user sessions, SSO can't be used with the external
 repository types. 
 
 Let's configure Liferay Portal for what's required in authentication.
-In  a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home),
+In  a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home),
 set a [`session.store.password`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Session)
 portal property to `true`:
 

@@ -78,6 +78,13 @@ example,
 You can also set location of your Liferay bundle with the
 `liferay.workspace.home.dir` property. It's set to `bundles` by default.
 
+**Important:** Make sure the `com.liferay.portal.tools.bundle.support` plugin in
+your POM is configured to use version `3.2.0+`. The
+`liferay.workspace.bundle.url` property does not work for workspaces using an
+older version of the Bundle Support plugin. See the
+[Updating a Maven Workspace](updating-a-maven-workspace) section for
+instructions on how to update the plugin.
+
 Once you've finalized your workspace properties, navigate to your workspace's
 root folder and run
 
@@ -85,10 +92,6 @@ root folder and run
 
 This command downloads the version of @product@ you specified in your POM file
 and installs your @product@ instance in the `bundles` folder.
-
-**Important:** Make sure the `com.liferay.portal.tools.bundle.support` plugin in
-your POM is configured to use version `2.0.3+`. The `bundle-support` prefixed
-commands don't work with previous versions of the Bundle Support plugin.
 
 If you run into errors during the bundle downloading process, check to make sure
 your workspace is accounting for the
@@ -162,7 +165,7 @@ Workspace's functionality.
 
 Maven Workspace also lets you deploy your projects to @product@ using Maven. See
 the
-[Deploying a Module Built with Maven to @product@](/develop/tutorials/-/knowledge_base/7-0/deploying-a-module-built-with-maven-to-liferay-portal)
+[Deploying a Module Built with Maven to @product@](/develop/tutorials/-/knowledge_base/7-0/deploying-a-module-built-with-maven-to-product)
 tutorial for more information.
 
 Want to leverage Maven Workspace's testing infrastructure so you can simulate
@@ -189,7 +192,7 @@ must update the Bundle Support plugin configured in your workspace's root
     <plugin>
         <groupId>com.liferay</groupId>
         <artifactId>com.liferay.portal.tools.bundle.support</artifactId>
-        <version>3.0.1</version>
+        <version>3.2.1</version>
         ...
     </plugin>
 

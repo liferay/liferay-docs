@@ -83,7 +83,7 @@ Your first step is to examine the custom module projects that extend popular
 [Liferay Blade Samples](https://github.com/liferay/liferay-blade-samples)
 repository. For
 more information on these sample projects, see the
-[Liferay Sample Modules](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
 tutorial. Usable extension points are also documented throughout Liferay's
 Developer Network categorized by the @product@ section involved. For example,
 [Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
@@ -135,7 +135,7 @@ custom Ext plugin:
     *example* is used for both. Note that the Display name field is
     automatically filled in with the capitalized version of the Project name.
 
-    ![Figure 1: You can create an Ext plugin project with Liferay IDE.](../../../images/ext-create-an-ext-plugin-project.png)
+    ![Figure 1: You can create an Ext plugin project with Liferay @ide@.](../../../images/ext-create-an-ext-plugin-project.png)
 
 3.  Select the *Ant (liferay-plugins-sdk)* option for your build type.
 
@@ -346,7 +346,7 @@ finished, you can deploy the plugin.
 Now you'll learn how to deploy your plugin using Liferay @ide@ or the command
 line. 
 
-##### Deploying in Liferay IDE [](id=deploying-in-liferay-ide)
+##### Deploying in Liferay @ide@ [](id=deploying-in-liferay-ide)
 
 Drag your Ext plugin project from your Package Explorer onto your server to
 deploy your plugin. Liferay @ide@ automatically restarts the server for the
@@ -421,7 +421,7 @@ redeploying your Ext plugin. By cleaning the application server, the existing
 environment is unzipped in its place. See the instructions below to learn more
 about this process.
 
-##### Using Liferay IDE [](id=using-liferay-ide)
+##### Using Liferay @ide@ [](id=using-liferay-ide)
 
 1.  Remove the plugin from the server. While selecting the Ext plugin in the
     *Servers* view, select the plugin's *Remove* option. 

@@ -113,13 +113,16 @@ adapter.
 
 +$$$
 
-**Liferay Digital Enterprise:** Using the [App Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps) to
+**Liferay Digital Enterprise:** Using the [App
+Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps) to
 deactivate the Elasticsearch adapter bundle, as described below, is easy and
-effective. However, there's a limitation related to the patching process for
-Liferay Digital Enterprise 7.0. If you install a patch that replaces the
-`Liferay Foundation.lpkg`, the Elasticsearch adapter is reinstalled and started
+effective. If your installation is updated, that's all you need to do. However,
+there's a [bug](https://issues.liferay.com/browse/LPS-74456) related to the
+patching process for Liferay Digital Enterprise 7.0, present in all versions
+below Fix Pack 31. If you install a patch that replaces the `Liferay
+Foundation.lpkg`, the Elasticsearch adapter is reinstalled and started
 automatically. Because of this, you must deactivate the Elasticsearch bundle
-after each patch, using the method described below.
+after each patch.
 
 $$$
 
@@ -292,7 +295,6 @@ Liferay's Solr adapter.
 article](/discover/reference/-/knowledge_base/7-0/solr-settings).
 
 $$$
-
 
 Now you're able to configure @product@ for Solr, and Solr for @product@. Remember
 that Elasticsearch is the default search engine for @product@, so if you're not

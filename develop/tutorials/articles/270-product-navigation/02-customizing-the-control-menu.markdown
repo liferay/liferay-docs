@@ -83,8 +83,11 @@ Menu.
         "product.navigation.control.menu.category.key=" + ProductNavigationControlMenuCategoryKeys.TOOLS
 
     Similar to panel categories, you'll also need to specify an integer for the
-    order in which your entry will be displayed in the category. Lastly, your
-    `service` element should specify the
+    order in which your entry will be displayed in the category. Entries are
+    ordered from left to right. For example, an entry with order `1` will be
+    listed to the left of an entry with order `2`. If the order is not
+    specified, it's chosen at random based on which service was registered first
+    in the OSGi container. Lastly, your `service` element should specify the
     `ProductNavigationControlMenuEntry.class` service.
 
 4. Implement the
@@ -121,7 +124,7 @@ Menu.
     By default, Lexicon icons are expected to be returned. This is because the 
     [`BaseProductNavigationControlMenuEntry.getMarkupView` method](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/menu/BaseProductNavigationControlMenuEntry.html#getMarkupView-javax.servlet.http.HttpServletRequest-)
     returns `lexicon`. To view all the Lexicon icons available, see
-    [http://liferay.github.io/lexicon/content/icons-lexicon/](http://liferay.github.io/lexicon/content/icons-lexicon/).
+    [https://liferay.github.io/clay/content/icons-lexicon/](https://liferay.github.io/clay/content/icons-lexicon/).
     You can also return FontAwesome icons, but you must implement the
     [ProductNavigationControlMenuEntry.getMarkupView(...)](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/menu/ProductNavigationControlMenuEntry.html#getMarkupView-javax.servlet.http.HttpServletRequest-)
     method in your class and have it return `null`. Then you can return
@@ -178,9 +181,9 @@ Menu.
         }
 
     The icons used in the two examples for Lexicon and CSS icons can be found in
-    the [icons-lexicon](http://liferay.github.io/lexicon/content/icons-lexicon/)
+    the [icons-lexicon](https://liferay.github.io/clay/content/icons-lexicon/)
     and
-    [icons-font-awesome](http://liferay.github.io/lexicon/content/icons-font-awesome/)
+    [icons-font-awesome](https://liferay.github.io/clay/content/icons-font-awesome/)
     components, respectively.
 
     The [ProductMenuProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/java/com/liferay/product/navigation/product/menu/web/internal/product/navigation/control/menu/ProductMenuProductNavigationControlMenuEntry.java)

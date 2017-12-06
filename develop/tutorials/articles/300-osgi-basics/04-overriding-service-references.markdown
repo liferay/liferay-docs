@@ -23,7 +23,7 @@ root generates the module JAR to the `build/libs` folder.
 
 -   `override-my-service-reference` 
     ([download](https://dev.liferay.com/documents/10184/656312/override-my-service-reference.zip)):
-    This module's portlet component `OverrideMyServiceReference`'s field
+    This module's portlet component `OverrideMyServiceReferencePortlet`'s field
     `_someService` references a service of type `SomeService`. The reference's
     policy is static and reluctant. By default, it binds to an implementation
     called `SomeServiceImpl`. 
@@ -31,7 +31,7 @@ root generates the module JAR to the `build/libs` folder.
 -   `overriding-service-reference`
     ([download](https://dev.liferay.com/documents/10184/656312/overriding-service-reference.zip)):
     Provides a custom `SomeService` implementation called `CustomServiceImpl`.
-    The module's configuration file overrides `OverrideMyServiceReference`'s
+    The module's configuration file overrides `OverrideMyServiceReferencePortlet`'s
     `SomeService` reference so that it binds to `CustomServiceImpl`. 
 
 ![Figure 1: Prior to overriding the service reference in example portlet module `override-my-service-reference`, the portlet's message indicates it's calling the default service implementation `override.my.service.reference.service.impl.SomeServiceImpl`](../../images/overriding-service-refs-default-impl.png)
@@ -75,10 +75,10 @@ service `SomeService`:
 
     ...
     Component Description:
-      Name: override.my.service.reference.OverrideMyServiceReference
+        Name: override.my.service.reference.portlet.OverrideMyServiceReferencePortlet
     ...
     Reference: _someService
-        Interface Name: override.my.service.reference.SomeService
+        Interface Name: override.my.service.reference.service.api.SomeService
         Cardinality: 1..1
         Policy: static
         Policy option: reluctant
@@ -98,10 +98,10 @@ option are `static` and `reluctant`, respectively.
 Here are the values for the example:
 
 -   *Component name*:
-    `override.my.service.reference.OverrideMyServiceReference`
+    `override.my.service.reference.portlet.OverrideMyServiceReferencePortlet`
 -   *Reference name*: `_someService`
 -   *Service interface*:
-    `override.my.service.reference.SomeService`
+    `override.my.service.reference.service.api.SomeService`
 
 The `scr:info` result's component configuration describes the service component
 implementation bound to the reference.
@@ -115,16 +115,17 @@ implementation bound to the reference.
       Bound to:        6840
           Properties:
             component.id = 2400
-            component.name = override.my.service.reference.SomeServiceImpl
-            objectClass = [override.my.service.reference.SomeService]
+            component.name = override.my.service.reference.service.impl.SomeServiceImpl
+            objectClass = [override.my.service.reference.service.api.SomeService]
             service.bundleid = 524
             service.id = 6840
             service.scope = bundle
     ...
 
 The example's reference is bound to a component named
-`override.my.service.reference.SomeServiceImpl`. By the end of this tutorial,
-the reference will be reconfigured to bind to a custom service implementation.
+`override.my.service.reference.service.impl.SomeServiceImpl`. By the end of this
+tutorial, the reference will be reconfigured to bind to a custom service
+implementation.
 
 +$$$
 
@@ -136,9 +137,9 @@ the name of the member on which the annotation is used.
 
 -   If no reference name property is used and the `@Reference` is on a field,
     then the reference name is the field name. 
--   If the reference is on a method, then heuristics derive the reference name.
-    Method name prefixes such as `set`, `add`, and `put` are ignored. If a
-    reference is on a method called`setSearchEngine(SearchEngine se)`, for
+-   If the `@Reference` is on a method, then heuristics derive the reference
+    name. Method name prefixes such as `set`, `add`, and `put` are ignored. If
+    `@Reference` is on a method called`setSearchEngine(SearchEngine se)`, for
     example, then the reference name is `SearchEngine`. 
 
 $$$
@@ -184,7 +185,7 @@ The example custom implementation for service `SomeService` looks like this:
         private SomeService _defaultService;
     }
 
-The service component above refers the default service so that it can
+The service component above refers to the default service so that it can
 delegate work to it in its `doSomething` method. The reference targets
 the default service by its component name
 `override.my.service.reference.service.impl.SomeServiceImpl`.
@@ -201,35 +202,47 @@ You're ready to change the component's service reference to target your service.
 @product@'s Configuration Admin lets you use configuration files to swap in
 service references on the fly. 
 
-1.  Create a configuration file named after the referencing component.
+1.  Create a configuration file named after the referencing component. Here's 
+    the example component's configuration file name: 
 
-    Here's the configuration file name for the example component:
-
-        override.my.service.reference.OverrideMyServiceReference.config
+        override.my.service.reference.portlet.OverrideMyServiceReferencePortlet.config
  
-    Note: For deploying to Liferay DXP DE 7.0 Fix Pack 8 or later, use file
-    suffix `.config`. For earlier Liferay DXP DE 7.0 Fix Packs or Liferay CE
-    Portal 7.0 GA3 or earlier, use suffix `.cfg`. 
+    +$$$
+
+    **Note:** Liferay DXP DE 7.0 Fix Pack 8 and later, and Liferay CE Portal 7.0 
+    GA4 and later support the Apache Felix ConfigAdmin implementation of OSGi 
+    Configuration Admin files. Felix ConfigAdmin uses the file suffix `.config` 
+    and supports additional types, such as arrays and vectors. The syntax for 
+    `.config` and `.cfg` files can be found 
+    [here](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html). 
+
+    $$$
 
 2.  In the configuration file, add a reference target entry that filters on your
     custom service. Follow this format for the entry:
 
         [reference].target=[filter]
 
-    Replace `[reference]` with the name of the reference you're overriding.
-
-    Replace `[filter]` with service properties that filter on your custom
+    Replace `[reference]` with the name of the reference you're overriding. 
+    Replace `[filter]` with service properties that filter on your custom 
     service. 
 
     +$$$
 
-    **Tip**: You can use a `component.name` or `objectClass` reference to filter on your 
-    custom implementation. 
+    **Tip**: You can use a `component.name` or `objectClass` reference to filter 
+    on your custom implementation. 
 
     $$$
 
-    The example configuration file specifies the following reference target
-    entry:
+    A `.config` file reference target entry for the example looks like this:
+
+        _someService.target="(component.name\=overriding.service.reference.service.CustomServiceImpl)"
+
+    [The `.config` file syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config) 
+    requires surrounding the value in double quotes and escaping the value's
+    equals sign. 
+    
+    A `.cfg` file entry for the example looks like this:
     
         _someService.target=(component.name=overriding.service.reference.service.CustomServiceImpl)
 
@@ -249,15 +262,15 @@ Executing `scr:info` on your component shows that the custom service
 implementation is now bound to the reference. 
 
 For example, executing
-`scr:info override.my.service.reference.OverrideMyServiceReference`
+`scr:info override.my.service.reference.portlet.OverrideMyServiceReferencePortlet`
 reports the following information:
 
     ...
     Component Description:
-      Name: override.my.service.reference.OverrideMyServiceReference
+      Name: override.my.service.reference.portlet.OverrideMyServiceReferencePortlet
       ...
       Reference: _someService
-        Interface Name: override.my.service.reference.SomeService
+        Interface Name: override.my.service.reference.service.api.SomeService
         Cardinality: 1..1
         Policy: static
         Policy option: reluctant
@@ -270,22 +283,23 @@ reports the following information:
           Target: (component.name=overriding.service.reference.CustomServiceImpl)
           Bound to:        6841
               Properties:
-                _defaultService.target = (component.name=override.my.service.reference.SomeServiceImpl)
+                _defaultService.target = (component.name=overriding.service.reference.service.CustomServiceImpl)
                 component.id = 2398
-                component.name = overriding.service.reference.CustomServiceImpl
-                objectClass = [override.my.service.reference.SomeService]
+                component.name = overriding.service.reference.service.CustomServiceImpl
+                objectClass = [override.my.service.reference.service.api.SomeService]
                 service.bundleid = 525
                 service.id = 6841
                 service.scope = bundle
-          Properties:
-            _someService.target = (component.name=overriding.service.reference.CustomServiceImpl)
+          Component Configuration Properties:
+            _someService.target = (component.name=overriding.service.reference.service.CustomServiceImpl)
             ...
 
 The example component's `_someService` reference targets custom service
-component `overriding.service.reference.CustomServiceImpl`. `CustomServiceImpl`
-references default service `SomeServiceImpl` to delegates work to it. 
+component `overriding.service.reference.service.CustomServiceImpl`.
+`CustomServiceImpl` references default service `SomeServiceImpl` to delegates
+work to it. 
 
-![Figure 2: Because the example component's service reference is overriden by the configuration file deployment, the portlet indicates it's calling the custom service.](../../images/overriding-service-refs-result.png)
+![Figure 2: Because the example component's service reference is overridden by the configuration file deployment, the portlet indicates it's calling the custom service.](../../images/overriding-service-refs-result.png)
 
 @product@ processed the configuration file and injected the service reference,
 which in turn bound the custom service to the referencing component! 

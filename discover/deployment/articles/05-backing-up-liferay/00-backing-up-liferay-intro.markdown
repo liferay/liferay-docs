@@ -25,7 +25,7 @@ installation.
 @product@'s properties configuration files, such as `portal-setup-
 wizard.properties` and `portal-ext.properties`, are stored in the *Liferay Home*
 folder, which is generally one folder up from where your application server is
-installed (see the [Installation and Setup](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
+installed (see the [Installation and Setup](/discover/deployment/-/knowledge_base/7-0/installing-product)
 article for specific details for your application server). Your @product@
 installation's properties configuration files should absolutely be backed up. In
 fact, it's best to back up your entire application server and entire the

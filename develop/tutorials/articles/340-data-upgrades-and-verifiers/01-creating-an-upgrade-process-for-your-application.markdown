@@ -207,10 +207,6 @@ present):
 
     package com.liferay.mycustommodule.upgrade;
 
-    import com.liferay.mycustommodule.upgrade.v1_1_0.UpgradeFoo;
-    import com.liferay.mycustommodule.upgrade.v2_0_0.UpgradeFoo;
-    import com.liferay.mycustommodule.upgrade.v2_0_0.UpgradeBar;
-
     import com.liferay.portal.upgrade.registry.UpgradeStepRegistrator;
 
     import org.osgi.service.component.annotations.Component;
@@ -231,7 +227,7 @@ present):
             registry.register(
                 "com.liferay.mycustommodule", "1.1.0", "2.0.0",
                 new com.liferay.mycustommodule.upgrade.v2_0_0.UpgradeFoo(),
-                new UpgradeBar());
+                new com.liferay.mycustommodule.upgrade.v2_0_0.UpgradeBar());
         }
 
     }
@@ -403,6 +399,14 @@ Dependencies between OSGi services can reduce the number of service classes in
 which upgrade reference annotations are needed. For example, there's no need to
 add an upgrade reference in a dependent service, if the dependency already
 refers to the upgrade. 
+
++$$$
+
+**Note**: Data verifications using the class `VerifyProcess` are deprecated.
+Verifications should be tied schema versions. Upgrade processes are associated
+with schema versions but `VerifyProcess` instances are not.   
+
+$$$
  
 Now you know how to create data upgrades for all your modules. You specify the
 new data schema version in the `bnd.bnd` file, add a reference to your module

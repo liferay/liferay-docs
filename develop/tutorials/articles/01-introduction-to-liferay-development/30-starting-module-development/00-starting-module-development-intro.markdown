@@ -123,10 +123,8 @@ Here's the command syntax for creating a module:
 
     blade create [options] moduleName
 
-The `blade help commandName` command describes the specified command. To
-describe the `create` command, for example, execute this:
-
-    blade help create
+Module templates and their options are described
+[here](/develop/reference/-/knowledge_base/7-0/project-templates). 
 
 Here's an example of creating a Liferay MVC Portlet module:
 
