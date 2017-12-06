@@ -10,7 +10,7 @@ engines cannot match. The Single Approver Workflow contains three roles, each
 with different scopes. You can deduce the scope of each role by its name: Site
 Content Reviewer, Organization Content Reviewer and Portal Content Reviewer.
 
-![Figure 1: The Single Approver Definition comes included with the Liferay Forms and Workflow suite.](../../../images/single-approver.png)
+![Figure 1: The Single Approver Definition comes included with the Liferay Forms and Workflow suite.](../../images/single-approver.png)
 
 In addition to the Single Approver definition, there are some workflow
 definitions that ship with Liferay but are not pre-installed, since they're

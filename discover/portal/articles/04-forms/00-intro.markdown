@@ -1,4 +1,4 @@
-# Forms and Lists
+# Forms and Lists [](id=forms-and-lists)
 
 When you need a form in @product@, what you really need is data. @product@ has
 two applications for building forms to collect precisely the data you need:
@@ -27,7 +27,7 @@ section](/discover/portal/-/knowledge_base/7-0/using-workflow).
 
 $$$
 
-## Which Form Builder Should I Use?
+## Which Form Builder Should I Use? [](id=which-form-builder-should-i-use)
 
 Liferay Forms is a relatively new application, first appearing in @product@
 version 7.0. It's intended to be the default form builder in @product@. If you
