@@ -18,14 +18,19 @@ two applications for building forms to collect precisely the data you need:
 
 **Kaleo Forms:** If you're a Liferay Digital Enterprise customer, there's a
 third form building tool in @product@ called [Kaleo
-Forms](/discover/portal/-/knowledge_base/7-0/workflow-forms). It integrates form
+Forms](https://customer.liferay.com/documentation/7.0/admin/-/official_documentation/portal/workflow-forms). It integrates form
 building with workflow to create form based business processes, like a
 Conference Room Checkout Form, or a Support Ticket Process so support tickets go
 through the proper channels on their way to resolution. Read more about Kaleo
 Forms in the [workflow
-section](/discover/portal/-/knowledge_base/7-0/using-workflow).
+section](https://customer.liferay.com/documentation/7.0/admin/-/official_documentation/portal/workflow-forms).
 
 $$$
+
+<!-- Please leave the absolute links to the customer portal in the above
+sidebar. This is to ensure that folks reading on dev.liferay.com are directed to
+the article on customer.liferay.com, instead of getting a Resource Not Found error.
+-->
 
 ## Which Form Builder Should I Use? [](id=which-form-builder-should-i-use)
 
@@ -34,7 +39,7 @@ version 7.0. It's intended to be the default form builder in @product@. If you
 can use Liferay Forms for your use case, you should.
 
 So the question "Which form builder should I use?" can be restated to "When
-should I use Dynamic Data Lists?". That's the question we'll answer here.
+should I use Dynamic Data Lists?"
 
 - Use Dynamic Data Lists (DDL) if you need a way for users to enter data, *and*
     you need to display the data in the user interface.
@@ -58,10 +63,9 @@ pages](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#creating-fo
 and adjust the [form
 layout](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#form-layouts)
 of the fields. These styling elements are enough for most forms. Over time, more
-features will be added to Liferay Forms so that DDL might someday become
-obsolete, in favor of a single form building application, Liferay Forms. If
-you're a heavy user of DDL, don't worry, Liferay is committed to preserving and
-enhancing the features provided by DDL; they just might be moved to Liferay
-Forms. Now is the time to familiarize yourself with Liferay Forms and begin
-using it for all your form building needs, except for the narrow use cases
-described above.
+features will be added to Liferay Forms, and DDL might someday become obsolete,
+in favor of a single form building application. If you're a heavy user of DDL,
+don't worry, Liferay is committed to preserving and enhancing the features
+provided by DDL; they just might be moved to Liferay Forms. Now is the time to
+familiarize yourself with Liferay Forms and begin using it for all your form
+building needs, except for the narrow use cases described above.
