@@ -6,19 +6,20 @@
 
 $$$
 
-Even though Liferay developed Screens for Xamarin with great care, you may still 
-run into some common issues. Here are solutions and tips for solving these 
-issues. You'll also find answers to common questions about Screens for Xamarin. 
+Even though Liferay developed Liferay Screens for Xamarin with great care, you 
+may still run into some common issues. This tutorial lists tips and solutions 
+for these issues, as well as answers to common questions about Screens for 
+Xamarin. 
 
 ## General Troubleshooting [](id=general-troubleshooting)
 
-Before delving into specific issues, you should first make sure that you've 
+Before exploring specific issues, you should first make sure that you've 
 installed the correct versions of Visual Studio and the Mono .NET framework. 
-Each Screenlet's reference documentation (
+Each Screenlet's reference documentation (available for 
 [Android](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
 and 
-[iOS](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios)
-) lists these versions. 
+[iOS](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios)) 
+lists these versions. 
 
 It may also help to investigate the sample Xamarin.Android and Xamarin.iOS apps 
 developed by Liferay. Both serve as good examples of how to use Screenlets and 
@@ -33,14 +34,11 @@ We're happy to assist you!
 
 ## Common Issues [](id=common-issues)
 
-This section contains information on common issues that can occur when using 
-Liferay Screens for Xamarin.
-
 1.  If you have build issues:
 
-    Note that running *Clean* in Visual Studio might not be enough. Close Visual
-    Studio, remove all the `bin` and `obj` folders that weren't removed by the 
-    clean, then rebuild your project. 
+    Running *Clean* in Visual Studio may not be enough. Close Visual Studio, 
+    remove all the `bin` and `obj` folders that weren't removed by the clean, 
+    then rebuild your project. 
 
 2.  `NSUknownKeyException` error in Xamarin.iOS:
 
@@ -59,15 +57,16 @@ Liferay Screens for Xamarin.
 4.  Xamarin.iOS crashes unexpectedly without any error messages in the console:
 
     Check the log file. You can do this from Mac OS via the Console. In the app, 
-    you must click *User Reports* and then look for you app’s name. Note that 
+    you must click *User Reports* and then look for you app's name. Note that 
     there may be more than one log file. On Windows, you can use the Event 
     Viewer.
     
 5.  The app doesn't call delegate methods in Xamarin.iOS:
 
-    Make sure to annotate your delegate method with `[Export(...)]`. Also, set 
-    the `Delegate` property to the Screenlet and implement the delegate in your 
-    class. For example:
+    Make sure to annotate your delegate method(s) with `[Export(...)]`. You must 
+    also implement the delegate in your view controller, and set the view 
+    controller to the Screenlet instance's `Delegate` property. Here's an 
+    example of such a view controller: 
 
         public partial class ViewController : UIViewController, ILoginScreenletDelegate
         {
@@ -92,20 +91,20 @@ Liferay Screens for Xamarin.
 
 ## DataType Mapping [](id=datatype-mapping)
 
-For a better understanding about Xamarin code and example apps, see this list to 
+For a better understanding of Xamarin code and example apps, see this list to 
 compare type mapping between platforms. You must write Xamarin apps in C#, which 
 has some differences compared to native code: 
 
--   Delegate or Listener classes:
+-   Delegate (iOS) or listener (Android) classes:
 
-    These classes are important because they listen for a Screenlet's events. 
-    For example, when using Login Screenlet in native code, you have 
-    `LoginListener` for Android and `LoginScreenletDelegate` for iOS. In Liferay 
-    Screens for Xamarin, you instead have `ILoginListener` and 
-    `ILoginScreenletDelegate`, respectively (note the naming convention of 
-    prefixing an `I` to the name). Use similar names when you define a 
-    class/interface pair where the class is a standard implementation of the 
-    interface.
+    These classes are important because they listen for a Screenlet's events. In 
+    Liferay Screens for Xamarin, Screenlet delegates and listeners are prefixed 
+    with an `I`. For example, Login Screenlet's delegate in native code is 
+    `LoginScreenletDelegate`, while in Xamarin it's `ILoginScreenletDelegate`. 
+    Similarly, Login Screenlet's listener in native code is `LoginListener`, 
+    while in Xamarin it's `ILoginListener`. Use a similar naming scheme when you 
+    define a class/interface pair where the class is a standard implementation 
+    of the interface. 
 
 -   Getter and setter methods:
 
@@ -114,10 +113,10 @@ has some differences compared to native code:
     properties. If you have only one of these methods, you can call the method 
     itself. For example:
 
-        //If you implemented a setter and a getter, call the property
+        // If you implemented a setter and a getter, call the property
         loginScreenlet.Listener = this;
 
-        //Otherwise, call the method
+        // Otherwise, call the method
         loginScreenlet.getListener();
 
 -   Pascal case convention:
@@ -133,6 +132,7 @@ has some differences compared to native code:
         protocol DoThings {
             func MyMethod() -> String
         }
+
 
         // C#
         interface DoThings
@@ -153,6 +153,7 @@ has some differences compared to native code:
 
         var testing = MyClass(myVar: "Test")
 
+
         // C#
         class MyClass {
             protected string myVar = "";
@@ -171,13 +172,14 @@ To learn more about language equivalents between Swift and C#, see
 
 ## Language Equivalents between Java and C# [](id=language-equivalents-between-java-and-c)
 
-To extend or implement a class or interface, Java requires that you use those 
-keywords, while C# doesn't:
+To extend or implement a class or interface, Java requires that you use the 
+`extends` or `implements` keywords. C# doesn't require this:
 
     // Java
     class Bird extends Vertebrate implements Actions {
         ...
     }
+
 
     // C#
     class Bird : Vertebrate, Actions {
@@ -194,7 +196,7 @@ To learn more about language equivalents between Java and C#, see
     No, but we strongly recommend it. If you wish, however, you can use Xamarin 
     Studio or Visual Studio Code instead. 
     
-2.  What's the meaning of `[Export(...)]` below delegate method names? 
+2.  What's the meaning of `[Export(...)]` above delegate method names? 
 
     In short, this attribute makes properties and methods available in 
     Objective-C. 

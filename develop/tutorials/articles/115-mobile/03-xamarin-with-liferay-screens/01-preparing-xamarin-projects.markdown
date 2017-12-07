@@ -47,7 +47,8 @@ Follow these steps to install Liferay Screens in your Xamarin project:
 
 1.  Open your project in Visual Studio. 
 
-2.  Right click your project's *Packages* folder and then select *Add packages...*. 
+2.  Right click your project's *Packages* folder and then select 
+    *Add packages...*. 
 
 3.  Look for *LiferayScreens* and install the latest version. 
 

@@ -58,10 +58,10 @@ Follow these steps to insert Screenlets in your Xamarin.iOS app:
     For example, here's a view controller that implements Login Screenlet's 
     delegate, `ILoginScreenletDelegate`. Note that the `ViewDidLoad()` method 
     sets the Screenlet's `ThemeName` attribute (`ThemeName` is available for all 
-    Screenlets) and registers the view controller as the delegate. This view 
-    controller also implements the `OnLoginResponseUserAttributes` method, which 
-    is called upon successful login. Also note this method's `[Export(...)]` 
-    annotation: 
+    Screenlets via `BaseScreenlet` inheritance) and registers the view 
+    controller as the delegate. This view controller also implements the 
+    `OnLoginResponseUserAttributes` method, which is called upon successful 
+    login. Also note this method's `[Export(...)]` annotation: 
 
         public partial class ViewController : UIViewController, ILoginScreenletDelegate
         {

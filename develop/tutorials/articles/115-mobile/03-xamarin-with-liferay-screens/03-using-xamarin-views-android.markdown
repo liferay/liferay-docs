@@ -15,7 +15,8 @@ tutorial shows you how to use Views in Xamarin.Android.
 
 ## Views and View Sets [](id=views-and-view-sets)
 
-Before using Views, you should know what components make them up. For a brief 
+The concepts and components that comprise Views and View Sets in Liferay Screens 
+for Xamarin are the same as they are in Liferay Screens for Android. For a brief 
 description of these components, see 
 [the section on Views and View Sets](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets#views-and-view-sets) 
 in the general tutorial on using Views. For a detailed description of the View 
@@ -122,9 +123,10 @@ Follow these steps to use a View in Xamarin.Android:
     Note that you can install a NuGet with the theme in your App and then use 
     it.
 
-2.  Insert the Screenlet's XML with `liferay:layoutId` set to the View's layout. 
-    For example, here's Login Screenlet's XML with `liferay:layoutId` set to 
-    `@layout/login_material`: 
+2.  When you insert the Screenlet's XML in the layout of the activity or 
+    fragment you want the Screenlet to appear in, set the `liferay:layoutId` 
+    attribute to the View's layout. For example, here's Login Screenlet's XML 
+    with `liferay:layoutId` set to `@layout/login_material`: 
 
         <com.liferay.mobile.screens.auth.login.LoginScreenlet
             android:id="@+id/login_screenlet"
@@ -150,10 +152,10 @@ Follow these steps to use a View in Xamarin.Android:
             ...
         </resources>
 
-To use the Default or Westeros View Set, inherit `default_theme` or 
-`westeros_theme`, respectively. 
+    To use the Default or Westeros View Set, inherit `default_theme` or 
+    `westeros_theme`, respectively. 
 
-That's it! Great! Now you know how to use Views to spruce up your Android 
+Awesome! Now you know how to use Views to spruce up your Xamarin.Android 
 Screenlets. 
 
 ## Related Topics [](id=related-topics)
