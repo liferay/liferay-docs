@@ -24,8 +24,8 @@ $$$
     @product@ installation. Alternatively, choose your own entity ID. Then
     click *Save* and a new section entitled Certificate and Private Key appears.
 
-3.  The Certificate and Private Key section is for creating a keystore for SAML. 
-    Press "Create Certificate" and enter the following information:
+3.  The Certificate and Private Key section is for creating a keystore for SAML.
+    Click *Create Certificate* and enter the following information:
 
     - Your common name (your first and last name)
     - The name of your organization
@@ -109,13 +109,14 @@ the session on the Service Provider but does not initiate single logout.
 2. Verify the connection to the IdP. 
 
     a.  *Name*: generic name for the IdP. 
-    
+ 
     b.  *Entity ID*: the same name of the IdP. If the IdP is another @product@
         instance, then it is the same name as the above example. 
 
     c. *Metadata URL*: The IdP's metadata as a URL or as an XML file.
 
-    d. If the IdP is another Liferay DXP instance, then ensure its corresponding Service Provider Connection for this SP is enabled.
+    d. If the IdP is another @product instance, ensure its corresponding
+    Service Provider Connection for this SP is enabled.
 
 3. On the *General* tab, the *Enabled* checkbox has been checked.
 
@@ -242,8 +243,8 @@ proceeding, make sure that the following assumptions apply to your scenario.
 If you're running a multi-node cluster behind a load balancer, follow these
 steps to enable all the nodes as SPs.
 
-Before you begin, give thought to the type of keystore manager you would like 
-your cluster to use.
+Before you begin, consider the type of keystore manager you want your cluster to
+use.
 
 To select a keystore manager, go to *Control Panel* &rarr; *System Settings*
 &rarr; *SAML KeyStoreManager Implementation Configuration*. There, the options
@@ -273,8 +274,8 @@ If using the Filesystem Keystore Manager (the default):
     To test your SSO solution, sign into @product@ via your load balancer,
     navigate to a few pages of a few different sites, and then log out.
 
-If using the Document Library Keystore Manager then you can skip step 3 because 
-the keystore file is stored into the database shared by all the nodes.
+If using the Document Library Keystore Manager, skip step 3 because the keystore
+file is stored in the database shared by all the nodes.
 
 Now you know how to configure @product@ either as a SAML identity provider
 or a service provider. You also know how to configure SAML in a
