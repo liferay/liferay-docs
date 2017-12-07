@@ -3,8 +3,8 @@
 Since the release of Liferay Portal CE GA6 and Liferay DXP Fix 
 Pack ?, @product@'s 
 [`NPMResolver` OSGi component](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html) 
-exposes an OSGi bundle's npm package descriptors,which may needed for  
-develooping npm-based portlets. The descriptors are stored in the 
+exposes an OSGi bundle's npm package descriptors, which may be needed for 
+developing npm-based portlets. The descriptors are stored in the 
 `NPMRegistry`, and can be accessed in your server code. This 
 lets you resolve an OSGi bundle's npm packages and its dependency npm packages 
 and modules in your npm-based portlets.
