@@ -22,8 +22,8 @@ and
 lists these versions. 
 
 It may also help to investigate the sample Xamarin.Android and Xamarin.iOS apps 
-developed by Liferay. Both serve as good examples of how to use Screenlets and 
-Views: 
+developed by Liferay. Both are good examples of how to use Screenlets, Views 
+(Android), and Themes (iOS): 
 
 - [Showcase-Android](https://github.com/liferay/liferay-screens/tree/develop/xamarin/Samples/Showcase-Android)
 - [Showcase-iOS](https://github.com/liferay/liferay-screens/tree/develop/xamarin/Samples/Showcase-Android)
@@ -34,7 +34,7 @@ We're happy to assist you!
 
 ## Common Issues [](id=common-issues)
 
-1.  If you have build issues:
+1.  Build issues: 
 
     Running *Clean* in Visual Studio may not be enough. Close Visual Studio, 
     remove all the `bin` and `obj` folders that weren't removed by the clean, 
@@ -56,17 +56,17 @@ We're happy to assist you!
 
 4.  Xamarin.iOS crashes unexpectedly without any error messages in the console:
 
-    Check the log file. You can do this from Mac OS via the Console. In the app, 
-    you must click *User Reports* and then look for you app's name. Note that 
-    there may be more than one log file. On Windows, you can use the Event 
-    Viewer.
-    
+    Check the log file. On Mac OS, do this via the Console. On Windows, use the 
+    Event Viewer. In the app, you must click *User Reports* and then look for 
+    your app's name. Note that there may be more than one log file. 
+
 5.  The app doesn't call delegate methods in Xamarin.iOS:
 
-    Make sure to annotate your delegate method(s) with `[Export(...)]`. You must 
-    also implement the delegate in your view controller, and set the view 
-    controller to the Screenlet instance's `Delegate` property. Here's an 
-    example of such a view controller: 
+    When you implement the delegate methods in your view controller, make sure 
+    to annotate them with `[Export(...)]`. You must also set the view controller 
+    to the Screenlet instance's `Delegate` property. Here's an example of such a 
+    view controller that implements Login Screenlet's delegate, 
+    `ILoginScreenletDelegate`: 
 
         public partial class ViewController : UIViewController, ILoginScreenletDelegate
         {

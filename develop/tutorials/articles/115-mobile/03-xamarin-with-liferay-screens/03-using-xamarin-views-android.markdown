@@ -126,7 +126,8 @@ Follow these steps to use a View in Xamarin.Android:
 2.  When you insert the Screenlet's XML in the layout of the activity or 
     fragment you want the Screenlet to appear in, set the `liferay:layoutId` 
     attribute to the View's layout. For example, here's Login Screenlet's XML 
-    with `liferay:layoutId` set to `@layout/login_material`: 
+    with `liferay:layoutId` set to `@layout/login_material`, which specifies 
+    Login Screenlet's Material View from the previous step: 
 
         <com.liferay.mobile.screens.auth.login.LoginScreenlet
             android:id="@+id/login_screenlet"
@@ -135,9 +136,10 @@ Follow these steps to use a View in Xamarin.Android:
             liferay:layoutId="@layout/login_material"
             />
 
-3.  If the View you want to use is part of a View Set, your app or activity's 
-    theme must also inherit the theme that defines that View Set's styles. For 
-    example, the following code in an app's `Resources/values/Styles.xml` tells 
+3.  If the View you want to use is part of a View Set (e.g., the Material View 
+    is part of the Material View Set), your app or activity's theme must also 
+    inherit the theme that defines that View Set's styles. For example, the 
+    following code in an app's `Resources/values/Styles.xml` tells 
     `AppTheme.NoActionBar` to use the Material View Set as its parent theme: 
 
         <resources>

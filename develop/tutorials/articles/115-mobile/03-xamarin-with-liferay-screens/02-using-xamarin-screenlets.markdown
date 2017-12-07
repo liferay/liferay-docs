@@ -172,8 +172,9 @@ Follow these steps to insert Screenlets in your Xamarin.Android app:
 
         }
 
-That's all there is to it! Awesome! Now you know how to use Screenlets in your 
-Xamarin apps. 
+See 
+[the Showcase-Android app](https://github.com/liferay/liferay-screens/tree/develop/xamarin/Samples/Showcase-Android/Activities)
+for more examples of activities that use Liferay's Screenlets. 
 
 ## Related Topics [](id=related-topics)
 
