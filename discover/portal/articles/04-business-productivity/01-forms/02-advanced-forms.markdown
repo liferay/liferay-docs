@@ -18,7 +18,6 @@ use in your forms that are covered in this article:
 - Populating a Select field with a REST Data Provider
 - Making a field appear based on the value entered into another field
 - Add extra pages to the form
-- Enabling workflow for the form
 - Providing a predefined value or a placeholder value
 - Validating fields using a number of different criteria
 - Configuring form permissions
@@ -482,25 +481,6 @@ all there is to it!
 
 Now, you're much more likely to receive form submissions from humans!
 
-You can move on to enabling workflow for your form.
-
-## Enabling Workflow for Forms [](id=enabling-workflow-for-forms)
-<!--For story purposes, we could have the workflow developed in the Designing
-Workflow article (not yet written) be used in this article. An applicant submits
-the form, then it goew to an HR rep, tehn to a lower management person, then an
-upper management person, and sends emails to the applicant along the way.
-Something like that.-->
-
-To enable [workflow](/discover/portal/-/knowledge_base/7-0/using-workflow) for a form, open the Form Settings window (click the *Options*
-(![Options](../../../images/icon-options.png)) button &rarr; *Settings*). In the
-Select a Workflow field, select the workflow you want to use for the form, then
-click *Done* and save the form.
-
-![Figure 14: Enable workflow on a form from its Form Settings window.](../../../images/forms-workflow.png)
-
-Because each form can be so different, it makes sense to configure workflow for
-forms in each form's Form Settings section.
-
 ## Setting Up Form Notifications [](id=setting-up-form-notifications)
 
 It's possible to have a notification email sent each time a form entry is
@@ -519,9 +499,10 @@ email notification for each entry*, and fill out the fields:
    *An application for employment was submitted in The Lunar Resort* might be
 appropriate for the form developed in this article.
 
-If you enabled workflow for the form, and there's already a notification going
-to the people who need to process the form entry, you might not need to generate
-any notification from the Forms application itself.
+If you [enabled workflow for the form](/discover/portal/-/knowledge_base/7-0/sending-form-entries-through-a-workflow),
+and there's already a notification going to the people who need to process the
+form entry, you might not need to generate any notification from the Forms
+application itself.
 
 ## Redirecting Users after Form Submission [](id=redirecting-users-after-form-submission)
 
