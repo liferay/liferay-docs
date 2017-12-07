@@ -47,12 +47,21 @@ Follow these steps to insert Screenlets in your Xamarin.iOS app:
     [reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
     lists its available attributes and delegate methods. 
 
+    +$$$
+
+    **Note:** In Liferay Screens for Xamarin, Screenlet delegates are prefixed 
+    with an `I`. For example, Login Screenlet's delegate in native code is 
+    `LoginScreenletDelegate`, while in Xamarin it's `ILoginScreenletDelegate`. 
+
+    $$$
+
     For example, here's a view controller that implements Login Screenlet's 
     delegate, `ILoginScreenletDelegate`. Note that the `ViewDidLoad()` method 
-    sets the Screenlet's `ThemeName` attribute and registers the view controller 
-    as the delegate. This view controller also implements the 
-    `OnLoginResponseUserAttributes` method, which is called upon successful 
-    login. Also note this method's `[Export(...)]` annotation: 
+    sets the Screenlet's `ThemeName` attribute (`ThemeName` is available for all 
+    Screenlets) and registers the view controller as the delegate. This view 
+    controller also implements the `OnLoginResponseUserAttributes` method, which 
+    is called upon successful login. Also note this method's `[Export(...)]` 
+    annotation: 
 
         public partial class ViewController : UIViewController, ILoginScreenletDelegate
         {
@@ -117,17 +126,51 @@ Follow these steps to insert Screenlets in your Xamarin.Android app:
     the Screenlet's listener interface in your activity or fragment class. Refer 
     to the 
     [Screenlet's reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
-    to learn its listener interface. Then register your activity or fragment as 
-    the Screenlet's listener. For example, the activity class in the following 
-    screenshot implements Login Screenlet's `LoginListener` interface, and 
-    registers itself to listen for the Screenlet's events. 
+    to learn its listener interface. Then register that activity or fragment as 
+    the Screenlet's listener. 
 
-    ![Figure 2: Implement the Screenlet's listener in your activity or fragment class.](../../../images/screens-xamarin-android-screenlet-listener.png)
+    +$$$
 
-4.  Make sure to implement all methods required by the Screenlet's listener 
-    interface. For Liferay's Screenlets, the listener methods are listed in each 
-    Screenlet's 
-    [reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android). 
+    **Note:** In Liferay Screens for Xamarin, Screenlet listeners are prefixed 
+    with an `I`. For example, Login Screenlet's listener in native code is 
+    `LoginListener`, while in Xamarin it's `ILoginListener`. 
+
+    $$$
+
+    For example, the following activity class implements Login Screenlet's 
+    `ILoginListener` interface, and registers itself as the Screenlet's 
+    listener via `loginScreenlet.Listener = this`. Note that the listener
+    methods `OnLoginSuccess` and `OnLoginFailure` are called when login succeeds 
+    and fails, respectively. In this case, these methods print simple toast 
+    messages: 
+
+        [Activity]
+        public class LoginActivity : Activity, ILoginListener
+        {
+            LoginScreenlet loginScreenlet;
+
+            protected override void OnCreate(Bundle savedInstanceState)
+            {
+                base.OnCreate(savedInstanceState);
+                SetContentView(Resource.Layout.LoginView);
+
+                loginScreenlet = (LoginScreenlet) FindViewById(Resource.Id.login_screenlet);
+                loginScreenlet.Listener = this;
+            }
+
+            // ILoginListener
+
+            public void OnLoginSuccess(User p0)
+            {
+                Toast.MakeText(this, "Login success: " + p0.Id, ToastLength.Short).Show();
+            }
+
+            public void OnLoginFailure(Java.Lang.Exception p0)
+            {
+                Android.Util.Log.Debug("LoginScreenlet", $"Login failed: {p0.Message}");
+            }
+
+        }
 
 That's all there is to it! Awesome! Now you know how to use Screenlets in your 
 Xamarin apps. 
