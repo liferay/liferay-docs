@@ -89,11 +89,12 @@ with one review task. The Single Approver workflow that ships with @product@
 works nicely for this.
 
 After creating the form in the above image, assign the Single Approver workflow
-to it in the form's Settings window, as described in the last section. Publish
-the form, then fill out and submit an entry. The administrative user receives a
-notification that a form record was submitted. Go to the View Entries screen and
-see that the form record is currently marked as Pending. Once the review is
-completed, it's marked as Approved.
+to it in the form's Settings window, as described in the [above
+section](#enabling-workflow-in-a-form). Publish the form, then fill out and
+submit an entry. The administrative user receives a notification that a form
+record was submitted. Go to the View Entries screen and see that the form record
+is currently marked as Pending. Once the review is completed, it's marked as
+Approved.
 
-![Figure 7: Assign a workflow to a form in several steps.](../../../images/lunar-resort-giveaway-workflow.gif)
+![Figure 7: Assign a workflow to a form in several steps.](../../../images/lunar-resort-giveaway-workflow-new.gif)
 
