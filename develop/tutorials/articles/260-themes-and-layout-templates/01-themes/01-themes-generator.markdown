@@ -216,7 +216,7 @@ files have been converted to Sass SCSS files. Sassy CSS (SCSS) is the new main
 syntax which allows you to use the latest CSS3 styles and leverage Sass syntax
 advantages, such as nesting and variables.
 
-To deploy your theme to your configured Liferay instance, execute this command:
+To deploy your theme to your configured @product@ instance, execute this command:
 
     gulp deploy
 
@@ -235,8 +235,10 @@ the potential for any caching issues.
 $$$
     
 Now that you've created a theme and deployed it, you can use the theme project's
-gulp tasks to further develop and manage your theme. Refer to the [Theme Gulp Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
-reference document to learn the gulp tasks available to you.
+[gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks) 
+to further develop and manage your theme. These offer basic functions, such as 
+`build` and `deploy`, as well as more complex interactions, such as auto 
+deploying when a change is made and setting the base theme.
 
 There you have it! You're ready to design a terrific theme!
 
