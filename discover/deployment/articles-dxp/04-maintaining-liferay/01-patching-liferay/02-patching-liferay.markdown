@@ -56,7 +56,7 @@ issue the following command:
 
 **Note:** After a successful patch installation you must delete the *osgi/state*
 folder if it exists in your
-[Liferay Home folder](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-product#liferay-home).
+[Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home).
 
 $$$
 
