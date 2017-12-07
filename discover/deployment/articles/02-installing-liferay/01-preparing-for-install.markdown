@@ -17,15 +17,14 @@ Next, you'll answer these questions and learn the basic steps for installing
 
 ## Obtaining @product@ [](id=obtaining-product)
 
-Anyone can download @product@ from [https://www.liferay.com](https://www.liferay.com).
+Anyone can download @product@ from [liferay.com](https://www.liferay.com).
 Click Platform &rarr; *Downloads*, and you'll be able to download either the
 open source version of @product@ or a trial of the commercial version in several
 different formats. These include our convenient bundles as well as `.war` files
 for installing @product@ on your application server of choice.
 
 Liferay enterprise subscribers can download @product@ from the
-Customer Portal at
-[https://www.liferay.com/group/customer](https://www.liferay.com/group/customer).
+[Customer Portal](https://www.liferay.com/group/customer).
 You have a choice of the same open source app server bundles as community
 members, plus a few commercial alternatives, in addition to the `.war` files
 for manual installation.
@@ -80,6 +79,22 @@ installation steps:
 6. Determine whether you'll use Liferay Marketplace or other third party
    applications. If you will, you should enable Liferay's Plugin Access Control
    List (PACL) security feature.
+
+7. Configure ports (optional). Liferay's application server (e.g., Tomcat or
+   Wildfly) uses certain ports for purposes like handling incoming HTTP
+   requests, HTTPS requests, or AJP requests, etc. If you start your
+   application server in debug mode, there will be a port listening for a
+   debugger to connect. If desired, you can configure these ports. Please refer
+   to your application server's documentation for information on its default
+   ports and how to configure them.
+
+   Liferay also provides access to its OSGi framework through a configurable
+   port:
+
+   `module.framework.properties.osgi.console=localhost:11311`
+
+   You can override this default property by copying the line above to your
+   `LIFERAY_HOME/portal-ext.properties` file and adjusting the port number.
 
 We'll go through the steps in order, so first we'll look at the @product@
 database.
