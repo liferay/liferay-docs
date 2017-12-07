@@ -20,8 +20,8 @@ distinct function:
 
 The spacecraft and its modules exemplified these modularity characteristics: 
 
--   **Distinct functionality**: Each module provides a distinct function;
-    modules can be combined to provide an entirely new collective function. 
+-   **Distinct functionality**: Each module provides a distinct function
+    (purpose); modules can be combined to provide an entirely new collective function. 
 
     The Apollo spacecraft's modules were grouped together for a distinct
     collective function: take astronauts from the Earth's atmospheric rim, to
@@ -70,7 +70,7 @@ It's natural to focus on developing one piece of software at a time. In a
 module, you work on a small set of classes to define and implement the module's
 function. Keeping scope small facilitates writing high quality, elegant code.
 The more cohesive the code, the easier it is to test, debug, and maintain.
-Modules can be combined to provide a new function, indistinguishable from each
+Modules can be combined to provide a new function, distinguishable from each
 module's function. 
 
 ### Encapsulation [](id=encapsulation)
