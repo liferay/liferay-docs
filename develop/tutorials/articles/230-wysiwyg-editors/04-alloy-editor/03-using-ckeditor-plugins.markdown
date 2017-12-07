@@ -6,9 +6,9 @@ such as
 and 
 [adding new behaviors](/develop/tutorials/-/knowledge_base/7-0/adding-new-behavior-to-an-editor).
 You can also use existing CKEditor plugins in @product@'s AlloyEditor. Several 
-of the CKEditor plugins are packaged with @product@'s AlloyEditor, so you can 
+CKEditor plugins are packaged with @product@'s AlloyEditor, so you can 
 use them with just a few configuration adjustments. This tutorial shows how to 
-use the CKEditor plugins that are bundled with @product@'s AlloyEditor.
+use the CKEditor plugins bundled with @product@'s AlloyEditor.
 
 Follow these steps:
 
@@ -39,12 +39,12 @@ Follow these steps:
           }
 
 2.  Add additional plugins to the AlloyEditor via the `extraPlugins` JSON 
-    object. To add a CKEditor plugin, first extract the current list of 
+    object. To add a CKEditor plugin, extract the current list of 
     `extraPlugins` from your editor configuration object as a `String`:
 
         String extraPlugins = jsonObject.getString("extraPlugins");
 
-3.  Choose the plugin(s) you want to use from the  
+3.  Choose the plugin(s) you want to use from the 
     [default CKEditor plugins bundled with @product@'s AlloyEditor](/develop/reference/-/knowledge_base/7-0/ckeditor-plugin-reference-guide).
 
 4.  Add the CKEditor plugin(s) you want to use to the `extraPlugins` 
@@ -53,7 +53,7 @@ Follow these steps:
     prefixed with `ae_`. We recommend that you include them all to ensure 
     compatibility. The example below checks for existing `extraPlugins` and adds 
     the [`font` CKEditor plugin](https://ckeditor.com/cke4/addon/font)
-    along with it's required 
+    along with its required 
     [Rich Combo plugin](https://ckeditor.com/cke4/addon/richcombo) 
     dependency and the remaining UI bridge plugins:
 
@@ -72,14 +72,14 @@ Follow these steps:
 
     +$$$
 
-    **Note:** Make sure the `ae_uibridge` plugin is listed first, followed by 
+    **Note:** Make sure the `ae_uibridge` plugin appears first, followed by 
     the remaining UI bridge plugins, and finally the CKEditor plugin(s).
 
     $$$
 
-5.  If the plugin includes buttons, add them to the toolbar you wish to display 
-    them in. The configuration below retrieves the text selection toolbar's 
-    buttons and adds the `font` plugin's `Font` and `FontSize` buttons to it: 
+5.  If the plugin includes buttons, add them in the appropriate toolbar. The
+    configuration below retrieves the Text Selection Toolbar's buttons and adds
+    the `font` plugin's `Font` and `FontSize` buttons to it: 
 
         JSONObject toolbarsJSONObject = jsonObject.getJSONObject("toolbars");
 
@@ -106,7 +106,7 @@ Follow these steps:
          buttons.put("Font");
          buttons.put("FontSize");
         }
-        
+ 
 +$$$
 
 **Note:** A plugin's buttons may not have the same name as the plugin. You can 
