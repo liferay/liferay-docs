@@ -51,14 +51,13 @@ Media to web content articles:
 There are two more optional modules included in Adaptive Media: 
 
 -   **Liferay Adaptive Media Image Content Transformer Backwards Compatibility:** 
-    Ensures that content created before the Adaptive Media installation can use 
-    adapted images without the need to manually edit that content. This is 
-    accomplished by transforming the images both at startup and when a user 
-    views the content, which can negatively affect performance. We therefore 
-    recommend that you run some performance tests before using this module in 
-    production. You can disable this module if you don't have old content, are 
-    experiencing performance problems, or your old content doesn't need adapted 
-    images. 
+    Ensures that content created before the Adaptive Media installation can use
+    adapted images without the need to edit that content manually. It transforms
+    the images both at startup and when a user views the content, which can
+    negatively affect performance. We therefore recommend that you run some
+    performance tests before using this module in production. You can disable
+    this module if you don't have old content, are experiencing performance
+    problems, or your old content doesn't need adapted images. 
 
 -   **Liferay Adaptive Media Document Library Thumbnails:** Lets thumbnails in 
     Documents and Media use adapted images. For this to work, you must first 
@@ -75,11 +74,10 @@ ahead to the article on adding image resolutions to Adaptive Media.
 To process animated GIFs, Adaptive Media uses an external tool called 
 [Gifsicle](https://www.lcdf.org/gifsicle). 
 This tool ensures that the animation works when the GIF is scaled to different 
-resolutions. You must manually install Gifsicle in the server, and ensure that 
-it's reachable from the `PATH` environment variable. Once it's installed, you 
-must enable it in Adaptive Media's 
+resolutions. You must manually install Gifsicle on the server and ensure that
+it's on the `PATH`. Once it's installed, you must enable it in Adaptive Media's
 [advanced configuration options](/discover/portal/-/knowledge_base/7-0/advanced-configuration-options). 
 
-If Gifsicle isn't installed and `image/gif` is included as a supported MIME type 
-in the advanced configuration options, Adaptive Media scales only a single frame 
-of the GIF. This results in a static image in place of the animated GIF. 
+If Gifsicle isn't installed and `image/gif` is included as a supported MIME type
+in the advanced configuration options, Adaptive Media scales only a GIF's single
+frame. This results in a static image in place of the animated GIF. 

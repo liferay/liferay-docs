@@ -1,14 +1,14 @@
 # Migrating Documents and Media Thumbnails to Adaptive Media [](id=migrating-documents-and-media-thumbnails-to-adaptive-media)
 
-@product@ automatically generates thumbnails for images in Documents and Media. 
-Once you deploy the Adaptive Media app, however, @product@ won't display these 
-thumbnails until you migrate them to Adaptive Media. This article walks you 
+@product@ automatically generates thumbnails for images in Documents and Media.
+Once you deploy the Adaptive Media app, however, @product@ doesn't display 
+thumbnails until you migrate them to Adaptive Media. This article walks you
 through this migration process. 
 
 +$$$
 
-**Note:** You must be a Portal Administrator to perform the actions described in 
-this article. 
+**Note:** You must be a Portal Administrator to perform the actions described
+here. 
 
 $$$
 
@@ -35,7 +35,7 @@ that match the values specified in the following portal properties:
 
 +$$$
 
-**Note:** Some of these properties may not be enabled. You only need to create 
+**Note:** Some of these properties may not be enabled. You need only create
 image resolutions in Adaptive Media for the enabled properties. 
 
 $$$
@@ -67,35 +67,34 @@ Adaptive Media:
     section of the Adaptive Media user guide. 
 
 -   **Execute a migrate process that reuses the existing thumbnails:** This 
-    simply copies the existing thumbnails to Adaptive Media, which is better 
-    performance-wise because it avoids the computationally expensive scaling 
-    operation. Therefore, we generally recommend this approach. The next section 
-    describes the steps to run this process. 
+    copies the existing thumbnails to Adaptive Media, which performs better
+    because it avoids the computationally expensive scaling operation.
+    The next section describes the steps to run this process. 
 
 ### Running the Migration Process [](id=running-the-migration-process)
 
-The migration process is available as a set of Gogo console commands. You can 
-learn more about using the Gogo console in 
+The migration process is a set of Gogo console commands. You can learn more
+about using the Gogo console in 
 [the Felix Gogo Shell tutorial](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). 
 
 Follow these steps to migrate your thumbnails from the Gogo console:
 
-1.  Run the `thumbnails:check` command. For each portal, this lists how many 
+1.  Run the `thumbnails:check` command. For each instance, this lists how many 
     thumbnails are pending migration. 
 
 2.  Run the `thumbnails:migrate` command. This executes the migration process, 
     which may take a while to finish depending on the number of images. 
 
 3.  Run the `thumbnails:cleanUp` command. This deletes all the original 
-    Documents and Media thumbnails, and updates the count returned by 
-    `thumbnails:check`. Therefore, you should **only** run `thumbnails:cleanUp` 
+    Documents and Media thumbnails and updates the count returned by 
+    `thumbnails:check`. Therefore, you should **only** run `thumbnails:cleanUp`
     after running the migrate command and ensuring that the migration ran 
     successfully and no images are pending migration. 
 
 +$$$
 
 **Note:** If you undeploy Adaptive Media at some point after running the 
-migration process, then you must regenerate the Documents and Media thumbnails. 
+migration process, you must regenerate the Documents and Media thumbnails. 
 To do this, navigate to *Control Panel* &rarr; *Configuration* &rarr; *Server 
 Administration* and click *Execute* next to *Reset preview and thumbnail files 
 for Documents and Media*. 

@@ -1,50 +1,46 @@
 # Creating Content with Adapted Images [](id=creating-content-with-adaptive-media-images)
 
-Adaptive Media is mostly invisible for creators of blog entries and web 
-content. Once a normal image is added to the content, the app works behind the 
-scenes to deliver an adapted image appropriate to the device in use. Content 
-creators select a normal image when adding it to their 
-content--they don't have to (and can't) select an adapted image. There are, 
-however, a few things to know when authoring content that may contain 
-adapted images. 
-
-First, you should know how Adaptive Media inserts adapted images in content. 
-Adaptive Media identifies each adapted image in the content's HTML with a 
-`data-fileentryid` attribute that is replaced with the latest adapted image when 
-the user views the content. This lets Adaptive Media deliver the latest adapted 
-images to your content, even if the content existed prior to those images. 
+Adaptive Media is mostly invisible for blog and web content creators. Once
+an image is added to the content, the app works behind the scenes to
+deliver an adapted image appropriate to the device in use. Content creators
+select an image when adding it to their content--they don't have to (and
+can't) select an adapted image. Adaptive Media identifies each adapted image in
+the content's HTML with a `data-fileentryid` attribute that is replaced with the
+latest adapted image when the user views the content. This lets Adaptive Media
+deliver the latest adapted images to your content, even if the content existed
+prior to those images. 
 
 +$$$
 
 **Note:** If Adaptive Media is uninstalled, the original images are displayed in 
-the blog entries and web content articles as a fallback mechanism.
+the blog entries and web content articles.
 
 $$$
 
 ## Including Adapted Images in Content [](id=including-adapted-images-in-content)
 
 Since Adaptive Media delivers the adapted images behind the scenes, content 
-creators should add normal images to 
+creators should add images to 
 [blog entries](/discover/portal/-/knowledge_base/7-0/publishing-blogs) 
 and 
 [web content](/discover/portal/-/knowledge_base/7-0/creating-web-content) 
 as usual: by clicking the image button in the editor and then selecting the 
 image in the file selector. 
 
-However, there are some important caveats. When using the file selector 
-to include an image for a blog entry, Adaptive Media works only with images 
-added from the *Blog Images*, *Documents and Media*, and *Upload* 
-tabs. Additionally, adapted imagery can only be applied to a blog entry's 
-content--cover images are excluded. Adaptive Media does work for images added 
-to a blog entry via drag and drop, as the image is automatically uploaded to 
-the Blog Images repository, adapted, and then included in the blog entry's 
-content. You can see this by inspecting the HTML and checking that the image 
-contains the `<img>` tag and `data-fileentryid` attribute.
+However, there are some important caveats. When using the file selector to
+include an image for a blog entry, Adaptive Media works only with images added
+from the *Blog Images*, *Documents and Media*, and *Upload* tabs. Additionally,
+adapted images can only be applied to a blog entry's content--cover images
+excluded. Adaptive Media works for images added to a blog entry via drag and
+drop, as the image is automatically uploaded to the Blog Images repository,
+adapted, and then included in the blog entry's content. You can see this by
+inspecting the HTML and checking that the image contains the `<img>` tag and
+`data-fileentryid` attribute.
 
-For web content articles, Adaptive Media works only with images added 
-from the file selector's *Documents and Media* tab. Unlike blogs, Adaptive 
-Media doesn't deliver adapted images for images added to web content articles 
-via drag and drop.
+For web content articles, Adaptive Media works only with images added from the
+file selector's *Documents and Media* tab. **Unlike blogs, Adaptive Media
+doesn't deliver adapted images for images added to web content articles via drag
+and drop.**
 
 For both blog entries and media content articles, Adaptive Media doesn't work 
 with images added from the file selector's *URL* tab. This is because the image 
@@ -90,15 +86,15 @@ image field named `Imagecrrf` included in a template:
     </#if>
 
 This snippet includes the `data-fileentryid` attribute to ensure that Adaptive 
-Media replaces the image with an adapted image. If you inspect the resulting web 
-content's HTML in the editor's code view, you should see something like this:
+Media replaces the image with an adapted image. If you inspect the resulting web
+content's HTML in the editor's code view, you should see a tag like this:
 
     <img data-fileentryid="37308" 
     src="/documents/20143/0/photo.jpeg/85140258-1c9d-89b8-4e45-d79d5e262318?t=1518425" />
 
-Note the `<img>` tag with a `data-fileentryid` attribute. Adaptive 
-Media uses the file entry ID to automatically replace the `<img>` element with a 
-`<picture>` element that contains the available adapted images for each 
+Note the `<img>` tag with a `data-fileentryid` attribute. Adaptive Media uses
+the file entry ID to replace the `<img>` element automatically with
+a `<picture>` element that contains the available adapted images for each
 resolution (see the `<picture>` example above).
 
 ## Staging Adapted Images [](id=staging-adapted-images)

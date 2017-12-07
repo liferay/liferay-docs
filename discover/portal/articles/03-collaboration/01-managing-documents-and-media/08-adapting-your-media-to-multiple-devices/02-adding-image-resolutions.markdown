@@ -1,8 +1,8 @@
 # Adding Image Resolutions [](id=adding-image-resolutions)
 
 To use Adaptive Media, you must first define the resolutions for the images 
-delivered to users' devices. Adaptive Media then generates new images that are 
-scaled to fit those resolutions, while maintaining the original aspect ratio. 
+delivered to users' devices. Adaptive Media then generates new images scaled to
+fit those resolutions, while maintaining the original aspect ratio. 
 
 To access Adaptive Media settings, open the Control Panel and go to 
 *Configuration* &rarr; *Adaptive Media*. Here you can create and manage 
@@ -23,12 +23,12 @@ section for details).
 
 ## Adding a New Image Resolution [](id=adding-a-new-image-resolution)
 
-The number of image resolutions required, and the values for each, depend on the 
-use case. Having more resolutions may optimize image delivery, but generating 
+The number of image resolutions required and the values for each depend on the 
+use case. More resolutions may optimize image delivery, but generating 
 more images requires additional computational resources and storage space. To 
 start, we recommend that you create resolutions to cover common device sizes 
 like mobile phones, tablets, laptops, and desktops. If most users use one device 
-(e.g., all intranet users have the same company mobile phone), you can create a 
+(e.g., all Intranet users have the same company mobile phone), you can create a 
 resolution to target that device. 
 
 To add a new resolution, click the *Add* icon 
@@ -49,12 +49,11 @@ configuration page and provide the following information:
     within the specified dimension, while maintaining its original aspect ratio. 
     This ensures that adapted images are not distorted. 
 
--   **Add a resolution for high density displays (2x):** Whether to create an 
-    additional resolution for high density displays. If this option is selected, 
-    Adaptive Media creates a new resolution for these devices with the same name 
-    and the suffix `-2x`. The width and height of these resolutions is double 
-    the original. For example, if the original resolution is `400px` by `300px` 
-    (max width by max height), the high density resolution is `800px` by 
+-   **Add a resolution for high density displays (2x):** Defines a scaled up
+    resolution for HIDPI displays. Selecting this option creates a new
+    resolution double the size of the original with the same name and the
+    suffix `-2x`. For example, if the original resolution is `400px` by `300px`
+    (max width by max height), the high density resolution is `800px` by
     `600px`. 
 
 -   **Identifier:** The resolution's ID. By default, this is automatically 
