@@ -25,7 +25,7 @@ the `[Liferay Home]/data` directory. To use Documents and Media library storage
 for your keystore instead of file system storage, use the document library
 keystore manager.
 
-To select a keystore manager, to to *Control Panel* &rarr; *System Settings*
+To select a keystore manager, go to *Control Panel* &rarr; *System Settings*
 &rarr; *SAML KeyStoreManager Implementation Configuration*. There, the options
 are *Filesystem Keystore Manager* and *Document Library Keystore Manager*.
 
