@@ -150,8 +150,8 @@ methods as needed.
 
 1.  Use `WebScreenletConfiguration.Builder(<url>)`, where `<url>` is the web 
     page's URL string, to create a `WebScreenletConfiguration.Builder` object. 
-    If the page is a @product@ page that requires authentication, then the user 
-    must be logged in via 
+    If the page requires @product@ authentication, then the user must be logged 
+    in via 
     [Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android) 
     or a `SessionContext` method, and you must provide a relative URL to the 
     `WebScreenletConfiguration.Builder` constructor. For example, if such a 
