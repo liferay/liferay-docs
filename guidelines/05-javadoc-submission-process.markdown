@@ -2,9 +2,8 @@
 
 The production of Javadoc with Liferay code is highly recommended and essential
 for anyone developing for Liferay products. The submission processes outlined
-in this article must be followed to ensure quality and efficiency during the
-review process. Follow the appropriate process matching your relationship with
-Liferay, Inc.
+here must be followed to ensure an effective review process. Follow the process 
+appropriate to your relationship with Liferay, Inc.
 
 ## Liferay Internal Developers
 
@@ -46,11 +45,11 @@ this way:
 
     Submit your Javadoc following your typical code review process.
 
-3.  Notify the KM member (tech writer) that represents your team of the
-    unreviewed Javadoc. If you're unsure of who you should notify, contact
-    Cody Hoag (cody.hoag@liferay.com).
+3.  Notify your team's tech writer (a KM team member) that Javadoc is waiting 
+    for review. If you're not sure whom to notify, contact Cody Hoag     
+    (cody.hoag@liferay.com).
 
-The KM member will track the Javadoc and review it as soon as possible.
+The tech writer will track the Javadoc and review it as soon as possible.
 
 ### Write Javadoc for Merged/Available Code
 
@@ -63,12 +62,12 @@ published:
     when writing Javadoc to ensure comprehensive descriptions and consistent
     style.
 
-2.  Send a pull request containing the new Javadoc to the KM member (tech
-    writer) that represents your team. If you're unsure who you should send the
-    pull request to, send it to Cody Hoag (Github handle:
+2.  Send a pull request containing the new Javadoc to your team's tech writer 
+    (a KM team member). If you're unsure who should receive the pull request, 
+    send it to Cody Hoag (Github handle:
     [`codyhoag`](https://github.com/codyhoag)).
 
-The KM member will review the Javadoc as soon as possible.
+The tech writer will review the Javadoc as soon as possible.
 
 ## Community Members
 
@@ -101,14 +100,14 @@ to complete to ensure Javadoc is properly formatted and ready for submission:
   [here](https://dev.liferay.com/participate/javadoc-guidelines#formattingAndBuildingJavadoc)
   for more information.
 - Ensure no source formatting violations were introduced while editing. To check
-  this, run Source Formatter on your local changes. For example, the steps below
+  this, run Source Formatter on your local changes. The steps below
   can be used when reviewing a submission in `liferay-portal`:
     1. Navigate to `liferay-portal/portal-impl` using a command line tool.
     2. Run `ant format-source-local-changes`.
 - Ensure all commit descriptions start with a ticket number (e.g., *LPS-12345
   Javadoc*).
 - If you're reviewing Javadoc describing a Service Builder service, you'll need
-  to run Service Builder to prorogate the Javadoc changes/updates. To do this,
+  to run Service Builder to propogate the Javadoc changes/updates. To do this,
   execute `gradlew buildService` from the appropriate module's root folder.
 - Do not modify Javadoc residing in a class containing an `@generated` tag in
   its class description. This class will have its Javadoc generated from another
