@@ -1,5 +1,11 @@
 # Rendering Web Pages in Your Android App [](id=rendering-web-pages-in-your-android-app)
 
++$$$
+
+**Note:** This documentation is currently in beta. 
+
+$$$
+
 The 
 [Rendering Web Content](/develop/tutorials/-/knowledge_base/7-0/rendering-web-content-in-your-android-app) 
 tutorial shows you how to display 
