@@ -10,7 +10,7 @@ By using
 [Cordova plugins](https://cordova.apache.org/plugins/) in 
 [Web Screenlet](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-android-app), 
 you can extend the functionality of the web page that the Screenlet renders. 
-This lets you tailor that page to your apps needs. 
+This lets you tailor that page to your app's needs. 
 
 You'll get started by installing and configuring Cordova. There are two ways to 
 do this: automatically, or manually. The automatic method is covered first. 
@@ -18,16 +18,19 @@ do this: automatically, or manually. The automatic method is covered first.
 ## Installing and Configuring Cordova Automatically [](id=installing-and-configuring-cordova-automatically)
 
 Follow these steps to automatically create an empty Android project configured 
-to use Cordova with npm: 
+to use Cordova. Note that you must have 
+[git](https://git-scm.com/), 
+[Node.js, and npm](https://nodejs.org/en/) 
+installed. 
 
 1.  Download `screens-cli` by cloning it via git: 
 
         git clone https://github.com/victorg1991/screens-cli
 
-2.  Run `npm install`. 
+2.  Navigate to the `screens-cli` folder and run `npm install`. 
 
-3.  Update the file named `.plugins.screens` and insert all the plugins you want 
-    to use in your app. You can add from Cordova or from GitHub, for example: 
+3.  In the file `.plugins.screens`, add all the plugins you want to use in your 
+    app. You can add from Cordova or GitHub, for example: 
 
         https://github.com/apache/cordova-plugin-wkwebview-engine.git
         cordova-plugin-call-number
@@ -39,7 +42,7 @@ to use Cordova with npm:
 
 ## Installing and Configuring Cordova Manually [](id=installing-and-configuring-cordova-manually)
 
-If you want to install and configure Cordova manually, follow these steps: 
+To install and configure Cordova manually, follow these steps: 
 
 1.  Follow 
     [the Cordova getting started guide](https://cordova.apache.org/#getstarted) 
@@ -57,7 +60,7 @@ If you want to install and configure Cordova manually, follow these steps:
 3.  Copy the following files and folders from your Cordova project to your 
     Android project's root folder: 
 
-    - `/platforms/android/<_project-name_>/config.xml`
+    - `/platforms/android/<cordova-project-name>/config.xml`
     - `/platforms/android/assets/www`
 
     You should also review other files like `AndroidManifest.xml`, resource 
@@ -70,15 +73,14 @@ If you want to install and configure Cordova manually, follow these steps:
 Now that you've installed and configured Cordova in your Android project, you're 
 ready to use it with Web Screenlet. Follow these steps to do so: 
 
-1.  Insert and configure Web Screenlet in your app, as described in 
-    [the tutorial on using Web Screenlet](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-android-app). 
+1.  [Insert and configure Web Screenlet in your app](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-android-app). 
 
 2.  When you set Web Screenlet's parameters via the 
     `WebScreenletConfiguration.Builder` object, you must enable Cordova by 
-    calling the `enableCordova` method with a `CordovaLifeCycleObserver` object 
-    as an argument. `CordovaLifeCycleObserver` is a simple class that informs 
-    Cordova about the activity lifecycle. Creating such an object is also 
-    simple--just use its no-argument constructor. 
+    calling the `enableCordova` method with a `CordovaLifeCycleObserver` 
+    argument. `CordovaLifeCycleObserver` informs Cordova about the activity 
+    lifecycle. You can create an instance of this observer by using its 
+    no-argument constructor. 
 
     For example, this code creates a `CordovaLifeCycleObserver` object that it 
     then uses with `enableCordova` when setting Web Screenlet's parameters: 
@@ -95,8 +97,8 @@ ready to use it with Web Screenlet. Follow these steps to do so:
         webScreenlet.setWebScreenletConfiguration(configuration);
         webScreenlet.load();
 
-3.  Next, you must override the following `Activity` methods and call the 
-    corresponding method in the observer:
+3.  Override the following `Activity` methods to call their corresponding 
+    observer methods: 
 
         @Override
         protected void onStart() {
@@ -164,7 +166,7 @@ ready to use it with Web Screenlet. Follow these steps to do so:
 That's it! Note, however, that you may also need to invoke Cordova from a 
 JavaScript file, depending on what you're doing. For example, to use 
 [the Cordova plugin `cordova-plugin-call-number`](https://www.npmjs.com/package/cordova-plugin-call-number) 
-to call a number, then you must add a JavaScript file with the following code: 
+to call a number, you must add a JavaScript file with the following code: 
 
     function callNumber() {
         //This line triggers the Cordova plugin and makes a call
