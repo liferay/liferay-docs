@@ -6,16 +6,25 @@
 
 $$$
 
-Adaptive Media offers a convenient taglib to display adapted images in your 
-apps. This taglib is in 
+To display 
+[adapted images](/discover/portal/-/knowledge_base/7-0/adapting-your-media-across-multiple-devices) 
+in your apps, Adaptive Media offers a convenient taglib in 
 [the module `com.liferay.adaptive.media.image.taglib`](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-taglib). 
-The taglib has only one mandatory attribute: `fileVersion`. This attribute 
-indicates the file version of the adapted image that you want to display. 
-You can also add as many attributes as needed, such as `class`, `style`, 
+This taglib only has one mandatory attribute: `fileVersion`. This attribute 
+indicates the file version of the adapted image that you want to display. You 
+can also add as many attributes as needed, such as `class`, `style`, 
 `data-sample`, and so on. Any attributes you add are then added to the adapted 
-images in the markup rendered by the taglib. 
+images in the markup the taglib renders. 
 
-To use the taglib, you must follow these steps: 
+This tutorial uses 
+[the Adaptive Media Samples app](https://github.com/sergiogonzalez/adaptive-media-samples) 
+to show you how to use this taglib. When added to a page, this app displays all 
+the adapted images from the current site's Documents and Media app, provided 
+that 
+[Adaptive Media image resolutions](/discover/portal/-/knowledge_base/7-0/adding-image-resolutions) 
+and Documents and Media images exist. 
+
+Follow these steps to use the taglib: 
 
 1.  Include the module taglib dependency in your project. If you're using 
     Gradle, for example, you must add the following line in your project's 
@@ -23,28 +32,32 @@ To use the taglib, you must follow these steps:
 
         provided group: "com.liferay", name: "com.liferay.adaptive.media.image.taglib", version: "1.0.0"
 
+    For example, 
+    [the Adaptive Media Samples app's `build.gradle` file](https://github.com/sergiogonzalez/adaptive-media-samples/blob/master/adaptive-media-sample-web/build.gradle) 
+    contains this taglib. 
+
 2.  Declare the taglib in your JSP:
 
         <%@ taglib uri="http://liferay.com/tld/adaptive-media-image" prefix="liferay-adaptive-media" %>
 
-3.  Use the taglib wherever you want the adapted image to appear in your 
-    portlet's JSP files: 
+    For example, 
+    [the Adaptive Media Samples app's `init.jsp`](https://github.com/sergiogonzalez/adaptive-media-samples/blob/master/adaptive-media-sample-web/src/main/resources/META-INF/resources/init.jsp) 
+    declares all the taglibs the app needs. 
+
+3.  Use the taglib wherever you want the adapted image to appear in your app's 
+    JSP files: 
 
         <liferay-adaptive-media:img class="img-fluid" fileVersion="<%= fileEntry.getFileVersion() %>" />
 
-For a real-world example, see 
-[https://github.com/sergiogonzalez/adaptive-media-samples](https://github.com/sergiogonzalez/adaptive-media-samples). 
-This is a sample portlet that can be added to a page to display all the adapted 
-images stored in the current site's Documents and Media app. To test this sample 
-app, be sure to add some Adaptive Media 
-[image resolutions](/discover/portal/-/knowledge_base/7-0/adding-image-resolutions) 
-and some images to your Documents and Media app. 
+    For example, 
+    [the Adaptive Media Samples app's `view.jsp`](https://github.com/sergiogonzalez/adaptive-media-samples/blob/master/adaptive-media-sample-web/src/main/resources/META-INF/resources/view.jsp) 
+    uses the taglib to display the adapted images in a grid with the `col-md-6` 
+    [column container class](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-manually#column-container). 
+    Looking at the markup the app generates, you can see that it uses the 
+    `<picture>` tag as described in the article 
+    [Creating Content with Adapted Images](/discover/portal/-/knowledge_base/7-0/creating-content-with-adaptive-media-images). 
 
-The Adaptive Media sample app looks like this. You can see different images, 
-and if you look at the generated markup you can see that it uses the `<picture>` 
-tag.
-
-![Figure 1: The Adaptive Media sample app shows all the site's adapted images.](../../images/adaptive-media-sample.png)
+    ![Figure 1: The Adaptive Media Samples app shows all the site's adapted images.](../../images/adaptive-media-sample.png)
 
 Well done! Now you know how to display adapted images in your app. 
 
