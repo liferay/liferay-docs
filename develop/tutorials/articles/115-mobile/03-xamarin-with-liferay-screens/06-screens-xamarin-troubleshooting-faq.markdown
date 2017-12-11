@@ -40,11 +40,11 @@ We're happy to assist you!
     remove all the `bin` and `obj` folders that weren't removed by the clean, 
     then rebuild your project. 
 
-2.  `NSUknownKeyException` error in Xamarin.iOS:
+2.  `NSUnknownKeyException` error in Xamarin.iOS:
 
     This error occurs when Liferay Screens for iOS has a wrong module name in an 
-    XIB file. You must use native code to solve this. Post your issue on our 
-    [forum](https://www.liferay.com/community/forums/-/message_boards/category/42706063).
+    XIB file. You must solve this in Xcode, removing the module name in the XIB 
+    file's *Custom Class* assignment in Interface Builder. 
 
 3.  `The selector is already registered` error in Xamarin.iOS:
 
