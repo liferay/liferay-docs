@@ -6,52 +6,83 @@
 
 $$$
 
-Adaptive Media offers a Java API that lets developers obtain adapted images 
-based on certain search criteria and filters. This API's entry point is 
+<!-- 
+Is this required to display adapted images as described in the first tutorial? 
+E.g., what's the purpose of getting adapted images? What do you do with them 
+once you have them?
+-->
+Adaptive Media's Java API lets you write queries that get adapted images based 
+on certain search criteria and filters. For example, you can get adapted images 
+that match a file version or resolution, or are ordered by an attribute like 
+image width. You can even get adapted images that match approximate attribute 
+values (*fuzzy* attributes). 
+
+This tutorial shows you how to call Adaptive Media's API to get adapted images 
+in your app. First, you'll learn how to construct such API calls. 
+
+## Calling Adaptive Media's API
+
+The entry point to Adaptive Media's API is 
 [the `AMImageFinder` interface](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-api/src/main/java/com/liferay/adaptive/media/image/finder/AMImageFinder.java). 
-To use it you must first inject the OSGi component as follows: 
+To use it, you must first inject the OSGi component in your class as follows: 
 
     @Reference
     private AMImageFinder _amImageFinder;
 
-This makes an `AMImageFinder` instance available. The interface has one method, 
-`getAdaptiveMediaStream`, that returns a stream of `AdaptiveMedia` objects. The 
-method receives a `Function` that creates an `AMQuery` based on an 
-`AMImageQueryBuilder`.
-
-The `AMImageQueryBuilder` class creates the query used by `AMImageFinder` to get 
-the appropriate adapted images. The `AMImageQueryBuilder` class can search 
-adapted images based on different attributes (order, etc.). We recommend reading 
-the Javadoc to fully understand the possibilities for creating `AMQuery`. 
-
+This makes an `AMImageFinder` instance available. `AMImageFinder` has one 
+method, `getAdaptiveMediaStream`, that returns a stream of `AdaptiveMedia` 
+objects. This method receives a `Function` that creates an `AMQuery` based on an 
+`AMImageQueryBuilder`. The `AMImageQueryBuilder` class, which can search adapted 
+images based on different attributes (e.g., width, height, order, etc.), creates 
+the query that `AMImageFinder` uses to get the matching adapted images. 
 `AMImageQueryBuilder` is designed to be used via chaining to improve the clarity 
 when reading the source code. 
 
-Next, you'll see different examples of getting adapted images. 
+For example, here's a general `getAdaptiveMediaStream` call:
 
-## Getting the Adapted Images for a Specific File Version [](id=getting-the-adapted-images-for-a-specific-file-version)
+    Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
+        _amImageFinder.getAdaptiveMediaStream(
+            amImageQueryBuilder -> amImageQueryBuilder.methodToCall(arg).done());
 
-To get the adapted images for a specific file version, you must do the 
-following: 
+The argument to `getAdaptiveMediaStream` is a lambda expression that returns an 
+`AMQuery` constructed via `AMImageQueryBuilder`. Note that `methodToCall(arg)` 
+is a placeholder for the `AMImageQueryBuilder` method you want to call and its 
+argument. The exact call depends on what criteria you want to use to select 
+adapted images. The `done()` call that follows this, however, isn't a 
+placeholder--it creates and returns the `AMQuery` regardless of which 
+`AMImageQueryBuilder` methods you call. 
+
+To better understand the possibilities for 
+creating `AMQuery`, see 
+[the Javadoc for `AMImageQueryBuilder`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-api/src/main/java/com/liferay/adaptive/media/image/finder/AMImageQueryBuilder.java). 
+
+Next, you'll see different examples of constructing such calls that get adapted 
+images. 
+
+## Getting Adapted Images for a Specific File Version [](id=getting-the-adapted-images-for-a-specific-file-version)
+
+To get adapted images for a specific file version, you must call the 
+`AMImageQueryBuilder` method `forFileVersion` with a 
+[`FileVersion` object](https://docs.liferay.com/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/model/FileVersion.html) 
+as an argument: 
 
     Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
         _amImageFinder.getAdaptiveMediaStream(
             amImageQueryBuilder -> amImageQueryBuilder.forFileVersion(fileVersion).done());
 
-To get the adapted images for the latest approved file version, you can use 
-`fileEntry` instead: 
+To get the adapted images for the latest approved file version, use the 
+`forFileEntry` method with a 
+[`FileEntry` object](https://docs.liferay.com/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/model/FileVersion.html): 
 
     Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
         _amImageFinder.getAdaptiveMediaStream(
             amImageQueryBuilder -> amImageQueryBuilder.forFileEntry(fileEntry).done());
 
-This only returns the adapted images whose 
+Note that these calls only return the adapted images whose 
 [image resolutions are enabled](/discover/portal/-/knowledge_base/7-0/managing-image-resolutions) 
 in the Adaptive Media app. Adapted images of disabled resolutions aren't 
-included in the stream. 
-
-To retrieve every adapted image regardless of any image resolution's status, you 
-must do the following: 
+included in the stream. To retrieve every adapted image regardless of any image 
+resolution's status, you must do the following: 
 
     Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
         _amImageFinder.getAdaptiveMediaStream(
