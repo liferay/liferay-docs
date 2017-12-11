@@ -60,7 +60,7 @@ To install and configure Cordova manually, follow these steps:
 3.  Copy the following files and folders from your Cordova project to your 
     Android project's root folder: 
 
-    - `/platforms/android/<cordova-project-name>/config.xml`
+    - `/platforms/android/res/xml/config.xml`
     - `/platforms/android/assets/www`
 
     You should also review other files like `AndroidManifest.xml`, resource 

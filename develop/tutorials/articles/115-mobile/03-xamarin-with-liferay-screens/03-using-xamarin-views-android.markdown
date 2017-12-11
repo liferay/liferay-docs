@@ -28,9 +28,9 @@ layer in Liferay Screens, see the tutorial
 Follow these steps to use a View in Xamarin.Android: 
 
 1.  Copy the layout of the View you want to use from the 
-    [Liferay Screens repository](https://github.com/liferay/liferay-screens), 
-    or create a new one. The following links list the View layouts available in 
-    each View Set: 
+    [Liferay Screens repository](https://github.com/liferay/liferay-screens) to 
+    your app's `res/layout` folder. Alternatively, you can create a new layout. 
+    The following links list the View layouts available in each View Set: 
 
     - [Default](https://github.com/liferay/liferay-screens/tree/master/android/library/src/main/res/layout)
     - [Material](https://github.com/liferay/liferay-screens/tree/master/android/viewsets/material/src/main/res/layout)
@@ -119,9 +119,6 @@ Follow these steps to use a View in Xamarin.Android:
             android:visibility="gone"/>
 
         </com.liferay.mobile.screens.viewsets.material.auth.login.LoginView>
-
-    Note that you can install a NuGet with the theme in your App and then use 
-    it.
 
 2.  When you insert the Screenlet's XML in the layout of the activity or 
     fragment you want the Screenlet to appear in, set the `liferay:layoutId` 
