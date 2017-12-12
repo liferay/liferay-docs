@@ -90,7 +90,15 @@ $$$
 During the installation, `patching-backup-deps.zip` and `patching-backup.zip`
 files are created and stored in the `ROOT/WEB-INF` folder. These files are
 necessary to restore the @product@'s original state; removing them would disable
-further patching.
+further patching. 
+
++$$$
+
+**Note:** When installing patches, @product@'s `web.xml` is always overwritten
+by the one contained in the patch. If you've customized `web.xml`, you must
+re-implement your customizations after installing a patch. 
+
+$$$
 
 The `patching-backup.zip` file is necessary for installing future patches,
 because the Patching Tool reverts the installed fix pack before installing a new
