@@ -8,6 +8,9 @@ of any existing item on the page. @product@ contains other layouts that arrange
 items into different numbers of columns and rows. This gives you a great deal of
 control over how applications and content appear in your site. 
 
+<!-- Russ QA: Because I created my own site for The Lunar Resort, the layout by
+default was 2 column 30-70 not 1 column. Depending on how that initial step is supposed to work, this might need to change. --> 
+
 You'll next use layouts to create the Activities and About Us pages for the
 Lunar Resort. 
 

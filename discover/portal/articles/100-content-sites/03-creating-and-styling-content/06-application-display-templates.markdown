@@ -12,7 +12,7 @@ that you're applying the template to.
 ## ADTs and Scope
 
 Liferay comes bundled with several default ADTs which exist at the 
-*Global* scope. Scope, in Liferay simply means where content can be used or 
+*Global* scope. Scope, in @product@ simply means where content can be used or 
 viewed. All of the content that you have created so far has been in the scope 
 of The Lunar Resort site. If you were to create a second site on the same 
 Liferay server, you would not be able to access content that you created for
@@ -83,10 +83,11 @@ create the ADT.
                     </div>  
         	</div>
     
-    This calls the script (which you'll add momentarily) sets the mime type for
-    display (images), gets the list of `entries` that will be displayed, and
-    creates the container. It's all wrapped in an `#if` statement which will 
-    only display this block if there are entries to display.
+    This calls the script (which you'll add momentarily) that sets the mime
+    type for display (images), gets the list of `entries` that will be
+    displayed, and creates the container. It's all wrapped in an `#if`
+    statement which will only display this block if there are entries to
+    display.
     
 9. Next add the script:
 
@@ -110,7 +111,8 @@ create the ADT.
     This is a fairly straightforward Javascript carousel. You get the slides,
     and iterate through them to display them.
     
-And with that, you're all done creating the ADT. Now let's go set it up.
+Once you Save the template, you're all done creating the ADT. Now let's go set
+it up.
 
 ## Using the ADT
 
@@ -129,9 +131,12 @@ appropriate folder, and set it to use the display template we created.
 
 5. Scroll down to *Folders Listing* and click *Select*.
 
+6. Click *Choose* to select the *Frontpage Images* folder.
+
 6. For *Display Template* select *Frontpage Carousel*
 
 7. Click *Choose* for the *Carousel Images* folder.
+<!-- I don't see this step in the UI -->
 
 8. Click *Save*.
 
@@ -139,5 +144,6 @@ appropriate folder, and set it to use the display template we created.
     to *Barebone*
 
 ![Figure x: Site selection.](../../../images/001-final-frontpage.png)
+<!--In my carousel the image of the earthrise appears to be sideways. It could use a 90 deg. clockwise rotation-->
 
 Good work! Your Welcome page is complete! 

@@ -134,6 +134,8 @@ template:
         }
         </style>
 
+    When you're done, click *Save.*
+
 Awesome! Now you have a template for the booking form. You're ready to use the 
 structure and template to create some content. 
 
@@ -155,7 +157,7 @@ now:
 
 4.  Enter *Book Now!* for the button text. 
 
-5.  For the image, click *Select* and then upload and *Add* select the 
+5.  For the image, click *Select* and then upload and select the 
     `booking-image.png`. 
 
 6.  Click *Publish*.
@@ -183,6 +185,8 @@ Now, all you need to do is add it to the page.
 ![Figure x: Template before click.](../../images/001-adv-template-final1.png)
 
 ![Figure x: Template after click.](../../images/001-adv-template-final2.png)
+
+<!-- Think these paths ar ebad, the images don't display on github-->
 
 Great! Now you know how to use structures and templates to create and style web 
 content. Next, you'll learn about some other ways to publish content in 

@@ -101,3 +101,5 @@ Follow these steps to move files to your new folders:
 Well done! Now your Documents and Media library contains the images you need for 
 creating more content. You also learned how to upload and manage files in 
 Documents and Media. Next, you'll learn about more ways to publish content. 
+
+<!-- based on the numbering, is Structures and Templates supposed to come next? -->

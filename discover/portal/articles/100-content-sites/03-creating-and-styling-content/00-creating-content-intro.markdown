@@ -11,3 +11,5 @@ your new content on your site.
 ![Figure x: Basic web content.](../../../images/001-more-basic-content.png)
 
 ![Figure x: Application Display Template.](../../../images/001-adt-content.png)
+
+<!-- These images don't display on the github preview. Path problem? -->

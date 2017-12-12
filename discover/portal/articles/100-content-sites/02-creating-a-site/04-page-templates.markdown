@@ -46,7 +46,12 @@ edit the page template you just created:
 
     ![Figure x: Click the page template to edit it.](../../../images/001-lunar-resort-template-edit.png)
 
-2.  In the page template's edit tab/window, click the *Add* button 
+    <!-- Recommend adding something about the Search and Navigation portlets
+    which are added to the page template by default. They're conspicuous when
+    you navigate to the page template. Feel free to disregard if we want to
+    prioritize brevity.-->
+
+2.  In the page template's edit tab/window <!-- toolbar?-->, click the *Add* button 
     (![Add](../../../images/icon-add-app.png)) on the upper right and expand the
     *Applications* &rarr; *Collaboration* category. Add a Blogs portlet to the
     page template's right column. 

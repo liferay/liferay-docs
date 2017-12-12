@@ -40,6 +40,10 @@ You probably noticed a couple of sub-optimal things about your page: your
 content's title looks a bit odd, and the Hello World portlet is unnecessary now 
 that the page has content. You'll fix this now.
 
+<!-- Russ QA: So we're supposed to rename the Liferay Site to The Lunar Resort? Guessing
+this is so if the Hello World Portlet is deployed there by default. I don't see how this is
+done though.-->
+
 1.  Mouse over your content to reveal the portlet bar.
 
 2.  Click the portlet menu icon and select *Look and Feel Configuration*.
