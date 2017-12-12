@@ -204,22 +204,22 @@ $$$
 +$$$
 
 **Warning::** For configuration entries supporting factory configuration,
-omitting the subname from a `.config` file's name breaks the System Settings
+omitting the sub-name from a `.config` file's name breaks the System Settings
 application's functionality (but only for the configuration entry targeted by
 the `.config` file). This is caused by a known bug. See
 [LPS-76352](https://issues.liferay.com/browse/LPS-76352) for more information.
-Once an improperly named configuration file is deployed, you won't be able to
-add any entries for the configuration in question from its System Settings
-entry. For example, if you deploy a 
+Once an improperly named configuration file is deployed, you can't add any
+entries for the configuration in question from its System Settings entry. For
+example, if you deploy a 
 
     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration.config
 
-file to configure a CXF Endpoint, not only will this not add a CXF Endpoint, it
-will also prevent you from adding any CXF Endpoints via System Settings.
+file to configure a CXF Endpoint, not only does this not add a CXF Endpoint, it
+also prevents you from adding any CXF Endpoints via System Settings.
 
-Deploying an erroneous (lacking a subname) `.config` file doesn't break anything
-permanently. Just rename the file using the proper convention described above, or
-remove it entirely and start over.
+Deploying an erroneous (lacking a sub-name) `.config` file doesn't break
+anything permanently. Just rename the file using the proper convention described
+above or remove it entirely and start over.
 
 $$$
 
