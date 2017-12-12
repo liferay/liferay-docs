@@ -6,7 +6,7 @@ Pack ?, @product@'s
 exposes an OSGi bundle's npm package descriptors, stored in the `NPMRegistry`, 
 so you can access them in your server code. This lets you resolve an OSGi 
 bundle's npm packages and its dependency npm packages and modules in your 
-npm-based portlets. You can use this information in many ways. For instance, you 
+npm-based portlets. How you use this information is up to you. For instance, you 
 can 
 [reference an OSGi bundle's JavaScript package version number](/develop/tutorials/-/knowledge_base/7-0/obtaining-npm-package-descriptors#using-an-alias-to-reference-a-modules-package) 
 in your JSP instead of hardcoding it. This makes your code much easier to 
