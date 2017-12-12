@@ -624,3 +624,49 @@ content (WC) feed are handled during the Staging process.
 |              | Display page is deleted | The page and its content are deleted.
 |              | WC article is deleted | The article deletion is published; the display page is not affected.
 |              | WC article with a display page is added but the page was not published earlier and it's not included in the publication | The page reference is validated and the publication fails when the page is not there. A message displays explaining this to the user.
+
+## Wiki
+
+The following table describes how entities that are attached/related to Wikis
+are handled by the Staging framework.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Attachment link | Add a link to an attachment of the same page to a wiki page | The attachment is published and the link in the wiki points to the new attachment.
+|                 | Add a link to another wiki page of the same node to a wiki page | The wiki page is published, but the link is not.
+| Parent wiki page | Add a wiki page and a child of that page | Both pages are published.
+|                  | Parent page is deleted | The parent page and all its children are deleted.
+|                  | Child page is deleted | The child page deletion is published.
+|                  | Parent page is updated | The updated page is published.
+|                  | Child page is updated | The updated page is published.
+| Wiki redirect page | Page is moved to a new title | The pages are updated and published; the redirect works on the live site.
+|                    | Intermediate page is deleted | The page deletion is published; the new page is not affected.
+|                    | Target page is deleted | Both the intermediate and new page are deleted and those deletions are published.
+| Site link in content | Add a link to a Liferay site page to wiki | The new wiki content and the site page referenced in the link are published.
+| Wiki node | New node is added | The node is published.
+|           | Node is updated | The node is published.
+|           | Set of pages is imported into existing node | The pages are published.
+|           | Node is deleted | The node and all its dependent pages are deleted and those deletions are published.
+| Wiki page | Page with no child/parent relationships is copied | The new page is published.
+|           | Page containing a child is moved, changing its title and parent | The page is published. After publication, the page is located under a new parent and has a new name. The child points to the new page.
+|           | Page with no child/parent relationships is deleted | The page deletion is published.
+|           | Attachment is removed from page | The page is published. The attachment is removed from the page on the live site.
+|           | Category is removed from page | The page is published. The category is removed from the page on the live site.
+|           | Page format is modified | The page is published.
+|           | Image (not yet published) is added to page's content | The page and its image are published.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
