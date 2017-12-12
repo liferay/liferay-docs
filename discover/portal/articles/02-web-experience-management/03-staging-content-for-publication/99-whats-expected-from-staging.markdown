@@ -96,6 +96,77 @@ The related entities that apply to this table are listed below:
 |                        | Manual selection exported is turned off | The AP does not publish any content.
 |                        | No limit for manual export | The AP publishes the exact same manually selected content.
 
+## Blogs
+
+The following table describes how entities that are attached/related to Blogs
+are handled by the Staging framework.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Blogs entry | Blog entry is created | The new entry is published.
+|             | Blog entry is exported | No changes to entry on site where it was exported from.
+|             | Blog entry is exported without references | No changes to entry on site where it was exported from.
+|             | Blog entry is imported | The entry and its references are available for publishing in the importation site. If any modifications were done on the entry before it's imported, the `modifiedDate` field is flagged in the resulting LAR, meaning when the entry is imported to a new site, it's only available in the staging site and not published by default to the live site.
+|             | Blog entry is imported without references | The entry is available for publishing in the importation site. If any modifications were done on the entry before it's imported, the `modifiedDate` field is flagged in the resulting LAR, meaning when the entry is imported to a new site, it's only available in the staging site and not published by default to the live site.
+|             | Blog entry is modified | The modified entry is published.
+| Small image - file entry | Entry is deleted | The image is not deleted from the Blogs repo (e.g., Site Admin &rarr; *Content* &rarr; *Blogs* &rarr; *Images*).
+|             | Small image is deleted | The blog entry is not updated, but the image deletion is published.
+|             | Small image is updated | The blog entry is updated and published.
+|             | Blog entry is published with references | The small image is published.
+|             | Blog entry is published without references | If the small image has already been published or is not included for publication, it is not (re)published.
+| Small image - image |  | ***********
+| Cover image - file entry |  | ***********
+| Friendly URL | Custom URL is added | The new URL is published.
+|              | Custom URL is modified | The modified URL is published.
+|              | Blog entry is deleted | The URL deletion is published.
+|              | Blog entry is published | The URL is published when importing, adding, or updating an entry.
+| Page link | Blog entry is published with references | The entry's references are added, validated, and published.
+|           | Page is deleted | The page deletion is published and page URL is broken in blog entry.
+| Embedded image - file entry |  | ***********
+| Embedded image - linking Liferay image with anchor |  | ***********
+| Embedded image - image |  | ***********
+| Expando (custom field) | Blog entry is deleted | The custom field value is deleted and published.
+|                        | Blog entry is exported | The Expando values are exported with the columns.
+|                        | Blog entry is imported | The Expando values are imported. Columns are updated/added if they don't exist in the target system. If the Expando table does not exist, it's created.
+|                        | Custom field is modified | The entry is modified and published.
+|                        | Custom field's properties are modified | The entry is modified and published.
+|                        | Custom field is deleted | The entry is modified and published.
+|                        | Locales are modified | Locales are independent of a blog entry; they depend on portal languages. Therefore, they're not listed as modified for the blog entry.
+| Deletions | Blog entry is deleted | The deletion is propagated and published.
+|           | Blog entry is added to Recycle Bin | The entry's removal is propagated and published.
+|           | Blog entry is restored from Recycle Bin | The entry is published again.
+| Permissions | Blog entry is deleted | The permissions are deleted and published.
+|             | Blog entry is exported | The permissions are exported.
+|             | Blog entry is imported | The permissions are imported.
+|             | Blog entry's permissions are modified | The entry is modified and published.
+|             | Role is created | The entry is reindexed in the staging and live sites. This is required so the roles which view and entity are reindexed.
+|             | Role is modified | The entry is reindexed in the staging and live sites. This is required so the roles which view and entity are reindexed.
+|             | Role is deleted | The entry is reindexed in the staging and live sites. This is required so the roles which view and entity are reindexed.
+|             | Team is created | The entry is reindexed in the staging and live sites. This is required so the roles which view and entity are reindexed.
+|             | Team is modified | The entry is reindexed in the staging and live sites. This is required so the roles which view and entity are reindexed.
+|             | Team is deleted | The entry is reindexed in the staging and live sites. This is required so the roles which view and entity are reindexed.
+| Locales | Locales of the portal/site change | The article is imported, adding the value for the new default language from the previous default language.
+| Asset entry | File entry is exported | No changes.
+|             | File entry is imported | The asset entry is created automatically.
+|             | File entry is deleted | The asset entry is deleted and the file deletion is published.
+| Asset category | Category is added | The category is published.
+|                | Category is added to file entry | The file entry is updated and published.
+|                | Category is updated | The updated category is published.
+|                | Category is deleted | The category deletion is published.
+|                | Category assigned to file entry is deleted | The file entry is updated and published.
+|                | Category is removed from file entry, but not deleted | The file entry is updated and published.
+| Asset tag | File entry is exported | The tags are exported.
+|           | File entry is imported | The tags are imported.
+|           | Tag is added to file entry | The file entry is updated and published.
+|           | Tag is removed from file entry | The file entry is updated and published.
+| Asset link | New asset link is created in file entry | The file entry is updated and published.
+|            | Asset link is removed that links file entry and another entity | The file entry is updated and published.
+|            | File entry is exported | The asset link is exported.
+|            | File entry is imported | The asset link is imported if the target exists.
+
+
+
+
 ## Calendar
 
 The sections below describe how Staging handles a specific Calendar entity and
