@@ -3,7 +3,7 @@
 @product@ uses [Log4j](http://logging.apache.org/log4j/1.2/) logging
 services. Here are the ways to configure logging for module classes and class hierarchies.
 
--   [DXP's UI]((/discover/portal/-/knowledge_base/7-0/server-administration#log-levels)
+-   [@product@'s UI]((/discover/portal/-/knowledge_base/7-0/server-administration#log-levels)
 -   Configure Log4j for multiple modules in a
     `[anyModule]/src/main/resources/META-INF/module-log4j.xml` file.
 -   Configure Log4j for a specific module in a
@@ -53,7 +53,7 @@ $$$
 +$$$
 
 Note: A Log4j configuration's appenders control log file location, naming, and rotation.
-[To override advanced Log4j options such as DXP's appenders, use an Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins#using-advanced-configuration-files). 
+[To override advanced Log4j options such as @product@'s log appenders, use an Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins#using-advanced-configuration-files). 
 
 $$$
 
