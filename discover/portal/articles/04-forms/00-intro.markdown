@@ -3,27 +3,30 @@
 When you need a form in @product@, what you really need is data. @product@ has
 two applications for building forms to collect precisely the data you need:
 
-1.  [Liferay Forms](/discover/portal/-/knowledge_base/7-0/collecting-information-from-users): @product@'s primary form building application lets you
-    build forms ranging from the simplest one or two question survey to the most
-    complex, multi-page, homeowners insurance application form featuring form
-    rules and lists populated by a REST data provider.
+1.  [Liferay Forms](/discover/portal/-/knowledge_base/7-0/collecting-information-from-users): 
+    @product@'s primary form building application lets you build forms ranging
+    from the simplest one or two question survey to the most complex,
+    multi-page, homeowners insurance application form featuring form rules and
+    lists populated by a REST data provider.
 
 2.  [Dynamic Data
-    Lists(DDL)](/discover/portal/-/knowledge_base/7-0/creating-simple-applications):
+    Lists (DDL)](/discover/portal/-/knowledge_base/7-0/creating-simple-applications):
     Provides a user interface tool for building reusable form- and list-based
     applications intended for display on pages in @product@. It's the ability to
-    mold the display using [templates](/discover/portal/-/knowledge_base/7-0/using-templates-to-display-forms-and-lists) that sets DDL apart.
+    mold the display using 
+    [templates](/discover/portal/-/knowledge_base/7-0/using-templates-to-display-forms-and-lists) 
+    that sets DDL apart.
 
 +$$$
 
 **Kaleo Forms:** If you're a Liferay Digital Enterprise customer, there's a
-third form building tool in @product@ called [Kaleo
-Forms](https://customer.liferay.com/documentation/7.0/admin/-/official_documentation/portal/workflow-forms). It integrates form
-building with workflow to create form based business processes, like a
-Conference Room Checkout Form, or a Support Ticket Process so support tickets go
-through the proper channels on their way to resolution. Read more about Kaleo
-Forms in the [workflow
-section](https://customer.liferay.com/documentation/7.0/admin/-/official_documentation/portal/workflow-forms).
+third form building tool called 
+[Kaleo Forms](https://customer.liferay.com/documentation/7.0/admin/-/official_documentation/portal/workflow-forms). 
+It integrates form building with workflow to create form based business
+processes, like a Conference Room Checkout Form, or a Support Ticket Process so
+support tickets go through the proper channels on their way to resolution. Read
+more about Kaleo Forms in the 
+[workflow section](https://customer.liferay.com/documentation/7.0/admin/-/official_documentation/portal/workflow-forms).
 
 $$$
 
@@ -34,9 +37,9 @@ the article on customer.liferay.com, instead of getting a Resource Not Found err
 
 ## Which Form Builder Should I Use? [](id=which-form-builder-should-i-use)
 
-Liferay Forms is a relatively new application, first appearing in @product@
-version 7.0. It's intended to be the default form builder in @product@. If you
-can use Liferay Forms for your use case, you should.
+Liferay Forms (also referred to as Forms) is a relatively new application, first
+appearing in @product@ version 7.0. It's intended to be the default form builder
+in @product@. If you can use Liferay Forms for your use case, you should.
 
 So the question "Which form builder should I use?" can be restated to "When
 should I use Dynamic Data Lists?"
