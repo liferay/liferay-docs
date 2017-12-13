@@ -25,7 +25,7 @@ the `[Liferay Home]/data` directory. To use Documents and Media library storage
 for your keystore instead of file system storage, use the document library
 keystore manager.
 
-To select a keystore manager, to to *Control Panel* &rarr; *System Settings*
+To select a keystore manager, go to *Control Panel* &rarr; *System Settings*
 &rarr; *SAML KeyStoreManager Implementation Configuration*. There, the options
 are *Filesystem Keystore Manager* and *Document Library Keystore Manager*.
 
@@ -64,8 +64,7 @@ Here are the steps for setting up @product@ to act as a SAML Identity Provider:
     - The key length in bits (2048 is the default)
     - The key password
 
-	If you're making a test configuration, use the password *liferay*. When
-    you enter all the required information, click *Save*.
+    When you enter all the required information, click *Save*.
 
     When you create the certificate and private key, you also create a keystore
     if one doesn't already exist. As described above, this keystore has two
@@ -233,9 +232,9 @@ line. Each line is an expression that gets parsed. Examples:
     expando:[userCustomFieldName] 
 
 Note that the full namespace depends on the attribute name. Attribute
-namespaces can be very useful. Use them, for example, when you have an Expando
-attribute that might otherwise create an attribute with the same name as some
-other attribute.
+namespaces can be very useful. Use them when attribute names from different
+namespaces might conflict. For example, `expando:user` vs
+`urn:liferay:roles:user`.
 
 **Keep Alive URL:** If users are logged into several @product@ SP instances via
 a @product@ IdP, their sessions can be kept alive as long as they keep a
@@ -244,9 +243,9 @@ The URL is `https://[SP host name]/c/portal/saml/keep_alive`.
 
 ### Checkpoint [](id=checkpoint-0)
 
-If a @product@ instance is the SAML IdP, it can connect to multiple SPs.
-The converse, however, is not true: SPs connect to only one IdP. Verify that
-your settings are correct for the first SP before proceeding to add more SPs.
+Verify your settings are correct when connecting the @product@-based IdP to its
+first SP. SPs connect to only one IdP, so if the first one doesn't work, the
+rest won't either. 
 
 1. Provide a general name for the SP.
 

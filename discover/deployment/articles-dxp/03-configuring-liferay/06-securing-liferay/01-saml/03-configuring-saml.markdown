@@ -5,7 +5,7 @@ connections must be done through the SAML Admin UI where configurations are
 saved to Liferay's database. SP connections can no longer be made via properties
 files as they were in the past. 
 
-This is an instance-scoped configuration which can be managed via OSGi
+This is an portal instance scoped configuration which can be managed via OSGi
 Configuration Admin. The affected properties are those in the
 `SAMLProviderConfiguration` metatype:
 
@@ -26,7 +26,7 @@ Configuration Admin. The affected properties are those in the
     - `saml.ssl.required`
     - `saml.idp.metadata.name.id.attribute`
 
-The SAML Admin UI remains the place for creating the company-scoped
+The SAML Admin UI remains the place for creating the portal instance scoped
 configuration instances.
 
 Note that there is also a system wide configuration, represented by the
