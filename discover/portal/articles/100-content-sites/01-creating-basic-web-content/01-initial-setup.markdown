@@ -1,10 +1,10 @@
 # Initial Setup
 
-Before we start creating content, let's take a quick detour to set up our site 
-name. When you start a new Liferay bundle for the first time, it creates a site 
-with a single "Welcome" page. The default name for the Site is "Liferay," but 
-you can change that by changing the name globally. You can set the name through 
-the Setup Wizard or through the Control Panel.
+Before you get any further you should set your site name. When you start a new 
+Liferay bundle for the first time, it creates a site with a single "Welcome" 
+page. The default name for the Site is "Liferay," but you can change that by 
+changing the name globally. You can set the name through the Setup Wizard or 
+through the Control Panel.
 
 ## Changing the Site Name
 
