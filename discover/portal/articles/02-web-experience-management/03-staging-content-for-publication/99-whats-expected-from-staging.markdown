@@ -164,8 +164,24 @@ are handled by the Staging framework.
 |            | File entry is exported | The asset link is exported.
 |            | File entry is imported | The asset link is imported if the target exists.
 
+## Bookmarks
 
+The following table describes how entities that are attached/related to
+Bookmarks are handled by the Staging framework.
 
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Bookmarks entry | Entry is added to folder | The entry is published.
+|                 | Entry is moved to a different folder | The entry is updated and published.
+|                 | Entry is deleted | The entry deletion is published; the folder is not affected.
+|                 | Folder is updated | The entry is not affected by the change.
+|                 | Folder is deleted | The folder and its entities are deleted.
+| Bookmarks folder | Folder is added to another folder | The folder addition is published to live.
+|                  | Child folder is moved to a different folder | The child folder change is published by default; the other folder is not affected.
+|                  | Parent folder is modified | The parent folder is modified and published. The children folders are not affected.
+|                  | Parent folder is deleted | The parent folder and its contents are deleted and those deletions are published.
+|                  | Child folder is modified | The child folder is published; the parent folder is not affected.
+|                  | Child folder is deleted | The folder deletion is published.
 
 ## Calendar
 
@@ -654,19 +670,3 @@ are handled by the Staging framework.
 |           | Category is removed from page | The page is published. The category is removed from the page on the live site.
 |           | Page format is modified | The page is published.
 |           | Image (not yet published) is added to page's content | The page and its image are published.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
