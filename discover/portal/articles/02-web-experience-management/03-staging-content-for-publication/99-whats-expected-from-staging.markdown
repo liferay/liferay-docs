@@ -101,6 +101,20 @@ The related entities that apply to this table are listed below:
 The following table describes how entities that are attached/related to Blogs
 are handled by the Staging framework.
 
++$$$
+
+**Note:** There are two types of images that can be used in Blog entries. They
+stem from two different frameworks: the legacy Image framework and the Document
+Library framework. The Document Library's `FileEntry` is the image entity
+created for any new Blog entries. The legacy Image framework's `Image` entity is
+provided for backwards compatibility for older Blog entries featuring images.
+Since there are no upgrade processes available for legacy Blogs, the old and new
+image entities are both supported. Therefore, they're both listed in the table
+below. Images that do not define the type can be assumed as the `FileEntry`
+type.
+
+$$$
+
 | Related entity | Action performed | How does Staging handle this? 
 | :------------- | :--------------  | :----------------------------
 | Blogs entry | Blog entry is created | The new entry is published.
@@ -109,22 +123,37 @@ are handled by the Staging framework.
 |             | Blog entry is imported | The entry and its references are available for publishing in the importation site. If any modifications were done on the entry before it's imported, the `modifiedDate` field is flagged in the resulting LAR, meaning when the entry is imported to a new site, it's only available in the staging site and not published by default to the live site.
 |             | Blog entry is imported without references | The entry is available for publishing in the importation site. If any modifications were done on the entry before it's imported, the `modifiedDate` field is flagged in the resulting LAR, meaning when the entry is imported to a new site, it's only available in the staging site and not published by default to the live site.
 |             | Blog entry is modified | The modified entry is published.
-| Small image - file entry | Entry is deleted | The image is not deleted from the Blogs repo (e.g., Site Admin &rarr; *Content* &rarr; *Blogs* &rarr; *Images*).
+| Small image - (`FileEntry`) | Entry is deleted | The image is not deleted from the Blogs repo (e.g., Site Admin &rarr; *Content* &rarr; *Blogs* &rarr; *Images*).
 |             | Small image is deleted | The blog entry is not updated, but the image deletion is published.
-|             | Small image is updated | The blog entry is updated and published.
+|             | Small image is updated | The blog entry and image are updated and published.
 |             | Blog entry is published with references | The small image is published.
 |             | Blog entry is published without references | If the small image has already been published or is not included for publication, it is not (re)published.
-| Small image - image |  | ***********
-| Cover image - file entry |  | ***********
+| Small image - (`Image`) | Entry is deleted | The image is not deleted from the Blogs repo.
+|                         | Small image is deleted | The blog entry is not updated, but the image deletion is published.
+|                         | Small image is updated | The blog entry and image are updated and published.
+|                         | Blog entry is published with references | The small image is published.
+|                         | Blog entry is published without references | If the small image has already been published or is not included for publication, it is not (re)published.
+| Cover image | Add a blog entry with cover image before publishing to the live site and then delete the entry | The cover image is not deleted from the Blogs repo (e.g., Site Admin &rarr; *Content* &rarr; *Blogs* &rarr; *Images*).
+|             | Cover image is deleted in the Blogs repo | The blog entry still contains the cover image on the live site, but the image is unavailable in the Blogs repo.
+|             | Cover image is updated | The blog entry and image are updated and published.
+|             | Blog entry is published with references | The cover image is published.
+|             | Blog entry is published without references | If the cover image has already been published or is not included for publication, it is not (re)published.
 | Friendly URL | Custom URL is added | The new URL is published.
 |              | Custom URL is modified | The modified URL is published.
 |              | Blog entry is deleted | The URL deletion is published.
 |              | Blog entry is published | The URL is published when importing, adding, or updating an entry.
 | Page link | Blog entry is published with references | The entry's references are added, validated, and published.
 |           | Page is deleted | The page deletion is published and page URL is broken in blog entry.
-| Embedded image - file entry |  | ***********
-| Embedded image - linking Liferay image with anchor |  | ***********
-| Embedded image - image |  | ***********
+| Embedded image | Embedded image is added | The blog entry and image are published.
+|                | Embedded image is removed from blog entry | The blog entry is updated and published; the embedded image does not change.
+|                | Embedded image is deleted | The blog entry is updated and published, and the image deletion is published.
+|                | Blog entry is published with references | The embedded image is published.
+|                | Blog entry is published without references | If the embedded image has already been published or is not included for publication, it is not (re)published.
+| Embedded image - linking Liferay image with anchor | Embedded image is added with linking | The blog entry and embedded image are published.
+|                                                    | Embedded image is removed from the blog entry | The blog entry is updated and published; the embedded image does not change.
+|                                                    | Embedded image is deleted | The blog entry is published with a broken link for the deleted embedded image.
+|                                                    | Blog entry is published with references | The embedded image is published.
+|                                                    | Blog entry is published without references | If the embedded image has already been published or is not included for publication, it is not (re)published.
 | Expando (custom field) | Blog entry is deleted | The custom field value is deleted and published.
 |                        | Blog entry is exported | The Expando values are exported with the columns.
 |                        | Blog entry is imported | The Expando values are imported. Columns are updated/added if they don't exist in the target system. If the Expando table does not exist, it's created.
