@@ -52,8 +52,8 @@ the Staging framework.
 | Related entity | Action performed | How does Staging handle this? 
 | :------------- | :--------------  | :----------------------------
 | Asset Category | Category moved into/out of vocabulary or another parent category | The category is marked as modified and is published.
-|                | Vocabulary/parent category holding categories is deleted | All categories in the vocabulary/parent category are deleted, removing them from live site.
-| Asset Tag | Two or more tags are merged into one tag | Merged tags are deleted, removing them from live site.
+|                | Vocabulary/parent category holding categories is deleted | All categories in the vocabulary/parent category are deleted, removing them from the live site.
+| Asset Tag | Two or more tags are merged into one tag | Merged tags are deleted, removing them from the live site.
 
 ## Asset Publisher
 
