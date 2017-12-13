@@ -4,7 +4,7 @@ If you're developing an npm-based portlet, your OSGi bundle's `package.json` is
 a treasure-trove of information. It contains everything that is stored in the 
 npm registry about your bundle: default entry point, dependencies, modules, 
 package names, versions, etc. @product@'s 
-[`NPMResolver` APIs](asda) 
+[`NPMResolver` APIs](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html) 
 expose this information, so you can access it in your portlet. You can resolve 
 module names, packages, package dependencies, etc. If it's defined in the OSGi 
 bundle's `package.json`, you can retrieve the information in your portlet with 
