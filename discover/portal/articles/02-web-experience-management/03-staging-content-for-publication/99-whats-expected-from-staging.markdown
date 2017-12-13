@@ -535,6 +535,58 @@ vote are handled during the Staging process.
 | Polls question | Question is deleted | The question and its accompanying choices and votes are deleted and published.
 |                | Question is updated | The question is modified and published; the accompanying votes are not affected.
 
+## Site Administration
+
+The following table describes how entities that are hosted in @product@'s Site
+Administration menu are handled by the Staging framework.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Parent page | Create child page | The child page is published.
+|             | Change parent of a child page | The parent is updated and published.
+|             | Delete child page via simple publication | The child page's deletion is published.
+|             | Delete child page via advanced publication | The child page's deletion is published when the *Replicate Individual Deletions* functionality is enabled.
+|             | Move child page to different parent | The child page is moved and published.
+|             | Create child page in new site variation and publish via simple publication | The child page exists on the live site.
+|             | Publish changes from the main variation without changes via simple publication | The child page does not exist on the live site.
+| Page friendly URL | Friendly URL is set | The friendly URL is published.
+|              | Friendly URL is modified on new site page variation | The friendly URL is modified in every site page variation and published.
+| Page icon | Icon is uploaded | The icon is published with the page.
+|           | Icon is replaced by another image | The icon is modified on the live site.
+|           | Icon is deleted | The icon is deleted on the live site.
+|           | Icon is modified in a new site page variation | The icon is published since it's set in the new site page variation.
+|           | Page is published from the main variation without modification on the page icon | The icon from the main variation is display on the live site.
+| Link to page | Link is set to a page | The link is published.
+|              | Delete page that is linked | The page deletion is published; the link is removed
+|              | Remove link | The link removal is published.
+|              | Link page to a page that exists in a variation only | A page existing in a different variation is not offered in the *Select Page* option.
+| Portlets | Portlet is added to page | The portlet is published.
+|          | Portlet is added to a page in a new site page variation | The portlet is published.
+|          | Portlet is removed from the page | The portlet's removal is published.
+|          | Portlet is removed from a page in a new site page variation | The portlet's removal is published.
+| Theme (reference only) | Theme settings are modified on specific page | The theme reference is updated on live site.
+|                        | Theme settings are modified in a site page variation on specific page  | The theme reference is updated on live site.
+|                        | New theme is configured for specific page | The new theme configuration is published.
+|                        | Public page theme settings are modified | The theme reference is updated on live site.
+|                        | Private page theme settings are modified | The theme reference is updated on live site.
+| Layout template | Layout template is changed for page | The change is published.
+| Logo (individual page)| New image is uploaded as logo | The logo modification is published.
+|                       | Uploaded logo is deleted | The logo modification is published.
+| Logo (page set) | New image is uploaded as logo for public pages | The logo modification is published.
+|                 | Uploaded logo is deleted from public pages | The logo modification is published.
+|                 | New image is uploaded as logo for private pages | The logo modification is published.
+|                 | Uploaded logo is deleted from private pages | The logo modification is published.
+|                 | *Show Site Name* option is disabled for public pages | The site name is not published.
+|                 | *Show Site Name* option is disabled for private pages | The site name is not published.
+| Page template | Public page is created based on a new page template containing a theme modification | The page template's theme modification is published.
+| JavaScript | JavaScript is set for public pages | The JavaScript configuration is published.
+|            | JavaScript is removed from public pages | The JavaScript removal is published.
+|            | JavaScript is set for private pages | The JavaScript configuration is published.
+|            | JavaScript is removed from private pages | The JavaScript removal is published.
+| CSS | CSS is set | The CSS configuration is published.
+|     | CSS is removed | The CSS removal is published.
+| Page set (referenced by site template) | Change theme of new site template | The public pages created in the site template have the updated theme configured.
+
 ## Web Content [](id=web-content)
 
 The sections below describe how Staging handles a specific web content entity
