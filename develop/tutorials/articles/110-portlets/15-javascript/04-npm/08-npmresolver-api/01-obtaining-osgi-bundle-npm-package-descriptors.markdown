@@ -1,19 +1,18 @@
-# Obtaining an OSGi Bundle's npm Package Descriptors [](id=obtaining-npm-package-descriptors)
+# Referencing an npm Module's Package to Improve Code Maintenance [](id=referencing-an-npm-modules-package)
 
-The 
-[`JSPackage` interface](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/JSPackage.html) 
-exposes the OSGi bundle's npm package name, version, modules, default entry 
-point, etc. You can use this information to make your code easier to maintain. 
-An example use case is covered below.
-
-## Using an Alias to Reference a Module's Package [](id=using-an-alias-to-reference-a-modules-package)
-
-By default, @product@ automatically composes an npm module's JavaScript variable 
-based on its name. For example, the module `my-package@1.0.0` translates to the 
-variable `myPackage100` for the `<aui:script>` tag's `require` attribute. To 
-avoid having to update the code each time a new version of the OSGi bundles's 
-npm package is released, you can use the `JSPackage` interface to obtain the 
-module's package name and create an alias to reference it.
+Once you've 
+[exposed your modules](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015), 
+you can use them in your portlet, via the `aui:script` tag's `require` 
+attribute. By default, @product@ automatically composes an npm module's 
+JavaScript variable based on its name. For example, the module 
+`my-package@1.0.0` translates to the variable `myPackage100` for the 
+`<aui:script>` tag's `require` attribute. This means that each time a new 
+version of the OSGi bundles's npm package is released, you must update your 
+code's variable to reflect the new version. Not to worry though, thanks to 
+@product@'s 
+[`NPMResolver` OSGi component](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html), 
+you can obtain the module's package name and create an alias to reference it, so 
+the variable name always reflects the latest version number! 
 
 Follow these steps:
 
@@ -46,8 +45,8 @@ Follow these steps:
         import com.liferay.frontend.js.loader.modules.extender.npm.JSPackage;
         import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 
-5.  In the portlet's JSP, retrieve the aliased attribute 
-    (`bootstrapRequire` in the example):
+5.  In the portlet's JSP, retrieve the aliased attribute (`bootstrapRequire` in 
+    the example):
 
         <%
         String bootstrapRequire =
@@ -96,7 +95,7 @@ And here is the corresponding example `view.jsp`:
       bootstrapRequire.default();
     </aui:script>
 
-Now you know how to obtain an OSGi bundle's npm package descriptors!
+Now you know how to reference an npm module's package!
 
 ## Related Topics [](id=related-topics)
 
