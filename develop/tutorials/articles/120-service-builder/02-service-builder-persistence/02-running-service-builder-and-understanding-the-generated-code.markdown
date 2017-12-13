@@ -229,9 +229,13 @@ you must do one of two things:
 1.  Write an [upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app) 
     to modify the tables and preserve the data, or
 
-2.  Run the `cleanServiceBuilder` task (supported on Gradle, Maven, and Ant),
-    which drops your tables so they get re-created the next time your app is
-    deployed. 
+2.  Run the `cleanServiceBuilder`
+    [Gradle task](/develop/reference/-/knowledge_base/7-0/db-support-gradle-plugin)
+    (also supported on Maven and Ant), which drops your tables so they get
+    re-created the next time your app is deployed. See the
+    [Maven DB Support Plugin](/develop/reference/-/knowledge_base/7-0/db-support-plugin)
+    reference article for instructions on how to run this command from a Maven
+    project.
 
 Use the first option when you have a released application and you must preserve
 your users' data. Use the second option when you're in the middle of development

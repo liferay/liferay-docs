@@ -130,11 +130,12 @@ it, controls for inserting an image, table, or horizontal line
 insert an image, select the icon that depicts a mountain silhouette. The image
 file selector screen appears, allowing you to choose an existing image or upload
 a new one. If you select an existing image in your Documents and Media 
-repository, you can access the [image editor](/discover/portal/-/knowledge_base/7-0/publishing-files#editing-images), 
-via the pencil icon (![Pencil](../../../images/icon-edit-pencil.png)) in 
-the bottom right corner of the preview window, to make changes to the image.
-Once you've made edits, a copy of the image is automatically created for you to 
-use in your web content.
+repository, you can access the 
+[image editor](/discover/portal/-/knowledge_base/7-0/editing-images), 
+via the pencil icon 
+(![Pencil](../../../images/icon-edit-pencil.png)) in the bottom right corner of 
+the preview window, to make changes to the image. Once you've made edits, a copy 
+of the image is automatically created for you to use in your web content. 
 
 ![Figure 3: You can access the image editor through the item selector window.](../../../images/image-editor-preview-window.png)
 
@@ -295,6 +296,30 @@ provides the ability to customize permissions in more detail. Select the *More
 Options* link below the drop down button and you'll find the different
 activities you can grant or deny to your web content article.
 
+While you can set permissions here, they are ignored unless you activate Web
+Content Article permissions in your System Configuration: 
+
+1. Go to the *Control Panel* &rarr; *Configuration* &rarr; *System Settings*.
+
+2. Search or browse for *Web Content (Default Settings for All Instances)*.
+
+3. Check the box labeled *Article view permissions check enabled*.
+
+4. Click *Save*.
+
+Once it is activated, any permissions you set in the article's configuration are
+checked before displaying the article.
+
++$$$
+
+**Version Note:** This property is only available with Fix Pack
+de-13 installed. If you do not have the latest fix packs installed, set the 
+`journal.article.view.permission.check.enabled=` to `true` in your 
+`portal-ext.properties` file and restart Liferay to activate the permission 
+check.
+
+$$$
+
 Before you display your web content, you'll learn how to localize it to cater to
 different language speaking users.
 
@@ -308,14 +333,14 @@ configurations or use the search bar to find *Web Content Administration*. From
 there you can check the box to enable *Changeable Default Language* and save 
 your configuration.
 
-![Figure X: This blog entry has links to three Related Assets: one web content and two message board entries.](../../../images/changeable-default-language.png)
+![Figure 9: This blog entry has links to three Related Assets: one web content and two message board entries.](../../../images/changeable-default-language.png)
 
 After you enable changes to the default language, you'll see options at the top
 of the New Web Content Screen to change the default language and add a 
 translation. If you click *Change*, you can select your default language from a 
 large number of languages @product@ supports.
 
-![Figure 9: You have many translation languages to choose from for your web content.](../../../images/web-content-default-language.png)
+![Figure 10: You have many translation languages to choose from for your web content.](../../../images/web-content-default-language.png)
 
 After you click *Add Translation*, you can select a language by scrolling
 through the list. When you select a language, an *Available Translations* list
@@ -324,7 +349,7 @@ form enables you to translate the original web content into the selected
 language. Once you are done with the translation, click *Publish* and the
 translation is added to the list of *Available Translations*.
 
-![Figure 10: The Available Translations list lets you easily survey the current translations for the article.](../../../images/web-content-translation.png)
+![Figure 11: The Available Translations list lets you easily survey the current translations for the article.](../../../images/web-content-translation.png)
 
 You can modify the language translation list by inserting `locales.enabled=`
 followed by your preferred languages in your `portal-ext.properties` file. For
@@ -408,7 +433,7 @@ application to your Welcome page by selecting the *Add* button
 and selecting the *Applications* tab. In the search field, type *Web Content
 Display*.
 
-![Figure 11: Add the Web Content Display app to a page to begin displaying your new web content article.](../../../images/add-web-content-display.png)
+![Figure 12: Add the Web Content Display app to a page to begin displaying your new web content article.](../../../images/add-web-content-display.png)
 
 Once the application appears, drag it to the position on the page where you want
 your content to appear. You can have as many Web Content Display apps on a page
@@ -444,7 +469,7 @@ about translating your content, visit the
 [Localizing Web Content](/discover/portal/-/knowledge_base/7-0/publishing-basic-web-content#localizing-web-content)
 sub-section.
 
-![Figure 12: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../../images/web-content-choosing-web-content.png)
+![Figure 13: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../../images/web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your Liferay instance, you
 can also enable document conversion for your content. This gives your users the
@@ -515,7 +540,7 @@ Content* button launches the WYSIWYG editor and from there you can make any
 necessary changes. You can also select the *Edit Template* button, which
 launches the template editor for the web content article's template.
 
-![Figure 13: You can select and edit an article, or edit its template directly from the Web Content Display app.](../../../images/web-content-display-icons.png)
+![Figure 14: You can select and edit an article, or edit its template directly from the Web Content Display app.](../../../images/web-content-display-icons.png)
 
 There are instances where you've edited your web content article many times, and
 you'd be interested in viewing the article's evolution. To view an article's
@@ -530,7 +555,7 @@ article you'd like to compare and select *Compare to...*. Then select the other
 article you want to compare. The tool provides color coded highlighting to
 emphasize additions and deletions between the two articles.
 
-![Figure 14: Comparing web content articles is a great feature to use during the Workflow process.](../../../images/web-content-diff-feature.png)
+![Figure 15: Comparing web content articles is a great feature to use during the Workflow process.](../../../images/web-content-diff-feature.png)
 
 When you publish updates to a web content article that's already being displayed
 somewhere in your Liferay instance (e.g., in a Web Content Display app or an
@@ -574,7 +599,7 @@ section. You can navigate to your Web Content menu's *Options* icon
 (![Options](../../../images/icon-options.png)) and select *Configuration* to
 modify your Web Content email notification settings.
 
-![Figure 15: Click the Subscribe icon in the web content entity's *Information* menu to begin receiving web content notifications.](../../../images/web-content-subscribe.png)
+![Figure 16: Click the Subscribe icon in the web content entity's *Information* menu to begin receiving web content notifications.](../../../images/web-content-subscribe.png)
 
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of

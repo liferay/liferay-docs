@@ -7,9 +7,10 @@ campaigns.
 ![Figure 1: Click on *Configuration* &rarr; *Audience Targeting* in Site Administration to manage user segments and campaigns for a site.](../../images-dxp/audience-targeting-admin.png)
 
 A user segment represents a subset of the total group of portal users (logged in
-or not). A user segment is defined by one or more rules that users have to match
-in order to belong to that user segment. Open the Site Administration menu and
-click *Configuration* &rarr; *Audience Targeting* &rarr; *Add User Segment*
+or not). A user segment is defined by one or more rules that users must match
+to belong to that user segment. Once the user segment is created,
+only users who visit the applicable site(s) are added to it. Open the Site
+Administration menu and click *Configuration* &rarr; *Audience Targeting* &rarr; *Add User Segment*
 (![Add User Segment](../../images-dxp/icon-add.png)) to add a new user segment.
 All the rules that have been deployed appear under the Rules heading. Drag a
 rule to the right to apply the rule to the user segment. Once a rule has been

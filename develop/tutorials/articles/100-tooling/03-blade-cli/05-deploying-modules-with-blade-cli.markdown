@@ -12,6 +12,17 @@ command to deploy it to @product@:
 You can also deploy all modules in a folder by running the `deploy` command from
 the parent folder (e.g., `[WORKSPACE_ROOT]/modules`).
 
+When deploying a module using Blade CLI, the module is directly installed into
+@product@'s OSGi container. This means that the module isn't stored in the
+`LIFERAY_HOME/osgi/modules` folder; only modules copied to the
+`LIFERAY_HOME/deploy` folder (i.e., leveraging the auto deployment mechanism)
+are stored there. A module deployed by Blade CLI is stored only as bytecode in
+`LIFERAY_HOME/osgi/state/org.eclipse.osgi` in a subfolder named after its bundle
+ID. All modules installed in OSGi's registry are stored this way, even those
+copied to the `/deploy` folder. Visit the [Using the Felix Gogo
+Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+article for instructions on finding a bundle's ID.
+
 The `deploy` command is intended for modules that are built into a JAR file. If
 you've created a WAR style project (e.g., projects based on the Blade templates
 `spring-mvc-portlet`, `theme`, etc.), you'll need to deploy it using a different

@@ -11,10 +11,12 @@ It's time to get started:
 
 2.  Under the site (*The Lunar Resort*), select *Content* &rarr; *Web Content*.
 
+<!-- Russ QA: We shouldn't assume the Lunar Resort site exists. -->
+
 ![Figure X: The Web Content page.](../../../images/001-web-content-page.png)
 
-The Web Content page is the hub for all the content in the Lunar Resort site.
-You create, edit, and review content from this page. 
+The Web Content site administration page is the hub for all the content in the
+Lunar Resort site.  You create, edit, and review content from this page. 
 
 Follow these steps to create some content:
 
@@ -56,6 +58,8 @@ Now you'll use it to create your first piece of web content:
 6.  Using drag and drop or the *Select File* button, upload the provided
     `moon-image1.jpg`. This also adds it to the Document Library so that you can
     re-use it later.
+
+    <!--Provided where? Not in liferay-docs/discover/portal/images/.-->
 
 7.  Click *Add* to add the image to the content. 
 

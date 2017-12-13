@@ -63,6 +63,11 @@ The navigation footer should look like this:
 
 ![Figure x: The Welcome page now has a navigation footer.](../../../images/001-nav-footer.png)
 
+<!-- My nav menu includes all the pages we've created so far, including the
+Welcome, Activities, Lunar Guides, Book a Trip, and About Us page, but the above
+screenshot only includes Welcome and Lunar Guides. Probably needs to be
+replaced. -->
+
 Great! Next, you'll add a Breadcrumb app. 
 
 ## Adding a Breadcrumb App

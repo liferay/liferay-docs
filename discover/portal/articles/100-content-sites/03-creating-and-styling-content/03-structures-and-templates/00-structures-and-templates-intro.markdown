@@ -18,3 +18,4 @@ content defined by a structure and a template. Now you'll use structures and
 templates to create something a little more intricate. 
 
 ![Figure x: Content using a template.](../../../../images/001-content-template-example.png)
+<!-- Image not displaying on github, a path problem perhaps -->

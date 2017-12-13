@@ -1,5 +1,5 @@
 # Creating Templates
-
+<!-- This article's images aren't showing up on github-->
 Structures, like the one you created in the previous step, need templates to
 style and display their items. Now you'll use the
 [FreeMarker](http://freemarker.apache.org/) templating language to create

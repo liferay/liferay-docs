@@ -24,14 +24,16 @@ covering that app server for its location.
 
 In the Liferay Home folder there are folders for various purposes:
 
-    - [Liferay Home]
-        - `data`
-        - `deploy`
-        - `logs`
-        - `osgi`
-        - `patching-tool` (Liferay Digital Enterprise 7.0 only)
-        - [Application Server]
-        - `tools`
+- [Liferay Home]
+    - `data`
+    - `deploy`
+    - `license`
+    - `logs`
+    - `osgi`
+    - `patching-tool` (Liferay Digital Enterprise 7.0 only)
+    - [Application Server]
+    - `tools`
+    - `work`
 
 `data`: This folder is used to store an embedded HSQL database, @product@'s
 file repository, and @product@'s search indexes. @product@ is initially configured
@@ -42,16 +44,32 @@ for demonstration and trial purposes.
 `.war` files, @product-ver@ style `.jar` files, and `.lpkg` files from Liferay
 Marketplace are supported.
 
+`license`: @product@'s copyright and version files are here.
+
 `logs`: This folder contains @product@'s log files. The information in @product@'s
 log files can be quite valuable for system administrators, especially when
 trying to diagnose a problem.
 
 `osgi`: All the JAR files and a few configuration files for @product@'s OSGi
-runtime belong in this folder.
+runtime belong in this folder. Here are its subfolders:
 
-`patching-tool`: This folder contains patches for @product@ and files for installing the patches (Digital Enterprise 7.0 only). 
+- `configs`: Component configuration files go here
+- `core`: @product@'s core modules
+- `marketplace`: Marketplace applications and application suites
+- `modules`: Modules you've deployed
+- `portal`: @product@'s non-core modules
+- `state`: Contains OSGi internal state files for such things as OSGi bundle
+installation, bundle storage, and more
+- `target-platform`: Target platform index
+- `test`: Modules that support test integration
+- `war`: WAR plugins you've deployed
+
+`patching-tool`: This folder contains patches for @product@ and files for
+installing the patches (Digital Enterprise 7.0 only).
 
 `tools`: For portal upgrade and target platform indexer.
+
+`work`: Module Jasper work files.
 
 **[Application Server]:** The name of this folder is different depending on
 the bundle you're using. This folder contains the application server in
@@ -110,17 +128,19 @@ downloaded it manually. Tomcat is launched by invoking a script which is found
 in its `bin` folder. If you open a command prompt or terminal and go to this
 folder, you can launch Tomcat via the following command on Windows:
 
-        startup
+    startup
 
-    or the following command on Linux/Mac/Unix:
+or the following command on Linux/Mac/Unix:
 
-        ./startup.sh
+    ./startup.sh
 
 The @product@ Tomcat bundle then starts. If you are on Windows, another command
 prompt window appears with Tomcat's console in it. If you are on Linux, you can
 see the Tomcat console by issuing the following command:
 
     tail -f ../logs/catalina.out
+
+@product@ writes log files to folder `[Liferay Home]/logs`. 
 
 The first time @product@ starts, it'll take a while to create all of its database
 tables. Once it has successfully started, it automatically launches a web browser that
@@ -227,6 +247,3 @@ When you're finished setting up your mail configuration, click *Save*.
 
 Your next step for basic @product@ configuration is to convert the search
 implementation from its default demo mode into a production-ready mode. 
-
-
-

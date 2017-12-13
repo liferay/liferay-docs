@@ -19,6 +19,7 @@ First, add a Web Content Display app to each column on the page:
 1.  Go to the *About Us* page. 
 2.  Open the *Add* menu. 
 3.  Add a *Web Content Display* app to each of the page's three columns. 
+<!-- We already added these Web Content Display portlets -->
 
 Now you'll add web content to each Web Content Display app: 
 
@@ -41,6 +42,7 @@ Now you'll add web content to each Web Content Display app:
 3.  With your cursor still in the Content field one line below the text you 
     just entered, click the plus button and select the image icon. Select 
     `lunar-resort-logo.png`. 
+    <!--Where do I find this?-->
 
 4.  Resize the image if necessary, then click *Publish*.
 

@@ -93,7 +93,7 @@ Now to add a few finishing touches.
 1. Go back to the *Activities* page.
 
 2. In the lefthand Asset Publisher, click the Portlet Title, and change it to
-    *Choose an Activity* and click the checkbox.
+    *Choose an Activity* and click the checkmark.
     
 3. On the right side, open the *Look and Feel Configuration* and change the
     *Decoration* to *Barebone*.

@@ -55,7 +55,8 @@ issue the following command:
 +$$$
 
 **Note:** After a successful patch installation you must delete the *osgi/state*
-folder if it exists in your Liferay Home directory.
+folder if it exists in your
+[Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home).
 
 $$$
 

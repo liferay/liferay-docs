@@ -1,13 +1,15 @@
 # Installing @product@ Manually [](id=installing-liferay-manually)
 
-The easiest way to install @product@ is to use a @product@ bundle. However, this is
-not always possible. Some organizations have an existing infrastructure into
-which @product@ must be installed. Other organizations have standardized on a
-particular application server. @product@ has been designed to work well
-with many leading application servers. Even if you have to manually install
-@product@ on an existing application server, the procedure is straightforward.
-Before you get started, note that there are two distinct approaches to managing
-@product@'s data source and mail session. Let's review these options.
+The easiest way to install @product@ is to
+[use a @product@ bundle](/discover/deployment/-/knowledge_base/7-0/installing-product).
+However, this is not always possible. Some organizations have an existing
+infrastructure into which @product@ must be installed. Other organizations have
+standardized on a particular application server. @product@ has been designed to
+work well with many leading application servers. Even if you have to manually
+install @product@ on an existing application server, the procedure is
+straightforward. Before you get started, note that there are two distinct
+approaches to managing @product@'s data source and mail session. Let's review
+these options.
 
 ## Using Data Sources [](id=using-data-sources)
 
