@@ -8,11 +8,10 @@ JavaScript variable based on its name. For example, the module
 `my-package@1.0.0` translates to the variable `myPackage100` for the 
 `<aui:script>` tag's `require` attribute. This means that each time a new 
 version of the OSGi bundles's npm package is released, you must update your 
-code's variable to reflect the new version. Not to worry though, thanks to 
-@product@'s 
-[`NPMResolver` OSGi component](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html), 
-you can obtain the module's package name and create an alias to reference it, so 
-the variable name always reflects the latest version number! 
+code's variable to reflect the new version. You can use the
+[`JSPackage` interface](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/JSPackage.html) 
+to obtain the module's package name and create an alias to reference it, so the 
+variable name always reflects the latest version number! 
 
 Follow these steps:
 
