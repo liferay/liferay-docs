@@ -96,6 +96,40 @@ The related entities that apply to this table are listed below:
 |                        | Manual selection exported is turned off | The AP does not publish any content.
 |                        | No limit for manual export | The AP publishes the exact same manually selected content.
 
+## Audience Targeting
+
+The sections below describe how Staging handles a specific Audience Targeting
+entity and the various actions that can be performed on its attached/related
+entities.
+
+### User Segment
+
+The following table describes how entities that are attached/related to an
+Audience Targeting user segment are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| User Segment | User segment is deleted | The user segment deletion is published.
+| Rule | User segment is published | All rules are published; if a rule refers to an entity created by the Web Content or Documents and Media portlets, it's published during their respective processes.
+|      | User segment is published with remote staging | The rule is published if the rule type is available in the destination environment; if not, the rule is not published.
+|      | User segment is deleted | The user segment's rules are deleted and those deletions are published.
+|      | Rule is added | The rule is published when its user segment is published.
+|      | Rule is modified | The rule modification is published when its user segment is published.
+|      | Rule is deleted | The rule deletion is published when its user segment is published.
+| Asset category | User segment is published | The associated asset category is published.
+|                | User segment is deleted | The associated asset category is deleted.
+| Report | User segment is deleted | The user segment's reports are deleted and those deletions are published.
+
+### Campaign
+
+The following table describes how entities that are attached/related to an
+Audience Targeting campaign are handled during the Staging process.
+
+| Related entity | Action performed | How does Staging handle this? 
+| :------------- | :--------------  | :----------------------------
+| Campaign | Campaign is deleted | The campaign deletion is published.
+| User Segment | Campaign is published | The campaign's associated user segments are published.
+
 ## Blogs
 
 The following table describes how entities that are attached/related to Blogs
