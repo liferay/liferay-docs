@@ -36,10 +36,11 @@ library:
     select *Multiple Documents*. 
 
 3.  Use the *Add Multiple Documents* screen to add the images 
-    `moon-image1.jpg`, `moon-image2.jpg`, `moon-image3.jpg` and 
-    `booking-image.png`. You can either drag and drop the files from your file 
-    system to the box, or click *Select Files* to select the files via a file 
-    manager window. If you wish, you can also categorize and describe the 
+    `moon-image1.jpg`, `moon-image2.jpg`, `moon-image3.jpg`, 
+    `booking-image.png`, `guide-cody.png`, `guide-jim.png`, `guide-russ.png`, 
+    and `guide-steve.png`. You can either drag and drop the files from your 
+    file system to the box, or click *Select Files* to select the files via a 
+    file manager window. If you wish, you can also categorize and describe the 
     files. Click *Publish* to complete the upload. 
 
     ![Figure x: The Documents and Media library lets you add multiple documents at once.](../../../images/001-add-multiple-documents.png)
@@ -68,8 +69,7 @@ library:
 4.  Click *Save*. This returns you to the Documents and Media library's Home 
     folder, where your new folder is now available. 
 
-5.  Repeat the steps above to add a folder named *Frontpage Images* to the Home 
-    folder. 
+5.  Repeat the steps above to folders named *Frontpage Images* and *Lunar Guides* to the Home folder. 
 
 Sweet! The Lunar Resort's Documents and Media library now contains two folders. 
 You'll use them to organize images next. 
@@ -95,11 +95,10 @@ Follow these steps to move files to your new folders:
     change which files are included, and their destination. Leave the default 
     selections and click *Move*. 
 
-4.  Repeat these steps to move the Home folder's remaining files to the 
-    *Frontpage Images* folder. 
+4.  Repeat these steps to move the guide images to the *Lunar Guides* folder 
+     and the Home folder's remaining files to the *Frontpage Images* folder. 
 
-Well done! Now your Documents and Media library contains the images you need for 
-creating more content. You also learned how to upload and manage files in 
-Documents and Media. Next, you'll learn about more ways to publish content. 
-
-<!-- based on the numbering, is Structures and Templates supposed to come next? -->
+Well done! Now your Documents and Media library contains the images you need 
+for creating more content. You also learned how to upload and manage files in 
+Documents and Media. Next, you'll learn about creating more complex content and 
+styles using structures and templates. 

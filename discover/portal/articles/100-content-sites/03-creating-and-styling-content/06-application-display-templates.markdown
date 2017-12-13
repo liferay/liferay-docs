@@ -133,10 +133,7 @@ appropriate folder, and set it to use the display template we created.
 
 6. Click *Choose* to select the *Frontpage Images* folder.
 
-6. For *Display Template* select *Frontpage Carousel*
-
-7. Click *Choose* for the *Carousel Images* folder.
-<!-- I don't see this step in the UI -->
+7. For *Display Template* select *Frontpage Carousel*
 
 8. Click *Save*.
 
@@ -144,6 +141,5 @@ appropriate folder, and set it to use the display template we created.
     to *Barebone*
 
 ![Figure x: Site selection.](../../../images/001-final-frontpage.png)
-<!--In my carousel the image of the earthrise appears to be sideways. It could use a 90 deg. clockwise rotation-->
 
 Good work! Your Welcome page is complete! 

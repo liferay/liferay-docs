@@ -51,7 +51,7 @@ edit the page template you just created:
     you navigate to the page template. Feel free to disregard if we want to
     prioritize brevity.-->
 
-2.  In the page template's edit tab/window <!-- toolbar?-->, click the *Add* button 
+2.  In the page template's edit toolbar click the *Add* button 
     (![Add](../../../images/icon-add-app.png)) on the upper right and expand the
     *Applications* &rarr; *Collaboration* category. Add a Blogs portlet to the
     page template's right column. 

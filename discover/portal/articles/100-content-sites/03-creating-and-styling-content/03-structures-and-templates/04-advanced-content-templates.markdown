@@ -5,7 +5,6 @@ style and format the corresponding structure's fields. Templates in @product@
 can also use JavaScript. This lets you create complex, interactive content. To 
 illustrate this, you'll create a new structure, and then create its template 
 using JavaScript. 
-<!-- Introduce the example, e.g. the booking form -->
 
 ## Creating the Structure
 
@@ -182,11 +181,9 @@ Now, all you need to do is add it to the page.
 
 6.  Refresh the page, and then test out your button.
 
-![Figure x: Template before click.](../../images/001-adv-template-final1.png)
+![Figure x: Template before click.](../../../../images/001-adv-template-final1.png)
 
-![Figure x: Template after click.](../../images/001-adv-template-final2.png)
-
-<!-- Think these paths ar ebad, the images don't display on github-->
+![Figure x: Template after click.](../../../../images/001-adv-template-final2.png)
 
 Great! Now you know how to use structures and templates to create and style web 
 content. Next, you'll learn about some other ways to publish content in 

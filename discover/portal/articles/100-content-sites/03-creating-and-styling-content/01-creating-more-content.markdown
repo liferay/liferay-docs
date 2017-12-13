@@ -11,23 +11,16 @@ related Space Program initiatives.
 
 Recall that you created the Welcome page's content in Site Administration and 
 then added it to the page. You'll use a slightly different method to create the 
-About Us page's content. Specifically, you'll add a Web Content Display app to 
-the page and then create the content directly in that app. 
-
-First, add a Web Content Display app to each column on the page: 
+About Us page's content. Specifically, you'll use the Web Content Display app 
+to create the content directly in that app. 
 
 1.  Go to the *About Us* page. 
-2.  Open the *Add* menu. 
-3.  Add a *Web Content Display* app to each of the page's three columns. 
-<!-- We already added these Web Content Display portlets -->
 
-Now you'll add web content to each Web Content Display app: 
-
-1.  In the portlet bar of the left column's Web Content Display app, click the 
+2.  In the portlet bar of the left column's Web Content Display app, click the 
     *Add* button 
-    (![Add](../../../images/icon-portlet-add-control.png)) and select *Basic Web 
-    Content*. This takes you to the app's web content creation page. The content 
-    you create here only appears in this app, on this page. 
+    (![Add](../../../images/icon-portlet-add-control.png)) and select *Basic 
+    Web Content*. This takes you to the app's web content creation page. The 
+    content you create here only appears in this app, on this page. 
 
     ![Figure x: You can create basic web content directly in the Web Content Display app.](../../../images/001-content-on-page.png)
 
