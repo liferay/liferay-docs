@@ -15,7 +15,7 @@ three columns:
 
 Navigate to the entity section you want.
 
-## Application Display Template (ADT)
+## Application Display Template (ADT) [](id=application-display-template-adt)
 
 The following table describes how entities characterized by an ADT are handled
 by the Staging framework.
@@ -44,7 +44,7 @@ The related entities that apply to this table are listed below:
 |                            | ADT referenced from entity is deleted | The ADT is deleted on the live site and the entity falls back to the default template.
 |                            | Entity with ADT is removed from page | The ADT is unaffected and is removed with the entity when the page is published.
 
-## Asset Resources
+## Asset Resources [](id=asset-resources)
 
 The following table describes how asset tags and asset categories are handled by
 the Staging framework.
@@ -55,7 +55,7 @@ the Staging framework.
 |                | Vocabulary/parent category holding categories is deleted | All categories in the vocabulary/parent category are deleted, removing them from the live site.
 | Asset Tag | Two or more tags are merged into one tag | Merged tags are deleted, removing them from the live site.
 
-## Asset Publisher
+## Asset Publisher [](id=asset-publisher)
 
 The following table describes how entities that are displayed by the Asset
 Publisher (AP) are handled on the staged and live sites during the Staging
@@ -96,13 +96,13 @@ The related entities that apply to this table are listed below:
 |                        | Manual selection exported is turned off | The AP does not publish any content.
 |                        | No limit for manual export | The AP publishes the exact same manually selected content.
 
-## Audience Targeting
+## Audience Targeting [](id=audience-targeting)
 
 The sections below describe how Staging handles a specific Audience Targeting
 entity and the various actions that can be performed on its attached/related
 entities.
 
-### User Segment
+### User Segment [](id=user-segment)
 
 The following table describes how entities that are attached/related to an
 Audience Targeting user segment are handled during the Staging process.
@@ -120,7 +120,7 @@ Audience Targeting user segment are handled during the Staging process.
 |                | User segment is deleted | The associated asset category is deleted.
 | Report | User segment is deleted | The user segment's reports are deleted and those deletions are published.
 
-### Campaign
+### Campaign [](id=campaign)
 
 The following table describes how entities that are attached/related to an
 Audience Targeting campaign are handled during the Staging process.
@@ -130,7 +130,7 @@ Audience Targeting campaign are handled during the Staging process.
 | Campaign | Campaign is deleted | The campaign deletion is published.
 | User Segment | Campaign is published | The campaign's associated user segments are published.
 
-## Blogs
+## Blogs [](id=blogs)
 
 The following table describes how entities that are attached/related to Blogs
 are handled by the Staging framework.
@@ -227,7 +227,7 @@ $$$
 |            | File entry is exported | The asset link is exported.
 |            | File entry is imported | The asset link is imported if the target exists.
 
-## Bookmarks
+## Bookmarks [](id=bookmarks)
 
 The following table describes how entities that are attached/related to
 Bookmarks are handled by the Staging framework.
@@ -246,12 +246,12 @@ Bookmarks are handled by the Staging framework.
 |                  | Child folder is modified | The child folder is published; the parent folder is not affected.
 |                  | Child folder is deleted | The folder deletion is published.
 
-## Calendar
+## Calendar [](id=calendar)
 
 The sections below describe how Staging handles a specific Calendar entity and
 the various actions that can be performed on its attached/related entities.
 
-### Calendar Instance
+### Calendar Instance [](id=calendar-instance)
 
 The following table describes how entities that are attached/related to a
 Calendar instance are handled during the Staging process.
@@ -264,7 +264,7 @@ Calendar instance are handled during the Staging process.
 | Tags | Tag for calendar is created | The tag is available on live site.
 | Related assets | Web content added to calendar as related asset | The web content's event link is available on live site.
 
-### Calendar Booking
+### Calendar Booking [](id=calendar-booking)
 
 The following table describes how entities that are attached/related to a
 Calendar booking are handled during the Staging process.
@@ -297,7 +297,7 @@ Calendar booking are handled during the Staging process.
 | Workflow | Page is published with Calendar event in a workflow | The event is pending on the live site until approval and new publication.
 |          | User is invited to Calendar event on staged site in a workflow | The user doesn't receive a Calendar event invite until approval and new publication.
 
-### Calendar Notification Template
+### Calendar Notification Template [](id=calendar-notification-template)
 
 The following table describes how entities that are attached/related to a
 Calendar notification template are handled during the Staging process.
@@ -336,7 +336,7 @@ Calendar notification template are handled during the Staging process.
 |                | Embedded image removed from reminder template | The template is published and the image is not affected.
 |                | Reminder template containing embedded image is updated | The template is published and the image is not affected.
 
-## DDL
+## DDL [](id=ddl)
 
 The sections below describe how Staging handles a specific DDL entity and the
 various actions that can be performed on its attached/related entities. For more
@@ -344,7 +344,7 @@ information on DDLs, see the
 [Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists)
 article.
 
-### DDL Record
+### DDL Record [](id=ddl-record)
 
 The following table describes how entities that are attached/related to a DDL
 record are handled during the Staging process.
@@ -363,7 +363,7 @@ record are handled during the Staging process.
 |                    | New DDL list is selected in Display portlet | The new DDL list is not visible on live site until it's published.
 |                    | DDL list name is edited | The new name is available once it's published to the live site.
 
-### DDL Record Version
+### DDL Record Version [](id=ddl-record-version)
 
 The following table describes how entities that are attached/related to a DDL
 record version are handled during the Staging process.
@@ -373,7 +373,7 @@ record version are handled during the Staging process.
 | DDL record | DDL record version is deleted | A new version number is generated on the live site.
 | Workflow | DDL record is pending in workflow | The workflow is not present on the live site until it's approved an published.
 
-### DDL Record Set
+### DDL Record Set [](id=ddl-record-set)
 
 The following table describes how entities that are attached/related to a DDL
 record set are handled during the Staging process.
@@ -392,7 +392,7 @@ record set are handled during the Staging process.
 |                                 | Form entry is edited from Forms Admin portlet | The edited form is no display on live site until it's published to the live site.
 |                                 | Form entry is deleted from Forms Admin portlet | The deleted form is still present on the staged site.
 
-### Forms
+### Forms [](id=forms)
 
 The following table describes how entities that are attached/related to a DDL
 record set are handled during the Staging process.
@@ -401,7 +401,7 @@ record set are handled during the Staging process.
 | :------------- | :--------------  | :----------------------------
 | Workflow | Form entry is submitted | The entry does not display on the live site until it's approved.
 
-## DDM Structures and Templates
+## DDM Structures and Templates [](id=ddm-structures-and-templates)
 
 The sections below describe how Staging handles DDM structures and templates and
 the various actions that can be performed on its attached/related entities. DDM
@@ -409,7 +409,7 @@ structures and templates are typically used with web content. Visit the
 [Web Content](web-content) section for additional information on how Staging
 handles these entities when attached to web content.
 
-### DDM Structure
+### DDM Structure [](id=ddm-structure)
 
 The following table describes how entities that are attached/related to a DDM
 structure are handled during the Staging process.
@@ -425,7 +425,7 @@ structure are handled during the Staging process.
 |                   | Data provider with form reference is deleted | The data provider remains on the live site.
 | DDM form layout | New form is selected on staging site | The new form is visible on the live site.
 
-### DDM Template
+### DDM Template [](id=ddm-template)
 
 The following table describes how entities that are attached/related to a DDM
 template are handled during the Staging process.
@@ -436,7 +436,7 @@ template are handled during the Staging process.
 |               | DDM structure is edited and published to live via site page | The edited structure is available on the live site.
 |               | DDM template is added to a DDM structure | The template is available on the live site.
 
-## Document Library
+## Document Library [](id=document-library)
 
 The section below describes how Staging handles a specific document library (DL)
 entity and the various actions that can be performed on its attached/related
@@ -539,12 +539,12 @@ entities.
 
 <!-- Staging support for comments and ratings is deprecated in 7.0. -Cody -->
 
-## Polls
+## Polls [](id=polls)
 
 The sections below describe how Staging handles a specific polls entity and the
 various actions that can be performed on its attached/related entities.
 
-### Polls Choice
+### Polls Choice [](id=polls-choice)
 
 The following table describes how entities that are attached/related to a Polls
 choice are handled during the Staging process.
@@ -557,7 +557,7 @@ choice are handled during the Staging process.
 |                | New choice is added to question | The question is marked as modified and published with the new choice.
 |                | Question is deleted | The question and its accompanying choices are deleted and published.
 
-### Polls Vote
+### Polls Vote [](id=polls-vote)
 
 The following table describes how entities that are attached/related to a Polls
 vote are handled during the Staging process.
@@ -569,7 +569,7 @@ vote are handled during the Staging process.
 | Polls question | Question is deleted | The question and its accompanying choices and votes are deleted and published.
 |                | Question is updated | The question is modified and published; the accompanying votes are not affected.
 
-## Site Administration
+## Site Administration [](id=site-administration)
 
 The following table describes how entities that are hosted in @product@'s Site
 Administration menu are handled by the Staging framework.
@@ -756,7 +756,7 @@ content (WC) feed are handled during the Staging process.
 |              | WC article is deleted | The article deletion is published; the display page is not affected.
 |              | WC article with a display page is added but the page was not published earlier and it's not included in the publication | The page reference is validated and the publication fails when the page is not there. A message displays explaining this to the user.
 
-## Wiki
+## Wiki [](id=wiki)
 
 The following table describes how entities that are attached/related to Wikis
 are handled by the Staging framework.
