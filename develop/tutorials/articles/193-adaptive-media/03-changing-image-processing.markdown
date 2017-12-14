@@ -1,4 +1,4 @@
-# Changing Adaptive Media's Image Processing [](id=changing-adaptive-medias-image-processing)
+# Changing Adaptive Media's Image Scaling
 
 +$$$
 
@@ -8,13 +8,10 @@ $$$
 
 As described in 
 [the Adaptive Media user guide](/discover/portal/-/knowledge_base/7-0/adapting-your-media-across-multiple-devices), 
-Adaptive Media generates adapted images that match the image resolutions defined 
-by the @product@ administrator. To do this, Adaptive Media scales the original 
-images to match the image resolutions, generating the adapted images while 
-leaving the original images intact. The default scaling configuration is 
-suitable for most situations. But what if you need to customize this scaling to 
-your exact requirements? No problem! You can tune and customize Adaptive Media's 
-image scaling for almost any requirement. 
+Adaptive Media scales images to match the image resolutions defined by the 
+@product@ administrator. The default scaling is usually suitable, but you can 
+also customize it to your needs. Before doing so, however, you should understand 
+how this scaling works. 
 
 ## Understanding Image Scaling in Adaptive Media
 
@@ -66,7 +63,7 @@ specific MIME types and has a higher `service.ranking`, it's more likely to be
 chosen than if it's registered for the special MIME type `*` or has a lower 
 `service.ranking`. 
 
-## Changing Adaptive Media's Image Scaling for a Particular MIME Type [](id=changing-adaptive-medias-image-scaling-for-a-particular-mime-type)
+## Creating an Image Scaler
 
 Now that you know how Adaptive Media scales images, you'll learn how to 
 customize this scaling. As an example, you'll see a sample image scaler that 
@@ -89,7 +86,7 @@ Follow these steps to create a custom image scaler:
     included with Adaptive Media (`AMDefaultImageScaler` and 
     `AMGIFImageScaler`). Their service ranking therefore defaults to `0`. To 
     replace either scaler, you must set your scaler to the same MIME type and 
-    give it a service ranking larger than `0`. 
+    give it a service ranking higher than `0`. 
 
     $$$
 
