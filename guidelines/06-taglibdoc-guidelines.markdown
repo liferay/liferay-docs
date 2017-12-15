@@ -18,34 +18,34 @@ sending a pull request.
 
 Scan the rule summaries below or click on them for details: 
 
-- [Rules](#rules) 
-    - [Accompany every tag library with a description.](#accompany-every-tag-library-with-a-description) 
-    - [Start All <tag> descriptions with a verb.](#start-all-tag-descriptions-with-a-verb) 
-    - [Include a screenshot of the tag at the end of the tag's description for reference, if applicable.](#include-a-screenshot-if-applicable) 
-    - [Punctuate every attribute description (sentence or fragment) with a period.](#punctuate-every-attribute-description) 
-    - [Use complete sentences for all text following a description's initial phrase/sentence.](#use-complete-sentences) 
-    - [Preferably start <attribute> descriptions using an indefinite article "A" or "An".](#start-attribute-descriptions-with-an-indefinite-article) 
-    - [Only start attribute descriptions with definite article "The", if it's natural and, otherwise, awkward to use "A" or "An".](#only-start-attribute-descriptions-with-the-if) 
-    - [Alternatively start <attribute> descriptions with a noun.](#alternatively-start-attribute-descriptions-with-a-noun) 
-    - [Use XML-safe text.](#use-xml-safe-text) 
-    - [Mark up all code, parameter, tag, and variable references.](#mark-up-all-code-parameter-tag-and-variable-references) 
-- [Attribute Patterns](#attribute-patterns) 
-    - [The name Pattern](#the-name-pattern) 
-    - [The boolean Pattern](#the-boolean-pattern) 
-    - [The param Pattern](#the-param-pattern) 
-    - [The onClick Pattern](#the-onclick-pattern) 
-    - [The CssClass Pattern](#the-cssclass-pattern) 
-- [Tag Types](#tag-types) 
-    - [Tags that have a Boolean or Integer value must have a <type> tag.](#tags-that-must-have-a-type-tag) 
-    - [There are special cases where a <type> tag is needed in addition to Booleans and Integers](#type-tag-special-cases) 
-- [Deprecated Tags](#deprecated-tags) 
-    - [Deprecated tags with a replacement](#deprecated-tags-with-a-replacement) 
-    - [Deprecated tags with no direct replacement](#deprecated-tags-with-no-replacement) 
-- [How to Generate Taglib API Docs Locally](#generate-taglib-api-docs) 
-    - [Use the Ant taglibdoc task to build taglib docs for Liferay Portal core tags](#liferay-portal-core-taglibdocs)
-    - [Use the Gradle tlddoc task to build taglib docs for modules](#module-taglibdocs) 
-- [How to Generate Taglib Jars Locally](#generate-taglib-jars) 
-    - [Use the Gradle jarTlddoc task to generate jar files for your modules](#generate-module-jar-files) 
+- [Rules](#rules-) 
+    - [Accompany every tag library with a description.](#accompany-every-tag-library-with-a-description-) 
+    - [Start All <tag> descriptions with a verb.](#start-all--descriptions-with-a-verb-) 
+    - [Include a screenshot of the tag at the end of the tag's description for reference, if applicable.](#include-a-screenshot-of-the-tag-at-the-end-of-the-tags-description-for-reference-if-applicable-) 
+    - [Punctuate every attribute description (sentence or fragment) with a period.](#punctuate-every-attribute-description-sentence-or-fragment-with-a-period-) 
+    - [Use complete sentences for all text following a description's initial phrase/sentence.](#use-complete-sentences-for-all-text-following-a-descriptions-initial-phrasesentence-) 
+    - [Preferably start <attribute> descriptions using an indefinite article "A" or "An".](#preferably-start--descriptions-using-an-indefinite-article-a-or-an-) 
+    - [Only start attribute descriptions with definite article "The", if it's natural and, otherwise, awkward to use "A" or "An".](#only-start-attribute-descriptions-with-definite-article-the-if-its-natural-and-otherwise-awkward-to-use-a-or-an-) 
+    - [Alternatively start <attribute> descriptions with a noun.](#alternatively-start--descriptions-with-a-noun-) 
+    - [Use XML-safe text.](#use-xml-safe-text-) 
+    - [Mark up all code, parameter, tag, and variable references.](#mark-up-all-code-parameter-tag-and-variable-references-) 
+- [Attribute Patterns](#attribute-patterns-) 
+    - [The name Pattern](#the-name-pattern-) 
+    - [The boolean Pattern](#the-boolean-pattern-) 
+    - [The param Pattern](#the-param-pattern-) 
+    - [The onClick Pattern](#the-onclick-pattern-) 
+    - [The CssClass Pattern](#the-cssclass-pattern-) 
+- [Tag Types](#tag-types-) 
+    - [Tags that have a Boolean or Integer value must have a <type> tag.](#tags-that-have-a-boolean-or-integer-value-must-have-a--tag-) 
+    - [There are special cases where a <type> tag is needed in addition to Booleans and Integers](#there-are-special-cases-where-a--tag-is-needed-in-addition-to-booleans-and-integers-) 
+- [Deprecated Tags](#deprecated-tags-) 
+    - [Deprecated tags with a replacement](#deprecated-tags-with-a-replacement-) 
+    - [Deprecated tags with no direct replacement](#deprecated-tags-with-no-direct-replacement-) 
+- [How to Generate Taglib API Docs Locally](#how-to-generate-taglib-api-docs-locally-) 
+    - [Use the Ant taglibdoc task to build taglib docs for Liferay Portal core tags](#use-the-ant-taglibdoc-task-to-build-taglib-docs-for-liferay-portal-core-tags-)
+    - [Use the Gradle tlddoc task to build taglib docs for modules](#use-the-gradle-tlddoc-task-to-build-taglib-docs-for-modules-) 
+- [How to Generate Taglib Jars Locally](#how-to-generate-taglib-jars-locally-) 
+    - [Use the Gradle jarTlddoc task to generate jar files for your modules](#use-the-gradle-jartlddoc-task-to-generate-jar-files-for-your-modules-) 
     
 ## Rules [](id=rules)
 
@@ -60,7 +60,7 @@ Example:
 
     <short-name>liferay-ui</short-name>
 
-### Start All <tag> descriptions with a verb [](id=start-all-tag-descriptions-with-a-verb) 
+### Start All <tag> descriptions with a verb [](id=start-all-tag-descriptions-with-a-verb)
 
 Example:
 
@@ -71,7 +71,7 @@ Example:
     
     ...
 
-### Include a screenshot of the tag at the end of the tag's description for reference, if applicable [](id=include-a-screenshot-if-applicable)
+### Include a screenshot of the tag at the end of the tag's description for reference, if applicable [](id=include-a-screenshot-of-the-tag-at-the-end-of-the-tags-description-for-refe)
 
 For tags inside of the `liferay-portal` repo place the screenshot in the 
 `liferay-portal/util-taglib/src/META-INF/images/[taglib prefix]` folder. Create 
@@ -95,7 +95,7 @@ Module Example:
     <description>Hello World <![CDATA[<img src="../images/breadcrumb.png"]]>
     </description>
 
-### Punctuate every attribute description (sentence or fragment) with a period [](id=punctuate-every-attribute-description)
+### Punctuate every attribute description (sentence or fragment) with a period [](id=punctuate-every-attribute-description-sentence-or-fragment-with-a-period)
 
 Example:
 
@@ -108,7 +108,7 @@ Example:
 
         ...
         
-### Use complete sentences for all text following a description's initial phrase/sentence [](id=use-complete-sentences)
+### Use complete sentences for all text following a description's initial phrase/sentence [](id=use-complete-sentences-for-all-text-following-a-descriptions-initial-phrase)
 
 Example: 
 
@@ -121,7 +121,7 @@ Example:
 
         ...
         
-### Preferably start <attribute> descriptions using an indefinite article "A" or "An" [](id=start-attribute-descriptions-with-an-indefinite-article) 
+### Preferably start <attribute> descriptions using an indefinite article "A" or "An" [](id=preferably-start-attribute-descriptions-using-an-indefinite-article-a-or-an)
 
 Example:
 
@@ -133,7 +133,7 @@ Example:
 
         ...
         
-### Only start attribute descriptions with definite article "The", if it's natural and, otherwise, awkward to use "A" or "An" [](id=only-start-attribute-descriptions-with-the-if)
+### Only start attribute descriptions with definite article "The", if it's natural and, otherwise, awkward to use "A" or "An" [](id=only-start-attribute-descriptions-with-definite-article-the-if-its-natural-)
 
 Example 1:
 
@@ -255,16 +255,16 @@ Follow this pattern:
 
 Example:
 
-<description>A CSS class for styling the icon's URL.</description>
+    <description>A CSS class for styling the icon's URL.</description>
 
-<name>linkCssClass</name>
+    <name>linkCssClass</name>
 
 ## Tag Types [](id=tag-types)
 
 Curious about specifying attribute types? Follow these tag type guidelines and 
 examples.
 
-### Tags that have a Boolean or Integer value must have a <type> tag [](id=tags-that-must-have-a-type-tag)
+### Tags that have a Boolean or Integer value must have a <type> tag [](id=tags-that-have-a-boolean-or-integer-value-must-have-a-type-tag)
 
 Tags that have a String value **DO NOT NEED** a `<type>` tag.
 
@@ -286,7 +286,7 @@ Example:
 
         <type>boolean</type>
             
-### There are special cases where a <type> tag is needed in addition to Booleans and Integers [](id=type-tag-special-cases)
+### There are special cases where a <type> tag is needed in addition to Booleans and Integers [](id=there-are-special-cases-where-a-type-tag-is-needed-in-addition-to-booleans-)
 
 Java Sets:
 
@@ -318,7 +318,7 @@ Example:
     <description>Deprecated as of 7.0.0, replaced by 
     <![CDATA[<code>liferay-aui:nav-item</code>]]></description>
 
-### Deprecated tags with no direct replacement [](id=deprecated-tags-with-no-replacement)
+### Deprecated tags with no direct replacement [](id=deprecated-tags-with-no-direct-replacement)
 
 The deprecated tag should provide a short description that includes the 
 release/version of the initial deprecation, and should state that it has no 
@@ -328,11 +328,11 @@ Example:
 
     <description>Deprecated as of 7.0.0, with no direct replacement</description>
 
-## How to Generate Taglib API Docs Locally [](id=generate-taglib-api-docs)
+## How to Generate Taglib API Docs Locally [](id=how-to-generate-taglib-api-docs-locally)
 
 Do you want to generate the taglib API docs locally? Follow these guidelines.
 
-### Use the Ant taglibdoc task to build taglib docs for Liferay Portal core tags [](id=liferay-portal-core-taglibdocs)
+### Use the Ant taglibdoc task to build taglib docs for Liferay Portal core tags [](id=use-the-ant-taglibdoc-task-to-build-taglib-docs-for-liferay-portal-core-tag)
 
 Navigate to the `liferay-portal/util-taglib` directory in the command line and 
 run `ant taglibdoc`. The docs will be generated in your 
@@ -342,7 +342,7 @@ Generate taglib docs for Liferay Portal core tags:
 
     ant taglibdoc
 
-### Use the Gradle tlddoc task to build taglib docs for modules [](id=module-taglibdocs)
+### Use the Gradle tlddoc task to build taglib docs for modules [](id=use-the-gradle-tlddoc-task-to-build-taglib-docs-for-modules)
 
 Navigate to the `liferay-portal/modules/apps/module-name/module-name-taglib` 
 directory in the command line and run `../../../../gradlew tlddoc`. The docs 
@@ -353,11 +353,11 @@ Generate taglib docs for modules:
 
     ../../../../gradlew tlddoc
     
-## How to Generate Taglib Jars Locally [](id=generate-taglib-jars)
+## How to Generate Taglib Jars Locally [](id=how-to-generate-taglib-jars-locally)
 
 So you're trying to jar up your API docs locally. Follow the guidelines below.
 
-### Use the Gradle jarTlddoc task to generate jar files for your modules [](id=generate-module-jar-files)
+### Use the Gradle jarTlddoc task to generate jar files for your modules [](id=use-the-gradle-jartlddoc-task-to-generate-jar-files-for-your-modules)
 
 Navigate to the `liferay-portal/modules/apps/module-name/module-name-taglib` 
 directory in the command line and run `../../../../gradlew jarTlddoc`. The 
