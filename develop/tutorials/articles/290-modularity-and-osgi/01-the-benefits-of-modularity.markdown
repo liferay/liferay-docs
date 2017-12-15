@@ -6,7 +6,7 @@ as *the use of individually distinct functional units, as in assembling an
 electronic or mechanical system.* The distinct functional units are called
 *modules*.
 
-NASA's Apollo spacecraft, for example, comprised three modules, each with a
+NASA's Apollo spacecraft, for example, contained three modules, each with a
 distinct function: 
 
 - *Lunar Module*: Carried astronauts from the Apollo spacecraft to the
@@ -24,16 +24,15 @@ The spacecraft and its modules exemplified these modularity characteristics:
     (purpose); modules can be combined to provide an entirely new collective function. 
 
     The Apollo spacecraft's modules were grouped together for a distinct
-    collective function: take astronauts from the Earth's atmospheric rim, to
-    the moon's surface, and back to Earth. The previous list identifies each
-    module's distinct function.
+    collective function: take astronauts from the Earth's atmospheric rim to
+    the moon's surface and back to Earth. 
 
 -   **Dependencies**: Modules can require capabilities other modules satisfy. 
 
     The Apollo modules had these dependencies:
-    - Lunar Module depended on the Service Module to get near the moon.
-    - Command Module depended on the Service Module for power and oxygen.
-    - Service Module depended on the Command Module for instruction.
+    - The Lunar Module depended on the Service Module to get near the moon.
+    - The Command Module depended on the Service Module for power and oxygen.
+    - The Service Module depended on the Command Module for instruction.
 
 -   **Encapsulation**: Modules hide their implementation details but publicly
     define their capabilities and interfaces. 
