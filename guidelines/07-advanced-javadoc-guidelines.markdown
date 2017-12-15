@@ -1,76 +1,119 @@
-Advanced Javadoc Guidelines
+# Advanced Javadoc Guidelines
 
-    Class Descriptions
-    Class Javadoc Tags
-        @author tags
-        @see tags
-        @since tags
-        @deprecated tags
-    Method Descriptions
-        Initial Method Descriptions
-        Detailed Method Descriptions
-        More on Method Descriptions
-    Method Javadoc Tags
-        @param tags
-        @return tags
-        @throws tags
-        @see tags for methods
-        @since tags for methods
-        @deprecated tags for methods
-    Javadoc Linking
-    Formatting Tags
-    Examples
-        Class: Initial and detailed description
-        Constructor: with parameters
-        Method: Get by primary key
-        Method: Deletes/Removes something
-        Method: Get/search/count matching a single field
-        Method: Get/search/count matching multiple fields
-        Method: Get/search/count by field-to-keyword matching
-        Method: Get/search/count by Combined Field Value and Field-to-Keyword Matching
-        Method: Returning a boolean
-        Method: Returning a count
-        Method: Returning a collection
-        Method: Returning an ordered range of values
-        Method: Returning ordered values NOT as a range of values
-        Method: Returning a ranged collection
-        Method: Describing overloaded methods
-        Method: Password Policy Methods
-        Method: Uses a property
-        Parameter: Primary key
-        Parameter: Attribute/field
-        Parameter: Boolean
-        Parameter: ClassNameId
-        Parameter: Entity (primary)
-        Parameter: ServiceContext
-        Parameter: And/or operator
-        Parameter: Refer reader to more information
-        Field
-        Return: Ordered collection
-        Return: Significantly varying values
+## Table of Contents
 
-Class Descriptions
+1. Class Descriptions
+2. Class Javadoc Tags
+    - @author tags
+    - @see tags
+    - @since tags
+    - @deprecated tags
+3. Method Descriptions
+    - Initial Method Descriptions
+    - Detailed Method Descriptions
+    - More on Method Descriptions
+4. Method Javadoc Tags
+    - @param tags
+    - @return tags
+    - @throws tags
+    - @see tags for methods
+    - @since tags for methods
+    - @deprecated tags for methods
+5. Javadoc Linking
+6. Formatting Tags
+7. Examples
+    - Class: Initial and detailed description
+    - Constructor: with parameters
+    - Method: Get by primary key
+    - Method: Deletes/Removes something
+    - Method: Get/search/count matching a single field
+    - Method: Get/search/count matching multiple fields
+    - Method: Get/search/count by field-to-keyword matching
+    - Method: Get/search/count by Combined Field Value and Field-to-Keyword Matching
+    - Method: Returning a boolean
+    - Method: Returning a count
+    - Method: Returning a collection
+    - Method: Returning an ordered range of values
+    - Method: Returning ordered values NOT as a range of values
+    - Method: Returning a ranged collection
+    - Method: Describing overloaded methods
+    - Method: Password Policy Methods
+    - Method: Uses a property
+    - Parameter: Primary key
+    - Parameter: Attribute/field
+    - Parameter: Boolean
+    - Parameter: ClassNameId
+    - Parameter: Entity (primary)
+    - Parameter: ServiceContext
+    - Parameter: And/or operator
+    - Parameter: Refer reader to more information
+    - Field
+    - Return: Ordered collection
+    - Return: Significantly varying values
+
+## Class Descriptions
 
 Here are some rules of thumb for initial class descriptions:
 
-    Start with a verb - Whenever possible, start an initial class description with verb to describe the purpose of the class.
+- **Start with a verb** - Whenever possible, start an initial class description
+  with verb to describe the purpose of the class.
 
-Example (Localization interface):
+    Example ([Localization](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/Localization.html)
+    interface): `Stores and retrieves localized strings from XML, and provides
+    utility methods for updating localizations from JSON, portlet requests, and
+    maps.`
 
-Stores and retrieves localized strings from XML, and provides utility methods for updating localizations from JSON, portlet requests, and maps.
+- **Never begin with *This class*** - Never begin the description with *This
+  class* or anything similar. However, it is acceptable to use this wording in
+  later sentences/paragraphs.
 
-    Never begin with "This class" - Never begin the description with "This class" or anything similar. However, it is acceptable to use this wording in later sentences/paragraphs.
-    For service implementations (ServiceImpls)
+- **For a model interface and its class** - If some explanation is necessary to
+  distinguish an interface from its class, follow the format below (e.g.,
+  `Model.java`):
 
-Use these patterns:
-Class Type 	Initial Description Pattern
-LocalServiceImpl 	Provides the local service for<summary of methods using actions ending in “ing”><entities (plural)>.
-ServiceImpl 	Provides the remote service for<summary of methods using actions ending in “ing”><entities (plural)>.
+    ```
+    Provides the base model interface for the User service. Represents a row in
+    the <code>User</code database table, with each column mapped to a property
+    of this class.
+    ```
 
- 
+    Likewise, the description of the implementation could be as follows (e.g.
+    `classModelImpl.java`):
 
-Example from DLAppLocalServiceImpl:
+    ```
+    Provides the base model implementation for the User service. Represents
+    a row in the &quot;User_&quot; database table, with each column mapped to a
+    property of this class.
+    ```
 
+- **For model classes (model entities)** - describe the methods and entities
+  represented and manipulated in the class. Use the following format (taken from
+  `classUserImpl.java`):
+
+    ```
+    Represents a portal user, providing access to the user's contact
+    information, groups, organizations, teams, user groups, roles, locale,
+    timezone, and more.
+    ```
+
+    In the above example:
+
+    - State what entity the class represents (Represents a portal user,)
+    - Describe what the entity provides (providing access to the user's *[summary of methods]*).
+
+- **For service implementations (ServiceImpls)**
+
+    Use these patterns:
+
+| Class Type | Initial Description Pattern
+| :--------- | :--------------------------
+| LocalServiceImpl | Provides the local service for *[summary of methods using actions ending in "ing"][entities (plural)]*.
+| ServiceImpl | Provides the remote service for *[summary of methods using actions ending in "ing"][entities (plural)]*.
+
+
+Example from `DLAppLocalServiceImpl`:
+
+```
 /**
  * Provides the local service for accessing, adding, deleting, moving,
  * subscription handling of, trash handling of, and updating document library
@@ -79,170 +122,217 @@ Example from DLAppLocalServiceImpl:
  * than through the individual document library service classes.
  *
  * ...
+```
 
 In the above example:
 
-    the method summary states the service is for "accessing, adding, ... and updating" its entities.
-    the entities acted on are document library file entries, file ranks, and folders.
+- the **method summary** states the service is for "accessing, adding, ... and
+  updating" its entities.
+- the **entities** acted on are document library file entries, file ranks, and
+  folders.
 
-The method summary consists of a list of "ing" verbs in alphabetical order. You can derive these verbs from your method names. Note, you can use "accessing" to cover all the getters, fetchers, and search methods. And "updating" is typically adequate for covering the setters. But feel free to use the verbs that match your methods best.
+    The method summary consists of a list of "ing" verbs in alphabetical order.
+    You can derive these verbs from your method names. Note, you can use
+    "accessing" to cover all the getters, fetchers, and search methods. And
+    "updating" is typically adequate for covering the setters. But feel free to
+    use the verbs that match your methods best.
 
-    For a model interface and its class - If some explanation is necessary to distinguish an interface from its class, follow the format below (e.g., Model.java):
+## Class Javadoc Tags
 
-Provides the base model interface for the User service. Represents a row in the &quot;User_&quot; database table, with each column mapped to a property of this class.
+### @author tags
 
-Likewise, the description of the implementation could be as follows (e.g. classModelImpl.java):
+Use `@author` tags for each author of the class, from first to most recent.
 
-Provides the base model implementation for the User service. Represents a row
-in the &quot;User_&quot; database table, with each column mapped to a property of this class.
+### @see tags
 
-    For model classes (model entities): describe the methods and entities represented and manipulated in the class.
-    Use the following format (taken from classUserImpl.java):
+Use `@see` tags to link other closely related classes whose Javadocs would give
+the reader a clearer picture of the purpose of the class. This often includes
+the parent class, any important ancestors, and the primary classes that use this
+class. An example of an `@see` tag declaration is the following:
 
-Represents a portal user, providing access to the user's contact
-information, groups, organizations, teams, user groups, roles, locale,
-timezone, and more.
+    @see com.liferay.bookmarks.model.impl.BookmarksEntryImpl
 
-In the above example:
+You cannot use the `@see` tag to refer to classes in a Liferay module (unless
+the referred class is located in the same module). Therefore, to reference a
+class in another module, make sure to refer to it in the class description.
 
-    State what entity the class represents (Represents a portal user,)
-    Describe what the entity provides (providing access to the user's<summary of methods>.
+### @since tags
 
+The `@since` tag should always be used in cases where the class is a class that
+replaces another class or where the class has been moved to a new package.
+Deprecations due to moving a class or replacing a class necessitate respective
+use of a @deprecated tag in the old class and a @since tag in the new class. For
+specifying the version, see the
+[Understanding Liferay's Releases](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/understanding-liferays-releases)
+section.
 
-Class Javadoc Tags
-@author tags
+The `@since` tag can optionally be used when the class is newly introduced.
 
-Use @author tags for each author of the class, from first to most recent.
+The preferred format for common `@since` messages are listed below.
 
-@see tags
+| Reason | @since Description
+| :----- | :-----------------
+| Replaced by former class | @since *version*, replaced {@link *fully qualified class*}
+| Moved to different package | @since *version*, moved from {@link *fully qualified class*}
+|New class | @since *version*
 
-Use @see tags to link other closely related classes whose Javadocs would give the reader a clearer picture of the purpose of the class. This often includes the parent class, any important ancestors, and the primary classes that use this class. An example of an @see tag declaration is the following:
+For a working example, see
+[StagedModelDataHandlerRegistryUtil](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandlerRegistryUtil.html).
 
-@see com.liferay.bookmarks.model.impl.BookmarksEntryImpl
+### @deprecated tags
 
-You cannot use the @see tag to to refer to classes in a Liferay module (unless the referred class is located in the same module). Therefore, to reference a class in another module, make sure to refer to it in the class description.
+The `@deprecated` tag should provide a short description that includes the
+release/version of initial deprecation, why the class was deprecated, and a link
+to what should be used in its place. For specifying the version, see the
+[Understanding Liferay's Releases](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/understanding-liferays-releases)
+section.
 
-@since tags
+Note, if a class deprecation was due to moving or replacing a class, then the
+comments for the new class should include an `@since` tag referencing the old
+class. See the former section for details.
 
-The @since tag should always be used in cases where the class is a class that replaces another class or where the class has been moved to a new package. Deprecations due to moving a class or replacing a class necessitate respective use of a @deprecated tag in the old class and a @since tag in the new class. For specifying the version, see the Understanding Liferay's Releases section.
+The preferred format for common `@deprecated` messages are listed below.
 
-The @since tag can optionally be used when the class is newly introduced.
+| Deprecation Reason | @deprecated Description
+| :----------------- | :----------------------
+| Replaced | As of *version*, replaced by {@link *fully qualified class*}
+| Moved to different package | As of *version*, moved to {@link *fully qualified class*}
+| Some other reason | As of *version*, because *of some reason*
+| Not replaced | As of *version*, with no direct replacement
 
-The preferred format for common @since messages are listed below.
-Reason 	@since Description
-Replaced by former class 	@since version, replaced {@link fully qualified class}
-Moved to different package 	@since version, moved from {@link fully qualified class}
-New class 	@since version
+**Important:** You cannot link to classes/methods in Liferay modules unless
+you're providing a class/method link in the same module it resides in.
+Therefore, if you need to refer to a class in your `@deprecated` tag, you'll
+need to follow a slightly different pattern. See the
+[Javadoc Linking](../javadoc-guidelines#javadoc-linking) section for more
+details.
 
-For a working example, see StagedModelDataHandlerRegistryUtil.
+## Method Descriptions
 
-@deprecated tags
+### Initial Method Descriptions
 
-The @deprecated tag should provide a short description that includes the release/version of initial deprecation, why the class was deprecated, and a link to what should be used in its place. For specifying the version, see the Understanding Liferay's Releases section.
+Always use a verb to describe the method. The preferred format for the
+descriptions of several common methods are listed below.
 
-Note, if a class deprecation was due to moving or replacing a class, then the comments for the new class should include an @since tag referencing the old class. See the former section for details.
-
-The preferred format for common @deprecated messages are listed below.
-Deprecation Reason 	@deprecated Description
-Replaced 	As of version, replaced by {@link fully qualified class}
-Moved to different package 	As of version, moved to {@link fully qualified class}
-Some other reason 	As of version, because of some reason
-Not replaced 	As of version, with no direct replacement
-
- 
-
-Important: You cannot link to classes/methods in Liferay modules unless you're providing a class/method link in the same module it resides in. Therefore, if you need to refer to a class in your @deprecated tag, you'll need to follow a slightly different pattern. See the Javadoc Linking section for more details.
-
-
-Method Descriptions
-Initial Method Descriptions
-
-Always use a verb to describe the method. The preferred format for the descriptions of several common methods are listed below.
-Method Type 	Description
-constructor(value) 	Constructs a new ... with the *value.*
-setSomething(value) 	Sets the something of this thing.
-getSomething() 	Returns the something of this thing.
-getSomethings() 	Returns the somethings of this thing. (Note, do not refer to collection type; instead, refer to the something in plural form.)
-setSomething(boolean) 	Sets whether this thing is something.
-isSomething() 	Returns <code>true</code> if this thing is something.
-deleteSomething() 	Deletes the something.
-
- 
+| Method Type | Description
+| :---------- | :----------
+| constructor(value) | Constructs a new ... with the *value*.
+| setSomething(value) | Sets the *something of this thing*.
+| getSomething() | Returns the *something of this thing*.
+| getSomethings() | Returns the *somethings of this thing*. (Note, do **not** refer to collection type; instead, refer to the something in plural form.)
+| setSomething(boolean) | Sets whether *this thing is something*.
+| isSomething() | Returns <code>true</code> if *this thing is something*.
+| deleteSomething() | Deletes the *something*.
 
 There are two general rules for method descriptions:
 
-    When referring to the current instance, say "this something". Example: "Returns <code>true</code> if this person is an administrator."
-    When referring to parameters, use "the" instead of "a". Example: "Returns the localized preferences value for the key."
+1. When referring to the current instance, say "this something".
 
-Try to avoid simply restating the name of the method in the description. In some cases, such as with getters/setters, this is fine, but if it is not immediately obvious what a method does, it needs more explanation.
+    Example: `Returns <code>true</code> if this person is an administrator.`
 
-For example, the following is NOT a good example of a method description:
+2. When referring to parameters, use "the" instead of "a".
 
+    Example: `Returns the localized preferences value for the key.`
+
+**Try to avoid simply restating the name of the method in the description.** In
+some cases, such as with getters/setters, this is fine, but if it is not
+immediately obvious what a method does, it needs more explanation.
+
+For example, the following is **NOT** a good example of a method description:
+
+```java
 /**
  * Updates the localization.
  */
 public String updateLocalization(String xml, String key, String value, String requestedLanguageId);
+```
 
 Write the following instead:
 
+```java
 /**
  * Updates the localized string for the language in the localizations XML.
  */
 public String updateLocalization(String xml, String key, String value, String requestedLanguageId);
+```
 
-Detailed Method Descriptions
+### Detailed Method Descriptions
 
-If there is both a getter and setter for the same property/collection on the object, place the detailed description on the setter/add method. The getter method should have a one sentence description, and @see the method with more detail.
+If there is both a getter and setter for the same property/collection on the
+object, place the detailed description on the setter/add method. The getter
+method should have a one sentence description, and `@see` the method with more
+detail.
 
-If there are multiple overloaded methods of the same name, each method should have a complete description of itself. Do not @see the other overloaded forms.
+If there are multiple overloaded methods of the same name, each method should
+have a complete description of itself. Do not `@see` the other overloaded forms.
 
-More on Method Descriptions
+### More on Method Descriptions
 
-Start the description with “Returns ...” for a method used primarily for the value it returns.
+#### Start the description with `Returns ...` for a method used primarily for the value it returns.
 
-Getters should always follow this rule. Methods that involve returning a count or a search result should typically follow this rule as well.
+Getters should always follow this rule. Methods that involve returning a count
+or a search result should typically follow this rule as well.
 
+```java
 /**
  * Returns the organization with the primary key.
  *
  * ...
  */
 public Organization getOrganization(long organizationId)
+```
 
-    Distinguish between overloaded methods
+- Distinguish between overloaded methods
 
-Distinguish between overloaded methods by uniquely describing each method in the first sentence of the method description. This helps developers spot out which of the overloaded methods they want to use when viewing the Javadoc summary of the methods for the class. Remember, only the first sentence of the method description shows in the method summary. The remaining sentences (including sentences of the same paragraph following the first sentence) are available in the full length method description.
+    Distinguish between overloaded methods by uniquely describing each method in
+    the first sentence of the method description. This helps developers spot out
+    which of the overloaded methods they want to use when viewing the Javadoc
+    summary of the methods for the class. Remember, only the first sentence of
+    the method description shows in the method summary. The remaining sentences
+    (including sentences of the same paragraph following the first sentence) are
+    available in the full length method description.
 
-/**
- * Returns all immediate subfolders of the parent folder.
- * ...
- */
-public List<Folder> getFolders(long repositoryId, long parentFolderId)
+    ```java
+    /**
+     * Returns all immediate subfolders of the parent folder.
+     * ...
+     */
+     public List<Folder> getFolders(long repositoryId, long parentFolderId)
+    ```
 
-and
+    and
 
-/**
- * Returns all immediate subfolders of the parent folder, optionally
- * including mount folders for third-party repositories.
- * ....
- */
-public List<Folder> getFolders(long repositoryId, long parentFolderId, boolean includeMountFolders)
+    ```java
+    /**
+     * Returns all immediate subfolders of the parent folder, optionally
+     * including mount folders for third-party repositories.
+     * ....
+     */
+     public List<Folder> getFolders(long repositoryId, long parentFolderId, boolean includeMountFolders)
+    ```
 
-    When describing a specific parameter, refer to it with "the", not "a" or "given"
-    By using "the" (e.g. "the parent folder") it is assumed the reader will understand we are refering to an entity related to a parameter (e.g. the folder associated with parameter parentFolderId).
+- When describing a specific parameter, refer to it with "the", not "a" or "given".
 
-/**
- * Returns all immediate subfolders of the parent folder.
- *
- * ...
- * @param  parentFolderId the primary key of the folder's parent folder
- * ...
- */
+- By using "the" (e.g. "the parent folder") it is assumed the reader will
+  understand we are referring to an entity related to a parameter (e.g. the
+  folder associated with parameter `parentFolderId`).
 
-Multiple Sentences in Initial Method Description
+    ```java
+    /**
+     * Returns all immediate subfolders of the parent folder.
+     *
+     * ...
+     * @param  parentFolderId the primary key of the folder's parent folder
+     * ...
+     */
+     ```
 
-Unless the details describing a method warrant a paragraph, simply add the sentence(s) directly after the initial method description.
+#### Multiple Sentences in Initial Method Description
 
+Unless the details describing a method warrant a paragraph, simply add the
+sentence(s) directly after the initial method description.
+
+```java
 /**
  * Returns the parent organizations in order by closest ancestor.  The list
  * starts with the organization itself.
@@ -250,11 +340,15 @@ Unless the details describing a method warrant a paragraph, simply add the sente
  * ...
  */
 public List<Organization> getParentOrganizations(long organizationId)
+```
 
-Important: In the HTML generated from the Javadoc, only the initial method description sentence will appear in the method summary table. But the sentences that follow the initial method description will show in the method details.
+**Important:** In the HTML generated from the Javadoc, only the initial method
+description sentence will appear in the *method summary* table. But the
+sentences that follow the initial method description will show in the method
+details.
 
 
-Method Javadoc Tags
+## Method Javadoc Tags
 @param tags
 
 @param tags should provide a short description of what the parameter is or what it is for, as well as any special requirements. If more detail is needed than what can fit in one or two sentences, place it in the method description instead. Never start the parameter description with a capital letter, and always refer to the parameter with "the" rather than "a". Additionally, it is unnecessary to explain what the parameter is for if this was already explained in the method description.

@@ -5,13 +5,13 @@ Following these guidelines helps to ensure that Liferay classes are documented
 sufficiently and consistently. The guidelines also explain how to leverage our
 Javadoc tools and submit your contributions.
 
-The sections [Module Comments](#module-comments) and [Package
-Comments](#package-omments) provide you with instructions on how to provide a
-general overview of modules and packages. The sections [Class
-Comments](#class-comments) and [Method Comments](#method-comments) provide you
-with simple instructions on how to describe Java classes and methods. Subsequent
-sections guide you in describing the [most important tips](#top-tips) for
-writing Javadoc,
+The sections [Module Comments](#module-comments) and
+[Package Comments](#package-comments) provide you with instructions on how to
+provide a general overview of modules and packages. The sections
+[Class Comments](#class-comments) and [Method Comments](#method-comments)
+provide you with simple instructions on how to describe Java classes and
+methods. Subsequent sections guide you in describing the
+[most important tips](#top-tips) for writing Javadoc,
 [formatting and building Javadoc](#formatting-and-building-javadoc), and
 [submitting your contributions](#sending-your-pull-request). This article covers
 the main points and most important rules to follow. If you're interested in an
