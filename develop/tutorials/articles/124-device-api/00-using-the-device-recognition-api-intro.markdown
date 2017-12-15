@@ -50,24 +50,28 @@ attributes that help you take care of the pesky problems that arise when sending
 content to different devices. Refer to the Device Javadocs mentioned above for 
 assistance. Next, you'll learn about retrieving some other device capabilities.
 
-## Getting Device Capabilities [](id=getting-device-capabilities)
+## Getting Device Properties [](id=getting-device-capabilities)
 
-With the Device API, you can detect the *capabilities* of a device making a
-request to your portal and then render content accordingly. Capabilities refer
+With the Device API, you can detect the *properties* of a device making a
+request to your portal and then render content accordingly. Properties refer
 to things that the requesting device can do. For example, you can determine the
-device's operating system, browser, form factor, and much more. Capabilities
+device's operating system, browser, form factor, and much more. Properties
 can be retrieved with the `getCapability` and `getCapabilities` methods of the
 Device API. 
 
-Most of the capabilities of the requesting device can be detected, depending on
+Most of the properties of the requesting device can be detected, depending on
 the device detection implementation you're using. For example, you can obtain
 the brand name of the device with this code:
 
-    String brand = device.getCapability("brand_name");
+    String brand = device.getCapability("OEM");
 
-You can grab many other device capabilities, including `model_name`,
-`marketing_name`, and `release_date`. You can also get boolean values like
-`is_wireless_device`, `is_tablet`, and many more. 
+You can grab many other device properties, including `HardwareModel`,
+`HardwareName`, `ReleaseYear`, and `ReleaseMonth`. You can also get boolean values like
+`IsMobile`, `IsTablet`, and many more.
+
+Keep in mind the Device API is an API.  The underlying implementation of the Device API may 
+change.  You may also implement your own.  Thus, the device property names are specific and
+proprietary to the underlying Device API implementation.
 
 Now that you know about the Device API, you can use it to make sure that your 
 grandma's gnarly tablet and your cousin's awesome new smart phone can make 
