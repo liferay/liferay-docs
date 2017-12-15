@@ -11,10 +11,10 @@ for most @product@ assets.](../../../images/workflow-configuration.png)
 Forms is different, and that's why its assets don't appear in the above image.
 There are so many use cases for forms, and there could be so many per site, that
 a site- or instance-scoped workflow configuration won't serve your needs well.
-Therefore, The Forms application lets you configure the workflow that's used for
-*each form*. That means that each submitted form record will go through a
-workflow process before being marked as *Approved*. Configure workflow for a
-form in its Settings window.
+Instead, the Forms application lets you configure the workflow that's used for
+*each form*. That means that each submitted form record will go through
+a workflow process before being marked as *Approved*. Configure workflow for
+a form in its Settings window.
 
 ## Enabling Workflow in a Form [](id=enabling-workflow-in-a-form)
 
@@ -88,8 +88,8 @@ To compile a list of finalists, each form entry should go through a workflow
 with one review task. The Single Approver workflow that ships with @product@
 works nicely for this.
 
-After creating the form in the above image, assign the Single Approver workflow
-to it in the form's Settings window, as described in the [above
+After creating the form in the above image, select the Single Approver workflow
+from the form's Settings window, as described in the [above
 section](#enabling-workflow-in-a-form). Publish the form, then fill out and
 submit an entry. The administrative user receives a notification that a form
 record was submitted. Go to the View Entries screen and see that the form record
