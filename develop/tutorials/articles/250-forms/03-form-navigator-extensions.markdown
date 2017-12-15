@@ -274,7 +274,7 @@ Form Navigator sections.
 
 To add a new section (entry) that uses a JSP, create a class that extends
 the abstract base class
-[`BaseJSPFormNavigatorEntry`](@platform-ref@/7.0-latest/javadocs/portal-service/com/liferay/portal/kernel/servlet/taglib/ui/BaseJSPFormNavigatorEntry.html)
+[`BaseJSPFormNavigatorEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/BaseJSPFormNavigatorEntry.html)
 and implements the
 [`FormNavigatorEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorEntry.html)
 interface. The `BaseJSPFormNavigatorEntry` base class integrates the section's
