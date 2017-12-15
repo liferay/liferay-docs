@@ -27,37 +27,37 @@ to invoke bnd.
 
 $$$
 
-For example, suppose you're developing a Liferay module using Maven or
-Gradle. In most cases, you simply need to specify your module's
-dependencies in your `pom.xml` or `build.gradle` file. The Maven or
-Gradle bundle plugin reads your `pom.xml` or `build.gradle` file and
-bnd adds the required `Import-Package` headers to the
-`META-INF/MANIFEST.MF` file in your module's JAR file at build time.
+For example, suppose you're developing a Liferay module using Maven or Gradle.
+In most cases, you specify your module's dependencies in your `pom.xml` or
+`build.gradle` file. At build time, the Maven or Gradle bundle plugin reads your
+`pom.xml` or `build.gradle` file and bnd adds the required `Import-Package`
+headers to the `META-INF/MANIFEST.MF` file in your module's JAR file.
 
-Here's an example dependencies section from a module`s `build.gradle` file:
+Here's an example dependencies section from a module's `build.gradle` file:
 
     dependencies {
-	provided group: "com.liferay", name: "com.liferay.petra.string", version: "1.0.0"
-	provided group: "org.osgi", name: "org.osgi.core", version: "5.0.0"
-	provided group: "org.slf4j", name: "slf4j-api", version: "1.7.2"
+        provided group: "com.liferay", name: "com.liferay.petra.string", version: "1.0.0"
+        provided group: "org.osgi", name: "org.osgi.core", version: "5.0.0"
+        provided group: "org.slf4j", name: "slf4j-api", version: "1.7.2"
     }
 
 And here's the generated `Import-Package` header that's generated in
 the `META-INF/MANIFEST.MF` file:
 
     Import-Package: com.liferay.petra.string;version="[1.0,2)",org.osgi.fra
-     mework;version="[1.7,2)",org.slf4j;version="[1.7,2)"
+    mework;version="[1.7,2)",org.slf4j;version="[1.7,2)"
 
-Note that you only need to specify JAR file dependencies. bnd examines
-your application to determine which packages from those JAR files
-contain classes used by your application and thus need to be imported.
+Note that you only need to specify JAR file dependencies. bnd examines your
+application to determine which packages from those JAR files contain classes
+your application uses and thus must be imported.
 
-For traditional Liferay plugin WARs, Liferay's WAB Generator detects packages
-referenced in their JSPs, descriptor files, and classes (in `WEB-INF/classes`
-and embedded JARs). The descriptor files include `web.xml`, `liferay-web.xml`,
-`portlet.xml`, `liferay-portlet.xml`, and `liferay-hook.xml`. Referenced
-packages that aren't found in either the plugin's `WEB-INF/classes` folder or in
-embedded JARs are added to the WAB's manifest's package imports. 
+For traditional Liferay plugin WARs,
+[Liferay's WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+detects packages referenced in their JSPs, descriptor files, and classes (in
+`WEB-INF/classes` and embedded JARs). The descriptor files include `web.xml`,
+`liferay-web.xml`, `portlet.xml`, `liferay-portlet.xml`, and `liferay-hook.xml`.
+Referenced packages that are neither found in the plugin's `WEB-INF/classes`
+folder nor in embedded JARs are added to the WAB's manifest's package imports. 
 
 Here are cases in which packages aren't detected:
 

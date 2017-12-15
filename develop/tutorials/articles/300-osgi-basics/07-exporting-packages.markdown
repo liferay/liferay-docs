@@ -1,9 +1,9 @@
 # Exporting Packages [](id=exporting-packages)
 
-An OSGi module's classes are inaccessible to other modules by default.
-To expose a class, you must explicitly export its package.
-Exporting a package in your OSGi bundle JAR's manifest makes all the
-package's classes available for other bundles to
+OSGi module classes are inaccessible to other modules by default. To expose a
+class, you must explicitly export its package. Exporting a package in your OSGi
+bundle JAR's manifest makes all the package's classes available for other
+bundles to
 [import](/develop/tutorials/-/knowledge_base/7-0/importing-packages).
 
 To export a package, you must add it to an `Export-Package` OSGi header. Here's
@@ -28,8 +28,8 @@ When you build a module JAR, bnd propagates the OSGi headers from the project's
 Here's a simple example of how to export packages from a `bnd.bnd` file:
 
     Export-Package:\
-	com.liferay.petra.io,\
-	com.liferay.petra.io.unsync
+    com.liferay.petra.io,\
+    com.liferay.petra.io.unsync
 
 In module projects that don't use bnd, you must manually add package exports to
 an `Export-Package` header in the module JAR's `META-INF/MANIFEST.MF`. 
@@ -38,16 +38,18 @@ When you copy a traditional Liferay plugin WAR into the `[Liferay Home]/deploy`
 folder, the
 [WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
 propagates the OSGi headers from the WAR's `liferay-plugin-package.properties`
-file to the `META-INF/MANIFEST.MF` file in the generated Web Application Bundle (WAB). 
+file to the `META-INF/MANIFEST.MF` file in the generated Web Application Bundle (WAB).
 
 +$$$
 
-**Tip**: In case you want your module to collaborate with a module that can't
-use the version of a package you export, you can give your module the
-flexibility to use a version of the package the module *can* use from a
-different module. In other words, you can use the same version of the package
-the other module must use. To do this, add the package you export to your
-module's `Import-Package` header. 
+**Note**: bnd makes your module's exported packages *substitutable*. That is,
+the OSGi framework can substitute your module's exported package with a
+compatible package of the same name from a different bundle. In this way, your
+module can work on it's own, but can also work in conjunction with bundles that
+provide a compatible, or even same version of the package. A package from
+another bundle might provide better "wiring" opportunities with other bundles.
+For more details on substitutable exports, see
+[this blog post from Peter Krien's](http://blog.osgi.org/2007/04/importance-of-exporting-nd-importing.html). 
 
 $$$
 
