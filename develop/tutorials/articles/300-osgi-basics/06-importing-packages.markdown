@@ -1,6 +1,6 @@
 # Importing Packages [](id=importing-packages)
 
-Your modules and plugins are sure to use Java packages outside themselves.
+Your modules and plugins are sure to use Java packages from other sources.
 @product@ project templates and tools detect these packages and add them to the
 package imports in your OSGi bundle JAR's manifest. Your bundle can import and
 use packages from bundles that
@@ -26,6 +26,31 @@ Liferay's Gradle module project templates use
 to invoke bnd. 
 
 $$$
+
+For example, suppose you're developing a Liferay module using Maven or
+Gradle. In most cases, you simply need to specify your module's
+dependencies in your `pom.xml` or `build.gradle` file. The Maven or
+Gradle bundle plugin reads your `pom.xml` or `build.gradle` file and
+bnd adds the required `Import-Package` headers to the
+`META-INF/MANIFEST.MF` file in your module's JAR file at build time.
+
+Here's an example dependencies section from a module`s `build.gradle` file:
+
+    dependencies {
+	provided group: "com.liferay", name: "com.liferay.petra.string", version: "1.0.0"
+	provided group: "org.osgi", name: "org.osgi.core", version: "5.0.0"
+	provided group: "org.slf4j", name: "slf4j-api", version: "1.7.2"
+    }
+
+And here's the generated `Import-Package` header that's generated in
+the `META-INF/MANIFEST.MF` file:
+
+    Import-Package: com.liferay.petra.string;version="[1.0,2)",org.osgi.fra
+     mework;version="[1.7,2)",org.slf4j;version="[1.7,2)"
+
+Note that you only need to specify JAR file dependencies. bnd examines
+your application to determine which packages from those JAR files
+contain classes used by your application and thus need to be imported.
 
 For traditional Liferay plugin WARs, Liferay's WAB Generator detects packages
 referenced in their JSPs, descriptor files, and classes (in `WEB-INF/classes`

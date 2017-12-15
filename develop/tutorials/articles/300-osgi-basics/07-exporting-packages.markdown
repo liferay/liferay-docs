@@ -1,8 +1,9 @@
 # Exporting Packages [](id=exporting-packages)
 
-An OSGi module's classes are private by default. To expose a class, you must
-explicitly export its package. Exporting a package in your OSGi bundle JAR's
-manifest makes all the package's classes visible for other bundles to
+An OSGi module's classes are inaccessible to other modules by default.
+To expose a class, you must explicitly export its package.
+Exporting a package in your OSGi bundle JAR's manifest makes all the
+package's classes available for other bundles to
 [import](/develop/tutorials/-/knowledge_base/7-0/importing-packages).
 
 To export a package, you must add it to an `Export-Package` OSGi header. Here's
@@ -23,6 +24,12 @@ come with
 [bnd](http://bnd.bndtools.org/).
 When you build a module JAR, bnd propagates the OSGi headers from the project's
 `bnd.bnd` file to the JAR's `META-INF/MANIFEST.MF`.  
+
+Here's a simple example of how to export packages from a `bnd.bnd` file:
+
+    Export-Package:\
+	com.liferay.petra.io,\
+	com.liferay.petra.io.unsync
 
 In module projects that don't use bnd, you must manually add package exports to
 an `Export-Package` header in the module JAR's `META-INF/MANIFEST.MF`. 
