@@ -104,3 +104,10 @@ In the *Ordering and Grouping* section of the Asset Publisher, you have great
 control over how content is ordered and grouped in the list, but this is only
 one aspect of how your content will be displayed. You can refine the display
 through many other display settings.
+
+**Note:** The following actions will have immediate effects in your Asset Publisher:
+- Change the value of the *Asset Selection* option.
+- Change the value of the *Scope* option.
+- Select, add, sort or delete asset entries (only when selecting assets manually).
+
+Other changes in the rest of the options will come into effect after clicking *Save*.
