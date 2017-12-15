@@ -20,7 +20,7 @@ values (*fuzzy* attributes).
 This tutorial shows you how to call Adaptive Media's API to get adapted images 
 in your app. First, you'll learn how to construct such API calls. 
 
-## Calling Adaptive Media's API
+## Calling Adaptive Media's API [](id=calling-adaptive-medias-api)
 
 The entry point to Adaptive Media's API is 
 [the `AMImageFinder` interface](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-api/src/main/java/com/liferay/adaptive/media/image/finder/AMImageFinder.java). 
@@ -179,7 +179,7 @@ To search for image width instead, use
 `AMImageAttribute.AM_IMAGE_ATTRIBUTE_WIDTH` as the first argument to the `width` 
 method. 
 
-## Using the Adaptive Media Stream
+## Using the Adaptive Media Stream [](id=using-the-adaptive-media-stream)
 
 Once you have the `AdaptiveMedia` stream, you can get the information you need 
 from it. For example, this code prints the URI for each adapted image: 

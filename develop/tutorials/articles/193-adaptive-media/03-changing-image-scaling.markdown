@@ -1,4 +1,4 @@
-# Changing Adaptive Media's Image Scaling
+# Changing Adaptive Media's Image Scaling [](id=changing-adaptive-medias-image-scaling)
 
 +$$$
 
@@ -13,7 +13,7 @@ Adaptive Media scales images to match the image resolutions defined by the
 also customize it to your needs. Before doing so, however, you should understand 
 how this scaling works. 
 
-## Understanding Image Scaling in Adaptive Media
+## Understanding Image Scaling in Adaptive Media [](id=understanding-image-scaling-in-adaptive-media)
 
 Adaptive Media contains an extension point that lets you replace the way it 
 scales images. 
@@ -63,7 +63,7 @@ specific MIME types and has a higher `service.ranking`, it's more likely to be
 chosen than if it's registered for the special MIME type `*` or has a lower 
 `service.ranking`. 
 
-## Creating an Image Scaler
+## Creating an Image Scaler [](id=creating-an-image-scaler)
 
 Now that you know how Adaptive Media scales images, you'll learn how to 
 customize this scaling. As an example, you'll see a sample image scaler that 
