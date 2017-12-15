@@ -9,6 +9,10 @@ a page. Separating content creation from content display lets you publish
 content on multiple pages without recreating it, and prevents the loss of
 content if you remove it from a page or delete the page altogether. 
 
+<div class="video-link">
+<img src="../../../images/vid-using-liferays-content-editor-thumbnail.png" alt="video-thumbnail"/>
+</div>
+
 It's time to get started: 
 
 1.  Open the Menu.
@@ -74,3 +78,11 @@ Now you'll use it to create your first piece of web content:
 
 Well done! You created the content, but you must still publish it on a page so
 users can see it. You'll do this next. 
+
+<div class="video-tag" data-name="Using Liferay's Content Editor">
+  <video width="100%" height="100%" controls>
+    <source src="https://dev.liferay.com/documents/10184/1058908/using-liferays-content-editor.mp4" type="video/mp4">
+    <source src="https://dev.liferay.com/documents/10184/1058908/using-liferays-content-editor.mkv" type="video/webm">
+    Your browser does not support HTML5 video.
+  </video>
+</div>
