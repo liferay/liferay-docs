@@ -1,5 +1,9 @@
 # Publishing Content with Content Display Pages
 
+<div class="learn-path-step">
+    <p>Creating Content<br>Step 4 of 7</p>
+</div>
+
 So far, you've manually published most of your site's content. Now you'll use 
 [content display pages](/discover/portal/-/knowledge_base/7-0/publishing-assets#content-display-pages) 
 to publish content automatically. @product@'s Asset Publisher app makes this 

@@ -17,3 +17,5 @@ progress, you'll add more complex content using @product@'s full suite of tools.
 These tools include web content display, asset publisher, content display pages,
 web content structures and templates, page templates, application display
 templates, and more. 
+
+<a class="go-link btn btn-primary" href="/discover/portal/-/knowledge_base/7-0/creating-basic-web-content">Let's Go!<span class="icon-circle-arrow-right"></span></a>

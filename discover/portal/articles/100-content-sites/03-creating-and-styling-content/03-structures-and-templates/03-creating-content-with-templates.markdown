@@ -1,5 +1,9 @@
 # Creating Content with Structures and Templates
 
+<div class="learn-path-step">
+    <p>Creating Content<br>Step 3C of 3D</p>
+</div>
+
 Now that you have a template for your structure, you can use that structure to 
 create content. Remember, the template formats the structure's content for 
 display.

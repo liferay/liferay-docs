@@ -1,5 +1,9 @@
 # Site Navigation
 
+<div class="learn-path-step">
+    <p>Creating A Site<br>Step 6 of 6</p>
+</div>
+
 You could have the greatest site in the multi-verse, but if users can't navigate
 it, it's all for naught. Fortunately @product@ provides extensive support for
 customizing your site's navigation. There are two main ways to define and

@@ -1,5 +1,9 @@
 # Advanced Content Display Page Options
 
+<div class="learn-path-step">
+    <p>Creating Content<br>Step 5 of 7</p>
+</div>
+
 Now that you've used a basic use case for the content display page, let's take
 a deeper look at how they work and how to use them for more advanced use cases.
 

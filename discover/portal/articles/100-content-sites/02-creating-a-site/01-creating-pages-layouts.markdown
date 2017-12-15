@@ -1,4 +1,8 @@
-# Creating Pages with Layouts
+# Creating Pages with Layouts [](id=creating-pages-with-layouts)
+
+<div class="learn-path-step">
+    <p>Creating A Site<br>Step 1 of 6</p>
+</div>
 
 Up to this point everything on the Welcome page stretches the width of the
 entire page. You can control this with *page layouts*. For example, the Welcome

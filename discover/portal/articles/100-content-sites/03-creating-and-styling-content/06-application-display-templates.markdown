@@ -1,5 +1,9 @@
 # Application Display Templates
 
+<div class="learn-path-step">
+    <p>Creating Content<br>Step 6 of 7</p>
+</div>
+
 For the final piece of the site that you'll construct with Liferay's Web
 Experience Management system, you need to create a more engaging front page
 graphic. To do this, you'll use multiple images and an Application Display 

@@ -1,4 +1,8 @@
-# Initial Setup
+# Initial Setup [](id=initial-setup)
+
+<div class="learn-path-step">
+    <p>Creating Basic Web Content<br>Step 1 of 3</p>
+</div>
 
 Before you get any further you should set your site name. When you start a new 
 Liferay bundle for the first time, it creates a site with a single "Welcome" 

@@ -1,5 +1,9 @@
 # Using @product@'s Content Editor
 
+<div class="learn-path-step">
+    <p>Creating Basic Web Content<br>Step 2 of 3</p>
+</div>
+
 In @product@, you create content independent of a page and then publish it on
 a page. Separating content creation from content display lets you publish
 content on multiple pages without recreating it, and prevents the loss of

@@ -1,5 +1,9 @@
 # Review Your Site
 
+<div class="learn-path-step">
+    <p>Creating Content<br>Step 7 of 7</p>
+</div>
+
 You create the pages, you created the content, and you organized and displayed 
 it all using Liferay's Web Experience Management tools. It's time to take a 
 step back and look at your site.

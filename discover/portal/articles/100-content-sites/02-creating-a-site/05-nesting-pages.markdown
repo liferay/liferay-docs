@@ -1,5 +1,9 @@
 # Nesting Pages
 
+<div class="learn-path-step">
+    <p>Creating A Site<br>Step 5 of 6</p>
+</div>
+
 When creating sites, you'll likely encounter situations where you want to nest
 pages under other pages. Such child pages (also called nested pages) let you
 create page hierarchies to organize content and functionality. For example, the

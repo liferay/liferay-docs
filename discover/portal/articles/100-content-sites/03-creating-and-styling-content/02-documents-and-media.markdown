@@ -1,5 +1,9 @@
 # Using Documents and Media
 
+<div class="learn-path-step">
+    <p>Creating Content<br>Step 2 of 7</p>
+</div>
+
 @product@'s Documents and Media features provide tools for uploading, 
 organizing, and displaying various types of documents and media, including 
 images, audio, and video. For example, you can use Documents and Media for 

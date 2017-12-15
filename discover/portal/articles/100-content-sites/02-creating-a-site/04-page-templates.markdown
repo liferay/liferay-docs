@@ -1,5 +1,9 @@
 # Page Templates
 
+<div class="learn-path-step">
+    <p>Creating A Site<br>Step 4 of 6</p>
+</div>
+
 As you've now seen, creating pages can be repetitive. Wouldn't it be great if
 you could create multiple pages from a single template? Well guess what: page
 templates in @product@ let you do exactly that! They also inherit future changes

@@ -1,5 +1,9 @@
 # Building the Lunar Guides and Book a Trip Pages
 
+<div class="learn-path-step">
+    <p>Creating A Site<br>Step 2 of 6</p>
+</div>
+
 The Lunar Resort needs two more pages: 
 
 -   Lunar Guides: A page that lists the guides employed by the Lunar Resort.

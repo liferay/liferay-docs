@@ -1,5 +1,9 @@
 # Creating Templates
 
+<div class="learn-path-step">
+    <p>Creating Content<br>Step 3B of 3D</p>
+</div>
+
 Structures, like the one you created in the previous step, need templates to
 style and display their items. Now you'll use the
 [FreeMarker](http://freemarker.apache.org/) templating language to create

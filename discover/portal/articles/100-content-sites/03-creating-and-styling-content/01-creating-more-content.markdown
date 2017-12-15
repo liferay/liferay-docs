@@ -1,4 +1,8 @@
-# Creating More Content
+# Creating More Content [](id=creating-more-content)
+
+<div class="learn-path-step">
+    <p>Creating Content<br>Step 1 of 7</p>
+</div>
 
 Earlier we created some content without knowing where it would go. Now you have
 the context of how the site is organized. Next, use the same principles for

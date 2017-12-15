@@ -1,4 +1,8 @@
-# Creating Structures
+# Creating Structures [](id=creating-structures)
+
+<div class="learn-path-step">
+    <p>Creating Content<br>Step 3A of 3D</p>
+</div>
 
 Now you'll create your first structure. This structure defines Lunar Guides page
 content: a picture of the guide along with the guide's name and a link to his

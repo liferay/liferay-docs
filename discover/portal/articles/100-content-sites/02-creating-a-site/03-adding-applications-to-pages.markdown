@@ -1,5 +1,9 @@
 # Adding Applications to Pages
 
+<div class="learn-path-step">
+    <p>Creating A Site<br>Step 3 of 6</p>
+</div>
+
 All of a page's functionality comes from applications. This functionality can be
 as simple as displaying content, or as complex as social networking. You create
 your page's functionality by adding applications to the page. You'll get started

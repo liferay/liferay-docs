@@ -1,5 +1,9 @@
 # Advanced Templates
 
+<div class="learn-path-step">
+    <p>Creating Content<br>Step 3D of 3D</p>
+</div>
+
 The template you created for lunar guides used CSS, HTML, and FreeMarker to 
 style and format the corresponding structure's fields. Templates in @product@ 
 can also use JavaScript. This lets you create complex, interactive content. To 
