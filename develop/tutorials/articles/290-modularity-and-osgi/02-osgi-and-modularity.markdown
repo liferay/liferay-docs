@@ -3,23 +3,23 @@
 Modularity makes writing software, especially as a team, fun! Here are some
 benefits to modular development on DXP: 
 
-- DXP's runtime framework is lightweight, fast, and secure. 
+- @product@'s runtime framework is lightweight, fast, and secure. 
 - The framework uses the OSGi standard. If you have experience using OSGi with
-    other projects, you can apply your existing knowledge to developing on DXP. 
+  other projects, you can apply your existing knowledge to developing on DXP. 
 - Modules publish services to and consume services from a service registry.
-    Service contracts are loosely coupled from service providers and consumers,
-    and the registry manages the contracts automatically. 
+  Service contracts are loosely coupled from service providers and consumers,
+  and the registry manages the contracts automatically. 
 - Modules' dependencies are managed automatically by the container, dynamically
-    (no restart required).  
+  (no restart required). 
 - The container manages module life cycles dynamically. Modules can be
-    installed, started, updated, stopped, and uninstalled while @product@ is
-    running, making deployment a snap. 
+  installed, started, updated, stopped, and uninstalled while @product@ is
+  running, making deployment a snap. 
 - Only a module's classes whose packages are explicitly exported are publicly
-    visible; OSGi hides all other classes by default.
+  visible; OSGi hides all other classes by default.
 - Modules and packages are semantically versioned and declare dependencies on
-    specific versions of other packages. This allows two applications that
-    depend on different versions of the same packages to each depend on their
-    own versions of the packages. 
+  specific versions of other packages. This allows two applications that
+  depend on different versions of the same packages to each depend on their
+  own versions of the packages. 
 - Team members can develop, test, and improve modules in parallel.
 - You can use your existing developer tools and environment to develop modules. 
 
@@ -29,14 +29,14 @@ it hard to go back to developing any other way.
 
 ## Modules [](id=modules)
 
-It's time to see what module projects look like and see DXP's modular
+It's time to see what module projects look like and see @product@'s modular
 development features in action. To keep things simple, only project code and
-structure are shown: you can
-[create modules](/develop/tutorials/-/knowledge_base/7-0/starting-module-development) 
+structure are shown: you can 
+[create modules](/develop/tutorials/-/knowledge_base/7-0/starting-module-development)
 like these anytime. 
 
 These modules collectively provide a command that takes a String and uses it in
-a greeting.
+a greeting. Consider it "Hello World" for modules. 
 
 ### API [](id=api)
 
@@ -111,11 +111,11 @@ file contents. The `bnd.bnd` file is a little different:
 
 The bundle name, symbolic name, and version are all set similarly to the API. 
 
-Finally, there's no `Export-Package` declaration. A client just wants to use the
-API: it doesn't care how its implementation works as long as the API returns
-what it's supposed to return. The client, then, only needs to declare a
-dependency on the API; the service registry injects the appropriate
-implementation at runtime. 
+Finally, there's no `Export-Package` declaration. A client (which is the third
+module you'll create) just wants to use the API: it doesn't care how its
+implementation works as long as the API returns what it's supposed to return.
+The client, then, only needs to declare a dependency on the API; the service
+registry injects the appropriate implementation at runtime. 
 
 Pretty cool, eh? 
 
@@ -143,12 +143,13 @@ All that's left, then, is the class that provides the implementation:
     }
 
 The implementation is simple. It uses the `String` as a name and prints a hello
-message. A better implementation might be to use DXP's API to collect all the
-names of all the users in the system and send each user a greeting notification,
-but the point here is to keep things simple. You should understand, though, that
-there's nothing stopping you from replacing this implementation by deploying
-another module whose Greeting implementation's `@Component` annotation specifies
-a higher service ranking property (e.g., `"service.ranking:Integer=100"`). 
+message. A better implementation might be to use @product@'s API to collect all
+the names of all the users in the system and send each user a greeting
+notification, but the point here is to keep things simple. You should
+understand, though, that there's nothing stopping you from replacing this
+implementation by deploying another module whose Greeting implementation's
+`@Component` annotation specifies a higher service ranking property (e.g.,
+`"service.ranking:Integer=100"`). 
 
 This `@Component` annotation defines three options: `immediate = true`, an empty
 property list, and the service class that it implements. The `immediate = true`
@@ -170,9 +171,9 @@ That's all there is to a provider module.
 
 ### Consumer [](id=consumer)
 
-The consumer uses the API that the API module defines and the provider module
-implements. DXP has many different kinds of consumer modules.
-[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+The consumer or client uses the API that the API module defines and the provider
+module implements. DXP has many different kinds of consumer modules.
+[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets) 
 are the most common consumer module type, but since they are a topic all by
 themselves, this example stays simple by creating an command for the Apache
 Felix Gogo shell. Note that consumers can, of course, consume many different
@@ -279,8 +280,8 @@ coupling, making your software easy to manage, enhance, and support.
 
 ## A Typical Liferay Application [](id=a-typical-liferay-application)
 
-If you look at a typical application from DXP's source, you'll generally find at
-least four modules: 
+If you look at a typical application from @product@'s source, you'll generally
+find at least four modules: 
 
 - An API module
 - A Service (provider) module

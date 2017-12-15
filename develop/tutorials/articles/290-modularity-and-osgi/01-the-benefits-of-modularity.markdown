@@ -48,7 +48,7 @@ The spacecraft and its modules exemplified these modularity characteristics:
     versions of the Command Module, for example,  throughout the Apollo program,
     and in the Gemini Program, which focused on Earth orbit. 
 
-NASA used modularity to successfully complete over a dozen missions to the moon.
+NASA used modularity to complete over a dozen missions to the moon successfully. 
 Can modularity benefit software too? Yes! The following sections show you how:
 
 - [Modularity benefits for software](#modularity-benefits-for-software)
@@ -56,7 +56,7 @@ Can modularity benefit software too? Yes! The following sections show you how:
 
 ## Modularity Benefits for Software [](id=modularity-benefits-for-software)
 
-Java applications have predominantly been monolithic: they're developed in large
+Java applications have been predominantly monolithic: they're developed in large
 code bases. In a monolith, it's difficult to avoid tight coupling of classes.
 Modular application design, conversely, facilitates loose coupling, making the
 code easier to maintain. It's much easier and more fun to develop small amounts
@@ -83,17 +83,18 @@ module easy to understand and use.
 
 ### Dependencies [](id=dependencies)
 
-Modules have requirements and capabilities. The interaction between modules is a
-function of the capability of one satisfying the requirement of another and so
-on. Modules are published to artifact repositories, such as Maven Central.
-Module versioning schemes let you specify dependencies on particular module
-versions or version ranges. 
+Modules have requirements and capabilities. Modules interact when one satisfies
+the requirement of another and thus provides functionality. Modules are
+published to artifact repositories, such as Maven Central. Module versioning
+schemes let you specify dependencies on particular module versions or version
+ranges. 
 
 ### Reusability [](id=reusability)
 
-Modules that do their job well are hot commodities. They're reusable across
-projects, for different purposes. As you discover helpful reliable modules,
-you'll use them again and again. 
+Modules that do their job well tend to become dependencies for multiple
+applications. Because they're reusable across projects, this saves resources in
+the container. As you discover helpful reliable modules, you'll use them again
+and again. 
 
 It's time to design a modular application. 
 
@@ -138,8 +139,8 @@ application with a modular design.
 ![Figure 2: The speech recognition application can be implemented in a single monolithic code base or in modules, each focused on a particular function.](../../images/modularity-benefits-application-design-example.png)
 
 Designing the app as a monolith lumps everything together. There are no initial
-boundaries between the application aspects, whereas the modular design
-distinguishes the aspects. 
+boundaries between the application's capabilities, whereas the modular design
+distinguishes the capabilities. 
 
 Developers can create the modules in parallel, each one with its own particular
 capability. Designing applications that comprise modules fosters writing
@@ -155,12 +156,12 @@ Here are the benefits of designing the speech recognition app as modules:
 
 - Each module represents a capability that contributes to the app's overall
     function. 
-- The app depends on modules, that are easy to develop, test, and maintain. 
+- The app depends on modules that are easy to develop, test, and maintain. 
 - The modules can be reused in different applications. 
 
-In conclusion, modularity has literally taken us to the moon and back. It
-benefits software development too. The example speech recognition application
-demonstrated how to design an app that comprises modules. 
+Modularity has literally taken us to the moon and back. It benefits software
+development too. The example speech recognition application demonstrated how to
+design an app that comprises modules. 
 
 Next you'll learn how OSGi facilitates creating modules that provide and consume
 services.
