@@ -174,6 +174,10 @@ Well done! Now you know how to create and use an Extended Theme.
 
 ## Related Topics [](id=related-topics)
 
+[Creating Android Views (native code)](/develop/tutorials/-/knowledge_base/7-0/creating-android-views)
+
+[Creating iOS Themes (native code)](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
+
 [Preparing Xamarin Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-xamarin-projects-for-liferay-screens)
 
 [Using Screenlets in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-xamarin-apps)
