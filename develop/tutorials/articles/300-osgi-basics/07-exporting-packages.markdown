@@ -44,12 +44,15 @@ file to the `META-INF/MANIFEST.MF` file in the generated Web Application Bundle 
 
 **Note**: bnd makes your module's exported packages *substitutable*. That is,
 the OSGi framework can substitute your module's exported package with a
-compatible package of the same name from a different bundle. In this way, your
-module can work on it's own, but can also work in conjunction with bundles that
-provide a compatible, or even same version of the package. A package from
-another bundle might provide better "wiring" opportunities with other bundles.
-For more details on substitutable exports, see
-[this blog post from Peter Krien's](http://blog.osgi.org/2007/04/importance-of-exporting-nd-importing.html). 
+compatible package of the same name, but potentially different version, that's
+exported from a different bundle. bnd achieves this substitutability for your
+module by automatically making your module import every package it exports. In
+this way, your module can work on its own, but can also work in conjunction
+with bundles that provide a different (compatible) version, or even the same
+version, of the package. A package from another bundle might provide better
+"wiring" opportunities with other bundles.  For more details on substitutable
+exports, see
+[this blog post from Peter Kriens](http://blog.osgi.org/2007/04/importance-of-exporting-nd-importing.html). 
 
 $$$
 
