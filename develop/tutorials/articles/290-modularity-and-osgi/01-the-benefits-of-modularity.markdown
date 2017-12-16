@@ -31,9 +31,12 @@ The spacecraft and its modules exemplified these modularity characteristics:
 -   **Dependencies**: Modules can require capabilities other modules satisfy. 
 
     The Apollo modules had these dependencies:
-    - Lunar Module depended on the Service Module to get near the moon.
-    - Command Module depended on the Service Module for power and oxygen.
-    - Service Module depended on the Command Module for instruction.
+
+    -   Lunar Module depended on the Service Module to get near the moon.
+
+    -   Command Module depended on the Service Module for power  and oxygen.
+ 
+    -   Service Module depended on the Command Module for instruction.
 
 -   **Encapsulation**: Modules hide their implementation details but publicly
     define their capabilities and interfaces. 
