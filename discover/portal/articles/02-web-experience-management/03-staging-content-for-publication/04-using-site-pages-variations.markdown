@@ -121,14 +121,15 @@ top of it. Merging works in the following way:
 
 - New pages that don't exist in the base Variation will be added.
 - If a page exists in both Site Pages Variations, and at least one version of
-the page was marked as ready for publication, then the latest version marked as
-ready will be added as a new Page Variation in the target page of the base
-Variation. (Note that older versions or page variations not marked as ready for
-publication won't be copied. Merge can be executed, however, as many times as
-needed and will create the needed pages variations in the appropriate page of
-the base Site Pages Variation).
+  the page was marked as ready for publication, then the latest version marked
+  as ready will be added as a new Page Variation in the target page of the base
+  Variation. (Note that older versions or page variations not marked as ready
+  for publication won't be copied. Merge can be executed, however, as many times
+  as needed and will create the needed pages variations in the appropriate page
+  of the base Site Pages Variation).
 - Merging does not affect content nor will overwrite anything in the base
-Variation, it will just add more versions, pages and page variations as needed.
+  Variation, it will just add more versions, pages and page variations as
+  needed.
 
 @product@'s staging environment is extremely easy to use and makes maintaining a
 content-rich web site a snap. You'll learn about scheduling web content next.

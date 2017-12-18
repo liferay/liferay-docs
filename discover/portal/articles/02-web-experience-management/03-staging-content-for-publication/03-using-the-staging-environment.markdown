@@ -245,20 +245,20 @@ staging are listed below:
 
 - Add Page Variation: hides/shows the *Add* button on the Staging bar &rarr;
   Manage Page Variations screen.
-- Add Site Pages Variation: hides/shows the *Add* button on the Staging bar &rarr;
-  Manage Site Page Variations screen.
+- Add Site Pages Variation: hides/shows the *Add* button on the Staging bar
+  &rarr; Manage Site Page Variations screen.
 - Export/Import Application Info: if the Publish Staging permission is not
   granted, hides/shows the application level Export/Import menu. The
   Configuration permission for the Export/Import app is also required
 - Export/Import Pages: if the Publish Staging permission is not granted,
   hides/shows the Export/Import app in the Site Administration menu.
-- Manage Staging: hides/shows the the staging configuration menu in the Staging
-  app in the Site Administration menu.
-<!-- Publish Application Info: Coming soon (LPS-63958) -Cody -->
+- Manage Staging: hides/shows the staging configuration menu in the Staging app
+  in the Site Administration menu.
+- Publish Application Info: hides/shows the application level Staging menu.
 - Publish Staging: hides/shows the *Publish to Live* button on the Staging bar
   and hides/shows the *Add* button in the Staging app in the Site Administration
   menu.
-- View Staging: If Publish Staging, Manage Pages, Manage Staging, or Update
+- View Staging: if Publish Staging, Manage Pages, Manage Staging, or Update
   permissions are not granted, hides/shows the Staging app in the Site
   Administration menu.
 
