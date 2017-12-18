@@ -12,17 +12,15 @@ to make changes.
 ## Staging Content
 
 Click on the *Staging* button to view the staged area. Your management options
-are restored and you can access some new options related to staging. If you're
-following along with the Lunar Resort example, navigate back to the News and
-Events page and click on *Staging* to get your page editing capabilities back.
+are restored and you can access some new options related to staging. 
 
 ![Figure 1: You can see the new staging options added to the top and left of your screen.](../../../images/staging-live-page.png)
 
-Add the Bookmarks application and then click on *Live* from the top menu. Notice
-that the Bookmarks app isn't there. That's because you've staged a change to the
-page but haven't published that change yet to the live site. Go back to the
-staged page and observe the options you have to choose from to help in your
-staging conquest.
+To test out the staging environment, add the Bookmarks application and then
+click on *Live* from the top menu. Notice that the Bookmarks app isn't there.
+That's because you've staged a change to the page but haven't published that
+change yet to the live site. Go back to the staged page and observe the options
+you have to choose from to help in your staging conquest.
 
 **Site Pages Variations:** allows you to work in parallel on multiple versions
 of a staged site page. You'll learn more about this later.
@@ -335,7 +333,7 @@ variation must be marked as ready for publication.
 
 You are also able to rename any variation. For example, edit the Main Variation
 and change its name to something that makes more sense in your site, such as
-*Basic*, *Master*, or *Regular* and create a variation for Christmas.
+*Basic*, *Master*, or *Regular* and create a variation for.
 
 You can switch between different variations by clicking on them from the staging
 menu bar. It's also possible to set permissions on each variation, so certain
@@ -383,9 +381,9 @@ should be published, mark it as *Ready for Publication*. Only one page variation
 can be marked as ready for publication and that is the one that gets published
 to the live site.
 
-For example, you could create a page variation called Thanksgiving for the News
-and Events page inside of the Christmas variation and another one called
-Christmas Day to display different content on those particular days.
+For example, you could create a page variation called Thanksgiving for a page
+inside of the Christmas variation and another one called Christmas Day to
+display different content on those particular days.
 
 ![Figure 6: This is an example of a Thanksgiving page variation.](../../../images/page-variation-thanksgiving.png)
 
@@ -395,15 +393,15 @@ screen. From there, click on *Merge* on the Site Pages Variation you want to use
 as the base. You will be asked to choose the Site Pages Variation to merge on
 top of it. Merging works in the following way:
 
-* New pages that don't exist in the base Variation will be added.
-* If a page exists in both Site Pages Variations, and at least one version of
+- New pages that don't exist in the base Variation will be added.
+- If a page exists in both Site Pages Variations, and at least one version of
 the page was marked as ready for publication, then the latest version marked as
 ready will be added as a new Page Variation in the target page of the base
 Variation. (Note that older versions or page variations not marked as ready for
 publication won't be copied. Merge can be executed, however, as many times as
 needed and will create the needed pages variations in the appropriate page of
 the base Site Pages Variation).
-* Merging does not affect content nor will overwrite anything in the base
+- Merging does not affect content nor will overwrite anything in the base
 Variation, it will just add more versions, pages and page variations as needed.
 
 @product@'s staging environment is extremely easy to use and makes maintaining a

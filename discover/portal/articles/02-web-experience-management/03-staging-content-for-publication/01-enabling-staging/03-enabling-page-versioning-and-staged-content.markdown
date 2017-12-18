@@ -1,15 +1,23 @@
 # Enabling Page Versioning and Staged Content [](id=enabling-page-versioning-and-staged-content)
 
-Enabling page versioning for a site allows site administrators to work in
-parallel on multiple versions of the site's pages. Page versioning also
-maintains a history of all updates to the site from the time page versioning was
-enabled. Site administrators can revert to a previous version of the site at any
-time. This flexibility is very important in cases where a mistake is found and
-it's important to quickly publish a fix. If you're following the Lunar Resort
-example, check *Enabled On Public Pages* to enable page versioning for the
-Lunar Resort site and then click *Save*.
+Enabling page versioning for a site lets site administrators work in parallel on
+multiple versions of the site's pages. Page versioning also maintains a history
+of all updates to the site from the time page versioning was enabled. Site
+administrators can revert to a previous version of the site at any time. This
+flexibility is very important in cases where a mistake is found and it's
+important to quickly publish a fix. 
+
+You can enable page versioning for public pages or private pages on the Staging
+Configuration page below the menu for selecting your staging environment (Local
+or Remote). If you've already enabled staging, you can navigate to the Product
+Menu &rarr; *Publishing* &rarr; *Staging* and click the
+(![Options](../../../images/icon-options.png)) button and select *Staging
+Configuration*.
 
 ![Figure 2: You can decide to use versioning and choose what content should be staged.](../../../images/staging-page-versioning-staged-content.png)
+
+You can also choose content for the staging environment to manage on the Staging
+Configuration page.
 
 Choosing content to be staged may sound self-explanatory, but content must have
 specific attributes in @product@ to use it in a staged environment. Content or

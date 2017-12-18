@@ -1,11 +1,16 @@
 # Enabling Remote Live Staging [](id=enabling-remote-live-staging)
 
-When you enable Remote Live staging, the remote site becomes the live
-environment and the current site becomes the staging environment. The remote
-(live) Liferay server and the local (staging) Liferay server should be
-completely separate systems. They should not, for example, share the same
-database. When Remote Live staging is enabled, all the necessary information is
-transferred over the network connecting the two servers.
+When Remote Live staging is enabled for a site, a connection is established
+between the current site and another site on a remote Liferay server. The remote
+site becomes the live environment and the current site becomes the staging
+environment--an instance of Liferay used solely for staging. The remote (live)
+Liferay server and the local (staging) Liferay server should be completely
+separate systems. They should not, for example, share the same database. When
+Remote Live staging is enabled, all the necessary information is transferred
+over the network connecting the two servers. Content creators can use the
+staging server to make their changes while the live server handles the incoming
+user traffic. When changes to the site are ready to be published, they are
+pushed over the network to the remote live server. 
 
 When applying patches to a remote staging environment, you must
 apply patches to all of your servers being used. Having servers on different
@@ -169,7 +174,7 @@ top Control Menu. The changes are published to your remote staged site.
 
 $$$
 
-### Checkpoint [](id=checkpoint)
+## Remote Live Staging Verification
 
 Before publishing *any* content, verify that **all** the necessary steps above
 have been completed. Otherwise, Remote Staging will fail.
@@ -201,5 +206,3 @@ important data used by Staging (e.g., UUID), causing the Remote Publication
 process to fail.
 
 You should proceed only when all four major steps have been completed. 
-
-Next, you'll learn how to enable page versioning and staged apps.
