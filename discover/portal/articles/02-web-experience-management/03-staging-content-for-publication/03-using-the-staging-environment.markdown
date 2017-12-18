@@ -7,11 +7,14 @@ Menu to the left. If you haven't enabled staging for your site, see the
 section for instructions. These new menus help you manage staged pages. You'll
 also notice that most of your page management options have been removed, because
 now you can't directly edit live pages. You now must use the staging environment
-to make changes. Click on the *Staging* button to view the staged area. Your
-management options are restored and you can access some new options related to
-staging. If you're following along with the Lunar Resort example, navigate back
-to the News and Events page and click on *Staging* to get your page editing
-capabilities back.
+to make changes.
+
+## Staging Content
+
+Click on the *Staging* button to view the staged area. Your management options
+are restored and you can access some new options related to staging. If you're
+following along with the Lunar Resort example, navigate back to the News and
+Events page and click on *Staging* to get your page editing capabilities back.
 
 ![Figure 1: You can see the new staging options added to the top and left of your screen.](../../../images/staging-live-page.png)
 
