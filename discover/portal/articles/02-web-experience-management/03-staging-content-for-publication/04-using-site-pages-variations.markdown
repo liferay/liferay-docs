@@ -1,4 +1,4 @@
-# Using Site Pages Variations
+# Using Site Pages Variations [](id=using-site-pages-variations)
 
 Let's say you're working on a product-oriented site where you'll have several
 major changes to a page or a set of pages over a short period of time. Also you
@@ -41,7 +41,7 @@ variation option. For example, select the *Site Pages Variation* option. This
 brings you to a list of the existing site page variations for your site. Click
 *Add Site Pages Variation* to create a new one.
 
-![Figure 5: When selecting the *Site Pages Variation* link from the staging toolbar, you're able to add and manage your site pages variations.](../../../images/staging-page-variations.png)
+![Figure 1: When selecting the *Site Pages Variation* link from the staging toolbar, you're able to add and manage your site pages variations.](../../../images/staging-page-variations.png)
 
 From the *Add Site Pages Variation* screen, you can set a Name, Description, and
 also set your new variation to copy the content from an existing variation.
@@ -111,7 +111,7 @@ For example, you could create a page variation called Thanksgiving for a page
 inside of the Christmas variation and another one called Christmas Day to
 display different content on those particular days.
 
-![Figure 6: This is an example of a Thanksgiving page variation.](../../../images/page-variation-thanksgiving.png)
+![Figure 2: This is an example of a Thanksgiving page variation.](../../../images/page-variation-thanksgiving.png)
 
 Another powerful feature is the possibility of *merging* Site Pages Variations.
 To merge two Site Pages Variations, you need to go to the Site Pages Variation

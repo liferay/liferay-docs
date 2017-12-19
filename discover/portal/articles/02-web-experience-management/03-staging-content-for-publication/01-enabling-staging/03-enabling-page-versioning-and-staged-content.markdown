@@ -11,10 +11,10 @@ You can enable page versioning for public pages or private pages on the Staging
 Configuration page below the menu for selecting your staging environment (Local
 or Remote). If you've already enabled staging, you can navigate to the Product
 Menu &rarr; *Publishing* &rarr; *Staging* and click the
-(![Options](../../../images/icon-options.png)) button and select *Staging
+(![Options](../../../../images/icon-options.png)) button and select *Staging
 Configuration*.
 
-![Figure 2: You can decide to use versioning and choose what content should be staged.](../../../images/staging-page-versioning-staged-content.png)
+![Figure 1: You can decide to use versioning and choose what content should be staged.](../../../../images/staging-page-versioning-staged-content.png)
 
 You can also choose content for the staging environment to manage on the Staging
 Configuration page.

@@ -1,4 +1,4 @@
-# Enabling Local Live Staging
+# Enabling Local Live Staging [](id=enabling-local-live-staging)
 
 Staging allows changes to be made in a staging environment so that work can be
 reviewed, possibly using a workflow, before it's published to a live site. With
@@ -48,7 +48,7 @@ to be enabled.
 If you ever need to turn off the staging environment, return back to *Staging*
 from the Publishing dropdown. The processes you've created are displayed by
 default. Navigate to the *Options* icon
-(![Options](../../../images/icon-options.png)) from the upper right corner of
+(![Options](../../../../images/icon-options.png)) from the upper right corner of
 the page and select *Staging Configuration*. Select the *None* radio button to
 turn Local Live staging off. Please note that this operation removes the staging
 environment altogether, so all content that was not published to your live site

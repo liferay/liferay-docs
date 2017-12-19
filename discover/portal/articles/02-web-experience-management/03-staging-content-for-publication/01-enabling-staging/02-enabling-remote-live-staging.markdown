@@ -103,7 +103,7 @@ a site administrator. Then navigate to the *Publishing* option in Site
 Administration and select *Staging*. Select *Remote Live* and additional options
 appear.
 
-![Figure 1: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../../images/remote-live-staging-settings.png)
+![Figure 1: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../../../images/remote-live-staging-settings.png)
 
 First, enter your remote Liferay server's IP address into the Remote Host/IP
 field. If the remote Liferay server is a cluster, you can set the Remote Host/IP
@@ -174,7 +174,7 @@ top Control Menu. The changes are published to your remote staged site.
 
 $$$
 
-## Remote Live Staging Verification
+## Remote Live Staging Verification [](id=remote-live-staging-verification)
 
 Before publishing *any* content, verify that **all** the necessary steps above
 have been completed. Otherwise, Remote Staging will fail.

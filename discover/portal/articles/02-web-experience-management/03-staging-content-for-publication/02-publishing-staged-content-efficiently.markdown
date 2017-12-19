@@ -1,11 +1,11 @@
-# Publishing Staged Content Efficiently
+# Publishing Staged Content Efficiently [](id=publishing-staged-content-efficiently)
 
 Now that you have a firm grasp on how staging works, you'll dive deeper into the
 publication process and some prerequisites you should follow before publishing.
 By understanding how the process works, you can make smart and informed
 decisions about how you want to publish your site's content.
 
-## Understanding the Publication Process
+## Understanding the Publication Process [](id=understanding-the-publication-process)
 
 In simple terms, publication is the process where all content, referenced
 content, apps and their preferences, pages, etc. are transferred from
@@ -49,7 +49,7 @@ their database and their file system are being maintained.
 Next, you'll learn about staging best practices and prerequisites to follow for
 a seamless staging experience.
 
-## Planning Ahead for Staging
+## Planning Ahead for Staging [](id=planning-ahead-for-staging)
 
 Staging is a complex subsystem of @product@ that is designed to be flexible and
 scalable. Before advanced users and administrators begin using it for their
