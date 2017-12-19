@@ -50,8 +50,10 @@ the `META-INF/MANIFEST.MF` file:
     avax.sql
 
 Note that you only need to specify JAR file dependencies. bnd examines your
-application to determine which packages from those JAR files contain classes
-your application uses and thus must be imported.
+module's class path to determine which packages from those JAR files contain
+classes your application uses and thus must be imported. The examination
+includes
+[third party library JARs and classes found in the class path](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module)). 
 
 For traditional Liferay plugin WARs,
 [Liferay's WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
