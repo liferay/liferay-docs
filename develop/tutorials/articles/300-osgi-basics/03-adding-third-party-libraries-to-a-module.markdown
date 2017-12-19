@@ -27,13 +27,59 @@ name are added inside a module's `META-INF/services/` folder, one will overwrite
 the other. In such a case, you can expand parts of each library into your
 module, making sure to not add descriptors that use the same name.
 
-You'll learn how to add libraries using both ways next.
+You'll learn how to add libraries using both ways. But first, consider the suggested workflow for adding the library packages you need, while avoiding unneeded packages. 
+
+## Workflow for Adding Packages from Libraries
+
+Parts of a library might depend on (even optionally depend on) other libraries
+or parts of libraries your module doesn't need. Filtering on packages your
+module and its transitive dependencies need avoids bloating your module JAR and
+can help you satisfy your module's true dependencies faster. 
+
+**Important**: bnd detects packages referenced in the module's class path,
+including those referenced in third party JARs and third party classes, and adds
+the packages to the module manifest's `Import-Package` header. Ideally, your
+module should only import packages it uses and its transitive dependency classes
+use. In this way, you avoid configuring dependencies on bundles you don't need. 
+
+Here's a configuration workflow that minimizes dependencies and package imports:
+
+1.  Add the library as a compile only dependency (e.g., `compileOnly` in
+    Gradle).
+
+2.  Filter on the packages you need from the library by specifying them in a
+    conditional package instruction (`Conditional-Package`) in your `bnd.bnd`
+    file. Here are some examples:
+
+    `Conditional-Package: foo.common*` adds packages your module's byte code
+    uses such as `foo.common`, `foo.common-messages`, `foo.common-web` to your
+    module's class path. 
+
+    `Conditional-Package: foo.bar.*` adds packages your module's bytecode uses
+    such as `foo.bar` and all of its sub-packages (e.g., `foo.bar.baz`,
+    `foo.bar.biz`, etc.) to your module's class path.  
+
+2.  If your module requires most or all of the library's packages, consider
+    including the entire library in your module's classpath. 
+
+    **Gradle**: Use the `compileInclude` dependency configuration. See
+    [Embedding a Library using Gradle](#embedding-libraries-using-gradle). 
+
+    **Maven/Ant**: Specify a dependency in the `provided` scope and add an
+    `-includeresource` instruction in the `bnd.bnd` file. See 
+    [Embedding a Library using Maven or Ivy](embedding-libraries-using-maven-or-ivy).
+
+3.  Lastly, refine package imports by negating packages that aren't used by your module or any of the library's packages. For example, here's how to negate importing package `foo.bar.baz` in your `bnd.bnd`:
+
+    `Import-Package: !foo.bar.baz`
+
+Next you'll explore embedding libraries in a module. 
 
 ## Embedding Libraries in a Module [](id=embedding-libraries-in-a-module)
 
 You can use Gradle, Maven, or Ivy to embed libraries in your module. 
 
-### Embedding Libraries Using Gradle [](id=embedding-libraries-using-gradle)
+### Embedding a Library Using Gradle [](id=embedding-libraries-using-gradle)
 
 Liferay's Gradle plugin `com.liferay.plugin` automates several third party
 library configuration steps. The plugin is applied to
@@ -82,12 +128,20 @@ header in the module's manifest.
 
 **Note**: The `compileInclude` configuration does not download transitive
 [optional dependencies](https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html).
-If your module requires such artifacts, add them as `compileInclude`
-dependencies. 
+If your module requires such artifacts, add them as you would another third party library. 
 
 $$$
 
-### Embedding Libraries Using Maven or Ivy [](id=embedding-libraries-using-maven-or-ivy)
++$$$
+
+**Note:** If the library you've added as a dependency in your `build.gradle`
+file has transitive dependencies, you can reference them in an
+`-includeresource:` instruction (see how it's used in the Maven section next) by
+name without having to add them explicitly to the list of dependencies.
+
+$$$
+
+### Embedding a Library Using Maven or Ivy [](id=embedding-libraries-using-maven-or-ivy)
 
 To embed a library in your module using Maven or Ivy, follow these steps:
 
@@ -122,15 +176,6 @@ To embed a library in your module using Maven or Ivy, follow these steps:
 
 Your library is now embedded and its resources are available to use in your
 module.
-
-+$$$
-
-**Note:** If the library you've added as a dependency in your `build.gradle`
-file has transitive dependencies, those may also be referenced in the
-`-includeresource:` instruction by name without having to add them explicitly to
-the list of dependencies.
-
-$$$
 
 Next, you'll learn how to expand parts of libraries into a module. 
 
