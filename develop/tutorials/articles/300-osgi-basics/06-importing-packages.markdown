@@ -36,16 +36,18 @@ headers to the `META-INF/MANIFEST.MF` file in your module's JAR file.
 Here's an example dependencies section from a module's `build.gradle` file:
 
     dependencies {
-        provided group: "com.liferay", name: "com.liferay.petra.string", version: "1.0.0"
-        provided group: "org.osgi", name: "org.osgi.core", version: "5.0.0"
-        provided group: "org.slf4j", name: "slf4j-api", version: "1.7.2"
+        compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+        compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+        compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
     }
 
 And here's the generated `Import-Package` header that's generated in
 the `META-INF/MANIFEST.MF` file:
 
-    Import-Package: com.liferay.petra.string;version="[1.0,2)",org.osgi.fra
-    mework;version="[1.7,2)",org.slf4j;version="[1.7,2)"
+    Import-Package: com.liferay.portal.kernel.portlet.bridges.mvc;version=
+    "[1.0,2)",com.liferay.portal.kernel.util;version="[7.0,8)",javax.nami
+    ng,javax.portlet;version="[2.0,3)",javax.servlet,javax.servlet.http,j
+    avax.sql
 
 Note that you only need to specify JAR file dependencies. bnd examines your
 application to determine which packages from those JAR files contain classes
