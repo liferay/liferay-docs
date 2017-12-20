@@ -173,6 +173,16 @@ If the user has VIEW permission on an asset, then the asset is returned in the
 search results.
 <!-- What about assets whose indexers have setPermissionAware(false), like WikiNode-->
 
+Another important concept is that of *post filtering*. Search results are
+returned from the search index to the Search portlet, and the number of returned
+assets are presented in the UI. After that, the search view is filtered with
+some last minute permission checks (for a limited set of assets). For example,
+if a search returns hits to a forum message that's inside a category the user
+doesn't have permission to view, it is post filtered from the results. Because
+the facet count isn't updated, this can result in inaccurate counts in the UI.
+This is a problem that will be fixed in the next version of the Search
+application.
+
 ## Search and Staging [](id=search-and-staging)
 
 @product@ supports the concept of
