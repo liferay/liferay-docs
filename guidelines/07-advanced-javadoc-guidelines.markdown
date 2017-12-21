@@ -204,8 +204,8 @@ The preferred format for common `@deprecated` messages are listed below.
 you're providing a class/method link in the same module it resides in.
 Therefore, if you need to refer to a class in your `@deprecated` tag, you'll
 need to follow a slightly different pattern. See the
-[Javadoc Linking](../javadoc-guidelines#javadoc-linking) section for more
-details.
+[Javadoc Linking](06-javadoc-guidelines.markdown#javadoc-linking) section for
+more details.
 
 ## Method Descriptions
 

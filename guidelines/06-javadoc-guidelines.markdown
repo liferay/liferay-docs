@@ -16,7 +16,7 @@ methods. Subsequent sections guide you in describing the
 [submitting your contributions](#sending-your-pull-request). This article covers
 the main points and most important rules to follow. If you're interested in an
 extensive amount of examples and more advanced information, visit the
-[Advanced Javadoc Guidelines](../advanced-javadoc-guidelines).
+[Advanced Javadoc Guidelines](07-advanced-javadoc-guidelines.markdown).
 
 ## Module Comments
 
@@ -52,17 +52,19 @@ comment:
 		 additional information is not necessary if the initial paragraph provides
 		 an adequate description.
     - Usage examples or `@link` tags to where the class can be seen in use.
-- [@author tags](../advanced-javadoc-guidelines#author-tags) for each author of
-  the class, from first to most recent. (**required**)
-- [@see tags](../advanced-javadoc-guidelines#see-tags) to other closely related
-  classes whose Javadocs gives the reader a clearer picture of the purpose of
-	this class.
-- [@since tags](../advanced-javadoc-guidelines#since-tags). (as applicable)
-- [@deprecated tags](../advanced-javadoc-guidelines#deprecated-tags). (as
-	applicable)
+- [@author tags](07-advanced-javadoc-guidelines.markdown#author-tags) for each
+  author of the class, from first to most recent. (**required**)
+- [@see tags](07-advanced-javadoc-guidelines.markdown#see-tags) to other closely
+  related classes whose Javadocs gives the reader a clearer picture of the
+  purpose of this class.
+- [@since tags](07-advanced-javadoc-guidelines.markdown#since-tags). (as
+  applicable)
+- [@deprecated tags](07-advanced-javadoc-guidelines.markdown#deprecated-tags).
+  (as applicable)
 
 For more detailed information and examples for writing class descriptions, see
-the [Class Descriptions](../advanced-javadoc-guidelines#class-descriptions)
+the
+[Class Descriptions](07-advanced-javadoc-guidelines.markdown#class-descriptions)
 section. A simple example class comment is provided below:
 
 Example (class comment):
@@ -106,20 +108,23 @@ method:
 
 The following information should always be present in the following order in the Javadoc tags for the method:
 
-- [@param](../advanced-javadoc-guidelines#param-tags) - The method parameters,
-  in order, with descriptions.
-- [@return](../advanced-javadoc-guidelines#return-tags) - All possible return
-  values, including `null`. If the method is void, do not include this.
-- [@throws](../advanced-javadoc-guidelines#throws-tags) - The exceptions the
-  method can throw, in order, with explanations of what would trigger them.
-- [@see](../advanced-javadoc-guidelines#see-tags-for-methods) - (as applicable)
-- [@since](../advanced-javadoc-guidelines#since-tags-for-methods) - (as
+- [@param](07-advanced-javadoc-guidelines.markdown#param-tags) - The method
+  parameters, in order, with descriptions.
+- [@return](07-advanced-javadoc-guidelines.markdown#return-tags) - All possible
+  return values, including `null`. If the method is void, do not include this.
+- [@throws](07-advanced-javadoc-guidelines.markdown#throws-tags) - The
+  exceptions the method can throw, in order, with explanations of what would
+  trigger them.
+- [@see](07-advanced-javadoc-guidelines.markdown#see-tags-for-methods) - (as
+  applicable)
+- [@since](07-advanced-javadoc-guidelines.markdown#since-tags-for-methods) - (as
 	applicable)
-- [@deprecated](../advanced-javadoc-guidelines#deprecated-tags-for-methods) -
+- [@deprecated](07-advanced-javadoc-guidelines.markdown#deprecated-tags-for-methods) -
   (as applicable)
 
 For more detailed information and examples for writing method descriptions, see
-the [Method Descriptions](/../advanced-javadoc-guidelines#method-descriptions)
+the
+[Method Descriptions](07-advanced-javadoc-guidelines.markdown#method-descriptions)
 section. A simple class description is provided below:
 
 Example (method comments):
@@ -170,9 +175,9 @@ public String[] getPreferencesValues(
 4.  Describe the most important details in the first sentence, because it is the
     only one shown in the class/method summary.
 5.  Include all relevant tags
-    ([@param](../advanced-javadoc-guidelines#param-tags),
-    [@return](../advanced-javadoc-guidelines#return-tags), etc.) for each
-    method; without them, the method Javadoc is incomplete.
+    ([@param](07-advanced-javadoc-guidelines.markdown#param-tags),
+    [@return](07-advanced-javadoc-guidelines.markdown#return-tags), etc.) for
+    each method; without them, the method Javadoc is incomplete.
 6.  Start a method description with *Returns*, if the method returns a value.
 7.  Don’t explicitly refer to collections in descriptions (e.g.,
     *list of articles*). Use, instead, the plural (e.g., *the articles*) or *all
@@ -187,21 +192,24 @@ public String[] getPreferencesValues(
 10. Refer to primary keys explicitly, even when the parameter is an ID. For
     example, use *the primary key of the something* instead of *the ID of the
     something*.
-11. Begin [boolean parameter](../advanced-javadoc-guidelines#parameter-boolean)
+11. Begin
+    [boolean parameter](07-advanced-javadoc-guidelines.markdown#parameter-boolean)
     descriptions with *whether*.
 12. Punctuate every class and method description (sentence or phrase) with a
     period.
 13. Only punctuate an initial description (sentence or phrase) for a method tag
-    [@param](../advanced-javadoc-guidelines#param-tags),
-    [@return](../advanced-javadoc-guidelines#return-tags), or
-    [@throws](../advanced-javadoc-guidelines#throws-tags) if it's followed by a
-    sentence(s). Write followup text in complete sentences.
+    [@param](07-advanced-javadoc-guidelines.markdown#param-tags),
+    [@return](07-advanced-javadoc-guidelines.markdown#return-tags), or
+    [@throws](07-advanced-javadoc-guidelines.markdown#throws-tags) if it's
+    followed by a sentence(s). Write followup text in complete sentences.
 14. Describe exceptions (e.g.,
-	  [@throws](../advanced-javadoc-guidelines#throwstags)) in past tense.
+	  [@throws](07-advanced-javadoc-guidelines.markdown#throwstags)) in past
+    tense.
 15. Only include a class's package in an *@see* and *@link* tag if the class is
     in another package. Refer to the
-    [Javadoc Linking](../advanced-javadoc-guidelines#javadoc-linking) subsection
-    for comprehensive rules and examples on linking to other methods/classes.
+    [Javadoc Linking](07-advanced-javadoc-guidelines.markdown#javadoc-linking)
+    subsection for comprehensive rules and examples on linking to other
+    methods/classes.
 16. Don't wrap the first paragraph of a Javadoc comment with paragraph tags. Do
     wrap subsequent paragraphs with paragraph tags (e.g.,
     `<p>second paragraph</p>`).
@@ -308,4 +316,4 @@ please open an [LRDOCS](https://issues.liferay.com/browse/LRDOCS) JIRA ticket:
   and/or the Javadoc removal commit
 
 For more extensive examples and comprehensive guidelines, visit the
-[Advanced Javadoc Guidelines](../advanced-javadoc-guidelines) article.
+[Advanced Javadoc Guidelines](07-advanced-javadoc-guidelines.markdown) article.
