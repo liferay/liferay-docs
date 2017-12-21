@@ -203,7 +203,7 @@ public String[] getPreferencesValues(
     [@throws](07-advanced-javadoc-guidelines.markdown#throws-tags) if it's
     followed by a sentence(s). Write followup text in complete sentences.
 14. Describe exceptions (e.g.,
-	  [@throws](07-advanced-javadoc-guidelines.markdown#throwstags)) in past
+	  [@throws](07-advanced-javadoc-guidelines.markdown#throws-tags)) in past
     tense.
 15. Only include a class's package in an *@see* and *@link* tag if the class is
     in another package. Refer to the
@@ -262,9 +262,7 @@ your Javadoc changes to the JSON interface for the class.
     To format Javadoc in a class you've edited in a Liferay Portal Core module
     (e.g., in `portal-kernel`, `portal-impl`, etc), run:
 
-    ```
-		ant format-javadoc -Dlimit=SomeClassName
-		```
+		    ant format-javadoc -Dlimit=SomeClassName
 
     There are several other alternative options for invoking basic Javadoc
     formatting and updates.
@@ -281,21 +279,21 @@ your Javadoc changes to the JSON interface for the class.
 
 3. Building Javadoc (optional)
 
-To optionally build a module's Javadoc HTML to the module's `build/docs/` folder
-to see what it looks like, execute this:
+    To optionally build a module's Javadoc HTML to the module's `build/docs/`
+    folder to see what it looks like, execute this:
 
-    gradlew javadoc
+        gradlew javadoc
 
-Javadoc HTML is only generated for modules that export their packages. This is
-because modules that do not export their packages are not considered public API,
-so there's no need to generate them. To check if your module exports packages,
-open its `bnd.bnd` file in the root folder and verify it has the following
-syntax:
+    Javadoc HTML is only generated for modules that export their packages. This
+    is because modules that do not export their packages are not considered
+    public API, so there's no need to generate them. To check if your module
+    exports packages, open its `bnd.bnd` file in the root folder and verify it
+    has the following syntax:
 
-    Export-Package:\
+        Export-Package:\
 
-If it doesn't but you'd still like to generate HTML to see what it looks like,
-add the above syntax followed by the packages you want to generate.
+    If it doesn't but you'd still like to generate HTML to see what it looks
+    like, add the above syntax followed by the packages you want to generate.
 
 ## Sending Your Pull Request
 
@@ -306,10 +304,9 @@ Hoag (GitHub user: `codyhoag`). Specify your Jira ticket number and the word
 To request **re-adding** Javadoc or comments that have been removed from a file,
 please open an [LRDOCS](https://issues.liferay.com/browse/LRDOCS) JIRA ticket:
 
+- **Issue Type:** API
 - **Summary:** Re-add Javadoc for .... (name or prefix of class/file)
-- **Component:**
-    - *API-Javadoc* - For Javadoc
-    - *Config Files* - For comments/descriptions in properties, XML, or DTD
+- **Component:** Area the Javadoc pertains to
 		files
 - **Affected Release:** 7.0.x, 6.2.x, 6.1.x
 - **Description:** Include the *commit number* of the original Javadoc commit

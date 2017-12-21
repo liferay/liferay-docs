@@ -2,54 +2,54 @@
 
 ## Table of Contents
 
-1. Class Descriptions
-2. Class Javadoc Tags
-    - @author tags
-    - @see tags
-    - @since tags
-    - @deprecated tags
-3. Method Descriptions
-    - Initial Method Descriptions
-    - Detailed Method Descriptions
-    - More on Method Descriptions
-4. Method Javadoc Tags
-    - @param tags
-    - @return tags
-    - @throws tags
-    - @see tags for methods
-    - @since tags for methods
-    - @deprecated tags for methods
-5. Javadoc Linking
-6. Formatting Tags
-7. Examples
-    - Class: Initial and detailed description
-    - Constructor: with parameters
-    - Method: Get by primary key
-    - Method: Deletes/Removes something
-    - Method: Get/search/count matching a single field
-    - Method: Get/search/count matching multiple fields
-    - Method: Get/search/count by field-to-keyword matching
-    - Method: Get/search/count by Combined Field Value and Field-to-Keyword Matching
-    - Method: Returning a boolean
-    - Method: Returning a count
-    - Method: Returning a collection
-    - Method: Returning an ordered range of values
-    - Method: Returning ordered values NOT as a range of values
-    - Method: Returning a ranged collection
-    - Method: Describing overloaded methods
-    - Method: Password Policy Methods
-    - Method: Uses a property
-    - Parameter: Primary key
-    - Parameter: Attribute/field
-    - Parameter: Boolean
-    - Parameter: ClassNameId
-    - Parameter: Entity (primary)
-    - Parameter: ServiceContext
-    - Parameter: And/or operator
-    - Parameter: Refer reader to more information
-    - Field
-    - Return: Ordered collection
-    - Return: Significantly varying values
+1. [Class Descriptions](#class-descriptions)
+2. [Class Javadoc Tags](#class-javadoc-tags)
+    - [@author tags](#author-tags)
+    - [@see tags](#see-tags)
+    - [@since tags](#since-tags)
+    - [@deprecated tags](#deprecated-tags)
+3. [Method Descriptions](#method-descriptions)
+    - [Initial Method Descriptions](#initial-method-descriptions)
+    - [Detailed Method Descriptions](#detailed-method-descriptions)
+    - [More on Method Descriptions](#more-on-method-descriptions)
+4. [Method Javadoc Tags](#method-javadoc-tags)
+    - [@param tags](#param-tags)
+    - [@return tags](#return-tags)
+    - [@throws tags](#throws-tags)
+    - [@see tags for methods](#see-tags-for-methods)
+    - [@since tags for methods](#since-tags-for-methods)
+    - [@deprecated tags for methods](#deprecated-tags-for-methods)
+5. [Javadoc Linking](#javadoc-linking)
+6. [Formatting Tags](#formatting-tags)
+7. [Examples](#examples)
+    - [Class: Initial and detailed description](#class-initial-and-detailed-description)
+    - [Constructor: with parameters](#constructor-with-parameters)
+    - [Method: Get by primary key](#method-get-by-primary-key)
+    - [Method: Deletes/Removes something](#method-deletesremoves-something)
+    - [Method: Get/search/count matching a single field](#method-getsearchcount-matching-a-single-field)
+    - [Method: Get/search/count matching multiple fields](#method-getsearchcount-matching-multiple-fields)
+    - [Method: Get/search/count by field-to-keyword matching](#method-getsearchcount-by-field-to-keyword-matching)
+    - [Method: Get/search/count by Combined Field Value and Field-to-Keyword Matching](#method-getsearchcount-by-combined-field-value-and-field-to-keyword-matching)
+    - [Method: Returning a boolean](#method-returning-a-boolean)
+    - [Method: Returning a count](#method-returning-a-count)
+    - [Method: Returning a collection](#method-returning-a-collection)
+    - [Method: Returning an ordered range of values](#method-returning-an-ordered-range-of-values)
+    - [Method: Returning ordered values NOT as a range of values](#method-returning-ordered-values-not-as-a-range-of-values)
+    - [Method: Returning a ranged collection](#method-returning-a-ranged-collection)
+    - [Method: Describing overloaded methods](#method-describing-overloaded-methods)
+    - [Method: Password Policy Methods](#method-password-policy-methods)
+    - [Method: Uses a property](#method-uses-a-property)
+    - [Parameter: Primary key](#parameter-primary-key)
+    - [Parameter: Attribute/field](#parameter-attributefield)
+    - [Parameter: Boolean](#parameter-boolean)
+    - [Parameter: ClassNameId](#parameter-classnameid)
+    - [Parameter: Entity (primary)](#parameter-entity-primary)
+    - [Parameter: ServiceContext](#parameter-servicecontext)
+    - [Parameter: And/or operator](#parameter-andor-operator)
+    - [Parameter: Refer reader to more information](#parameter-refer-reader-to-more-information)
+    - [Field](#field)
+    - [Return: Ordered collection](#return-ordered-collection)
+    - [Return: Significantly varying values](#return-significantly-varying-values)
 
 ## Class Descriptions
 
