@@ -8,6 +8,8 @@ services. Here are the ways to configure logging for module classes and class hi
     `[anyModule]/src/main/resources/META-INF/module-log4j.xml` file.
 -   Configure Log4j for a specific module in a
     `[Liferay Home]/osgi/log4j/[symbolicNameOfBundle]-log4j-ext.xml` file.
+-   Configure Log4j for an OSGi fragment host module in a
+    `/META-INF/module-log4j-ext.xml` file
 
 Here's an example Log4j XML configuration:
 
