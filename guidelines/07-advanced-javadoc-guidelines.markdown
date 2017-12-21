@@ -900,7 +900,8 @@ For a working example, see
 The primary key need not be mentioned in the method description, as the primary
 key is part of the method signature and should have a parameter description.
 
-**Method Description Pattern:** Returns the *&lt;something>* with the primary key
+**Method Description Pattern:** Returns the *&lt;something>* with the primary
+key.
 
 **Return Tag Pattern:** the *&lt;something of this thing>*
 
@@ -1010,7 +1011,7 @@ If a method returns a boolean, only the condition(s) for which the method
 returns `true` need be included in the initial method description.
 
 **Method Description Pattern:** Returns &lt;code>true&lt;/code> if
-*&lt;satisfying condition(s)>*
+*&lt;satisfying condition(s)>*.
 
 **Return Tag Pattern:** &lt;code>true&lt;/code> if *&lt;something>*;
 &lt;code>false&lt;/code> otherwise
@@ -1069,7 +1070,7 @@ If the collection returned is ordered, mention that in the method description.
 
 **Method Description Pattern:** Returns an ordered range of ... .
 
-**Return Tag Pattern:** the *&lt;something>*s of *&lt;this thing>* (Note, do
+**Return Tag Pattern:** the *&lt;something>s* of *&lt;this thing>* (Note, do
 not refer to the collection type; instead, refer to the something in plural
 form)
 
@@ -1428,7 +1429,7 @@ to the parameter, add a sentence with a link to that information.
 **Example:**
 
 ```
- * @param  params the finder params. For more information see {@link
+ * @param  params the finder params. For more information, see {@link
  *         com.liferay.portal.service.persistence.OrganizationFinder}
 ```
 
