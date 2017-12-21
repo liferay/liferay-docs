@@ -73,7 +73,7 @@ Here are some rules of thumb for initial class descriptions:
 
     ```
     Provides the base model interface for the User service. Represents a row in
-    the <code>User</code database table, with each column mapped to a property
+    the <code>User</code> database table, with each column mapped to a property
     of this class.
     ```
 
@@ -82,7 +82,7 @@ Here are some rules of thumb for initial class descriptions:
 
     ```
     Provides the base model implementation for the User service. Represents
-    a row in the &quot;User_&quot; database table, with each column mapped to a
+    a row in the <code>User</code> database table, with each column mapped to a
     property of this class.
     ```
 
@@ -98,8 +98,8 @@ Here are some rules of thumb for initial class descriptions:
 
     In the above example:
 
-    - State what entity the class represents (Represents a portal user,)
-    - Describe what the entity provides (providing access to the user's *[summary of methods]*).
+    - State what entity the class represents (*Represents a portal user,*)
+    - Describe what the entity provides (*providing access to the user's &lt;summary of methods>*).
 
 - **For service implementations (ServiceImpls)**
 
@@ -107,9 +107,8 @@ Here are some rules of thumb for initial class descriptions:
 
 | Class Type | Initial Description Pattern
 | :--------- | :--------------------------
-| LocalServiceImpl | Provides the local service for *[summary of methods using actions ending in "ing"][entities (plural)]*.
-| ServiceImpl | Provides the remote service for *[summary of methods using actions ending in "ing"][entities (plural)]*.
-
+| LocalServiceImpl | Provides the local service for *&lt;summary of methods using actions ending in "ing">&lt;entities (plural)>*.
+| ServiceImpl | Provides the remote service for *&lt;summary of methods using actions ending in "ing">&lt;entities (plural)>*.
 
 Example from `DLAppLocalServiceImpl`:
 
@@ -313,7 +312,7 @@ public Organization getOrganization(long organizationId)
 
 - When describing a specific parameter, refer to it with "the", not "a" or "given".
 
-- By using "the" (e.g. "the parent folder") it is assumed the reader will
+- By using "the" (e.g., "the parent folder") it is assumed the reader will
   understand we are referring to an entity related to a parameter (e.g. the
   folder associated with parameter `parentFolderId`).
 
@@ -527,7 +526,7 @@ errors.
 
     Pattern: `@throws PortalException if <reason type1> or if <reason type2>`
 
-```
+```java
 /**
  * ...
  * @throws PortalException if a creator or parent organization with the
@@ -605,7 +604,7 @@ replacement method) to make sure the link works and that it is referring to the
 intended target.
 
 For a working example, see
-[UserImpl.getDisplayURL(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-impl/com/liferay/portal/model/impl/UserImpl.html#getDisplayURL(java.lang.String,%20java.lang.String).
+[UserImpl.getDisplayURL(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-impl/com/liferay/portal/model/impl/UserImpl.html#getDisplayURL(java.lang.String,%20java.lang.String)).
 
 **Important:** You cannot link to classes/methods in Liferay modules unless
 you're providing a class/method link in the same module it resides in.
@@ -880,8 +879,8 @@ Note the following from this example:
 
 ### Constructor: with parameters
 
-**Constructor Description Pattern:** Constructs a new <something> with ... <list
-each parameter in layman's terms>
+**Constructor Description Pattern:** Constructs a new *&lt;something>* with ...
+*&lt;list each parameter in layman's terms>*.
 
 ```java
 /**
@@ -901,9 +900,9 @@ For a working example, see
 The primary key need not be mentioned in the method description, as the primary
 key is part of the method signature and should have a parameter description.
 
-**Method Description Pattern:** Returns the <something> with the primary key
+**Method Description Pattern:** Returns the *&lt;something>* with the primary key
 
-**Return Tag Pattern:** the <something of this thing>
+**Return Tag Pattern:** the *&lt;something of this thing>*
 
 ```java
 /**
@@ -923,17 +922,17 @@ For a working example, see
 The primary key need not be mentioned in the method description, as the primary
 key is part of the method signature and should have a parameter description.
 
-**Method Description Pattern:** Deletes the <something> **OR** Removes the
-<something>
+**Method Description Pattern:** Deletes the *&lt;something>* **OR** Removes the
+*&lt;something>*
 
-**Return Tag Pattern:** the something that was removed
+**Return Tag Pattern:** the *&lt;something that was removed>*
 
 ### Method: Get/search/count matching a single field
 
 Methods that involve straight matching of fields to simple values should use the
 following pattern:
 
-**Method Description Pattern:** Returns <something> with the <field1>... .
+**Method Description Pattern:** Returns *&lt;something>* with the *&lt;field1>*... .
 
 Example:
 
@@ -956,8 +955,8 @@ At times, the method may have a whole set of parameters used to find/match an
 entity instance. To simplify things, describe your method as "matching" these
 parameters and list the parameters.
 
-**Method Description Pattern:** Returns <something> matching the <field1>
-[,<field2>, ... <fieldN>] and <fieldN+1> 
+**Method Description Pattern:** Returns *&lt;something>* matching the *&lt;field1>
+[,&lt;field2>, ... &lt;fieldN>]* and *&lt;fieldN+1>*.
 
 Example:
 
@@ -978,8 +977,8 @@ For working examples, see
 Methods for which individual fields are matched with corresponding keyword
 parameters, should follow the pattern below:
 
-**Method Description Pattern:** Returns <somethings> whose <fieldA>[, <fieldB>,
-... or <fieldZ>] match the keywords specified for them.
+**Method Description Pattern:** Returns *&lt;somethings>* whose *&lt;fieldA>[,
+&lt;fieldB>, ... or &lt;fieldZ>]* match the keywords specified for them.
 
 ### Method: Get/search/count by Combined Field Value and Field-to-Keyword Matching
 
@@ -987,9 +986,9 @@ Methods for which straight matching of fields to simple values is done, and for
 which individual fields are matched with corresponding keyword parameters,
 should follow the pattern below:
 
-**Method Description Pattern:** Returns <somethings> with the <field1>[,
-<field2>, ... and <fieldn>], and whose <fieldA>[, <fieldB>, … and <fieldZ>]
-match the keywords specified for them.
+**Method Description Pattern:** Returns *&lt;somethings>* with the *&lt;field1>[,
+&lt;field2>, ... and &lt;fieldn>]*, and whose *&lt;fieldA>[,
+&lt;fieldB>, … and &lt;fieldZ>]* match the keywords specified for them.
 
 ```java
 /**
@@ -1011,9 +1010,9 @@ If a method returns a boolean, only the condition(s) for which the method
 returns `true` need be included in the initial method description.
 
 **Method Description Pattern:** Returns &lt;code>true&lt;/code> if
-<satisfying condition(s)>
+*&lt;satisfying condition(s)>*
 
-**Return Tag Pattern:** &lt;code>true&lt;/code> if <something>;
+**Return Tag Pattern:** &lt;code>true&lt;/code> if *&lt;something>*;
 &lt;code>false&lt;/code> otherwise
 
 ```java
@@ -1034,7 +1033,7 @@ For a working example, see
 
 If a method returns some sort of count, then use the following pattern:
 
-**Method Description Pattern:** Returns the number of <something> ... .
+**Method Description Pattern:** Returns the number of *&lt;something>* ... .
 
 Hint, if a method name contains the word "Count" or the method returns an `int`,
 it may qualify for this pattern.
@@ -1046,10 +1045,10 @@ For a working example, see
 
 Precede the reference to the entity instances with the term "all the".
 
-**Method Description Pattern:** Returns ... all the <entities> ... .
+**Method Description Pattern:** Returns ... all the *&lt;entities>* ... .
 
-**Return Tag Pattern:** the <something>s of <this thing> (Note, do not refer to
-the collection type; instead, refer to the something in plural form)
+**Return Tag Pattern:** the *&lt;something>s* of *&lt;this thing>* (Note, do not
+refer to the collection type; instead, refer to the something in plural form)
 
 ```java
 /**
@@ -1070,8 +1069,9 @@ If the collection returned is ordered, mention that in the method description.
 
 **Method Description Pattern:** Returns an ordered range of ... .
 
-**Return Tag Pattern:** the <something>s of <this thing> (Note, do not refer to
-  the collection type; instead, refer to the something in plural form)
+**Return Tag Pattern:** the *&lt;something>*s of *&lt;this thing>* (Note, do
+not refer to the collection type; instead, refer to the something in plural
+form)
 
 ```java
 /**
@@ -1111,8 +1111,8 @@ start and end index, refer to the subset as a range.
 
 **Method Description Pattern:** Returns an ordered range of ... .
 
-**Return Tag Pattern:** the <something>s of <this thing> (Note, do not refer to
-the collection type; instead, refer to the something in plural form)
+**Return Tag Pattern:** the *&lt;something>s* of *&lt;this thing>* (Note, do not
+refer to the collection type; instead, refer to the something in plural form)
 
 ```java
 /**
@@ -1210,7 +1210,7 @@ an entities to password policies.
 - Password Policy - Add
 
     **Method Description Pattern:** Assigns the password policy to the
-    <entity(s)>, removing any other currently assigned password policies.
+    *&lt;entity(s)>*, removing any other currently assigned password policies.
 
     For a working example, see
     [UserService.addPasswordPolicyUsers(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserService.html#addPasswordPolicyUsers(long,%20long[])).
@@ -1218,15 +1218,15 @@ an entities to password policies.
 - Password Policy - Has
 
     **Method Description Pattern:** Returns &lt;code>true&lt;/code> if the
-    password policy has been assigned to the <entity>.
+    password policy has been assigned to the *&lt;entity>*.
 
     For a working example, see
     [UserLocalServiceImpl.hasPasswordPolicyUser(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-impl/com/liferay/portal/service/impl/UserLocalServiceImpl.html#hasPasswordPolicyUser(long,%20long)).
 
 - Password Policy - Unset
 
-    **Method Description Pattern:** Removes the <entity(s)> from the password
-    policy.
+    **Method Description Pattern:** Removes the *&lt;entity(s)>* from the
+    password policy.
 
     For a working example, see
     [UserService.unsetPasswordPolicyUsers(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserService.html#unsetPasswordPolicyUsers(long,%20long[])).
@@ -1323,13 +1323,13 @@ pattern below based on which class name is being used.
 
 - Uses own service model's class name ID - True
 
-    **Parameter Description Pattern:** the primary key of the <entity's> class
-    name
+    **Parameter Description Pattern:** the primary key of the *&lt;entity's>*
+    class name
 
 - Uses a related model's class name ID - True
 
     **Parameter Description Pattern:** the primary key of the class name for the
-    <entity's> related model
+    *&lt;entity's>* related model
 
 ### Parameter: Entity (primary)
 
@@ -1375,9 +1375,9 @@ Here are the rules to follow:
 **Parameter Tag Pattern:**
 
 @param serviceContext the service context to be applied [
-(optionally <code>null</code>) ] . [ Must set the <field1> [, <field2>, ... and
-<fieldN> ] for the <entity>. ] [ Can (set | merge) the <fieldA> [, <fieldB>, ...
-and <fieldZ> ] for the <entity>. ]
+(optionally &lt;code>null&lt;/code>) ] . [ Must set the *&lt;field1> [, &lt;field2>, ... and
+&lt;fieldN> ]* for the *&lt;entity>*. ] [ Can *(set | merge)* the *&lt;fieldA> [, &lt;fieldB>, ...
+and &lt;fieldZ> ]* for the *&lt;entity>*. ]
 
 ```java
 /**
@@ -1423,7 +1423,7 @@ to the parameter, add a sentence with a link to that information.
 **Parameter Tag Pattern:**
 
 @param the parameter's description. For more information see {@link
-fully-qualified class name}.
+*&lt;fully-qualified class name>*}.
 
 **Example:**
 
