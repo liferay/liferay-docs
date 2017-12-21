@@ -13,8 +13,8 @@ provide you with simple instructions on how to describe Java classes and
 methods. Subsequent sections guide you in describing the
 [most important tips](#top-tips) for writing Javadoc,
 [formatting and building Javadoc](#formatting-and-building-javadoc), and
-[submitting your contributions](#sending-your-pull-request). This article covers
-the main points and most important rules to follow. If you're interested in an
+[submitting your contributions](#submitting-javadoc). This article covers the
+main points and most important rules to follow. If you're interested in an
 extensive amount of examples and more advanced information, visit the
 [Advanced Javadoc Guidelines](07-advanced-javadoc-guidelines.markdown).
 
@@ -295,11 +295,10 @@ your Javadoc changes to the JSON interface for the class.
     If it doesn't but you'd still like to generate HTML to see what it looks
     like, add the above syntax followed by the packages you want to generate.
 
-## Sending Your Pull Request
+## Submitting Javadoc
 
-Send your Javadoc commit (no code changes) in a separate pull request to Cody
-Hoag (GitHub user: `codyhoag`). Specify your Jira ticket number and the word
-*Javadoc* in your commit message. For example, *LPS-1234 Javadoc*.
+For more information on submitting Javadoc, see the
+[Javadoc Submission Process](05-javadoc-submission-process.markdown) article.
 
 To request **re-adding** Javadoc or comments that have been removed from a file,
 please open an [LRDOCS](https://issues.liferay.com/browse/LRDOCS) JIRA ticket:
