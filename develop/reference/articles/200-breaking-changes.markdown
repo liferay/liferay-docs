@@ -4361,3 +4361,32 @@ To use this feature in development, set  global property
 This change was made so that 7.0 developers could test database schema changes
 on the fly, without having to write upgrade processes.
 
+---------------------------------------
+
+### Removed Exports from Dynamic Data Lists Web [](id=removed-exports-from-dynamic-data-lists-web)
+- **Date:** 2017-Nov-27
+- **JIRA Ticket:** LPS-75778
+
+#### What changed? [](id=what-changed-109)
+
+The `Dynamic Data Lists Web` module no longer exports the
+`com.liferay.dynamic.data.lists.web.asset` package.
+
+#### Who is affected? [](id=who-is-affected-109)
+
+This change affects anyone who is using the
+`com.liferay.dynamic.data.lists.web.asset` package. This particularly affects
+anyone using
+`com.liferay.dynamic.data.lists.web.asset.DDLRecordAssetRendererFactory` and
+casting the return `AssetRenderer` to
+`com.liferay.dynamic.data.lists.web.asset.DDLRecordAssetRenderer`.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-109)
+
+There are no replacements for this package; you must remove all usages.
+`DDLRecordAssetRendererFactory` can still be used as an OSGi service; however,
+you can no longer cast the returned `AssetRenderer` to `DDLRecordAssetRenderer`.
+
+#### Why was this change made? [](id=why-was-this-change-made-109)
+
+This change was made to clean up LPKG dependencies.

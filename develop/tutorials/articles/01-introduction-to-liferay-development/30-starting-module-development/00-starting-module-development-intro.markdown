@@ -123,10 +123,8 @@ Here's the command syntax for creating a module:
 
     blade create [options] moduleName
 
-The `blade help commandName` command describes the specified command. To
-describe the `create` command, for example, execute this:
-
-    blade help create
+Module templates and their options are described
+[here](/develop/reference/-/knowledge_base/7-0/project-templates). 
 
 Here's an example of creating a Liferay MVC Portlet module:
 
@@ -237,19 +235,26 @@ Also Blade lets developers deploy all modules in the current folder tree. To
 deploy all modules in a Workspace's modules folder, for example, execute
 `blade deploy` in the `<workspace>/modules` folder.
 
-+$$$
-
-**Note**: Liferay @ide@ lets developers deploy modules by dragging them from the
+If you're using Liferay @ide@, you can deploy modules by dragging them from the
 Package Explorer onto the @product@ server. @ide@ provides access to
 [Liferay Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-0/managing-module-projects-with-liferay-ide)
 too.
 
 ![Figure 5: Liferay @ide@ lets developers deploy modules using drag-and-drop.](../../../images/starting-module-dev-drag-module.png)
 
++$$$
+
+**Note:** When deploying a module to @product@ using Blade CLI, the module is
+directly installed into @product@'s OSGi container. This means that the module
+is stored differently in @product@ than if it were copied into the
+`LIFERAY_HOME/deploy` folder. See the
+[Deploying Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/deploying-modules-with-blade-cli)
+tutorial for more information.
+
 $$$
 
-If you deployed a portlet module, it's available in the @product@ UI under the
-application category and name you specified via the portlet component's
+Once you've deployed a portlet module, it's available in the @product@ UI under
+the application category and name you specified via the portlet component's
 `com.liferay.portlet.display-category` and `javax.portlet.display-name`
 properties in the `@Component` annotation.
 

@@ -15,13 +15,14 @@ Installing @product@ manually requires these basic steps:
 - Configuring your application server for @product@
 - Installing the @product@ WAR file to your application server
 
-You'll see the term *Liferay Home* used in this installation guide. *Liferay
-Home* refers to the folder containing your Tomcat server folder. When @product@
-is installed on Tomcat, the Liferay Home folder contains the Tomcat server
-folder as well as `data`, `deploy`, `license`, and `osgi` folders. You'll also
-see the term `$TOMCAT_HOME` used in this guide. `$TOMCAT_HOME` refers to your
-Tomcat server folder. This folder is usually named `tomcat-[version]` or
-`apache-tomcat-[version]`.
+You'll see the term
+[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+used in this installation guide. *Liferay Home* refers to the folder containing
+your Tomcat server folder. When @product@ is installed on Tomcat, the Liferay
+Home folder contains the Tomcat server folder as well as `data`, `deploy`,
+`license`, and `osgi` folders. You'll also see the term `$TOMCAT_HOME` used in
+this guide. `$TOMCAT_HOME` refers to your Tomcat server folder. This folder is
+usually named `tomcat-[version]` or `apache-tomcat-[version]`.
 
 ## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
 

@@ -18,7 +18,7 @@ tutorial.
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
-[CustomJspBag](@portal-ref@/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html)
+[CustomJspBag](@platform-ref@/7.0-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html)
 API.
 
 **Important:** Using core JSP overrides should be a last resort option only when
