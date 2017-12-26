@@ -171,17 +171,19 @@ to this question must be *yes*:
 
 If the user has VIEW permission on an asset, then the asset is returned in the
 search results.
-<!-- What about assets whose indexers have setPermissionAware(false), like WikiNode-->
 
 Another important concept is that of *post filtering*. Search results are
-returned from the search index to the Search portlet, and the number of returned
-assets are presented in the UI. After that, the search view is filtered with
-some last minute permission checks (for a limited set of assets). For example,
-if a search returns hits to a forum message that's inside a category the user
-doesn't have permission to view, it is post filtered from the results. Because
-the facet count isn't updated, this can result in inaccurate counts in the UI.
-This is a problem that will be fixed in the next version of the Search
-application.
+returned from the search index to the Search portlet, and a final round of
+permission checks is performed prior to presenting results on the UI. For
+example, the user searches for the term *liferay*, and the search engine returns
+all relevant forum posts. As the Search Portlet iterates thru the list of
+relevant forum posts, it performs one last permission check of the post to
+ensure the user can view the post and the categories it exists within. If a
+matching forum post exists in a category the user doesn't have permission to
+view, it isn't displayed in the list of search results. Post filtering is done
+prior to display, so the facet count is not updated. This can result in
+inaccurate result counts in the Search Portlet. This behavior will be fixed in
+the next version of the Search application.
 
 ## Search and Staging [](id=search-and-staging)
 
