@@ -18,7 +18,7 @@ configuration options are available:
     processes* setting. 
 
 The *Adaptive Media Image* configuration can be different for each virtual 
-instance. It contains only this option: 
+instance. The following configuration options are available: 
 
 -   **Supported MIME Types:** A list of the image MIME types that Adaptive Media 
     supports. If an image is uploaded and its MIME type isn't in this list,
