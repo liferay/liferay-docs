@@ -1,46 +1,41 @@
 # Adding Third Party Libraries to a Module [](id=adding-third-party-libraries-to-a-module)
 
 The OSGi framework is intended for modular development where you can create
-modules containing explicit information about their requirements and
-capabilities that can be used to assemble a working system. In a perfect world,
-every library would contain this information (i.e., as OSGi modules).
+multiple modules that can be composed together to build an overall application.
+In order to enable safe composition of a working system, OSGi requires all modules
+to contain explicit information about their requirements and capabilities.  Then the
+OSGi system can use this information to assemble a working system. In a perfect world,
+every existing java library would contain this information (i.e., as full-fledged OSGi bundle).
 Unfortunately, not all libraries are packaged this way. So how do you use
-them in OSGi?
+them in your OSGi module?
 
-You can add them within your module. This isn't the only way, but it's the
-method that most resembles building WAR files, so it's the one we recommend for
-beginners.
+If your third party library is not already available as a OSGi bundle, then you must find
+a way to package that third-party library in a way that is consumeable by your module.
+There are a few methods available.
 
-There are a couple different ways to add libraries to your modules:
+-   **Wrap** the third party code inside OSGi framework as a stand-alone module.
+-   **Copy** specific java packages of the libraries directly into the module.
+-   **Embed** the libraries wholesale directly into your final module and reference them in the
+    module's classpath.
 
--   **Embed** the libraries in a module folder and reference them in the
-    module's classpath. 
--   **Expand** specific parts of the libraries directly into the module.
+For those that want to avoid the details of creating or managing OSGi metadata
+which would be required if you were going to **wrap** the original library,
+we recommand that you choose one of the last two options, **copying** or **embedding**
+the required library into your module.  This method most resembles building WAR files
+(copying libraries into WEB-INF/lib), so it's the one we recommend.
 
-Libraries whose resources and descriptors use unique names can be embedded
-safely in your module.
-
-If two libraries have resources or descriptors that use the same names, those
-resources or descriptors can overwrite each other. For example, many libraries
-include Service Loader descriptors. If Service Loader descriptors with the same
-name are added inside a module's `META-INF/services/` folder, one will overwrite
-the other. In such a case, you can expand parts of each library into your
-module, making sure to not add descriptors that use the same name.
-
-You'll learn how to add libraries using both ways. But first, consider the suggested workflow for adding the library packages you need, while avoiding unneeded packages. 
-
-## Workflow for Adding Packages from Libraries
+## Workflow for Copying Java Packages from Libraries
 
 Parts of a library might depend on (even optionally depend on) other libraries
 or parts of libraries your module doesn't need. Filtering on packages your
 module and its transitive dependencies need avoids bloating your module JAR and
-can help you satisfy your module's true dependencies faster. 
+can help you satisfy your module's true dependencies faster.
 
 **Important**: bnd detects packages referenced in the module's class path,
 including those referenced in third party JARs and third party classes, and adds
 the packages to the module manifest's `Import-Package` header. Ideally, your
 module should only import packages it uses and its transitive dependency classes
-use. In this way, you avoid configuring dependencies on bundles you don't need. 
+use. In this way, you avoid configuring dependencies on bundles you don't need.
 
 Here's a configuration workflow that minimizes dependencies and package imports:
 
@@ -53,31 +48,32 @@ Here's a configuration workflow that minimizes dependencies and package imports:
 
     `Conditional-Package: foo.common*` adds packages your module's byte code
     uses such as `foo.common`, `foo.common-messages`, `foo.common-web` to your
-    module's class path. 
+    module's class path.
 
     `Conditional-Package: foo.bar.*` adds packages your module's bytecode uses
     such as `foo.bar` and all of its sub-packages (e.g., `foo.bar.baz`,
-    `foo.bar.biz`, etc.) to your module's class path.  
+    `foo.bar.biz`, etc.) to your module's class path.
 
-2.  If your module requires most or all of the library's packages, consider
-    including the entire library in your module's classpath. 
+3.  If your module requires most or all of the library's packages, consider
+    including the entire library in your module's classpath.
 
     **Gradle**: Use the `compileInclude` dependency configuration. See
-    [Embedding a Library using Gradle](#embedding-libraries-using-gradle). 
+    [Embedding a Library using Gradle](#embedding-libraries-using-gradle).
 
     **Maven/Ant**: Specify a dependency in the `provided` scope and add an
-    `-includeresource` instruction in the `bnd.bnd` file. See 
+    `-includeresource` instruction in the `bnd.bnd` file. See
     [Embedding a Library using Maven or Ivy](embedding-libraries-using-maven-or-ivy).
 
-3.  Lastly, refine package imports by negating packages that aren't used by your module or any of the library's packages. For example, here's how to negate importing package `foo.bar.baz` in your `bnd.bnd`:
+3.  Lastly, if after embedding your library into your module you are getting unresolved imports when trying to deploy
+    to Liferay, you may need to negate some of the package imports.  For example, here's how to negate importing package `foo.bar.baz` in your `bnd.bnd`:
 
     `Import-Package: !foo.bar.baz`
 
-Next you'll explore embedding libraries in a module. 
+Next you'll explore embedding libraries in a module.
 
 ## Embedding Libraries in a Module [](id=embedding-libraries-in-a-module)
 
-You can use Gradle, Maven, or Ivy to embed libraries in your module. 
+You can use Gradle, Maven, or Ivy to embed libraries in your module.
 
 ### Embedding a Library Using Gradle [](id=embedding-libraries-using-gradle)
 
@@ -88,10 +84,10 @@ Gradle module projects created in
 [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
 or using
 [Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
-automatically. 
+automatically.
 
 To leverage the `com.liferay.plugin` plugin outside of Liferay Workspace, add
-code like the listing below to your Gradle project: 
+code like the listing below to your Gradle project:
 
     buildscript {
         dependencies {
@@ -109,7 +105,7 @@ code like the listing below to your Gradle project:
 
 If you use Gradle without the `com.liferay.plugin` plugin, you'll have to
 configure your module similar to the way this this tutorial demonstrates for
-Maven and Ivy.  
+Maven and Ivy.
 
 To embed a library in your module and make it available in the module's
 classpath automatically, open your module's `build.gradle` file and add the
@@ -122,13 +118,13 @@ library as a dependency in the `compileInclude` configuration:
 The `com.liferay.plugin` plugin's `compileInclude` configuration is transitive.
 It embeds the artifact, and all of the artifact's dependencies in a `lib` folder
 in the module's JAR. Also, it adds the artifact JARs to the `Bundle-ClassPath`
-header in the module's manifest. 
+header in the module's manifest.
 
 +$$$
 
 **Note**: The `compileInclude` configuration does not download transitive
 [optional dependencies](https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html).
-If your module requires such artifacts, add them as you would another third party library. 
+If your module requires such artifacts, add them as you would another third party library.
 
 $$$
 
@@ -172,29 +168,29 @@ To embed a library in your module using Maven or Ivy, follow these steps:
     expression `[0-9]*` helps the build tool match the version of the library
     JAR available in the module's classpath. The `lib:=true` directive adds the
     embedded JAR to the module's classpath via the `Bundle-Classpath` manifest
-    header. 
+    header.
 
 Your library is now embedded and its resources are available to use in your
 module.
 
-Next, you'll learn how to expand parts of libraries into a module. 
+Next, you'll learn how to expand parts of libraries into a module.
 
 ## Expanding Libraries in a Module [](id=expanding-libraries-in-a-module)
 
 Expanding libraries into your module positions their resources alongside your
 module's existing resources. You can expand some or all of the libraries and
-their resources into your module. 
+their resources into your module.
 
 If you're using Gradle and have applied Liferay's Gradle plugin
 `com.liferay.plugin`, adding the following instruction to your `build.gradle`
 file expands all dependencies that are a part of the `compileInclude`
-configuration (and their transitive dependencies) into your module: 
+configuration (and their transitive dependencies) into your module:
 
     liferayOSGi {
         expandCompileInclude = true
     }
 
-Alternatively, you can expand a subset of resources from a library into your module.  
+Alternatively, you can expand a subset of resources from a library into your module.
 
 1.  Open your module's Gradle build file, Maven POM, or Ivy XML file and add
     the libraries as dependencies so they're available in the compile classpath.
@@ -220,7 +216,7 @@ Alternatively, you can expand a subset of resources from a library into your mod
 
 2.  Open your module's `bnd.bnd` file and use a `-includeresource` instruction
     with regular expressions to specify library resources to expand into the
-    module. 
+    module.
 
         -includeresource: @shiro-core-[0-9]*.jar
 
@@ -239,5 +235,5 @@ Alternatively, you can expand a subset of resources from a library into your mod
 That's it! Your third party library resources are configured and their contents
 are available within your module once it's built.
 
-Excellent! You've learned two easy ways to use non-OSGi libraries from your OSGi
+Excellent! You've learned two easy ways to use non-OSGi libraries in your OSGi
 module.
