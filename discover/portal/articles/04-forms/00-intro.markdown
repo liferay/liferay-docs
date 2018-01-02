@@ -60,15 +60,23 @@ should I use Dynamic Data Lists?"
         It's important to note that these (and more!) form field types will be
         included in future versions of the Liferay Forms application.
 
-Liferay Forms gives you a lot of control over how your form is displayed,
-allowing you to make [form
-pages](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#creating-form-pages),
-and adjust the [form
+Liferay Forms gives you a lot of form design flexibility, whether you need a
+[simple form](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms) or a [complex form](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms) that leverages advanced features. Form layouts are
+flexible with the use of [form
+pages](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#creating-form-pages)
+and [form field
 layout](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#form-layouts)
-of the fields. These styling elements are enough for most forms. Over time, more
-features will be added to Liferay Forms, and DDL might someday become obsolete,
-in favor of a single form building application. If you're a heavy user of DDL,
-don't worry, Liferay is committed to preserving and enhancing the features
-provided by DDL; they just might be moved to Liferay Forms. Now is the time to
-familiarize yourself with Liferay Forms and begin using it for all your form
-building needs, except for the narrow use cases described above.
+tools. While these elements are enough for most forms, more features will be
+added to Liferay Forms in the future, and the key features of DDL will be merged
+into Liferay Forms as well. Once that happens, you'll have a single form
+building application, Liferay Forms. If you're a heavy DDL user, don't worry.
+Liferay is committed to preserving the core DDL features by integrating them
+into Liferay Forms. 
+
+Once all form building features are fully merged into Liferay Forms, future
+improvements and new features will be instantly available to form builders. The
+best features of DDL, all the new features of Liferay Forms, and all future
+improvements will be at your fingertips, regardless of your form building use
+case. Now is the time to familiarize yourself with Liferay Forms and begin using
+it for all your form building needs, except for the narrow use cases described
+above.
