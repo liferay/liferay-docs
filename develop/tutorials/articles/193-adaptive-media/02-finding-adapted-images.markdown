@@ -6,12 +6,17 @@
 
 $$$
 
-<!-- 
-Is this required to display adapted images as described in the first tutorial? 
-E.g., what's the purpose of getting adapted images? What do you do with them 
-once you have them?
--->
-Adaptive Media's Java API lets you write queries that get adapted images based 
+In most cases, you can rely on the Adaptive Media taglib to 
+[display adapted images in your app](/develop/tutorials/-/knowledge_base/7-0/displaying-adapted-images-in-your-app). 
+This taglib uses the file version you give it to query Adaptive Media's finder 
+API and display the adapted image appropriate for the device making the request. 
+If you need more control, however, you can write your own query with the API 
+instead of using the taglib. For example, if you have an app that needs a 
+specific image in a specific dimension, it's best to query Adaptive Media's 
+finder API directly. You can then display the image however you like (e.g., with 
+an HTML `<img>` tag). 
+
+Adaptive Media's finder API lets you write queries that get adapted images based 
 on certain search criteria and filters. For example, you can get adapted images 
 that match a file version or resolution, or are ordered by an attribute like 
 image width. You can even get adapted images that match approximate attribute 
