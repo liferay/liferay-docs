@@ -388,6 +388,10 @@ modules and tag libraries your plugin uses.
 
 ## Related Topics [](id=related-topics)
 
+[Importing Packages](/develop/tutorials/-/knowledge_base/7-0/importing-packages)
+
+[Exporting Packages](/develop/reference/-/knowledge_base/7-0/exporting-packages)
+
 [Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
 [Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
