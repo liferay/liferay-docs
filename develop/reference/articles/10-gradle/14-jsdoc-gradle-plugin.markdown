@@ -1,11 +1,11 @@
-# JSDoc Gradle Plugin
+# JSDoc Gradle Plugin [](id=jsdoc-gradle-plugin)
 
 The JSDoc Gradle plugin lets you run the [JSDoc](http://usejsdoc.org/) tool in
 order to generate documentation for your project's JavaScript files.
 
 The plugin has been successfully tested with Gradle 2.5 up to 3.3.
 
-## Usage
+## Usage [](id=usage)
 
 To use the plugin, include it in your build script:
 
@@ -28,7 +28,7 @@ apply plugin: "com.liferay.jsdoc"
 The JSDoc plugin automatically applies the [`com.liferay.node`](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-node)
 plugin.
 
-## Tasks
+## Tasks [](id=tasks)
 
 The plugin adds two tasks to your project:
 
@@ -51,7 +51,7 @@ Property Name | Default Value
 [`destinationDir`](#destinationdir) | <p>**If the `java` plugin is applied:** `"${project.docsDir}/jsdoc"`</p><p>**Otherwise:** `"${project.buildDir}/jsdoc"`</p>
 [`sourcesDir`](#sourcesdir) | The directory `META-INF/resources` in the first `resources` directory of the `main` source set (by default, `src/main/resources/META-INF/resources`).
 
-### JSDocTask
+### JSDocTask [](id=jsdoctask)
 
 Tasks of type `JSDocTask` extend `ExecuteNodeScriptTask`, so all its
 properties and methods, such as `args`, `inheritProxy`, and `workingDir`, are
@@ -63,7 +63,7 @@ Property Name | Default Value
 ------------- | -------------
 `scriptFile` | `"${downloadJSDoc.moduleDir}/jsdoc.js"`
 
-#### Task Properties
+#### Task Properties [](id=task-properties)
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
