@@ -24,6 +24,40 @@ we recommand that you choose one of the last two options, **copying** or **embed
 the required library into your module.  This method most resembles building WAR files
 (copying libraries into WEB-INF/lib), so it's the one we recommend.
 
++$$$
+
+**Note**: Liferay's Gradle plugin `com.liferay.plugin` automates several third
+party library configuration steps. The plugin is applied to
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+Gradle module projects created in
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+or using
+[Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
+automatically.
+
+To leverage the `com.liferay.plugin` plugin outside of Liferay Workspace, add
+code like the listing below to your Gradle project:
+
+    buildscript {
+        dependencies {
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.2.29"
+        }
+
+        repositories {
+            maven {
+                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+            }
+        }
+    }
+
+    apply plugin: "com.liferay.plugin"
+
+If you use Gradle without the `com.liferay.plugin` plugin, you'll have to
+configure your module similar to the way this this tutorial demonstrates for
+Maven and Ivy.
+
+$$$
+
 ## Workflow for Copying Java Packages from Libraries
 
 Parts of a library might depend on (even optionally depend on) other libraries
@@ -76,36 +110,6 @@ Next you'll explore embedding libraries in a module.
 You can use Gradle, Maven, or Ivy to embed libraries in your module.
 
 ### Embedding a Library Using Gradle [](id=embedding-libraries-using-gradle)
-
-Liferay's Gradle plugin `com.liferay.plugin` automates several third party
-library configuration steps. The plugin is applied to
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
-Gradle module projects created in
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
-or using
-[Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
-automatically.
-
-To leverage the `com.liferay.plugin` plugin outside of Liferay Workspace, add
-code like the listing below to your Gradle project:
-
-    buildscript {
-        dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.2.29"
-        }
-
-        repositories {
-            maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
-            }
-        }
-    }
-
-    apply plugin: "com.liferay.plugin"
-
-If you use Gradle without the `com.liferay.plugin` plugin, you'll have to
-configure your module similar to the way this this tutorial demonstrates for
-Maven and Ivy.
 
 To embed a library in your module and make it available in the module's
 classpath automatically, open your module's `build.gradle` file and add the
