@@ -13,7 +13,38 @@ you can extend the functionality of the web page that the Screenlet renders.
 This lets you tailor that page to your app's needs. You'll get started by 
 installing Cordova. 
 
-## Installing and Configuring Cordova [](id=installing-and-configuring-cordova)
+## Installing and Configuring Cordova Automatically [](id=installing-and-configuring-cordova-automatically)
+
+Follow these steps to automatically create an empty Android project configured 
+to use Cordova. Note that you must have 
+[git](https://git-scm.com/), 
+[Node.js, and npm](https://nodejs.org/en/) 
+installed. 
+
+1.  Install `screens-cli` executing: 
+
+        npm install -g screens-cli
+
+2.  Create a file `.plugins.screens` and add all the plugins you want to use in your app. You can add from Cordova or GitHub, for example: 
+
+        https://github.com/apache/cordova-plugin-wkwebview-engine.git
+        cordova-plugin-call-number
+        cordova-plugin-camera
+
+In iOS the wkwebview plugin is *Mandatory*
+
+3.  Use `screens-cli` to create your projecct: 
+
+        screens-cli ios <project-name>
+
+4. Go to platform/android/<project-name> folder and run:
+
+        pod install
+
+5. Open the `<project-name>.xcworkspace` file with Xcode
+ 
+
+## Installing and Configuring Cordova Manually [](id=installing-and-configuring-cordova-manually)
 
 Follow these steps to install and configure Cordova: 
 
