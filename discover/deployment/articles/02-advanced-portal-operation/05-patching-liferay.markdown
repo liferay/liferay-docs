@@ -279,6 +279,11 @@ is only valid if your `patching.mode` is `source`.
 You can have as many profiles as you want, and use the same Patching Tool to
 patch all of them. This helps to keep all your installations in sync. 
 
+To run the patching tool using a created profile include the profile name within
+the command being used. An example would be:
+
+`./patching-tool.sh [profile name] install`
+
 ## New features [](id=new-features)
 
 Starting with Version 18 of the Patching Tool, we have included some major
