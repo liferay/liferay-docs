@@ -173,9 +173,9 @@ To embed a library in your module using Maven or Ivy, follow these steps:
 Your library is now embedded and its resources are available to use in your
 module.
 
-Next, you'll learn how to expand parts of libraries into a module.
+Next, you'll learn how to expand libraries into a module.
 
-## Expanding Libraries in a Module [](id=expanding-libraries-in-a-module)
+## Expanding Libraries into a Module [](id=expanding-libraries-in-a-module)
 
 Expanding libraries into your module positions their resources alongside your
 module's existing resources. You can expand some or all of the libraries and
@@ -231,6 +231,20 @@ Alternatively, you can expand a subset of resources from a library into your mod
     of resources.
 
     $$$
+
++$$$
+
+**Note**: Libraries whose resources and descriptors use *unique* names can be
+embedded safely in your module.
+
+If two libraries have resources or descriptors that use the *same* names, those
+resources or descriptors can overwrite each other. For example, many libraries
+include Service Loader descriptors. If Service Loader descriptors with the same
+name are added inside a module's `META-INF/services/` folder, one will overwrite
+the other. In such a case, you can expand parts of each library into your
+module, making sure to not add descriptors that use the same name.
+
+$$$
 
 That's it! Your third party library resources are configured and their contents
 are available within your module once it's built.
