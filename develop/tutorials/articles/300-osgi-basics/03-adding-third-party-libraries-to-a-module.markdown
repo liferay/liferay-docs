@@ -1,28 +1,27 @@
 # Adding Third Party Libraries to a Module [](id=adding-third-party-libraries-to-a-module)
 
-The OSGi framework is intended for modular development where you can create
-multiple modules that can be composed together to build an overall application.
-In order to enable safe composition of a working system, OSGi requires all modules
-to contain explicit information about their requirements and capabilities.  Then the
-OSGi system can use this information to assemble a working system. In a perfect world,
-every existing java library would contain this information (i.e., as full-fledged OSGi bundle).
-Unfortunately, not all libraries are packaged this way. So how do you use
-them in your OSGi module?
+The OSGi framework lets you build applications composed of multiple modules. The
+modules must specify their requirements and capabilities for the framework to
+assemble them in a working system. In a perfect world, every Java library would
+specify this information in an OSGi `META-INF/MANIFEST.MF` file--but many
+libraries don't. So how do you use them in your OSGi module?
 
-If your third party library is not already available as a OSGi bundle, then you must find
-a way to package that third-party library in a way that is consumeable by your module.
-There are a few methods available.
+Java libraries that aren't OSGi bundles (modules) must be repackaged for your module to consume. Here are a few methods available:
 
--   **Wrap** the third party code inside OSGi framework as a stand-alone module.
--   **Copy** specific java packages of the libraries directly into the module.
--   **Embed** the libraries wholesale directly into your final module and reference them in the
-    module's classpath.
+-   **Wrap** the third party code inside a stand-alone OSGi module.
+-   [**Copy** the Java packages](#workflow-for-copying-java-packages-from-libraries)
+    you need from the libraries directly into your module.
+-   [**Embed** the libraries](#embedding-libraries-in-a-module)
+    wholesale directly into your module and reference them in your module's
+    classpath.
 
-For those that want to avoid the details of creating or managing OSGi metadata
-which would be required if you were going to **wrap** the original library,
-we recommand that you choose one of the last two options, **copying** or **embedding**
-the required library into your module.  This method most resembles building WAR files
-(copying libraries into WEB-INF/lib), so it's the one we recommend.
+**Wrapping** the library requires creating and managing OSGi metadata (e.g.,
+importing and exporting Java packages). To avoid that, you can 
+[**copy**](#workflow-for-copying-java-packages-from-libraries)
+or
+[**embed**](#embedding-libraries-in-a-module)
+the library into your module.  This method is recommended because it
+most resembles building WAR files (copying libraries into `WEB-INF/lib`).
 
 +$$$
 
@@ -58,12 +57,12 @@ Maven and Ivy.
 
 $$$
 
-## Workflow for Copying Java Packages from Libraries
+## Workflow for Copying Java Packages from Libraries [](id=workflow-for-copying-java-packages-from-libraries)
 
 Parts of a library might depend on (even optionally depend on) other libraries
 or parts of libraries your module doesn't need. Filtering on packages your
 module and its transitive dependencies need avoids bloating your module JAR and
-can help you satisfy your module's true dependencies faster.
+can help you resolve true dependencies faster.
 
 **Important**: bnd detects packages referenced in the module's class path,
 including those referenced in third party JARs and third party classes, and adds
@@ -255,3 +254,11 @@ are available within your module once it's built.
 
 Excellent! You've learned two easy ways to use non-OSGi libraries in your OSGi
 module.
+
+## Related Topics [](id=related-topics)
+
+[Importing Packages](/develop/tutorials/-/knowledge_base/7-0/importing-packages)
+
+[Exporting Packages](/develop/tutorials/-/knowledge_base/7-0/exporting-packages)
+
+[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
