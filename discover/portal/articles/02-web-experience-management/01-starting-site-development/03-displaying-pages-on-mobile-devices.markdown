@@ -38,6 +38,14 @@ for instructions on using Liferay Marketplace to find and install apps.
 
 $$$
 
+It's possible to develop plugins that integrate with other device databases. 
+Even if you don't have a device database, you can still set up mobile device
+rules. They won't, however, be effective until a database is deployed, because
+the portal won't have enough information about the devices being used to make
+page requests. To learn how to tap into @product@'s Device API, see the
+[Using the Device Recognition API](/develop/tutorials/-/knowledge_base/7-0/using-the-device-recognition-api)
+tutorial.
+
 You can access the Mobile Device Families administrative page from the
 Configuration section of Site Administration. Make sure you're on the
 appropriate site before adding mobile device families via Site Administration.

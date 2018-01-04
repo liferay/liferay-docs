@@ -39,7 +39,10 @@ new UI components to @product@ by creating a Theme Contributor.
 To create a Theme Contributor module, follow these steps:
 
 1.  Create a generic OSGi module using your favorite third party tool, or use
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). You can also
+    use the 
+    [Blade Template](/develop/reference/-/knowledge_base/7-0/theme-contributor-template)
+    to create your module, in which case you can skip step 2.
 
 2.  To identify your module as a Theme Contributor, add the
     `Liferay-Theme-Contributor-Type` and `Web-ContextPath` headers to your
@@ -89,3 +92,5 @@ The UI contributions affect every page and aren't affected by theme deployments.
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
 
 [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
+
+[Theme Contributor Template](/develop/reference/-/knowledge_base/7-0/theme-contributor-template)
