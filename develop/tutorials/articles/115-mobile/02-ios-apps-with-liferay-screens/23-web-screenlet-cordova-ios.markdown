@@ -18,31 +18,36 @@ installing Cordova.
 Follow these steps to automatically create an empty Android project configured 
 to use Cordova. Note that you must have 
 [git](https://git-scm.com/), 
-[Node.js, and npm](https://nodejs.org/en/) 
+[Node.js and npm](https://nodejs.org/en/), 
+and 
+[CocoaPods](https://cocoapods.org/) 
 installed. 
 
-1.  Install `screens-cli` executing: 
+1.  Install `screens-cli`: 
 
         npm install -g screens-cli
 
-2.  Create a file `.plugins.screens` and add all the plugins you want to use in your app. You can add from Cordova or GitHub, for example: 
+2.  Create the file `.plugins.screens`. In it, add all the Cordova plugins you 
+    want to use in your app. For example, you can add plugins from Cordova or 
+    GitHub: 
 
         https://github.com/apache/cordova-plugin-wkwebview-engine.git
         cordova-plugin-call-number
         cordova-plugin-camera
 
-In iOS the wkwebview plugin is *Mandatory*
+    Note that the `WKWebView` Engine plugin is mandatory in iOS. 
 
-3.  Use `screens-cli` to create your projecct: 
+3.  Use `screens-cli` to create your project: 
 
         screens-cli ios <project-name>
 
-4. Go to platform/android/<project-name> folder and run:
+    This creates your project in the folder `platforms/ios/<project-name>`. 
+
+4.  Run the following in `platforms/ios/<project-name>`: 
 
         pod install
 
-5. Open the `<project-name>.xcworkspace` file with Xcode
- 
+5.  Open the `<project-name>.xcworkspace` file with Xcode. 
 
 ## Installing and Configuring Cordova Manually [](id=installing-and-configuring-cordova-manually)
 

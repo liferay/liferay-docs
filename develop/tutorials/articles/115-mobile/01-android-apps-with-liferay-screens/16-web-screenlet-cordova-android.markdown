@@ -23,21 +23,24 @@ to use Cordova. Note that you must have
 [Node.js, and npm](https://nodejs.org/en/) 
 installed. 
 
-1.  Install `screens-cli` executing: 
+1.  Install `screens-cli`: 
 
         npm install -g screens-cli
 
-2.  Create a file `.plugins.screens` and add all the plugins you want to use in your app. You can add from Cordova or GitHub, for example: 
+2.  Create the file `.plugins.screens`. In it, add all the Cordova plugins you 
+    want to use in your app. For example, you can add plugins from Cordova or 
+    GitHub: 
 
         https://github.com/apache/cordova-plugin-wkwebview-engine.git
         cordova-plugin-call-number
         cordova-plugin-camera
 
-3.  Use `screens-cli` to create your projecct: 
+3.  Use `screens-cli` to create your project: 
 
         screens-cli android <project-name>
 
-4. You project will be created under platform/android/<project-name> folder. You can open it with Android studio.
+    This creates your project in the folder `platforms/android/<project-name>`. 
+    You can open it with Android Studio. 
 
 ## Installing and Configuring Cordova Manually [](id=installing-and-configuring-cordova-manually)
 
