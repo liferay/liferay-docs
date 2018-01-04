@@ -28,7 +28,7 @@ entity's service methods. Follow these steps:
     calls: 
 
               AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
-                              serviceContext.getScopeGroupId,
+                              serviceContext.getScopeGroupId(),
                               entry.getCreateDate(), entry.getModifiedDate(),
                               Entry.class.getName(), entryId, entry.getUuid(),
                               0, serviceContext.getAssetCategoryIds(),
