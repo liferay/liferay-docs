@@ -27,9 +27,9 @@ installed.
 
         npm install -g screens-cli
 
-2.  Create the file `.plugins.screens`. In it, add all the Cordova plugins you 
-    want to use in your app. For example, you can add plugins from Cordova or 
-    GitHub: 
+2.  Create the file `.plugins.screens` in the folder you want to create your 
+    project in. In this file, add all the Cordova plugins you want to use in 
+    your app. For example, you can add plugins from Cordova or GitHub: 
 
         https://github.com/apache/cordova-plugin-wkwebview-engine.git
         cordova-plugin-call-number
@@ -37,7 +37,8 @@ installed.
 
     Note that the `WKWebView` Engine plugin is mandatory in iOS. 
 
-3.  Use `screens-cli` to create your project: 
+3.  In the folder containing your `.plugins.screens` file, run `screens-cli` to 
+    create your project: 
 
         screens-cli ios <project-name>
 
