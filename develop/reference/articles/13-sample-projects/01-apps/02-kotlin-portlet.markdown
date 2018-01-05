@@ -2,7 +2,7 @@
 
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
-The Kotlin Portlet sample uses an input form that accepts a name. Once
+The Kotlin Portlet sample provides an input form that accepts a name. Once
 submitting a name, the portlet renders a greeting message.
 
 ![Figure 1: After saving the inputted name, it's is displayed as a greeting on the portlet page.](../../../images/kotlin-portlet.png)
@@ -10,8 +10,8 @@ submitting a name, the portlet renders a greeting message.
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample highlights the use of the [Kotlin](https://kotlinlang.org/)
-programming language in conjunction with the Liferay MVC framework.
-Specifically, it leverages the
+programming language in conjunction with Liferay's MVC framework.
+Specifically, this sample leverages the
 [MVCActionCommand](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html)
 interface.
 
