@@ -60,10 +60,10 @@ and select `com.liferay.bookmarks.api`. Then select the appropriate version.
 Awesome! You've successfully located the bookmark entry's services.
 
 Another easy way to search for services in module projects is by importing them
-into your IDE. For Liferay IDE, you can right-click in the Package Explorer and
+into your IDE. For Liferay @ide@, you can right-click in the Package Explorer and
 navigate to *Import* &rarr; *Liferay Module Project(s)*. Then browse for your
 module, select the build type, and click *Finish*. Now you can peruse your
-module services from Liferay IDE.
+module services from Liferay @ide@.
 
 Now you're ready to invoke Liferay services. 
 

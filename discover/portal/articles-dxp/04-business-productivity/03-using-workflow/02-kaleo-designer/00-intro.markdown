@@ -6,16 +6,13 @@ publish must still be reviewed, for a variety of reasons. The Kaleo Designer in
 @product@ lets you design workflow definitions so your assets go through a
 review process before publication.
 
-Kaleo Designer lets you develop workflow definitions using a convenient drag
-and drop user interface, so you don't need to be familiar with any scripting
-languages or with writing XML by hand. However, some of the features can be
-enhanced if you're familiar with one of the supported scripting languages. All
-that is to say, don't be scared off when you come to a block of code in these
-articles. Just decide if you need the feature and find someone familiar with
-one of the supported scripting languages to help you out.
-
-Workflow definitions support scripting in Beanshell, DRL, Groovy, JavaScript,
-Python, or Ruby. 
+Kaleo Designer lets you develop workflow definitions using a convenient drag and
+drop user interface, so you don't need to be familiar with writing XML
+definitions by hand. However, some of the features can be enhanced if you're
+familiar with Groovy, a Java-based scripting language @product@ supports in
+its scripting engine. All that is to say, don't be scared off when you come to a
+block of code in these articles. Just decide if you need the feature and find
+someone familiar with Java or Groovy to help you out.
 
 +$$$
 

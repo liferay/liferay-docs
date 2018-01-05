@@ -2,9 +2,9 @@
 
 Deploying modules to a Liferay server using Blade CLI is easy. To use the Blade
 `deploy` command, you must first have built a module to deploy. See the
-[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
-tutorials for more information about creating module projects. Once you've built
-a module, navigate to it in your terminal window and execute the following
+[Creating Projects with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
+tutorials for more information about creating Liferay projects. Once you've
+built a module, navigate to it in your terminal window and execute the following
 command to deploy it to @product@:
 
     blade deploy
@@ -12,12 +12,23 @@ command to deploy it to @product@:
 You can also deploy all modules in a folder by running the `deploy` command from
 the parent folder (e.g., `[WORKSPACE_ROOT]/modules`).
 
+When deploying a module using Blade CLI, the module is directly installed into
+@product@'s OSGi container. This means that the module isn't stored in the
+`LIFERAY_HOME/osgi/modules` folder; only modules copied to the
+`LIFERAY_HOME/deploy` folder (i.e., leveraging the auto deployment mechanism)
+are stored there. A module deployed by Blade CLI is stored only as bytecode in
+`LIFERAY_HOME/osgi/state/org.eclipse.osgi` in a subfolder named after its bundle
+ID. All modules installed in OSGi's registry are stored this way, even those
+copied to the `/deploy` folder. Visit the [Using the Felix Gogo
+Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+article for instructions on finding a bundle's ID.
+
 The `deploy` command is intended for modules that are built into a JAR file. If
 you've created a WAR style project (e.g., projects based on the Blade templates
 `spring-mvc-portlet`, `theme`, etc.), you'll need to deploy it using a different
 tool like Gradle (e.g., `./gradlew deploy`).
 
-If you run into errors during the build/deploy process of your module, check to
+If you run into errors during the build/deploy process of your project, check to
 make sure your workspace is accounting for the
 [appropriate certificates](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#certification-issues-in-liferay-workspace).
 
@@ -42,9 +53,10 @@ This parameter automatically redeploys the module when changes are detected.
 
 +$$$
 
-**Note:** The `blade deploy` command requires a Gradle wrapper to successfully
-execute. To ensure the availability of the Gradle wrapper, be sure to work in a
-Liferay Workspace. For more information on Liferay Workspaces, see the
+**Note:** The `blade deploy` command requires a Gradle/Maven wrapper to
+successfully execute. To ensure the availability of a build tool wrapper, be
+sure to work in a Liferay Workspace. For more information on Liferay Workspaces,
+see the
 [Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)
 tutorial.
 

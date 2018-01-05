@@ -373,7 +373,7 @@ properties in this table are organized into the following categories:
   file.
 
 - **Dynamic Properties:** Any property values set at runtime. For example, the 
-  [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
+  [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) 
   folder's location depends on your configuration. To always specify this folder 
   when setting any properties that require it, you can use `${liferay.home}` 
   instead of an absolute directory path. 
@@ -614,6 +614,12 @@ There are a few things to keep in mind when using environment tokens:
   with LCS, the first time they do so an OAuth authorization entry is created in 
   LCS. If they've previously activated @product@ instances with LCS, their 
   existing credentials are used when they create a token file. 
+
+- If the credentials of the LCS user who generated the token become invalid, 
+  then a new token must be generated and used to reconnect to LCS. Credentials 
+  become invalid when the LCS user who generated the token leaves the LCS 
+  project, or becomes an LCS Environment Manager or LCS Environment Viewer in a 
+  different environment. 
 
 So why bother with environment tokens at all? Besides the benefit of simplifying 
 the LCS connection process, using environment tokens is valuable in auto-scaling 

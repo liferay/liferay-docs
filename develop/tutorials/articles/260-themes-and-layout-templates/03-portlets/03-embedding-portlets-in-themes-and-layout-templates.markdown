@@ -213,7 +213,7 @@ file.
 
 Now that your layout declaration is complete, you'll need to create a module 
 that can handle this request. This process is exactly the same for themes and
-layout templates. Follow steps 1-4 in the [Embedding Portlets by Class Name](#embedding-portlets-by-class-name) 
+layout templates. Follow steps 1-4 in the [Embedding Portlets by Class Name](#embedding-a-portlet-by-class-name) 
 section to set up your module.
 
 +$$$

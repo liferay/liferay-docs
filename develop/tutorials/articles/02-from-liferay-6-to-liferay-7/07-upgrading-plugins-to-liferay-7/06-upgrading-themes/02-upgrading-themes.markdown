@@ -89,7 +89,7 @@ might be incompatible with existing plugins, including themes. Liferay minimized
 the number of breaking changes, but couldn't avoid some. The [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
 reference document describes them. The theme `gulp upgrade` command and the 
 [Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool),
-in Liferay IDE and Liferay Developer Studio identify and address these changes.
+in Liferay @ide@ identify and address these changes.
 
 The `upgrade` Gulp task jump-starts the upgrade process, but it doesn't complete
 it. Manual updates are required. 
