@@ -1,6 +1,6 @@
 # Understanding The State Object's Architecture [](id=understanding-the-state-object-architecture)
 
-An example `STATE` object configuration is shown below:
+An example `STATE` object configuration appears below:
 
     View.STATE {
       myStateProperty: {
@@ -11,24 +11,23 @@ An example `STATE` object configuration is shown below:
         writeOnce: true
       }
     }
-    
+ 
 State properties have these configuration options:
 
-**setter:** Specifies a function to normalize the state key's value. The setter 
-function should receive the new value that was set and return the value that 
-should be stored.
+**setter:** Normalizes the state key's value. The setter function receives the
+new value that was set and return the value that should be stored.
 
-**validator:** Specifies a function that validates the state key's value. When 
-it returns `false`, the new value is ignored.
+**validator:** Validates the state key's value. When it returns `false`, the new
+value is ignored.
 
 **value:** The state key's default value. Alternatively, you can set the default 
-value with the `valueFn` property. Note that setting this to an object causes 
+value with the `valueFn` property. Setting this to an object causes 
 all class instances to use the same reference to the object. To have each 
 instance use a different reference for objects, use the `valueFn` option instead. 
 Note that the portlet template parameter's value (if applicable) has 
 priority over this value.
 
-**valueFn:** A function that returns the state key's default value.  
+**valueFn:** A function that returns the state key's default value. 
 Alternatively, you can set the default value with the `value` property. Note 
 that the portlet template parameter's value (if applicable) has priority 
 over this value.

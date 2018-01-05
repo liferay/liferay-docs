@@ -1,10 +1,10 @@
 # Configuring Portlet Template Parameter State Properties [](id=configuring-portlet-template-parameter-state-properties)
 
 [Portlet template parameters](/develop/tutorials/-/knowledge_base/7-0/creating-a-soy-portlet#using-portlet-template-parameters-in-the-soy-template) 
-are automatically added as state properties to the 
+are added automatically as state properties to the 
 [view component](/develop/tutorials/-/knowledge_base/7-0/creating-a-soy-portlet#configuring-the-view-layer)'s 
-[`STATE` object](/develop/tutorials/-/knowledge_base/7-0/understanding-the-state-object-architecture), 
-therefore, you can provide additional configuration options for them in the 
+[`STATE` object](/develop/tutorials/-/knowledge_base/7-0/understanding-the-state-object-architecture). 
+Therefore, you can provide additional configuration options for them in the 
 `STATE` object. The example below sets the default value for the portlet 
 template parameter `color` in its 
 [`*MVCRenderCommand` class](/develop/tutorials/-/knowledge_base/7-0/creating-a-soy-portlet#render-logic):
@@ -19,11 +19,11 @@ template parameter `color` in its
 The configuration above has the implicit state property configuration shown 
 below in the view's component file (`View.es.js` for example):
 
-   View.STATE {
-     color: {
-       value: 'red'
-     }
-   }
+       View.STATE {
+         color: {
+           value: 'red'
+         }
+       }
 
 You can provide additional settings by 
 [configuring the state Property](/develop/tutorials/-/knowledge_base/7-0/understanding-the-state-object-architecture) 

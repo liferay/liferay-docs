@@ -8,7 +8,7 @@ changes. Any
 [template parameters](/develop/tutorials/-/knowledge_base/7-0/creating-a-soy-portlet#using-portlet-template-parameters-in-the-soy-template) 
 defined in your portlet classes are automatically added as properties to the 
 portlet's `STATE` object. The `component` class provides additional rendering 
-logic, such as automatically rerendering the component when the `state` class 
+logic, such as automatically re-rendering the component when the `state` class 
 detects a change in a state property. This means that you can 
 [change a state property on the client-side](/develop/tutorials/-/knowledge_base/7-0/configuring-soy-portlet-template-parameters-on-the-client-side) 
 and automatically see that change reflected in the component's UI!

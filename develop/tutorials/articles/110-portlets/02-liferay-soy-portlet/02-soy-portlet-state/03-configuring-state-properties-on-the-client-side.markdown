@@ -13,15 +13,15 @@ This tutorial references the example below.
 ## An Example Header State Portlet [](id=example-header-state-portlet)
 
 This tutorial references the example portlet covered in this section. It 
-includes one view that has a header that reads *Hello Soy* by default.
+includes one view with a header that reads *Hello Soy* by default.
 
 ![Figure 1: The example Soy portlet has a configurable header.](../../../../images/soy-example-portlet-start.png)
 
 The text in the header following *Hello* is provided by the `header` state 
-property defined in its `*mvcRenderCommand`  class. Deploy the provided 
+property defined in its `*mvcRenderCommand` class. Deploy the provided 
 [`com.liferay.docs.state.soy-1.0.0.jar` file](https://github.com/liferay/liferay-docs/tree/7.0.x/develop/tutorials/code/osgi/modules/com.liferay.docs.state.soy-1.0.0.jar) 
 to follow along with this tutorial. The example portlet's *MVCRenderCommand 
-class and Soy template are shown below for reference:
+class and Soy template appear below for reference:
 
 `*MVCRenderCommand` class:
 
@@ -73,10 +73,10 @@ class and Soy template are shown below for reference:
 
 ## Configuring the State properties [](id=configuring-the-state-properties)
 
-Soy Portlets are automatically registered using the 
+Soy Portlets are registered automatically using the 
 [`Liferay.component` API](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/portal-template/portal-template-soy/src/main/resources/com/liferay/portal/template/soy/utils/dependencies/bootstrap.js.tpl), 
 so you can use this API to retrieve your portlet and update its state 
-properties. You can test this in the developer console of your web browser.
+properties. You can test this in your browser's developer console.
 
 Follow these steps:
 
@@ -87,14 +87,14 @@ Follow these steps:
     portlet's component with the code below:
 
         Liferay.component('_MyStateSoyPortlet_');
-        
+ 
     This returns the Soy portlet's component Object containing the state 
     properties along with properties inherited from the prototype. 
     Alternatively, you can access the `STATE` object directly by calling the 
     `getState()` method:
 
         Liferay.component("_MyStateSoyPortlet_").getState();
-    
+ 
     +$$$
 
     **Note:** The `Liferay.component()` method only returns the `STATE` object 
@@ -110,7 +110,7 @@ Follow these steps:
     property:
     
         Liferay.component("_MyStateSoyPortlet_").header;
-        
+ 
     or
     
         Liferay.component("_MyStateSoyPortlet_")["header"]
@@ -119,11 +119,11 @@ Follow these steps:
 4.  Update the state property's value:
 
         Liferay.component("portletID").stateProperty = "new value";
-  
+ 
     or
         
         Liferay.component("portletID")["stateProperty"] = "new value";
-    
+ 
     or you can pass a configuration object with the `setState()` method:
 
         Liferay.component("portletID").setState({stateProperty: new value});
