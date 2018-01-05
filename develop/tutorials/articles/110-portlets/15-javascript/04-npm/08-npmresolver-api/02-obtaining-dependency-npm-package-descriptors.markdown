@@ -21,13 +21,13 @@ below to help demonstrate these methods:
     	.
     	.
     }
-    
+ 
 To obtain an OSGi bundle's npm dependency package, pass the package's
 name in as the `getDependencyJSPackage()` method's argument. The example below 
 resolves the `react` dependency package:
 
     String reactResolvedId = npmResolver.getDependencyJSPackage("react");
-    
+ 
 `reactResolvedId`'s resulting value is `react@15.6.2`.
 
 You can use the `resolveModuleName()` method To obtain a module in an npm 

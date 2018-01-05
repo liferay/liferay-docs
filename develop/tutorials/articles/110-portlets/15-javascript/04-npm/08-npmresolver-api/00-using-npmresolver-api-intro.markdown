@@ -1,14 +1,13 @@
 # Using the NPMResolver API in Your Portlets [](id=using-the-npmresolver-api-in-your-portlets)
-<!-- Need to update release version once it's known -->
+
 If you're developing an npm-based portlet, your OSGi bundle's `package.json` is 
-a treasure-trove of information. It contains everything that is stored in the 
+a treasure-trove of information. It contains everything that's stored in the 
 npm registry about your bundle: default entry point, dependencies, modules, 
-package names, versions, etc. @product@'s 
+package names, versions, and more. @product@'s 
 [`NPMResolver` APIs](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html) 
-expose this information, so you can access it in your portlet. You can resolve 
-module names, packages, package dependencies, etc. If it's defined in the OSGi 
-bundle's `package.json`, you can retrieve the information in your portlet with 
-the `NPMResolver` API. For instance, you can use this API to 
+expose this information so you can access it in your portlet. If it's defined
+in the OSGi bundle's `package.json`, you can retrieve the information in your
+portlet with the `NPMResolver` API. For instance, you can use this API to 
 [reference an npm package's static resources](/develop/tutorials/-/knowledge_base/7-0/obtaining-dependency-npm-package-descriptors) 
 (such as CSS files) and even to
 [make your code more maintainable](/develop/tutorials/-/knowledge_base/7-0/obtaining-npm-package-descriptors#using-an-alias-to-reference-a-modules-package). 
@@ -35,6 +34,6 @@ npm package information for other OSGi bundles.
 
 $$$
  
-Now that the `NPMResolver` is added to your portlet, see the following 
-tutorials in this section for instructions on retrieving your OSGi bundle's npm 
-package and module information.
+Now that the `NPMResolver` is added to your portlet, the tutorials in this
+section describe retrieving your OSGi bundle's npm package and module
+information.
