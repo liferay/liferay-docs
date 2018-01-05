@@ -8,7 +8,7 @@ Now you'll create your first structure. This structure defines Lunar Guides page
 content: a picture of the guide along with the guide's name and a link to his
 personal page. 
 
-## Creating Your First Structure
+## Creating Your First Structure [](id=creating-your-first-structure)
 
 1.  Open the *Menu* 
     (![Product Menu](../../../../images/icon-menu.png)) and select *The Lunar 

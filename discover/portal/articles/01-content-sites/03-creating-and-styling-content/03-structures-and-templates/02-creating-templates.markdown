@@ -1,4 +1,4 @@
-# Creating Templates
+# Creating Templates [](id=creating-templates)
 
 <div class="learn-path-step">
     <p>Creating Content<br>Step 3B of 3D</p>

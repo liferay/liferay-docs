@@ -22,7 +22,7 @@ Lunar Resort.
 
 ![Figure x: The final About Us page.](../../../images/001-final-about-us.png)
 
-## Creating the Activities Page
+## Creating the Activities Page [](id=creating-the-activities-page)
 
 As you may be able to tell from the above screenshot, the Activities page uses
 a two column layout with a small column on the left and a large column on the
@@ -51,7 +51,7 @@ The Lunar Resort site now contains the Activities page. This page appears in the
 navigation, and you can add applications and content to it just as you would any 
 other page. 
 
-## Creating the About Us Page
+## Creating the About Us Page [](id=creating-the-about-us-page)
 
 Now you'll create the *About Us* page. Note in the above screenshot that this
 page has three columns. Follow these steps to create this page:

@@ -1,4 +1,4 @@
-# Publishing Content with Content Display Pages
+# Publishing Content with Content Display Pages [](id=publishing-content-with-content-display-pages)
 
 <div class="learn-path-step">
     <p>Creating Content<br>Step 4 of 7</p>
@@ -17,7 +17,7 @@ content.
 First, you'll create a simple content display page for displaying a single piece 
 of content. 
 
-## Creating a Content Display Page
+## Creating a Content Display Page [](id=creating-a-content-display-page)
 
 Follow these instructions to create the content display page:
 
@@ -44,7 +44,7 @@ Follow these instructions to create the content display page:
  
 Nice! Now you're ready to create the page's content. 
 
-## Creating the Display Page's Content
+## Creating the Display Page's Content [](id=creating-the-display-pages-content)
 
 Use these steps to create the page's content:
 
@@ -82,7 +82,7 @@ Use these steps to create the page's content:
 Awesome! Now that your content exists on the display page, you'll configure a 
 link to it so that users can view it. 
 
-## Using Content Display Pages
+## Using Content Display Pages [](id=using-content-display-pages)
 
 You'll display the content via a link in an Asset Publisher. To do so, follow 
 these steps: 

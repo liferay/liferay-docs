@@ -1,4 +1,4 @@
-# Web Content Structures and Templates
+# Web Content Structures and Templates [](id=web-content-structures-and-templates)
 
 <div class="learn-path-step">
     <p>Creating Content<br>Step 3 of 7</p>

@@ -1,4 +1,4 @@
-# Using @product@'s Content Editor
+# Using @product@'s Content Editor [](id=using-products-content-editor)
 
 <div class="learn-path-step">
     <p>Creating Basic Web Content<br>Step 2 of 3</p>
