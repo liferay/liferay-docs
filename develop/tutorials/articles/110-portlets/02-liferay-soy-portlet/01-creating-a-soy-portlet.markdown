@@ -350,12 +350,14 @@ which demonstrates the features covered in this section:
                             navigate-to{/msg}
                             </div>
 
+/*
                             {foreach $layout in $themeDisplay.layouts}
                                     <a class="list-group-item"
                                     href="{$layout.friendlyURL}">
                                     {$layout.nameCurrentValue}
                                     </a>
                             {/foreach}
+*/
                     </div>
 
                     <h3>{msg desc=""}navigating-between-views{/msg}</h3>
