@@ -1,11 +1,5 @@
 # Using Screenlets in Xamarin Apps [](id=using-screenlets-in-xamarin-apps)
 
-+$$$
-
-**Note:** This documentation is currently in beta. 
-
-$$$
-
 You can start using Screenlets once you've  [prepared](/develop/tutorials/-/knowledge_base/7-0/preparing-xamarin-projects-for-liferay-screens) 
 your Xamarin project to use Liferay Screens. The Screenlet reference 
 documentation describes the available Screenlets: 

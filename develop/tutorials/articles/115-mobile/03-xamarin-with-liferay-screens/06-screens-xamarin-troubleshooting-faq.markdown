@@ -1,11 +1,5 @@
 # Liferay Screens for Xamarin Troubleshooting and FAQs [](id=liferay-screens-for-xamarin-troubleshooting-and-faqs)
 
-+$$$
-
-**Note:** This documentation is currently in beta. 
-
-$$$
-
 Even though Liferay developed Liferay Screens for Xamarin with great care, you 
 may still run into some common issues. This tutorial lists tips and solutions 
 for these issues, as well as answers to common questions about Screens for 

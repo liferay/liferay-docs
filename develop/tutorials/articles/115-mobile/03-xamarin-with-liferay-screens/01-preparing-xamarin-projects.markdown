@@ -1,11 +1,5 @@
 # Preparing Xamarin Projects for Liferay Screens [](id=preparing-xamarin-projects-for-liferay-screens)
 
-+$$$
-
-**Note:** This documentation is currently in beta. 
-
-$$$
-
 To use Liferay Screens with Xamarin, you must install Screens in your Xamarin 
 project. You must then configure your project to communicate with your @product@ 
 instance. Note that Liferay Screens for Xamarin is released as a 
