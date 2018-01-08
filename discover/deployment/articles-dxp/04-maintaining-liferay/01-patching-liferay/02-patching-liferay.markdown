@@ -55,7 +55,8 @@ issue the following command:
 +$$$
 
 **Note:** After a successful patch installation you must delete the *osgi/state*
-folder if it exists in your Liferay Home directory.
+folder if it exists in your
+[Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home).
 
 $$$
 
@@ -89,7 +90,15 @@ $$$
 During the installation, `patching-backup-deps.zip` and `patching-backup.zip`
 files are created and stored in the `ROOT/WEB-INF` folder. These files are
 necessary to restore the @product@'s original state; removing them would disable
-further patching.
+further patching. 
+
++$$$
+
+**Note:** When installing patches, @product@'s `web.xml` is always overwritten
+by the one contained in the patch. If you've customized `web.xml`, you must
+re-implement your customizations after installing a patch. 
+
+$$$
 
 The `patching-backup.zip` file is necessary for installing future patches,
 because the Patching Tool reverts the installed fix pack before installing a new

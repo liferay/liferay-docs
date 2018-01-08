@@ -42,7 +42,7 @@ renderer can be customized to fit your needs.
 If you want to create an asset and make it do more than display its title and
 description, read on to learn more!
 
-## Prerequisites for Asset Enabling and Application
+## Prerequisites for Asset Enabling and Application [](id=prerequisites-for-asset-enabling-and-application)
 
 To asset-enable your application, you need two things: 
 

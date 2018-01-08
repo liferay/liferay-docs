@@ -33,7 +33,15 @@ environment is almost the same as connecting to them from the Java EE
 environment. In an OSGi environment, the only difference is that you must
 [use @product@'s class loader to load the application server's JNDI classes](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi). 
 
-### My module has an `Unresolved requirement`. What can I do? [](id=my-module-has-an-unresolved-requirement-what-can-i-do)
+### How can I make sure my module works? [](id=how-can-i-make-sure-my-module-works)
+
+[The Testing tutorials demonstrate several ways to test @product@ modules](/develop/tutorials/-/knowledge_base/7-0/testing):
+
+- Unit testing
+- Integration testing
+- Functional testing  
+
+### My module has an unresolved requirement. What can I do? [](id=my-module-has-an-unresolved-requirement-what-can-i-do)
 
 If one of your bundles imports a package that no other bundle in the Liferay
 OSGi runtime exports, @product@ reports an unresolved requirement:
@@ -46,7 +54,7 @@ OSGi runtime exports, @product@ reports an unresolved requirement:
 To satisfy the requirement,
 [find a module that provides the capability, add it to your build file's dependencies, and deploy it](/develop/tutorials/-/knowledge_base/7-0/resolving-bundle-requirements). 
 
-### An `IllegalContextNameException` reports that my bundle's context name does not follow `Bundle-SymbolicName` syntax. How can I fix the context name? [](id=an-illegalcontextnameexception-reports-that-my-bundles-context-name-does-no)
+### An IllegalContextNameException reports that my bundle's context name does not follow Bundle-SymbolicName syntax. How can I fix the context name? [](id=an-illegalcontextnameexception-reports-that-my-bundles-context-name-does-no)
 
 [Adjust the `Bundle-SymbolicName` to adhere to the syntax](/develop/tutorials/-/knowledge_base/7-0/resolving-bundle-symbolicname-syntax-issues). 
 
@@ -86,10 +94,10 @@ and most other @product@ module components use Declarative Services (DS).
 See
 [Calling Non-OSGi Code that Uses OSGi Services](/develop/tutorials/-/knowledge_base/7-0/calling-non-osgi-code-that-uses-osgi-services). 
 
-### How can I use files to configure modules? [](id=how-can-i-use-files-to-configure-modules)
+### How can I use files to configure components? [](id=how-can-i-use-files-to-configure-modules)
 
 See
-[Using Files to Configure @product@ Modules](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-product-modules). 
+[Using Files to Configure Module Components](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-product-modules). 
 
 ### How can I use OSGi services from Ext Plugins? [](id=how-can-i-use-osgi-services-from-ext-plugins)
 

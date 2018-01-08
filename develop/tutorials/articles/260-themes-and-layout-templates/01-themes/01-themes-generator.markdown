@@ -90,8 +90,21 @@ To use Sass on Windows, you must use either Sass from node-sass or Sass from
 Ruby. By default, the generator creates theme projects to use node-sass; but you
 can reconfigure them to use Ruby based Sass and Compass. Since node-sass
 indirectly requires Visual Studio, developers who are not already using Visual
-Studio may opt to use Ruby based Sass and Compass instead of node-sass. This
-section explains both Sass installations. 
+Studio may opt to use Ruby based Sass and Compass instead of node-sass.
+
++$$$
+
+**Note:** If your theme was built with an older version of the Liferay Theme 
+Generator and specifies the `"liferay-theme-deps-7.0": "1.0.0"` dependency in 
+its `package.json`, `npm install` may fail in Liferay DXP due to its dependency 
+on node-sass `v3.13.1`. To fix this issue, change the dev dependency in your 
+`package.json` to `"liferay-theme-deps-7.0": "*"` and rebuild your theme. We 
+recommend that you use the latest version of the Theme Generator and 
+dependencies in your `package.json` to ensure full compatibility. 
+
+$$$
+
+This section explains both Sass installations. 
 
 #### Installing Sass from node-sass [](id=installing-sass-from-node-sass)
 
@@ -174,6 +187,15 @@ theme. Note that you can switch to using a different base theme by executing the
 [`gulp extend`](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
 command. 
 
+**Important**: The
+[liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled)
+and
+[liferay-theme-unstyled](https://www.npmjs.com/package/liferay-theme-unstyled)
+themes are base themes. They're analogous to Java APIs. Liferay's Classic theme
+and other themes that use liferay-theme-styled or liferay-theme-unstyled as a
+base theme are analogous to API implementations--they're not meant to be
+extended. Extending Liferay's Classic theme is strongly discouraged. 
+
 **Important**: By default, your theme is based off of the styled theme and uses
 lib-sass/bourbon, instead of Compass. If, however, you are on Windows and are
 using the Ruby version of Sass, you must configure the theme to support Compass.
@@ -216,7 +238,7 @@ files have been converted to Sass SCSS files. Sassy CSS (SCSS) is the new main
 syntax which allows you to use the latest CSS3 styles and leverage Sass syntax
 advantages, such as nesting and variables.
 
-To deploy your theme to your configured Liferay instance, execute this command:
+To deploy your theme to your configured @product@ instance, execute this command:
 
     gulp deploy
 
@@ -235,8 +257,10 @@ the potential for any caching issues.
 $$$
     
 Now that you've created a theme and deployed it, you can use the theme project's
-gulp tasks to further develop and manage your theme. Refer to the [Theme Gulp Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
-reference document to learn the gulp tasks available to you.
+[gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks) 
+to further develop and manage your theme. These offer basic functions, such as 
+`build` and `deploy`, as well as more complex interactions, such as auto 
+deploying when a change is made and setting the base theme.
 
 There you have it! You're ready to design a terrific theme!
 

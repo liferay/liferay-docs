@@ -63,8 +63,9 @@ These terms will be useful to understand as you read this guide:
 
 - *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch 
    installation (for example, `elasticsearch-2.4.0`).
-- *Liferay Home* refers to the root folder of your @product@ installation. It 
-   contains the `osgi`, `deploy`, `data`, and `license` folders.
+- [*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+   refers to the root folder of your @product@ installation. It  contains the
+   `osgi`, `deploy`, `data`, and `license` folders.
 - *Kibana Home* refers to the root folder of your Kibana installation.
 
 ## Installing Kibana and Marvel [](id=installing-kibana-and-marvel)

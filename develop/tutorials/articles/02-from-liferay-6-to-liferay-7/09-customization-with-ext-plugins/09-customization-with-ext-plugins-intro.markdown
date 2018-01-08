@@ -523,6 +523,15 @@ to the original file in @product@:
       configure specific data sources or swap the implementation of a default
       service with a custom one.
     - **Original file in @product@:** `portal-impl/src/META-INF/*-spring.xml`
+- `ext-impl/src/META-INF/portal-log4j-ext.xml`
+    - **Description:** Allows overriding the Log4j configuration. It can be used
+      to configure appenders for log file location, naming, and rotation. See
+      the
+      [Log4j XML Configuration Primer](https://wiki.apache.org/logging-log4j/Log4jXmlFormat). 
+      [Increasing or decreasing the log level of a class or class hierarchy](/develop/tutorials/-/knowledge_base/7-0/adjusting-module-logging)
+      is best done outside of an Ext plugin, in @product@'s' UI or a Log4j XML
+      file in a module or the `osgi/log4j` folder. 
+    - **Original file in Liferay:** `portal-impl/src/META-INF/portal-log4j.xml`
 - `ext-web/docroot/WEB-INF/portlet-ext.xml`
     - **Description:** Overrides the core portlets' declarations. It's most commonly
       used to change the init parameters or the roles specified. 

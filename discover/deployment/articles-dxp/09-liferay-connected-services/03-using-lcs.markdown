@@ -373,7 +373,7 @@ properties in this table are organized into the following categories:
   file.
 
 - **Dynamic Properties:** Any property values set at runtime. For example, the 
-  [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
+  [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) 
   folder's location depends on your configuration. To always specify this folder 
   when setting any properties that require it, you can use `${liferay.home}` 
   instead of an absolute directory path. 
