@@ -1,11 +1,5 @@
 # Using Web Screenlet with Cordova in Your Android App [](id=using-web-screenlet-with-cordova-in-your-android-app)
 
-+$$$
-
-**Note:** This documentation is currently in beta. 
-
-$$$
-
 By using 
 [Cordova plugins](https://cordova.apache.org/plugins/) in 
 [Web Screenlet](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-android-app), 
