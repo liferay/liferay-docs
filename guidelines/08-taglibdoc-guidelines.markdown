@@ -176,15 +176,15 @@ Example:
 ### Mark up all code, parameter, tag, and variable references [](id=mark-up-all-code-parameter-tag-and-variable-references)
 
 All references to tag libraries, tags, attributes, and literal values should be 
-marked up as code. You can wrap the markup in a CDATA tag
+marked up as code. You must wrap the markup in a CDATA tag.
 
 Example:
 
-    <code>someValue</code>
+    <![CDATA[<code>someValue</code>]]>
 
 ## Attribute Patterns [](id=attribute-patterns)
 
-You've got tons of attributes, right? Document them, following these patterns
+You've got tons of attributes, right? Document them, following these patterns.
 
 ### The name Pattern [](id=the-name-pattern)
 
