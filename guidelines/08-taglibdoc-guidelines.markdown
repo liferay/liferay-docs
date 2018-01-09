@@ -20,11 +20,11 @@ Scan the rule summaries below or click on them for details:
 
 - [Rules](#rules-) 
     - [Accompany every tag library with a description.](#accompany-every-tag-library-with-a-description-) 
-    - [Start All <tag> descriptions with a verb.](#start-all--descriptions-with-a-verb-) 
+    - [Start All &lt;tag> descriptions with a verb.](#start-all--descriptions-with-a-verb-) 
     - [Include a screenshot of the tag at the end of the tag's description for reference, if applicable.](#include-a-screenshot-of-the-tag-at-the-end-of-the-tags-description-for-reference-if-applicable-) 
     - [Punctuate every attribute description (sentence or fragment) with a period.](#punctuate-every-attribute-description-sentence-or-fragment-with-a-period-) 
     - [Use complete sentences for all text following a description's initial phrase/sentence.](#use-complete-sentences-for-all-text-following-a-descriptions-initial-phrasesentence-) 
-    - [Preferably start <attribute> descriptions using an indefinite article "A" or "An".](#preferably-start--descriptions-using-an-indefinite-article-a-or-an-) 
+    - [Preferably start &lt;attribute> descriptions using an indefinite article "A" or "An".](#preferably-start--descriptions-using-an-indefinite-article-a-or-an-) 
     - [Only start attribute descriptions with definite article "The", if it's natural and, otherwise, awkward to use "A" or "An".](#only-start-attribute-descriptions-with-definite-article-the-if-its-natural-and-otherwise-awkward-to-use-a-or-an-) 
     - [Alternatively start <attribute> descriptions with a noun.](#alternatively-start--descriptions-with-a-noun-) 
     - [Use XML-safe text.](#use-xml-safe-text-) 
@@ -36,8 +36,8 @@ Scan the rule summaries below or click on them for details:
     - [The onClick Pattern](#the-onclick-pattern-) 
     - [The CssClass Pattern](#the-cssclass-pattern-) 
 - [Tag Types](#tag-types-) 
-    - [Tags that have a Boolean or Integer value must have a <type> tag.](#tags-that-have-a-boolean-or-integer-value-must-have-a--tag-) 
-    - [There are special cases where a <type> tag is needed in addition to Booleans and Integers](#there-are-special-cases-where-a--tag-is-needed-in-addition-to-booleans-and-integers-) 
+    - [Tags that have a Boolean or Integer value must have a &lt;type> tag.](#tags-that-have-a-boolean-or-integer-value-must-have-a--tag-) 
+    - [There are special cases where a &lt;type> tag is needed in addition to Booleans and Integers](#there-are-special-cases-where-a--tag-is-needed-in-addition-to-booleans-and-integers-) 
 - [Deprecated Tags](#deprecated-tags-) 
     - [Deprecated tags with a replacement](#deprecated-tags-with-a-replacement-) 
     - [Deprecated tags with no direct replacement](#deprecated-tags-with-no-direct-replacement-) 
@@ -60,7 +60,7 @@ Example:
 
     <short-name>liferay-ui</short-name>
 
-### Start All <tag> descriptions with a verb [](id=start-all-tag-descriptions-with-a-verb)
+### Start All &lt;tag> descriptions with a verb [](id=start-all-tag-descriptions-with-a-verb)
 
 Example:
 
@@ -121,7 +121,7 @@ Example:
 
         ...
         
-### Preferably start <attribute> descriptions using an indefinite article "A" or "An" [](id=preferably-start-attribute-descriptions-using-an-indefinite-article-a-or-an)
+### Preferably start &lt;attribute> descriptions using an indefinite article "A" or "An" [](id=preferably-start-attribute-descriptions-using-an-indefinite-article-a-or-an)
 
 Example:
 
@@ -155,7 +155,7 @@ Example 2:
 
         ...
         
-### Alternatively start <attribute> descriptions with a noun [](id=alternatively-start-attribute-descriptions-with-a-noun)
+### Alternatively start &lt;attribute> descriptions with a noun [](id=alternatively-start-attribute-descriptions-with-a-noun)
 
 Example:
 
@@ -264,7 +264,7 @@ Example:
 Curious about specifying attribute types? Follow these tag type guidelines and 
 examples.
 
-### Tags that have a Boolean or Integer value must have a <type> tag [](id=tags-that-have-a-boolean-or-integer-value-must-have-a-type-tag)
+### Tags that have a Boolean or Integer value must have a &lt;type> tag [](id=tags-that-have-a-boolean-or-integer-value-must-have-a-type-tag)
 
 Tags that have a String value **DO NOT NEED** a `<type>` tag.
 
@@ -286,7 +286,7 @@ Example:
 
         <type>boolean</type>
             
-### There are special cases where a <type> tag is needed in addition to Booleans and Integers [](id=there-are-special-cases-where-a-type-tag-is-needed-in-addition-to-booleans-)
+### There are special cases where a &lt;type> tag is needed in addition to Booleans and Integers [](id=there-are-special-cases-where-a-type-tag-is-needed-in-addition-to-booleans-)
 
 Java Sets:
 
