@@ -1,17 +1,18 @@
 # Taglib Description Guidelines [](id=taglib-description-guidelines)
 
-We welcome you to contribute tag descriptions for @product@'s taglibs. Please 
-follow these guidelines as you describe tags in @product@'s `.tld` files.
+We welcome you to contribute tag descriptions for Liferay Portal's taglibs.
+Please follow these guidelines as you describe tags in Liferay Portal's `.tld`
+files.
 
 Please create an LRDOCS ticket for the description, with `API` issue type, and 
 be sure to reference the ticket number in any commits you make.
 
-You can commit your changes in a branch based on the master branch of 
-[https://github.com/liferay/liferay-portal](https://github.com/liferay/liferay-portal). 
-Then send a pull request to user liferay, making sure to mention Cody Hoag 
-(GitHub handle: `@codyhoag`) so he can review your changes. In the pull request 
-description, mention any other version of @product@ you'd like the changes to 
-be ported to. 
+You can commit your changes in a branch based on the master branch of
+[https://github.com/liferay/liferay-portal](https://github.com/liferay/liferay-portal).
+Then send a pull request to user liferay, making sure to mention Cody Hoag
+(GitHub handle: `@codyhoag`) so he can review your changes. In the pull request
+description, mention any other version of Liferay Portal you'd like the changes
+to be ported to. 
 
 You must generate the API docs locally to verify the syntax is correct, before 
 sending a pull request. 
