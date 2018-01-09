@@ -115,7 +115,6 @@ Follow these steps:
     
         Liferay.component("_MyStateSoyPortlet_")["header"]
 
-
 4.  Update the state property's value:
 
         Liferay.component("portletID").stateProperty = "new value";
