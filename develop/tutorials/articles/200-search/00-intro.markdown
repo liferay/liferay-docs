@@ -310,9 +310,13 @@ For Elasticsearch, spell checking heavily relies on the suggester API:
     - `TermSuggester` is used to provide suggestions for words based on
       specific `StringDistance` algorithms.
 
-Solr's implementation is less sophisticated. Solr's implementation of
-`Suggester` is much less flexible.  Solr's spell checking algorithm is based
-strictly on NGrams and does not handle Asian languages very well.
+Solr's implementation of `Suggester` is less flexible and sophisticated. Solr's
+spell checking algorithm is based strictly on NGrams and does not handle Asian
+languages very well.
+
+Note that using the spell checking functionality of the search engine isn't
+meant to guarantee that results are returned at search time. Rather, spell
+checking seeks to ensure that the query is correct. 
 
 #### Similar Search Queries [](id=similar-search-queries)
 
