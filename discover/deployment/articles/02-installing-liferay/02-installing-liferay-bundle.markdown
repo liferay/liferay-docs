@@ -38,20 +38,29 @@ In the Liferay Home folder there are folders for various purposes:
 `data`: This folder is used to store an embedded HSQL database, @product@'s
 file repository, and @product@'s search indexes. @product@ is initially configured
 to use the embedded HSQL database but the HSQL database is primarily intended
-for demonstration and trial purposes. 
+for demonstration and trial purposes.
+[Portal property `jdbc.default.url`](@platform-ref@/7.0/propertiesdoc/portal.properties.html#JDBC)
+sets the Hypersonic embedded HSQL database location. 
 
-`deploy`: To deploy @product@ plugins, copy them to this folder. Legacy style
-`.war` files, @product-ver@ style `.jar` files, and `.lpkg` files from Liferay
-Marketplace are supported.
+`deploy`: To auto-deploy @product@ plugins, copy them to this folder. Legacy
+style `.war` files, @product-ver@ style `.jar` files, and `.lpkg` files from
+Liferay Marketplace are supported.
+[Portal property `auto.deploy.deploy.dir`](@platform-ref@/7.0/propertiesdoc/portal.properties.html#Auto%20Deploy)
+sets the auto-deploy location. 
 
 `license`: @product@'s copyright and version files are here.
 
-`logs`: This folder contains @product@'s log files. The information in @product@'s
-log files can be quite valuable for system administrators, especially when
-trying to diagnose a problem.
+`logs`: This folder contains @product@'s log files. The information in
+@product@'s log files can be quite valuable for system administrators,
+especially when trying to diagnose a problem. `portal-impl.jar`'s
+`portal-impl/src/META-INF/portal-log4j.xml` file sets the location for the log
+files. To override the log file location, you must
+[use an `ext-impl/src/META-INF/portal-log4j-ext.xml` file in an Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins#using-advanced-configuration-files). 
 
 `osgi`: All the JAR files and a few configuration files for @product@'s OSGi
-runtime belong in this folder. Here are its subfolders:
+runtime belong in this folder.
+[Portal property `module.framework.base.dir`](@platform-ref@/7.0/propertiesdoc/portal.properties.html#Module%20Framework)
+sets the OSGi folder location. Here are its subfolders:
 
 - `configs`: Component configuration files go here
 - `core`: @product@'s core modules
