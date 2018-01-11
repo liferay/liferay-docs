@@ -49,7 +49,7 @@ The plugin adds five Maven goals to your project:
 
 Name | Description
 ---- | -----------
-`bundle-support:clean` |  Cleans the Maven project.
+`bundle-support:clean` |  Deletes a file from the `deploy` directory of a Liferay bundle.
 `bundle-support:create-token` | Creates a token used to validate your user credentials when downloading a DXP bundle.
 `bundle-support:deploy` | Deploys the Maven project to the specified @product@ bundle.
 `bundle-support:dist` | Creates a distributable @product@ bundle archive file (e.g., ZIP).
@@ -125,9 +125,9 @@ Parameter Name | Type | Default Value | Description
 `_liferayHome` | `String` | `bundles` | The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
 `archiveFileName` | `String` | `null` | The name for the generated archive file.
 `cacheDir`  | `File` | `${user.home}/.liferay/bundles` | The directory where the downloaded bundle Zip files are stored.
-`configs`  | `String` | `configs` | The directory where environment settings are organized.
+`configs`  | `String` | `configs` | The directory that contains the configuration files.
 `deployFile` | `File` |` ${project.build.directory}/${project.build.finalName}.${project.packaging}` | The packaged file (e.g., JAR) to deploy to the Liferay bundle.
-`environment`  | `String` | `${liferay.workspace.environment}` | The environment with the settings appropriate for current development (e.g., `common`, `dev`, `local`, `prod`, and `uat`).
+`environment`  | `String` | `${liferay.workspace.environment}` | The environment of your Liferay home deployment. (e.g., `common`, `dev`, `local`, `prod`, and `uat`).
 `format`  | `String` | `zip` | The format type to use when packaging the Liferay bundle as an archive.
 `includeFolder` | `boolean` | `true` | Whether to add a parent folder to the archive.
 `outputFileName` | `String` | `${project.artifactId}.${project.packaging}` | The path to the archive file.
@@ -159,8 +159,8 @@ Parameter Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
 `_liferayHome` | `String` | `bundles` | The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
 `cacheDir` | `File` | `${user.home}/.liferay/bundles` | The directory where the downloaded bundle Zip files are stored.
-`configs` | `String` | `configs` | The directory where environment settings are organized.
-`environment` | `String` | `${liferay.workspace.environment}` | The environment with the settings appropriate for current development (e.g., `common`, `dev`, `local`, `prod`, and `uat`).
+`configs` | `String` | `configs` | The directory that contains the configuration files.
+`environment` | `String` | `${liferay.workspace.environment}` | The environment of your Liferay home deployment (e.g., `common`, `dev`, `local`, `prod`, and `uat`).
 `password` | `String` | `null` | The password if your Liferay bundle's URL requires authentication.
 `stripComponents` | `int` | `1` | The number of directories to strip when expanding your bundle.
 `token` | `boolean` | `false` | Whether to use a token to download a @product@ bundle. This should be set to `true` when downloading a DXP bundle.
