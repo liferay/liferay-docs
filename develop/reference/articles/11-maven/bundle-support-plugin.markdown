@@ -49,11 +49,11 @@ The plugin adds five Maven goals to your project:
 
 Name | Description
 ---- | -----------
-`bundle-support:clean` |  
-`bundle-support:create-token` | 
-`bundle-support:deploy` | 
-`bundle-support:dist` | 
-`bundle-support:init` | 
+`bundle-support:clean` |  Cleans the Maven project.
+`bundle-support:create-token` | Creates a token used to validate your user credentials when downloading a DXP bundle.
+`bundle-support:deploy` | Deploys the Maven project to the specified @product@ bundle.
+`bundle-support:dist` | Creates a distributable @product@ bundle archive file (e.g., ZIP).
+`bundle-support:init` | Downloads and installs the specified @product@ version.
 
 ## clean Goal's Available Parameters
 
@@ -62,14 +62,14 @@ You can set the following parameters in the `clean` execution's
 
 Parameter Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`_liferayHome` | `String` | `bundles` |  The directory where your @product@ instance resides.
-`fileName` | `String` | `${project.artifactId}.${project.packaging}` | 
+`_liferayHome` | `String` | `bundles` |  The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
+`fileName` | `String` | `${project.artifactId}.${project.packaging}` | The name of the file to delete from your bundle.
 
 ## create-token Goal's Available Parameters
 
 You can change the default parameter values of the `create-token` goal by
-creating an `<execution>` section for it. Within the `<execution>` section,
-define a `<configuration>` section. For example,
+creating an `<execution>` section containing `<configuration>` tags. For
+example,
 
     <execution>
         <id>create-token</id>
@@ -80,16 +80,17 @@ define a `<configuration>` section. For example,
         </configuration>
     </execution>
 
-The `create-token` goal's parameters are listed below.
+You can set the following parameters in the `create-token` execution's
+`<configuration>` section of the POM:
 
 Parameter Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`emailAddress` | `String` |  |  
-`force` | `boolean` |  | 
-`password` | `String` |  | 
-`passwordFile` | `File` |  | 
-`tokenFile` | `File` | `${user.home}/.liferay/token` | 
-`tokenUrl` | `URL` | `https://cdn.lfrs.sl/releases.liferay.com/portal/7.0.4-ga5/liferay-ce-portal-tomcat-7.0-ga5-20171018150113838.zip` | 
+`emailAddress` | `String` | `null` | The email address to use when downloading a DXP bundle. This email address must match the one registered for your DXP subscription.
+`force` | `boolean` | `false` | Whether to override the existing token with a newly generated one.
+`password` | `String` | `null` | The password to use when downloading a DXP bundle. This password must match the one registered for your DXP subscription.
+`passwordFile` | `File` | `null` | The file to hold your password used when downloading a DXP bundle.
+`tokenFile` | `File` | `${user.home}/.liferay/token` | The file to hold the Liferay bundle authentication token.
+`tokenUrl` | `URL` | `https://cdn.lfrs.sl/releases.liferay.com/portal/7.0.4-ga5/liferay-ce-portal-tomcat-7.0-ga5-20171018150113838.zip` | The URL pointing to the bundle Zip to download.
 
 ## deploy Goal's Available Parameters
 
@@ -98,15 +99,14 @@ You can set the following parameters in the `deploy` execution's
 
 Parameter Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`_liferayHome` | `String` | `bundles` |  
-`deployFile` | `File` | `${project.build.directory}/${project.build.finalName}.${project.packaging}` | 
-`outputFileName` | `String` | `${project.artifactId}.${project.packaging}` | 
+`_liferayHome` | `String` | `bundles` | The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
+`deployFile` | `File` | `${project.build.directory}/${project.build.finalName}.${project.packaging}` | The packaged file (e.g., JAR) to deploy to the Liferay bundle.
+`outputFileName` | `String` | `${project.artifactId}.${project.packaging}` | The name of the output file.
 
 ## dist Goal's Available Parameters
 
 You can change the default parameter values of the `dist` goal by creating an
-`<execution>` section for it. Within the `<execution>` section, define a
-`<configuration>` section. For example,
+`<execution>` section containing `<configuration>` tags. For example,
 
     <execution>
         <id>dist</id>
@@ -117,31 +117,31 @@ You can change the default parameter values of the `dist` goal by creating an
         </configuration>
     </execution>
 
-The `dist` goal's parameters are listed below.
+You can set the following parameters in the `dist` execution's `<configuration>`
+section of the POM:
 
 Parameter Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`_liferayHome` | `String` | `bundles` |  
-`archiveFileName` | `String` |  | 
-`cacheDir`  | `File` | `${user.home}/.liferay/bundles` | 
-`configs`  | `String` | `configs` | 
-`deployFile` | `File` |` ${project.build.directory}/${project.build.finalName}.${project.packaging}` | 
-`environment`  | `String` | `${liferay.workspace.environment}` | 
-`format`  | `String` | `zip` | 
-`includeFolder` | `boolean` | `true` | 
-`outputFileName` | `String` | `${project.artifactId}.${project.packaging}` | 
-`password` | `String` |  | 
-`stripComponents` | `int` | `1` | 
-`token` | `boolean` |  | 
-`tokenFile` | `File` | `${user.home}/.liferay/token` | 
-`url` | `URL` | `${liferay.workspace.bundle.url}` | 
-`userName` | `String` |  | 
+`_liferayHome` | `String` | `bundles` | The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
+`archiveFileName` | `String` | `null` | The name for the generated archive file.
+`cacheDir`  | `File` | `${user.home}/.liferay/bundles` | The directory where the downloaded bundle Zip files are stored.
+`configs`  | `String` | `configs` | The directory where environment settings are organized.
+`deployFile` | `File` |` ${project.build.directory}/${project.build.finalName}.${project.packaging}` | The packaged file (e.g., JAR) to deploy to the Liferay bundle.
+`environment`  | `String` | `${liferay.workspace.environment}` | The environment with the settings appropriate for current development (e.g., `common`, `dev`, `local`, `prod`, and `uat`).
+`format`  | `String` | `zip` | The format type to use when packaging the Liferay bundle as an archive.
+`includeFolder` | `boolean` | `true` | Whether to add a parent folder to the archive.
+`outputFileName` | `String` | `${project.artifactId}.${project.packaging}` | The path to the archive file.
+`password` | `String` | `null` | The password if your Liferay bundle's URL requires authentication.
+`stripComponents` | `int` | `1` | The number of directories to strip when expanding your bundle.
+`token` | `boolean` | `false` | Whether to use a token to download a @product@ bundle. This should be set to `true` when downloading a DXP bundle.
+`tokenFile` | `File` | `${user.home}/.liferay/token` | The file to hold the Liferay bundle authentication token.
+`url` | `URL` | `${liferay.workspace.bundle.url}` | The URL of the Liferay bundle to expand.
+`userName` | `String` | `null` | The user name if your Liferay bundle's URL requires authentication.
 
 ## init Goal's Available Parameters
 
-You can change the default parameter values of the `create-token` goal by
-creating an `<execution>` section for it. Within the `<execution>` section,
-define a `<configuration>` section. For example,
+You can change the default parameter values of the `init` goal by creating an
+`<execution>` section containing `<configuration>` tags. For example,
 
     <execution>
         <id>init</id>
@@ -152,17 +152,18 @@ define a `<configuration>` section. For example,
         </configuration>
     </execution>
 
-The `init` goal's parameters are listed below.
+You can set the following parameters in the `init` execution's `<configuration>`
+section of the POM:
 
 Parameter Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`_liferayHome` |  | `bundles` | 
-`cacheDir` |  | `${user.home}/.liferay/bundles` | 
-`configs` |  | `configs` | 
-`environment` |  | `${liferay.workspace.environment}` | 
-`password` |  |  | 
-`stripComponents` |  | `1` |
-`token` |  |  | 
-`tokenFile` |  | `${user.home}/.liferay/token` |
-`url` |  | `${liferay.workspace.bundle.url}` | 
-`userName` |  |  | 
+`_liferayHome` | `String` | `bundles` | The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
+`cacheDir` | `File` | `${user.home}/.liferay/bundles` | The directory where the downloaded bundle Zip files are stored.
+`configs` | `String` | `configs` | The directory where environment settings are organized.
+`environment` | `String` | `${liferay.workspace.environment}` | The environment with the settings appropriate for current development (e.g., `common`, `dev`, `local`, `prod`, and `uat`).
+`password` | `String` | `null` | The password if your Liferay bundle's URL requires authentication.
+`stripComponents` | `int` | `1` | The number of directories to strip when expanding your bundle.
+`token` | `boolean` | `false` | Whether to use a token to download a @product@ bundle. This should be set to `true` when downloading a DXP bundle.
+`tokenFile` | `File` | `${user.home}/.liferay/token` | The file to hold the Liferay bundle authentication token.
+`url` | `URL` | `${liferay.workspace.bundle.url}` | The URL of the Liferay bundle to expand.
+`userName` | `String` | `null` | The user name if your Liferay bundle's URL requires authentication.
