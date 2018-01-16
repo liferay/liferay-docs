@@ -15,7 +15,7 @@ or
 [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
 come with
 [bnd](http://bnd.bndtools.org/).
-When you build a module JAR, bnd detects packages the module's bytecode uses and
+When you build a module JAR, bnd detects packages used by the module's bytecode and
 generates a `META-INF/MANIFEST.MF` that imports them. 
 
 +$$$
