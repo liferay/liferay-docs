@@ -194,8 +194,11 @@ Once you've gathered this information, you're ready to move on to the next step.
 ## Step Three: Install [](id=step-three-install)
 
 The next step is to install @product@. You can do this in one of two ways: by
-installing @product@ bundled with an application server, or by installing
-@product@ manually on an existing application server. 
+[installing @product@ bundled with an application server](/discover/deployment/-/knowledge_base/7-0/installing-product),
+or by
+[installing @product@ manually on an existing application server](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually).
+Each @product@ installation's 
+[Liferay Home contains several folders](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home).
 
 By far the easiest way to get @product@ installed is to use a bundle. Though
 bundles are pre-packaged for demo purposes, it is very easy to turn them into

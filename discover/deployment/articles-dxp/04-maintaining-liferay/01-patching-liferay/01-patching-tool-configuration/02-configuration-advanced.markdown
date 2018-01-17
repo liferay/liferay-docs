@@ -11,12 +11,13 @@ A Patching Tool configuration file typically looks like this:
     liferay.home=../
 
 The properties above (described fully [below](#using-profiles-with-the-patching-tool)) 
-define the location of Liferay Home, the patching mode
-(binary or source), the path to where WAR files are deployed in the app server,
-and the global library path. If auto-discovery found your Liferay Home folder,
-the location of @product@'s OSGi-based module framework can be calculated from
-this. If, however, you customized the folder structure, you'll have to specify
-manually the following properties: 
+define the location of
+[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home),
+the patching mode (binary or source), the path to where WAR files are deployed
+in the app server, and the global library path. If auto-discovery found your
+Liferay Home folder, the location of @product@'s OSGi-based module framework can
+be calculated from this. If, however, you customized the folder structure,
+you'll have to specify manually the following properties: 
 
     module.framework.core.path=path_to_modules_core_dir
     module.framework.marketplace.path=path_to_modules_marketplace_dir

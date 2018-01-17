@@ -15,12 +15,13 @@ Installing @product@ manually requires these basic steps:
 - Configuring your application server for @product@
 - Installing the @product@ WAR file to your application server
 
-**Liferay Home** is one folder above Wildfly's install location. *Liferay
-Home* refers to the folder containing your Wildfly server folder. When @product@
-is installed on Wildfly, the Liferay Home folder contains the Wildfly server
-folder as well as `data`, `deploy`, `logs`, and `osgi` folders. You'll also
-see the term `$WILDFLY_HOME` used in this guide. `$WILDFLY_HOME` refers to your
-Wildfly server folder. This folder is usually named `wildfly-[version]`.
+**Liferay Home** is one folder above Wildfly's install location.
+[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+refers to the folder containing your Wildfly server folder. When @product@ is
+installed on Wildfly, the Liferay Home folder contains the Wildfly server folder
+as well as `data`, `deploy`, `logs`, and `osgi` folders. You'll also see the
+term `$WILDFLY_HOME` used in this guide. `$WILDFLY_HOME` refers to your Wildfly
+server folder. This folder is usually named `wildfly-[version]`.
 
 ## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
 

@@ -90,8 +90,21 @@ To use Sass on Windows, you must use either Sass from node-sass or Sass from
 Ruby. By default, the generator creates theme projects to use node-sass; but you
 can reconfigure them to use Ruby based Sass and Compass. Since node-sass
 indirectly requires Visual Studio, developers who are not already using Visual
-Studio may opt to use Ruby based Sass and Compass instead of node-sass. This
-section explains both Sass installations. 
+Studio may opt to use Ruby based Sass and Compass instead of node-sass.
+
++$$$
+
+**Note:** If your theme was built with an older version of the Liferay Theme 
+Generator and specifies the `"liferay-theme-deps-7.0": "1.0.0"` dependency in 
+its `package.json`, `npm install` may fail in Liferay DXP due to its dependency 
+on node-sass `v3.13.1`. To fix this issue, change the dev dependency in your 
+`package.json` to `"liferay-theme-deps-7.0": "*"` and rebuild your theme. We 
+recommend that you use the latest version of the Theme Generator and 
+dependencies in your `package.json` to ensure full compatibility. 
+
+$$$
+
+This section explains both Sass installations. 
 
 #### Installing Sass from node-sass [](id=installing-sass-from-node-sass)
 
