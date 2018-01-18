@@ -1,4 +1,4 @@
-# Debugging @product@ Source in Liferay @ide@
+# Debugging @product@ Source in Liferay @ide@ [](id=debugging-product-source-in-liferay-ide)
 
 You can use Liferay @ide@ to debug @product@ source code to help resolve errors.
 Debugging @product@ code follows most of the same techniques associated with
@@ -17,7 +17,7 @@ There are a couple Liferay-specific configurations to know before debugging
 
 Let's explore these Liferay-specific debugging configurations.
 
-## Configure Your Target Platform
+## Configure Your Target Platform [](id=configure-your-target-platform)
 
 To configure your target platform, you must be developing in a
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
@@ -35,7 +35,7 @@ Once the target platform is configured in your workspace, Eclipse has access to
 all of @product@'s source code. Next, you'll configure a Liferay server and
 learn how to start it in Debug mode.
 
-## Configure a Liferay Server and Start It in Debug Mode
+## Configure a Liferay Server and Start It in Debug Mode [](id=configure-a-liferay-server-and-start-it-in-debug-mode)
 
 Configuring your target platform gives Eclipse @product@'s source code to
 reference. Now you must configure a Liferay server matching the target platform
