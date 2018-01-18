@@ -229,7 +229,8 @@ nodes.
 In @product-ver@, the `portal-dependency-jars` property is deprecated and
 behaves differently from previous versions. Because importing and exporting Java
 packages has replaced wholesale use of JARs, modules and WABs can import
-packages without concerning themselves with JARs. [@product@ exports many third party packages your plugins can use](/develop/reference/-/knowledge_base/7-0/third-party-packages-portal-exports). 
+packages without concerning themselves with JARs.
+[@product@ exports many third party packages for plugins can use](/develop/reference/-/knowledge_base/7-0/third-party-packages-portal-exports). 
 
 If you're still using the `portal-dependency-jars` property, you may run into
 one of the scenarios below. Follow the instructions below the scenario to fix
