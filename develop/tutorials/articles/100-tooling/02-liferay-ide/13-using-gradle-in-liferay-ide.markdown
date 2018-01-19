@@ -30,8 +30,8 @@ You can create a Gradle project by using the Gradle Project wizard.
 
 You can also import existing Gradle projects in Liferay @ide@.
 
-1. Go to *File* &rarr; *Import...* &rarr; *Gradle* &rarr; *Gradle Project*
-   &rarr; *Next* &rarr; *Next*.
+1. Go to *File* &rarr; *Import...* &rarr; *Gradle* &rarr; *Existing Gradle
+    Project* &rarr; *Next* &rarr; *Next*.
 
     ![Figure 3: You can specify what Gradle project to import from the *Import Gradle Project* wizard.](../../../images/import-gradle-project.png)
 
@@ -61,9 +61,9 @@ following the instructions below.
 Gradle tasks and executions views open automatically once you create or import a
 Gradle project.
 
-The Gradle Tasks view allows you to display the Gradle tasks available
-for you to use in your Gradle project. Users can execute a task listed under the
-Gradle project by double-clicking it.
+The Gradle Tasks view lets you display the Gradle tasks available for you to use
+in your Gradle project. Users can execute a task listed under the Gradle project
+by double-clicking it.
 
 ![Figure 5: Navigate into your preferred Gradle project to view its available Gradle tasks.](../../../images/gradle-tasks.png)
 
