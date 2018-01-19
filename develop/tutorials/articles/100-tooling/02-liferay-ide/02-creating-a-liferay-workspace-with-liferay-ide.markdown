@@ -2,11 +2,11 @@
 
 In this tutorial, you'll learn how to generate a Liferay Workspace using Liferay
 @ide@, which runs on the
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) behind the
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) behind the
 scenes. Liferay @ide@ gives you a graphical interface instead of the command
 prompt, which can streamline your workflow. To learn more about Liferay
 Workspaces, visit its dedicated
-[tutorial section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+[tutorial section](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
 
 <div class="video-link">
 <img src="../../../images/vid-ide-thumbnail.png" alt="video-thumbnail"/>
@@ -14,12 +14,12 @@ Workspaces, visit its dedicated
 
 Before creating your Liferay Workspace, you should understand the available
 @ide@ perspectives specifically designed for @product@ development. You'll
-notice in the Perspectives view the *Liferay Workspace* and *Liferay*
+notice in the Perspectives view the *Liferay Workspace* and *Liferay Plugins*
 perspectives. If you plan on using a Liferay Workspace for your @product@
 development, you should select the *Liferay Workspace* perspective. This offers
 Gradle related development tools that are helpful when using a Liferay
-workspace. The *Liferay* perspective is geared towards developers who are using
-Ant-based development tools such as the Plugins SDK.
+workspace. The *Liferay Plugins* perspective is geared towards developers who
+are using Ant-based development tools such as the Plugins SDK.
 
 To create a Liferay Workspace in @ide@, select *File* &rarr; *New* &rarr;
 *Liferay Workspace Project*.
@@ -29,7 +29,7 @@ To create a Liferay Workspace in @ide@, select *File* &rarr; *New* &rarr;
 A New Liferay Workspace dialog appears, presenting several configuration
 options. Follow the instructions below to create your workspace.
 
-1. Give your workspace a name. 
+1. Give your workspace project a name. 
 
 2. Choose the location where you'd like your workspace to reside. Checking the
    *Use default location* checkbox places your Liferay Workspace in the Eclipse
@@ -68,9 +68,7 @@ a Liferay Developer Studio instance.
 
 $$$
 
-Awesome! You've successfully created a Liferay Workspace in Liferay @ide@! If
-you're using Liferay Developer Studio, you can also create a workspace during
-initial start-up.
+Awesome! You've successfully created a Liferay Workspace in Liferay @ide@!
 
 ## Liferay Workspace Settings in @ide@ [](id=liferay-workspace-settings-in-ide)
 
