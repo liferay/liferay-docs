@@ -57,9 +57,14 @@ Terms of Use page. You can accomplish this by following these steps:
 
     $$$
 
-6.  Deploy your hook and wait until it is deployed successfully. 
+6.  Deploy your hook and wait until it is deployed successfully.
 
-7.  Navigate to the custom JSP in Liferay and verify your customization.
+7.  The original JSP stays in the cache until the cache is cleared or Liferay
+    Portal is restarted. To clear the cache, navigate to *Control Panel* &rarr;
+    *Server Administration* and click on the appropriate *Clear content ...*
+    buttons in the *Resources* tab. 
+
+8.  Navigate to the custom JSP in Liferay and verify your customization.
 
     For example, in the case of customizing the Terms of Use page, you'd
     create a new user and log in to see your customization.

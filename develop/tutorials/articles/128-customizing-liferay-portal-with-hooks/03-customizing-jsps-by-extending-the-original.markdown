@@ -103,7 +103,14 @@ while leaving the original JSP untouched. Let's get started!
 
     Save your changes. 
 
-7. Deploy the hook plugin and view the changes you made in the JSP. 
+7. Deploy the hook plugin. 
+
+8.  The original JSP stays in the cache until the cache is cleared or Liferay
+    Portal is restarted. To clear the cache, navigate to *Control Panel* &rarr;
+    *Server Administration* and click on the appropriate *Clear content ...*
+    buttons in the *Resources* tab. 
+
+9.  Navigate to the custom JSP in Liferay and verify your customization.
 
 The edits you made in the `custom_jsps/[JSP_file's_path]` are now visible in
 your Liferay Portal. In Liferay Portal, The hook you created extends the
@@ -113,4 +120,3 @@ how to extend an original Liferay JSP using a hook!
 ## Related Topics [](id=related-topics)
 
 [Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
-
