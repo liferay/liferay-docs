@@ -2,11 +2,12 @@
 
 The OSGi framework lets you build applications composed of multiple modules. The
 modules must specify their requirements and capabilities for the framework to
-assemble them in a working system. In a perfect world, every Java library would
-specify this information in an OSGi `META-INF/MANIFEST.MF` file--but many
+assemble them into a working system. In a perfect world, every Java library
+would specify this information in an OSGi `META-INF/MANIFEST.MF` file, but many
 libraries don't. So how do you use them in your OSGi module?
 
-Java libraries that aren't OSGi bundles (modules) must be repackaged for your module to consume. Here are a few methods available:
+Java libraries that aren't OSGi bundles (modules) must be repackaged for your
+module to consume. Here are a few methods available:
 
 -   **Wrap** the third party code inside a stand-alone OSGi module.
 -   [**Copy** the Java packages](#workflow-for-copying-java-packages-from-libraries)
@@ -59,33 +60,29 @@ $$$
 
 ## Workflow for Copying Java Packages from Libraries [](id=workflow-for-copying-java-packages-from-libraries)
 
-Parts of a library might depend on (even optionally depend on) other libraries
-or parts of libraries your module doesn't need. Filtering on packages your
-module and its transitive dependencies need avoids bloating your module JAR and
-can help you resolve true dependencies faster.
-
-**Important**: bnd detects packages referenced in the module's class path,
-including those referenced in third party JARs and third party classes, and adds
-the packages to the module manifest's `Import-Package` header. Ideally, your
-module should only import packages it uses and its transitive dependency classes
-use. In this way, you avoid configuring dependencies on bundles you don't need.
+When you have a dependency on a JAR, much of the time you only need parts of it.
+The OSGi container can resolve dependencies faster if you specify only the
+packages your module and its transitive dependencies need. Since bnd adds all
+packages on the module's classpath to `MANIFEST.MF`'s `Import-Package` header,
+to resolve dependencies faster you must manually specify the packages your
+module uses. In this way, you avoid having dependencies on bundles you don't
+need.
 
 Here's a configuration workflow that minimizes dependencies and package imports:
 
-1.  Add the library as a compile only dependency (e.g., `compileOnly` in
+1.  Add the library as a compile-only dependency (e.g., `compileOnly` in
     Gradle).
 
-2.  Filter on the packages you need from the library by specifying them in a
-    conditional package instruction (`Conditional-Package`) in your `bnd.bnd`
-    file. Here are some examples:
+2.  Specify the packages you need in a conditional package instruction
+    (`Conditional-Package`) in your `bnd.bnd` file. Here are some examples:
 
-    `Conditional-Package: foo.common*` adds packages your module's byte code
-    uses such as `foo.common`, `foo.common-messages`, `foo.common-web` to your
-    module's class path.
+    `Conditional-Package: foo.common*` adds packages your module uses such as
+    `foo.common`, `foo.common-messages`, `foo.common-web` to your module's class
+    path.
 
-    `Conditional-Package: foo.bar.*` adds packages your module's bytecode uses
-    such as `foo.bar` and all of its sub-packages (e.g., `foo.bar.baz`,
-    `foo.bar.biz`, etc.) to your module's class path.
+    `Conditional-Package: foo.bar.*` adds packages your module uses such as
+    `foo.bar` and all its sub-packages (e.g., `foo.bar.baz`, `foo.bar.biz`,
+    etc.) to your module's class path.
 
 3.  If your module requires most or all of the library's packages, consider
     including the entire library in your module's classpath.
@@ -97,8 +94,8 @@ Here's a configuration workflow that minimizes dependencies and package imports:
     `-includeresource` instruction in the `bnd.bnd` file. See
     [Embedding a Library using Maven or Ivy](embedding-libraries-using-maven-or-ivy).
 
-3.  Lastly, if after embedding your library into your module you are getting unresolved imports when trying to deploy
-    to Liferay, you may need to negate some of the package imports.  For example, here's how to negate importing package `foo.bar.baz` in your `bnd.bnd`:
+3.  Lastly, if after embedding your library you get unresolved imports when
+    trying to deploy to Liferay, you may need to blacklist some imports: 
 
     `Import-Package: !foo.bar.baz`
 
@@ -106,43 +103,40 @@ Next you'll explore embedding libraries in a module.
 
 ## Embedding Libraries in a Module [](id=embedding-libraries-in-a-module)
 
-You can use Gradle, Maven, or Ivy to embed libraries in your module.
+You can use Gradle, Maven, or Ivy to embed libraries in your module. Below are
+examples for adding [Apache Shiro](https://shiro.apache.org) using all three
+build utilities. 
 
 ### Embedding a Library Using Gradle [](id=embedding-libraries-using-gradle)
 
-To embed a library in your module and make it available in the module's
-classpath automatically, open your module's `build.gradle` file and add the
-library as a dependency in the `compileInclude` configuration:
+Open your module's `build.gradle` file and add the library as a dependency in
+the `compileInclude` configuration:
 
     dependencies {
         compileInclude group: 'org.apache.shiro', name: 'shiro-core', version: '1.1.0'
     }
 
 The `com.liferay.plugin` plugin's `compileInclude` configuration is transitive.
-It embeds the artifact, and all of the artifact's dependencies in a `lib` folder
-in the module's JAR. Also, it adds the artifact JARs to the `Bundle-ClassPath`
-header in the module's manifest.
-
-+$$$
+It embeds the artifact and all its dependencies in a `lib` folder in the
+module's JAR. Also, it adds the artifact JARs to the `Bundle-ClassPath` header
+in the module's manifest.
 
 **Note**: The `compileInclude` configuration does not download transitive
 [optional dependencies](https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html).
 If your module requires such artifacts, add them as you would another third party library.
 
-$$$
-
 +$$$
 
 **Note:** If the library you've added as a dependency in your `build.gradle`
 file has transitive dependencies, you can reference them in an
-`-includeresource:` instruction (see how it's used in the Maven section next) by
-name without having to add them explicitly to the list of dependencies.
+`-includeresource:` instruction by name without having to add them explicitly to
+the list of dependencies. See how it's used in the Maven section next. 
 
 $$$
 
 ### Embedding a Library Using Maven or Ivy [](id=embedding-libraries-using-maven-or-ivy)
 
-To embed a library in your module using Maven or Ivy, follow these steps:
+Follow these steps:
 
 1.  Open your module's build file and add the library as a dependency in the
     `provided` scope:
@@ -161,17 +155,17 @@ To embed a library in your module using Maven or Ivy, follow these steps:
         <dependency conf="provided" name="shiro-core" org="org.apache.shiro" rev="1.1.0" />
 
 2.  Open your module's `bnd.bnd` file and add the library to an
-    `-includeresource` instruction. Here's an example instruction:
+    `-includeresource` instruction: 
 
         -includeresource: META-INF/lib/shiro-core.jar=shiro-core-[0-9]*.jar;lib:=true
 
     This instruction adds the `shiro-core-[version].jar` file as an included
     resource in the module's `META-INF/lib` folder. The
     `META-INF/lib/shiro-core.jar` is your module's embedded library. The
-    expression `[0-9]*` helps the build tool match the version of the library
-    JAR available in the module's classpath. The `lib:=true` directive adds the
-    embedded JAR to the module's classpath via the `Bundle-Classpath` manifest
-    header.
+    expression `[0-9]*` helps the build tool match the library version 
+    to make available on the module's classpath. The `lib:=true` directive adds
+    the embedded JAR to the module's classpath via the `Bundle-Classpath`
+    manifest header.
 
 Your library is now embedded and its resources are available to use in your
 module.
@@ -243,9 +237,9 @@ embedded safely in your module.
 If two libraries have resources or descriptors that use the *same* names, those
 resources or descriptors can overwrite each other. For example, many libraries
 include Service Loader descriptors. If Service Loader descriptors with the same
-name are added inside a module's `META-INF/services/` folder, one will overwrite
-the other. In such a case, you can expand parts of each library into your
-module, making sure to not add descriptors that use the same name.
+name are added inside a module's `META-INF/services/` folder, one overwrites the
+other. If this happens, expand only parts of each library into your module,
+making sure not to add descriptors that use the same name.
 
 $$$
 
