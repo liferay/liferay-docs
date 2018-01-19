@@ -38,7 +38,7 @@ import com.liferay.portal.theme.ThemeDisplay;
 
 @Component(
 	immediate = true,
-	property = {"service.ranking:Integer=20"},
+	property = {"form.navigator.entry.order:Integer=71"},
 	service = FormNavigatorEntry.class
 )
 public class MyAppCompanySettingsFormNavigatorEntry 
