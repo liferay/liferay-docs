@@ -32,7 +32,7 @@ your server up and running. Follow these steps to install your server:
     Servers tab.
 
 4.  Browse to the installation folder of the @product@ bundle. For example,
-    `C:\liferay-ce-portal-7.0-ga4\tomcat-8.0.32`.
+    `C:\liferay-ce-portal-7.1-m1\tomcat-8.0.32`.
 
     ![Figure 2: Specify the installation folder of the bundle.](../../../images/specify-directory.png)
 
@@ -51,8 +51,8 @@ instance:
 - *Stop* (![Stop Server](../../../images/icon-stop-server.png)): Stops the
   the server.
 - *Debug* (![Debug Server](../../../images/icon-debug-server.png)): Starts the
-  server in debug mode. For more information on debugging in Eclipse, see the
-  [Eclipse Debugging](https://eclipse.org/community/eclipse_newsletter/2017/june/article1.php)
+  server in debug mode. For more information on debugging in @ide@, see the
+  [Debugging @product@ source in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/debugging-product-source-liferay-ide)
   article.
 
 Now you're ready to use your server in Liferay @ide@!
