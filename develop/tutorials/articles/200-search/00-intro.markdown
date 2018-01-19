@@ -314,9 +314,9 @@ Solr's implementation of `Suggester` is less flexible and sophisticated. Solr's
 spell checking algorithm is based strictly on NGrams and does not handle Asian
 languages very well.
 
-Note that using the spell checking functionality of the search engine isn't
-meant to guarantee that results are returned at search time. Rather, spell
-checking seeks to ensure that the query is correct. 
+Note that using the search engine's spell checking functionality doesn't
+guarantee returned results. Instead, spell checking seeks to ensure that the
+query is correct. 
 
 #### Similar Search Queries [](id=similar-search-queries)
 
