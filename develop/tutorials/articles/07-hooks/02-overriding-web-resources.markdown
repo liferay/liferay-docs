@@ -38,7 +38,12 @@ hook to modify your portal's *Terms of Use* page.
 
 6.  Deploy your hook and wait until it is deployed successfully. 
 
-7.  Create a new user and log in. The *Terms of Use* page should include the
+7.  The original JSP stays in the cache until the cache is cleared or Liferay
+    Portal is restarted. To clear the cache, navigate to *Control Panel* &rarr;
+    *Server Administration* and click on the appropriate *Clear content ...*
+    buttons in the *Resources* tab. 
+
+8.  Create a new user and log in. The *Terms of Use* page should include the
     changes you made above. 
 
 Now there are two *Terms of Use* JSP files in the

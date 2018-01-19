@@ -32,7 +32,7 @@ changes to a JSP.
 4.  Open the JSP file `docroot/META-INF/custom_jsps/html/blogs/search.jsp` that
     Liferay IDE pulled into your project. 
 
-5.  Replace the JSPs code with the following: 
+5.  Replace the JSP's code with the following: 
 
         <%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
         
@@ -58,7 +58,12 @@ changes to a JSP.
 
 6.  Deploy the hook plugin and add the Blogs portlet to a page. 
 
-7.  Add a blog and then use the Blog portlet's search. 
+7.  The original JSP stays in the cache until the cache is cleared or Liferay
+    Portal is restarted. To clear the cache, navigate to *Control Panel* &rarr;
+    *Server Administration* and click on the appropriate *Clear content ...*
+    buttons in the *Resources* tab. 
+
+8.  Add a blog and then use the Blog portlet's search. 
 
 Your custom message now shows below the search results. 
 
