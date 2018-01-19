@@ -41,32 +41,20 @@ To use these settings, you can include them in your `portal-ext.properties` file
 or copy them over to your `portal-ext.properties` file and override specific 
 properties as needed. These configurations are covered in this tutorial.
 
-First, you can explore how it's done in IDE. 
+First, you can explore how it's done in @ide@. 
 
 ## Setting Developer Mode for Your Server in @ide@ [](id=setting-developer-mode-for-your-server-in-liferay-ide)
 
 To enable Developer Mode for your server in @ide@, follow these steps: 
-
-1.  Create a `portal-ext.properties` file in your server bundle's root folder 
-    (if you haven't already) and add the following property to the file:
-
-        include-and-override=portal-developer.properties
  
-    This gives you access to the override settings provided by the
-    `portal-developer.properties` file. 
- 
-2.  Double-click on your server in the *Servers* window and open the 
+1.  Double-click on your server in the *Servers* window and open the 
     *Liferay Launch* section.
  
-3.  Select *Custom Launch Settings* and click the *Browse* button to select your 
-    `portal-ext.properties` file. Save the changes.
- 
-+$$$
+2.  Select *Custom Launch Settings* and check the *Use developer mode* option. 
 
-**Note:** The *Use developer mode* option isn't working at this time, but 
-the steps above provide a viable work-around.
+3.  Save the changes and start your server.
 
-$$$
+![Figure 1: The *Use developer mode* option lets you enable Developer Mode for your server in @ide@.](../../../images/developer-mode-ide.png)
 
 +$$$
 
@@ -78,27 +66,28 @@ $$$
 For Liferay Portal servers below version 6.2 (e.g., Liferay v6.1 CE Server,
 Liferay v6.0 CE Server), @ide@ enables Developer Mode by default. When
 starting your @product@ server for the first time, it creates a
-`portal-ide.properties` file in your Liferay Portal directory. This properties
-file contains the property setting 
-`include-and-override=portal-developer.properties`, which enables Developer 
-Mode. 
+`portal-ext.properties` file in your server's directory. This properties file 
+contains the property setting `include-and-override=portal-developer.properties`, 
+which enables Developer Mode. 
 
 Most of the configuration is provided by the `portal-developer.properties` file, 
 but you still have to configure the FreeMarker template setting. Follow the 
-steps in the [Configuring FreeMarker System Settings](/develop/tutorials/-/knowledge_base/7-0/using-developer-mode-with-themes#configuring-freemarker-system-settings) 
+steps in the 
+[Configuring FreeMarker System Settings](/develop/tutorials/-/knowledge_base/7-0/using-developer-mode-with-themes#configuring-freemarker-system-settings) 
 section to configure the FreeMarker template cache. 
 
-If you're not using @ide@, next you'll to learn how to set Developer Mode in
-your app server manually. 
+If you're not using @ide@, manual configuration for Developer Mode is covered 
+next.
 
 ## Setting Developer Mode for Your Server Using portal-developer.properties [](id=setting-developer-mode-for-your-server-using-portal-developer-properties)
 
 To set Developer Mode manually, you must point to `portal-developer.properties` 
-as shown in the last section. Add the `portal-ext.properties` file to your app 
-server's bundle and add the following line:
+as shown in the last section. Add the `portal-ext.properties` file to the root 
+folder of your app server's bundle and add the following line:
 
     include-and-override=portal-developer.properties
  
+Developer Mode is enabled upon starting your app server. 
 `portal-developer.properties` provides the majority of the settings you'll need 
 for smooth development. To disable the cache for FreeMarker templates, you must 
 update the System Setting covered in the next section. 
