@@ -23,7 +23,7 @@ to work with Liferay @ide@, follow the instructions below.
 
 If you're working with a Liferay Workspace in @ide@, you'll need to configure
 your proxy settings for that environment too. See the
-[Setting Proxy Requirements for Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/setting-proxy-requirements-for-liferay-workspace)
+[Setting Proxy Requirements for Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/setting-proxy-requirements-for-liferay-workspace)
 for more details.
 
 Awesome! You've successfully configured Liferay @ide@'s proxy settings!
