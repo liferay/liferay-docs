@@ -31,25 +31,25 @@ messaging:
 Now that you've set up your Google project, you can configure the Liferay Push 
 app to use the project's GCM API. Install the Liferay Push app from the 
 [Liferay Marketplace](http://www.liferay.com/marketplace). 
-In the your Liferay instance's Control Panel, navigate to the app by selecting 
-*Configuration* &rarr; *Push Notifications*. Then select the 
-*Configuration* &rarr; *Android* tab. Set the push notifications *API Key* to 
-the value of the Server API Key you generated in your Google project. You can 
-also set the number of retries in the event that sending a notification fails. 
+In your @product@ instance's Control Panel, navigate to *Configuration* &rarr; 
+*System Settings*, select the *Other* tab, then select *Android Push 
+Notifications Sender*. Set the push notifications *API Key* to the value of the 
+Server API Key you generated in your Google project. You can also set the number 
+of retries in the event that sending a notification fails. 
 
-Great! Your Liferay instance is now ready to send push notifications to your 
-Android apps!
+![Figure 2: Set the API key and number of retries in your @product@ instance.](../../../images/push-android-settings.png)
+
+Great! Your @product@ instance is now ready to send push notifications to your 
+Android apps! 
 
 ## Receiving and Sending Push Notifications [](id=receiving-and-sending-push-notifications)
 
-The 
-[Liferay Push Client for Android](https://github.com/brunofarache/liferay-push-android) 
+[The Liferay Push Client for Android](https://github.com/liferay-mobile/liferay-push-android) 
 streamlines registering a device with the portal for receiving and sending push
-notifications. 
-
-The steps for using the client are explained in detail 
-[here](https://github.com/brunofarache/liferay-push-android), 
-but the main steps are demonstrated here.
+notifications. Although the information below contains the main steps needed to 
+use the client, the 
+[readme](https://github.com/liferay-mobile/liferay-push-android/blob/master/README.md) 
+explains them in detail. 
 
 In your Android application's Gradle build file, 
 [add a new dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
@@ -59,7 +59,7 @@ on the Liferay Push Client for Android:
 
 		...
 
-		compile 'com.liferay.mobile:liferay-push:1.0.7'
+		compile 'com.liferay.mobile:liferay-push:1.1.1'
 	}
 
 Make sure your app's `liferay-plugin-package.properties` file specifies the Push
@@ -69,7 +69,7 @@ Notifications portlet as a required deployment context:
         push-notifications-portlet\
         ...
 
-Next, you can learn how to register listeners for push notifications. 
+Next, you'll learn how to register listeners for push notifications. 
 
 ### Receiving Push Notifications [](id=receiving-push-notifications)
 
@@ -92,11 +92,10 @@ That's it! You can attach a listener to store the registration ID or to process
 the notification sent to the activity (using `onPushNotification()`). You can
 also register a receiver and service to process the notification. You can refer
 to the
-[`PushNotifications`](https://github.com/liferay/liferay-screens/tree/master/android/samples)
-project (especially its `PushActivity` class) as an example push notifications
-implementation. 
+[Push Notifications project](https://github.com/liferay/liferay-screens/tree/master/android/samples/pushnotifications) 
+as an example push notifications implementation. 
 
-It's time to learn how to implement sending push notifications. 
+Next, you'll learn how to send push notifications. 
 
 ### Sending Push Notifications [](id=sending-push-notifications)
 
@@ -119,11 +118,11 @@ example listener setting for `DDLRecord` objects:
     value.object.listener.com.liferay.portlet.dynamicdatalists.model.DDLRecord=com.liferay.push.hooks.DDLRecordModelListener
 
 Great! Now you know how to configure your Android apps to receive push 
-notifications from Liferay.
+notifications from @product@.
 
-In this tutorial, you've configured your portal to accommodate push notifications,
-registered notification listeners, and implemented sending push notifications.
-Way to go! 
+In this tutorial, you've configured your portal to accommodate push 
+notifications, registered notification listeners, and implemented sending push 
+notifications. Way to go! 
 
 ## Related Topics [](id=related-topics)
 
