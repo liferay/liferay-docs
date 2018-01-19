@@ -3,7 +3,7 @@
 As a Liferay developer, you're undoubtedly already familiar with the concept of
 plugins (portlets, themes, etc). If you're not familiar with Liferay
 plugins, see the 
-[introductory section of Liferay developer tutorials](/develop/tutorials/-/knowledge_base/7-0/introduction).
+[introductory section of Liferay developer tutorials](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development).
 A *Liferay App* (sometimes just called an *app*) is a collection of one or more
 of these plugins, packaged together to represent the full functionality of an
 application on the Liferay platform. In addition to the plugins contained within
@@ -271,7 +271,7 @@ them. Therefore, most of the requirements are the same as those that exist for
 other Liferay plugins, as explained in the tutorials on creating
 [MVC Portlets](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet)
 and 
-[JSF Portlets](/develop/tutorials/-/knowledge_base/7-0/packaging-a-jsf-application).
+[JSF Portlets](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces).
 
 In addition to those requirements, there are some Marketplace-specific ones to
 keep in mind:
