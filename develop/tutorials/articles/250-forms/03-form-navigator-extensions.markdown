@@ -307,7 +307,10 @@ Nav Extension portlet:
 
         @Component(
             immediate = true,
-            property = {"service.ranking:Integer=20"},
+            property = {
+                "service.ranking:Integer=20"
+		        "form.navigator.entry.order:Integer=71"
+            },
             service = FormNavigatorEntry.class
         )
         public class MyAppCompanySettingsFormNavigatorEntry 
@@ -331,11 +334,13 @@ Here's what a Form Navigation entry's component annotation should do:
 -   Declare that the component is of service type
     `FormNavigatorEntry.class` 
 -   Request immediate loading
--   Optionally, specify a property for the entry's
-    [service ranking](http://www.osgi.org/javadoc/r4v42/org/osgi/framework/Constants.html#SERVICE%5FRANKING)
+-   Optionally, specify a `form.navigator.entry.order` property for the entry `form.navigator.entry.order` 
     relative to the other entries in the category. The higher the entry's
     service rankings integer relative to the rankings of the category's other
-    entries, the higher the entry is listed in the category. 
+    entries, the higher the entry is listed in the category. For example, `@Component(
+	property = {"form.navigator.entry.order:Integer=71"},
+	service = FormNavigatorEntry.class
+)`
 
 Except for your entry's service ranking (optional), your entry's `@Component`
 annotation should look similar to the previous example's annotation. Next,
@@ -471,7 +476,10 @@ implementation. Here's the Form Nav Extension portlet's entry class
 
         @Component(
             immediate = true,
-            property = {"service.ranking:Integer=20"},
+            property = {
+                "service.ranking:Integer=20"
+		        "form.navigator.entry.order:Integer=71"
+            },
             service = FormNavigatorEntry.class
         )
         public class MyAppCompanySettingsFormNavigatorEntry 
