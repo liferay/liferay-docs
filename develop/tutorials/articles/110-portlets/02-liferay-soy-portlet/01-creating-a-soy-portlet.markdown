@@ -95,7 +95,7 @@ check the
 [Nexus Repository](https://repository.liferay.com) 
 for the proper versions for your @product@ instance.
 
-$$$    
+$$$
 
 Now that your module build is configured, you can learn how to create the Soy 
 portlet component.
