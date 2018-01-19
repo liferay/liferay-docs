@@ -22,7 +22,7 @@ features (e.g., the Servers view) with the project, the project must be a
 flexible web project. Liferay @ide@ relies on the following Eclipse plugins to
 provide this capability:
 
-- `m2e-core` (Maven integration for Eclipse)
+- `m2e` (Maven integration for Eclipse)
 - `m2e-wtp` (Maven integration for WTP)
 
 All you have to do is install them so you can begin developing Maven projects
@@ -36,7 +36,7 @@ Maven plugins for @ide@ manually below.
 1.  Navigate to *Help* &rarr; *Install New Software*. In the *Work with* field,
     insert the following value:
 
-        Liferay IDE repository - http://releases.liferay.com/tools/ide/latest/milestone/
+        Liferay IDE repository - http://releases.liferay.com/tools/ide/latest/stable/
 
 2.  Check the *Liferay IDE Maven Support* option. This bundles all the required
     Maven plugins you need to begin developing Maven projects for @product@.
@@ -76,10 +76,10 @@ You can create a Maven project based on Liferay's provided Maven archetypes.
 
 1.  Navigate to *File* &rarr; *New* &rarr; *Liferay Module Project*.
 
-2.  Give your project a name, select the `maven-module` build type, and choose
-    the project template (archetype) you'd like to use.
+2.  Give your project a name, select the `Maven` build type, and choose the
+    project template (archetype) to use.
 
-    ![Figure 2: The New Liferay Module Project wizard lets you generate a Maven module project.](../../../images/create-maven-ide-project.png)
+    ![Figure 2: The New Liferay Module Project wizard lets you generate a Maven project.](../../../images/create-maven-ide-project.png)
 
 3.  (Optional) Click *Next* and name your component class name and package. You
     can also specify your component class's properties in the Properties menu.
