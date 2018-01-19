@@ -33,7 +33,7 @@ relevancy scores. For more technical details, see the [Introduction to
 Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
 developer article.
 
-## Leveraging Elasticsearch in @product@
+## Leveraging Elasticsearch in @product@ [](id=leveraging-elasticsearch-in-product)
 
 The default search engine used by @product@ is Elasticsearch, which is backed by
 the Lucene search library. There's an Elasticsearch server embedded in @product@
@@ -43,7 +43,7 @@ better, cluster of servers). For information on how to set up Elasticsearch for
 @product@ in production, read the [deployment
 guide](/discover/deployment/-/knowledge_base/7-0/installing-a-search-engine).
 
-## @product@ Search Features
+## @product@ Search Features [](id=product-search-features)
 
 Searching is simple and straghtforward. Find a search portlet (there's one
 embedded in every page by default), enter a term in its search bar, and click
