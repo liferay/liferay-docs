@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<!DOCTYPE project>
-
-<project name="simple-bundle" basedir="." default="deploy">
-	<import file="../../build-common-osgi-plugin.xml" />
-</project>
