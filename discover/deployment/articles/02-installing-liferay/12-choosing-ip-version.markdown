@@ -13,8 +13,7 @@ simple steps:
 1. Assuming you're using the Tomcat app server for your portal, edit the
    `setenv.sh` or `setenv.bat` file in the `${TOMCAT_HOME}/bin` folder and set
    `-Djava.net.preferIPv4Stack=false` in `CATALINA_OPTS`.
-2. Create a `portal-ext.properties` file in your portal's Liferay Home
-   directory (if one does not already exist) and set the
-   `tunnel.servlet.hosts.allowed` property to the target hosts you want to
-   allow (e.g., *0:0:0:0:0:0:0:1*).
-
+2. Create a `portal-ext.properties` file in your portal's
+   [Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+   (if one does not already exist) and set the `tunnel.servlet.hosts.allowed`
+   property to the target hosts you want to allow (e.g., *0:0:0:0:0:0:0:1*).

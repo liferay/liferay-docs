@@ -135,6 +135,13 @@ Bookmarks application.
     section of the *Finding and Invoking Liferay Services* tutorial for more
     information on using the `@Reference` annotation in @product@.
 
+    **Important:** @product@'s official Bookmarks app does not use local
+    services in its portlet data handler; instead, it uses the
+    `StagedModelRepository` framework. This is not recommended for custom
+    applications, however; it's only intended for internal Liferay applications
+    at this time. Because of this, the code in this tutorial has been modified
+    to highlight the recommended way for custom apps.
+
 6.  You must create a namespace for your entities so the Export/Import framework
     can identify your application's entities from other entities in @product@.
     The Bookmarks application's namespace declaration looks like this:
@@ -370,6 +377,13 @@ similar, so you'll examine how this is done for Bookmark entries.
 
     These methods are used to link this data handler with the staged model for
     bookmark entries.
+
+    **Important:** @product@'s official Bookmarks app does not use local
+    services in its staged model data handlers; instead, it uses the
+    `StagedModelRepository` framework. This is not recommended for custom
+    applications, however; it's only intended for internal Liferay applications
+    at this time. Because of this, the code in this tutorial has been modified
+    to highlight the recommended way for custom apps.
 
 4.  You must provide the class names of the models the data handler tracks. You
     can do this by overriding the

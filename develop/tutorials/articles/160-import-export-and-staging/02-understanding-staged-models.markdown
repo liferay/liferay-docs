@@ -97,7 +97,7 @@ Because the UUID always remains the same, it's unique across multiple systems.
 Why is this so important?
 
 Suppose you're using
-[remote staging](/discover/portal/-/knowledge_base/7-0/enabling-staging#enabling-remote-live-staging)
+[remote staging](/discover/portal/-/knowledge_base/7-0/enabling-remote-live-staging)
 and you create a new entity on your local staging site and publish it to your
 remote live site. What happens when you go back to modify the entity on your
 local site and want to publish those changes? Without a UUID, the Staging

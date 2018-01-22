@@ -29,7 +29,8 @@ installed (see the [Installation and Setup](/discover/deployment/-/knowledge_bas
 article for specific details for your application server). Your @product@
 installation's properties configuration files should absolutely be backed up. In
 fact, it's best to back up your entire application server and entire the
-contents of your Liferay Home folders.
+contents of your
+[Liferay Home folders](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home).
 
 @product@ stores configuration files, search indexes, and cache information in a
 folder called `/data` in Liferay Home. If you're using the File System store or

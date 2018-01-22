@@ -78,6 +78,15 @@ It embeds the artifact, and all of the artifact's dependencies in a `lib` folder
 in the module's JAR. Also, it adds the artifact JARs to the `Bundle-ClassPath`
 header in the module's manifest. 
 
++$$$
+
+**Note**: The `compileInclude` configuration does not download transitive
+[optional dependencies](https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html).
+If your module requires such artifacts, add them as `compileInclude`
+dependencies. 
+
+$$$
+
 ### Embedding Libraries Using Maven or Ivy [](id=embedding-libraries-using-maven-or-ivy)
 
 To embed a library in your module using Maven or Ivy, follow these steps:

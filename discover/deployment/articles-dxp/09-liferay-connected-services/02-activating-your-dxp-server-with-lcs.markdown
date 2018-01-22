@@ -1,9 +1,9 @@
 # Activating Your @product@ Server with LCS [](id=registering-your-dxp-server-with-lcs)
 
 Once you've addressed 
-[the LCS preconfiguration steps](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration), 
+[the LCS preconfiguration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration), 
 you're ready to activate your @product@ server with LCS. You'll use an 
-[LCS environment token](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
+[LCS environment token](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens) 
 to do this: 
 
 1. Log in to 
@@ -33,7 +33,7 @@ to do this:
    subscription type. All the servers in an environment **must be shut down** to 
    assign that environment's subscription type. Also, **once set, you can't 
    change an environment's subscription type**. 
-   [Click here](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions) 
+   [Click here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions) 
    for more information on using subscriptions in LCS. 
 
     ![Figure 3: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../images-dxp/lcs-environment-subscriptions.png)
@@ -65,7 +65,7 @@ to do this:
 
     Once you've taken the appropriate action, download the token file by 
     clicking the *Download Token* button at the bottom of the screen. 
-    [Click here](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens) 
+    [Click here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens)
     for more information on environment tokens.
 
 6. Shut down your @product@ instance if it's running. Place the token file in 
@@ -98,16 +98,20 @@ which LCS services are enabled for your @product@ instance by clicking the
 
 Here's a full description of what a connected LCS client app displays: 
 
-- **Connection Uptime:** The duration of the client's connection with LCS.
-- **Last Message Received:** The time the latest message was received from LCS.
-- **Services:** The LCS services enabled for this @product@ instance. Note that 
-  all @product@ instances that connect to the same LCS environment must use the 
-  same set of LCS services. LCS services can't be enabled on an 
-  instance-by-instance basis. 
-- **Project Home:** This link takes you to this server's LCS project. 
-  The project home in LCS is also called the *dashboard*. 
-- **Environment:** This link takes you to this server's LCS environment. 
-- **Server Dashboard:** This link takes you to the server on LCS. 
+-   **Connection Uptime:** The duration of the client's connection with LCS.
+-   **Last Message Received:** The time the LCS client received the latest 
+    connection message from LCS. These messages occur only upon 
+    connection/reconnection and are unrelated to server metrics. It's therefore 
+    common for a long period of time to pass before the client receives another 
+    such message for a reconnection event. 
+-   **Services:** The LCS services enabled for this @product@ instance. Note 
+    that all @product@ instances that connect to the same LCS environment must 
+    use the same set of LCS services. LCS services can't be enabled on an 
+    instance-by-instance basis. 
+-   **Project Home:** This link takes you to this server's LCS project. The 
+    project home in LCS is also called the *dashboard*. 
+-   **Environment:** This link takes you to this server's LCS environment. 
+-   **Server Dashboard:** This link takes you to the server on LCS. 
 
 ![Figure 5: The server is connected to LCS.](../../images-dxp/lcs-server-connected.png)
 
@@ -115,4 +119,4 @@ Awesome! Now you know how to use environment tokens in LCS to activate your
 @product@ server. 
 
 For information on using the other features of LCS, see 
-[the next article](/discover/deployment/-/knowledge_base/7-0/using-lcs). 
+[the next article](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs). 

@@ -240,10 +240,11 @@ consider this script:
             trace(u.getFullName())
     } 
 
-The script above creates a subfolder of Liferay Home called `scripting` and
-saves the script output to a file in this folder. After running the script
-above, it's possible to read the generated file without direct access to the
-file system. Here's a second script that demonstrates this:
+The script above creates a subfolder of
+[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+called `scripting` and saves the script output to a file in this folder. After
+running the script above, it's possible to read the generated file without
+direct access to the file system. Here's a second script that demonstrates this:
 
     final def SCRIPT_ID = "MYSCRIPT"
     outputFile = new File("""${System.getProperty("liferay.home")}/scripting/out-${SCRIPT_ID}.txt""")
