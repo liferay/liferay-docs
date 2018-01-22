@@ -4,14 +4,19 @@
 
 - Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
-- Liferay Screens Compatibility app
-  ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
-  [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
-  depending on your portal edition). 
+- Liferay Screens Compatibility plugin (for 
+  [Liferay Portal CE](http://www.liferay.com/marketplace/-/mp/application/54365664) 
+  or 
+  [Liferay Portal EE](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
 
 ## Compatibility [](id=compatibility)
 
 - Android SDK 4.0 (API Level 15) and above
+
+## Xamarin Requirements [](id=xamarin-requirements)
+
+- Visual Studio 7.2
+- Mono .NET framework 5.4.1.6
 
 ## Features [](id=features)
 
