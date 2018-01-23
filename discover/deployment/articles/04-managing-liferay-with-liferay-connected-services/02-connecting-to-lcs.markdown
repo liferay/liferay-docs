@@ -99,7 +99,11 @@ the *Apps* section of the *Control Panel*.
 Here's a full description of what a connected LCS client app displays: 
 
 - **Connection Uptime:** The duration of the client's connection with LCS.
-- **Last Message Received:** The time the latest message was received from LCS.
+- **Last Message Received:** The time the LCS client received the latest 
+  connection message from LCS. These messages occur only upon 
+  connection/reconnection and are unrelated to server metrics. It's therefore 
+  common for a long period of time to pass before the client receives another 
+  such message for a reconnection event. 
 - **Services:** The LCS services enabled for this Liferay Portal instance. Note 
   that all Liferay Portal instances that connect to the same LCS environment 
   must use the same set of LCS services. LCS services can't be enabled on an 

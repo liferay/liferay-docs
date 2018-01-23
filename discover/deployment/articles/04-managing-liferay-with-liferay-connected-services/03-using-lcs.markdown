@@ -290,6 +290,16 @@ Server view is segmented into five tabs:
 - **Server Settings:** View or change your server's name, location, and 
   description. You can also unregister the server from LCS.
 
++$$$
+
+**Note:** LCS doesn't support *Snapshot Metrics* for Liferay Portal instances 
+running on JBoss or WildFly. In this scenario, you may see a console message 
+indicating that LCS doesn't support server metrics for your application server. 
+You may also see a `NullPointerException` for the LCS `TaskSchedulerServiceImpl` 
+and `ScheduleTasksCommand`, which you can safely ignore. 
+
+$$$
+
 Page Analytics is displayed by default when you enter server view. Page 
 Analytics shows page views and load times for the selected site and time period. 
 By default, all sites are selected. You can select a specific site from the 
@@ -523,6 +533,9 @@ There are four tables in the *Details* tab:
     - Servers Allowed
     - Servers Used
 
+    Note that *Processor Cores Allowed* shows the number of processor cores that 
+    your subscription allows for each Liferay Portal instance.
+
 3. **Subscriptions Summary:** shows how your subscriptions are currently used in 
    your environment. For each subscription type, this table shows the number of 
    servers allowed, used, and available. 
@@ -533,6 +546,21 @@ There are four tables in the *Details* tab:
 If any of the information in these tables is missing or incorrect, contact 
 Liferay support. 
 
++$$$
+
+**Note:** If you try to register a Liferay Portal instance and it exceeds the 
+number of processor cores that your subscription allows for each instance, the 
+registration fails and the instance is locked down. A console error also appears 
+that indicates the number of cores used by the instance. You can compare this 
+with your subscription's *Processor Cores Allowed*, as displayed in the 
+Subscriptions table in LCS. To register the instance, you can either reduce the 
+number of cores it uses (e.g., by deploying to different server hardware, or 
+reducing the number of virtual processors in a VM or container), or contact 
+sales to increase the number of processor cores that your subscription allows 
+for each instance. 
+
+$$$
+
 ### Decommissioning Servers [](id=decommissioning-servers)
 
 To decommission a server and free its activation key for reuse, select the 
@@ -540,16 +568,16 @@ server's environment on the left and then select the server. In the server's
 *Server Settings* tab, select *Unregister*. Also note that when you shut down a 
 server normally, its activation key is immediately freed for reuse. If the 
 server crashes or its shutdown is forced (e.g., kill), its activation key is 
-freed for reuse within five minutes. 
+freed for reuse within six minutes. 
 
 Next, you'll learn how to use elastic subscriptions with LCS. 
 
 ### Elastic Subscriptions [](id=elastic-subscriptions)
 
 Elastic subscriptions let you register an unlimited number of Liferay servers. 
-This is invaluable in auto-scaling environments, where servers are automatically 
-created and destroyed in response to server load. You can view data on your 
-elastic servers from the *Subscriptions* tab's *Elastic Subscriptions* tab. 
+This is crucial for auto-scaling environments in which servers are created and 
+destroyed automatically. You can view data on your elastic servers from the 
+*Subscriptions* tab's *Elastic Subscriptions* tab. 
 
 +$$$
 
@@ -577,25 +605,26 @@ instances with LCS.
 
 ## Using Environment Tokens [](id=using-environment-tokens)
 
-An environment's token file connects Liferay instances to that environment in 
-LCS. If the instance isn't activated and a subscription type is assigned to the 
-environment, the instance activates by consuming an activation key from that 
-subscription. 
+An environment's token file connects Liferay Portal instances to that 
+environment in LCS. If the instance isn't activated and a subscription type is 
+assigned to the environment, the instance activates by consuming an activation 
+key from that subscription. 
 
 LCS Administrators and Environment Managers can generate and distribute an 
 environment's token file. It contains all the information the LCS client app 
-needs to connect and activate the Liferay instance with the environment. This 
-means that you don't need to enter this information manually whenever you want 
-to set up a Liferay instance: simply use the environment token file. 
+needs to connect and activate the Liferay Portal instance with the environment. 
+This means that you don't need to enter this information manually whenever you 
+want to set up a portal instance: simply use the environment token file. 
 
 +$$$
 
-**Note:** For LCS to work properly, your Liferay instances must be running the 
-latest version of the LCS client app. To determine the client version in 
-a Liferay instance already connected to LCS, navigate to *Liferay Connected 
-Services* under the *Apps* section of the *Control Panel*. The client version is 
-displayed at the bottom of the app. Also note that when upgrading the client, 
-you may also need to regenerate the environment token that you use to connect. 
+**Note:** For LCS to work properly, your Liferay Portal instances must be 
+running the latest version of the LCS client app. To determine the client 
+version in a portal instance already connected to LCS, navigate to *Liferay 
+Connected Services* under the *Apps* section of the *Control Panel*. The client 
+version is displayed at the bottom of the app. Also note that when upgrading the 
+client, you may also need to regenerate the environment token that you use to 
+connect. 
 
 $$$
 
@@ -608,8 +637,14 @@ There are a few things to keep in mind when using environment tokens:
   activation key will be consumed from your subscription. 
 
 - Be careful when regenerating a token file from LCS. When this is done, Liferay 
-  instances using the old file are disconnected from LCS and can't reconnect 
-  until restarting with the new file. 
+  Portal instances using the old file are disconnected from LCS and can't 
+  reconnect until they receive the new file. If the portal instance disconnects
+  due to token regeneration and is running version 4.0.2 or later of the LCS 
+  client app, the instance enters a 7-day grace period during which it functions 
+  normally. This gives the administrator time to use the new token file to 
+  reconnect to LCS. Portal instances running earlier versions of the LCS client 
+  app present users with an error page until the administrator reconnects with 
+  the new token. 
 
 - Minimal information (server name, location, etc...) is used to connect a 
   Liferay instance with LCS. You can change this information from 
@@ -700,34 +735,29 @@ To download an environment's token, click the *Download Token* button. Once you
 download the token, follow these steps to use it to connect a Liferay instance 
 to LCS: 
 
-1. Ensure that you've deployed the LCS client app, and have configured it 
-   properly if you connect from behind a proxy. For instructions on configuring 
-   the client app to connect through a proxy, 
-   [click here](/discover/deployment/-/knowledge_base/6-2/configuring-the-lcs-client#preconfiguring-the-lcs-client). 
-   You can download the LCS client app 
-   [in the Liferay Marketplace](https://web.liferay.com/marketplace). 
-   For instructions on using Marketplace to download and deploy apps, 
-   [click here](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps). 
+1. Ensure that you've addressed 
+   [the LCS preconfiguration steps](/discover/deployment/-/knowledge_base/6-2/lcs-preconfiguration)
 
-2. Shut down your Liferay instance if it's running. 
+2. Shut down your Liferay Portal instance (if it's running). 
 
 3. Place the token file in your instance's `[Liferay_Home]/data` folder, and 
    then start the instance. 
 
-On startup, the LCS client app automatically connects your Liferay instance to 
-LCS. If the instance isn't activated and a subscription type is assigned to the 
-environment, the instance activates by consuming an activation key from that 
-subscription. You should see this in your LCS project's Subscriptions tab. 
+On startup, the LCS client app automatically connects your Liferay Portal 
+instance to LCS. If the instance isn't activated and a subscription type is 
+assigned to the environment, the instance activates by consuming an activation 
+key from that subscription. You should see this in your LCS project's 
+Subscriptions tab. 
 
 Awesome! Now you know how to use environment tokens to connect your Liferay 
-instances to LCS. 
+Portal instances to LCS. 
 
 As you've now seen, LCS is a powerful tool that assists you in the management of 
-your Liferay servers. In addition to activating your Liferay servers, LCS lets 
-you apply fix packs with just a single click and a server restart--a process 
-that even works across a cluster. You also get a one stop shop for monitoring 
-the performance of your Liferay servers. Metrics like JVM performance, Liferay 
-page and portlet load times, and number of current threads give you an inside 
-look at how your server is running. 
+your Liferay Portal servers. In addition to activating your Liferay Portal 
+servers, LCS lets you apply fix packs with just a single click and a server 
+restart--a process that even works across a cluster. You also get a one stop 
+shop for monitoring the performance of your Liferay Portal servers. Metrics like 
+JVM performance, page and portlet load times, and number of current threads give 
+you an inside look at how your server is running. 
 
-Next, you'll learn about Liferay clustering. 
+Next, you'll learn about Liferay Portal clustering. 
