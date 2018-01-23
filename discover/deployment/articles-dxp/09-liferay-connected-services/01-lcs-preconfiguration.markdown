@@ -252,8 +252,8 @@ To solve this, set the `java.io.tmpdir` system property as follows in the
 
 The agent also has some flags you can set to control how it behaves:
 
-    - `debug`: Provides verbose output in the console.
-    - `nohalt`: Starts the portal even if the agent encounters an issue.
+- `debug`: Provides verbose output in the console.
+- `nohalt`: Starts the portal even if the agent encounters an issue.
 
 You can specify these as follows:
 
