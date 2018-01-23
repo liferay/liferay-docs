@@ -39,8 +39,8 @@ the mouse.
 ![Figure 3: The Gradle Task toolbar offers Gradle tasks and their descriptions, which can be executed by double-clicking them.](../../../images/gradle-task-toolbar.png)
 
 You can also access various Gradle build operations intended for Liferay module
-projects. Right-click your module project and select *Liferay* &rarr; *Gradle*
-and then the build command you want to execute.
+projects. Right-click your module project and select *Liferay*  and then the
+build command you want to execute.
 
 ![Figure 4: You can execute build operations by right-clicking the Gradle project in the Project Explorer.](../../../images/gradle-build-operations.png)
 
