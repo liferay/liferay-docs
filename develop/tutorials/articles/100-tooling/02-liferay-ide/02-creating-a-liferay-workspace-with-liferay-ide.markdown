@@ -39,9 +39,9 @@ options. Follow the instructions below to create your workspace.
     or Maven).
 
 4. Check the *Download Liferay bundle* checkbox if you'd like to auto-generate a
-   Liferay instance in your workspace. You'll be prompted to name the server, if
-   selected. This Liferay bundle is generated the same way as described in the
-   previous section.
+   Liferay instance in your workspace. You'll be prompted to name the server and
+   provide the server's download URL, if selected. This Liferay bundle is
+   generated the same way as described in the previous section.
 
     +$$$
 
