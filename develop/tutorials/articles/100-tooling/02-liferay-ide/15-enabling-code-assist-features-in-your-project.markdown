@@ -38,10 +38,10 @@ follow the steps below:
     Your project is now configured to use Tern. Now that you have your project
     configured, you need to enable the modules you want to use for your project.
 
-2.  You're presented a menu listing Tern plugins that are installed. To use
-    AlloyUI features, you'll need the *AlloyUI*, *Browser*, *JSCS*, *Liferay*,
-    and *YUI Library* modules enabled. The figure below shows the Tern Modules
-    menu.
+2.  You're presented a menu listing Tern plugins that are installed. For
+    example, to use AlloyUI features, you'll need the *AlloyUI*, *Browser*,
+    *JSCS*, *Liferay*, and *YUI Library* modules enabled. The figure below shows
+    the Tern Modules menu.
 
     ![Figure 2: By selecting these Tern modules, you can use AlloyUI code assist features in your project.](../../../images/tern-modules.png)
 
