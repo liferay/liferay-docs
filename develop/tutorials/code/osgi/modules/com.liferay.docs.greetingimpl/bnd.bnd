@@ -1,5 +1,0 @@
--dsannotations: *
-Bundle-Name: Greeting Impl
-Bundle-SymbolicName: com.liferay.docs.greetingimpl
-Bundle-Version: 1.0.0.${tstamp}
-Private-Package: com.liferay.docs.greetingimpl

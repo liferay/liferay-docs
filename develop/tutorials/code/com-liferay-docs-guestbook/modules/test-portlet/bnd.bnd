@@ -1,4 +1,0 @@
-Bundle-Name: test-portlet
-Bundle-SymbolicName: com.liferay.docs.portlet
-Bundle-Version: 1.0.0
-Export-Package: com.liferay.docs.portlet.constants

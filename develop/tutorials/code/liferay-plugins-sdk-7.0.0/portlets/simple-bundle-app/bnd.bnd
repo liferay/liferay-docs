@@ -1,5 +1,0 @@
-Bundle-Name: Simple Bundle
-Bundle-SymbolicName: com.liferay.docs.simplebundle
-Bundle-Version: 1.0.0
-Private-Package: com.liferay.docs.simplebundle
-Bundle-Activator: com.liferay.docs.simplebundle.SimpleBundleActivator

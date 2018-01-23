@@ -1,3 +1,0 @@
-01-beginning-liferay-development
-02-writing-a-data-driven-application
-03-learning-sdk 

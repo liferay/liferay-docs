@@ -1,4 +1,0 @@
--dsannotations: *
--jsp: *.jsp,*.jspf
--plugin.jsp: com.liferay.ant.bnd.jsp.JspAnalyzerPlugin
--sources: true
