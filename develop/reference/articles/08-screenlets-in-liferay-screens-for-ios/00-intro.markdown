@@ -91,3 +91,7 @@ reference documents:
   Shows a single file from a @product@ instance's Documents and Media Library. 
   Use this Screenlet to display file types not covered by the other display 
   Screenlets (e.g., DOC, PPT, XLS). 
+
+- [**Web Screenlet:**](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-ios) 
+  Displays any web page. You can also customize the web page through injection 
+  of local and remote JavaScript and CSS files. 
