@@ -35,7 +35,10 @@ options. Follow the instructions below to create your workspace.
    *Use default location* checkbox places your Liferay Workspace in the Eclipse
    workspace you're working in.
 
-3. Check the *Download Liferay bundle* checkbox if you'd like to auto-generate a
+3.  Select the build tool you want your workspace to be build with (i.e., Gradle
+    or Maven).
+
+4. Check the *Download Liferay bundle* checkbox if you'd like to auto-generate a
    Liferay instance in your workspace. You'll be prompted to name the server, if
    selected. This Liferay bundle is generated the same way as described in the
    previous section.
@@ -49,12 +52,12 @@ options. Follow the instructions below to create your workspace.
 
     $$$
 
-4. Check the *Add project to working set* checkbox if you'd like the workspace
-to be a part of a larger working set you've already created in @ide@. For more
-information on working sets, visit
-[Eclipse Help](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Fconcepts%2Fcworkset.htm).
+5.  Check the *Add project to working set* checkbox if you'd like the workspace
+    to be a part of a larger working set you've already created in @ide@. For more
+    information on working sets, visit
+    [Eclipse Help](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Fconcepts%2Fcworkset.htm).
 
-5. Click *Finish* to create your Liferay Workspace.
+6.  Click *Finish* to create your Liferay Workspace.
 
 ![Figure 2: Liferay @ide@ provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/new-workspace-menu.png)
 
