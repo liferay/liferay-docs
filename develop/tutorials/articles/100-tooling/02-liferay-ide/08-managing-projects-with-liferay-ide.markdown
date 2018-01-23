@@ -1,4 +1,4 @@
-# Managing Projects with Liferay @ide@
+# Managing Projects with Liferay @ide@ [](id=managing-projects-with-liferay-ide)
 
 Liferay @ide@ provides the ability to manage Liferay projects from a GUI. Before
 you begin learning about managing your projects from Liferay @ide@, you should

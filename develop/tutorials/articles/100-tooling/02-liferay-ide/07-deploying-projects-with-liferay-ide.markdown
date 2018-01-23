@@ -1,4 +1,4 @@
-# Deploying Projects with Liferay @ide@
+# Deploying Projects with Liferay @ide@ [](id=deploying-projects-with-liferay-ide)
 
 Deploying projects in Liferay @ide@ is a cinch. Before deploying your project,
 make sure you have a Liferay server configured in @ide@. To see how to do this,

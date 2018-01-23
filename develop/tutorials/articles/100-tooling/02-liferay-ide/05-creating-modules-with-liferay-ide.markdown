@@ -66,7 +66,7 @@ Template` list:
 
 Next you'll learn how to import existing projects into @ide@.
 
-## Importing Existing Module Projects
+## Importing Existing Module Projects [](id=importing-existing-module-projects)
 
 @ide@ also provides a method to import existing module projects. You can import a
 module project by navigating to *File* &rarr; *Import* &rarr; *Liferay* &rarr;
