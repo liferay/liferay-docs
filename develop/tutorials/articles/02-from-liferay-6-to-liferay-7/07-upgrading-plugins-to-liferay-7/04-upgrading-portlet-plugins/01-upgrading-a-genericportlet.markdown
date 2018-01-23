@@ -66,11 +66,11 @@ following portlet status:
 
 Deploying the sample portlet produces messages like these:
 
-    20:57:02,571 INFO ... [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][AutoDeployDir:252] Processing sample-dao-portlet-7.1.0.1.war
+    20:57:02,571 INFO ... [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][AutoDeployDir:252] Processing sample-dao-portlet-7.1.0.0.war
     ...
-    20:57:12,639 INFO  [fileinstall-C:/portals/liferay-dxp-digital-enterprise-7.0-sp1/osgi/war][BundleStartStopLogger:35] STARTED sample-dao-portlet_7.1.0.1 [996]
+    20:57:12,639 INFO  [fileinstall-C:/portals/liferay-dxp-digital-enterprise-7.1/osgi/war][BundleStartStopLogger:35] STARTED sample-dao-portlet_7.1.0.0 [996]
     ...
-    20:57:13,480 INFO  [fileinstall-C:/portals/liferay-dxp-digital-enterprise-7.0-sp1/osgi/war][PortletHotDeployListener:313] 1 portlet for sample-dao-portlet is available for use 
+    20:57:13,480 INFO  [fileinstall-C:/portals/liferay-dxp-digital-enterprise-7.1/osgi/war][PortletHotDeployListener:313] 1 portlet for sample-dao-portlet is available for use 
 
 The portlet is now available on @product@.
 
@@ -80,10 +80,10 @@ portlet as you always have. It's just that easy!
 
 **Related Topics**
 
-[Migrating Plugins SDK Projects to Workspace and Gradle](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications)
+[Migrating Plugins SDK Projects to Workspace and Gradle](/develop/tutorials/-/knowledge_base/7-1/migrating-traditional-plugins-to-workspace-web-applications)
 
 [Using Dependency Management Tools](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
 
-[Migrating Data Upgrade Processes](/develop/tutorials/-/knowledge_base/7-0/optimizing-app-upgrade-processes)
+[Migrating Data Upgrade Processes](/develop/tutorials/-/knowledge_base/7-1/optimizing-app-upgrade-processes)
