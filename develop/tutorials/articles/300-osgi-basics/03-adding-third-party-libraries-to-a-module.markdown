@@ -7,17 +7,13 @@ would specify this information in an OSGi `META-INF/MANIFEST.MF` file, but many
 libraries don't. So how do you use them in your OSGi module?
 
 Java libraries that aren't OSGi bundles (modules) must be repackaged for your
-module to consume. Here are a few methods available:
+module to consume. Here are a couple methods available:
 
--   **Wrap** the third party code inside a stand-alone OSGi module.
 -   **Copy** the Java packages you need from the libraries directly into your
     module.
 -   **Embed** the libraries wholesale directly into your module.
 
-**Wrapping** the library requires creating and managing OSGi metadata (e.g.,
-importing and exporting Java packages) and still leaves you to blacklist any
-packages you don't need. Instead of wrapping the library in a new module, a
-combination of
+A combination of
 [copying packages from libraries and embedding libraries wholesale into your module](#workflow-for-copying-java-packages-from-libraries)
 is recommended because it avoids creating another module and configuring 
 package imports and exports. The next section describes a workflow for this
