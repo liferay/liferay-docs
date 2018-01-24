@@ -10,19 +10,18 @@ Java libraries that aren't OSGi bundles (modules) must be repackaged for your
 module to consume. Here are a few methods available:
 
 -   **Wrap** the third party code inside a stand-alone OSGi module.
--   [**Copy** the Java packages](#workflow-for-copying-java-packages-from-libraries)
-    you need from the libraries directly into your module.
--   [**Embed** the libraries](#embedding-libraries-in-a-module)
-    wholesale directly into your module and reference them in your module's
-    classpath.
+-   **Copy** the Java packages you need from the libraries directly into your
+    module.
+-   **Embed** the libraries wholesale directly into your module.
 
 **Wrapping** the library requires creating and managing OSGi metadata (e.g.,
-importing and exporting Java packages). To avoid that, you can 
-[**copy**](#workflow-for-copying-java-packages-from-libraries)
-or
-[**embed**](#embedding-libraries-in-a-module)
-the library into your module.  This method is recommended because it
-most resembles building WAR files (copying libraries into `WEB-INF/lib`).
+importing and exporting Java packages) and still leaves you to blacklist any
+packages you don't need. Instead of wrapping the library in a new module, a
+combination of
+[copying packages from libraries and embedding libraries wholesale into your module](#workflow-for-copying-java-packages-from-libraries)
+is recommended because it avoids creating another module and configuring 
+package imports and exports. The next section describes a workflow for this
+recommended approach. 
 
 +$$$
 
@@ -53,8 +52,8 @@ code like the listing below to your Gradle project:
     apply plugin: "com.liferay.plugin"
 
 If you use Gradle without the `com.liferay.plugin` plugin, you'll have to
-configure your module similar to the way this this tutorial demonstrates for
-Maven and Ivy.
+configure your module similar to the way this tutorial demonstrates for Maven
+and Ivy.
 
 $$$
 
@@ -73,8 +72,9 @@ Here's a configuration workflow that minimizes dependencies and package imports:
 1.  Add the library as a compile-only dependency (e.g., `compileOnly` in
     Gradle).
 
-2.  Specify the packages you need in a conditional package instruction
-    (`Conditional-Package`) in your `bnd.bnd` file. Here are some examples:
+2.  Copy only the library packages you need by specifying them in a conditional
+    package instruction (`Conditional-Package`) in your `bnd.bnd` file. Here are
+    some examples:
 
     `Conditional-Package: foo.common*` adds packages your module uses such as
     `foo.common`, `foo.common-messages`, `foo.common-web` to your module's class
@@ -85,7 +85,8 @@ Here's a configuration workflow that minimizes dependencies and package imports:
     etc.) to your module's class path.
 
 3.  If your module requires most or all of the library's packages, consider
-    including the entire library in your module's classpath.
+    [embedding the entire library](#embedding-libraries-in-a-module),
+    adding it to your module's classpath.
 
     **Gradle**: Use the `compileInclude` dependency configuration. See
     [Embedding a Library using Gradle](#embedding-libraries-using-gradle).
@@ -94,7 +95,7 @@ Here's a configuration workflow that minimizes dependencies and package imports:
     `-includeresource` instruction in the `bnd.bnd` file. See
     [Embedding a Library using Maven or Ivy](embedding-libraries-using-maven-or-ivy).
 
-3.  Lastly, if after embedding your library you get unresolved imports when
+3.  Lastly, if after embedding a library you get unresolved imports when
     trying to deploy to Liferay, you may need to blacklist some imports: 
 
     `Import-Package: !foo.bar.baz`
@@ -117,9 +118,9 @@ the `compileInclude` configuration:
     }
 
 The `com.liferay.plugin` plugin's `compileInclude` configuration is transitive.
-It embeds the artifact and all its dependencies in a `lib` folder in the
-module's JAR. Also, it adds the artifact JARs to the `Bundle-ClassPath` header
-in the module's manifest.
+The `compileInclude` configuration embeds the artifact and all its dependencies
+in a `lib` folder in the module's JAR. Also, it adds the artifact JARs to the
+module's `Bundle-ClassPath` manifest header. 
 
 **Note**: The `compileInclude` configuration does not download transitive
 [optional dependencies](https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html).
