@@ -1,4 +1,4 @@
-# Adding Third Party Libraries to a Module [](id=adding-third-party-libraries-to-a-module)
+# Resolving Third Party Library Package Dependencies [](id=adding-third-party-libraries-to-a-module)
 
 The OSGi framework lets you build applications composed of multiple modules. The
 modules must resolve their Java package dependencies for the framework to
@@ -56,7 +56,7 @@ $$$
 
 The recommended package resolution workflow is next. 
 
-## Library Package Resolution Workflow
+## Library Package Resolution Workflow [](id=library-package-resolution-workflow)
 
 When you have a dependency on a JAR, much of the time you only need parts of it.
 The OSGi container can resolve dependencies faster if you specify only the
