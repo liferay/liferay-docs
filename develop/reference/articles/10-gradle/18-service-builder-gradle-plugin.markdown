@@ -1,7 +1,7 @@
 # Service Builder Gradle Plugin [](id=service-builder-gradle-plugin)
 
-The Service Builder Gradle plugin allows you to generate a service layer
-defined in a [Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+The Service Builder Gradle plugin lets you generate a service layer defined in a
+[Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 `service.xml` file.
 
 The plugin has been successfully tested with Gradle 2.5 up to 3.3.
