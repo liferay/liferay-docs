@@ -1,11 +1,5 @@
 # Changing Adaptive Media's Image Scaling [](id=changing-adaptive-medias-image-scaling)
 
-+$$$
-
-**Note:** This documentation is currently in beta. 
-
-$$$
-
 As described in 
 [the Adaptive Media user guide](/discover/portal/-/knowledge_base/7-0/adapting-your-media-across-multiple-devices), 
 Adaptive Media scales images to match the image resolutions defined by the 

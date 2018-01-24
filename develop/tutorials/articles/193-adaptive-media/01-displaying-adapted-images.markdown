@@ -1,11 +1,5 @@
 # Displaying Adapted Images in Your App [](id=displaying-adapted-images-in-your-app)
 
-+$$$
-
-**Note:** This documentation is currently in beta. 
-
-$$$
-
 To display 
 [adapted images](/discover/portal/-/knowledge_base/7-0/adapting-your-media-across-multiple-devices) 
 in your apps, Adaptive Media offers a convenient taglib in 

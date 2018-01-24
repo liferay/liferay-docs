@@ -1,11 +1,5 @@
 # Finding Adapted Images [](id=finding-adapted-images)
 
-+$$$
-
-**Note:** This documentation is currently in beta. 
-
-$$$
-
 In most cases, you can rely on the Adaptive Media taglib to 
 [display adapted images in your app](/develop/tutorials/-/knowledge_base/7-0/displaying-adapted-images-in-your-app). 
 This taglib uses the file version you give it to query Adaptive Media's finder 
@@ -29,7 +23,8 @@ in your app. First, you'll learn how to construct such API calls.
 
 The entry point to Adaptive Media's API is 
 [the `AMImageFinder` interface](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-api/src/main/java/com/liferay/adaptive/media/image/finder/AMImageFinder.java). 
-To use it, you must first inject the OSGi component in your class as follows: 
+To use it, you must first inject the OSGi component in your class, which must 
+also be an OSGi component, as follows: 
 
     @Reference
     private AMImageFinder _amImageFinder;
