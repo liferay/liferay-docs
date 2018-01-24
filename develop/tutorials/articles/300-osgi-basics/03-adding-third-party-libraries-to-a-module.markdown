@@ -1,23 +1,25 @@
 # Adding Third Party Libraries to a Module [](id=adding-third-party-libraries-to-a-module)
 
 The OSGi framework lets you build applications composed of multiple modules. The
-modules must specify their requirements and capabilities for the framework to
-assemble them into a working system. In a perfect world, every Java library
-would specify this information in an OSGi `META-INF/MANIFEST.MF` file, but many
-libraries don't. So how do you use them in your OSGi module?
+modules must resolve their Java package dependencies for the framework to
+assemble the modules into a working system. In a perfect world, every Java
+library would be an OSGi bundle (module), but many libraries aren't. So how do
+you resolve the packages your OSGi module needs from non-OSGi third party
+libraries?
 
-Java libraries that aren't OSGi bundles (modules) must be repackaged for your
-module to consume. Here are a couple methods available:
+Here is the main workflow for resolving third party Java library packages:
 
--   **Copy** the Java packages you need from the libraries directly into your
-    module.
--   **Embed** the libraries wholesale directly into your module.
+**Step 1 - Find an OSGi module version of the library**: Repositories, such as
+Eclipse Orbit, host OSGi modules that developers have created based on
+traditional Java libraries.
+[Eclipse Orbit](download.eclipse.org/tools/orbit/downloads/drops/R20170919201930/)
+hosts over a hundred such OSGi modules. Deploying the module to Liferay's OSGi
+framework lets you share it on the system. If you find a module for the library
+you need, use it. Otherwise, go to Step 2. 
 
-A combination of
-[copying packages from libraries and embedding libraries wholesale into your module](#workflow-for-copying-java-packages-from-libraries)
-is recommended because it avoids creating another module and configuring 
-package imports and exports. The next section describes a workflow for this
-recommended approach. 
+**Step 2 - Resolve the packages privately in your module**: You can copy
+required library packages into your OSGi module or embed them wholesale, if you
+must. The rest of the tutorial shows you how to do this. 
 
 +$$$
 
@@ -48,12 +50,13 @@ code like the listing below to your Gradle project:
     apply plugin: "com.liferay.plugin"
 
 If you use Gradle without the `com.liferay.plugin` plugin, you'll have to
-configure your module similar to the way this tutorial demonstrates for Maven
-and Ivy.
+[embed the third party libraries wholesale](#embedding-libraries-using-gradle).
 
 $$$
 
-## Workflow for Copying Java Packages from Libraries [](id=workflow-for-copying-java-packages-from-libraries)
+The recommended package resolution workflow is next. 
+
+## Library Package Resolution Workflow
 
 When you have a dependency on a JAR, much of the time you only need parts of it.
 The OSGi container can resolve dependencies faster if you specify only the
@@ -80,23 +83,21 @@ Here's a configuration workflow that minimizes dependencies and package imports:
     `foo.bar` and all its sub-packages (e.g., `foo.bar.baz`, `foo.bar.biz`,
     etc.) to your module's class path.
 
-3.  If your module requires most or all of the library's packages, consider
-    [embedding the entire library](#embedding-libraries-in-a-module),
-    adding it to your module's classpath.
+    Deploy your module. If a class your module needs or class its dependencies
+    need isn't found, go back to main workflow **Step 1 - Find an OSGi module
+    version of the library** to resolve it. 
 
-    **Gradle**: Use the `compileInclude` dependency configuration. See
-    [Embedding a Library using Gradle](#embedding-libraries-using-gradle).
+    **Important**: Resolving packages by using compile-only dependencies and
+    conditional package instructions assures you use only the packages you need
+    and avoids unnecessary transitive dependencies. It's recommended to use the
+    steps up to this point, as much as possible, to resolve required packages.  
 
-    **Maven/Ant**: Specify a dependency in the `provided` scope and add an
-    `-includeresource` instruction in the `bnd.bnd` file. See
-    [Embedding a Library using Maven or Ivy](embedding-libraries-using-maven-or-ivy).
+3.  If a library package you depend on requires non-class files (e.g., DLLs,
+    descriptors) from the library, then you might need to
+    [embed the library wholesale in your module](#embedding-libraries-in-a-module).
+    This adds the entire library to your module's classpath.
 
-3.  Lastly, if after embedding a library you get unresolved imports when
-    trying to deploy to Liferay, you may need to blacklist some imports: 
-
-    `Import-Package: !foo.bar.baz`
-
-Next you'll explore embedding libraries in a module.
+Next you'll learn how to embed libraries in your module. 
 
 ## Embedding Libraries in a Module [](id=embedding-libraries-in-a-module)
 
@@ -164,8 +165,13 @@ Follow these steps:
     the embedded JAR to the module's classpath via the `Bundle-Classpath`
     manifest header.
 
-Your library is now embedded and its resources are available to use in your
-module.
+Lastly, if after embedding a library you get unresolved imports when trying to
+deploy to Liferay, you may need to blacklist some imports: 
+    
+`Import-Package: !foo.bar.baz`
+
+Congratulations! Resolving all of your module's package dependencies, especially
+those from traditional Java libraries, is a quite an accomplishment. 
 
 ## Related Topics [](id=related-topics)
 
