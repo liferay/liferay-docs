@@ -15,7 +15,7 @@ technologies you love the most:
 -   jQuery (included)
 -   Lodash (included)
 
-## Loaders
+## Loaders [](id=loaders)
 
 To load modules in @product@, you must know when they are needed, where they are 
 located at build time, if you want to bundle them together or load them 
@@ -26,13 +26,13 @@ versatile, letting you use YUI/AUI modules, AMD modules, and npm modules
 (in AMD format). Just provide a small bit of information about your module and 
 @product@'s loaders take care of the rest.
 
-## npm
+## npm [](id=npm)
 
 You can use npm in your portlets. To do this, you must create an OSGi 
 bundle with all the npm dependencies extracted and modified to work with the 
 Liferay AMD Loader. Luckily, @product@'s `liferay-npm-bundler` is built for just 
 this purpose, and even provides several presets for common module types 
-(AMD, react, Angular JS,  etc.) to save you time. 
+(AMD, React, Angular JS,  etc.) to save you time. 
 
 Simply include the `liferay-npm-bundler` in your project, and With just a small 
 amount of configuration, the `liferay-npm-bundler` bundles your portlet for OSGi 
@@ -52,8 +52,8 @@ application developers through a set of CSS classes, or our tag library.
 ## Templates [](id=templates)
 
 For templating, Java EE's JSP is there as expected as well as FreeMarker, but 
-the platform's modularity enables using Google's Soy (aka Closure Templates), 
-JSX templates, or whatever else you like. 
+the platform's modularity enables using Google's Soy (aka Closure Templates), or 
+whatever else you like. 
 
 ## Themes [](id=themes)
 
