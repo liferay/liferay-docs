@@ -171,91 +171,10 @@ Follow these steps:
 Your library is now embedded and its resources are available to use in your
 module.
 
-Next, you'll learn how to expand libraries into a module.
-
-## Expanding Libraries into a Module [](id=expanding-libraries-in-a-module)
-
-Expanding libraries into your module positions their resources alongside your
-module's existing resources. You can expand some or all of the libraries and
-their resources into your module.
-
-If you're using Gradle and have applied Liferay's Gradle plugin
-`com.liferay.plugin`, adding the following instruction to your `build.gradle`
-file expands all dependencies that are a part of the `compileInclude`
-configuration (and their transitive dependencies) into your module:
-
-    liferayOSGi {
-        expandCompileInclude = true
-    }
-
-Alternatively, you can expand a subset of resources from a library into your module.
-
-1.  Open your module's Gradle build file, Maven POM, or Ivy XML file and add
-    the libraries as dependencies so they're available in the compile classpath.
-
-    **Gradle:**
-
-        dependencies {
-            compileOnly group: 'org.apache.shiro', name: 'shiro-core', version: '1.1.0', transitive: false
-        }
-
-    **Maven:**
-
-        <dependency>
-          <groupId>org.apache.shiro</groupId>
-          <artifactId>shiro-core</artifactId>
-          <version>1.1.0</version>
-          <scope>provided</scope>
-        </dependency>
-
-    **Ant/Ivy:**
-
-        <dependency conf="provided" name="shiro-core" org="org.apache.shiro" rev="1.1.0" />
-
-2.  Open your module's `bnd.bnd` file and use a `-includeresource` instruction
-    with regular expressions to specify library resources to expand into the
-    module.
-
-        -includeresource: @shiro-core-[0-9]*.jar
-
-    This instruction adds the `shiro-core-[version].jar` as an included resource
-    in the module. The `@` symbol specifies that the JAR should be expanded when
-    the module is built. The expression `[0-9]*` lets the build tool use the
-    version available in the classpath.
-
-    +$$$
-
-    **Note:** The `-includeresource` instruction accepts a comma delimited list
-    of resources.
-
-    $$$
-
-+$$$
-
-**Note**: Libraries whose resources and descriptors use *unique* names can be
-embedded safely in your module.
-
-If two libraries have resources or descriptors that use the *same* names, those
-resources or descriptors can overwrite each other. For example, many libraries
-include Service Loader descriptors. If Service Loader descriptors with the same
-name are added inside a module's `META-INF/services/` folder, one overwrites the
-other. If this happens, expand only parts of each library into your module,
-making sure not to add descriptors that use the same name.
-
-$$$
-
-That's it! Your third party library resources are configured and their contents
-are available within your module once it's built.
-
-Excellent! You've learned two easy ways to use non-OSGi libraries in your OSGi
-module.
-
 ## Related Topics [](id=related-topics)
 
-<!--
 [Importing Packages](/develop/tutorials/-/knowledge_base/7-0/importing-packages)
 
 [Exporting Packages](/develop/tutorials/-/knowledge_base/7-0/exporting-packages)
--->
 
 [Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
