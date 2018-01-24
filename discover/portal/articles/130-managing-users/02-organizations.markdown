@@ -101,7 +101,7 @@ Crew, or the Mechanical Crew. However, an administrator of the Physical Plant
 Department can't manage users belonging to the Recreation Department or users
 in the Retail Group organization.
 
-Organizations and suborganization hierarchies can be created to unlimited
+Organizations and sub-organization hierarchies can be created to unlimited
 levels. Users can be members of one or many organizations. The rights of an
 Organization Administrator apply both to his/her organization and to any child
 organizations. Members of child organizations are implicit members of their
@@ -138,7 +138,7 @@ the *My Organizations* link to gain access to any organizations they manage.
 A huge time-saving benefit of including organizations into your portal design is
 that organization administrators can assign organization-scoped roles to members
 of the organization. For example, consider an IT Security group in a corporate
-setting. You could have a suborganizaton of your IT organization that handles
+setting. You could have a sub-organization of your IT organization that handles
 security for all of the applications company-wide. If you grant the IT Security
 organization the portal administrator role, all the members of the organization
 would have administrative access to the entire portal. Suppose further that a
@@ -186,8 +186,6 @@ Panel.
     if your organization needs a site, that's fine. You can always add one later. 
 <!-- Add a screenshot showing the Add Org UI -->
     - Enter a Name for the organization.
-    - Choose whether this is a regular organization or a location. A
-location cannot have any suborganizations.
     - Select an organization in the system to be the direct parent of the
 organization you are creating. Click the *Remove* button to remove the currently
 configured parent.
@@ -249,18 +247,57 @@ this organization.
 organization. This is how you create hierarchies of organizations with
 parent-child relationships.
 
-- *Add Location* lets you add a child organization of the type Location, which
-  is a special type of organization that cannot have any children added to it.
-
 - *Delete* removes this organization from the portal. Make sure the
 organization has no users in it first.
 
 If you click the *View* button at the top of the Users and Organizations page
 and select *View Hierarchy* you can view both a list of users who are members of
-this organization and a list of all the suborganizations of this organization.
+this organization and a list of all the sub-organizations of this organization.
 
 <!-- See if a screenshot of this for the proposed Lunar Resort intranet
 organizations could replace the textual hierarchy representation above -->
+
+## Organization Types
+
+Some enterprises need more than one organization type. By default, @product@
+only includes the *Organization* type. Configure additional types using
+`portal.properties`. 
+
+Check out the portal properties that configure the default *Organization* type
+on [docs.liferay.com](https://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html#Organizations).
+
+To add another organization type called *Location*, add this to
+`portal-ext.properties`:
+
+    organizations.types=organization,location
+    organizations.rootable[location]=true
+    organizations.children.types[organization]=organization,location
+    organizations.children.types[location]=location
+    organizations.country.enabled[location]=true
+    organizations.country.required[location]=false
+
+So what do all those properties do?
+
+- `organizations.types=organization,location`: adds location to the list of
+    organization types that appear in the Add Organization menu.
+    ![Figure x: ](../../images/organization-new-type.png)
+- `organizations.rootable[location]=true`: enables Locations as top level
+    organizations. Limit Location to sub-organization status by excluding it
+    from this list.
+- `organizations.children.types[organization]=organization,location`: specifies
+    both Organization and Location as allowable sub-organization types for the
+    Organization parent type.
+- `organizations.children.types[location]=location`: specifies Location as the
+    only allowable sub-organization type for the Location parent type.
+- `organizations.country.enabled[location]=true`: enables the Country
+    selection list field on the form for adding and editing Location types.
+    ![Figure x: ](../../images/organization-country-selection.png)
+- `organizations.country.required[location]=false`: specifies that the *Country*
+    field is not required when adding a Location.
+
+Once you configure additional organization types in `portal-ext.properties`,
+restart the server and you'll see your new type(s) in the Organizations sections
+of the Control Panel.
 
 Users can join or be assigned to sites when they share a common interest. Users
 can be assigned to organizations when they fit into a hierarchical structure.
