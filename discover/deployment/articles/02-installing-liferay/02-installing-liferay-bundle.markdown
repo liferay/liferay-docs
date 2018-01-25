@@ -2,8 +2,8 @@
 
 Now that you've performed the steps needed to prepare for your installation,
 you're ready to install @product@! Since bundles are the easiest way to complete
-an installation, all the installation steps below assume a bundle has been
-installed. If you plan to install @product@ manually, please refer to the
+an installation, all the installation steps below assume you're installing a
+@product@ bundle. If you plan to install @product@ manually, please refer to the
 article for your app server of choice, and then come back here to complete the
 configuration steps. 
 
@@ -14,82 +14,64 @@ install @product@.
 ## Liferay Home [](id=liferay-home)
 
 @product@ bundles contain the same folder structure regardless of application
-server. The top-level folder is named for the release of @product@. This folder
-is called *Liferay Home*. This folder is usually the parent folder of the
-application server's folder. This is why @product@ bundles place the application
-server inside the bundle's root folder. On a manual installation, the location
-of this folder varies by application server. In a bundle, it's part of the
-bundle. If you're doing a manual installation, please refer to the article
-covering that app server for its location. 
+server. The top-level folder is named for the @product@ release. This folder is
+called *Liferay Home*. This folder is usually the  application server's parent
+folder. This is why @product@ bundles place the application server inside the
+bundle's root folder. On a manual installation, the location of this folder
+varies by application server. In a bundle, it's part of the bundle. If you're
+doing a manual installation, please refer to the article covering that app
+server for its location. 
 
-In the Liferay Home folder there are folders for various purposes:
+Liferay Home has folders for various purposes:
 
-- [Liferay Home]
-    - `data`
-    - `deploy`
-    - `license`
-    - `logs`
-    - `osgi`
-    - `patching-tool` (Liferay Digital Enterprise 7.0 only)
-    - [Application Server]
-    - `tools`
-    - `work`
+-   **[Liferay Home]**
+    -   **[Application Server]**: The name of this folder varies depending on 
+        the bundle you're using. This folder contains the application server in
+        which @product@ has been installed.
+    -   `data`: Stores an embedded HSQL database, @product@'s file repository,
+        and @product@'s search indexes. @product@ is initially configured to use
+        the embedded HSQL database but the HSQL database is primarily intended
+        for demonstration and trial purposes.
+        [Portal property `jdbc.default.url`](@platform-ref@/7.0/propertiesdoc/portal.properties.html#JDBC)
+        sets the Hypersonic embedded HSQL database location.
+    -   `deploy`: To auto-deploy @product@ plugins, copy them to this folder. 
+        Legacy style `.war` files, @product-ver@ style `.jar` files, and `.lpkg`
+        files from Liferay Marketplace are supported.
+        [Portal property `auto.deploy.deploy.dir`](@platform-ref@/7.0/propertiesdoc/portal.properties.html#Auto%20Deploy)
+        sets the auto-deploy location.
+    -   `license`: @product@'s copyright and version files are here.
+    -   `logs`: This folder contains @product@'s log files. The information in
+        @product@'s log files can be quite valuable for system administrators,
+        especially when trying to diagnose a problem. `portal-impl.jar`'s
+        `portal-impl/src/META-INF/portal-log4j.xml` file sets the location for
+        the log files. To override the log file location, you must
+        [use an `ext-impl/src/META-INF/portal-log4j-ext.xml` file in an Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins#using-advanced-configuration-files).
+    -   `osgi`: All the JAR files and a few configuration files for @product@'s 
+        OSGi runtime belong in this folder.
+        [Portal property `module.framework.base.dir`](@platform-ref@/7.0/propertiesdoc/portal.properties.html#Module%20Framework)
+        sets the OSGi folder location. Here are its subfolders:
 
-`data`: This folder is used to store an embedded HSQL database, @product@'s
-file repository, and @product@'s search indexes. @product@ is initially configured
-to use the embedded HSQL database but the HSQL database is primarily intended
-for demonstration and trial purposes.
-[Portal property `jdbc.default.url`](@platform-ref@/7.0/propertiesdoc/portal.properties.html#JDBC)
-sets the Hypersonic embedded HSQL database location. 
-
-`deploy`: To auto-deploy @product@ plugins, copy them to this folder. Legacy
-style `.war` files, @product-ver@ style `.jar` files, and `.lpkg` files from
-Liferay Marketplace are supported.
-[Portal property `auto.deploy.deploy.dir`](@platform-ref@/7.0/propertiesdoc/portal.properties.html#Auto%20Deploy)
-sets the auto-deploy location. 
-
-`license`: @product@'s copyright and version files are here.
-
-`logs`: This folder contains @product@'s log files. The information in
-@product@'s log files can be quite valuable for system administrators,
-especially when trying to diagnose a problem. `portal-impl.jar`'s
-`portal-impl/src/META-INF/portal-log4j.xml` file sets the location for the log
-files. To override the log file location, you must
-[use an `ext-impl/src/META-INF/portal-log4j-ext.xml` file in an Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins#using-advanced-configuration-files). 
-
-`osgi`: All the JAR files and a few configuration files for @product@'s OSGi
-runtime belong in this folder.
-[Portal property `module.framework.base.dir`](@platform-ref@/7.0/propertiesdoc/portal.properties.html#Module%20Framework)
-sets the OSGi folder location. Here are its subfolders:
-
-- `configs`: Component configuration files go here
-- `core`: @product@'s core modules
-- `marketplace`: Marketplace applications and application suites
-- `modules`: Modules you've deployed
-- `portal`: @product@'s non-core modules
-- `state`: Contains OSGi internal state files for such things as OSGi bundle
-installation, bundle storage, and more
-- `target-platform`: Target platform index
-- `test`: Modules that support test integration
-- `war`: WAR plugins you've deployed
-
-`patching-tool`: This folder contains patches for @product@ and files for
-installing the patches (Digital Enterprise 7.0 only).
-
-`tools`: For portal upgrade and target platform indexer.
-
-`work`: Module Jasper work files.
-
-**[Application Server]:** The name of this folder is different depending on
-the bundle you're using. This folder contains the application server in
-which @product@ has been installed.
+        -   `configs`: Component configuration files go here
+        -   `core`: @product@'s core modules
+        -   `marketplace`: Marketplace applications and application suites
+        -   `modules`: Modules you've deployed
+        -   `portal`: @product@'s non-core modules
+        -   `state`: Contains OSGi internal state files for such things as OSGi 
+            bundle installation, bundle storage, and more
+        -   `target-platform`: Target platform index
+        -   `test`: Modules that support test integration
+        -   `war`: WAR plugins you've deployed
+    -   `patching-tool`: (Liferay Digital Enterprise 7.1 only) This folder 
+        contains patches for @product@ and files for installing the patches.
+    -   `tools`: For @product@ upgrade and target platform indexer.
+    -   `work`: Module Jasper work files.
 
 If @product@ is unable to create the resources it needs in the Liferay Home
 folder or if it finds itself running on certain application servers, it creates
 a folder called `liferay` in the home folder of the operating system user that
 is running @product@. In this case, the `liferay` folder becomes Liferay Home.
-For example, if the operating system user's name was jbloggs, the Liferay Home
-folder could be `/home/bloggs/liferay` or `C:\Users\jbloggs\liferay`.
+For example, if the operating system user's name is jbloggs, the Liferay Home
+folder is `/home/bloggs/liferay` or `C:\Users\jbloggs\liferay`.
 
 ## Extracting a @product@ Bundle [](id=extracting-a-liferay-bundle)
 
@@ -97,12 +79,12 @@ Getting a @product@ bundle up and running is as easy as uncompressing the
 archive, possibly copying a JDBC driver, and then starting the application
 server. Let's use the @product@ Tomcat bundle as an example.
 
-1. Unzip your @product@ bundle.
+1.  Unzip your @product@ bundle.
 
-2. If you're setting up @product@ to be an actual server, copy your database's
-   JDBC driver `.jar` file to `[Tomcat]/lib/ext`. If you're using a supported
-   open source database or if you're setting up @product@ for demo purposes, you
-   can skip this step.
+2.  If you're setting up @product@ to be an actual server, copy your database's
+    JDBC driver `.jar` file to `[Tomcat]/lib/ext`. If you're using a supported
+    open source database or if you're setting up @product@ for demo purposes,
+    you can skip this step.
 
 That's it! You've extracted @product@, and it's ready for use. This is much
 easier than doing a manual installation on an app server. If, however, that's
@@ -114,20 +96,31 @@ database.
 
 ## Connecting @product@ to Your Database [](id=connecting-product-to-your-database)
 
-You can connect @product@ through either your app server's data source or the one
-that ships with @product@. Because of its suitability for tuning, it is
-recommended that you use the data source that ships with @product@. To do this,
-you'll create a configuration file called `portal-ext.properties`, and you'll
-place that file in your Liferay Home folder. 
+You can connect @product@ to your database through either a data source
+configured on your app server or a data source configured in @product@. To
+configure the data source on your app server, refer to Liferay's documentation
+for installing @product@ on your specific app server type.  Because of its
+suitability for tuning, however, it is recommended to configure the data source
+in @product@.
 
-The configuration varies by database, of course, so templates for each one are
-provided in the [reference section](/discover/reference/-/knowledge_base/7-0/database-templates). 
-To connect your database, therefore, create a text file called
-`portal-ext.properties` in your Liferay Home folder. Copy the relevant template
-for your database and paste it into this file. 
+You can configure the data source in @product@ by specifying the configuration in a `portal-ext.properties` file or the
+[Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-product#using-liferays-setup-wizard).
+Here are the steps for creating a data source in a `portal-ext.properties` file:
 
-Now all you have to do is customize it. Enter the proper host name and user and
-password credentials for your database, and then save the file. 
+1.  Before starting @product@, create a `portal-ext.properties` file in your
+    Liferay Home folder.
+
+2.  Copy a relevant example data source configuration from
+    one of the
+    [data source configuration templates](/discover/reference/-/knowledge_base/7-0/database-templates)
+    or
+    [portal properties reference's JDBC section](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#JDBC)
+    and paste it into the `portal-ext.properties` file.
+
+3.  Customize the configuration with the proper host name and user and password
+    credentials for your database, and save the file.
+
+You're ready to start @product@. 
 
 ## Running @product@ for the First Time [](id=running-product-for-the-first-time)
 
@@ -157,7 +150,7 @@ displays @product@'s Basic Configuration page. If for some reason your browser
 doesn't load the Basic Configuration page, launch your web browser and navigate
 to [http://localhost:8080](http://localhost:8080). 
 
-# Using @product@'s Setup Wizard [](id=using-liferays-setup-wizard)
+## Using @product@'s Setup Wizard [](id=using-liferays-setup-wizard)
 
 @product@'s Setup Wizard runs when you start @product@ for the first time. To make
 it easy to configure @product@, the first thing you see when browsing to your
