@@ -39,11 +39,10 @@ Follow these steps to install the Liferay Theme Generator:
 
                 prefix=/Users/[username]/.npm-packages
 
-    c.  set Node.js `NPM_PACKAGES` and `NODE_PATH` system environment variables 
-        with values like these based on the `prefix` value you just specified:
+    c.  set the `NPM_PACKAGES` system environment variable to the `prefix` 
+        value you just specified:
 
                 NPM_PACKAGES=/Users/[username]/.npm-packages (same as prefix value)
-                NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
 
     d.  As a last npm configuration, since npm installs Yeoman and gulp 
         executables to `${NPM_PACKAGES}/bin` on UNIX and to `%NPM_PACKAGES%` on 
