@@ -25,7 +25,7 @@ is set as an attribute in the `KotlinGreeterActionCommandKt.kt` class using an
 
 ## Where Is This Sample? [](id=where-is-this-sample)
 
-This sample is built with the following build tool:
+This sample is built with the following build tools:
 
 - [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/kotlin-portlet)
 - [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/apps/kotlin-portlet)
