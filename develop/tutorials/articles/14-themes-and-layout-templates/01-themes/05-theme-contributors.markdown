@@ -4,7 +4,7 @@ If you want to package UI resources independent of a specific theme and
 include them on a @product@ page, Theme Contributors are your best option. If,
 instead, you'd like to include separate UI resources on a @product@ page that
 are attached to a theme, you should look into
-[themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
+[themelets](/develop/tutorials/-/knowledge_base/7-1/themelets).
 
 A Theme Contributor is a
 [module](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module)
@@ -22,12 +22,9 @@ Next, you'll learn how to create a Theme Contributor.
 
 ## Creating Theme Contributors [](id=creating-theme-contributors)
 
-In Liferay versions prior to 7.0, the standard UI for User menus and navigation
-(the Dockbar) was included in the theme template. Starting in @product@
-7.0, these standard UI components are packaged as Theme Contributors.
-
+The standard UI for User menus and navigation are packaged as Theme Contributors.
 For example, the Control Menu, Product Menu, and Simulation Panel are packaged
-as Theme Contributor modules in Liferay, separating them from the theme. This
+as Theme Contributor modules in @product@, separating them from the theme. This
 means that these UI components must be handled outside the theme.
 
 ![Figure 1: The Control Menu, Product Menu, and Simulation Panel are packaged as Theme Contributor modules.](../../../images/theme-contributor-menus-diagram.png)
@@ -39,9 +36,9 @@ new UI components to @product@ by creating a Theme Contributor.
 To create a Theme Contributor module, follow these steps:
 
 1.  Create a generic OSGi module using your favorite third party tool, or use
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). You can also
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli). You can also
     use the 
-    [Blade Template](/develop/reference/-/knowledge_base/7-0/theme-contributor-template)
+    [Blade Template](/develop/reference/-/knowledge_base/7-1/theme-contributor-template)
     to create your module, in which case you can skip step 2.
 
 2.  To identify your module as a Theme Contributor, add the
@@ -52,12 +49,11 @@ To create a Theme Contributor module, follow these steps:
 
         Bundle-Name: Liferay Product Navigation Control Menu Theme Contributor
         Bundle-SymbolicName: com.liferay.product.navigation.control.menu.theme.contributor
-        Bundle-Version: 1.0.0
+        Bundle-Version: 2.0.12
         Liferay-Releng-Module-Group-Description:
         Liferay-Releng-Module-Group-Title: Product Navigation
         Liferay-Theme-Contributor-Type: product-navigation-control-menu
         Web-ContextPath: /product-navigation-control-menu-theme-contributor
-        -include: ../../../../../marketplace/web-content-management/bnd.bnd
 
     The Theme Contributor type helps @product@ better identify your module. For
     example, if you're creating a Theme Contributor to override an existing
@@ -87,10 +83,10 @@ The UI contributions affect every page and aren't affected by theme deployments.
 
 ## Related Topics [](id=related-topics)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
 
-[Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
+[Themelets](/develop/tutorials/-/knowledge_base/7-1/themelets)
 
-[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
+[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
 
-[Theme Contributor Template](/develop/reference/-/knowledge_base/7-0/theme-contributor-template)
+[Theme Contributor Template](/develop/reference/-/knowledge_base/7-1/theme-contributor-template)
