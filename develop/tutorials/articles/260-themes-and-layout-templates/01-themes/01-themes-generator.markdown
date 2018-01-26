@@ -24,8 +24,8 @@ The first step is to install the Liferay Theme Generator.
 
 ## Installing the Theme Generator [](id=installing-the-theme-generator)
 
-The Liferay Theme Generator has several dependencies. Follow these steps to install
-them:
+The Liferay Theme Generator has several dependencies. Follow these steps to 
+install them:
 
 1.  Install [Node.js](http://nodejs.org/), if it's not already installed.
 
@@ -55,7 +55,8 @@ them:
     Set the `prefix` value based on your user's home directory. The location you
     specify is where global npm packages are to be installed.
 
-    Next, set the `NPM_PACKAGES` system environment variable with the `prefix` value you just specified:
+    Next, set the `NPM_PACKAGES` system environment variable to the `prefix` 
+    value you just specified:
 
         NPM_PACKAGES=/Users/[username]/.npm-packages (same as prefix value)
 
@@ -134,8 +135,8 @@ The following commands install the Sass and Compass gems:
 After creating a theme project in the next section, you'll learn how to
 configure a project to use Ruby based Sass and Compass.
 
-Now that you've installed the Liferay Theme Generator and theme dependencies, you can
-generate a theme.
+Now that you've installed the Liferay Theme Generator and theme dependencies, 
+you can generate a theme.
 
 ## Running the Liferay Theme Generator [](id=running-the-themes-generator)
 
