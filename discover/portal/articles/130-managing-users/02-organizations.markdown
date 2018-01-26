@@ -260,25 +260,19 @@ organizations could replace the textual hierarchy representation above -->
 ## Organization Types
 
 By default, @product@ only includes the *Organization* type. Configure
-additional organization types using `portal.properties`. 
+additional organization types using `portal.properties`. There are two main
+reasons an enterprise wants to configure organization types:
 
-![Figure x: Make additional organization types available in the Control Panel by adding them to the `organizations.types` portal property.](../../images/organization-new-type.png)
-
-There are several reasons an enterprise might need more than one organization
-type:
-
-- Organizations usually correlate to real-life hierarchical structures.
+1.  Organizations usually correlate to real-life hierarchical structures.
     Calling them by their real names is helpful for administrators and users. In
     the Major League Baseball (MLB) example, *League*, *Division*, and *Team*
     organization types are useful.
-- Enforce control over which organizations can be top level organizations and
+2.  Enforce control over which organizations can be top level organizations and
     the type of sub-organization allowed for each parent organization type. For
     example, MLB would not allow Division organization types to be
     sub-organizations of Team organizations.
-- Control whether the *Country* select list field is included in the Add
-    Organization form, and whether it's required.
 
-![Figure x: Add the Country select list field to the Add Organization form with the `organizations.country[my-org-type].enabled` property.](../../images/organization-country-selection.png)
+![Figure x: Make additional organization types available in the Control Panel by adding them to the `organizations.types` portal property.](../../images/organization-new-type.png)
 
 Check out the portal properties that configure the default *Organization* type
 on [docs.liferay.com](https://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html#Organizations).
@@ -296,11 +290,11 @@ So what do all those properties do?
 
 - `organizations.types=organization,League`: adds League to the list of
     organization types that appear in the Add Organization menu.
-- `organizations.rootable[League]=true`: enables Leagues as top level
-    organizations. Limit League to sub-organization status by excluding this
+- `organizations.rootable[League]=true`: enables Leagues as a top level
+    organization. Limit League to sub-organization status by excluding this
     property.
 - `organizations.children.types[League]=Division`: specifies Division
-    Team as the only allowable sub-organization type for the League parent
+    as the only allowable sub-organization type for the League parent
     type.
 - `organizations.country.enabled[League]=true`: enables the Country
     selection list field on the form for adding and editing League types.
@@ -310,6 +304,8 @@ So what do all those properties do?
 Once you configure additional organization types in `portal-ext.properties`,
 restart the server and you'll see your new type(s) in the Organizations section
 of the Control Panel.
+
+![Figure x: Add the Country select list field to the Add Organization form with the `organizations.country[my-org-type].enabled` property.](../../images/organization-country-selection.png)
 
 Users can join or be assigned to sites when they share a common interest. Users
 can be assigned to organizations when they fit into a hierarchical structure.
