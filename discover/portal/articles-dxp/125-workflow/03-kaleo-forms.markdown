@@ -90,11 +90,11 @@ coming here for the first time, there won't be any, so create one.
 
 ### Creating a Kaleo Process [](id=creating-a-kaleo-process)
 
-Click the *Add* (![Add](../../../images-dxp/icon-add.png)) button to open the
+Click the *Add* (![Add](../../images-dxp/icon-add.png)) button to open the
 New Process Wizard and begin the first step in creating a Kaleo Process. Name
 the process *Spa Order Process*, add a description, and then click *Next*.
 
-![Figure 1: Add a Kaleo Forms Process to link a form with a workflow definition.](../../../images-dxp/kaleo-forms-add.png)
+![Figure 1: Add a Kaleo Forms Process to link a form with a workflow definition.](../../images-dxp/kaleo-forms-add.png)
 
 ### Creating the Form [](id=creating-the-form)
 
@@ -103,7 +103,7 @@ in your process's forms. There are two methods:
 
 1.  Choose a predefined field set. To use a field set that already exists, pick
     one from the list of field sets by clicking the Kebab menu
-    (![Actions](../../../images-dxp/icon-actions.png)) next to its entry and
+    (![Actions](../../images-dxp/icon-actions.png)) next to its entry and
     selecting *Choose*. 
 2.  Create a new field set. Use the *Add Field Set* button to add a new field
     set. If you're not sure about creating a field set, see the documentation on
@@ -129,14 +129,14 @@ in your process's forms. There are two methods:
 Click *Next* to move to the next step in the wizard: adding a workflow for
 the process.
 
-![Figure 2: In the second step of the New Process Wizard, define and choose the fields for your form.](../../../images-dxp/kaleo-forms-fields.png)
+![Figure 2: In the second step of the New Process Wizard, define and choose the fields for your form.](../../images-dxp/kaleo-forms-fields.png)
 
 ### Choosing a Workflow [](id=choosing-a-workflow)
 
 In the third step of the New Process Wizard you select a workflow to use for
 your forms. The Single Approver workflow is included by default. See how it's
 defined by opening it in the Kaleo Designer. Click the kebab menu
-(![Actions](../../../images-dxp/icon-actions.png)) and then *Edit*. 
+(![Actions](../../images-dxp/icon-actions.png)) and then *Edit*. 
 
 The graphical interface for editing or defining a workflow appears below the
 Single Approver edit screen's Details section. 
@@ -148,7 +148,7 @@ started.
 
 - For the Spa Order Process, make a new workflow definition called *Spa Order
     Workflow*:
-     ![Figure 3: The Spa Order Process has three tasks that happen sequentially.](../../../images-dxp/kaleo-forms-spa-order-definition.png)
+     ![Figure 3: The Spa Order Process has three tasks that happen sequentially.](../../images-dxp/kaleo-forms-spa-order-definition.png)
 
 The definition has a StartNode and three task nodes. Develop it in the graphical
 designer built into Kaleo Forms. There's a more detailed write-up of the
@@ -209,7 +209,7 @@ enhance its usability:
    combine a Paragraph and a Separator to instruct the assignee to focus on a
    certain section of the form.
 
-![Figure 4: Use Fieldsets, Paragraphs, and Separators to enhance the appearance of your workflow task forms.](../../../images-dxp/kaleo-forms-field-types.png)
+![Figure 4: Use Fieldsets, Paragraphs, and Separators to enhance the appearance of your workflow task forms.](../../images-dxp/kaleo-forms-field-types.png)
 
 $$$
 
@@ -234,24 +234,24 @@ with its associated form and a button that lets you assign a form. In the Spa
 Order Workflow definition, there are four nodes that need forms: StartNode,
 Technician Claim, Managerial Approval, and Final Order.
 
-![Figure 5: You can assign a form to each task in the workflow, and for the initial state (*created* in this case.)](../../../images-dxp/kaleo-forms-task-forms.png)
+![Figure 5: You can assign a form to each task in the workflow, and for the initial state (*created* in this case.)](../../images-dxp/kaleo-forms-task-forms.png)
 
-Click on the kebab menu (![Action](../../../images-dxp/icon-actions.png)) next
+Click on the kebab menu (![Action](../../images-dxp/icon-actions.png)) next
 to the Request Entered task and then click *Assign Form*. The screen that
 appears lets you create a new form if you click the *Add* button
-(![Add](../../../images-dxp/icon-add.png)). 
+(![Add](../../images-dxp/icon-add.png)). 
 
 -  First, name the initial form (call it *Spa Order Process--Order Form* if you like). 
 -  Next look at the available fields. In this stage of the workflow, you don't 
    need all the fields. Delete these fields from the form (mouse over
    the field and click the delete
-   icon--![Delete](../../../images/icon-trash.png)):
+   icon--![Delete](../../images/icon-trash.png)):
     - Available Date
     - Available Time
     - Approved
     - Managerial Comments
 
-![Figure 6: Workflow task forms are a subset of the original form.](../../../images-dxp/kaleo-forms-form-builder.png)
+![Figure 6: Workflow task forms are a subset of the original form.](../../images-dxp/kaleo-forms-form-builder.png)
 
 +$$$
 
@@ -299,19 +299,19 @@ There's one more form to create: the *Spa Order Process--Final Order Form*. Like
 the last form, it should have all the form's fields so that the customer service
 representative can review the order with the customer.
 
-![Figure 7: Once created, your process is listed in Kaleo Forms.](../../../images-dxp/kaleo-forms-processes.png)
+![Figure 7: Once created, your process is listed in Kaleo Forms.](../../images-dxp/kaleo-forms-processes.png)
 
 Click *Save* when finished. The process is ready to test.
 
 ### Test the Process [](id=test-the-process)
 
 Once your new process is developed, add records to it by clicking on the process
-name and then the Plus button (![Add](../../../images-dxp/icon-add.png)).
+name and then the Plus button (![Add](../../images-dxp/icon-add.png)).
 
 The application displays the form you assigned to the workflow's initial state.
 Fill out the form and click Save.
 
-![Figure 8: Fill out the form and send it through the process.](../../../images-dxp/kaleo-forms-new-process-form.png)
+![Figure 8: Fill out the form and send it through the process.](../../images-dxp/kaleo-forms-new-process-form.png)
 
 Once the initial form is submitted in the Kaleo Forms application, the process
 is managed by the workflow engine. In a process backed by the Spa Order
@@ -321,7 +321,7 @@ users or roles you assigned to the tasks receive notifications, and the task
 appears in the Assigned to My Roles section of the My Workflow Tasks portlet. A
 notification is also triggered in the Notifications application. Once in the
 task, the user views and approve the form or clicks the edit
-(![Edit](../../../images-dxp/icon-edit.png)) button. At this point the workflow
+(![Edit](../../images-dxp/icon-edit.png)) button. At this point the workflow
 task forms you created come into play. Each assigned user fills out the form,
 saves it, and sends it along in the workflow.
 

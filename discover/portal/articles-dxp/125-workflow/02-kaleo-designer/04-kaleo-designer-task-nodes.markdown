@@ -29,7 +29,7 @@ node is for and how they are used. Include a script. -Rich -->
 Workflow tasks need to be completed by a @product@ user. You can choose how you
 want to configure your assignments. 
 
-![Figure 1: You can add an Assignment to a Task node.](../../../../images-dxp/kaleo-designer-assignment.png)
+![Figure 1: You can add an Assignment to a Task node.](../../../images-dxp/kaleo-designer-assignment.png)
 
 You can choose to add assignments to specific Roles, multiple roles of a Role
 Type (organization, site, or regular role types), to the Asset Creator, to
@@ -74,7 +74,7 @@ When configuring your task node's Assignment, select Resource Actions as the
 Assignment Type, then specify the Resource Actions to use for the assignment
 (for example, UPDATE).
 
-![Figure 2: Configure resource action assignments in Kaleo Designer.](../../../../images-dxp/kaleo-designer-resource-action-assignment.png)
+![Figure 2: Configure resource action assignments in Kaleo Designer.](../../../images-dxp/kaleo-designer-resource-action-assignment.png)
 
 Here's what the assignment looks like in the Source (Kaleo XML) tab:
 

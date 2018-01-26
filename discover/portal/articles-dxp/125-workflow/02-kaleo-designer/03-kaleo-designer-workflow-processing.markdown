@@ -20,7 +20,7 @@ exiting the first node, processing continues to the node pointed to by the
 transition. Every time you create an arrow from one node to another, Kaleo
 Designer creates a transition. 
 
-![Figure 1: You connect nodes and direct workflow processing with transitions. The Single Approver workflow has transitions named Submit, Resubmit, Reject, and Approve.](../../../../images-dxp/kaleo-designer-single-approver.png)
+![Figure 1: You connect nodes and direct workflow processing with transitions. The Single Approver workflow has transitions named Submit, Resubmit, Reject, and Approve.](../../../images-dxp/kaleo-designer-single-approver.png)
 
 Each node you add has a pop-up menu letting you delete the node. As you
 hover your mouse over the edges of a node, notice your mouse pointer changes to
@@ -36,7 +36,7 @@ generated names, so rename them all to something more human-readable, as they're
 displayed to workflow users as links that will send the workflown item to the
 next step in the workflow.
 
-![Figure 2: In the Single Approver workflow, a user in the Review task can choose to Approve or Reject the asset, which sends the asset either to the EndNode or to the Update task.](../../../../images-dxp/kaleo-designer-transition-link.png)
+![Figure 2: In the Single Approver workflow, a user in the Review task can choose to Approve or Reject the asset, which sends the asset either to the EndNode or to the Update task.](../../../images-dxp/kaleo-designer-transition-link.png)
 
 To rename transitions, click on the arrow representing the transition
 and use the Setting tab to set the name just like you do for a node.
@@ -49,7 +49,7 @@ do this, transition to a fork node, make two transitions from the fork to
 your parallel tasks, and then come back together using a join node.
 
 ![Figure 3: Forks and Joins are used to enable parallel processing in the
-workflow.](../../../../images-dxp/kaleo-designer-fork-join.png)
+workflow.](../../../images-dxp/kaleo-designer-fork-join.png)
 
 With a regular Join node, for the workflow to proceed beyond the join, the
 transition from both parallel executions must be invoked. However, if you use a

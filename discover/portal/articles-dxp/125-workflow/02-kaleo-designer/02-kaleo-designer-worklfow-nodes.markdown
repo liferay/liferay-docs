@@ -35,7 +35,7 @@ Actions are used to do some additional processing before entering the node,
 after exiting a node, or once a task node is assigned. They're configured by
 accessing a node's Settings tab, then double clicking *Actions*.
 
-![Figure 1: You can add an Action to a Task node.](../../../../images-dxp/kaleo-designer-action.png)
+![Figure 1: You can add an Action to a Task node.](../../../images-dxp/kaleo-designer-action.png)
 
 The Single Approver workflow contains an Update task with an action written in
 Groovy that sets the status of the asset as *denied*, then sets it to *pending*. 
@@ -77,7 +77,7 @@ process. They can be sent for tasks or any other type of node in the workflow.
 To set up notifications, double click on *Notifications* in a node's Settings tab
 and create a notification.
 
-![Figure 2: You can send notification from a Task node.](../../../../images-dxp/kaleo-designer-notification.png)
+![Figure 2: You can send notification from a Task node.](../../../images-dxp/kaleo-designer-notification.png)
 
 You'll need to specify the Notification Type, and you can choose User
 Notification, Email, Instant Messenger, or Private Message. You can use
