@@ -79,9 +79,9 @@ Deployment Helper | [com.liferay.deployment.helper](https://search.maven.org/#se
 Jasper JSPC | [com.liferay.jasper.jspc](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.jasper.jspc) | Coming Soon |
 Javadoc Formatter | [com.liferay.javadoc.formatter](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.javadoc.formatter) | Coming Soon |
 Lang Builder | [com.liferay.lang.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.lang.builder) | Coming Soon |
-Service Builder | [com.liferay.portal.tools.service.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.service.builder) | [Using Service Builder in a Maven Project](/develop/reference/-/knowledge_base/7-1/service-builder-with-maven) |
+Service Builder | [com.liferay.portal.tools.service.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.service.builder) | [Service Builder Plugin](/develop/reference/-/knowledge_base/7-1/service-builder-with-maven) |
 Source Formatter | [com.liferay.source.formatter](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.source.formatter) | [Source Formatter Plugin](/develop/reference/-/knowledge_base/7-0/source-formatter-plugin) |
-Theme Builder | [com.liferay.portal.tools.theme.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.theme.builder) | [Building Themes in a Maven Project](/develop/reference/-/knowledge_base/7-1/theme-builder-plugin) |
+Theme Builder | [com.liferay.portal.tools.theme.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.theme.builder) | [Theme Builder Plugin](/develop/reference/-/knowledge_base/7-1/theme-builder-plugin) |
 TLD Formatter | [com.liferay.tld.formatter](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.tld.formatter) | Coming Soon |
 WSDD Builder | [com.liferay.portal.tools.wsdd.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.wsdd.builder) | Coming Soon |
 XML Formatter | [com.liferay.xml.formatter](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.xml.formatter) | Coming Soon |
