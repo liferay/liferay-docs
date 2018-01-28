@@ -1,11 +1,20 @@
 # Importing Packages [](id=importing-packages)
 
-Your modules and plugins are sure to use Java packages from other sources.
-@product@ project templates and tools detect these packages and add them to the
-package imports in your OSGi bundle JAR's manifest. Your bundle can import and
-use packages from bundles that
+How does a module gain access to classes that are external to it? It must specify the `Import-Package` OSGi manifest header and assign it a comma-separated list of the class packages. For example, if a module needs classes from the `javax.portlet` and `com.liferay.portal.kernel.util` packages, it must specify them in its manifest header `Import-Package`:
+
+    Import-Package: javax.portlet,com.liferay.portal.kernel.util
+
+A module use packages from other modules that
 [export](/develop/reference/-/knowledge_base/7-0/exporting-packages)
-them. Let's explore how to specify package imports in different scenarios.
+them. To resolve a module's dependencies, the OSGi framework finds other modules
+that export the packages it imports and wires them to the importing module.  On
+using the external class, the module finds the class in one of the imported
+packages and gets the class from the wired module that exports it.  
+
+Conveniently, @product@ project templates and tools automatically detects
+packages a module uses and add them to the package imports in the module  JAR's
+manifest. In other cases, you must manually specify package imports. Let's
+explore how package imports are specified in different scenarios.
 
 [Gradle and Maven module projects](/develop/reference/-/knowledge_base/7-0/project-templates)
 created using
@@ -15,7 +24,7 @@ or
 [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
 come with
 [bnd](http://bnd.bndtools.org/).
-When you build a module JAR, bnd detects packages used by the module's bytecode and
+When you build a module JAR, bnd detects packages the module uses and
 generates a `META-INF/MANIFEST.MF` that imports them. 
 
 +$$$
@@ -51,27 +60,28 @@ the `META-INF/MANIFEST.MF` file:
 
 Note that you only need to specify JAR file dependencies. bnd examines your
 module's class path to determine which packages from those JAR files contain
-classes your application uses and thus must be imported. The examination
-includes all classes found in the class path--even those from
-[third party libraries](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module)). 
+classes your application uses and imports them. The examination includes all
+classes found in the class path--even those from embedded
+[third party library JARs](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module). 
 
 For traditional Liferay plugin WARs,
 [Liferay's WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
 detects packages referenced in their JSPs, descriptor files, and classes (in
 `WEB-INF/classes` and embedded JARs). The descriptor files include `web.xml`,
 `liferay-web.xml`, `portlet.xml`, `liferay-portlet.xml`, and `liferay-hook.xml`.
-Referenced packages that are neither found in the plugin's `WEB-INF/classes`
-folder nor in embedded JARs are added to the WAB's manifest's package imports. 
+The WAB Generator adds package imports for referenced packages that are neither
+found in the plugin's `WEB-INF/classes` folder nor in embedded JARs. 
 
-Here are cases in which packages aren't detected:
+The WAB Generator and bnd don't add package imports for classes found in these
+places:
 
 -   Unrecognized descriptor file
 -   Custom or unrecognized descriptor element or attribute
 -   Reflection code
 -   Class loader code
 
-In such cases, you must manually detect the required packages and add them to an
-`Import-Package` OSGi header. Here's where to specify the `Import-Package`
+In such cases, you must manually determine the packages required and add them to
+an `Import-Package` OSGi header. Here's where to specify the `Import-Package`
 header for different project types:
 
  Project type | `Import-Package` header location |
