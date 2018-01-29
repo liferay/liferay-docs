@@ -1,4 +1,4 @@
-# Extending and Overwriting Liferay Theme Tasks
+# Extending and Overwriting Liferay Theme Tasks [](id=extending-and-overwriting-liferay-theme-tasks)
 
 Themes created with the Liferay Theme Generator have access to several default 
 gulp theme tasks that provide the standard features required to develop and 
@@ -54,8 +54,8 @@ Follow these steps to hook into the default Liferay theme tasks:
 		before or after a task by prefixing the `before:` or `after:` keyword before 
 		the task. Alternatively, you can use the `gulp.task()` method to overwrite a 
 		gulp task. Both methods have two parameters: the task or sub task you want 
-		to hook into and a callback function, which invokes `done` or returns a 
-		stream, with the logic that you want to inject. A few example configuration 
+		to hook into and a callback function that invokes `done` or returns a 
+		stream with the logic that you want to inject. A few example configuration 
 		patterns are shown below:
 		
 				liferayThemeTasks.registerTasks({
@@ -75,9 +75,9 @@ Follow these steps to hook into the default Liferay theme tasks:
 					}
 				});	 
 
-The example below fires before the `build:src` sub-task and reads the JavaScript 
-files in the theme's `src` folder, minifies them with the `gulp-uglify` module, 
-places it in the `./src/js` folder, and invokes `done`:
+The example below fires before the `build:war` sub-task and reads the JavaScript 
+files in the theme's `build` folder, minifies them with the `gulp-uglify` 
+module, places them back in the `./build/js` folder, and invokes `done`:
 
 		'use strict';
 
@@ -88,11 +88,11 @@ places it in the `./src/js` folder, and invokes `done`:
 		liferayThemeTasks.registerTasks({
 			gulp: gulp,
 			hookFn: function(gulp) {
-				gulp.hook('before:build:src', function(done) {
-					// Fires after build `src` task
-					gulp.src('./src/js/*.js')
+				gulp.hook('before:build:war', function(done) {
+					// Fires before build `war` task
+					gulp.src('./build/js/*.js')
 					.pipe(uglify())
-					.pipe(gulp.dest('./src/js'))
+					.pipe(gulp.dest('./build/js'))
 					.on('end', done);
 					});
 			}
@@ -107,7 +107,10 @@ $$$
 
 Now you know how to hook into and overwrite the default Liferay theme tasks!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
+[Creating Themes with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes-with-the-liferay-theme-generator)
 
+[Installing the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/installing-the-theme-generator)
 
+[Theme Builder](/develop/tutorials/-/knowledge_base/7-1/theme-builder)
