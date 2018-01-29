@@ -21,7 +21,7 @@ Follow these steps to add the required guestbook service methods:
 
 1.  Go to the `guestbook-service` project and open 
     `GuestbookLocalServiceImpl.java` in the 
-    `com.liferay.docs.gradebook.service.impl` package. Add the following method 
+    `com.liferay.docs.guestbook.service.impl` package. Add the following method 
     for updating a guestbook: 
 
         public Guestbook updateGuestbook(long userId, long guestbookId,

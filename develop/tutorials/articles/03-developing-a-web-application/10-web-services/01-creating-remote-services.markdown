@@ -217,8 +217,9 @@ remote services to make them available via SOAP (Simple Object Access Protocol).
 Follow these steps to do so:
 
 1.  In your Liferay workspace's `settings.gradle` file, add imports for 
-    `ServiceBuilderPlugin` and `WSDDBuilderPlugin`. Then add the 
-    `gradle.beforeProject` closure at the bottom of the file: 
+    `ServiceBuilderPlugin` and `WSDDBuilderPlugin` before the buildscript 
+    block. Then add the `gradle.beforeProject` closure at the bottom of the 
+    file: 
 
         import com.liferay.gradle.plugins.service.builder.ServiceBuilderPlugin
         import com.liferay.gradle.plugins.wsdd.builder.WSDDBuilderPlugin

@@ -11,9 +11,9 @@ and entries.
 
 Follow these steps to create the entry indexer:
 
-1.  In the `com.liferay.docs.guestbook.search` package of your `guestbook-api`
-    module project's `src/main/java` folder, create a new class called
-    `EntryIndexer` that extends
+1.  In the `com.liferay.docs.guestbook.search` package of your 
+    `guestbook-service` module project's `src/main/java` folder, create a new   
+    class called `EntryIndexer` that extends 
     `com.liferay.portal.kernel.search.BaseIndexer`. Replace the default contents
     of `EntryIndexer.java` with the following code:
 

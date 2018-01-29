@@ -267,10 +267,11 @@ Follow these steps to create the indexer for guestbooks:
     errors. 
 
 15. Export the `com.liferay.docs.guestbook.search` package in the 
-    `guestbook-api` module's `bnd.bnd` file. The export section should look
+    `guestbook-service` module's `bnd.bnd` file. The export section should look
     like this: 
 
-        Export-Package: com.liferay.docs.guestbook.service.permission,\
-                 com.liferay.docs.guestbook.search
+        Export-Package:
+          com.liferay.docs.guestbook.service.permission,\
+          com.liferay.docs.guestbook.search
 
 The guestbook indexer class is complete! Next, you can update the service layer. 

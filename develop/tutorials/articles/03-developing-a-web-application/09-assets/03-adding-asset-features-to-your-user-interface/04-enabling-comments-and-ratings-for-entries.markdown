@@ -154,16 +154,6 @@ Follow these steps to enable comments and ratings on guestbook entries:
 
     $$$
 
-10. Finally, display the current entry's related assets at the end of the page. 
-    Note that you use the `<liferay-ui:asset-links>` tag to display related 
-    assets. This tag is distinct from the `<liferay-ui:input-asset-links>` that 
-    you used in `edit_guestbook.jsp` for selecting related assets:
-    
-        <liferay-ui:asset-links
-          assetEntryId="<%=(assetEntry != null) ? assetEntry.getEntryId() : 0%>"
-          className="<%=Entry.class.getName()%>"
-          classPK="<%=entry.getEntryId()%>" />
-
 Next, you'll update the guestbook actions to use the new view. 
 
 ## Updating the Entry Actions JSP [](id=updating-the-entry-actions-jsp)
