@@ -1,6 +1,6 @@
 # Blade CLI [](id=blade-cli)
 
-The [Blade CLI](https://github.com/liferay/liferay-blade-cli/) is the
+The [Blade CLI](https://github.com/liferay/liferay-blade-cli/) tool is the
 easiest way for Liferay developers to create new Liferay modules. Although the
 Plugins SDK is also supported, Blade CLI lets you create projects that can be
 used with any IDE or development environment. Blade CLI is a command line tool
@@ -20,7 +20,8 @@ sub-commands are callable in the Blade CLI environment:
 - *open*: Opens or imports a file or project in Liferay @ide@.
 - *samples*: Generates a sample project.
 - *server*: Starts or stops server defined by your Liferay project.
-- *sh*: Connects to Liferay and executes Gogo command and returns output.
+- *sh*: Connects to @product@, executes succeeding Gogo command, and returns
+  output.
 - *update*: Updates Blade CLI to latest version.
 - *version*: Displays version information about Blade CLI.
 
