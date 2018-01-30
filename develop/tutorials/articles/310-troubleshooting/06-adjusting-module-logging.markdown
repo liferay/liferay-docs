@@ -29,15 +29,16 @@ in `org.foo` and classes in packages starting with `org.foo`.
 
 Set each category's `priority` element to the log
 [level](http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/Level.html)
- (priority) you want.
-    -   ALL
-    -   DEBUG
-    -   ERROR
-    -   FATAL
-    -   INFO
-    -   OFF
-    -   TRACE
-    -   WARN
+(priority) you want.
+
+-   ALL
+-   DEBUG
+-   ERROR
+-   FATAL
+-   INFO
+-   OFF
+-   TRACE
+-   WARN
 
 The log messages are printed to Liferay log files in `[Liferay_Home]/logs`.
 
