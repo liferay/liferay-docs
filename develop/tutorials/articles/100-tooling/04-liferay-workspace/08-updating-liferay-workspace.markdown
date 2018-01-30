@@ -1,7 +1,7 @@
 # Updating Liferay Workspace [](id=updating-liferay-workspace)
 
 Liferay Workspace is continuously being updated with new features. If you
-created your Workspace a while ago, you may be missing out on some of the latest
+created your workspace a while ago, you may be missing out on some of the latest
 features that could improve your Liferay development experience. Updating your
 Liferay Workspace is easy; you'll learn how to do it next.
 
