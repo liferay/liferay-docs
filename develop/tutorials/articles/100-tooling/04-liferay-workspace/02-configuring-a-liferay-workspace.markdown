@@ -201,6 +201,72 @@ latest Plugins SDK releases
 Once the downloading is complete, your Plugins SDK is ready to use
 in your workspace!
 
+## Gradle Workspace Properties [](id=gradle-workspace-properties)
+
+The following configurable properties are available in your workspace's
+`gradle.properties` file:
+
+- `liferay.workspace.bundle.cache.dir`: Set the directory where the downloaded
+  bundle Zip files are stored. The default value is the `.liferay/bundles`
+  folder inside the user home directory.
+- `liferay.workspace.bundle.token.download`: Set this to `true` if the
+  `liferay.workspace.bundle.url` property is set to a DXP bundle Zip. This
+  property allows the token residing in the `~/.liferay` folder to be used to
+  validate your user credentials when downloading the bundle. The default value
+  is `false`.
+- `liferay.workspace.bundle.token.email.address`: Set the email address to use
+  when downloading a DXP bundle. This is used to create the authentication
+  token. The email address must match the one registered for your DXP
+  subscription. If you wish to create a new token without providing your email
+  address and password in this file, you can create a token manually by
+  navigating to your Liferay profile's Account Setting page and generating a
+  token in the Authentication Tokens menu. Your token must reside in the
+  `~/.liferay` folder.
+- `liferay.workspace.bundle.token.force`: Set this to `true` to override the
+  existing token with a newly generated  token created by the `createToken`
+  task. The default value is `false`.
+- `liferay.workspace.bundle.token.password`: Set the password to use when
+  downloading a DXP bundle. This is used to create the authentication token. The
+  password must match the one registered for your DXP subscription. See the
+  `liferay.workspace.bundle.token.email.address` property for more details.
+- `liferay.workspace.bundle.token.password.file`: Set the file to hold the
+  Liferay bundle authentication token password. The default file value is
+  `~/.liferay/token`.
+- `liferay.workspace.bundle.url`: Set the URL pointing to the bundle Zip to
+  download. If the URL points to a DXP bundle (e.g.,
+  https://api.liferay.com/...), set the `liferay.workspace.bundle.token.download` 
+  property to `true`. The default value is the URL for Liferay Portal CE 7.0.4
+  GA5.
+- `liferay.workspace.default.repository.enabled`: Set this to `true` to
+  configure Liferay CDN as the default repository in the root project. The
+  default value is `true`.
+- `liferay.workspace.environment`: Set the environment with the settings
+  appropriate for current development. The `configs` folder is used to hold
+  different environments in the same workspace. You can organize environment
+  settings and generate an environment installation with those settings. There
+  are five environments: `common`, `dev`, `local`, `prod`, and `uat`. The
+  default value is `local`.
+- `liferay.workspace.home.dir`: Set the folder that contains the Liferay bundle
+  downloaded from the `liferay.workspace.bundle.url` property. The default value
+  is `bundles`.
+- `liferay.workspace.modules.default.repository.enabled`: Set this to `true` to
+  configure Liferay CDN as the default repository for module/OSGi projects. The
+  default value is `true`.
+- `liferay.workspace.modules.dir`: Set the folder that contains all module/OSGi
+  projects. The default value is `modules`.
+- `liferay.workspace.modules.jsp.precompile.enabled`: Set this to `true` to
+  compile the JSP files in OSGi modules and have them added to the distributable
+  Zip/Tar. The default value is `false`.
+- `liferay.workspace.plugins.sdk.dir`: Set the folder that contains the Plugins
+  SDK environment. The default value is `plugins-sdk`.
+- `liferay.workspace.themes.dir`: Set the folder that contains Node.js-style
+  theme projects. The default value is `themes`.
+- `liferay.workspace.themes.java.build`: Set this to `true` to build the theme
+  projects using the Liferay Portal Tools Theme Builder. The default value is
+  `false`.
+- `liferay.workspace.wars.dir`: Set the folder that contains classic WAR-style
+  projects. The default value is `wars`.
+
 ## Certification Issues in Liferay Workspace [](id=certification-issues-in-liferay-workspace)
 
 Some of Liferay Workspace's Gradle functionality downloads files from hosting
