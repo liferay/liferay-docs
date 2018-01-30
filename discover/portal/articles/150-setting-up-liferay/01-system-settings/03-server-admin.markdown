@@ -195,7 +195,7 @@ LibreOffice is available here:
 [LibreOffice](http://www.libreoffice.org),
 ImageMagick is available here: 
 [ImageMagick](http://www.imagemagick.org), and Xuggler is available here: 
-[Xuggler](http://xuggle.com/xuggler/). Make sure to
+[Xuggler](http://www.xuggle.com/xuggler/). Make sure to
 choose the correct versions of these applications for your operating system. We
 recommend that you install the latest stable versions. LibreOffice and
 ImageMagick must be installed manually, but you can install Xuggler from
