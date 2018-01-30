@@ -1,13 +1,12 @@
 # Tooling [](id=tooling)
 
-Liferay is very flexible when it comes to supporting different development
-tooling. Instead of being pigeonholed into using a specific tool, Liferay works
-with whatever tools you like to use. Being tool-agnostic gives you the freedom
-to work with what you're most productive with.
+You can write code for Liferay using any any standard toolset. Liferay is
+tool-agnostic, rather than pigeonholing you into something specific. This frees
+you to work with whatever you're already productive using.
 
-Although you're free to use any tool you want, Liferay provides some recommended
-tools that streamlines @product@ development. These tools integrate with popular
-build environments (e.g., Gradle and Maven). These tools include
+Liferay has also created its own tools that streamline @product@ development.
+These tools integrate with popular build environments (e.g., Gradle and Maven).
+They include
 
 - [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide): an
   Eclipse-based IDE supporting development for @product@.
