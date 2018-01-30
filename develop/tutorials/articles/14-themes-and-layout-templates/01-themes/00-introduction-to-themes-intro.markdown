@@ -1,6 +1,6 @@
 # Themes [](id=introduction-to-themes)
 
-An @product@ Theme provides the overall look and feel for a site. Themes are a 
+A Theme provides the overall look and feel for a site. Themes are a 
 combination of CSS, JavaScript, HTML, and FreeMarker templates. Although the
 default themes are nice, you may wish to create your own custom look and feel
 for your site. 
