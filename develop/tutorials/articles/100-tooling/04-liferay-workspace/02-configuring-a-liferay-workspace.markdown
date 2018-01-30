@@ -4,11 +4,11 @@ A Liferay Workspace offers a development environment that can be configured to
 fit your development needs. You'll learn about the files/folders a workspace
 provides by default, and then you'll dive into configuring your workspace.
 
-The top-level files/folder of a Liferay workspace are outlined below:
+The top-level files/folder of a Liferay (Gradle) Workspace are outlined below:
 
 - `bundles` (generated): the default folder for @product@ bundles.
 - `configs`: holds the configuration files for different environments. These
-  files serve as your global configuration files for all Liferay servers and
+  files serve as your global configuration files for all @product@ servers and
   projects residing in your workspace. To learn more about using the `configs`
   folder, see the
   [Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#testing-modules)
@@ -19,14 +19,20 @@ The top-level files/folder of a Liferay workspace are outlined below:
 - `themes`: holds your custom themes which are built using the Theme Generator.
 - `wars` (generated): holds traditional WAR-style web application projects.
 - `build.gradle`: the common Gradle build file.
+- `gradle.properties`: specifies the workspace's project locations and @product@
+  server configuration globally. 
 - `gradle-local.properties`: sets user-specific properties for your workspace.
   This lets multiple users use a single workspace, letting them configure
   specific properties for the workspace on their own machine.
-- `gradle.properties`: specifies the workspace's project locations and @product@
-  server configuration globally. 
 - `gradlew`: executes the Gradle command wrapper
 - `settings.gradle`: applies plugins to the workspace and configures its
   dependencies.
+
+If you're using a Liferay
+[Maven Workspace](/develop/tutorials/-/knowledge_base/7-1/maven-workspace)
+instead, your folder hierarchy is the same, except the Gradle build files are
+swapped out for a `pom.xml` file. See the Maven Workspace tutorial for more info
+on configuring that kind of workspace project.
 
 The build/properties files included in your workspace's root folder sets your
 workspace's Gradle properties and facilitates the build processes of your
@@ -43,6 +49,13 @@ and set it to a different value.
 If you'd like to keep the global Gradle properties the same, but want to change
 them for yourself only (perhaps for local testing), you can override the
 `gradle.properties` file with your own `gradle-local.properties` file.
+
+All properties in the `gradle.properties` file are documented within the file.
+To learn more about how each property works and what's available, visit your
+workspace's generated `gradle.properties` file. You can also visit the
+[Gradle Workspace Properties](#gradle-workspace-properties) section for a list
+of these properties.
+
 
 +$$$
 
@@ -99,7 +112,7 @@ folder.
 
 If you run into errors during the bundle downloading process, check to make sure
 your workspace is accounting for the
-[appropriate certificates](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#certification-issues-in-liferay-workspace).
+[appropriate certificates](#certification-issues-in-liferay-workspace).
 
 If you want to skip the downloading process, you can create the `bundles` folder
 manually in your workspace's ROOT folder and unzip your @product@ bundle to that
@@ -130,17 +143,17 @@ applications? Liferay Workspace can handle that request too!
 
 Because @product-ver@ uses a module-based framework, the current structure of a
 Liferay Workspace is centered around module development. There are still,
-however, many situations where you must create WAR-style plugins using the
-Plugins SDK. Because of this, your workspace can also work with the Plugins SDK.
-When configuring your SDK in a workspace, you can take advantage of all the new
+however, situations where you must create WAR-style plugins using the Plugins
+SDK. Because of this, your workspace can also work with the Plugins SDK. When
+configuring your SDK in a workspace, you can take advantage of all the new
 functionality workspaces provide and also use the SDK environment that you're
 used to. To learn more about upgrading legacy applications to @product-ver@ and
 what you should consider before converting them to modules, visit the tutorial
 [Planning Plugin Upgrades and Optimizations](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7).
 
-The Blade CLI offers a command that adds and configures your
-current Plugins SDK environment automatically for use inside a newly generated
-workspace (e.g., `blade init -u`). You can learn more about this in the
+Blade CLI offers a command that adds and configures your current Plugins SDK
+environment automatically for use inside a newly generated workspace (e.g.,
+`blade init -u`). You can learn more about this in the
 [Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)
 tutorial. If you created your workspace from scratch and want to use a Plugins
 SDK, however, you can add one to your workspace by completing one of the two
@@ -157,7 +170,7 @@ Follow the appropriate section based on the option you want to follow.
 If you open your workspace's `gradle.properties` file, you'll notice the
 `liferay.workspace.plugins.sdk.dir` property sets the Plugins SDK folder to
 `plugins-sdk`. This is where the workspace expects any Plugins SDK files to
-reside. This folder was not generated by default, so you must create it
+reside. This folder is not generated by default, so you must create it
 yourself. In your workspace's root folder, create the `plugins-sdk` folder. Then
 copy your legacy Plugins SDK files into the `plugins-sdk` folder.
 
