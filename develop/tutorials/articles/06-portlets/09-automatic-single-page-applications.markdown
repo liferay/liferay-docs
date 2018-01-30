@@ -2,12 +2,13 @@
 
 A good user experience is the measure of a well-designed site. A user's time is
 highly valuable. The last thing you want is for someone to grow frustrated with
-your site because of constant page reloads. A Single Page Application (SPA) is
-the solution. Single Page Applications drastically cut down on load times by 
-loading only a single HTML page that is dynamically updated as the user
-interacts and navigates through the site. This provides a native-app experience
-by eliminating page loads. In @product@, **SPA is enabled by default
-in your apps and sites and requires no changes to your workflow or code!**
+your site because of constant page reloads. A Single Page Application (SPA) 
+avoids this issue. Single Page Applications drastically cut down on load times 
+by loading only a single HTML page that is dynamically updated as the user
+interacts and navigates through the site. This provides a more seamless app 
+experience by eliminating page reloads. In @product@, **SPA is enabled by 
+default in your apps and sites and requires no changes to your workflow or 
+code!**
 
 This tutorial covers these key topics:
 
@@ -33,7 +34,8 @@ are you talking about?" it reads.
 share this life-changing content that you neglected to notice that the URL never
 updated when you clicked the post. You click the back button, hoping to get
 back to the post, but it takes you to the site you were on before you ever
-visited this one. 
+visited this one. The page history didn't update as you navigated through the 
+app; Only the main app URL was saved. 
 
 What a bummer! "Why? Why have you failed me site?" you cry.
 
@@ -70,7 +72,8 @@ content is displayed all at once.
 to navigate to a different link while another request is pending, the request
 times out.
 
-**History navigation**: The browser history is manipulated via the History API,
+**History navigation**: The browser history is manipulated via the 
+[History API](https://developer.mozilla.org/en-US/docs/Web/API/History), 
 so you can use the back and forward history buttons to navigate through the
 history of the page.
 
@@ -80,12 +83,13 @@ application.
 
 **Page resources management**: Scripts and stylesheets are evaluated from
 dynamically loaded resources. Additional content can be appended to the DOM
-using XMLHttpRequest. For security reasons, some browsers won't evaluate
+using `XMLHttpRequest`. For security reasons, some browsers won't evaluate
 `<script>` tags from content fragments. Therefore, SennaJS extracts scripts from
 the content and parses them to ensure that they meet the browser loading
 requirements.
 
-You can read more about SennaJS as well as see examples at [http://sennajs.com/](http://sennajs.com/).
+You can read more about SennaJS as well as see examples at 
+[http://sennajs.com/](http://sennajs.com/).
 
 Now that you have a better understanding of how SennaJS benefits SPA, you can
 learn how to enable and configure options for SPA within @product@ next.
@@ -93,8 +97,8 @@ learn how to enable and configure options for SPA within @product@ next.
 ## Enabling SPA [](id=enabling-spa)
 
 Enabling SPA is easy. Deploy `com.liferay.frontend.js.spa.web-[version]` module
-deployed and enabled, and you're all set to use SPA. Since this module is
-included with @product@ by default, you shouldn't have to do anything. 
+and enable it, and you're all set to use SPA. Since this module is included with 
+@product@ by default, you shouldn't have to do anything. 
 
 **SPA is enabled by default in your apps and sites, and requires no changes to 
 your workflow or existing code!**
@@ -113,27 +117,19 @@ configuration options are covered here.
 
 To configure system settings for SPA, follow these steps:
 
-1. In the Control Panel, navigate to *Configuration* &rarr; *System Settings*.
+1.  In the Control Panel, navigate to *Configuration* &rarr; *System Settings*.
 
-2. Select the *Foundation* tab at the top of the page.
+2.  Select the *Foundation* tab at the top of the page.
 
-3. Click *Frontend SPA Infrastructure*.
-
-+$$$
-
-**Note:** In prior versions of Liferay, all SPA render requests that didn't
-belong to a portlet (no `p_p_id` in the URL) were cached indefinitely. This can
-confuse users, as the content they view is cached rather than the latest fresh
-content. Since Liferay Portal CE 7.0 GA2 and Liferay DXP 7.0 GA1, administrators
-can use the **Cache Expiration Time** property to set an expiration time for the
-Senna cache.
-
-$$$
+3.  Click *Frontend SPA Infrastructure*.
 
 The following configuration options are available:
 
 **Cache Expiration Time**:  The time, in minutes, in which the SPA cache is
 cleared. A negative value means the cache should be disabled.
+
+**Navigation Exception Selectors**: Defines a CSS selector that SPA should 
+ignore. 
 
 **Request Timeout Time**: The time, in milliseconds, in which a SPA request
 times out. A zero value means the request should never timeout.
@@ -151,8 +147,8 @@ Certain elements of your page may require a regular navigation to work properly.
 For example, you may have downloadable content that you want to share with the 
 user. In these cases, SPA must be disabled for those specific elements.
 
-To disable SPA on a portal wide basis, you can add the following line to your 
-`portal-ext.properties`:
+To disable SPA across an entire @product@ instance, you can add the following 
+line to your `portal-ext.properties`:
 
     javascript.single.page.application.enabled = false
 
@@ -165,25 +161,26 @@ have some options:
 
 To blacklist a portlet from SPA, follow these steps:
 
-1. Open your portlet class.
+1.  Open your portlet class.
 
-2. Set the `com.liferay.portlet.single-page-application` property to false:
+2.  Set the `com.liferay.portlet.single-page-application` property to false:
 
         com.liferay.portlet.single-page-application=false
         
-   If you prefer, you can set this property to false in your `portlet.xml` 
-   instead by adding the following property to the `<portlet>` section:
-   
+    If you prefer, you can set this property to false in your `portlet.xml` 
+    instead by adding the following property to the `<portlet>` section:
+
         <single-page-application>false</single-page-application>
 
-3. Alternatively, you can override the [`isSinglePageApplication` method](@platform-ref@/7.0-latest/javadocs/portal-impl/com/liferay/portal/model/impl/PortletImpl.html#isSinglePageApplication--)
-   of the portlet to return `false`.
+3.  Alternatively, you can override the 
+    [`isSinglePageApplication` method](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portal/model/impl/PortletImpl.html#isSinglePageApplication--)
+    of the portlet to return `false`.
 
 To disable SPA for a form or link follow these steps:
 
-1. Add the `data-senna-off` attribute to the element.
+1.  Add the `data-senna-off` attribute to the element.
 
-2. Set the value to `true`.
+2.  Set the value to `true`.
 
 For example `<a data-senna-off="true" href="/pages/page2.html">Page 2</a>`
 
@@ -199,8 +196,8 @@ in your SPA. SennaJS makes this easy by exposing lifecycle events that
 represent state changes in the application.  The following events are available:
 
 **beforeNavigate**: Fires before navigation starts. This event passes a JSON
-object with the path to the content being navigated to and whether to update the
-history. Below is an example event payload:
+object with the path to the content you are navigating to and whether to update 
+the history. Below is an example event payload:
 
     { path: '/pages/page1.html', replaceHistory: false }
 
@@ -215,20 +212,16 @@ the page. This event passes the following JSON object:
 
     { form: '<form name="form"></form>', path: '/pages/page1.html' }
 
-These events can be leveraged easily by listening for them on the Liferay global
-object.
-
-For example, the JavaScript below alerts the user to "Get ready to navigate to"
-the URL that has been clicked, just before SPA navigation begins.
+These events can be leveraged easily by listening for them on the Liferay global 
+object. For example, the JavaScript below alerts the user to "Get ready to 
+navigate to" the URL that has been clicked, just before SPA navigation begins:
 
     Liferay.on('beforeNavigate', function(event) {
         alert("Get ready to navigate to " + event.path);
     });
 
-The alert takes advantage of the payload for the `beforeNavigate` event,
-retrieving the URL from the `path` attribute of the JSON payload object.
-
-The above code results in the behavior shown below:
+The alert takes advantage of the payload for the `beforeNavigate` event, 
+retrieving the URL from the `path` attribute of the JSON payload object. 
 
 ![Figure 1: You can leverage SPA lifecycle events in your apps.](../../images/private-messaging-before-navigate.png)
 
@@ -242,7 +235,7 @@ SPA provides several improvements that highly benefit your site and users, but
 there is potentially some additional maintenance as a consequence. In a
 traditional navigation scenario, every page refresh resets everything, so you
 don't have to worry about what's left behind. In a SPA scenario, however, global
-listeners such as `Liferay.on` or `Liferay.after` or body delegates can become
+listeners such as `Liferay.on`, `Liferay.after`, or body delegates can become
 problematic. Every time you execute these global listeners, you add yet another
 listener to the globally persisted `Liferay` object. The result is multiple
 invocations of those listeners. This can obviously cause problems if not
@@ -269,8 +262,8 @@ Now you know how to configure and use SPA in @product@!
 
 ## Related Topics [](id=related-topics)
 
-[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders)
+[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-1/configuring-modules-for-products-loaders)
 
-[Preparing your JavaScript Files for ES2015](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015)
+[Preparing your JavaScript Files for ES2015](/develop/tutorials/-/knowledge_base/7-1/preparing-your-javascript-files-for-es2015)
 
-[Using ES2015 Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-0/using-es2015-modules-in-your-portlet)
+[Using ES2015 Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-1/using-es2015-modules-in-your-portlet)
