@@ -3,7 +3,7 @@
 @product@ uses [Log4j](http://logging.apache.org/log4j/1.2/) logging
 services. Here are the ways to configure logging for module classes and class hierarchies.
 
--   [@product@'s UI]((/discover/portal/-/knowledge_base/7-0/server-administration#log-levels)
+-   [@product@'s UI](/discover/portal/-/knowledge_base/7-0/server-administration#log-levels)
 -   Configure Log4j for multiple modules in a
     `[anyModule]/src/main/resources/META-INF/module-log4j.xml` file.
 -   Configure Log4j for a specific module in a
