@@ -21,6 +21,7 @@ import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
 import com.liferay.docs.guestbook.service.EntryService;
 import com.liferay.docs.guestbook.service.GuestbookLocalService;
 import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.model.Group;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.service.ServiceContextFactory;
@@ -150,21 +151,21 @@ public class GuestbookPortlet extends MVCPortlet {
             ServiceContext serviceContext = ServiceContextFactory.getInstance(
                 Guestbook.class.getName(), renderRequest);
 
-            long groupId = serviceContext.getScopeGroupId();
+            Group group = serviceContext.getScopeGroup();
 
             long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
 
             List<Guestbook> guestbooks = _guestbookService.getGuestbooks(
-                groupId);
+                group.getGroupId());
 
-            if (guestbooks.isEmpty()) {
+            if (guestbooks.isEmpty() && !group.hasStagingGroup()) {
                 Guestbook guestbook = _guestbookService.addGuestbook(
                     serviceContext.getUserId(), "Main", serviceContext);
 
                 guestbookId = guestbook.getGuestbookId();
             }
 
-            if (guestbookId == 0) {
+            if (guestbookId == 0 && guestbooks.size() > 0) {
                 guestbookId = guestbooks.get(0).getGuestbookId();
             }
 
