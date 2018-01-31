@@ -239,11 +239,11 @@ it by using the `patching.tool.agent.jvm.opts` property.
         -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF8"
 
 You may also experience issues on Windows if the user starting the app server
-doesn’t have administrator privileges.
-Here are some examples of the errors you may see:
+doesn't have administrator privileges. Here are some examples of the errors you 
+may see:
 
-`java.nio.file.FileSystemException: ..\webapps\ROOT\WEB-INF\lib\util-java.jar: Not a file!`
-`java.io.FileNotFoundException: java.io.IOException: Access refused`
+    java.nio.file.FileSystemException: ..\webapps\ROOT\WEB-INF\lib\util-java.jar: Not a file!
+    java.io.FileNotFoundException: java.io.IOException: Access refused
 
 To solve this, set the `java.io.tmpdir` system property as follows in the
 `patching.tool.agent.jvm.opts` property:
@@ -252,8 +252,8 @@ To solve this, set the `java.io.tmpdir` system property as follows in the
 
 The agent also has some flags you can set to control how it behaves:
 
-    `debug`: Provides verbose output in the console.
-    `nohalt`: Starts the portal even if the agent encounters an issue.
+- `debug`: Provides verbose output in the console.
+- `nohalt`: Starts the portal even if the agent encounters an issue.
 
 You can specify these as follows:
 
