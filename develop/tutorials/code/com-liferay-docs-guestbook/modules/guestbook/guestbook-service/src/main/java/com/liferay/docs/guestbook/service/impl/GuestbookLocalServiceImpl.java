@@ -25,10 +25,12 @@ import com.liferay.docs.guestbook.service.base.GuestbookLocalServiceBaseImpl;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.model.ResourceConstants;
+import com.liferay.portal.kernel.model.SystemEventConstants;
 import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.search.Indexable;
 import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.service.ServiceContext;
+import com.liferay.portal.kernel.systemevent.SystemEvent;
 import com.liferay.portal.kernel.util.ContentTypes;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.Validator;
@@ -195,6 +197,25 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 			Guestbook.class.getName(), guestbook.getGuestbookId());
 
 		return guestbook;
+	}
+
+	@Indexable(type = IndexableType.DELETE)
+	@Override
+	public Guestbook deleteGuestbook(long guestbookId)
+		throws PortalException {
+
+		Guestbook guestbook =
+			guestbookPersistence.findByPrimaryKey(guestbookId);
+
+		return guestbookLocalService.deleteGuestbook(guestbook);
+	}
+
+	@Indexable(type = IndexableType.DELETE)
+	@Override
+	@SystemEvent(type = SystemEventConstants.TYPE_DELETE)
+	public Guestbook deleteGuestbook(Guestbook guestbook) {
+
+		return guestbookPersistence.remove(guestbook);
 	}
 
 	public List<Guestbook> getGuestbooks(long groupId) {
