@@ -191,9 +191,13 @@ Here are some organizational tips:
 
 -   Create upgrade steps in sub-packages named after each data schema version. 
 
-TODO mention bundle activators
-
-TODO introduce registrators
+Before continuing with upgrade step registrators, if your application was
+modularized from a former traditional Liferay plugin application (application
+WAR) and it uses Service Builder, it requires a Bundle Activator to register
+itself in @product@'s `Release_` table. If this is the case for your
+application,
+[create and register a Bundle Activator](/develop/tutorials/-/knowledge_base/7-0/upgrade-processes-for-former-service-builder-plugins)
+and then return here to write your upgrade step registrator. 
 
 ## Writing the Upgrade Step Registrator [](id=writing-the-upgrade-step-registrator)
 
@@ -418,6 +422,8 @@ update the database schema and register the upgrade steps in a registrator
 class. That's all there is to it!
 
 ## Related Topics [](id=related-topics)
+
+[Upgrade Processes for Former Service Builder Plugins](/develop/tutorials/-/knowledge_base/7-0/upgrade-processes-for-former-service-builder-plugins)
 
 [Upgrading Plugins to Liferay 7](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
 
