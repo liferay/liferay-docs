@@ -159,7 +159,10 @@ For example:
 * However, if you are given the choice between `java.util.Map.Entry` and 
     `com.liferay.docs.guestbook.model.Entry` (the custom class you created) 
     choose `com.liferay.docs.guestbook.model.Entry`
-
+    
+If at some point you think you chose an incorrect import, but you're not sure 
+what it might be, you can erase all of the imports from the file and press
+[CTRL]+[SHIFT]+O again and see if you can identify where you went wrong.
 
 $$$
 
