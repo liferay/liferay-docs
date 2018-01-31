@@ -4,7 +4,19 @@
     <p>Enabling Search and Indexing for Guestbooks<br>Step 2 of 3</p>
 </div>
 
-Follow these steps to create the indexer for guestbooks:
+First, update your `build.gradle` to have all of the necessary imports.
+
+1.  Open the `build.gradle` file in your `guestbook-service` project.
+
+2.  Add the following line below the other imports:
+
+        compileOnly group: "com.liferay", name: "com.liferay.registry.api", version: "1.0.0"
+        compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+        compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+
+3.  Save the file and run `Refresh Gradle Project`.
+
+Now that you have the additional dependencies configured, follow these steps to create the indexer for guestbooks:
 
 1.  Create a new package in the `guestbook-service` module project's
     `src/main/java` folder called `com.liferay.docs.guestbook.search`. In this
