@@ -195,7 +195,7 @@ the "diff" command. This command has four options:
 
 For detailed usage information, run `patching-tool help store`.
 
-## Separating the Patches from the @product@ Installation
+## Separating the Patches from the @product@ Installation [](id=separating-the-patches-from-the-product-installation)
 
 As of Patching Tool 2.0.6, there's a feature that helps reduce the patched
 @product@ bundle size. If the bundle has been patched, you can make it smaller
