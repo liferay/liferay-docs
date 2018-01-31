@@ -1,4 +1,4 @@
-# Tasks
+# Workflow Task Nodes
 
 Task nodes are fundamental parts of a workflow definition. When you start
 defining your organization's business processes and planning workflows, you
