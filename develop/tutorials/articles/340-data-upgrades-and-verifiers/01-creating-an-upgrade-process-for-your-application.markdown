@@ -21,6 +21,8 @@ Here's what's involved:
 
 - **Writing upgrade steps**
 
+- **Creating a Bundle Activator (Service Builder modules only)**
+
 - **Writing the registrator**
 
 - **Waiting for upgrade completion**
@@ -191,8 +193,186 @@ Here are some organizational tips:
 
 -   Create upgrade steps in sub-packages named after each data schema version. 
 
-After creating upgrade steps, you can create a registrator that associates them
-with their target schema versions. 
+If your module implements Service Builder services, continue with the next
+section. Otherwise, you can skip past it. 
+
+## Creating a Bundle Activator (Service Builder modules only) [](id=creating-a-bundle-activator-service-builder-modules-only)
+
+If you converted a traditional Liferay plugin application to a module(s), any
+module that implements Service Builder services must initialize a release table
+record for your app's new schema version. A record for the schema must be added
+to the `Release_` table regardless of whether the app has existing release
+records already. A Bundle Activator is the recommended way to add the record.
+For new installations of the app, the Bundle Activator creates the record before
+the app's tables are created. 
+
+For example, here's the Liferay Knowledge Base application's Bundle Activator:
+
+    public class KnowledgeBaseServiceBundleActivator implements BundleActivator {
+
+    	@Override
+    	public void start(BundleContext bundleContext) throws Exception {
+    		Filter filter = bundleContext.createFilter(
+    			StringBundler.concat(
+    				"(&(objectClass=", ModuleServiceLifecycle.class.getName(), ")",
+    				ModuleServiceLifecycle.DATABASE_INITIALIZED, ")"));
+
+    		_serviceTracker = new ServiceTracker<Object, Object>(
+    			bundleContext, filter, null) {
+
+    			@Override
+    			public Object addingService(
+    				ServiceReference<Object> serviceReference) {
+
+    				try {
+    					BaseUpgradeServiceModuleRelease
+    						upgradeServiceModuleRelease =
+    							new BaseUpgradeServiceModuleRelease() {
+
+    								@Override
+    								protected String getNamespace() {
+    									return "KB";
+    								}
+
+    								@Override
+    								protected String getNewBundleSymbolicName() {
+    									return "com.liferay.knowledge.base.service";
+    								}
+
+    								@Override
+    								protected String getOldBundleSymbolicName() {
+    									return "knowledge-base-portlet";
+    								}
+
+    							};
+
+    					upgradeServiceModuleRelease.upgrade();
+
+    					return null;
+    				}
+    				catch (UpgradeException ue) {
+    					throw new RuntimeException(ue);
+    				}
+    			}
+
+    		};
+
+    		_serviceTracker.open();
+    	}
+
+    	@Override
+    	public void stop(BundleContext bundleContext) throws Exception {
+    		_serviceTracker.close();
+    	}
+
+    	private ServiceTracker<Object, Object> _serviceTracker;
+
+    }
+
+The following steps explain how to create a Bundle Activator, like the example
+above.
+
+1.  Create a class that implements the interface
+    `org.osgi.framework.BundleActivator`.
+
+3.  Add a service tracker field:
+
+    `private ServiceTracker<Object, Object> _serviceTracker;`
+
+2.  Override BundleActivator's `stop` method to close the service tracker:
+
+        @Override
+        public void stop(BundleContext bundleContext) throws Exception {
+            _serviceTracker.close();
+        }
+
+3.  Override BundleActivator's `start` method to instantiate a service
+    tracker that creates a filter to listens for the app's database
+    initialization event and  initializes the service tracker to use that
+    filter. You'll add the service tracker initialization code in the next
+    steps. At the end of the `start` method, open the service tracker. 
+
+        @Override
+        public void start(BundleContext bundleContext) throws Exception {
+            Filter filter = bundleContext.createFilter(
+                StringBundler.concat(
+                    "(&(objectClass=", ModuleServiceLifecycle.class.getName(), ")",
+                    ModuleServiceLifecycle.DATABASE_INITIALIZED, ")"));
+
+            _serviceTracker = new ServiceTracker<Object, Object>(
+                bundleContext, filter, null) {
+                // See the next step for this code ...
+            };
+     
+            _serviceTracker.open();
+        }
+
+5.  In the service tracker initialization block `{ // See the next step for this
+    code ... }` from the previous step, add an `addingService` method that
+    instantiates a `BaseUpgradeServiceModuleRelease` for describing your app.
+    The example `BaseUpgradeServiceModuleRelease` instance below describes
+    Liferay's Knowledge Base app: 
+
+        @Override
+        public Object addingService(
+            ServiceReference<Object> serviceReference) {
+
+            try {
+                BaseUpgradeServiceModuleRelease
+                        upgradeServiceModuleRelease =
+                    new BaseUpgradeServiceModuleRelease() {
+
+                        @Override
+                        protected String getNamespace() {
+                            return "KB";
+                        }
+
+                        @Override
+                        protected String getNewBundleSymbolicName() {
+                            return "com.liferay.knowledge.base.service";
+                        }
+
+                        @Override
+                        protected String getOldBundleSymbolicName() {
+                            return "knowledge-base-portlet";
+                        }
+
+                    };
+
+                upgradeServiceModuleRelease.upgrade();
+
+                return null;
+            }
+            catch (UpgradeException ue) {
+                throw new RuntimeException(ue);
+            }
+        }
+
+    The `BaseUpgradeServiceModuleRelease` implements the following methods:
+
+    -   `getNamespace`: Returns the namespace value as specified in the former
+        plugin's `service.xml` file. This value is also in the `buildNamespace`
+        field in the plugin's `ServiceComponent` table record. 
+    -   `getOldBundleSymbolicName`: Returns the former plugin's name.
+    -   `getNewBundleSymbolicName`: Returns the module's symbolic name. In the 
+        module's `bnd.bnd` file, it's the `Bundle-SymbolicName` value.
+    -   `upgrade`: Invokes the app's upgrade processes. 
+
+6.  In the module's `bnd.bnd` file, reference the Bundle Activator class you
+    created. Here's the example's Bundle Activator reference:
+
+    `Bundle-Activator: com.liferay.knowledge.base.internal.activator.KnowledgeBaseServiceBundleActivator`
+
+The Bundle Activator initializes the application's `schemaVersion` field in the
+`Release_` table, using one of the following values: 
+
+-   Current `buildNumber`: if there is an existing Release_ table record for the
+    previous plugin.
+-   `0.0.1`: if there is no existing Release_ table record.
+
+Optionally, if you want to move immediately from the schema version `0.0.1` to
+`1.0.0`, for example, you can create an additional dummy upgrade step in your
+module's upgrade step registrator. Registrators are discussed next.  
 
 ## Writing the Upgrade Step Registrator [](id=writing-the-upgrade-step-registrator)
 
