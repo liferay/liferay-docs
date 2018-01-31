@@ -119,7 +119,7 @@ Now you'll look at the classes and interfaces generated for the entities you
 specified. Each entity has similar classes generated for it, depending on what
 you specfied for them in the `service.xml`. You won't have to customize more
 than three classes for each entity. These customizable classes are
-`*LocalServiceImpl`, `*ServiceImpl`, and `*ModelImpl`.
+`*LocalServiceImpl`, `*ServiceImpl`, and `*Impl`.
 
 - Persistence
     - `[ENTITY_NAME]Persistence`: Persistence interface that defines CRUD
