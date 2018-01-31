@@ -37,14 +37,6 @@ header for a module whose new schema is version `1.1.0`:
 
 +$$$
 
-**Important**: Modules that use [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
-rely on a `Liferay-Require-SchemaVersion` header to be present in order to
-trigger upgrade process execution. 
-
-$$$
-
-+$$$
-
 **Important**: If no `Liferay-Require-SchemaVersion` header is specified,
 @product@ considers the `Bundle-Version` header value to be the database schema
 version.
