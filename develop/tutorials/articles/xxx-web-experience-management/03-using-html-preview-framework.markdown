@@ -1,4 +1,4 @@
-#Using HTML Preview Framework
+# Using HTML Preview Framework
 
 Liferay's HTML Preview Framework provides the ability to generate previews of 
 HTML content. There are two parts of the HTML Preview Framework that you can
