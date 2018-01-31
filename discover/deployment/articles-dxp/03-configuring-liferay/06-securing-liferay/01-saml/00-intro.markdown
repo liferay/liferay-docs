@@ -1,6 +1,6 @@
 # What is SAML? [](id=what-is-saml)
 
-The @product@'s SAML (Security Assertion Markup Language) adapter lets you
+@product@'s SAML (Security Assertion Markup Language) adapter lets you
 execute Single Sign On (SSO) and Single Log Off (SLO) in your deployment. Each
 @product@ instance serves as either the Service Provider (SP) or the Identity
 Provider (IdP). This article provides the conceptual framework for @product@'s
@@ -58,8 +58,14 @@ certificate can be imported by a third-party application like Salesforce.
 
 ## Single Sign On [](id=single-sign-on)
 
-Both the IdP and the SP can initiate the Single Sign On process, and the SSO flow
-is different depending on each one. Consider IdP initiated SSO first.
+Both the IdP and the SP can initiate the Single Sign On process, and the SSO
+flow is different depending on each one. Regardless of how it's initiated, SSO
+is configured for HTTPS between the SP and IdP, so all transport-level
+communication is encrypted. SAML requests are signed using certificates
+configured in @product@, using the SAML Web Browser SSO profile as defined in
+the [SAML 2.0 specification](http://saml.xml.org/saml-specifications). 
+
+Consider IdP initiated SSO first.
 
 ### Identity Provider Initiated SSO [](id=identity-provider-initiated-sso)
 
