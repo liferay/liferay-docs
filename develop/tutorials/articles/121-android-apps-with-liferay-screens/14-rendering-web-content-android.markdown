@@ -1,6 +1,6 @@
 # Rendering Web Content in Your Android App [](id=rendering-web-content-in-your-android-app)
 
-Liferay represents 
+Liferay Portal represents 
 [web content](/discover/portal/-/knowledge_base/6-2/web-content-management) 
 articles as `JournalArticle` entities. Liferay Screens provides several ways to 
 render these entities in your apps. 
