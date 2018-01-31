@@ -3,7 +3,7 @@
 As noted in the previous tutorials, anything related to configuring SP
 connections must be done through the SAML Admin UI where configurations are
 saved to Liferay's database. SP connections can no longer be made via properties
-files as they were in the past. 
+files as they were in versions prior to 3.1.0. 
 
 This is an portal instance scoped configuration which can be managed via OSGi
 Configuration Admin. The affected properties are those in the
