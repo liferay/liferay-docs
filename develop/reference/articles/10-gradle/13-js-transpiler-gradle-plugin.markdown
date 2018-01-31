@@ -1,8 +1,8 @@
 # JS Transpiler Gradle Plugin [](id=js-transpiler-gradle-plugin)
 
 The JS Transpiler Gradle plugin lets you run [`metal-cli`](https://github.com/metal/metal-cli)
-in order to build [Metal.js](http://metaljs.com/) code, compile Soy files, and
-transpile ES6 to ES5.
+to build [Metal.js](http://metaljs.com/) code, compile Soy files, and transpile
+ES6 to ES5.
 
 The plugin has been successfully tested with Gradle 2.5 up to 3.3.
 
@@ -13,7 +13,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.transpiler", version: "2.4.2"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.transpiler", version: "2.4.3"
     }
 
     repositories {
@@ -131,7 +131,7 @@ Property Name | Type | Default Value | Description
 <a name="sourcedir"></a>`sourceDir` | `File` | `null` | The directory that contains the files to build.
 <a name="sourcefiles"></a>`sourceFiles` | `FileCollection` | `[]` | The Soy and JS files to compile. *(Read-only)*
 `sourceMaps` | `SourceMaps` | `enabled` | Whether to generate source map files. Available values include `disabled`, `enabled`, and `enabled_inline`.
-<a name="soydependencies"></a>`soyDependencies` | `Set<String>` | `["${npmInstall.workingDir}/node_modules/lexicon*/src/**/*.soy", "${npmInstall.workingDir}/node_modules/metal*/src/**/*.soy"]` | The path GLOBs of Soy files that the main source files depend on, but that should not be compiled. It sets the `--soyDeps` argument.
+<a name="soydependencies"></a>`soyDependencies` | `Set<String>` | `["${npmInstall.workingDir}/node_modules/clay*/src/**/*.soy", "${npmInstall.workingDir}/node_modules/metal*/src/**/*.soy"]` | The path GLOBs of Soy files that the main source files depend on, but that should not be compiled. It sets the `--soyDeps` argument.
 `soySkipMetalGeneration` | `boolean` | `false` | Whether to just compile Soy files, without adding Metal.js generated code, like the `component` class. It sets the `--soySkipMetalGeneration` argument.
 `soySrcIncludes` | `Set<String>` | `[]` | The path GLOBs of the Soy files to compile. It sets the `--soySrc` argument.
 `srcIncludes` | `Set<String>` | `[]` | The path GLOBs of the JS files to compile. It sets the `--src` argument.
