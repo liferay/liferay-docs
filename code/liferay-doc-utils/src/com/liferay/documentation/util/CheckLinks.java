@@ -268,7 +268,7 @@ public class CheckLinks {
 	private static String extractSubHeader(String line, File article, LineNumberReader in)
 			throws IOException {
 
-		int begIndex = line.indexOf("#") + 1;
+		int begIndex = line.indexOf("](#") + 3;
 		int endIndex = line.indexOf(")", begIndex);
 
 		String header = "";
@@ -475,12 +475,16 @@ public class CheckLinks {
 			throws IOException {
 
 		boolean validUrl = false;
+		char quotation = '"';
 		LineNumberReader in = new LineNumberReader(new FileReader(article));
 		String line = null;
 
 		while ((line = in.readLine()) != null) {
 
 			if (line.contains("[](id=" + secondaryHeader + ")")) {
+				validUrl = true;
+			}
+			else if (line.contains("<a name=" + quotation + secondaryHeader + quotation + ">")) {
 				validUrl = true;
 			}
 		}
