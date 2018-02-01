@@ -5,7 +5,7 @@ use it in only one app, then you can create it in that app's project. If you
 need to use it in several apps, however, then it's best to create it in a 
 separate project for redistribution. For information on creating Screenlets for 
 redistribution, see the tutorial 
-[Packaging iOS Themes](/develop/tutorials/-/knowledge_base/6-2/packaging-ios-themes). 
+[Packaging iOS Themes](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes). 
 Even though that tutorial is for packaging Themes, you can use the same steps to 
 package Screenlets. 
 
@@ -42,13 +42,13 @@ Now you're ready to begin creating the Screenlet!
 
 ## Creating the Model Class [](id=creating-the-model-class)
 
-Liferay Screens typically receives entities from a Liferay Portal instance as a 
+Liferay Screens typically receives entities from a @product@ instance as a 
 `[String:AnyObject]` dictionary, where `String` is the entity's attribute and 
 `AnyObject` is the attribute's value. Although your Screenlet can use these 
 dictionary objects, it's often easier to create a *model class* that converts 
 each into an object that represents the corresponding entity in the portal. 
 Model classes are especially convenient for complex entities composed of many 
-attribute-value pairs, like guestbooks in the Guestbooks portlet. 
+attribute-value pairs, like guestbooks in the Guestbook portlet. 
 
 Your model class must contain all the code necessary to transform each 
 `[String:AnyObject]` dictionary that comes back from the server into a model 
@@ -99,19 +99,19 @@ Follow these steps to create Guestbook List Screenlet's model class:
             public let attributes: [String:AnyObject]
 
             public var guestbookId: Int64 {
-                return attributes["guestbookId"] as? Int64 ?? 0
+                return attributes["guestbookId"]?.int64Value ?? 0
             }
 
             public var groupId: Int64 {
-                return attributes["groupId"] as? Int64 ?? 0
+                return attributes["groupId"]?.int64Value ?? 0
             }
 
             public var companyId: Int64 {
-                return attributes["companyId"] as? Int64 ?? 0
+                return attributes["companyId"]?.int64Value ?? 0
             }
-    
+
             public var userId: Int64 {
-                return attributes["userId"] as? Int64 ?? 0
+                return attributes["userId"]?.int64Value ?? 0
             }
 
             public var userName: String {
@@ -119,11 +119,11 @@ Follow these steps to create Guestbook List Screenlet's model class:
             }
 
             public var createDate: Int64 {
-                return attributes["createDate"] as? Int64 ?? 0
+                return attributes["createDate"]?.int64Value ?? 0
             }
 
             public var modifiedDate: Int64 {
-                return attributes["modifiedDate"] as? Int64 ?? 0
+                return attributes["modifiedDate"]?.int64Value ?? 0
             }
 
             public var name: String {
@@ -144,16 +144,16 @@ guestbook retrieved from the portlet. The initializer sets this dictionary to
 the `attributes` property. Each computed property returns the value of a 
 guestbook parameter in `attributes`. For example, the `guestbookId` property 
 returns the value of the `guestbookId` parameter, the `groupId` property returns 
-the value of the `groupId` parameter, and so on. To see how the Guestbooks 
+the value of the `groupId` parameter, and so on. To see how the Guestbook 
 portlet defines these parameters, see the 
-[Liferay MVC Learning Path article on Service Builder](/develop/tutorials/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
+[section on generating the portlet's back end](/develop/tutorials/-/knowledge_base/7-0/generating-the-back-end) 
+in the Liferay Web Application Learning Path. 
 
 Also note that each computed property defaults to an empty string or `0`, 
 depending on the property's type, if the parameter contains a value that can't 
-be cast to that type. This prevents the app from crashing if the parameter 
-doesn't have an appropriate value. For example, if the `guestbookId` parameter 
-doesn't contain a value that can be cast to `Int64`, then the `guestbookId` 
-property returns `0`. 
+be represented as that type. This prevents the app from crashing if the 
+parameter doesn't have an appropriate value. For example, if the `guestbookId` 
+parameter contains `nil`, then the `guestbookId` property returns `0`. 
 
 Great! Now you have a model class for guestbooks. Next, you'll create the 
 Screenlet's UI. 

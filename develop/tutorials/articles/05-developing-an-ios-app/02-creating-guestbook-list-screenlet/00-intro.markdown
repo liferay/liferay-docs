@@ -2,11 +2,11 @@
 
 In the previous section, you created an iOS app that contains the Guestbook
 Mobile SDK and Liferay Screens. You also used 
-[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-ios) 
-to implement authentication to Liferay Portal. That's all your app does though.
-It doesn't display any Guestbook portlet content. In this section of the
-Learning Path, you'll create Guestbook List Screenlet to retrieve and display
-the portlet's guestbooks in your app's guestbooks scene. 
+[Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios) 
+to implement authentication to @product@. That's all your app does though. It 
+doesn't display any Guestbook portlet content. In this section of the Learning 
+Path, you'll create Guestbook List Screenlet to retrieve and display the 
+portlet's guestbooks in your app's guestbooks scene. 
 
 Creating your own Screenlets brings additional benefits. Since you use a 
 consistent, repeatable development model to create them, you can often reuse 
@@ -33,12 +33,12 @@ You'll use these steps to create Guestbook List Screenlet:
 
 As background material, the following materials are helpful: 
 
-- [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios): 
+- [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios): 
   Explains the components that constitute a Screenlet, and how they relate to 
   one another. 
-- [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets): 
+- [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets): 
   Explains the general steps for creating a Screenlet. 
-- [Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-list-screenlets): 
+- [Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets): 
   Explains the general steps for creating a list Screenlet. This section of the 
   Learning Path follows this tutorial. 
 

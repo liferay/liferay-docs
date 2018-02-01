@@ -8,7 +8,7 @@ Because this Interactor is so similar to that of Guestbook List Screenlet, the
 steps to create it aren't explained in detail. Focus is instead placed on the 
 few places in the code where the Interactors diverge. For a full explanation of 
 the code, see 
-[the article on creating Guestbook List Screenlet's Interactor](/develop/tutorials/-/knowledge_base/6-2/creating-guestbook-list-screenlets-interactor-ios). 
+[the article on creating Guestbook List Screenlet's Interactor](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-interactor-ios). 
 
 ## Creating Your Interactor's Folder [](id=creating-your-interactors-folder)
 

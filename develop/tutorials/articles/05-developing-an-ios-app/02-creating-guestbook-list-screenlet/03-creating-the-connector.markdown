@@ -82,13 +82,13 @@ Follow these steps to create Guestbook List Screenlet's Connector:
 4.  Override the `doAddPageRowsServiceCall` method to make the server call that 
     retrieves guestbooks from the portlet. This method must call the Guestbook 
     SDK service method `getGuestbooksWithGroupId`, which retrieves guestbooks. 
-    To do this, you must first create a `LRGuestbookService_v62` instance from 
+    To do this, you must first create a `LRGuestbookService_v7` instance from 
     the session. Then call the service's `getGuestbooksWithGroupId` method with 
     `groupId`, `startRow`, and `endRow`: 
 
         public override func doAddPageRowsServiceCall(session: LRBatchSession, startRow: Int, endRow: Int, 
             obc: LRJSONObjectWrapper?) {
-                let service = LRGuestbookService_v62(session: session)
+                let service = LRGuestbookService_v7(session: session)
 
                 do {
                     try service!.getGuestbooksWithGroupId(groupId, start: Int32(startRow), end: Int32(endRow))
@@ -109,12 +109,12 @@ Follow these steps to create Guestbook List Screenlet's Connector:
     retrieves the total number of guestbooks from the portlet. This enables 
     pagination. This method must call the Guestbook SDK service method 
     `getGuestbooksCount`, which retrieves the total number of guestbooks. To do 
-    this, you must first create a `LRGuestbookService_v62` service instance from 
+    this, you must first create a `LRGuestbookService_v7` service instance from 
     the session. Then call the service's `getGuestbooksCount` method with 
     `groupId`:
 
         override public func doAddRowCountServiceCall(session: LRBatchSession) {
-            let service = LRGuestbookService_v62(session: session)
+            let service = LRGuestbookService_v7(session: session)
 
             do {
                 try service!.getGuestbooksCount(withGroupId: groupId)

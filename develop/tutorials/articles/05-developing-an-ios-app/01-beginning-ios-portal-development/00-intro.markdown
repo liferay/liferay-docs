@@ -3,13 +3,13 @@
 Getting started with Liferay Screens for iOS is straightforward. This series of 
 Learning Path articles walks you through creating an iOS app and preparing it to 
 work with the Guestbook portlet developed in the 
-[Liferay 6.2 MVC Learning Path](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application). 
-Since Liferay Screens uses the Liferay Mobile SDK to make remote service calls, 
-you'll build a Mobile SDK capable of calling the Guestbook portlet's remote 
-services (the Guestbook Mobile SDK). You'll then install this Mobile SDK and 
-Screens into your iOS project. You'll also learn about the iOS app's design and 
-implement authentication with 
-[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-ios). 
+[Developing a Web Application](/develop/tutorials/-/knowledge_base/7-0/developing-a-web-application) 
+Learning Path. Since Liferay Screens uses the Liferay Mobile SDK to make remote 
+service calls, you'll build a Mobile SDK capable of calling the Guestbook 
+portlet's remote services (the Guestbook Mobile SDK). You'll then install this 
+Mobile SDK and Screens into your iOS project. You'll also learn about the iOS 
+app's design and implement authentication with 
+[Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios). 
 
 This section of the Learning Path covers these topics: 
 

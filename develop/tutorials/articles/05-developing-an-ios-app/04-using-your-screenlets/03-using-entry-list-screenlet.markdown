@@ -131,12 +131,12 @@ Follow these steps to conform `EntriesViewController` to the
 
 Now you're ready to test your handiwork. Make sure your portal containing the 
 Guestbook portlet is running, and that the portlet contains a couple guestbooks 
-that have entries. Then run the app, and log in with your credentials. You 
-should see the list of guestbooks, displayed by Guestbook List Screenlet. 
-Selecting a guestbook in the list takes you to the entries scene, which uses 
-Entry List Screenlet to display a list of that guestbook's entries. Pressing the 
-back button returns you to the guestbooks scene, where you can select a 
-different guestbook. 
+that have entries. Then run the app and log in with your credentials. You should 
+see the list of guestbooks displayed by Guestbook List Screenlet. Selecting a 
+guestbook in the list takes you to the entries scene, which uses Entry List 
+Screenlet to display a list of that guestbook's entries. Pressing the back 
+button returns you to the guestbooks scene, where you can select a different 
+guestbook. 
 
 ![Figure 1: After login, Guestbook List Screenlet displays the list of guestbooks from the portlet.](../../../images/ios-lp-gb-screenlet.png)
 
@@ -144,8 +144,8 @@ different guestbook.
 
 Congratulations! Now you know how to use Liferay Screens and create your own 
 Screenlets. This opens up a world of possibilities for developing apps that 
-leverage Liferay Portal. Although you learned a great deal in this Learning 
-Path, there’s still more. You can customize your Screenlet's appearance, package 
+leverage @product@. Although you learned a great deal in this Learning Path, 
+there's still more. You can customize your Screenlet's appearance, package 
 Screenlets and Themes for redistribution, and even add multiple actions to a 
 Screenlet. These topics, and more, are covered in 
-[the tutorials on iOS apps with Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/ios-apps-with-liferay-screens). 
+[the tutorials on iOS apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/ios-apps-with-liferay-screens). 

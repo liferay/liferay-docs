@@ -18,8 +18,8 @@ Now you're ready to begin!
 
 ## Creating the Model Class [](id=creating-the-model-class)
 
-Recall that you need a model class to represent entities retrieved from Liferay 
-Portal. The model class you'll create for guestbook entries, `EntryModel`, 
+Recall that you need a model class to represent entities retrieved from 
+@product@. The model class you'll create for guestbook entries, `EntryModel`, 
 creates `EntryModel` objects that represent guestbook entries retrieved from the 
 Guestbook portlet. 
 
@@ -43,23 +43,23 @@ the `model` folder:
         import UIKit
 
         @objc public class EntryModel: NSObject {
-    
+
             public let attributes: [String:AnyObject]
-    
+
             public var entryId: Int64 {
-                return attributes["entryId"] as? Int64 ?? 0
+                return attributes["entryId"]?.int64Value ?? 0
             }
 
             public var groupId: Int64 {
-                return attributes["groupId"] as? Int64 ?? 0
+                return attributes["groupId"]?.int64Value ?? 0
             }
 
             public var companyId: Int64 {
-                return attributes["companyId"] as? Int64 ?? 0
+                return attributes["companyId"]?.int64Value ?? 0
             }
 
             public var userId: Int64 {
-                return attributes["userId"] as? Int64 ?? 0
+                return attributes["userId"]?.int64Value ?? 0
             }
 
             public var userName: String {
@@ -67,11 +67,11 @@ the `model` folder:
             }
 
             public var createDate: Int64 {
-                return attributes["createDate"] as? Int64 ?? 0
+                return attributes["createDate"]?.int64Value ?? 0
             }
 
             public var modifiedDate: Int64 {
-                return attributes["modifiedDate"] as? Int64 ?? 0
+                return attributes["modifiedDate"]?.int64Value ?? 0
             }
 
             public var name: String {
@@ -87,7 +87,7 @@ the `model` folder:
             }
 
             public var guestbookId: Int64 {
-                return attributes["guestbookId"] as? Int64 ?? 0
+                return attributes["guestbookId"]?.int64Value ?? 0
             }
 
             //MARK: Initializer
@@ -100,6 +100,6 @@ the `model` folder:
 
 Besides working with entries instead of guestbooks, this class is almost 
 identical to `GuestbookModel`. For an explanation of the code, see 
-[the article on getting started with Guestbook List Screenlet](/develop/tutorials/-/knowledge_base/6-2/getting-started-with-guestbook-list-screenlet-ios). 
+[the article on getting started with Guestbook List Screenlet](/develop/tutorials/-/knowledge_base/7-0/getting-started-with-guestbook-list-screenlet-ios). 
 
 Next, you'll create the Screenlet's UI. 

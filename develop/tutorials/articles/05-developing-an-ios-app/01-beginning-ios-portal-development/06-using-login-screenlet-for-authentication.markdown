@@ -1,7 +1,7 @@
 # Using Login Screenlet for Authentication [](id=using-login-screenlet-for-authentication-ios)
 
 For the app to retrieve data from the Guestbook portlet, the user must first
-authenticate to the Liferay Portal instance. You can implement authentication
+authenticate to the @product@ instance. You can implement authentication
 using the Liferay Mobile SDK, but it takes time to write. Using Liferay Screens
 to authenticate takes about ten minutes. In this article, you'll use Login
 Screenlet to implement authentication in your app. 
@@ -164,10 +164,10 @@ Great, you're finished! Before running the app, make sure that your
 
     }
 
-Now you're ready to test your work. With your Liferay Portal instance running, 
-launch the app using the iPhone simulator (any iPhone version supported by Xcode 
-will work). Enter your credentials when Login Screenlet appears and click *SIGN 
-IN*. In Xcode, the `Login Successful!` message appears in the console. 
+Now you're ready to test your work. With your @product@ instance running, launch 
+the app using the iPhone simulator (any iPhone version supported by Xcode will 
+work). Enter your credentials when Login Screenlet appears and click *SIGN IN*. 
+In Xcode, the `Login Successful!` message appears in the console. 
 
 ![Figure 6: It worked!](../../../images/ios-lp-login-successful.png)
 

@@ -32,7 +32,7 @@ extend
 [Liferay Screens's `BaseListPageLoadInteractor` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseListScreenlet/BaseListPageLoadInteractor.swift). 
 This class provides most of the functionality required by list Screenlet 
 Interactors. Your Interactor class must also contain any properties your 
-Screenlet needs, and an initializer that sets them. This initializer needs 
+Screenlet needs and an initializer that sets them. This initializer needs 
 arguments for the following properties, which it passes to the superclass 
 initializer: 
 
@@ -114,7 +114,7 @@ Follow these steps to create Guestbook List Screenlet's Interactor:
         }
 
 6.  Override the `cacheKey` method to return a key that can be used with 
-    [offline mode](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
+    [offline mode](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
     Although Guestbook List Screenlet won't initially support offline mode, this 
     method is still required. For this Screenlet, the `groupId` serves as a 
     sufficient key. Add this method as follows: 

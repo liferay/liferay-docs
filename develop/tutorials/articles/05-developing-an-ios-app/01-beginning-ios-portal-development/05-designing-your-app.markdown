@@ -10,9 +10,9 @@ straightforward way to do three things:
 3. Display entries
 
 To authenticate users, all you need to do is insert and configure 
-[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-ios) 
+[Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios) 
 in your app. Login Screenlet comes complete with its own UI. The design for
-authentication, therefore, like with Liferay Portal itself, is done for you. 
+authentication, therefore, like with @product@ itself, is done for you. 
 
 You must, however, create the UI for displaying guestbooks and entries. What 
 sort of UI would be best for this? Although the *best* UI for any purpose is a 
@@ -35,8 +35,7 @@ You'll display the entries by inserting Entry List Screenlet in another scene.
 Also note that these Screenlets are *list Screenlets*. You develop list 
 Screenlets by using the list Screenlet framework, which sits on top of the core 
 Screenlet framework. The list Screenlet framework makes it easy for developers 
-to write Screenlets that display lists of entities from a Liferay Portal 
-instance. 
+to write Screenlets that display lists of entities from a @product@ instance. 
 
 ![Figure 1: After login, the user transitions to the guestbooks scene where Guestbook List Screenlet displays a list of guestbooks. Upon selecting a guestbook, the entries scene displays a list of that guestbook's entries with Entry List Screenlet. Because the guestbooks and entries scenes are embedded in a navigation controller, the user can navigate back to the guestbooks scene via a back button in the navigation bar.](../../../images/ios-app-design.png)
 

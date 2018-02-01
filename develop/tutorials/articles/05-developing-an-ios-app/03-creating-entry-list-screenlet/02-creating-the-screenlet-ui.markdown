@@ -108,7 +108,7 @@ Follow these steps to create your Screenlet's View class:
     the name of the person who left the message. This way, a single cell 
     displays both pieces of information. For a description of the code shared 
     with `GuestbookListView_default`, see 
-    [the article on creating Guestbook List Screenlet's Theme](/develop/tutorials/-/knowledge_base/6-2/creating-guestbook-list-screenlets-ui-ios). 
+    [the article on creating Guestbook List Screenlet's Theme](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui-ios). 
 
 3.  Return to the Theme's XIB in Interface Builder and set 
     `EntryListView_default` as the the parent View's custom class. To do this, 
