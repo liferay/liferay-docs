@@ -8,11 +8,15 @@ runtime already provides, the dependency JAR will be included in the WAR's
 classes will be on the classpath. This can cause weird errors that are hard to
 debug.
 
-To find a list of the packages exported by `com.liferay.portal.bootstrap`, go
-to `modules/core/portal-bootstrap/system.packages.extra.bnd`. These packages
-are installed and available in Liferay's OSGi runtime. If your module or WAR
-uses one of them, specify the corresponding dependency as being "provided"
-(provided by @product@). Here's how to specify a provided dependency. 
+To find a list of the packages exported by `com.liferay.portal.bootstrap`, go to
+source file `modules/core/portal-bootstrap/system.packages.extra.bnd`.If you
+don't have access to the source code, the same list (albeit in a less
+user-friendly format) can be found in the `META-INF/system.packages.extra.mf`
+file in `[LIFERAY_HOME]/osgi/core/com.liferay.portal.bootstrap.jar`. These
+packages are installed and available in Liferay's OSGi runtime. If your module
+or WAR uses one of them, specify the corresponding dependency as being
+"provided" (provided by @product@). Here's how to specify a provided dependency.
+
 
 Maven: `<scope>provided</scope>`
  
