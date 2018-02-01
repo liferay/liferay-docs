@@ -15,9 +15,13 @@ traditional Java libraries.
 [Eclipse Orbit](download.eclipse.org/tools/orbit/downloads/drops/R20170919201930/)
 hosts over a hundred such OSGi modules. Deploying the module to Liferay's OSGi
 framework lets you share it on the system. If you find a module for the library
-you need, use it. Otherwise, go to Step 2. 
+you need,
+[deploy](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
+it. Then add a `compileOnly` dependency on it in your module. When you deploy
+your module, the OSGi framework wires the dependency module to your module. If
+you don't find an OSGi module based on the Java library, go to Step 2. 
 
-**Step 2 - Resolve the packages privately in your module**: You can copy
+**Step 2 - Resolve the Java packages privately in your module**: You can copy
 required library packages into your OSGi module or embed them wholesale, if you
 must. The rest of the tutorial shows you how to do this. 
 
@@ -58,15 +62,13 @@ The recommended package resolution workflow is next.
 
 ## Library Package Resolution Workflow [](id=library-package-resolution-workflow)
 
-When you have a dependency on a JAR, much of the time you only need parts of it.
-The OSGi container can resolve dependencies faster if you specify only the
-packages your module and its transitive dependencies need. Since bnd adds all
-packages on the module's classpath to `MANIFEST.MF`'s `Import-Package` header,
-to resolve dependencies faster you must manually specify the packages your
-module uses. In this way, you avoid having dependencies on bundles you don't
-need.
+When you depend on a library JAR, much of the time you only need parts of it.
+Explicitly specifying only the Java packages you need makes your bundle more
+modular. This also insulates modules that depend on your module from unneeded
+packages. 
 
-Here's a configuration workflow that minimizes dependencies and package imports:
+Here's a configuration workflow that minimizes dependencies and Java package
+imports:
 
 1.  Add the library as a compile-only dependency (e.g., `compileOnly` in
     Gradle).
