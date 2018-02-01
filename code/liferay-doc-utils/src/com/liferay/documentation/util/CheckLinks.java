@@ -81,6 +81,21 @@ public class CheckLinks {
 					}
 
 				}
+				else if (line.contains("](#")) {
+
+					String secondaryHeader = extractSubHeader(line, article, in);
+
+					validUrl = isSubUrlValid(article, secondaryHeader);
+
+					if (!validUrl) {
+						resultsNumber = resultsNumber + 1;
+
+						System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
+								article.getPath() + ":" + in.getLineNumber() + "\n" +
+								" Line: " + line);
+
+					}
+				}
 			}
 
 			in.close();
@@ -238,6 +253,27 @@ public class CheckLinks {
 		String ldnUrl = begLdnUrl.concat(endLdnUrl);
 
 		return ldnUrl;
+	}
+
+	private static String extractSubHeader(String line, File article, LineNumberReader in)
+			throws IOException {
+
+		int begIndex = line.indexOf("#") + 1;
+		int endIndex = line.indexOf(")", begIndex);
+
+		String header = "";
+
+		try {
+			header = line.substring(begIndex, endIndex);
+		} catch(Exception e) {
+			resultsNumber = resultsNumber + 1;
+
+			System.out.println(resultsNumber + ". " + "**CORRUPT URL FORMATTING**\n"
+					+ "File: " + article.getPath() + ":" + in.getLineNumber() + "\n" +
+					" Line: " + line);
+		}
+
+		return header;
 	}
 
 	/**
@@ -413,6 +449,25 @@ public class CheckLinks {
 		}
 
 		return validLDNURL;
+	}
+
+	private static boolean isSubUrlValid(File article, String secondaryHeader)
+			throws IOException {
+
+		boolean validUrl = false;
+		LineNumberReader in = new LineNumberReader(new FileReader(article));
+		String line = null;
+
+		while ((line = in.readLine()) != null) {
+
+			if (line.contains("[](id=" + secondaryHeader + ")")) {
+				validUrl = true;
+			}
+		}
+
+		in.close();
+
+		return validUrl;
 	}
 
 	/**
