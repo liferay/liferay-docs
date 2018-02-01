@@ -255,6 +255,16 @@ public class CheckLinks {
 		return ldnUrl;
 	}
 
+	/**
+	 * Returns the sub-header ID contained in the given line. A sub-header is a
+	 * header characterizing a subsection in the article.
+	 *
+	 * @param line the line from which to extract the URL
+	 * @param article the article containing the line
+	 * @param in the line number reader
+	 * @return the sub-header ID
+	 * @throws IOException if an IO exception occurred
+	 */
 	private static String extractSubHeader(String line, File article, LineNumberReader in)
 			throws IOException {
 
@@ -451,6 +461,16 @@ public class CheckLinks {
 		return validLDNURL;
 	}
 
+	/**
+	 * Returns <code>true</code> if the sub-URL is valid. A sub-URL is a link
+	 * to a section existing in the same article.
+	 *
+	 * @param article the article containing the sub-URL
+	 * @param secondaryHeader the header ID for the section that is linked
+	 * @return <code>true</code> if the sub-URL is valid; <code>false</code>
+	 *         otherwise
+	 * @throws IOException if an IO exception occurred
+	 */
 	private static boolean isSubUrlValid(File article, String secondaryHeader)
 			throws IOException {
 
