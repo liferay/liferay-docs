@@ -95,7 +95,7 @@ Property Name | Default Value
 `scriptFile` | `"${downloadLiferayModuleConfigGenerator.moduleDir}/bin/index.js"`
 
 The purpose of this task is to run the Liferay AMD Module Config Generator from
-the included files in [`sourceDir`](#sourceDir). The generator processes these
+the included files in [`sourceDir`](#sourcedir). The generator processes these
 files and creates a configuration file in the location specified by the
 [`outputFile`](#outputfile) property.
 

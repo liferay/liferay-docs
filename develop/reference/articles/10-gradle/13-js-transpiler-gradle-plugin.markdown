@@ -116,7 +116,7 @@ Property Name | Default Value
 `scriptFile` | `"${downloadMetalCli.moduleDir}/index.js"`
 
 The purpose of this task is to run the `build` command of `metal-cli` to
-build Metal.js code from [`sourceDir`](#sourceDir) into the `workingDir`
+build Metal.js code from [`sourceDir`](#sourcedir) into the `workingDir`
 directory.
 
 #### Task Properties [](id=task-properties)
