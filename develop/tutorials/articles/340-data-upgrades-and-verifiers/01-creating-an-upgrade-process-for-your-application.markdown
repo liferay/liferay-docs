@@ -7,6 +7,13 @@ make this easier to do. It's a feature-rich framework that makes upgrades safe:
 the system records the current state of the schema so that if the upgrade fails,
 the process can revert the module back to its previous version.
 
++$$$
+
+**Note**: Upgrade processes for traditional Liferay plugins (WAR files) work 
+[the same way they did for Liferay Portal 6.x](/develop/tutorials/-/knowledge_base/7-0/optimizing-app-upgrade-processes#understanding-liferay-portal-6-upgrade-processes). 
+
+$$$
+
 @product@'s upgrade framework executes your module's upgrades automatically when
 the new version starts for the first time. You implement concrete data schema
 changes in upgrade step classes and then register them with the upgrade
