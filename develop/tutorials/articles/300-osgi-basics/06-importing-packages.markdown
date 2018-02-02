@@ -1,24 +1,25 @@
 # Importing Packages [](id=importing-packages)
 
-How does a module gain access to external classes? The module must specify the
-`Import-Package` OSGi manifest header and assign it a comma-separated list of
-the Java packages for those classes. For example, if a module needs classes from
-the `javax.portlet` and `com.liferay.portal.kernel.util` packages, it must
-specify them in its `Import-Package` manifest header:
+A module can use packages
+[exported](/develop/reference/-/knowledge_base/7-0/exporting-packages) by other
+modules. When a module has package dependencies assigned to its `Import-Package`
+header, the OSGi framework finds other registered modules that export them and
+wires them to the importing module.  At run time, the importing module gets the
+class from the wired module that exports the class's package. 
+
+For a module to gain access to external classes, it must specify the
+`Import-Package` OSGi manifest header with a comma-separated list of the Java
+packages for those classes. For example, if a module needs classes from the
+`javax.portlet` and `com.liferay.portal.kernel.util` packages, it must specify
+them like so:
 
     Import-Package: javax.portlet,com.liferay.portal.kernel.util
 
-A module can use packages from modules that
-[export](/develop/reference/-/knowledge_base/7-0/exporting-packages)
-them. To resolve a module's package dependencies (the packages assigned to its
-`Import-Package` header), the OSGi framework finds other registered modules that
-export them and wires them to the importing module.  At run time, the importing
-module gets the class from the wired module that exports the class's package.  
-
-Conveniently, @product@ project templates and tools automatically detect
+Import packages must sometimes be specified manually, but not always.
+Conveniently, @product@ project templates and tools automatically detect the
 packages a module uses and add them to the package imports in the module JAR's
-manifest. In other cases, you must manually specify package imports. Let's
-explore how package imports are specified in different scenarios.
+manifest. Let's explore how package imports are specified in different
+scenarios.
 
 [Gradle and Maven module projects](/develop/reference/-/knowledge_base/7-0/project-templates)
 created using
@@ -86,7 +87,8 @@ these places:
 -   Class loader code
 
 In such cases, you must manually determine the packages required and add them to
-an `Import-Package` OSGi header the location your project type uses:
+an `Import-Package` OSGi header in the location appropriate to your project
+type:
 
  Project type | `Import-Package` header location |
 :----------- | :------------------------------- |

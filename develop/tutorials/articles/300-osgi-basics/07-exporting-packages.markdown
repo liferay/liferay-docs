@@ -6,9 +6,15 @@ share. Exporting a package in your OSGi module JAR's manifest makes all the
 package's classes available for other modules to
 [import](/develop/tutorials/-/knowledge_base/7-0/importing-packages).
 
-Adding a package to a module's or plugin's `Export-Package` OSGi header exports
-the package. Here's where to specify the `Export-Package` header in your
-project:
+To export a package, add it to your module's or plugin's `Export-Package` OSGi
+header. A header exporting `com.liferay.petra.io` and
+`com.liferay.petra.io.unsync` would look like this:
+
+    Export-Package:\
+    com.liferay.petra.io,\
+    com.liferay.petra.io.unsync
+
+The correct location for the header depends on your project's type:
 
  Project Type | `Export-Package` header location |
  :----------- | :------------------------------- |
@@ -25,12 +31,6 @@ use
 [bnd](http://bnd.bndtools.org/).
 On building such a project's module JAR, bnd propagates the OSGi headers from
 the project's `bnd.bnd` file to the JAR's `META-INF/MANIFEST.MF`.  
-
-Here's an example package export from a `bnd.bnd` file:
-
-    Export-Package:\
-    com.liferay.petra.io,\
-    com.liferay.petra.io.unsync
 
 In module projects that don't use bnd, you must manually add package exports to
 an `Export-Package` header in the module JAR's `META-INF/MANIFEST.MF`. 
@@ -58,8 +58,8 @@ provides more details on how substitutable exports works.
 
 $$$
 
-Now you can share your module's or plugin's terrific packages with other
-modules! 
+Now you can share your module's or plugin's terrific [EDITOR: or terrible!]
+packages with other modules! 
 
 ## Related Topics [](id=related-topics)
 
