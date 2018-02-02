@@ -1,9 +1,9 @@
 # Exporting Packages [](id=exporting-packages)
 
-OSGi module classes are inaccessible to other modules by default. To expose a
-class, you must explicitly export its package. Exporting a package in your OSGi
-bundle JAR's manifest makes all the package's classes available for other
-bundles to
+An OSGi module's Java packages are private by default. To expose a package, you
+must explicitly export it. This way you share only the classes you want to
+share. Exporting a package in your OSGi module JAR's manifest makes all the
+package's classes available for other modules to
 [import](/develop/tutorials/-/knowledge_base/7-0/importing-packages).
 
 Adding a package to a module's or plugin's `Export-Package` OSGi header exports
@@ -47,12 +47,12 @@ file to the `META-INF/MANIFEST.MF` file in the generated Web Application Bundle 
 **Note**: bnd makes a module's exported packages *substitutable*. That is, the
 OSGi framework can substitute your module's exported package with a compatible
 package of the same name, but potentially different version, that's exported
-from a different bundle. bnd enables this for your module by automatically
+from a different module. bnd enables this for your module by automatically
 making your module import every package it exports. In this way, your module can
-work on its own, but can also work in conjunction with bundles that provide a
+work on its own, but can also work in conjunction with modules that provide a
 different (compatible) version, or even the same version, of the package. A
-package from another bundle might provide better "wiring" opportunities with
-other bundles.  
+package from another module might provide better "wiring" opportunities with
+other modules.  
 [Peter Kriens' blog post](http://blog.osgi.org/2007/04/importance-of-exporting-nd-importing.html) 
 provides more details on how substitutable exports works. 
 
