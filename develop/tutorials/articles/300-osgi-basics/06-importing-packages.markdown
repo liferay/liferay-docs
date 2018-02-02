@@ -1,17 +1,16 @@
 # Importing Packages [](id=importing-packages)
 
-A module can use packages
+Your modules will often need to use Java classes from packages
 [exported](/develop/reference/-/knowledge_base/7-0/exporting-packages) by other
-modules. When a module has package dependencies assigned to its `Import-Package`
-header, the OSGi framework finds other registered modules that export them and
-wires them to the importing module.  At run time, the importing module gets the
-class from the wired module that exports the class's package. 
+modules. When a module is set up to import, the OSGi framework finds other
+registered modules that export the needed packages and wires them to the
+importing module. At run time, the importing module gets the class from the
+wired module that exports the class's package. 
 
-For a module to gain access to external classes, it must specify the
-`Import-Package` OSGi manifest header with a comma-separated list of the Java
-packages for those classes. For example, if a module needs classes from the
-`javax.portlet` and `com.liferay.portal.kernel.util` packages, it must specify
-them like so:
+For this to happen, a module must specify the `Import-Package` OSGi manifest
+header with a comma-separated list of the Java packages it needs. For example,
+if a module needs classes from the `javax.portlet` and
+`com.liferay.portal.kernel.util` packages, it must specify them like so:
 
     Import-Package: javax.portlet,com.liferay.portal.kernel.util
 
