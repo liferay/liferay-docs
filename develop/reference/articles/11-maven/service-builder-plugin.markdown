@@ -1,6 +1,6 @@
 # Service Builder Plugin [](id=service-builder-with-maven)
 
-The Service Builder Gradle lets you generate a service layer defined in a
+The Service Builder plugin lets you generate a service layer defined in a
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 `service.xml` file. Visit the
 [Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
