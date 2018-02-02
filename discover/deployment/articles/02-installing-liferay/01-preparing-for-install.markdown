@@ -102,14 +102,16 @@ database.
 ## Step 1: Choose a Database Server and Create a New Database [](id=step-1-choose-a-database-server-and-create-a-new-database)
 
 The recommended way of setting up your @product@ database is also the simplest.
-@product@ takes care of just about everything. You only need to take two
+@product@ takes care of just about everything. You only need to take these
 simple steps:
 
 1. Create a blank database encoded with the character set UTF-8. @product@ is a
    multilingual application and needs UTF-8 encoding to display all of its
    supported character sets.
 
-2. Create a database user for accessing this database. Grant this database user
+2. [Configure the database to use the default query result order you expect for entities @product@ lists](/develop/tutorials/-/knowledge_base/7-0/sort-order-changed-with-a-different-database). 
+
+3. Create a database user for accessing this database. Grant this database user
    all rights, including the rights to create and drop tables, to the blank
    @product@ database.
 

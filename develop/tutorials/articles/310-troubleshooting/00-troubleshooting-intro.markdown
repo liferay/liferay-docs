@@ -81,6 +81,10 @@ See
 
 [Use Simple Logging Facade for Java \(SLF4J\) to log messages](/develop/tutorials/-/knowledge_base/7-0/implementing-logging).
 
+### Why did the entity sort order change when I migrated to a new database type?
+
+[Your new database uses a different default query result order--you should be able to configure a different order](/develop/tutorials/-/knowledge_base/7-0/sort-order-changed-with-a-different-database).
+
 ## Services and Components [](id=troubleshooting-services-and-components)
 
 ### How can I detect unresolved OSGi components? [](id=how-can-i-detect-unresolved-osgi-components)
