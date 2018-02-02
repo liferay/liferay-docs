@@ -21,6 +21,9 @@ To use the plugin, include it in your `pom.xml` file:
         </plugins>
     </build>
 
+You can view an example POM containing the Lang Builder configuration
+[here](https://github.com/liferay/liferay-portal/blob/master/modules/util/lang-builder/samples/pom.xml).
+
 ## Goals
 
 The plugin adds one Maven goal to your project:
