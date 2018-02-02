@@ -76,7 +76,6 @@ Bundle Support | [com.liferay.portal.tools.bundle.support](https://search.maven.
 CSS Builder | [com.liferay.css.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.css.builder) | [Compiling SASS Files in a Maven Project](/develop/tutorials/-/knowledge_base/7-1/compiling-sass-files-in-a-maven-project) |
 DB Support | [com.liferay.portal.tools.db.support](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.db.support) | [DB Support Plugin](/develop/reference/-/knowledge_base/7-1/db-support-plugin)
 Deployment Helper | [com.liferay.deployment.helper](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.deployment.helper) | Coming Soon |
-Jasper JSPC | [com.liferay.jasper.jspc](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.jasper.jspc) | Coming Soon |
 Javadoc Formatter | [com.liferay.javadoc.formatter](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.javadoc.formatter) | Coming Soon |
 Lang Builder | [com.liferay.lang.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.lang.builder) | Coming Soon |
 Service Builder | [com.liferay.portal.tools.service.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.service.builder) | [Service Builder Plugin](/develop/reference/-/knowledge_base/7-1/service-builder-with-maven) |
