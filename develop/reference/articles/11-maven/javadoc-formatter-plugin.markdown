@@ -1,4 +1,4 @@
-# Javadoc Formatter Plugin
+# Javadoc Formatter Plugin [](id=javadoc-formatter-plugin)
 
 The Javadoc Formatter plugin lets you format project Javadoc comments. The tool
 lets you generate:
@@ -11,7 +11,7 @@ lets you generate:
 - An XML representation of the Javadoc comments, which can be used by tools in
   order to index the Javadocs of the project.
 
-## Usage
+## Usage [](id=usage)
 
 To use the plugin, include it in your `pom.xml` file:
 
@@ -32,7 +32,7 @@ To use the plugin, include it in your `pom.xml` file:
 You can view an example POM containing the Javadoc Formatter configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/javadoc-formatter/samples/pom.xml).
 
-## Goals
+## Goals [](id=goals)
 
 The plugin adds one Maven goal to your project:
 
@@ -40,7 +40,7 @@ Name | Description
 ---- | -----------
 `javadoc-formatter:format` | Runs the Liferay Javadoc Formatter to format files.
 
-## Available Parameters
+## Available Parameters [](id=available-parameters)
 
 You can set the following parameters in the `<configuration>` section of the
 POM:

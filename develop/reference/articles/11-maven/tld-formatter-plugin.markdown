@@ -1,8 +1,8 @@
-# TLD Formatter Plugin
+# TLD Formatter Plugin [](id=tld-formatter-plugin)
 
 The TLD Formatter plugin lets you format a project's TLD files.
 
-## Usage
+## Usage [](id=usage)
 
 To use the plugin, include it in your `pom.xml` file:
 
@@ -23,7 +23,7 @@ To use the plugin, include it in your `pom.xml` file:
 You can view an example POM containing the TLD Formatter configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/tld-formatter/samples/pom.xml).
 
-## Goals
+## Goals [](id=goals)
 
 The plugin adds one Maven goal to your project:
 
@@ -31,7 +31,7 @@ Name | Description
 ---- | -----------
 `tld-formatter:format` | Runs the Liferay TLD Formatter to format files.
 
-## Available Parameters
+## Available Parameters [](id=available-parameters)
 
 You can set the following parameters in the `<configuration>` section of the
 POM:

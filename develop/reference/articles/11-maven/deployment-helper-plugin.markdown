@@ -1,9 +1,9 @@
-# Deployment Helper Plugin
+# Deployment Helper Plugin [](id=deployment-helper-plugin)
 
 The Deployment Helper plugin lets you create a cluster deployable WAR from your
 OSGi artifacts.
 
-## Usage
+## Usage [](id=usage)
 
 To use the plugin, include it in your `pom.xml` file:
 
@@ -24,7 +24,7 @@ To use the plugin, include it in your `pom.xml` file:
 You can view an example POM containing the Deployment Helper configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/deployment-helper/samples/pom.xml).
 
-## Goals
+## Goals [](id=goals)
 
 The plugin adds one Maven goal to your project:
 
@@ -32,7 +32,7 @@ Name | Description
 ---- | -----------
 `deployment-helper:build` | Builds a WAR which contains one or more files that are copied once the WAR is deployed.
 
-## Available Parameters
+## Available Parameters [](id=available-parameters)
 
 You can set the following parameters in the `<configuration>` section of the
 POM:
