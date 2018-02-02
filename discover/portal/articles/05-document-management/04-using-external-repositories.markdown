@@ -18,11 +18,12 @@ Documents and Media.
 There are also different kinds of repositories Liferay can connect with through
 Documents and Media. Liferay can connect with repositories, such as Alfresco,
 Nuxeo, and more, that support the Content Management Interoperability Services
-(CMIS) standard. In addition, EE subscribers can use the [Liferay SharePoint Connector](https://web.liferay.com/marketplace/-/mp/application/15188537)
+(CMIS) standard. In addition, EE subscribers can use the 
+[Liferay Connector for SharePoint](https://web.liferay.com/marketplace/-/mp/application/15188537)
 and [Liferay Documentum Connector](https://web.liferay.com/marketplace/-/mp/application/15098914)
 apps to work with SharePoint and Documentum in Documents and Media. 
 
-Let's start with the common configuration steps.
+Let's start with the common configuration steps. 
 
 ## Common Configuration Steps [](id=common-configuration-steps)
 
@@ -199,22 +200,24 @@ Next, let's learn how to use a SharePoint repository.
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
-With the help of Liferay's SharePoint Connector app, users can access SharePoint
-2010 libraries from within a Liferay Documents and Media Library. The app
-installs a SharePoint repository type that you can select on adding a new
-*Repository* to Documents and Media. The SharePoint Connector integrates sites
+The app 
+[Liferay Connector for SharePoint](https://web.liferay.com/marketplace/-/mp/application/15188537) 
+lets users access SharePoint 2010 libraries from within a Liferay Documents and 
+Media Library. The app installs a SharePoint repository type that you can select 
+when adding a new *Repository* to Documents and Media. The app integrates sites
 with existing SharePoint libraries, so you can access all of your organization's
-files.
+files. 
 
-The [Liferay SharePoint Connector](https://web.liferay.com/marketplace/-/mp/application/15188537)
-app is available to EE subscribers on Liferay's [Marketplace](http://marketplace.liferay.com/).
-Refer to  the [Downloading and Installing Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps)
-section of the *Leveraging the Liferay Marketplace* article for more
-information. 
+[The Liferay Connector for SharePoint](https://web.liferay.com/marketplace/-/mp/application/15188537) 
+is available to EE subscribers on 
+[Liferay's Marketplace](http://marketplace.liferay.com/). 
+See the article 
+[Downloading and Installing Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps) 
+for information on using Marketplace to download and install apps. 
 
 As with other third-party repositories that support the CMIS standard, users can
 gain these benefits by accessing the SharePoint repository through the Liferay
-SharePoint Connector: 
+Connector for SharePoint: 
 
 - Reading/writing documents and folders
 - Document check-in, check-out, and undo check-out
@@ -223,13 +226,18 @@ SharePoint Connector:
 - Getting revision history
 - Reverting to a revision
 
-The SharePoint Connector uses SharePoint's API, which has some limitations: 1)
-Version history is lost when moving or renaming a file without first checking it
-out; 2) you can't change file extensions, you can only change file names; 3) a
-file's current name propagates to all previous versions; 4) the user who checks
-out a file is the only one who can see its working copy version number; 5)
-queries for suffixes or intermediate wildcards convert to queries for
-containment; 6) ratings are unsupported. 
+The Liferay Connector for SharePoint uses SharePoint's API, which has some 
+limitations: 
+
+1.  Version history is lost when moving or renaming a file without first 
+    checking it out.
+2.  You can't change file extensions--you can only change file names. 
+3.  A file's current name propagates to all previous versions. 
+4.  The user who checks out a file is the only one who can see its working copy 
+    version number. 
+5.  Queries for suffixes or intermediate wildcards convert to queries for 
+    containment. 
+6.  Ratings are unsupported. 
 
 To use a SharePoint repository inside Documents and Media, you must first
 configure the SharePoint and Liferay environments to support authentication with
@@ -256,9 +264,9 @@ application.
 
 #### Step 1: Enable Basic Authentication on the SharePoint Host [](id=step-1-enable-basic-authentication-on-the-sharepoint-host)
 
-So that Liferay's SharePoint Connector can authenticate against the SharePoint
-web services, you must enable Basic Authentication on the SharePoint host. As
-you do this, make sure to empty Basic Authentication's default domain and realm
+For the Liferay Connector for SharePoint to authenticate against the SharePoint 
+web services, you must enable Basic Authentication on the SharePoint host. As 
+you do this, make sure to empty Basic Authentication's default domain and realm 
 fields of all values.
 
 Authentication setup steps differ between Windows versions. But as an example,
@@ -319,8 +327,8 @@ passwords for the user sessions. You must configure an authentication type that
 supports storing passwords for the user sessions.
 
 **Important**: Since authentication with single sign-on (SSO) does not store
-encrypted passwords in the user sessions, SSO can't be used with the SharePoint
-Connector app.
+encrypted passwords in the user sessions, SSO can't be used with the Liferay 
+Connector for SharePoint app.
 
 Let's configure Liferay Portal for what's required in authentication.
 In your [Liferay Home](/discover/deployment/-/knowledge_base/6-2/liferay-home),
