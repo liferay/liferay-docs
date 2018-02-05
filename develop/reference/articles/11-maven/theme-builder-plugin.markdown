@@ -7,7 +7,7 @@ tutorial to learn more about applying Theme Builder to your Maven project.
 
 ## Usage [](id=usage)
 
-To use the plugin, include it in your `pom.xml` file:
+To use the plugin, include it in your project's root `pom.xml` file:
 
     <build>
         <plugins>

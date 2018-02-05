@@ -8,7 +8,7 @@ The WSDD Builder plugin lets you generate the
 
 ## Usage [](id=usage)
 
-To use the plugin, include it in your `pom.xml` file:
+To use the plugin, include it in your project's root `pom.xml` file:
 
     <build>
         <plugins>

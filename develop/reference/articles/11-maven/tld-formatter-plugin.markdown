@@ -4,7 +4,7 @@ The TLD Formatter plugin lets you format a project's TLD files.
 
 ## Usage [](id=usage)
 
-To use the plugin, include it in your `pom.xml` file:
+To use the plugin, include it in your project's root `pom.xml` file:
 
     <build>
         <plugins>
