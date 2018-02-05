@@ -132,9 +132,9 @@ Render Filter!` to the portlet content:
 
 The example uses a `RenderResponseWrapper` extension class called
 `BufferedRenderResponseWrapper`. `BufferedRenderResponseWrapper` is a helper
-class that allows data to written to (by using the print writer obtained via
-`getWriter()`) and read from (via `toString()`) the response before
-it's sent back to the client. 
+class whose `toString` method returns the current response text and whose
+`getWriter` method lets you write data to the response before it's sent back to
+the client. 
 
     import java.io.CharArrayWriter;
     import java.io.IOException;
