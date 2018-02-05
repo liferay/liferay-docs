@@ -14,7 +14,7 @@ is a `ScreenNavigationCategory`. Each item in the second level is a
 entries use a second level of navigation. You don't need to have any Entries
 in your application, but you do need to have at least one Category.
 
-SCREENSHOT
+![Figure X: A typical application using screen navigation.](../../../images/screen-nav-sample-screen-1.png)
 
 The Screen structure will typically put the Navigation Categories as tabs 
 organized horizontally across the top of the page and the Navigation Entries as 
@@ -26,7 +26,8 @@ to fit the needs of your application.
 Screens also do not need to use a secondary navigation. Some screens will only 
 have Categories organized as tabs, and no additional navigation.
 
-SCREENSHOT
+![Figure X: An application with only one level of navigation.](../../../images/screen-nav-one-level.png)
+
 
 ## Using the Framework for Your Application
 
