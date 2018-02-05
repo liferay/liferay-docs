@@ -9,7 +9,7 @@ tutorial.
 
 ## Usage
 
-To use the plugin, include it in your `pom.xml` file:
+To use the plugin, include it in your project's root `pom.xml` file:
 
     <build>
         <plugins>
@@ -62,7 +62,7 @@ You can set the following parameters in the `clean` execution's
 
 Parameter Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`_liferayHome` | `String` | `bundles` |  The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
+`liferayHome` | `String` | `bundles` |  The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
 `fileName` | `String` | `${project.artifactId}.${project.packaging}` | The name of the file to delete from your bundle.
 
 ## create-token Goal's Available Parameters
@@ -92,6 +92,11 @@ Parameter Name | Type | Default Value | Description
 `tokenFile` | `File` | `${user.home}/.liferay/token` | The file to hold the Liferay bundle authentication token.
 `tokenUrl` | `URL` | `https://cdn.lfrs.sl/releases.liferay.com/portal/7.0.4-ga5/liferay-ce-portal-tomcat-7.0-ga5-20171018150113838.zip` | The URL pointing to the bundle Zip to download.
 
+After executing the `create-token` goal, you're prompted for your email address
+and password, both of which are used to generate your token. It's recommended
+to configure your email and password this way instead of specifying them in your
+POM file.
+
 ## deploy Goal's Available Parameters
 
 You can set the following parameters in the `deploy` execution's
@@ -99,7 +104,7 @@ You can set the following parameters in the `deploy` execution's
 
 Parameter Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`_liferayHome` | `String` | `bundles` | The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
+`liferayHome` | `String` | `bundles` | The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
 `deployFile` | `File` | `${project.build.directory}/${project.build.finalName}.${project.packaging}` | The packaged file (e.g., JAR) to deploy to the Liferay bundle.
 `outputFileName` | `String` | `${project.artifactId}.${project.packaging}` | The name of the output file.
 
@@ -122,7 +127,7 @@ section of the POM:
 
 Parameter Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`_liferayHome` | `String` | `bundles` | The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
+`liferayHome` | `String` | `bundles` | The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
 `archiveFileName` | `String` | `null` | The name for the generated archive file.
 `cacheDir`  | `File` | `${user.home}/.liferay/bundles` | The directory where the downloaded bundle Zip files are stored.
 `configs`  | `String` | `configs` | The directory that contains the configuration files.
@@ -157,7 +162,7 @@ section of the POM:
 
 Parameter Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`_liferayHome` | `String` | `bundles` | The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
+`liferayHome` | `String` | `bundles` | The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
 `cacheDir` | `File` | `${user.home}/.liferay/bundles` | The directory where the downloaded bundle Zip files are stored.
 `configs` | `String` | `configs` | The directory that contains the configuration files.
 `environment` | `String` | `${liferay.workspace.environment}` | The environment with the settings appropriate for current development (e.g., `common`, `dev`, `local`, `prod`, and `uat`).
