@@ -1,12 +1,16 @@
 # JSP Overrides Using Portlet Filters [](id=jsp-overrides-using-portlet-filters)
 
-Portlet filters let you intercept portlet requests before their processed and portlet responses after processing but before their sent back to the client. You can operate on the request and / or response to modify the JSP content. As contrasted with using dynamic includes, portlet filters give you access to all of the content sent back to the client. 
+Portlet filters let you intercept portlet requests before they're processed and
+portlet responses after they're processed but before they're sent back to the
+client. You can operate on the request and / or response to modify the JSP
+content. Unlike dynamic includes, portlet filters give you access to all of the
+content sent back to the client. 
 
-We'll demonstrate using a portlet filter to modify content in Liferay's Blogs portlet.  For reference, you can download the
+We'll demonstrate using a portlet filter to modify content in Liferay's Blogs portlet. For reference, you can download the
 [example module](https://dev.liferay.com/documents/10184/656312/example-portlet-filter-customize-jsp-master.zip).
 
-Create a module and make sure it
-specifies compile-only dependencies like these Gradle dependencies:
+Create a new module and make sure it specifies these compile-only dependencies,
+shown here in Gradle format:
 
     dependencies {
     	compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
@@ -14,11 +18,11 @@ specifies compile-only dependencies like these Gradle dependencies:
     	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
     	compileOnly group: "org.osgi", name: "osgi.cmpn", version: "6.0.0"
     }
-        
+
 Create an OSGi component class that implements the
 `javax.portlet.filter.RenderFilter` interface. 
 
-Here's an example dynamic include implementation for Blogs:
+Here's an example portlet filter implementation for Blogs:
 
     import java.io.IOException;
 
@@ -83,7 +87,7 @@ Here's an example dynamic include implementation for Blogs:
 
     }
 
-Make the class a `PortletFilter` service component by giving it the
+Make your class a `PortletFilter` service component by giving it the
 `@Component` annotation that has the service attribute `service =
 PortletFilter.class`. Target the portlet whose content you're overriding by assigning it a javax.portlet.name property that's the same as your portlet's key. Here's the example `@Component` annotation:
 
@@ -95,8 +99,9 @@ PortletFilter.class`. Target the portlet whose content you're overriding by assi
        service = PortletFilter.class
     )
 
-Override the `doFilterMethod` to operate on the request or response to produce the content you want. The example appends a paragraph stating `Added by Blogs Render Filter!` to the portlet content:
-
+Override the `doFilterMethod` to operate on the request or response to produce
+the content you want. The example appends a paragraph stating `Added by Blogs
+Render Filter!` to the portlet content:
 
 	@Override
 	public void doFilter(RenderRequest request, RenderResponse response, FilterChain chain)
@@ -125,7 +130,11 @@ Override the `doFilterMethod` to operate on the request or response to produce t
 		}
 	}
 
-The example's `RenderResponseWrapper` extension class called `BufferedRenderResponseWrapper` helps write to the response. 
+The example uses a `RenderResponseWrapper` extension class called
+`BufferedRenderResponseWrapper`. `BufferedRenderResponseWrapper` is a helper
+class that allows data to written to (by using the print writer obtained via
+`getWriter()`) and read from (via `toString()`) the response before
+it's sent back to the client. 
 
     import java.io.CharArrayWriter;
     import java.io.IOException;
@@ -190,6 +199,6 @@ Once you've
 [deployed your module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module),
 the portlet's JSP shows your custom content.
 
-Your portlet filter operates directly on portlet response content. Contrasted
-with dynamic includes, portlet filters allow you to work with all of a JSP's
+Your portlet filter operates directly on portlet response content. Unlike
+dynamic includes, portlet filters allow you to work with all of a JSP's
 content. 

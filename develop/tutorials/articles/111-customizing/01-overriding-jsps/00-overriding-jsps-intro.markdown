@@ -13,13 +13,13 @@ Here are API-based approaches to overriding JSPs in @product@:
  **Approach** | **Description** | **Cons/Limitations** |
  :----------- | :-------------- | :-------------- |
 [Dynamic includes](/develop/tutorials/-/knowledge_base/7-0/jsp-overrides-using-dynamic-includes) | Adds content at dynamic include tags. | Limited to JSPs that have `dynamic-include` tags (or tags whose classes inherit from `IncludeTag`). Only inserts content in the JSPs at the dynamic include tags. |
-[Portlet filters](/develop/tutorials/-/knowledge_base/7-0/jsp-overrides-using-portlet-filters) | Uses the portlet request and response to modify as much JSP content as you want. | For portlet JSPs only. |
+[Portlet filters](/develop/tutorials/-/knowledge_base/7-0/jsp-overrides-using-portlet-filters) | Modifies portlet requests and/or responses to simulate a JSP customization. | Although this approach doesn't directly customize a JSP, it achieves the effect of a JSP customization. |
 
 <!-- TODO - Include inlined content approach after getting more info. - Jim
 Inlined content | Some @product@ JSPs include content from other JSPs that you can modify. This "inlines" the content from the other JSPs into specific places in the root JSP. | Limited to JSPs that inline other JSPs. |
 -->
 
-## Overriding a JSP Without Using portal's API [](id=overriding-a-jsp-without-using-portals-api)
+## Overriding a JSP Without Using Portal's API [](id=overriding-a-jsp-without-using-portals-api)
 
 It's strongly recommended to override JSPs using @product@'s API, as the
 previous section describes. If you're maintaining a JSP override that uses one
