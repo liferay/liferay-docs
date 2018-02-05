@@ -54,9 +54,19 @@ issue the following command:
 
 +$$$
 
-**Note:** After a successful patch installation you must delete the *osgi/state*
-folder if it exists in your
-[Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home).
+**Note:** If @product@ isn't running Fix Pack 13 or later, you must delete the
+`/osgi/state` folder from your [Liferay Home
+folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+after a successful patch installation. Later versions contain a [bug
+fix](https://issues.liferay.com/browse/LPS-71424) that obviates this
+requirement. 
+
+Deleting the `/osgi/state` folder is undesirable, as important state information
+is stored there. For example, when an application is uninstalled through the
+[App Manager](discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps), the uninstalled state is
+stored in the state folder. Installing a patch, deleting the state folder, and
+restarting @product@ causes all applications, including those previously
+uninstalled, to be reinstalled and started automatically.
 
 $$$
 
@@ -155,8 +165,9 @@ you don't want, remove it from the `patches` folder. When you run the
 If you want to remove all patches you've installed, use the `./patching-tool.sh
 revert` command. This removes all patches from your installation.
 
-The OSGi state folder may contain obsolete bundles in its cache that must be
-removed. If it exists, delete the *osgi/state* folder in Liferay Home.
+Prior to Fix Pack 13, the OSGi state folder could retain obsolete bundles in
+its cache. If you're running a version prior to Fix Pack 13, delete the
+*osgi/state* folder in Liferay Home.
 
 ## Cleaning Up [](id=cleaning-up)
 
