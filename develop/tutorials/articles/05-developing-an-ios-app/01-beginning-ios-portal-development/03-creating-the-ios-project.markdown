@@ -29,7 +29,6 @@ Follow these steps to create the Liferay Guestbook iOS project:
     - **Organization Name:** Your name
     - **Organization Identifier:** com.liferay.docs
     - **Language:** Swift
-    - **Devices:** iPhone
 
     Make sure the checkboxes below these fields are unchecked, and click *Next*. 
 

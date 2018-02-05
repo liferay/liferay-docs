@@ -36,7 +36,7 @@ generate web services when developing your own portlets.
     start it, navigate to the `liferay-mobile-sdk-ios-7.0.13` folder and run the 
     following command: 
 
-        gradlew createModule
+        ./gradlew createModule
 
     The wizard launches and asks you to enter your project's properties. You'll 
     do this next.

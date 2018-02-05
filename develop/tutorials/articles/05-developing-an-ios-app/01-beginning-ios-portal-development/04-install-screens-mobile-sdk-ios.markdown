@@ -191,11 +191,10 @@ instructions to do so:
         #endif
 
 4.  Now you must configure your project to use this file. Select the root 
-    project on the left and then click *Build Settings*. Search for *Objective-C 
-    Bridging Header* in the search box. The only build setting that appears is 
-    *Objective-C Bridging Header*, under the section *Swift Compiler - General*. 
-    In the two *Liferay Guestbook* fields for this build setting, enter the 
-    bridging header's file name. 
+    project on the left and then click *Build Settings*. Enter for *Objective-C 
+    Bridging Header* in the search box. The matching build setting appears under 
+    the section *Swift Compiler - General*. In the two *Liferay Guestbook* 
+    fields for this build setting, enter the bridging header's file name. 
 
     ![Figure 7: The red boxes highlight the two Liferay Guestbook fields configured to use the bridging header file.](../../../images/ios-lp-build-settings-header.png)
 

@@ -43,18 +43,14 @@ Follow these steps to add a view controller to the storyboard:
     the navigation controller with a segue to the guestbooks scene. Also, the 
     guestbooks scene now contains an empty navigation bar. 
 
-3.  Double-click the guestbooks scene's navigation bar and type in *Guestbooks*. 
-    Your storyboard should now look like this: 
-
-    ![Figure 2: The new guestbooks scene is now embedded in a navigation controller. Also note that the navigation bar's title reflects what the scene will be used for.](../../../images/ios-lp-nav-controller.png)
-
-4.  With the guestbooks scene's navigation bar selected, enter the Attributes 
-    inspector, type a single space into the *Back Button* field (under the 
-    *Navigation Item* category), and press return. This ensures that the back 
-    button in the Navigation controller has no label--the default left chevron 
+3.  Select the Navigation Item in the guestbooks scene's navigation bar. In the 
+    Attributes inspector, enter *Guestbooks* in the *Title* field, then enter a 
+    single space in the *Back Button* field and press return. This labels the 
+    scene via the navigation bar, and ensures that the back button in the 
+    Navigation controller has no label. The back button's default left chevron 
     indicates the button's purpose without the need for additional text. 
 
-    ![Figure 3: Set the back button's label to an empty space.](../../../images/ios-lp-back-button-label.png)
+    ![Figure 3: Label the scene in the navigation bar, and set the back button's label to an empty space.](../../../images/ios-lp-back-button-label.png)
 
 5.  With the guestbooks scene's view controller selected in the storyboard, open 
     the Attributes inspector and uncheck *Adjust Scroll View Insets*. This 
