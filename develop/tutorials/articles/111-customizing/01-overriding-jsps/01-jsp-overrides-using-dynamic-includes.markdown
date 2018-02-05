@@ -11,7 +11,8 @@ dynamic include tag you want to replace, and deploy your module.
 
 **Note**: If the JSP you want to override has no `liferay-util:dynamic-include`
 tags (or tags whose classes inherit from `IncludeTag`), you must use a
-different override approach, such as [portlet filters](TODO).
+different override approach, such as
+[portlet filters](/develop/tutorials/-/knowledge_base/7-0/jsp-overrides-using-portlet-filters).
 
 $$$
 
