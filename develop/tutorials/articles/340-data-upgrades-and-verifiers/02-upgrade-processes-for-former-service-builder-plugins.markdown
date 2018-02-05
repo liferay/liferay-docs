@@ -176,17 +176,17 @@ above.
 The Bundle Activator uses one of the following values to initialize the
 `schemaVersion` field in the application's `Release_` table record: 
 
--   Current `buildNumber`: if there is an existing Release_ table record for the
-    previous plugin.
--   `0.0.1`: if there is no existing Release_ table record.
+-   Current `buildNumber`: if there is an existing `Release_` table record for
+    the previous plugin.
+-   `0.0.1`: if there is no existing `Release_` table record.
 
 Optionally, if you want to move users immediately from the schema version
 `0.0.1` to `1.0.0`, for example, you can create an additional dummy upgrade step
 in your module's
-[upgrade step registrator](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app#writing-the-upgrade-step-registrator).  
+[upgrade step registrator](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app#writing-the-upgrade-step-registrator).  
 
 ## Related Topics [](id=related-topics)
 
-[Creating Data Upgrade Processes for Modules](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
+[Creating Data Upgrade Processes for Modules](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
 
-[Upgrading Plugins to Liferay 7](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
+[Upgrading Plugins to Liferay 7](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
