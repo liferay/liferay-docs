@@ -1,13 +1,12 @@
 # Extending and Overwriting Liferay Theme Tasks [](id=extending-and-overwriting-liferay-theme-tasks)
 
-Themes created with the Liferay Theme Generator have access to several default 
-gulp theme tasks that provide the standard features required to develop and 
-build your theme (build, deploy, watch, etc.). You may, however, want to run 
-additional processes on your theme's files prior to deploying your theme to the 
-server. For example, you may want to minify your JavaScript files before 
-deploying your theme. The Liferay Theme Generator's APIs expose a `hookFn` 
-property that lets you hook into the default gulp theme tasks to inject your own 
-logic. 
+Themes created with the Liferay Theme Generator have access to several default
+gulp theme tasks that provide the standard features required to develop and
+build your theme (build, deploy, watch, etc.). You may, however, want to run
+additional processes--such as minifying your JavaScript files--on your theme's
+files prior to deploying the theme to the server. The Liferay Theme Generator's
+APIs expose a `hookFn` property that lets you hook into the default gulp theme
+tasks to inject your own logic. 
 
 Follow these steps to hook into the default Liferay theme tasks: 
 
@@ -49,14 +48,14 @@ Follow these steps to hook into the default Liferay theme tasks:
 					}
 				});
 		
-3.  Inside the `hookFn()` function, use the `gulp.hook()` method to specify the 
-		theme task or sub task that you want to hook into. You can inject your code 
-		before or after a task by prefixing the `before:` or `after:` keyword before 
-		the task. Alternatively, you can use the `gulp.task()` method to overwrite a 
-		gulp task. Both methods have two parameters: the task or sub task you want 
-		to hook into and a callback function that invokes `done` or returns a 
-		stream with the logic that you want to inject. A few example configuration 
-		patterns are shown below:
+3.  Inside the `hookFn()` function, use the `gulp.hook()` method to specify the
+    theme task or sub task that you want to hook into. You can inject your code
+    before or after a task by prefixing it with the `before:` or `after:`
+    keywords. Alternatively, you can use the `gulp.task()` method to overwrite
+    a gulp task. Both methods have two parameters: the task or sub task you want
+    to hook into and a callback function that invokes `done` or returns a stream
+    with the logic that you want to inject. A few example configuration patterns
+    are shown below:
 		
 				liferayThemeTasks.registerTasks({
 					gulp: gulp,
