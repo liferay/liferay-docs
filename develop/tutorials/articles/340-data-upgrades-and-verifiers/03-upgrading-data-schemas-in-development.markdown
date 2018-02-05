@@ -3,7 +3,7 @@
 As you develop modules, you might need to iterate through several database 
 schema changes. Before you release new module versions with your finalized
 schema changes, you must create a formal 
-[data upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app). 
+[data upgrade process](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app). 
 Until then, you can use the Build Auto Upgrade feature to test schema changes on 
 the fly. 
 
@@ -14,9 +14,8 @@ the fly.
 schema changes upon rebuilding services and redeploying the portlets. As of 
 @product-ver@, this property is deprecated. 
 
-Liferay Digital Enterprise 7.0 Fix Pack 28, and Liferay CE Portal 7.0.4 GA5
-reintroduce  Build Auto Upgrade in a new global property
-`schema.module.build.auto.upgrade`  in the file
+The Build Auto Upgrade feature is now in a global property
+`schema.module.build.auto.upgrade` in the file
 `[Liferay_Home]/portal-developer.properties`. 
 
 $$$
@@ -31,7 +30,7 @@ deleted and renamed tables.
 
 Although Build Auto Upgrade updates databases quickly and automatically, it
 doesn't guarantee a proper data upgrade--you implement that via 
-[data upgrade processes](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app).
+[data upgrade processes](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app).
 Build Auto Upgrade is for development purposes only. 
 
 +$$$
@@ -62,4 +61,4 @@ Great! Now you know how to use the Build Auto Upgrade developer feature.
 
 ## Related Topics [](id=related-topics)
 
-[Creating Data Upgrade Process for Modules](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
+[Creating Data Upgrade Process for Modules](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
