@@ -320,8 +320,8 @@ preconfiguration steps you followed:
 
     To update the LCS client app manually, shut down your @product@ server and
     follow the previous sections in this guide for downloading, preconfiguring,
-    and installing the app. Before restarting, you might also need to delete the
-    `osgi/state` folder from [Liferay
+    and installing the app. Restart the server. If you encounter errors, you
+    might need to delete the `osgi/state` folder from [Liferay
     Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home).
     Be aware that deleting the state folder causes loss of information on the
     state of your system's applications. For example, if you uninstalled a suite
