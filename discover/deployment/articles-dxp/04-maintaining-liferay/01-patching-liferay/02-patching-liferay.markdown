@@ -223,6 +223,7 @@ size smaller.
 cannot run most of the Patching Tool commands until the patches are restored.
 
 After the separation process only the following commands can be used:
+
 - auto-discovery
 - info
 - setup
@@ -235,7 +236,7 @@ Any other command returns this:
  
 This is how you restore the patch files to your system. Details below. 
 
- ### Restoring the Separated Patch Files
+### Restoring the Separated Patch Files
  
 When you need to patch @product@ again, you must restore the
 separated patch artifact. To do this, copy the
