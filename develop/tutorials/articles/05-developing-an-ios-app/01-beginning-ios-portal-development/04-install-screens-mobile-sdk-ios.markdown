@@ -78,17 +78,38 @@ to install Screens:
         end
 
         post_install do |installer|
-            installer.pods_project.targets.each do |target|
-                target.build_configurations.each do |config|
-                    config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
-                end
+          incompatiblePods = [
+            'Cosmos',
+            'CryptoSwift',
+            'KeychainAccess',
+            'Liferay-iOS-SDK',
+            'Liferay-OAuth',
+            'LiferayScreens',
+            'Kingfisher'
+          ]
+
+          installer.pods_project.targets.each do |target|
+            if incompatiblePods.include? target.name
+              target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '3.2'
+              end
             end
+            target.build_configurations.each do |config|
+                config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
+            end
+          end
         end
 
     This adds Liferay Screens 3.0.2 (the most recent version at the time this 
-    Learning Path was published) as a dependency. Note that the `post_install` 
-    code is optional--it's a workaround for a benign bug that causes Interface 
-    Builder not to render Screenlet previews in storyboards. 
+    Learning Path was published) as a dependency. Since Screens 3.0.2 is 
+    incompatible with Swift 4, this `Podfile` also specifies that Screens and 
+    several of its dependencies (`incompatiblePods`) should be compiled by Swift 
+    3.2. This lets you develop the app in Swift 4, while Screens itself is 
+    compiled in Swift 3.2.
+
+    Also note the setting for `CONFIGURATION_BUILD_DIR`. This is a workaround 
+    for a benign bug that causes Screenlet previews to fail in Interface 
+    Builder.
 
 2.  On the terminal, navigate to your root project's folder and run this 
     command: 
@@ -102,8 +123,8 @@ to install Screens:
 
         pod install
 
-    This installs the Liferay Screens dependency specified in your `Podfile`. 
-    Once this completes, quit Xcode and reopen your project by using the 
+    This installs the Liferay Screens as specified in your `Podfile`. Once this 
+    completes, quit Xcode and reopen your project by using the 
     `LiferayGuestbook.xcworkspace` file in your root project's folder. From now 
     on, you must use this file to open your project. 
 
@@ -142,12 +163,13 @@ things now:
 
 3.  The `v7` folder and its contents are now inside your Xcode project. Now you 
     must change each Objective-C class header file in the Guestbook Mobile SDK 
-    to import the Liferay Mobile SDK framework. This is necessary because you 
-    used `use_frameworks!` in your `Podfile`. In `LREntryService_v7.h` and 
-    `LRGuestbookService_v7.h`, replace `#import "LRBaseService.h"` with 
-    `@import LRMobileSDK;`. Don't worry if Xcode doesn't recognize this 
-    import--you'll fix this shortly by adding and configuring an Objective-C 
-    bridging header in your project. 
+    to always import the Liferay Mobile SDK framework. This is necessary because 
+    you used `use_frameworks!` in your `Podfile`. 
+
+    In `LREntryService_v7.h` and `LRGuestbookService_v7.h`, replace the 
+    `#if ... #endif` statement with `@import LRMobileSDK;`. Don't worry if Xcode 
+    doesn't recognize this import--you'll fix this shortly by adding and 
+    configuring an Objective-C bridging header in your project. 
 
 4.  In Xcode, for each `*.m` file in the Guestbook Mobile SDK 
     (`LREntryService_v7.m` and `LRGuestbookService_v7.m`), make sure the 
@@ -188,7 +210,7 @@ instructions to do so:
         #define Liferay_Guestbook_Bridging_Header_h
 
 
-        #endif
+        #endif 
 
 4.  Now you must configure your project to use this file. Select the root 
     project on the left and then click *Build Settings*. Enter for *Objective-C 
@@ -248,7 +270,7 @@ with your @product@ installation. You'll do this by setting attributes in a
     retrieves data from. 
 
 4.  Change the `companyId` and `groupId` in the `plist` file to match those of 
-    your @product@ instance. You can find your company ID in your portal's 
+    your @product@ instance. You can find your company ID in your portal at 
     *Control Panel* &rarr; *Configuration* &rarr; *Virtual Instances*. The 
     instance's ID is in the *Instance ID* column. You can find your site ID from 
     the site you put the Guestbook portlet on. Navigate to this site, and in the 
