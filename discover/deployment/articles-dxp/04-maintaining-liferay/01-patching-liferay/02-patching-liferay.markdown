@@ -55,7 +55,7 @@ issue the following command:
 +$$$
 
 **Note:** If @product@ isn't running Fix Pack 13 or later, you must delete the
-`/osgi/state` folder from your [Liferay Home
+`/osgi/state` folder from the [Liferay Home
 folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
 after a successful patch installation. Later versions contain a [bug
 fix](https://issues.liferay.com/browse/LPS-71424) that obviates this
