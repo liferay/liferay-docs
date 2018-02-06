@@ -6,8 +6,7 @@ variety of databases and application servers, freeing you to use the ones you
 think are best. @product@ also scales very well. You can install @product@ on a
 shared hosting account, on a multi-node cluster running a commercial application
 server, or on anything in between. In fact, @product@ is used successfully in
-all of these scenarios every day. Some features, such as clustering, are only
-available with Liferay's Digital Experience Platform.
+all of these scenarios every day. 
 
 You'll find that because @product@ is extremely flexible in its deployment
 options, it is also easy to install. If you already have an application server,
