@@ -1,25 +1,30 @@
-# Deploying a Module Built with Maven to @product@ [](id=deploying-a-module-built-with-maven-to-product)
+# Deploying a Project Built with Maven to @product@ [](id=deploying-a-project-built-with-maven-to-product)
 
-There are two ways to deploy a Maven-built Liferay module:
+There are two ways to deploy a Maven-built Liferay project:
 
-1.  Copy your generated Maven module JAR to your @product@ instance's
-    `/deploy` folder.
+1.  Copy your generated Maven JAR/WAR to your @product@ instance's `/deploy`
+    folder.
 2.  Configure your Maven project to deploy to the @product@ instance
-    automatically by running a Maven command via the command prompt.
+    automatically by running a Maven command via the command line.
 
-Although manually copying your module JAR for deployment is a viable option,
-this is an inefficient way to deploy your projects. With a small configuration
-in your Maven POMs, you can deploy a module to @product@ with one command
+Although manually copying your JAR/WAR for deployment is a viable option, this
+is an inefficient way to deploy your projects. With a small configuration in
+your Maven POMs, you can deploy a project to @product@ with one command
 execution.
 
-In previous versions of Liferay Portal, you were able to execute the
++$$$
+
+**Note:** In previous versions of Liferay Portal, you were able to execute the
 `liferay:deploy` command to deploy your configured Maven project to a Liferay
 server. This is no longer possible since the `liferay-maven-plugin` is not
 applied to Maven projects built from Liferay archetypes.
 
-A prerequisite for this tutorial is to have your project configured to generate
-an OSGi module JAR; if you haven't done this, visit the
-[Creating a Module JAR Using Maven](/develop/tutorials/-/knowledge_base/7-0/creating-a-module-jar-using-maven)
+$$$
+
+If you're deploying a module JAR, a prerequisite for this tutorial is to have
+your project configured to generate an OSGi module JAR; if you haven't done
+this, visit the
+[Creating a Module JAR Using Maven](/develop/tutorials/-/knowledge_base/7-1/creating-a-module-jar-using-maven)
 tutorial for more information.
 
 1.  Add the following plugin configuration to your Liferay Maven project's
@@ -30,10 +35,10 @@ tutorial for more information.
                 <plugin>
                     <groupId>com.liferay</groupId>
                     <artifactId>com.liferay.portal.tools.bundle.support</artifactId>
-                    <version>2.0.1</version>
+                    <version>3.2.1</version>
                     <executions>
                         <execution>
-                            <id>default-deploy</id>
+                            <id>deploy</id>
                             <goals>
                                 <goal>deploy</goal>
                             </goals>
@@ -45,13 +50,13 @@ tutorial for more information.
         </build>
 
     This POM configuration applies Liferay's
-    [Bundle Support plugin](https://repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.portal.tools.bundle.support/)
+    [Bundle Support plugin](/develop/reference/-/knowledge_base/7-1/bundle-support-plugin)
     by defining its `groupId`, `artifactId`, and `version`. You can learn more
     about this plugin in the
-    [Maven Workspace](/develop/tutorials/-/knowledge_base/7-0/maven-workspace)
+    [Maven Workspace](/develop/tutorials/-/knowledge_base/7-1/maven-workspace)
     tutorial. The logic also defines the
-    [`executions` tag](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag),
-    which configures the Bundle Support plugin to run during the
+    [executions](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag)
+    tag, which configures the Bundle Support plugin to run during the
     `pre-integration-test` phase of your Maven project's build lifecycle. The
     `deploy`
     [goal](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#A_Build_Phase_is_Made_Up_of_Plugin_Goals)
