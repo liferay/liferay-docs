@@ -11,7 +11,7 @@ The top-level files/folder of a Liferay (Gradle) Workspace are outlined below:
   files serve as your global configuration files for all @product@ servers and
   projects residing in your workspace. To learn more about using the `configs`
   folder, see the
-  [Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#testing-modules)
+  [Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-modules)
   section.
 - `gradle`: holds the Gradle Wrapper used by your workspace.
 - `modules`: holds your custom modules.
@@ -61,7 +61,7 @@ of these properties.
 
 **Note:** Liferay Workspace provides many subprojects for you behind the scenes,
 which hides some complexities of Gradle. You can learn more about this in the
-[Building Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#building-modules)
+[Building Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#building-modules)
 section.
 
 $$$
@@ -130,7 +130,7 @@ Your distribution file is available from the workspace's `/build` folder.
 
 **Note:** You can define different environments for your Liferay bundle for
 easy testing. You can learn more about this in the
-[Testing Modules](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#testing-modules)
+[Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-modules)
 section.
 
 $$$
@@ -149,12 +149,12 @@ configuring your SDK in a workspace, you can take advantage of all the new
 functionality workspaces provide and also use the SDK environment that you're
 used to. To learn more about upgrading legacy applications to @product-ver@ and
 what you should consider before converting them to modules, visit the tutorial
-[Planning Plugin Upgrades and Optimizations](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7).
+[Planning Plugin Upgrades and Optimizations](/develop/tutorials/-/knowledge_base/7-1/migrating-existing-code-to-liferay-7).
 
 Blade CLI offers a command that adds and configures your current Plugins SDK
 environment automatically for use inside a newly generated workspace (e.g.,
 `blade init -u`). You can learn more about this in the
-[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-blade-cli)
+[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-a-liferay-workspace-with-blade-cli)
 tutorial. If you created your workspace from scratch and want to use a Plugins
 SDK, however, you can add one to your workspace by completing one of the two
 options:
