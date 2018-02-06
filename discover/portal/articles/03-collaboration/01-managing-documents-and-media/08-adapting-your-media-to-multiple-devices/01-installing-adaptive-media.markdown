@@ -2,15 +2,25 @@
 
 You can install Adaptive Media from 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
-for Liferay Portal CE 7.0 and Liferay DXP. From the Marketplace, search for 
+for Liferay Portal CE 7.0 GA5+ and Liferay DXP. From the Marketplace, search for 
 *Adaptive Media* and follow the installation instructions at 
 [Using the Liferay Marketplace](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
 
-Installing Adaptive Media installs all its modules. Some modules are mandatory 
-and must be enabled for Adaptive Media to function, while others can be 
-disabled. The Adaptive Media API modules, which export packages for the other 
-modules to consume, are mandatory; disabling one also disables any other 
-modules that depend on it. Here's a list of the Adaptive Media API modules: 
++$$$
+
+**Note:** If you're running Liferay Portal CE 7.0 GA5, then you must install 
+another module in addition to the Adaptive Media app from Liferay Marketplace. 
+[Click here](https://www.liferay.com/) 
+to download this module, then install it as you would any other module. 
+
+$$$
+
+Installing Adaptive Media installs all its modules (except for the extra module 
+required by Liferay Portal CE 7.0 GA5). Some modules are mandatory and must be 
+enabled for Adaptive Media to function, while others can be disabled. The 
+Adaptive Media API modules, which export packages for the other modules to 
+consume, are mandatory; disabling one also disables any other modules that 
+depend on it. Here's a list of the Adaptive Media API modules: 
 
 -   Liferay Adaptive Media API
 -   Liferay Adaptive Media Content Transformer API
