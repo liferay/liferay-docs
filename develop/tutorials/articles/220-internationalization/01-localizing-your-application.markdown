@@ -51,7 +51,7 @@ enter `localhost:8080/es`).
 Language keys are just keys to use in place of a hard coded, fully
 translated String value in your user interface code. For example, you can use a
 language key in your JSP via a
-[`liferay-ui:message` tag](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui/message.html). 
+[`liferay-ui:message` tag](@platform-ref@/7.1-latest/taglibs/util-taglib/liferay-ui/message.html). 
 
 You can specify a language key as value of the tag's `key` attribute": 
 
@@ -88,7 +88,7 @@ other Liferay tags and classes use Java resource bundles behind the scenes.
 ## What Locales are Available By Default? [](id=what-locales-are-available-by-default)
 
 There are a bunch of locales available by default in Liferay. The
-[`portal.properties` file](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
+[`portal.properties` file](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
 lists them.
 
     locales=ar_SA,eu_ES,bg_BG,ca_AD,ca_ES,zh_CN,zh_TW,hr_HR,cs_CZ,da_DK,nl_NL,
@@ -144,7 +144,7 @@ create a new module, which we'll call a language module.
 
 In the root project directory (the one that holds your service, API, and web
 modules), [create a new
-module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module)
+module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module)
 to hold your app's language keys. For example, here's the folder structure of a
 language module called `my-application-lang`.
 
@@ -180,7 +180,7 @@ to the module. Remember, resource bundles are objects that contain localized
 data. A capability is a contract a module declares to @product@'s OSGi
 framework. Capabilities let you associate services with modules that provide
 them. In this case, @product@ registers a
-[ResourceBundleLoader](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
+[ResourceBundleLoader](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
 service for the resource bundle capability. 
 
 Next, you'll configure a web module to use the language module's resource
@@ -282,4 +282,4 @@ you time and ensures that your application follows Liferay's UI conventions.
 If you want to generate language files for each supported locale automatically,
 or to configure your application to generate translations automatically using
 the Microsoft Translator API, check out the tutorial
-[Automatically Generating Language Files](/develop/tutorials/-/knowledge_base/7-0/automatically-generating-language-files).
+[Automatically Generating Language Files](/develop/tutorials/-/knowledge_base/7-1/automatically-generating-language-files).

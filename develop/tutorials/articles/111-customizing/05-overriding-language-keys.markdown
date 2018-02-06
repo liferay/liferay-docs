@@ -10,7 +10,7 @@ demonstrates this in the following topics:
 ## Modifying Liferay's Language Keys [](id=modifying-liferays-language-keys)
 
 Using language files with keys gives you the ultimate flexibility in
-[translating your application's user interface messages](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application). But you can also modify
+[translating your application's user interface messages](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application). But you can also modify
 the language keys used by Liferay's core itself. This lets you change not only
 your own application, but any messages in Liferay.
 
@@ -138,7 +138,7 @@ Here is the process:
 ### Find the module and its metadata and language keys [](id=find-the-module-and-its-metadata-and-language-keys)
 
 In
-[Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell),
+[Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell),
 list the bundles and grep for keyword(s) that match the portlet's display name.
 Liferay portlet language keys are in the portlet's web module (bundle). When you
 find the bundle, note its ID number.
@@ -221,7 +221,7 @@ Create a new module to hold your custom language keys and a resource bundle
 loader. 
 
 In your module's `src/main/resources/content` folder, create
-[language properties files](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application#what-are-language-keys)
+[language properties files](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#what-are-language-keys)
 for each locale whose keys you want to override. In each language properties
 file, assign your custom values to the respective language keys. 
 
@@ -273,7 +273,7 @@ resource bundle and applies them to the `com.liferay.blogs.web` module.
     }
 
 This class implements
-[`com.liferay.portal.kernel.util.ResourceBundleLoader`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
+[`com.liferay.portal.kernel.util.ResourceBundleLoader`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
 and overrides all its methods. 
 
 The `@Component` annotation registers the class as a resource bundle loader component
@@ -359,7 +359,7 @@ Resource bundle loader components have these class imports.
     import org.osgi.service.component.annotations.Reference;
 
 You can
-[depend on packages from the following artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+[depend on packages from the following artifacts](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
 to provide the classes imported above.
 
  Group | Artifact |
@@ -374,8 +374,8 @@ core. You can find out how to override those language keys in
 
 ## Related Topics [](id=related-topics)
 
-[Resource Bundle Override Sample Project](/develop/reference/-/knowledge_base/7-0/resource-bundle-override)
+[Resource Bundle Override Sample Project](/develop/reference/-/knowledge_base/7-1/resource-bundle-override)
 
-[Upgrading Core Language Key Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-core-language-key-hooks)
+[Upgrading Core Language Key Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-core-language-key-hooks)
 
 [Internationalization](internationalization)
