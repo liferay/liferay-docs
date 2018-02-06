@@ -1,16 +1,18 @@
 # Creating a Maven Repository [](id=creating-a-maven-repository)
 
 You'll frequently want to share Liferay artifacts and modules with teammates or
-manage your repositories using a GUI. Sonatype Nexus is a valuable tool for
-managing your repositories. It's a Maven repository management server that
-facilitates creating and managing release servers, snapshot servers, and proxy
-servers. There are several other Maven repository management servers you can use
-(for example, [Artifactory](https://www.jfrog.com/artifactory/)), but this
-tutorial focuses on Nexus.
+manage your repositories using a GUI. You can do this using
+[Sonatype Nexus](http://www.sonatype.org/nexus/). It's a Maven repository
+management server that facilitates creating and managing release servers,
+snapshot servers, and proxy servers. There are several other Maven repository
+management servers you can use (for example,
+[Artifactory](https://www.jfrog.com/artifactory/)), but this tutorial focuses on
+Nexus.
 
 To create a Maven repository using Nexus, download
-[Nexus](http://www.sonatype.org/nexus/) and follow the instructions at
-[http://books.sonatype.com/nexus-book/reference/install.html](http://books.sonatype.com/nexus-book/reference/install.html)
+[Nexus](https://help.sonatype.com/display/NXRM2/Download) and follow the
+instructions on Nexus'
+[Installation page](https://help.sonatype.com/display/NXRM2/Installing+and+Running)
 to install and start it. 
 
 To create your own repository using Nexus, follow these steps: 
@@ -42,7 +44,7 @@ You just created a Liferay Maven repository accessible from your Nexus
 repository server! Congratulations! 
 
 It's also useful to create a Maven repository to hold snapshots of each Liferay
-module you create. Creating a snapshot repository is almost identical to
+project you create. Creating a snapshot repository is almost identical to
 creating a release repository. The only difference is that you specify
 *Snapshot* as its repository policy. For example, examine an example snapshot
 repository's property values:
@@ -55,7 +57,7 @@ repository's property values:
 Voila! You've created a repository for your Liferay releases (i.e.,
 `liferay-releases`) and Liferay snapshots (i.e., `liferay-snapshots`). To learn
 how to deploy your Liferay Maven artifacts to a Nexus repository, see the
-[Deploying Liferay Maven Artifacts to a Repository](/develop/tutorials/-/knowledge_base/7-0/deploying-liferay-maven-artifacts-to-a-repository)
+[Deploying Liferay Maven Artifacts to a Repository](/develop/tutorials/-/knowledge_base/7-1/deploying-liferay-maven-artifacts-to-a-repository)
 tutorial.
 
 Next, you'll configure your new repository servers in your Maven settings to
@@ -74,7 +76,7 @@ automatically installing Liferay artifacts from the Central/Liferay Repository
 and aren't interested in sharing artifacts, you don't need a repository server
 specified in your Maven settings. You can find out more about installing
 artifacts from the Central Repository or Liferay's own Nexus repository in the
-[Installing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts)
+[Installing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/7-1/installing-liferay-maven-artifacts)
 tutorial.
 
 To configure your Maven environment to access your `liferay-releases` and
