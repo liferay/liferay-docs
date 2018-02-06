@@ -318,12 +318,17 @@ preconfiguration steps you followed:
 
     $$$
 
-    To update the LCS client app manually, shut down your @product@ server and 
-    follow the previous sections in this guide for downloading, preconfiguring, 
-    and installing the app. Before restarting your server, you should also 
-    delete the contents of the `osgi/state` folder. If you run into errors on 
-    startup and deploy, it may also help to clear the app server's `work` and 
-    `temp` folders. 
+    To update the LCS client app manually, shut down your @product@ server and
+    follow the previous sections in this guide for downloading, preconfiguring,
+    and installing the app. Before restarting, you might also need to delete the
+    `osgi/state` folder from [Liferay
+    Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home).
+    Be aware that deleting the state folder causes loss of information on the
+    state of your system's applications. For example, if you uninstalled a suite
+    of applications from the App Manager, those applications will be reinstalled
+    and started automatically after you restart the server. If you run into
+    errors on startup and deploy, it may also help to clear the app server's
+    `work` and `temp` folders. 
 
 Contact Liferay support if you need additional assistance with the upgrade 
 process. 
