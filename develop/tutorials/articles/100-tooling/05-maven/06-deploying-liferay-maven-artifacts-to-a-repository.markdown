@@ -4,18 +4,18 @@ Deploying artifacts to a remote repository is important if you intend to share
 your Maven projects with others. First, you must have a remote repository that
 can hold deployed Maven artifacts. If you do not currently have a remote
 repository, see the
-[Creating a Maven Repository](/develop/tutorials/-/knowledge_base/7-0/creating-a-maven-repository)
+[Creating a Maven Repository](/develop/tutorials/-/knowledge_base/7-1/creating-a-maven-repository)
 tutorial to learn how you can set up a Nexus repository. Also make sure your
 `[USER_HOME]/.m2/settings.xml` file specifies your remote repository's ID,
 user name, and password.
 
-To deploy to a remote repository, your Liferay module should be packaged using
+To deploy to a remote repository, your Liferay project should be packaged using
 Maven. Maven provides a packaging command that creates an artifact (JAR) that
 can be easily deployed to your remote repository. You'll learn how to do this
 with a Liferay portlet module.
 
 Once you've created a deployable artifact, you'll configure your module project
-to communicate with your remote repository and use Maven's deploy command to
+to communicate with your remote repository and use Maven's `deploy` command to
 send it on its way. Once your module project resides on the remote repository,
 other developers can configure your remote repository in their projects and set
 dependencies in their project POMs to reference it.
@@ -30,8 +30,8 @@ Zip.
     for your Liferay modules. Unzip the `portlet.ds` module project into that
     folder.
 
-2.  Create a `pom.xml` file inside this folder. Copy the following logic
-    into the parent POM:
+2.  Create a `pom.xml` file inside this folder. Copy the following logic into
+    the parent POM:
 
         <?xml version="1.0" encoding="UTF-8"?>
         <project
@@ -68,11 +68,11 @@ Zip.
     all module projects residing in the parent folder. You should include the
     repository's ID and URL. The above `distributionManagement` declaration is
     configured for the Liferay Nexus repository created in the
-    [Creating a Maven Repository](/develop/tutorials/-/knowledge_base/7-0/creating-a-maven-repository)
+    [Creating a Maven Repository](/develop/tutorials/-/knowledge_base/7-1/creating-a-maven-repository)
     tutorial. That tutorial also created the `[USER_HOME]/.m2/settings.xml`,
-    which specified the remote repository's ID, user name, and password. Both the
-    parent POM and `settings.xml` file's repository declarations are required to
-    deploy your modules to that remote repository.
+    which specified the remote repository's ID, user name, and password. Both
+    the parent POM and `settings.xml` file's repository declarations are
+    required to deploy your modules to that remote repository.
 
     Finally, you must list the modules residing in the parent folder that you
     want deployed using the `<modules>` tag. The `portlet.ds` module is
@@ -124,8 +124,8 @@ Zip.
     module.
 
 4.  Now that you've configured your parent POM and module POM, package your
-    Maven project. Navigate to your module project (e.g., `project.ds`) in your
-    command prompt and run the Maven package command:
+    Maven project. Navigate to your module project (e.g., `project.ds`) using
+    the command line and run the Maven package command:
 
         mvn package
 
@@ -142,11 +142,11 @@ Zip.
     Your console shows output from the artifact being deployed into your
     repository server.
 
-To verify that your artifact is deployed, navigate to the Repositories page of
+To verify that your artifact is deployed, navigate to the *Repositories* page of
 your Nexus server and select your repository. A window appears below showing
 the Liferay artifact now deployed to your repository.
 
 ![Figure 1: Your repository server now provides access to your Liferay Maven artifacts.](../../../images/maven-verify-deployment.png)
 
 Awesome! You can now share your Liferay module projects with anyone by deploying
-them as artifacts to a remote repository!
+them as artifacts to your remote repository!
