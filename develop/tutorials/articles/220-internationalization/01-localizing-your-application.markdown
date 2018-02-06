@@ -10,7 +10,7 @@ translation of your application's language keys.
 
 **Note:** Even if you don't think your application needs to be translated into
 multiple languages, use the localization pattern presented here for any messages
-displayed in your user interface. It's much easier to change the messages by
+your user interface displays. It's much easier to change the messages by
 updating a language properties file than by finding every instance of a message
 and replacing it in your JSPs and Java classes.
 
@@ -19,9 +19,10 @@ $$$
 You just need to create a default language properties file
 (`Language.properties`) and one for each translation you'd like to support (for
 example, `Language_fr.properties` for your French translation), and put them in
-the correct location in your application. Use the two letter locale that
-corresponds to the language you want to translate in your file names (for example,
-`Language_es.properties` provides a Spanish translation for each key).
+the correct location in your application. In your file names, use the two character
+locale code that corresponds to the language translation you're providing (for
+example, use the `es` in your Spanish translation file name
+`Language_es.properties`). 
 
 <!-- Discuss adding a new locale? -->
 
@@ -42,24 +43,17 @@ the language property files, while the value is translated in each file. You
 specify the key in your user interface code, and the appropriately translated
 message is returned automatically for your users, depending on the locale being
 used in Liferay. If you have Liferay running locally, append the URL with a
-supported locale to see how Liferay's language keys are translated (for example,
+supported locale to see the message translations for that locale (for example,
 enter `localhost:8080/es`).
 
 ![Figure 1: Append the locale to your running Liferay's URL and see Liferay's translation power in action.](../../images/locale-message-spain.png)
 
-Language keys are just keys you'll use in place of a hard coded, fully
+Language keys are just keys to use in place of a hard coded, fully
 translated String value in your user interface code. For example, you can use a
-language key in your JSP via a `<liferay-ui:message />` tag. 
+language key in your JSP via a
+[`liferay-ui:message` tag](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui/message.html). 
 
-The tag might be set up like this if you're not considering the need to
-translate your application's messages:
-
-    <liferay-ui:message key="Howdy, Partner!" />
-
-In that case you'll get a properly capitalized and punctuated message in your
-application.
-
-Alternatively, you can specify a simple key instead of the final value:
+You can specify a language key as value of the tag's `key` attribute": 
 
     <liferay-ui:message key="howdy-partner" />
 
@@ -68,26 +62,34 @@ properties file (`Language.properties`):
 
     howdy-partner=Howdy, Partner!
 
-You'll get the same output in your application with either method above, but you
-have the flexibility to add additional language properties files that provide
-translations for your application's keys if you use the language properties
-approach. Use a key in your UI code, then provide the value (or translation) in
-your language properties file. You just need to make sure there's a locale that
-corresponds to your translation.
 
-The values from your default `Language.properties` file will appear if no locale
-is specified. If a locale is specified, Liferay will try to find a file that
-corresponds to the locale. For example, if a Spanish translation is sought, a
-`Language_es.properties` file must be present to provide the proper values. If
-it isn't, the default language properties (from the `Language.properties` file)
-will be used.
+Language keys give you flexibility to localize content. You can add language
+properties files that provide translations for your application's keys. Use a
+key in your UI code, then set the translated value in your language file.
+Just make sure to specify the locale code in Liferay's portal property
+`locales`, if it doesn't specify it already. The next section explains the
+`locales` property. 
+
+If no locale is specified, your `Language.properties` file's values appear. If a
+locale is specified, Liferay searches for a file that corresponds to the locale.
+For example,  if the Spanish locale is specified, Liferay looks for a
+`Language_es.properties` file to use its properties. If there is no
+`Language_es.properties` file, the default language properties (from the
+`Language.properties` file) are used.
+
+@product@ uses language properties files along with standard Java resource
+bundles as a convenience for supporting internationalization. A Java resource
+bundle comprises a `ResourceBundle` object that's associated with key/value
+pairs of localized content. The keys are non-localized tokens associated to
+localized values. Liferay's `liferay-ui:message` tag is one of the easiest ways
+to show localized text in your user interface. The `liferay-ui:message` tag and
+other Liferay tags and classes use Java resource bundles behind the scenes. 
 
 ## What Locales are Available By Default? [](id=what-locales-are-available-by-default)
 
-There are a bunch of locales available by default in Liferay. Look in the
-`portal.properties` file
-[file](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
-to find them.
+There are a bunch of locales available by default in Liferay. The
+[`portal.properties` file](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
+lists them.
 
     locales=ar_SA,eu_ES,bg_BG,ca_AD,ca_ES,zh_CN,zh_TW,hr_HR,cs_CZ,da_DK,nl_NL,
         nl_BE,en_US,en_GB,en_AU,et_EE,fi_FI,fr_FR,fr_CA,gl_ES,de_DE,el_GR,
@@ -95,9 +97,9 @@ to find them.
         pl_PL,pt_BR,pt_PT,ro_RO,ru_RU,sr_RS,sr_RS_latin,sl_SI,sk_SK,es_ES,
         sv_SE,tr_TR,uk_UA,vi_VN
 
-To provide a translation for one of these locales, specify the locale in the
-file name where the translated keys will be (for example,
-`Langauge_es.properties` holds the Spanish translation).
+Translations for these locales belong in a language file whose name includes the
+locale code. For example, a Spanish translation belongs in a file called
+`Langauge_es.properties`. 
 
 ## Where do I Put Language Files? [](id=where-do-i-put-language-files)
 
@@ -106,21 +108,19 @@ In an application with only one module that holds all your application's views
 `src/main/resources/content` folder in that module, and place your
 `Language.properties` and `Language_xx.properties` files there.
 
-After that, make sure any portlet components (the `@Component` annotation
-in your `-Portlet` classes) in the module include this property:
+After that, make sure all of the module's portlet components (the `@Component`
+annotation in your `-Portlet` classes) include this property:
 
     "javax.portlet.resource-bundle=content.Language"
 
 Providing translated language properties files and specifying the
-`javax.portlet.resource-bundle` property in your portlet component is all you
-need to do to have your language keys translated. Then, when the locale is
-changed in @product@, your application's language keys will be automatically
-translated.
+`javax.portlet.resource-bundle` property in your portlet component is all
+Liferay requires for serving your translated content. @product@ automatically
+shows the translated language keys to users based on their locale. 
 
 In a more complicated, well-modularized application, you might have language
-keys spread over multiple modules providing portlet components and JSP files.
-Moreover, there might be a fair number of duplicated language keys between the
-modules. Thankfully you don't need to maintain language properties files in each
+keys spread over multiple modules. Moreover, you might use the same language
+keys in them. Thankfully you don't need to maintain language properties files in each
 module.
 
 ## Creating a Language Module [](id=creating-a-language-module)
@@ -176,13 +176,14 @@ On building the language module, @product@'s
 `ResourceBundleLoaderAnalyzerPlugin` detects the `content/Language.properties`
 file and adds a resource bundle
 [*capability*](http://blog.osgi.org/2015/12/using-requirements-and-capabilities.html)
-to the module. A capability is a contract a module declares to @product@'s OSGi
+to the module. Remember, resource bundles are objects that contain localized
+data. A capability is a contract a module declares to @product@'s OSGi
 framework. Capabilities let you associate services with modules that provide
 them. In this case, @product@ registers a
 [ResourceBundleLoader](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
 service for the resource bundle capability. 
 
-Next, you'll configure a web module to use the language module resource
+Next, you'll configure a web module to use the language module's resource
 bundle. 
 
 ## Using a Language Module [](id=using-a-language-module)
@@ -213,16 +214,16 @@ In this case, the web module solely uses the language module's resource bundle.
 Aggregating resource bundles comes into play when you want to use your module's
 resource bundle *in addition to* other modules' resource bundles. 
 
-For example, you might want to compliment language module keys with
-module-specific keys or override language module keys with your own. This
-requires aggregating both modules' resource bundles and prioritizing your
-module's resource bundle higher than the language module's. The following
-example demonstrates this. 
+For example, you might want to compliment a language module's resource bundles
+with new module-specific keys or override a language module's key values with
+your own. This requires aggregating both modules' resource bundles and
+prioritizing your module's resource bundle higher than the language module's.
+The following example demonstrates this. 
 
 For example, a web module called `com.liferay.docs.l10n.myapp.admin.web` uses
 keys from language module `com.liferay.docs.l10n.myapp.lang`, but overrides some
-of them. The web module's `Provide-Capability` and `Web-ContextPath` OSGi
-headers accomplish this.
+of the key values. The web module's `Provide-Capability` and `Web-ContextPath`
+OSGi headers accomplish this.
 
     Provide-Capability:\
     liferay.resource.bundle;resource.bundle.base.name:String="(bundle.symbolic.name=com.liferay.docs.l10n.myapp.admin.web)";resource.bundle.base.name="content.Language",\
@@ -255,27 +256,28 @@ Each line is explained:
 
 To aggregate web module keys and language module keys, follow the pattern
 demonstrated by the example above. The example language module and web modules
-can be downloaded [here](https://dev.liferay.com/documents/10184/656312/l10n-my-application.zip/3bf58646-95ba-4031-bd1a-ce52cc6152f3). 
+can be downloaded
+[here](https://dev.liferay.com/documents/10184/656312/l10n-my-application.zip). 
 
 Now you can add language properties files to your Liferay development toolbox,
 to provide translation of your application's user interface messages. But you
-don't need to translate every single key yourself: you can use keys that you
-share with @product@'s core. 
+might not need to translate all of your keys yourself: @product@'s core might
+already provide translations for them. 
 
 ## Using @product@'s Language Properties [](id=using-liferays-language-properties)
 
 If you have @product@'s source code, you can check out @product@'s core language
 properties by looking in the `portal-impl/src/main/content` folder. Otherwise,
-you can look in the `portal-impl.jar` that's in your Liferay bundle.
+you can look in the `portal-impl.jar` that's in your @product@ bundle.
 
     liferay-portal/portal-impl/src/content/Language_xx.properties
 
     [Liferay Home]/tomcat-[version]/webapps/ROOT/WEB-INF/lib/portal-impl.jar
 
-These keys are available at runtime, so when you use any of @product@'s default
-keys in your user interface code, they're automagically swapped out for the
-appropriately translated value. Using @product@'s keys where possible saves you
-time and ensures that your application follows Liferay's UI conventions.
+These properties are available at runtime, so when you use any of @product@'s
+default keys in your user interface code, they're automagically swapped out for
+the appropriately translated value. Using @product@'s keys where possible saves
+you time and ensures that your application follows Liferay's UI conventions.
 
 If you want to generate language files for each supported locale automatically,
 or to configure your application to generate translations automatically using
