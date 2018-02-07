@@ -12,7 +12,8 @@ also download the latest dependencies ZIP file and OSGi JARs ZIP file from
 [the available releases page](https://web.liferay.com/downloads/liferay-portal/available-releases)
 as well as the @product@ WAR file.
 
-**Liferay Home** is one folder above JBoss's install location. *Liferay Home*
+**Liferay Home** is one folder above JBoss's install location.
+[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
 refers to the folder containing your JBoss server folder. When @product@ is
 installed on JBoss, the Liferay Home folder contains the JBoss server folder as
 well as `data`, `deploy`, `logs`, and `osgi` folders. You'll also see the term

@@ -1,7 +1,7 @@
 # CSS Builder Gradle Plugin [](id=css-builder-gradle-plugin)
 
 The CSS Builder Gradle plugin lets you run the [Liferay CSS Builder](https://github.com/liferay/liferay-portal/tree/master/modules/util/css-builder)
-tool in order to compile [Sass](http://sass-lang.com/) files in your project.
+tool to compile [Sass](http://sass-lang.com/) files in your project.
 
 The plugin has been successfully tested with Gradle 2.5 up to 3.3.
 
@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "2.1.7"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.css.builder", version: "2.2.0"
     }
 
     repositories {
@@ -59,7 +59,7 @@ plugins are applied:
 
 Property Name | Default Value
 ------------- | -------------
-[`docrootDir`](#docrootdir) | <p>**If the `java` plugin is applied:** The first `resources` directory of the `main` source set (by default: `src/main/resources`).</p><p>**If the `war` plugin is applied:** `project.webAppDir`.</p><p>**Otherwise:** `null`</p>
+[`baseDir`](#basedir) | <p>**If the `java` plugin is applied:** The first `resources` directory of the `main` source set (by default: `src/main/resources`).</p><p>**If the `war` plugin is applied:** `project.webAppDir`.</p><p>**Otherwise:** `null`</p>
 
 ### BuildCSSTask [](id=buildcsstask)
 
@@ -81,15 +81,15 @@ Property Name | Default Value
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
 `appendCssImportTimestamps` | `boolean` | `true` | Whether to append the current timestamp to the URLs in the `@import` CSS at-rules. It sets the `sass.append.css.import.timestamps` argument.
+<a name="basedir"></a>`baseDir` | `File` | `null` | The base directory that contains the SCSS files to compile. It sets the `sass.docroot.dir` argument.
 `cssFiles` | `FileCollection` | \- | The SCSS files to compile. *(Read-only)*
-`dirNames` | `List<String>` | `["/"]` | The name of the directories, relative to [`docrootDir`](#docrootdir), which contain the SCSS files to compile. All sub-directories are searched for SCSS files as well. It sets the `sass.dir` argument.
-<a name="docrootdir"></a>`docrootDir` | `File` | `null` | The base directory that contains the SCSS files to compile. It sets the `sass.docroot.dir` argument.
+`dirNames` | `List<String>` | `["/"]` | The name of the directories, relative to [`baseDir`](#basedir), which contain the SCSS files to compile. All sub-directories are searched for SCSS files as well. It sets the `sass.dir` argument.
 `generateSourceMap` | `boolean` | `false` | Whether to generate [source maps](https://developers.google.com/web/tools/chrome-devtools/debug/readability/source-maps) for easier debugging. It sets the `sass.generate.source.map` argument.
+<a name="importdir"></a>`importDir` | `File` | `null` | The `META-INF/resources` directory of the [Liferay Frontend Common CSS](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-css/frontend-css-common) artifact. This is required in order to make [Bourbon](http://bourbon.io) and other CSS libraries available to the compilation.
+`importFile` | `File` | [`configurations.portalCommonCSS.singleFile`](#liferay-frontend-common-css-dependency) | The Liferay Frontend Common CSS JAR file. If [`importDir`](#importdir) is set, this property has no effect.
+`importPath` | `File` | \- | The value of the `importDir` property if set; otherwise `importFile`. It sets the `sass.portal.common.path` argument. *(Read-only)*
 `outputDirName` | `String` | `".sass-cache/"` | The name of the sub-directories where the SCSS files are compiled to. For each directory that contains SCSS files, a sub-directory with this name is created. It sets the `sass.output.dir` argument.
 `outputDirs` | `FileCollection` | \- | The directories where the SCSS files are compiled to. Usually, these directories are ignored by the Version Control System. *(Read-only)*
-<a name="portalcommondir"></a>`portalCommonDir` | `File` | `null` | The `META-INF/resources` directory of the [Liferay Frontend Common CSS](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-css/frontend-css-common) artifact. This is required in order to make [Bourbon](http://bourbon.io) and other CSS libraries available to the compilation.
-`portalCommonFile` | `File` | [`configurations.portalCommonCSS.singleFile`](#liferay-frontend-common-css-dependency) | The Liferay Frontend Common CSS JAR file. If [`portalCommonDir`](#portalcommondir) is set, this property has no effect.
-`portalCommonPath` | `File` | \- | The value of the `portalCommonDir` property if set; otherwise `portalCommonFile`. It sets the `sass.portal.common.path` argument. *(Read-only)*
 `precision` | `int` | `5` | The numeric precision of numbers in Sass. It sets the `sass.precision` argument.
 `rtlExcludedPathRegexps` | `List<String>` | `[]` | The SCSS file patterns to exclude when converting for right-to-left (RTL) support. It sets the `sass.rtl.excluded.path.regexps` argument.
 `sassCompilerClassName` | `String` | `null` | The type of Sass compiler to use. Supported values are `"jni"` and `"ruby"`. If not set, defaults to `"jni"`. It sets the `sass.compiler.class.name` argument.
@@ -127,8 +127,8 @@ and `String` properties, to defer evaluation until task execution.
 
 Method | Description
 ------ | -----------
-`BuildCSSTask dirNames(Iterable<Object> dirNames)` | Adds sub-directory names, relative to [`docrootDir`](#docrootdir), which contain the SCSS files to compile.
-`BuildCSSTask dirNames(Object... dirNames)` | Adds sub-directory names, relative to [`docrootDir`](#docrootdir), which contain the SCSS files to compile.
+`BuildCSSTask dirNames(Iterable<Object> dirNames)` | Adds sub-directory names, relative to [`baseDir`](#basedir), which contain the SCSS files to compile.
+`BuildCSSTask dirNames(Object... dirNames)` | Adds sub-directory names, relative to [`baseDir`](#basedir), which contain the SCSS files to compile.
 `BuildCSSTask rtlExcludedPathRegexps(Iterable<Object> rtlExcludedPathRegexps)` | Adds SCSS file patterns to exclude when converting for right-to-left (RTL) support.
 `BuildCSSTask rtlExcludedPathRegexps(Object... rtlExcludedPathRegexps)` | Adds SCSS file patterns to exclude when converting for right-to-left (RTL) support.
 
@@ -145,7 +145,7 @@ manually adding a dependency to the `cssBuilder` configuration:
 
 ```gradle
 dependencies {
-    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "2.0.2"
+    cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "2.1.0"
 }
 ```
 

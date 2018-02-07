@@ -12,6 +12,7 @@ git-modified-list.txt
 nbbuild.xml
 properties/
 .DS_Store
+.directory
 
 /*.ipr
 /*.iws

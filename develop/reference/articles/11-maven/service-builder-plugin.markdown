@@ -16,7 +16,7 @@ To use the plugin, include it in your `pom.xml` file:
             <plugin>
                 <groupId>com.liferay</groupId>
                 <artifactId>com.liferay.portal.tools.service.builder</artifactId>
-                <version>1.0.174</version>
+                <version>1.0.182</version>
                 <configuration>
                 </configuration>
             </plugin>
@@ -45,6 +45,7 @@ Parameter Name | Type | Default Value | Description
 `beanLocatorUtil` | `String` | `"com.liferay.portal.kernel.bean.PortalBeanLocatorUtil"` | The fully qualified class name of a bean locator class to use in the generated service classes.
 `buildNumber` | `long` | `1` | A specific value to assign the `build.number` property in the `service.properties` file.
 `buildNumberIncrement` | `boolean` | `true` | Whether to automatically increment the `build.number` property in the `service.properties` file by one at every service generation.
+`databaseNameMaxLength` | `int` | `30` | The upper bound for database table and column name lengths to ensure it works on all databases.
 `hbmFileName` | `String` | `"src/META-INF/portal-hbm.xml"` | A Hibernate Mapping file to generate.
 `implDirName` | `String` | `"src"` | A directory where the service Java source files are generated.
 `inputFileName` | `String` | `"service.xml"` | The project's `service.xml` file.

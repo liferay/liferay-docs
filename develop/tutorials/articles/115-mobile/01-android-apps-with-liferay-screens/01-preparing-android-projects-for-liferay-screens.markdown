@@ -75,6 +75,31 @@ Sync Now link highlighted by a red box:
 
 ![Figure 2: After editing the app module's `build.gradle` file, click *Sync Now* to incorporate the changes in your app.](../../../images/screens-android-gradle-sync.png)
 
+In the case of conflict with the `appcompat-v7` or other support libraries (`com.android.support:appcompat-v7`, `com.android.support:support-v4`), you have 
+several options: 
+
+-   Explicitly add the versions of the conflicting libraries you want to use. 
+    For example: 
+
+        implementation 'com.android.support:design:27.0.2'
+        implementation 'com.android.support:support-media-compat:27.0.2'
+        implementation 'com.android.support:exifinterface:27.0.2'
+
+-   Remove the `com.android.support:appcompat-v7` dependency from your project 
+    and use the one embedded in Liferay Screens. 
+
+-   Exclude the problematic library from Liferay Screens. For example: 
+
+        implementation ('com.liferay.mobile:liferay-screens:+') {
+            exclude group: 'com.android.support:', module: 'design'
+        }
+
+-   Ignore the inspection, adding a comment like this: 
+
+        //noinspection GradleCompatible
+
+-   Ignore the warning--Liferay Screens will work without problems. 
+
 Although we strongly recommend that you use Gradle to install Screens, the 
 following section shows you how to install Screens with Maven. 
 

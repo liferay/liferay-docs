@@ -35,8 +35,7 @@ a data source. Here's how:
                         </props>
                     </property>
                 </bean>
-
-        -   **Portal Properties**: Specify a property prefix that matches the   
+        -   **Portal Properties**: Specify a property prefix that matches the 
             prefix (e.g., `jdbc.ext.`) you used in `portal-ext.properties`.
 
                 <bean class="com.liferay.portal.dao.jdbc.spring.DataSourceFactoryBean"

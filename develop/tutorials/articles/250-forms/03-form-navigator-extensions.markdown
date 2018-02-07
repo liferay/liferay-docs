@@ -196,17 +196,16 @@ component annotation should do:
 -   Declare that the component is of service type
     `FormNavigatorCategory.class` 
 -   Request immediate loading
--   Optionally, specify the category's
-    [service ranking](http://www.osgi.org/javadoc/r4v42/org/osgi/framework/Constants.html#SERVICE%5FRANKING)
-    relative to the Form Navigator's other categories. The higher the category's
-    service ranking integer relative to the rankings of the other categories,
-    the higher the category is listed in the form navigation. 
+-   Optionally, specify the category's entry order relative to the Form 
+    Navigator's other categories. The higher the category's order integer 
+    relative to the order of the other categories, the higher the category is 
+    listed in the form navigation. 
 
 Here's an example component annotation for a category:
 
     @Component(
         immediate = true,
-        property = {"service.ranking:Integer=20"},
+        property = {"form.navigator.category.order:Integer=20"},
         service = FormNavigatorCategory.class
     )
 
@@ -229,7 +228,7 @@ methods:
 For example, here's a Form Navigator category implementation for the *Social*
 Portal Setting category:
 
-    package com.liferay.portal.settings.web.servlet.taglib.ui;
+    package com.liferay.portal.settings.web.internal.servlet.taglib.ui;
 
     import com.liferay.portal.kernel.language.LanguageUtil;
     import com.liferay.portal.kernel.servlet.taglib.ui.FormNavigatorCategory;
@@ -240,11 +239,11 @@ Portal Setting category:
     import org.osgi.service.component.annotations.Component;
 
     /**
-     * @author Sergio Gonz�lez
+     * @author Sergio González
      * @author Philip Jones
      */
     @Component(
-        immediate = true, property = {"service.ranking:Integer=10"},
+        immediate = true, property = {"form.navigator.category.order:Integer=20"},
         service = FormNavigatorCategory.class
     )
     public class CompanySettingsSocialFormNavigatorCategory
@@ -267,14 +266,14 @@ Portal Setting category:
 
     }
 
-After you've implemented new Form Navigator categories, you can add new
-Form Navigator sections. 
+After you've implemented new Form Navigator categories, you can add new Form 
+Navigator sections. 
 
 ### Step 5: Create new sections [](id=step-5-create-new-sections)
 
 To add a new section (entry) that uses a JSP, create a class that extends
 the abstract base class
-[`BaseJSPFormNavigatorEntry`](@platform-ref@/7.0-latest/javadocs/portal-service/com/liferay/portal/kernel/servlet/taglib/ui/BaseJSPFormNavigatorEntry.html)
+[`BaseJSPFormNavigatorEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/BaseJSPFormNavigatorEntry.html)
 and implements the
 [`FormNavigatorEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorEntry.html)
 interface. The `BaseJSPFormNavigatorEntry` base class integrates the section's
@@ -307,7 +306,9 @@ Nav Extension portlet:
 
         @Component(
             immediate = true,
-            property = {"service.ranking:Integer=20"},
+            property = {
+		        "form.navigator.entry.order:Integer=71"
+            },
             service = FormNavigatorEntry.class
         )
         public class MyAppCompanySettingsFormNavigatorEntry 
@@ -328,18 +329,18 @@ service in Liferay's module framework.
 
 Here's what a Form Navigation entry's component annotation should do: 
 
--   Declare that the component is of service type
-    `FormNavigatorEntry.class` 
+-   Declare that the component is of service type `FormNavigatorEntry.class` 
 -   Request immediate loading
--   Optionally, specify a property for the entry's
-    [service ranking](http://www.osgi.org/javadoc/r4v42/org/osgi/framework/Constants.html#SERVICE%5FRANKING)
-    relative to the other entries in the category. The higher the entry's
-    service rankings integer relative to the rankings of the category's other
-    entries, the higher the entry is listed in the category. 
+-   Optionally, specify a `form.navigator.entry.order` property for the entry 
+    relative to the other entries in the category. The higher the entry's order 
+    integer relative to the order of the category's other entries, the higher 
+    the entry is listed in the category. For example, `@Component(property = 
+    {"form.navigator.entry.order:Integer=71"}, service = 
+    FormNavigatorEntry.class)`
 
-Except for your entry's service ranking (optional), your entry's `@Component`
-annotation should look similar to the previous example's annotation. Next,
-you'll implement the entry class's methods.
+Except for your entry's order (optional), your entry's `@Component` annotation 
+should look similar to the previous example's annotation. Next, you'll implement 
+the entry class's methods.
 
 The
 [`FormNavigatorEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorEntry.html)
@@ -471,7 +472,9 @@ implementation. Here's the Form Nav Extension portlet's entry class
 
         @Component(
             immediate = true,
-            property = {"service.ranking:Integer=20"},
+            property = {
+		        "form.navigator.entry.order:Integer=71"
+            },
             service = FormNavigatorEntry.class
         )
         public class MyAppCompanySettingsFormNavigatorEntry 

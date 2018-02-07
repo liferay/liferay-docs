@@ -102,7 +102,9 @@ provided below.
     could apply it to them all. To do this, you could specify all the editors
     (e.g., `"editor.name=alloyeditor"`, `"editor.name=ckeditor"`,
     `ckeditor_bbcode` etc.) in the `@Component` annotation  of your
-    `EditorConfigContributor` implementation, as you did in step 3.
+    `EditorConfigContributor` implementation, as you did in step 3. Use the 
+    site links provided at the bottom of this tutorial to view each editor's 
+    configuration options and requirements.
 
     $$$
 

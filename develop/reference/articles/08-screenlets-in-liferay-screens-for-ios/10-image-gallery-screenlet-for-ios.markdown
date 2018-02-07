@@ -2,8 +2,8 @@
 
 ## Requirements [](id=requirements)
 
-- Xcode 7.2
-- iOS 9 SDK
+- Xcode 9.0
+- iOS 11 SDK
 - Liferay 7.0 CE, Liferay DXP 
 - Liferay Screens Compatibility Plugin 
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
@@ -13,7 +13,12 @@
 
 ## Compatibility [](id=compatibility)
 
-- iOS 8 and above
+- iOS 9 and above
+
+## Xamarin Requirements [](id=xamarin-requirements)
+
+- Visual Studio 7.2
+- Mono .NET framework 5.4.1.6
 
 ## Features [](id=features)
 
@@ -83,7 +88,7 @@ instance:
 | `folderId` | `number` | The ID of the Documents and Media repository folder that contains the image gallery. When accessing the folder in your browser, the `folderId` is at the end of the URL. |
 | `mimeTypes` | `string` | The comma-separated list of MIME types for the Screenlet to support. |
 | `filePrefix` | `string` | The prefix to use on uploaded image file names. |
-| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/7-0/gallery-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/7-0/image-gallery-screenlet-for-ios#offline) for details. |
 | `autoLoad` | `boolean` | Whether the list automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
 | `refreshControl` | `boolean` | Whether a standard [iOS `UIRefreshControl`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) appears when the user does the pull to refresh gesture. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items to display on the first page. The default value is `50`. |
