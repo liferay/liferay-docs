@@ -102,18 +102,25 @@ database.
 ## Step 1: Choose a Database Server and Create a New Database [](id=step-1-choose-a-database-server-and-create-a-new-database)
 
 The recommended way of setting up your @product@ database is also the simplest.
-@product@ takes care of just about everything. You only need to take two
-simple steps:
+@product@ takes care of just about everything. You only need to take two simple
+steps:
 
 1. Create a blank database encoded with the character set UTF-8. @product@ is a
    multilingual application and needs UTF-8 encoding to display all of its
    supported character sets.
 
+   +$$$
+
+   **Note:** If you plan to migrate from one database vendor to another,
+   [configure the database to use the default query result order you expect for entities @product@ lists](/develop/tutorials/-/knowledge_base/7-0/sort-order-changed-with-a-different-database). 
+
+   $$$
+
 2. Create a database user for accessing this database. Grant this database user
    all rights, including the rights to create and drop tables, to the blank
    @product@ database.
 
-@product@ will use this database user's credentials to connect to the @product@
+@product@ uses this database user's credentials to connect to the @product@
 database either directly or through its application server. During its initial
 startup, @product@ creates the tables it needs in the database you just created.
 It does this automatically, complete with indexes.
@@ -171,15 +178,21 @@ they cannot be installed if @product@ can't create database tables. If you wish
 to install these plugins, you will need to grant rights to create tables in the
 database each time before you attempt to install them.
 
-@product@ offers several configurations to store Documents and Media files by setting the `dl.store.impl=` property. Available options are Simple File System Store, Advanced File System Store, CMIS Store, DBStore, JCRStore, and Amazon S3Store. In addition, @product@ can be connected to various open source and enterprise-level document repositories. All of the repositories are connected to @product@ through hooks available on Liferay Marketplace (see below). 
+@product@ offers several configurations to store Documents and Media files by
+setting the `dl.store.impl=` property. Available options are Simple File System
+Store, Advanced File System Store, CMIS Store, DBStore, JCRStore, and Amazon
+S3Store. In addition, @product@ can be connected to various open source and
+enterprise-level document repositories. All of the repositories are connected to
+@product@ through hooks available on Liferay Marketplace (see below). 
 
-Once you have your database and document repository ready, you can install @product@ on your server.
+Once you have your database and document repository ready, you can install
+@product@ on your server.
 
 ## Step Two: Gather Your Mail Credentials [](id=step-two-gather-your-mail-credentials)
 
 @product@ uses a mail server to send email notifications. As part of the install,
-therefore, you will need to have credentials that @product@ can use to connect to
-your mail server. Specifically, you'll need to have the following information: 
+therefore, you will need to have credentials that @product@ can use to connect
+to your mail server. Specifically, you must have the following information: 
 
 - Incoming POP Server and port
 - POP User Name
@@ -206,18 +219,22 @@ full, production-ready instances of @product@.
 
 ## Step Four: Network Configurations [](id=step-four-network)
 
-@product@ supports both IPv4 and IPv6 address formats. By default, @product@ uses IPv4 addresses. If you are using IPv6, you will have to configure @product@. There are two simple steps. 
+@product@ supports both IPv4 and IPv6 address formats. By default, @product@
+uses IPv4 addresses. If you are using IPv6, you must configure @product@: 
 
-1. In the application server's environment settings, set `-Djava.net.preferIPv4Stack=false`. 
+1. In the application server's environment settings, set
+   `-Djava.net.preferIPv4Stack=false`. 
 
-2. Create a `portal-ext.properties` file in your portal's Liferay Home directory (if one does not already exist) and set the `tunnel.servlet.hosts.allowed` property to the target hosts you want to allow (e.g., _0:0:0:0:0:0:0:1_). 
+2. Create a `portal-ext.properties` file in your portal's Liferay Home directory
+   (if one does not already exist) and set the `tunnel.servlet.hosts.allowed`
+   property to the target hosts you want to allow (e.g., _0:0:0:0:0:0:0:1_). 
 
 ## Step Five: Configure Elasticsearch [](id=step-five-configure-elastic-search)
 
 @product@ by default ships with an embedded version of Elasticsearch. While this
 configuration works well for demo purposes, it is not supported in a production
-installation. After you install @product@, you'll need to configure it to connect
-to a standalone Elasticsearch server or cluster. Depending on the size of your
+installation. After you install @product@, you must configure it to connect to
+a standalone Elasticsearch server or cluster. Depending on the size of your
 installation, this standalone instance of Elasticsearch can reside either on the
 same machine you have @product@ on or a different machine. For performance
 purposes, it is better to install it on a separate machine.
