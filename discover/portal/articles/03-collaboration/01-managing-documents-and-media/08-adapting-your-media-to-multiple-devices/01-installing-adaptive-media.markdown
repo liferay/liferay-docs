@@ -1,26 +1,60 @@
 # Installing Adaptive Media [](id=installing-adaptive-media)
 
-You can install Adaptive Media from 
+You can install the Adaptive Media app from 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
-for Liferay Portal CE 7.0 GA5+ and Liferay DXP. From the Marketplace, search for 
-*Adaptive Media* and follow the installation instructions at 
+for Liferay Portal CE 7.0 GA5+ or Liferay DXP. Search for *Adaptive Media* in 
+the Marketplace and follow the app installation instructions at 
 [Using the Liferay Marketplace](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
 
-+$$$
+If you're running Liferay Portal CE 7.0 GA6+ or Liferay DXP, then installing the 
+Adaptive Media app is all you need to do. If you're running Liferay Portal CE 
+7.0 GA5, however, then you must also install another module. The next section 
+explains how to do this. 
 
-**Note:** If you're running Liferay Portal CE 7.0 GA5, then you must install 
-another module in addition to the Adaptive Media app from Liferay Marketplace. 
-[Click here](https://www.liferay.com/) 
-to download this module, then install it as you would any other module. 
+## Installing Adaptive Media in Liferay Portal CE 7.0 GA5
 
-$$$
+If you're running Liferay Portal CE 7.0 GA5, then you must install another 
+module after installing the Adaptive Media app: 
 
-Installing Adaptive Media installs all its modules (except for the extra module 
-required by Liferay Portal CE 7.0 GA5). Some modules are mandatory and must be 
-enabled for Adaptive Media to function, while others can be disabled. The 
-Adaptive Media API modules, which export packages for the other modules to 
-consume, are mandatory; disabling one also disables any other modules that 
-depend on it. Here's a list of the Adaptive Media API modules: 
+1.  Shut down your @product@ server. 
+
+2.  [Click here](https://web.liferay.com/documents/4426623/103634825/com.liferay.journal.service.jar/4ba168ec-9e1a-41cb-ab27-f7473eb0085c) 
+    to download the module (it's a JAR file). 
+
+3.  Copy the module into this folder of your @product@ installation: 
+
+        [Liferay_Home]/osgi/marketplace/override/
+
+    Create the `override` folder if it doesn't exist. 
+
+4.  Start your @product@ server. You should see these log messages during 
+    startup: 
+
+        INFO  [Start Level: Equinox Container: 60d02f03-ed0b-0018-179d-ebc04e65241e][LPKGBundleTrackerCustomizer:411] 
+            Disabled Liferay CE Web Experience:/com.liferay.journal.service-3.17.3.jar
+        INFO  [Start Level: Equinox Container: 60d02f03-ed0b-0018-179d-ebc04e65241e][DefaultLPKGDeployer:393] 
+            Installed override JAR bundle  LPKG-Override::/liferay-ce-portal-7.0-ga5/osgi/marketplace/override/com.liferay.journal.service.jar
+
+    These messages indicate that the new module has successfully replaced the 
+    old module. 
+
+5.  You can verify this by running the command `lb "Journal Service"` from the 
+    [Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). 
+    It should indicate that the module is active: 
+
+        ID|State      |Level|Name
+        524|Active     |   10|Liferay Journal Service (3.18.0.ADAPTIVE-MEDIA)
+
+Well done! Next, you'll learn which modules in the Adaptive Media app are 
+mandatory or optional. 
+
+## Adaptive Media's Modules
+
+Some modules in the Adaptive Media app are mandatory and must be enabled for 
+Adaptive Media to function, while others can be disabled. The Adaptive Media API 
+modules, which export packages for the other modules to consume, are mandatory; 
+disabling one also disables any other modules that depend on it. Here's a list 
+of the Adaptive Media API modules: 
 
 -   Liferay Adaptive Media API
 -   Liferay Adaptive Media Content Transformer API
