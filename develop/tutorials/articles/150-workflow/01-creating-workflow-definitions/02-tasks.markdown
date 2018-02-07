@@ -5,8 +5,8 @@ defining your organization's business processes and planning workflows, you
 likely first envision the tasks. As the name implies, tasks are the part of the
 workflow where *work* must be done. A user enters the picture and has to
 interact with the submitted asset. This user often takes the role of reviewer,
-where an asset is sent to them and they must decide if it is acceptable,
-unacceptable, or perhaps needs more work.
+deciding if an asset sent to them in the workflow is acceptable for publication
+in its current state, or perhaps needs more work.
 
 Unlike other workflow nodes, task nodes have Assignments, because a user is
 expected to *do something* (often approve or reject the submitted asset) when a
@@ -230,6 +230,10 @@ or creating a timer action.
                 <scale>hour</scale>
             </delay>
             <blocking>false</blocking>
+            <recurrence>
+                <duration>10</duration>
+                <scale>minute</scale>
+            </recurrence>
             <timer-actions>
                 <timer-notification>
                     <name></name>
@@ -244,17 +248,11 @@ or creating a timer action.
 The above task timer creates a notification. Specify a time period in the
 `<delay>` tag, and specify what action to take after the delay is up in the
 `<timer-actions>` block. The `<blocking>` element is used to specify whether the
-timer actions may recur. If `<blocking>false</blocking>`, make the timer action
-recur using the `<recurrence>` tag:
-
-    <recurrence>
-        <duration>10</duration>
-        <scale>minute</scale>
-    </recurrence>
-
-With blocking set to false, this recurrence tag specifies that the timer actions
-will run again every ten minutes after the initial occurrence. Setting blocking
-to true prevents the timer actions from recurring.
+timer actions may recur. If blocking is set to `false`, timer actions may recur.
+In a `recurrence` element, specify the recurrence interval using a `duration`
+and a `scale`, as demonstrated above. The above recurrence element specifies
+that the timer actions will run again every ten minutes after the initial
+occurrence. Setting blocking to true prevents timer actions from recurring.
 
     <timer-actions>
         <reassignments>
@@ -272,4 +270,7 @@ to true prevents the timer actions from recurring.
 
 The above snippet demonstrates how to set up a reassignment action.
 
-Tasks are at the core of the workflow definition. 
+Tasks are at the core of the workflow definition. Once you understand how to
+create tasks and the other [workflow
+nodes](/discover/portal/-/knowledge_base/7-0/workflow-definition-nodes), and add
+transitions between the nodes, you're on the cusp of workflow wizardhood.

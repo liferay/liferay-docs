@@ -1,8 +1,8 @@
 # Workflow Definition Nodes
 
-After your definition has its schema and metadata defined, tackle the guts of
-the workflow definition. *Nodes*, with their sub-elements, are the fundamental
-building blocks making up workflow definitions.
+After your definition's schema and metadata are in place, begin defining the
+process. *Node* elements, with their sub-elements, are the fundamental building
+blocks making up workflow definitions.
 
 - State Nodes don't require user input. The workflow does whatever is specified
     in the state node's `actions` tag (a notification and/or a custom script),
@@ -228,4 +228,4 @@ building blocks making up workflow definitions.
             </transitions>
         </task>
 
-To learn more about workflow tasks, read the next article.
+Learn more about workflow tasks in the next article.

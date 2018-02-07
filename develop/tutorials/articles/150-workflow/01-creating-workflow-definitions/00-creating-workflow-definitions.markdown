@@ -16,7 +16,11 @@ About those existing workflows.
 Only one workflow definition is installed by default: Single Approver. However,
 several more are embedded in the source code of your @product@ installation. If
 you're comfortable extracting the XML files from a JAR file embedded in an LPKG
-file, navigate to 
+file, you're welcome to follow the steps below to obtain the workflow
+definitions. To obtain the files more conveniently, download a ZIP file
+[here](https://dev.liferay.com/documents/10184/1530512/Workflow+Definitions+Zip/60504133-f6ab-7587-f734-6275749fe450).
+
+To extract the definitions for yourself, navigate to 
 
     Liferay-Home/osgi/marketplace
 
@@ -42,7 +46,7 @@ The XML structure of a workflow definition is defined in an XSD file,
 
 Declare the schema at the top of the workflow definition file:
 
-    <?xml version="1.0"?
+    <?xml version="1.0"?>
     <workflow-definition
         xmlns="urn:liferay.com:liferay-workflow_7.0.0"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
