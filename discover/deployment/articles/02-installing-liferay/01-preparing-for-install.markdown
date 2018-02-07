@@ -79,8 +79,8 @@ installation steps:
     (further instructions below). 
 
 5.  Determine how you'll configure Elasticsearch. @product@'s default embedded
-    configuration is not supported for production use, so you'll have to install
-    Elasticsearch separately, either on the same infrastructure or on its own. 
+    configuration is not supported for production use, so you must install
+    Elasticsearch separately, either on the same infrastructure or on its own.
     <!--6. Determine whether you'll use Liferay Marketplace or other third party
     applications. If you will, you should enable Liferay's Plugin Access Control
     List (PACL) security feature.-->
@@ -88,10 +88,10 @@ installation steps:
 7.  Configure ports (optional). Liferay's application server (e.g., Tomcat or
     Wildfly) uses certain ports for purposes like handling incoming HTTP
     requests, HTTPS requests, or AJP requests, etc. If you start your
-    application server in debug mode, there will be a port listening for a
-    debugger to connect. If desired, you can configure these ports. Please refer
-    to your application server's documentation for information on its default
-    ports and how to configure them.
+    application server in debug mode, there's a port listening for a debugger to
+    connect. If desired, you can configure these ports. Please refer to your
+    application server's documentation for information on its default ports and
+    how to configure them.
 
     Liferay also provides access to its OSGi framework through a configurable
     port:
