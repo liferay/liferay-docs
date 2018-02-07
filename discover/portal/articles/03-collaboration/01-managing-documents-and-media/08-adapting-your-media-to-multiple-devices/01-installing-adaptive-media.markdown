@@ -11,7 +11,7 @@ Adaptive Media app is all you need to do. If you're running Liferay Portal CE
 7.0 GA5, however, then you must also install another module. The next section 
 explains how to do this. 
 
-## Installing Adaptive Media in Liferay Portal CE 7.0 GA5
+## Installing Adaptive Media in Liferay Portal CE 7.0 GA5 [](id=installing-adaptive-media-in-liferay-portal-ce-7-0-ga5)
 
 If you're running Liferay Portal CE 7.0 GA5, then you must install another 
 module after installing the Adaptive Media app: 
@@ -48,7 +48,7 @@ module after installing the Adaptive Media app:
 Well done! Next, you'll learn which modules in the Adaptive Media app are 
 mandatory or optional. 
 
-## Adaptive Media's Modules
+## Adaptive Media's Modules [](id=adaptive-medias-modules)
 
 Some modules in the Adaptive Media app are mandatory and must be enabled for 
 Adaptive Media to function, while others can be disabled. The Adaptive Media API 
