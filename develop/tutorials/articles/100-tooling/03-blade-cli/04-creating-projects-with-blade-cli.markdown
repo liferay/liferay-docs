@@ -1,4 +1,4 @@
-# Creating Projects with Blade CLI [](id=creating-modules-with-blade-cli)
+# Creating Projects with Blade CLI [](id=creating-projects-with-blade-cli)
 
 When you use Blade CLI to create a project, your project's folder structure,
 build script (e.g., `build.gradle`), Java classes, and other resources (such as
@@ -43,7 +43,7 @@ $$$
 
 First, you'll learn how to create a module using a template.
 
-## Project Templates [](id=module-templates)
+## Project Templates [](id=project-templates)
 
 To create a new Liferay project, you can run the Blade `create` command, which
 offers many available templates. There are, however, many other options you can
