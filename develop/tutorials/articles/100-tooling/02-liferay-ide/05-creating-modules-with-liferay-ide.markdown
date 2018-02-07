@@ -44,7 +44,7 @@ Template` list:
 - *Portlet Filter*: creates a new portlet filter
 - *Rest*: calls and wraps inner service in the way of Rest
 - *Service Wrapper*: creates a new service wrapper
-- *Struts in Action*: creates a new strutus action
+- *Struts in Action*: creates a new struts action
 - *Struts Portlet Action*: creates a new struts portlet action
 
 ## Possible Dependency Issues [](id=possible-dependency-issues)

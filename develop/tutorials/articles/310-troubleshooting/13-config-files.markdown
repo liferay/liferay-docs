@@ -1,4 +1,4 @@
-# Using Files to Configure @product@ Modules [](id=using-files-to-configure-product-modules)
+# Using Files to Configure Module Components [](id=using-files-to-configure-product-modules)
 
 @product@ uses 
 [Felix File Install](http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html)

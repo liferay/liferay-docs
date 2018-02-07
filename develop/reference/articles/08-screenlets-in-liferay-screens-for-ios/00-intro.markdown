@@ -3,7 +3,7 @@
 Liferay Screens for iOS contains several Screenlets that you can use in your iOS 
 apps. This section contains the reference documentation for each. If you're 
 looking for instructions on using Screens, see the 
-[Screens tutorials](/develop/tutorials/-/knowledge_base/7-0/mobile-apps-with-liferay-screens). 
+[Screens tutorials](/develop/tutorials/-/knowledge_base/7-0/ios-apps-with-liferay-screens). 
 The Screens tutorials contain instructions on 
 [using Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps) 
 and 
@@ -91,3 +91,7 @@ reference documents:
   Shows a single file from a @product@ instance's Documents and Media Library. 
   Use this Screenlet to display file types not covered by the other display 
   Screenlets (e.g., DOC, PPT, XLS). 
+
+- [**Web Screenlet:**](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-ios) 
+  Displays any web page. You can also customize the web page through injection 
+  of local and remote JavaScript and CSS files. 

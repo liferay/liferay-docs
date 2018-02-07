@@ -9,34 +9,34 @@ view server metrics, manage environments, and more.
 This article's following sections each detail one or more of the features 
 available in LCS: 
 
-- [**What LCS Stores About Your @product@ Servers:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#what-lcs-stores-about-your-liferay-servers)
+- [**What LCS Stores About Your @product@ Servers:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers)
   For LCS to work, the LCS servers must store certain information about your 
   @product@ servers. Sensitive data, however, isn't stored on the LCS servers. 
   Learn exactly what data LCS does and doesn't store. 
 
-- [**Managing Your LCS Projects:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-your-lcs-projects)
+- [**Managing Your LCS Projects:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-your-lcs-projects)
   Learn how to create and request access to LCS projects, how LCS roles work, 
   and how to manage LCS users. 
 
-- [**Using the Dashboard:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-the-dashboard)
+- [**Using the Dashboard:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-the-dashboard)
   Learn how to manage projects, environments, and servers in LCS. This includes 
   applying fix packs, monitoring server status, viewing server metrics, and 
   more. 
 
-- [**Using Web Notifications:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-web-notifications) 
+- [**Using Web Notifications:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-web-notifications) 
   LCS displays web notifications that you can view by clicking the bell icon 
   next to the user menu in the Dockbar. Learn how to manage these. 
 
-- [**Managing Your LCS Account:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-your-lcs-account)
+- [**Managing Your LCS Account:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-your-lcs-account)
   Learn how to manage your LCS account. This includes configuring LCS to send 
   you notification emails when specific events occur in your LCS projects, and 
   setting general account preferences. 
 
-- [**Managing @product@ Subscriptions:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions)
+- [**Managing @product@ Subscriptions:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions)
   Learn how to view and manage your @product@ subscriptions for the servers in 
   your LCS project. 
 
-- [**Using Environment Tokens:**](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens)
+- [**Using Environment Tokens:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens)
   Learn how to use environment tokens to automatically activate your @product@ 
   servers with LCS. 
 
@@ -81,7 +81,7 @@ non-sensitive properties:
 
 LCS also lets you prevent it from analyzing specific properties of your 
 choosing. For more information on this, see 
-[the section on using environment tokens](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens). 
+[the section on using environment tokens](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens). 
 
 Now that you know what information is stored on the LCS servers, you're ready to 
 learn how to manage your LCS projects. This includes renaming projects and 
@@ -257,8 +257,8 @@ The UI is segmented into three tabs:
    subscription type if you haven't done so yet. For instructions on this, see 
    the following sections:
 
-    - [Managing @product@ Subscriptions](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions)
-    - [Using Environment Tokens](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens)
+    - [Managing @product@ Subscriptions](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions)
+    - [Using Environment Tokens](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens)
 
 3. **Environment Settings:** lets you change the environment's name, location, 
    and description. You can also see if the environment is part of a cluster, 
@@ -289,6 +289,16 @@ Server view is segmented into five tabs:
   Java version, and hardware.
 - **Server Settings:** View or change your server's name, location, and 
   description. You can also unregister the server from LCS. 
+
++$$$
+
+**Note:** LCS doesn't support *Snapshot Metrics* for @product@ instances running 
+on JBoss or WildFly. In this scenario, you may see a console message indicating 
+that LCS doesn't support server metrics for your application server. You may 
+also see a `NullPointerException` for the LCS `TaskSchedulerServiceImpl` and 
+`ScheduleTasksCommand`, which you can safely ignore. 
+
+$$$
 
 Page Analytics is displayed by default when you enter server view. Page 
 Analytics shows page views and load times for the selected site and time period. 
@@ -373,7 +383,7 @@ properties in this table are organized into the following categories:
   file.
 
 - **Dynamic Properties:** Any property values set at runtime. For example, the 
-  [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home) 
+  [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-product#liferay-home) 
   folder's location depends on your configuration. To always specify this folder 
   when setting any properties that require it, you can use `${liferay.home}` 
   instead of an absolute directory path. 
@@ -507,7 +517,7 @@ There are four tables in the *Details* tab:
     Once you've assigned a subscription type to an environment, you must use an 
     *environment token* to activate a @product@ instance in the environment. For 
     instructions on this, see the section 
-    [Using Environment Tokens](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens). 
+    [Using Environment Tokens](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens). 
 
 2. **Subscriptions:** shows a list of @product@ subscriptions available for 
    your LCS project. For each subscription, this table shows the following 
@@ -523,6 +533,9 @@ There are four tables in the *Details* tab:
     - Servers Allowed
     - Servers Used
 
+    Note that *Processor Cores Allowed* shows the number of processor cores that 
+    your subscription allows for each @product@ instance.
+
 3. **Subscriptions Summary:** shows how your subscriptions are currently used in 
    your environment. For each subscription type, this table shows the number of 
    servers allowed, used, and available. 
@@ -533,6 +546,21 @@ There are four tables in the *Details* tab:
 If any of the information in these tables is missing or incorrect, contact 
 Liferay support. 
 
++$$$
+
+**Note:** If you try to register a @product@ instance and it exceeds the number 
+of processor cores that your subscription allows for each instance, the 
+registration fails and the instance is locked down. A console error also appears 
+that indicates the number of cores used by the instance. You can compare this 
+with your subscription's *Processor Cores Allowed*, as displayed in the 
+Subscriptions table in LCS. To register the instance, you can either reduce the 
+number of cores it uses (e.g., by deploying to different server hardware, or 
+reducing the number of virtual processors in a VM or container), or contact 
+sales to increase the number of processor cores that your subscription allows 
+for each instance. 
+
+$$$
+
 ### Decommissioning Servers [](id=decommissioning-servers)
 
 To decommission a server and free its activation key for reuse, select the 
@@ -540,7 +568,7 @@ server's environment on the left and then select the server. In the server's
 *Server Settings* tab, select *Unregister*. Also note that when you shut down a 
 server normally, its activation key is immediately freed for reuse. If the 
 server crashes or its shutdown is forced (e.g., kill), its activation key is 
-freed for reuse within five minutes. 
+freed for reuse within six minutes. 
 
 Next, you'll learn how to use elastic subscriptions with LCS. 
 
@@ -605,7 +633,7 @@ There are a few things to keep in mind when using environment tokens:
 
 - Minimal information (server name, location, etc...) is used to activate a 
   @product@ instance with LCS. You can change this information from 
-  [the server view in LCS](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-the-server-view) 
+  [the server view in LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-the-server-view) 
   at any time. 
 
 - Since environment tokens connect using OAuth, it's important to note that 
@@ -655,7 +683,7 @@ tab. This tab contains the following sections:
   environment token file, your selections here are embedded in it. Portal 
   analytics, fix pack management, and portal property analysis are selected by 
   default. Note that although 
-  [LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/7-0/using-lcs#what-lcs-stores-about-your-liferay-servers), 
+  [LCS doesn't access security sensitive properties](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers), 
   you may have additional properties you want to prevent LCS from analyzing. 
   Enter them into the box that appears when you select *Show Blacklisted 
   Properties*. 
@@ -694,7 +722,7 @@ download the token, follow these steps to use it to connect and activate a
 @product@ instance with LCS: 
 
 1. Ensure that you've addressed 
-   [the LCS preconfiguration steps](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration). 
+   [the LCS preconfiguration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration). 
 
 2. Shut down your @product@ instance if it's running. 
 

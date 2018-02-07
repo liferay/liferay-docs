@@ -3,20 +3,15 @@
 A Liferay Theme is the overall look and feel for a site. Themes are a 
 combination of CSS, JavaScript, HTML, and FreeMarker templates. Although the
 default themes are nice, you may wish to create your own custom look and feel
-for your site. 
+for your site. @product@ provides several tools and environments that you can 
+use to create themes:
 
-Liferay provides an easy-to-use tool called the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
-that helps automate the theme development process, but you can use other tools 
-and environments, such as [@ide@](/develop/tutorials/-/knowledge_base/7-0/creating-themes-with-liferay-ide)
-or [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)'s 
-[Theme Template](/develop/reference/-/knowledge_base/7-0/theme-template) to 
-create themes.
-
-Themes created with the Liferay Theme Generator give you access to 
-[theme gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks) 
-that offer basic functions, such as `build` and `deploy`, as well as 
-more complex interactions, such as auto deploying when a change is made and 
-setting the base theme.
+- [Theme Builder Gradle Plugin](/develop/reference/-/knowledge_base/7-0/theme-builder-gradle-plugin)
+- The 
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
+- [@ide@](/develop/tutorials/-/knowledge_base/7-0/creating-themes-with-liferay-ide)
+- [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)'s 
+[Theme Template](/develop/reference/-/knowledge_base/7-0/theme-template) 
 
 What if you only wish to make a minor change to the overall look and feel? Let's
 say you just want to change a menu animation. Instead of creating an entire
@@ -43,9 +38,7 @@ of your theme if using the Liferay Theme Generator, or copy them into the
 the changes.
 
 Once your theme is developed it is packaged as a WAR (Web application ARchive)
-file and can be deployed to the server, either manually or using build tools.
-
-Once your theme is deployed, apply it to your pages through the 
-[Look and Feel menu](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages).
-
+file and can be deployed to the server, either manually or using build tools. 
+Apply your theme to your pages through the 
+[Look and Feel menu](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages). 
 The only limitation is your imagination.

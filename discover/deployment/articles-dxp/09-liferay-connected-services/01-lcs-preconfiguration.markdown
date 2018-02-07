@@ -5,15 +5,15 @@ Services (LCS), you must first register your server with LCS. Before doing so,
 however, there are a few things you must take care of. The sections in this 
 guide walk you through these steps: 
 
-1. [Downloading the LCS Client App](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#downloading-the-lcs-client-app)
-2. [Preconfiguring LCS to Connect Through a Proxy](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
-3. [Ensuring Access to LCS](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#ensuring-access-to-lcs)
-4. [NTP Server Synchronization](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#ntp-server-synchronization)
-5. [Configuring the Patching Tool](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#configuring-the-patching-tool)
-6. [Installing the LCS Client App](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#installing-the-lcs-client-app)
+1. [Downloading the LCS Client App](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#downloading-the-lcs-client-app)
+2. [Preconfiguring LCS to Connect Through a Proxy](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
+3. [Ensuring Access to LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#ensuring-access-to-lcs)
+4. [NTP Server Synchronization](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#ntp-server-synchronization)
+5. [Configuring the Patching Tool](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#configuring-the-patching-tool)
+6. [Installing the LCS Client App](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#installing-the-lcs-client-app)
 
 Also, 
-[the last section](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#upgrading-the-lcs-client-app) 
+[the last section](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#upgrading-the-lcs-client-app) 
 in this guide shows you how to upgrade the LCS client app once your @product@ 
 instance is registered and activated with LCS. You must do this upgrade whenever 
 Liferay releases a new version of the app. 
@@ -70,7 +70,7 @@ purchased the app, you can skip to step three to download it):
     +$$$
 
     **Note:** If you need to download the LCS client app later, such as when 
-    [upgrading it](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration#upgrading-the-lcs-client-app), 
+    [upgrading it](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#upgrading-the-lcs-client-app), 
     select *Purchased Apps* from the User menu at the top-right of the screen. 
     This menu is available anywhere in liferay.com once you're logged in; you 
     don't have to be in Marketplace to access it. On the Purchased Apps screen, 
@@ -205,7 +205,7 @@ LCS uses @product@'s patching tool to apply updates. In @product@ bundles, the
 patching tool is pre-installed. If you're not running a bundle, 
 [click here to download the patching tool](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool). 
 Then see 
-[how to install the patching tool](/discover/deployment/-/knowledge_base/7-0/patching-liferay). 
+[how to install the patching tool](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-liferay). 
 Once installed, there are a few steps you must complete before LCS can use the 
 patching tool. Note that the commands below apply to Linux, Unix, and Mac. If 
 you're running Windows, drop the `.sh` from each command that has it. 
@@ -239,11 +239,11 @@ it by using the `patching.tool.agent.jvm.opts` property.
         -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF8"
 
 You may also experience issues on Windows if the user starting the app server
-doesn’t have administrator privileges.
-Here are some examples of the errors you may see:
+doesn't have administrator privileges. Here are some examples of the errors you 
+may see:
 
-`java.nio.file.FileSystemException: ..\webapps\ROOT\WEB-INF\lib\util-java.jar: Not a file!`
-`java.io.FileNotFoundException: java.io.IOException: Access refused`
+    java.nio.file.FileSystemException: ..\webapps\ROOT\WEB-INF\lib\util-java.jar: Not a file!
+    java.io.FileNotFoundException: java.io.IOException: Access refused
 
 To solve this, set the `java.io.tmpdir` system property as follows in the
 `patching.tool.agent.jvm.opts` property:
@@ -252,8 +252,8 @@ To solve this, set the `java.io.tmpdir` system property as follows in the
 
 The agent also has some flags you can set to control how it behaves:
 
-    `debug`: Provides verbose output in the console.
-    `nohalt`: Starts the portal even if the agent encounters an issue.
+- `debug`: Provides verbose output in the console.
+- `nohalt`: Starts the portal even if the agent encounters an issue.
 
 You can specify these as follows:
 

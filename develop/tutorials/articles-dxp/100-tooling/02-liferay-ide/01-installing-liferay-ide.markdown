@@ -43,13 +43,10 @@ compatible and can be copied to the new 3.1 version.
     [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/adding-a-liferay-bundle-to-a-workspace)
     for more information on this topic.
 
-    **Important:** The token generator currently has problems with certain
-    special characters contained in a password, which fails the token
-    generation. This is a bug and will be fixed in the next release of Liferay
-    @ide@. Visit the
-    [Generating a Workspace Token Manually](#generating-a-workspace-token-manually)
-    section to follow a manual process to generate a token if you're unable to
-    complete it automatically using the installer.
+    **Important:** The token generator sometimes has issues generating a token
+    for workspaces built behind a proxy. If you're unable to automatically
+    generate a workspace token, you can
+    [generate one manually](#generating-a-workspace-token-manually).
 
 3.  Run the installer. You may need to allow permission for the installer to run,
     depending on your operating system and where you want to install it.
@@ -129,9 +126,8 @@ Awesome! You've installed Liferay @ide@ in your existing Eclipse environment.
 
 ## Generating a Workspace Token Manually [](id=generating-a-workspace-token-manually)
 
-The Liferay @ide@ 3.1 release contains a few issues with generating a token
-used to store your Liferay credentials. If you run into an issue with generating
-your token automatically, you can follow the steps below to manually create one.
+If you run into any issues with generating your token automatically, you can
+follow the steps below to manually create one.
 
 1.  Navigate to [www.liferay.com](https://www.liferay.com/) and log in to your
     account.

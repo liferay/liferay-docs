@@ -4,7 +4,7 @@ In Java, developers are used to being able to find lots of context information
 at runtime. You can learn about what user is browsing your application, what
 page it's on, what site it's in, and lots more. Wouldn't it be great if you
 could access that same information in JavaScript? You can! You can use 
-@products@'s `ThemeDisplay` JavaScript object!
+@product@'s `ThemeDisplay` JavaScript object!
 
 It's a part of the `Liferay` global object that's automatically available to you
 in @product@ at runtime. You can refer to the object as `Liferay.ThemeDisplay`.
