@@ -71,44 +71,37 @@ folder or if it finds itself running on certain application servers, it creates
 a folder called `liferay` in the home folder of the operating system user that
 is running @product@. In this case, the `liferay` folder becomes Liferay Home.
 For example, if the operating system user's name is jbloggs, the Liferay Home
-folder is `/home/bloggs/liferay` or `C:\Users\jbloggs\liferay`.
+folder is `/home/jbloggs/liferay` or `C:\Users\jbloggs\liferay`.
 
 ## Extracting a @product@ Bundle [](id=extracting-a-liferay-bundle)
 
-Getting a @product@ bundle up and running is as easy as uncompressing the
-archive, possibly copying a JDBC driver, and then starting the application
-server. Let's use the @product@ Tomcat bundle as an example.
+Getting a @product@ bundle up and running involves uncompressing the archive,
+possibly copying a JDBC driver, and then starting the application server. Let's
+use the @product@ Tomcat bundle as an example.
 
 1.  Unzip your @product@ bundle.
 
-2.  If you're setting up @product@ to be an actual server, copy your database's
-    JDBC driver `.jar` file to `[Tomcat]/lib/ext`. If you're using a supported
-    open source database or if you're setting up @product@ for demo purposes,
-    you can skip this step.
+2.  If you're using a supported open source database or if you're setting up
+    @product@ for demo purposes, you can skip this step. Otherwise, copy your
+    database's JDBC driver `.jar` file to `[Tomcat]/lib/ext`. 
 
 That's it! You've extracted @product@, and it's ready for use. This is much
 easier than doing a manual installation on an app server. If, however, that's
 what you need to do, please at this point click the link on the left and go
 through the installation procedure for your app server of choice. When you're
 finished with the installation (and before you've started @product@ for the
-first time), come back to this spot, because you need to hook it up to your
+first time), come back to this spot, because you must hook it up to your
 database. 
 
 ## Connecting @product@ to Your Database [](id=connecting-product-to-your-database)
 
-You can connect @product@ to your database through either a data source
-configured on your app server or a data source configured in @product@. To
-configure the data source on your app server, refer to Liferay's documentation
-for installing @product@ on your specific app server type.  Because of its
-suitability for tuning, however, it is recommended to configure the data source
-in @product@.
+You can connect to your database with JNDI on your app server or the data source
+shipped with @product@ (recommended). Refer to the article on your app server
+for instructions on using JNDI. For the internal data source, you can configure
+it by specifying the configuration in a `portal-ext.properties` file or the
+[Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-product#using-liferays-setup-wizard):
 
-You can configure the data source in @product@ by specifying the configuration in a `portal-ext.properties` file or the
-[Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-product#using-liferays-setup-wizard).
-Here are the steps for creating a data source in a `portal-ext.properties` file:
-
-1.  Before starting @product@, create a `portal-ext.properties` file in your
-    Liferay Home folder.
+1.  Create a `portal-ext.properties` file in your Liferay Home folder.
 
 2.  Copy a relevant example data source configuration from
     one of the
@@ -124,39 +117,20 @@ You're ready to start @product@.
 
 ## Running @product@ for the First Time [](id=running-product-for-the-first-time)
 
-Next, start your app server, or start the @product@ app in your app server. For
-example, if you're using the @product@-Tomcat bundle, start Tomcat as if you had
-downloaded it manually. Tomcat is launched by invoking a script which is found
-in its `bin` folder. If you open a command prompt or terminal and go to this
-folder, you can launch Tomcat via the following command on Windows:
-
-    startup
-
-or the following command on Linux/Mac/Unix:
-
-    ./startup.sh
-
-The @product@ Tomcat bundle then starts. If you are on Windows, another command
-prompt window appears with Tomcat's console in it. If you are on Linux, you can
-see the Tomcat console by issuing the following command:
-
-    tail -f ../logs/catalina.out
-
+Next, start your app server, or start the @product@ app in your app server. 
 @product@ writes log files to folder `[Liferay Home]/logs`. 
 
-The first time @product@ starts, it'll take a while to create all of its database
-tables. Once it has successfully started, it automatically launches a web browser that
-displays @product@'s Basic Configuration page. If for some reason your browser
-doesn't load the Basic Configuration page, launch your web browser and navigate
-to [http://localhost:8080](http://localhost:8080). 
+The first time @product@ starts, it creates all of its database tables. Once it
+has successfully started, it automatically launches a web browser that displays
+the Basic Configuration page. If for some reason your browser doesn't load the
+Basic Configuration page, launch it and navigate to your app server's address
+and port (for example, http://localhost:8080). 
 
 ## Using @product@'s Setup Wizard [](id=using-liferays-setup-wizard)
 
-@product@'s Setup Wizard runs when you start @product@ for the first time. To make
-it easy to configure @product@, the first thing you see when browsing to your
-newly installed @product@ bundle is a setup wizard. The title of the setup wizard
-page is Basic Configuration. This page provides a convenient way to make an
-initial @product@ configuration.
+The Setup Wizard runs when you start @product@ for the first time. The title of
+the setup wizard page is Basic Configuration. This page provides a convenient
+way to make an initial configuration.
 
 There are two sections of the wizard: the portal and the administrator.  For the
 portal, you need to supply the following information:
@@ -175,25 +149,24 @@ For the administrator, you need to supply the following information:
 
 ![Figure 1: Supply the information for your portal and your portal's default administrator user on the Basic Configuration page.](../../images/basic-configuration1.png)
 
-The Basic Configuration page also includes a checkbox labeled *Add Sample
-Data*. If you check this box, sample data is added to @product@'s database. This
-data includes users, sites, and organizations. The sample data allows many
-@product@ features to be showcased. If you're installing @product@ on your own
-machine to explore its features, the sample data will probably be useful. If,
-however, you're installing @product@ on a real server, you should start with a
-clean system.
+The Basic Configuration page also includes a checkbox labeled *Add Sample Data*.
+If you check this box, sample data is added to your database. This data includes
+users, sites, and organizations. The sample data is for demo purposes. If you're
+installing @product@ on your own machine to explore its features, the sample
+data may be useful. If, however, you're installing @product@ on a real server,
+start with a clean system.
 
 Once you've filled out the form, click *Finish Configuration*. The setup wizard
 creates a `portal-setup-wizard.properties` file which stores the settings that
 you entered. When you begin customizing your portal's configuration, however,
-you should use the `portal-ext.properties` file you created earlier. All the
-possible properties that can be placed in this file are documented in [our
-reference documentation](http://docs.liferay.com/portal/7.0/propertiesdoc).
+use the `portal-ext.properties` file you created earlier. All the
+possible properties that can be placed in this file are documented in 
+[our reference documentation](http://docs.liferay.com/portal/7.0/propertiesdoc).
 
 +$$$
 
 **Tip:** The wizard is an extremely helpful tool, especially if you're setting
-up @product@ for the first time. If you're a @product@ veteran and you already have
+up @product@ for the first time. If you're a veteran and you already have
 your various properties set up, you can disable the setup wizard. If you disable
 the setup wizard, you must configure everything manually from the 
 `portal-ext.properties` file. To disable the setup wizard, enter
@@ -204,14 +177,13 @@ Home by the setup wizard) override property values in `portal-ext.properties`.
 $$$
 
 After you've entered the information requested by the Basic Configuration page,
-@product@ should bring you to its home page. You should set up your mail
-configuration next. 
+the home page appears. You should set up your mail configuration next. 
 
 ## Configuring Mail [](id=configuring-mail)
 
-Now that @product@ is up and running, log in as the administrative user you
-created in the setup wizard. Click the menu icon and then go to Control Panel
-&rarr; Server Administration &rarr; Mail, and have your mail credentials ready. 
+Log in as the administrative user you created in the setup wizard. Click the
+menu icon and then go to Control Panel &rarr; Server Administration &rarr; Mail,
+and have your mail credentials ready. 
 
 Fill out the form. You're asked for the following information: 
 
@@ -247,5 +219,5 @@ them here.
 
 When you're finished setting up your mail configuration, click *Save*. 
 
-Your next step for basic @product@ configuration is to convert the search
-implementation from its default demo mode into a production-ready mode. 
+Your next step is to convert the search implementation from its default demo
+mode into a production-ready mode. 

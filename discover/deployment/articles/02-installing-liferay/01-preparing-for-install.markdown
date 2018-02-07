@@ -107,47 +107,25 @@ database.
 ## Step 1: Choose a Database Server and Create a New Database [](id=step-1-choose-a-database-server-and-create-a-new-database)
 
 The recommended way of setting up your @product@ database is also the simplest.
-@product@ takes care of just about everything. You only need to take two
-simple steps:
+@product@ takes care of just about everything. You only need to take two simple
+steps:
 
-1.  Consult your database vendor's documentation about the database's default
-    query result order (e.g., case-sensitive or case-insensitive). Note how to
-    configure the default order. 
+1.  Create a blank database encoded with the character set UTF-8. @product@ is a
+    multilingual application and needs UTF-8 encoding to display all of its
+    supported character sets.
 
     +$$$
 
-    **Important**: The default query result order varies by database vendor.
-    Here are some examples of result order. 
-
-    Case-sensitive:
-
-        111
-        222
-        AAA
-        BBB
-        aaa
-        bbb
-
-    Case-insensitive:
-
-        111
-        222
-        AAA
-        aaa
-        BBB
-        bbb
+    **Note:** If you plan to migrate from one database vendor to another,
+    [configure the database to use the default query result order you expect for entities @product@ lists](/develop/tutorials/-/knowledge_base/7-0/sort-order-changed-with-a-different-database). 
 
     $$$
 
-2.  Create a blank database encoded with the character set UTF-8. @product@ is a
-    multilingual application and needs UTF-8 encoding to display all of its
-    supported character sets. 
-
-3.  Create a database user for accessing this database. Grant this database user
+2.  Create a database user for accessing this database. Grant this database user
     all rights, including the rights to create and drop tables, to the blank
     @product@ database.
 
-@product@ will use this database user's credentials to connect to the @product@
+@product@ uses this database user's credentials to connect to the @product@
 database either directly or through its application server. During its initial
 startup, @product@ creates the tables it needs in the database you just created.
 It does this automatically, complete with indexes.
@@ -213,7 +191,8 @@ S3Store. In addition, @product@ can be connected to various open source and
 enterprise-level document repositories. All of the repositories are connected to
 @product@ through hooks available on Liferay Marketplace (see below). 
 
-Once you have your database and document repository ready, you can install @product@ on your server.
+Once you have your database and document repository ready, you can install
+@product@ on your server.
 
 ## Step Two: Gather Your Mail Credentials [](id=step-two-gather-your-mail-credentials)
 
@@ -245,7 +224,7 @@ By far the easiest way to get @product@ installed is to use a bundle. Though
 bundles are pre-packaged for demo purposes, it is very easy to turn them into
 full, production-ready @product@ instances. 
 
-## Step Four: Network Configurations [](id=step-four-network)
+## Step Four: Network Configuration [](id=step-four-network)
 
 @product@ supports both IPv4 and IPv6 address formats. You must
 [choose between IPv4 or IPv6](/discover/deployment/-/knowledge_base/7-0/choosing-ipv4-or-ipv6).
@@ -289,16 +268,15 @@ to download and install apps from Marketplace. This is an additional layer of
 security that defines various permissions that apps may or may not have.
 --> 
 
-The portal installation process attempts to deploy and register the Marketplace
-plugin automatically. If you're installing @product@ in an environment that
-would prevent this from happening, you'll have to perform one of several
-workarounds. 
+The portal installation process deploys and registers the Marketplace plugin
+automatically. If you're installing @product@ in an environment that would
+prevent this from happening, you'll have to perform one of several workarounds. 
 
 Now that you know where you're headed, you can install @product@. If you have
 decided to install @product@ using a bundle, continue with the next section. If
 you're installing @product@ manually, skip to the section for your application
 server of choice. Once you have @product@ installed manually or via a bundle,
-you can move on to  
+you can move on to 
 [using @product@'s Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-product##using-liferays-setup-wizard),
 [configuring mail](/discover/deployment/-/knowledge_base/7-1/installing-product#configuring-mail),
 and 
