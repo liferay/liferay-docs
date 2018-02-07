@@ -109,7 +109,7 @@ Click a question to view the answer.
   </div>
 </div>
 
-### Why did the entity sort order change when I migrated to a new database type?
+### Why did the entity sort order change when I migrated to a new database type? [](id=why-did-the-entity-sort-order-change-when-i-migrated-to-a-new-database-type)
 
 [Your new database uses a different default query result order--you should be able to configure a different order](/develop/tutorials/-/knowledge_base/7-0/sort-order-changed-with-a-different-database).
 
