@@ -55,7 +55,7 @@ Follow these steps to create a Liferay plugin from the command line:
     the `-DarchetypeCatalog` option to point to the Liferay Repository when
     generating Maven archetypes. For example:
 
-        mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
+        mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/repositories/liferay-public-releases
 
     You'll also need to configure a couple other files to ensure the generation
     command completes successfully. You can refer to the
