@@ -32,7 +32,7 @@ four sample projects written in Swift. Screens is developed using Swift and
 development techniques that leverage functional Swift code and the 
 [Model View Presenter](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter) 
 architecture. You can use Swift or Objective-C with Screens, and you can run 
-Screens apps on iOS 8 and above--Screens doesn't use iOS 9 APIs. 
+Screens apps on iOS 9 and above. 
 
 Liferay Screens for iOS requires the following software: 
 
@@ -54,15 +54,16 @@ Liferay Screens for iOS requires the following software:
 video is outdated
 -->
 
-To use CocoaPods to prepare your iOS 8.0 (or above) project for Liferay Screens, 
+To use CocoaPods to prepare your iOS 9.0 (or above) project for Liferay Screens, 
 follow these steps:
 
 1.  In your project's root folder, add the following code to the file named 
-    `Podfile`, or create this file if it doesn't exist: 
+    `Podfile`, or create this file if it doesn't exist. Be sure to replace 
+    `Your Target` with your target's name: 
 
         source 'https://github.com/CocoaPods/Specs.git'
 
-        platform :ios, '8.0'
+        platform :ios, '9.0'
         use_frameworks!
 
         target "Your Target" do
@@ -70,18 +71,38 @@ follow these steps:
         end
 
         post_install do |installer|
-            installer.pods_project.targets.each do |target|
-                target.build_configurations.each do |config|
-                    config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
-                end
+          incompatiblePods = [
+            'Cosmos',
+            'CryptoSwift',
+            'KeychainAccess',
+            'Liferay-iOS-SDK',
+            'Liferay-OAuth',
+            'LiferayScreens',
+            'Kingfisher'
+          ]
+
+          installer.pods_project.targets.each do |target|
+            if incompatiblePods.include? target.name
+              target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '3.2'
+              end
             end
+            target.build_configurations.each do |config|
+                config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
+            end
+          end
         end
 
         # the rest of your podfile
 
-    Be sure to replace `Your Target` with your target's name. Also note that the 
-    `post_install` code is optional--it's a workaround for a benign bug that 
-    causes Screenlet previews not to render in Interface Builder. 
+    +$$$
+
+    **Note:** Liferay Screens and some of its dependencies aren't compatible 
+    with Swift 4. The `post_install` code in the `Podfile` ensures that Xcode 
+    compiles Screens and those dependencies in Swift 3.2. This lets you develop 
+    your app in Swift 4, while Screens itself is compiled in Swift 3.2. 
+
+    $$$
 
 2.  On the terminal, navigate to your project's root folder and run this 
     command: 
