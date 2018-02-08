@@ -262,18 +262,12 @@ Next, you'll learn new features for developing on @product@ using Maven.
 Liferay Portal 7.0+ and Liferay DXP fully support Maven development and offers
 several new and improved features: 
 
-- Liferay Workspace for Maven
+- [Liferay Workspace for Maven](/develop/tutorials/-/knowledge_base/7-1/maven-workspace)
 - New archetypes
 - New Maven plugins
 - More granular dependency management
 
-The new
-[Liferay Workspace for Maven](/develop/tutorials/-/knowledge_base/7-1/maven-workspace)
-offers a Maven environment built to hold and manage @product@ projects. This
-offers a full development lifecycle for your Maven projects to make developing
-them for @product@ easier than ever.
-
-The new archetype Liferay Project Templates Workspace generates a Liferay
+The new archetype `com.liferay.project.templates.workspace` generates a Liferay
 Workspace that includes a POM file for developing in Workspace using Maven. You
 can develop modules and themes in the Workspace subfolders. 
 
