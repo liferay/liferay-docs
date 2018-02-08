@@ -3,7 +3,7 @@
 If you're developing an npm-based portlet, your OSGi bundle's `package.json` is 
 a treasure-trove of information. It contains everything that's stored in the 
 npm registry about your bundle: default entry point, dependencies, modules, 
-package names, versions, and more. @product@'s 
+package names, versions, and more. Since Liferay DXP Fix Pack 37 and Liferay Portal 7.0 CE GA6, @product@'s 
 [`NPMResolver` APIs](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html) 
 expose this information so you can access it in your portlet. If it's defined
 in the OSGi bundle's `package.json`, you can retrieve the information in your
