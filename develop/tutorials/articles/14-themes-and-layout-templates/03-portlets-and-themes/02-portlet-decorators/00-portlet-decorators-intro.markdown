@@ -6,7 +6,7 @@ configuration menu. In @product-ver@ this option has been replaced with
 Portlet Decorators, a more powerful mechanism to customize the style of the
 application wrapper.
 
-If you inspect the markup of your @product@ application when it's on a page 
+If you inspect the markup of your application when it's on a page 
 you'll observe that it is wrapped by two layers. Among other things, these 
 layers provide some common basic features like the drag and drop and the 
 application border style. In order to protect these features, you can't modify 
