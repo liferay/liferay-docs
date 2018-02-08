@@ -1,0 +1,6 @@
+framework module LRMobileSDK {
+  umbrella header "Liferay-iOS-SDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

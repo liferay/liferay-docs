@@ -1,0 +1,6 @@
+framework module LiferayScreens {
+  umbrella header "LiferayScreens-umbrella.h"
+
+  export *
+  module * { export * }
+}

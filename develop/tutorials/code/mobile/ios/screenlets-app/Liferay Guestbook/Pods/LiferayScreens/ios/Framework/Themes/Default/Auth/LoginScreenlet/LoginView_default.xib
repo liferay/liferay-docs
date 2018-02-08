@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LoginView_default">
+            <rect key="frame" x="0.0" y="0.0" width="228" height="184"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" restorationIdentifier="oauth-action" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IUm-aw-kAf">
+                    <rect key="frame" x="0.0" y="70" width="228" height="44"/>
+                    <color key="backgroundColor" red="0.083623558282852173" green="0.66497266292572021" blue="0.84832382202148438" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="b3f-Ri-XlM"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="qeN-Qo-SmH"/>
+                    </constraints>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="AUTHORIZE">
+                                <attributes>
+                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyT-Vh-USo" userLabel="Basic Auth View">
+                    <rect key="frame" x="0.0" y="0.0" width="228" height="184"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQM-e9-Lbg" customClass="DefaultTextField">
+                            <rect key="frame" x="0.0" y="0.0" width="228" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="kR7-TD-EWl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="Ljx-cw-S27"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XBk-dU-LXI" customClass="DefaultTextField">
+                            <rect key="frame" x="0.0" y="58" width="228" height="51"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="51" id="CNl-Mk-h8J"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="default-lock-icon.png"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="YVX-sf-eSF"/>
+                            </connections>
+                        </textField>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="login-action" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kq3-Yb-Mpp">
+                            <rect key="frame" x="0.0" y="134" width="228" height="50"/>
+                            <color key="backgroundColor" red="0.083623558282852173" green="0.66497266292572021" blue="0.84832382202148438" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="T07-nA-0QZ"/>
+                            </constraints>
+                            <state key="normal">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="SIGN IN">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="kq3-Yb-Mpp" firstAttribute="top" secondItem="XBk-dU-LXI" secondAttribute="bottom" constant="25" id="2Av-Fy-pC8"/>
+                        <constraint firstAttribute="trailing" secondItem="XBk-dU-LXI" secondAttribute="trailing" id="E4j-Je-nEt"/>
+                        <constraint firstAttribute="trailing" secondItem="kq3-Yb-Mpp" secondAttribute="trailing" id="MEG-Xn-Ea2"/>
+                        <constraint firstItem="XBk-dU-LXI" firstAttribute="top" secondItem="lQM-e9-Lbg" secondAttribute="bottom" constant="8" id="Ppk-hF-24l"/>
+                        <constraint firstItem="lQM-e9-Lbg" firstAttribute="top" secondItem="QyT-Vh-USo" secondAttribute="top" id="UfE-1G-RXo"/>
+                        <constraint firstItem="lQM-e9-Lbg" firstAttribute="leading" secondItem="QyT-Vh-USo" secondAttribute="leading" id="YnU-0N-2v9"/>
+                        <constraint firstItem="XBk-dU-LXI" firstAttribute="leading" secondItem="QyT-Vh-USo" secondAttribute="leading" id="dws-wk-BIq"/>
+                        <constraint firstAttribute="trailing" secondItem="lQM-e9-Lbg" secondAttribute="trailing" id="hLl-sw-Tnb"/>
+                        <constraint firstItem="kq3-Yb-Mpp" firstAttribute="leading" secondItem="QyT-Vh-USo" secondAttribute="leading" id="toK-Wb-Sds"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="QyT-Vh-USo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2af-EG-zIG"/>
+                <constraint firstAttribute="trailing" secondItem="QyT-Vh-USo" secondAttribute="trailing" id="F5Q-9w-tPD"/>
+                <constraint firstAttribute="bottom" secondItem="QyT-Vh-USo" secondAttribute="bottom" id="Gbu-m5-jvA"/>
+                <constraint firstAttribute="trailing" secondItem="IUm-aw-kAf" secondAttribute="trailing" id="Pr7-dl-1m5"/>
+                <constraint firstItem="IUm-aw-kAf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Qb6-yg-VsB"/>
+                <constraint firstItem="QyT-Vh-USo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YvA-18-D2t"/>
+                <constraint firstItem="IUm-aw-kAf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="w4C-zG-BEm"/>
+                <constraint firstItem="IUm-aw-kAf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xem-vs-VGG"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="authorizeButton" destination="IUm-aw-kAf" id="6tV-qP-yvJ"/>
+                <outlet property="loginButton" destination="kq3-Yb-Mpp" id="XwX-Qs-mrT"/>
+                <outlet property="passwordField" destination="XBk-dU-LXI" id="pmz-6o-jcr"/>
+                <outlet property="userNameField" destination="lQM-e9-Lbg" id="4LP-gT-pQO"/>
+            </connections>
+            <point key="canvasLocation" x="446" y="547"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="default-lock-icon.png" width="12" height="16"/>
+    </resources>
+</document>

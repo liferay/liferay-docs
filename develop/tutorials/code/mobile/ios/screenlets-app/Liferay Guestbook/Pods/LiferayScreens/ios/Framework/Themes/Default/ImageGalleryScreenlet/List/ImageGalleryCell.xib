@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="133" id="KGk-i7-Jjw" customClass="ImageGalleryCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="133"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="132.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGi-EA-PtB">
+                        <rect key="frame" x="139" y="56" width="168" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0WL-Ee-Rgq">
+                        <rect key="frame" x="16" y="6" width="115" height="119.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="0WL-Ee-Rgq" secondAttribute="height" multiplier="26:27" id="gWr-WQ-zKq"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AGi-EA-PtB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="0ot-IC-2qn"/>
+                    <constraint firstAttribute="trailing" secondItem="AGi-EA-PtB" secondAttribute="trailing" constant="13" id="5b2-Wp-7vr"/>
+                    <constraint firstItem="0WL-Ee-Rgq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="78A-aj-OYF"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="AGi-EA-PtB" secondAttribute="bottom" constant="8" id="APr-Me-hBZ"/>
+                    <constraint firstItem="0WL-Ee-Rgq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ccd-hR-s5R"/>
+                    <constraint firstItem="0WL-Ee-Rgq" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.9" id="UAs-a1-y3y"/>
+                    <constraint firstItem="AGi-EA-PtB" firstAttribute="leading" secondItem="0WL-Ee-Rgq" secondAttribute="trailing" constant="8" id="Uta-1F-9GM"/>
+                    <constraint firstItem="AGi-EA-PtB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zgH-nF-qKw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imagePreview" destination="0WL-Ee-Rgq" id="52X-Yb-72q"/>
+                <outlet property="imageTitle" destination="AGi-EA-PtB" id="cwe-9H-MyZ"/>
+            </connections>
+            <point key="canvasLocation" x="243" y="153.5"/>
+        </tableViewCell>
+    </objects>
+</document>

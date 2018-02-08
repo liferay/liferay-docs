@@ -1,0 +1,5 @@
+"com.liferay.portal.NoSuchUserException"="Usuario no ha sido encontrado.";
+"http-error"="El servidor ha retornado un código de error.";
+"json-parsing-error"="El servidor ha retornado un formato incorrecto.";
+"url-has-moved"="La URL solicitada se ha movido";
+"wrong-credentials"="El servidor no ha autorizado la petición. Compruebe las credenciales e inténtelo de nuevo.";

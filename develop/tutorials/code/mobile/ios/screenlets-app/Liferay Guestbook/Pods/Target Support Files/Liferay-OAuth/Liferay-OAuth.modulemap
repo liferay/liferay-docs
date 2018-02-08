@@ -1,0 +1,6 @@
+framework module LROAuth {
+  umbrella header "Liferay-OAuth-umbrella.h"
+
+  export *
+  module * { export * }
+}

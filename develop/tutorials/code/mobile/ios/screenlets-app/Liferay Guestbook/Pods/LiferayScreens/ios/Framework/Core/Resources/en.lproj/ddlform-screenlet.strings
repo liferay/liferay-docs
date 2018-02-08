@@ -1,0 +1,15 @@
+"ddlform-screenlet-validation-field"="Field \"%@\" is not valid";
+"ddlform-screenlet-uploading-message-singular"="Uploading file...\nWait few seconds...";
+"ddlform-screenlet-uploading-message-plural"="Uploading files...\nWait few seconds...";
+"ddlform-screenlet-uploading-retry"="Retrying failed upload...\nWait few seconds...";
+"ddlform-screenlet-upload-metadata-description"="";
+"ddlform-screenlet-upload-metadata-changelog"="Uploaded from Liferay Screens app";
+"ddlform-screenlet-undefined-structure"="Structure is undefined";
+"ddlform-screenlet-undefined-user"="User is undefined";
+"ddlform-screenlet-undefined-group"="Group is undefined";
+"ddlform-screenlet-undefined-recordset"="Recordset is undefined";
+"ddlform-screenlet-undefined-values"="Values are undefined";
+"ddlform-screenlet-undefined-current-value"="Values are empty";
+"ddlform-screenlet-undefined-fileprefix"="File prefix undefined";
+"ddlform-screenlet-undefined-repository"="Repository undefined";
+"ddlform-screenlet-undefined-folder"="Folder is undefined";

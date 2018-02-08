@@ -1,0 +1,11 @@
+"core-base-list-loading-message"="Cargando lista...\nEspere unos segundos...";
+"core-base-list-loading-error"="Error cargando lista";
+
+"core-yes"="Sí";
+"core-no"="No";
+
+"core-an-image-has-been-selected"="Una imagen ha sido seleccionada";
+"core-a-video-has-been-selected"="Un vídeo ha sido seleccionado";
+"core-a-file-is-already-uploaded"="Un fichero ha sido subido previamente";
+
+"core-NSPhotoLibraryUsageDescription-key-not-present"="Esta aplicación intenta acceder a datos confidenciales sin una descripción de uso. El Info.plist de la aplicación debe contener una clave NSPhotoLibraryUsageDescription con un valor textual que explique al usuario cómo utiliza estos datos la aplicación.";

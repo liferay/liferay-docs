@@ -1,0 +1,5 @@
+"rating-screenlet-undefined-classPK"="El atributo classPK no está definido";
+"rating-screenlet-undefined-className"="El atributo className no está definido";
+"rating-screenlet-undefined-entryId"="El atributo entryId no está definido";
+"rating-screenlet-wrong-ratingsGroupCount"="El atributo ratingsGroupCount no es correcto. Tiene que ser un número entero mayor que 0";
+"rating-screenlet-wrong-score"="El atributo score no es correcto. Tiene que ser un número decimal entre 0 y 1";
