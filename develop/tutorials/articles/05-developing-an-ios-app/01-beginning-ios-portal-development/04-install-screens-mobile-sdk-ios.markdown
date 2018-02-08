@@ -52,7 +52,7 @@ navigator, there are two *Liferay Guestbook* items:
 It's important not to confuse these two items. If you're ever confused about 
 where things should go, 
 [click here](https://github.com/liferay/liferay-docs/tree/7.0.x/develop/tutorials/code/mobile/ios/screenlets-app/Liferay%20Guestbook) 
-to see the finished app in GitHub. 
+to see the finished app in GitHub.
 
 Now you're ready to install Liferay Screens! 
 

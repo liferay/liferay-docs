@@ -50,4 +50,4 @@ Path material to your own Screenlets.
 
 If you get confused or stuck while creating Guestbook List Screenlet, refer to 
 the finished app that contains the Screenlet code 
-[here in GitHub](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/05-mobile-ios/Liferay%20Guestbook). 
+[here in GitHub](https://github.com/liferay/liferay-docs/tree/7.0.x/develop/tutorials/code/mobile/ios/screenlets-app/Liferay%20Guestbook). 
