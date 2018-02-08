@@ -46,7 +46,7 @@ Here are the tooling improvement topics:
 
 - [Moving from the Plugins SDK to Liferay Workspace](#from-the-plugins-sdk-to-liferay-workspace)
 - [Developing projects with Liferay Workspace](#developing-projects-with-liferay-workspace)
-- [What's new in @product@ for Maven Users](#whats-new-in-product-ver-for-maven-users)
+- [What's new for Maven Users](#whats-new-for-maven-users)
 - [Using other build systems and IDEs](#using-other-build-systems-and-ides)
 
 ## From the Plugins SDK to Liferay Workspace [](id=from-the-plugins-sdk-to-liferay-workspace)
@@ -63,9 +63,13 @@ Here are Workspace's key features:
 - [Module and component templates](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli#project-templates)
 - [Sample projects](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 - Portal server configurations
+- [Project validation]()
+- [Integration testing]()
 - Folder structure flexibility
 - [Commands](/develop/tutorials/-/knowledge_base/7-1/blade-cli) to migrate
   plugins, install @product@ bundles, and start/stop Portal instances
+
+<!-- TODO: Add links above, when available. -Cody -->
 
 The
 [plugin upgrade](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
@@ -108,7 +112,9 @@ user acceptance testing, production, and more.
 Each subfolder under `configs` holds a Portal server configuration defined by
 its `portal-ext.properties` file. Gradle property
 `liferay.workspace.environment` in Workspace's `gradle.properties` file
-specifies the configuration to use.
+specifies the configuration to use. See the
+[Testing Projects](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
+section for more details.
 
 Other Gradle properties let you set root locations for the @product@ bundle,
 modules, themes, and a Plugins SDK. See the
@@ -124,6 +130,7 @@ section for a list of all available Workspace properties.
 `liferay.workspace.modules.dir` | Module projects root folder |
 `liferay.workspace.plugins.sdk.dir` | Plugins SDK root folder |
 `liferay.workspace.themes.dir` | Theme projects root folder |
+`liferay.workspace.wars.dir` | WAR-style projects root folder |
 
 Workspace has Gradle tasks equivalent to the Plugins SDK Ant targets.
 
@@ -170,10 +177,10 @@ Next, learn how Workspace facilitates module development.
 Workspace is a great Liferay module development environment because of these
 features: 
 
--   Templates that bootstrap module creation
--   Gradle and Maven build systems for managing dependencies and assembling
-    modules
--   Module deployment and runtime management capabilities
+- Templates that bootstrap module creation
+- Gradle and Maven build systems for managing dependencies and assembling
+  modules
+- Module deployment and runtime management capabilities
 
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) (Blade), which is
 a part of Workspace, has over thirty templates for Gradle and Maven-based module
@@ -228,12 +235,15 @@ Building and deploying modules in a Workspace is a snap using
 and
 [Blade](/develop/tutorials/-/knowledge_base/7-1/deploying-modules-with-blade-cli).
 Workspace uses BndTools to generate each module's OSGi headers in a
-`META-INF/MANIFEST.MF` file. Workspace deploy modules to the OSGi container
+`META-INF/MANIFEST.MF` file. Workspace deploys modules to the OSGi container
 using Felix File Install commands.
 
 Liferay @ide@ lets you deploy modules by dragging them onto your Portal server.
 
 ![Figure 5: Liferay @ide@ lets you deploy modules using drag-and-drop.](../../../images/improved-tooling-drag-n-drop-onto-server.png)
+
+To learn more about Workspace and using it in Liferay @ide@, see
+[this tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-a-liferay-workspace-with-liferay-ide). 
 
 In a terminal, you can deploy modules using Blade's `deploy` command. For
 example, the following command deploys the current module and 
@@ -241,27 +251,27 @@ example, the following command deploys the current module and
 
     blade deploy -w
 
-To learn more about Workspace and using it in Liferay @ide@, see these
-tutorials: 
-
--   [Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
--   [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
--   [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
-
-And make sure to check out the tutorial
+Make sure to check out the tutorial
 [Starting Module Development](/develop/tutorials/-/knowledge_base/7-1/starting-module-development). 
+for even more information on module development.
 
 Next, you'll learn new features for developing on @product@ using Maven.
 
 ## What's New for Maven Users [](id=whats-new-for-maven-users)
 
-Liferay Portal 7.0+ and Liferay DXP fully supports Maven development and offers
+Liferay Portal 7.0+ and Liferay DXP fully support Maven development and offers
 several new and improved features: 
 
--   Liferay Workspace for Maven
--   New archetypes
--   New Maven plugins
--   More granular dependency management
+- Liferay Workspace for Maven
+- New archetypes
+- New Maven plugins
+- More granular dependency management
+
+The new
+[Liferay Workspace for Maven](/develop/tutorials/-/knowledge_base/7-1/maven-workspace)
+offers a Maven environment built to hold and manage @product@ projects. This
+offers a full development lifecycle for your Maven projects to make developing
+them for @product@ easier than ever.
 
 The new archetype Liferay Project Templates Workspace generates a Liferay
 Workspace that includes a POM file for developing in Workspace using Maven. You
@@ -295,9 +305,9 @@ Liferay also provides several new and updated
 build process. For example, the following plugins build style sheets, services,
 and themes respectively:
 
--   [CSS Builder](/develop/tutorials/-/knowledge_base/7-0/compiling-sass-files-in-a-maven-project)
--   [Service Builder](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
--   [Theme Builder](/develop/tutorials/-/knowledge_base/7-0/building-themes-in-a-maven-project)
+- [CSS Builder](/develop/tutorials/-/knowledge_base/7-1/compiling-sass-files-in-a-maven-project)
+- [Service Builder](/develop/tutorials/-/knowledge_base/7-1/using-service-builder-in-a-maven-project)
+- [Theme Builder](/develop/tutorials/-/knowledge_base/7-1/building-themes-in-a-maven-project)
 
 @product-ver@'s modularity provides a more granular dependency management
 experience. You no longer need to depend on `portal-impl` or `portal-service`
