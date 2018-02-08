@@ -50,13 +50,13 @@ Follow these steps to add a view controller to the storyboard:
     Navigation controller has no label. The back button's default left chevron 
     indicates the button's purpose without the need for additional text. 
 
-    ![Figure 3: Label the scene in the navigation bar, and set the back button's label to an empty space.](../../../images/ios-lp-back-button-label.png)
+    ![Figure 2: Label the scene in the navigation bar, and set the back button's label to an empty space.](../../../images/ios-lp-back-button-label.png)
 
 5.  With the guestbooks scene's view controller selected in the storyboard, open 
     the Attributes inspector and uncheck *Adjust Scroll View Insets*. This 
     ensures that the scene's contents are flush with the navigation bar. 
 
-    ![Figure 4: Make sure the view controller's *Adjust Scroll View Insets* option is unchecked in the Attributes inspector.](../../../images/ios-lp-adj-scroll-view-ins.png)
+    ![Figure 3: Make sure the view controller's *Adjust Scroll View Insets* option is unchecked in the Attributes inspector.](../../../images/ios-lp-adj-scroll-view-ins.png)
 
 Great! You now have the guestbooks scene, embedded in a navigation controller. 
 For this scene's view controller to work, it must have a class that controls its 
@@ -82,7 +82,7 @@ class.
     - **Also create XIB file:** Unchecked
     - **Language:** Swift
 
-    ![Figure 5: Set these options when creating the view controller's class.](../../../images/ios-lp-gb-vc-class.png)
+    ![Figure 4: Set these options when creating the view controller's class.](../../../images/ios-lp-gb-vc-class.png)
 
 3.  The final screen in the dialog lets you set the class's location, group, and 
     targets. Make sure *Liferay Guestbook* is selected for both the *Group* and 
@@ -91,7 +91,7 @@ class.
 4.  In the storyboard, select the guestbooks scene's view controller. In the 
     Identity inspector, set `GuestbooksViewController` as the Custom Class. 
 
-    ![Figure 6: Set `GuestbooksViewController` as the custom class of the guestbooks scene's view controller.](../../../images/ios-lp-gb-vc-cc.png)
+    ![Figure 5: Set `GuestbooksViewController` as the custom class of the guestbooks scene's view controller.](../../../images/ios-lp-gb-vc-cc.png)
 
 Nice! The guestbooks scene's view controller now has a class that governs its 
 behavior. You may have noticed a big problem, though. There's no way for the 
@@ -108,7 +108,7 @@ Follow these steps to create and trigger the segue:
     select *show* for the segue type. The segue now connects the login scene's 
     view controller and the navigation controller. 
 
-    ![Figure 7: A segue now exists from the login scene to the navigation controller.](../../../images/ios-lp-login-segue.png)
+    ![Figure 6: A segue now exists from the login scene to the navigation controller.](../../../images/ios-lp-login-segue.png)
 
 2.  Now you must tell the login scene's view controller when to perform this 
     segue. You'll do this programmatically in the `ViewController` class. To 
@@ -120,7 +120,7 @@ Follow these steps to create and trigger the segue:
     inspector. Enter *loginsegue* in the *Identifier* field, and press 
     *return*. 
 
-    ![Figure 8: Set the segue's ID in the Attributes inspector.](../../../images/ios-lp-login-segue-id.png)
+    ![Figure 7: Set the segue's ID in the Attributes inspector.](../../../images/ios-lp-login-segue-id.png)
 
 3.  Recall that the `ViewController` class's 
     `screenlet(_:onLoginResponseUserAttributes:)` method is called upon 
@@ -145,7 +145,7 @@ Follow these steps to create and trigger the segue:
 Great! Your app can now navigate to the guestbooks scene after login. To verify 
 this, run the app and log in. 
 
-![Figure 9: Following successful login, the app now navigates to the empty guestbooks scene.](../../../images/ios-lp-gb-scene-empty.png)
+![Figure 8: Following successful login, the app now navigates to the empty guestbooks scene.](../../../images/ios-lp-gb-scene-empty.png)
 
 Awesome! You've successfully added a scene for displaying guestbooks, and set 
 the app to take the user there after login. Now you're ready to develop 

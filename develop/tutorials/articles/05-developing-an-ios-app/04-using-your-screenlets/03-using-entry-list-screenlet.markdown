@@ -138,9 +138,9 @@ Screenlet to display a list of that guestbook's entries. Pressing the back
 button returns you to the guestbooks scene, where you can select a different 
 guestbook. 
 
-![Figure 1: After login, Guestbook List Screenlet displays the list of guestbooks from the portlet.](../../../images/ios-lp-gb-screenlet.png)
+![Figure 3: After login, Guestbook List Screenlet displays the list of guestbooks from the portlet.](../../../images/ios-lp-gb-screenlet.png)
 
-![Figure 2: Selecting a guestbook displays a list of that guestbook's entries via Entry List Screenlet.](../../../images/ios-lp-entries-screenlet.png)
+![Figure 4: Selecting a guestbook displays a list of that guestbook's entries via Entry List Screenlet.](../../../images/ios-lp-entries-screenlet.png)
 
 Congratulations! Now you know how to use Liferay Screens and create your own 
 Screenlets. This opens up a world of possibilities for developing apps that 

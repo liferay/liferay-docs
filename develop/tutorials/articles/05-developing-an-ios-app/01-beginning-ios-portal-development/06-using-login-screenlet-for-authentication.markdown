@@ -61,9 +61,9 @@ Follow these steps to add Login Screenlet to the scene:
     have to use these exact width and height values when using Login Screenlet. 
     You can size the Screenlet however you wish. 
 
-    ![Figure 3: Setting these size constraints ensures that Login Screenlet isn't too stretched out or compressed.](../../../images/ios-lp-size-constraints.png)
+    ![Figure 4: Setting these size constraints ensures that Login Screenlet isn't too stretched out or compressed.](../../../images/ios-lp-size-constraints.png)
 
-    ![Figure 4: With the alignment and size constraints set, Login Screenlet appears in the center of the scene and its UI components aren't too compressed or stretched out.](../../../images/ios-lp-login-scene.png)
+    ![Figure 5: With the alignment and size constraints set, Login Screenlet appears in the center of the scene and its UI components aren't too compressed or stretched out.](../../../images/ios-lp-login-scene.png)
 
 Nicely done! The scene now contains Login Screenlet. Next, you'll conform 
 `ViewController` (the scene's view controller class) to the 
@@ -126,7 +126,7 @@ protocol:
 
         @IBOutlet weak var loginScreenlet: LoginScreenlet!
 
-    ![Figure 5: Create an outlet from Login Screenlet to the `ViewController` class.](../../../images/ios-lp-login-screenlet-outlet.png)
+    ![Figure 6: Create an outlet from Login Screenlet to the `ViewController` class.](../../../images/ios-lp-login-screenlet-outlet.png)
 
 5.  In the `ViewController` class, use the new `loginScreenlet` variable to set 
     the view controller as the Screenlet's delegate. Do this in the 
@@ -169,7 +169,7 @@ the app using the iPhone simulator (any iPhone version supported by Xcode will
 work). Enter your credentials when Login Screenlet appears and click *SIGN IN*. 
 In Xcode, the `Login Successful!` message appears in the console. 
 
-![Figure 6: It worked!](../../../images/ios-lp-login-successful.png)
+![Figure 7: It worked!](../../../images/ios-lp-login-successful.png)
 
 Nice job! Nothing else happens, though. Your app still displays Login Screenlet. 
 This is expected. There aren't any other scenes for your app to navigate to. In 

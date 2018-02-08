@@ -32,8 +32,8 @@ Follow these instructions to install and configure a local @product@ instance:
 3.  Now you're ready to start @product@! Open a terminal and navigate to 
     `[Liferay Home]/tomcat-[version]/bin`. Then run these commands: 
 
-        `./startup.sh`
-        `tail -f ../logs/catalina.out`
+        ./startup.sh
+        tail -f ../logs/catalina.out
 
     The `tail` command ensures that the server log prints to the terminal. 
 

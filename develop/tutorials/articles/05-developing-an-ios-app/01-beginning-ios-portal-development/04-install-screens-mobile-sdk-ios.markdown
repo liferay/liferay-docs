@@ -147,7 +147,7 @@ things now:
     Unzip this file to a location of your choosing on your machine. This creates 
     the following directory hierarchy: 
 
-    ![Figure 2: The Guestbook Mobile SDK's Objective-C classes unzip to this folder structure.](../../../images/ios-lp-sdk-structure.png)
+    ![Figure 3: The Guestbook Mobile SDK's Objective-C classes unzip to this folder structure.](../../../images/ios-lp-sdk-structure.png)
 
     This should look familiar. It's the same `Service` folder, contents and all, 
     from the Guestbook Mobile SDK you built earlier. 
@@ -157,9 +157,9 @@ things now:
     dialog that appears, make sure you select the following items, and then 
     click *Finish*: 
 
-    ![Figure 3: When adding the Guestbook Mobile SDK to your project, select these options and then click *Finish*.](../../../images/ios-lp-add-sdk.png)
+    ![Figure 4: When adding the Guestbook Mobile SDK to your project, select these options and then click *Finish*.](../../../images/ios-lp-add-sdk.png)
 
-    ![Figure 4: Your project structure should look like this after adding the Guestbook SDK.](../../../images/ios-lp-post-sdk-install.png)
+    ![Figure 5: Your project structure should look like this after adding the Guestbook SDK.](../../../images/ios-lp-post-sdk-install.png)
 
 3.  The `v7` folder and its contents are now inside your Xcode project. Now you 
     must change each Objective-C class header file in the Guestbook Mobile SDK 
@@ -176,7 +176,7 @@ things now:
     checkbox for the *Liferay Guestbook* target is selected in the File 
     inspector's *Target Membership* section. 
 
-    ![Figure 5: Each `*.m` file in the Guestbook Mobile SDK must be part of the *Liferay Guestbook* target.](../../../images/ios-lp-target-membership.png)
+    ![Figure 6: Each `*.m` file in the Guestbook Mobile SDK must be part of the *Liferay Guestbook* target.](../../../images/ios-lp-target-membership.png)
 
 To use the Guestbook Mobile SDK's Objective-C classes from Swift, you must add 
 and configure an Objective-C bridging header in your project. Follow these 
@@ -186,13 +186,13 @@ instructions to do so:
     File*. In the window that appears, select *Header File* from the *Source* 
     section of the *iOS* tab, and click *Next*.
 
-    ![Figure 5: Create a new iOS header file.](../../../images/ios-lp-header-file-01.png)
+    ![Figure 7: Create a new iOS header file.](../../../images/ios-lp-header-file-01.png)
 
 2.  Name the file `Liferay Guestbook-Bridging-Header.h` and make sure that 
     *Liferay Guestbook* with the blue icon is selected in the *Group* menu. To 
     finish creating the file, uncheck any items in *Targets* and click *Create*.
 
-    ![Figure 6: Use these options to create the header file.](../../../images/ios-lp-header-file-02.png)
+    ![Figure 8: Use these options to create the header file.](../../../images/ios-lp-header-file-02.png)
 
 3.  Upon creating the header file, Xcode opens it in the editor. In this file, 
     you must import the Guestbook Mobile SDK's header files. Add these imports 
@@ -218,7 +218,7 @@ instructions to do so:
     the section *Swift Compiler - General*. In the two *Liferay Guestbook* 
     fields for this build setting, enter the bridging header's file name. 
 
-    ![Figure 7: The red boxes highlight the two Liferay Guestbook fields configured to use the bridging header file.](../../../images/ios-lp-build-settings-header.png)
+    ![Figure 9: The red boxes highlight the two Liferay Guestbook fields configured to use the bridging header file.](../../../images/ios-lp-build-settings-header.png)
 
 5.  Build the project. 
 
@@ -236,14 +236,14 @@ with your @product@ installation. You'll do this by setting attributes in a
     appears, select the *iOS* tab then scroll down to the *Resource* section and 
     select *Property List*. Click *Next*. 
 
-    ![Figure 8: Use the Property List template to create a new `plist` file.](../../../images/ios-lp-plist-01.png)
+    ![Figure 10: Use the Property List template to create a new `plist` file.](../../../images/ios-lp-plist-01.png)
 
 2.  Name the file `liferay-server-context.plist` and make sure you're creating 
     it in the *Liferay Guestbook* folder, which should be selected in the 
     *Group* menu. Also make sure that *Liferay Guestbook* is selected in the 
     *Targets* menu. Then click *Create*. 
 
-    ![Figure 9: Create the `plist` file as shown here.](../../../images/ios-lp-plist-02.png)
+    ![Figure 11: Create the `plist` file as shown here.](../../../images/ios-lp-plist-02.png)
 
 3.  The `plist` file now opens in the editor. Right-click the file in the 
     Project navigator and select *Open As* &rarr; *Source Code*. Replace the 
@@ -279,7 +279,7 @@ with your @product@ installation. You'll do this by setting attributes in a
 
 Next, you'll configure iOS App Transport Security. 
 
-## Disabling App Transport Security
+## Disabling App Transport Security [](id=disabling-app-transport-security)
 
 App Transport Security is an iOS security feature that restricts all network 
 activity to HTTPS. It isn't necessary for use in development and testing. Since 
@@ -290,7 +290,7 @@ it:
 1.  Select your project in Xcode's Project navigator. With the *Liferay 
     Guestbook* target selected in the outline, click the *Info* tab. 
 
-    ![Figure 10: You'll disable App Transport Security in the Info tab.](../../../images/ios-lp-ats-01.png)
+    ![Figure 12: You'll disable App Transport Security in the Info tab.](../../../images/ios-lp-ats-01.png)
 
 2.  In *Custom iOS Target Properties*, right-click *Bundle OS Type Code* and 
     select *Add Row*. In the new row's text field, enter *App Transport Security 
@@ -302,7 +302,7 @@ it:
     Settings and select *Allow Arbitrary Loads*. Then select *YES* for this 
     field's value. 
 
-    ![Figure 11: Your App Transport Security settings should look like this.](../../../images/ios-lp-ats-02.png)
+    ![Figure 13: Your App Transport Security settings should look like this.](../../../images/ios-lp-ats-02.png)
 
     The Allow Arbitrary Loads setting should look like this when viewing your 
     app's `Info.plist` file as code: 
