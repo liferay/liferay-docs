@@ -33,13 +33,13 @@ Next you can learn more about Clay's structure.
 
 ## Clay CSS Structure [](id=clay-css-structure)
 
-Clay CSS is bundled with two sub-themes: Clay Base and Atlas. Clay Base is 
-@product@'s Bootstrap API extension. It is also the theme that is used in 
-@product@'s Styled Theme. It adds all the features and components you need and 
-inherits Bootstrap's styles. As a result, Clay Base is fully compatible with 
-third party themes that leverage Bootstrap's Sass variable API. As a best 
-practice, you should use the Clay Base as your base theme to integrate third 
-party themes into @product@.
+Clay CSS is bundled with two sub-themes: Clay Base and Atlas. Clay Base is
+@product@'s Bootstrap API extension. It is also the theme that is used in the
+Styled Theme. It adds all the features and components you need and inherits
+Bootstrap's styles. As a result, Clay Base is fully compatible with third party
+themes that leverage Bootstrap's Sass variable API. As a best practice, you
+should use the Clay Base as your base theme to integrate third party themes into
+@product@.
 
 Atlas is @product@'s custom Bootstrap theme that is used in the Classic Theme. 
 Its purpose is to overwrite and manipulate Bootstrap and Clay Base to create
@@ -120,7 +120,7 @@ Next you can learn how to customize the Clay Base.
 
 You can customize Clay Base with just a few imports.
 
-In your custom theme's `/src/css` folder (for legacy ant themes, place in 
+In your custom theme's `/src/css` folder (legacy ant themes: 
 `/_diff/css`) add a file named `font_awesome.scss` with the code below and save:
 
     // Icon paths
@@ -129,8 +129,8 @@ In your custom theme's `/src/css` folder (for legacy ant themes, place in
         
         @import "font-awesome/scss/font-awesome"
 
-Then in that same folder, add a file name `_clay_variables.scss`. All your 
-Atlas, Bootstrap, and Clay Base variable modifications must be placed in this 
+Then in that same folder, add a file named `_clay_variables.scss`. All your
+Atlas, Bootstrap, and Clay Base variable modifications must be placed in this
 file.
 
 As mentioned earlier, any custom CSS should be placed in `_custom.scss`.
