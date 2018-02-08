@@ -1,4 +1,4 @@
-# Using External Libraries [](id=using-external-libraries)
+# Using External JavaScript Libraries [](id=using-external-javascript-libraries)
 
 You can use external (i.e., anything but Metal.js, jQuery, or Lodash, which are
 included in @product@) JavaScript libraries in your portlets. There are a few

@@ -10,5 +10,5 @@ these ways:
 - Modular applications keep related functionality close together.
 - Modularized code makes it easier to find what you're looking for.
 
-This section contains tutorials relating to the different JavaScript Module
-Loaders included present on the @product@ platform.
+These tutorials show you how to use JavaScript libraries not included in
+@product@ and how to load modules using AUI. 
