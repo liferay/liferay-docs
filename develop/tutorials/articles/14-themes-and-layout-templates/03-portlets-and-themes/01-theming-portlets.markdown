@@ -6,9 +6,11 @@ markup for the portlet containers by modifying the `portlet.ftl` file.
 This tutorial demonstrates how to style portlets with your themes.
 
 ## Portlet FTL [](id=portlet-ftl)
-
+<!--It doesn't seem to me that this section
+is giving instructions on how to do anything. I'm told that descriptive texts
+of this sort belong in /reference, not /tutorials-NR-->
 Here is a quick look at the default 
-[`portlet.ftl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-classic/src/templates/portlet.ftl) 
+[`portlet.ftl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-classic/src/templates/portlet.ftl)
 that's included in the default theme of @product-ver@:
 
     <#assign
@@ -69,29 +71,23 @@ configuration menu. In @product-ver@ this option has been replaced with
 Portlet Decorators, a more powerful mechanism to customize the style of the 
 application wrapper.
 
-The default portlet decorators are covered next.
-
-### Default Portlet Decorators [](id=default-portlet-decorators)
-
 Themes come bundled with three default portlet decorators in their 
 `liferay-look-and-feel.xml`. These are listed below:
 
-- `Barebone`: when this decorator is applied, neither the wrapping box nor the 
-custom application title are shown. This option is recommended when you only 
-want to display the bare application content.
+-  `Barebone`: this decorator displays the bare application content, showing 
+    neither the wrapping box nor the custom application title. 
 
-- `Borderless`: when this decorator is applied, the application is no longer 
-wrapped in a white box, but the application custom title is displayed at the top.
+-  `Borderless`: this decorator shows the title at the top, but does not display
+    a wrapping box.
 
-- `Decorate`: this is the default Portlet Decorator when using the Classic 
-theme. When this decorator is applied, the application is wrapped in a white box 
-with a border and the application custom title is displayed at the top.
+-  `decorate`: this is the default Portlet Decorator when using the Classic 
+    theme. It wraps the application in a white box with a border, and displays the title at the top.
 
-You can learn how to create and apply your own portlet decorators in the section 
-dedicated to 
-[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/portlet-decorators).
-
-Now you know how to make your portlets stylish!
+Now you know how to make your portlets stylish! But if default decorators are
+not stylish enough for you, [EDITOR: Our defaults are always stylish!] go to
+[Portlet
+Decorators](/develop/tutorials/-/knowledge_base/7-1/portlet-decorators) to
+learn how make and apply your own.
 
 ## Related Topics [](id=related-topics)
 

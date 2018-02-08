@@ -1,13 +1,10 @@
 # Embedding Portlets in Themes and Layout Templates [](id=embedding-portlets-in-themes-and-layout-templates)
 
-One thing developers often want to do is embed a portlet in a theme or layout
-template. This makes the portlet visible on all pages where the theme/layout is
-used. In the past, this was only possible by hard-coding a specific portlet into
-place, which has many drawbacks. @product@ provides the *Portlet Providers*
-framework that requires you only specify the entity type and action to be
-displayed. Based on the given entity type and action, @product@ determines which
-deployed portlet to use. This increases the flexibility and modularity of
-embedding portlets in @product@.
+You may occasionally want to embed a portlet in a theme or layout template,
+making the portlet visible on all pages where the theme/layout is used. Since
+there are numerous drawbacks to hard-coding a specific portlet into place, the
+*Portlet Providers* framework offers an alternative that displays the
+appropriate portlet based on a given entity type and action.
 
 In this tutorial, you'll learn how to declare an entity type and action in a
 custom theme/layout, and you'll create a module that finds the correct portlet
@@ -19,13 +16,14 @@ into a theme.
 The first thing you should do is open the template file for which you want to
 declare an embedded portlet. For example, the `portal_normal.ftl` template file
 is a popular place to declare embedded portlets. There are two ways to embed a 
-portlet in a theme: by class name or by portlet name. Both methods are covered 
-in this section.
+portlet in a theme: by class name or by portlet name. Both methods are covered
+in this section.<!--Which is better, to embed by class name or by portlet name?
+I feel like we should be recommending one or the other-NR-->
 
 ### Embedding a Portlet by Class Name [](id=embedding-a-portlet-by-class-name)
 
-To embed a portlet by class name, insert the following declaration wherever you 
-want to embed the portlet:
+To embed a portlet by class name, insert the following declaration where you
+want the portlet embedded:
 
     <@liferay_portlet["runtime"]
         portletProviderAction=ACTION
@@ -95,9 +93,9 @@ find the portlet that fits the theme's request.
     for embedding in a theme. This example module returns the portlet ID of the
     Language portlet specified in
     [SiteNavigationLanguagePortletKeys](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/web-experience/site-navigation/site-navigation-language-api/src/main/java/com/liferay/site/navigation/language/constants/SiteNavigationLanguagePortletKeys.java).
-    Furthermore, it returns the PLID, which is the ID that uniquely identifies a
-    page used by your theme. By retrieving these, your theme will know which
-    portlet to use, and which page to use it on.
+    It also returns the PLID, which is the ID that uniquely
+    identifies a page used by your theme. By retrieving these, your theme will
+    know which portlet to use, and which page to use it on.
 
 The only thing left to do is generate the module's JAR file and copy it to your
 Portal's `osgi/modules` directory. Once the module is installed and activated in
@@ -191,7 +189,7 @@ file.
 
 **Note:** Velocity layout templates are supported, but deprecated as of 
 @product-ver@. We recommend that you convert your Velocity layout templates to 
-FreeMarker at your earliest convenience.
+FreeMarker.
 
 $$$
 
