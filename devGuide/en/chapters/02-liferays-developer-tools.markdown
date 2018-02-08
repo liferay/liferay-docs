@@ -1941,20 +1941,28 @@ First, specify the Liferay Repository's credentials in your project's parent
 
     <repositories>
         <repository>
-            <id>liferay-ce</id>
-		    <name>Liferay CE</name>
-		    <url>https://repository.liferay.com/nexus/content/groups/liferay-ce</url>
-		    <releases><enabled>true</enabled></releases>
-		    <snapshots><enabled>true</enabled></snapshots>
+            <id>liferay-public-releases</id>
+            <name>Liferay Public Releases</name>
+            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
-	  
-	<pluginRepositories>
+
+    <pluginRepositories>
         <pluginRepository>
-            <id>liferay-ce</id>
-            <url>https://repository.liferay.com/nexus/content/groups/liferay-ce/</url>
-            <releases><enabled>true</enabled></releases>
-            <snapshots><enabled>true</enabled></snapshots>
+            <id>liferay-public-releases</id>
+            <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </pluginRepository>
     </pluginRepositories>
 
@@ -1970,7 +1978,7 @@ Next, when interacting with the Liferay Repository, you'll need to use
 specialized commands to access it. Use the following command to access the CE
 repo:
 
-    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
+    mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/repositories/liferay-public-releases
 
 <!-- You'll notice I provided the specialized command here and in the portlet
 archetype example. Once everything is synced correctly and we're not solely
@@ -2506,7 +2514,7 @@ plugins using the command line.
 
 2.  Execute the command
 
-        mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/groups/liferay-ce
+        mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/
 
     ---
     
@@ -2530,19 +2538,19 @@ plugins using the command line.
     output looks similar to the following text: 
 
         ...
-        4: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        4: https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/ -> com.liferay.
         maven.archetypes:liferay-portlet-jsf-archetype
         (Provides an archetype to create Liferay JSF portlets.)
-        5: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        5: https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/ -> com.liferay.
         maven.archetypes:liferay-layouttpl-archetype
         (Provides an archetype to create Liferay layout templates.)
-        6: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        6: https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/ -> com.liferay.
         maven.archetypes:liferay-portlet-archetype
         (Provides an archetype to create Liferay portlets.)
-        7: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        7: https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/ -> com.liferay.
         maven.archetypes:liferay-portlet-liferay-faces-alloy-archetype
         (Provides an archetype to create Liferay Faces Alloy portlets.)
-        8: https://repository.liferay.com/nexus/content/groups/liferay-ce/ -> com.liferay.
+        8: https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/ -> com.liferay.
         maven.archetypes:liferay-portlet-primefaces-archetype
         (Provides an archetype to create Liferay PrimeFaces portlets.)
         ...

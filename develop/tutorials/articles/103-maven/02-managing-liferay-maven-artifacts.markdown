@@ -218,8 +218,8 @@ First, specify the Liferay Repository's credentials in your project's parent
             </snapshots>
         </repository>
     </repositories>
-	  
-	<pluginRepositories>
+
+    <pluginRepositories>
         <pluginRepository>
             <id>liferay-public-releases</id>
             <url>https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/</url>
