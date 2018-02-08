@@ -98,7 +98,6 @@ Follow these steps to create your Screenlet's View class:
                 object: AnyObject) {
 
                     let guestbook = object as! GuestbookModel
-
                     cell.textLabel?.text = guestbook.name
             }
 
@@ -123,7 +122,6 @@ Follow these steps to create your Screenlet's View class:
                 object: AnyObject) {
 
                     let guestbook = object as! GuestbookModel
-
                     cell.textLabel?.text = guestbook.name
             }
 
