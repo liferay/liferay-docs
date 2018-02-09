@@ -1,4 +1,4 @@
-# Workflow Definition Nodes
+# Workflow Definition Nodes [](id=workflow-definition-nodes)
 
 After your definition's schema and metadata are in place, begin defining the
 process. *Node* elements, with their sub-elements, are the fundamental building
@@ -166,7 +166,7 @@ blocks making up workflow definitions.
             </transitions>
         </join-xor>
 
-- [Task nodes](/develop/tutorials/-/knowledge_base/7-0/workflow-task-nodes) are
+- [Task nodes](/develop/tutorials/-/knowledge_base/7-1/workflow-task-nodes) are
     at the core of the workflow definition. They're the part where a user
     interacts with the asset in some way. Beyond the user interaction, tasks can
     have several sub-elements, including notifications, assignments, and task

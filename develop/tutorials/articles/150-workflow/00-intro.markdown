@@ -1,10 +1,10 @@
-# Workflow
+# Workflow [](id=workflow)
 
-Use the workflow framework to run assets through a business process to suit your
+Use the workflow framework to run assets through a business process that suit your
 organization's needs. Workflow processes are designed from scratch using XML or
-via the handy [Kaleo Designer](LINK) tool that comes with DE subscriptions.
+via the handy [Kaleo Designer](https://customer.liferay.com/documentation/7.1/admin/-/official_documentation/portal/kaleo-designer) tool that comes with DE subscriptions.
 
-![Figure x: As opposed to boring old XML, the visual Kaleo Designer
+![Figure 1: As opposed to boring old XML, the visual Kaleo Designer
 makes designing workflows easy and intuitive.](../../images/legal-marketing-def.png)
 
 This set of tutorials delves into the following workflow framework topics:
@@ -14,4 +14,5 @@ This set of tutorials delves into the following workflow framework topics:
 - Creating Workflow Engine Adapters
 
 To manage workflow definitions and define their assignment schemes, check out
-the [workflow section of the administrator documentation](LINK)
+the [workflow section of the administrator documentation](LINK)(not yet
+written).

@@ -1,4 +1,4 @@
-# Workflow Task Nodes
+# Workflow Task Nodes [](id=workflow-task-nodes)
 
 Task nodes are fundamental parts of a workflow definition. When you start
 defining your organization's business processes and planning workflows, you
@@ -14,8 +14,8 @@ workflow process enters the task node.
 
 Commonly, task nodes contain task timers, assignments, actions (which can
 include notifications and scripts), and transitions. Notifications and actions
-aren't limited to task nodes. Task nodes and their assignments deserve their own
-article (this one).
+aren't limited to task nodes, but task nodes and their assignments deserve their
+own article (this one).
 
 Check out the Review task in the Single Approver definition, noting that several
 `<role>` tags are excluded from this snippet for brevity:
@@ -67,15 +67,15 @@ Check out the Review task in the Single Approver definition, noting that several
 There are two `actions` in the review task, both `<notification>`s. Each
 notification may contain a name, template, notification-type, execution-type,
 and recipients. Besides notifications, You can also use the `<action>` tag.
-These have a name and a [script](/discover/portal/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow), and are more often used in state nodes than
+These have a name and a [script](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow), and are more often used in state nodes than
 tasks.
 
-## Assignments 
+## Assignments [](id=assignments)
 
 Workflow tasks are completed by a user. Assignments make sure the right users
 can access the tasks. You can choose how you want to configure your assignments. 
 
-You can choose to add assignments to specific roles, multiple roles of a role
+You can choose to add assignments to specific roles, to multiple roles of a role
 type (organization, site, or regular role types), to the asset creator, to
 resource actions, or to specific users. Additionally, you can write a script to
 define the assignment. For an example, see the
@@ -98,7 +98,6 @@ the task.
             <user-id>20156</user-id>
         </user>
     </assignments>
-
 
 The above assignment specifies that only the user with the user ID of 20156 may
 complete the task. Alternatively, specify the `<screen-name>` or
@@ -162,14 +161,14 @@ UPDATE action in an assignment, then anyone who has permission to update the
 type of asset being processed in the workflow is assigned to the task. You can
 configure multiple assignments for a task.
 
-## Resource Action Assignments
+## Resource Action Assignments [](id=resource-action-assignments)
 
 *Resource actions* are operations performed by users on an application or entity
 in @product@. For example, a user might have permission to update Message Boards
 Messages. This is called an UPDATE resource action, because the user can update
 the resource. If you're uncertain about what resource actions are, refer to the
 developer tutorial on @product@'s [permission
-system](/develop/tutorials/-/knowledge_base/7-0/adding-permissions-to-resources)
+system](/develop/tutorials/-/knowledge_base/7-1/adding-permissions-to-resources)
 for a more detailed explanation.
 
 To find all the resource actions that have been configured in @product@, you
@@ -178,7 +177,7 @@ you need permission for the VIEW action on the roles resource).
 
 - Navigate to Control Panel &rarr; Users &rarr; Roles.
 - Add a new Regular Role. See the 
-  [article on managing roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions)
+  [article on managing roles](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
   for more information.
 - Once the role is added, navigate to the Define Permissions interface for the
   role.
@@ -215,7 +214,7 @@ resource. For example, in Message Boards, one of the permissions displayed on
 that screen is *Add Discussion*. Convert that to all uppercase and replace the
 space with an underscore, and you have the action name. 
 
-## Task Timers
+## Task Timers [](id=task-timers)
 
 Task timers trigger an action after a specified time period passes. Timers are
 useful for ensuring a task does not go unattended for a long time. Available
@@ -272,5 +271,5 @@ The above snippet demonstrates how to set up a reassignment action.
 
 Tasks are at the core of the workflow definition. Once you understand how to
 create tasks and the other [workflow
-nodes](/discover/portal/-/knowledge_base/7-0/workflow-definition-nodes), and add
+nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes), and add
 transitions between the nodes, you're on the cusp of workflow wizardhood.
