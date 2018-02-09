@@ -1,11 +1,11 @@
-# Using the Default CKEditor Plugins Bundled with @product@'s AlloyEditor [](id=using-ckeditor-plugins-in-alloyeditor)
+# Using the Default CKEditor Plugins Bundled with AlloyEditor [](id=using-ckeditor-plugins-in-alloyeditor)
 
 You can customize an editor's configuration to include several modifications, 
 such as 
 [adding new buttons](/develop/tutorials/-/knowledge_base/7-0/creating-and-contributing-new-buttons-to-alloyeditor) 
 and 
 [adding new behaviors](/develop/tutorials/-/knowledge_base/7-0/adding-new-behavior-to-an-editor).
-You can also use existing CKEditor plugins in @product@'s AlloyEditor. Several 
+You can also use existing CKEditor plugins in AlloyEditor. Several 
 CKEditor plugins are packaged with @product@'s AlloyEditor, so you can use them 
 with just a few configuration adjustments. This tutorial shows how to use the 
 CKEditor plugins bundled with @product@'s AlloyEditor. The 
