@@ -1,22 +1,22 @@
 # Decision to Implement Staging [](id=decision-to-implement-staging)
 
-@product@'s Staging feature is an advanced publication tool that lets you create
-or modify your site before releasing it to the public. Most of @product@'s
-included applications (e.g., Web Content and Bookmarks) support Staging.
-Implementing Staging in your own application can be beneficial, but how do you
-know if it's the right move?
+Staging is an advanced publication tool that lets you create or modify your site
+before releasing it to the public. Most of @product@'s included applications
+(e.g., Web Content, Bookmarks, etc.) support Staging. Implementing Staging in
+your own application can be beneficial, but how do you know if it's the right
+move?
 
 Not every application needs to support Staging and Export/Import. The most
 important question to consider during the decision process is
 
 *What part of your application are you primarily focused on using Staging for?*
 
-When Staging is enabled in @product@, all pages and applications are staged
-automatically. @product@'s architecture separates the application and its
-configuration from the actual content, meaning that content can exist without
-any application to display it and vice versa. Although Staging and the
-Export/Import framework supports all applications and their configurations by
-default, not all applications' content is supported by Staging.
+When Staging is enabled, all pages and applications are staged automatically.
+@product@'s architecture separates the application and its configuration from
+the actual content, meaning that content can exist without any application to
+display it and vice versa. Although Staging  supports all applications and their
+configurations by default, not all applications' content is supported by
+Staging.
 
 Implementing Staging for your application means you're defining the logic for
 how the Staging framework should process, serialize, and de-serialize your app's
@@ -50,12 +50,12 @@ removed from the live site only.
 From a technical standpoint, publishing an entity or content follows the process
 below:
 
-1. The entity's possible references are discovered and processed.
-2. The entity's fields are processed.
-3. The entity is serialized into a LAR file.
-4. The LAR is transferred to the live site (local or remote live).
-5. After de-serialization, the entity's fields are processed.
-6. The entity is added to the database.
+1.  The entity's possible references are discovered and processed.
+2.  The entity's fields are processed.
+3.  The entity is serialized into a LAR file.
+4.  The LAR is transferred to the live site (local or remote live).
+5.  After de-serialization, the entity's fields are processed.
+6.  The entity is added to the database.
 
 Awesome! You should now have a good idea about whether you should implement
 Staging for your application.
