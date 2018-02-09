@@ -101,7 +101,7 @@ Property Name | Type | Default Value | Description
 <a name="parentdir"></a>`parentDir` | `File` | `null` | The directory of the parent theme. It sets the `--parent-path` argument.
 <a name="parentfile"></a>`parentFile` | `File` | `null` | The JAR file of the parent theme. If `parentDir` is specified, this property has no effect. It sets the `--parent-path` argument.
 <a name="parentname"></a>`parentName` | `String` | `null` | The name of the parent theme. It sets the `--parent-name` argument.
-<a name="templateextenstion"></a>`templateExtension` | `String` | `null` | The extension of the template files, usually `"ftl"` or `"vm"`. It sets the `--template-extension` argument.
+<a name="templateextension"></a>`templateExtension` | `String` | `null` | The extension of the template files, usually `"ftl"` or `"vm"`. It sets the `--template-extension` argument.
 <a name="themename"></a>`themeName` | `String` | `null` | The name of the new theme. It sets the `--name` argument.
 <a name="unstyleddir"></a>`unstyledDir` | `File` | `null` | The directory of [Liferay Frontend Theme Unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-unstyled). It sets the `--unstyled-dir` argument.
 <a name="unstyledfile"></a>`unstyledFile` | `File` | `null` | The JAR file of [Liferay Frontend Theme Unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-unstyled). If `unstyledDir` is specified, this property has no effect. It sets the `--unstyled-dir` argument.
