@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Liferay_Guestbook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utY-Pe-aia" customClass="LoginScreenlet">
+                                <rect key="frame" x="52" y="240.5" width="270" height="185"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="CwL-hp-aNa"/>
+                                    <constraint firstAttribute="width" constant="270" id="cDV-CJ-qK1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="utY-Pe-aia" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dth-uM-vev"/>
+                            <constraint firstItem="utY-Pe-aia" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ixH-Kb-TY7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginScreenlet" destination="utY-Pe-aia" id="KoB-5P-JvP"/>
+                        <segue destination="ods-rs-UT9" kind="show" identifier="loginsegue" id="Abj-9J-SEd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="27"/>
+        </scene>
+        <!--Guestbooks-->
+        <scene sceneID="AMO-Rb-fFZ">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ASp-js-JqI" customClass="GuestbooksViewController" customModule="Liferay_Guestbook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="acZ-5N-CJH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glb-Bk-jsD" customClass="GuestbookListScreenlet" customModule="Liferay_Guestbook" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="glb-Bk-jsD" firstAttribute="bottom" secondItem="mPG-QA-48a" secondAttribute="bottom" id="Ovw-Fx-VNJ"/>
+                            <constraint firstItem="glb-Bk-jsD" firstAttribute="top" secondItem="mPG-QA-48a" secondAttribute="top" id="abv-Nh-vT5"/>
+                            <constraint firstItem="glb-Bk-jsD" firstAttribute="leading" secondItem="mPG-QA-48a" secondAttribute="leading" id="t2H-g8-y6l"/>
+                            <constraint firstItem="glb-Bk-jsD" firstAttribute="trailing" secondItem="mPG-QA-48a" secondAttribute="trailing" id="xbt-fB-aoI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mPG-QA-48a"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Guestbooks" id="lDl-qN-9cs">
+                        <barButtonItem key="backBarButtonItem" title=" " id="qMZ-Hx-FRo"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="screenlet" destination="glb-Bk-jsD" id="Xlg-4b-FTK"/>
+                        <segue destination="wTD-FK-Lbj" kind="show" identifier="entriessegue" id="bur-2K-pjJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RiG-dw-YzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1693.5999999999999" y="26.53673163418291"/>
+        </scene>
+        <!--Entries View Controller-->
+        <scene sceneID="hLU-qj-Wyr">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="wTD-FK-Lbj" customClass="EntriesViewController" customModule="Liferay_Guestbook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IzJ-ih-uLL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNJ-qL-9Fa" customClass="EntryListScreenlet" customModule="Liferay_Guestbook" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GNJ-qL-9Fa" firstAttribute="bottom" secondItem="ZQK-Cv-lzd" secondAttribute="bottom" id="Bx0-0d-HsA"/>
+                            <constraint firstItem="GNJ-qL-9Fa" firstAttribute="leading" secondItem="ZQK-Cv-lzd" secondAttribute="leading" id="CSq-da-Ess"/>
+                            <constraint firstItem="GNJ-qL-9Fa" firstAttribute="trailing" secondItem="ZQK-Cv-lzd" secondAttribute="trailing" id="R9y-1G-HAQ"/>
+                            <constraint firstItem="GNJ-qL-9Fa" firstAttribute="top" secondItem="ZQK-Cv-lzd" secondAttribute="top" id="Y4v-iW-ra2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZQK-Cv-lzd"/>
+                    </view>
+                    <connections>
+                        <outlet property="screenlet" destination="GNJ-qL-9Fa" id="ZMd-Yb-a4v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6kj-Pf-9dZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2620" y="25.637181409295355"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PgZ-8W-RdP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ods-rs-UT9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gcP-RO-gce">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ASp-js-JqI" kind="relationship" relationship="rootViewController" id="oKN-Al-tMT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RWc-Jm-vbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="27"/>
+        </scene>
+    </scenes>
+</document>

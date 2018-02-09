@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CommentAddView_default">
+            <rect key="frame" x="0.0" y="0.0" width="421" height="66"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduce your comment..." textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="cp5-cR-eQs" customClass="DefaultTextField">
+                    <rect key="frame" x="8" y="8" width="317" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Pxa-Hc-sBx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                    <connections>
+                        <action selector="editingDidChangeAction" destination="iN0-l3-epB" eventType="editingChanged" id="6kM-1c-Xmr"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" restorationIdentifier="add-comment" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KOW-5A-wES">
+                    <rect key="frame" x="333" y="8" width="80" height="50"/>
+                    <color key="backgroundColor" red="0.083623558279999996" green="0.66497266290000001" blue="0.84832382200000001" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="AW6-d0-dbR"/>
+                    </constraints>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Send">
+                                <attributes>
+                                    <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="KOW-5A-wES" secondAttribute="trailing" constant="8" id="1a7-Q2-QdX"/>
+                <constraint firstItem="KOW-5A-wES" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="A74-gq-DAY"/>
+                <constraint firstAttribute="bottom" secondItem="KOW-5A-wES" secondAttribute="bottom" constant="8" id="Euu-41-4Wc"/>
+                <constraint firstItem="cp5-cR-eQs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="JKY-zi-lug"/>
+                <constraint firstAttribute="bottom" secondItem="cp5-cR-eQs" secondAttribute="bottom" constant="8" id="RtL-z0-RQr"/>
+                <constraint firstItem="cp5-cR-eQs" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Y6n-Ff-Fxz"/>
+                <constraint firstItem="KOW-5A-wES" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="m9K-d0-gA6"/>
+                <constraint firstItem="cp5-cR-eQs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="xam-vw-yPf"/>
+                <constraint firstItem="KOW-5A-wES" firstAttribute="leading" secondItem="cp5-cR-eQs" secondAttribute="trailing" constant="8" id="yGQ-op-dTt"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addCommentTextField" destination="cp5-cR-eQs" id="jxM-VB-Mhs"/>
+                <outlet property="sendCommentButton" destination="KOW-5A-wES" id="gAc-Sv-zS1"/>
+            </connections>
+            <point key="canvasLocation" x="280.5" y="228"/>
+        </view>
+    </objects>
+</document>
