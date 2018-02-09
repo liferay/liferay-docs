@@ -101,7 +101,7 @@ original `create_account.jsp`:
 
 Now you can easily modify the JSPs of any application in Liferay.
 
-![Figure 1: Liferay's applications are swimming in the OSGi runtime, waiting for your fragment modules to clean their teeth, so to speak.](../../images/sharks.jpg)
+![Figure 1: Liferay's applications are swimming in the OSGi runtime, waiting for your fragment modules to clean their teeth, so to speak.](../../../images/sharks.jpg)
 <!--https://commons.wikimedia.org/wiki/File:Carcharhinus_perezi_bahamas_feeding.jpg-->
 
 To see a sample JSP-modifying fragment in action, look at the

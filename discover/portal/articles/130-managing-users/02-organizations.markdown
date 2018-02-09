@@ -257,7 +257,7 @@ this organization and a list of all the sub-organizations of this organization.
 <!-- See if a screenshot of this for the proposed Lunar Resort intranet
 organizations could replace the textual hierarchy representation above -->
 
-## Organization Types
+## Organization Types [](id=organization-types)
 
 By default, @product@ only includes the *Organization* type. Configure
 additional organization types using `portal.properties`. There are two main
