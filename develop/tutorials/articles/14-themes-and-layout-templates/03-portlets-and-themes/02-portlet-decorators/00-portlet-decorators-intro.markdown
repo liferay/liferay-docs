@@ -1,11 +1,11 @@
 # Portlet Decorators [](id=portlet-decorators)
 
-Portlet Decorators are a powerful mechanism to customize the style of an
-application's wrapper. If you inspect the markup of your application when it's
-on a page you'll observe that it is wrapped by two layers. Among other things,
-these layers provide some common basic features like the drag and drop and the
-application border style. In order to protect these features, you can't modify
-the markup of these layers directly with a theme.
+Portlet Decorators customize the style of an application's wrapper. If you
+inspect the markup of your application when it's on a page you'll observe that
+it is wrapped by two layers. Among other things, these layers provide some
+common basic features like drag and drop and the application border style.
+In order to protect these features, you can't modify the markup of these layers
+directly with a theme.
 
 With Portlet Decorators, you can add a CSS class to one of these wrapping layers
 via a user's setting. By defining styles for this class in your theme, you can

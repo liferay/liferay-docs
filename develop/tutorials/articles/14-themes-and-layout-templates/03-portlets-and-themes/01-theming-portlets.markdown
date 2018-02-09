@@ -8,7 +8,7 @@ This tutorial demonstrates how to style portlets with your themes.
 ## Portlet FTL [](id=portlet-ftl)
 
 Although you can individually style a portlet via the theme's CSS or the
-portlet's [*Look and Feel Configuration*]( https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/look-and-feel-configuration)
+portlet's [Look and Feel Configuration](/discover/portal/-/knowledge_base/7-1/look-and-feel-configuration)
 menu, you may want to modify the default look and feel for all portlets in your
 site. A portlet's template--its container, CSS classes, and overall HTML
 Markup--is defined via the theme's `portlet.ftl` file. To provide a custom style
@@ -93,8 +93,7 @@ decorators in their `liferay-look-and-feel.xml`:
 
 Now you know how to make your portlets stylish! But if default decorators are
 not stylish enough for you, [EDITOR: Our defaults are always stylish!] go to
-[Portlet
-Decorators](/develop/tutorials/-/knowledge_base/7-1/portlet-decorators) to
+[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/portlet-decorators) to
 learn how make and apply your own.
 
 ## Related Topics [](id=related-topics)
