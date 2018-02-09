@@ -4,11 +4,10 @@ A good user experience is the measure of a well-designed site. A user's time is
 highly valuable. The last thing you want is for someone to grow frustrated with
 your site because of constant page reloads. A Single Page Application (SPA) 
 avoids this issue. Single Page Applications drastically cut down on load times 
-by loading only a single HTML page that is dynamically updated as the user
+by loading only a single HTML page that's dynamically updated as the user
 interacts and navigates through the site. This provides a more seamless app 
-experience by eliminating page reloads. In @product@, **SPA is enabled by 
-default in your apps and sites and requires no changes to your workflow or 
-code!**
+experience by eliminating page reloads. **SPA is enabled by default in your apps
+and sites and requires no changes to your workflow or code!**
 
 This tutorial covers these key topics:
 
@@ -21,10 +20,10 @@ This tutorial covers these key topics:
 ## The Benefits of SPAs [](id=the-benefits-of-spas)
 
 Let's say you're surfing the web and you find a really rad site that happens to
-be SPA enabled. Alright! Page load times are blazin' fast. You're deep into the
-site, scrolling along, when you find this great post that just speaks to you.
-You copy the URL from the address bar and email it to all of your friends with
-the subject: 'Your Life Will Change Forever.' They must experience this
+be SPA enabled. All right! Page load times are blazin' fast. You're deep into
+the site, scrolling along, when you find this great post that just speaks to
+you. You copy the URL from the address bar and email it to all of your friends
+with the subject: 'Your Life Will Change Forever.' They must experience this
 awe-inspiring work! 
 
 You get a response back almost immediately. "This is a rad site, but what post
@@ -37,7 +36,7 @@ back to the post, but it takes you to the site you were on before you ever
 visited this one. The page history didn't update as you navigated through the 
 app; Only the main app URL was saved. 
 
-What a bummer! "Why? Why have you failed me site?" you cry.
+What a bummer! "Why? Why have you failed me, site?" you cry.
 
 If only there was a way to have a Single Page Application, but also be able to
 link to the content you want. Well, don't despair my friend. You can have your
@@ -56,7 +55,7 @@ SennaJS provides the following key enhancements to SPA:
 **SEO & Bookmarkability**: Sharing or bookmarking a link displays the same
 content you are viewing. Search engines are able to index this content.
 
-**Hybrid rendering**: Ajax + server-side rendering lets you disable pushState at
+**Hybrid rendering**: Ajax + server-side rendering lets you disable `pushState` at
 any time, allowing progressive enhancement. You can use your preferred method to
 render the server side (e.g. HTML fragments or template views).
 
@@ -88,17 +87,18 @@ using `XMLHttpRequest`. For security reasons, some browsers won't evaluate
 the content and parses them to ensure that they meet the browser loading
 requirements.
 
-You can read more about SennaJS as well as see examples at 
-[http://sennajs.com/](http://sennajs.com/).
+You can see examples and read more about SennaJS at its 
+[website](http://sennajs.com/).
 
 Now that you have a better understanding of how SennaJS benefits SPA, you can
 learn how to enable and configure options for SPA within @product@ next.
 
 ## Enabling SPA [](id=enabling-spa)
 
-Enabling SPA is easy. Deploy `com.liferay.frontend.js.spa.web-[version]` module
-and enable it, and you're all set to use SPA. Since this module is included with 
-@product@ by default, you shouldn't have to do anything. 
+Enabling SPA is easy. Since this module is included by default, you shouldn't
+have to do anything. If you've removed it, deploy
+`com.liferay.frontend.js.spa.web-[version]` module and enable it, and you're all
+set to use SPA. 
 
 **SPA is enabled by default in your apps and sites, and requires no changes to 
 your workflow or existing code!**
@@ -108,7 +108,7 @@ Next you can learn how to customize SPA settings to meet your own needs.
 ## Customizing SPA Settings [](id=customizing-spa-settings)
 
 Depending on what behaviors you need to customize, you can configure SPA options
-in one of two places. SPA caching and SPA timeout settings can be configured in
+in one of two places. SPA caching and SPA timeout settings are configured in
 System Settings. If you wish to disable SPA for a certain link, page, or portlet
 in your site, you can do so within the corresponding element itself. All SPA
 configuration options are covered here. 
@@ -166,7 +166,7 @@ To blacklist a portlet from SPA, follow these steps:
 2.  Set the `com.liferay.portlet.single-page-application` property to false:
 
         com.liferay.portlet.single-page-application=false
-        
+ 
     If you prefer, you can set this property to false in your `portlet.xml` 
     instead by adding the following property to the `<portlet>` section:
 
