@@ -83,7 +83,7 @@ Name | Depends On | Type | Description
 `cleanNPM` | \- | [`Delete`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Delete.html) | Deletes the `node_modules` directory, the `npm-shrinkwrap.json` file and the `package-lock.json` files from the project, if present.
 <a name="downloadnode"></a>`downloadNode` | \- | [`DownloadNodeTask`](#downloadnodetask) | Downloads and unpacks the local Node.js distribution for the project. If `node.download` is `false`, this task is disabled.
 `npmInstall` | `downloadNode` | [`NpmInstallTask`](#npminstalltask) | Runs `npm install` to install the dependencies declared in the project's `package.json` file, if present. By default, the task is [configured](#npminstallretries) to run `npm install` two more times if it fails.
-[`npmRun${script}`](#tasks-npmrunscript) | `npmInstall` | [`ExecuteNpmTask`](#executenpmtask) | Runs the `${script}` NPM script.
+[`npmRun${script}`](#npmrunscript-task) | `npmInstall` | [`ExecuteNpmTask`](#executenpmtask) | Runs the `${script}` NPM script.
 `npmPackageLock` | `cleanNPM`, `npmInstall` | [`DefaultTask`](https://docs.gradle.org/current/javadoc/org/gradle/api/DefaultTask.html) | Deletes the NPM files and runs `npm install` to install the dependencies declared in the project's `package.json` file, if present.
 `npmShrinkwrap` | `cleanNPM`, `npmInstall` | [`NpmShrinkwrapTask`](#npmshrinkwraptask) | Locks down the versions of a package's dependencies in order to control which dependency versions are used.
 
@@ -246,7 +246,7 @@ Method | Description
 ### PublishNodeModuleTask [](id=publishnodemoduletask)
 
 The purpose of this task is to publish a package to the
-[NPM registry](#https://www.npmjs.com/). Tasks of type `PublishNodeModuleTask`
+[NPM registry](https://www.npmjs.com/). Tasks of type `PublishNodeModuleTask`
 extend [`ExecuteNpmTask`](#executenpmtask) in order to execute the command
 [`npm publish`](https://docs.npmjs.com/cli/publish).
 

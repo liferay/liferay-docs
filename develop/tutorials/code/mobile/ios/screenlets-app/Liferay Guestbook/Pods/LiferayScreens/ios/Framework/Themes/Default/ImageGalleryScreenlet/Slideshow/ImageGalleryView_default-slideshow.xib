@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ImageGalleryView_default_slideshow">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8oj-eo-CIO">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7EG-4s-3ms">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8oj-eo-CIO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="DU6-do-NmD"/>
+                <constraint firstItem="8oj-eo-CIO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NZW-nr-8g1"/>
+                <constraint firstItem="8oj-eo-CIO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hqo-05-Lpz"/>
+                <constraint firstAttribute="bottom" secondItem="8oj-eo-CIO" secondAttribute="bottom" id="iB2-T5-yY0"/>
+                <constraint firstItem="8oj-eo-CIO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="s7j-u1-6GN"/>
+                <constraint firstAttribute="trailing" secondItem="8oj-eo-CIO" secondAttribute="trailing" id="vPV-UX-qUP"/>
+            </constraints>
+            <connections>
+                <outlet property="collectionView" destination="8oj-eo-CIO" id="vfK-eX-SUT"/>
+            </connections>
+        </view>
+    </objects>
+</document>

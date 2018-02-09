@@ -106,7 +106,7 @@ this method call right before the `return` statement:
         guestbook.getCompanyId(), guestbook.getGroupId(),
         Guestbook.class.getName(), guestbook.getGuestbookId());
 
-Save the file. Now the guestbook entity's service layer populates the status
-fields in the database, sends the entity into the workflow framework, and cleans
-up when it's deleted. Do the same thing for guestbook entries next.
+Save the file and run *Refresh Gradle Project*. Now the guestbook entity's 
+service layer populates the status fields in the database, sends the entity 
+into the workflow framework, and cleans up when it's deleted. You'll do the same thing for guestbook entries next.
 

@@ -1,0 +1,138 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CocoaLumberjack (2.4.0):
+    - CocoaLumberjack/Default (= 2.4.0)
+    - CocoaLumberjack/Extensions (= 2.4.0)
+  - CocoaLumberjack/Core (2.4.0)
+  - CocoaLumberjack/Default (2.4.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.4.0):
+    - CocoaLumberjack/Default
+  - Cordova (4.5.4)
+  - Cosmos (8.0.2)
+  - CryptoSwift (0.7.2)
+  - DTPickerPresenter (0.2.0)
+  - KeychainAccess (3.1.0)
+  - Kingfisher (3.13.1)
+  - Liferay-iOS-SDK (7.0.13):
+    - AFNetworking (= 2.6.3)
+  - Liferay-OAuth (1.2.1):
+    - Liferay-iOS-SDK (~> 7.0.4)
+  - LiferayScreens (3.0.2):
+    - Cordova (~> 4.0)
+    - Cosmos (~> 8.0)
+    - CryptoSwift (~> 0.7.0)
+    - DTPickerPresenter (~> 0.2.0)
+    - KeychainAccess (~> 3.0)
+    - Kingfisher (~> 3.0)
+    - Liferay-iOS-SDK (~> 7.0.9)
+    - Liferay-OAuth (~> 1.2.0)
+    - MBProgressHUD (~> 0.9.1)
+    - MDRadialProgress (~> 1.3.2)
+    - SMXMLDocument (~> 1.1)
+    - TNRadioButtonGroup (~> 0.4)
+    - YapDatabase/SQLCipher (= 2.9.2)
+  - MBProgressHUD (0.9.2)
+  - MDRadialProgress (1.3.2)
+  - Reachability (3.2)
+  - SMXMLDocument (1.1)
+  - SQLCipher/common (3.4.2)
+  - SQLCipher/fts (3.4.2):
+    - SQLCipher/common
+  - TNRadioButtonGroup (0.4)
+  - YapDatabase/SQLCipher (2.9.2):
+    - YapDatabase/SQLCipher/Core (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions (= 2.9.2)
+  - YapDatabase/SQLCipher/Core (2.9.2):
+    - CocoaLumberjack (~> 2)
+    - SQLCipher/fts
+  - YapDatabase/SQLCipher/Extensions (2.9.2):
+    - YapDatabase/SQLCipher/Core
+    - YapDatabase/SQLCipher/Extensions/ActionManager (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/CloudKit (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/ConnectionProxy (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/CrossProcessNotification (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/FilteredViews (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/FullTextSearch (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/Hooks (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/Relationships (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/RTreeIndex (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/SearchResults (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/SecondaryIndex (= 2.9.2)
+    - YapDatabase/SQLCipher/Extensions/Views (= 2.9.2)
+  - YapDatabase/SQLCipher/Extensions/ActionManager (2.9.2):
+    - Reachability (~> 3)
+    - YapDatabase/SQLCipher/Core
+    - YapDatabase/SQLCipher/Extensions/Views
+  - YapDatabase/SQLCipher/Extensions/CloudKit (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/ConnectionProxy (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/CrossProcessNotification (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/FilteredViews (2.9.2):
+    - YapDatabase/SQLCipher/Core
+    - YapDatabase/SQLCipher/Extensions/Views
+  - YapDatabase/SQLCipher/Extensions/FullTextSearch (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/Hooks (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/Relationships (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/RTreeIndex (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/SearchResults (2.9.2):
+    - YapDatabase/SQLCipher/Core
+    - YapDatabase/SQLCipher/Extensions/FullTextSearch
+    - YapDatabase/SQLCipher/Extensions/Views
+  - YapDatabase/SQLCipher/Extensions/SecondaryIndex (2.9.2):
+    - YapDatabase/SQLCipher/Core
+  - YapDatabase/SQLCipher/Extensions/Views (2.9.2):
+    - YapDatabase/SQLCipher/Core
+
+DEPENDENCIES:
+  - LiferayScreens (= 3.0.2)
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
+  Cordova: 90a337977b8667a80483f559268c82062b1183da
+  Cosmos: 007c0b8e33a85e5363911bdd933571bbe221f7ef
+  CryptoSwift: cd2158be2bf639aabc63ec804707c7137c90157c
+  DTPickerPresenter: 1976573e3475534559b6ec1dad64b2ece16c966d
+  KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
+  Kingfisher: ed9707a409cc47fddafbcd12a43a9757e3600af5
+  Liferay-iOS-SDK: 8df5f8467a4587c70e98b72185e24d41966804fe
+  Liferay-OAuth: a9ff190558928bec8ebc18dd326b01bddd7e2968
+  LiferayScreens: f5eb47014b8dd80e399a5f75d84ece2bf94542cb
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MDRadialProgress: 1068574b9b4b870f64b605b07f734385bde5104d
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SMXMLDocument: e0d9fbf726a2a0921871b492966458acb3ad9689
+  SQLCipher: f9fcf29b2e59ced7defc2a2bdd0ebe79b40d4990
+  TNRadioButtonGroup: f5fb9b545d8913bbabe6a72ea1fa6fba4d833bb6
+  YapDatabase: b1e43555a34a5298e23a045be96817a5ef0da58f
+
+PODFILE CHECKSUM: 02891c2d8e27d77763d0ebf7d7d5b1333fa7a2ec
+
+COCOAPODS: 1.4.0

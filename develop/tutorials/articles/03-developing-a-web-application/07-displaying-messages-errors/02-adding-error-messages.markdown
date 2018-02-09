@@ -16,7 +16,7 @@ these methods to handle failure and success states in `GuestbookPortlet.java`
 and `GuestbookAdminPortlet.java`. Start by updating `addEntry` and `deleteEntry` 
 in `GuestbookPortlet.java`: 
 
-1.  Find the `addEntry` method in `GuestbookPortlet.java`. In the 
+1.  Find the `addEntry` method in `GuestbookPortlet.java`. In the first
     `try...catch` block's `try` section, add a success message just before the 
     closing `}`: 
     
@@ -29,8 +29,7 @@ in `GuestbookPortlet.java`:
 
 2.  Below that, in the `catch` block, find the following code:
     
-        Logger.getLogger(GuestbookPortlet.class.getName()).log(
-        Level.SEVERE, null, e);
+        System.out.println(e);
 
 3.  Beneath it, paste this line:
     

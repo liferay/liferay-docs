@@ -31,20 +31,20 @@ The solution is to implement for guestbooks and entries a getter that takes the
 
 Open the `guestbook-service` module's `service.xml` file. 
 
-For the guestbook entity, add this finder:
+1. For the entry entity, remove the following finder:
+    
+        <finder name="G_S" return-type="Collection">
+          <finder-column name="groupId" />
+          <finder-column name="status" />
+        </finder>
 
-    <finder name="G_S" return-type="Collection">
-        <finder-column name="groupId"></finder-column>
-        <finder-column name="status"></finder-column>
-    </finder>
+2. Add this finder in its place:
 
-For the entry entity, add this finder:
-
-    <finder name="G_G_S" return-type="Collection">
-        <finder-column name="groupId" />
-        <finder-column name="guestbookId" />
-        <finder-column name="status" />
-    </finder>
+        <finder name="G_G_S" return-type="Collection">
+          <finder-column name="groupId" />
+          <finder-column name="guestbookId" />
+          <finder-column name="status" />
+        </finder>
 
 Run service builder (double-click `guestbook-service/build/buildService` in the
 Gradle Tasks pane of IDE). Service Builder generates finder methods in the

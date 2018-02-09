@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SignUpView_default">
+            <rect key="frame" x="0.0" y="0.0" width="228" height="315"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAF-tw-8TO">
+                    <rect key="frame" x="0.0" y="0.0" width="228" height="315"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMl-W6-Jdh" userLabel="Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="228" height="315"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lf5-KV-kwV" customClass="DefaultTextField">
+                                    <rect key="frame" x="0.0" y="15" width="228" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="GWu-aF-DMf"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgP-Xs-MLB" customClass="DefaultTextField">
+                                    <rect key="frame" x="0.0" y="79" width="228" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="Rl7-56-gr9"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQM-e9-Lbg" customClass="DefaultTextField">
+                                    <rect key="frame" x="0.0" y="143" width="228" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="jSC-Yx-17P"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XBk-dU-LXI" customClass="DefaultTextField">
+                                    <rect key="frame" x="0.0" y="207" width="228" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="mFu-5I-jPl"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="send" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                </textField>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" restorationIdentifier="signup-action" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kq3-Yb-Mpp">
+                                    <rect key="frame" x="0.0" y="271" width="228" height="44"/>
+                                    <color key="backgroundColor" red="0.083623558282852173" green="0.66497266292572021" blue="0.84832382202148438" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="y4h-W4-le6"/>
+                                    </constraints>
+                                    <state key="normal">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="SIGN UP">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="Lf5-KV-kwV" firstAttribute="leading" secondItem="oMl-W6-Jdh" secondAttribute="leading" id="0q9-Q1-g7s"/>
+                                <constraint firstItem="lQM-e9-Lbg" firstAttribute="top" secondItem="fgP-Xs-MLB" secondAttribute="bottom" constant="20" id="3xe-vb-xX0"/>
+                                <constraint firstItem="XBk-dU-LXI" firstAttribute="top" secondItem="lQM-e9-Lbg" secondAttribute="bottom" constant="20" id="4uO-sP-loH"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kq3-Yb-Mpp" secondAttribute="bottom" id="8wQ-GR-fes"/>
+                                <constraint firstAttribute="height" constant="315" id="EQQ-dr-7St"/>
+                                <constraint firstItem="fgP-Xs-MLB" firstAttribute="leading" secondItem="oMl-W6-Jdh" secondAttribute="leading" id="HQx-Ac-rSq"/>
+                                <constraint firstAttribute="trailing" secondItem="XBk-dU-LXI" secondAttribute="trailing" id="Mkd-TN-eLF"/>
+                                <constraint firstItem="lQM-e9-Lbg" firstAttribute="leading" secondItem="oMl-W6-Jdh" secondAttribute="leading" id="OJz-1Q-Vyz"/>
+                                <constraint firstItem="Lf5-KV-kwV" firstAttribute="top" secondItem="oMl-W6-Jdh" secondAttribute="top" constant="15" id="U9G-56-A97"/>
+                                <constraint firstAttribute="trailing" secondItem="fgP-Xs-MLB" secondAttribute="trailing" id="VrM-Yn-lSy"/>
+                                <constraint firstItem="XBk-dU-LXI" firstAttribute="leading" secondItem="oMl-W6-Jdh" secondAttribute="leading" id="aDo-YH-quG"/>
+                                <constraint firstAttribute="trailing" secondItem="Lf5-KV-kwV" secondAttribute="trailing" id="bpg-nb-uNa"/>
+                                <constraint firstAttribute="trailing" secondItem="lQM-e9-Lbg" secondAttribute="trailing" id="ho0-Ap-a3Q"/>
+                                <constraint firstItem="kq3-Yb-Mpp" firstAttribute="leading" secondItem="oMl-W6-Jdh" secondAttribute="leading" id="jDc-Iq-1kq"/>
+                                <constraint firstItem="fgP-Xs-MLB" firstAttribute="top" secondItem="Lf5-KV-kwV" secondAttribute="bottom" constant="20" id="lEw-zQ-EYr"/>
+                                <constraint firstAttribute="trailing" secondItem="kq3-Yb-Mpp" secondAttribute="trailing" id="lca-z7-osh"/>
+                                <constraint firstItem="kq3-Yb-Mpp" firstAttribute="top" secondItem="XBk-dU-LXI" secondAttribute="bottom" constant="20" id="rfj-pm-dyg"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="oMl-W6-Jdh" secondAttribute="bottom" id="66P-jF-tFC"/>
+                        <constraint firstItem="oMl-W6-Jdh" firstAttribute="leading" secondItem="rAF-tw-8TO" secondAttribute="leading" id="hTC-up-WxQ"/>
+                        <constraint firstItem="oMl-W6-Jdh" firstAttribute="top" secondItem="rAF-tw-8TO" secondAttribute="top" id="jqb-tD-Cj0"/>
+                        <constraint firstAttribute="trailing" secondItem="oMl-W6-Jdh" secondAttribute="trailing" id="ktB-VO-Wnu"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="rAF-tw-8TO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8Bu-ea-W8d"/>
+                <constraint firstAttribute="bottom" secondItem="rAF-tw-8TO" secondAttribute="bottom" id="9II-Mg-Gzi"/>
+                <constraint firstItem="oMl-W6-Jdh" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="9O1-wQ-wqV"/>
+                <constraint firstItem="rAF-tw-8TO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RET-ST-o8x"/>
+                <constraint firstAttribute="trailing" secondItem="rAF-tw-8TO" secondAttribute="trailing" id="syC-lh-fES"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="emailAddressField" destination="lQM-e9-Lbg" id="04w-k7-lCK"/>
+                <outlet property="firstNameField" destination="Lf5-KV-kwV" id="axR-9J-sbj"/>
+                <outlet property="lastNameField" destination="fgP-Xs-MLB" id="PDh-q8-WPJ"/>
+                <outlet property="passwordField" destination="XBk-dU-LXI" id="eXc-36-fmP"/>
+                <outlet property="scroll" destination="rAF-tw-8TO" id="zYf-9Q-QKK"/>
+                <outlet property="signUpButton" destination="kq3-Yb-Mpp" id="1YT-Yq-dgS"/>
+            </connections>
+            <point key="canvasLocation" x="240" y="229.5"/>
+        </view>
+    </objects>
+</document>

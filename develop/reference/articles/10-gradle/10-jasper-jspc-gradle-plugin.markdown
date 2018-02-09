@@ -62,7 +62,7 @@ Property Name | Default Value
 [`classpath`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:classpath) | [`project.configurations.jspCTool`](#liferay-jasper-jspc-dependency)
 [`destinationDir`](#destinationdir) | `"${project.buildDir}/jspc"`
 [`jspCClasspath`](#jspcclasspath) | [`project.configurations.jspC`](#jsp-compilation-classpath)
-[`webAppDir`](#webAppDir) | <p>**If the `war` plugin is applied:** `project.webAppDir`.</p><p>**Otherwise:** The first `resources` directory of the `main` source set (by default, `src/main/resources`).</p>
+[`webAppDir`](#webappdir) | <p>**If the `war` plugin is applied:** `project.webAppDir`.</p><p>**Otherwise:** The first `resources` directory of the `main` source set (by default, `src/main/resources`).</p>
 
 The `compileJSP` task is also configured with the following defaults:
 
@@ -87,9 +87,9 @@ Property Name | Default Value
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-`destinationDir` | `File` | `null` | The directory where the the JSP files are compiled to. Package directories are automatically generated based on the directories containing the uncompiled JSP files. It sets the `-d` argument.
-`jspCClasspath` | `FileCollection` | `null` | The classpath to use for the JSP files compilation.
-`webAppDir` | `File` | `null` | The directory containing the web application. All JSP files in the directory and its subdirectories are compiled. It sets the `-webapp` argument.
+<a name="destinationdir"></a>`destinationDir` | `File` | `null` | The directory where the the JSP files are compiled to. Package directories are automatically generated based on the directories containing the uncompiled JSP files. It sets the `-d` argument.
+<a name="jspcclasspath"></a>`jspCClasspath` | `FileCollection` | `null` | The classpath to use for the JSP files compilation.
+<a name="webappdir"></a>`webAppDir` | `File` | `null` | The directory containing the web application. All JSP files in the directory and its subdirectories are compiled. It sets the `-webapp` argument.
 
 The properties of type `File` support any type that can be resolved by
 [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).

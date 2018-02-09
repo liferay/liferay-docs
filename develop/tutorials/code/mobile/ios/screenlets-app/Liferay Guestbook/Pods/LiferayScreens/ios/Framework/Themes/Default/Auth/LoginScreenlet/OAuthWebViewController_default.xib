@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OAuthWebViewController" customModule="LiferayScreens" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="5OM-tV-Vyk" id="n4k-c3-Lif"/>
+                <outlet property="closeButton" destination="AAT-VD-w3w" id="FxK-Ft-TbB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="glt-MY-7UY" id="9BM-Qg-fLZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glt-MY-7UY">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </webView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAT-VD-w3w">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Way-dc-7CC"/>
+                        <constraint firstAttribute="height" constant="30" id="xhT-Ar-CVK"/>
+                    </constraints>
+                    <state key="normal" title="Close">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="IWJ-6E-eZP"/>
+                    </connections>
+                </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5OM-tV-Vyk">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="EsP-vc-ESy"/>
+                        <constraint firstAttribute="width" constant="40" id="Ttx-X1-0VL"/>
+                    </constraints>
+                    <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="glt-MY-7UY" secondAttribute="trailing" id="3zT-Ay-Lgt"/>
+                <constraint firstAttribute="bottom" secondItem="glt-MY-7UY" secondAttribute="bottom" id="C1Y-Tb-iDt"/>
+                <constraint firstItem="AAT-VD-w3w" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="GXE-lz-LfC"/>
+                <constraint firstItem="5OM-tV-Vyk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="UOK-TN-Ivl"/>
+                <constraint firstItem="glt-MY-7UY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="Wwv-TW-ZEk"/>
+                <constraint firstItem="glt-MY-7UY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mAq-0x-iNe"/>
+                <constraint firstItem="AAT-VD-w3w" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="qi6-fm-WeF"/>
+                <constraint firstItem="5OM-tV-Vyk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vJD-gW-DtS"/>
+            </constraints>
+            <point key="canvasLocation" x="441" y="399"/>
+        </view>
+    </objects>
+</document>

@@ -136,6 +136,37 @@ which it's currently inheriting from its parent class, `MVCPortlet`.
 
 3. Press [CTRL]+[SHIFT]+O to organize imports. 
 
++$$$
+
+Note: When you are prompted to choose imports, here are some guidelines:
+
+* Always use `org.osgi...` packages instead of `aQute.bnd...`
+
+* Generally use `java.util...` or `javax.portlet...` packages.
+
+* You never use `java.awt...` in this project.
+
+* Only use `com.liferay...` when it is for a Liferay specific implementation or
+    your custom implementation of a concept.
+ 
+For example:
+
+* If you are given the choice between `javax.portlet.Portlet` and
+    `com.liferay.portlet.Portlet` choose `javax.portlet.Portlet`.
+
+* If you are given the choice between `org.osgi.component` and
+  `aQute.bnd.annotation.component` choose `org.osgi.component`
+
+* However, if you are given the choice between `java.util.Map.Entry` and 
+  `com.liferay.docs.guestbook.model.Entry` (the custom class you created) 
+  choose `com.liferay.docs.guestbook.model.Entry`
+ 
+If at some point you think you chose an incorrect import, but you're not sure 
+what it might be, you can erase all of the imports from the file and press
+[CTRL]+[SHIFT]+O again and see if you can identify where you went wrong.
+
+$$$
+
 As you can see, this method splits the entries in the `String` array into two
 parts based on the caret (`^`) character.
 

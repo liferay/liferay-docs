@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UploadProgressView_default" customModule="LiferayScreens"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6cB-16-pVQ" customClass="UploadProgressView_default">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="81"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-user-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="dhh-9G-yAl">
+                    <rect key="frame" x="5" y="8" width="65" height="65"/>
+                    <color key="tintColor" red="1" green="0.1498036968" blue="0.40921200470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dhh-9G-yAl" secondAttribute="height" multiplier="1:1" id="fyW-zB-uvn"/>
+                    </constraints>
+                </imageView>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BPm-Pa-Vcw">
+                    <rect key="frame" x="78" y="40" width="460.5" height="2"/>
+                </progressView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uploading image..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="GIl-qL-if8">
+                    <rect key="frame" x="78" y="5" width="460.5" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="t5t-hi-tJi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.60115346859999996" green="0.60115346859999996" blue="0.60115346859999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="t5t-hi-tJi"/>
+                        </mask>
+                    </variation>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bg-I2-ASv">
+                    <rect key="frame" x="546" y="16" width="48.5" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5bg-I2-ASv" secondAttribute="height" multiplier="1:1" id="6xh-19-hvX"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="default-cancel-upload.png"/>
+                    <connections>
+                        <action selector="cancelButton" destination="6cB-16-pVQ" eventType="touchUpInside" id="OYH-s2-Q4d"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5bg-I2-ASv" firstAttribute="centerY" secondItem="6cB-16-pVQ" secondAttribute="centerY" id="1mL-JG-9vF"/>
+                <constraint firstItem="GIl-qL-if8" firstAttribute="trailing" secondItem="BPm-Pa-Vcw" secondAttribute="trailing" id="BeG-Yz-lhx"/>
+                <constraint firstItem="dhh-9G-yAl" firstAttribute="centerY" secondItem="6cB-16-pVQ" secondAttribute="centerY" id="Ifb-x4-Ayc"/>
+                <constraint firstItem="5bg-I2-ASv" firstAttribute="leading" secondItem="BPm-Pa-Vcw" secondAttribute="trailing" constant="8" id="JfB-SI-g4U"/>
+                <constraint firstItem="GIl-qL-if8" firstAttribute="leading" secondItem="BPm-Pa-Vcw" secondAttribute="leading" id="LAs-Vf-Uh6"/>
+                <constraint firstItem="BPm-Pa-Vcw" firstAttribute="leading" secondItem="dhh-9G-yAl" secondAttribute="trailing" constant="8" id="bTa-b8-lBD"/>
+                <constraint firstItem="5bg-I2-ASv" firstAttribute="height" secondItem="6cB-16-pVQ" secondAttribute="height" multiplier="0.6" id="cvz-Aj-gOL"/>
+                <constraint firstItem="BPm-Pa-Vcw" firstAttribute="centerY" secondItem="6cB-16-pVQ" secondAttribute="centerY" id="dD4-rp-hdj"/>
+                <constraint firstAttribute="trailing" secondItem="5bg-I2-ASv" secondAttribute="trailing" constant="5" id="dPi-8F-mJ6"/>
+                <constraint firstItem="GIl-qL-if8" firstAttribute="top" secondItem="6cB-16-pVQ" secondAttribute="top" constant="5" id="eRc-Ot-4xZ"/>
+                <constraint firstItem="dhh-9G-yAl" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6cB-16-pVQ" secondAttribute="leading" constant="5" id="ewu-Ai-h6P"/>
+                <constraint firstItem="dhh-9G-yAl" firstAttribute="height" secondItem="6cB-16-pVQ" secondAttribute="height" multiplier="0.8" id="rFp-c2-UHG"/>
+                <constraint firstItem="BPm-Pa-Vcw" firstAttribute="top" secondItem="GIl-qL-if8" secondAttribute="bottom" constant="8" id="uAI-Jj-Rjn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="informationText" destination="GIl-qL-if8" id="WOq-cc-gSr"/>
+                <outlet property="previewImage" destination="dhh-9G-yAl" id="V5h-ds-oIw"/>
+                <outlet property="progressView" destination="BPm-Pa-Vcw" id="Lpa-0R-Wtw"/>
+            </connections>
+            <point key="canvasLocation" x="376" y="384.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="default-cancel-upload.png" width="24" height="24"/>
+        <image name="default-user-icon.png" width="16" height="16"/>
+    </resources>
+</document>
