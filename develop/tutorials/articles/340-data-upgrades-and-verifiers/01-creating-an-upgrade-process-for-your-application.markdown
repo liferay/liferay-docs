@@ -7,6 +7,13 @@ make this easier to do. It's a feature-rich framework that makes upgrades safe:
 the system records the current state of the schema so that if the upgrade fails,
 the process can revert the module back to its previous version.
 
++$$$
+
+**Note**: Upgrade processes for traditional Liferay plugins (WAR files) work 
+[the same way they did for Liferay Portal 6.x](/develop/tutorials/-/knowledge_base/7-0/optimizing-app-upgrade-processes#understanding-liferay-portal-6-upgrade-processes). 
+
+$$$
+
 @product@'s upgrade framework executes your module's upgrades automatically when
 the new version starts for the first time. You implement concrete data schema
 changes in upgrade step classes and then register them with the upgrade
@@ -34,14 +41,6 @@ header with the new schema version value. Here's an example schema version
 header for a module whose new schema is version `1.1.0`: 
 
         Liferay-Require-SchemaVersion: 1.1.0
-
-+$$$
-
-**Important**: Modules that use [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
-rely on a `Liferay-Require-SchemaVersion` header to be present in order to
-trigger upgrade process execution. 
-
-$$$
 
 +$$$
 
@@ -191,8 +190,13 @@ Here are some organizational tips:
 
 -   Create upgrade steps in sub-packages named after each data schema version. 
 
-After creating upgrade steps, you can create a registrator that associates them
-with their target schema versions. 
+Before continuing with upgrade step registrators, if your application was
+modularized from a former traditional Liferay plugin application (application
+WAR) and it uses Service Builder, it requires a Bundle Activator to register
+itself in @product@'s `Release_` table. If this is the case for your
+application,
+[create and register a Bundle Activator](/develop/tutorials/-/knowledge_base/7-0/upgrade-processes-for-former-service-builder-plugins)
+and then return here to write your upgrade step registrator. 
 
 ## Writing the Upgrade Step Registrator [](id=writing-the-upgrade-step-registrator)
 
@@ -417,6 +421,8 @@ update the database schema and register the upgrade steps in a registrator
 class. That's all there is to it!
 
 ## Related Topics [](id=related-topics)
+
+[Upgrade Processes for Former Service Builder Plugins](/develop/tutorials/-/knowledge_base/7-0/upgrade-processes-for-former-service-builder-plugins)
 
 [Upgrading Plugins to Liferay 7](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
 
