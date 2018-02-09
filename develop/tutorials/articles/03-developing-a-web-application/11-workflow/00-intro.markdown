@@ -1,10 +1,10 @@
 # Using Workflow [](id=using-workflow)
 
-The Guestbook application accepts submissions from guest users, so there's no
-telling what people could post. Illegal data, objectionable content, the entire
-contents of Don Quixote: all of these and more are possibilities. You can make
-sure user posts don't run afoul of the law or policy by enabling *workflow* in
-your application. 
+The Guestbook application accepts submissions from any logged in user, so 
+there's no telling what people could post. Illegal data, objectionable content, 
+the entire contents of Don Quixote: all of these and more are possibilities. 
+You can make sure user posts don't run afoul of the law or policy by enabling 
+*workflow* in your application. 
 
 Workflow is a review process that ensures a submitted entity isn't published
 before it's reviewed. To prevent posting objectionable content, an initially

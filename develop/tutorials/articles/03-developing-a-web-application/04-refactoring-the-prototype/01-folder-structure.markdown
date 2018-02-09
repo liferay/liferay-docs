@@ -19,7 +19,10 @@ in separate folders:
 
 3.  Open both files and change the `init.jsp` location at the top of the file: 
 
-        <%@include file="../init.jsp"%>
+        <%@include file="../init.jsp"%>        
+
+4.  Check the other references to JSPs within the files to make sure that they
+    point to the new locations.
 
 As you update your view layer to take full advantage of the new back-end, you'll
 update any references to the old paths. In addition, you must update the 
