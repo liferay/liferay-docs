@@ -7,9 +7,12 @@ via the Documents and Media Library. The collaboration suite also contains Blogs
 and Wiki apps that let users create blog posts and wiki articles. What's more, 
 users can can comment on and rate any kind of content. The end result is that 
 the whole is greater than the sum of the parts--together, users create something 
-of value that couldn't exist if they were each working in isolation. 
+of value that couldn't exist if they were working in isolation. 
 
 Underlying the collaboration suite is a set of powerful APIs that you can tap 
 into to leverage these features in your own apps. For example, if your app lets 
-users create a custom content type, you can leverage the collaboration suite's 
-social features to also let users comment on and rate that content. 
+users create a custom content type, you can tie into the collaboration suite's 
+social API to let users comment on and rate that content. You can also customize 
+how your app's users select items from the Documents and Media Library, send 
+custom alerts and announcements, and much, much more. The tutorials in this 
+section show you how. 
