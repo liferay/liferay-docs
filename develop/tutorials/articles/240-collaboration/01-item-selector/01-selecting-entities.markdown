@@ -1,19 +1,21 @@
-# Selecting Entities Using the Item Selector [](id=selecting-entities-using-the-item-selector)
+# Selecting Entities Using an Item Selector [](id=selecting-entities-using-the-item-selector)
 
-The Item Selector allows users to select entities, such as images, videos,
-documents, and sites. 
+An Item Selector lets users select entities such as images, videos, documents, 
+and sites. You can use an Item Selector in your app to let users select such 
+entities. This tutorial shows you how to do this via these steps: 
 
-![Figure 1: The Item Selector makes selecting entities a breeze.](../../../images/item-selector-dialog-01.png)
+1.  **Determine the Criteria for an Item Selector:** You must first define which 
+    entities an Item Selector can let users select. 
 
-Here's what's required to use an Item Selector:
+2.  **Get an Item Selector for Your Criteria:** If your criteria is for images, 
+    for example, then in this step you'll get an Item Selector capable of 
+    selecting images. 
 
-1.  **Determine Item Criteria**
+3.  **Use an Item Selector Dialog:** Display the Item Selector in your UI. 
 
-2.  **Get an Item Selector for the Criteria**
+![Figure 1: An Item Selector makes selecting entities a breeze.](../../../images/item-selector-dialog-01.png)
 
-3.  **Use an Item Selector Dialog**
-
-## Determining Item Selector Criteria [](id=determining-item-selector-criteria)
+## Determining Item Criteria [](id=determining-item-selector-criteria)
 
 The first step is determining entity types to select from the Item Selector and
 the data you expect from them. What kind of entity do you want to select? Do you
@@ -62,10 +64,10 @@ Once you've defined your criteria, you can get an Item Selector to use with it.
 
 ## Getting an Item Selector for the Criteria [](id=getting-an-item-selector-for-the-criteria)
 
-In order to use an Item Selector with your criteria, you must get an Item
-Selector URL based on the criteria. The URL is needed to open the Item Selector
-dialog in your UI. In Java, you build the criteria and pass it in a call to get
-the Item Selector's URL.
+To use an Item Selector with your criteria, you must get an Item Selector URL 
+based on the criteria. The URL is needed to open the Item Selector dialog in 
+your UI. In Java, you build the criteria and pass it in a call to get the Item 
+Selector's URL. 
 
 First, get an Item Selector OSGi Service Component using Declarative Services. 
 
