@@ -1,41 +1,36 @@
 # Adding New Behavior to an Editor [](id=adding-new-behavior-to-an-editor)
 
-With the support of several kinds of WYSIWYG editors, @product@ gives you many
-options to support your users' editing needs. Sometimes, however, you can't get
-what you want with configuration alone. To help developers in these situations,
-@product@ provides a way to programatically access the editor instance to create
-the editor experience you want.
+You can select from several different WYSIWYG editors for your users, and each
+is configurable and has its strengths and weaknesses. Configuration alone,
+however, doesn't always expose the features you want. In these cases, you can
+programatically access the editor instance to create the editor experience you
+want, using the `liferay-util:dynamic-include` JavaScript extension point. It
+injects JavaScript code right after the editor instantiation to configure/change
+the editor.
 
-This can be done by using the `liferay-util:dynamic-include` JavaScript
-extension point. This allows anyone to inject JavaScript code right after the
-editor instantiation to configure/change the editor.
-
-In this tutorial, you'll learn how to use the JavaScript extension point in your
-@product@ supported WYSIWYG editor.
+In this tutorial, you'll learn how to use this JavaScript extension point.
 
 ## Injecting JavaScript into a WYSIWYG Editor [](id=injecting-javascript-into-a-wysiwyg-editor)
 
-The `liferay-util:dynamic-include` extension point is available in the JSP files
-of @product@'s configurable editors. This extension point serves as the gateway
-for injecting JavaScript into your editor instance. To take advantage of this
-extension point, you should follow these steps:
+The `liferay-util:dynamic-include` extension point is in configurable editors'
+JSP files: it's the gateway for injecting JavaScript into your editor instance:
 
-1.  Create a JS file with the JavaScript code you'd like to execute in your
-    editor. Create the JS file in a folder that makes sense to reference,
-    since you'll need to register the file in your module. Also remember that 
-    the extension point is configured to inject the JavaScript code into the 
-    editor immediately following editor initialization.
+1.  Create a JS file containing your editor functionality in a folder that makes
+    sense to reference, since you must register the file in your module. The
+    extension point injects the JavaScript code right after editor
+    initialization.
 
-    Some examples of JS files that are injected into the CKEditor are
-    [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_definition.js),
-    [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_show.js),
-    and
-    [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/dialog_definition.js).
-    These JS files are used by @product@ to redefine which fields show in
-    different dialogs, depending on what the selected language (HTML, BBCode,
-    Creole) supports. For example, Creole doesn't support background color in
-    table cells, so the table cells are removed from the options displayed to
-    the user when running in Creole mode.
+    Liferay injects JavaScript code for some applications: 
+
+    - [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_definition.js) for the wiki
+    - [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_show.js) also for the wiki
+    - [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/dialog_definition.js) for various applications
+
+    These JS files redefine the fields that show in dialogs, depending on what
+    the selected language (HTML, BBCode, Creole) supports. For example, Creole
+    doesn't support background color in table cells, so the table cells are
+    removed from the options displayed to the user when running in Creole
+    mode.
 
 2.  [Create a module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module) 
     that can register your new JS file and inject it into your editor instance.
@@ -46,24 +41,24 @@ extension point, you should follow these steps:
     attributes, and ending with *DynamicInclude* (e.g., 
     `CKEditorCreoleOnEditorCreateDynamicInclude.java`). Your Java class should
     implement the 
-    [DynamicInclude](https://github.com/liferay/liferay-portal/blob/7.1.x/portal-kernel/src/com/liferay/portal/kernel/servlet/taglib/DynamicInclude.java) 
+    [`DynamicInclude`](https://github.com/liferay/liferay-portal/blob/7.1.x/portal-kernel/src/com/liferay/portal/kernel/servlet/taglib/DynamicInclude.java) 
     interface.
 
-4.  Directly above the class's declaration, insert the following code:
+4.  Directly above the class's declaration, insert the following annotation:
 
         @Component(immediate = true, service = DynamicInclude.class)
 
-    This annotation declares the implementation class of the Component, and
-    specifies to immediately start the module once deployed to Portal.
+    This declares the component's implementation class and starts the module
+    once deployed to Portal.
 
-5.  If you have not yet inherited the abstract methods from `DynamicInclude`, do
-    that now. You'll have two implemented methods to edit: `include(...)` and
+5.  If you have not yet overridden the abstract methods from `DynamicInclude`, do
+    that now. There are two implemented methods to edit: `include(...)` and
     `register(...)`.
 
-6.  In the `include(...)` method, retrieve the bundle where your custom JS file
-    resides. Then retrieve the JS file as a URL and inject the contents into the
-    editor. You can view some example code below that does this for the
-    `creole_dialog_definition.js` file:
+6.  In the `include(...)` method, retrieve the bundle containing your custom JS
+    file. Retrieve the JS file as a URL and inject its contents into the editor.
+    Here's the code that does this for the `creole_dialog_definition.js`
+    file:
 
         Bundle bundle = _bundleContext.getBundle();
 
@@ -74,12 +69,12 @@ extension point, you should follow these steps:
         StreamUtil.transfer(entryURL.openStream(), response.getOutputStream());
 
     In the `include(...)` method, you can also retrieve editor configurations
-    and choose what JS file to inject based on the configuration selected by
-    the user. For example, this would be applicable for the use case that was
+    and choose the JS file to inject based on the configuration selected by the
+    user. For example, this would be applicable for the use case that was
     suggested previously dealing with Creole's deficiency with displaying
-    background colors in table cells. You can look at how this could be
-    done by looking at the `include(...)` method in the
-    [CKEditorCreoleOnEditorCreateDynamicInclude](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/java/com/liferay/frontend/editor/ckeditor/web/internal/servlet/taglib/CKEditorCreoleOnEditorCreateDynamicInclude.java)
+    background colors in table cells. Liferay implemented this in the
+    `include(...)` method in the
+    [`CKEditorCreoleOnEditorCreateDynamicInclude`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/java/com/liferay/frontend/editor/ckeditor/web/internal/servlet/taglib/CKEditorCreoleOnEditorCreateDynamicInclude.java)
     class.
 
 7.  Make sure you've instantiated your bundle's context so you can successfully 
