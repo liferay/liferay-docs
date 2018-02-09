@@ -2,7 +2,7 @@
 
 If you modularized a traditional Liferay plugin application that implements
 Service Builder services, your new modular application must register itself in
-the @product@'s `Release_` table. This is required regardless of whether release
+the `Release_` table. This is required regardless of whether release
 records already exist for previous versions of the app. A Bundle Activator is
 the recommended way to add a release record for the first modular version of
 your converted application. Here you'll see an example Bundle Activator and
