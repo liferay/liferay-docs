@@ -27,7 +27,7 @@ Here are some of the types of changes documented in this file:
 
 ### Standardized Data Attribute Names Passed into Selectors [](id=standardized-data-attribute-names-passed-into-selectors)
 - **Date:** 2016-Oct-26
-- **JIRA Ticket:** LPS-66646
+- **JIRA Ticket:** [LPS-66646](https://issues.liferay.com/browse/LPS-66646)
 
 #### What changed? [](id=what-changed)
 
@@ -75,7 +75,7 @@ methods to accept standardized event parameters.
 
 ### Removed URL Parameters p_p_col_id, p_p_col_pos, and p_p_col_count from Every Portlet URL. [](id=removed-url-parameters-ppcolid-ppcolpos-and-ppcolcount-from-every-portlet-u)
 - **Date:** 2016-Dec-12
-- **JIRA Ticket:** LPS-69482
+- **JIRA Ticket:** [LPS-69482](https://issues.liferay.com/browse/LPS-69482)
 
 #### What changed? [](id=what-changed-0)
 
@@ -108,7 +108,7 @@ portlet URLs without passing the request as a necessary parameter.
 
 ### Moved Users File Uploads Portlet Properties to OSGi Configuration [](id=moved-users-file-uploads-portlet-properties-to-osgi-configuration)
 - **Date:** 2017-Feb-06
-- **JIRA Ticket:** LPS-69211
+- **JIRA Ticket:** [LPS-69211](https://issues.liferay.com/browse/LPS-69211)
 
 #### What changed? [](id=what-changed-1)
 
@@ -146,7 +146,7 @@ configuration changes.
 
 ### Moved CAPTCHA Portal Properties to OSGi Configuration [](id=moved-captcha-portal-properties-to-osgi-configuration)
 - **Date:** 2017-Feb-13
-- **JIRA Ticket:** LPS-67830
+- **JIRA Ticket:** [LPS-67830](https://issues.liferay.com/browse/LPS-67830)
 
 #### What changed? [](id=what-changed-2)
 
@@ -197,7 +197,7 @@ configuration changes.
 
 ### Moved OpenOffice Properties to OSGi Configuration [](id=moved-openoffice-properties-to-osgi-configuration)
 - **Date:** 2017-March-24
-- **JIRA Ticket:** LPS-71382
+- **JIRA Ticket:** [LPS-71382](https://issues.liferay.com/browse/LPS-71382)
 
 #### What changed? [](id=what-changed-3)
 
@@ -235,7 +235,7 @@ configuration changes.
 
 ### Removed Indexation of Fields ratings and viewCount [](id=removed-indexation-of-fields-ratings-and-viewcount)
 - **Date:** 2017-May-16
-- **JIRA Ticket:** LPS-70724
+- **JIRA Ticket:** [LPS-70724](https://issues.liferay.com/browse/LPS-70724)
 
 #### What changed? [](id=what-changed-4)
 
@@ -271,7 +271,7 @@ more information about this in the `portal.properties` file.
 
 ### Moved Upload Servlet Request Portal Properties to OSGi Configuration [](id=moved-upload-servlet-request-portal-properties-to-osgi-configuration)
 - **Date:** 2017-May-30
-- **JIRA Ticket:** LPS-69102
+- **JIRA Ticket:** [LPS-69102](https://issues.liferay.com/browse/LPS-69102)
 
 #### What changed? [](id=what-changed-5)
 
@@ -307,7 +307,7 @@ configuration changes.
 
 ### Moved Three DL File Properties to OSGi Configuration [](id=moved-three-dl-file-properties-to-osgi-configuration)
 - **Date:** 2017-Aug-01
-- **JIRA Ticket:** LPS-69208
+- **JIRA Ticket:** [LPS-69208](https://issues.liferay.com/browse/LPS-69208)
 
 #### What changed? [](id=what-changed-6a)
 
@@ -344,7 +344,7 @@ configuration changes.
 
 ### Removed the soyutils Module [](id=removed-the-soyutils-module)
 - **Date:** 2017-Aug-28
-- **JIRA Ticket:** LPS-69102
+- **JIRA Ticket:** [LPS-69102](https://issues.liferay.com/browse/LPS-69102)
 
 #### What changed? [](id=what-changed-6)
 
@@ -370,7 +370,7 @@ Closure Template library.
 
 ### Changed Default Value for Browser Cache Properties [](id=changed-default-value-for-browser-cache-properties)
 - **Date:** 2017-Sep-05
-- **JIRA Ticket:** LPS-74452
+- **JIRA Ticket:** [LPS-74452](https://issues.liferay.com/browse/LPS-74452)
 
 #### What changed? [](id=what-changed-8)
 
@@ -411,7 +411,7 @@ of `false` can be considered during performance tuning, if needed.
 
 ### Users Can Have Numeric Screen Names with No Limitations, and Sites Can No Longer Have Numeric Friendly URLs [](id=users-can-have-numeric-screen-names-with-no-limitations-and-sites-can-no-lo)
 - **Date:** 2017-Oct-10
-- **JIRA Ticket:** LPS-66460
+- **JIRA Ticket:** [LPS-66460](https://issues.liferay.com/browse/LPS-66460)
 
 #### What changed? [](id=what-changed-7)
 
@@ -472,7 +472,7 @@ one.
 
 ### Removed Support for Velocity in Themes [](id=removed-support-for-velocity-in-themes)
 - **Date:** 2017-Oct-19
-- **JIRA Ticket:** LPS-74379
+- **JIRA Ticket:** [LPS-74379](https://issues.liferay.com/browse/LPS-74379)
 
 #### What changed? [](id=what-changed-9)
 
