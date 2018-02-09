@@ -260,6 +260,8 @@ that's a skill you can depend on!
 
 ## Related Topics [](id=related-topics)
 
+[Importing Packages](/develop/tutorials/-/knowledge_base/7-0/importing-packages)
+
 [Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
 [Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules)
