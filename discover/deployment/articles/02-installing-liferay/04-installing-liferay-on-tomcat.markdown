@@ -182,7 +182,7 @@ Next, you need to configure Tomcat for running @product@.
 
     This allows Catalina to access the JARs that you copied to
     `$TOMCAT_HOME/lib/ext`.
-common.loader="${catalina.base}/lib","${catalina.base}/lib/*.jar","${catalina.home}/lib","${catalina.home}/lib/*.jar","${catalina.home}/lib/ext/global","${catalina.home}/lib/ext/global/*.jar","${catalina.home}/lib/ext","${catalina.home}/lib/ext/*.jar"
+
 4. If you're working with a bundle, copy the
    `$TOMCAT_HOME/conf/catalina.policy` file from your bundle to your server. If
    not, just replace the contents of the `$TOMCAT_HOME/conf/catalina.policy`
