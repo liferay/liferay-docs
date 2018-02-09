@@ -8,14 +8,14 @@ This tutorial demonstrates how to style portlets with your themes.
 ## Portlet FTL [](id=portlet-ftl)
 
 Although you can individually style a portlet via the theme's CSS or the
-portlet's *Look and Feel Configuration* menu,<!--Can we link to docs on these
-two methods?--> you may want to modify the default look and feel for all
-portlets in your site. A portlet's template--its container, CSS classes, and
-overall HTML Markup--is defined via the theme's `portlet.ftl` file. To provide
-a custom style for all portlets, use the CSS classes in this file for the
-various container elements, in conjunction with the portlet decorators to
-achieve the desired look and feel. Be cautious: changes to `portlet.ftl` affect
-all the portlets in your site when the theme is applied.
+portlet's [*Look and Feel Configuration*]( https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/look-and-feel-configuration)
+menu, you may want to modify the default look and feel for all portlets in your
+site. A portlet's template--its container, CSS classes, and overall HTML
+Markup--is defined via the theme's `portlet.ftl` file. To provide a custom style
+for all portlets, use the CSS classes in this file for the various container
+elements, in conjunction with the portlet decorators to achieve the desired look
+and feel. Be cautious: changes to `portlet.ftl` affect all the portlets in your
+site when the theme is applied.
 
 To help you with your bearings as you modify your portlet's template, below is
 a quick look at the
@@ -98,6 +98,8 @@ Decorators](/develop/tutorials/-/knowledge_base/7-1/portlet-decorators) to
 learn how make and apply your own.
 
 ## Related Topics [](id=related-topics)
+
+[Look and Feel Configuration]( https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/look-and-feel-configuration)
 
 [Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/portlet-decorators)
 

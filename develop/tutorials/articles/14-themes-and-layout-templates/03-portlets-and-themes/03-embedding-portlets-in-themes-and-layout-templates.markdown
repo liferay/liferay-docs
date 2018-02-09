@@ -15,15 +15,15 @@ into a theme.
 
 The first thing you should do is open the template file for which you want to
 declare an embedded portlet. For example, the `portal_normal.ftl` template file
-is a popular place to declare embedded portlets. There are two ways to embed a 
-portlet in a theme: by class name or by portlet name. Both methods are covered
-in this section.<!--Which is better, to embed by class name or by portlet name?
-I feel like we should be recommending one or the other-NR-->
+is a popular place to declare embedded portlets. To avoid problems, it's usually
+best to embed portlets with an entity type and action, but you may encounter
+circumstances where you'll want to hard code it by portlet name. Both methods
+are covered here.
 
-### Embedding a Portlet by Class Name [](id=embedding-a-portlet-by-class-name)
+### Embedding a Portlet by Entity Type and Action[](id=embedding-a-portlet-by-class-name)
 
-To embed a portlet by class name, insert the following declaration where you
-want the portlet embedded:
+Start by inserting the following declaration where you want the portlet
+embedded:
 
     <@liferay_portlet["runtime"]
         portletProviderAction=ACTION
