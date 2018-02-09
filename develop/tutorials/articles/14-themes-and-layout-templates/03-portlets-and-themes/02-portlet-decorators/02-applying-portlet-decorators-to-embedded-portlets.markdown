@@ -1,10 +1,10 @@
 # Applying Portlet Decorators to Embedded Portlets [](id=applying-portlet-decorators-to-embedded-portlets)
 
 Once you have installed a theme that contains Portlet Decorators, site
-administrators can apply them to a portlet instance by selecting the Application 
-Decorator in the Look and Feel Configuration dialog. If your theme contains 
-embedded portlets, it's also possible to apply an Application Decorator other 
-than the default one by setting its preferences.
+administrators can apply them to a portlet instance by selecting the
+Application Decorator in the Look and Feel Configuration dialog. If your theme
+contains embedded portlets, it's also possible to apply an Application
+Decorator other than the default one by setting its preferences.
 
 This tutorial demonstrates how to apply Portlet Decorators to Embedded Portlets
 in your theme.

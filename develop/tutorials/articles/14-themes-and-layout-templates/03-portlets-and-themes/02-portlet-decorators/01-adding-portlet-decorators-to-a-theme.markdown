@@ -145,8 +145,8 @@ For example, this is how the Classic theme shows the application title when the
         <h2 class="portlet-title-text">${portlet_title}</h2>
     </#if>
 
-Now you know how to add Portlet Decorators to your theme.
-Let your creativity be your guide.
+Now you know how to add Portlet Decorators to your theme. Let your creativity
+be your guide.
 
 ## Related Topics [](id=related-topics)
 
