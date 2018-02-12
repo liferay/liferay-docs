@@ -21,7 +21,7 @@ export/import data in a database agnostic manner. So what exactly is a LAR file?
 A LAR file is a compressed file (ZIP archive) @product@ uses to export/import
 data. LAR files can be created for single portlets, pages, or sets of pages.
 Portlets that are LAR-capable provide an interface to let you control how their
-data are imported/exported. There are several @product@ use cases that require
+data is imported/exported. There are several @product@ use cases that require
 the use of LAR files:
 
 - Backing up and restoring portlet-specific data without requiring a full
@@ -30,7 +30,7 @@ the use of LAR files:
 - Specifying a template to be used for users' public or private pages.
 - Using Local Live or Remote Live staging.
 
-Liferay provides the data handler framework so developers don't have to
+The data handler framework is available so developers don't have to
 create/modify a LAR file manually. **It is strongly recommended never to modify
 a LAR file.** You should always use Liferay's provided data handler APIs to
 construct it.
@@ -163,19 +163,13 @@ model data handlers. For example, the Bookmarks application's portlet data
 handler tracks system events dealing with Bookmarks entities. It also configures
 the Export/Import UI options for the Bookmarks application.
 
-<!-- Creating Staged Models will be its own tutorial. For now, I'm going to give
-a brief intro to them here so readers have a general understanding of them,
-which is required to understand Staged Model Data Handlers. -Cody -->
-
 To track each entity of an application for staging, you should create staged
 models by implementing the
-[StagedModel](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedModel.html)
+[StagedModel](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedModel.html)
 interface. Staged models are the parent interface of an entity in the Staging
-framework. For example, the Bookmarks application manages
-[BookmarksEntry](@app-ref@/collaboration/latest/javadocs/com/liferay/bookmarks/model/BookmarksEntry.html)s
-and
-[BookmarksFolder](@app-ref@/collaboration/latest/javadocs/com/liferay/bookmarks/model/BookmarksFolder.html)s,
-and both implement the `StagedModel` interface.
+framework. For more information on staged models, see the
+[Understanding Staged Models](/develop/tutorials/-/knowledge_base/7-1/understanding-staged-models)
+tutorial.
 
 A Staged Model Data Handler supplies information about a staged model (entity)
 to the Export/Import framework, defining a display name for the UI, deleting an
@@ -189,10 +183,6 @@ example, if a Bookmarks entry resides in a Bookmarks folder, the
 You're not required to implement a staged model data handler for every entity in
 your application, but they're necessary for any entity you want to export/import
 or have the staging framework track.
-
-<!-- Bare bones instructions for enabling a project for Staging using Service
-Builder is outlined below. This info will go into a separate tutorial at a later
-date. -Cody -->
 
 Before implementing data handlers, make sure your application is ready for the
 Export/Import and Staging frameworks by running Service Builder in your
@@ -211,9 +201,9 @@ declared:
 
 You can learn how to create a `service.xml` file for your application by
 visiting the
-[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/7-0/defining-an-object-relational-map-with-service-builder)
+[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/7-1/defining-an-object-relational-map-with-service-builder)
 tutorial.
 
 To learn how to develop data handlers for your app, visit the
-[Developing Data Handlers](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/data-handlers)
+[Developing Data Handlers](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/data-handlers)
 tutorial.

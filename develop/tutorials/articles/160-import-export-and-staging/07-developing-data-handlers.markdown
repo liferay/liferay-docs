@@ -1,11 +1,11 @@
-# Developing Data Handlers [](id=data-handlers)
+# Developing Data Handlers [](id=developing-data-handlers)
 
 To leverage the Export/Import framework's ability to export/import a LAR file,
 you can implement Data Handlers in your application. There are two types of data
 handlers you can implement: *Portlet Data Handlers* and *Staged Model Data
 Handlers*. For more information on the fundamentals behind Liferay's data
 handlers and how a LAR file is constructed, see the
-[Understanding Data Handlers](/develop/tutorials/-/knowledge_base/7-0/understanding-data-handlers)
+[Understanding Data Handlers](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers)
 tutorial. You also must ensure your application is properly configured to use
 data handlers; this is also covered in the linked tutorial.
 
@@ -20,15 +20,15 @@ Bookmarks application.
 
 1.  Create a new package in your existing Service Builder project for your data
     handler classes. For instance, the Bookmarks application's data handler
-    classes reside in the `com.liferay.bookmarks.service` module's
+    classes reside in the `bookmarks-service` module's
     `com.liferay.bookmarks.internal.exportimport.data.handler` package.
 
 2.  Create your `-PortletDataHandler` class for your application in the new
     `-exportimport.data.handler` package and have it implement the
-    [PortletDataHandler](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html)
+    [PortletDataHandler](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html)
     interface by extending the
-    [BasePortletDataHandler](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BasePortletDataHandler.html)
-    class. See the `BookmarksPortletDataHandler` class as an example:
+    [BasePortletDataHandler](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BasePortletDataHandler.html)
+    class. For example,
 
         public class BookmarksPortletDataHandler extends BasePortletDataHandler {
 
@@ -105,7 +105,7 @@ Bookmarks application.
     ![Figure 1: You can select the content types you'd like to export/import in the UI.](../../images/export-import-controls.png)
 
     For more information on these methods, visit the
-    [PortletDataHandler](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html)
+    [PortletDataHandler](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html)
     API.
 
 5.  For the Bookmarks portlet data handler to reference its entry and folder
@@ -131,16 +131,18 @@ Bookmarks application.
     The `set` methods must be annotated with the
     [@Reference](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
     annotation. Visit the
-    [Invoking Liferay Services Locally](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
-    section of the *Finding and Invoking Liferay Services* tutorial for more
-    information on using the `@Reference` annotation in @product@.
+    [Invoking Liferay Services Locally](/develop/tutorials/-/knowledge_base/7-1/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
+    section for more information on using the `@Reference` annotation in
+    @product@.
 
     **Important:** @product@'s official Bookmarks app does not use local
     services in its portlet data handler; instead, it uses the
-    `StagedModelRepository` framework. This is not recommended for custom
-    applications, however; it's only intended for internal Liferay applications
-    at this time. Because of this, the code in this tutorial has been modified
-    to highlight the recommended way for custom apps.
+    [StagedModelRepository](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
+    framework. This is a new framework, but is a viable option when setting up
+    your portlet data handlers. For more information on this, see the
+    [Using the StagedModelRepository Framework (Coming Soon)](/develop/tutorials/-/knowledge_base/7-1/using-the-stagedmodelrepository-framework)
+    section. Since local services are more widely used in custom apps, this
+    tutorial covers those instead.
 
 6.  You must create a namespace for your entities so the Export/Import framework
     can identify your application's entities from other entities in @product@.
@@ -167,7 +169,7 @@ Bookmarks application.
             }
 
             portletDataContext.addPortletPermissions(
-                BookmarksResourcePermissionChecker.RESOURCE_NAME);
+                BookmarksConstants.RESOURCE_NAME);
 
             rootElement.addAttribute(
                 "group-id", String.valueOf(portletDataContext.getScopeGroupId()));
@@ -198,7 +200,7 @@ Bookmarks application.
             }
 
             portletDataContext.importPortletPermissions(
-                BookmarksResourcePermissionChecker.RESOURCE_NAME);
+                BookmarksConstants.RESOURCE_NAME);
 
             Element foldersElement = portletDataContext.getImportDataGroupElement(
                 BookmarksFolder.class);
@@ -226,8 +228,9 @@ Bookmarks application.
     The `doExportData` method first checks if anything should be exported. The
     `portletDataContext.getBooleanParameter(...)` method checks if the user
     selected Bookmarks entries for export. Later, the
-    `ExportImportActionableDynamicQuery` framework runs a query against bookmarks
-    folders and entries to find ones which should be exported to the LAR file.
+    `ExportImportActionableDynamicQuery` framework runs a query against
+    bookmarks folders and entries to find ones which should be exported to the
+    LAR file.
 
     The `-ActionableDynamicQuery` classes are automatically generated by Service
     Builder and are available in your application's local service. It queries
@@ -242,7 +245,7 @@ Bookmarks application.
     imported LAR file that should be added to the database. This is done by
     extracting XML elements from the LAR file by using utility methods from
     the
-    [StagedModelDataHandlerUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandlerUtil.html)
+    [StagedModelDataHandlerUtil](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandlerUtil.html)
     class. The extracted elements tell @product@ what data to import from the
     LAR file.
 
@@ -314,6 +317,12 @@ Bookmarks application.
             return SCHEMA_VERSION;
         }
 
+        @Override
+        public boolean validateSchemaVersion(String schemaVersion) {
+            return _portletDataHandlerHelper.validateSchemaVersion(
+                schemaVersion, getSchemaVersion());
+        }
+
 Awesome! You've set up your portlet data handler and your application can now
 support the Export/Import framework and display a UI for it. The next step for
 supporting data handlers in your app is to implement staged model data handlers
@@ -328,10 +337,10 @@ similar, so you'll examine how this is done for Bookmark entries.
 
 1.  Create a `-StagedModelDataHandler` class in the same folder as its portlet
     data handler class. For Bookmarks, the `BookmarksEntryStagedDataHandler`
-    class resides in the `com.liferay.bookmarks.service` module's
+    class resides in the `bookmarks-service` module's
     `com.liferay.bookmarks.internal.exportimport.data.handler` package. The
     staged model data handler class should extend the
-    [BaseStagedModelDataHandler](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BaseStagedModelDataHandler.html)
+    [BaseStagedModelDataHandler](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BaseStagedModelDataHandler.html)
     class and the entity type should be specified as its parameter. You can see
     how this was done for the `BookmarksEntryStagedModelDataHandler` class
     below:
@@ -380,10 +389,12 @@ similar, so you'll examine how this is done for Bookmark entries.
 
     **Important:** @product@'s official Bookmarks app does not use local
     services in its staged model data handlers; instead, it uses the
-    `StagedModelRepository` framework. This is not recommended for custom
-    applications, however; it's only intended for internal Liferay applications
-    at this time. Because of this, the code in this tutorial has been modified
-    to highlight the recommended way for custom apps.
+    [StagedModelRepository](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
+    framework. This is a new framework, but is a viable option when setting up
+    your portlet data handlers. For more information on this, see the
+    [Using the StagedModelRepository Framework (Coming Soon)](/develop/tutorials/-/knowledge_base/7-1/using-the-stagedmodelrepository-framework)
+    section. Since local services are more widely used in custom apps, this
+    tutorial covers those instead.
 
 4.  You must provide the class names of the models the data handler tracks. You
     can do this by overriding the
@@ -482,7 +493,7 @@ similar, so you'll examine how this is done for Bookmark entries.
 
     The `doExportStagedModel` method retrieves the Bookmark entry's data element
     from the
-    [PortletDataContext](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataContext.html)
+    [PortletDataContext](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataContext.html)
     and then adds the class model characterized by that data element to the
     `PortletDataContext`. The `PortletDataContext` is used to populate the LAR
     file with your application's data during the export process. Note that once
@@ -500,8 +511,9 @@ similar, so you'll examine how this is done for Bookmark entries.
     up-to-date during the import process. The old ID and new ID mapping can be
     reached by using the `portletDataContext.getNewPrimaryKeysMap()` method as
     shown in the example. The method proceeds with checking the import mode
-    (e.g., *Copy As New* or *Mirror*) and depending on the process configuration
-    and existing environment, the entry is either added or updated.
+    (e.g., *Copy As New* or *Mirror*) and, depending on the process
+    configuration and existing environment, the entry is either added or
+    updated.
 
 7.  When importing a LAR that specifies a missing reference, the import process
     expects the reference to be available and must validate that it's there. You
