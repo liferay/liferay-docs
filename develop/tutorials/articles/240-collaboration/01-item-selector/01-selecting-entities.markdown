@@ -64,117 +64,122 @@ Once you've defined your criteria, you can get an Item Selector to use with it.
 
 ## Getting an Item Selector for the Criteria [](id=getting-an-item-selector-for-the-criteria)
 
-To use an Item Selector with your criteria, you must get an Item Selector URL 
-based on the criteria. The URL is needed to open the Item Selector dialog in 
-your UI. In Java, you build the criteria and pass it in a call to get the Item 
-Selector's URL. 
-
-First, get an Item Selector OSGi Service Component using Declarative Services. 
-
-    import com.liferay.item.selector.ItemSelector;
-    import org.osgi.service.component.annotations.Reference;
-
-    @Reference
-    private ItemSelector _itemSelector
-
-The component annotations are available in the 
-[`org.osgi.service.component.annotations` module](http://mvnrepository.com/artifact/org.osgi/org.osgi.service.component.annotations). 
-
-To get a URL to the Item Selector, you must call its 
+To use an Item Selector with your criteria, you must get that Item Selector's 
+URL. The URL is needed to open the Item Selector dialog in your UI. To get this 
+URL, you must get an `ItemSelector` reference and call its 
 [`getItemSelectorURL` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelector.html#getItemSelectorURL-com.liferay.portal.kernel.portlet.RequestBackedPortletURLFactory-java.lang.String-com.liferay.item.selector.ItemSelectorCriterion...-) 
-using the following parameters:
+with the following parameters: 
 
--   `RequestBackedPortletURLFactory`: Factory that creates portlet URLs. 
--   `ItemSelectedEventName`: Unique arbitrary JavaScript event name that is
-    triggered by the Item Selector when the element is selected.
--   `ItemSelectorCriterion`: Criterion (or an array of criterion objects) that
-    specifies the type of elements to make available in the Item Selector. 
+-   `RequestBackedPortletURLFactory`: A factory that creates portlet URLs. 
+-   `ItemSelectedEventName`: A unique, arbitrary JavaScript event name that the 
+    Item Selector triggers when the element is selected. 
+-   `ItemSelectorCriterion`: The criterion (or an array of criterion objects) 
+    that specifies the type of elements to make available in the Item Selector. 
 
-The following code demonstrates getting a URL to an Item Selector configured with
-criteria for images:
+The following code demonstrates getting a URL to an Item Selector configured 
+with criteria for images:
 
-    RequestBackedPortletURLFactory requestBackedPortletURLFactory =
-        RequestBackedPortletURLFactoryUtil.create(request);
+1.  Use Declarative Services to get an `ItemSelector` OSGi Service Component: 
 
-    List<ItemSelectorReturnType> desiredItemSelectorReturnTypes =
-        new ArrayList<>();
-    desiredItemSelectorReturnTypes.add(new URLItemSelectorReturnType());
+        import com.liferay.item.selector.ItemSelector;
+        import org.osgi.service.component.annotations.Reference;
 
-    ImageItemSelectorCriterion imageItemSelectorCriterion =
-        new ImageItemSelectorCriterion();
+        ...
 
-    imageItemSelectorCriterion.setDesiredItemSelectorReturnTypes(
-        desiredItemSelectorReturnTypes);
+        @Reference
+        private ItemSelector _itemSelector
 
-    PortletURL itemSelectorURL = _itemSelector.getItemSelectorURL(
-        requestBackedPortletURLFactory, "sampleTestSelectItem",
-        imageItemSelectorCriterion);
+    The component annotations are available in the 
+    [`org.osgi.service.component.annotations` module](http://mvnrepository.com/artifact/org.osgi/org.osgi.service.component.annotations). 
 
-First it gets a factory to create the URL by invoking the
-`RequestBackedPortletURLFactoryUtil.create` method, passing it the current
-request object. The request can be an `HttpServletRequest` or `PortletRequest`.
+2.  Create the factory you'll use to create the URL. To do this, invoke the 
+    `RequestBackedPortletURLFactoryUtil.create` method with the current request 
+    object. The request can be an `HttpServletRequest` or `PortletRequest`: 
 
-Then it creates a list of return types expected for the image entity and a
-criterion for images. The return types list consists of a URL return type
-`URLItemSelectorReturnType`. The list is passed to the criterion's
-`setDesiredItemSelectorReturnTypes` method.
+        RequestBackedPortletURLFactory requestBackedPortletURLFactory =
+            RequestBackedPortletURLFactoryUtil.create(request);
 
-Lastly the method `getItemSelectorURL` is called to return a URL based on the
-criteria. The method requires a URL factory, an arbitrary event name, and a
-series of criterion (one, in this case).
+3.  Create a list of return types expected for the image entity. The return 
+    types list consists of a URL return type `URLItemSelectorReturnType`: 
 
-+$$$
+        List<ItemSelectorReturnType> desiredItemSelectorReturnTypes =
+            new ArrayList<>();
+        desiredItemSelectorReturnTypes.add(new URLItemSelectorReturnType());
 
-**Note**: You can invoke the URL object's `toString` method to get its value.
+4.  Create a criterion object for images (`ImageItemSelectorCriterion`): 
 
-$$$
+        ImageItemSelectorCriterion imageItemSelectorCriterion =
+            new ImageItemSelectorCriterion();
 
-An Item Selector can be configured to use any number of criterion. The criterion
-can use any number of return types.
+5.  Use the criterion's `setDesiredItemSelectorReturnTypes` method to set the 
+    return types list from step 3 to the criterion: 
 
-The Item Selector's criterion order determines the selection view order. For
-example, if you pass the item selector criteria in this order:
-`ImageItemSelectorCriterion`, `VideoItemSelectorCriterion`, the Item Selector
-displays the image selection views first and then the ones for videos. If you
-reverse the order, it shows the video selection views first and the image
-selection views second.
+        imageItemSelectorCriterion.setDesiredItemSelectorReturnTypes(
+            desiredItemSelectorReturnTypes);
 
-Return type order is also significant. A view uses the first return type it
-supports from each criterion's return type list. 
+6.  Call the Item Selector's `getItemSelectorURL` method to get an Item Selector 
+    URL based on the criterion. The method requires the URL factory, an 
+    arbitrary event name, and a series of criterion (one, in this case): 
 
-Now that you've got a URL to the Item Selector you've configured, you can start
-using the Item Selector in your UI. 
+        PortletURL itemSelectorURL = _itemSelector.getItemSelectorURL(
+            requestBackedPortletURLFactory, "sampleTestSelectItem",
+            imageItemSelectorCriterion);
+
+There are a few things to keep in mind when getting an Item Selector's URL: 
+
+-   You can invoke the URL object's `toString` method to get its value.
+
+-   You can configure an Item Selector to use any number of criterion. The 
+    criterion can use any number of return types. 
+
+-   The order of the Item Selector's criteria determines the selection view 
+    order. For example, if you pass the Item Selector an 
+    `ImageItemSelectorCriterion` followed by a `VideoItemSelectorCriterion`, the 
+    Item Selector displays the image selection views first. 
+
+-   The return type order is also significant. A view uses the first return type 
+    it supports from each criterion's return type list. 
+
+Now that you've got a URL to an Item Selector, you can start using that Item 
+Selector in your UI. 
 
 ## Using the Item Selector Dialog [](id=using-the-item-selector-dialog)
 
-To open the Item Selector in your UI, you must use the
-`LiferayItemSelectorDialog` JavaScript component from 
+To open the Item Selector in your UI, you must use the JavaScript component 
+`LiferayItemSelectorDialog` from 
 [AlloyUI's](http://alloyui.com/) 
-`liferay-item-selector-dialog` module. The component listens for the item
+`liferay-item-selector-dialog` module. The component listens for the item 
 selected event that you specified for the Item Selector URL. The event returns
 the selected element's information according to its return type.
 
 Here are the steps for using the Item Selector dialog in a JSP:
 
-1.  Declare the AUI tag library. 
+1.  Declare the AUI tag library: 
 
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
 
-2.  Add the `<aui:script>` tag and configure it to use the
-    `liferay-item-selector-dialog` module: 
-    
-        <aui:script use="liferay-item-selector-dialog">
-        
-        </aui:script>
- 
-3.  Attach an event handler to the UI element you want to use to open the Item 
-    Selector dialog. 
-
-    For example, the configuration below creates a *Choose* button with the ID
-    `chooseImage` with a click event and function attached. 
+2.  Define the UI element that you'll use to open the Item Selector dialog. For 
+    example, this creates a *Choose* button with the ID `chooseImage`:
 
         <aui:button name="chooseImage" value="Choose" />
-    
+
+3.  Get the Item Selector's URL: 
+
+        <%
+        String itemSelectorURL = GetterUtil.getString(request.getAttribute("itemSelectorURL"));
+        %>
+
+3.  Add the `<aui:script>` tag and set it to use the 
+    `liferay-item-selector-dialog` module: 
+
+        <aui:script use="liferay-item-selector-dialog">
+
+        </aui:script>
+
+4.  Inside the `<aui:script>` tag, attach an event handler to the UI element you 
+    created in step 2. For example, this attaches a click event and a function 
+    to the *Choose* button: 
+
         <aui:script use="liferay-item-selector-dialog">
 
             $('#<portlet:namespace />chooseImage').on(
@@ -185,23 +190,68 @@ Here are the steps for using the Item Selector dialog in a JSP:
             );
 
         </aui:script>
- 
-5.  Inside the function, you must create a new instance of the
-    `LiferayItemSelectorDialog` AlloyUI Component and configure it to use the
-    Item Selector. Here's what you need to do in the function:
 
-    -   Set the function's `eventName` attribute to the item selected event name
-        you specified in your Java code (the code that gets the Item Selector
-        URL).
-    -   For the `on` attribute, implement a function that operates on the
-        selected item change. The example code below demonstrates this.
-    -   Set the function's `title` attribute. This becomes the dialog's title. 
-    -   Set the function's `url` attribute to the Item Selector URL you obtained
-        earlier. 
-    -   Call the dialog's `open` method. 
+    Inside the function, you must create a new instance of the 
+    `LiferayItemSelectorDialog` AlloyUI component and configure it to use the 
+    Item Selector. The next steps walk you through this. 
 
-The example code below and steps that follow show how to configure an Item
-Selector dialog to work with selected items.
+5.  Now you must create the function logic. First, create a new instance of the 
+    Liferay Item Selector dialog: 
+
+        var itemSelectorDialog = new A.LiferayItemSelectorDialog(  
+            {
+                ...
+            }
+        );
+
+6.  Inside the braces of the `LiferayItemSelectorDialog` constructor, first set 
+    set the `eventName` attribute. This makes the dialog listen for the item 
+    selected event. The event name is the the Item Selector's event name that 
+    you specified in your Java code (the code that gets the Item Selector URL): 
+
+        eventName: 'ItemSelectedEventName',
+
+7.  Immediately after the `eventName` setting, set the `on` attribute to 
+    implement a function that operates on the selected item change. For example, 
+    this function sets its variables for the newly selected item. The 
+    information available to parse depends on the return type(s) that were set. 
+    As the comment indicates, you must add the logic for using the selected 
+    element: 
+
+        on: {
+                selectedItemChange: function(event) {
+                    var selectedItem = event.newVal;
+
+                    if (selectedItem) {
+                        var itemValue = JSON.parse(
+                        selectedItem.value
+                        );
+                        itemSrc = itemValue.url;
+
+                        <!-- use item as needed -->
+                    }
+                }
+        },
+
+8.  Immediately after the `on` setting, set the `title` attribute to the 
+    dialog's title: 
+
+        title: '<liferay-ui:message key="select-image" />',
+
+9.  Immediately after the `title` setting, set the `url` attribute to the 
+    previously retrieved Item Selector URL. This concludes the attribute 
+    settings inside the `LiferayItemSelectorDialog` constructor: 
+
+        '<%= itemSelectorURL.toString() %>'
+
+10. To conclude the logic of the function from step 4, open the Item Selector 
+    dialog by calling its `open` method: 
+
+        itemSelectorDialog.open();
+
+Here's the complete example code for these steps: 
+
+    <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
 
     <aui:button name="chooseImage" value="Choose" />
 
@@ -240,38 +290,12 @@ Selector dialog to work with selected items.
         );
     </aui:script>
 
-Here's what the code does: 
-
-1.  This line creates a new instance of the Liferay Item Selector dialog: 
-
-        var itemSelectorDialog = new A.LiferayItemSelectorDialog(...)
-
-2.  The constructor sets the `eventName` attribute. This makes the dialog listen
-    for the item selected event. The event name is the same as the one specified
-    for the Item Selector URL generated earlier in the Java code.
-
-3.  When the user selects a new item, the `selectedItemChange` function fires,
-    setting its variables for the newly selected item. The information available
-    to parse depends on the return type(s) that were set. 
-
-4.  As the comment indicates, the developer adds logic for using the selected
-    element here. 
-
-5.  The `LiferayItemSelectorDialog`'s `title` attribute sets the dialog's title.
-
-6.  The Item Selector URL retrieved previously in the Java code becomes the
-    `url` attribute's value. 
-
-7.  The `open` method opens the Item Selector dialog.
-
 When the user clicks the *Choose* button, a new dialog opens, rendering the Item
 Selector with the views that support the criterion and return type(s) that were
-set.
+set. 
 
-Adding an Item Selector to your app is as easy as what's been demonstrated! It
-involves specifying criteria for the selectable items, applying them to an Item
-Selector, and configuring an Item Selector dialog to operate on the selected
-item. Using Item Selector API, you can give app users the power of choice!
+Great! Now you know how to select entities using an Item Selector. Using the 
+Item Selector API, you can give your app's users the power of choice!
 
 ## Related Articles [](id=related-articles)
 
