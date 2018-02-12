@@ -1,4 +1,4 @@
-# Using the Device Recognition API [](id=using-the-device-recognition-api)
+# Device Recognition API [](id=using-the-device-recognition-api)
 
 As you know, Internet traffic has risen exponentially over the past decade, and
 this trend shows no sign of stopping. In addition, the bulk of Internet traffic
