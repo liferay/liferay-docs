@@ -242,7 +242,7 @@ Here are the steps for using the Item Selector dialog in a JSP:
     previously retrieved Item Selector URL. This concludes the attribute 
     settings inside the `LiferayItemSelectorDialog` constructor: 
 
-        '<%= itemSelectorURL.toString() %>'
+        url: '<%= itemSelectorURL.toString() %>'
 
 10. To conclude the logic of the function from step 4, open the Item Selector 
     dialog by calling its `open` method: 
