@@ -1,4 +1,4 @@
-# Data Upgrades [](id=data-upgrades-and-verifiers)
+# Data Upgrades [](id=data-upgrades)
 
 The development process doesn't end when you first release your application.
 Through your own planning, feature requests, and bug reports, developers improve
