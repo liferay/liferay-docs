@@ -1,7 +1,7 @@
 # Installing Elasticsearch [](id=installing-elasticsearch)
 
 @product@ uses Elasticsearch to index its content. By default, @product@ uses
-Elastic as an embedded service. It works, but this is not a supported
+Elasticsearch as an embedded service. It works, but this is not a supported
 configuration for a production server. Feel free to use it while you're testing
 or developing, but when you're ready to put your site in production, you'll need
 to run Elasticsearch as a standalone process. This is better anyway, because it
@@ -9,7 +9,7 @@ frees you to design your infrastructure the way you want it. If you've got
 hardware or a VM to spare, you can separate your search infrastructure from
 @product@ and reap some performance gains by putting search on a separate box. If
 you're more budget-conscious, you can still increase performance by running
-Elastic in a separate, individually tunable JVM on the same box. 
+Elasticsearch in a separate, individually tunable JVM on the same box. 
 
 Installing Elasticsearch for @product@ is pretty easy and takes only six steps: 
 
@@ -22,9 +22,9 @@ Installing Elasticsearch for @product@ is pretty easy and takes only six steps:
 
 3. Install some required Elasticsearch plugins.
 
-4. Name your Elastic cluster. 
+4. Name your Elasticsearch cluster. 
 
-5. Configure @product@ to connect to your Elastic cluster. 
+5. Configure @product@ to connect to your Elasticsearch cluster. 
 
 6. Restart @product@ and reindex your search indexes. 
 
@@ -74,6 +74,20 @@ this:
 The version of Elasticsearch that you want is the value of the `"number"` field.
 In this example, it's 2.4.0. 
 
++$$$
+
+**Elasticsearch 6.1:** For digital Enterprise subscribers running Fix Pack XX or
+later, Elasticsearch 6.1 is the default, embedded search engine. Download the
+matching version of Elasticsearch and continue with the instructions in this
+guide. Where there are differences in the installation procedure between
+versions, they're called out in sidebar notes such as this one.
+
+For instructions on upgrading an existing, remote Elasticsearch server to 6.1.x,
+refer to the [upgrade guide](LINK WHEN WRITTEN).
+
+$$$
+
+
 Now that you know the version of Elasticsearch you need, go to
 [Elastic's](https://www.elastic.co) website and download that version. 
 
@@ -105,7 +119,17 @@ To install these plugins, navigate to Elasticsearch Home and enter
 
 Replace *[plugin-name]* with the Elasticsearch plugin's name.
 
-### Step Four: Name Your Elastic Cluster [](id=step-three-name-your-elastic-cluster)
++$$$
+
+**Elasticsearch 6.1:** The `plugin` executable was renamed in Elasticsearch 6,
+to `elasticsearch-plugin`. The general command syntax for installing plugins to
+6.1 is 
+
+    ./bin/elasticsearch-plugin install [plugin-name]
+
+$$$
+
+### Step Four: Name Your Elasticsearch Cluster [](id=step-three-name-your-elastic-cluster)
 
 A *cluster* in Elasticsearch is a collection of nodes (servers) identified as a
 cluster by a shared cluster name. The nodes work together to share data and
@@ -115,7 +139,7 @@ please refer to [Elastic's documentation](https://www.elastic.co/guide/index.htm
 Now that you've installed Elastic, it sits in a folder on your machine, which is
 referred to here as `[Elasticsearch Home]`. To name your cluster, you'll define
 the cluster name in both Elasticsearch and in @product@. First, define it in
-Elastic. Edit the following file: 
+Elasticsearch. Edit the following file: 
 
     [Elasticsearch Home]/config/elasticsearch.yml
 
@@ -133,27 +157,28 @@ from the `[Elasticsearch Home]/bin` folder:
 
     ./elasticsearch
 
-Elastic starts, and one of its status messages includes a transport address: 
+Elasticsearch starts, and one of its status messages includes a transport address: 
 
     2016-05-03 16:33:28,358][INFO ][transport] [Hobgoblin II] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
 
 Take note of this address; you'll need to give it to your @product@ server so it
-can find Elastic on the network. 
+can find Elasticsearch on the network. 
 
-### Step Five: Configure @product@ to Connect to your Elastic Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
+### Step Five: Configure @product@ to Connect to your Elasticsearch Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
 
 Now you're ready to configure @product@. Start @product@ if you haven't already, log
 in, and then click on *Control Panel* &rarr; *Configuration* &rarr; *System Settings*
 &rarr; *Foundation*. Find *Elasticsearch* in the list of settings and click on it.
 Now you can configure it. Here are the options you need to change: 
 
-**Cluster name:** Enter the name of the cluster as you defined it in Elastic. 
+**Cluster name:** Enter the name of the cluster as you defined it in
+Elasticsearch. 
 
 **Operation mode:** Defaults to EMBEDDED. Change it to REMOTE to connect to a
 standalone Elasticsearch. 
 
 **Transport addresses:** Enter a delimited list of transport addresses for
-Elastic nodes. Here, you'll enter the transport address from the Elastic server
+Elasticsearch nodes. Here, you'll enter the transport address from the Elasticsearch server
 you started. The default value is `localhost:9300`, which will work. 
 
 When finished, click *Save*. You're almost done. 
@@ -165,7 +190,7 @@ and click on *Control Panel* &rarr; *Configuration* &rarr; *Server Administratio
 click the *Execute* button for *Reindex all search indexes*. When you do that,
 you should see some messages scroll up in the Elasticsearch log. 
 
-For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html)
+For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html).
 
 You're almost done! The only thing left is to make sure Marketplace is working
 and optionally configure portal security. 
