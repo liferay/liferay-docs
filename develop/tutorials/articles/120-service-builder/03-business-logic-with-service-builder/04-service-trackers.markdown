@@ -87,11 +87,6 @@ code:
         someServiceTracker.open();
     }
 
-<!-- Please fix this. A @PostConstruct annotation is a Spring-specific thing.
-This method also looks like it sets the ServiceTracker in a local variable
-(where it would get garbage collected as soon as the init method is done)
-instead of an instance variable. -Rich -->
-
 When you want to call the service, make sure the service tracker has something
 in it, and then get the service using the Service Tracker API's `getService`
 method. After that, use the service to do something cool:
@@ -111,9 +106,6 @@ is an appropriate place to do this:
     public void destroy() {
         someServiceTracker.close();
     }
-
-<!-- Again, this is Spring-specific. If you're going to be specific, this
-article should assume we're in an MVCPortlet. -Rich --> 
 
 There's a little boilerplate code you need to produce, but now you can look up
 services in the service registry, even if your plugins can't take advantage of
