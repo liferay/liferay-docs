@@ -25,7 +25,7 @@ necessary data makes executing these frameworks quick and easy.
 
 For example, when you want to implement the export feature, you must call
 services offered by the
-[ExportImportService](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/ExportImportService.html)
+[ExportImportService](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/ExportImportService.html)
 interface. All the methods in this interface require an
 `ExportImportConfiguration` object. @product@ provides a way to generate these
 configuration objects, so you can easily pass them in your service methods.

@@ -398,7 +398,7 @@ similar, so you'll examine how this is done for Bookmark entries.
 
 4.  You must provide the class names of the models the data handler tracks. You
     can do this by overriding the
-    [StagedModelDataHandler](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandler.html)'s
+    [StagedModelDataHandler](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandler.html)'s
     `getClassnames()` method:
 
         public static final String[] CLASS_NAMES = {BookmarksEntry.class.getName()};

@@ -13,7 +13,7 @@ framework used for
 [relating assets](/discover/portal/-/knowledge_base/7-1/defining-content-relationships))
 manually creates staged models. This framework is separate from Staging and is
 referenced solely as an example for how to leverage the
-[ModelAdapterBuilder](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/builder/ModelAdapterBuilder.html)
+[ModelAdapterBuilder](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/builder/ModelAdapterBuilder.html)
 framework, which lets you adapt your model classes to staged models.
 
 Asset links do not provide UUIDs by default; however, they still need to be
@@ -132,7 +132,7 @@ Follow the steps below to leverage the Model Adapter Builder in your app.
     asset link model classes can be converted to staged models.
 
 3.  Create a Model Adapter Builder class and implement the
-    [ModelAdapterBuilder](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/builder/ModelAdapterBuilder.html)
+    [ModelAdapterBuilder](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/builder/ModelAdapterBuilder.html)
     interface. You should define the entity type and your Staged Model Adapter
     class when implementing the interface:
 
