@@ -1,4 +1,4 @@
-# Initiating New Processes with ExportImportConfiguration Objects [](id=initiating-new-processes-with-exportimportconfiguration-objects)
+# Initiating New Export/Import Processes [](id=initiating-new-export-import-processes)
 
 The Staging and Export/Import features are the building blocks for creating,
 managing, and publishing a site. These features can be accessed in the
