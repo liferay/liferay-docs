@@ -1,8 +1,23 @@
-# Overriding App JSPs [](id=overriding-a-modules-jsps)
+# JSP Overrides Using OSGi Fragments [](id=overriding-a-modules-jsps)
 
-Liferay applications often contain JSPs. Sometimes you might need to override
-one of them. If you need to override the JSPs from a module deployed to the OSGi
-runtime, you need a fragment module that does two things:
+OSGi fragments let you override an entire JSP. This approach is powerful but can
+be unstable with respect to new versions of the host module: 
+
+1.  By overriding an entire JSP, you might not account for new content or new 
+    widgets that are essential to new host module versions. 
+2.  Fragments are tied to a specific host module version. If the host module is
+    is upgraded, the fragment detaches from it. In this scenario, the original
+    JSPs are still available and the module is functional (but lacks your JSP
+    enhancements).
+
+[Liferay's API based approaches to overriding JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps#using-portals-api-to-override-a-jsp),
+on the other hand, provide more stability as they let you customize specifc
+parts of the JSP that are safe to override. Also, the API based approaches don't
+limit your override to a specific host module version. In case you're
+maintaining existing JSP overrides that use OSGi fragments, however, this
+tutorial explains how they work. 
+
+An OSGi fragment that overrides a JSP requires these two things:
 
 -  Specifies a host module's symbolic name and version in the OSGi header 
    `Fragment-Host` declaration.

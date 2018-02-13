@@ -1,32 +1,15 @@
-# Overriding Core JSPs [](id=overriding-core-jsps)
+# JSP Overrides Using Custom JSP Bag [](id=overriding-core-jsps)
 
-Not to beat a dead horse, but Liferay is modularized to a great extent, so most
-of the JSPs you might want to override are no longer in Liferay's core. However, there
-are still some that you might want to modify, and it can be done. These JSPs are
-located in the `portal-web/docroot/html` directory.
+[Liferay's API based approaches to overriding JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps#using-portals-api-to-override-a-jsp)
+are the best way to override JSPs in Liferay apps and in Liferay's core. You can
+also use Custom JSP Bags to override core JSPs. But the approach is not as
+stable as the API based approaches. If your Custom JSP Bag's JSP is buggy
+(because of your code or because of a change in Liferay), you are most likely to
+find out at runtime, where functionality breaks and nasty log errors greet you.
+In the case that you're maintaining existing Custom JSP Bags, however, this
+tutorial explains how they work.
 
-Before you begin crafting a module to override core JSPs, make sure the benefits
-are going to outweigh the costs:
-
-1. Unlike other modifications you can make in Liferay, there's no way to
-override core JSPs in a way that will gracefully fail. Instead, if your core JSP
-is buggy (because of your code or because of a change in Liferay), you are
-most likely to find out at runtime, where functionality breaks and nasty
-log errors greet you.
-
-    As a related counterexample, modifying a module's JSPs is done using a
-    fragment module. The fragment module declares the exact version of the host
-    module whose JSPs it is overriding. If the host module's developer changes the
-    JSPs in the module and changes the module version, the fragment module can no
-    longer be attached to the version of the host module it was designed to work
-    with. In this scenario, the original JSPs are still available and the
-    application will be functional (but lacking your JSP enhancements).
-
-2. Liferay is still being modularized. If you modify a core JSP, it might be
-moved out of the core and into a module, and then you'll have to re-implement
-your override, since overriding a module's JSPs is [done differently](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps).
-
-If it's *really* necessary to modify a core JSP, you need a module that satisfies these criteria: 
+A Custom JSP Bag module must satisfy these criteria: 
 
 -   Includes a class that implements the
     [`CustomJspBag` interface](@platform-ref@/7.0-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html).
@@ -157,7 +140,7 @@ in your module to add functionality and content.
 Remember, this type of customization should be seen as a last resort. There's a
 risk that your override will break due to the nature of this implementation, and
 core functionality in Liferay can go down with it. If the JSP you want to
-override is in another module, refer to the article on [overriding JSPs from a module](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps).
+override is in another module, refer to the section on [API based approaches to overriding JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps#using-portals-api-to-override-a-jsp).
 
 ## Site Scoped JSP Customization [](id=site-scoped-jsp-customization)
 
@@ -169,8 +152,10 @@ need to scope a core JSP customization to a site, prepare an application adapter
 work. However, note that this approach is deprecated in @product-ver@ and won't be
 supported at all in Liferay 8.0.
 
+<!-- Uncomment once we cover scoping to a site
 If you're interested in scoping a module's JSP customization to a site, that's
-another story. See the documentation on using Dynamic Include (not yet written).
+another story. See the documentation on [using Dynamic Include](/develop/tutorials/-/knowledge_base/7-0/jsp-overrides-using-dynamic-includes).
+-->
 
 ## Related Topics [](id=related-topics)
 
