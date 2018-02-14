@@ -44,7 +44,7 @@ them to @product-ver@.
 
 Here are the tooling improvement topics:
 
-- [Moving from the Plugins SDK to Liferay Workspace](#from-the-plugins-sdk-to-liferay-workspace)
-- [Developing projects with Liferay Workspace](#developing-projects-with-liferay-workspace)
-- [What's new for Maven Users](#whats-new-for-maven-users)
-- [Using other build systems and IDEs](#using-other-build-systems-and-ides)
+- [Moving from the Plugins SDK to Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/from-the-plugins-sdk-to-liferay-workspace)
+- [Developing projects with Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/developing-modules-with-liferay-workspace)
+- [What's new for Maven Users](/develop/tutorials/-/knowledge_base/7-1/whats-new-for-maven-users)
+- [Using other build systems and IDEs](/develop/tutorials/-/knowledge_base/7-1/using-other-build-systems-and-ides)

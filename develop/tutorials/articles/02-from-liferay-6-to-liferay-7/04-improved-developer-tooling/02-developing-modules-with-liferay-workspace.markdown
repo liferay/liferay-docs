@@ -48,13 +48,13 @@ Liferay @ide@'s
 [module project wizard](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide)
 creates Workspace modules from the templates too.
 
-![Figure 3: Liferay @ide@ lets developers select templates to stub out modules.](../../../images/improved-tooling-module-wizard.png)
+![Figure 1: Liferay @ide@ lets developers select templates to stub out modules.](../../../images/improved-tooling-module-wizard.png)
 
 Liferay @ide@'s component wizard facilitates 
 [creating component classes](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide#creating-component-classes)
 for portlets, service wrappers, Struts actions, and more.
 
-![Figure 4: Liferay @ide@'s component wizard facilitates creating component classes.](../../../images/improved-tooling-component-wizard.png)
+![Figure 2: Liferay @ide@'s component wizard facilitates creating component classes.](../../../images/improved-tooling-component-wizard.png)
 
 Building and deploying modules in a Workspace is a snap using
 [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/deploying-modules-with-liferay-ide)
@@ -66,7 +66,7 @@ using Felix File Install commands.
 
 Liferay @ide@ lets you deploy modules by dragging them onto your Portal server.
 
-![Figure 5: Liferay @ide@ lets you deploy modules using drag-and-drop.](../../../images/improved-tooling-drag-n-drop-onto-server.png)
+![Figure 3: Liferay @ide@ lets you deploy modules using drag-and-drop.](../../../images/improved-tooling-drag-n-drop-onto-server.png)
 
 To learn more about Workspace and using it in Liferay @ide@, see
 [this tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-a-liferay-workspace-with-liferay-ide). 
