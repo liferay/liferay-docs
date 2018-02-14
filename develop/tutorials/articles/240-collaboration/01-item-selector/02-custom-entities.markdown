@@ -109,7 +109,7 @@ class `TaskItemSelectorReturnType`:
 
     }
 
-Nice work!. Your new entity's criterion and return type classes can be used by 
+Nice work! Your new entity's criterion and return type classes can be used by 
 your app to create the Item Selector's URL. To learn how to obtain the Item 
 Selector URL's, see the tutorial 
 [Selecting Entities Using the Item Selector](/develop/tutorials/-/knowledge_base/7-1/selecting-entities-using-the-item-selector). 
