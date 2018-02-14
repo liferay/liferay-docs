@@ -76,14 +76,11 @@ In this example, it's 2.4.0.
 
 +$$$
 
-**Elasticsearch 6.1:** For digital Enterprise subscribers running Fix Pack XX or
-later, Elasticsearch 6.1 is the default, embedded search engine. Download the
-matching version of Elasticsearch and continue with the instructions in this
-guide. Where there are differences in the installation procedure between
-versions, they're called out in sidebar notes such as this one.
-
-For instructions on upgrading an existing, remote Elasticsearch server to 6.1.x,
-refer to the [upgrade guide](LINK WHEN WRITTEN).
+**Elasticsearch 6.1:** Elasticsearch 6.1 is supported for @product@ systems
+running Fix Pack XX or later. To install Elasticsearch 6.1, follow [step
+two](#step-two-install-elasticsearch) through four below, then refer to the
+[upgrade guide](LINK WHEN WRITTEN) for instructions on installing the
+Elasticsearch 6 adapter.
 
 $$$
 
