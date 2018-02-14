@@ -78,5 +78,5 @@ example, the following command deploys the current module and
     blade deploy -w
 
 Make sure to check out the tutorial
-[Starting Module Development](/develop/tutorials/-/knowledge_base/7-1/starting-module-development). 
+[Starting Module Development](/develop/tutorials/-/knowledge_base/7-1/starting-module-development) 
 for even more information on module development.
