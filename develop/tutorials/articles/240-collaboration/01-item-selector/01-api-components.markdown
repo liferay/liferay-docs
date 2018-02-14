@@ -1,4 +1,4 @@
-# Understanding the Item Selector API's Components
+# Understanding the Item Selector API's Components [](id=understanding-the-item-selector-apis-components)
 
 Before working with the Item Selector API, you should understand its components. 
 You'll work with these components as you leverage the API in your apps: 
@@ -39,4 +39,4 @@ You'll work with these components as you leverage the API in your apps:
     class is `ImageItemSelectorCriterionHandler`. It extends 
     `BaseItemSelectorCriterionHandler<ImageItemSelectorCriterion>`. 
 
-![Figure 2: Item Selector views are determined by the desired return types of the criterion, the supported return types of the view, and the criterion supported by the view.](../../../images/item-selector-architecture.png)
+![Figure 1: Item Selector views are determined by the desired return types of the criterion, the supported return types of the view, and the criterion supported by the view.](../../../images/item-selector-architecture.png)

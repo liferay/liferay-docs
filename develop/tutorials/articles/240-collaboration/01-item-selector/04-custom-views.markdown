@@ -360,7 +360,7 @@ design language to create
     
 The configuration above renders the UI shown in the figure below:
 
-![Figure 3: The Layouts Item Selector view uses Lexicon and Liferay Layout taglibs to create the UI.](../../../images/layouts-item-selector-view.png)
+![Figure 2: The Layouts Item Selector view uses Lexicon and Liferay Layout taglibs to create the UI.](../../../images/layouts-item-selector-view.png)
 
 This portion of the `aui:script` returns the path for the page:
 
@@ -437,7 +437,7 @@ The `data-url` and `data-uuid` attributes are in the HTML markup for the Layouts
 Item Selector. The HTML markup for an instance of the Layouts Item Selector is
 shown below:
 
-![Figure 4: The URL and UUID can be seen in the `data-url` and `data-uuid` attributes of the Layout Item Selector's HTML markup.](../../../images/layouts-item-selector-html.png)
+![Figure 3: The URL and UUID can be seen in the `data-url` and `data-uuid` attributes of the Layout Item Selector's HTML markup.](../../../images/layouts-item-selector-html.png)
 
 The last line adds the `CKEditorFuncNum` for the editor to the JSON object's 
 `data` attribute.

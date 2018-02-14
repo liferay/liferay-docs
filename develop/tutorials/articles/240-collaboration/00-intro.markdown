@@ -1,4 +1,4 @@
-# Collaboration
+# Collaboration [](id=collaboration)
 
 @product@'s collaboration suite contains many apps and features that let users 
 interact and create content together. This can be as simple as a quick 
