@@ -9,7 +9,7 @@ ingredients:
 - Application upgrade automation
 
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
-(Workspace) boils over with all these things! It's a Gradle-based development
+(Workspace) has all these things. It's a Gradle-based development
 environment that integrates with
 [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) and can be
 used in conjunction with other IDEs, such as a "vanilla" Eclipse, IntelliJ, or
@@ -18,7 +18,7 @@ NetBeans. You can extend Workspace's Gradle environment with additional
 code coverage analysis, and more.
 
 If you prefer [Maven](/develop/tutorials/-/knowledge_base/7-1/maven) over
-Gradle, you can leverage the
+Gradle, you can use the
 [Maven-based Workspace](/develop/tutorials/-/knowledge_base/7-1/maven-workspace)
 instead. @product-ver@'s' lean artifacts and new project
 [archetypes](/develop/tutorials/-/knowledge_base/7-1/generating-new-projects-using-archetypes)
@@ -52,7 +52,7 @@ Here are the tooling improvement topics:
 ## From the Plugins SDK to Liferay Workspace [](id=from-the-plugins-sdk-to-liferay-workspace)
 
 The Liferay Plugins SDK is deprecated for @product-ver@. You can continue
-developing on it, but should plan to eventually move to a new environment.
+developing on it, but should plan to move to a new environment.
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
 succeeds the Plugins SDK as Liferay's opinionated development environment. You
 should use it if you're not using an alternative build system like Gradle or
@@ -110,13 +110,13 @@ configurations. Developers can create configurations for module development,
 user acceptance testing, production, and more.
 
 Each subfolder under `configs` holds a Portal server configuration defined by
-its `portal-ext.properties` file. Gradle property
+its `portal-ext.properties` file. The Gradle property
 `liferay.workspace.environment` in Workspace's `gradle.properties` file
 specifies the configuration to use. See the
 [Testing Projects](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
 section for more details.
 
-Other Gradle properties let you set root locations for the @product@ bundle,
+Other Gradle properties set root locations for the @product@ bundle,
 modules, themes, and a Plugins SDK. See the
 [Gradle Workspace Properties](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#gradle-workspace-properties)
 section for a list of all available Workspace properties.
