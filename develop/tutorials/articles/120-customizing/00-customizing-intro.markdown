@@ -1,13 +1,14 @@
 # Customizing [](id=customizing)
 
-In @product@, [portlets](/develop/tutorials/-/knowledge_base/7-1/portlets)
-let you add functionality and
+[Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets) are the main
+application platform, and
 [themes](/develop/tutorials/-/knowledge_base/7-1/themes-and-layout-templates)
-let you style your sites. But how do you modify and add to existing
-functionality in @product@ and portlets? How do you change their content? The
-*Customizing* tutorials answer these questions and demonstrate how to affect
-your site in the following ways:
+let you style your sites. You can also modify existing behavior, globally and in
+the installed applications, as well as specify your own look and feel. 
+
+The *Customizing* tutorials below show you how to affect your site in the
+following ways:
  
--   Add, modify, or remove content from @product@ and portlets
+-   Add, modify, or remove content 
 -   Modify behavior
 -   Perform actions that respond to events

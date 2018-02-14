@@ -1,8 +1,8 @@
 # Overriding JSPs [](id=overriding-jsps)
 
-There are several different ways to override JSPs in @product@ portlets and the
+There are several different ways to override JSPs portlets and the
 core. @product@'s API provides the safest ways to override them. Here are
-API-based approaches to overriding JSPs in @product@:
+API-based approaches to overriding JSPs:
 
  **Approach** | **Description** | **Cons/Limitations** |
  :----------- | :-------------- | :-------------- |

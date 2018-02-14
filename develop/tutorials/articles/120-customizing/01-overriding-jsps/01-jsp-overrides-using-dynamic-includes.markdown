@@ -3,9 +3,9 @@
 The
 [`liferay-util:dynamic-include` tag](@platform-ref@/7.1/taglibs/util-taglib/liferay-util/dynamic-include.html)
 is placeholder into which you can inject content. Every JSP's dynamic include
-tag can be dynamically replaced with content. All you have to do is create a
-module that has content you want to insert, register that content with the
-dynamic include tag you want to replace, and deploy your module. 
+tag can be replaced with content. To do this, create a module that has content
+you want to insert, register that content with the dynamic include tag you want
+to replace, and deploy your module. 
 
 +$$$
 
@@ -16,7 +16,8 @@ different override approach, such as
 
 $$$
 
-We'll demonstrate how dynamic includes work using the Blogs entries. For reference, you can download the
+Blogs entries contain a good example of how dynamic includes work. For
+reference, you can download the 
 [example module](https://dev.liferay.com/documents/10184/656312/example-dynamic-include-blogs-master.zip). 
 
 1.  Find the `liferay-util:dynamic-include` tag you want to replace in the
@@ -89,8 +90,8 @@ We'll demonstrate how dynamic includes work using the Blogs entries. For referen
         	}
         
         }
-        
-    Giving the class a `@Component` annotation that has the service attribute
+ 
+    Giving the class an `@Component` annotation that has the service attribute
     `service = DynamicInclude.class` makes the class a `DynamicInclude` service
     component.
 
@@ -99,8 +100,8 @@ We'll demonstrate how dynamic includes work using the Blogs entries. For referen
             service = DynamicInclude.class
         )
 
-    In the `include` method, you write the content you want to replace a dynamic
-    include tag with. The example `include` method writes a heading. 
+    In the `include` method, add the content that should replace the dynamic
+    include tag. The example `include` method writes a heading. 
 
         @Override
         public void include(
