@@ -1,12 +1,11 @@
 # Workflow Task Nodes [](id=workflow-task-nodes)
 
-Task nodes are fundamental parts of a workflow definition. When you start
-defining your organization's business processes and planning workflows, you
-likely first envision the tasks. As the name implies, tasks are the part of the
-workflow where *work* must be done. A user enters the picture and has to
-interact with the submitted asset. This user often takes the role of reviewer,
-deciding if an asset sent to them in the workflow is acceptable for publication
-in its current state, or perhaps needs more work.
+Task nodes are fundamental parts of a workflow definition. When you define your
+organization's business processes and planning workflows, you likely first
+envision the tasks. As the name implies, tasks are the part of the workflow
+where *work* is done. A user enters the picture and must interact with the
+submitted asset. Users often take the role of reviewer, deciding if an asset
+from the workflow is acceptable for publication or needs more work.
 
 Unlike other workflow nodes, task nodes have Assignments, because a user is
 expected to *do something* (often approve or reject the submitted asset) when a
@@ -67,8 +66,9 @@ Check out the Review task in the Single Approver definition, noting that several
 There are two `actions` in the review task, both `<notification>`s. Each
 notification may contain a name, template, notification-type, execution-type,
 and recipients. Besides notifications, You can also use the `<action>` tag.
-These have a name and a [script](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow), and are more often used in state nodes than
-tasks.
+These have a name and a 
+[script](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
+and are more often used in state nodes than tasks.
 
 ## Assignments [](id=assignments)
 
@@ -163,17 +163,17 @@ configure multiple assignments for a task.
 
 ## Resource Action Assignments [](id=resource-action-assignments)
 
-*Resource actions* are operations performed by users on an application or entity
-in @product@. For example, a user might have permission to update Message Boards
+*Resource actions* are operations performed by users on an application or
+entity. For example, a user might have permission to update Message Boards
 Messages. This is called an UPDATE resource action, because the user can update
 the resource. If you're uncertain about what resource actions are, refer to the
-developer tutorial on @product@'s [permission
-system](/develop/tutorials/-/knowledge_base/7-1/adding-permissions-to-resources)
+developer tutorial on the 
+[permission system](/develop/tutorials/-/knowledge_base/7-1/adding-permissions-to-resources)
 for a more detailed explanation.
 
-To find all the resource actions that have been configured in @product@, you
-need access to the Roles Admin application in the Control Panel (in other words,
-you need permission for the VIEW action on the roles resource).
+To find all the resource actions that have been created, you need access to the
+Roles Admin application in the Control Panel (in other words, you need
+permission for the VIEW action on the roles resource).
 
 - Navigate to Control Panel &rarr; Users &rarr; Roles.
 - Add a new Regular Role. See the 
@@ -181,8 +181,7 @@ you need permission for the VIEW action on the roles resource).
   for more information.
 - Once the role is added, navigate to the Define Permissions interface for the
   role.
-- Find the resource whose action you want to use for defining your workflow
-  assignment.
+- Find the resource whose action should define your workflow assignment.
 
 Here's what the assignment's XML looks like:
 
@@ -194,9 +193,9 @@ Here's what the assignment's XML looks like:
 
 Now when the workflow proceeds to the task with the resource action assignment,
 users with `UPDATE` permission on the resource (for example, Message Boards
-Messages) is notified of the task and can assign it to themselves (if the
-notification is set to Task Assignees). Specifically, users see the tasks
-in their *My Workflow Tasks* application under the tab *Assigned to My Roles*.
+Messages) are notified of the task and can assign it to themselves (if the
+notification is set to Task Assignees). Specifically, users see the tasks in
+their *My Workflow Tasks* application under the tab *Assigned to My Roles*.
 
 Use all upper case letters for resource action names. Here are some common
 resource actions:
@@ -245,13 +244,13 @@ or creating a timer action.
     </task-timers>
 
 The above task timer creates a notification. Specify a time period in the
-`<delay>` tag, and specify what action to take after the delay is up in the
-`<timer-actions>` block. The `<blocking>` element is used to specify whether the
-timer actions may recur. If blocking is set to `false`, timer actions may recur.
-In a `recurrence` element, specify the recurrence interval using a `duration`
-and a `scale`, as demonstrated above. The above recurrence element specifies
-that the timer actions will run again every ten minutes after the initial
-occurrence. Setting blocking to true prevents timer actions from recurring.
+`<delay>` tag, and specify what action to take when the time expires in the
+`<timer-actions>` block. The `<blocking>` element specifies whether the timer
+actions may recur. If blocking is set to `false`, timer actions may recur. In
+a `recurrence` element, specify the recurrence interval using a `duration` and
+a `scale`, as demonstrated above. The above recurrence element specifies that
+the timer actions run again every ten minutes after the initial occurrence.
+Setting blocking to true prevents timer actions from recurring.
 
     <timer-actions>
         <reassignments>
@@ -270,6 +269,7 @@ occurrence. Setting blocking to true prevents timer actions from recurring.
 The above snippet demonstrates how to set up a reassignment action.
 
 Tasks are at the core of the workflow definition. Once you understand how to
-create tasks and the other [workflow
-nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes), and add
-transitions between the nodes, you're on the cusp of workflow wizardhood.
+create tasks and the other 
+[workflow
+nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes) and add
+transitions between the nodes, you're on the cusp of workflow wizard-hood.

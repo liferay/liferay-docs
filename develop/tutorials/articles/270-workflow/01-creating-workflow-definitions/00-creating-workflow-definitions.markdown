@@ -1,28 +1,25 @@
 # Crafting XML Workflow Definitions [](id=crafting-xml-workflow-definitions)
 
-You don't need a fancy visual designer to build workflows in @product@. To be
-clear, Kaleo Designer is really nice, and convenient, and will make you a faster
-workflow designer. If you're going to be building lots of workflow processes,
-get access to Kaleo Designer with a Digital Enterprise subscription. But with a
-little copy and paste from existing workflows, and a little handcrafted XML,
-build any workflow you might need and attain workflow wizardhood in the process.
-Follow this set of tutorials to learn what elements you can put into your
-definitions.
+You don't need a fancy visual designer to build workflows. To be clear, Kaleo
+Designer may make you a faster workflow designer through its graphical
+interface. If you plan to build lots of workflow processes, a Digital Enterprise
+subscription gets you access to Kaleo Designer. But with a little copy and paste
+from existing workflows and a little handcrafted XML, you can build any workflow
+and attain workflow wizard-hood in the process. Follow this set of tutorials to
+learn what elements you can put into your definitions.
 
-About those existing workflows.
+## Existing Workflow Definitions [](id=existing-workflow-definitions)
 
-## Existing Workflow Definitions in @product@ [](id=existing-workflow-definitions-in-product)
-
-Only one workflow definition is installed by default: Single Approver. However,
-several more are embedded in the source code of your @product@ installation. If
-you're comfortable extracting the XML files from a JAR file embedded in an LPKG
-file, you're welcome to follow the steps below to obtain the workflow
+Only one workflow definition is installed by default: Single Approver. Several
+more, however, are embedded in the source code of your @product@ installation.
+If you're comfortable extracting the XML files from a JAR file embedded in an
+LPKG file, you're welcome to follow the steps below to obtain the workflow
 definitions. To obtain the files more conveniently, download a ZIP file
-[here](https://dev.liferay.com/documents/10184/1530512/Workflow+Definitions+Zip/60504133-f6ab-7587-f734-6275749fe450).
+[here](https://dev.liferay.com/documents/10184/1530512/Workflow+Definitions+Zip).
 
 To extract the definitions for yourself, navigate to 
 
-    Liferay-Home/osgi/marketplace
+    [Liferay Home]/osgi/marketplace
 
 and open (using an archive manager) `Liferay CE Forms and Workflow.lpkg`. Open
 the JAR file named
@@ -35,12 +32,12 @@ In the JAR file, navigate to
 
 and extract the four XML workflow definition files. These definitions provide
 good reference material for many of the workflow features and elements described
-in these articles. In fact, most of the XML snippets you see are lifted
+in these articles. In fact, most of the XML snippets you see here are lifted
 directly from these definitions.
 
 ## Schema [](id=schema)
 
-The XML structure of a workflow definition is defined in an XSD file,
+The XML structure of a workflow definition is defined in an XSD file:
 
     liferay-worklow-definition-7_0_0.xsd
 
