@@ -34,7 +34,7 @@ Application localization topics:
 -   [Creating a Language Module](#creating-a-language-module)
 -   [Using a Language Module](#using-a-language-module)
 -   [Using Other Resource Bundles in Addition to Your Own](#using-other-resource-bundles-in-addition-to-your-own)
--   [Using @product@'s Language Properties](#using-liferays-language-properties)
+-   [Using Liferay's Language Properties](#using-liferays-language-properties)
 
 ## What are Language Keys? [](id=what-are-language-keys)
 
@@ -172,14 +172,14 @@ language file name. File `Language_es.properties` might look like this:
     my-app-title=Mi Aplicación
     add-entity=Añadir Entity
 
-On building the language module, @product@'s
+On building the language module, Liferay's
 `ResourceBundleLoaderAnalyzerPlugin` detects the `content/Language.properties`
 file and adds a resource bundle
 [*capability*](http://blog.osgi.org/2015/12/using-requirements-and-capabilities.html)
 to the module. Remember, resource bundles are objects that contain localized
-data. A capability is a contract a module declares to @product@'s OSGi
+data. A capability is a contract a module declares to Liferay's OSGi
 framework. Capabilities let you associate services with modules that provide
-them. In this case, @product@ registers a
+them. In this case, Liferay registers a
 [ResourceBundleLoader](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
 service for the resource bundle capability. 
 
@@ -248,7 +248,7 @@ Each line is explained:
         servlet.context.name=my-admin-application-web
 
 3.  The `Web-ContextPath` header declares the web module's web context path.
-    @product@ uses the web context path and the servlet context declared in
+    Liferay uses the web context path and the servlet context declared in
     the `Provide-Capability` header to make the aggregated resource bundle
     available to the web module's JSPs automatically.
 
@@ -264,19 +264,20 @@ to provide translation of your application's user interface messages. But you
 might not need to translate all of your keys yourself: @product@'s core might
 already provide translations for them. 
 
-## Using @product@'s Language Properties [](id=using-liferays-language-properties)
+## Using Liferay's Language Properties [](id=using-liferays-language-properties)
 
-If you have @product@'s source code, you can check out @product@'s core language
-properties by looking in the `portal-impl/src/main/content` folder. Otherwise,
-you can look in the `portal-impl.jar` that's in your @product@ bundle.
+If you have @product-ver@'s source code, you can check out Liferay's core
+language properties by looking in the `portal-impl/src/main/content` folder.
+Otherwise, you can look in the `portal-impl.jar` that's in your @product@
+bundle.
 
     liferay-portal/portal-impl/src/content/Language_xx.properties
 
     [Liferay Home]/tomcat-[version]/webapps/ROOT/WEB-INF/lib/portal-impl.jar
 
-These properties are available at runtime, so when you use any of @product@'s
+These properties are available at runtime, so when you use any of Liferay's
 default keys in your user interface code, they're automagically swapped out for
-the appropriately translated value. Using @product@'s keys where possible saves
+the appropriately translated value. Using Liferay's keys where possible saves
 you time and ensures that your application follows Liferay's UI conventions.
 
 If you want to generate language files for each supported locale automatically,
