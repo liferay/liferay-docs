@@ -4,13 +4,13 @@ What do you do if the language keys you want to modify are in one of Liferay's
 applications or another module whose source code you don't control? Since module
 language keys are in the respective module, the process for overriding a
 module's language keys is different from
-[the process of overriding Liferay's core language properties](#modifying-liferays-language-keys). 
+[the process of overriding Liferay's language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-liferays-language-keys). 
 
 Here is the process:
 
 1.  [Find the module and its metadata and language keys](#find-the-module-and-its-metadata-and-language-keys)
 2.  [Write your custom language key values](#providing-language-keys) 
-3.  [Implement a resource bundle loader](#implementing-a-resource-bundle-loader)
+3.  [Implement a Resource Bundle Loader](#implementing-a-resource-bundle-loader)
 
 ## Find the module and its metadata and language keys [](id=find-the-module-and-its-metadata-and-language-keys)
 
@@ -50,11 +50,11 @@ List the bundle's headers by passing its ID to the `headers` command.
     Web-ContextPath = /blogs-web
     g! 
 
-Note the `Bundle-SymbolicName`, `Bundle-Version`, and `Web-ContextPath`. The `Web-ContextPath`
-value, following the `/`, is the servlet context name.
+Note the `Bundle-SymbolicName`, `Bundle-Version`, and `Web-ContextPath`. The
+`Web-ContextPath` value, following the `/`, is the servlet context name.
 
 **Important**: Record the servlet context name, bundle symbolic name and
-version, as you'll use it to create the resource bundle loader later in the
+version, as you'll use them to create the resource bundle loader later in the
 process.
 
 For example, here are those values for Liferay Blogs Web module:
@@ -73,11 +73,10 @@ For example, the Liferay Blogs Web version 1.0.6 module would be in
 
 Here's where to find the module JAR:
 
-- Liferay's
-[Nexus repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/)
-- `[Liferay Home]/osgi/modules`
--  Embedded in an application's or application suite's LPKG file in  `[Liferay
-Home]/osgi/marketplace`.
+-   Liferay's [Nexus repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/)
+-  `[Liferay Home]/osgi/modules`
+-   Embedded in an application's or application suite's LPKG file in `[Liferay
+    Home]/osgi/marketplace`.
 
 The language property files are typically in the module's
 `src/main/resources/content` folder. Identify the language keys you want to
@@ -105,7 +104,7 @@ file, assign your custom values to the respective language keys.
 Next you'll create a resource bundle loader component to apply the language keys
 to the target module. 
 
-## Implement a resource bundle loader [](id=implementing-a-resource-bundle-loader)
+## Implement a Resource Bundle Loader [](id=implementing-a-resource-bundle-loader)
 
 In this step, you'll create a resource bundle loader component that aggregates
 your new resource bundle (i.e., your new language key values) with the target
@@ -242,12 +241,24 @@ to provide the classes imported above.
  Group | Artifact |
  :------ | :------ |
 `com.liferay.portal` | `com.liferay.portal.kernel` |
- `org.osgi` | `org.osgi.service.component.annotations` |
+ `org.osgi` | `org.osgi.service.component.annotations` | 
+
+ **Important**: If your module
+ [uses language keys from another module](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-a-language-module)
+ and
+ [overrides any of that other module's keys](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-other-resource-bundles-in-addition-to-your-own),
+ make sure to use OSGi headers to specify the capabilities your module requires
+ and provides. This lets you prioritize resource bundles from the modules. 
+
+ To see your language key overrides in action,
+ [deploy your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module)
+ and visit a portlet that uses the module's language keys. 
 
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
-core. You can find out how to override those language keys in
-[Modifying Liferay's Language Keys](#modifying-liferays-language-keys).
+core. You can
+[override Liferay's language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-liferays-language-keys)
+too.
 
 ## Related Topics [](id=related-topics)
 
