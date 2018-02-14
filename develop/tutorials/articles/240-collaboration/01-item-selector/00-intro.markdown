@@ -11,7 +11,7 @@ The Item Selector API provides a framework for you to use, extend, and create
 Item Selectors in your own apps. The tutorials in this section show you how to 
 use this framework. 
 
-Here are some Item Selector use cases: 
+Here are some use cases for the Item Selector API: 
 
 1.  Letting your app's users select entities via an Item Selector. 
 
@@ -20,10 +20,5 @@ Here are some Item Selector use cases:
 3.  Customizing the selection experience by adding a new *selection view* for an 
     entity. 
 
-Selection views are the framework's key components. They show entities of 
-particular types from different sources. For example, an Item Selector 
-configured to show images might show selection views from Documents and Media, a 
-third-party image provider, or a drag-and-drop UI. You'll learn more about 
-selection views as you work with them in these tutorials. 
-
-Onwards! 
+You'll learn what a selection view is, along with the Item Selector API's other 
+components, in the next tutorial. 

@@ -262,11 +262,6 @@ view's class:
 For a real-world example of a view class, see the 
 [`SiteNavigationMenuItemItemSelectorView` class](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/web-experience/site-navigation/site-navigation-item-selector-web/src/main/java/com/liferay/site/navigation/item/selector/web/internal/SiteNavigationMenuItemItemSelectorView.java). 
 
-The diagram below illustrates how the Item Selector's API works (right-click to 
-view larger image):
-
-![Figure 2: Item Selector views are determined by the desired return types of the criterion, the supported return types of the view, and the criterion supported by the view.](../../../images/item-selector-architecture.png)
-
 Once you've implemented your Item Selector view, you must create the view 
 markup.
 
