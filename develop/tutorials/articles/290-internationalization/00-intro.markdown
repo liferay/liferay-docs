@@ -1,7 +1,7 @@
 # Internationalization [](id=internationalization)
 
-@product@ makes it easier than ever to localize content and design apps for
-different locales. You can centralize messages (language keys) and have manual
-and automatic translation, including localizing forms and setting text
-directionality from left-to-right or right-to-left. Customizing messages in apps
-is easy too. Internationalization is a snap with @product@!
+Localizing content and designing apps for different locales is a straightforward
+process. You can centralize messages (language keys) and translate them manually
+or automatically, including form localization and setting text in either
+direction (left-to-right or right-to-left). Customizing messages in apps is easy
+too. Read on to learn how to internationalize your applications.

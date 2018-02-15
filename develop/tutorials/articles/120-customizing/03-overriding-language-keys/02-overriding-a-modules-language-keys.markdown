@@ -211,8 +211,8 @@ module's resource bundle loader as the parameter. Specifying the target module
 is tricky because the target module and the resource bundle loader component
 have the same bundle symbolic name property
 (`bundle.symbolic.name=com.liferay.blogs.web`). To prevent this resource bundle
-loader component from being targeted, specify an `!` character followed by this
-resource bundle loader's `component.name` property. 
+loader component from being targeted, specify an `!` (not) character followed by
+this resource bundle loader's `component.name` property. 
 
 The method creates a resource bundle loader that aggregates this module's
 resource bundle loader and the target module's resource bundle loader. The first
