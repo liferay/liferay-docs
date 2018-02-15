@@ -123,7 +123,7 @@ and applies them to the `com.liferay.blogs.web` module.
     		"servlet.context.name=blogs-web"
     	}
     )
-    public class ResourceBundleLoaderComponent implements ResourceBundleLoader {
+    public class MyBlogsResourceBundleLoader implements ResourceBundleLoader {
 
     	@Override
     	public ResourceBundle loadResourceBundle(String languageId) {
@@ -131,7 +131,7 @@ and applies them to the `com.liferay.blogs.web` module.
     	}
 
     	@Reference(
-    		target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.blade.samples.hook.resourcebundle.ResourceBundleLoaderComponent)))"
+    		target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
     	)
     	public void setResourceBundleLoader(
     		ResourceBundleLoader resourceBundleLoader) {
@@ -140,7 +140,7 @@ and applies them to the `com.liferay.blogs.web` module.
     			new CacheResourceBundleLoader(
     				new ClassResourceBundleLoader(
     					"content.Language",
-    					ResourceBundleLoaderComponent.class.getClassLoader())),
+    					MyBlogsResourceBundleLoader.class.getClassLoader())),
     			resourceBundleLoader);
     	}
 
@@ -193,7 +193,7 @@ The setter method `setResourceBundleLoader` assigns an aggregate of this class's
 resource bundle loader and the target resource bundle loader to the
 `_resourceBundleLoader` field. 
         
-    @Reference(target = "(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.blade.samples.hook.resourcebundle.ResourceBundleLoaderComponent)))"
+    @Reference(target = "(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
     )
     public void setResourceBundleLoader(
         ResourceBundleLoader resourceBundleLoader) {
@@ -202,16 +202,16 @@ resource bundle loader and the target resource bundle loader to the
             new CacheResourceBundleLoader(
                 new ClassResourceBundleLoader(
                     "content.Language",
-                    ResourceBundleLoaderComponent.class.getClassLoader())),
+                    MyBlogsResourceBundleLoader.class.getClassLoader())),
             resourceBundleLoader);
     }
 
 The `@Reference` annotation tells @product@'s OSGi framework to pass the target
 module's resource bundle loader as the parameter. Specifying the target module
 is tricky because the target module and the resource bundle loader component
-have the same bundle symbolic name
-(`bundle.symbolic.name=com.liferay.blogs.web`). To prevent the resource bundle
-loader component from being targeted, specify an `!` character followed by the
+have the same bundle symbolic name property
+(`bundle.symbolic.name=com.liferay.blogs.web`). To prevent this resource bundle
+loader component from being targeted, specify an `!` character followed by this
 resource bundle loader's `component.name` property. 
 
 The method creates a resource bundle loader that aggregates this module's
@@ -221,7 +221,7 @@ follow it. Therefore, this class's resource bundle loader and its resource
 bundle (i.e., language keys), take precedence.
 
 If you use the example `setResourceBundleLoader` method, make sure to replace
-`ResourceBundleLoaderComponent` with your resource bundle loader's class name. 
+`MyBlogsResourceBundleLoader` with your resource bundle loader's class name. 
 
 Resource bundle loader components have these class imports.
 
