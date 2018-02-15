@@ -334,5 +334,5 @@ Bookmarks application.
 Awesome! You've set up your portlet data handler and your application can now
 support the Export/Import framework and display a UI for it. Be sure to also
 implement staged model data handlers for your staged models. See the
-[Developing Staged Model Data Handlers](/develop/tutorials/-/knowledge_base/7-1/developing-staged-model-data-handlers).
+[Developing Staged Model Data Handlers](/develop/tutorials/-/knowledge_base/7-1/developing-staged-model-data-handlers)
 to do this for the Bookmarks app.
