@@ -92,15 +92,14 @@ luck! Here's an example, using the
 This listener extends the `BaseExportImportLifecycleListener`, so you 
 immediately know that it deals with lifecycle events.
 
-The first method `isParallel()` determines whether your listener should run in
+The first method `getStagedModelLogFragment` retrieves the staged model's log
+fragment, which is the lifecycle listener's logging information on events. The
+next method `isParallel()` determines whether your listener should run in
 parallel with the import/export process, or if the calling method should stop,
 execute the listener, and return to where the event was fired after the listener
-has finished. The next method is the `onExportImportLifecycleEvent(...)` method,
-which consumes the lifecycle event and passes it through the base class's method
-(as long as Debug mode is not enabled).
-
-<!-- TODO: New method named `getStagedModelLogFragment()` was added to example
-listener. Find what this does and document it so docs are up-to-date. -Cody -->
+has finished. The following method is the `onExportImportLifecycleEvent(...)`
+method, which consumes the lifecycle event and passes it through the base
+class's method (as long as Debug mode is not enabled).
 
 Each remaining method is called to print logging information for the user. For
 example, when a layout export starts, succeeds, or fails, logging information
