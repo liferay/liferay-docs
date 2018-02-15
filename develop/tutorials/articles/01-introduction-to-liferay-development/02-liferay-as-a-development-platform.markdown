@@ -4,8 +4,7 @@ If you've been reading everything up to this point, you've heard all about
 @product@'s architecture, modularity, and technologies. What's left is to tell
 you what it's like to use Liferay's platform as a basis for your site by
 customizing it or by developing applications on it. The platform is designed to
-make this easy and pleasant, and to integrate with the tools developers use
-every day. 
+make this easy and pleasant, and to integrate with the tools you use every day. 
 
 But you're likely not interested in a bunch of prolegomena about it. Read on to
 learn the details. 
@@ -15,31 +14,34 @@ learn the details.
 Liferay as a development platform has always provided flexibility for both
 administrators and developers by making it easy to have more than one
 application on a single page. Applications written this way are called
-*portlets*, and are a mainstay of Liferay's platform. You can use Liferay's MVC
-Portlet framework or common frameworks such as Spring MVC or JSF to write
-portlets. If you plan to have a web-based interface to your application, and
-want its administrator to have a lot of flexibility configuring it, portlets
-provide a very powerful model. In this model you can create several portlets
-instead of a larger application and let the administrator choose how to combine
-them with other pre-existing portlets into a larger interface. 
+*portlets*, and are a mainstay of Liferay's platform. You can use
+[Liferay's MVC Portlet framework](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
+or common frameworks such as [Spring MVC](/develop/tutorials/-/knowledge_base/7-1/spring-mvc)
+or [JSF](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
+to write portlets. If you plan to have a web-based interface to your
+application, and want its administrator to have a lot of flexibility configuring
+it, portlets provide a very powerful model. In this model you can create several
+portlets instead of a larger application and let the administrator choose how to
+combine them with other pre-existing portlets into a larger interface. 
 
 That's not to say you don't have other choices. Since Liferay decouples its
 business logic from its UI (which is provided in separate modules), you have
 freedom to implement the UI in any other technology.
 
 Because of this, you can use Liferay as a headless platform, because it's easy
-to create web services based on Service Builder, JAX-RS, and JAX-WS. Then you
-can build standalone web applications using any front-end technology or mobile
-technology you like. 
+to create [web services](/develop/tutorials/-/knowledge_base/7-1/web-services)
+based on [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services),
+[JAX-RS, and JAX-WS](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs).
+Then you can build standalone web applications using any front-end technology or
+mobile technology you like. 
 
 ## Extensibility [](id=extensibility)
 
 As you might imagine, the system described above contains all the tools
-necessary to make a well designed system that allows developers not only to
-create applications based on modules, but also to extend the existing
-functionality of the system. Liferay can benefit from this now because the
-platform on which it rests is designed for both application development and
-customization.
+necessary to make a well designed system that lets you not only create
+applications based on modules, but also to extend the existing functionality of
+the system. Liferay can benefit from this now because the platform on which it
+rests is designed for both application development and customization.
 
 Components make developing extensions and customizations convenient. If you
 compare this model to other products that aren't designed for customization,
@@ -78,22 +80,25 @@ tools like Gradle or Maven, any text editor or common Java IDEs like Eclipse,
 intelliJ, or NetBeans, or any testing framework like Spock or JUnit, you can use
 them with Liferay to develop components. 
 
-Liferay's tools add some important enhancements: 
+[Liferay's tools](/develop/tutorials/-/knowledge_base/7-1/tooling)
+add some important enhancements: 
 
--   Blade CLI speeds you up by creating Gradle-based
-    Liferay projects from templates. 
--   Liferay Workspace is an opinionated SDK based on Gradle that uses Blade CLI
-    to integrate your projects and your runtime into one convenient, distributable 
-    and sharable place. 
+-   [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
+    speeds you up by creating Gradle-based Liferay projects from
+    [templates](/develop/reference/-/knowledge_base/7-1/project-templates). 
+-   [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+    is an opinionated SDK based on Gradle that uses Blade CLI to integrate your
+    projects and your runtime into one convenient, distributable  and sharable
+    place. 
 -   Liferay IDE is an Eclipse-based development environment that
     integrates all the convenience of Blade CLI and Liferay Workspace
     into a best-of-breed graphical environment with all the bells and
     whistles you'd expect. 
 -   Liferay Developer Studio provides all that Liferay IDE
     provides, plus additional tools that enterprise developers need.
--   Liferay Service Builder helps you create your back-end faster
-    by generating all your database tables, local services, and web
-    services from a single XML file. 
+-   [Liferay Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+    helps you create your back-end faster by generating all your database
+    tables, local services, and web services from a single XML file. 
 
 You can choose to use or ignore Liferay's tools. The point is you have the
 freedom to do that, because Liferay provides an open development framework
@@ -112,44 +117,46 @@ to what Liferay provides; again, you can use third-party frameworks if that's
 what you like to use. 
 
 To develop portlets, Liferay provides a convenient and easy-to-use framework
-called MVCPortlet to make writing portlets easy, but developers are free to use
-any other framework, such as Spring MVC, to create portlets. MVCPortlet uses
-components to handle requests, benefiting from all the characteristics
-described above (lifecycle, extensibility, ease of composition, etc.). If you
-don't have a strong opinion on which framework to use, we recommend that you try
-it out.
+called [MVCPortlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
+to make writing portlets easy, but developers are free to use any other
+framework, such as Spring MVC, to create portlets. MVCPortlet uses components to
+handle requests, benefiting from all the characteristics described above
+(lifecycle, extensibility, ease of composition, etc.). If you don't have a
+strong opinion on which framework to use, we recommend that you try it out.
 
-Liferay also includes a utility called Service Builder that makes it easy to
-create back-end database tables, an object-relational map in Java for accessing
-them, and a place to put your business logic. It can also generate JSON or SOAP
-web services, giving developers a full stack for storing and retrieving data
-using web or mobile clients. But that doesn't prevent you from using Java
-Persistence (JPA) and generating JAX-WS web services. 
+Liferay also includes a utility called
+[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+that makes it easy to create back-end database tables, an object-relational map
+in Java for accessing them, and a place to put your business logic. It can also
+generate JSON or SOAP web services, giving developers a full stack for storing
+and retrieving data using web or mobile clients. But that doesn't prevent you
+from using Java Persistence (JPA) and generating JAX-WS web services. 
 
 In addition to the tooling, Liferay also provides many reusable frameworks. 
 
 ## Frameworks and APIs [](id=frameworks-and-apis)
 
 Liferay's development platform provides a great framework for application
-development and also offers APIs. Lots of them. Applications can be created by
-leveraging Liferay's many frameworks that encapsulate features that are commonly
-needed by today's applications. For example, a commenting system allows
-developers to attach comments to any asset that they define, whether they be
-assets they develop or assets that ship with the system. Assets are shared by
-the system and are used to represent many common elements, such as Users,
+development and also offers APIs. Lots of them. You can create applications by
+leveraging Liferay's many frameworks that encapsulate features that today's
+applications commonly need. For example, a commenting system lets you attach
+comments to any asset that you define, whether they be assets you develop or
+assets that ship with the system. [Assets](/develop/tutorials/-/knowledge_base/7-1/asset-framework)
+are shared by the system and are represent many common elements, such as Users,
 Organizations, Sites, User Groups, blog entries, and even folders and files.
 
-Liferay also includes many frameworks for operating on assets. A workflow system
+Liferay also includes many frameworks for operating on assets. A
+[workflow system](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
 makes it easy to create applications that require an approval process for users
 to follow. The recycle bin stores deleted assets for a specified period of time,
 making it easy for users to restore data without the intervention of an
 administrator. A file storage API with multiple available back-ends makes
 storing and sharing files trivial. Search is built into the system as well, and
-it is designed for developers to integrate it with their applications. Many of
-the frameworks you might need when developing complex applications are already
-there; you just need to take advantage of them: a Social Networking API,
-user-generated forms with data lists, a message bus, an audit system, and much
-more.
+it is designed for you to integrate it with your applications. Many of the
+frameworks you might need when developing complex applications are already in
+Liferay; you just need to take advantage of them: a Social Networking API,
+user-generated forms with data lists, a [message bus](/develop/tutorials/-/knowledge_base/7-1/message-bus),
+an audit system, and much more.
 
 ## Example Liferay Projects [](id=example-liferay-projects)
 
@@ -157,15 +164,16 @@ Enough theory. It's time for practice. A good way to get the flavor of
 developing on Liferay's platform across is to show you some projects. First,
 you'll see a portlet developed with MVCPortlet, showcasing the use of components
 as well. Once you've seen that, the next best thing is to see an extension. Both
-of these examples serve to show you how easy it is to build functionality
-following a modular paradigm. 
+of these examples show you how easy it is to build functionality following a
+modular paradigm. 
 
 It would be nice to show you the standard Hello World project, Liferay style,
-but that would be too easy: the default template that Blade or Liferay IDE
-creates already does that by default. Instead, you'll see the Hello
-*You* portlet.  This does the same thing as Hello World, except it adds the
-first name of the user to the message. If your name therefore is John, it'll
-return Hello, John. 
+but that would be too easy: the default template that [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
+or [Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+creates already does that by default. Instead, you'll see the Hello *You*
+portlet.  This does the same thing as Hello World, except it adds the first name
+of the user to the message. If your name therefore is John, it returns Hello,
+John. 
 
 Here's what the project layout looks like: 
 
@@ -173,16 +181,17 @@ Here's what the project layout looks like:
 
 No new files were created after this project was generated by Liferay's Blade
 CLI tool, so this is as simple as it gets. You have your portlet class, which is
-in the .java file. You also have two different kinds of resources: language
-properties and JSP files. Finally, the `bnd.bnd` file describes the application's
-metadata for the OSGi container, and the `build.gradle` file builds the project.
+in the `.java` file. You also have two different kinds of resources:
+[language properties](/develop/tutorials/-/knowledge_base/7-1/internationalization)
+and JSP files. Finally, the `bnd.bnd` file describes the application's metadata
+for the OSGi container, and the `build.gradle` file builds the project.
 
 Any web developer that's familiar with Java can understand the JSPs, but some
 explanation is in order because of the style. Liferay's coding style defines a
 single `init.jsp` that contains all the imports and tag library initializations
-necessary for the front-end. This way, any JSP can simply include `init.jsp`, and
-all of its imports are satisfied. The `init.jsp` for this project was not modified
-from the generated project, and it looks like this: 
+necessary for the front-end. This way, any JSP can simply include `init.jsp`,
+and all of its imports are satisfied. The `init.jsp` for this project was not
+modified from the generated project, and it looks like this: 
 
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -264,7 +273,8 @@ the category in which it should appear in Liferay's UI, its display name, its
 default view, and more. Finally, the service--which is just a Java
 Interface--that it implements is defined, which is the portlet class. 
 
-Next, you have the class itself, which extends Liferay's `MVCPortlet` class
+Next, you have the class itself, which extends Liferay's
+[`MVCPortlet` class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
 (that extends `GenericPortlet`, that implements `Portlet`). The only method
 overridden is the `render()` method, and Liferay's API is used to get the user's
 first name and put it in a request attribute called `userName`. 
@@ -272,7 +282,8 @@ first name and put it in a request attribute called `userName`.
 So you can see how this works: the portlet runs and retrieves the user's first
 name, puts that in the request, and then by the use of the template path and
 view template properties specified in the `@Component` annotation, forwards
-processing to `view.jsp`, where the user's first name is retrieved and displayed. 
+processing to `view.jsp`, where the user's first name is retrieved and
+displayed. 
 
 The only other item of interest is the `bnd.bnd` file:
 
@@ -289,10 +300,10 @@ That's all there is to this portlet. Next, you'll see an extension, which in
 many cases is even simpler than a portlet. 
 
 Liferay's UI is divided up into several areas. There's the control menu and the
-product menu, which contains the add menu and the simulation menu. If you want
-to extend the UI, you can do that by deploying a module that adds what you want.
-In this example, you'll add a link to the product menu, which is the menu that
-by default sits in the top right of the browser: 
+product menu, which contains the add menu and the simulation menu. You can
+extend the UI by deploying a module that adds what you want. In this example,
+you'll add a link to the product menu, which is the menu that by default sits in
+the top right of the browser: 
 
 ![The product menu appears beneath the user's profile link.](../../images/product-menu-unchanged.png)
 
@@ -355,77 +366,28 @@ The Java class defines only four methods:
 
     }
 
-
-As before, this project was generated using a template from Blade CLI. The
-source code is part of the template; the only thing you'll need to do is provide
-the link. 
+As before, this project was generated using a [template](/develop/reference/-/knowledge_base/7-1/project-templates)
+from Blade CLI. The source code is part of the template; the only thing you'll
+need to do is provide the link. 
 
 The first method gets the Font Awesome icon you want to use in the menu. The
 next gets the "label," the text that appears when a user hovers the mouse over
-the link. This text is the value of the only property in the `Language.properties`
-file: 
+the link. This text is the value of the only property in the
+`Language.properties` file: 
 
     custom-message=Liferay Developer Network
 
 The next method returns the URL that's the destination for this link, and the
 final method returns a boolean for showing or hiding the link. 
 
-When you deploy this module, the link is added to the menu when the module
-starts. You don't have to mess around looking in Liferay's JSP or JavaScript
-files to customize the menu: it's an extension point, and it is designed to be
-customized. 
+When you [deploy this module](/develop/reference/-/knowledge_base/7-1/project-templates)
+and the module starts, the link appears in the menu. You don't have to mess
+around looking in Liferay's JSP or JavaScript files to customize the menu: it's
+an extension point, and it is designed to be customized. 
 
 This is the modular paradigm for development. It helps you keep a clean
-separation of your code, whether it be applications or extensions, from the code
-that ships by default, and it gives you the power to customize the system
-dynamically, while it's running, to avoid downtime.  It is a different way of
-doing things, but we believe it's a better way.  When you start working with
-modules and see the benefits you can gain, we think you'll agree. 
-
-## How to Navigate Liferay's Documentation [](id=how-to-navigate-liferays-documentation)
-
-We've designed the Liferay Developer Network's documentation pages to be easy to
-navigate, based on your role or the kind of information you're looking for. If
-you have no idea where to start, the search box is front and center. 
-
-![The Liferay Developer Network is home to Liferay's documentation.](../../images/liferay-developer-network-home.png)
-
-Beyond that, though, the documentation is broken up into several categories: 
-
--   User & Admin
--   Developer
--   Marketplace
--   Community
-
-User & Admin focuses on documentation for two different but related groups: end
-users who want to use @product@ and administrators who need information on
-setting @product@ up and getting it running well. Accordingly, when you click on
-this section, you're offered several options: User Guide (the default),
-Deployment, Reference, and Social Office, a product that used to be distributed
-with older versions of Liferay.
-
-Developer contains the developer documentation, which includes both tutorials
-and something we call Learning Paths. Tutorials focus on topical content: if
-you're in the middle of developing something and need to look up how a
-particular feature, framework, or API works, you'll want a tutorial. Learning
-Paths are for when you want to start from the ground up and follow a series of
-lessons that take you on a tour through the most important things you need to
-know. 
-
-Marketplace shows developers how to get their apps on [Liferay Marketplace](https://www.liferay.com/marketplace), 
-an app store for applications that run on @product@. 
-
-Community lists all the ways you can be involved in Liferay's open source
-community. From helping QA, to fixing bugs, to contributing documentation or
-answering questions posted on the
-[forum](https://web.liferay.com/community/forums), you can be involved in almost
-every aspect of Liferay's development.
-
-Now you're ready to explore some more about Liferay. We're not planning to leave
-you here, as though this were a dead site. Please feel free to use the
-suggestions link at the bottom of every article you'll encounter if you think
-something could be improved about that article.  If you have feedback about the
-site itself, the feedback button is always floating at the bottom right. There
-are living, breathing people behind all the content on this site, and we stand
-ready to assist you on your Liferay journey. 
-
+separation of your code, whether it be applications or extensions, from
+Liferay's code, and it gives you the power to customize the system dynamically,
+while it's running, to avoid downtime. It is a different way of doing things,
+but we believe it's a better way.  When you start working with modules and see
+the benefits you can gain, we think you'll agree. 
