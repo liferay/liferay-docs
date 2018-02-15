@@ -79,8 +79,8 @@ provides a way to render HTML. Liferay developers typically use JSPs, which we'l
 
 ### Adding Screens to Your Application's Front-end
 
-To use JSPs to render your screens, first you must invoke the `JSPRenderer` 
-component in your `render` method. Then you can create the JSP which renders the
+To use JSPs to render your screens, you must invoke the `JSPRenderer` 
+component in your `render` method and create the JSP which renders the
 HTML.
 
 1.  Create a `render` method which uses `JSPRenderer` like this:
@@ -123,7 +123,7 @@ them seamlessly with the original application.
 ### Categories Administration
 
 The Categories Administration application supports adding Custom Screen to 
-provide additional options for editing a category.
+provide additional options for editing a category. The category
 
 
 * `ScreenNavigationKey`: `edit.category.form`
