@@ -47,7 +47,7 @@ Follow these steps to create theme settings:
         	</theme>
         </look-and-feel>
 
-2.  Add `<settings></settings>` tags after the closing `</portlet-decorator>` 
+2.  Add `<settings></settings>` tags before the opening `<portlet-decorator>` 
     tag.
 
 3.  Add a `<setting/>` element between the `<settings></settings>` tags for each 
