@@ -1,7 +1,8 @@
 # Understanding the Item Selector API's Components [](id=understanding-the-item-selector-apis-components)
 
-Before working with the Item Selector API, you should understand its components. 
-You'll work with these components as you leverage the API in your apps: 
+Before working with the Item Selector API, you should learn about its 
+components. You'll work with these components as you leverage the API in your 
+apps: 
 
 -   **Selection views:** These are the framework's key components. They show 
     entities of particular types from different sources. For example, an Item 
@@ -39,4 +40,14 @@ You'll work with these components as you leverage the API in your apps:
     class is `ImageItemSelectorCriterionHandler`. It extends 
     `BaseItemSelectorCriterionHandler<ImageItemSelectorCriterion>`. 
 
-![Figure 1: Item Selector views are determined by the desired return types of the criterion, the supported return types of the view, and the criterion supported by the view.](../../../images/item-selector-architecture.png)
+This diagram shows how these components interact to form a working API. 
+
+![Figure 1: Item Selector views (selection views) are determined by the return type and criterion, and rendered by the markup.](../../../images/item-selector-architecture.png)
+
+## Related Topics
+
+[Selecting Entities Using an Item Selector](/develop/tutorials/-/knowledge_base/7-1/selecting-entities-using-the-item-selector)
+
+[Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-1/creating-custom-item-selector-entities)
+
+[Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-1/creating-custom-item-selector-views)

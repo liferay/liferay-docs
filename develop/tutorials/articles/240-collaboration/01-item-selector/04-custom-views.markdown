@@ -262,31 +262,24 @@ view's class:
 For a real-world example of a view class, see the 
 [`SiteNavigationMenuItemItemSelectorView` class](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/web-experience/site-navigation/site-navigation-item-selector-web/src/main/java/com/liferay/site/navigation/item/selector/web/internal/SiteNavigationMenuItemItemSelectorView.java). 
 
-Once you've implemented your Item Selector view, you must create the view 
-markup.
+## Writing Your View Markup [](id=writing-your-view-markup)
 
-## Writing your View Markup [](id=writing-your-view-markup)
+Now that you've implemented your selection view's class, you must write the 
+markup to render the view. This markup varies greatly depending on your app's 
+requirements. You can write the markup with taglibs, AUI components, or even 
+pure HTML and JavaScript. Regardless, the markup must do two key things:
 
-You've implemented your view, specifying the criteria and return types, along
-with important configuration information, such as how to render the view. All
-that's left is to write the markup for your selection view.
+-   Render the entities for the user to select. 
+-   When an entity is selected, pass the information specified by the Item 
+    Selector return type via a JavaScript event. 
 
-Naturally, the markup for your selection view will vary greatly depending on the
-requirements of your app. You can use taglibs, AUI components, or even pure HTML 
-and JavaScript if you prefer, to write your view. Regardless of the approach you 
-choose to create your view, the view must do two key things:
-
-- Render the entities for the user to select.
-- Contain JavaScript logic that passes the information specified by the Item 
-  Selector return type via a JavaScript event when an entity is selected.
-
-If you're following the example in the last section, the JavaScript event name 
-has been passed as a request attribute in the `renderHTML` method of the 
-`*ItemSelectorView` class, so it can be used in the view markup as follows:
+For example, the example view class in the previous section passes the 
+JavaScript event name as a request attribute in the `renderHTML` method. You can 
+therefore use this event name in the markup: 
 
     Liferay.fire(
             `<%= {ITEM_SELECTED_EVENT_NAME} %>',
-            
+
             {
                 data:{
                     the-data-your-client-needs-according-to-the-return-type
@@ -294,32 +287,30 @@ has been passed as a request attribute in the `renderHTML` method of the
             }
     );
 
-Below is the complete 
-[`Layouts.jsp` view markup](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web/src/main/resources/META-INF/resources/layouts.jsp)
+For a complete, real-world example, see the 
+[`layouts.jsp` view markup](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web/src/main/resources/META-INF/resources/layouts.jsp)
 for the 
-[`com.liferay.layout.item.selector.web` module](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web).
+[`com.liferay.layout.item.selector.web` module](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web). 
 
-Some Java imports are defined first:
-    
+This `layouts.jsp` file first defines some variables. Note that the 
+`LayoutItemSelectorViewDisplayContext` is an optional class that contains 
+additional information about the criteria and view, but it isn't required: 
+
     <%
     LayoutItemSelectorViewDisplayContext layoutItemSelectorViewDisplayContext = 
-    (LayoutItemSelectorViewDisplayContext)request.getAttribute(
-    BaseLayoutsItemSelectorView.LAYOUT_ITEM_SELECTOR_VIEW_DISPLAY_CONTEXT);
-    
-    LayoutItemSelectorCriterion layoutItemSelectorCriterion = 
-    layoutItemSelectorViewDisplayContext.getLayoutItemSelectorCriterion();
-    
-    Portlet portlet = PortletLocalServiceUtil.getPortletById(
-    company.getCompanyId(), portletDisplay.getId());
-    %>
-    
-Note that the `LayoutItemSelectorViewDisplayContext` is an optional class that
-contains additional information about the criteria and view, but it isn't
-required.
+        (LayoutItemSelectorViewDisplayContext)request.getAttribute(
+        BaseLayoutsItemSelectorView.LAYOUT_ITEM_SELECTOR_VIEW_DISPLAY_CONTEXT);
 
-The snippet below imports a CSS file for styling and places it in the `<head>` 
-of the page:
-    
+    LayoutItemSelectorCriterion layoutItemSelectorCriterion = 
+        layoutItemSelectorViewDisplayContext.getLayoutItemSelectorCriterion();
+
+    Portlet portlet = PortletLocalServiceUtil.getPortletById(company.getCompanyId(), 
+        portletDisplay.getId());
+    %>
+
+This snippet imports a CSS file for styling and places it in the `<head>` of the 
+page:
+
     <liferay-util:html-top>
             <link href="<%= PortalUtil.getStaticResourceURL(
             request, application.getContextPath() + "/css/main.css", 
