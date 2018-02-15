@@ -71,16 +71,31 @@ this:
       "tagline" : "You Know, for Search"
     }
 
-The version of Elasticsearch that you want is the value of the `"number"` field.
+The version of Elasticsearch that's running is the value of the `"number"` field.
 In this example, it's 2.4.0. 
 
 +$$$
 
-**Elasticsearch 6.1:** Elasticsearch 6.1 is supported for @product@ systems
-running Fix Pack XX or later. To install Elasticsearch 6.1, follow [step
-two](#step-two-install-elasticsearch) through four below, then refer to the
-[upgrade guide](LINK WHEN WRITTEN) for instructions on installing the
-Elasticsearch 6 adapter.
+**Elasticsearch 6.1:** Elasticsearch 6.1.x is supported for @product@ systems
+running Fix Pack XX or later, although version 2.x remains the default, embedded
+version. To install Elasticsearch 6.1.x, take these steps:
+
+1. Make sure you're running FP-XX or later.
+2. Install Elasticsearch 6.1.x (follow steps 2-4  in this article for guidance).
+3. Install the [Elasticsearch 6 Adapter from Marketplace](LINK WHEN AVAILABLE)
+   and stop the default Elasticsearch adapter.
+4. Configure the Elasticsearch 6 adapter (see step 5 below for guidance).
+
+To disable the default Elasticsearch adapter, use the App Manager. Navigate to
+Control Panel &rarr; Apps &rarr; App Manager.
+
+Once you're in the App Manager, search for *elasticsearch*. Find the Liferay
+Portal Search Elasticsearch module and click the edit
+((![Edit](../../images/icon-edit.png))) button. Choose the Deactivate
+option. This leaves the bundle installed, but stops it in the OSGi runtime.
+
+To learn more about upgrading an existing system to Elasticsearch 6.1, read the
+[upgrade article](LINK WHEN WRITTEN).
 
 $$$
 
