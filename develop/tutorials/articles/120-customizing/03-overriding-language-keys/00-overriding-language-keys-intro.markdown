@@ -1,6 +1,6 @@
 # Overriding Language Keys [](id=overriding-language-keys)
 
-@product@ Core and portlet module `Language*.properties` files implement site
+Core and portlet module `Language*.properties` files implement site
 internationalization. They're fully customizable, too. These tutorials
 demonstrate this in the following topics:
 

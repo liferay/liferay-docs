@@ -17,7 +17,7 @@ Here is the process:
 In
 [Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell),
 list the bundles and grep for keyword(s) that match the portlet's display name.
-Liferay portlet language keys are in the portlet's web module (bundle). When you
+Language keys are in the portlet's web module (bundle). When you
 find the bundle, note its ID number.
 
 To find the Blogs portlet, for example, your Gogo commands and output might look
@@ -68,7 +68,7 @@ follows this module JAR file naming convention:
 
     [bundle symbolic name]-[version].jar
 
-For example, the Liferay Blogs Web version 1.0.6 module would be in
+For example, the Blogs Web version 1.0.6 module is in
 `com.liferay.blogs.web-1.0.6.jar`.
 
 Here's where to find the module JAR:
@@ -78,12 +78,12 @@ Here's where to find the module JAR:
 -   Embedded in an application's or application suite's LPKG file in `[Liferay
     Home]/osgi/marketplace`.
 
-The language property files are typically in the module's
+The language property files are in the module's
 `src/main/resources/content` folder. Identify the language keys you want to
 override in the `Language[_xx].properties` files.
 
-Checkpoint: You have the required information for overriding the module's
-language keys:
+Checkpoint: Make sure you have the required information for overriding the
+module's language keys:
 
 -   Language keys
 -   Bundle symbolic name
@@ -93,27 +93,27 @@ Next you'll write new values for the language keys.
 
 ## Write custom language key values [](id=providing-language-keys)
 
-Create a new module to hold your custom language keys and a resource bundle
-loader. 
+Create a new module to hold a resource bundle loader and your custom language
+keys. 
 
 In your module's `src/main/resources/content` folder, create
 [language properties files](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#what-are-language-keys)
 for each locale whose keys you want to override. In each language properties
-file, assign your custom values to the respective language keys. 
+file, reassign your values to the respective language keys. 
 
 Next you'll create a resource bundle loader component to apply the language keys
 to the target module. 
 
 ## Implement a Resource Bundle Loader [](id=implementing-a-resource-bundle-loader)
 
-In this step, you'll create a resource bundle loader component that aggregates
-your new resource bundle (i.e., your new language key values) with the target
-module's existing resource bundle. You'll aggregate them in such a way to give
-preference to your new language key values. 
+In this step, you'll create a resource bundle loader component that combines
+your new resource bundle containing the new language key values with the target
+module's existing resource bundle. The new language key values are combined so
+they override the old ones. 
 
-For example, the following resource bundle loader component aggregates the
-current bundle's resource bundle with the `com.liferay.blogs.web` module's
-resource bundle and applies them to the `com.liferay.blogs.web` module. 
+For example, the following resource bundle loader component combines the current
+bundle's language keys with the `com.liferay.blogs.web` module's language keys
+and applies them to the `com.liferay.blogs.web` module. 
 
     @Component(
     	immediate = true,
@@ -213,14 +213,13 @@ and whose component name isn't
 `com.liferay.blade.samples.hook.resourcebundle.ResourceBundleLoaderComponent`.
 
 The method creates a resource bundle loader that aggregates this module's
-resource bundle loader and the target module's resource bundle loader. The
-resource bundle of the first loader is prioritized ahead of resource bundles of
-those that follow it. Therefore, this class's resource bundle loader, and its
-resource bundle (i.e., language keys), take precedence.
+resource bundle loader and the target module's resource bundle loader. The first
+loader's resource bundle is prioritized ahead of the resource bundles that
+follow it. Therefore, this class's resource bundle loader and its resource
+bundle (i.e., language keys), take precedence.
 
-If you use the example `setResourceBundleLoader` method in your resource bundle
-loader, make sure to replace `ResourceBundleLoaderComponent` with your resource
-bundle loader's class name. 
+If you use the example `setResourceBundleLoader` method, make sure to replace
+`ResourceBundleLoaderComponent` with your resource bundle loader's class name. 
 
 Resource bundle loader components have these class imports.
 
