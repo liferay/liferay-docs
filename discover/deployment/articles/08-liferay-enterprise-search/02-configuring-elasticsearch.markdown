@@ -444,7 +444,7 @@ in Elasticsearch.
     }
 
 See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/mapping-types.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/mapping-types.html)
 for more details on Elasticsearch's field datatypes.
 
 $$$
