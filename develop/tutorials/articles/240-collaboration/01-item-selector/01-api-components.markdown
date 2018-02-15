@@ -44,7 +44,7 @@ This diagram shows how these components interact to form a working API.
 
 ![Figure 1: Item Selector views (selection views) are determined by the return type and criterion, and rendered by the markup.](../../../images/item-selector-architecture.png)
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Selecting Entities Using an Item Selector](/develop/tutorials/-/knowledge_base/7-1/selecting-entities-using-the-item-selector)
 
