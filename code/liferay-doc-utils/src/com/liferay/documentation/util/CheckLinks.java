@@ -28,11 +28,14 @@ public class CheckLinks {
 		String legacyLinks = args[0];
 		checkLegacyLinks = Boolean.parseBoolean(legacyLinks);
 
-		String docDir = args[1];
-		platformToken = args[2];
-		appToken = args[3];
-		platformReferenceSite = args[4];
-		appReferenceSite = args[5];
+		String apiLinks = args[1];
+		checkApiLinks = Boolean.parseBoolean(apiLinks);
+
+		String docDir = args[2];
+		platformToken = args[3];
+		appToken = args[4];
+		platformReferenceSite = args[5];
+		appReferenceSite = args[6];
 
 		File currentArticleDir = new File("../" + docDir + "/articles");
 
@@ -93,7 +96,8 @@ public class CheckLinks {
 						logInvalidUrl(article, in.getLineNumber(), line, false);
 					}
 				}
-				else if (line.contains("/javadocs/") && line.contains("/com/liferay/")) {
+				else if (checkApiLinks && line.contains("/javadocs/")
+						&& line.contains("/com/liferay/")) {
 
 					validUrl = isApiUrlValid(article, in, line);
 
@@ -597,6 +601,7 @@ public class CheckLinks {
 
 	private static String appReferenceSite;
 	private static String appToken;
+	private static boolean checkApiLinks;
 	private static boolean checkLegacyLinks;
 	private static String ldnArticle;
 	private static String platformReferenceSite;
