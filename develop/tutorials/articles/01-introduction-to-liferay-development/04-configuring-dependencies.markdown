@@ -78,7 +78,7 @@ learn about it next.
 
 ### @product@'s App Manager [](id=liferay-portals-app-manager)
 
-[The App Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps#using-the-app-manager) 
+[The App Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps#using-the-app-manager) 
 knows what's deployed on your @product@ server. You can use it to find whatever
 modules you're looking for. 
 
@@ -97,7 +97,7 @@ Follow these steps to get a deployed module's information:
 ![Figure 2: The App Manager aggregates Liferay and independent modules.](../../../images/intro-configuring-dependencies-indep-modules-in-app-manager.png)
 
 If you don't know a deployed module's group, use the 
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell) 
+[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell) 
 to find it: 
 
 1.  Open a Gogo Shell session by entering the following into a command prompt: 
@@ -212,7 +212,7 @@ ID, and version number.
 +$$$
 
 **Note**: To configure third-party libraries in a module, see the tutorial 
-[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module). 
+[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module). 
 
 $$$
 
@@ -260,14 +260,14 @@ that's a skill you can depend on!
 
 ## Related Topics [](id=related-topics)
 
-[Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
+[Reference](/develop/reference/-/knowledge_base/7-1/development-reference)
 
-[Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules)
+[Liferay API Modules](/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules)
 
-[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module)
+[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
 
-[Classes Moved from portal-service.jar](/develop/reference/-/knowledge_base/7-0/classes-moved-from-portal-service-jar)
+[Classes Moved from portal-service.jar](/develop/reference/-/knowledge_base/7-1/classes-moved-from-portal-service-jar)
 
-[Tooling](/develop/tutorials/-/knowledge_base/7-0/tooling)
+[Tooling](/develop/tutorials/-/knowledge_base/7-1/tooling)
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+[Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets)
