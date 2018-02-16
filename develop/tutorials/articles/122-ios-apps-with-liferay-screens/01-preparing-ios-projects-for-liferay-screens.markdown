@@ -111,7 +111,7 @@ Create a `liferay-server-context.plist` file and specify values required for
 communicating with your portal instance. As an example, refer to 
 [`liferay-server-context-sample.plist`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Resources/liferay-server-context-sample.plist). 
 
-![Figure 8: Here's a property list file, called `liferay-context.plist`.](../../images/screens-ios-liferay-context.png)
+![Figure 1: Here's a property list file, called `liferay-context.plist`.](../../images/screens-ios-liferay-context.png)
 
 The values you need to specify in your `liferay-server-context.plist` are: 
 
