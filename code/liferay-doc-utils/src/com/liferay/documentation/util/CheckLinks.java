@@ -79,7 +79,7 @@ public class CheckLinks {
 					}
 
 					if (!validUrl) {
-						logInvalidUrl(article, in.getLineNumber(), line);
+						logInvalidUrl(article, in.getLineNumber(), line, false);
 					}
 
 				}
@@ -90,7 +90,7 @@ public class CheckLinks {
 					validUrl = isSubUrlValid(article, secondaryHeader);
 
 					if (!validUrl) {
-						logInvalidUrl(article, in.getLineNumber(), line);
+						logInvalidUrl(article, in.getLineNumber(), line, false);
 					}
 				}
 				else if (line.contains("/javadocs/") && line.contains("/com/liferay/")) {
@@ -98,7 +98,7 @@ public class CheckLinks {
 					validUrl = isApiUrlValid(article, in, line);
 
 					if (!validUrl) {
-						logInvalidUrl(article, in.getLineNumber(), line);
+						logInvalidUrl(article, in.getLineNumber(), line, false);
 					}
 				}
 			}
@@ -214,7 +214,7 @@ public class CheckLinks {
 		try {
 			header = line.substring(begIndex, endIndex);
 		} catch(Exception e) {
-			logInvalidUrl(article, in.getLineNumber(), line);
+			logInvalidUrl(article, in.getLineNumber(), line, true);
 		}
 
 		return header;
@@ -240,7 +240,7 @@ public class CheckLinks {
 			endLdnUrl = line.substring(begIndex, endIndex);
 		} catch (StringIndexOutOfBoundsException e) {
 			endLdnUrl = line.substring(begIndex, line.length());
-			logInvalidUrl(article, lineNumber, line);
+			logInvalidUrl(article, lineNumber, line, true);
 		}
 
 		ldnArticle = endLdnUrl;
@@ -273,7 +273,7 @@ public class CheckLinks {
 		try {
 			header = line.substring(begIndex, endIndex);
 		} catch(Exception e) {
-			logInvalidUrl(article, in.getLineNumber(), line);
+			logInvalidUrl(article, in.getLineNumber(), line, true);
 		}
 
 		return header;
@@ -432,7 +432,7 @@ public class CheckLinks {
 				validAPIURL = false;
 			}
 		} catch (NullPointerException e) {
-			logInvalidUrl(article, in.getLineNumber(), line);
+			logInvalidUrl(article, in.getLineNumber(), line, true);
 		}
 
 		return validAPIURL;
@@ -459,7 +459,7 @@ public class CheckLinks {
 			Parser htmlParser = new Parser(url);
 			list = htmlParser.extractAllNodesThatMatch(new NodeClassFilter(LinkTag.class));
 		} catch (ParserException e) {
-			logInvalidUrl(article, lineNumber, ldnArticle);
+			logInvalidUrl(article, lineNumber, ldnArticle, false);
 		}
 
 		List<String> results = new LinkedList<String>();
@@ -473,7 +473,7 @@ public class CheckLinks {
 
 		for (String x : results) {
 			if (x.contains("2Fsearch&#x25;2Fsearch&#x26;_3_redirect&#x3d;")) {
-				logInvalidUrl(article, lineNumber, ldnArticle);
+				logInvalidUrl(article, lineNumber, ldnArticle, false);
 			}
 			else {
 				validLDNURL = true;
@@ -575,11 +575,21 @@ public class CheckLinks {
 		return validURL;
 	}
 
-	private static void logInvalidUrl(File article, int lineNumber, String line) {
+	private static void logInvalidUrl(File article, int lineNumber, String line,
+			boolean corruptUrlFormat) {
+
+		String message = null;
+
+		if (corruptUrlFormat) {
+			message = "CORRUPT URL FORMATTING";
+		}
+		else {
+			message = "INVALID URL";
+		}
 
 		resultsNumber = resultsNumber + 1;
 
-		System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
+		System.out.println(resultsNumber + ". " + "**" + message + "**\n File: " +
 				article.getPath() + ":" + lineNumber + "\n" +
 				" Line: " + line);
 
