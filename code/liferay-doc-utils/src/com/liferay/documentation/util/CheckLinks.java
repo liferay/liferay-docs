@@ -29,10 +29,10 @@ public class CheckLinks {
 		checkLegacyLinks = Boolean.parseBoolean(legacyLinks);
 
 		String docDir = args[1];
-		String platformToken = args[2];
-		String appToken = args[3];
-		String platformReferenceSite = args[4];
-		String appReferenceSite = args[5];
+		platformToken = args[2];
+		appToken = args[3];
+		platformReferenceSite = args[4];
+		appReferenceSite = args[5];
 
 		File currentArticleDir = new File("../" + docDir + "/articles");
 
@@ -95,37 +95,11 @@ public class CheckLinks {
 				}
 				else if (line.contains("/javadocs/") && line.contains("/com/liferay/")) {
 
-					int begIndex = line.indexOf("](") + 2;
-					int endIndex = line.indexOf(")", begIndex);
+					validUrl = isApiUrlValid(article, in, line);
 
-					String urlString = line.substring(begIndex, endIndex);
-
-					urlString = urlString.replace("@" + platformToken + "@", platformReferenceSite);
-					urlString = urlString.replace("@" + appToken + "@", appReferenceSite);
-
-
-					URL url = null;
-
-					try {
-						url = new URL(urlString);
-					} catch (MalformedURLException e) {
-						// ignore this because docs.liferay.com creates many URLs that work
-						// but throw the MalformedURLException
-					}
-
-					try {
-						HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-						urlConnection.setRequestMethod("GET");
-						urlConnection.connect() ; 
-						int code = urlConnection.getResponseCode();
-
-						if (code == 404) {
-							logInvalidUrl(article, in.getLineNumber(), line);
-						}
-					} catch (NullPointerException e) {
+					if (!validUrl) {
 						logInvalidUrl(article, in.getLineNumber(), line);
 					}
-
 				}
 			}
 
@@ -426,6 +400,44 @@ public class CheckLinks {
 		return headers;
 	}
 
+	private static boolean isApiUrlValid(File article, LineNumberReader in, String line)
+			throws IOException {
+
+		boolean validAPIURL = true;
+
+		int begIndex = line.indexOf("](") + 2;
+		int endIndex = line.indexOf(")", begIndex);
+
+		String urlString = line.substring(begIndex, endIndex);
+
+		urlString = urlString.replace("@" + platformToken + "@", platformReferenceSite);
+		urlString = urlString.replace("@" + appToken + "@", appReferenceSite);
+
+		URL url = null;
+
+		try {
+			url = new URL(urlString);
+		} catch (MalformedURLException e) {
+			// ignore this because docs.liferay.com creates many URLs that work
+			// but throw the MalformedURLException
+		}
+
+		try {
+			HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+			urlConnection.setRequestMethod("GET");
+			urlConnection.connect() ; 
+			int code = urlConnection.getResponseCode();
+
+			if (code == 404) {
+				validAPIURL = false;
+			}
+		} catch (NullPointerException e) {
+			logInvalidUrl(article, in.getLineNumber(), line);
+		}
+
+		return validAPIURL;
+	}
+
 	/**
 	 * Returns <code>true</code> if the LDN URL is valid. This method is used to
 	 * check legacy URLs hosted on LDN.
@@ -573,8 +585,12 @@ public class CheckLinks {
 
 	}
 
+	private static String appReferenceSite;
+	private static String appToken;
 	private static boolean checkLegacyLinks;
 	private static String ldnArticle;
+	private static String platformReferenceSite;
+	private static String platformToken;
 	private static int resultsNumber = 0;
 	private static boolean validUrl;
 
