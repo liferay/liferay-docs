@@ -262,9 +262,19 @@ for more information.
 ## Clustering Elasticsearch in Remote Operation Mode [](id=clustering-elasticsearch-in-remote-operation-mode)
 
 Clustering Elasticsearch is easy. Each time you run the Elasticsearch start
-script, a new node is added to the cluster. If you want four nodes, for example,
-just run `./bin/elasticsearch` four times. If you only run the start script
-once, you have a cluster with just one node.
+script, a new local storage node is added to the cluster. If you want four nodes
+running locally, for example, just run `./bin/elasticsearch` four times. If you
+only run the start script once, you have a cluster with just one node.
+
++$$$
+
+**Elasticsearch 6:** To start multiple local storage nodes in Elasticsearch 6,
+you must also configure `node.max_local_storage_nodes` to be something greater
+than `1`. See
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-node.html#max-local-storage-nodes)
+for more information.
+
+$$$
 
 Elasticsearch's default configuration works for a cluster of up to ten nodes,
 since the default number of shards is `5`, while the default number of replica
@@ -292,6 +302,17 @@ discovery in the `elasticsearch.yml`:
     discovery.zen.ping.unicast.hosts: ["node1.ip.address", "node2.ip.address"]
 
 $$$
+
++$$$
+
+**Elasticsearch 6:** In Elasticsearch 6 there's no ability to specify the
+number of shards and replicas in the `elasticsearch.yml`file. Configure
+these index-level settings in the Elasticsearch 6 adapter, using the
+`indexNumberOfShards` and `indexNumberOfReplicas` properties to specify the
+number of primary shards and number of replica shards, respectively.
+
+$$$
+
 
 For more information on configuring an Elasticsearch cluster, see the
 documentation on [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
