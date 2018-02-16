@@ -29,6 +29,10 @@ public class CheckLinks {
 		checkLegacyLinks = Boolean.parseBoolean(legacyLinks);
 
 		String docDir = args[1];
+		String platformToken = args[2];
+		String appToken = args[3];
+		String platformReferenceSite = args[4];
+		String appReferenceSite = args[5];
 
 		File currentArticleDir = new File("../" + docDir + "/articles");
 
@@ -96,12 +100,9 @@ public class CheckLinks {
 
 					String urlString = line.substring(begIndex, endIndex);
 
-					if (urlString.contains("@platform-ref@")) {
-						urlString = urlString.replace("@platform-ref@", "https://docs.liferay.com/ce/portal");
-					}
-					else if (urlString.contains("@app-ref@")) {
-						urlString = urlString.replace("@app-ref@", "https://docs.liferay.com/ce/apps");
-					}
+					urlString = urlString.replace("@" + platformToken + "@", platformReferenceSite);
+					urlString = urlString.replace("@" + appToken + "@", appReferenceSite);
+
 
 					URL url = null;
 
