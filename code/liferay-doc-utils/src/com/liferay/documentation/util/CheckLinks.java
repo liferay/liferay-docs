@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -72,12 +75,7 @@ public class CheckLinks {
 					}
 
 					if (!validUrl) {
-						resultsNumber = resultsNumber + 1;
-
-						System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
-								article.getPath() + ":" + in.getLineNumber() + "\n" +
-								" Line: " + line);
-
+						logInvalidUrl(article, in.getLineNumber(), line);
 					}
 
 				}
@@ -88,13 +86,45 @@ public class CheckLinks {
 					validUrl = isSubUrlValid(article, secondaryHeader);
 
 					if (!validUrl) {
-						resultsNumber = resultsNumber + 1;
-
-						System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
-								article.getPath() + ":" + in.getLineNumber() + "\n" +
-								" Line: " + line);
-
+						logInvalidUrl(article, in.getLineNumber(), line);
 					}
+				}
+				else if (line.contains("/javadocs/") && line.contains("/com/liferay/")) {
+
+					int begIndex = line.indexOf("](") + 2;
+					int endIndex = line.indexOf(")", begIndex);
+
+					String urlString = line.substring(begIndex, endIndex);
+
+					if (urlString.contains("@platform-ref@")) {
+						urlString = urlString.replace("@platform-ref@", "https://docs.liferay.com/ce/portal");
+					}
+					else if (urlString.contains("@app-ref@")) {
+						urlString = urlString.replace("@app-ref@", "https://docs.liferay.com/ce/apps");
+					}
+
+					URL url = null;
+
+					try {
+						url = new URL(urlString);
+					} catch (MalformedURLException e) {
+						// ignore this because docs.liferay.com creates many URLs that work
+						// but throw the MalformedURLException
+					}
+
+					try {
+						HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+						urlConnection.setRequestMethod("GET");
+						urlConnection.connect() ; 
+						int code = urlConnection.getResponseCode();
+
+						if (code == 404) {
+							logInvalidUrl(article, in.getLineNumber(), line);
+						}
+					} catch (NullPointerException e) {
+						logInvalidUrl(article, in.getLineNumber(), line);
+					}
+
 				}
 			}
 
@@ -209,11 +239,7 @@ public class CheckLinks {
 		try {
 			header = line.substring(begIndex, endIndex);
 		} catch(Exception e) {
-			resultsNumber = resultsNumber + 1;
-
-			System.out.println(resultsNumber + ". " + "**CORRUPT URL FORMATTING**\n"
-					+ "File: " + article.getPath() + ":" + in.getLineNumber() + "\n" +
-					" Line: " + line);
+			logInvalidUrl(article, in.getLineNumber(), line);
 		}
 
 		return header;
@@ -239,11 +265,7 @@ public class CheckLinks {
 			endLdnUrl = line.substring(begIndex, endIndex);
 		} catch (StringIndexOutOfBoundsException e) {
 			endLdnUrl = line.substring(begIndex, line.length());
-			resultsNumber = resultsNumber + 1;
-
-			System.out.println(resultsNumber + ". " + "**CORRUPT URL FORMATTING**\n"
-					+ "File: " + article.getPath() + ":" + lineNumber + "\n" +
-					" Line: " + line);
+			logInvalidUrl(article, lineNumber, line);
 		}
 
 		ldnArticle = endLdnUrl;
@@ -276,11 +298,7 @@ public class CheckLinks {
 		try {
 			header = line.substring(begIndex, endIndex);
 		} catch(Exception e) {
-			resultsNumber = resultsNumber + 1;
-
-			System.out.println(resultsNumber + ". " + "**CORRUPT URL FORMATTING**\n"
-					+ "File: " + article.getPath() + ":" + in.getLineNumber() + "\n" +
-					" Line: " + line);
+			logInvalidUrl(article, in.getLineNumber(), line);
 		}
 
 		return header;
@@ -428,11 +446,7 @@ public class CheckLinks {
 			Parser htmlParser = new Parser(url);
 			list = htmlParser.extractAllNodesThatMatch(new NodeClassFilter(LinkTag.class));
 		} catch (ParserException e) {
-			resultsNumber = resultsNumber + 1;
-
-			System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
-					article.getPath() + ":" + lineNumber + "\n" +
-					" Line: " + ldnArticle);	
+			logInvalidUrl(article, lineNumber, ldnArticle);
 		}
 
 		List<String> results = new LinkedList<String>();
@@ -446,12 +460,7 @@ public class CheckLinks {
 
 		for (String x : results) {
 			if (x.contains("2Fsearch&#x25;2Fsearch&#x26;_3_redirect&#x3d;")) {
-
-				resultsNumber = resultsNumber + 1;
-
-				System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
-						article.getPath() + ":" + lineNumber + "\n" +
-						" Line: " + ldnArticle);
+				logInvalidUrl(article, lineNumber, ldnArticle);
 			}
 			else {
 				validLDNURL = true;
@@ -551,6 +560,16 @@ public class CheckLinks {
 		}
 
 		return validURL;
+	}
+
+	private static void logInvalidUrl(File article, int lineNumber, String line) {
+
+		resultsNumber = resultsNumber + 1;
+
+		System.out.println(resultsNumber + ". " + "**INVALID URL**\n File: " +
+				article.getPath() + ":" + lineNumber + "\n" +
+				" Line: " + line);
+
 	}
 
 	private static boolean checkLegacyLinks;
