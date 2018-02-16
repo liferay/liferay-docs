@@ -111,7 +111,8 @@ locale you're overriding. Here's an example resource bundle class for the
 
 The class's `_resourceBundle` field is assigned a `ResourceBundle`. The call to
 `ResourceBundle.getBundle` needs two parameters. The `content.Language_en_US`
-parameter is the language file's qualified name with respect to the module's `src/main/resources` folder. The second parameter is a `control` that sets the
+parameter is the language file's qualified name with respect to the module's
+`src/main/resources` folder. The second parameter is a `control` that sets the
 language syntax of the resource bundle. To use language syntax identical to
 Liferay's syntax, import Liferay's
 `com.liferay.portal.kernel.language.UTF8Control` class and set the second
