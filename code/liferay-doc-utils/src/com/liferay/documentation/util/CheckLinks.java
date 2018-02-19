@@ -63,32 +63,12 @@ public class CheckLinks {
 				if (line.contains("](/develop/") || line.contains("](/discover/") ||
 						line.contains("](/distribute/")) {
 
+					String findStr = "/-/knowledge_base/";
 					int urlsInLine = countUrls(line);
 
-					//if (urlsInLine > 1) {
+					if (urlsInLine < 2) {
 
-					//}
-
-					// Need to split below logic to funnel confusing parts for multi-url lines
-					// to different place. That is what's below now.
-
-					// Multiple headers only extracted when more than one relative links are on a line
-					LinkedHashMap<String, Integer> headerMaps = extractHeaders(line, article, in);
-
-					Iterator it = headerMaps.entrySet().iterator();
-
-					// Iterating through header maps, which contain header and index information
-					// used for validating lines with multiple links
-				    while (it.hasNext()) {
-
-				    	Map.Entry pair = (Map.Entry)it.next();
-				        it.remove();
-
-						String header = pair.getKey().toString();
-						String headerValue = pair.getValue().toString();
-						int headerIndex = Integer.parseInt(headerValue);
-
-						// end of >1 logic
+						String header = extractHeader(line, article, in, findStr);
 
 						String primaryHeader = null;
 						validUrl = true;
@@ -99,7 +79,7 @@ public class CheckLinks {
 							primaryHeader = splitHeaders[0];
 							String secondaryHeader = splitHeaders[1];
 
-							validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader, headerIndex);
+							validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader, 0);
 						}
 						else if (header.equals("")) {
 							continue;
@@ -107,12 +87,16 @@ public class CheckLinks {
 						else {
 
 							primaryHeader = header;
-							validUrl = isUrlValid(line, article, in, primaryHeader, null, headerIndex);
+							validUrl = isUrlValid(line, article, in, primaryHeader, null, 0);
 						}
 
 						if (!validUrl) {
 							logInvalidUrl(article, in.getLineNumber(), line, false);
 						}
+					}
+
+					else {
+						checkMultiLinks(article, line, in, findStr);
 					}
 				}
 				else if (line.contains("](#")) {
@@ -211,6 +195,54 @@ public class CheckLinks {
 		}
 	}
 
+	private static void checkMultiLinks(File article, String line, LineNumberReader in, String findStr)
+			throws IOException {
+
+		// Multiple headers only extracted when more than one relative links are on a line
+		LinkedHashMap<String, Integer> headerMaps = extractHeaders(line, article, in, findStr);
+
+		Iterator<?> it = headerMaps.entrySet().iterator();
+
+		// Iterating through header maps, which contain header and index information
+		// used for validating lines with multiple links
+	    while (it.hasNext()) {
+
+	    	Map.Entry pair = (Map.Entry)it.next();
+	        it.remove();
+
+			String header = pair.getKey().toString();
+			String headerValue = pair.getValue().toString();
+			int headerIndex = Integer.parseInt(headerValue);
+
+			// end of >1 logic
+
+			String primaryHeader = null;
+			validUrl = true;
+
+			if (header.contains("#")) {
+				String[] splitHeaders = header.split("#");
+
+				primaryHeader = splitHeaders[0];
+				String secondaryHeader = splitHeaders[1];
+
+				validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader, headerIndex);
+			}
+			else if (header.equals("")) {
+				continue;
+			}
+			else {
+
+				primaryHeader = header;
+				validUrl = isUrlValid(line, article, in, primaryHeader, null, headerIndex);
+			}
+
+			if (!validUrl) {
+				logInvalidUrl(article, in.getLineNumber(), line, false);
+			}
+		}
+
+	}
+
 	private static int countUrls(String line) {
 
 		String findStr = "/-/knowledge_base/";
@@ -257,10 +289,11 @@ public class CheckLinks {
 	 * @return the header ID
 	 * @throws IOException if an IO exception occurred
 	 */
-	private static String extractHeader(String line, File article, LineNumberReader in)
+	private static String extractHeader(String line, File article, LineNumberReader in, String findStr)
 			throws IOException {
 
-		int begIndex = line.lastIndexOf("/") + 1;
+		int strIndex = line.indexOf(findStr);
+		int begIndex = strIndex + findStr.length() + 4;
 		int endIndex = line.indexOf(")", begIndex);
 
 		String header = "";
@@ -274,12 +307,10 @@ public class CheckLinks {
 		return header;
 	}
 
-	private static LinkedHashMap<String, Integer> extractHeaders(String line, File article, LineNumberReader in)
+	private static LinkedHashMap<String, Integer> extractHeaders(String line, File article, LineNumberReader in, String findStr)
 			throws IOException {
 
 		// Find all relevant headers
-		String findStr = "/-/knowledge_base/";
-		//ArrayList<LinkedHashMap<String, Integer>> headerList = new ArrayList<LinkedHashMap<String, Integer>>();
 		LinkedHashMap<String, Integer> headerMap = new LinkedHashMap<String, Integer>();
 		String originalLine = line;
 
