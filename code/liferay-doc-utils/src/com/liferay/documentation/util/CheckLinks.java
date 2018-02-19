@@ -8,8 +8,12 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 
 import org.apache.commons.lang3.StringUtils;
@@ -59,32 +63,57 @@ public class CheckLinks {
 				if (line.contains("](/develop/") || line.contains("](/discover/") ||
 						line.contains("](/distribute/")) {
 
-					String header = extractHeader(line, article, in);
+					int urlsInLine = countUrls(line);
 
-					String primaryHeader = null;
-					validUrl = true;
+					//if (urlsInLine > 1) {
 
-					if (header.contains("#")) {
-						String[] splitHeaders = header.split("#");
+					//}
 
-						primaryHeader = splitHeaders[0];
-						String secondaryHeader = splitHeaders[1];
+					// Need to split below logic to funnel confusing parts for multi-url lines
+					// to different place. That is what's below now.
 
-						validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader);
+					// Multiple headers only extracted when more than one relative links are on a line
+					LinkedHashMap<String, Integer> headerMaps = extractHeaders(line, article, in);
+
+					Iterator it = headerMaps.entrySet().iterator();
+
+					// Iterating through header maps, which contain header and index information
+					// used for validating lines with multiple links
+				    while (it.hasNext()) {
+
+				    	Map.Entry pair = (Map.Entry)it.next();
+				        it.remove();
+
+						String header = pair.getKey().toString();
+						String headerValue = pair.getValue().toString();
+						int headerIndex = Integer.parseInt(headerValue);
+
+						// end of >1 logic
+
+						String primaryHeader = null;
+						validUrl = true;
+
+						if (header.contains("#")) {
+							String[] splitHeaders = header.split("#");
+
+							primaryHeader = splitHeaders[0];
+							String secondaryHeader = splitHeaders[1];
+
+							validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader, headerIndex);
+						}
+						else if (header.equals("")) {
+							continue;
+						}
+						else {
+
+							primaryHeader = header;
+							validUrl = isUrlValid(line, article, in, primaryHeader, null, headerIndex);
+						}
+
+						if (!validUrl) {
+							logInvalidUrl(article, in.getLineNumber(), line, false);
+						}
 					}
-					else if (header.equals("")) {
-						continue;
-					}
-					else {
-
-						primaryHeader = header;
-						validUrl = isUrlValid(line, article, in, primaryHeader, null);
-					}
-
-					if (!validUrl) {
-						logInvalidUrl(article, in.getLineNumber(), line, false);
-					}
-
 				}
 				else if (line.contains("](#")) {
 
@@ -119,27 +148,30 @@ public class CheckLinks {
 	 * @param  line the line containing a relative URL
 	 * @return the referenced headers
 	 */
-	private static ArrayList<List<String>> assignDirHeaders(String line) {
+	private static ArrayList<List<String>> assignDirHeaders(String line, int lineIndex) {
 
 		ArrayList<List<String>> headers = new ArrayList<List<String>>();
 
-		if (line.contains(userGuideDir)) {
+		String lineSubstring = line.substring(lineIndex, line.length());		
+
+		// The first link in the substring will have its headers applied.
+		if (lineSubstring.contains(userGuideDir)) {
 			headers = userGuideHeaders;
 		}
 
-		if (line.contains(adminGuideDir)) {
+		else if (lineSubstring.contains(adminGuideDir)) {
 			headers = adminGuideHeaders;
 		}
 
-		if (line.contains(userGuideReferenceDir)) {
+		else if (lineSubstring.contains(userGuideReferenceDir)) {
 			headers = userGuideReferenceHeaders;
 		}
 
-		if (line.contains(tutorialDir)) {
+		else if (lineSubstring.contains(tutorialDir)) {
 			headers = tutorialHeaders;
 		}
 
-		if (line.contains(devGuideReferenceDir)) {
+		else if (lineSubstring.contains(devGuideReferenceDir)) {
 			headers = devGuideReferenceHeaders;
 		}
 
@@ -177,6 +209,24 @@ public class CheckLinks {
 				devGuideReferenceArticles = findArticles(devGuideReferenceDir);
 			}
 		}
+	}
+
+	private static int countUrls(String line) {
+
+		String findStr = "/-/knowledge_base/";
+		int lastIndex = 0;
+		int count = 0;
+
+		while(lastIndex != -1){
+
+		    lastIndex = line.indexOf(findStr,lastIndex);
+
+		    if(lastIndex != -1){
+		        count ++;
+		        lastIndex += findStr.length();
+		    }
+		}
+		return count;
 	}
 
 	/**
@@ -222,6 +272,40 @@ public class CheckLinks {
 		}
 
 		return header;
+	}
+
+	private static LinkedHashMap<String, Integer> extractHeaders(String line, File article, LineNumberReader in)
+			throws IOException {
+
+		// Find all relevant headers
+		String findStr = "/-/knowledge_base/";
+		//ArrayList<LinkedHashMap<String, Integer>> headerList = new ArrayList<LinkedHashMap<String, Integer>>();
+		LinkedHashMap<String, Integer> headerMap = new LinkedHashMap<String, Integer>();
+		String originalLine = line;
+
+		while(line.contains(findStr)){
+
+			int strIndex = line.indexOf(findStr);
+			int begIndex = strIndex + findStr.length() + 4;
+			int endIndex = line.indexOf(")", begIndex);
+			int headerIndex = originalLine.length() - line.length();
+
+			String header = "";
+
+			try {
+				header = line.substring(begIndex, endIndex);
+			} catch(Exception e) {
+				logInvalidUrl(article, in.getLineNumber(), line, true);
+			}
+
+			line = line.substring(endIndex, line.length());
+
+			headerMap.put(header, headerIndex);
+			//headerList.add(map);
+
+		}
+
+		return headerMap;
 	}
 
 	/**
@@ -535,20 +619,15 @@ public class CheckLinks {
 	 * @throws IOException if an IO exception occurred
 	 */
 	private static boolean isUrlValid(String line, File article, LineNumberReader in,
-			String primaryHeader, String secondaryHeader) throws IOException {
+			String primaryHeader, String secondaryHeader, int lineIndex) throws IOException {
 
 		boolean validURL = false;
 		ArrayList<List<String>> headers = new ArrayList<List<String>>();
 
-		headers = assignDirHeaders(line);
-		
-		// Prevents tables with multiple links from being invalidated
-		int count1 = StringUtils.countMatches(line, "/7-1/");
-		int count2 = StringUtils.countMatches(line, "/7-0/");
-		int count3 = StringUtils.countMatches(line, "/6-2/");
+		headers = assignDirHeaders(line, lineIndex);
 
 		// Check 7.1 links from local liferay-docs repo
-		if (line.contains("/7-1/") && count1 < 2) {
+		if (line.contains("/7-1/")) {
 
 			if (Validator.isNull(secondaryHeader)) {
 
@@ -566,8 +645,7 @@ public class CheckLinks {
 
 		// Check legacy URLs by checking remote LDN site. These links must be
 		// published to LDN before this tool can verify them.
-		else if (checkLegacyLinks && (line.contains("/7-0/") || line.contains("/6-2/")) &&
-				(count2 < 2 && count3 < 2)) {
+		else if (checkLegacyLinks && (line.contains("/7-0/") || line.contains("/6-2/"))) {
 
 			String ldnUrl = extractLdnUrl(line, in.getLineNumber(), article);
 			validURL = isLdnUrlValid(ldnUrl, article, in.getLineNumber());
