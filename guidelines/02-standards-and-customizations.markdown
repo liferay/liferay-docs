@@ -105,11 +105,11 @@ documenting. -Cody -->
 
     The following options are available for the `check-links` task:
 
+    - `-Dapi.links`: Set this to `true` to check API links hosted on
+      [docs.liferay.com](https://docs.liferay.com/).
     - `-Dlegacy.links`: Set this to `true` to check legacy links already
       published to LDN. This checks all links pointing to articles in the
       current branch **and** all legacy links hosted on LDN.
-    - `-Dapi.links`: Set this to `true` to check API links hosted on
-      [docs.liferay.com](https://docs.liferay.com/).
 
 -   `dist-article-ce`: Creates a ZIP file for importing the specified article
     (``-Darticle=...``), its images, and supporting structure to a Knowledge
