@@ -8,7 +8,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -16,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
-import org.apache.commons.lang3.StringUtils;
 import org.htmlparser.Parser;
 import org.htmlparser.filters.NodeClassFilter;
 import org.htmlparser.tags.LinkTag;
@@ -64,7 +62,7 @@ public class CheckLinks {
 						line.contains("](/distribute/")) {
 
 					String findStr = "/-/knowledge_base/";
-					int urlsInLine = countUrls(line, findStr);
+					int urlsInLine = countStrings(line, findStr);
 
 					if (urlsInLine < 2) {
 
@@ -102,7 +100,7 @@ public class CheckLinks {
 				if (line.contains("](#")) {
 
 					String findStr = "](#";
-					int subHeadersInLine = countUrls(line, findStr);
+					int subHeadersInLine = countStrings(line, findStr);
 
 					if (subHeadersInLine < 2) {
 						String secondaryHeader = extractSubHeader(line, article, in);
@@ -139,6 +137,8 @@ public class CheckLinks {
 	 * current line and assigns it to the appropriate header list.
 	 *
 	 * @param  line the line containing a relative URL
+	 * @param  lineIndex the header's index on the line. This is useful when
+	 *         there are multiple relative links on one line.
 	 * @return the referenced headers
 	 */
 	private static ArrayList<List<String>> assignDirHeaders(String line, int lineIndex) {
@@ -204,6 +204,15 @@ public class CheckLinks {
 		}
 	}
 
+	/**
+	 * Checks the line that contains multiple relative links.
+	 *
+	 * @param  article the article containing the line
+	 * @param  line the line containing multiple relative links
+	 * @param  in the line number reader
+	 * @param  findStr the string used for indexing the line's links
+	 * @throws IOException if an IO exception occurred
+	 */
 	private static void checkMultiLinks(File article, String line, LineNumberReader in, String findStr)
 			throws IOException {
 
@@ -216,7 +225,8 @@ public class CheckLinks {
 		// used for validating lines with multiple links
 	    while (it.hasNext()) {
 
-	    	Map.Entry pair = (Map.Entry)it.next();
+	    	@SuppressWarnings("rawtypes")
+			Map.Entry pair = (Map.Entry)it.next();
 	        it.remove();
 
 			String header = pair.getKey().toString();
@@ -247,11 +257,21 @@ public class CheckLinks {
 
 			if (!validUrl) {
 				logInvalidUrl(article, in.getLineNumber(), line, false);
+				System.out.println("Invalid Header: " + header);
 			}
 		}
 
 	}
 
+	/**
+	 * Checks the line that contains multiple subheader relative links.
+	 *
+	 * @param  article the article containing the line
+	 * @param  line the line containing multiple subheader relative links
+	 * @param  in the line number reader
+	 * @param  findStr the string used for indexing the line's links
+	 * @throws IOException if an IO exception occurred
+	 */
 	private static void checkMultiSubLinks(File article, String line, LineNumberReader in,
 			String findStr) throws IOException {
 
@@ -263,24 +283,29 @@ public class CheckLinks {
 		// used for validating lines with multiple links
 	    while (it.hasNext()) {
 
-	    	Map.Entry pair = (Map.Entry)it.next();
+	    	@SuppressWarnings("rawtypes")
+			Map.Entry pair = (Map.Entry)it.next();
 	        it.remove();
 
 			String secondaryHeader = pair.getKey().toString();
-			String secondaryHeaderValue = pair.getValue().toString();
-			int secondaryHeaderIndex = Integer.parseInt(secondaryHeaderValue);
 
 			validUrl = isSubUrlValid(article, secondaryHeader);
 
 			if (!validUrl) {
-				System.out.println("header: " + secondaryHeader);
-
 				logInvalidUrl(article, in.getLineNumber(), line, false);
+				System.out.println("Invalid Subheader: #" + secondaryHeader);
 			}
 	    }
 	}
 
-	private static int countUrls(String line, String findStr) {
+	/**
+	 * Returns the number of specific strings in the line.
+	 *
+	 * @param  line the line to count the number of specific strings
+	 * @param  findStr the specific string to search for
+	 * @return the number of specific strings in the line
+	 */
+	private static int countStrings(String line, String findStr) {
 
 		int lastIndex = 0;
 		int count = 0;
@@ -322,6 +347,8 @@ public class CheckLinks {
 	 * @param  line the line from which to extract the header
 	 * @param  article the article containing the line
 	 * @param  in the line number reader
+	 * @param  findStr the string to search for. This is helpful to prevent
+	 *         false positives when searching for a header.
 	 * @return the header ID
 	 * @throws IOException if an IO exception occurred
 	 */
@@ -343,6 +370,19 @@ public class CheckLinks {
 		return header;
 	}
 
+	/**
+	 * 
+	 *
+	 * @param  line the line from which to extract the header
+	 * @param  article the article containing the line
+	 * @param  in the line number reader
+	 * @param  findStr the string to search for. This is helpful to prevent
+	 *         false positives when searching for a header.
+	 * @param  indexCorrection the number used to modify the index used when
+	 *         searching for the next specific string on the line
+	 * @return the multiple headers contained on the line paired with their indexes
+	 * @throws IOException if an IO exception occurred
+	 */
 	private static LinkedHashMap<String, Integer> extractMultiStrings(String line, File article, LineNumberReader in,
 			String findStr, int indexCorrection) throws IOException {
 
@@ -555,6 +595,17 @@ public class CheckLinks {
 		return headers;
 	}
 
+	/**
+	 * Returns <code>true</code> if the API URL is valid. This method is used to
+	 * check URLs hosted on docs.liferay.com.
+	 *
+	 * @param  article the article containing the API URL
+	 * @param  in the line number reader
+	 * @param  line the line containing the API URL
+	 * @return <code>true</code> if the API URL is valid; <code>false</code>
+	 *         otherwise
+	 * @throws IOException if an IO exception occurred
+	 */
 	private static boolean isApiUrlValid(File article, LineNumberReader in, String line)
 			throws IOException {
 
@@ -681,6 +732,8 @@ public class CheckLinks {
 	 * @param  in the line number reader
 	 * @param  primaryHeader the primary header ID
 	 * @param  secondaryHeader the secondary header ID
+	 * @param  lineIndex the header's index on the line. This is useful when
+	 *         there are multiple relative links on one line.
 	 * @return <code>true</code> if the URL is valid; <code>false</code>
 	 *         otherwise
 	 * @throws IOException if an IO exception occurred
@@ -724,6 +777,17 @@ public class CheckLinks {
 		return validURL;
 	}
 
+	/**
+	 * Writes a message to the console specifying the article, line, and line
+	 * number for the invalid/corrupt URL.
+	 *
+	 * @param article the article containing the incorrect URL
+	 * @param lineNumber the line number of the line containing the incorrect
+	 *        URL
+	 * @param line the line containing the incorrect URL
+	 * @param corruptUrlFormat whether the reported URL is caused by corrupt
+	 *        formatting
+	 */
 	private static void logInvalidUrl(File article, int lineNumber, String line,
 			boolean corruptUrlFormat) {
 
