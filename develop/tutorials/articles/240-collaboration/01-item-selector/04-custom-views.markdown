@@ -468,6 +468,8 @@ Great! Now you know how to create custom views for the Item Selector.
 
 ## Related Topics [](id=related-topics)
 
+[Understanding the Item Selector API's Components](/develop/tutorials/-/knowledge_base/7-1/understanding-the-item-selector-apis-components)
+
 [Selecting Entities Using the Item Selector](/develop/tutorials/-/knowledge_base/7-1/selecting-entities-using-the-item-selector)
 
 [Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-1/creating-custom-item-selector-entities)

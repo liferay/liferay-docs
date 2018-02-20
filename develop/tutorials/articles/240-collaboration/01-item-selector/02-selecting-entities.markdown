@@ -299,6 +299,8 @@ Item Selector API, you can give your app's users the power of choice!
 
 ## Related Articles [](id=related-articles)
 
+[Understanding the Item Selector API's Components](/develop/tutorials/-/knowledge_base/7-1/understanding-the-item-selector-apis-components)
+
 [Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-1/creating-custom-item-selector-views)
 
 [Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-1/creating-custom-item-selector-entities)

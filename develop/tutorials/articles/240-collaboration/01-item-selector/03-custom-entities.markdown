@@ -121,6 +121,8 @@ such a selection view for your entity, see the tutorial
 
 ## Related Topics [](id=related-topics)
 
+[Understanding the Item Selector API's Components](/develop/tutorials/-/knowledge_base/7-1/understanding-the-item-selector-apis-components)
+
 [Selecting Entities using the Item Selector](/develop/tutorials/-/knowledge_base/7-1/selecting-entities-using-the-item-selector)
 
 [Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-1/creating-custom-item-selector-views)
