@@ -49,7 +49,7 @@ Now you know how to obtain an OSGi bundle's dependency npm packages descriptors!
 
 ## Related Topics [](id=related-topics)
 
-[Obtaining an OSGi bundle's npm Package Descriptors](/develop/tutorials/-/knowledge_base/7-0/obtaining-npm-package-descriptors)
+[Obtaining an OSGi bundle's npm Package Descriptors](/develop/tutorials/-/knowledge_base/7-0/obtaining-dependency-npm-package-descriptors)
 
 [The Structure of OSGi Bundles Containing npm Packages](/develop/tutorials/-/knowledge_base/7-0/the-structure-of-osgi-bundles-containing-npm-packages)
 

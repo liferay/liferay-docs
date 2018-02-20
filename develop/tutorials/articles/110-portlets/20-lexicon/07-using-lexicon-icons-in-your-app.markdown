@@ -54,6 +54,6 @@ That's it! Now you know how to use Lexicon icons in your apps.
 
 ## Related Topics [](id=related-topics)
 
-[Setting Search Container Animations](/develop/tutorials/-/knowledge_base/7-0//develop/tutorials/-/knowledge_base/7-0/setting-search-container-animations)
+[Setting Search Container Animations](/develop/tutorials/-/knowledge_base/7-0/setting-search-container-animations)
 
-[Creating Layouts inside Custom Portlets](/develop/tutorials/-/knowledge_base/7-0//develop/tutorials/-/knowledge_base/7-0//develop/tutorials/-/knowledge_base/7-0/creating-layouts-inside-custom-portlets)
+[Creating Layouts inside Custom Portlets](/develop/tutorials/-/knowledge_base/7-0/creating-layouts-inside-custom-portlets)

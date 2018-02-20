@@ -29,4 +29,4 @@ Now you know how to disable the Management Bar!
 
 [Implementing a Management Bar Sort Filter](/develop/tutorials/-/knowledge_base/7-0/implementing-a-management-bar-sort-filter)
 
-[Setting Search Container Animations](/develop/tutorials/-/knowledge_base/7-0//develop/tutorials/-/knowledge_base/7-0/setting-search-container-animations)
+[Setting Search Container Animations](/develop/tutorials/-/knowledge_base/7-0/setting-search-container-animations)
