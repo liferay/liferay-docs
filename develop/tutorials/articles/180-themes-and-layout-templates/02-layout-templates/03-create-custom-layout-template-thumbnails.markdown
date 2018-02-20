@@ -34,7 +34,7 @@ template is
 it deploys when the theme is deployed. Now you know how to create a custom 
 thumbnail preview for your @product@ layout templates!
 
-## Related topics
+## Related topics [](id=related-topics)
 
 [Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator-0)
 

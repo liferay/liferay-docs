@@ -78,7 +78,7 @@ theme to Liferay Workspace. See the
 [Migrating a Theme from the Plugins SDK to Workspace](/develop/tutorials/-/knowledge_base/7-1/migrating-a-theme-from-the-plugins-sdk-to-workspace)
 tutorial for details.
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
 

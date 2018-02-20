@@ -21,10 +21,8 @@ Developers can submit Javadoc **with** code if certain precautions are followed
 (outlined below). Follow the below process for submitting Javadoc this way:
 
 1.  Write Javadoc for code areas that you have deep knowledge for. Be sure to
-    follow the
-    [Javadoc Guidelines](https://dev.liferay.com/participate/javadoc-guidelines)
-    when writing Javadoc to ensure comprehensive descriptions and consistent
-    style.
+    follow the [Javadoc Guidelines](06-javadoc-guidelines.markdown) when
+    writing Javadoc to ensure comprehensive descriptions and consistent style.
 
 2.  Insert an `@review` tag below each new Javadoc entry. This will be searched
     for by the Knowledge Management (KM) team after it's merged to ensure that
@@ -54,10 +52,8 @@ Follow the process outlined below to provide Javadoc for code that is already
 published:
 
 1.  Write Javadoc for code areas that you have deep knowledge on. Be sure to
-    follow the
-    [Javadoc Guidelines](https://dev.liferay.com/participate/javadoc-guidelines)
-    when writing Javadoc to ensure comprehensive descriptions and consistent
-    style.
+    follow the [Javadoc Guidelines](06-javadoc-guidelines.markdown) when
+    writing Javadoc to ensure comprehensive descriptions and consistent style.
 
 2.  Send a pull request containing the new Javadoc to your team's tech writer 
     (a KM team member). If you're unsure who should receive the pull request, 
@@ -74,10 +70,8 @@ and is knowledgeable enough in this area to submit Javadoc, follow the steps
 below to contribute:
 
 1.  Write Javadoc for code areas that you have deep knowledge on. Be sure to
-    follow the
-    [Javadoc Guidelines](https://dev.liferay.com/participate/javadoc-guidelines)
-    when writing Javadoc to ensure comprehensive descriptions and consistent
-    style.
+    follow the [Javadoc Guidelines](06-javadoc-guidelines.markdown) when
+    writing Javadoc to ensure comprehensive descriptions and consistent style.
 
 2.  Send a pull request containing the new Javadoc to
     [`codyhoag`](https://github.com/codyhoag).
@@ -92,9 +86,9 @@ for providing drafted Javadoc for their areas of expertise. Below is a checklist
 to complete to ensure Javadoc is properly formatted and ready for submission:
 
 - All Javadoc should follow the
-  [Javadoc Guidelines](https://dev.liferay.com/participate/javadoc-guidelines).
+  [Javadoc Guidelines](06-javadoc-guidelines.markdown).
 - Format Javadoc using the Javadoc Formatter. See
-  [here](https://dev.liferay.com/participate/javadoc-guidelines#formattingAndBuildingJavadoc)
+  [here](06-javadoc-guidelines.markdown#formatting-and-building-javadoc)
   for more information.
 - Ensure no source formatting violations were introduced while editing. To check
   this, run Source Formatter on your local changes. The steps below
