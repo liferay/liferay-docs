@@ -371,7 +371,9 @@ public class CheckLinks {
 	}
 
 	/**
-	 * 
+	 * Returns a map of headers paired with their line indexes. This method is
+	 * used to extract multiple headers (from relative links) that are contained
+	 * on one line.
 	 *
 	 * @param  line the line from which to extract the header
 	 * @param  article the article containing the line
