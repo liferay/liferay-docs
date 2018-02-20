@@ -89,4 +89,4 @@ project by adding logic and additional files to the folders outlined above.
 
 [Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
 
-[Service Builder with Maven](/develop/tutorials/-/knowledge_base/7-0//develop/reference/-/knowledge_base/7-0/service-builder-with-maven)
+[Service Builder with Maven](/develop/reference/-/knowledge_base/7-0/service-builder-with-maven)

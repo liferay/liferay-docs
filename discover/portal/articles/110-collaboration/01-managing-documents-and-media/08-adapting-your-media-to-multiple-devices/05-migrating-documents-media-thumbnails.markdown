@@ -63,7 +63,7 @@ Adaptive Media:
     this approach when there isn't a large number of thumbnails to process, or 
     if you prefer to generate your images from scratch. This approach is covered 
     in more detail in the 
-    [Generating Missing Adapted Images](/discover/portal/-/knowledge_base/7-0/generating-missing-image-resolutions) 
+    [Generating Missing Adapted Images](/discover/portal/-/knowledge_base/7-0/managing-image-resolutions#generating-missing-image-resolutions) 
     section of the Adaptive Media user guide. 
 
 -   **Execute a migrate process that reuses the existing thumbnails:** This 
