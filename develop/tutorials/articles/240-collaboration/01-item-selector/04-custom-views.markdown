@@ -265,9 +265,10 @@ For a real-world example of a view class, see the
 ## Writing Your View Markup [](id=writing-your-view-markup)
 
 Now that you've implemented your selection view's class, you must write the 
-markup to render the view. This markup varies greatly depending on your app's 
-requirements. You can write the markup with taglibs, AUI components, or even 
-pure HTML and JavaScript. Regardless, the markup must do two key things:
+markup that renders the view. This markup will vary greatly depending on your 
+app's requirements and your personal preferences. You can write the markup with 
+taglibs, AUI components, or even pure HTML and JavaScript. Regardless, the 
+markup must do two key things:
 
 -   Render the entities for the user to select. 
 -   When an entity is selected, pass the information specified by the Item 
@@ -290,46 +291,47 @@ therefore use this event name in the markup:
 For a complete, real-world example, see the 
 [`layouts.jsp` view markup](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web/src/main/resources/META-INF/resources/layouts.jsp)
 for the 
-[`com.liferay.layout.item.selector.web` module](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web). 
+[`com.liferay.layout.item.selector.web` module](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web). Even though this example is for the previous version of 
+@product@, it still applies to @product-ver@. 
 
-This `layouts.jsp` file first defines some variables. Note that the 
-`LayoutItemSelectorViewDisplayContext` is an optional class that contains 
-additional information about the criteria and view, but it isn't required: 
+1.  This `layouts.jsp` file first defines some variables. Note that the 
+    `LayoutItemSelectorViewDisplayContext` is an optional class that contains 
+    additional information about the criteria and view, but it isn't required: 
 
-    <%
-    LayoutItemSelectorViewDisplayContext layoutItemSelectorViewDisplayContext = 
-        (LayoutItemSelectorViewDisplayContext)request.getAttribute(
-        BaseLayoutsItemSelectorView.LAYOUT_ITEM_SELECTOR_VIEW_DISPLAY_CONTEXT);
+        <%
+        LayoutItemSelectorViewDisplayContext layoutItemSelectorViewDisplayContext = 
+            (LayoutItemSelectorViewDisplayContext)request.getAttribute(
+            BaseLayoutsItemSelectorView.LAYOUT_ITEM_SELECTOR_VIEW_DISPLAY_CONTEXT);
 
-    LayoutItemSelectorCriterion layoutItemSelectorCriterion = 
-        layoutItemSelectorViewDisplayContext.getLayoutItemSelectorCriterion();
+        LayoutItemSelectorCriterion layoutItemSelectorCriterion = 
+            layoutItemSelectorViewDisplayContext.getLayoutItemSelectorCriterion();
 
-    Portlet portlet = PortletLocalServiceUtil.getPortletById(company.getCompanyId(), 
-        portletDisplay.getId());
-    %>
+        Portlet portlet = PortletLocalServiceUtil.getPortletById(company.getCompanyId(), 
+            portletDisplay.getId());
+        %>
 
-This snippet imports a CSS file for styling and places it in the `<head>` of the 
-page:
+2.  This snippet imports a CSS file for styling and places it in the `<head>` of 
+    the page: 
 
-    <liferay-util:html-top>
-            <link href="<%= PortalUtil.getStaticResourceURL(
-            request, application.getContextPath() + "/css/main.css", 
-            portlet.getTimestamp()) 
-            %>" rel="stylesheet" type="text/css" />
-    </liferay-util:html-top>
+        <liferay-util:html-top>
+                <link href="<%= PortalUtil.getStaticResourceURL(
+                request, application.getContextPath() + "/css/main.css", 
+                portlet.getTimestamp()) 
+                %>" rel="stylesheet" type="text/css" />
+        </liferay-util:html-top>
     
-You can learn more about using the `liferay-util` taglibs in the 
-[Using the Liferay Util Taglib](/develop/tutorials/-/knowledge_base/7-1/using-the-liferay-util-taglib)
-tutorial.
+    You can learn more about using the `liferay-util` taglibs in the 
+    [Using the Liferay Util Taglib](/develop/tutorials/-/knowledge_base/7-1/using-the-liferay-util-taglib)
+    tutorial.
 
-This snippet creates the UI to display the layout entities. It uses the 
-[`liferay-layout:layouts-tree` taglib](@platform-ref@/7.0-latest/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/layouts-tree.html) 
-along with the 
-[Lexicon](https://liferay.github.io/clay/) 
-design language to create 
-[cards](https://liferay.github.io/clay/content/cards/):
+3.  This snippet creates the UI to display the layout entities. It uses the 
+    [`liferay-layout:layouts-tree` taglib](@platform-ref@/7.0-latest/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/layouts-tree.html) 
+    along with the 
+    [Lexicon](https://liferay.github.io/clay/) 
+    design language to create 
+    [cards](https://liferay.github.io/clay/content/cards/):
 
-    <div class="container-fluid-1280 layouts-selector">
+        <div class="container-fluid-1280 layouts-selector">
             <div class="card-horizontal main-content-card">
                     <div class="card-row card-row-padded">
                             <liferay-layout:layouts-tree
@@ -347,15 +349,15 @@ design language to create
                             />
                     </div>
             </div>
-    </div>
+        </div>
     
-The configuration above renders the UI shown in the figure below:
+    The configuration above renders the UI shown in the figure below:
 
-![Figure 2: The Layouts Item Selector view uses Lexicon and Liferay Layout taglibs to create the UI.](../../../images/layouts-item-selector-view.png)
+    ![Figure 2: The Layouts Item Selector view uses Lexicon and Liferay Layout taglibs to create the UI.](../../../images/layouts-item-selector-view.png)
 
-This portion of the `aui:script` returns the path for the page:
+4.  This portion of the `aui:script` returns the path for the page:
 
-    <aui:script use="aui-base">
+        <aui:script use="aui-base">
             var LString = A.Lang.String;
     
             var getChosenPagePath = function(node) {
@@ -382,9 +384,9 @@ This portion of the `aui:script` returns the path for the page:
                     return buffer.join(' > ');
             };
 
-The snippet below passes the return type data when the layout(entity) is 
-selected. In particular, take note of the `url` and `uuid` variables, which
-retrieve the URL or UUID for the layout:
+5.  The snippet below passes the return type data when the layout(entity) is 
+    selected. In particular, take note of the `url` and `uuid` variables, which
+    retrieve the URL or UUID for the layout:
             
             var setSelectedPage = function(event) {
                     var disabled = true;
@@ -407,8 +409,8 @@ retrieve the URL or UUID for the layout:
     
                             data.layoutpath = getChosenPagePath(lastSelectedNode);
 
-This checks if the return type information is a URL or a UUID; then it sets the 
-value for the JSON object's `data` attribute accordingly:
+6.  This checks if the return type information is a URL or a UUID; then it sets 
+    the value for the JSON object's `data` attribute accordingly:
                             
                             <c:choose>
                                     <c:when test="<%= Objects.equals(layoutItemSelectorViewDisplayContext.getItemSelectorReturnTypeName(), URLItemSelectorReturnType.class.getName()) %>">
@@ -424,17 +426,18 @@ value for the JSON object's `data` attribute accordingly:
                             data.ckeditorfuncnum: <%= layoutItemSelectorViewDisplayContext.getCkEditorFuncNum() %>;
                     </c:if>
 
-The `data-url` and `data-uuid` attributes are in the HTML markup for the Layouts
-Item Selector. The HTML markup for an instance of the Layouts Item Selector is
-shown below:
+    The `data-url` and `data-uuid` attributes are in the HTML markup for the 
+    Layouts Item Selector. The HTML markup for an instance of the Layouts Item 
+    Selector is shown here:
 
-![Figure 3: The URL and UUID can be seen in the `data-url` and `data-uuid` attributes of the Layout Item Selector's HTML markup.](../../../images/layouts-item-selector-html.png)
+    ![Figure 3: The URL and UUID can be seen in the `data-url` and `data-uuid` attributes of the Layout Item Selector's HTML markup.](../../../images/layouts-item-selector-html.png)
 
-The last line adds the `CKEditorFuncNum` for the editor to the JSON object's 
-`data` attribute.
+    The last line adds the `CKEditorFuncNum` for the editor to the JSON object's 
+    `data` attribute.
 
-The JavaScript trigger event, specified in the Item Selector return type, is 
-fired, passing the data JSON object with the required return type information:
+7.  The JavaScript trigger event, specified in the Item Selector return type, is 
+    fired, passing the data JSON object with the required return type 
+    information:
 
                     Liferay.Util.getOpener().Liferay.fire(
                             '<%= layoutItemSelectorViewDisplayContext.getItemSelectedEventName() %>',
@@ -444,7 +447,7 @@ fired, passing the data JSON object with the required return type information:
                     );
             };
 
-Finally, the layout is set to the selected page:
+8.  Finally, the layout is set to the selected page:
             
             var container = A.one('#<portlet:namespace />treeContainerOutput');
     
@@ -455,7 +458,7 @@ Finally, the layout is set to the selected page:
     
                     tree.after('lastSelectedChange', setSelectedPage);
             }
-    </aui:script>
+        </aui:script>
 
 Your new selection view is automatically rendered by the Item Selector in every
 portlet that uses the criterion and return types you defined, without modifying
