@@ -99,7 +99,7 @@ keys.
 In your module's `src/main/resources/content` folder, create
 [language properties files](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#what-are-language-keys)
 for each locale whose keys you want to override. In each language properties
-file, reassign your values to the respective language keys. 
+file, specify your language key overrides. 
 
 Next you'll create a resource bundle loader component to apply the language keys
 to the target module. 
