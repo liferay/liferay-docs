@@ -1,6 +1,6 @@
 # Pre upgrade - Speed up the process [](id=pre-upgrade-speed-up-the-process)
 
-The most critical step in upgrading @product@ is running the process
+The most complex step in upgrading @product@ is running the process
 that upgrades the database from the old version to the new version. It
 takes a long time to restructure the data to the new format.
 
@@ -9,15 +9,15 @@ production environment. Here's a summary of the steps:
 
 1.  Copy your most
     [recent complete backup](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
-    to a non-production environment in which you can analyze your database and
+    from production to a non-production environment in which you can analyze your database and
     test upgrading, as explained in the remaining steps. 
 2.  [Examine your database](#analyzing-your-database-step-2).
 3.  [Use Liferay's API to delete unused content](#remove-unused-data-from-the-database-using-liferays-api-step-3).
 4.  [Run the upgrade process on your non-production environment](#execute-the-upgrade-process-step-4).
 5.  Check the upgrade log for the processes that took the most time.
 6.  Remove unused content from the upgrade processes that took the longest. If
-    you see a potential issue, feel free to open a support ticket and have
-    Liferay verify your analysis.
+    you see a potential issue, analyze it and contact the community if you need help. For EE customers, feel free
+    to open a support ticket and have Liferay verify your analysis.
 7.  Repeat steps 4, 5, and 6 as needed.
 8.  [Remove unused content from production](remove-unused-objects-from-production-step-8). 
 
@@ -29,12 +29,13 @@ Here are the most important things to examine in your non-production
 environment's copy of the production database:
 
 -   Records per table
--   Size per table
+-   Size per table (optional)
 
 The greater these values are the longer upgrade processes take. 
 
-The output from importing backup data into your non-production database should
-show each table's size and number of rows (records).
+The database engines offer different ways to get this information and sometimes
+the output from importing backup data into your non-production database show 
+each table's size and number of rows (records).
 
 For example, output from a typical database import looks like this:
 
@@ -265,10 +266,9 @@ Here are some common areas to find unneeded objects:
     in the database and on the file system, space that no longer needs
     to be upgraded.
 
--   **Layouts:** Layouts are page groups, and they affect upgrade
-    performance because they relate to other entities such as portlet
-    preferences, permissions, assets, ratings, and more. Remove unneeded
-    layouts. 
+-   **Layouts:** Layouts are site pages, and they affect upgrade performance
+    because they relate to other entities such as portlet preferences,
+    permissions, assets, ratings, and more. Remove unneeded layouts. 
 
 -   **Roles**: Remove any roles you don't need. Deleting them also deletes
     related `ResourceBlockPermission` and `ResourcePermission` objects.
@@ -329,7 +329,10 @@ Now that you have removed unused objects from your non-production environment
 and tested your changes, you can use Liferay's API to remove the same objects
 from your production environment. By removing the objects from production  and
 testing your changes before upgrading, you can more easily troubleshoot any
-issues, knowing that they're not related to upgrade processes. 
+issues, knowing that they're not related to upgrade processes. Another benefit
+of doing this in your current production environment is that its performance
+and maintenance will be improved meanwhile you work on upgrading to the new
+version of @product@.
 
 ## Conclusion [](id=conclusion)
 
