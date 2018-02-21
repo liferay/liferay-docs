@@ -222,10 +222,12 @@ Here are the commands available in the `upgrade` namespace:
 
 **upgrade:help:** displays upgrade commands
 
-**upgrade:execute {module_name}:** executes upgrade for that module
-
 **upgrade:check:** list upgrades pending to execute because they failed in 
 the past or the module hasn't reached its final version
+
+**upgrade:execute {module_name}:** executes upgrade for that module
+
+**upgrade:executeAll:** executes all pending upgrades processes for modules
 
 **upgrade:list:** lists all registered upgrades
 
@@ -233,7 +235,16 @@ the past or the module hasn't reached its final version
 
 **upgrade:list | grep Registered:** lists registered upgrades and their versions
 
+**verify:help:** displays verify commands
+
+**verify:check {module_name}:** list latest execution result for a specific
+verify process
+
+**verify:checkAll:** list latest execution result for all verify processes
+
 **verify:execute {module_name}:** executes a verifier
+
+**verify:executeAll:** executes all verifiers
 
 **verify:list:** lists all registered verifiers
 
@@ -347,7 +358,12 @@ module's upgrade status. The core's `servletContextName` field value is
 Each module has one `Release_` table record, and the value for its
 `schemaVersion` field must `1.0.0` or greater (`1.0.0` is the initial version
 for @product-ver@ modules, except for those that were previously traditional
-plugins intended for Liferay Portal version 6.2 or earlier). 
+plugins intended for Liferay Portal version 6.2 or earlier).
+
+Apart from the dependencies with other modules, modules can also have other
+dependencies such as having a certain schema version in the `Release_` table.
+You can check why some modules are not available even when they are actived
+executing `dm wtf`. This logic is part of [Apache Felix Dependency Manager](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager/tutorials/leveraging-the-shell.html).
 
 ## Executing verify processes [](id=executing-verify-processes)
 
