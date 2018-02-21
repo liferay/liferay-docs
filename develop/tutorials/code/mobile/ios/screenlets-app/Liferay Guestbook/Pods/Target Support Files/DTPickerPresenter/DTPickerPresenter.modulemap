@@ -1,0 +1,6 @@
+framework module DTPickerPresenter {
+  umbrella header "DTPickerPresenter-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -152,7 +152,7 @@ The `GreedyPortlet` class is similar to `ReluctantPortlet`, except its
 
 The greedy policy option lets the component switch to using a higher ranked
 `SomeService` instance if one becomes active in the system. The section
-[*Deploying a module with a higher ranked service instance for binding to greedy references immediately*](#higher-ranked-service)
+[*Deploying a module with a higher ranked service instance for binding to greedy references immediately*](#deploying-a-module-with-a-higher-ranked-service-instance-for-binding-to-gre)
 demonstrates this portlet switching to a higher ranked service.
 
 It's time to see this module's portlets and service in action.

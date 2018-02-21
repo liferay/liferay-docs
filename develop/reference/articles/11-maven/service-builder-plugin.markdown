@@ -1,6 +1,6 @@
 # Service Builder Plugin [](id=service-builder-with-maven)
 
-The Service Builder Gradle lets you generate a service layer defined in a
+The Service Builder plugin lets you generate a service layer defined in a
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 `service.xml` file. Visit the
 [Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
@@ -8,7 +8,7 @@ tutorial to learn more about applying Service Builder to your Maven project.
 
 ## Usage [](id=usage)
 
-To use the plugin, include it in your `pom.xml` file:
+To use the plugin, include it in your project's root `pom.xml` file:
 
     <build>
         <plugins>
@@ -23,6 +23,9 @@ To use the plugin, include it in your `pom.xml` file:
         ...
         </plugins>
     </build>
+
+You can view an example POM containing the Service Builder configuration
+[here](https://github.com/liferay/liferay-portal/blob/master/modules/util/portal-tools-service-builder/samples/pom.xml).
 
 ## Goals [](id=goals)
 

@@ -227,11 +227,11 @@ This example below uses a `custom` validator and the built-in `number` validator
                             },
                             custom: true,
                             errorMessage: 'must-not-equal-2',
-                            fieldName: 'fooInput',
+                            fieldName: '<portlet:namespace />fooInput',
                             validatorName: 'custom_fooInput'
                     },
                     {
-                            fieldName: 'fooInput',
+                            fieldName: '<portlet:namespace />fooInput',
                             validatorName: 'number'
                     }
             ];

@@ -1,14 +1,16 @@
-# Using CKEditor Plugins in AlloyEditor [](id=using-ckeditor-plugins-in-alloyeditor)
+# Using the Default CKEditor Plugins Bundled with AlloyEditor [](id=using-ckeditor-plugins-in-alloyeditor)
 
 You can customize an editor's configuration to include several modifications, 
 such as 
 [adding new buttons](/develop/tutorials/-/knowledge_base/7-0/creating-and-contributing-new-buttons-to-alloyeditor) 
 and 
 [adding new behaviors](/develop/tutorials/-/knowledge_base/7-0/adding-new-behavior-to-an-editor).
-You can also use existing CKEditor plugins in @product@'s AlloyEditor. Several 
-CKEditor plugins are packaged with @product@'s AlloyEditor, so you can 
-use them with just a few configuration adjustments. This tutorial shows how to 
-use the CKEditor plugins bundled with @product@'s AlloyEditor.
+You can also use existing CKEditor plugins in AlloyEditor. Several 
+CKEditor plugins are packaged with @product@'s AlloyEditor, so you can use them 
+with just a few configuration adjustments. This tutorial shows how to use the 
+CKEditor plugins bundled with @product@'s AlloyEditor. The 
+[`com.liferay.docs.myblogseditorconfigcontributor` module](https://github.com/liferay/liferay-docs/tree/7.0.x/develop/tutorials/code/my-blogs-editor-config-contributor) 
+is used as an example throughout this tutorial. 
 
 Follow these steps:
 
@@ -18,22 +20,25 @@ Follow these steps:
     the Blogs and Blogs Admin portlets:
 
         @Component(
-          property = {
-            "editor.config.key=contentEditor", "editor.name=alloyeditor",
-            "editor.name=ckeditor", "javax.portlet.name=" + "com_liferay_blogs_web_portlet_BlogsPortlet",
-            "javax.portlet.name=" + "com_liferay_blogs_web_portlet_BlogsAdminPortlet",
-            "service.ranking:Integer=101"
-          },
-          service = EditorConfigContributor.class
+        	immediate = true,
+        	property = {
+        		"editor.config.key=contentEditor",
+        		"editor.name=alloyeditor",
+        		"editor.name=ckeditor",
+        		"javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
+        		"javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet",
+        		"service.ranking:Integer=100"
+        	},
+        	service = EditorConfigContributor.class
         )
         public class MyBlogsEditorConfigContributor
           extends BaseEditorConfigContributor {
 
-          @Override
-          public void populateConfigJSONObject(
-            JSONObject jsonObject, Map<String, Object> inputEditorTaglibAttributes,
-            ThemeDisplay themeDisplay,
-            RequestBackedPortletURLFactory requestBackedPortletURLFactory) {
+            @Override
+            public void populateConfigJSONObject(
+              JSONObject jsonObject, Map<String, Object> inputEditorTaglibAttributes,
+              ThemeDisplay themeDisplay,
+              RequestBackedPortletURLFactory requestBackedPortletURLFactory) {
               
             }
           }
@@ -58,14 +63,10 @@ Follow these steps:
     dependency and the remaining UI bridge plugins:
 
         if (Validator.isNotNull(extraPlugins)) {
-          extraPlugins = extraPlugins + ",ae_uibridge,ae_autolink,ae_buttonbridge,ae_menubridge,
-          ae_menubuttonbridge,ae_panelmenubuttonbridge,ae_placeholder,
-          ae_richcombobridge,font";
+          extraPlugins = extraPlugins + ",ae_uibridge,ae_autolink,ae_buttonbridge,ae_menubridge,ae_panelmenubuttonbridge,ae_placeholder,ae_richcombobridge,font"; 
         }
         else {
-          extraPlugins = "ae_uibridge,ae_autolink,ae_buttonbridge,ae_menubridge,
-          ae_menubuttonbridge,ae_panelmenubuttonbridge,ae_placeholder,
-          ae_richcombobridge,font";
+          extraPlugins = "ae_uibridge,ae_autolink,ae_buttonbridge,ae_menubridge,ae_panelmenubuttonbridge,ae_placeholder,ae_richcombobridge,font";
         }
         
         jsonObject.put("extraPlugins", extraPlugins);
@@ -100,12 +101,20 @@ Follow these steps:
         for (int i = 0; i < selectionsJSONArray.length(); i++) {
          JSONObject selection = selectionsJSONArray.getJSONObject(i);
 
-        if (Objects.equals(selection.get("name"), "text")) {
-         JSONArray buttons = selection.getJSONArray("buttons");
+            if (Objects.equals(selection.get("name"), "text")) {
+             JSONArray buttons = selection.getJSONArray("buttons");
 
-         buttons.put("Font");
-         buttons.put("FontSize");
-        }
+             buttons.put("Font");
+             buttons.put("FontSize");
+            }
+
+         }
+         
+         stylesJSONObject.put("selections", selectionsJSONArray);
+
+         toolbarsJSONObject.put("styles", stylesJSONObject);
+
+         jsonObject.put("toolbars", toolbarsJSONObject);
  
 +$$$
 
@@ -113,81 +122,106 @@ Follow these steps:
 find the button names for a plugin by 
 [searching its `plugin.js` file](/develop/reference/-/knowledge_base/7-0/ckeditor-plugin-reference-guide) 
 for `editor.ui.addButton`. Note that button names are case sensitive and may be 
-aliased in the `addButton()` method, such as the [`clipboard` plugin's](https://github.com/ckeditor/ckeditor-dev/blob/release/4.0.x/plugins/clipboard/plugin.js#L341-L350) `Cut`,`Copy`, and `Paste` buttons.
+aliased in the `addButton()` method, such as the 
+[`clipboard` plugin's](https://github.com/ckeditor/ckeditor-dev/blob/release/4.0.x/plugins/clipboard/plugin.js#L341-L350) 
+`Cut`, `Copy`, and `Paste` buttons.
 
 $$$
 
 Below is the full example `*EditorConfigContributor` class that adds the `font` 
 plugin to the AlloyEditor for the Blogs and Blogs Admin portlets:
 
-    @Component(
-    	property = {
-    		"editor.config.key=contentEditor", "editor.name=alloyeditor",
-    		"editor.name=ckeditor", "javax.portlet.name=" + "com_liferay_blogs_web_portlet_BlogsPortlet",
-    		"javax.portlet.name=" + "com_liferay_blogs_web_portlet_BlogsAdminPortlet",
-    		"service.ranking:Integer=101"
-    	},
-    	service = EditorConfigContributor.class
-    )
-    public class MyBlogsEditorConfigContributor
-    	extends BaseEditorConfigContributor {
+    package com.liferay.docs.myblogseditorconfigcontributor;
 
-    	@Override
-    	public void populateConfigJSONObject(
-    		JSONObject jsonObject, Map<String, Object> inputEditorTaglibAttributes,
-    		ThemeDisplay themeDisplay,
-    		RequestBackedPortletURLFactory requestBackedPortletURLFactory) {
+    import java.util.ArrayList;
+    import java.util.List;
+    import java.util.Map;
+    import java.util.Objects;
 
-    		String extraPlugins = jsonObject.getString("extraPlugins");
+    import org.osgi.service.component.annotations.Component;
+    import org.osgi.service.component.annotations.Reference;
 
-        if (Validator.isNotNull(extraPlugins)) {
-          extraPlugins = extraPlugins + ",ae_uibridge,ae_autolink,ae_buttonbridge,ae_menubridge,
-          ae_menubuttonbridge,ae_panelmenubuttonbridge,ae_placeholder,
-          ae_richcombobridge,font";
-        }
-        else {
-          extraPlugins = "ae_uibridge,ae_autolink,ae_buttonbridge,ae_menubridge,
-          ae_menubuttonbridge,ae_panelmenubuttonbridge,ae_placeholder,
-          ae_richcombobridge,font";
-        }
 
-    		jsonObject.put("extraPlugins", extraPlugins);
+    import com.liferay.portal.kernel.editor.configuration.BaseEditorConfigContributor;
+    import com.liferay.portal.kernel.editor.configuration.EditorConfigContributor;
+    import com.liferay.portal.kernel.json.JSONArray;
+    import com.liferay.portal.kernel.json.JSONFactoryUtil;
+    import com.liferay.portal.kernel.json.JSONObject;
+    import com.liferay.portal.kernel.portlet.RequestBackedPortletURLFactory;
+    import com.liferay.portal.kernel.theme.ThemeDisplay;
+    import com.liferay.portal.kernel.util.Portal;
+    import com.liferay.portal.kernel.util.Validator;
 
-    		JSONObject toolbarsJSONObject = jsonObject.getJSONObject("toolbars");
+    /**
+     * @author liferay
+     */
+     @Component(
+     	immediate = true,
+     	property = {
+     		"editor.config.key=contentEditor",
+     		"editor.name=alloyeditor",
+     		"editor.name=ckeditor",
+     		"javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
+     		"javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet",
+     		"service.ranking:Integer=100"
+     	},
+     	service = EditorConfigContributor.class
+     )
+     public class MyBlogsEditorConfigContributor
+       extends BaseEditorConfigContributor {
+     
+       @Override
+       public void populateConfigJSONObject(
+         JSONObject jsonObject, Map<String, Object> inputEditorTaglibAttributes,
+         ThemeDisplay themeDisplay,
+         RequestBackedPortletURLFactory requestBackedPortletURLFactory) {
+    			 
+    			String extraPlugins = jsonObject.getString("extraPlugins");
+    			 
+    			 if (Validator.isNotNull(extraPlugins)) {
+    				  extraPlugins = extraPlugins + ",ae_uibridge,ae_autolink,ae_buttonbridge,ae_menubridge,ae_panelmenubuttonbridge,ae_placeholder,ae_richcombobridge,font"; 
+    				}
+    				else {
+    				  extraPlugins = "ae_uibridge,ae_autolink,ae_buttonbridge,ae_menubridge,ae_panelmenubuttonbridge,ae_placeholder,ae_richcombobridge,font";
+    				}
 
-    		if (toolbarsJSONObject == null) {
-    			toolbarsJSONObject = JSONFactoryUtil.createJSONObject();
-    		}
+    				jsonObject.put("extraPlugins", extraPlugins);
+    				
+    				JSONObject toolbarsJSONObject = jsonObject.getJSONObject("toolbars");
 
-    		JSONObject stylesJSONObject = toolbarsJSONObject.getJSONObject(
-    			"styles");
+    				if (toolbarsJSONObject == null) {
+    				 toolbarsJSONObject = JSONFactoryUtil.createJSONObject();
+    				}
 
-    		if (stylesJSONObject == null) {
-    			stylesJSONObject = JSONFactoryUtil.createJSONObject();
-    		}
+    				JSONObject stylesJSONObject = toolbarsJSONObject.getJSONObject(
+    				 "styles");
 
-    		JSONArray selectionsJSONArray = stylesJSONObject.getJSONArray(
-    			"selections");
+    				if (stylesJSONObject == null) {
+    				 stylesJSONObject = JSONFactoryUtil.createJSONObject();
+    				}
 
-    		for (int i = 0; i < selectionsJSONArray.length(); i++) {
-    			JSONObject selection = selectionsJSONArray.getJSONObject(i);
+    				JSONArray selectionsJSONArray = stylesJSONObject.getJSONArray(
+    				 "selections");
 
-    			if (Objects.equals(selection.get("name"), "text")) {
-    				JSONArray buttons = selection.getJSONArray("buttons");
+    				for (int i = 0; i < selectionsJSONArray.length(); i++) {
+    				 JSONObject selection = selectionsJSONArray.getJSONObject(i);
 
-    				buttons.put("Font");
-    				buttons.put("FontSize");
-    			}
-    		}
+    						if (Objects.equals(selection.get("name"), "text")) {
+    						 JSONArray buttons = selection.getJSONArray("buttons");
 
-    		stylesJSONObject.put("selections", selectionsJSONArray);
+    						 buttons.put("Font");
+    						 buttons.put("FontSize");
+    						}
+     
+    				 }
+    		 
+    				stylesJSONObject.put("selections", selectionsJSONArray);
 
-    		toolbarsJSONObject.put("styles", stylesJSONObject);
+    				toolbarsJSONObject.put("styles", stylesJSONObject);
 
-    		jsonObject.put("toolbars", toolbarsJSONObject);
-    	}
-
-    }
+    				jsonObject.put("toolbars", toolbarsJSONObject);
+       }
+     }
 
 Now you know how to use @product@'s bundled CKEditor plugins in its AlloyEditor!
 

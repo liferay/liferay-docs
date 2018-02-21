@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="o2h-u5-MSY" customClass="RatingView_default_thumbs">
+            <rect key="frame" x="0.0" y="0.0" width="152" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIY-vY-Cza">
+                    <rect key="frame" x="0.0" y="0.0" width="76" height="68.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMN-0f-4yb" userLabel="Negative button">
+                            <rect key="frame" x="14" y="0.0" width="48" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="NbP-PK-uf9"/>
+                                <constraint firstAttribute="width" constant="48" id="e9f-QW-9BJ"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="default-thumb-down.png"/>
+                            <connections>
+                                <action selector="negativeButtonClicked:" destination="o2h-u5-MSY" eventType="touchUpInside" id="AcL-Gx-vbk"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-pr-nKb" userLabel="Negative count label">
+                            <rect key="frame" x="0.0" y="48" width="76" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Qr5-pr-nKb" firstAttribute="top" secondItem="bMN-0f-4yb" secondAttribute="bottom" id="Mum-1Z-35l"/>
+                        <constraint firstAttribute="trailing" secondItem="Qr5-pr-nKb" secondAttribute="trailing" id="Qj9-yR-QKe"/>
+                        <constraint firstItem="bMN-0f-4yb" firstAttribute="top" secondItem="SIY-vY-Cza" secondAttribute="top" id="dIK-VV-v6P"/>
+                        <constraint firstAttribute="bottom" secondItem="Qr5-pr-nKb" secondAttribute="bottom" id="jVa-KO-NKF"/>
+                        <constraint firstItem="bMN-0f-4yb" firstAttribute="centerX" secondItem="SIY-vY-Cza" secondAttribute="centerX" id="kTH-2d-nfh"/>
+                        <constraint firstItem="Qr5-pr-nKb" firstAttribute="leading" secondItem="SIY-vY-Cza" secondAttribute="leading" id="uKL-XE-8wJ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSa-CR-kLe">
+                    <rect key="frame" x="76" y="0.0" width="76" height="68.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMA-1S-pMc" userLabel="Possitive count label">
+                            <rect key="frame" x="0.0" y="48" width="76" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwN-2g-Wfx" userLabel="Possitive button">
+                            <rect key="frame" x="14" y="0.0" width="48" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="48" id="9xM-Ag-Ua2"/>
+                                <constraint firstAttribute="height" constant="48" id="hhw-NC-BSC"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="default-thumb-up.png"/>
+                            <connections>
+                                <action selector="possitiveButtonClicked:" destination="o2h-u5-MSY" eventType="touchUpInside" id="olz-2B-H5O"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="GMA-1S-pMc" secondAttribute="trailing" id="79v-iU-mUo"/>
+                        <constraint firstItem="GMA-1S-pMc" firstAttribute="top" secondItem="hwN-2g-Wfx" secondAttribute="bottom" id="Ec7-P2-5wb"/>
+                        <constraint firstItem="hwN-2g-Wfx" firstAttribute="top" secondItem="BSa-CR-kLe" secondAttribute="top" id="YTI-mm-Tqd"/>
+                        <constraint firstItem="hwN-2g-Wfx" firstAttribute="centerX" secondItem="BSa-CR-kLe" secondAttribute="centerX" id="fV5-rQ-zIE"/>
+                        <constraint firstAttribute="bottom" secondItem="GMA-1S-pMc" secondAttribute="bottom" id="ih1-9d-B1I"/>
+                        <constraint firstItem="GMA-1S-pMc" firstAttribute="leading" secondItem="BSa-CR-kLe" secondAttribute="leading" id="yVz-C4-QLq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SIY-vY-Cza" firstAttribute="top" secondItem="o2h-u5-MSY" secondAttribute="top" id="CwW-AH-bpn"/>
+                <constraint firstAttribute="trailing" secondItem="BSa-CR-kLe" secondAttribute="trailing" id="NVr-ni-YfB"/>
+                <constraint firstItem="SIY-vY-Cza" firstAttribute="leading" secondItem="o2h-u5-MSY" secondAttribute="leading" id="e0b-q6-nUm"/>
+                <constraint firstItem="BSa-CR-kLe" firstAttribute="width" secondItem="o2h-u5-MSY" secondAttribute="width" multiplier="0.5" id="xBZ-7G-gec"/>
+                <constraint firstItem="BSa-CR-kLe" firstAttribute="top" secondItem="o2h-u5-MSY" secondAttribute="top" id="yer-4D-GPe"/>
+                <constraint firstItem="SIY-vY-Cza" firstAttribute="width" secondItem="o2h-u5-MSY" secondAttribute="width" multiplier="0.5" id="yrU-gA-S7r"/>
+                <constraint firstItem="BSa-CR-kLe" firstAttribute="leading" secondItem="SIY-vY-Cza" secondAttribute="trailing" id="yzz-Pk-RkY"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="negativeButton" destination="bMN-0f-4yb" id="Osp-XN-Dkg"/>
+                <outlet property="negativeCountLabel" destination="Qr5-pr-nKb" id="wBD-q8-Uok"/>
+                <outlet property="possitiveButton" destination="hwN-2g-Wfx" id="abe-4Y-2Cs"/>
+                <outlet property="possitiveCountLabel" destination="GMA-1S-pMc" id="3hj-XB-Jts"/>
+            </connections>
+            <point key="canvasLocation" x="-124" y="-10"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="default-thumb-down.png" width="48" height="48"/>
+        <image name="default-thumb-up.png" width="48" height="48"/>
+    </resources>
+</document>

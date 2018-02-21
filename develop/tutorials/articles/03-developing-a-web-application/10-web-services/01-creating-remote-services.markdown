@@ -217,8 +217,9 @@ remote services to make them available via SOAP (Simple Object Access Protocol).
 Follow these steps to do so:
 
 1.  In your Liferay workspace's `settings.gradle` file, add imports for 
-    `ServiceBuilderPlugin` and `WSDDBuilderPlugin`. Then add the 
-    `gradle.beforeProject` closure at the bottom of the file: 
+    `ServiceBuilderPlugin` and `WSDDBuilderPlugin` before the buildscript 
+    block. Then add the `gradle.beforeProject` closure at the bottom of the 
+    file: 
 
         import com.liferay.gradle.plugins.service.builder.ServiceBuilderPlugin
         import com.liferay.gradle.plugins.wsdd.builder.WSDDBuilderPlugin
@@ -236,14 +237,7 @@ Follow these steps to do so:
     Refresh your workspace's Gradle files: right click `settings.gradle` in the 
     Project Explorer and select *Gradle* &rarr; *Refresh Gradle Project*. 
 
-2.  In the `guestbook-service` module's `build.gradle` file, add the following 
-    inside `dependencies{...}`: 
-
-        compileOnly group: "com.liferay", name: "com.liferay.registry.api", version: "1.0.0"
-
-    Save the file and refresh the service module's Gradle project. 
-
-3.  In the *Gradle Tasks* window on the right-hand side of Liferay @ide@, expand 
+2.  In the *Gradle Tasks* window on the right-hand side of Liferay @ide@, expand 
     the service module's *build* folder. Build the WSDD by double-clicking 
     *buildWSDD*. If `buildWSDD` is missing, shut down your server and then 
     restart Liferay @ide@. The `buildWSDD` command appears as described. 
@@ -258,7 +252,7 @@ Follow these steps to do so:
 
     If this file is missing, run `buildWSDD` again to generate it. 
 
-4.  Deploy the WSDD JAR file to @product@, which is in the Liferay Workspace's
+3.  Deploy the WSDD JAR file to @product@, which is in the Liferay Workspace's
     `bundles` folder. To do this, copy and paste the WSDD JAR file into this 
     folder in your Eclipse workspace on your file system: 
 
@@ -267,7 +261,7 @@ Follow these steps to do so:
     Return to Liferay @ide@ and check the console to make sure deployment 
     completes successfully. 
 
-5.  Go to 
+4.  Go to 
     `http://[host name]:[port number]/o/com.liferay.docs.guestbook.service/api/axis` 
     in your browser to view the Guestbook app's SOAP web services. If you're 
     running @product@ locally on port 8080, this is 

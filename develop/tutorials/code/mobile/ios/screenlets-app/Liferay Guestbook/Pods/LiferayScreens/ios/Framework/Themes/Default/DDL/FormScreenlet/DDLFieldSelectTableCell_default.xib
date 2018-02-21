@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="110" id="WWD-jz-pJ6" customClass="DDLFieldSelectTableCell_default">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WWD-jz-pJ6" id="h6C-76-TvA">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="109.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lim-UP-SIT">
+                        <rect key="frame" x="8" y="8" width="304" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="ChO-fd-qZY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="TopLeft" translatesAutoresizingMaskIntoConstraints="NO" id="0Cg-Uy-Tyo" userLabel="Separator">
+                        <rect key="frame" x="10" y="85" width="300" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="kRr-aV-O8P"/>
+                        </constraints>
+                    </view>
+                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VAu-ld-FYJ" customClass="DefaultTextField">
+                        <rect key="frame" x="8" y="33" width="304" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="TYS-lg-cF6"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="rightButtonTitle" value="..."/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="delegate" destination="WWD-jz-pJ6" id="QP8-JL-LUQ"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="lim-UP-SIT" secondAttribute="trailing" constant="8" id="5d3-mF-YGu"/>
+                    <constraint firstItem="lim-UP-SIT" firstAttribute="top" secondItem="h6C-76-TvA" secondAttribute="top" constant="8" id="C2K-R0-9Z6"/>
+                    <constraint firstAttribute="trailing" secondItem="VAu-ld-FYJ" secondAttribute="trailing" constant="8" id="Nis-sS-4Ik"/>
+                    <constraint firstItem="0Cg-Uy-Tyo" firstAttribute="top" secondItem="VAu-ld-FYJ" secondAttribute="bottom" constant="8" id="Q5L-PL-l6Z"/>
+                    <constraint firstItem="VAu-ld-FYJ" firstAttribute="leading" secondItem="h6C-76-TvA" secondAttribute="leading" constant="8" id="Yhn-L2-Suj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0Cg-Uy-Tyo" secondAttribute="trailing" constant="2" id="aMO-fi-Y9X"/>
+                    <constraint firstItem="lim-UP-SIT" firstAttribute="leading" secondItem="h6C-76-TvA" secondAttribute="leading" constant="8" id="lhh-d5-pXy"/>
+                    <constraint firstItem="0Cg-Uy-Tyo" firstAttribute="leading" secondItem="h6C-76-TvA" secondAttribute="leadingMargin" constant="2" id="ygE-sd-szX"/>
+                    <constraint firstItem="VAu-ld-FYJ" firstAttribute="top" secondItem="lim-UP-SIT" secondAttribute="bottom" constant="5" id="zC0-NJ-t0c"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="label" destination="lim-UP-SIT" id="RvP-Hv-Boy"/>
+                <outlet property="textField" destination="VAu-ld-FYJ" id="n3x-pa-fiI"/>
+            </connections>
+            <point key="canvasLocation" x="326" y="456"/>
+        </tableViewCell>
+    </objects>
+</document>

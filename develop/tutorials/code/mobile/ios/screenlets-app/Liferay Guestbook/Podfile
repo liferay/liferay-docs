@@ -1,0 +1,31 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+use_frameworks!
+
+target "Liferay Guestbook" do
+    pod 'LiferayScreens', '3.0.2'
+end
+
+post_install do |installer|
+  incompatiblePods = [
+    'Cosmos',
+    'CryptoSwift',
+    'KeychainAccess',
+    'Liferay-iOS-SDK',
+    'Liferay-OAuth',
+    'LiferayScreens',
+    'Kingfisher'
+  ]
+
+  installer.pods_project.targets.each do |target|
+    if incompatiblePods.include? target.name
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '3.2'
+      end
+    end
+    target.build_configurations.each do |config|
+        config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
+    end
+  end
+end
