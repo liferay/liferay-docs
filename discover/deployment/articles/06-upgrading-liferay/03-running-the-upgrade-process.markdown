@@ -62,9 +62,10 @@ Here are the tool's default Java parameters:
     -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
 
 The `-j` option lets you override the JVM parameters. For example, these
-options set the JVM memory to 4GB:
+options set the JVM memory to 10GB which is a good memory reference for this kind of
+processes:
 
-    java -jar com.liferay.portal.tools.db.upgrade.client.jar -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx4096m"
+    java -jar com.liferay.portal.tools.db.upgrade.client.jar -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
 
 The `-l` option lets you specify the tool's log file name: 
 
