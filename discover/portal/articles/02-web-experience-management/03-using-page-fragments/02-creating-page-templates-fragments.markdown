@@ -28,18 +28,15 @@ to create a Page Template.
 
 5.  Set the *Name* and click *Submit*.
 
-Now you're on the Page Template creation page. To your right you have a list of
-Fragments that are available to be added to the template. They can be dragged, 
-dropped and reordered as you need. You can also add the same Fragment to the 
-page multiple times.
+Now you're on the Page Template creation page. Fragments are added by selecting 
+a Collection from the *Fragments* tab on the right and adding them to the page. 
+You can add multiple Fragments from different collections, and you can add the 
+same Fragment to the page multiple times. To see which Fragments the current 
+page is made up of, you can check the *Added* tab. The template is 
+automatically saved as you work. Click on the back arrow at the top to stop 
+editing the template.
 
 <screenshot>
-
-Clicking on the *Fragments* or *Added* sub-tabs will 
-switch between a view of all available Fragments, and a view of all the 
-Fragments that have currently been added to the template. The template is 
-automatically saved as you edit it, so when you're done working, you can close 
-the window or navigate away from the page.
 
 ## Creating a Content Page
 
@@ -64,6 +61,7 @@ Fragments that make up the Template. To create a Content Page:
 
 <screenshot>
     
-
-
-
+By default, your new page will be added to the Navigation Menu and users can 
+access the page you created. If you didn't know that there was anything other 
+than the default Navigation Menu, keep reading to learn about Liferay's powerful
+new Navigation Menus.
