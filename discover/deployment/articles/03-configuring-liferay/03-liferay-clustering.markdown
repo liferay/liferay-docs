@@ -193,15 +193,15 @@ which has robust distributed caching support. The cache is distributed across
 multiple @product@ nodes running concurrently. The Ehcache global settings are in the
 [`portal.properties` file](@platform-ref@/7.0/propertiesdoc/portal.properties.html#Ehcache). 
 
-By default Liferay does not copy cache changes between nodes. If a user deletes
-or changes a cached entity, for example, Cluster Link sends a *remove* message
-to the other nodes to invalidate the entity in their cache. Requesting that
-entity from one of these caches results in a *miss*; the entity is then
-retrieved from the database and put into that cache. Similarly, entities added
-to one node's cache are not copied to caches on the other nodes. An attempt to
-retrieve the new entity from a cache that doesn't have it results in a *miss*.
-The miss triggers Cluster Link to retrieve the entity from the database and
-store it in that cache. 
+By default Liferay does not copy cached entities between nodes. If an entity is
+deleted or changed, for example, Cluster Link sends an *remove* message to the
+other nodes to invalidate this entity in their local cache. Requesting that
+entity on another node results in a cache *miss*; the entity is then retrieved
+from the database and put into the local cache. Entities added to one node's
+local cache are not copied to local caches of the other nodes. An attempt to
+retrieve a new entity on a node which doesn't have that entity cached results in
+a cache *miss*. The miss triggers the node to retrieve the entity from the
+database and store it in its local cache. 
 
 To enable Cluster Link, add this property to `portal-ext.properties`: 
 
