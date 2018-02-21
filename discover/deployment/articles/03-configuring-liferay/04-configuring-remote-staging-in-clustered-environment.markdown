@@ -7,12 +7,12 @@ seamless experience. In this tutorial, you'll learn how to set up remote staging
 in an example clustered environment scenario. The example environment assumes
 you have
 
-- A Staging instance with database configurations and a file repository
-  different from the cluster nodes
-- A balancer responsible for managing the traffic flow between the cluster's
-  nodes
-- Two nodes that call two Liferay app servers (e.g., *App Server 1* and *App
-  Server 2*), both of which are connected to the same database
+- a Staging instance with database configurations and a file repository
+  different from the cluster nodes.
+- a balancer responsible for managing the traffic flow between the cluster's
+  nodes.
+- two nodes that call two Liferay app servers (e.g., *App Server 1* and *App
+  Server 2*), both of which are connected to the same database.
 
 ![Figure 1: This is the assumed setup for your clustered environment.](../../images/remote-staging-clustering.png)
 
@@ -107,7 +107,7 @@ Let's begin!
     for the same database and are shared between nodes.
 
     Navigate to the Site Administration portion of the Product Menu and select
-    *Site Settings* to find the site ID.
+    *Configuration* &rarr; *Site Settings* to find the site ID.
 
 9. Save the Remote Live settings.
 
