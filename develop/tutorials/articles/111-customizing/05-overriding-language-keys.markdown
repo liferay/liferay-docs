@@ -311,6 +311,11 @@ and applies them to the `com.liferay.blogs.web` module.
     public class MyBlogsResourceBundleLoader implements ResourceBundleLoader {
 
     	@Override
+    	public ResourceBundle loadResourceBundle(Locale locale) {
+    		return _resourceBundleLoader.loadResourceBundle(locale);
+    	}
+
+    	@Override
     	public ResourceBundle loadResourceBundle(String languageId) {
     		return _resourceBundleLoader.loadResourceBundle(languageId);
     	}
@@ -366,13 +371,25 @@ target module's resource bundle loader together.
 
     private AggregateResourceBundleLoader _resourceBundleLoader;
 
-The `loadResourceBundle` method returns a resource bundle based on the locale's
-language ID. 
+The `loadResourceBundle` methods return a resource bundle based on the locale and language. 
+
+    @Override
+    public ResourceBundle loadResourceBundle(Locale locale) {
+        return _resourceBundleLoader.loadResourceBundle(locale);
+    }
 
     @Override
     public ResourceBundle loadResourceBundle(String languageId) {
        return _resourceBundleLoader.loadResourceBundle(languageId);
     }
+
++$$$
+
+**Note**: As of Liferay DXP Digital Experience Fix Pack de-33 and Liferay Portal
+CE GA6, `ResourceBundleLoader` method `loadResourceBundle(String)` is deprecated
+and replaced by new method `loadResourceBundle(Locale)`.
+
+$$$
 
 The setter method `setResourceBundleLoader` assigns an aggregate of this class's
 resource bundle loader and the target resource bundle loader to the
