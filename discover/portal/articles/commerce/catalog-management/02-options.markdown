@@ -15,22 +15,22 @@ the top of the screen and fill in the fields on the right.
 
     -Facetable: *not sure what this is*
 
-    -Required: Selecting this box forces customers to make a selection before 
-adding
-    items that deploy this option to their carts.
+    -Required: Selecting this box forces customers to make a selection before
+    adding items that deploy this option to their carts.
 
     -SKU Contributer: Making an option an SKU (stock-keeping-unit) contributor,
-    gives each item that deploys the option a separate SKU for each of that 
-option's
-    values. This allows you to set different prices, shipping rates and other
-    settings depending on what size, color or other selections a customer makes.
+    gives each item that deploys the option a separate SKU for each of that
+    option's values. This allows you to set different prices, shipping rates and
+    other settings depending on what size, color or other selections a customer
+    makes.
 
-    -Key: A unique identifier for referring to this option programmatically. As 
-this
-    field is filled automatically, most users can safely leave it alone.
+    -Key: A unique identifier for referring to this option programmatically. As
+    this field is filled automatically, most users can safely leave it alone.
 
-Once an option has been created, it is displayed in the list on the left side of
-the screen. But it cannot be seen by customers unless it has values assigned to
+Once an option has been created and saved, it is displayed in the list on the
+left side of the screen. <!--Sometimes when I hit the save button, the new
+option just disappears. But not always. I haven't been able to work out
+a pattern-->?But it cannot be seen by customers unless it has values assigned to
 it and has been deployed to a product.
 
 There are two ways to assign values to a product. One is from the options tab in
