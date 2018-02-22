@@ -20,9 +20,8 @@ data and a figure displaying the rendered results.
 
 ## Bar, Line, Scatter, Spline, and Step Charts [](id=line-scatter-spline-and-step-charts)
 
-The charts in this section contain multiple columns and values. Therefore, each 
-column (created with the `addColumns()` method) is defined with a new instance 
-of the 
+The charts in this section contain multiple sets of data. Each data series 
+(created with the `addColumns()` method) is defined with a new instance of the 
 [`MultiValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/MultiValueColumn.html), 
 which takes an ID and a set of values.
 
@@ -90,7 +89,7 @@ Taglib:
 
     <chart:line config="<%= chartSampleDisplayContext.getLineChartConfig() %>" id="line" />
 
-![Figure 3: A Line graph displays the data linearly.](../../images/chart-taglib-line.png)
+![Figure 3: A Line chart displays the data linearly.](../../images/chart-taglib-line.png)
 
 Scatter chart:
 
@@ -260,12 +259,12 @@ Taglib:
 ## Combination Charts [](id=bar-and-combination-charts)
 
 Combination charts are configured slightly different from other charts. In a 
-combination chart, you must define each type of column: `AREA`, `AREA_SPLINE`, 
-`AREA_STEP`, `BAR`, `BUBBLE`, `DONUT`, `GAUGE`, `LINE`, `PIE`, `SCATTER`, 
-`SPLINE`, or `STEP`. Each column is an instance of the `TypedMultiValueColumn` 
-object. Each object receives an ID, the column Type, and values for the data. In 
-the example below, column `data1` and `data2` are displayed together in the same 
-column with the `addGroup()` method.
+combination chart, you must define the representation type of each data set: 
+`AREA`, `AREA_SPLINE`, `AREA_STEP`, `BAR`, `BUBBLE`, `DONUT`, `GAUGE`, `LINE`, 
+`PIE`, `SCATTER`, `SPLINE`, or `STEP`. Each data set in a combination chart is 
+an instance of the `TypedMultiValueColumn` object. Each object receives an ID, 
+the representation type, and values for the data. In the example below, data 
+series `data1` and `data2` are displayed together with the `addGroup()` method. 
 
 Combination chart:
 
@@ -313,10 +312,10 @@ Taglib:
     
 ![Figure 9:](../../images/chart-taglib-combination.png)
 
-## Donut and Pie Charts [](id=donut-and-pie-charts)
+## Donut, Gauge, and Pie Charts [](id=donut-gauge-and-pie-charts)
 
-Single column charts (i.e. donut and pie charts) must define each column as a 
-new instance of the 
+Percentage-based charts (i.e. donut, gauge, and pie charts) must define each 
+data set as a new instance of the 
 [`SingleValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html).
 
 Donut chart:
@@ -352,6 +351,37 @@ Taglib:
     
 ![Figure 10:](../../images/chart-taglib-donut.png)
 
+Gauge chart:
+
+Java sample data:
+
+    import com.liferay.frontend.taglib.chart.model.SingleValueColumn;
+    import com.liferay.frontend.taglib.chart.model.gauge.GaugeChartConfig;
+
+    public class ChartSampleDisplayContext {
+
+        public ChartSampleDisplayContext() {
+          _initGaugeChartConfig();
+        }
+
+        public gaugeChartConfig getGaugeChartConfig() {
+          return _gaugeChartConfig;
+        }
+
+        private void _initGaugeChartConfig() {
+        	_gaugeChartConfig.addColumn(new SingleValueColumn("data1", 85.4));
+        }
+        
+        private GaugeChartConfig _gaugeChartConfig = new GaugeChartConfig();
+
+    }
+
+Taglib:
+
+    <chart:gauge config="<%= chartSampleDisplayContext.getGaugeChartConfig() %>" id="gauge" />
+    
+![Figure 11:](../../images/chart-taglib-guage.png)
+
 Pie chart:
 
 Java sample data:
@@ -383,42 +413,7 @@ Taglib:
 
     <chart:pie config="<%= chartSampleDisplayContext.getPieChartConfig() %>" id="pie" />
     
-![Figure 11:](../../images/chart-taglib-pie.png)
-
-## Gauge Charts [](id=gauge-charts)
-
-The example chart in this section uses the Sample Java data below:
-
-Gauge chart:
-
-Java sample data:
-
-    import com.liferay.frontend.taglib.chart.model.SingleValueColumn;
-    import com.liferay.frontend.taglib.chart.model.gauge.GaugeChartConfig;
-
-    public class ChartSampleDisplayContext {
-
-        public ChartSampleDisplayContext() {
-          _initGaugeChartConfig();
-        }
-
-        public gaugeChartConfig getGaugeChartConfig() {
-          return _gaugeChartConfig;
-        }
-
-        private void _initGaugeChartConfig() {
-        	_gaugeChartConfig.addColumn(new SingleValueColumn("data1", 85.4));
-        }
-        
-        private GaugeChartConfig _gaugeChartConfig = new GaugeChartConfig();
-
-    }
-
-Taglib:
-
-    <chart:gauge config="<%= chartSampleDisplayContext.getGaugeChartConfig() %>" id="gauge" />
-    
-![Figure 12:](../../images/chart-taglib-guage.png)
+![Figure 12:](../../images/chart-taglib-pie.png)
 
 Now you know how to use Chart taglibs to model data in @product@!
 
