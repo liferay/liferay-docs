@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.gulp", version: "2.0.23"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.gulp", version: "2.0.24"
     }
 
     repositories {
@@ -39,7 +39,7 @@ Name | Depends On | Type | Description
 
 ### ExecuteGulpTask [](id=executegulptask)
 
-Tasks of type `ExecuteGulpTask` extend [`ExecuteNodeScriptTask`](#executenodetask),
+Tasks of type `ExecuteGulpTask` extend [`ExecuteNodeScriptTask`](/develop/reference/-/knowledge_base/7-0/node-gradle-plugin#executenodescripttask),
 so all its properties and methods, such as `args` and `inheritProxy`, are
 available. They also have the following properties set by default:
 

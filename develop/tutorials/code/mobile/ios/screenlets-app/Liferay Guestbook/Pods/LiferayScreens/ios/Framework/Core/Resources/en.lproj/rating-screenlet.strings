@@ -1,0 +1,5 @@
+"rating-screenlet-undefined-classPK"="The classPK is undefined";
+"rating-screenlet-undefined-className"="The className is undefined";
+"rating-screenlet-undefined-entryId"="The entryId is undefined";
+"rating-screenlet-wrong-ratingsGroupCount"="The ratingsGroupCount is wrong. It must be an integer greater than 0";
+"rating-screenlet-wrong-score"="The score is wrong. It must be a double value between 0 and 1";

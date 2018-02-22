@@ -29,7 +29,7 @@ It's time to get started. You'll create the `Guestbook` entity first:
         <service-builder auto-namespace-tables="true" package-path="com.liferay.docs.guestbook">
             <author>liferay</author>
             <namespace>GB</namespace>
-            <entity local-service="true" name="Guestbook" uuid="true">
+            <entity name="Guestbook" local-service="true" uuid="true">
 
     This defines the author, namespace, and the entity name. The namespace keeps 
     the database field names from conflicting. The last tag is the opening tag 
@@ -92,7 +92,7 @@ entity:
 
 1.  Add the opening entity tag:
 
-        <entity local-service="true" name="Entry" uuid="true">
+        <entity name="Entry" local-service="true" uuid="true">
 
     As with the `Guestbook` entity, you enable local services, define the 
     entity's name, and specify that it should have a UUID. 

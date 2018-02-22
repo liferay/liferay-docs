@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WebContentListView_default">
+            <rect key="frame" x="0.0" y="0.0" width="272" height="225"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lX5-Q5-mML">
+                    <rect key="frame" x="0.0" y="0.0" width="272" height="225"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="GO5-nZ-mwe"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="ZGk-04-51t"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="lX5-Q5-mML" secondAttribute="bottom" id="Sfx-5y-ZBx"/>
+                <constraint firstAttribute="trailing" secondItem="lX5-Q5-mML" secondAttribute="trailing" id="j87-aa-NGq"/>
+                <constraint firstItem="lX5-Q5-mML" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nxN-0x-ASR"/>
+                <constraint firstItem="lX5-Q5-mML" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zEx-an-kHd"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tableView" destination="lX5-Q5-mML" id="swz-Ai-y6k"/>
+            </connections>
+            <point key="canvasLocation" x="334" y="179.5"/>
+        </view>
+    </objects>
+</document>

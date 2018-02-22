@@ -1,6 +1,6 @@
 # DB Support Plugin [](id=db-support-plugin)
 
-The DB Support Gradle plugin lets you run the Liferay DB Support tool to execute
+The DB Support plugin lets you run the Liferay DB Support tool to execute
 certain actions on a local @product@ database. The following actions are
 available:
 
@@ -9,7 +9,7 @@ available:
 
 ## Usage [](id=usage)
 
-To use the plugin, include it in your `pom.xml` file:
+To use the plugin, include it in your project's `pom.xml` file:
 
     <build>
         <plugins>

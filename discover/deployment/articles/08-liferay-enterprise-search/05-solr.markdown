@@ -124,6 +124,13 @@ Foundation.lpkg`, the Elasticsearch adapter is reinstalled and started
 automatically. Because of this, you must deactivate the Elasticsearch bundle
 after each patch.
 
+Additionally, the state of the bundles is stored in the `osgi/state` folder
+under your installation's [Liferay
+Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+folder. If you delete this folder after
+[patching](/discover/deployment/-/knowledge_base/7-0/patching-liferay), the
+Elasticsearch adapter is restarted automatically, and you must stop it manually.
+
 $$$
 
 The best way to stop the Elasticsearch adapter bundle is through the App

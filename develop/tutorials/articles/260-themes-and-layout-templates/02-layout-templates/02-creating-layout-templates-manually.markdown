@@ -141,26 +141,28 @@ Add your custom layout template to your `liferay-look-and-feel.xml` using the
 `<layout-templates>` tag. Below is an example configuration using the basic 
 layout template example shown above:
 
-  <theme id="my-theme-name" name="My Theme Name">
-      ...
-        <layout-templates>
-          <custom>
-            <layout-template id="my_liferay_layout_template" 
-            name="My Liferay Layout Template">
-              <template-path>
-                  /layoutttpl/custom/my_liferay_layout_template.tpl
-              </template-path>
-              <thumbnail-path>
-                  /layoutttpl/custom/my_liferay_layout_template.png
-              </thumbnail-path>
-            </layout-template>
-          </custom>
-        </layout-templates>
-      ...
-  </theme>
+    <theme id="my-theme-name" name="My Theme Name">
+        ...
+          <layout-templates>
+            <custom>
+              <layout-template id="my_liferay_layout_template" 
+              name="My Liferay Layout Template">
+                <template-path>
+                    /layoutttpl/custom/my_liferay_layout_template.tpl
+                </template-path>
+                <thumbnail-path>
+                    /layoutttpl/custom/my_liferay_layout_template.png
+                </thumbnail-path>
+              </layout-template>
+            </custom>
+          </layout-templates>
+        ...
+    </theme>
 
 The `<layout-template>` tag's `id` attribute must match the layout template's 
-filename. 
+filename. The template and thumbnail paths shown above are for files in the 
+`layouttpl/custom` folder. If you created your layout template with the Liferay 
+Theme Generator, your file paths may differ. 
 
 There you have it. Now you know how to create and modify layout templates 
 manually and how to include them with a theme!

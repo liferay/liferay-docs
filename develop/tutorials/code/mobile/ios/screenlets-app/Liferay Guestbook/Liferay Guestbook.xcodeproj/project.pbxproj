@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		010EFA92202CB126001295D7 /* LREntryService_v7.m in Sources */ = {isa = PBXBuildFile; fileRef = 010EFA8D202CB126001295D7 /* LREntryService_v7.m */; };
+		010EFA93202CB126001295D7 /* LRGuestbookService_v7.m in Sources */ = {isa = PBXBuildFile; fileRef = 010EFA90202CB126001295D7 /* LRGuestbookService_v7.m */; };
+		010EFA96202CB3F5001295D7 /* liferay-server-context.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010EFA95202CB3F5001295D7 /* liferay-server-context.plist */; };
+		010EFA98202CC36D001295D7 /* GuestbooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EFA97202CC36D001295D7 /* GuestbooksViewController.swift */; };
+		010EFA9C202CC6B5001295D7 /* GuestbookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EFA9B202CC6B5001295D7 /* GuestbookModel.swift */; };
+		010EFAA1202CC9DB001295D7 /* GuestbookListView_default.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010EFAA0202CC9DB001295D7 /* GuestbookListView_default.xib */; };
+		010EFAA3202CCA68001295D7 /* GuestbookListView_default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EFAA2202CCA68001295D7 /* GuestbookListView_default.swift */; };
+		010EFAA6202CCC59001295D7 /* GuestbookListPageLiferayConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EFAA5202CCC59001295D7 /* GuestbookListPageLiferayConnector.swift */; };
+		010EFAA9202CCD78001295D7 /* GuestbookListPageLoadInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EFAA8202CCD78001295D7 /* GuestbookListPageLoadInteractor.swift */; };
+		010EFAAB202CCE22001295D7 /* GuestbookListScreenlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EFAAA202CCE22001295D7 /* GuestbookListScreenlet.swift */; };
+		010EFAAE202CD3F0001295D7 /* EntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EFAAD202CD3F0001295D7 /* EntryModel.swift */; };
+		010EFAB2202CD476001295D7 /* EntryListView_default.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010EFAB1202CD476001295D7 /* EntryListView_default.xib */; };
+		010EFAB4202CD4F3001295D7 /* EntryListView_default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EFAB3202CD4F3001295D7 /* EntryListView_default.swift */; };
+		010EFAB7202CD5E7001295D7 /* EntryListPageLiferayConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EFAB6202CD5E7001295D7 /* EntryListPageLiferayConnector.swift */; };
+		010EFABA202CD694001295D7 /* EntryListPageLoadInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EFAB9202CD694001295D7 /* EntryListPageLoadInteractor.swift */; };
+		010EFABC202CD6EE001295D7 /* EntryListScreenlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EFABB202CD6EE001295D7 /* EntryListScreenlet.swift */; };
+		010EFABE202CD80E001295D7 /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EFABD202CD80E001295D7 /* EntriesViewController.swift */; };
+		015FF25E202CAD0B00AE39E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015FF25D202CAD0B00AE39E4 /* AppDelegate.swift */; };
+		015FF260202CAD0B00AE39E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015FF25F202CAD0B00AE39E4 /* ViewController.swift */; };
+		015FF263202CAD0B00AE39E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015FF261202CAD0B00AE39E4 /* Main.storyboard */; };
+		015FF265202CAD0B00AE39E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015FF264202CAD0B00AE39E4 /* Assets.xcassets */; };
+		015FF268202CAD0B00AE39E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015FF266202CAD0B00AE39E4 /* LaunchScreen.storyboard */; };
+		0D88908775BEA649FE68B999 /* Pods_Liferay_Guestbook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78146D11CB5EC54BBC00A89 /* Pods_Liferay_Guestbook.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		010EFA8D202CB126001295D7 /* LREntryService_v7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LREntryService_v7.m; sourceTree = "<group>"; };
+		010EFA8E202CB126001295D7 /* LREntryService_v7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LREntryService_v7.h; sourceTree = "<group>"; };
+		010EFA90202CB126001295D7 /* LRGuestbookService_v7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRGuestbookService_v7.m; sourceTree = "<group>"; };
+		010EFA91202CB126001295D7 /* LRGuestbookService_v7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRGuestbookService_v7.h; sourceTree = "<group>"; };
+		010EFA94202CB2D1001295D7 /* Liferay Guestbook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Liferay Guestbook-Bridging-Header.h"; sourceTree = "<group>"; };
+		010EFA95202CB3F5001295D7 /* liferay-server-context.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "liferay-server-context.plist"; sourceTree = "<group>"; };
+		010EFA97202CC36D001295D7 /* GuestbooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestbooksViewController.swift; sourceTree = "<group>"; };
+		010EFA9B202CC6B5001295D7 /* GuestbookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestbookModel.swift; sourceTree = "<group>"; };
+		010EFAA0202CC9DB001295D7 /* GuestbookListView_default.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuestbookListView_default.xib; sourceTree = "<group>"; };
+		010EFAA2202CCA68001295D7 /* GuestbookListView_default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestbookListView_default.swift; sourceTree = "<group>"; };
+		010EFAA5202CCC59001295D7 /* GuestbookListPageLiferayConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestbookListPageLiferayConnector.swift; sourceTree = "<group>"; };
+		010EFAA8202CCD78001295D7 /* GuestbookListPageLoadInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestbookListPageLoadInteractor.swift; sourceTree = "<group>"; };
+		010EFAAA202CCE22001295D7 /* GuestbookListScreenlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestbookListScreenlet.swift; sourceTree = "<group>"; };
+		010EFAAD202CD3F0001295D7 /* EntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryModel.swift; sourceTree = "<group>"; };
+		010EFAB1202CD476001295D7 /* EntryListView_default.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryListView_default.xib; sourceTree = "<group>"; };
+		010EFAB3202CD4F3001295D7 /* EntryListView_default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListView_default.swift; sourceTree = "<group>"; };
+		010EFAB6202CD5E7001295D7 /* EntryListPageLiferayConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListPageLiferayConnector.swift; sourceTree = "<group>"; };
+		010EFAB9202CD694001295D7 /* EntryListPageLoadInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListPageLoadInteractor.swift; sourceTree = "<group>"; };
+		010EFABB202CD6EE001295D7 /* EntryListScreenlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListScreenlet.swift; sourceTree = "<group>"; };
+		010EFABD202CD80E001295D7 /* EntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
+		015FF25A202CAD0B00AE39E4 /* Liferay Guestbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Liferay Guestbook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		015FF25D202CAD0B00AE39E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		015FF25F202CAD0B00AE39E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		015FF262202CAD0B00AE39E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		015FF264202CAD0B00AE39E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		015FF267202CAD0B00AE39E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		015FF269202CAD0B00AE39E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FABA0D4F1B2932EA12A16B0 /* Pods-Liferay Guestbook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liferay Guestbook.release.xcconfig"; path = "Pods/Target Support Files/Pods-Liferay Guestbook/Pods-Liferay Guestbook.release.xcconfig"; sourceTree = "<group>"; };
+		B78146D11CB5EC54BBC00A89 /* Pods_Liferay_Guestbook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Liferay_Guestbook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D549C985EFCA93C08D416C59 /* Pods-Liferay Guestbook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Liferay Guestbook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Liferay Guestbook/Pods-Liferay Guestbook.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		015FF257202CAD0B00AE39E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D88908775BEA649FE68B999 /* Pods_Liferay_Guestbook.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		010EFA8B202CB126001295D7 /* v7 */ = {
+			isa = PBXGroup;
+			children = (
+				010EFA8C202CB126001295D7 /* entry */,
+				010EFA8F202CB126001295D7 /* guestbook */,
+			);
+			path = v7;
+			sourceTree = "<group>";
+		};
+		010EFA8C202CB126001295D7 /* entry */ = {
+			isa = PBXGroup;
+			children = (
+				010EFA8D202CB126001295D7 /* LREntryService_v7.m */,
+				010EFA8E202CB126001295D7 /* LREntryService_v7.h */,
+			);
+			path = entry;
+			sourceTree = "<group>";
+		};
+		010EFA8F202CB126001295D7 /* guestbook */ = {
+			isa = PBXGroup;
+			children = (
+				010EFA90202CB126001295D7 /* LRGuestbookService_v7.m */,
+				010EFA91202CB126001295D7 /* LRGuestbookService_v7.h */,
+			);
+			path = guestbook;
+			sourceTree = "<group>";
+		};
+		010EFA99202CC4E8001295D7 /* GuestbookListScreenlet */ = {
+			isa = PBXGroup;
+			children = (
+				010EFAA7202CCCCB001295D7 /* Interactor */,
+				010EFAA4202CCB8B001295D7 /* Connector */,
+				010EFA9E202CC995001295D7 /* Themes */,
+				010EFAAA202CCE22001295D7 /* GuestbookListScreenlet.swift */,
+			);
+			path = GuestbookListScreenlet;
+			sourceTree = "<group>";
+		};
+		010EFA9A202CC553001295D7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				010EFA9B202CC6B5001295D7 /* GuestbookModel.swift */,
+				010EFAAD202CD3F0001295D7 /* EntryModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		010EFA9E202CC995001295D7 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				010EFA9F202CC995001295D7 /* Default */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		010EFA9F202CC995001295D7 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				010EFAA0202CC9DB001295D7 /* GuestbookListView_default.xib */,
+				010EFAA2202CCA68001295D7 /* GuestbookListView_default.swift */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		010EFAA4202CCB8B001295D7 /* Connector */ = {
+			isa = PBXGroup;
+			children = (
+				010EFAA5202CCC59001295D7 /* GuestbookListPageLiferayConnector.swift */,
+			);
+			path = Connector;
+			sourceTree = "<group>";
+		};
+		010EFAA7202CCCCB001295D7 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				010EFAA8202CCD78001295D7 /* GuestbookListPageLoadInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		010EFAAC202CD382001295D7 /* EntryListScreenlet */ = {
+			isa = PBXGroup;
+			children = (
+				010EFAB8202CD631001295D7 /* Interactor */,
+				010EFAB5202CD5C5001295D7 /* Connector */,
+				010EFAAF202CD444001295D7 /* Themes */,
+				010EFABB202CD6EE001295D7 /* EntryListScreenlet.swift */,
+			);
+			path = EntryListScreenlet;
+			sourceTree = "<group>";
+		};
+		010EFAAF202CD444001295D7 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				010EFAB0202CD444001295D7 /* Default */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		010EFAB0202CD444001295D7 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				010EFAB1202CD476001295D7 /* EntryListView_default.xib */,
+				010EFAB3202CD4F3001295D7 /* EntryListView_default.swift */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		010EFAB5202CD5C5001295D7 /* Connector */ = {
+			isa = PBXGroup;
+			children = (
+				010EFAB6202CD5E7001295D7 /* EntryListPageLiferayConnector.swift */,
+			);
+			path = Connector;
+			sourceTree = "<group>";
+		};
+		010EFAB8202CD631001295D7 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				010EFAB9202CD694001295D7 /* EntryListPageLoadInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		015FF251202CAD0B00AE39E4 = {
+			isa = PBXGroup;
+			children = (
+				010EFA94202CB2D1001295D7 /* Liferay Guestbook-Bridging-Header.h */,
+				010EFAAC202CD382001295D7 /* EntryListScreenlet */,
+				010EFA99202CC4E8001295D7 /* GuestbookListScreenlet */,
+				010EFA9A202CC553001295D7 /* model */,
+				010EFA8B202CB126001295D7 /* v7 */,
+				015FF25C202CAD0B00AE39E4 /* Liferay Guestbook */,
+				015FF25B202CAD0B00AE39E4 /* Products */,
+				DE17351A4F5D30AC5CAD0E56 /* Pods */,
+				9526D23CC1321F0CE76FC0DE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		015FF25B202CAD0B00AE39E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				015FF25A202CAD0B00AE39E4 /* Liferay Guestbook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		015FF25C202CAD0B00AE39E4 /* Liferay Guestbook */ = {
+			isa = PBXGroup;
+			children = (
+				015FF25D202CAD0B00AE39E4 /* AppDelegate.swift */,
+				015FF25F202CAD0B00AE39E4 /* ViewController.swift */,
+				010EFA97202CC36D001295D7 /* GuestbooksViewController.swift */,
+				010EFABD202CD80E001295D7 /* EntriesViewController.swift */,
+				015FF261202CAD0B00AE39E4 /* Main.storyboard */,
+				015FF264202CAD0B00AE39E4 /* Assets.xcassets */,
+				015FF266202CAD0B00AE39E4 /* LaunchScreen.storyboard */,
+				015FF269202CAD0B00AE39E4 /* Info.plist */,
+				010EFA95202CB3F5001295D7 /* liferay-server-context.plist */,
+			);
+			path = "Liferay Guestbook";
+			sourceTree = "<group>";
+		};
+		9526D23CC1321F0CE76FC0DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B78146D11CB5EC54BBC00A89 /* Pods_Liferay_Guestbook.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE17351A4F5D30AC5CAD0E56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D549C985EFCA93C08D416C59 /* Pods-Liferay Guestbook.debug.xcconfig */,
+				1FABA0D4F1B2932EA12A16B0 /* Pods-Liferay Guestbook.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		015FF259202CAD0B00AE39E4 /* Liferay Guestbook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 015FF26C202CAD0B00AE39E4 /* Build configuration list for PBXNativeTarget "Liferay Guestbook" */;
+			buildPhases = (
+				CAA579D1C78329948D1E0A3A /* [CP] Check Pods Manifest.lock */,
+				015FF256202CAD0B00AE39E4 /* Sources */,
+				015FF257202CAD0B00AE39E4 /* Frameworks */,
+				015FF258202CAD0B00AE39E4 /* Resources */,
+				BC090E2BBBB56C9BBEB68FF2 /* [CP] Embed Pods Frameworks */,
+				FF7CA2199595E6AC02710980 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Liferay Guestbook";
+			productName = "Liferay Guestbook";
+			productReference = 015FF25A202CAD0B00AE39E4 /* Liferay Guestbook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		015FF252202CAD0B00AE39E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Joe Bloggs";
+				TargetAttributes = {
+					015FF259202CAD0B00AE39E4 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 015FF255202CAD0B00AE39E4 /* Build configuration list for PBXProject "Liferay Guestbook" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 015FF251202CAD0B00AE39E4;
+			productRefGroup = 015FF25B202CAD0B00AE39E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				015FF259202CAD0B00AE39E4 /* Liferay Guestbook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		015FF258202CAD0B00AE39E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010EFAA1202CC9DB001295D7 /* GuestbookListView_default.xib in Resources */,
+				010EFA96202CB3F5001295D7 /* liferay-server-context.plist in Resources */,
+				015FF268202CAD0B00AE39E4 /* LaunchScreen.storyboard in Resources */,
+				015FF265202CAD0B00AE39E4 /* Assets.xcassets in Resources */,
+				015FF263202CAD0B00AE39E4 /* Main.storyboard in Resources */,
+				010EFAB2202CD476001295D7 /* EntryListView_default.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BC090E2BBBB56C9BBEB68FF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Liferay Guestbook/Pods-Liferay Guestbook-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/Cordova/Cordova.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/DTPickerPresenter/DTPickerPresenter.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Liferay-OAuth/LROAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/Liferay-iOS-SDK/LRMobileSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/LiferayScreens/LiferayScreens.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MDRadialProgress/MDRadialProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SMXMLDocument/SMXMLDocument.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework",
+				"${BUILT_PRODUCTS_DIR}/TNRadioButtonGroup/TNRadioButtonGroup.framework",
+				"${BUILT_PRODUCTS_DIR}/YapDatabase/YapDatabase.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cordova.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTPickerPresenter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LROAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LRMobileSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LiferayScreens.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDRadialProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SMXMLDocument.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLCipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TNRadioButtonGroup.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YapDatabase.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Liferay Guestbook/Pods-Liferay Guestbook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAA579D1C78329948D1E0A3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Liferay Guestbook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF7CA2199595E6AC02710980 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Liferay Guestbook/Pods-Liferay Guestbook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		015FF256202CAD0B00AE39E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				010EFAA9202CCD78001295D7 /* GuestbookListPageLoadInteractor.swift in Sources */,
+				010EFA93202CB126001295D7 /* LRGuestbookService_v7.m in Sources */,
+				010EFA9C202CC6B5001295D7 /* GuestbookModel.swift in Sources */,
+				010EFAB4202CD4F3001295D7 /* EntryListView_default.swift in Sources */,
+				010EFABA202CD694001295D7 /* EntryListPageLoadInteractor.swift in Sources */,
+				015FF260202CAD0B00AE39E4 /* ViewController.swift in Sources */,
+				010EFA92202CB126001295D7 /* LREntryService_v7.m in Sources */,
+				010EFAA3202CCA68001295D7 /* GuestbookListView_default.swift in Sources */,
+				010EFAA6202CCC59001295D7 /* GuestbookListPageLiferayConnector.swift in Sources */,
+				010EFAAE202CD3F0001295D7 /* EntryModel.swift in Sources */,
+				010EFABC202CD6EE001295D7 /* EntryListScreenlet.swift in Sources */,
+				010EFA98202CC36D001295D7 /* GuestbooksViewController.swift in Sources */,
+				015FF25E202CAD0B00AE39E4 /* AppDelegate.swift in Sources */,
+				010EFAAB202CCE22001295D7 /* GuestbookListScreenlet.swift in Sources */,
+				010EFAB7202CD5E7001295D7 /* EntryListPageLiferayConnector.swift in Sources */,
+				010EFABE202CD80E001295D7 /* EntriesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		015FF261202CAD0B00AE39E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				015FF262202CAD0B00AE39E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		015FF266202CAD0B00AE39E4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				015FF267202CAD0B00AE39E4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		015FF26A202CAD0B00AE39E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "Liferay Guestbook-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		015FF26B202CAD0B00AE39E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Liferay Guestbook-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		015FF26D202CAD0B00AE39E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D549C985EFCA93C08D416C59 /* Pods-Liferay Guestbook.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Liferay Guestbook/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liferay.docs.Liferay-Guestbook";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Liferay Guestbook-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		015FF26E202CAD0B00AE39E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FABA0D4F1B2932EA12A16B0 /* Pods-Liferay Guestbook.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Liferay Guestbook/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liferay.docs.Liferay-Guestbook";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Liferay Guestbook-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		015FF255202CAD0B00AE39E4 /* Build configuration list for PBXProject "Liferay Guestbook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015FF26A202CAD0B00AE39E4 /* Debug */,
+				015FF26B202CAD0B00AE39E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		015FF26C202CAD0B00AE39E4 /* Build configuration list for PBXNativeTarget "Liferay Guestbook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015FF26D202CAD0B00AE39E4 /* Debug */,
+				015FF26E202CAD0B00AE39E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 015FF252202CAD0B00AE39E4 /* Project object */;
+}

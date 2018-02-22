@@ -19,6 +19,17 @@ Service Tracker to look up services in the service registry.
 
 ![Figure 1: Service implementations that are registered in the OSGi service registry can be accessed using Service Trackers.](../../../images/service-registry.png)
 
++$$$
+
+**Note:** When using Service Trackers in your WAR-style project, you must
+configure the required `org.osgi.core` dependency carefully in your build file
+(e.g., `build.gradle`, `pom.xml`, etc.) to avoid errors. Since it's included in
+@product@ by default, it must be configured as `provided`. See the
+[Third Party Packages Portal Exports](/develop/reference/-/knowledge_base/7-0/third-party-packages-portal-exports)
+tutorial for more information.
+
+$$$
+
 What scenarios might require the use of a service tracker?
 
 -  Calling OSGi services from a [Spring MVC portlet](/develop/tutorials/-/knowledge_base/7-0/spring-mvc)
@@ -87,11 +98,6 @@ code:
         someServiceTracker.open();
     }
 
-<!-- Please fix this. A @PostConstruct annotation is a Spring-specific thing.
-This method also looks like it sets the ServiceTracker in a local variable
-(where it would get garbage collected as soon as the init method is done)
-instead of an instance variable. -Rich -->
-
 When you want to call the service, make sure the service tracker has something
 in it, and then get the service using the Service Tracker API's `getService`
 method. After that, use the service to do something cool:
@@ -112,10 +118,6 @@ is an appropriate place to do this:
         someServiceTracker.close();
     }
 
-<!-- Again, this is Spring-specific. If you're going to be specific, this
-article should assume we're in an MVCPortlet. -Rich --> 
-
 There's a little boilerplate code you need to produce, but now you can look up
 services in the service registry, even if your plugins can't take advantage of
 the Declarative Services component model. 
-

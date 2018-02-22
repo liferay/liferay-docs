@@ -1,0 +1,94 @@
+"default-auth-method-email"="Email Address";
+"default-auth-method-screenname"="Screen Name";
+"default-auth-method-userid"="User ID";
+
+"default-oauth-close"="Close";
+
+"default-login-loading-message"="Signing in...\nWait few seconds...";
+"default-login-loading-error"="Error signing in.";
+
+"default-signin-button"="SIGN IN";
+"default-signup-button"="SIGN UP";
+"default-signup-loading-message"="Signing up...\nWait few seconds...";
+"default-signup-saving-message"="Sending...\nWait few seconds...";
+"default-signup-loading-error"="Error signing up.";
+"default-signup-saving-error"="Error sending data.";
+
+"default-save-button"="SAVE";
+"default-authorize-button"="AUTHORIZE";
+
+"default-forgotpassword-username"="Username";
+"default-forgotpassword-button"="REQUEST";
+"default-forgotpassword-loading-message"="Sending password request...\nWait few seconds...";
+"default-forgotpassword-loading-error"="Error requesting the password";
+"default-forgotpassword-password-sent"="New password generated.\nCheck your email inbox";
+"default-forgotpassword-reset-sent"="New password reset link sent.\nCheck your email inbox";
+
+"default-password-placeholder"="Password";
+"default-first-name-placeholder"="First Name";
+"default-last-name-placeholder"="Last Name";
+
+"default-ddlform-upload-picker-take-new"="Take new photo or video...";
+"default-ddlform-upload-picker-select-photo"="Select existing photo...";
+"default-ddlform-upload-picker-select-video"="Select existing video...";
+"default-ddlform-upload-picker-cancel"="Cancel";
+"default-ddlform-submit-button"="SUBMIT";
+"default-ddlform-loading-message"="Loading form...\nWait few seconds...";
+"default-ddlform-loading-error"="Error loading the form";
+"default-ddlform-loading-record-message"="Loading data...\nWait few seconds...";
+"default-ddlform-loading-record-error"="Error loading the data";
+"default-ddlform-submitting-message"="Submitting form...\nWait few seconds...";
+"default-ddlform-submitting-error"="Error submitting the form";
+"default-ddlform-submitted"="Form submitted!";
+"default-ddlform-uploading-error"="Error uploading data";
+
+"default-userportrait-take-new-picture"="Take new picture";
+"default-userportrait-choose-existing-picture"="Choose existing";
+"default-userportrait-uploading-error"="Error uploading the picture";
+
+"default-webcontentdisplay-loading-message"="Loading...\nWait few seconds...";
+"default-webcontentdisplay-loading-error"="Error loading the content";
+
+"default-rating-total"="Total: %d";
+"default-rating-ratings.one"="1 Rating";
+"default-rating-ratings.other"="%d Ratings";
+
+"default-imagegallery-uploading-one"="Uploading image...";
+"default-imagegallery-uploading-several"="Uploading image 1 from %d";
+"default-imagegallery-upload"="Upload";
+"default-imagegallery-cancel"="Cancel";
+"default-imagegallery-title"="Title";
+"default-imagegallery-description"="Description";
+
+"default-blog-unknown-date"="Unknown date";
+
+"default-comment-add-placeholder"="Introduce your comment...";
+"default-comment-add-send"="Send";
+
+"default-comment-display-edited"="- Edited";
+"default-comment-display-warning"="Warning";
+"default-comment-display-styled"="This comment has styled content, which will be lost if you edit it";
+"default-comment-display-dismiss"="Dismiss";
+"default-comment-display-edit-button"="Edit";
+"default-comment-display-delete-button"="Delete";
+"default-comment-display-confirm"="Confirm";
+"default-comment-display-cancel"="Cancel";
+"default-comment-display-type"="Type your comment...";
+
+"default-web-loading-message"="Loading...\nWait few seconds...";
+"default-web-loading-error"="Error loading the page";
+
+"default-time-ago-seconds" = "%d seconds ago";
+"default-time-ago-minute" = "A minute ago";
+"default-time-ago-minutes" = "%d minutes ago";
+"default-time-ago-hour" = "An hour ago";
+"default-time-ago-hours" = "%d hours ago";
+"default-time-ago-days" = "%d days ago";
+"default-time-ago-weeks" = "%d weeks ago";
+"default-time-ago-months" = "%d months ago";
+"default-time-ago-years" = "%d years ago";
+"default-time-yesterday" = "Yesterday";
+"default-time-now" = "Just now";
+"default-time-last-week" = "Last week";
+"default-time-last-month" = "Last month";
+"default-time-last-year" = "Last year";

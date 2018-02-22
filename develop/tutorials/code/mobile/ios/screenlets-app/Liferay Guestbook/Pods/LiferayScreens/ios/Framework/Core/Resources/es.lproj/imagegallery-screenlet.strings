@@ -1,0 +1,4 @@
+"imagegallery-screenlet-undefined-imageentryid"="El atributo imageEntryId no puede ser menor que 0";
+"imagegallery-screenlet-undefined-repositoryid"="El atributo repositoryId no puede ser menor que 0";
+"imagegallery-screenlet-undefined-folderid"="El atributo folderId no puede ser menor que 0";
+"imagegallery-screenlet-cancel"="Cancelar";

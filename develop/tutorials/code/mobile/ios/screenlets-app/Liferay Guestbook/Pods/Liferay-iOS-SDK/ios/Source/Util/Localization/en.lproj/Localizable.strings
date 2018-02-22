@@ -1,0 +1,5 @@
+"com.liferay.portal.NoSuchUserException"="The user couldn't be found in the server.";
+"http-error"="The server returned an error code.";
+"json-parsing-error"="The server returned an invalid format.";
+"url-has-moved"="The requested URL has moved";
+"wrong-credentials"="The server didn't authorize the request. Check your credentials and try again.";
