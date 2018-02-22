@@ -52,11 +52,11 @@ Java sample data:
     
     }
 
-Taglib:
+JSP:
 
     <chart:bar config="<%= chartSampleDisplayContext.getBarChartConfig() %>" id="bar" />
     
-![Figure 2: A bar chart models the data in bars](../../images/chart-taglib-bar.png)
+![Figure 2: A bar chart models the data in bars.](../../images/chart-taglib-bar.png)
 
 Line chart:
 
@@ -85,7 +85,7 @@ Java sample data:
     
     }
 
-Taglib:
+JSP:
 
     <chart:line config="<%= chartSampleDisplayContext.getLineChartConfig() %>" id="line" />
 
@@ -118,7 +118,7 @@ Java sample data:
     
     }
 
-Taglib:
+JSP:
 
     <chart:scatter config="<%= chartSampleDisplayContext.getScatterChartConfig() %>" id="scatter" />
 
@@ -151,11 +151,11 @@ Java sample data:
 
     }
 
-Taglib:
+JSP:
 
     <chart:spline config="<%= chartSampleDisplayContext.getSplineChartConfig() %>" id="spline" />
 
-![Figure 5: A spline chart connects the points of data with a smooth curve.](../../images/chart-taglib-spline.png)
+![Figure 5: A spline chart connects points of data with a smooth curve.](../../images/chart-taglib-spline.png)
 
 Area Spline chart:
 
@@ -184,7 +184,7 @@ Java sample data:
 
     }
 
-Taglib:
+JSP:
 
     <chart:area-spline config="<%= chartSampleDisplayContext.getAreaSplineChartConfig() %>" id="area-spline" />
 
@@ -217,7 +217,7 @@ Java sample data:
 
     }
 
-Taglib:
+JSP:
 
     <chart:step config="<%= chartSampleDisplayContext.getStepChartConfig() %>" id="step" />
     
@@ -250,11 +250,11 @@ Java sample data:
 
     }
 
-Taglib:
+JSP:
 
     <chart:area-step config="<%= chartSampleDisplayContext.getAreaStepChartConfig() %>" id="area-step" />
     
-![Figure 8: An area step chart highlights the area covered by the steps.](../../images/chart-taglib-area-step.png)
+![Figure 8: An area step chart highlights the area covered by a step graph.](../../images/chart-taglib-area-step.png)
 
 ## Combination Charts [](id=bar-and-combination-charts)
 
@@ -306,11 +306,11 @@ Java sample data:
 
     }
 
-Taglib:
+JSP:
 
     <chart:combination config="<%= chartSampleDisplayContext.getCombinationChartConfig() %>" id="combination" />
     
-![Figure 9:](../../images/chart-taglib-combination.png)
+![Figure 9: A combination chart displays a variety of data set types.](../../images/chart-taglib-combination.png)
 
 ## Donut, Gauge, and Pie Charts [](id=donut-gauge-and-pie-charts)
 
@@ -345,11 +345,11 @@ Java sample data:
 
     }
 
-Taglib:
+JSP:
 
     <chart:donut config="<%= chartSampleDisplayContext.getDonutChartConfig() %>" id="donut" />
     
-![Figure 10:](../../images/chart-taglib-donut.png)
+![Figure 10: A donut chart is similar to a pie chart, but it has a hole in the center.](../../images/chart-taglib-donut.png)
 
 Gauge chart:
 
@@ -376,11 +376,11 @@ Java sample data:
 
     }
 
-Taglib:
+JSP:
 
     <chart:gauge config="<%= chartSampleDisplayContext.getGaugeChartConfig() %>" id="gauge" />
     
-![Figure 11:](../../images/chart-taglib-guage.png)
+![Figure 11: A gauge chart shows where percentage-based data falls over a given range.](../../images/chart-taglib-gauge.png)
 
 Pie chart:
 
@@ -409,11 +409,96 @@ Java sample data:
 
     }
 
-Taglib:
+JSP:
 
     <chart:pie config="<%= chartSampleDisplayContext.getPieChartConfig() %>" id="pie" />
-    
-![Figure 12:](../../images/chart-taglib-pie.png)
+
+![Figure 12: A pie chart models percentage-based data as individual slices of pie.](../../images/chart-taglib-pie.png)
+
+## Geomap Charts [](id=geomap-charts)
+
+Geomap charts let you display 
+
+Java sample data:
+
+    import com.liferay.frontend.taglib.chart.model.geomap.GeomapColor;
+    import com.liferay.frontend.taglib.chart.model.geomap.GeomapColorRange;
+    import com.liferay.frontend.taglib.chart.model.geomap.GeomapConfig;
+
+    public class ChartSampleDisplayContext {
+
+        public ChartSampleDisplayContext() {
+          _initGeomapConfig();
+        }
+
+        public GeomapConfig getGeomapConfig1() {
+      		return _geomapConfig1;
+      	}
+      
+      	public GeomapConfig getGeomapConfig2() {
+      		return _geomapConfig2;
+      	}
+
+        private void _initGeomapConfig() {
+      		GeomapColorRange geomapColorRange = new GeomapColorRange();
+      
+      		geomapColorRange.setMax("#b2150a");
+      		geomapColorRange.setMin("#ee3e32");
+      
+      		GeomapColor geomapColor = new GeomapColor();
+      
+      		geomapColor.setGeomapColorRange(geomapColorRange);
+      		geomapColor.setSelected("#a9615c");
+      		geomapColor.setValue("name_len");
+      
+      		_geomapConfig2.setColor(geomapColor);
+      
+      		StringBuilder sb = new StringBuilder();
+      
+      		sb.append(_portletRequest.getScheme());
+      		sb.append(StringPool.COLON);
+      		sb.append(StringPool.SLASH);
+      		sb.append(StringPool.SLASH);
+      		sb.append(_portletRequest.getServerName());
+      		sb.append(StringPool.COLON);
+      		sb.append(_portletRequest.getServerPort());
+      		sb.append(_portletRequest.getContextPath());
+      		sb.append(StringPool.SLASH);
+      		sb.append("geomap.geo.json");
+      
+      		_geomapConfig1.setDataUrl(sb.toString());
+      		_geomapConfig2.setDataUrl(sb.toString());
+      	}
+        
+        private GeomapConfig _geomapConfig1 = new GeomapConfig();
+      	private GeomapConfig _geomapConfig2 = new GeomapConfig();
+        private final PortletRequest _portletRequest;
+
+    }
+
+JSP:
+
+    <style type="text/css">
+    	.geomap {
+    		margin: 10px 0 10px 0;
+    	}
+    	.geomap svg {
+    		width: 100%;
+    		height: 500px !important;
+    	}
+    </style>
+
+    <chart:geomap
+    	config="<%= chartSampleDisplayContext.getGeomapConfig1() %>"
+    	id="geomap-default-colors"
+    />
+
+    <chart:geomap
+  		config="<%= chartSampleDisplayContext.getGeomapConfig2() %>"
+  		id="geomap-custom-colors"
+    />
+
+![Figure 13:](../../images/chart-taglib-geomap.png)
 
 Now you know how to use Chart taglibs to model data in @product@!
 
