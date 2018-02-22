@@ -125,10 +125,10 @@ and applies them to the `com.liferay.blogs.web` module.
     )
     public class MyBlogsResourceBundleLoader implements ResourceBundleLoader {
 
-    	@Override
-    	public ResourceBundle loadResourceBundle(String languageId) {
-    		return _resourceBundleLoader.loadResourceBundle(languageId);
-    	}
+        @Override
+        public ResourceBundle loadResourceBundle(Locale locale) {
+            return _resourceBundleLoader.loadResourceBundle(locale);
+        }
 
     	@Reference(
     		target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
@@ -180,13 +180,12 @@ The class's resource bundle loader field `_resourceBundleLoader` field is an
 target module's resource bundle loader together. 
 
     private AggregateResourceBundleLoader _resourceBundleLoader;
-
-The `loadResourceBundle` method returns a resource bundle based on the locale's
-language ID. 
+    
+The `loadResourceBundle` method returns a resource bundle based on the locale. 
 
     @Override
-    public ResourceBundle loadResourceBundle(String languageId) {
-       return _resourceBundleLoader.loadResourceBundle(languageId);
+    public ResourceBundle loadResourceBundle(Locale locale) {
+        return _resourceBundleLoader.loadResourceBundle(locale);
     }
 
 The setter method `setResourceBundleLoader` assigns an aggregate of this class's
