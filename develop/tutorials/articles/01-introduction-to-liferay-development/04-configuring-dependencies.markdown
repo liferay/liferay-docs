@@ -1,7 +1,7 @@
 # Configuring Dependencies [](id=configuring-dependencies)
 
-Using external modules in your project requires configuring their dependencies.
-To do this, look up the modules' attributes and plug them into dependency
+Using external modules in your project requires configuring dependencies on
+them. To do this, look up the modules' attributes and plug them into dependency
 entries for your build system (either 
 [Gradle](https://gradle.org/), 
 [Maven](https://maven.apache.org/), or 
@@ -24,11 +24,11 @@ dependencies:
 
 ## Finding Core @product@ Artifacts [](id=finding-core-liferay-portal-artifacts)
 
-Each module is composed of a `jar` file that contains the module's OSGi metadata
-in a `MANIFEST.MF` file. You can find the artifact attributes for @product@'s
-core modules inside this file. The manifest also specifies the module's artifact
-attributes. For example, these two OSGi headers specify the module's artifact ID
-and version: 
+Each module is composed of a `.jar` file that contains the module's OSGi
+metadata in a `MANIFEST.MF` file. You can find the artifact attributes for
+@product@'s core modules inside this file. The manifest also specifies the
+module's artifact attributes. For example, these two OSGi headers specify the
+module's artifact ID and version: 
 
     Bundle-SymbolicName:  artifact ID
     Bundle-Version: version
@@ -55,10 +55,10 @@ modules.
 
 ## Finding @product@ App and Independent Artifacts [](id=finding-liferay-portal-app-and-independent-artifacts)
 
-Independent modules and modules that make up @product@'s apps aren't part of the 
-@product@ core. You must still, however, find their artifact attributes if you 
-want to declare dependencies on them. The resources below provide the 
-artifact details for @product@'s apps and independent modules: 
+Independent modules and modules that make up @product@'s apps aren't part of the
+core. You must still, however, find their artifact attributes if you want to
+declare dependencies on them. The resources below provide the artifact details
+for @product@'s apps and independent modules: 
 
  Resource | Artifact Type |
 :-------- | :-------------- |
@@ -68,7 +68,7 @@ artifact details for @product@'s apps and independent modules:
 
 +$$$
 
-**Important**: `com.liferay` is the group ID for all @product@'s apps and 
+**Important**: `com.liferay` is the group ID for all of Liferay's apps and 
 independent modules. 
 
 $$$
@@ -79,7 +79,7 @@ learn about it next.
 ### @product@'s App Manager [](id=liferay-portals-app-manager)
 
 [The App Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps#using-the-app-manager) 
-knows what's deployed on your @product@ server. You can use it to find whatever
+knows what's deployed on your Liferay instance. You can use it to find whatever
 modules you're looking for. 
 
 Follow these steps to get a deployed module's information: 
@@ -92,9 +92,9 @@ Follow these steps to get a deployed module's information:
     Whether browsing or searching, the App Manager shows the module's artifact 
     ID and version number. 
 
-![Figure 1: You can inspect deployed module artifact IDs and version numbers.](../../../images/intro-configuring-dependencies-search-app-manager-for-module.png)
+![Figure 1: You can inspect deployed module artifact IDs and version numbers.](../../images/intro-configuring-dependencies-search-app-manager-for-module.png)
 
-![Figure 2: The App Manager aggregates Liferay and independent modules.](../../../images/intro-configuring-dependencies-indep-modules-in-app-manager.png)
+![Figure 2: The App Manager aggregates Liferay and independent modules.](../../images/intro-configuring-dependencies-indep-modules-in-app-manager.png)
 
 If you don't know a deployed module's group, use the 
 [Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell) 
@@ -106,7 +106,7 @@ to find it:
 
     This results in a `g!`: the Felix Gogo Shell command prompt. 
 
-2.  Search for the module by its display name (e.g., `Liferay Bookmarks API`) or 
+2.  Search for the module by its display name (e.g., `Liferay Bookmarks API`) or
     a keyword. In the results, note the module's number. You can use it in the 
     next step. For example, these results show the Liferay Bookmarks API
     module's number is `52`: 
@@ -142,16 +142,19 @@ to find it:
 6.  Determine the group ID by matching the `Bundle-Vendor` value from step 3 
     with a group listed that provides the artifact. 
 
+Now you know to find a module's symbolic name, version, and group ID using the
+App Manager and Gogo Shell.  
+
 Next, you'll learn how to use @product@'s reference documentation to find a 
-@product@ app module's attributes. 
+Liferay app module's attributes. 
 
 ### Reference Docs [](id=reference-docs)
 
 @product@'s app Javadoc lists each module's artifact ID, version number, and 
-display name. This is the best place to look up @product@ modules that aren't 
-yet deployed to your @product@ instance. 
+display name. This is the best place to look up Liferay modules that aren't 
+yet deployed to your Liferay instance. 
 
-Follow these steps to find a @product@ app module's attributes in the Javadoc: 
+Follow these steps to find a Liferay app module's attributes in the Javadoc: 
 
 1.  Navigate to Javadoc for an app module class. If you don't have a link to the
     class's Javadoc, find it by browsing 
@@ -167,7 +170,7 @@ The heading above the package name shows the module's artifact ID, version
 number, and display name. Remember, the group ID for all app modules is 
 `com.liferay`. 
 
-![Figure 3: @product@ app Javadoc overviews list each module's display name, followed by its group ID, artifact ID, and version number in a colon-separated string.  It's a Gradle artifact syntax.](../../../images/intro-configuring-dependencies-module-info-in-javadoc-overview.png)
+![Figure 3: @product@ app Javadoc overviews list each module's display name, followed by its group ID, artifact ID, and version number in a colon-separated string. It's using Gradle artifact syntax.](../../images/intro-configuring-dependencies-module-info-in-javadoc-overview.png)
 
 +$$$
 
@@ -187,7 +190,7 @@ steps to find an artifact on Maven Central:
 1.  Go to Maven Central at 
     [https://search.maven.org/](https://search.maven.org/). 
 
-2.  Search for the artifact. The search results list each artifact's attributes. 
+2.  Search for the artifact. The search results list each artifact's attributes.
 
 +$$$
 
@@ -198,21 +201,20 @@ of its Java packages. For example, to find an artifact containing the class
 
 $$$
 
-![Figure 4: You can search for artifacts on Maven Central.](../../../images/intro-configuring-dependencies-search-maven-central.png)
+![Figure 4: You can search for artifacts on Maven Central.](../../images/intro-configuring-dependencies-search-maven-central.png)
 
 Now that you have your artifact's attribute values, you're ready to configure a 
 dependency on it. 
 
 ## Configuring Dependencies [](id=configuring-dependencies)
 
-Specifying dependencies to build systems is straightforward. Edit your project's
-build file, specifying a dependency entry that includes the group ID, artifact
-ID, and version number. 
+Specifying dependencies to build systems is straightforward. In your project's
+build file, specify a dependency entry that includes the group ID, artifact ID,
+and version number. 
 
 +$$$
 
-**Note**: To configure third-party libraries in a module, see the tutorial 
-[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module). 
+**Note**: There's a recommended [workflow for resolving dependencies on third party library packages](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module). 
 
 $$$
 
@@ -264,7 +266,7 @@ that's a skill you can depend on!
 
 [Liferay API Modules](/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules)
 
-[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
+[Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
 
 [Classes Moved from portal-service.jar](/develop/reference/-/knowledge_base/7-1/classes-moved-from-portal-service-jar)
 
