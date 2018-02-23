@@ -121,6 +121,34 @@ Next just provide a `Language.properties` file. Put it in your module's
 
 That's all there is to overriding Liferay's core language keys.
 
+### Creating a module with more than one Resource Bundle [](id=creating-a-module-with-more-1-resource-bundle)
+In case you need more than one localization in your module, you have to create a class that extends `java.util.ResourceBundle` for every resource bundle. Each resource bundle has to be loaded adding the localization suffix. 
+
+For instance, a module with 2 localizations (en_US and es_ES) needs 2 components:
+
+     @Component(
+        property = { "language.id=en_US" }, 
+        service = ResourceBundle.class
+        )
+      public class EnUSResourceBundle extends ResourceBundle {
+           (...)
+           private final ResourceBundle _resourceBundle = ResourceBundle.getBundle(
+                "content.Language_en_US", UTF8Control.INSTANCE);
+     }
+
+and
+
+     @Component(
+        property = { "language.id=es_ES" }, 
+        service = ResourceBundle.class
+        )
+      public class EsESResourceBundle extends ResourceBundle {
+           (...)
+           private final ResourceBundle _resourceBundle = ResourceBundle.getBundle(
+                "content.Language_es_ES", UTF8Control.INSTANCE);
+     }
+
+
 ## Overriding a Module's Language Keys [](id=overriding-a-modules-language-keys)
 
 What do you do if the language keys you want to modify are in one of Liferay's
