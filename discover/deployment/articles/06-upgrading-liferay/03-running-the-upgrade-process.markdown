@@ -61,9 +61,9 @@ Here are the tool's default Java parameters:
     
     -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
 
-The `-j` option lets you override the JVM parameters. For example, these
-options set the JVM memory to 10GB which is a good memory reference for this kind of
-processes:
+The `-j` option lets you override the JVM parameters. For example, these options
+set the JVM memory to 10GB, which is a good starting point for this process
+type:
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
 
@@ -225,9 +225,9 @@ Here are the commands available in the `upgrade` namespace:
 **upgrade:check:** list upgrades pending to execute because they failed in 
 the past or the module hasn't reached its final version
 
-**upgrade:execute {module_name}:** executes upgrade for that module
+**upgrade:execute {module_name}:** executes upgrades for that module
 
-**upgrade:executeAll:** executes all pending upgrades processes for modules
+**upgrade:executeAll:** executes all pending module upgrade processes
 
 **upgrade:list:** lists all registered upgrades
 
@@ -237,12 +237,12 @@ the past or the module hasn't reached its final version
 
 **verify:help:** displays verify commands
 
-**verify:check {module_name}:** list latest execution result for a specific
-verify process
+**verify:check {module_name}:** lists the latest execution result for the
+module's verify process
 
-**verify:checkAll:** list latest execution result for all verify processes
+**verify:checkAll:** lists the latest execution results for all verify processes
 
-**verify:execute {module_name}:** executes a verifier
+**verify:execute {module_name}:** executes the module's verifier
 
 **verify:executeAll:** executes all verifiers
 
@@ -335,8 +335,11 @@ their issues.
 
 ### Checking upgrade status [](id=checking-the-upgrade-status)
 
-To show the modules that failed to upgrade or have not been upgraded execute
-`upgrade:check`.
+It's good to know things still need upgrading and why. You might have forgotten
+to upgrade a module or its upgrade failed. In any case, it's important to know
+where your upgrade stands. 
+
+The command `upgrade:check` lists modules that have impending upgrades. 
 
 For example, if module  `com.liferay.dynamic.data.mapping.service` failed in a
 step labeled `1.0.0-step-2`. Executing `upgrade:check` shows this: 
@@ -349,21 +352,31 @@ Modules often depend on other modules to complete upgrading. Executing `scr:info
 dependencies. You must upgrade dependency modules to successfully upgrade
 dependent modules. 
 
+To resolve and activate a module, its upgrade must complete. The
+[Apache Felix Dependency Manager](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager/tutorials/leveraging-the-shell.html)
+Gogo shell command `dm wtf` reveals unresolved dependencies. If your module
+requires a certain data schema version (e.g., its `bnd.bnd` specifies
+`Liferay-Require-SchemaVersion: 1.0.2`) but the module hasn't completed upgrade
+to that version, `dm wtf` shows that the schema version is not registered. 
+
+    1 missing dependencies found.
+    -------------------------------------
+    The following service(s) are missing:
+     * com.liferay.portal.kernel.model.Release (&(release.bundle.symbolic.name=com.liferay.journal.service)(release.schema.version=1.0.2)) is not found in the service registry
+
+The `dm wtf` command can also help detect errors in portlet definitions and
+custom portlet `schemaVersion` fields. 
+
 Browsing the @product@ database `Release_` table can help you determine a
-module's upgrade status. The core's `servletContextName` field value is
+module's upgrade status too. The core's `servletContextName` field value is
 `portal`. If the core's `schemaVersion` field matches your new @product@ version
 (e.g., `7.0.1` for Liferay Portal CE GA2) and the `verified` field is `1`
 (true), the core upgrade completed successfully. 
 
 Each module has one `Release_` table record, and the value for its
-`schemaVersion` field must `1.0.0` or greater (`1.0.0` is the initial version
+`schemaVersion` field must be `1.0.0` or greater (`1.0.0` is the initial version
 for @product-ver@ modules, except for those that were previously traditional
-plugins intended for Liferay Portal version 6.2 or earlier).
-
-Apart from the dependencies with other modules, modules can also have other
-dependencies such as having a certain schema version in the `Release_` table.
-You can check why some modules are not available even when they are actived
-executing `dm wtf`. This logic is part of [Apache Felix Dependency Manager](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager/tutorials/leveraging-the-shell.html).
+plugins intended for Liferay Portal version 6.2 or earlier). 
 
 ## Executing verify processes [](id=executing-verify-processes)
 

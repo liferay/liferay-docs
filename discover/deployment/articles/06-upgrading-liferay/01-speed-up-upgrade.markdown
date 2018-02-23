@@ -9,15 +9,16 @@ production environment. Here's a summary of the steps:
 
 1.  Copy your most
     [recent complete backup](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
-    from production to a non-production environment in which you can analyze your database and
-    test upgrading, as explained in the remaining steps. 
+    from production to a non-production environment in which you can analyze
+    your database and test upgrading, as explained in the remaining steps. 
 2.  [Examine your database](#analyzing-your-database-step-2).
 3.  [Use Liferay's API to delete unused content](#remove-unused-data-from-the-database-using-liferays-api-step-3).
 4.  [Run the upgrade process on your non-production environment](#execute-the-upgrade-process-step-4).
 5.  Check the upgrade log for the processes that took the most time.
 6.  Remove unused content from the upgrade processes that took the longest. If
-    you see a potential issue, analyze it and contact the community if you need help. For EE customers, feel free
-    to open a support ticket and have Liferay verify your analysis.
+    you see a potential issue, analyze it and contact the community if you need
+    help. If you have an enterprise subscription, feel free to open a support
+    ticket and have Liferay verify your analysis.
 7.  Repeat steps 4, 5, and 6 as needed.
 8.  [Remove unused content from production](remove-unused-objects-from-production-step-8). 
 
@@ -33,9 +34,9 @@ environment's copy of the production database:
 
 The greater these values are the longer upgrade processes take. 
 
-The database engines offer different ways to get this information and sometimes
-the output from importing backup data into your non-production database show 
-each table's size and number of rows (records).
+The database engines show this information in different ways. Sometimes the
+output from importing backup data into your non-production database shows  each
+table's size and number of rows (records).
 
 For example, output from a typical database import looks like this:
 
@@ -327,12 +328,11 @@ $$$
 
 Now that you have removed unused objects from your non-production environment
 and tested your changes, you can use Liferay's API to remove the same objects
-from your production environment. By removing the objects from production  and
+from your production environment. By removing the objects from production and
 testing your changes before upgrading, you can more easily troubleshoot any
 issues, knowing that they're not related to upgrade processes. Another benefit
-of doing this in your current production environment is that its performance
-and maintenance will be improved meanwhile you work on upgrading to the new
-version of @product@.
+of doing this even while you work through the upgrade is that your production
+environment will perform better and be easier to maintain.
 
 ## Conclusion [](id=conclusion)
 
