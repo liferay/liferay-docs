@@ -20,6 +20,14 @@ To use the plugin, include it in your project's `pom.xml` file:
                 <version>1.0.6</version>
                 <configuration>
                 </configuration>
+                <!-- Default HSQLDB driver. If you use a custom DB, provide a driver here  -->
+                <dependencies>
+                  <dependency>
+                    <groupId>org.hsqldb</groupId>
+                    <artifactId>hsqldb</artifactId>
+                    <version>2.4.0</version>
+                  </dependency>
+                </dependencies>
             </plugin>
         ...
         </plugins>
