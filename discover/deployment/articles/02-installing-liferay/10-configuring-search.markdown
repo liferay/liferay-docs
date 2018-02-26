@@ -178,10 +178,28 @@ can find Elasticsearch on the network.
 
 ### Step Five: Configure @product@ to Connect to your Elasticsearch Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
 
-Now you're ready to configure @product@. Start @product@ if you haven't already, log
-in, and then click on *Control Panel* &rarr; *Configuration* &rarr; *System Settings*
-&rarr; *Foundation*. Find *Elasticsearch* in the list of settings and click on it.
-Now you can configure it. Here are the options you need to change: 
++$$$
+
+**Elasticsearch 6.1:** Before continuing, install the [Liferay Connector for
+Elasticsearch 6 application](LINK WHEN AVAILABLE) from Liferay Marketplace and
+stop the default Elasticsearch 2.x adapter, which connects to Elasticsearch 2.x.
+
+1.  Navigate to Control Panel &rarr; Apps &rarr; App Manager.
+2.  Search for *elasticsearch*. Find the Liferay Portal Search Elasticsearch
+    module and click the edit ((![Edit](../../images/icon-edit.png))) button.
+    Choose the Deactivate option. This leaves the bundle installed, but stops it
+    in the OSGi runtime.
+3.  Once you have downloaded the LPKG file with the Elasticsearch 6 adapter,
+    place it in the `deploy` folder of your Liferay Home. Find more detailed
+    information on deploying Marketplace applications [here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace).
+
+$$$
+
+Now you're ready to configure @product@. Start @product@ if you haven't already,
+log in, and then click on *Control Panel* &rarr; *Configuration* &rarr; *System
+Settings* &rarr; *Foundation*. Find *Elasticsearch* (or *Elasticsearch 6*)in the
+list of settings and click on it. Now you can configure it. Here are the
+options you need to change: 
 
 **Cluster name:** Enter the name of the cluster as you defined it in
 Elasticsearch. 
@@ -190,8 +208,9 @@ Elasticsearch.
 standalone Elasticsearch. 
 
 **Transport addresses:** Enter a delimited list of transport addresses for
-Elasticsearch nodes. Here, you'll enter the transport address from the Elasticsearch server
-you started. The default value is `localhost:9300`, which will work. 
+Elasticsearch nodes. Here, you'll enter the transport address from the
+Elasticsearch server you started. The default value is `localhost:9300`, which
+will work. 
 
 When finished, click *Save*. You're almost done. 
 
