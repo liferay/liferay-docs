@@ -1,10 +1,10 @@
  
-### Options
+# Options
 
-An option is any feature of a product that can by selected by the customer and
-is defined in two parts: *Option Templates* and *Option Values*. Here at the
-individual product level, you can create option values and assign them to any
-option templates that are available.
+An option is any feature of a product that can by selected by the customer.
+Options are defined in two parts: as *Option Templates* and *Option Values*.
+Here at the individual product level, you can create option values and assign
+them to any option templates that are available.
 
 If no option templates are available, you must create them before you can assign
 values. Go to *Site Menu* &rarr; *Commerce* &rarr; *Catalog* and click on the
@@ -30,7 +30,10 @@ Now your option templates are deployed, but you need to assign values to them
 before they can be used. The *Options* portlet displays the options templates
 that you just selected. Click on the *Values* button next to one of the
 templates. In the pop-up that appears, enter the title and priority for the
-value and hit save. Then click the *Add* button and repeat the process for your
-next value. Close the dialog box when all your values have been added.
+value and hit save (the priority simply sets the order in which the option
+values will be displayed on the product page--smallest numbers come first). Then
+click the *Add* button and repeat the process for your next value. Close the
+dialog box when all your values have been added.
 
-Once your values are assigned, the product options are ready to go.
+Once your values are assigned, the product options are ready to go. The next
+section covers SKUs, or stock-keeping units.

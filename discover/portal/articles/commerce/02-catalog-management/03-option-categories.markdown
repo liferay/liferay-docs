@@ -1,4 +1,4 @@
-## Option Categories (suggest we rename this to Specification Categories)
+# Option Categories (suggest we rename this to Specification Categories)
 
 Specifications provide information about the product that is not customer
 selectable. Creating an option category allows those specifications to be listed
@@ -23,9 +23,8 @@ fill in the form.
     -Priority: This establishes the order in which the Option Categories will be
     listed. Smallest numbers go first.
 
-    -Key:A programmatic identifier for this option category. This field 
-auto-fills
-    and can be safely ignored by most users.
+    -Key:A programmatic identifier for this option category. This field
+    auto-fills and can be safely ignored by most users.
 
 Once the form is complete, click *Save*. The next section explains how to assign
 specifications to these categories. 

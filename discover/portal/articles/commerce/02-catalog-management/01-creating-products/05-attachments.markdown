@@ -1,7 +1,7 @@
-### Attachments
+# Attachments
 
 An attachment is any kind of file that you want customers to be able to download
-before they purchase. For instance, you might make available a .pdf of a user
+before they purchase. For instance, you might post a .pdf of a user
 manual, or post a video of a product demonstration.
 
 To add an attachment to a product, click on the product in the catalog and then
@@ -19,3 +19,5 @@ the attachment will be displayed for all values.
 <!--If I add an attachment, it works fine as long as I do not select an option
 value. Once I select a value, the file is moved from the attachments tab to the
 images tab (even if it isn't an image).-->
+
+So much for attachments. The next section covers product relations.

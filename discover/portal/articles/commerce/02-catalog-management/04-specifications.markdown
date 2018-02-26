@@ -1,4 +1,4 @@
-## Specifications
+# Specifications
 
 Specifications provide information about a product that is not customer
 selectable. Like options, specifications take values, but since there is no
@@ -18,7 +18,8 @@ the form.
 
     -Description: *unknown*
 
-    -Facetable *unknown*
+    -Facetable: Check this box to make search results filterable for this
+    specification.
 
     -Category: See Option Categories/Specification Categories for more detail.
     Categories are optional; uncategorized specifications are displayed on the

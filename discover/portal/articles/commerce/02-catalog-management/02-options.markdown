@@ -1,5 +1,4 @@
- 
-## Options
+# Options
 
 Here you can specify customer-selectable options for your products. To create
 a new option, click the *Add* button(![Add](../../../images/icon-add.png)) at
@@ -8,12 +7,14 @@ the top of the screen and fill in the fields on the right.
     -Title: specify the type of option customers will select, such as size or
     color.
 
-    -Description: *I'm not sure where the text entered here would be displayed*
+    -Description: 
+<!--I'm not sure where the text entered here would be displayed-->
 
     -Field Type: Select from a number of different ways to display options to
     customers (drop-down menu, radio buttons, etc).
 
-    -Facetable: *not sure what this is*
+    -Facetable: Check this box to allow search results to be filtered for this
+    option.
 
     -Required: Selecting this box forces customers to make a selection before
     adding items that deploy this option to their carts.
