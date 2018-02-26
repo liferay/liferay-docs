@@ -28,7 +28,7 @@ Next, let's examine the @product@ installation items you should back up.
 ## Backing up @product@'s File System [](id=backing-up-liferays-file-system)
 
 The
-[Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+[Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
 stores @product@'s properties configuration files, such as `portal-setup-
 wizard.properties` and `portal-ext.properties`. You should absolutely back them
 up. In fact, it's best to back up your entire application server and  Liferay
@@ -71,7 +71,7 @@ state to that of the time you exported the database.
 If you're storing @product@'s Documents and Media Library files to a Jackrabbit
 JSR-170 repository database, you should back it up. If you've placed your search
 index into a database (not recommended; see the
-[@product@ Clustering](/discover/deployment/-/knowledge_base/7-0/liferay-clustering) 
+[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering) 
 article for information on using Cluster Link or Solr), you should back up that
 database too. 
 
