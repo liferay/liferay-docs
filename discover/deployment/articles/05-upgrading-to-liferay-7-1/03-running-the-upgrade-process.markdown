@@ -17,7 +17,7 @@ Here are the ways to run upgrade processes:
 
 If you are upgrading from Liferay Portal 6.2 or earlier, it's recommended to use
 the  upgrade tool to upgrade everything. It's the easiest, most comprehensive
-way to upgrade from those versions. For version 7.0 onward, however, @product@'s
+way to upgrade from those versions. Since version 7.0, however, @product@'s
 modular framework lets you upgrade modules--even the core--individually.
 Focusing first on upgrading the core and your most important modules might be
 better for you. The point is, @product-ver@ upgrade process is flexible. 
@@ -93,7 +93,7 @@ command line interface or pre-configure it in these files:
     the upgrade requires. You might want to copy your current portal properties
     (except your database properties) into this file. Before copying your
     current properties, make sure you've
-    [updated the portal properties for @product-ver@](/discover/portal/-/knowledge_base/7-0/preparing-an-upgrade-to-liferay-7#step-4-update-your-portal-properties). 
+    [updated the portal properties for @product-ver@](/discover/portal/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7#step-4-update-your-portal-properties). 
 
 Each file's properties are described next. 
 
@@ -116,7 +116,7 @@ binaries or resources to add to the  class path *(required)*
 
 Specify the following information to configure the database you're upgrading.
 Note that these properties correspond exactly to the
-[JDBC portal properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#JDBC)
+[JDBC portal properties](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#JDBC)
 you'd use in a `portal-ext.properties` file. 
 
 **jdbc.default.driverClassName ***(required)*
@@ -131,7 +131,7 @@ you'd use in a `portal-ext.properties` file.
 
 Specify the following information to configure the upgrade itself: 
 
-**liferay.home:** the [Liferay home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) *(required)*
+**liferay.home:** the [Liferay home folder](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home) *(required)*
 
 **hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
 set to *250* by default *(optional)* 
@@ -249,7 +249,7 @@ module's verify process
 **verify:list:** lists all registered verifiers
 
 There are many useful
-[Liferay commands and standard commands available in Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+[Liferay commands and standard commands available in Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
 The following sections describe Liferay upgrade commands. 
 
 ### Listing module upgrade processes [](id=listing-module-upgrade-processes)
@@ -331,17 +331,7 @@ version is `1.0.0`:
 	   {fromSchemaVersionString=0.0.1, toSchemaVersionString=1.0.0, upgradeStep=com.liferay.iframe.web.upgrade.IFrameWebUpgrade$1@1537752d}
 
 For module upgrades that don't complete, you can check their status and resolve
-their issues.  
-
-### Upgrading Social Office [](id=upgrading-social-office)
-
-Liferay Social Office, Liferay's social collaboration product for the
-enterprise, was an add-on product for Liferay Portal versions prior to 7.0.
-Social Office is no longer available because 7.0 contains its features. When
-upgrading from a previous version of Liferay Portal to which you added Social
-Office, the standard upgrade procedure handles most things for you. You must,
-however, perform a [few additional steps](/discover/deployment/-/knowledge_base/7-0/upgrading-social-office)
-to ensure that Social Office's features work as intended in @product-ver@.
+their issues. 
 
 ### Checking upgrade status [](id=checking-the-upgrade-status)
 
@@ -380,7 +370,7 @@ custom portlet `schemaVersion` fields.
 Browsing the @product@ database `Release_` table can help you determine a
 module's upgrade status too. The core's `servletContextName` field value is
 `portal`. If the core's `schemaVersion` field matches your new @product@ version
-(e.g., `7.0.1` for Liferay Portal CE GA2) and the `verified` field is `1`
+(e.g., `7.1.1` for Liferay Portal CE GA2) and the `verified` field is `1`
 (true), the core upgrade completed successfully. 
 
 Each module has one `Release_` table record, and the value for its
@@ -393,7 +383,7 @@ plugins intended for Liferay Portal version 6.2 or earlier).
 Verify processes make sure the upgrade executed successfully. Verify processes
 in the core are automatically executed after upgrading @product@. You can also
 execute them by configuring the
-[`verify.*` portal properties](http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Verify)
+[`verify.*` portal properties](@platform-ref@/7.1/propertiesdoc/portal.properties.html#Verify)
 and restarting your server.
 
 Also, some modules have verify processes. To check for available verify
@@ -406,7 +396,7 @@ After upgrading and running verify processes, you should reindex @product@'s
 search indexes. Don't just do this blindly, however. By default, @product@ ships
 with an embedded configuration for Elasticsearch. This configuration works great
 for demo purposes, but is not supported in production. Make sure to
-[install and configure a standalone Elasticsearch instance to run in production](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch).
+[install and configure a standalone Elasticsearch instance to run in production](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
 
 Once you've configured search and reindexed your search index, your upgraded
 system is ready for action! Congratulations! 

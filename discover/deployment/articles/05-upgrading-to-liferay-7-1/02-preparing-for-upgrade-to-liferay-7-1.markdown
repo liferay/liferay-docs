@@ -1,7 +1,7 @@
 # Preparing for Upgrade to @product-ver@ [](id=preparing-an-upgrade-to-liferay-7)
 
 Now that you've completed the
-[pre-upgrade process of cleaning and normalizing your data](/discover/deployment/-/knowledge_base/7-0/pre-upgrade-speed-up-the-process),
+[pre-upgrade process of cleaning and normalizing your data](/discover/deployment/-/knowledge_base/7-1/pre-upgrade-speed-up-the-process),
 you're ready to prepare your environment for upgrading to @product-ver@. Here's
 a summary of the preparation steps: 
 
@@ -42,7 +42,7 @@ If this is the case, roll back to your previous backup of Liferay 6.2 and
 
 ## Step 3: Synchronize a Complete Backup @product@ [](id=step-2-synchronize-a-complete-backup-product)
 
-[Back up your @product@ database, installation, and Document Library store](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation). 
+[Back up your @product@ database, installation, and Document Library store](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation). 
 
 ## Step 4: Update Your Portal Properties [](id=step-4-update-your-portal-properties)
 
@@ -63,14 +63,14 @@ these property-related updates:
     [migrate the Image Gallery](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images).
 
 -   If you have a sharded environment,
-    [configure your upgrade for sharding](/discover/deployment/-/knowledge_base/7-0/upgrading-sharded-environment).
+    [configure your upgrade for sharding](/discover/deployment/-/knowledge_base/7-1/upgrading-sharded-environment).
 
 When a new version of @product@ is released, there are often changes to default
 settings, and this release is no different. If you rely on the defaults from
 your old version, you'll want to review the changes and decide whether you want
 to keep the defaults from your old version or accept the defaults of the new. 
 
-Here's a list of the 6.2 properties that have changed in 7.0: 
+Here's a list of the 6.2 properties that have changed in 7.1: 
     
     users.image.check.token=false
     organizations.types=regular-organization,location
@@ -93,15 +93,15 @@ Here's a list of the 6.2 properties that have changed in 7.0:
 
 Properties in features that have been modularized have changed and must now be
 deployed separately in
-[OSGi configuration files](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations). 
+[OSGi configuration files](/discover/portal/-/knowledge_base/7-1/system-settings#exporting-and-importing-configurations). 
 The
-[7.0 portal properties reference docs](@platform-ref@/7.0/propertiesdoc/portal.properties.html)
+[7.1 portal properties reference docs](@platform-ref@/7.1/propertiesdoc/portal.properties.html)
 provide property details and examples. 
 
 ## Step 5: Configuring Your Documents and Media File Store [](id=configuring-your-documents-and-media-file-store)
 
 Your next task is to review your Documents and Media configuration. Look at
-[Document Library documentation](/discover/portal/-/knowledge_base/7-0/liferay-repository-types)
+[Document Library documentation](/discover/portal/-/knowledge_base/7-1/liferay-repository-types)
 to see all the options in @product-ver@ before executing an upgrade process.
 There are, however, two important pieces of configuration that have changed: 
 
@@ -127,15 +127,15 @@ The configuration file name must match the name of the class that implements the
 configuration. 
 
 The
-[Document Repository Configuration documentation](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration)
+[Document Repository Configuration documentation](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
 provides more information.
 
 ## Step 6: Install @product-ver@ [](id=install-the-new-version-of-product)
 
 Next,
-[install @product@ on your application server](/discover/deployment/-/knowledge_base/7-0/deploying-product)
+[install @product@ on your application server](/discover/deployment/-/knowledge_base/7-1/deploying-product)
 or
-[use @product@ bundled with your application server of choice](/discover/deployment/-/knowledge_base/7-0/installing-product).
+[use @product@ bundled with your application server of choice](/discover/deployment/-/knowledge_base/7-1/installing-product).
 
 **Important**: Once you have installed @product-ver@, **DON'T START IT!** In
 previous versions, once you prepared your system for an upgrade, the upgrade

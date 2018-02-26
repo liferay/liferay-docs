@@ -8,7 +8,7 @@ You can shorten this process by performing a few steps before you upgrade your
 production environment. Here's a summary of the steps:
 
 1.  Copy your most
-    [recent complete backup](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
+    [recent complete backup](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
     from production to a non-production environment in which you can analyze
     your database and test upgrading, as explained in the remaining steps. 
 2.  [Examine your database](#analyzing-your-database-step-2).
@@ -207,7 +207,7 @@ examining objects associated with these tables. Also there are some common areas
 +$$$
 
 **Important**: You should only use
-Liferay's API--[Core API](@platform-ref@/7.0-latest/javadocs/)
+Liferay's API--[Core API](@platform-ref@/7.1-latest/javadocs/)
 and [app APIs](@app-ref@)--
 to delete objects because the API accounts for relationships between @product@
 objects. You can invoke the API through the Control Panel's script console or a
@@ -319,7 +319,7 @@ test your changes.
 
 +$$$
 
-**Note**: Learning [how upgrade processes are created](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
+**Note**: Learning [how upgrade processes are created](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
 can help you understand their data better.
 
 $$$ 
