@@ -2,7 +2,16 @@
 
 The Liferay Theme Generator is a command-line tool that provides you with
 everything you need to create and manage themes for Liferay Portal CE 7.1 and
-Liferay DXP. It's built with 
+Liferay DXP. 
+
++$$$
+
+**Note:** The Liferay Theme Generator does not currently support 7.1 theme 
+creation.
+
+$$$
+
+It's built with 
 [Node](https://nodejs.org/) 
 and 
 [Yeoman](http://yeoman.io/), 
