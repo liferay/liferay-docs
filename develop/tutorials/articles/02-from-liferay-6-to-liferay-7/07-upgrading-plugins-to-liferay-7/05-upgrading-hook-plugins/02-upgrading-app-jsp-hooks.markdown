@@ -82,7 +82,7 @@ Your custom JSP is live.
 
 ## Related Topics [](id=related-topics)
 
-[Overriding App JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
+[JSP Overrides Using OSGi Fragments](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
 
 [Upgrading Core JSP Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-core-jsp-hooks)
 
