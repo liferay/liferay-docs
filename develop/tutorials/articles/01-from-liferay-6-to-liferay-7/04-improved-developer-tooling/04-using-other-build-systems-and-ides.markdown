@@ -1,4 +1,4 @@
-## Using Other Build Systems and IDEs [](id=using-other-build-systems-and-ides)
+# Using Other Build Systems and IDEs [](id=using-other-build-systems-and-ides)
 
 @product@ is tool agnostic--you can use whatever tools you like to develop on
 it. You can use any IDE and even use Gradle, Bnd, or BndTools if you don't want

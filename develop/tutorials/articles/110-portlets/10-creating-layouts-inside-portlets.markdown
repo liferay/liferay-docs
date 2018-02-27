@@ -87,7 +87,7 @@ width and `column-2` is 66.66% width, but on small sized view ports both
 
 ![Figure 2: You can take advantage of Bootstrap's grid classes to create responsive layouts within your custom portlets.](../../images/portlets-layout-responsive.png)
 
-## AUI Layout Tag Attributes
+## AUI Layout Tag Attributes [](id=aui-layout-tag-attributes)
 
 This section contains a list of the available attributes for each tag along with 
 a brief description of its purpose.
