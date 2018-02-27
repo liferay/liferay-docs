@@ -293,7 +293,7 @@ Menu.
     Navigation category in Site Administration offers a dynamic Pages panel app
     that provides much more than a simple link to access a portlet. This is
     accomplished by extending `BaseJSPPanelApp` in the
-    [GroupPagesPanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/layout/admin/web/internal/application/list/GroupPagesPanelApp.html)
+    [GroupPagesPanelApp](https://github.com/liferay/liferay-portal/blob/7.0.4-ga5/modules/apps/web-experience/layout/layout-admin-web/src/main/java/com/liferay/layout/admin/web/internal/application/list/GroupPagesPanelApp.java)
     class, which provides this functionality in the Product Menu.
 
     In `GroupPagesPanelApp`, notice that the portlet ID is still returned
