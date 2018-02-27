@@ -1,0 +1,3 @@
+# Associating Permissions with Resources 
+
+
