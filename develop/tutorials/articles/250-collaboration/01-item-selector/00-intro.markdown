@@ -1,9 +1,9 @@
 # Item Selector [](id=item-selector)
 
-An *Item Selector* is a UI component that lets users select entities in a 
-user-friendly manner. Many Liferay apps use Item Selectors to let users select 
-items such as images, videos, audio files, documents, and pages. For example, 
-the Documents and Media Library lets users select files. 
+An *Item Selector* is a UI component for selecting entities in a user-friendly
+manner. Many Liferay apps use Item Selectors to let users select items such as
+images, videos, audio files, documents, and pages. For example, the Documents
+and Media Library lets users select files. 
 
 ![Figure 1: Item Selectors let users browse and select different kinds of entities.](../../../images/item-selector-dialog-02.png)
 
