@@ -1,9 +1,8 @@
-# Upgrading to @product-ver@ [](id=upgrading-to-liferay-7)
+# Upgrading to @product-ver@ [](id=upgrading-to-liferay-71)
 
 Upgrading to @product-ver@ consists of two main steps: upgrading your
-installation and then upgrading the database. @product@ can be upgraded using a
-straightforward process. To upgrade to the latest release directly, you must be
-coming from Liferay Portal 6.1 or higher.
+installation and then upgrading the database. To upgrade to the latest release
+directly, you must be coming from Liferay Portal 6.1 or higher.
 
 If you're on Liferay Portal 6.0 or below, you should upgrade to Liferay Portal
 6.2 before approaching an upgrade to the @product-ver@ platform. Please see the

@@ -1,6 +1,10 @@
 # Maintaining @product@ [](id=maintaining-liferay)
 
-The articles here explain how to maintain a @product@ installation. For
-starters, it's important to back up your data and Liferay installation in case
-of catastrophic failure. Backups are also helpful to use in testing or to
-practice upgrades. 
+Once you have a @product@ installation, there are some things you must do to
+keep it running smoothly. Backing up your installation in case of a hardware
+failure protects your data and helps you get your system back in working order
+quickly. And if you're a DXP customer, patching your system regularly brings the
+latest bug fixes to your running instance. 
+
+Read on to learn about how to keep your system running well. 
+
