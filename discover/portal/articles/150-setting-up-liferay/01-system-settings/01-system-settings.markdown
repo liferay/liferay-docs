@@ -132,7 +132,7 @@ Settings*. The `.config` files for all the entries you edited then download in a
 ZIP file. 
 
 To make these configurations active in the destination @product@ system, simply 
-unzip and place the `.config` files in the `[Liferay_Home]/osgi/modules` folder. 
+unzip and place the `.config` files in the `[Liferay_Home]/osgi/configs` folder. 
 
 Awesome! Now you know what System Settings is and how to use it. All that's left 
 is to explore the entries to see what configuration options you can make. If you 
