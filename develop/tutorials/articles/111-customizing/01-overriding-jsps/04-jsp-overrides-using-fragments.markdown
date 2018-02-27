@@ -6,12 +6,12 @@ be unstable with respect to new versions of the host module:
 1.  By overriding an entire JSP, you might not account for new content or new 
     widgets that are essential to new host module versions. 
 2.  Fragments are tied to a specific host module version. If the host module is
-    is upgraded, the fragment detaches from it. In this scenario, the original
+    upgraded, the fragment detaches from it. In this scenario, the original
     JSPs are still available and the module is functional (but lacks your JSP
     enhancements).
 
 [Liferay's API based approaches to overriding JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps#using-portals-api-to-override-a-jsp),
-on the other hand, provide more stability as they let you customize specifc
+on the other hand, provide more stability as they let you customize specific
 parts of the JSP that are safe to override. Also, the API based approaches don't
 limit your override to a specific host module version. In case you're
 maintaining existing JSP overrides that use OSGi fragments, however, this

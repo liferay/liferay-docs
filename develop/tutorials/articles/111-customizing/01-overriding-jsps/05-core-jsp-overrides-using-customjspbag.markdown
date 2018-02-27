@@ -1,13 +1,13 @@
 # JSP Overrides Using Custom JSP Bag [](id=overriding-core-jsps)
 
 [Liferay's API based approaches to overriding JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps#using-portals-api-to-override-a-jsp)
-are the best way to override JSPs in Liferay apps and in Liferay's core. You can
-also use Custom JSP Bags to override core JSPs. But the approach is not as
-stable as the API based approaches. If your Custom JSP Bag's JSP is buggy
-(because of your code or because of a change in Liferay), you are most likely to
-find out at runtime, where functionality breaks and nasty log errors greet you.
-In the case that you're maintaining existing Custom JSP Bags, however, this
-tutorial explains how they work.
+are the best way to override JSPs in apps and in the core. You can also use
+Custom JSP Bags to override core JSPs. But the approach is not as stable as the
+API based approaches. If your Custom JSP Bag's JSP is buggy (because of your
+code or because of a change in Liferay), you are most likely to find out at
+runtime, where functionality breaks and nasty log errors greet you. In the case
+that you're maintaining existing Custom JSP Bags, however, this tutorial
+explains how they work.
 
 A Custom JSP Bag module must satisfy these criteria: 
 

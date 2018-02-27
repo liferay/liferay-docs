@@ -24,7 +24,7 @@ Inlined content | Some @product@ JSPs include content from other JSPs that you c
 It's strongly recommended to override JSPs using @product@'s API, as the
 previous section describes. As of Liferay 7.0, overriding a JSP using an OSGi
 fragment or a Custom JSP Bag are both deprecated. Since these approaches are not
-based on APIs there's no way to guarantee that they'll fail gracefully fail.
+based on APIs there's no way to guarantee that they'll fail gracefully.
 Instead, if your customization is buggy (because of your code or because of a
 change in Liferay), you are most likely to find out at runtime, where
 functionality breaks and nasty log errors greet you.
