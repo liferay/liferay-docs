@@ -24,7 +24,7 @@ $$$
 ## Determine the language keys to override [](id=determine-the-language-keys-to-override)
 
 So how do you find global language keys? They're in the `Language[xx_XX].properties`
-files in the source code or your @product@ bundle.
+files in the source code or your bundle.
 
 -   From the source:
 
