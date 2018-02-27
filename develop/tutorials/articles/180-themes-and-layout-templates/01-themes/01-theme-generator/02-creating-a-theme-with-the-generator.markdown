@@ -6,6 +6,13 @@ and its dependencies, you can use it to create and manage themes for @product@.
 This tutorial covers how to generate and develop themes with the Liferay Theme 
 Generator. 
 
++$$$
+
+**Note:** The Liferay Theme Generator does not currently support 7.1 theme 
+creation.
+
+$$$
+
 ## Running the Liferay Theme Generator [](id=running-the-themes-generator)
 
 Run the following command and follow the generator prompts to create a theme in 

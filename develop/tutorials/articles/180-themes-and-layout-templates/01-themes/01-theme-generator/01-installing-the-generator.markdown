@@ -5,6 +5,13 @@ slightly between Windows and Unix-based systems. This tutorial covers how to
 install the Liferay Theme Generator and its dependencies on both Windows and 
 Unix-based systems. 
 
++$$$
+
+**Note:** The Liferay Theme Generator does not currently support 7.1 theme 
+creation.
+
+$$$
+
 Start by installing the Theme Generator and its dependencies. 
 
 ## Installing the Generator and Dependencies [](id=installing-the-generator-and-dependencies)
