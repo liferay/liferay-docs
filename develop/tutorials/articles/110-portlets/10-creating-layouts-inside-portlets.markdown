@@ -2,7 +2,7 @@
 
 Layout templates specify how your portlets and content are organized on your 
 site pages. What if, instead, you want to organize your portlet's content? 
-@product@'s `<aui>` tags let you create layouts using Bootstrap within your 
+`<aui>` tags let you create layouts using Bootstrap within your 
 portlets. This tutorial explains this process.
 
 Follow these steps:
@@ -11,7 +11,7 @@ Follow these steps:
     already included:
     
         <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
-    
+ 
 2.  Wrap your portlet's content in 
     [`<aui:container>` tags](#aui-container-). 
     If you wish to only have a portion of your portlet's content in a layout, 
@@ -25,7 +25,7 @@ Follow these steps:
     [`<aui:col>` tags](#aui-col-) 
     for each column that you want in the row. Repeat this step for each row in 
     the layout.
-    
+ 
 A complete example is shown below:
 
     <aui:container>
