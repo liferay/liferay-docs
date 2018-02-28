@@ -27,6 +27,26 @@ for more information.
 
 $$$
 
++$$$
+
+**Key Changes:** This list compiles known changes within Elasticsearch that are
+likely to affect @product@ users. For a more complete reckoning of what's
+changed in Elasticsearch, see the [breaking changes for Elasticsearch
+6](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/breaking-changes.html),
+and [Elasticsearch
+5](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/breaking-changes-5.0.html),
+since the breaking changes from 2.x to 5.x also apply to 2.x to 6.1.
+
+*Custom Mappings*
+
+- Aggregations: Aggregating on analyzed `String` fields was possible in
+    Elasticsearch 2.x, but aggregating on analyzed `text` fields is not advised
+    in Elasticsearch 6.1. Instead, use a `keyword` field or add [field
+    data](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/fielddata.html).
+    Beware, `fielddata` is disabled by default because it is memory-intensive.
+
+$$$
+
 ## Installing Elasticsearch 6.1
 
 Download [Elasticsearch 6.1.x](https://www.elastic.co/downloads/past-releases)
