@@ -109,3 +109,142 @@ instance be 30 days instead?
 
 -->
 
+## Troubleshooting
+
+The Liferay Support team is there to assist you if you encounter issues with 
+LCS. If you need support, open a 
+[LESA](https://web.liferay.com/group/customer/support/-/support/ticket) 
+ticket. You can begin troubleshooting according to these scenarios, which the 
+Liferay Support team can also assist you with. 
+
+1.  If your server can't reach LCS, verify that you can access the public sites 
+    that LCS requires access to:
+
+    -   `lcs.liferay.com` should be viewable in a browser.
+    -   `lcs-gateway.liferay.com` should respond to a `curl` or telnet command: 
+
+        curl -vk -I "https://lcs-gateway.liferay.com"
+        telnet lcs-gateway.liferay.com 443
+
+2.  For issues related to your subscription, first see the documentation on 
+    [managing your subscription](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions). 
+    Subscription errors usually involve one of these problems:
+
+    -   Your server can reach LCS, but can't locate a subscription.
+    -   Your server can reach LCS and locate a subscription, but the 
+        subscription's number of servers or cores are exceeded. 
+
+    In either case, you must verify that you have an available subscription, and 
+    that you're not exceeding its allowed number of servers or cores. You can 
+    find this information on the LCS site's Subscriptions page, as described in 
+    [the documentation](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions).
+    If the environment in which you're trying to activate a server isn't 
+    assigned the subscription you want to use, then you must create a new 
+    environment and assign it the correct subscription. Once assigned, you can't 
+    change an environment's subscription. Follow 
+    [the initial registration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs) 
+    for instructions on creating a new environment and activating a new server. 
+
+    +$$$
+
+    **Note:** When shutting down servers, you must ensure that the LCS platform 
+    receives the server shutdown commands. Otherwise, LCS may not release that 
+    server's activation key for reuse, and attempts to activate additional 
+    servers may exceed the subscription's allowed number of servers. There's a 
+    higher likelihood of this happening in rolling deployments and/or when using 
+    containers. See 
+    [this KB article](https://customer.liferay.com/documentation/knowledge-base/-/kb/1464875) 
+    for information on properly unregistering subscriptions. 
+
+    $$$
+
+3.  If the token is invalid, first see the documentation on 
+    [using environment tokens](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens). 
+    A token becomes invalid in the following scenarios: 
+
+    -   If the LCS user who generated the token no longer has permissions. This
+        happens when the user leaves the LCS project, or becomes an LCS 
+        Environment Manager or LCS Environment Viewer in a different 
+        environment. 
+    -   If the token's file name is changed. 
+    -   If the token is regenerated. 
+
+## Increasing Log Levels
+
+If you're in contact with Liferay Support, you'll be asked to provide advanced 
+log files. There are 2 ways to increase the log levels to produce these files: 
+
+1.  In your @product@ instance's Control Panel UI. This is a temporary 
+    configuration that resets upon shutting down the server. Note that if the 
+    server is unregistered, you won't be able to access the Control Panel. In 
+    that case, Liferay Support will provide you with a temporary activation key. 
+
+2.  In a Log4j configuration. This is a permanent configuration that persists 
+    through server shutdown and restart. 
+
+### Control Panel
+
+1.  Navigate to *Control Panel* &rarr; *Configuration* &rarr; *Server 
+    Administration*. 
+
+2.  Click the *Log Levels* tab. 
+
+3.  Search for "lcs". 
+
+4.  Change the log level for each matching entry to DEBUG. 
+
+5.  While in the Control Panel, you should also navigate to *Configuration* 
+    &rarr; *Liferay Connected Services* and take a screenshot of what you see 
+    there. This is useful to Liferay Support. 
+
+### Log4j
+
+1.  Download the latest LCS client as instructed in the 
+    [LCS preconfiguration article](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#downloading-the-lcs-client-app). 
+    The app downloads as an LPKG file. 
+
+2.  Expand the LPKG file, then expand the `lcs-portlet-[version].war` file 
+    inside it. 
+
+3.  Inside the `WAR` file, replace the contents of 
+    `WEB-INF\classes\META-INF\portal-log4j.xml` with the following: 
+
+        <?xml version="1.0"?>
+        <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+        <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+                <appender class="org.apache.log4j.rolling.RollingFileAppender" name="RollingFileAppender">
+                        <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+                                <param name="ActiveFileName" value="@liferay.home@/logs/lcs-portlet.log" />
+                                <param name="FileNamePattern" value="@liferay.home@/logs/lcs-portlet.%d{yyyy-MM-dd}.log.zip" />
+                        </rollingPolicy>
+
+                        <layout class="org.apache.log4j.EnhancedPatternLayout">
+                                <param name="ConversionPattern" value="%d{yyyy/MM/dd HH\:mm\:ss} %-5p [%t][%c{1}:%L] %m%n" />
+                        </layout>
+                </appender>
+
+                <category name="com.liferay.lcs.task.scheduler">
+                        <priority value="ALL" />
+                </category>
+
+                <logger additivity="false" name="com.liferay.lcs">
+                        <level value="ALL" />
+                        <appender-ref ref="RollingFileAppender" />
+                </logger>
+        </log4j:configuration>
+
+4.  Save the file, then repackage the WAR and LPKG (make sure not to change the 
+    names of these files). 
+
+5.  Make sure your server is shut down. 
+
+6.  In your @product@ bundle's 
+    [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
+    folder (usually the parent folder of the application server's folder), 
+    delete this file: 
+
+        osgi/marketplace/Liferay Connected Services Client.lpkg
+
+7.  Place the new `Liferay Connected Services Client.lpkg` in 
+    `osgi/marketplace`. 
