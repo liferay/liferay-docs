@@ -1,17 +1,18 @@
 # Building Content Pages with Fragments
 
-Once you have Fragments created, you can start using them to create Content 
-Pages. A Content Page is a page which is built entirely from Fragments. You 
-can't mix Fragments and Portlets on a single page (though you can embed 
-portlets within a Fragment), you'll need to choose between which style of page 
-you're going to use when you start creating it. Content Pages must be created 
-from Page Templates, and like a Fragment, Page Templates must exist within a 
-Collection. For more information on choosing between page types, see our Modern 
-Site Building[link] tutorial.
+To create pages with Modern Site Building, you'll first need to create 
+Fragments. Pages in Liferay have traditionally been created with portlet, but 
+now you have two options. You can't mix Fragments and Portlets on a single page 
+(though you can embed portlets within a Fragment) though, so you'll need to 
+choose between which style of page you're going to use when you start creating 
+it. Pages comprised of Fragments are called Content Pages. Content Pages are 
+created from Page Templates, and like a Fragment, Page Templates must exist 
+within a Collection. First, create some Fragments.
 
 ## Creating and Managing Fragments
 
-You can manage Fragments through Site Administration:
+Like Content Management, most of Modern Site building is managed through Site 
+Administration. You can find Fragments in the Content section.
 
 1.  Open the main menu.
 
@@ -22,7 +23,12 @@ You can manage Fragments through Site Administration:
 
 <screenshot>
 
-The main Fragments pages will display any Collections that are available for the current site, provide the option to Import and Export through the menu in the top right, and enable you to create Collections and Fragments. To create a Fragment, you must first create a Collection.
+The main Fragments page will display any Collections that are available for the 
+current site, provide the option to Import and Export through the menu in the 
+top right, and enable you to create Collections at the base level of the 
+navigation. You can also manage the organization and display of Fragments and 
+Collections once you have them created. Now, to create a Fragment, you must 
+first create a Collection.
 
 1.  Click the `+` button to add a Collection.
 
@@ -50,4 +56,7 @@ different function:
 *  The bottom right pane provides a live preview as you work in the other panes.
 
 For more information on how to create to Fragments, see our Fragment 
-Development tutorial.
+Development [link]tutorial.
+
+After you create and publish some Fragment, you can start creating Page 
+Templates to combine Fragments into pages.
