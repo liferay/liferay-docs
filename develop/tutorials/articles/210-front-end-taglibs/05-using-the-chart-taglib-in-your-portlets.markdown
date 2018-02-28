@@ -1,8 +1,12 @@
 # Using the Chart Taglib in Your Portlets [](id=using-the-chart-taglib-in-your-portlets)
 
 Lines, splines, bars, pies and more, the Liferay Chart tag Library provides 
-everything you need to model data in @product@. To use the Liferay-Chart taglib, 
-add the following declaration to your JSP:
+everything you need to model data in @product@. Each taglib gives you access to 
+the corresponding 
+[Clay component](https://github.com/liferay/clay/tree/develop/packages). These 
+components contain the default configuration for the UI.
+
+To use the Liferay-Chart taglib, add the following declaration to your JSP:
 
     <%@ taglib prefix="liferay-chart" uri="http://liferay.com/tld/chart" %>
 
@@ -417,7 +421,26 @@ JSP:
 
 ## Geomap Charts [](id=geomap-charts)
 
-Geomap charts let you display 
+A Geomap Chart lets you visualize data based on geography, given a specified 
+color range--a lighter color representing a lower rank and a darker a higher 
+rank usually. The default configuration comes from the Clay charts 
+[geomap component](https://github.com/liferay/clay/blob/develop/packages/clay-charts/src/Geomap.js#L244-L265):
+which ranges from light-blue (#b1d4ff) to dark-blue (#0065e4) and ranks the 
+geography based on the location's `pop_est` value (specified in the geomap's 
+JSON file).
+
+![Figure 13: A Geomap chart displays a heatmap representing the data.](../../images/chart-taglib-geomap-default.png)
+
+These colors--a color for minimum and a color for maximum--are completely 
+configurable, as shown in the example class below for `_geomapConfig2`. The 
+geomap colors are defined as a `GeomapColorRange` with a minimum and maximum 
+color value. When you mouse over an area, it is highlighted with the color 
+specified with the `setSelected()` method. 
+
+The example below displays a geomap based on the length of each location's 
+name, as specified with the line `geomapColor.setValue("name_len");`. The 
+`setValue()` method defines which JSON property is applied to the geomap. The 
+JSON filepath is specified with the `setDataHREF()` method.
 
 Java sample data:
 
@@ -440,14 +463,15 @@ Java sample data:
       	}
 
         private void _initGeomapConfig() {
+          GeomapColor geomapColor = new GeomapColor();
       		GeomapColorRange geomapColorRange = new GeomapColorRange();
       
       		geomapColorRange.setMax("#b2150a");
       		geomapColorRange.setMin("#ee3e32");
       
-      		GeomapColor geomapColor = new GeomapColor();
       
       		geomapColor.setGeomapColorRange(geomapColorRange);
+
       		geomapColor.setSelected("#a9615c");
       		geomapColor.setValue("name_len");
       
@@ -466,8 +490,8 @@ Java sample data:
       		sb.append(StringPool.SLASH);
       		sb.append("geomap.geo.json");
       
-      		_geomapConfig1.setDataUrl(sb.toString());
-      		_geomapConfig2.setDataUrl(sb.toString());
+      		_geomapConfig1.setDataHREF(sb.toString());
+      		_geomapConfig2.setDataHREF(sb.toString());
       	}
         
         private GeomapConfig _geomapConfig1 = new GeomapConfig();
@@ -475,8 +499,9 @@ Java sample data:
         private final PortletRequest _portletRequest;
 
     }
-
-JSP:
+    
+The JSP can contain basic styling information for the geomap, such as the size 
+and margins as shown below:
 
     <style type="text/css">
     	.geomap {
@@ -498,7 +523,7 @@ JSP:
   		id="geomap-custom-colors"
     />
 
-![Figure 13:](../../images/chart-taglib-geomap.png)
+![Figure 14: Geomap charts can be customized to fit the look and feel you desire.](../../images/chart-taglib-geomap-custom.png)
 
 Now you know how to use Chart taglibs to model data in @product@!
 

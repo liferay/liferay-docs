@@ -2,17 +2,24 @@
 
 The Liferay Clay tag library provides a set of tags for creating 
 [Clay](https://claycss.com/docs/clay/) 
-UI components in your app. To use the Clay taglib, add the following declaration 
-to your JSP:
+UI components in your app. 
+
++$$$
+
+**Note:** AUI taglibs are deprecated as of @product-ver@. We recommend that you 
+use Clay taglibs in your app to avoid future compatibility issues. 
+
+$$$
+
+To use the Clay taglib, add the following declaration to your JSP:
 
     <%@ taglib prefix="clay" uri="http://liferay.com/tld/clay" %>
 
 The 
-[`com.liferay.frontend.taglib.clay.sample.web` portlet](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/foundation/frontend-taglib/frontend-taglib-clay-sample-web) 
+[`com.liferay.frontend.taglib.clay.sample.web` portlet](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/foundation/frontend-taglib/frontend-taglib-clay-sample-web) 
 is referenced throughout this tutorial as an example. It's included 
-out-of-the-box with @product@. Open the Control Menu and add the 
-*Clay Sample* portlet from the *Applications* &rarr; *Sample* menu to see it in 
-action.
+out-of-the-box. Open the Control Menu and add the *Clay Sample* portlet from the 
+*Applications* &rarr; *Sample* menu to see it in action. 
 
 ![Figure 1: The Clay Sample portlet demonstrates the various types of clay components you can create with the clay taglbs.](../../images/clay-taglib-sample-portlet.png)
 
@@ -55,7 +62,7 @@ Danger alert (embedded):
     	title="Error"
     />
 
-![Figure 2: A bar chart models the data in bars](../../images/clay-taglib-alert-danger.png)
+![Figure 2: The danger alert notifies the user of an error or issue.](../../images/clay-taglib-alert-danger.png)
 
 Success alert (embedded):
 
@@ -65,7 +72,7 @@ Success alert (embedded):
     	title="Success"
     />
 
-![Figure 3: A bar chart models the data in bars](../../images/clay-taglib-alert-success.png)
+![Figure 3: The success alert notifies the user when an action is successful.](../../images/clay-taglib-alert-success.png)
 
 Info alert (embedded):
 
@@ -74,7 +81,7 @@ Info alert (embedded):
     	title="Info"
     />
 
-![Figure 4: A bar chart models the data in bars](../../images/clay-taglib-alert-info.png)
+![Figure 4: The info alert displays general information to the user.](../../images/clay-taglib-alert-info.png)
 
 Warning alert (embedded):
 
@@ -84,16 +91,16 @@ Warning alert (embedded):
     	title="Warning"
     />
 
-![Figure 5: A bar chart models the data in bars](../../images/clay-taglib-alert-warning.png)
+![Figure 5: The warning alert displays a warning message to the user.](../../images/clay-taglib-alert-warning.png)
 
 ### Stripe Alerts [](id=stripe-alerts)
 
-Stripe alerts are placed below the last navigation element, either the header or 
-the navigation bar. Stripe alerts usually appear on *Save* action, communicating 
-the status of the action once received from the server. Stripe alert types 
-require the close action. A strip alert is always the full width of the full 
-container and pushes all the content below it. The following stripe alerts can 
-be created with Clay taglibs:
+Stripe alerts are placed below the last navigation element (either the header or 
+the navigation bar), and they usually appear on *Save* action, communicating 
+the status of the action once received from the server. Unlike embedded alerts, 
+stripe alerts require the close action. A strip alert is always the full width 
+of the container and pushes all the content below it. The following stripe 
+alerts can be created with Clay taglibs:
 
 Danger alert (stripe):
 
@@ -103,7 +110,7 @@ Danger alert (stripe):
     	title="Error"
     />
 
-![Figure 6: A bar chart models the data in bars](../../images/clay-taglib-alert-danger-stripe.png)
+![Figure 6: The danger striped alert notifies the user that an action has failed.](../../images/clay-taglib-alert-danger-stripe.png)
 
 Success alert (stripe):
 
@@ -113,7 +120,7 @@ Success alert (stripe):
     	title="Success"
     />
 
-![Figure 7: A bar chart models the data in bars](../../images/clay-taglib-alert-success-stripe.png)
+![Figure 7: The success striped alert notifies the user that an action has completed successfully.](../../images/clay-taglib-alert-success-stripe.png)
 
 Info alert (stripe):
 
@@ -122,7 +129,7 @@ Info alert (stripe):
     	title="Info"
     />
 
-![Figure 8: A bar chart models the data in bars](../../images/clay-taglib-alert-info-stripe.png)
+![Figure 8: The info striped alert displays general information about an action to the user.](../../images/clay-taglib-alert-info-stripe.png)
 
 Warning alert (stripe):
 
@@ -132,7 +139,7 @@ Warning alert (stripe):
     	title="Warning"
     />
     
-![Figure 9: A bar chart models the data in bars](../../images/clay-taglib-alert-warning-stripe.png)
+![Figure 9: The warning striped alert warns the user about an action.](../../images/clay-taglib-alert-warning-stripe.png)
 
 ## Badges [](id=badges)
 
@@ -148,7 +155,7 @@ Primary badge:
         <div>Primary</div>
     </div>
 
-![Figure 10: A bar chart models the data in bars](../../images/clay-taglib-badge-primary.png)
+![Figure 10: A primary badge is bright blue, commanding attention like the primary button of a form.](../../images/clay-taglib-badge-primary.png)
 
 Secondary badge:
 
@@ -158,7 +165,7 @@ Secondary badge:
         <div>Secondary</div>
     </div>
 
-![Figure 11: A bar chart models the data in bars](../../images/clay-taglib-badge-secondary.png)
+![Figure 11: A secondary badge is light-grey and draws less focus than a primary button.](../../images/clay-taglib-badge-secondary.png)
 
 Info badge:
 
@@ -168,7 +175,7 @@ Info badge:
         <div>Info</div>
     </div>
 
-![Figure 12: A bar chart models the data in bars](../../images/clay-taglib-badge-info.png)
+![Figure 12: A info badge is dark blue and meant for numbers related to general information.](../../images/clay-taglib-badge-info.png)
 
 Error badge:
 
@@ -178,7 +185,7 @@ Error badge:
         <div>Error</div>
     </div>
 
-![Figure 13: A bar chart models the data in bars](../../images/clay-taglib-badge-error.png)
+![Figure 13: An error badge displays numbers related to an error.](../../images/clay-taglib-badge-error.png)
 
 Success badge:
 
@@ -188,7 +195,7 @@ Success badge:
         <div>Success</div>
     </div>
 
-![Figure 14: A bar chart models the data in bars](../../images/clay-taglib-badge-success.png)
+![Figure 14: A success badge displays numbers related to a successful action.](../../images/clay-taglib-badge-success.png)
 
 Warning badge:
 
@@ -198,7 +205,7 @@ Warning badge:
         <div>Warning</div>
     </div>
 
-![Figure 15: A bar chart models the data in bars](../../images/clay-taglib-badge-warning.png)
+![Figure 15: A warning badge displays numbers related to warnings that should be addressed.](../../images/clay-taglib-badge-warning.png)
 
 ## Buttons [](id=buttons)
 
@@ -208,20 +215,20 @@ styles and variations of buttons you can create with the Clay taglibs.
 ### Types [](id=types)
 
 Primary button: Used for the most important actions. Two primary buttons should 
-not be together or near by each other. You can use labels or icons for your 
+not be together or near each other. You can use labels or icons for your 
 buttons:
 
 Primary button with label:
 
     <clay:button label="Primary" />
 
-![Figure 16: A bar chart models the data in bars](../../images/clay-taglib-button-primary.png)
+![Figure 16: A primary button is bright blue, grabbing the user's attention.](../../images/clay-taglib-button-primary.png)
     
 Primary button with icon:
     
     <clay:button ariaLabel="Workflow" icon="workflow" />
 
-![Figure 17: A bar chart models the data in bars](../../images/clay-taglib-button-primary-icon.png)
+![Figure 17: Buttons can also display icons.](../../images/clay-taglib-button-primary-icon.png)
 
 +$$$
 
@@ -234,7 +241,7 @@ Primary button with icon:
         <clay:button ariaLabel="Workflow" disabled="<%= true %>" icon="workflow" />
     </div>
 
-![Figure 18: A bar chart models the data in bars](../../images/clay-taglib-button-primary-disabled.png)
+![Figure 18: Buttons can be disabled if you don't want the user to interact with them.](../../images/clay-taglib-button-primary-disabled.png)
 
 $$$
 
@@ -248,7 +255,7 @@ buttons together or near each other.
         <clay:button ariaLabel="Wiki" icon="wiki" style="secondary" />
     </div>
 
-![Figure 19: A bar chart models the data in bars](../../images/clay-taglib-button-secondary.png)
+![Figure 19: A secondary button draws less attention than a primary button and is meant for secondary actions.](../../images/clay-taglib-button-secondary.png)
 
 Borderless button: Used in cases, such as toolbars, where the secondary button 
 would be too heavy for the design. This keeps the design clean.
@@ -260,7 +267,7 @@ would be too heavy for the design. This keeps the design clean.
         <clay:button ariaLabel="Page Template" icon="page-template" style="borderless" />
     </div>
 
-![Figure 20: A bar chart models the data in bars](../../images/clay-taglib-button-borderless.png)
+![Figure 20: Borderless buttons remove the dark outline from the button.](../../images/clay-taglib-button-borderless.png)
 
 Link button: Used for Cancel actions.
 
@@ -271,7 +278,7 @@ Link button: Used for Cancel actions.
         <clay:button ariaLabel="Add Role" icon="add-role" style="link" />
     </div>
 
-![Figure 21: A bar chart models the data in bars](../../images/clay-taglib-button-link.png)
+![Figure 21: You can also turn buttons into links.](../../images/clay-taglib-button-link.png)
 
 ### Variations [](id=variations)
 
@@ -279,31 +286,31 @@ Button with icon and text:
 
     <clay:button icon="share" label="Share" />
 
-![Figure 22: A bar chart models the data in bars](../../images/clay-taglib-button-icon-text.png)
+![Figure 22: Buttons can display both icons and text.](../../images/clay-taglib-button-icon-text.png)
 
 Button with monospaced text:
 
     <clay:button icon="indent-less" monospaced="<%= true %>" style="secondary" />
 
-![Figure 23: A bar chart models the data in bars](../../images/clay-taglib-button-monospaced.png)
+![Figure 23: Buttons can display monospaced text.](../../images/clay-taglib-button-monospaced.png)
 
 Block level button: 
 
     <clay:button block="<%= true %>" label="Button" />
     
-![Figure 24: A bar chart models the data in bars](../../images/clay-taglib-button-block-level.png)
+![Figure 24: Block level buttons span the entire width of the container.](../../images/clay-taglib-button-block-level.png)
 
 Plus button:
 
     <clay:button icon="plus" monospaced="<%= true %>" style="secondary" />
 
-![Figure 25: A bar chart models the data in bars](../../images/clay-taglib-button-plus.png)
+![Figure 25: A plus button is used for add actions in an app.](../../images/clay-taglib-button-plus.png)
 
 Action button:
 
     <clay:button icon="ellipsis-v" monospaced="<%= true %>" style="borderless" />
     
-![Figure 26: A bar chart models the data in bars](../../images/clay-taglib-button-action.png)
+![Figure 26: An action button is used to display actions menus.](../../images/clay-taglib-button-action.png)
 
 ## Cards [](id=cards)
 
@@ -332,7 +339,7 @@ Image Card:
     	title="Madrid"
     />
     
-![Figure 27: A bar chart models the data in bars](../../images/clay-taglib-image-card.png)
+![Figure 27: Image Cards display images and documents.](../../images/clay-taglib-image-card.png)
 
 Image Card with icon:
 
@@ -343,7 +350,7 @@ Image Card with icon:
     	title="<%= SVG_FILE_TITLE %>"
     />
 
-![Figure 28: A bar chart models the data in bars](../../images/clay-taglib-image-card-icon.png)
+![Figure 28: Image Cards can also display icons instead of images.](../../images/clay-taglib-image-card-icon.png)
 
 Image Card empty:
 
@@ -353,7 +360,7 @@ Image Card empty:
     	title="<%= SVG_FILE_TITLE %>"
     />
 
-![Figure 29: A bar chart models the data in bars](../../images/clay-taglib-image-card-empty.png)
+![Figure 29: Cards can also display nothing.](../../images/clay-taglib-image-card-empty.png)
 
 Cards can also contain file types. Specify the file type with the `filetype` 
 attribute:
@@ -369,7 +376,7 @@ attribute:
     	title="California"
     />
 
-![Figure 30: A bar chart models the data in bars](../../images/clay-taglib-image-card-file-type.png)
+![Figure 30: Cards can also contain file types.](../../images/clay-taglib-image-card-file-type.png)
 
 Include the `labels` attribute to add a label to a Card:
 
@@ -385,9 +392,9 @@ Include the `labels` attribute to add a label to a Card:
     	title="Beetle"
     />
 
-![Figure 31: A bar chart models the data in bars](../../images/clay-taglib-image-card-icon-label.png)
+![Figure 31: You can include labels in Cards.](../../images/clay-taglib-image-card-icon-label.png)
 
-Include the `selectable` attribute to make cards selectable:
+Include the `selectable` attribute to make cards selectable (include a checkbox):
 
     <clay:image-card
     	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
@@ -403,12 +410,12 @@ Include the `selectable` attribute to make cards selectable:
     	title="Beetle"
     />
 
-![Figure 32: A bar chart models the data in bars](../../images/clay-taglib-image-card-icon-selectable.png)
+![Figure 32: Cards can be selectable.](../../images/clay-taglib-image-card-icon-selectable.png)
 
 ### File Cards [](id=file-cards)
 
-File Cards display an icon of the file's type for the image. They are used to 
-represent file types other than image files (i.e. PDF, MP3, DOC, etc.).
+File Cards display an icon of the file's type. They are used to represent file 
+types other than image files (i.e. PDF, MP3, DOC, etc.).
 
     <clay:file-card
     	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
@@ -422,7 +429,7 @@ represent file types other than image files (i.e. PDF, MP3, DOC, etc.).
     	title="<%= MP3_FILE_TITLE %>"
     />
 
-![Figure 33: A bar chart models the data in bars](../../images/clay-taglib-file-card.png)
+![Figure 33: File Cards display file type icons.](../../images/clay-taglib-file-card.png)
 
 You can optionally use the `labelStylesMap` attribute to pass a `HashMap` of 
 multiple labels, as shown above.
@@ -441,10 +448,17 @@ The example below specifies a list `icon` instead of the default file icon:
     	title="<%= DOC_FILE_TITLE %>"
     />
 
++$$$
+
+**Note:** The full list of available Liferay icons can be found on the 
+[Clay CSS website](https://claycss.com/docs/components/icons-lexicon.html#clay-lexicon-icons).
+
+$$$
+
 ### User Cards [](id=user-cards)
 
-User Cards are used to display user profile images or the initials of the user's 
-name or name+surname.
+User Cards display user profile images or the initials of the user's name or 
+name+surname.
 
 User Card with initials:
 
@@ -456,7 +470,7 @@ User Card with initials:
 			userColor="danger"
 		/>
 
-![Figure 34: A bar chart models the data in bars](../../images/clay-taglib-user-card-initial.png)
+![Figure 34: User Cards can display a user's initials.](../../images/clay-taglib-user-card-initial.png)
 
 User Card with profile image:
 
@@ -471,7 +485,7 @@ User Card with profile image:
 			subtitle="Latest Action"
 		/>
 
-![Figure 35: A bar chart models the data in bars](../../images/clay-taglib-user-card-profile-image.png)
+![Figure 35: A User Card can also display a profile image.](../../images/clay-taglib-user-card-profile-image.png)
 
 ### Horizontal Cards [](id=horizontal-cards)
 
@@ -487,7 +501,7 @@ is required.
     	title="ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual"
     />
     
-![Figure 36: A bar chart models the data in bars](../../images/clay-taglib-horizontal-card.png)
+![Figure 36: Horizontal Cards are good for displaying folders.](../../images/clay-taglib-horizontal-card.png)
 
 ## Navigation Menus [](id=navigation-menus)
 
@@ -504,14 +518,14 @@ Basic dropdown menu:
     	label="Default"
     />
     
-![Figure 37: A bar chart models the data in bars](../../images/clay-taglib-dropdown-basic.png)
+![Figure 37: Clay taglibs provide everything you need to add dropdown menus to your app.](../../images/clay-taglib-dropdown-basic.png)
     
 The dropdown menu's items are defined in its java class--`dropdownDisplayContext` 
 in this case. Menu items are `NavigationItem` objects. You can disable menu 
 items with the `setDisabled(true)` method and make a menu item active with the 
 `setActive(true)` method. The `href` attribute is set with the `setHref()` 
 method, and labels are defined with the `setLabel()` method. An example 
-implementation for the `dropdownDisplayContext` class is shown below:
+implementation of the `dropdownDisplayContext` class is shown below:
 
     if (_defaultDropdownItems != null) {
       return _defaultDropdownItems;
@@ -554,7 +568,7 @@ Corresponding taglib:
     	label="Dividers"
     />
 
-![Figure 38: A bar chart models the data in bars](../../images/clay-taglib-dropdown-group.png)
+![Figure 38: You can organize dropdown menu items into groups.](../../images/clay-taglib-dropdown-group.png)
 
 You can also add inputs to dropdown menus. To add an input to a dropdown menu, 
 set the input's type with the `setType()` method 
@@ -576,7 +590,7 @@ Corresponding taglib:
     	searchable="<%= true %>"
     />
 
-![Figure 39: A bar chart models the data in bars](../../images/clay-taglib-dropdown-input.png)
+![Figure 39: Inputs can be included in dropdown menus.](../../images/clay-taglib-dropdown-input.png)
 
 Menu items can also contain icons. To add an icon to a menu item, use the 
 `setIcon()` method. Below is an example:
@@ -591,7 +605,7 @@ Corresponding taglib:
     	label="Icons"
     />
 
-![Figure 40: A bar chart models the data in bars](../../images/clay-taglib-dropdown-icons.png)
+![Figure 40: Icons can be included in dropdown menus.](../../images/clay-taglib-dropdown-icons.png)
 
 ### Actions Menus [](id=actions-menus)
 
@@ -601,9 +615,9 @@ Basic actions menu:
     	items="<%= dropdownsDisplayContext.getDefaultDropdownItems() %>"
     />
 
-![Figure 41: A bar chart models the data in bars](../../images/clay-taglib-dropdown-actions.png)
+![Figure 41: You can also create Actions menus with Clay taglibs.](../../images/clay-taglib-dropdown-actions.png)
 
-Actions menu can also have help text for the user: 
+An actions menu can also display help text to the user: 
 
     <clay:dropdown-actions
     	buttonLabel="More"
@@ -613,39 +627,39 @@ Actions menu can also have help text for the user:
     	items="<%= dropdownsDisplayContext.getDefaultDropdownItems() %>"
     />
 
-![Figure 42: A bar chart models the data in bars](../../images/clay-taglib-dropdown-actions-help.png)
+![Figure 42: You can provide help text in Actions menus.](../../images/clay-taglib-dropdown-actions-help.png)
 
 ## Form Elements [](id=form-elements)
 
-The Liferay Clay tag library provides several tags for creating form elements.
+The Liferay Clay tag library provides several tags for creating form elements. 
+These tags are covered in this section.
 
 ### Checkbox [](id=checkbox)
 			
     <clay:checkbox checked="<%= true %>" hideLabel="<%= true %>" label="My Input" name="name" />
 
 attributes:
- 
-- checked: Whether the checkbox is checked.
-- disabled: Whether the checkbox is enabled.
-- hideLabel: Whether to display the checkbox label.
-- indeterminate: Checkbox variable for multiple selection.
-- label: The checkbox's label.
-- name: The checkbox's name.
+- checked: Whether the checkbox is checked
+- disabled: Whether the checkbox is enabled
+- hideLabel: Whether to display the checkbox label
+- indeterminate: Checkbox variable for multiple selection
+- label: The checkbox's label
+- name: The checkbox's name
 
-![Figure 43: A bar chart models the data in bars](../../images/clay-taglib-form-checkbox.png)
+![Figure 43: Clay taglibs provide checkboxes.](../../images/clay-taglib-form-checkbox.png)
 
 ### Radio [](id=radio)
 
     <clay:radio checked="<%= true %>" hideLabel="<%= true %>" label="My Input" name="name" /></td>
 
 attributes:
-- checked: Whether the radio button is checked.
-- hideLabel: Whether to display the radio button label.
-- disabled: Whether the radio button is enabled.
-- label: The radio button's label.
-- name: The radio button's name.
+- checked: Whether the radio button is checked
+- hideLabel: Whether to display the radio button label
+- disabled: Whether the radio button is enabled
+- label: The radio button's label
+- name: The radio button's name
 
-![Figure 44: A bar chart models the data in bars](../../images/clay-taglib-form-radio-button.png)
+![Figure 44: Clay taglibs provide radio buttons.](../../images/clay-taglib-form-radio-button.png)
 
 ### Selector [](id=selector)
 
@@ -666,34 +680,33 @@ The Java scriplet below creates eight dummy options for the selector:
 
     <clay:select label="Regular Select Element" name="name" options="<%= options %>" />
 
-![Figure 45: A bar chart models the data in bars](../../images/clay-taglib-form-selector.png)
+![Figure 45: Clay taglibs provide select boxes.](../../images/clay-taglib-form-selector.png)
 
 If you want let users select multiple options at once, set the `multiple` 
 attribute to `true`:
 
     <clay:select label="Multiple Select Element" multiple="<%= true %>" name="name" options="<%= options %>" />
 
-![Figure 46: A bar chart models the data in bars](../../images/clay-taglib-form-selector-multiple.png)
+![Figure 46: You can let users select multiple options from the select menu.](../../images/clay-taglib-form-selector-multiple.png)
 
 attributes:
-- disabled: Whether the selector is enabled.
-- label: The selector's label.
+- disabled: Whether the selector is enabled
+- label: The selector's label
 - multiple: Whether multiple options can be selected
-- name: The selector's name.
+- name: The selector's name
 
 ### Icons [](id=icons)
 
-The Liferay Clay taglibs provide several icons that you can use in your apps. To 
-include an icon in your app, use the `clay:icon` tag and specify the icon with 
-the `symbol` attribute:
+The Liferay Clay taglibs provide several icons that you can use in your apps. 
+Use the `clay:icon` tag and specify the icon with the `symbol` attribute:
 
     <clay:icon symbol="folder" />
     
-![Figure 47: A bar chart models the data in bars](../../images/clay-taglib-icon-folder.png)
+![Figure 47: You can include icons in your app with the Clay taglib.](../../images/clay-taglib-icon-folder.png)
 
 The full list of icons is shown below:
 
-![Figure 48: A bar chart models the data in bars](../../images/clay-taglib-icon-library.png)
+![Figure 48: The Clay taglib gives you access to several @product@ icons.](../../images/clay-taglib-icon-library.png)
 
 The Liferay Clay taglibs also provide a set of language flag icons that you can 
 use in your app. The full list of language flags is shown below:
@@ -714,59 +727,56 @@ light-grey for status, orange for pending, red for rejected, and green for
 approved.
 
 Info labels are dark-blue, and since they stand out a bit more than status 
-labels, they are best for conveying basic information. To use an info label, set 
-the `style` attribute to `info`:
+labels, they are best for conveying general information. To use an info label, 
+set the `style` attribute to `info`:
 
-<!-- clarify if labels can be small too? I know they can be default and lg. -->
+    <clay:label label="Label text" style="info" />
 
-    <div><clay:label label="Label text" style="info" /></div>
+![Figure 50: Info labels convey general information.](../../images/clay-taglib-label-info.png)
 
-![Figure 50: You can include language flags in your apps.](../../images/clay-taglib-label-info.png)
+Status labels are light-grey, and due to their neutral color, they are best for 
+conveying basic information. Status labels are the default label and therefore 
+require no `style` attribute: 
 
-Status labels are light-grey, and due to their neutral color, they are best 
-for conveying basic information. To use a status label, set the `style` 
-attribute to `status`:
+		<clay:label label="Status" />
 
-		<div><clay:label label="Status" /></div>
+![Figure 51: Status labels are the least flashy and best for displaying basic information.](../../images/clay-taglib-label-status.png)
 
-![Figure 51: You can include language flags in your apps.](../../images/clay-taglib-label-status.png)
+Warning labels are orange, and due to their pop of color, they are best for 
+conveying a warning message. To use a warning label, set the `style` attribute 
+to `warning`:
 
-Warning labels are orange, and due to their pop of color, they are best 
-for conveying a warning message. To use a warning label, set the `style` 
-attribute to `warning`:
+		<clay:label label="Pending" style="warning" />
 
-		<div><clay:label label="Pending" style="warning" /></div>
-
-![Figure 52: You can include language flags in your apps.](../../images/clay-taglib-label-warning.png)
+![Figure 52: Warning labels notify the user of issues, but nothing app breaking.](../../images/clay-taglib-label-warning.png)
 
 Danger labels are red and indicate that something is wrong or has failed. To use 
 a danger label, set the `style` attribute to `danger`:
 
-		<div><clay:label label="Rejected" style="danger" /></div>
+		<clay:label label="Rejected" style="danger" />
 
-![Figure 53: You can include language flags in your apps.](../../images/clay-taglib-label-danger.png)
+![Figure 53: Danger labels convey a sense of urgency that must be addressed.](../../images/clay-taglib-label-danger.png)
 
 Success labels are green and indicate that something has completed successfully. 
 To use a success label, set the `style` attribute to `success`:
 
-		<div><clay:label label="Approved" style="success" /></div>
+    <clay:label label="Approved" style="success" />
 
-![Figure 54: You can include language flags in your apps.](../../images/clay-taglib-label-success.png)
+![Figure 54: Success labels indicate a successful action.](../../images/clay-taglib-label-success.png)
 
 Labels can also be bigger if you require it. Set the `size` attribute to `lg` to 
 display large labels:
     
-    <div><clay:label label="Approved" size="lg" style="success" /></div>
+    <clay:label label="Approved" size="lg" style="success" />
 
 ### Removable Labels [](id=removable-labels)
 
 If you want to let a user close a label (e.g. a temporary notification), you can 
-make the label removable by setting the `closeable` attribute to `true`. This 
-includes an *X* in the label so that the user can close it:
+make the label removable by setting the `closeable` attribute to `true`.
 
 		<clay:label closeable="<%= true %>" label="Normal Label" />
 
-![Figure 55: You can include language flags in your apps.](../../images/clay-taglib-label-removable.png)
+![Figure 55: Labels can be removable.](../../images/clay-taglib-label-removable.png)
 
 ### Labels with Links [](id=labels-with-links)
 
@@ -775,7 +785,7 @@ would an anchor tag:
 
     <clay:label href="#" label="Label Text" />
     
-![Figure 56: You can include language flags in your apps.](../../images/clay-taglib-label-link.png)
+![Figure 56: Labels can also be links.](../../images/clay-taglib-label-link.png)
     
 ## Links [](id=links)
 
@@ -783,7 +793,7 @@ You can add traditional hyperlinks to your app with the `<clay:link>` tag:
 
     <clay:link href="#" label="link text" />
     
-![Figure 57: You can include language flags in your apps.](../../images/clay-taglib-link.png)
+![Figure 57: Clay taglibs also provide link elements.](../../images/clay-taglib-link.png)
 
 ## Navigation Bars [](id=navigation-bars)
 
@@ -798,68 +808,68 @@ Default navigation bar:
 
     <clay:navigation-bar items="<%= navigationBarsDisplayContext.getNavigationItems() %>" />
 
-![Figure 58: You can include language flags in your apps.](../../images/clay-taglib-nav-bars.png)
+![Figure 58: You can include navigation bars in your apps.](../../images/clay-taglib-nav-bars.png)
 
 Inverted navigation bar (set `inverted` attribute to `true`):
 
     <clay:navigation-bar inverted="<%= true %>" items="<%= navigationBarsDisplayContext.getNavigationItems() %>" />
 
-![Figure 59: You can include language flags in your apps.](../../images/clay-taglib-nav-bars-inverted.png)
+![Figure 59: Navigation bars can be inverted if you prefer.](../../images/clay-taglib-nav-bars-inverted.png)
 
 ## Progress Bars [](id=progress-bars)
 
 You can add progress bars to your app with the `clay:progressbar` tag. These 
 indicate the completion percentage of a task and come in three status styles: 
-default (blue), warning (red), and complete (green with checkmark). You can 
-provide a minimum value (`minValue`) and a maximum value (`maxValue`).
+`default` (blue), `warning` (red), and `complete` (green with checkmark). You 
+can provide a minimum value (`minValue`) and a maximum value (`maxValue`). 
 
 Default progress bar:
 
     <clay:progressbar maxValue="<%= 100 %>" minValue="<%= 0 %>" value="<%= 30 %>" />
 
-![Figure 60: You can include language flags in your apps.](../../images/clay-taglib-progress-bar.png)
+![Figure 60: You can include progress bars in your apps.](../../images/clay-taglib-progress-bar.png)
 
 Warning progress bar:
 
     <clay:progressbar maxValue="<%= 100 %>" minValue="<%= 0 %>" status="warning" value="<%= 70 %>" />
 
-![Figure 61: You can include language flags in your apps.](../../images/clay-taglib-progress-bar-warning.png)
+![Figure 61: warning progress bars indicate that the progress has not completed due to an error.](../../images/clay-taglib-progress-bar-warning.png)
 
 Complete progress bar:
 
     <clay:progressbar status="complete" />
     
-![Figure 62: You can include language flags in your apps.](../../images/clay-taglib-progress-bar-complete.png)
+![Figure 62: The complete progress bar indicates the progress is complete.](../../images/clay-taglib-progress-bar-complete.png)
 
 
 ## Stickers [](id=stickers)
 
 Whereas badges are for displaying numbers and labels are for short information, 
-stickers are small visual indicators of the content 
-(usually the content type). They  can include a small label or a Liferay icon, 
-and they come in two shapes: circle and square. 
+stickers are small visual indicators of the content (usually the content type). 
+They  can include a small label or a Liferay icon, and they come in two shapes: 
+circle and square. 
 
 Square sticker with label:
 
     <clay:sticker label="JPG" />
 
-![Figure 63: You can include language flags in your apps.](../../images/clay-taglib-sticker-square-label.png)
+![Figure 63: You can include stickers in your apps.](../../images/clay-taglib-sticker-square-label.png)
 
 Square sticker with icon:
 
     <clay:sticker icon="picture" />
 
-![Figure 64: You can include language flags in your apps.](../../images/clay-taglib-sticker-square-icon.png)
+![Figure 64: Stickers can include icons.](../../images/clay-taglib-sticker-square-icon.png)
 
 Circle sticker:
 
     <clay:sticker label="JPG" shape="circle" />
 
-![Figure 65: You can include language flags in your apps.](../../images/clay-taglib-sticker-round.png)
+![Figure 65: You can also have circle stickers.](../../images/clay-taglib-sticker-round.png)
 
-Stickers can be positioned in any corner of a div. Indicate the position with 
-the `position` attribute (`top-left`, `bottom-left`, `top-right`, or 
-`bottom-right`):
+Stickers can be positioned in any corner of a div. Indicate their position with 
+the `position` attribute: `top-left`, `bottom-left`, `top-right`, or 
+`bottom-right`:
 
     <div class="aspect-ratio">
     	<img class="aspect-ratio-item-fluid" src="https://claycss.com/images/thumbnail_hot_air_ballon.jpg" />
@@ -867,10 +877,11 @@ the `position` attribute (`top-left`, `bottom-left`, `top-right`, or
     	<clay:sticker label="PDF" position="top-left" style="danger" />
     </div>
 
-![Figure 66: You can include language flags in your apps.](../../images/clay-taglib-sticker-position.png)
+![Figure 66: You can specify the position of the sticker within a container.](../../images/clay-taglib-sticker-position.png)
 
 Now you know how to use the Liferay Clay taglibs in your app to build powerful 
 UIs!
 
 ## Related Topics [](id=related-topics)
 
+[Using Chart Taglibs in Your Portlet](/develop/tutorials/-/knowledge_base/7-1/using-the-chart-taglib-in-your-portlets)
