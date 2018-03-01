@@ -14,10 +14,10 @@ the `resolve` Gradle task provided by Liferay Workspace.
     gradlew resolve
 
 This task gathers all the @product@ capabilities and the capabilities of your
-workspace's modules and computes a list of run requirements that need to execute
-for your project to work. Then it validates the current project against those
-gathered capabilities. If your project requires something not gathered by the
-task, the task fails.
+workspace's modules. It also computes a list of run requirements for your
+project. Then it compares the current project's requirements against the
+gathered capabilities. If your project requires something not available in the
+gathered list of capabilities, the task fails.
 
 +$$$
 
@@ -27,27 +27,35 @@ validates all the modules in your workspace.
 
 $$$
 
+The `resolve` task can automatically gather the available capabilities from your
+workspace, but it cannot do this for your targeted @product@ version. You must
+specify the version you intend to deploy to. You'll learn how to do this later.
+
 Some capabilities/information gathered by the `resolve` task include
 
-- package imports
+- package imports/use constraints
 - service references
 - module versions
-- constraints
+- declared required capabilities
 - etc.
 
 <!-- TODO: Ask Greg for more capabilities that are gathered. -Cody -->
 
 The `resolve` task can also report issues with separate modules requiring
-different versions of another module. For example, you may have *module A*
+different versions of another module. For example, suppose you have *module A*
 requiring *module Test version 1* and *module B* requiring *module Test version
 4*. Without running the resolver, both modules A and B would compile
 successfully, but when they were deployed, one would fail in @product@'s OSGi
 runtime because both dependencies cannot be satisfied. These types of scenarios
 are difficult to diagnose, but with the `resolve` task, can be found with ease.
 
+Next, you'll learn how to set the @product@ version to gather capabilities from.
+
+## Finding Capabilities for Your Targeted Platform
+
 There are many different versions of @product@ that you can validate against, so
 you'll need to let workspace know which version you want to gather capabilities
-from. To do this, open your workspace's `gradle.properties` file and set the
+for. To do this, open your workspace's `gradle.properties` file and set the
 `liferay.workspace.target.platform.version` property to the version you want to
 target. For example,
 
@@ -59,9 +67,12 @@ shot in the dark. -Cody -->
 This provides a static *distro* JAR for the specified version of @product@,
 which contains all the metadata (i.e., packages, capabilities, constraints,
 etc.) running inside @product@. The distro JAR is a complete snapshot of
-everything provided in @product@'s OSGi runtime.
+everything provided in @product@'s OSGi runtime; this serves as the list of
+capabilities described earlier.
 
-
+You can now validate your module projects before deploying them to @product@!
+Next, you'll learn about scenarios that require modifying the `resolve` task's
+default behavior.
 
 ## Modifying the Target Platform's Capabilities
 
@@ -70,6 +81,12 @@ would work during your development process. Unfortunately, there are exceptions
 that may force you to modify the default functionality of the `resolve` task.
 There are two scenarios you may run into during development that would require
 a modification for your project to pass the resolver check.
+
+- You're depending on a project that is not available in the targeted @product@
+  instance or the current workspace.
+- You're depending on a platform that must be installed in @product@.
+
+You'll explore these use cases next.
 
 ### Depending on a Project Not Included in @product@
 
@@ -86,8 +103,8 @@ to customize the resolver to bypass this.
 There are three ways you can do this:
 
 - [Embed the third party project in your module](#embed-the-third-party-project-in-your-module)
-- [Skip the resolving process for your module](#skip-the-resolving-process-for-your-module)
 - [Add the third party project to the current static set of resolver capabilities](#add-the-third-party-project-to-the-current-static-set-of-resolver-capabilities)
+- [Skip the resolving process for your module](#skip-the-resolving-process-for-your-module)
 
 #### Embed the Third Party Project in Your Module
 
@@ -98,41 +115,59 @@ that module. See the
 [Embedding Libraries in a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module#embedding-libraries-in-a-module)
 section for more details.
 
+#### Add the Third Party Project to the Current Static Set of Resolver Capabilities
+
+You can add your third party dependencies to the distro JAR's list of
+capabilities by listing them as provided modules. Do this by adding the
+following Gradle code into your workspace's root `build.gradle` file:
+
+    dependencies {
+        providedModules group: "GROUP_ID", name: "NAME", version: "VERSION"
+    }
+
+For example, if you wanted to provide
+[Google Guava](https://opensource.google.com/projects/guava) as a provided
+module, it would look like this:
+
+    dependencies {
+        providedModules group: "com.google.guava", name: "guava", version: "23.0"
+    }
+
+Not only does this provide the third party dependency to the resolver, it also
+downloads and includes it in your @product@ bundle's `osgi/modules` folder when
+you initialize it (e.g., `gradlew initBundle`).
+
 #### Skip the Resolving Process for Your Module
 
-It may be easiest to skip your module during the resolving process. To do this,
-open your workspace's root `build.gradle` file and insert the following Gradle
-code at the bottom of the file:
+It may be easiest to skip validating your module during the resolve process. To
+do this, open your workspace's root `build.gradle` file and insert the following
+Gradle code at the bottom of the file:
 
     targetPlatform {
         resolveOnlyIf { project ->
-            project.name != 'MODULE_NAME'
+            project.name != 'PROJECT_NAME'
         }
     }
 
-Be sure to replace the `PROJECT_NAME` filler with your actual module name.
+Be sure to replace the `PROJECT_NAME` filler with your module's name (e.g.,
+`test-api`).
 
-Now the `resolve` task skips the configured project.
-
-#### Add the Third Party Project to the Current Static Set of Resolver Capabilities
-
-providedModules
-
-
-
+Now the `resolve` task skips your module project.
 
 ### Depending on a Platform That Must Be Installed in @product@
 
-There are times when manually skipping over a project does not suffice. For
-example, if you're creating a Liferay Audience Targeting rule that depends on
-the Audience Targeting platform, you can't easily provide a slew of JARs for
-your module. In this case, you should regenerate a new distro JAR with an
-updated list of capabilities that your @product@ instance will provide. Follow
-the steps below to accomplish this:
+There are times when manually specifying your project's list of dependent JARs
+does not suffice. For example, if you're creating a Liferay Audience Targeting
+rule that depends on the Audience Targeting platform, you can't easily provide a
+slew of JARs for your module. In this case, you should install the platform you
+wish to depend on and regenerate a new distro JAR with an updated list of
+capabilities that your @product@ instance will provide. Follow the steps below
+to accomplish this:
 
 <!-- The below process will likely be automated in Blade at some point. -Cody -->
 
-1.  Start the @product@ instance stored in your workspace.
+1.  Start the @product@ instance stored in your workspace. Make sure the
+    platform you want to depend on is installed.
 
 2.  Download the
     [BND Remote Agent JAR file](https://search.maven.org/#search%7Cga%7C1%7Cbiz.aqute.remote.agent)
@@ -161,20 +196,28 @@ against the custom set of capabilities.
 
 ## Validating Modules Outside of Workspace
 
-44:15 -"build/resolve.bndrun" is resolver input file (check what resolver is doing behind the scenes)
+<!-- TODO: Remove this section once the reference doc for the Gradle plugin is
+available. This is just gives a taste of targeting a platform for those who
+don't want to use Workspace. More details will be provided in reference doc.
+-Cody -->
 
+If you prefer to not use Liferay Workspace, but still want to validate modules
+against a target platform, you must apply the
+[Target Platform](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-target-platform)
+Gradle plugin to the root `build.gradle` file of your custom multi-module Gradle
+build. Follow the
+[Targeting a Platform Outside of Workspace](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace#targeting-a-platform-outside-of-workspace)
+section to do this.
 
+Once you have the Target Platform plugin and its BOM dependencies configured,
+you must configure the `targetPlatformDistro` dependency. Open your project's
+root `build.gradle` file and add it to the list of dependencies. It should look
+like this:
 
+    dependencies {
+        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.0.5-SNAPSHOT"
+        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.0.5-SNAPSHOT"
+        targetPlatformDistro group: "com.liferay", name "com.liferay.ce.portal.distro", version: "7.0.5-SNAPSHOT"
+    }
 
-
-
-
-targetPlatformDistro group: "com.liferay", name "com.liferay.ce.portal.distro", version: "7.0.5-SNAPSHOT"
-
-
-
-
-
-
-
-
+Now you can validate your modules against a target platform!
