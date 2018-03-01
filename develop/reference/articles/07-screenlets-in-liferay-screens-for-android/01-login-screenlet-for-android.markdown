@@ -134,6 +134,10 @@ connection, you can use the `credentialsStorage` attribute together with the
 | `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to use in OAuth authentication. |
 | `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to use in OAuth authentication. |
 | `credentialsStorage ` | `enum` | Sets the mode for storing user credentials. The possible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
+| `shouldHandleCookieExpiration` | `bool` | Specifies if the cookie refresh should be handled automatically. This means that if you are using cookie login everytime your cookie is about to expire it is refreshed. The default value is `true` |
+| `cookieExpirationTime` | `int` | Specifies the time to life of the cookie, seconds, this value depends on the configuration of your liferay instance. The default value is `900s` |
+
+
 
 ## Listener [](id=listener)
 

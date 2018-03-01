@@ -132,6 +132,8 @@ connection, you can use the `saveCredentials` attribute together with the
 | `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to use in OAuth authentication. |
 | `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to use in OAuth authentication. |
 | `saveCredentials` | `boolean` | When set, the user credentials and attributes are stored securely in the keychain. This information can then be loaded in subsequent sessions by calling the `SessionContext.loadStoredCredentials()` method. |
+| `shouldHandleCookieExpiration` | `bool` | Specifies if the cookie refresh should be handled automatically. This means that if you are using cookie login everytime your cookie is about to expire it is refreshed. The default value is `true` |
+| `cookieExpirationTime` | `int` | Specifies the time to life of the cookie, seconds, this value depends on the configuration of your liferay instance. The default value is `900s` |
 
 ## Delegate [](id=delegate)
 
