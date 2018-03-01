@@ -25,6 +25,13 @@ Here are the ways to register your listener with Message Bus:
     specific destination and use it directly to register the listener with that
     destination.
 
++$$$
+
+**Note**: The [`DestinationNames` class](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
+defines `String` constants for Liferay's preconfigured destinations. 
+
+$$$
+
 The Declarative Services component module provides the easiest way to register a message listener. 
 
 ## Automatic Registration as a Component [](id=automatic-registration-as-a-component)

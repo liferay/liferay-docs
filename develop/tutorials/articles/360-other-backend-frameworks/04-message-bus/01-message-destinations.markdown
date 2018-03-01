@@ -43,10 +43,11 @@ Here are the primary destination types:
     -   The thread sending the message here delivers the message to all message 
         listeners also.
 
-Liferay has preconfigured destinations for various purposes. For example, the
-`"liferay/hot_deploy"` destination is for  deployment event messages. Since
-Liferay's destinations are tuned for specific purposes, you should generally not
-modify them. 
+Liferay has preconfigured destinations for various purposes. The [`DestinationNames` class](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
+defines `String` constants for each of them. For example, the destination named
+`DestinationNames.HOT_DEPLOY` (value is  `"liferay/hot_deploy"`) is for
+deployment event messages. Since Liferay's destinations are tuned for specific
+purposes, you should generally not modify them. 
 
 Destinations are created based on [`DestinationConfiguration` instances](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationConfiguration.html).
 The configuration specifies the destination type and name and the following
