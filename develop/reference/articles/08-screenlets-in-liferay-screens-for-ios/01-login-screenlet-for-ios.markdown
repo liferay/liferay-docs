@@ -155,3 +155,29 @@ following methods:
 - `- screenlet:onCredentialsLoadedUserAttributes:`: Called when the user 
   credentials are retrieved. Note that this only occurs when the Screenlet is 
   used and stored credentials are available. 
+  
+## Authentication challenge [](id=authentication-challenge)
+
+In order to support authentication challenges when login into liferay using the cookie login method the Session context class has a `challengeResolver` attribute. You can read more about authentication challenges [here] (https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication) and more about how this is handled in iOS [here](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/URLLoadingSystem/Articles/AuthenticationChallenges.html)
+
+This challenge resolver type is a closure or block that will receive two parameters:
+
+- the first one is a `URLAuthenticationChallenge`
+- the second one is another closure or block, you will have to call this method to resolve the challenge passing a type of credentials, cancelling the challenge, etc. You decide this passing a `URLSession.AuthChallengeDisposition`
+
+
+This is an example of this that will send a basic authorization in response of an authentication challenge:
+
+```
+SessionContext.challengeResolver = { challenge, decisionCallback in
+	let credential = URLCredential(user: "user", password: "password", persistence: .forSession)
+	
+	// check there is no failures before
+	if challenge.previousFailureCount == 0 {
+		decisionCallback(.useCredential, credential)
+	}
+	else {
+		decisionCallback(.performDefaultHandling, credential)
+	}
+}
+```

@@ -136,7 +136,7 @@ connection, you can use the `credentialsStorage` attribute together with the
 | `credentialsStorage ` | `enum` | Sets the mode for storing user credentials. The possible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
 | `shouldHandleCookieExpiration` | `bool` | Specifies if the cookie refresh should be handled automatically. This means that if you are using cookie login everytime your cookie is about to expire it is refreshed. The default value is `true` |
 | `cookieExpirationTime` | `int` | Specifies the time to life of the cookie, seconds, this value depends on the configuration of your liferay instance. The default value is `900s` |
-
+| `authenticator` | `Authenticator` | A instance of a class that implements the Authenticator interface. See more in the authentication challenge section |
 
 
 ## Listener [](id=listener)
@@ -151,3 +151,31 @@ methods:
   [portal's User entity](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/com/liferay/portal/service.xml#L2575-L2737).
 
 - `onLoginFailure(Exception e)`: Called when an error occurs in the process.
+
+## Authentication challenge [](id=authentication-challenge)
+
+In order to support authentication challenges when login into liferay using the cookie login method the login Screenlet has a `authenticator` attribute. You can read more about authentication challenges [here] (https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication)
+
+This attribute is a class that should implement the `Authenticator` interface. You can see the javadoc of this [interface](https://square.github.io/okhttp/3.x/okhttp/okhttp3/Authenticator.html)
+
+This is an example of this that will send a basic authorization in response of an authentication challenge:
+
+```
+public class BasicAuthAutenticator extends BasicAuthentication implements Authenticator {
+
+    public BasicAuthAutenticator(String username, String password) {
+        super(username, password);
+    }
+
+    @Override
+    public Request authenticate(Proxy proxy, Response response) throws IOException {
+        String credential = Credentials.basic(username, password);
+        return response.request().newBuilder().header(Headers.AUTHORIZATION, credential).build();
+    }
+
+    @Override
+    public Request authenticateProxy(Proxy proxy, Response response) throws IOException {
+        return null;
+    }
+}
+```
