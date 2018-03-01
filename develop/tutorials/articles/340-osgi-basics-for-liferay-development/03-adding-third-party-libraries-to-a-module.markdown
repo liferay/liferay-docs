@@ -1,40 +1,36 @@
 # Resolving Third Party Library Package Dependencies [](id=adding-third-party-libraries-to-a-module)
 
-The OSGi framework lets you build applications composed of multiple modules. The
-modules must resolve their Java package dependencies for the framework to
-assemble the modules into a working system. In a perfect world, every Java
-library would be an OSGi bundle (module), but many libraries aren't. So how do
-you resolve the packages your OSGi module needs from non-OSGi third party
-libraries?
+The OSGi framework lets you build applications composed of multiple OSGi bundles
+(modules). For the framework to assemble the modules into a working system, the
+modules must resolve their Java package dependencies. In a perfect world, every
+Java library would be an OSGi module, but many libraries aren't. So how do you
+resolve the packages your module needs from non-OSGi third party libraries?
 
 Here is the main workflow for resolving third party Java library packages:
 
-**Step 1 - Find an OSGi module version of the library**: Repositories, such as
-Eclipse Orbit, host OSGi modules that developers have created based on
-traditional Java libraries.
+**Step 1 - Find an OSGi module of the library**: Repositories, such as Eclipse 
+Orbit, host OSGi modules that developers have converted from traditional Java
+libraries.
 [Eclipse Orbit](download.eclipse.org/tools/orbit/downloads/drops/R20170919201930/)
-hosts over a hundred such OSGi modules. Deploying the module to Liferay's OSGi
+hosts over a hundred such modules. Deploying the module to Liferay's OSGi
 framework lets you share it on the system. If you find a module for the library
 you need,
-[deploy](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
-it. Then add a `compileOnly` dependency on it in your module. When you deploy
+[deploy](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module)
+it. Then add a `compileOnly` dependency for it in your module. When you deploy
 your module, the OSGi framework wires the dependency module to your module. If
 you don't find an OSGi module based on the Java library, go to Step 2. 
 
 **Step 2 - Resolve the Java packages privately in your module**: You can copy
-required library packages into your OSGi module or embed them wholesale, if you
-must. The rest of the tutorial shows you how to do this. 
+required library packages into your module or embed them wholesale, if you
+must. The rest of the tutorial shows you how to do these things. 
 
 +$$$
 
 **Note**: Liferay's Gradle plugin `com.liferay.plugin` automates several third
-party library configuration steps. The plugin is applied to
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
-Gradle module projects created in
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
-or using
-[Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
-automatically.
+party library configuration steps. The plugin is automatically applied to
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+Gradle module projects created using [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
+or [Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli).
 
 To leverage the `com.liferay.plugin` plugin outside of Liferay Workspace, add
 code like the listing below to your Gradle project:
@@ -53,7 +49,7 @@ code like the listing below to your Gradle project:
 
     apply plugin: "com.liferay.plugin"
 
-If you use Gradle without the `com.liferay.plugin` plugin, you'll have to
+If you use Gradle without the `com.liferay.plugin` plugin, you must
 [embed the third party libraries wholesale](#embedding-libraries-using-gradle).
 
 $$$
@@ -63,9 +59,9 @@ The recommended package resolution workflow is next.
 ## Library Package Resolution Workflow [](id=library-package-resolution-workflow)
 
 When you depend on a library JAR, much of the time you only need parts of it.
-Explicitly specifying only the Java packages you need makes your bundle more
-modular. This also insulates modules that depend on your module from unneeded
-packages. 
+Explicitly specifying only the Java packages you need makes your module more
+modular. This also keeps other modules that depend on your module from
+incorporating unneeded packages. 
 
 Here's a configuration workflow that minimizes dependencies and Java package
 imports:
@@ -125,14 +121,10 @@ module's `Bundle-ClassPath` manifest header.
 [optional dependencies](https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html).
 If your module requires such artifacts, add them as you would another third party library.
 
-+$$$
-
 **Note:** If the library you've added as a dependency in your `build.gradle`
-file has transitive dependencies, you can reference them in an
-`-includeresource:` instruction by name without having to add them explicitly to
-the list of dependencies. See how it's used in the Maven section next. 
-
-$$$
+file has transitive dependencies, you can reference them by name in an
+`-includeresource:` instruction without having to add them explicitly to the
+dependency list. See how it's used in the Maven section next. 
 
 ### Embedding a Library Using Maven or Ivy [](id=embedding-libraries-using-maven-or-ivy)
 
@@ -168,7 +160,7 @@ Follow these steps:
     manifest header.
 
 Lastly, if after embedding a library you get unresolved imports when trying to
-deploy to Liferay, you may need to blacklist some imports: 
+deploy to Liferay, you might need to blacklist some imports: 
     
 `Import-Package: !foo.bar.baz`
 
@@ -177,8 +169,8 @@ those from traditional Java libraries, is a quite an accomplishment.
 
 ## Related Topics [](id=related-topics)
 
-[Importing Packages](/develop/tutorials/-/knowledge_base/7-0/importing-packages)
+[Importing Packages](/develop/tutorials/-/knowledge_base/7-1/importing-packages)
 
-[Exporting Packages](/develop/tutorials/-/knowledge_base/7-0/exporting-packages)
+[Exporting Packages](/develop/tutorials/-/knowledge_base/7-1/exporting-packages)
 
-[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
+[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-blade-cli)

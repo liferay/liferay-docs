@@ -2,19 +2,19 @@
 
 All @product@ applications live in its OSGi container. Portal is a web
 application deployed on your application server. Portal's Module Framework
-bundles (modules) live in the OSGi container and have class loaders. All the
+bundles (modules) live in the OSGi container and have classloaders. All the
 classloaders from Java's Bootstrap classloader to classloaders for bundle
 classes and JSPs are part of a hierarchy. 
 
-This tutorial explains @product@'s classloader hierarchy and describes how it
+This tutorial explains Liferay's classloader hierarchy and describes how it
 works in the following contexts: 
 
 -   Web application, such as Liferay Portal, deployed on the app server
 -   OSGi bundle deployed in the Module Framework
 
-The following diagram shows @product@'s classloader hierarchy.
+The following diagram shows Liferay's classloader hierarchy.
 
-![Figure 1.0: Here is @product@'s classloader hierarchy.](../../images/portal-classloader-hierarchy.png)
+![Figure 1.0: Here is Liferay's classloader hierarchy.](../../images/portal-classloader-hierarchy.png)
 
 Here are the classloader descriptions:
 
@@ -31,7 +31,7 @@ Here are the classloader descriptions:
 -   **Web Application**: Classes in the application's `WEB-INF/classes` folder
     and `WEB-INF/lib/*.jar`. 
 
--   **Module Framework**: @product@'s OSGi module framework classloader which 
+-   **Module Framework**: Liferay's OSGi module framework classloader which 
     is used to provide controlled isolation for the module framework bundles. 
 
 -   **bundle**: Classes from a bundle's packages or from packages other
@@ -81,7 +81,7 @@ server's documentation for classloading details.
 ## Other Classloading Perspectives [](id=other-classloading-perspectives)
 
 The
-[Bundle Classloading Flow](/develop/tutorials/-/knowledge_base/7-0/bundle-classloading-flow)
+[Bundle Classloading Flow](/develop/tutorials/-/knowledge_base/7-1/bundle-classloading-flow)
 tutorial explains classloading from an OSGi bundle perspective. 
 
 Classloading for JSPs and Service Builder classes is similar to that
@@ -92,4 +92,4 @@ applications, and have references to information on other classloading perspecti
 
 ## Related Topics [](id=related-topics)
 
-[Bundle Classloading Flow](/develop/tutorials/-/knowledge_base/7-0/bundle-classloading-flow)
+[Bundle Classloading Flow](/develop/tutorials/-/knowledge_base/7-1/bundle-classloading-flow)

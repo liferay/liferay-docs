@@ -38,7 +38,7 @@ root generates the module JAR to the `build/libs` folder.
 
 The first step to overriding a service reference is finding the name of the
 component, service reference, and service interface. If you already have them,
-you can skip the next section. 
+you can skip to the section [Create Your Service](#create-a-custom-service). 
 
 ## Find the Component and Service Reference [](id=find-the-component-and-service-reference)
 
@@ -50,21 +50,20 @@ the component to use it.
 -   *Service interface*: Fully qualified name of the referenced service
     interface.
 
-You can [find the component](/develop/tutorials/-/knowledge_base/7-0/finding-extension-points#locate-the-related-module-and-component)
+You can [find the component](/develop/tutorials/-/knowledge_base/7-1/finding-extension-points#locate-the-related-module-and-component)
 using @product@'s
-[Application Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps#using-the-app-manager)
+[Application Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps#using-the-app-manager)
 and find the service reference information using
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). 
+[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell). 
 
 Gogo Shell's Service Component Runtime (SCR) commands help you inspect
 components. The Gogo Shell command `scr:info [componentName]` lists the
 component's attributes, including the services it uses. Execute the command
 using
-[Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) or in
-[Gogo Shell via telnet](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). 
+[Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) or in
+[Gogo Shell via telnet](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell). 
 
-Here's an example of executing the `scr:info` command in a Gogo Shell telnet
-session:
+Here's an example of executing the `scr:info` command:
 
     scr:info override.my.service.reference.OverrideMyServiceReference 
  
@@ -86,16 +85,17 @@ service `SomeService`:
     ...
 
 Copy the following values from the command results. You'll use them in the
-custom service and service reference configuration you create later.
+custom service component and service reference configuration you create later.
 
--   *Component*: The component name you passed to the `scr:info` command.
--   *Reference*: The *Reference* value.
--   *Interface*: The *Interface Name* in the *Reference* section.
+-   *Component name*: The component name you passed to the `scr:info` command.
+-   *Reference name*: The *Reference* value in the `scr:info` result.
+-   *Service interface*: The *Interface Name* in the *Reference* section in the 
+    `scr:info` result.
 
 Note that the example result confirm's that the reference's policy and policy
 option are `static` and `reluctant`, respectively. 
 
-Here are the values for the example:
+Here are the values required for overriding the example's service reference:
 
 -   *Component name*:
     `override.my.service.reference.portlet.OverrideMyServiceReferencePortlet`
@@ -103,7 +103,7 @@ Here are the values for the example:
 -   *Service interface*:
     `override.my.service.reference.service.api.SomeService`
 
-The `scr:info` result's component configuration describes the service component
+The `scr:info` result's component configuration describes the service
 implementation bound to the reference.
 
     ...
@@ -125,7 +125,7 @@ implementation bound to the reference.
 The example's reference is bound to a component named
 `override.my.service.reference.service.impl.SomeServiceImpl`. By the end of this
 tutorial, the reference will be reconfigured to bind to a custom service
-implementation.
+component implementation.
 
 +$$$
 
@@ -139,23 +139,22 @@ the name of the member on which the annotation is used.
     then the reference name is the field name. 
 -   If the `@Reference` is on a method, then heuristics derive the reference
     name. Method name prefixes such as `set`, `add`, and `put` are ignored. If
-    `@Reference` is on a method called`setSearchEngine(SearchEngine se)`, for
+    `@Reference` is on a method called `setSearchEngine(SearchEngine se)`, for
     example, then the reference name is `SearchEngine`. 
 
 $$$
 
 Once you've found the referenced service component implementation, you can
-implement a replacement for it. If you've already created one, you can skip this
-section. 
+create a replacement for it. If you've already created one, you can skip to [configuring the referencing component to use your custom service](#configure-the-component-to-use-the-custom-service). 
 
-## Create Your Service [](id=create-a-custom-service)
+## Create Your Custom Service [](id=create-a-custom-service)
 
 It's time to create your own service implementation. Refer to the appropriate
 [app, app suite](@app-ref@), and [@product@
-module](@platform-ref@/7.0-latest/javadocs/modules) Javadoc for service
+module](@platform-ref@/7.1-latest/javadocs/modules) Javadoc for service
 interface details.
 
-[Create a module](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/starting-module-development)
+[Create a module](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/starting-module-development)
 and implement your service in it. Use the `@Component` annotation to make
 the service a Declarative Services component. 
 
@@ -179,44 +178,36 @@ The example custom implementation for service `SomeService` looks like this:
         }
 
         @Reference  (
-            unbind = "-",
             target = "(component.name=override.my.service.reference.service.impl.SomeServiceImpl)"
         )
         private SomeService _defaultService;
     }
 
-The service component above refers to the default service so that it can
-delegate work to it in its `doSomething` method. The reference targets
-the default service by its component name
+The class above uses the `@Component` annotation to declare that it implements
+the service `SomeService.class`. It's attribute `immediate = true` makes the
+component available as soon as the OSGi framework resolves it. This component
+refers to the default service implementation of `SomeService` to delegate work
+to it in the method `doSomething`. The `@Reference` targets the default service
+by its component name
 `override.my.service.reference.service.impl.SomeServiceImpl`.
 
-To register your service with the @product@'s OSGi runtime framework,
-[deploy its module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module).
-To bind the component reference to your custom service, you must create and
-deploy instructions that configure the component reference to target your custom
+To register a custom service with the @product@'s OSGi runtime framework,
+[deploy its module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module).
+To bind the component reference to your custom service, create and deploy
+instructions that configure the component reference to target your custom
 service. 
 
-## Configure the Component to Use Your Service [](id=configure-the-component-to-use-the-custom-service)
+## Configure the Component to Use Your Custom Service [](id=configure-the-component-to-use-the-custom-service)
 
-You're ready to change the component's service reference to target your service.
-@product@'s Configuration Admin lets you use configuration files to swap in
-service references on the fly. 
+You're ready to change the component's service reference to target your custom
+service. @product@'s Configuration Admin lets you use configuration files to
+swap in service references on the fly. 
 
-1.  Create a configuration file named after the referencing component. Here's 
-    the example component's configuration file name: 
+1.  [Create a system configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
+    named after the referencing component. Here's the example component's
+    configuration file name: 
 
         override.my.service.reference.portlet.OverrideMyServiceReferencePortlet.config
- 
-    +$$$
-
-    **Note:** Liferay DXP DE 7.0 Fix Pack 8 and later, and Liferay CE Portal 7.0 
-    GA4 and later support the Apache Felix ConfigAdmin implementation of OSGi 
-    Configuration Admin files. Felix ConfigAdmin uses the file suffix `.config` 
-    and supports additional types, such as arrays and vectors. The syntax for 
-    `.config` and `.cfg` files can be found 
-    [here](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html). 
-
-    $$$
 
 2.  In the configuration file, add a reference target entry that filters on your
     custom service. Follow this format for the entry:
@@ -229,22 +220,14 @@ service references on the fly.
 
     +$$$
 
-    **Tip**: You can use a `component.name` or `objectClass` reference to filter 
+    **Tip**: You can use a `component.name` or `objectClass` reference to filter
     on your custom implementation. 
 
     $$$
 
     A `.config` file reference target entry for the example looks like this:
 
-        _someService.target="(component.name\=overriding.service.reference.service.CustomServiceImpl)"
-
-    [The `.config` file syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config) 
-    requires surrounding the value in double quotes and escaping the value's
-    equals sign. 
-    
-    A `.cfg` file entry for the example looks like this:
-    
-        _someService.target=(component.name=overriding.service.reference.service.CustomServiceImpl)
+        _someService.target="(component.name\=overriding.service.reference.service.CustomServiceImpl)" 
 
 3.  Optionally, you can add a `cardinality.minimum` entry to specify the
     number of services the reference can use. Here's the format:
@@ -294,9 +277,9 @@ reports the following information:
             _someService.target = (component.name=overriding.service.reference.service.CustomServiceImpl)
             ...
 
-The example component's `_someService` reference targets custom service
+The example component's `_someService` reference targets the custom service
 component `overriding.service.reference.service.CustomServiceImpl`.
-`CustomServiceImpl` references default service `SomeServiceImpl` to delegates
+`CustomServiceImpl` references default service `SomeServiceImpl` to delegate
 work to it. 
 
 ![Figure 2: Because the example component's service reference is overridden by the configuration file deployment, the portlet indicates it's calling the custom service.](../../images/overriding-service-refs-result.png)
@@ -306,6 +289,6 @@ which in turn bound the custom service to the referencing component!
 
 ## Related Topics [](id=related-topics)
 
-- [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-0/finding-extension-points)
+[Finding Extension Points](/develop/tutorials/-/knowledge_base/7-1/finding-extension-points)
 
-- [Using Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+[Using Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)

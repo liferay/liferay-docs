@@ -4,7 +4,7 @@ An OSGi module's Java packages are private by default. To expose a package, you
 must explicitly export it. This way you share only the classes you want to
 share. Exporting a package in your OSGi module JAR's manifest makes all the
 package's classes available for other modules to
-[import](/develop/tutorials/-/knowledge_base/7-0/importing-packages).
+[import](/develop/tutorials/-/knowledge_base/7-1/importing-packages).
 
 To export a package, add it to your module's or plugin's `Export-Package` OSGi
 header. A header exporting `com.liferay.petra.io` and
@@ -23,10 +23,10 @@ The correct location for the header depends on your project's type:
  Traditional Liferay plugin WAR | `WEB-INF/liferay-plugin-package.properties` |
 
 Module projects created using
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli),
-[Liferay's Maven archetypes](/develop/tutorials/-/knowledge_base/7-0/maven),
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli),
+[Liferay's Maven archetypes](/develop/tutorials/-/knowledge_base/7-1/maven),
 or
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
 use
 [bnd](http://bnd.bndtools.org/).
 On building such a project's module JAR, bnd propagates the OSGi headers from
@@ -38,7 +38,7 @@ an `Export-Package` header in the module JAR's `META-INF/MANIFEST.MF`.
 In traditional Liferay plugin WAR projects, you must add package exports to an
 `Export-Package` header in the project's `liferay-plugin-package.properties`. On
 copying the WAR into the `[Liferay Home]/deploy` folder, the
-[WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
 propagates the OSGi headers from the WAR's `liferay-plugin-package.properties`
 file to the `META-INF/MANIFEST.MF` file in the generated Web Application Bundle (WAB).
 
@@ -63,6 +63,6 @@ packages with other modules!
 
 ## Related Topics [](id=related-topics)
 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
 
-[Tooling](/develop/tutorials/-/knowledge_base/7-0/tooling)
+[Tooling](/develop/tutorials/-/knowledge_base/7-1/tooling)

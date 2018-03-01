@@ -34,5 +34,4 @@ Here is the algorithm for classloading in a bundle:
     the exporting bundle's classloader loads it. Otherwise, the class isn't
     found.
 
-Congratulations! Now you know how @product@ finds and loads classes OSGi bundles
-use. 
+Congratulations! Now you know how @product@ finds and loads classes for OSGi bundles. 
