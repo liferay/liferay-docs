@@ -76,17 +76,17 @@ replication mechanism to keep the database nodes in sync.
 
 Enabling a read-writer database is simple. In your `portal-ext.properties` file:
 
-1.  Set the database connetion pool provider to dbcp, tomcat or c3po as the
-default hikaricp does not support read/write splitting, for example:
+1.  Set the default database connection pool provider to `dbcp`, `tomcat`, or 
+    `c3po`. Note, provider HikariCP does not support read/write splitting.
+    Here's an example setting: 
 
         jdbc.default.liferay.pool.provider=dbcp
 
-    You can find the full `jdbc` configuration settings in the
-`portal.properties`
-[documentation](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#JDBC).
+    All the portal JDBC configuration properties are documented
+    [here](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#JDBC).
 
 2.  Configure two different data sources for @product@ to use, one for reading,
-and one for writing:
+    and one for writing:
 
         jdbc.read.driverClassName=com.mysql.jdbc.Driver
         jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
@@ -98,29 +98,29 @@ and one for writing:
         jdbc.write.username=**your user name**
         jdbc.write.password=**your password**
 
-    If you are using JNDI, use following configuration instead:
+    To use the JNDI instead of the JDBC data sources, set the `*.username` and
+    `*.password` properties above to your JNDI user name and password and set
+    these additional properties:
 
         jdbc.read.jndi.name=**your read JNDI name**
         jdbc.write.jndi.name=**your read-write JNDI name**
 
-    Of course, specify the JNDI name, user name, and password to each of your
-databases in the above configuration.
-
-3.  Setup following properties to avoid using 'default' dataSource:
+3.  Avoid using the `default` data source, by setting this:
 
         counter.jdbc.prefix=jdbc.write.
+
+    And if you're using a `dbcp` or `tomcat` database connection pool provider,
+    set these:
 
         jdbc.default.validationQuery=
         jdbc.read.validationQuery=SELECT releaseId FROM Release_
         jdbc.write.validationQuery=SELECT releaseId FROM Release_
 
-    The validationQuery setting is only necessary in case of using dbcp or
-tomcat database connetion pool provider. More information see LPS-64624 code
-changes.
+    These settings are related to issue [LPS-64624](https://issues.liferay.com/browse/LPS-64624).
 
-4.  After this, enable the read-writer database configuration by uncommenting
-the Spring configuration file which enables it in both `spring.configs` and
-`spring.infrastructure.configs` properties:
+4.  Enable the read-writer database configuration by uncommenting the following 
+    Spring configuration files from the `spring.configs` and
+    `spring.infrastructure.configs` properties:
 
         spring.configs=\
             [..]
@@ -132,9 +132,8 @@ the Spring configuration file which enables it in both `spring.configs` and
             META-INF/dynamic-data-source-infrastructure-spring.xml,\
             [..]
 
-   You can find the full `spring.configs` and `spring.infrastructure.configs` 
-list in the `portal.properties`
-[documentation](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Spring).
+    The Spring configuration portal properties are documented 
+    [here](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Spring).
 
 The next time you start @product@, it uses the two data sources you have
 defined. Be sure you have correctly set up your two databases for replication
