@@ -13,11 +13,18 @@ the `resolve` Gradle task provided by Liferay Workspace.
 
     gradlew resolve
 
-This task gathers all the @product@ capabilities and the capabilities of your
-workspace's modules. It also computes a list of run requirements for your
-project. Then it compares the current project's requirements against the
-gathered capabilities. If your project requires something not available in the
-gathered list of capabilities, the task fails.
+This task gathers all the capabilities provided by
+    
+- the specified version of @product@
+- the current workspace's modules
+
+It also computes a list of run requirements for your project. Then it compares
+the current project's requirements against the gathered capabilities. If your
+project requires something not available in the gathered list of capabilities,
+the task fails.
+
+The task can only validate OSGi modules. It does not work with WAR-style
+projects, themes, npm portlets, etc.
 
 +$$$
 
@@ -33,13 +40,11 @@ specify the version you intend to deploy to. You'll learn how to do this later.
 
 Some capabilities/information gathered by the `resolve` task include
 
+- declared required capabilities
+- module versions
 - package imports/use constraints
 - service references
-- module versions
-- declared required capabilities
 - etc.
-
-<!-- TODO: Ask Greg for more capabilities that are gathered. -Cody -->
 
 The `resolve` task can also report issues with separate modules requiring
 different versions of another module. For example, suppose you have *module A*
@@ -65,10 +70,10 @@ target. For example,
 shot in the dark. -Cody -->
 
 This provides a static *distro* JAR for the specified version of @product@,
-which contains all the metadata (i.e., packages, capabilities, constraints,
-etc.) running inside @product@. The distro JAR is a complete snapshot of
-everything provided in @product@'s OSGi runtime; this serves as the list of
-capabilities described earlier.
+which contains all the metadata (i.e., capabilities, packages, versions, etc.)
+running inside @product@. The distro JAR is a complete snapshot of everything
+provided in @product@'s OSGi runtime; this serves as the list of capabilities
+described earlier.
 
 You can now validate your module projects before deploying them to @product@!
 Next, you'll learn about scenarios that require modifying the `resolve` task's
@@ -82,31 +87,34 @@ that may force you to modify the default functionality of the `resolve` task.
 There are two scenarios you may run into during development that would require
 a modification for your project to pass the resolver check.
 
-- You're depending on a project that is not available in the targeted @product@
-  instance or the current workspace.
+- You're depending on a third party library that is not available in the
+  targeted @product@ instance or the current workspace.
 - You're depending on a platform that must be installed in @product@.
 
 You'll explore these use cases next.
 
-### Depending on a Project Not Included in @product@
+### Depending on Third Party Libraries Not Included in @product@
 
-The `resolve` task, by default, gathers all the capabilities provided by the
-specified version of @product@ and included in your current workspace
-environment. What if, however, your module depends on a third party project that
-is not included in either space (e.g.,
+The `resolve` task, by default, gathers all of @product@'s capabilities and the
+capabilities of your workspace's modules. What if, however, your module depends
+on a third party project that is not included in either space (e.g.,
 [Google Guava](https://opensource.google.com/projects/guava))?. The `resolve`
-task would fail by default if your project depended on this project type. You
+task fails by default if your project depends on this project type. You
 probably plan to have this project deployed and available in @product@ at
 runtime, so it's not a concern, but the resolver doesn't know that; you'll need
 to customize the resolver to bypass this.
 
 There are three ways you can do this:
 
-- [Embed the third party project in your module](#embed-the-third-party-project-in-your-module)
-- [Add the third party project to the current static set of resolver capabilities](#add-the-third-party-project-to-the-current-static-set-of-resolver-capabilities)
+- [Embed the third party library in your module](#embed-the-third-party-project-in-your-module)
+- [Add the third party library's capabilities to the current static set of resolver capabilities](#add-the-third-party-librarys-capabilities-to-the-current-static-set-of-resolver-capabilities)
 - [Skip the resolving process for your module](#skip-the-resolving-process-for-your-module)
 
-#### Embed the Third Party Project in Your Module
+For help resolving third party dependency errors, see the
+[Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
+tutorial.
+
+#### Embed the Third Party Library in Your Module
 
 If you only have one module that depends on the third party project, you can
 bypass the resolver failure by embedding the JAR in your module. This is not
@@ -115,7 +123,7 @@ that module. See the
 [Embedding Libraries in a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module#embedding-libraries-in-a-module)
 section for more details.
 
-#### Add the Third Party Project to the Current Static Set of Resolver Capabilities
+#### Add the Third Party Library's Capabilities to the Current Static Set of Resolver Capabilities
 
 You can add your third party dependencies to the distro JAR's list of
 capabilities by listing them as provided modules. Do this by adding the
@@ -175,7 +183,9 @@ to accomplish this:
 
 3.  From the root folder of you workspace, run the following command:
 
-        bnd remote distro -o custom_distro.jar com.liferay.ce.portal.distro 7.1.0
+        bnd remote distro -o custom_distro.jar com.liferay.ce.portal.distro 7.1.0-m1
+
+    <!-- TODO: Update milestone version with correct syntax, when available. -Cody -->
 
     This connects to the newly deployed BND agent running in @product@ and
     generates a new distro JAR named `custom_distro.jar`. All other capabilities
@@ -215,9 +225,12 @@ root `build.gradle` file and add it to the list of dependencies. It should look
 like this:
 
     dependencies {
-        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.0.5-SNAPSHOT"
-        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.0.5-SNAPSHOT"
-        targetPlatformDistro group: "com.liferay", name "com.liferay.ce.portal.distro", version: "7.0.5-SNAPSHOT"
+        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.1.0-m1"
+        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.1.0-m1"
+        targetPlatformDistro group: "com.liferay", name "com.liferay.ce.portal.distro", version: "7.1.0-m1"
     }
+
+<!-- TODO: Update above versions to accurate milestone version syntax. This was
+a shot in the dark. -Cody -->
 
 Now you can validate your modules against a target platform!

@@ -84,13 +84,10 @@ the configured target platform's BOM. For example, a simple MVC portlet's
 **Note**: The `liferay.workspace.target.platform.version` property also sets
 the distro JAR used in workspace to validate your projects during the build
 process. See the
-[Validating Projects Against the Target Platform](/develop/tutorials/-/knowledge_base/7-1/validating-projects-against-the-target-platform)
+[Validating Modules Against the Target Platform](/develop/tutorials/-/knowledge_base/7-1/validating-projects-against-the-target-platform)
 tutorial for more info.
 
 $$$
-
-<!-- Question: What if dependency I want to use is not in BOM? Do I specify
-version? -Cody -->
 
 The target platform functionality is available in Liferay Workspace version
 1.8.1+. If you have an older version, you must update it to leverage platform
@@ -146,7 +143,7 @@ This Gradle code
 - applies Liferay's Target Platform Gradle plugin
 - configures repositories that will provide the necessary artifacts for your
   project build
-- sets Target Platform dependencies:
+- sets the Target Platform plugin's dependencies:
     - `com.liferay.ce.portal.bom`: provides all the artifacts included in
       @product@.
     - `com.liferay.ce.portal.compile.only`: provides artifacts that are not
