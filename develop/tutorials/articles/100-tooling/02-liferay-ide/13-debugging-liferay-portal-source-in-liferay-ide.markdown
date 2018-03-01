@@ -20,12 +20,12 @@ Let's explore these Liferay-specific debugging configurations.
 ## Configure Your Target Platform [](id=configure-your-target-platform)
 
 To configure your target platform, you must be developing in a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
 Liferay Workspace is able to provide debugging capabilities by targeting a
 specific @product@ version, which indexes the configured @product@ source code.
 Without specifying a target platform, @product@'s source code
 cannot be accessed by @ide@. See the
-[Managing a Target Platform in Liferay Workspace]()
+[Managing the Target Platform in Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-in-liferay-workspace)
 tutorial for more information on how this works.
 
 **Important:** The target platform should match the Liferay server version you

@@ -4,18 +4,18 @@ In Liferay @ide@, you can search through @product@'s source code to aid in the
 development of your Liferay project. Liferay provides great resources to help
 with development (official documentation,
 [docs.liferay.com](https://docs.liferay.com/),
-[sample projects](/develop/reference/-/knowledge_base/7-0/sample-modules),
+[sample projects](/develop/reference/-/knowledge_base/7-1/sample-modules),
 etc.), but sometimes, searching through Liferay's platform and official apps
 for patterns is just as useful. For example, if you're creating a custom app
 that extends a class provided in Liferay's `portal-kernel` JAR, you can inspect
 that class and research how it's used in other areas of @product@'s codebase.
 
 To do this, you must be developing in a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
 Liferay Workspace is able to provide this functionality by targeting a specific
 @product@ version, which indexes the configured @product@ source code to provide
 advanced search. See the
-[Managing a Target Platform in Liferay Workspace]()
+[Managing the Target Platform in Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace)
 tutorial for more information on how this works.
 
 In this tutorial, you'll explore three use cases where advanced search would be
@@ -35,7 +35,7 @@ for a comprehensive guide.
 Inspecting classes that extend a similar superclass can help you find useful
 patterns and examples for how you can develop your own app. For example, suppose
 your app extends the
-[MVCPortlet](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
+[MVCPortlet](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
 class. You an search classes that extend that same class in @ide@ by
 right-clicking the `MVCPortlet` declaration and selecting *Open Type Hierarchy*.
 This opens a window that lets you inspect all classes residing in the target
@@ -54,7 +54,7 @@ has no limits; Liferay Workspace's target platform indexing provides method
 exploration too!
 
 Suppose in the
-[MVCPortlet](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
+[MVCPortlet](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
 class you're extending, you'd like to search for declarations of its `doView`
 method you're overriding. You can do this by right-clicking the `doView` method
 declaration in your custom app's class and selecting *Declarations* &rarr;
