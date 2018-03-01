@@ -19,13 +19,13 @@ Here are the steps for upgrading a core language key hook to @product-ver@.
 
 3.  [Create a `resource bundle`](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys#creating-a-resource-bundle). 
 
-4.  [Deploy your module](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module). 
+4.  [Deploy your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module). 
 
 Your core language key customizations are deployed to @product-ver@. 
 
 ## Related Topics [](id=related-topics)
 
-[Overriding Core Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys)
+[Overriding Global Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-global-keys)
 
 [Upgrading Portlet Language Key Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-portlet-language-key-hooks)
 
