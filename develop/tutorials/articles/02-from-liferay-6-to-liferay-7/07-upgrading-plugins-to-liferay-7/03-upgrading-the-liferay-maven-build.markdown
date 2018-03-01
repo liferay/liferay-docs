@@ -5,15 +5,18 @@ project development, you must upgrade your Maven build to be compatible with
 @product-ver@ development. There are two main parts of the Maven environment
 upgrade process that you must address:
 
-- Upgrading to new @product-ver@ Maven plugins
-- Updating Liferay Maven artifact dependencies
+- [Upgrading to new @product-ver@ Maven plugins](#upgrading-to-new-product-ver-maven-plugins)
+- [Updating Liferay Maven artifact dependencies](updating-liferay-maven-artifact-dependencies)
 
 For more information on using Maven with @product-ver@, see the
-[Maven tutorial section](/develop/tutorials/-/knowledge_base/7-0/maven). For a
+[Maven tutorial section](/develop/tutorials/-/knowledge_base/7-1/maven). For a
 guided and expedited upgrade process for your Maven build, try the
-[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
+[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
 
-<!-- Mention Maven Workspace here when documentation is available. -Cody -->
+Liferay also offers a Maven development environment tailored specifically for
+@product-ver@ development. Learn more about this in the
+[Maven Workspace](/develop/tutorials/-/knowledge_base/7-1/maven-workspace)
+tutorial.
 
 You'll start off by upgrading your Maven environment's Liferay Maven plugins.
 
@@ -69,10 +72,18 @@ artifact IDs and tutorials explaining how to configure them:
 
 Name | Artifact ID | Tutorial |
 :----| :---------- | :------- |
-CSS Builder | [com.liferay.css.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.css.builder) | [Compiling SASS Files in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/compiling-sass-files-in-a-maven-project) |
+Bundle Support | [com.liferay.portal.tools.bundle.support](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.bundle.support) | Coming Soon |
+CSS Builder | [com.liferay.css.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.css.builder) | [Compiling SASS Files in a Maven Project](/develop/tutorials/-/knowledge_base/7-1/compiling-sass-files-in-a-maven-project) |
+DB Support | [com.liferay.portal.tools.db.support](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.db.support) | [DB Support Plugin](/develop/reference/-/knowledge_base/7-1/db-support-plugin)
+Deployment Helper | [com.liferay.deployment.helper](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.deployment.helper) | Coming Soon |
+Javadoc Formatter | [com.liferay.javadoc.formatter](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.javadoc.formatter) | Coming Soon |
 Lang Builder | [com.liferay.lang.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.lang.builder) | Coming Soon |
-Service Builder | [com.liferay.portal.tools.service.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.service.builder) | [Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project) |
-Theme Builder | [com.liferay.portal.tools.theme.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.theme.builder) | [Building Themes in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/building-themes-in-a-maven-project) |
+Service Builder | [com.liferay.portal.tools.service.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.service.builder) | [Service Builder Plugin](/develop/reference/-/knowledge_base/7-1/service-builder-with-maven) |
+Source Formatter | [com.liferay.source.formatter](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.source.formatter) | [Source Formatter Plugin](/develop/reference/-/knowledge_base/7-0/source-formatter-plugin) |
+Theme Builder | [com.liferay.portal.tools.theme.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.theme.builder) | [Theme Builder Plugin](/develop/reference/-/knowledge_base/7-1/theme-builder-plugin) |
+TLD Formatter | [com.liferay.tld.formatter](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.tld.formatter) | Coming Soon |
+WSDD Builder | [com.liferay.portal.tools.wsdd.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.wsdd.builder) | Coming Soon |
+XML Formatter | [com.liferay.xml.formatter](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.xml.formatter) | Coming Soon |
 
 In Liferay Portal 6.2, you were also required to specify all your app server
 configuration settings. For example, your parent POM probably contained settings
@@ -128,7 +139,7 @@ Liferay Portal 6.2 Artifact ID | @product-ver@ Artifact ID |
 `util-taglib` | `com.liferay.util.taglib` |
 
 For more information on resolving dependencies in @product-ver@, see the
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies)
 tutorial.
 
 Of course, you must also update the artifacts you're referencing for your
@@ -137,7 +148,7 @@ artifacts, you won't need to do anything more than update the artifacts in
 your POMs. If, however, you're working behind a proxy or don't have Internet
 access, you must update your company-shared or local repository with the latest
 @product-ver@ Maven artifacts. See the
-[Installing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts)
+[Installing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/7-1/installing-liferay-maven-artifacts)
 tutorial for instructions.
 
 With these updates, you can easily upgrade your Liferay Maven build so you can

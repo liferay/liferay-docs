@@ -4,14 +4,14 @@ What are the fundamentals that every Liferay developer should know?
 
 1.  It's Open Source and puts a strong emphasis on following standards, instead
     of reinventing the wheel.
-2.  It's based on JavaEE and heavily leverages OSGi and several other popular
+2.  It's based on Java EE and heavily leverages OSGi and several other popular
     technologies for the Java Platform.
 3.  It is based on a modular architecture and facilitates following a modular
     development paradigm for your own projects.
 4.  You can build your own web applications, portlets, or mobile apps on top of
     it.
-5.  It provides mature development tools, while staying agnostic so each
-    developer can use his or her preferred tools.
+5.  It provides mature development tools, while staying agnostic so you
+    can use tools you prefer.
 6.  It's all about reusing, providing reusable frameworks and libraries and
     allowing you to create your own.
 
@@ -19,22 +19,21 @@ Interested? More details below.
 
 ## Open Source and based on Standards [](id=open-source-and-based-on-standards)
 
-@product@ is both open source and built in the open, following a collaborative
+@product@ is both Open Source and built in the open, following a collaborative
 development model. That means that you can follow new development as it's
 happening, make comments on it, and contribute! Here are some tools that you can
 use to do all this:
 
-1.  Our ticketing system. All the changes made to the product, including all bug
-    fixes, improvements, and new features start with a ticket created in JIRA.
-    We have several projects there, but the main one for tracking the work of
-    @product@ or for reporting bugs you have found (with as many details as you
-    can and steps to reproduce, of course) is 
-    [LPS](https://issues.liferay.com/browse/LPS)
+1.  Our ticketing system. All product changes, including all bug fixes,
+    improvements, and new features start with a ticket created in JIRA. We have
+    several projects there, but the main one for tracking @product@ work or for
+    reporting bugs you find (with as many details as you can and steps to
+    reproduce, of course) is [LPS](https://issues.liferay.com/browse/LPS).
 
 2.  [GitHub](http://github.com/liferay): The home of our source code. You can
     use it to see the code changes as they happen and also to send pull requests
-    for improvements.  There are also many repos, but the main one is 
-    [liferay-portal](http://github.com/liferay/liferay-portal)
+    for improvements. There are also many repos, but the main one is 
+    [liferay-portal](http://github.com/liferay/liferay-portal).
 
 3.  [Forums](http://forums.liferay.com): It's where our community gets together
     to share ideas, discuss, and collaborate. Go ahead and ask your questions
@@ -44,14 +43,14 @@ use to do all this:
     practices from key core developers and our most active community members.
 
 5.  [Participate](http://dev.liferay.com/participate): Learn how to get started
-    participating. You will find options for all levels of expertise and time
-    available.
+    participating. There are options for all levels of expertise and time
+    availability.
 
 In addition to being Open Source, Liferay is also heavily based on standards.
 This is great news for your project, since it significantly reduces the lock-in
 on Liferay. That also encourages us to improve constantly. 
 
-Here are some key standards supported by @product@:
+Here are some key standards @product@ supports:
 
 -   [Portlets 1.0](https://jcp.org/en/jsr/detail?id%3D168) (JSR-168) 
     and [Portlets 2.0](https://jcp.org/en/jsr/detail?id%3D286) (JSR-286):
@@ -67,11 +66,14 @@ Here are some key standards supported by @product@:
     provides the ability to use it in all modern browsers thanks to the
     integration of Babel JS.
 -   [Content Management Interoperability Services](https://www.oasis-open.org/committees/cmis) (CMIS):
-    Liferay's Documents and Media can behave as an interface for any external
+    Liferay's
+    [Documents and Media](/discover/portal/-/knowledge_base/7-1/managing-documents-and-media)
+    can behave as an interface for any external
     Documents Repository that supports this widely adopted standard.
 -   [Java Content Repository](https://jcp.org/en/jsr/detail?id%3D170) (JSR-170):
-    Files stored in the internal repository of Liferay's Documents and Media can
-    be configured to be stored in a JSR-170 compatible repository if desired.
+    Files stored in the internal repository of Liferay's
+    [Documents and Media can be configured](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
+    to be stored in a JSR-170 compatible repository if desired.
 -   [WebDAV](http://www.webdav.org):
     Any Documents &amp; Media folder can be mounted anywhere WebDAV is
     supported, such as Windows explorer or WebDAV-specific clients.
@@ -80,10 +82,13 @@ Here are some key standards supported by @product@:
     These are the most widely adopted security protocols for SSO and application
     sign in, supported through specific Apps that can be installed from
     [Liferay's Marketplace](http://marketplace.liferay.com).
--   JAX-RS and JAX-WS: Incorporated since Liferay 7 as the preferred tooling to
-    create web services.
--   [WSRP](https://www.oasis-open.org/committees/wsrp) 1
-    and 2: Allows execution of portlets running in a remote container.
+-   [JAX-WS and JAX-RS](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs):
+    Incorporated since Liferay 7 as the preferred tooling to create web
+    services.
+<!--
+    -   [WSRP](https://www.oasis-open.org/committees/wsrp) 1
+    and 2: Allows execution of portlets running in a remote container. TODO uncomment once the WSRP app is released on Marketplace.
+-->
 -   [OSGi r6](https://www.osgi.org):
     Liferay supports a wide range of the OSGi family of standards through its
     own implementations and also integrates the high quality implementations of
@@ -109,25 +114,25 @@ following characteristics:
     demanding and critical enterprise environments.
 -   It should be widely adopted and have a mature community.
 -   It should be as easy as possible to contribute back, since we
-    love to contribute to the open source projects we use. 
+    love to contribute to the Open Source projects we use. 
 -   It should be possible to use only the piece of the project we
     need if we don't need the whole thing. That way, it's easier to
     replace that piece in the future if we find something that
     works better. 
 
 The goal, of course, is to give our developers and users the most up to date,
-easy-to-use, and stable platform to build your services on.
+easy-to-use, and stable platform to build services on.
 
 ![Liferay is based on popular, well known, and well supported technologies.](../../images/liferay-technologies.png)
 
 At its base, Liferay is a JavaEE application that also includes an OSGi
 container. This offers the best of both worlds: access to the world's most
 robust and fully featured enterprise platform, along with the benefits of the
-world's most fully featured and stable modular container. Now developers can
-develop and deploy enterprise-ready, scalable web and mobile-based applications
-in a dynamic, component-based environment. 
+world's most fully featured and stable modular container. Now you can develop
+and deploy enterprise-ready, scalable web and mobile-based applications in a
+dynamic, component-based environment. 
 
-With JavaEE and OSGi at the bottom of the stack, we build the rest of our core
+With Java EE and OSGi at the bottom of the stack, we build the rest of our core
 on well known or widely used products: 
 
 -   Spring for transactions (and Dependency Injection in
@@ -148,10 +153,14 @@ they're familiar with and have been using for years:
 
 If you're approaching @product@ with the intention of customizing it, you can
 know that most if not all of the tools you're familiar with are there. If you're
-writing applications on Liferay's platform, the sky's the limit: you can use any
+writing applications on Liferay, the sky's the limit: you can use any
 web framework you like, and you can write both servlet and portlet-based
 applications. If you're looking for a recommendation, though, we're happy to
-point you to either our MVCPortlet or our JSF-based LiferayFaces frameworks. 
+point you to either our
+[MVCPortlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
+or our JSF-based
+[LiferayFaces](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
+frameworks. 
 
 On the front-end, Liferay has kept pace with the most recent progressions in
 that space. If you've used Liferay in the past, you can of course continue to
@@ -160,22 +169,25 @@ technologies you love the most:
 
 -   Bootstrap 
 -   SaSS
--   EcmaScript 2015 (using Babel.js) 
+-   [EcmaScript 2015](http://www.ecma-international.org/ecma-262/6.0/) (using Babel.js) 
 
 You can also use any JavaScript library, including 
 
--   Metal.js (developed by Liferay)
--   jQuery (included) 
+-   [Metal.js](http://metaljs.com/) (developed by Liferay)
+-   [jQuery](https://jquery.com/) (included) 
 -   Lodash (included)
 -   Angular 1 or 2
 -   React
 -   Your library of choice
 
-@product@ follows a design language created by our designers at Liferay called
-Lexicon. It is automatically available to application developers through a set
-of CSS classes, although it's even easier to use our tag library. 
+@product@ follows a design language created by our designers at Liferay called 
+[Lexicon Experience Language](https://lexicondesign.io/), which has been 
+implemented for use of the web as [Lexicon](https://liferay.github.io/clay/).
 
-For templating, JavaEE's JSP is there as expected as well as FreeMarker, but the
+Lexicon is automatically made available to you through a set of CSS classes and
+markup, although it's even easier to use our tag library. 
+
+For templating, Java EE's JSP is there as expected as well as FreeMarker, but the
 modularity of the platform allows you to use Google's Soy (aka Closure
 Templates) or whatever else you like. 
 
@@ -198,13 +210,12 @@ create exactly the web presence you have in mind. To achieve this, the product
 must do these things: 
 
 -   Provide a usable default configuration and interface
--   Ship with best-of-breed apps that can be used to build sites
-    quickly
+-   Ship with best-of-breed apps that you can use to build sites quickly
 -   Make the UI customizable at any level of detail from small
     tweaks to a complete replacement
 -   Make the apps customizable at any level of detail 
--   Provide a robust development platform upon which new
-    best-of-breed apps can be built and shared
+-   Provide a robust development platform upon which you can build and share new
+    best-of-breed apps
 
 ![Liferay provides services for many different kinds of clients.](../../images/liferay-architecture.png)
 These goals are now achieved to the furthest extent ever in Liferay's history,
@@ -232,16 +243,19 @@ This is the power of a modular architecture.
 
 ### Modules [](id=modules)
 
-All new applications, extensions, and customizations built on Liferay are built 
-in a modular way. A module is the single unit of distribution and deployment in 
-a modular architecture.
+All new applications, extensions, and customizations built on Liferay are
+built in a
+[modular way](/develop/tutorials/-/knowledge_base/7-1/the-benefits-of-modularity).
+A module is the single unit of distribution and deployment in a modular
+architecture.
 
 In the spirit of following existing standards, Liferay has leveraged a set of 
-very powerful standards known as OSGi. OSGi defines, among other things, how 
-modules can depend on each other and communicate. It also defines the packaging 
-format for modules: OSGi bundles. An OSGi module is just a typical JAR file, 
-familiar to Java developers as a ZIP file containing compiled code, templates, 
-resources, and some meta information.
+very powerful standards known as
+[OSGi](https://www.osgi.org/developer/).
+OSGi defines, among other things, how modules can depend on each other and
+communicate. It also defines the packaging format for modules: OSGi bundles. An
+OSGi module is just a typical JAR file, familiar to Java developers as a ZIP
+file containing compiled code, templates, resources, and some meta information.
 
 ### Services [](id=services)
 
@@ -252,7 +266,8 @@ might call a service to come mow your lawn. You know how to call the service and
 to give it what it needs (money) in order to receive the service (a mown lawn).
 Software-based services work the same way.
 
-Liferay's services are standard services as defined by the OSGi Alliance.
+Liferay's services are standard services as defined by the
+[OSGi Alliance](https://www.osgi.org/about-us/).
 Writing anything, whether it be an application, an interface to a database, or
 even a "service" as you define it, is easy to implement as an OSGi service,
 because they're both incredibly powerful and easy to develop. If you understand
@@ -304,7 +319,7 @@ to deal with small, well-defined, bite-sized chunks of code at a time.
 
 ### Real Life Benefits of Modular Development [](id=real-life-benefits-of-modular-development)
 
-The next question then becomes, so what? Why is this a big deal?  Why should I
+The next question then becomes, so what? Why is this a big deal? Why should I
 have components, and what do I need them for?
 
 It helps to examine two common development scenarios: a customization task and a
@@ -329,7 +344,7 @@ only changing and redeploying the small piece of functionality that needs to
 change, not the whole application. At no time would you ever have to redeploy
 the whole application or take the server down.
 
-For a full-blown application, the benefits are even greater.  Modular
+For a full-blown application, the benefits are even greater. Modular
 development helps developers be more efficient in three important ways: 
 
 -   An application made up of components can be written in

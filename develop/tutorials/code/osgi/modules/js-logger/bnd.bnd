@@ -1,4 +1,0 @@
-Bundle-Name: Blade JS ES2015 Module
-Bundle-SymbolicName: blade.js.es2015.module
--includeresource: package.json
--plugin.npm: com.liferay.ant.bnd.npm.NpmAnalyzerPlugin

@@ -7,11 +7,12 @@ methods available for installing Liferay @ide@.
 
 ## Install the Liferay @ide@ Bundle [](id=install-the-liferay-ide-bundle)
 
-1.  Download and install [Java](http://java.oracle.com). Liferay runs on Java, so
-    you'll need it to run everything else. Because you'll be developing apps for
-    Liferay Portal in Liferay @ide@, the Java Development Kit (JDK) is required.
-    It is an enhanced version of the Java Environment used for developing new
-    Java technology. You can download the Java SE JDK from the Java
+1.  Download and install [Java](http://java.oracle.com). Liferay runs on Java,
+    so you'll need it to run everything else. Because you'll be developing apps
+    for Liferay Portal in Liferay @ide@, the Java Development Kit (JDK) is
+    required. It is an enhanced version of the Java Environment used for
+    developing new Java technology. You can download the Java SE JDK from the
+    Java
     [Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
     page. 
 
@@ -60,8 +61,8 @@ To install Liferay @ide@ into Eclipse from a Zip file, follow these steps:
 3.  In the *Add* dialog, click the *Archive* button and browse to the location
     of the downloaded Liferay @ide@ Zip file.
 
-4.  You'll see the Liferay @ide@ components in the list below. Check them off and
-    click *Next*. 
+4.  You'll see the Liferay @ide@ components in the list below. Check them off
+    and click *Next*. 
 
 5.  Accept the terms of the agreements and click *Next*, and Liferay @ide@ is
     installed. Like other Eclipse plugins you'll have to restart Eclipse to

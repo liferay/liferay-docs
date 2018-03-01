@@ -34,22 +34,19 @@ compatible and can be copied to the new 3.1 version.
 
     Your credentials are not saved locally; they're saved as a token in the
     `~/.liferay` folder. The token is used by your @ide@'s
-    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
     if you ever decide to redownload a @product@ bundle. Furthermore, the
     @product@ bundle that was downloaded in your workspace is also copied to
     your `~/.liferay/bundles` folder, so if you decide to initialize another
     @product@ instance of the same version, the bundle is not re-downloaded. See
     the
-    [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/adding-a-liferay-bundle-to-a-workspace)
+    [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-1/adding-a-liferay-bundle-to-a-workspace)
     for more information on this topic.
 
-    **Important:** The token generator currently has problems with certain
-    special characters contained in a password, which fails the token
-    generation. This is a bug and will be fixed in the next release of Liferay
-    @ide@. Visit the
-    [Generating a Workspace Token Manually](#generating-a-workspace-token-manually)
-    section to follow a manual process to generate a token if you're unable to
-    complete it automatically using the installer.
+    **Important:** The token generator sometimes has issues generating a token
+    for workspaces built behind a proxy. If you're unable to automatically
+    generate a workspace token, you can
+    [generate one manually](#generating-a-workspace-token-manually).
 
 3.  Run the installer. You may need to allow permission for the installer to run,
     depending on your operating system and where you want to install it.
@@ -60,11 +57,11 @@ compatible and can be copied to the new 3.1 version.
     ![Figure 1: Choose the folder your @ide@ instance should reside.](../../../images-dxp/dev-studio-install.png)
 
 5.  Liferay @ide@ provides
-    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
     by default, which is a developer environment used to build and manage
     @product@ projects. The installer automatically installs Liferay Workspace
     and its dedicated command line tool
-    ([Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)).
+    ([Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)).
 
     You'll need to choose the Liferay bundle you plan to use in your Liferay
     Workspace: *Liferay DXP Bundle* or *Community Edition Bundle*. Then choose
@@ -82,7 +79,7 @@ folder you specified. To run @ide@, execute the `DeveloperStudio` executable. A
 Liferay Workspace has also been initialized in that same folder. For more
 information on the Liferay Workspace installation related to this installation
 process, see the
-[Using @ide@'s Liferay Workspace Installer](/develop/tutorials/-/knowledge_base/7-0/using-developer-studios-liferay-workspace-installer)
+[Using @ide@'s Liferay Workspace Installer](/develop/tutorials/-/knowledge_base/7-1/using-developer-studios-liferay-workspace-installer)
 section.
 
 ## Install Liferay @ide@ into Eclipse Environment [](id=install-liferay-developer-studio-into-eclipse-environment)
@@ -129,9 +126,8 @@ Awesome! You've installed Liferay @ide@ in your existing Eclipse environment.
 
 ## Generating a Workspace Token Manually [](id=generating-a-workspace-token-manually)
 
-The Liferay @ide@ 3.1 release contains a few issues with generating a token
-used to store your Liferay credentials. If you run into an issue with generating
-your token automatically, you can follow the steps below to manually create one.
+If you run into any issues with generating your token automatically, you can
+follow the steps below to manually create one.
 
 1.  Navigate to [www.liferay.com](https://www.liferay.com/) and log in to your
     account.
@@ -161,5 +157,5 @@ You've successfully generated your token manually and it's now available for
 your installer to access. If you haven't run the installer, you can do so now.
 If you've already run the installer, you can set the DXP bundle to download
 in the `gradle.properties` file of your workspace. See the
-[Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
+[Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
 tutorial for details.

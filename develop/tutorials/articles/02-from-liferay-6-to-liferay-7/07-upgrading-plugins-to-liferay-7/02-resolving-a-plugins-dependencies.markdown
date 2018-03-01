@@ -46,7 +46,7 @@ project to declare the modules it needs.
 Before @product-ver@, all the platform APIs were in `portal-service.jar`. Many 
 of these APIs are now in independent modules. Modularization has resulted in 
 many benefits, as described in the article 
-[Benefits of @product-ver@ for Liferay Portal 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers#modular-development-paradigm). 
+[Benefits of @product-ver@ for Liferay Portal 6 Developers](/develop/tutorials/-/knowledge_base/7-1/benefits-of-liferay-7-for-liferay-6-developers#modular-development-paradigm). 
 One such advantage is that these API modules can evolve separately from the
 platform kernel. They also simplify future upgrades. For example, instead of
 having to check all of Liferay's APIs, each module's 
@@ -66,14 +66,14 @@ app modules are therefore much easier to understand. Next, you'll track down the
 modules that now hold the classes referenced by your plugin. 
 
 The reference article 
-[Classes Moved from `portal-service.jar`](/develop/reference/-/knowledge_base/7-0/classes-moved-from-portal-service-jar) 
+[Classes Moved from `portal-service.jar`](/develop/reference/-/knowledge_base/7-1/classes-moved-from-portal-service-jar) 
 contains a table that maps each class moved from `portal-service.jar` to its new 
 module. The table includes each class's new package and symbolic name 
 (artifact ID). You'll use this information to configure your plugin's 
 dependencies on these modules. 
 
-Your plugin might reference classes that are in Liferay utility modules such as 
-`util-java`, `util-bridges`, `util-taglib`, or `util-slf4j`. 
+Your plugin might reference classes that are in Liferay utility modules formerly
+known as `util-java`, `util-bridges`, `util-taglib`, or `util-slf4j`. 
 
 The following table shows each Liferay utility module's symbolic name.
 
@@ -85,10 +85,10 @@ The following table shows each Liferay utility module's symbolic name.
  util-taglib             | `com.liferay.util.taglib` |
 
 You can use @product@'s
-[App Manager](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts),
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell),
+[App Manager](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts),
+[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell),
 or
-[module JAR file manifests](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
+[module JAR file manifests](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies#finding-core-liferay-portal-artifacts)
 to find versions of modules deployed on your @product@ instance. 
 
 +$$$
@@ -114,11 +114,11 @@ dependencies in your traditional plugin project:
 
 [**Option 2: Manage dependencies manually**](#managing-dependencies-manually)
 
-The next sections explain and demonstrate these options. 
+The next sections explain and demonstrate these options.
 
 ### Using a Dependency Management Tool [](id=managing-dependencies-with-ivy)
 
-Dependency management tools such as [Ant/Ivy](http://ant.apache.org/ivy/), [Maven](/develop/tutorials/-/knowledge_base/7-0/maven), and
+Dependency management tools such as [Ant/Ivy](http://ant.apache.org/ivy/), [Maven](/develop/tutorials/-/knowledge_base/7-1/maven), and
 [Gradle](https://gradle.org/)
 facilitate acquiring Java artifacts that provide packages your plugins need.
 They can download artifacts from public repositories or from internal
@@ -130,9 +130,9 @@ audit dependencies.
 The following links provide proxy details:
 
 - [Ant/Ivy](http://ant.apache.org/ivy/) - See documentation on proxy configuration, the `Setproxy` task, and [resolvers](http://ant.apache.org/ivy/history/latest-milestone/settings/resolvers.html)
-- [Maven](/develop/tutorials/-/knowledge_base/7-0/creating-a-maven-repository)
-- [Liferay Workspace \(Gradle\)](/develop/tutorials/-/knowledge_base/7-0/setting-proxy-requirements-for-liferay-workspace)
-- [Setting proxies in Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/setting-proxy-requirements-for-liferay-ide)
+- [Maven](/develop/tutorials/-/knowledge_base/7-1/creating-a-maven-repository)
+- [Liferay Workspace \(Gradle\)](/develop/tutorials/-/knowledge_base/7-1/setting-proxy-requirements-for-liferay-workspace)
+- [Setting proxies in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/setting-proxy-requirements-for-liferay-ide)
 
 $$$
 
@@ -146,13 +146,13 @@ available to your plugin.
 
 **Note**: You can use Gradle or Maven in place of Ivy for dependency management, 
 but this isn't in this tutorial's scope. Liferay's
-[Maven](/develop/tutorials/-/knowledge_base/7-0/maven) and
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+[Maven](/develop/tutorials/-/knowledge_base/7-1/maven) and
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
 tutorials demonstrate using these tools. 
 
 Additionally, Liferay Workspace provides a command for migrating Ant/Ivy
 projects to Gradle-based Liferay Workspace projects. See the tutorial
-[Migrating Traditional Plugins to Workspace Web Applications](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications).
+[Migrating Traditional Plugins to Workspace Web Applications](/develop/tutorials/-/knowledge_base/7-1/migrating-traditional-plugins-to-workspace-web-applications).
 
 $$$
 
@@ -163,16 +163,18 @@ Here's an example dependency element for the Liferay Journal API module, version
 
 Each dependency includes the module's name (`name`), organization (`org`), and
 revision number (`rev`). The 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies) 
 tutorial explains how to determine the module's organization (`org`). 
 
 At compile time, Ivy downloads the dependency JAR files to a cache folder so you
 can compile against them.
 
-At deployment, @product@'s WAB Generator creates an OSGi Web Application Bundle
-(WAB) for the plugin. The WAB generator detects the Java packages your plugin
-uses and declares dependencies on them. Your plugin can use the packages once a
-registered OSGi service provides them. 
+<!-- TODO link to WAB generator-->
+At deployment,
+[@product@'s WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
+creates an OSGi Web Application Bundle (WAB) for the plugin. The WAB generator
+detects the Java packages your plugin uses and declares dependencies on them.
+Your plugin can use the packages once a registered OSGi service provides them. 
 
 If your project doesn't already have an `ivy.xml` file, you can get one by 
 creating a new plugin project in Liferay @ide@ and copying the `ivy.xml` file it 
@@ -205,7 +207,7 @@ If you don't want to use Ivy or some other dependency management framework, you
 can store dependency JARs within your plugin project manually. You'll learn
 about this next. 
 
-### Managing Dependencies Manually [](id=managing-dependencies-manually)
+### Managing Plugin Dependencies Manually [](id=managing-dependencies-manually)
 
 Plugins rely on their dependencies' availability at compile time and run time.
 To compile your plugin, you must make sure the dependencies are available in the
@@ -269,17 +271,58 @@ the issue.
     the JAR to your plugin's `WEB-INF/lib` folder at compile time and adds the JAR
     to the plugin WAB at deployment. 
 
-+$$$
+#### Understanding Excluded JARs [](id=understanding-excluded-jars)
 
-**Note**: The portal property `module.framework.web.generator.excluded.paths`
-declares JAR file paths that are excluded from all @product@ generated WABs.
-All JARs listed for this property are excluded from the WABs, even if the
-plugins listed the JAR in their `portal-dependency-jars` property. Exercise
-great care if you modify the `module.framework.web.generator.excluded.paths`
-property. Altering the property can result in undefined behavior and might
-adversely affect your @product@ run time environment. 
+[Portal property `module.framework.web.generator.excluded.paths`](http://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module Framework)
+declares JARs that are stripped from all @product@ generated WABs. These JARs
+are excluded from WABs because @product@ provides them already. All JARs listed
+for this property are excluded from the WABs, even if the plugins listed the JAR
+in their `portal-dependency-jars` property. 
 
-$$$
+If your plugin requires different versions of the packages @product@ exports,
+you must include them in JARs named differently from the ones
+`module.framework.web.generator.excluded.paths` excludes. 
+
+For example, @product@'s
+[`system.packages.extra.bnd` file](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/core/portal-bootstrap/system.packages.extra.bnd)
+exports Spring Framework version 4.1.9 packages:
+
+    Export-Package:\
+        ...
+        org.springframework.*;version='4.1.9',\
+        ...
+
+@product@ uses the `module.framework.web.generator.excluded.paths` portal
+property to exclude their JARs.
+
+    module.framework.web.generator.excluded.paths=\
+        ...
+        WEB-INF/lib/spring-aop.jar,\
+        WEB-INF/lib/spring-aspects.jar,\
+        WEB-INF/lib/spring-beans.jar,\
+        WEB-INF/lib/spring-context.jar,\
+        WEB-INF/lib/spring-context-support.jar,\
+        WEB-INF/lib/spring-core.jar,\
+        WEB-INF/lib/spring-expression.jar,\
+        WEB-INF/lib/spring-jdbc.jar,\
+        WEB-INF/lib/spring-jms.jar,\
+        WEB-INF/lib/spring-orm.jar,\
+        WEB-INF/lib/spring-oxm.jar,\
+        WEB-INF/lib/spring-tx.jar,\
+        WEB-INF/lib/spring-web.jar,\
+        WEB-INF/lib/spring-webmvc.jar,\
+        WEB-INF/lib/spring-webmvc-portlet.jar,\
+        ...
+
+To use a different Spring Framework version in your WAB, you must name the
+corresponding Spring Framework JARs differently from the glob-patterned JARs
+`module.framework.web.generator.excluded.paths` lists. 
+
+For example, to use Spring Framework version 3.0.7's Spring AOP JAR, include it
+in your plugin's `WEB-INF/lib` but name it something other than
+`spring-aop.jar`. Adding the version to the JAR name (i.e.,
+`spring-aop-3.0.7.RELEASE.jar`) differentiates it from the excluded JAR and
+prevents it from being stripped from the WAB. 
 
 #### Using Packages @product@ Doesn't Export [](id=using-packages-liferay-portal-doesnt-export)
 
@@ -329,30 +372,17 @@ deploy module JARs you know are in that app suite. For example, if the Web
 Experience Management App Suite is already installed (which is the case for a 
 @product@ bundle), then don't deploy Web Content module JARs such as 
 `com.liferay.journal.api.jar`. Searching for a module in @product@'s 
-[App Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps) 
-is a sure-fire way to verify existing module installations. 
-
-## Using @product@'s Tag Library Definitions [](id=using-portals-tag-library-definitions)
-
-Before adding Tag Library Definition (TLD) files to your plugin, check @product@
-for them. The @product@ web application folder `WEB-INF/TLD` has over twenty
-TLDs, including Struts TLDs. 
-
-You can use @product@'s TLDs in a traditional plugin by adding them to the
-`portal-dependency-tlds` property in the plugin's
-`liferay-plugin-package.properties` file. 
-
-Way to go! You've fixed class imports and resolved dependencies on all the 
-modules and tag libraries your plugin uses. 
+[App Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps) 
+is a sure-fire way to verify existing module installations.
 
 ## Related Topics [](id=related-topics)
 
-[Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
+[Development Reference](/develop/reference/-/knowledge_base/7-1/development-reference)
 
-[Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
+[Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet)
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
+[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
 
-[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services)
+[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/7-1/finding-and-invoking-liferay-services)
 
-[Tooling](/develop/tutorials/-/knowledge_base/7-0/tooling)
+[Tooling](/develop/tutorials/-/knowledge_base/7-1/tooling)

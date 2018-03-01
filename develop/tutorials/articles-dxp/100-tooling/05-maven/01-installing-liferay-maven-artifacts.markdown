@@ -32,7 +32,7 @@ artifact:
         <dependency>
             <groupId>com.liferay.portal</groupId>
             <artifactId>com.liferay.portal.kernel</artifactId>
-            <version>2.0.0</version>
+            <version>2.61.2</version>
             <scope>provided</scope>
         </dependency>
         ...
@@ -85,14 +85,10 @@ also need to enable accessing the snapshot artifacts:
 
 $$$
 
-<!-- When the Liferay repository is configured in your `settings.xml` file,
+When the Liferay repository is configured in your `settings.xml` file,
 archetypes are generated based on that repository's contents. See the
-[Generating New Projects Using Archetypes]() tutorial for details on using Maven
-archetypes for Liferay development.
--->
-<!--
-The above should be added once the archetype tutorial is written. -Cody
--->
+[Generating New Projects Using Archetypes](/develop/tutorials/-/knowledge_base/7-1/generating-new-projects-using-archetypes)
+tutorial for details on using Maven archetypes for Liferay development.
 
 If you've configured the Liferay Nexus repository to access Liferay
 Maven artifacts and you've already been syncing from the Central Repository,
@@ -118,6 +114,8 @@ your choice.
     drop-down list to download the latest version of @product@ Maven.
 
     ![Figure 1: Select *Maven* from the drop-down list to download the @product@ Maven artifact Zip file.](../../../images-dxp/maven-select-download.png)
+
+    <!--TODO: Update image above for 7.1, once available. -Cody -->
 
 2.  Unzip the file and navigate to it in your command prompt. Then run the Ant
     command without a target.

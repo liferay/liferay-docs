@@ -18,13 +18,13 @@ There are two repositories that contain Liferay artifacts: Central Repository
 and Liferay Repository. The Central Repository is the default repository used to
 download artifacts if you don't have a remote repository configured. The Central
 Repository *usually* offers the latest Liferay Maven artifacts, but using the
-Liferay Repository *guarantees* the latest artifacts released by Liferay.  Other
+Liferay Repository *guarantees* the latest artifacts released by Liferay. Other
 than a slight delay in artifact releases between the two repositories, they're
 identical. You'll learn how to reference both of them next.
 
 Using the Central Repository to install Liferay Maven artifacts only requires
 that you 
-[specify your module's dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+[specify your module's dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies) 
 in its `pom.xml` file. For example, the snippet below sets a dependency on
 Liferay's `com.liferay.portal.kernel` artifact:
 
@@ -32,7 +32,7 @@ Liferay's `com.liferay.portal.kernel` artifact:
         <dependency>
             <groupId>com.liferay.portal</groupId>
             <artifactId>com.liferay.portal.kernel</artifactId>
-            <version>2.0.0</version>
+            <version>2.61.2</version>
             <scope>provided</scope>
         </dependency>
         ...
@@ -45,8 +45,8 @@ Repository.
 You can view the published Liferay Maven artifacts on the Central Repository by
 searching for *liferay maven* in the repo's Search bar. For convenience, click
 this link: [http://search.maven.org/#search|ga|1|liferay maven](http://search.maven.org/#search|ga|1|liferay%20maven).
-Use the Latest Version column as a guide to see what's available for
-the version of @product@ for which you're developing.
+Use the Latest Version column as a guide to see what's available for the version
+of @product@ you're developing for.
 
 If you'd like to access Liferay's latest Maven artifacts, configure Maven to use 
 [Liferay's Nexus repository](https://repository.liferay.com) instead with the
@@ -83,14 +83,10 @@ must also enable accessing snapshot artifacts:
 
 $$$
 
-<!-- When the Liferay repository is configured in your `settings.xml` file,
+When the Liferay repository is configured in your `settings.xml` file,
 archetypes are generated based on that repository's contents. See the
-[Generating New Projects Using Archetypes]() tutorial for details on using Maven
-archetypes for Liferay development.
--->
-<!--
-The above should be added once the archetype tutorial is written. -Cody
--->
+[Generating New Projects Using Archetypes](/develop/tutorials/-/knowledge_base/7-1/generating-new-projects-using-archetypes)
+tutorial for details on using Maven archetypes for Liferay development.
 
 If you've configured the Liferay Nexus repository to access Liferay
 Maven artifacts and you've already been syncing from the Central Repository,
@@ -102,8 +98,9 @@ Liferay Repository credentials when publishing your artifacts.
 The Liferay Maven repository offers a good alternative for those who want the
 most up-to-date Maven artifacts produced by Liferay. 
 
-If you can't use either of these options, you can still install Liferay Maven
-artifacts from a local repository.
+If you can't access remote repositories (e.g., restrictions due to a corporate
+firewall), you can still install Liferay Maven artifacts from a local
+repository.
 
 ## Installing Artifacts from a Local Repository [](id=installing-artifacts-from-a-local-repository)
 
@@ -118,8 +115,8 @@ install them to a Maven repository of your choice.
 
     ![Figure 1: After selecting the Liferay version, select the Liferay Portal Maven Zip file to download.](../../../images/maven-select-download.png)
 
-2.  Unzip the file and navigate to it at the command line. Run the Ant
-    command without a target.
+2.  Unzip the file and navigate to it at the command line. Run the Ant command
+    without a target.
     
         ant
     

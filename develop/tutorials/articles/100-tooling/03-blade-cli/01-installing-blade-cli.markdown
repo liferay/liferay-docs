@@ -2,7 +2,7 @@
 
 You can install Blade CLI using the Liferay Workspace installer. This installs
 JPM and Blade CLI into your user home folder and optionally initializes a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
 folder.
 
 +$$$
@@ -12,13 +12,13 @@ folder.
 Since the installer only installs Blade CLI to your user home folder, your
 previous global installation would always override the installer's installation.
 Therefore, always follow the
-[Updating Blade CLI](/develop/tutorials/-/knowledge_base/7-0/updating-blade-cli)
+[Updating Blade CLI](/develop/tutorials/-/knowledge_base/7-1/updating-blade-cli)
 tutorial to update your Blade CLI instance.
 
 $$$
 
 If you need to configure proxy settings for Blade CLI, follow the
-[Installing Blade CLI with Proxy Requirements](/develop/tutorials/-/knowledge_base/7-0/setting-blade-cli-proxy-requirments)
+[Installing Blade CLI with Proxy Requirements](/develop/tutorials/-/knowledge_base/7-1/setting-blade-cli-proxy-requirments)
 
 Follow the steps below to download and install Blade CLI:
 
@@ -51,7 +51,7 @@ That's it! Blade CLI is installed on your machine! If you specified a location
 to initialize a Liferay Workspace folder, that is also available.
 
 Blade CLI offers many
-[`create` templates](/develop/reference/-/knowledge_base/7-0/project-templates)
+[templates](/develop/reference/-/knowledge_base/7-1/project-templates)
 to help build @product-ver@ applications. It also offers various ways to deploy
 those apps and interact with your Liferay server. Be sure to explore more Blade
 CLI tutorials to learn how.

@@ -1,7 +1,0 @@
-Bundle-Name: Example Service Consumer Portlet
-Bundle-SymbolicName: com.liferay.docs.exampleserviceconsumerportlet
-Bundle-Version: 1.0.0
-Private-Package: com.liferay.docs.exampleserviceconsumerportlet
-Include-Resource:\
-        classes,\
-        META-INF/resources=src/META-INF/resources

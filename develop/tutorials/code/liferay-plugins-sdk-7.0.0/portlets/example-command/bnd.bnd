@@ -1,4 +1,0 @@
-Bundle-Name: Example Command
-Bundle-SymbolicName: com.liferay.docs.examplecommand
-Bundle-Version: 1.0.0
-Private-Package: com.liferay.docs.examplecommand

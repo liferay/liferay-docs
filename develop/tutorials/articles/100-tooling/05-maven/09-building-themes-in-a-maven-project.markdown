@@ -4,13 +4,14 @@ Liferay's Theme Builder is a tool used to build @product@ theme files in your
 project. You can incorporate the Theme Builder into your Maven project to
 generate WAR-style themes deployable to @product@. To learn more about theming
 in @product@, see the
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/themes-and-layout-templates)
 tutorial section. 
 
 The easiest way to create a Liferay theme with Maven is to create a new Maven
-project using Liferay's provided Theme archetype. You can learn how to generate
-a Maven Theme project by visiting the
-[Generating New Projects Using Archetypes](/develop/tutorials/-/knowledge_base/7-0/generating-new-projects-using-archetypes)
+project using Liferay's provided
+[Theme archetype](/develop/reference/-/knowledge_base/7-1/theme-template). You
+can learn how to generate a Maven Theme project by visiting the
+[Generating New Projects Using Archetypes](/develop/tutorials/-/knowledge_base/7-1/generating-new-projects-using-archetypes)
 tutorial. In some cases, however, this may not be convenient. For instance, if
 you have a legacy theme project and don't want to start over, generating a new
 project is not ideal. 
@@ -18,14 +19,16 @@ project is not ideal.
 For cases like this, you should manually configure your Maven project to
 build a theme. You'll learn how to do this next.
 
-1.  Configure Liferay's Theme Builder plugin in your project's `pom.xml` file:
+1.  Configure Liferay's
+    [Theme Builder](/develop/reference/-/knowledge_base/7-1/theme-builder-plugin)
+    plugin in your project's `pom.xml` file:
 
         <build>
             <plugins>
                 <plugin>
                     <groupId>com.liferay</groupId>
                     <artifactId>com.liferay.portal.tools.theme.builder</artifactId>
-                    <version>${com.liferay.portal.tools.theme.builder.version}</version>
+                    <version>1.1.4</version>
                     <executions>
                         <execution>
                             <phase>generate-resources</phase>
@@ -52,13 +55,13 @@ build a theme. You'll learn how to do this next.
     execution and configuration.
 
     - The
-      [`executions` tag](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag)
-      configures the Theme Builder to run during the `generate-resources` phase
-      of your Maven project's build lifecycle. The `build`
+      [executions](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag)
+      tag configures the Theme Builder to run during the `generate-resources`
+      phase of your Maven project's build lifecycle. The `build`
       [goal](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#A_Build_Phase_is_Made_Up_of_Plugin_Goals)
       is defined for that lifecycle phase.
     - The
-      [`configuration` tag](https://maven.apache.org/pom.html#Plugins) defines
+      [configuration](https://maven.apache.org/pom.html#Plugins) defines tag
       several important properties:
         - `diffsDir`: The folder holding the files to copy over the parent
           theme.
@@ -75,7 +78,7 @@ build a theme. You'll learn how to do this next.
         <plugin>
             <groupId>com.liferay</groupId>
             <artifactId>com.liferay.css.builder</artifactId>
-            <version>${com.liferay.css.builder.version}</version>
+            <version>2.1.0</version>
             <executions>
                 <execution>
                     <id>default-build</id>
@@ -94,7 +97,7 @@ build a theme. You'll learn how to do this next.
 
     You can learn more about the CSS Builder's Maven configuration by visiting
     the
-    [Compiling Sass Files in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/compiling-sass-files-in-a-maven-project)
+    [Compiling Sass Files in a Maven Project](/develop/tutorials/-/knowledge_base/7-1/compiling-sass-files-in-a-maven-project)
     tutorial.
 
 3.  You can configure your project to exclude Sass files from being packaged in
@@ -122,7 +125,7 @@ build a theme. You'll learn how to do this next.
         <packaging>war</packaging>
 
 5.  Building themes requires certain dependencies. You can 
-    [configure these dependenices](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+    [configure these dependenices](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies) 
     in your project's `pom.xml` as directories or JAR files. If you choose to 
     use JARs, you must apply the 
     [maven-dependency-plugin](http://maven.apache.org/plugins/maven-dependency-plugin/) 
@@ -171,10 +174,10 @@ build a theme. You'll learn how to do this next.
 6.  Configure the properties for your project in its `pom.xml` file:
 
         <properties>
-            <com.liferay.css.builder.version>1.0.28</com.liferay.css.builder.version>
+            <com.liferay.css.builder.version>2.0.1</com.liferay.css.builder.version>
             <com.liferay.frontend.css.common.version>2.0.4</com.liferay.frontend.css.common.version>
-            <com.liferay.frontend.theme.styled.version>2.0.27</com.liferay.frontend.theme.styled.version>
-            <com.liferay.frontend.theme.unstyled.version>2.1.14</com.liferay.frontend.theme.unstyled.version>
+            <com.liferay.frontend.theme.styled.version>2.0.28</com.liferay.frontend.theme.styled.version>
+            <com.liferay.frontend.theme.unstyled.version>2.2.5</com.liferay.frontend.theme.unstyled.version>
             <com.liferay.portal.tools.theme.builder.version>1.1.4</com.liferay.portal.tools.theme.builder.version>
         </properties>
 
@@ -183,4 +186,4 @@ build a theme. You'll learn how to do this next.
 
 You've successfully configured your Maven project to build a Liferay theme! For
 info on running the Theme Builder in your Maven project, see the
-[Theme Builder](/develop/tutorials/-/knowledge_base/7-0/theme-builder) tutorial.
+[Theme Builder](/develop/tutorials/-/knowledge_base/7-1/theme-builder) tutorial.

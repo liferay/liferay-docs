@@ -1,7 +1,0 @@
-Bundle-Name: Example JSP Portlet
-Bundle-SymbolicName: com.liferay.docs.examplejspportlet
-Bundle-Version: 1.0.0
-Private-Package: com.liferay.docs.examplejspportlet
-Include-Resource:\
-    classes,\
-    META-INF/resources=src/META-INF/resources

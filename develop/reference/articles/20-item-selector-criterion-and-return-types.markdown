@@ -1,7 +1,9 @@
 # Item Selector Criterion and Return Types [](id=item-selector-criterion-and-return-types)
 
-@product@ bundles have apps and app suites containing [`ItemSelectorCriterion` classes](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html)
-and [`ItemSelectorReturnType` classes](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html)
+@product@ bundles have apps and app suites containing 
+[`ItemSelectorCriterion` classes](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html) 
+and 
+[`ItemSelectorReturnType` classes](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html) 
 developers can use. 
 
 ## Item Selector Criterion Classes [](id=item-selector-criterion-classes)

@@ -2,11 +2,13 @@
 
 If your Liferay Maven project uses Sass files to style its UI, you must
 configure the project to convert its Sass files into CSS files so they are
-recognizable for Maven's build lifecycle. It would be a real pain to convert your
-Sass files into CSS files manually before building your Maven project!
+recognizable for Maven's build lifecycle. It would be a real pain to convert
+your Sass files into CSS files manually before building your Maven project!
 
-Liferay provides the `com.liferay.css.builder` plugin. The CSS Builder converts
-Sass files into CSS files so the Maven build can parse your style sheets.
+Liferay provides the `com.liferay.css.builder` plugin. The
+[CSS Builder](/develop/reference/-/knowledge_base/7-1/css-builder-plugin)
+converts Sass files into CSS files so the Maven build can parse your style
+sheets.
 
 Here's how to apply Liferay's CSS builder to your Maven project.
 
@@ -15,7 +17,7 @@ Here's how to apply Liferay's CSS builder to your Maven project.
         <plugin>
             <groupId>com.liferay</groupId>
             <artifactId>com.liferay.css.builder</artifactId>
-            <version>1.0.28</version>
+            <version>2.1.0</version>
             <executions>
                 <execution>
                     <id>default-build</id>
@@ -37,13 +39,13 @@ Here's how to apply Liferay's CSS builder to your Maven project.
     configuration.
 
     - The
-      [`executions` tag](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag)
-      configures the CSS Builder to run during the `compile` phase of your Maven
-      project's build lifecycle. The `build`
+      [executions](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag)
+      tag configures the CSS Builder to run during the `compile` phase of your
+      Maven project's build lifecycle. The `build`
       [goal](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#A_Build_Phase_is_Made_Up_of_Plugin_Goals)
       is defined for that lifecycle phase.
     - The
-      [`configuration` tag](https://maven.apache.org/pom.html#Plugins) defines
+      [configuration](https://maven.apache.org/pom.html#Plugins) tag defines
       two important properties:
         - `docrootDirName`: The base `resources` folder containing the Sass
           files to compile.
@@ -53,9 +55,9 @@ Here's how to apply Liferay's CSS builder to your Maven project.
           [Liferay Frontend Common CSS JAR](https://mvnrepository.com/artifact/com.liferay/com.liferay.frontend.css.common)
           file.
 
-2.  If you're using 
-    [Bourbon](http://bourbon.io/) in your Sass files, you'll need to 
-    [add an additional plugin dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+2.  If you're using [Bourbon](http://bourbon.io/) in your Sass files, you'll
+    need to 
+    [add an additional plugin dependency](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies) 
     to your project's POM. If you're not using Bourbon, skip this step. Add the 
     following plugin dependency: 
 
@@ -94,7 +96,7 @@ Here's how to apply Liferay's CSS builder to your Maven project.
 
 **Note:** Liferay's CSS Builder is supported for Oracle's JDK and uses a native
 compiler for increased speed. If you're using an IBM JDK, you may experience
-issues when building your SASS files (e.g., when building a theme). It's
+issues when building your Sass files (e.g., when building a theme). It's
 recommended to switch to using the Oracle JDK, but if you prefer using the IBM
 JDK, you must use the fallback Ruby compiler. To do this, add the following
 tag to your CSS Builder configuration in your POM:

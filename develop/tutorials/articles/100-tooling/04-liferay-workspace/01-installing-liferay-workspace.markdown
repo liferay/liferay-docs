@@ -2,10 +2,10 @@
 
 You can install Liferay Workspace using the Liferay Workspace installer. This
 installs JPM and
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) into your user
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) into your user
 home folder and optionally initializes a Liferay Workspace folder. This is the
 same installer used to install Blade CLI, which is covered in the
-[Installing Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
+[Installing Blade CLI](/develop/tutorials/-/knowledge_base/7-1/installing-blade-cli)
 tutorial.
 
 Follow the steps below to download and install Liferay Workspace:
@@ -41,7 +41,7 @@ Follow the steps below to download and install Liferay Workspace:
     to your `~/.liferay/bundles` folder, so if you decide to initialize another
     @product@ instance of the same version, the bundle is not re-downloaded. See
     the
-    [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
+    [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
     for more information on this topic.
 
     $$$

@@ -5,12 +5,12 @@ does my Liferay portlet project need? What does a Liferay Maven Service Builder
 project look like? How do I create a Liferay Maven-based context contributor?
 These questions can be answered with three words: Liferay Maven Archetypes.
 
-Liferay provides a slew of Maven archetypes for easy Liferay module projects. In
-this tutorial, you'll learn how to use Liferay's Maven archetypes to generate
-your module project.
+Liferay provides a slew of Maven archetypes to easily create Liferay projects.
+In this tutorial, you'll learn how to use Liferay's Maven archetypes to generate
+a project.
 
-At the time of this writing, Liferay provides just under 40 Maven archetypes for
-you to use; expect this number to continue growing! These archetypes are
+At the time of this writing, Liferay provides approximately 60 Maven archetypes
+for you to use; expect this number to continue growing! These archetypes are
 generated from the Central Repository, unless you've configured for them to be
 generated from another remote repository (e.g., 
 [Liferay Repository](https://repository.liferay.com). You can view the
@@ -19,34 +19,34 @@ Liferay-provided Maven archetypes by running the following command:
     mvn archetype:generate -Dfilter=liferay
 
 The generated archetypes are not all intended for the latest @product@ release.
-Some are intended for earlier versions of Liferay Portal (e.g., 6.2, 6.1, etc.).
-An easy way to tell if the archetype is compatible with @product-ver@ is by
-inspecting the archetype's package name. Archetypes with the
-`com.liferay.maven.archetypes` prefix are legacy archetypes. Those prefixed with
+Some are intended for earlier versions of Liferay Portal (e.g., 7.0, 6.2). For
+example, archetypes with the `com.liferay.maven.archetypes` prefix are legacy
+archetypes targeted for Liferay Portal 6.2. Those prefixed with
 `com.liferay.project.templates.[TYPE]` or `com.liferay.faces.archetype:[TYPE]`
 are compatible with @product-ver@.
 
+<!-- TODO: Monitor the archetypes; updates may be required for the above text
+for upcoming 7.1 Maven archetypes. -Cody -->
+
 Here's a brief list of some popular Maven archetypes provided by Liferay:
 
-- Activator
-- [Context Contributor](/develop/tutorials/-/knowledge_base/7-0/context-contributors)
-- [Liferay Faces](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
+- [Activator](/develop/reference/-/knowledge_base/7-1/using-the-activator-template)
+- [Fragment](/develop/reference/-/knowledge_base/7-1/using-the-fragment-template)
+- [Liferay Faces](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
   portlets
-    - [Alloy](https://web.liferay.com/community/liferay-projects/liferay-faces/alloy)
-    - [ICEfaces](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf)
-    - [JSF](https://web.liferay.com/community/liferay-projects/liferay-faces/overview)
-    - [PrimeFaces](http://primefaces.org/)
-    - [RichFaces](http://richfaces.jboss.org/)
-- [MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet)
-- [Panel App](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)
-- [Portlet Provider](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
-- [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
-- Service Wrapper
-- Vaadin Liferay portlet
+- [MVC Portlet](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template)
+- [npm Metal.js Portlet](/develop/reference/-/knowledge_base/7-1/npm-metal-js-portlet-template)
+- [npm React Portlet](/develop/reference/-/knowledge_base/7-1/npm-react-portlet-template)
+- [Panel App](/develop/reference/-/knowledge_base/7-1/panel-app-template)
+- [Portlet Provider](/develop/reference/-/knowledge_base/7-1/portlet-provider-template)
+- [Service Builder](/develop/reference/-/knowledge_base/7-1/using-the-service-builder-template)
+- [Soy Portlet](/develop/reference/-/knowledge_base/7-1/soy-portlet-template)
+- [Theme](/develop/reference/-/knowledge_base/7-1/theme-template)
+- and many more...
 
-For documentation on the archetypes (project templates) compatible with @product-ver@,
-see the
-[Project Templates](/develop/reference/-/knowledge_base/7-0/project-templates)
+For documentation on the archetypes (project templates) compatible with
+@product-ver@, see the
+[Project Templates](/develop/reference/-/knowledge_base/7-1/project-templates)
 reference section. Visit Maven's
 [Archetype Generation](http://maven.apache.org/archetype/maven-archetype-plugin/generate-mojo.html)
 documentation for further details on how to modify the Maven archetype
@@ -69,7 +69,7 @@ archetype.
         mvn archetype:generate -Dfilter=liferay
 
 2.  Select the `com.liferay.project.templates.mvc.portlet` archetype by
-    choosing its corresponding number (e.g., `8`).
+    choosing its corresponding number (e.g., `11`).
 
     In some cases, an archetype provides multiple versions of itself for you to
     select. Make sure to select the archetype version that corresponds with the
@@ -81,7 +81,7 @@ archetype.
 
     - `groupId`: `com.liferay`
     - `artifactId`: `com.liferay.project.templates.mvc.portlet`
-    - `version`: `1.0.0`
+    - `version`: `1.0.6`
     - `package`: `com.liferay.docs`
     - `className`: `SampleMVC`
 
@@ -89,8 +89,8 @@ archetype.
     of the properties configuration you defined. Enter `Y` to confirm your
     project's configuration.
 
-Your Maven project is generated and available from the folder for which you ran
-the archetype generation command. If you have an existing parent `pom.xml` file
+Your Maven project is generated and available from the folder you ran the
+archetype generation command from. If you have an existing parent `pom.xml` file
 in that folder, your module project is automatically accounted for there:
 
     <modules>
@@ -98,8 +98,8 @@ in that folder, your module project is automatically accounted for there:
         <module>com.liferay.project.templates.mvc.portlet</module>
     </modules>
 
-The Liferay Maven archetypes generate deployable Liferay module projects, but
-they're bare bones and likely require further customizations.
+The Liferay Maven archetypes generate deployable Liferay projects, but they're
+bare bones and likely require further customizations.
 
-If you want to generate a quick foundation for a Liferay module built with
+If you want to generate a quick foundation for a Liferay project built with
 Maven, using Liferay Maven archetypes is your best option.
