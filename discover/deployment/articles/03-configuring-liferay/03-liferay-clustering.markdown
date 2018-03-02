@@ -285,7 +285,7 @@ message boards, configure a block with the `MBMessageImpl` class:
 If you're overriding these properties, it's because you want to customize the
 configuration for your own site. A good way to start with this is to extract
 @product@'s configuration file and then customize it. You'll find it in the
-`com.liferay.portal.ehcache-[version].jar` file. You can get this from
+`com.liferay.portal.cache.ehcache-[version].jar` file. You can get this from
 @product@'s `Liferay Foundation.lpkg` file in the `osgi/marketplace` folder. The
 file you want is `liferay-multi-vm-clustered.xml`, in the `/ehcache` folder
 inside the `.jar`. Once you have the file, replace the contents of the
