@@ -106,7 +106,7 @@ It's time to design a modular application.
 Application design often starts out simple but gets more complex as you
 determine capabilities the application requires. If a third party library
 already provides the capability, you can
-[deploy it with your app](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module).
+[deploy it with your app](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module).
 You can otherwise implement the capability yourself. 
 
 As you design various aspects of your app to support its function, you must
@@ -121,6 +121,7 @@ the app's function and required capabilities:
 *Function*: interface with users to translate their speech into text for the computer to understand. 
 
 *Required capabilities*:
+
 - Translates user words to text 
 - Uses a selected computer voice to speak to users. 
 - Interacts with users based on a script of instructions that include
