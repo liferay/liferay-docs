@@ -17,7 +17,7 @@ outside the context of an OSGi module (i.e., you can't use Declarative
 Services to create a Component), keep reading to learn about how to implement a
 Service Tracker to look up services in the service registry. 
 
-![Figure 1: Service implementations that are registered in the OSGi service registry can be accessed using Service Trackers.](../../../images/service-registry.png)
+![Figure 1: Service implementations that are registered in the OSGi service registry can be accessed using Service Trackers.](../../images/service-registry.png)
 
 What scenarios might require the use of a service tracker?
 
