@@ -9,7 +9,7 @@ parts.
 
 @product@ is modular too. It comprises code modules created and tested
 independently and in parallel. It's a platform on which modules and modular
-applications are installed, started, used, stopped, and uninstalled. @product@'s
+applications are installed, started, used, stopped, and uninstalled. Liferay's
 components use the OSGi modularity standard. 
 
 These tutorials demonstrate developing OSGi services and components to customize
