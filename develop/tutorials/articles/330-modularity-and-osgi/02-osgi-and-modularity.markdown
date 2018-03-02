@@ -12,7 +12,7 @@ benefits to modular development on DXP:
 - Modules' dependencies are managed automatically by the container, dynamically
   (no restart required). 
 - The container manages module life cycles dynamically. Modules can be
-  installed, started, updated, stopped, and uninstalled while @product@ is
+  installed, started, updated, stopped, and uninstalled while Liferay is
   running, making deployment a snap. 
 - Only a module's classes whose packages are explicitly exported are publicly
   visible; OSGi hides all other classes by default.
@@ -32,7 +32,7 @@ it hard to go back to developing any other way.
 It's time to see what module projects look like and see @product@'s modular
 development features in action. To keep things simple, only project code and
 structure are shown: you can 
-[create modules](/develop/tutorials/-/knowledge_base/7-0/starting-module-development)
+[create modules](/develop/tutorials/-/knowledge_base/7-1/starting-module-development)
 like these anytime. 
 
 These modules collectively provide a command that takes a String and uses it in
@@ -143,7 +143,7 @@ All that's left, then, is the class that provides the implementation:
     }
 
 The implementation is simple. It uses the `String` as a name and prints a hello
-message. A better implementation might be to use @product@'s API to collect all
+message. A better implementation might be to use Liferay's API to collect all
 the names of all the users in the system and send each user a greeting
 notification, but the point here is to keep things simple. You should
 understand, though, that there's nothing stopping you from replacing this
@@ -162,7 +162,7 @@ component is a POJO that the runtime creates automatically when the module start
 To compile this module, the API it's implementing must be on the classpath. If
 you're using Gradle, you'd add the `greetings-api` project to your `dependencies { ... }`
 block. In a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace) 
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace) 
 module, the dependency looks like this: 
 
     compileOnly project (':modules:greeting-api')
@@ -173,7 +173,7 @@ That's all there is to a provider module.
 
 The consumer or client uses the API that the API module defines and the provider
 module implements. DXP has many different kinds of consumer modules.
-[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets) 
+[Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets) 
 are the most common consumer module type, but since they are a topic all by
 themselves, this example stays simple by creating an command for the Apache
 Felix Gogo shell. Note that consumers can, of course, consume many different
@@ -263,9 +263,9 @@ appropriately, the container knows about these dependencies, and provides them
 automatically. 
 
 If you were to
-[deploy these modules to a DXP instance](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module),
+[deploy these modules to a DXP instance](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module),
 you'd be able to attach to the
-[Gogo Shell](develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+[Gogo Shell](develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
 and execute a command like this:
 
     greet:greet "Captain\ Kirk"
@@ -280,7 +280,7 @@ coupling, making your software easy to manage, enhance, and support.
 
 ## A Typical Liferay Application [](id=a-typical-liferay-application)
 
-If you look at a typical application from @product@'s source, you'll generally
+If you look at a typical application from Liferay's source, you'll generally
 find at least four modules: 
 
 - An API module
@@ -297,7 +297,7 @@ back-ends. In the case of the Wiki, there are separate modules for different
 Wiki engines. 
 
 Encapsulating capability variations as modules facilitates extensibility. If you
-have a document storage back-end that @product@ doesn't yet support, you can
+have a document storage back-end that Liferay doesn't yet support, you can
 implement Liferay's document storage API for your solution by developing a
 module for it and thus extend Liferay's Documents and Media library. If there's
 a Wiki dialect that you like better than what Liferay's wiki provides, you can
@@ -308,14 +308,14 @@ for you to learn more.
 
 ## Related Topics [](id=related-topics)
 
-[Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+[Liferay IDE](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
 
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
 
-[Maven](/develop/tutorials/-/knowledge_base/7-0/maven)
+[Maven](/develop/tutorials/-/knowledge_base/7-1/maven)
 
-[Developing a Web Application](/develop/tutorials/-/knowledge_base/7-0/developing-a-web-application)
+[Developing a Web Application](/develop/tutorials/-/knowledge_base/7-1/developing-a-web-application)
 
-[Planning a Plugin Upgrade to Liferay 7](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7)
+[Planning a Plugin Upgrade to Liferay 7](/develop/tutorials/-/knowledge_base/7-1/migrating-existing-code-to-liferay-7)
