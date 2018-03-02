@@ -55,7 +55,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 - `assetEntryId`
 
-If you don’t use `assetEntryId`, you must use these attributes: 
+If you don't use `assetEntryId`, you must use these attributes: 
 
 - `className`
 - `classPK`
@@ -66,7 +66,7 @@ If you don’t use `assetEntryId`, you must use these attributes:
 |-----------|-----------|-------------|
 | `assetEntryId` | `number` | The primary key of the video file. | 
 | `className` | `string` | The video file's fully qualified class name. Since files in a Documents and Media Library are `DLFileEntry` objects, the `className` is [`com.liferay.document.library.kernel.model.DLFileEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFileEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `classPK` | `number` | The video file’s unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `classPK` | `number` | The video file's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `autoLoad` | `boolean` | Whether the video automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
 | `offlinePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-0/video-display-screenlet-for-ios#offline) for details. |
 

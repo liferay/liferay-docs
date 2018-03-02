@@ -8,7 +8,7 @@ and
 respectively. Screens also includes list Screenlets for displaying lists of 
 other Liferay entities like web content articles, images, and more. 
 [The Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
-lists all the Screenlets included with Liferay Screens. If there’s not a list 
+lists all the Screenlets included with Liferay Screens. If there's not a list 
 Screenlet for the entity you want to display in a list, you must create your 
 own. A list Screenlet can display any entity from a Liferay instance. For 
 example, you can create a list Screenlet that displays standard Liferay entities 
@@ -16,10 +16,10 @@ like `User`, or custom entities from custom Liferay apps.
 
 This tutorial uses code from the sample Bookmark List Screenlet to show you how 
 to create your own list Screenlet. This Screenlet displays a list of bookmarks 
-from Liferay’s Bookmarks portlet. You can find this Screenlet's complete code 
+from Liferay's Bookmarks portlet. You can find this Screenlet's complete code 
 [here in GitHub](https://github.com/liferay/liferay-screens/tree/master/android/samples/listbookmarkscreenlet). 
 
-Note that because this tutorial focuses on creating a list Screenlet, it doesn’t 
+Note that because this tutorial focuses on creating a list Screenlet, it doesn't 
 explain general Screenlet concepts and components. Before beginning, you should 
 therefore read the following tutorials: 
 
@@ -39,7 +39,7 @@ First though, you should understand how pagination works with list Screenlets.
 
 To ensure that users can scroll smoothly through large lists of items, list 
 Screenlets support fluent pagination. Support for this is built into the list 
-Screenlet framework. You’ll see this as you construct your list Screenlet. 
+Screenlet framework. You'll see this as you construct your list Screenlet. 
 
 Now you're ready to begin! 
 
