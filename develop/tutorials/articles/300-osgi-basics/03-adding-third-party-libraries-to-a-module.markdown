@@ -9,15 +9,18 @@ libraries?
 
 Here is the main workflow for resolving third party Java library packages:
 
-**Step 1 - Find an OSGi module version of the library**: Repositories, such as
-Eclipse Orbit, host OSGi modules that developers have created based on
-traditional Java libraries.
-[Eclipse Orbit](download.eclipse.org/tools/orbit/downloads/drops/R20170919201930/)
-hosts over a hundred such OSGi modules. Deploying the module to Liferay's OSGi
-framework lets you share it on the system. If you find a module for the library
-you need,
-[deploy](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
-it. Then add a `compileOnly` dependency on it in your module. When you deploy
+**Step 1 - Find an OSGi module of the library**: Projects, such as [Eclipse Orbit](https://www.eclipse.org/orbit/)
+and [ServiceMix Bundles](https://servicemix.apache.org/developers/source/bundles-source.html), 
+convert hundreds of traditional Java libraries to OSGi modules. Their artifacts
+are available at these locations:
+
+- [Eclipse Orbit](download.eclipse.org/tools/orbit/downloads/drops/R20170919201930/)
+- [ServiceMix Bundles](https://mvnrepository.com/artifact/org.apache.servicemix.bundles)
+
+Deploying the module to Liferay's OSGi framework lets you share it on the
+system. If you find a module for the library you need,
+[deploy](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module)
+it. Then add a `compileOnly` dependency for it in your module. When you deploy
 your module, the OSGi framework wires the dependency module to your module. If
 you don't find an OSGi module based on the Java library, go to Step 2. 
 
