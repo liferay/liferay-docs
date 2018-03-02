@@ -3,19 +3,15 @@
 Since LCS activates your @product@ instance, your server must maintain its 
 connection to LCS at all times. If this connection is interrupted, your server 
 enters a grace period to allow for reconnection. Lengthy interruptions, however, 
-can affect your server's uptime. Liferay takes this very seriously and takes 
-steps to ensure the stability of LCS. This document discusses how Liferay does 
-this, how LCS handles connection errors and the grace period, and some 
+can affect your server's uptime. Because LCS is deployed on a global cloud 
+infrastructure set up for automatic failure recovery, the potential for 
+non-availability is very low. Notifications also let the LCS team react quickly 
+to any downtime. During LCS updates and new version releases, LCS will be 
+unavailable for a few minutes while the new changes are being applied. 
+
+This document discusses how LCS handles the grace period, and presents some 
 troubleshooting steps that you can follow if you have problems with your 
 server's LCS connection. 
-
-## LCS System Resilience
-
-Because LCS is deployed on a global cloud infrastructure set up for automatic 
-failure recovery, the potential for non-availability is very low. Notifications 
-also let the LCS team react quickly to any downtime. During LCS updates and new 
-version releases, LCS will be unavailable for a few minutes while the new 
-changes are being applied. 
 
 ## LCS Grace Periods
 
@@ -114,65 +110,82 @@ instance be 30 days instead?
 The Liferay Support team is there to assist you if you encounter issues with 
 LCS. If you need support, open a 
 [LESA](https://web.liferay.com/group/customer/support/-/support/ticket) 
-ticket. You can begin troubleshooting according to these scenarios, which the 
-Liferay Support team can also assist you with. 
+ticket. You can begin troubleshooting according to the following scenarios, 
+which the Liferay Support team can also assist you with. 
 
-1.  If your server can't reach LCS, verify that you can access the public sites 
-    that LCS requires access to:
++$$$
 
-    -   `lcs.liferay.com` should be viewable in a browser.
-    -   `lcs-gateway.liferay.com` should respond to a `curl` or telnet command: 
+**Note:** Before troubleshooting specific issues or contacting Liferay Support, 
+make sure that you've followed the LCS 
+[preconfiguration](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration) 
+and 
+[activation](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs) 
+steps correctly. 
+
+$$$
+
+### Server Can't Reach LCS
+
+If your server can't reach LCS, verify that you can access the public sites that 
+LCS requires access to:
+
+-   [`lcs.liferay.com`](https://lcs.liferay.com/) 
+    should be viewable in a browser.
+-   `lcs-gateway.liferay.com` should respond to a `curl` or telnet command: 
 
         curl -vk -I "https://lcs-gateway.liferay.com"
         telnet lcs-gateway.liferay.com 443
 
-2.  For issues related to your subscription, first see the documentation on 
-    [managing your subscription](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions). 
-    Subscription errors usually involve one of these problems:
+### Subscription Issues
 
-    -   Your server can reach LCS, but can't locate a subscription.
-    -   Your server can reach LCS and locate a subscription, but the 
-        subscription's number of servers or cores are exceeded. 
+For issues related to your subscription, first review the documentation on 
+[managing your subscription](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions). 
+Subscription errors usually involve one of these problems:
 
-    In either case, you must verify that you have an available subscription, and 
-    that you're not exceeding its allowed number of servers or cores. You can 
-    find this information on the LCS site's Subscriptions page, as described in 
-    [the documentation](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions).
-    If the environment in which you're trying to activate a server isn't 
-    assigned the subscription you want to use, then you must create a new 
-    environment and assign it the correct subscription. Once assigned, you can't 
-    change an environment's subscription. Follow 
-    [the initial registration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs) 
-    for instructions on creating a new environment and activating a new server. 
+-   Your server can reach LCS, but can't locate a subscription.
+-   Your server can reach LCS and locate a subscription, but the subscription's 
+    number of servers or cores are exceeded. 
 
-    +$$$
+In either case, you must verify that you have an available subscription, and 
+that you're not exceeding its allowed number of servers or cores. You can find 
+this information on the LCS site's Subscriptions page, as described in 
+[the documentation](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions).
+If the environment in which you're trying to activate a server isn't assigned 
+the subscription you want to use, then you must create a new environment and 
+assign it the correct subscription. Once assigned, you can't change an 
+environment's subscription. Follow 
+[the initial registration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs) 
+for instructions on creating a new environment and activating a new server. 
 
-    **Note:** When shutting down servers, you must ensure that the LCS platform 
-    receives the server shutdown commands. Otherwise, LCS may not release that 
-    server's activation key for reuse, and attempts to activate additional 
-    servers may exceed the subscription's allowed number of servers. There's a 
-    higher likelihood of this happening in rolling deployments and/or when using 
-    containers. See 
-    [this KB article](https://customer.liferay.com/documentation/knowledge-base/-/kb/1464875) 
-    for information on properly unregistering subscriptions. 
++$$$
 
-    $$$
+**Note:** When shutting down servers, you must ensure that the LCS platform 
+receives the server shutdown commands. Otherwise, LCS may not release that 
+server's activation key for reuse, and attempts to activate additional servers 
+may exceed the subscription's allowed number of servers. There's a higher 
+likelihood of this happening in rolling deployments and/or when using 
+containers. See 
+[this KB article](https://customer.liferay.com/documentation/knowledge-base/-/kb/1464875) 
+for information on properly unregistering subscriptions. 
 
-3.  If the token is invalid, first see the documentation on 
-    [using environment tokens](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens). 
-    A token becomes invalid in the following scenarios: 
+$$$
 
-    -   If the LCS user who generated the token no longer has permissions. This
-        happens when the user leaves the LCS project, or becomes an LCS 
-        Environment Manager or LCS Environment Viewer in a different 
-        environment. 
-    -   If the token's file name is changed. 
-    -   If the token is regenerated. 
+### Invalid Token
+
+If the token is invalid, first review the documentation on 
+[using environment tokens](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens). 
+A token becomes invalid in the following scenarios: 
+
+-   If the LCS user who generated the token no longer has permissions. This 
+    happens when the user leaves the LCS project, or becomes an LCS Environment 
+    Manager or LCS Environment Viewer in a different environment. 
+-   If the token's file name is changed. 
+-   If the token is regenerated. 
 
 ## Increasing Log Levels
 
-If you're in contact with Liferay Support, you'll be asked to provide advanced 
-log files. There are 2 ways to increase the log levels to produce these files: 
+If you contact Liferay Support, you'll be asked to provide advanced log files. 
+There are 2 ways to increase the log levels to produce these files: 
 
 1.  In your @product@ instance's Control Panel UI. This is a temporary 
     configuration that resets upon shutting down the server. Note that if the 
@@ -183,6 +196,9 @@ log files. There are 2 ways to increase the log levels to produce these files:
     through server shutdown and restart. 
 
 ### Control Panel
+
+Follow these steps to increase the log levels via your @product@ instance's 
+Control Panel UI: 
 
 1.  Navigate to *Control Panel* &rarr; *Configuration* &rarr; *Server 
     Administration*. 
@@ -198,6 +214,8 @@ log files. There are 2 ways to increase the log levels to produce these files:
     there. This is useful to Liferay Support. 
 
 ### Log4j
+
+Follow these steps to increase the log levels via Log4j: 
 
 1.  Download the latest LCS client as instructed in the 
     [LCS preconfiguration article](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#downloading-the-lcs-client-app). 
@@ -248,3 +266,5 @@ log files. There are 2 ways to increase the log levels to produce these files:
 
 7.  Place the new `Liferay Connected Services Client.lpkg` in 
     `osgi/marketplace`. 
+
+8.  Start your server. 
