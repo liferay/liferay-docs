@@ -1,37 +1,44 @@
 # Pre upgrade - Speed up the process [](id=pre-upgrade-speed-up-the-process)
 
-The most critical step in upgrading @product@ is running the process
+The most complex step in upgrading @product@ is running the process
 that upgrades the database from the old version to the new version. It
 takes a long time to restructure the data to the new format.
 
-You can shorten this process by performing a few steps before you run
-the upgrade.
+You can shorten this process by performing a few steps before you upgrade your
+production environment. Here's a summary of the steps:
 
-1.  Use your most recent complete backup to create a non-production
-    environment containing your production data.
-2.  Analyze your database (explained more fully below).
-3.  Use Liferay's API to delete unused content.
-4.  Run the upgrade process.
-5.  Check the upgrade log to find the processes that took the most time.
-6.  For the slowest upgrade processes, try to remove unused data. This
-    improves performance regardless of the upgrade. If you see a
-    potential issue, feel free to open a support ticket and have Liferay
-    verify your analysis.
+1.  Copy your most
+    [recent complete backup](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
+    from production to a non-production environment in which you can analyze
+    your database and test upgrading, as explained in the remaining steps. 
+2.  [Examine your database](#analyzing-your-database-step-2).
+3.  [Use Liferay's API to delete unused content](#remove-unused-data-from-the-database-using-liferays-api-step-3).
+4.  [Run the upgrade process on your non-production environment](#execute-the-upgrade-process-step-4).
+5.  Check the upgrade log for the processes that took the most time.
+6.  Remove unused content from the upgrade processes that took the longest. If
+    you see a potential issue, analyze it and contact the community if you need
+    help. If you have an enterprise subscription, feel free to open a support
+    ticket and have Liferay verify your analysis.
 7.  Repeat steps 4, 5, and 6 as needed.
+8.  [Remove unused content from production](remove-unused-objects-from-production-step-8). 
 
-Here are more in-depth details on several of the steps above.
+The sections that follow explain the more in-depth steps listed above.
 
-## Analyzing Your Database (Step 2) [](id=analyzing-your-database-step-2)
+## Examine Your Database (Step 2) [](id=analyzing-your-database-step-2)
 
-You need two things from your database to analyze it properly:
+Here are the most important things to examine in your non-production
+environment's copy of the production database:
 
 -   Records per table
--   Size per table
+-   Size per table (optional)
 
-This can help you find tables that could be reduced in size to improve
-upgrade performance.
+The greater these values are the longer upgrade processes take. 
 
-For example, a typical database import looks like this:
+The database engines show this information in different ways. Sometimes the
+output from importing backup data into your non-production database shows  each
+table's size and number of rows (records).
+
+For example, output from a typical database import looks like this:
 
     Processing object type SCHEMA\_EXPORT/TABLE/TABLE\_DATA
 
@@ -177,29 +184,44 @@ For example, a typical database import looks like this:
      
     imported "LIFERAY"."WIKIPAGERESOURCE" 6.382 KB 1 rows
 
-Several items stand out:
+Several items stand out in the example database import:
 
--   The *JournalArticle* table's size makes up 98% of the size of the
-    whole database.
--   There are a lot of *resourcePermission* objects.
--   There are a lot of *portletPreferences* objects.
+-   The *JOURNALARTICLE* table makes up 98% of the database size.
+-   There are many *RESOURCEPERMISSION* records.
+-   There are many *PORTLETPREFERENCES* records.
 
-Your analysis of your database shows you the objects you need to
-optimize, but be careful: objects have relationships, and some objects
-you wouldn't expect to affect performance may do so indirectly because
-of their relationships to other objects.
+The table records reflect @product@ objects. Using the API to delete objects
+that you no longer need not only deletes each object's data record but also
+deletes related unneeded objects (and their data records). For example, deleting
+an unneeded `Group` object also deletes related unneeded layouts, journal
+articles, and more. This reduces the number of records your upgrade needs to
+process, making your upgrade faster. 
 
-## Remove unused data from the database using Liferay's API (Step 3) [](id=remove-unused-data-from-the-database-using-liferays-api-step-3)
+## Use Liferay's API to remove unused objects (Step 3) [](id=remove-unused-data-from-the-database-using-liferays-api-step-3)
 
-Never run SQL directly on your database because you can miss
-relationships, creating orphaned objects and performance problems.
-Instead, use Liferay's API or Control Panel UI. You can do this through
-the Control Panel's script console or by creating a portlet.
+Your database analysis revealed tables that were large or contained lots of
+records. It's recommended to find unneeded objects that can be deleted by
+examining objects associated with these tables. Also there are some common areas
+(listed below) to look for unneeded objects. 
 
-Here are some common optimizations you can make:
++$$$
 
--   **Sites**: Remove sites you don't need. When you remove the site,
-    you also remove all related data:
+**Important**: You should only use
+Liferay's API--[Core API](@platform-ref@/7.0-latest/javadocs/)
+and [app APIs](@app-ref@)--
+to delete objects because the API accounts for relationships between @product@
+objects. You can invoke the API through the Control Panel's script console or a
+portlet you create. 
+
+Never run SQL directly on your database to remove records. Your SQL might miss
+object relationships, resulting in orphaned objects and performance problems.
+
+$$$
+
+Here are some common areas to find unneeded objects:
+
+-   **Sites**: Remove sites you don't need. When you remove a site,
+    remove its related data:
 
     -   Layouts
 
@@ -215,13 +237,13 @@ Here are some common optimizations you can make:
 
     -   Expando fields and their values
 
-    -   *ResourcePermission* objects
+    -   `ResourcePermission` objects
 
     -   (and everything else)
 
--   **Instances**: It's not common to have unneeded instances, but since
-    they are the highest object in the hierarchy, you can save upgrade
-    time by removing their objects:
+-   **Instances**: Unused instances are rare, but since
+    they are the highest object in the hierarchy, removing their objects can
+    optimize upgrades considerably:
 
     -   Sites (and all their related content)
 
@@ -231,51 +253,52 @@ Here are some common optimizations you can make:
 
     -   Organizations
 
-    -   Global *resourcePermission* objects
+    -   Global `ResourcePermission` objects
 
--   **Intermediate web content versions:** Liferay generates a new web
-    content version after any modification (including translations). You
-    may not want to keep all these versions. If so, remove those
-    versions before the upgrade. Removing an article also removes
-    related objects like images added as part of the content
-    (*journalArticleImage*), which impacts the file system's size.
+-   **Intermediate web content versions:** @product@ generates a new web
+    content version after any modification (including translations). Consider
+    removing versions you don't need. Removing a Journal Article, for example,
+    also removes related objects such as image files (`JournalArticleImage`)
+    that are part of the content. Removing unneeded image files frees space in
+    your database and file system. 
 
--   **Document versions**: As with Journal articles, if you don't need
+-   **Document versions**: As with Journal Articles, if you don't need
     intermediate document versions, delete them. This saves space both
     in the database and on the file system, space that no longer needs
     to be upgraded.
 
--   **Layouts:** Layouts are page groups, and they affect upgrade
-    performance because they relate to other entities like portlet
-    preferences, perrmissions, assets, ratings, and more.
+-   **Layouts:** Layouts are site pages, and they affect upgrade performance
+    because they relate to other entities such as portlet preferences,
+    permissions, assets, ratings, and more. Remove unneeded layouts. 
 
--   **Roles**: Remove any roles you don't need. This also deletes
-    related *resourceBlockPermission* and *resourcePermission* objects.
+-   **Roles**: Remove any roles you don't need. Deleting them also deletes
+    related `ResourceBlockPermission` and `ResourcePermission` objects.
 
--   **Users:** If you have users that aren't active anymore, remove
-    them.
+-   **Users:** If you have users that aren't active anymore, remove them.
 
--   **Vocabularies**: Remove any unused vocabularies. Take into account
-    that removing a vocabulary also removes its categories.
+-   **Vocabularies**: Remove any unused vocabularies. Note that removing a
+    vocabulary also removes its categories.
 
--   **Orphaned data**: You should also check for objects that are no
-    longer connected to anything. For example,
+-   **Orphaned data**: Check for unused objects that are not connected to
+    anything. Here are some examples:
 
     -   `DLFileEntries` with no file system data.
 
-    -   `ResourcePermission` objects associated to a role, layout, user,
-        portlet instances, etc. that don't exist anymore.
+    -   `ResourcePermission` objects associated to a role, layout, user, portlet
+        instances, etc. that no longer exists.
 
-    -   `PortletPreference` objects associated with a portlet or layout
-        that don't exist anymore. This is common in environments with
-        many embedded portlets. These portlet instances have a
-        different lifecycle, and aren't deleted when the portlet is
-        removed from a template.
+    -   `PortletPreference` objects associated with a portlet or layout that no
+        no longer exists. This is common in environments with many embedded
+        portlets. These portlet instances have a different lifecycle, and aren't
+        deleted when the portlet is removed from a template.
+
+After you've removed unneeded objects, test your changes. 
 
 ## Execute the upgrade process (Step 4) [](id=execute-the-upgrade-process-step-4)
 
-One of the upgrade improvements made in DXP is improved upgrade time
-logging. An upgrade process now looks like this::
+It's time to upgrade your non-production environment and note what upgrade
+processes take the longest. Each @product@ upgrade process logs how long it
+takes. An upgrade log now looks like this:
 
     21:42:45,422 INFO \[main\]\[UpgradeProcess:83\] Upgrading com.liferay.portal.upgrade.v7\_0\_0.UpgradeRatings
 
@@ -289,15 +312,31 @@ logging. An upgrade process now looks like this::
 
     21:44:10,070 INFO \[main\]\[UpgradeProcess:98\] Completed upgrade process com.liferay.portal.upgrade.v7\_0\_0.UpgradeRatings in 84648ms
 
-This helps you focus on optimizing the processes that take the most
-time.
+The duration times (in milliseconds) facilitate finding the most time consuming
+processes. Consider searching for unneeded objects associated these longer
+upgrade processes. Once again, make sure to delete them using Liferay's API and
+test your changes. 
 
-If you want to understand how the upgrade process works, check out our
-[tutorial on the subject.](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
++$$$
+
+**Note**: Learning [how upgrade processes are created](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
+can help you understand their data better.
+
+$$$ 
+
+## Remove Unused Objects from Production (Step 8) [](id=remove-unused-objects-from-production-step-8)
+
+Now that you have removed unused objects from your non-production environment
+and tested your changes, you can use Liferay's API to remove the same objects
+from your production environment. By removing the objects from production and
+testing your changes before upgrading, you can more easily troubleshoot any
+issues, knowing that they're not related to upgrade processes. Another benefit
+of doing this even while you work through the upgrade is that your production
+environment will perform better and be easier to maintain.
 
 ## Conclusion [](id=conclusion)
 
-By removing unused content from the database, you can both reduce
+By removing unused objects from @product@, you can both reduce
 upgrade time and improve your server's performance on the new version.
 
 Taking the time to optimize your installation before upgrading can save
