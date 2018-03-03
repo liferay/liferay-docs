@@ -30,7 +30,7 @@ snippet into your `portal_normal.ftl`:
 The other product navigation menus (e.g., Product Menu, Simulation Menu) are
 included in this tag, so specifying the above snippet will embed all three menus
 into your theme. Embedding the User Personal Bar is slightly different. Visit
-the [Providing the User Peronsal Bar](/develop/tutorials/-/knowledge_base/7-0/providing-the-user-personal-bar)
+the [Providing the User Personal Bar](/develop/tutorials/-/knowledge_base/7-0/providing-the-user-personal-bar)
 tutorial for more information.
 
 $$$
