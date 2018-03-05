@@ -93,7 +93,11 @@ To export a Collection or full Repository do the following:
 
 4.  Either drag-and-drop or click *Select* to upload the Fragments .zip.
 
-5.  Click *Import*
+5.  Check the box labeled "Overwrite Existing Entries" to replace any 
+    Collections or Fragments with the same name as one that you are importing. 
+    Uncheck it to preserve all the existing and imported entries.
+
+6.  Click *Import*
 
 The Collection or Collections included in the .zip file will be added to your 
 repository.
@@ -116,3 +120,5 @@ collection do the following:
 
 The Fragments will be imported into the Collection where you performed the 
 import.
+
+Export and Import are powerful tools that can save you time and help you collaborate and save your work in development.
