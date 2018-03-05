@@ -60,7 +60,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
 | `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.portlet.blogs.model.BlogsEntry`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/blogs/model/BlogsEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. | 
-| `classPK` | `number` | The asset’s unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `classPK` | `number` | The asset's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See [the Offline section](/develop/reference/-/knowledge_base/6-2/comment-add-screenlet-for-ios#offline) for details. |
 
 ## Delegate [](id=delegate)
