@@ -25,8 +25,8 @@ language keys:
 **Note:** Many applications that were once part of Liferay Portal 6.2 are now
 modularized. Their language keys might have been moved out of Liferay's language
 properties files and into one of the application modules. The process for
-[overriding a module's language keys](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-language-keys)
-is different from the process for overriding global language keys. 
+[overriding a module's language keys](#overriding-a-modules-language-keys) is
+different from the process for overriding global language keys. 
 
 $$$
 
@@ -189,7 +189,7 @@ What do you do if the language keys you want to modify are in one of Liferay's
 applications or another module whose source code you don't control? Since module
 language keys are in the respective module, the process for overriding a
 module's language keys is different from
-[the process of overriding global language keys](/develop/tutorials/-/knowledge_base/7-0/overriding-liferays-language-keys). 
+[the process of overriding global language keys](#modifying-liferays-language-keys). 
 
 Here is the process:
 
@@ -460,8 +460,7 @@ to provide the classes imported above.
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
 core. You can
-[override global language keys](/develop/tutorials/-/knowledge_base/7-0/overriding-liferays-language-keys)
-too.
+[override global language keys](#modifying-liferays-language-keys) too.
 
 ## Related Topics [](id=related-topics)
 

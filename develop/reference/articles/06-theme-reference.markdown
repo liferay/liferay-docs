@@ -236,7 +236,7 @@ Used for custom JavaScript.
 
 ### liferay-look-and-feel.xml [](id=liferay-look-and-feel-xml)
 
-Contains basic information for the theme. If your theme has [theme settings](/develop/learning-paths/themes/-/knowledge_base/6-2/making-configurable-theme-settings)
+Contains basic information for the theme. If your theme has [theme settings](/develop/tutorials/-/knowledge_base/6-2/making-configurable-theme-settings)
 , they are defined in this file. For a full explanation of this file please see
 the [Definitions docs](@platform-ref@/7.0-latest/definitions/liferay-look-and-feel_7_0_0.dtd.html).
 

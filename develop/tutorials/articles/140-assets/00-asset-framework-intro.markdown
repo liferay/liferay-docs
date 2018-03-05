@@ -22,22 +22,18 @@ in the
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
 tutorial section.
 
-<!-- If you've yet to do any of those things, you can see how each is done
-in respective Learning Paths
-[Writing a Data-Driven Application](/develop/learning-paths/mvc/-/knowledge_base/6-2/writing-a-data-driven-application),
-[Setting Permissions](/develop/learning-paths/mvc/-/knowledge_base/6-2/setting-permissions),
+If you've yet to do any of those things, you can see how each is done
+in respective tutorials
+[Generating the Back-end](/develop/tutorials/-/knowledge_base/7-0/generating-the-back-end),
+[Using Resources and Permissions](/develop/tutorials/-/knowledge_base/7-0/using-resources-and-permissions),
 and
-[Enabling Search and Indexing](/develop/learning-paths/mvc/-/knowledge_base/6-2/enabling-search-and-indexing). 
+[Leveraging Search](/develop/tutorials/-/knowledge_base/7-0/leveraging-search). 
 Lastly, the Learning Path
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Assets: Integrating with Liferay's Framework](/develop/tutorials/-/knowledge_base/7-0/assets-integrating-with-liferays-framework)
 takes you through the fundamentals of enabling an example application's custom
 entities to use the asset framework. If you haven't traveled through that
 Learning Path, we recommend you do so before continuing with the tutorials in
-this section. -->
-
-<!-- The paragraph above assumes there is a learning path to point to. Since
-this content is not available currently, we're forced to just mention
-prerequisites that we don't have docs for. -Cody -->
+this section.
 
 The tutorials that follow in this section explore the details of leveraging the
 asset framework's various features. Here are some features that you'll give your

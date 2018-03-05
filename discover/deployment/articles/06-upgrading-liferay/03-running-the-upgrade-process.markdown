@@ -93,7 +93,7 @@ command line interface or pre-configure it in these files:
     the upgrade requires. You might want to copy your current portal properties
     (except your database properties) into this file. Before copying your
     current properties, make sure you've
-    [updated the portal properties for @product-ver@](/discover/portal/-/knowledge_base/7-0/preparing-an-upgrade-to-liferay-7#step-4-update-your-portal-properties). 
+    [updated the portal properties for @product-ver@](/discover/deployment/-/knowledge_base/7-0/preparing-an-upgrade-to-liferay-7#step-4-update-your-portal-properties). 
 
 Each file's properties are described next. 
 
