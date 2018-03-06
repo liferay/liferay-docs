@@ -224,14 +224,6 @@ database and store it in its local cache.
 
 ![Figure 2: @product@'s cache algorithm is extremely efficient. ](../../images-dxp/clustering-cache-efficient-algorithm.png)
 
-This is much more powerful than having a cache running separately on each node.
-The power of *distributed* caching lets common destinations be cached for
-multiple users. The first user can post a message to the thread he or she was
-reading, and the cache is updated across all the nodes, making the new post
-available immediately from the local cache. Without that, the second user would
-need to wait until the cache was invalidated on the node he or she connected to
-before he or she could see the updated forum post. 
-
 To enable Cluster Link, add this property to `portal-ext.properties`: 
 
     cluster.link.enabled=true
