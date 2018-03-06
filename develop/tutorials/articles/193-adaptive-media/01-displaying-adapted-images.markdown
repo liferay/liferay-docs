@@ -59,6 +59,6 @@ Well done! Now you know how to display adapted images in your app.
 
 [Finding Adapted Images](/develop/tutorials/-/knowledge_base/7-0/finding-adapted-images)
 
-[Changing Adaptive Media's Image Processing](/develop/tutorials/-/knowledge_base/7-0/changing-adaptive-medias-image-processing)
+[Changing Adaptive Media's Image Processing](/develop/tutorials/-/knowledge_base/7-0/changing-adaptive-medias-image-scaling)
 
 [Adapting Your Media Across Multiple Devices](/discover/portal/-/knowledge_base/7-0/adapting-your-media-across-multiple-devices)

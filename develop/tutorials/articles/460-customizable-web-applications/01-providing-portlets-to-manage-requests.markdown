@@ -65,7 +65,7 @@ portlet to handle the request.
     `service` element should match the interface you're implementing (e.g.,
     `ViewPortletProvider.class`). You can view an example of a similar
     `@Component` annotation in the
-    [RolesSelectorEditPortletProvider](@app-ref@/foundation/latest/javadocs/com/liferay/roles/selector/web/internal/portlet/RolesSelectorEditPortletProvider.html)
+    [RolesSelectorEditPortletProvider](https://github.com/liferay/liferay-portal/blob/7.0.4-ga5/modules/apps/foundation/roles/roles-selector-web/src/main/java/com/liferay/roles/selector/web/internal/portlet/RolesSelectorEditPortletProvider.java)
     class:
 
         @Component(

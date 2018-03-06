@@ -379,7 +379,7 @@ modules and tag libraries your plugin uses.
 
 [Importing Packages](/develop/tutorials/-/knowledge_base/7-0/importing-packages)
 
-[Exporting Packages](/develop/reference/-/knowledge_base/7-0/exporting-packages)
+[Exporting Packages](/develop/tutorials/-/knowledge_base/7-0/exporting-packages)
 
 [Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 

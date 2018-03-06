@@ -147,16 +147,16 @@ Third party themes must be built with Sass to be compatible with @product@.
 
 Follow these steps to add a third party theme:
 
-1. Follow the steps in the [Customizing Lexicon Base in @product@](/develop/tutorials/-/knowledge_base/7-0/importing-lexicon-css-into-a-theme#customizing-lexicon-base-in-liferay) section.
+1.  Follow the steps in the 
+    [Customizing Lexicon Base in @product@](/develop/tutorials/-/knowledge_base/7-0/importing-lexicon-css-into-a-theme#customizing-lexicon-base-in-liferay) section.
 
-2. Create a folder inside `/src/css` (for legacy ant themes, `/_diff/css`) 
-   that contains your third party theme (e.g. `/src/css/awesome-theme` or
-   `/_diff/css/awesome-theme`)
+2.  Create a folder inside `/src/css` (for legacy ant themes, `/_diff/css`) 
+    that contains your third party theme (e.g. `/src/css/awesome-theme` or 
+    `/_diff/css/awesome-theme`)
 
-3. Copy the contents of the theme to the folder you just created.
+3.  Copy the contents of the theme to the folder you just created.
 
-4. In `_aui_variables.scss`, import the file containing the theme variables.
-
+4.  In `_aui_variables.scss`, import the file containing the theme variables. 
     For example, `@import "awesome-theme/variables.scss";`
  
     +$$$ 
@@ -165,11 +165,11 @@ Follow these steps to add a third party theme:
 
     $$$
 
-5. In `_custom.scss`, import the file containing the CSS.
+5.  In `_custom.scss`, import the file containing the CSS. For example, 
+    `@import "awesome-theme/main.scss";`
 
-    For example, `@import "awesome-theme/main.scss";`
-
-6. Deploy your theme with `gulp deploy` (for legacy ant themes, use `ant deploy`)
+6.  Deploy your theme with `gulp deploy` 
+    (for legacy ant themes, use `ant deploy`)
 
 Now you know how to use Lexicon CSS in your theme!
 
