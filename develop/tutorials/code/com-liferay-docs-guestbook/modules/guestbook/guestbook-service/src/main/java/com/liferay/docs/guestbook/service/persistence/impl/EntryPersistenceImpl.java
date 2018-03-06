@@ -4318,6 +4318,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		entryImpl.setUserName(entry.getUserName());
 		entryImpl.setCreateDate(entry.getCreateDate());
 		entryImpl.setModifiedDate(entry.getModifiedDate());
+		entryImpl.setLastPublishDate(entry.getLastPublishDate());
 		entryImpl.setStatus(entry.getStatus());
 		entryImpl.setStatusByUserId(entry.getStatusByUserId());
 		entryImpl.setStatusByUserName(entry.getStatusByUserName());

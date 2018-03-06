@@ -4222,6 +4222,7 @@ public class GuestbookPersistenceImpl extends BasePersistenceImpl<Guestbook>
 		guestbookImpl.setUserName(guestbook.getUserName());
 		guestbookImpl.setCreateDate(guestbook.getCreateDate());
 		guestbookImpl.setModifiedDate(guestbook.getModifiedDate());
+		guestbookImpl.setLastPublishDate(guestbook.getLastPublishDate());
 		guestbookImpl.setStatus(guestbook.getStatus());
 		guestbookImpl.setStatusByUserId(guestbook.getStatusByUserId());
 		guestbookImpl.setStatusByUserName(guestbook.getStatusByUserName());

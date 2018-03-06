@@ -82,6 +82,7 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 			{ "userName", Types.VARCHAR },
 			{ "createDate", Types.TIMESTAMP },
 			{ "modifiedDate", Types.TIMESTAMP },
+			{ "lastPublishDate", Types.TIMESTAMP },
 			{ "status", Types.INTEGER },
 			{ "statusByUserId", Types.BIGINT },
 			{ "statusByUserName", Types.VARCHAR },
@@ -99,6 +100,7 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 		TABLE_COLUMNS_MAP.put("userName", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("createDate", Types.TIMESTAMP);
 		TABLE_COLUMNS_MAP.put("modifiedDate", Types.TIMESTAMP);
+		TABLE_COLUMNS_MAP.put("lastPublishDate", Types.TIMESTAMP);
 		TABLE_COLUMNS_MAP.put("status", Types.INTEGER);
 		TABLE_COLUMNS_MAP.put("statusByUserId", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("statusByUserName", Types.VARCHAR);
@@ -106,7 +108,7 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 		TABLE_COLUMNS_MAP.put("name", Types.VARCHAR);
 	}
 
-	public static final String TABLE_SQL_CREATE = "create table GB_Guestbook (uuid_ VARCHAR(75) null,guestbookId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,status INTEGER,statusByUserId LONG,statusByUserName VARCHAR(75) null,statusDate DATE null,name VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table GB_Guestbook (uuid_ VARCHAR(75) null,guestbookId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,lastPublishDate DATE null,status INTEGER,statusByUserId LONG,statusByUserName VARCHAR(75) null,statusDate DATE null,name VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table GB_Guestbook";
 	public static final String ORDER_BY_JPQL = " ORDER BY guestbook.guestbookId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY GB_Guestbook.guestbookId ASC";
@@ -149,6 +151,7 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 		model.setUserName(soapModel.getUserName());
 		model.setCreateDate(soapModel.getCreateDate());
 		model.setModifiedDate(soapModel.getModifiedDate());
+		model.setLastPublishDate(soapModel.getLastPublishDate());
 		model.setStatus(soapModel.getStatus());
 		model.setStatusByUserId(soapModel.getStatusByUserId());
 		model.setStatusByUserName(soapModel.getStatusByUserName());
@@ -226,6 +229,7 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 		attributes.put("userName", getUserName());
 		attributes.put("createDate", getCreateDate());
 		attributes.put("modifiedDate", getModifiedDate());
+		attributes.put("lastPublishDate", getLastPublishDate());
 		attributes.put("status", getStatus());
 		attributes.put("statusByUserId", getStatusByUserId());
 		attributes.put("statusByUserName", getStatusByUserName());
@@ -286,6 +290,12 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 
 		if (modifiedDate != null) {
 			setModifiedDate(modifiedDate);
+		}
+
+		Date lastPublishDate = (Date)attributes.get("lastPublishDate");
+
+		if (lastPublishDate != null) {
+			setLastPublishDate(lastPublishDate);
 		}
 
 		Integer status = (Integer)attributes.get("status");
@@ -469,6 +479,17 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 		_setModifiedDate = true;
 
 		_modifiedDate = modifiedDate;
+	}
+
+	@JSON
+	@Override
+	public Date getLastPublishDate() {
+		return _lastPublishDate;
+	}
+
+	@Override
+	public void setLastPublishDate(Date lastPublishDate) {
+		_lastPublishDate = lastPublishDate;
 	}
 
 	@JSON
@@ -689,6 +710,7 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 		guestbookImpl.setUserName(getUserName());
 		guestbookImpl.setCreateDate(getCreateDate());
 		guestbookImpl.setModifiedDate(getModifiedDate());
+		guestbookImpl.setLastPublishDate(getLastPublishDate());
 		guestbookImpl.setStatus(getStatus());
 		guestbookImpl.setStatusByUserId(getStatusByUserId());
 		guestbookImpl.setStatusByUserName(getStatusByUserName());
@@ -821,6 +843,15 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 			guestbookCacheModel.modifiedDate = Long.MIN_VALUE;
 		}
 
+		Date lastPublishDate = getLastPublishDate();
+
+		if (lastPublishDate != null) {
+			guestbookCacheModel.lastPublishDate = lastPublishDate.getTime();
+		}
+		else {
+			guestbookCacheModel.lastPublishDate = Long.MIN_VALUE;
+		}
+
 		guestbookCacheModel.status = getStatus();
 
 		guestbookCacheModel.statusByUserId = getStatusByUserId();
@@ -855,7 +886,7 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(27);
+		StringBundler sb = new StringBundler(29);
 
 		sb.append("{uuid=");
 		sb.append(getUuid());
@@ -873,6 +904,8 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 		sb.append(getCreateDate());
 		sb.append(", modifiedDate=");
 		sb.append(getModifiedDate());
+		sb.append(", lastPublishDate=");
+		sb.append(getLastPublishDate());
 		sb.append(", status=");
 		sb.append(getStatus());
 		sb.append(", statusByUserId=");
@@ -890,7 +923,7 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(43);
+		StringBundler sb = new StringBundler(46);
 
 		sb.append("<model><model-name>");
 		sb.append("com.liferay.docs.guestbook.model.Guestbook");
@@ -927,6 +960,10 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 		sb.append(
 			"<column><column-name>modifiedDate</column-name><column-value><![CDATA[");
 		sb.append(getModifiedDate());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>lastPublishDate</column-name><column-value><![CDATA[");
+		sb.append(getLastPublishDate());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>status</column-name><column-value><![CDATA[");
@@ -972,6 +1009,7 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 	private Date _createDate;
 	private Date _modifiedDate;
 	private boolean _setModifiedDate;
+	private Date _lastPublishDate;
 	private int _status;
 	private int _originalStatus;
 	private boolean _setOriginalStatus;
