@@ -74,7 +74,6 @@ optimized for reading and one optimized for writing. Since all @product@'s
 supported databases support replication, you can use your database vendor's
 replication mechanism to keep the database nodes in sync.
 
-<<<<<<< HEAD
 Enabling a read-writer database is simple. In your `portal-ext.properties` file:
 
 1.  Set the default database connection pool provider to `dbcp`, `tomcat`, or 
@@ -127,44 +126,14 @@ Enabling a read-writer database is simple. In your `portal-ext.properties` file:
             [..]
             META-INF/dynamic-data-source-spring.xml,\
             [..]
-=======
-Enabling a read-writer database is simple. In your `portal-ext.properties` file,
-configure two different data sources for @product@ to use, one for reading, and
-one for writing:
-
-    jdbc.read.jndi.name=**your read JNDI name**
-    jdbc.read.driverClassName=com.mysql.jdbc.Driver
-    jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-    jdbc.read.username=**your user name**
-    jdbc.read.password=**your password**
-
-    jdbc.write.jndi.name=**your read-write JNDI name**
-    jdbc.write.driverClassName=com.mysql.jdbc.Driver
-    jdbc.write.url=jdbc:mysql://dbreadwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-    jdbc.write.username=**your user name**
-    jdbc.write.password=**your password**
-
-Of course, specify the JNDI name, user name, and password to each of your
-databases in the above configuration.
-
-After this, enable the read-writer database configuration by uncommenting the
-Spring configuration file which enables it in your
-`spring.infrastructure.configs` property:
->>>>>>> 7.0.x
 
         spring.infrastructure.configs=\
             [..]
             META-INF/dynamic-data-source-infrastructure-spring.xml,\
             [..]
 
-<<<<<<< HEAD
     The Spring configuration portal properties are documented 
     [here](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Spring).
-=======
-You can find the full `spring.infrastructure.configs` list in the
-`portal.properties`
-[documentation](https://docs.liferay.com/digital-enterprise/7.0-latest/propertiesdoc/portal.properties.html#Spring).
->>>>>>> 7.0.x
 
 The next time you start @product@, it uses the two data sources you have
 defined. Be sure you have correctly set up your two databases for replication
