@@ -101,13 +101,11 @@ public class GuestbookPortletDataHandler extends BasePortletDataHandler {
 		ActionableDynamicQuery guestbookActionableDynamicQuery =
 			_guestbookLocalService.getExportActionableDynamicQuery(
 				portletDataContext);
-		guestbookActionableDynamicQuery.setGroupId(portletDataContext.getScopeGroupId());
 		guestbookActionableDynamicQuery.performActions();
 
 		ActionableDynamicQuery entryActionableDynamicQuery =
 			_entryLocalService.getExportActionableDynamicQuery(
 				portletDataContext);
-		entryActionableDynamicQuery.setGroupId(portletDataContext.getScopeGroupId());
 		entryActionableDynamicQuery.performActions();
 
 		return getExportDataRootElementString(rootElement);
@@ -158,13 +156,11 @@ public class GuestbookPortletDataHandler extends BasePortletDataHandler {
 		ActionableDynamicQuery entryExportActionableDynamicQuery =
 			_entryLocalService.getExportActionableDynamicQuery(
 				portletDataContext);
-		entryExportActionableDynamicQuery.setGroupId(portletDataContext.getScopeGroupId());
 		entryExportActionableDynamicQuery.performCount();
 		
 		ActionableDynamicQuery guestbookExportActionableDynamicQuery =
 				_guestbookLocalService.getExportActionableDynamicQuery(
 					portletDataContext);
-		guestbookExportActionableDynamicQuery.setGroupId(portletDataContext.getScopeGroupId());
 		guestbookExportActionableDynamicQuery.performCount();
 	}
 
