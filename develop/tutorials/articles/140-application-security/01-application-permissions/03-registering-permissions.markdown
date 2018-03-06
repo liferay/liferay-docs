@@ -122,8 +122,15 @@ class.
 
         }
 
-The `activate` 
+The `activate` method is a *bundle activator*. Normally in Declarative Services
+components, this isn't needed, but you need this one to set up the chain of
+permission logic classes that protect your entities. Blogs uses portlet resource
+permissions, model resource permissions, staging permissions, and workflow
+permissions. 
 
-Once you've registered permissions for your entities, you're ready to provide
-users the interface to associate permissions with resources. 
+Note that you specify your entity's class, primary key, and the entity itself
+for the factory so it can create permission objects specific to your entity. 
+
+Great! Once you've registered permissions for your entities, you're ready to
+provide users the interface to associate permissions with resources. 
 

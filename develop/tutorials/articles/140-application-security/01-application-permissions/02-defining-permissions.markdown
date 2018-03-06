@@ -223,6 +223,17 @@ Now you're ready to define both your root model and model permissions.
     Note the lack of a `<root>` tag, the fully qualified class name for the
     model, and the permissions that operate on an entity with a primary key. 
 
+## Pointing @product@ to Your Permissions Configuration
+
+Your last step is to point @product@ at your permission definitions. Each module
+that contains a `default.xml` permissions definition file must also have
+a `portlet.properties` file with a property that defines where to find the
+permissions definition file. For your service and your web modules, then create
+a `portlet.properties` file in `src/main/resources` and make sure it has this
+property: 
+
+    resource.actions.config=resource-actions/default.xml
+
 Once you've defined portlet permissions, root model permissions, and model
 permissions, you've completed step 1 (the *D* in DRAC). Congratulations! You're
 now ready to *register* the resources you've now defined in the permissions
