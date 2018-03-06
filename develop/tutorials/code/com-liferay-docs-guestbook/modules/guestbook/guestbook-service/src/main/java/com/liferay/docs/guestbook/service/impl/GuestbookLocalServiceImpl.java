@@ -179,7 +179,7 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 			entryLocalService.deleteEntry(entry.getEntryId());
 		}
 
-		guestbook = deleteGuestbook(guestbook);
+		guestbook = guestbookLocalService.deleteGuestbook(guestbook);
 
 		resourceLocalService.deleteResource(
 			serviceContext.getCompanyId(), Guestbook.class.getName(),

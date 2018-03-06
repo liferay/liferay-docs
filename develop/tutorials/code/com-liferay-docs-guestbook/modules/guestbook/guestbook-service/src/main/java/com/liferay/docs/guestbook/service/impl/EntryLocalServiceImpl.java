@@ -178,7 +178,7 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 
 		Entry entry = getEntry(entryId);
 
-		entry = deleteEntry(entryId);
+		entry = entryLocalService.deleteEntry(entry);
 
 		resourceLocalService.deleteResource(
 			serviceContext.getCompanyId(), Entry.class.getName(),
