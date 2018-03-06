@@ -20,7 +20,16 @@ The Sign Up Screenlet creates a new user in your Liferay instance: a new user of
 your app can become a new user in your portal. You can also use this Screenlet
 to save new users' credentials on their devices. This enables auto login for
 future sessions. The Screenlet also supports navigation of form fields from the
-device's keyboard.
+device's keyboard. 
+
+## JSON Services Used
+
+Screenlets in Liferay Screens call JSON web services in the portal. This 
+Screenlet calls the following services and methods.
+
+| Service | Method | Notes | 
+| ------- | ------ | ----- |
+| `UserService` | `addUser` |  |
 
 ## Module [](id=module)
 
