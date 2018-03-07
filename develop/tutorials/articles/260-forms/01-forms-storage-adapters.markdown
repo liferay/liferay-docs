@@ -1,34 +1,22 @@
 # Forms Storage Adapters
 
-The Forms API goes through the storage adapter API to add, update, and delete
-form entries. The default implementation of the storage service is called
-`JSONStorageAdapter`, and as its name implies, it implements the
-`StorageAdapter` interface to define how the data is defined in JSON format. The
-interface follows the *CRUD* approach, so implementing it requires that you
-write methods to create, read, update and delete form values. 
-
-The relevant data is stored in the `ddmStorageLink` table is a
-feature that adds the ability to define how a form entry is stored when a user
-submits a form.This means a developer can even choose to store form data outside
-the Liferay database.  because the Forms API was designed to access form entries
-through the use of a StorageAdapter. The API does not access tables directly.
-
-By default, the Forms application stores form entry data as JSON.  
+When a user adds a form record, the Forms API routes the processing of the
+request through the storage adapter API. The same is true for the other *CRUD*
+operations performed on form entries (read, update, and delete operations). The
+default implementation of the storage service is called `JSONStorageAdapter`,
+and as its name implies, it implements the `StorageAdapter` interface to provide
+JSON storage of form entry data.
 
 As the term *adapter* implies, the DDM backend can adapt to other data storage
-formats. Want to store your data in XML? YAML? No problem. Define your own
-format to save form entries by writing an OSGi component which implements the
-`StorageAdapter` interface. 
+formats for form records. Want to store your data in XML? YAML? No problem.
+Because the storage API before is separate from the regular service calls used to
+populate the database table for form entries, a developer can even choose to
+store form data outside the Liferay database.  Define your own format to save
+form entries by writing an OSGi component which implements the `StorageAdapter`
+interface. The interface follows the *CRUD* approach, so implementing it
+requires that you write methods to create, read, update and delete form values.
 
-Each StorageAdapter has a storage type, which is simply a name to identify it.
-
-JSON is the default storage type for Forms. Form entries are serialized and
-deserialized using JSONStorageAdapter, an implementation of StorageAdapter. 
-
-Different forms might have different storage adapters. A storage adapter can be
-assigned to a form during the form creation by accessing the form settings as
-shown below. All available storage adapters will be listed on "Select a Storage
-Type" field. Once a form is saved, it's not possible to change the storage type.
+WHY WOULD DEVS WANT TO DO THIS?
 
 The example storage adapter in this tutorial serializes form data to be stored
 in a simple file, stored in the file system.
@@ -51,10 +39,11 @@ The only method without a base implementation in the abstract class is
         return "FileSystem";
     }
 
+DOES FileSystem APPEAR IN THE UI WHEN SELECTING A STORAGE TYPE?
+
 The String value you return here is added to a Map storing storage adapters in
 the storage adapter registry. Next override the `doCreateMethod` to return a
-`long` that identifies each form record with a unique file ID: OVERALL PURPOSE
-OF THIS METHOD?
+`long` that identifies each form record with a unique file ID: 
 
     @Override
     protected long doCreate(long companyId, long ddmStructureId,
@@ -205,25 +194,12 @@ For this specific example, here are the required service references:
 
 }
 
+## Enabling the Storage Adapter
 
-package com.liferay.custom.storage.adapter;
+After writing a new storage adapter and deploying is, you'll want to enable it.
+This is done at the individual form level.
 
-import com.liferay.counter.kernel.service.CounterLocalService;
-import com.liferay.dynamic.data.mapping.io.DDMFormValuesJSONDeserializer;
-import com.liferay.dynamic.data.mapping.io.DDMFormValuesJSONSerializer;
-import com.liferay.dynamic.data.mapping.model.DDMStorageLink;
-import com.liferay.dynamic.data.mapping.model.DDMStructureVersion;
-import com.liferay.dynamic.data.mapping.service.DDMStorageLinkLocalService;
-import com.liferay.dynamic.data.mapping.service.DDMStructureVersionLocalService;
-import com.liferay.dynamic.data.mapping.storage.BaseStorageAdapter;
-import com.liferay.dynamic.data.mapping.storage.DDMFormValues;
-import com.liferay.dynamic.data.mapping.storage.StorageAdapter;
-import com.liferay.portal.kernel.service.ServiceContext;
-import com.liferay.portal.kernel.util.FileUtil;
-import com.liferay.portal.kernel.util.PortalUtil;
+Go into the Form Builder view for a form and click the kebab menu. Open the
+*Settings* window. There's a select list field called *Select a Storage Type*.
+If your storage adapter is deployed, you'll see it in the list of options.
 
-import java.io.File;
-import java.io.IOException;
-
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
