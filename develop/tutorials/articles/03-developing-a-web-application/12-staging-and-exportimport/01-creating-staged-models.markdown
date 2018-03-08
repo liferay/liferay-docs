@@ -1,0 +1,56 @@
+# Creating Staged Models
+
+To implement the Staging framework, you must first specify the entities you wan
+to track. For the Guestbook application, there are two: guestbooks and entries.
+You can register these entities so they're recognizable to the Staging framework
+by implementing the
+[StagedModel](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedModel.html)
+interface in your Guestbook's model classes.
+
+Fortunately, Service Builder has the power to generate an app's models as staged
+models when
+[certain attributes](/develop/tutorials/-/knowledge_base/7-1/understanding-staged-models#important-attributes-in-staging)
+are specified in the app's `service.xml` file. The Guestbook app already defines
+the necessary attributes in its `service.xml` file, so both your `GuestbookModel`
+and `EntryModel` interfaces already extend the `StagedModel` interface! For
+example, if you take a look at your Guestbook app's `EntryModel` interface's
+declaration, it looks like this:
+
+    public interface EntryModel extends BaseModel<Entry>, GroupedModel, ShardedModel,
+        StagedAuditedModel, WorkflowedModel {
+
+The `StagedModel` interface is implemented by the extension of the
+[StagedAuditedModel](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedAuditedModel.html)
+interface. The `StagedAuditedModel` interface was chosen by Service Builder
+based on the columns you declared.
+
+The following Staging-specific attributes/columns are defined in the Guestbook
+app's `service.xml` file:
+
+- `uuid` (required)
+- `groupId`
+- `companyId` (required)
+- `userId`
+- `userName`
+- `createDate` (required)
+- `modifiedDate` (required)
+
+One of the most important attributes used by the Staging framework is the UUID
+(Universally Unique Identifier). This attribute must be set to `true` in your
+`service.xml` file for Service Builder to recognize your model as an eligible
+staged model. The UUID is used to differentiate entities between environments.
+Because the UUID always remains the same, it's unique across multiple systems.
+
+The `companyId`, `createDate`, and `modifiedDate` columns are required to track
+the current entity's site and creation/modification dates.
+
+The others are required to leverage features of the Staging framework like
+automatic group mapping or entity level Last Publish Date handling. See the
+[Understanding Staged Models](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models)
+tutorial for more information.
+
+<!-- Need to describe Guestbook adding `lastPublishDate` and implementing
+`GroupedStagedModel` interface. This is Pending Máté's review. -Cody -->
+
+
+
