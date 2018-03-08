@@ -1,7 +1,7 @@
 # JSP Overrides Using Dynamic Includes [](id=jsp-overrides-using-dynamic-includes)
 
 The
-[`liferay-util:dynamic-include` tag](@platform-ref@/7.1/taglibs/util-taglib/liferay-util/dynamic-include.html)
+[`liferay-util:dynamic-include` tag](@platform-ref@/7.1-latest/taglibs/util-taglib/liferay-util/dynamic-include.html)
 is placeholder into which you can inject content. Every JSP's dynamic include
 tag can be replaced with content. To do this, create a module that has content
 you want to insert, register that content with the dynamic include tag you want
