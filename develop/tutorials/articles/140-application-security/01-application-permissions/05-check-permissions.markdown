@@ -18,7 +18,7 @@ These things are covered next.
 A best practice is to create methods in your `-ServiceImpl` classes that call
 the same methods in your `-LocalServiceImpl` classes, but wrap those calls in
 permission checks. If you expose your services as web services, then any client
-calling those services must then have permission to call the service. In this
+calling those services must have permission to call the service. In this
 way, you separate your business logic (contained in the `-LocalServiceImpl`
 class) from your permissions logic (contained in the `-ServiceImpl` class). 
 
@@ -85,7 +85,7 @@ for your web module.
 ## Create Permission Helper Classes in Your Web Module
 
 A helper class can make it easier to check permissions in your portlet
-application. You can create helper classes for both portlet permissions and for
+application. You can create helper classes for both portlet permissions and 
 model permissions. Here's how to create a portlet permission helper: 
 
 1.  Create a package with the suffix
@@ -120,7 +120,7 @@ model permissions. Here's how to create a portlet permission helper:
 
         }
 
-    Note the @Reference annotation that tells the OSGi container to supply an
+    Note the `@Reference` annotation that tells the OSGi container to supply an
     object via the permission registrar you created previously. 
 
 The procedure for creating a model permission helper is similar: 
@@ -165,7 +165,7 @@ The procedure for creating a model permission helper is similar:
         }
 
     As you can see, this class is almost the same as the portlet permission
-    class. The real difference is in the @Reference annotation that specifies
+    class. The real difference is in the `@Reference` annotation that specifies
     the fully qualified class name of the model, rather than the resource name
     from `default.xml`. 
 

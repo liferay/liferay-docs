@@ -1,26 +1,27 @@
 # Defining Resources and Permissions
 
 Your first step in implementing permissions is to define the resources and the
-permissions that protect them. The first thing to know is that there are two
-different kinds of resources: *portlet resources* and *model resources*. 
+permissions that protect them. There are two different kinds of resources:
+*portlet resources* and *model resources*. 
 
 Portlet resources represent portlets. The names of portlet resources are the
-portlet IDs from the portlets' `portlet.xml` files (or in the case of core
-portlets, Liferay's `portlet-custom.xml`. Model resources refer to entities
-within Liferay. The names of model resources are the fully qualified class names
-of the entities they represent. In the XML displayed below, permission
+portlet IDs from the portlets' `@Component` properties or if you're using a WAR
+file, `portlet.xml` files. Model resources refer to model objects, usually
+persisted as entities to a database. The names of model resources are their
+fully qualified class names. In the XML displayed below, permission
 implementations are first defined for the *portlet* resource and then for the
 *model* resources.
 
-Model resources represent entities, such as blog entries. Resources are named
+Model resources represent models, such as blog entries. Resources are named
 using the fully qualified class names of the entities they represent. 
 
 +$$$
 
 **Note:** For each resource, there are four scopes to which the permissions can
-be applied: company, group, group-template, or individual. See
-[`ResourcePermissionImpl`](@platform-ref@/7.0-latest/javadocs/portal-impl/)'s
-Javadoc for more information.
+be applied: company, group, group-template, or individual. Because these are
+called *portlet resources* here and in the code, this can be confusing. The
+other scopes are mostly used internally for various Liferay constructs (such as
+Sites or Categories). 
 
 $$$
 
@@ -101,12 +102,11 @@ ADD_PORTLET_DISPLAY_TEMPLATE, ADD_TO_PAGE, CONFIGURATION, and VIEW. The Blogs
 Admin portlet has an additional permission: ACCESS_IN_CONTROL_PANEL, which
 defines who can see the entry in the Site menu. 
 
-Once you've listed the permissions you're defining at the portlet level for your
-application, you can define default permissions different types of users should
-have. The DTD allows for site member and guest defaults. Since guests are users
-that aren't logged in, there's also a `guest-unsupported` tag for defining
-permissions guests can *never* have (in other words, the user must be logged in
-and identifiable). 
+Once you've defined permissions at the portlet level, you can set default
+permissions for different types of users. The DTD allows for site member and
+guest defaults. Since guests are users that aren't logged in, there's also
+a `guest-unsupported` tag for defining permissions guests can *never* have (in
+other words, the user must be logged in and identifiable). 
 
 That's all there is to it! Your next task is to define permissions for your
 model resources. 
@@ -121,15 +121,15 @@ permissions using the same `<model-resource>` tag.
 This can be confusing, so some explanation is in order. Model permissions for
 what Liferay calls the *root model* are defined separately from permissions on
 stored entities, which Liferay calls the *model*. This makes sense when you
-think about the functions you're allowing users to do: 
+think about the functions users can perform: 
 
 - Creating something new 
 - Editing something that exists
 
-Creating something new (like adding a new Blog entry) is different from having
-access to something that exists. A Blog owner should be able to create a new
-Blog entry or edit an existing one, but a User or guest should have read
-permission for existing entries and no permission to create them. 
+Creating something new (like adding a new Blog entry) is different from
+accessing something that exists. A Blog owner should be able to create or edit
+a Blog entry, but a User or guest should have read permission for existing
+entries and no permission to create them. 
 
 Permission to create something new that doesn't yet exist is a *root model*
 permission, whether that functionality is exposed in a portlet or not.
@@ -177,11 +177,11 @@ Now you're ready to define both your root model and model permissions.
 
     The model name (`com.liferay.blogs`) is just a package name. The
     `<root>true</root>` tag defines this as a root model. The `<weight>` tag
-    defines the order these permissions are displayed in the GUI. The
-    permissions defined are ADD_ENTRY (add a Blog entry), PERMISSIONS (set
-    permissions on Blog entries), and SUBSCRIBE (receive notifications when Blog
-    entries are created). These are all root model permissions, because no
-    primary key in the database can be assigned to any of these functions. 
+    defines the order of these permissions in the GUI. The permissions defined
+    are ADD_ENTRY (add a Blog entry), PERMISSIONS (set permissions on Blog
+    entries), and SUBSCRIBE (receive notifications when Blog entries are
+    created). These are all root model permissions, because no primary key in
+    the database can be assigned to any of these functions. 
 
 3.  Finally, define your model permissions: 
 
@@ -223,12 +223,12 @@ Now you're ready to define both your root model and model permissions.
     Note the lack of a `<root>` tag, the fully qualified class name for the
     model, and the permissions that operate on an entity with a primary key. 
 
-## Pointing @product@ to Your Permissions Configuration
+## Enabling Your Permissions Configuration
 
-Your last step is to point @product@ at your permission definitions. Each module
-that contains a `default.xml` permissions definition file must also have
+Your last step is to enable your permission definitions. Each module that
+contains a `default.xml` permissions definition file must also have
 a `portlet.properties` file with a property that defines where to find the
-permissions definition file. For your service and your web modules, then create
+permissions definition file. For your service and your web modules, create
 a `portlet.properties` file in `src/main/resources` and make sure it has this
 property: 
 

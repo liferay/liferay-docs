@@ -1,10 +1,10 @@
 # Associating Permissions with Resources 
 
-Now that you've defined permissions and registered them with your data, you must
-expose the permissions interface so users can set permissions. 
+Now that you've defined and registered permissions, you must expose the
+permissions interface so users can set permissions. 
 
 To allow permissions to be configured for model resources, you must add the
-permissions interface to the UI. Just add these two Liferay UI tags to your JSP:
+permissions interface to the UI. Add these two Liferay UI tags to your JSP:
 
 1.  `<liferay-security:permissionsURL>`: Returns a URL to the permission
     settings configuration page. 
@@ -45,15 +45,15 @@ class for which the fully qualified class name is
 model instance. In the example above, the Blog title is used for the model
 resource description. 
 
-`resourcePrimKey`: The primary key of your entity. 
+`resourcePrimKey`: Your entity's primary key. 
 
-`var`: Specifies the name of the variable to which the resulting URL string
-is assigned. The variable is then passed to the `<liferay-ui:icon>` tag
-so the permission icon has the proper URL link.
+`var`: The name of the variable to which the resulting URL string is assigned.
+The variable is then passed to the `<liferay-ui:icon>` tag so the permission
+icon has the proper URL link.
 
 There's an optional attribute called `redirect` that's available if you want to
 override the default behavior of the upper right arrow link. That's it; now your
 users can configure the permission settings for model resources! 
 
-Your next step is to check for permissions in the appropriate areas of your
-application. 
+You've completed step 3 in *DRAC*. Your next step is to check for permissions in
+the appropriate areas of your application. 

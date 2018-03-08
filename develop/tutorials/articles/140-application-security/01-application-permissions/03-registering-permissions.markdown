@@ -2,7 +2,7 @@
 
 Defining permissions was your first step; now you're ready to register the
 permissions you've defined. You must register your entities both in the database
-and to the permissions service running in the OSGi container. 
+and in the permissions service running in the OSGi container. 
 
 ## Registering Permissions Resources in the Database
 
@@ -25,17 +25,17 @@ you're using Service Builder, this is very easy to do.
 
     - Whether the permission is a portlet resource
     - Whether the default group permissions defined in `default.xml` should be
-    added
+      added
     - Whether the default guest permissions defined in `default.xml` should be
-    added
+      added
 
 Note that the resource local service is injected automatically into your Service
-Builder generated service. 
+Builder-generated service. 
 
 If you're not using Service Builder, but you are using OSGi modules for your
 application, you should be able to inject the resource service with an
 `@Reference` annotation. If you're building a WAR-style plugin, you need
-a [service tracker](/develop/tutorials/-/knowledge_base/7-0/service-trackers) to
+a [service tracker](/develop/tutorials/-/knowledge_base/7-1/service-trackers) to
 gain access to the service. 
 
 Similarly, when you delete an entity, you should also delete its associated
@@ -57,8 +57,8 @@ Now you're ready to register your entities with the permissions service.
 
 ## Registering Entities to the Permissions Service
 
-The permissions service that's running needs to know about your entities and how
-to check permissions for them. This requires creating a permissions registrar
+The permissions service that's running must know about your entities and how to
+check permissions for them. This requires creating a permissions registrar
 class. 
 
 1.  In your service bundle, create a package that by convention ends in
@@ -123,7 +123,7 @@ class.
         }
 
 The `activate` method is a *bundle activator*. Normally in Declarative Services
-components, this isn't needed, but you need this one to set up the chain of
+components this isn't needed, but this one is required to set up the chain of
 permission logic classes that protect your entities. Blogs uses portlet resource
 permissions, model resource permissions, staging permissions, and workflow
 permissions. 
@@ -131,6 +131,7 @@ permissions.
 Note that you specify your entity's class, primary key, and the entity itself
 for the factory so it can create permission objects specific to your entity. 
 
-Great! Once you've registered permissions for your entities, you're ready to
-provide users the interface to associate permissions with resources. 
+Great! You've now completed step 2 in *DRAC* by registering your permissions.
+Now you're ready to provide users the interface to associate permissions with
+resources. 
 
