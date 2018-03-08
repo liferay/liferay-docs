@@ -4,21 +4,22 @@ Liferay Workspace provides a way to target a specific release of @product@ to
 develop against. This greatly decreases the need to manage dependencies and
 their versions when developing your app. For example, suppose you've developed
 your app for the current release of @product@, but then a new version is
-released. Of course, many of the artifact versions have incremented, so you must
-update your app to use the latest artifacts available. It can be a hassle
-tracking down artifact versions and updating your app accordingly. With the
-option to specify your target platform, you update your workspace to point to a
-different @product@ version and all your dependencies are updated to the latest
-ones provided in the targeted release.
+released. Of course, many of the artifact versions have incremented, so you may
+want to update your app's dependencies to match the exact artifacts in the
+@product@ version you're targeting. It can be a hassle tracking down artifact
+versions and updating your app accordingly. With the option to specify your
+target platform, you update your workspace to point to a different @product@
+version and all your dependencies are updated to the latest ones provided in the
+targeted release.
 
 The option to target a specific @product@ version to develop against also offers
 additional features for those using
 [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) for
 development. @ide@ can index the configured @product@ source code to
 
-- provide advanced search
+- provide advanced Java search (Open Type and Reference Searching)
   ([tutorial](/develop/tutorials/-/knowledge_base/7-1/searching-product-source-in-liferay-ide))
-- debug @product@
+- debug @product@ sources
   ([tutorial](/develop/tutorials/-/knowledge_base/7-1/debugging-product-source-in-liferay-ide))
 
 These options in @ide@ are only available when developing in a Liferay
@@ -60,10 +61,7 @@ Open the workspace's `gradle.properties` file and set the
 `liferay.workspace.target.platform.version` property to the version you want to
 target. For example,
 
-    liferay.workspace.target.platform.version=7.1.0-m1
-
-<!-- TODO: Update above version to accurate milestone version syntax. This was a
-shot in the dark. -Cody -->
+    liferay.workspace.target.platform.version=7.1.0
 
 Once the target platform is configured, check to make sure no dependencies in
 your Gradle build files specify a version. The versions are now imported from
@@ -90,13 +88,10 @@ tutorial for more info.
 $$$
 
 The target platform functionality is available in Liferay Workspace version
-1.8.1+. If you have an older version, you must update it to leverage platform
+1.9.0+. If you have an older version, you must update it to leverage platform
 targeting. See the
 [Updating Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/updating-liferay-workspace)
 tutorial to do this.
-
-<!-- TODO: Verify that the 1.8.1 version is accurate once the features are
-officially released. -Cody -->
 
 You now know how to configure a target platform in workspace and how
 dependencies without versions appear in your Gradle build files. You're all set!
@@ -138,6 +133,11 @@ To do this, your `build.gradle` file should look similar to this:
         targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.0.5-SNAPSHOT"
     }
 
+<!-- TODO: The Maven URL pointing to Liferay's public snapshots will not be
+necessary once the portal artifacts are released to Liferay's public repo
+(targeting Beta). The temporary place to reference these is still TBD, according
+to Greg. -Cody -->
+
 This Gradle code
 
 - applies Liferay's Target Platform Gradle plugin
@@ -149,5 +149,8 @@ This Gradle code
     - `com.liferay.ce.portal.compile.only`: provides artifacts that are not
       included in @product@, but are necessary to reference during the build
       (e.g., `org.osgi.core`).
+
+<!-- TODO: Add info on the `targetPlatformIDE { includeGroups }` extension as a
+way to control what is available in the 'target platform index'. -Cody -->
 
 Now you can develop against a target platform!

@@ -64,10 +64,7 @@ for. To do this, open your workspace's `gradle.properties` file and set the
 `liferay.workspace.target.platform.version` property to the version you want to
 target. For example,
 
-    liferay.workspace.target.platform.version=7.1.0-m1
-
-<!-- TODO: Update above version to accurate milestone version syntax. This was a
-shot in the dark. -Cody -->
+    liferay.workspace.target.platform.version=7.1.0
 
 This provides a static *distro* JAR for the specified version of @product@,
 which contains all the metadata (i.e., capabilities, packages, versions, etc.)
@@ -89,7 +86,7 @@ a modification for your project to pass the resolver check.
 
 - You're depending on a third party library that is not available in the
   targeted @product@ instance or the current workspace.
-- You're depending on a platform that must be installed in @product@.
+- You're depending on a customized distribution of @product@.
 
 You'll explore these use cases next.
 
@@ -162,15 +159,36 @@ Be sure to replace the `PROJECT_NAME` filler with your module's name (e.g.,
 
 Now the `resolve` task skips your module project.
 
-### Depending on a Platform That Must Be Installed in @product@
+### Depending on a Customized Distribution of @product@
 
 There are times when manually specifying your project's list of dependent JARs
-does not suffice. For example, if you're creating a Liferay Audience Targeting
-rule that depends on the Audience Targeting platform, you can't easily provide a
-slew of JARs for your module. In this case, you should install the platform you
-wish to depend on and regenerate a new distro JAR with an updated list of
-capabilities that your @product@ instance will provide. Follow the steps below
-to accomplish this:
+does not suffice. If your app requires a customized @product@ instance to
+properly run, you must regenerate the distro JAR with an updated list of
+capabilities that the instance will provide. Two examples of a customized
+@product@ instance are described below:
+
+**Example 1**
+
+If you're creating a Liferay Audience Targeting rule that depends on the
+Audience Targeting platform, you can't easily provide a slew of JARs for your
+module. In this case, you should install the platform you wish to depend on and
+regenerate a new distro JAR with an updated list of capabilities that your
+@product@ instance will provide.
+
+**Example 2**
+
+You can easily extend @product@'s core features to provide a customized
+experience for you intended audience. When core features are customized, you'll
+develop your app to assume these customizations are present when it's deployed.
+The new capabilities resulting from your customizations are not available in the
+default distro JAR, since this JAR only provides the capabilities present in the
+default version of @product@. Therefore, when your application relies on these
+capabilities that are not available by default, it fails during the `resolve`
+task. To get around this, you must regenerate a new distro JAR with an updated
+list of capabilities that your customized @product@ instance will provide.
+
+To regenerate the distro JAR based on the current workspace's @product@
+instance, follow the steps below:
 
 <!-- The below process will likely be automated in Blade at some point. -Cody -->
 
@@ -183,9 +201,7 @@ to accomplish this:
 
 3.  From the root folder of you workspace, run the following command:
 
-        bnd remote distro -o custom_distro.jar com.liferay.ce.portal.distro 7.1.0-m1
-
-    <!-- TODO: Update milestone version with correct syntax, when available. -Cody -->
+        bnd remote distro -o custom_distro.jar com.liferay.ce.portal.distro 7.1.0
 
     This connects to the newly deployed BND agent running in @product@ and
     generates a new distro JAR named `custom_distro.jar`. All other capabilities
