@@ -3,7 +3,7 @@
 Whether you're updating your app to @product-ver@ or writing a new 
 @product-ver@ app, follow the process here to use Lexicon's icons. 
 You can find the list of available Lexicon icons on the 
-[Lexicon site](https://liferay.github.io/clay/content/icons-lexicon/).
+[Lexicon site](https://lexiconcss.wedeploy.io/content/icons-lexicon/).
 
 Lexicon icons are defined with the `icon` attribute. For example, you define the
 icon in the management bar, inside the
@@ -54,6 +54,6 @@ That's it! Now you know how to use Lexicon icons in your apps.
 
 ## Related Topics [](id=related-topics)
 
-[Setting Search Container Animations](/develop/tutorials/-/knowledge_base/7-0//develop/tutorials/-/knowledge_base/7-0/setting-search-container-animations)
+[Setting Search Container Animations](/develop/tutorials/-/knowledge_base/7-0/setting-search-container-animations)
 
-[Creating Layouts inside Custom Portlets](/develop/tutorials/-/knowledge_base/7-0//develop/tutorials/-/knowledge_base/7-0//develop/tutorials/-/knowledge_base/7-0/creating-layouts-inside-custom-portlets)
+[Creating Layouts inside Custom Portlets](/develop/tutorials/-/knowledge_base/7-0/creating-layouts-inside-custom-portlets)

@@ -9,8 +9,8 @@ with the *System* scope. What is the system scope? It's the entire system, of
 course. That might sound self explanatory, and it is, for the most part. It just
 means that configuration at this level affects the entire system, which means
 all the *Virtual Instances* of Liferay in the system. If you're not sure what a
-Virtual Instance is, read the section on [Setting Up a Liferay
-Instance](/discover/portal/-/knowledge_base/7-0/instance-settings/).
+Virtual Instance is, read the section on
+[Setting Up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/instance-settings).
 
 There are several configuration sections that take effect at the system scope:
 
