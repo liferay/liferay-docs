@@ -156,7 +156,7 @@ following methods:
   credentials are retrieved. Note that this only occurs when the Screenlet is 
   used and stored credentials are available. 
 
-## Challenge-Response Authentication
+## Challenge-Response Authentication [](id=challenge-response-authentication)
 
 To support 
 [challenge-response authentication](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication) 

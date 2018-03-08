@@ -151,7 +151,7 @@ methods:
 
 - `onLoginFailure(Exception e)`: Called when an error occurs in the process.
 
-## Challenge-Response Authentication
+## Challenge-Response Authentication [](id=challenge-response-authentication)
 
 To support 
 [challenge-response authentication](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication) 
