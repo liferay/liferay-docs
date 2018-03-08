@@ -47,6 +47,15 @@ contact Liferay Support and follow the troubleshooting steps in the below
 section. If for some reason the connection can't be restored, Liferay Support 
 will provide an alternative for activating your server. 
 
++$$$
+
+**Note:** The 30 day grace period only applies to servers running @product@ 
+patches hotfixes built after 05 March 2018. If your server isn't running such a 
+hotfix, the grace period is 7 days. See the table below for more information on 
+fix packs, hotfixes, and changes to grace period behavior. 
+
+$$$
+
 LCS automatically restores your server's activation upon reconnection (you 
 shouldn't need to restart the server). If this doesn't happen, you can force it 
 by redeploying the LCS client app. 
@@ -68,16 +77,20 @@ updates.
 
 | &nbsp;Fix Pack | &nbsp;Hotfix Built After | Before | After |
 | --------- | ------------------ | ------ | ----- |
-|   n/a     |        n/a         | The grace period warning is always displayed to administrators, on all pages. | A portal property can be used to restrict the grace period message to the License Manager and LCS pages in the Control Panel. |
-|   n/a     |        n/a         | The grace period lasts 7 days. | The grace period lasts 30 days. |
-| DXP DE-32 | 20 Oct 2017 | The grace period warning is displayed as soon as the LCS connection is lost. | The grace period warning is displayed only after the connection has been out for 1 hour. This prevents false alarms for transient network problems. |
+|   n/a     | 05 March 2018 | The grace period lasts 7 days. | The grace period lasts 30 days. |
 | DXP DE-33 | 17 Nov 2017 | The grace period is only invoked for lost network connections. | The grace period is invoked for failed subscription validation, if the server was previously registered. |
+| DXP DE-32 | 20 Oct 2017 | The grace period warning is displayed as soon as the LCS connection is lost. | The grace period warning is displayed only after the connection has been out for 1 hour. This prevents false alarms for transient network problems. |
 
 <!--
 
 For DXP DE-33, I'm assuming the grace period is still invoked for lost network 
 connections, correct?
 
+-->
+<!-- 
+Add to table once the functionality is implemented: 
+
+|   n/a     |        n/a         | The grace period warning is always displayed to administrators, on all pages. | A portal property can be used to restrict the grace period message to the License Manager and LCS pages in the Control Panel. |
 -->
 
 ### Subscription Grace Period
