@@ -1,8 +1,8 @@
 # Using the Chart Taglib in Your Portlets [](id=using-the-chart-taglib-in-your-portlets)
 
 Lines, splines, bars, pies and more, the Liferay Chart tag Library provides 
-everything you need to model data in @product@. Each taglib gives you access to 
-the corresponding 
+everything you need to model data. Each taglib gives you access to the
+corresponding 
 [Clay component](https://github.com/liferay/clay/tree/develop/packages). These 
 components contain the default configuration for the UI.
 
@@ -59,7 +59,7 @@ Java sample data:
 JSP:
 
     <chart:bar config="<%= chartSampleDisplayContext.getBarChartConfig() %>" id="bar" />
-    
+ 
 ![Figure 2: A bar chart models the data in bars.](../../images/chart-taglib-bar.png)
 
 Line chart:
@@ -262,13 +262,13 @@ JSP:
 
 ## Combination Charts [](id=bar-and-combination-charts)
 
-Combination charts are configured slightly different from other charts. In a 
-combination chart, you must define the representation type of each data set: 
-`AREA`, `AREA_SPLINE`, `AREA_STEP`, `BAR`, `BUBBLE`, `DONUT`, `GAUGE`, `LINE`, 
-`PIE`, `SCATTER`, `SPLINE`, or `STEP`. Each data set in a combination chart is 
-an instance of the `TypedMultiValueColumn` object. Each object receives an ID, 
-the representation type, and values for the data. In the example below, data 
-series `data1` and `data2` are displayed together with the `addGroup()` method. 
+Combination charts have minor differences from other charts. In a combination
+chart, you must define the representation type of each data set: `AREA`,
+`AREA_SPLINE`, `AREA_STEP`, `BAR`, `BUBBLE`, `DONUT`, `GAUGE`, `LINE`, `PIE`,
+`SCATTER`, `SPLINE`, or `STEP`. Each data set in a combination chart is an
+instance of the `TypedMultiValueColumn` object. Each object receives an ID, the
+representation type, and values for the data. In the example below, data series
+`data1` and `data2` are displayed together with the `addGroup()` method. 
 
 Combination chart:
 

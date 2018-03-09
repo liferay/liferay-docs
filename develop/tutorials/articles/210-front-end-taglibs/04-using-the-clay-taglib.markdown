@@ -7,7 +7,7 @@ UI components in your app.
 +$$$
 
 **Note:** AUI taglibs are deprecated as of @product-ver@. We recommend that you 
-use Clay taglibs in your app to avoid future compatibility issues. 
+use Clay taglibs to avoid future compatibility issues. 
 
 $$$
 
@@ -44,15 +44,14 @@ resulting UI.
 
 ## Alerts [](id=alerts)
 
-Clay alerts come in two types: embedded and stripe. This section covers both 
-these types and explains the key differences.
+Clay alerts come in two types: embedded and stripe. 
 
 ### Embedded Alerts [](id=embedded-alerts)
 
-Embedded alerts are usually used inside forms. An embedded alert's width is 
-determined by the width of the element that contains it. The close action is not 
-required for embedded alerts. The following embedded alerts can be created with 
-Clay taglibs:
+Embedded alerts are usually used inside forms. The element that contains it
+determines an embedded alert's width. The close action is not required for
+embedded alerts. The following embedded alerts can be created with Clay
+taglibs:
 
 Danger alert (embedded):
 
@@ -98,7 +97,7 @@ Warning alert (embedded):
 Stripe alerts are placed below the last navigation element (either the header or 
 the navigation bar), and they usually appear on *Save* action, communicating 
 the status of the action once received from the server. Unlike embedded alerts, 
-stripe alerts require the close action. A strip alert is always the full width 
+stripe alerts require the close action. A stripe alert is always the full width 
 of the container and pushes all the content below it. The following stripe 
 alerts can be created with Clay taglibs:
 
@@ -138,7 +137,7 @@ Warning alert (stripe):
     	style="warning"
     	title="Warning"
     />
-    
+ 
 ![Figure 9: The warning striped alert warns the user about an action.](../../images/clay-taglib-alert-warning-stripe.png)
 
 ## Badges [](id=badges)
@@ -223,16 +222,14 @@ Primary button with label:
     <clay:button label="Primary" />
 
 ![Figure 16: A primary button is bright blue, grabbing the user's attention.](../../images/clay-taglib-button-primary.png)
-    
+ 
 Primary button with icon:
     
     <clay:button ariaLabel="Workflow" icon="workflow" />
 
 ![Figure 17: Buttons can also display icons.](../../images/clay-taglib-button-primary-icon.png)
 
-+$$$
-
-**Note:** You can disable a button by adding the `disabled` attribute:
+You can disable a button by adding the `disabled` attribute:
 
     <div class="col">
         <clay:button disabled="<%= true %>" label="Primary" />
@@ -242,8 +239,6 @@ Primary button with icon:
     </div>
 
 ![Figure 18: Buttons can be disabled if you don't want the user to interact with them.](../../images/clay-taglib-button-primary-disabled.png)
-
-$$$
 
 Secondary button: Used for secondary actions. There can be multiple secondary 
 buttons together or near each other. 
@@ -257,7 +252,7 @@ buttons together or near each other.
 
 ![Figure 19: A secondary button draws less attention than a primary button and is meant for secondary actions.](../../images/clay-taglib-button-secondary.png)
 
-Borderless button: Used in cases, such as toolbars, where the secondary button 
+Borderless button: Used in cases such as toolbars where the secondary button 
 would be too heavy for the design. This keeps the design clean.
 
     <div class="col">
@@ -297,7 +292,7 @@ Button with monospaced text:
 Block level button: 
 
     <clay:button block="<%= true %>" label="Button" />
-    
+ 
 ![Figure 24: Block level buttons span the entire width of the container.](../../images/clay-taglib-button-block-level.png)
 
 Plus button:
@@ -309,13 +304,13 @@ Plus button:
 Action button:
 
     <clay:button icon="ellipsis-v" monospaced="<%= true %>" style="borderless" />
-    
+ 
 ![Figure 26: An action button is used to display actions menus.](../../images/clay-taglib-button-action.png)
 
 ## Cards [](id=cards)
 
-Cards are used to visually represent data. They can be used for images, document 
-libraries, user profiles and more. There are four main types of Cards:
+Cards visually represent data. Use them for images, document libraries, user
+profiles and more. There are four main types of Cards:
 
 - Image Cards
 - File Cards
@@ -338,7 +333,7 @@ Image Card:
     	subtitle="Author Action"
     	title="Madrid"
     />
-    
+ 
 ![Figure 27: Image Cards display images and documents.](../../images/clay-taglib-image-card.png)
 
 Image Card with icon:
@@ -414,8 +409,8 @@ Include the `selectable` attribute to make cards selectable (include a checkbox)
 
 ### File Cards [](id=file-cards)
 
-File Cards display an icon of the file's type. They are used to represent file 
-types other than image files (i.e. PDF, MP3, DOC, etc.).
+File Cards display an icon of the file's type. They represent file types other
+than image files (i.e. PDF, MP3, DOC, etc.).
 
     <clay:file-card
     	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
@@ -434,7 +429,7 @@ types other than image files (i.e. PDF, MP3, DOC, etc.).
 You can optionally use the `labelStylesMap` attribute to pass a `HashMap` of 
 multiple labels, as shown above.
 
-The example below specifies a list `icon` instead of the default file icon:  
+The example below specifies a list `icon` instead of the default file icon: 
 
     <clay:file-card
     	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
@@ -489,10 +484,9 @@ User Card with profile image:
 
 ### Horizontal Cards [](id=horizontal-cards)
 
-Horizontal Cards are primarily meant to represent folders and can have the same 
-amount of information as other Cards. The key difference is that horizontal 
-Cards let you remove the image portion of the Card, since only the folder icon 
-is required.
+Horizontal Cards represent folders and can have the same amount of information
+as other Cards. The key difference is that horizontal Cards let you remove the
+image portion of the Card, since only the folder icon is required.
 
     <clay:horizontal-card
     	actionItems="<%= cardsDisplayContext.getDefaultActionItems() %>"
@@ -500,7 +494,7 @@ is required.
     	selected="<%= true %>"
     	title="ReallySuperInsanelyJustIncrediblyLongAndTotallyNotPossibleWordButWeAreReallyTryingToCoverAllOurBasesHereJustInCaseSomeoneIsNutsAsPerUsual"
     />
-    
+ 
 ![Figure 36: Horizontal Cards are good for displaying folders.](../../images/clay-taglib-horizontal-card.png)
 
 ## Navigation Menus [](id=navigation-menus)
@@ -517,44 +511,44 @@ Basic dropdown menu:
     	items="<%= dropdownsDisplayContext.getDefaultDropdownItems() %>"
     	label="Default"
     />
-    
+ 
 ![Figure 37: Clay taglibs provide everything you need to add dropdown menus to your app.](../../images/clay-taglib-dropdown-basic.png)
-    
-The dropdown menu's items are defined in its java class--`dropdownDisplayContext` 
+ 
+The dropdown menu's items are defined in its Java class--`dropdownDisplayContext` 
 in this case. Menu items are `NavigationItem` objects. You can disable menu 
 items with the `setDisabled(true)` method and make a menu item active with the 
 `setActive(true)` method. The `href` attribute is set with the `setHref()` 
-method, and labels are defined with the `setLabel()` method. An example 
-implementation of the `dropdownDisplayContext` class is shown below:
+method, and labels are defined with the `setLabel()` method. Here's an example
+implementation of the `dropdownDisplayContext` class:
 
-    if (_defaultDropdownItems != null) {
-      return _defaultDropdownItems;
-    }
+        if (_defaultDropdownItems != null) {
+          return _defaultDropdownItems;
+        }
 
-    _defaultDropdownItems = new ArrayList<>();
+        _defaultDropdownItems = new ArrayList<>();
 
-    for (int i = 0; i < 4; i++) {
-      NavigationItem navigationItem = new NavigationItem();
+        for (int i = 0; i < 4; i++) {
+          NavigationItem navigationItem = new NavigationItem();
 
-      if (i == 1) {
-        navigationItem.setDisabled(true);
-      }
-      else if (i == 2) {
-        navigationItem.setActive(true);
-      }
+          if (i == 1) {
+            navigationItem.setDisabled(true);
+          }
+          else if (i == 2) {
+            navigationItem.setActive(true);
+          }
 
-      navigationItem.setHref("#" + i);
-      navigationItem.setLabel("Option " + i);
+          navigationItem.setHref("#" + i);
+          navigationItem.setLabel("Option " + i);
 
-      _defaultDropdownItems.add(navigationItem);
-    }
+          _defaultDropdownItems.add(navigationItem);
+        }
 
-    return _defaultDropdownItems;
-    }
+        return _defaultDropdownItems;
+        }
 
-You can organize your menu items into groups by setting the `NavigationItem`'s 
-type to `TYPE_GROUP` and nesting the items in separate `ArrayList`s. You can add 
-a horizontal separator to visually separate the groups with the 
+You can organize menu items into groups by setting the `NavigationItem`'s type
+to `TYPE_GROUP` and nesting the items in separate `ArrayList`s. You can add
+a horizontal separator to separate the groups visually with the 
 `setSeparator(true)` method. Below is a code snippet from the 
 `dropdownsDisplayContext` class:
 
@@ -573,8 +567,8 @@ Corresponding taglib:
 You can also add inputs to dropdown menus. To add an input to a dropdown menu, 
 set the input's type with the `setType()` method 
 (e.g. `NavigationItem.TYPE_CHECKBOX`), its name with the `setInputName()` 
-method, and its value with the `setInputValue()` method. An example 
-implementation is shown below:
+method, and its value with the `setInputValue()` method. Here's an example
+implementation: 
 
     navigationItem.setInputName("checkbox" + i);
     navigationItem.setInputValue("checkboxValue" + i);
@@ -638,13 +632,19 @@ These tags are covered in this section.
 			
     <clay:checkbox checked="<%= true %>" hideLabel="<%= true %>" label="My Input" name="name" />
 
-attributes:
-- checked: Whether the checkbox is checked
-- disabled: Whether the checkbox is enabled
-- hideLabel: Whether to display the checkbox label
-- indeterminate: Checkbox variable for multiple selection
-- label: The checkbox's label
-- name: The checkbox's name
+Attributes:
+
+**checked:** Whether the checkbox is checked
+
+**disabled:** Whether the checkbox is enabled
+
+**hideLabel:** Whether to display the checkbox label
+
+**indeterminate:** Checkbox variable for multiple selection
+
+**label:** The checkbox's label
+
+**name:** The checkbox's name
 
 ![Figure 43: Clay taglibs provide checkboxes.](../../images/clay-taglib-form-checkbox.png)
 
@@ -652,12 +652,17 @@ attributes:
 
     <clay:radio checked="<%= true %>" hideLabel="<%= true %>" label="My Input" name="name" /></td>
 
-attributes:
-- checked: Whether the radio button is checked
-- hideLabel: Whether to display the radio button label
-- disabled: Whether the radio button is enabled
-- label: The radio button's label
-- name: The radio button's name
+Attributes:
+
+**checked:** Whether the radio button is checked
+
+**hideLabel:** Whether to display the radio button label
+
+**disabled:** Whether the radio button is enabled
+
+**label:** The radio button's label
+
+**name:** The radio button's name
 
 ![Figure 44: Clay taglibs provide radio buttons.](../../images/clay-taglib-form-radio-button.png)
 
@@ -689,11 +694,12 @@ attribute to `true`:
 
 ![Figure 46: You can let users select multiple options from the select menu.](../../images/clay-taglib-form-selector-multiple.png)
 
-attributes:
-- disabled: Whether the selector is enabled
-- label: The selector's label
-- multiple: Whether multiple options can be selected
-- name: The selector's name
+Attributes:
+
+**disabled:** Whether the selector is enabled
+**label:** The selector's label
+**multiple:** Whether multiple options can be selected
+**name:** The selector's name
 
 ### Icons [](id=icons)
 
@@ -723,7 +729,7 @@ of these options.
 ### Color-coded Labels [](id=color-coded-labels)
 
 The Liferay Clay labels come in four different colors: dark-blue for info, 
-light-grey for status, orange for pending, red for rejected, and green for 
+light-gray for status, orange for pending, red for rejected, and green for 
 approved.
 
 Info labels are dark-blue, and since they stand out a bit more than status 
@@ -734,7 +740,7 @@ set the `style` attribute to `info`:
 
 ![Figure 50: Info labels convey general information.](../../images/clay-taglib-label-info.png)
 
-Status labels are light-grey, and due to their neutral color, they are best for 
+Status labels are light-gray, and due to their neutral color, they are best for 
 conveying basic information. Status labels are the default label and therefore 
 require no `style` attribute: 
 
@@ -742,9 +748,9 @@ require no `style` attribute:
 
 ![Figure 51: Status labels are the least flashy and best for displaying basic information.](../../images/clay-taglib-label-status.png)
 
-Warning labels are orange, and due to their pop of color, they are best for 
-conveying a warning message. To use a warning label, set the `style` attribute 
-to `warning`:
+Warning labels are orange, and due to their color, they are best for conveying
+a warning message. To use a warning label, set the `style` attribute to
+`warning`:
 
 		<clay:label label="Pending" style="warning" />
 
@@ -764,8 +770,8 @@ To use a success label, set the `style` attribute to `success`:
 
 ![Figure 54: Success labels indicate a successful action.](../../images/clay-taglib-label-success.png)
 
-Labels can also be bigger if you require it. Set the `size` attribute to `lg` to 
-display large labels:
+Labels can also be bigger. Set the `size` attribute to `lg` to display large
+labels:
     
     <clay:label label="Approved" size="lg" style="success" />
 
@@ -844,9 +850,9 @@ Complete progress bar:
 
 ## Stickers [](id=stickers)
 
-Whereas badges are for displaying numbers and labels are for short information, 
-stickers are small visual indicators of the content (usually the content type). 
-They  can include a small label or a Liferay icon, and they come in two shapes: 
+Whereas badges display numbers and labels display short information, stickers
+are small visual indicators of the content (usually the content type). They
+can include a small label or a Liferay icon, and they come in two shapes:
 circle and square. 
 
 Square sticker with label:
