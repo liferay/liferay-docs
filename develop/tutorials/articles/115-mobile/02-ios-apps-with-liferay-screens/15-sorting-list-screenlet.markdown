@@ -10,16 +10,16 @@ for your sorted list.
 +$$$
 
 **Note:** To create a new comparator, you must create a class that extends the 
-portal’s 
+portal's 
 [`OrderByComparator` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/OrderByComparator.html) 
 with your entity as a type argument. Then you must override the methods that 
-implement the sort. For example, the portal’s 
+implement the sort. For example, the portal's 
 [`EntryURLComparator` class](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/util/comparator/EntryURLComparator.java) 
-sorts bookmarks in Liferay’s Bookmarks portlet by URL. 
+sorts bookmarks in Liferay's Bookmarks portlet by URL. 
 
 $$$
 
-First, you’ll learn how to use a comparator to sort your list Screenlet. 
+First, you'll learn how to use a comparator to sort your list Screenlet. 
 
 ## Using a Comparator [](id=using-a-comparator)
 
@@ -32,7 +32,7 @@ sort its list of bookmarks by URL, you must set *Obc Class Name* to
 
 ![Figure 1: To use a comparator, set the *Obc Class Name* property in Interface Builder to the comparator's fully qualified class name.](../../../images/screens-ios-obc-ib.png)
 
-That’s it! Note that although all list Screenlets inherit the `obcClassName` 
+That's it! Note that although all list Screenlets inherit the `obcClassName` 
 property from 
 [the `BaseListScreenlet` class](https://github.com/liferay/liferay-screens/blob/develop/ios/Framework/Core/Base/BaseListScreenlet/BaseListScreenlet.swift), 
 the list Screenlet must also make its service call with this property. See the 
@@ -47,11 +47,11 @@ one that matches your @product@ version.
 Dividing lists into sections that contain like elements is common in iOS apps. 
 To do this in list Screenlets, first use a comparator to sort the list by the 
 criteria you'll use to create the sections. Then override the 
-[`BookmarkListPageLoadInteractor` class’s](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Bookmark/BookmarkListScreenlet/Interactor/BookmarkListPageLoadInteractor.swift) 
-`sectionForRowObject` method in your list Screenlet’s Interactor. This method is 
+[`BookmarkListPageLoadInteractor` class's](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Bookmark/BookmarkListScreenlet/Interactor/BookmarkListPageLoadInteractor.swift) 
+`sectionForRowObject` method in your list Screenlet's Interactor. This method is 
 called for each item in the list and should return the information necessary to 
 place the item in a section. For example, 
-[the sample Bookmark List Screenlet’s Interactor](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Bookmark/BookmarkListScreenlet/Interactor/BookmarkListPageLoadInteractor.swift) 
+[the sample Bookmark List Screenlet's Interactor](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Bookmark/BookmarkListScreenlet/Interactor/BookmarkListPageLoadInteractor.swift) 
 overrides the `sectionForRowObject` method to group results by hostname: 
 
     public override func sectionForRowObject(object: AnyObject) -> String? {
@@ -67,8 +67,8 @@ overrides the `sectionForRowObject` method to group results by hostname:
 Note that this only produces predictable results when Bookmark List Screenlet is 
 sorted by `EntryURLComparator` as detailed in the preceding section. 
 
-And that’s all there is to it! Now you know how to sort and section your list 
-Screenlet’s list. 
+And that's all there is to it! Now you know how to sort and section your list 
+Screenlet's list. 
 
 ## Related Topics [](id=related-topics)
 

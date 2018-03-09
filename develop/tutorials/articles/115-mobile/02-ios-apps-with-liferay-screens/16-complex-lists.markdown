@@ -9,17 +9,17 @@ should use
 in your list Screenlet's Theme. 
 
 This tutorial shows you how to create such a Theme, using 
-[the sample Bookmark List Screenlet’s Collection Theme](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/BookmarkListScreenlet/Themes/CollectionView) 
+[the sample Bookmark List Screenlet's Collection Theme](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/BookmarkListScreenlet/Themes/CollectionView) 
 as an example. First, you'll create the list's cell. 
 
 ## Creating the Cell [](id=creating-the-cell)
 
 You'll create your list's cell with 
 [the same sequence of steps](link-to-custom-cells-tutorial) 
-used to create any list Screenlet’s cell. Note, however, that how you perform 
+used to create any list Screenlet's cell. Note, however, that how you perform 
 these steps is a bit different: 
 
-1.  Define your cell’s UI in a new XIB file. Because this cell is part of a Theme 
+1.  Define your cell's UI in a new XIB file. Because this cell is part of a Theme 
     that uses `UICollectionView`, you can shape it however you want. For example, 
     here's the `BookmarkCell_default-collection.xib` file for the cell in 
     Bookmark List Screenlet's Collection Theme. It's a simple square that 
@@ -30,10 +30,10 @@ these steps is a bit different:
 2.  Create your XIB file's class by extending `UICollectionViewCell`. Create as 
     many outlets and actions as you need for your UI components and write the 
     logic required for your cell's UI to function. For example, 
-    `BookmarkCell_default_collection` is the XIB file’s class in Bookmark List 
-    Screenlet’s Custom Theme. This class extends `UICollectionViewCell` and 
+    `BookmarkCell_default_collection` is the XIB file's class in Bookmark List 
+    Screenlet's Custom Theme. This class extends `UICollectionViewCell` and 
     contains outlets for the URL (`urlLabel`) and the URL's first letter 
-    (`centerLabel`). The `bookmark` variable’s `didSet` observer sets the 
+    (`centerLabel`). The `bookmark` variable's `didSet` observer sets the 
     bookmark's name and URL to the respective label. Also note that the 
     overridden `prepareForReuse` method resets the labels for reuse: 
 
@@ -72,18 +72,18 @@ these steps is a bit different:
 
 Now that your cell exists, you can create the rest of your Theme. 
 
-## Creating the Theme’s XIB and View Class [](id=creating-the-themes-xib-and-view-class)
+## Creating the Theme's XIB and View Class [](id=creating-the-themes-xib-and-view-class)
 
 You'll create the rest of your Theme with 
 [the same sequence of steps](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets#creating-the-view) 
-used to create any list Screenlet’s Theme. Like creating the cell, how you 
+used to create any list Screenlet's Theme. Like creating the cell, how you 
 perform these steps is a bit different because your Theme uses 
 `UICollectionView` instead of `UITableView`. 
 
-First, define your Theme’s UI in a new XIB file. Add a `UICollectionView` 
+First, define your Theme's UI in a new XIB file. Add a `UICollectionView` 
 instead of a `UITableView` to this file. For example, the 
 [`BookmarkListView_default-collection.xib` file](https://github.com/liferay/liferay-screens/blob/master/ios/Samples/Bookmark/BookmarkListScreenlet/Themes/CollectionView/BookmarkListView_default-collection.xib) 
-for Bookmark List Screenlet’s Custom Theme contains a collection view. 
+for Bookmark List Screenlet's Custom Theme contains a collection view. 
 
 Next, create the View class. Instead of extending `BaseListTableView`, this 
 class must extend Screens's 
@@ -91,7 +91,7 @@ class must extend Screens's
 The `BaseListCollectionView` class implements most of the code necessary to use 
 `UICollectionView` in your Screenlet. By extending it, you can focus on the code 
 unique to your Screenlet. Your View class should also contain a string constant 
-to serve as the cell ID. You’ll use this constant when you register your cell. 
+to serve as the cell ID. You'll use this constant when you register your cell. 
 For example, the View class in Bookmark List Screenlet's Collection Theme 
 (`BookmarkListView_default_collection`) extends `BaseListCollectionView` and 
 defines the string constant `BookmarkCellId`: 
@@ -109,7 +109,7 @@ in the previous section. In this method, create a `UINib` instance for your cell
 and then register it with the `UICollectionView` instance (`collectionView`) 
 inherited from `BaseListCollectionView`. When registering the nib file, you must 
 use the string constant you created earlier as the `forCellReuseIdentifier`. For 
-example, here’s the `doRegisterCellNibs` method in 
+example, here's the `doRegisterCellNibs` method in 
 `BookmarkListView_default_collection`: 
 
     public override func doRegisterCellNibs() {

@@ -92,7 +92,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 - `classNameId`
 
-If you don’t use `classNameId`, you must use this attribute: 
+If you don't use `classNameId`, you must use this attribute: 
 
 - `portletItemName`
 
