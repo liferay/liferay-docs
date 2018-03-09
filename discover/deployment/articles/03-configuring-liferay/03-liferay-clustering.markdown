@@ -257,13 +257,13 @@ If you're overriding these properties, it's because you want to customize the
 configuration for your own site. A good way to start with this is to extract
 Liferay's cluster configuration file and then customize it. You'll find it in
 the Liferay Foundation application suite's
-`com.liferay.portal.ehcache-[version].jar` file. You can get this JAR from the
-`Liferay Foundation.lpkg` file in the `osgi/marketplace` folder. The file you
-want is `liferay-multi-vm-clustered.xml`, in the `/ehcache` folder inside the
-`com.liferay.portal.ehcache-[version].jar` file. Once you have the file, replace
-the contents of the `override-liferay-multi-vm-clustered.xml` file above with
-the contents of this file. Now you'll be using the default configuration as a
-starting point. 
+`com.liferay.portal.cache.ehcache-[version].jar` file. You can get this JAR from
+the `Liferay Foundation.lpkg` file in the `osgi/marketplace` folder. The file
+you want is `liferay-multi-vm-clustered.xml`, in the `/ehcache` folder inside
+the `com.liferay.portal.cache.ehcache-[version].jar` file. Once you have the
+file, replace the contents of the `override-liferay-multi-vm-clustered.xml` file
+above with the contents of this file. Now you'll be using the default
+configuration as a starting point. 
 
 Once you've made your changes to the cache, save the file, build, and deploy the
 module, and your settings override the default settings. In this way, you can
