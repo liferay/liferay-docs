@@ -563,28 +563,21 @@ nodes.
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
 caching enables some RMI (Remote Method Invocation) cache listeners that are
-designed to replicate the cache across a cluster. 
+designed to replicate the cache across a cluster. Cluster Link uses 
+[Ehcache](http://www.ehcache.org), 
+which has robust distributed caching support. The cache is distributed across 
+multiple @product@ nodes running concurrently. The Ehcache global settings are in the
+[`portal.properties` file](@platform-ref@/6.2/propertiesdoc/portal.properties.html#Ehcache). 
 
-Liferay uses [Ehcache](www.ehcache.org), which has robust distributed caching
-support. This means that the cache can be distributed across multiple Liferay
-nodes running concurrently. Enabling this cache can increase performance
-dramatically. For example, suppose that two users are browsing the message
-boards. The first user clicks a thread to read it. Liferay must look up that
-thread from the database and format it for display in the browser. With a
-distributed Ehcache running, this thread is stored in a cache for quick
-retrieval, and that cache is then replicated to the other nodes in the cluster.
-Suppose then that the second user who is being served by another node in the
-cluster wants to read the same forum thread and clicks on it. This time, the
-data is retrieved more quickly. Because the thread is in the cache, no trip to
-the database is necessary. 
-
-This is much more powerful than having a cache running separately on each node.
-The power of *distributed* caching allows for common portal destinations to be
-cached for multiple users. The first user can post a message to the thread he or
-she was reading, and the cache is updated across all the nodes, making the new
-post available immediately from the local cache. Without that, the second user
-would need to wait until the cache was invalidated on the node he or she
-connected to before he or she could see the updated forum post. 
+By default Liferay does not copy cached entities between nodes. If an entity is
+deleted or changed, for example, Cluster Link sends an *remove* message to the
+other nodes to invalidate this entity in their local cache. Requesting that
+entity on another node results in a cache *miss*; the entity is then retrieved
+from the database and put into the local cache. Entities added to one node's
+local cache are not copied to local caches of the other nodes. An attempt to
+retrieve a new entity on a node which doesn't have that entity cached results in
+a cache *miss*. The miss triggers the node to retrieve the entity from the
+database and store it in its local cache. 
 
 Once you enable distributed caching, of course, you should do some due diligence
 and test your system under a load that best simulates the kind of traffic your
