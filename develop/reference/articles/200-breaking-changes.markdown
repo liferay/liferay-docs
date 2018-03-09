@@ -546,7 +546,7 @@ configuration changes.
 
 ### Removed JavaScript Minification Properties minifier.javascript.impl and yui.compressor.* from portal.properties [](id=removed-javascript-minification-properties-minifier-javascript-impl-and-yui)
 - **Date:** 2018-Feb-28
-- **JIRA Ticket:** LPS-74375
+- **JIRA Ticket:** [LPS-74375](https://issues.liferay.com/browse/LPS-74375)
 
 #### What changed? [](id=what-changed-11)
 
@@ -581,7 +581,7 @@ minifiers. Also, configuration can now be done using OSGi standards.
 
 ### Changed Behavior of liferay-ui:input-date Taglib's showDisableCheckbox Argument [](id=changed-behavior-of-liferay-uiinput-date-taglibs-showdisablecheckbox-argume)
 - **Date:** 2018-Mar-06
-- **JIRA Ticket:** LPS-78475
+- **JIRA Ticket:** [LPS-78475](https://issues.liferay.com/browse/LPS-78475)
 
 #### What changed? [](id=what-changed-12)
 
