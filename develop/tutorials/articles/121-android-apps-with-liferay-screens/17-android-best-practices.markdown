@@ -143,7 +143,7 @@ Interactor's `start` method:
 The `start` method calls the Interactor's `execute` method in a background 
 thread. The `execute` method in Add Bookmark Screenlet's Interactor 
 (`AddBookmarkInteractor`) creates a `BasicEvent` object that contains the 
-`start` method’s arguments: 
+`start` method's arguments: 
 
     @Override
     public BasicEvent execute(Object[] args) throws Exception {

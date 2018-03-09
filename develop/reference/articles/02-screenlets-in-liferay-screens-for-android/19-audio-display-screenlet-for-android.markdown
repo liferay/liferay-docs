@@ -66,7 +66,7 @@ If you don't use `entryId`, you must use both of the following attributes:
 | `autoLoad` | `boolean` | Whether the audio file automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
 | `entryId` | `number` | The primary key of the audio file. | 
 | `className` | `string` | The audio file's fully qualified class name. Since files in a Documents and Media Library are `DLFileEntry` objects, their `className` is [`com.liferay.portlet.documentlibrary.model.DLFileEntry`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/documentlibrary/model/DLFileEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `classPK` | `number` | The audio file’s unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `classPK` | `number` | The audio file's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/6-2/audio-display-screenlet-for-android#offline) for details. |
 
 ## Listener [](id=listener)

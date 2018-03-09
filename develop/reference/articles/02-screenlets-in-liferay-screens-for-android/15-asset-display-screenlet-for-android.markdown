@@ -90,7 +90,7 @@ attribute:
 | `autoLoad` | `boolean` | Whether the asset automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
 | `entryId` | `number` | The primary key of the asset. | 
 | `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.blogs.kernel.model.BlogsEntry`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/blogs/model/BlogsEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `classPK` | `number` | The asset’s unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `classPK` | `number` | The asset's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `portletItemName` | `string` | The name of the [archived setup](/discover/portal/-/knowledge_base/6-2/archived-setups) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Archived/Restore Setup* option to save this setup with a name. Use this name in this attribute. If there is more than one asset in the setup, the Screenlet displays only the first one. |
 | `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/6-2/asset-display-screenlet-for-android#offline) for details. |
 | `imageLayoutId` | `@layout` | The layout to use to show an image (`DLFileEntry`). |

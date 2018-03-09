@@ -77,7 +77,7 @@ Instead of `assetEntryId`, you can use both of these attributes:
 - `className`
 - `classPK`
 
-If you don’t use the above attributes, you must use this attribute: 
+If you don't use the above attributes, you must use this attribute: 
 
 - `portletItemName`
 
@@ -87,7 +87,7 @@ If you don’t use the above attributes, you must use this attribute:
 |-----------|-----------|-------------|
 | `assetEntryId` | `number` | The primary key of the asset. | 
 | `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.portlet.blogs.model.BlogsEntry`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/blogs/model/BlogsEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. | 
-| `classPK` | `number` | The asset’s unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `classPK` | `number` | The asset's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `portletItemName` | `string` | The name of the [archived setup](/discover/portal/-/knowledge_base/6-2/archived-setups) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Archived/Restore Setup* option to save this setup with a name. Use this name in this attribute. If there is more than one asset in the setup, the Screenlet displays only the first one. |
 | `assetEntry` | `Asset` | The `Asset` object to display, selected from a list of assets. Note that if you use this attribute, the Screenlet doesn't need to call the server. |
 | `autoLoad` | `boolean` | Whether the asset automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
