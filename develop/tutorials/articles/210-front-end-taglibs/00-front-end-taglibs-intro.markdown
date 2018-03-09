@@ -1,10 +1,12 @@
 # Front-End Taglibs [](id=front-end-taglibs)
 
-@product@ offers a powerful set of taglibs that are fully maintained and 
-integrated. They provide common implementations for UI components and utilities 
-to ensure that your app behaves in a very clean and efficient way. All you have 
-to do is choose a taglib, add it to your portlet, provide a few configuration 
-options, and the HTML markup is automatically generated for you in the browser.
+You have access to a powerful set of taglibs that let you create commonly used 
+UI components in your apps. The Clay taglib lets you add 
+[Clay components](https://clayui.com/docs/components/alerts.html), 
+such as alerts, buttons, dropdown menus, form elements and more to your apps. If 
+you need to visualize data, the chart taglib has you covered. The chart taglib 
+lets you create bar charts, line charts, scatter charts, spline charts, and much 
+more.
 
-In this section of tutorials, you'll learn how to use @product@'s taglibs to 
-build awesome user interfaces.
+In this section of tutorials, you'll learn how to use taglibs to build awesome 
+user interfaces for your apps!
