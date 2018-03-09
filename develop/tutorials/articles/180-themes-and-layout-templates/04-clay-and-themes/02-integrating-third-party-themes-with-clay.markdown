@@ -61,7 +61,7 @@ Follow these steps to integrate a third party theme with Clay Base:
 
 Now you know how to integrate third party themes with Clay Base!
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Applying Clay Styles to Your App](/develop/tutorials/-/knowledge_base/7-1/applying-clay-styles-to-your-app)
 

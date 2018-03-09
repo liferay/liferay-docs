@@ -527,6 +527,6 @@ and margins as shown below:
 
 Now you know how to use Chart taglibs to model data in @product@!
 
-## Related topics
+## Related topics [](id=related-topics)
 
 [Using Clay Taglibs in Your Portlet](/develop/tutorials/-/knowledge_base/7-1/using-the-clay-taglib-in-your-portlets)
