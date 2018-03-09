@@ -196,7 +196,7 @@ configuration changes.
 ---------------------------------------
 
 ### Moved OpenOffice Properties to OSGi Configuration [](id=moved-openoffice-properties-to-osgi-configuration)
-- **Date:** 2017-March-24
+- **Date:** 2017-Mar-24
 - **JIRA Ticket:** [LPS-71382](https://issues.liferay.com/browse/LPS-71382)
 
 #### What changed? [](id=what-changed-3)
@@ -541,3 +541,68 @@ the instructions for
 
 This change was made as part of the modularization efforts to ease portal
 configuration changes.
+
+---------------------------------------
+
+### Removed JavaScript Minification Properties minifier.javascript.impl and yui.compressor.* from portal.properties
+- **Date:** 2018-Feb-28
+- **JIRA Ticket:** LPS-74375
+
+#### What changed?
+
+The JavaScript minifiers have been extracted from `portal-kernel` and moved to
+their own OSGi module. Thus, they are not configured in `portal.properties` any
+more, but rather, through OSGi configuration.
+
+#### Who is affected?
+
+This affects anyone who had the Yahoo JavaScript minifier active and configured
+to override its default settings.
+
+#### How should I update my code?
+
+If you are implementing your own JavaScript minifier, you should extract it to
+its own OSGi module. See module
+[frontend-js-minifier](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-js/frontend-js-minifier)
+for an example of how to do this.
+
+#### Why was this change made?
+
+The JavaScript minifiers were not easy to customize. For example, the Google
+minifier used an old version of the closure-compiler, which was difficult to
+upgrade because it required `portal-kernel` dependency changes. This could
+create conflicts.
+
+Having JavaScript minifiers in their own OSGi modules requires less dependency
+management and makes it easier to provide new implementations of JavaScript
+minifiers. Also, configuration can now be done using OSGi standards.
+
+---------------------------------------
+
+### Changed Behavior of liferay-ui:input-date Taglib's showDisableCheckbox Argument
+- **Date:** 2018-Mar-06
+- **JIRA Ticket:** LPS-78475
+
+#### What changed?
+
+Previously, when the `liferay-ui:input-date` taglib's `showDisableCheckbox`
+argument was set to `true`, the disable checkbox was hidden. Now, the value
+`true` displays it, and `false` hides it.
+
+#### Who is affected?
+
+This affects anyone trying to hide the `liferay-ui:input-date` taglib's disable
+checkbox.
+
+#### How should I update my code?
+
+If you are setting the `showDisableCheckbox` argument to `true` to hide the
+`liferay-ui:input-date` taglib's disable checkbox, you should now set it to
+`false`, and vice versa.
+
+#### Why was this change made?
+
+The behavior did not match with the name of the argument and was
+counter-intuitive.
+
+---------------------------------------
