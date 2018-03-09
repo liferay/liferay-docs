@@ -638,7 +638,7 @@ To set Liferay up to act as a SAML Identity Provider, follow these steps:
     filesystem. The default location is the `[Liferay Home]/data` directory.
     However, this portlet property can be changed:
 
-        saml.keystore.manager.impl=com.liferay.saml.credential.DLKeystoreManagerImpl
+        saml.keystore.manager.impl=com.liferay.saml.credential.DLKeyStoreManagerImpl
 
     With this setting, the keystore will be created in Liferay's document
     library.  Liferay's document library could be stored on the file system, in
