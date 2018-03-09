@@ -501,7 +501,6 @@ were at their desk that hadn't reviewed content assigned to them.
 					]]>
 				</script>
 				<script-language></script-language>
-				<execution-type></execution-type>
 		</action>
     </timer-actions>
 
