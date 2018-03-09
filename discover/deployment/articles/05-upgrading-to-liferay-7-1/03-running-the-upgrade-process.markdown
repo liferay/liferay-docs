@@ -383,7 +383,7 @@ plugins intended for Liferay Portal version 6.2 or earlier).
 Verify processes make sure the upgrade executed successfully. Verify processes
 in the core are automatically executed after upgrading @product@. You can also
 execute them by configuring the
-[`verify.*` portal properties](@platform-ref@/7.1/propertiesdoc/portal.properties.html#Verify)
+[`verify.*` portal properties](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Verify)
 and restarting your server.
 
 Also, some modules have verify processes. To check for available verify

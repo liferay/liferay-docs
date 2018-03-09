@@ -95,7 +95,7 @@ Properties in features that have been modularized have changed and must now be
 deployed separately in
 [OSGi configuration files](/discover/portal/-/knowledge_base/7-1/system-settings#exporting-and-importing-configurations). 
 The
-[7.1 portal properties reference docs](@platform-ref@/7.1/propertiesdoc/portal.properties.html)
+[7.1 portal properties reference docs](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html)
 provide property details and examples. 
 
 ## Step 5: Configuring Your Documents and Media File Store [](id=configuring-your-documents-and-media-file-store)
