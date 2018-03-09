@@ -1,6 +1,5 @@
 # Integrating Third Party Themes with Clay [](id=integrating-third-party-themes-with-clay)
 
-@product@'s 
 [Clay Base](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay) 
 provides all the features and components your theme needs and inherits 
 Bootstrap's styles. As a result, Clay Base is fully compatible with third party 
