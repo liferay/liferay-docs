@@ -49,6 +49,24 @@ follow these steps:
             pod 'LiferayScreens'
         end
 
+        # the rest of your podfile
+
+    Note that Liferay Screens and some of its dependencies aren't compatible 
+    with Swift 3.2. If your iOS project is compiled in Swift 3.2, then your 
+    `Podfile` must specify Screens and those dependencies for compilation in 
+    Swift 4. The `post_install` code in the following `Podfile` does this. You 
+    must therefore use this `Podfile` if you want to use Screens in a Swift 3.2 
+    app: 
+
+    	source 'https://github.com/CocoaPods/Specs.git'
+
+        platform :ios, '9.0'
+        use_frameworks!
+
+        target "Your Target" do
+            pod 'LiferayScreens'
+        end
+
         post_install do |installer|
           incompatiblePods = [
             'Cosmos',
@@ -63,7 +81,7 @@ follow these steps:
           installer.pods_project.targets.each do |target|
             if incompatiblePods.include? target.name
               target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '3.2'
+                config.build_settings['SWIFT_VERSION'] = '4.0'
               end
             end
             target.build_configurations.each do |config|
@@ -72,16 +90,7 @@ follow these steps:
           end
         end
 
-        # the rest of your podfile
-
-    +$$$
-
-    **Note:** Liferay Screens and some of its dependencies aren't compatible 
-    with Swift 4. The `post_install` code in the `Podfile` ensures that Xcode 
-    compiles Screens and those dependencies in Swift 3.2. This lets you develop 
-    your app in Swift 4, while Screens itself is compiled in Swift 3.2. 
-
-    $$$
+        # the rest of your podfile 
 
 2.  On the terminal, navigate to your project's root folder and run this 
     command: 
