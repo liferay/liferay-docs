@@ -45,20 +45,10 @@ During this grace period, your @product@ instance displays a warning message to
 administrators. Upon seeing this message, administrators should immediately 
 contact Liferay Support and follow the troubleshooting steps in the below 
 section. If for some reason the connection can't be restored, Liferay Support 
-will provide an alternative for activating your server. 
-
-+$$$
-
-**Note:** The 30 day grace period only applies to servers running @product@ 
-patches hotfixes built after 05 March 2018. If your server isn't running such a 
-hotfix, the grace period is 7 days. See the table below for more information on 
-fix packs, hotfixes, and changes to grace period behavior. 
-
-$$$
-
-LCS automatically restores your server's activation upon reconnection (you 
-shouldn't need to restart the server). If this doesn't happen, you can force it 
-by redeploying the LCS client app. 
+will provide an alternative for activating your server. LCS automatically 
+restores your server's activation upon reconnection (you shouldn't need to 
+restart the server). If this doesn't happen, you can force it by redeploying the 
+LCS client app. 
 <!-- 
 
 The original text says, "... customers can force a reconnect without restarting 
@@ -69,11 +59,13 @@ inclined to just tell customers to restart their servers.
 
 -->
 
-The grace period behavior described above has been implemented in several 
-updates to @product@. If you're not running these updates, your server's grace 
-period may be different. The following table lists each update and its grace 
-period change. Note that newer fix packs and hot fixes also include these 
-updates. 
+![Figure 1: A warning message is displayed to administrators if the server can't connect to LCS to validate the subscription.](../../images-dxp/lcs-grace-period.png)
+
+LCS's grace period behavior has been implemented in several @product@ patches. 
+If you're not running these patches, your server's grace period may be 
+different. The following table lists each patch and how it changes the grace 
+period. Note that each hotfix includes the preceding hotfixes, and each fix pack 
+contains the preceding fix packs. 
 
 | &nbsp;Fix Pack | &nbsp;Hotfix Built After | Before | After |
 | --------- | ------------------ | ------ | ----- |
@@ -208,6 +200,24 @@ There are 2 ways to increase the log levels to produce these files:
 2.  In a Log4j configuration. This is a permanent configuration that persists 
     through server shutdown and restart. 
 
+The following sections cover both options. Regardless of how you increase the 
+log levels, you can find the log files in 
+`[Liferay Home]/logs` 
+([Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-product#liferay-home) 
+is usually the parent folder of the application server's folder). There are 2 
+types of log files in this folder: 
+
+1.  Liferay log files: The files `liferay.[date].log` and `liferay.[date].xml` 
+    are the logs for your @product@ installation. Note that LOG and XML files 
+    for the same date contain the same information--the only difference is the 
+    file format. 
+
+2.  LCS log files: The `lcs-portlet-[date].log` files are the LCS client app's 
+    logs. Note that if there's only a single LCS log file, it may appear without 
+    a date as `lcs-portlet.log`. When you increase the log levels as described 
+    in the following sections, the additional log messages are written to these 
+    LCS log files. 
+
 ### Control Panel
 
 Follow these steps to increase the log levels via your @product@ instance's 
@@ -232,7 +242,13 @@ Follow these steps to increase the log levels via Log4j:
 
 1.  Download the latest LCS client as instructed in the 
     [LCS preconfiguration article](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#downloading-the-lcs-client-app). 
-    The app downloads as an LPKG file. 
+    The app downloads as `Liferay Connected Services Client.lpkg`. If you don't 
+    want to download the latest client, you can use the one already installed in 
+    your server: it's located in `[Liferay Home]/osgi/marketplace` (just make 
+    sure to shut down your server before following the rest of the steps in this 
+    section). Recall that the 
+    [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
+    folder is usually the parent folder of the application server's folder. 
 
 2.  Expand the LPKG file, then expand the `lcs-portlet-[version].war` file 
     inside it. 
@@ -270,14 +286,13 @@ Follow these steps to increase the log levels via Log4j:
 
 5.  Make sure your server is shut down. 
 
-6.  In your @product@ bundle's 
+6.  In your @product@ installation's 
     [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
-    folder (usually the parent folder of the application server's folder), 
-    delete this file: 
+    folder, delete the existing LCS client app: 
 
         osgi/marketplace/Liferay Connected Services Client.lpkg
 
-7.  Place the new `Liferay Connected Services Client.lpkg` in 
-    `osgi/marketplace`. 
+7.  Place the `Liferay Connected Services Client.lpkg` that you repackaged in 
+    step 4 in `osgi/marketplace`. 
 
 8.  Start your server. 
