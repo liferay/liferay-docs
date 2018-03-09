@@ -163,7 +163,7 @@ generated default methods.
    value *"icon-puzzle"* with the name of a Font Awesome icon (e.g.,
    *"icon-coffee"* or *"icon-globe"*) that appropriately fits your rule. For a
    complete listing of icons that you can specify, you can visit
-   [Font Awesome](http://fortawesome.github.io/Font-Awesome/3.2.1/).
+   [Font Awesome](https://fontawesome.com/v3.2.1/).
 
 2. Locate the `getRuleCategoryKey` method and replace its return value with the
    key name of the category in which you'd like your rule to reside. For
