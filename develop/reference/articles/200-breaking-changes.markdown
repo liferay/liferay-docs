@@ -544,29 +544,29 @@ configuration changes.
 
 ---------------------------------------
 
-### Removed JavaScript Minification Properties minifier.javascript.impl and yui.compressor.* from portal.properties
+### Removed JavaScript Minification Properties minifier.javascript.impl and yui.compressor.* from portal.properties [](id=removed-javascript-minification-properties-minifier-javascript-impl-and-yui)
 - **Date:** 2018-Feb-28
 - **JIRA Ticket:** LPS-74375
 
-#### What changed?
+#### What changed? [](id=what-changed-11)
 
 The JavaScript minifiers have been extracted from `portal-kernel` and moved to
 their own OSGi module. Thus, they are not configured in `portal.properties` any
 more, but rather, through OSGi configuration.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-11)
 
 This affects anyone who had the Yahoo JavaScript minifier active and configured
 to override its default settings.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-11)
 
 If you are implementing your own JavaScript minifier, you should extract it to
 its own OSGi module. See module
 [frontend-js-minifier](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-js/frontend-js-minifier)
 for an example of how to do this.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-11)
 
 The JavaScript minifiers were not easy to customize. For example, the Google
 minifier used an old version of the closure-compiler, which was difficult to
@@ -579,28 +579,28 @@ minifiers. Also, configuration can now be done using OSGi standards.
 
 ---------------------------------------
 
-### Changed Behavior of liferay-ui:input-date Taglib's showDisableCheckbox Argument
+### Changed Behavior of liferay-ui:input-date Taglib's showDisableCheckbox Argument [](id=changed-behavior-of-liferay-uiinput-date-taglibs-showdisablecheckbox-argume)
 - **Date:** 2018-Mar-06
 - **JIRA Ticket:** LPS-78475
 
-#### What changed?
+#### What changed? [](id=what-changed-12)
 
 Previously, when the `liferay-ui:input-date` taglib's `showDisableCheckbox`
 argument was set to `true`, the disable checkbox was hidden. Now, the value
 `true` displays it, and `false` hides it.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-12)
 
 This affects anyone trying to hide the `liferay-ui:input-date` taglib's disable
 checkbox.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-12)
 
 If you are setting the `showDisableCheckbox` argument to `true` to hide the
 `liferay-ui:input-date` taglib's disable checkbox, you should now set it to
 `false`, and vice versa.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-12)
 
 The behavior did not match with the name of the argument and was
 counter-intuitive.
