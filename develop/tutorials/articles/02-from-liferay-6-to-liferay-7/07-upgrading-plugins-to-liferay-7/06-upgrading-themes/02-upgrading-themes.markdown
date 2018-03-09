@@ -15,7 +15,7 @@ Theme upgrades involve these steps:
 -  Applying Lexicon design patterns
 
 As an example, this tutorial applies the steps to a Liferay Portal 6.2 theme called the
-Lunar Resort theme--developed in the Liferay Portal 6.2 Learning Path [Developing a Liferay Theme](/develop/learning-paths/themes/-/knowledge_base/6-2/developing-a-liferay-theme).
+Lunar Resort theme--developed in the Liferay Portal 6.2 Learning Path [Developing a Liferay Theme](/develop/tutorials/-/knowledge_base/6-2/developing-a-liferay-theme).
 It's similar to many Liferay Portal 6.2 themes as it extends the [`_styled` theme](https://github.com/liferay/liferay-portal/tree/6.2.x/portal-web/docroot/html/themes/_styled),
 adding configurable settings and incorporating a responsive design that
 leverages Font Awesome icons and Bootstrap. The theme [ZIP file](/documents/10184/656312/lunar-resort-theme-migration-6.2.zip)

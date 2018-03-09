@@ -93,9 +93,6 @@ resource so that permissions can be applied to it later. To view the `addEntry`
 method in its entirety, see the
 [BookmarksEntryLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
 class. 
-<!--For more information about adding resources, please see the
-[Asset Enabling Custom Entities](/develop/learning-paths/mvc/-/knowledge_base/6-2/asset-enabling-custom-entities)
-learning path. -->
 
 The Bookmarks application creates local services for BookmarksFolder entities as
 well as for BookmarksEntry entities. Take a look at the custom service methods

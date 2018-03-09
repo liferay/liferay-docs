@@ -79,7 +79,7 @@ The App JSDoc plugin adds three tasks to your project:
 
 Name | Depends On | Type | Description
 ---- | ---------- | ---- | -----------
-`appJSDoc` | `downloadJSDoc` | [`AppJSDocTask`](#appjsdoctask) | Generates API documentation for the app's JavaScript code.
+`appJSDoc` | `downloadJSDoc` | [`JSDocTask`](#jsdoctask) | Generates API documentation for the app's JavaScript code.
 `downloadJSDoc` | `downloadNode` | `DownloadNodeModuleTask` | Downloads JSDoc in the app's `node_modules` directory.
 `jarAppJSDoc` | `appJSDoc` | [`Jar`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html) | Assembles a JAR archive containing the JavaScript documentation files for this app.
 
