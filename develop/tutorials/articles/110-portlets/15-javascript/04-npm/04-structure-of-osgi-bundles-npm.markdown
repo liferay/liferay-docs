@@ -11,39 +11,39 @@ similar to the one below:
     - `META-INF/`
         - `resources/`
             - `package.json`
-                name: my-bundle-package
-                version: 1.0.0
-                main: lib/index
-                dependencies:
-                    isarray: 2.0.0
-                    isobject: 2.1.0
-                ...
+                - name: my-bundle-package
+                - version: 1.0.0
+                - main: lib/index
+                - dependencies:
+                    - isarray: 2.0.0
+                    - isobject: 2.1.0
+                - ...
             - `lib/`
-                -`index.js`
-                ...
-            ...
+                - `index.js`
+                - ...
+            - ...
             - `node_modules/`
                 - `isobject@2.1.0/`
                     - `package.json`
-                        name: isobject
-                        version: 2.1.0
-                        main: lib/index
-                        dependencies:
-                            isarray: 1.0.0
-                        ...
-                    ...
+                        - name: isobject
+                        - version: 2.1.0
+                        - main: lib/index
+                        - dependencies:
+                            - isarray: 1.0.0
+                        - ...
+                    - ...
                 - `isarray@1.0.0/`
                     - `package.json`
-                        name: isarray
-                        version: 1.0.0
-                        ...
-                    ...
+                        - name: isarray
+                        - version: 1.0.0
+                        - ...
+                    - ...
                 - `isarray@2.0.0/`
                     - `package.json`
-                        name: isarray
-                        version: 2.0.0
-                        ...
-                    ...
+                        - name: isarray
+                        - version: 2.0.0
+                        - ...
+                    - ...
 
 The packages inside `node_modules` are the same format as the npm tool
 and can be copied (after a little processing) from a standard `node_modules` 

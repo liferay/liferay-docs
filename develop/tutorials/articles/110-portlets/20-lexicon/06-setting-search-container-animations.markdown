@@ -175,6 +175,6 @@ Now you know how to set search container animations in your app!
 
 ## Related Topics [](id=related-topics)
 
-[Using the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/7-0//develop/tutorials/-/knowledge_base/7-0/using-the-liferay-ui-taglib)
+[Using the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-ui-taglib)
 
 [Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)

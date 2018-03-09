@@ -8,7 +8,7 @@ entities during the Staging process. For example, the Bookmarks application
 manages
 [BookmarksEntry](@app-ref@/collaboration/latest/javadocs/com/liferay/bookmarks/model/BookmarksEntry.html)s
 and
-[BookmarksFolder](@app-ref/collaboration/latest/javadocs/com/liferay/bookmarks/model/BookmarksFolder.html)s,
+[BookmarksFolder](@app-ref@/collaboration/latest/javadocs/com/liferay/bookmarks/model/BookmarksFolder.html)s,
 and both implement the `StagedModel` interface. Once you've configured your
 staged models, you can create staged model data handlers, which supply
 information about a staged model (entity) and its referenced content to the
