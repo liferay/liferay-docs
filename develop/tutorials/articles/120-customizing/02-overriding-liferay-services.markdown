@@ -2,8 +2,8 @@
 
 Why might you need to customize Liferay services? Perhaps you've added a custom
 field to Liferay's `User` object and you want its value to be saved whenever the
-`addUser` or `updateUser` methods of Liferay's API are called. Or maybe you
-want to add some additional logging functionality to some of Liferay's APIs.
+`addUser` or `updateUser` methods of Liferay's API are called. Or maybe you want
+to add some additional logging functionality to some Liferay APIs or other services built using [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder).
 Whatever your case may be, Liferay's service wrappers provide easy-to-use
 extension points for customizing Liferay's services.
 
@@ -11,8 +11,8 @@ To create a module that overrides one of Liferay's services, follow the
 [Service Wrapper Template](/develop/reference/-/knowledge_base/7-1/using-the-service-wrapper-template)
 reference article to create a `servicewrapper` project type.
 
-As an example, here's the `UserLocalServiceOverride` class that's 
-generated in the Service Wrapper Template tutorial:
+As an example, here's the `UserLocalServiceOverride` class that's  generated in
+the Service Wrapper Template tutorial:
 
     package com.liferay.docs.serviceoverride;
 
@@ -77,33 +77,11 @@ Open your `UserLocalServiceOverride` class and add the following methods:
     }
 
 Each of these methods overrides a Liferay service method. These implementations
-merely add a few print statements that are executed before the original service
-implementations are invoked.
+merely execute a few print statements that before executing the original service
+implementations.
 
-Now you're ready to build your project. Navigate to your project's root folder
-and run `../../gradlew build`. The JAR file representing your portlet module is
-produced in your project's `build/libs` directory.
-
-To deploy your project, run this command from your project's root directory:
-
-    blade deploy
-
-Blade CLI detects your locally running Liferay instance and deploys the
-specified module to Liferay's module framework. After running the `blade deploy`
-command, you should see a message like this:
-
-    Installed or updated bundle 334
-
-Use the Gogo shell to confirm that your module was installed: Run `blade sh lb`
-at the prompt. If your module was installed, you'll see an entry like this:
-
-    335|Active     |    1|com.liferay.docs.serviceoverride (1.0.0.201502122109)
-
-Finally, log into your portal as an administrator. Navigate to the Users section
-of the Control Panel. Confirm that your customizations of Liferay's user service
-methods have taken effect by checking Liferay's log for the print statements
-that you added. Congratulations! You've created and deployed a @product-ver@ service
-wrapper module!
+[Build and deploy your module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module).
+Congratulations! You've created and deployed a Liferay service wrapper!
 
 ## Related Topics [](id=related-topics)
 
