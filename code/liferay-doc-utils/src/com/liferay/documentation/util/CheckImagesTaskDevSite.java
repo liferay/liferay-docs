@@ -218,8 +218,11 @@ public class CheckImagesTaskDevSite extends Task {
 					}
 
 					if (!dest.exists()) {
+						String articlePath = article.getPath();
+						String articleString = articlePath.substring(articlePath.indexOf(".."), articlePath.length());
+
 						StringBuilder sb = new StringBuilder();
-						sb.append(article.getName());
+						sb.append(articleString);
 						sb.append(": References missing image: ");
 						sb.append(imageFileName);
 
@@ -253,14 +256,15 @@ public class CheckImagesTaskDevSite extends Task {
 				File image = new File(parentPath + "/" + imagePath);
 				
 				if (!image.exists() || image.isDirectory()) {
+					String articlePath = article.getPath();
+					String articleString = articlePath.substring(articlePath.indexOf(".."), articlePath.length());
+
 					StringBuilder sb = new StringBuilder();
-					sb.append(article.getName());
+					sb.append(articleString);
 					sb.append(": Faulty image path: ");
 					sb.append(imagePath);
 
 					errors.add(sb.toString());
-
-					System.out.println("image: " + image.toString());
 				}
 			}
 		}
@@ -365,8 +369,6 @@ public class CheckImagesTaskDevSite extends Task {
 						int quote2 = line.indexOf("\"", quote1 +1);
 
 						String srcImage = line.substring(quote1 + 1, quote2);
-
-						System.out.println("<img> tag references: " + srcImage);
 
 						imagePaths.add(srcImage);
 					}
