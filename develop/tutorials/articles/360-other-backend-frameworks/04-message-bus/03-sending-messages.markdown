@@ -1,15 +1,14 @@
 # Sending Messages [](id=sending-messages)
 
-Message Bus lets you send messages to destinations that any number of classes
-are listening on. As a message sender you don't need to know the message
-recipients, you focus on creating message content (payload) and sending messages
-to destinations.
+Message Bus lets you send messages to destinations that have any number of
+listening classes. As a message sender you don't need to know the message
+recipients. Instead, you focus on creating message content (payload) and sending
+messages to destinations.
 
-Also you have the option of sending messages in a synchronous or asynchronous
-manner. With the synchronous option, you block for a response that the message
-was received or that it timed out. The asynchronous option gives you the "fire
-and forget" behavior; send the message and continue your processing without
-waiting for a response. 
+You can also send messages in a synchronous or asynchronous manner. The
+synchronous option waits for a response that the message was received or that it
+timed out. The asynchronous option gives you the "fire and forget" behavior;
+send the message and continue processing without waiting for a response. 
 
 Here are the message sending topics:
 
@@ -68,7 +67,7 @@ Bus to send a message.
 
             Message message = new Message();
             message.put("myId", 12345);
-            message.put("someAttribute", “abcdef��?);
+            message.put("someAttribute", "abcdef");
             _messageBus.sendMessage("myDestinationName", message);
         }
 
@@ -82,7 +81,8 @@ To send messages asynchronously, consider using
 ### Using SingleDestinationMessageSender [](id=using-singledestinationmessagesender)
 
 The [`SingleDestinationMessageSender` class](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SingleDestinationMessageSender.html)
-wraps the Message Bus to send messages asynchronously. This class demonstrates using a `SynchronousMessageSender`:
+wraps the Message Bus to send messages asynchronously. This class demonstrates
+using a `SynchronousMessageSender`:
 
     @Component(
         immediate = true,
@@ -194,7 +194,10 @@ distributing messages to all the cluster nodes.
         private MessageListener _clusterBridgeMessageListener;
     }
 
-The destination named `"liferay/live_users"` is bound to the `_destination` field. The `activate` method creates a `ClusterBridgeMessageListener`, sets its priority queue, and registers it to the destination. Messages sent to the destination are distributed across the cluster's JVMs. 
+The destination named `"liferay/live_users"` is bound to the `_destination`
+field. The `activate` method creates a `ClusterBridgeMessageListener`, sets its
+priority queue, and registers it to the destination. Messages sent to the
+destination are distributed across the cluster's JVMs. 
 
 The [`com.liferay.portal.kernel.cluster.Priority` class](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/cluster/Priority.html)
 has ten levels (`Level_1` through `Level_10`, with `Level 10` being the most

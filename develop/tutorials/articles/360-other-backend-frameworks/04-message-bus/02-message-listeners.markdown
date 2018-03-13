@@ -36,8 +36,8 @@ The Declarative Services component module provides the easiest way to register a
 
 ## Automatic Registration as a Component [](id=automatic-registration-as-a-component)
 
-The Declarative Services (DS) `@Component` annotation lets you
-specify a message listener completely. 
+You can specify a message listener in the Declarative Services (DS) `@Component`
+annotation: 
 
     @Component (
         immediate = true,
@@ -51,11 +51,11 @@ specify a message listener completely.
            // Handle the message
        }
     }
-    
-The Message Bus listens for `MessageListener` service components, like this one,
+ 
+The Message Bus listens for `MessageListener` service components like this one
 to publish themselves to the OSGi service registry. The attribute `immediate =
 true` tells the OSGi framework to activate the component as soon as its
-dependencies resolve.  Message Bus wires each registered listener to the
+dependencies resolve. Message Bus wires each registered listener to the
 destination its `destination.name` property specifies. If the destination is not
 yet registered, Message Bus queues the listener until the destination registers.
 

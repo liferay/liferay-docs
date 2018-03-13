@@ -43,29 +43,32 @@ Here are the primary destination types:
     -   The thread sending the message here delivers the message to all message 
         listeners also.
 
-Liferay has preconfigured destinations for various purposes. The [`DestinationNames` class](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
-defines `String` constants for each of them. For example, the destination named
+Liferay has preconfigured destinations for various purposes. The 
+[`DestinationNames` class](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
+defines `String` constants for each of them. For example,
 `DestinationNames.HOT_DEPLOY` (value is  `"liferay/hot_deploy"`) is for
-deployment event messages. Since Liferay's destinations are tuned for specific
-purposes, you should generally not modify them. 
+deployment event messages. Since destinations are tuned for specific purposes,
+don't modify them. 
 
-Destinations are created based on [`DestinationConfiguration` instances](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationConfiguration.html).
-The configuration specifies the destination type and name and the following
-destination related attributes: 
+Destinations are based on 
+[`DestinationConfiguration`
+instances](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationConfiguration.html).
+The configuration specifies the destination type, name, and these destination-
+related attributes: 
 
--   **Maximum Queue Size**: limits the number of queued messages for the
-    destination. 
+**Maximum Queue Size**: limits the number of queued messages for the
+destination. 
 
--   **Rejected Execution Handler**: A 
-    [`com.liferay.portal.kernel.concurrent.RejectedExecutionHandler` instance](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/concurrent/RejectedExecutionHandler.html)
-    can take action (e.g., log warnings) regarding rejected messages when the
-    destination queue is full. 
+**Rejected Execution Handler**: A 
+[`com.liferay.portal.kernel.concurrent.RejectedExecutionHandler` instance](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/concurrent/RejectedExecutionHandler.html)
+can take action (e.g., log warnings) regarding rejected messages when the
+destination queue is full. 
 
--   **Workers Core Size**: initial number of worker threads for processing
-    messages.
+**Workers Core Size**: initial number of worker threads for processing
+messages.
 
--   **Workers Max Size**: limits the number of worker threads for processing 
-    messages.
+**Workers Max Size**: limits the number of worker threads for processing 
+messages.
 
 The `DestinationConfiguration` class provides these static methods for creating
 the various types of configurations. 
@@ -77,11 +80,11 @@ the various types of configurations.
 - `createSynchronousDestinationConfiguration(String destinationName)`
 
 You can also use the [`DestinationConfiguration` constructor](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationConfiguration.html#DestinationConfiguration-java.lang.String-java.lang.String-)
-to create a configuration for any destination type, even your own custom type.
+to create a configuration for any destination type, even your own.
 
 ## Creating a Destination [](id=creating-a-destination)
 
-Message Bus destinations are created based on a destination configurations and
+Message Bus destinations are based on a destination configurations and
 registered as OSGi services. Message Bus detects the destination services and
 manages their associated destinations.
 
@@ -92,7 +95,8 @@ class that follows demonstrates these steps.
     `DestinationConfiguration`'s static `create*` methods or its constructor.
     Set any attributes that apply to the destinations you'll create with it. 
 
-2.  Create a destination by invoking the [`DestinationFactory`](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationFactory.html)
+2.  Create a destination by invoking the 
+    [`DestinationFactory`](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationFactory.html)
     method `createDestination(DestinationConfiguration)`, passing in the
     destination configuration you created in the previous step. 
 
@@ -105,9 +109,9 @@ class that follows demonstrates these steps.
 
 4.  Manage the destination object and service registration resources using a
     collection, such as a `Map<String, ServiceRegistration<Destination>>`.
-    Keeping references to these resources is helpful for when you're done using
-    the resources and need to unregister and destroy them. The `deactivate`
-    method in example below demonstrates this.
+    Keeping references to these resources is helpful for when you're ready to
+    unregister and destroy them. The `deactivate` method in example below
+    demonstrates this.
 
 Here's an example messaging configurator component that creates and registers a
 parallel destination and manages its resources:
@@ -209,11 +213,15 @@ parallel destination and manages its resources:
 On activation, the example configurator above does these things:
 
 1.  Creates a `DestinationConfiguration` for parallel destinations.
+
 2.  Sets the `DestinationConfiguration`'s max queue size and a rejected
     execution handler. 
+
 3.  Uses the `DestinationFactory` (the one bound to the `_destinationFactory`
     field) to create the destination. 
+
 4.  Adds the destination to the OSGi service registry
+
 5.  Adds the destination service registration to a map for managing them. 
 
 Once the destination is registered, Message Bus detects its service and manages
@@ -222,7 +230,7 @@ method unregisters the destination services and destroys the destinations.
 
 As an added bonus to creating destinations, you can create classes that listen
 for new destinations and new message listeners. You might want to create such
-listeners to keep up with message happenings in your @product@ deployment.
+listeners to keep up to log the deployment of new message bus endpoints.
 
 ## Messaging Event Listeners [](id=messaging-event-listeners)
 
@@ -255,9 +263,11 @@ Listening for new message listeners is easy too.
 
 ### Listening for new Message Listeners [](id=listening-for-new-message-listeners)
 
-The Message Bus notifies [`DestinationEventListener` instances](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationEventListener.html)
+The Message Bus notifies 
+[`DestinationEventListener` instances](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationEventListener.html)
 when message listeners are either registered or unregistered to destinations. To
-register a listener to a destination, publish a [`DestinationEventListener` service](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationEventListener.html)
+register a listener to a destination, publish a 
+[`DestinationEventListener` service](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationEventListener.html)
 to the OSGi service registry, making sure to specify the destination's
 `destination.name` property.
 
