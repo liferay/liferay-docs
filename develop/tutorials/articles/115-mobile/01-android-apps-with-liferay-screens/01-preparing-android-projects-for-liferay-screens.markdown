@@ -206,8 +206,8 @@ the new file:
 
         <string name="liferay_server">http://10.0.2.2:8080</string>
 
-        <integer name="liferay_company_id">10155</integer>
-        <integer name="liferay_group_id">10182</integer>
+        <string name="liferay_company_id">10155</string>
+        <string name="liferay_group_id">10182</string>
         
         <integer name="liferay_portal_version">70</integer>
 
@@ -245,7 +245,7 @@ interact with a @product@ instance's DDLs. You can see an additional example
 
     <!-- Change these values for your @product@ installation -->
     
-    <integer name="liferay_recordset_id">20935</integer>
+    <string name="liferay_recordset_id">20935</string>
     <string name="liferay_recordset_fields">Title</string>
 
 Super! Your Android project's ready for Liferay Screens.
