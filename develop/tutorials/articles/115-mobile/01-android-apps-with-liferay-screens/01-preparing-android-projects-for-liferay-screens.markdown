@@ -46,7 +46,7 @@ a sample project. It requires the following software:
 Liferay Screens for Android uses
 [EventBus](https://github.com/greenrobot/EventBus) internally. 
 
-## Securing JSON Web Services
+## Securing JSON Web Services [](id=securing-json-web-services)
 
 Each Screenlet in Liferay Screens calls one or more of @product@'s JSON web 
 services, which are enabled by default. The Screenlet 
@@ -56,8 +56,9 @@ services must be enabled in the portal. It's possible, however, to disable the
 web services needed by Screenlets you're not using. For instructions on this, 
 see the tutorial 
 [Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services). 
-You can also secure web services via 
-[Service Access Policies](/develop/tutorials/-/knowledge_base/7-0/service-access-policies). 
+You can also use 
+[Service Access Policies](/develop/tutorials/-/knowledge_base/7-0/service-access-policies) 
+for more fine-grained control over accessible services. 
 
 ## Using Gradle to Install Liferay Screens [](id=configuring-your-project-with-gradle)
 
