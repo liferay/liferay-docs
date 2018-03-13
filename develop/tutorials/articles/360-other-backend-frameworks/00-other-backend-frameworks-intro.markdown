@@ -10,11 +10,7 @@ essential services and deliver terrific performances of their own. Here are some
 of the frameworks:
 
 - Device Recognition
-- Portlet Providers
-- Data Scopes
 - Message Bus
-- Audits
-- Background Tasks
 
 These frameworks and more deliver smashing performances and are stars in their
 own right. 
