@@ -1,17 +1,10 @@
 # Message Bus [](id=message-bus)
 
-Are you looking for a lightweight way for your apps and components to
-communicate? Message Bus offers just that and comes with @product@ out of the
-box. It is conceptually similar to Java Messaging Service (JMS) Topics, but
-sacrifices transactional, reliable delivery capabilities. Here are some of
-Message Bus's most popular features:
-
--   publish/subscribe messaging 
--   request queuing and throttling
--   flow control
--   multi-thread message processing
-
-And here are some of the ways @product@ uses Message Bus:
+If you ever need to do some data processing outside the scope of the web's
+request/response, look no further than the Message Bus. It's conceptually
+similar to Java Messaging Service (JMS) Topics, but sacrifices transactional,
+reliable delivery capabilities, making it much lighter-weight. @product@ uses
+Message Bus all over the place: 
 
 - Auditing
 - Search engine integration
@@ -21,6 +14,13 @@ And here are some of the ways @product@ uses Message Bus:
 - Background tasks
 - Cluster-wide request execution
 - Clustered cache replication
+
+You can use it too! Here are some of Message Bus's most important features:
+
+-   publish/subscribe messaging 
+-   request queuing and throttling
+-   flow control
+-   multi-thread message processing
 
 There are also tools, such as the Java SE's JConsole, that can monitor Message
 Bus activities. 

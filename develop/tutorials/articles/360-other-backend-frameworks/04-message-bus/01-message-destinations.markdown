@@ -33,7 +33,7 @@ Here are the primary destination types:
 
     -   Messages sent here are queued.
 
-    -   Worker threads from a thread pool deliver the messages to each  
+    -   Worker threads from a thread pool deliver the messages to each 
         registered message listener, one worker thread per message.
 
 -  **Synchronous Destination**
