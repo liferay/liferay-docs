@@ -20,7 +20,7 @@ to do this:
     assigned to an environment when creating the environment. If you have 
     sufficient permissions in your company's project, you can create a new 
     environment by selecting the *Add Environment* tab. 
-    [Click here](https://www.liferay.com/) 
+    [Click here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#creating-an-environment) 
     for instructions on creating an environment. 
 
     ![Figure 2: You must activate your @product@ server in an LCS environment. The red box in this screenshot highlights environments.](../../images-dxp/lcs-registration-select-environment.png)

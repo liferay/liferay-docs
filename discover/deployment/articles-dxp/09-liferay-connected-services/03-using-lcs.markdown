@@ -204,12 +204,12 @@ patching tool is unavailable, or other events occur that relate to LCS.
 ![Figure 5: The LCS project view shows an overview of your LCS project.](../../images-dxp/lcs-project-view.png)
 
 LCS lists the environments in your project on the left side of the screen. You 
-can also create new environments here by clicking the Add Environment tab. To 
-view an environment's settings, click the environment's gear icon. You can also 
-get more information about a specific environment by clicking it. This takes you 
-to the environment view. Also note that the icon to the left of each environment 
-differs depending on the environment's type and status. The icon's color and 
-type tells you something about that environment: 
+can also create new environments here by clicking the Add Environment tab (more 
+on this shortly). To view an environment's settings, click the environment's 
+gear icon. You can also get more information about a specific environment by 
+clicking it. This takes you to the environment view. Also note that the icon to 
+the left of each environment differs depending on the environment's type and 
+status. The icon's color and type tells you something about that environment: 
 
 - **Red icon:** Indicates a problem or issue with one or more servers in that 
   environment.
@@ -218,16 +218,35 @@ type tells you something about that environment:
 - **Icon with a circle:** Indicates that the servers in that environment are in 
   a cluster.
 
-Note that only clustered environments can contain clustered servers. LCS 
-environments can only be designated as clustered when they are created. To 
-create a clustered environment, click *Add Environment* and select the *Cluster* 
-checkbox when filling out the environment's information. Note that you must set 
-the portal property `cluster.link.enabled` to `true` in any servers that connect 
-to a clustered environment. 
+Now you'll learn how to create an environment. 
 
-![Figure 6: The red box in this screenshot highlights the checkbox you must select to create a clustered environment.](../../images-dxp/lcs-new-clustered-environment.png)
+### Creating an Environment [](id=creating-an-environment)
 
-Next, you'll learn to use the environment view.
+You can create an environment by clicking the *Add Environment* tab from the 
+Dashboard. This opens the New Environment popup: 
+
+-   **Environment Name:** The environment's name
+-   **Description:** The environment's description
+-   **Subscription Type:** The environment's subscription type. Servers 
+    activated in the environment will consume an activation key from this 
+    subscription type. Choose the environment's subscription type carefully--you 
+    can't change it after creating the environment.
+-   **Cluster:** Whether this is a clustered environment. Only clustered 
+    environments can contain clustered servers. Note that you must set the 
+    portal property `cluster.link.enabled` to `true` in any servers that connect 
+    to a clustered environment. 
+-   **Services:** Which LCS services to enable in the environment. Note that 
+    although 
+    [LCS doesn't access security sensitive properties](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers), 
+    you may have additional properties you want to prevent LCS from analyzing. 
+    Enter them into the box that appears when you select *Blacklisted 
+    Properties*. 
+
+When you're finished with your selections, click *Create Environment*. 
+
+![Figure 6: The New Environment popup.](../../images-dxp/lcs-new-environment.png)
+
+Next, you'll learn how to manage your environments. 
 
 ### Using the Environment View [](id=using-the-environment-view)
 
@@ -688,7 +707,7 @@ tab. This tab contains the following sections:
   Enter them into the box that appears when you select *Show Blacklisted 
   Properties*. 
 
-![Figure 19: An environment's Registration tab lets you select the LCS services to use with your @product@ servers that connect to that environment.](../../images-dxp/lcs-environment-token.png)
+![Figure 21: An environment's Registration tab lets you select the LCS services to use with your @product@ servers that connect to that environment.](../../images-dxp/lcs-environment-token.png)
 
 Whether you must generate or regenerate a token depends on the actions you took 
 in the Services section, and whether there's an existing token in the 
