@@ -122,7 +122,7 @@ class.
 
         }
 
-The `activate` method is a *bundle activator*. Normally in Declarative Services
+The `activate` method is a *component activator*. Normally in Declarative Services
 components this isn't needed, but this one is required for two reasons: 
 
 1.  To set the `model.class.name` so that the core service trackers know when to
