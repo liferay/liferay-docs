@@ -169,13 +169,37 @@ you're ready to learn how to manage the users in LCS projects.
 The Users section of LCS is where you manage the LCS users that are part of your 
 project. It's here that you can grant or revoke LCS roles. To manage users, 
 first click the *Users* tab just below the Dashboard tab on the upper-left of 
-your screen. You're presented with a table of the users in your project. To the 
-right of each is the Manage button. Clicking *Manage* lets you assign or revoke 
-LCS roles for that user. Note that you can't add users to your project via the 
-LCS UI or the LCS client app. To add users to your project, you must contact 
-Liferay support. 
+your screen. 
+
++$$$ 
+
+**Note:** You can't add users to your project via the LCS UI or the LCS client 
+app. To add users to your project, you must contact Liferay support. 
+
+$$$
+
+The *Users* tab displays a list of the users in your project. This list includes 
+each user's name, email, image, LCS roles, and a *Manage Roles* button. 
 
 ![Figure 4: The Users tab lets you manage the LCS users in your project.](../../images-dxp/lcs-users.png)
+
+Follow these steps to manage a user's LCS roles:
+
+1.  Click the user's *Manage Roles* button. 
+
+2.  To revoke a role, click *Revoke Role* for that role. 
+
+3.  To assign a role, choose the role (and environment, if applicable) and click 
+    *Assign*. 
+
++$$$
+
+**Note:** A user can't have an environment role (e.g., LCS Environment Manager, 
+LCS Environment Viewer) and the LCS Administrator role at the same time. 
+
+$$$
+
+![Figure 5: You can assign or revoke a user's LCS roles.](../../images-dxp/lcs-user-roles.png)
 
 Great! Now you know how to manage your LCS projects and the users in them. Now 
 it's time to get to the heart of LCS: the Dashboard. 
