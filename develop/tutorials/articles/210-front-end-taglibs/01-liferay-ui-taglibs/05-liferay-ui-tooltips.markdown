@@ -1,9 +1,9 @@
 # Liferay UI Tooltips [](id=liferay-ui-tooltips)
 
-Tooltips are a useful way to communicate additional information to your users in 
-a unobtrusive way. The tooltips render as an easy to identify question icon that 
-provides more information through a informational pop-up on mouse over. You can 
-see an example of this in the Control Panel:
+Tooltips let you communicate additional information to your users in an 
+unobtrusive way. They render as an iconic question mark that provides more 
+information through a pop-up on mouse over. You can see an example of this in 
+the Control Panel:
 
 ![Figure 1: Here's an example of how Liferay Portal uses tooltips.](../../../images/liferay-ui-taglib-tooltip.png)
 

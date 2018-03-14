@@ -1,8 +1,9 @@
 # Liferay UI Icon Menus [](id=liferay-ui-icon-menus)
 
 You can add a pop-up navigation menu to your app with the `liferay-ui:icon-menu` 
-tag. Icon menus are similar to icon lists, except icons are displayed in an icon 
-menu, as opposed to a horizontal list. Nest 
+tag. Icon menus let you display menu options when needed and store them away in 
+a collapsed menu when they're not. This keeps the UI clean and uncluttered. Just 
+as with an icon list, you nest 
 [icons](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icons) 
 for each navigation item. You can see an example of a icon menu in the actions 
 menu of a site in the My Sites portlet:
@@ -32,7 +33,7 @@ Example JSP configuration:
 
     </liferay-ui:icon-menu>
 
-Icons must have their `url` attribute configured to render properly. The list 
+Note that the `url` attribute is required for icons to render properly. The list 
 below gives some of the available attributes along with how to configure them. 
 See the 
 [Icon Menu taglibdocs](@platform-ref@/7.1-latest/taglibs/util-taglib/liferay-ui/icon-menu.html) 

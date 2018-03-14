@@ -1,9 +1,9 @@
 # Liferay UI Tabs [](id=liferay-ui-tabs)
 
 Tabs let you create dividers in your app that organize content into individual 
-sections. Content can be written explicitly within the JSP, or included from 
-another JSP if you wish. This lets you pack your JSP full of content, without 
-overwhelming your users with it all at once. 
+sections. Content can be written within the JSP, or included from another JSP if 
+you wish. This lets you pack your JSP full of content, without overwhelming your 
+users with it all at once. 
 
 To add tabs to your app, use the `<liferay-ui:tabs>` tag and specify each tab's 
 name as a comma-separated list for the `names` attribute. For example, if you 
@@ -39,7 +39,7 @@ from the Calendar portlet's `configuration.jsp`:
         </liferay-ui:section>
     </liferay-ui:tabs>
 
-![Figure 1: Tabs are a useful way to breakup configuration options into individual sections within the same UI.](../../../images/liferay-ui-taglib-tabs.png)
+![Figure 1: Tabs are a useful way to organize configuration options into individual sections within the same UI.](../../../images/liferay-ui-taglib-tabs.png)
 
 The list below gives some of the tab's available attributes along with how to 
 configure them. See the 

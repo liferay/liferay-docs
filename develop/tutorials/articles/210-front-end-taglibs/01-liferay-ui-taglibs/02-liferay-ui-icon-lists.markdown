@@ -4,7 +4,7 @@ An icon list displays icons in a horizontal list, as opposed to displaying them
 in a pop-up navigation menu as an 
 [icon menu](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icon-menu) 
 does. You can see an example of an icon list menu in a message board thread. The 
-thread's actions are visible at all times for administrators: 
+thread's actions are visible at all times for administrators:
 
 ![Figure 1: Icon lists display an app's actions at all times.](../../../images/liferay-ui-taglib-icon-list.png)
 
