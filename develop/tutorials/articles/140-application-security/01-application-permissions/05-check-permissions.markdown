@@ -45,6 +45,14 @@ class) from your permissions logic (contained in the `-ServiceImpl` class).
     `BlogsConstants.RESOURCE_NAME` is a `String` with the value
     `com.liferay.blogs`. 
 
+    You must use `ModelResourcePermissionFactory.getInstance()` in the service
+    because Service Builder is wired with Spring, so `@Reference` can't be used.
+    Make sure to use the correct service class and the name of the field that's
+    being set (in this case `"_blogsEntryFolderModelResourcePermission"`),
+    because it's set with reflection when the service is registered. If you get
+    the field wrong, it'll be set wrong. The field must be `static` and
+    `volatile`, and should never be used outside of services. 
+
 3.  Check permissions in the appropriate places. For example, adding a blog
     entry requires the `ADD_ENTRY` permission, so the Blogs application does
     this: 
@@ -121,7 +129,10 @@ model permissions. Here's how to create a portlet permission helper:
         }
 
     Note the `@Reference` annotation that tells the OSGi container to supply an
-    object via the permission registrar you created previously. 
+    object via the permission registrar you created previously. The
+    `_portletResourcePermission` field is static, while the setter method is an
+    instance method: this is how Liferay avoids having service references in
+    JSPs. 
 
 The procedure for creating a model permission helper is similar: 
 

@@ -123,10 +123,21 @@ class.
         }
 
 The `activate` method is a *bundle activator*. Normally in Declarative Services
-components this isn't needed, but this one is required to set up the chain of
-permission logic classes that protect your entities. Blogs uses portlet resource
-permissions, model resource permissions, staging permissions, and workflow
-permissions. 
+components this isn't needed, but this one is required for two reasons: 
+
+1.  To set the `model.class.name` so that the core service trackers know when to
+    use the service. You can also set a `service.ranking` to a value greater
+    than zero to override the default model resource permissions. 
+
+2.  To set up the chain of permission logic classes that protect your entities.
+    Blogs uses portlet resource permissions, model resource permissions, staging
+    permissions, and workflow permissions. 
+
+This class uses an `@Reference` to inject the appropriate
+`PortletResourcePermissions`. `BlogsConstants.RESOURCE_NAME` translates to
+`com.liferay.blogs`, which is defined in the `default.xml` you created earlier.
+If you were to reference `ModelResourcePermissions`, you'd use a filter matching
+the `model.class.name` as in the `activate` method. 
 
 Note that you specify your entity's class, primary key, and the entity itself
 for the factory so it can create permission objects specific to your entity. 
