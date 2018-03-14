@@ -29,7 +29,7 @@ You can do many things with isomorphic code. You can run it in
 When working with @product@, isomorphic code cannot run server-side because
 @product@ is Java based and, thus, cannot execute JavaScript that way. This
 sample portlet shows how Liferay's npm bundler can transform server-side code to
-make it work in the client (e.g., emulates Node.js' APIs in the client).
+make it work in the client (e.g., emulates some of Node.js' APIs in the client).
 
 ## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
