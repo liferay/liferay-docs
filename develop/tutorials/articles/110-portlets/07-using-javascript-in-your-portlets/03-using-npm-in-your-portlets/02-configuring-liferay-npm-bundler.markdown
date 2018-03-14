@@ -3,7 +3,7 @@
 The liferay-npm-bundler is configured via a `.npmbundlerrc` file placed in the 
 portlet project's root folder. You can create the configuration manually or use 
 a configuration preset. Use the configuration presets described here as a guide 
-to create your own custom configurations.
+to create your own custom configurations. 
 
 This tutorial explains the `.npmbundlerrc` file's structure and shows how to use 
 the available presets to configure the liferay-npm-bundler.
@@ -46,8 +46,12 @@ Here's an example `.npmbundlerrc` configuration:
             (same as wildcard format (`*`) contents below)
         ]
       },
+      "include-dependencies": {
+          "some-package","another-package"...
+      },
       "output":(relative path to output directory),
       "process-serially":(true|false),
+      "verbose": <true|false>
       "*" : {
         "plugins": [
           <list of plugins>
@@ -59,12 +63,26 @@ Here's an example `.npmbundlerrc` configuration:
           <list of plugins>
         ]
       },
-      "some-package-name" : {
-        (same as wildcard format (`*`) contents above)
-      },
-      "some-package-name@1.1.10" : {
-        (same as wildcard format (`*`) contents above)
-      }
+      "packages": {
+    		"some-package-name@version" : {
+    			"plugins": [
+    				"test-4",
+    				["test-5", "config-5"]
+    			],
+    			"post-plugins": [
+    				"test-6",
+    				["test-7", "config-7"]
+    			],
+    			".babelrc": {
+    				"config": "config-package@1.0.0"
+    			}
+    		},
+    		"some-package-name" : {
+    			".babelrc": {
+    				"config": "config-name"
+    			}
+    		}
+    	}
       ...
     }
 
@@ -79,9 +97,15 @@ provides.
 
 $$$
 
-Below are the options possible in the `.npmbundlerrc` file:
+Below are the configuration options for the `.npmbundlerrc` file:
 
 *exclude:* defines files to exclude from bundling from all or specific packages.
+
+*include-dependencies:* defines packages to include in bundling, even if they 
+are not listed under the `dependencies` section of `package.json`. These 
+packages must be available in the `node_modules` folder (i.e. installed 
+manually, without saving them to `package.json`, or listed in the 
+`devDependencies` section).
 
 *output:* by default the bundler writes packages to the standard Gradle 
 resources folder: `build/resources/main/META-INF/resources`. Set this value to 
@@ -90,6 +114,9 @@ override the default output folder.
 *process-serially:* Process packages in parallel, leveraging Node.js 
 asynchronous model, or one by one. The default value is `false`, (parallel), but 
 if you get EMFILE errors, you can disable this.
+
+*verbose:* Sets whether to output detailed information about what the tool is 
+doing.
 
 *list of plugins:* a comma separated call list of liferay-npm-bundler plugins to 
 call.
@@ -104,6 +131,17 @@ only applied to packages with this name and *any* version.
 *version:* The npm package's version. The configuration under its 
 `some-package-name@version` scope is only applied to packages with the specified 
 *package name* and *version*.
+
++$$$
+
+**Note:** Prior to version 1.4.0 of the liferay-npm-bundler, package 
+configurations were placed next to the tools options 
+(`*`, `output`, `exclude`, etc.) To prevent package name collisions, package 
+configurations are now namespaced and placed under the `packages` section. To 
+maintain backwards compatibility, the liferay-npm-bundler falls back to the root 
+section outside `packages` for package configuration.
+
+$$$
 
 Now that you know the structure of the `.npmbundlerrc` file, you can learn 
 about the available configuration presets.
@@ -146,9 +184,7 @@ from `liferay-npm-bundler-preset-standard`:
 
     {
       "*": {
-        "plugins": [
-          "replace-browser-modules"
-        ],
+        "plugins": ["replace-browser-modules"],
         ".babelrc": {
           "presets": ["liferay-standard"]
         }
