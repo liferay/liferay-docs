@@ -123,22 +123,31 @@ class.
 
         }
 
-The `activate` method is a *component activator*. Normally in Declarative Services
-components this isn't needed, but this one is required for two reasons: 
+We call these types of classes Registrars because the classes' job is to configure, 
+register and unregister the ModelResourcePermission.
 
-1.  To set the `model.class.name` so that the core service trackers know when to
-    use the service. You can also set a `service.ranking` to a value greater
-    than zero to override the default model resource permissions. 
+1.  The `model.class.name` is set in the properties so that other module's service 
+    trackers can find this model resource permission by it's type when it's needed. 
+    Liferay has several service trackers checking for model resource permissions. 
+    The `service.ranking` property can also be set to a value greater than zero to 
+    override other module's model resource permissions. 
 
-2.  To set up the chain of permission logic classes that protect your entities.
-    Blogs uses portlet resource permissions, model resource permissions, staging
-    permissions, and workflow permissions. 
+2.  This registrar uses two portal-kernel permission logics for Staging and Workflow. 
+    Custom logics can easily reused or composed inline since 
+    `ModelResourcePermissionLogic` is a `@FunctionalInterface`. Permission logics are 
+    executed in order of when they are accepted in the `Consumer`.
 
-This class uses an `@Reference` to inject the appropriate
-`PortletResourcePermissions`. `BlogsConstants.RESOURCE_NAME` translates to
+3.  `ModelResourcePermissionLogic` classes return `true` when the user has permission 
+    for the action, `false` when they are denied permission for the action and `null` 
+    when wanting to delegate responsibility to the next permission logic. If all 
+    permission logics return null then the `PermissionChecker.hasPermission` method is 
+    called to determine if the action is allowed for the user.
+
+This class uses an `@Reference` with the target filter to inject the appropriate
+`PortletResourcePermission`. `BlogsConstants.RESOURCE_NAME` evaluates to
 `com.liferay.blogs`, which is defined in the `default.xml` you created earlier.
-If you were to reference `ModelResourcePermissions`, you'd use a filter matching
-the `model.class.name` as in the `activate` method. 
+If you were to reference this `ModelResourcePermission`, you'd use a target filter
+matching the `model.class.name` property set in the `activate` method.
 
 Note that you specify your entity's class, primary key, and the entity itself
 for the factory so it can create permission objects specific to your entity. 

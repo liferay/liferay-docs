@@ -25,7 +25,7 @@ class) from your permissions logic (contained in the `-ServiceImpl` class).
 1.  Open your entity's `-ServiceImpl` class. 
 
 2.  Use the `ModelResourcePermissionFactory` and the
-    `PortletResourcePermissionFactory` to generate permission checkers that can
+    `PortletResourcePermissionFactory` to reference permission checkers that can
     check permissions as you've defined them in `default.xml`. Here's how the
     Blogs portlet does this: 
 
@@ -51,7 +51,7 @@ class) from your permissions logic (contained in the `-ServiceImpl` class).
     being set (in this case `"_blogsEntryFolderModelResourcePermission"`),
     because it's set with reflection when the service is registered. If you get
     the field wrong, it'll be set wrong. The field must be `static` and
-    `volatile`, and should never be used outside of services. 
+    `volatile`, and should never be used outside of `-ServiceImpl` classes. 
 
 3.  Check permissions in the appropriate places. For example, adding a blog
     entry requires the `ADD_ENTRY` permission, so the Blogs application does
