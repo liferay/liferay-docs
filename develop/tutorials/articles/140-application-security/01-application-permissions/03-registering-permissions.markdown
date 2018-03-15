@@ -124,24 +124,25 @@ class.
         }
 
 We call these types of classes Registrars because the classes' job is to configure, 
-register and unregister the ModelResourcePermission.
+register and unregister the `ModelResourcePermission`.
 
-1.  The `model.class.name` is set in the properties so that other module's service 
-    trackers can find this model resource permission by it's type when it's needed. 
+1.  The `model.class.name` is set in the properties so that other modules' service 
+    trackers can find this model resource permission by its type when it's needed. 
     Liferay has several service trackers checking for model resource permissions. 
     The `service.ranking` property can also be set to a value greater than zero to 
     override other module's model resource permissions. 
 
-2.  This registrar uses two portal-kernel permission logics for Staging and Workflow. 
-    Custom logics can easily reused or composed inline since 
-    `ModelResourcePermissionLogic` is a `@FunctionalInterface`. Permission logics are 
-    executed in order of when they are accepted in the `Consumer`.
+2.  This registrar uses two portal-kernel permission logic classes for Staging
+    and Workflow. Custom logic classes can be reused or composed inline since
+    `ModelResourcePermissionLogic` is a `@FunctionalInterface`. Permission logic
+    classes are executed in order of when they are accepted in the `Consumer`.
 
-3.  `ModelResourcePermissionLogic` classes return `true` when the user has permission 
-    for the action, `false` when they are denied permission for the action and `null` 
-    when wanting to delegate responsibility to the next permission logic. If all 
-    permission logics return null then the `PermissionChecker.hasPermission` method is 
-    called to determine if the action is allowed for the user.
+3.  `ModelResourcePermissionLogic` classes return `true` when users have
+    permission for the action, `false` when they are denied permission for the
+    action, and `null` when wanting to delegate responsibility to the next
+    permission logic. If all permission logics return null then the
+    `PermissionChecker.hasPermission` method is called to determine if the
+    action is allowed for the user.
 
 This class uses an `@Reference` with the target filter to inject the appropriate
 `PortletResourcePermission`. `BlogsConstants.RESOURCE_NAME` evaluates to
