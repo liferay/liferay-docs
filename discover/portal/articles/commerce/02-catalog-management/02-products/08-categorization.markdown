@@ -1,6 +1,6 @@
 # Categorization
 
-Unless your catalog contains a vary narrow range of merchandise, you will
+Unless your catalog contains a very narrow range of merchandise, you will
 probably want to categorize and tag your products to make them easier for
 customers to find. 
 

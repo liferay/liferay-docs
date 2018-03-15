@@ -7,8 +7,8 @@ the top of the screen and fill in the fields on the right.
     -Title: specify the type of option customers will select, such as size or
     color.
 
-    -Description: 
-<!--I'm not sure where the text entered here would be displayed-->
+    -Description: This text can be displayed on the product page. See
+    [link to storefront].
 
     -Field Type: Select from a number of different ways to display options to
     customers (drop-down menu, radio buttons, etc).
@@ -29,10 +29,8 @@ the top of the screen and fill in the fields on the right.
     this field is filled automatically, most users can safely leave it alone.
 
 Once an option has been created and saved, it is displayed in the list on the
-left side of the screen. <!--Sometimes when I hit the save button, the new
-option just disappears. But not always. I haven't been able to work out
-a pattern-->?But it cannot be seen by customers unless it has values assigned to
-it and has been deployed to a product.
+left side of the screen. But it cannot be seen by customers unless it has values
+assigned to it and has been deployed to a product.
 
 There are two ways to assign values to a product. One is from the options tab in
 *Site Menu* &rarr; *Commerce* &rarr; *Catalog*:

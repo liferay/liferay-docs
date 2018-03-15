@@ -1,4 +1,4 @@
-# Creating Products
+# Products
 
 The contents of the catalog are displayed on the *Products* tab at *site menu*
 &rarr; *Commerce* &rarr; *Catalog*. Here you can search, sort, and filter the

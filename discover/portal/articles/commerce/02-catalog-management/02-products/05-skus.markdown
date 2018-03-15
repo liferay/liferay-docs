@@ -42,11 +42,11 @@ SKUs to work.
 In the details section you can change the SKU code (the default code is simply
 a combination of the option values the SKU represents) and also enter a Global
 Trade Item Number (such as an ISBN) and a manufacturer's part number (if
-applicable). <!--Are these numbers solely for inventory tracking? They don't
-appear on the product page.-->
+applicable). To display these numbers on the product page, see [link to
+storefront section].
 
-<!--I'm not sure what the *Purchasable* box means, as I can uncheck it and still
-add the item to my cart and proceed to checkout.-->
+Unchecking the *Purchasable* box will leave an item visible to customers but not
+allow them to purchase it.
 
 The *Options* section is where you select exactly what item this SKU refers to.
 Choose the exact combination of option values that describe the item in
@@ -54,10 +54,7 @@ question. <!--This section is not working properly at present-->
 
 The *Schedule* section allows users to display and SKU to customers for
 a limited time. The default setting is to publish immediately and never expire.
-
-<!--unchecking the *published* box makes an item unavailable for purchase but
-doesn't seem to impact whether this SKUs option value combination is available
-on the product page. Is that a problem?-->
+Uncheck the *published* box to remove an item from the customer's view.
 
 ### Pricing
 
@@ -66,10 +63,10 @@ assigning prices at the product level--after all, your widgets in blue and
 yellow polka dots may command a higher price than the plain black model.
 
 To set the price, simply click on the *Pricing* tab and enter a number in the
-*Price* field. Select the currency to the right of the field.
+*Price* field.
 
-<!--What purpose does the *Cost* field have, other than for
-reference in setting prices?-->
+Entering a figure in the *Costs* field can be used to track margins.See [tax
+providers?] for more detail.
 
 ### Price Lists
 
@@ -86,7 +83,7 @@ close the pop-box.
 
 You've added you SKU to the price list, but you haven't changed the price for
 list members. To do that, click on the
-![Options](../../../images/icon-options.png) next to a price list and select
+![Options](../../../../images/icon-options.png) next to a price list and select
 *Edit*. In the details tab, you can set the price for this list.
 
 Alternatively, to set a price that kicks in for bulk buyers, go to the *Tier

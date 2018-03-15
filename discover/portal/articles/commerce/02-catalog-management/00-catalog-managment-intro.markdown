@@ -11,5 +11,4 @@ inventory levels, product variants, and category assignments. It also organizes
 files related to its products, such as images and user manuals, and contains
 pricing information.
 
-To populate your catalog, go to the Site Menu and click on *Commerce* &rarr;
-*Catalog*.
+The following sections describe how to organize and populate your catalog.
