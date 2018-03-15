@@ -38,8 +38,7 @@ invoked whenever the configuration is modified.
 The `activate()` method calls the method `ConfigurableUtil.createConfigurable()`
 to convert a map of the configuration's properties to a typed class, which is
 easier to handle. The configuration is stored in a `volatile` field. Don't
-forget to make it `volatile` to ensure multiple threads don't hold different
-configuration values.
+forget to make it `volatile` to prevent thread safety problems.
 
 Once the activate method is set up, retrieve particular properties from the
 configuration wherever they're needed:
