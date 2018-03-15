@@ -51,7 +51,8 @@ Here's an example `.npmbundlerrc` configuration:
       },
       "output":(relative path to output directory),
       "process-serially":(true|false),
-      "verbose": <true|false>
+      "verbose": (true|false),
+      "dump-report": (true|false),
       "*" : {
         "plugins": [
           <list of plugins>
@@ -116,7 +117,11 @@ asynchronous model, or one by one. The default value is `false`, (parallel), but
 if you get EMFILE errors, you can disable this.
 
 *verbose:* Sets whether to output detailed information about what the tool is 
-doing.
+doing to the commandline.
+
+*dump-report:* Sets whether to generate a debugging report. If `true`, an HTML 
+file is generated in the project directory with information such as what the 
+liferay-npm-bundler is doing with each package.
 
 *list of plugins:* a comma separated call list of liferay-npm-bundler plugins to 
 call.
@@ -139,12 +144,14 @@ configurations were placed next to the tools options
 (`*`, `output`, `exclude`, etc.) To prevent package name collisions, package 
 configurations are now namespaced and placed under the `packages` section. To 
 maintain backwards compatibility, the liferay-npm-bundler falls back to the root 
-section outside `packages` for package configuration.
+section outside `packages` for package configuration, if no package 
+configurations (`package-name@version`, `package-name`, or `*`) are found in the 
+`packages` section.
 
 $$$
 
-Now that you know the structure of the `.npmbundlerrc` file, you can learn 
-about the available configuration presets.
+Now that you know the structure of the `.npmbundlerrc` file, you can learn about 
+the available configuration presets.
 
 ## liferay-npm-bundler Configuration Presets [](id=liferay-npm-bundler-configuration-presets)
 
