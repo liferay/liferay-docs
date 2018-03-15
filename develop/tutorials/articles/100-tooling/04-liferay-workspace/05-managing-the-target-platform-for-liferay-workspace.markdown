@@ -24,13 +24,10 @@ development. @ide@ can index the configured @product@ source code to
 
 These options in @ide@ are only available when developing in a Liferay
 Workspace, or if you have the
-[Target Platform](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-target-platform)
+[Target Platform](/develop/reference/-/knowledge_base/7-1/target-platform-gradle-plugin)
 Gradle plugin applied to your multi-module Gradle project. See the
 [Targeting a Platform Outside of Workspace](#targeting-a-platform-outside-of-workspace)
 section for more info on applying the Target Platform Gradle plugin.
-
-<!-- TODO: Update link for Gradle plugin with reference doc/README when it's
-available. -Cody -->
 
 Next, you'll discover how all of this is possible.
 
@@ -98,14 +95,9 @@ dependencies without versions appear in your Gradle build files. You're all set!
 
 ## Targeting a Platform Outside of Workspace
 
-<!-- TODO: Remove this section once the reference doc for the Gradle plugin is
-available. This is just gives a taste of targeting a platform for those who
-don't want to use Workspace. More details will be provided in reference doc.
--Cody -->
-
 If you prefer to not use Liferay Workspace, but still want to target a platform
 to develop against, you must apply the
-[Target Platform](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-target-platform)
+[Target Platform](/develop/reference/-/knowledge_base/7-1/target-platform-gradle-plugin)
 Gradle plugin to the root `build.gradle` file of your custom multi-module Gradle
 build.
 
@@ -119,10 +111,6 @@ To do this, your `build.gradle` file should look similar to this:
             maven {
                 url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
             }
-            maven {
-                url "https://repository.lifray.com/nexus/service/local/repositories/liferay-public-snapshots/content"
-            }
-            mavenLocal()
         }
     }
 
@@ -133,10 +121,9 @@ To do this, your `build.gradle` file should look similar to this:
         targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.0.5-SNAPSHOT"
     }
 
-<!-- TODO: The Maven URL pointing to Liferay's public snapshots will not be
-necessary once the portal artifacts are released to Liferay's public repo
-(targeting Beta). The temporary place to reference these is still TBD, according
-to Greg. -Cody -->
+<!-- TODO: The temporary place to reference Liferay's portal artifacts for 7.1
+is still TBD, according to Greg. Update this in the future, if necessary -Cody
+-->
 
 This Gradle code
 
@@ -150,7 +137,18 @@ This Gradle code
       included in @product@, but are necessary to reference during the build
       (e.g., `org.osgi.core`).
 
-<!-- TODO: Add info on the `targetPlatformIDE { includeGroups }` extension as a
-way to control what is available in the 'target platform index'. -Cody -->
+If you're interested in
+[advanced search](/develop/tutorials/-/knowledge_base/7-1/searching-product-source-in-liferay-ide)
+and/or
+[debugging](/develop/tutorials/-/knowledge_base/7-1/debugging-product-source-in-liferay-ide)
+@product@'s source using
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide), you must
+also apply the following configuration:
+
+    targetPlatformIDE {
+        includeGroups "com.liferay", "com.liferay.portal"
+    }
+
+This indexes the target platform's source code and makes it available to @ide@.
 
 Now you can develop against a target platform!

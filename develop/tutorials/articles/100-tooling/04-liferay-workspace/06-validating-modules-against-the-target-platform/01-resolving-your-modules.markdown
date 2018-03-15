@@ -68,4 +68,7 @@ You can now validate your module projects before deploying them to @product@!
 Sometimes, you must modify the `resolve` task's default behavior to successfully
 validate your app. See the
 [Modifying the Target Platform's Capabilities](/develop/tutorials/-/knowledge_base/7-1/modifying-the-target-platforms-capabilities)
-tutorial for more information.
+tutorial for more information. For help resolving common output errors printed
+by the `resolve` task, see the
+[Resolving Common Output Errors Reported by the resolve Task](/develop/reference/-/knowledge_base/7-1/resolving-common-output-errors-reported-by-the-resolve-task)
+article.

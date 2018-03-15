@@ -83,6 +83,18 @@ Gradle code at the bottom of the file:
 Be sure to replace the `PROJECT_NAME` filler with your module's name (e.g.,
 `test-api`).
 
+If you prefer to disable the Target Platform plugin all together, you can add a
+slightly different directive to your `build.gradle` file:
+
+    targetPlatform {
+        onlyIf { project ->
+            project.name != 'PROJECT_NAME'
+        }
+    }
+
+This not only skips the `resolve` task execution, it also disables BOM
+dependency management. 
+
 Now the `resolve` task skips your module project.
 
 ## Depending on a Customized Distribution of @product@
