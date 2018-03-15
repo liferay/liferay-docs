@@ -537,35 +537,9 @@ selected by default.
 
 There are four tables in the *Details* tab: 
 
-1. **Assign Subscription Type:** lets you assign a subscription type to an 
-   environment. To do so, click the environment's *No Subscriptions* link and 
-   then select the subscription type. This table also displays any existing 
-   subscription type assignments. 
-
-    +$$$
-
-    **Warning:** You should **use caution** when setting an environment's 
-    subscription type. All the servers in an environment **must be shut down** 
-    to assign that environment's subscription type. Also, **once set, you can't 
-    change an environment's subscription type**. 
-
-    $$$
-
-    When assigning a subscription type, you can also designate the environment 
-    as elastic. Doing so means that all servers that register in the environment 
-    will use elastic subscriptions. To do this, check the *Elastic* checkbox, 
-    accept the terms and conditions, and click *Save*. 
-
-    ![Figure 19: You can also designate environments as elastic.](../../images-dxp/lcs-elastic-assign.png)
-
-    Once you've assigned a subscription type to an environment, you must use an 
-    *environment token* to activate a @product@ instance in the environment. For 
-    instructions on this, see the section 
-    [Using Environment Tokens](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens). 
-
-2. **Subscriptions:** shows a list of @product@ subscriptions available for 
-   your LCS project. For each subscription, this table shows the following 
-   information: 
+1.  **Subscriptions:** shows a list of @product@ subscriptions available for 
+    your LCS project. For each subscription, this table shows the following 
+    information: 
 
     - Subscription Type
     - Start Date
@@ -580,12 +554,15 @@ There are four tables in the *Details* tab:
     Note that *Processor Cores Allowed* shows the number of processor cores that 
     your subscription allows for each @product@ instance.
 
-3. **Subscriptions Summary:** shows how your subscriptions are currently used in 
-   your environment. For each subscription type, this table shows the number of 
-   servers allowed, used, and available. 
+2.  **Subscriptions Summary:** shows how your subscriptions are currently used 
+    in your project. For each subscription type, this table shows the number 
+    servers allowed, used, and available. 
 
-4. **Project Servers:** shows the environment and environment subscription type 
-   for each server in your LCS project. 
+3.  **Project Environments:** shows your project's environments and their 
+    assigned subscription type. 
+
+4.  **Project Servers:** shows the environment and subscription type for each 
+    server in your LCS project. 
 
 If any of the information in these tables is missing or incorrect, contact 
 Liferay support. 
