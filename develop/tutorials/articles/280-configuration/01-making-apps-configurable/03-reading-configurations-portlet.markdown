@@ -1,4 +1,4 @@
-# Reading Configuration Values from a MVC Portlet
+# Reading Configuration Values from a MVC Portlet [](id=reading-configuration-values-from-a-mvc-portlet)
 
 It's very common to read configuration values from a portlet class or its JSPs.
 This tutorial shows how to add a configuration to the request and read it from
@@ -49,14 +49,14 @@ Note that you can specify more than one configuration PID here, by enclosing the
 values in curly braces (`{}`) and placing commas between each PID.
 
 Write an `activate`  method annotated with `@Activate` and `@Modified`. See the
-[Making Applications Configurable](LINK) tutorial if you're unsure why these
+[Making Applications Configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable) tutorial if you're unsure why these
 annotations are necessary:
 
         @Activate
         @Modified
         protected void activate(Map<String, Object> properties) {
             _configuration = ConfigurableUtil.createConfigurable(
-            ExampleConfiguration.class, properties);
+            "EXAMPLE_CONFIGRUATION", properties);
         }
 
         private volatile ExampleConfiguration _configuration;
@@ -65,7 +65,7 @@ A volatile field `_configuration` is created by the `createConfigurable` method.
 Now the field can be used to retrieve configuration values or to set the values
 in the request, so they can be retrieved in the application's JSPs.
 
-## Acessing the Configuration from a JSP
+## Acessing the Configuration from a JSP [](id=acessing-the-configuration-from-a-jsp)
 
 In the case of reading from a JSP, the configuration object can be added to the
 request object so that configurations can be read from the JSPs that comprise
@@ -76,7 +76,7 @@ the application's view layer.
 **Note:** There's a shortcut method for obtaining a portlet instance
 configuration. The method described in this section takes a straightforward
 approach that does not use this shortcut. See the [Accessing the Portlet
-Instance Configuration Through the PortletDisplay](LINK) article to learn
+Instance Configuration Through the PortletDisplay](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-configuration-provider#accessing-the-portlet-instance-configuration-through-the-portletdisplay) article to learn
 about the shorter method.
 
 $$$
@@ -94,21 +94,16 @@ Here's what it looks like in a simple portlet's `doView` method:
         }
 
 The main difference between this example and the component class covered in the
-[previous tutorial](LINK) is that this class is a portlet class and it sets the
+[previous tutorial](reading-configuration-values-from-a-component) is that this class is a portlet class and it sets the
 configuration object as a request attribute in its `doView()` method. To read
-configuration values from a JSP, first add these imports to your `init.jsp`
-file:
+configuration values from a JSP, first add these imports to the top of your
+`view.jsp` file:
 
     <%@ page import="com.liferay.docs.exampleconfig.ExampleConfiguration" %>
     <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %>
 
-It's a Liferay convention that all of a module's JSP imports go in an `init.jsp`
-file, and all other JSPs in the module import `init.jsp`. This convention
-ensures that you only have to manage JSP dependencies in a single file.
-
-In the JSP where the configuration must be read, obtain the configuration object
-from the request object and read the desired configuration value from it. Here's a
-`view.jsp` file that does this:
+In the JSP, obtain the configuration object from the request object and read the
+desired configuration value from it. Here's a `view.jsp` file that does this:
 
     <%@ include file="/init.jsp" %>
 
@@ -125,7 +120,7 @@ from the request object and read the desired configuration value from it. Here's
 
     <p>Favorite color: <span style="color: <%= favoriteColor %>;"><%= favoriteColor %></span></p
 
-<!--![Figure 2: Here, the Example Configuration portlet's `view.jsp` is rendered. This JSP reads the value of the `favoriteColor` configuration and displays it.](../../images/example-configuration-portlet.png)-->
+<!--[Figure 2: Here, the Example Configuration portlet's `view.jsp` is rendered. This JSP reads the value of the `favoriteColor` configuration and displays it.](../../images/example-configuration-portlet.png)-->
 
 The example code here would make the application display a message like this:
 
@@ -140,7 +135,7 @@ setting and change its value. The JSP reads the configuration, and refreshing
 the UI reflects this update.
 <!--I don't think it does. -->
 
-## Accessing the Configuration from the Portlet Class
+## Accessing the Configuration from the Portlet Class [](id=accessing-the-configuration-from-the-portlet-class)
 
 Now that you've seen a detailed example of accessing the configuration values in
 a JSP, there's not much more to cover when accessing the configuration directly

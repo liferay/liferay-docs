@@ -1,6 +1,6 @@
-# Reading Configuration Values from a Component
+# Reading Configuration Values from a Component [](id=reading-configuration-values-from-a-component)
 
-Once you have the [application configured](LINK), you might be wondering how to
+Once you have the [application configured](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable), you might be wondering how to
 read the configuration from your application's Java code.
 
 The answer is that there are several ways. Which one you use will depend on the
@@ -14,7 +14,7 @@ context from which you need to read the configuration:
 This tutorial show the first usage, reading the configuration from a Component
 class.
 
-## Reading Configurations from a Component Class
+## Reading Configurations from a Component Class [](id=reading-configurations-from-a-component-class)
 
 First set the `configurationPid` Component property as the fully qualified class
 name of the configuration class:
@@ -30,7 +30,7 @@ invoked whenever the configuration is modified.
     @Modified
     protected void activate(Map<String, Object> properties) {
         _configuration = ConfigurableUtil.createConfigurable(
-        ExampleConfiguration.class, properties);
+            ExampleConfiguration.class, properties);
     }
 
     private volatile ExampleConfiguration _configuration;
@@ -45,7 +45,7 @@ Once the activate method is set up, retrieve particular properties from the
 configuration wherever they're needed:
 
     public void orderCar(String model) {
-        order("car", "model", _configuration.favoriteColor);
+        order("car", model, _configuration.favoriteColor);
     }
 
 The String configuration value of `favoriteColor` is passed to the `order`

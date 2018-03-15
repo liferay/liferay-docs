@@ -1,4 +1,4 @@
-# Making Applications Configurable
+# Making Applications Configurable [](id=making-applications-configurable)
 
 These tutorials explain how to make your applications configurable, and
 subsequently how to read the configuration values from a variety of contexts.
@@ -24,19 +24,18 @@ $$$
 ## Fundamentals [](id=fundamentals)
 
 You don't need much prior knowledge to make your applications configurable, but
-you'll achieve a higher degree of configurability by understanding a few key
-concepts.
+understanding a few key concepts is useful before diving into the code.
 
 **Typed Configuration**
-: The method described here uses *typed* configuration. This means that the
-application configuration isn't just a list of key-value pairs. The values can
-have types, like `Integer`, a list of `Strings`, a URL, etc. It's even possible
-to use your own custom types, although that's beyond the scope of this tutorial.
-Typed configurations are easier to use than untyped configurations, and they
-prevent many programmatic errors. Related to this, the configuration options
-should be programmatically explicit, so that developers can use autocomplete in
-modern IDEs to find out all of the
-configuration options of a given application or one of its components.
+: The method described here uses *typed* configuration. The application
+configuration isn't just a list of key-value pairs. Values can have types,
+like `Integer`, a list of `Strings`, a URL, etc. It's even possible to use your
+own custom types, although that's beyond the scope of this tutorial. Typed
+configurations are easier to use than untyped configurations, and they prevent
+many programmatic errors. Related to this, the configuration options should be
+programmatically explicit, so that developers can use autocomplete in modern
+IDEs to find out all of the configuration options of a given application or one
+of its components.
 
 **Modularity** 
 : Modern applications are *modular* and built as a collection of lightweight
@@ -46,9 +45,10 @@ mechanisms described here leverage the concept of components.
 
 **Configuration Scope** 
 : If your application must support different configurations at different scopes,
-the APIs described below handle most of the burden for you. It's still
-important, however, for you to understand the term *configuration scope*. Here
-are the most common configuration scopes that Liferay applications can have:
+the APIs described below handle most of the burden for you. Even if you don'
+plan to scope the application's configuration, it's important to understand the
+term *configuration scope*. Here are the most common configuration scopes that
+Liferay applications can have:
 
    - *System* configurations are unique for the complete installation of
         the application.
@@ -95,13 +95,10 @@ configuration option. Here is an example interface:
 
     }
 
-The two Java annotations in the above snippet provide metadata about the
-configuration. Here's what they do:
+Here's what the two Java annotations in the above snippet do:
 
-1.  **Meta.OCD** Registers this class as a configuration with a specific id.
-    The ID should be the fully qualified configuration class name. Technically
-    you can choose any unique string you want, but problems with scoping the
-    configuration have been observed when something other than the FQCN is used.
+1.  **Meta.OCD** Registers this class as a configuration with a specific id. The
+    ID must be the fully qualified configuration class name.
 2.  **Meta.AD** Specifies [optional
     metadata](http://bnd.bndtools.org/chapters/210-metatype.html) about the
     field, such as whether it's a required field or if it has a default value.
@@ -141,17 +138,13 @@ Add the following line to your project's `bnd.bnd` file:
 
     -metatype: *
 
-<!-- Not present in the configuration-action blade sample bnd.bnd, or anywhere
-I can find under liferay-portal/modules/apps. Is it really
-necessary? -->
-
 This line lets bnd use your configuration interface to generate an XML
 configuration file. This provides a lot of information about your application's
 configuration options. Enough, in fact, to generate a [System
 Settings](/discover/portal/-/knowledge_base/7-0/system-settings) user interface
 automatically.
 
-<!--![Figure 1: Navigate to the Control Panel and then click on *Configuration* &rarr; *System Settings*. Then click on *Platform* &rarr; *Third Party*, find the *Example configuration* link, and click on it.](../../images/example-configuration-system-settings.png)-->
+<!--[Figure 1: Navigate to the Control Panel and then click on *Configuration* &rarr; *System Settings*. Then click on *Platform* &rarr; *Third Party*, find the *Example configuration* link, and click on it.](../../images/example-configuration-system-settings.png)-->
 
 ## Categorizing the Configuration [](id=categorizing-the-configuration)
 
@@ -176,18 +169,29 @@ available categories are nested beneath these sections:
 2.  Social
 3.  Platform
 4.  Security
-5.  Other
+5.  Commerce
+6.  Other
+
++$$$
+
+**Note:** The Other section is only displayed if something is categorized here.
+At the time of this writing, during the development of @product@ version 7.1
+beta, this section appears with one category. It may look different in your
+running instance.
+
+$$$
 
 If you don't specify a category, your application's configuration resides in
-Platform &rarr; Third Party. This is likely to be sufficient for most cases.
+Platform &rarr; Third Party. Developers can decide to place their configurations
+in the most appropriate existing category, or even create custom categories to
+facilitate discovery by their application's administrative users.
 
 <!-- Add Figure of Platform Third Party section when UI stabilizes -->.
 
-### Specifying a Configuration Category
+### Specifying a Configuration Category [](id=specifying-a-configuration-category)
 
-To specify a  different category, use the `@ExtendedObjectClassDefinition`
+To specify a different category, use the `@ExtendedObjectClassDefinition`
 annotation as in the following example: 
-<!-- specifying the category seems to add a sub-category to the Other parent category. How can third party devs add top-level categories?-->
 
     @ExtendedObjectClassDefinition(category = "blogs")
     @Meta.OCD(
@@ -207,10 +211,13 @@ The `@ExtendedObjectClassDefinition` annotation is distributed through the
 `com.liferay.portal.configuration.metatype` module, which you can 
 [configure as a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
 
-### Creating new Sections and Categories
+### Creating new Sections and Categories [](id=creating-new-sections-and-categories)
 
-If you're not satisfied with the existing categories or category sections,
-create your own by implementing a simple interface, `ConfigurationCategory`.
+It's important that configurations are in the most intuitive location (section
+and category) so that administrative users find them easily. If your
+configurations don't fit neatly into the existing categories or category
+sections, create your own by implementing a simple interface,
+`ConfigurationCategory`.
 
 Here's the code @product@ uses to create the *Content Management* section and
 the *Assets* category:
@@ -224,19 +231,19 @@ the *Assets* category:
         }
 
         @Override
-        public String getKey() {
-            return _KEY;
+        public String getCategoryKey() {
+            return _CATEGORY_KEY;
         }
 
         private static final String _CATEGORY_SET_KEY = "content-management";
 
-        private static final String _KEY = "assets";
+        private static final String _CATEGORY_KEY = "assets";
 
     }
 
 The `getCategorySection` method returns the String with the new section's key.
-Similarly, `getKey` returns the key for the new category. Provide localized
-values for these keys in your module's
+Similarly, `getCategoryKey` returns the key for the new category. Provide
+localized values for these keys in your module's
 `src/main/resources/content/Language.properties` file.
 
 Next learn to specify the scope of your application's configuration.

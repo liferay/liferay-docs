@@ -13,7 +13,7 @@ configuration methods on an as-needed basis.
 
 There's a full-featured configuration API that's easy to use, and it's not
 limited to portlets. Any class that needs to accept configuration values set in
-the UI can do so through the configuration API. It's used throughout
-@product@'s applications. We like it, and we think you'll like it too. 
+the UI can do so through the configuration API. It's used throughout @product@'s
+applications. We like it, and we think you'll like it too. 
 
 The following tutorials show you how to use it. 

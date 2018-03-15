@@ -1,11 +1,10 @@
-# Scoping Configurations
+# Scoping Configurations [](id=scoping-configurations)
 
-When an application is deployed to Liferay, it's common to need different
-configurations depending on the scope. That means having different
-configurations for a given application per virtual instance (a.k.a. Company),
-site (a.k.a. Group), or portlet instance. Achieve this with the Configuration
-Provider API that is based on the standard OSGi Configuration Admin API shown in
-the previous section.
+When an application is deployed, it's common to need different configurations
+depending on the scope. That means having different configurations for a given
+application per virtual instance (a.k.a. Company), site (a.k.a. Group), or
+portlet instance. Achieve this with the Configuration Provider API that is based
+on the standard OSGi Configuration Admin API shown in the previous section.
 
 The `ExtendedObjectClassDefinition` annotation allows you to specify the scope
 of the configuration. This must match how the configuration object is
@@ -33,12 +32,12 @@ Here is an example:
 
 The scope property isn't currently used for anything other than making it appear
 in System Settings so that an administrator can change its value. In future
-releases, it may have more purposes.
-<!-- Does it? -->
+releases it may serve additional purposes.
 
-## Enabling the Configuration for Scoped Retrieval
+## Enabling the Configuration for Scoped Retrieval [](id=enabling-the-configuration-for-scoped-retrieval)
 
-To retrieve a scoped configuration, use a [Configuration Provider](LINK).
+To retrieve a scoped configuration, use a [Configuration
+Provider](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-configuration-provider).
 The method call looks like this:
 
     JournalGroupServiceConfiguration configuration =

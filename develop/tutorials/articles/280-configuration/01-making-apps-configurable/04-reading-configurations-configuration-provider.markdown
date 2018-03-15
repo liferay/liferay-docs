@@ -1,7 +1,7 @@
-# Reading Configuration Values from a Configuration Provider
+# Reading Configuration Values from a Configuration Provider [](id=reading-configuration-values-from-a-configuration-provider)
 
 When an application is deployed to Liferay, it's common to need different
-configurations [depending on the scope](LINK). That means having different
+configurations [depending on the scope](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable/scoping-configurations). That means having different
 configurations for a given application per virtual instance (a.k.a. Company),
 site (a.k.a. Group), or portlet instance. Achieve this with little effort using
 the Configuration Provider API that is based on the standard OSGi Configuration
@@ -15,7 +15,7 @@ directly, the class that wants to access it must
 1.  Receive a `ConfigurationProvider` to obtain the configuration
 2.  Be registered with a `ConfigurationBeanDeclaration`.
 
-The tutorial on [scoping configurations](LINK) demonstrates how to register the
+The tutorial on [scoping configurations](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable/scoping-configurations) demonstrates how to register the
 configuration with a `ConfigurationBeanDeclaration`.
 
 After registering with a `ConfigurationBeanDeclaration`, you're ready to use a
@@ -41,10 +41,20 @@ obtain a reference to it:
 - For anything else: For other use cases, call the same methods from the utility
     class, `ConfigurationProviderUtil`. Be sure you call the utility methods in
     contexts where the portal is guaranteed to be initialized prior to the
-    method call. This class is useful in the [scripting console](LINK), for
-    example.
+    method call. This class is useful in the [scripting console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console), for
+    example. Here's an example method that uses the utility class. It comes from
+    the export-import service, which will only be called during the import and
+    export of content from a running portal:
 
-        ConfigurrationProviderUtil.
+	protected boolean isValidateLayoutReferences() throws PortalException {
+		long companyId = CompanyThreadLocal.getCompanyId();
+
+		ExportImportServiceConfiguration exportImportServiceConfiguration =
+			ConfigurationProviderUtil.getCompanyConfiguration(
+				ExportImportServiceConfiguration.class, companyId);
+
+		return exportImportServiceConfiguration.validateLayoutReferences();
+	}
 
 To retrieve the configuration, use one of the following methods of the provider:
 
