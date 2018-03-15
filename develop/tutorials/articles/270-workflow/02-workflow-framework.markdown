@@ -9,8 +9,7 @@ your sleep (but don’t try). Workflow enabled entities require a few things:
 -  Some extra fields in their database table that help keep track of their
    status.
 
-    In most Liferay applications, [Service Builder](/develop/tutorials/-/knowledge_base/6-2/service-builder) will be used to create those fields. 
-<!--Update link to 7-0 when ready-->
+    In most Liferay applications, [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder) will be used to create those fields. 
 
 -  Updates to the service layer. 
 
@@ -36,7 +35,7 @@ First create a Component class. It should extend `BaseWorkflowHandler<T>`, an
 abstract class that provides a default implementation of the `WorkflowHandler<T>`
 service. Pass the interface for your model as the type parameter for the class.
 
-    FooEntity WorkflowHandler extends BaseWorkflowHandler<FooEntity>
+    public class FooEntityWorkflowHandler extends BaseWorkflowHandler<FooEntity>
 
 Since you're publishing a service to be consumed in the OSGi runtime, your
 workflow handler class needs to be registered. If you're using Declarative
@@ -51,21 +50,30 @@ It needs one property, to set `model.class.name` to the fully qualified class
 name of the class you passed as the type parameter. It also needs to declare the
 type of service being implemented (`WorkflowHandler.class`). 
 
-What methods do you need to override in your workflow handler? Just three:
+There are three methods to override in the workflow handler, and the first two
+are boilerplate methods:
 
     @Override
     public String getClassName() {
+		return FooEntity.class.getName();
+    }
+
+`getClassName` returns the fully qualified class name of the model class (`com.my.app.package.model.FooEntity`, for example).
 
     @Override
     public String getType(Locale locale) {
+		return ResourceActionsUtil.getModelResource(locale, getClassName());
+	}
+
+`getType` returns the model resource name (`model.resource.com.my.app.package.model.FooEntity`, for example).
 
     @Override
     public FooEntity updateStatus(int status, Map<String, Serializable> workflowContext) {
 
-The first two are pretty boilerplate. Most of the heavy lifting is being done in
-the `updateStatus` method. It returns a call to a local service method
-of the same name, so the status returned from the workflow back end can be
-persisted to the entity table in the database. 
+Most of the heavy lifting is being done in the `updateStatus` method. It returns
+a call to a local service method of the same name (for example,
+`FooEntityLocalService.updateStatus`), so the status returned from the workflow
+back end can be persisted to the entity table in the database. 
 
 The `updateStatus` method should take a user ID, the primary key for the class
 (for example, `fooEntityId`), the workflow status, the service context, and the
@@ -117,15 +125,15 @@ the workflow status as a draft and set the other fields.
 With Service Builder driven Liferay applications, this will be in the local service
 implementation class (`-LocalServiceImpl`). 
 
-Whenever an entity is added to the database you need to detect whether workflow
-is installed and active. If not, you need to automatically mark the entity as
-approved so it appears in the UI. If it is, you want to leave it in draft status
-and send it to the workflow back end where it can be properly handled.
-Thankfully, this whole process is easily done with a single call to
+When an entity is added to the database, the application must detect whether
+workflow is installed and active. If not, automatically mark the entity as
+approved so it appears in the UI. If it is, leave it in draft status and send it
+to the workflow back end where it can be properly handled.  Thankfully, this
+whole process is easily done with a single call to
 `WorkflowHandlerRegistryUtil.startWorkflowInstance`. There are several methods
 of this name which take a different parameter set, so inspect the
 `WorkflowHandlerRegistryUtil`
-[class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/workflow/WorkflowHandlerRegistryUtil.html)
+[class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/workflow/WorkflowHandlerRegistryUtil.html)
 and decide which is right for your case.
 
     WorkflowHandlerRegistryUtil.startWorkflowInstance(fooEntity.getCompanyId(),
@@ -243,111 +251,8 @@ search container). To do so, use the `<aui:worklfow-status>` tag.
 
         <aui:workflow-status markupView="lexicon" showIcon="<%= false %>" showLabel="<%= false %>" status="<%= fooEntity.getStatus() %>" />
 
-![Figure 1: You can display the workflow status of your entities. This is useful in administrative applications.](../../images/workflow-status-list-view.png)
+<!--UPDATE WHEN UI IS STABILIZED [Figure 1: You can display the workflow status of your entities. This is useful in administrative applications.](../../images/workflow-status-list-view.png) -->
 
 You only needed one new class, one new method in the service layer, and some
 updates to your view, and workflow is fully implemented and ready to use in your
 Liferay application.
-
-<!-- ## Full Code Examples
-
-Here's what an entire, functional workflow handler class might look like:
-
-    package com.liferay.docs.foo.workflow;
-
-    import com.liferay.docs.foo.model.FooEntity;
-    import com.liferay.docs.foo.service.FooEntityLocalService;
-    import com.liferay.portal.kernel.exception.PortalException;
-    import com.liferay.portal.kernel.security.permission.ResourceActionsUtil;
-    import com.liferay.portal.kernel.service.ServiceContext;
-    import com.liferay.portal.kernel.util.GetterUtil;
-    import com.liferay.portal.kernel.workflow.BaseWorkflowHandler;
-    import com.liferay.portal.kernel.workflow.WorkflowConstants;
-    import com.liferay.portal.kernel.workflow.WorkflowHandler;
-
-    import java.io.Serializable;
-
-    import java.util.Locale;
-    import java.util.Map;
-
-    import org.osgi.service.component.annotations.Component;
-    import org.osgi.service.component.annotations.Reference;
-
-    @Component(
-        property = {"model.class.name=com.liferay.docs.foo.model.FooEntity"},
-        service = WorkflowHandler.class
-    )
-    public class FooEntityWorkflowHandler extends BaseWorkflowHandler<FooEntity> {
-
-        @Override
-        public String getClassName() {
-            return FooEntity.class.getName();
-        }
-
-        @Override
-        public String getType(Locale locale) {
-            return ResourceActionsUtil.getModelResource(locale, getClassName());
-        }
-
-        @Override
-        public FooEntity updateStatus(
-                int status, Map<String, Serializable> workflowContext)
-            throws PortalException {
-
-            long userId = GetterUtil.getLong(
-                (String)workflowContext.get(WorkflowConstants.CONTEXT_USER_ID));
-            long classPK = GetterUtil.getLong(
-                (String)workflowContext.get(
-                    WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
-
-            ServiceContext serviceContext = (ServiceContext)workflowContext.get(
-                "serviceContext");
-
-            return _fooEntityLocalService.updateStatus(
-                userId, classPK, status, serviceContext, workflowContext);
-        }
-
-        @Reference(unbind = "-")
-        protected void setFooEntityLocalService(
-            FooEntityLocalService fooEntityLocalService) {
-
-            _fooEntityLocalService = fooEntityLocalService;
-        }
-
-        private FooEntityLocalService _fooEntityLocalService;
-
-    }
-
-Here's a fully developed, yet simple, example of an `updateStatus` method that
-you might use in your `-LocalServiceImpl`:
-
-    public FooEntity updateStatus(long userId, long fooEntityId, int status,
-           ServiceContext serviceContext) throws PortalException,
-           SystemException {
-
-        User user = userLocalService.getUser(userId);
-        FooEntity fooEntity = getFooEntity(fooEntityId);
-
-        fooEntity.setStatus(status);
-        fooEntity.setStatusByUserId(userId);
-        fooEntity.setStatusByUserName(user.getFullName());
-        fooEntity.setStatusDate(new Date());
-
-        entryPersistence.update(entry);
-
-        if (status == WorkflowConstants.STATUS_APPROVED) {
-
-           assetEntryLocalService.updateVisible(FooEntity.class.getName(),
-              fooEntityId, true);
-
-        } else {
-
-           assetEntryLocalService.updateVisible(FooEntity.class.getName(),
-              fooEntity, false);
-        }
-
-        return fooEntity;
-    }
-
--->
-
