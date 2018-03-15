@@ -468,7 +468,7 @@
 		</copy>
 	</target>
 
-	<target name="prepare-dist" depends="check-images-dist, check-intros-dist, clean-dist, number-headers-dist, number-images-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
+	<target name="prepare-dist" depends="check-intros-dist, clean-dist, number-headers-dist, number-images-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>
