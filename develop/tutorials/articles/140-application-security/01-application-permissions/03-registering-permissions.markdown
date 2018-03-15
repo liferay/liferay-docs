@@ -36,7 +36,8 @@ If you're not using Service Builder, but you are using OSGi modules for your
 application, you should be able to inject the resource service with an
 `@Reference` annotation. If you're building a WAR-style plugin, you need
 a [service tracker](/develop/tutorials/-/knowledge_base/7-1/service-trackers) to
-gain access to the service. 
+gain access to the service. Note that your model classes must also implement
+Liferay's `ClassedModel` interface. 
 
 Similarly, when you delete an entity, you should also delete its associated
 resource. Here's how the Blogs application does it in its `deleteEntry()`
