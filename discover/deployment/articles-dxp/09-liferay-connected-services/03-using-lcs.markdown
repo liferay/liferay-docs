@@ -181,8 +181,6 @@ $$$
 The *Users* tab displays a list of the users in your project. This list includes 
 each user's name, email, image, LCS roles, and a *Manage Roles* button. 
 
-![Figure 4: The Users tab lets you manage the LCS users in your project.](../../images-dxp/lcs-users.png)
-
 Follow these steps to manage a user's LCS roles:
 
 1.  Click the user's *Manage Roles* button. 
@@ -198,6 +196,8 @@ Follow these steps to manage a user's LCS roles:
 LCS Environment Viewer) and the LCS Administrator role at the same time. 
 
 $$$
+
+![Figure 4: The Users tab lets you manage the LCS users in your project.](../../images-dxp/lcs-users.png)
 
 ![Figure 5: You can assign or revoke a user's LCS roles.](../../images-dxp/lcs-user-roles.png)
 
@@ -259,12 +259,13 @@ Dashboard. This opens the New Environment popup:
     environments can contain clustered servers. Note that you must set the 
     portal property `cluster.link.enabled` to `true` in any servers that connect 
     to a clustered environment. 
--   **Services:** Which LCS services to enable in the environment. Note that 
+-   **Services:** The LCS services to enable in the environment. Note that 
     although 
     [LCS doesn't access security sensitive properties](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers), 
     you may have additional properties you want to prevent LCS from analyzing. 
-    Enter them into the box that appears when you select *Blacklisted 
-    Properties*. 
+    Enter them into the popup that appears when you click *Blacklisted 
+    Properties*. This Blacklisted Properties popup lists the currently 
+    blacklisted properties and lets you add additional ones to the list. 
 
 When you're finished with your selections, click *Create Environment*. 
 
