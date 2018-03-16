@@ -56,7 +56,7 @@ to help build @product-ver@ applications. It also offers various ways to deploy
 those apps and interact with your Liferay server. Be sure to explore more Blade
 CLI tutorials to learn how.
 
-## Installer Issues on macOS
+## Installer Issues on macOS [](id=installer-issues-on-macos)
 
 If you're using macOS, you could experience an issue where the `blade` command
 is not available in your terminal:

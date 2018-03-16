@@ -1,4 +1,4 @@
-# Checking Permissions 
+# Checking Permissions [](id=checking-permissions)
 
 Now that you've defined your permissions, registered resources in the database
 and with the OSGi container, and enabled users to associate permissions with
@@ -13,7 +13,7 @@ your application. This takes three steps:
 
 These things are covered next. 
 
-## Add Permission Checks to Your Service Calls
+## Add Permission Checks to Your Service Calls [](id=add-permission-checks-to-your-service-calls)
 
 A best practice is to create methods in your `-ServiceImpl` classes that call
 the same methods in your `-LocalServiceImpl` classes, but wrap those calls in
@@ -90,7 +90,7 @@ Add permission checks where necessary to protect your application's functions at
 the service level. Next, you'll learn how to create permission helper classes
 for your web module. 
 
-## Create Permission Helper Classes in Your Web Module
+## Create Permission Helper Classes in Your Web Module [](id=create-permission-helper-classes-in-your-web-module)
 
 A helper class can make it easier to check permissions in your portlet
 application. You can create helper classes for both portlet permissions and 
@@ -185,7 +185,7 @@ The procedure for creating a model permission helper is similar:
 Now you're ready to use these helper classes to check permissions in your web
 module. 
 
-## Add Permission Checks to Your Web Application
+## Add Permission Checks to Your Web Application [](id=add-permission-checks-to-your-web-application)
 
 You can use the permission helper classes to check for permissions before
 displaying UI elements. If the element never appears, a user can't access it

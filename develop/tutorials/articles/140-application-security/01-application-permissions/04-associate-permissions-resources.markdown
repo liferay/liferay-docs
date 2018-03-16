@@ -1,4 +1,4 @@
-# Associating Permissions with Resources 
+# Associating Permissions with Resources [](id=associating-permissions-with-resources)
 
 Now that you've defined and registered permissions, you must expose the
 permissions interface so users can set permissions. 
