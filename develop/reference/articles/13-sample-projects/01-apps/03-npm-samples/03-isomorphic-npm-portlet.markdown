@@ -11,7 +11,7 @@ can run from client and/or server side) on the client side.
 
 ![Figure 1: This sample portlet displays the results of running code designed for the server in the browser.](../../../../images/isomorphic-npm-sample.png)
 
-This portlet showcases the ability to run code designed to execute in the server
+This portlet showcases running code designed to execute in the server
 in the browser. Note that this portlet does **not** run JavaScript code in the
 server; it's executing isomorphic JavaScript code in the browser.
 
@@ -26,10 +26,10 @@ You can do many things with isomorphic code. You can run it in
 - the client only (e.g., browser)
 - both the server and client (e.g., Node.js + browser)
 
-When working with @product@, isomorphic code cannot run server-side because
-@product@ is Java based and, thus, cannot execute JavaScript that way. This
-sample portlet shows how Liferay's npm bundler can transform server-side code to
-make it work in the client (e.g., emulates some of Node.js' APIs in the client).
+Isomorphic code cannot run server-side because @product@ is Java based and
+cannot execute JavaScript that way. This sample portlet shows how Liferay's npm
+bundler can transform server-side code to make it work in the client (e.g.,
+emulates some of Node.js' APIs in the client).
 
 ## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
