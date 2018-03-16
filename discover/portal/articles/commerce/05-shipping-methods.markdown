@@ -45,13 +45,26 @@ will be displayed on a page.
 
 Activating Fixed Shipping will have no effect if no Shipping options have been
 defined. For most users, it makes sense to define a number of different options,
-unless you 
+so that customers can choose between low-cost and high-speed shipping.
+
+To create a new shipping option, first open the *Fixed* shipping method and then
+click on the *Shipping Option* tab. Then fill out the dialog box that appears:
+
+Figure 1:
+
+Simply enter the name and the price.
 
 ## By Weight Shipping Method
 
 Shipping by weight is a slightly different animal, requiring you to do a little
-math. Wait, come back! It's really quite simple. And the computer does all the
-math. You just need to follow what it's doing.
+math. Wait, come back! It's really quite simple. Dynamic shipping allows you to
+implement a formula that will automatically set shipping rates on the basis of
+weight and price.
+
++$$$
+
+When shipping by weight, you need every item in the catalog to specify its
+weight.
 
 ### Shipping Options
 
