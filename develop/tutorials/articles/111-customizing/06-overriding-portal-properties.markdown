@@ -1,16 +1,16 @@
 # Overriding Portal Properties using a Hook [](id=overriding-portal-properties-using-a-hook)
 
 A portal properties hook plugin lets you override a subset of
-[portal properties](@platform-ref@/7.0/propertiesdoc/portal.properties.html)
+[portal properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html)
 dynamically. These properties define event actions, model listeners, validators,
 generators, and content sanitizers. The 
-[`liferay-hook-7.0.dtd` file](@platform-ref@/7.0/definitions/liferay-hook_7_0_0.dtd.html)
+[`liferay-hook-7.0.dtd` file](@platform-ref@/7.0-latest/definitions/liferay-hook_7_0_0.dtd.html)
 lists this subset of properties. 
 
 +$$$
 
 **Note:** To customize a property that's not in the 
-[`liferay-hook-7.0.dtd` file](@platform-ref@/7.0/definitions/liferay-hook_7_0_0.dtd.html), you must use an
+[`liferay-hook-7.0.dtd` file](@platform-ref@/7.0-latest/definitions/liferay-hook_7_0_0.dtd.html), you must use an
 [Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins). 
 
 $$$
@@ -22,7 +22,7 @@ property's current value. For example, multiple hooks that add login event
 actions append their action classes to the portal instance's `login.event.pre`
 property. The 
 [portal property reference
-documentation](@platform-ref@/7.0/propertiesdoc/portal.properties.html) shows
+documentation](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html) shows
 whether a property accepts multiple values by stating it or showing value lists
 assigned to a default or example property setting. 
 
@@ -43,7 +43,7 @@ Here's how to override a portal property using a Hook:
 
 3.  In the plugin's `WEB-INF/liferay-hook.xml` file, add the following
     `portal-properties` element  as a child of the `hook` element. Refer to the
-    [`liferay-hook-7.0.dtd` file](@platform-ref@/7.0/definitions/liferay-hook_7_0_0.dtd.html)
+    [`liferay-hook-7.0.dtd` file](@platform-ref@/7.0-latest/definitions/liferay-hook_7_0_0.dtd.html)
     for details.
 
         <portal-properties>portal.properties</portal-properties>
@@ -56,7 +56,7 @@ in the Control Panel shows your new property setting.
 
 ## Related Topics [](id=related-topics)
 
-[Portal Properties Reference](@platform-ref@/7.0/propertiesdoc/portal.properties.html)
+[Portal Properties Reference](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html)
 
 [Server Administration](/discover/portal/-/knowledge_base/7-0/server-administration#properties)
 
