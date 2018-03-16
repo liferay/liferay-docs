@@ -56,15 +56,9 @@ $$$
 
 +$$$
 
-**Upgrading to Elasticsearch 6:** As of FP-XX, Elasticsearch 6 will become the
-default search engine for new installations. If you're happy running
-Elasticsearch 2.4.x, your system won't be affected at all. If you want to
-upgrade to Elasticsearch 6, follow [Elastic's guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-upgrade.html) to upgrading your
-Elasticsearch system, then read [Liferay's guide to upgrading the Elasticsearch
-Adapter](LINK WHEN WRITTEN). 
-
-<!-- Messaging might need to change if ES 6 support is only dependent on the MP
-release of the ES 6 adapter. -->
+**Upgrading to Elasticsearch 6:** Elasticsearch 2.4.x reached end of life status
+in February 2018. If you have an existing Elasticsearch 2.4 cluster,
+to upgrade it to Elasticsearch 6 by following [the upgrade guide](/discover/deployment/-/knowledge_base/7-0/upgrading-to--elasticsearch-6). 
 
 $$$
 
@@ -142,16 +136,18 @@ it find and integrate your Elasticsearch cluster.
 
 ## Configuring the Liferay Elasticsearch Adapter [](id=configuring-the-liferay-elasticsearch-adapter)
 
-The Elasticsearch adapter ships with @product@. It's a module from the Liferay
-Foundation Suite that's deployed to the OSGi runtime, titled *Liferay Portal
-Search Elasticsearch*. This adapter provides integration between Elasticsearch
-and @product@. Before you configure the adapter, make sure Elasticsearch is
-running. 
+The Elasticsearch 2 adapter is a module that ships with the Foundation Suite and
+deployed to the OSGi runtime, titled *Liferay Portal Search Elasticsearch*. This
+adapter provides integration between Elasticsearch and @product@. Before you
+configure the adapter, make sure Elasticsearch is running. 
 
 +$$$
 
 **Elasticsearch 6.1:** The Elasticsearch Adapter for Elasticsearch 6.1 is called
-*Elasticsearch 6*.
+*Elasticsearch 6*. Download the Elasticcsearch 6 adapter from Liferay
+Marketplace and install it, following the [Marketplace
+documentation](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace)
+if necessary.
 
 $$$
 

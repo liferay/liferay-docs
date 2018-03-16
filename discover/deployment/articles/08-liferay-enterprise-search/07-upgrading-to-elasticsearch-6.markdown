@@ -1,7 +1,7 @@
 # Upgrading to Elasticsearch 6
 
 Elasticsearch 6 is supported for Digital Enterprise subscribers running Fix Pack
-XX or later, and for Community Edition users running 7.0 CE GA 6 or greater. If
+42 or later, and for Community Edition users running 7.0 CE GA 6 or greater. If
 you're not already running a remote Elasticsearch 2.x server, follow the [installation guide](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch) to install
 Elasticsearch 6 and the [configuration guide](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0) to configure the Elasticsearch
 adapter. In this article, learn to upgrade an existing Elasticsearch 2.x
@@ -13,8 +13,8 @@ server (or cluster) to Elasticsearch 6.1.x. The general steps are as follows:
     RELEASED)
 4.  Stop the default Elasticsearch adapter.
 5.  Stop the Elasticsearch 2.4 server.
-6.  Install and configure the Elasticsearch 6 adapter.
-7.  Start Elasticsearch 6.
+6.  Start Elasticsearch 6.
+7.  Install and configure the Elasticsearch 6 adapter.
 8.  Reindex all search indexes.
 
 +$$$
@@ -45,6 +45,15 @@ since the breaking changes from 2.x to 5.x also apply to 2.x to 6.1.
     data](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/fielddata.html).
     Beware, `fielddata` is disabled by default because it is memory-intensive.
 
+*Spell Check and Query Suggestions*
+
+- Due to Elastic's [removal of mapping
+    types](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/removal-of-types.html)
+    from search documents, spell check indexes and suggestion dictionaries now
+    use a single document type. If your installation was leveraging either
+    functionality, you must reindex all spell check indexes (form Control Panel
+    &rarr; Configuration &rarr; Server Administration).
+
 $$$
 
 ## Installing Elasticsearch 6.1
@@ -69,6 +78,12 @@ To install these plugins, navigate to Elasticsearch Home and enter
     ./bin/elasticsearch-plugin install [plugin-name]
 
 Replace *[plugin-name]* with the Elasticsearch plugin's name.
+
+Once installed, start Elasticsearch 6 by running
+
+    ./bin/elasticsearch
+
+from Elasticsearch Home.
 
 <!-- ## Upgrade the Elasticsearch 2.4 Indexes
 
@@ -110,25 +125,21 @@ directory.
 See[here](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/installing-apps-manually#using-your-file-system-to-install-apps)
 for more information.
 
-It starts automatically with log messages like this:
+<!--It starts automatically with log messages like this:
 
-<!-- Add when possible -->
-
+Add when possible -->
 Now configure the adapter to find your Elasticsearch 6.1.x cluster by specifying
 the correct *Cluster Name* and Setting *Operation Mode* to *REMOTE*. Make sure
 the *Transport Address* matches the one Elasticsearch is using. If testing
 locally with Elasticsearch's default settings, the default value in the adapter
 works fine (*localhost:9300*).
 
-## Start Elasticsearch 6 and Reindex
+## Reindex
 
-Once the Elasticsearch adapter is looking for the cluster, start Elasticsearch
-by running 
+Once the Elasticsearch adapter is installed and talking to the Elasticsearch
+cluster, navigate to Control Panel &rarr; Configuration &rarr; Server
+Administration, and click *Execute* for the *Reindex all search indexes* entry.
 
-    ./bin/elasticsearch 
-
-from Elasticsearch Home. Then navigate to Control Panel &rarr; Configuration
-&rarr; Server Administration, and click *Execute* for the *Reindex all search
-indexes* entry.
+You should also reindex all spell check entries while you're here.
 
 Learn more about configuring Elasticsearch in [this article](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0).

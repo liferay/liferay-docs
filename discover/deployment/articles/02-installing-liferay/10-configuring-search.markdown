@@ -158,7 +158,7 @@ Elasticsearch. Edit the following file:
 Uncomment the line that begins with `cluster.name`. Set the cluster name to
 whatever you want to name your cluster: 
 
-    cluster.name: liferay_cluster
+    cluster.name: LiferayElasticsearchCluster
 
 Of course, this isn't a very imaginative name; you may choose to name your
 cluster `finders_keepers` or something else you can remember more easily. Save
