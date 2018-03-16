@@ -64,7 +64,7 @@ the method `SessionContext.loadStoredCredentials()` method.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JlQ8nWGFsyg" frameborder="0" allowfullscreen></iframe>
 
-## JSON Services Used
+## JSON Services Used [](id=json-services-used)
 
 Screenlets in Liferay Screens call the portal's JSON web services. This 
 Screenlet calls the following services and methods. 

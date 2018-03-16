@@ -33,7 +33,7 @@ The DDL List Screenlet enables the following features:
 - Allows filtering of records by creator.
 - Supports i18n in record values.
 
-## JSON Services Used
+## JSON Services Used [](id=json-services-used)
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.

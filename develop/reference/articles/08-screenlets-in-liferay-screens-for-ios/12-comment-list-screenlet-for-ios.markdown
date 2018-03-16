@@ -25,7 +25,7 @@
 Comment List Screenlet can list all the comments of an asset in a Liferay 
 instance. It also lets the user update or delete comments. 
 
-## JSON Services Used
+## JSON Services Used [](id=json-services-used)
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.

@@ -20,7 +20,7 @@
 The User Portrait Screenlet shows the user's portrait from Liferay Portal. If 
 the user doesn't have a portrait configured, a placeholder image is shown.
 
-## JSON Services Used
+## JSON Services Used [](id=json-services-used)
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.

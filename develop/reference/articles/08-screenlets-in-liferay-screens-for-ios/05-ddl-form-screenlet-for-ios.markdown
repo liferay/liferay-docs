@@ -54,7 +54,7 @@ Screenlet. They are listed here:
 - Selection of multiple items in the Radio and Select data types isn't supported 
   yet. 
 
-## JSON Services Used
+## JSON Services Used [](id=json-services-used)
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.

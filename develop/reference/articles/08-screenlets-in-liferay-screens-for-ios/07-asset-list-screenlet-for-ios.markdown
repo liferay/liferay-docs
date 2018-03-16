@@ -60,7 +60,7 @@ following classes:
 
 The Asset List Screenlet also supports i18n in asset values. 
 
-## JSON Services Used
+## JSON Services Used [](id=json-services-used)
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.

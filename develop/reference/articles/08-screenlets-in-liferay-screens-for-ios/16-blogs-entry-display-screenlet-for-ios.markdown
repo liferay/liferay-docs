@@ -25,7 +25,7 @@
 Blogs Entry Display Screenlet displays a single blog entry. Image Display 
 Screenlet renders any header image the blogs entry may have. 
 
-## JSON Services Used
+## JSON Services Used [](id=json-services-used)
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.

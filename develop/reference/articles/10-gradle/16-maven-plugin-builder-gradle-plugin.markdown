@@ -169,7 +169,7 @@ dependencies {
 }
 ```
 
-### System Properties
+### System Properties [](id=system-properties)
 
 It is possible to set the default value of the `mavenDebug` property for a
 `BuildPluginDescriptorTask` task via system property:
