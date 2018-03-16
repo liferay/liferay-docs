@@ -14,8 +14,8 @@ Administration:
 -   **Portal admins:** can set the default rating type for the portal
 -   **Site admins:** can override the default rating type for their site
 
-All Liferay apps leverage this feature. Your custom apps can too--this tutorial 
-shows you how. 
+All Liferay apps leverage this feature. Your apps can too: this tutorial shows
+you how. 
 
 ## Specifying an Entity's Rating Type [](id=specifying-an-entitys-ratings-type)
 

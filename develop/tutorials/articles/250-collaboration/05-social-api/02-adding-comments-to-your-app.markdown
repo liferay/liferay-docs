@@ -1,13 +1,10 @@
 # Adding Comments to Your App [](id=adding-comments-to-your-app)
 
-Letting users comment on your app's content makes your app come alive. And since 
-@product@'s built-in apps have comments enabled by default, doing so in your app 
-really ties your site together. Taglibs provide the markup you need to add this 
-feature to your app. This tutorial shows you how to use these taglibs to enable 
-comments for your app's content. 
+Letting users comment on content makes your app come alive. Taglibs provide the
+markup you need to add this feature. This tutorial shows you how to use these
+taglibs to enable comments. 
 
-Follow these steps to enable comments in your app. Note that these steps use a 
-sample Guestbook app as an example: 
+These steps use a sample Guestbook app as an example: 
 
 1.  Make sure your entity is 
     [asset enabled](/develop/tutorials/-/knowledge_base/7-1/asset-framework). 

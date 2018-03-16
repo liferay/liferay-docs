@@ -1,7 +1,7 @@
 # Flagging Inappropriate Asset Content [](id=flagging-inappropriate-asset-content)
 
 In a perfect world, people would post nice, kind, and decent content. They would 
-reply to comments with constructive feedback and never lash out at one another. 
+reply to comments with constructive feedback and never lash out at each other. 
 Unfortunately, sometimes people have a bad day and decide to take their 
 frustrations out in inappropriate posts. No worries though, the asset framework 
 supports a system for flagging content in apps. Letting users flag inappropriate 
