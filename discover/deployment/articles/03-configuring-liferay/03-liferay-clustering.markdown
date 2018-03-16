@@ -220,7 +220,7 @@ designed to replicate the cache across a cluster. Cluster Link uses
 [Ehcache](http://www.ehcache.org), 
 which has robust distributed caching support. The cache is distributed across 
 multiple @product@ nodes running concurrently. The Ehcache global settings are in the
-[`portal.properties` file](@platform-ref@/7.0/propertiesdoc/portal.properties.html#Ehcache). 
+[`portal.properties` file](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Ehcache). 
 
 By default Liferay does not copy cached entities between nodes. If an entity is
 deleted or changed, for example, Cluster Link sends an *remove* message to the

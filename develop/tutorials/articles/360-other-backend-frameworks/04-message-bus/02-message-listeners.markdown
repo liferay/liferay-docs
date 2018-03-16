@@ -5,7 +5,7 @@ them. That is, you must create and register a message listener for the
 destination. 
 
 To create a message listener, implement the
-[`MessageListener` interface](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageListener.html)
+[`MessageListener` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageListener.html)
 and override its `receive(Message)` method to process messages your way. 
 
     public void receive(Message message) {
@@ -27,7 +27,7 @@ Here are the ways to register your listener with Message Bus:
 
 +$$$
 
-**Note**: The [`DestinationNames` class](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
+**Note**: The [`DestinationNames` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
 defines `String` constants for Liferay's preconfigured destinations. 
 
 $$$
@@ -64,7 +64,7 @@ to destinations.
 
 ## Registering via MessageBus [](id=registering-via-messagebus)
 
-You can use the [`MessageBus` instance](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageBus.html)
+You can use the [`MessageBus` instance](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageBus.html)
 directly to register message listeners to destinations. You might want to do
 this if, for example, you want to create some special proxy wrappers. Here's a
 registrator that demonstrates registering a listener this way:
