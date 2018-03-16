@@ -1,17 +1,16 @@
-# JSP Overrides Using Dynamic Includes [](id=jsp-overrides-using-dynamic-includes)
+# Customizing JSPs with Dynamic Includes [](id=jsp-overrides-using-dynamic-includes)
 
 The
 [`liferay-util:dynamic-include` tag](@platform-ref@/7.0/taglibs/util-taglib/liferay-util/dynamic-include.html)
-is placeholder into which you can inject content. Every JSP's dynamic include
-tag can be dynamically replaced with content. All you have to do is create a
-module that has content you want to insert, register that content with the
-dynamic include tag you want to replace, and deploy your module. 
+is an extension point for inserting content (e.g., JavaScript code, HTML, and
+more). To do this, create a module that has content you want to insert, register
+that content with the dynamic include tag, and deploy your module. 
 
 +$$$
 
-**Note**: If the JSP you want to override has no `liferay-util:dynamic-include`
+**Note**: If the JSP you want to customize has no `liferay-util:dynamic-include`
 tags (or tags whose classes inherit from `IncludeTag`), you must use a
-different override approach, such as
+different customization approach, such as
 [portlet filters](/develop/tutorials/-/knowledge_base/7-0/jsp-overrides-using-portlet-filters).
 
 $$$
@@ -19,8 +18,8 @@ $$$
 We'll demonstrate how dynamic includes work using the Blogs entries. For reference, you can download the
 [example module](https://dev.liferay.com/documents/10184/656312/example-dynamic-include-blogs-master.zip). 
 
-1.  Find the `liferay-util:dynamic-include` tag you want to replace in the
-    JSP and note the tag's key. 
+1.  Find the `liferay-util:dynamic-include` tag where you want to insert content
+    and note the tag's key. 
 
     The Blogs app's `view_entry.jsp` has a dynamic include tag at the top and
     another at the very bottom. 
@@ -99,8 +98,8 @@ We'll demonstrate how dynamic includes work using the Blogs entries. For referen
             service = DynamicInclude.class
         )
 
-    In the `include` method, you write the content you want to replace a dynamic
-    include tag with. The example `include` method writes a heading. 
+    In the `include` method, add your content. The example `include` method
+    writes a heading. 
 
         @Override
         public void include(
@@ -114,9 +113,9 @@ We'll demonstrate how dynamic includes work using the Blogs entries. For referen
             "<h2>Added by Blogs Dynamic Include!</h2><br />");
         }
 
-    In the `register` method, specify the dynamic include tag you want to
-    replace. The example register method targets the dynamic include at the top
-    of the Blogs `view_entry.jsp`. 
+    In the `register` method, specify the dynamic include tag you want to use.
+    The example register method targets the dynamic include at the top of the
+    Blogs `view_entry.jsp`. 
 
         @Override
     	public void register(DynamicIncludeRegistry dynamicIncludeRegistry) {
