@@ -58,8 +58,8 @@ CLI tutorials to learn how.
 
 ## Installer Issues on macOS
 
-If you're using macOS as an operating system, you could experience an issue
-where the `blade` command is not available in your terminal:
+If you're using macOS, you could experience an issue where the `blade` command
+is not available in your terminal:
 
     command not found: blade
 
