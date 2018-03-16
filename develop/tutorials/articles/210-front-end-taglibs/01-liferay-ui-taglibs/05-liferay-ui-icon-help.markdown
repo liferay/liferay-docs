@@ -1,11 +1,11 @@
-# Liferay UI Tooltips [](id=liferay-ui-tooltips)
+# Liferay UI Icon Help [](id=liferay-ui-icon-help)
 
-Tooltips let you communicate additional information to your users in an 
-unobtrusive way. They render as an iconic question mark that provides more 
-information through a pop-up on mouse over. You can see an example of this in 
-the Control Panel:
+The icon help tag lets you communicate additional information to your users in 
+an unobtrusive way. It renders as an iconic question mark that provides more 
+information through a pop-up tooltip on mouse over. You can see an example of 
+this in the Control Panel:
 
-![Figure 1: Here's an example of how Liferay Portal uses tooltips.](../../../images/liferay-ui-taglib-tooltip.png)
+![Figure 1: Here's an example of how Liferay Portal uses the icon help tag.](../../../images/liferay-ui-taglib-tooltip.png)
 
 +$$$
 
@@ -18,22 +18,22 @@ properly:
 
 $$$
 
-To create a tooltip, add the `<liferay-ui:icon-help/>` tag next to the UI you 
-wish to provide additional information for. Define the informational text with 
-the required `message` attribute. Below is an example snippet for one of the 
+Add the `<liferay-ui:icon-help/>` tag next to the UI you wish to provide
+additional information for. Define the informational text with the required
+`message` attribute. Below is an example snippet for one of the
 Server Administration's clean up actions:
-    
+
     <h5>
-        <liferay-ui:message key="clean-up-permissions" /> 
+        <liferay-ui:message key="clean-up-permissions" />
         <liferay-ui:icon-help message="clean-up-permissions-help" />
     </h5>
 
-![Figure 2: Tooltips are used throughout the Control Panel.](../../../images/liferay-ui-taglib-tooltip-02.png)
+![Figure 2: help icons are used throughout the Control Panel.](../../../images/liferay-ui-taglib-tooltip-02.png)
 
 Note that the message is supplied via a 
 [language key](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#where-do-i-put-language-files). 
 While you can use a string for the tooltip's message for testing purposes, a 
-language key is considered best practice and should be used in production. 
+language key is considered best practice and should be used in production.
 
 ## Related Topics [](id=related-topics)
 

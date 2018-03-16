@@ -7,21 +7,37 @@ case is shown below.
 
 The `image` attribute specifies 
 [Liferay UI icons](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/images) 
-to use (as defined in the Unstyled theme's `images/common` and `images/language` 
-folder). Below is an example snippet from the Web Content Search portlet that 
-displays the current language's flag along with a localized message:
+to use (as defined in the Unstyled theme's `images/common` folder). An example 
+configuration is shown below:
 
-    <liferay-ui:icon 
-        image='<%= "../language/" + languageId %>' 
+    <div class="col-md-3">
+    	<liferay-ui:icon image="subscribe" />
+
+    	<span class="ml-2">Subscribe</span>
+    </div>
+
+![Figure 1: Use the image attribute to use a theme icon.](../../../images/liferay-ui-taglib-icon-subscribe.png)
+
+The liferay UI taglib also exposes language flag icons. To use a language flag 
+icon, provide the `../language/` relative path before the name of the icon. 
+Below is an example snippet from the Web Content Search portlet that displays 
+the current language's flag along with a localized message:
+
+    <liferay-ui:icon
+        image='<%= "../language/" + languageId %>'
         message='<%= LanguageUtil.format(
-            request, 
-            "this-result-comes-from-the-x-version-of-this-content", 
-            snippetLocale.getDisplayLanguage(locale), 
+            request,
+            "this-result-comes-from-the-x-version-of-this-content",
+            snippetLocale.getDisplayLanguage(locale),
             false
-        ) %>' 
+        ) %>'
     />
 
-![Figure 1: Liferay UI icons can be cofigured based on language.](../../../images/liferay-ui-taglib-icon-image.png)
+The full list of available icons is shown in the figures below:
+
+![Figure 2: The Liferay UI taglib offers multiple icons for use in your app.](../../../images/liferay-ui-taglib-icons.png)
+
+![Figure 3: Liferay UI icons can be configured based on language.](../../../images/liferay-ui-taglib-icon-flags.png)
 
 The `icon` attribute specifies 
 [Font Awesome icons](https://fontawesome.com/v3.2.1/icons/) 
@@ -29,7 +45,7 @@ to use:
 
     <liferay-ui:icon icon="angle-down" />
 
-![Figure 2: You can use the icon attribute to include Font Awesome icons in your app.](../../../images/liferay-ui-taglib-icon-angle-down.png)
+![Figure 4: You can use the icon attribute to include Font Awesome icons in your app.](../../../images/liferay-ui-taglib-icon-angle-down.png)
 
 The `iconCssClass` attribute specifies a 
 [glyphicon](http://marcoceppi.github.io/bootstrap-glyphicons/) 
@@ -42,7 +58,7 @@ to use:
         url="<%= unsubscribeURL %>"
     />
 
-![Figure 3: You can use Font Awesome icons in your app.](../../../images/liferay-ui-taglib-icon-css-class.png)
+![Figure 5: You can use Font Awesome icons in your app.](../../../images/liferay-ui-taglib-icon-css-class.png)
 
 The examples above use some of the icon's available attributes, see the 
 [Icon taglibdocs](@platform-ref@/7.1-latest/taglibs/util-taglib/liferay-ui/icon.html) 
