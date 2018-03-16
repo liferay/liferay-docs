@@ -174,10 +174,10 @@ available categories are nested beneath these sections:
 
 +$$$
 
-**Note:** The Other section is only displayed if something is categorized here.
-At the time of this writing, during the development of @product@ version 7.1
-beta, this section appears with one category. It may look different in your
-running instance.
+**Note:** Sections are displayed if they contain at least one configuration
+category. Categories are displayed if they contain at least one configuration.
+The exact sections and categories available are dependent on the deployed
+modules.
 
 $$$
 
