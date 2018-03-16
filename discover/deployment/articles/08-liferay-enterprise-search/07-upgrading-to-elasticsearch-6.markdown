@@ -140,6 +140,20 @@ Once the Elasticsearch adapter is installed and talking to the Elasticsearch
 cluster, navigate to Control Panel &rarr; Configuration &rarr; Server
 Administration, and click *Execute* for the *Reindex all search indexes* entry.
 
-You should also reindex all spell check entries while you're here.
+You should also reindex the spell check indexes while you're here.
+
+## Reverting to Elasticsearch 2
+
+Stuff happens. If that stuff involves an unrecoverable failure during the
+upgrade to Elasticsearch 6, roll back to Elasticsearch 2 and regroup.
+
+Since Elasticsearch 2 and Elasticsearch 6 are two separate installations, this
+procedure is straightforward:
+
+1.  Stop and remove the Elasticsearch 6 adapter from @product@.
+2.  Reinstall the Elasticsearch 2 adapter.
+3.  Make sure that `elasticsearch.yml` and the Elasticsearch 2 adapter's configuration
+    are both agreed upon where the search engine is running (port 9200 by
+    default).
 
 Learn more about configuring Elasticsearch in [this article](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0).
