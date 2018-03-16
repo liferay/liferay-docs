@@ -12,8 +12,21 @@ target platform, you update your workspace to point to a different @product@
 version and all your dependencies are updated to the latest ones provided in the
 targeted release.
 
+<!-- TODO: Add note below once Semantic Versioning tutorial is available. -Cody
+
++$$$
+
+**Note:** There are times when configuring dependencies based on a version range
+is better than tracking exact versions. See the
+[Semantic Versioning](/develop/tutorials/-/knowledge_base/7-1/semantic-versioning)
+tutorial for more details.
+
+$$$
+
+-->
+
 The option to target a specific @product@ version to develop against also offers
-additional features for those using
+additional features if you're using
 [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) for
 development. @ide@ can index the configured @product@ source code to
 
@@ -25,7 +38,8 @@ development. @ide@ can index the configured @product@ source code to
 These options in @ide@ are only available when developing in a Liferay
 Workspace, or if you have the
 [Target Platform](/develop/reference/-/knowledge_base/7-1/target-platform-gradle-plugin)
-Gradle plugin applied to your multi-module Gradle project. See the
+Gradle plugin applied to your multi-module Gradle project with specific
+configurations. See the
 [Targeting a Platform Outside of Workspace](#targeting-a-platform-outside-of-workspace)
 section for more info on applying the Target Platform Gradle plugin.
 
@@ -38,10 +52,10 @@ predefined bill of materials (BOM). Don't worry; this is handled behind the
 scenes and only requires that you specify a property in your workspace's
 `gradle.properties` file. You'll see how to do this later.
 
-Each @product@ version has a defined BOM that you can specify for your workspace
-to reference. Each BOM defines the artifacts and their versions used in the
-specific release. BOMs list all dependencies in a management fashion. So it
-doesn't **add** dependencies to your project; it only **provides** your build
+Each @product@ version has a predefined BOM that you can specify for your
+workspace to reference. Each BOM defines the artifacts and their versions used
+in the specific release. BOMs list all dependencies in a management fashion. So
+it doesn't **add** dependencies to your project; it only **provides** your build
 tool (e.g., Gradle or Maven) the versions needed for the project's defined
 artifacts. This means you don't need to specify your dependency versions; the
 BOM automatically defines the appropriate artifact versions based on the BOM.
@@ -80,7 +94,7 @@ the configured target platform's BOM. For example, a simple MVC portlet's
 the distro JAR used in workspace to validate your projects during the build
 process. See the
 [Validating Modules Against the Target Platform](/develop/tutorials/-/knowledge_base/7-1/validating-projects-against-the-target-platform)
-tutorial for more info.
+tutorials for more info.
 
 $$$
 
@@ -117,8 +131,8 @@ To do this, your `build.gradle` file should look similar to this:
     apply plugin: "com.liferay.target.platform"
 
     dependencies {
-        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.0.5-SNAPSHOT"
-        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.0.5-SNAPSHOT"
+        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.1.0"
+        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.1.0"
     }
 
 <!-- TODO: The temporary place to reference Liferay's portal artifacts for 7.1
@@ -128,7 +142,7 @@ is still TBD, according to Greg. Update this in the future, if necessary -Cody
 This Gradle code
 
 - applies Liferay's Target Platform Gradle plugin
-- configures repositories that will provide the necessary artifacts for your
+- configures the repository that will provide the necessary artifacts for your
   project build
 - sets the Target Platform plugin's dependencies:
     - `com.liferay.ce.portal.bom`: provides all the artifacts included in

@@ -1,7 +1,7 @@
 # Including the Resolver in Your Gradle Build
 
 By default, Liferay Workspace provides the `resolve` task as an independent
-executable. It's is provided by the
+executable. It's provided by the
 [Target Platform](/develop/reference/-/knowledge_base/7-1/target-platform-gradle-plugin)
 Gradle plugin and is not integrated in any other Gradle processes. This is
 designed to give you all authority of your Gradle build and not impose
@@ -30,8 +30,8 @@ You can also configure this for specific projects in a workspace, if you don't
 want all modules to be included in the global `check`.
 
 If the `resolve` task runs during every Gradle build, you may want to prevent
-the build from failing if there are any errors reported by the resolver. To do
-this, open your workspace's root `build.gradle` file and add the following code:
+the build from failing if there are errors reported by the resolver. To do this,
+open your workspace's root `build.gradle` file and add the following code:
 
     targetPlatform {
         ignoreResolveFailures = true

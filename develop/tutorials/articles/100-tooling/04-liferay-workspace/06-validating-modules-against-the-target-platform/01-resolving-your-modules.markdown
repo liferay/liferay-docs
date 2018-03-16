@@ -51,19 +51,6 @@ running inside @product@. The distro JAR is a complete snapshot of everything
 provided in @product@'s OSGi runtime; this serves as the target platform's list
 of capabilities that your modules are validated against.
 
-<!-- TODO: Below info is out of place after reorg. This will probably fit better
-in the error resolving tutorial. -Cody -->
-
-<!--
-The `resolve` task can also report issues with separate modules requiring
-different versions of another module. For example, suppose you have *module A*
-requiring *module Test version 1* and *module B* requiring *module Test version
-4*. Without running the resolver, both modules A and B would compile
-successfully, but when they were deployed, one would fail in @product@'s OSGi
-runtime because both dependencies cannot be satisfied. These types of scenarios
-are difficult to diagnose, but with the `resolve` task, can be found with ease.
--->
-
 You can now validate your module projects before deploying them to @product@!
 Sometimes, you must modify the `resolve` task's default behavior to successfully
 validate your app. See the

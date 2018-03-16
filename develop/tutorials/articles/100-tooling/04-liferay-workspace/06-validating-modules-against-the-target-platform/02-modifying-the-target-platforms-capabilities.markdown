@@ -7,8 +7,8 @@ you're unfamiliar with workspace's `resolve` task, see the
 [Resolving Your Modules](/develop/tutorials/-/knowledge_base/7-1/resolving-your-modules)
 tutorial for more information.
 
-There are two scenarios you may run into during development that would require
-a modification for your project to pass the resolver check.
+There are two scenarios you may run into during development that require a
+modification for your project to pass the resolver check.
 
 - You're depending on a third party library that is not available in the
   targeted @product@ instance or the current workspace.
@@ -48,8 +48,8 @@ section for more details.
 
 ### Add the Third Party Library's Capabilities to the Current Static Set of Resolver Capabilities
 
-You can add your third party dependencies to the distro JAR's list of
-capabilities by listing them as provided modules. Do this by adding the
+You can add your third party dependencies to the target platform's default list
+of capabilities by listing them as provided modules. Do this by adding the
 following Gradle code into your workspace's root `build.gradle` file:
 
     dependencies {
@@ -101,9 +101,9 @@ Now the `resolve` task skips your module project.
 
 There are times when manually specifying your project's list of dependent JARs
 does not suffice. If your app requires a customized @product@ instance to
-properly run, you must regenerate the distro JAR with an updated list of
-capabilities that the instance will provide. Two examples of a customized
-@product@ instance are described below:
+properly run, you must regenerate the target platform's default list of
+capabilities with an updated list. Two examples of a customized @product@
+instance are described below:
 
 **Example 1: Leveraging an External Feature**
 
@@ -115,9 +115,8 @@ access to external capabilities not included by default. For example, Audience
 Targeting is an example of this type of external framework. If you're creating a
 Liferay Audience Targeting rule that depends on the Audience Targeting
 framework, you can't easily provide a slew of JARs for your module. In this
-case, you should install the platform you wish to depend on and regenerate a new
-distro JAR with an updated list of capabilities that your @product@ instance
-will provide.
+case, you should install the platform you wish to depend on and regenerate an
+updated list of capabilities that your @product@ instance will provide.
 
 **Example 2: Leveraging a Customized Core Feature**
 
@@ -125,14 +124,13 @@ You can easily extend @product@'s core features to provide a customized
 experience for you intended audience. When core features are customized, you'll
 develop your app to assume these customizations are present when it's deployed.
 The new capabilities resulting from your customizations are not available in the
-default distro JAR, since this JAR only provides the capabilities present in the
-default version of @product@. Therefore, when your application relies on these
-capabilities that are not available by default, it fails during the `resolve`
-task. To get around this, you must regenerate a new distro JAR with an updated
-list of capabilities that your customized @product@ instance will provide.
+target platform's default list of capabilities. Therefore, when your application
+relies on these capabilities that are not available by default, it fails during
+the `resolve` task. To get around this, you must regenerate a new  list of
+capabilities that your customized @product@ instance will provide.
 
-To regenerate the distro JAR based on the current workspace's @product@
-instance, follow the steps below:
+To regenerate the target platform's capabilities (distro JAR) based on the
+current workspace's @product@ instance, follow the steps below:
 
 <!-- The below process will likely be automated in Blade at some point. -Cody -->
 
