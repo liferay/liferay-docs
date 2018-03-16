@@ -1,9 +1,11 @@
 # Overriding Liferay Services (Service Wrappers) [](id=customizing-liferay-services-service-wrappers)
 
-Why might you need to customize Liferay services? Perhaps you've added a custom
+Why might you need to customize Liferay services? Perhaps you've added a new
 field to Liferay's `User` object and you want its value to be saved whenever the
 `addUser` or `updateUser` methods of Liferay's API are called. Or maybe you want
-to add some additional logging functionality to some Liferay APIs or other services built using [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder).
+to add some additional logging functionality to some Liferay APIs or other
+services built using 
+[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder).
 Whatever your case may be, Liferay's service wrappers provide easy-to-use
 extension points for customizing Liferay's services.
 

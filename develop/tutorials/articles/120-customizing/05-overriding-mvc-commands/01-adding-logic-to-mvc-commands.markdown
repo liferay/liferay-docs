@@ -1,6 +1,12 @@
 # Adding Logic to MVC Commands [](id=adding-logic-to-mvc-commands)
 
-You can completely override MVC commands, or any OSGi service for that matter, but *adding logic* to the commands is the better option. Discarding necessary logic is bad. Conversely any logic you copy from the original might not work in new versions of the portlet. Adding custom logic, while continuing to invoke the original logic decouples the custom class from the original implementation. Keeping the new logic separate form the original logic keeps the code clean, maintainable, and easy to understand.
+You can completely override MVC commands, or any OSGi service for that matter,
+but *adding logic* to the commands is the better option. Discarding necessary
+logic is bad. Conversely any logic you copy from the original might not work in
+new versions of the portlet. Adding custom logic while continuing to invoke
+the original logic decouples the custom class from the original implementation.
+Keeping the new logic separate form the original logic keeps the code clean,
+maintainable, and easy to understand.
 
 Here are the steps for adding logic to MVC commands.
 
@@ -11,7 +17,12 @@ Here are the steps for adding logic to MVC commands.
 
 ## Step 1: Implement the interface [](id=#implement-the-interface)
 
-Implement the respective MVC Command interface either directly or by extending an existing base class that implements it. Extending a base class for the interface relieves you from implementing logic that should typically be a part of most command implementations. For example, to add logic to the Blogs portlet's `EditEntryMVCActionCommand`, you would extend base class `BaseMVCActionCommand`.
+Implement the respective MVC Command interface either directly or by extending
+an existing base class that implements it. Extending a base class for the
+interface relieves you from implementing logic that should typically be a part
+of most command implementations. For example, to add logic to the Blogs
+portlet's `EditEntryMVCActionCommand`, you would extend base class
+`BaseMVCActionCommand`.
 
     public class CustomBlogsMVCActionCommand extends BaseMVCActionCommand
 
@@ -26,9 +37,9 @@ Next make your class a service component.
 ## Step 2: Publish as a component [](id=publish-as-a-component)
 
 The Declarative Services `@Component` annotation facilitates customizing MVC
-commands. All the customization options require publishing your custom MVC
-command class as a component. For example, this `@Component` annotation declares
-an `MVCActionCommand` service. 
+commands. All the customization options require publishing your MVC command
+class as a component. For example, this `@Component` annotation declares an
+`MVCActionCommand` service. 
 
     @Component(
         immediate = true,
@@ -91,15 +102,25 @@ example, this field references the original MVC command component
 
 Here's how to add the reference:
 
-1.  Declare the field as the MVC command interface type that it is. For example, the `mvcActionCommand` field is type `MVCActionCommand`. 
-2.  Add the `@Reference` annotation. 
-3.  In the annotation, define a `target` attribute that filters on a `component.name` equal to the default service implementation class's fully qualified name. 
+1.  Declare the field as the MVC command interface type that it is. For
+    example, the `mvcActionCommand` field is type `MVCActionCommand`. 
 
-When your custom component resolves, the OSGi runtime assigns the targeted service to your field. It's time to add your custom logic. 
+2.  Add the `@Reference` annotation. 
+
+3.  In the annotation, define a `target` attribute that filters on
+    a `component.name` equal to the default service implementation class's
+    fully qualified name. 
+
+When your custom component resolves, the OSGi runtime assigns the targeted
+service to your field. It's time to add your custom logic. 
 
 ## Step 4: Add the logic [](id=add-the-logic)
 
-Adding the logic involves overriding the primary method of the base class you're extending or the interface you're implementing. In your method override, add your new logic AND then invoke the original implementation. For example, the following method overrides `BaseMVCActionCommand`'s method `doProcessAction`.
+Adding the logic involves overriding the primary method of the base class
+you're extending or the interface you're implementing. In your method override,
+add your new logic AND then invoke the original implementation. For example,
+the following method overrides `BaseMVCActionCommand`'s method
+`doProcessAction`.
 
     @Override
     protected void doProcessAction(
@@ -112,7 +133,8 @@ Adding the logic involves overriding the primary method of the base class you're
         mvcActionCommand.processAction(actionRequest, actionResponse);
     }
 
-The method above defines custom logic and then invokes the original service it referenced in the previous step. 
+The method above defines custom logic and then invokes the original service it
+referenced in the previous step. 
 
 If you use this approach, your extension will continue to work with new versions
 of the original portlet, because no coupling exists between the original portlet
