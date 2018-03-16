@@ -59,17 +59,17 @@ editing service access policies, keep these points in mind:
   allowed for both class names and method names. The `#` symbol must be used to
   separate a class name from a method name. For example,
 
-        com.liferay.portal.service.UserService
+        com.liferay.portal.kernel.service.UserService
 
     allows any method from the `UserService` class to be invoked.
 
-        com.liferay.portlet.documentlibrary.DLAppService#get*
+        com.liferay.document.library.kernel.service.DLAppService#get*
 
     allows any method from the `DLAppService` that starts with `get` to be
     invoked. Thus,
 
-        com.liferay.portal.service.UserService
-        com.liferay.portlet.documentlibrary.DLAppService#get*
+        com.liferay.portal.kernel.service.UserService
+        com.liferay.document.library.kernel.service.DLAppService#get*
 
     allows any method from the `UserService` class to be invoked and any method
     from the `DLAppService` whose name starts with `get` to be invoked.
