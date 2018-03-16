@@ -16,28 +16,28 @@ account creation:
 
 The `id` attribute declares the resource URL. The `var` attribute declares a
 variable to hold the portlet resource URL object. Assign that variable to a UI
-component such, as a button or icon. When the user triggers the UI component,
+component, such as a button or icon. When the user triggers the UI component,
 the `*MVCResourceCommand` class that matches the resource URL processes the
 resource request and response. You can create this class by implementing the
-[`MVCResourceCommand` interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCResourceCommand.html), 
-or extending the 
-[`BaseMVCResourceCommand` class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCResourceCommand.html). 
+[`MVCResourceCommand` interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCResourceCommand.html)
+or extending the [`BaseMVCResourceCommand`
+class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCResourceCommand.html).
 The latter may save you time, since it already implements `MVCResourceCommand`. 
 
 Also, it's a good idea to name your `*MVCResourceCommand` class after the
-resource it handles, and suffix it with `MVCResourceCommand`. For example, the
+resource it handles and suffix it with `MVCResourceCommand`. For example, the
 resource command class matching the preceding CAPTCHA resource URL in the Login
 Portlet is
 [`CaptchaMVCResourceCommand`](https://github.com/liferay/liferay-portal/blob/7.1.2-ga3/modules/apps/foundation/login/login-web/src/main/java/com/liferay/login/web/internal/portlet/action/CaptchaMVCResourceCommand.java).
 In an application with several MVC command classes, this helps differentiate
 them.
 
-Your `*MVCResourceCommand` class must also have an `@Component` annotation like 
-the following. Set the property `javax.portlet.name` to your portlet's internal 
-ID, and the property `mvc.command.name` to the value of the `id` property in 
-your JSP's matching `resourceURL`. To register the component in the OSGi 
-container as using the `MVCResourceCommand` class, you must set the `service` 
-property to `MVCResourceCommand.class`: 
+Your `*MVCResourceCommand` class must also have an `@Component` annotation like
+the following example. Set the property `javax.portlet.name` to your portlet's
+internal ID, and the property `mvc.command.name` to the value of the `id`
+property in your JSP's matching `resourceURL`. To register the component in the
+OSGi container as using the `MVCResourceCommand` class, you must set the
+`service` property to `MVCResourceCommand.class`: 
 
     @Component(
         immediate = true,

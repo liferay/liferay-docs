@@ -14,10 +14,11 @@ defines the following action URL for editing blog entries:
     <portlet:actionURL name="/blogs/edit_entry" var="editEntryURL" />
 
 The `name` attribute declares a variable to hold the portlet action URL object.
-Assign that variable to a UI component such, as a button or icon. When the user
+Assign that variable to a UI component, such as a button or icon. When the user
 triggers the UI component, the `*MVCActionCommand` class that matches the action
 URL processes the action request and response. Create an action class by
-implementing the [`MVCActionCommand` interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html),
+implementing the 
+[`MVCActionCommand` interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCActionCommand.html),
 or extending the [`BaseMVCActionCommand` class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/BaseMVCActionCommand.html).
 The latter may save you time, since it already implements `MVCActionCommand`.
 
@@ -27,10 +28,10 @@ could name its class `EditEntryMVCActionCommand`. If your application has
 several MVC command classes, naming them this way helps differentiate them. 
 
 Your `*MVCActionCommand` class must also have an `@Component` annotation like
-the following. Set the property `javax.portlet.name` to your portlet's internal
-ID. Set the property `mvc.command.name` to the value of the `name` property in
-your JSP's matching `actionURL`. To register the component in the OSGi container
-as an `MVCActionCommand` service, set the `service` property to
+the following example. Set the property `javax.portlet.name` to your portlet's
+internal ID. Set the property `mvc.command.name` to the value of the `name`
+property in your JSP's matching `actionURL`. To register the component in the
+OSGi container as an `MVCActionCommand` service, set the `service` property to
 `MVCActionCommand.class`: 
 
     @Component(
@@ -41,6 +42,7 @@ as an `MVCActionCommand` service, set the `service` property to
         },
         service = MVCActionCommand.class
     )
+
     public class YourMVCActionCommand extends BaseMVCActionCommand {
         // implement your action
     }
@@ -133,9 +135,9 @@ Component.
 The `EditEntryMVCActionCommand` class extends `BaseMVCActionCommand` and
 overrides the `doProcessAction` method. Similarly, `*MVCActionCommand` classes
 that implement `MVCActionCommand` directly must implement the `processAction`
-method. Both methods are for processing resource requests and responses via
-their `javax.portlet.ActionRequest` and `javax.portlet.ActionResponse`
-parameters, respectively.
+method. Both methods process resource requests and responses via their
+`javax.portlet.ActionRequest` and `javax.portlet.ActionResponse` parameters,
+respectively.
 
 `EditEntryMVCActionCommand`'s `doProcessAction` method gets the value of a
 command parameter named by [constant `Constants.CMD`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/Constants.html)
@@ -144,7 +146,9 @@ from the `ActionRequest`.
 	String cmd = ParamUtil.getString(actionRequest, Constants.CMD);
 
 Then the `doProcessAction` method checks whether an entry-related upload
-occurred or handles any exceptions the upload throws. Based on the command (stored in `cmd`) accessed from the action request, one of the following actions is performed: 
+occurred or handles any exceptions the upload throws. Based on the command
+(stored in `cmd`) accessed from the action request, one of the following
+actions is performed: 
 
 - add or update an entry
 - delete an entry
@@ -154,8 +158,8 @@ occurred or handles any exceptions the upload throws. Based on the command (stor
 - unsubscribe a user from a blog
 
 `EditEntryMVCActionCommand`'s `doProcessAction` method continues with some more
-processing and prepares to redirect the portlet to an appropriate view. It goes
-to show, you can do as much as you need for processing your portlet's actions. 
+processing and prepares to redirect the portlet to an appropriate view. This
+shows you can do as much as you need for processing your portlet's actions. 
 
 +$$$
 
