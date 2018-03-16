@@ -112,7 +112,7 @@ not work with your LDAP server. If they don't, you can replace the values of
 these properties with phrases from your server's error messages. This enables
 @product@ to recognize them.
 
-+$$$ 
++$$$
 
 **Note**: When you make a change in System Settings, it takes effect for the
 virtual instance you're in. If after changing a setting you create a new
