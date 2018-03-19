@@ -6,7 +6,7 @@ to learn about Liferay's MVC Portlet framework in general, that information is
 in a [separate article](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet).
 
 First, [configure your view layer](configuring-the-view-layer#configuring-the-view-layer)
-and use the [`<portlet:renderURL>`](@platform-ref@/7.0-latest/taglibs/util-taglib/portlet/renderURL.html)
+and use the [`<portlet:renderURL>`](@platform-ref@/7.1-latest/taglibs/util-taglib/portlet/renderURL.html)
 to create the render URL in your JSP. For example, the following
 render URL invokes an MVC render command named `/hello/edit_entry`. This
 might direct the user to a page with a form for editing. 

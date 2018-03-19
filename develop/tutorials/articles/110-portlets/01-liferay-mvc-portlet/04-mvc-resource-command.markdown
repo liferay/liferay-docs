@@ -6,7 +6,7 @@ resource URL then invokes the corresponding MVC resource command class
 (`*MVCResourceCommand`) that processes the resource request and response. 
 
 First, [configure your view layer](configuring-the-view-layer#configuring-the-view-layer)
-and use the [`<portlet:resourceURL>` tag](@platform-ref@/7.0-latest/taglibs/util-taglib/portlet/resourceURL.html)
+and use the [`<portlet:resourceURL>` tag](@platform-ref@/7.1-latest/taglibs/util-taglib/portlet/resourceURL.html)
 to create the resource URL in a JSP. For example, the Login Portlet's
 `/login-web/src/main/resources/META-INF/resources/navigation/create_account.jsp`
 file defines the following resource URL for retrieving a CAPTCHA image during
