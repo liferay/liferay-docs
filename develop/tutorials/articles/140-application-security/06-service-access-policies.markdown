@@ -1,47 +1,38 @@
 # Service Access Policies [](id=service-access-policies)
 
-Service access policies are a layer of web service security on top of
-@product@'s remote services. Together with the permissions layer,
-service access policies limit remote service access by remote client
-applications. This forms an additional security layer that protects user
-data from unauthorized access and modification.
+Service access policies provide web service security beyond authentication to
+remote services. Together with permissions, service access policies limit remote
+service access by remote client applications. This forms an additional security
+layer that protects user data from unauthorized access and modification.
 
-To connect to a @product@ instance, remote clients must authenticate
-with credentials in that instance. This grants the remote client the
-permissions assigned to those credentials in the @product@ installation.
-Service access policies are a layer of security on top of this: they
-further limit the remote client's access to the remote services
-specified in the policy. Without such policies, authenticated remote
-clients are treated like users: they can call any remote API and read or
-modify data on behalf of the authenticated user. Since remote clients
-are often intended for a specific use case, granting them access to
-everything the user has permissions for poses a security risk.
+To connect to a web service, remote clients must authenticate with credentials
+in that instance. This grants the remote client the permissions assigned to
+those credentials in the @product@ installation. Service access policies further
+limit the remote client's access to the services specified in the policy.
+Without such policies, authenticated remote clients are treated like users: they
+can call any remote API and read or modify data on behalf of the authenticated
+user. Since remote clients are often intended for a specific use case, granting
+them access to everything the user has permissions for poses a security risk.
 
-For example, consider a mobile app (client) that displays a user's
-appointments from the Liferay Calendar app. This client app doesn't need
-access to the API that updates the user profile, even though the user
-has such permissions on the server. The client app doesn't even need
-access to the Calendar API methods that create, update, and delete
-appointments. It only needs access to the remote service methods for
-finding and retrieving appointments. A service access policy on the
-server can restrict the client’s access to only these service methods.
-Otherwise, once authenticated it would have access to all the remote
-services the user has permission to access when logged in: services that
-create, update, and delete calendar appointments, as well as those that
-can update user data or other system entities the user can access. Since
-the client doesn't perform these operations, having access to them is a
-security risk if the mobile device is lost or stolen or the client app
-is compromised by an attacker.
+For example, consider a mobile app (client) that displays a user's appointments
+from the Liferay Calendar app. This client app doesn't need access to the API
+that updates the user profile, even though the user has such permissions on the
+server. The client app doesn't even need access to the Calendar API methods that
+create, update, and delete appointments. It only needs access to the remote
+service methods for finding and retrieving appointments. A service access policy
+on the server can restrict the client's access to only these service methods.
+Since the client doesn't perform other operations, having access to them is
+a security risk if the mobile device is lost or stolen or the client app is
+compromised by an attacker.
 
 ## How Service Access Policies Work [](id=how-service-access-policies-work)
 
-When a remote client issues a request to a web service, the request
-contains the user's credentials or an authorization token. An
-authentication module in @product@ recognizes the client based on the
-credentials/token and grants the appropriate service access policy to
-the request. The service access policy authorization layer then
-processes all granted policies and lets the request access the remote
-service(s) permitted by the policy.
+A remote client's request to a web service contains the user's credentials or an
+authorization token. An authentication module recognizes the client based on the
+credentials/token and grants the appropriate service access policy to the
+request. The service access policy authorization layer then processes all
+granted policies and lets the request access the remote service(s) permitted by
+the policy.
 
 ![The authorization module maps the credentials or token to the proper Service Access Policy.](../../images/service-access-policies-arch.png)
 
