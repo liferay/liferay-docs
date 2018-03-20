@@ -56,18 +56,15 @@ instances](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/k
 The configuration specifies the destination type, name, and these destination-
 related attributes: 
 
-**Maximum Queue Size**: limits the number of queued messages for the
+- *Maximum Queue Size*: limits the number of queued messages for the
 destination. 
-
-**Rejected Execution Handler**: A 
+- *Rejected Execution Handler*: A 
 [`com.liferay.portal.kernel.concurrent.RejectedExecutionHandler` instance](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/concurrent/RejectedExecutionHandler.html)
 can take action (e.g., log warnings) regarding rejected messages when the
 destination queue is full. 
-
-**Workers Core Size**: initial number of worker threads for processing
+- *Workers Core Size*: initial number of worker threads for processing
 messages.
-
-**Workers Max Size**: limits the number of worker threads for processing 
+- *Workers Max Size*: limits the number of worker threads for processing 
 messages.
 
 The `DestinationConfiguration` class provides these static methods for creating
