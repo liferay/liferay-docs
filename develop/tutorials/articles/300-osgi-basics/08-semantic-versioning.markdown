@@ -121,16 +121,17 @@ your module is much easier to test and has less chance for unexpected failures.
 
 +$$$
 
-**Note:** Exact versions are typically specified like this: `version="1.1.2"`.
-However, the above syntax is technically a range; it is interpreted as [1.1.2,
-&#8734;). The highest compatible version is used, however, starting with the
-specified version. Therefore, you can think of this as a tested range that holds
-the same benefits as a truly *exact* version match. Since this version type
-holds the same benefits as a true exact match, this tutorial treats it as such.
-If you want to specify a true exact match, the syntax would look similar to
-this: `[1.1.2]`. See the
+**Note:** When specifying package versions in your `bnd.bnd` file, exact
+versions are typically specified like this: `version="1.1.2"`. However, this
+syntax is technically a range; it is interpreted as [1.1.2, &#8734;). The
+highest compatible version is used, starting with the specified version.
+Therefore, you can think of this as a tested range that holds the same benefits
+as a truly *exact* version match. If you want to specify a true exact match, the
+syntax would look similar to this: `[1.1.2]`. See the
 [Version Range](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html#i3189032)
 section in the OSGi specifications for more info.
+
+Gradle and Maven use exact versions when only one version is specified.
 
 $$$
 
