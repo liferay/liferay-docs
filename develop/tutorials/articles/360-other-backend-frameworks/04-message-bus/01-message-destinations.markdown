@@ -98,7 +98,7 @@ class that follows demonstrates these steps.
     destination configuration you created in the previous step. 
 
 3.  Register the destination as an OSGi service by invoking the
-    [`BundleContext` method `registerService`](https://osgi.org/javadoc/r4v43/core/org/osgi/framework/BundleContext.html#registerService(java.lang.Class,%20S,%20java.util.Dictionary), passing in the following parameters.
+    [`BundleContext` method `registerService`](https://osgi.org/javadoc/r4v43/core/org/osgi/framework/BundleContext.html), passing in the following parameters.
     -   Destination class `Destination.class`
     -   Your `Destination` object
     -   A `Dictionary` of properties defining the destination, including the 
