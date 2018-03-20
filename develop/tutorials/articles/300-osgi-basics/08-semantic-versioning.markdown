@@ -45,8 +45,8 @@ this, you can *baseline* your project after it has been updated. Baselining
 verifies that the semantic versioning rules are obeyed by your project.
 
 Liferay's Baseline Gradle plugin can be configured in your project to provide
-baselining capabilities. Simply add it to your Gradle build configuration and
-execute the following command:
+baselining capabilities. Add it to your Gradle build configuration and execute
+the following command:
 
     gradlew baseline
 
@@ -56,11 +56,12 @@ article for configuration details. This plugin is not provided in
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
 by default.
 
-When you run the `baseline` task, the plugin baselines the new bundle against
-the latest released non-snapshot bundle (i.e., the baseline). That is, it
-compares the public exported API of the new bundle with the baseline. If there
-are any changes, it uses the OSGi semantic versioning rules to calculate the
-minimum new version. If the new bundle has a lower version, errors are thrown.
+When you run the `baseline` command, the plugin baselines your new module
+against the latest released non-snapshot module (i.e., the baseline). That is,
+it compares the public exported API of your new module with the baseline. If
+there are any changes, it uses the OSGi semantic versioning rules to calculate
+the minimum new version. If your new module has a lower version, errors are
+thrown.
 
 With the ability to baseline, your project's semantic versioning should always
 be accurate.
@@ -88,7 +89,8 @@ like this:
 
     Import-Package: com.liferay.docs.test; version="[1.0.0,2.0.0)"
 
-In Gradle, a version range for a dependency would look like this:
+Popular build tools also follow this syntax. In Gradle, a version range for a
+dependency would look like this:
 
     compile group: "com.liferay.portal", name: "com.liferay.portal.test", version: "[1.0.0,2.0.0)"
 
@@ -100,8 +102,8 @@ In Maven, it would look like this:
 
 Specifying the latest release version can also be considered a range of versions
 with no upper limit. For example, in Gradle, it's specified as `version:
-"latest.release"`. This can be done in Maven 2 with the usage of the version
-marker `RELEASE`. This is not possible if you're using Maven 3. See
+"latest.release"`. This can be done in Maven 2.x with the usage of the version
+marker `RELEASE`. This is not possible if you're using Maven 3.x. See
 [Gradle](https://gradle.org/docs/) and
 [Maven](http://maven.apache.org/guides/)'s respective docs for more information.
 
