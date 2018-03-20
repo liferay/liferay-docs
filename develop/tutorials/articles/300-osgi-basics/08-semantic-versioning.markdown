@@ -1,9 +1,15 @@
 # Semantic Versioning
 
 [Semantic Versioning](https://semver.org/) is a three tiered versioning system
-designed to increment version numbering according to the types of changes
-introduced to a releasable software component. The semantic version format looks
-like this:
+designed to increment version numbering according to the types of API changes
+introduced to a releasable software component. It's a standard that enables API
+authors to communicate programmatic compatibility of a package or module
+automatically as it relates to dependent consumers and API implementations. If a
+package is programmatically (i.e., semantically) incompatible with a project,
+[Bnd](http://bnd.bndtools.org/) (used in @product@ modules) fails that project's
+build immediately.
+
+The semantic version format looks like this:
 
     MAJOR.MINOR.PATCH
 
@@ -18,11 +24,13 @@ For more details on semantic versioning, see the official
 [OSGi Alliance's Semantic Versioning](http://www.osgi.org/wp-content/uploads/SemanticVersioning1.pdf)
 technical whitepaper.
 
+All of @product@'s modules use semantic versioning.
+
 Following semantic versioning in @product@ is especially important since it's a
 modular platform that contains hundreds of independent OSGi modules. With many
 independent modules containing a slew of dependencies, releasing new package
 versions can quickly become terrifying. With this complex intertwined system of
-dependencies, you must meticulously manage your own project's versioning to
+dependencies, you must meticulously manage your own project's API versioning to
 ensure compatibility for those who leverage it. With semantic versioning's
 straight forward system and the help of Liferay tooling, managing your project's
 versions is easy.
@@ -33,8 +41,8 @@ Following the semantic versioning procedure manually seems deceptively easy.
 There's a sad history of good-intentioned developers updating their projects'
 semantic versions manually, only to find out later they made a mistake. The
 truth is, it's hard to anticipate the ramifications of a simple update. To avoid
-this, you can *baseline* your project. Baselining verifies that the semantic
-versioning rules are obeyed by your project.
+this, you can *baseline* your project after it has been updated. Baselining
+verifies that the semantic versioning rules are obeyed by your project.
 
 Liferay's Baseline Gradle plugin can be configured in your project to provide
 baselining capabilities. Simply add it to your Gradle build configuration and
@@ -57,10 +65,72 @@ minimum new version. If the new bundle has a lower version, errors are thrown.
 With the ability to baseline, your project's semantic versioning should always
 be accurate.
 
-## Tracking Dependency Version Ranges Versus Exact Dependency Versions
+## Tracking Artifact Versions
 
+Tracking your project's dependency versions can be done two ways with semantic
+versioning:
 
+- Range of versions
+- Exact version (one-to-one)
 
+You should track a range of versions if you intend to build your project for
+multiple versions of @product@ and maintain maximum compatibility. In other
+words, if several versions of a package work for an app, the developer can
+configure the app to use any of them. What's more, Bnd automatically determines
+the semantically compatible range of each package a module depends on and
+records the range to the module's manifest.
 
+For help with version range syntax, see the
+[OSGi Specifications](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html#i3189032).
 
+A version range for imported packages in an OSGi bundle's `bnd.bnd` would look
+like this:
 
+    Import-Package: com.liferay.docs.test; version="[1.0.0,2.0.0)"
+
+In Gradle, a version range for a dependency would look like this:
+
+    compile group: "com.liferay.portal", name: "com.liferay.portal.test", version: "[1.0.0,2.0.0)"
+
+In Maven, it would look like this:
+
+    <groupId>com.liferay.portal</groupId>
+    <artifactId>com.liferay.portal.test</artifactId>
+    <version>[1.0.0,2.0.0)</version>
+
+Specifying the latest release version can also be considered a range of versions
+with no upper limit. For example, in Gradle, it's specified as `version:
+"latest.release"`. This can be done in Maven 2 with the usage of the version
+marker `RELEASE`. This is not possible if you're using Maven 3. See
+[Gradle](https://gradle.org/docs/) and
+[Maven](http://maven.apache.org/guides/)'s respective docs for more information.
+
+Tracking a range of versions comes with a price. It's hard to reproduce old
+builds when you're debugging an issue. It also comes with the risk of differing
+behaviors depending on the version used. Also, relying on the latest release
+could break compatibility with your project if a major change is introduced. You
+should proceed with caution when specifying a range of versions and ensure it's
+thoroughly tested on all included versions.
+
+Tracking a dependency's exact version is much safer, but is less flexible. This
+would be for modules intended for a specific version of @product@. You would
+also be locked in to APIs that only exist for that specific version. This means
+your module is much easier to test and has less chance for unexpected failures.
+
++$$$
+
+**Note:** Exact versions are typically specified like this: `version="1.1.2"`.
+However, the above syntax is technically a range; it is interpreted as [1.1.2,
+&#8734;). The highest compatible version is used, however, starting with the
+specified version. Therefore, you can think of this as a tested range that holds
+the same benefits as a truly *exact* version match. Since this version type
+holds the same benefits as a true exact match, this tutorial treats it as such.
+If you want to specify a true exact match, the syntax would look similar to
+this: `[1.1.2]`. See the
+[Version Range](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html#i3189032)
+section in the OSGi specifications for more info.
+
+$$$
+
+You now know the pros and cons for tracking dependencies as a range and as an
+exact match.
