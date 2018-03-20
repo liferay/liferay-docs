@@ -32,7 +32,7 @@ You can provide documentation for Java packages by writing HTML in a
 Liferay's documentation is generated on
 [docs.liferay.com](https://docs.liferay.com/), the package description will be
 available when viewing the package. For example, view the
-[com.liferay.counter.kernel.model](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/counter/kernel/model/package-summary.html)
+[com.liferay.counter.kernel.model](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/counter/kernel/model/package-summary.html)
 package's description.
 
 ## Class Comments
