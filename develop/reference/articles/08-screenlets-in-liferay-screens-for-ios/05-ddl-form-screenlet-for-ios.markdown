@@ -52,7 +52,20 @@ Screenlet. They are listed here:
 
 - Nested fields in the data definition aren't supported.
 - Selection of multiple items in the Radio and Select data types isn't supported 
-  yet.
+  yet. 
+
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call JSON web services in the portal. This 
+Screenlet calls the following services and methods.
+
+| Service | Method | Notes |
+| ------- | ------ | ----- |
+| `DDMStructureService` | `getStructureWithStructureId` | Load form |
+| `ScreensddlrecordService` (Screens compatibility plugin) | `getDdlRecord` | Load record |
+| `DLAppService` | `addFileEntry` | Upload document |
+| `DDLRecordService` | `addRecord` | Submit form |
+| `DDLRecordService` | `updateRecord` | Update form |
 
 ## Module [](id=module)
 

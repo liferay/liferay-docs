@@ -25,6 +25,17 @@
 Comment Display Screenlet can show one comment of an asset in a Liferay 
 instance. It also lets the user update or delete the comment. 
 
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call JSON web services in the portal. This 
+Screenlet calls the following services and methods.
+
+| Service | Method | Notes |
+| ------- | ------ | ----- |
+| `ScreenscommentService` (Screens compatibility plugin) | `getCommentWithCommentId` |  |
+| `ScreenscommentService` (Screens compatibility plugin) | `updateComment` |  |
+| `CommentmanagerjsonwsService` | `deleteComment` |  |
+
 ## Module [](id=module)
 
 - None

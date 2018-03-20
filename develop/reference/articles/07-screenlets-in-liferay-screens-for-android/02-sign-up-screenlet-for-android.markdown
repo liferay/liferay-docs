@@ -20,7 +20,16 @@ The Sign Up Screenlet creates a new user in your Liferay instance: a new user of
 your app can become a new user in your portal. You can also use this Screenlet
 to save new users' credentials on their devices. This enables auto login for
 future sessions. The Screenlet also supports navigation of form fields from the
-device's keyboard.
+device's keyboard. 
+
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call JSON web services in the portal. This 
+Screenlet calls the following services and methods.
+
+| Service | Method | Notes | 
+| ------- | ------ | ----- |
+| `UserService` | `addUser` |  |
 
 ## Module [](id=module)
 
@@ -69,7 +78,7 @@ This Screenlet doesn't support offline mode. It requires network connectivity.
 | `layoutId` | `@layout` | The layout used to show the View.|
 | `anonymousApiUserName` | `string` | The user's name, email address, or ID to use for authenticating the request. The portal's authentication method defines which of these is used. |
 | `anoymousApiPassword` | `string` | The password used to authenticate the request. |
-| `companyId` | `number` | When set, a user in the specified company is authenticated. If set to `0`, the company specified in `LiferayServerContext` is used. |
+| `companyId` | `number` | When set, a user in the specified company is authenticated. If not set, the company specified in `LiferayServerContext` is used. |
 | `autoLogin` | `boolean` | Sets whether the user is logged in automatically after a successful sign up. |
 | `credentialsStorage` | `enum` | Sets the mode for storing user credentials. The possible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
 |`basicAuthMethod`|`enum`| Specifies the authentication method to use after a successful sign up. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. The default value is `email`. |

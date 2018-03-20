@@ -31,6 +31,18 @@ Asset Display Screenlet can also display your custom asset types. See
 [the delegate section of this document](/develop/reference/-/knowledge_base/7-0/asset-display-screenlet-for-ios#delegate) 
 for details. 
 
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call JSON web services in the portal. This 
+Screenlet calls the following services and methods.
+
+| Service | Method | Notes |
+| ------- | ------ | ----- |
+| `ScreensassetentryService` (Screens compatibility plugin) | `getAssetEntry` | With `entryId` |
+| `ScreensassetentryService` (Screens compatibility plugin) | `getAssetEntry` | With `classPK` and `className` |
+| `ScreensassetentryService` (Screens compatibility plugin) | `getAssetEntries` | With `entryQuery` |
+| `ScreensassetentryService` (Screens compatibility plugin) | `getAssetEntries` | With `companyId`, `groupId`, and `portletItemName` |
+
 ## Module [](id=module)
 
 - None

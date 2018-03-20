@@ -295,7 +295,7 @@ Now you understand the different destination types, how to create and register
 destinations, and how to manage destination resources. Once you deploy your
 destination, registered message listeners receive messages sent to it. 
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Message Listeners](/develop/tutorials/-/knowledge_base/7-0/message-listeners) 
 

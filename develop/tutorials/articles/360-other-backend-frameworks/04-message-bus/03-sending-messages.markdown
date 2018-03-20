@@ -209,7 +209,7 @@ That concludes the tour on sending messages. You've learned how to create
 messages, send messages synchronously and asynchronously, and send messages to a
 destination in a clustered environment. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Messaging Destinations](/develop/tutorials/-/knowledge_base/7-0/messaging-destinations) 
 
