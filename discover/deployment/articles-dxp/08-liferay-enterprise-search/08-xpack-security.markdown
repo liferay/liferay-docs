@@ -1,32 +1,83 @@
 # Securing Elasticsearch 6 with X-Pack
 
+X-Pack is an [Elastic
+extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)
+that is used for securing the Elasticsearch cluster that serves as @product@'s
+search engine. The security features of X-Pack include authenticating access to
+the Elasticsearch cluster's data and encrypting Elasticsearch's internal and
+external communications. These should be considered necessary security features
+for most production systems. An Enterprise Search-Standard subscription is
+necessary for this integration.
+
 - Get an Enterprise Search subscription and Deploy the X-Pack Security adapter
 - https://www.elastic.co/guide/en/x-pack/6.1/installing-xpack.html Install
-   X-Pack Security. Make sure the version you download matches the ES version.
-- This will require a full cluster restart.
-- Must set up TLS/SSL
-- Set up the elastic user's password.
-- Configure the X-Pack Security adapter to talk to X-Pack.
+   X-Pack and configure it to require authentiacation and [encrypt transport
+   communication and client
+   communication](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#configuring-tls)
+- Configure the X-Pack Security adapter with the proper credentials and certificate knowledge.
+- Restart everything.
+
+Following these instructions gives you a secure installation of Elasticsearch,
+communicating freely with @product@, but reading Elastic's documentation is
+advisable, to learn about additional configuration options, features, and
+architecture of [X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-security.html). 
+
+<!--Set the elastic user password: do this with ES running, but if portal is running
+it will throw exceptions because it can't access the ES nodes
+
+Set the same password in the adapter: now portal can connect to ES
+Question: Does portal require omni-admin access to ES? Must we use the
+elastic user, or should customers instead configure a user manually for use with
+liferay? what roles does the liferay user require?
+looks similar to shield actually https://www.elastic.co/guide/en/x-pack/6.1/native-realm.html#managing-native-users
+-->
 
 ## Installing X-Pack:
 
-1.  To install X-Pack and automatically grant it permissions (recommended), run
+1.  To [install X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html) and automatically grant it permissions (recommended), run
 
         bin/elasticsearch-plugin install x-pack --batch
 
     on each cluster node. The `--batch` option bypasses installation prompts for
     granting permissions to X-Pack. 
-    
+
+    You'll see log output:
+
+        -> Downloading x-pack from elastic
+        [=================================================] 100%   
+        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        @     WARNING: plugin requires additional permissions     @
+        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        * java.io.FilePermission \\.\pipe\* read,write
+        * java.lang.RuntimePermission accessClassInPackage.com.sun.activation.registries
+        * java.lang.RuntimePermission getClassLoader
+        * java.lang.RuntimePermission setContextClassLoader
+        * java.lang.RuntimePermission setFactory
+        * java.net.SocketPermission * connect,accept,resolve
+        * java.security.SecurityPermission createPolicy.JavaPolicy
+        * java.security.SecurityPermission getPolicy
+        * java.security.SecurityPermission putProviderProperty.BC
+        * java.security.SecurityPermission setPolicy
+        * java.util.PropertyPermission * read,write
+        See http://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html
+        for descriptions of what these permissions allow and the associated risks.
+        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        @        WARNING: plugin forks a native controller        @
+        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        This plugin launches a native controller that is not subject to the Java
+        security manager nor to system call filters.
+        Elasticsearch keystore is required by plugin [x-pack], creating...
+        -> Installed x-pack
+
     If no internet access, obtain the proper zip and run
     
         bin/elasticsearch-plugin install file:///path/to/file/x-pack-6.1.3.zip
         --batch
 
-    The permissions S-Pack needs are twofold:
-    - Set the threat context loader, so Watcher can send email notifications.
-    - Enable Elasticsearch to launch the machine learning analytical engine. 
-
-    See more about these permissions [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html)
+    X-Pack needs permission to set the threat context loader, so Watcher can
+    send email notifications, and to enable Elasticsearch to launch the machine
+    learning analytical engine. See more about these permissions
+    [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html)
 
 2.  Make sure Elasticsearch is allowing the automatic creation of indexes. If
    you're unsure, check `elasticsearch.yml` for this property:
@@ -37,47 +88,132 @@
     `elasticsearch.yml`, there's nothing to worry about. See [Elastic's
     documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docs-index_.html#index-creation) for more information on automatic index creation.
 
-3.  You must enable transport layer security on each node. See the next section
-    for information how to do that.
-
-## Enabling Transport Layer Security
-
-To enable TLS/SSL in Elasticsearch:
-
-1.  [Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#node-certificates) for each node.
-2.  [Enable TLS](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#enable-ssl) on each node.
-
-After X-Pack is installed and TLS is enabled, configure the X-Pack Security
-adapter *before* restarting Elasticsearch.
+Once X-Pack is installed and, configure its built-in user passwords.
 
 ## Setting @product@ as a X-Pack User
 
-Set the passwords for all built-in users. The setup-passwords command is the
-simplest method to set the built-in users' passwords for the first time. It's
-only valid for the first use. To update a password subsequently, use Kibana's UI
-or the security user API.
+Set the passwords for all X-Pack's [built-in
+users](https://www.elastic.co/guide/en/x-pack/6.1/setting-up-authentication.html#built-in-users).
+The `setup-passwords` command is the simplest method to set the built-in users'
+passwords for the first time. It's only valid for the first use. To update a
+password subsequently, use Kibana's UI or the [Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/security-api-change-password.html).
 
-To run the `setup-passwords` command in an interactive, mode, enter
+You can even let X-Pack randomly genrate passwords for these users by passing in the `auto` argument:
 
-    bin/x-pack/setup-passwords interactive
+    ./bin/x-pack/setup-passwords auto
+        Changed password for user kibana
+        PASSWORD kibana = Y?v1Jv^0AO*SKXveriGr
 
-from Elasticsearch Home. You're prompted to enter new passwords for the
-`elastic`, `kibana`, and `logstash_system` users. Since you're only securing
-Elasticsearch, make sure you remember the password you set for the `elastic`
-user.
+        Changed password for user logstash_system
+        PASSWORD logstash_system = U^zLGC9$N6%6KhUHz^qb
+
+        Changed password for user elastic
+        PASSWORD elastic = GqhoaEUyTM@tp1*wQd~F
+
+See Elastic's documentation on the [setup-passwords
+command](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-passwords.html) for additional options.
+
+Since you're securing Elasticsearch, make sure you remember the password you set
+for the `elastic` user. 
+
+Enabling transport layer security on each node is highly recommended.
+
+## Enabling Transport Layer Security
+
+The following instructions for enabling TLS use the default file names generated
+by X-Pack and `liferay` as the password whenever one is needed. You should
+customize these as appropriate for your installation. To enable TLS/SSL in
+Elasticsearch:
+
+1.  [Generate a node
+    certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#node-certificates)
+    for each node.
+
+    - Create a certificate authority:
+
+            ./bin/x-pack/certutil ca
+
+    - Generate a certificate and private key for for each Elasticsearch node:
+
+            ./bin/x-pack/certutil cert --ca elastic-stack-ca.p12
+
+            Enter password for CA (elastic-stack-ca.p12) : liferay
+            Please enter the desired output file [elastic-certificates.p12]: 
+            Enter password for elastic-certificates.p12 : liferay
+
+        The output is a single PKCS#12 keystore that includes the node certificate,
+        node key, and CA certificate.
+
+        Copy the node certificate to the appropriate locations.
+
+    - Copy the applicable `.p12` file into any directory under `Elasticsearch
+        Home/config` on each node. There is no need to copy the CA file to this
+        directory.
+
+2.  [Enable TLS](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#enable-ssl) on each node via its `elasticsearch.yml`.
+
+- Add the keystore and truststore paths to each node's `elasticsearch.yml`
+
+        xpack.ssl.keystore.path: x-pack/elastic-certificates.p12 
+        xpack.ssl.truststore.path: x-pack/elastic-certificates.p12 
+
+    The example paths above assume you added the certificate to `Elasticsearch
+    Home/config/x-pack/`. The `certutil` output includes the certificate
+    authority certificate inside the `.p12` file, so you can use the same file
+    for the keystore and truststore.
+
+- If you used a password for the certificate that contains the keystore and
+    truststore, add the password by running
+
+        ./bin/elasticsearch-keystore add xpack.ssl.keystore.secure_password
+
+    and then
+
+        ./bin/elasticsearch-keystore add xpack.ssl.truststore.secure_password
+
+-  Enable transport layer TLS with these settings in `elasticsearch.yml`:
+
+        xpack.security.transport.ssl.enabled: true
+        xpack.security.transport.ssl.verification_mode: certificate
+
+- Enable TLS on the HTTP layer to encrypt client communication:
+
+        xpack.security.http.ssl.enabled: true
+
+- Restart Elasticsearch. These steps require a full cluster restart. 
+
+After X-Pack is installed and TLS is enabled, configure the X-Pack Security
+adapter in @product@.
 
 ## Configuring the X-Pack Security Adapter
 
-username: elastic
-password: the password from the last step
-requires authentication: true
-transport ssl enabled: true
+If you'd like to configure the X-Pack adapter in the @product@ UI, navigate to
+Control Panel &rarr; Configuration &rarr; System Settings. Find the Search
+category, and click on the X-PAck Security entry. You can enter the property
+values here, but it's more common to use a [configuration
+file](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
+deployed to `Liferay Home/osgi/configs`. For the X-Pack adapter, create a file
+called
 
-The other fields should match the values generated during the [Enabling
-Transport Layer Security](#enabling-transport-layer-security) step.
+    com.liferay.portal.search.elasticsearch6.xpack.security.internal.configuration.XPackSecurityConfiguration.config
+
+Populate the file with these contents:
+
+    sslKeystorePath="/home/russell/liferay-bundles/elasticsearch-6.1.3/config/x-pack/elastic-certificates.p12"
+    certificateFormat="PKCS#12"
+    sslTruststorePath="/home/russell/liferay-bundles/elasticsearch-6.1.3/config/x-pack/elastic-certificates.p12"
+    requiresAuthentication=B"true"
+    username="elastic"
+    sslKeystorePassword="liferay"
+    password="GqhoaEUyTM@tp1*wQd~F"
+    transportSSLVerificationMode="certificate"
+    transportSSLEnabled=B"true"
+    sslTruststorePassword="liferay"
+
+Of course, your settings may differ if you configured X-Pack differently. To see
+all of the configuration optins available, refer to the System Settings entry.
 
 Once completed, restart Elasticsearch.
-
 
 <!--
 
