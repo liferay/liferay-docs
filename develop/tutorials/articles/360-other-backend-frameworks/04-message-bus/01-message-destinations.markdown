@@ -81,7 +81,7 @@ to create a configuration for any destination type, even your own.
 
 ## Creating a Destination [](id=creating-a-destination)
 
-Message Bus destinations are based on a destination configurations and
+Message Bus destinations are based on destination configurations and
 registered as OSGi services. Message Bus detects the destination services and
 manages their associated destinations.
 
