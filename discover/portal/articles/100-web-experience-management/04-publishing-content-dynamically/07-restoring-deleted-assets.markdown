@@ -65,7 +65,7 @@ for all sites in the portal (default is *true*).
 held before being permanently deleted.
 
 Visit the
-[portal.properties](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Trash)
+[portal.properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Trash)
 file to view all of the configurable properties for the Recycle Bin.
 
 Next, you should make sure permissions are set properly for users who can

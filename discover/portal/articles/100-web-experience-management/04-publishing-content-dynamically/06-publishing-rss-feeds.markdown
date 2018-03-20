@@ -99,7 +99,7 @@ this by setting the `rss.feeds.enabled` property to `false` in your
 `portal-ext.properties` file. By default, it's set to `true`. If you keep the
 default, RSS enabled, you can make several other RSS property customizations.
 Please refer to the
-[RSS section](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#RSS)
+[RSS section](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#RSS)
 of your `portal.properties` file for details.
 
 ## Using the RSS Publisher Application [](id=using-the-rss-feeds-application)

@@ -279,7 +279,7 @@ You are now ready to add categories to your message boards. Click the *Add* icon
 category and a description of the category. 
 
 Categories can have different display styles. The available categories must be
-set in [portal property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Message%20Boards%20Portlet)
+set in [portal property](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Message%20Boards%20Portlet)
 `message.boards.category.display.styles` and the default category in
 `message.boards.category.display.styles.default`. When creating a new category,
 you can select the display style you like. By default, Message Boards provides

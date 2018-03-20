@@ -195,7 +195,7 @@ creates a `portal-setup-wizard.properties` file which stores the settings that
 you entered. When you begin customizing your portal's configuration, however,
 you should use the `portal-ext.properties` file you created earlier. All the
 possible properties that can be placed in this file are documented in [our
-reference documentation](http://docs.liferay.com/portal/7.0/propertiesdoc).
+reference documentation](@platform-ref@/7.0-latest/propertiesdoc).
 
 +$$$
 

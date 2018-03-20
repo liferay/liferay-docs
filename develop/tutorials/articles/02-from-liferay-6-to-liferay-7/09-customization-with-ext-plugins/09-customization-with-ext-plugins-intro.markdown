@@ -228,7 +228,7 @@ significant files:
 
 - `build.xml`: The Ant build file for the Ext plugin project. 
 
-- [`docroot/WEB-INF/liferay-plugin-package.properties`](https://docs.liferay.com/portal/7.0/propertiesdoc/liferay-plugin-package_7_0_0.properties.html):
+- [`docroot/WEB-INF/liferay-plugin-package.properties`](@platform-ref@/7.0-latest/propertiesdoc/liferay-plugin-package_7_0_0.properties.html):
 Contains plugin-specific properties, including the plugin's display name,
 version, author, and license type. 
 

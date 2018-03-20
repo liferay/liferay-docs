@@ -72,12 +72,12 @@ Liferay itself has used to implement
 [Liferay Sync](/discover/portal/-/knowledge_base/7-0/administering-liferay-sync). 
 
 1. The Interface and `ThreadLocal` are available in the 
-   [package `com.liferay.portal.kernel.security.service.access.policy`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/package-summary.html).
+   [package `com.liferay.portal.kernel.security.service.access.policy`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/package-summary.html).
    This package provides classes for basic access to policies. For example, you can
    use the
-   [singleton `ServiceAccessPolicyManagerUtil`](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/ServiceAccessPolicyManagerUtil.html)
+   [singleton `ServiceAccessPolicyManagerUtil`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/ServiceAccessPolicyManagerUtil.html)
    to obtain Service Access Policies configured in the system. You can also use the
-   [`ServiceAccessPolicyThreadLocal` class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/ServiceAccessPolicyThreadLocal.html)
+   [`ServiceAccessPolicyThreadLocal` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/ServiceAccessPolicyThreadLocal.html)
    to set and obtain Service Access Policies granted to the current request thread.
 
    At this level, you can get a list of the configured policies to let your
@@ -88,7 +88,7 @@ Liferay itself has used to implement
    thread. When a remote client accesses an API, something must tell the
    Liferay instance which policies are assigned to this call. This
    something is in most cases an
-   [`AuthVerifier` implementation](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/security/auth/verifier/AuthVerifier.html).
+   [`AuthVerifier` implementation](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/auth/verifier/AuthVerifier.html).
    For example, in the case of the OAuth app, an `AuthVerifier` implementation
    assigns the policy chosen by the user in the authorization step.
 

@@ -151,7 +151,7 @@ that requires authentication (for example, a document that is not viewable by
 the Guest role). If the user requests a protected resource, its URL is recorded
 in the `RelayState` parameter. If the user requested `/c/portal/login`, the
 `RelayState` can be set by providing the `redirect` parameter. Otherwise, if the
-[portal property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html)
+[portal property](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html)
 `auth.forward.by.last.path` is set to true, the last accessed path is set as the
 `RelayState`. For non-@product@ SPs, consult the vendor documentation on initiating
 SSO.
