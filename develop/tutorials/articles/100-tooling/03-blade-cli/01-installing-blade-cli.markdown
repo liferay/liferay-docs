@@ -55,3 +55,18 @@ Blade CLI offers many
 to help build @product-ver@ applications. It also offers various ways to deploy
 those apps and interact with your Liferay server. Be sure to explore more Blade
 CLI tutorials to learn how.
+
+## Installer Issues on macOS [](id=installer-issues-on-macos)
+
+If you're using macOS, you could experience an issue where the `blade` command
+is not available in your terminal:
+
+    command not found: blade
+
+This is caused by the installer being unable to add JPM's `bin` folder to your
+user path. JPM is a Java package manager used in Blade CLI. To add the required
+`bin` folder, execute the following command in your terminal:
+
+    echo 'export PATH="$PATH:$HOME/Library/PackageManager/bin"' >> ~/.bash_profile
+
+Once you restart your terminal, the `blade` command should be available.

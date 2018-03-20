@@ -317,12 +317,8 @@ processes. Consider searching for unneeded objects associated these longer
 upgrade processes. Once again, make sure to delete them using Liferay's API and
 test your changes. 
 
-+$$$
-
 **Note**: Learning [how upgrade processes are created](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
 can help you understand their data better.
-
-$$$ 
 
 ## Remove Unused Objects from Production (Step 8) [](id=remove-unused-objects-from-production-step-8)
 

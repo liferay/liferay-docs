@@ -2,7 +2,7 @@
 
 [Gradle](http://gradle.org/) is a popular open source build automation system.
 You can take full advantage of Gradle in Liferay @ide@ by utilizing
-[Buildship](https://projects.eclipse.org/releases/neon), which is a collection
+[Buildship](https://projects.eclipse.org/releases/photon), which is a collection
 of Eclipse plugin-ins that provide support for building software using Gradle
 with Liferay @ide@. Buildship is bundled with Liferay @ide@ versions 3.0 and
 higher.
@@ -79,6 +79,12 @@ your views. To refresh a Gradle project, right-click on the project and select
 *Gradle* &rarr; *Refresh Gradle Project*.
 
 ![Figure 7: Make sure to always refresh your Gradle project in Liferay @ide@ after build script edits.](../../../images/refresh-gradle-project.png)
+
+If you prefer Eclipse refresh your Gradle projects automatically, navigate to 
+*Window* &rarr; *Preferences* &rarr; *Gradle* and enable the *Automatic Project
+Synchronization* checkbox. If you'd like to enable Gradle's automatic
+synchronization for just one Gradle project, you can right-click a Gradle
+project and select *Properties* &rarr; *Gradle* and enable auto sync that way.
 
 Excellent! You're now equipped with the knowledge to add, import, and build your
 Gradle projects in Liferay @ide@!
