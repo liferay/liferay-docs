@@ -48,7 +48,7 @@ Liferay's Baseline Gradle plugin can be configured in your project to provide
 baselining capabilities. Add it to your Gradle build configuration and execute
 the following command:
 
-    gradlew baseline
+    ./gradlew baseline
 
 See the
 [Baseline Gradle Plugin](/develop/reference/-/knowledge_base/7-1/baseline-gradle-plugin)
@@ -66,20 +66,20 @@ thrown.
 With the ability to baseline, your project's semantic versioning should always
 be accurate.
 
-## Tracking Artifact Versions
+## Managing Artifact and Dependency Versions
 
-Tracking your project's dependency versions can be done two ways with semantic
-versioning:
+Tracking your project's artifact and dependency versions can be done two ways
+with semantic versioning:
 
 - Range of versions
 - Exact version (one-to-one)
 
 You should track a range of versions if you intend to build your project for
 multiple versions of @product@ and maintain maximum compatibility. In other
-words, if several versions of a package work for an app, the developer can
-configure the app to use any of them. What's more, Bnd automatically determines
-the semantically compatible range of each package a module depends on and
-records the range to the module's manifest.
+words, if several versions of a package work for an app, you can configure the
+app to use any of them. What's more, Bnd automatically determines the
+semantically compatible range of each package a module depends on and records
+the range to the module's manifest.
 
 For help with version range syntax, see the
 [OSGi Specifications](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html#i3189032).
@@ -123,11 +123,11 @@ your module is much easier to test and has less chance for unexpected failures.
 
 **Note:** When specifying package versions in your `bnd.bnd` file, exact
 versions are typically specified like this: `version="1.1.2"`. However, this
-syntax is technically a range; it is interpreted as [1.1.2, &#8734;). The
-highest compatible version is used, starting with the specified version.
-Therefore, you can think of this as a tested range that holds the same benefits
-as a truly *exact* version match. If you want to specify a true exact match, the
-syntax would look similar to this: `[1.1.2]`. See the
+syntax is technically a range; it is interpreted as [1.1.2, &#8734;). Therefore,
+if a higher version of the package is available, it'll be used instead of the
+version you specified. For these cases, it may be better to specify a version
+range for compatible versions that have been tested. If you want to specify a
+true exact match, the syntax would look similar to this: `[1.1.2]`. See the
 [Version Range](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html#i3189032)
 section in the OSGi specifications for more info.
 
