@@ -95,7 +95,7 @@ using a `SynchronousMessageSender`:
 
             Message message = new Message();
             message.put("myId", 12345);
-            message.put("someValue", “abcdef��?);
+            message.put("someValue", "abcdef");
 
             SingleDestinationMessageSender messageSender = 
                _messageSenderFactory.createSingleDestinationMessageSender("myDestinationName");
