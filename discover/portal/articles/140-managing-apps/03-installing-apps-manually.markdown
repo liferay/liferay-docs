@@ -40,7 +40,7 @@ You can, however, change these subfolders by setting the properties
 `portal-ext.properties` file. These properties define the `[Liferay_Home]/osgi` 
 folder and its hot deploy subfolders, respectively. The default settings for 
 these properties in 
-[Liferay's `portal.properties` file](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html) 
+[Liferay's `portal.properties` file](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html) 
 are as follows: 
 
     module.framework.base.dir=${liferay.home}/osgi

@@ -275,7 +275,7 @@ reasons an enterprise wants to configure organization types:
 ![Figure x: Make additional organization types available in the Control Panel by adding them to the `organizations.types` portal property.](../../images/organization-new-type.png)
 
 Check out the portal properties that configure the default *Organization* type
-on [docs.liferay.com](https://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html#Organizations).
+on [docs.liferay.com](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Organizations).
 
 To add another organization type called *League*, add this to
 `portal-ext.properties`:

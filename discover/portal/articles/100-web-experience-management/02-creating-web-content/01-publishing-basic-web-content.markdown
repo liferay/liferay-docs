@@ -496,7 +496,7 @@ just the content, without any of the web site navigation. This is handy for
 printing the content. Enabling ratings shows one of two ratings interfaces
 @product@ has: five stars or thumbs up and thumbs down. This can be set globally
 in the `portal-ext.properties` file. See the
-[Properties Document](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Ratings%20Tag%20Library)
+[Properties Document](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Ratings%20Tag%20Library)
 for more details about this.
 
 Enabling comments creates a discussion forum attached to your content which

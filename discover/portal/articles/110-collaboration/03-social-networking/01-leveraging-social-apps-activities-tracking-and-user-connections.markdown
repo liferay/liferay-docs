@@ -72,7 +72,7 @@ applies changes to all users' personal sites. It does not, however, provide as
 much maintainability or as many customization options as user group sites does.
 User group sites allow you to choose what's modifiable by the user.  For
 more information on the `portal-ext.properties` method, search for *Default User
-Private Layouts* and *Default User Public Layouts* in the [properties documentation](http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html).
+Private Layouts* and *Default User Public Layouts* in the [properties documentation](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html).
 
 Because it's the recommended method, use the user group method to create the
 layouts. As an administrator, go to the Control Panel and select
@@ -175,7 +175,7 @@ API. However, this only scratches the surface of the platform's capability. It's
 also possible to develop your own implementation of @product@'s social API to 
 use different social relationships. Please refer to 
 [the @product@ Developer Tutorials](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development) 
-or the  [Javadocs](http://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/social/kernel/service/package-summary.html)
+or the  [Javadocs](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/social/kernel/service/package-summary.html)
 for information about @product@'s social API. 
 
 The core social application in @product@ is Activities. It displays information

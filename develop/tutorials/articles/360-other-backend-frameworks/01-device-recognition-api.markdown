@@ -29,7 +29,7 @@ One important thing that you'll want to get using the Device API is the
     Device device = themeDisplay.getDevice();
 
 You can view the
-[`Device` API](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/mobile/device/Device.html).
+[`Device` API](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/mobile/device/Device.html).
 Using some of the methods from the Javadocs, here's an example that obtains a
 device's dimensions:
 

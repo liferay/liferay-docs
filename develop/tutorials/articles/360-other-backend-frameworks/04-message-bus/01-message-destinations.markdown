@@ -44,7 +44,7 @@ Here are the primary destination types:
         listeners also.
 
 Liferay has preconfigured destinations for various purposes. The 
-[`DestinationNames` class](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
+[`DestinationNames` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
 defines `String` constants for each of them. For example,
 `DestinationNames.HOT_DEPLOY` (value is  `"liferay/hot_deploy"`) is for
 deployment event messages. Since destinations are tuned for specific purposes,
@@ -52,7 +52,7 @@ don't modify them.
 
 Destinations are based on 
 [`DestinationConfiguration`
-instances](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationConfiguration.html).
+instances](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationConfiguration.html).
 The configuration specifies the destination type, name, and these destination-
 related attributes: 
 
@@ -60,7 +60,7 @@ related attributes:
 destination. 
 
 **Rejected Execution Handler**: A 
-[`com.liferay.portal.kernel.concurrent.RejectedExecutionHandler` instance](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/concurrent/RejectedExecutionHandler.html)
+[`com.liferay.portal.kernel.concurrent.RejectedExecutionHandler` instance](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/concurrent/RejectedExecutionHandler.html)
 can take action (e.g., log warnings) regarding rejected messages when the
 destination queue is full. 
 
@@ -84,7 +84,7 @@ to create a configuration for any destination type, even your own.
 
 ## Creating a Destination [](id=creating-a-destination)
 
-Message Bus destinations are based on a destination configurations and
+Message Bus destinations are based on destination configurations and
 registered as OSGi services. Message Bus detects the destination services and
 manages their associated destinations.
 
@@ -96,12 +96,12 @@ class that follows demonstrates these steps.
     Set any attributes that apply to the destinations you'll create with it. 
 
 2.  Create a destination by invoking the 
-    [`DestinationFactory`](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationFactory.html)
+    [`DestinationFactory`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationFactory.html)
     method `createDestination(DestinationConfiguration)`, passing in the
     destination configuration you created in the previous step. 
 
 3.  Register the destination as an OSGi service by invoking the
-    [`BundleContext` method `registerService`](https://osgi.org/javadoc/r4v43/core/org/osgi/framework/BundleContext.html#registerService(java.lang.Class,%20S,%20java.util.Dictionary), passing in the following parameters.
+    [`BundleContext` method `registerService`](https://osgi.org/javadoc/r4v43/core/org/osgi/framework/BundleContext.html), passing in the following parameters.
     -   Destination class `Destination.class`
     -   Your `Destination` object
     -   A `Dictionary` of properties defining the destination, including the 
@@ -241,7 +241,7 @@ destinations and message listeners.
 
 The Message Bus notifies Message Bus Event Listeners when destinations are
 added and removed. To register these listeners, publish a
-[`MessageBusEventListener` instance](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageBusEventListener.html)
+[`MessageBusEventListener` instance](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageBusEventListener.html)
 to the OSGi service registry (e.g., via an `@Component` annotation).
 
     @Component(
@@ -264,10 +264,10 @@ Listening for new message listeners is easy too.
 ### Listening for new Message Listeners [](id=listening-for-new-message-listeners)
 
 The Message Bus notifies 
-[`DestinationEventListener` instances](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationEventListener.html)
+[`DestinationEventListener` instances](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationEventListener.html)
 when message listeners are either registered or unregistered to destinations. To
 register a listener to a destination, publish a 
-[`DestinationEventListener` service](@platform-ref@/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationEventListener.html)
+[`DestinationEventListener` service](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationEventListener.html)
 to the OSGi service registry, making sure to specify the destination's
 `destination.name` property.
 

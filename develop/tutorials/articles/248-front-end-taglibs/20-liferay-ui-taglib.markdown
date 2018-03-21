@@ -26,7 +26,7 @@ Now you're good to go!
 
 Each taglib has a list of attributes that can be passed to the tag. Some of
 these are required and some are optional. See the
-[taglibdocs](https://docs.liferay.com/portal/7.0-latest/taglibs/util-taglib/liferay-ui/tld-summary.html) 
+[taglibdocs](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui/tld-summary.html) 
 to view the requirements for each tag.
 
 The example below uses the `<liferay-ui:alert>` taglib to create a success alert

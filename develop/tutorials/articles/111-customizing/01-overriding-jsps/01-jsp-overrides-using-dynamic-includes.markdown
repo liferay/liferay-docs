@@ -1,7 +1,7 @@
 # Customizing JSPs with Dynamic Includes [](id=jsp-overrides-using-dynamic-includes)
 
 The
-[`liferay-util:dynamic-include` tag](@platform-ref@/7.0/taglibs/util-taglib/liferay-util/dynamic-include.html)
+[`liferay-util:dynamic-include` tag](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-util/dynamic-include.html)
 is an extension point for inserting content (e.g., JavaScript code, HTML, and
 more). To do this, create a module that has content you want to insert, register
 that content with the dynamic include tag, and deploy your module. 

@@ -74,7 +74,7 @@ and its properties using two different methods:
 To configure your CDN via properties file, you need to create a
 `portal-ext.properties` file in your Liferay Home directory and set the
 appropriate CDN properties. You can view the CDN properties and their
-descriptions by visiting the [Content Delivery Network](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Content%20Delivery%20Network)
+descriptions by visiting the [Content Delivery Network](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Content%20Delivery%20Network)
 section of the `portal.properties` HTML document.
 
 Once you configure your CDN host, @product@ generates URLs to the static assets

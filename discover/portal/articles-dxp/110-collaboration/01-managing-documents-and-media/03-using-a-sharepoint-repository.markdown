@@ -117,14 +117,14 @@ Connector app.
 
 Let's configure @product@ for authentication.  In your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home),
 create a `portal-ext.properties` file, if one doesn't already exist, and add a
-[`session.store.password`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Session)
+[`session.store.password`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Session)
 portal property set to `true`:
 
     session.store.password=true
 
 Next, make sure to authenticate the same way on both @product@ and
 the external repository. You can do so by authenticating based on screen
-name. Add the following [`company.security.auth.type`]( https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Company)
+name. Add the following [`company.security.auth.type`]( @platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Company)
 portal property to your `portal-ext.properties` file: 
 
     company.security.auth.type=screenName
