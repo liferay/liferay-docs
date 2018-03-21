@@ -1,13 +1,12 @@
 # Scoping Configurations [](id=scoping-configurations)
 
-When an application is deployed, it's common to need different configurations
-depending on the scope. That means having different configurations for a given
-application per virtual instance (a.k.a. Company), site (a.k.a. Group), or
-portlet instance. Achieve this with the Configuration Provider API that is based
-on the standard OSGi Configuration Admin API shown in the previous section.
+Applications can have different configurations depending on the scope: per
+virtual instance (a.k.a. `Company`), site (a.k.a. `Group`), or portlet instance.
+The Configuration Provider API (based on the standard OSGi Configuration Admin
+API shown in the previous section) handles this for you
 
-The `ExtendedObjectClassDefinition` annotation allows you to specify the scope
-of the configuration. This must match how the configuration object is
+The `@ExtendedObjectClassDefinition` annotation specifies the configuration's
+scope. This must match how the configuration object is
 retrieved through the provider (your choice). The valid options are:
 
 - `Scope.GROUP`: for site scope
@@ -30,15 +29,13 @@ Here is an example:
 
     public interface DDMFormWebConfiguration {
 
-The scope property isn't currently used for anything other than making it appear
-in System Settings so that an administrator can change its value. In future
-releases it may serve additional purposes.
+The scope property makes it appear in System Settings so an administrator
+can change its value. In future releases it may serve additional purposes.
 
 ## Enabling the Configuration for Scoped Retrieval [](id=enabling-the-configuration-for-scoped-retrieval)
 
-To retrieve a scoped configuration, use a [Configuration
-Provider](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-configuration-provider).
-The method call looks like this:
+To retrieve a scoped configuration, use a 
+[Configuration Provider](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-configuration-provider):
 
     JournalGroupServiceConfiguration configuration =
         configurationProvider.getGroupConfiguration(
@@ -54,15 +51,14 @@ the application's configuration must be registered with a
 **Note:** `ConfigurationProvider` is part of Liferay's kernel API so you don't
 need a new dependency to use it. However, its implementation is distributed as a
 module called `portal-configuration-module-configuration`, so make sure it is
-installed in order to use it.
+installed.
 
 $$$
 
-Register the configuration class by writing a class that implements
-`ConfigurationBeanDeclaration`. This class has one method that returns the class
-of the interface you created in the previous section. It enables the system to
-keep track of configuration changes as they happen, making requests for the
-configuration very fast.
+Register the configuration class by implementing `ConfigurationBeanDeclaration`.
+This class has one method that returns the class of the interface you created in
+the previous section. It enables the system to keep track of configuration
+changes as they happen, making requests for the configuration very fast.
 
 Declare the configuration interface by creating a `ConfigurationBeanDeclaration`
 class:
