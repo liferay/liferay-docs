@@ -11,7 +11,7 @@ the link, the Liferay logo appears.
 To get the most from this tutorial, you can download and refer to the 
 [original sample portlet source code](https://dev.liferay.com/documents/10184/656312/sample-json-portlet-pre-7-0-upgrade.zip)
 and the 
-[upgraded source code](https://dev.liferay.com/documents/10184/656312/sample-json-portlet-post-7-0-upgrade.zip).
+[upgraded source code](https://dev.liferay.com/documents/10184/1608802/sample-json-portlet-post-7-1-upgrade.zip).
 
 Here are the sample portlet's characteristics:
 
