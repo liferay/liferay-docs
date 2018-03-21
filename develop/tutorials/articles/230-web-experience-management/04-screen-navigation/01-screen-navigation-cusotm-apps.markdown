@@ -84,3 +84,6 @@ The parameters it needs are `key`, `modelBean`, and `portletURL`.
 * **modelBean**: the model that is being rendered
 
 * **portletURL**: the portlet URL used to build the titles for each link.
+
+In the next section, you'll see how to extend an existing Liferay class with 
+more screens.

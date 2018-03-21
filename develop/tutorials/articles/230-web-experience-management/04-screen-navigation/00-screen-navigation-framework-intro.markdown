@@ -4,8 +4,6 @@ The Screen Navigation Framework is for customizing and extending application
 UIs. You can use it to customize Liferay's own applications and to make your own
 applications customizable. 
 
-## Application Navigation
-
 To make this work, the framework assumes a specific structure for screens and
 supports one or two levels of navigation. Each item in the top level navigation
 is a `ScreenNavigationCategory`. Each item in the second level is
