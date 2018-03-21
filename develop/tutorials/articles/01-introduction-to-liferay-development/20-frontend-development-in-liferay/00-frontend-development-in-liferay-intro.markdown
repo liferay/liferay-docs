@@ -10,7 +10,7 @@ If you've used Liferay in the past, you can of course continue to use Liferay's
 venerable Alloy UI, but you are also free to use the front-end technologies you
 love the most:
 
--   EcmaScript 2015
+-   ECMAScript 2015
 -   Metal.js (developed by Liferay)
 -   AlloyUI (developed by Liferay)
 -   jQuery (included)
