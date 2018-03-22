@@ -1,4 +1,4 @@
-# Configuring a Module with an MVC Portlet Component [](id=configuring-a-module-with-an-mvc-portlet-component)
+# Creating an MVC Portlet [](id=creating-an-mvc-portlet)
 
 A Web module is at the heart of each MVC portlet application. In it you develop
 your portlet class and make it a portlet component for registering in Liferay's
