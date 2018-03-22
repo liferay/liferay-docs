@@ -2,8 +2,18 @@
 
 The Liferay Theme Generator lets you create themes, themelets, layout templates 
 and more. There are a few dependencies required to run the generator. If you 
-have NodeJS installed, you're already one step ahead. Follow these steps to 
-install the Liferay Theme Generator and generate a theme:
+have NodeJS installed, you're already one step ahead. 
+
++$$$
+
+**Note:** The [Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme)
+is not officially supported at this time. If you have any issues with the tool, 
+you can open issues in the 
+[liferay-themes-sdk repo](https://github.com/liferay/liferay-themes-sdk/issues). 
+
+$$$
+
+Follow these steps to install the Liferay Theme Generator and generate a theme:
 
 1.  Install [Node.js](http://nodejs.org/). We recommend installing the Long Term 
     Support (LTS) version. Note that Node Package Manager (npm) is installed 
@@ -30,9 +40,9 @@ install the Liferay Theme Generator and generate a theme:
         [Ruby installer](http://rubyinstaller.org/), 
         and then install the compass gem:
 
-            gem install compass
+        gem install compass
     
-        The matching sass gem is automatically fetched and installed as well.
+    The matching sass gem is automatically fetched and installed as well.
     
 3.  Run the generator and follow the prompts to create your theme:
 
