@@ -28,17 +28,11 @@ install the Liferay Theme Generator and generate a theme:
         already have it installed**, we recommend you install Ruby Sass instead. 
         Install Ruby via the 
         [Ruby installer](http://rubyinstaller.org/), 
-        and then install the sass and compass gems: 
-        
-            gem install sass -v "=3.4.0"
+        and then install the compass gem:
 
             gem install compass
-            
-    b.  If using Ruby Sass, open your theme's `package.json` file, found in the 
-        root folder, and change the `rubySass` property to `true`. Finally, 
-        install the Ruby Sass middleware:
-         
-            npm i --save gulp-ruby-sass
+    
+        The matching sass gem is automatically fetched and installed as well.
     
 3.  Run the generator and follow the prompts to create your theme:
 
@@ -53,9 +47,3 @@ Now you have a powerful theme development tool at your disposal. The sky is the
 limit!
 
 ![Figure 2: The tools are in your hands to create any theme you can imagine.](../../../../images/theme-generator-theme-example.png)
-
-## Related Topics [](id=related-topics)
-
-[]()
-
-[]()
