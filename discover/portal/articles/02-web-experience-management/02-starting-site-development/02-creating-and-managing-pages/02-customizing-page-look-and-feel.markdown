@@ -1,11 +1,12 @@
-# Customizing Page Look and Feel [](id=customizing-the-look-and-feel-of-site-pages)
+# Customizing Page Options
 
-When you select *Configure* for a page set, it defaults to the Look and Feel
-tab. On this tab, you're presented with an interface that allows you to choose a
-theme for the current site. Themes can transform the entire look of the portal.
-They are created by developers and are easily installed using the Liferay
-Marketplace. Since you don't have any themes beyond the default one installed
-yet, you'll use the default theme for your pages.
+To configure options for the entire page set, select *Configure* from the menu 
+in the top right corner of *Site Pages*. This page will default to *Look and 
+Feel*. On this tab, you're presented with an interface that allows you to 
+choose a theme for the current site. Themes can transform the entire look of 
+the portal. They are created by developers and are easily installed using the 
+Liferay Marketplace. Since you don't have any themes beyond the default one 
+installed yet, you'll use the default theme for your pages.
 
 ![Figure 5: The Look and Feel interface allows you to choose a theme for the current site.](../../../images/look-and-feel-pages.png)
 
