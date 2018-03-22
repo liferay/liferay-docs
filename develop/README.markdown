@@ -21,7 +21,7 @@ relates to dev site documentation:
 - `liferay-docs/`
     - `build.properties`
     - `build.username.properties`
-    - `build-site-common.xml` (primary buildfile for dev site documentation)
+    - `build-common.xml` (primary buildfile for dev site documentation)
     - `release-site.properties` (properties for creating document Zip files for
     a release) 
     - `develop/` (maps to the site's *Develop* tab)
