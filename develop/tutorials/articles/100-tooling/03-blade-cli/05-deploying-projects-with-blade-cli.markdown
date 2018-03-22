@@ -12,6 +12,9 @@ command to deploy it to @product@:
 You can also deploy all projects in a folder by running the `deploy` command
 from the parent folder (e.g., `[WORKSPACE_ROOT]/modules`).
 
+<!-- TODO: BLADE-217 (Open): blade deploy to support specifying a directory or
+file to be deployed as last argument. -Cody -->
+
 When deploying a project using Blade CLI, the project is directly installed into
 @product@'s OSGi container. This means, for example, that a deployed module
 isn't stored in the `LIFERAY_HOME/osgi/modules` folder; only modules copied to
@@ -23,8 +26,8 @@ way, even those copied to the `/deploy` folder. Visit the
 [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
 article for instructions on finding a bundle's ID.
 
-<!-- Text below should be removed once Blade 2.4.0/3.0.0 is released. Fixed in
-BLADE-190. -Cody -->
+<!-- TODO: Text below should be removed once Blade 2.4.0/3.0.0 is released.
+Fixed in BLADE-190. -Cody -->
 
 The `deploy` command is intended for modules that are built into a JAR file. If
 you've created a WAR style project (e.g., projects based on the Blade templates
@@ -56,6 +59,8 @@ parameter.
     blade deploy -w
 
 This parameter automatically redeploys the module when changes are detected.
+
+<!-- BLADE-222 (Open): blade liveDeploy should be documented here. -Cody -->
 
 +$$$
 

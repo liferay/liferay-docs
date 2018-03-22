@@ -50,6 +50,8 @@ Follow the steps below to download and install Blade CLI:
 That's it! Blade CLI is installed on your machine! If you specified a location
 to initialize a Liferay Workspace folder, that is also available.
 
+<!-- TODO: Blade-220 is intended to add support for overriding "Blade Home". -->
+
 Blade CLI offers many
 [templates](/develop/reference/-/knowledge_base/7-1/project-templates)
 to help build @product-ver@ applications. It also offers various ways to deploy

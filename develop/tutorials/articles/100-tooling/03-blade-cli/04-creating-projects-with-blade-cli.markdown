@@ -90,6 +90,13 @@ directory was not specified, it is created in the folder you executed the
 command. When generating a project using Blade CLI, there is no downloading,
 which means internet access is not required.
 
+<!-- TODO: The following tickets are planned for Blade 3.0.0 and should be
+documented. -Cody
+
+BLADE-221 (Open): blade create interactive mode
+BLADE-228 (In Progress): blade create should support -v version flag
+-->
+
 Blade CLI can also create the same project with Maven by specifying the `-b
 maven` parameter. Using Blade CLI's Maven option isn't the only way to leverage
 Liferay's Maven project templates; you can also generate them using Maven

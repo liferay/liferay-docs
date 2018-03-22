@@ -10,7 +10,7 @@ based; if you'd like to generate a Liferay Workspace built with Maven, see the
 [Maven Workspace](/develop/tutorials/-/knowledge_base/7-1/maven-workspace)
 tutorial.
 
-<!-- Document following topics here for Blade 3.0.0, once it's released:
+<!-- TODO: Document following topics here for Blade 3.0.0, once it's released:
 
 - blade init -t : https://issues.liferay.com/browse/BLADE-205
 - blade init -l : https://issues.liferay.com/browse/BLADE-204
