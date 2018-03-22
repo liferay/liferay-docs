@@ -19,11 +19,17 @@ Categories Administration.
 
         @Component(
 	    property = {
-		  "screen.navigation.category.order:Integer=10",
-		  "screen.navigation.entry.order:Integer=10"
+		  "screen.navigation.category.order:Integer=1",
+		  "screen.navigation.entry.order:Integer=1"
 	    },
 	    service = {ScreenNavigationCategory.class, ScreenNavigationEntry.class}
         )
+
+    The `screen.navigation.categor.order` and `screen.navigation.entry.order` 
+    determine where in the navigation the items wil show up. Higher will be 
+    first in the navigation.
+    
+    In the `service` declaration you can declare it as defining a `ScreenNavigationCategory`, `ScreenNavigationEntry`, or both.
 
 3.  For the class body, insert the following:
 
@@ -39,7 +45,7 @@ Categories Administration.
 
     	@Override
     	public String getLabel(Locale locale) {
-    		return LanguageUtil.get(locale, "details");
+    		return LanguageUtil.get(locale, "custom-screen");
     	}
 
     	@Override
@@ -57,10 +63,12 @@ Categories Administration.
     	@Reference
     	private JSPRenderer _jspRenderer;
 
+
+
 4.  Create a `custom-screen.jsp` in the 
     `/resources/META-INF/resources/category/` folder.
     
-5.  At the top of your JSP class, insert the following scriplet at the top to use the Screen Navigation features:
+5.  At the top of your JSP class, insert the following scriplet at the top to use the Screen Navigation UI:
 
         <%
         String redirect = ParamUtil.getString(request, "redirect", assetCategoriesDisplayContext.getEditCategoryRedirect());
@@ -79,6 +87,14 @@ Categories Administration.
         renderResponse.setTitle(((category == null) ? LanguageUtil.get(request, "add-new-category") : category.getTitle(locale)));
         %>
 
-6. For the rest of the JSP, create your custom screen.
+6.  Below that insert the following taglib:
+
+        <liferay-frontend:screen-navigation key=
+        "<%= AssetCategoriesConstants.CATEGORY_KEY_GENERAL %>"
+        modelBean="<%= category %>"
+        portletURL="<%= portletURL %>"
+        />
+
+7. For the rest of the JSP, create your custom screen.
 
 Now you can use that pattern to create additional screens for whatever you need.
