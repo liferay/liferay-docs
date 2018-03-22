@@ -162,11 +162,14 @@ portlet render URLs specify JSP paths in `mvcPath` parameters.
 
 As you've seen, Liferay's *Medical Vortex Concentrator* (MVC) portlet framework
 gives you a well-structured controller layer that takes very little time to
-implement.  With all your free time, you could
+implement. With all your free time, you could
 
 -  Learn a new language
 -  Take pottery classes
 -  Lift weights
 -  Work on your application's business logic
 
-It's entirely up to you.
+It's entirely up to you. To get into the details of creating an MVC Portlet
+application, follow the 
+[Creating an MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/creating-an-mvc-portlet)
+tutorial. 
