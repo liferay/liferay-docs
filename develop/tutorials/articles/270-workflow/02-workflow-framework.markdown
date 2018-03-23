@@ -97,7 +97,7 @@ Now your entity can be handled by Liferay's workflow framework. Next, update the
 service methods to account for workflow status and add a new method to update
 the status of an entity in the database.
 
-## Updating the Service Layer
+## Updating the Service Layer [](id=updating-the-service-layer)
 
 In most Liferay applications, 
 [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder) 
