@@ -1,18 +1,11 @@
-# Building Content Pages with Fragments
+# Creating Fragments
 
-To create pages with Modern Site Building, you'll first need to create 
-Fragments. Pages in Liferay have traditionally been created with portlet, but 
-now you have two options. You can't mix Fragments and Portlets on a single page 
-(though you can embed portlets within a Fragment) though, so you'll need to 
-choose between which style of page you're going to use when you start creating 
-it. Pages comprised of Fragments are called Content Pages. Content Pages are 
-created from Page Templates, and like a Fragment, Page Templates must exist 
-within a Collection. First, create some Fragments.
+To create Content Pages you first need to create Fragments. Fragments are one of
+the building blocks that you can use to create rich content in Liferay.
 
 ## Creating and Managing Fragments
 
-Like Content Management, most of Modern Site building is managed through Site 
-Administration. You can find Fragments in the Content section.
+Start in Site Administration. You can find Fragments in the Content section.
 
 1.  Open the main menu.
 

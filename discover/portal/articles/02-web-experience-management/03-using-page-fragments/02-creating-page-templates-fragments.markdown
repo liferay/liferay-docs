@@ -1,9 +1,8 @@
-# Creating Page Templates with Fragments
+# Building Content Pages from Fragments
 
-After you create Fragments, your next step is to add them to Page Templates. 
-Page Templates are composed of some number of Fragments - it could be one or it 
-could be fifty. After a Page Template is created, you can create a Page 
-from the Page Template.
+After you create Fragments, your next step is to add them to a Page Template 
+that will become a Content Page. Content Pages are composed of some number of 
+Fragments - it could be one or it could be fifty.
 
 ## Creating a Page Template
 
@@ -63,4 +62,5 @@ Fragments that make up the Template. To create a Content Page:
     
 By default, your new page will be added to the Navigation Menu and users can 
 access the page you created. If you didn't know that there was anything other 
-than the default Navigation Menu, head over to our [link]Navigation Menu tutorial.
+than the default Navigation Menu, head over to our [link]Navigation Menu 
+tutorial.
