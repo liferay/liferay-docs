@@ -20,7 +20,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
-public class CheckImagesTaskDevSite extends Task {
+public class CheckImagesTask extends Task {
 
 	/**
 	 * Checks for missing images, extra images, or faulty file paths in the

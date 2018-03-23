@@ -13,7 +13,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
-public class NumberImagesTaskDevSite extends Task {
+public class NumberImagesTask extends Task {
 	
 	@Override
 	public void execute() throws BuildException {

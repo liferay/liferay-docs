@@ -11,7 +11,7 @@ import java.util.List;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
-public class CheckArticleImagesTaskDevSite extends Task {
+public class CheckArticleImagesTask extends Task {
 
 	@Override
 	public void execute() throws BuildException {

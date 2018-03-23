@@ -16,7 +16,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
-public class ConcatMarkdown extends Task {
+public class ConcatMarkdownTask extends Task {
 	
 	public void execute() throws BuildException {
 		

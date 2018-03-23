@@ -23,7 +23,7 @@ import java.io.IOException;
 import com.liferay.knowledge.base.markdown.converter.factory.MarkdownConverterFactoryUtil;
 import com.liferay.knowledge.base.markdown.converter.MarkdownConverter;
 
-public class MarkdownToHtmlMain {
+public class MarkdownToHtml {
 
 	public static void main(String[] args) throws IOException {
 		if (args == null || args.length < 2) {

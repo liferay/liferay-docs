@@ -29,7 +29,7 @@
 
 	<!-- taskdefs -->
 
-	<taskdef name="checkarticleimgssite" classname="com.liferay.documentation.util.CheckArticleImagesTaskDevSite">
+	<taskdef name="checkarticleimgssite" classname="com.liferay.documentation.util.CheckArticleImagesTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -40,7 +40,7 @@
 		</classpath>
 	</taskdef>
 
-	<taskdef name="checkimgssite" classname="com.liferay.documentation.util.CheckImagesTaskDevSite">
+	<taskdef name="checkimgssite" classname="com.liferay.documentation.util.CheckImagesTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -73,7 +73,7 @@
 		</classpath>
 	</taskdef>
 
-	<taskdef name="numberimgssite" classname="com.liferay.documentation.util.NumberImagesTaskDevSite">
+	<taskdef name="numberimgssite" classname="com.liferay.documentation.util.NumberImagesTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -84,7 +84,7 @@
 		</classpath>
 	</taskdef>
 
-	<taskdef name="concatmarkdown" classname="com.liferay.documentation.util.ConcatMarkdown">
+	<taskdef name="concatmarkdown" classname="com.liferay.documentation.util.ConcatMarkdownTask">
 	  <classpath>
 	    <fileset dir="${project.dir}/lib" includes="*.jar" />
 
@@ -102,7 +102,7 @@
 	<target name="article-to-html" depends="prepare, check-article-images" description="Converts a single Markdown article to an HTML file.">
 		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
 		<java
-			classname="com.liferay.documentation.util.MarkdownToHtmlMain"
+			classname="com.liferay.documentation.util.MarkdownToHtml"
 			classpathref="project.classpath"
 			failonerror="true"
 			fork="true"
@@ -115,7 +115,7 @@
 	<target name="article-to-html-dxp" depends="prepare, check-article-images-dxp" description="Converts a single Markdown DXP article to an HTML file.">
 		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
 		<java
-			classname="com.liferay.documentation.util.MarkdownToHtmlMain"
+			classname="com.liferay.documentation.util.MarkdownToHtml"
 			classpathref="project.classpath"
 			failonerror="true"
 			fork="true"
@@ -127,7 +127,7 @@
 
 	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
 		<java
-			classname="com.liferay.documentation.util.CheckHeadersTask"
+			classname="com.liferay.documentation.util.CheckHeaders"
 			classpathref="project.classpath"
 			fork="true"
 			failonerror="true"
@@ -139,7 +139,7 @@
 
 	<target name="check-headers-dist" description="Check the headers of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp">
 		<java
-			classname="com.liferay.documentation.util.CheckHeadersTask"
+			classname="com.liferay.documentation.util.CheckHeaders"
 			classpathref="project.classpath"
 			fork="true"
 			failonerror="true"
@@ -151,7 +151,7 @@
 
 	<target name="check-headers-dxp" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
 		<java
-			classname="com.liferay.documentation.util.CheckHeadersTask"
+			classname="com.liferay.documentation.util.CheckHeaders"
 			classpathref="project.classpath"
 			fork="true"
 			failonerror="true"
@@ -238,7 +238,7 @@
 
     <target name="clean-images" description="Deletes images from ${doc.dir}/images and ${doc.dir}/images-dxp that are not referenced in any of the markdown files in any subdirectory of ${doc.dir}/articles and ${doc.dir}/articles-dxp">
 			<java
-				classname="com.liferay.documentation.util.CleanImagesSiteMain"
+				classname="com.liferay.documentation.util.CleanImages"
 				classpathref="project.classpath"
 				failonerror="true"
 				fork="true"
@@ -399,7 +399,7 @@
 	<target name="number-headers" description="Numbers the headers of Markdown articles found in ${doc.dir}/articles">
 		<property file="${project.dir}/release-site.properties" />
 		<java
-			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
+			classname="com.liferay.documentation.util.NumberHeaders"
 			classpathref="project.classpath"
 			failonerror="true"
 			fork="true"
@@ -412,7 +412,7 @@
 	<target name="number-headers-dist" description="Numbers the headers of Markdown articles.">
 		<property file="${project.dir}/release-site.properties" />
 		<java
-			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
+			classname="com.liferay.documentation.util.NumberHeaders"
 			classpathref="project.classpath"
 			failonerror="true"
 			fork="true"
@@ -425,7 +425,7 @@
 	<target name="number-headers-dxp" description="Numbers the headers of Markdown articles.">
 		<property file="${project.dir}/release-site.properties" />
 		<java
-			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
+			classname="com.liferay.documentation.util.NumberHeaders"
 			classpathref="project.classpath"
 			failonerror="true"
 			fork="true"
