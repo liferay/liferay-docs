@@ -58,7 +58,7 @@ public class CheckImagesTaskDevSite extends Task {
 		}
 		if (productType.equals("dist")) {
 			try {
-				ReplaceImagesPath.replaceImagePaths(docDir);
+				replaceImagePaths(docDir);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -379,6 +379,47 @@ public class CheckImagesTaskDevSite extends Task {
 		return imagePaths;
 	}
 
+	private void replaceImagePaths(File docDir) throws IOException {
+		File articleDir = new File(docDir.getAbsolutePath() + "/articles");
+		File[] articleDirFiles = articleDir.listFiles();
+		List<File> articles = new ArrayList<File>();
+		
+		Queue<File> q = new LinkedList<File>();
+		for (File f : articleDirFiles) {
+			q.add(f);
+		}
+	
+		while (!q.isEmpty()) {
+			File f = q.remove(); 
+		
+			if (f.isDirectory()) {
+				File[] files = f.listFiles();
+			
+				for (File file : files) {
+					q.add(file);
+				}
+			}
+			else {
+				if (f.getName().endsWith(".markdown")) {
+					articles.add(f);
+				}
+			}
+		}
+		
+		for (File article : articles) {
+			String articlePath = article.getAbsolutePath();
+			File markdownfile = new File(articlePath);
+
+			String source = FileUtils.readFileToString(markdownfile);
+			
+			String find = "../images-dxp/";
+			String replace = "../images/";
+			String imagePath = source.replaceAll(find, replace);
+			
+			FileUtils.writeStringToFile(markdownfile, imagePath);
+		}
+
+	}
 
 	private String _docdir;
 	private String _productType;

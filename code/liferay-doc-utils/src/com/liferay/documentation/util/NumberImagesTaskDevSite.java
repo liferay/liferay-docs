@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
@@ -69,8 +72,8 @@ String productType = _productType;
 				String articlePath = article.getAbsolutePath();
 
 				try {
-					ResetImagesDiscover.resetImages(articlePath);
-					NumberImagesDiscover.numberImages(articlePath);
+					resetImages(articlePath);
+					numberImages(articlePath);
 				}
 				catch (IOException ie) {
 					throw new BuildException(ie.getLocalizedMessage());
@@ -85,6 +88,81 @@ String productType = _productType;
 
 	public void setProductType(String productType) {
 		_productType = productType;
+	}
+
+	private void numberImages(String markdownFilePath) throws IOException {
+		File markdownfile = new File(markdownFilePath);
+
+		String source = FileUtils.readFileToString(markdownfile);
+		String find = "\\!\\[Figure [x|X]:";
+		int fignum = 1;
+		String replace = "\\!\\[Figure " + fignum + ":";
+
+		//
+		// Compiles the given regular expression into a pattern
+		//
+		Pattern pattern = Pattern.compile(find);
+
+		//
+		// Creates a matcher that will match the given input against the pattern
+		//
+		Matcher matcher = pattern.matcher(source);
+
+		//
+		// Replaces the first subsequence of the input sequence that matches the
+		// pattern with the given replacement string
+		//
+		String output = matcher.replaceFirst(replace);
+
+		//
+		// Loops through file replacing all remaining matching subsequences of
+		// the input sequence with the appropriate figure numbers
+		//
+		while (matcher.find()) {
+			matcher = pattern.matcher(output);
+			fignum++;
+			replace = "\\!\\[Figure " + fignum + ":";
+			output = matcher.replaceFirst(replace);
+		}
+
+		//
+		// Saves the updated file, replaces the original
+		//
+		FileUtils.writeStringToFile(markdownfile, output);
+	}
+
+	private void resetImages(String markdownFilePath) throws IOException {
+		// Linux example: "/home/$USER/workspace/01-example-chapter.markdown"
+		// Windows example: "E:\liferay-docs\discover\portal\articles\01-what-is-liferay\00-what-is-liferay-intro.markdown"
+		File markdownfile = new File(markdownFilePath); // example: "/home/$USER/workspace/01-example-chapter.markdown"
+
+		String source = FileUtils.readFileToString(markdownfile);
+
+		String find = "\\!\\[Figure " + "[0-9]:";
+		String replace = "\\!\\[Figure " + "x:";
+
+		Pattern pattern = Pattern.compile(find);
+		Matcher matcher = pattern.matcher(source);
+		String output = matcher.replaceAll(replace);
+
+		find = "\\!\\[Figure " + "[0-9][0-9]:";
+
+		pattern = Pattern.compile(find);
+		matcher = pattern.matcher(output);
+		output = matcher.replaceAll(replace);
+
+		//
+		// Saves the updated file, replaces the original
+		//
+		FileUtils.writeStringToFile(markdownfile, output);
+
+		/* This code is for saving the output to a new file so the original is not overwritten; useful for debugging
+
+		String markdownfileoutputpath = args[1];
+		File markdownfileoutput = new File(markdownfileoutputpath);
+		FileUtils.writeStringToFile(markdownfileoutput, output);
+
+		 */
 	}
 
 	private String _docDir;
