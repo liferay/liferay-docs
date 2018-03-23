@@ -7,8 +7,8 @@ case is shown below.
 
 The `image` attribute specifies 
 [Liferay UI icons](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/images) 
-to use (as defined in the Unstyled theme's `images/common` folder). An example 
-configuration is shown below:
+to use (as defined in the Unstyled theme's `images/common` folder). Here's an
+example configuration:
 
     <div class="col-md-3">
     	<liferay-ui:icon image="subscribe" />
@@ -18,10 +18,10 @@ configuration is shown below:
 
 ![Figure 1: Use the image attribute to use a theme icon.](../../../images/liferay-ui-taglib-icon-subscribe.png)
 
-The liferay UI taglib also exposes language flag icons. To use a language flag 
-icon, provide the `../language/` relative path before the name of the icon. 
-Below is an example snippet from the Web Content Search portlet that displays 
-the current language's flag along with a localized message:
+The Liferay UI taglib also exposes language flag icons. To use a language flag 
+icon, provide the `../language/` relative path before the icon's name. Below is
+an example snippet from the Web Content Search portlet that displays the
+current language's flag along with a localized message:
 
     <liferay-ui:icon
         image='<%= "../language/" + languageId %>'
@@ -60,7 +60,7 @@ to use:
 
 ![Figure 5: You can use Font Awesome icons in your app.](../../../images/liferay-ui-taglib-icon-css-class.png)
 
-The examples above use some of the icon's available attributes, see the 
+The examples above use some of the icon's available attributes. See the 
 [Icon taglibdocs](@platform-ref@/7.1-latest/taglibs/util-taglib/liferay-ui/icon.html) 
 for the full list. 
 

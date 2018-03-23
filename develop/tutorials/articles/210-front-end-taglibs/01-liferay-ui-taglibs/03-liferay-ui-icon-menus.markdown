@@ -1,12 +1,12 @@
 # Liferay UI Icon Menus [](id=liferay-ui-icon-menus)
 
-You can add a pop-up navigation menu to your app with the `liferay-ui:icon-menu` 
-tag. Icon menus let you display menu options when needed and store them away in 
-a collapsed menu when they're not. This keeps the UI clean and uncluttered. Just 
-as with an icon list, you nest 
-[icons](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icons) 
-for each navigation item. You can see an example of a icon menu in the actions 
-menu of a site in the My Sites portlet:
+You can add a pop-up navigation menu to your app with the `liferay-ui:icon-menu`
+tag. Icon menus display menu options when needed, storing them away in
+a collapsed menu when they're not. This keeps the UI clean and uncluttered. Just
+as with an icon list, you nest
+[icons](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icons) for each
+navigation item. You can see an example of a icon menu in a site's actions menu
+in the My Sites portlet:
 
 ![Figure 1: Setting up an icon menu is a piece of cake.](../../../images/liferay-ui-taglib-icon-menu.png)
 

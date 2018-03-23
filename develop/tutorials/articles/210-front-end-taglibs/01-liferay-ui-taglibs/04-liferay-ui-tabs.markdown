@@ -1,14 +1,11 @@
 # Liferay UI Tabs [](id=liferay-ui-tabs)
 
-Tabs let you create dividers in your app that organize content into individual 
-sections. Content can be written within the JSP, or included from another JSP if 
-you wish. This lets you pack your JSP full of content, without overwhelming your 
-users with it all at once. 
+Tabs create dividers that organize content into individual sections. Content can
+be embedded or included from another JSP. 
 
 To add tabs to your app, use the `<liferay-ui:tabs>` tag and specify each tab's 
-name as a comma-separated list for the `names` attribute. For example, if you 
-want to add three tabs named `tab1`, `tab2`, and `tab3`, you could add this code 
-to your JSP:
+name as a comma-separated list for the `names` attribute. For example, three
+tabs named `tab1`, `tab2`, and `tab3`, look like this in the JSP:
 
     <liferay-ui:tabs names="tab1,tab2,tab3">
 

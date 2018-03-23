@@ -5,23 +5,22 @@ an unobtrusive way. It renders as an iconic question mark that provides more
 information through a pop-up tooltip on mouse over. You can see an example of 
 this in the Control Panel:
 
-![Figure 1: Here's an example of how Liferay Portal uses the icon help tag.](../../../images/liferay-ui-taglib-tooltip.png)
+![Figure 1: Here's an example of the icon help tag.](../../../images/liferay-ui-taglib-tooltip.png)
 
 +$$$
 
 **Note:** If you have installed a custom theme you may also need to add the
-following imports to your `view.jsp` for the `liferay-ui:icon-help` tag to work
-properly:
+following imports to your `view.jsp` to make `liferay-ui:icon-help` tag work:
 
     <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme"%>
     <liferay-theme:defineObjects />
 
 $$$
 
-Add the `<liferay-ui:icon-help/>` tag next to the UI you wish to provide
-additional information for. Define the informational text with the required
-`message` attribute. Below is an example snippet for one of the
-Server Administration's clean up actions:
+Add the `<liferay-ui:icon-help/>` tag next to the UI that needs tooltip
+information. Define the informational text with the required `message`
+attribute. Below is an example snippet for one of the Server Administration's
+clean up actions:
 
     <h5>
         <liferay-ui:message key="clean-up-permissions" />
