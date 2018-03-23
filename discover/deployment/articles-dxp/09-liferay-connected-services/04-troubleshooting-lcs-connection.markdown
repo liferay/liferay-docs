@@ -61,6 +61,12 @@ inclined to just tell customers to restart their servers.
 
 ![Figure 1: A warning message is displayed to administrators if the server can't connect to LCS to validate the subscription.](../../images-dxp/lcs-grace-period.png)
 
+You should also ensure that you've enabled email notifications in LCS for server 
+disconnection events. To do this, you must create a notification rule that sends 
+an email whenever the server shuts down unexpectedly. The documentation on 
+[Managing Your Account](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-your-lcs-account) 
+explains how to do this. 
+
 LCS's grace period behavior has been implemented in several @product@ patches. 
 If you're not running these patches, your server's grace period may be 
 different. The following table lists each patch and how it changes the grace 
@@ -69,9 +75,9 @@ contains the preceding fix packs.
 
 | &nbsp;Fix Pack | &nbsp;Hotfix Built After | Before | After |
 | --------- | ------------------ | ------ | ----- |
-|   n/a     | 05 March 2018 | The grace period lasts 7 days. | The grace period lasts 30 days. |
-| DXP DE-33 | 17 Nov 2017 | The grace period is only invoked for lost network connections. | The grace period is invoked for failed subscription validation, if the server was previously registered. |
-| DXP DE-32 | 20 Oct 2017 | The grace period warning is displayed as soon as the LCS connection is lost. | The grace period warning is displayed only after the connection has been out for 1 hour. This prevents false alarms for transient network problems. |
+| Fix Pack 40 | 05 March 2018 | The grace period lasts 7 days. | The grace period lasts 30 days. |
+| Fix Pack 33 | 17 Nov 2017 | The grace period is only invoked for lost network connections. | The grace period is invoked for failed subscription validation, if the server was previously registered. |
+| Fix Pack 32 | 20 Oct 2017 | The grace period warning is displayed as soon as the LCS connection is lost. | The grace period warning is displayed only after the connection has been out for 1 hour. This prevents false alarms for transient network problems. |
 
 <!--
 
@@ -97,11 +103,13 @@ and
 After the expiration date, your servers may be placed in an additional grace 
 period, which will be communicated through the same support channels. If the 
 renewal isn't completed during this grace period, then the subscription becomes 
-inactive and the @product@ instance enters the 7-day grace period. As soon as 
+inactive and the @product@ instance enters the 30-day grace period. As soon as 
 the renewal is processed, the instance activates and any error or warning 
 messages disappear within 24 hours. Note that by using XML activation keys 
 (provided by Liferay Support upon request), you can continue to use your 
 @product@ instances even after a subscription has expired. 
+
+![Figure 2: LCS sends you a notification prior to the expiration of your subscription.](../../images-dxp/lcs-support-expiration.png)
 
 <!-- 
 
