@@ -55,15 +55,37 @@ public class CleanImages {
 					continue;
 				}
 
-				System.out.println(" " + mkdFile.getName());
+				//Useful for debugging:
+				//System.out.println(" " + mkdFile.getName());
 
 				LineNumberReader in = new LineNumberReader(new FileReader(
 						mkdFile));
 				String line = null;
+				String imageString = "../../images";
+				int imageClosingChar;
 
 				while ((line = in.readLine()) != null) {
-					if (line.contains("../../images")) {
-						imageNames.add(extractImageName(line, dirType));
+					if (line.contains(imageString)) {
+						
+						// Check each line for images; if more than one image on
+						// line, check each image
+						while (line.contains(imageString)) {
+
+							int imageIndex = line.indexOf(imageString);
+							
+							if (line.contains("<img src=")) {
+								imageClosingChar = line.indexOf("\"", imageIndex);
+							}
+							else {
+								imageClosingChar = line.indexOf(")", imageIndex);
+							}
+
+							String lineSubstring = line.substring(0, imageClosingChar);
+
+							imageNames.add(extractImageName(lineSubstring, dirType));
+
+							line = line.substring(lineSubstring.length());
+						}
 					}
 				}
 				in.close();
@@ -91,17 +113,21 @@ public class CleanImages {
 	private static String extractImageName(String line, String dirType) {
 
 		int imageBegIndex;
+
 		if (dirType.equals("")) {
+
+			// "../../images/" length
 			imageBegIndex = 13;
 		}
 		else {
+
+			// "../../images-dxp/" length
 			imageBegIndex = 17;
 		}
 
-		int imgClosingParen = line.indexOf(")", line.indexOf("../../images"));
-
 		String imageName = line.substring(
-				line.lastIndexOf("../../images") + imageBegIndex, imgClosingParen);
+				line.lastIndexOf("../../images") + imageBegIndex, line.length());
+		
 		return imageName;
 	}
 }
