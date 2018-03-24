@@ -1,16 +1,16 @@
 # Modularizing Plugins [](id=modularizing-plugins)
 
 As described in
-[Benefits of Liferay 7 for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers),
+[Benefits of Liferay 7 for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-1/benefits-of-liferay-7-for-liferay-6-developers),
 applications that comprise OSGi modules offer considerable advantages over
 monolithic applications. 
 
 The main benefit is that modular development practices structure code in ways
 that reduce maintenance costs. These practices involve, for example, defining
 contracts (such as APIs) more clearly, hiding internal classes, and handling
-dependencies more carefully. Related to this, module dependencies are explicitly
-listed within a module. Modules run only when all their dependencies are
-met--this can eliminate many obscure run time errors. 
+dependencies more carefully. Related to this, Java package dependencies are
+explicitly listed within a module. Modules run only when all their dependencies
+are met--this eliminates many obscure run time errors. 
 
 Splitting large applications into small independent modules lets you focus on
 smaller release cycles for those modules. Individual modules can be updated
@@ -31,20 +31,20 @@ application to modules.
 -   You’re using a complex web framework that is heavily tied to the Java EE
     programming model and the amount of effort necessary to make it work with
     OSGi is more than you feel is necessary or warranted. 
--   You want to minimize effort to get your application to working on
+-   You want to minimize effort to get your application working on
     @product-ver@. 
 
 **When to convert?**
 
 -   You have a very large application with many lines of code. If
-    you've got lots of developers making changes, separating the code into
+    you have lots of developers making changes, separating the code into
     modules can make it easier and faster to get releases out. 
 -   Your application has reusable parts that you want to consume outside of it.
-    For instance, you have business logic that you're reusing in
+    For instance, your application has business logic that you're reusing in
     different projects. Modules let you consume their services from other
     modules. 
 -   In general, you want to start reaping the benefits of modular development. 
 
-You can now make an informed decision on whether to stick with your upgraded
-traditional application as is or modularize it to leverage @product-ver@'s
-modularity features. 
+You can now make an informed decision on whether to stick with your
+[upgraded traditional application](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
+as is or modularize it to leverage @product-ver@'s modularity features. 
