@@ -7,21 +7,21 @@ depend on an entire application. And by splitting up large amounts of code into
 concise modules, teams can more easily focus on particular areas of the
 application. These are just a few reasons to modularize application plugins. 
 
-In this tutorial, you'll learn how to convert your traditional application into
-modules. Before getting started, it's important to reiterate that the module
-structure shown in this tutorial is just one of many ways for structuring your
-application's modules. It's also important to remember that applications come in
-all different shapes and sizes. There may be special actions that some
-applications require. This tutorial provides the general process for converting
-to modules using Liferay's module structure.
+In these tutorials, you'll learn how to convert your traditional application
+into modules. Before getting started, it's important to reiterate that the
+module structure shown in these tutorials is just one of many ways for
+structuring your application's modules. Also applications come in all different
+shapes and sizes. There may be special actions that some applications require.
+These tutorials provide the general process for converting to modules using
+Liferay's module structure.
 
 Here's what's involved:
 
-- Converting portlet classes and the UI
-- Converting Service Builder interfaces and implementations
-- Building and deploying modules
+- [Converting portlet classes and the UI](/develop/tutorials/-/knowledge_base/7-1/converting-your-applications-portlet-classes-and-ui)
+- [Converting Service Builder interfaces and implementations](/develop/tutorials/-/knowledge_base/7-1/converting-your-applications-service-builder-api-and-implementation)
+- [Building and deploying modules](/develop/tutorials/-/knowledge_base/7-1/building-your-module-jars-for-deployment)
 
-The instructions covered in this tutorial apply to both the commercial and open 
-source versions of Liferay.
+The instructions apply to portlets for both Liferay DXP Digital Enterprise and
+Liferay Portal CE.
 
 The first thing you'll do is create your application's web (client) module.
