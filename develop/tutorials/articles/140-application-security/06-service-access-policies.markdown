@@ -1,9 +1,11 @@
 # Service Access Policies [](id=service-access-policies)
 
-Service access policies provide web service security beyond authentication to
-remote services. Together with permissions, service access policies limit remote
-service access by remote client applications. This forms an additional security
-layer that protects user data from unauthorized access and modification.
+Service access policies provide web service security beyond user authentication
+to remote services. Together with
+[permissions](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions),
+service access policies limit remote service access by remote client
+applications. This forms an additional security layer that protects user data
+from unauthorized access and modification.
 
 To connect to a web service, remote clients must authenticate with credentials
 in that instance. This grants the remote client the permissions assigned to
