@@ -75,9 +75,9 @@ contains the preceding fix packs.
 
 | &nbsp;Fix Pack | &nbsp;Hotfix Built After | Before | After |
 | --------- | ------------------ | ------ | ----- |
-| Fix Pack 40 | 05 March 2018 | The grace period lasts 7 days. | The grace period lasts 30 days. |
-| Fix Pack 33 | 17 Nov 2017 | The grace period is only invoked for lost network connections. | The grace period is invoked for failed subscription validation, if the server was previously registered. |
-| Fix Pack 32 | 20 Oct 2017 | The grace period warning is displayed as soon as the LCS connection is lost. | The grace period warning is displayed only after the connection has been out for 1 hour. This prevents false alarms for transient network problems. |
+| 40 | 05 March 2018 | The grace period lasts 7 days. | The grace period lasts 30 days. |
+| 33 | 17 Nov 2017 | The grace period is only invoked for lost network connections. | The grace period is invoked for failed subscription validation, if the server was previously registered. |
+| 32 | 20 Oct 2017 | The grace period warning is displayed as soon as the LCS connection is lost. | The grace period warning is displayed only after the connection has been out for 1 hour. This prevents false alarms for transient network problems. |
 
 <!--
 
