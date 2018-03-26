@@ -5,31 +5,28 @@ do the following things:
 
 - Add resources, plugins, etc. to the editor:
     
-    com.liferay.frontend.editor.editorType.web#editorName#additionalResources
+    com.liferay.frontend.editor.[editorType].web#[editorName]#additionalResources
     
 - Gain access to the editor instance to listen to events, configure it, etc:
     
-    com.liferay.frontend.editor.editorType.web#editorName#onEditorCreate 
+    com.liferay.frontend.editor.[editorType].web#[editorName]#onEditorCreate 
 
-The following `editorType`s are available:
+The table below shows the `editorType`, variable, and `editorName`s that are 
+available for each editor:
 
-- alloyeditor
-- ckeditor
-- tinymce
+  editorType |  variable | editorName  |
+:---------: | :--------------: | :---------: |
+  alloyeditor | alloyEditor   | alloyeditor       |
+              |               | alloyeditor_bbcode |
+              |               | alloyeditor_creole |
+  ckeditor    | ckEditor      | ckeditor |
+              |               | ckeditor_bbcode |
+              |               | ckeditor_creole |
+  tinymce     | tinyMCEEditor | tinymce |
+              |               | tinymce_simple |
 
-The following `editorName`s are available:
-
-- alloyeditor
-- alloyeditor_bbcode
-- alloyeditor_creole
-- ckeditor
-- ckeditor_bbcode
-- ckeditor_creole
-- simple
-- tinymce
-- tinymce_simple
-
-The example below configures the dialog definition for the CKEditor.
+The example below alerts a warning to the user when they paste content into the 
+CKEditor.
 
 `*DynamicInclude` Java Class:
 
@@ -45,7 +42,7 @@ The example below configures the dialog definition for the CKEditor.
     		Bundle bundle = _bundleContext.getBundle();
 
     		URL entryURL = bundle.getEntry(
-    			"/META-INF/resources/ckeditor/extension/dialog_definition.js");
+    			"/META-INF/resources/ckeditor/extension/example_javascript.js");
 
     		StreamUtil.transfer(
     			entryURL.openStream(), response.getOutputStream(), false);
@@ -69,36 +66,16 @@ The example below configures the dialog definition for the CKEditor.
     }
     
 
-Injected JavaScript (`dialog_definition.js`):
+Example JavaScript:
 
-    CKEDITOR.on(
-    	'dialogDefinition',
-    	function(event) {
-    		if (event.editor === ckEditor) {
-    			var dialogDefinition = event.data.definition;
+    // ckEditor variable is already available in the execution context
+    ckEditor.on(
+        'paste',
+        function(event) {
+            event.stop();
 
-    			var onShow = dialogDefinition.onShow;
-
-    			dialogDefinition.onShow = function() {
-    				if (typeof onShow === 'function') {
-    					onShow.apply(this, arguments);
-    				}
-
-    				if (window.top != window.self) {
-    					var editorElement = this.getParentEditor().container;
-
-    					var documentPosition = editorElement.getDocumentPosition();
-
-    					var dialogSize = this.getSize();
-
-    					var x = documentPosition.x + ((editorElement.getSize('width', true) - dialogSize.width) / 2);
-    					var y = documentPosition.y + ((editorElement.getSize('height', true) - dialogSize.height) / 2);
-
-    					this.move(x, y, false);
-    				}
-    			};
-    		}
-    	}
+            alert('Please, do not paste code here!');
+        }
     );
 
 Now you know how to use the WYSIWYG editor dynamic includes.

@@ -12,26 +12,10 @@ existing ones:
 
     /html/common/themes/top_head.jsp#post
 
-For example, the `MentionsTopHeadDynamicInclude` injects the `mentions.css` 
-link into the top of the `top_head.jsp`:
+The example below injects a link into the top of the `top_head.jsp`:
 
     @Component(immediate = true, service = DynamicInclude.class)
-    public class MentionsTopHeadDynamicInclude extends BaseDynamicInclude {
-
-    	@Activate
-    	public void activate() {
-    		_postfix = _portal.getPathProxy();
-
-    		if (_postfix.isEmpty()) {
-    			_postfix = _servletContext.getContextPath();
-    		}
-    		else {
-    			_postfix = _postfix.concat(_servletContext.getContextPath());
-    		}
-
-    		_postfix = _postfix.concat(
-    			"/css/mentions.css\" rel=\"stylesheet\" type = \"text/css\" />");
-    	}
+    public class CssTopHeadDynamicInclude extends BaseDynamicInclude {
 
     	@Override
     	public void include(
@@ -44,20 +28,15 @@ link into the top of the `top_head.jsp`:
 
     		PrintWriter printWriter = response.getWriter();
 
-    		String content = "<link href=\"".concat(themeDisplay.getCDNBaseURL());
+    		String content = "<link href="..." />";
 
-    		printWriter.println(content.concat(_postfix));
+    		printWriter.println(content);
     	}
 
     	@Override
     	public void register(DynamicIncludeRegistry dynamicIncludeRegistry) {
     		dynamicIncludeRegistry.register("/html/common/themes/top_head.jsp#pre");
     	}
-
-    	@Reference
-    	private Portal _portal;
-
-    	private String _postfix;
 
     	@Reference(target = "(osgi.web.symbolicname=com.liferay.mentions.web)")
     	private ServletContext _servletContext;
