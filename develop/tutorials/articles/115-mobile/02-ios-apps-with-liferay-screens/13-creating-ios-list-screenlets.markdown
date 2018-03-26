@@ -8,7 +8,7 @@ and
 respectively. Screens also includes list Screenlets for displaying lists of 
 other Liferay entities like web content articles, images, and more. 
 [The Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
-lists all the Screenlets included with Liferay Screens. If there’s not a list 
+lists all the Screenlets included with Liferay Screens. If there's not a list 
 Screenlet for the entity you want to display in a list, you must create your own 
 list Screenlet. A list Screenlet can display any entity from a Liferay instance. 
 For example, you can create a list Screenlet that displays standard Liferay 
@@ -19,7 +19,7 @@ to create your own list Screenlet. This Screenlet displays a list of bookmarks
 from Liferay's Bookmarks portlet. You can find this Screenlet's complete code 
 [here in GitHub](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/BookmarkListScreenlet). 
 
-Note that because this tutorial focuses on creating a list Screenlet, it doesn’t 
+Note that because this tutorial focuses on creating a list Screenlet, it doesn't 
 explain general Screenlet concepts and components. Before beginning, you should 
 therefore read the following tutorials: 
 
@@ -46,7 +46,7 @@ First though, you should understand how pagination works with list Screenlets.
 To ensure that users can scroll smoothly through large lists of items, list 
 Screenlets support 
 [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination). 
-Support for this is built into the list Screenlet framework. You’ll see this as 
+Support for this is built into the list Screenlet framework. You'll see this as 
 you construct your list Screenlet. 
 
 Now you're ready to begin! 
@@ -161,7 +161,7 @@ initializer:
 
 - `startRow`: The number representing the page's first row. 
 - `endRow`: The number representing the page's last row. 
-- `computeRowCount`: Whether to call the Connector’s `doAddRowCountServiceCall` 
+- `computeRowCount`: Whether to call the Connector's `doAddRowCountServiceCall` 
   method (you'll learn about this method shortly). 
 
 For example, Bookmark List Screenlet must retrieve bookmarks from a Bookmarks 
@@ -274,7 +274,7 @@ following properties, which it passes to the superclass initializer:
 - `screenlet`: A `BaseListScreenlet` reference. This ensures the Interactor 
   always has a Screenlet reference. 
 - `page`: The page number to retrieve. 
-- `computeRowCount`: Whether to call the Connector’s `doAddRowCountServiceCall` 
+- `computeRowCount`: Whether to call the Connector's `doAddRowCountServiceCall` 
   method. 
 
 For example, Bookmark List Screenlet's Interactor class contains the same 
@@ -405,7 +405,7 @@ Interactor. If your Screenlet supports offline mode, you should also use
 `offlinePolicy` to pass a `CacheStrategyType` object to the Interactor. For 
 example, the `createPageLoadInteractor` method in `BookmarkListScreenlet` 
 creates and returns a `BookmarkListPageLoadInteractor` instance. This method 
-also sets the Interactor’s `cacheStrategy` property to a `CacheStrategyType` 
+also sets the Interactor's `cacheStrategy` property to a `CacheStrategyType` 
 object created with `offlinePolicy`: 
 
     override public func createPageLoadInteractor(
@@ -436,7 +436,7 @@ in `BookmarkListScreenlet` casts the `delegate` property to
         return delegate as? BookmarkListScreenletDelegate
     }
 
-Next, override the `BaseListScreenlet` methods that handle the Screenlet’s 
+Next, override the `BaseListScreenlet` methods that handle the Screenlet's 
 events. Because these events correspond to the events your delegate methods 
 handle, you'll call your delegate methods in these `BaseListScreenlet` methods: 
 

@@ -260,11 +260,15 @@ that's a skill you can depend on!
 
 ## Related Topics [](id=related-topics)
 
+[Importing Packages](/develop/tutorials/-/knowledge_base/7-0/importing-packages)
+
 [Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 
 [Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules)
 
 [Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module)
+
+[Third Party Packages Portal Exports](/develop/reference/-/knowledge_base/7-0/third-party-packages-portal-exports)
 
 [Classes Moved from portal-service.jar](/develop/reference/-/knowledge_base/7-0/classes-moved-from-portal-service-jar)
 

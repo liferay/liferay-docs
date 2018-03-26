@@ -229,19 +229,8 @@ nodes.
 In @product-ver@, the `portal-dependency-jars` property is deprecated and
 behaves differently from previous versions. Because importing and exporting Java
 packages has replaced wholesale use of JARs, modules and WABs can import
-packages without concerning themselves with JARs. This means that @product@
-can't make available to plugins the same Java classes it did in the past. 
-
-These files list the packages @product-ver@ exports:
-
--   `modules/core/portal-bootstrap/system.packages.extra.bnd` file in the
-    [GitHub repository](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/core/portal-bootstrap/system.packages.extra.bnd).
-    It lists exported packages on separate lines, making them easy to read.
--   `META-INF/system.packages.extra.mf` file in
-    `[LIFERAY_HOME]/osgi/core/com.liferay.portal.bootstrap.jar`. The file is
-    available in @product@ bundles. It lists exported packages in a paragraph
-    wrapped at 70 columns--they're harder to read here than in the
-    `system.packages.extra.bnd` file. 
+packages without concerning themselves with JARs.
+[@product@ exports many third party packages for plugins can use](/develop/reference/-/knowledge_base/7-0/third-party-packages-portal-exports). 
 
 If you're still using the `portal-dependency-jars` property, you may run into
 one of the scenarios below. Follow the instructions below the scenario to fix
@@ -387,6 +376,10 @@ Way to go! You've fixed class imports and resolved dependencies on all the
 modules and tag libraries your plugin uses. 
 
 ## Related Topics [](id=related-topics)
+
+[Importing Packages](/develop/tutorials/-/knowledge_base/7-0/importing-packages)
+
+[Exporting Packages](/develop/tutorials/-/knowledge_base/7-0/exporting-packages)
 
 [Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
 

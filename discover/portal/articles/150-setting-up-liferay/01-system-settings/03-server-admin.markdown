@@ -123,8 +123,8 @@ for debugging purposes or to check the currently running configuration.
 The portal properties tab shows an exhaustive list of the current portal
 property values, so you don't have to shut down @product@ or open the properties
 file directly. Portal properties are customizable; you can peruse the full list
-of available properties at
-[https://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html](https://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html).
+of available
+[portal properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html).
 
 ## CAPTCHA [](id=captcha)
 

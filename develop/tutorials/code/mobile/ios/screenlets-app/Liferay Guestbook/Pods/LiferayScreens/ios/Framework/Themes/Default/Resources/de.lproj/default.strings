@@ -1,0 +1,33 @@
+"default-auth-method-email"="E-Mail Addresse";
+"default-auth-method-screenname"="Anzeigename";
+"default-auth-method-userid"="Nutzer ID";
+
+"default-signin-button"="Anmelden";
+"default-signup-button"="Konto erstellen";
+"default-signup-loading-message"="Anmelden...\nWarte ein paar Sekunden...";
+"default-signup-saving-message"="Sending...\nWarte ein paar Sekunden...";
+"default-signup-loading-error"="Anmeldefehler.";
+"default-signup-saving-error"="Error sending data.";
+
+"default-save-button"="Sparen";
+"default-authorize-button"="Ermächtigen";
+
+"default-forgotpassword-button"="Passwort vergessen";
+
+"default-password-placeholder"="Passwort";
+"default-first-name-placeholder"="Vorname";
+"default-last-name-placeholder"="Nachame";
+
+"default-ddlform-upload-picker-take-new"="Neues Photo oder Video wählen...";
+"default-ddlform-upload-picker-select-photo"="Wähle vorhandenes Photo...";
+"default-ddlform-upload-picker-select-video"="Wähle vorhandenes Video...";
+"default-ddlform-upload-picker-cancel"="Abbrechen";
+"default-ddlform-submit-button"="EINREICHEN";
+"default-ddlform-loading-message"="Anmelden...\nWarte ein paar Sekunden...";
+"default-ddlform-loading-error"="Error loading the form";
+"default-ddlform-loading-record-message"="Anmelden...\nWarte ein paar Sekunden...";
+"default-ddlform-loading-record-error"="Error loading the data";
+"default-ddlform-submitting-message"="Formular einreichen...\nWarte ein paar Sekunden...";
+"default-ddlform-submitting-error"="Fehler beim Formular einreichen";
+"default-ddlform-submitted"="Formular eingereicht!";
+"default-ddlform-uploading-error"="Error uploading data";

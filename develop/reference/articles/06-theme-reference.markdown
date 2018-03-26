@@ -41,6 +41,7 @@ reference, and is generated when the theme is compiled.
             - `aui/`
             - [`aui.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#aui-scss)
             - `base/`
+            - [`font-awesome.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#font-awesome-scss)
             - `layout/`
             - [`main.scss`](/develop/reference/-/knowledge_base/7-0/theme-reference-guide#main-scss)
             - `navigation/`
@@ -105,9 +106,9 @@ variables you define in `_aui_variables.scss`.
 
 ### _aui_variables.scss [](id=auivariables-scss)
 
-Contains the Font Awesome icon imports for Liferay. Also, used to store custom
-Sass variables. This file get's injected into the Bootstrap/Lexicon build, so 
-you can overwrite variables and change how those libraries are compiled.
+Used to store custom Sass variables. This file get's injected into the 
+Bootstrap/Lexicon build, so you can overwrite variables and change how those 
+libraries are compiled.
 
 ### _base.scss [](id=base-scss)
 
@@ -176,6 +177,10 @@ Atlas, you can do so by adding one of the following imports:
 or
 
     @import "aui/lexicon/atlas"; 
+    
+### font-awesome.scss [](id=font-awesome-scss)
+
+Contains the Font Awesome icon imports for Liferay.
 
 ### main.scss [](id=main-scss)
 
@@ -236,7 +241,7 @@ Used for custom JavaScript.
 
 ### liferay-look-and-feel.xml [](id=liferay-look-and-feel-xml)
 
-Contains basic information for the theme. If your theme has [theme settings](/develop/learning-paths/themes/-/knowledge_base/6-2/making-configurable-theme-settings)
+Contains basic information for the theme. If your theme has [theme settings](/develop/tutorials/-/knowledge_base/6-2/making-configurable-theme-settings)
 , they are defined in this file. For a full explanation of this file please see
 the [Definitions docs](@platform-ref@/7.0-latest/definitions/liferay-look-and-feel_7_0_0.dtd.html).
 

@@ -4,42 +4,47 @@
 internationalization. They're fully customizable, too. This tutorial
 demonstrates this in the following topics:
 
--   [Modifying Liferay's Language Keys](#modifying-liferays-language-keys) 
+-   [Overriding Global Language Keys](#modifying-liferays-language-keys) 
 -   [Overriding a Module's Language Keys](#overriding-a-modules-language-keys)
 
-## Modifying Liferay's Language Keys [](id=modifying-liferays-language-keys)
+## Modifying Global Language Keys [](id=modifying-liferays-language-keys)
 
-Using language files with keys gives you the ultimate flexibility in
-[translating your application's user interface messages](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application). But you can also modify
-the language keys used by Liferay's core itself. This lets you change not only
-your own application, but any messages in Liferay.
+Language files contain 
+[translations of your application's user interface
+messages](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application).
+But you can also override the default language keys globally and in other
+applications (including your own). Here are the steps for overriding 
+language keys:
 
-    publish=Publish
-
-![Figure 1: Messages displayed in Liferay's User Interface can be customized.](../../images/standard-publish.png)
+1.  [Determine the language keys to override](#determine-the-language-keys-to-override)
+2.  [Override the keys in a new language properties file](#override-the-keys-in-a-new-language-properties-file)
+3.  [Create a Resource Bundle service component](#create-a-resource-bundle-service-component)
 
 +$$$
 
-**Note:** Much of the functionality and many of the applications in Liferay are now
-separated out into their own modules. You might need to modify the keys included
-in one of these modules. The process is different than the one described here,
-and is described later in [Overriding a Module's Language Keys](#overriding-a-modules-language-keys).
+**Note:** Many applications that were once part of Liferay Portal 6.2 are now
+modularized. Their language keys might have been moved out of Liferay's language
+properties files and into one of the application modules. The process for
+[overriding a module's language keys](#overriding-a-modules-language-keys) is
+different from the process for overriding global language keys. 
 
 $$$
 
-So how do you find which keys are included in Liferay's core? You can access the
-language properties from Liferay's source code or your Liferay bundle.
+## Determine the language keys to override [](id=determine-the-language-keys-to-override)
 
--  From Liferay's source:
+So how do you find global language keys? They're in the `Language[xx_XX].properties`
+files in the source code or your @product@ bundle.
 
-    liferay-portal/portal-impl/src/content/Language.properties
+-   From the source:
 
--  From a Liferay bundle:
+    `/portal-impl/src/content/Language[_xx_XX].properties`
 
-    [Liferay Home]/tomcat-[version]/webapps/ROOT/WEB-INF/lib/portal-impl.jar
+-   From a bundle:
 
-In any of the language properties files you'll see properties you can override,
-like the `Language settings` properties:
+    `portal-impl.jar`
+
+All language properties files contain properties you can override, like the
+language settings properties:
 
     ##
     ## Language settings
@@ -52,7 +57,8 @@ like the `Language settings` properties:
     lang.user.name.suffix.values=II,III,IV,Jr,Phd,Sr
     ...
 
-You'll also see simple keys you can override to update messages in Liferay.
+There are also many simple keys you can override to update default messages and
+labels.
 
     ##
     ## Category titles
@@ -64,62 +70,118 @@ You'll also see simple keys you can override to update messages in Liferay.
     category.cms=Content Management
     ...
 
-As with most development tasks in Liferay, you'll deploy a module into Liferay's
-OSGi runtime to override the keys you want.
+For example, Figure 1 shows a button that uses Liferay's `publish` default
+language key.
+    
+    `publish=Publish`
+ 
+![Figure 1: Messages displayed in Liferay's user interface can be customized.](../../images/standard-publish.png)
 
-### Creating a Resource Bundle [](id=creating-a-resource-bundle)
+Next, you'll learn how to override this key. 
 
-In your module, create a class that extends `java.util.ResourceBundle` and
-register it as an OSGi service with the property `language.id` set to the
-locale you'd like to override. Specify that you're providing an implementation
-of `ResourceBundle`.
+## Override the keys in a new language properties file [](id=override-the-keys-in-a-new-language-properties-file)
+
+Once you know the keys to override, create a language properties file for the
+locale you want (or the default `Language.properties` file) in your module's
+`src/main/resources/content` folder. In your file, define the keys your way. For
+example, you could override the `publish` key.
+
+    publish=Publish Override
+
+To enable your change, you must create a resource bundle service component to
+reference your language file. 
+
+### Create a Resource Bundle service component [](id=create-a-resource-bundle-service-component)
+
+In your module, create a class that extends `java.util.ResourceBundle` for the
+locale you're overriding. Here's an example resource bundle class for the
+`en_US` locale:
+
+    @Component(
+        property = { "language.id=en_US" }, 
+        service = ResourceBundle.class
+    )
+    public class MyEnUsResourceBundle extends ResourceBundle {
+
+        @Override
+        protected Object handleGetObject(String key) {
+            return _resourceBundle.getObject(key);
+        }
+
+        @Override
+        public Enumeration<String> getKeys() {
+            return _resourceBundle.getKeys();
+        }
+
+        private final ResourceBundle _resourceBundle = ResourceBundle.getBundle(
+            "content.Language_en_US", UTF8Control.INSTANCE);
+
+    }
+
+The class's `_resourceBundle` field is assigned a `ResourceBundle`. The call to
+`ResourceBundle.getBundle` needs two parameters. The `content.Language_en_US`
+parameter is the language file's qualified name with respect to the module's
+`src/main/resources` folder. The second parameter is a `control` that sets the
+language syntax of the resource bundle. To use language syntax identical to
+Liferay's syntax, import Liferay's
+`com.liferay.portal.kernel.language.UTF8Control` class and set the second
+parameter to `UTF8Control.INSTANCE`.
+
+The class's `@Component` annotation declares it an OSGi `ResourceBundle` service
+component. It's `language.id` property designates it for the `en_US` locale. 
 
     @Component(
         property = { "language.id=en_US" }, 
         service = ResourceBundle.class
     )
 
-In the class, override two methods:
+The class overrides these methods:
 
--  **`handleGetObject`:** return the `Object` for a given key
+-   **`handleGetObject`:** Looks up the key in the module's resource bundle 
+    (which is based on the module's language properties file) and returns the
+    key's value as an `Object`. 
 
--  **`getKeys`:** return an `Enumeration` of the keys in the resource bundle
+-   **`getKeys`:** Returns an `Enumeration` of the resource bundle's keys. 
 
-        public class EnUSResourceBundle extends ResourceBundle {
+Your resource bundle service component redirects the default language keys to
+your module's language key overrides. 
 
-            @Override
-            protected Object handleGetObject(String key) {
-                return _resourceBundle.getObject(key);
-            }
++$$$
 
-            @Override
-            public Enumeration<String> getKeys() {
-                return _resourceBundle.getKeys();
-            }
+**Note**: Global language key overrides for multiple locales require a separate
+module for each locale. Each module's `ResourceBundle` extension class (like the
+`MyEnUsResourceBundle` class above) must specify its locale in the `language.id`
+component property definition and in the language file qualified name parameter.
+For example, here is what they look like for the Spanish locale.
 
-            private final ResourceBundle _resourceBundle = ResourceBundle.getBundle(
-                "content.Language", UTF8Control.INSTANCE);
+Component definition:
 
-        }
+    @Component(
+        property = { "language.id=es_ES" }, 
+        service = ResourceBundle.class
+    )
 
-The call to `ResourceBundle.getBundle` needs two parameters. The
-`content.Language` parameter is meant to point to the language file (so it
-answers the question, "what resource bundle?"), and the second parameter is a
-`control` that sets the language syntax of the resource bundle. To use language
-syntax identical to Liferay's syntax, import Liferay's
-`com.liferay.portal.kernel.language.UTF8Control` and set the parameter to
-`UTF8Control.INSTANCE`.
+Resource bundle assignment:
 
-### Creating a Language Properties File [](id=creating-a-language-properties-file)
+    private final ResourceBundle _resourceBundle = ResourceBundle.getBundle(
+        "content.Language_es_ES", UTF8Control.INSTANCE);
 
-Next just provide a `Language.properties` file. Put it in your module's
-`src/content` folder, and override any keys and values you'd like.
+$$$
 
-    publish=Publish Override
+**Important**: If your module
+[uses language keys from another module](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application#using-a-language-module)
+and
+[overrides any of that other module's keys](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application#using-other-resource-bundles-in-addition-to-your-own),
+make sure to use OSGi headers to specify the capabilities your module requires
+and provides. This lets you prioritize resource bundles from the modules. 
 
-![Figure 2: To override core language keys, a simple module with a component and a properties file is created for each locale.](../../images/localized-publish.png)
+To see your Liferay language key overrides in action,
+[deploy your module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
+and visit the portlets and pages that use the keys. 
 
-That's all there is to overriding Liferay's core language keys.
+![Figure 2: This button uses the overridden `publish` key.](../../images/localized-publish.png)
+
+That's all there is to overriding global language keys.
 
 ## Overriding a Module's Language Keys [](id=overriding-a-modules-language-keys)
 
@@ -127,20 +189,20 @@ What do you do if the language keys you want to modify are in one of Liferay's
 applications or another module whose source code you don't control? Since module
 language keys are in the respective module, the process for overriding a
 module's language keys is different from
-[the process of overriding Liferay's core language properties](#modifying-liferays-language-keys). 
+[the process of overriding global language keys](#modifying-liferays-language-keys). 
 
 Here is the process:
 
 1.  [Find the module and its metadata and language keys](#find-the-module-and-its-metadata-and-language-keys)
 2.  [Write your custom language key values](#providing-language-keys) 
-3.  [Implement a resource bundle loader](#implementing-a-resource-bundle-loader)
+3.  [Implement a Resource Bundle Loader](#implementing-a-resource-bundle-loader)
 
 ### Find the module and its metadata and language keys [](id=find-the-module-and-its-metadata-and-language-keys)
 
 In
 [Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell),
 list the bundles and grep for keyword(s) that match the portlet's display name.
-Liferay portlet language keys are in the portlet's web module (bundle). When you
+Language keys are in the portlet's web module (bundle). When you
 find the bundle, note its ID number.
 
 To find the Blogs portlet, for example, your Gogo commands and output might look
@@ -173,11 +235,11 @@ List the bundle's headers by passing its ID to the `headers` command.
     Web-ContextPath = /blogs-web
     g! 
 
-Note the `Bundle-SymbolicName`, `Bundle-Version`, and `Web-ContextPath`. The `Web-ContextPath`
-value, following the `/`, is the servlet context name.
+Note the `Bundle-SymbolicName`, `Bundle-Version`, and `Web-ContextPath`. The
+`Web-ContextPath` value, following the `/`, is the servlet context name.
 
 **Important**: Record the servlet context name, bundle symbolic name and
-version, as you'll use it to create the resource bundle loader later in the
+version, as you'll use them to create the resource bundle loader later in the
 process.
 
 For example, here are those values for Liferay Blogs Web module:
@@ -191,23 +253,22 @@ follows this module JAR file naming convention:
 
     [bundle symbolic name]-[version].jar
 
-For example, the Liferay Blogs Web version 1.0.6 module would be in
+For example, the Blogs Web version 1.0.6 module is in
 `com.liferay.blogs.web-1.0.6.jar`.
 
 Here's where to find the module JAR:
 
-- Liferay's
-[Nexus repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/)
-- `[Liferay Home]/osgi/modules`
--  Embedded in an application's or application suite's LPKG file in  `[Liferay
-Home]/osgi/marketplace`.
+-   Liferay's [Nexus repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/)
+-  `[Liferay Home]/osgi/modules`
+-   Embedded in an application's or application suite's LPKG file in `[Liferay
+    Home]/osgi/marketplace`.
 
-The language property files are typically in the module's
+The language property files are in the module's
 `src/main/resources/content` folder. Identify the language keys you want to
 override in the `Language[_xx].properties` files.
 
-Checkpoint: You have the required information for overriding the module's
-language keys:
+Checkpoint: Make sure you have the required information for overriding the
+module's language keys:
 
 -   Language keys
 -   Bundle symbolic name
@@ -217,27 +278,27 @@ Next you'll write new values for the language keys.
 
 ### Write custom language key values [](id=providing-language-keys)
 
-Create a new module to hold your custom language keys and a resource bundle
-loader. 
+Create a new module to hold a resource bundle loader and your custom language
+keys. 
 
 In your module's `src/main/resources/content` folder, create
 [language properties files](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application#what-are-language-keys)
 for each locale whose keys you want to override. In each language properties
-file, assign your custom values to the respective language keys. 
+file, specify your language key overrides. 
 
 Next you'll create a resource bundle loader component to apply the language keys
 to the target module. 
 
 ### Implement a resource bundle loader [](id=implementing-a-resource-bundle-loader)
 
-In this step, you'll create a resource bundle loader component that aggregates
-your new resource bundle (i.e., your new language key values) with the target
-module's existing resource bundle. You'll aggregate them in such a way to give
-preference to your new language key values. 
+In this step, you'll create a resource bundle loader component that combines
+your new resource bundle containing the new language key values with the target
+module's existing resource bundle. The new language key values are combined so
+they override the old ones. 
 
-For example, the following resource bundle loader component aggregates the
-current bundle's resource bundle with the `com.liferay.blogs.web` module's
-resource bundle and applies them to the `com.liferay.blogs.web` module. 
+For example, the following resource bundle loader component combines the current
+bundle's language keys with the `com.liferay.blogs.web` module's language keys
+and applies them to the `com.liferay.blogs.web` module. 
 
     @Component(
     	immediate = true,
@@ -247,7 +308,12 @@ resource bundle and applies them to the `com.liferay.blogs.web` module.
     		"servlet.context.name=blogs-web"
     	}
     )
-    public class ResourceBundleLoaderComponent implements ResourceBundleLoader {
+    public class MyBlogsResourceBundleLoader implements ResourceBundleLoader {
+
+    	@Override
+    	public ResourceBundle loadResourceBundle(Locale locale) {
+    		return _resourceBundleLoader.loadResourceBundle(locale);
+    	}
 
     	@Override
     	public ResourceBundle loadResourceBundle(String languageId) {
@@ -255,7 +321,7 @@ resource bundle and applies them to the `com.liferay.blogs.web` module.
     	}
 
     	@Reference(
-    		target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.blade.samples.hook.resourcebundle.ResourceBundleLoaderComponent)))"
+    		target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
     	)
     	public void setResourceBundleLoader(
     		ResourceBundleLoader resourceBundleLoader) {
@@ -264,7 +330,7 @@ resource bundle and applies them to the `com.liferay.blogs.web` module.
     			new CacheResourceBundleLoader(
     				new ClassResourceBundleLoader(
     					"content.Language",
-    					ResourceBundleLoaderComponent.class.getClassLoader())),
+    					MyBlogsResourceBundleLoader.class.getClassLoader())),
     			resourceBundleLoader);
     	}
 
@@ -305,19 +371,31 @@ target module's resource bundle loader together.
 
     private AggregateResourceBundleLoader _resourceBundleLoader;
 
-The `loadResourceBundle` method returns a resource bundle based on the locale's
-language ID. 
+The `loadResourceBundle` methods return a resource bundle based on the locale and language. 
+
+    @Override
+    public ResourceBundle loadResourceBundle(Locale locale) {
+        return _resourceBundleLoader.loadResourceBundle(locale);
+    }
 
     @Override
     public ResourceBundle loadResourceBundle(String languageId) {
        return _resourceBundleLoader.loadResourceBundle(languageId);
     }
 
++$$$
+
+**Note**: As of Liferay DXP Digital Experience Fix Pack de-33 and Liferay Portal
+CE GA6, `ResourceBundleLoader` method `loadResourceBundle(String)` is deprecated
+and replaced by new method `loadResourceBundle(Locale)`.
+
+$$$
+
 The setter method `setResourceBundleLoader` assigns an aggregate of this class's
 resource bundle loader and the target resource bundle loader to the
 `_resourceBundleLoader` field. 
         
-    @Reference(target = "(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.blade.samples.hook.resourcebundle.ResourceBundleLoaderComponent)))"
+    @Reference(target = "(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
     )
     public void setResourceBundleLoader(
         ResourceBundleLoader resourceBundleLoader) {
@@ -326,25 +404,26 @@ resource bundle loader and the target resource bundle loader to the
             new CacheResourceBundleLoader(
                 new ClassResourceBundleLoader(
                     "content.Language",
-                    ResourceBundleLoaderComponent.class.getClassLoader())),
+                    MyBlogsResourceBundleLoader.class.getClassLoader())),
             resourceBundleLoader);
     }
 
 The `@Reference` annotation tells @product@'s OSGi framework to pass the target
-module's resource bundler loader as the parameter. The target matches a resource
-bundle loader component whose bundle symbolic name is `com.liferay.blogs.web`
-and whose component name isn't
-`com.liferay.blade.samples.hook.resourcebundle.ResourceBundleLoaderComponent`.
+module's resource bundle loader as the parameter. Specifying the target module
+is tricky because the target module and the resource bundle loader component
+have the same bundle symbolic name property
+(`bundle.symbolic.name=com.liferay.blogs.web`). To prevent this resource bundle
+loader component from being targeted, specify an `!` (not) character followed by
+this resource bundle loader's `component.name` property. 
 
 The method creates a resource bundle loader that aggregates this module's
-resource bundle loader and the target module's resource bundle loader. The
-resource bundle of the first loader is prioritized ahead of resource bundles of
-those that follow it. Therefore, this class's resource bundle loader, and its
-resource bundle (i.e., language keys), take precedence.
+resource bundle loader and the target module's resource bundle loader. The first
+loader's resource bundle is prioritized ahead of the resource bundles that
+follow it. Therefore, this class's resource bundle loader and its resource
+bundle (i.e., language keys), take precedence.
 
-If you use the example `setResourceBundleLoader` method in your resource bundle
-loader, make sure to replace `ResourceBundleLoaderComponent` with your resource
-bundle loader's class name. 
+If you use the example `setResourceBundleLoader` method, make sure to replace
+`MyBlogsResourceBundleLoader` with your resource bundle loader's class name. 
 
 Resource bundle loader components have these class imports.
 
@@ -365,12 +444,23 @@ to provide the classes imported above.
  Group | Artifact |
  :------ | :------ |
 `com.liferay.portal` | `com.liferay.portal.kernel` |
- `org.osgi` | `org.osgi.service.component.annotations` |
+ `org.osgi` | `org.osgi.service.component.annotations` | 
+
+ **Important**: If your module
+ [uses language keys from another module](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application#using-a-language-module)
+ and
+ [overrides any of that other module's keys](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application#using-other-resource-bundles-in-addition-to-your-own),
+ make sure to use OSGi headers to specify the capabilities your module requires
+ and provides. This lets you prioritize resource bundles from the modules. 
+
+ To see your language key overrides in action,
+ [deploy your module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
+ and visit a portlet that uses the module's language keys. 
 
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
-core. You can find out how to override those language keys in
-[Modifying Liferay's Language Keys](#modifying-liferays-language-keys).
+core. You can
+[override global language keys](#modifying-liferays-language-keys) too.
 
 ## Related Topics [](id=related-topics)
 

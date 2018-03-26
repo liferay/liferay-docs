@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>server</key>
+	<string>http://localhost:8080</string>
+	<key>version</key>
+	<integer>70</integer>
+	<key>companyId</key>
+	<real>10154</real>
+	<key>groupId</key>
+	<real>10181</real>
+</dict>
+</plist>

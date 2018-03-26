@@ -2,18 +2,18 @@
 
 In most list Screenlets, including those that come with Liferay Screens, the 
 Default Theme uses the default cells in 
-[iOS’s `UITableView`](https://developer.apple.com/reference/uikit/uitableview) 
+[iOS's `UITableView`](https://developer.apple.com/reference/uikit/uitableview) 
 to show the list. 
 [The Theme creation steps](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#creating-the-view) 
 in the list Screenlet creation tutorial also instruct you to use these cells. 
 You can, however, use custom cells to tailor the list to your needs. To do this, 
 you must 
 [create an extended Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
-from a Theme that uses `UITableView`’s default cells. This usually means 
-extending a list Screenlet’s Default theme. This tutorial shows you how to 
+from a Theme that uses `UITableView`'s default cells. This usually means 
+extending a list Screenlet's Default theme. This tutorial shows you how to 
 create such an extended Theme that contains a custom cell for your list 
 Screenlet. As an example, this tutorial uses code from the sample Bookmark List 
-Screenlet’s Custom Theme. You can refer to this Theme’s finished code 
+Screenlet's Custom Theme. You can refer to this Theme's finished code 
 [here in GitHub](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/BookmarkListScreenlet/Themes/TableView) 
 at any time. 
 
@@ -22,9 +22,9 @@ basic steps as the
 [Theme creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes) 
 for creating an extended Theme. For example, you must still 
 [determine where to create your Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#determining-your-themes-location), 
-and create your Theme’s XIB and View class. 
+and create your Theme's XIB and View class. 
 
-First, you’ll create your Theme’s custom cell. 
+First, you'll create your Theme's custom cell. 
 
 ## Creating Your Custom Cell [](id=creating-your-custom-cell)
 
@@ -33,8 +33,8 @@ Once you
 you can get started. First, create your custom cell's XIB file and its companion 
 class. Name them according to 
 [the naming conventions in the best practices tutorial](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices#naming-conventions). 
-After defining your cell’s UI in the XIB, create as many outlets and actions as 
-you need in its companion class. Also be sure to assign this class as the XIB’s 
+After defining your cell's UI in the XIB, create as many outlets and actions as 
+you need in its companion class. Also be sure to assign this class as the XIB's 
 custom class in Interface Builder. Note that if you want to use different 
 layouts for different rows, you must create an XIB file and companion class for 
 each. 
@@ -43,7 +43,7 @@ For example, the following screenshot shows the XIB file
 `BookmarkCell_default-custom.xib` for Bookmark List Screenlet's custom cell. 
 This cell must show a bookmark's name and URL, so it contains two labels. 
 
-![Figure 1: The XIB file for Bookmark List Screenlet’s custom cell.](../../../images/screens-ios-xcode-custom-cell.png)
+![Figure 1: The XIB file for Bookmark List Screenlet's custom cell.](../../../images/screens-ios-xcode-custom-cell.png)
 
 This XIB's custom class, `BookmarkCell_default_custom`, contains an outlet for 
 each label. The `bookmark` variable also contains a `didSet` observer that sets 
@@ -65,25 +65,25 @@ the bookmark's name and URL to the respective label:
 
     }
 
-Great! Now you have your custom cell. Next, you’ll create the rest of your 
+Great! Now you have your custom cell. Next, you'll create the rest of your 
 Theme. 
 
-## Creating Your Theme’s XIB and View Class [](id=creating-your-themes-xib-and-view-class)
+## Creating Your Theme's XIB and View Class [](id=creating-your-themes-xib-and-view-class)
 
-Now you're ready to create your Theme’s XIB file and View class. Create your XIB 
-by copying the parent Theme’s XIB and making any changes you need. You may not 
+Now you're ready to create your Theme's XIB file and View class. Create your XIB 
+by copying the parent Theme's XIB and making any changes you need. You may not 
 need to make any changes besides the file name and custom class name. For 
 example, the custom cell is the only difference between Bookmark List 
-Screenlet’s Custom and Default Themes. These Themes’ XIB files 
+Screenlet's Custom and Default Themes. These Themes' XIB files 
 (`BookmarkListView_default-custom.xib` and `BookmarkListView_default.xib`) are 
 therefore identical besides their name and custom class; the size and position 
 of their UI components are the same. 
 
-Now create your View class by extending the parent Theme’s View class. You 
-should also add a string constant to serve as the cell ID. In a moment, you’ll 
+Now create your View class by extending the parent Theme's View class. You 
+should also add a string constant to serve as the cell ID. In a moment, you'll 
 use this constant to register your custom cell. For example, the View class in 
-Bookmark List Screenlet’s Custom Theme (`BookmarkListView_default_custom`) 
-extends the Default Theme’s View class (`BookmarkListView_default`) and defines 
+Bookmark List Screenlet's Custom Theme (`BookmarkListView_default_custom`) 
+extends the Default Theme's View class (`BookmarkListView_default`) and defines 
 the string constant `BookmarkCellId`: 
 
     public class BookmarkListView_default_custom: BookmarkListView_default {
@@ -96,7 +96,7 @@ this method, create a `UINib` instance for your cell and then register it with
 the `UITableView` instance (`tableView`) inherited from 
 [the `BaseListTableView` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseListScreenlet/TableView/BaseListTableView.swift). 
 When registering the nib file, you must use the string constant you created 
-earlier as the `forCellReuseIdentifier`. For example, here’s the 
+earlier as the `forCellReuseIdentifier`. For example, here's the 
 `doRegisterCellNibs` method in `BookmarkListView_default-custom`: 
 
       public override func doRegisterCellNibs() {
@@ -141,9 +141,9 @@ use a different cell height for each row:
         return 80
     }
 
-When you finish, set your View class as your XIB file’s custom class. 
+When you finish, set your View class as your XIB file's custom class. 
 
-Awesome! You’re done! Now you know how to implement your own custom cells for 
+Awesome! You're done! Now you know how to implement your own custom cells for 
 use in list Screenlets. 
 
 ## Related Topics [](id=related-topics)

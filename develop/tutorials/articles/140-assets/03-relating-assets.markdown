@@ -187,14 +187,10 @@ that you made in the previous step of this tutorial.
 Related assets, if you've created any yet, should be visible near the bottom of
 the page.
 
-Excellent! Now you know how to implement related assets in your apps.
-
-<!-- Another thing you might want to do is investigate permissioning in the UI. For
-moreinformation on this, see the learning path [Checking Permissions in the UI](/develop/learning-paths/mvc/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
--->
-
-<!-- Add above text back when "Checking Perimssions in the UI" article is
-available. -Cody -->
+Excellent! Now you know how to implement related assets in your apps. Another
+thing you might want to do is investigate permissioning in the UI. For more
+information on this, see the tutorial
+[Checking Permissions in the UI](/develop/tutorials/-/knowledge_base/7-0/permissions-in-jsps#checking-permissions-in-the-ui).
 
 ## Related Topics [](id=related-topics)
 

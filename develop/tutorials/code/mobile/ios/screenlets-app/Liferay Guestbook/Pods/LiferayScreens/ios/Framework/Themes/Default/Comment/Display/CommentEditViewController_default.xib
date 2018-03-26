@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommentEditViewController_default" customModule="LiferayScreens">
+            <connections>
+                <outlet property="bodyTextView" destination="7cK-8p-jiu" id="hDz-Sl-XrS"/>
+                <outlet property="cancelButton" destination="yrm-5p-7i4" id="w9E-D2-9lw"/>
+                <outlet property="confirmButton" destination="h26-Oi-dOP" id="SW1-IZ-uRx"/>
+                <outlet property="scrollView" destination="cDC-6e-pAa" id="DHp-TZ-fcq"/>
+                <outlet property="view" destination="Sgv-hX-AuX" id="cy0-d9-AWM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Sgv-hX-AuX">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" canCancelContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDC-6e-pAa">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dsj-EZ-j36" userLabel="Container view">
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYb-PW-fbR" userLabel="Center view">
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7cK-8p-jiu" userLabel="Body">
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h26-Oi-dOP">
+                                            <color key="backgroundColor" red="0.083623558282852173" green="0.66497266292572021" blue="0.84832382202148438" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="4XP-7N-l3D"/>
+                                            </constraints>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="Confirm">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="confirmButtonAction" destination="-1" eventType="touchUpInside" id="ZJn-Gp-40g"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" restorationIdentifier="submit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yrm-5p-7i4">
+                                            <color key="backgroundColor" red="0.057840337149999997" green="0.47049217729999998" blue="0.60271843110000001" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="ug4-5v-Qld"/>
+                                            </constraints>
+                                            <state key="normal">
+                                                <attributedString key="attributedTitle">
+                                                    <fragment content="Cancel">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelButtonAction" destination="-1" eventType="touchUpInside" id="KHr-GH-EkG"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="7cK-8p-jiu" firstAttribute="leading" secondItem="h26-Oi-dOP" secondAttribute="leading" id="1xL-e7-zQk"/>
+                                        <constraint firstAttribute="height" constant="300" id="Ku4-ZP-weJ">
+                                            <variation key="heightClass=compact" constant="200"/>
+                                            <variation key="heightClass=compact-widthClass=compact" constant="200"/>
+                                        </constraint>
+                                        <constraint firstItem="7cK-8p-jiu" firstAttribute="top" secondItem="XYb-PW-fbR" secondAttribute="top" constant="20" id="RDZ-kK-WWk"/>
+                                        <constraint firstItem="h26-Oi-dOP" firstAttribute="width" secondItem="7cK-8p-jiu" secondAttribute="width" id="Wja-cD-EAF"/>
+                                        <constraint firstAttribute="bottom" secondItem="yrm-5p-7i4" secondAttribute="bottom" constant="20" id="YoH-pI-CQ1"/>
+                                        <constraint firstItem="7cK-8p-jiu" firstAttribute="leading" secondItem="yrm-5p-7i4" secondAttribute="leading" id="a6l-hv-Wgh"/>
+                                        <constraint firstItem="h26-Oi-dOP" firstAttribute="top" secondItem="7cK-8p-jiu" secondAttribute="bottom" constant="20" id="aUC-vL-kpa"/>
+                                        <constraint firstItem="yrm-5p-7i4" firstAttribute="width" secondItem="7cK-8p-jiu" secondAttribute="width" id="kye-zg-PlX"/>
+                                        <constraint firstItem="7cK-8p-jiu" firstAttribute="leading" secondItem="XYb-PW-fbR" secondAttribute="leading" constant="20" id="nIB-MU-J1z"/>
+                                        <constraint firstAttribute="trailing" secondItem="7cK-8p-jiu" secondAttribute="trailing" constant="20" id="oK1-pQ-k26"/>
+                                        <constraint firstItem="yrm-5p-7i4" firstAttribute="top" secondItem="h26-Oi-dOP" secondAttribute="bottom" constant="8" id="xRd-x8-1dM"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="XYb-PW-fbR" firstAttribute="top" secondItem="Dsj-EZ-j36" secondAttribute="top" constant="110" id="ZSJ-Ka-OjB">
+                                    <variation key="heightClass=compact" constant="90"/>
+                                    <variation key="heightClass=compact-widthClass=compact" constant="90"/>
+                                </constraint>
+                                <constraint firstItem="XYb-PW-fbR" firstAttribute="leading" secondItem="Dsj-EZ-j36" secondAttribute="leading" constant="50" id="p1g-6W-IHP">
+                                    <variation key="heightClass=compact" constant="30"/>
+                                    <variation key="heightClass=compact-widthClass=compact" constant="30"/>
+                                </constraint>
+                                <constraint firstAttribute="trailing" secondItem="XYb-PW-fbR" secondAttribute="trailing" constant="50" id="zVq-2s-A5z">
+                                    <variation key="heightClass=compact" constant="30"/>
+                                    <variation key="heightClass=compact-widthClass=compact" constant="30"/>
+                                </constraint>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Dsj-EZ-j36" secondAttribute="bottom" id="UDd-c3-0Od"/>
+                        <constraint firstItem="Dsj-EZ-j36" firstAttribute="top" secondItem="cDC-6e-pAa" secondAttribute="top" id="Yit-nf-e8d"/>
+                        <constraint firstItem="Dsj-EZ-j36" firstAttribute="centerX" secondItem="cDC-6e-pAa" secondAttribute="centerX" id="eqF-y8-1TN"/>
+                        <constraint firstItem="Dsj-EZ-j36" firstAttribute="leading" secondItem="cDC-6e-pAa" secondAttribute="leading" id="iNe-iH-btT"/>
+                        <constraint firstAttribute="trailing" secondItem="Dsj-EZ-j36" secondAttribute="trailing" id="mto-YC-31D"/>
+                        <constraint firstItem="Dsj-EZ-j36" firstAttribute="centerY" secondItem="cDC-6e-pAa" secondAttribute="centerY" id="vkD-yM-Ugl"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cDC-6e-pAa" secondAttribute="trailing" id="F3W-U8-gIV"/>
+                <constraint firstItem="cDC-6e-pAa" firstAttribute="leading" secondItem="Sgv-hX-AuX" secondAttribute="leading" id="SAh-gG-QOa"/>
+                <constraint firstAttribute="bottom" secondItem="cDC-6e-pAa" secondAttribute="bottom" id="VPw-Jk-OD2"/>
+                <constraint firstItem="cDC-6e-pAa" firstAttribute="top" secondItem="Sgv-hX-AuX" secondAttribute="top" id="pdu-zW-tLI"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+            <point key="canvasLocation" x="390" y="335"/>
+        </view>
+    </objects>
+</document>

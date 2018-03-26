@@ -13,7 +13,7 @@ but sometimes they are unavoidable.
 Interactors now run in a background process, so you don't need to create or set 
 callback classes manually. This means you can write what appear to be 
 synchronous server calls, and Liferay Screens handles the background threading 
-for you. The Interactor’s `execute` method makes the server call. Invoking the 
+for you. The Interactor's `execute` method makes the server call. Invoking the 
 `start` method in your Screenlet class causes `execute` to run in a background 
 thread. 
 
@@ -45,28 +45,28 @@ focus on other parts of your Screenlet.
 
 #### What changed? [](id=what-changed-0)
 
-To use a View Set, your app or activity’s theme must also inherit that View 
-Set’s styles. For example, to use the Default View Set, your app or activity’s 
+To use a View Set, your app or activity's theme must also inherit that View 
+Set's styles. For example, to use the Default View Set, your app or activity's 
 theme must inherit `default_theme`. 
 
 #### Who is affected? [](id=who-is-affected-0)
 
 This affects any apps or activities that use a View Set without inheriting that 
-View Set’s styles. For example, if you use the Default View for a Screenlet by 
-setting the Screenlet XML’s `layoutId` attribute, your app or activity’s theme 
-must now inherit `default_theme` as well. Likewise, your app or activity’s theme 
+View Set's styles. For example, if you use the Default View for a Screenlet by 
+setting the Screenlet XML's `layoutId` attribute, your app or activity's theme 
+must now inherit `default_theme` as well. Likewise, your app or activity's theme 
 must inherit `westeros_theme` or `material_theme` to use the Westeros or 
 Material View Set, respectively. 
 
 #### How should I update my code? [](id=how-should-i-update-my-code-0)
 
-Change your app or activity’s theme to inherit the styles of the View Set you 
+Change your app or activity's theme to inherit the styles of the View Set you 
 want to use. 
 
 **Example**
 
-This code snippet from an app’s `res/values/styles.xml` tells 
-`AppTheme.NoActionBar` to inherit the Default View Set’s styles: 
+This code snippet from an app's `res/values/styles.xml` tells 
+`AppTheme.NoActionBar` to inherit the Default View Set's styles: 
 
     <resources>
 
@@ -83,7 +83,7 @@ This code snippet from an app’s `res/values/styles.xml` tells
 
 #### Why was this change made? [](id=why-was-this-change-made-0)
 
-This lets you change an Android theme’s colors and styles according to Android 
+This lets you change an Android theme's colors and styles according to Android 
 conventions. Before, the Android themes were hardcoded inside the Screenlets. 
 
 ---------------------------------------
@@ -97,7 +97,7 @@ The Screenlet attribute `offlinePolicy` is now `cachePolicy`.
 #### Who is affected? [](id=who-is-affected-1)
 
 This affects any Screenlets that used the `offlinePolicy` attribute to set that 
-Screenlet’s offline mode policy.
+Screenlet's offline mode policy.
 
 #### How should I update my code? [](id=how-should-i-update-my-code-1)
 
@@ -137,7 +137,7 @@ class names in the offline mode APIs contain *cache*, as do the offline policies
 
 #### What changed? [](id=what-changed-2)
 
-The following error listener methods in DDL Form Screenlet’s `DDLFormListener` 
+The following error listener methods in DDL Form Screenlet's `DDLFormListener` 
 have been removed: 
 
 - `void onDDLFormLoadFailed(Exception e)`: Called when an error occurs in the 
@@ -158,20 +158,20 @@ This affects any classes that implement `DDLFormListener`.
 
 #### How should I update my code? [](id=how-should-i-update-my-code-2)
 
-In place of the removed error listeners, use `BaseCacheListener`’s generic error 
+In place of the removed error listeners, use `BaseCacheListener`'s generic error 
 listener: 
 
     void error(Exception e, String userAction)
 
 You must also change any `onDDLFormRecordLoaded` implementations to account for 
-the method’s new signature:
+the method's new signature:
 
     public void onDDLFormRecordLoaded(Record record, Map<String, Object> valuesAndAttributes)
 
 #### Why was this change made? [](id=why-was-this-change-made-2)
 
 The old error listener methods were usually implemented the same way: by logging 
-the exception. Multiple error listener methods aren’t needed for this. You can 
+the exception. Multiple error listener methods aren't needed for this. You can 
 use the new error listener method to log the exception and take any other action 
 that depends on the user action. 
 
@@ -191,7 +191,7 @@ All activity classes that implement a listener.
 
 #### How should I update my code? [](id=how-should-i-update-my-code-3)
 
-If you don’t have special behavior in your old cache listener method 
+If you don't have special behavior in your old cache listener method 
 implementations, you can remove them. Otherwise, you must implement the new 
 `CacheListener`. When implementing `CacheListener` (in an activity or fragment, 
 for example), you should also register a Screenlet instance as the cache 
@@ -260,7 +260,7 @@ Putting them in their own listener makes their implementation optional.
 
 The `BaseListListener` methods `onListPageFailed` and `onListPageReceived` no 
 longer have the `BaseListScreenlet` argument `source`. These methods also now 
-account for a page’s start and end row instead of the page number. 
+account for a page's start and end row instead of the page number. 
 
 #### Who is affected? [](id=who-is-affected-4)
 
@@ -271,9 +271,9 @@ This affects any classes or interfaces that extend or implement
 
 Remove the `BaseListScreenlet` argument from your `onListPageFailed` and 
 `onListPageReceived` implementations. You must also replace the `int page` 
-argument in `onListPageFailed` with an `int` argument representing the page’s 
+argument in `onListPageFailed` with an `int` argument representing the page's 
 start row. Likewise, replace the `int page` argument in `onListPageReceived` 
-with two `int` arguments that represent the page’s start row and end row, 
+with two `int` arguments that represent the page's start row and end row, 
 respectively.
 
 **Example**
@@ -304,7 +304,7 @@ other listeners that also use start row and end row arguments.
 
 #### What changed? [](id=what-changed-5)
 
-Asset List Screenlet’s package is now `com.liferay.mobile.screens.asset.list` 
+Asset List Screenlet's package is now `com.liferay.mobile.screens.asset.list` 
 instead of `com.liferay.mobile.screens.assetlist`. 
 
 #### Who is affected? [](id=who-is-affected-5)
@@ -374,7 +374,7 @@ This follows general Java naming conventions.
 
 #### What changed? [](id=what-changed-8)
 
-If you’re using a Screenlet without View (like you might be if you need to log a 
+If you're using a Screenlet without View (like you might be if you need to log a 
 user in programmatically), you no longer have to call 
 `LiferayScreensContext.init(this)` to initialise the library. This is now called 
 automatically. 

@@ -24,8 +24,8 @@ The first step is to install the Liferay Theme Generator.
 
 ## Installing the Theme Generator [](id=installing-the-theme-generator)
 
-The Liferay Theme Generator has several dependencies. Follow these steps to install
-them:
+The Liferay Theme Generator has several dependencies. Follow these steps to 
+install them:
 
 1.  Install [Node.js](http://nodejs.org/), if it's not already installed.
 
@@ -55,12 +55,10 @@ them:
     Set the `prefix` value based on your user's home directory. The location you
     specify is where global npm packages are to be installed.
 
-    Next, set Node.js `NPM_PACKAGES` and `NODE_PATH` system environment 
-    variables with values like these based on the `prefix` value you just 
-    specified.
+    Next, set the `NPM_PACKAGES` system environment variable to the `prefix` 
+    value you just specified:
 
         NPM_PACKAGES=/Users/[username]/.npm-packages (same as prefix value)
-        NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
 
     As a last npm configuration, since npm installs Yeoman and gulp executables
     to `${NPM_PACKAGES}/bin` on UNIX and to `%NPM_PACKAGES%` on Windows, make
@@ -76,10 +74,20 @@ them:
 
 You've completed installing the Liferay Theme Generator's dependencies.
 
-Now you're ready to install the Liferay Theme Generator. Install it globally by
-executing this command:
+Now you're ready to install the Liferay Theme Generator. 7.x.x versions of the 
+Theme Generator let you create themes for 6.2 and 7.0. Versions 8.x.x and up 
+let you create themes for later versions of @product@. Install version 7.2.0 
+globally by executing this command:
 
-    npm install -g generator-liferay-theme
+    npm install -g generator-liferay-theme@7.2.0
+    
++$$$
+
+**Note:** Version 7.2.0 is the latest 7.x.x Theme Generator version at the time 
+of this writing. Always use the latest 7.x.x version to build with the most 
+recent fixes and updates.
+
+$$$
 
 If you are on Windows, you must do additional setup for generated themes to use
 Sass. 
@@ -99,7 +107,7 @@ Generator and specifies the `"liferay-theme-deps-7.0": "1.0.0"` dependency in
 its `package.json`, `npm install` may fail in Liferay DXP due to its dependency 
 on node-sass `v3.13.1`. To fix this issue, change the dev dependency in your 
 `package.json` to `"liferay-theme-deps-7.0": "*"` and rebuild your theme. We 
-recommend that you use the latest version of the Theme Generator and 
+recommend that you use the latest 7.x.x version of the Theme Generator and 
 dependencies in your `package.json` to ensure full compatibility. 
 
 $$$
@@ -137,8 +145,8 @@ The following commands install the Sass and Compass gems:
 After creating a theme project in the next section, you'll learn how to
 configure a project to use Ruby based Sass and Compass.
 
-Now that you've installed the Liferay Theme Generator and theme dependencies, you can
-generate a theme.
+Now that you've installed the Liferay Theme Generator and theme dependencies, 
+you can generate a theme.
 
 ## Running the Liferay Theme Generator [](id=running-the-themes-generator)
 

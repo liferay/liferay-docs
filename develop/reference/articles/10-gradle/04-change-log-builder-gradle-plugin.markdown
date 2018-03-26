@@ -76,7 +76,7 @@ Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
 <a name="changelogfile"></a>`changeLogFile` | `File` | `null` | The change log file to build.
 <a name="changelogheader"></a>`changeLogHeader` | `String` | `null` | The header for the new line in the change log.
-`dirs` | `FileCollection` | `[]` | The directories to consider when listing the commits in the range specified.
+<a name="dirs"></a>`dirs` | `FileCollection` | `[]` | The directories to consider when listing the commits in the range specified.
 `gitDir` | `File` | `project.rootDir` | The base directory to start searching for the `.git` directory. The search proceeds in all the ancestors of the directory specified.
 `rangeEnd` | `String` | `null` | The hash of the last commit to consider. If not set, it corresponds to the range end of the last line in the change log, or the most recent commit from at least two years ago if the change log file does not exist yet.
 `rangeStart` | `String` | `null` | The hash of the first commit to consider. If not set, it corresponds to the hash of the tip of the current branch.

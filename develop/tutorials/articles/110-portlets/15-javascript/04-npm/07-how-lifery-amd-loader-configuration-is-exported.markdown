@@ -11,43 +11,43 @@ the configuration returned by the `/o/js_loaded_modules` URL.
 
 The OSGi bundle shown below is used for reference in this tutorial:
 
-    - `my-bundle/`
-        - `META-INF/`
-            - `resources/`
-                - `package.json`
-                    name: my-bundle-package
-                    version: 1.0.0
-                    main: lib/index
-                    dependencies:
-                        isarray: 2.0.0
-                        isobject: 2.1.0
-                    ...
-                - `lib/`
-                    -`index.js`
-                    ...
-                ...
-                - `node_modules/`
-                    - `isobject@2.1.0/`
-                        - `package.json`
-                            name: isobject
-                            version: 2.1.0
-                            main: lib/index
-                            dependencies:
-                                isarray: 1.0.0
-                            ...
-                        ...
-                    - `isarray@1.0.0/`
-                        - `package.json`
-                            name: isarray
-                            version: 1.0.0
-                            ...
-                        ...
-                    - `isarray@2.0.0/`
-                        - `package.json`
-                            name: isarray
-                            version: 2.0.0
-                            ...
-                        ...
+- `my-bundle/`
+    - `META-INF/`
+        - `resources/`
+            - `package.json`
+                - name: my-bundle-package
+                - version: 1.0.0
+                - main: lib/index
+                - dependencies:
+                    - isarray: 2.0.0
+                    - isobject: 2.1.0
+                - ...
+            - `lib/`
+                - `index.js`
+                - ...
+            - ...
+            - `node_modules/`
+                - `isobject@2.1.0/`
+                    - `package.json`
+                        - name: isobject
+                        - version: 2.1.0
+                        - main: lib/index
+                        - dependencies:
+                            - isarray: 1.0.0
+                        - ...
+                    - ...
+                - `isarray@1.0.0/`
+                    - `package.json`
+                        - name: isarray
+                        - version: 1.0.0
+                        - ...
+                    - ...
+                - `isarray@2.0.0/`
+                    - `package.json`
+                        - name: isarray
+                        - version: 2.0.0
+                        - ...
+                    - ...
 
 For example, for the specified structure (shown above), as explained in 
 [The Structure of OSGi Bundles Containing npm Packages](/develop/tutorials/-/knowledge_base/7-0/the-structure-of-osgi-bundles-containing-npm-packages) 

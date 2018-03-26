@@ -1,0 +1,91 @@
+"default-auth-method-email"="Dirección de correo";
+"default-auth-method-screenname"="Nombre corto";
+"default-auth-method-userid"="ID de usuario";
+
+"default-oauth-close"="Cerrar";
+
+"default-login-loading-message"="Enviando petición...\nEspere unos segundos...";
+"default-login-loading-error"="Error intentando entrar.";
+
+"default-signin-button"="ENTRAR";
+"default-signup-button"="REGISTRAR";
+"default-signup-loading-message"="Registrando usuario...\nEspere unos segundos...";
+"default-signup-saving-message"="Enviando datos...\nEspere unos segundos...";
+"default-signup-loading-error"="Error registrando usuario";
+"default-signup-saving-error"="Error enviando datos";
+
+"default-save-button"="GUARDAR";
+"default-authorize-button"="AUTORIZAR";
+
+"default-forgotpassword-username"="Nombre de usuario";
+"default-forgotpassword-button"="SOLICITAR";
+"default-forgotpassword-loading-message"="Enviando solicitud...\nEspere unos segundos...";
+"default-forgotpassword-loading-error"="Error solicitando nueva contraseña";
+"default-forgotpassword-password-sent"="Nueva contraseña generada\nRevisa tu bandeja de entrada";
+"default-forgotpassword-reset-sent"="Enlace para restaurar contraseña enviado\nRevisa tu bandeja de entrada";
+
+"default-password-placeholder"="Contraseña";
+"default-first-name-placeholder"="Nombre";
+"default-last-name-placeholder"="Apellidos";
+
+"default-ddlform-upload-picker-take-new"="Sacar una foto o video...";
+"default-ddlform-upload-picker-select-photo"="Seleccionar una foto existente...";
+"default-ddlform-upload-picker-select-video"="Seleccionar un video existente...";
+"default-ddlform-upload-picker-cancel"="Cancelar";
+"default-ddlform-submit-button"="ENVIAR";
+"default-ddlform-loading-message"="Cargando formulario...\nEspere unos segundos...";
+"default-ddlform-loading-error"="Error cargando formulario";
+"default-ddlform-loading-record-message"="Cargando datos...\nEspere unos segundos...";
+"default-ddlform-loading-record-error"="Error cargando datos";
+"default-ddlform-submitting-message"="Enviando formulario...\nEspere unos segundos...";
+"default-ddlform-submitting-error"="Error enviando formulario";
+"default-ddlform-submitted"="Formulario enviado";
+"default-ddlform-uploading-error"="Error subiendo datos";
+
+"default-userportrait-take-new-picture"="Hacer una foto";
+"default-userportrait-choose-existing-picture"="Usar foto existente";
+"default-userportrait-uploading-error"="Error enviando la foto";
+
+"default-webcontentdisplay-loading-message"="Cargando...\nEspere unos segundos...";
+"default-webcontentdisplay-loading-error"="Error cargando el contenido";
+
+"default-rating-total"="Total: %d";
+"default-rating-ratings.one"="1 Valoración";
+"default-rating-ratings.other"="%d Valoraciones";
+
+"default-imagegallery-uploading-one"="Subiendo imagen...";
+"default-imagegallery-uploading-several"="Subiendo imagen 1 de %d";
+"default-imagegallery-upload"="Subir";
+"default-imagegallery-cancel"="Cancelar";
+"default-imagegallery-title"="Título";
+"default-imagegallery-description"="Descripción";
+
+"default-blog-unknown-date"="Fecha desconocida";
+
+"default-comment-add-placeholder"="Introduce tu comentario...";
+"default-comment-add-send"="Enviar";
+
+"default-comment-display-edited"="- Editado";
+"default-comment-display-warning"="Cuidado";
+"default-comment-display-styled"="Este comentario tiene contenido con estilo, que será perdido si lo editas";
+"default-comment-display-dismiss"="Descartar";
+"default-comment-display-edit-button"="Editar";
+"default-comment-display-delete-button"="Borrar";
+"default-comment-display-confirm"="Confirmar";
+"default-comment-display-cancel"="Cancelar";
+"default-comment-display-type"="Escribe tu comentario...";
+
+"default-time-ago-seconds" = "Hace %d seguntos";
+"default-time-ago-minute" = "Hace un minuto";
+"default-time-ago-minutes" = "Hace %d minutos";
+"default-time-ago-hour" = "Hace una hora";
+"default-time-ago-hours" = "Hace %d horas";
+"default-time-ago-days" = "Hace %d días";
+"default-time-ago-weeks" = "Hace %d semanas";
+"default-time-ago-months" = "Hace %d meses";
+"default-time-ago-years" = "Hace %d años";
+"default-time-yesterday" = "Ayer";
+"default-time-now" = "Ahora";
+"default-time-last-week" = "La semana pasada";
+"default-time-last-month" = "El mes pasado";
+"default-time-last-year" = "El año pasado";

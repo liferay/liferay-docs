@@ -1,0 +1,6 @@
+framework module TNRadioButtonGroup {
+  umbrella header "TNRadioButtonGroup-umbrella.h"
+
+  export *
+  module * { export * }
+}

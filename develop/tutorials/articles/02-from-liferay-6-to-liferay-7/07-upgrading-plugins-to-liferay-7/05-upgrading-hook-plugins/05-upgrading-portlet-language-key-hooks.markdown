@@ -19,7 +19,7 @@ these steps:
 2.  Copy your language properties files into module
     folder `src/main/resources/content/`.
 
-3.  [Create a `ResourceBundleLoader` ](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#creating-a-resource-bundle). 
+3.  [Create a `ResourceBundleLoader` ](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#create-a-resource-bundle-service-component). 
 
 4.  [Deploy your module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module). 
 
@@ -28,7 +28,7 @@ Your portlet language key customizations are deployed in your new module on
 
 ## Related Topics [](id=related-topics)
 
-[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#creating-a-resource-bundle)
+[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#overriding-a-modules-language-keys)
 
 [Upgrading Core Language Key Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-core-language-key-hooks)
 

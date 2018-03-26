@@ -26,6 +26,18 @@ Rating Screenlet shows an asset's rating. It also lets users update or delete
 the rating. This Screenlet comes with different Themes that display ratings as 
 thumbs, stars, and emojis. 
 
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call JSON web services in the portal. This 
+Screenlet calls the following services and methods.
+
+| Service | Method | Notes |
+| ------- | ------ | ----- |
+| `ScreensratingsentryService` (Screens compatibility plugin) | `getRatingsEntries` | With `entryId` |
+| `ScreensratingsentryService` (Screens compatibility plugin) | `getRatingsEntries` | With `classPK` and `className` |
+| `ScreensratingsentryService` (Screens compatibility plugin) | `updateRatingsEntry` |  |
+| `ScreensratingsentryService` (Screens compatibility plugin) | `deleteRatingsEntry` |  |
+
 ## Module [](id=module)
 
 - None
@@ -64,7 +76,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 - `entryId`
 
-If you don’t use `entryId`, you must use these attributes: 
+If you don't use `entryId`, you must use these attributes: 
 
 - `className`
 - `classPK`
@@ -78,7 +90,7 @@ If you don’t use `entryId`, you must use these attributes:
 | `editable` | `boolean` | Whether the user can change the rating. |
 | `entryId` | `number` | The primary key of the asset with the rating to display. |
 | `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.blogs.kernel.model.BlogsEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). The `className` attribute is required when using it with `classPK` to instantiate the Screenlet.. |
-| `classPK` | `number` | The asset’s unique identifier. Only use this attribute when also using `className` to instantiate the Screenlet. |
+| `classPK` | `number` | The asset's unique identifier. Only use this attribute when also using `className` to instantiate the Screenlet. |
 | `groupId` | `number` | The ID of the site (group) containing the asset. |
 | `offlinePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-0/rating-screenlet-for-ios#offline) for details. |
 

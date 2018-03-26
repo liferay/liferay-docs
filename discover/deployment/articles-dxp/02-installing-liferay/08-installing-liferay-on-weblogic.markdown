@@ -112,7 +112,7 @@ Before installing @product@, you must set the
 [*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
 folder's location via the `liferay.home` property in a `portal-ext.properties` 
 file. You can also use this file to override 
-[other @product@ properties](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html) 
+[other @product@ properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html) 
 that you may need. 
 
 First, decide which directory you want to serve as Liferay Home. In WebLogic, 

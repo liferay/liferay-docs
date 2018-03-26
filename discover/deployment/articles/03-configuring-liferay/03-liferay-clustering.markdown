@@ -82,41 +82,70 @@ optimized for reading and one optimized for writing. Since all @product@'s
 supported databases support replication, you can use your database vendor's
 replication mechanism to keep the database nodes in sync.
 
-Enabling a read-writer database is simple. In your `portal-ext.properties` file,
-configure two different data sources for @product@ to use, one for reading, and
-one for writing:
+Enabling a read-writer database is simple. In your `portal-ext.properties` file:
 
-    jdbc.read.jndi.name=**your read JNDI name**
-    jdbc.read.driverClassName=com.mysql.jdbc.Driver
-    jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-    jdbc.read.username=**your user name**
-    jdbc.read.password=**your password**
+1.  Set the default database connection pool provider to `dbcp`, `tomcat`, or 
+    `c3po`. Note, provider HikariCP does not support read/write splitting.
+    Here's an example setting: 
 
-    jdbc.write.jndi.name=**your read-write JNDI name**
-    jdbc.write.driverClassName=com.mysql.jdbc.Driver
-    jdbc.write.url=jdbc:mysql://dbreadwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
-    jdbc.write.username=**your user name**
-    jdbc.write.password=**your password**
+        jdbc.default.liferay.pool.provider=dbcp
 
-Of course, specify the JNDI name, user name, and password to each of your
-databases in the above configuration.
+    All the portal JDBC configuration properties are documented
+    [here](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#JDBC).
 
-After this, enable the read-writer database configuration by uncommenting the
-Spring configuration file which enables it in your
-`spring.infrastructure.configs` property:
+2.  Configure two different data sources for @product@ to use, one for reading,
+    and one for writing:
 
-    spring.infrastructure.configs=\
-    [..]
-    META-INF/dynamic-data-source-spring.xml,\
-    [..]
+        jdbc.read.driverClassName=com.mysql.jdbc.Driver
+        jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+        jdbc.read.username=**your user name**
+        jdbc.read.password=**your password**
 
-You can find the full `spring.infrastructure.configs` list in the
-`portal.properties`
-[documentation](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Spring).
+        jdbc.write.driverClassName=com.mysql.jdbc.Driver
+        jdbc.write.url=jdbc:mysql://dbreadwrite.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+        jdbc.write.username=**your user name**
+        jdbc.write.password=**your password**
+
+    To use the JNDI instead of the JDBC data sources, set the `*.username` and
+    `*.password` properties above to your JNDI user name and password and set
+    these additional properties:
+
+        jdbc.read.jndi.name=**your read JNDI name**
+        jdbc.write.jndi.name=**your read-write JNDI name**
+
+3.  Avoid using the `default` data source, by setting this:
+
+        counter.jdbc.prefix=jdbc.write.
+
+    And if you're using a `dbcp` or `tomcat` database connection pool provider,
+    set these:
+
+        jdbc.default.validationQuery=
+        jdbc.read.validationQuery=SELECT releaseId FROM Release_
+        jdbc.write.validationQuery=SELECT releaseId FROM Release_
+
+    These settings are related to issue [LPS-64624](https://issues.liferay.com/browse/LPS-64624).
+
+4.  Enable the read-writer database configuration by uncommenting the following 
+    Spring configuration files from the `spring.configs` and
+    `spring.infrastructure.configs` properties:
+
+        spring.configs=\
+            [..]
+            META-INF/dynamic-data-source-spring.xml,\
+            [..]
+
+        spring.infrastructure.configs=\
+            [..]
+            META-INF/dynamic-data-source-infrastructure-spring.xml,\
+            [..]
+
+    The Spring configuration portal properties are documented 
+    [here](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Spring).
 
 The next time you start @product@, it uses the two data sources you have
-defined. Be sure you have correctly set up your two databases for replication
-before starting @product@.
+defined. Make sure to correctly set up your two databases for replication before
+starting @product@.
 
 ## 2. Documents and Media Library Clustering [](id=documents-and-media-library-clustering)
 
@@ -187,25 +216,21 @@ clusters.
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
 caching enables some RMI (Remote Method Invocation) cache listeners that are
-designed to replicate the cache across a cluster. 
+designed to replicate the cache across a cluster. Cluster Link uses 
+[Ehcache](http://www.ehcache.org), 
+which has robust distributed caching support. The cache is distributed across 
+multiple @product@ nodes running concurrently. The Ehcache global settings are in the
+[`portal.properties` file](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Ehcache). 
 
-The cache is distributed across multiple @product@ nodes running concurrently.
-Enabling Cluster Link can increase performance dramatically. For example, if two
-users are browsing the message boards, and the first user clicks a thread,
-@product@ must grab that thread from the database, cache it, and format it for
-display in the browser. When Cluster Link is enabled, the cache is replicated to 
-the other nodes in the cluster. If another user wants to read that thread, it's 
-retrieved from the cache, no matter what node serves that user, because the 
-cache is replicated. Because the thread is in the cache, no trip to the database 
-is necessary. 
-
-This is much more powerful than having a cache running separately on each node.
-The power of *distributed* caching lets common destinations be cached for
-multiple users. The first user can post a message to the thread he or she was
-reading, and the cache is updated across all the nodes, making the new post
-available immediately from the local cache. Without that, the second user would
-need to wait until the cache was invalidated on the node he or she connected to
-before he or she could see the updated forum post. 
+By default Liferay does not copy cached entities between nodes. If an entity is
+deleted or changed, for example, Cluster Link sends an *remove* message to the
+other nodes to invalidate this entity in their local cache. Requesting that
+entity on another node results in a cache *miss*; the entity is then retrieved
+from the database and put into the local cache. Entities added to one node's
+local cache are not copied to local caches of the other nodes. An attempt to
+retrieve a new entity on a node which doesn't have that entity cached results in
+a cache *miss*. The miss triggers the node to retrieve the entity from the
+database and store it in its local cache. 
 
 To enable Cluster Link, add this property to `portal-ext.properties`: 
 
@@ -213,44 +238,19 @@ To enable Cluster Link, add this property to `portal-ext.properties`:
 
 ### Modifying the Cache Configuration with a Module [](id=modifying-the-cache-configuration-with-a-module)
 
-Enabling Cluster Link automatically activates distributed caching. Distributed
-caching enables some RMI (Remote Method Invocation) cache listeners that are
-designed to replicate the cache across a cluster. 
-
-@product@ uses 
-[Ehcache](http://www.ehcache.org), 
-which has robust distributed caching support. The cache is distributed across 
-multiple @product@ nodes running concurrently. This increases performance 
-dramatically. For example, say that two users are browsing the message boards. 
-When the first user clicks a thread, @product@ must retrieve that thread from 
-the database and format it for display in the browser. With a distributed 
-Ehcache running, this thread is cached for quick retrieval, and the cache is 
-replicated to the other nodes. If a second user who's served by a different node 
-clicks on the same thread, the data is retrieved faster because the thread is in 
-the cache: no trip to the database was necessary. 
-
-This is much more powerful than having a cache running separately on each node.
-The power of *distributed* caching allows for common destinations to be cached
-for multiple users. The first user can post a message to the thread he or she
-was reading, and the cache is updated across all the nodes, making the new post
-available immediately from the local cache. Without that, the second user must
-wait until the cache is invalidated on his or her own node and the post is
-retrieved and cached separately. 
-
-For this reason, once you enable distributed caching, you should do some due
-diligence and test your system under a load that best simulates the kind of
-traffic your system needs to handle. If you'll be serving up a lot of message
+It's recommended to test your system under a load that best simulates the kind
+of traffic your system needs to handle. If you'll be serving up a lot of message
 board messages, your script should reflect that. If web content is the core of
 your site, your script should reflect that too. 
 
 As a result of a load test, you may find that the default distributed cache
 settings aren't optimized for your site. In this case, you should tweak the
 settings yourself. You can modify the @product@ installation directly or you can
-use a module to do it. Either way, the settings you change are the same. 
-A benefit of working with modules is that you can install a module on
-each node and change the settings without taking down the cluster. Modifying the
-Ehcache settings with a module is recommended over modifying the Ehcache
-settings directly. 
+use a module to do it. Either way, the settings you change are the same.  A
+benefit of working with modules is that you can install a module on each node
+and change the settings without taking down the cluster. Modifying the Ehcache
+settings with a module is recommended over modifying the Ehcache settings
+directly. 
 
 We've made this as easy as possible by [creating the project](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip) 
 for you. Download the project and unzip it into a 
@@ -267,10 +267,10 @@ structure:
                     - override-liferay-multi-vm-clustered.xml
 
 In the sample project, this file contains a configuration for @product@'s
-`GroupImpl` object which handles sites. You may wish to add other objects to
-the cache; in fact, the default file caches many other objects. For example, if
-you have a vibrant community, a large portion of your traffic may be directed at
-the message boards portlet, as in the example above. To cache the threads on the 
+`GroupImpl` object which handles sites. You may wish to add other objects to the
+cache; in fact, the default file caches many other objects. For example, if you
+have a vibrant community, a large portion of your traffic may be directed at the
+message boards portlet, as in the example above. To cache the threads on the
 message boards, configure a block with the `MBMessageImpl` class:
 
     <cache
@@ -284,13 +284,15 @@ message boards, configure a block with the `MBMessageImpl` class:
 
 If you're overriding these properties, it's because you want to customize the
 configuration for your own site. A good way to start with this is to extract
-@product@'s configuration file and then customize it. You'll find it in the
-`com.liferay.portal.ehcache-[version].jar` file. You can get this from
-@product@'s `Liferay Foundation.lpkg` file in the `osgi/marketplace` folder. The
-file you want is `liferay-multi-vm-clustered.xml`, in the `/ehcache` folder
-inside the `.jar`. Once you have the file, replace the contents of the
-`override-liferay-multi-vm-clustered.xml` file above with the contents of this
-file. Now you'll be using the default configuration as a starting point. 
+Liferay's cluster configuration file and then customize it. You'll find it in
+the Liferay Foundation application suite's
+`com.liferay.portal.cache.ehcache-[version].jar` file. You can get this JAR from
+the `Liferay Foundation.lpkg` file in the `osgi/marketplace` folder. The file
+you want is `liferay-multi-vm-clustered.xml`, in the `/ehcache` folder inside
+the `com.liferay.portal.cache.ehcache-[version].jar` file. Once you have the
+file, replace the contents of the `override-liferay-multi-vm-clustered.xml` file
+above with the contents of this file. Now you'll be using the default
+configuration as a starting point. 
 
 Once you've made your changes to the cache, save the file, build, and deploy the
 module, and your settings override the default settings. In this way, you can

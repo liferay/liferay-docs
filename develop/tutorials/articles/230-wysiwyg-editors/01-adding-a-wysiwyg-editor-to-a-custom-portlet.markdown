@@ -61,7 +61,7 @@ tag:
 | placeholder | `java.lang.String` | Placeholder text to display in the input editor. |
 | showSource | `java.lang.String` | Whether to enable editing the HTML source code of the content. The default value  is `true`. |
 
-See the [taglibdocs](https://docs.liferay.com/portal/7.0-latest/taglibs/util-taglib/liferay-ui/input-editor.html) 
+See the [taglibdocs](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-ui/input-editor.html) 
 for the complete list of supported attributes.
 
 As you can see, it's easy to include WYSIWYG editors in your portlets! 

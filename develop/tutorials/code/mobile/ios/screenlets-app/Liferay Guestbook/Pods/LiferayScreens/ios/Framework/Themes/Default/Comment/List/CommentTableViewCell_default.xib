@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12120"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fpK-7V-dre" customClass="CommentTableViewCell_default">
+            <rect key="frame" x="0.0" y="0.0" width="555" height="176"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccj-rn-vga" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="0.0" width="555" height="176"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzi-eY-eAl" customClass="CommentDisplayScreenlet">
+                            <rect key="frame" x="0.0" y="0.0" width="555" height="176"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="autoLoad" value="NO"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="wzi-eY-eAl" firstAttribute="leading" secondItem="ccj-rn-vga" secondAttribute="leading" id="94V-Tq-va7"/>
+                        <constraint firstItem="wzi-eY-eAl" firstAttribute="top" secondItem="ccj-rn-vga" secondAttribute="top" id="ZiJ-Pm-EYR"/>
+                        <constraint firstAttribute="bottom" secondItem="wzi-eY-eAl" secondAttribute="bottom" id="fW8-rN-k2G"/>
+                        <constraint firstAttribute="trailing" secondItem="wzi-eY-eAl" secondAttribute="trailing" id="ita-Gt-dNC"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ccj-rn-vga" secondAttribute="trailing" id="LIg-UO-Apz"/>
+                <constraint firstItem="ccj-rn-vga" firstAttribute="leading" secondItem="fpK-7V-dre" secondAttribute="leading" id="QtT-y8-FbL"/>
+                <constraint firstItem="ccj-rn-vga" firstAttribute="top" secondItem="fpK-7V-dre" secondAttribute="top" id="rT3-pc-RA7"/>
+                <constraint firstAttribute="bottom" secondItem="ccj-rn-vga" secondAttribute="bottom" id="zDS-sa-Mpb"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="commentDisplayScreenlet" destination="wzi-eY-eAl" id="7K0-lu-N0S"/>
+            </connections>
+            <point key="canvasLocation" x="475.5" y="155"/>
+        </view>
+    </objects>
+</document>

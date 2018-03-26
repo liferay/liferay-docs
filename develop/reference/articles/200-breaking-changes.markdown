@@ -576,9 +576,9 @@ This will affect any implementations of `ActionCommand`.
 #### How should I update my code? [](id=how-should-i-update-my-code-12)
 
 Replace imports of `com.liferay.util.bridges.mvc.ActionCommand` with
-`com.liferay.portal.kernel.portlet.bridges.mvc.ActionCommand` and imports of
+`com.liferay.portal.kernel.portlet.bridges.mvc.MVCActionCommand` and imports of
 `com.liferay.util.bridges.mvc.BaseActionCommand` with
-`com.liferay.portal.kernel.portlet.bridges.mvc.BaseActionCommand`.
+`com.liferay.portal.kernel.portlet.bridges.mvc.BaseMVCActionCommand`.
 
 #### Why was this change made? [](id=why-was-this-change-made-12)
 
@@ -4390,3 +4390,33 @@ you can no longer cast the returned `AssetRenderer` to `DDLRecordAssetRenderer`.
 #### Why was this change made? [](id=why-was-this-change-made-109)
 
 This change was made to clean up LPKG dependencies.
+
+---------------------------------------
+
+### Deprecated the social.activity.sets.enabled Property with No Direct Replacement [](id=deprecated-the-social-activity-sets-enabled-property-with-no-direct-replace)
+- **Date:** 2018-Jan-24
+- **JIRA Ticket:** LPS-63635
+
+#### What changed? [](id=what-changed-110)
+
+The `social.activity.sets.enabled` property is no longer recognized by the
+Social Activity portlet. From Liferay Portal 7.0 onwards, Social Activity Sets
+will always be used.
+
+#### Who is affected? [](id=who-is-affected-110)
+
+This change affects anyone who has set the `social.activity.sets.enabled`
+property to `false`.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-110)
+
+No changes are necessary.
+
+#### Why was this change made? [](id=why-was-this-change-made-110)
+
+The Social Activity portlet had two different versions with slightly different
+behaviors; one used in Liferay Portal and the other one in Social Office. To
+sync both components, and simplify its internal logic, activity sets are always
+enabled by default, with no option to disable them.
+
+---------------------------------------

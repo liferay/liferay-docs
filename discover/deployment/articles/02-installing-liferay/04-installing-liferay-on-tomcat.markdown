@@ -20,9 +20,13 @@ You'll see the term
 used in this installation guide. *Liferay Home* refers to the folder containing
 your Tomcat server folder. When @product@ is installed on Tomcat, the Liferay
 Home folder contains the Tomcat server folder as well as `data`, `deploy`,
-`license`, and `osgi` folders. You'll also see the term `$TOMCAT_HOME` used in
-this guide. `$TOMCAT_HOME` refers to your Tomcat server folder. This folder is
-usually named `tomcat-[version]` or `apache-tomcat-[version]`.
+`license`, and `osgi` folders. You'll also see the terms `$CATALINA_HOME` and
+`$CATALINA_BASE` used in this guide. `$CATALINA_HOME` refers to the folder that
+contains Tomcat's binaries, while `$CATALINA_BASE` refers to the folder that
+contains your configuration--just as you're used to from Tomcat's generic
+installation. If you download a Liferay Tomcat-bundle, both refer to the same
+folder (just as with a standard Tomcat installation). This folder is usually
+named `tomcat-[version]` or `apache-tomcat-[version]`.
 
 ## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
 
@@ -31,18 +35,19 @@ Some JARs in the bundle are not strictly required but can still be useful. If
 you don't have a @product@ Tomcat bundle, you can download the required JARs from
 third-parties, as described below.
 
-1. If you downloaded a @product@ Tomcat bundle, extract the bundle to a temporary
-   location of your choosing. You'll copy a number of resources from this
-   bundle to your Tomcat server as you manually install @product@.
+1.  If you downloaded a @product@ Tomcat bundle, extract the bundle to a 
+    temporary location of your choosing. You'll copy a number of resources from
+    this bundle to your Tomcat server as you manually install @product@.
 
-2. If you have a @product@ Tomcat bundle, copy all the JARs from your bundle's
-   `$TOMCAT_HOME/lib/ext` folder to your application server's
-   `$TOMCAT_HOME/lib/ext` folder. If the `$TOMCAT_HOME/lib/ext` folder doesn't
-   exist on your application server, create it. If you don't have a @product@
-   Tomcat bundle, you'll have to individually download the JARs listed below.
+2.  If you have a @product@ Tomcat bundle, copy all the JARs from your bundle's
+    `$CATALINA_BASE/lib/ext` folder to your application server's
+    `$CATALINA_BASE/lib/ext` folder. If the `$CATALINA_BASE/lib/ext` folder
+    doesn't exist on your application server, create it. If you don't have a
+    @product@ Tomcat bundle, you'll have to individually download the JARs
+    listed below.
 
     Here's a list of the JARs that you need to copy or download to your
-    `$TOMCAT_HOME/lib/ext` folder:
+    `$CATALINA_BASE/lib/ext` folder:
 
     - `activation.jar` - [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com/technetwork/java/jaf11-139815.html)
     - `ccpp.jar` - [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
@@ -63,7 +68,7 @@ third-parties, as described below.
 3. Make sure that Tomcat can access the JDBC driver for your database. The list
    of JARs above includes `mysql.jar` and `postgresql.jar`. If you're using a
    database whose JDBC driver is not included in the list above, download the
-   driver and copy it to your `$TOMCAT_HOME/lib/ext` folder.
+   driver and copy it to your `$CATALINA_BASE/lib/ext` folder.
 
 4. Create an `osgi` folder in your Liferay Home folder. Then extract the OSGi
    ZIP file that you downloaded into the `osgi` folder.
@@ -73,70 +78,70 @@ third-parties, as described below.
 
 Checkpoint:
 
-1. You should have the following files in the `$TOMCAT_HOME/lib/ext` folder:
+1. You should have the following files in the `$CATALINA_BASE/lib/ext` folder:
 
-- `activation.jar` 
-- `ccpp.jar` 
-- `com.liferay.osgi.service.tracker.collections.jar` 
-- `com.liferay.registry.api.jar` 
-- `hsql.jar` 
-- `jms.jar`
-- `jta.jar`
-- `jutf7.jar`
-- `mail.jar` 
-- `mysql.jar`
-- `persistence.jar`
-- `portal-kernel.jar` 
-- `portlet.jar` 
-- `postgresql.jar`
-- `support-tomcat.jar` 
+    - `activation.jar` 
+    - `ccpp.jar` 
+    - `com.liferay.osgi.service.tracker.collections.jar` 
+    - `com.liferay.registry.api.jar` 
+    - `hsql.jar` 
+    - `jms.jar`
+    - `jta.jar`
+    - `jutf7.jar`
+    - `mail.jar` 
+    - `mysql.jar`
+    - `persistence.jar`
+    - `portal-kernel.jar` 
+    - `portlet.jar` 
+    - `postgresql.jar`
+    - `support-tomcat.jar` 
 
 2. The `osgi` folder has the following subfolders:
 
-- `configs`
-- `core`
-- `marketplace`
-- `target-platform`
-- `test`
+    - `configs`
+    - `core`
+    - `marketplace`
+    - `target-platform`
+    - `test`
 
 ## Tomcat Configuration [](id=tomcat-configuration)
 
 Next, you need to configure Tomcat for running @product@.
 
-1. If you're working with a bundle, copy the `setenv.bat` and `setenv.sh` files
-   from your bundle to your `$TOMCAT_HOME/bin` folder. If not, create these
-   files. 
+1.  If you're working with a bundle, copy the `setenv.bat` and `setenv.sh` files
+    from your bundle to your `$CATALINA_BASE/bin` folder. If not, create these
+    files. 
 
-   These files set a number of JVM options for Catalina, which is Tomcat's
-   servlet container. Among these options is the location of the Java runtime
-   environment. If this environment is not available on your server globally,
-   you must set its location in this file so Tomcat can run. Do this by pointing
-   the `JAVA_HOME` environment variable for your OS to the location of the
-   @product@ supported JRE:
+    These files set a number of JVM options for Catalina, which is Tomcat's
+    servlet container. Among these options is the location of the Java runtime
+    environment. If this environment is not available on your server globally,
+    you must set its location in this file so Tomcat can run. Do this by
+    pointing the `JAVA_HOME` environment variable for your OS to the location of
+    the @product@ supported JRE:
 
         export JAVA_HOME=/usr/lib/jvm/java-8-jdk
         export PATH=$JAVA_HOME/bin:$PATH
 
-   Once you've done this, configure Catalina's options to support @product@: 
+    Once you've done this, configure Catalina's options to support @product@: 
 
         CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true  -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=384m" 
 
-   This sets the file encoding to UTF-8, prefers an IPv4 stack over IPv6,
-   prevents Tomcat from working around garbage collection bugs relating to
-   static or final fields (these bugs don't exist in @product@ and working
-   around them causes problems with the logging system), sets the time zone to
-   GMT, and gives the JVM 1GB of RAM. 
+    This sets the file encoding to UTF-8, prefers an IPv4 stack over IPv6,
+    prevents Tomcat from working around garbage collection bugs relating to
+    static or final fields (these bugs don't exist in @product@ and working
+    around them causes problems with the logging system), sets the time zone to
+    GMT, and gives the JVM 1GB of RAM. 
 
-   These are initial settings. After installation you should tune your system
-   for performance. As a result of that process, you may find you want to change
-   particularly the amount of RAM available to @product@ based on how your
-   system runs. 
+    These are initial settings. After installation you should tune your system
+    for performance. As a result of that process, you may find you want to
+    change particularly the amount of RAM available to @product@ based on how
+    your system runs. 
 
-2. If you're working with a bundle, copy the
-   `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml` file from your bundle to the
-   corresponding location in your application server. If not, create this file.
-   The `ROOT.xml` file creates a web application context for @product@.
-   `ROOT.xml` looks like this:
+2.  If you're working with a bundle, copy the
+    `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml` file from your bundle to
+    the corresponding location in your application server. If not, create this
+    file. The `ROOT.xml` file creates a web application context for @product@.
+    `ROOT.xml` looks like this:
 
         <Context path="" crossContext="true">
 
@@ -163,46 +168,46 @@ Next, you need to configure Tomcat for running @product@.
             <!--<Manager className="com.liferay.support.tomcat.session.SessionLessManagerBase" />-->
         </Context>
 
-    Setting `crossContext="true"` allows multiple web applications to use the
-    same class loader. The configuration above includes commented instructions
-    and tags for configuring a JAAS realm, disabling persistent sessions, and
-    disabling sessions entirely.
+     Setting `crossContext="true"` allows multiple web applications to use the
+     same class loader. The configuration above includes commented instructions
+     and tags for configuring a JAAS realm, disabling persistent sessions, and
+     disabling sessions entirely.
 
-3. Next, you should make sure that the libraries you copied to
-   `$TOMCAT_HOME/lib/ext` are loaded when you start your server. If you're
-   working with a bundle, copy the `$TOMCAT_HOME/conf/catalina.properties` file
-   from your bundle to your server. If not, open
-   `$TOMCAT_HOME/conf/catalina.properties` and replace the line
+3.  Next, you should make sure that the libraries you copied to
+    `$CATALINA_BASE/lib/ext` are loaded when you start your server. If you're
+    working with a bundle, copy the `$CATALINA_BASE/conf/catalina.properties`
+    file from your bundle to your server. If not, open
+    `$CATALINA_BASE/conf/catalina.properties` and replace the line
 
         common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
 
     with this one:
 
-        common.loader=${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar,${catalina.home}/lib/ext,${catalina.home}/lib/ext/*.jar
+        common.loader="${catalina.base}/lib","${catalina.base}/lib/*.jar","${catalina.home}/lib","${catalina.home}/lib/*.jar","${catalina.base}/lib/ext/global","${catalina.base}/lib/ext/global/*.jar","${catalina.base}/lib/ext","${catalina.base}/lib/ext/*.jar"
 
     This allows Catalina to access the JARs that you copied to
-    `$TOMCAT_HOME/lib/ext`.
+    `$CATALINA_BASE/lib/ext`.
 
-4. If you're working with a bundle, copy the
-   `$TOMCAT_HOME/conf/catalina.policy` file from your bundle to your server. If
-   not, just replace the contents of the `$TOMCAT_HOME/conf/catalina.policy`
-   file with this:
+4.  If you're working with a bundle, copy the
+    `$CATALINA_BASE/conf/catalina.policy` file from your bundle to your server.
+    If not, just replace the contents of the
+    `$CATALINA_BASE/conf/catalina.policy` file with this:
 
         grant {
             permission java.security.AllPermission;
         };
 
-    If you want to enable PACL for @product@, you have to enable Tomcat's
-    security manager and instruct Catalina to use the
-    `$TOMCAT_HOME/conf/catalina.policy` file. See the Enabling PACL section for
-    more information.
+     If you want to enable PACL for @product@, you have to enable Tomcat's
+     security manager and instruct Catalina to use the
+     `$CATALINA_BASE/conf/catalina.policy` file. See the Enabling PACL section
+     for more information.
 
-5. Next, you should make sure that UTF-8 URI encoding is used consistently. If
-   you're working with a bundle, copy the `$TOMCAT_HOME/conf/server.xml` file
-   to your server. If not, you can simply make a few edits to `server.xml`.
-   Edit your `$TOMCAT_HOME/conf/server.xml` file and add the attribute
-   `URIEncoding="UTF-8"` wherever you see `redirectPort=8443`, in the
-   definition of your connectors (HTTP and AJP). For example:
+5.  Next, you should make sure that UTF-8 URI encoding is used consistently. If
+    you're working with a bundle, copy the `$CATALINA_BASE/conf/server.xml` file
+    to your server. If not, you can simply make a few edits to `server.xml`.
+    Edit your `$CATALINA_BASE/conf/server.xml` file and add the attribute
+    `URIEncoding="UTF-8"` wherever you see `redirectPort=8443`, in the
+    definition of your connectors (HTTP and AJP). For example:
 
         <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
 
@@ -218,8 +223,8 @@ Next, you need to configure Tomcat for running @product@.
 
         <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
 
-6. If you're on Unix, Linux, or Mac OS, navigate to your `$TOMCAT_HOME/bin`
-   folder and run the following command
+6.  If you're on Unix, Linux, or Mac OS, navigate to your `$CATALINA_HOME/bin`
+    and `$CATALINA_BASE/bin` folders and run the following command
 
         chmod a+x *.sh
 
@@ -236,16 +241,16 @@ settings.
 2.  The default amount of memory available has been increased.
 
 3.  The web application context has been declared in 
-    `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`.
+    `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml`.
 
 4.  The `common.loader` property which allows Catalina to access the JARs in
-    `$TOMCAT_HOME/lib/ext` has been updated in
-    `$TOMCAT_HOME/conf/catalina.properties`.
+    `$CATALINA_BASE/lib/ext` has been updated in
+    `$CATALINA_BASE/conf/catalina.properties`.
 
 5.  All Java permissions have been granted in the 
-    `$TOMCAT_HOME/conf/catalina.policy` file.
+    `$CATALINA_BASE/conf/catalina.policy` file.
 
-6.  UTF-8 encoding has been set in `$TOMCAT_HOME/conf/server.xml`.
+6.  UTF-8 encoding has been set in `$CATALINA_BASE/conf/server.xml`.
 
 7.  If in a Unix/Linux environment, the `chmod a+x *.sh` command has been run to
     the shell scripts in Tomcat's `bin` folder executable.
@@ -264,7 +269,7 @@ If you want Tomcat to manage your data source, use this procedure:
    on a different machine, make sure it's accessible from your @product@ machine.
 
 2. Add your data source as a resource in the context of your web application
-   specified in `$TOMCAT_HOME/conf/Catalina/localhost/ROOT.xml`:
+   specified in `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml`:
 
         <Context...>
             <Resource
@@ -298,9 +303,9 @@ mail server after @product@ has been installed and started.
 
 If you want to manage your mail session with Tomcat, use these instructions:
 
-To create a mail session bound to `mail/MailSession`, edit `$TOMCAT_
-HOME/conf/Catalina/localhost/ROOT.xml` and configure your mail session. Make
-sure to replace the example mail session values with your own.
+To create a mail session bound to `mail/MailSession`, edit
+`$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml` and configure your mail
+session. Make sure to replace the example mail session values with your own.
 
     <Context...>
         <Resource
@@ -362,14 +367,14 @@ To enable PACL, you need to enable Tomcat's security manager. In the Tomcat
 Configuration section above, you already added the required permissions to the
 Tomcat policy configuration file, `catalina.policy`.
 
-- Edit your `$TOMCAT_HOME/bin/setenv.sh` (if on Linux, Unix, or Mac OS) or
+- Edit your `$CATALINA_BASE/bin/setenv.sh` (if on Linux, Unix, or Mac OS) or
   `setenv.bat` (if on Windows) and enable the security manager by inserting the
   following code into the `CATALINA_OPTS` variable (inside the quotation
   marks):
 
     `-Djava.security.manager -Djava.security.policy=$CATALINA_BASE/conf/catalina.policy`
 
-- Check that your `$TOMCAT_HOME/conf/catalina.policy` file specifies the
+- Check that your `$CATALINA_BASE/conf/catalina.policy` file specifies the
   required permissions (you should have already addressed this in the
   Configuring Tomcat section):
 
@@ -460,7 +465,7 @@ To upgrade Tomcat's global classpath, follow the steps below:
 
         jar xf ../jsf-impl-2.1.29-08.jar
 
-        5. Open the `META-INF/jsf_core.tld` file and remove the following lines:
+5. Open the `META-INF/jsf_core.tld` file and remove the following lines:
 
         <listener>
             <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
@@ -534,17 +539,19 @@ global classpath.
 Now you're ready to deploy @product@ using your @product@ WAR file.
 
 1. If you are manually installing @product@ on a clean Tomcat server, delete the
-   contents of the `$TOMCAT_HOME/webapps/ROOT` directory. This removes the default
-   Tomcat home page.
+   contents of the `$CATALINA_BASE/webapps/ROOT` directory. This removes the
+   default Tomcat home page.
 
-2. Extract the @product@ `.war` file to `$TOMCAT_HOME/webapps/ROOT`.
+2. Extract the @product@ `.war` file to `$CATALINA_BASE/webapps/ROOT`, so that a
+   `WEB-INF` folder, among other files, is in there.     
 
     Now it's time to launch @product@ on Tomcat!
 
-3. Start Tomcat by navigating to `$TOMCAT_HOME/bin` and executing `./startup.sh`
-   or `startup.bat`. Alternatively, you can use `./catalina.sh run` or
-   `catalina.bat run`. Using one of the latter commands makes your terminal or
-   command prompt tail @product@'s log file. This can be useful if you want to
-   see the startup activities performed by @product@.
+3. Start Tomcat by navigating to `$CATALINA_HOME/bin` and executing 
+   `./startup.sh` or `startup.bat`. Alternatively, you can use `./catalina.sh
+   run` or `catalina.bat run`. Using one of the latter commands makes your
+   terminal or command prompt tail @product@'s log file. This can be useful if
+   you want to see the startup activities @product@ performs or debug
+   deployment.
 
 Congratulations on successfully installing and deploying @product@ on Tomcat!

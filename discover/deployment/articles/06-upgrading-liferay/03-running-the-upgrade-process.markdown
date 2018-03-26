@@ -1,35 +1,51 @@
 # Running the Upgrade Process [](id=running-the-upgrade-process)
 
-Now you're ready to run the upgrade process. This involves two steps: running
-the upgrade tool on the newly installed @product@, and starting your upgraded
-instance. 
+Now you're ready to run the upgrade process. It updates the database schema for
+the core and your installed modules. Verification processes test the upgrade.
+Configured verifications for the core and modules run afterwards, but can be run
+manually too. 
 
-## Optional: Upgrading Modules Individually [](id=upgrading-modules-individually)
+Here are the ways to run upgrade processes:
 
-You can choose to upgrade the core and all the modules in one shot or upgrade
-just the core and do the modules manually. You'll make this choice depending on
-what you have installed on your system. If you are upgrading from a previous
-version, you should skip this section and upgrade everything. Going forward,
-however, @product@'s modular framework allows you to upgrade modules--even the
-core--individually. 
+-   **Upgrade everything in one shot**:
+    [Use the upgrade tool](#running-the-upgrade) to upgrade the core and all the
+    modules. 
 
-If you want to upgrade only the core, add a file called
+-   **Upgrade the core and the modules separately**:
+    [Use the upgrade tool](#running-the-upgrade) (recommended) or
+    [Gogo shell](#gogo-shell-commands-for-module-upgrades) to upgrade the core. Then use Gogo shell to upgrade each module. 
+
+If you are upgrading from Liferay Portal 6.2 or earlier, it's recommended to use
+the  upgrade tool to upgrade everything. It's the easiest, most comprehensive
+way to upgrade from those versions. For version 7.0 onward, however, @product@'s
+modular framework lets you upgrade modules--even the core--individually.
+Focusing first on upgrading the core and your most important modules might be
+better for you. The point is, @product-ver@ upgrade process is flexible. 
+
+## Running the Upgrade Tool [](id=running-the-upgrade)
+
+The upgrade tool provides the easiest way to upgrade the core and installed
+modules. You can configure the upgrade from files or inside the tool's command
+line interface. The upgrade tool lets you upgrade everything--the core and all
+the modules--together or separately. 
+
+@product-ver@ bundles include the upgrade tool. If you installed @product-ver@
+manually, you can download the upgrade tool separately from the same location on
+[liferay.com](https://www.liferay.com/). 
+
+To upgrade only the core, add a file called
 `com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
-to the `/osgi/configs` folder with the following content:
+to the `[Liferay Home]/osgi/configs` folder with the following content:
 
     autoUpgrade=false
 
-To run the upgrades for the modules, you'll use the [Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
-In this case, the upgrade tool opens a Gogo shell automatically after it finishes
-upgrading the core. 
+This configuration prevents automatic module upgrade, but causes the upgrade
+tool to open a Gogo shell after finishing the core upgrade. 
 
-## Running the Upgrade [](id=running-the-upgrade)
+The upgrade tool resides in the `[Liferay
+Home]/tools/portal-tools-db-upgrade-client` folder. 
 
-In case of the @product@ bundle, the upgrade tool can be found in the `tools`
-folder inside `liferay.home` directory, in a folder called
-`portal-tools-db-upgrade-client`. If you've installed @product@ manually, you
-can download the tool as standalone application from the same location where you
-downloaded @product@. Use the following command to start it: 
+This command starts the upgrade tool: 
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar
 
@@ -41,65 +57,67 @@ Windows, execute the initial command in the
 
 $$$
 
-By default, the tool is executed with the following Java parameters:
+Here are the tool's default Java parameters:
     
     -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
 
-If you need to modify these parameters, you can use the option `-j`. For
-example, to increase the Java memory in the upgrade process to 4GB:
+The `-j` option lets you override the JVM parameters. For example, these options
+set the JVM memory to 10GB, which is a good starting point for this process
+type:
 
-    java -jar com.liferay.portal.tools.db.upgrade.client.jar -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx4096m"
+    java -jar com.liferay.portal.tools.db.upgrade.client.jar -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
 
-You can also set the location of the log file that prints the output: 
+The `-l` option lets you specify the tool's log file name: 
 
     java -jar com.liferay.portal.tools.db.upgrade.client.jar -l "output.log"
 
-Here's the complete list of command line options:
+Here are all the upgrade tool command line options:
 
-**--help** or **-h**: prints help message for using the tool
+**--help** or **-h**: Prints the tool's help message.
 
-**--jvm-opts** or **-j** + [arg]: sets any JVM options for the upgrade process
+**--jvm-opts** or **-j** + **[arg]**: Sets any JVM options for the upgrade process.
 
-**--log-file** or **-l** + [arg]: uses a custom name for your log file
+**--log-file** or **-l** + **[arg]**: Specifies the tool's log file name.
 
-**--shell** or **-s**: automatically connect to the GoGo shell after finishing
-the upgrade
+**--shell** or **-s**: Automatically connects you to the Gogo shell after
+finishing the upgrade process.
 
-The upgrade requires configuration before it can run. This configuration
-can be done at runtime, or you can pre-configure it in three files:
+### Configuring the Upgrade [](id=configuring-the-core-upgrade)
 
-- `app-server.properties`: Contains properties that define for the tool the
-    server's location and libraries.
-- `portal-upgrade-database.properties`: Contains properties for connecting 
-to the database that will be upgraded.
-- `portal-upgrade-ext.properties`: Contains the rest of the @product@
-properties you need to perform the upgrade. You may wish to copy the properties
-from your old `portal-ext.properties` file here, except for your database
-properties. Note, however, that properties belonging to functionality that has
-been modularized in @product@ are moved to 
-[config files](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations)
-and must be deployed separately. 
+The core upgrade requires configuration. You can configure it at runtime via the
+command line interface or pre-configure it in these files:
 
-Below you'll learn about the properties that can go in these files. 
+-   `app-server.properties`: Specifies the server's location and libraries.
+-   `portal-upgrade-database.properties`: Configures the database connection.
+-   `portal-upgrade-ext.properties`: Sets the rest of the portal properties that
+    the upgrade requires. You might want to copy your current portal properties
+    (except your database properties) into this file. Before copying your
+    current properties, make sure you've
+    [updated the portal properties for @product-ver@](/discover/deployment/-/knowledge_base/7-0/preparing-an-upgrade-to-liferay-7#step-4-update-your-portal-properties). 
 
-## Configuring app-server.properties [](id=configuring-app-server-properties)
+Each file's properties are described next. 
 
-Specify the following information to configure the app server that contains the
-installed new release of @product@: 
+#### Configuring app-server.properties [](id=configuring-app-server-properties)
+
+Specify the following information to configure the app server on which @product-ver@ is installed: 
 
 **dir:**  the application server directory *(required)*
 
-**extra.lib.dirs:**  a comma delimited list of extra directories you want to add to the classpath *(required)*
+**extra.lib.dirs:**  a comma delimited list of extra directories containing any
+binaries or resources to add to the  class path *(required)*
 
-**global.lib.dir:**  the global lib directory of your application server *(required)*
+**global.lib.dir:**  the application server's global library directory 
+*(required)*
 
-**portal.dir:**  the portal directory *(required)*
+**portal.dir:**  the directory where portal is installed in your app server
+*(required)*
 
-## Configuring portal-upgrade-database.properties [](id=configuring-portal-upgrade-database-properties)
+#### Configuring portal-upgrade-database.properties [](id=configuring-portal-upgrade-database-properties)
 
-Specify the following information to configure the database that needs to be
-upgraded. Note that these properties correspond exactly to the properties you'd
-use in `portal-ext.properties` to connect @product@ to its database. 
+Specify the following information to configure the database you're upgrading.
+Note that these properties correspond exactly to the
+[JDBC portal properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#JDBC)
+you'd use in a `portal-ext.properties` file. 
 
 **jdbc.default.driverClassName ***(required)*
 
@@ -109,21 +127,20 @@ use in `portal-ext.properties` to connect @product@ to its database.
 
 **jdbc.default.password ***(required)*
 
-## Configuring portal-upgrade-ext.properties [](id=configuring-portal-upgrade-ext-properties)
+#### Configuring portal-upgrade-ext.properties [](id=configuring-portal-upgrade-ext-properties)
 
 Specify the following information to configure the upgrade itself: 
 
-**liferay.home:** the Liferay home directory *(required)*
+**liferay.home:** the [Liferay home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) *(required)*
 
 **hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
 set to *250* by default *(optional)* 
 
-## Example Upgrade Configuration [](id=example-upgrade-configuration)
+#### Example Upgrade Configuration [](id=example-upgrade-configuration)
 
-Examples of what you'd put in these files are below, but don't worry: the tool
-asks you for the information if you don't have the files, so it may be
-easier simply to run it. If you do this, the tool asks you to supply the
-information at runtime like this: 
+You can either configure the upgrade via property files or via the command line interface. 
+
+Here's an example interaction with the upgrade tool's command line interface:
 
     Please enter your application server (tomcat): 
     tomcat
@@ -140,97 +157,120 @@ information at runtime like this:
     mariadb
     Please enter your database host (localhost):
 
-    (etc)
+    (etc.)
 
-The nice thing about doing it this way is the tool creates the configuration
-files for you. If you want to set all of this up ahead of time, however, you'll
-want to put this information into the configuration files. Here's an example
-configuration that you can customize for your use:
+The command line interface creates the configuration files based on your input.
+If you want to set all of this up ahead of time, however, you'll want to put
+this information into configuration files.
 
--`app-server.properties`:
+Here are example upgrade configuration files that you can customize: 
 
-	dir=../../tomcat-8.0.32
-	global.lib.dir=/lib
-	portal.dir=/webapps/ROOT
-	server.detector.server.id=tomcat
-	extra.lib.dirs=/bin
+-   `app-server.properties`:
 
-The `dir` setting is the folder where your app server is installed. The 
-`global.dir.lib` is the app server's library folder. The `portal.dir` 
-setting is the folder where @product@ is installed in your app
-server. The `server.detector.server.id` defines the application server. The
-`extra.lib.dirs` is the app server's binary folder.
+    	dir=../../tomcat-8.0.32
+    	global.lib.dir=/lib
+    	portal.dir=/webapps/ROOT
+    	server.detector.server.id=tomcat
+    	extra.lib.dirs=/bin
 
--`portal-upgrade-database.properties`:
+-   `portal-upgrade-database.properties`:
 
-    jdbc.default.url=jdbc:mysql://lportal62?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver
-    jdbc.default.username=root
-    jdbc.default.password=
+        jdbc.default.url=jdbc:mysql://lportal62?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+        jdbc.default.driverClassName=com.mysql.jdbc.Driver
+        jdbc.default.username=root
+        jdbc.default.password=
 
--`portal-upgrade-ext.properties`:
+-   `portal-upgrade-ext.properties`:
 
-    liferay.home=/home/user/servers/liferay7
-    module.framework.base.dir=/home/user/servers/liferay7/osgi
+        liferay.home=/home/user/servers/liferay7
+        module.framework.base.dir=/home/user/servers/liferay7/osgi
 
-When you run the tool, it executes the upgrades and verifiers from @product@'s
-core. It also runs the upgrades for each of the installed modules if they are in
-automatic mode. If the modules are not in automatic mode, they can be upgraded
-individually as explained below.
+The upgrade tool first executes the core's upgrade processes and verifiers.
 
-After performing the upgrade, a Gogo shell is automatically opened in case you
-need to upgrade some modules manually or if there was an error during the
-process. Read on to learn how to do that. 
+If the upgrade tool's `autoUpgrade` property is set to `true` (the default
+setting), upgrade processes for all installed modules are run too. 
+
+If you set `autoUpgrade=false` in a file called
+`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
+and copy the file into the `[Liferay Home]/osgi/configs` folder, the upgrade tool opens Gogo shell
+automatically after the core upgrade.
+
+The Gogo shell lets you upgrade modules, check module upgrade status, and verify
+upgrades.  Read on to learn how to use Gogo shell commands to use the
+upgrade-related commands. 
 
 ## Gogo shell commands for module upgrades [](id=gogo-shell-commands-for-module-upgrades)
 
-To run the upgrades for the modules, check their status, or execute verify
-processes, you can use the Gogo shell.
+@product@'s Gogo shell commands let you upgrade modules, check module status, or
+execute verify processes.
 
-1.  Connect to the Gogo shell by executing `telnet localhost 11311` from a
-    terminal.
-2.  Use the available commands in the `upgrade` namespace:
++$$$
 
-    **exit** or **quit:** exits the Gogo shell
+**Note**: [Configuring the core upgrade](#configuring-the-core-upgrade)
+is required before using Gogo shell commands to upgrade the core. 
 
-    **upgrade:help:** displays upgrade commands
+$$$
 
-    **upgrade:execute _{module_name}_:** executes upgrade for that module
+If you ran the upgrade tool and it opened Gogo shell, you're already connected.
+Otherwise, you can connect to Gogo shell via telnet:
 
-    **upgrade:check:** list upgrades pending to execute because they failed in the past or
-    the module haven't reached its final version
+`telnet localhost 11311`
 
-    **upgrade:list:** lists all registered upgrades
+Here are the commands available in the `upgrade` namespace:
 
-    **upgrade:list _{module_name}_:** lists the upgrade steps required for that module
+**exit** or **quit:** exits the Gogo shell
 
-    **upgrade:list | grep Registered:** lists registered upgrades and their versions
+**upgrade:help:** displays upgrade commands
 
-    **verify:execute _{module_name}_:** executes a verifier
+**upgrade:check:** list upgrades pending to execute because they failed in 
+the past or the module hasn't reached its final version
 
-    **verify:list:** lists all registered verifiers
+**upgrade:execute {module_name}:** executes upgrades for that module
 
-For further information about the Gogo shell, please see our [reference document](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). 
-Below are the details of how upgrade processes work in the Gogo shell. 
+**upgrade:executeAll:** executes all pending module upgrade processes
+
+**upgrade:list:** lists all registered upgrades
+
+**upgrade:list {module_name}:** lists the module's required upgrade steps
+
+**upgrade:list | grep Registered:** lists registered upgrades and their versions
+
+**verify:help:** displays verify commands
+
+**verify:check {module_name}:** lists the latest execution result for the
+module's verify process
+
+**verify:checkAll:** lists the latest execution results for all verify processes
+
+**verify:execute {module_name}:** executes the module's verifier
+
+**verify:executeAll:** executes all verifiers
+
+**verify:list:** lists all registered verifiers
+
+There are many useful
+[Liferay commands and standard commands available in Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+The following sections describe Liferay upgrade commands. 
 
 ### Listing module upgrade processes [](id=listing-module-upgrade-processes)
 
-Entering `upgrade:list` at the Gogo shell shows you the modules that have all
-of their upgrade dependencies satisfied. These are the modules that you can
-upgrade.
+Before upgrading modules, you should find which have unresolved dependencies,
+which are resolved and available to upgrade, and examine the module upgrade
+processes. 
 
-If a module is active but you do not see it in the list, that means you need to
-upgrade its dependencies first. You could enter the command
-`scr:info [upgrade_qualified_class_name]` to find the unsatisfied dependencies.
-Here's an example:
+Executing `upgrade:list` in the Gogo shell lists the modules whose upgrade
+dependencies are satisfied. These modules can be upgraded. 
+
+If a module is active but not listed, its dependencies need to be upgraded. The
+Gogo shell command `scr:info [upgrade_step_class_qualified_name]` shows the
+upgrade step class's unsatisfied dependencies. Here's an example `scr:info`
+command:
 
     scr:info com.liferay.journal.upgrade.JournalServiceUpgrade
 
-Entering `upgrade:list [module_name]` at the Gogo shell shows you the steps you
-need to take to upgrade your module. They are listed from highest to lowest
-with respect to how close you are to finishing the whole upgrade process.
-Here's an example: if you execute `upgrade:list com.liferay.bookmarks.service`
-(for the bookmarks service module), you get this:
+Invoking `upgrade:list [module_name]` lists the module's upgrade processes, in
+no particular order.  For example, executing `upgrade:list
+com.liferay.bookmarks.service` (for the Bookmarks Service module), lists this:
 
     Registered upgrade processes for com.liferay.bookmarks.service 1.0.0
             {fromSchemaVersionString=0.0.0, toSchemaVersionString=1.0.0, upgradeStep=com.liferay.portal.spring.extender.internal.context.ModuleApplicationContextExtender$ModuleApplicationContextExtension$1@6e9691da}
@@ -239,118 +279,124 @@ Here's an example: if you execute `upgrade:list com.liferay.bookmarks.service`
             {fromSchemaVersionString=1.0.0-step-2, toSchemaVersionString=1.0.0-step-1, upgradeStep=com.liferay.bookmarks.upgrade.v1_0_0.UpgradeLastPublishDate@3e05b7c8}
             {fromSchemaVersionString=1.0.0-step-3, toSchemaVersionString=1.0.0-step-2, upgradeStep=com.liferay.bookmarks.upgrade.v1_0_0.UpgradeClassNames@6964cb47}
 
-The shell doesn't return the steps in order, so you'll have to sort them
-yourself either mentally or in a text editor to determine the order in which to
-run the upgrade. The step from `0.0.0` to `1.0.0` is for the case where you're
-coming from an empty database. If you're coming from an existing database where
-the Bookmarks tables had already been created (e.g., if you're coming from a 6.2
-database), you'd execute the upgrade steps in this order:
+An application's upgrade step class names typically reveal their intention. For
+example, the example's `com.liferay.bookmarks.upgrade.v1_0_0.UpgradePortletId`
+upgrade step class updates the app's portlet ID. The other example upgrade step
+classes update class names, the `LastPublishDate`, and `PortletSettings`.  The
+example's step from `0.0.0` to `1.0.0` upgrades the module from an empty
+database.
+
+To examine a module's upgrade process better, you can sort the listed upgrade
+steps mentally or in a text editor. Here's the upgrade step order for a
+Bookmarks Service module to be upgraded from Liferay Portal 6.2 (the module's
+database exists) to schema version `1.0.0`: 
 
 - `0.0.1` to `1.0.0-step-3`
 - `0.0.1-step-3` to `1.0.0-step-2`
 - `0.0.1-step-2` to `1.0.0-step-1`
 - `0.0.1-step-1` to `1.0.0`
 
-This means that there is an available process to upgrade Bookmarks from version
-`0.0.1` to version `1.0.0`. To complete this process, you would need to execute
-four steps. They are executed in reverse order. If it helps, think of this like
-the countdown to a rocket launch. The first step starts on the initial version
-and finishes on the first step of the target version, which is the highest step
-number (`step-3`). In this example, the first step is `UpgradePortletId`. The
-last step starts on the last step of the target version (`step-1`) and finishes
-on the target version (`1.0.0`). In this example, the last step is
-`UpgradePortletSettings`. 
+The overall module upgrade process starts at version `0.0.1` and finishes at version
+`1.0.0`. The first step starts on the initial version (`0.0.1`) and finishes on
+the target version's highest step (`step-3`). The last step starts on the target
+version's lowest step (`step-1`) and finishes on the target version (`1.0.0`). 
 
-The reason for this is that every upgrade process is unique to the application
-being upgraded. This application requires updating a `PortletId`, class names,
-the `LastPublishDate`, and finally `PortletSettings`. Other applications might
-have these and/or other steps, depending on whatever enhancements are in the new
-version. 
-
-Once you know the steps, it's time to execute the upgrade. 
+Once you understand the module's upgrade process, you can execute it with
+confidence. 
 
 ### Executing module upgrades [](id=executing-module-upgrades)
 
-Entering `upgrade:execute [module_name]` upgrades a module. If there is an error
-during the process, you will be able to restart the process from the last step
-executed successfully. This means that you don't have to execute the entire
-process again. You can check the status of your upgrade by executing
-`upgrade:list [module_name]`.
+Executing `upgrade:execute [module_name]` upgrades the module. You might run
+into upgrade errors that you must resolve. Executing the command again starts
+the upgrade from the last successful step. 
 
-For example, entering `upgrade:list com.liferay.iframe.web` results in the
-following output:
+You can check upgrade status by executing `upgrade:list [module_name]`. For
+example, entering `upgrade:list com.liferay.iframe.web` outputs this:
 
     Registered upgrade processes for com.liferay.iframe.web 0.0.1
 	   {fromSchemaVersionString=0.0.1, toSchemaVersionString=1.0.0, upgradeStep=com.liferay.iframe.web.upgrade.IFrameWebUpgrade$1@1537752d}
 
-Note the version at the end of the first line: `0.0.1`.
+The first line lists the module's name and current version. The example module's
+current version is `0.0.1`. The `toSchemaVersionString` value is the target
+version. 
 
-Entering `upgrade:execute com.liferay.iframe.web` followed by `upgrade:list
-com.liferay.iframe.web` results in the following output with the version
-now being `1.0.0`:
+Executing `upgrade:list [module_name]` on the module after successfully
+upgrading it shows the module's name followed by the version you targeted. 
+
+For example, if you successfully upgraded `com.liferay.iframe.web` to version
+`1.0.0`, executing `upgrade:list com.liferay.iframe.web` shows the module's
+version is `1.0.0`:
 
     Registered upgrade processes for com.liferay.iframe.web 1.0.0
 	   {fromSchemaVersionString=0.0.1, toSchemaVersionString=1.0.0, upgradeStep=com.liferay.iframe.web.upgrade.IFrameWebUpgrade$1@1537752d}
 
-This indicates that the upgrade was completed. 
+For module upgrades that don't complete, you can check their status and resolve
+their issues.  
 
-### Checking the upgrade status [](id=checking-the-upgrade-status)
+### Checking upgrade status [](id=checking-the-upgrade-status)
 
-You can also browse @product@'s database to determine the upgrade status. 
-The `release_` table in the database contains upgrade status information. 
+It's good to know things still need upgrading and why. You might have forgotten
+to upgrade a module or its upgrade failed. In any case, it's important to know
+where your upgrade stands. 
 
-There is one row for the core recognizable by the value `portal` in the 
-`servletContextName` field. If the `schemaVersion` field matches your new
-@product@ version (`7.0.1` in case of @product-ver@ CE GA2) and `verified` field
-contains `1` (true), this means that the upgrade for the core has been completed
-successfully. 
+The command `upgrade:check` lists modules that have impending upgrades. 
 
-There is one row per OSGi module, and the value for `schemaVersion` must be
-equal or greater than 1.0.0 (1.0.0 is the initial version in @product-ver@ for most
-of the modules except for those that were plugins in earlier versions of Liferay
-Portal). You can check the final expected status for a module by typing
-`upgrade:list [module_name]`
-
-If you need to know which modules failed to upgrade, you can use
-`upgrade:check` to list those that have not reached their final version. This
-command returns a list of modules that failed to upgrade the last time the
-process ran. 
-
-Here's an example of how this works. Say that that the upgrade for module
-`com.liferay.dynamic.data.mapping.service` failed in a step labeled
-`1.0.0-step-2`. If you execute the command `upgrade:check`, you'll get the
-following output: 
+For example, if module  `com.liferay.dynamic.data.mapping.service` failed in a
+step labeled `1.0.0-step-2`. Executing `upgrade:check` shows this: 
 
     Would upgrade com.liferay.dynamic.data.mapping.service from 1.0.0-step-2 to
     1.0.0 and its dependent modules
 
-That means that you will need to fix the issue and execute the upgrade for that
-module again. One clue as to what might have happened is that this upgrade is
-dependent on the upgrade of other modules. Dependent modules for
-`com.liferay.dynamic.data.mapping.service` need to be upgraded once the first
-one is upgrade properly.
+Modules often depend on other modules to complete upgrading. Executing `scr:info
+[upgrade_step_class_qualified_name]` shows the upgrade step class's
+dependencies. You must upgrade dependency modules to successfully upgrade
+dependent modules. 
 
-### Executing verify processes [](id=executing-verify-processes)
+To resolve and activate a module, its upgrade must complete. The
+[Apache Felix Dependency Manager](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager/tutorials/leveraging-the-shell.html)
+Gogo shell command `dm wtf` reveals unresolved dependencies. If your module
+requires a certain data schema version (e.g., its `bnd.bnd` specifies
+`Liferay-Require-SchemaVersion: 1.0.2`) but the module hasn't completed upgrade
+to that version, `dm wtf` shows that the schema version is not registered. 
 
-Verify processes test the upgraded data to be sure the upgrade executed
-successfully. Verify processes in the core are automatically executed after
-upgrading @product@. You can also execute them configuring the [portal properties](http://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Verify) 
-`verify.*` property and restarting your server.
+    1 missing dependencies found.
+    -------------------------------------
+    The following service(s) are missing:
+     * com.liferay.portal.kernel.model.Release (&(release.bundle.symbolic.name=com.liferay.journal.service)(release.schema.version=1.0.2)) is not found in the service registry
 
-Also, there are other verify processes included in some modules. You can run a
-verify process from the Gogo shell by entering `verify:list` to check all
-available verify processes and `verify:execute [verify_qualified_name]` to run
-it. Restarting your server is not needed to execute these kinds of verifiers.
+The `dm wtf` command can also help detect errors in portlet definitions and
+custom portlet `schemaVersion` fields. 
+
+Browsing the @product@ database `Release_` table can help you determine a
+module's upgrade status too. The core's `servletContextName` field value is
+`portal`. If the core's `schemaVersion` field matches your new @product@ version
+(e.g., `7.0.1` for Liferay Portal CE GA2) and the `verified` field is `1`
+(true), the core upgrade completed successfully. 
+
+Each module has one `Release_` table record, and the value for its
+`schemaVersion` field must be `1.0.0` or greater (`1.0.0` is the initial version
+for @product-ver@ modules, except for those that were previously traditional
+plugins intended for Liferay Portal version 6.2 or earlier). 
+
+## Executing verify processes [](id=executing-verify-processes)
+
+Verify processes make sure the upgrade executed successfully. Verify processes
+in the core are automatically executed after upgrading @product@. You can also
+execute them by configuring the
+[`verify.*` portal properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Verify)
+and restarting your server.
+
+Also, some modules have verify processes. To check for available verify
+processes, enter the Gogo shell command `verify:list`. To run a verify process,
+enter `verify:execute [verify_qualified_name]`. 
 
 ## Post-Upgrade Tasks [](id=post-upgrade-tasks)
 
-After upgrading, you should reindex @product@'s search indexes. Don't just do
-this blindly, however: by default, @product@ ships with an embedded
-configuration for Elasticsearch. This configuration works great for demo
-purposes, but is not supported in production. 
+After upgrading and running verify processes, you should reindex @product@'s
+search indexes. Don't just do this blindly, however. By default, @product@ ships
+with an embedded configuration for Elasticsearch. This configuration works great
+for demo purposes, but is not supported in production. Make sure to
+[install and configure a standalone Elasticsearch instance to run in production](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch).
 
-To configure search, follow the [instructions](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch) 
-in the installation section to create a standalone instance of Elasticsearch to
-run in production. 
-
-Once you've configured search and reindexed your search index, your system is upgraded! Congratulations! 
+Once you've configured search and reindexed your search index, your upgraded
+system is ready for action! Congratulations! 

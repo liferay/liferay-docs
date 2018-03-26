@@ -551,7 +551,7 @@ role represents unauthenticated visitors of your site, and it makes sense that
 if you want to allow Guest users to submit forms, you're fine with your site
 members and portal users submitting forms, as well. If you want to disable the
 automatic inheritance of the Guest role permissions, there's a
-[property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Permissions) you can set in your `portal-ext.properties` file:
+[property](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Permissions) you can set in your `portal-ext.properties` file:
 
     permissions.check.guest.enabled=false
 
