@@ -1,14 +1,14 @@
 # Converting Your Application's Portlet Classes and UI [](id=converting-your-applications-portlet-classes-and-ui)
 
-The first thing you'll do is create your application's parent directory and the
-directory structure for your application's *web* client module. This module
-holds your application's portlet classes and is responsible for its UI. Before
-you start creating a skeleton structure for your application's modules, you
-should determine which modules will comprise this version of your
-application. If your application provides service and API classes (which is the
-case for all Liferay Service Builder applications), you should create separate
-modules for your service implementation and service API classes. This tutorial
-assumes the Maven project model, although any build tools or directory setup is
+The first thing you'll do is create your application's root folder and the
+folder structure for your application's *web* client module. This module holds
+your application's portlet classes and is responsible for its UI. Before you
+start creating a skeleton structure for your application's modules, determine
+which modules will comprise this version of your application. If your
+application provides service API and implementation classes (which is the case
+for all Liferay Service Builder applications), you'll create separate modules
+for your service implementation and service API classes. This tutorial assumes
+the Maven project model, although any build tools or folder structure is
 permissible.
 
 +$$$
@@ -18,58 +18,58 @@ the latest OSGi features. The following Gradle or Maven build plugin versions
 should be used in their respective build frameworks:
 
 **Gradle**
-- biz.aQute.bnd:biz.aQute.bnd.gradle:3.1.0 **or**
-- org.dm.gradle:gradle-bundle-plugin:0.8.1
+
+- biz.aQute.bnd:biz.aQute.bnd.gradle:3.2.0 **or**
+- org.dm.gradle:gradle-bundle-plugin:0.9.0
 
 **Maven**
-- biz.aQute.bnd:bnd-maven-plugin:3.1.0 **or**
-- org.apache.felix:maven-bundle-plugin:3.0.1
 
-<!-- These versions support the R6 OSGi released features. -Cody -->
+- biz.aQute.bnd:bnd-maven-plugin:3.2.0
 
 $$$
 
-1.  Create the parent directory for your application. This parent directory is
-    home for your application's independent modules and configuration files. For
-    example, if your application's name is *Tasks*, then your parent directory
-    could be *tasks*.
+Here are the steps for creating the folder structure: 
 
-2.  Create the directory structure skeleton for your web client module. You can
-    do this automatically by using Blade CLI. You can learn how to install
-    Blade CLI by visiting the
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
-    tutorial section and you can view examples of
-    [Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
-    by visiting the respective tutorials.
+1.  Create the root folder for your application. It is the new home for your 
+    application's independent modules and configuration files. For example, if
+    your application's name is *Tasks*, then your root folder could be *tasks*.
 
-    Navigate to your parent directory (e.g., `tasks`) and run the following
-    Blade CLI command to generate a generic web client module structure:
+2.  Create the folder structure for your web client module.
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) and
+    [Maven](/develop/reference/-/knowledge_base/7-1/maven)
+    generate project folder structures based on
+    [project templates](/develop/reference/-/knowledge_base/7-1/project-templates).
+
+    For example, navigate to your application's root folder (e.g., `tasks`) and
+    run the following Blade CLI command to generate a generic web client module
+    structure:
 
         blade create -t mvc-portlet [APPLICATION_NAME]-web
 
     If your application uses Liferay Service Builder, you'll need to run the
-    following Blade CLI command as well. This command generates the service
-    implementation and service API modules:
+    following Blade CLI command as well. This command generates the service API
+    and service implementation modules:
 
         blade create -t service-builder -p [ROOT_PACKAGE] [APPLICATION_NAME]
 
-    If you used the `blade create service-builder` command to generate
-    implementation and API modules, ignore the `*-service` and `*-api` folders
-    for now; you'll learn about them later in this tutorial.
+    If you generated service API and service implementation modules, ignore the
+    `*-service` and `*-api` folders for now; you'll learn about them in the next
+    tutorial.
 
-3.  Replace the `/src/main/java/[APPLICATION_NAME]` folder with your root
-    package. For instance, if your application's root package name is
-    `com.liferay.tasks.web`, your class's directory should be
+3.  In your `*-web` module, replace the `/src/main/java/[APPLICATION_NAME]`
+    folder with your root Java package. For example, if your application's root
+    package name is `com.liferay.tasks.web`, your class's folder should be
     `/src/main/java/com/liferay/tasks/web`. Also, remove the `init.jsp` and
-    `view.jsp` files located in the `src/main/resources/META-INF/resources`
-    folder. You'll insert your traditional application's Java code and JSPs, so
-    the generated default code is not necessary.
+    `view.jsp` files from the `src/main/resources/META-INF/resources` folder.
+    You'll use your existing application's JSPs instead of these generated
+    default JSPs.
 
-4.  Verify that your current directory structure for your application's `*-web`
-    module matches the structure listed below:
+4.  Verify that your `*-web` module folder resides in your application's root 
+    folder (marked by `[APPLICATION_NAME]` below)'s and your `*-web` module's
+    folder structure looks like this:
 
-    - `tasks`
-        - `tasks-web`
+    - `[APPLICATION_NAME]`
+        - `[APPLICATION_NAME]-web`
             - `src`
                 - `main`
                     - `java`
@@ -82,15 +82,14 @@ $$$
             - `bnd.bnd`
             - `build.gradle`
 
-    The instructions in the rest of this sub-section only affect your
-    application's web client module.
+    The remaining steps affect your application's web client module (`*-web`
+    module).
 
-5.  Open the `bnd.bnd` file. This is used to generate your module's
-    `MANIFEST.MF` file that is generated when you build your project. Edit your
-    module's `bnd.bnd` file to fit your application. For more information about
-    configuring your module's `bnd.bnd`, visit
-    [http://bnd.bndtools.org/](http://bnd.bndtools.org/). You can view the
-    `dictionary-web` module's `bnd.bnd` for a simple example below:
+5.  Open the `bnd.bnd` file. bnd uses it to generate your module's
+    `MANIFEST.MF` file when you build your project. Edit the `bnd.bnd` file to
+    fit your application. For more information about configuring your module's
+    `bnd.bnd`, visit [http://bnd.bndtools.org/](http://bnd.bndtools.org/). For
+    example, here's the Liferay `dictionary-web` module's `bnd.bnd`:
 
         Bundle-Name: Liferay Dictionary Web
         Bundle-SymbolicName: com.liferay.dictionary.web
@@ -111,32 +110,34 @@ $$$
         Liferay-Releng-Module-Group-Title: Web Content
         Web-ContextPath: /journal-web
 
-6.  Open the `build.gradle` file. This is used to [specify all your module's
-    dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies).
-    The `build.gradle` file that was generated for you is pre-populated with
-    content and default dependencies related to OSGi and @product@. In the
-    `dependencies {...}` block, you need to add the web client module's
-    dependencies. To learn how to find and specify dependencies on Liferay API
-    modules, refer to the reference document 
-    [Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules). 
-    When deploying your module into the OSGi container, OSGi checks if the
-    dependencies are available in the container. If the dependencies are not
-    available in the container, your module will be unavailable. Therefore, your
-    dependencies are not bundled with your module. Instead, they're available
-    from Liferay's OSGi container.
+6.  Open the `build.gradle` file. Use it to
+    [specify all your module's dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies).
+    The `build.gradle` file Blade CLI project templates generate for you is
+    pre-populated with content and default dependencies related to @product@ and
+    OSGi. In the `dependencies {...}` block, add your module's dependencies.
+
+    [Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules)
+    lists common Liferay API module's symbolic names. The Javadoc overviews for 
+    [@product-ver@](@platform-ref@/7.1-latest/javadocs/) and
+    [Liferay apps](@app-ref@/7.1-latest/javadocs)
+    list each module's symbolic name and version. The
+    [Configuring Dependencies tutorial](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+    demonstrates finding artifact information and specifying dependencies. 
+    [@product@ provides many Java packages and entire artifacts](/develop/reference/-/knowledge_base/7-0/third-party-packages-portal-exports)
+    at runtime in the OSGi container. On installing your module to the OSGi container it activates once all its dependencies resolve. Liferay reports all unresolved dependencies. Here's an example message:
+
+        ! could not resolve the bundles: ... Unresolved requirement: Import-Package: ... Unresolved requirement: Require-Capability ...
 
 7.  Copy your traditional application's JSP files into the
-    `/src/main/resources/META-INF/resources` directory. In most cases, all of
-    your application's JSP files should reside in the web client module.
+    `/src/main/resources/META-INF/resources` folder. In most cases, all of your
+    application's JSP files belong in the web client module.
 
-8.  Your next task is to add your portlet classes, non-service classes, and
-    non-implementation classes into your client module. Copy your portlet
-    classes into their respective directories and ensure their package names
-    within the class are specified correctly. Your client module can hold one
-    class or many classes, depending on how large your application is. It's a
-    good practice to organize your classes into sub-packages of the main
-    package, to more easily manage them. You'll examine the `journal-web` module
-    for an example of a client module holding many different Java classes:
+8.  Copy your portlet classes and supporting classes, that aren't related to
+    [Service Builder](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code),
+    into their respective package folders in the web client module. Organizing
+    classes into sub-packages can make them easier to manage. 
+
+    For example, here's the `journal-web` module's Java source folder structure:
 
     - `journal-web`
         - ...
@@ -163,26 +164,28 @@ $$$
 
     +$$$
 
-    **Note:** Many applications have service and API classes. These classes
-    need to live in separate implementation and API modules. You'll learn more
-    about creating these later in this tutorial.
+    **Note:** Many applications have API and implementation classes. These 
+    classes belong in API and implementation modules. The next tutorial
+    demonstrates copying those classes into modules. 
 
     $$$
 
-9.  Now that you have the necessary classes in your client module, you need to
-    edit these classes to be compliant with OSGi. First, you need to choose a
-    component framework to work with. Using a component framework lets you
-    easily harness the power of OSGi. @product@ uses the
+9.  Now that you the necessary classes are in your client module, you must make 
+    them comply with OSGi. First, choose an OSGi component framework to work
+    with. Using a component framework lets you easily harness the power of OSGi.
+    We recommend using the 
     [Declarative Services](http://wiki.osgi.org/wiki/Declarative_Services)
-    component framework and recommends that Liferay developers use it too. This
-    tutorial assumes that you're using Declarative Services. You can, however,
-    use any other OSGi component framework in @product@.
+    component framework because @product@ uses it. This tutorial assumes that
+    you're using Declarative Services. You can, however, use any other OSGi
+    component framework in @product@.
 
     Review your traditional application's XML files and migrate the
-    configuration and metadata information to the portlet class as properties.
-    You can do this by adding the `@Component` annotation to your portlet class
-    and adding the necessary properties to that annotation. The end result
-    should look similar to the following example:
+    configuration and metadata information to the portlet class as component
+    properties.  You can do this by adding the `@Component` annotation to your
+    portlet class and adding the necessary properties to that annotation.
+    Examine to the
+    [mapping of the portlet descriptors to component properties](/develop/reference/-/knowledge_base/7-0/portlet-descriptor-to-osgi-service-property-map).
+    The end result should look similar to the following example:
 
         @Component(
             immediate = true,
@@ -204,43 +207,43 @@ $$$
             service = Portlet.class
         )
         public class TasksPortlet extends MVCPortlet {
+            ...
+        }
 
 10. Convert all references of the `portletId` (e.g., `58_INSTANCE_4gtH`) to the
     class name of the portlet, replacing all periods with underscores (e.g.,
     `com_liferay_web_proxy_portlet_WebProxyPortlet`).
 
-11. If your traditional application has resource actions, you'll need to migrate
-    those into your client module. Create the
+11. Migrate your traditional application's resource actions (if it has any),  
+    into your client module. Create the
     `/src/main/resources/resource-actions/default.xml` file, and copy your
     resource actions there. Make sure to create the `src/portlet.properties`
     file and add the following property:
 
         resource.actions.configs=resource-actions/default.xml
 
-    As an example, you can view the Directory application's
-    [`default.xml`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/directory/directory-web/src/main/resources/resource-actions/default.xml)
-    file.
+    As an example, see the Directory application's
+    [`default.xml`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/directory/directory-web/src/main/resources/resource-actions/default.xml).
 
 12. Add any language keys that your application uses to the
-    `src/main/resources/content/Language.properties` file. You should only
-    include the language keys that are unique to your application. Your
-    application will use the default language keys in Liferay when it is
-    deployed.
+    `src/main/resources/content/Language.properties` file. Only include the
+    language keys unique to your application. @product@'s language keys are
+    available to all portlet applications. 
 
-Awesome! You've created your application's web client module and navigated
-through some of the most common tasks necessary to modularize your portlet
-classes and UI. There are certain parts of your application that may not be
-covered in this tutorial that you must account for. Liferay's Developer Network
-provides developer tutorials divided into popular areas so you can easily find
-the correct way to transform your legacy code to use @product@'s updated best
-practices.
+Awesome! You've created your application's web client module and completed some
+of the most common tasks for modularizing your portlet classes and UI. To
+convert other parts of your application this tutorial hasn't covered, examine
+the
+[@product@ developer tutorials](/develop/tutorials)
+to see how those parts fit into application modules. The tutorials  are divided
+into popular areas so you can easily find the topical information you need.
 
-The table below serves as a quick reference guide. It summarizes the migration
-process for many of your application's directories, packages, and files.
-This is a sample table for a fictitious *tasks* applications.
+Lastly, the table below is a quick reference guide that maps files and Java
+packages from a traditional portlet plugin to a module for a fictitious
+application called `tasks-portlet`. 
 
-| Plugin Package | Module Package |
-|----------------|----------------|
+| Traditional Plugin | Module |
+|--------------------|--------|
 | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.asset` | `tasks-web/src/main/java/com.liferay.tasks.asset` |
 | `tasks-portlet/docroot/WEB-INF/src/com.liferay.tasks.portlet` | `tasks-web/src/main/java/com.liferay.tasks.portlet` |
 | `tasks-portlet/docroot/WEB-INF/src/content` | `tasks-web/src/main/resources/content` |
