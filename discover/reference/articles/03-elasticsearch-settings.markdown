@@ -9,10 +9,10 @@ and deployed to `[Liferay_Home]/osgi/configs`.
 
 +$$$
 
-**Elasticsearch 6:** The [Elasticsearch 6 adapter](MP LINK WHEN RELEASED)
+**Elasticsearch 6:** The [Elasticsearch 6 connector](MP LINK WHEN RELEASED)
 contains all the settings of the default adapter, along with a few new ones. See
-the end of this article to learn about for the settings unique to the
-Elasticsearch 6 adapter. 
+the end of this article to learn about the settings unique to the
+Elasticsearch 6 connector. 
 
 $$$
 

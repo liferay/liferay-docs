@@ -3,7 +3,7 @@
 To monitor Elasticsearch, use X-Pack Monitoring. First [install X-Pack onto
 Elasticsearch](discover/deployment/-/knowledge_base-7-1/securing-elasticsearch-6-with-x-pack),
 and configure security if you're using X-Pack's security features. Then come
-back her for instructions on installing and configuring Kibana (the monitoring
+back here for instructions on installing and configuring Kibana (the monitoring
 server) with X-Pack so that Elasticsearch (secured with X-Pack), Kibana (secured
 with X-Pack), and @product@ can communicate effortlessly and securely.
 
@@ -73,7 +73,9 @@ and navigate to `localhost:5601`. Log in with a
 ### Configuring Kibana with Encryption
 
 Follow these steps to configure Kibana if X-Pack is encrypting communication
-with the Elasticsearch cluster. Consult [Elastic's guide](https://www.elastic.co/guide/en/kibana/6.2/using-kibana-with-security.html#using-kibana-with-security)for more information.
+with the Elasticsearch cluster. Consult [Elastic's
+guide](https://www.elastic.co/guide/en/kibana/6.2/using-kibana-with-security.html#using-kibana-with-security)
+for more information.
 
 Add these settings to `kibana.yml`:
 
@@ -129,8 +131,7 @@ servers are up and running, add the X-Pack Monitoring portlet to a page:
 2. Search for *monitoring* and drag the *X-Pack Monitoring* application from the
    Search category onto the page.
 
-For more information see the Elastic documentation for information on
-[monitoring
+See the Elastic documentation for information on [monitoring
 Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/es-monitoring.html)
 and [monitoring production
 systems](https://www.elastic.co/guide/en/x-pack/6.1/monitoring-production.html).

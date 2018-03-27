@@ -77,10 +77,10 @@ In this example, it's 2.4.0.
 +$$$
 
 **Elasticsearch 6.1:** Elasticsearch 6.1.x is supported for @product@ systems
-running Fix Pack XX or later, although version 2.x remains the default, embedded
+running Fix Pack 42 or later, although version 2.x remains the default, embedded
 version. To install Elasticsearch 6.1.x, take these steps:
 
-1. Make sure you're running FP-XX or later.
+1. Make sure you're running FP-42 or later.
 2. Install Elasticsearch 6.1.x (follow steps 2-4  in this article for guidance).
 3. Install the [Elasticsearch 6 Adapter from Marketplace](LINK WHEN AVAILABLE)
    and stop the default Elasticsearch adapter.
@@ -95,10 +95,9 @@ Portal Search Elasticsearch module and click the edit
 option. This leaves the bundle installed, but stops it in the OSGi runtime.
 
 To learn more about upgrading an existing system to Elasticsearch 6.1, read the
-[upgrade article](LINK WHEN WRITTEN).
+[upgrade article](/discover/deployment/-/knowledge_base/7-1/upgrading-to-elasticsearch-6).
 
 $$$
-
 
 Now that you know the version of Elasticsearch you need, go to
 [Elastic's](https://www.elastic.co) website and download that version. 

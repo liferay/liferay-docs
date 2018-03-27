@@ -2,12 +2,13 @@
 
 X-Pack is an [Elastic
 extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)
-for securing Elasticsearch clusters. If you're using Elasticsearch as
-@product@'s search engine, it's advisable to secure it with X-Pack. The security
-features of X-Pack include authenticating access to the Elasticsearch cluster's
-data and encrypting Elasticsearch's internal and external communications. These
-are necessary security features for most production systems. An Enterprise
-Search-Standard subscription is necessary for this integration.
+for securing and monitoring Elasticsearch clusters. If you're using
+Elasticsearch as @product@'s search engine, it's advisable to secure it with
+X-Pack. The security features of X-Pack include authenticating access to the
+Elasticsearch cluster's data and encrypting Elasticsearch's internal and
+external communications. These are necessary security features for most
+production systems. An Enterprise Search-Standard subscription is necessary for
+this integration.
 <!--Need confirmation of subscription-->
 
 Here's the generalized process for using X-Pack to secure the @product@ data

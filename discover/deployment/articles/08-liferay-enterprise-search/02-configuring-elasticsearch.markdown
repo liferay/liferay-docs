@@ -144,8 +144,8 @@ configure the adapter, make sure Elasticsearch is running.
 +$$$
 
 **Elasticsearch 6.1:** The Elasticsearch Adapter for Elasticsearch 6.1 is called
-*Elasticsearch 6*. Download the Elasticcsearch 6 adapter from Liferay
-Marketplace and install it, following the [Marketplace
+*Liferay Connector for Elasticsearch 6*. Download the Elasticcsearch 6 connector
+from Liferay Marketplace and install it, following the [Marketplace
 documentation](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace)
 if necessary.
 
