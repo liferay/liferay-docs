@@ -21,6 +21,17 @@ implement a Service Tracker to look up services in the service registry.
 
 ![Figure 1: Service implementations that are registered in the OSGi service registry can be accessed using Service Trackers.](../../images/service-registry.png)
 
++$$$
+
+**Note:** When using Service Trackers in your WAR-style project, you must
+configure the required `org.osgi.core` dependency carefully in your build file
+(e.g., `build.gradle`, `pom.xml`, etc.) to avoid errors. Since it's included in
+@product@ by default, it must be configured as `provided`. See the
+[Third Party Packages Portal Exports](/develop/reference/-/knowledge_base/7-0/third-party-packages-portal-exports)
+tutorial for more information.
+
+$$$
+
 What scenarios might require using a service tracker? Keep in mind we're
 focusing on scenarios where DS *can't* be used. This typically involves a
 non-native (to OSGi) Dependency Injection framework.
