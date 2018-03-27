@@ -24,7 +24,7 @@ Use these steps to create a page template:
     and *Wiki* are example layouts for the Blogs and Wiki applications. *Content
     Display Page* serves a special function that you'll work with later. 
 
-    ![Figure x: The Page Templates page.](../../../images/001-page-templates-screen.png)
+    ![Figure 1: The Page Templates page.](../../../images/001-page-templates-screen.png)
 
 2.  Click the *Add* button 
     (![Add](../../../images/icon-add.png)) in the lower right corner. This takes 
@@ -48,7 +48,7 @@ edit the page template you just created:
 1.  In the list of page templates, click *Lunar Guide Page*. This opens it in a 
     new browser tab or window. 
 
-    ![Figure x: Click the page template to edit it.](../../../images/001-lunar-resort-template-edit.png)
+    ![Figure 2: Click the page template to edit it.](../../../images/001-lunar-resort-template-edit.png)
 
     <!-- Recommend adding something about the Search and Navigation portlets
     which are added to the page template by default. They're conspicuous when

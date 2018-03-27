@@ -688,7 +688,7 @@ tab. This tab contains the following sections:
   Enter them into the box that appears when you select *Show Blacklisted 
   Properties*. 
 
-![Figure 19: An environment's Registration tab lets you select the LCS services to use with your @product@ servers that connect to that environment.](../../images-dxp/lcs-environment-token.png)
+![Figure 21: An environment's Registration tab lets you select the LCS services to use with your @product@ servers that connect to that environment.](../../images-dxp/lcs-environment-token.png)
 
 Whether you must generate or regenerate a token depends on the actions you took 
 in the Services section, and whether there's an existing token in the 

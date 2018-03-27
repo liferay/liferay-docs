@@ -18,9 +18,9 @@ default was 2 column 30-70 not 1 column. Depending on how that initial step is s
 You'll next use layouts to create the Activities and About Us pages for the
 Lunar Resort. 
 
-![Figure x: The final Activities page.](../../../images/001-final-activities.png)
+![Figure 1: The final Activities page.](../../../images/001-final-activities.png)
 
-![Figure x: The final About Us page.](../../../images/001-final-about-us.png)
+![Figure 2: The final About Us page.](../../../images/001-final-about-us.png)
 
 ## Creating the Activities Page [](id=creating-the-activities-page)
 
@@ -43,7 +43,7 @@ right. Follow these steps to create this page:
     column layout. The smaller left column takes up 30% of the page, and the
     larger right column takes up 70% of the page. 
 
-    ![Figure x: Activities page creation.](../../../images/001-add-activities-page.png)
+    ![Figure 3: Activities page creation.](../../../images/001-add-activities-page.png)
 
 5.  Leave the other options on their default settings and click *Add Page*. 
 
@@ -72,7 +72,7 @@ The navigation bar now contains the two new pages that you just created. Next,
 you'll create a couple more pages and then arrange their order in the
 navigation bar. 
 
-![Figure x: The navigation bar lists your site's pages.](../../../images/001-page-navigation.png)
+![Figure 4: The navigation bar lists your site's pages.](../../../images/001-page-navigation.png)
 <!-- 
 Replace with a screenshot that shows more of the page. In the current screenshot 
 it's impossible to tell where the nav bar is located on the page.

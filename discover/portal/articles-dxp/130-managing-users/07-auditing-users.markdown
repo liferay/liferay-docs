@@ -160,7 +160,7 @@ happening in your @product@. You can use this information to troubleshoot proble
 determine ownership of particular actions, or, as Harry is about to do, find out
 who made permission changes they weren't supposed to make. 
 
-## Configuring Audits
+## Configuring Audits [](id=configuring-audits)
 
 @product@, enables audits by default. As described above, the Control Panel
 app reports audit events, but you can also report them in Liferay's logs or
@@ -176,7 +176,7 @@ There are two main ways to configure @product@:
 
 These methods apply to each of the audit configuration options explained below.
 
-### Reporting Audit Events in Liferay's Logs and Console
+### Reporting Audit Events in Liferay's Logs and Console [](id=reporting-audit-events-in-liferays-logs-and-console)
 
 **In the Control Panel:** Go to *Control Panel* &rarr; *System Settings* &rarr;
 *Foundation* &rarr; *Logging Message Audit Message Processor*.
@@ -232,7 +232,7 @@ This configures Log4J to record INFO level messages from the
 class to a file called `audit.yyyy-MM-dd.log` in the `[LIFERAY_HOME]/logs`
 folder. Adjust the audit file properties or log level to your liking.
 
-### Configuring Audit Events for Scheduled Liferay Jobs
+### Configuring Audit Events for Scheduled Liferay Jobs [](id=configuring-audit-events-for-scheduled-liferay-jobs)
 
 By default, scheduled jobs don't trigger audit events. To enable them via the
 Control Panel, go to *Control Panel* &rarr; *System Settings* &rarr;
@@ -250,7 +250,7 @@ Auditing scheduled jobs is a smart choice if there's a chance someone with a
 dubious competence level would try to schedule jobs, as you'll find out below in
 the conclusion of our story. 
 
-### Enabling or Disabling Audit Events Entirely
+### Enabling or Disabling Audit Events Entirely [](id=enabling-or-disabling-audit-events-entirely)
 
 Audit events are enabled by default. To disable them via the Control Panel, go
 to *Control Panel* &rarr; *System Settings* &rarr; *Foundation* &rarr; *Audit*.

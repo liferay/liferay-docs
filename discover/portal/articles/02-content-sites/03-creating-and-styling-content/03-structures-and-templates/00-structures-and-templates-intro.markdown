@@ -21,6 +21,6 @@ important: you've actually already used them! Basic Web Content is a type of web
 content defined by a structure and a template. Now you'll use structures and
 templates to create something a little more intricate. 
 
-![Figure x: Content using a template.](../../../../images/001-content-template-example.png)
+![Figure 1: Content using a template.](../../../../images/001-content-template-example.png)
 
 <a class="go-link btn btn-primary" href="/discover/portal/-/knowledge_base/7-0/creating-structures">Let's Go!<span class="icon-circle-arrow-right"></span></a>

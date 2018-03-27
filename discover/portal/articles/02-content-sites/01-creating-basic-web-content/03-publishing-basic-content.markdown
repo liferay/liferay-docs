@@ -29,7 +29,7 @@ a page. Now you'll publish that content on that page.
  
 2.  Open the *Add* menu. Select *Content* if it's not already selected.
 
-    ![Figure X: The Add menu with your content.](../../../images/001-add-menu-content.png)
+    ![Figure 1: The Add menu with your content.](../../../images/001-add-menu-content.png)
 
 3.  Drag and drop *Lunar Resort Welcome* onto the page above the *Hello World*
     portlet.
@@ -40,7 +40,7 @@ manually by adding a Web Content Display application to the page and then
 configuring it to display the content. But it's much easier to let @product@ do 
 it for you!
 
-![Figure X: Your content on a page.](../../../images/001-basic-content-on-page.png)
+![Figure 2: Your content on a page.](../../../images/001-basic-content-on-page.png)
 
 ## Cleanup [](id=cleanup)
 
@@ -59,7 +59,7 @@ done though.-->
 3.  Under *Application Decorators* select *Barebone*. This removes the content's 
     title, background, and border from the content display. Click *Save*.
 
-    ![Figure X: Change the portlet's look and feel.](../../../images/001-select-barebone.png)
+    ![Figure 3: Change the portlet's look and feel.](../../../images/001-select-barebone.png)
 
 4.  Scroll down to the bottom of the page and mouse over the *Hello World* 
     portlet.

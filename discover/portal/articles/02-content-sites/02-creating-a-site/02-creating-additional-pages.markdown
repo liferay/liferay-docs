@@ -51,7 +51,7 @@ The new pages now appear in the navigation bar with the other pages. If these
 pages are out of your preferred order, you can rearrange them via drag and drop.
 Rearrange the pages to match this order: 
 
-![Figure x: Reorder the pages in the navigation bar.](../../../images/001-final-menu.png)
+![Figure 1: Reorder the pages in the navigation bar.](../../../images/001-final-menu.png)
 
 Great! Now that you have your site's pages, you'll add some applications to 
 them. 

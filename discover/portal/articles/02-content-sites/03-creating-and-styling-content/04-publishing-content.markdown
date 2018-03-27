@@ -102,7 +102,7 @@ these steps:
 5.  Open the *Asset Entries* section and click *Select* &rarr; *Basic Web 
     Content*. 
 
-    ![Figure x: Selecting individual content for display.](../../../images/001-select-basic-web-content.png)
+    ![Figure 1: Selecting individual content for display.](../../../images/001-select-basic-web-content.png)
 
 8.  Select *Hazard Disclaimer*. 
 
@@ -120,7 +120,7 @@ takes you to the content display page containing your full content. The content
 display page also provides a friendly URL to your content that you can share. 
 <!-- Where's the friendly URL? The URL looks rather menacing. -->
 
-![Figure x: Your content now appears in the asset publisher.](../../../images/001-view-disclaimer.png)
+![Figure 2: Your content now appears in the asset publisher.](../../../images/001-view-disclaimer.png)
 
 Right now, you're using the content display page's default configuration. You 
 can also configure the page to look however you want, or turn an existing page 
