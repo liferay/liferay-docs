@@ -3,7 +3,7 @@
 Liferay registers lifecycle events, such as portal and database initialization,
 into the OSGi service registry. In your OSGi Component or non-component class,
 you can listen for these events by way of their service registrations. The 
-[ModuleServiceLifecycle interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/module/framework/ModuleServiceLifecycle.html)
+[`ModuleServiceLifecycle` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/module/framework/ModuleServiceLifecycle.html)
 defines these names for the lifecycle event services:
 
 -   [DATABASE_INITIALIZED](@platform-ref@/7.0-latest/javadocs/portal-kernel/constant-values.html#com.liferay.portal.kernel.module.framework.ModuleServiceLifecycle.DATABASE_INITIALIZED)
@@ -59,7 +59,7 @@ Here's how to act on services in your component:
         SomeOsgiService _someOsgiService;
 
 2.  To bind to a particular lifecycle event service, target its name as the 
-    [ModuleServiceLifecycle interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/module/framework/ModuleServiceLifecycle.html)
+    [`ModuleServiceLifecycle` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/module/framework/ModuleServiceLifecycle.html)
     defines. This field, for example, targets @product@'s database
     initialization. 
 
@@ -102,10 +102,10 @@ tracker filters on the lifecycle service
 
     new ServiceTracker<>(bundleContext, filter, null);
 
-Acting on lifecycle event services in this way requires service callback handling
-and some boilerplate code. Using DS components is easier and more elegant, but
-at least service trackers provide a way to work with lifecycle events outside of
-DS components. 
+Acting on lifecycle event services in this way requires service callback
+handling and some boilerplate code. Using DS components is easier and more
+elegant, but at least service trackers provide a way to work with lifecycle
+events outside of DS components. 
 
 ## Related Topics [](id=related-topics)
 
