@@ -74,10 +74,20 @@ install them:
 
 You've completed installing the Liferay Theme Generator's dependencies.
 
-Now you're ready to install the Liferay Theme Generator. Install it globally by
-executing this command:
+Now you're ready to install the Liferay Theme Generator. 7.x.x versions of the 
+Theme Generator let you create themes for 6.2 and 7.0. Versions 8.x.x and up 
+let you create themes for later versions of @product@. Install version 7.2.0 
+globally by executing this command:
 
-    npm install -g generator-liferay-theme
+    npm install -g generator-liferay-theme@7.2.0
+    
++$$$
+
+**Note:** Version 7.2.0 is the latest 7.x.x Theme Generator version at the time 
+of this writing. Always use the latest 7.x.x version to build with the most 
+recent fixes and updates.
+
+$$$
 
 If you are on Windows, you must do additional setup for generated themes to use
 Sass. 
@@ -97,7 +107,7 @@ Generator and specifies the `"liferay-theme-deps-7.0": "1.0.0"` dependency in
 its `package.json`, `npm install` may fail in Liferay DXP due to its dependency 
 on node-sass `v3.13.1`. To fix this issue, change the dev dependency in your 
 `package.json` to `"liferay-theme-deps-7.0": "*"` and rebuild your theme. We 
-recommend that you use the latest version of the Theme Generator and 
+recommend that you use the latest 7.x.x version of the Theme Generator and 
 dependencies in your `package.json` to ensure full compatibility. 
 
 $$$

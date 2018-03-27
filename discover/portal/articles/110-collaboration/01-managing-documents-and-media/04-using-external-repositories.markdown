@@ -55,14 +55,14 @@ repository types.
 
 Let's configure Liferay Portal for what's required in authentication.
 In  a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home),
-set a [`session.store.password`](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Session)
+set a [`session.store.password`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Session)
 portal property to `true`:
 
     session.store.password=true
 
 Next, make sure to authenticate the same way on both @product@ and
 the repository. You can do so by authenticating based on screen name. Set the
-following [`company.security.auth.type`]( https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Company)
+following [`company.security.auth.type`]( @platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Company)
 portal property: 
 
     company.security.auth.type=screenName

@@ -24,6 +24,6 @@ Now you can safely leverage third party packages @product@ provides!
 
 ## Related topics [](id=related-topics)
 
-[Resolving a Plugin's Dependencies](/develop/reference/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
 
-[Configuring Dependencies](/develop/reference/-/knowledge_base/7-0/configuring-dependencies)
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)

@@ -63,6 +63,18 @@ the method `SessionContext.loadStoredCredentials()`.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kEZEahTzuck" frameborder="0" allowfullscreen></iframe>
 
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call the portal's JSON web services. This 
+Screenlet calls the following services and methods. 
+
+| Service | Method | Notes | 
+| ------- | ------ | ----- |
+| `UserService` | `getUserByEmailAddress` | Basic login |
+| `UserService` | `getUserByScreenName` | Basic login |
+| `UserService` | `getUserById` | Basic login |
+| `UserService` | `getCurrentUser` | Cookie and OAuth login |
+
 ## Module [](id=module)
 
 - Auth
@@ -134,6 +146,9 @@ connection, you can use the `credentialsStorage` attribute together with the
 | `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to use in OAuth authentication. |
 | `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to use in OAuth authentication. |
 | `credentialsStorage ` | `enum` | Sets the mode for storing user credentials. The possible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
+| `shouldHandleCookieExpiration` | `bool` | Whether to refresh the cookie automatically when using cookie login. When set to `true` (the default value), the cookie refreshes as it's about to expire.  |
+| `cookieExpirationTime` | `int` | How long the cookie lasts, in seconds. This value depends on your portal instance's configuration. The default value is `900`. |
+| `authenticator` | `Authenticator` | An instance of a class that implements the `Authenticator` interface. The *Challenge-Response Authentication* section below discusses this further. |
 
 ## Listener [](id=listener)
 
@@ -147,3 +162,33 @@ methods:
   [portal's User entity](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/com/liferay/portal/service.xml#L2575-L2737).
 
 - `onLoginFailure(Exception e)`: Called when an error occurs in the process.
+
+## Challenge-Response Authentication [](id=challenge-response-authentication)
+
+To support 
+[challenge-response authentication](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication) 
+when using a cookie to log in to the portal, Login Screenlet has an 
+`authenticator` attribute. As mentioned in the above *Attributes* table, this 
+attribute's value is a class that implements the 
+[`Authenticator` interface](https://square.github.io/okhttp/3.x/okhttp/okhttp3/Authenticator.html). 
+
+Here's an example of such a class. It sends a basic authorization in response to 
+an authentication challenge: 
+
+    public class BasicAuthAutenticator extends BasicAuthentication implements Authenticator {
+
+        public BasicAuthAutenticator(String username, String password) {
+            super(username, password);
+        }
+
+        @Override
+        public Request authenticate(Proxy proxy, Response response) throws IOException {
+            String credential = Credentials.basic(username, password);
+            return response.request().newBuilder().header(Headers.AUTHORIZATION, credential).build();
+        }
+
+        @Override
+        public Request authenticateProxy(Proxy proxy, Response response) throws IOException {
+            return null;
+        }
+    }

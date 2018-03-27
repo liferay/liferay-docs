@@ -17,11 +17,11 @@ specify the host module and host module version:
 For information on finding the versions of your deployed modules, 
 [click here](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts). 
 
-For more information on overriding app JSPs, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps). 
+For more information on overriding JSPs, 
+[click here](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps). 
 
 ## Related Topics [](id=related-topics)
 
-[Overriding App JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
+[Overriding JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps)
 
 [Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)

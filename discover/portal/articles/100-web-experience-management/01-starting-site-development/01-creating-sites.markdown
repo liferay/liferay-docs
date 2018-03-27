@@ -66,7 +66,7 @@ to let every site administrator share content across sites they manage. Some
 examples of content you can share across site include web content structures and
 templates, categories, application display templates, etc.
 
-Please refer to the [Sites Admin Portlet](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Sites%20Admin%20Portlet)
+Please refer to the [Sites Admin Portlet](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Sites%20Admin%20Portlet)
 section of Liferay's `portal.properties` file for a list of relevant
 configurable properties. For example, the
 `sites.content.sharing.with.children.enabled` property allows you to disable
@@ -612,9 +612,9 @@ properties you can use to customize the automatically created pages. You can
 customize the names of the default pages, the applications that appear on the pages,
 the themes and layout templates of the default pages, and more. Please refer to
 the
-[Default User Public Layouts](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Default%20User%20Public%20Layouts)
+[Default User Public Layouts](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Default%20User%20Public%20Layouts)
 and
-[Default User Private Layouts](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Default%20User%20Private%20Layouts)
+[Default User Private Layouts](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Default%20User%20Private%20Layouts)
 sections of the `portal.properties` file for details.
 
 +$$$

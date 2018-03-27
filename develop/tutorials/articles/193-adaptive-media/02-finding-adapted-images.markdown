@@ -61,7 +61,7 @@ images.
 
 To get adapted images for a specific file version, you must call the 
 `AMImageQueryBuilder` method `forFileVersion` with a 
-[`FileVersion` object](https://docs.liferay.com/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/model/FileVersion.html) 
+[`FileVersion` object](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/model/FileVersion.html) 
 as an argument: 
 
     Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
@@ -70,7 +70,7 @@ as an argument:
 
 To get the adapted images for the latest approved file version, use the 
 `forFileEntry` method with a 
-[`FileEntry` object](https://docs.liferay.com/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/model/FileVersion.html): 
+[`FileEntry` object](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/model/FileVersion.html): 
 
     Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
         _amImageFinder.getAdaptiveMediaStream(
@@ -208,6 +208,6 @@ Awesome! Now you know how to find and use adapted images.
 
 [Displaying Adapted Images in Your App](/develop/tutorials/-/knowledge_base/7-0/displaying-adapted-images-in-your-app)
 
-[Changing Adaptive Media's Image Processing](/develop/tutorials/-/knowledge_base/7-0/changing-adaptive-medias-image-processing)
+[Changing Adaptive Media's Image Processing](/develop/tutorials/-/knowledge_base/7-0/changing-adaptive-medias-image-scaling)
 
 [Adapting Your Media Across Multiple Devices](/discover/portal/-/knowledge_base/7-0/adapting-your-media-across-multiple-devices)

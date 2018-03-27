@@ -103,8 +103,8 @@ redirect users to their personal pages upon login. Alternatively, you can set
 the default login or logout page in a `portal-ext.properties` file with the 
 properties `default.landing.page.path` and `default.logout.page.path`, 
 respectively. For more information, see the `portal.properties` documentation 
-entries for the [Default Landing Page](http://docs.liferay.com/portal/7.0-b1/propertiesdoc/portal.properties.html#Default%20Landing%20Page) 
-and [Default Logout Page](http://docs.liferay.com/portal/7.0-b1/propertiesdoc/portal.properties.html#Default%20Logout%20Page). 
+entries for the [Default Landing Page](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Default%20Landing%20Page) 
+and [Default Logout Page](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Default%20Logout%20Page). 
 
 Under the Additional Information heading, you can specify a Legal name, ID, 
 company type, SIC code, ticker symbol, industry and industry type.
@@ -265,4 +265,3 @@ and this behavior cannot be changed by a site administrator.
 
 Next, learn to integrate existing users from other environments, such as LDAP
 servers, into Liferay.
-

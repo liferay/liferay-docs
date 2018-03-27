@@ -26,6 +26,16 @@ Web Content List Screenlet has the following features:
   with configurable page size. 
 - Supports i18n in web content values. 
 
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call JSON web services in the portal. This 
+Screenlet calls the following services and methods.
+
+| Service | Method | Notes |
+| ------- | ------ | ----- |
+| `JournalArticleService` | `getJournalArticles` |  |
+| `JournalArticleService` | `getJournalArticlesCount` |  |
+
 ## Module [](id=module)
 
 - None

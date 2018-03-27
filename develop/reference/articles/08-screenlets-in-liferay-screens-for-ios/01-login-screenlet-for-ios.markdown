@@ -64,6 +64,18 @@ the method `SessionContext.loadStoredCredentials()` method.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JlQ8nWGFsyg" frameborder="0" allowfullscreen></iframe>
 
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call the portal's JSON web services. This 
+Screenlet calls the following services and methods. 
+
+| Service | Method | Notes | 
+| ------- | ------ | ----- |
+| `UserService` | `getUserByEmailAddress` | Basic login |
+| `UserService` | `getUserByScreenName` | Basic login |
+| `UserService` | `getUserById` | Basic login |
+| `UserService` | `getCurrentUser` | Cookie and OAuth login |
+
 ## Module [](id=module)
 
 - Auth
@@ -132,6 +144,8 @@ connection, you can use the `saveCredentials` attribute together with the
 | `OAuthConsumerKey` | `string` | Specifies the *Consumer Key* to use in OAuth authentication. |
 | `OAuthConsumerSecret` | `string` | Specifies the *Consumer Secret* to use in OAuth authentication. |
 | `saveCredentials` | `boolean` | When set, the user credentials and attributes are stored securely in the keychain. This information can then be loaded in subsequent sessions by calling the `SessionContext.loadStoredCredentials()` method. |
+| `shouldHandleCookieExpiration` | `bool` | Whether to refresh the cookie automatically when using cookie login. When set to `true` (the default value), the cookie refreshes as it's about to expire.  |
+| `cookieExpirationTime` | `int` | How long the cookie lasts, in seconds. This value depends on your portal instance's configuration. The default value is `900`. |
 
 ## Delegate [](id=delegate)
 
@@ -153,3 +167,42 @@ following methods:
 - `- screenlet:onCredentialsLoadedUserAttributes:`: Called when the user 
   credentials are retrieved. Note that this only occurs when the Screenlet is 
   used and stored credentials are available. 
+
+## Challenge-Response Authentication [](id=challenge-response-authentication)
+
+To support 
+[challenge-response authentication](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication) 
+when using a cookie to log in to the portal, the `SessionContext` class has a 
+`challengeResolver` attribute. For more information about how iOS handles 
+challenge-response authentication, see the article 
+[Authentication Challenges and TLS Chain Validation](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/URLLoadingSystem/Articles/AuthenticationChallenges.html). 
+
+The challenge resolver type is a closure or block that receives two parameters: 
+
+1.  `URLAuthenticationChallenge`
+2.  Another closure or block. You must call this to resolve the challenge (e.g., 
+    by passing credentials, canceling the challenge, etc.). You can do this by 
+    passing a `URLSession.AuthChallengeDisposition`. 
+
+Here's an example that sends a basic authorization in response to an 
+authentication challenge: 
+
+    SessionContext.challengeResolver = resolver
+
+    func resolver(challenge: URLAuthenticationChallenge,
+        decisionCallback: (URLSession.AuthChallengeDisposition, URLCredential) -> Void) {
+
+        // Use the challenge variable to get information about the challenge itself
+        if challenge.previousFailureCount == 0 {
+            // To solve the challenge, call the decision callback with your decision
+            // Pass the credentials to the server
+            decisionCallback(.useCredential, URLCredential(user: "user", password: "password", 
+                persistence: .forSession))
+        }
+        else {
+            // Something went wrong, so let the system handle the challenge
+            decisionCallback(.performDefaultHandling, URLCredential(user: "these credentials", 
+                password: "are ignored", persistence: .none))
+        }
+
+    }

@@ -58,7 +58,7 @@ Here are some rules of thumb for initial class descriptions:
 - **Start with a verb** - Whenever possible, start an initial class description
   with verb to describe the purpose of the class.
 
-    Example ([Localization](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/Localization.html)
+    Example ([Localization](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/Localization.html)
     interface): `Stores and retrieves localized strings from XML, and provides
     utility methods for updating localizations from JSON, portlet requests, and
     maps.`
@@ -176,7 +176,7 @@ The preferred format for common `@since` messages are listed below.
 | New class | @since *version*
 
 For a working example, see
-[StagedModelDataHandlerRegistryUtil](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandlerRegistryUtil.html).
+[StagedModelDataHandlerRegistryUtil](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandlerRegistryUtil.html).
 
 ### @deprecated tags
 
@@ -604,7 +604,7 @@ replacement method) to make sure the link works and that it is referring to the
 intended target.
 
 For a working example, see
-[UserImpl.getDisplayURL(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-impl/com/liferay/portal/model/impl/UserImpl.html#getDisplayURL(java.lang.String,%20java.lang.String)).
+[UserImpl.getDisplayURL(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-impl/com/liferay/portal/model/impl/UserImpl.html#getDisplayURL(java.lang.String,%20java.lang.String)).
 
 **Important:** You cannot link to classes/methods in Liferay modules unless
 you're providing a class/method link in the same module it resides in.
@@ -843,7 +843,7 @@ Contents for quick lookup.
 ### Class: Initial and detailed description
 
 The
-[Localization](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/Localization.html)
+[Localization](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/Localization.html)
 interface demonstrates our guidelines for initial and detailed class
 descriptions well.
 
@@ -893,7 +893,7 @@ public DayAndPosition(int d, int p)
 ```
 
 For a working example, see
-[StringParser.StringParser(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/util/StringParser.html#StringParser(java.lang.String))
+[StringParser.StringParser(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/StringParser.html#StringParser(java.lang.String))
 
 ### Method: Get by primary key
 
@@ -916,7 +916,7 @@ public Organization getOrganization(long organizationId)
 ```
 
 For a working example, see
-[OrganizationService.getOrganization(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationService.html#getOrganization(long)).
+[OrganizationService.getOrganization(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationService.html#getOrganization(long)).
 
 ### Method: Deletes/Removes something
 
@@ -948,7 +948,7 @@ public long getUserIdByEmailAddress( ... , String emailAddress)
 ```
 
 For a working example, see
-[UserService.getUserByEmailAddress(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserService.html#getUserByEmailAddress(long,%20java.lang.String)).
+[UserService.getUserByEmailAddress(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserService.html#getUserByEmailAddress(long,%20java.lang.String)).
 
 ### Method: Get/search/count matching multiple fields
 
@@ -971,7 +971,7 @@ public List<DDMStructure> getStructure(long groupId, String name, String descrip
 ```
 
 For working examples, see
-[ResourceLocalServiceImpl.updateResources(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-impl/com/liferay/portal/service/impl/ResourceLocalServiceImpl.html#updateResources(long,%20long,%20java.lang.String,%20long,%20com.liferay.portal.kernel.service.permission.ModelPermissions)).
+[ResourceLocalServiceImpl.updateResources(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-impl/com/liferay/portal/service/impl/ResourceLocalServiceImpl.html#updateResources(long,%20long,%20java.lang.String,%20long,%20com.liferay.portal.kernel.service.permission.ModelPermissions)).
 
 ### Method: Get/search/count by field-to-keyword matching
 
@@ -1003,7 +1003,7 @@ public List<User> search(long companyId, String firstName, String middleName, St
 ```
 
 For a working example, see
-[UserLocalService.search(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html#search(long,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20int,%20java.util.LinkedHashMap,%20boolean,%20int,%20int,%20com.liferay.portal.kernel.search.Sort)).
+[UserLocalService.search(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html#search(long,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20int,%20java.util.LinkedHashMap,%20boolean,%20int,%20int,%20com.liferay.portal.kernel.search.Sort)).
 
 ### Method: Returning a boolean
 
@@ -1028,7 +1028,7 @@ public boolean hasGroupUser(long groupId, long userId)
 ```
 
 For a working example, see
-[UserService.hasGroupUser(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserService.html#hasGroupUser(long,%20long)).
+[UserService.hasGroupUser(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserService.html#hasGroupUser(long,%20long)).
 
 ### Method: Returning a count
 
@@ -1040,7 +1040,7 @@ Hint, if a method name contains the word "Count" or the method returns an `int`,
 it may qualify for this pattern.
 
 For a working example, see
-[OrganizationLocalService.searchCount(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationLocalService.html#searchCount(long,%20long,%20java.lang.String,%20java.lang.String,%20java.lang.Long,%20java.lang.Long,%20java.util.LinkedHashMap)).
+[OrganizationLocalService.searchCount(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationLocalService.html#searchCount(long,%20long,%20java.lang.String,%20java.lang.String,%20java.lang.Long,%20java.lang.Long,%20java.util.LinkedHashMap)).
 
 ### Method: Returning a collection
 
@@ -1062,7 +1062,7 @@ public List<Organization> getUserOrganizations(long userId)
 ```
 
 For a working example, see
-[OrganizationService.getUserOrganizations(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationService.html#getUserOrganizations(long)).
+[OrganizationService.getUserOrganizations(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationService.html#getUserOrganizations(long)).
 
 ### Method: Returning an ordered range of values
 
@@ -1087,7 +1087,7 @@ public List<User> getSocialUsers(long userId, int type, int start, int end, Orde
 ```
 
 For a working example, see
-[UserLocalService.getSocialUsers(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html#getSocialUsers(long,%20long,%20int,%20int,%20com.liferay.portal.kernel.util.OrderByComparator)).
+[UserLocalService.getSocialUsers(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html#getSocialUsers(long,%20long,%20int,%20int,%20com.liferay.portal.kernel.util.OrderByComparator)).
 
 ### Method: Returning ordered values NOT as a range of values
 
@@ -1128,7 +1128,7 @@ public List<User> getSocialUsers(long userId, int type, int start, int end, Orde
 ```
 
 For a working example, see
-[UserLocalService.getSocialUsers(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html#getSocialUsers(long,%20long,%20int,%20int,%20int,%20com.liferay.portal.kernel.util.OrderByComparator)).
+[UserLocalService.getSocialUsers(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html#getSocialUsers(long,%20long,%20int,%20int,%20int,%20com.liferay.portal.kernel.util.OrderByComparator)).
 
 ### Method: Describing overloaded methods
 
@@ -1157,7 +1157,7 @@ as having additional parameters.
     ```
 
     For a working example, see the `addOrganization` methods in
-    [OrganizationServiceImpl](https://docs.liferay.com/portal/7.0/javadocs/portal-impl/com/liferay/portal/service/impl/OrganizationServiceImpl.html).
+    [OrganizationServiceImpl](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-impl/com/liferay/portal/service/impl/OrganizationServiceImpl.html).
 
 - If there are 3 or more overloaded methods, focus on their distinguishing
   parameters.
@@ -1214,7 +1214,7 @@ an entities to password policies.
     *&lt;entity(s)>*, removing any other currently assigned password policies.
 
     For a working example, see
-    [UserService.addPasswordPolicyUsers(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserService.html#addPasswordPolicyUsers(long,%20long[])).
+    [UserService.addPasswordPolicyUsers(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserService.html#addPasswordPolicyUsers(long,%20long[])).
 
 - Password Policy - Has
 
@@ -1222,7 +1222,7 @@ an entities to password policies.
     password policy has been assigned to the *&lt;entity>*.
 
     For a working example, see
-    [UserLocalServiceImpl.hasPasswordPolicyUser(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-impl/com/liferay/portal/service/impl/UserLocalServiceImpl.html#hasPasswordPolicyUser(long,%20long)).
+    [UserLocalServiceImpl.hasPasswordPolicyUser(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-impl/com/liferay/portal/service/impl/UserLocalServiceImpl.html#hasPasswordPolicyUser(long,%20long)).
 
 - Password Policy - Unset
 
@@ -1230,7 +1230,7 @@ an entities to password policies.
     password policy.
 
     For a working example, see
-    [UserService.unsetPasswordPolicyUsers(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserService.html#unsetPasswordPolicyUsers(long,%20long[])).
+    [UserService.unsetPasswordPolicyUsers(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserService.html#unsetPasswordPolicyUsers(long,%20long[])).
 
 ### Method: Uses a property
 
@@ -1265,7 +1265,7 @@ public Organization getOrganization(long organizationId)
 ```
 
 For a working example, see
-[OrganizationService.getOrganization(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationService.html#getOrganization(long)).
+[OrganizationService.getOrganization(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationService.html#getOrganization(long)).
 
 ### Parameter: Attribute/field
 
@@ -1284,7 +1284,7 @@ public Organization addOrganization(..., String name, String type, …)
 ```
 
 For a working example, see
-[OrganizationService.addOrganization(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationService.html#addOrganization(long,%20java.lang.String,%20java.lang.String,%20long,%20long,%20long,%20java.lang.String,%20boolean,%20com.liferay.portal.kernel.service.ServiceContext)).
+[OrganizationService.addOrganization(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationService.html#addOrganization(long,%20java.lang.String,%20java.lang.String,%20long,%20long,%20long,%20java.lang.String,%20boolean,%20com.liferay.portal.kernel.service.ServiceContext)).
 
 ### Parameter: Boolean
 
@@ -1314,7 +1314,7 @@ public User addUser(
 ```
 
 For a working example, see
-[UserService.addUser(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserService.html#addUser(long,%20boolean,%20java.lang.String,%20java.lang.String,%20boolean,%20java.lang.String,%20java.lang.String,%20long,%20java.lang.String,%20java.util.Locale,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20long,%20long,%20boolean,%20int,%20int,%20int,%20java.lang.String,%20long[],%20long[],%20long[],%20long[],%20java.util.List,%20java.util.List,%20java.util.List,%20java.util.List,%20java.util.List,%20boolean,%20com.liferay.portal.kernel.service.ServiceContext)).
+[UserService.addUser(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserService.html#addUser(long,%20boolean,%20java.lang.String,%20java.lang.String,%20boolean,%20java.lang.String,%20java.lang.String,%20long,%20java.lang.String,%20java.util.Locale,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20long,%20long,%20boolean,%20int,%20int,%20int,%20java.lang.String,%20long[],%20long[],%20long[],%20long[],%20java.util.List,%20java.util.List,%20java.util.List,%20java.util.List,%20java.util.List,%20boolean,%20com.liferay.portal.kernel.service.ServiceContext)).
 
 ### Parameter: ClassNameId
 
@@ -1347,7 +1347,7 @@ public boolean isPasswordExpired(User user)
 ```
 
 For a working example, see
-[UserLocalService.isPasswordExpired(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html#isPasswordExpired(com.liferay.portal.kernel.model.User)).
+[UserLocalService.isPasswordExpired(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html#isPasswordExpired(com.liferay.portal.kernel.model.User)).
 
 ### Parameter: ServiceContext
 
@@ -1414,7 +1414,7 @@ public List<User> search( ... , String firstName, String middleName, … , boole
 ```
 
 For a working example, see
-[UserLocalService.search(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html#search(long,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20int,%20java.util.LinkedHashMap,%20boolean,%20int,%20int,%20com.liferay.portal.kernel.search.Sort)).
+[UserLocalService.search(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html#search(long,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20int,%20java.util.LinkedHashMap,%20boolean,%20int,%20int,%20com.liferay.portal.kernel.search.Sort)).
 
 ### Parameter: Refer reader to more information
 
@@ -1434,7 +1434,7 @@ to the parameter, add a sentence with a link to that information.
 ```
 
 This example is used in comments for several of the search methods in
-[OrganizationLocalService](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationLocalService.html).
+[OrganizationLocalService](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationLocalService.html).
 
 ### Field
 
@@ -1496,7 +1496,7 @@ For ordered collection returned, mention how or what determines the order
 
 For working examples, see `DDMStructure.getStructures(long groupId, long
 classNameId, int start, int end, OrderByComparator orderByComparator)` and
-[DLAppServiceImpl.getGroupFileEntries(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-impl/com/liferay/portlet/documentlibrary/service/impl/DLAppServiceImpl.html#getGroupFileEntries(long,%20long,%20long,%20int,%20int)).
+[DLAppServiceImpl.getGroupFileEntries(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-impl/com/liferay/portlet/documentlibrary/service/impl/DLAppServiceImpl.html#getGroupFileEntries(long,%20long,%20long,%20int,%20int)).
 
 ### Return: Significantly varying values
 
@@ -1514,4 +1514,4 @@ describing return values. This convention is not to be used with the other tags
 (e.g. `@param`, `@throws`).
 
 For a working example, see
-[OrganizationLocalService.getOrganizationId(...)](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationLocalService.html#getOrganizationId(long,%20java.lang.String)).
+[OrganizationLocalService.getOrganizationId(...)](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/OrganizationLocalService.html#getOrganizationId(long,%20java.lang.String)).

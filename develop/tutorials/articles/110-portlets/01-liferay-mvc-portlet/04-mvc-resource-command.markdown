@@ -86,7 +86,7 @@ at
 In the `@Component` annotation, note that `javax.portlet.name` has two different 
 settings. This lets multiple portlets use the same component. In this example, 
 the portlet IDs are defined as constants in the
-[`LoginPortletKeys` class](@app-ref@/foundation/latest/javadocs/com/liferay/login/web/internal/constants/LoginPortletKeys.html).
+[`LoginPortletKeys` class](@app-ref@/foundation/latest/javadocs/com/liferay/login/web/constants/LoginPortletKeys.html).
 Also  note that the `mvc.command.name` property setting `/login/captcha` matches
 the  `resourceURL`'s `id` setting shown earlier in this tutorial, and that the
 `service` property is set to `MVCResourceCommand.class`. 

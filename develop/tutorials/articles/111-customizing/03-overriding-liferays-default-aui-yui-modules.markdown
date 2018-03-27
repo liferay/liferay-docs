@@ -78,8 +78,6 @@ Now you know how to override @product@'s default YUI/AUI modules!
 
 ## Related Topics [](id=related-topics)
 
-[Overriding Core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)
-
-[Overriding App JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
+[Overriding JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps)
 
 [Configuring Modules for @product@'s Module Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders)

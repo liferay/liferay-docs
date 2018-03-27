@@ -1,6 +1,6 @@
 # DB Support Plugin [](id=db-support-plugin)
 
-The DB Support Gradle plugin lets you run the Liferay DB Support tool to execute
+The DB Support plugin lets you run the Liferay DB Support tool to execute
 certain actions on a local @product@ database. The following actions are
 available:
 
@@ -9,7 +9,7 @@ available:
 
 ## Usage [](id=usage)
 
-To use the plugin, include it in your `pom.xml` file:
+To use the plugin, include it in your project's `pom.xml` file:
 
     <build>
         <plugins>
@@ -20,10 +20,22 @@ To use the plugin, include it in your `pom.xml` file:
                 <version>1.0.6</version>
                 <configuration>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.hsqldb</groupId>
+                        <artifactId>hsqldb</artifactId>
+                        <version>2.4.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         ...
         </plugins>
     </build>
+
+Also notice the configured plugin dependency. You must configure the JDBC driver
+used by your @product@ bundle so the DB Support plugin can properly manage your
+database. Replace the HSQLDB driver listed above with your custom database's
+JDBC driver.
 
 ## Goals [](id=goals)
 

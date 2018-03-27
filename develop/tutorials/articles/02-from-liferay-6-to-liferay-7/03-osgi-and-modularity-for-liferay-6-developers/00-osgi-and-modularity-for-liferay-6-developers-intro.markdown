@@ -260,9 +260,9 @@ you're developing new OSGi modules or continuing to develop traditional apps,
 you need only set dependencies on modules whose packages you need.
 
 Each module's manifest lists the packages the module depends on. Using a build
-environment such as Gradle, Maven, or Ant/Ivy, the you can set dependencies on
-each package's module. At build time, the dependency framework verifies the
-entire dependency chain, downloading all newly specified modules. The same thing
+environment such as Gradle, Maven, or Ant/Ivy, you can set dependencies on each
+package's module. At build time, the dependency framework verifies the entire
+dependency chain, downloading all newly specified modules. The same thing
 happens at runtime: the OSGi runtime knows exactly which modules depend on which
 other modules (failing fast if any dependency is unmet). Dependency management
 is explicit and enforced automatically upfront.

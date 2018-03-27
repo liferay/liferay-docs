@@ -14,7 +14,7 @@ It's just that easy!
 
 ## Related Topics [](id=related-topics)
 
-[Overriding Core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)
+[JSP Overrides Using Custom JSP Bags](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)
 
 [Upgrading App JSP Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-app-jsp-hook-plugins)
 

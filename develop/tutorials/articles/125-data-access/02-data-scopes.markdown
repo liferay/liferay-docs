@@ -63,7 +63,7 @@ gives you techniques to do this. Your app's scope is available:
         ...
 
 2. By calling the `getScopeGroupId()` method on the request's 
-   [`ThemeDisplay` instance](https://docs.liferay.com/portal/7.0-ga3/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html). 
+   [`ThemeDisplay` instance](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html). 
    This method returns your app's current scope. For example, the 
    [`EditEntryMVCActionCommand` class](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/portlet/action/EditEntryMVCActionCommand.java) 
    in Liferay's Blogs app does this in its `subscribe` and `unsubscribe` 

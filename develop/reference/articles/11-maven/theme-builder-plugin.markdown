@@ -7,7 +7,7 @@ tutorial to learn more about applying Theme Builder to your Maven project.
 
 ## Usage [](id=usage)
 
-To use the plugin, include it in your `pom.xml` file:
+To use the plugin, include it in your project's root `pom.xml` file:
 
     <build>
         <plugins>
@@ -30,6 +30,9 @@ To use the plugin, include it in your `pom.xml` file:
             ...
         </plugins>
     </build>
+
+You can view an example POM containing the Theme Builder configuration
+[here](https://github.com/liferay/liferay-portal/blob/master/modules/util/portal-tools-theme-builder/samples/pom.xml).
 
 ## Goals [](id=goals)
 

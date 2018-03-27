@@ -382,45 +382,6 @@ dynamically, while it's running, to avoid downtime.  It is a different way of
 doing things, but we believe it's a better way.  When you start working with
 modules and see the benefits you can gain, we think you'll agree. 
 
-## How to Navigate Liferay's Documentation [](id=how-to-navigate-liferays-documentation)
-
-We've designed the Liferay Developer Network's documentation pages to be easy to
-navigate, based on your role or the kind of information you're looking for. If
-you have no idea where to start, the search box is front and center. 
-
-![The Liferay Developer Network is home to Liferay's documentation.](../../images/liferay-developer-network-home.png)
-
-Beyond that, though, the documentation is broken up into several categories: 
-
--   User & Admin
--   Developer
--   Marketplace
--   Community
-
-User & Admin focuses on documentation for two different but related groups: end
-users who want to use @product@ and administrators who need information on
-setting @product@ up and getting it running well. Accordingly, when you click on
-this section, you're offered several options: User Guide (the default),
-Deployment, Reference, and Social Office, a product that used to be distributed
-with older versions of Liferay.
-
-Developer contains the developer documentation, which includes both tutorials
-and something we call Learning Paths. Tutorials focus on topical content: if
-you're in the middle of developing something and need to look up how a
-particular feature, framework, or API works, you'll want a tutorial. Learning
-Paths are for when you want to start from the ground up and follow a series of
-lessons that take you on a tour through the most important things you need to
-know. 
-
-Marketplace shows developers how to get their apps on [Liferay Marketplace](https://www.liferay.com/marketplace), 
-an app store for applications that run on @product@. 
-
-Community lists all the ways you can be involved in Liferay's open source
-community. From helping QA, to fixing bugs, to contributing documentation or
-answering questions posted on the
-[forum](https://web.liferay.com/community/forums), you can be involved in almost
-every aspect of Liferay's development.
-
 Now you're ready to explore some more about Liferay. We're not planning to leave
 you here, as though this were a dead site. Please feel free to use the
 suggestions link at the bottom of every article you'll encounter if you think
