@@ -14,9 +14,8 @@ available in LCS:
   @product@ servers. Sensitive data, however, isn't stored on the LCS servers. 
   Learn exactly what data LCS does and doesn't store. 
 
-- [**Managing Your LCS Projects:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-your-lcs-projects)
-  Learn how to create and request access to LCS projects, how LCS roles work, 
-  and how to manage LCS users. 
+- [**Managing LCS Users in Your Project:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-lcs-users-in-your-project)
+  Learn how to manage your LCS project's users by assigning them roles. 
 
 - [**Using the Dashboard:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-the-dashboard)
   Learn how to manage projects, environments, and servers in LCS. This includes 
@@ -88,49 +87,25 @@ learn how to manage your LCS projects. This includes renaming projects and
 requesting membership to projects you don't administer. You'll also learn how to 
 manage the users in your LCS project and assign them to the correct LCS roles. 
 
-## Managing Your LCS Projects [](id=managing-your-lcs-projects)
+## Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
 
-Each environment and server in LCS is part of an LCS project. LCS provides a 
-simple UI for managing these projects. To access this UI, log in to LCS and then 
-select *Manage Projects* from your user menu in the Dockbar. The following 
-screenshot illustrates this.
+The Users section of LCS is where you manage the LCS users that are part of your 
+project. It's here that you can grant or revoke LCS roles. To manage users, 
+first click the *Users* tab just below the Dashboard tab on the upper-left of 
+your screen. 
 
-![Figure 1: To manage your LCS projects, select *Manage Projects* from the user menu in LCS.](../../images-dxp/lcs-user-menu-manage-projects.png)
++$$$
 
-The *My Projects* tab is shown first, and shows a table that lists each of your 
-LCS projects. This table also lists the administrator's email address for each 
-project. If you're the administrator of a project, you can edit its name by 
-clicking the blue pencil icon next to it in the table. The following screenshot 
-shows the My Projects tab. 
+**Note:** You can't add users to your project via the LCS UI or the LCS client 
+app. To add users to your project, you must contact Liferay support. 
 
-![Figure 2: The My Projects tab lists your LCS projects.](../../images-dxp/lcs-my-projects.png)
+$$$
 
-The *Unlinked* tab shows your @product@ projects that aren't connected with LCS. 
-For example, if you've submitted an app on Liferay Marketplace, then it's a 
-@product@ project associated with your Liferay account. A @product@ project is 
-an umbrella Liferay concept and can span over many different Liferay products. 
-The Unlinked tab gives you the opportunity to connect those projects to LCS. The 
-*Pending* tab shows the existing LCS projects you've requested access to. If you 
-request access to an LCS project, but the administrator hasn't yet granted your 
-request, the project appears in the Pending tab. The *Company* tab shows a table 
-with a list of the LCS projects associated with the domain of your email 
-address. This is typically the company your email address is associated with. 
-For example, if your email address is `joebloggs@janesblogfactory.com`, the 
-Company tab presents you with a list of existing LCS projects registered to 
-users with the `@janesblogfactory.com` domain. The table also lists the 
-administrator email address and a *Request Access* link for each project. This 
-lets you quickly and easily join the LCS projects that are associated with your 
-company. The following screenshot shows the Company tab (the administrator email 
-addresses have been masked).
+![Figure 4: The Users tab lets you manage the LCS users in your project.](../../images-dxp/lcs-users.png)
 
-![Figure 3: The Company tab lets you find other LCS projects associated with the domain of your email address.](../../images-dxp/lcs-company-projects.png)
-
-So what can an LCS Administrator do? Why did you mask out their email addresses 
-in the previous screenshots? These are fantastic questions! The LCS 
-Administrator role is very powerful (that's why their email addresses are masked 
-in the screenshots). LCS Administrators can assign LCS roles to the rest of the 
-users in their project. Each LCS user must have an assigned role. The following 
-roles are available: 
+The *Users* tab displays a list of the users in your project. This list includes 
+each user's name, email, image, LCS roles, and a *Manage Roles* button. Each LCS 
+user must have an assigned role. The following roles are available: 
 
 - **LCS Administrator:** All LCS functionality is available to administrators. 
   This is the only role that can manage the roles of other users. 
@@ -164,22 +139,7 @@ Install Fix Packs in a Particular Environment | true | true | false |
 Now that you know what roles are available in an LCS project, and what they do, 
 you're ready to learn how to manage the users in LCS projects.
 
-### Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
-
-The Users section of LCS is where you manage the LCS users that are part of your 
-project. It's here that you can grant or revoke LCS roles. To manage users, 
-first click the *Users* tab just below the Dashboard tab on the upper-left of 
-your screen. 
-
-+$$$ 
-
-**Note:** You can't add users to your project via the LCS UI or the LCS client 
-app. To add users to your project, you must contact Liferay support. 
-
-$$$
-
-The *Users* tab displays a list of the users in your project. This list includes 
-each user's name, email, image, LCS roles, and a *Manage Roles* button. 
+### Managing LCS Roles
 
 Follow these steps to manage a user's LCS roles:
 
@@ -197,12 +157,10 @@ LCS Environment Viewer) and the LCS Administrator role at the same time.
 
 $$$
 
-![Figure 4: The Users tab lets you manage the LCS users in your project.](../../images-dxp/lcs-users.png)
-
 ![Figure 5: You can assign or revoke a user's LCS roles.](../../images-dxp/lcs-user-roles.png)
 
-Great! Now you know how to manage your LCS projects and the users in them. Now 
-it's time to get to the heart of LCS: the Dashboard. 
+Great! Now you know how to manage the users in your LCS projects. Now it's time 
+to get to the heart of LCS: the Dashboard. 
 
 ## Using the Dashboard [](id=using-the-dashboard)
 
