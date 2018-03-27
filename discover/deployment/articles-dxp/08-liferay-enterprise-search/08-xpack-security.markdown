@@ -1,4 +1,4 @@
-# Securing Elasticsearch 6 with X-Pack
+# Securing Elasticsearch 6 with X-Pack [](id=securing-elasticsearch-6-with-x-pack)
 
 X-Pack is an [Elastic
 extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)
@@ -27,7 +27,7 @@ documentation to learn about additional configuration options, features, and the
 architecture of
 [X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-security.html). 
 
-## Installing X-Pack
+## Installing X-Pack [](id=installing-x-pack)
 
 1.  To [install
     X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html)
@@ -81,7 +81,7 @@ architecture of
 
 Once X-Pack is installed, configure its built-in user passwords.
 
-## Setting Up X-Pack Users
+## Setting Up X-Pack Users [](id=setting-up-x-pack-users)
 
 In a system using X-Pack Security and X-Pack Monitoring, two of the built-in
 X-Pack users are important: `kibana` and `elastic`.
@@ -114,7 +114,7 @@ set for the `elastic` user.
 
 Enabling transport layer security on each node is highly recommended.
 
-## Enabling Transport Layer Security
+## Enabling Transport Layer Security [](id=enabling-transport-layer-security)
 
 The following instructions for enabling TLS use `liferay` as the password
 whenever one is needed. Customize these as appropriate for your installation. To
@@ -175,7 +175,7 @@ enable TLS/SSL in Elasticsearch:
 After X-Pack is installed and TLS is enabled, configure the X-Pack Security
 adapter in @product@.
 
-## Configuring the X-Pack Security Adapter
+## Configuring the X-Pack Security Adapter [](id=configuring-the-x-pack-security-adapter)
 
 If you'd like to configure the X-Pack adapter in the @product@ UI, navigate to
 Control Panel &rarr; Configuration &rarr; System Settings. Find the Foundation

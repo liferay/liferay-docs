@@ -1,4 +1,4 @@
-# Upgrading to Elasticsearch 6
+# Upgrading to Elasticsearch 6 [](id=upgrading-to-elasticsearch-6)
 
 Elasticsearch 6 is supported for Digital Enterprise subscribers running Fix Pack
 42 or later, and for Community Edition users running 7.0 CE GA 6 or greater. If
@@ -56,7 +56,7 @@ since the breaking changes from 2.x to 5.x also apply to 2.x to 6.1.
 
 $$$
 
-## Installing Elasticsearch 6.1
+## Installing Elasticsearch 6.1 [](id=installing-elasticsearch-6-1)
 
 Download [Elasticsearch 6.1.x](https://www.elastic.co/downloads/past-releases)
 and unzip it wherever you please.
@@ -97,12 +97,12 @@ have upgraded indexes ready to use with @product@ and your new Elasticsearch 6.1
 server, come back here and continue with this guide.
 -->
 
-## Download the Elasticsearch 6 Adapter
+## Download the Elasticsearch 6 Adapter [](id=download-the-elasticsearch-6-adapter)
 
 Download the [Elasticsearch 6 adapter LPKG from Liferay Marketplace](LINK WHEN
 RELEASED).
 
-## Stop the Elasticsearch Adapter and Elasticsearch 2.x
+## Stop the Elasticsearch Adapter and Elasticsearch 2.x [](id=stop-the-elasticsearch-adapter-and-elasticsearch-2-x)
 
 Before installing the Elasticsearch 6 adapter, you must stop the running
 Elasticsearch adapter that ships with @product@. Use the App Manager: 
@@ -117,7 +117,7 @@ Then stop Elasticsearch 2.x. If you're wondering whether your log should be
 complaining vociferously at this point, the answer is a definitive *yes*. You'll
 resolve that in the next step.
 
-## Install and Configure the Elasticsearch 6 Adapter
+## Install and Configure the Elasticsearch 6 Adapter [](id=install-and-configure-the-elasticsearch-6-adapter)
 
 Once the default adapter is stopped, install the Elasticsearch 6 adapter (the
 LPKG you donwloaded) by placing it in your Liferay Home folder's `deploy`
@@ -134,7 +134,7 @@ the *Transport Address* matches the one Elasticsearch is using. If testing
 locally with Elasticsearch's default settings, the default value in the adapter
 works fine (*localhost:9300*).
 
-## Reindex
+## Reindex [](id=reindex)
 
 Once the Elasticsearch adapter is installed and talking to the Elasticsearch
 cluster, navigate to Control Panel &rarr; Configuration &rarr; Server
@@ -142,7 +142,7 @@ Administration, and click *Execute* for the *Reindex all search indexes* entry.
 
 You should also reindex the spell check indexes while you're here.
 
-## Reverting to Elasticsearch 2
+## Reverting to Elasticsearch 2 [](id=reverting-to-elasticsearch-2)
 
 Stuff happens. If that stuff involves an unrecoverable failure during the
 upgrade to Elasticsearch 6, roll back to Elasticsearch 2 and regroup.
