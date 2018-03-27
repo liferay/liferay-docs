@@ -1,19 +1,19 @@
 # What Hasn't Changed and What Has [](id=whats-changed-and-what-hasnt)
 
-@product-ver@ is a new major version of the Liferay platform and as such it
-includes many improvements over previous versions. Having said that, most of the
+Liferay 7.0 was a new major version of the Liferay platform and as such it
+included many improvements over previous versions. Having said that, most of the
 characteristics from Liferay Portal 6 that you have learned to love are
 preserved, having been changed only slightly or not at all. Any experienced
 Liferay developer will be able to reuse most of his/her existing knowledge to
 developing for @product-ver@.
 
-What has not changed? Even though there are many improvements in @product-ver@,
+What has not changed? Even though there are many improvements in Liferay 7,
 there are also many great familiar aspects from previous versions that have been
 preserved. Here are some of the most relevant ones:
 
 1. The Portal Core and each Liferay app continue to use the three layer
 architecture: presentation, services, and persistence. The presentation layer is
-now always provided as an independent module, facilitating replacing it with a
+now always provided as an independent module, making it easier to replace with a
 different presentation, if desired.
 
 2. Support remains for previously supported standards such as Portlets
@@ -23,17 +23,19 @@ different presentation, if desired.
 many of their classes have moved to new packages, as part of the modularization
 effort.
 
-4. Liferay @ide@ is still the preferred tool to develop for Liferay, even though
-you are still free to use tools that best fit your needs.
+4. [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
+is still the preferred tool to develop for Liferay, even though you are still
+free to use tools that best fit your needs.
 
-5. Service Builder and other developer tools and libraries continue to work as
-they have in 6.2.
+5. [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+and other developer tools and libraries continue to work as they have in 6.2.
 
 6. Traditional plugins for portlets and hooks still work (once they're
-adapted to @product-ver@'s API) through a compatibility layer.
+adapted to @product-ver@'s API) through a [compatibility layer](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator).
 
 7. The Plugins SDK can also still be used and transition to the
-new Liferay Workspace, if desired, is easy.
+new [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+if desired, is easy.
 
 Here are some key changes of interest to existing Liferay developers:
 
@@ -43,13 +45,16 @@ deployed or none of it. In @product-ver@, many out of the box portlets,
 features, and associated APIs have been extracted as OSGi modules. You can
 choose which ones to deploy and use.
 
-2. Adoption of modern OSGi standards: OSGi is a set of standards for
-building modular systems. It's very powerful. Although it was previously
-difficult to learn and use, its modernized standards, such as Declarative
-Services, have made learning and using it much easier.
+2. Adoption of modern OSGi standards:
+[OSGi is a set of standards for building modular systems](/develop/tutorials/-/knowledge_base/7-1/modularity-and-osgi).
+It's very powerful. Although it was previously difficult to learn and use, its
+modernized standards, such as Declarative Services, have made learning and using
+it much easier.
 
-3. Core Public APIs are provided through portal-kernel (previously known
-as portal-service); all other public APIs are provided by their own modules.
+3. Core Public APIs are provided through 
+[portal-kernel](/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules)
+(previously known as portal-service); all other public APIs are provided by
+their own modules.
 
 4. You can reuse modules and libraries, and manage the dependencies among
 them.
@@ -58,7 +63,7 @@ them.
 consistent; it's based on the standard `@Component` annotation instead of
 declarations in `portal.properties` or `portlet.xml`. Note, previous
 registration mechanisms have been preserved where possible. See the
-[Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
+[Breaking Changes](/develop/reference/-/knowledge_base/7-1/breaking-changes)
 article to examine where extensions and configurations that have not kept
 backwards compatibility.
 
@@ -68,8 +73,9 @@ done as Ext Plugins) did not have. Modules don't have these limitations and are
 much more powerful than plugins ever were.
 
 7. Complete integration of Liferay specific tools (such as Service
-Builder) within Maven and Gradle. Additionally we've adopted some new tools such
-as Bnd.
+Builder) within [Maven](/develop/tutorials/-/knowledge_base/7-1/maven)
+and [Gradle](/develop/reference/-/knowledge_base/7-1/gradle).
+Additionally we've adopted some new tools such as bnd.
 
 Since the modularization of the Liferay web application is the change most
 relevant to you as a developer, let's dig deeper into that change and how it
@@ -89,11 +95,12 @@ frontend, services layer (for the business logic), and persistence layer (mostly
 auto-generated by Service Builder). These layers still exist and have been
 embraced throughout the modularization effort.
 
-![Figure 1: Liferay Portal 6's architecture, shown in this figure, is still generally valid in @product-ver@.](../../../images/from-liferay-6-liferay-6-architecture.png)
+![Figure 1: Liferay Portal 6's architecture, shown in this figure, is still generally valid in @product-ver@.](../../images/from-liferay-6-liferay-6-architecture.png)
 
-The most significant change (and improvement) over this architecture is that
-the portal is no longer a single large Java EE Web Application. Liferay has been
-broken down into many modules to benefit from the Modular Development Paradigm.
+The most significant change (and improvement) over this architecture is that the
+portal is no longer a single large Java EE Web Application. Liferay Portal has
+been broken down into many modules to benefit from the
+[Modular Development Paradigm](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/the-benefits-of-modularity).
 Those benefits are described in the next section. The modules are often grouped
 into apps (such as Wiki or Message Boards) and the main apps are grouped into
 suites (such as Web Experience, Collaboration, and Forms & Workflow).
@@ -103,7 +110,7 @@ suites (such as Web Experience, Collaboration, and Forms & Workflow).
 The figure below represents @product-ver@'s architecture from a structural
 perspective.
 
-![Figure 2: @product-ver@ is composed of the Liferay Core, independent application modules, and App Suites, each with their own set of application and framework modules.](../../../images/from-liferay-6-core-suites-and-apps.png)
+![Figure 2: @product-ver@ is composed of the Liferay Core, independent application modules, and App Suites, each with their own set of application and framework modules.](../../images/from-liferay-6-core-suites-and-apps.png)
 
 #### Liferay Core [](id=liferay-core)
 
@@ -151,15 +158,15 @@ to add any one of them to a particular suite. Apps such as Liferay Sync, the
 Marketplace Client, Knowledge Base, and many more apps available on the
 Marketplace are independent Liferay apps.
 
-The beauty of the @product-ver@ ecosystem is that it is made up of simple
-easy-to-use modules that depend on and communicate with each other. And you as a
-third-party developer can create and deploy your own modules into the mix.
+The beauty of the Liferay ecosystem is that it is made up of simple easy-to-use
+modules that depend on and communicate with each other. And you as a third-party
+developer can create and deploy your own modules into the mix.
 
-You can continue developing traditional WAR-style apps for @product-ver@ too.
-@product@'s Portlet Compatibility Layer converts each plugin WAR to a Web
-Application Bundle (WAB), which is a module. 
+You can continue developing traditional WAR-style apps for Liferay too.
+The [Portlet Compatibility Layer](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
+converts each plugin WAR to a Web Application Bundle (WAB), which is a module. 
 
-Let's consider the structure of a @product-ver@ modular app.
+Let's consider the structure of a @product@ modular app.
 
 ### The Structure of a Modular App [](id=the-structure-of-an-app)
 
@@ -172,14 +179,14 @@ the following modules are the often the best way of structuring an app:
 * **Service**: Contains the service (business logic) and persistence
 implementations.
 
-* **API**: Contains the public API of the application. By being separate
-from the service it's simpler and faster to deploy new versions of the
+* **API**: Contains the public API of the application. By being separate from 
+the service, it's simpler and faster to deploy new versions of the
 implementation without affecting any module using the API. It also allows
 changing the versioning of the implementation independent from the versioning of
 the API.
 
-* **Web**: Contains the presentation tier, very often the portlets
-provided by this app.
+* **Web**: Contains the presentation tier, very often the portlets provided by 
+this app.
 
 * **Test**: Contains the tests. These are not included in the app for
 production.
@@ -189,7 +196,7 @@ specific purposes or to provide alternative implementations of some of the app's
 features. For example the Wiki app has one module for each of the supported Wiki
 Engines.
 
-All the modules in an app usually sit in directories next to each other in the
+All the modules in an app usually sit in folders next to each other in the
 source to facilitate referencing them.
 
 For deployment to production Liferay provides the LPKG packaging format that
@@ -198,10 +205,10 @@ about it. This format can also be used to upload apps to [Liferay's
 Marketplace](http://marketplace.liferay.com).
 
 Now you have a basic understanding of the architectural changes introduced in
-@product-ver@ and have become acquainted with the new structure used in
-Liferay's apps. You have learned some key concepts that are new for Liferay
-Portal 6 developers and have been assured about developer features you've used
-in previous Liferay releases that have been carried into @product-ver@.
+Liferay 7 and have become acquainted with the new structure used in Liferay's
+apps. You have learned some key concepts that are new for Liferay Portal 6
+developers and have been assured about developer features you've used in
+previous Liferay releases that have been carried into Liferay 7.
 
 Next, you'll explore how these new concepts and the new modular architecture
 benefit you as a developer.
