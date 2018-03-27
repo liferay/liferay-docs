@@ -178,8 +178,9 @@ category or create your own.
 
 ### Specifying a Configuration Category [](id=specifying-a-configuration-category)
 
-To specify a different category, use the `@ExtendedObjectClassDefinition`
-annotation as in the following example: 
+To move your configuration from Platform &rarr; Third Party, specify a different
+category using the `@ExtendedObjectClassDefinition` annotation as in the
+following example: 
 
     @ExtendedObjectClassDefinition(category = "blogs")
     @Meta.OCD(

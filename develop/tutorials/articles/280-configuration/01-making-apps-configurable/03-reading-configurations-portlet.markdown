@@ -137,7 +137,6 @@ displayed by default since you specified it as the default in your
 and click on the *Example configuration* link, you can find the `Favorite color`
 setting and change its value. The JSP reads the configuration, and refreshing
 the UI reflects this update.
-<!--I don't think it does. -->
 
 ## Accessing the Configuration from the Portlet Class [](id=accessing-the-configuration-from-the-portlet-class)
 
