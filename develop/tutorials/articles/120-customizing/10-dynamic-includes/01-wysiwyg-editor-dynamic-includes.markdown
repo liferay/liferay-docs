@@ -5,11 +5,11 @@ do the following things:
 
 - Add resources, plugins, etc. to the editor:
     
-    com.liferay.frontend.editor.[editorType].web#[editorName]#additionalResources
+    com.liferay.frontend.editor.`editorType`.web#`editorName`#additionalResources
     
 - Gain access to the editor instance to listen to events, configure it, etc:
     
-    com.liferay.frontend.editor.[editorType].web#[editorName]#onEditorCreate 
+    com.liferay.frontend.editor.`editorType`.web#`editorName`#onEditorCreate 
 
 The table below shows the `editorType`, variable, and `editorName`s that are 
 available for each editor:
@@ -17,13 +17,13 @@ available for each editor:
   editorType |  variable | editorName  |
 :---------: | :--------------: | :---------: |
   alloyeditor | alloyEditor   | alloyeditor       |
-              |               | alloyeditor_bbcode |
-              |               | alloyeditor_creole |
+  &nbsp;            | &nbsp;              | alloyeditor_bbcode |
+  &nbsp;            | &nbsp;              | alloyeditor_creole |
   ckeditor    | ckEditor      | ckeditor |
-              |               | ckeditor_bbcode |
-              |               | ckeditor_creole |
+  &nbsp;            | &nbsp;              | ckeditor_bbcode |
+  &nbsp;            | &nbsp;              | ckeditor_creole |
   tinymce     | tinyMCEEditor | tinymce |
-              |               | tinymce_simple |
+  &nbsp;            | &nbsp;              | tinymce_simple |
 
 The example below alerts a warning to the user when they paste content into the 
 CKEditor.
@@ -42,7 +42,7 @@ CKEditor.
     		Bundle bundle = _bundleContext.getBundle();
 
     		URL entryURL = bundle.getEntry(
-    			"/META-INF/resources/ckeditor/extension/example_javascript.js");
+    			"/META-INF/resources/ckeditor/extension/ckeditor_alert.js");
 
     		StreamUtil.transfer(
     			entryURL.openStream(), response.getOutputStream(), false);
@@ -87,3 +87,5 @@ Now you know how to use the WYSIWYG editor dynamic includes.
 [Bottom JSP Dynamic Includes](develop/tutorials/-/knowledge_base/7-1/bottom-jsp-dynamic-includes)
 
 [Top Head JSP Dynamic Includes](develop/tutorials/-/knowledge_base/7-1/top-head-jsp-dynamic-includes)
+
+[Top JS Dynamic Includes](develop/tutorials/-/knowledge_base/7-1/top-js-dynamic-includes)

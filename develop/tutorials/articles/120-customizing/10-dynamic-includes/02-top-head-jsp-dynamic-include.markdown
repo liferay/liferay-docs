@@ -28,7 +28,7 @@ The example below injects a link into the top of the `top_head.jsp`:
 
     		PrintWriter printWriter = response.getWriter();
 
-    		String content = "<link href="..." />";
+    		String content = "<link href="...mentions.css" />";
 
     		printWriter.println(content);
     	}
@@ -37,9 +37,6 @@ The example below injects a link into the top of the `top_head.jsp`:
     	public void register(DynamicIncludeRegistry dynamicIncludeRegistry) {
     		dynamicIncludeRegistry.register("/html/common/themes/top_head.jsp#pre");
     	}
-
-    	@Reference(target = "(osgi.web.symbolicname=com.liferay.mentions.web)")
-    	private ServletContext _servletContext;
 
     }
     
@@ -50,5 +47,7 @@ Now you know how to use the `top_head.jsp` dynamic includes.
 ## Related Topics
 
 [Bottom JSP Dynamic Includes](develop/tutorials/-/knowledge_base/7-1/bottom-jsp-dynamic-includes)
+
+[Top JS Dynamic Includes](develop/tutorials/-/knowledge_base/7-1/top-js-dynamic-includes)
 
 [WYSIWYG Editor Dynamic Includes](develop/tutorials/-/knowledge_base/7-1/wysiwyg-editor-dynamic-includes)
