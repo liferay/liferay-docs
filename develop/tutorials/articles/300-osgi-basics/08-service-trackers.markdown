@@ -1,24 +1,24 @@
 # Service Trackers [](id=service-trackers)
 
-Now that Liferay is promoting more modular plugins deployed into an OSGi runtime, you have to consider how your own code, living in its own module, can rely on services in other modules for functionality. You need to account for the possibility of service implementations being swapped out or removed entirely if your module is to survive and thrive in an OSGi environment. It's easy for @product-ver@ developers who need to [call services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services) from their `@Component` classes. They just use another [Declarative Services (DS)](https://osgi.org/specification/osgi.cmpn/7.0.0/service.component.html)
+Now that Liferay is promoting more modular plugins deployed into an OSGi runtime, you have to consider how your own code, living in its own module, can rely on services in other modules for functionality. You must account for the possibility of service implementations being swapped out or removed entirely if your module is to survive and thrive in an OSGi environment. It's easy for @product-ver@ developers who need to [call services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services) from their `@Component` classes. They just use another [Declarative Services (DS)](https://osgi.org/specification/osgi.cmpn/7.0.0/service.component.html)
 annotation, `@Reference`, to get a service reference. The component activates when the referenced service is available. 
 
-If you're able to use the DS and leverage the `@Component` and `@Reference` annotations, you should. So much of the complexity of handling service dynamism is handled for you transparently.
+If you're able to use DS and leverage the `@Component` and `@Reference` annotations, you should. DS handles much of the complexity of handling service dynamism for you transparently.
 
-If you can't use DS to create a Component, keep reading to learn about how to implement a Service Tracker to look up services in the service registry. 
+If you can't use DS to create a Component, keep reading to learn how to implement a Service Tracker to look up services in the service registry. 
 
 ![Figure 1: Service implementations that are registered in the OSGi service registry can be accessed using Service Trackers.](../../images/service-registry.png)
 
-What scenarios might require the use of a service tracker? Keep in mind we're focusing on scenarios where DS _can't_ be used. Typically this involves a non-native (to OSGi) Dependency Injection framework.
+What scenarios might require using a service tracker? Keep in mind we're focusing on scenarios where DS *can't* be used. This typically involves a non-native (to OSGi) Dependency Injection framework.
 
 -  Calling OSGi services from a [Spring MVC portlet](/develop/tutorials/-/knowledge_base/7-0/spring-mvc)
 -  Calling OSGi services from a [JSF portlet](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
 -  Calling OSGi services from a [WAR-packaged portlet](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
-  -  that's been upgraded to run on @product-ver@, but not [fully modularized](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet) and made into an OSGi module
+   that's been upgraded to run on @product-ver@, but not [fully modularized](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet) and made into an OSGi module
 
 +$$$
 
-**Note:**  The static utility classes that were useful in previous versions of Liferay (e.g., `UserLocalServiceUtil`) exist for compatibility but should not be called, if possible.  Static utility classes cannot account for the OSGi runtime's dynamic environment. Using a static class, for example, you might attempt calling a service that has stopped or hasn't been deployed or started, which may lead to unrecoverable runtime errors. With a Service Tracker, you can make OSGi-friendly service calls.
+**Note:**  The static utility classes (e.g., `UserLocalServiceUtil`) that were useful in Liferay Portal 6.2 (and earlier) exist for compatibility but should not be called, if possible.  Static utility classes cannot account for the OSGi runtime's dynamic environment. Using a static class, for example, you might attempt calling a service that has stopped or hasn't been deployed or started--this could cause unrecoverable runtime errors. Service Tracker, however, helps you make OSGi-friendly service calls.
 
 $$$
 
@@ -64,13 +64,13 @@ ServiceTracker<SomeService, SomeService> someServiceTracker =
     new SomeServiceTracker(this);
 ```
 
-Remember to open the service tracker before use, typically as early as you can. 
+Remember to open the service tracker before using it, typically as early as you can. 
 
 ```java
 someServiceTracker.open();
 ```
 
-The most basic usage of a Service Tracker is simply to interogate it's state. For instance, during your program logic, get the service using the `getService` method, always checking the result for null:
+The most basic usage of a Service Tracker is to interrogate the service's state. In your program logic, for example, check whether the service is `null` before using it:
 
 ```java
 SomeService someService = someServiceTracker.getService();
@@ -83,9 +83,7 @@ else {
 }
 ```
 
-There are several other utility functions on the Service Tracker for introspecting tracked services.
-
-$$$
+Service Trackers have several other utility functions for introspecting tracked services.
 
 Later when your application is being destroyed or undeployed, close the service tracker. 
 
@@ -95,9 +93,9 @@ someServiceTracker.close();
 
 ## Implementing a Callback Handler for Services [](id=implementing-a-callback-handler-for-services)
 
-If there's a strong possibility the service might not be available, or if there is a need to track multiple services, the Service Tracker API provides a callback mechanism which operates on service _events_. To use this override the `addingService` and `removedService` methods of `ServiceTracker`. The methods' `ServiceReference` parameter references an active service object. 
+If there's a strong possibility the service might not be available, or if you need to track multiple services, the Service Tracker API provides a callback mechanism which operates on service *events*. To use this, override `ServiceTracker`'s `addingService` and `removedService` methods. Their `ServiceReference` parameter references an active service object. 
 
-Here's an example taken from the [OSGi Alliance's OSGi Core Release 7 specification](https://osgi.org/specification/osgi.core/7.0.0/util.tracker.html#d0e51991):
+Here's an example `ServiceTracker` implementation from the [OSGi Alliance's OSGi Core Release 7 specification](https://osgi.org/specification/osgi.core/7.0.0/util.tracker.html#d0e51991):
 
 ```java
 new ServiceTracker<HttpService, MyServlet>(context, HttpService.class, null) {
@@ -136,13 +134,13 @@ class MyServiceTrackerCustomizer
         
         // Determine if the service is one that's interesting to you.
         // The return type of this method is the `tracked` type. Its type 
-        // is what is returned from `getService*` methods; usefull for wrapping 
-        // the service with your own type (i.e. MyWrapper).
+        // is what is returned from `getService*` methods; useful for wrapping 
+        // the service with your own type (e.g., MyWrapper).
         if (isInteresting(serviceReference)) {
             MyWrapper myWrapper = new MyWrapper(
                 serviceReference, bundleContext.getService());
             
-            // trigger the logic that requires available service(s)
+            // trigger the logic that requires the available service(s)
             triggerServiceAddedLogic(myWrapper);
             
             return myWrapper;
@@ -170,7 +168,7 @@ class MyServiceTrackerCustomizer
 }
 ```
 
-Register the `ServiceTrackerCustomizer` using the third constructor parameter of a new `ServiceTracker`.
+Register the `ServiceTrackerCustomizer` by passing it as the `ServiceTracker` constructor's third parameter.
 
 ```java
 ServiceTrackerCustomizer<SomeService, MyWrapper> serviceTrackerCustomizer =
@@ -182,4 +180,3 @@ ServiceTracker<SomeService, MyWrapper> serviceTracker =
 ```
 
 There's a little boilerplate code you need to produce, but now you can look up services in the service registry, even if your plugins can't take advantage of the Declarative Services component model. 
-
