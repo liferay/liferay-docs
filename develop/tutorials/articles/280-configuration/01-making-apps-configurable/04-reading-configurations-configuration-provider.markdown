@@ -22,29 +22,30 @@ After registering with a `ConfigurationBeanDeclaration`, you're ready to use a
 `ConfigurationProvider` to retrieve the scoped configuration. Here's how you
 obtain a reference to it:
 
-- For components:
+Here's the approach for components:
 
         @Reference
         protected void setConfigurationProvider(ConfigurationProvider configurationProvider) {
             _configurationProvider = configurationProvider;
         }
 
-- For Service Builder services:
+Here's the approach for Service Builder services:
 
         @ServiceReference(type = ConfigurationProvider.class)
         protected ConfigurationProvider configurationProvider;
 
-- For Spring beans: It is possible to use the same mechanism as for Service
+Here's the approach for Spring beans: It is possible to use the same mechanism as for Service
   Builder services (`@ServiceReference`). Check the documentation on [how to
   integrate Spring beans with OSGi services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#referencing-osgi-services) for more details.
 
-- For anything else: For other use cases, call the same methods from the utility
-    class, `ConfigurationProviderUtil`. Be sure you call the utility methods in
-    contexts where the portal is guaranteed to be initialized prior to the
-    method call. This class is useful in the [scripting console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console), for
-    example. Here's an example method that uses the utility class. It comes from
-    the export-import service, which will only be called during the import and
-    export of content from a running portal:
+Here's the approach for anything else: For other use cases, call the same
+methods from the utility class, `ConfigurationProviderUtil`. Be sure you call
+the utility methods in contexts where the portal is guaranteed to be initialized
+prior to the method call. This class is useful in the [scripting
+console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console),
+for example. Here's an example method that uses the utility class. It comes from
+the export-import service, which will only be called during the import and
+export of content from a running portal:
 
 	protected boolean isValidateLayoutReferences() throws PortalException {
 		long companyId = CompanyThreadLocal.getCompanyId();
@@ -58,26 +59,27 @@ obtain a reference to it:
 
 To retrieve the configuration, use one of the following methods of the provider:
 
-- `getCompanyConfiguration()`: Used when you want to support
-  different configurations per virtual instance. In this case, the
-  configuration is usually entered by an admin through Control Panel &rarr;
-  Configuration &rarr; Instance Settings. Since this UI is not automatically
-  generated (yet) you will need to extend the UI with your own form.
+`getCompanyConfiguration()`
+: Used when you want to support different configurations per virtual instance.
+In this case, the configuration is usually entered by an admin through Control
+Panel &rarr; Configuration &rarr; Instance Settings. Since this UI is not
+automatically generated (yet) you will need to extend the UI with your own form.
 
-- `getGroupConfiguration()`: Used when you want to support different
-  configurations per site (or, if desired, per page scope). Usually this
-  configuration is specified by an admin through the Configuration menu option
-  in an app accessing through the site administration menu. That UI is
-  developed as a portlet configuration view.
+`getGroupConfiguration()`
+: Used when you want to support different configurations per site (or, if
+desired, per page scope). Usually this configuration is specified by an admin
+through the Configuration menu option in an app accessing through the site
+administration menu. That UI is developed as a portlet configuration view.
 
-- `getPortletInstanceConfiguration()`: Used to obtain the
-  configuration for an specific portlet instance. Most often you should not be
-  using this directly and use the convenience method in `PortletDisplay` instead
-  as shown below.
+`getPortletInstanceConfiguration()`
+: Used to obtain the configuration for an specific portlet instance. Most often
+you should not be using this directly and use the convenience method in
+`PortletDisplay` instead as shown below.
 
-- `getSystemConfiguration`: Used to obtain the configuration for the system
-    scope. These settings are specified by an admin via the System Settings
-    application or with an OSGi configuration file.
+`getSystemConfiguration`
+: Used to obtain the configuration for the system scope. These settings are
+specified by an admin via the System Settings application or with an OSGi
+configuration file.
 
 Here are a couple real world examples from Liferay’s source code:
 

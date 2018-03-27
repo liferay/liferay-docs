@@ -203,7 +203,7 @@ The `@ExtendedObjectClassDefinition` annotation is distributed through the
 
 Configurations should be in the most intuitive location (section and category)
 so administrators find them. If your configurations don't fit into the existing
-categories or category sections, create your own by implementing the,
+categories or category sections, create your own by implementing the
 `ConfigurationCategory` interface.
 
 Here's the code that creates the *Content Management* section and the *Assets*

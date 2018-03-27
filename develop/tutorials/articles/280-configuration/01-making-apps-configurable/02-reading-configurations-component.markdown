@@ -1,10 +1,12 @@
 # Reading Configuration Values from a Component [](id=reading-configuration-values-from-a-component)
 
-Once you have the [application configured](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable), you might be wondering how to
-read the configuration from your application's Java code.
+Once you have the [application
+configured](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable)
+so that administrators can configure it in System Settings, you might be
+wondering how to read the configuration from your application's Java code.
 
-The answer is that there are several ways. Which one you use will depend on the
-context from which you need to read the configuration:
+The answer is that there are several ways. Which one you use depends on the
+context from which the configuration must be read:
 
 1. From any Component class
 1. From an MVC portlet's JSP
@@ -16,40 +18,41 @@ class.
 
 ## Reading Configurations from a Component Class [](id=reading-configurations-from-a-component-class)
 
-First set the `configurationPid` Component property as the fully qualified class
-name of the configuration class:
+1.  First set the `configurationPid` Component property as the fully qualified
+    class name of the configuration class:
 
-    @Component(configurationPid = "com.liferay.docs.exampleconfig.ExampleConfiguration")
-    public class MyAppManager {
+        @Component(configurationPid = "com.liferay.docs.exampleconfig.ExampleConfiguration")
+        public class MyAppManager {
 
-Then provide an `activate` method, annotated with `@Activate` to ensure the
-method is invoked as soon as the Component is started, and `@Modified` so it's
-invoked whenever the configuration is modified.
+2.  Then provide an `activate` method, annotated with `@Activate` to ensure the
+    method is invoked as soon as the Component is started, and `@Modified` so
+    it's invoked whenever the configuration is modified.
 
-    @Activate
-    @Modified
-    protected void activate(Map<String, Object> properties) {
-        _configuration = ConfigurableUtil.createConfigurable(
-            ExampleConfiguration.class, properties);
-    }
+        @Activate
+        @Modified
+        protected void activate(Map<String, Object> properties) {
+            _configuration = ConfigurableUtil.createConfigurable(
+                ExampleConfiguration.class, properties);
+        }
 
-    private volatile ExampleConfiguration _configuration;
+        private volatile ExampleConfiguration _configuration;
 
-The `activate()` method calls the method `ConfigurableUtil.createConfigurable()`
-to convert a map of the configuration's properties to a typed class, which is
-easier to handle. The configuration is stored in a `volatile` field. Don't
-forget to make it `volatile` to prevent thread safety problems.
+    The `activate()` method calls the method
+    `ConfigurableUtil.createConfigurable()` to convert a map of the
+    configuration's properties to a typed class, which is easier to handle. The
+    configuration is stored in a `volatile` field. Don't forget to make it
+    `volatile` to prevent thread safety problems.
 
-Once the activate method is set up, retrieve particular properties from the
-configuration wherever they're needed:
+3.  Once the activate method is set up, retrieve particular properties from the
+    configuration wherever they're needed:
 
-    public void orderCar(String model) {
-        order("car", model, _configuration.favoriteColor);
-    }
+        public void orderCar(String model) {
+            order("car", model, _configuration.favoriteColor);
+        }
 
-The String configuration value of `favoriteColor` is passed to the `order`
-method call, so whatever model car is ordered will be ordered in the configured
-favorite color.
+    The String configuration value of `favoriteColor` is passed to the `order`
+    method call, so whatever model car is ordered will be ordered in the
+    configured favorite color.
 
 +$$$
 

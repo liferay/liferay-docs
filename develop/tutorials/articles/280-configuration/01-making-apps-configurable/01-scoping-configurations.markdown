@@ -9,10 +9,10 @@ The `@ExtendedObjectClassDefinition` annotation specifies the configuration's
 scope. This must match how the configuration object is
 retrieved through the provider (your choice). The valid options are:
 
-- `Scope.GROUP`: for site scope
-- `Scope.COMPANY`: for virtual instance scope
-- `Scope.SYSTEM`: for system scope
-- `Scope.PORTLET_INSTANCE`: for the portlet instance scope
+`Scope.GROUP`: for site scope
+`Scope.COMPANY`: for virtual instance scope
+`Scope.SYSTEM`: for system scope
+`Scope.PORTLET_INSTANCE`: for the portlet instance scope
 
 Here is an example:
 
@@ -55,24 +55,21 @@ installed.
 
 $$$
 
-Register the configuration class by implementing `ConfigurationBeanDeclaration`.
-This class has one method that returns the class of the interface you created in
-the previous section. It enables the system to keep track of configuration
-changes as they happen, making requests for the configuration very fast.
+1.  Register the configuration class by implementing `ConfigurationBeanDeclaration`.
 
-Declare the configuration interface by creating a `ConfigurationBeanDeclaration`
-class:
+        @Component
+        public class RSSPortletInstanceConfigurationBeanDeclaration
+            implements ConfigurationBeanDeclaration {
 
-    @Component
-    public class RSSPortletInstanceConfigurationBeanDeclaration
-        implements ConfigurationBeanDeclaration {
+2.  This class has one method that returns the class of the interface you
+    created in the previous section. It enables the system to keep track of
+    configuration changes as they happen, making requests for the configuration
+    very fast.
 
         @Override
         public Class getConfigurationBeanClass() {
             return RSSPortletInstanceConfiguration.class;
         }
-
-    }
 
 That's all there is to it. Now the configuration is scoped and supports scoped
 retrieval.
