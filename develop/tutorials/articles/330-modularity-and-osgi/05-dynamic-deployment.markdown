@@ -91,7 +91,7 @@ service policies. Gogo Shell commands let you control modules and components.
 
 If you visited this tutorial as a part of the Learning Path
 [From Liferay Portal 6 to 7.1](/develop/tutorials/-/knowledge_base/7-1/from-liferay-6-to-liferay-7),
-you can go [here](/develop/tutorials/-/knowledge_base/7-1/osgi-and-modularity-for-liferay-6-developers)
+you can go [here](/develop/tutorials/-/knowledge_base/7-1/more-ways-osgi-improves-development-on-liferay)
 to continue it. 
 
 $$$
