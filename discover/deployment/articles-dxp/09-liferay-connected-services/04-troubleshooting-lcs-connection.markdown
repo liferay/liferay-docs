@@ -3,15 +3,28 @@
 Since LCS activates your @product@ instance, your server must maintain its 
 connection to LCS at all times. If this connection is interrupted, your server 
 enters a grace period to allow for reconnection. Lengthy interruptions, however, 
-can affect your server's uptime. Because LCS is deployed on a global cloud 
-infrastructure set up for automatic failure recovery, the potential for 
-non-availability is very low. Notifications also let the LCS team react quickly 
-to any downtime. During LCS updates and new version releases, LCS will be 
-unavailable for a few minutes while the new changes are being applied. 
+can affect your server's uptime. 
 
 This document discusses how LCS handles the grace period, and presents some 
 troubleshooting steps that you can follow if you have problems with your 
-server's LCS connection. 
+server's LCS connection: 
+
+-   **LCS Grace Periods:** Describes how the grace periods work in LCS. You 
+    should read this section before attempting any troubleshooting steps. 
+-   **Troubleshooting:** Presents troubleshooting steps for specific problems. 
+-   **Increasing Log Levels:** If you contact Liferay Support, you'll be asked 
+    to provide advanced log files. This section shows you how to generate these 
+    files by increasing your server's log levels. 
+
++$$$
+
+**Note:** The odds of LCS being unavailable are low. LCS is deployed on a global 
+cloud infrastructure set up for automatic failure recovery. Notifications also 
+let the LCS team react quickly to any downtime. During LCS updates and new 
+version releases, however, LCS will be unavailable for a few minutes while 
+changes are applied. 
+
+$$$
 
 ## LCS Grace Periods
 
@@ -29,9 +42,9 @@ There are 2 grace period types in LCS:
 **Note:** These grace periods only apply to servers previously connected and 
 activated in LCS. If the subscription check or connection fails when a server 
 attempts to connect to LCS for the first time, that server doesn't enter a grace 
-period. It's therefore important to verify that there are available 
-subscriptions before connecting a new server. To do this, check the 
-Subscriptions page in LCS. 
+period. It's therefore important to verify that subscriptions are available 
+before connecting a new server to LCS. To do this, check the Subscriptions page 
+in LCS. 
 
 $$$
 
@@ -43,21 +56,12 @@ If your server's LCS connection is interrupted, the server continues to run and
 enters a grace period that lasts for up to 30 days to allow for reconnection. 
 During this grace period, your @product@ instance displays a warning message to 
 administrators. Upon seeing this message, administrators should immediately 
-contact Liferay Support and follow the troubleshooting steps in the below 
-section. If for some reason the connection can't be restored, Liferay Support 
-will provide an alternative for activating your server. LCS automatically 
-restores your server's activation upon reconnection (you shouldn't need to 
-restart the server). If this doesn't happen, you can force it by redeploying the 
-LCS client app. 
-<!-- 
-
-The original text says, "... customers can force a reconnect without restarting 
-by redeploying the LCS Client (pending on Core Infra fix: LPS-75451)." 
-
-Is there an ETA for this fix? The LPS has been open for 4 months now. I'm 
-inclined to just tell customers to restart their servers.
-
--->
+contact Liferay Support and follow the troubleshooting steps below. If for some 
+reason the connection can't be restored, Liferay Support will provide an 
+alternative way to activate your server. LCS automatically restores your 
+server's activation upon reconnection (you shouldn't need to restart the 
+server). If this doesn't happen, you can force it by redeploying the LCS client 
+app and/or restarting the server. 
 
 ![Figure 1: A warning message is displayed to administrators if the server can't connect to LCS to validate the subscription.](../../images-dxp/lcs-grace-period.png)
 
@@ -71,13 +75,13 @@ LCS's grace period behavior has been implemented in several @product@ patches.
 If you're not running these patches, your server's grace period may be 
 different. The following table lists each patch and how it changes the grace 
 period. Note that each hotfix includes the preceding hotfixes, and each fix pack 
-contains the preceding fix packs. 
+includes the preceding fix packs. 
 
 | &nbsp;Fix Pack | &nbsp;Hotfix Built After | Before | After |
 | --------- | ------------------ | ------ | ----- |
 | 40 | 05 March 2018 | The grace period lasts 7 days. | The grace period lasts 30 days. |
 | 33 | 17 Nov 2017 | The grace period is only invoked for lost network connections. | The grace period is also invoked for failed subscription validation, if the server was previously registered. |
-| 32 | 20 Oct 2017 | The grace period warning is displayed as soon as the LCS connection is lost. | The grace period warning is displayed only after the connection has been out for 1 hour. This prevents false alarms for transient network problems. |
+| 32 | 20 Oct 2017 | The grace period warning is displayed as soon as the LCS connection is lost. | The grace period warning is displayed only after the connection has been out for 1 hour. This prevents false alarms for temporary network problems. |
 
 <!-- 
 Add to table once the functionality is implemented: 
@@ -87,9 +91,9 @@ Add to table once the functionality is implemented:
 
 ### Subscription Grace Period
 
-At least 90 days before a subscription expires, Liferay will reach out to begin 
-the renewal process. 30 days before expiration, Liferay Support sends warning 
-messages through 
+At least 90 days before the subscription expires, Liferay will reach out to 
+begin the renewal process. 30 days before expiration, Liferay Support sends 
+warning messages through 
 [LESA](https://web.liferay.com/group/customer/support/-/support/ticket), 
 [the LCS site](https://lcs.liferay.com), 
 and 
@@ -110,8 +114,8 @@ messages disappear within 24 hours. Note that by using XML activation keys
 The Liferay Support team is there to assist you if you encounter issues with 
 LCS. If you need support, open a 
 [LESA](https://web.liferay.com/group/customer/support/-/support/ticket) 
-ticket. You can begin troubleshooting according to the following scenarios, 
-which the Liferay Support team can also assist you with. 
+ticket. You can begin troubleshooting the following scenarios, which the Liferay 
+Support team can also assist you with. 
 
 +$$$
 
@@ -149,7 +153,7 @@ Subscription errors usually involve one of these problems:
 In either case, you must verify that you have an available subscription, and 
 that you're not exceeding its allowed number of servers or cores. You can find 
 this information on the LCS site's Subscriptions page, as described in 
-[the documentation](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions).
+[the documentation on managing subscriptions](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions). 
 If the environment in which you're trying to activate a server isn't assigned 
 the subscription you want to use, then you must create a new environment and 
 assign it the correct subscription. Once assigned, you can't change an 
@@ -174,49 +178,50 @@ $$$
 
 If the token is invalid, first review the documentation on 
 [using environment tokens](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens). 
-A token becomes invalid in the following scenarios: 
+A token becomes invalid in these scenarios: 
 
--   If the LCS user who generated the token no longer has permissions. This 
-    happens when the user leaves the LCS project, or becomes an LCS Environment 
-    Manager or LCS Environment Viewer in a different environment. 
--   If the token's file name is changed. 
--   If the token is regenerated. 
+-   The LCS user who generated the token no longer has permissions. This happens 
+    when the user leaves the LCS project, or becomes an LCS Environment Manager 
+    or LCS Environment Viewer in a different environment. 
+-   The token's file name changes. 
+-   The token is regenerated. 
 
 ## Increasing Log Levels
 
-If you contact Liferay Support, you'll be asked to provide advanced log files. 
-There are 2 ways to increase the log levels to produce these files: 
-
-1.  In your @product@ instance's Control Panel UI. This is a temporary 
-    configuration that resets upon shutting down the server. Note that if the 
-    server is unregistered, you won't be able to access the Control Panel. In 
-    that case, Liferay Support will provide you with a temporary activation key. 
-
-2.  In a Log4j configuration. This is a permanent configuration that persists 
-    through server shutdown and restart. 
-
-The following sections cover both options. Regardless of how you increase the 
-log levels, you can find the log files in 
+If you contact Liferay Support, you'll be asked to increase the log levels and 
+then provide your log files. You can find these log files in 
 `[Liferay Home]/logs` 
 ([Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-product#liferay-home) 
 is usually the parent folder of the application server's folder). There are 2 
 types of log files in this folder: 
 
-1.  Liferay log files: The files `liferay.[date].log` and `liferay.[date].xml` 
-    are the logs for your @product@ installation. Note that LOG and XML files 
-    for the same date contain the same information--the only difference is the 
-    file format. 
+1.  **Liferay log files:** The files `liferay.[date].log` and 
+    `liferay.[date].xml` are the logs for your @product@ installation. Note that 
+    LOG and XML files for the same date contain the same information--the only 
+    difference is the file format. 
 
-2.  LCS log files: The `lcs-portlet-[date].log` files are the LCS client app's 
-    logs. Note that if there's only a single LCS log file, it may appear without 
-    a date as `lcs-portlet.log`. When you increase the log levels as described 
-    in the following sections, the additional log messages are written to these 
-    LCS log files. 
+2.  **LCS log files:** The `lcs-portlet-[date].log` files are the LCS client 
+    app's logs. Note that if there's only a single LCS log file, it may appear 
+    without a date as `lcs-portlet.log`. When you increase the log levels as 
+    described in the following sections, the additional log messages are written 
+    to these LCS log files. 
+
+There are 2 ways to increase the log levels: 
+
+1.  **In your @product@ instance's Control Panel:** This is a temporary 
+    configuration that resets upon shutting down the server. Note that if the 
+    server isn't activated, you won't be able to access the Control Panel. In 
+    that case, Liferay Support can provide a temporary activation key. 
+
+2.  **In a Log4j configuration:** This is a permanent configuration that 
+    persists through server shutdown and restart. 
+
+The following sections cover both options. 
 
 ### Control Panel
 
 Follow these steps to increase the log levels via your @product@ instance's 
-Control Panel UI: 
+Control Panel: 
 
 1.  Navigate to *Control Panel* &rarr; *Configuration* &rarr; *Server 
     Administration*. 
