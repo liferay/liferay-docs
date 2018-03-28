@@ -1,13 +1,13 @@
-## OSGi Services and Dependency Injection with Declarative Services [](id=osgi-services-and-dependency-injection-with-declarative-services)
+# OSGi Services and Dependency Injection with Declarative Services [](id=osgi-services-and-dependency-injection-with-declarative-services)
 
-In @product-ver@, the OSGi framework registers objects as *services*. Each service
+In @product@, the OSGi framework registers objects as *services*. Each service
 offers functionality and can leverage functionality other services provide. The
 OSGi Services model supports a collaborative environment for objects.
 
 Declarative Services (DS) provides a service component model on top of OSGi
 Services. DS service components are marked with the `@Component` annotation and
-implement or extend a service class. Service component can refer to and use each
-other's services. The Service Component Runtime (SCR) registers component
+implement or extend a service class. Service components can refer to and use
+each other's services. The Service Component Runtime (SCR) registers component
 services and handles binding them to other components that reference them.
 
 Here's how the "magic" happens:
@@ -24,9 +24,9 @@ Here's how the "magic" happens:
 
 It's publish, find, and bind at its best!
 
-How does a developer use DS to register and bind services? Does it involve
-creating XML files? No, it's much easier than that. The developer uses two
-annotations: `@Component` and `@Reference`.
+How do you use DS to register and bind services? Does it involve creating XML
+files? No, it's much easier than that. You use two annotations: `@Component` and
+`@Reference`.
 
 -  `@Component`: Add this annotation to a class definition to make the class a
     component--a service provider. 
@@ -60,17 +60,26 @@ to a field marks it to be injected with a service matching the field's type.
 On deploying this class's module, the SCR finds a component configuration of the
 class type `SomeApi` and binds the service to this referencing component class.
 
-At build time, Bnd creates a *component description* file for each module's
-components automatically. The file specifies the component's services,
-dependencies, and activation characteristics. On module deployment, the OSGi
-framework reads the component description to create the component and manage its
-dependency on other components.
+At build time in modules created from [Liferay project templates](/develop/reference/-/knowledge_base/7-1/project-templates),
+bnd creates a *component description* file for each module's components
+automatically. The file specifies the component's services, dependencies, and
+activation characteristics. On module deployment, the OSGi framework reads the
+component description to create the component and manage its dependency on other
+components.
 
 The SCR stands ready to pair service components with each other. For each
 referencing component, the SCR binds an instance of the targeted service to it.
 
 As an improvement over dependency injection with Spring, OSGi Declarative
-Services supports dynamic dependency injection. Developers can create and
-publish service components for other classes to use. Developers can update the
-components and even publish alternative component implementations for a service.
-This kind of dynamism is a powerful part of @product-ver@.
+Services supports dynamic dependency injection. You can create and publish
+service components for other classes to use. You can update the components and
+even publish alternative component implementations for a service. This kind of
+dynamism is a powerful part of @product@.
+
++$$$
+
+If you visited this tutorial as a part of the Learning Path
+[From Liferay Portal 6 to 7.1](/develop/tutorials/-/knowledge_base/7-1/from-liferay-6-to-liferay-7),
+you can with the next topic: [dynamic deployment in OSGi](/develop/tutorials/-/knowledge_base/7-1/dynamic-deployment). 
+
+$$$
