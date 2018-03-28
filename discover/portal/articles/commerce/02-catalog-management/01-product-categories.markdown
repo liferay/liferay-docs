@@ -3,18 +3,17 @@
 Unless your catalog contains a very narrow range of merchandise, you will
 probably want to organize your products into categories. Experienced @product@
 users will be familiar with using category hierarchies to organize other kinds
-of content; Commerce uses the same feature to organize products.
+of content; @commerce@ uses the same feature to organize products.
 
 Once your products have been categorized, you can use the category hierarchy to
 allow customers to easily navigate your store. Site administrators can also use
-categories to filter the catalog, which can streamline some tasks.<!--Are there
-any other uses for categories that should be described here?-->
+categories to filter the catalog, which can streamline some tasks.
 
 ## Creating Categories for Commerce
 
 To learn how to create category hierarchies and the vocabularies that hold them,
 go to the [Defining Categories for
-Content](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories#defining-categories-for-content)
+Content](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories#defining-categories-for-content)
 section. In most cases, the category hierarchy organizing your catalog should be
 contained in a single vocabulary.
 
@@ -33,7 +32,7 @@ kept our of sight.
 
 ## New Category Features
 
-In most respects, @product@'s categories are unchanged by @commerce@. But there
+In most respects, categories are unchanged by @commerce@. But there
 are a few new features that are available when you edit a category.
 
 ![Figure 2: *Category Display Page*, *Products* and *Images* are all unique to
@@ -51,8 +50,7 @@ to a category. Editing this list allows you to quickly add or remove products
 from the category, and is generally the best approach when creating a new
 category. When creating new products--especially when they need to be assigned
 to multiple existing categories--it is more efficient to categorize them from
-the catalog (*Site Menu* &rarr; *Commerce* &rarr; *Catalog* &rarr; product
-&rarr; Categorization).
+the [catalog](/discover/portal/-/knowledge_base/7-1/categorization).
 
 **Images:** You may want to upload images and associate them with a product
 category. Of course if you wanted to, you could create a category display page,

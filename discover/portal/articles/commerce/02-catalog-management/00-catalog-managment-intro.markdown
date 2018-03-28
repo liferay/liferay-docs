@@ -1,6 +1,6 @@
 # Catalog Management
 
-The commerce catalog is at the heart of any web store, providing the store's
+The @commerce@ catalog is at the heart of any web store, providing the store's
 core content and organizing the metadata that will help create an engaging
 shopping experience.
 

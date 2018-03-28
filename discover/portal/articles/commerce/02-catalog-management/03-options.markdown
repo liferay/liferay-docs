@@ -1,4 +1,4 @@
-# Options
+# Catalog Options
 
 Here you can specify customer-selectable options for your products. To create
 a new option, click the *Add* button(![Add](../../../images/icon-add.png)) at
