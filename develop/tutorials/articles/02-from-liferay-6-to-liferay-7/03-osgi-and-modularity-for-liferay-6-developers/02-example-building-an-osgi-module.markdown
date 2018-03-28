@@ -1,12 +1,12 @@
-## Example: Building an OSGi Module [](id=example-building-an-osgi-module)
+# Example: Building an OSGi Module [](id=example-building-an-osgi-module)
 
 The previous sections explained some of the most important concepts for Liferay
 Portal 6 developers to understand about OSGi and modularity. Now it's time to
 put this knowledge to practice by creating and deploying a module.
 
 The module includes a Java class that implements an OSGi service using
-Declarative Services. The project uses Gradle and Bnd, and can be built and
-deployed from within a [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+Declarative Services. The project uses Gradle and bnd, and can be built and
+deployed from within a [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
 
 Here's the module project's anatomy:
 
@@ -16,7 +16,7 @@ Here's the module project's anatomy:
 
 - `src/main/java/com/liferay/docs/service/MyService.java`
 
-On building the module JAR, Bnd generates the module manifest automatically. 
+On building the module JAR, bnd generates the module manifest automatically. 
 
 Here's the Java class:
 
@@ -71,11 +71,11 @@ The `bnd.bnd` file is next:
 The `Bundle-SymbolicName` is the arbitrary name for the module. The module's
 version value `1.0.0` is appropriate.
 
-Bnd generates the module's OSGi manifest to the file `META-INF/MANIFEST.MF`
+bnd generates the module's OSGi manifest to the file `META-INF/MANIFEST.MF`
 in the module's JAR. In this project, the JAR is created in the `build/libs`
 folder.
 
-The last file to examine is the Gradle build file `build.gradle`:
+The last file to create is the Gradle build file `build.gradle`:
 
     dependencies {
         compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
@@ -86,12 +86,12 @@ depends on the OSGi service component annotations module. The build script is so
 simple because Liferay Workspace module projects leverage the Workspace's Gradle
 build infrastructure.
 
-Although this module project was created in a Liferay Workspace, it can easily
-be modified to use in other build environments. To keep the focus on what's
-most important, it was created in a Liferay Workspace.
+Although this module project was created for development in a
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/installing-liferay-workspace),
+it can easily be modified to use in other build environments. 
 
-Place the project files in a folder under the `modules` folder (e.g.,
-`[Liferay_Workspace]/modules/my.service.project`).
+Place the project files in a subfolder of your Liferay Workspace's `modules`
+folder (e.g., `[Liferay_Workspace]/modules/my.service.project`).
 
 To build the module JAR and deploy it to @product@, execute the `deploy` Gradle
 task:
@@ -102,7 +102,7 @@ task:
 
 **Note**: If Blade is installed (recommended), Gradle can be executed by
 entering `blade gw` followed by a task name (e.g., `blade gw deploy`). For
-details on Blade commands, see [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
+details on Blade commands, see [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli).
 
 $$$
 
@@ -112,3 +112,7 @@ On deploying the module, the following message is printed to the server console:
 
 Congratulations! You've successfully built and deployed an OSGi module to
 @product@. 
+
+Now that you've seen an OSGi module in action, you can appreciate more of the
+ways modularity and OSGi improves development on Liferay. They're explained
+next. 
