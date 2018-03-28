@@ -1,29 +1,18 @@
-# Developing Fragments
+# Fragment Specific Tags
 
-The goal of Fragments is to take a design or mockup and realize it on a web page
-as accurately as possible. To do this, the developers are given a space where
-they have a "blank slate" to create it. You have three tools at your disposal 
-to accomplish this:
-
-*  **HTML**: The markup of the fragment. Fragments use standard HTML with  
-    special tags to add dynamic behavior.
-
-*  **CSS**: CSS styles and positions the fragment's markup. 
-
-*  **JavaScript**: JavaScript provides dynamic behavior to the fragment.
-
-The HTML, CSS, and JavaScript is all completely standard, just like you'd use
-anywhere else on the web, but there are a few Liferay specific options as well. 
-Some text areas can be specified as editable, allowing that text to be modified
-before it is published. Liferay portlets can also be embedded in 
-Fragments as "widgets" which enable you to create more dynamic content and pages
-with Fragments.
+While HTML, CSS, and JavaScript are universal tools for building websites, 
+@product@ includes some additional tools to make fragments more powerful. One
+tag can make text editable not just in the HTML editor, but also at the time of 
+publishing. The other enables you to embed Liferay portlets into your fragment in the form of "Widgets."
 
 ## Making text editable
 
 Making text editable allows the marketer or web admin to modify the text before 
 publishing it. This could be to allow you, for example, to reuse a single 
 fragment with different headings or different text for different pages.
+Fragments are intended to make creating beautiful content simple and easy and
+this feature will also save you the work of duplicating work just to change
+the text.
 
 You can make any text of a fragment editable by enclosing it in an 
 `<lfr-editable>` tag like this:
@@ -41,7 +30,8 @@ Fragment to a Content Page, and then edit the text before publishing.
 
 1.  Go to the *Fragments* page in Site Administration.
 
-2.  Create a new Collection and a new Fragment inside of it.
+2.  Go to the *Developing Fragments* collection and a new Fragment inside of it
+    named "Editable Fragment".
 
 3.  Inside the `<div>` in the HTML pane, enter the following code:
     
@@ -62,7 +52,8 @@ text. Next add it to a Content Page to be published.
 
 2.  Select the *Page Templates* tab at the top.
 
-3.  Create a new Collection and a New Page Template inside of it.
+3.  Create a new Collection named "Templates for Developing Fragments" and a 
+    New Page Template inside of it named "Editable Page Template"
 
 4.  From the menu on the right hand side, add your fragment to the page.
 
@@ -91,8 +82,8 @@ Let's demonstrate this in a new Fragment.
 
 1.  Go to the *Fragments* page.
 
-2.  Click on the Collection you created earlier (or create a new one if you 
-    don't have any Collections.)
+2.  Go to the *Developing Fragments* collection and a new Fragment inside of it
+    named "Embedded Widget Fragment".
     
 3.  Create a new Fragment.
 
@@ -118,10 +109,9 @@ display it.
 
 2.  Select the *Page Templates* tab at the top.
 
-3.  Click on the Collection you created earlier (or create a new one if you 
-    don't have any Collections.)
+3.  Go to the "Templates for Developing Fragments Collection".
 
-4.  Create a new Page Template.
+4.  Create a new Page Template named "Widget Page Template".
 
 5.  In the new Page Template, from the menu on the right hand side, add your 
     fragment to the page.
@@ -132,7 +122,7 @@ display it.
 
 8.  Click the `+` icon to create a new page.
 
-9.  Select the template you just created with the embedded widget and save.
+9.  Select the "Widget Page Template" and save.
 
 10. Now go back to your site, and select your new page.
 
@@ -140,29 +130,3 @@ display it.
 
 Embedding widgets in Fragments is a very powerful tool that opens a world of 
 options.
-
-## Developing a fragment using desktop tools
-
-It’s possible to develop a fragment using any preferred desktop tools. Since 
-the Fragment is simply HTML, CSS, and JavaScript, you could use a simple text 
-editor or a specialized tool with its own built in previews, like the one's 
-Liferay provides. If you use an external tool, you can copy/paste the code into the appropriate panes in the Fragment editor to publish it.
-
-## Recommendations and Best Practices
-
-In general all of your code should be semantic and highly reusable. One of the 
-main concerns is making sure that everything is namespaced properly as to not
-interfere with other elements on the page outside of the Fragment.
-
-### CSS
-
-While it’s possible to write any CSS desired in a fragment, it’s recommended to 
-prefix it with a class specific to the fragment to avoid impacting other 
-fragments. To facilitate this, when creating a new fragment, the HTML will 
-include a div with an automatically generated class name and the CSS will show 
-a sample selector using that class. Use it as the bases for all selectors you 
-add.
-
-### JavaScript
-
-Avoid adding a lot of JavaScript code, since it won’t be highly reusable. Instead, reference external JS libraries.
