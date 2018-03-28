@@ -1,4 +1,4 @@
-## Modules as an Improvement over Traditional Plugins [](id=modules-as-an-improvement-over-traditional-plugins)
+# Modules as an Improvement over Traditional Plugins [](id=modules-as-an-improvement-over-traditional-plugins)
 
 In @product-ver@, you can develop applications using OSGi modules or using
 traditional Liferay plugins (WAR-style portlets, hooks, EXT, and web
@@ -58,7 +58,7 @@ Here are some fundamental characteristics modules share with plugins:
 Now that you've compared and contrasted modules with plugins, it's time to tour
 the module anatomy. 
 
-### Module Structure: A JAR File with a Manifest [](id=module-structure-a-jar-file-with-a-manifest)
+## Module Structure: A JAR File with a Manifest [](id=module-structure-a-jar-file-with-a-manifest)
 
 A module's structure is extremely simple. It has one mandatory file:
 `META-INF/MANIFEST.MF`. You add code and resources to the module and organize
@@ -132,7 +132,7 @@ Tooling details are covered later in this series.
 Now that you're familiar with the module structure and manifest, it's time to
 explore how to build modules.
 
-### Building Modules with bnd [](id=building-modules-with-bnd)
+## Building Modules with bnd [](id=building-modules-with-bnd)
 
 The most common way to build modules is with a little tool called [bnd](http://bnd.bndtools.org/).
 It's an engine that, among other things, simplifies generating manifest

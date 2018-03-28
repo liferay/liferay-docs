@@ -1,4 +1,4 @@
-## More Ways OSGi Improves Development on Liferay [](id=more-ways-osgi-improves-development-on-liferay)
+# More Ways OSGi Improves Development on Liferay [](id=more-ways-osgi-improves-development-on-liferay)
 
 Here are more ways OSGi meets the
 [developer experience goals](/develop/tutorials/-/knowledge_base/7-1/osgi-and-modularity-for-liferay-6-developers)
