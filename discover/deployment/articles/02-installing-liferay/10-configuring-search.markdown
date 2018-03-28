@@ -78,13 +78,16 @@ In this example, it's 2.4.0.
 
 **Elasticsearch 6.1:** Elasticsearch 6.1.x is supported for @product@ systems
 running Fix Pack 42 or later, although version 2.x remains the default, embedded
-version. To install Elasticsearch 6.1.x, take these steps:
+version. To install Elasticsearch 6.1.x, 
 
-1. Make sure you're running FP-42 or later.
-2. Install Elasticsearch 6.1.x (follow steps 2-4  in this article for guidance).
-3. Install the [Elasticsearch 6 Adapter from Marketplace](LINK WHEN AVAILABLE)
-   and stop the default Elasticsearch adapter.
-4. Configure the Elasticsearch 6 adapter (see step 5 below for guidance).
+1.  Make sure you're running FP-42 or later.
+
+2.  Install Elasticsearch 6.1.x (follow steps 2-4 in this article for guidance).
+
+3.  Install the [Elasticsearch 6 Adapter from Marketplace](LINK WHEN AVAILABLE)
+    and stop the default Elasticsearch adapter.
+
+4.  Configure the Elasticsearch 6 adapter (see step 5 below for guidance).
 
 To disable the default Elasticsearch adapter, use the App Manager. Navigate to
 Control Panel &rarr; Apps &rarr; App Manager.
@@ -179,17 +182,19 @@ can find Elasticsearch on the network.
 
 +$$$
 
-**Elasticsearch 6.1:** Before continuing, install the [Liferay Connector for
-Elasticsearch 6 application](LINK WHEN AVAILABLE) from Liferay Marketplace and
+**Elasticsearch 6.1:** Before continuing, install the 
+[Liferay Connector for Elasticsearch 6 application](LINK WHEN AVAILABLE) from Liferay Marketplace and
 stop the default Elasticsearch 2.x adapter, which connects to Elasticsearch 2.x.
 
-1.  Navigate to Control Panel &rarr; Apps &rarr; App Manager.
+1.  Navigate to *Control Panel* &rarr; *Apps* &rarr; *App Manager*.
+
 2.  Search for *elasticsearch*. Find the Liferay Portal Search Elasticsearch
     module and click the edit ((![Edit](../../images/icon-edit.png))) button.
     Choose the Deactivate option. This leaves the bundle installed, but stops it
     in the OSGi runtime.
-3.  Once you have downloaded the LPKG file with the Elasticsearch 6 adapter,
-    place it in the `deploy` folder of your Liferay Home. Find more detailed
+
+3.  Once you've downloaded the LPKG file with the Elasticsearch 6 adapter,
+    place it in Liferay Home's `deploy` folder. Find more detailed
     information on deploying Marketplace applications [here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace).
 
 $$$

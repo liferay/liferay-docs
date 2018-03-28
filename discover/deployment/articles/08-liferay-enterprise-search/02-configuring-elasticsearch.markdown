@@ -301,9 +301,9 @@ $$$
 
 +$$$
 
-**Elasticsearch 6:** In Elasticsearch 6 there's no ability to specify the
-number of shards and replicas in the `elasticsearch.yml`file. Configure
-these index-level settings in the Elasticsearch 6 adapter, using the
+**Elasticsearch 6:** Elasticsearch 6 removed the setting that specifies the
+number of shards and replicas in the `elasticsearch.yml`file. Configure these
+index-level settings in the Elasticsearch 6 adapter, using the
 `indexNumberOfShards` and `indexNumberOfReplicas` properties to specify the
 number of primary shards and number of replica shards, respectively.
 
