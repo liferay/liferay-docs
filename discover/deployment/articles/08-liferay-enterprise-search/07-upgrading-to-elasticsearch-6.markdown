@@ -112,11 +112,29 @@ Download the
 Before installing the Elasticsearch 6 adapter, you must stop the running
 Elasticsearch adapter that ships with @product@. Use the App Manager: 
 
-- Navigate to Control Panel &rarr; Apps &rarr; App Manager.
-- Search for *elasticsearch*. Find the Liferay Portal Search Elasticsearch
-  module and click the *edit* ((![Edit](../../images/icon-edit.png))) button.
-  Choose the *Deactivate* option. This leaves the bundle installed, but stops it
-  in the OSGi runtime.
+1.  Navigate to Control Panel &rarr; Apps &rarr; App Manager.
+
+2.  Search for *elasticsearch*. Find the Liferay Portal Search Elasticsearch
+    module and click the *edit* ((![Edit](../../images/icon-edit.png))) button.
+    Choose the *Deactivate* option. This leaves the bundle installed, but stops
+    it in the OSGi runtime.
+
+3.  If you're using the Shield and Marvel integration plugins, make sure you
+    uninstall those, too.
+
+Alternatively, 
+[blacklist](/discover/portal/-/knowledge_base/7-0/blacklisting-osgi-modules) 
+the Elasticsearch, Shield, and Marvel plugins. Create a 
+
+    com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
+
+file with these contents:
+
+    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch,
+        com.liferay.portal.search.elasticsearch.shield,
+        com.liferay.portal.search.elasticsearch.marvel"]
+
+Place the file in `Liferay Home/osgi/configs`.
 
 Then stop Elasticsearch 2.x. If you're wondering whether your log should be
 complaining vociferously at this point, the answer is a definitive *yes*. You'll
