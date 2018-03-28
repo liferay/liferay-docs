@@ -90,8 +90,8 @@ Add these settings to `kibana.yml`:
     elasticsearch.ssl.certificateAuthorities: [ "/path/to/ca.crt" ]
 
     server.ssl.enabled: true
-    server.ssl.certificate: /path/to/[Elasticsearch Home]/config/ca.crt
-    server.ssl.key: /path/to/[Elasticsearch Home]/config/ca.key
+    server.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
+    server.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
 
 For more information about monitoring and security best practices in a clustered
 environment, refer to 

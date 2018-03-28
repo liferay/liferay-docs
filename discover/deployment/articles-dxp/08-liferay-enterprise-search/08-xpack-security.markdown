@@ -146,7 +146,7 @@ whenever one is needed. Customize these as appropriate for your installation.
 
     - Generate X.509 certificates and private keys using the new CA. For example:
 
-        ./bin/x-pack/certutil cert --pem --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --dns localhost --ip 127.0.0.1
+        ./bin/x-pack/certutil cert --pem --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --dns localhost --ip 127.0.0.1 --name localhost
 
     This generates another ZIP file. Extract the contents somewhere in the
     `Elasticsearch Home/config` folder.
@@ -157,14 +157,12 @@ whenever one is needed. Customize these as appropriate for your installation.
     - Add the certificate, key and certificate authority paths to each node's
         `elasticsearch.yml`:
 
-        xpack.ssl.certificate: /path/to/[Elasticsearch Home]/config/instance.crt
-        xpack.ssl.key: /path/to/[Elasticsearch Home]/config/instance.key
+        xpack.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
+        xpack.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
         xpack.ssl.certificate_authorities: /path/to/ca.crt
 
     The example paths above assume you added the certificate to `Elasticsearch
-    Home/config/x-pack/`. The `certutil` output includes the certificate
-    authority certificate inside the `.p12` file, so you can use the same file
-    for the keystore and truststore.
+    Home/config/`. 
 
     -  Enable transport layer TLS with these settings in `elasticsearch.yml`:
 
@@ -174,6 +172,15 @@ whenever one is needed. Customize these as appropriate for your installation.
     - Enable TLS on the HTTP layer to encrypt client communication:
 
         xpack.security.http.ssl.enabled: true
+
+<!--    - If you're going to enable 
+        [X-Pack Monitoring](/discover/deployment/-/knowledge_base/7-0/installing-x-pack-monitoring-for-elasticsearch-6),
+    add the path to the keystore to the @product@ application
+    server's JVM parameters. For a Tomcat server ina testing environment, add this to the `setenv.sh` or
+    `setenv.bat` files: 
+
+        CATALINA_OPTS="${CATALINA_OPTS} -Djavax.net.ssl.trustStore=/home/tibusz/dev/elasticsearch/servers/2.2.0/config/shield/es-ssl.keystore.jks -Djavax.net.ssl.trustStorePassword=liferay"
+-->
 
 After X-Pack is installed and TLS is enabled, configure the X-Pack Security
 adapter in @product@.
