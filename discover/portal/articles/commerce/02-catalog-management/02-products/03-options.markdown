@@ -1,9 +1,9 @@
 # Product Options
 
-An option is any feature of a product that can by selected by the customer.
-Options are defined in two parts: as *Option Templates* and *Option Values*.
-Here at the individual product level, you can create option values and assign
-them to any option templates that are available.
+An option is any feature of a product that can by selected by the buyer. Options
+are defined in two parts: as *Option Templates* and *Option Values*. Here at the
+individual product level, you can create option values and assign them to any
+option templates that are available.
 
 If no option templates are available, you must create them before you can assign
 values. Go to *Site Menu* &rarr; *Commerce* &rarr; *Catalog* and click on the

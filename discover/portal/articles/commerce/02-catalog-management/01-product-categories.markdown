@@ -12,8 +12,8 @@ categories to filter the catalog, which can streamline some tasks.
 ## Creating Categories for Commerce
 
 To learn how to create category hierarchies and the vocabularies that hold them,
-go to the [Defining Categories for
-Content](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories#defining-categories-for-content)
+go to the 
+[Defining Categories for Content](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories#defining-categories-for-content)
 section. In most cases, the category hierarchy organizing your catalog should be
 contained in a single vocabulary.
 
@@ -24,8 +24,7 @@ eventually use a *Commerce Category Navigation* portlet to help your customers
 find what they want. This portlet uses your category names to create a menu
 that directs customers exactly where they want to go.
 
-![Figure 1: This navigation portlet displays a vocabulary's entire
-category hierarchy.](../../../images/commerce-category-navigation.png)
+![Figure 1: This navigation portlet displays a vocabulary's entire category hierarchy.](../../../images/commerce-category-navigation.png)
 
 While your category names will be displayed to customers, vocabularies will be
 kept our of sight.
@@ -35,8 +34,7 @@ kept our of sight.
 In most respects, categories are unchanged by @commerce@. But there
 are a few new features that are available when you edit a category.
 
-![Figure 2: *Category Display Page*, *Products* and *Images* are all unique to
-@commerce@.](../../../images/category-tab-bar.png)
+![Figure 2: *Category Display Page*, *Products* and *Images* are all unique to @commerce@.](../../../images/category-tab-bar.png)
 
 **Category Display Page:** As an alternative to using a default category display
 page--which uses the same format for every category--you can create a unique
