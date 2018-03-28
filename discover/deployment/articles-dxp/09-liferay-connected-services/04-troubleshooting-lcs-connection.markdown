@@ -1,20 +1,22 @@
-# Troubleshooting Your LCS Connection
+# Troubleshooting Your LCS Connection [](id=troubleshooting-your-lcs-connection)
 
 Since LCS activates your @product@ instance, your server must maintain its 
 connection to LCS at all times. If this connection is interrupted, your server 
 enters a grace period to allow for reconnection. Lengthy interruptions, however, 
 can affect your server's uptime. 
 
-This document discusses how LCS handles the grace period, and presents some 
-troubleshooting steps that you can follow if you have problems with your 
-server's LCS connection: 
+The following sections in this document provide some background information and 
+help you troubleshoot problems with your server's LCS connection: 
 
--   **LCS Grace Periods:** Describes how the grace periods work in LCS. You 
-    should read this section before attempting any troubleshooting steps. 
--   **Troubleshooting:** Presents troubleshooting steps for specific problems. 
--   **Increasing Log Levels:** If you contact Liferay Support, you'll be asked 
-    to provide advanced log files. This section shows you how to generate these 
-    files by increasing your server's log levels. 
+-   [**LCS Grace Periods:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection#lcs-grace-periods) 
+    Describes how the grace periods work in LCS. You should read this section 
+    before attempting any troubleshooting steps. 
+-   [**Troubleshooting:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection#troubleshooting) 
+    Presents troubleshooting steps for specific problems. 
+-   [**Increasing Log Levels:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection#increasing-log-levels) 
+    If you contact Liferay Support, you'll be asked to increase your server's 
+    log levels and then provide your log files. This section shows you how to do 
+    this. 
 
 +$$$
 
@@ -26,7 +28,7 @@ changes are applied.
 
 $$$
 
-## LCS Grace Periods
+## LCS Grace Periods [](id=lcs-grace-periods)
 
 There are 2 grace period types in LCS: 
 
@@ -50,7 +52,7 @@ $$$
 
 First, you'll learn about the connection grace period. 
 
-### Connection Grace Period
+### Connection Grace Period [](id=connection-grace-period)
 
 If your server's LCS connection is interrupted, the server continues to run and 
 enters a grace period that lasts for up to 30 days to allow for reconnection. 
@@ -89,7 +91,7 @@ Add to table once the functionality is implemented:
 |   n/a     |        n/a         | The grace period warning is always displayed to administrators, on all pages. | A portal property can be used to restrict the grace period message to the License Manager and LCS pages in the Control Panel. |
 -->
 
-### Subscription Grace Period
+### Subscription Grace Period [](id=subscription-grace-period)
 
 At least 90 days before the subscription expires, Liferay will reach out to 
 begin the renewal process. 30 days before expiration, Liferay Support sends 
@@ -109,7 +111,7 @@ messages disappear within 24 hours. Note that by using XML activation keys
 
 ![Figure 2: LCS sends you a notification prior to the expiration of your subscription.](../../images-dxp/lcs-support-expiration.png)
 
-## Troubleshooting
+## Troubleshooting [](id=troubleshooting)
 
 The Liferay Support team is there to assist you if you encounter issues with 
 LCS. If you need support, open a 
@@ -128,7 +130,7 @@ steps correctly.
 
 $$$
 
-### Server Can't Reach LCS
+### Server Can't Reach LCS [](id=server-cant-reach-lcs)
 
 If your server can't reach LCS, verify that you can access the public sites that 
 LCS requires access to:
@@ -140,7 +142,7 @@ LCS requires access to:
         curl -vk -I "https://lcs-gateway.liferay.com"
         telnet lcs-gateway.liferay.com 443
 
-### Subscription Issues
+### Subscription Issues [](id=subscription-issues)
 
 For issues related to your subscription, first review the documentation on 
 [managing your subscription](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions). 
@@ -174,7 +176,7 @@ for information on properly unregistering subscriptions.
 
 $$$
 
-### Invalid Token
+### Invalid Token [](id=invalid-token)
 
 If the token is invalid, first review the documentation on 
 [using environment tokens](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens). 
@@ -186,7 +188,7 @@ A token becomes invalid in these scenarios:
 -   The token's file name changes. 
 -   The token is regenerated. 
 
-## Increasing Log Levels
+## Increasing Log Levels [](id=increasing-log-levels)
 
 If you contact Liferay Support, you'll be asked to increase the log levels and 
 then provide your log files. You can find these log files in 
@@ -218,7 +220,7 @@ There are 2 ways to increase the log levels:
 
 The following sections cover both options. 
 
-### Control Panel
+### Control Panel [](id=control-panel)
 
 Follow these steps to increase the log levels via your @product@ instance's 
 Control Panel: 
@@ -236,7 +238,7 @@ Control Panel:
     &rarr; *Liferay Connected Services* and take a screenshot of what you see 
     there. This is useful to Liferay Support. 
 
-### Log4j
+### Log4j [](id=log4j)
 
 Follow these steps to increase the log levels via Log4j: 
 
