@@ -182,15 +182,6 @@ on each node via its `elasticsearch.yml`.
 
         xpack.security.http.ssl.enabled: true
 
-4.  If you're enabling 
-        [X-Pack Monitoring](/discover/deployment/-/knowledge_base/7-0/installing-x-pack-monitoring-for-elasticsearch-6),
-    add the path to the keystore to the @product@ application
-    server's JVM parameters. For a Tomcat server ina testing environment, add this to the `setenv.sh` or
-    `setenv.bat` files: 
-
-        CATALINA_OPTS="${CATALINA_OPTS} -Djavax.net.ssl.trustStore=/path/to/es-ssl.keystore.jks -Djavax.net.ssl.trustStorePassword=liferay"
--->
-
 After X-Pack is installed and TLS is enabled, configure the X-Pack Security
 adapter in @product@.
 
@@ -202,7 +193,7 @@ to @product@ by copying it into the `Liferay Home/deploy` folder. That's all
 there is to it.
 
 To configure the X-Pack adapter in @product@'s UI, navigate to Control Panel
-&rarr; Configuration &rarr; System Settings. Find the FoundatioS category and
+&rarr; Configuration &rarr; System Settings. Find the Foundation category and
 click on the X-Pack Security entry. You can enter the property values here, but
 it's more common to use a 
 [configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)

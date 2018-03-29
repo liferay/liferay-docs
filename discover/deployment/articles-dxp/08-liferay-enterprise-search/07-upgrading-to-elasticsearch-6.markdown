@@ -11,7 +11,6 @@ existing Elasticsearch 2.x server (or cluster) to Elasticsearch 6.1.x:
 
 1.  Install and configure Elasticsearch 6.1.x.
 
-<!-- 2.  [Upgrade the Elasticsearch 2.4 indexes](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-upgrade.html) to 6.1. -->
 3.  Download the Elasticsearch 6 adapter from 
     [Liferay Marketplace](LINK WHEN RELEASED)
 
@@ -89,18 +88,6 @@ $$$
         ./bin/elasticsearch
 
     from Elasticsearch Home.
-
-<!-- ## Upgrade the Elasticsearch 2.4 Indexes
-
-This is likely the trickiest part of the upgrade process. Fortunately.  [Elastic
-extensively documents the
-process](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-upgrade.html).
-Consider [upgrading from a remote
-cluster](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/reindex-upgrade-remote.html)
-as that will allow you to upgrade indexes without interrupting service. Once you
-have upgraded indexes ready to use with @product@ and your new Elasticsearch 6.1
-server, come back here and continue with this guide.
--->
 
 ## Download the Elasticsearch 6 Adapter [](id=download-the-elasticsearch-6-adapter)
 

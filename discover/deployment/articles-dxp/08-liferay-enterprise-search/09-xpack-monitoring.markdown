@@ -159,7 +159,7 @@ all there is to it.
 
         keytool -importkeystore -deststorepass liferay -destkeystore /path/to/truststore.jks -srckeystore /path/to/Elasticsearch_Home/config/localhost.p12 -srcstoretype PKCS12 -srcstorepass liferay
 
-    Add the trusstore path and password to your application server's startup JVM
+    Add the trustore path and password to your application server's startup JVM
     parameters. For a Tomcat server, append this to your existing `CATALINA_OPTS`:
 
         -Djavax.net.ssl.trustStore=/path/to/truststore.jks -Djavax.net.ssl.trustStorePassword=liferay

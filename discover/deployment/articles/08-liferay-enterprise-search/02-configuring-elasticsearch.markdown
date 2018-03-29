@@ -543,7 +543,7 @@ $$$
 ### Multi-line YAML Configurations [](id=multi-line-yaml-configurations)
 
 If you configure the settings from the last section using an OSGi configuration
-file, you might find yourself needing to write YML snippets that span multiple
+file, you might find yourself needing to write YAML snippets that span multiple
 lines. The syntax for that is straightforward and just requires appending each
 line with `\n\`, like this:
 
