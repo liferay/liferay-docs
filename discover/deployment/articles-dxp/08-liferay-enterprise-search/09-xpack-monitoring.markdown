@@ -150,8 +150,8 @@ all there is to it.
    Kibana's UI, you must configure the application server's startup JVM
    parameters to recognize a valid *truststore* and *password*.
 
-   First, navigate to Elasticsearch Home and generate a PKSC#12 certificate from
-   the CA you created when setting up X-Pack security:
+    First, navigate to Elasticsearch Home and generate a PKSC#12 certificate
+        from the CA you created when setting up X-Pack security:
 
         ./bin/x-pack/certutil cert --ca-cert path/to/ca.crt --ca-key /path/toca.key --ip 127.0.0.1 --dns localhost --name localhost --out /path/to/Elasticsearch_Home/config/localhost.p12
 
