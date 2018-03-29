@@ -9,8 +9,8 @@ The following sections in this document provide some background information and
 help you troubleshoot problems with your server's LCS connection: 
 
 -   [**LCS Grace Periods:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection#lcs-grace-periods) 
-    Describes how the grace periods work in LCS. You should read this section 
-    before attempting any troubleshooting steps. 
+    Describes how grace periods work in LCS. You should read this section before 
+    attempting any troubleshooting steps. 
 -   [**Troubleshooting:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection#troubleshooting) 
     Presents troubleshooting steps for specific problems. 
 -   [**Increasing Log Levels:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection#increasing-log-levels) 
@@ -44,33 +44,31 @@ There are 2 grace period types in LCS:
 **Note:** These grace periods only apply to servers previously connected and 
 activated in LCS. If the subscription check or connection fails when a server 
 attempts to connect to LCS for the first time, that server doesn't enter a grace 
-period. It's therefore important to verify that subscriptions are available 
-before connecting a new server to LCS. To do this, check the Subscriptions page 
+period. It's therefore important to verify that an active subscription is 
+available before connecting a new server to LCS. To do this, check the 
+[Subscriptions tab](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions) 
 in LCS. 
 
 $$$
-
-First, you'll learn about the connection grace period. 
 
 ### Connection Grace Period [](id=connection-grace-period)
 
 If your server's LCS connection is interrupted, the server continues to run and 
 enters a grace period that lasts for up to 30 days to allow for reconnection. 
 During this grace period, your @product@ instance displays a warning message to 
-administrators. Upon seeing this message, administrators should immediately 
-contact Liferay Support and follow the troubleshooting steps below. If for some 
-reason the connection can't be restored, Liferay Support will provide an 
-alternative way to activate your server. LCS automatically restores your 
-server's activation upon reconnection (you shouldn't need to restart the 
-server). If this doesn't happen, you can force it by redeploying the LCS client 
-app and/or restarting the server. 
+administrators. Upon seeing this message, administrators should contact Liferay 
+Support and follow the troubleshooting steps below. If for some reason the 
+connection can't be restored, Liferay Support will provide an alternative way to 
+activate your server. LCS automatically restores your server's activation upon 
+reconnection (you shouldn't need to restart the server). If this doesn't happen, 
+you can force it by redeploying the LCS client app and/or restarting the server. 
 
 ![Figure 1: A warning message is displayed to administrators if the server can't connect to LCS to validate the subscription.](../../images-dxp/lcs-grace-period.png)
 
 You should also ensure that you've enabled email notifications in LCS for server 
 disconnection events. To do this, you must create a notification rule that sends 
 an email whenever the server shuts down unexpectedly. The documentation on 
-[Managing Your Account](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-your-lcs-account) 
+[managing Your account](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-your-lcs-account) 
 explains how to do this. 
 
 LCS's grace period behavior has been implemented in several @product@ patches. 
@@ -113,8 +111,8 @@ messages disappear within 24 hours. Note that by using XML activation keys
 
 ## Troubleshooting [](id=troubleshooting)
 
-The Liferay Support team is there to assist you if you encounter issues with 
-LCS. If you need support, open a 
+If you encounter issues with LCS, the Liferay Support team is here to help. If 
+you need support, open a 
 [LESA](https://web.liferay.com/group/customer/support/-/support/ticket) 
 ticket. You can begin troubleshooting the following scenarios, which the Liferay 
 Support team can also assist you with. 
@@ -149,30 +147,29 @@ For issues related to your subscription, first review the documentation on
 Subscription errors usually involve one of these problems:
 
 -   Your server can reach LCS, but can't locate a subscription.
--   Your server can reach LCS and locate a subscription, but the subscription's 
-    number of servers or cores are exceeded. 
+-   Your server can reach LCS and locate a subscription, but activating your 
+    server would exceed the subscription's allowed number of servers or cores. 
 
-In either case, you must verify that you have an available subscription, and 
-that you're not exceeding its allowed number of servers or cores. You can find 
-this information on the LCS site's Subscriptions page, as described in 
+In either case, you must verify that a subscription is available and that you're 
+not exceeding its allowed number of servers or cores. You can find this 
+information on the LCS site's Subscriptions page, as described in 
 [the documentation on managing subscriptions](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions). 
 If the environment in which you're trying to activate a server isn't assigned 
 the subscription you want to use, then you must create a new environment and 
 assign it the correct subscription. Once assigned, you can't change an 
 environment's subscription. Follow 
-[the initial registration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs) 
+[the initial activation steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs) 
 for instructions on creating a new environment and activating a new server. 
 
 +$$$
 
-**Note:** When shutting down servers, you must ensure that the LCS platform 
-receives the server shutdown commands. Otherwise, LCS may not release that 
-server's activation key for reuse, and attempts to activate additional servers 
-may exceed the subscription's allowed number of servers. There's a higher 
+**Note:** When shutting down servers, you must ensure that the LCS site receives 
+the server shutdown commands. Otherwise, LCS may not release that server's 
+activation key for reuse and attempts to activate additional servers may exceed 
+the subscription's allowed number of servers. There's a higher 
 likelihood of this happening in rolling deployments and/or when using 
-containers. See 
-[this KB article](https://customer.liferay.com/documentation/knowledge-base/-/kb/1464875) 
-for information on properly unregistering subscriptions. 
+containers. For more information, see the 
+[KB article on properly unregistering subscriptions](https://customer.liferay.com/documentation/knowledge-base/-/kb/1464875). 
 
 $$$
 
@@ -180,18 +177,18 @@ $$$
 
 If the token is invalid, first review the documentation on 
 [using environment tokens](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens). 
-A token becomes invalid in these scenarios: 
+The following table lists causes and solutions for invalid tokens. 
 
--   The LCS user who generated the token no longer has permissions. This happens 
-    when the user leaves the LCS project, or becomes an LCS Environment Manager 
-    or LCS Environment Viewer in a different environment. 
--   The token's file name changes. 
--   The token is regenerated. 
+| &nbsp;Cause | &nbsp;Solution |
+| ----------- | -------------- |
+| The LCS user who generated the token no longer has permissions. This happens when the user leaves the LCS project or becomes an LCS Environment Manager or LCS Environment Viewer in a different environment. | Regenerate the token. |
+| The token's file name is changed after download. | Download the token again from LCS. |
+| The token is regenerated. | Use the regenerated token. |
 
 ## Increasing Log Levels [](id=increasing-log-levels)
 
-If you contact Liferay Support, you'll be asked to increase the log levels and 
-then provide your log files. You can find these log files in 
+If you contact Liferay Support, you'll be asked to increase your server's log 
+levels and then provide your log files. You can find these log files in 
 `[Liferay Home]/logs` 
 ([Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-product#liferay-home) 
 is usually the parent folder of the application server's folder). There are 2 
@@ -298,3 +295,6 @@ Follow these steps to increase the log levels via Log4j:
     step 4 in `osgi/marketplace`. 
 
 8.  Start your server. 
+
+If you need assistance with the issues in this guide, or any other issues with 
+LCS, contact Liferay Support. 
