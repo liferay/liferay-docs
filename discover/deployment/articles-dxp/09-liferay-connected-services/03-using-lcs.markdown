@@ -137,7 +137,7 @@ Install Fix Packs in Any Environment | true | false | false |
 Install Fix Packs in a Particular Environment | true | true | false |
 
 Now that you know what roles are available in an LCS project, and what they do, 
-you're ready to learn how to manage the users in LCS projects.
+you're ready to learn how to manage them.
 
 ### Managing LCS Roles
 
@@ -159,8 +159,8 @@ $$$
 
 ![Figure 5: You can assign or revoke a user's LCS roles.](../../images-dxp/lcs-user-roles.png)
 
-Great! Now you know how to manage the users in your LCS projects. Now it's time 
-to get to the heart of LCS: the Dashboard. 
+Great! Now you know how to manage users and roles in your LCS projects. Now it's 
+time to get to the heart of LCS: the Dashboard. 
 
 ## Using the Dashboard [](id=using-the-dashboard)
 
