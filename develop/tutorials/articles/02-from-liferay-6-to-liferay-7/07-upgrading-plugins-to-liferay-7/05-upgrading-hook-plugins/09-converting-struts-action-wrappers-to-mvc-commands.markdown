@@ -19,9 +19,8 @@ The wrapper could extend either `BaseStrutsAction` or `BaseStrutsPortletAction`,
 depending on whether the Struts Action was a portal or portlet action
 respectively.
 
-Since 7.0, this mechanism no longer applies for most of the @product@ portlets
-because they no longer use Struts Actions, but  instead use Liferay
-`MVCCommand`s.
+Since 7.0, this mechanism no longer applies for most portlets because they no
+longer use Struts Actions, but  instead use Liferay `MVCCommand`s.
 
 This tutorial demonstrates how to convert your existing `StrutsAction` wrappers
 to `MVCCommand`s. 
@@ -31,12 +30,12 @@ to `MVCCommand`s.
 Converting `StrutsAction` wrappers to `MVCCommand`s is easier than you may
 think.
 
-As a review, legacy `StrutsAction` wrappers needed to implement all the methods,
-such as `processAction`, `render`, and `serveResource`, even if only one method
-was being customized. Each of these methods can now be customized independently,
+As a review, legacy `StrutsAction` wrappers implemented all methods, such as
+`processAction`, `render`, and `serveResource`, even if only one method was
+being customized. Each of these methods can now be customized independently
 using different classes, making the logic simpler and easier to maintain.
 Depending on the method you customized in your `StrutsAction` wrapper, you need
-to use the matching
+to use the matching 
 [`MVCCommand` interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCCommand.html)
 shown below:
 
@@ -48,8 +47,8 @@ Look at the
 [`ExampleStrutsPortletAction` class](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/overriding-and-adding-struts-actions)
 for a `StrutsAction` wrapper example. Depending on the actions overridden, the
 user must use different `MVCCommand`s. In this example, the action and render
-were overridden, so in order to migrate to the new pattern, you would create
-two classes: an `MVCActionCommand` and `MVCRenderCommand`.
+were overridden, so to migrate to the new pattern, you would create two classes:
+an `MVCActionCommand` and `MVCRenderCommand`.
 
 Next you'll determine the mapping the `MVCCommand` uses.
 
@@ -60,7 +59,7 @@ legacy Struts Action.
 
 Using the beginning login example once again, the `struts-action-path` mapping,
 `/login/login`, remains the same for the `MVCCommand` mapping in @product-ver@,
-but some of the mappings may have changed. It’s best to check @product@'s source
+but some of the mappings may have changed. It's best to check @product@'s source
 code to determine the correct mapping.
 
 Map to your MVCCommand URLs using portlet URL tags:
