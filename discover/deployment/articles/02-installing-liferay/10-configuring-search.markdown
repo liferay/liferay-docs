@@ -98,7 +98,7 @@ Portal Search Elasticsearch module and click the edit
 option. This leaves the bundle installed, but stops it in the OSGi runtime.
 
 To learn more about upgrading an existing system to Elasticsearch 6.1, read the
-[upgrade article](/discover/deployment/-/knowledge_base/7-1/upgrading-to-elasticsearch-6).
+[upgrade article](/discover/deployment/-/knowledge_base/7-0/upgrading-to-elasticsearch-6).
 
 $$$
 

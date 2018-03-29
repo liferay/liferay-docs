@@ -43,7 +43,7 @@ This guide starts with the installation of Kibana.
 3.  Tell Kibana where to send monitoring data by setting Elasticsearch's URL in
     `kibana.yml`:
 
-        http://localhost:9200
+        elasticsearch.url: "http://localhost:9200"
 
     If SSL is enabled on Elasticsearch, this is an `https` URL.
 
@@ -112,33 +112,59 @@ with a Kibana user. The last step is to hook Kibana up with @product@.
 ## Configuring the Liferay Connector to X-Pack Monitoring 
 
 If you have a Liferay Enterprise Search Premium subscription, download the
-Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]. Install the LPKG file to @product@ by
-copying it into the `Liferay Home/deploy` folder. That's all there is to it.
+Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]. Install the LPKG
+file to @product@ by copying it into the `Liferay Home/deploy` folder. That's
+all there is to it.
 
-Once the connector is installed, and Kibana and Elasticsearch are securely
-configured, create a
+1. Once the connector is installed, and Kibana and Elasticsearch are securely
+   configured, create a
 [configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files) 
-named
+    named
 
     com.liferay.portal.search.elasticsearch6.xpack.monitoring.web.internal.configuration.XPackMonitoringConfiguration.config
 
-Place these settings in the file:
+2. Place these settings in the `.config` file:
 
-    kibanaPassword="liferay"
-    kibanaUserName="elastic"
-    kibanaURL="https://localhost:5601"
+        kibanaPassword="liferay"
+        kibanaUserName="elastic"
+        kibanaURL="https://localhost:5601"
 
-The values differ depending on your Kibana configuration. Deploy this
-configuration file to `Liferay Home/osgi/configs`, and the settings are picked
-up by your running instance. There's no need to restart the server.
+    Alternatively, configure the monitoring adapter from the Control Panel.
+    Navigate to Configuration &rarr; System Settings, and find the X-Pack
+    Monitoring entry in the Foundation category. There you'll see all the
+    configuration options for the monitoring connector.
 
-There's one more setting to add to Kibana itself. It sets Kibana's base path
-to let the Monitoring Portlet act as a proxy for Kibana's monitoring UI. Add
-this to `kibana.yml`:
+    The values differ depending on your Kibana configuration. 
 
-    server.basePath: "/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy"
+3. Deploy this configuration file to `Liferay Home/osgi/configs`, and the
+   settings are picked up by your running instance. There's no need to restart
+   the server.
 
-Restart Kibana.
+4. There's one more setting to add to Kibana itself. It sets Kibana's base path
+   to let the Monitoring Portlet act as a proxy for Kibana's monitoring UI. Add
+   this to `kibana.yml`:
+
+        server.basePath: "/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy"
+
+5. Because you're using the Monitoring portlet in @product@ as a proxy to
+   Kibana's UI, you must configure the application server's startup JVM
+   parameters to recognize a valid *truststore* and *password*.
+
+   First, navigate to Elasticsearch Home and generate a PKSC#12 certificate from
+   the CA you created when setting up X-Pack security:
+
+        ./bin/x-pack/certutil cert --ca-cert path/to/ca.crt --ca-key /path/toca.key --ip 127.0.0.1 --dns localhost --name localhost --out /path/to/Elasticsearch_Home/config/localhost.p12
+
+    Next use the `keytool` command to generate a truststore:
+
+        keytool -importkeystore -deststorepass liferay -destkeystore /path/to/truststore.jks -srckeystore /path/to/Elasticsearch_Home/config/localhost.p12 -srcstoretype PKCS12 -srcstorepass liferay
+
+    Add the trusstore path and password to your application server's startup JVM
+    parameters. For a Tomcat server, append this to your existing `CATALINA_OPTS`:
+
+        -Djavax.net.ssl.trustStore=/path/to/truststore.jks -Djavax.net.ssl.trustStorePassword=liferay
+
+Restart @product@ and Kibana.
 
 ## Monitoring in @product@ [](id=monitoring-in-product)
 

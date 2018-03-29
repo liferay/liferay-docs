@@ -130,9 +130,9 @@ the Elasticsearch, Shield, and Marvel plugins. Create a
 
 file with these contents:
 
-    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch,
-        com.liferay.portal.search.elasticsearch.shield,
-        com.liferay.portal.search.elasticsearch.marvel"]
+    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch",
+        "com.liferay.portal.search.elasticsearch.shield",
+        "com.liferay.portal.search.elasticsearch.marvel.web"]
 
 Place the file in `Liferay Home/osgi/configs`.
 

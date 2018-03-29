@@ -141,7 +141,8 @@ obtain node certificates.
 
     This generates a ZIP file. Unzip the contents somewhere safe.
 
-2. Generate X.509 certificates and private keys using the new CA. For example:
+2. Generate X.509 certificates and private keys using the CA from Step 1. For
+   example:
 
         ./bin/x-pack/certutil cert --pem --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --dns localhost --ip 127.0.0.1 --name localhost
 
@@ -167,7 +168,7 @@ on each node via its `elasticsearch.yml`.
 
         xpack.ssl.certificate: /path/to/[Elasticsearch Home]/config/localhost.crt
         xpack.ssl.key: /path/to/[Elasticsearch Home]/config/localhost.key
-        xpack.ssl.certificate_authorities: /path/to/ca.crt
+        xpack.ssl.certificate_authorities: ["/path/to/ca.crt"]
 
     The example paths above assume you added the certificate to `Elasticsearch
     Home/config/`. 
@@ -181,7 +182,7 @@ on each node via its `elasticsearch.yml`.
 
         xpack.security.http.ssl.enabled: true
 
-<!--4.  If you're enabling 
+4.  If you're enabling 
         [X-Pack Monitoring](/discover/deployment/-/knowledge_base/7-0/installing-x-pack-monitoring-for-elasticsearch-6),
     add the path to the keystore to the @product@ application
     server's JVM parameters. For a Tomcat server ina testing environment, add this to the `setenv.sh` or
@@ -201,7 +202,7 @@ to @product@ by copying it into the `Liferay Home/deploy` folder. That's all
 there is to it.
 
 To configure the X-Pack adapter in @product@'s UI, navigate to Control Panel
-&rarr; Configuration &rarr; System Settings. Find the Foundation category and
+&rarr; Configuration &rarr; System Settings. Find the FoundatioS category and
 click on the X-Pack Security entry. You can enter the property values here, but
 it's more common to use a 
 [configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
