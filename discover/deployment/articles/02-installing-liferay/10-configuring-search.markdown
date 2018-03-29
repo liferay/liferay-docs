@@ -84,7 +84,7 @@ version. To install Elasticsearch 6.1.x,
 
 2.  Install Elasticsearch 6.1.x (follow steps 2-4 in this article for guidance).
 
-3.  Install the [Elasticsearch 6 Adapter from Marketplace](LINK WHEN AVAILABLE)
+3.  Install the [Elasticsearch 6 Adapter from Marketplace](https://web.liferay.com/marketplace)
     and stop the default Elasticsearch adapter.
 
 4.  Configure the Elasticsearch 6 adapter (see step 5 below for guidance).
@@ -183,7 +183,7 @@ can find Elasticsearch on the network.
 +$$$
 
 **Elasticsearch 6.1:** Before continuing, install the 
-[Liferay Connector for Elasticsearch 6 application](LINK WHEN AVAILABLE) from Liferay Marketplace and
+[Liferay Connector for Elasticsearch 6 application](https://web.liferay.com/marketplace) from Liferay Marketplace and
 stop the default Elasticsearch 2.x adapter, which connects to Elasticsearch 2.x.
 
 1.  Navigate to *Control Panel* &rarr; *Apps* &rarr; *App Manager*.

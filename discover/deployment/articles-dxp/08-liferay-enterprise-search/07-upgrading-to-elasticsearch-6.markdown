@@ -12,7 +12,7 @@ existing Elasticsearch 2.x server (or cluster) to Elasticsearch 6.1.x:
 1.  Install and configure Elasticsearch 6.1.x.
 
 3.  Download the Elasticsearch 6 adapter from 
-    [Liferay Marketplace](LINK WHEN RELEASED)
+    [Liferay Marketplace](https://web.liferay.com/marketplace).
 
 4.  Stop the default Elasticsearch adapter.
 
@@ -92,7 +92,7 @@ $$$
 ## Download the Elasticsearch 6 Adapter [](id=download-the-elasticsearch-6-adapter)
 
 Download the 
-[Elasticsearch 6 adapter LPKG from Liferay Marketplace](LINK WHEN RELEASED).
+[Elasticsearch 6 adapter LPKG from Liferay Marketplace](https://web.liferay.com/marketplace).
 
 ## Stop the Elasticsearch Adapter and Elasticsearch 2.x [](id=stop-the-elasticsearch-adapter-and-elasticsearch-2-x)
 

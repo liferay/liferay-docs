@@ -16,7 +16,8 @@ Contact
     settings.
 
 3.  Download and install the 
-[Liferay Connector to X-Pack Monitoring](MP LINK)[Elastic Stack 6.x].
+[Liferay Connector to X-Pack Monitoring](https://www.liferay.com/marketplace)
+[Elastic Stack 6.x].
 
 4.  Configure the connector to communicate with Elasticsearch.
 
