@@ -26,8 +26,8 @@ You can make any text of a fragment editable by enclosing it in an
 The `lfr-editable` tag must include a unique `id` or it will not render, and 
 only text that is included within that tag will be editable.
 
-Let's test this out. You'll create a Fragment with editable text, add the 
-Fragment to a Content Page, and then edit the text before publishing.
+Now, create a Fragment with editable text, add the Fragment to a Content Page, 
+and then edit the text before publishing.
 
 1.  Go to the *Fragments* page in Site Administration.
 
