@@ -126,7 +126,7 @@ We recommend enabling transport layer security on each node.
 The following instructions for enabling TLS use `liferay` as the password
 whenever one is needed. Customize these as appropriate for your installation. 
 
-### Generate Node Certificates
+### Generate Node Certificates [](id=generate-node-certificates)
 
 [Generate a node
 certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#node-certificates)for
@@ -158,7 +158,7 @@ format) is important if you're using X-Pack monitoring.
 
 $$$
 
-### Enable TLS 
+### Enable TLS [](id=enable-tls)
 
 [Enable TLS](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#enable-ssl) 
 on each node via its `elasticsearch.yml`.
@@ -185,7 +185,7 @@ on each node via its `elasticsearch.yml`.
 After X-Pack is installed and TLS is enabled, configure the X-Pack Security
 adapter in @product@.
 
-## Install and Configure the Liferay Connector to X-Pack Security
+## Install and Configure the Liferay Connector to X-Pack Security [](id=install-and-configure-the-liferay-connector-to-x-pack-security)
 
 If you have a Liferay Enterprise Search Premium subscription, download the
 Liferay Connector to X-Pack Security [Elastic Stack 6.x]. Install the LPKG file

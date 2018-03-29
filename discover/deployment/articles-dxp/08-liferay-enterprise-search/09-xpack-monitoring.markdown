@@ -109,7 +109,7 @@ environment, refer to
 After this step you can access Kibana at `https://localhost:5601` and sign in
 with a Kibana user. The last step is to hook Kibana up with @product@.
 
-## Configuring the Liferay Connector to X-Pack Monitoring 
+## Configuring the Liferay Connector to X-Pack Monitoring [](id=configuring-the-liferay-connector-to-x-pack-monitoring)
 
 If you have a Liferay Enterprise Search Premium subscription, download the
 Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]. Install the LPKG
