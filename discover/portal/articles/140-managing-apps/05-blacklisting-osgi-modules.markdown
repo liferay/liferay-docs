@@ -13,7 +13,9 @@ Liferay CE Portal 7.0 GA5.
 
 $$$
 
-Follow these steps to blacklist a module:
+## Blacklisting steps
+
+Follow these steps to blacklist modules:
 
 1.  Create a configuration file for the component 
     `com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration`:
@@ -21,16 +23,12 @@ Follow these steps to blacklist a module:
         com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
 
 2.  In the configuration file, add `blacklistBundleSymbolicNames=` followed by
-    the symbolic names of OSGi modules to uninstall or to keep from installing.
-    The modules can be from LPKG, JAR, WAR, or WAR wrapper files.
-    Extra spaces can short-circuit lists or invalidate the configuration entry. 
+    the bundle symbolic names (see the table below) for the OSGi module JARs, LPKGs, or WARs to uninstall or to keep from installing. The following blacklist uninstalls the com.liferay.docs.greeting.api OSGi module, Liferay CE Chat LPKG, and classic-theme WAR:
 
-    The following blacklist uninstalls the Liferay Marketplace and Liferay
-    Sharepoint Connector LPKGs:
-
-        blacklistBundleSymbolicNames=["Liferay\ Marketplace","Liferay\ Sharepoint\ Connector"]
+        blacklistBundleSymbolicNames=["com.liferay.docs.greeting.api","Liferay\ Marketplace","classic-theme"]
         
-    **Important**: Configuration values must not contain any extra spaces.
+    **Important**: Configuration values must not contain any extra spaces. Extra
+    spaces can short-circuit lists or invalidate the configuration entry.
 
 3.  Copy the configuration file into the 
     `[Liferay_Home]/osgi/configs` folder to deploy it. 
@@ -41,15 +39,25 @@ Follow these steps to blacklist a module:
 
 $$$
 
-@product@ removes installed modules on the blacklist. Blacklisted modules can't
-be installed. The @product@ log reports each module uninstallation. 
+**Blacklist Bundle Symbolic Names**
 
-To reinstall blacklisted modules, follow these steps:
+Type |  &nbsp;Bundle Symbolic Name | 
+:--------- | :--------------|
+ Module JAR | `Bundle-SymbolicName` in `bnd.bnd` or `MANIFEST.MF` file |
+ LPKG | `title` in `liferay-marketplace.properties` file |
+ WAR | Servlet context name in `liferay-plugin-package.properties` file or the WAR file name (minus `.war`), if there is no servlet context name property | 
+
+@product@ removes installed modules on the blacklist. Blacklisted modules can't
+be installed. The @product@ log reports each module uninstallation.
+
+## Reinstalling Blacklisted Modules
+
+To reinstall and permit installation of blacklisted modules, follow these steps:
 
 1.  Open the configuration file
     `com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config`.
 
-2.  Remove the symbolic names of the modules from the
+2.  Remove the symbolic names of the modules, LPKGs, or WARs from the
     `blacklistBundleSymbolicNames` list.
 
 To reinstall *all* the blacklisted modules execute one of these options:
