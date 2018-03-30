@@ -151,3 +151,26 @@ dependencies {
     serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.182"
 }
 ```
+
+If you're applying the
+[`com.liferay.gradle.plugins`](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins)
+or
+[`com.liferay.gradle.plugins.workspace`](https://github.com/liferay/liferay-portal/blob/master/modules/sdk/gradle-plugins-workspace)
+plugins to your project, the Service Builder dependency is already added to the
+`serviceBuilder` configuration. Therefore, if you try to apply a customized
+version of Service Builder, it's not recognized; you must override the
+configuration already applied.
+
+To do this, you must customize the classpath of the `buildService` task. If
+you're supplying the customized Service Builder plugin through a module named
+`custom-sb-api`, you could modify the `buildService` task like this:
+
+```gradle
+buildService {
+    apiDir = "../custom-sb-api/src/main/java"
+    classpath = configurations.serviceBuilder.filter { file -> !file.name.contains("com.liferay.portal.tools.service.builder") }
+}
+```
+
+If you do this in conjunction with the `serviceBuilder` dependency
+configuration, the custom Service Builder version is used.
