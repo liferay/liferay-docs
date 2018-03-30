@@ -1,14 +1,15 @@
 # Converting Your Application's Service Builder API and Implementation [](id=converting-your-applications-service-builder-api-and-implementation)
 
-In this section, you'll learn about converting a Liferay Portal 6 Service Builder
-application to a @product-ver@ style application. In the previous section, you
-learned how to generate your implementation and API modules. If you haven't yet
-run the `service-builder` Blade CLI command outlined in step 2 of the previous
-section, run it now. The API module holds your application's Service Builder
-generated API and the implementation module holds your application's Service
-Builder implementation.
+In this tutorial, you'll learn about converting a Liferay Portal 6 Service Builder
+application to a @product-ver@ style application. In the
+[previous tutorial](/develop/tutorials/-/knowledge_base/7-1/converting-your-applications-portlet-classes-and-ui),
+you learned how to generate your implementation and API modules. If you haven't
+yet run the `service-builder` Blade CLI command outlined in step 2 of the
+previous tutorial, run it now. The API module holds your application's Service
+Builder generated API and the implementation module holds your application's
+Service Builder implementation.
 
-Before you begin editing the API and implementation modules, you'll need to
+Before you begin editing the API and implementation modules, you must
 configure your root project (e.g., `tasks`) to recognize the multiple modules
 residing there. A multi-module Gradle project must have a `settings.gradle`
 file in the root project for building purposes. Luckily, when you generated
@@ -29,17 +30,17 @@ example, an example `tasks` project's root folder would look like this:
     - `gradlew`
     - `settings.gradle`
 
-Your root project directory should now be in good shape. Next, you'll learn how
-to use Service Builder to generate your application's service API and service
-implementation code.
+Your root project directory should now be in good shape. Next, use Service
+Builder to generate your application's service API and service implementation
+code.
 
 1.  Copy your traditional application's `service.xml` file and paste it into the
-    implementation module's root directory (e.g., `tasks/tasks-service`).
+    implementation module's root folder (e.g., `tasks/tasks-service`).
 
 2.  Blade CLI generated a `bnd.bnd` file for your service implementation module.
     Make sure to edit this `bnd.bnd` file to fit your application. For an
-    example of a service implementation module's BND file, examine the
-    `export-import-service` module's BND below:
+    example of a service implementation module's bnd file, examine the
+    `export-import-service` module's bnd below:
 
         Bundle-Name: Liferay Export Import Service
         Bundle-SymbolicName: com.liferay.exportimport.service
@@ -65,10 +66,10 @@ implementation code.
 3.  Blade CLI also generated your service implementation module's
     `build.gradle` file. In this file, Service Builder is already configured to
     generate code both in this module and in your service API module. When you
-    run Service Builder, Java classes, interfaces, and related files are
-    generated in your `*api` and `*service` modules. Open your service
-    implementation module's `build.gradle` file to view the default
-    configuration.
+    run Service Builder,
+    [Java classes, interfaces, and related files are generated](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
+    in your `*api` and `*service` modules. Open your service implementation
+    module's `build.gradle` file to view the default configuration.
 
     As you've learned already, you don't have to accept the generated build
     files' defaults. Blade CLI simply generated some standard OSGi and
@@ -81,29 +82,28 @@ implementation code.
 
 4.  Another important part of your service implementation module's
     `build.gradle` file is the `buildService{...}` block. This block configures
-    how Service Builder runs for your project. The current configuration will
-    generate your API module successfully, but extra configuration might be
+    how Service Builder runs for your project. The current configuration
+    generates your API module successfully, but extra configuration might be
     necessary in certain cases.
 
-5.  Open a terminal and navigate to your root project folder. Then run `gradlew
-    buildService`.
+5.  From the command line, navigate to your root project folder. Then run 
+    `gradlew buildService`.
 
     Your `service.xml` file's configuration is used to generate your
     application's service API and service implementation classes in their
     respective modules. You've also generated other custom files (related to
     SQL, Hibernate, Spring, etc.), depending on your `buildService {...)`
-    block's configuration. For more information on configuration options for the
-    Service Builder plugin, see the
-    [Service Builder Gradle Plugin](/develop/reference/-/knowledge_base/7-0/service-builder-gradle-plugin)
-    reference article.
+    block's configuration. The
+    [Service Builder Gradle Plugin](/develop/reference/-/knowledge_base/7-1/service-builder-gradle-plugin)
+    has multiple options.
 
 6.  Now that you've run Service Builder, continue copying custom classes into
     your implementation module. The table below highlights popular Liferay
-    Portal 6 classes and packages and where they should be placed in your
-    application. This table is intended to aid in the organization of your
-    classes and configuration files; however, remember to follow the
-    organizational methodologies that make the most sense for your application.
-    One size does not fit all with your modules' directory schemes.
+    Portal 6 classes and packages and where to place them in your application.
+    This table suggests how to organize your classes and configuration files;
+    however, remember to follow the organizational methodologies that make the
+    most sense for your application. One size does not fit all with your
+    modules' folder schemes.
 
     | Plugin Package | Module Package |
     |----------------|----------------|
@@ -118,16 +118,16 @@ implementation code.
 7.  Once you've copied all of your custom classes over, run `gradlew
     buildService` again to generate the remaining services.
 
-Now that your services are generated, you'll need to wire up your modules so
-they can reference each other when deployed to Liferay's OSGi container. Blade
-CLI has already partially completed this task. For example, it assumes that the
-service implementation module depends on the service API module.
+Now that your services are generated, you must wire up your modules so they can
+reference each other when deployed to Liferay's OSGi container. Blade CLI has
+already partially completed this task. For example, it assumes that the service
+implementation module depends on the service API module.
 
 You still need to associate the client module with the `api` and `service`
 modules, since they were generated separately. To do this, follow the steps
 below:
 
-1.  In your project's `settings.gradle` file, you must add the `web` module with
+1.  In your root project's `settings.gradle` file, add the `web` module with
     the `api` and `service` modules so it's included in the Gradle build
     lifecycle:
 
