@@ -148,7 +148,7 @@ The Campaign Content Display application, like the User Segment Content Display
 application, allows site administrators to preview the different assets that
 will be displayed for different campaigns.
 
-## Asset Publisher
+## Asset Publisher [](id=asset-publisher)
 
 The Asset Publisher is part of Liferay's Web Experience Management suite, but it
 serves an important function with Audience Targeting. When Audience Targeting is

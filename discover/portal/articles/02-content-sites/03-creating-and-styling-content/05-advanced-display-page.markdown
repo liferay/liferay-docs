@@ -106,7 +106,7 @@ Now that your page looks great, test it out -
 
 1. Click on a title and that content will display in the publisher to the right.
 
-![Figure x: Final Activities Page.](../../../images/001-activities-page.png)
+![Figure 1: Final Activities Page.](../../../images/001-activities-page.png)
 
 Congratulations, you've finished creating the Activities page, and configured a
 dynamic content display.

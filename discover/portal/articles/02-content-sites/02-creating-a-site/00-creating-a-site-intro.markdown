@@ -7,6 +7,6 @@ page layouts to customize how those pages show applications and content. You'll
 also learn more about adding applications to pages and how to manage site
 navigation. 
 
-![Figure x: A preview of part of the site you'll create.](../../../images/001-final-site-preview.png)
+![Figure 1: A preview of part of the site you'll create.](../../../images/001-final-site-preview.png)
 
 <a class="go-link btn btn-primary" href="/discover/portal/-/knowledge_base/7-0/creating-pages-with-layouts">Let's Go!<span class="icon-circle-arrow-right"></span></a>

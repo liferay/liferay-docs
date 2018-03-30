@@ -99,13 +99,13 @@ appears next to your user name in the product menu. You receive a notification
 from the workflow that a task is ready for review. Click it, and you're taken to
 the My Workflow Tasks portlet, where you can complete the review task.
 
-![Figure x: Click the workflow notification in the Notifications portlet to review the guestbook submitted to the workflow.](../../../../images/workflow-notification.png)
+![Figure 1: Click the workflow notification in the Notifications portlet to review the guestbook submitted to the workflow.](../../../../images/workflow-notification.png)
 
 To complete the review, click the actions button
 (![Actions](../../../../images/icon-actions.png)) from My Workflow Tasks and
 select *Assign to Me*. Click the actions button again and select *Approve*.
 
-![Figure x: Click the workflow notification in the Notifications portlet to review the guestbook submitted to the workflow.](../../../../images/workflow-assign-to-me.png)
+![Figure 2: Click the workflow notification in the Notifications portlet to review the guestbook submitted to the workflow.](../../../../images/workflow-assign-to-me.png)
 
 Right now the workflow process for guestbooks is functional, but the UI isn't
 adapted for it. You'll write the workflow handler for guestbook entries next,

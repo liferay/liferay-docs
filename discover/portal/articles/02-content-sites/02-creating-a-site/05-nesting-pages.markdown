@@ -41,11 +41,11 @@ page:
 2.  Drag and drop the page *Cody* and so that it nests under the *Lunar Guides* 
     page.
 
-    ![Figure x: Nesting a page with drag and drop.](../../../images/001-drag-cody.png)
+    ![Figure 1: Nesting a page with drag and drop.](../../../images/001-drag-cody.png)
 
 3.  Refresh the page. The new page hierarchy now appears in the navigation bar. 
 
-    ![Figure x: The page *Cody* is now nested under *Lunar Guides* page.](../../../images/001-nav-hierarchy-1.png)
+    ![Figure 2: The page *Cody* is now nested under *Lunar Guides* page.](../../../images/001-nav-hierarchy-1.png)
 
 Nice work! Next, you'll create the rest of the pages for the lunar guides as 
 child pages of the *Lunar Guides* page. Cody is about to have some company. 
@@ -70,7 +70,7 @@ child pages:
 column and an empty space in the left column. Each page also appears in the 
 navigation bar under the *Lunar Guides* page. 
 
-![Figure x: Cody is no longer lonely!](../../../images/001-all-nested-pages.png)
+![Figure 3: Cody is no longer lonely!](../../../images/001-all-nested-pages.png)
 
 Now that you've created all the pages, you'll learn more about site navigation 
 and the various features of Liferay's Breadcrumb and Navigation apps. 

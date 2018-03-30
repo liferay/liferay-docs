@@ -33,7 +33,7 @@ library:
     folder (its root folder). Note that the images you added while creating 
     content earlier are all here.
 
-    ![Figure x: The Documents and Media library's Home folder contains the Lunar Resort's existing images.](../../../images/001-existing-images.png)
+    ![Figure 1: The Documents and Media library's Home folder contains the Lunar Resort's existing images.](../../../images/001-existing-images.png)
 
 2.  Click the *Add* icon 
     (![Add](../../../images/icon-add.png)) at the bottom-right of the page and 
@@ -47,7 +47,7 @@ library:
     file manager window. If you wish, you can also categorize and describe the 
     files. Click *Publish* to complete the upload. 
 
-    ![Figure x: The Documents and Media library lets you add multiple documents at once.](../../../images/001-add-multiple-documents.png)
+    ![Figure 2: The Documents and Media library lets you add multiple documents at once.](../../../images/001-add-multiple-documents.png)
 
 Great! The Lunar Resort's Documents and Media library now contains more 
 images--enough to warrant organizing them in folders. 
@@ -93,7 +93,7 @@ Follow these steps to move files to your new folders:
 
 2.  Drag and drop the selected images to the Web Content Images folder. 
 
-    ![Figure x: The Documents and Media library lets you drag and drop files into a folder.](../../../images/001-drag-files.png)
+    ![Figure 3: The Documents and Media library lets you drag and drop files into a folder.](../../../images/001-drag-files.png)
 
 3.  The next screen lets you review and confirm the move. It also lets you 
     change which files are included, and their destination. Leave the default 

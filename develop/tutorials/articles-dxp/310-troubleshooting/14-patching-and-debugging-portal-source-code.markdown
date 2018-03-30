@@ -182,7 +182,7 @@ your debugger's documentation for configuration details.
 
 Congratulations! You're free to explore DXP inside and out!
 
-## Related Topics (id=related-topics)
+## Related Topics (id=related-topics) [](id=related-topics-idrelated-topics)
 
 [Troubleshooting](/develop/tutorials/-/knowledge_base/7-0/troubleshooting)
 

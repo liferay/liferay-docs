@@ -65,7 +65,7 @@ steps to add and configure such a Navigation Menu app:
 
 The navigation footer should look like this: 
 
-![Figure x: The Welcome page now has a navigation footer.](../../../images/001-nav-footer.png)
+![Figure 1: The Welcome page now has a navigation footer.](../../../images/001-nav-footer.png)
 
 Great! Next, you'll add a Breadcrumb app. 
 
@@ -97,7 +97,7 @@ the Lunar Guide pages. Follow these steps to do so:
 7.  Navigate to one of the lunar guide pages. The Breadcrumb now appears 
     alongside the Blogs app. 
 
-    ![Figure x: After adding the Breadcrumb app to the page template, the app appears on each lunar guide page, to the left of the Blogs app.](../../../images/001-breadcrumb-jim.png)
+    ![Figure 2: After adding the Breadcrumb app to the page template, the app appears on each lunar guide page, to the left of the Blogs app.](../../../images/001-breadcrumb-jim.png)
 
 As you've seen, the Navigation Menu and Breadcrumb apps help users traverse page 
 hierarchies. These apps are invaluable for any site with complex page 

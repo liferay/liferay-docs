@@ -247,7 +247,7 @@ Any other command returns this:
  
 This is how you restore the patch files to your system. Details below. 
 
-### Restoring the Separated Patch Files
+### Restoring the Separated Patch Files [](id=restoring-the-separated-patch-files)
  
 When you need to patch @product@ again, you must restore the
 separated patch artifact. To do this, copy the

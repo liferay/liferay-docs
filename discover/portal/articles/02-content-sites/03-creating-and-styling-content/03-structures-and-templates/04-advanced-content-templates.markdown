@@ -35,7 +35,7 @@ field and an Image field. Follow these steps to create it:
 7.  Set the Image field's *Name* to `bgimage`. Leave the field's Field Label 
     alone. 
 
-    ![Figure x: The Booking Form structure contains a Text field above an Image field.](../../../../images/001-booking-form.png)
+    ![Figure 1: The Booking Form structure contains a Text field above an Image field.](../../../../images/001-booking-form.png)
 
 8.  Click *Save*. 
 
@@ -185,9 +185,9 @@ Now, all you need to do is add it to the page.
 
 6.  Refresh the page, and then test out your button.
 
-![Figure x: Template before click.](../../../../images/001-adv-template-final1.png)
+![Figure 2: Template before click.](../../../../images/001-adv-template-final1.png)
 
-![Figure x: Template after click.](../../../../images/001-adv-template-final2.png)
+![Figure 3: Template after click.](../../../../images/001-adv-template-final2.png)
 
 Great! Now you know how to use structures and templates to create and style web 
 content. Next, you'll learn about some other ways to publish content in 

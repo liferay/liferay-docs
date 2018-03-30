@@ -21,7 +21,7 @@ you should head over to the Control Panel to set your site name properly.
 
 3. Select *Instance Settings*.
 
-![Figure X: The Instance Settings page.](../../../images/001-instance-settings-page.png)
+![Figure 1: The Instance Settings page.](../../../images/001-instance-settings-page.png)
 
 
 On the Instance Settings page, you can configure many aspects of your Liferay 
@@ -36,7 +36,7 @@ configuration. All you're concerned about today is the site name.
 3. Instantly, you should see that "The Lunar Resort" has replaced "Liferay"
     wherever the site name is referenced.
 
-![Figure X: The Instance Settings page.](../../../images/001-liferay-to-lunar.png)
+![Figure 2: The Instance Settings page.](../../../images/001-liferay-to-lunar.png)
 
 Now that we have that little bit of housekeeping taken care of, you can 
 continue to create content and build your site!

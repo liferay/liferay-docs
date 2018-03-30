@@ -12,5 +12,5 @@ Now that you have the main content completed, your next step will be to use
 Liferay's Collaboration tools, like Blogs, the Calendar, and Message Boards to
 connect more powerfully with your users.
 
-![Figure x: IMAGE](../../../images/001-drag-cody.png)
+![Figure 1: IMAGE](../../../images/001-drag-cody.png)
 

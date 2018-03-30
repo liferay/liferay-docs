@@ -512,7 +512,7 @@ scripts, or macros. The template that you embed should be a generic template
 with no structure assigned to it. To create a template with no structure,
 leave the structure field empty when you create the template. To reference a template from within another template, you will need the Template Key.
 
-![Figure x: You can find the Template Key when view the Edit page for a template..](../../../images/find-template-key.png)
+![Figure 6: You can find the Template Key when view the Edit page for a template..](../../../images/find-template-key.png)
 
 Below are examples of embedding template in FreeMarker and Velocity:
 
@@ -550,7 +550,7 @@ placed, and click the variable name. If the variable name doesn't give you
 sufficient information on the variable's functionality, you can hover your
 pointer over it for a more detailed description.
 
-![Figure 6: You can hover your pointer over a variable for a more detailed description.](../../../images/web-content-templates-create.png)
+![Figure 7: You can hover your pointer over a variable for a more detailed description.](../../../images/web-content-templates-create.png)
 
 The interactive template editor is available for the FreeMarker, Velocity, and
 XSL languages. Depending on which language you select, the variable content
