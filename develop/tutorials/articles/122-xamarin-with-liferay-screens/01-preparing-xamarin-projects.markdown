@@ -35,6 +35,20 @@ contains two sample Xamarin projects that you can reference:
 -   [**Showcase-iOS:**](https://github.com/liferay/liferay-screens/tree/develop/xamarin/Samples/Showcase-iOS) 
     An example app for Xamarin.iOS containing all the currently available Screenlets. 
 
+## Securing JSON Web Services [](id=securing-json-web-services)
+
+Each Screenlet in Liferay Screens calls one or more of Liferay Portal's JSON web 
+services, which are enabled by default. The Screenlet reference documentation 
+for 
+[Android](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
+and 
+[iOS](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios) 
+lists the web services that each Screenlet calls. To use a Screenlet, its web 
+services must be enabled in the portal. It's possible, however, to disable the 
+web services needed by Screenlets you're not using. For instructions on this, 
+see the tutorial 
+[Portal Configuration of JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/portal-configuration-of-json-web-services). 
+
 ## Install Liferay Screens in Xamarin Solutions [](id=install-liferay-screens-in-xamarin-solutions)
 
 Follow these steps to install Liferay Screens in your Xamarin project: 
