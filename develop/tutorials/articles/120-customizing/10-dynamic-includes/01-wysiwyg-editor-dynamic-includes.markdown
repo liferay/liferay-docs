@@ -1,18 +1,17 @@
 # WYSIWYG Editor Dynamic Includes [](id=wysiwyg-editor-dynamic-includes)
 
-All WYSIWYG editors share the same dynamic include extension points that let you 
-do the following things:
+All WYSIWYG editors share the same dynamic include extension points for these
+things:
 
-- Add resources, plugins, etc. to the editor:
-    
+- Adding resources, plugins, etc. to the editor:
+ 
     com.liferay.frontend.editor.`editorType`.web#`editorName`#additionalResources
-    
-- Gain access to the editor instance to listen to events, configure it, etc:
-    
+ 
+- Accessing the editor instance to listen to events, configure it, etc:
+ 
     com.liferay.frontend.editor.`editorType`.web#`editorName`#onEditorCreate 
 
-The table below shows the `editorType`, variable, and `editorName`s that are 
-available for each editor:
+The table below shows the `editorType`, variable, and `editorName`s for each editor:
 
   editorType |  variable | editorName  |
 :---------: | :--------------: | :---------: |
@@ -25,8 +24,7 @@ available for each editor:
   tinymce     | tinyMCEEditor | tinymce |
   &nbsp;            | &nbsp;              | tinymce_simple |
 
-The example below alerts a warning to the user when they paste content into the 
-CKEditor.
+The example below alerts the user when he/she pastes content into the CKEditor.
 
 `*DynamicInclude` Java Class:
 
@@ -64,7 +62,7 @@ CKEditor.
     	private BundleContext _bundleContext;
 
     }
-    
+ 
 
 Example JavaScript:
 

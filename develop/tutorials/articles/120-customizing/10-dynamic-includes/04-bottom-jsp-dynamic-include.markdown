@@ -1,7 +1,7 @@
 # Bottom JSP Dynamic Includes [](id=bottom-jsp-dynamic-includes)
 
-The `bottom.jsp` dynamic includes let you load additional HTML or scripts in the 
-bottom of the theme's body. The following keys are available:
+The `bottom.jsp` dynamic includes load additional HTML or scripts in the bottom
+of the theme's body. The following keys are available:
 
 Load additional HTML or scripts in the bottom of the theme's body, before the 
 existing ones:
@@ -12,7 +12,7 @@ Alternatively, load HTML or scripts in the bottom of the theme's body, after the
 existing ones:
 
     /html/common/themes/bottom.jsp#post 
-    
+ 
 The example below includes an additional script for the Simulation panel in the 
 bottom of the theme's body, after the existing ones.
 
@@ -42,7 +42,7 @@ bottom of the theme's body, after the existing ones.
     		"/META-INF/resources/simulation_device_dynamic_include.tmpl");
 
     }
-    
+
 `simulation_device_dynamic_include.tmpl`:
 
     <script type="text/javascript">
@@ -59,7 +59,7 @@ bottom of the theme's body, after the existing ones.
     		);
     	// ]]>
     </script>
-    
+ 
 When the Simulation panel is open, the script adds the 
 `lfr-has-simulation-panel` class to the theme's body.
 

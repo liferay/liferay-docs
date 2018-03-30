@@ -1,9 +1,9 @@
 # Top Head JSP Dynamic Includes [](id=top-head-jsp-dynamic-includes)
 
-The `top_head.jsp` dynamic includes let you load additional links in the theme's 
-head. The following keys are available:
+The `top_head.jsp` dynamic includes load additional links in the theme's head.
+It uses the following keys: 
 
-Load additional links in the theme's head, before the existing ones:
+Load additional links in the theme's head before the existing ones:
 
     /html/common/themes/top_head.jsp#pre
 
@@ -39,8 +39,8 @@ The example below injects a link into the top of the `top_head.jsp`:
     	}
       
     }
-    
-![Figure 1: The top_head pre key loads additional CSS and HTML resources in the head of the theme.](../../../images/dynamic-include-top-head-pre-mentions-css.png)    
+ 
+![Figure 1: The top_head pre key loads additional CSS and HTML resources in the head of the theme.](../../../images/dynamic-include-top-head-pre-mentions-css.png) 
 
 Note that the link's `href` attribute's value 
 `/o/my-custom-dynamic-include/` is provided by the OSGi module's 
