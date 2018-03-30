@@ -7,8 +7,18 @@ OSGi configuration file named
 `com.liferay.portal.search.elasticsearch.configuration.ElasticsearchConfiguration.cfg`
 and deployed to `[Liferay_Home]/osgi/configs`.
 
-The list below is all the configuration settings for Liferay's Elasticsearch
-adapter, in the order they appear in the System Settings application:
++$$$
+
+**Elasticsearch 6:** The [Elasticsearch 6 connector](MP LINK WHEN RELEASED)
+contains all the settings of the default adapter, along with a few new ones. See
+the end of this article to learn about the settings unique to the
+Elasticsearch 6 connector. 
+
+$$$
+
+The list below is all the configuration settings for Liferay's default
+Elasticsearch 2.x adapter, in the order they appear in the System Settings
+application:
 
 `clusterName=LiferayElasticsearchCluster`
 : A String value that sets the name of the cluster to integrate with. This name
@@ -136,5 +146,16 @@ See: Adding Settings to the Liferay Elasticsearch Adapter
 format (refer to the Elasticsearch Put Mapping API for more information)
 See: Adding Settings to the Liferay Elasticsearch Adapter
 
+The following settings are only available in the Elasticsearch 6 adapter:
+
+`indexNumberOfReplicas=` 
+: Set the String value for how many replica shards each primary shard has.
+
+`indexNumberOfShards=`
+: Set the String value for the number of primary shards an index has.
+
+`clientTransportPingTimeout=`
+: Set the String value for how long to wait for a node's ping response.
+
 You can easily configure these settings in the System Setting application, or
-as mentioned above, you can specify them in a deployable OSGi `.cfg` file.
+as mentioned above, you can specify them in a deployable OSGi `.config` file.
