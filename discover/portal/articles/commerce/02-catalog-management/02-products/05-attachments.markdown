@@ -16,8 +16,4 @@ repository (there's no need to upload it a second time), choosing a different
 option value the second time through. If you do not select an option value, then
 the attachment will be displayed for all values.
 
-<!--If I add an attachment, it works fine as long as I do not select an option
-value. Once I select a value, the file is moved from the attachments tab to the
-images tab (even if it isn't an image).-->
-
 So much for attachments. The next section covers product relations.

@@ -43,8 +43,7 @@ choose *Users*. You can select more than one option.
 Once you've made your selections and hit publish, a tab bar appears at the top
 of the page. Open these tabs to add products and users to the list.
 
-![Figure 1: The tab bar for this price list is configured to allow qualified
-users to be specified by organization, user group, and role, but not individually.](../../../images/price-list.png)
+![Figure 1: The tab bar for this price list is configured to allow qualified users to be specified by organization, user group, and role, but not individually.](../../../images/price-list.png)
 
 ### Adding Entries to Price Lists
 

@@ -9,9 +9,8 @@ customers to find.
 Categories have to exist before you can assign products to them. If you haven't
 already, go to *Site Menu* &rarr; *Content* &rarr; *Categories* to create
 whatever vocabularies, categories, and subcategories you want. To learn more
-about the process go to the [Organizing Content with Tags and
-Categories](/discover/portal/-/knowledge_base/7.1/organizing-content-with-tags-
-and-categories)
+about the process go to the 
+[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7.1/organizing-content-with-tags- and-categories)
 section.
 
 +$$$

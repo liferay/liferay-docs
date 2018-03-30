@@ -66,10 +66,10 @@ paste your Bing Maps key into the field provided.
 +$$$
 
 As of the time of this writing, instructions on obtaining a Bing API key were
-published at [Microsoft Developer
-Network](https://msdn.microsoft.com/en-us/library/ff428642.aspx). Microsoft
-makes Bing maps integration available free of charge to some users depending on
-use case and volume.
+published at 
+[Microsoft Developer Network](https://msdn.microsoft.com/en-us/library/ff428642.aspx).
+Microsoft makes Bing maps integration available free of charge to some users
+depending on use case and volume.
 
 $$$
 

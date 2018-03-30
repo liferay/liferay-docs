@@ -18,12 +18,11 @@ If you built you store from a site template, measurement units will already be
 in place. But if you built your site from scratch or prefer archaic units of
 measure, go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click on the
 *Measurement Units* tab. Then select either the *Dimension* or *Weight* tab and
-click [add](../../images/icon-add.png).
+click ![add](../../images/icon-add.png).
 
-![Figure 2: This is where you choose between using a traditional system of
-measurement or the much easier (quicker, more seductive) metric system.](../../images/measurement-units.png).
+![Figure 2: This is where you choose between using a traditional system of measurement or the much easier (quicker, more seductive) metric system.](../../images/measurement-units.png).
 
-The *key* field <!--what is this for, anyway?--> will auto-fill when the unit's
+The *key* field  will auto-fill when the unit's
 name is entered.
 
 If you intend for the unit to be use to compute shipping costs, check the
@@ -46,8 +45,7 @@ and select the *Shipping Options* tab. Name and describe your option as above
 [link to fixed/shipping options] and move on to the *Shipping Option Settings*
 tab.
 
-![Figure 3: This is where it can get a little math-y. Relax, the computer will
-handle the actual arithmetic.](../../images/shipping-formula.png)
+![Figure 3: This is where it can get a little math-y. Relax, the computer will handle the actual arithmetic.](../../images/shipping-formula.png)
 
 By Weight Shipping calculates a rate by the formula displayed at the top of the
 page. This allows to base shipping costs on three factors: a fixed (or minimum)

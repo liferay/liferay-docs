@@ -33,5 +33,5 @@ the catalog and selecting a product). The first tab, *Details*, is populated
 with your responses from the *Add Product* form.
 
 Now the product has been created, but your catalog needs more input before it
-can really useful. The next sections cover that input, starting with product
+can really be useful. The next sections cover that input, starting with product
 images.

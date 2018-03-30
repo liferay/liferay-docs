@@ -34,8 +34,7 @@ so that customers can choose between low-cost and high-speed shipping.
 To create a new shipping option, first open the *Fixed* shipping method and then
 click on the *Shipping Option* tab. The following dialog box appears:
 
-![Figure 1: Setting up a new shipping option is a simple matter describing the
-option and setting a price.](../../images/fixed-shipping-option.png)
+![Figure 1: Setting up a new shipping option is a simple matter describing the option and setting a price.](../../images/fixed-shipping-option.png)
 
 Fill in these fields:
 

@@ -40,15 +40,13 @@ assigned to it and has been deployed to a product.
 There are two ways to assign values to an option template. One is from the
 Options Template tab in *Site Menu* &rarr; *Commerce* &rarr; *Catalog*:
 
-![Figure 1: Click on the *Values* button to enter values for each 
-option.](../../../images/options.png) 
+![Figure 1: Click on the *Values* button to enter values for each option.](../../../images/options.png) 
 
 Click on the *Values* button and when the pop-up box appears, click on the *Add*
 button at the top of the *Option Values* section. Then in the *Option Value
 Detail* section, fill in the *Title* and *Priority* fields and hit *Save*.
 
-![Figure 2: For example, the option *Color* would likely be assigned values with titles such as *Black*, *White*, and *Brown*--or, for more adventurous users, 
-*Azure*, *Fuchsia*, and *Sable*.](../../../images/option-values.png) 
+![Figure 2: For example, the option *Color* would likely be assigned values with titles such as *Black*, *White*, and *Brown*--or, for more adventurous users, *Azure*, *Fuchsia*, and *Sable*.](../../../images/option-values.png) 
 
 The contents of the *Priority* field simply establish the order in which the
 option values will be displayed on the product page (lowest number comes first).

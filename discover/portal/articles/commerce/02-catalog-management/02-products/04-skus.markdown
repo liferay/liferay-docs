@@ -33,8 +33,7 @@ When you create an SKU, or hit the ![Options](../../../images/icon-options.png)
 button &rarr; *Edit* to the right of an existing one, a new column of tabs is
 displayed. 
 
-![Figure 1:An SKU's functions are accessed through these
-tabs.](../../../../images/skus.png)
+![Figure 1:An SKU's functions are accessed through these tabs.](../../../../images/skus.png)
 
 The following sections describe how to use these options to put SKUs to work.
 
@@ -43,8 +42,8 @@ The following sections describe how to use these options to put SKUs to work.
 In the details section you can change the SKU code (the default code is simply
 a combination of the option values the SKU represents) and also enter a Global
 Trade Item Number (such as an ISBN) and a manufacturer's part number (if
-applicable). To display these numbers on the product page, see [Product Detail
-Page](/discover/portal/-knowledge_base/7_1/catalog-options).
+applicable). To display these numbers on the product page, see 
+[Product Detail Page](/discover/portal/-knowledge_base/7_1/catalog-options).
 
 Unchecking the *Purchasable* box will leave an item visible to customers but not
 allow them to purchase it.
@@ -74,35 +73,22 @@ You may not want to offer all of your customers the same price. For instance,
 you might want to give your employees a discount, or offer a special price to
 members of a partner organization.
 
-To do this, you must first create a price list (see [Price
-Lists](/discover/portal/-/knowledge_base/7.1/pricing#price-lists)). Once the
+To do this, you must first create a price list (see 
+[Price Lists](/discover/portal/-/knowledge_base/7.1/pricing#price-lists)). Once the
 list exists, you can add an SKU to it from the *Price Lists* tab. To select
 a price list, click on the *Add* button and check the box next to each list to
 which you want to add the SKU. Then close the pop-box.
 
 You've added you SKU to the price list, but you haven't changed the price for
-list members. To do that, click on the
-![Options](../../../../images/icon-options.png) button next to a price list and
-select *Edit*. In the details tab, you can set the price for this list.
-
-Alternatively, to set a price that kicks in for bulk buyers, go to the *Tier
-Price Entries* tab and click on the *Add* button. You can create a single
-discount for buyers of certain quantities, or add multiple tiers with larger
-orders unlocking deeper discounts.
-
-<!--This is how I think price lists are supposed to work. At present, however,
-none of this seems to affect the price listed on the product page.-->
-
-<!--It looks like you can't set up tiered pricing unless you have a price list
-in place. Is that the way it should be? Won't some users want enable tiered
-pricing for all customers without bothering with price lists?-->
+list members. To do that, just click on the price list and then enter a price in
+the field that displays.
 
 ### Inventory
 
 Inventory is pretty straightforward. Just enter the number of items you have in
-stock. <!--Will this number be updated automatically when orders are shipped or
-when new supplies are received? How does that work?-->
+stock. The quantity will be automatically adjusted as orders are processed.
 
 ### Shipping Adjustment
 
-<!--I don't know how this works yet.-->
+Depending on what 
+[shipping methods](/discover/portal/-/knowledge_base/7.1/shipping-methods) are used,

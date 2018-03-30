@@ -3,7 +3,7 @@
 The contents of the catalog are displayed on the *Products* tab at *Site Menu*
 &rarr; *Commerce* &rarr; *Catalog*. Here you can search, sort, and filter the
 catalog. You can also add products manually by clicking on the *Add* button
-([Add](../../../../images/icon-add.png)) at the bottom of the screen and then
+(![Add](../../../../images/icon-add.png)) at the bottom of the screen and then
 selecting the type of product you wish to create: simple, grouped or virtual.
 
 ## Simple Products
@@ -22,8 +22,7 @@ packaged together as a single item. This gives you the ability to set prices,
 options, or terms for a set of products that differ from those for the same
 products purchased separately.
 
-![Figure 1: The features that make a grouped product unique can be conveniently
-found in the *Grouped* tab.](../../../../images/grouped-product.png)
+![Figure 1: The features that make a grouped product unique can be conveniently found in the *Grouped* tab.](../../../../images/grouped-product.png)
 
 When a grouped product has been created, an extra tab--*Grouped*--is displayed
 in its product tab bar. From the *Grouped* tab, click on the *Add* button in the

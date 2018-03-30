@@ -64,9 +64,8 @@ can read more about them on Worldpay's site.
 ## Paypal
 
 You need a Client ID and Client Secret to set up Paypal. Get them from the
-company's [Developer
-Dashboard](https://developer.paypal.com/developer/applications/create) and enter
-them at *Payment Methods* &rarr; *Paypal*. Pick your *Mode*--*Live* for actual
-transactions and *Sandbox* for testing--check the *Active* box and you're ready
-to roll.
-
+company's 
+[Developer Dashboard](https://developer.paypal.com/developer/applications/create)
+and enter them at *Payment Methods* &rarr; *Paypal*. Pick your *Mode*--*Live*
+for actual transactions and *Sandbox* for testing--check the *Active* box and
+you're ready to roll.

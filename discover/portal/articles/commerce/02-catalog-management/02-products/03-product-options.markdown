@@ -7,8 +7,8 @@ option templates that are available.
 
 If no option templates are available, you must create them before you can assign
 values. Go to *Site Menu* &rarr; *Commerce* &rarr; *Catalog* and click on the
-*Option Templates* tab. For details on creating option templates, see [Catalog
-Options](/discover/portal/-/knowledge_base/7-1/catalog-options).
+*Option Templates* tab. For details on creating option templates, see 
+[Catalog Options](/discover/portal/-/knowledge_base/7-1/catalog-options).
 
 +$$$
 
