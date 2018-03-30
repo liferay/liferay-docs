@@ -23,7 +23,7 @@ to save the credentials of the new user in their keychain. This enables auto
 login for future sessions. The Screenlet also supports navigation of form fields
 from the keyboard of the user's device. 
 
-## JSON Services Used
+## JSON Services Used [](id=json-services-used)
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
