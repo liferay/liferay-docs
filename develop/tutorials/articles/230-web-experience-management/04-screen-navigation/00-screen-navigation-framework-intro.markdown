@@ -1,8 +1,8 @@
 # Screen Navigation Framework
 
 The Screen Navigation Framework is for customizing and extending application
-UIs. You can use it to customize Liferay's own applications and to make your own
-applications customizable. 
+UIs. You can use it to make Liferay's applications your own and to make your
+applications customizable by others. 
 
 To make this work, the framework assumes a specific structure for screens and
 supports one or two levels of navigation. Each item in the top level navigation
@@ -16,7 +16,7 @@ application, but you must have at least one Category.
 The Screen structure normally renders Navigation Categories as horizontal tabs
 at the top of the page and Navigation Entries as a vertical list of items along
 the left side of the page. The screen box containing the content uses the rest
-of the screen. You can customize this default layout it for your needs.
+of the screen. You can customize this default layout for your needs.
 
 Secondary navigation is optional; you may only need category tabs with no
 additional navigation.
