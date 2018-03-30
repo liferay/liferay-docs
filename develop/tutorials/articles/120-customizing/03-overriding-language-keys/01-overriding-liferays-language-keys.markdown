@@ -23,19 +23,19 @@ $$$
 
 ## Determine the language keys to override [](id=determine-the-language-keys-to-override)
 
-So how do you find global language keys? They're in the `Language.properties`
-file in the source code or your @product@ bundle.
+So how do you find global language keys? They're in the `Language[xx_XX].properties`
+files in the source code or your bundle.
 
 -   From the source:
 
-    `/portal-impl/src/content/Language.properties`
+    `/portal-impl/src/content/Language[xx_XX].properties`
 
 -   From a bundle:
 
     `portal-impl.jar`
 
 All language properties files contain properties you can override, like the
-`Language settings` properties:
+language settings properties:
 
     ##
     ## Language settings
@@ -61,7 +61,8 @@ labels.
     category.cms=Content Management
     ...
 
-For example, Figure 1 shows a button that uses Liferay's `publish` language key.
+For example, Figure 1 shows a button that uses Liferay's `publish` default
+language key.
     
     `publish=Publish`
  
@@ -91,7 +92,7 @@ locale you're overriding. Here's an example resource bundle class for the
         property = { "language.id=en_US" }, 
         service = ResourceBundle.class
     )
-    public class EnUsResourceBundle extends ResourceBundle {
+    public class MyEnUsResourceBundle extends ResourceBundle {
 
         @Override
         protected Object handleGetObject(String key) {
@@ -104,14 +105,14 @@ locale you're overriding. Here's an example resource bundle class for the
         }
 
         private final ResourceBundle _resourceBundle = ResourceBundle.getBundle(
-            "content.Language", UTF8Control.INSTANCE);
+            "content.Language_en_US", UTF8Control.INSTANCE);
 
     }
 
 The class's `_resourceBundle` field is assigned a `ResourceBundle`. The call to
-`ResourceBundle.getBundle` needs two parameters. The `content.Language`
-parameter points to the language file (so it answers the question, "what
-resource bundle?"), and the second parameter is a `control` that sets the
+`ResourceBundle.getBundle` needs two parameters. The `content.Language_en_US`
+parameter is the language file's qualified name with respect to the module's
+`src/main/resources` folder. The second parameter is a `control` that sets the
 language syntax of the resource bundle. To use language syntax identical to
 Liferay's syntax, import Liferay's
 `com.liferay.portal.kernel.language.UTF8Control` class and set the second
@@ -135,6 +136,28 @@ The class overrides these methods:
 
 Your resource bundle service component redirects the default language keys to
 your module's language key overrides. 
+
++$$$
+
+**Note**: Global language key overrides for multiple locales require a separate
+module for each locale. Each module's `ResourceBundle` extension class (like the
+`MyEnUsResourceBundle` class above) must specify its locale in the `language.id`
+component property definition and in the language file qualified name parameter.
+For example, here is what they look like for the Spanish locale.
+
+Component definition:
+
+    @Component(
+        property = { "language.id=es_ES" }, 
+        service = ResourceBundle.class
+    )
+
+Resource bundle assignment:
+
+    private final ResourceBundle _resourceBundle = ResourceBundle.getBundle(
+        "content.Language_es_ES", UTF8Control.INSTANCE);
+
+$$$
 
 **Important**: If your module
 [uses language keys from another module](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-a-language-module)
