@@ -2,7 +2,7 @@
 
 <project name="Use" basedir=".">
 
-	<import file="../build-site-common.xml" />
+	<import file="../build-common.xml" />
 
 	<property name="purpose.dir" value="book"/>
 

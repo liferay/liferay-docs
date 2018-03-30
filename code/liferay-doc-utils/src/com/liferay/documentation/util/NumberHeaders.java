@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.Task;
 
-public class NumberHeadersSiteMain extends Task {
+public class NumberHeaders extends Task {
 
 	public static void main(String[] args) throws Exception {
 		if (args == null || args.length < 1) {

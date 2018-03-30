@@ -9,12 +9,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
-public class ConcatMarkdown extends Task {
+public class ConcatMarkdownTask extends Task {
 	
 	public void execute() throws BuildException {
 		
@@ -87,7 +89,7 @@ public class ConcatMarkdown extends Task {
 			
 			FileUtils.writeStringToFile(fullBook, book);
 			
-			StripHeaderIds.stripHeaderIds(fullBook.getAbsolutePath());
+			stripHeaderIds(fullBook.getAbsolutePath());
 			
 		
 		} catch (IOException e) {
@@ -148,6 +150,21 @@ public class ConcatMarkdown extends Task {
 			}
 		}
 		return result;
+	}
+
+	private void stripHeaderIds(String markdownFilePath) throws IOException {
+		File markdownFile = new File(markdownFilePath);
+		String source = FileUtils.readFileToString(markdownFile);
+
+		String find = "\\[\\]\\(id=[^\\s]+?\\)";
+		System.out.println("find: " + find);
+		String replace = "";
+
+		Pattern pattern = Pattern.compile(find);
+		Matcher matcher = pattern.matcher(source);
+		String output = matcher.replaceAll(replace);
+
+		FileUtils.writeStringToFile(markdownFile, output);
 	}
 
 	private void validateDirectory(

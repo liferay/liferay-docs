@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.regex.Pattern;
 
-public class CheckHeadersTask {
+public class CheckHeaders {
 
 	public static void main(String[] args) throws Exception {
 		
