@@ -113,8 +113,8 @@ Start your conversion by creating a registrator class.
 ### Create a Registrator Class [](id=create-a-registrator-class)
 
 The new data upgrade framework requires using registrator class instead of
-upgrade process classes. You  must combine your upgrade process classes'
-functionality into a single  registrator class. Recall from 
+upgrade process classes. You must combine your upgrade process classes'
+functionality into a single registrator class. Recall from 
 [the data upgrade process tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app#writing-the-upgrade-step-registrator) 
 that registrators define an upgrade process that the upgrade process framework 
 executes. Each `registry.register` call in the registrator registers the 
