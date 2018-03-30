@@ -563,7 +563,7 @@ caption {
   <tr>
     <th rowspan="1">Forms:</th>
     <td>
-       <a href="@platform-ref@/latest/taglibs/modules/apps/forms-and-workflow/dynamic-data-mapping/com.liferay.dynamic.data.mapping.taglib/liferay-ddm/tld-summary.html" target="_blank">
+       <a href="@app-ref@/forms-and-workflow/liferay-ddm/tld-summary.html" target="_blank">
 	liferay-ddm<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>
     </td>
@@ -572,14 +572,14 @@ caption {
   <tr>
     <th rowspan="2">Foundation:</th>
     <td>
-	 <a href="@platform-ref@/latest/taglibs/modules/apps/foundation/map/com.liferay.map.taglib/liferay-map/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/foundation/liferay-map/tld-summary.html" target="_blank">
         liferay-map<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
   </tr>
   <tr>
     <td>
-	<a href="@platform-ref@/latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/" target="_blank">
+	<a href="@app-ref@/foundation/liferay-frontend/tld-summary.html" target="_blank">
        liferay-frontend<span class="opens-new-window-accessible"> (Opens New Window) </span>
        </a>
     </td>
@@ -589,7 +589,7 @@ caption {
   <tr>
     <th rowspan="1">Import, Export, &amp; Staging:</th>
     <td>
-	 <a href="@app-ref@/web-experience/latest/taglibdocs/staging/com.liferay.staging.taglib/liferay-staging/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-staging/tld-summary.html" target="_blank">
         liferay-staging<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -598,7 +598,7 @@ caption {
   <tr>
     <th rowspan="1">Item Selector:</th>
     <td>
-	 <a href="@app-ref@/collaboration/latest/taglibdocs/item-selector/com.liferay.item.selector.taglib/liferay-item-selector/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/collaboration/latest/taglibdocs/liferay-item-selector/tld-summary.html" target="_blank">
         liferay-item-selector<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -616,14 +616,14 @@ caption {
   <tr>
     <th rowspan="2">Sites:</th>
     <td>
-	 <a href="@app-ref@/web-experience/latest/taglibdocs/layout/com.liferay.layout.taglib/liferay-layout/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-layout/tld-summary.html" target="_blank">
         liferay-layout<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
   </tr>
   <tr>
     <td>
-	 <a href="@app-ref@/web-experience/latest/taglibdocs/site-navigation/com.liferay.site.navigation.taglib/liferay-site-navigation/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-site-navigation/tld-summary.html" target="_blank">
         liferay-site-navigation<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -632,7 +632,7 @@ caption {
   <tr>
     <th rowspan="1">Social:</th>
     <td>
-	 <a href="@app-ref@/collaboration/latest/taglibdocs/flags/com.liferay.flags.taglib/liferay-flags/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/collaboration/latest/taglibdocs/liferay-flags/tld-summary.html" target="_blank">
         liferay-flags<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
