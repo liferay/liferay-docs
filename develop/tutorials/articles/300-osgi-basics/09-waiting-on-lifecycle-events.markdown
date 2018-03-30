@@ -1,8 +1,8 @@
 # Waiting on Lifecycle Events [](id=waiting-on-lifecycle-events)
 
-Liferay registers lifecycle events, such as portal and database initialization,
-into the OSGi service registry. In your OSGi Component or non-component class,
-you can listen for these events by way of their service registrations. The 
+Liferay registers lifecycle events like portal and database initialization
+into the OSGi service registry. Your OSGi Component or non-component class
+can listen for these events by way of their service registrations. The 
 [`ModuleServiceLifecycle` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/module/framework/ModuleServiceLifecycle.html)
 defines these names for the lifecycle event services:
 
@@ -15,8 +15,7 @@ within a component or non-component class.
 
 ## Taking action from a component [](id=taking-action-from-a-component)
 
-[Declarative Services
-(DS)](https://osgi.org/specification/osgi.cmpn/7.0.0/service.component.html)
+[Declarative Services (DS)](https://osgi.org/specification/osgi.cmpn/7.0.0/service.component.html)
 facilitates waiting for OSGi services and acting on them once they're available.
 
 Here's a component whose `doSomething` method is invoked once the
@@ -60,17 +59,16 @@ Here's how to act on services in your component:
 
 2.  To bind to a particular lifecycle event service, target its name as the 
     [`ModuleServiceLifecycle` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/module/framework/ModuleServiceLifecycle.html)
-    defines. This field, for example, targets @product@'s database
-    initialization. 
+    defines. This field, for example, targets database initialization. 
 
         @Reference(target = ModuleServiceLifecycle.DATABASE_INITIALIZED)
         ModuleServiceLifecycle _dataInitialized;
 
-3.  Create a method from which to take action on the event(s) and add the 
-    `@Activate` annotation to that method. It is invoked once all the service
-    objects are bound to the component's fields. 
+3.  Create a method that's triggered on the event(s) and add the `@Activate`
+    annotation to that method. It's invoked when all the service objects are
+    bound to the component's fields. 
 
-Your component takes action (via its `@Activate` method) once all its service
+Your component fires (via its `@Activate` method) after all its service
 dependencies resolve. DS components are the easiest way to act on lifecycle
 event services. 
 
