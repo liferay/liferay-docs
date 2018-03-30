@@ -24,6 +24,18 @@ Rating Screenlet shows an asset's rating. It also lets users update or delete
 the rating. This Screenlet comes with different Views that display ratings as 
 thumbs, stars, and emojis. 
 
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call JSON web services in the portal. This 
+Screenlet calls the following services and methods.
+
+| Service | Method | Notes |
+| ------- | ------ | ----- |
+| `ScreensratingsentryService` (Screens compatibility plugin) | `getRatingsEntries` | With `entryId` |
+| `ScreensratingsentryService` (Screens compatibility plugin) | `getRatingsEntries` | With `classPK` and `className` |
+| `ScreensratingsentryService` (Screens compatibility plugin) | `updateRatingsEntry` |  |
+| `ScreensratingsentryService` (Screens compatibility plugin) | `deleteRatingsEntry` |  |
+
 ## Module [](id=module)
 
 - None

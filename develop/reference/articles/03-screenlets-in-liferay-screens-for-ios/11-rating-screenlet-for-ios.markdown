@@ -26,6 +26,18 @@ Liferay instance. You can also use Gallery Screenlet to upload images to and
 delete images from the same folder. The Screenlet implements fluent pagination 
 with configurable page size, and supports i18n in asset values. 
 
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call JSON web services in the portal. This 
+Screenlet calls the following services and methods.
+
+| Service | Method | Notes |
+| ------- | ------ | ----- |
+| `ScreensratingsentryService` (Screens compatibility plugin) | `getRatingsEntries` | With `entryId` |
+| `ScreensratingsentryService` (Screens compatibility plugin) | `getRatingsEntries` | With `classPK` and `className` |
+| `ScreensratingsentryService` (Screens compatibility plugin) | `updateRatingsEntry` |  |
+| `ScreensratingsentryService` (Screens compatibility plugin) | `deleteRatingsEntry` |  |
+
 ## Module [](id=module)
 
 - None
