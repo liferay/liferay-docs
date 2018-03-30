@@ -1,15 +1,14 @@
 # Securing Elasticsearch 6 with X-Pack [](id=securing-elasticsearch-6-with-x-pack)
 
-X-Pack is an [Elastic
-extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)
+X-Pack is an 
+[Elastic extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)
 for securing and monitoring Elasticsearch clusters. If you use Elasticsearch,
 you should secure it with X-Pack. The security features of X-Pack include
 authenticating access to the Elasticsearch cluster's data and encrypting
 Elasticsearch's internal and external communications. These are necessary
 security features for most production systems. A Liferay Enterprise
 Search Premium subscription is necessary for this integration. Contact
-[Liferay's Sales department for more
-information](https://www.liferay.com/contact-us#contact-sales).
+[Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
 Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
 
@@ -128,10 +127,9 @@ whenever one is needed. Customize these as appropriate for your installation.
 
 ### Generate Node Certificates [](id=generate-node-certificates)
 
-[Generate a node
-certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#node-certificates)for
-each node. You can, of course, use a Certificate Authority of your choosing to
-obtain node certificates.
+[Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#node-certificates)
+for each node. You can, of course, use a Certificate Authority toobtain node 
+certificates.
 
 1.  Create a certificate authority, using 
       [X-Pack's `certutil`](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/certutil.html)
@@ -189,12 +187,11 @@ adapter in @product@.
 
 If you have a Liferay Enterprise Search Premium subscription, download the
 Liferay Connector to X-Pack Security [Elastic Stack 6.x]. Install the LPKG file
-to @product@ by copying it into the `Liferay Home/deploy` folder. That's all
-there is to it.
+ by copying it into the `Liferay Home/deploy` folder. That's all there is to it.
 
-To configure the X-Pack adapter in @product@'s UI, navigate to Control Panel
-&rarr; Configuration &rarr; System Settings. Find the Foundation category and
-click on the X-Pack Security entry. You can enter the property values here, but
+To configure the X-Pack adapter, navigate to *Control Panel*
+&rarr; *Configuration* &rarr; *System Settings*. Find the *Foundation* category and
+click on the *X-Pack Security* entry. You can enter the property values here, but
 it's more common to use a 
 [configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
 deployed to `Liferay Home/osgi/configs`. For the X-Pack adapter, create a file
