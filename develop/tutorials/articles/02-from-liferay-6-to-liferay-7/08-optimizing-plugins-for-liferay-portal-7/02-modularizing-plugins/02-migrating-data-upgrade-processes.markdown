@@ -9,10 +9,10 @@ processes. The data upgrade framework you use depends on your development
 framework.
 
 -   If your
-    [upgraded plugin](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
+    [upgraded plugin](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
     is a traditional WAR, you don't need to do anything special; existing
     upgrade processes
-    [adapted to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+    [adapted to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
     work as is. The new data upgrade framework is for modules only. 
 
 -   If you converted your upgraded plugin to a module or you have an upgraded
@@ -27,7 +27,7 @@ tutorial shows you how to migrate to the new framework.
 
 Before beginning, make sure you know how to create an upgrade process that uses 
 the new framework. 
-[Click here](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app) 
+[Click here](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app) 
 to read the tutorial on creating these upgrade processes. 
 
 +$$$
@@ -100,13 +100,22 @@ learn how to convert them to the new upgrade process framework in @product-ver@.
 
 ## Converting your Liferay Portal 6 Upgrade Process to @product-ver@ [](id=converting-your-liferay-portal-6-upgrade-process-to-product-ver)
 
-So how do Liferay Portal 6 upgrade processes compare to those that use the new 
-upgrade process framework in @product-ver@? First, the upgrade step classes are 
-the same, so you can leave them unchanged. The big change in @product-ver@'s new 
-upgrade processes is that upgrade process classes no longer exist. Instead, you 
-must combine your upgrade process classes' functionality into a single 
-registrator class. Recall from 
-[the data upgrade process tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app#writing-the-upgrade-step-registrator) 
+So how do Liferay Portal 6 upgrade processes compare to those that use the new
+upgrade process framework in @product-ver@? First, the upgrade step classes are
+the same, so you can leave them unchanged. Here are the big changes in
+@product-ver@'s new  upgrade processes:
+
+- [A single registrator class replaces upgrade process classes.](#create-a-registrator-class)
+- [Service Builder services require a Bundle Activator.](#create-a-bundle-activator)
+
+Start your conversion by creating a registrator class. 
+
+### Create a Registrator Class [](id=create-a-registrator-class)
+
+The new data upgrade framework requires using registrator class instead of
+upgrade process classes. You  must combine your upgrade process classes'
+functionality into a single  registrator class. Recall from 
+[the data upgrade process tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app#writing-the-upgrade-step-registrator) 
 that registrators define an upgrade process that the upgrade process framework 
 executes. Each `registry.register` call in the registrator registers the 
 appropriate upgrade steps for each schema version. You must therefore transfer 
@@ -143,14 +152,23 @@ Both call the same upgrade steps.
 to see the complete `KnowledgeBaseServiceUpgrade` registrator class and all its 
 `registry.register` calls. 
 
+Next, create a Bundle Activator if your modularized plugin uses Service Builder. 
+
+### Create a Bundle Activator [](id=create-a-bundle-activator)
+
+If your module implements Service Builder services, it needs a Bundle Activator
+to initialize a record in the release table.
+[Creating a Bundle Activator](/develop/tutorials/-/knowledge_base/7-1/upgrade-processes-for-former-service-builder-plugins)
+is straightforward. 
+
 That's it! For instructions on creating new upgrade processes for @product-ver@, 
 including complete steps on creating a registrator, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app). 
+[click here](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app). 
 
 ## Related Topics [](id=related-topics)
 
-[Creating Data Upgrade Processes for Modules](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
+[Creating Data Upgrade Processes for Modules](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
 
-[Upgrading Plugins to @product-ver@](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
+[Upgrading Plugins to @product-ver@](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
 
-[From Liferay Portal 6 to 7](/develop/tutorials/-/knowledge_base/7-0/from-liferay-6-to-liferay-7)
+[From Liferay Portal 6 to 7](/develop/tutorials/-/knowledge_base/7-1/from-liferay-6-to-liferay-7)
