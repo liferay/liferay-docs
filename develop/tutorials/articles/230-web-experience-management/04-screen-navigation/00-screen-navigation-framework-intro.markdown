@@ -1,4 +1,4 @@
-# Screen Navigation Framework
+# Screen Navigation Framework [](id=screen-navigation-framework)
 
 The Screen Navigation Framework is for customizing and extending application
 UIs. You can use it to make Liferay's applications your own and to make your

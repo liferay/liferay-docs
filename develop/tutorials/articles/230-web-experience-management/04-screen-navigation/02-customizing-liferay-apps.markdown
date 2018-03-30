@@ -1,10 +1,10 @@
-# Adding Custom Screens to Liferay Applications
+# Adding Custom Screens to Liferay Applications [](id=adding-custom-screens-to-liferay-applications)
 
 You can extend certain Liferay Applications with custom screens. Custom screens 
 can add configuration for features you've developed, integrating them seamlessly
 with the original application.
 
-## Categories Administration
+## Categories Administration [](id=categories-administration)
 
 The Categories Administration application supports adding Custom Screens to
 provide additional options for editing a category. To demonstrate adding a new
