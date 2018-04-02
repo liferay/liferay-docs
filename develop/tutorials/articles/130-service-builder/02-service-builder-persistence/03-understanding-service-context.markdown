@@ -18,7 +18,7 @@ The `ServiceContext` class has many fields. The
 [`ServiceContext` class Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html)
 describes them. 
 
-Here's' a categorical listing of some of the fields: 
+Here's a categorical listing of some commonly used Service Context fields: 
 
 - Actions:
     - `_command`
