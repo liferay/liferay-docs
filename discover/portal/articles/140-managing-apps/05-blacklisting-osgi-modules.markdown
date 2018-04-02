@@ -23,10 +23,13 @@ Follow these steps to blacklist modules:
         com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
 
 2.  In the configuration file, add `blacklistBundleSymbolicNames=` followed by
-    the bundle symbolic names (see the table below) for the OSGi module JARs, LPKGs, or WARs to uninstall or to keep from installing. The following blacklist uninstalls the com.liferay.docs.greeting.api OSGi module, Liferay CE Chat LPKG, and classic-theme WAR:
+    the bundle symbolic names (see the table below) for the OSGi module JARs,
+    LPKGs, or WARs to uninstall or to keep from installing. The following
+    blacklist uninstalls the com.liferay.docs.greeting.api OSGi module, Liferay
+    CE Chat LPKG, and classic-theme WAR:
 
         blacklistBundleSymbolicNames=["com.liferay.docs.greeting.api","Liferay\ Marketplace","classic-theme"]
-        
+ 
     **Important**: Configuration values must not contain any extra spaces. Extra
     spaces can short-circuit lists or invalidate the configuration entry.
 
