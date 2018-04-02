@@ -207,6 +207,14 @@ Now you'll learn how to create an environment.
 You can create an environment by clicking the *Add Environment* tab from the 
 Dashboard. This opens the New Environment popup: 
 
++$$$
+
+**Note:** When creating an environment, make your selections carefully for the 
+*Subscription Type*, *Cluster*, and *Elastic* fields. You can't change them 
+after creating the environment.
+
+$$$
+
 -   **Environment Name:** The environment's name
 -   **Description:** The environment's description
 -   **Subscription Type:** The environment's subscription type. Servers 
@@ -214,9 +222,16 @@ Dashboard. This opens the New Environment popup:
     subscription type. Choose the environment's subscription type carefully--you 
     can't change it after creating the environment.
 -   **Cluster:** Whether this is a clustered environment. Only clustered 
-    environments can contain clustered servers. Note that you must set the 
-    portal property `cluster.link.enabled` to `true` in any servers that connect 
-    to a clustered environment. 
+    environments can contain clustered servers. Note that you can't change your 
+    selection after creating the environment. Also note that you must set 
+    the portal property `cluster.link.enabled` to `true` in any servers that 
+    connect to a clustered environment. 
+-   **Elastic:** Whether this environment permits the use of *elastic 
+    subscriptions*. Elastic subscriptions let you register an unlimited number 
+    of @product@ servers. This is crucial for auto-scaling environments in which 
+    servers are created and destroyed automatically. Note that you can't change 
+    your selection after creating the environment. For more information, see 
+    [the documentation on elastic subscriptions](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#elastic-subscriptions). 
 -   **Services:** The LCS services to enable in the environment. Note that 
     although 
     [LCS doesn't access security sensitive properties](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers), 
@@ -560,23 +575,22 @@ destroyed automatically. You can view data on your elastic servers from the
 
 +$$$
 
-**Note:** To register elastic servers in an environment, you must first set that 
-environment as *Elastic* and accept the elastic deployment terms and conditions. 
-You can do this from the *Details* tab's *Assign Subscription Type* table, as 
-described in the previous section. 
+**Note:** To register elastic servers in an environment, that environment must 
+be set as elastic when it's created. For more information, see the 
+[documentation on creating environments](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#creating-an-environment).
 
 $$$
 
 ![Figure 20: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../images-dxp/lcs-elastic-subscriptions.png)
 
 The *Elastic Subscriptions* tab displays the number of online elastic servers
-and the uptime details  for each. A graph shows the number of online elastic
-servers per day. The  *Uptime details* table lists each elastic server's start
-time, end time, and  duration. The total duration for all elastic servers is
-below the table's  *Duration* column. To download a report of the table's data,
-click the *Download  Report* button. Also, you can use the *Environment* and
-*Month* selectors above  the graph to select the environment and month to show
-data from, respectively.  The data in both the graph and the table reflect your
+and the uptime details for each. A graph shows the number of online elastic
+servers per day. The *Uptime details* table lists each elastic server's start
+time, end time, and duration. The total duration for all elastic servers is
+below the table's *Duration* column. To download a report of the table's data,
+click the *Download Report* button. Also, you can use the *Environment* and
+*Month* selectors above the graph to select the environment and month to show
+data from, respectively. The data in both the graph and the table reflect your
 selections here. 
 
 The next section shows you how to use environment tokens to activate @product@ 
