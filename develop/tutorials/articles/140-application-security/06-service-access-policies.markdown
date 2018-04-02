@@ -118,7 +118,7 @@ service call to grant the associated policy during the request. The module
   supported policies when authorizing the remote application, to associate
   the token with an existing policy.
 
-## Service Access Policy Example 
+## Service Access Policy Example [](id=service-access-policy-example)
 
 [Liferay Sync's](https://www.liferay.com/supporting-products/liferay-sync)
 `sync-security` module is a service access policy module. It uses
