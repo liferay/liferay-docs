@@ -18,13 +18,13 @@ You can make any text of a fragment editable by enclosing it in an
 `<lfr-editable>` tag like this:
 
     
-    <lfr-editable id=”unique-id”>
+    <lfr-editable id=”unique-id” type="text">
        This is editable text!    
     </lfr-editable>
     
 
 The `lfr-editable` tag must include a unique `id` or it will not render, and 
-only text that is included within that tag will be editable.
+it must contain 
 
 Now, create a Fragment with editable text, add the Fragment to a Content Page, 
 and then edit the text before publishing.
@@ -37,7 +37,7 @@ and then edit the text before publishing.
 3.  Inside the `<div>` in the HTML pane, enter the following code:
     
         <h1>
-          <lfr-editable id="heading">
+          <lfr-editable id="heading" type="text">
             Editable Heading
           </lfr-editable>
         </h1>
