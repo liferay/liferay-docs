@@ -79,9 +79,18 @@ list exists, you can add an SKU to it from the *Price Lists* tab. To select
 a price list, click on the *Add* button and check the box next to each list to
 which you want to add the SKU. Then close the pop-box.
 
-You've added you SKU to the price list, but you haven't changed the price for
+You've added your SKU to the price list, but you haven't changed the price for
 list members. To do that, just click on the price list and then enter a price in
 the field that displays.
+
++$$$
+
+Note: the method for adding SKUs to price lists described on this page is best
+suited for adding newly created products to existing lists. To populate a new
+price list with existing items from the catalog, use the method described in
+[Price Lists](/discover/portal/-/knowledge_base/7.1/pricing#price-lists).
+
+$$$
 
 ### Inventory
 
@@ -90,5 +99,18 @@ stock. The quantity will be automatically adjusted as orders are processed.
 
 ### Shipping Adjustment
 
-Depending on what 
-[shipping methods](/discover/portal/-/knowledge_base/7.1/shipping-methods) are used,
+A product's weight or dimensions may factor into shipping costs. By default,
+only weight is factored into variable shipping weights (in line with most
+shipping companies' practices), but with customization other metrics could be
+used. Those metrics can be entered from the *Shipping Adjustment* tab. See
+[shipping methods](/discover/portal/-/knowledge_base/7.1/shipping-methods)
+for more details.
+
++$$$
+
+Note: Changing the weight or dimensions of a product in the *Shipping
+Adjustment* tab only applies to a single SKU. To set the weight or dimensions
+for all of a product's SKUs, go to the productions *Configuration* tab and click
+on *Shipping*.
+
+$$$
