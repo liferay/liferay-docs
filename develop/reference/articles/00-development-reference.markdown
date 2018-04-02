@@ -3,8 +3,8 @@
 Here you'll find reference documentation for @product@, Liferay Screens, Liferay
 Faces, and technologies related to you as a third-party developer.
 
-The different types of reference docs you'll find in this section of the Liferay
-Developer Network are as follows:
+The different types of reference docs you'll find in this section are as
+follows:
 
 - Descriptions of Java and JavaScript APIs, CSS, tags and tag libraries, and
 XML DTDs
@@ -41,10 +41,10 @@ caption {
   <caption>
     This table links you to the @product-ver@ API modules. Their
     root location is  
-    <a href="@platform-ref@/7.0-latest/javadocs/" target="_blank">
+    <a href="@platform-ref@/7.1-latest/javadocs/" target="_blank">
     here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
     </a> The 
-    reference doc JAR is available  
+    reference doc Zip is available  
     <a href="@platform-ref@/7.0-latest/" target="_blank">
     here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
     </a>
@@ -54,7 +54,7 @@ caption {
   <tr>
     <th rowspan="5">Core:</th>
     <td>
-	<a href="@platform-ref@/7.0-latest/javadocs/portal-kernel/index.html" target="_blank">
+	<a href="@platform-ref@/7.1-latest/javadocs/portal-kernel/index.html" target="_blank">
 	com.liferay.portal.kernel (portal-kernel):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for developing applications on @product@
     </td>
@@ -62,7 +62,7 @@ caption {
 
   <tr>
     <td>
-       <a href="@platform-ref@/7.0-latest/javadocs/util-bridges/index.html" target="_blank">
+       <a href="@platform-ref@/7.1-latest/javadocs/util-bridges/index.html" target="_blank">
 	com.liferay.util.bridges (util-bridges):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for using various non-proprietary computing languages, frameworks, and utilities
        on @product@
@@ -71,7 +71,7 @@ caption {
 
   <tr>
     <td>
-       <a href="@platform-ref@/7.0-latest/javadocs/util-java/index.html" target="_blank">
+       <a href="@platform-ref@/7.1-latest/javadocs/util-java/index.html" target="_blank">
 	com.liferay.util.java (util-java):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for using various Java-related frameworks and utilities on @product@
     </td>
@@ -79,7 +79,7 @@ caption {
 
   <tr>
     <td>
-       <a href="@platform-ref@/7.0-latest/javadocs/util-slf4j/index.html" target="_blank">
+       <a href="@platform-ref@/7.1-latest/javadocs/util-slf4j/index.html" target="_blank">
 	com.liferay.util.slf4j (util-slf4j):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;for using the Simple Logging Facade for Java (SLF4J)
     </td>
@@ -87,7 +87,7 @@ caption {
 
   <tr>
     <td>
-       <a href="@platform-ref@/7.0-latest/javadocs/portal-impl/index.html" target="_blank">
+       <a href="@platform-ref@/7.1-latest/javadocs/portal-impl/index.html" target="_blank">
 	com.liferay.portal.impl (portal-impl):<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>&nbsp;refer to this only if you are an advanced Liferay developer that needs a deeper
        understanding of @product-ver@'s implementation in order to contribute to it
@@ -131,12 +131,27 @@ caption {
       </a>
     </th>
     <td>
-       com.liferay.blogs.api
+       com.liferay.announcements.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.blogs.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.blogs.demo.data.creator.api
       </td>
   </tr>
   <tr>
     <td>
     com.liferay.blogs.item.selector.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.blogs.recent.bloggers.api
       </td>
   </tr>
   <tr>
@@ -151,12 +166,32 @@ caption {
   </tr>
   <tr>
     <td>
+    com.liferay.comment.demo.data.creator.api
+      </td>
+  </tr>
+  <tr>
+    <td>
        com.liferay.document.library.api
       </td>
   </tr>
   <tr>
     <td>
+    com.liferay.document.library.content.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.document.library.file.rank.api
+      </td>
+  </tr>
+  <tr>
+    <td>
     com.liferay.document.library.repository.cmis.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.document.library.sync.api
       </td>
   </tr>
   <tr>
@@ -201,12 +236,37 @@ caption {
   </tr>
   <tr>
     <td>
+    com.liferay.reading.time.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.social.activities.api
+      </td>
+  </tr>
+  <tr>
+    <td>
     com.liferay.social.activity.api
       </td>
   </tr>
   <tr>
     <td>
-    com.liferay.social.privatemessaging.api
+    com.liferay.social.bookmarks.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.social.user.statistics.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.subscription.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.upload.api
       </td>
   </tr>
   <tr>
@@ -253,6 +313,11 @@ caption {
        com.liferay.portal.rules.engine.api
       </td>
   </tr>
+  <tr>
+    <td>
+    com.liferay.portal.workflow.api
+      </td>
+  </tr>
     <td>
        com.liferay.portal.workflow.kaleo.api
       </td>
@@ -277,13 +342,53 @@ caption {
       </a>
     </th>
     <td>
-       com.liferay.contacts.api
+       com.liferay.apio.architect.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.apio.architect.wiring.osgi.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.apio.architect.writer.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.captcha.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.configuration.admin.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.contacts.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.friendly.url.api
+      </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.frontend.editor.api
       </td>
   </tr>
   <tr>
     <td>
     com.liferay.frontend.image.editor.api
     </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.frontend.js.loader.modules.extender.api
+      </td>
   </tr>
   <tr>
     <td>
@@ -296,6 +401,16 @@ caption {
     com.liferay.mobile.device.rules.api
     </td>
     </tr>
+    <tr>
+      <td>
+      com.liferay.organizations.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.organizations.item.selector.api
+        </td>
+    </tr>
   <tr>
     <td>
     com.liferay.password.policies.admin.api
@@ -303,48 +418,188 @@ caption {
     </tr>
   <tr>
     <td>
-    com.liferay.portal.background.task.api    
+    com.liferay.portal.background.task.api
     </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.cache.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.configuration.upgrade.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.instances.api
+        </td>
     </tr>
   <tr>
     <td>
     com.liferay.portal.lock.api
     </td>
     </tr>
+    <tr>
+      <td>
+      com.liferay.portal.remote.soap.extender.api
+        </td>
+    </tr>
   <tr>
     <td>
     com.liferay.portal.scripting.api
     </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.search.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.search.web.api
+        </td>
     </tr>
   <tr>
     <td>
     com.liferay.portal.security.audit.api
     </td>
     </tr>
+    <tr>
+      <td>
+      com.liferay.portal.security.sso.cas.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.security.sso.facebook.connect.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.security.sso.google.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.security.sso.ntlm.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.security.sso.openid.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.security.sso.openid.connect.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.security.sso.opensso.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.security.sso.token.api
+        </td>
+    </tr>
   <tr>
     <td>
     com.liferay.portal.security.exportimport.api
     </td>
     </tr>
-  <tr>
-    <td>
-    com.liferay.portal.security.service.access.policy.api
-    </td>
+    <tr>
+      <td>
+      com.liferay.portal.security.ldap.api
+        </td>
     </tr>
-  <tr>
-    <td>
-    com.liferay.portal.settings.api
-    </td>
+    <tr>
+      <td>
+      com.liferay.portal.security.service.access.policy.api
+      </td>
+      </tr>
+    <tr>
+      <td>
+      com.liferay.portal.settings.api
+        </td>
     </tr>
-  <tr>   
-    <td>
-    com.liferay.roles.admin.api
-    </td>
+    <tr>
+      <td>
+      com.liferay.portal.template.soy.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.url.builder.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.custom.jsp.bag.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.instance.lifecycle.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.jmx.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.output.stream.container.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.spring.extender.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.portal.upgrade.api
+        </td>
+    </tr>
+    <tr>   
+      <td>
+      com.liferay.roles.admin.api
+        </td>
+    </tr>
+    <tr>   
+      <td>
+      com.liferay.roles.admin.demo.data.creator.api
+        </td>
+    </tr>
+    <tr>   
+        <td>
+        com.liferay.roles.item.selector.api
+        </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.text.localizer.address.api
+      </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.user.associated.data.api
+      </td>
     </tr>
   <tr>
     <td>
     com.liferay.user.groups.admin.api
     </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.user.groups.admin.item.selector.api
+      </td>
     </tr>
   <tr>
     <td>
@@ -355,6 +610,11 @@ caption {
     <td>
     com.liferay.users.admin.demo.data.creator.api
     </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.users.admin.item.selector.api
+      </td>
     </tr>
   <tr>
     <td>
@@ -378,7 +638,82 @@ caption {
   </tr>
   <tr>
     <td>
+    com.liferay.asset.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.asset.categories.navigation.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.asset.category.property.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.asset.display.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.asset.display.template.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.asset.entry.rel.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.asset.publisher.api
+    </td>
+    <tr>
+      <td>
+      com.liferay.asset.tag.stats.api
+      </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.asset.tags.api
+      </td>
+    </tr>
+    <tr>
+      <td>
+      com.liferay.asset.tags.navigation.api
+      </td>
+    </tr>
+  </tr>
+  <tr>
+    <td>
     com.liferay.exportimport.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.exportimport.changeset.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.fragment.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.fragment.demo.data.creator.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.fragment.item.selector.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.html.preview.api
     </td>
   </tr>
   <tr>
@@ -388,12 +723,32 @@ caption {
   </tr>
   <tr>
     <td>
+    com.liferay.journal.demo.data.creator.api
+    </td>
+  </tr>
+  <tr>
+    <td>
     com.liferay.journal.item.selector.api
     </td>
   </tr>
   <tr>
     <td>
+    com.liferay.layout.admin.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.layout.api
+    </td>
+  </tr>
+  <tr>
+    <td>
     com.liferay.layout.item.selector.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.layout.page.template.api
     </td>
   </tr>
   <tr>
@@ -408,12 +763,7 @@ caption {
   </tr>
   <tr>
     <td>
-    com.liferay.portlet.configuration.icon.locator.api
-    </td>
-  </tr>
-  <tr>
-    <td>
-    com.liferay.portlet.configuration.toolbar.contributor.locator.api
+    com.liferay.portlet.display.template.api
     </td>
   </tr>
   <tr>
@@ -423,7 +773,47 @@ caption {
   </tr>
   <tr>
     <td>
+    com.liferay.product.navigation.product.menu.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.product.navigation.simulation.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.rss.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.site.navigation.admin.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.site.navigation.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.site.navigation.item.selector.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.site.navigation.language.api
+    </td>
+  </tr>
+  <tr>
+    <td>
     com.liferay.site.api
+    </td>
+  </tr>
+  <tr>
+    <td>
+    com.liferay.site.demo.data.creator.api
     </td>
   </tr>
   <tr>
@@ -436,14 +826,19 @@ caption {
     com.liferay.staging.api
     </td>
   </tr>
+  <tr>
+    <td>
+    com.liferay.trash.api
+    </td>
+  </tr>
        
 </table>
 
-For help finding API modules for specific common classes, see [@product-ver@ API
-Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
+For help finding API modules for specific common classes, see
+[@product-ver@ API Modules](/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules).
 
 For help finding module attributes and configuring dependencies, see 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies). 
 
 ## Taglibs [](id=taglibs)
 
@@ -473,10 +868,15 @@ caption {
 
   <tr>
     <th rowspan="7">
-    <a href="@platform-ref@/7.0-latest/taglibs/util-taglib/">
+    <a href="@platform-ref@/7.1-latest/taglibs/util-taglib/">
     Util Taglibs<span class="opens-new-window-accessible"> (Opens New Window) </span>
     </a>
     </th>
+    <td>
+    JSTL core
+    </td>
+  </tr>
+  <tr>
     <td>
     aui
     </td>
@@ -489,6 +889,11 @@ caption {
   <tr>
     <td>
     portlet
+    </td>
+  </tr>
+  <tr>
+    <td>
+    portlet_1_0
     </td>
   </tr>
   <tr>
@@ -535,9 +940,18 @@ caption {
   </caption>
 
   <tr>
+    <th rowspan="1">Adaptive Media:</th>
+    <td>
+       <a href="@app-ref@/adaptive-media/latest/taglibdocs/liferay-adaptive-media/tld-summary.html" target="_blank">
+       liferay-application-list<span class="opens-new-window-accessible"> (Opens New Window) </span>
+       </a>
+      </td>
+  </tr>
+
+  <tr>
     <th rowspan="1">Application List:</th>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/application-list/com.liferay.application.list.taglib/liferay-application-list/tld-summary.html" target="_blank">
+       <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-application-list/tld-summary.html" target="_blank">
        liferay-application-list<span class="opens-new-window-accessible"> (Opens New Window) </span>
        </a>
       </td>
@@ -546,14 +960,14 @@ caption {
   <tr>
     <th rowspan="2">Assets:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/asset/com.liferay.asset.taglib/liferay-asset/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-asset/tld-summary.html" target="_blank">
         liferay-asset<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
   </tr>
   <tr>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/trash/com.liferay.trash.taglib/liferay-trash/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-trash/tld-summary.html" target="_blank">
         liferay-trash<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -562,7 +976,7 @@ caption {
   <tr>
     <th rowspan="1">Forms:</th>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/forms-and-workflow/dynamic-data-mapping/com.liferay.dynamic.data.mapping.taglib/liferay-ddm/tld-summary.html" target="_blank">
+       <a href="@app-ref@/forms-and-workflow/latest/taglibdocs/liferay-ddm/tld-summary.html" target="_blank">
 	liferay-ddm<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>
     </td>
@@ -571,14 +985,14 @@ caption {
   <tr>
     <th rowspan="2">Foundation:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/foundation/map/com.liferay.map.taglib/liferay-map/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/foundation/latest/taglibdocs/liferay-map/tld-summary.html" target="_blank">
         liferay-map<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
   </tr>
   <tr>
     <td>
-	<a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/" target="_blank">
+	<a href="@app-ref@/foundation/latest/taglibdocs/liferay-frontend/tld-summary.html" target="_blank">
        liferay-frontend<span class="opens-new-window-accessible"> (Opens New Window) </span>
        </a>
     </td>
@@ -587,7 +1001,7 @@ caption {
   <tr>
     <th rowspan="1">Import, Export, &amp; Staging:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/staging/com.liferay.staging.taglib/liferay-staging/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-staging/tld-summary.html" target="_blank">
         liferay-staging<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -596,7 +1010,7 @@ caption {
   <tr>
     <th rowspan="1">Item Selector:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/collaboration/item-selector/com.liferay.item.selector.taglib/liferay-item-selector/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/collaboration/latest/taglibdocs/liferay-item-selector/tld-summary.html" target="_blank">
         liferay-item-selector<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -605,7 +1019,7 @@ caption {
   <tr>
     <th rowspan="1">Product Navigation:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.taglib/liferay-product-navigation/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-product-navigation/tld-summary.html" target="_blank">
         liferay-product-navigation<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -614,14 +1028,14 @@ caption {
   <tr>
     <th rowspan="2">Sites:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-layout/tld-summary.html" target="_blank">
         liferay-layout<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
   </tr>
   <tr>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/site-navigation/com.liferay.site.navigation.taglib/liferay-site-navigation/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-site-navigation/tld-summary.html" target="_blank">
         liferay-site-navigation<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -630,7 +1044,7 @@ caption {
   <tr>
     <th rowspan="1">Social:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/collaboration/flags/com.liferay.flags.taglib/liferay-flags/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/collaboration/latest/taglibdocs/liferay-flags/tld-summary.html" target="_blank">
         liferay-flags<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -638,8 +1052,11 @@ caption {
 
 </table>
 
+<!-- TODO: Add additional TLD categories once they're finalized for 7.1. Still
+in the works and have not all been properly published. -Cody -->
+
 For help finding module attributes and configuring dependencies, see 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies). 
 
 ### Faces Taglibs [](id=faces-taglibs)
 
