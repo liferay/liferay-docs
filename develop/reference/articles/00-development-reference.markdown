@@ -45,7 +45,7 @@ caption {
     here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
     </a> The 
     reference doc Zip is available  
-    <a href="@platform-ref@/7.0-latest/" target="_blank">
+    <a href="@platform-ref@/7.1-latest/" target="_blank">
     here.<span class="opens-new-window-accessible"> (Opens New Window) </span>
     </a>
     <br>
@@ -121,7 +121,7 @@ caption {
   </caption>
 
   <tr>
-    <th rowspan="17">
+    <th rowspan="29">
       <a href="@app-ref@/collaboration/latest/javadocs/" target="_blank">
       Collaboration<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
@@ -216,7 +216,7 @@ caption {
   </tr>
   <tr>
     <td>
-       com.liferay.mentions.api
+    com.liferay.mentions.api
       </td>
   </tr>
   <tr>
@@ -276,7 +276,7 @@ caption {
   </tr>
 
   <tr>
-    <th rowspan="9">
+    <th rowspan="10">
       <a href="@app-ref@/forms-and-workflow/latest/javadocs/" target="_blank">
       Forms &amp; Workflow<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
@@ -315,24 +315,27 @@ caption {
   </tr>
   <tr>
     <td>
-    com.liferay.portal.workflow.api
+       com.liferay.portal.workflow.api
       </td>
   </tr>
+  <tr>
     <td>
        com.liferay.portal.workflow.kaleo.api
       </td>
   </tr>
+  <tr>
     <td>
        com.liferay.portal.workflow.kaleo.definition.api
       </td>
   </tr>
+  <tr>
     <td>
        com.liferay.portal.workflow.kaleo.runtime.api
       </td>
   </tr>
 
   <tr>
-    <th rowspan="17">
+    <th rowspan="56">
       <a href="@app-ref@/foundation/latest/javadocs/" target="_blank">
       Foundation<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
@@ -623,7 +626,7 @@ caption {
   </tr>
 
   <tr>
-    <th rowspan="13">
+    <th rowspan="40">
       <a href="@app-ref@/web-experience/latest/javadocs/" target="_blank">
       Web Experience<span class="opens-new-window-accessible"> (Opens New Window) </span>
       </a>
@@ -867,7 +870,7 @@ caption {
   </caption>
 
   <tr>
-    <th rowspan="7">
+    <th rowspan="9">
     <a href="@platform-ref@/7.1-latest/taglibs/util-taglib/">
     Util Taglibs<span class="opens-new-window-accessible"> (Opens New Window) </span>
     </a>
@@ -1067,10 +1070,12 @@ VDL docs for all versions of Liferay Faces are available
 
 ## JavaScript and CSS [](id=javascript-and-css)
 
-[**Lexicon**](https://liferay.github.io/clay/): The web implementation of 
-Liferay's [Lexicon Experience Language](https://lexicondesign.io/). Lexicon is 
-a system for building applications in and outside of @product@, designed to be 
-fluid and extensible, as well as provide a consistent and documented API.
+[**Lexicon**](https://lexicondesign.io/): A system for building applications in
+and outside of @product@, designed to be fluid and extensible, as well as
+provide a consistent and documented API.
+
+[**Clay**](https://clayui.com/): The web implementation of Liferay's
+[Lexicon Experience Language](https://lexicondesign.io/).
 
 [**Bootstrap**](http://getbootstrap.com/): The base CSS library onto which
 Lexicon is built. @product@ uses Bootstrap natively and all of its CSS classes 
@@ -1081,5 +1086,5 @@ JavaScript APIs are available within portlets, templates and themes.
 
 ## Descriptor Definitions [](id=descriptor-definitions)
 
-[**DTDs**](@platform-ref@/7.0-latest/definitions/): Describes the XML
+[**DTDs**](@platform-ref@/7.1-latest/definitions/): Describes the XML
 files used in configuring @product@ apps, @product@ plugins, and @product-ver@.
