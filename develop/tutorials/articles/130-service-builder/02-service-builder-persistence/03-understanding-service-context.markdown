@@ -1,24 +1,24 @@
 # Understanding ServiceContext [](id=understanding-servicecontext)
 
-The `ServiceContext` class is a parameter class used for passing contextual
-information for a service. Using a parameter class lets you consolidate many
-different methods with different sets of optional parameters into a single,
-easier-to-use method. The class also aggregates information necessary for
-features used throughout Liferay's core portlets, such as permissions, tagging,
-categorization, and more. 
+The `ServiceContext` class holds contextual information for a service. It
+aggregates information necessary for features used throughout Liferay's
+portlets, such as permissions, tagging, categorization, and more. This tutorial
+covers the following `ServiceContext` class topics:
 
-In this section, you'll examine the Service Context fields, learn how to create
-and populate a Service Context, and learn to access Service Context data. First,
-you'll look at the fields of the `ServiceContext` class.
+- [Service Context Fields](#service-context-fields)
+- [Creating and Populating a Service Context in Java](#creating-and-populating-a-service-context)
+- [Creating and Populating a Service Context in JavaScript](#creating-and-populating-a-service-context-in-javascript)
+- [Accessing Service Context Data](#accessing-service-context-data)
+
+The `ServiceContext` fields are first.
 
 ## Service Context Fields [](id=service-context-fields)
 
-The `ServiceContext` class has many fields. The best field descriptions are
-found in the Javadoc: 
+The `ServiceContext` class has many fields. The
+[`ServiceContext` class Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html)
+describes them. 
 
-[@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html).
-
-Here, you can review a categorical listing of the fields: 
+Here's' a categorical listing of some of the fields: 
 
 - Actions:
     - `_command`
@@ -78,7 +78,7 @@ learn about that next.
 ## Creating and Populating a Service Context [](id=creating-and-populating-a-service-context)
 
 Although all the `ServiceContext` class fields are optional, services that store
-any kind of scopeable data need to at least specify the scope group ID. Here's a
+any kind of scopeable data must at least specify the scope group ID. Here's a
 simple example of creating a `ServiceContext` instance and passing it as a
 parameter to a Liferay service API using Java: 
 
@@ -90,7 +90,7 @@ parameter to a Liferay service API using Java:
     _blogsEntryService.addEntry(..., serviceContext);
 
 If you invoke the service from a servlet, a Struts action, or any other
-front-end end class which has access to the `PortletRequest`, use one of the
+front-end class which has access to the `PortletRequest`, use one of the
 `ServiceContextFactory.getInstance(...)` methods. These methods create a
 `ServiceContext` object from the request and automatically populate its fields
 with all the values specified in the request. The above example looks different
@@ -161,89 +161,8 @@ curl, or click on *URL example* to see how to invoke the web service via a URL.
 ![Figure 1: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../../images/jsonws-simple-example.png)
 
 To learn more about Liferay's JSON web services, see the
-[JSON Web Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/registering-json-web-services)
+[JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/registering-json-web-services)
 tutorial.
-
-<!--
-For an example of how to create and populate a `ServiceContext` object in
-JavaScript and how to pass it as a parameter to a Liferay JSON web service
-invocation, please see the
-[Sample JSONWS Portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/svc-build/sample-jsonws-portlet).
-All the Sample JSONWS portlet's functionality is provided in its `view.jsp`
-file. The portlet displays a button that, when clicked, creates a new
-user by invoking Liferay's JSON web services. Let's examine the JSON web service
-invocation:
-
-    Liferay.Service(
-        '/user/add-user',
-        {
-            companyId: Liferay.ThemeDisplay.getCompanyId(),
-            autoPassword: false,
-            password1: 'test',
-            password2: 'test',
-            autoScreenName: false,
-            screenName: 'joe.bloggs',
-            emailAddress: 'joe.bloggs@liferay.com',
-            facebookId: 0,
-            openId: '',
-            locale: 'en_US',
-            firstName: 'Joe',
-            middleName: 'B',
-            lastName: 'Bloggs',
-            prefixId: 0,
-            suffixId: 0,
-            male: true,
-            birthdayMonth: 1,
-            birthdayDay: 1,
-            birthdayYear: 1970,
-            jobTitle: 'Tester',
-            groupIds: null,
-            organizationIds: null,
-            roleIds: null,
-            userGroupIds: null,
-            sendEmail: false,
-            serviceContext: {assetTagNames: ['test']}
-        },
-        function(obj) {
-            console.log(obj);
-        }
-    );
-
-The Add User service requires a lot of parameters. The `serviceContext`
-parameter is optional. You can use it with the Add User service to specify tags
-to be applied to the user that's being created. See the Javadoc of the service
-method for details:
-[https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/UserServiceUtil.html](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/UserServiceUtil.html#addUser%28long,%20boolean,%20java.lang.String,%20java.lang.String,%20boolean,%20java.lang.String,%20java.lang.String,%20long,%20java.lang.String,%20java.util.Locale,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20int,%20int,%20boolean,%20int,%20int,%20int,%20java.lang.String,%20long[],%20long[],%20long[],%20long[],%20boolean,%20com.liferay.portal.service.ServiceContext%29).
-In the example above, the `serviceContext` parameter specifies that the tag
-*test* should be applied to the user that's being created.
-
-To test the service invocation with the `serviceContext` parameter, deploy the
-[Sample JSONWS Portlet](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/svc-build/sample-jsonws-portlet),
-add it to a page, and click on the *Create User* button. Then navigate to the
-Control Panel, click on *Users and Organizations*, edit the newly created user,
-click on *Categorization*, and confirm that the specified tag has been applied.
-
-[Figure 2: To test invoking a Liferay JSON web service, deploy the Sample JSONWS Portlet, add it to a page, click on *Create User*, and confirm that the tag *test* has been applied to the newly created user.](../../images/jsonws-simple-example.png)
-
-**Important:** To invoke Liferay web services via JavaScript, your JavaScript
-context must include AlloyUI. In the Sample JSONWS Portlet, the JavaScript code
-in `view.jsp` was wrapped in the `<aui:script use="node, event">` and
-`</aui:script>` tags. The `node` and `event` modules were required to
-implement the button. Only the base AUI is required to invoke a Liferay JSON
-web service. The `<aui:script>` tag was made available to the `view.jsp` page
-by this taglib import:
-
-    <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
-
-If you're not working in a JSP, you won't have access to taglibs. In this case,
-you can create an Alloy context manually. For example,
-
-    AUI().use('aui-base', function(A){
-        // Liferay service invocation here
-    });
-
--->
-<!-- No JSON Sample portlet available currently. -Cody -->
 
 Next, you'll learn how to access information from a `ServiceContext` object. 
 
@@ -254,7 +173,7 @@ In this section, you'll find code snippets from
 demonstrates how to access information from a `ServiceContext` and provides an
 example of how the context information can be used. 
 
-As mentioned above, services for scopeable entities need to get a scope group ID
+As mentioned above, services for scopeable entities must get a scope group ID
 from the `ServiceContext` object. This is true for the Blogs entry service
 because the scope group ID provides the scope of the Blogs entry (the entity
 being persisted). For the Blogs entry, the scope group ID is used in the
@@ -356,6 +275,6 @@ Liferay application development.
 
 ## Related Topics [](id=related-topics)
 
-[Creating Local Services](/develop/tutorials/-/knowledge_base/7-0/creating-local-services)
+[Creating Local Services](/develop/tutorials/-/knowledge_base/7-1/creating-local-services)
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
+[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
