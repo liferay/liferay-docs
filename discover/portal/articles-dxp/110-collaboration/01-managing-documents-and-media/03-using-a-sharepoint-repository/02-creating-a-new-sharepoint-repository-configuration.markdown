@@ -3,9 +3,8 @@
 To connect to a remote SharePoint server you must create a repository 
 configuration. To do so, follow these steps: 
 
-1.  Inside your @product@ instance, open the Control Panel and go to 
-    *Configuration* &rarr; *System Settings* &rarr; *Collaboration* &rarr; 
-    *Sharepoint OAuth2*.
+1.  In @product@, open the Control Panel and go to *Configuration* &rarr;
+    *System Settings* &rarr; *Collaboration* &rarr; *Sharepoint OAuth2*.
     
     ![Figure 1: Use the *Sharepoint OAuth2* system setting to create a new SharePoint repository configuration.](../../../../images-dxp/sharepoint-system-setting.png)
 
@@ -41,10 +40,10 @@ configuration. To do so, follow these steps:
     - **Resource:** This value depends on the ACS service you use. In SharePoint 
     Online with Azure ACS, the value follows this pattern: 
     `00000003-0000-0ff1-ce00-000000000000/[your-site-name].sharepoint.com@[tenant ID]`.
-    
+ 
     ![Figure 2: The New Repository form is where you specify access to the remote SharePoint server.](../../../../images-dxp/sharepoint-new-repo-configuration.png)
 
 4.  Click *Save*.
 
 Awesome! Now that your SharePoint repository is configured, you can mount it in 
-@product@'s Documents and Media Library. 
+Documents and Media Library. 

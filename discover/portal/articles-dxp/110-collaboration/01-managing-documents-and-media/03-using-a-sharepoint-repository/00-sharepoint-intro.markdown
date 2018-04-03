@@ -2,10 +2,9 @@
 
 The 
 [Liferay Marketplace](http://marketplace.liferay.com/) 
-app *Liferay Connector for SharePoint* lets users access SharePoint 2013 
-and SharePoint 2016 libraries from @product@'s Documents and Media Library. Once 
-this app is installed, you can add a SharePoint repository type to @product@'s 
-Documents and Media Library to access your SharePoint files. 
+app *Liferay Connector for SharePoint* lets users add a SharePoint repository
+type to @product@'s Documents and Media Library. It supports SharePoint 2013 and
+SharePoint 2016. 
 
 +$$$
 
@@ -42,7 +41,7 @@ The app uses SharePoint's API, which has these limitations:
 - The user who checks out a file is the only one who can see the version number 
   of that file's working copy.
 - Queries for suffixes or intermediate wildcards convert to queries for 
-  containment.  
+  containment. 
 - Comments, ratings, and using a SharePoint folder as a Documents and Media root 
   folder are unsupported. 
 

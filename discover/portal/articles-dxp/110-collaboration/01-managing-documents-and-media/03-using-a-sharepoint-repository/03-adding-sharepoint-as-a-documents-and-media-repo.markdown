@@ -1,7 +1,6 @@
-# Adding a SharePoint Documents and Media Repository to @product@ [](id=adding-a-sharepoint-documents-and-media-repository-to-liferay)
+# Adding a SharePoint Documents and Media Repository [](id=adding-a-sharepoint-documents-and-media-repository)
 
-Follow these steps to add your SharePoint Library to Documents and Media in 
-@product@:
+Follow these steps to add your SharePoint Library to Documents and Media:
 
 1.  Add the *Documents and Media* application to a page, if you haven't 
     already.
@@ -27,7 +26,7 @@ Follow these steps to add your SharePoint Library to Documents and Media in
 
 5.  Click *Save*.
 
-@product@'s Documents and Media Library now lists your SharePoint repository. 
+The Documents and Media Library now lists your SharePoint repository. 
 
 +$$$
 
@@ -37,6 +36,5 @@ remote SharePoint repository.
 
 $$$
 
-Sweet! Now that you've added a SharePoint Repository to @product@'s Documents 
-and Media, you can access and modify SharePoint Library files in your @product@ 
-instance. 
+Sweet! Now that you've added a SharePoint Repository to Documents and Media,
+you can access and modify SharePoint Library files in your @product@ instance. 
