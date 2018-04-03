@@ -59,15 +59,19 @@ A JSON document is returned that varies slightly, but should look similar to
 this: 
 
 <!-- UPDATE with 6.1 info -->
+
     {
-      "name" : "Wiz Kid",
+      "name" : "g0m223N",
       "cluster_name" : "LiferayElasticsearchCluster",
+      "cluster_uuid" : "Ii6STs04Tg-XzTVV5h7M2Q",
       "version" : {
-        "number" : "2.4.0",
-        "build_hash" : "8ff36d139e16f8720f2947ef62c8167a888992fe",
-        "build_timestamp" : "2016-08-27T13:32:39Z",
+        "number" : "6.1.3",
+        "build_hash" : "af51318",
+        "build_date" : "2018-01-26T18:22:55.523Z",
         "build_snapshot" : false,
-        "lucene_version" : "5.5.2"
+        "lucene_version" : "7.1.0",
+        "minimum_wire_compatibility_version" : "5.6.0",
+        "minimum_index_compatibility_version" : "5.0.0"
       },
       "tagline" : "You Know, for Search"
     }
