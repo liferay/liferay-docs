@@ -9,8 +9,8 @@ Documents and Media Library to access your SharePoint files.
 
 +$$$
 
-**Note:** To access SharePoint 2010, you must use 
-[the app *Liferay Connector for SharePoint 2010*](https://web.liferay.com/marketplace/-/mp/application/15188537). 
+**Note:** To access SharePoint 2010, you must use the Liferay Marketplace app 
+*Liferay Connector for SharePoint 2010*. 
 
 $$$
 
