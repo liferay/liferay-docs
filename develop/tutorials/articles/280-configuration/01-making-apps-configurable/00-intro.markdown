@@ -1,7 +1,22 @@
 # Making Applications Configurable [](id=making-applications-configurable)
 
-You don't need much prior knowledge to use the configuration API, but
-understanding a few key concepts is useful before diving into the code.
+A configurable application allows a user (administrator, guest user, site
+member, etc.) to configure the application for the intended scope (site, system,
+portal instance, etc.). Complete three high level tasks to enable application
+configuration:
+
+1.  Provide a way to set configurations in the user interface.
+
+2.  Set the scope at which the application can be configured.
+
+3.  Read configuration values in your business logic.
+
+This tutorial demonstrates adding your application's system scoped configuration
+to the System Settings application in the Control Panel, and how to categorize
+the configuration. Subsequent tutorials show you how to set the scope of the
+configurations and read its values from various contexts. Additional tutorials
+will be written on developing user interfaces for Instance Settings and creating
+portlet instance configuration screens.
 
 +$$$
 
@@ -15,6 +30,9 @@ configuration* entry.
 Add the *Blade Message Portlet* to a page to test your configuration choices.
 
 $$$
+
+You don't need much prior knowledge to use the configuration API, but
+understanding a few key concepts is useful before diving into the code.
 
 **Typed Configuration**
 : The method described here uses *typed* configuration. The application
