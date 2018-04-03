@@ -1,9 +1,9 @@
 # Troubleshooting Your LCS Connection [](id=troubleshooting-your-lcs-connection)
 
-Since LCS activates your @product@ instance, your server must maintain its 
-connection to LCS at all times. If this connection is interrupted, your server 
-enters a grace period to allow for reconnection. Lengthy interruptions, however, 
-can affect your server's uptime. 
+Since LCS activates @product@, your server must maintain its connection to LCS
+at all times. If this connection is interrupted, your server enters a grace
+period to allow for reconnection. Lengthy interruptions, however, can affect
+your server's uptime. 
 
 The following sections in this document provide some background information and 
 help you troubleshoot problems with your server's LCS connection: 
@@ -23,8 +23,8 @@ help you troubleshoot problems with your server's LCS connection:
 **Note:** The odds of LCS being unavailable are low. LCS is deployed on a global 
 cloud infrastructure set up for automatic failure recovery. Notifications also 
 let the LCS team react quickly to any downtime. During LCS updates and new 
-version releases, however, LCS will be unavailable for a few minutes while 
-changes are applied. 
+version releases, however, LCS is unavailable for a few minutes while changes
+are applied. 
 
 $$$
 
@@ -32,12 +32,11 @@ $$$
 
 There are 2 grace period types in LCS: 
 
-1.  **Connection Grace Period:** Occurs when your activated @product@ instance's 
-    LCS connection is interrupted. This gives you time to re-establish the 
-    connection. 
+1.  **Connection Grace Period:** Occurs when your activated LCS connection is
+    interrupted. This gives you time to re-establish the connection. 
 
-2.  **Subscription Grace Period:** Occurs when your @product@ subscription is 
-    about to expire. This gives you time to renew the subscription. 
+2.  **Subscription Grace Period:** Occurs when your subscription is about to
+    expire. This gives you time to renew the subscription. 
 
 +$$$
 
@@ -55,13 +54,14 @@ $$$
 
 If your server's LCS connection is interrupted, the server continues to run and 
 enters a grace period that lasts for up to 30 days to allow for reconnection. 
-During this grace period, your @product@ instance displays a warning message to 
-administrators. Upon seeing this message, administrators should contact Liferay 
-Support and follow the troubleshooting steps below. If for some reason the 
-connection can't be restored, Liferay Support will provide an alternative way to 
-activate your server. LCS automatically restores your server's activation upon 
-reconnection (you shouldn't need to restart the server). If this doesn't happen, 
-you can force it by redeploying the LCS client app and/or restarting the server. 
+During this grace period, @product@ displays a warning message to
+administrators. Upon seeing this message, administrators should contact Liferay
+Support and follow the troubleshooting steps below. If for some reason the
+connection can't be restored, Liferay Support will provide an alternative way
+to activate your server. LCS automatically restores your server's activation
+upon reconnection (you shouldn't need to restart the server). If this doesn't
+happen, you can force it by redeploying the LCS client app and/or restarting
+the server. 
 
 ![Figure 1: A warning message is displayed to administrators if the server can't connect to LCS to validate the subscription.](../../images-dxp/lcs-grace-period.png)
 
@@ -71,11 +71,11 @@ an email whenever the server shuts down unexpectedly. The documentation on
 [managing Your account](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-your-lcs-account) 
 explains how to do this. 
 
-LCS's grace period behavior has been implemented in several @product@ patches. 
-If you're not running these patches, your server's grace period may be 
-different. The following table lists each patch and how it changes the grace 
-period. Note that each hotfix includes the preceding hotfixes, and each fix pack 
-includes the preceding fix packs. 
+LCS's grace period behavior has been implemented in several patches. If you're
+not running these patches, your server's grace period may be different. The
+following table lists each patch and how it changes the grace period. Note that
+each hotfix includes the preceding hotfixes, and each fix pack includes the
+preceding fix packs. 
 
 | &nbsp;Fix Pack | &nbsp;Hotfix Built After | Before | After |
 | --------- | ------------------ | ------ | ----- |
@@ -99,7 +99,7 @@ warning messages through
 and 
 [the Customer Portal](https://www.liferay.com/group/customer). 
 After the expiration date, your servers may be placed in an additional grace 
-period, which will be communicated through the same support channels. If the 
+period, which is communicated through the same support channels. If the 
 renewal isn't completed during this grace period, then the subscription becomes 
 inactive and the @product@ instance enters the 30-day grace period. As soon as 
 the renewal is processed, the instance activates and any error or warning 
@@ -130,12 +130,12 @@ $$$
 
 ### Server Can't Reach LCS [](id=server-cant-reach-lcs)
 
-If your server can't reach LCS, verify that you can access the public sites that 
-LCS requires access to:
+If your server can't reach LCS, verify that you can access the public sites
+required by LCS:
 
 -   [`lcs.liferay.com`](https://lcs.liferay.com/) 
     should be viewable in a browser.
--   `lcs-gateway.liferay.com` should respond to a `curl` or telnet command: 
+-   `lcs-gateway.liferay.com` should respond on ports 80 and 443: 
 
         curl -vk -I "https://lcs-gateway.liferay.com"
         telnet lcs-gateway.liferay.com 443
@@ -187,7 +187,7 @@ The following table lists causes and solutions for invalid tokens.
 
 ## Increasing Log Levels [](id=increasing-log-levels)
 
-If you contact Liferay Support, you'll be asked to increase your server's log 
+If you contact Liferay Support, you're asked to increase your server's log 
 levels and then provide your log files. You can find these log files in 
 `[Liferay Home]/logs` 
 ([Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-product#liferay-home) 
@@ -209,8 +209,8 @@ There are 2 ways to increase the log levels:
 
 1.  **In your @product@ instance's Control Panel:** This is a temporary 
     configuration that resets upon shutting down the server. Note that if the 
-    server isn't activated, you won't be able to access the Control Panel. In 
-    that case, Liferay Support can provide a temporary activation key. 
+    server isn't activated, you can't access the Control Panel. In that case,
+    Liferay Support can provide a temporary activation key. 
 
 2.  **In a Log4j configuration:** This is a permanent configuration that 
     persists through server shutdown and restart. 
@@ -219,8 +219,7 @@ The following sections cover both options.
 
 ### Control Panel [](id=control-panel)
 
-Follow these steps to increase the log levels via your @product@ instance's 
-Control Panel: 
+Follow these steps to increase the log levels via the Control Panel: 
 
 1.  Navigate to *Control Panel* &rarr; *Configuration* &rarr; *Server 
     Administration*. 
@@ -243,8 +242,8 @@ Follow these steps to increase the log levels via Log4j:
     [LCS preconfiguration article](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#downloading-the-lcs-client-app). 
     The app downloads as `Liferay Connected Services Client.lpkg`. If you don't 
     want to download the latest client, you can use the one already installed in 
-    your server: it's located in `[Liferay Home]/osgi/marketplace` (just make 
-    sure to shut down your server before following the rest of the steps in this 
+    your server: it's in `[Liferay Home]/osgi/marketplace` (just make sure to
+    shut down your server before following the rest of the steps in this
     section). Recall that the 
     [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
     folder is usually the parent folder of the application server's folder. 
@@ -253,7 +252,8 @@ Follow these steps to increase the log levels via Log4j:
     inside it. 
 
 3.  Inside the `WAR` file, replace the contents of 
-    `WEB-INF\classes\META-INF\portal-log4j.xml` with the following: 
+    `WEB-INF\classes\META-INF\portal-log4j.xml` with the following
+    configuration: 
 
         <?xml version="1.0"?>
         <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
@@ -280,12 +280,12 @@ Follow these steps to increase the log levels via Log4j:
                 </logger>
         </log4j:configuration>
 
-4.  Save the file, then repackage the WAR and LPKG (make sure not to change the 
+4.  Save the file and repackage the WAR and LPKG (make sure not to change the 
     names of these files). 
 
 5.  Make sure your server is shut down. 
 
-6.  In your @product@ installation's 
+6.  In your installation's 
     [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
     folder, delete the existing LCS client app: 
 
