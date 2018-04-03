@@ -186,26 +186,22 @@ patching tool is unavailable, or other events occur that relate to LCS.
 ![Figure 5: The LCS project view shows an overview of your LCS project.](../../images-dxp/lcs-project-view.png)
 
 LCS lists the environments in your project on the left side of the screen. You 
-can also create new environments here by clicking the Add Environment tab (more 
-on this shortly). To view an environment's settings, click the environment's 
-gear icon. You can also get more information about a specific environment by 
-clicking it. This takes you to the environment view. Also note that the icon to 
-the left of each environment differs depending on the environment's type and 
-status. The icon's color and type tells you something about that environment: 
+can also create new environments here by clicking the *Add Environment* tab 
+(more on this shortly). To view an environment's settings, click the 
+environment's gear icon. You can also get more information about a specific 
+environment by clicking it. This takes you to the environment view. Also note 
+that each environment's icon indicates the environment's type and status: 
 
-- **Red icon:** Indicates a problem or issue with one or more servers in that 
-  environment.
-- **Green icon:** Indicates that the servers in that environment are operating 
-  properly.
-- **Icon with a circle:** Indicates that the servers in that environment are in 
-  a cluster.
+- **Red icon:** There's a problem with one or more of the environment's servers. 
+- **Green icon:** The environment's servers are operating properly. 
+- **Icon with a circle:** The environment's servers are clustered. 
 
 Now you'll learn how to create an environment. 
 
 ### Creating an Environment [](id=creating-an-environment)
 
 You can create an environment by clicking the *Add Environment* tab from the 
-Dashboard. This opens the New Environment popup: 
+Dashboard. This opens the New Environment popup. 
 
 +$$$
 
@@ -215,22 +211,24 @@ after creating the environment.
 
 $$$
 
--   **Environment Name:** The environment's name
--   **Description:** The environment's description
+Complete these fields to create your environment: 
+
+-   **Environment Name:** The environment's name.
+-   **Description:** The environment's description.
 -   **Subscription Type:** The environment's subscription type. Servers 
     activated in the environment will consume an activation key from this 
-    subscription type. Choose the environment's subscription type carefully--you 
-    can't change it after creating the environment.
+    subscription type. Note that you can't change this after creating the 
+    environment. 
 -   **Cluster:** Whether this is a clustered environment. Only clustered 
-    environments can contain clustered servers. Note that you can't change your 
-    selection after creating the environment. Also note that you must set 
-    the portal property `cluster.link.enabled` to `true` in any servers that 
-    connect to a clustered environment. 
+    environments can contain clustered servers. Note that you can't change this 
+    after creating the environment. Also note that you must set the portal 
+    property `cluster.link.enabled` to `true` in any servers that connect to a 
+    clustered environment. 
 -   **Elastic:** Whether this environment permits the use of *elastic 
-    subscriptions*. Elastic subscriptions let you register an unlimited number 
-    of @product@ servers. This is crucial for auto-scaling environments in which 
-    servers are created and destroyed automatically. Note that you can't change 
-    your selection after creating the environment. For more information, see 
+    subscriptions*. Note that you can't change this after creating the 
+    environment. Elastic subscriptions let you register an unlimited number of 
+    servers. This is crucial for auto-scaling environments in which servers are 
+    created and destroyed automatically. For more information, see 
     [the documentation on elastic subscriptions](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#elastic-subscriptions). 
 -   **Services:** The LCS services to enable in the environment. Note that 
     although 
@@ -254,35 +252,30 @@ your LCS project.
 
 The UI is segmented into three tabs: 
 
-1. **Fix Packs:** lets you view and apply fix packs for the environment's 
-   servers. This tab only appears if a server is registered in the environment. 
-   A table displays each fix pack's status, server, and server location. If the 
-   server is running, the table also contains *Size* and *Download* columns. You 
-   can download a fix pack by clicking its *Download* icon in that column. You 
-   can download several fix packs at once by checking the checkbox to the left 
-   of each and clicking the *Download* button that appears above the table. Once 
-   a fix pack downloads, LCS prompts you to restart your server. Restarting your 
-   server installs any downloaded fix packs. Note that you must start your 
-   server with the privileges required to write to the disk location where 
-   patches are stored and processed (the `patching-tool` folder). To use LCS to 
-   install fix packs across a cluster, follow the same procedure. LCS downloads 
-   and installs fix packs simultaneously across all nodes--you don't have to 
-   handle each separately. 
+1.  **Fix Packs:** lets you view and apply fix packs for the environment's 
+    servers. This tab only appears if a server is registered in the environment. 
+    A table displays each fix pack's status, the server, and the server's 
+    location. If the server is running, the table also contains *Size* and 
+    *Download* columns. You can download a fix pack by clicking its *Download* 
+    icon. You can download several fix packs at once by selecting them and 
+    clicking the *Download* button that appears above the table. Once a fix pack 
+    downloads, LCS prompts you to restart your server, which installs any 
+    downloaded fix packs. Note that you must start your server with the 
+    privileges required to write to the disk location where patches are stored 
+    and processed (the `patching-tool` folder). To use LCS to install fix packs 
+    across a cluster, follow the same procedure. LCS downloads and installs fix 
+    packs simultaneously across all nodes--you don't have to handle each 
+    separately. 
 
-2. **Registration:** lets you generate and download *environment tokens* that 
-   connect your servers to LCS. You can also assign the environment to a 
-   subscription type if you haven't done so yet. For instructions on this, see 
-   the following sections:
+2.  **Registration:** lets you generate and download 
+    [*environment tokens*](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens) 
+    that connect your servers to LCS. 
 
-    - [Managing @product@ Subscriptions](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions)
-    - [Using Environment Tokens](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens)
-
-3. **Environment Settings:** lets you change the environment's name, location, 
-   and description. You can also see if the environment is part of a cluster, 
-   and view or set the environment's subscription type. Click the *Save* button 
-   to save any changes you make in the Environment Settings tab. You can also 
-   delete the environment by clicking *Delete Environment*, next to the Save 
-   button. 
+3.  **Environment Settings:** lets you change the environment's name, location, 
+    and description. You can also see if the environment allows clustered 
+    servers, and view the environment's subscription type. Click the *Save* 
+    button to save any changes you make in the Environment Settings tab. You can 
+    also delete the environment by clicking *Delete Environment*. 
 
 ![Figure 7: The LCS environment view shows an overview of an LCS environment.](../../images-dxp/lcs-environment-view.png)
 
@@ -295,12 +288,14 @@ icon. Clicking on a server takes you to its server view.
 The server view provides detailed information about a server, including 
 statistics and performance metrics. To protect your users' privacy, LCS doesn't 
 gather, store, or analyze user data. You can get to the server view by clicking 
-a server in the environment view or by clicking a server in the Fix Packs table. 
-Server view is segmented into five tabs: 
+a server in the environment view, or by clicking a server in the Fix Packs or 
+Status tables. 
+
+Server view is segmented into six tabs: 
 
 - **Page Analytics:** Displays metrics on page views and load times.
 - **Snapshot Metrics:** Displays application, JVM, and server metrics.
-- **Fix Packs:** Displays the server's fix packs.
+- **Fix Packs:** Displays the server's available and installed fix packs.
 - **Portal Properties:** Displays your portal's properties and their settings.
 - **Details:** Displays general information about your @product@ installation, 
   Java version, and hardware.
@@ -309,13 +304,15 @@ Server view is segmented into five tabs:
 
 +$$$
 
-**Note:** LCS doesn't support *Snapshot Metrics* for @product@ instances running 
-on JBoss or WildFly. In this scenario, you may see a console message indicating 
-that LCS doesn't support server metrics for your application server. You may 
-also see a `NullPointerException` for the LCS `TaskSchedulerServiceImpl` and 
-`ScheduleTasksCommand`, which you can safely ignore. 
+**Note:** LCS doesn't support *Snapshot Metrics* for servers running on JBoss or 
+WildFly. In this scenario, you may see a console message indicating that LCS 
+doesn't support server metrics for your application server. You may also see a 
+benign `NullPointerException` for the LCS `TaskSchedulerServiceImpl` and 
+`ScheduleTasksCommand`. 
 
 $$$
+
+#### Page Analytics
 
 Page Analytics is displayed by default when you enter server view. Page 
 Analytics shows page views and load times for the selected site and time period. 
@@ -343,6 +340,8 @@ background is red for values above 3,000 ms, orange for values from 2,000 to
 all load times greater than 3,000 ms in red text. 
 
 ![Figure 8: The Page Analytics interface in the LCS Server view.](../../images-dxp/lcs-page-analytics-01.png)
+
+#### Snapshot Metrics
 
 To view other metrics and statistics of your server's performance, click the 
 *Snapshot Metrics* tab near the top of the page. These metrics are broken down 
@@ -379,19 +378,21 @@ Note that in Snapshot Metrics, the application and garbage collector metrics are
 based on data collected by LCS from server registration to the present. Memory 
 and server metrics, however, show only the current state. 
 
+#### Fix Packs
+
 To view your server's fix packs, click the Fix Packs tab near the top of the 
-page. The fix packs here are shown in separate tables for those available for 
-installation, and those already installed. The Available fix packs table 
-functions exactly like the Fix Packs table in environment view for downloading 
-and installing fix packs. 
+page. The available and installed fix packs appear in separate tables. The 
+available fix packs table functions exactly like the Fix Packs table in 
+environment view for downloading and installing fix packs. 
 
-![Figure 12: The Fix Packs tab displays your server's fix packs and alerts.](../../images-dxp/lcs-server-fix-packs.png)
+![Figure 12: The Fix Packs tab displays your server's available and installed fix packs.](../../images-dxp/lcs-server-fix-packs.png)
 
-LCS also lets you view your portal's property values. To do so, click the 
-*Portal Properties* tab near the top of the page. Your portal's properties and 
-their values are shown in a searchable table. This gives you a convenient 
-display for seeing exactly what your portal properties are set to. The 
-properties in this table are organized into the following categories: 
+#### Portal Properties
+
+The *Portal Properties* tab lets you view your portal's property values in a 
+searchable table. This gives you a convenient display for seeing exactly what 
+your portal properties are set to. The properties in this table are organized 
+into the following categories: 
 
 - **Default Values:** The default values for your portal's properties. 
 
@@ -409,24 +410,27 @@ You can display any combination of these categories by selecting the
 corresponding checkboxes from the gear icon next to the search box at the 
 top-right of the table. For example, by checking the *Show Default Values* and 
 *Show Custom Values* checkboxes, the table shows your portal's default and 
-custom property values. To show only the custom values, check only the checkbox 
-for *Show Custom Values*. 
+custom property values. To show only the custom values, select only *Show Custom 
+Values*. 
 
 ![Figure 13: Click the gear icon to select the type of portal properties to show in the table.](../../images-dxp/lcs-server-portal-properties.png)
 
-To view general information about your @product@ installation, click the 
-*Details* tab near the top of the screen. There are three tabs under Details: 
-*Software*, *Java*, and *Hardware*. Each shows information, respectively, about 
-your @product@ installation, Java installation, and hardware. This information 
-is useful to the Liferay support team in the event that you need their 
-assistance. 
+#### Details
 
-![Figure 14: Clicking the Details button shows information about your @product@ installation's software and hardware.](../../images-dxp/lcs-server-details.png)
+The *Details* tab shows general information about your server. There are three 
+tabs under Details: *Software*, *Java*, and *Hardware*. Each shows information, 
+respectively, about your @product@ installation, Java installation, and 
+hardware. This information is useful to the Liferay Support team in the event 
+that you need their assistance. 
 
-Lastly, click the *Server Settings* tab near the top of the screen to view and 
-edit your server's name, location, and description. You can also use the Server 
-Settings UI unregister your server from LCS. Note that unregistering your server 
-doesn't change your actual @product@ server; it just removes it from LCS. 
+![Figure 14: The Details tab shows information about your server.](../../images-dxp/lcs-server-details.png)
+
+#### Server Settings
+
+Lastly, the *Server Settings* tab lets you view and edit your server's name, 
+location, and description. You can also unregister your server from LCS. 
+
+![Figure 15: You can use the Server Settings tab to give your server a fun name.](../../images-dxp/lcs-server-settings.png)
 
 As you can see, the LCS Dashboard is a powerful tool that greatly simplifies 
 the update process and also gives you extensive information on how your servers 
