@@ -8,7 +8,56 @@ publication--time that could be used to create new or improve existing
 documentation. 
 
 For these reasons, we ask that those contributing to the documentation adhere to
-the following editorial conventions. 
+the following editorial conventions. Where there is no guideline below, it's
+a good general rule to follow the [Chicago Manual of
+Style](http://www.chicagomanualofstyle.org). 
+
+## Introductions
+
+Introductions are hard to write: let's get that out of the way right out of the
+box. Having written many introductions, I feel for you. Sometimes it's better to
+skip the introduction and write the rest of the article and then come back to
+the introduction when you're done. I get that. If it weren't hard, everybody
+would do it, so if you're attempting to write one, kudos to you. Because it's
+hard, there are definitely common pitfalls to writing introductions. 
+
+Avoid *Choose Your Own Adventure* introductions. If you're not as old as I am,
+[Choose Your Own Adventure](https://en.wikipedia.org/wiki/Choose_Your_Own_Adventure)
+books were short novels written in the second person (you), where the reader
+reads along and comes to decision points. For example, a Choose Your Own
+Adventure book might begin like this: 
+
+    You were late coming home and really didn't want to be grounded. All your life
+    you've avoided cutting through the forest because of the stories of the beast
+    that lurks there under cover of darkness. But this time, you really don't have a
+    choice: if you get grounded this weekend, you'll miss the dance and your
+    girlfriend will dump you, and you can't let that happen. So with a deep breath,
+    you plunge down the trail into the forest. 
+
+    It's actually not so bad. It's quiet and the path is well worn: obviously
+    somebody comes here regularly. But then you run into a problem: the path splits
+    ahead of you, with one path going right and another going left. Which path do
+    you choose? 
+
+    If you choose the right path, go to page 100. If you choose the left path, go to
+    page 50. 
+
+This is a great writing style for this genre. The reader knows it's fiction and
+the situation has been made up. It's horrible, however, for tutorial
+introductions. In real life, nobody wants to have forecasted for them by
+somebody who has no idea about them what their situation is. They don't want to
+be made to feel bad because your introduction assumed they've been through all
+the tutorials up to now and now they're ready for whatever you plan to tell
+them. Here's an example of what not to do: 
+
+    You've spent some time studying Service Builder (link) and you may even have
+    generated some services. Now you're ready for the next level! 
+
+I call this a *Choose Your Own Adventure* introduction. Arrggh! I even had
+trouble writing that. No, no, no. Don't ever do that; it's so annoying for the
+reader. You have no idea if the reader has spent time studying what you think is
+a prerequisite or what his/her situation is at all. There's no reason to
+unnecessarily offend the reader in this way. 
 
 ## Hierarchical Design 
 
@@ -24,44 +73,38 @@ Sections should be kept as short as possible, by breaking them up further into
 subsections. Markdown gives you six levels of headings (the same as HTML), which
 should be sufficient for all your needs. 
 
-## Chapters 
+## Tutorials 
 
-Chapters should be in the neighborhood of 15 to 40 pages in the print book. If
-you have more material than that, you'll want to consider breaking it up. A 15
-page chapter is in the neighborhood of 4500 - 5000 words (depending on the
-number of images in the chapter). A 40 page chapter is in the neighborhood of
-10000 to 15000 words, again, depending on the number of images in the chapter.
-Since we're using Markdown, word count is an easier way to determine chapter
-size than page number is. 
+Tutorials should be in the neighborhood of 1000-2000 words. If you have more
+material than that, you should consider breaking it up. 
 
-### Chapter Intro 
+### Tutorial Intro 
 
-A chapter should begin with an unlabeled section that serves as your
+A tutorial should begin with an unlabeled section that serves as your
 introduction. You can use an anecdote, a story, or industry information to
 provide your introduction. This introduction, however, needs to lead up to a
-series of bullet points that summarize what the chapter is about. This enables
-the reader to quickly glance over the chapter topics to see if the chapter
-covers information the reader is looking for. 
+series of bullet points that summarize what the tutorial is about. This enables
+the reader to quickly glance over the topics to see if the tutorial covers the 
+information the reader is looking for. 
 
 Don't end your intro with the bullet points themselves; always provide some
 summary text after the bullet points. 
 
-### Chapter Body 
+### Tutorial Body 
 
-The body of the chapter contains a set of multiple, hierarchical sections. See
+The body of the tutorial contains a set of multiple, hierarchical sections. See
 below for information on sections. 
 
-### Chapter Summary 
+### Tutorial Summary 
 
 The end of each chapter should contain a summary section that briefly recounts
-what was covered in the chapter. 
+what was covered in the tutorial. 
 
 ## Sections 
 
 If you're a programmer, think of sections like linked lists. While each section
 needs to cover its own material, at the end of a section you should point to
-what's coming next. This is called a *segue*, and it generally sounds something
-like: 
+what's coming next. This is called a *segue*, and it generally sounds like: 
 
 You can see from this how easy it is to do. Next, we'll look at this other
 thing. 
@@ -125,15 +168,13 @@ to write code or use our software. Obviously, if you are documenting something
 in a text file in the product itself, you can't do this, and the example above
 was taken from Liferay's `portal.properties` file. 
 
-This text was reformatted in the *Using Liferay* book so that it looks like
-this: 
-
+This text was reformatted in the documentation so that it looks like this: 
 
 Set this property to `false` for easier debugging for development. You can also
 disable fast loading by setting the URL parameter `css_fast_load` to `0`. 
 
 Always set off code so that it is clear it's code and not text. This makes it so
-that people can easily copy/paste from the  documentation) whatever code you are
+that people can easily copy/paste from the documentation whatever code you are
 providing. Of course, make sure your code works. 
 
 ### File Names 
@@ -227,7 +268,6 @@ use a period. If it's not a sentence, don't.
 *  Pants
 *  Shirt
 
-
 Use a period for bullets that are sentences, like: 
 
 *  Roll your mouse over the Dock and click *Sign In*. 
@@ -256,6 +296,18 @@ spaces instead of tabs, you have three list levels to work with before your
 syntax-highlighting text editor mistakes your outline levels for preformatted
 text. 
 
+### Variable Text (brackets) 
+
+Sometimes, to avoid putting specific information (like version numbers) in the
+text, you want to specify that as a "variable" of sorts. When you do this,
+*always use straight brackets*, like this: 
+
+    Inside the bundle folder, you'll find a `tomcat-[version]` folder. 
+
+Why straight brackets? To avoid confusion with markup languages and also to
+avoid accidentally triggering the Markdown parser to pass through the text
+(because it might think it's HTML). 
+
 ## Images and Captions 
 
 Every image should have a caption, and the caption should be at least one
@@ -264,7 +316,7 @@ aren't enough. DON'T do something like this for a caption:
 
 *The Liferay setup wizard.*
 
-Instead, do something like this: 
+Instead, do this: 
 
 *The Liferay setup wizard makes connecting to your database and configuring a
 default administrator easy.*
@@ -280,6 +332,32 @@ folder.
 
 Image file names should all be lower case, with no spaces in the file names. Use
 dashes (-) to replace spaces in multi-word file names. 
+
+## Capitalization 
+
+Platform: Always platform
+
+Configuration: Always Configuration
+
+Site: Always Site
+
+Site Administration: Always Site Administration
+
+Personal Site: Always Personal Site
+
+Role: Always Role
+
+User: Always User
+
+User Group: Always User Group
+
+Organization: Always Organization
+
+Control Menu: Always Control Menu
+
+Navigation: Always Navigation
+
+Account Settings: Always Account Settings
 
 ## Common Documentation and Phraseology Issues 
 
@@ -379,6 +457,27 @@ cannot access the resource."). Again, this is correct.
 Commas have several elements which can be confusing. Here are some tips to help
 you be successful with commas. 
 
+#### Oxford Commas
+
+We are an oxford comma shop. I don't want to hear any arguments about it,
+requests to review this decision, or examples of other organizations that don't
+use it. The decision has been made, and it's not changing. 
+
+For those who don't know what an oxford comma is, it's a standard for using
+commas in a series. If you have a series of three or more things, there is
+disagreement in the English language writing community on whether or not to
+include the comma for the last item in the series. Excluding the comma can lead
+to a lack of clarity, as illustrated in this example: 
+
+    I want to thank my mentors, my parents and the President for their help. 
+
+Are your mentors really your parents and the President? Or did you really mean
+this: 
+
+    I want to thank my mentors, my parents, and the President for their help. 
+
+The oxford comma makes the sentence clear. 
+
 #### Conjunctions vs. Compound Verbs 
 
 You only use a comma after a conjunction (i.e., "and," "or," "but," etc.) if it
@@ -433,6 +532,20 @@ Em-dashes have no spaces around them and always consist of *two* dash
 characters. Our Markdown parser will convert that into a proper em-dash
 character, but it won't convert any of the other variants. 
 
+## Terminology
+
+Below is terminology and how we use it. 
+
+**Folder:** Always use folder. Never use directory, directory structure, etc. 
+
+**Command line:** Never use Terminal or Command Prompt. We're trying to stay
+OS-agnostic here, people. 
+
+**Script:** Always use script; never batch file, batch, etc. And always default
+to the Unix/Mac/Linux way of doing things (`./catalina.sh`, not `catalina` or
+`catalina.bat`) because those environments are used more often by Liferay
+developers and administrators. 
+
 ## Summary
 
 These guidelines help us to ensure consistency and clarity within the
@@ -440,4 +553,7 @@ documentation. All contributors should be familiar with them and do their best
 to adhere to them before sending a pull request to have their text included in
 our documentation. They are evolving over time, so you may want to review them
 for changes if you haven't looked at them in a while. 
+
+Do you still have questions? Our [FAQ](04-faq.markdown) can point you in the
+right direction. 
 
