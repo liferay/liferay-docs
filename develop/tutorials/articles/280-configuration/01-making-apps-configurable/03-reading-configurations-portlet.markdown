@@ -6,6 +6,12 @@ the view layer, and how to read it directly in the portlet class. The import
 statements are included in the code snippets so that you can see the fully
 qualified class names (FQCNs) of all the classes that are used.
 
+## Accessing the Configuration Object in the Portlet Class
+
+Whether you need the configuration values in the portlet class or the JSPs, the
+first steps is to get access to the configuration object in the `*Portlet`
+class.
+
 1.  Let's get the imports out of the way first:
 
         package com.liferay.docs.exampleconfig;
@@ -66,7 +72,7 @@ qualified class names (FQCNs) of all the classes that are used.
     Now the field can be used to retrieve configuration values or to set the values
     in the request, so they can be retrieved in the application's JSPs.
 
-## Acessing the Configuration from a JSP [](id=acessing-the-configuration-from-a-jsp)
+## Accessing the Configuration from a JSP
 
 In the case of reading from a JSP, add the configuration object to the request
 object so its values can be read from the JSPs that comprise the application's
@@ -95,10 +101,12 @@ $$$
             super.doView(renderRequest, renderResponse);
         }
 
-    The main difference between this example and the component class covered in the
-    [previous tutorial](reading-configuration-values-from-a-component) is that this class is a portlet class and it sets the
-    configuration object as a request attribute in its `doView()` method. 
-    
+    The main difference between this example and the component class covered in
+    the
+    [previous tutorial](reading-configuration-values-from-a-component) 
+    is that this class is a portlet class and it sets the configuration object
+    as a request attribute in its `doView()` method. 
+
 2. Read configuration values from a JSP. First add these imports to the top of
    your `view.jsp` file:
 
@@ -130,7 +138,7 @@ The example code here would make the application display a message like this:
 
     Favorite color: blue
 
-The word <font color="blue">*blue* is written in blue text. Note that *blue* is
+The word <font color="blue">*blue*</font> is written in blue text. Note that *blue* is
 displayed by default since you specified it as the default in your
 `ExampleConfiguration` interface. If you go to *Control Panel* &rarr;
 *Configuration* &rarr; *System Settings* &rarr; *Platform* &rarr; *Third Party*
@@ -167,6 +175,6 @@ but you can do anything that makes sense for your application's controller
 logic.
 
 That's all there is to reading configuration values in an MVC Portlet. The next
-tutorial covers  categorizing the configuration and accessing it through a
+tutorial covers categorizing the configuration and accessing it through a
 Configuration Provider.
 

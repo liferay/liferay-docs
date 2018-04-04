@@ -22,27 +22,28 @@ After registering with a `ConfigurationBeanDeclaration`, you're ready to use a
 `ConfigurationProvider` to retrieve the scoped configuration. Here's how you
 obtain a reference to it:
 
-Here's the approach for components:
+1.  Here's the approach for components:
 
         @Reference
         protected void setConfigurationProvider(ConfigurationProvider configurationProvider) {
             _configurationProvider = configurationProvider;
         }
 
-Here's the approach for Service Builder services:
+2.  Here's the approach for Service Builder services:
 
         @ServiceReference(type = ConfigurationProvider.class)
         protected ConfigurationProvider configurationProvider;
 
-Here's the approach for Spring beans: It is possible to use the same mechanism as for Service
-  Builder services (`@ServiceReference`). Check the documentation on [how to
-  integrate Spring beans with OSGi services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#referencing-osgi-services) for more details.
+3.  For Spring beans, it is possible to use the same mechanism as for Service
+    Builder services (`@ServiceReference`). Check the documentation on 
+  [how to integrate Spring beans with OSGi services](/develop/tutorials/-/knowledge_base/7-1/finding-and-invoking-liferay-services#referencing-osgi-services)
+    for more details.
 
-Here's the approach for anything else: For other use cases, call the same
-methods from the utility class, `ConfigurationProviderUtil`. Be sure you call
-the utility methods in contexts where the portal is guaranteed to be initialized
-prior to the method call. This class is useful in the [scripting
-console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console),
+4.  For anything else, call the same methods from the utility class,
+`ConfigurationProviderUtil`. Be sure you call the utility methods in contexts
+where the portal is guaranteed to be initialized prior to the method call. This
+class is useful in the 
+[scripting console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console),
 for example. Here's an example method that uses the utility class. It comes from
 the export-import service, which will only be called during the import and
 export of content from a running portal:
@@ -72,7 +73,7 @@ through the Configuration menu option in an app accessing through the site
 administration menu. That UI is developed as a portlet configuration view.
 
 `getPortletInstanceConfiguration()`
-: Used to obtain the configuration for an specific portlet instance. Most often
+: Used to obtain the configuration for a specific portlet instance. Most often
 you should not be using this directly and use the convenience method in
 `PortletDisplay` instead as shown below.
 
@@ -91,15 +92,15 @@ Here are a couple real world examples from Liferay’s source code:
       _configurationProvider.getCompanyConfiguration(
          MentionsGroupServiceConfiguration.class, entry.getCompanyId());
 
-Next, you'll learn how to access a portlet's configuration from outside of an
-OSGi component.
+Next, you'll learn a nifty way to to access a portlet instance configuration
+from a JSP.
 
 ## Accessing the Portlet Instance Configuration Through the PortletDisplay [](id=accessing-the-portlet-instance-configuration-through-the-portletdisplay)
 
-Often it's necessary to access a portlet's settings from its JSPs or from Java
-classes that are not OSGi components. To read the settings in
-these cases, a method was added to `PortletDisplay` (available as a
-request object). Here is an example of how to use it:
+Often it's necessary to access portlet instance settings from a JSP or from a
+Java class that isn't an OSGi components To read the settings in these cases, a
+method was added to `PortletDisplay`, which is available as a request object.
+Here is an example of how to use it:
 
     RSSPortletInstanceConfiguration rssPortletInstanceConfiguration =
         portletDisplay.getPortletInstanceConfiguration(
