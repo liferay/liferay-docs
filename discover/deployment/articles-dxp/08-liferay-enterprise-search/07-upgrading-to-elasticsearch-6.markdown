@@ -1,7 +1,7 @@
 # Upgrading to Elasticsearch 6 [](id=upgrading-to-elasticsearch-6)
 
 Elasticsearch 6 is supported for Digital Enterprise subscribers running Fix Pack
-42 or later and for Community Edition users running 7.0 CE GA 6 or greater. If
+42 or later and for Community Edition users running 7.0 CE GA 7 or greater. If
 you're not already running a remote Elasticsearch 2.x server, follow the 
 [installation guide](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch) 
 to install Elasticsearch 6 and the 
