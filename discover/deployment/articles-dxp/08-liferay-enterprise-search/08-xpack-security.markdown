@@ -85,6 +85,8 @@ architecture of
     `elasticsearch.yml`, there's nothing to worry about. See [Elastic's
     documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docs-index_.html#index-creation) for more information on automatic index creation.
 
+3.  Restart Elasticsearch.
+
 Once X-Pack is installed, configure its built-in user passwords.
 
 ## Setting Up X-Pack Users [](id=setting-up-x-pack-users)
@@ -99,17 +101,11 @@ first-use passwords for the first time. To update a password subsequently, use
 Kibana's UI or the 
 [Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/security-api-change-password.html).
 
-The `auto` argument randomly generates passwords for all built-in users:
+The `interactive` argument lets you set the passwords for all built-in users.
+The confioguraiton shown in these articles assumes you set all of the
+passwords to *liferay*. Of course, that's not recommended for production systems.
 
-    ./bin/x-pack/setup-passwords auto
-        Changed password for user kibana
-        PASSWORD kibana = Y?v1Jv^0AO*SKXveriGr
-
-        Changed password for user logstash_system
-        PASSWORD logstash_system = U^zLGC9$N6%6KhUHz^qb
-
-        Changed password for user elastic
-        PASSWORD elastic = GqhoaEUyTM@tp1*wQd~F
+    ./bin/x-pack/setup-passwords interactive
 
 See Elastic's documentation on the 
 [setup-passwords command](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-passwords.html) 
