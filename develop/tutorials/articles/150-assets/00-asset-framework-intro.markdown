@@ -1,14 +1,9 @@
 # Asset Framework [](id=asset-framework)
 
-Liferay's asset framework is a system that allows you to add core Liferay 
-features to your application. For example, if you've built an event management
-application that displays a list of upcoming events, you can use the asset
-framework to let users add tags, categories, or comments to make entries more
-self-descriptive. 
-
-Tags, categories, and comments are just a few of the features in Liferay's
-asset framework. You'll also find it easy to use: you'll be infusing your
-application with these features in no time. 
+Liferay's asset framework allows you to add core Liferay features to your 
+application. For example, if you build an event management application that 
+displays a list of upcoming events, you can use the asset framework to let 
+users add tags, categories, or comments to make entries more self-descriptive. 
 
 As background, the term *asset* refers to any type of content in the portal.
 This could be text, a file, a URL, an image, documents, blog entries, bookmarks,

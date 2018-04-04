@@ -3,9 +3,9 @@
 The 
 [Asset Publisher](/discover/portal/-/knowledge_base/7-1/publishing-assets) 
 lets you order assets by priority. For this to work, 
-however, users must be able to set the asset's priority when creating or editing 
-the asset. For example, when creating or editing web content, users can assign 
-a priority in the Metadata section's Priority field. 
+however, users must be able to set the asset's priority when creating or 
+editing the asset. For example, when creating or editing web content, users can 
+assign a priority in the Metadata section's Priority field. 
 
 ![Figure 1: The Priority field lets users set an asset's priority.](../../images/web-content-categorization.png)
 
@@ -15,9 +15,9 @@ shows you how. Onwards!
 
 ## Add the Priority Field to Your JSP [](id=add-the-priority-field-to-your-jsp)
 
-In the JSP for adding and editing your asset, add the following input field that 
-lets users set the asset's priority. This example also validates the input to 
-make sure the value the user sets is a number higher than zero: 
+In the JSP for adding and editing your asset, add the following input field 
+that lets users set the asset's priority. This example also validates the input 
+to make sure the value the user sets is a number higher than zero: 
 
     <aui:input label="priority" name="assetPriority" type="text" value="<%= priority %>">
         <aui:validator name="number" />
@@ -39,7 +39,8 @@ pass it as the last argument to the `assetEntryLocalService.updateEntry` call in
 your `-LocalServiceImpl`. You can see an example of this in 
 [the `BlogsEntryLocalServiceImpl` class](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-service/src/main/java/com/liferay/blogs/service/impl/BlogsEntryLocalServiceImpl.java)
 of @product@'s Blogs app. The `updateAsset` method takes a `priority` argument,
-which it passes as the last argument to its `assetEntryLocalService.updateEntry` 
+which it passes as the last argument to its 
+`assetEntryLocalService.updateEntry` 
 call: 
 
     @Override

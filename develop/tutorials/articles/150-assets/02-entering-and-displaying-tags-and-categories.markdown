@@ -39,7 +39,7 @@ input process. The `aui:fieldset` tag uses a container that lets users hide
 or show the category and tag input options.
 
 For styling purposes, the `aui:fieldset-group` tag is given the `lexicon`
-markdup view.
+markup view.
 
 Once the tags and categories have been entered, you'll want to show them along
 with the content of the asset. Here's how to display the tags and categories: 
@@ -66,13 +66,13 @@ with the content of the asset. Here's how to display the tags and categories:
         />
     </div>
 
-You'll notice the `portletURL` parameter is used for both tags and categories,
-which supports navigation amongst the two. Each tag that uses this parameter
-becomes a link containing the `portletURL` *and* `tag` or `categoryId` parameter
-value. To implement this, you need to implement the look-up functionality in
-your portlet code. Do this by reading the values of those two parameters and
-using `AssetEntryService` to query the database for entries based on the
-specified tag or category. 
+The `portletURL` parameter is used for both tags and categories, which supports 
+navigation amongst the two. Each tag that uses this parameter becomes a link 
+containing the `portletURL` *and* `tag` or `categoryId` parameter value. To 
+implement this, you must implement the look-up functionality in your portlet 
+code. Do this by reading the values of those two parameters and using 
+`AssetEntryService` to query the database for entries based on the specified 
+tag or category. 
 
 Deploy your changes and add/edit a custom entity in your UI. Your form shows the
 categorization and tag input options in a panel that the user can hide/show. 

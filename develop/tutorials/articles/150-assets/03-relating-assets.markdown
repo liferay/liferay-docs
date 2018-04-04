@@ -1,15 +1,14 @@
 # Relating Assets [](id=relating-assets)
 
-The ability to relate assets is one of the most powerful features of Liferay's
-asset framework. By relating assets, you can connect individual pieces of
-content across your site or portal. This helps your users discover related
-content, particularly when there's an abundance of other available content. For
-example, assets related to a web content article appear alongside that entry in
-the Asset Publisher application.
+Relating assets is a powerful features of Liferay's asset framework. By 
+relating assets, you can connect individual pieces of content across your site 
+or portal. This helps users discover related content, particularly when there's 
+an abundance of other available content. For example, assets related to a web 
+content article appear alongside that entry in the Asset Publisher application.
 
 ![Figure 1: You and your users can find it helpful to relate assets to entities, such as this blogs entry.](../../images/asset-related-content-asset-publisher.png)
 
-This tutorial shows you how to provide a way for authors to relate content.
+Now you'll learn how to provide a way for authors to relate content.
 This tutorial assumes that you've
 [asset enabled](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets-for-custom-entities)
 your appliation. If you've already done this, go ahead and begin relating your
@@ -66,7 +65,7 @@ You'll take care of that in the next step.
 
 ## Relating Assets in the UI [](id=relating-assets-in-the-ui)
 
-You typically implement the UI for linking assets in the JSP that you provide
+You typically implement the UI for linking assets in the JSP where you provide
 users the ability to create and edit your entity, This way only content creators
 can relate other assets to the entity. Related assets are implemented in the JSP
 by using the Liferay UI tag `liferay-ui:input-asset-links` inside of a
@@ -83,7 +82,7 @@ Blogs application:
 Your content authors are able to relate assets once you add this code and
 redeploy your portlet.
 
-The following screenshot shows the Related Assets menu for an appliation. Note
+The following screenshot shows the Related Assets menu for an application. Note
 that it is contained in a collapsible panel titled Related Assets.
 
 ![Figure 2: Your portlet's entity is now available in the Related Assets *Select* menu.](../../images/related-assets-select-menu.png)
@@ -151,8 +150,8 @@ tutorial to learn how to implement that connection.
 
 ## Creating a URL to Your New JSP [](id=creating-a-url-to-your-new-jsp)
 
-Now that you've implemented showing off this asset feature, you must connect
-your application's main view JSP to your entity's view JSP. If your main view JSP
+Now that you've implemented this asset feature, you must connect your 
+application's main view JSP to your entity's view JSP. If your main view JSP
 uses a search container to list your entity instances, you can insert a
 `portlet:renderURL` tag just after the `liferay-ui:search-container-row` tag.
 For example, your `view.jsp` could look like this:

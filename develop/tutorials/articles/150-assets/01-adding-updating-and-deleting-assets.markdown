@@ -22,8 +22,7 @@ entity's closing `</entity>` tag.
 
     <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
 
-Then [run](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
-Service Builder.
+Then [run Service Builder.](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
 
 Now you're ready to implement adding and updating assets!
 
@@ -31,9 +30,8 @@ Now you're ready to implement adding and updating assets!
 
 Your `-LocalServiceImpl` Java class inherits from its parent base class an
 `AssetEntryLocalService` instance; it's assigned to the variable 
-`assetEntryLocalService`. To add your custom entity
-as a Liferay asset, you must invoke the `assetEntryLocalService`'s
-`updateEntry` method. 
+`assetEntryLocalService`. To add your custom entity as a Liferay asset, you 
+must invoke the `assetEntryLocalService`'s `updateEntry` method. 
 
 Here's what the [`updateEntry`](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html#updateEntry-long-long-java.util.Date-java.util.Date-java.lang.String-long-java.lang.String-long-long:A-java.lang.String:A-boolean-boolean-java.util.Date-java.util.Date-java.util.Date-java.util.Date-java.lang.String-java.lang.String-java.lang.String-java.lang.String-java.lang.String-java.lang.String-int-int-java.lang.Double-)
 method's signature looks like:
