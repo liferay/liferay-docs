@@ -100,6 +100,10 @@ public class GuestbookStagedModelDataHandler
 
 		Guestbook existingGuestbook = fetchMissingReference(uuid, groupId);
 
+		if (existingGuestbook == null) {
+			return;
+		}
+
 		Map<Long, Long> guestbookIds =
 			(Map<Long, Long>) portletDataContext.getNewPrimaryKeysMap(
 				Guestbook.class);

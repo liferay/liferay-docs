@@ -120,6 +120,10 @@ public class EntryStagedModelDataHandler
 
 		Entry existingEntry = fetchMissingReference(uuid, groupId);
 
+		if (existingEntry == null) {
+			return;
+		}
+
 		Map<Long, Long> entryIds =
 			(Map<Long, Long>) portletDataContext.getNewPrimaryKeysMap(
 				Entry.class);
