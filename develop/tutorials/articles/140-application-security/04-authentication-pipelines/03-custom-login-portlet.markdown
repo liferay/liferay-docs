@@ -7,8 +7,9 @@ yourself with that, please see the
 [portlets section of tutorials](/develop/tutorials/-/knowledge_base/7-0/portlets). 
 
 This tutorial shows only the relevant parts of a 
-[Liferay MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet) 
-that authenticates the user. You'll learn how to call @product@'s 
+[Liferay MVC
+Portlet](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet) that
+authenticates the user. You'll learn how to call the 
 [authentication pipeline](/develop/tutorials/-/knowledge_base/7-0/authentication-pipelines) 
 and then redirect the user to a location of your choice. 
 
@@ -73,10 +74,10 @@ already logged in:
         </c:otherwise>
     </c:choose>
 
-Note that in the form, authentication by email address (@product@'s default
-setting) is hard-coded, as this is an example project. The current page is sent
-as a hidden field on the form so the portlet can redirect the user to it, but
-you can of course set this to any value you want. 
+Note that in the form, authentication by email address (the default setting) is
+hard-coded, as this is an example project. The current page is sent as a hidden
+field on the form so the portlet can redirect the user to it, but you can of
+course set this to any value you want. 
 
 The portlet handles all processing of this form using a single 
 [Action Command](/develop/tutorials/-/knowledge_base/7-0/mvc-action-command) 

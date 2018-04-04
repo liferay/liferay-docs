@@ -1,11 +1,10 @@
 # Password-Based Authentication Pipelines [](id=password-based-authentication-pipelines)
 
-By default, once a user submits credentials to @product@, those credentials are
-checked against @product@'s database, though you can also delegate
-authentication to an LDAP server. To use some other system in your environment 
-instead of or in addition to checking credentials against @product@'s database, 
-you can write an `Authenticator` and insert it as a step in @product@'s 
-authentication pipeline. 
+By default, once a user submits credentials, those credentials are checked
+against @product@'s database, though you can also delegate authentication to an
+LDAP server. To use some other system in your environment instead of or in
+addition to checking credentials against the database, you can write an
+`Authenticator` and insert it as a step in the authentication pipeline. 
 
 Because the `Authenticator` is checked by the Login Portlet, you can't use this
 approach if the user must be redirected to the external system or needs a token
@@ -15,8 +14,8 @@ to authenticate. In those cases, you should use an
 
 `Authenticator`s let you do these things: 
 
-- Log into @product@ with a username and password maintained in an external 
-    system 
+- Log into @product@ with a user name and password maintained in an external 
+  system 
 - Make secondary user authentication checks 
 - Perform additional processing when user authentication fails 
 
@@ -27,11 +26,11 @@ Read on to learn how to create an `Authenticator`.
 `Authenticator`s are implemented for various steps in the authentication 
 pipeline. Here are the steps: 
 
-1.  `auth.pipeline.pre`: Comes before default authentication to the @product@ 
-    database. In this step, you can instruct @product@ to skip credential 
-    validation against the @product@ database. Implemented by `Authenticator`. 
+1.  `auth.pipeline.pre`: Comes before default authentication to the database. In
+    this step, you can skip credential validation against the database.
+    Implemented by `Authenticator`. 
 
-2.  Default (optional) authentication to the @product@ database. 
+2.  Default (optional) authentication to the database. 
 
 3.  `auth.pipeline.post`: Further (secondary, tertiary) authentication checks.
     Implemented by `Authenticator`. 
@@ -84,21 +83,21 @@ the `@Component` annotation's contents:
   `Authenticator`s must do this. 
 
 The three methods below the annotation run based on how you've configured 
-authentication: by email address (the default), by screen name, or by user ID. 
-All the methods throw an `AuthException` in case the `Authenticator` is unable 
-to perform its task--perhaps if the system it's authenticating against is 
-unavailable or if some dependency can't be found. The methods in this barebones 
-example return success in all cases. If you deploy its module, it has no effect. 
-Naturally, you'll want to provide more functionality. Next is an example that 
-shows you how to do that. 
+authentication: by email address (the default), by screen name, or by user ID.
+All the methods throw an `AuthException` in case the `Authenticator` can't
+perform its task: if the system it's authenticating against is unavailable or if
+some dependency can't be found. The methods in this barebones example return
+success in all cases. If you deploy its module, it has no effect. Naturally,
+you'll want to provide more functionality. Next is an example that shows you how
+to do that. 
 
 ## Creating an Authenticator [](id=creating-an-authenticator)
 
 This example is an `Authenticator` that only allows users whose email addresses 
 end with *@liferay.com* or *@example.com*. You can implement this using one 
-module that does everything. If you think other modules might be able to use the 
-functionality that validates the email addresses, you might create two modules: 
-one to implement the `Authenticator` and one to validate email addresses. This 
+module that does everything. If you think other modules might use the
+functionality that validates the email addresses, you should create two modules:
+one to implement the `Authenticator` and one to validate email addresses. This
 example shows the two module approach. 
 
 To create an `Authenticator`, create a module for your implementation. The most 
@@ -209,14 +208,14 @@ Since the `Authenticator` is the most relevant, examine it first:
 This time, rather than stubs, the three authentication methods contain 
 functionality. The `authenticateByEmailAddress` method directly checks the email 
 address provided by the Login Portlet. The other two methods, 
-`authenticateByScreenName` and `authenticateByUserId` call @product@'s 
-`UserLocalService` to look up the user's email address before checking it. This 
-service is injected by the OSGi container because of the `@Reference` 
-annotation. Note that the validator is also injected in this same manner, though 
-it's configured not to fail if the implementation can't be found. This allows 
-this module to start regardless of its dependency on the validator 
-implementation. In this case, this is safe because the error is handled by 
-throwing an `AuthException` and logging the error. 
+`authenticateByScreenName` and `authenticateByUserId` call `UserLocalService` to
+look up the user's email address before checking it. The OSGi container injects
+this service because of the `@Reference` annotation. Note that the validator is
+also injected in this same manner, though it's configured not to fail if the
+implementation can't be found. This allows this module to start regardless of
+its dependency on the validator implementation. In this case, this is safe
+because the error is handled by throwing an `AuthException` and logging the
+error. 
 
 Why would you want to do it this way? To err gracefully. Because this is an 
 `auth.pipeline.post` `Authenticator`, you presumably have other `Authenticator`s 
