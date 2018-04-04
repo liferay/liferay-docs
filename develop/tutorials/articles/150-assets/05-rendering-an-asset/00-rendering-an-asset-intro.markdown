@@ -1,21 +1,21 @@
 # Rendering an Asset [](id=rendering-an-asset)
 
-There are several options you have for rendering an asset in @product@. Before
-setting up the rendering process for your asset, make sure it's added to the
-asset framework by following the
+There are several options for rendering an asset. Before you set up the 
+rendering process for your asset, make sure it's added to the asset framework 
+by following the
 [Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets-for-custom-entities)
-tutorial. Once you have your asset added to the framework, @product@ can
-render the asset by default using the Asset Publisher application. The default
-rendering process @product@ provides, however, only displays the asset's title
-and description text. Any further rendering of your asset requires additional
-coding. For instance, you might want these additional things:
+tutorial. Once you add your asset to the framework, @product@ can render the 
+asset by default using the Asset Publisher application. The default rendering 
+process, however, only displays the asset's title and description text. 
+Anything requires additional coding. For instance, you might want these 
+additional things:
 
 - An edit feature for modifying an asset.
 - Viewing an asset in its original context (e.g., a blog
-  in the Blogs application; a post in the Message Boards application).
+    in the Blogs application; a post in the Message Boards application).
 - Embedding images, videos, and audio.
 - Restricting access to users who do not have permissions to interact with the
-  asset.
+    asset.
 - Allowing users to comment on the asset. 
 
 Liferay lets you dictate your asset's rendering capabilities by providing the
@@ -26,7 +26,7 @@ asset renderer functioning properly for your asset:
 
 - Create an asset renderer for your custom asset.
 - Create an asset renderer factory to create an instance of the asset renderer
-  for each asset entity.
+    for each asset entity.
 
 ![Figure 1: The asset renderer factory creates an asset renderer for each asset instance.](../../images/asset-renderer-diagram.png)
 
