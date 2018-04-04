@@ -76,9 +76,9 @@ In this example, it's 2.4.0.
 
 +$$$
 
-**Elasticsearch 6.1:** Elasticsearch 6.1.x is supported for @product@ systems
-running Fix Pack 42 or later, although version 2.x remains the default, embedded
-version. To install Elasticsearch 6.1.x, 
+**Elasticsearch 6.1:** Elasticsearch 6.1.x is supported for Liferay Digital
+Enterprise systems running Fix Pack 42 or later, although version 2.x remains
+the default, embedded version. To install Elasticsearch 6.1.x, 
 
 1.  Make sure you're running FP-42 or later.
 
