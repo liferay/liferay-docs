@@ -592,7 +592,7 @@ table reflect your selections here.
 The next section shows you how to use environment tokens to activate servers 
 with LCS. 
 
-## Using Environment Tokens [](id=using-environment-tokens)
+## Understanding Environment Tokens [](id=using-environment-tokens)
 
 To activate a server in an environment, you must use that environment's token 
 file. LCS Administrators and Environment Managers can generate and distribute 
@@ -601,6 +601,14 @@ the server in the environment. When the server starts up, it uses the token to
 connect to LCS and consume an activation key from the environment's 
 subscription. This lets you activate servers automatically on startup--no 
 interaction is required. 
+
++$$$
+
+**Note:** For instructions on using and managing your environment tokens, see 
+the instructions on 
+[activating your server with LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs). 
+
+$$$
 
 There are a few things to keep in mind when using environment tokens: 
 
@@ -652,49 +660,7 @@ server.
 
 $$$
 
-To manage your environment tokens, select your environment on the left and then 
-select the *Registration* tab. Follow these steps to use a token to activate a 
-server in LCS: 
-
-1.  In the Services section, select the LCS services that you want to use with 
-    all servers that connect to this environment. When you generate/regenerate 
-    the environment token file, your service selections are embedded in it. 
-    Portal analytics, fix pack management, and portal property analysis are 
-    selected by default. Note that although 
-    [LCS doesn't access security sensitive properties](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers), 
-    you may have additional properties you want to prevent LCS from analyzing. 
-    Enter them into the box that appears when you select *Show Blacklisted 
-    Properties*. 
-
-2.  What you do now depends on what you did in step 1 and whether the 
-    environment has an existing token: 
-
-    -   **No token:** Generate the token. 
-    -   **Existing token, and changes to LCS services selected:** Regenerate the 
-        token. Regenerating a token causes all servers using the old token to 
-        disconnect from LCS. You must reconnect them using the new token. 
-    -   **Existing token, and no changes to LCS services selected:** No action 
-        required. 
-
-3.  Download the token. 
-
-4.  Ensure that you've addressed 
-    [the LCS preconfiguration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration). 
-
-5.  Shut down your server if it's running. 
-
-6.  Place the token file in your server's `[Liferay_Home]/data` folder, and 
-    then start the server. On startup, the LCS client app automatically connects 
-    your server to LCS. Upon connection, your server activates by consuming an 
-    activation key from the environment's subscription type. You should see this 
-    in your LCS project's Subscriptions tab. 
-
-![Figure 21: An environment's Registration tab lets you select the LCS services to use with your @product@ servers that connect to that environment.](../../images-dxp/lcs-environment-token.png)
-
-As you've now seen, LCS is a powerful tool that assists you in the management of 
-your @product@ servers. In addition to activating your @product@ servers, LCS 
-lets you apply fix packs with just a single click and a server restart--a 
-process that even works across a cluster. You also get a one stop shop for 
-monitoring the performance of your @product@ servers. Metrics like JVM 
-performance, @product@ page and portlet load times, and number of current 
-threads give you an inside look at how your server is running. 
+As you've now seen, LCS is a powerful tool that helps you manage your @product@ 
+servers. In addition to activating your servers, LCS lets you apply fix packs 
+and monitor your servers' performance. If you have any problems with LCS, see 
+[the LCS troubleshooting article](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection). 
