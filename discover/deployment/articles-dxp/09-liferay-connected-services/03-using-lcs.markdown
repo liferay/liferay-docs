@@ -1,45 +1,42 @@
 # Using LCS [](id=using-lcs)
 
-Once your LCS client is connected to LCS, you can get down to the business that 
-LCS was designed for--managing and monitoring your @product@ instances. If 
-you're not already there, log in with your account on 
+Once your @product@ server is connected to LCS, you can get down to the business 
+that LCS is designed for--managing and monitoring your servers. If you're not 
+already there, log in with your account on 
 [lcs.liferay.com](https://lcs.liferay.com). This is where you'll apply updates, 
 view server metrics, manage environments, and more. 
 
-This article's following sections each detail one or more of the features 
-available in LCS: 
+This article's sections each detail one or more of LCS's features: 
 
-- [**What LCS Stores About Your @product@ Servers:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers)
-  For LCS to work, the LCS servers must store certain information about your 
-  @product@ servers. Sensitive data, however, isn't stored on the LCS servers. 
-  Learn exactly what data LCS does and doesn't store. 
+-   [**What LCS Stores About Your @product@ Servers:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers)
+    For LCS to work, the LCS servers must store certain information about your 
+    servers. Sensitive data, however, isn't stored on the LCS servers. This 
+    section describes the data that LCS does and doesn't store. 
 
-- [**Managing LCS Users in Your Project:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-lcs-users-in-your-project)
-  Learn how to manage your LCS project's users by assigning them roles. 
+-   [**Managing LCS Users in Your Project:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-lcs-users-in-your-project)
+    Learn how to manage your LCS project's users by assigning them roles. 
 
-- [**Using the Dashboard:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-the-dashboard)
-  Learn how to manage projects, environments, and servers in LCS. This includes 
-  applying fix packs, monitoring server status, viewing server metrics, and 
-  more. 
+-   [**Using the Dashboard:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-the-dashboard)
+    Learn how to manage projects, environments, and servers in LCS. This 
+    includes applying fix packs, monitoring server status, viewing server 
+    metrics, and more. 
 
-- [**Using Web Notifications:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-web-notifications) 
-  LCS displays web notifications that you can view by clicking the bell icon 
-  next to the user menu in the Dockbar. Learn how to manage these. 
+-   [**Using Web Notifications:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-web-notifications) 
+    LCS displays web notifications that you can view by clicking the bell icon 
+    next to the user menu in the Dockbar. Learn how to manage these. 
 
-- [**Managing Your LCS Account:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-your-lcs-account)
-  Learn how to manage your LCS account. This includes configuring LCS to send 
-  you notification emails when specific events occur in your LCS projects, and 
-  setting general account preferences. 
+-   [**Managing Your LCS Account:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-your-lcs-account)
+    Learn how to manage your LCS account. This includes configuring LCS to send 
+    you notification emails when specific events occur in your LCS projects, and 
+    setting general account preferences. 
 
-- [**Managing @product@ Subscriptions:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions)
-  Learn how to view and manage your @product@ subscriptions for the servers in 
-  your LCS project. 
+-   [**Managing @product@ Subscriptions:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions)
+    Learn how to view and manage your @product@ subscriptions for the servers in 
+    your LCS project. 
 
-- [**Using Environment Tokens:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens)
-  Learn how to use environment tokens to automatically activate your @product@ 
-  servers with LCS. 
-
-First, you'll learn what information LCS stores about your @product@ servers.
+-   [**Understanding Environment Tokens:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens)
+    Learn about the environment tokens that you use to connect your servers to 
+    LCS. 
 
 ## What LCS Stores About Your @product@ Servers [](id=what-lcs-stores-about-your-liferay-servers)
 
@@ -101,7 +98,7 @@ app. To add users to your project, you must contact Liferay support.
 
 $$$
 
-![Figure 4: The Users tab lets you manage the LCS users in your project.](../../images-dxp/lcs-users.png)
+![Figure 1: The Users tab lets you manage the LCS users in your project.](../../images-dxp/lcs-users.png)
 
 The *Users* tab displays a list of the users in your project. This list includes 
 each user's name, email, image, LCS roles, and a *Manage Roles* button. Each LCS 
@@ -139,7 +136,7 @@ Install Fix Packs in a Particular Environment | true | true | false |
 Now that you know what roles are available in an LCS project, and what they do, 
 you're ready to learn how to manage them.
 
-### Managing LCS Roles
+### Managing LCS Roles [](id=managing-lcs-roles)
 
 Follow these steps to manage a user's LCS roles:
 
@@ -157,7 +154,7 @@ LCS Environment Viewer) and the LCS Administrator role at the same time.
 
 $$$
 
-![Figure 5: You can assign or revoke a user's LCS roles.](../../images-dxp/lcs-user-roles.png)
+![Figure 2: You can assign or revoke a user's LCS roles.](../../images-dxp/lcs-user-roles.png)
 
 Great! Now you know how to manage users and roles in your LCS projects. Now it's 
 time to get to the heart of LCS: the Dashboard. 
@@ -183,7 +180,7 @@ message appears for a server when the server is offline. Status messages also
 appear for servers when fix packs are available, monitoring is unavailable, the 
 patching tool is unavailable, or other events occur that relate to LCS. 
 
-![Figure 5: The LCS project view shows an overview of your LCS project.](../../images-dxp/lcs-project-view.png)
+![Figure 3: The LCS project view shows an overview of your LCS project.](../../images-dxp/lcs-project-view.png)
 
 LCS lists the environments in your project on the left side of the screen. You 
 can also create new environments here by clicking the *Add Environment* tab 
@@ -240,7 +237,7 @@ Complete these fields to create your environment:
 
 When you're finished with your selections, click *Create Environment*. 
 
-![Figure 6: The New Environment popup.](../../images-dxp/lcs-new-environment.png)
+![Figure 4: The New Environment popup.](../../images-dxp/lcs-new-environment.png)
 
 Next, you'll learn how to manage your environments. 
 
@@ -277,7 +274,7 @@ The UI is segmented into three tabs:
     button to save any changes you make in the Environment Settings tab. You can 
     also delete the environment by clicking *Delete Environment*. 
 
-![Figure 7: The LCS environment view shows an overview of an LCS environment.](../../images-dxp/lcs-environment-view.png)
+![Figure 5: The LCS environment view shows an overview of an LCS environment.](../../images-dxp/lcs-environment-view.png)
 
 Regardless of the tab you're in, the left side of the screen displays a list of 
 the environment's servers. To view a server's settings, click the server's gear 
@@ -312,7 +309,7 @@ benign `NullPointerException` for the LCS `TaskSchedulerServiceImpl` and
 
 $$$
 
-#### Page Analytics
+#### Page Analytics [](id=page-analytics)
 
 Page Analytics is displayed by default when you enter server view. Page 
 Analytics shows page views and load times for the selected site and time period. 
@@ -339,9 +336,9 @@ background is red for values above 3,000 ms, orange for values from 2,000 to
 3,000 ms, and green for values less than 2,000 ms. Likewise, the table displays 
 all load times greater than 3,000 ms in red text. 
 
-![Figure 8: The Page Analytics interface in the LCS Server view.](../../images-dxp/lcs-page-analytics-01.png)
+![Figure 6: The Page Analytics interface in the LCS Server view.](../../images-dxp/lcs-page-analytics-01.png)
 
-#### Snapshot Metrics
+#### Snapshot Metrics [](id=snapshot-metrics)
 
 To view other metrics and statistics of your server's performance, click the 
 *Snapshot Metrics* tab near the top of the page. These metrics are broken down 
@@ -355,7 +352,7 @@ portlets in your server. The Cache category lists Liferay Single VM metrics and
 Hibernate metrics. The following screenshot shows the statistics in the Portlets 
 category.
 
-![Figure 9: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images-dxp/lcs-server-metrics-application-portlets.png)
+![Figure 7: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images-dxp/lcs-server-metrics-application-portlets.png)
 
 The JVM category, as its name indicates, shows statistics about the JVM running 
 on your server. This includes data on the garbage collector and memory. The 
@@ -364,7 +361,7 @@ collector item. The memory metrics are presented in a bar chart that shows the
 usage of the PS Survivor Space, PS Old Gen, PS Eden Space, Code Cache, and PS 
 Perm Gen.
 
-![Figure 10: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images-dxp/lcs-server-metrics-jvm.png)
+![Figure 8: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images-dxp/lcs-server-metrics-jvm.png)
 
 Server is the third category in Snapshot Metrics. The Server category shows 
 additional information about how your server is running. For example, a 
@@ -372,22 +369,22 @@ horizontal bar graph shows the number of current threads running on your server.
 Similarly, horizontal bar graphs are used to represent the JDBC connection 
 pools. 
 
-![Figure 11: The LCS server metrics show current threads and JDBC connection pools.](../../images-dxp/lcs-metrics-server.png)
+![Figure 9: The LCS server metrics show current threads and JDBC connection pools.](../../images-dxp/lcs-metrics-server.png)
 
 Note that in Snapshot Metrics, the application and garbage collector metrics are 
 based on data collected by LCS from server registration to the present. Memory 
 and server metrics, however, show only the current state. 
 
-#### Fix Packs
+#### Fix Packs [](id=fix-packs)
 
 To view your server's fix packs, click the Fix Packs tab near the top of the 
 page. The available and installed fix packs appear in separate tables. The 
 available fix packs table functions exactly like the Fix Packs table in 
 environment view for downloading and installing fix packs. 
 
-![Figure 12: The Fix Packs tab displays your server's available and installed fix packs.](../../images-dxp/lcs-server-fix-packs.png)
+![Figure 10: The Fix Packs tab displays your server's available and installed fix packs.](../../images-dxp/lcs-server-fix-packs.png)
 
-#### Portal Properties
+#### Portal Properties [](id=portal-properties)
 
 The *Portal Properties* tab lets you view your portal's property values in a 
 searchable table. This gives you a convenient display for seeing exactly what 
@@ -413,9 +410,9 @@ top-right of the table. For example, by checking the *Show Default Values* and
 custom property values. To show only the custom values, select only *Show Custom 
 Values*. 
 
-![Figure 13: Click the gear icon to select the type of portal properties to show in the table.](../../images-dxp/lcs-server-portal-properties.png)
+![Figure 11: Click the gear icon to select the type of portal properties to show in the table.](../../images-dxp/lcs-server-portal-properties.png)
 
-#### Details
+#### Details [](id=details)
 
 The *Details* tab shows general information about your server. There are three 
 tabs under Details: *Software*, *Java*, and *Hardware*. Each shows information, 
@@ -423,14 +420,14 @@ respectively, about your @product@ installation, Java installation, and
 hardware. This information is useful to the Liferay Support team in the event 
 that you need their assistance. 
 
-![Figure 14: The Details tab shows information about your server.](../../images-dxp/lcs-server-details.png)
+![Figure 12: The Details tab shows information about your server.](../../images-dxp/lcs-server-details.png)
 
-#### Server Settings
+#### Server Settings [](id=server-settings)
 
 Lastly, the *Server Settings* tab lets you view and edit your server's name, 
 location, and description. You can also unregister your server from LCS. 
 
-![Figure 15: You can use the Server Settings tab to give your server a fun name.](../../images-dxp/lcs-server-settings.png)
+![Figure 13: You can use the Server Settings tab to give your server a fun name.](../../images-dxp/lcs-server-settings.png)
 
 As you can see, the LCS Dashboard is a powerful tool that greatly simplifies 
 the update process and also gives you extensive information on how your servers 
@@ -449,7 +446,7 @@ see your notification history, click the *Notifications History* button. You can
 also access your notification history by selecting *My Account* from the user 
 menu in the Dockbar. 
 
-![Figure 15: Web notifications let you know what's happening in your LCS projects.](../../images-dxp/lcs-user-web-notifications.png)
+![Figure 14: Web notifications let you know what's happening in your LCS projects.](../../images-dxp/lcs-user-web-notifications.png)
 
 Next, you'll learn how to manage your LCS account. 
 
@@ -474,7 +471,7 @@ Dockbar. This takes you to a UI that contains three tabs:
     other existing rules. Each has an Actions button that lets you edit or 
     delete it. 
 
-    ![Figure 16: You can add rules to determine the events that trigger notifications.](../../images-dxp/lcs-add-notification-rule.png)
+    ![Figure 15: You can add rules to determine the events that trigger notifications.](../../images-dxp/lcs-add-notification-rule.png)
 
 -   **Notification History:** Displays your web notification history in a 
     searchable table. You can also select the date range from which to display 
@@ -484,7 +481,7 @@ Dockbar. This takes you to a UI that contains three tabs:
     change your account's language, time zone, and default LCS project. Your 
     default LCS project is the one shown each time you log in to LCS. 
 
-    ![Figure 17: You can change your LCS account's general preferences.](../../images-dxp/lcs-account-preferences.png)
+    ![Figure 16: You can change your LCS account's general preferences.](../../images-dxp/lcs-account-preferences.png)
 
 Great! Now you know how to manage your LCS account. Next, you'll learn how to 
 use LCS to work with your @product@ subscriptions. 
@@ -506,7 +503,7 @@ You can access these features from the *Subscriptions* tab on the upper-left of
 the LCS site. This tab contains two other tabs: *Details* and *Elastic 
 Subscriptions*. 
 
-![Figure 18: LCS lets you view and manage your subscriptions.](../../images-dxp/lcs-subscriptions.png)
+![Figure 17: LCS lets you view and manage your subscriptions.](../../images-dxp/lcs-subscriptions.png)
 
 There are four tables in the *Details* tab: 
 
@@ -578,7 +575,7 @@ be set as elastic when it's created. For more information, see the
 
 $$$
 
-![Figure 20: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../images-dxp/lcs-elastic-subscriptions.png)
+![Figure 18: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../images-dxp/lcs-elastic-subscriptions.png)
 
 The *Elastic Subscriptions* tab displays the number of elastic servers online 
 and the uptime details for each. A graph shows the number of elastic servers 

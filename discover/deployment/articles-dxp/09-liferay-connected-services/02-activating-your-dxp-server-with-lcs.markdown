@@ -1,31 +1,29 @@
 # Activating Your @product@ Server with LCS [](id=registering-your-dxp-server-with-lcs)
 
-Once you've addressed 
-[the LCS preconfiguration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration), 
-you're ready to activate your @product@ server with LCS. You'll use an 
-[LCS environment token](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens) 
-to do this: 
+Follow these steps to activate your @product@ server with LCS: 
 
-1.  Log in to 
+1.  Complete the 
+    [LCS preconfiguration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration). 
+
+2.  Log in to 
     [lcs.liferay.com](https://lcs.liferay.com). 
     This takes you to your company's LCS project. If your company has multiple 
     projects, select the one you want to activate this server under from the 
-    user menu at the top right. 
+    menu to the right of the Dashboard tab.  
 
-    ![Figure 1: Your company's LCS projects are shown under *Manage Projects* in your user menu.](../../images-dxp/lcs-user-menu-manage-projects.png)
+    ![Figure 1: Select your LCS project from the menu highlighted by the red box in this screenshot.](../../images-dxp/lcs-select-project.png)
 
-2.  Select or create the environment to activate your server under. When 
+3.  Select or create the environment to activate your server under. When 
     activated, your server will consume an activation key from the subscription 
     type assigned to the environment. Note that a subscription type can only be 
     assigned to an environment when creating the environment. If you have 
-    sufficient permissions in your company's project, you can create a new 
-    environment by selecting the *Add Environment* tab. 
-    [Click here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#creating-an-environment) 
-    for instructions on creating an environment. 
+    sufficient permissions in your company's project, you can 
+    [create a new environment](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#creating-an-environment) 
+    by selecting *Add Environment*. 
 
     ![Figure 2: You must activate your server in an LCS environment. The red box in this screenshot highlights environments.](../../images-dxp/lcs-registration-select-environment.png)
 
-3.  Select the environment's *Registration* tab. This is where you manage and 
+4.  Select the environment's *Registration* tab. This is where you manage and 
     download the 
     [environment's token file](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens), 
     which you'll use to activate servers in the environment. 
@@ -43,7 +41,7 @@ to do this:
 
     ![Figure 3: An environment's Registration tab lets you manage the token file used to activate your server in the environment.](../../images-dxp/lcs-registration.png)
 
-4.  What you do now depends on what you did in the previous step and whether the 
+5.  What you do now depends on what you did in the previous step and whether the 
     environment has an existing token: 
 
     -   **No token:** Generate the token. 
@@ -53,18 +51,18 @@ to do this:
     -   **Existing token, and no changes to LCS service selections:** No action 
         required. 
 
-5.  Download the token. 
-
-6.  Ensure that you've addressed 
-    [the LCS preconfiguration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration). 
+6.  Download the token. 
 
 7.  Shut down your server if it's running. 
 
-8.  Place the token file in your server's `[Liferay_Home]/data` folder, and 
-    then start the server. On startup, the LCS client app automatically connects 
-    your server to LCS. Upon connection, your server activates by consuming an 
-    activation key from the environment's subscription type. You should see this 
-    in your LCS project's Subscriptions tab. 
+8.  Place the token file in your server's `[Liferay Home]/data` folder, and 
+    then start the server. Note that 
+    [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
+    is usually the parent folder of the application server's folder. On startup, 
+    the LCS client app automatically connects your server to LCS. Upon 
+    connection, your server activates by consuming an activation key from the 
+    environment's subscription type. You should see this in your LCS project's 
+    Subscriptions tab. 
 
 9.  Celebrate! Your @product@ server is activated and connected to LCS. If for 
     some reason it isn't, see the 
@@ -84,7 +82,7 @@ provide temporary activation keys that don't require LCS.
 
 $$$
 
-## Determining Your Server's LCS Connection Status
+## Determining Your Server's LCS Connection Status [](id=determining-your-servers-lcs-connection-status)
 
 In your @product@ instance, you can view your LCS connection status in the LCS 
 client app. Access the client by clicking *Control Panel* &rarr; 
