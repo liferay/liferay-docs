@@ -6,8 +6,10 @@ for securing and monitoring Elasticsearch clusters. If you use Elasticsearch,
 you should secure it with X-Pack. The security features of X-Pack include
 authenticating access to the Elasticsearch cluster's data and encrypting
 Elasticsearch's internal and external communications. These are necessary
-security features for most production systems. A Liferay Enterprise
-Search Premium subscription is necessary for this integration. Contact
+security features for most production systems. A Liferay Enterprise Search
+Premium subscription gets you access to both monitoring and security, while a
+Liferay Enterprise Search Standard subscription gets you the monitoring
+integration. Contact
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
 Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
@@ -19,7 +21,7 @@ Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
     [encryption](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#configuring-tls).
 
 3.  Download and install the 
-[Liferay Connector to X-Pack Security](https://web.liferay.com/marketplace) 
+[Liferay Connector to X-Pack Security](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
 [Elastic Stack 6.x]. 
 
 4.  Configure the X-Pack connector with the proper credentials and encryption
@@ -181,9 +183,11 @@ adapter in @product@.
 
 ## Install and Configure the Liferay Connector to X-Pack Security [](id=install-and-configure-the-liferay-connector-to-x-pack-security)
 
-If you have a Liferay Enterprise Search Premium subscription, download the
-Liferay Connector to X-Pack Security [Elastic Stack 6.x]. Install the LPKG file
- by copying it into the `Liferay Home/deploy` folder. That's all there is to it.
+If you have a Liferay Enterprise Search Premium subscription, 
+[download](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
+the Liferay Connector to X-Pack Security [Elastic Stack 6.x]. Install the LPKG
+file by copying it into the `Liferay Home/deploy` folder. That's all there is to
+it.
 
 To configure the X-Pack adapter, navigate to *Control Panel*
 &rarr; *Configuration* &rarr; *System Settings*. Find the *Foundation* category and
