@@ -183,7 +183,7 @@ can find Elasticsearch on the network.
 +$$$
 
 **Elasticsearch 6.1:** Before continuing, install the 
-[Liferay Connector for Elasticsearch 6 application](https://web.liferay.com/marketplace) from Liferay Marketplace and
+[Liferay Connector to Elasticsearch 6 application](https://web.liferay.com/marketplace) from Liferay Marketplace and
 stop the default Elasticsearch 2.x adapter, which connects to Elasticsearch 2.x.
 
 1.  Navigate to *Control Panel* &rarr; *Apps* &rarr; *App Manager*.
