@@ -537,7 +537,7 @@ caption {
   <tr>
     <th rowspan="1">Application List:</th>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/application-list/com.liferay.application.list.taglib/liferay-application-list/tld-summary.html" target="_blank">
+       <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-application-list/tld-summary.html" target="_blank">
        liferay-application-list<span class="opens-new-window-accessible"> (Opens New Window) </span>
        </a>
       </td>
@@ -546,23 +546,24 @@ caption {
   <tr>
     <th rowspan="2">Assets:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/asset/com.liferay.asset.taglib/liferay-asset/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-asset/tld-summary.html" target="_blank">
         liferay-asset<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
   </tr>
   <tr>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/trash/com.liferay.trash.taglib/liferay-trash/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-trash/tld-summary.html" target="_blank">
         liferay-trash<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
   </tr>
-
+  
+<!-- Uncomment when the taglibs are published. Jim
   <tr>
     <th rowspan="1">Forms:</th>
     <td>
-       <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/forms-and-workflow/dynamic-data-mapping/com.liferay.dynamic.data.mapping.taglib/liferay-ddm/tld-summary.html" target="_blank">
+       <a href="@app-ref@/forms-and-workflow/liferay-ddm/tld-summary.html" target="_blank">
 	liferay-ddm<span class="opens-new-window-accessible"> (Opens New Window) </span>
 	</a>
     </td>
@@ -571,23 +572,24 @@ caption {
   <tr>
     <th rowspan="2">Foundation:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/foundation/map/com.liferay.map.taglib/liferay-map/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/foundation/liferay-map/tld-summary.html" target="_blank">
         liferay-map<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
   </tr>
   <tr>
     <td>
-	<a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/foundation/com.liferay.frontend.taglib/com.liferay.frontend.taglib/" target="_blank">
+	<a href="@app-ref@/foundation/liferay-frontend/tld-summary.html" target="_blank">
        liferay-frontend<span class="opens-new-window-accessible"> (Opens New Window) </span>
        </a>
     </td>
   </tr>
+-->
 
   <tr>
     <th rowspan="1">Import, Export, &amp; Staging:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/staging/com.liferay.staging.taglib/liferay-staging/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-staging/tld-summary.html" target="_blank">
         liferay-staging<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -596,7 +598,7 @@ caption {
   <tr>
     <th rowspan="1">Item Selector:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/collaboration/item-selector/com.liferay.item.selector.taglib/liferay-item-selector/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/collaboration/latest/taglibdocs/liferay-item-selector/tld-summary.html" target="_blank">
         liferay-item-selector<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -605,7 +607,7 @@ caption {
   <tr>
     <th rowspan="1">Product Navigation:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/product-navigation/com.liferay.product.navigation.taglib/liferay-product-navigation/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-product-navigation/tld-summary.html" target="_blank">
         liferay-product-navigation<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -614,14 +616,14 @@ caption {
   <tr>
     <th rowspan="2">Sites:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-layout/tld-summary.html" target="_blank">
         liferay-layout<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
   </tr>
   <tr>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/web-experience/site-navigation/com.liferay.site.navigation.taglib/liferay-site-navigation/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/web-experience/latest/taglibdocs/liferay-site-navigation/tld-summary.html" target="_blank">
         liferay-site-navigation<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
@@ -630,7 +632,7 @@ caption {
   <tr>
     <th rowspan="1">Social:</th>
     <td>
-	 <a href="https://docs.liferay.com/ce/portal/7.0-latest/taglibs/modules/apps/collaboration/flags/com.liferay.flags.taglib/liferay-flags/tld-summary.html" target="_blank">
+	 <a href="@app-ref@/collaboration/latest/taglibdocs/liferay-flags/tld-summary.html" target="_blank">
         liferay-flags<span class="opens-new-window-accessible"> (Opens New Window) </span>
         </a>
     </td>
