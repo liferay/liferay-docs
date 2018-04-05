@@ -1,4 +1,4 @@
-# The Liferay Theme Generator [](id=themes-generator)
+# Creating Themes [](id=creating-themes)
 
 The Liferay Theme Generator lets you create themes, themelets, layout templates 
 and more. There are a few dependencies required to run the generator. If you 
