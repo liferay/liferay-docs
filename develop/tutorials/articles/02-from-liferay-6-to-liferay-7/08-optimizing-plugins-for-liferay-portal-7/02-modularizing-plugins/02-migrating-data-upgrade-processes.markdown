@@ -1,12 +1,12 @@
 # Migrating Data Upgrade Processes to the New Framework for Modules [](id=optimizing-app-upgrade-processes)
 
-When you make changes to your plugin that affect the database, you can use a
-*data upgrade process* to upgrade data to the new database schema. @product-ver@
-has a new data upgrade framework for modules. While the old framework required
-several classes, the new framework lets you orchestrate the upgrade steps from a
-single class. Managing the steps from one class facilitates developing upgrade
-processes. The data upgrade framework you use depends on your development
-framework.
+When you make database changes to your application, you must use a *data
+upgrade process* to migrate users' existing data to the new database schema.
+While the old framework required several classes, the new framework can
+orchestrate the upgrade steps from a single class. Managing the steps from one
+class facilitates developing upgrade processes. The data upgrade framework you
+use depends on your development framework. This tutorial shows you how to
+migrate to the new framework. 
 
 -   If your
     [upgraded plugin](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
@@ -22,13 +22,11 @@ framework.
 You can migrate any number of old upgrade processes (starting with the most
 recent ones) to the new framework. For example, if your module has versions 1.0,
 1.1, 1.2, and 1.3, but you only expect customers on versions 1.2 and newer to
-upgrade, you might migrate upgrade processes for versions 1.2 and 1.3 only. This
-tutorial shows you how to migrate to the new framework. 
+upgrade, you might migrate upgrade processes for versions 1.2 and 1.3 only. 
 
-Before beginning, make sure you know how to create an upgrade process that uses 
-the new framework. 
-[Click here](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app) 
-to read the tutorial on creating these upgrade processes. 
+Before beginning, make sure 
+[you know how](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app) 
+to create an upgrade process that uses the new framework. 
 
 +$$$
 
@@ -43,12 +41,9 @@ First, you'll review how Liferay Portal 6 upgrade processes work.
 ## Understanding Liferay Portal 6 Upgrade Processes [](id=understanding-liferay-portal-6-upgrade-processes)
 
 Before getting started, it's important to understand how Liferay Portal 6 
-upgrade processes are structured. As an example, you'll use the Liferay Portal 
-6.2 upgrade process for the Knowledge Base Portlet. 
-[Click here](https://github.com/liferay/liferay-plugins/tree/6.2.x/portlets/knowledge-base-portlet/docroot/WEB-INF/src/com/liferay/knowledgebase/hook/upgrade) 
-to access it in GitHub. 
-
-![Figure 1: The Knowledge Base Portlet's Liferay Portal 6.2 upgrade process.](../../../../images/upgrade-process-6-2.png)
+upgrade processes are structured. As an example, you'll use 
+[the Liferay Portal 6.2 upgrade process](https://github.com/liferay/liferay-plugins/tree/6.2.x/portlets/knowledge-base-portlet/docroot/WEB-INF/src/com/liferay/knowledgebase/hook/upgrade) 
+for the Knowledge Base Portlet. 
 
 In Liferay Portal 6 upgrade processes, the upgrade step classes for each schema 
 version are in folders named after their schema version. For 
@@ -101,9 +96,9 @@ learn how to convert them to the new upgrade process framework in @product-ver@.
 ## Converting your Liferay Portal 6 Upgrade Process to @product-ver@ [](id=converting-your-liferay-portal-6-upgrade-process-to-product-ver)
 
 So how do Liferay Portal 6 upgrade processes compare to those that use the new
-upgrade process framework in @product-ver@? First, the upgrade step classes are
-the same, so you can leave them unchanged. Here are the big changes in
-@product-ver@'s new  upgrade processes:
+upgrade process framework? First, the upgrade step classes are the same, so you
+can leave them unchanged. Here are the big changes in the new upgrade
+processes:
 
 - [A single registrator class replaces upgrade process classes.](#create-a-registrator-class)
 - [Service Builder services require a Bundle Activator.](#create-a-bundle-activator)
@@ -123,16 +118,14 @@ the functionality of your old upgrade process classes' `doUpgrade` methods into
 a registrator's `registry.register` calls. 
 
 For example, 
-[click here](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/knowledge-base/knowledge-base-service/src/main/java/com/liferay/knowledge/base/internal/upgrade) 
+[click here](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/knowledge-base/knowledge-base-service/src/main/java/com/liferay/knowledge/base/internal/upgrade) 
 to see the Knowledge Base Portlet's new @product-ver@ upgrade process in GitHub. 
-
-![Figure 2: The Knowledge Base Portlet's new @product-ver@ upgrade process.](../../../../images/upgrade-process-7-0.png)
 
 Besides some additional upgrade step classes to handle changes made to the 
 portlet for @product-ver@, the only difference in this upgrade process is that 
 it contains a single registrator class, `KnowledgeBaseServiceUpgrade`, instead 
 of multiple upgrade process classes. 
-[The `KnowledgeBaseServiceUpgrade` class](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/knowledge-base/knowledge-base-service/src/main/java/com/liferay/knowledge/base/internal/upgrade/KnowledgeBaseServiceUpgrade.java), 
+[The `KnowledgeBaseServiceUpgrade` class](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/knowledge-base/knowledge-base-service/src/main/java/com/liferay/knowledge/base/internal/upgrade/KnowledgeBaseServiceUpgrade.java), 
 like all registrators, calls the appropriate upgrade steps for each schema 
 version in its `registry.register` calls. For example, the first 
 `registry.register` call registers the upgrade process for the `1.0.0` schema 
@@ -148,9 +141,6 @@ version:
 Compare this to the above `doUpgrade` method from 
 [the corresponding Liferay Portal 6 upgrade process class `UpgradeProcess_1_0_0`](https://github.com/liferay/liferay-plugins/blob/6.2.x/portlets/knowledge-base-portlet/docroot/WEB-INF/src/com/liferay/knowledgebase/hook/upgrade/UpgradeProcess_1_0_0.java). 
 Both call the same upgrade steps. 
-[Click here](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/knowledge-base/knowledge-base-service/src/main/java/com/liferay/knowledge/base/internal/upgrade/KnowledgeBaseServiceUpgrade.java) 
-to see the complete `KnowledgeBaseServiceUpgrade` registrator class and all its 
-`registry.register` calls. 
 
 Next, create a Bundle Activator if your modularized plugin uses Service Builder. 
 
