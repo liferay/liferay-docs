@@ -1,6 +1,8 @@
 # Developing Themes [](id=developing-themes)
 
-Theme projects created using the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
-have a `gulpfile.js` file that provides several [gulp](https://www.npmjs.com/package/gulp)
-tasks you can execute to manage and deploy your theme. This section of tutorials 
-covers the available tasks. 
+Theme projects created using the 
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator) 
+have access to several 
+[gulp](https://www.npmjs.com/package/gulp) 
+tasks you can execute to manage and develop your theme. This section of 
+tutorials covers the available actions that these tasks provide. 
