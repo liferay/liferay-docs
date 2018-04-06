@@ -1,13 +1,11 @@
 # Building Your Application's Module JARs for Deployment [](id=building-your-module-jars-for-deployment)
 
-Now it's time to build your modules and deploy them to your @product@ instance.
-To build your project, run `gradlew build` from your application project's root
-folder.
+Now it's time to build and deploy your modules. To build your project, run
+`gradlew build` from your application project's root folder.
 
-Once your project successfully builds, check all of your modules' `/build/libs`
-folders. There should be a newly generated JAR file in each, which is the file
-to deploy to @product@. You can deploy each JAR by running `blade deploy` from
-each module's root folder.
+Now check all of your modules' `/build/libs` folders. There should be a newly
+generated JAR file in each, which is the file to deploy. You can deploy each JAR
+by running `blade deploy` from each module's root folder.
 
 +$$$
 

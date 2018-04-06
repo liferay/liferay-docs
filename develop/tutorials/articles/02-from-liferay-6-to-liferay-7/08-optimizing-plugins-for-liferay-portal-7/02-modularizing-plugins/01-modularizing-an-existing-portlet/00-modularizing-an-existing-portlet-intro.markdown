@@ -2,7 +2,7 @@
 
 An application with properly modularized plugins offers several benefits. You
 can release individually its plugins without releasing the entire application.
-External clients can consume services from particular plugins, without having to
+External clients can consume services from particular plugins without having to
 depend on an entire application. And by splitting up large amounts of code into
 concise modules, teams can more easily focus on particular areas of the
 application. These are just a few reasons to modularize application plugins. 
