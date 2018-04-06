@@ -125,6 +125,7 @@ how you could write the `EntryFinderImpl` class:
             session = openSession();
 
             String sql = CustomSQLUtil.get(
+                getClass(),
                 FIND_BY_ENTRYNAME_ENTRYMESSAGE_GUESTBOOKNAME);
 
             SQLQuery q = session.createSQLQuery(sql);
