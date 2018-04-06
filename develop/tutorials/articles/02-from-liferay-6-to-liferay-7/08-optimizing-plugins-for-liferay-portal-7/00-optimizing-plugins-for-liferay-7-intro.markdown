@@ -1,8 +1,8 @@
 # Optimizing Plugins for @product-ver@ [](id=optimizing-plugins-for-liferay-7)
 
 Once you've
-[upgraded your plugin](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
-to @product-ver@, you can optimize it to take advantage of all @product@
+[upgraded your plugin](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7), 
+you can optimize it to take advantage of all @product-ver@
 offers. If you haven't yet familiarized yourself with
 [what's changed from Liferay Portal 6](/develop/tutorials/-/knowledge_base/7-1/whats-changed-and-what-hasnt),
 the
@@ -27,8 +27,5 @@ Here are some common optimizations to consider:
 -   [Styling your app consistently using Clay](/develop/tutorials/-/knowledge_base/7-1/applying-lexicon-styles-to-your-app)
     --the web implementation of Lexicon, Liferay's design language.
 -   Modularizing apps to reap the
-    [benefits of modularity](/develop/tutorials/-/knowledge_base/7-1/osgi-and-modularity-for-liferay-6-developers#modules-as-an-improvement-over-traditional-plugins)
-    and all that @product@ offers. 
+    [benefits of modularity](/develop/tutorials/-/knowledge_base/7-1/osgi-and-modularity-for-liferay-6-developers#modules-as-an-improvement-over-traditional-plugins). 
 
-These optimizations facilitate group development and using new technologies and
-they make development more fun then ever. 
