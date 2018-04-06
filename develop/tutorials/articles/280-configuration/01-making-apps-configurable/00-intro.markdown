@@ -1,9 +1,11 @@
 # Making Applications Configurable [](id=making-applications-configurable)
 
-A configurable application allows a user (administrator, guest user, site
-member, etc.) to configure the application for the intended scope (site, system,
-portal instance, etc.). Complete three high level tasks to enable application
-configuration:
+A configurable application allows a user with appropriate permissions to
+configure the application in some way. You're free to set up application
+configuration using any technology, but Liferay's configuration framework
+simplifies the task by auto-generating a UI with no effort beyond defining the
+configuration options in a Java interface. Complete these three high level tasks
+to integrate your application with the configuration framework: 
 
 1.  Provide a way to set configurations in the user interface.
 
@@ -11,12 +13,18 @@ configuration:
 
 3.  Read configuration values in your business logic.
 
-This tutorial demonstrates adding your application's system scoped configuration
-to the System Settings application in the Control Panel, and how to categorize
-the configuration. Subsequent tutorials show you how to set the scope of the
-configurations and read its values from various contexts. Additional tutorials
-will be written on developing user interfaces for Instance Settings and creating
-portlet instance configuration screens.
+This tutorial demonstrates adding your application's configuration form to the
+System Settings application in the Control Panel, and how to categorize the
+configuration. Subsequent tutorials show you how to 
+
+1.  Set the *scope* of the configuration. Read more about configuration scope
+    [here](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/configuring-liferay#configuration-scope).
+
+2.  Read configuration values from various contexts. 
+
+3.  Additional tutorials will be written on developing user interfaces for
+    scopes that don't have auto-generated UIs (for example, Instance Settings and
+    portlet instance configuration screens).
 
 +$$$
 
