@@ -208,10 +208,10 @@ class, which configures the asset renderer framework for the Blogs application.
 
     This displays a Print icon when your asset is displayed in the Asset
     Publisher. For the icon to appear, you must enable it in the Asset
-    Publisher's *Options* (![Options](../../images/icon-app-options.png)) &rarr;
+    Publisher's *Options* &rarr;
     *Configuration* &rarr; *Setup* &rarr; *Display Settings* section.
 
-    ![Figure 2: Enable printing in the Asset Publisher to display the Print icon for your asset.](../../images/asset-publisher-printing.png)
+    ![Figure 2: Enable printing in the Asset Publisher to display the Print icon for your asset.](../../../images/asset-publisher-printing.png)
 
 11. If your asset is protected by permissions, you should set permissions for
     the asset. You can do this via the asset renderer as well. See the logic
@@ -347,7 +347,7 @@ your asset. That's not all you can do with JSP templates, however! The asset
 renderer framework provides several other methods that let you render convenient
 buttons for your asset.
 
-1.  Blogs assets provide an Edit button (![Edit Blog](../../images/icon-edit.png))
+1.  Blogs assets provide an Edit button 
     that lets you edit the asset. This is provided by adding the following
     method to the `BlogsEntryAssetRenderer` class:
 
@@ -412,9 +412,8 @@ buttons for your asset.
     name. The `getURLViewInContext(...)` method provides a similar URL assigned
     to the asset name, but the URL redirects to the original context of the
     asset (e.g., viewing a blogs asset in the Blogs application). Deciding which
-    view to render in @product@ is configurable by navigating to the Asset
-    Publisher's *Options*
-    (![Options](../../images/icon-app-options.png)) &rarr; *Configuration*
+    view to render is configurable by navigating to the Asset Publisher's 
+    *Options* &rarr; *Configuration*
     &rarr; *Setup* &rarr; *Display Settings* section and choosing between *Show
     Full Content* and *View in Context* for the Asset Link Behavior drop-down
     menu.
@@ -422,10 +421,9 @@ buttons for your asset.
 The Blogs application provides `abstract` and `full_content` JSP templates that
 override the ones provided by the `AssetRenderer` interface. The third template,
 `preview`, could also be customized. You can view the default `preview.jsp`
-template rendered in the *Add* (![Add](../../images/icon-control-menu-add.png))
-&rarr; *Content* menu.
+template rendered in the *Add* &rarr; *Content* menu.
 
-![Figure 4: The `preview` template displays a preview of the asset in the Content section of the Add menu.](../../images/preview-template-asset-renderer.png)
+![Figure 4: The `preview` template displays a preview of the asset in the Content section of the Add menu.](../../../images/preview-template-asset-renderer.png)
 
 You've learned all about implementing the `AssetRenderer`'s provided templates
 and customizing them to fit your needs. Next, you'll put your asset renderer

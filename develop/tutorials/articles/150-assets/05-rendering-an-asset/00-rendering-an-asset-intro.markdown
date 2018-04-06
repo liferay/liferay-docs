@@ -4,8 +4,8 @@ There are several options for rendering an asset. Before you set up the
 rendering process for your asset, make sure it's added to the asset framework 
 by following the
 [Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets-for-custom-entities)
-tutorial. Once you add your asset to the framework, @product@ can render the 
-asset by default using the Asset Publisher application. The default rendering 
+tutorial. Once you add your asset to the framework, you can render the 
+asset using the Asset Publisher application. The default rendering 
 process, however, only displays the asset's title and description text. 
 Anything requires additional coding. For instance, you might want these 
 additional things:
@@ -28,7 +28,7 @@ asset renderer functioning properly for your asset:
 - Create an asset renderer factory to create an instance of the asset renderer
     for each asset entity.
 
-![Figure 1: The asset renderer factory creates an asset renderer for each asset instance.](../../images/asset-renderer-diagram.png)
+![Figure 1: The asset renderer factory creates an asset renderer for each asset instance.](../../../images/asset-renderer-diagram.png)
 
 You'll learn how to create an asset renderer and an asset renderer factory by
 studying a Liferay asset that already uses both by default: Blogs. The Blogs
