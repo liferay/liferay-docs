@@ -56,6 +56,18 @@ the method `SessionContext.loadStoredCredentials()` method.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JlQ8nWGFsyg" frameborder="0" allowfullscreen></iframe>
 
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call the portal's JSON web services. This 
+Screenlet calls the following services and methods. 
+
+| Service | Method | Notes | 
+| ------- | ------ | ----- |
+| `UserService` | `getUserByEmailAddress` | Basic login |
+| `UserService` | `getUserByScreenName` | Basic login |
+| `UserService` | `getUserById` | Basic login |
+| `ScreensuserService` (Screens compatibility plugin) | `getCurrentUser` | Cookie and OAuth login |
+
 ## Module [](id=module)
 
 - Auth

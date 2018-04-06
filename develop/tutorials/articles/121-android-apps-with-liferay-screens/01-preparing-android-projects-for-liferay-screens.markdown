@@ -23,27 +23,42 @@ how to do this.
 
 $$$
 
+<!--
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ABxCUUg7zhs" frameborder="0" allowfullscreen></iframe>
+-->
 
 ## Requirements [](id=requirements)
 
 Liferay Screens for Android includes the Component Library (the Screenlets) and 
 a sample project. It requires the following software:
 
-- Android Studio 2.0 or above.
-- Android SDK 4.0 (API Level 15) or above. Its [AppCompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat) 
-  (v7:23.0.1) implements the
-  [recycler view](https://developer.android.com/tools/support-library/features.html#v7-recyclerview) 
-  and offers older devices a material look and feel.
-- [Liferay Portal 6.2 CE/EE, 7.0 CE, Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases).
-- Liferay Screens Compatibility Plugin (
-  [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
-  [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
-  depending on your portal edition). 
-- Liferay Screens source code. 
+-   Android Studio 2.0 or above.
+-   Android SDK 4.0 (API Level 15) or above. Its 
+    [AppCompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat) 
+    (v7:23.0.1) implements the
+    [recycler view](https://developer.android.com/tools/support-library/features.html#v7-recyclerview) 
+    and offers older devices a material look and feel.
+-   [Liferay Portal 6.2 CE/EE, 7.0 CE, Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases).
+-   Liferay Screens Compatibility Plugin 
+    ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+    [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
+    depending on your portal edition). This app is preinstalled in Liferay 7.0 CE 
+    and Liferay DXP bundles. 
+-   Liferay Screens source code. 
 
 Liferay Screens for Android uses
 [EventBus](https://github.com/greenrobot/EventBus) internally. 
+
+## Securing JSON Web Services [](id=securing-json-web-services)
+
+Each Screenlet in Liferay Screens calls one or more of Liferay Portal's JSON web 
+services, which are enabled by default. The Screenlet 
+[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
+lists the web services that each Screenlet calls. To use a Screenlet, its web 
+services must be enabled in the portal. It's possible, however, to disable the 
+web services needed by Screenlets you're not using. For instructions on this, 
+see the tutorial 
+[Portal Configuration of JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/portal-configuration-of-json-web-services). 
 
 ## Using Gradle to Install Liferay Screens [](id=configuring-your-project-with-gradle)
 
@@ -182,8 +197,9 @@ import a Liferay Screens class (like Login Screenlet).
 Next, you'll set up communication with Liferay. 
 
 ## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
-
+<!--
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QEJPEicgle8" frameborder="0" allowfullscreen></iframe>
+-->
 
 Before using Liferay Screens, you must configure it to communicate with your 
 Liferay instance. To do this, you must provide Screens the following
@@ -208,8 +224,8 @@ the new file:
 
         <string name="liferay_server">http://10.0.2.2:8080</string>
 
-        <integer name="liferay_company_id">10155</integer>
-        <integer name="liferay_group_id">10182</integer>
+        <string name="liferay_company_id">10155</string>
+        <string name="liferay_group_id">10182</string>
         
         <integer name="liferay_portal_version">62</integer>
 
@@ -247,8 +263,8 @@ interact with a Liferay instance's DDLs. You can see an additional example
 [here](https://github.com/liferay/liferay-screens/blob/master/android/samples/bankofwesteros/src/main/res/values/server_context.xml).
 
     <!-- Change these values for your Liferay Portal installation -->
-    
-    <integer name="liferay_recordset_id">20935</integer>
+
+    <string name="liferay_recordset_id">20935</string>
     <string name="liferay_recordset_fields">Title</string>
 
 Super! Your Android project's ready for Liferay Screens.

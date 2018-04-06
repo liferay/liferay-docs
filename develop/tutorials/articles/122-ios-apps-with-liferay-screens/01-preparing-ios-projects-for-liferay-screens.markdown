@@ -31,6 +31,17 @@ Liferay Screens for iOS requires the following software:
   depending on your portal edition). This app is preinstalled in Liferay 7.0 CE 
   and Liferay DXP instances. 
 
+## Securing JSON Web Services [](id=securing-json-web-services)
+
+Each Screenlet in Liferay Screens calls one or more of Liferay Portal's JSON web 
+services, which are enabled by default. The Screenlet 
+[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios) 
+lists the web services that each Screenlet calls. To use a Screenlet, its web 
+services must be enabled in the portal. It's possible, however, to disable the 
+web services needed by Screenlets you're not using. For instructions on this, 
+see the tutorial 
+[Portal Configuration of JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/portal-configuration-of-json-web-services). 
+
 ## Configuring Your Project with CocoaPods [](id=configuring-your-project-with-cocoapods)
 
 To use CocoaPods to prepare your iOS 9.0 (or above) project for Liferay Screens, 
