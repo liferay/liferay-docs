@@ -1,9 +1,19 @@
-## Displaying Product Categories
+# Displaying Product Categories
 
 Users have two main options for displaying the contents of a category on a page.
 You can manually create a category display page for each category, or you can
 create a single page to display content dynamically depending on which category
 a customer selects.
+
+There are advantages to both approaches: creating pages individually has the
+obvious benefit of permitting greater customization, but using a single default
+page is significantly less labor intensive. Fortunately, you don't have to
+choose: you can use a default page to set certain standards for appearance and
+consistency, and then override the default with a custom page for any categories
+on which you want to lavish more attention.
+
+Once your categories have pages attached to them, the Category Navigation
+Application can be used to help buyers easily find the products they want.
 
 ## Creating Individual Pages
 
@@ -11,7 +21,13 @@ Manually creating a category page is easy. Just
 [create
 a page](discover/portal/-/knowledge_base/7-0/creating-and-managing-pages) and
 then go to *Site Menu* &rarr; *Content* &rarr; *Categories*, find the category
-you want to create a page for, and
+you want to create a page for, and click ![Options](../../images/icon-add.png)
+&rarr; *Edit*. Then click on the *Category Display Page* tab, hit *Choose* and
+select the page you just created.
+
+## Creating a Default Page
+
+
 
 # Commerce Category Navigation
 
