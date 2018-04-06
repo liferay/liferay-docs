@@ -13,7 +13,7 @@ Liferay CE Portal 7.0 GA5.
 
 $$$
 
-## Blacklisting steps
+## Blacklisting steps [](id=blacklisting-steps)
 
 Follow these steps to blacklist modules:
 
@@ -53,7 +53,7 @@ Type |  &nbsp;Bundle Symbolic Name |
 @product@ removes installed modules on the blacklist. Blacklisted modules can't
 be installed. The @product@ log reports each module uninstallation.
 
-## Reinstalling Blacklisted Modules
+## Reinstalling Blacklisted Modules [](id=reinstalling-blacklisted-modules)
 
 To reinstall and permit installation of blacklisted modules, follow these steps:
 
