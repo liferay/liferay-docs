@@ -55,12 +55,9 @@ As the Lunar Resort Administrative user, you can add Users to the portal.
 1.  From the Product Menu, click *Control Panel* &rarr; *Users* &rarr; *Users
 and Organizations*. 
 
-1.  Click *Add* &rarr; *User*.
+1.  In the Users tab, click the Add button (![Add](../../images/icon-add.png).
 
     ![Figure 1: Add Users from the Users and Organizations section of the Control Panel.](../../images/usrmgmt-add-user.png)
-    
-    <!-- That screenshot is definitely going to be replaced. The add button here
-    is not lexiconified -->
 
 1.  Fill out the Add User form and click *Save*. At a minimum, provide a Screen
 Name, First Name, Last Name, and Email Address for the User.
