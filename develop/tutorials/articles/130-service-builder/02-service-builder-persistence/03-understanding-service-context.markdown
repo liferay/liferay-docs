@@ -78,9 +78,9 @@ learn about that next.
 ## Creating and Populating a Service Context [](id=creating-and-populating-a-service-context)
 
 Although all the `ServiceContext` class fields are optional, services that store
-any kind of scopeable data must at least specify the scope group ID. Here's a
-simple example of creating a `ServiceContext` instance and passing it as a
-parameter to a Liferay service API using Java: 
+data with scope must at least specify the scope group ID. Here's an example of
+creating a `ServiceContext` instance and passing it as a parameter to a Liferay
+service API: 
 
     ServiceContext serviceContext = new ServiceContext();
     serviceContext.setScopeGroupId(myGroupId);
@@ -90,7 +90,7 @@ parameter to a Liferay service API using Java:
     _blogsEntryService.addEntry(..., serviceContext);
 
 If you invoke the service from a servlet, a Struts action, or any other
-front-end class which has access to the `PortletRequest`, use one of the
+front-end class with access to the `PortletRequest`, use one of the
 `ServiceContextFactory.getInstance(...)` methods. These methods create a
 `ServiceContext` object from the request and automatically populate its fields
 with all the values specified in the request. The above example looks different
@@ -116,12 +116,11 @@ for entities in Liferay.
 
 ## Creating and Populating a Service Context in JavaScript [](id=creating-and-populating-a-service-context-in-javascript)
 
-Liferay's API can be invoked in languages other than Java. Some methods of
-Liferay's API require or allow a `ServiceContext` parameter. If you're invoking
-such a method via Liferay's JSON web services, you might want to create and
-populate a `ServiceContext` object in JavaScript. Creating a `ServiceContext`
-object in JavaScript is no different from creating any other object in
-JavaScript.
+Liferay's API can be invoked in languages other than Java. Some methods require
+or allow a `ServiceContext` parameter. If you're invoking such a method via
+Liferay's JSON web services, you might want to create and populate
+a `ServiceContext` object in JavaScript. Creating a `ServiceContext` object in
+JavaScript is no different from creating any other object in JavaScript.
 
 Before examining a JSON web service invocation that uses a `ServiceContext`
 object, it helps to see a simple JSON web service example in JavaScript:
@@ -143,7 +142,9 @@ JavaScript console.
 The `Liferay.Service(...)` function takes three arguments:
 
 1. A string representing the service being invoked
+
 2. A parameters object
+
 3. A callback function
 
 The callback function takes the result of the service invocation as an argument.
@@ -158,7 +159,7 @@ services: click on *JavaScript Example* to see how to invoke the web service via
 JavaScript, click on *curl Example* to see how to invoke the web service via
 curl, or click on *URL example* to see how to invoke the web service via a URL.
 
-![Figure 1: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../../images/jsonws-simple-example.png)
+![Figure 1: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../../images/jsonws-simple-example.png) 
 
 To learn more about Liferay's JSON web services, see the
 [JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/registering-json-web-services)
@@ -173,7 +174,7 @@ In this section, you'll find code snippets from
 demonstrates how to access information from a `ServiceContext` and provides an
 example of how the context information can be used. 
 
-As mentioned above, services for scopeable entities must get a scope group ID
+As mentioned above, services for entities with scope must get a scope group ID
 from the `ServiceContext` object. This is true for the Blogs entry service
 because the scope group ID provides the scope of the Blogs entry (the entity
 being persisted). For the Blogs entry, the scope group ID is used in the
