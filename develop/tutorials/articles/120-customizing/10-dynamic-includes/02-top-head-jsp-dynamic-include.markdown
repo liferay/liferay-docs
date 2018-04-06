@@ -50,8 +50,8 @@ Now you know how to use the `top_head.jsp` dynamic includes.
 
 ## Related Topics [](id=related-topics)
 
-[Bottom JSP Dynamic Includes](develop/tutorials/-/knowledge_base/7-1/bottom-jsp-dynamic-includes)
+[Bottom JSP Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/bottom-jsp-dynamic-includes)
 
-[Top JS Dynamic Include](develop/tutorials/-/knowledge_base/7-1/top-js-dynamic-include)
+[Top JS Dynamic Include](/develop/tutorials/-/knowledge_base/7-1/top-js-dynamic-include)
 
-[WYSIWYG Editor Dynamic Includes](develop/tutorials/-/knowledge_base/7-1/wysiwyg-editor-dynamic-includes)
+[WYSIWYG Editor Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/wysiwyg-editor-dynamic-includes)
