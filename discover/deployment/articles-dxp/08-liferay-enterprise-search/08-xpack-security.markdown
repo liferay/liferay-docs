@@ -6,8 +6,10 @@ for securing and monitoring Elasticsearch clusters. If you use Elasticsearch,
 you should secure it with X-Pack. The security features of X-Pack include
 authenticating access to the Elasticsearch cluster's data and encrypting
 Elasticsearch's internal and external communications. These are necessary
-security features for most production systems. A Liferay Enterprise
-Search Premium subscription is necessary for this integration. Contact
+security features for most production systems. A Liferay Enterprise Search
+Premium subscription gets you access to both monitoring and security, while a
+Liferay Enterprise Search Standard subscription gets you the monitoring
+integration. Contact
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
 Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
@@ -19,7 +21,7 @@ Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
     [encryption](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#configuring-tls).
 
 3.  Download and install the 
-[Liferay Connector to X-Pack Security](https://web.liferay.com/marketplace) 
+[Liferay Connector to X-Pack Security](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
 [Elastic Stack 6.x]. 
 
 4.  Configure the X-Pack connector with the proper credentials and encryption
@@ -85,6 +87,8 @@ architecture of
     `elasticsearch.yml`, there's nothing to worry about. See [Elastic's
     documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docs-index_.html#index-creation) for more information on automatic index creation.
 
+3.  Restart Elasticsearch.
+
 Once X-Pack is installed, configure its built-in user passwords.
 
 ## Setting Up X-Pack Users [](id=setting-up-x-pack-users)
@@ -99,17 +103,11 @@ first-use passwords for the first time. To update a password subsequently, use
 Kibana's UI or the 
 [Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/security-api-change-password.html).
 
-The `auto` argument randomly generates passwords for all built-in users:
+The `interactive` argument lets you set the passwords for all built-in users.
+The confioguraiton shown in these articles assumes you set all of the
+passwords to *liferay*. Of course, that's not recommended for production systems.
 
-    ./bin/x-pack/setup-passwords auto
-        Changed password for user kibana
-        PASSWORD kibana = Y?v1Jv^0AO*SKXveriGr
-
-        Changed password for user logstash_system
-        PASSWORD logstash_system = U^zLGC9$N6%6KhUHz^qb
-
-        Changed password for user elastic
-        PASSWORD elastic = GqhoaEUyTM@tp1*wQd~F
+    ./bin/x-pack/setup-passwords interactive
 
 See Elastic's documentation on the 
 [setup-passwords command](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-passwords.html) 
@@ -185,9 +183,11 @@ adapter in @product@.
 
 ## Install and Configure the Liferay Connector to X-Pack Security [](id=install-and-configure-the-liferay-connector-to-x-pack-security)
 
-If you have a Liferay Enterprise Search Premium subscription, download the
-Liferay Connector to X-Pack Security [Elastic Stack 6.x]. Install the LPKG file
- by copying it into the `Liferay Home/deploy` folder. That's all there is to it.
+If you have a Liferay Enterprise Search Premium subscription, 
+[download](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
+the Liferay Connector to X-Pack Security [Elastic Stack 6.x]. Install the LPKG
+file by copying it into the `Liferay Home/deploy` folder. That's all there is to
+it.
 
 To configure the X-Pack adapter, navigate to *Control Panel*
 &rarr; *Configuration* &rarr; *System Settings*. Find the *Foundation* category and

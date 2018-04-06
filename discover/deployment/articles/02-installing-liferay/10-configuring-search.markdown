@@ -26,7 +26,7 @@ Installing Elasticsearch for @product@ is pretty easy and takes only six steps:
 
 5. Configure @product@ to connect to your Elasticsearch cluster. 
 
-6. Restart @product@ and reindex your search indexes. 
+6. Restart @product@ and reindex your search and spell check indexes. 
 
 +$$$
 
@@ -76,9 +76,9 @@ In this example, it's 2.4.0.
 
 +$$$
 
-**Elasticsearch 6.1:** Elasticsearch 6.1.x is supported for @product@ systems
-running Fix Pack 42 or later, although version 2.x remains the default, embedded
-version. To install Elasticsearch 6.1.x, 
+**Elasticsearch 6.1:** Elasticsearch 6.1.x is supported for Liferay Digital
+Enterprise systems running Fix Pack 42 or later, although version 2.x remains
+the default, embedded version. To install Elasticsearch 6.1.x, 
 
 1.  Make sure you're running FP-42 or later.
 
@@ -183,7 +183,7 @@ can find Elasticsearch on the network.
 +$$$
 
 **Elasticsearch 6.1:** Before continuing, install the 
-[Liferay Connector for Elasticsearch 6 application](https://web.liferay.com/marketplace) from Liferay Marketplace and
+[Liferay Connector to Elasticsearch 6 application](https://web.liferay.com/marketplace) from Liferay Marketplace and
 stop the default Elasticsearch 2.x adapter, which connects to Elasticsearch 2.x.
 
 1.  Navigate to *Control Panel* &rarr; *Apps* &rarr; *App Manager*.
@@ -221,9 +221,14 @@ When finished, click *Save*. You're almost done.
 ### Step Six: Restart @product@ and Reindex [](id=step-five-restart-liferay-and-reindex)
 
 Stop and restart @product@. When it's back up, log in as an administrative user
-and click on *Control Panel* &rarr; *Configuration* &rarr; *Server Administration* and
-click the *Execute* button for *Reindex all search indexes*. When you do that,
+and
+
+1.  Click on *Control Panel* &rarr; *Configuration* &rarr; *Server Administration*
+
+2.  Click the *Execute* button for *Reindex all search indexes*. When you do that,
 you should see some messages scroll up in the Elasticsearch log. 
+
+3.  Click Execute for *Reindex all spell check indexes*.
 
 For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html).
 

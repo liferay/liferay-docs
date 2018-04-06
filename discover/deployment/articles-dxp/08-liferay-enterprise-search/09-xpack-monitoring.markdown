@@ -1,13 +1,13 @@
 # Installing X-Pack Monitoring for Elasticsearch 6 [](id=installing-x-pack-monitoring-for-elasticsearch-6)
 
 To monitor Elasticsearch, use X-Pack Monitoring. First 
-[install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-1/securing-elasticsearch-6-with-x-pack)
+[install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-0/securing-elasticsearch-6-with-x-pack)
 and configure security if you're using X-Pack's security features. Then come
 back here for instructions on installing and configuring Kibana (the monitoring
 server) with X-Pack so that Elasticsearch (secured with X-Pack), Kibana (secured
 with X-Pack), and @product@ can communicate effortlessly and securely. A Liferay
-Enterprise Search Standard subscription is necessary for this integration.
-Contact 
+Enterprise Search Standard subscription (included with Premium) is necessary for
+this integration.  Contact 
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
 1.  Download and install Kibana.
@@ -112,10 +112,10 @@ with a Kibana user. The last step is to hook Kibana up with @product@.
 
 ## Configuring the Liferay Connector to X-Pack Monitoring [](id=configuring-the-liferay-connector-to-x-pack-monitoring)
 
-If you have a Liferay Enterprise Search Premium subscription, download the
-Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]. Install the LPKG
-file by copying it into the `Liferay Home/deploy` folder. That'sall there is 
-to it.
+If you have a Liferay Enterprise Search (Premium or Standard) subscription,
+download the Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]. Install
+the LPKG file by copying it into the `Liferay Home/deploy` folder. That'sall
+there is to it.
 
 1.  Once the connector is installed and Kibana and Elasticsearch are securely
     configured, create a 
@@ -146,6 +146,17 @@ to it.
     this to `kibana.yml`:
 
         server.basePath: "/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy"
+
+    +$$$
+
+    **Note:** Once you set the `server.basePath`, you cannot access the Kibana
+    UI through Kibana's URL (for example, `https://localhost:5601`). All access
+    to the Kibana UI is via the monitoring portlet, which is only accessible to
+    logged in @product@ users. Navigate directly to the portlet using this URL:
+    [http://localhost:8080/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy/app/monitoring](http://localhost:8080/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy/app/monitoring)
+
+    $$$
+
 
 5.  Because you're using the Monitoring portlet in @product@ as a proxy to
     Kibana's UI, you must configure the application server's startup JVM
