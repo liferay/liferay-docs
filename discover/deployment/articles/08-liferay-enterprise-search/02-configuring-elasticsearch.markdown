@@ -58,7 +58,7 @@ $$$
 
 **Upgrading to Elasticsearch 6:** Elasticsearch 2.4.x reached end of life status
 in February 2018. If you have an existing Elasticsearch 2.4 cluster,
-to upgrade it to Elasticsearch 6 by following [the upgrade guide](/discover/deployment/-/knowledge_base/7-0/upgrading-to--elasticsearch-6). 
+to upgrade it to Elasticsearch 6 by following [the upgrade guide](/discover/deployment/-/knowledge_base/7-0/upgrading-to-elasticsearch-6). 
 
 $$$
 

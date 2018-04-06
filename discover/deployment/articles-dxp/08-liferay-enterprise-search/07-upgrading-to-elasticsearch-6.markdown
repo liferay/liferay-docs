@@ -22,7 +22,7 @@ existing Elasticsearch 2.x server (or cluster) to Elasticsearch 6.1.x:
 
 7.  Install and configure the Elasticsearch 6 adapter.
 
-8.  Re-index all search indexes.
+8.  Re-index all search  and spell check indexes.
 
 **Before Proceeding:** Back up your existing data before upgrading
 Elasticsearch. If something goes wrong during or after the upgrade, roll
@@ -54,7 +54,7 @@ Due to Elastic's
 [removal of mapping types](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/removal-of-types.html)
 from search documents, spell check indexes and suggestion dictionaries now
 use a single document type. If your installation was leveraging either
-functionality, you must re-index all spell check indexes (form Control Panel
+functionality, you must re-index all spell check indexes (from Control Panel
 &rarr; Configuration &rarr; Server Administration).
 
 $$$
@@ -151,7 +151,7 @@ Once the Elasticsearch adapter is installed and talking to the Elasticsearch
 cluster, navigate to *Control Panel* &rarr; *Configuration* &rarr; *Server
 Administration*, and click *Execute* for the *Reindex all search indexes* entry.
 
-You should also re-index the spell check indexes while you're here.
+You must also re-index the spell check indexes.
 
 ## Reverting to Elasticsearch 2 [](id=reverting-to-elasticsearch-2)
 
