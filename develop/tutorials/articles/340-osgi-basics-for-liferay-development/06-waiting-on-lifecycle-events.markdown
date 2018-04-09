@@ -3,12 +3,12 @@
 Liferay registers lifecycle events like portal and database initialization
 into the OSGi service registry. Your OSGi Component or non-component class
 can listen for these events by way of their service registrations. The 
-[`ModuleServiceLifecycle` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/module/framework/ModuleServiceLifecycle.html)
+[`ModuleServiceLifecycle` interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/module/framework/ModuleServiceLifecycle.html)
 defines these names for the lifecycle event services:
 
--   [DATABASE_INITIALIZED](@platform-ref@/7.0-latest/javadocs/portal-kernel/constant-values.html#com.liferay.portal.kernel.module.framework.ModuleServiceLifecycle.DATABASE_INITIALIZED)
--   [PORTAL_INITIALIZED](@platform-ref@/7.0-latest/javadocs/portal-kernel/constant-values.html#com.liferay.portal.kernel.module.framework.ModuleServiceLifecycle.PORTAL_INITIALIZED)
--   [SPRING_INITIALIZED](@platform-ref@/7.0-latest/javadocs/portal-kernel/constant-values.html#com.liferay.portal.kernel.module.framework.ModuleServiceLifecycle.SPRING_INITIALIZED)
+-   [DATABASE_INITIALIZED](@platform-ref@/7.1-latest/javadocs/portal-kernel/constant-values.html#com.liferay.portal.kernel.module.framework.ModuleServiceLifecycle.DATABASE_INITIALIZED)
+-   [PORTAL_INITIALIZED](@platform-ref@/7.1-latest/javadocs/portal-kernel/constant-values.html#com.liferay.portal.kernel.module.framework.ModuleServiceLifecycle.PORTAL_INITIALIZED)
+-   [SPRING_INITIALIZED](@platform-ref@/7.1-latest/javadocs/portal-kernel/constant-values.html#com.liferay.portal.kernel.module.framework.ModuleServiceLifecycle.SPRING_INITIALIZED)
 
 Here you'll learn how to wait on lifecycle event services to act on them from
 within a component or non-component class. 
@@ -58,7 +58,7 @@ Here's how to act on services in your component:
         SomeOsgiService _someOsgiService;
 
 2.  To bind to a particular lifecycle event service, target its name as the 
-    [`ModuleServiceLifecycle` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/module/framework/ModuleServiceLifecycle.html)
+    [`ModuleServiceLifecycle` interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/module/framework/ModuleServiceLifecycle.html)
     defines. This field, for example, targets database initialization. 
 
         @Reference(target = ModuleServiceLifecycle.DATABASE_INITIALIZED)
@@ -77,7 +77,7 @@ event services.
 Classes that aren't DS components can use a
 `org.osgi.util.tracker.ServiceTracker` or
 `org.osgi.util.tracker.ServiceTrackerCustomizer` as a
-[service callback handler](/develop/tutorials/-/knowledge_base/7-0/service-trackers#implementing-a-callback-handler-for-services)
+[service callback handler](/develop/tutorials/-/knowledge_base/7-1/service-trackers#implementing-a-callback-handler-for-services)
 for the lifecycle event. If you depend on multiple services, add logic to your
 `ServiceTracker` or `ServiceTrackerCustomizer` to coordinate taking action when
 all the services are available. 
@@ -107,4 +107,4 @@ events outside of DS components.
 
 ## Related Topics [](id=related-topics)
 
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
+[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
