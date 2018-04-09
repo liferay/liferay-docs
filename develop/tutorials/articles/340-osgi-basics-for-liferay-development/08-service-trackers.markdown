@@ -6,7 +6,7 @@ rely on services in other modules for functionality. You must account for the
 possibility of service implementations being swapped out or removed entirely if
 your module is to survive and thrive in an OSGi environment. It's easy for
 @product-ver@ developers who need to
-[call services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services)
+[call services](/develop/tutorials/-/knowledge_base/7-1/finding-and-invoking-liferay-services)
 from their `@Component` classes. They just use another
 [Declarative Services (DS)](https://osgi.org/specification/osgi.cmpn/7.0.0/service.component.html)
 annotation, `@Reference`, to get a service reference. The component activates
@@ -27,7 +27,7 @@ implement a Service Tracker to look up services in the service registry.
 configure the required `org.osgi.core` dependency carefully in your build file
 (e.g., `build.gradle`, `pom.xml`, etc.) to avoid errors. Since it's included in
 @product@ by default, it must be configured as `provided`. See the
-[Third Party Packages Portal Exports](/develop/reference/-/knowledge_base/7-0/third-party-packages-portal-exports)
+[Third Party Packages Portal Exports](/develop/reference/-/knowledge_base/7-1/third-party-packages-portal-exports)
 tutorial for more information.
 
 $$$
@@ -37,13 +37,13 @@ focusing on scenarios where DS *can't* be used. This typically involves a
 non-native (to OSGi) Dependency Injection framework.
 
 -   Calling OSGi services from a
-    [Spring MVC portlet](/develop/tutorials/-/knowledge_base/7-0/spring-mvc)
+    [Spring MVC portlet](/develop/tutorials/-/knowledge_base/7-1/spring-mvc)
 -   Calling OSGi services from a
-    [JSF portlet](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
+    [JSF portlet](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
 -   Calling OSGi services from a
-    [WAR-packaged portlet](/develop/tutorials/-/knowledge_base/7-0/upgrading-plugins-to-liferay-7)
+    [WAR-packaged portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
     that's been upgraded to run on @product-ver@, but not
-    [fully modularized](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
+    [fully modularized](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet)
     and made into an OSGi module
 
 +$$$
@@ -60,7 +60,7 @@ $$$
 
 Using a Service Tracker, your non-OSGi application can access any service
 registered in the OSGi runtime, including your own
-[Service Builder services](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+[Service Builder services](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
 and the services published by Liferay's modules (like the popular
 `UserLocalService`).
 
