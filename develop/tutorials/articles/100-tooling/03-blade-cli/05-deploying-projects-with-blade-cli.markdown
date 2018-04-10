@@ -14,9 +14,6 @@ This can be used for WAR-style projects and modules (JARs). You can also deploy
 all projects in a folder by running the `deploy` command from the parent folder
 (e.g., `[WORKSPACE_ROOT]/modules`).
 
-<!-- BLADE-217 (Open): blade deploy to support specifying a directory or file to
-be deployed as last argument. -Cody -->
-
 When deploying a project using Blade CLI, the project is directly installed into
 @product@'s OSGi container. This means, for example, that a deployed module
 isn't stored in the `LIFERAY_HOME/osgi/modules` folder; only modules copied to
@@ -53,8 +50,6 @@ parameter.
     blade deploy -w
 
 This parameter automatically redeploys the module when changes are detected.
-
-<!-- BLADE-222 (Open): blade liveDeploy should be documented here. -Cody -->
 
 +$$$
 
