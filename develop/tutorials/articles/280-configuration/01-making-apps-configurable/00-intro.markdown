@@ -79,7 +79,7 @@ you already had a portlet or service that was configurable using the traditional
 mechanisms of Liferay Portal 6.2 and before, refer to the
 [Transitioning from Portlet Preferences to the Configuration API](/develop/tutorials/-/knowledge_base/7-1/transitioning-from-portlet-preferences-to-the-configuration-api) tutorial.
 
-## Creating A Configuration Interface
+## Creating A Configuration Interface [](id=creating-a-configuration-interface)
 
 First, you'll learn how to create a configuration at the system scope.
 

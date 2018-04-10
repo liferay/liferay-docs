@@ -7,7 +7,7 @@ uses dummy code from a portlet we'll call the Example Configuration Portlet. The
 import statements are included in the code snippets so that you can see the
 fully qualified class names (FQCNs) of all the classes that are used.
 
-## Accessing the Configuration Object in the Portlet Class
+## Accessing the Configuration Object in the Portlet Class [](id=accessing-the-configuration-object-in-the-portlet-class)
 
 Whether you need the configuration values in the portlet class or the JSPs, the
 first steps is to get access to the configuration object in the `*Portlet`
@@ -73,7 +73,7 @@ class.
     Now the field can be used to retrieve configuration values or to set the values
     in the request, so they can be retrieved in the application's JSPs.
 
-## Accessing the Configuration from a JSP
+## Accessing the Configuration from a JSP [](id=accessing-the-configuration-from-a-jsp)
 
 In the case of reading from a JSP, add the configuration object to the request
 object so its values can be read from the JSPs that comprise the application's

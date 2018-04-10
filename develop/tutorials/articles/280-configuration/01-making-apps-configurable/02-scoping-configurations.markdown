@@ -32,7 +32,7 @@ The third step is covered in the
 tutorial. This article covers the first two steps. Start by setting the scope in
 the configuration interface.
 
-## Step 1: Setting the Configuration Scope
+## Step 1: Setting the Configuration Scope [](id=step-1-setting-the-configuration-scope)
 
 Use the `@ExtendedObjectClassDefinition` annotation to specify the
 configuration's scope. The scope you choose must match how the configuration
@@ -106,7 +106,7 @@ To create a configuration bean declaration:
             return JournalGroupServiceConfiguration.class;
         }
 
-## Step 3: Retrieving Scoped Configurations
+## Step 3: Retrieving Scoped Configurations [](id=step-3-retrieving-scoped-configurations)
 
 If you set the configuration scope, then you must retrieve the configuration
 values from the same scope. To retrieve a scoped configuration, use a 

@@ -1,4 +1,4 @@
-# Configurable Applications
+# Configurable Applications [](id=configurable-applications)
 
 Many applications must be configurable, whether by end users or administrators.
 A viable configuration solution must support use cases ranging from setting a

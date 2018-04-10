@@ -1,4 +1,4 @@
-## Categorizing the Configuration [](id=categorizing-the-configuration)
+# Categorizing the Configuration [](id=categorizing-the-configuration)
 
 Because it's easy to make any application or service configurable, there are
 already lots of configuration options in @product@ by default. If you've
@@ -9,7 +9,7 @@ UI.
 
 <!-- Here's how the System Settings UI looks:
 
-IMAGES NEED TO BE UPDATED WHEN UI STABILIZES ![Figure 3: Navigate to the Control Panel, click on *Configuration* and then
+IMAGES NEED TO BE UPDATED WHEN UI STABILIZES ![Figure 1: Navigate to the Control Panel, click on *Configuration* and then
 *System Settings*. You'll find five categories of configurations, including
 Other. Click on any configuration to access a form through which the
 configuration values can be updated.](../../images/system-settings-ui.png) -->
@@ -43,7 +43,7 @@ in an existing category or create your own.
 
 <!-- Add Figure of Platform Third Party section when UI stabilizes -->.
 
-### Specifying a Configuration Category [](id=specifying-a-configuration-category)
+## Specifying a Configuration Category [](id=specifying-a-configuration-category)
 
 If you looked in the source code at the Liferay Forms configuration interface
 (it's in the Forms & Workflow suite's Liferay Dynamic Data Mapping Form Web
@@ -75,7 +75,7 @@ The `@ExtendedObjectClassDefinition` annotation is distributed through the
 `com.liferay.portal.configuration.metatype` module, which you can 
 [configure as a dependency](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies). 
 
-### Creating new Sections and Categories [](id=creating-new-sections-and-categories)
+## Creating New Sections and Categories [](id=creating-new-sections-and-categories)
 
 Configurations should be in the most intuitive location (section and category)
 so administrators find them. If your configurations don't fit into the existing
