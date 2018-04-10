@@ -2,9 +2,10 @@
 
 It's very common to read configuration values from a portlet class or its JSPs.
 This tutorial shows how to add a configuration to the request and read it from
-the view layer, and how to read it directly in the portlet class. The import
-statements are included in the code snippets so that you can see the fully
-qualified class names (FQCNs) of all the classes that are used.
+the view layer, and how to read it directly in the portlet class. This tutorial
+uses dummy code from a portlet we'll call the Example Configuration Portlet. The
+import statements are included in the code snippets so that you can see the
+fully qualified class names (FQCNs) of all the classes that are used.
 
 ## Accessing the Configuration Object in the Portlet Class
 

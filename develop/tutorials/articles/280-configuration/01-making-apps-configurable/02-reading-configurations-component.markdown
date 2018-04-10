@@ -21,8 +21,7 @@ class.
 1.  First set the `configurationPid` Component property as the fully qualified
     class name of the configuration class:
 
-        @Component(configurationPid = "com.liferay.docs.exampleconfig.ExampleConfiguration")
-        public class MyAppManager {
+        @Component(configurationPid = "com.liferay.dynamic.data.mapping.form.web.configuration.DDMFormWebConfiguration")
 
 2.  Then provide an `activate` method, annotated with `@Activate` to ensure the
     method is invoked as soon as the Component is started, and `@Modified` so
@@ -31,11 +30,11 @@ class.
         @Activate
         @Modified
         protected void activate(Map<String, Object> properties) {
-            _configuration = ConfigurableUtil.createConfigurable(
-                ExampleConfiguration.class, properties);
+            _formWebConfiguration = ConfigurableUtil.createConfigurable(
+                DDMFormWebConfiguration.class, properties);
         }
 
-        private volatile ExampleConfiguration _configuration;
+        private volatile DDMFormWebConfiguration _formWebConfiguration;
 
     The `activate()` method calls the method
     `ConfigurableUtil.createConfigurable()` to convert a map of the
@@ -50,9 +49,10 @@ class.
             order("car", model, _configuration.favoriteColor);
         }
 
-    The String configuration value of `favoriteColor` is passed to the `order`
-    method call, so whatever model car is ordered will be ordered in the
-    configured favorite color.
+    This is dummy code: don't try to find it in the Liferay source code. The
+    String configuration value of `favoriteColor` is passed to the `order`
+    method call, presumably so that whatever model car is ordered will be
+    ordered in the configured favorite color.
 
 +$$$
 

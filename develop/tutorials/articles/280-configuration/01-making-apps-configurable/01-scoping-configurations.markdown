@@ -21,8 +21,10 @@ different site. This is covered in more detail
 The process for scoping a configuration is:
 
 1.  Set the scope in the configuration interface.
+
 2.  Enable the configuration for scoped retrieval by creating a configuration
     bean declaration.
+
 3.  Retrieve scoped configurations with a configuration provider.
 
 The third step is covered in the
@@ -91,7 +93,7 @@ To create a configuration bean declaration:
 1.  Register the configuration class by implementing `ConfigurationBeanDeclaration`.
 
         @Component
-        public class RSSPortletInstanceConfigurationBeanDeclaration
+        public class JournalGroupServiceConfigurationBeanDeclaration
             implements ConfigurationBeanDeclaration {
 
 2.  This class has one method that returns the class of the interface you
@@ -100,8 +102,8 @@ To create a configuration bean declaration:
     very fast.
 
         @Override
-        public Class getConfigurationBeanClass() {
-            return RSSPortletInstanceConfiguration.class;
+        public Class<?> getConfigurationBeanClass() {
+            return JournalGroupServiceConfiguration.class;
         }
 
 ## Step 3: Retrieving Scoped Configurations
