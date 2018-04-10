@@ -30,5 +30,8 @@ Blade CLI environment:
 <!-- TODO: New options `outputs` and `upgradeProps`. Should these be added to
 list? - Cody -->
 
+For additional information on these sub-commands, run the sub-command with the
+`--help` flag (e.g., `blade samples --help`).
+
 In this set of tutorials, you'll learn how to use these commands to create and
 test @product@ instances and modules.

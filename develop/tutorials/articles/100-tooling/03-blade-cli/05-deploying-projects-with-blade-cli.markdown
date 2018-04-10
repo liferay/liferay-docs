@@ -1,7 +1,8 @@
 # Deploying Projects with Blade CLI [](id=deploying-projects-with-blade-cli)
 
-Deploying modules to a Liferay server using Blade CLI is easy. To use the Blade
-`deploy` command, you must first have built a project to deploy. See the
+Deploying @product@ projects to a Liferay server using Blade CLI is easy. To use
+the Blade `deploy` command, you must first have built a project to deploy. See
+the
 [Creating Projects with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-blade-cli)
 tutorials for more information about creating Liferay projects. Once you've
 built a project, navigate to it in your terminal window and execute the following
@@ -9,11 +10,12 @@ command to deploy it to @product@:
 
     blade deploy
 
-You can also deploy all projects in a folder by running the `deploy` command
-from the parent folder (e.g., `[WORKSPACE_ROOT]/modules`).
+This can be used for WAR-style projects and modules (JARs). You can also deploy
+all projects in a folder by running the `deploy` command from the parent folder
+(e.g., `[WORKSPACE_ROOT]/modules`).
 
-<!-- TODO: BLADE-217 (Open): blade deploy to support specifying a directory or
-file to be deployed as last argument. -Cody -->
+<!-- BLADE-217 (Open): blade deploy to support specifying a directory or file to
+be deployed as last argument. -Cody -->
 
 When deploying a project using Blade CLI, the project is directly installed into
 @product@'s OSGi container. This means, for example, that a deployed module
@@ -25,14 +27,6 @@ after its bundle ID. All modules installed in OSGi's registry are stored this
 way, even those copied to the `/deploy` folder. Visit the
 [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
 article for instructions on finding a bundle's ID.
-
-<!-- TODO: Text below should be removed once Blade 2.4.0/3.0.0 is released.
-Fixed in BLADE-190. -Cody -->
-
-The `deploy` command is intended for modules that are built into a JAR file. If
-you've created a WAR style project (e.g., projects based on the Blade templates
-`spring-mvc-portlet`, `theme`, etc.), you'll need to deploy it using a different
-tool like Gradle (e.g., `./gradlew deploy`).
 
 If you run into errors during the build/deploy process of your project, check to
 make sure your workspace is accounting for the
