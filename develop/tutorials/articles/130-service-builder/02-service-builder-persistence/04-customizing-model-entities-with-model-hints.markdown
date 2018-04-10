@@ -1,34 +1,29 @@
 # Customizing Model Entities With Model Hints [](id=customizing-model-entities-with-model-hints)
 
-If you've already used Service Builder to define your model entities and have
-implemented business logic for creating and modifying those entities, you might
-have some ideas for helping users submit valid model entity data. For example,
-suppose you're working on a calendar app where users can select a date for a
-calendar event. How can you specify that only future dates are selectable? Easy!
-Use portlet model hints! Liferay Service Builder's model hints provide a single
-place in your application where you can specify entity data restrictions. Model
-hints are specified in a single file called `portlet-model-hints.xml` in your
-project. If your project is comprised of an API module and a service module, as
-described for the
+Once you've used Service Builder to define model entities, you may want to
+further refine how users enter that data. For example, model hints can define
+a calendar field where only future dates should be selectable. They provide
+a single place to specify entity data restrictions and other formatting. 
+
+You define model hints in a file called `portlet-model-hints.xml`. If your
+project has an API module and a service module like the 
 [Service Builder project template](/develop/reference/-/knowledge_base/7-1/using-the-service-builder-template),
-`portlet-model-hints.xml` should go in the service module's
+`portlet-model-hints.xml` goes in the service module's
 `src/main/resources/META-INF` folder. For example, in Liferay's Bookmarks
-application, the `portlet-model-hints.xml` file goes in the
-`bookmarks-service/src/main/resources/META-INF/` folder. Model hints are
-referred to as such because they suggest how entities should be presented to
-users. Model hints let you to configure how the AlloyUI tag library, `aui`,
-shows model fields. As Liferay displays form fields in your application, it
-first checks the model hints you specified and customizes the form's input
-fields based on these hints. Model hints can also specify the size of the
-database columns used to store the entities and specify other entity details. 
+application, the `portlet-model-hints.xml` file is in the
+`bookmarks-service/src/main/resources/META-INF/` folder. 
+
+Model hints define two things: how entities are presented to users and the size
+of database columns. As Liferay renders your form fields, it customizes the
+form's input fields based your configuration. 
 
 +$$$
 
 **Note:** Service Builder generates a number of XML configuration files in your
 service module's `src/main/resources/META-INF` folder. Service Builder uses
 most of these files to manage Spring and Hibernate configurations. Don't modify
-the Spring or Hibernate configuration files; any changes to them are overwritten
-the next time Service Builder runs. However, you can safely edit the
+the Spring or Hibernate configuration files; changes to them are overwritten
+when Service Builder runs. You can, however, safely edit the
 `portlet-model-hints.xml` file.
 
 $$$
@@ -40,59 +35,59 @@ model hints file:
     <?xml version="1.0"?>
 
     <model-hints>
-    	<model name="com.liferay.bookmarks.model.BookmarksEntry">
-    		<field name="uuid" type="String" />
-    		<field name="entryId" type="long" />
-    		<field name="groupId" type="long" />
-    		<field name="companyId" type="long" />
-    		<field name="userId" type="long" />
-    		<field name="userName" type="String" />
-    		<field name="createDate" type="Date" />
-    		<field name="modifiedDate" type="Date" />
-    		<field name="folderId" type="long" />
-    		<field name="treePath" type="String">
-    			<hint name="max-length">4000</hint>
-    		</field>
-    		<field name="name" type="String">
-    			<hint name="max-length">255</hint>
-    		</field>
-    		<field name="url" type="String">
-    			<hint-collection name="URL" />
-    			<validator name="required" />
-    			<validator name="url" />
-    		</field>
-    		<field name="description" type="String">
-    			<hint-collection name="TEXTAREA" />
-    		</field>
-    		<field name="visits" type="int" />
-    		<field name="priority" type="int">
-    			<hint name="display-width">20</hint>
-    		</field>
-    		<field name="lastPublishDate" type="Date" />
-    		<field name="status" type="int" />
-    		<field name="statusByUserId" type="long" />
-    		<field name="statusByUserName" type="String" />
-    		<field name="statusDate" type="Date" />
-    	</model>
-    	<model name="com.liferay.bookmarks.model.BookmarksFolder">
+        <model name="com.liferay.bookmarks.model.BookmarksEntry">
+            <field name="uuid" type="String" />
+            <field name="entryId" type="long" />
+            <field name="groupId" type="long" />
+            <field name="companyId" type="long" />
+            <field name="userId" type="long" />
+            <field name="userName" type="String" />
+            <field name="createDate" type="Date" />
+            <field name="modifiedDate" type="Date" />
+            <field name="folderId" type="long" />
+            <field name="treePath" type="String">
+                <hint name="max-length">4000</hint>
+            </field>
+            <field name="name" type="String">
+                <hint name="max-length">255</hint>
+            </field>
+            <field name="url" type="String">
+                <hint-collection name="URL" />
+                <validator name="required" />
+                <validator name="url" />
+            </field>
+            <field name="description" type="String">
+                <hint-collection name="TEXTAREA" />
+            </field>
+            <field name="visits" type="int" />
+            <field name="priority" type="int">
+                <hint name="display-width">20</hint>
+            </field>
+            <field name="lastPublishDate" type="Date" />
+            <field name="status" type="int" />
+            <field name="statusByUserId" type="long" />
+            <field name="statusByUserName" type="String" />
+            <field name="statusDate" type="Date" />
+        </model>
+        <model name="com.liferay.bookmarks.model.BookmarksFolder">
             ...
         </model>
     </model-hints>
 
-The root-level element is `model-hints`. All the model entities are represented
-by `model` sub-elements of the `model-hints` element. Each `model` element must
-have a `name` attribute specifying the fully-qualified model class name. Each
-model has `field` elements representing its model entity's columns. Lastly, each
-`field` element must have a name and a type. Each `field` element's name and
-type corresponds to the name and type specified for the entity's column in
-the service module's `service.xml` file. Service Builder generates all these 
-elements for you, based on the `service.xml`. 
+The root-level element is `model-hints`. Model entities are represented by
+`model` sub-elements of the `model-hints` element. Each `model` element must
+have a `name` attribute specifying the fully-qualified class name. Models
+have `field` elements representing their entity's columns. Lastly, `field`
+elements must have a name and a type. Each `field` element's name and type maps
+to the name and type specified for the entity's column in the service module's
+`service.xml` file. Service Builder generates all these elements for you, based
+on the `service.xml`. 
 
-To add hints to a field, add a `hint` tag inside its `field` tag. For example,
-you can add a `display-width hint` to specify the pixel width to use in
-displaying the field. The default pixel width is `350`. To show a `String`
-field with 50 pixels, you could nest a `hint` element named `display-width` and
-give it a value of `50`. 
+To add hints to a field, add a `hint` child element. For example, you can add
+a `display-width hint` to specify the pixel width to use in displaying the
+field. The default pixel width is `350`. To show a `String` field with 50
+pixels, you could nest a `hint` element named `display-width` and give it
+a value of `50`. 
 
 To see the effect of a hint on a field,
 [run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
@@ -115,6 +110,8 @@ to that field:
 
 Remember to run Service Builder and redeploy your project after updating the 
 `portlet-model-hints.xml` file. 
+
+## Model Hint Types
 
 So far, you've seen a few different hints. The following table describes the
 portlet model hints available for use.
@@ -155,6 +152,8 @@ Note that Liferay has its own model hints file--`portal-model-hints.xml`. It's
 in `portal-impl.jar`'s `META-INF` folder. This file contains many hint examples,
 so you can reference it when creating `portlet-model-hints.xml` files. 
 
+## Default Hints 
+
 You can use the `default-hints` element to define a list of hints to apply to 
 every field of a model. For example, adding the following element inside a
 model element applies a `display-width` of 300 pixels to each field: 
@@ -162,6 +161,8 @@ model element applies a `display-width` of 300 pixels to each field:
     <default-hints>
         <hint name="display-width">300</hint>
     </default-hints>
+
+## Hint Collections
 
 You can define `hint-collection` elements inside the `model-hints` root-level
 element to define a list of hints to apply together. A hint collection must have
@@ -214,18 +215,18 @@ reference the hint collection in each entity.
 To define a hint collection, add a `hint-collection` element inside the
 `model-hints` root element in your `portlet-model-hints.xml` file. For example:
 
-	<hint-collection name="COMMENT-TEXTAREA">
-		<hint name="display-height">105</hint>
-		<hint name="display-width">500</hint>
-		<hint name="max-length">4000</hint>
-	</hint-collection>
+    <hint-collection name="COMMENT-TEXTAREA">
+        <hint name="display-height">105</hint>
+        <hint name="display-width">500</hint>
+        <hint name="max-length">4000</hint>
+    </hint-collection>
 
 To reference a hint collection for a specific field, add the `hint-collection`
 element inside the field's `field` element:
 
-	<field name="comment" type="String">
-		<hint-collection name="COMMENT-TEXTAREA" />
-	</field>
+    <field name="comment" type="String">
+        <hint-collection name="COMMENT-TEXTAREA" />
+    </field>
 
 After defining hint collections and adding hint collection references, rebuild
 your services using Service Builder, redeploy your project, and check that the 
