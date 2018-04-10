@@ -61,10 +61,12 @@ For example, if your module `test-portlet` is referencing a service (e.g.,
             [osgi.identity ] test.portlet
             [osgi.service  ] objectClass=test.api.TestApi
 
-To fix this, you must make the service available to your module. If it's a
-service provided by a custom module, you should make that service available to
-your module. To check the target platform for available services, follow the
-steps below:
+To fix this, you must make the service available to your module. If you're
+expecting the service to be provided by your target platform, check to make sure
+it's being provided. If it's a service provided by a custom module, you should
+check that service provider module and ensure it's correctly providing that
+service to your module. To check the target platform for available services,
+follow the steps below:
 
 1.  Start your target platform instance.
 
@@ -76,7 +78,7 @@ steps below:
     since there are usually too many to sift through.
 
 4.  You can also list services provided by a component. Run `lb -s` to list all
-    provided bundles by the bundle symbolic name (BSN). Find the BSN for the
+    provided bundles by their bundle symbolic name (BSN). Find the BSN for the
     desired component and then run `scr:info <BSN>`.
 
 If you're unable to track down your missing service, it may be provided by a

@@ -13,7 +13,8 @@ deployment. Instead of resolving your projects separately from your standard
 build, you can build and resolve them all in one shot.
 
 In Liferay Workspace, the recommended path for doing this is adding it to the
-default `check` Gradle task. This is provided by default in a workspace by the
+default `check` Gradle task. The `check` task is provided by default in a
+workspace by the
 [java](https://docs.gradle.org/current/userguide/java_plugin.html#_lifecycle_tasks)
 plugin. Adding the `resolve` task to the `check` lifecycle task also promotes
 the `resolve` task to run for CI and other test tools that typically run the

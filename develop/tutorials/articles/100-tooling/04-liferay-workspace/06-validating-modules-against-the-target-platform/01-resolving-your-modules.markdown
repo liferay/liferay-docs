@@ -5,11 +5,11 @@ mysterious problems can be frustrating. You can avoid this painful process by
 resolving your modules before deployment. This can be done by calling the
 `resolve` Gradle task provided by Liferay Workspace.
 
-    gradlew resolve
+    ../gradlew resolve
 
 This task gathers all the capabilities provided by
     
-- the specified version of @product@
+- the specified version of @product@ (i.e., [targeted platform](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace))
 - the current workspace's modules
 
 Some capabilities/information gathered by the `resolve` task that are validated
@@ -27,7 +27,7 @@ project requires something not available in the gathered list of capabilities,
 the task fails.
 
 The task can only validate OSGi modules. It does not work with WAR-style
-projects, themes, npm portlets, etc.
+projects, themes, or npm portlets.
 
 +$$$
 

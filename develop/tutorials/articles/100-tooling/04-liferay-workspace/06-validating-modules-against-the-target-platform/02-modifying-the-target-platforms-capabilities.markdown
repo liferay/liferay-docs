@@ -70,9 +70,9 @@ you initialize it (e.g., `gradlew initBundle`).
 
 ### Skip the Resolving Process for Your Module
 
-It may be easiest to skip validating your module during the resolve process. To
-do this, open your workspace's root `build.gradle` file and insert the following
-Gradle code at the bottom of the file:
+It may be easiest to skip validating a particular module during the resolve
+process. To do this, open your workspace's root `build.gradle` file and insert
+the following Gradle code at the bottom of the file:
 
     targetPlatform {
         resolveOnlyIf { project ->
@@ -121,7 +121,7 @@ updated list of capabilities that your @product@ instance will provide.
 **Example 2: Leveraging a Customized Core Feature**
 
 You can easily extend @product@'s core features to provide a customized
-experience for you intended audience. When core features are customized, you'll
+experience for your intended audience. When core features are customized, you'll
 develop your app to assume these customizations are present when it's deployed.
 The new capabilities resulting from your customizations are not available in the
 target platform's default list of capabilities. Therefore, when your application
@@ -148,7 +148,7 @@ current workspace's @product@ instance, follow the steps below:
     This connects to the newly deployed BND agent running in @product@ and
     generates a new distro JAR named `custom_distro.jar`. All other capabilities
     will be overridden based on the @product@ instance you're generating the
-    custom distro against too, so verify the workspace bundle is the version you
+    custom distro against, so verify the workspace bundle is the version you
     plan to release for in production.
 
 4.  Navigate to your workspace's root `build.gradle` file and add the following
