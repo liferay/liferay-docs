@@ -14,8 +14,9 @@ You can create Page Templates in the *Site Pages* page in Site Administration.
 2.  Select the Page Templates tab.
 
 Like Fragments, Page Templates must be created in Collections. You see all of 
-your current Collections at the root of the Page Templates page. Next you want 
-to create a Page Template.
+your current Collections at the root of the Page Templates page. Collections 
+will also enable you to quickly select templates when creating pages. Next you 
+want to create a Page Template.
 
 1.  Click the `+` icon to *Add Collection*.
 
@@ -35,30 +36,38 @@ page is made up of, you can check the *Added* tab. The template is
 automatically saved as you work. Click on the back arrow at the top to stop 
 editing the template.
 
-<screenshot>
+![Figure 1: The Page Template Creation page.](../../../images/content-page-template-creation.png)
 
 ## Creating a Content Page
 
 After you are done creating a Page Template you can use that template to create 
 a Content Page. A Content Page is basically a page created from Fragments. 
-Unlike most Liferay pages that can be edited directly from the page itself, it 
-can only be changed or updated by editing the Template it is based on or the 
+Unlike Liferay Layout pages that can be edited directly from the page itself, 
+it can only be changed or updated by editing the Template it is based on or the 
 Fragments that make up the Template. To create a Content Page:
 
 1.  Go back to the main *Navigation* &rarr; *Site Pages* page.
 
 2.  Click the `+` button for *Add Page*.
 
+3.  Click on the tab for the Collection which contains the template you want to 
+    use.
+
 3.  Enter a *Name*.
 
-4.  For *Type* select *Content*, and most of the other page creation options 
-    will disappear, replaced by a *Page Template* selector.
+4.  Click Save.
 
-5.  Choose the *Page Template* you want to use from the selector.
+![Figure 2: Selecting you page template.](../../../images/selecting-template.png)
 
-6.  Click *Add Page*
+Alternatively, you can select the page type first, and then the template. After you click the `+` to add a page do the following:
 
-<screenshot>
+1.  Select the *Basic Pages* tab.
+
+2.  Select *Content*.
+
+3.  Choose the *Page Template* you want to use from the selector.
+
+4.  Click *Add Page*
     
 By default, your new page will be added to the Navigation Menu and users can 
 access the page you created. If you didn't know that there was anything other 

@@ -14,7 +14,7 @@ Start in Site Administration. You can find Fragments in the Content section.
 
 3.  In the *Content* section, select *Fragments*.
 
-<screenshot>
+![Figure 1: The Fragments page with no Fragments or Collections created.](../../../images/empty-fragments-page.png)
 
 The main Fragments page will display any Collections that are available for the 
 current site, provide the option to Import and Export through the menu in the 
@@ -38,8 +38,6 @@ created.
 
 3.  Give it a *Name* and click *Submit*.
 
-<screenshot>
-
 Now you're looking at the Fragment creation form. Each pane in the editor has a 
 different function:
 
@@ -47,6 +45,8 @@ different function:
 *  The top right pane is for entering CSS.
 *  The bottom left pane is for entering JavaScript.
 *  The bottom right pane provides a live preview as you work in the other panes.
+
+![Figure 2: The Fragments editor.](../../../images/fragments-editor.png)
 
 For more information on how to create to Fragments, see our Fragment 
 Development [link]tutorial.
