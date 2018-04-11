@@ -8,13 +8,13 @@ the portal. They are created by developers and are easily installed using the
 Liferay Marketplace. Since you don't have any themes beyond the default one 
 installed yet, you'll use the default theme for your pages.
 
-![Figure 5: The Look and Feel interface allows you to choose a theme for the current site.](../../../images/look-and-feel-pages.png)
+![Figure 5: The Look and Feel interface allows you to choose a theme for the current site.](../../../../images/look-and-feel-pages.png)
 
 You can apply themes to individual pages as well by selecting the 
 *Configure* option for a page and selecting the 
 *Define a specific look and feel for this page* option under the *Look and Feel* category. 
 
-![Figure 6: You can define a specific look and feel for a page.](../../../images/define-a-specific-look-and-feel.png)
+![Figure 6: You can define a specific look and feel for a page.](../../../../images/define-a-specific-look-and-feel.png)
 
 Many themes include more than one color scheme. This allows you to keep the
 existing look and feel while giving your site a different flavor. The *Color

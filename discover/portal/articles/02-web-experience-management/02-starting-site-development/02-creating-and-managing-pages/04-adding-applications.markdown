@@ -1,14 +1,15 @@
-## Adding Applications to a Page [](id=adding-applications-to-a-page)
+## Adding Applications to a Layout Page [](id=adding-applications-to-a-page)
 
-Layout pages are composed of applications. To add an app to a page, just click
-the *Add* button (![Add](../../../images/icon-control-menu-add.png)) from the 
-top menu and select the *Applications* tab. You can either browse through the 
-categories of available apps until you find the one you're looking for or you 
-can search for apps by name. Once you've found an app, click the *Add* button 
-to add it to the current page. Once it's been added to the page, you can drag 
-it to a new position. Alternatively, you can drag the app directly from the 
-Applications menu to a specific location on the page. Follow the steps below to 
-add some Collaboration apps to the Lunar Resort site.
+Layout pages are composed of applications. To add an app to a page, go to the 
+page, and click the *Add* button (you'll need to be logged into an account with 
+the correct privileges of course) (![Add](../../../../images/icon-control-menu-add.png)) from the  top menu and 
+select the *Applications* tab. You can either browse through the categories of 
+available apps until you find the one you're looking for or you can search for 
+apps by name. Once you've found an app, click the *Add* button to add it to the 
+current page. Once it's been added to the page, you can drag it to a new 
+position. Alternatively, you can drag the app directly from the Applications 
+menu to a specific location on the page. Follow the steps below to add some 
+Collaboration apps to the Lunar Resort site.
 
 1. From the top menu, select *Add* &rarr; *Applications*.
 2. In the menu that appears, expand the *Collaboration* category.
@@ -19,7 +20,7 @@ add some Collaboration apps to the Lunar Resort site.
 See how easy it is to add applications to your pages? You've added the Wiki
 app and Blogs Aggregator app to a page. 
 
-![Figure 7: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../images/app-layout-design.png)
+![Figure 7: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../../images/app-layout-design.png)
 
 It's easy to make your pages look exactly the way you want them to. If the
 default layout options provided aren't enough, you can even develop your own.
@@ -43,7 +44,7 @@ from the *Options* button next to the Page you'd like to let site members
 modify. Then select the *Advanced* tab at the top of the page, expand the
 *Customization Settings* area, and click on the *Customizable* selector button. 
 
-![Figure 8: To enable page customizations, click on the *Configure Page* button next to the page, expand the *Customization Settings* area, and click on the *Customizable* button.](../../../images/page-customizations.png)
+![Figure 8: To enable page customizations, click on the *Configure Page* button next to the page, expand the *Customization Settings* area, and click on the *Customizable* button.](../../../../images/page-customizations.png)
 
 Once you've enabled the *Customizable* selector, you can select the sections of
 the page you'd like to enable customization for, depending on the layout
@@ -57,11 +58,11 @@ toggle whether to view or hide the customizable regions. If you toggle the
 selector to view customizable regions, the regions on the page are color-coded
 to help distinguish customizable vs. non-customizable sections of the page.
 
-![Figure 9: Customizable regions are colored green and non-customizable regions are colored red.](../../../images/color-coded-customizable-regions.png)
+![Figure 9: Customizable regions are colored green and non-customizable regions are colored red.](../../../../images/color-coded-customizable-regions.png)
 
 Site members can also choose between viewing their customized page and viewing
 the default page by selecting the *Options* button
-(![Options](../../../images/icon-options.png)) from the Control Menu and
+(![Options](../../../../images/icon-options.png)) from the Control Menu and
 clicking the *View Page without my customizations* or *View My Customized Page*.
 
 There's also a *Reset My Customizations* option available from the *Options*
@@ -88,7 +89,7 @@ Users can make two kinds of customizations to customizable regions. First, they
 can configure applications within the customizable regions. Second, they can add
 apps to or remove apps from the customizable regions.
 
-![Figure 10: Customizable areas are highlighted green when organizing apps on the page.](../../../images/customizable-regions.png)
+![Figure 10: Customizable areas are highlighted green when organizing apps on the page.](../../../../images/customizable-regions.png)
 
 @product@ doesn't allow users to change a non-instanceable app's configuration
 inside a customizable region since those kinds of apps are tied to the site to
@@ -103,7 +104,7 @@ Lunar Resort site could take the following steps to make a personal
 customization of the Welcome page:
 
 1. Navigate to the Welcome homepage by clicking the Site Administration's
-   *Site Selector* button (![Compass](../../../images/icon-compass.png)) and
+   *Site Selector* button (![Compass](../../../../images/icon-compass.png)) and
    selecting the Lunar Resort site.
 2. Add the Language Selector app to the right column of the page by clicking the
    *Add* icon, clicking on *Applications*, searching for *Language Selector*,
@@ -115,7 +116,7 @@ select their language in the Language Selector app to view a translation of your
 site into their native language. After closing the Configuration dialog box of
 the Language Selector app, the customized Welcome page looks like this:
 
-![Figure 11: In this example, the user added the Language app, and changed the display style from icons to a select box.](../../../images/customized-portal-homepage.png)
+![Figure 11: In this example, the user added the Language app, and changed the display style from icons to a select box.](../../../../images/customized-portal-homepage.png)
 
 To allow users to customize a page, administrators must grant users permission
 to *Customize* pages under the Site section. This can be achieved by assigning
@@ -152,13 +153,13 @@ this with the following procedure:
 3. Click *Configure Page* from the Options button dropdown for the page in the
    left menu.
 4. Select *Permissions* from the *Options* icon
-   (![Options](../../../images/icon-options.png)) in the top right corner of the
+   (![Options](../../../../images/icon-options.png)) in the top right corner of the
    screen.
 4. Uncheck the *View* and *Add Discussion* permissions next to the Site Member
    role.
 5. Click the *Save* button.
 
-![Figure 12: The Permissions offer a plethora of options for each role.](../../../images/web-content-page-permissions.png)
+![Figure 12: The Permissions offer a plethora of options for each role.](../../../../images/web-content-page-permissions.png)
 
 Congratulations! You've changed the permissions for this page so only site
 administrators can view it. Any users you add to this role can now see the page.

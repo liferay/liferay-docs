@@ -34,6 +34,8 @@ instance.
 
 **Content:** created from a template defined by page templates.
 
+![Figure 1: You must select a page type when adding pages.](../../../../images/page-types-adding.png)
+
 Now that you know the basics of adding site pages, you can start working on the
 Lunar Resort site. If you're not currently on the site you're interested in
 adding pages to, navigate to Site Administration in the Menu, select the compass

@@ -4,11 +4,11 @@ You've successfully created a site for your Liferay instance, but you may need
 to add new pages or edit existing pages. From the Site Administration &rarr;
 *Navigation* section of the Menu, your site pages can be accessed and
 configured. If you're not currently on the site you'd like to edit, click the
-*Site Selector* button (![Compass](../../../images/icon-compass.png)) next to 
+*Site Selector* button (![Compass](../../../../images/icon-compass.png)) next to 
 your current site name in the Menu and select your desired site. The edits you 
 make to your pages are only made to the scope you've selected in the Menu.
 
-![Figure 1: The Pages menu allows you to edit your site pages as a whole.](../../../images/managing-site-pages.png)
+![Figure 1: The Sites Pages page allows you to edit your site pages as a whole.](../../../../images/managing-site-pages.png)
 
 Open the Navigation tab and click on *Site Pages* to manage pages. From here, 
 you'll manage your public and private page sets as well as page templates. 

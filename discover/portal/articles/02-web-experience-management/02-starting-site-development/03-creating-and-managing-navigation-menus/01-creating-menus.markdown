@@ -22,6 +22,14 @@ with a number of elements that you can add to a menu.
 Click on *Page* and you are taken to a view of all the current pages on the
 current site. Select a page and click *Add* to add that page to the menu.
 
++$$$
+
+**Note:** When you click on a page, you select that page, and multiple pages can
+be selected by simply clicking on each page one at a time. To deselect a page
+click on the page again.
+
+$$$
+
 Now you are menu management screen. From here, you can drag and drop menu 
 elements to rearrange or nest them. You can also manage options for this menu by
 clicking the gear icon in the top right. Let's add another item to the menu.
@@ -41,10 +49,12 @@ name and URL.
 
 2.  Enter the *URL* for an external site.
 
-3. Click *Add*.
+3.  Click *Add*.
 
 Drag the URL item onto the "External Links" submenu. This will nest the URL 
 item in the submenu.
+
+![Figure 1: A menu with a standard page, a submenu, and a URL link in the submenu.](../../../../images/basic-nav-menu.png)
 
 Now that you understand the basics of creating menus, you can go into little 
 deeper into menu management.
@@ -79,7 +89,7 @@ social media or similar tasks.
 Next click on the options menu at the far left of your new navigation menu. 
 You'll see these options:
 
-<sreenshot>
+![Figure 2: A menu with a standard page, a submenu, and a URL link in the submenu.](../../../../images/nav-menu-options.png)
 
 *  **Edit**: Takes you to the interface for adding, removing, and organizing 
     menu items.
@@ -93,5 +103,5 @@ You'll see these options:
 
 *  **Delete**: Deletes the menu.
 
-These are are the tools you need to create and manage Liferay's powerful 
+These are all the tools you need to create and manage Liferay's powerful 
 Navigation Menus.
