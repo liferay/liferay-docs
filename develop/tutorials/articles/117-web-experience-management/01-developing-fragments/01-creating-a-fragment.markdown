@@ -20,13 +20,37 @@ in the bottom left, and the bottom right is the preview pane.
 You can look at the three editing panes as if each were writing to a separate 
 file. Everything in the HTML pane goes to `index.html`, the CSS pane goes to 
 `index.css`, and the JavaScript one goes to `index.js`. The preview pane simply 
-renders everything as it will look on the page.
+renders everything as it will look on the page. Take a look at how this works:
 
-1.  Add the following code to the HTML pane:
+1.  Add the following code inside the `div` in the HTML pane:
+
+          <h1>
+              This text is styled, so it will look pretty!
+          </h1>
 
 2.  Add the following code to the CSS pane:
 
-3.  Add the following code to the JavaScript pane:
+        .fragment_37632 {
+          width: 100%;
+          background-color: white;
+          text-align: center;
+          padding: 2em 0;
+          font-size: 28px;
+         }
+
+        .fragment_37632 h1 {
+          font-weight: 100;
+          width: calc(100% - 1em);
+          max-width: 60ch;
+          margin: 0 auto;
+          font-size: 28px;
+         }
+
+3. Click *Publish* to save your work, and make it available to add to a content page.
+
+As you work, you can observe the preview in the preview pane.
+
+<screenshot>
 
 From here, the Fragment can be used to create a Content Page. To see this 
 process in action, see the Creating Content Pages [link] tutorial. Next, you'll

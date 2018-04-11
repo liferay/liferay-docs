@@ -26,19 +26,17 @@ You can make any text of a fragment editable by enclosing it in an
 The `lfr-editable` tag must include a unique `id` or it will not render, and 
 it must contain 
 
-Now, create a Fragment with editable text, add the Fragment to a Content Page, 
+Now, add editable text to a Fragment, add the Fragment to a Content Page, 
 and then edit the text before publishing.
 
-1.  Go to the *Fragments* page in Site Administration.
+1.  Go back into the Fragment you were working on before.
 
-2.  Go to the *Developing Fragments* collection and a new Fragment inside of it
-    named "Editable Fragment".
-
-3.  Inside the `<div>` in the HTML pane, enter the following code:
+2.  Inside the `<h1>` in the HTML pane, surround the text with `<lfr-editable>` 
+    tags so that it looks like this. 
     
         <h1>
           <lfr-editable id="heading" type="text">
-            Editable Heading
+              This text is styled, so it will look pretty!
           </lfr-editable>
         </h1>
 
@@ -46,8 +44,8 @@ and then edit the text before publishing.
 
 <screenshot>
 
-This creates a very simple fragment that contains only a heading with editable
-text. Next add it to a Content Page to be published.
+Now your fragment contains editable text. Next add it to a Content Page to be 
+published.
 
 1.  Go to *Navigation* &rarr; *Site Pages*.
 
@@ -62,6 +60,8 @@ text. Next add it to a Content Page to be published.
 
 The template will save automatically, and when it is turned into a page, the new
 text will be displayed.
+
+<screenshot>
 
 ## Including widgets within a fragment
 
@@ -79,7 +79,7 @@ like this:
         <lfr-app-nav />
     </div>
 
-Let's demonstrate this in a new Fragment.
+Let's demonstrate this in our Fragment.
 
 1.  Go to the *Fragments* page.
 
@@ -96,7 +96,7 @@ Let's demonstrate this in a new Fragment.
                <img src=”logo.png”/>
             </div>
             <div class=”col-md-10”>
-               <lfr-app-nav />
+               <lfr-widget-nav />
             </div>
           </div>
         </div>

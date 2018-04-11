@@ -23,4 +23,43 @@ Instead, reference external JS libraries.
 It’s possible to develop a fragment using any preferred desktop tools. Since 
 the Fragment is simply HTML, CSS, and JavaScript, you could use a simple text 
 editor or a specialized tool with its own built in previews, like the one's 
-Liferay provides. If you use an external tool, you can copy/paste the code into the appropriate panes in the Fragment editor to publish it.
+Liferay provides.
+
+If you use third party software to create fragments, you must organize them 
+into the proper structure to import them. The directory structure looks like 
+this:
+
+*  collection-name/ → This will act as the internal identifier, allowing for 
+    re-imports.
+
+    *  collection.json → Specify the user friendly name of the Collection
+
+    *  fragment-name-1/ → This will act as the internal identifier, allowing 
+        for re-imports.
+
+        *  fragment.json → Specify the friendly name or custom locations for 
+            files
+
+        *  src/
+
+            *  index.html
+
+            *  index.js
+
+            *  Index.css
+
+    *  fragment-name-2/
+
+        *  fragment.json → Specify the friendly name or custom locations for 
+            files
+
+        *  src/
+
+            *  index.html
+
+            *  index.js
+
+            *  Index.css
+            
+Once your files are organized like this, you can compress the entire folder 
+structure into a .zip archive and import it directly into the @product@!
