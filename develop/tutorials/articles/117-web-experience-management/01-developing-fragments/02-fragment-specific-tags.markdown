@@ -42,8 +42,6 @@ and then edit the text before publishing.
 
 4. Click *Publish*.
 
-<screenshot>
-
 Now your fragment contains editable text. Next add it to a Content Page to be 
 published.
 
@@ -58,10 +56,11 @@ published.
 
 5.  Click on the text that you defined as editable, and change it.
 
+![Figure 1: You can edit text in the Page Template editor.](../../../images/editing-fragment-text.png)
+
+
 The template will save automatically, and when it is turned into a page, the new
 text will be displayed.
-
-<screenshot>
 
 ## Including widgets within a fragment
 
@@ -83,18 +82,13 @@ Let's demonstrate this in our Fragment.
 
 1.  Go to the *Fragments* page.
 
-2.  Go to the *Developing Fragments* collection and a new Fragment inside of it
-    named "Embedded Widget Fragment".
-    
-3.  Create a new Fragment.
+2.  Go to the *Developing Fragments* collection and add a new Fragment inside 
+    of it named "Widget Fragment".
 
 4.  Insert the following code inside of the main `<div>` in the HTML pane:
     
         <div class=”container-fluid”>
           <div class=”row”>
-            <div class=”col-md-2”>
-               <img src=”logo.png”/>
-            </div>
             <div class=”col-md-10”>
                <lfr-widget-nav />
             </div>
@@ -127,7 +121,6 @@ display it.
 
 10. Now go back to your site, and select your new page.
 
-<screenshot>
-
 Embedding widgets in Fragments is a very powerful tool that opens a world of 
-options.
+options. Now that you've explored some of the power of Fragments, next we'll 
+talk about best practices for development.
