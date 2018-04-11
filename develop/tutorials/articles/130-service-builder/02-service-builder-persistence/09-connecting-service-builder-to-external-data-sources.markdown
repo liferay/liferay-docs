@@ -1,19 +1,22 @@
-# Connecting Service Builder to External Data Sources [](id=connecting-service-builder-to-external-data-sources)
+# Connecting Service Builder to External Databases [](id=connecting-service-builder-to-external-databases)
 
-Sometimes you want to use a data source other than @product@'s. To do this, the
+Sometimes you want to use a database other than @product@'s. To do this, its
 data source must be defined in `portal-ext.properties` or configured as a JNDI
-data source on @product@'s app server. This tutorial shows how to connect
+data source on the app server. This tutorial shows how to connect
 [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder) to
 a data source. Here's how: 
 
 1. [Specify the data source.](#step-1-specify-the-data-source)
+
 2. [Create a Spring bean that points to the data source.](#step-2-create-a-spring-bean-that-points-to-the-data-source)
+
 3. [Set your entity's data source to the `liferayDataSource` alias.](#step-3-set-your-entitys-data-source-to-the-liferaydatasource-alias)
+
 4. [Run Service Builder.](#step-4-run-service-builder)
 
 First, use portal properties to set your data source. 
 
-## Step 1: Specify the data source [](id=step-1-specify-the-data-source)
+## Step 1: Specify the Data Source [](id=step-1-specify-the-data-source)
 
 If the application server defines the data source using JNDI, skip this  step.
 Otherwise, specify the data source in a `portal-ext.properties` file.
@@ -25,39 +28,39 @@ than `jdbc.default.`. This example uses prefix `jdbc.ext.`:
     jdbc.ext.url=jdbc:mariadb://localhost/external?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
     jdbc.ext.username=yourusername
 
-## Step 2: Create a Spring bean that points to the data source [](id=step-2-create-a-spring-bean-that-points-to-the-data-source)
+## Step 2: Create a Spring Bean that Points to the Data Source [](id=step-2-create-a-spring-bean-that-points-to-the-data-source)
 
 To do this, create an `ext-spring.xml` file in your Service Builder module's
 `src/main/resources/META-INF/spring` folder or in your traditional portlet's
 `WEB-INF/src/META-INF` folder. Define the following elements: 
 
-A data source factory Spring bean for the data source. It's different based on
-the type.
+1.  A data source factory Spring bean for the data source. It's different based
+    on the type.
 
-- **JNDI**: Specify an arbitrary property prefix and prepend the prefix to a 
-JNDI name property key. Here's an example:
+    - **JNDI**: Specify an arbitrary property prefix and prepend the prefix to a 
+    JNDI name property key. Here's an example:
 
-        <bean class="com.liferay.portal.dao.jdbc.spring.DataSourceFactoryBean"
-            id="liferayDataSourceFactory">
-            <property name="propertyPrefix" value="custom." />
-            <property name="properties">
-                <props>
-                    <prop key="custom.jndi.name">jdbc/externalDataSource</prop>
-                </props>
-            </property>
-        </bean>
+            <bean class="com.liferay.portal.dao.jdbc.spring.DataSourceFactoryBean"
+                id="liferayDataSourceFactory">
+                <property name="propertyPrefix" value="custom." />
+                <property name="properties">
+                    <props>
+                        <prop key="custom.jndi.name">jdbc/externalDataSource</prop>
+                    </props>
+                </property>
+            </bean>
 
-- **Portal Properties**: Specify a property prefix that matches the prefix 
-(e.g., `jdbc.ext.`) you used in `portal-ext.properties`.
+    - **Portal Properties**: Specify a property prefix that matches the prefix 
+    (e.g., `jdbc.ext.`) you used in `portal-ext.properties`.
 
-        <bean class="com.liferay.portal.dao.jdbc.spring.DataSourceFactoryBean"
-            id="liferayDataSourceFactory">
-            <property name="propertyPrefix" value="jdbc.ext." />
-        </bean>
+            <bean class="com.liferay.portal.dao.jdbc.spring.DataSourceFactoryBean"
+                id="liferayDataSourceFactory">
+                <property name="propertyPrefix" value="jdbc.ext." />
+            </bean>
 
-A Liferay data source bean that refers to the data source factory Spring bean.
+2.  A Liferay data source bean that refers to the data source factory Spring bean.
 
-An alias for the Liferay data source bean. 
+3.  An alias for the Liferay data source bean. 
 
 Here's an example `ext-spring.xml` that points to a JNDI data source: 
 
@@ -98,9 +101,9 @@ Here's an example `ext-spring.xml` that points to a JNDI data source:
     </beans>
 
 The `liferayDataSourceFactory` above refers to a JNDI data source named
-`jdbc/externalDataSource`. If the data source was specified via data source
-properties in a `portal-ext.properties` file, the bean would require only a
-`propertyPrefix` property that matches the data source property prefix.
+`jdbc/externalDataSource`. If the data source is in a `portal-ext.properties`
+file, the bean requires only a `propertyPrefix` property that matches the data
+source property prefix.
 
 The data source bean `liferayDataSource` is overridden with one that refers to
 the `liferayDataSourceFactory` bean. The override affects this bundle (module or
@@ -116,11 +119,11 @@ bundles, you must override the `liferayDataSource` bean in each bundle.
 
 $$$
 
-## Step 3: Set your entity's data source to the `liferayDataSource` alias [](id=step-3-set-your-entitys-data-source-to-the-liferaydatasource-alias)
+## Step 3: Set Your Entity's Data Source to the `liferayDataSource` Alias [](id=step-3-set-your-entitys-data-source-to-the-liferaydatasource-alias)
 
-In your Service Builder module's `service.xml` file, set your entity's data
-source to the `liferayDataSource` alias you specified in your `ext-spring.xml`
-file. Here's an example: 
+In your `service.xml` file, set your entity's data source to the
+`liferayDataSource` alias you specified in your `ext-spring.xml` file. Here's
+an example: 
 
     <?xml version="1.0"?>
     <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.1.0//EN"
