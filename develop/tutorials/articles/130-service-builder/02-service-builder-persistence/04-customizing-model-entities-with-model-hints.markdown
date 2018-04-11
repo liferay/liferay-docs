@@ -1,8 +1,8 @@
 # Customizing Model Entities With Model Hints [](id=customizing-model-entities-with-model-hints)
 
 Once you've used Service Builder to define model entities, you may want to
-further refine how users enter that data. For example, model hints can define
-a calendar field where only future dates should be selectable. They provide
+further refine how users enter that data. For example, model hints can define a
+calendar field where only future dates should be selectable. Model hints provide
 a single place to specify entity data restrictions and other formatting. 
 
 You define model hints in a file called `portlet-model-hints.xml`. If your
@@ -13,9 +13,13 @@ project has an API module and a service module like the
 application, the `portlet-model-hints.xml` file is in the
 `bookmarks-service/src/main/resources/META-INF/` folder. 
 
-Model hints define two things: how entities are presented to users and the size
-of database columns. As Liferay renders your form fields, it customizes the
-form's input fields based your configuration. 
+Model hints define two things:
+
+1. How entities are presented to users
+2. The size of database columns
+
+As Liferay renders your form fields, it customizes the form's input fields based
+your configuration. 
 
 +$$$
 
@@ -28,8 +32,8 @@ when Service Builder runs. You can, however, safely edit the
 
 $$$
 
-As an example, consider 
-the [Bookmarks app service module's](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.bookmarks.service/)
+As an example, consider the
+[Bookmarks app service module's](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.bookmarks.service/)
 model hints file:
 
     <?xml version="1.0"?>
@@ -147,6 +151,20 @@ I found some more hints and added them to the table above.
 I'm not sure what the `check-tab` hint does. Would be worth asking the UI team.
 
 - Jim -->
+
++$$$
+
+**Note**: The aui taglib is fully supported and not related to AlloyUI (the 
+JavaScript library) that's deprecated. 
+
+$$$
+
++$$$
+
+**Note**: You can use a mix of Clay and aui tags in a form. But model hints 
+affect aui tags only. 
+
+$$$
 
 Note that Liferay has its own model hints file--`portal-model-hints.xml`. It's
 in `portal-impl.jar`'s `META-INF` folder. This file contains many hint examples,
