@@ -1,56 +1,50 @@
 # Creating Local Services [](id=creating-local-services)
 
 The heart of your service is its `*LocalServiceImpl` class. This class is your
-entity's local service extension point. Local services can be invoked within
-your application or by other Liferay applications running on the same Liferay
-instance as your application. Remote services differ from local services in that
-remote services can be invoked from any application that can access your Liferay
-instance (e.g., over the Internet) and has permission to do so. All of your
-application's core business logic for working with your entity model (or models)
-should be added as methods of your `*LocalServiceImpl` class. Before adding any
-custom service methods, however, you should review the
+entity's local service extension point. Local services are invoked from your
+application or by other applications running on the same instance as your
+application. Remote services can be invoked over the Internet if you've made
+those services accessible. 
+
+As a best practice, implement your application's core business logic in your
+`*LocalServiceImpl` class, and add security checks in your remote class. Before
+adding any custom service methods, however, you should review the
 [initial service classes](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code#understanding-the-code-generated-by-service-builder)
 that Service Builder generated during its initial run. 
 
-<!--
-This best practice also appears in creating-remote-services.markdown. If you
-edit it, please update that location, as well.
--->
+**Best Practice:** If your application needs both local and remote services,
+follow these steps:
 
-**Best Practice:** If your application needs both local and remote services, follow these steps:
+1.  Implement your business logic in `*LocalServiceImpl`. 
 
-1. Determine the service methods that your application needs for working with 
-your entity model and add these service methods to your `*LocalServiceImpl`. 
-2. Create corresponding remote services methods in your `*ServiceImpl`.
-3. Add permission checks to the remote service methods and make the remote 
-service methods invoke the local service methods. The remote service methods can
-have the same names as the local service methods that they call.
-4. Within your application, only call the remote services. This ensures that 
-your service methods are secured and that you don't have to duplicate
-permissions code.
+2.  Create corresponding remote services methods in your `*ServiceImpl`.
 
-Note that Service Builder creates a `*LocalService` class which is the interface
-for the local service. It contains the signatures of every method in
+3.  Use the remote service methods to call the local service, wrapping the calls
+    in permission checks. 
+
+4.  In your application, call only the remote services. This ensures that
+    your service methods are secured and that you don't have to duplicate
+    permissions code.
+
+Note that Service Builder creates a `*LocalService` class which is the
+interface for the local service. It contains the signatures of every method in
 `*LocalServiceBaseImpl` and `*LocalServiceImpl`. `*LocalServiceBaseImpl`
-contains some automatically generated methods that provide functionality that's
-common to all local services. Since the `*LocalService` class is generated,
-never modify it. If you do, your changes will be overwritten the next time you
-run Service Builder. Place all custom code in your `*LocalServiceImpl`, where it
+contains some automatically generated methods that provide functionality common
+to all local services. Since the `*LocalService` class is generated, never
+modify it. If you do, your changes are overwritten the next time you run
+Service Builder. Place your code in your `*LocalServiceImpl`, where it
 will not be overwritten.
 
 For example, the Bookmarks application's
-[BookmarksEntryLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
+[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
 class demonstrates the kinds of service methods that applications commonly need
-for working with an entity model. Click on the class's link to view some of its
-local service methods.
+for working with an entity model. 
 
-Adding an entity to the database requires an ID for the entity. Liferay provides
-a counter service which obtains a unique ID for each new entity. It's possible
-to use the `increment` method of Liferay's
-[`CounterLocalService` class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html),
-but Service Builder already makes a `CounterLocalService` instance available to
-your app's `*LocalServiceBaseImpl`. The `CounterLocalService` instance is
-injected into a module as an OSGi service:
+Adding an entity to the database requires an ID (primary key), which in
+Service Builder applications is generated by the 
+[Counter service](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html). 
+Use the `increment` method of this service to generate the key. The
+`CounterLocalService` instance is injected into a module as an OSGi service:
 
     @ServiceReference(type=com.liferay.counter.kernel.service.CounterLocalService.class)
     protected com.liferay.counter.kernel.service.CounterLocalService counterLocalService;
@@ -81,7 +75,7 @@ The Bookmarks application uses the generated ID as the ID for the new
 into `EventLocalServiceBaseImpl`. 
 
 Next, the Bookmarks application sets the attribute fields that were specified
-for the BookmarksEntry entity in the `service.xml`. These attributes include the
+for the `BookmarksEntry` entity in the `service.xml`. These attributes include the
 `groupId`, `userId`, `name`, `url`, `serviceContext`, etc. Lastly, a Bookmarks
 folder ID must be associated to the entry.
 
@@ -95,7 +89,7 @@ that, the generated `addEntry` method of `BookmarksEntryLocalServiceBaseImpl` is
 called to add the bookmark to the database. Lastly, the bookmark is added as a
 resource so that permissions can be applied to it later. To view the `addEntry`
 method in its entirety, see the
-[BookmarksEntryLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
+[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
 class. For more information about adding resources, please see the
 [Assets: Integrating with Liferay's Framework](/develop/tutorials/-/knowledge_base/7-1/assets-integrating-with-liferays-framework)
 learning path. 
