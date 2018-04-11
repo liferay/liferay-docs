@@ -1,0 +1,238 @@
+## Step 2: Implementing Your Custom Finder Method Using Dynamic Query [](id=step-2-implementing-your-custom-finder-method-using-dynamic-query)
+
+Your first step in implementing your custom finder method in your `-FinderImpl`
+class is to open a new Hibernate session. Since your `-FinderImpl` class extends
+`BasePersistenceImpl<Entity>`, and `BasePersistenceImpl<Entity>` contains a
+session factory object and an
+[openSession](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/persistence/impl/BasePersistenceImpl.html#openSession--)
+method, you can simply invoke the
+`openSession` method of your `-FinderImpl`'s parent class to open a new
+Hibernate session. The basic structure of your finder method should look like
+this:
+
+    public List<Entity> findBy-(...) {
+
+        Session session = null;
+        try {
+                /*
+                Try to open a new Hibernate session and create a dynamic
+                query to retrieve and return the desired list of entity
+                objects
+                */
+        }
+        catch (Exception e) {
+                // Exception handling
+        }
+        finally {
+                closeSession(session);
+        }
+
+        return null;
+        /*
+        Return null only if there was an error returning the
+        desired list of entity objects in the try block
+        */
+
+    }
+
+For example, in the case of the Guestbook application, you could write the
+following finder method to retrieve a list of Guestbook entries that have a
+specific name and that also belong to a Guestbook of a specific name:
+
+    public List<Event> findByEntryNameGuestbookName(String entryName, String guestbookName) {
+
+        Session session = null;
+        try {
+            session = openSession();
+
+            DynamicQuery guestbookQuery = DynamicQueryFactoryUtil.forClass(Guestbook.class)
+                .add(RestrictionsFactoryUtil.eq("name", guestbookName))
+                .setProjection(ProjectionFactoryUtil.property("guestbookId"));
+
+            Order order = OrderFactoryUtil.desc("modifiedDate");
+
+            DynamicQuery entryQuery = DynamicQueryFactoryUtil.forClass(Entry.class)
+                .add(RestrictionsFactoryUtil.eq("name", entryName))
+                .add(PropertyFactoryUtil.forName("guestbookId").in(guestbookQuery))
+                .addOrder(order);
+
+            List<Event> entries = EventLocalServiceUtil.dynamicQuery(entryQuery);
+
+            return entries;
+        }
+        catch (Exception e) {
+            try {
+                throw new SystemException(e);
+            }
+            catch (SystemException se) {
+                se.printStackTrace();
+            }
+        }
+        finally {
+            closeSession(session);
+        }
+
+Notice that in Liferay, you don't create criteria objects directly from the
+Hibernate session. Instead, you create dynamic query objects using Liferay's
+[DynamicQueryFactoryUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/DynamicQueryFactoryUtil.html)
+service. Thus, instead of
+
+    Criteria entryCriteria = session.createCriteria(Entry.class);
+
+you use
+
+    DynamicQuery entryQuery = DynamicQueryFactoryUtil.forClass(Entry.class);
+
+Most features of Hibernate's Criteria API, including restrictions, projections,
+and orders, can be used on Liferay's dynamic query objects. Restrictions in
+Hibernate's Criteria API roughly correspond to the `where` clause of an SQL
+query: they offer a variety of ways to limit the results returned by the query.
+You can use restrictions, for example, to cause a query to return only results
+where a certain field has a particular value, or a value in a certain range, or
+a non-null value, etc.
+
+Projections in Hibernate's Criteria API let you modify the kind of results
+returned by a query. For example, if you don't want your query to return a list
+of entity objects (the default), you can set a projection on a query so that
+only a list of the values of a certain entity field, or fields, is returned.
+You can also use projections on a query to return the maximum or minimum value
+of an entity field, or the sum of all the values of a field, or the average,
+etc. For more information on restrictions and projections, please refer to
+Hibernate's
+[documentation](http://docs.jboss.org/hibernate/orm/3.6/reference/en-US/html/querycriteria.html).
+
+Orders, another feature of Hibernate's Criteria API, let you control the order
+of the elements in the list returned by a query. You can choose the property or
+properties to which an order should be applied and you can choose for the
+properties to appear in ascending or descending order in the list.
+
+Like Hibernate criteria, Liferay's dynamic queries are *chainable*. This means
+that you can add criteria to, set projections on, and add orders to Liferay's
+dynamic query objects just by appending the appropriate method calls to the
+query object. For example, the following snippet demonstrates chaining the
+addition of a restriction criterion and a projection to a dynamic query object
+declaration:
+
+    DynamicQuery guestbookQuery = DynamicQueryFactoryUtil.forClass(Guestbook.class)
+        .add(RestrictionsFactoryUtil.eq("name", guestbookName))
+        .setProjection(ProjectionFactoryUtil.property("guestbookId"));
+
+When you need to add restrictions to a dynamic query in Liferay, don't call
+Hibernate's `Restrictions` class directly. Instead, use the methods of Liferay's
+[RestrictionsFactoryUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/RestrictionsFactoryUtil.html)
+service. You'll find the same methods in Liferay's `RestrictionsFactoryUtil`
+service class that you're used to from Hibernate's `Restrictions` class: `in`,
+`between`, `like`, `eq`, `ne`, `gt`, `ge`, `lt`, `le`, etc.
+
+Thus, instead of 
+
+    entryCriteria.add(Restrictions.eq("name", guestbookName));
+
+to specify that a guestbook must have a certain name, you use
+
+    entryQuery.add(RestrictionsFactoryUtil.eq("name", guestbookName));
+
+Similarly, to set projections, you create properties via Liferay's
+[PropertyFactoryUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/PropertyFactoryUtil.html)
+service instead of through Hibernate's `Property` class. Thus, instead of 
+
+    entryCriteria.setProjection(Property.forName("guestbookId"));
+
+you use
+
+    entryQuery.setProjection(PropertyFactoryUtil.forName("guestbookId"));
+
+Notice that in the custom `findByGuestbookNameEntryName` finder method, there
+are two distinct dynamic queries. The first query retrieves a list of guestbook
+IDs corresponding to guestbook names that match the `guestbookName` parameter
+of the finder method. The second query retrieves a list of guestbook entries
+with entry names that match the `entryName` parameter and have `guestbookId`
+foreign keys belonging to the list returned by the first query.
+
+Here's the first query:
+
+    DynamicQuery guestbookQuery = DynamicQueryFactoryUtil.forClass(Guestbook.class)
+        .add(RestrictionsFactoryUtil.eq("name", guestbookName))
+        .setProjection(ProjectionFactoryUtil.property("guestbookId"));
+
+By default, `DynamicQueryFactoryUtil.forClass(Guestbook.class)` returns a query
+that retrieves a list of all guestbook entities. Adding the
+`.add(RestrictionsFactoryUtil.eq("name", guestbookName))` restriction limits the
+results to only those guestbooks whose guestbook names match the
+`guestbookName` parameter. The
+`.setProjection(ProjectionFactoryUtil.property("guestbookId"))` projection
+changes the result set from a list of guestbook entries to a list of guestbook
+IDs. This is useful since guestbook IDs are much less expensive to retrieve than
+full guestbook entities and the guestbook IDs are all that the guestbook entry
+query requires.
+
+Next is an order which applies to the list of entries returned by the
+`findByEntryNameGuestbookName` finder method:
+
+    Order order = OrderFactoryUtil.desc("modifiedDate");
+
+When this order is applied to a query, the list of results returned by the query
+are arranged in descending order of the query entity's `modifiedDate` attribute.
+Thus the most recently modified entities (guestbook entries, in our example)
+appear first and the least recently modified entities appear last.
+
+Here's the second query:
+
+    DynamicQuery eventQuery = DynamicQueryFactoryUtil.forClass(Entry.class)
+        .add(RestrictionsFactoryUtil.eq("name", entryName))
+        .add(PropertyFactoryUtil.forName("guestbookId").in(guestbookQuery))
+        .addOrder(order);
+
+    List<Event> entries = _eventLocalService.dynamicQuery(entryQuery);
+
+By default, `DynamicQueryFactoryUtil.forClass(Entry.class)` returns of list of
+all guestbook entry entities. The `.add(RestrictionsFactoryUtil.eq("name",
+entryName))` restriction limits the results to only those guestbook entries
+whose names match the `entryName` parameter of the finder method.
+[PropertyFactoryUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/PropertyFactoryUtil.html)
+is a Liferay utility class with the method `forName(String propertyName)`, which
+returns the specified property. This property can be passed to another Liferay
+dynamic query. This is exactly what happens in the following line of our
+example:
+
+    .add(PropertyFactoryUtil.forName("guestbookId").in(guestbookQuery))
+
+Here, the code makes sure that the guestbook IDs (foreign keys) of the entry
+entities in the `entityQuery` must belong to the list of guestbook IDs returned
+by the `guestbookQuery`. Declaring that an entity property in one query must
+belong to the result list of another query is a way to use Liferay's dynamic
+query API to create complex queries, similar to SQL joins.
+
+Lastly, you apply the order defined earlier to the entries returned by the
+`findByEntryNameGuestbookName` finder method:
+
+    .addOrder(order);
+
+This orders the list of guestbook entities by the `modifiedDate` attribute, from
+most recent to least recent.
+
++$$$
+
+**Note:** Service Builder not only generates a `public List
+dynamicQuery(DynamicQuery dynamicQuery)` method in `-LocalServiceBaseImpl` but it
+also generates `public List dynamicQuery(DynamicQuery dynamicQuery, int start,
+int end)` and `public List dynamicQuery(DynamicQuery dynamicQuery, int start,
+int end, OrderByComparator orderByComparator)` methods. You can go back to step
+1 and either modify your custom finder method or create overloaded versions of
+your custom finder method to take advantage of these extra methods and their
+parameters. The `int start` and `int end` parameters are useful when paginating
+a result list. `start` is the lower bound of the range of model entity instances
+and `end` is the upper bound. The `OrderByComparator orderByComparator` is the
+comparator by which to order the results.
+
+$$$
+
+To use the overloaded `dynamicQuery` methods of your `-LocalServiceBaseImpl`
+class in the (optionally overloaded) custom finders of your `-FinderImpl` class,
+just choose the appropriate methods for running the dynamic queries: 
+`EventLocalService.dynamicQuery(eventQuery)`, or
+`EventLocalService.dynamicQuery(eventQuery, start, end)` or
+`EventLocalService.dynamicQuery(eventQuery, start, end, orderByComparator)`.
+
+Great! You've now created a custom finder method using Liferay's Dynamic Query
+API. Your last step is to add a service method that calls your finder.
