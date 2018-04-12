@@ -18,12 +18,11 @@ Application can be used to help buyers easily find the products they want.
 ## Creating Individual Pages
 
 Manually creating a category page is easy. Just 
-[create
-a page](discover/portal/-/knowledge_base/7-0/creating-and-managing-pages) and
-then go to *Site Menu* &rarr; *Content* &rarr; *Categories*, find the category
-you want to create a page for, and click ![Options](../../images/icon-add.png)
-&rarr; *Edit*. Then click on the *Category Display Page* tab, hit *Choose* and
-select the page you just created.
+[create a page](discover/portal/-/knowledge_base/7-1/creating-and-managing-pages) 
+and then go to *Site Menu* &rarr; *Content* &rarr; *Categories*, find the
+category you want to create a page for, and click
+![Options](../../images/icon-add.png) &rarr; *Edit*. Then click on the *Category
+Display Page* tab, hit *Choose* and select the page you just created.
 
 ## Creating a Default Page
 

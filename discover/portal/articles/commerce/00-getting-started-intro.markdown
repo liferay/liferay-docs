@@ -28,3 +28,7 @@ models a typical B2B use case, while *Lotus* is a B2C retailer.
 
 Now we're moving. The next section covers the most important aspect of any
 store: the catalog and the products it holds.
+
+<!--Starter kits need to go into separate document. This section should mainly be an overview of commerce features. Starter kits should only be touched on, and don't call them starter kits. They're site templates now.
+
+For commerce features, use the top-level categories in the outline. Roughly; "settings" isn't a feature. For material, look to the introductions that you've already written to each section. 
