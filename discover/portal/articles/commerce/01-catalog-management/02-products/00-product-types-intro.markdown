@@ -6,7 +6,9 @@ types are distinguished by the way the catalog tracks inventories of each.
 ## Simple Products
 
 A simple product is any product for which inventory is tracked. In practice,
-this means that almost any physical item can be a simple product. 
+this means that almost any physical item can be a simple product. Nonphysical
+products of which the store has limited inventories (such as units of
+cryptocurrency) would also be simple products.
 
 ## Grouped Products
 
@@ -20,22 +22,23 @@ products, or virtual products.
 
 A virtual product is a product for which there is no inventory tracking at all.
 This may mean that the product is downloaded rather than shipped, as in the case
-of a music file or an electronic publication. It is also useful for selling
-services, warranties and other goods that might be neither shipped nor
-downloaded.
+of a music file or an electronic publication. Services, warranties and other
+goods that might be neither shipped nor downloaded would also be virtual
+products.
 
 ## Creating a Product
 
 To create a product:
 
-1. Click on the ![Add](../../../../images/icon-add.png) button at the top-right
+1. From the catalog's *Products* tab, click on the ![Add](../../../../images/icon-add.png) button at the top-right
    of the screen and then select the type of product you wish to create: simple,
    grouped or virtual.
 
-2. Enter [Basic Product Information](discover/portal/-/knowledge_base/7_1/basic-product-information)
+2. Next, you'll be prompted to enter [Basic Product Information](discover/portal/-/knowledge_base/7_1/basic-product-information)
    into the *Add Product* form.
 
-3. Enter additional information specific to the product type you selected.
+3. Enter additional information specific to the product type you selected in
+   step 1.
 
    **For a Simple Product**, there is no additional information to enter. When
    you create simple product, the standard product tab bar is displayed,
@@ -53,8 +56,9 @@ To create a product:
 
    ![Figure 1: The features that make a grouped product unique can be conveniently found in the *Grouped* tab.](../../../../images/grouped-product.png)
 
-   **A Virtual Product** also has an extra tab--*Virtual*--in its
-   product tab bar. The *Virtual* tab contains the following fields:
+   **A Virtual Product** also has an extra tab--*Virtual*--in its product tab
+   bar. The *Virtual* tab contains the following fields which should be filled
+   in if applicable:
 
        **URL/Select File**: If your virtual product is stored at a web address,
        enter the URL here. Alternatively, click *Select* to upload a local file
