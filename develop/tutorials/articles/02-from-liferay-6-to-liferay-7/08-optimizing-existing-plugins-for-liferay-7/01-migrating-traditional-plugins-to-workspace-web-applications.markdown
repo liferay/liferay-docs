@@ -73,7 +73,7 @@ on it and build its `.war` file.
 
     blade gw war 
 
-To deploy the `.war`, copy it from the plugin's `build/lib` folder to the
+To deploy the `.war`, copy it from the plugin's `build/libs` folder to the
 `[LIFERAY_HOME]/deploy` folder. 
 
 Welcome to your plugin's new home in Workspace! 
