@@ -1,7 +1,7 @@
 # Product Types
 
 The catalog supports three product types: simple, grouped and virtual. These
-types are distinguished by the way the catalog tracks each in inventory.
+types are distinguished by the way the catalog tracks inventories of each.
 
 ## Simple Products
 
@@ -35,7 +35,7 @@ To create a product:
 2. Enter [Basic Product Information](discover/portal/-/knowledge_base/7_1/basic-product-information)
    into the *Add Product* form.
 
-3. Enter information specific to the product type you selected.
+3. Enter additional information specific to the product type you selected.
 
    **For a Simple Product**, there is no additional information to enter. When
    you create simple product, the standard product tab bar is displayed,
