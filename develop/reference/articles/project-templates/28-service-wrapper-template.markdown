@@ -45,11 +45,11 @@ or
 Here, *service* means an OSGi service, not a Liferay API. Another way to say
 *service type* is to say *component type*.
 
-After running the command above, your project's directory structure looks like
-this:
+After running the Blade command above, your project's directory structure looks
+like this:
 
 - `service-override`
-    - `gradle` (only in Blade CLI generated projects)
+    - `gradle`
         - `wrapper`
             - `gradle-wrapper.jar`
             - `gradle-wrapper.properties`
@@ -58,9 +58,13 @@ this:
             - `java`
                 - `com/liferay/docs/serviceoverride`
                     - `UserLocalServiceOverride.java`
+            - `resources`
     - `bnd.bnd`
     - `build.gradle`
-    - `[gradlew|pom.xml]`
+    - `gradlew`
+
+The Maven-generated project includes a `pom.xml` file and does not include the
+Gradle-specific files, but otherwise, appears exactly the same.
 
 The generated module is a working application and is deployable to a @product@
 instance. To build upon the generated app, modify the project by adding logic
