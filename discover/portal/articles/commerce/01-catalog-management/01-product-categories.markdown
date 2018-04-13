@@ -1,42 +1,50 @@
 # Product Categories
 
-Unless your catalog contains a very narrow range of merchandise, you will
-probably want to organize your products into categories. Experienced @product@
-users will be familiar with using category hierarchies to organize other kinds
-of content; @commerce@ uses the same feature to organize products.
+Products can be associated with each other in *Categories*. These associations
+allow groups of products to be handled as single unit. For example, a product
+category could be used to apply discounts or other offers to certain groups of
+products, to assist buyers in finding certain types of products, or to promote
+certain products to a specified user segment.
 
-Once your products have been categorized, you can use the category hierarchy to
-allow customers to easily navigate your store. Site administrators can also use
-categories to filter the catalog, which can streamline some tasks.
+To organize products into categories, you must create the categories first and
+then assign products to them.
 
-## Creating Categories for Commerce
+## Creating Categories
 
-To learn how to create category hierarchies and the vocabularies that hold them,
-go to the 
+To create vocabularies, categories and subcategories, go to To learn how to
+create category hierarchies and the vocabularies that hold them, go to *Site
+Menu* &rarr; *Content* &rarr; *Categories*. To learn more about the process, go
+to the 
 [Defining Categories for Content](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories#defining-categories-for-content)
-section. In most cases, the category hierarchy organizing your catalog should be
-contained in a single vocabulary.
+section.
 
-Think carefully about setting up your category hierarchy and naming your
-categories, considering not only an optimal way to organize the catalog, but
-also good presentation. As you set up your web store, you're likely to
-eventually use a *Commerce Category Navigation* portlet to help your customers
-find what they want. This portlet uses your category names to create a menu
-that directs customers exactly where they want to go.
++$$$
 
-![Figure 1: This navigation portlet displays a vocabulary's entire category hierarchy.](../../../images/commerce-category-navigation.png)
+Note: Categories are designed to be nested into a hierarchy. While this allows
+multiple categories to be handled as a single unit, it also makes it difficult
+for administrators to see the entire vocabulary. To view all categories at
+once, go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*
+&rarr; *Assets* and select *Flattened Tree* from the drop-down menu in *Asset
+Categories Web*. Then return to *Site Menu* &rarr; *Content* &rarr;
+*Categories*.
 
-While your category names will be displayed to customers, vocabularies will be
-kept our of sight.
+$$$
 
-## New Category Features
+## Adding Products to Categories
 
-In most respects, categories are unchanged by @commerce@. But there
-are a few new features that are available when you edit a category.
+To add a product to one or more categories, go to the catalog and find open the
+appropriate product's *Categorization* tab. Click on the *Select* button under
+the label for the appropriate vocabulary, and the check the box next to each
+category that applies.
 
-![Figure 2: *Category Display Page*, *Products* and *Images* are all unique to @commerce@.](../../../images/category-tab-bar.png)
+## Category Features
 
-**Category Display Page:** As an alternative to using a default category display
+**Category Display Page:** The category display page is a feature that creates a relationship between a category and a specified page. This relationship makes it easy to display and organize content or applications related to to that category, with any changes made to the category automatically reflected by the page. A typical use case might involve using the category display page to display category content for customers, but the feature could just as easily create a page for internal use.
+
+To create a category display page, first create a page and then assign it to a category: find the category in *Site Menu* &rarr; *Content* &rarr; *Categories* and click ![Edit](../../../images/icon-options.png)
+
+
+As an alternative to using a default category display
 page--which uses the same format for every category--you can create a unique
 page to display information about a single category. Create the page first and
 then assign it to the category (edit the category, select the Category Display
