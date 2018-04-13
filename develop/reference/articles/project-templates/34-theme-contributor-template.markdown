@@ -23,7 +23,7 @@ to create a theme contributor project called `my-theme-contributor` with a
 package name of `com.liferay.docs.theme.contributor` and a contributor type of
 `my-contributor`. You could run the following command to accomplish this:
 
-    blade create -t theme-contributor --contributorType my-contributor -p com.liferay.docs.theme.contributor my-theme-contributor
+    blade create -t theme-contributor --contributor-type my-contributor -p com.liferay.docs.theme.contributor my-theme-contributor
 
 or
 
@@ -36,11 +36,11 @@ or
         -Dversion=1.0 \
         -DcontributorType=my-contributor
 
-After running the command above, your project's folder structure would look
-like this: 
+After running the Blade command above, your project's folder structure would
+look like this: 
 
 - `my-theme-contributor`
-    - `gradle` (only in Blade CLI generated projects)
+    - `gradle`
         - `wrapper`
             - `gradle-wrapper.jar`
             - `gradle-wrapper.properties`
@@ -62,7 +62,10 @@ like this:
                     		- `my-contributor.js`
     - `bnd.bnd`
     - `build.gradle`
-    - `[gradlew|pom.xml]`
+    - `gradlew`
+
+The Maven-generated project includes a `pom.xml` file and does not include the
+Gradle-specific files, but otherwise, appears exactly the same.
 
 The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
