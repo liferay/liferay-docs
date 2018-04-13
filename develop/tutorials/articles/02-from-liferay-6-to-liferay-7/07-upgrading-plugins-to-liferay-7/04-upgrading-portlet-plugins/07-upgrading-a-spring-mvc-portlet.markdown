@@ -63,7 +63,7 @@ specifying them in the `liferay-plugin-package.properties` file's
 @product-ver@, you should acquire dependencies using a dependency management
 framework, such as Gradle, Maven, or Apache Ant/Ivy.
 
-[Migrating the sample portlet plugin from a traditional plugin to a Liferay Workspace web application](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications)
+[Converting the sample portlet plugin from a traditional plugin to a Liferay Workspace web application](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications)
 facilitated resolving its dependencies. 
 
 Here's the updated `my-spring-mvc-portlet`'s `build.gradle` file:
