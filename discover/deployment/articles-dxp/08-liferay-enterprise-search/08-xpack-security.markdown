@@ -104,7 +104,7 @@ Kibana's UI or the
 [Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/security-api-change-password.html).
 
 The `interactive` argument lets you set the passwords for all built-in users.
-The confioguraiton shown in these articles assumes you set all of the
+The configuraiton shown in these articles assumes you set all of the
 passwords to *liferay*. Of course, that's not recommended for production systems.
 
     ./bin/x-pack/setup-passwords interactive
