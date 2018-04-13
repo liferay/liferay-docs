@@ -1,33 +1,35 @@
 ## Adding Applications to a Layout Page [](id=adding-applications-to-a-page)
 
 Layout pages are composed of applications. To add an app to a page, go to the 
-page, and click the *Add* button (you'll need to be logged into an account with 
-the correct privileges of course) (![Add](../../../../images/icon-control-menu-add.png)) from the  top menu and 
-select the *Applications* tab. You can either browse through the categories of 
-available apps until you find the one you're looking for or you can search for 
-apps by name. Once you've found an app, click the *Add* button to add it to the 
-current page. Once it's been added to the page, you can drag it to a new 
-position. Alternatively, you can drag the app directly from the Applications 
-menu to a specific location on the page. Follow the steps below to add some 
+page and click the *Add* button  (![Add](../../../../images/icon-control-menu-add.png)) 
+from the  top menu and select the *Applications* tab. You can either browse
+through the categories of available apps until you find the one you want, or you
+can search for apps by name. Once you've found an app, click the *Add* button to
+add it to the current page. Once there, you can drag it to a new position.
+Alternatively, you can drag the app directly from the Applications menu to
+a specific location on the page. Follow the steps below to add some
 Collaboration apps to the Lunar Resort site.
 
-1. From the top menu, select *Add* &rarr; *Applications*.
-2. In the menu that appears, expand the *Collaboration* category.
-3. Drag the *Blogs Aggregator* app from the Add Application window to the right
-   column of your page.
-4. Next, drag the *Wiki* app to the left column.
+1.  From the top menu, select *Add* &rarr; *Applications*.
+
+2.  In the menu that appears, expand the *Collaboration* category.
+
+3.  Drag the *Blogs Aggregator* app from the Add Application window to the right
+    column of your page.
+
+4.  Next, drag the *Wiki* app to the left column.
 
 See how easy it is to add applications to your pages? You've added the Wiki
 app and Blogs Aggregator app to a page. 
 
 ![Figure 7: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../../images/app-layout-design.png)
 
-It's easy to make your pages look exactly the way you want them to. If the
-default layout options provided aren't enough, you can even develop your own.
-For more information about developing custom layout templates, see the tutorial 
+If the default layout options provided aren't enough, you can even develop your
+own. For more information about developing custom layout templates, see the
+tutorial 
 [Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0). 
 
-Next, you'll practice personalizing pages using page customizations!
+Next, you'll practice personalizing pages using page customizations.
 
 ## Personalizing Pages [](id=personalizing-pages)
 
@@ -46,7 +48,7 @@ modify. Then select the *Advanced* tab at the top of the page, expand the
 
 ![Figure 8: To enable page customizations, click on the *Configure Page* button next to the page, expand the *Customization Settings* area, and click on the *Customizable* button.](../../../../images/page-customizations.png)
 
-Once you've enabled the *Customizable* selector, you can select the sections of
+Once you've enabled the *Customizable* selector, select the sections of
 the page you'd like to enable customization for, depending on the layout
 template of your page. Enable one or more of the *Customizable* sections to
 allow site members to customize certain sections of the page. Regions that
@@ -68,13 +70,13 @@ clicking the *View Page without my customizations* or *View My Customized Page*.
 There's also a *Reset My Customizations* option available from the *Options*
 button that restores a user's customized page to match the default page. This
 allows users to discard one set of customizations and start a new set without
-having to manually undo each customization that they'd previously made.
+having to undo each customization that they'd previously made manually. 
 
 Note that non-administrator site members can access the Add menu from the top
 right side of the screen when viewing their customizable page even if they don't
 ordinarily have permission to view this menu. This allows them to add apps to
 the sections of the page that they're allowed to customize. If they click *View
-Page without my customizations*, the Add menu will disappear from the menu since
+Page without my customizations*, the Add menu disappears from the menu since
 they're not allowed to modify the default page.
 
 Administrators of customizable pages have the same two views as site members:
@@ -91,26 +93,27 @@ apps to or remove apps from the customizable regions.
 
 ![Figure 10: Customizable areas are highlighted green when organizing apps on the page.](../../../../images/customizable-regions.png)
 
-@product@ doesn't allow users to change a non-instanceable app's configuration
-inside a customizable region since those kinds of apps are tied to the site to
-which they've been added. If this were allowed, the customization would affect
-all users, not just the one who customized the region. Therefore, changes to the
-app configuration in a customizable region are only possible for instanceable
-apps, whose app configuration only affects that one user.
+Users can't change a non-instanceable app's configuration inside a customizable
+region since those kinds of apps are tied to the site where they've been added.
+If this were allowed, the customization would affect all users, not just the one
+who customized the region. Therefore, changes to the app configuration in
+a customizable region are only possible for instanceable apps, whose app
+configuration only affects that one user.
 
 For example, suppose that you, as an administrator, selected the right column of
 the Welcome page of the Lunar Resort site to be customizable. A member of the
 Lunar Resort site could take the following steps to make a personal
 customization of the Welcome page:
 
-1. Navigate to the Welcome homepage by clicking the Site Administration's
-   *Site Selector* button (![Compass](../../../../images/icon-compass.png)) and
-   selecting the Lunar Resort site.
-2. Add the Language Selector app to the right column of the page by clicking the
-   *Add* icon, clicking on *Applications*, searching for *Language Selector*,
-   and clicking *Add* next to its name.
+1.  Navigate to the Welcome homepage by clicking the Site Administration's *Site
+    Selector* button (![Compass](../../../../images/icon-compass.png)) and
+    selecting the Lunar Resort site.
 
-The Language Selector application is useful to have on your homepage if you
+2.  Add the Language Selector app to the right column of the page by clicking
+    the *Add* icon, clicking on *Applications*, searching for *Language
+    Selector*, and clicking *Add* next to its name.
+
+The Language Selector application is useful to have on your home page if you
 expect users who speak different languages to access your instance. Users can
 select their language in the Language Selector app to view a translation of your
 site into their native language. After closing the Configuration dialog box of
@@ -141,23 +144,28 @@ organization, that person can see all the private pages. You can, however,
 modify the permissions on individual pages in either page group so only certain
 users can view them.
 
-Suppose you want to create a page only for administrators to see. You can do
-this with the following procedure:
+Suppose you want to create a page only for administrators to see. You can do it
+this way:
 
-1. Go to your site's Site Administration dropdown and select *Navigation* &rarr;
-   *Private Pages*. If you don't have the *Private Pages* option available,
-   select the *Options* button next to Public Pages and click *Add Private
-   Page*. Remember, these pages by default are viewable only by members of the
-   site.
-2. Create a page called *Admin Tips*.
-3. Click *Configure Page* from the Options button dropdown for the page in the
-   left menu.
-4. Select *Permissions* from the *Options* icon
-   (![Options](../../../../images/icon-options.png)) in the top right corner of the
-   screen.
-4. Uncheck the *View* and *Add Discussion* permissions next to the Site Member
-   role.
-5. Click the *Save* button.
+1.  Go to your site's Site Administration dropdown and select *Navigation*
+    &rarr; *Private Pages*. If you don't have the *Private Pages* option
+    available, select the *Options* button next to Public Pages and click *Add
+    Private Page*. Remember, these pages by default are viewable only by members
+    of the site.
+
+2.  Create a page called *Admin Tips*.
+
+3.  Click *Configure Page* from the Options button dropdown for the page in the
+    left menu.
+
+4.  Select *Permissions* from the *Options* icon
+    (![Options](../../../../images/icon-options.png)) in the top right corner of
+    the screen.
+
+4.  Uncheck the *View* and *Add Discussion* permissions next to the Site Member
+    role.
+
+5.  Click the *Save* button.
 
 ![Figure 12: The Permissions offer a plethora of options for each role.](../../../../images/web-content-page-permissions.png)
 
@@ -165,11 +173,11 @@ Congratulations! You've changed the permissions for this page so only site
 administrators can view it. Any users you add to this role can now see the page.
 Other users, even members of this site, won't have permission to see it.
 
-Pages in @product@ are as flexible as pages you'd create manually without a
-Liferay instance. Using a point and click interface, you can define your site
-any way you want. You can create and remove pages, export and import them, set
-their layouts, define how they are indexed by search engines, and more.
+Pages are as flexible as pages you'd create manually without a Liferay instance.
+Using a point and click interface, you can define your site any way you want.
+You can create and remove pages, export and import them, set their layouts,
+define how they are indexed by search engines, and more.
 
-You now understand how to manage pages in @product@. It's time to move on
-to further customizing those pages for mobile devices and building standardized
-pages using custom templates.
+You now understand how to manage pages. It's time to move on to further
+customizing those pages for mobile devices and building standardized pages using
+custom templates.
