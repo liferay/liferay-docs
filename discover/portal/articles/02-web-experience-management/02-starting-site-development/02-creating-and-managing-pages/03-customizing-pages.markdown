@@ -6,18 +6,18 @@ navigating to *Site Pages* in the Navigation menu and selecting the *Options*
 icon next to the page you want to edit from the navigation tree. From the
 Options selector, select *Configure*. The options are described next. 
 
-## General
+## General [](id=general)
 
 The *General* tab changes the basic design of the page. You can change the *Page
 Title*, *Friendly URL*, and *Page Layout*. 
 
-## Categorization and SEO
+## Categorization and SEO [](id=categorization-and-seo)
 
 Managing your page's content drastically improves your page's organization and
 user experience. The site page's configuration options offers some opportunities
 to organize page content for your Lunar Resort site.
 
-### Categories
+### Categories [](id=categories)
 
 The *Categories* tab shows the categorization options. These tools help
 administrators organize the page and helps users to find your page and its
@@ -50,12 +50,12 @@ them per page. You can see the Page Set's
 [Customizing the Look and Feel of Site Pages](/discover/portal/-/knowledge_base/7-1/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages)
 section for more details.
 
-## Advanced Settings
+## Advanced Settings [](id=advanced-settings)
 
 There are many options for page configuration found under the *Advanced 
 Settings* tab. 
 
-### Query String 
+### Query String [](id=query-string)
 
 You can set a query string to provide parameters to the page. This can become
 useful to web content templates. You can set a target for the page so that it

@@ -1,4 +1,4 @@
-## Adding Applications to a Layout Page [](id=adding-applications-to-a-page)
+# Adding Applications to a Layout Page [](id=adding-applications-to-a-page)
 
 Layout pages are composed of applications. To add an app to a page, go to the 
 page and click the *Add* button  (![Add](../../../../images/icon-control-menu-add.png)) 

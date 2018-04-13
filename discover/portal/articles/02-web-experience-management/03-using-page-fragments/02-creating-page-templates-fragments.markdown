@@ -1,10 +1,10 @@
-# Building Content Pages from Fragments
+# Building Content Pages from Fragments [](id=building-content-pages-from-fragments)
 
 After you create Fragments, your next step is to add them to a Page Template 
 that will become a Content Page. Content Pages are composed of some number of 
 Fragments - it could be one or it could be fifty.
 
-## Creating a Page Template
+## Creating a Page Template [](id=creating-a-page-template)
 
 You can create Page Templates in the *Site Pages* page in Site Administration.
 
@@ -38,7 +38,7 @@ editing the template.
 
 ![Figure 1: The Page Template Creation page.](../../../images/content-page-template-creation.png)
 
-## Creating a Content Page
+## Creating a Content Page [](id=creating-a-content-page)
 
 After you are done creating a Page Template you can use that template to create 
 a Content Page. A Content Page is basically a page created from Fragments. 

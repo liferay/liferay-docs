@@ -1,4 +1,4 @@
-# Customizing Page Options
+# Customizing Page Options [](id=customizing-page-options)
 
 To configure options for the entire page set, select *Configure* from the menu 
 in the top right corner of *Site Pages*. This page defaults to *Look and 

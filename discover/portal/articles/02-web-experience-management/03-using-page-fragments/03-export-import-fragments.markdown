@@ -1,4 +1,4 @@
-# Exporting and Importing Fragments
+# Exporting and Importing Fragments [](id=exporting-and-importing-fragments)
 
 Often you'll want to reuse fragments, or repurpose some of the code from 
 Fragments in another site on your Liferay instance or on another Liferay 
@@ -6,7 +6,7 @@ instance altogether. Since all of the content is plain text, copy/pasting your
 code would always be an option, but Liferay provides a much more elegant 
 solution - exporting your Fragment Collections.
 
-## Exporting Fragments
+## Exporting Fragments [](id=exporting-fragments)
 
 When you export Fragments, you have four options:
 
@@ -72,7 +72,7 @@ The .zip file will contain the folder with the Fragment data in it.
 
 Now that you've done all this exporting, it's time to imported it all back it.
 
-## Importing Fragments
+## Importing Fragments [](id=importing-fragments)
 
 After you export Fragments, you are probably going to want to import them 
 somewhere at some point. The type of import that you can do will depend on the

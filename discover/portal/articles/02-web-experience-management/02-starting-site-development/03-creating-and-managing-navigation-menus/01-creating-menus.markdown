@@ -1,9 +1,9 @@
-# Creating and Managing Navigation Menus
+# Creating and Managing Navigation Menus [](id=creating-and-managing-navigation-menus)
 
 While you can stick to the default, you can also create multiple, customizable 
 menus to take advantage of different features in Liferay.
 
-## Creating a Navigation Menu
+## Creating a Navigation Menu [](id=creating-a-navigation-menu)
 
 Go to *Site Administration* &rarr; *Navigation* &rarr; *Navigation Menus* to 
 get started with Navigation Menus. Click on the `+` button to add a new menu.
@@ -57,7 +57,7 @@ the submenu.
 
 Now that you understand the basics of creating menus, you learn the details.
 
-## Managing Menus
+## Managing Menus [](id=managing-menus)
 
 After you create a menu, more configuration options appear on the main
 Navigation Menus page. 
@@ -81,7 +81,7 @@ navigation, possibly a side bar or a separate menu within a page. **Social
 Navigation** is for menus that containing links for sharing content on social
 media or similar tasks.
 
-### Modifying Menus
+### Modifying Menus [](id=modifying-menus)
 
 Next click on the options menu at the far left of your new navigation menu. 
 You'll see these options:

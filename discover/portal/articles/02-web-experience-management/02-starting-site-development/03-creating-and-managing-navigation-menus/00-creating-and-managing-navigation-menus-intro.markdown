@@ -1,4 +1,4 @@
-# Creating and Managing Site Navigation Menus
+# Creating and Managing Site Navigation Menus [](id=creating-and-managing-site-navigation-menus)
 
 With @product_ver@ you can create and rearrange pages, content, and applications
 using customizable Navigation Menus. Not only can you heavily customize a single
