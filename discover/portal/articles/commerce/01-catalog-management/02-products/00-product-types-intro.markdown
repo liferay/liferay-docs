@@ -1,14 +1,11 @@
 # Product Types
 
-The catalog supports three product types: simple, grouped and virtual. These
-types are distinguished by the way the catalog tracks inventories of each.
+The catalog supports three product types: simple, grouped and virtual.
 
 ## Simple Products
 
-A simple product is any product for which inventory is tracked. In practice,
-this means that almost any physical item can be a simple product. Nonphysical
-products of which the store has limited inventories (such as units of
-cryptocurrency) would also be simple products.
+A simple product is any physical product for which inventory is tracked. Almost
+any physical item can be a simple product.
 
 ## Grouped Products
 
@@ -20,11 +17,11 @@ products, or virtual products.
 
 ## Virtual Products
 
-A virtual product is a product for which there is no inventory tracking at all.
-This may mean that the product is downloaded rather than shipped, as in the case
-of a music file or an electronic publication. Services, warranties and other
-goods that might be neither shipped nor downloaded would also be virtual
-products.
+A virtual product is any non-physical product, for which there is typically no
+inventory tracking at all. This may mean that the product is downloaded rather
+than shipped, as in the case of a music file or an electronic publication.
+Services, warranties and other goods that might be neither shipped nor
+downloaded would also be virtual products.
 
 ## Creating a Product
 
@@ -34,8 +31,38 @@ To create a product:
    of the screen and then select the type of product you wish to create: simple,
    grouped or virtual.
 
-2. Next, you'll be prompted to enter [Basic Product Information](discover/portal/-/knowledge_base/7_1/basic-product-information)
-   into the *Add Product* form.
+2. Next, you'll be prompted to enter basic product information into the *Add
+   Product* form. Fill in the following fields if applicable.
+
+        **Title**: Name your product. This is the only required field.
+
+        **Short Description**: Enter an abstract of the product's full description for
+        use where brevity is desired. Text entered here could be displayed where the
+        product appears in thumbnail form or in search results--anywhere space is
+        limited.
+
+        **Full Description**: This text would typically be displayed to customers on the
+        product page. The integrated text editor provides a number of formatting options
+        that appear when text is selected, and clicking on the *Add* button that appears
+        when the editor is in focus provides additional options. For more flexibility,
+        click on the *Code View* (</>) button on the right to edit the html directly.
+
+        **Friendly URL**: This is the URL for the product page. It auto-fills but can be
+        changed.
+
+        **Meta Title, Meta Keywords, Meta Description**: descriptors entered in these
+        fields will help search engines locate your products. 
+
+        **Schedule**: Products can be displayed to customers for a preset window of
+        time. If you don't want to bother with scheduling, make sure the *Never
+        Expire* box is checked. Unchecking the *Published* box will remove the product
+        from customers' view.
+
+        Once the *Add Product* form is complete to your satisfaction, click the
+        *Publish* button to add the product to the catalog. The product tab bar appears
+        at the top of the screen (and can be reached again at any time by navigating to
+        the catalog and selecting a product). The first tab, *Details*, is populated
+        with your responses from the *Add Product* form.
 
 3. Enter additional information specific to the product type you selected in
    step 1.
@@ -60,30 +87,23 @@ To create a product:
    bar. The *Virtual* tab contains the following fields which should be filled
    in if applicable:
 
-       **URL/Select File**: If your virtual product is stored at a web address,
-       enter the URL here. Alternatively, click *Select* to upload a local file
-       or select one that was uploaded previously.
+        **URL/Select File**: If your virtual product is stored at a web address,
+        enter the URL here. Alternatively, click *Select* to upload a local file
+        or select one that was uploaded previously.
 
-       **Activation Status**: Select the stage in the order process at which the
-       product becomes available for download.
+        **Activation Status**: Select the stage in the order process at which the
+        product becomes available for download.
 
-       **Duration**: Enter the number of days after purchase in which customers
-       will have access to the file. A value of 0 sets no limit.
+        **Duration**: Enter the number of days after purchase in which customers
+        will have access to the file. A value of 0 sets no limit.
 
-       **Max Usages**: Set the number of times a customer can download the file.
-       A value of 0 sets no limit.
+        **Max Usages**: Set the number of times a customer can download the file.
+        A value of 0 sets no limit.
 
-       **Sample**: Upload or enter a URL for a sample file that will be
-       available to prospective buyers. The *Use Sample* box must be checked
-       before customers will see the sample.
+        **Sample**: Upload or enter a URL for a sample file that will be
+        available to prospective buyers. The *Use Sample* box must be checked
+        before customers will see the sample.
 
-       **Terms of Use**: Either enter a Terms of Use document directly into the
-       integrated editor, or select a document previously uploaded to Web
-       Content.
-
-+$$$
-
-The *Terms of Use* editor offers simple formatting options via the GUI, as well
-as complete html functionality via the *Code View* (</>) button.
-
-$$$
+        **Terms of Use**: Either enter a Terms of Use document directly into the
+        integrated editor, or select a document previously uploaded to Web
+        Content.
