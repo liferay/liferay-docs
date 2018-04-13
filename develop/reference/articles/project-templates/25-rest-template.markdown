@@ -38,11 +38,11 @@ or
         -DclassName=Rest \
         -Dauthor=Joe Bloggs
 
-After running the command above, your project's directory structure looks like
-this:
+After running the Blade command above, your project's directory structure looks
+like this:
 
 - `my-rest-project`
-    - `gradle` (only in Blade CLI generated projects)
+    - `gradle`
         - `wrapper`
             - `gradle-wrapper.jar`
             - `gradle-wrapper.properties`
@@ -53,11 +53,14 @@ this:
                     - `RestApplication.java`
             - `resources`
                 - `configuration`
-                    - `com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-cxf`
-                    - `com.liferay.portal.remote.rest.extender.configuration.RestExtenderConfiguration-rest`
+                    - `com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-cxf.properties`
+                    - `com.liferay.portal.remote.rest.extender.configuration.RestExtenderConfiguration-rest.properties`
     - `bnd.bnd`
     - `build.gradle`
-    - `[gradlew|pom.xml]`
+    - `gradlew`
+
+The Maven-generated project includes a `pom.xml` file and does not include the
+Gradle-specific files, but otherwise, appears exactly the same.
 
 The generated module is a working RESTful web service and is deployable to a @product@
 instance. To build upon the generated app, modify the project by adding logic
