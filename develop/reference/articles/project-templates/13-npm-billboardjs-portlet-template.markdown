@@ -42,20 +42,21 @@ or
         -DclassName=MyNpmBillboardjsPortlet \
         -DpackageJsonVersion=1.0.0
 
-After running the command above, your project's directory structure looks like
-this:
+After running the Blade command above, your project's directory structure looks
+like this:
 
 - `my-npm-billboardjs-portlet`
-    - `[gradle|.mvn]`
+    - `gradle`
         - `wrapper`
-            - `[gradle|maven]-wrapper.jar`
-            - `[gradle|maven]-wrapper.properties`
+            - `gradle-wrapper.jar`
+            - `gradle-wrapper.properties`
     - `src`
         - `main`
             - `java`
                 - `com/liferay/npm/billboardjs`
                     - `constants`
                         - `MyNpmBillboardjsPortletKeys.java`
+                        - `MyNpmBillboardjsWebKeys.java`
                     - `portlet`
                         - `MyNpmBillboardjsPortlet.java`
             - `resources`
@@ -71,9 +72,12 @@ this:
     - `.babelrc`
     - `.npmbundlerrc`
     - `bnd.bnd`
-    - `[build.gradle|pom.xml]`
-    - `[gradlew|mvnw]`
+    - `build.gradle`
+    - `gradlew`
     - `package.json`
+
+The Maven-generated project includes a `pom.xml` file and does not include the
+Gradle-specific files, but otherwise, appears exactly the same.
 
 The generated module is a working application and is deployable to a @product@
 instance. To build upon the generated portlet, modify the project by adding
