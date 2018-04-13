@@ -41,11 +41,11 @@ or
         -DclassName=MyPortlet \
         -Dauthor=Joe Bloggs
 
-After running the command above, your project's directory structure looks like
-this:
+After running the Blade command above, your project's directory structure looks
+like this:
 
 - `my-portlet-project`
-    - `gradle` (only in Blade CLI generated projects)
+    - `gradle`
         - `wrapper`
             - `gradle-wrapper.jar`
             - `gradle-wrapper.properties`
@@ -53,10 +53,16 @@ this:
         - `main`
             - `java`
                 - `com/liferay/docs/portlet`
-                    - `MyPortlet.java`
+                    - `constants`
+                        - `MyPortletKeys.java`
+                    - `portlet`
+                        - `MyPortlet.java`
     - `bnd.bnd`
     - `build.gradle`
-    - `[gradlew|pom.xml]`
+    - `gradlew`
+
+The Maven-generated project includes a `pom.xml` file and does not include the
+Gradle-specific files, but otherwise, appears exactly the same.
 
 The generated module is a working application and is deployable to a @product@
 instance. To build upon the generated app, modify the project by adding logic
