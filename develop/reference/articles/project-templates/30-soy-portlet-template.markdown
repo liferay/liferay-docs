@@ -42,11 +42,11 @@ or
         -DclassName=MySoyPortlet \
         -Dauthor=Joe Bloggs
 
-After running the command above, your project's directory structure looks like
-this:
+After running the Blade command above, your project's directory structure looks
+like this:
 
 - `my-soy-portlet-project`
-    - `gradle` (only in Blade CLI generated projects)
+    - `gradle`
         - `wrapper`
             - `gradle-wrapper.jar`
             - `gradle-wrapper.properties`
@@ -59,24 +59,28 @@ this:
                     - `portlet`
                         - `action`
                             - `MySoyPortletNavigationMVCRenderCommand.java`
+                            - `MySoyPortletViewMVCRenderCommand.java`
                         - `MySoyPortlet.java`
             - `resources`
                 - `content`
                     - `Language.properties`
                 - `META-INF`
                     - `resources`
-                        - `Footer.es`
+                        - `Footer.es.js`
                         - `Footer.soy`
-                        - `Header.es`
+                        - `Header.es.js`
                         - `Header.soy`
-                        - `Navigation.es`
+                        - `Navigation.es.js`
                         - `Navigation.soy`
-                        - `View.es`
+                        - `View.es.js`
                         - `View.soy`
     - `bnd.bnd`
     - `build.gradle`
+    - `gradlew`
     - `package.json`
-    - `[gradlew|pom.xml]`
+
+The Maven-generated project includes a `pom.xml` file and does not include the
+Gradle-specific files, but otherwise, appears exactly the same.
 
 The generated module is a working application and is deployable to a @product@
 instance. To build upon the generated app, modify the project by adding logic
