@@ -34,14 +34,14 @@ or
         -Dpackage=com.liferay.docs.war.mvc \
         -Dversion=1.0
 
-After running the command above, your project's folder structure looks like
-this: 
+After running the Blade command above, your project's folder structure looks
+like this: 
 
 - `my-war-mvc-portlet-project`
-    - `[gradle|.mvn]`
+    - `gradle`
         - `wrapper`
-            - `[gradle|maven]-wrapper.jar`
-            - `[gradle|maven]-wrapper.properties`
+            - `gradle-wrapper.jar`
+            - `gradle-wrapper.properties`
     - `src`
         - `main`
             - `java`
@@ -51,9 +51,6 @@ this:
                     - `Language.properties`
             - `webapp`
                 - `css`
-                    - `.sass-cache`
-                        - `main.css`
-                        - `main_rtl.css`
                     - `main.scss`
                 - `WEB-INF`
                     - `tld`
@@ -70,8 +67,11 @@ this:
                     - `web.xml`
                 - `init.jsp`
                 - `view.jsp`
-    - `[build.gradle|pom.xml]`
-    - `[gradlew|mvnw]`
+    - `build.gradle`
+    - `gradlew`
+
+The Maven-generated project includes a `pom.xml` file and does not include the
+Gradle-specific files, but otherwise, appears exactly the same.
 
 The generated WAR MVC portlet is functional and is deployable to a @product@ instance.
 To build upon the generated project, modify the project by adding logic and
