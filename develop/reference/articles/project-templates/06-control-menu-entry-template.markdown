@@ -38,8 +38,8 @@ or
         -DclassName=Sample \
         -Dauthor=Joe Bloggs
 
-After running the command above, your project's directory structure would look
-like this (Gradle-generated):
+After running the Blade command above, your project's directory structure would
+look like this:
 
 - `my-control-menu-entry-project`
     - `gradle`

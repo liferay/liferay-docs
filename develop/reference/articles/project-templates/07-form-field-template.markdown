@@ -37,8 +37,8 @@ or
         -DclassName=MyFormField \
         -Dauthor=Joe Bloggs
 
-After running the command above, your project's directory structure looks like
-this (Gradle-generated):
+After running the Blade command above, your project's directory structure looks
+like this:
 
 - `my-form-field-project`
     - `gradle`

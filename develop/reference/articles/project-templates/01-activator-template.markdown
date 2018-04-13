@@ -40,8 +40,8 @@ or
 Note that in your class, you're implementing the
 `org.osgi.framework.BundleActivator` interface.
 
-After running the command above, your project's directory structure looks like
-this (Gradle-generated):
+After running the Blade command above, your project's directory structure looks
+like this:
 
 - `my-activator-project`
     - `gradle`
