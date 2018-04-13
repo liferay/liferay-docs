@@ -273,20 +273,6 @@ default, it points to Google, but this may not work if your server is behind a
 firewall. If you set the address manually using the properties above, you
 don't need to set the autodetect address. 
 
-It's recommended to test your system under a load that best simulates the kind
-of traffic your system needs to handle. If you'll be serving up a lot of message
-board messages, your script should reflect that. If web content is the core of
-your site, your script should reflect that too. 
-
-As a result of a load test, you may find that the default distributed cache
-settings aren't optimized for your site. In this case, you should tweak the
-settings yourself. You can modify the @product@ installation directly or you can
-use a module to do it. Either way, the settings you change are the same.  A
-benefit of working with modules is that you can install a module on each node
-and change the settings without taking down the cluster. Modifying the Ehcache
-settings with a module is recommended over modifying the Ehcache settings
-directly. 
-
 Your network configuration may preclude the use of multicast over TCP, so below
 are some other ways you can get your cluster communicating. Note that these
 methods are all provided by JGroups. 
@@ -417,32 +403,8 @@ including Rackspace Ping, BPing, File Ping, and others. Please see the [JGroups 
 
 ### Modifying the Cache Configuration with a Module [](id=modifying-the-cache-configuration-with-a-module)
 
-Enabling Cluster Link automatically activates distributed caching. Distributed
-caching enables some RMI (Remote Method Invocation) cache listeners that are
-designed to replicate the cache across a cluster. 
-
-@product@ uses [Ehcache](http://www.ehcache.org), which has robust distributed caching
-support. The cache is distributed across multiple @product@ nodes running
-concurrently. This increases performance dramatically. For example, say that
-two users are browsing the message boards. When the first user clicks a thread,
-@product@ must retrieve that thread from the database and format it for display
-in the browser. With a distributed Ehcache running, this thread is cached for
-quick retrieval, and the cache is replicated to the other nodes. If a second
-user who's served by a different node clicks on the same thread, the data is
-retrieved faster because the thread is in the cache: no trip to the database was
-necessary. 
-
-This is much more powerful than having a cache running separately on each node.
-The power of *distributed* caching allows for common destinations to be cached
-for multiple users. The first user can post a message to the thread he or she
-was reading, and the cache is updated across all the nodes, making the new post
-available immediately from the local cache. Without that, the second user must
-wait until the cache is invalidated on his or her own node and the post is
-retrieved and cached separately. 
-
-For this reason, once you enable distributed caching, you should do some due
-diligence and test your system under a load that best simulates the kind of
-traffic your system needs to handle. If you'll be serving up a lot of message
+It's recommended to test your system under a load that best simulates the kind
+of traffic your system needs to handle. If you'll be serving up a lot of message
 board messages, your script should reflect that. If web content is the core of
 your site, your script should reflect that too. 
 
