@@ -81,12 +81,12 @@ Next you can specify your module's build dependencies.
 Add the dependencies shown below to your `build.gradle` file:
 
     dependencies {
-    	provided group: "com.liferay", name: "com.liferay.portal.portlet.bridge.soy", version: "3.1.0"
-    	provided group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
-    	provided group: "com.liferay.portal", name: "com.liferay.util.java", version: "2.0.0"
-    	provided group: "javax.portlet", name: "portlet-api", version: "2.0"
-    	provided group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
-    	provided group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+    	compileOnly group: "com.liferay", name: "com.liferay.portal.portlet.bridge.soy", version: "3.1.0"
+    	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+    	compileOnly group: "com.liferay.portal", name: "com.liferay.util.java", version: "2.0.0"
+    	compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+    	compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+    	compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
     }
 
 +$$$
