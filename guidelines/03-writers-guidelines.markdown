@@ -8,7 +8,9 @@ publication--time that could be used to create new or improve existing
 documentation. 
 
 For these reasons, we ask that those contributing to the documentation adhere to
-the following editorial conventions. 
+the following editorial conventions. Where there is no guideline below, it's
+a good general rule to follow the [Chicago Manual of
+Style](http://www.chicagomanualofstyle.org). 
 
 ## Introductions
 

@@ -20,7 +20,7 @@ production environment. Here's a summary of the steps:
     help. If you have an enterprise subscription, feel free to open a support
     ticket and have Liferay verify your analysis.
 7.  Repeat steps 4, 5, and 6 as needed.
-8.  [Remove unused content from production](remove-unused-objects-from-production-step-8). 
+8.  [Remove unused content from production](#remove-unused-objects-from-production-step-8). 
 
 The sections that follow explain the more in-depth steps listed above.
 
@@ -317,12 +317,8 @@ processes. Consider searching for unneeded objects associated these longer
 upgrade processes. Once again, make sure to delete them using Liferay's API and
 test your changes. 
 
-+$$$
-
 **Note**: Learning [how upgrade processes are created](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
 can help you understand their data better.
-
-$$$ 
 
 ## Remove Unused Objects from Production (Step 8) [](id=remove-unused-objects-from-production-step-8)
 

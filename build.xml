@@ -4,20 +4,6 @@
 	<property name="project.dir" value="." />
 
 	<property name="build.dir" value="${project.dir}/build"/>
-	<property name="lib.dir" value="${project.dir}/lib" />
-
-	<property name="liferay.portal.dir" value="${project.dir}/../liferay-portal" />
-	<property name="properties.dir" value="${project.dir}/properties" />
-
-	<property name="properties.title" value="Portal Properties" />
-	<property name="properties.toc" value="true" />
-	<property name="properties.file.path" value="portal.properties" />
-	<property name="properties.dest.file.path" value="${properties.dir}"/>
-
-	<property name="portal.properties.file.path" value="${liferay.portal.dir}/portal-impl/src/portal.properties" />
-	<property name="system.properties.file.path" value="${liferay.portal.dir}/portal-impl/src/system.properties" />
-	<property name="liferay-plugin-package_6_1_0.properties.file.path" value="${liferay.portal.dir}/definitions/liferay-plugin-package_6_1_0.properties" />
-	<property name="liferay-plugin-package_6_2_0.properties.file.path" value="${liferay.portal.dir}/definitions/liferay-plugin-package_6_2_0.properties" />
 
 	<path id="lib.classpath">
 		<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -27,73 +13,6 @@
 	<path id="project.classpath">
 		<path refid="lib.classpath" />
 	</path>
-
-	<taskdef name="bundle-properties" classname="com.liferay.portal.tools.PropertiesBundlerTask"
-	 classpathref="lib.classpath"/>
-
-	<!-- To run the properties converter, use a command of the form ant -Dproperties.title="Page Title" -Dtoc="false" -Dproperties.file=/path/to/properties/file -->
-	<target name="properties-to-html" description="runs the properties converter">
-		<java fork="true"
-			classname="com.liferay.portal.tools.PropertiesConverter"
-			classpathref="lib.classpath"
-		>
-			<arg value="${properties.file.path}" />
-			<arg value="${properties.dest.file.path}" />
-			<arg value="${properties.title}" />
-			<arg value="${properties.toc}" />
-		</java>
-	</target>
-
-	<!-- To build the properties HTML files, use a command of the form ant
-		 -Dliferay.portal.dir=<path-to-your-liferay-portal> -Dlp.version=<your-liferay-portal-version> -->
-	<target name="build-properties-docs" if="lp.version" depends="checkLpVersion" description="runs the properties converter to generate HTML versions of portal.properties, system.properties, and liferay-plugin-package.properties">
-		<echo message="Include argument &quot;-Dliferay.portal.dir=yourPortalDir&quot; if your portal is not ${liferay.portal.dir}."/>
-
-		<mkdir dir="${properties.dir}"/>
-
-		<antcall target="properties-to-html">
-			<param name="properties.title" value="Liferay ${lp.version} Portal Properties"/>
-			<param name="properties.toc" value="true"/>
-			<param name="properties.file.path" value="${portal.properties.file.path}"/>
-			<param name="properties.dest.file.path" value="${properties.dir}"/>
-		</antcall>
-
-		<antcall target="properties-to-html">
-			<param name="properties.title" value="Liferay ${lp.version} System Properties"/>
-			<param name="properties.toc" value="true"/>
-			<param name="properties.file.path" value="${system.properties.file.path}"/>
-			<param name="properties.dest.file.path" value="${properties.dir}"/>
-		</antcall>
-
-		<antcall target="properties-to-html">
-			<param name="properties.title" value="Liferay Plugin Package Properties 6.1"/>
-			<param name="properties.toc" value="true"/>
-			<param name="properties.file.path" value="${liferay-plugin-package_6_1_0.properties.file.path}"/>
-			<param name="properties.dest.file.path" value="${properties.dir}"/>
-		</antcall>
-
-		<antcall target="properties-to-html">
-			<param name="properties.title" value="Liferay Plugin Package Properties 6.2"/>
-			<param name="properties.toc" value="true"/>
-			<param name="properties.file.path" value="${liferay-plugin-package_6_2_0.properties.file.path}"/>
-			<param name="properties.dest.file.path" value="${properties.dir}"/>
-		</antcall>
-
-		<antcall target="bundle-properties-docs"/>
-
-	</target>
-
-	<target name="bundle-properties-docs" if="lp.version" depends="checkLpVersion" description="bundles the properties HTML files with an index.html file that lists the included files">
-		<bundle-properties lpVersion="${lp.version}" propertiesDir="${properties.dir}"/>
-	</target>
-
-	<target name="checkLpVersion" unless="lp.version">
-		<echo message="Missing lp.version property. Specify argument of form &quot;-Dlp.version=yourPortalVersion&quot;"/>
-	</target>
-
-	<target name="clean" description="deletes the properties directory">
-		<delete dir="${properties.dir}"/>
-	</target>
 
 	<target name="compare-portal-source" description="Generates reports comparing a Liferay 6 source directory (-Dlr6Dir) to a Liferay 7+ source directory (-Dlr7Dir).">
 		<property name="movedClassesFile" value="${build.dir}/moved-classes.html"/>
