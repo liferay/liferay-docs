@@ -39,10 +39,10 @@ or
         -Dauthor=Joe Bloggs
 
 After running the command above, your project's directory structure looks like
-this:
+this (Gradle-generated):
 
 - `my-api-project`
-    - `gradle` (only in Blade CLI generated projects)
+    - `gradle`
         - `wrapper`
             - `gradle-wrapper.jar`
             - `gradle-wrapper.properties`
@@ -51,12 +51,15 @@ this:
             - `java`
                 - `com/liferay/docs/api`
                     - `MyApi.java`
-            - resources
+            - `resources`
                 - `com/liferay/docs/api`
                     - `packageinfo`
     - `bnd.bnd`
     - `build.gradle`
-    - `[gradlew|pom.xml]`
+    - `gradlew`
+
+The Maven-generated project includes a `pom.xml` file and does not include the
+Gradle-specific files, but otherwise, appears exactly the same.
 
 The generated module is a working application and is deployable to a @product@
 instance. To build upon the generated app, modify the project by adding logic
