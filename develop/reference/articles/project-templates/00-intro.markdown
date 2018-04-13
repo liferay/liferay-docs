@@ -14,12 +14,12 @@ Some popular project templates include
 - Theme project (WAR)
 - etc.
 
-If you're using [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli),
+If you're using [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli),
 execute the following command to display a full list of project templates:
 
     blade create -l
 
-If you're using [Maven](/develop/tutorials/-/knowledge_base/7-0/maven), you can
+If you're using [Maven](/develop/tutorials/-/knowledge_base/7-1/maven), you can
 view and use the project templates as Maven archetypes. Execute the following
 command to list them:
 
@@ -29,7 +29,7 @@ Archetypes with the `com.liferay.project.templates` prefix are the latest
 templates offered by Liferay.
 
 If you're using
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide), navigate
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide), navigate
 to *File* &rarr; *New* &rarr; *Liferay Module Project* and view the project
 templates from the *Project Template Name* drop-down menu.
 
