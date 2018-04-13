@@ -32,11 +32,11 @@ or
         -Dversion=1.0 \
         -Dauthor=Joe Bloggs
 
-After running the command above, your project's directory structure looks like
-this:
+After running the Blade command above, your project's directory structure looks
+like this:
 
 - `my-layout-template-project`
-    - `gradle` (only in Blade CLI generated projects)
+    - `gradle`
         - `wrapper`
             - `gradle-wrapper.jar`
             - `gradle-wrapper.properties`
@@ -46,10 +46,13 @@ this:
                 - `WEB-INF`
                     - `liferay-layout-templates.xml`
                     - `liferay-plugin-package.properties`
+                - `my-layout-template-project.ftl`
                 - `my-layout-template-project.png`
-                - `my-layout-template-project.tpl`
     - `build.gradle`
-    - `[gradlew|pom.xml]`
+    - `gradlew`
+
+The Maven-generated project includes a `pom.xml` file and does not include the
+Gradle-specific files, but otherwise, appears exactly the same.
 
 The generated WAR is a working layout template and is deployable to a @product@
 instance. To build upon the generated layout template, modify the project by
