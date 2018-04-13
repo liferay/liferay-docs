@@ -2,7 +2,7 @@
 
 Follow these steps to activate your @product@ server with LCS: 
 
-1.  Complete the 
+1.  Ensure that you've completed the 
     [LCS preconfiguration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration). 
 
 2.  Log in to 
@@ -28,34 +28,31 @@ Follow these steps to activate your @product@ server with LCS:
     [environment's token file](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens), 
     which you'll use to activate servers in the environment. 
 
-    In the Registration tab's *Services* section, select the LCS services you 
-    want to use with all servers that connect to this environment. When you 
-    generate/regenerate the token file, your service selections are embedded in 
-    it. Portal Analytics, Fix Pack Management, and Portal Property Analysis are 
-    selected by default. 
+    In the Registration tab's *Services* section, change the LCS service 
+    selections, if needed. Note that if you change the LCS service selections 
+    and there are servers already activated in the environment, then you must 
+    regenerate the token file and use it to reconnect those servers to LCS. 
+    You'll regenerate and/or download the token in the next step. 
 
-    If Portal Property Analysis is selected, you can prevent LCS from analyzing 
-    specific properties. Enter them into the box that appears when you select 
-    *Show Blacklisted Properties*. Note that 
+    The selected services are enabled for all servers that connect to this 
+    environment. Portal Analytics, Fix Pack Management, and Portal Property 
+    Analysis are selected by default. If Portal Property Analysis is selected, 
+    you can prevent LCS from analyzing specific properties. Enter them into the 
+    box that appears when you select *Show Blacklisted Properties*. Note that 
     [LCS doesn't access security sensitive properties](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers). 
 
     ![Figure 3: An environment's Registration tab lets you manage the token file used to activate your server in the environment.](../../images-dxp/lcs-registration.png)
 
-5.  What you do now depends on what you did in the previous step and whether the 
-    environment has an existing token: 
+5.  What you do now depends on what you did in the previous step: 
 
-    -   **No token:** Generate the token. 
-    -   **Existing token, and changes to LCS service selections:** Regenerate 
-        the token. Regenerating a token causes all servers using the old token 
-        to disconnect from LCS. You must reconnect them using the new token. 
-    -   **Existing token, and no changes to LCS service selections:** No action 
-        required. 
+    -   **Changes to LCS service selections:** Regenerate and download the 
+        token. Regenerating a token causes all servers using the old token to 
+        disconnect from LCS. You must reconnect them using the new token. 
+    -   **No changes to LCS service selections:** Download the token. 
 
-6.  Download the token. 
+6.  Shut down your server if it's running. 
 
-7.  Shut down your server if it's running. 
-
-8.  Place the token file in your server's `[Liferay Home]/data` folder, and 
+7.  Place the token file in your server's `[Liferay Home]/data` folder, and 
     then start the server. Note that 
     [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
     is usually the parent folder of the application server's folder. On startup, 
@@ -64,7 +61,7 @@ Follow these steps to activate your @product@ server with LCS:
     environment's subscription type. You should see this in your LCS project's 
     Subscriptions tab. 
 
-9.  Celebrate! Your @product@ server is activated and connected to LCS. If for 
+8.  Celebrate! Your @product@ server is activated and connected to LCS. If for 
     some reason it isn't, see the 
     [LCS troubleshooting article](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection). 
 

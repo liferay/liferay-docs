@@ -15,8 +15,8 @@ guide walk you through these steps:
 Also, 
 [the last section](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#upgrading-the-lcs-client-app) 
 in this guide shows you how to upgrade the LCS client app once your server is 
-registered and activated with LCS. You must do this upgrade whenever Liferay 
-releases a new version of the app. 
+registered and activated with LCS. We highly recommend that you upgrade the app 
+whenever Liferay releases a new version of it. 
 
 +$$$
 
@@ -32,9 +32,9 @@ $$$
 ## Downloading the LCS Client App [](id=downloading-the-lcs-client-app)
 
 The LCS client app is included in each @product@ bundle and autodeploys when the 
-bundle starts. The included version of the app, however, may be outdated. You 
-must therefore download and install the latest version of the LCS client app. To 
-do this, you must first purchase the app via Liferay Marketplace. 
+bundle starts. The included version of the app, however, may be outdated. To get 
+the latest version of the LCS client app, you must first purchase it via Liferay 
+Marketplace. 
 
 +$$$
 
@@ -281,15 +281,14 @@ the LCS client app. Follow these steps to install the app:
 Great! Now you're all set to 
 [activate your server with LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs). 
 
-The next section shows you how to upgrade the LCS client app. You'll need to do 
-this whenever Liferay releases a new version of the app. 
+The next section shows you how to upgrade the LCS client app. We highly 
+recommend that you do this whenever Liferay releases a new version of the app. 
 
 ## Upgrading the LCS Client App [](id=upgrading-the-lcs-client-app)
 
 Your server should always be running the latest version of the LCS client app. 
-You must therefore upgrade the app when Liferay releases a new version of it. 
-There are two ways to do this, depending on the exact LCS preconfiguration steps 
-you followed: 
+There are two ways to upgrade the app, depending on the exact LCS 
+preconfiguration steps you followed: 
 
 1.  Via Liferay Marketplace *inside* your running @product@ instance. Use this 
     method if you don't need to configure the LCS client app (e.g., to connect 
