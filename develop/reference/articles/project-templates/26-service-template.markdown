@@ -26,7 +26,7 @@ create a service of type `com.liferay.portal.kernel.events.LifecycleAction` that
 also implements that same service. You could run the following command to
 accomplish this:
 
-    blade create -t service -p com.liferay.docs.service -c Service -s com.liferay.portal.kernel.events.LifecycleAction  my-service-project
+    blade create -t service -p com.liferay.docs.service -c Service -s com.liferay.portal.kernel.events.LifecycleAction my-service-project
 
 or
 
@@ -41,11 +41,11 @@ or
         -DclassName=com.liferay.portal.kernel.events.LifecycleAction \
         -Dauthor=Joe Bloggs
 
-After running the command above, your project's directory structure would look
-like this
+After running the Blade command above, your project's directory structure would
+look like this
 
 - `my-service-project`
-    - `gradle` (only in Blade CLI generated projects)
+    - `gradle`
         - `wrapper`
             - `gradle-wrapper.jar`
             - `gradle-wrapper.properties`
@@ -54,9 +54,13 @@ like this
             - `java`
                 - `com/liferay/docs/service`
                     - `Service.java`
+            - `resources`
     - `bnd.bnd`
     - `build.gradle`
-    - `[gradlew|pom.xml]`
+    - `gradlew`
+
+The Maven-generated project includes a `pom.xml` file and does not include the
+Gradle-specific files, but otherwise, appears exactly the same.
 
 The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
