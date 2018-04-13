@@ -42,20 +42,21 @@ or
         -DclassName=MyNpmAngularPortlet \
         -DpackageJsonVersion=1.0.0
 
-After running the command above, your project's directory structure looks like
-this:
+After running the Blade command above, your project's directory structure looks
+like this:
 
 - `my-npm-angular-portlet`
-    - `[gradle|.mvn]`
+    - `gradle`
         - `wrapper`
-            - `[gradle|maven]-wrapper.jar`
-            - `[gradle|maven]-wrapper.properties`
+            - `gradle-wrapper.jar`
+            - `gradle-wrapper.properties`
     - `src`
         - `main`
             - `java`
                 - `com/liferay/npm/angular`
                     - `constants`
                         - `MyNpmAngularPortletKeys.java`
+                        - `MyNpmAngularWebKeys.java`
                     - `portlet`
                         - `MyNpmAngularPortlet.java`
             - `resources`
@@ -67,6 +68,7 @@ this:
                             - `app`
                                 - `app.component.ts`
                                 - `app.module.ts`
+                                - `dynamic.loader.ts`
                             - `angular-loader.ts`
                             - `main.ts`
                         - `init.jsp`
@@ -74,10 +76,13 @@ this:
     - `.babelrc`
     - `.npmbundlerrc`
     - `bnd.bnd`
-    - `[build.gradle|pom.xml]`
-    - `[gradlew|mvnw]`
+    - `build.gradle`
+    - `gradlew`
     - `package.json`
     - `tsconfig.json`
+
+The Maven-generated project includes a `pom.xml` file and does not include the
+Gradle-specific files, but otherwise, appears exactly the same.
 
 The generated module is a working application and is deployable to a @product@
 instance. To build upon the generated portlet, modify the project by adding
