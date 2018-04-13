@@ -37,15 +37,13 @@ or
         -Dversion=1.0 \
         -DapiPath=com.liferay.api.path
 
-<!-- How do we set apiPath param in blade command? -Cody -->
-
 This task creates the `tasks-api` and `tasks-service` folders. In many cases, a
 Service Builder project also requires a `-web` folder to hold, for example,
-portlet classes. This should be created manually. After running the command
-above, your project's directory structure looks like this:
+portlet classes. This should be created manually. After running the Blade
+command above, your project's directory structure looks like this:
 
 - `tasks`
-    - `gradle` (only in Blade CLI generated projects)
+    - `gradle`
         - `wrapper`
             - `gradle-wrapper.jar`
             - `gradle-wrapper.properties`
@@ -57,8 +55,11 @@ above, your project's directory structure looks like this:
         - `build.gradle`
         - `service.xml`
     - `build.gradle`
-    - `[gradlew|pom.xml]`
+    - `gradlew`
     - `settings.gradle`
+
+The Maven-generated project includes a `pom.xml` file and does not include the
+Gradle-specific files, but otherwise, appears exactly the same.
 
 To generate your service and API classes for the `*-api` and `*-service`
 modules, replace the `service.xml` file in the `*-service` module. Depending on
