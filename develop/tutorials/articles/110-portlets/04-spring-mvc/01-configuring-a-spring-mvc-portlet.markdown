@@ -1,136 +1,4 @@
-# Spring MVC [](id=spring-mvc)
-
-Liferay is an open platform in an ecosystem of open platforms. Just because
-Liferay has its own [MVC framework](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet),
-therefore, doesn't mean you have to use it. It is perfectly valid to bring the
-tools and experience you have from other development projects over to Liferay.
-In fact, we expect you to. Liferay's development platform is standards-based,
-making it an ideal choice for applications of almost any type. 
-
-If you're already a wizard with Spring MVC, you can use it instead of Liferay's
-[`MVCPortlet` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
-with no limitations whatsoever. Since Spring MVC replaces only your
-application's web application layer, you can still use
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder) 
-for your service layer. 
-
-So what does it take to implement a Spring MVC application in Liferay? Start by
-considering how to package a Spring MVC application for @product-ver@.
-
-## Packaging a Spring MVC Portlet [](id=packaging-a-spring-mvc-portlet)
-
-Developers creating portlets for @product-ver@ can usually deploy their portlet as
-Java EE-style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
-OSGi bundle artifacts. Spring MVC portlet developers don't have that
-flexibility. Spring MVC portlets must be packaged as WAR artifacts because the
-Spring MVC framework is designed for Java EE. Therefore, it expects a WAR layout
-and requires Java EE resources such as the `WEB-INF/web.xml` descriptor. 
-
-Because Liferay supports the OSGi WAB (Web Application Bundler) standard for
-deployment, you can deploy your WAR and it runs as expected in the OSGi
-runtime. Here are the high points on why that works in @product-ver@:
-
--   The Liferay auto-deploy process runs, adding the `PortletServlet` and
-    `PlugincontextListener` configurations to the `WEB-INF/web.xml` file.
-
--   The
-    [Liferay WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
-    automatically creates an OSGi-ready `META-INF/MANIFEST.MF` file. If you want
-    to affect the content of the manifest file, you can place BND directives and
-    OSGi headers directly into the `WEB-INF/liferay-plugin-package.properties`
-    file.
-
-You'll still need to provide the Liferay descriptor files `liferay-display.xml`
-and `liferay-portlet.xml`, and you'll need a `portlet.xml` descriptor.
-
-Develop a Spring MVC portlet WAR file with the appropriate descriptor files. 
-
-Import class packages your portlet's descriptor files reference by adding the
-packages to an `Import-Package` header in the
-`liferay-plugin-package.properties` file. 
-
-Here's an example `Import-Package` header:
-
-    Import-Package:\
-        org.springframework.beans.factory.xml,\
-        org.springframework.context.config,\
-        org.springframework.security.config,\
-        org.springframework.web.servlet.config
-
-The auto-deploy process and Liferay's WAB generator convert your project to a
-Liferay-ready WAB. The WAB generator detects your class's `import` statements
-and adds all external packages to the WAB's `Import-Package` header. The
-generator merges packages from your plugin's `liferay-plugin-package.properties`
-into the header also. 
-
-If you depend on a package from Java's `rt.jar` other than a `java.*` package,
-override
-[portal property `org.osgi.framework.bootdelegation`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
-and add it to the property's list. Go [here](/develop/tutorials/-/knowledge_base/7-0/resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles#case-4-the-missing-class-belongs-to-a-java-runtime-package)
-for details. 
-
-+$$$
-
-**Note**: Spring MVC portlets whose embedded JARs contain properties files
-(e.g., `spring.handlers`, `spring.schemas`, `spring.tooling`) might be affected
-by issue
-[LPS-75212](https://issues.liferay.com/browse/LPS-75212).
-The last JAR that has properties files is the only JAR whose properties are
-added to the resulting WAB's classpath. Properties in other JARs aren't added. 
-
-For example, suppose that a portlet has several JARs containing these
-properties files:
-
--   `WEB-INF/src/META-INF/spring.handlers`
--   `WEB-INF/src/META-INF/spring.schemas`
--   `WEB-INF/src/META-INF/spring.tooling`
-
-The properties from the last JAR processed are the only ones added to the
-classpath. The properties files must be on the classpath in order for the
-module to use them.
-
-To add all the properties files to the classpath, you can combine them into one
-of each type (e.g., one `spring.handlers`, one `spring.schemas`, and one
-`spring.tooling`) and add them to `WEB-INF/src`. 
-
-Here's a shell script that combines these files:
-
-    cat /dev/null > docroot/WEB-INF/src/META-INF/spring.handlers
-    cat /dev/null > docroot/WEB-INF/src/META-INF/spring.schemas
-    cat /dev/null > docroot/WEB-INF/src/META-INF/spring.tooling
-    for jar in $(find docroot/WEB-INF/lib/ -name '*.jar'); do
-    for file in $(unzip -l $jar | grep -F META-INF/spring. | awk '
-    { print $4 } 
-    '); do
-    if [ "META-INF/spring.tld" != "$file" ]; then
-    unzip -p $jar $file >> docroot/WEB-INF/src/$file
-    echo >> docroot/WEB-INF/src/$file
-    fi
-    done
-    done
-
-You can modify and use the shell script to add your JAR's properties files to
-the classpath. 
-
-$$$
-
-+$$$
-
-**Note**: If you want to use a Spring Framework version different from the
-version @product@ provides, you must name your Spring Framework JARs
-differently from the ones
-[portal property `module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
-excludes. If you don't rename your Spring Framework JARs, the WAB generator
-assumes you're using @product@'s Spring Framework JARs and excludes yours from
-the generated WAB.
-[Understanding Excluded JARs](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#understanding-excluded-jars)
-explains how to detect @product@'s Spring Framework version. 
-
-$$$
-
-Now get into the details of configuring a Spring MVC portlet for Liferay.
-
-## Spring MVC Portlets in Liferay [](id=spring-mvc-portlets-in-liferay)
+# Configuring Spring MVC Portlets
 
 This isn't a comprehensive guide to configuring a Spring MVC portlet. It covers
 the high points, assuming you already have familiarity with Spring MVC. If you
@@ -386,7 +254,7 @@ gracefully to the possibility of the service implementation becoming unavailable
 entirely. That's why you should open a Service Tracker when you want to call a
 service that's in the OSGi service registry.
 
-### Service Trackers [](id=service-trackers)
+## Service Trackers [](id=service-trackers)
 
 Since you don't have the luxury of using Declarative Services to manage your
 service dependencies, you have a little bit of work to do if you want to gain
@@ -434,9 +302,3 @@ If you are not required to use a Spring MVC portlet, consider using Liferay's
 MVC framework to design your portlets instead. Then you can take advantage of
 the Declarative Services `@Component` and `@Reference` annotations, which let
 you avoid the boilerplate code associated with service trackers.
-
-## Related Topics [](id=related-topics)
-
-[Upgrading a Spring MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/upgrading-a-spring-mvc-portlet)
-
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
