@@ -1,63 +1,68 @@
-## Step 3:  Defining Service Entities [](id=step-3-defining-service-entities)
+# Defining Service Entities [](id=defining-service-entities)
 
-Entities are the heart and soul of a service. Entities represent the map between
-the model objects in Java and the fields and tables in your database. Once your
-entities are defined, Service Builder handles the mapping automatically, giving
-you a facility for taking Java objects and persisting them. For the Bookmarks
-application, two entities are created according to its
+Entities are the heart and soul of a service. They represent the map between the
+model objects in Java and your database fields and tables. Service Builder maps
+the entities you define automatically, giving you a facility for taking Java
+objects and persisting them. For the Bookmarks application, two entities are
+created according to its
 [service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
 --one for bookmark entries and one for bookmark folders.
 
-Here's a summary of the information used for the BookmarksEntry entity:
+Here's a summary of the BookmarksEntry entity information:
 
 - **Name:** *BookmarksEntry*
 - **Local service:** *yes*
 - **Remote service:** *yes* 
 
-And here's what was used for the BookmarksFolder entity:
+And here's what is used for the BookmarksFolder entity:
 
 - **Name:** *BookmarksFolder*
 - **Local service:** *yes*
 - **Remote service:** *yes* 
 
-To create your entities using Liferay @ide@, select the *Entities* node under the
-Service Builder node in the outline on the left side of the `service.xml` editor
-in Overview mode. In the main part of the view, notice that the Entities table
-is empty. Create an entity by clicking on the *Add Entity* icon
-(![Add](../../../images/icon-add-ide.png)) to the right of the table. Enter your
-entity's name and if you'd like to generate local and remote services for that
-entity. Add as many entities as you need.
+Here are steps to create entities using Liferay @ide@:
 
-![Figure 2: Adding service entities is easy with Liferay @ide@'s *Overview* mode of your `service.xml` file.](../../../images/service-add-entity.png)
+1.  Select the *Entities* node under the Service Builder node in the outline on
+    the left side of the `service.xml` editor in Overview mode. In the main part
+    of the view, notice that the Entities table is empty.
+2.  Create an entity by clicking on the *Add Entity* icon
+    (![Add](../../../../images/icon-add-ide.png))
+    to the right of the table.
+3.  Name your entity and mark whether to generate local and remote services for
+    it.
 
-An entity's name is used to name the database table for persisting instances
-of the entity. The actual name of the database table is prefixed with the
-namespace; the Bookmarks example creates one database table named
+Add as many entities as you need.
+
+![Figure 2: Adding service entities in your `service.xml` file is easy with Liferay @ide@'s *Overview* mode.](../../../../images/service-add-entity.png)
+
+The entity's database table name includes the entity name prefixed with the
+namespace. The Bookmarks example creates one database table named
 `Bookmarks_BookmarksEntry` and another named `Bookmarks_BookmarksFolder`. 
 
-Setting the *local service* attribute to `true` instructs Service Builder to
-generate local interfaces for the entity's services. The default value for local
-service is `false`. Local services can only be invoked from the Liferay server
-on which they're deployed. Therefore, if your application will be deployed to
-Liferay, the service will be local from your Liferay server's point of view.
+Setting *Local Service* (the `local-service` attribute) to `true` instructs
+Service Builder to generate local interfaces for the entity's services. Local
+services are set to `false` by default. Local services can only be invoked from
+the Liferay server on which they're deployed. Therefore, if your application is
+deployed to Liferay, the service is local from your Liferay server's point of
+view.
 
-Setting the *remote service* attribute to `true` instructs Service Builder to
-generate remote interfaces for the service. The default value for remote service
-is `true`. You could build a fully-functional application without generating
-remote services. In that case, you could set local service to `true` and remote
-service to `false` for your entities. If, however, you want to enable remote
-access to your application's services, you should set both local service and
-remote service to `true`.
+Setting *Remote Service* (the `remote-service` attribute) to `true` instructs
+Service Builder to generate remote interfaces for the service. Local services
+are set to `true` by default. You can build a fully-functional application
+without generating remote services. In that case, you could set your entity
+local services to `true` and remote services to `false`. If, however, you want
+to enable remote access to your application's services, set both local service
+and remote service to `true`.
 
 +$$$
 
-**Tip:** Suppose you have an existing DAO service for an entity built using some
-other framework such as JPA. You can set local service to `false` and remote
-service to `true` so that the methods of your remote `-Impl` class can call the
-methods of your existing DAO. This enables your entity to integrate with
-Liferay's permission-checking system and provides access to the web service APIs
-generated by Service Builder. This is a very handy, quite powerful, and often
-used feature of Liferay. 
+**Tip:** Suppose you have an existing Data Access Object (DAO) service for an 
+entity built using some other framework such as JPA. You can set local service
+to `false` and remote service to `true` so that the methods of your remote
+`-Impl` class can call the methods of your existing DAO. This enables your
+entity to integrate with Liferay's permission-checking system and provides
+access to the web service APIs generated by Service Builder. This is a very
+handy, quite powerful, and often used feature of Liferay. 
 
 $$$
 
