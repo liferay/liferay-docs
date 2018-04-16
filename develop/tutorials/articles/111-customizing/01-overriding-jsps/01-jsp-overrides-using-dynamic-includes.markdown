@@ -37,8 +37,12 @@ We'll demonstrate how dynamic includes work using the Blogs entries. For referen
     - `key="com.liferay.blogs.web#/blogs/view_entry.jsp#pre"`
     - `key="com.liferay.blogs.web#/blogs/view_entry.jsp#post"`
 
-2.  Create a module for dynamically including your content and make sure it
-    specifies compile-only dependencies like these Gradle dependencies:
+2.  [Create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development)
+    (e.g., `blade create my-dynamic-include`). The module will 
+    hold your dynamic include implementation. 
+
+3.  Specify compile-only dependencies, like these Gradle dependencies, in your 
+    module build file:
 
         dependencies {
         	compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
