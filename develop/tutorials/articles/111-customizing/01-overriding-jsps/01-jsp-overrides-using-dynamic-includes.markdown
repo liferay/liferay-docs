@@ -52,7 +52,7 @@ We'll demonstrate how dynamic includes work using the Blogs entries. For referen
         	compileOnly group: "org.osgi", name: "osgi.cmpn", version: "6.0.0"
         }
 
-3.  Create an OSGi component class that implements the
+4.  Create an OSGi component class that implements the
     [`DynamicInclude` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/DynamicInclude.html).
 
     Here's an example dynamic include implementation for Blogs:
