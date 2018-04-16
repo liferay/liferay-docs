@@ -1,20 +1,20 @@
 # Service Trackers [](id=service-trackers)
 
-Now that Liferay is promoting more modular plugins deployed into an OSGi
-runtime, you have to consider how your own code, living in its own module, can
-rely on services in other modules for functionality. You must account for the
-possibility of service implementations being swapped out or removed entirely if
-your module is to survive and thrive in an OSGi environment. It's easy for
-@product-ver@ developers who need to
+In an OSGi runtime ecosystem, you must consider how your modules can rely on
+services in other modules for functionality. It's possible for service
+implementations to be swapped out or removed entirely, and your module must not
+just survive but thrive in this environment. 
+
+If you 
 [call services](/develop/tutorials/-/knowledge_base/7-1/finding-and-invoking-liferay-services)
-from their `@Component` classes. They just use another
+from `@Component` classes, it's easy: you just use another 
 [Declarative Services (DS)](https://osgi.org/specification/osgi.cmpn/7.0.0/service.component.html)
 annotation, `@Reference`, to get a service reference. The component activates
 when the referenced service is available. 
 
-If you're able to use DS and leverage the `@Component` and `@Reference`
-annotations, you should. DS handles much of the complexity of handling service
-dynamism for you transparently.
+If you can use DS and leverage the `@Component` and `@Reference` annotations,
+you should. DS handles much of the complexity of handling service dynamism for
+you transparently.
 
 If you can't use DS to create a Component, keep reading to learn how to
 implement a Service Tracker to look up services in the service registry. 
@@ -51,26 +51,28 @@ non-native (to OSGi) Dependency Injection framework.
 **Note:**  The static utility classes (e.g., `UserLocalServiceUtil`) that were 
 useful in Liferay Portal 6.2 (and earlier) exist for compatibility but should
 not be called, if possible.  Static utility classes cannot account for the OSGi
-runtime's dynamic environment. Using a static class, for example, you might
-attempt calling a service that has stopped or hasn't been deployed or
-started--this could cause unrecoverable runtime errors. Service Tracker,
-however, helps you make OSGi-friendly service calls.
+runtime's dynamic environment. If you use a static class, you might attempt
+calling a stopped service or one that hasn't been deployed or started. This
+could cause unrecoverable runtime errors. Service Trackers, however, help you
+make OSGi-friendly service calls.
 
 $$$
 
-Using a Service Tracker, your non-OSGi application can access any service
-registered in the OSGi runtime, including your own
-[Service Builder services](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
+Your non-OSGi application can access any service registered in the OSGi runtime
+using a Service Tracker, including your own 
+[Service Builder services](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder) 
 and the services published by Liferay's modules (like the popular
 `UserLocalService`).
 
 ## Implementing a Service Tracker [](id=implementing-a-service-tracker)
 
-Although you don't have the luxury of using DS to manage your service
-dependencies, you can call services from the service registry with a little bit
-of code.
+Service Trackers don't give you the luxury of managing your service dependencies
+with DS, but you can call services from the service registry.
 
-To implement a service tracker you can do this:
+You can implement a service tracker in two ways: 1) In the code where you need
+it, or 2) In a class that extends `org.osgi.util.tracker.ServiceTracker`. 
+
+To create it directly, do this: 
 
     import org.osgi.framework.Bundle;
     import org.osgi.framework.FrameworkUtil;
@@ -83,58 +85,63 @@ To implement a service tracker you can do this:
     serviceTracker.open();
     SomeService someService = serviceTracker.waitForService(500);
 
-To simplify your code, you can create a class that extends
-`org.osgi.util.tracker.ServiceTracker`.
+A better way is to create a class that extends
+`org.osgi.util.tracker.ServiceTracker`, because this simplifies your code. 
 
-    public class SomeServiceTracker
-        extends ServiceTracker<SomeService, SomeService> {
+1.  Create a class like this one that extends `ServiceTracker`: 
 
-        public SomeServiceTracker(Object host) {
-            super(
-                FrameworkUtil.getBundle(host.getClass()).getBundleContext(),
-                SomeService.class, null);
+        public class SomeServiceTracker
+            extends ServiceTracker<SomeService, SomeService> {
+
+            public SomeServiceTracker(Object host) {
+                super(
+                    FrameworkUtil.getBundle(host.getClass()).getBundleContext(),
+                    SomeService.class, null);
+            }
         }
-    }
 
-From the initialization part of your logic that uses the service, call your
-service tracker constructor. The `Object host` parameter is used to obtain your
-own bundle context and in order to give accurate results must be an object from
-your own bundle.
+2.  From the initialization part of your logic that uses the service, call your
+    service tracker constructor. The `Object host` parameter obtains your own
+    bundle context and must be an object from your own bundle in order to give
+    accurate results. 
 
-    ServiceTracker<SomeService, SomeService> someServiceTracker =
-        new SomeServiceTracker(this);
+        ServiceTracker<SomeService, SomeService> someServiceTracker =
+            new SomeServiceTracker(this);
 
-Remember to open the service tracker before using it, typically as early as you
-can. 
+3.  When you want to use the service tracker, open it, typically as early as
+    you can. 
 
-    someServiceTracker.open();
+        someServiceTracker.open();
 
-The most basic usage of a Service Tracker is to interrogate the service's state.
-In your program logic, for example, check whether the service is `null` before
-using it:
+4.  Before attempting to use a service, use the Service Tracker to interrogate
+    the service's state. In your program logic, for example, check whether the
+    service is `null` before using it:
 
-    SomeService someService = someServiceTracker.getService();
+        SomeService someService = someServiceTracker.getService();
 
-    if (someService == null) {
-        _log.warn("The required service 'SomeService' is not available.");
-    }
-    else {
-        someService.doSomethingCool();
-    }
+        if (someService == null) {
+            _log.warn("The required service 'SomeService' is not available.");
+        }
+        else {
+            someService.doSomethingCool();
+        }
 
-Service Trackers have several other utility functions for introspecting tracked
-services.
+    Service Trackers have several other utility functions for introspecting tracked
+    services.
 
-Later when your application is being destroyed or undeployed, close the service
-tracker. 
+5.  Later when your application is being destroyed or undeployed, close the
+    service tracker. 
 
-    someServiceTracker.close();
+        someServiceTracker.close();
+
+Service Trackers make it possible to call OSGi services from outside the OSGi
+runtime. 
 
 ## Implementing a Callback Handler for Services [](id=implementing-a-callback-handler-for-services)
 
-If there's a strong possibility the service might not be available, or if you
+If there's a strong possibility the service might not be available or if you
 need to track multiple services, the Service Tracker API provides a callback
-mechanism which operates on service *events*. To use this, override
+mechanism that operates on service *events*. To use this, override
 `ServiceTracker`'s `addingService` and `removedService` methods. Their
 `ServiceReference` parameter references an active service object. 
 
