@@ -1,31 +1,37 @@
-## Step 5: Defining Relationships Between Service Entities [](id=step-5-defining-relationships-between-service-entities)
+# Defining Relationships Between Service Entities [](id=defining-relationships-between-service-entities)
 
-Often you'll want to reference one type of entity in the context of another
-entity. That is, you'll want to *relate* the entities. Liferay's Bookmarks
+Referencing one type of entity in the context of another entity is a common
+requirement. This is also known as *relating* entities. Liferay's Bookmarks
 application defines a relationship between an entry and its folder.
 
 As mentioned earlier, each bookmark must have a folder. Therefore, each
-`BookmarksEntry` entity must relate to a `BookmarksFolder` entity. Liferay @ide@'s
-Diagram mode for `service.xml` makes relating entities easy. First, select
-Diagram mode for the `service.xml` file. Then select the *Relationship* option
-under *Connections* in the palette on the right side of the view. This
-relationship tool helps you draw relationships between entities in the diagram.
-Click your first entity and move your cursor over to the entity you'd like to
-relate it with. Liferay @ide@ draws a dashed line from your selected entity to the
-cursor. Click the second entity to complete drawing the relationship. Liferay
-IDE turns the dashed line into a solid line, with an arrow pointing to the
-second entity. Save the `service.xml` file. 
+`BookmarksEntry` entity must relate to a `BookmarksFolder` entity. Liferay
+@ide@'s Diagram mode for `service.xml` facilitates relating entities. 
 
-Congratulations! You've related two entities. Their relationship should show in
-Diagram mode and look similar to that of the figure below. 
+1.  Select Diagram mode for the `service.xml` file. 
+2.  Select the *Relationship* option under *Connections* in the palette on the 
+    right side of the view. This relationship tool helps you draw relationships
+    between entities in the diagram.
+3.  Click your first entity and move your cursor over to the entity you'd like 
+    to relate it with. Liferay @ide@ draws a dashed line from your selected
+    entity to the cursor.
+4.  Click the second entity to complete drawing the relationship. Liferay @ide@ 
+    turns the dashed line into a solid line, with an arrow pointing to the
+    second entity.
+5.  Save the `service.xml` file. 
 
-![Figure 3: Relating entities is a snap in Liferay @ide@'s *Diagram* mode for `service.xml`.](../../../images/service-builder-relate-entities.png)
+Congratulations! You've related two entities. Their relationship shows in
+Diagram mode and looks similar to the relationship in the figure below. 
+
+![Figure 3: Relating entities is a snap in Liferay @ide@'s *Diagram* mode for `service.xml`.](../../../../images/service-builder-relate-entities.png)
 
 Switch to *Source* mode in the editor for your `service.xml` file and note that
-Liferay @ide@ created a column element in the first selected entity to hold the ID
-of the corresponding entity instance reference. For example:
+Liferay @ide@ created a column element in the first selected entity to hold the
+ID of the corresponding entity instance reference. For example, the
+`BookmarksEntry` entity uses this column to relate to a `BookmarksFolder` entity :
 
     <column name="folderId" type="long" />
 
-Now that your entity columns are in place, you can specify the default order in
-which the entity instances are retrieved from the database. 
+Now that your entity columns are in place and entity relationships are
+established, you can specify the default order in which the entity instances are
+retrieved from the database. 
