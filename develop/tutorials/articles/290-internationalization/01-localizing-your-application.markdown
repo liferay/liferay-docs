@@ -1,15 +1,15 @@
 # Localizing Your Application [](id=localizing-your-application)
 
 If you're writing a Liferay Application, you're probably a genius who is also
-really cool. Which means your application is going to be used throughout the
-entire world. At least, it will if the messages that appear to its users can be
-translated into their language. Thankfully, Liferay makes it easy to support
-translation of your application's language keys.
+really cool, which means your application will be used throughout the entire
+world. At least, if its messages can be translated into their language, it will.
+Thankfully, Liferay makes it easy to support translation of your application's
+language keys.
 
 +$$$
 
-**Note:** Even if you don't think your application needs to be translated into
-multiple languages, use the localization pattern presented here for any messages
+**Note:** Even if you don't plan to translate your application into multiple
+languages, use the localization pattern presented here for any messages
 displayed in your user interface. It's much easier to change the messages by
 updating a language properties file than by finding every instance of a message
 and replacing it in your JSPs and Java classes.
@@ -41,25 +41,24 @@ Each language property file holds key/value pairs. The key is the same in all
 the language property files, while the value is translated in each file. You
 specify the key in your user interface code, and the appropriately translated
 message is returned automatically for your users, depending on the locale being
-used in Liferay. If you have Liferay running locally, append the URL with a
-supported locale to see how Liferay's language keys are translated (for example,
-enter `localhost:8080/es`).
+used in Liferay. If you have Liferay running locally, append the URL with
+a supported locale to see the translations (for example, enter
+`localhost:8080/es`).
 
 ![Figure 1: Append the locale to your running Liferay's URL and see Liferay's translation power in action.](../../images/locale-message-spain.png)
 
-Language keys are just keys you'll use in place of a hard coded, fully
-translated String value in your user interface code. For example, you can use a
-language key in your JSP via a `<liferay-ui:message />` tag. 
+Language keys are just keys to use in place of a hard coded, fully translated
+String value in your user interface code. You use a language key in your JSP
+with a `<liferay-ui:message />` tag. 
 
-The tag might be set up like this if you're not considering the need to
-translate your application's messages:
+If you wanted to hard code a message, you'd use the tag like this:
 
     <liferay-ui:message key="Howdy, Partner!" />
 
 In that case you'll get a properly capitalized and punctuated message in your
 application.
 
-Alternatively, you can specify a simple key instead of the final value:
+Instead, specify a simple key instead of the final value:
 
     <liferay-ui:message key="howdy-partner" />
 
@@ -68,19 +67,17 @@ properties file (`Language.properties`):
 
     howdy-partner=Howdy, Partner!
 
-You'll get the same output in your application with either method above, but you
-have the flexibility to add additional language properties files that provide
-translations for your application's keys if you use the language properties
-approach. Use a key in your UI code, then provide the value (or translation) in
-your language properties file. You just need to make sure there's a locale that
-corresponds to your translation.
+Either way, you get the same output. The properties file lets you put all your
+messages in one place, and you can add additional language properties files with
+translations later. You just need to make sure there's a locale that corresponds
+to your translation.
 
-The values from your default `Language.properties` file will appear if no locale
-is specified. If a locale is specified, Liferay will try to find a file that
-corresponds to the locale. For example, if a Spanish translation is sought, a
-`Language_es.properties` file must be present to provide the proper values. If
+The values from your default `Language.properties` file appear if no locale is
+specified. If a locale is specified, a key from a file corresponding to that
+local is retrieved. For example, if a Spanish translation is sought,
+a `Language_es.properties` file must be present to provide the proper values. If
 it isn't, the default language properties (from the `Language.properties` file)
-will be used.
+are used.
 
 ## What Locales are Available By Default? [](id=what-locales-are-available-by-default)
 
@@ -96,14 +93,14 @@ to find them.
         sv_SE,tr_TR,uk_UA,vi_VN
 
 To provide a translation for one of these locales, specify the locale in the
-file name where the translated keys will be (for example,
-`Langauge_es.properties` holds the Spanish translation).
+file name containing the translated keys (for example, `Langauge_es.properties`
+holds the Spanish translation).
 
 ## Where do I Put Language Files? [](id=where-do-i-put-language-files)
 
 In an application with only one module that holds all your application's views
-(for example, all its JSPs) and portlet components, just create a
-`src/main/resources/content` folder in that module, and place your
+(for example, all its JSPs) and portlet components, create
+a `src/main/resources/content` folder in that module, and place your
 `Language.properties` and `Language_xx.properties` files there.
 
 After that, make sure any portlet components (the `@Component` annotation
@@ -113,9 +110,8 @@ in your `-Portlet` classes) in the module include this property:
 
 Providing translated language properties files and specifying the
 `javax.portlet.resource-bundle` property in your portlet component is all you
-need to do to have your language keys translated. Then, when the locale is
-changed in @product@, your application's language keys will be automatically
-translated.
+must do to point @product@ at your translations. Users see the translations for
+the locales they select. 
 
 In a more complicated, well-modularized application, you might have language
 keys spread over multiple modules providing portlet components and JSP files.
@@ -226,7 +222,7 @@ would set this in its `bnd.bnd` file:
         com.liferay.docs.l10n.myapp2.lang
 
 The current module's language keys are prioritized over those from the other
-modules.  
+modules. 
 
 +$$$
 
