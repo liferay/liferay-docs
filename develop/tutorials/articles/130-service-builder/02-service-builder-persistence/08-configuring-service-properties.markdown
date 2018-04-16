@@ -24,19 +24,15 @@ Here are some of the properties the `service.properties` file includes:
 
 +$$$
 
-**Note:** The `build.auto.upgrade` property is available for WAR-style Service
-Builder applications. This property determines whether or not Liferay should
-automatically apply changes to the database model when a new version of the
-plugin is deployed. This is `true` by default. This property is not necessary
-for module-style applications.
+**Note**: In Liferay Portal 6.x Service Builder portlets, the
+`build.auto.upgrade` property in `service.properties` applies Liferay Service 
+schema changes upon rebuilding services and redeploying the portlets. As of 
+@product-ver@, this property is deprecated. 
 
-It's sometimes useful to override the `build.auto.upgrade` property in legacy
-projects from `service.properties`. Setting `build.auto.upgrade=false` in your
-`service-ext.properties` file prevents Liferay from trying automatically to
-apply any changes to the database model when a new version of the plugin is
-deployed. This is needed in projects to manually manage the changes to the
-database (recommended) or in which the SQL schema has intentionally been
-modified manually after generation by Service Builder.
+The Build Auto Upgrade feature is now different and is set in a global property
+`schema.module.build.auto.upgrade` in the file
+`[Liferay_Home]/portal-developer.properties`. To learn more, see the tutorial
+[Upgrading Data Schemas in Development](/develop/tutorials/-/knowledge_base/7-1/upgrading-data-schemas-in-development).
 
 $$$
 
