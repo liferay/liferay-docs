@@ -251,18 +251,22 @@ The UI is segmented into three tabs:
 
 1.  **Fix Packs:** lets you view and apply fix packs for the environment's 
     servers. This tab only appears if a server is registered in the environment. 
-    A table displays each fix pack's status, the server, and the server's 
-    location. If the server is running, the table also contains *Size* and 
-    *Download* columns. You can download a fix pack by clicking its *Download* 
-    icon. You can download several fix packs at once by selecting them and 
-    clicking the *Download* button that appears above the table. Once a fix pack 
-    downloads, LCS prompts you to restart your server, which installs any 
-    downloaded fix packs. Note that you must start your server with the 
-    privileges required to write to the disk location where patches are stored 
-    and processed (the `patching-tool` folder). To use LCS to install fix packs 
-    across a cluster, follow the same procedure. LCS downloads and installs fix 
-    packs simultaneously across all nodes--you don't have to handle each 
-    separately. 
+    A table displays the following information for each fix pack: 
+
+    -   Name: The fix pack's name.
+    -   Status: The fix pack's status.
+    -   Server: The server the fix pack can be applied to.
+    -   Size (if server is running): The fix pack's size.
+    -   Download (if server is running): A button to download the fix pack to 
+        the server.
+
+    Once a fix pack downloads, LCS prompts you to restart your server, which 
+    installs any downloaded fix packs. Note that you must start your server with 
+    the privileges required to write to the disk location where patches are 
+    stored and processed (the `patching-tool` folder). To use LCS to install fix 
+    packs across a cluster, follow the same procedure. LCS downloads and 
+    installs fix packs simultaneously across all nodes--you don't have to handle 
+    each separately. 
 
 2.  **Registration:** lets you generate and download 
     [*environment tokens*](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens) 
