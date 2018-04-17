@@ -18,28 +18,35 @@ enabled for your portal, you can also view all of the live portal sessions of
 your users from this area of the Control Panel. If the Audit plugins have been
 installed from Liferay Marketplace, the Audit section also appears.
 
-The Users section of the Control Panel is used for most administrative tasks
-involving user management. There, you'll find an interface for the creation and
-maintenance of the following portal entities: users, organizations, user groups,
-and roles. 
+That's what this section of articles describes: User Management. Use these links
+to quickly navigate to the content you want:
 
-Managing sites, teams, site templates, and page templates is covered in detail
-elsewhere. Remember that it's possible and sometimes simpler to use sites, site
-memberships, and teams to organize users and manage permissions than it is to
-use organizations, user groups, and custom roles.
+- [Users](/discover/deployment/-/knowledge_base/7-1/users-and-organizations)
+    - [Adding, Editing, and Deleting Users](/discover/deployment/-/knowledge_base/7-1/adding-editing-and-deleting-users)
+    - [Important Additional User Management Topics](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics)
+- [Organizations](/discover/deployment/-/knowledge_base/7-1/organizations)
+    - [Managing Organizations](/discover/deployment/-/knowledge_base/7-1/managing-organizations)
 
-Portal administrators use the Users section of the Control Panel to create
-users, organizations, and user groups, implement security via roles and
-permissions, and generally administer users. Only users with the administrator
-role, which is a portal scoped role, have permission to view the Control Panel.
-You can, however, grant permissions to view the Control Panel to existing or
-custom roles.
+These articles are planned but not yet written:
 
-In this set of articles you'll learn about managing users. You can get started
-learning about managing users in Liferay just by perusing the Control Panel, but
-there's so much User Management functionality in Liferay that it's tough to wrap
-your head around it all and you might not end up doing things optimally. So keep
-reading!
+- [User Groups](/discover/deployment/-/knowledge_base/7-1/user-groups)
+- [Roles and Permissions](/discover/deployment/-/knowledge_base/7-1/roles-and-permissions)
+- [Password Policies](/discover/deployment/-/knowledge_base/7-1/password-policies)
+- [Monitoring Users](/discover/deployment/-/knowledge_base/7-1/monitoring-users)
+- [Auditing Users](/discover/deployment/-/knowledge_base/7-1/auditing-users)
+
+## What's New with User Management?
+
+In @product@ version 7.0, the user management functionality and behavior didn't
+change much form previous versions. The UI improved, and improvements to
+existing behavior were introduced, but most of the work went into improving the
+backend code so that future improvements could be made. In @product-ver@, we're
+excited to announce some new features for user administrators:
+
+1.  Numeric screen names can be used without issue out of the box. Read
+    [here](/discover/deployment/-/knowledge_base/7-0/user-management-additional-topics#numeric-screen-names) for the details.
+
+2.  WHAT ELSE CAN WE HIGHLIGHT FOR USER ADMINS?
 
 <!-- REPLACE [Figure 2: The Users section of the Control Panel. This screenshot shows a portal that doesn't have the EE Audit plugin installed.](../../images/usrmgmt-users.png) -->
 
