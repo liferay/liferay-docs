@@ -2,16 +2,16 @@
 
 The 
 [Asset Publisher](/discover/portal/-/knowledge_base/7-1/publishing-assets) 
-lets you order assets by priority. For this to work, 
-however, users must be able to set the asset's priority when creating or 
-editing the asset. For example, when creating or editing web content, users can 
-assign a priority in the Metadata section's Priority field. 
+lets you order assets by priority. For this to work, however, users must be able
+to set the asset's priority when creating or editing the asset. For example,
+when creating or editing web content, users can assign a priority in the
+Metadata section's Priority field. 
 
 ![Figure 1: The Priority field lets users set an asset's priority.](../../images/web-content-categorization.png)
 
-This field isn't enabled by default for your custom assets. You must manually 
-add support for it. Fortunately, this is very straightforward. This tutorial 
-shows you how. Onwards! 
+This field isn't enabled when you create an asset. You must manually add support
+for it. Fortunately, this is very straightforward. This tutorial shows you how.
+Onwards! 
 
 ## Add the Priority Field to Your JSP [](id=add-the-priority-field-to-your-jsp)
 
@@ -25,9 +25,9 @@ to make sure the value the user sets is a number higher than zero:
         <aui:validator name="min">[0]</aui:validator>
     </aui:input>
 
-That's it for the view layer! Now when users create or edit your custom asset,
-they can enter its priority. Next, you'll learn how to use that value in your
-service layer. 
+That's it for the view layer! Now when users create or edit your asset, they can
+enter its priority. Next, you'll learn how to use that value in your service
+layer. 
 
 ## Using the Priority Value in Your Service Layer [](id=using-the-priority-value-in-your-service-layer)
 

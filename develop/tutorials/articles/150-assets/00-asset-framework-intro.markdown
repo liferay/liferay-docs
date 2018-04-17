@@ -1,9 +1,9 @@
 # Asset Framework [](id=asset-framework)
 
-Liferay's asset framework allows you to add core Liferay features to your 
-application. For example, if you build an event management application that 
-displays a list of upcoming events, you can use the asset framework to let 
-users add tags, categories, or comments to make entries more self-descriptive. 
+The asset framework powers the core Liferay features so you can add them to your
+application. For example, if you build an event management application that
+displays a list of upcoming events, you can use the asset framework to let users
+add tags, categories, or comments to make entries more self-descriptive. 
 
 As background, the term *asset* refers to any type of content in the portal.
 This could be text, a file, a URL, an image, documents, blog entries, bookmarks,
@@ -17,9 +17,9 @@ in the
 [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
 tutorial section.
 
-The tutorials that follow in this section explore the details of leveraging the
-asset framework's various features. Here are some features that you'll give your
-users as you implement them in your app: 
+The tutorials that follow in this section explore how to leverage the asset
+framework's various features. Here are some features that you'll give your users
+as you implement them in your app: 
 
 -  Extensively render your assets.
 -  Associate tags to custom content types. Users can create and assign new
@@ -29,23 +29,6 @@ users as you implement them in your app:
 -  Manage categories from the Control Panel. This includes the ability to
    create category hierarchies. 
 -  Relate assets to one another. 
-<!-- 
--  Associate comments with assets.
--  Rate assets, using a five star rating system. 
--  Assign social bookmarks to assets. Bookmark types include tweets, Facebook
-   likes, and +1 (Google Plus). 
--  Add custom fields to assets. 
--  Flag an asset's content as inappropriate. 
--  Track the number of times an asset is viewed. 
--  Integrate workflow with assets. 
-- Publish asset content using the Asset Publisher portlet. The Asset Publisher
-   lets you publish dynamic asset lists or manually selected asset lists. It
-   can also show an asset summary view with a link to the full view.
--->
-
-At this point, you might be saying, "Liferay's asset framework sounds great, but
-how do I leverage all of its awesome features?" Excellent question, and perfect
-timing! 
 
 Before diving head first into the tutorials, you must implement a way to let the
 framework know whenever any of your custom content entries is added, updated, or

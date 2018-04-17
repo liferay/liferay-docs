@@ -1,12 +1,13 @@
-# Adding, Updating, and Deleting Assets for Custom Entities [](id=adding-updating-and-deleting-assets-for-custom-entities)
+# Adding, Updating, and Deleting Assets [](id=adding-updating-and-deleting-assets)
 
 To use Liferay's asset framework with an entity, you must inform the 
 asset framework about each entity instance you create, modify, and delete. In
-this sense, it's similar to informing Liferay's permissions framework about a
-new resource. All you have to do is invoke a method of the asset framework that
-associates an `AssetEntry` with the entity so Liferay can keep track of
-the entity as an asset. When it's time to update the entity, you update the
-asset at the same time. 
+this sense, it's similar to informing 
+[Liferay's permissions framework](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions)
+about a new resource. All you have to do is invoke a method of the asset
+framework that associates an `AssetEntry` with the entity so Liferay can keep
+track of the entity as an asset. When it's time to update the entity, you update
+the asset at the same time. 
 
 To leverage assets, you must also implement indexers for your portlet's
 entities. Liferay's asset framework uses indexers to manage assets. 
@@ -94,7 +95,7 @@ Here are descriptions of each of the `updateEntry` method's parameters:
     Low numbers take priority over higher numbers.
 
 The following code from Liferay's Wiki application's
-[WikiPageLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/wiki/wiki-service/src/main/java/com/liferay/wiki/service/impl/WikiPageLocalServiceImpl.java)
+[`WikiPageLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/wiki/wiki-service/src/main/java/com/liferay/wiki/service/impl/WikiPageLocalServiceImpl.java)
 Java class demonstrates invoking the `updateEntry` method on the wiki page
 entity called `WikiPage`. In your `add-` method, you could invoke `updateEntry`
 after adding your entity's resources. Likewise, in your `update-` method, you
@@ -117,8 +118,7 @@ method.
 
 Immediately after invoking the `updateEntry` method, you must update the
 respective asset and index the entity instance. The above code calls the indexer
-to index (or re-index, if updating) the entity. It's that easy to update assets
-and indexes.
+to index (or re-index, if updating) the entity. That's all there is to it.
 
 +$$$
 
@@ -131,8 +131,8 @@ them, then you can access them in calls like these:
 
 $$$
 
-Next, you'll learn what's needed to properly delete an entity that's associated
-with an asset. 
+Next, you'll learn what's needed to delete an entity that's associated with an
+asset. 
 
 ## Deleting Assets [](id=deleting-assets)
 
@@ -141,8 +141,8 @@ at the same time. This cleans up stored asset and index information, which keeps
 the Asset Publisher from showing information for the entities you've deleted.
 
 In your `-LocalServiceImpl` Java class, open your `delete-` method. After the
-code that deletes the entity's resource, you must delete the entity instance's
-asset entry and index. 
+code that deletes the entity's resource, delete the entity instance's asset
+entry and index. 
 
 Here's some code which deletes an asset entry and an index associated with a
 portlet's entity. 
@@ -158,8 +158,8 @@ In your `-LocalServiceImpl` class, you can write similar code. Replace the
 
 +$$$
 
-**Important:** In order for Liferay's Asset Publisher application to show your
-entity, the entity must have an Asset Renderer. 
+**Important:** For Liferay's Asset Publisher application to show your entity,
+the entity must have an Asset Renderer. 
 
 Note also that an Asset Renderer is how you show a user the components of your
 entity in the Asset Publisher. On deploying your portlet with asset, indexer,

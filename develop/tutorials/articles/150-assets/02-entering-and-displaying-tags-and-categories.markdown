@@ -1,15 +1,15 @@
 # Implementing Asset Categorization and Tagging [](id=implementing-asset-categorization-and-tagging)
 
-In this tutorial, you'll allow content authors the ability to specify tags and
-categories for their entities in the UI. Liferay provides a set of JSP tags for
-showing category and tag inputs in your UI. Before beginning, your entities
-should be
-[asset-enabled](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets-for-custom-entities)
+In this tutorial, you'll enable tags and categories entities in the UI through
+a set of JSP tags. Before beginning, your entities should be
+[asset-enabled](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
 and you should have asset renderers enabled for them.
 
 ![Figure 1: Adding category and tag input options lets authors aggregate and label custom entities.](../../images/asset-fw-categories-and-tags-options.png)
 
 Now it's time to get started! 
+
+## Adding Tags and Categories
 
 You can use the following tags in the JSPs you provide for adding/editing custom
 entities. Here's what the tags look like in the
@@ -30,7 +30,7 @@ for the Blogs portlet:
     </aui:fieldset-group>
 
 These category and tag `aui:input` tags generate form controls that let users
-browse/select a categories for the entity, browse/select tags, and/or create new
+browse/select categories for the entity, browse/select tags, and/or create new
 tags to associate with the entity. 
 
 The `liferay-ui:asset-categories-error` and `liferay-ui:asset-tags-error` tags
@@ -41,8 +41,10 @@ or show the category and tag input options.
 For styling purposes, the `aui:fieldset-group` tag is given the `lexicon`
 markup view.
 
-Once the tags and categories have been entered, you'll want to show them along
-with the content of the asset. Here's how to display the tags and categories: 
+## Displaying Tags and Categories
+
+Tags and categories should be displayed with the content of the asset. Here's
+how to display the tags and categories: 
 
     <p><liferay-ui:message key="categories" />:</p>
 
@@ -66,13 +68,12 @@ with the content of the asset. Here's how to display the tags and categories:
         />
     </div>
 
-The `portletURL` parameter is used for both tags and categories, which supports 
-navigation amongst the two. Each tag that uses this parameter becomes a link 
-containing the `portletURL` *and* `tag` or `categoryId` parameter value. To 
-implement this, you must implement the look-up functionality in your portlet 
-code. Do this by reading the values of those two parameters and using 
-`AssetEntryService` to query the database for entries based on the specified 
-tag or category. 
+The `portletURL` parameter is used for both tags and categories. Each tag that
+uses this parameter becomes a link containing the `portletURL` *and* `tag` or
+`categoryId` parameter value. To implement this, you must implement the look-up
+functionality in your portlet code. Do this by reading the values of those two
+parameters and using `AssetEntryService` to query the database for entries
+based on the specified tag or category. 
 
 Deploy your changes and add/edit a custom entity in your UI. Your form shows the
 categorization and tag input options in a panel that the user can hide/show. 
