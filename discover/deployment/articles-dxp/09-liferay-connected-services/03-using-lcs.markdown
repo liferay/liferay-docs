@@ -253,12 +253,13 @@ The UI is segmented into three tabs:
     servers. This tab only appears if a server is registered in the environment. 
     A table displays the following information for each fix pack: 
 
-    -   Name: The fix pack's name.
-    -   Status: The fix pack's status.
-    -   Server: The server the fix pack can be applied to.
-    -   Size (if server is running): The fix pack's size.
-    -   Download (if server is running): A button to download the fix pack to 
-        the server.
+    -   **Name:** The fix pack's name.
+    -   **Status:** The fix pack's status.
+    -   **Server:** The server the fix pack can be applied to.
+    -   **Size:** The fix pack's size. This only appears if the server is 
+        running. 
+    -   **Download:** A button to download the fix pack to the server. This only 
+        appears if the server is running. 
 
     Once a fix pack downloads, LCS prompts you to restart your server, which 
     installs any downloaded fix packs. Note that you must start your server with 
