@@ -50,16 +50,15 @@ Follow these steps to activate your @product@ server with LCS:
         disconnect from LCS. You must reconnect them using the new token. 
     -   **No changes to LCS service selections:** Download the token. 
 
-6.  Shut down your server if it's running. 
-
-7.  Place the token file in your server's `[Liferay Home]/data` folder, and 
-    then start the server. Note that 
+7.  Place the token file in your server's `[Liferay Home]/data` folder. Note 
+    that 
     [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
-    is usually the parent folder of the application server's folder. On startup, 
-    the LCS client app automatically connects your server to LCS. Upon 
-    connection, your server activates by consuming an activation key from the 
-    environment's subscription type. You should see this in your LCS project's 
-    Subscriptions tab. 
+    is usually the parent folder of the application server's folder. If your 
+    server is running, it should connect to LCS in about 1 minute. If your 
+    server isn't running, it connects to LCS on startup. Upon connection, your 
+    server activates by consuming an activation key from the environment's 
+    subscription type. You should see this in your LCS project's Subscriptions 
+    tab. 
 
 8.  Celebrate! Your @product@ server is activated and connected to LCS. If for 
     some reason it isn't, see the 

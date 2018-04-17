@@ -26,6 +26,7 @@ As you go through this guide, you'll cover the following topics:
 - LCS Preconfiguration 
 - Activating Your @product@ Server with LCS 
 - Using LCS 
+- Troubleshooting Your LCS Connection
 
 You'll get started with the configuration steps required to use LCS with 
 @product@. 
