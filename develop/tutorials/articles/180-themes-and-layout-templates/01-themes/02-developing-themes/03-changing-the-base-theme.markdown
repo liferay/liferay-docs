@@ -2,7 +2,7 @@
 
 Once your theme is 
 [built](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files), 
-you can use the gulp extend task to change your theme's base theme. 
+you can use the `gulp extend` task to change your theme's base theme. 
 
 Follow these steps to change your base theme:
 

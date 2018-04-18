@@ -1,6 +1,6 @@
 # Building Your Theme's Files [](id=building-your-themes-files)
 
-The gulp build task generates the base theme files, compiles Sass into CSS, 
+The `gulp build` task generates the base theme files, compiles Sass into CSS, 
 and zips all theme files into a WAR file that you can deploy to your server. 
 
 Follow these steps to build your theme's files:
