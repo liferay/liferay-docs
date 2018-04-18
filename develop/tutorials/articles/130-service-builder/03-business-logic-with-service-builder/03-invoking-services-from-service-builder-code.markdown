@@ -54,11 +54,11 @@ the `FooLocalServiceImpl` class would declare a `BarLocalService` field and
 apply an `@BeanReference` annotation to it. 
 
     @BeanReference
-    private BarLocalService barLocalService;
+    private BarLocalService _barLocalService;
 
-The `@BeanReference` lets Liferay's AOP treat the bean reference for using in
+The `@BeanReference` lets Liferay's AOP treat the bean reference for use in
 transactions, search indexing, or security, if needed. The referencing class can
-invoke the Spring Bean class's methods.   
+invoke the Spring Bean class's methods.
 
 Besides the services Service Builder makes available for your application,
 Service Builder Spring Bean classes can also access any service published within
@@ -74,7 +74,7 @@ Spring Bean referencing OSGi services.
 
 ## Referencing OSGi Services [](id=referencing-osgi-services)
 
-In many cases, you're Service Builder code (Spring Beans) will need to reference
+In many cases, your Service Builder code (Spring Beans) will need to reference
 external services. Liferay's `@ServiceReference` annotation lets Liferay Spring
 Beans reference OSGi services. 
 
@@ -90,17 +90,16 @@ annotation to reference the *external* service.
     private SMSService _smsService;
 
 This annotation retrieves a reference to the OSGi service and provides some nice
-benefits. None of the Spring context is not created until the `SMSService`
-service is available. Likewise, if the `SMSService` suddenly disappears, the
-whole Spring Application Context is destroyed. This makes Liferay Spring apps
-much more robust and versatile.
+benefits. None of the Spring context is created until the `SMSService` service
+is available. Likewise, if the `SMSService` suddenly disappears, the whole
+Spring Application Context is destroyed. This makes Liferay Spring apps much
+more robust and versatile.
 
 Fortunately, Service Builder generates this kind of code for every entity your
 `service.xml` file references. For example, the
-[Liferay
-Blade Service Builder sample project](/develop/reference/-/knowledge_base/7-1/service-builder-samples)
+[Liferay Blade Service Builder sample project](/develop/reference/-/knowledge_base/7-1/service-builder-samples)
 `basic-service` module's `service.xml` file defines a `Foo` entity that
-references an `AssetEntry` entity:  
+references an `AssetEntry` entity:
 
     <reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
 
@@ -112,8 +111,9 @@ annotated with `@ServiceReference`:
     @ServiceReference(type = com.liferay.asset.kernel.service.AssetEntryLocalService.class)
     protected com.liferay.asset.kernel.service.AssetEntryLocalService assetEntryLocalService;
 
-Great! You know how to set a Service Builder Spring Bean with references to any
-OSGi services and references to other Spring Beans in the Application Context.
+Great! You now know how to add a reference to any OSGi service to a Service
+Builder Spring Bean. You also know how to add a reference to any other Spring
+Bean in the Application Context of your Service Builder Spring Bean.
 
 ## Related Topics [](id=related-topics)
 
