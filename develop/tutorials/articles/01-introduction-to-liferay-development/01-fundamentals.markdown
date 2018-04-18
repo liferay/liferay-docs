@@ -53,8 +53,8 @@ on Liferay. That also encourages us to improve constantly.
 
 Here are some key standards supported by @product@:
 
--   [Portlets 1.0](https://jcp.org/en/jsr/detail?id%3D168) (JSR-168) 
-    and [Portlets 2.0](https://jcp.org/en/jsr/detail?id%3D286) (JSR-286):
+-   [Portlets 1.0](https://jcp.org/en/jsr/detail?id=168) (JSR-168) 
+    and [Portlets 2.0](https://jcp.org/en/jsr/detail?id=286) (JSR-286):
     @product@ can run any portlets that follow these two versions of the
     specification. Liferay is also heavily involved in the upcoming Portlets 3.0
     specification.
@@ -69,7 +69,7 @@ Here are some key standards supported by @product@:
 -   [Content Management Interoperability Services](https://www.oasis-open.org/committees/cmis) (CMIS):
     Liferay's Documents and Media can behave as an interface for any external
     Documents Repository that supports this widely adopted standard.
--   [Java Content Repository](https://jcp.org/en/jsr/detail?id%3D170) (JSR-170):
+-   [Java Content Repository](https://jcp.org/en/jsr/detail?id=170) (JSR-170):
     Files stored in the internal repository of Liferay's Documents and Media can
     be configured to be stored in a JSR-170 compatible repository if desired.
 -   [WebDAV](http://www.webdav.org):
