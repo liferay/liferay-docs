@@ -15,8 +15,7 @@ First, you'll learn how to install a Maven Workspace.
 The Maven Workspace is installed by generating the workspace project from either
 an archetype or via
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli). You can generate
-a workspace via archetype by executing the following command with your command
-line tool:
+a workspace via archetype by executing the following command:
 
     mvn archetype:generate \
         -DarchetypeGroupId=com.liferay \

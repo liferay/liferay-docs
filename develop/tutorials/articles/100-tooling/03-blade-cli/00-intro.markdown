@@ -6,8 +6,7 @@ Plugins SDK is also supported, Blade CLI lets you create projects that can be
 used with any IDE or development environment. Blade CLI is a command line tool
 used to create/manage @product@ instances. This tool set also provides a host of
 sub-commands that help Liferay developers create and deploy modules (Gradle or
-Maven) to a @product@ instance. The following sub-commands are callable in the
-Blade CLI environment:
+Maven). The following sub-commands are callable in the Blade CLI environment:
 
 <!-- TODO: Will Plugins SDK be supported in Liferay 7.1? -Cody -->
 
