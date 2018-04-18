@@ -1,14 +1,9 @@
 # Running Service Builder [](id=running-service-builder-and-understanding-the-generated-code)
 
-This tutorial demonstrates
-[how to run Service Builder](#running-service-builder)
-and provides an
-[overview of the code that Service Builder generates](understanding-the-code-generated-by-service-builder).
-If want to use Service Builder in your application but haven't yet
+This tutorial demonstrates how to run Service Builder. If want to use Service
+Builder in your application but haven't yet
 [created a `service.xml` file that defines an object-relational map for you application](/develop/tutorials/-/knowledge_base/7-1/defining-an-object-relational-map-with-service-builder),
 make sure to do so before proceeding with this tutorial.
-
-## Running Service Builder [](id=running-service-builder)
 
 There are two ways to build services from a `service.xml` file:
 
@@ -17,7 +12,7 @@ There are two ways to build services from a `service.xml` file:
 
 Liferay @ide@ is demonstrated first. 
 
-### Using Liferay @ide@ [](id=using-liferay-ide-or-developer-studio)
+## Using Liferay @ide@ [](id=using-liferay-ide-or-developer-studio)
 
 From the Package Explorer, right-click on your service module and then select
 *Liferay* &rarr; *build-service*. 
@@ -28,7 +23,7 @@ Service Builder generates plenty of files--they're explained
 [later](understanding-the-code-generated-by-service-builder)
 in this tutorial. You can run Service Builder from the command line too. 
 
-### Using the Command Line [](id=using-the-command-line)
+## Using the Command Line [](id=using-the-command-line)
 
 Open a command line and navigate to your application folder (the folder that
 contains your `*-api` and `*-service` modules). 
