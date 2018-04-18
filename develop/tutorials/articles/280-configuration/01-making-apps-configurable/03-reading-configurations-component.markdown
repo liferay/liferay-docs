@@ -1,7 +1,7 @@
 # Reading Configuration Values from a Component [](id=reading-configuration-values-from-a-component)
 
-Once you have the [application
-configured](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable)
+Once you have the 
+[application configured](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable)
 so that administrators can configure it in System Settings, you might be
 wondering how to read the configuration from your application's Java code.
 
@@ -9,11 +9,14 @@ The answer is that there are several ways. Which one you use depends on the
 context from which the configuration must be read:
 
 1. From any Component class
-1. From an MVC portlet's JSP
-2. From an MVC portlet's Portlet class
-3. From a non-Component class
 
-This tutorial show the first usage, reading the configuration from a Component
+2. From an MVC portlet's JSP
+
+3. From an MVC portlet's Portlet class
+
+4. From a non-Component class
+
+This tutorial shows the first usage, reading the configuration from a Component
 class.
 
 ## Reading Configurations from a Component Class [](id=reading-configurations-from-a-component-class)

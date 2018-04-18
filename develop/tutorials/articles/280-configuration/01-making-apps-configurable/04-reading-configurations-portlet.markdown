@@ -10,10 +10,10 @@ fully qualified class names (FQCNs) of all the classes that are used.
 ## Accessing the Configuration Object in the Portlet Class [](id=accessing-the-configuration-object-in-the-portlet-class)
 
 Whether you need the configuration values in the portlet class or the JSPs, the
-first steps is to get access to the configuration object in the `*Portlet`
+first step is to get access to the configuration object in the `*Portlet`
 class.
 
-1.  Let's get the imports out of the way first:
+1.  Imports first:
 
         package com.liferay.docs.exampleconfig;
 
@@ -56,8 +56,8 @@ class.
     values in curly braces (`{}`) and placing commas between each PID.
 
 3.  Write an `activate`  method annotated with `@Activate` and `@Modified`. See
-    the [Making Applications
-    Configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable)
+    the 
+    [Making Applications Configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable)
     tutorial if you're unsure why these annotations are necessary:
 
         @Activate
@@ -83,8 +83,8 @@ view layer.
 
 **Note:** There's a shortcut method for obtaining a portlet instance
 configuration. The method described in this section takes a straightforward
-approach that does not use this shortcut. See the [Accessing the Portlet
-Instance Configuration Through the PortletDisplay](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-configuration-provider#accessing-the-portlet-instance-configuration-through-the-portletdisplay) article to learn
+approach that does not use this shortcut. See the 
+[Accessing the Portlet Instance Configuration Through the `PortletDisplay`](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-configuration-provider#accessing-the-portlet-instance-configuration-through-the-portletdisplay) article to learn
 about the shorter method.
 
 $$$

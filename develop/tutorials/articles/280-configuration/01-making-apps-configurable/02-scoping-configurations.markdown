@@ -5,20 +5,20 @@ virtual instance (a.k.a. `Company`), site (a.k.a. `Group`), or portlet instance.
 The Configuration Provider API (based on the standard OSGi Configuration Admin
 API shown in the previous section) handles this for you.
 
-Scoping the configuration is specifying the scope at which you intend the
-configuration values to be set or overridden. Anything set at a less granular
-scope is just a default for the configuration. It can always be overridden at
-the scope the configuration is set to. For example, a site scoped configuration
-can have its defaults set at the system scope (via System Settings). However,
-once the configuration is changed at the site scope, it ignores the higher level
-scope forever. In addition, it can be configured in other places at the same
-scope. From the database level, this means there could be multiple configuration
-values for the application, all scoped to the site level, because the values set
-in one site don't matter if the context in which you need the value is a
-different site. This is covered in more detail
+Scoping the configuration is specifying the scope where the configuration values
+are set or overridden. Anything set at a less granular scope is just a default
+for the configuration. It can always be overridden at the configuration's
+current scope. For example, a site scoped configuration can have its defaults
+set at the system scope (via System Settings). However, once the configuration
+is changed at the site scope, it ignores the higher level scope forever. It can
+also be configured in other places at the same scope. From the database level,
+this means there could be multiple configuration values for the application, all
+scoped to the site level, because the values set in one site don't matter if the
+context in which you need the value is a different site. This is covered in more
+detail
 [here](/discover/portal/-/knowledge_base/7-1/configuring-liferay#configuration-scope).
 
-The process for scoping a configuration is:
+Here's how to scope a configuration: 
 
 1.  Set the scope in the configuration interface.
 
@@ -66,8 +66,8 @@ can change its value. In future releases it may serve additional purposes.
 
 ## Step 2: Enabling the Configuration for Scoped Retrieval [](id=enabling-the-configuration-for-scoped-retrieval)
 
-If you set the configuration scope, then you must retrieve the configuration
-values from the same scope. To retrieve a scoped configuration, use a 
+If you set the configuration scope, you must retrieve the configuration values
+from the same scope. To retrieve a scoped configuration, use a 
 [Configuration Provider](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-configuration-provider):
 
     JournalGroupServiceConfiguration configuration =
