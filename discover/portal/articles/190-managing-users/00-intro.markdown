@@ -44,9 +44,14 @@ backend code so that future improvements could be made. In @product-ver@, we're
 excited to announce some new features for user administrators:
 
 1.  Numeric screen names can be used without issue out of the box. Read
-    [here](/discover/deployment/-/knowledge_base/7-0/user-management-additional-topics#numeric-screen-names) for the details.
+    [here](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics#numeric-screen-names) for the details.
 
-2.  WHAT ELSE CAN WE HIGHLIGHT FOR USER ADMINS?
+2.  Add organization types from System Settings. There's no need for portal
+    properties anymore, or the requisite system restart. Read
+    [here](/discover/deployment/-/knowledge_base/7-1/managing-organizations#organization-types) for the details.
+
+3.  Configure default user images from System Settings. Read
+    [here](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics#use-images) for the details.
 
 <!-- REPLACE [Figure 2: The Users section of the Control Panel. This screenshot shows a portal that doesn't have the EE Audit plugin installed.](../../images/usrmgmt-users.png) -->
 
