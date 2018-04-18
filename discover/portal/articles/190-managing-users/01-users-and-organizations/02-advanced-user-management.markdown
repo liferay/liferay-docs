@@ -36,7 +36,7 @@ which your account is currently assigned. You should have one role: Power User.
 +$$$
 
 **Power Users:** Users are not assigned the Power User role by default. The
-Power User role grants mroe permissions than the User role. If the User role is
+Power User role grants more permissions than the User role. If the User role is
 sufficient for you, ignore the Power User role. Alternatively, use it to extend
 provide a second level of user permissions and assign it to those users. If
 there are certain custom permissions that you'd like all of your portal users to
@@ -67,7 +67,7 @@ Next, let's look at some other aspects of user management.
 ## User Images [](id=user-images)
 
 Users in @product@ have avatars. Administrative users can upload images in the
-Edit User form, and any user can update thier account information, including
+Edit User form, and any user can update their account information, including
 their image, from their personal site (*My account &rarr; Account Settings*). 
 
 <!-- REPLACE [Figure 5: Upload images for user avatars in the Edit User form.](../../images/users-ray-avatar.png) -->
@@ -87,16 +87,35 @@ portal, disable the inclusion of users' initials in the default avatars:
 
 3.  Deselect *Use Initials for Default User Portrait*.
 
-<!--
-lang.user.default.portrait=initials
-lang.user.initials.field.names=first-name,last-name
--->
+Now, instead of the default image which is a colorful circle containing the
+user's initials, the default image is a gray circle containing the approximate
+shape of a human being.
+
+![Figure x: You can disable the default initials-based avatar. Then all your users will have this avatar.](../../../images/user-image-not-initials.png)
+
++$$$
+
+**Note:** There's a way to adjust which initials are displayed and in what
+order, so you can make the default image (with the user initials) to work for
+your locale. These settings are configured in a 
+[Language Settings module](/develop/tutorials/-/knowledge_base/7-1/using-liferays-language-settings), 
+so kidnap a friendly developer, give them a cup of coffee, and tell them what
+settings you're interested in changing:
+
+`lang.user.default.portrait=initials` sets the type of portrait to use for user
+avatars. The default value is *initials*. If set to initials, the next property
+configures which initials to display, and in what order. Alternatively, specify
+*image*, which gives you the same non-initials default image shown above.
+
+`lang.user.initials.fields=first-name,last-name` determines which initials
+appear in the user portrait and in what order. The setting here only matters if
+`lang.user.default.portrait` is set to *initials*.  Valid values are first name,
+middle name, last name, with first and last name as the defaults.
+
+$$$
 
 <!-- REPLACE [Figure 7: Wolfgang Amadeus Mozart's default avatar, after disabling the use of
 user initials.](../../images/users-alternate-default-image.png)-->
-
-Learn how to take advantage of more localization strategies by leveraging
-[language settings](/developer/tutorials/-/knowledge_base/7-1/using-liferays-language-settings).
 
 ## Numeric Screen Names
 
@@ -107,9 +126,10 @@ the default portal property
 
 Other user management systems (LDAP, for example) did not have the same
 restriction, which made importing users into @product@ more difficult.
-Administrators first had to set the  above property to `true` before importing
-(or possibly after an initial failed import and lots of cursing). In
-@product-ver@, this property defaults to `true`:
+Administrators first had to set the  above property to `true` before importing,
+and hope that no screen names conflicted with site IDs. In @product-ver@, this
+property defaults to `true` and there's no danger of numeric screen names
+conflicting with site IDs:
 
     users.screen.name.allow.numeric=true
 
