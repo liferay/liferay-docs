@@ -96,9 +96,10 @@ organizations could replace the textual hierarchy representation above -->
 
 ## Organization Types [](id=organization-types)
 
-By default, @product@ only includes the *Organization* type. Configure
-additional organization types using `portal.properties`. There are two main
-reasons an enterprise wants to configure organization types:
+By default, @product@ only includes the *Organization* type. Configure the
+existing type or add additional types using the aptly named Organization Type
+entry in System Settings. There are two main reasons to configure organization
+types:
 
 1.  Organizations usually correlate to real-life hierarchical structures.
     Calling them by their real names is helpful for administrators and users. In
@@ -109,38 +110,36 @@ reasons an enterprise wants to configure organization types:
     example, MLB would not allow Division organization types to be
     sub-organizations of Team organizations.
 
-![Figure 2: Make additional organization types available in the Control Panel by adding them to the `organizations.types` portal property.](../../images/organization-new-type.png)
+<!-- REPLACE [Figure 2: Make additional organization types available in the Control Panel by adding them to the `organizations.types` portal property.](../../images/organization-new-type.png)
+-->
 
-Check out the portal properties that configure the default *Organization* type
-on [docs.liferay.com](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Organizations).
+Check out the configuration options that configure the default *Organization*
+type and then configure an additional type.
 
-To add another organization type called *League*, add this to
-`portal-ext.properties`:
+To add another organization type called *League*, enter these options into the
+configuration form:
 
-    organizations.types=organization,League
-    organizations.rootable[League]=true
-    organizations.children.types[League]=Division
-    organizations.country.enabled[League]=true
-    organizations.country.required[League]=false
+Name: *League*
+: Adds League to the list of organization types that appear in the Add
+Organization menu.
 
-So what do all those properties do?
+Country Enabled: *True*
+: Enables the Country selection list field on the form for adding and editing
+League types.
 
-- `organizations.types=organization,League`: adds League to the list of
-    organization types that appear in the Add Organization menu.
-- `organizations.rootable[League]=true`: enables Leagues as a top level
-    organization. Limit League to sub-organization status by excluding this
-    property.
-- `organizations.children.types[League]=Division`: specifies Division
-    as the only allowable sub-organization type for the League parent
-    type.
-- `organizations.country.enabled[League]=true`: enables the Country
-    selection list field on the form for adding and editing League types.
-- `organizations.country.required[League]=false`: specifies that the *Country*
-    field is not required when adding a League.
+Country Required: *False*
+: Specifies that the *Country* field is not required when adding a League.
 
-Once you configure additional organization types in `portal-ext.properties`,
-restart the server and you'll see your new type(s) in the Organizations section
-of the Control Panel.
+Rootable: *True*
+: Enables Leagues as a top level organization. Limit League to sub-organization
+status by excluding this property.
+
+Children Types: *Division*
+: Specifies Division as the only allowable sub-organization type for the League
+parent type.
+
+Once you configure additional organization types and click Save, you'll find
+your new type(s) in the Organizations section of the Control Panel.
 
 <!-- REPLACE [Figure 3: Add the Country select list field to the Add Organization form with the `organizations.country[my-org-type].enabled` property.](../../images/organization-country-selection.png) -->
 
