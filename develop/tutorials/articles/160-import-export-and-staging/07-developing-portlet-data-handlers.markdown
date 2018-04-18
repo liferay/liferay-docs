@@ -331,6 +331,15 @@ Bookmarks application.
                 schemaVersion, getSchemaVersion());
         }
 
+    The schema version is used to perform component related validation before
+    importing data. It's added to the
+    [LAR file](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers#liferay-archive-lar-file)
+    for each application being processed. During import, the environment's
+    schema version is compared to the LAR file's schema version. Validating the
+    schema version avoids broken data when importing. See the
+    [PortletDataHandler.getVersionScheme()](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html#getSchemaVersion--)
+    method's Javadoc for more information.
+
 Awesome! You've set up your portlet data handler and your application can now
 support the Export/Import framework and display a UI for it. Be sure to also
 implement staged model data handlers for your staged models. See the
