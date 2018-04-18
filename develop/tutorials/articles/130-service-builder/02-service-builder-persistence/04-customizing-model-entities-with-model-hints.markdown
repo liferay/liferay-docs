@@ -16,6 +16,7 @@ application, the `portlet-model-hints.xml` file is in the
 Model hints define two things:
 
 1. How entities are presented to users
+
 2. The size of database columns
 
 As Liferay renders your form fields, it customizes the form's input fields based
@@ -161,8 +162,8 @@ $$$
 
 +$$$
 
-**Note**: You can use a mix of Clay and aui tags in a form. But model hints 
-affect aui tags only. 
+**Note**: You can use a mix of Clay and aui tags in a form. Model hints,
+however, affect aui tags only. 
 
 $$$
 
