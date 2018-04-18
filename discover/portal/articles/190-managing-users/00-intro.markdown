@@ -1,4 +1,4 @@
-# Managing Users
+# Managing Users [](id=managing-users)
 
 Ever heard a  retailer advertise themselves as a "one stop shop" for anything
 you want? The idea is they have so much stuff that whatever you're looking for
@@ -35,7 +35,7 @@ These articles are planned but not yet written:
 - [Monitoring Users](/discover/deployment/-/knowledge_base/7-1/monitoring-users)
 - [Auditing Users](/discover/deployment/-/knowledge_base/7-1/auditing-users)
 
-## What's New with User Management?
+## What's New with User Management? [](id=whats-new-with-user-management)
 
 In @product@ version 7.0, the user management functionality and behavior didn't
 change much form previous versions. The UI improved, and improvements to

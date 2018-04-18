@@ -1,4 +1,4 @@
-# User Management: Additional Topics
+# User Management: Additional Topics [](id=user-management-additional-topics)
 
 The article on Adding and Editing users and short and to the point. It covers
 where you find the basic functionality for the more basic user management tasks.
@@ -7,7 +7,7 @@ that go beyond the most basic tasks an administrator must perform. It should be
 considered must reading for any portal administrator hoping to get their portal
 into production.
 
-## Password Resets
+## Password Resets [](id=password-resets)
 
 The Add User functionality includes a *Require Password Reset* checkbox at the
 bottom of the Password form. The default password policy is set so that even
@@ -91,7 +91,7 @@ Now, instead of the default image which is a colorful circle containing the
 user's initials, the default image is a gray circle containing the approximate
 shape of a human being.
 
-![Figure x: You can disable the default initials-based avatar. Then all your users will have this avatar.](../../../images/user-image-not-initials.png)
+![Figure 1: You can disable the default initials-based avatar. Then all your users will have this avatar.](../../../images/user-image-not-initials.png)
 
 +$$$
 
@@ -117,7 +117,7 @@ $$$
 <!-- REPLACE [Figure 7: Wolfgang Amadeus Mozart's default avatar, after disabling the use of
 user initials.](../../images/users-alternate-default-image.png)-->
 
-## Numeric Screen Names
+## Numeric Screen Names [](id=numeric-screen-names)
 
 In prior versions, the ability to use numeric user screen names was disabled via
 the default portal property

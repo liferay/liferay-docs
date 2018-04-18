@@ -1,9 +1,9 @@
-# Adding, Editing, and Deleting Users
+# Adding, Editing, and Deleting Users [](id=adding-editing-and-deleting-users)
 
 At the root of managing users is adding, editing, and deleting them. As long as
 you're the Administrative user, you can do all these things and more. 
 
-## Adding Users
+## Adding Users [](id=adding-users)
 
 Adding users is straightforward:
 
@@ -34,7 +34,7 @@ forms. The options in the left menu change as you click through the tabs at the
 top. Peruse the forms for the three tabs (General, Contact, Preferences) and
 fill in all the applicable information.
 
-![Figure x: At a minimum, enter a screen name, email address, and first name to create a new user account. Then you'll be taken to the Information form and can continue configuring the user.](../../images/add-user-forms-menu.png)
+![Figure 1: At a minimum, enter a screen name, email address, and first name to create a new user account. Then you'll be taken to the Information form and can continue configuring the user.](../../../images/add-user-forms-menu.png)
 
 You don't have to fill anything else out right now. Just note that when the user
 account was created, a password was automatically generated. If Liferay was
@@ -91,7 +91,7 @@ Most users can't perform any of the above actions. In fact, most users won't
 have access to the Control Panel at all. You can perform all of the above
 functions because you have administrative access.
 
-## Deleting Users
+## Deleting Users [](id=deleting-users)
 
 Employees move on and user accounts become stale. You don't want to keep them
 around forever, but you must be careful when deleting users. To guard against

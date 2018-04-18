@@ -1,4 +1,4 @@
-# Organizations
+# Organizations [](id=organizations)
 
 An *Organization* is a way to group
 [*Users*](/discover/deployment/-/knowledge_base/7-1/users)
@@ -38,7 +38,7 @@ to use them in your portal.
 
 $$$
 
-### When to Use Organizations
+### When to Use Organizations [](id=when-to-use-organizations)
 
 To decide whether your portal design should include organizations, think about
 your portal's function. A simple photo-sharing web site could be powered by
@@ -78,7 +78,7 @@ Resort, its Departments, and divisions within each department.
 Each department is a sub-organization of the resort, and each division
 is a sub-organization of the department.
 
-### What can Organization Administrators Do?
+### What can Organization Administrators Do? [](id=what-can-organization-administrators-do)
 
 Whenever you have a collection of users that fit into a hierarchical structure,
 you can use organizations to model those users. Organization administrators can
@@ -126,7 +126,7 @@ the *My Organizations* link to gain access to any organizations they manage.
 
 <!-- REPLACE [Figure 1: The My Organizations application lets Organization Administrators manage their organizations in their personal site.](../../images/organizations-my-organizations.png)-->
 
-### Organization Roles and Permissions
+### Organization Roles and Permissions [](id=organization-roles-and-permissions)
 
 A huge time-saving benefit of including organizations into your portal design is
 that organization administrators can assign organization-scoped roles to members
@@ -151,7 +151,7 @@ particular users. Alternatively, you could consider attaching a site to your
 organization and using site teams to assemble the sets of permissions (see
 below). See the [Roles and Permissions article](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/roles-and-permissions) for more detail.
 
-### Organization Sites
+### Organization Sites [](id=organization-sites)
 
 Does your organization need to have its own site? Many organizations don't, but
 since some do, Liferay allows sites to be attached to organizations. If an

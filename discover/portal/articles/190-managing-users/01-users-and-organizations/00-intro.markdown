@@ -1,4 +1,4 @@
-# Users and Organizations
+# Users and Organizations [](id=users-and-organizations)
 
 *Users* and *organizations* are fundamental entities in Liferay. If your portal
 requires people (even just a set of site administrators) to have an account
