@@ -40,5 +40,5 @@ thumbnail preview for your @product@ layout templates!
 
 [Creating Layout Templates Manually](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-manually)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
+[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
 

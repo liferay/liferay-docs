@@ -29,7 +29,7 @@ This tutorial demonstrates how to:
 
 To create a themelet, you need a theme to extend and the Node.js build tools 
 installed, as explained in the 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
+[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
 tutorial. 
 
 ## Creating a Themelet [](id=creating-a-themelet)
@@ -87,4 +87,4 @@ your theme development bag o' tricks.
 
 [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
+[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)

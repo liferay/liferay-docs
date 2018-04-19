@@ -1,7 +1,7 @@
 # Configuring Your Theme's App Server [](id=configuring-your-themes-app-server)
 
 When your theme was first created with the 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator), 
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes), 
 you had to specify the app server's location. This was done with the `gulp init` 
 task. Your theme uses this information to deploy to the proper server. If your 
 app server or site changes during development, you can update their 
