@@ -104,7 +104,6 @@ Follow these steps to create the `*OrderByComparator` class:
 
         import com.liferay.portal.kernel.util.OrderByComparator;
 
-<!-- Verify that it is the getEntries method -->
 9.  Update the `getEntries()` method with the start and end integers to include 
     the `OrderByComparator` parameter. Below is an example configuraiton:
 

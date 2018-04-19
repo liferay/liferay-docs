@@ -43,11 +43,11 @@ the panel should open on the right.
 ![Figure 2: The info bar tags create a sidebar panel toggler that reveals additional info.](../../../images/liferay-frontend-taglib-info-bar.png)
 
 The examples above use some of the available attributes. See the 
-[info bar](@app-ref@/foundation/7.1-latest/taglibdocs/liferay-frontend/info-bar.html), 
-[info bar buttons](@app-ref@/foundation/7.1-latest/taglibdocs/liferay-frontend/info-bar-buttons.html), 
-[info bar sidenav toggler button](@app-ref@/foundation/7.1-latest/taglibdocs/liferay-frontend/info-bar-sidenav-toggler-button.html), 
+[info bar](@app-ref@/foundation/latest/taglibdocs/liferay-frontend/info-bar.html), 
+[info bar buttons](@app-ref@/foundation/latest/taglibdocs/liferay-frontend/info-bar-buttons.html), 
+[info bar sidenav toggler button](@app-ref@/foundation/latest/taglibdocs/liferay-frontend/info-bar-sidenav-toggler-button.html), 
 and 
-[sidebar panel](@app-ref@/foundation/7.1-latest/taglibdocs/liferay-frontend/sidebar-panel.html) 
+[sidebar panel](@app-ref@/foundation/latest/taglibdocs/liferay-frontend/sidebar-panel.html) 
 taglibdocs for the full list of available attributes for the tags. 
 
 ## Related Topics [](id=related-topics)

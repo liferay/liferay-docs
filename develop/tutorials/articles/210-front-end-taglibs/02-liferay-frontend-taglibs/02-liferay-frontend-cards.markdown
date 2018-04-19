@@ -1,7 +1,9 @@
 # Liferay Frontend Cards [](id=liferay-frontend-cards)
 
-Cards visually represent data. Use them for images, document libraries, user
-profiles and more. There are four main types of Cards covered in this tutorial:
+If you have data that you would like to compare that is heavy on image usage, 
+cards are the component for the job. Cards visually represent data in a minimal 
+and compact format. Use them for images, document libraries, user profiles, and 
+more. There are four main types of Cards covered in this tutorial:
 
 - Horizontal Cards
 - Icon Cards
@@ -9,10 +11,12 @@ profiles and more. There are four main types of Cards covered in this tutorial:
 - Vertical Cards
 - User Cards
 
+Examples of each card are shown below.
+
 ## Horizontal Card [](id=horizontal-card)
 
-Horizontal cards are primarily used to display documents. An example 
-configuration is shown below:
+Horizontal cards are primarily used to display documents, such as files and 
+folders. An example configuration is shown below:
 
     <liferay-frontend:horizontal-card
     	text="Documents"
@@ -27,9 +31,9 @@ configuration is shown below:
 
 ![Figure 1: horizontal cards are perfect to display files and documents](../../../images/liferay-frontend-taglib-cards-horizontal.png)
 
-The `<liferay-frontend:horizontal-card-icon>` tag uses Clay icons for the `icon` 
-attribute. The full list of available Clay icons is shown in the 
-[Clay Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons) tutorial. 
+The `<liferay-frontend:horizontal-card-icon>` tag uses 
+[Clay Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons) for its `icon` 
+attribute. 
 
 ## Icon Vertical Card [](id=icon-vertical-card)
 
@@ -52,7 +56,12 @@ a web content article:
       </liferay-frontend:vertical-card-sticker-bottom>
 
       <liferay-frontend:vertical-card-footer>
-        <aui:workflow-status markupView="lexicon" showIcon="<%= false %>" showLabel="<%= false %>" status="<%= article.getStatus() %>" />
+        <aui:workflow-status 
+          markupView="lexicon" 
+          showIcon="<%= false %>" 
+          showLabel="<%= false %>" 
+          status="<%= article.getStatus() %>" 
+        />
       </liferay-frontend:vertical-card-footer>
     </liferay-frontend:icon-vertical-card>
 
@@ -80,7 +89,12 @@ card for a web content article when an image preview is available:
       </liferay-frontend:vertical-card-sticker-bottom>
 
       <liferay-frontend:vertical-card-footer>
-        <aui:workflow-status markupView="lexicon" showIcon="<%= false %>" showLabel="<%= false %>" status="<%= article.getStatus() %>" />
+        <aui:workflow-status 
+          markupView="lexicon" 
+          showIcon="<%= false %>" 
+          showLabel="<%= false %>" 
+          status="<%= article.getStatus() %>" 
+        />
       </liferay-frontend:vertical-card-footer>
     </liferay-frontend:vertical-card>
 
@@ -101,7 +115,14 @@ portlet:
       userId="<%= membershipRequest.getUserId() %>"
     >
       <liferay-frontend:vertical-card-header>
-        <liferay-ui:message arguments="<%= LanguageUtil.getTimeDescription(request, System.currentTimeMillis() - membershipRequest.getCreateDate().getTime(), true) %>" key="x-ago" translateArguments="<%= false %>" />
+        <liferay-ui:message 
+          arguments="<%= LanguageUtil.getTimeDescription(
+          request, 
+          System.currentTimeMillis() - membershipRequest.getCreateDate().getTime(), 
+          true) %>" 
+          key="x-ago" 
+          translateArguments="<%= false %>" 
+        />
       </liferay-frontend:vertical-card-header>
     </liferay-frontend:user-vertical-card>
 

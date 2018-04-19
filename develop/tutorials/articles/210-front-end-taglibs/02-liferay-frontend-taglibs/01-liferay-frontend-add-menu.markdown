@@ -37,9 +37,9 @@ the Message Boards Admin application has the configuration below:
 ![Figure 2: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../../images/liferay-frontend-taglib-add-menu-items.png)
 
 The examples above use some of the available attributes. See the 
-[add menu](@app-ref@/foundation/7.1-latest/taglibdocs/liferay-frontend/add-menu.html) 
+[add menu](@app-ref@/foundation/latest/taglibdocs/liferay-frontend/add-menu.html) 
 and 
-[add menu item](@app-ref@/foundation/7.1-latest/taglibdocs/liferay-frontend/add-menu-item.html) 
+[add menu item](@app-ref@/foundation/latest/taglibdocs/liferay-frontend/add-menu-item.html) 
 taglibdocs for the full list of available attributes for the tags. 
 
 ## Related Topics [](id=related-topics)

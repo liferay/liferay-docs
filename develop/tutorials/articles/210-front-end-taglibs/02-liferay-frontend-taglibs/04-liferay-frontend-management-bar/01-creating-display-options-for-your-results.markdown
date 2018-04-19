@@ -105,12 +105,14 @@ Follow the steps below to create your icon view:
     below:
 
         <liferay-frontend:icon-vertical-card
-          actionJsp='<%= dlPortletInstanceSettingsHelper.isShowActions() ? "/image_gallery_display/image_action.jsp" : StringPool.BLANK %>'
+          actionJsp='<%= dlPortletInstanceSettingsHelper.isShowActions() ? 
+          "/image_gallery_display/image_action.jsp" : StringPool.BLANK %>'
           actionJspServletContext="<%= application %>"
           cssClass="entry-display-style"
           icon="documents-and-media"
           resultRow="<%= row %>"
-          title="<%= dlPortletInstanceSettingsHelper.isShowActions() ? fileEntry.getTitle() : StringPool.BLANK %>"
+          title="<%= dlPortletInstanceSettingsHelper.isShowActions() ? 
+          fileEntry.getTitle() : StringPool.BLANK %>"
         />
 
 ## Implementing the Descriptive View [](id=implementing-the-descriptive-view)
