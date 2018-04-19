@@ -24,17 +24,18 @@ runtime. Here are the high points on why that works in Liferay:
 The auto-deploy process and Liferay's WAB generator convert your project to a
 Liferay-ready WAB. The WAB generator detects your class's `import` statements
 and adds all external packages to the WAB's `Import-Package` header. The
-generator merges packages from your plugin's `liferay-plugin-package.properties`
-into the header also. You can
-[manually add imports](/develop/tutorials/-/knowledge_base/7-1/importing-packages)
-for any module packages that aren't picked up automatically and follow the
-instructions for
+generator also merges packages from your plugin's
+`liferay-plugin-package.properties` into the header. You can 
+[manually add
+imports](/develop/tutorials/-/knowledge_base/7-1/importing-packages) for any
+module packages that aren't picked up automatically. Follow the instructions for
 [resolving any third party package dependencies from standard library artifacts](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module). 
 
 If you depend on a package from Java's `rt.jar` other than a `java.*` package,
 override
 [portal property `org.osgi.framework.bootdelegation`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Module%20Framework)
-and add it to the property's list. Go [here](/develop/tutorials/-/knowledge_base/7-1/resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles#case-4-the-missing-class-belongs-to-a-java-runtime-package)
+and add it to the property's list. Go 
+[here](/develop/tutorials/-/knowledge_base/7-1/resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles#case-4-the-missing-class-belongs-to-a-java-runtime-package)
 for details. 
 
 +$$$
@@ -99,4 +100,4 @@ $$$
 Once you've packaged your Spring MVC portlet as a WAR, you can deploy it by
 copying it to `[LIFERAY_HOME]/deploy`. 
 
-Congratulations on deploying your Spring MVC portlet to @product@!
+Congratulations on deploying your Spring MVC portlet!

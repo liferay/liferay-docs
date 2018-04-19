@@ -6,7 +6,7 @@ don't, you should consider using
 [Liferay's MVC framework](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet). 
 
 What does a Liferay Spring MVC portlet look like? Almost identical to any other
-Spring MVC portlet. Start with portlet configuration. 
+Spring MVC portlet. 
 
 ## Portlet Configuration [](id=portlet-configuration)
 
@@ -25,14 +25,21 @@ path as needed):
     </init-param>
 
 Provide an application context file (`portlet-context.xml` in the example
-above), specified as you normally would for your Spring MVC portlet. Next configure your web application. 
+above), specified as you normally would for your Spring MVC portlet. Next
+configure your web application. 
 
 ## Web Application Configuration [](id=web-application-configuration)
+
+If you're
+[letting Liferay generate the WAB for you](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
+(this is the recommended approach), the elements are added automatically during
+auto-deployment.
 
 If you're configuring an
 [OSGi Web Application Bundle (WAB)](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
 yourself, the `web.xml` file in your Spring MVC
-project must be fully ready for deployment. In addition to your Spring MVC configuration, your `web.xml` must include these elements:
+project must be fully ready for deployment. In addition to your Spring MVC
+configuration, your `web.xml` must include these elements:
 
 - `listener` for [`PluginContextListener`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/PluginContextListener.html)
 
@@ -54,12 +61,6 @@ The elements look like this:
         <url-pattern>/portlet-servlet/*</url-pattern>
     </servlet-mapping>
 
-If you're
-[letting Liferay generate the WAB for you](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
-(this is the recommended
-approach), the above elements are added automatically during
-auto-deployment.
-
 Your application must be able to convert `javax.portlet.PortletRequest`s to
 `javax.servlet.ServletRequest`s and back again. Add this to the `web.xml`:
 
@@ -73,6 +74,9 @@ Your application must be able to convert `javax.portlet.PortletRequest`s to
         <url-pattern>/WEB-INF/servlet/view</url-pattern>
     </servlet-mapping>
 
+That's all the configuration that's necessary for `web.xml`. Now you're ready to
+configure the views. 
+
 ## Views [](id=views)
 
 To configure the Spring view resolver, add a bean to your application context
@@ -84,8 +88,8 @@ file (`portlet-context.xml` in the previous example):
     </bean>
 
 Now the front controller, `org.springframework.web.portlet.DispatcherPortlet`,
-can get a request from the view layer, but there are no actual controller
-classes to delegate the request handling to.
+can get a request from the view layer, so now it's time to configure controller
+classes to handle the requests. 
 
 ## Controllers [](id=controllers)
 
@@ -149,7 +153,7 @@ adding a `bean` element for each one:
     <bean class="com.liferay.docs.springmvc.portlet.MyAppEditController" />
 
 Develop your controllers and your views as you normally would in a Spring MVC
-portlet. You'll also need to provide some necessary descriptors for Liferay.
+portlet. You must also provide some necessary descriptors for Liferay.
 
 ## Liferay Descriptors [](id=liferay-descriptors)
 
@@ -160,8 +164,8 @@ The descriptor `liferay-display.xml` controls the category in which your portlet
 appears in @product@'s *Add* menu. Find the complete DTD
 [here](@platform-ref@/7.1-latest/definitions/liferay-display_7_1_0.dtd.html).
 
-Here's a simple example that just specifies the category the application will go
-under in Liferay's menu for adding applications:
+Here's a simple example that specifies a new category for the application in
+Liferay's menu for adding applications:
 
     <display>
         <category name="New Category">
@@ -169,9 +173,9 @@ under in Liferay's menu for adding applications:
         </category>
     </display>
 
-The descriptor `liferay-portlet.xml` is used for specifying additional
-information about the portlet (like the location of CSS and JavaScript files or
-the portlet's icon. A complete list of the attributes you can set can be found 
+The descriptor `liferay-portlet.xml` specifies additional information about the
+portlet (like the location of CSS and JavaScript files or the portlet's icon.
+A complete list of the attributes you can set can be found
 [here](@platform-ref@/7.1-latest/definitions/liferay-portlet-app_7_1_0.dtd.html)
 
     <liferay-portlet-app>
@@ -202,12 +206,12 @@ the portlet's icon. A complete list of the attributes you can set can be found
         </role-mapper>
     </liferay-portlet-app>
 
-You'll also notice the `role-mapper` elements included above. They're for
-defining the Liferay roles used in the portlet. 
+You'll also notice the `role-mapper` elements included above. They define the
+Liferay roles used in the portlet. 
 
-Then there's the `liferay-plugin-package.properties`. These properties describe
-the Liferay plugin, declare its resources, and specify its security related
-parameters. The DTD is found
+The `liferay-plugin-package.properties` file describes the Liferay plugin,
+declares its resources, and specifies its security related parameters. The DTD
+is 
 [here](@platform-ref@/7.1-latest/definitions/liferay-plugin-package_7_1_0.dtd.html).
 
     name=example-portlet
@@ -226,7 +230,7 @@ which the
 [Liferay WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
 adds to the `MANIFEST.MF` file when you deploy your WAR file. 
 
-Find all of Liferay's DTDs [here](@platform-ref@/7.1-latest/definitions/).
+All of Liferay's DTDs are [here](@platform-ref@/7.1-latest/definitions/).
 
 ## Calling Services from Spring MVC [](id=calling-services-from-spring-mvc)
 
@@ -236,10 +240,8 @@ need a mechanism that gives you access to the OSGi service registry.
 Since you're in the context of a Spring MVC portlet, you can't look up a
 reference to the services (including Service Builder services) published to the
 OSGi runtime using Declarative Services. You have to use
-[Service Trackers tutorial](/develop/tutorials/-/knowledge_base/7-1/service-trackers).
-There's some boilerplate code involved,
-but the ability to look up services in the OSGi
-runtime is worth it. 
+[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers).
+There's some boilerplate code involved, but the ability to look up services in
+the OSGi runtime is worth it. 
 
-Next consider how to package your Spring MVC portlet for @product@ and deploy
-it.
+Next consider how to package and deploy your Spring MVC portlet.
