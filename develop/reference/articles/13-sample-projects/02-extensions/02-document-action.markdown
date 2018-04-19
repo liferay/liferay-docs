@@ -36,15 +36,45 @@ There are four Java classes used in this sample:
    (top right corner) of the Documents and Media Admin portlet. See the
    [Configuring Your Admin App's Actions Menu](/develop/tutorials/-/knowledge_base/7-0/configuring-your-admin-apps-actions-menu)
    tutorial for more details.
-- `BladeActionDisplayContext`: Adds the
-   [Display Context](/participate/liferaypedia/-/wiki/Main/Display+Context)
-   for the document action.
-- `BladeActionDisplayContextFactory`: Adds the
-   [Display Context](/participate/liferaypedia/-/wiki/Main/Display+Context)
-   factory for the document action.
+- `BladeActionDisplayContext`: Adds the Display Context for the document action.
+   More about Display Contexts are described later.
+- `BladeActionDisplayContextFactory`: Adds the Display Context factory for the
+   document action.
 - `BladeDocumentActionPortlet`: Provides the portlet class, which extends the
    [GenericPortlet](https://portals.apache.org/pluto/portlet-2.0-apidocs/javax/portlet/GenericPortlet.html).
    This class generates what is shown when the context menu option is selected.
+
+A Display Context is a Java class that controls access to a portlet screen's UI
+elements. For example, the Document Library would use Display Contexts to
+provide its screens all their UI elements. It would use one Display Context for
+its document edit screen, another for its document view screen, etc. A portlet
+ideally uses a different Display Context for each of its screens.
+
+A screen's JSP calls on the Display Context (DC) to get elements to render and
+to decide whether to render certain types of elements. Some of the DC methods
+return a collection of UI elements (e.g., a menu object of menu items), while
+other DC methods return booleans that determine whether to show particular
+element types. The DC decides which objects to display, while the JSP organizes
+the rendered objects and implements the screen's look and feel. You don't have
+to decide which elements to display in your JSP; simply call the DC methods to
+populate UI components with objects to render.
+
+To customize or extend a portlet screen that uses a DC, you can extend the DC
+and override the methods that control access to the elements that interest you.
+For example, you can turn off displaying certain types of elements (e.g.,
+actions) by overriding the DC method that makes that decision. You can add new
+custom elements (e.g., new actions) or remove existing elements (e.g., a delete
+action) from a collection of elements a DC method returns. The beauty of
+customizing via a DC is that you don't have to modify the JSP. You only modify
+the particular methods that are related to the UI customization goals. And JSP
+updates won't break the DC customizations. Replacing a JSP, on the other hand,
+can lead to missing an important JSP modification that a new Liferay version
+introduces.
+
+As you create custom portlets, you may want to implement DCs. You can benefit
+from the separation of concerns that DCs provide and customers can extend your
+portlet DCs to specify which UI elements to display. And they don't need to
+worry about missing out on the updates you make to the JSPs.
 
 ## Where Is This Sample? [](id=where-is-this-sample)
    
