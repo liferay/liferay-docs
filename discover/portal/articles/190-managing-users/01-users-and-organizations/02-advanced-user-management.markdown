@@ -77,7 +77,7 @@ If no image is explicitly uploaded for a user's profile picture, a default user
 icon is assigned as the user avatar. By default the initials of the user are
 displayed (First Name then Last Name) over a random color.
 
-![Figure x: The default user profile picture is an icon with the user intiails over a randomly colored bubble.](../../images/users-default-user-image.png)
+![Figure 1: The default user profile picture is an icon with the user intiails over a randomly colored bubble.](../../../images/users-default-user-image.png)
 
 If the initials-based approach for generating user profile pictures isn't
 suitable for your portal, disable the inclusion of users' initials in the
@@ -93,7 +93,7 @@ Now, instead of the default icon, which is a colorful circle containing the
 user's initials, the icon is a gray circle containing the approximate shape of a
 human being.
 
-![Figure 1: If you disable the default initials-based profile picture, this icon is used instead.](../../../images/user-image-not-initials.png)
+![Figure 2: If you disable the default initials-based profile picture, this icon is used instead.](../../../images/user-image-not-initials.png)
 
 This is just the default. To override it with your own default image
 
