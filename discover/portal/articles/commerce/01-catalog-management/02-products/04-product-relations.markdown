@@ -16,7 +16,7 @@ To the left of the screen, a number of product relation types are displayed:
 up-sell, cross-sell, accessories, etc. New product relations can be added in
 each tab. This allows for the creation of several different sets of product
 relations which can be easily alternated by configuring the Search Results
-portlet on the [product display page](discover/portal/-knowledge_base/7-1/product-detail-page).
+portlet on the [product display page](discover/portal/-/knowledge_base/7-1/product-detail-page).
 
 <!--Ok. To create your own type, go into Control panel/system
 settings/category.commerce/Product relation types. Add as many types as you want

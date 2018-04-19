@@ -1,10 +1,10 @@
 # Images
 
-A product image or video is a media file that has a relationship with
-a particular product. This relationship can be used to ensure
-that the appropriate images are displayed on product detail pages, in search
-results, or anywhere else information about the product is displayed. Images can
-also be associated with a single product option or a combination of options.
+A product image or video is a media file that has a relationship to a particular
+product. This relationship can be used to ensure that the appropriate images are
+displayed on product detail pages, in search results, or anywhere else
+information about the product is displayed. Images can also be associated with
+a single product option or a combination of options.
 
 Follow these steps to create a product image:
 
