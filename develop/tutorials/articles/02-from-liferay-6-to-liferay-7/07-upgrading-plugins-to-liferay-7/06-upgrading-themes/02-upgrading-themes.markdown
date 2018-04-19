@@ -462,6 +462,8 @@ updated to use the new syntax.
     `${theme.wrapPortlet("portlet.ftl", content_include)}` | `<@liferay_theme["wrap-portlet"] page="portlet.ftl"> <@liferay_util["include"] page=content_include /> </@>` |
     `${theme.include(body_bottom_include)}`                | `<@liferay_util["include"] page=body_bottom_include />`                                                      |
     `${theme.include(bottom_include)}`                     | `<@liferay_util["include"] page=bottom_include />`                                                           |
+    `${theme.getSetting("my-theme-setting")}`              | `${theme_settings["my-theme-setting"]}`                                                                      |
+    `${theme.runtime("56", "articleId=" + my_article_id)}` | `<@liferay_portlet["runtime"] portletName=`<br/>`"com_liferay_journal_content_web_portlet_JournalContentPortlet"` <br/>`queryString="articleId=" + my_article_id />`                                              |
 
 2.  Replace the following link type.
 
