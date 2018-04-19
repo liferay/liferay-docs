@@ -50,8 +50,8 @@ excited to announce some new features for user administrators:
     properties anymore, or the requisite system restart. Read
     [here](/discover/deployment/-/knowledge_base/7-1/managing-organizations#organization-types) for the details.
 
-3.  Configure default user images from System Settings. Read
-    [here](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics#use-images) for the details.
+3.  Configure default user profile pictures from System Settings. Read
+    [here](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics#user-profile-pictures) for the details.
 
 <!-- REPLACE [Figure 2: The Users section of the Control Panel. This screenshot shows a portal that doesn't have the EE Audit plugin installed.](../../images/usrmgmt-users.png) -->
 

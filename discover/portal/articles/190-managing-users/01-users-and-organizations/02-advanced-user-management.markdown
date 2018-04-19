@@ -64,22 +64,24 @@ $$$
 
 Next, let's look at some other aspects of user management. 
 
-## User Images [](id=user-images)
+## User Profile Pictures [](id=user-profile-pictures)
 
-Users in @product@ have avatars. Administrative users can upload images in the
-Edit User form, and any user can update their account information, including
-their image, from their personal site (*My account &rarr; Account Settings*). 
+Users in @product@ have profile pictures. Administrative users can upload images
+in the Edit User form, and any user can update their account information,
+including their image, from their personal site (*My account &rarr; Account
+Settings*). 
 
 <!-- REPLACE [Figure 5: Upload images for user avatars in the Edit User form.](../../images/users-ray-avatar.png) -->
 
-If no image is explicitly uploaded for a user's avatar, a default image is
-assigned. By default the initials of the user are displayed (First Name then
-Last Name) over a random color.
+If no image is explicitly uploaded for a user's profile picture, a default user
+icon is assigned as the user avatar. By default the initials of the user are
+displayed (First Name then Last Name) over a random color.
 
-<!-- REPLACE [Figure 6: If Johannes Bach was a user in your @product@ instance, his default avatar might look like this.](../../images/users-default-user-image.png) -->
+![Figure x: The default user profile picture is an icon with the user intiails over a randomly colored bubble.](../../images/users-default-user-image.png)
 
-If the default approach for generating user images isn't suitable for your
-portal, disable the inclusion of users' initials in the default avatars: 
+If the initials-based approach for generating user profile pictures isn't
+suitable for your portal, disable the inclusion of users' initials in the
+default icons: 
 
 1.  Navigate to Control Panel &rarr; Configuration &rarr; System Settings
 
@@ -87,22 +89,34 @@ portal, disable the inclusion of users' initials in the default avatars:
 
 3.  Deselect *Use Initials for Default User Portrait*.
 
-Now, instead of the default image which is a colorful circle containing the
-user's initials, the default image is a gray circle containing the approximate
-shape of a human being.
+Now, instead of the default icon, which is a colorful circle containing the
+user's initials, the icon is a gray circle containing the approximate shape of a
+human being.
 
-![Figure 1: You can disable the default initials-based avatar. Then all your users will have this avatar.](../../../images/user-image-not-initials.png)
+![Figure 1: If you disable the default initials-based profile picture, this icon is used instead.](../../../images/user-image-not-initials.png)
+
+This is just the default. To override it with your own default image
+
+1.  Create at least one image that is a 100x100 square. Place it somewhere on
+    the application server's classpath.
+
+2.  Override the values of these [portal properties]():
+     
+        image.default.user.female.portrait=com/liferay/portal/dependencies/user_female_portrait.png
+        image.default.user.male.portrait=com/liferay/portal/dependencies/user_male_portrait.png
+
+3.  Restart the application server.
 
 +$$$
 
 **Note:** There's a way to adjust which initials are displayed and in what
-order, so you can make the default image (with the user initials) to work for
-your locale. These settings are configured in a 
+order, so you can make the default user icon (with the user initials) work
+for your locale. These settings are configured in a 
 [Language Settings module](/develop/tutorials/-/knowledge_base/7-1/using-liferays-language-settings), 
 so kidnap a friendly developer, give them a cup of coffee, and tell them what
 settings you're interested in changing:
 
-`lang.user.default.portrait=initials` sets the type of portrait to use for user
+`lang.user.default.portrait=initials` sets the type of icon to use for user
 avatars. The default value is *initials*. If set to initials, the next property
 configures which initials to display, and in what order. Alternatively, specify
 *image*, which gives you the same non-initials default image shown above.
@@ -113,9 +127,6 @@ appear in the user portrait and in what order. The setting here only matters if
 middle name, last name, with first and last name as the defaults.
 
 $$$
-
-<!-- REPLACE [Figure 7: Wolfgang Amadeus Mozart's default avatar, after disabling the use of
-user initials.](../../images/users-alternate-default-image.png)-->
 
 ## Numeric Screen Names [](id=numeric-screen-names)
 
