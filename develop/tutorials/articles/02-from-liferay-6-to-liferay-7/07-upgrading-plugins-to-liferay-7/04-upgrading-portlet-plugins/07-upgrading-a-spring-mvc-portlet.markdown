@@ -61,26 +61,31 @@ In Liferay Portal 6.2, `my-spring-mvc-portlet` leveraged Portal's JARs by
 specifying them in the `liferay-plugin-package.properties` file's
 `portal-dependency-jars` property. Since the property is deprecated in
 @product-ver@, you should acquire dependencies using a dependency management
-framework, such as Apache Ant/Ivy.
+framework, such as Gradle, Maven, or Apache Ant/Ivy.
 
-Here's the updated `dependency` element for `my-spring-mvc-portlet`'s `ivy.xml`
-file:
+[Converting the sample portlet plugin from a traditional plugin to a Liferay Workspace web application](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications)
+facilitated resolving its dependencies. 
 
-    <dependencies defaultconf="default">
-        <dependency conf="test->default" name="arquillian-junit-container" org="org.jboss.arquillian.junit" rev="1.1.3.Final" />
-        <dependency conf="test->default" name="arquillian-tomcat-remote-7" org="org.jboss.arquillian.container" rev="1.0.0.CR6" />
-        <dependency conf="test->default" name="com.liferay.ant.arquillian" org="com.liferay" rev="1.0.0-SNAPSHOT" />
-        <dependency org="aopalliance" name="aopalliance" rev="1.0" />
-        <dependency org="commons-logging" name="commons-logging" rev="1.2" />
-        <dependency org="org.springframework" name="spring-aop" rev="4.1.9.RELEASE" />
-        <dependency org="org.springframework" name="spring-beans" rev="4.1.9.RELEASE" />
-        <dependency org="org.springframework" name="spring-context" rev="4.1.9.RELEASE" />
-        <dependency org="org.springframework" name="spring-core" rev="4.1.9.RELEASE" />
-        <dependency org="org.springframework" name="spring-expression" rev="4.1.9.RELEASE" />
-        <dependency org="org.springframework" name="spring-web" rev="4.1.9.RELEASE" />
-        <dependency org="org.springframework" name="spring-webmvc" rev="4.1.9.RELEASE" />
-        <dependency org="org.springframework" name="spring-webmvc-portlet" rev="4.1.9.RELEASE" />
-    </dependencies>
+Here's the updated `my-spring-mvc-portlet`'s `build.gradle` file:
+
+    dependencies {
+    	compileOnly group: 'aopalliance', name: 'aopalliance', version: '1.0'
+    	compileOnly group: 'commons-logging', name: 'commons-logging', version: '1.2'
+    	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+    	compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+    	compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+    	compile group: 'org.jboss.arquillian.junit', name: 'arquillian-junit-container', version: '1.1.3.Final'
+    	compile group: 'org.jboss.arquillian.container', name: 'arquillian-tomcat-remote-7', version: '1.0.0.CR6'
+    	compile group: 'com.liferay', name: 'com.liferay.ant.arquillian', version: '1.0.0-SNAPSHOT'
+    	compile group: 'org.springframework', name: 'spring-aop', version: '4.1.9.RELEASE'
+    	compile group: 'org.springframework', name: 'spring-beans', version: '4.1.9.RELEASE'
+    	compile group: 'org.springframework', name: 'spring-context', version: '4.1.9.RELEASE'
+    	compile group: 'org.springframework', name: 'spring-core', version: '4.1.9.RELEASE'
+    	compile group: 'org.springframework', name: 'spring-expression', version: '4.1.9.RELEASE'
+    	compile group: 'org.springframework', name: 'spring-web', version: '4.1.9.RELEASE'
+    	compile group: 'org.springframework', name: 'spring-webmvc', version: '4.1.9.RELEASE'
+    	compile group: 'org.springframework', name: 'spring-webmvc-portlet', version: '4.1.9.RELEASE'
+    }
 
 Some of `my-spring-mvc-portlet`'s dependency artifacts have new names. 
 
