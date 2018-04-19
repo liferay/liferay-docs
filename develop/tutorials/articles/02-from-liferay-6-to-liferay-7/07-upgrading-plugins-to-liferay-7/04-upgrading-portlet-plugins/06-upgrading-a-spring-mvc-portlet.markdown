@@ -51,7 +51,7 @@ The
 facilitates updating the code and resolving compilation issues quickly.
 
 The Code Upgrade Tool detects if the value of the `liferay-versions` property in
-your plugin's `liferay-plugin-package.properties` file needs updating and it
+your plugin's `liferay-plugin-package.properties` file needs updating, and it
 provides an option to fix it automatically. This is the only code adaptation
 required by `my-spring-mvc-portlet`. 
 
