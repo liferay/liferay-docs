@@ -3,13 +3,13 @@
 Liferay @ide@ is a plugin for Eclipse that brings many Liferay-specific features
 to the table. You can install it into your existing Eclipse environment, or
 Liferay provides a bundled version. In this tutorial, you'll learn the different
-methods available for installing Liferay @ide@.
+methods available for installing Dev Studio.
 
-## Install the Liferay @ide@ Bundle [](id=install-the-liferay-ide-bundle)
+## Install the Dev Studio Bundle [](id=install-the-liferay-ide-bundle)
 
 1.  Download and install [Java](http://java.oracle.com). Liferay runs on Java,
     so you'll need it to run everything else. Because you'll be developing apps
-    for Liferay Portal in Liferay @ide@, the Java Development Kit (JDK) is
+    for Liferay Portal in Dev Studio, the Java Development Kit (JDK) is
     required. It is an enhanced version of the Java Environment used for
     developing new Java technology. You can download the Java SE JDK from the
     Java
@@ -20,14 +20,14 @@ methods available for installing Liferay @ide@.
     [Liferay @ide@](https://www.liferay.com/downloads/liferay-projects/liferay-ide).
     Installing it is easy: unzip it to a convenient location on your system. 
 
-3. To run @ide@, execute the `eclipse` executable.
+3. To run Dev Studio, execute the `eclipse` executable.
 
-Congratulations! You've installed Liferay @ide@! 
+Congratulations! You've installed Liferay Dev Studio! 
 
-## Install Liferay @ide@ into Eclipse [](id=install-liferay-ide-into-eclipse)
+## Install Dev Studio into Eclipse [](id=install-liferay-ide-into-eclipse)
 
 If you already have an Eclipse environment that you're using for other
-things, it's easy to add Liferay @ide@ to your existing Eclipse installation. 
+things, it's easy to add Dev Studio to your existing Eclipse installation. 
 
 1.  In your browser, go to the
     [Liferay @ide@](https://www.liferay.com/downloads/liferay-projects/liferay-ide)
@@ -40,16 +40,16 @@ things, it's easy to add Liferay @ide@ to your existing Eclipse installation.
 
 3.  In the *Work with* field, copy in the URL.
 
-5.  You'll see the Liferay @ide@ components in the list below. Check them off
-    and click *Next*. 
+5.  You'll see the Liferay Dev Studio components in the list below. Check them
+    off and click *Next*. 
 
-6.  Accept the terms of the agreements and click *Next*, and Liferay @ide@ is
+6.  Accept the terms of the agreements and click *Next*, and Dev Studio is
     installed. Like other Eclipse plugins you'll have to restart Eclipse to
     enable it. 
 
-## Install Liferay @ide@ into Eclipse from a ZIP File [](id=install-liferay-ide-into-eclipse-from-a-zip-file)
+## Install Dev Studio into Eclipse from a ZIP File [](id=install-liferay-ide-into-eclipse-from-a-zip-file)
 
-To install Liferay @ide@ into Eclipse from a Zip file, follow these steps: 
+To install Liferay Dev Studio into Eclipse from a Zip file, follow these steps: 
 
 1.  Go to the
     [Liferay @ide@](https://www.liferay.com/downloads/liferay-projects/liferay-ide)
@@ -59,14 +59,14 @@ To install Liferay @ide@ into Eclipse from a Zip file, follow these steps:
 2.  In Eclipse, go to *Help* &rarr; *Install New Software...*. 
 
 3.  In the *Add* dialog, click the *Archive* button and browse to the location
-    of the downloaded Liferay @ide@ Zip file.
+    of the downloaded Dev Studio Zip file.
 
-4.  You'll see the Liferay @ide@ components in the list below. Check them off
-    and click *Next*. 
+4.  You'll see the Dev Studio components in the list below. Check them off and
+    click *Next*. 
 
-5.  Accept the terms of the agreements and click *Next*, and Liferay @ide@ is
-    installed. Like other Eclipse plugins you'll have to restart Eclipse to
+5.  Accept the terms of the agreements and click *Next*, and Liferay Dev Studio
+    is installed. Like other Eclipse plugins you'll have to restart Eclipse to
     enable it.
 
-Awesome! You've installed Liferay @ide@. Now you can begin Liferay development
-using a popular and supported IDE.
+Awesome! You've installed Liferay Dev Studio. Now you can begin Liferay
+development using a popular and supported IDE.
