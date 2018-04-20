@@ -193,7 +193,7 @@ To configure the X-Pack adapter, navigate to *Control Panel*
 &rarr; *Configuration* &rarr; *System Settings*. Find the *Foundation* category and
 click on the *X-Pack Security* entry. You can enter the property values here, but
 it's more common to use a 
-[configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
+[configuration file](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
 deployed to `Liferay Home/osgi/configs`. For the X-Pack adapter, create a file
 called
 
