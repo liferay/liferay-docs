@@ -10,7 +10,7 @@ that reduce maintenance costs. These practices involve, for example, defining
 contracts (such as APIs) more clearly, hiding internal classes, and handling
 dependencies more carefully. Related to this, Java package dependencies are
 explicitly listed within a module. Modules run only when all their dependencies
-are met--this eliminates many obscure run time errors. 
+are met. This eliminates many obscure run time errors. 
 
 Splitting large applications into small independent modules lets you focus on
 smaller release cycles for those modules. Individual modules can be updated
@@ -23,12 +23,12 @@ application to modules.
 
 **When not to convert?**
 
--   You have a portlet that’s JSR-168/286 compatible and you still want to be
+-   You have a portlet that's JSR-168/286 compatible and you still want to be
     able to deploy it to another portlet container. In this case, it's best to
     stay with the traditional WAR model. (To eliminate this reason for not
     converting, Liferay is discussing with other vendors the possibility of
     making modular portlets a standard.) 
--   You’re using a complex web framework that is heavily tied to the Java EE
+-   You're using a complex web framework that is heavily tied to the Java EE
     programming model and the amount of effort necessary to make it work with
     OSGi is more than you feel is necessary or warranted. 
 -   You want to minimize effort to get your application working on
@@ -47,4 +47,4 @@ application to modules.
 
 You can now make an informed decision on whether to stick with your
 [upgraded traditional application](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
-as is or modularize it to leverage @product-ver@'s modularity features. 
+as is or modularize it to leverage modularity. 

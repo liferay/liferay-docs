@@ -5,13 +5,5 @@
 	<import file="../build.xml" />
 
 	<property name="doc.dir" value="portal"/>
-	
-	<taskdef name="concatmarkdown" classname="com.liferay.documentation.util.ConcatMarkdown">
-	  <classpath>
-	    <fileset dir="${project.dir}/lib" includes="*.jar" />
-	    
-	    <fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
-	  </classpath>
-	</taskdef>
 
 </project>
