@@ -37,10 +37,9 @@ various blog views. The Blogs application is an extensive example of how an
 asset renderer can be customized to fit your needs. 
 
 If you want to create an asset and make it do more than display its title and
-description, read on to learn more!
+description, read on!
 
 ## Prerequisites for Asset Enabling and Application [](id=prerequisites-for-asset-enabling-and-application)
-
 To asset-enable your application, you need two things: 
 
 1.  The application must store asset data. Applications that store a data model
@@ -52,9 +51,9 @@ To asset-enable your application, you need two things:
 Some applications may consist of only one non-instanceable portlet, while others
 may consist of a both instanceable and non-instanceable portlets. If your 
 application does not currently include a non-instanceable portlet, adding a 
-configuration interface through a panel app will both enhance the usability of 
-the application, and meet the requirement for adding a non-instanceable 
-component to the application. See our tutorial on 
+configuration interface through a panel app both enhances the usability of 
+the application, and meets the requirement for adding a non-instanceable 
+portlet to the application. See our tutorial on 
 [Adding Custom Panel Apps](/knowledge_base/7-1/customizing-the-product-menu#adding-custom-panel-apps)
 to learn how to add one.
 

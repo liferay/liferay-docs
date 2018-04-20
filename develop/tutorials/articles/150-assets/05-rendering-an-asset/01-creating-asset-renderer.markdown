@@ -3,7 +3,7 @@
 In this tutorial, you'll learn how to create an `Asset Renderer` and associate your JSP templates with it, along with configuring several other options.
 
 To learn how an asset renderer is created, you'll create the pre-existing
-[BlogsEntryAssetRenderer](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/web/asset/BlogsEntryAssetRenderer.html)
+[`BlogsEntryAssetRenderer`](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/web/asset/BlogsEntryAssetRenderer.html)
 class, which configures the asset renderer framework for the Blogs application.
 
 1.  Create a new package in your existing project for your asset-related
@@ -12,21 +12,21 @@ class, which configures the asset renderer framework for the Blogs application.
 
 2.  Create your `-AssetEntry` class for your application in the new `-.asset`
     package and have it implement the
-    [AssetEntry](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/AssetEntry.html)
+    [`AssetEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/AssetEntry.html)
     interface. Consider the `BlogsEntryAssetRenderer` class as an example:
 
         public class BlogsEntryAssetRenderer
             extends BaseJSPAssetRenderer<BlogsEntry> implements TrashRenderer {
 
     The `BlogsEntryAssetRenderer` class extends the
-    [BaseJSPAssetRenderer](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/BaseJSPAssetRenderer.html),
+    [`BaseJSPAssetRenderer`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/BaseJSPAssetRenderer.html),
     which is an extension class intended for those who plan on using JSP
     templates to generate their asset's HTML. The `BaseJSPAssetRenderer` class
     implements the `AssetRenderer` interface. You'll notice the asset renderer
     is also implementing the
-    [TrashRenderer](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/trash/TrashRenderer.html)
-    interface. This is a common practice for many @product@ applications, which
-    enables its assets to use @product@'s Recycle Bin.
+    [`TrashRenderer`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/trash/TrashRenderer.html)
+    interface. This is a common practice for many applications, so they can use
+    @product@'s Recycle Bin.
 
 3.  Define the asset renderer class's constructor, which typically sets the
     asset object to use in the asset renderer class.
@@ -84,12 +84,11 @@ class, which configures the asset renderer framework for the Blogs application.
             return _entry.getUuid();
         }
 
-    There are a couple things to point out in these methods. The 
-    `getAssetObject()` method sets the `BlogsEntry` that was set in the 
-    constructor as your asset to track. Likewise, the `getType()` method 
-    references the blogs asset renderer factory for the type of asset
-    your asset renderer renders. Of course, the asset renderer type is
-    `blog`, which you'll set in the factory later. 
+    The `getAssetObject()` method sets the `BlogsEntry` that was set in the
+    constructor as your asset to track. Likewise, the `getType()` method
+    references the blogs asset renderer factory for the type of asset your
+    asset renderer renders. Of course, the asset renderer type is `blog`, which
+    you'll set in the factory later. 
 
 5.  Your asset renderer must link to the portlet that owns the entity. In the
     case of a blogs asset, its portlet ID should be linked to the Blogs
@@ -242,10 +241,10 @@ class, which configures the asset renderer framework for the Blogs application.
     Before you can check if a user has permission to view your asset, you must
     use the `getUserId()` and `getUserName()` to retrieve the entry's user ID 
     and username, respectively. Then there are three boolean permission 
-    methods, which check if the user can view, edit, or delete your blogs 
+    methods that check if the user can view, edit, or delete your blogs 
     entry. These permissions are for specific entity instances. Global
-    permissions for blog entries are implemented in the factory, which you'll do
-    later.
+    permissions for blog entries are implemented in the factory, which you'll
+    do later.
 
 Awesome! You've learned how to set up the blogs asset renderer to
 
@@ -256,7 +255,7 @@ Awesome! You've learned how to set up the blogs asset renderer to
 - retrieve the asset's title and summary
 - generate the asset's unique URL
 - display a print icon
-- set up permissioning for the asset
+- check permissions for the asset
 
 Now you need to create the templates to render the HTML. The 
 `BlogsEntryAssetRenderer` is configured to use JSP templates to generate HTML 

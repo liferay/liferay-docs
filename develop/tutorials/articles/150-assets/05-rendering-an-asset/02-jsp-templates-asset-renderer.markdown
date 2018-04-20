@@ -1,7 +1,7 @@
 # Configuring JSP Templates for an Asset Renderer [](id=configuring-jsp-templates-for-an-asset-renderer)
 
-An asset can be displayed in several different ways in the Asset Publisher, by
-default. There are three templates to implement provided by the `AssetRenderer`
+An asset can be displayed in several different ways in the Asset Publisher.
+There are three templates to implement provided by the `AssetRenderer`
 interface:
 
 - `abstract`
@@ -77,9 +77,9 @@ your asset. That's not all you can do with JSP templates, however! The asset
 renderer framework provides several other methods that let you render convenient
 buttons for your asset.
 
-1.  Blogs assets provide an Edit button 
-    that lets you edit the asset. This is provided by adding the following
-    method to the `BlogsEntryAssetRenderer` class:
+1.  Blogs assets provide an Edit button that lets you edit the asset.
+    Provide this by adding the following method to the `BlogsEntryAssetRenderer`
+    class:
 
         @Override
         public PortletURL getURLEdit(
