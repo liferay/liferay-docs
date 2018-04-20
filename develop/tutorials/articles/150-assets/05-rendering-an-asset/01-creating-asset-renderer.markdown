@@ -132,7 +132,7 @@ class, which configures the asset renderer framework for the Blogs application.
     A comments section is an available option if it returns a non-null value. 
     For the comments section to display for your asset, you must enable it in 
     the Asset Publisher's *Options* 
-    (![Options](../../images/icon-app-options.png)) &rarr;
+    (![Options](../../../images/icon-app-options.png)) &rarr;
     *Configuration* &rarr; *Setup* &rarr; *Display Settings* section.
 
 8.  At a minimum, you should create a title and summary for your asset. Here's

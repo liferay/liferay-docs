@@ -25,7 +25,7 @@ Bookmarks application. However, it's possible to use multiple columns as the
 primary key for an entity. In this case, the combination of columns makes up
 a compound primary key for the entity.
 
-## Create Entity Columns 
+## Create Entity Columns [](id=create-entity-columns)
 
 Similar to the way you used the form table for adding entities, add attribute
 columns for each of your entities.
@@ -43,7 +43,7 @@ columns for each of your entities.
 
 Create a column for each attribute of your entity or entities.
 
-## Support Multi-tenancy 
+## Support Multi-tenancy [](id=support-multi-tenancy)
 
 In addition to columns for your entity's primary key and attributes, add portal
 instance ID and site ID columns. They let your portlet support Liferay's
@@ -60,7 +60,7 @@ follow the table below.
 `companyId` | long   | no
 `groupId`   | long   | no
 
-## Track Ownership
+## Track Ownership [](id=track-ownership)
 
 To track each entity instance's owner, add a column called `userId` of type
 `long`. 
@@ -71,7 +71,7 @@ To track each entity instance's owner, add a column called `userId` of type
 :------: | :----: | :------:
 `userId` | long   | no
 
-## Audit Entities
+## Audit Entities [](id=audit-entities)
 
 Lastly, you can add columns to help audit your entities. For example, you could
 create a column named `createDate` of type `Date` to note an entity instance's

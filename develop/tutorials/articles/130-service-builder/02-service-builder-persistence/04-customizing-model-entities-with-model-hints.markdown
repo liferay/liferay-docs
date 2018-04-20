@@ -116,7 +116,7 @@ to that field:
 Remember to run Service Builder and redeploy your project after updating the 
 `portlet-model-hints.xml` file. 
 
-## Model Hint Types
+## Model Hint Types [](id=model-hint-types)
 
 So far, you've seen a few different hints. The following table describes the
 portlet model hints available for use.
@@ -171,7 +171,7 @@ Note that Liferay has its own model hints file--`portal-model-hints.xml`. It's
 in `portal-impl.jar`'s `META-INF` folder. This file contains many hint examples,
 so you can reference it when creating `portlet-model-hints.xml` files. 
 
-## Default Hints 
+## Default Hints [](id=default-hints)
 
 You can use the `default-hints` element to define a list of hints to apply to 
 every field of a model. For example, adding the following element inside a
@@ -181,7 +181,7 @@ model element applies a `display-width` of 300 pixels to each field:
         <hint name="display-width">300</hint>
     </default-hints>
 
-## Hint Collections
+## Hint Collections [](id=hint-collections)
 
 You can define `hint-collection` elements inside the `model-hints` root-level
 element to define a list of hints to apply together. A hint collection must have

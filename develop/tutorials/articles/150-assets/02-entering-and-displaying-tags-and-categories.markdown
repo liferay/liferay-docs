@@ -9,7 +9,7 @@ and you should have asset renderers enabled for them.
 
 Now it's time to get started! 
 
-## Adding Tags and Categories
+## Adding Tags and Categories [](id=adding-tags-and-categories)
 
 You can use the following tags in the JSPs you provide for adding/editing custom
 entities. Here's what the tags look like in the
@@ -41,7 +41,7 @@ or show the category and tag input options.
 For styling purposes, the `aui:fieldset-group` tag is given the `lexicon`
 markup view.
 
-## Displaying Tags and Categories
+## Displaying Tags and Categories [](id=displaying-tags-and-categories)
 
 Tags and categories should be displayed with the content of the asset. Here's
 how to display the tags and categories: 

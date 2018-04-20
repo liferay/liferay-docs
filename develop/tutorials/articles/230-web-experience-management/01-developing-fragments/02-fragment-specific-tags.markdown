@@ -1,4 +1,4 @@
-# Fragment Specific Tags
+# Fragment Specific Tags [](id=fragment-specific-tags)
 
 While HTML, CSS, and JavaScript are universal tools for building websites, 
 @product@ includes some additional tools to make fragments more powerful. One
@@ -6,7 +6,7 @@ tag can make text editable not just in the HTML editor, but also at the time of
 publishing. The other enables you to embed Liferay portlets into your fragment
 in the form of "Widgets."
 
-## Making Text Editable
+## Making Text Editable [](id=making-text-editable)
 
 Making text editable allows the marketer or web admin to modify the text before
 publishing it. This way, you can reuse a single fragment with different headings
@@ -57,7 +57,7 @@ published:
 The template saves automatically, and when it is turned into a page, the new
 text is displayed.
 
-## Including Widgets Within A Fragment
+## Including Widgets Within A Fragment [](id=including-widgets-within-a-fragment)
 
 You can add more dynamic behavior to a Fragment by including a widget. 
 Currently, you can only embed a portlet as a widget, but other types of widgets

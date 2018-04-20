@@ -1,4 +1,4 @@
-# Creating a Fragment
+# Creating a Fragment [](id=creating-a-fragment)
 
 The first example is simple. If you aren't sure about the basics of Fragments
 and Collections, you should read our User Documentation [link] first so you know

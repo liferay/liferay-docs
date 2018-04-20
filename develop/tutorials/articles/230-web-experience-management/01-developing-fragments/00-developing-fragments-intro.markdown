@@ -1,4 +1,4 @@
-# Developing Fragments
+# Developing Fragments [](id=developing-fragments)
 
 The goal of Fragments is to take a mock-up design and realize it on a web page
 as accurately as possible. To do this, developers are given a space where they

@@ -10,7 +10,7 @@ For many applications, it's important to be able to find its entities per site.
 You can specify these finders using Liferay @ide@'s Overview mode for the
 `service.xml` file.
 
-## Create Finders
+## Create Finders [](id=create-finders)
 
 Here are the steps for creating a finder node:
 
@@ -29,7 +29,7 @@ Here are the steps for creating a finder node:
 The IDE creates a new finder sub-node under the *Finders* node in the outline.
 Next, you'll learn how to specify the finder column for this node. 
 
-## Create Finder Columns
+## Create Finder Columns [](id=create-finder-columns)
 
 Under the new finder node, @ide@ created a *Finder Columns* node. Here are the
 steps for creating finder columns: 

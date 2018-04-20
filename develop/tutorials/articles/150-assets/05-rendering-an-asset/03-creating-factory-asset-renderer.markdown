@@ -1,4 +1,4 @@
-## Creating a Factory for the Asset Renderer [](id=creating-a-factory-for-the-asset-renderer)
+# Creating a Factory for the Asset Renderer [](id=creating-a-factory-for-the-asset-renderer)
 
 You've successfully created an asset renderer, but you must create a factory
 class to generate asset renderers for each asset instance. For example, the
