@@ -1,4 +1,4 @@
-# Themelets [](id=themelets)
+# Creating Reusable Pieces of Code for Your Themes [](id=creating-reusable-pieces-of-code-for-your-themes)
 
 Themelets are small, extendable, and reusable pieces of code. Whereas themes
 require multiple components, a themelet only requires the files you wish to
@@ -16,7 +16,7 @@ and everything in between. For example, the
 [Liferay Product Menu Animation Themelet](https://www.npmjs.com/package/lfr-product-menu-animation-themelet) 
 simply alters the animation for the Product Menu.
 
-![Figure 1: Themelets can be used to modify one aspect of the UI, that you can then reuse in your other themes.](../../../images/product-menu-animation-themelet.png)
+![Figure 1: Themelets can be used to modify one aspect of the UI, that you can then reuse in your other themes.](../../../../images/product-menu-animation-themelet.png)
 
 If there is something you have to manually code for every theme you create, it's 
 a good candidate for a themelet.
@@ -29,7 +29,7 @@ This tutorial demonstrates how to:
 
 To create a themelet, you need a theme to extend and the Node.js build tools 
 installed, as explained in the 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
+[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
 tutorial. 
 
 ## Creating a Themelet [](id=creating-a-themelet)
@@ -42,7 +42,7 @@ Follow these steps to create a themelet:
 2.  Run `yo liferay-theme:themelet` and follow the prompts to generate the
     themelet.
 
-    ![Figure 2: The Themelet sub-generator automates the themelet creation process, making it quick and easy.](../../../images/themelet-prompt.png)
+    ![Figure 2: The Themelet sub-generator automates the themelet creation process, making it quick and easy.](../../../../images/themelet-prompt.png)
    
     The generated themelet contains a `package.json` file with configuration 
     information and a `src/css` folder that contains a `_custom.scss` file. Just 
@@ -72,7 +72,7 @@ your theme.
 
 3.  Select *Search globally installed npm modules*.
 
-    ![Figure 3: You can extend your theme using globally installed npm modules or published npm modules.](../../../images/install-themelet.png)
+    ![Figure 3: You can extend your theme using globally installed npm modules or published npm modules.](../../../../images/install-themelet.png)
 
 4.  Highlight your themelet, press spacebar to activate it, and press *Enter* to
     install it. 
@@ -87,4 +87,4 @@ your theme development bag o' tricks.
 
 [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
+[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
