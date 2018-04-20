@@ -8,13 +8,13 @@ created according to its
 [service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
 --one for bookmark entries and one for bookmark folders.
 
-Here's a summary of the BookmarksEntry entity information:
+Here's a summary of the `BookmarksEntry` entity information:
 
 - **Name:** *BookmarksEntry*
 - **Local service:** *yes*
 - **Remote service:** *yes* 
 
-And here's what is used for the BookmarksFolder entity:
+And here's what is used for the `BookmarksFolder` entity:
 
 - **Name:** *BookmarksFolder*
 - **Local service:** *yes*
@@ -22,12 +22,14 @@ And here's what is used for the BookmarksFolder entity:
 
 Here are steps to create entities using Liferay @ide@:
 
-1.  Select the *Entities* node under the Service Builder node in the outline on
-    the left side of the `service.xml` editor in Overview mode. In the main part
-    of the view, notice that the Entities table is empty.
+1.  In the outline on the left side of the `service.xml` editor in Overview
+    mode, select the *Entities* node under the Service Builder node. In the
+    main part of the view, notice that the Entities table is empty.
+
 2.  Create an entity by clicking on the *Add Entity* icon
     (![Add](../../../../images/icon-add-ide.png))
     to the right of the table.
+
 3.  Name your entity and mark whether to generate local and remote services for
     it.
 
@@ -42,9 +44,7 @@ namespace. The Bookmarks example creates one database table named
 Setting *Local Service* (the `local-service` attribute) to `true` instructs
 Service Builder to generate local interfaces for the entity's services. Local
 services are set to `false` by default. Local services can only be invoked from
-the Liferay server on which they're deployed. Therefore, if your application is
-deployed to Liferay, the service is local from your Liferay server's point of
-view.
+the Liferay server on which they're deployed. 
 
 Setting *Remote Service* (the `remote-service` attribute) to `true` instructs
 Service Builder to generate remote interfaces for the service. Local services

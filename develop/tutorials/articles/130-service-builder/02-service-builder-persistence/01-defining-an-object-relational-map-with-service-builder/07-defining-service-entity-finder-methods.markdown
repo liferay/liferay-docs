@@ -17,9 +17,11 @@ Here are the steps for creating a finder node:
 1.  Select the *Finders* node under the entity node in the Outline on the left 
     side of the screen. The IDE displays an empty *Finders* table in the main
     part of the view.
+
 2.  Create a new finder by clicking the *Add* icon
     (![Add](../../../../images/icon-add-ide.png))
     to the right of the table.
+
 3.  Specify your finder's name and return type. Use the Java camel-case naming 
     convention when naming finders since the finder's name is used to name the
     methods that Service Builder creates.
@@ -34,9 +36,11 @@ steps for creating finder columns:
 
 1.  Select the *Finder Columns* node to specify the columns for your finder's 
     parameters.
+
 2.  Create a new finder column by clicking the *Add* icon and specifying the
     column's name. Keep in mind that you can specify multiple finder parameters
     (columns).
+
 3.  Save your `service.xml` file.
 
 ![Figure 4: Creating Finder entities is easy with Liferay @ide@.](../../../../images/service-builder-finders.png)

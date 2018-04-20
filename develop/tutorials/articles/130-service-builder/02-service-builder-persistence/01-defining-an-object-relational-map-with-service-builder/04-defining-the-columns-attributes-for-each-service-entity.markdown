@@ -20,9 +20,10 @@ Java type of this field for the entity. If a column's Primary (i.e., primary
 key) attribute value is set to `true`, then the column becomes part of the
 primary key for the entity. An entity's primary key uniquely identifies
 the entity. If only one column has Primary set to `true`, then that column
-represents the entire primary key for the entity. This is the case in the Bookmarks application. However, it's possible to use multiple columns as the primary
-key for an entity. In this case, the combination of columns makes up a compound
-primary key for the entity.
+represents the entire primary key for the entity. This is the case in the
+Bookmarks application. However, it's possible to use multiple columns as the
+primary key for an entity. In this case, the combination of columns makes up
+a compound primary key for the entity.
 
 ## Create Entity Columns 
 
@@ -31,10 +32,13 @@ columns for each of your entities.
 
 1.  Create each attribute by clicking on the Add icon
     (![Add](../../../../images/icon-add-ide.png)).
+
 2.  Fill in the attribute's name
+
 3.  Select the attribute's type. While your cursor is in a column's *Type* 
     field, an option icon appears. Click this icon to select the appropriate
     type for the column.
+
 4.  Specify whether the attribute is a primary key for the entity.
 
 Create a column for each attribute of your entity or entities.

@@ -10,10 +10,10 @@ namespace options.
 ![Figure 1: This is the Service Builder form from the Bookmarks application's `service.xml`.](../../../../images/service-builder-main-form.png)
 
 The package path specifies the package in which the service and persistence
-classes are generated. The package path defined above ensures that the `*-api`
-module's service classes are generated in the `com.liferay.bookmarks`
-package. The persistence classes are generated in a package of the same name in
-the `*-service` module. For examples, examine the Bookmarks application's
+classes are generated. The package path for Bookmarks ensures that the `*-api`
+module's service classes are generated in the `com.liferay.bookmarks` package.
+The persistence classes are generated in a package of the same name in the
+`*-service` module. For example, examine the Bookmarks application's
 [bookmarks-api](https://github.com/liferay/liferay-portal/tree/master/modules/apps/collaboration/bookmarks/bookmarks-api)
 and
 [bookmarks-service](https://github.com/liferay/liferay-portal/tree/master/modules/apps/collaboration/bookmarks/bookmarks-service)
@@ -23,7 +23,7 @@ later tutorial
 
 Service Builder uses the service namespace in naming the database tables it
 generates for the service. For example, *Bookmarks* could serve as the namespace for
-an Bookmarks application service. Service Builder uses the namespace in the
+a Bookmarks application service. Service Builder uses the namespace in the
 following SQL scripts it generates in your `src/main/resources/sql` folder:
 
 - `indexes.sql`
@@ -41,14 +41,15 @@ if you're using Gradle, you can define the `sqlDir` attribute in the app's
 
 $$$
 
-@product@ uses the SQL scripts to create database tables for all the entities
-the `service.xml` defines. Service Builder prepends the namespace to the
-database table names. Since the example namespace value is `Bookmarks`, the
-database table names created for the entities start with `Bookmarks_` as their
-prefix. Each Service Builder project's namespace must be unique. Separate
-plugins should use separate namespaces and should not use a namespace already
-used by Liferay entities (such as `Users` or `Groups`). Check the table names in
-Liferay's database to see the namespaces already in use.
+Service Builder uses the SQL scripts to create database tables for all the
+entities the `service.xml` defines. The database table names have the namespace
+prepended when they are created. Since the example namespace value is
+`Bookmarks`, the database table names created for the entities start with
+`Bookmarks_` as their prefix. Each Service Builder project's namespace must be
+unique. Separate plugins should use separate namespaces and should not use
+a namespace already used by Liferay entities (such as `Users` or `Groups`).
+Check the table names in Liferay's database to see the namespaces already in
+use.
 
 +$$$
 
@@ -60,5 +61,4 @@ $$$
 As the last piece of global information, enter your name as the service's
 *author* in your `service.xml` file. Service Builder adds `@author` annotations
 with the specified name to all the Java classes and interfaces it generates.
-Save your `service.xml` file. Next, you'll
-add entities for your services. 
+Save your `service.xml` file. Next, you'll add entities for your services. 

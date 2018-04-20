@@ -9,15 +9,19 @@ As mentioned earlier, each bookmark must have a folder. Therefore, each
 @ide@'s Diagram mode for `service.xml` facilitates relating entities. 
 
 1.  Select Diagram mode for the `service.xml` file. 
+
 2.  Select the *Relationship* option under *Connections* in the palette on the 
     right side of the view. This relationship tool helps you draw relationships
     between entities in the diagram.
+
 3.  Click your first entity and move your cursor over to the entity you'd like 
     to relate it with. Liferay @ide@ draws a dashed line from your selected
     entity to the cursor.
+
 4.  Click the second entity to complete drawing the relationship. Liferay @ide@ 
     turns the dashed line into a solid line, with an arrow pointing to the
     second entity.
+
 5.  Save the `service.xml` file. 
 
 Congratulations! You've related two entities. Their relationship shows in
