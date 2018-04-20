@@ -82,7 +82,7 @@ for more info.
     ([Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)).
 
 7.  Configure proxy settings for your Project SDK. If you must use Dev Studio
-    behind a firewall, you many want to configure the proxy settings. See the
+    behind a firewall, you may want to configure the proxy settings. See the
     [Liferay IDE Proxy Settings](/develop/tutorials/-/knowledge_base/7-1/setting-proxy-requirements-for-liferay-ide)
     and
     [Liferay Workspace Proxy Settings](/develop/tutorials/-/knowledge_base/7-1/setting-proxy-requirements-for-liferay-workspace)

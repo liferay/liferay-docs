@@ -8,7 +8,7 @@ follow the steps below:
 2.  In the *Work with* field, copy in the URL
     http://releases.liferay.com/tools/ide/latest/milestone/. Since Dev Studio
     3.2.0 is only in the milestone phase, the typical
-    http://releases.liferay.com/tools/ide/latest/milestone/ URL will not be
+    http://releases.liferay.com/tools/ide/latest/stable/ URL will not be
     relevant until the first GA is released.
 
     <!-- TODO: Update above URL once 3.2.0 GA is released. -Cody -->
