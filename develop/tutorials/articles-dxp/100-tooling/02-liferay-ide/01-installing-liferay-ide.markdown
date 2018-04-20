@@ -146,8 +146,8 @@ follow the steps below to manually create one.
 1.  Navigate to [www.liferay.com](https://www.liferay.com/) and log in to your
     account.
 
-2.  Click the Options button (![Options](../../../images-dxp/icon-liferay-options.png))
-    and select *Account Home*.
+2.  Hover over your profile picture in the top-right corner and select *Account
+    Home*.
 
 3.  Select *Account Settings* from the left menu.
 

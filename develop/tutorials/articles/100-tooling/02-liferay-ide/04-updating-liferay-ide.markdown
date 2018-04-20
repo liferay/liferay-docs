@@ -6,7 +6,12 @@ follow the steps below:
 1.  In Dev Studio, go to *Help* &rarr; *Install New Software...*. 
 
 2.  In the *Work with* field, copy in the URL
-    http://releases.liferay.com/tools/ide/latest/stable/.
+    http://releases.liferay.com/tools/ide/latest/milestone/. Since Dev Studio
+    3.2.0 is only in the milestone phase, the typical
+    http://releases.liferay.com/tools/ide/latest/milestone/ URL will not be
+    relevant until the first GA is released.
+
+    <!-- TODO: Update above URL once 3.2.0 GA is released. -Cody -->
 
 3.  You'll see the Dev Studio components in the list below. Check them off and click
     *Next*.
