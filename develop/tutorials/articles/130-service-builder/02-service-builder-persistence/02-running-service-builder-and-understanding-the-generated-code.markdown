@@ -1,4 +1,4 @@
-# Running Service Builder [](id=running-service-builder-and-understanding-the-generated-code)
+# Running Service Builder [](id=running-service-builder)
 
 This tutorial demonstrates how to run Service Builder. If want to use Service
 Builder in your application but haven't yet
@@ -8,7 +8,7 @@ make sure to do so before proceeding with this tutorial.
 There are two ways to build services from a `service.xml` file:
 
 - [Liferay @ide@](#using-liferay-ide-or-developer-studio)
-- [Command line](#using-the-command-line)  
+- [Command line](#using-the-command-line) 
 
 Liferay @ide@ is demonstrated first. 
 
@@ -19,9 +19,8 @@ From the Package Explorer, right-click on your service module and then select
 
 ![Figure 1: Liferay @ide@ facilitates building Service Builder services via the *build-service* option in the service module's *Liferay* submenu.](../../../images/service-builder-ide-build-service.png)
 
-Service Builder generates plenty of files--they're explained
-[later](understanding-the-code-generated-by-service-builder)
-in this tutorial. You can run Service Builder from the command line too. 
+Service Builder generates plenty of files. You can run Service Builder from the
+command line too. 
 
 ## Using the Command Line [](id=using-the-command-line)
 
@@ -61,5 +60,6 @@ update their POM accordingly. More information is available on
 On successfully building the services, Service Builder prints the message `BUILD
 SUCCESSFUL`. Many generated files appear in your project. They represent a model
 layer, service layer, and persistence layer for your entities. Don't worry about
-the number of generated files--you'll never have to customize more than three of
-them. Its time to review the code Service Builder generates for your entities.
+the number of generated files--they're explained in the next tutorial. Its time
+to review the code Service Builder generates for your entities.
+
