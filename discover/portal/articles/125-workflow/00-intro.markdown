@@ -31,7 +31,7 @@ After all that, you should be familiar with how to use Liferay's Kaleo workflow
 to set up approval process for any kind of content before it is published to
 your portal. 
 
-## Embedded Workflows
+## Embedded Workflows [](id=embedded-workflows)
 
 In addition to the Single Approver definition, there are some workflow
 definitions that ship with Liferay but are not pre-installed, since they're

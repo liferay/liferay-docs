@@ -12,7 +12,6 @@ Content Reviewer, Organization Content Reviewer and Portal Content Reviewer.
 
 ![Figure 1: The Single Approver Definition comes included with the Liferay Forms and Workflow suite.](../../images/single-approver.png)
 
-
 A word about designing workflows. If you are a CE <!--Change if necessary-->
 customer, you'll have to get comfortable working with XML to create workflow
 definitions. There's a tutorial in the documentation for developers that will
@@ -26,7 +25,7 @@ would be a simple task with the Kaleo Designer. -->
 
 <!--Picture of Workflow Designer-->
 
-## Workflow Assets
+## Workflow Assets [](id=workflow-assets)
 
 Many of the assets in @product@ are enabled for workflow. Configure workflow or
 these assets in Control Panel &rarr; Configuration &rarr; Workflow Configuration:
@@ -62,15 +61,18 @@ workflow configuration controls at the site level.
 Some assets that are workflow enabled are only configured in their respective
 application. Web Content articles are workflow enabled from the folder settings
 menu:
-![Figure x: Enable workflow on Web Content at the folder level.](../../images/web-content-workflow.png)
 
-Enable Dynamic Data Lists for web content in each list's Add form:
-![Figure x: Workflow is configured for each individual Dynamic Data List.](../../images/ddl-workflow.png)
+![Figure 2: Enable workflow on Web Content at the folder level.](../../images/web-content-workflow.png)
 
-Workflow is configured for each individual form from its Form Settings:
-![Figure x: Enable workflow on each form's entries in the Form Settings window.](../../images/forms-workflow2.png)
+Enable workflow on Dynamic Data List entries in each list's Add form:
 
-## Workflow Behavior
+![Figure 3: Workflow is configured for each individual Dynamic Data List.](../../images/ddl-workflow.png)
+
+Enable workflow for each individual form's entries from the Form Settings screen:
+
+![Figure 4: Enable workflow on each form's entries in the Form Settings window.](../../images/forms-workflow2.png)
+
+## Workflow Behavior [](id=workflow-behavior)
 
 Most of the resources listed above behave just as you might expect with workflow
 enabled: The Publish button for the resource's *Add* form is replaced by a
@@ -78,17 +80,17 @@ enabled: The Publish button for the resource's *Add* form is replaced by a
 has its status set as *Pending* and must proceed through the workflow
 before publication. 
 
-![Figure x: Instead of a Publish button, a Submit for Publication button appears
+![Figure 5: Instead of a Publish button, a Submit for Publication button appears
 for workflow-enabled resources.](../../images/submit-for-publication.png)
 
 Page revisions are slightly different. Page revisions only occur in 
-[staging environments](/discover/deployment/-/knowledge_base/7-0/staging) 
+[staging environments](/discover/deployment/-/knowledge_base/7-0/staging-content-for-publication) 
 that have Page Versioning enabled. When a Page Variation or Site Page Variation
 is created, its creator must click *Submit for Publication* at the top of the
 page, and the variation must be approved in the workflow, before it can be
 published to the live site.
 
-![Figure x: With workflow enabled on Page Revisions, the site administrator must submit their page variation for publication before it can go live.](../../images/page-revision-submission.png)
+![Figure 6: With workflow enabled on Page Revisions, the site administrator must submit their page variation for publication before it can go live.](../../images/page-revision-submission.png)
 
 
 
