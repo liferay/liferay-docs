@@ -1,6 +1,6 @@
 # Copying an Existing Theme's Files [](id=copying-an-existing-themes-files)
 
-If you want to get a jumpstart on developing your theme, you can copy an 
+If you want to jump start developing your theme, you can copy an 
 existing theme's files and build on top of them. The `gulp kickstart` task 
 automates this process for you. It copies another theme's css, images, js, and 
 templates into the `src` directory of your own. While this is similar to 
@@ -13,7 +13,6 @@ every build.
 
 **Note:** The gulp kickstart task copies an existing theme's files into your own, 
 which can potentially overwrite files with the same name. Proceed with caution. 
-so 
 
 $$$
 
@@ -25,15 +24,15 @@ To kickstart your theme, follow these steps:
 
 2.  Select where the theme is located. You can copy files from globally 
     installed themes, themes published on the npm registry, or the classic 
-    theme.  
+    theme. 
 
     ![Figure 2: You can copy files from  globally installed themes.](../../../../images/theme-dev-kickstarting-themes-global-theme.png)
 
-3.  The theme's files are copied into your own theme, giving you a jumpstart on 
+3.  The theme's files are copied into your own theme, jump starting 
     development.
     
     ![Figure 3: The kickstart tasks copies another theme's files into your own, potentially  overwriting files.](../../../../images/theme-dev-kickstarting-themes-copied-files.png)
-    
+ 
 ## Related Topics [](id=related-topics)
 
 [Building Your Theme's files](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files)

@@ -1,11 +1,11 @@
 # Automatically Deploying Theme Changes [](id=automatically-deploying-theme-changes)
 
-You may have noticed that you have to manually deploy your theme each time you 
+You may have noticed that you have to deploy your theme manually each time you 
 make a change. This can become tedious during the development process. The 
 `gulp watch` task lets you see the changes you make to your theme without 
 requiring a full redeploy.
 
-Follow these steps to automatically deploy changes to your theme:
+Follow these steps to deploy changes to your theme automatically: 
 
 1.  Enable
     [Developer Mode](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes)
@@ -15,7 +15,7 @@ Follow these steps to automatically deploy changes to your theme:
     proxy for your app server and opens it in a new window in the browser. It 
     also provides an IP address for you to view your app server across all 
     devices connected to the local network. The browser is synced across all 
-    devices that use the given IP address.  
+    devices that use the given IP address. 
 
     ![Figure 1: Run the `gulp watch` task to automatically deploy any changes to your theme.](../../../../images/theme-dev-watching-themes-gulp-watch-startup.png)
 
