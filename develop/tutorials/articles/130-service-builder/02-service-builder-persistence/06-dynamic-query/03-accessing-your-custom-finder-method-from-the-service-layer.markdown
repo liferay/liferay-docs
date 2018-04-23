@@ -1,18 +1,16 @@
 # Accessing Your Custom Finder Method from the Service Layer [](id=accessing-your-custom-finder-method-from-the-service-layer)
 
-So far, you've created a `*FinderImpl` class, defined a custom `findBy*` finder
-method in that class, and implemented the custom finder method using Dynamic
-Query. Now how do you call your custom finder method from the service layer?
+So far, you've created a `*FinderImpl` class, defined a `findBy*` finder method
+in that class, and implemented the finder method using Dynamic Query. Now how do
+you call your finder method from the service layer?
 
-When you ran Service Builder after defining your custom finder method, the
-`*Finder` interface was generated (e.g., `GuestbookFinder`). Your portlet class,
-however, should not call the `*Finder` interface: only a local or remote service
+When you ran Service Builder, the `*Finder` interface was generated (e.g.,
+`GuestbookFinder`). For proper separation of concerns, only a local or remote service
 implementation (i.e., `*LocalServiceImpl` or `*ServiceImpl`) in your service
-module should invoke the `*Finder` class. This encourages a proper separation of
-concerns: the portlet classes in your application's web module invoke the
-business logic of the services published from your application's service module.
-The services, in turn, access the data model using the persistence layer's
-finder classes.
+module should invoke the `*Finder` class. The portlet classes in your
+application's web module invoke the business logic of the services published
+from your application's service module. The services, in turn, access the data
+model using the persistence layer's finder classes.
 
 +$$$
 
@@ -22,7 +20,7 @@ into your app's local services, removing the need to call finder utilities.
 
 $$$
 
-So you'll add a method in the `*LocalServiceImpl` class that invokes the finder
+You'll add a method in the `*LocalServiceImpl` class that invokes the finder
 method implementation via the `*Finder` class. Then you'll rebuild your
 application's service layer so that the portlet classes and JSPs in your web
 module can access the services.
