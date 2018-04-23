@@ -150,6 +150,6 @@ be your guide.
 
 ## Related Topics [](id=related-topics)
 
-[Themelets](/develop/tutorials/-/knowledge_base/7-1/themelets)
+[Themelets](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes)
 
 [Making Your Applications Configurable](/develop/tutorials/-/knowledge_base/7-1/making-your-applications-configurable)
