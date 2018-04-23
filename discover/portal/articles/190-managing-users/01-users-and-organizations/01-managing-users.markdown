@@ -17,15 +17,11 @@ and Organizations*.
 3.  Fill out the Add User form and click *Save*. At a minimum, provide a Screen
 Name, First Name, Last Name, and Email Address for the User.
 
-+$$$
+    The Add User functionality is split over several independent forms. Saving
+    the first form creates the user, and then you'll see a success message
+    saying
 
-**New for 7.1:** The Add User functionality has been split over several
-independent forms. Saving the first form creates the user, and then you'll see a
-success message saying
-
-    The user was created successfully. You can now add additional information about the user.
-
-$$$
+        The user was created successfully. You can now add additional information about the user.
 
 After submission of the first form, you're directed to the Information form of
 the Add User functionality. To the left, there's a navigation pane where you can
@@ -41,8 +37,7 @@ account was created, a password was automatically generated. If Liferay was
 correctly installed and a 
 [mail server was set up](/discover/portal/-/knowledge_base/7-1/server-administration#mail), 
 an email message with the user's new password was sent to the user's email
-address.  This, of course, requires that Liferay can properly communicate with
-your SMTP mail server.
+address.
 
 If you haven't set up a mail server, click the Password item from the General
 menu to access the Password section of the Add User functionality. Manually set
@@ -54,8 +49,8 @@ a password for your new user. Enter the new password twice.
 
 If you click on *Users and Organizations* in the Control Panel, you'll see your
 own user's account in the list of users, along with any others. To change
-something about a particular user, click the *Actions* button (the vertical
-ellipsis icon) next to that user.
+something about a particular user, click the *Actions* button
+(![Actions](../../../images/icon-actions.png)) next to that user.
 
 Choosing *Edit* takes you back to the Edit User page where you can modify any
 aspect of the user account including the screen name, email address, first name,
@@ -73,17 +68,15 @@ having to repeatedly log out of your administrator account and into the user's
 account.
 
 Choosing *Deactivate* deactivates the user's account. The user will still be in
-your databse,along with all the rest of your users, but their account will be
-deactivated, so that they cannot sign in to the portal. If you have any
-deactivated users, you'll have the option to view active portal users or
-inactive portal users. If all the users are active, this filtering option will
-not appear.
+your database along with all the rest of your users, but their account will be
+deactivated, so they cannot sign in to the portal. You have the option to toggle between activae and inactive users in the Users view active portal users or inactive portal
+users. If all the users are active, this filtering option will not appear.
 
-Choosing *Erase Personal Data* deletes the users personal data. Read
-[here](LINK) for more information.
+Choosing *Erase Personal Data* deletes the users personal data. <!--Read
+[here](LINK) for more information.-->
 
 Choosing *Export Personal Data* lets you download the user's personal data.
-Read [here](LINK) for more information.
+<!--Read [here](LINK) for more information.-->
 
 <!--REPLACE [Figure x: You can choose whether to view active or inactive (deactivated) portal users in the users list found at *Product Menu* &rarr; *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*.](../../images/usrmgmt-active.png) -->
 
@@ -118,14 +111,14 @@ user: deactivate first, then delete.
 
 +$$$
 
-**Deactivated Users:** Deactivating a user means the user can't log in to
-@product@. They have no more permissions in the sites and pages of the portal
-than a guest, although their account still exists in the system. 
+**Deactivated Users:** Deactivating a user means the user can't log in to the
+portal. They have no more permissions in the sites and pages of the portal than
+a guest, although their account still exists in the system. 
 
-They're reactivted by a portal administrator finding them in the Users table (be
+They're reactivated by a portal administrator finding them in the Users table (be
 sure you're filtering the table results by Deactivated users), clicking the
 Actions menu, and selecting Activate. There's no confirmation window for
-activation: they're automatically restyored to their former status once Activate
+activation: they're automatically restored to their former status once Activate
 is clicked.
 
 $$$

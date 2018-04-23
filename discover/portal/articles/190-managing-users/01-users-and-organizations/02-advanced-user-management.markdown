@@ -1,6 +1,6 @@
 # User Management: Additional Topics [](id=user-management-additional-topics)
 
-The article on Adding and Editing users and short and to the point. It covers
+The article on Adding and Editing users is short and to the point. It covers
 where you find the basic functionality for the more basic user management tasks.
 This article isn't complicated, it just collects additional important topics
 that go beyond the most basic tasks an administrator must perform. It should be
@@ -11,27 +11,41 @@ into production.
 
 The Add User functionality includes a *Require Password Reset* checkbox at the
 bottom of the Password form. The default password policy is set so that even
-you, the administrator, cannot deselect it. As the administrator, however, you
+you, the administrator, cannot deselect this option. As the administrator, however, you
 do have the ability to modify the default password policy so that this box
-becomes usable. Navigate to Password Policies in the Control Panel, click on the
-Default Password Policy, and deselect the *Change Required* switcher in the
-Password Changes section. Now you can decide whether each user you add will need
-to reset their password. 
+becomes usable. 
+
+1.  Navigate to *Password Policies* in Control Panel &rarr; Users.
+
+2.  Click on the *Default Password Policy*.
+
+3.  Deselect the *Change Required* switcher in the Password Changes section. Now
+    you can decide whether each user you add will need to reset their password. 
 
 See the article on Password Policies for more information on editing the default
 policy or creating your own.
 
 ## Adding an Administrative User [](id=adding-an-administrative-user)
 
-What if you are just setting up the Lunar Resort portal for the first time, and
-you're using the default administrator account, the account of one of those
-famous Liferay Administrators, *Test Test* or her cousin, *Joe Bloggs*? Since
-you're the administrator of the Lunar Resort portal, you want to set up your own
-administrator account for the portal. Use the steps above to add a user with
-your information, then give your user account the same administrative rights as
-the default administrator's account, click the *Roles* link in the left
-navigation pane (in the General tab). This page of the form shows the roles to
-which your account is currently assigned. You should have one role: Power User. 
+If you're setting up a portal for the first time, you're likely to be
+using the default administrator account, the account of one of those famous
+Liferay Administrators, *Test Test* or her cousin, *Joe Bloggs*. Set up your own
+administrator account for the portal. Add a user with your information, then
+give your user account the same administrative rights as the default
+administrator's account: 
+
+1.  Click the *Roles* link in the left navigation pane (in the General tab).
+    This page of the form shows the roles to which your account is currently
+    assigned. No roles appear by default (the user role does not appear since it
+    can't be removed). 
+
+2.  Click *Select under Regular Roles and assign the Administrator role to your
+    user account. A dialog box pops up with a list of all the regular
+    (portal-scoped) roles in the portal. Select the Administrator role from the
+    list (click *Choose*). The dialog box disappears and the role is added to
+    the list of roles associated with your account. You are now a portal
+    administrator. Log out of the portal and then log back in with your own user
+    account. 
 
 +$$$
 
@@ -46,23 +60,8 @@ This is covered in the article on Instance Settings.
 
 $$$
 
-Assign the Administrator role to your user account. On the form for editing a
-user, after having clicked on *Roles* at the left side of the screen, click the
-*Select* link under Regular Roles. A dialog box pops up with a list of all the
-regular (portal-scoped) roles in the portal. Select the Administrator role from
-the list (click *Choose*). The dialog box disappears and the role is added to
-the list of roles associated with your account. You are now a portal
-administrator. Log out of the portal and then log back in with your own user
-account. 
-
-+$$$
-
 In production, you should always delete or disable the default administrator
 account to secure your portal.
-
-$$$
-
-Next, let's look at some other aspects of user management. 
 
 ## User Profile Pictures [](id=user-profile-pictures)
 
@@ -77,7 +76,7 @@ If no image is explicitly uploaded for a user's profile picture, a default user
 icon is assigned as the user avatar. By default the initials of the user are
 displayed (First Name then Last Name) over a random color.
 
-![Figure 1: The default user profile picture is an icon with the user intiails over a randomly colored bubble.](../../../images/users-default-user-image.png)
+![Figure 1: The default user profile picture is an icon with the user initials over a randomly colored bubble.](../../../images/users-default-user-image.png)
 
 If the initials-based approach for generating user profile pictures isn't
 suitable for your portal, disable the inclusion of users' initials in the
@@ -97,7 +96,7 @@ human being.
 
 This is just the default. To override it with your own default image
 
-1.  Create at least one image that is a 100x100 square. Place it somewhere on
+1.  Create at least one image that is a 100x100 px square. Place it somewhere on
     the application server's classpath.
 
 2.  Override the values of these 
@@ -109,7 +108,7 @@ This is just the default. To override it with your own default image
 3.  Restart the application server.
 
 To make the above work, you must place the new image on the classpath of the
-application serve. For example, in Tomcat you could place images in the the
+application server. For example, in Tomcat you could place images in the
 `tomcat/webapps/ROOT/WEB-INF/classes` folder and specify 
 
     image.default.user.female.portrait=user_female_portrait-override.png
@@ -141,8 +140,8 @@ $$$
 
 ## Numeric Screen Names [](id=numeric-screen-names)
 
-In prior versions, the ability to use numeric user screen names was disabled via
-the default portal property
+In prior versions, the ability to use numeric user screen names was disabled out
+of the box via the default portal property
 
     users.screen.name.allow.numeric=false
 
@@ -164,15 +163,15 @@ Because users have personal sites, the URL to user *97854*'s personal site is
 
     http://localhost:8080/web/97854
 
-Meanwhile, a default URL to a site cleverly named *test site* is
+Meanwhile, a default site URL to cleverly named *Test Site* is
 
     http://localhost:8080/web/test-site
 
 There's no conflict here, but two conditions could easily lead to one:
 
-1.  The site's `groupId` matches the number chosen for the user's screen
+1.  *Test Site*'s group ID matches the number chosen for the user's screen
     name. Each site has a unique numeric identifier in the database and backend
-    code, called `groupId`. There's nothing stopping it from matching the user's
+    code, called group ID. There's nothing stopping it from matching the user's
     numeric screen name, so it could easily be `97854` just like the
     hypothetical user above.
 

@@ -1,14 +1,14 @@
 # Users and Organizations [](id=users-and-organizations)
 
-*Users* and *organizations* are fundamental entities in Liferay. If your portal
+*Users* and *organizations* are fundamental entities. If your portal
 requires people (even just a set of site administrators) to have an account
 that they sign into to do anything in the portal, you need to know about users.
 If your users are at all divided hierarchically, like into departments,
 you'll find that organizations are helpful. 
 
-Whether or not you've ever used Liferay before, you're probably not surprised to
-hear that users and organizations are managed in the Control Panel's *Users and
-Organizations* section. If it were any different, it'd be weird. 
+You're probably not surprised to hear that users and organizations are managed
+in the Control Panel's *Users and Organizations* section. If it were any
+different, it'd be weird. 
 
 Consider the Lunar Resort portal. Consider what you'd do if 
 
@@ -38,5 +38,5 @@ but a smart administrator like you is undoubtedly up to the challenge. Read more
 about organizations
 [here](/discover/deployment/-/knowledge_base/7-0/organizations).
 
-The remaining articles in this section give you the practical guidance on
-managing (creating, deleting, editing, and more) users and organizations.
+The remaining articles in this section give you guidance on managing (creating,
+deleting, editing, and more) users and organizations.

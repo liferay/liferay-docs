@@ -27,18 +27,19 @@ to quickly navigate to the content you want:
 - [Organizations](/discover/deployment/-/knowledge_base/7-1/organizations)
     - [Managing Organizations](/discover/deployment/-/knowledge_base/7-1/managing-organizations)
 
-These articles are planned but not yet written:
+<!--These articles are planned but not yet written:
 
 - [User Groups](/discover/deployment/-/knowledge_base/7-1/user-groups)
 - [Roles and Permissions](/discover/deployment/-/knowledge_base/7-1/roles-and-permissions)
 - [Password Policies](/discover/deployment/-/knowledge_base/7-1/password-policies)
 - [Monitoring Users](/discover/deployment/-/knowledge_base/7-1/monitoring-users)
 - [Auditing Users](/discover/deployment/-/knowledge_base/7-1/auditing-users)
+-->
 
 ## What's New with User Management? [](id=whats-new-with-user-management)
 
 In @product@ version 7.0, the user management functionality and behavior didn't
-change much form previous versions. The UI improved, and improvements to
+change much from previous versions. The UI improved, and improvements to
 existing behavior were introduced, but most of the work went into improving the
 backend code so that future improvements could be made. In @product-ver@, we're
 excited to announce some new features for user administrators:

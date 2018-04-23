@@ -3,23 +3,19 @@
 An *Organization* is a way to group
 [*Users*](/discover/deployment/-/knowledge_base/7-1/users)
 hierarchically. For example, each of your company's departments (Human Resources
-and Customer Support, for example) could be an organization in Liferay. Often
-times, organizations have their own site. The *how-to* portion of managing
+and Customer Support, for example) could be an organization. Often times,
+organizations have their own site. The *how-to* portion of managing
 organizations is in the next article, 
 [Managing Organizations](/discover/deployment/-/knowledge_base/7-1/managing-organizations).
 This article contains important conceptual information on what organizations are
 and when they're needed.
 
-Many simple portal designs don't use organizations at all; they only use sites
-(see the sections on 
-[Web content Management](/discover/portal/-/knowledge_base/7-1/web-content-management) 
-and
-[Advanced Web Content Management](/discover/portal/-/knowledge_base/7-1/advanced-web-content-management)
-for more information on sites). The main purpose of organizations is to enable
-distributed user management. Using organizations, portal administrators can
-delegate some user management responsibilities to organization administrators.
-If you don't anticipate needing to delegate user management responsibilities,
-your portal design probably doesn't need to include organizations. 
+Many simple portal designs don't use organizations at all; they only use sites.
+The main purpose of organizations is to enable distributed user management.
+Using organizations, portal administrators can delegate some user management
+responsibilities to organization administrators. If you don't anticipate
+needing to delegate user management responsibilities, your portal design
+probably doesn't need to include organizations. 
 
 +$$$
 
@@ -55,7 +51,7 @@ users, even ones from separate organizations.
 
 To illustrate what an Organization is, consider a potential organization of the
 Lunar Resort's intranet. The company hierarchy has three tiers: The Lunar
-Resort, its Departments, and divisions within each department.
+Resort, its departments, and divisions within each department.
 
 - Lunar Resort--The top-level Organization.
 	- Physical Plant Department--Department of users that keep the place running.
@@ -74,9 +70,12 @@ Resort, its Departments, and divisions within each department.
         - Souvenir and Memorabilia Group--Peddle souvenirs to Lunar Resort guests.
         - Retail Group--Maintain the Lunar Resort store, which
           contains basic necessities, since guests are coming all the way from Earth.
+    - Sentient Organism Resources Department--Department of users that hire, fire and
+        regulate intra-company relationships. We'd call it human resources, but
+        what's stopping Martian's from applying? Nothing!
 
-Each department is a sub-organization of the resort, and each division
-is a sub-organization of the department.
+Each department is a sub-organization of the resort, and each division is a
+sub-organization of the department.
 
 ### What can Organization Administrators Do? [](id=what-can-organization-administrators-do)
 
@@ -99,8 +98,8 @@ organizations. Members of child organizations are implicit members of their
 parent organizations. This means, for example, that members of child
 organizations can access the private pages of their parent organizations. This
 behavior can be customized in your portal's `portal-ext.properties`
-configuration file. There's an `Organizations` [section of the
-portal.properties](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#Organizations)
+configuration file. There's an `Organizations` 
+[section of the portal.properties](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#Organizations)
 file where the properties specific to organizations are listed. 
 
 Since organizations are designed for distributed user administration,
@@ -147,22 +146,22 @@ users' permissions are granted according to their positions in the chart.
 Of course, this is only one way to set up your portal. If you have more complex
 requirements for permissions within an organization, you can create custom
 organization-scoped roles to assemble the permissions you wish to grant to
-particular users. Alternatively, you could consider attaching a site to your
-organization and using site teams to assemble the sets of permissions (see
-below). See the [Roles and Permissions article](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/roles-and-permissions) for more detail.
+particular users. Alternatively, attach a site to your organization and use
+site teams to assemble the sets of permissions (see below). See the 
+[Roles and Permissions article](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/roles-and-permissions) 
+for more detail.
 
 ### Organization Sites [](id=organization-sites)
 
-Does your organization need to have its own site? Many organizations don't, but
-since some do, Liferay allows sites to be attached to organizations. If an
-organization has an attached site, the organization's administrators are treated
-as the site administrators of the attached site. This means that they can manage
-the pages, portlets, and content of the site as well as the users of the
-organization. Members of an organization with an attached site are treated as
-members of the organization's site. This means that they can access the private
-pages of the organization's site, along with any portlets or content there. The
-capability of attaching sites to organizations allows portal administrators to
-use organizations to facilitate distributed portal administration, not just
+Does your organization need to have its own site? If an organization has an
+attached site, the organization's administrators are treated as the site
+administrators of the attached site. This means that they can manage the pages,
+portlets, and content of the site as well as the users of the organization.
+Members of an organization with an attached site are treated as members of the
+organization's site. This means that they can access the private pages of the
+organization's site, along with any portlets or content there. The capability of
+attaching sites to organizations allows portal administrators to use
+organizations to facilitate distributed portal administration, not just
 distributed user administration. 
 
 That's a lot of information on organizations. Next, learn how to create and

@@ -4,21 +4,23 @@ If you're not entirely sure what organizations are, or whether you need them in
 your portal, start
 [here](/discover/deployment/-/knowledge_base/7-0/organizations). 
 This article gets right to the practical stuff: how to manage organizations.
-Start by learning about adding organizations.
 
 ## Adding Organizations [](id=adding-organizations)
 
-Now add an organization to the portal (perhaps start by adding the *Physical
+Add an organization to the portal (perhaps start by adding the *Physical
 Plant Department* organization to the Lunar Resort): 
 
 1.  Click *Users and Organizations* from Control Panel &rarr; Users. 
+
 2.  Go to the *Organizations* tab, and click the *Add* button. Fill out the Name
     field, at a minimum.
+
 3.  To attach a site when you create an organization, click on *Organization
     Site* and check the *Create Site* box. If you don't know right
     now if your organization needs a site, that's fine. You can always add one
     later. 
 <!-- Add a screenshot showing the Add Org UI -->
+
 4.  If you're creating a child organization, use the Parent Organization
     *Select* button to select an organization in the system to be the direct
     parent. Click the *Remove* button to remove the currently configured parent.
@@ -52,9 +54,9 @@ $$$
 ## Editing Organizations [](id=editing-organizations)
 
 To edit an organization go to the Users and Organizations section of the Control
-Panel and click the *Organizations* tab. You should see any active portal users
-and organizations listed. Click the *Actions* button next to an organization.
-This shows a list of actions you can perform on this organization.
+Panel and click the *Organizations* tab. All active organizations are listed.
+Click the *Actions* button next to an organization. This shows a list of actions
+you can perform on this organization.
 
 <!-- Screenshot of Actions Button menu options -->
 - *Edit* lets you specify details about the organization, including addresses,
@@ -87,9 +89,9 @@ you want to delete the organization. If there are users in the organization or
 if there are suborganizations, you must remove the users and delete the
 suborganizations before deleting the parent organization.
 
-If you click the *View* button at the top of the Users and Organizations page
-and select *View Hierarchy* you can view both a list of users who are members of
-this organization and a list of all the sub-organizations of this organization.
+If you click the organization name you can view both a list of users who are
+members of this organization and a list of all the sub-organizations of this
+organization.
 
 <!-- See if a screenshot of this for the proposed Lunar Resort intranet
 organizations could replace the textual hierarchy representation above -->
@@ -105,6 +107,7 @@ types:
     Calling them by their real names is helpful for administrators and users. In
     the Major League Baseball (MLB) example, *League*, *Division*, and *Team*
     organization types are useful.
+
 2.  Enforce control over which organizations can be top level organizations and
     the type of sub-organization allowed for each parent organization type. For
     example, MLB would not allow Division organization types to be
