@@ -19,7 +19,7 @@ and
 [bookmarks-service](https://github.com/liferay/liferay-portal/tree/master/modules/apps/collaboration/bookmarks/bookmarks-service)
 modules to see how these are automatically generated for you. A
 later tutorial 
-[describes the package content](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code). 
+[describes the package content](/develop/tutorials/-/knowledge_base/7-1/running-service-builder). 
 
 Service Builder uses the service namespace in naming the database tables it
 generates for the service. For example, *Bookmarks* could serve as the namespace for

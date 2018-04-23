@@ -95,7 +95,7 @@ pixels, you could nest a `hint` element named `display-width` and give it
 a value of `50`. 
 
 To see the effect of a hint on a field,
-[run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
+[run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
 again and
 [redeploy your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module).
 Note that changing `display-width` doesn't limit the number of characters a

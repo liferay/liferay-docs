@@ -150,7 +150,7 @@ the column name.
 
 ## Step 4: Run Service Builder [](id=step-4-run-service-builder)
 
-[Run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code).
+[Run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder).
 Now your Service Builder services use the data source. You can
 [use the services in your business logic](/develop/tutorials/-/knowledge_base/7-1/business-logic-with-service-builder)
 as you always have regardless of the underlying data source. 
@@ -171,6 +171,6 @@ Congratulations! You've connected Service Builder to your external data source.
 
 [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
 
 [Business Logic with Service Builder](/develop/tutorials/-/knowledge_base/7-1/business-logic-with-service-builder)
