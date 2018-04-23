@@ -100,12 +100,23 @@ This is just the default. To override it with your own default image
 1.  Create at least one image that is a 100x100 square. Place it somewhere on
     the application server's classpath.
 
-2.  Override the values of these [portal properties]():
+2.  Override the values of these 
+[portal properties](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html):
      
         image.default.user.female.portrait=com/liferay/portal/dependencies/user_female_portrait.png
         image.default.user.male.portrait=com/liferay/portal/dependencies/user_male_portrait.png
 
 3.  Restart the application server.
+
+To make the above work, you must place the new image on the classpath of the
+application serve. For example, in Tomcat you could place images in the the
+`tomcat/webapps/ROOT/WEB-INF/classes` folder and specify 
+
+    image.default.user.female.portrait=user_female_portrait-override.png
+    image.default.user.male.portrait=user_male_portrait-override.png
+
+in a `portal-ext.properties` file. Once you restart Tomcat, the new default
+images are used in place of the old ones.
 
 +$$$
 
