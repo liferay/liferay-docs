@@ -1,19 +1,27 @@
-# Blacklisting OSGi Modules [](id=blacklisting-osgi-modules)
+# Blacklisting OSGi Modules and Components [](id=blacklisting-osgi-modules)
 
 Blacklists are used for good and evil. An evil blacklist penalizes unfairly; a
-good blacklist protects. @product@'s OSGi module blacklist is a file that's
-dropped in a folder to prevent particular modules from installing, saving you
-from the uninstalling them individually with the Application Manager or Gogo
-shell. 
+good blacklist protects. @product@'s OSGi module blacklists and component
+blacklists are files dropped in a folder to prevent particular modules from
+installing and particular components from enabling, saving you from the
+uninstalling and disabling them individually with the Application Manager or
+Gogo shell. 
 
 +$$$
 
-**Note**: Blacklisting appears in DXP Digital Enterprise Fix 7.0 Pack 30 and
-Liferay CE Portal 7.0 GA5.
+**Note**: Blacklisting OSGi modules appears in DXP Digital Enterprise Fix 7.0
+Pack 30 and Liferay CE Portal 7.0 GA5.
 
 $$$
 
-## Blacklisting steps [](id=blacklisting-steps)
++$$$
+
+**Note**: Blacklisting OSGi components appears in DXP Digital Enterprise Fix 7.0
+Pack 40 and Liferay CE Portal 7.0 GA6.
+
+$$$
+
+## Blacklisting Modules [](id=blacklisting-steps)
 
 Follow these steps to blacklist modules:
 
@@ -25,8 +33,8 @@ Follow these steps to blacklist modules:
 2.  In the configuration file, add `blacklistBundleSymbolicNames=` followed by
     the bundle symbolic names (see the table below) for the OSGi module JARs,
     LPKGs, or WARs to uninstall or to keep from installing. The following
-    blacklist uninstalls the com.liferay.docs.greeting.api OSGi module, Liferay
-    CE Chat LPKG, and classic-theme WAR:
+    blacklist uninstalls the `com.liferay.docs.greeting.api` OSGi module,
+    Liferay CE Chat LPKG, and `classic-theme` WAR:
 
         blacklistBundleSymbolicNames=["com.liferay.docs.greeting.api","Liferay\ Marketplace","classic-theme"]
  
@@ -73,5 +81,36 @@ To reinstall *all* the blacklisted modules execute one of these options:
 
 The @product@ log reports each module installation. 
 
-Now you know how to use the blacklisting feature to uninstall and reinstall
-modules.
+## Blacklisting Components [](id=blacklisting-components)
+
+Follow these steps to blacklist components:
+
+1.  Create the configuration file 
+    `com.liferay.portal.component.blacklist.internal.ComponentBlacklistConfiguration.config`.
+
+2.  In the configuration file, add `blacklistComponentNames=` followed by the
+    names of components to disable or to keep from enabling. The following
+    blacklist disables the components 
+    `com.liferay.portal.security.ldap.internal.authenticator.LDAPAuth` and 
+    `com.liferay.ip.geocoder.sample.web.internal.portlet.IPGeocoderSamplePortlet`:
+
+        blacklistComponentNames=["com.liferay.portal.security.ldap.internal.authenticator.LDAPAuth","com.liferay.ip.geocoder.sample.web.internal.portlet.IPGeocoderSamplePortlet "]
+ 
+    **Important**: Configuration values must not contain any extra spaces. Extra
+    spaces can short-circuit lists or invalidate the configuration entry.
+
+3.  Copy the configuration file into the `[Liferay_Home]/osgi/configs` folder to
+    deploy it. 
+
+## Re-enabling Blacklisted Components [](id=re-enabling-blacklisted-components)
+
+To re-enable and permit enabling of blacklisted components, follow these steps:
+
+1.  Open the configuration file
+    `com.liferay.portal.component.blacklist.internal.ComponentBlacklistConfiguration.config`.
+
+2.  Remove the names of the components from the `blacklistComponentNames` list.
+
+To enable *all* the blacklisted components remove the configuration file.
+
+Now you know how to use the blacklisting features for modules and components.
