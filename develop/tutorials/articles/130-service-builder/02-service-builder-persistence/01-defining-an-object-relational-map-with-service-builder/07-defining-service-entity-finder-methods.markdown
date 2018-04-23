@@ -65,4 +65,4 @@ entity. Terrific!
 
 Now that you've specified the service for your project, you're ready to *build*
 the service by running Service Builder. It's time to
-[run Service Builder and examine the code it generates](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code). 
+[run Service Builder and examine the code it generates](/develop/tutorials/-/knowledge_base/7-1/running-service-builder). 

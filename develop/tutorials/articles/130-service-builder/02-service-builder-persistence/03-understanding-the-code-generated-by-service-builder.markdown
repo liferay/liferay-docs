@@ -171,7 +171,7 @@ and service layers and you understand the generated code.
 
 [What is Service Builder](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
 
-[Running Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
 
 [Understanding Service Context](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext)
 

@@ -20,7 +20,7 @@ must implement persisting your entity's asset relationships.
 
 1.  In your portlet's `service.xml`, put the following line of code below any
     finder method elements and then
-    [run](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
+    [run](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
     Service Builder:
 
         <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />

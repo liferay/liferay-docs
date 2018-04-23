@@ -96,7 +96,7 @@ package. For the Guestbook application, you could create a `EntryFinderImpl`
 class in the `com.liferay.docs.guestbook.service.persistence.impl` package. Your
 class should extend `BasePersistenceImpl<Entry>`.
 
-[Run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
+[Run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
 to generate the `*Finder` interface based on the `*FinderImpl` class. Modify
 your `*FinderImpl` class to have it implement the `*Finder` interface you just
 generated:
