@@ -40,8 +40,8 @@ Now you know how to configure assets for your web content!
 
 ## Related Topics [](id=related-topics)
 
-[Preparing and organizing resources](/develop/tutorials/-/knowledge_base/7-1/preparing-resources-for-the-importer)
+[Preparing and Organizing Resources](/develop/tutorials/-/knowledge_base/7-1/preparing-resources-for-the-importer)
 
 [Defining the Sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-the-sitemap)
 
-[Specifying where to import the resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-resources) 
+[Specifying Where to Import the Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-resources) 

@@ -9,8 +9,8 @@ First you must enable Developer Mode for the Resources Importer.
 ## Enabling Developer Mode [](id=enabling-developer-mode)
 
 Before specifying where to import your resources, you must enable Developer Mode 
-for the Resources Importer. To do this, add the following property to your 
-theme's `liferay-plugin-package.properties` file:
+in your theme. To do this, add the following property to your theme's 
+`liferay-plugin-package.properties` file:
 
     `resources-importer-developer-mode-enabled=true`
 

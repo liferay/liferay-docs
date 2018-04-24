@@ -1,20 +1,19 @@
 # Preparing and Organizing Web Content for the Resources Importer [](id=preparing-and-organizing-web-content-for-the-resources-importer)
 
 You must create the resources to import with your theme. You can create 
-resources from scratch and/or bring in resources that you've already created in 
-@product@. This tutorial covers how to prepare and organize your resources for 
-the Resources Importer. 
+resources from scratch and/or bring in resources that you've already created. 
+This tutorial covers how to prepare and organize your resources for the 
+Resources Importer. 
 
 First, you must prepare your web content for the Resources Importer. 
 
-## Preparing Your Resources [](id=preparing-your-resources)
+## Preparing Your Web Content [](id=preparing-your-web-content)
 
-Let's go over how to leverage your HTML (basic web content), JSON 
-(structures), or VM or FTL (templates) files from @product@. All web content 
-articles require a structure and template. Note that some articles may share the 
-same structure and perhaps even the same template--this is the case for all 
-basic web content articles. Follow these steps to prepare your web content 
-articles:
+This section covers how to leverage your HTML (basic web content), JSON 
+(structures), or VM or FTL (templates) files. All web content articles require a 
+structure and template. Note that some articles may share the same structure and 
+perhaps even the same template--this is the case for all basic web content 
+articles. Follow these steps to prepare your web content articles:
 
 1.  Open the web content article and click the *Download* button to download the 
     XML file. Create a folder for the article under 
@@ -116,7 +115,7 @@ their proper folder structure.
 ## Organizing Your Resources [](id=organizing-your-resources)
 
 Add your resources under the `[theme-name]/src/WEB-INF/src/resources-importer` 
-folder and its subfolders. The proper folder structure is shown below:
+folder and its subfolders. Place your resources in the folders outlined below:
 
 - `[theme-name]/src/WEB-INF/src/resources-importer/`
     - `sitemap.json` - defines the pages, layout templates, and portlets
@@ -136,10 +135,7 @@ folder and its subfolders. The proper folder structure is shown below:
         - `templates/` - groups templates (VM or FTL) into folders by structure.
           Each folder name must match the file name of the corresponding
           structure. For example, create folder `Structure 1/` to hold a
-          template for structure file `Structure 1.json`.
-
-Once your files are organized into the proper structure, you can specify how you 
-want to import your resources.  
+          template for structure file `Structure 1.json`. 
 
 ## Related Topics [](id=related-topics)
 
@@ -147,4 +143,4 @@ want to import your resources.
 
 [Defining the Assets](/develop/tutorials/-/knowledge_base/7-1/defining-the-assets)
 
-[Specifying where to import the resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-resources)
+[Specifying Where to Import the Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-resources)
