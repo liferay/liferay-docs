@@ -58,6 +58,7 @@ from customers' view.
     at the top of the screen (and can be reached again at any time by navigating to
     the catalog and selecting a product). The first tab, *Details*, is populated
     with your responses from the *Add Product* form.
+<!--The formatting here is problematic. The text above is displayed as code, not as part up the numbered system above.-->
 
 3.  Enter additional information specific to the product type you selected in
     step 1.
