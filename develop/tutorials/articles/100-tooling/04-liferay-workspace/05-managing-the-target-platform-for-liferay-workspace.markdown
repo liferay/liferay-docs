@@ -1,16 +1,9 @@
 # Managing the Target Platform for Liferay Workspace [](id=managing-the-target-platform-for-liferay-workspace)
 
-Liferay Workspace provides a way to target a specific release of @product@ to
-develop against. This greatly decreases the need to manage dependencies and
-their versions when developing your app. For example, suppose you've developed
-your app for the current release of @product@, but then a new version is
-released. Of course, many of the artifact versions have incremented, so you may
-want to update your app's dependencies to match the exact artifacts in the
-@product@ version you're targeting. It can be a hassle tracking down artifact
-versions and updating your app accordingly. With the option to specify your
-target platform, you update your workspace to point to a different @product@
-version and all your dependencies are updated to the latest ones provided in the
-targeted release.
+Liferay Workspace helps you target a specific release of @product@, so
+dependencies get resolved properly. This makes upgrades easy: specify your
+target platform, and Workspace points to the new version. All your dependencies
+are updated to the latest ones provided in the targeted release.
 
 +$$$
 
@@ -21,10 +14,9 @@ tutorial for more details.
 
 $$$
 
-The option to target a specific @product@ version to develop against also offers
-additional features if you're using
-[Liferay @ide@ 3.2+](/develop/tutorials/-/knowledge_base/7-0/liferay-ide) for
-development. @ide@ can index the configured @product@ source code to
+[Liferay @ide@ 3.2+](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) 
+helps you streamline targeting a specific version even more. @ide@ can index the
+configured @product@ source code to
 
 - provide advanced Java search (Open Type and Reference Searching)
   ([tutorial](/develop/tutorials/-/knowledge_base/7-0/searching-product-source-in-liferay-ide))
@@ -43,14 +35,13 @@ Next, you'll discover how all of this is possible.
 
 ## Dependency Management with BOMs [](id=dependency-management-with-boms)
 
-Targeting a @product@ version to develop against is possible by importing a
-predefined bill of materials (BOM). Don't worry; this is handled behind the
-scenes and only requires that you specify a property in your workspace's
+You can target a version by importing a predefined bill of materials (BOM). This
+only requires that you specify a property in your workspace's
 `gradle.properties` file. You'll see how to do this later.
 
 Each @product@ version has a predefined BOM that you can specify for your
 workspace to reference. Each BOM defines the artifacts and their versions used
-in the specific release. BOMs list all dependencies in a management fashion. So
+in the specific release. BOMs list all dependencies in a management fashion, so
 it doesn't **add** dependencies to your project; it only **provides** your build
 tool (e.g., Gradle or Maven) the versions needed for the project's defined
 artifacts. This means you don't need to specify your dependency versions; the
@@ -63,37 +54,38 @@ Pretty cool, right? Next, you'll step through an example configuration.
 
 ## Setting the Target Platform [](id=setting-the-target-platform)
 
-Setting a @product@ version to develop against is easy in Liferay Workspace.
-Open the workspace's `gradle.properties` file and set the
-`liferay.workspace.target.platform.version` property to the version you want to
-target. For example,
+Setting the version to develop for takes two steps: 
 
-    liferay.workspace.target.platform.version=7.0-GA7
+1.  Open the workspace's `gradle.properties` file and set the
+    `liferay.workspace.target.platform.version` property to the version you want
+    to target. For example,
 
-**Important:** You can leverage the target platform features in Liferay Portal
-GA6+. Previous versions do not provide these features.
+        liferay.workspace.target.platform.version=7.0-GA7
 
-If you're using Liferay DXP, the versions are specified based on service packs.
-For example, you could set your target platform workspace Gradle property to
+    **Important:** You can leverage the target platform features in Liferay Portal
+    GA6+. Previous versions do not provide these features.
 
-    liferay.workspace.target.platform.version=7.0-sp7
+    If you're using Liferay DXP, the versions are specified based on service packs.
+    For example, you could set your target platform workspace Gradle property to
 
-<!-- TODO: Still need to find the earliest service pack version available for
-Liferay 7.0 DXP and document it here. -Cody -->
+        liferay.workspace.target.platform.version=7.0-sp7
 
-Once the target platform is configured, check to make sure no dependencies in
-your Gradle build files specify a version. The versions are now imported from
-the configured target platform's BOM. For example, a simple MVC portlet's
-`build.gradle` may look something like this:
+    <!-- TODO: Still need to find the earliest service pack version available for
+    Liferay 7.0 DXP and document it here. -Cody -->
 
-    dependencies {
-        compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel"
-        compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib"
-        compileOnly group: "javax.portlet", name: "portlet-api"
-        compileOnly group: "javax.servlet", name: "javax.servlet-api"
-        compileOnly group: "jstl", name: "jstl"
-        compileOnly group: "org.osgi", name: "osgi.cmpn"
-    }
+2.  Once the target platform is configured, check to make sure no dependencies
+    in your Gradle build files specify a version. The versions are now imported
+    from the configured target platform's BOM. For example, a simple MVC
+    portlet's `build.gradle` may look something like this:
+
+        dependencies {
+            compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel"
+            compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib"
+            compileOnly group: "javax.portlet", name: "portlet-api"
+            compileOnly group: "javax.servlet", name: "javax.servlet-api"
+            compileOnly group: "jstl", name: "jstl"
+            compileOnly group: "org.osgi", name: "osgi.cmpn"
+        }
 
 +$$$
 
@@ -116,8 +108,8 @@ dependencies without versions appear in your Gradle build files. You're all set!
 
 ## Targeting a Platform Outside of Workspace [](id=targeting-a-platform-outside-of-workspace)
 
-If you prefer to not use Liferay Workspace, but still want to target a platform
-to develop against, you must apply the
+If you prefer to not use Liferay Workspace, but still want to target a platform,
+you must apply the 
 [Target Platform](/develop/reference/-/knowledge_base/7-0/target-platform-gradle-plugin)
 Gradle plugin to the root `build.gradle` file of your custom multi-module Gradle
 build.
@@ -145,7 +137,7 @@ To do this, your `build.gradle` file should look similar to this:
 This Gradle code
 
 - applies Liferay's Target Platform Gradle plugin
-- configures the repository that will provide the necessary artifacts for your
+- configures the repository that provides the necessary artifacts for your
   project build
 - sets the Target Platform plugin's dependencies:
     - `com.liferay.ce.portal.bom`: provides all the artifacts included in
@@ -168,4 +160,4 @@ also apply the following configuration:
 
 This indexes the target platform's source code and makes it available to @ide@.
 
-Now you can develop against a target platform!
+Now you can define your target platform!
