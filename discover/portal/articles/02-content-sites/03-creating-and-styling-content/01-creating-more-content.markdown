@@ -26,7 +26,7 @@ to create the content directly in that app.
     Web Content*. This takes you to the app's web content creation page. The 
     content you create here only appears in this app, on this page. 
 
-    ![Figure x: You can create basic web content directly in the Web Content Display app.](../../../images/001-content-on-page.png)
+    ![Figure 1: You can create basic web content directly in the Web Content Display app.](../../../images/001-content-on-page.png)
 
 2.  Enter the following information for the following fields:
 
@@ -70,7 +70,7 @@ step three.
 Great! The About Us page is now complete and provides all the information that 
 the Lunar Resort's visitors need. 
 
-![Figure x: The complete About Us page looks awesome!](../../../images/001-final-about-us.png)
+![Figure 2: The complete About Us page looks awesome!](../../../images/001-final-about-us.png)
 
 Next, you'll learn how to use @product@'s Documents and Media features to manage 
 files in your portal. 

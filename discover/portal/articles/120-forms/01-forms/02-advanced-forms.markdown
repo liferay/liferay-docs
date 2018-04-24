@@ -534,7 +534,7 @@ By default, you can grant the following permissions for a form:
 -  View: All the other permissions you can configure for the form depend on this
    one. Think about it: if you can't see the form, how can you add a record?
 
-![Figure 15: You can configure the permissions for a form.](../../../images/forms-form-permissions.png)
+![Figure 14: You can configure the permissions for a form.](../../../images/forms-form-permissions.png)
 
 If you want to allow unauthenticated visitors to your site to view and fill out
 forms, give the *Guest* role the *View* and *Add Record* permissions.
@@ -551,7 +551,7 @@ role represents unauthenticated visitors of your site, and it makes sense that
 if you want to allow Guest users to submit forms, you're fine with your site
 members and portal users submitting forms, as well. If you want to disable the
 automatic inheritance of the Guest role permissions, there's a
-[property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Permissions) you can set in your `portal-ext.properties` file:
+[property](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Permissions) you can set in your `portal-ext.properties` file:
 
     permissions.check.guest.enabled=false
 
@@ -565,13 +565,13 @@ Field* button on the form as you build the form.
 
 Instead, you might use more than one column in your form.
 
-![Figure 16: An example of a multiple column form layout.](../../../images/forms-layout-multicolumn.png)
+![Figure 15: An example of a multiple column form layout.](../../../images/forms-layout-multicolumn.png)
 
 As you can see, the multi-column approach saves a lot of space in the pictured
 form. You can also use a mixed approach, with each row broken into a different
 number of columns.
 
-![Figure 17: There are many ways to lay out your Liferay forms.](../../../images/forms-layout-mixed.png)
+![Figure 16: There are many ways to lay out your Liferay forms.](../../../images/forms-layout-mixed.png)
 
 If you're going to lay out your forms, you'll be working with two entities in
 the form builder interface: Rows and Field Slots. You've already added and
@@ -582,7 +582,7 @@ If you've added a field to the form, you've also added a row. By default,
 clicking the large *Add Field* button on the form will add a field that
 occupies the entire row. 
 
-![Figure 18: By default, fields in your form will occupy an entire row.](../../../images/forms-form-row.png)
+![Figure 17: By default, fields in your form will occupy an entire row.](../../../images/forms-form-row.png)
 
 If you'd like, you can design your forms before you add the fields. Just start
 resizing the row using the form layout functionality (drag the chevrons to
@@ -591,7 +591,7 @@ space is taken up by another field slot. You'll end by having divided the row
 into two columns. Resizing again will make three columns. Once you have the row
 situated how you'd like, start adding the form fields.
 
-![Figure 19: It's easy to resize form rows and make new form slots.](../../../images/forms-row-resizing.gif)
+![Figure 18: It's easy to resize form rows and make new form slots.](../../../images/forms-row-resizing.gif)
 <!-- Remake with better quality for publication-->
 
 You can also cut entire rows from the form and paste them elsewhere. Any fields
@@ -599,7 +599,7 @@ you added and configured will be pasted with the field. Once you click the cut
 icon (the scissors), you'll be alerted to the available positions where you can
 paste the row and its fields.
 
-![Figure 20: Cut and past an entire row, including its fields, in your form layout.](../../../images/forms-cut-row.png)
+![Figure 19: Cut and past an entire row, including its fields, in your form layout.](../../../images/forms-cut-row.png)
 
 Did you notice the delete icon (![Trash](../../../images/icon-trash.png))?
 Clicking it deletes the entire row, with all its fields. 
@@ -609,7 +609,7 @@ to any unoccupied field slot, in any row. Just open the field's actions menu by
 clicking the Actions button (![Actions](../../../images/icon-actions.png)),
 which will appear when you hover your mouse over the field in the layout.
 
-![Figure 21: Move an individual field in your form layout.](../../../images/forms-move-field.png)
+![Figure 20: Move an individual field in your form layout.](../../../images/forms-move-field.png)
 
 In addition to moving the field, you can edit the field or delete it.
 
@@ -622,7 +622,7 @@ build the form to match the screenshot below. It will use form text, date,
 single selection, text, and single checkbox (multiple selection on Liferay
 Portal CE) fields, laid out in two columns.
 
-![Figure 22: The second page of The Lunar Resort employment application.](../../../images/forms-page2.png)
+![Figure 21: The second page of The Lunar Resort employment application.](../../../images/forms-page2.png)
 
 $$$
 

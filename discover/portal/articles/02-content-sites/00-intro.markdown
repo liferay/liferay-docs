@@ -10,7 +10,7 @@ where to start. This is a step by step guide to creating content, pages, and
 sites, starting with the most basic elements and ending with a full-featured
 website. 
 
-![Figure x: A preview of the final site.](../../images/001-final-site-preview.png)
+![Figure 1: A preview of the final site.](../../images/001-final-site-preview.png)
 
 You'll start by creating simple content in an empty @product@ bundle. As you
 progress, you'll add more complex content using @product@'s full suite of tools.

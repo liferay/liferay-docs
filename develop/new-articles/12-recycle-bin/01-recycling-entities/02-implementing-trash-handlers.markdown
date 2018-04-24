@@ -4,9 +4,9 @@ Like other Liferay frameworks--such as assets and
 indexing frameworks which you just enabled--you must implement a handler class 
 for Recycle Bin. A Recycle Bin handler class manages moving entries to the 
 Recycle Bin, viewing them in the Recycle Bin, restoring them, and permanently 
-deleting them. You must implement the [`TrashHandler`](http://docs.liferay.com/portal/7.0/javadocs/com/liferay/portal/kernel/trash/TrashHandler.html)
+deleting them. You must implement the [`TrashHandler`](@platform-ref@/7.0-latest/javadocs/com/liferay/portal/kernel/trash/TrashHandler.html)
 interface for each trash-enabled entity. As a convenience, Liferay provides the
-extensible abstract class [`BaseTrashHandler`](http://docs.liferay.com/portal/7.0/javadocs/com/liferay/portal/kernel/trash/BaseTrashHandler.html).
+extensible abstract class [`BaseTrashHandler`](@platform-ref@/7.0-latest/javadocs/com/liferay/portal/kernel/trash/BaseTrashHandler.html).
 
 First create the necessary files and classes:
 

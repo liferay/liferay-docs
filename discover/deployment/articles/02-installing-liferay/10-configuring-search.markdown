@@ -1,7 +1,7 @@
 # Installing Elasticsearch [](id=installing-elasticsearch)
 
 @product@ uses Elasticsearch to index its content. By default, @product@ uses
-Elastic as an embedded service. It works, but this is not a supported
+Elasticsearch as an embedded service. It works, but this is not a supported
 configuration for a production server. Feel free to use it while you're testing
 or developing, but when you're ready to put your site in production, you'll need
 to run Elasticsearch as a standalone process. This is better anyway, because it
@@ -9,7 +9,7 @@ frees you to design your infrastructure the way you want it. If you've got
 hardware or a VM to spare, you can separate your search infrastructure from
 @product@ and reap some performance gains by putting search on a separate box. If
 you're more budget-conscious, you can still increase performance by running
-Elastic in a separate, individually tunable JVM on the same box. 
+Elasticsearch in a separate, individually tunable JVM on the same box. 
 
 Installing Elasticsearch for @product@ is pretty easy and takes only six steps: 
 
@@ -22,11 +22,11 @@ Installing Elasticsearch for @product@ is pretty easy and takes only six steps:
 
 3. Install some required Elasticsearch plugins.
 
-4. Name your Elastic cluster. 
+4. Name your Elasticsearch cluster. 
 
-5. Configure @product@ to connect to your Elastic cluster. 
+5. Configure @product@ to connect to your Elasticsearch cluster. 
 
-6. Restart @product@ and reindex your search indexes. 
+6. Restart @product@ and reindex your search and spell check indexes. 
 
 +$$$
 
@@ -71,8 +71,36 @@ this:
       "tagline" : "You Know, for Search"
     }
 
-The version of Elasticsearch that you want is the value of the `"number"` field.
+The version of Elasticsearch that's running is the value of the `"number"` field.
 In this example, it's 2.4.0. 
+
++$$$
+
+**Elasticsearch 6.1:** Elasticsearch 6.1.x is supported for Liferay Digital
+Enterprise systems running Fix Pack 42 or later, although version 2.x remains
+the default, embedded version. To install Elasticsearch 6.1.x, 
+
+1.  Make sure you're running FP-42 or later.
+
+2.  Install Elasticsearch 6.1.x (follow steps 2-4 in this article for guidance).
+
+3.  Install the [Elasticsearch 6 Adapter from Marketplace](https://web.liferay.com/marketplace)
+    and stop the default Elasticsearch adapter.
+
+4.  Configure the Elasticsearch 6 adapter (see step 5 below for guidance).
+
+To disable the default Elasticsearch adapter, use the App Manager. Navigate to
+Control Panel &rarr; Apps &rarr; App Manager.
+
+Once you're in the App Manager, search for *elasticsearch*. Find the Liferay
+Portal Search Elasticsearch module and click the edit
+((![Edit](../../images/icon-edit.png))) button. Choose the Deactivate
+option. This leaves the bundle installed, but stops it in the OSGi runtime.
+
+To learn more about upgrading an existing system to Elasticsearch 6.1, read the
+[upgrade article](/discover/deployment/-/knowledge_base/7-0/upgrading-to-elasticsearch-6).
+
+$$$
 
 Now that you know the version of Elasticsearch you need, go to
 [Elastic's](https://www.elastic.co) website and download that version. 
@@ -105,7 +133,17 @@ To install these plugins, navigate to Elasticsearch Home and enter
 
 Replace *[plugin-name]* with the Elasticsearch plugin's name.
 
-### Step Four: Name Your Elastic Cluster [](id=step-three-name-your-elastic-cluster)
++$$$
+
+**Elasticsearch 6.1:** The `plugin` executable was renamed in Elasticsearch 6,
+to `elasticsearch-plugin`. The general command syntax for installing plugins to
+6.1 is 
+
+    ./bin/elasticsearch-plugin install [plugin-name]
+
+$$$
+
+### Step Four: Name Your Elasticsearch Cluster [](id=step-three-name-your-elastic-cluster)
 
 A *cluster* in Elasticsearch is a collection of nodes (servers) identified as a
 cluster by a shared cluster name. The nodes work together to share data and
@@ -115,14 +153,14 @@ please refer to [Elastic's documentation](https://www.elastic.co/guide/index.htm
 Now that you've installed Elastic, it sits in a folder on your machine, which is
 referred to here as `[Elasticsearch Home]`. To name your cluster, you'll define
 the cluster name in both Elasticsearch and in @product@. First, define it in
-Elastic. Edit the following file: 
+Elasticsearch. Edit the following file: 
 
     [Elasticsearch Home]/config/elasticsearch.yml
 
 Uncomment the line that begins with `cluster.name`. Set the cluster name to
 whatever you want to name your cluster: 
 
-    cluster.name: liferay_cluster
+    cluster.name: LiferayElasticsearchCluster
 
 Of course, this isn't a very imaginative name; you may choose to name your
 cluster `finders_keepers` or something else you can remember more easily. Save
@@ -133,39 +171,66 @@ from the `[Elasticsearch Home]/bin` folder:
 
     ./elasticsearch
 
-Elastic starts, and one of its status messages includes a transport address: 
+Elasticsearch starts, and one of its status messages includes a transport address: 
 
     2016-05-03 16:33:28,358][INFO ][transport] [Hobgoblin II] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
 
 Take note of this address; you'll need to give it to your @product@ server so it
-can find Elastic on the network. 
+can find Elasticsearch on the network. 
 
-### Step Five: Configure @product@ to Connect to your Elastic Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
+### Step Five: Configure @product@ to Connect to your Elasticsearch Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
 
-Now you're ready to configure @product@. Start @product@ if you haven't already, log
-in, and then click on *Control Panel* &rarr; *Configuration* &rarr; *System Settings*
-&rarr; *Foundation*. Find *Elasticsearch* in the list of settings and click on it.
-Now you can configure it. Here are the options you need to change: 
++$$$
 
-**Cluster name:** Enter the name of the cluster as you defined it in Elastic. 
+**Elasticsearch 6.1:** Before continuing, install the 
+[Liferay Connector to Elasticsearch 6 application](https://web.liferay.com/marketplace) from Liferay Marketplace and
+stop the default Elasticsearch 2.x adapter, which connects to Elasticsearch 2.x.
+
+1.  Navigate to *Control Panel* &rarr; *Apps* &rarr; *App Manager*.
+
+2.  Search for *elasticsearch*. Find the Liferay Portal Search Elasticsearch
+    module and click the edit ((![Edit](../../images/icon-edit.png))) button.
+    Choose the Deactivate option. This leaves the bundle installed, but stops it
+    in the OSGi runtime.
+
+3.  Once you've downloaded the LPKG file with the Elasticsearch 6 adapter,
+    place it in Liferay Home's `deploy` folder. Find more detailed
+    information on deploying Marketplace applications [here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace).
+
+$$$
+
+Now you're ready to configure @product@. Start @product@ if you haven't already,
+log in, and then click on *Control Panel* &rarr; *Configuration* &rarr; *System
+Settings* &rarr; *Foundation*. Find *Elasticsearch* (or *Elasticsearch 6*)in the
+list of settings and click on it. Now you can configure it. Here are the
+options you need to change: 
+
+**Cluster name:** Enter the name of the cluster as you defined it in
+Elasticsearch. 
 
 **Operation mode:** Defaults to EMBEDDED. Change it to REMOTE to connect to a
 standalone Elasticsearch. 
 
 **Transport addresses:** Enter a delimited list of transport addresses for
-Elastic nodes. Here, you'll enter the transport address from the Elastic server
-you started. The default value is `localhost:9300`, which will work. 
+Elasticsearch nodes. Here, you'll enter the transport address from the
+Elasticsearch server you started. The default value is `localhost:9300`, which
+will work. 
 
 When finished, click *Save*. You're almost done. 
 
 ### Step Six: Restart @product@ and Reindex [](id=step-five-restart-liferay-and-reindex)
 
 Stop and restart @product@. When it's back up, log in as an administrative user
-and click on *Control Panel* &rarr; *Configuration* &rarr; *Server Administration* and
-click the *Execute* button for *Reindex all search indexes*. When you do that,
+and
+
+1.  Click on *Control Panel* &rarr; *Configuration* &rarr; *Server Administration*
+
+2.  Click the *Execute* button for *Reindex all search indexes*. When you do that,
 you should see some messages scroll up in the Elasticsearch log. 
 
-For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html)
+3.  Click Execute for *Reindex all spell check indexes*.
+
+For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html).
 
 You're almost done! The only thing left is to make sure Marketplace is working
 and optionally configure portal security. 

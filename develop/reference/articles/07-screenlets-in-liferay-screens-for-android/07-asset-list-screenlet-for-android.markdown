@@ -55,7 +55,18 @@ to the following classes:
 - `WikiPageResource`
 - `WikiNode`
 
-The Asset List Screenlet also supports i18n in asset values.
+The Asset List Screenlet also supports i18n in asset values. 
+
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call JSON web services in the portal. This 
+Screenlet calls the following services and methods.
+
+| Service | Method | Notes |
+| ------- | ------ | ----- |
+| `ScreensddlrecordService` (Screens compatibility plugin) | `getAssetEntries` | With `entryQuery` |
+| `ScreensddlrecordService` (Screens compatibility plugin) | `getAssetEntries` | With `companyId`, `groupId`, and `portletItemName` |
+| `AssetEntryService` | `getEntriesCount` |  |
 
 ## Module [](id=module)
 

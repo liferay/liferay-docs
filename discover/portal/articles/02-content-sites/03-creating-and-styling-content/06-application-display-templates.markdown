@@ -35,7 +35,7 @@ all of the system default ADTs.
     
 3. From there, click *My Sites* and then select the *Global* site.
 
-![Figure x: Site selection.](../../../images/001-select-site.png)
+![Figure 1: Site selection.](../../../images/001-select-site.png)
 
 Everything you create in this context will be for the Global scope. Now to 
 create the ADT.
@@ -144,6 +144,6 @@ appropriate folder, and set it to use the display template we created.
 9. Now go to *Look and Feel Configuration* and set the *Application Decorator* 
     to *Barebone*
 
-![Figure x: Site selection.](../../../images/001-final-frontpage.png)
+![Figure 2: Site selection.](../../../images/001-final-frontpage.png)
 
 Good work! Your Welcome page is complete! 

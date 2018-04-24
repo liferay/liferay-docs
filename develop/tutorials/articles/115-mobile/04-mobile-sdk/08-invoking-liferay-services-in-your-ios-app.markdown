@@ -1,17 +1,29 @@
 # Invoking Liferay Services in Your iOS App [](id=invoking-liferay-services-in-your-ios-app)
 
 Once the appropriate Mobile SDKs are set up in your iOS project, you can access 
-and invoke Liferay services in your app. The basic steps for doing this are 
-listed here: 
+and invoke @product services in your app. This tutorial takes you through the 
+steps you must follow to invoke these services: 
 
 1. Create a session.
-2. Import the Liferay services you need to call.
+2. Import the @product services you need to call.
 3. Create a service object and call the service methods.
 
-This tutorial takes you through these steps. Also, since some Liferay service 
-calls require special considerations, you're shown how to handle them. Note that 
-the code snippets in this tutorial are written in *Objective-C*. Now go ahead 
-and get started learning how to invoke Liferay services in your iOS app! 
+Since some service calls require special treatment, this tutorial also shows you 
+how to handle them. Note that the code snippets in this tutorial are written in 
+Objective-C. 
+
+First, you'll learn about securing @product@'s JSON web services in the portal. 
+
+## Securing JSON Web Services [](id=securing-json-web-services)
+
+The Liferay Mobile SDK calls @product@'s JSON web services, which are enabled by 
+default. The web services you call via the Mobile SDK must remain enabled for 
+those calls to work. It's possible, however, to disable the web services that 
+you don't need to call. For instructions on this, see the tutorial 
+[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services). 
+You can also use 
+[Service Access Policies](/develop/tutorials/-/knowledge_base/7-0/service-access-policies) 
+for more fine-grained control over accessible services. 
 
 ## Step 1: Create a Session [](id=step-1-create-a-session)
 

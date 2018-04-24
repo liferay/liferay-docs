@@ -21,7 +21,7 @@ It's time to get started:
 
 <!-- Russ QA: We shouldn't assume the Lunar Resort site exists. -->
 
-![Figure X: The Web Content page.](../../../images/001-web-content-page.png)
+![Figure 1: The Web Content page.](../../../images/001-web-content-page.png)
 
 The Web Content site administration page is the hub for all the content in the
 Lunar Resort site.  You create, edit, and review content from this page. 
@@ -55,13 +55,13 @@ Now you'll use it to create your first piece of web content:
     This sets the text as a first-level heading. You may need to close the menu
     for the full dialog above the text to be visible.
 
-    ![Figure X: The Content field lets you format text on the fly.](../../../images/001-text-options.png)
+    ![Figure 2: The Content field lets you format text on the fly.](../../../images/001-text-options.png)
 
 4.  De-select the text and make a new line.
 
 5.  Click the plus button and select the image icon.
 
-    ![Figure X: To begin adding an image, select the image icon.](../../../images/001-image-icon.png)
+    ![Figure 3: To begin adding an image, select the image icon.](../../../images/001-image-icon.png)
 
 6.  Using drag and drop or the *Select File* button, upload the provided
     `moon-image1.jpg`. This also adds it to the Document Library so that you can

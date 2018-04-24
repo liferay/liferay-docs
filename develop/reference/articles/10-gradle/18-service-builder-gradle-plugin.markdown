@@ -13,7 +13,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "2.0.0"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "2.1.7"
     }
 
     repositories {
@@ -128,6 +128,8 @@ Property Name | Type | Default Value | Description
 `sqlSequencesFileName` | `String` | `"sequences.sql"` | A name (relative to `sqlDir`) for the file in which the SQL sequence creation instructions are generated. It sets the `service.sql.sequences.file` argument.
 `targetEntityName` | `String` | `null` | If specified, it's the name of the entity for which Liferay Service Builder should generate the service. It sets the `service.target.entity.name` argument.
 `testDir` | `File` | `null` | If specified, it's a directory where integration test Java source files are generated. It sets the `service.test.dir` argument.
+`uadDir` | `File` | `null` | A directory where the UAD (user-associated data) Java source files are generated. It sets the `service.uad.dir` argument.
+`uadTestIntegrationDir` | `File` | `null` | A directory where integration test UAD (user-associated data) Java source files are generated. It sets the `service.uad.test.integration.dir` argument.
 
 The properties of type `File` supports any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.lang.Object\)).
 Moreover, it is possible to use Closures and Callables as values for the
@@ -149,3 +151,26 @@ dependencies {
     serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.182"
 }
 ```
+
+If you're applying the
+[`com.liferay.gradle.plugins`](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins)
+or
+[`com.liferay.gradle.plugins.workspace`](https://github.com/liferay/liferay-portal/blob/master/modules/sdk/gradle-plugins-workspace)
+plugins to your project, the Service Builder dependency is already added to the
+`serviceBuilder` configuration. Therefore, if you try to apply a customized
+version of Service Builder, it's not recognized; you must override the
+configuration already applied.
+
+To do this, you must customize the classpath of the `buildService` task. If
+you're supplying the customized Service Builder plugin through a module named
+`custom-sb-api`, you could modify the `buildService` task like this:
+
+```gradle
+buildService {
+    apiDir = "../custom-sb-api/src/main/java"
+    classpath = configurations.serviceBuilder.filter { file -> !file.name.contains("com.liferay.portal.tools.service.builder") }
+}
+```
+
+If you do this in conjunction with the `serviceBuilder` dependency
+configuration, the custom Service Builder version is used.

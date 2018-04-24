@@ -272,10 +272,10 @@ reasons an enterprise wants to configure organization types:
     example, MLB would not allow Division organization types to be
     sub-organizations of Team organizations.
 
-![Figure x: Make additional organization types available in the Control Panel by adding them to the `organizations.types` portal property.](../../images/organization-new-type.png)
+![Figure 2: Make additional organization types available in the Control Panel by adding them to the `organizations.types` portal property.](../../images/organization-new-type.png)
 
 Check out the portal properties that configure the default *Organization* type
-on [docs.liferay.com](https://docs.liferay.com/portal/7.0-latest/propertiesdoc/portal.properties.html#Organizations).
+on [docs.liferay.com](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Organizations).
 
 To add another organization type called *League*, add this to
 `portal-ext.properties`:
@@ -305,7 +305,7 @@ Once you configure additional organization types in `portal-ext.properties`,
 restart the server and you'll see your new type(s) in the Organizations section
 of the Control Panel.
 
-![Figure x: Add the Country select list field to the Add Organization form with the `organizations.country[my-org-type].enabled` property.](../../images/organization-country-selection.png)
+![Figure 3: Add the Country select list field to the Add Organization form with the `organizations.country[my-org-type].enabled` property.](../../images/organization-country-selection.png)
 
 Users can join or be assigned to sites when they share a common interest. Users
 can be assigned to organizations when they fit into a hierarchical structure.

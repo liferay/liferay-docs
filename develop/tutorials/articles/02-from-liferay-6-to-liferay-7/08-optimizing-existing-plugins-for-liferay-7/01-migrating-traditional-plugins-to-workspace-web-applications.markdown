@@ -67,9 +67,15 @@ application folder structure Workspace uses.
   descriptors | `docroot/WEB-INF`        | `src/main/webapp/WEB-INF`
   libraries   | `docroot/WEB-INF/lib`    | `src/main/webapp/lib`    
 
-From your plugin's new location, you can [deploy](/develop/tutorials/-/knowledge_base/7-0/development-lifecycle-for-a-liferay-workspace#building-modules)
-it to @product-ver@ and maintain it using
-[Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-0/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#plugins-sdk-to-workspace-task-map).
+From your plugin's new location, you can invoke 
+[Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-0/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#plugins-sdk-to-workspace-task-map)
+on it and build its `.war` file.
+
+    blade gw war 
+
+To deploy the `.war`, copy it from the plugin's `build/libs` folder to the
+`[LIFERAY_HOME]/deploy` folder. 
+
 Welcome to your plugin's new home in Workspace! 
 
 ## Related Topics [](id=related-topics)

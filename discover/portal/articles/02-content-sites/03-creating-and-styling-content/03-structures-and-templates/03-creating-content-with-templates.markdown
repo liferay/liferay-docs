@@ -59,4 +59,4 @@ site. Follow these instructions to do so:
 
 Great! Next, you'll learn how to integrate JavaScript into your templates. 
 
-![Figure x: The lunar guides, at your service!](../../../../images/001-lunar-guides-final.png)
+![Figure 1: The lunar guides, at your service!](../../../../images/001-lunar-guides-final.png)

@@ -14,7 +14,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.maven.plugin.builder", version: "1.1.2"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.maven.plugin.builder", version: "1.2.0"
     }
 
     repositories {
@@ -99,6 +99,7 @@ Property Name | Type | Default Value | Description
 `configurationScopeMappings` | `Map<String, String>` | `["compile": "compile", "provided", "provided"]` | The mapping between the configuration names in the Gradle project and the [dependency scopes](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Dependency_Scope) in the `pom.xml` file. It is used to add [`dependencies.dependency`](http://maven.apache.org/ref/3.3.3/maven-model/maven.html#class_dependency) elements in the generated `pom.xml` file.
 `forcedExclusions` | `Set<String>` | `[]` | The *group:name:version* notation of the dependencies to always exclude from the ones added in the `pom.xml` file. It adds [`dependencies.dependency.exclusions.exclusion`](http://maven.apache.org/ref/3.3.3/maven-model/maven.html#class_exclusion) elements to the generated `pom.xml` file.
 `goalPrefix` | `String` | `null` | The goal prefix for the Maven plugin specified in the descriptor. It sets the value of the [`build.plugins.plugin.configuration.goalPrefix`](https://maven.apache.org/plugin-tools/maven-plugin-plugin/examples/generate-descriptor.html) element in the generated `pom.xml` file.
+`mavenDebug` | `boolean` | `false` | Whether to invoke the Maven Embedder in debug mode.
 <a name="mavenembedderclasspath"></a>`mavenEmbedderClasspath` | `FileCollection` | `null` | The classpath used to invoke the Maven Embedder.
 `mavenEmbedderMainClassName` | `String` | `"org.apache.maven.cli.MavenCli"` | The Maven Embedder's main class name.
 `mavenPluginPluginVersion` | `String` | `"3.4"` | The version of the [Maven Plugin Plugin](https://maven.apache.org/plugin-tools/maven-plugin-plugin/) to use to generate the plugin descriptor for the project.
@@ -166,4 +167,18 @@ dependencies {
     mavenEmbedder group: "org.eclipse.aether", name: "aether-transport-wagon", version: "1.0.2.v20150114"
     mavenEmbedder group: "org.slf4j", name: "slf4j-simple", version: "1.7.5"
 }
+```
+
+### System Properties [](id=system-properties)
+
+It is possible to set the default value of the `mavenDebug` property for a
+`BuildPluginDescriptorTask` task via system property:
+
+- `-D${task.name}.maven.debug=true`
+
+For example, run the following Bash command to invoke the Maven Embedder in
+debug mode to attach a remote debugger:
+
+```bash
+./gradlew buildPluginDescriptor -DbuildPluginDescriptor.maven.debug=true
 ```

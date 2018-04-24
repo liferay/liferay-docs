@@ -13,7 +13,7 @@ your JSP:
     <%@ taglib prefix="liferay-util" uri="http://liferay.com/tld/util" %>
 
 Each taglib has a list of attributes that can be passed to the tag. Some of 
-these are required and some are optional. See the [taglibdocs](https://docs.liferay.com/portal/7.0-latest/taglibs/util-taglib/liferay-util/tld-summary.html) 
+these are required and some are optional. See the [taglibdocs](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-util/tld-summary.html) 
 to view the requirements for each tag.
 
 Since each of the `<liferay-util>` taglibs is unique, each tag is covered

@@ -1,13 +1,12 @@
-# Configuring Elasticsearch for @product@ [](id=configuring-elasticsearch-for-liferay-0)
+# Configuring Elasticsearch [](id=configuring-elasticsearch-for-liferay-0)
 
-@product@ is an open source project, so you won't be surprised to learn that the
-default search engine that ships with @product@ is also an open source project.
-Elasticsearch is a highly scalable, full-text search and analytics engine that
-ships with @product@. 
+@product@ is an open source project, so you won't be surprised to learn that its
+default search engine is also an open source project. Elasticsearch is a highly
+scalable, full-text search and analytics engine.
 
-By default, @product@ runs Elasticsearch as an embedded search engine, but it's
-only supported in production locally or remotely, as a separate server or
-cluster. This guide walks you through that process.
+By default, Elasticsearch runs as an embedded search engine, but it's only
+supported in production as a separate server or cluster. This guide walks you
+through the process of configuring Elasticsearch.
 
 If you'd rather use Solr, it's also supported. See [here](/discover/deployment/-/knowledge_base/7-0/using-solr) for information
 on installing and configuring Solr.
@@ -18,7 +17,7 @@ In that article you'll find the basic instructions for the installation and
 configuration of Elasticsearch in a single server environment. This article
 includes more details and information on clustering and tuning Elasticsearch. In
 this article you'll learn to configure your existing Elasticsearch installation
-for use in @product@ production environments. 
+for use in production environments. 
 
 If you've come here looking for information on search engines in general, or the
 low level search infrastructure of @product@, refer instead to the developer
@@ -37,10 +36,9 @@ These terms will be useful to understand as you read this guide:
 
 **Upgrading to Elasticsearch 2.4.x:** When @product-ver@ was first released,
 Elasticsearch 2.2.x was supported. However, Elasticsearch 2.2.x's [end of
-life](https://www.elastic.co/support/eol) is August 2, 2017. Because of that,
-@product@ will begin supporting 2.4.x starting with Liferay DE 7.0 Fix Pack 22.
-After that time, Elasticsearch 2.4.x will become the supported version for
-@product-ver@. 
+life](https://www.elastic.co/support/eol) was August 2, 2017. Because of that,
+@product@ supports version 2.4.x starting with Liferay DE 7.0 Fix Pack 22.
+Elasticsearch 2.4.x is supported version for @product-ver@. 
 
 If you are currently running Elasticsearch 2.2.x with @product-ver@, follow the
 [Elasticsearch documentation on upgrading to 2.4](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/setup-upgrade.html).
@@ -56,21 +54,28 @@ Elasticsearch adapter.
 
 $$$
 
++$$$
+
+**Upgrading to Elasticsearch 6:** Elasticsearch 2.4.x reached end of life status
+in February 2018. If you have an existing Elasticsearch 2.4 cluster,
+to upgrade it to Elasticsearch 6 by following [the upgrade guide](/discover/deployment/-/knowledge_base/7-0/upgrading-to-elasticsearch-6). 
+
+$$$
+
 ## Embedded vs. Remote Operation Mode [](id=embedded-vs-remote-operation-mode)
 
 When you install @product@, there's an embedded Elasticsearch already installed.
-In embedded mode, Elasticsearch search runs with @product@ as a library in the
-same JVM. This is done by default to make it easy to test-drive @product@ with
-minimal configuration. Running Elasticsearch and @product@ in the same process has
-drawbacks:
+In embedded mode, Elasticsearch search runs in the same JVM to make it easy to
+test-drive with minimal configuration. Running both servers in the
+same process has drawbacks:
 
--  Your Elasticsearch configuration uses the same JVM options as @product@.
+-  Elasticsearch must use the same JVM options as @product@.
 -  @product@ and Elasticsearch compete for resources. 
 
 You wouldn't run an embedded database like HSQL in production, and you shouldn't
-run Elasticsearch in embedded mode in production either. Instead, you want your
-@product@ installation to run alongside Elasticsearch. This is called *remote
-operation mode*, as a standalone server or cluster of server nodes.
+run Elasticsearch in embedded mode in production either. Instead, run
+Elasticsearch in *remote operation mode*, as a standalone server or cluster of
+server nodes.
 
 ## Configuring Elasticsearch [](id=configuring-elasticsearch)
 
@@ -97,8 +102,8 @@ Home]/config/elasticsearch.yml` and specify
 Since `LiferayElasticsearchCluster` is the default name given to the cluster in
 @product@, this would work just fine. Of course, you can name your cluster
 whatever you'd like (we humbly submit the recommendation
-`clustery_mcclusterface`).<sup>[1](#footnote1)</sup> You can configure your node name using the same
-syntax (setting the `node.name` property).
+`clustery_mcclusterface`).<sup>[1](#footnote1)</sup> You can configure your node
+name using the same syntax (setting the `node.name` property).
 
 If you'd rather work from the command line than in the configuration file,
 navigate to Elasticsearch Home and enter
@@ -131,11 +136,20 @@ it find and integrate your Elasticsearch cluster.
 
 ## Configuring the Liferay Elasticsearch Adapter [](id=configuring-the-liferay-elasticsearch-adapter)
 
-@product@ has an Elasticsearch adapter that ships with @product@. It's a module
-from the Liferay Foundation Suite that's deployed to the OSGi runtime, titled
-*Liferay Portal Search Elasticsearch*. This adapter provides integration between
-Elasticsearch and @product@. Before you configure the adapter, make sure
-Elasticsearch is running. 
+The Elasticsearch 2 adapter is a module that ships with the Foundation Suite and
+deployed to the OSGi runtime, titled *Liferay Portal Search Elasticsearch*. This
+adapter provides integration between Elasticsearch and @product@. Before you
+configure the adapter, make sure Elasticsearch is running. 
+
++$$$
+
+**Elasticsearch 6.1:** The Elasticsearch Adapter for Elasticsearch 6.1 is called
+*Liferay Connector to Elasticsearch 6*. Download the Elasticcsearch 6 connector
+from Liferay Marketplace and install it, following the [Marketplace
+documentation](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace)
+if necessary.
+
+$$$
 
 There are two ways to configure the adapter: 
 
@@ -199,7 +213,7 @@ configuration file:
         # Highly recommended for all non-prodcution usage (e.g., practice, tests, diagnostics):
         #logExceptionsOnly="false"
 
-3. Start @product@ or re-index if @product@ is already running.
+3. Start @product@ or re-index if already running.
 
 As you can see from the System Settings entry for Elasticsearch, there are a lot
 more configuration options available that help you tune your system for optimal
@@ -210,7 +224,7 @@ What follows here are some known good configurations for clustering
 Elasticsearch. These, however, can't replace the manual process of tuning,
 testing under load, and tuning again, so we encourage you to examine the
 [settings](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings) as
-well as the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/setup-configuration.html#settings) 
+well as the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/important-settings.html#important-settings) 
 and go through that process once you have a working configuration. 
 
 ## Configuring a Remote Elasticsearch Host [](id=configuring-a-remote-elasticsearch-host)
@@ -244,9 +258,19 @@ for more information.
 ## Clustering Elasticsearch in Remote Operation Mode [](id=clustering-elasticsearch-in-remote-operation-mode)
 
 Clustering Elasticsearch is easy. Each time you run the Elasticsearch start
-script, a new node is added to the cluster. If you want four nodes, for example,
-just run `./bin/elasticsearch` four times. If you only run the start script
-once, you have a cluster with just one node.
+script, a new local storage node is added to the cluster. If you want four nodes
+running locally, for example, just run `./bin/elasticsearch` four times. If you
+only run the start script once, you have a cluster with just one node.
+
++$$$
+
+**Elasticsearch 6:** To start multiple local storage nodes in Elasticsearch 6,
+you must also configure `node.max_local_storage_nodes` to be something greater
+than `1`. See
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-node.html#max-local-storage-nodes)
+for more information.
+
+$$$
 
 Elasticsearch's default configuration works for a cluster of up to ten nodes,
 since the default number of shards is `5`, while the default number of replica
@@ -275,31 +299,41 @@ discovery in the `elasticsearch.yml`:
 
 $$$
 
++$$$
+
+**Elasticsearch 6:** Elasticsearch 6 removed the setting that specifies the
+number of shards and replicas in the `elasticsearch.yml`file. Configure these
+index-level settings in the Elasticsearch 6 adapter, using the
+`indexNumberOfShards` and `indexNumberOfReplicas` properties to specify the
+number of primary shards and number of replica shards, respectively.
+
+$$$
+
+
 For more information on configuring an Elasticsearch cluster, see the
 documentation on [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
 
 ## Advanced Configuration of the Liferay Elasticsearch Adapter [](id=advanced-configuration-of-the-liferay-elasticsearch-adapter)
 
 The default configurations for Liferay's Elasticsearch adapter module are set
-in a Java class:
-
-    com.liferay.portal.search.elasticsearch.configuration.ElasticsearchConfiguration
+in a Java class called `ElasticsearchConfiguration`.
 
 While the Elasticsearch adapter has a lot of configuration options out of the
 box, you might find an Elasticsearch configuration you need that isn't provided
-by default. In this case, you can add the configuration options you need. If you
-can configure something for Elasticsearch, you can configure it using the
-Elasticsearch adapter in @product@.
+by default. In this case, add the configuration options you need. If something
+is configurable for Elasticsearch, its configurable using the Elasticsearch
+adapter.
 
 ### Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
 
-@product@ has divided the [available configuration options](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings) 
-into two groups: the ones you'll use most often by default, and a catch-all for
-everything else. If you need to configure the local Elasticsearch client when
-running in remote mode, but the necessary setting isn't available by default,
-you can still configure it with the Liferay Elasticsearch adapter. Just specify
-the settings you need by using one or more of the `additionalConfigurations`,
-`additionalIndexConfigurations`, or `additionalTypeMappings` settings. 
+The [available configuration
+options](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings) are
+divided into two groups: the ones you'll use most often by default, and a
+catch-all for everything else. So if the necessary setting isn't available by
+default, you can still configure it with the Liferay Elasticsearch adapter. Just
+specify the settings you need by using one or more of the
+`additionalConfigurations`, `additionalIndexConfigurations`, or
+`additionalTypeMappings` settings. 
 
 ![Figure 3: You can add Elasticsearch configurations to the ones currently available
 in System Settings.](../../images/elasticsearch-additional-configs.png)
@@ -309,6 +343,14 @@ for the embedded Elasticsearch or the local Elasticsearch client when running
 in remote mode. In production, only one additional configuration can be added here: 
 
     client.transport.ping_timeout
+
++$$$
+
+**Elasticsearch 6:** The Elasticsearch 6 adapter includes the
+`client.transport.ping_timeout` as a native setting. Configure it through its
+dedicated setting rather than with `additionalConfigurations`.
+
+$$$
 
 The rest of the settings for the client are available as default configuration
 options in the Liferay Elasticsearch adapter. See the [Elasticsearch
@@ -361,7 +403,7 @@ template](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/dynamic-te
 that uses the analysis configuration above to analyze all string fields that end
 with `_ja`.
 
-    { 
+    {
         "LiferayDocumentType": {
             "dynamic_templates": [
                 {
@@ -399,6 +441,30 @@ in Elasticsearch.
             }   
         }
     }
+
++$$$
+
+**Elasticsearch 6:** The above property mapping looks different in Elasticsearch
+6.1:
+
+
+    { 
+        "LiferayDocumentType": {  
+            "properties": {   
+                "fooName": {
+                    "index": "true",
+                    "store": "true",
+                    "type": "keyword"
+                }
+            }   
+        }
+    }
+
+See
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/mapping-types.html)
+for more details on Elasticsearch's field datatypes.
+
+$$$
 
 The above example shows how a `fooName` field might be added to @product@'s type
 mapping. Because `fooName` is not an existing property in the mapping, it will
@@ -477,7 +543,7 @@ $$$
 ### Multi-line YAML Configurations [](id=multi-line-yaml-configurations)
 
 If you configure the settings from the last section using an OSGi configuration
-file, you might find yourself needing to write YML snippets that span multiple
+file, you might find yourself needing to write YAML snippets that span multiple
 lines. The syntax for that is straightforward and just requires appending each
 line with `\n\`, like this:
 

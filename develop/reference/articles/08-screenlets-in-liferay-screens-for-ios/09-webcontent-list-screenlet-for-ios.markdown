@@ -30,6 +30,16 @@ The Screenlet also implements
 [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
 with configurable page size, and supports i18n in asset values. 
 
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call JSON web services in the portal. This 
+Screenlet calls the following services and methods.
+
+| Service | Method | Notes |
+| ------- | ------ | ----- |
+| `JournalArticleService` | `getArticlesWithGroupId` |  |
+| `JournalArticleService` | `getArticlesCount` |  |
+
 ## Module [](id=module)
 
 - WebContent

@@ -19,7 +19,7 @@ personal page.
     a list of the available structures. Currently, only the default Basic Web
     Content structure is available. 
 
-    ![Figure x: Select *Structures* from the *Options* menu.](../../../../images/001-select-structures.png)
+    ![Figure 1: Select *Structures* from the *Options* menu.](../../../../images/001-select-structures.png)
 
 3.  Click the *Add* icon 
     (![Add](../../../../images/icon-add.png)) at the bottom-right of the page to 
@@ -31,7 +31,7 @@ personal page.
     and dropping the available field types from the *Fields* tab to the blank 
     canvas on the right. 
 
-    ![Figure x: These fields are available when creating a structure.](../../../../images/001-structure-fields.png)
+    ![Figure 2: These fields are available when creating a structure.](../../../../images/001-structure-fields.png)
 
     This structure needs a Text field for a title, another Text field for the 
     guide's name, an Image field for the guide's image, and a Link to Page field 
@@ -46,7 +46,7 @@ personal page.
       Be careful to position this Link to Page field so that it's on the same
       level as the Image field (not nested in the Image field). 
 
-    ![Figure x: The canvas should look like this after you add the Text, Image, and Link to Page fields. Note that the Image and Link to Page fields are nested in the second Text field.](../../../../images/001-structure-group.png)
+    ![Figure 3: The canvas should look like this after you add the Text, Image, and Link to Page fields. Note that the Image and Link to Page fields are nested in the second Text field.](../../../../images/001-structure-group.png)
 
 6.  Click the first Text field. The available fields list is replaced with
     a list of settings for the selected field. Change the following settings: 

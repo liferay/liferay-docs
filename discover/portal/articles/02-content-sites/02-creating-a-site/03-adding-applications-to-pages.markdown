@@ -24,7 +24,7 @@ these steps to add two Asset Publishers to the page:
 3.  Drag and drop one Asset Publisher to the page's right column and the other
     to the page's left column. 
 
-![Figure x: This screenshot shows the Asset Publisher being placed in the page's right column. The narrow blue bar indicates where the application will appear when you release the mouse button.](../../../images/001-drag-asset-publisher.png)
+![Figure 1: This screenshot shows the Asset Publisher being placed in the page's right column. The narrow blue bar indicates where the application will appear when you release the mouse button.](../../../images/001-drag-asset-publisher.png)
 
 ## The About Us Page [](id=the-about-us-page)
 

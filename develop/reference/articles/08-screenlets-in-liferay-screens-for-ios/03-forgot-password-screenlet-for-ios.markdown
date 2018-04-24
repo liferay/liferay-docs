@@ -30,6 +30,17 @@ available authentication methods are:
 - Screen name
 - User id
 
+## JSON Services Used [](id=json-services-used)
+
+Screenlets in Liferay Screens call JSON web services in the portal. This 
+Screenlet calls the following services and methods.
+
+| Service | Method | Notes |
+| ------- | ------ | ----- |
+| `UserService` | `sendPasswordByEmailAddress` |  |
+| `UserService` | `sendPasswordByUserId` |  |
+| `UserService` | `sendPasswordByScreenName` |  |
+
 ## Module [](id=module)
 
 - Auth
