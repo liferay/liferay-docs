@@ -43,12 +43,17 @@ or in your Liferay installation itself. Open your Liferay installation's
 the `com.liferay.workflow.kaleo.runtime.impl-[version].jar`. The definitions are
 in the `META-INF/definitions` folder (see the diagrams
 [here](/develop/tutorials/-/knowledge_base/6-2/designing-a-kaleo-workflow-definition)).
-Once you have the XML definition files locally, you can upload them into
-Liferay. Check out the article on uploading definitions to do that <!--LINK-->.
+Once you have the XML definition files locally, upload them into Liferay:
+
+1.  Navigate to Control Panel &rarr; Configuration &rarr; Workflow Definition.
+
+2.  Click the Add button (![Add](../../images/icon-add.png)).
+
+3.  Give the workflow a descriptive title, then click *Select File* and find
+    the XML file. Once uploaded it appears in the list of definitions.
 
 Alternatively, you can look at the pre-existing definitions to get ideas while
 designing and building your own definition. 
-
 
 <!-- Do you need a real life example to convince you that workflow is
 important? Grab a cup of coffee and settle in. Story about ancient Greek
