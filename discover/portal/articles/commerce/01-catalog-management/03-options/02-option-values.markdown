@@ -46,9 +46,7 @@ steps:
     a value and make changes to the *Option Value Detail* form on the right.
 
 3.  Click on the ![Add](../../../images/icon-add.png) button and fill in the
-    *Option Value Detail* form as
-    [above](/discover/portal/-/knowledge_base/7-1/option-values#creating-option-values-at-the-catalog-scope)
-    .
+    *Option Value Detail* form as described above.
 
 4.  Click *Save*. Repeat steps 3 and 4 to create additional values.
 

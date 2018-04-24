@@ -2,20 +2,20 @@
 
 The catalog supports three product types: simple, grouped and virtual.
 
-**Simple Products:** A simple product is any physical product for which inventory is tracked. Almost
-any physical item can be a simple product.
+**Simple Products:** A simple product is any physical product for which
+inventory is tracked. Almost any physical item can be a simple product.
 
-**Grouped Products:** A grouped product consists of two or more products from the catalog,
-packaged together to be sold as a single item.  Grouped products are not tracked
-in inventory--instead, the catalog tracks all of the products contained in the
-group individually. A grouped product can contain simple products, other grouped
-products, or virtual products.
+**Grouped Products:** A grouped product consists of two or more products from
+the catalog, packaged together to be sold as a single item.  Grouped products
+are not tracked in inventory--instead, the catalog tracks all of the products
+contained in the group individually. A grouped product can contain simple
+products, other grouped products, or virtual products.
 
-**Virtual Products:** A virtual product is any non-physical product, for which
-there is typically no inventory tracking at all. This may mean that the product
-is downloaded rather than shipped, as in the case of a music file or an
-electronic publication. Services, warranties and other goods that might be
-neither shipped nor downloaded would also be virtual products.
+**Virtual Products:** A virtual product is any non-physical product. Typically,
+a virtual product's inventory is not tracked. This may mean that the product is
+downloaded rather than shipped, as in the case of a music file or an electronic
+publication. Services, warranties and other goods that might be neither shipped
+nor downloaded would also be virtual products.
 
 ## Creating a Product
 
@@ -31,9 +31,9 @@ To create a product:
 
 **Title**: Name your product. This is the only required field.
 
-**Short Description**: Enter an abstract of the product's full description for
-use where brevity is desired. Text entered here could be displayed where the
-product appears in thumbnail form or in search results--anywhere space is
+**Short Description**: Enter an abstract of the product's full description if
+you need to display brief version. Text entered here could be displayed where
+the product appears in thumbnail form or in search results--anywhere space is
 limited.
 
 **Full Description**: This text would typically be displayed to customers on the
@@ -45,7 +45,7 @@ click on the *Code View* (</>) button on the right to edit the html directly.
 **Friendly URL**: This is the URL for the product page. It auto-fills but can be
 changed.
 
-**Meta Title, Meta Keywords, Meta Description**: descriptors entered in these
+**Meta Title, Meta Keywords, Meta Description**: Descriptors entered in these
 fields will help search engines locate your products. 
 
 **Schedule**: Products can be displayed to customers for a preset window of
@@ -68,9 +68,9 @@ from customers' view.
     starting with a *Details* tab where you can edit entries from the *Add
     Product* form.
 
-    **When a Grouped Product** is created, it is necessary to specify the
-    products that it will contain. A grouped product has an extra
-    tab--*Grouped*--in its product tab bar. From the *Grouped* tab, click on the
+    **When a Grouped Product** is created, you need to specify the products that
+    it will contain. A grouped product has an extra tab--*Grouped*--in its
+    product tab bar. From that tab, click on the
     ![Add](../../../../images/icon-add.png) button in the upper-right to select
     any number of products. Once products have been added to the group, they can
     be edited individually (![options](../../../../images/icon-options.png)

@@ -86,10 +86,17 @@ your purposes.
 
 ### Images
 
-You may want to upload images and associate them with a product category. These
+You may want to upload images and associate them with product categories. These
 images can be displayed on a category display page, on the display pages for
 products that are assigned to the category, or anywhere else you want to display
-category content.
+category content. They can be easily updated by publishing a new category
+image.
+
+Category images can also be displayed dynamically: you can designate a page to
+display content--including category images for whatever category a user is
+searching for. See
+[category detail page](/discover/portal/-/knowledge_base/7-1/category-detail-page)
+for more information.
 
 To assign images to a category:
 
@@ -97,8 +104,10 @@ To assign images to a category:
     *Categories*. Then click ![Options](../../../images/icon-options.png)
     &rarr; *Edit*, and select the *images* tab.
 
-2.  Click on the [Add](../../../images/icon-add.png) button and make selections
-    from the pop-up to either upload an image or choose one from the Documents
-    and Media Repository.
+2.  Click on the [Add](../../../images/icon-add.png) button. You can either
+    upload an image or choose one from the Documents and Media Repository.
 
 3.  Click *Save*.
+
+<!--Need to add material on setting to priority. Highest priority doc is the one
+published, but need to see it to document it-->

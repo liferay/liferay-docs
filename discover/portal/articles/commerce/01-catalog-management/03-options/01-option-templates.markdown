@@ -1,8 +1,7 @@
 # Option Templates 
 
 To create an option and apply it to a product, you must first create an option
-template. Once created, an option template is available to the whole catalog,
-but it must be deployed to individual products before it can be used. 
+template. Once created, and option template can be assigned to any product in the catalog.
 
 ## Creating an Option Template
 
@@ -26,8 +25,8 @@ options to customers:
 box.
 
 -*Radio:* This field type displays option values with a radio button next to
-each. Since radio buttons cannot be deselected, this field type is best suited
-for options where a selection is required.
+each. Since radio buttons cannot be deselected, this field type should be be
+used for options where a selection is not required.
 
 -*Date:* This field type prompts buyers to select a specific date--applicable
 for services, deliveries, and the like. It does not take option values.
@@ -68,12 +67,12 @@ this field is filled automatically, most users can safely leave it alone.
 3.  Click *Save*.
 
 Once an option has been created and saved, it is displayed in the list on the
-left side of the screen. But it cannot be used until it has been deployed to
-a product and--depending on its configuration--assigned option values.
+left side of the screen. But it cannot be used until it has been assigned to
+a product.
 
-## Deploying an Option Template to a Product
+## Assigning an Option Template to a Product
 
-To deploy an option template to a product, follow these steps:
+To assign an option template to a product, follow these steps:
 
 1.  Go to the catalog, open a product and click on the *Options* tab.
 
@@ -82,12 +81,12 @@ To deploy an option template to a product, follow these steps:
 
 ## Editing an option template at the product scope
 
-Once an option template has been deployed to a product, you can make changes to
-it that only affect that product--other products that deploy the same template
+Once an option template has been assigned to a product, you can make changes to
+it that only affect that product--other products that assign the same template
 will not be affected. Follow these steps:
 
 1.  Go to the catalog, select the product in question, and open the *Options*
-    tab. If you just finished deploying a template to the product in question,
+    tab. If you just finished assigning a template to the product in question,
     then you are already on this page.
 
 2.  On the left side of the page is a list of the option templates this product
