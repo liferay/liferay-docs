@@ -6,7 +6,7 @@ default themes are nice, you may wish to create your own custom look and feel
 for your site. 
 
 @product@ provides an easy-to-use tool called the 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator) 
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
 that helps automate the theme development process, but you can use other tools 
 and environments, such as 
 [@ide@](/develop/tutorials/-/knowledge_base/7-1/creating-themes-with-liferay-ide)
@@ -24,7 +24,7 @@ setting the base theme.
 What if you only wish to make a minor change to the overall look and feel? Let's
 say you just want to change a menu animation. Instead of creating an entire
 theme for this single modification, you can 
-[create a Themelet](/develop/tutorials/-/knowledge_base/7-1/themelets).
+[create a Themelet](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes).
 Themelets are modular, customizable, reusable, shareable pieces of code that 
 extend a theme. They enable reusable code for themes. Instead of rewriting the 
 code each time, you can use the same themelet in each theme.
