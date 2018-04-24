@@ -23,9 +23,9 @@ capabilities of your workspace's modules. What if, however, your module depends
 on a third party project that is not included in either space (e.g.,
 [Google Guava](https://opensource.google.com/projects/guava))?. The `resolve`
 task fails by default if your project depends on this project type. You
-probably plan to have this project deployed and available in @product@ at
-runtime, so it's not a concern, but the resolver doesn't know that; you'll need
-to customize the resolver to bypass this.
+probably plan to have this project deployed and available at runtime, so it's
+not a concern, but the resolver doesn't know that; you must customize the
+resolver to bypass this.
 
 There are three ways you can do this:
 
@@ -41,9 +41,10 @@ tutorial.
 
 If you only have one module that depends on the third party project, you can
 bypass the resolver failure by embedding the JAR in your module. This is not
-best practice if more than one project in your @product@ instance depends on
-that module. See the
+a best practice if more than one project in the OSGi container depends on that
+module. See the 
 [Embedding Libraries in a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module#embedding-libraries-in-a-module)
+
 section for more details.
 
 ### Add the Third Party Library's Capabilities to the Current Static Set of Resolver Capabilities [](id=add-the-third-party-librarys-capabilities-to-the-current-static-set-of-reso)
@@ -56,17 +57,17 @@ following Gradle code into your workspace's root `build.gradle` file:
         providedModules group: "GROUP_ID", name: "NAME", version: "VERSION"
     }
 
-For example, if you wanted to provide
-[Google Guava](https://opensource.google.com/projects/guava) as a provided
-module, it would look like this:
+For example, if you wanted to add 
+[Google Guava](https://opensource.google.com/projects/guava) 
+as a provided module, it would look like this:
 
     dependencies {
         providedModules group: "com.google.guava", name: "guava", version: "23.0"
     }
 
-Not only does this provide the third party dependency to the resolver, it also
-downloads and includes it in your @product@ bundle's `osgi/modules` folder when
-you initialize it (e.g., `gradlew initBundle`).
+This both provides the third party dependency to the resolver, and it downloads
+and includes it in your @product@ bundle's `osgi/modules` folder when you
+initialize it (e.g., `gradlew initBundle`).
 
 ### Skip the Resolving Process for Your Module [](id=skip-the-resolving-process-for-your-module)
 
@@ -83,7 +84,7 @@ the following Gradle code at the bottom of the file:
 Be sure to replace the `PROJECT_NAME` filler with your module's name (e.g.,
 `test-api`).
 
-If you prefer to disable the Target Platform plugin all together, you can add a
+If you prefer to disable the Target Platform plugin altogether, you can add a
 slightly different directive to your `build.gradle` file:
 
     targetPlatform {
@@ -92,8 +93,8 @@ slightly different directive to your `build.gradle` file:
         }
     }
 
-This not only skips the `resolve` task execution, it also disables BOM
-dependency management. 
+This both skips the `resolve` task execution and disables BOM dependency
+management. 
 
 Now the `resolve` task skips your module project.
 
@@ -101,33 +102,33 @@ Now the `resolve` task skips your module project.
 
 There are times when manually specifying your project's list of dependent JARs
 does not suffice. If your app requires a customized @product@ instance to
-properly run, you must regenerate the target platform's default list of
-capabilities with an updated list. Two examples of a customized @product@
-instance are described below:
+run, you must regenerate the target platform's default list of capabilities with
+an updated list. Two examples of a customized @product@ instance are described
+below:
 
 **Example 1: Leveraging an External Feature**
 
-There are many external features/frameworks available for @product@ that are not
-included in the downloadable bundle by default. Once deploying a
-feature/framework to @product@, it's available for your module projects to
-leverage. When validating your app, however, the `resolve` task does not have
-access to external capabilities not included by default. For example, Audience
-Targeting is an example of this type of external framework. If you're creating a
-Liferay Audience Targeting rule that depends on the Audience Targeting
-framework, you can't easily provide a slew of JARs for your module. In this
-case, you should install the platform you wish to depend on and regenerate an
-updated list of capabilities that your @product@ instance will provide.
+There are many external features/frameworks available that are not included in
+the downloadable bundle by default. After deploying a feature/framework, it's
+available for your module projects to leverage. When validating your app,
+however, the `resolve` task does not have access to external capabilities not
+included by default. For example, Audience Targeting is an example of this type
+of external framework. If you're creating a Liferay Audience Targeting rule that
+depends on the Audience Targeting framework, you can't easily provide a slew of
+JARs for your module. In this case, you should install the platform your code
+depends on and regenerate an updated list of capabilities that your @product@
+instance provides.
 
 **Example 2: Leveraging a Customized Core Feature**
 
-You can easily extend @product@'s core features to provide a customized
-experience for your intended audience. When core features are customized, you'll
-develop your app to assume these customizations are present when it's deployed.
-The new capabilities resulting from your customizations are not available in the
-target platform's default list of capabilities. Therefore, when your application
-relies on these capabilities that are not available by default, it fails during
-the `resolve` task. To get around this, you must regenerate a new  list of
-capabilities that your customized @product@ instance will provide.
+You can extend @product@'s core features to provide a customized experience for
+your intended audience. Once deployed, you can assume these customizations are
+present and build other things on top of them. The new capabilities resulting
+from your customizations are not available, however, in the target platform's
+default list of capabilities. Therefore, when your application relies on
+non-default capabilities, it fails during the `resolve` task. To get around
+this, you must regenerate a new list of capabilities that your customized
+@product@ instance provides.
 
 To regenerate the target platform's capabilities (distro JAR) based on the
 current workspace's @product@ instance, follow the steps below:
@@ -139,17 +140,16 @@ current workspace's @product@ instance, follow the steps below:
 
 2.  Download the
     [BND Remote Agent JAR file](https://search.maven.org/#search%7Cga%7C1%7Cbiz.aqute.remote.agent)
-    and copy it into your @product@ instance's `osgi/modules` folder.
+    and copy it into the `osgi/modules` folder.
 
-3.  From the root folder of you workspace, run the following command:
+3.  From the root folder of your workspace, run the following command:
 
         bnd remote distro -o custom_distro.jar com.liferay.ce.portal.distro 7.0.6
 
     This connects to the newly deployed BND agent running in @product@ and
     generates a new distro JAR named `custom_distro.jar`. All other capabilities
-    will be overridden based on the @product@ instance you're generating the
-    custom distro against, so verify the workspace bundle is the version you
-    plan to release for in production.
+    inherit their functionality based on your @product@ instance, so verify the
+    workspace bundle is the version you plan to release in production.
 
 4.  Navigate to your workspace's root `build.gradle` file and add the following
     dependency:
@@ -159,5 +159,5 @@ current workspace's @product@ instance, follow the steps below:
         }
 
 Now your workspace is pointing to a custom distro JAR file instead of the
-default one provided. Run the `resolve` task to validate your custom modules
-against the custom set of capabilities.
+default one provided. Run the `resolve` task to validate your modules against
+the new set of capabilities.

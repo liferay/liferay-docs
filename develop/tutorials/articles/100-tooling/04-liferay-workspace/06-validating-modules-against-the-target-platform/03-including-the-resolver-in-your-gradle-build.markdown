@@ -3,31 +3,30 @@
 By default, Liferay Workspace provides the `resolve` task as an independent
 executable. It's provided by the
 [Target Platform](/develop/reference/-/knowledge_base/7-0/target-platform-gradle-plugin)
-Gradle plugin and is not integrated in any other Gradle processes. This is
-designed to give you all authority of your Gradle build and not impose
-strategies you may not want included in your default build process.
+Gradle plugin and is not integrated in any other Gradle processes. This gives
+you control over your Gradle build without imposing strategies you may not want
+included in your default build process.
 
-With that said, the `resolve` task can be very useful to include in your build
-process if you'd like to check for errors in your module projects before
+With that said, the `resolve` task can be useful to include in your build
+process if you want to check for errors in your module projects before
 deployment. Instead of resolving your projects separately from your standard
 build, you can build and resolve them all in one shot.
 
 In Liferay Workspace, the recommended path for doing this is adding it to the
 default `check` Gradle task. The `check` task is provided by default in a
 workspace by the
-[java](https://docs.gradle.org/current/userguide/java_plugin.html#_lifecycle_tasks)
+[Java](https://docs.gradle.org/current/userguide/java_plugin.html#_lifecycle_tasks)
 plugin. Adding the `resolve` task to the `check` lifecycle task also promotes
 the `resolve` task to run for CI and other test tools that typically run the
 `check` task for verification. Of course, Gradle's `build` task also depends on
-the `check` task, so you're able to run `gradlew build` and run the resolver
-too.
+the `check` task, so you can run `gradlew build` and run the resolver too.
 
-To automatically call the `resolve` task during the `check` task, open your
+To call the `resolve` task during the `check` task automatically, open your
 workspace's root `build.gradle` file and add the following directive:
 
     check.dependsOn resolve
 
-You can also configure this for specific projects in a workspace, if you don't
+You can also configure this for specific projects in a workspace if you don't
 want all modules to be included in the global `check`.
 
 If the `resolve` task runs during every Gradle build, you may want to prevent
