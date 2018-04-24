@@ -6,7 +6,7 @@ Leveraging the Staged Model Repository framework in your app is easy once you've
 You'll step through a quick example to demonstrate leveraging the
 `StagedModelRepository` interface in a staged model data handler. The code
 snippets originate from Liferay's Bookmarks app, specifically, for Bookmarks
-Entry entities.
+Entries.
 
 1.  Create a getter and setter method to make a `StagedModelRepository` object
     available for the `BookmarksEntry` entity:

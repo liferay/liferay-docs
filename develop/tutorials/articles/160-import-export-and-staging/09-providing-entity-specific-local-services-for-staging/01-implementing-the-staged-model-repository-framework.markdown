@@ -1,10 +1,9 @@
 # Implementing the Staged Model Repository Framework
 
-Providing specialized local services for your app's staging functionality is an
-important functional step. It lets you abstract the additional staging-specific
-information you must add for your local services away from your data handlers.
-Before you can begin using the Staged Model Repository framework in your app,
-you'll need to implement it.
+Providing specialized local services for your app's staging functionality lets
+you abstract the additional staging-specific information away from your data
+handlers. Before you can begin using the Staged Model Repository framework in
+your app, you'll need to implement it.
 
 You'll step through a quick example to demonstrate implementing the
 `StagedModelRepository` interface to use for a staged model. This example
@@ -122,8 +121,11 @@ entities.
     model repository calls the local service's `deleteEntries(...)` method with
     no additional changes.
 
+    Finish implementing the `StagedModelRepository` so it's usable in your data
+    handlers.
+
 Awesome! You've implemented the Staged Model Repository framework for your app!
 If you're interested in leveraging this framework after the implementation
 process, see the
-[Using the Staged Model Repository Framework]()
+[Using the Staged Model Repository Framework](/develop/tutorials/-/knowledge_base/7-1/using-the-staged-model-repository-framework)
 tutorial.
