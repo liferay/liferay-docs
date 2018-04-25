@@ -344,6 +344,8 @@ all load times greater than 3,000 ms in red text.
 
 ![Figure 4.16: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics-01.png)
 
+#### Snapshot Metrics [](id=snapshot-metrics)
+
 To view other metrics and statistics of your server's performance, click the 
 *Snapshot Metrics* tab near the top of the page. These metrics are broken down 
 into three main categories: *Application*, *JVM*, and *Server*. Application is 
