@@ -7,7 +7,7 @@ installing and particular components from enabling, saving you from the
 uninstalling and disabling them individually with the Application Manager,
 Components list, or Gogo shell. 
 
-Using the Control Panel's Bundle Blackist screen and Component Blaclist
+Using the Control Panel's Bundle Blacklist screen and Component Blacklist
 Configuration screen are the best ways to create blacklist files. 
 
 +$$$
@@ -28,13 +28,13 @@ $$$
 
 Follow these steps to blacklist modules:
 
-1.  In the Control Panel, navigate to *Configuration* &rarr; *System Settings* 
-    &rarr; *Bundle Blackist*.  
+1.  In the Control Panel, navigate to *Configuration* &rarr; *System Settings*
+    &rarr; *Bundle Blacklist*. 
 
 2.  In the Bundle Blacklist screen, add the bundle symbolic names (see the table
     below) for the OSGi module JARs, LPKGs, or WARs to uninstall. Click on the
     *Save* button.
-    
+ 
     ![Figure 1: This blacklist uninstalls the
     `com.liferay.docs.greeting.api` OSGi module, Liferay Marketplace LPKG, and
     `classic-theme` WAR.](../../images/bundle-blacklist-configuration.png)
