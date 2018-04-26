@@ -8,33 +8,33 @@ view server metrics, manage environments, and more.
 
 This article's sections each detail one or more of LCS's features: 
 
--   [**What LCS Stores About Your @product@ Servers:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers)
+-   [**What LCS Stores About Your @product@ Servers:**](#what-lcs-stores-about-your-liferay-servers)
     For LCS to work, the LCS servers must store certain information about your 
     servers. Sensitive data, however, isn't stored on the LCS servers. This 
     section describes the data that LCS does and doesn't store. 
 
--   [**Managing LCS Users in Your Project:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-lcs-users-in-your-project)
+-   [**Managing LCS Users in Your Project:**](#managing-lcs-users-in-your-project)
     Learn how to manage your LCS project's users by assigning them roles. 
 
--   [**Using the Dashboard:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-the-dashboard)
+-   [**Using the Dashboard:**](#using-the-dashboard)
     Learn how to manage projects, environments, and servers in LCS. This 
     includes applying fix packs, monitoring server status, viewing server 
     metrics, and more. 
 
--   [**Using Web Notifications:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-web-notifications) 
+-   [**Using Web Notifications:**](#using-web-notifications) 
     LCS displays web notifications that you can view by clicking the bell icon 
     next to the user menu in the Dockbar. Learn how to manage these. 
 
--   [**Managing Your LCS Account:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-your-lcs-account)
+-   [**Managing Your LCS Account:**](#managing-your-lcs-account)
     Learn how to manage your LCS account. This includes configuring LCS to send 
     you notification emails when specific events occur in your LCS projects, and 
     setting general account preferences. 
 
--   [**Managing @product@ Subscriptions:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions)
+-   [**Managing @product@ Subscriptions:**](#managing-liferay-dxp-subscriptions)
     Learn how to view and manage your @product@ subscriptions for the servers in 
     your LCS project. 
 
--   [**Understanding Environment Tokens:**](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens)
+-   [**Understanding Environment Tokens:**](#using-environment-tokens)
     Learn about the environment tokens that you use to connect your servers to 
     LCS. 
 
@@ -77,7 +77,7 @@ non-sensitive properties:
 
 LCS also lets you prevent it from analyzing specific properties of your 
 choosing. For more information on this, see 
-[the section on using environment tokens](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens). 
+[the section on using environment tokens](#using-environment-tokens). 
 
 Now that you know what information is stored on the LCS servers, you're ready to 
 learn how to manage your LCS projects. This includes renaming projects and 
@@ -226,10 +226,10 @@ Complete these fields to create your environment:
     environment. Elastic subscriptions let you register an unlimited number of 
     servers. This is crucial for auto-scaling environments in which servers are 
     created and destroyed automatically. For more information, see 
-    [the documentation on elastic subscriptions](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#elastic-subscriptions). 
+    [the documentation on elastic subscriptions](#elastic-subscriptions). 
 -   **Services:** The LCS services to enable in the environment. Note that 
     although 
-    [LCS doesn't access security sensitive properties](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers), 
+    [LCS doesn't access security sensitive properties](#what-lcs-stores-about-your-liferay-servers), 
     you may have additional properties you want to prevent LCS from analyzing. 
     Enter them into the popup that appears when you click *Blacklisted 
     Properties*. This Blacklisted Properties popup lists the currently 
@@ -270,7 +270,7 @@ The UI is segmented into three tabs:
     each separately. 
 
 2.  **Registration:** lets you generate and download 
-    [*environment tokens*](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens) 
+    [*environment tokens*](#using-environment-tokens) 
     that connect your servers to LCS. 
 
 3.  **Environment Settings:** lets you change the environment's name, location, 
@@ -494,7 +494,7 @@ use LCS to work with your @product@ subscriptions.
 ## Managing @product@ Subscriptions [](id=managing-liferay-dxp-subscriptions)
 
 LCS lets you use and view your @product@ subscriptions. Recall that when you 
-[create an environment](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#creating-an-environment), 
+[create an environment](#creating-an-environment), 
 you assign its subscription type. Registering a server in that environment 
 consumes an activation key from that subscription type. You can also view your 
 project's available subscriptions and see how they're being used. 
@@ -576,7 +576,7 @@ automatically. You can view data on your elastic servers from the
 
 **Note:** To register elastic servers in an environment, that environment must 
 be set as elastic when it's created. For more information, see the 
-[documentation on creating environments](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#creating-an-environment).
+[documentation on creating environments](#creating-an-environment).
 
 $$$
 
@@ -618,7 +618,7 @@ There are a few things to keep in mind when using environment tokens:
     servers using the old file are disconnected from LCS and can't reconnect 
     until receiving the new file. If the server disconnects due to token 
     regeneration and is running version 4.0.2 or later of the LCS client app, 
-    the server enters a 7-day grace period during which it functions normally. 
+    the server enters a 30-day grace period during which it functions normally. 
     This gives the administrator time to use the new token file to reconnect to 
     LCS. Servers running earlier versions of the LCS client app present users 
     with an error page until the administrator reconnects with the new token. 
@@ -629,7 +629,7 @@ There are a few things to keep in mind when using environment tokens:
 
 -   Minimal information (server name, location, etc...) is used to activate a 
     server with LCS. You can change this information from 
-    [the server view in LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-the-server-view) 
+    [the server view in LCS](#using-the-server-view) 
     at any time. 
 
 -   Environment tokens connect using OAuth. Using an environment token overrides 
