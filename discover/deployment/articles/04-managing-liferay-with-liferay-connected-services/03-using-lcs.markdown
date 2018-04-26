@@ -497,9 +497,9 @@ use LCS to work with your Liferay EE subscriptions.
 LCS lets you use and view your Liferay Portal EE subscriptions. Recall that when 
 you 
 [create an environment](#creating-an-environment), 
-you assign its subscription type. Registering a server in that environment 
-consumes an activation key from that subscription type. You can also view your 
-project's available subscriptions and see how they're being used. 
+you assign its subscription type. Registering an unactivated server in that 
+environment consumes an activation key from that subscription type. You can also 
+view your project's available subscriptions and see how they're being used. 
 
 Depending on your subscription agreement, LCS also lets you register servers via 
 *elastic subscriptions*. Elastic subscriptions let you register an unlimited 
@@ -558,18 +558,20 @@ $$$
 
 ### Decommissioning Servers [](id=decommissioning-servers)
 
-To decommission a server and free its activation key for reuse, select the 
-server's environment on the left and then select the server. In the server's 
-*Server Settings* tab, select *Unregister*. Also note that when you shut down a 
-server normally, its activation key is immediately freed for reuse. If the 
-server crashes or its shutdown is forced (e.g., kill), its activation key is 
-freed for reuse within six minutes. 
+If you activate servers with LCS, it's important to know how decommissioning 
+those servers frees their activation keys for reuse. To decommission such a 
+server and free its activation key for reuse, select the server's environment on 
+the left and then select the server. In the server's *Server Settings* tab, 
+select *Unregister*. Also note that when you shut down an LCS-activated server 
+normally, its activation key is immediately freed for reuse. If the server 
+crashes or its shutdown is forced (e.g., kill), its activation key is freed for 
+reuse within six minutes. 
 
 Next, you'll learn how to use elastic subscriptions with LCS. 
 
 ### Elastic Subscriptions [](id=elastic-subscriptions)
 
-Elastic subscriptions let you register an unlimited number of servers. This is 
+Elastic subscriptions let you activate an unlimited number of servers. This is 
 crucial for auto-scaling environments in which servers are created and destroyed 
 automatically. You can view data on your elastic servers from the 
 *Subscriptions* tab's *Elastic Subscriptions* tab. 
@@ -593,18 +595,18 @@ report of the table's data, click *Download Report*. Also, you can use the
 and month to show data from, respectively. The data in both the graph and the 
 table reflect your selections here. 
 
-The next section shows you how to use environment tokens to activate servers 
+The next section shows you how to use environment tokens to register servers 
 with LCS. 
 
 ## Understanding Environment Tokens [](id=using-environment-tokens)
 
-To activate a server in an environment, you must use that environment's token 
+To connect a server in an environment, you must use that environment's token 
 file. LCS Administrators and Environment Managers can generate and distribute 
-this file. It contains all the information the LCS client app needs to activate 
+this file. It contains all the information the LCS client app needs to register 
 the server in the environment. When the server starts up, it uses the token to 
-connect to LCS and consume an activation key from the environment's 
-subscription. This lets you activate servers automatically on startup--no 
-interaction is required. 
+connect to LCS. If the server is unactivated, it consumes an activation key from 
+the environment's subscription. This lets you register servers in LCS 
+automatically--no interaction is required. 
 
 +$$$
 
@@ -618,26 +620,26 @@ There are a few things to keep in mind when using environment tokens:
 
 -   Each environment can have only one token file. If you regenerate the token, 
     servers using the old file are disconnected from LCS and can't reconnect 
-    until receiving the new file. If the server disconnects due to token 
-    regeneration and is running version 4.0.2 or later of the LCS client app, 
-    the server enters a 7-day grace period during which it functions normally. 
-    This gives the administrator time to use the new token file to reconnect to 
-    LCS. Servers running earlier versions of the LCS client app present users 
-    with an error page until the administrator reconnects with the new token. 
+    until receiving the new file. If such a server was activated with LCS and is 
+    running version 4.0.2 or later of the LCS client app, the server enters a 
+    30-day grace period during which it functions normally. This gives the 
+    administrator time to use the new token file to reconnect to LCS. Servers 
+    running earlier versions of the LCS client app present users with an error 
+    page until the administrator reconnects with the new token. 
 
 -   Use caution when distributing the token file, as anyone can use it to 
     connect to your environment and consume an activation key in your 
     subscription. 
 
--   Minimal information (server name, location, etc...) is used to activate a 
+-   Minimal information (server name, location, etc...) is used to register a 
     server with LCS. You can change this information from 
     [the server view in LCS](#using-the-server-view) 
     at any time. 
 
 -   Environment tokens connect using OAuth. Using an environment token overrides 
     the OAuth authorization cycle. If LCS Administrators or Environment Managers 
-    have never activated servers in LCS, the first time they do so an OAuth 
-    authorization entry is created in LCS. If they've previously activated 
+    have never registered servers in LCS, the first time they do so an OAuth 
+    authorization entry is created in LCS. If they've previously registered 
     servers in LCS, their existing credentials are used when they create a token 
     file. 
 
