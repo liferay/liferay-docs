@@ -3,8 +3,9 @@
 Once your Liferay Portal server is connected to LCS, you can get down to the 
 business that LCS is designed for--managing and monitoring your servers. If 
 you're not already there, log in with your account on 
-[lcs.liferay.com](https://lcs.liferay.com). This is where you'll apply updates, 
-view server metrics, manage environments, and more. 
+[lcs.liferay.com](https://lcs.liferay.com). 
+This is where you'll apply updates, view server metrics, manage environments, 
+and more. 
 
 This article's following sections each detail one or more of the features 
 available in LCS: 
@@ -78,7 +79,7 @@ non-sensitive properties:
 
 LCS also lets you prevent it from analyzing specific properties of your 
 choosing. For more information on this, see 
-[the section on using environment tokens](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens). 
+[the section on using environment tokens](#using-environment-tokens). 
 
 Now that you know what information is stored on the LCS servers, you're ready to 
 learn how to manage your LCS projects. This includes renaming projects and 
