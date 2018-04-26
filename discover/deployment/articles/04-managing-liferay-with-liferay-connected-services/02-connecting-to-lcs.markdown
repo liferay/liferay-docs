@@ -11,7 +11,7 @@ Follow these steps to connect your Liferay Portal server to LCS:
     projects, select the one you want to register this server under from the 
     menu to the right of the Dashboard tab.  
 
-    ![Figure 4.x: Select your LCS project from the menu highlighted by the red box in this screenshot.](../../images/lcs-select-project.png)
+    ![Figure 4.4: Select your LCS project from the menu highlighted by the red box in this screenshot.](../../images/lcs-select-project.png)
 
 3.  Select or create the environment to connect your server to. If you're 
     activating your server with LCS, your server will consume an activation key 
@@ -99,6 +99,6 @@ Here's a full description of what a connected LCS client app displays:
 - **Environment:** This link takes you to this server's LCS environment. 
 - **Server Dashboard:** This link takes you to the server on LCS. 
 
-![Figure 4.8: The server is connected to LCS.](../../images/lcs-server-connected.png)
+![Figure 4.6: The server is connected to LCS.](../../images/lcs-server-connected.png)
 
 Awesome! Now you're ready to use LCS. The next article shows you how to do this. 

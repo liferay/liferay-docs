@@ -99,7 +99,7 @@ app. To add users to your project, you must contact Liferay support.
 
 $$$
 
-![Figure 4.x: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
+![Figure 4.7: The Users tab lets you manage the LCS users in your project.](../../images/lcs-users.png)
 
 The *Users* tab displays a list of the users in your project. This list includes 
 each user's name, email, image, LCS roles, and a *Manage Roles* button. Each LCS 
@@ -155,7 +155,7 @@ LCS Environment Viewer) and the LCS Administrator role at the same time.
 
 $$$
 
-![Figure 4.x: You can assign or revoke a user's LCS roles.](../../images/lcs-user-roles.png)
+![Figure 4.8: You can assign or revoke a user's LCS roles.](../../images/lcs-user-roles.png)
 
 Great! Now you know how to manage users and roles in your LCS projects. Now it's 
 time to get to the heart of LCS: the Dashboard. 
@@ -181,7 +181,7 @@ message appears for a server when the server is offline. Status messages also
 appear for servers when fix packs are available, monitoring is unavailable, the 
 patching tool is unavailable, or other events occur that relate to LCS. 
 
-![Figure 4.x: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
+![Figure 4.9: The LCS project view shows an overview of your LCS project.](../../images/lcs-project-view.png)
 
 LCS lists the environments in your project on the left side of the screen. You 
 can also create new environments here by clicking the *Add Environment* tab 
@@ -238,7 +238,7 @@ Complete these fields to create your environment:
 
 When you're finished with your selections, click *Create Environment*. 
 
-![Figure 4.x: The New Environment popup.](../../images/lcs-new-environment.png)
+![Figure 4.10: The New Environment popup.](../../images/lcs-new-environment.png)
 
 Next, you'll learn how to manage your environments. 
 
@@ -280,7 +280,7 @@ The UI is segmented into three tabs:
     button to save any changes you make in the Environment Settings tab. You can 
     also delete the environment by clicking *Delete Environment*. 
 
-![Figure 4.x: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
+![Figure 4.11: The LCS environment view shows an overview of an LCS environment.](../../images/lcs-environment-view.png)
 
 Regardless of the tab you're in, the left side of the screen displays a list of 
 the environment's servers. To view a server's settings, click the server's gear 
@@ -342,7 +342,7 @@ background is red for values above 3,000 ms, orange for values from 2,000 to
 3,000 ms, and green for values less than 2,000 ms. Likewise, the table displays 
 all load times greater than 3,000 ms in red text. 
 
-![Figure 4.16: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics-01.png)
+![Figure 4.12: The Page Analytics interface in the LCS server view.](../../images/lcs-page-analytics-01.png)
 
 #### Snapshot Metrics [](id=snapshot-metrics)
 
@@ -358,7 +358,7 @@ portlets in your server. The Cache category lists Liferay Single VM metrics and
 Hibernate metrics. The following screenshot shows the statistics in the Portlets 
 category.
 
-![Figure 4.17: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
+![Figure 4.13: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images/lcs-server-metrics-application-portlets.png)
 
 The JVM category, as its name indicates, shows statistics about the JVM running 
 on your server. This includes data on the garbage collector and memory. The 
@@ -367,7 +367,7 @@ collector item. The memory metrics are presented in a bar chart that shows the
 usage of the PS Survivor Space, PS Old Gen, PS Eden Space, Code Cache, and PS 
 Perm Gen.
 
-![Figure 4.18: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
+![Figure 4.14: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images/lcs-server-metrics-jvm.png)
 
 Server is the third category in Snapshot Metrics. The Server category shows 
 additional information about how your server is running. For example, a 
@@ -375,7 +375,7 @@ horizontal bar graph shows the number of current threads running on your server.
 Similarly, horizontal bar graphs are used to represent the JDBC connection 
 pools. 
 
-![Figure 4.19: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
+![Figure 4.15: The LCS server metrics show current threads and JDBC connection pools.](../../images/lcs-metrics-server.png)
 
 Note that in Snapshot Metrics, the application and garbage collector metrics are 
 based on data collected by LCS from server registration to the present. Memory 
@@ -388,7 +388,7 @@ page. The available and installed fix packs appear in separate tables. The
 available fix packs table functions exactly like the Fix Packs table in 
 environment view for downloading and installing fix packs. 
 
-![Figure 4.20: The Fix Packs tab displays your server's available and installed fix packs.](../../images/lcs-server-fix-packs.png)
+![Figure 4.16: The Fix Packs tab displays your server's available and installed fix packs.](../../images/lcs-server-fix-packs.png)
 
 #### Portal Properties [](id=portal-properties)
 
@@ -416,7 +416,7 @@ top-right of the table. For example, by checking the *Show Default Values* and
 custom property values. To show only the custom values, select only *Show Custom 
 Values*. 
 
-![Figure 4.21: Click the gear icon to select the type of portal properties to show in the table.](../../images/lcs-server-portal-properties.png)
+![Figure 4.17: Click the gear icon to select the type of portal properties to show in the table.](../../images/lcs-server-portal-properties.png)
 
 #### Details [](id=details)
 
@@ -426,7 +426,7 @@ respectively, about your Liferay Portal installation, Java installation, and
 hardware. This information is useful to the Liferay Support team in the event 
 that you need their assistance. 
 
-![Figure 4.22: The Details tab shows information about your server.](../../images/lcs-server-details.png)
+![Figure 4.18: The Details tab shows information about your server.](../../images/lcs-server-details.png)
 
 #### Server Settings [](id=server-settings)
 
@@ -452,7 +452,7 @@ see your notification history, click the *Notifications History* button. You can
 also access your notification history by selecting *My Account* from the user 
 menu in the Dockbar. 
 
-![Figure 4.23: Web notifications let you know what's happening in your LCS projects.](../../images/lcs-user-web-notifications.png)
+![Figure 4.19: Web notifications let you know what's happening in your LCS projects.](../../images/lcs-user-web-notifications.png)
 
 Next, you'll learn how to manage your LCS account. 
 
@@ -477,7 +477,7 @@ Dockbar. This takes you to a UI that contains three tabs:
     other existing rules. Each has an Actions button that lets you edit or 
     delete it. 
 
-    ![Figure 4.24: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
+    ![Figure 4.20: You can add rules to determine the events that trigger notifications.](../../images/lcs-add-notification-rule.png)
 
 -   **Notification History:** Displays your web notification history in a 
     searchable table. You can also select the date range from which to display 
@@ -487,7 +487,7 @@ Dockbar. This takes you to a UI that contains three tabs:
     change your account's language, time zone, and default LCS project. Your 
     default LCS project is the one shown each time you log in to LCS. 
 
-    ![Figure 4.25: You can change your LCS account's general preferences.](../../images/lcs-account-preferences.png)
+    ![Figure 4.21: You can change your LCS account's general preferences.](../../images/lcs-account-preferences.png)
 
 Great! Now you know how to manage your LCS account. Next, you'll learn how to 
 use LCS to work with your Liferay EE subscriptions. 
@@ -510,7 +510,7 @@ You can access these features from the *Subscriptions* tab on the upper-left of
 the LCS site. This tab contains two other tabs: *Details* and *Elastic 
 Subscriptions*. 
 
-![Figure 4.26: LCS lets you view and manage your subscriptions.](../../images/lcs-subscriptions.png)
+![Figure 4.22: LCS lets you view and manage your subscriptions.](../../images/lcs-subscriptions.png)
 
 There are four tables in the *Details* tab: 
 
@@ -582,7 +582,7 @@ be set as elastic when it's created. For more information, see the
 
 $$$
 
-![Figure 4.28: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../images/lcs-elastic-subscriptions.png)
+![Figure 4.23: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../images/lcs-elastic-subscriptions.png)
 
 The *Elastic Subscriptions* tab displays the number of elastic servers online 
 and the uptime details for each. A graph shows the number of elastic servers 
