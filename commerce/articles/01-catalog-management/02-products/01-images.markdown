@@ -14,15 +14,10 @@ Follow these steps to create a product image:
    video, or to select one from the documents and media repository.
 
 2. If you want to associate the image with a specific product variant, select
-   one from the *Options* section of the *Add Image* form. This section
-   contains a drop-down menu for each option template assigned to the product
-   (see
-   [options](/web/liferay/emporio/documentation/-/knowledge_base/7-1/options)
-   for details on option templates and option values). Select an option value
-   from the drop-down menu to associate the image with all of the product
-   variants to which that value is assigned.If multiple option templates are
-   active, you can select multiple values to associate the image only with that
-   combination of options.
+   one from the *Options* section of the *Add Image* form. (If no variants are
+   available to choose, see
+   [Options](/web/liferay/emporio/documentation/-/knowledge_base/7-1/options)
+   for details on how to create SKU contributors).
 
 3. If you want the image to be displayed on the product page for a limited
    period of time, specify display and expiration dates in the *Schedule*

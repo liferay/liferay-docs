@@ -62,10 +62,11 @@ category content.
 ### Category Display Page
 
 The category display page is a feature that creates a relationship between
-a category and a specified page. This relationship makes it easy to display and
-organize content or applications related to to that category, as changes made
-to the category will be automatically reflected on the page. A typical use case
-might involve using the page to display category content for customers.
+a category, a specified page, and a URL for that page. This relationship makes
+it easy to display and organize content or applications related to to that
+category, as changes made to the category will be automatically reflected on the
+page. A typical use case might involve using the page to display category
+content for customers.
 
 To create a category display page:
 
@@ -78,7 +79,10 @@ To create a category display page:
 
 3.  Click *Choose* and select the page you just created.
 
-4.  Click *Done* to close the pop-up and then click *Save*.
+4.  Change the *Friendly URL* if you want it to be something other than the
+    default.
+
+5.  Click *Done* to close the pop-up and then click *Save*.
 
 This process creates a relationship between the category and a blank page. At
 any point, you can populate the page with whatever content or applications suit
@@ -86,17 +90,12 @@ your purposes.
 
 ### Images
 
-You may want to upload images and associate them with product categories. These
-images can be displayed on a category display page, on the display pages for
-products that are assigned to the category, or anywhere else you want to display
-category content. They can be easily updated by publishing a new category
-image.
-
-Category images can also be displayed dynamically: you can designate a page to
-display content--including category images for whatever category a user is
-searching for. See
-[category detail page](/discover/portal/-/knowledge_base/7-1/category-detail-page)
-for more information.
+You may want to upload images and associate them with product categories. This
+allows you to designate a generic category page that will automatically display
+images and products for whatever category a buyer is searching for. These images
+can be easily updated by publishing a new category image. For more details on
+setting up a generic category page to display content dynamically, see
+[Category Detail Page](/web/liferay-emporio/documentation/-/knowledge_base/7-1/category-detail-page).
 
 To assign images to a category:
 
