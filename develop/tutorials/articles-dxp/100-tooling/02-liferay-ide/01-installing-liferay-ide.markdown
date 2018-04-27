@@ -14,14 +14,13 @@ Dev Studio. Before beginning the installation process, view Dev Studio's
 [Compatibility Matrix](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix/developer-tools)
 to get acquainted with its supported Liferay versions and application servers.
 
-**Important:** Dev Studio 3.2.x requires the Eclipse Oxygen or Photon platforms.
-If you're running a lower Eclipse version (e.g., Neon), you must upgrade
-Eclipse before Dev Studio. For example, to upgrade to Oxygen,
-copy the
-[Oxygen update site URL](http://download.eclipse.org/releases/oxygen/) and
-install the updates it provides. See the
-[Install Dev Studio into Eclipse](#install-liferay-ide-into-eclipse) section
-for more info.
+**Important:** If you're installing Dev Studio into an existing Eclipse
+environment, you must be on Eclipse Oxygen or newer. For instructions on
+upgrading to Oxygen, see Eclipse's
+[upgrade documentation](https://wiki.eclipse.org/FAQ_How_do_I_upgrade_Eclipse_IDE%3F#Upgrading_existing_Eclipse_IDE_and_Installed_Features_to_newer_release).
+With this particular upgrade, you should also deactivate the current available
+update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
+*Available Software Sites* menu to ensure a successful upgrade (e.g., Neon).
 
 ## Install the Liferay Dev Studio Bundle [](id=install-the-liferay-developer-studio-bundle)
 

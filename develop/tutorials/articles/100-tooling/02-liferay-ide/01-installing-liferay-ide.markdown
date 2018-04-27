@@ -16,6 +16,14 @@ Liferay provides a bundled version included in its Project SDK. In this
 tutorial, you'll learn the different methods available for installing Dev
 Studio.
 
+**Important:** If you're installing Dev Studio into an existing Eclipse
+environment, you must be on Eclipse Oxygen or newer. For instructions on
+upgrading to Oxygen, see Eclipse's
+[upgrade documentation](https://wiki.eclipse.org/FAQ_How_do_I_upgrade_Eclipse_IDE%3F#Upgrading_existing_Eclipse_IDE_and_Installed_Features_to_newer_release).
+With this particular upgrade, you should also deactivate the current available
+update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
+*Available Software Sites* menu to ensure a successful upgrade (e.g., Neon).
+
 ## Install the Dev Studio Bundle [](id=install-the-liferay-ide-bundle)
 
 1.  Download and install [Java](http://java.oracle.com). Liferay runs on Java,
@@ -54,27 +62,20 @@ Congratulations! You've installed Liferay Dev Studio!
 If you already have an Eclipse environment that you're using for other
 things, it's easy to add Dev Studio to your existing Eclipse installation. 
 
-1.  Dev Studio 3.2.x requires the Eclipse Oxygen or Photon platforms. If you're
-    running a lower Eclipse version (e.g., Neon), you must upgrade Eclipse. For
-    example, to upgrade to Oxygen, copy the
-    [Oxygen update site URL](http://download.eclipse.org/releases/oxygen/) and
-    install the updates it provides. Installing this is similar to the steps
-    below for installing the Dev Studio update site URL.
-
-2.  In your browser, go to the
+1.  In your browser, go to the
     [Liferay @ide@](https://www.liferay.com/downloads/liferay-projects/liferay-ide)
     page. Copy the URL to the 3.2.x update site. 
 
     ![Figure 1: Liferay provides an update site, which provides the latest stable, well-tested environment.](../../../images/liferay-ide-download.png)
 
-3.  Select *Help* &rarr; *Install New Software*. 
+2.  Select *Help* &rarr; *Install New Software*. 
 
-4.  In the *Work with* field, copy in the URL.
+3.  In the *Work with* field, copy in the URL.
 
-5.  You'll see the Liferay Dev Studio components in the list below. Check them
+4.  You'll see the Liferay Dev Studio components in the list below. Check them
     off and click *Next*. 
 
-6.  Accept the terms of the agreements and click *Next*, and Dev Studio is
+5.  Accept the terms of the agreements and click *Next*, and Dev Studio is
     installed. Like other Eclipse plugins you'll have to restart Eclipse to
     enable it. 
 
@@ -86,14 +87,6 @@ To install Liferay Dev Studio into Eclipse from a Zip file, follow these steps:
     [Liferay @ide@](https://www.liferay.com/downloads/liferay-projects/liferay-ide)
     downloads page. Under *Other Downloads*, select the *Liferay IDE [version]
     Archive Update-site* option and click *Download*.
-
-    Dev Studio 3.2.x requires the Eclipse Oxygen or Photon platforms. If you're
-    running a lower Eclipse version (e.g., Neon), you must upgrade Eclipse. For
-    example, to upgrade to Oxygen, copy the
-    [Oxygen update site URL](http://download.eclipse.org/releases/oxygen/) and
-    install the updates it provides. See the
-    [Install Dev Studio into Eclipse](#install-liferay-ide-into-eclipse) section
-    for more info.
 
 2.  In Eclipse, go to *Help* &rarr; *Install New Software...*. 
 
