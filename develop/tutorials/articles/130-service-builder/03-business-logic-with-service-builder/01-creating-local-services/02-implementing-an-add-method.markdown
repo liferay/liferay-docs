@@ -92,18 +92,18 @@ This method specifies all the parameters needed to create and populate a
 `BookmarksEntry`. It throws a `PortalException` in case the parameters are
 invalid or a processing exception occurs (more on this in a later step). 
 
-Your add method must specify parameters that satisfy the entity's
-attributes--recall the attributes your `service.xml` file specifies. Make sure
-to account for primary keys of other entities your entity relates to. For
-example, the `addEntry` method above includes a parameter `long folderId` to
-associate the new `BookmarksEntry` to a `BookmarksFolder`. 
+Your add method must specify parameters that satisfy the entity's attributes
+specified in your `service.xml` file. Make sure to account for primary keys of
+other related entities. For example, the `addEntry` method above includes
+a parameter `long folderId` to associate the new `BookmarksEntry` to
+a `BookmarksFolder`. 
 
 ## Step 2:  Validate the parameters [](id=validate-the-parameters)
 
 Validate the parameters as needed. You might need to make sure a parameter is
-not empty or `null`, or that a parameter value is within a valid range.  Throw a
-[`PortalException`](@platform-ref@/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html),
-or an extension of `PortalException`, for any invalid parameters.
+not empty or `null`, or that a parameter value is within a valid range. Throw a
+[`PortalException`](@platform-ref@/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html)
+or an extension of `PortalException` for any invalid parameters.
 
 For example, the `addEntry` method invokes the following `validate` method to
 check if the URL parameter is `null`.
@@ -121,7 +121,7 @@ Next, generate a primary key for the entity instance you're creating.
 Every entity instance needs a unique primary key. Liferay's
 [`CounterLocalService`](@platform-ref@/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html)
 generates them per entity. Every `*BaseLocalServiceImpl` has a
-`counterLocalService` field which references a `CounterLocalService` object for
+`counterLocalService` field that references a `CounterLocalService` object for
 the entity. Invoke the counter service's `increment` method to generate a
 primary key for your entity instance.
 
@@ -133,7 +133,7 @@ Now you have a unique ID for your entity instance.
 
 The `*Peristence` instance associated with your entity has a `create(long id)`
 method that constructs an entity instance with the given ID. Every
-`*BaseLocalServiceImpl` has a `*Persistence` field which references a
+`*BaseLocalServiceImpl` has a `*Persistence` field that references a
 `*Persistence` object for the entity. For example,
 [`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.1.0-a1/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
 can access
@@ -185,11 +185,11 @@ method, passing in the entity object. For example, here's how the new
 
     bookmarksEntryPersistence.update(entry);
 
-You're entity is persisted for the application. 
+Your entity is persisted for the application. 
 
 ## Step 7: Return the entity [](id=return-the-entity)
 
-Lastly return the entity you just created, so the caller can use it. 
+Finally, return the entity you just created so the caller can use it. 
 
 [Run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
 to propagate your new service method to the `*LocalService` interface. 

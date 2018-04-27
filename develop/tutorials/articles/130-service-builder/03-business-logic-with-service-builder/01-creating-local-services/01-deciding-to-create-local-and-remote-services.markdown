@@ -7,7 +7,7 @@ deployed. Remote services are accessible to clients outside of the Liferay
 server. Before implementing local or remote services, consider the best
 practices described here:
 
-1.  If you are going to have remote services, enable local services too.
+1.  If you plan to have remote services, enable local services too.
 
 2.  Implement your business logic in `*LocalServiceImpl`. 
 
@@ -24,5 +24,4 @@ practices described here:
 If you are turning on local or remote services in your `service.xml` file just
 now, make sure to
 [run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
-again to generate the service
-interfaces. 
+again to generate the service interfaces. 

@@ -19,4 +19,4 @@ These tutorials walk you through creating local services:
 
 6.  Integrating with Liferay's Services.
 
-Start with deciding the service types you need.  
+Start with deciding the service types you need. 
