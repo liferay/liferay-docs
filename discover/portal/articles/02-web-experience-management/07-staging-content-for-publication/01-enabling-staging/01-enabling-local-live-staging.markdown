@@ -11,7 +11,7 @@ staging is enabled), and setup configurations, such as the properties set in the
 `portal-ext.properties` file. The cloned site becomes the staging environment
 and the original site becomes the live environment.
 
-Site administrators can enable local staging for a site by navigating to the
+You can enable local staging for a site by navigating to the
 *Publishing &rarr; *Staging* menu. To get some hands-on experience with enabling
 Local Live staging, you can complete a brief example which creates a Local Live
 staging environment for your site. 
@@ -22,12 +22,12 @@ staging environment for your site.
 2.  Select *Local Live*. You also have the option to enable page versioning and
     select staged content.
 
-    You can enable page versioning on a site's public pages, private pages, both, or
-    neither. Page versioning allows you to work in parallel on different versions of
-    pages and maintains a history of all page modifications. You can also choose
-    content for the staging environment to manage on the Staging Configuration page.
-    You can learn more about these options in the
-    [Enabling Page Versioning and Staged Content](/discover/portal/-/knowledge_base/7-0/enabling-page-versioning-and-staged-content)
+    You can enable page versioning on a site's public pages, private pages,
+    both, or neither. Page versioning lets you work in parallel on different
+    versions of pages and maintains a history of all page modifications. You can
+    also choose content for the staging environment to manage on the Staging
+    Configuration page. You can learn more about these options in the
+    [Enabling Page Versioning and Staged Content](/discover/portal/-/knowledge_base/7-1/enabling-page-versioning-and-staged-content)
     article.
 
 3.  Click *Save*.
@@ -46,12 +46,8 @@ versioning. Page versioning requires staging (either Local Live or Remote Live)
 to be enabled.
 
 If you ever need to turn off the staging environment, return back to *Staging*
-from the Publishing dropdown. The processes you've created are displayed by
-default. Navigate to the *Options* icon
-(![Options](../../../../images/icon-options.png)) from the upper right corner of
-the page and select *Staging Configuration*. Select the *None* radio button to
-turn Local Live staging off. Please note that this operation removes the staging
-environment altogether, so all content that was not published to your live site
-will be lost!
+from the Publishing dropdown. For more information on this, see the
+[Disabling Staging](/discover/portal/-/knowledge_base/7-1/disabling-staging)
+article.
 
 Great! Now you're ready to use Local Live Staging.
