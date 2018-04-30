@@ -2,16 +2,17 @@
 
 Specifications are pieces of structured product information. The data are
 structured into three components: *groups*, *labels* and *values*. This
-structure makes the data easy to display and maintain.
+makes the data easy to display and maintain.
 
-The structure of a specification is best explained with an example. In the image
-below, *Technical Details* is a group, *Voltage* is a label, and *14.4* is
-a value.
+Values are identified by labels, which in turn are organized into groups. In
+the image below, *14.4* is a value, *Voltage* is a label, and *Technical
+Details* is a group.
 
 ![Figure 1: In this image, *Technical Details* is a group, *Voltage* is a label, and *14.4* is a value.](../../images/spec-group.png)
 
-Creating a specification involves creating a group, creating a label to assign
-to it, and finally creating a value and assigning it to the label.
+Creating a specification involves creating a group and then creating a label to
+assign to it. Finally, you must create a value, which will be assigned to both
+a label and a product.
 
 ## Specification Groups [](id=specification-groups)
 
@@ -24,7 +25,7 @@ Follow these steps to create a specification group:
     the following fields:
 
 **Title**: Give the group a title. Typically a group's title will indicate what
-it is that it's labels have in common.
+its labels have in common.
 
 **Description**: Enter a description of the group if necessary.
 
@@ -34,8 +35,7 @@ be displayed. Smallest numbers go first.
 **Key**: A key is a programmatic identifier for this specification group. This
 field auto-fills; if entered manually, it needs to be unique.
 
-Once the form is complete, click *Save*. The next section explains how to
-assign specifications to these categories.
+Once the form is complete, click *Save*.
 
 ## Specification Labels [](id=specification-labels)
 
@@ -59,8 +59,8 @@ for this specification.
 optional, and can be overridden at the product level where specification values
 are defined (see below for details).
 
-3.  Click *Save*. The label has been created, but assigning a value to it must
-    be done on the product level.
+Click *Save*. The label has been created, but assigning a value to it must
+be done on the product level.
 
 ## Specification Values [](id=specification-values)
 
@@ -70,23 +70,27 @@ they can be deployed to any product in the catalog. Values, however, are scoped
 to the product, and have no impact anywhere but on the product to which they
 are assigned.
 
-### Creating a Specification Value [](id=creating-a-specification-value)
-
-Follow these steps:
+To create a specification label, you must first assign a label to a product.
 
 1.  Go to *Site Menu* &rarr; *Catalog*, select a product, and click on the
     *Specifications* tab.
 
-2.  Click on the ![Add](../../images/icon-add.png) button and select from the list of option labels that is displayed. You can choose more than one.
+2.  Click on the ![Add](../../images/icon-add.png) button and select from the
+    list of option labels that is displayed. Click *Add* to close the pop-up.
+    This assigns the selected labels to the product.
 
+Next, edit the label to give it a value.
 
-### Editing a Specification Value [](id=editing-a-specification-value)
-To apply your specifications, go to your catalog and select a product. Then open
-the *Specifications* tab, click on the ![Add](../../images/icon-add.png)
-button and select any number of specification labels from the list, and click
-*Add* to close the pop-up.
+1.  Click on the ![Options](../../images/icon-options.png) button next to the new label and hit *Edit*.
 
-Now your specification labels have been deployed to the product. To assign
-values to the labels, click on each individually, enter a value and choose
-whether to override the specification group by making a selection from the
-drop-down menu.
+2.  Enter a value. For example, if your label is *Material*, then the value
+    should describe what the product is made out of. 
+ 
+3.  Set the priority (priority sets specifications' publication order--lower
+    numbers come first) and hit save.
+
+If you want, you can also override the specification's group from the one that
+was selected when the label was created. When editing the label to assign
+a value, you can choose any group from the *Group* drop-down box. This change
+is only applied to current product--it has no effect on any other products
+which use the same label.
