@@ -4,17 +4,18 @@ Application business logic involves operating on the application's entity model.
 The application's local services implement those operations. Service Builder
 generates local and remote service classes as OSGi Declarative Services (DS)
 components. These components are accessible to other DS components in your
-application. Here's how your application's DS components can use your local
+application. Here's how to make your application's DS components use your local
 service components:
 
-1. [Reference the local service component.](#step-1-reference-the-local-service-component) 
+1. [Add a reference to the local service component.](#step-1-reference-the-local-service-component) 
 2. [Call the component's methods.](step-2-call-the-service-component-methods)
 
 The
 [Basic Service Builder Liferay Blade sample project's](/develop/reference/-/knowledge_base/7-1/service-builder-samples)
 `basic-web` module has a `Portlet` service component that demonstrates
-referencing a local service component and has JSPs that invoke the component's
-methods. Start with referencing the local service component object.
+referencing a local service component. This module also has JSPs that invoke
+the component's methods. Your first step is to add a reference to the local
+service component object.
 
 ## Step 1: Reference the Local Service Component [](id=step-1-reference-the-local-service-component)
 
@@ -91,10 +92,10 @@ Now that you have the service component object, you can invoke its methods as
 you would any Java object's methods. 
 
 The `basic-web` sample module's `view.jsp` and `edit_foo.jsp` files include
-`init.jsp` and, therefore, have access to the `fooLocalService` variable,
-previously assigned the local service component object. The `view.jsp` file uses
-the component's `getFoosCount` method and `getFoos` method in a Liferay Search
-Container that lists `Foo` instances. 
+`init.jsp`. Therefore, they have access to the `fooLocalService` variable which
+was previously made to point to the local service component object. The
+`view.jsp` file uses the component's `getFoosCount` method and `getFoos` method
+in a Liferay Search Container that lists `Foo` instances. 
 
     <liferay-ui:search-container
     	total="<%= fooLocalService.getFoosCount() %>"
@@ -106,7 +107,7 @@ Container that lists `Foo` instances.
     </liferay-ui:search-container>
 
 The `edit_foo.jsp` file calls `getFoo(long id)` to retrieve a `Foo` entity based
-on the entity instance's ID.  
+on the entity instance's ID.
 
     long fooId = ParamUtil.getLong(request, "fooId");
     Foo foo = null;
