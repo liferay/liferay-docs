@@ -4,7 +4,7 @@ On its most basic level, pricing is handled in the catalog [link]. When all you
 want to do is assign one price to one SKU, that's all you need. But sometimes
 you may want to do something a little more sophisticated, and that's where
 *discounts* and *price lists* are useful. The basic distinction between these
-two features is simple: discounts also special prices only for specified periods
+two features is simple: discounts are special prices only for specified periods
 of time, while price lists offer discounts only to specified groups of
 customers.
 
@@ -50,8 +50,7 @@ of the page. Open these tabs to add products and users to the list.
 To add entries to a price list, simply click on the *Entries* and check the box
 next to each SKU you want to include. After you make your selections and click
 *Add*, set the price for each SKU individually by clicking Options
-(![Options](../images/icon-options.png)) &rarr; *Edit* and filling in the
-*Price* field. 
+(![Options](../images/icon-options.png)) &rarr; *Edit* and filling in the *Price* field. 
 
 +$$$
 
