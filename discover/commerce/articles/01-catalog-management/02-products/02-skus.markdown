@@ -1,12 +1,12 @@
 # SKUs [](id=skus)
 
-An SKU, or stock keeping unit, is an alphanumeric code representing a distinct
+A SKU, or stock keeping unit, is an alphanumeric code representing a distinct
 item for sale. It is not the same as a product because a product can have
-multiple different options with varying attributes. Rather, an SKU can identify
+multiple different options with varying attributes. Rather, a SKU can identify
 products at the most granular level, specifying an exact combination of product
 options.
 
-## Creating an SKU [](id=creating-an-sku)
+## Creating a SKU [](id=creating-an-sku)
 
 When you add a product, a single SKU called *default* is created. The default
 SKU applies to any product options for which you have not created a separate
@@ -27,9 +27,9 @@ won't have to assign a price for each option individually.
 
 $$$
 
-## Editing an SKU [](id=editing-an-sku)
+## Editing a SKU [](id=editing-an-sku)
 
-When you create an SKU, or hit the ![Options](../../../images/icon-options.png)
+When you create a SKU, or hit the ![Options](../../../images/icon-options.png)
 button &rarr; *Edit* to the right of an existing one, a new column of tabs is
 displayed. 
 
@@ -75,7 +75,7 @@ members of a partner organization.
 
 To do this, you must first create a price list (see 
 [Price Lists](/discover/portal/-/knowledge_base/7.1/pricing#price-lists)). Once the
-list exists, you can add an SKU to it from the *Price Lists* tab. To select
+list exists, you can add a SKU to it from the *Price Lists* tab. To select
 a price list, click on the *Add* button and check the box next to each list to
 which you want to add the SKU. Then close the pop-box.
 

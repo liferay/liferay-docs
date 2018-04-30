@@ -44,7 +44,7 @@ Follow these steps to create a specification label:
 1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Catalog* and open the
     *Specification Labels* tab. 
 
-2.  Then click on the ![Add](../../images/icon-add.png) button and fill in
+2.  Click on the ![Add](../../images/icon-add.png) button and fill in
     the following fields:
 
 **Title**: Give the label a title that describes the values that may be
@@ -66,7 +66,7 @@ be done on the product level.
 
 Specification values are more limited in scope than groups and labels. Groups
 and labels are scoped to the catalog, which means that once they are created,
-they can be deployed to any product in the catalog. Values, however, are scoped
+they can be assigned to any product in the catalog. Values, however, are scoped
 to the product, and have no impact anywhere but on the product to which they
 are assigned.
 
@@ -84,13 +84,13 @@ Next, edit the label to give it a value.
 1.  Click on the ![Options](../../images/icon-options.png) button next to the new label and hit *Edit*.
 
 2.  Enter a value. For example, if your label is *Material*, then the value
-    should describe what the product is made out of. 
+    should describe what the product is made out of: *polymer*, *ceramic*, or
+    *stainless steel*. 
  
-3.  Set the priority (priority sets specifications' publication order--lower
-    numbers come first) and hit save.
+3.  Set the priority and hit save.
 
-If you want, you can also override the specification's group from the one that
-was selected when the label was created. When editing the label to assign
-a value, you can choose any group from the *Group* drop-down box. This change
-is only applied to current product--it has no effect on any other products
-which use the same label.
+If you want, you can also override the specification group that was selected
+when the label was created. When editing the label to assign a value, you can
+choose any group from the *Group* drop-down box. This change is only applied to
+current product--it has no effect on any other products which use the same
+label.
