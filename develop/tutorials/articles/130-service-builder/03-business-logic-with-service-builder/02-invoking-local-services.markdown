@@ -8,7 +8,7 @@ application. Here's how to make your application's DS components use your local
 service components:
 
 1. [Add a reference to the local service component.](#step-1-reference-the-local-service-component) 
-2. [Call the component's methods.](step-2-call-the-service-component-methods)
+2. [Call the component's methods.](#step-2-call-the-service-component-methods)
 
 The
 [Basic Service Builder Liferay Blade sample project's](/develop/reference/-/knowledge_base/7-1/service-builder-samples)
@@ -28,15 +28,16 @@ that references the `FooLocalService` local service as a DS component.
     @Reference
 	private volatile FooLocalService _fooLocalService;
 
-The OSGi service registry wires the service implementation object to
-`JSPPortlet`. This sample class declares the `_fooLocalService` field to be
-volatile, but making a field volatile is completely optional. 
+The OSGi service registry wires the service implementation object to your class
+that references it. The `JSPPortlet` sample class declares the
+`_fooLocalService` field to be volatile, but making a field volatile is
+completely optional. 
 
 +$$$
 
-**Note**: Service Builder generates `*LocalServiceImpl`, `*ServiceImpl`, and 
-`*PersistenceImpl` classes for your entities as Service Builder Spring
-Beans--not OSGi Declarative Services.
+**Note**: Service Builder generates `*LocalServiceImpl`, `*ServiceImpl`,  
+`*PersistenceImpl`, and `[ENTITY_NAME]Impl` classes for your entities as Service
+Builder Spring Beans--not OSGi Declarative Services.
 [Service Builder Spring Beans must use means other than the `@Reference` annotation to reference Liferay services and OSGi services](/develop/reference/-/knowledge_base/7-1/invoking-services-from-service-builder-code).
 
 $$$
@@ -46,9 +47,10 @@ should only invoke them indirectly through their `*LocalService` service
 interface. The OSGi service registry wires the service implementation object to
 your class. 
 
-To make the local service object available to the sample application's JSPs, the
-portlet's `render` method associates the `FooLocalService` object with a request
-attribute called `"fooLocalService"`. 
+You can make a service object available to JSPs by associating it with a
+`RenderRequest` attribute. For example, the `JSPPortlet`'s `render` method
+associates the `FooLocalService` object with an attribute called
+`"fooLocalService"`. 
 
     @Override
     public void render(RenderRequest request, RenderResponse response)
@@ -64,8 +66,10 @@ attribute called `"fooLocalService"`.
         return _fooLocalService;
     }
 
-The portlet's `init.jsp` file retrieves the `FooLocalService` object from the
-request attribute. 
+If your JSP declares the `<portlet:defineObjects />` tag, it can retrieve the
+service object from the `RenderRequest` attribute. For example, the
+`JSPPortlet`'s `init.jsp` file retrieves the `FooLocalService` object from the
+`"fooLocalService"` attribute. 
 
     ...
     <%@
@@ -91,9 +95,9 @@ variable to invoke the local service component's methods.
 Now that you have the service component object, you can invoke its methods as
 you would any Java object's methods. 
 
-The `basic-web` sample module's `view.jsp` and `edit_foo.jsp` files include
-`init.jsp`. Therefore, they have access to the `fooLocalService` variable which
-was previously made to point to the local service component object. The
+The `basic-web` sample module's `view.jsp` and `edit_foo.jsp` files include the
+`init.jsp` shown in the previous section. Therefore, they can access the
+`fooLocalService` variable which references the service component object. The
 `view.jsp` file uses the component's `getFoosCount` method and `getFoos` method
 in a Liferay Search Container that lists `Foo` instances. 
 
@@ -118,7 +122,7 @@ on the entity instance's ID.
 Using the `@Reference` annotation, you can inject your application's OSGi DS
 components (such as a portlet DS component) with instances of your application's
 Service Builder-generated local service components. Also you can provide your
-JSPs access to the component instances via request attributes. 
+JSPs access to the component instances via `RenderRequest` attributes. 
 
 ## Related Topics [](id=related-topics)
 
