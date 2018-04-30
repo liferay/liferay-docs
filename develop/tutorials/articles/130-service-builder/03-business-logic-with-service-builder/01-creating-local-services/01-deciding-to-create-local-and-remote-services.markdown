@@ -11,7 +11,7 @@ practices described here:
 
 2.  Implement your business logic in `*LocalServiceImpl`. 
 
-3.  [Create corresponding remote services methods]((/develop/tutorials/-/knowledge_base/7-1/creating-remote-services)
+3.  [Create corresponding remote services methods](/develop/tutorials/-/knowledge_base/7-1/creating-remote-services)
     in your `*ServiceImpl`.
 
 4.  Use the remote service methods to call the local service, wrapping the calls
