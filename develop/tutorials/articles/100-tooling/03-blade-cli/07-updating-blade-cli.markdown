@@ -20,7 +20,7 @@ You can check your current installed version by running `blade version`.
 expected version installed, you may have two separate Blade CLI installations on
 your machine. This is typically caused if you installed an earlier version of
 Blade CLI, and then used the
-[Liferay Workspace installer](/develop/tutorials/-/knowledge_base/7-1/installing-blade-cli)
+[Liferay Project SDK installer](/develop/tutorials/-/knowledge_base/7-1/installing-blade-cli)
 (at any time prior) to update the older Blade CLI instance. This is not
 recommended. Doing this installs Blade CLI in the global and user home folder of
 your machine. The latest Blade CLI update process installs to your user home

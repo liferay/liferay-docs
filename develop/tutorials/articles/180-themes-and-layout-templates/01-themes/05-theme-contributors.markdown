@@ -4,7 +4,7 @@ If you want to package UI resources independent of a specific theme and
 include them on a @product@ page, Theme Contributors are your best option. If,
 instead, you'd like to include separate UI resources on a @product@ page that
 are attached to a theme, you should look into
-[themelets](/develop/tutorials/-/knowledge_base/7-1/themelets).
+[themelets](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes).
 
 A Theme Contributor is a
 [module](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module)
@@ -83,9 +83,9 @@ The UI contributions affect every page and aren't affected by theme deployments.
 
 ## Related Topics [](id=related-topics)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
+[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
 
-[Themelets](/develop/tutorials/-/knowledge_base/7-1/themelets)
+[Themelets](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes)
 
 [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
 
