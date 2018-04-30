@@ -50,7 +50,8 @@ of the page. Open these tabs to add products and users to the list.
 To add entries to a price list, simply click on the *Entries* and check the box
 next to each SKU you want to include. After you make your selections and click
 *Add*, set the price for each SKU individually by clicking Options
-(![Options](../images/icon-options.png)) &rarr; *Edit* and filling in the *Price* field. 
+(![Options](../images/icon-options.png)) &rarr; *Edit* and filling in the
+*Price* field. 
 
 +$$$
 
