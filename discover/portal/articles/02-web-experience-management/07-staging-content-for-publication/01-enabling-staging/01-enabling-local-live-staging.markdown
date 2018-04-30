@@ -20,13 +20,7 @@ staging environment for your site.
     *Staging*.
 
 2.  Select *Local Live*. You also have the option to enable page versioning and
-    select staged content.
-
-    You can enable page versioning on a site's public pages, private pages,
-    both, or neither. Page versioning lets you work in parallel on different
-    versions of pages and maintains a history of all page modifications. You can
-    also choose content for the staging environment to manage on the Staging
-    Configuration page. You can learn more about these options in the
+    select staged content. For more information on these options, see the
     [Enabling Page Versioning and Staged Content](/discover/portal/-/knowledge_base/7-1/enabling-page-versioning-and-staged-content)
     article.
 

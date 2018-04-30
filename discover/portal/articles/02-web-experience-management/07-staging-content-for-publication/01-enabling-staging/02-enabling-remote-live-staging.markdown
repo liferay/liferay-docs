@@ -14,7 +14,7 @@ pushed over the network to the remote live server.
 
 Before enabling Remove Live staging, ensure you've configured your Liferay
 server and remote server appropriately. Follow the
-[Configuring Your Servers for Remote Live Staging](/discover/portal/-/knowledge_base/7-1/configuring-your-servers-for-remote-live-staging)
+[Configuring Servers for Remote Live Staging](/discover/portal/-/knowledge_base/7-1/configuring-servers-for-remote-live-staging)
 article to do this.
 
 You can enable remote staging for a site by navigating to the *Publishing*
@@ -54,13 +54,8 @@ Live staging environment for your site.
     publication of pages from your local (staging) Liferay server to your remote
     (live) Liferay server.
 
-7.  Decide whether to enable page versioning and select staged content.
-
-    You can enable page versioning on a site's public pages, private pages,
-    both, or neither. Page versioning lets you work in parallel on different
-    versions of pages and maintains a history of all page modifications. You can
-    also choose content for the staging environment to manage on the Staging
-    Configuration page. You can learn more about these options in the
+7.  Decide whether to enable page versioning and select staged content. For more
+    information on these options, see the
     [Enabling Page Versioning and Staged Content](/discover/portal/-/knowledge_base/7-1/enabling-page-versioning-and-staged-content)
     article.
 
@@ -70,7 +65,7 @@ You've officially begun the staging process!
 
 If you fail to properly configure your current and remote server, you won't be
 able to enable staging and an error message appears. If you have issues,
-[verify you've configured your servers properly](/discover/portal/-/knowledge_base/7-1/configuring-your-servers-for-remote-live-staging).
+[verify you've configured your servers properly](/discover/portal/-/knowledge_base/7-1/configuring-servers-for-remote-live-staging).
 
 When a user attempts to publish changes from the local (staging) server to the
 remote (live) server, @product@ passes the user's email address, screen name, or

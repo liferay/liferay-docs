@@ -31,10 +31,11 @@ groups for staging, by default:
 - Calendar
 - Documents and Media
 - Dynamic Data Lists
+- Forms
+- Knowledge Base
 - Message Boards
 - Mobile Device Families
 - Polls
-- Shopping
 - Web Content
 - Wiki
 
@@ -92,18 +93,18 @@ Before you activate staging, you can choose which of these applications' data
 you'd like to copy to staging. You'll learn about many of the collaboration
 apps listed under the Staged Portlets heading when you read the
 [Collaboration Suite](/discover/portal/-/knowledge_base/7-1/collaboration)
-chapter. For now, you just need to be aware that you can enable or disable
-staging for any of these applications. Why might you want to enable staging for
-some application types but not others? In the case of collaborative apps,
-you probably *don't* want to enable staging since such applications are designed
-for user interaction. If their content were staged, you'd have to manually
-publish your site whenever somebody posted a message on the message boards to
-make that message appear on the live site. Generally, you'll want web content to
-be staged because end users aren't creating that kind of content--web content is
-the stuff you publish to your site. But applications like the Message Boards or
-Wiki would likely benefit from *not* being staged. Notice which applications are
-marked for staging by default: if you enable staging and accept the defaults,
-staging is *not* enabled for the collaborative apps.
+section of articles. For now, you just need to be aware that you can enable or
+disable staging for any of these applications. Why might you want to enable
+staging for some application types but not others? In the case of collaborative
+apps, you probably *don't* want to enable staging since such applications are
+designed for user interaction. If their content were staged, you'd have to
+manually publish your site whenever somebody posted a message on the message
+boards to make that message appear on the live site. Generally, you'll want web
+content to be staged because end users aren't creating that kind of content--web
+content is the stuff you publish to your site. But applications like the Message
+Boards or Wiki would likely benefit from *not* being staged. Notice which
+applications are marked for staging by default: if you enable staging and accept
+the defaults, staging is *not* enabled for the collaborative apps.
 
 The listed applications, or content groups, contain one or more specific entity.
 For example, selecting the Web Content application does not mean you're only

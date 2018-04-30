@@ -1,4 +1,4 @@
-# Configuring Your Servers for Remote Live Staging
+# Configuring Servers for Remote Live Staging
 
 Before you can enable Remote Live staging for a site, you must satisfy some
 necessary requirements:
