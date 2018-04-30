@@ -19,7 +19,7 @@ organization to the Lunar Resort):
     Site* and check the *Create Site* box. If you don't know right now if your
     organization needs a site, that's fine. You can always add one later. 
 
-    ![Figure x: Fill out the add Organization form and click *Save*. ](../../../images/orgs-add-organization-site.png)
+    ![Figure 1: Fill out the add Organization form and click *Save*. ](../../../images/orgs-add-organization-site.png)
 
 4.  If you're creating a child Organization, use the Parent Organization
     *Select* button to select an Organization in the system to be the direct
@@ -107,7 +107,7 @@ types:
     example, MLB would not allow Division Organization types to be
     sub-Organizations of Team Organizations.
 
-![Figure x: Create new organization types through the System Settings entry called Organization Types.](../../../images/orgs-organization-type.png)
+![Figure 2: Create new organization types through the System Settings entry called Organization Types.](../../../images/orgs-organization-type.png)
 
 Check out the configuration options that configure the default *Organization*
 type and then configure an additional type.
@@ -137,7 +137,7 @@ parent type.
 Once you configure additional Organization types and click Save, you'll find
 your new type(s) available for selection in the Add Organization form.
 
-![Figure x: Custom configuration tpyes are available in the Add Organization
+![Figure 3: Custom configuration tpyes are available in the Add Organization
 form.](../../../images/orgs-add-custom-organization.png)
 
 Users can join or be assigned to Sites when they share a common interest. Users
