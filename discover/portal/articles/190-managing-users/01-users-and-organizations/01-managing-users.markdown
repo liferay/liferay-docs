@@ -12,7 +12,7 @@ and Organizations*.
 
 2.  In the Users tab, click the *Add* button <!-- ([Add](../../images/icon-add.png)-->.
 
-    <!-- REPLACE [Figure 1: Add Users from the Users and Organizations section of the Control Panel.](../../images/usrmgmt-add-user.png)-->
+    ![Figure 1: Add Users from the Users and Organizations section of the Control Panel.](../../../images/usrmgmt-add-user.png)
 
 3.  Fill out the Add User form and click *Save*. At a minimum, provide a Screen
     Name, First Name, Last Name, and Email Address for the User.
@@ -30,7 +30,7 @@ through the available sections. The options in the left menu change as you
 click through the tabs at the top. Peruse the sections for the three tabs
 (General, Contact, Preferences) and fill in all the applicable information.
 
-![Figure 1: At a minimum, enter a screen name, email address, and first name to create a new user account. Then you'll be taken to the Information form and can continue configuring the user.](../../../images/add-user-forms-menu.png)
+![Figure 2: At a minimum, enter a screen name, email address, and first name to create a new user account. Then you'll be taken to the Information form and can continue configuring the user.](../../../images/add-user-forms-menu.png)
 
 You don't have to fill anything else out right now. Just note that when the user
 account was created, a password was automatically generated. If Liferay was
@@ -43,7 +43,7 @@ If you haven't set up a mail server, click the *Password* item from the General
 menu and manually set a password for your new user. Enter the new password
 twice.
 
-<!-- [Figure 3: Enter the password twice to manually set the password for a user. If the Password Policy you're using is configured to allow it, select whether to require the user to reset their password the first time they sign in to the portal.](../../images/usrmgmt-require-password-reset.png) -->
+![Figure 3: Enter the password twice to manually set the password for a user. If the Password Policy you're using is configured to allow it, select whether to require the user to reset their password the first time they sign in to the portal.](../../../images/usrmgmt-require-password-reset.png)
 
 ## Editing Users [](id=editing-users)
 
@@ -78,7 +78,7 @@ Choosing *Erase Personal Data* deletes the User's personal data. <!--Read
 Choosing *Export Personal Data* lets you download the User's personal data.
 <!--Read [here](LINK) for more information.-->
 
-<!--REPLACE [Figure x: You can choose whether to view active or inactive (deactivated) portal users in the users list found at *Product Menu* &rarr; *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*.](../../images/usrmgmt-active.png) -->
+![Figure 4: You can choose whether to view active or inactive (deactivated) portal users in the users list found at *Product Menu* &rarr; *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*.](../../../images/usrmgmt-active.png)
 
 Most Users can't perform any of the above actions. In fact, most Users won't
 have access to the Control Panel at all. You can perform all of the above

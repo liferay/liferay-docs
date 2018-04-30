@@ -8,8 +8,7 @@ anything else? You do it from the Control Panel. When signed in as an
 administrator, you can access the Control Panel from the Product Menu by
 clicking *Control Panel*.
 
-<!-- REPLACE [Figure 1: Administrators can access the Control Panel from the Product
-Menu.](../../images/usrmgmt-control-panel.png) -->
+![Figure 1: Administrators can access the Control Panel from the Product Menu.](../../images/usrmgmt-control-panel.png)
 
 The Control Panel is divided into four main areas: Users, Sites, Apps,
 and Configuration. The Users section lets you create and manage users,
@@ -45,16 +44,17 @@ enhancements could be made. In @product-ver@, we're excited to announce some new
 features for user administrators:
 
 1.  Numeric screen names can be used without issue out of the box. Read
-    [here](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics#numeric-screen-names) for the details.
+    [here](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics#numeric-screen-names) 
+    for the details.
 
 2.  Add organization types from System Settings. There's no need for portal
     properties anymore, or the requisite system restart. Read
-    [here](/discover/deployment/-/knowledge_base/7-1/managing-organizations#organization-types) for the details.
+    [here](/discover/deployment/-/knowledge_base/7-1/managing-organizations#organization-types) 
+    for the details.
 
 3.  Configure default user profile pictures from System Settings. Read
-    [here](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics#user-profile-pictures) for the details.
-
-<!-- REPLACE [Figure 2: The Users section of the Control Panel. This screenshot shows a portal that doesn't have the EE Audit plugin installed.](../../images/usrmgmt-users.png) -->
+    [here](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics#user-profile-pictures) 
+    for the details.
 
 Begin exploring Liferay's User Management functionality by reading about
 adding and editing users. 

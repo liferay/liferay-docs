@@ -19,7 +19,7 @@ organization to the Lunar Resort):
     Site* and check the *Create Site* box. If you don't know right now if your
     organization needs a site, that's fine. You can always add one later. 
 
-<!-- Add a screenshot showing the Add Org UI -->
+    ![Figure x: Fill out the add Organization form and click *Save*. ](../../../images/orgs-add-organization-site.png)
 
 4.  If you're creating a child Organization, use the Parent Organization
     *Select* button to select an Organization in the system to be the direct
@@ -32,8 +32,6 @@ and you have access to a new form which lets you enter additional information
 about the Organization. Organizations can have associated multiple email
 addresses, postal addresses, web sites, and phone numbers. The Services link can
 be used to indicate the operating hours of the Organization, if any.
-
-<!-- Figure that shows a screenshot of the additional info for the org. -->
 
 +$$$
 
@@ -58,7 +56,6 @@ Control Panel and click the *Organizations* tab. All active Organizations are
 listed. Click the *Actions* button next to an Organization. This shows a list of
 actions you can perform on this Organization.
 
-<!-- Screenshot of Actions Button menu options -->
 - *Edit* lets you specify details about the Organization, including addresses,
   phone numbers, email addresses and websites.
 
@@ -93,9 +90,6 @@ If you click the Organization name you can view both a list of Users who are
 members of this Organization and a list of all the sub-Organizations of this
 Organization.
 
-<!-- See if a screenshot of this for the proposed Lunar Resort intranet
-organizations could replace the textual hierarchy representation above -->
-
 ## Organization Types [](id=organization-types)
 
 By default, @product@ only includes the *Organization* type. Configure the
@@ -113,8 +107,7 @@ types:
     example, MLB would not allow Division Organization types to be
     sub-Organizations of Team Organizations.
 
-<!-- REPLACE [Figure 2: Make additional organization types available in the Control Panel by adding them to the `organizations.types` portal property.](../../images/organization-new-type.png)
--->
+![Figure x: Create new organization types through the System Settings entry called Organization Types.](../../../images/orgs-organization-type.png)
 
 Check out the configuration options that configure the default *Organization*
 type and then configure an additional type.
@@ -142,9 +135,10 @@ Children Types: *Division*
 parent type.
 
 Once you configure additional Organization types and click Save, you'll find
-your new type(s) in the Organizations section of the Control Panel.
+your new type(s) available for selection in the Add Organization form.
 
-<!-- REPLACE [Figure 3: Add the Country select list field to the Add Organization form with the `organizations.country[my-org-type].enabled` property.](../../images/organization-country-selection.png) -->
+![Figure x: Custom configuration tpyes are available in the Add Organization
+form.](../../../images/orgs-add-custom-organization.png)
 
 Users can join or be assigned to Sites when they share a common interest. Users
 can be assigned to Organizations when they fit into a hierarchical structure.

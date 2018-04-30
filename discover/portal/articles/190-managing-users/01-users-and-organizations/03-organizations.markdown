@@ -119,7 +119,7 @@ Organization Administrators can't access the Control Panel by default, but it's
 not necessary. In their personal Sites, Organization administrators can click 
 the *My Organizations* link to gain access to any Organizations they manage.
 
-<!-- REPLACE [Figure 1: The My Organizations application lets Organization Administrators manage their organizations in their personal site.](../../images/organizations-my-organizations.png)-->
+![Figure 1: The My Organizations application lets Organization Administrators manage their organizations in their personal site.](../../../images/orgs-my-organizations.png)
 
 ### Organization Roles and Permissions [](id=organization-roles-and-permissions)
 

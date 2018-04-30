@@ -64,13 +64,13 @@ Users have profile pictures. Administrative Users can upload images in the Edit
 User form, and any User can update her own account information, including image,
 from her personal site (*My account* &rarr; *Account Settings*). 
 
-<!-- REPLACE [Figure 5: Upload images for user avatars in the Edit User form.](../../images/users-ray-avatar.png) -->
+![Figure x: Upload images for user avatars in the Edit User form.](../../../images/usrmgmt-ray-avatar.png)
 
 If no image is explicitly uploaded for a User's profile picture, a default User
 icon is assigned as the User avatar. By default the User's initials are
 displayed (First Name then Last Name) over a random color.
 
-![Figure 1: The default user profile picture is an icon with the user initials over a randomly colored bubble.](../../../images/users-default-user-image.png)
+![Figure x: The default user profile picture is an icon with the user initials over a randomly colored bubble.](../../../images/users-default-user-image.png)
 
 If the initials-based approach for generating User profile pictures isn't
 suitable for your portal, disable the inclusion of Users' initials in the
@@ -86,7 +86,7 @@ Now, instead of the default icon, which is a colorful circle containing the
 user's initials, the icon is a gray circle containing the approximate shape of a
 human being.
 
-![Figure 2: If you disable the default initials-based profile picture, this icon is used instead.](../../../images/user-image-not-initials.png)
+![Figure x: If you disable the default initials-based profile picture, this icon is used instead.](../../../images/user-image-not-initials.png)
 
 This is just the default. To override it with your own default image
 
