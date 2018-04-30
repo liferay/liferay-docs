@@ -33,10 +33,12 @@ Here's a summary of the beans the example context defines:
  `com.liferay.blade.samples.servicebuilder.service.persistence.FooPersistence` | `com.liferay.blade.samples.servicebuilder.service.persistence.impl.FooPersistenceImpl` |
  
 Since these classes are Spring Beans and NOT OSGi Declarative Services
-components, they do not use the `@Reference` Declarative Services annotation. Here are the recommended Liferay annotations a Service Builder Spring Bean can use.
+components, they use annotations other than the `@Reference` Declarative
+Services annotation to inject Spring Beans and OSGi services. Here are the
+recommended Liferay annotations a Service Builder Spring Bean can use.
 
 - [Use `@BeanReference` to reference a Spring Bean that is in the Application Context.](#referencing-a-spring-bean-that-is-in-the-application-context)
-- [Use `@ServiceReference` to reference an OSGi service.](#referencing-osgi-services)
+- [Use `@ServiceReference` to reference an OSGi service.](#referencing-an-osgi-service)
 
 The `@BeanReference` annotation is explained first. 
 
@@ -48,10 +50,11 @@ module's Spring Application Context defines.
 
 For example, if your service module's `service.xml` file defines local services
 for entities named `Foo` and `Bar`, Service Builder generates a
-`module-spring.xml` file that defines local service Spring Beans for both entities. To
-inject the `BarLocalService` Spring Bean into the `FooLocalServiceImpl` class, for example,
-the `FooLocalServiceImpl` class would declare a `BarLocalService` field and
-apply an `@BeanReference` annotation to it. 
+`module-spring.xml` file that defines local service Spring Beans for both
+entities. To inject the `BarLocalService` Spring Bean into the
+`FooLocalServiceImpl` class, for example, the `FooLocalServiceImpl` class would
+declare a `BarLocalService` field and apply an `@BeanReference` annotation to
+it. 
 
     @BeanReference
     private BarLocalService _barLocalService;
@@ -72,9 +75,9 @@ the OSGi Registry. This means the following services are available:
 These are all OSGi services. The next section demonstrates a Service Builder
 Spring Bean referencing OSGi services.
 
-## Referencing OSGi Services [](id=referencing-osgi-services)
+## Referencing OSGi Services [](id=referencing-an-osgi-service)
 
-In many cases, your Service Builder code (Spring Beans) will need to reference
+In many cases, your Service Builder code (Spring Beans) will need to use
 external services. Liferay's `@ServiceReference` annotation lets Liferay Spring
 Beans reference OSGi services. 
 
@@ -103,7 +106,7 @@ references an `AssetEntry` entity:
 
     <reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
 
-Service Builder generates the `FooLocalServiceBaseImpl` class (the base class is
+Service Builder generated the `FooLocalServiceBaseImpl` class (the base class is
 part of the `FooLocalServiceImpl` class's hierarchy), which references the
 `AssetEntry` entity's local service `AssetEntryLocalService` using a field
 annotated with `@ServiceReference`:
@@ -117,10 +120,10 @@ Bean in the Application Context of your Service Builder Spring Bean.
 
 ## Related Topics [](id=related-topics)
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
+[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
 
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services)
+[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services)
 
-[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invoker)
+[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invoker)
 
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
+[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
