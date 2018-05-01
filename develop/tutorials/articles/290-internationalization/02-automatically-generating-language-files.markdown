@@ -1,36 +1,62 @@
 # Automatically Generating Language Files [](id=automatically-generating-language-files)
 
 If you already have a `Language.properties` file that holds
-[language keys for your user interface messages](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application),
-or even a language module that holds these keys, you're in the right place.
+[language keys for your user interface messages](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application),
+or even a language module that holds these keys, you're in the right place. In
+this tutorial, you'll explore the following capabilities:
 
--  Instead of manually creating a language properties file for each locale
-   that's supported by Liferay, you can get them all automatically generated
-   for you with one command. The same command also propagates the keys from the
-   default language file to all translation files.
+-  Generate language properties files for each supported locale with a single
+   command. This prevents you from having to manually create a language
+   properties file for each locale. The same command also propagates the keys
+   from the default language file to all translation files.
 
--  You can also generate automatic translations using Microsoft's Translator
-   Text API.
+-  Generate automatic translations using Microsoft's Translator Text API. This
+   prevents you from translating each message manually.
 
 ## Generating Language Files for Supported Locales [](id=generating-language-files-for-supported-locales)
 
 If you want to generate files automatically for all 
-[locales supported by Liferay](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones),
+[locales supported by Liferay](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones),
 you must make a small modification to your application's build file.
 
 1.  Make sure your module's build includes the `com.liferay.lang.builder`
     [plugin](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-lang-builder),
-    by putting the plugin in build script classpath.
+    by putting the plugin in your build script's classpath. If you're using
+    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+    the Lang Builder is already applied to your modules.
+    
+    Here's what a configuration of the `com.liferay.lang.builder` plugin looks
+    in a `build.gradle` file: 
+    
+            buildscript {
+                dependencies {
+                    classpath 'com.liferay:com.liferay.gradle.plugins.lang.builder:latest.release'
+                }
+
+                repositories {
+                    maven {
+                        url "http://cdn.repository.liferay.com/nexus/content/groups/public"
+                    }
+                }
+            }
+
+            apply plugin: "com.liferay.lang.builder"
+
+            repositories {
+                maven {
+                    url "http://cdn.repository.liferay.com/nexus/content/groups/public"
+                }
+            }
 
 2.  Make sure you have a default `Language.properties` file in
     `src/main/resources/content`. 
 
-3.  Run the `gradle buildLang` task from your project's root directory to
+3.  Run the `gradlew buildLang` task from your project's root directory to
     generate default translation files.
 
     The generated files contain automatic copies of all the keys and values
     in your default `Language.properties` files. That way you don't have to
-    copy your lanugage keys manually into all of the files. Run the
+    copy your language keys manually into all of the files. Run the
     `buildLang` task each time you change the default language file.
 
     When the task completes, it prints `BUILD SUCCESSFUL` with this log output:
@@ -40,28 +66,6 @@ you must make a small modification to your application's build file.
     See the next section to learn how to turn translation on and provide
     credentials.
 
-Here's what a configuration of the `com.liferay.lang.builder` plugin looks in a
-`build.gradle` file: 
-
-        buildscript {
-            dependencies {
-                classpath 'com.liferay:com.liferay.gradle.plugins.lang.builder:latest.release'
-            }
-
-            repositories {
-                maven {
-                    url "http://cdn.repository.liferay.com/nexus/content/groups/public"
-                }
-            }
-        }
-
-        apply plugin: "com.liferay.lang.builder"
-
-        repositories {
-            maven {
-                url "http://cdn.repository.liferay.com/nexus/content/groups/public"
-            }
-        }
 Now you can start translating your application's messages. If you want to
 configure your app to generate automatic translations using the Microsoft
 Translator Text API, keep reading.
@@ -136,4 +140,3 @@ all the steps above?
 
 Great! You now know how to generate language files and provide automatic
 translations of your language keys.
-
