@@ -68,6 +68,6 @@ Select a Tax Category, set the rate, and choose the area where you want to be
 applied. Simply leave the *Region* or *Zip* fields blank to apply the rate to
 a larger area.
 
-To the rate to a product, select one from your catalog, go to
+To deploy the rate to a product, select one from your catalog, go to
 *configuration* &rarr; *Tax Categories* &rarr; [Add](../icon-add.png) and
 select the appropriate tax category.
