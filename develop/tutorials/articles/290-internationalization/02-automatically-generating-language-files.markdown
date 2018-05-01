@@ -5,12 +5,12 @@ If you already have a `Language.properties` file that holds
 or even a language module that holds these keys, you're in the right place. In
 this tutorial, you'll explore the following capabilities:
 
--  Generate language properties files for each supported locale with a single
+-  Generating language properties files for each supported locale with a single
    command. This prevents you from having to manually create a language
    properties file for each locale. The same command also propagates the keys
    from the default language file to all translation files.
 
--  Generate automatic translations using Microsoft's Translator Text API. This
+-  Generating automatic translations using Microsoft's Translator Text API. This
    prevents you from translating each message manually.
 
 ## Generating Language Files for Supported Locales [](id=generating-language-files-for-supported-locales)
@@ -19,11 +19,11 @@ If you want to generate files automatically for all
 [supported locales](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones),
 you must make a small modification to your application's build file.
 
-1.  Make sure your module's build includes the `com.liferay.lang.builder`
-    [plugin](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-lang-builder),
-    by putting the plugin in your build script's classpath. If you're using
+1.  Make sure your module's build includes the
+    [`com.liferay.lang.builder`](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-lang-builder)
+    plugin by putting it in your build script's classpath. If you're using
     [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
-    the Lang Builder is already applied to your modules.
+    the Lang Builder is already available to your modules.
     
     Here's what a configuration of the `com.liferay.lang.builder` plugin looks
     in a `build.gradle` file: 
@@ -48,8 +48,8 @@ you must make a small modification to your application's build file.
                 }
             }
 
-2.  Make sure you have a default `Language.properties` file in
-    `src/main/resources/content`. 
+2.  Create (if necessary) a default `Language.properties` file in the
+    `src/main/resources/content` folder. 
 
 3.  Run the `gradlew buildLang` task from your project's root directory to
     generate default translation files.
@@ -63,10 +63,10 @@ you must make a small modification to your application's build file.
 
         Translation is disabled because credentials are not specified
 
-    See the next section to learn how to turn translation on and provide
-    credentials.
+    See the next section to learn how to provide credentials to enable
+    translation services.
 
-Now you can start translating your application's messages. If you want to
+Now you can begin translating your application's messages. If you want to
 configure your app to generate automatic translations using the Microsoft
 Translator Text API, keep reading.
 
@@ -101,7 +101,7 @@ $$$
             translateSubscriptionKey = "my-key"
         }
 
-    For security reasons you probably don't want to pass them directly in your
+    For security reasons, you probably don't want to pass them directly in your
     application's build script. Instead, pass the credentials to a property
     that's stored in your
     [local build environment](https://docs.gradle.org/current/userguide/build_environment.html),
@@ -138,5 +138,5 @@ all the steps above?
         }
     }
 
-Great! You now know how to generate language files and provide automatic
-translations of your language keys.
+Great! You can now generate language files and provide automatic translations of
+your language keys.

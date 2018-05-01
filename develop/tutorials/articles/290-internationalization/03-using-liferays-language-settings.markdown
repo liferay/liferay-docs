@@ -88,12 +88,12 @@ following ways:
 **Note:** A user's first name is mandatory. Because of this, take these two
 points into consideration when configuring a locale's user name settings:
 
-1.  The `first-name` field can't be removed from the field names list. 
+- The `first-name` field can't be removed from the field names list. 
 
         lang.user.name.field.names=prefix,first-name,middle-name,last-name,suffix
 
-2.  Because a first name is required, it's always implicitly included in the
-    *required field names* property:
+- Because a first name is required, it's always implicitly included in the
+  *required field names* property:
 
         lang.user.name.required.field.names=last-name
 
@@ -112,7 +112,7 @@ The properties for changing user name settings are those that begin with
 properties file.
 
 For most of the
-[locales enabled by default](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages and Time Zones),
+[locales enabled by default](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones),
 the user name properties are specifically tailored to that location.
 
     locales.enabled=ca_ES,zh_CN,nl_NL,en_US,fi_FI,fr_FR,de_DE,iw_IL,hu_HU,ja_JP,pt_BR,es_ES
