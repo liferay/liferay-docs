@@ -4,9 +4,9 @@ You have two options for specifying resources to be imported with your theme: a
 sitemap or an 
 [archive LAR file](/develop/tutorials/-/knowledge_base/7-1/archiving-your-sites-resources). 
 Using a `sitemap.json` file is the most flexible approach, so we recommend it; 
-unlike LAR files, a `sitemap.json` can be created in one version of @product@ 
-and used in another--LAR files are version specific, only working in the version 
-they were created in. 
+unlike LAR files, a `sitemap.json` can be created in one version of @product@
+and used in another. LAR files are version-specific, and can only be imported in
+the same version in which they were created. 
 
 The `sitemap.json` specifies the site pages, layout templates, web content, 
 assets, and portlet configurations provided with the theme. This file describes 

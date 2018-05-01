@@ -1,8 +1,8 @@
 # Defining Pages in a Sitemap [](id=defining-pages-in-a-sitemap)
 
-A sitemap defines the layouts--pages--that your site or site template uses. This 
-tutorial covers the configuration options that are available for pages in a 
-sitemap. 
+A sitemap defines the layouts---pages---that your site or site template uses.
+This tutorial covers the configuration options that are available for pages in
+a sitemap. 
 
 +$$$
 

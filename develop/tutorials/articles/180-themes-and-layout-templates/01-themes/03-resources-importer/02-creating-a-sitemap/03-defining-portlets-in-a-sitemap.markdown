@@ -6,10 +6,10 @@ and feel. This tutorial covers both these options.
 
 ## Defining Portlets on a Page [](id=defining-portlets-on-a-page)
 
-To add a portlet to a sitemap, provide its portlet ID. You can find this in the 
-App Manager of the Control Panel. Select the suite that the App is located in, 
-click the App, click the App's web module link, and open the *Portlets* tab that 
-appears. The portlet ID is displayed below the name of the App:
+To add a portlet to a sitemap, provide its portlet ID. You can find this in the
+App Manager of the Control Panel. Select the suite containing the App, click the
+App, click the App's web module link, and open the *Portlets* tab that appears.
+The portlet ID is displayed below the name of the App:
 
     {
         "portletId": "com_liferay_journal_content_web_portlet_JournalContentPortlet"
@@ -57,13 +57,13 @@ tutorial for more info.
 
 $$$
 
-Portlet preferences are unique to each portlet, so first you must determine 
-which preferences you want to configure. To determine the proper key:value pair 
-for a portlet preference, there are a couple approaches you can take. One option 
-is to manually set the portlet preference, and then check the values in the 
-`portletPreferences.preferences` column of the database as a hint for what to 
-configure in your `sitemap.json`. For example, you can configure the Asset 
-Publisher to display assets that match the specified asset tags, using the 
+Portlet preferences are unique to each portlet, so first you must determine
+which preferences you want to configure. There are two ways to determine the
+proper key/value pair for a portlet preference. The first is to set the
+portlet preference manually, and then check the values in the
+`portletPreferences.preferences` column of the database as a hint for what to
+configure in your `sitemap.json`. For example, you can configure the Asset
+Publisher to display assets that match the specified asset tags, using the
 following configuration:
 
     "queryName0": "assetTags",

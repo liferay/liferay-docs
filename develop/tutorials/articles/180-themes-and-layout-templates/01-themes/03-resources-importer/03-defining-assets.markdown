@@ -1,10 +1,10 @@
 # Defining Assets for the Resources Importer [](id=defining-assets-for-the-resources-importer)
 
-The `sitemap.json` file defines the pages of the site or site template to 
-import--along with the layout templates, portlets, and portlet preferences of 
-these pages. You may also want to provide details about the assets you include 
-with the theme. An `assets.json` file lets you provide this information. Create 
-the `assets.json` in your theme's 
+The `sitemap.json` file defines the pages of the site or site template to
+import---along with the layout templates, portlets, and portlet preferences of
+these pages. You may also want to provide details about the assets you include
+with the theme. An `assets.json` file lets you provide this information. Create
+the `assets.json` in your theme's
 `[theme-name]/src/WEB-INF/src/resources-importer` folder. 
 
 Tags can be applied to any asset. Abstract summaries and small images can be 

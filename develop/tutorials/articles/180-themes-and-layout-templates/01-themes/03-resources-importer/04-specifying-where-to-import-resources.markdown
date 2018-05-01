@@ -16,13 +16,13 @@ in your theme. To do this, add the following property to your theme's
 
 This is enabled by default for themes generated with the 
 [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator). 
-This is a convenience feature for theme developers. With this setting enabled, 
-importing resources into a site or site template that already exist recreates 
-the site or site template. Importing resources into a site template reapplies 
-the site template and its resources to the sites that are based on the site 
-template. Without `resources-importer-developer-mode-enabled=true`, you have to 
-manually delete the sites or site templates built by the Resources Importer each 
-time you want to apply changes from your theme's 
+This is a convenience feature for theme developers. With this setting enabled,
+importing resources into a site or site template that already exists recreates
+the site or site template. Importing resources into a site template reapplies
+the site template and its resources to the sites that are based on the site
+template. Without `resources-importer-developer-mode-enabled=true`, you must
+manually delete the sites or site templates built by the Resources Importer each
+time you want to apply changes from your theme's
 `src/WEB-INF/src/resources-importer` folder. 
 
 +$$$
@@ -39,9 +39,9 @@ want to import your theme's resources.
 
 ## Importing Resources into Existing Site Templates and Sites [](id=importing-resources-into-existing-site-templates-and-sites)
 
-By default resources are imported into a new site template named after the 
-theme. If you want your resources to be imported into an existing site template, 
-you must specify a value for the `resources-importer-target-value` property in 
+By default, resources are imported into a new site template named after the
+theme. If you want your resources to be imported into an existing site template,
+you must specify a value for the `resources-importer-target-value` property in
 your theme's `liferay-plugin-package.properties` file:
 
     #resources-importer-target-class-name
@@ -66,21 +66,20 @@ you could end up deleting (and re-creating) the wrong site or site template!
 an actual site. The 
 `resources-importer-target-class-name=com.liferay.portal.kernel.model.Group` 
 setting can be handy for development and testing but should be used cautiously. 
-Don't use this setting in a theme that will be deployed to a production Liferay 
-instance or a theme that will be submitted to Liferay Marketplace. To prepare a 
-theme for deployment to a production Liferay instance, use the default setting 
-so that the resources are imported into a site template. You can do this 
-explicitly by setting 
+Don't use this setting in a theme deployed to a production Liferay instance or
+a theme submitted to Liferay Marketplace. To prepare a theme for deployment to
+a production Liferay instance, use the default setting so that the resources are
+imported into a site template. You can do this explicitly by setting 
 `resources-importer-target-class-name=com.liferay.portal.kernel.model.LayoutSetPrototype` 
 or implicitly by commenting out or removing the 
 `resources-importer-target-class-name` property.
 
 $$$
 
-To view your theme, and its resources, deploy the theme, log in as an 
-administrator and check the Sites or Site Templates section of the Control Panel 
-to make sure your resources were deployed correctly. From the Control Panel you 
-can easily view your theme and its resources:
+To view your theme and its resources, deploy the theme, log in as an
+administrator, and check the Sites or Site Templates section of the Control
+Panel to make sure your resources were deployed correctly. From the Control
+Panel you can easily view your theme and its resources:
 
 - If you imported into a site template, open its actions menu and select 
   *View Pages* to see it.

@@ -9,10 +9,10 @@ First, you must prepare your web content for the Resources Importer.
 
 ## Preparing Your Web Content [](id=preparing-your-web-content)
 
-This section covers how to leverage your HTML (basic web content), JSON 
-(structures), or VM or FTL (templates) files. All web content articles require a 
-structure and template. Note that some articles may share the same structure and 
-perhaps even the same template--this is the case for all basic web content 
+You can leverage your HTML (basic web content), JSON (structures), or VM or FTL
+(templates) files with the Resource Importer. All web content articles require
+a structure and template. Note that some articles may share the same structure
+and perhaps even the same template--this is the case for all basic web content
 articles. Follow these steps to prepare your web content articles:
 
 1.  Open the web content article and click the *Download* button to download the 
@@ -55,7 +55,7 @@ articles. Follow these steps to prepare your web content articles:
             </dynamic-content>
           </dynamic-element>
         </root>
-    
+ 
 2.  Download the web content article's structure. Open the structure and click 
     the *Source* tab to view the structure's file. Copy and paste its contents 
     into a new JSON file in the `resources-importer/journal/structures/` folder. 
@@ -105,7 +105,7 @@ articles. Follow these steps to prepare your web content articles:
     template below:
     
         ${content.getData()}
-        
+ 
 Repeat the steps above for each web content article you have. Note that some web 
 content articles may share the same structure and template; In these cases, only 
 one copy of the structure and template is required for all web content articles 
