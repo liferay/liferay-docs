@@ -149,8 +149,8 @@ A user's initials is the default avatar (i.e., portrait) for their account.
 Some cultures use initials differently, so there's a way to configure them in
 the `Language.properties` file.
 
-lang.user.default.portrait=initials
-lang.user.initials.field.names=first-name,last-name
+    lang.user.default.portrait=initials
+    lang.user.initials.field.names=first-name,last-name
 
 The `lang.user.default.portrait` property sets the type of portrait to use for
 users. This can be set to `initials` or `image`. If set to `image`, the default
