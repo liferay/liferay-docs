@@ -143,6 +143,31 @@ configuration. Other differences include the specific prefix values.
 accomplished using the same method by which @product@'s UI messages are
 localized: overriding one of its `Lanuguage_xx.properties` files.
 
+## Identifying User Initials [](id=identifying-user-initials)
+
+A user's initials is the default avatar (i.e., portrait) for their account.
+Some cultures use initials differently, so there's a way to configure them in
+the `Language.properties` file.
+
+lang.user.default.portrait=initials
+lang.user.initials.field.names=first-name,last-name
+
+The `lang.user.default.portrait` property sets the type of portrait to use for
+users. This can be set to `initials` or `image`. If set to `image`, the default
+images defined by the `image.default.user.female.portrait` or
+`image.default.user.male.portrait` properties residing in the
+`portal.properties` file are used. Therefore, the
+`lang.user.initials.field.names` property is ignored.
+
+![Figure 3: The user's initials are displayed for their avatar by default.](../../images/initials-avatar.png)
+
+If you're leveraging the user's initials for the default avatar, the
+`lang.user.initials.field.names` property is used to organize how the initials
+are displayed. Valid values for this property include `first-name`,
+`middle-name`, and `last-name`, in any order.
+
+Now you can manage how a user's initials are displayed!
+
 ## Right to Left or Left to Right? [](id=right-to-left-or-left-to-right)
 
 The first three properties in the `Language.properties`'s Language Settings
