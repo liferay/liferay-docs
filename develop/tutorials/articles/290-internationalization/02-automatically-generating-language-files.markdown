@@ -16,7 +16,7 @@ this tutorial, you'll explore the following capabilities:
 ## Generating Language Files for Supported Locales [](id=generating-language-files-for-supported-locales)
 
 If you want to generate files automatically for all 
-[locales supported by Liferay](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones),
+[supported locales](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones),
 you must make a small modification to your application's build file.
 
 1.  Make sure your module's build includes the `com.liferay.lang.builder`
