@@ -43,6 +43,18 @@ steps for creating finder columns:
 
 3.  Save your `service.xml` file.
 
++$$$
+
+**Important**: DO NOT create finders that use entity primary key as parameters. 
+They're unnecessary as Service Builder automatically generates
+`findeByPrimaryKey` and `fetchByPrimaryKey` methods for all entity primary keys.
+On deploying a `*service` module, Service Builder creates indexes for all entity
+primary key columns and finder columns. Adding finders that use entity primary
+keys results in attempts to create multiple indexes for the same
+columns---Oracle DB, for example, reports these attempts as errors.
+
+$$$
+
 ![Figure 4: Creating Finder entities is easy with Liferay @ide@.](../../../../images/service-builder-finders.png)
 
 If you're creating site-scoped entities (entities whose data should be unique to
