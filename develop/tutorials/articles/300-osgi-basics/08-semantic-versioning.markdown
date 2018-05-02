@@ -1,4 +1,4 @@
-# Semantic Versioning
+# Semantic Versioning [](id=semantic-versioning)
 
 [Semantic Versioning](https://semver.org/) is a three tiered versioning system
 designed to increment version numbering according to the types of API changes
@@ -36,7 +36,7 @@ ensure compatibility for those who leverage it. With semantic versioning's
 straight forward system and the help of Liferay tooling, managing your project's
 versions is easy.
 
-## Baselining Your Project
+## Baselining Your Project [](id=baselining-your-project)
 
 Following the semantic versioning procedure manually seems deceptively easy.
 There's a sad history of good-intentioned developers updating their projects'
@@ -75,7 +75,7 @@ thrown.
 With the ability to baseline, your project's semantic versioning is as accurate
 as its API expresses.
 
-## Managing Artifact and Dependency Versions
+## Managing Artifact and Dependency Versions [](id=managing-artifact-and-dependency-versions)
 
 Tracking your project's artifact and dependency versions can be done two ways
 with semantic versioning:
