@@ -64,8 +64,8 @@ transactions, search indexing, or security, if needed. The referencing class can
 invoke the Spring Bean class's methods.
 
 Besides the services Service Builder makes available for your application,
-Service Builder Spring Bean classes can also access any service published within
-the OSGi Registry. This means the following services are available:
+Service Builder Spring Bean classes can also access any service published in the
+OSGi Registry. This means the following services are available:
 
 - Beans defined in Liferay's core
 - Beans created in other module app contexts
@@ -77,14 +77,14 @@ Spring Bean referencing OSGi services.
 
 ## Referencing OSGi Services [](id=referencing-an-osgi-service)
 
-In many cases, your Service Builder code (Spring Beans) will need to use
-external services. Liferay's `@ServiceReference` annotation lets Liferay Spring
-Beans reference OSGi services. 
+In many cases, your Service Builder code (Spring Beans) must use external
+services. Liferay's `@ServiceReference` annotation lets Liferay Spring Beans
+reference OSGi services. 
 
 Suppose you're building an application with a simple entity your service module
-defines in its `service.xml` file. The application needs to send an SMS every
-time a new entity is created, and the `SMSService` is provided by a module
-installed in the system.
+defines in its `service.xml` file. The application must send an SMS every time
+a new entity is created, and the `SMSService` is provided by a module installed
+in the system.
 
 Your `*LocalServiceImpl` (Spring Bean) could use an `@ServiceReference`
 annotation to reference the *external* service.
