@@ -1,4 +1,4 @@
-# Creating and Managing Forms
+# Creating and Managing Forms [](id=creating-and-managing-forms)
 
 The Forms application can do a lot of things really well, but if you just need a
 simple form, how do you wade through all of the features you don't need? Is the
@@ -14,7 +14,7 @@ email with a link to brief survey that prompts them to rate their stay from a
 list of selections, and add any additional comments they'd like in an optional
 field.
 
-![Figure x: Get feedback from guests of The Lunar Resort.](../../images/forms-guest-survey.png)
+![Figure 1: Get feedback from guests of The Lunar Resort.](../../images/forms-guest-survey.png)
 
 ## Building a Form [](id=building-a-form)
 
@@ -36,7 +36,7 @@ in the Menu by using the site selector to choose the site you want to work in
     (![Add](../../images/icon-add.png)) to open the sidebar, if it's not
     already opened.
 
-    ![Figure x: You can choose from nine field types when creating forms.](../../images/forms-sidebar.png)
+    ![Figure 2: You can choose from nine field types when creating forms.](../../images/forms-sidebar.png)
 
 5.  Drag a *Select from List* field onto the form builder and configure it like this:
 
@@ -81,7 +81,7 @@ in the Menu by using the site selector to choose the site you want to work in
 9.  Back on the form builder page, you can see the way the fields will be laid
     out. This view shows the first (and only in this case) page of the form.
 
-    ![Figure 4: The form builder page lets you preview your form layout, add a page to the form, or add some more fields.](../../images/forms-form-builder.png)
+    ![Figure 3: The form builder page lets you preview your form layout, add a page to the form, or add some more fields.](../../images/forms-form-builder.png)
 
 10.  This form is finished, so click *Save Form*. It's also autosaved every
      minute by default.
@@ -92,7 +92,7 @@ in the Menu by using the site selector to choose the site you want to work in
 Now your form can be added to a page, and Lunar Resort guests can be emailed and
 provided with a link to the page where the form is displayed.
 
-## Accessing Forms
+## Accessing Forms [](id=accessing-forms)
 
 Once the form is developed and published, there are two options for getting the
 published form to targeted users:
@@ -109,7 +109,7 @@ To display the form on a site page in The Lunar Resort site:
     you only want the form application on the page). Call it *Guest Survey
     Page*.
 
-    ![Figure 5: Add a page for guests to view and fill out your new form.](../../images/forms-guest-survey-page.png)
+    ![Figure 4: Add a page for guests to view and fill out your new form.](../../images/forms-guest-survey-page.png)
 
 2.  Add the Form portlet to the page. If you used a full page application, click
     the Configure Page button (![Page Gear](../../images/icon-page-gear.png))
@@ -126,12 +126,12 @@ To display the form on a dedicated page accessed only by its link:
 
 1.  In the form builder, click *Publish Form* if you haven't already.
 
-    ![Figure x: You must first publish a form before you can get a shareable
+    ![Figure 5: You must first publish a form before you can get a shareable
     link.](../../images/forms-link-grayed.png)
 
 2.  Once published, click the link icon at the top right of the builder.
 
-    ![Figure x: Copy the link to your form.](../../images/forms-link.png)
+    ![Figure 6: Copy the link to your form.](../../images/forms-link.png)
 
 3. Once you get the link out to users, it's showtime.
 
