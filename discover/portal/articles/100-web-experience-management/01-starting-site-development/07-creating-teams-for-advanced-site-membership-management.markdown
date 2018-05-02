@@ -65,7 +65,7 @@ the team in the Role column, and select the appropriate permissions.
 
 That's it! It's easy to give groups of site users appropriate permissions to
 perform their tasks. This chapter has provided an introduction to @product@ site
-management. You’ve learned how to use @product@ to create multiple sites with
+management. You've learned how to use @product@ to create multiple sites with
 different membership types. You've also seen how easy it is to create and manage
 sites and to create and manage pages within a site in @product@. Next, you'll
 begin working with web content.

@@ -26,7 +26,7 @@ Click a question to view the answer.
 <div class="ldn-faq-question">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">What are optional package imports and how can I specify them?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
   <div class="hide">  
-    <p>When developing Liferay Portal modules, you can declare <em>optional</em> package imports. An optional package import is one your module can use if it’s available, but can still function without it. <a href="/develop/tutorials/-/knowledge_base/7-0/declaring-optional-import-package-requirements">Specifying optional package imports</a> is straightforward. </p>
+    <p>When developing Liferay Portal modules, you can declare <em>optional</em> package imports. An optional package import is one your module can use if it's available, but can still function without it. <a href="/develop/tutorials/-/knowledge_base/7-0/declaring-optional-import-package-requirements">Specifying optional package imports</a> is straightforward. </p>
   </div>
 </div>
 
@@ -34,7 +34,7 @@ Click a question to view the answer.
 <div class="ldn-faq-question">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">How can I connect to a JNDI data source from my module?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
   <div class="hide">  
-    <p>Connecting to an application server’s JNDI data sources from Liferay Portal’s OSGi environment is almost the same as connecting to them from the Java EE environment. In an OSGi environment, the only difference is that you must <a href="/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi">use Liferay Portal’s class loader to load the application server’s JNDI classes</a>. </p>
+    <p>Connecting to an application server's JNDI data sources from Liferay Portal's OSGi environment is almost the same as connecting to them from the Java EE environment. In an OSGi environment, the only difference is that you must <a href="/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi">use Liferay Portal's class loader to load the application server's JNDI classes</a>. </p>
   </div>
 </div>
 
@@ -57,7 +57,7 @@ Click a question to view the answer.
     ...
     Unresolved requirement: Require-Capability ...
     </code></pre>
-    <p>To satisfy the requirement, <a href="/develop/tutorials/-/knowledge_base/7-0/resolving-bundle-requirements">find a module that provides the capability, add it to your build file’s dependencies, and deploy it</a>. </p>
+    <p>To satisfy the requirement, <a href="/develop/tutorials/-/knowledge_base/7-0/resolving-bundle-requirements">find a module that provides the capability, add it to your build file's dependencies, and deploy it</a>. </p>
   </div>
 </div> 
 
@@ -81,7 +81,7 @@ Click a question to view the answer.
 <div class="ldn-faq-question">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">Why aren't my fragment's JSP overrides showing?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
   <div class="hide">  
-    <p><a href="/develop/tutorials/-/knowledge_base/7-0/why-arent-jsp-overrides-i-made-using-fragments-showing">Make sure your <code>Fragment-Host</code>’s bundle version is compatible with the host’s bundle version</a>. </p>
+    <p><a href="/develop/tutorials/-/knowledge_base/7-0/why-arent-jsp-overrides-i-made-using-fragments-showing">Make sure your <code>Fragment-Host</code>'s bundle version is compatible with the host's bundle version</a>. </p>
   </div>
 </div>
 
@@ -89,7 +89,7 @@ Click a question to view the answer.
 <div class="ldn-faq-question">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">The application server and database started, but @product@ failed to connect to the database. What happened and how can I fix this?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
   <div class="hide">  
-    <p>Liferay Portal initialization can fail while attempting to connect to a database server that isn’t ready. <a href="/develop/tutorials/-/knowledge_base/7-0/portal-failed-to-initialize-because-the-database-wasnt-ready">Configuring Liferay Portal startup to retry JDBC connections</a> facilitates connecting Liferay Portal to databases. </p>
+    <p>Liferay Portal initialization can fail while attempting to connect to a database server that isn't ready. <a href="/develop/tutorials/-/knowledge_base/7-0/portal-failed-to-initialize-because-the-database-wasnt-ready">Configuring Liferay Portal startup to retry JDBC connections</a> facilitates connecting Liferay Portal to databases. </p>
   </div>
 </div>
 
