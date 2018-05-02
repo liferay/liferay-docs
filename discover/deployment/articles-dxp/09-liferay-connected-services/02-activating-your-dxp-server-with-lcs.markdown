@@ -9,12 +9,12 @@ Follow these steps to activate your @product@ server with LCS:
     [lcs.liferay.com](https://lcs.liferay.com). 
     This takes you to your company's LCS project. If your company has multiple 
     projects, select the one you want to activate this server under from the 
-    menu to the right of the Dashboard tab.  
+    menu to the right of the Dashboard tab. 
 
     ![Figure 1: Select your LCS project from the menu highlighted by the red box in this screenshot.](../../images-dxp/lcs-select-project.png)
 
 3.  Select or create the environment to activate your server under. When 
-    activated, your server will consume an activation key from the subscription 
+    activated, your server consumes an activation key from the subscription 
     type assigned to the environment. Note that a subscription type can only be 
     assigned to an environment when creating the environment. If you have 
     sufficient permissions in your company's project, you can 
