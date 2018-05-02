@@ -50,8 +50,8 @@ They're unnecessary as Service Builder automatically generates
 `findeByPrimaryKey` and `fetchByPrimaryKey` methods for all entity primary keys.
 On deploying a `*service` module, Service Builder creates indexes for all entity
 primary key columns and finder columns. Adding finders that use entity primary
-keys results in attempts to create multiple indexes for the same columns--Oracle
-DB, for example, reports these attempts as errors.
+keys results in attempts to create multiple indexes for the same
+columns---Oracle DB, for example, reports these attempts as errors.
 
 $$$
 
