@@ -6,8 +6,8 @@ introduced to a releasable software component. It's a standard that enables API
 authors to communicate programmatic compatibility of a package or module
 automatically as it relates to dependent consumers and API implementations. If a
 package is programmatically (i.e., semantically) incompatible with a project,
-[Bnd](http://bnd.bndtools.org/) (used when building @product@ modules) fails that project's
-build immediately.
+[Bnd](http://bnd.bndtools.org/) (used when building @product@ modules) fails
+that project's build immediately.
 
 The semantic version format looks like this:
 
@@ -44,14 +44,14 @@ semantic versions manually, only to find out later they made a mistake. The
 truth is, it's hard to anticipate the ramifications of a simple update. To avoid
 this, you can *baseline* your project after it has been updated. Baselining
 verifies that the semantic versioning rules are obeyed by your project. This can
-catch a significant number of obvious API changes that are not so obvious to
-humans. However, care must always be taken when making any kind of code changes
-because this tool is not smart enough to identify compatibility changes which
-are not represented in the signatures of the Java classes or interfaces, or in
-API *use* changes (for instance assumptions about method call order, or changes
-to input and/or output encoding). However baseline, as the name implies, gives
-you a certain measure of *baseline* comfort that a large class of compatibility
-issues won’t sneak past you.
+catch many obvious API changes that are not so obvious to humans. Care must
+always be taken, however, when making any kind of code change because this tool
+is not smart enough to identify compatibility changes not represented in the
+signatures of Java classes or interfaces, or in API *use* changes (e.g.,
+assumptions about method call order, or changes to input and/or output
+encoding). Baseline, as the name implies, does give you a certain measure of
+*baseline* comfort that a large class of compatibility issues won't sneak past
+you.
 
 Liferay's Baseline Gradle plugin can be configured in your project to provide
 baselining capabilities. Add it to your Gradle build configuration and execute
@@ -72,8 +72,8 @@ there are any changes, it uses the OSGi semantic versioning rules to calculate
 the minimum new version. If your new module has a lower version, errors are
 thrown.
 
-With the ability to baseline, your project's semantic versioning should at least
-as accurate as what is expressed through its API.
+With the ability to baseline, your project's semantic versioning is as accurate
+as its API expresses.
 
 ## Managing Artifact and Dependency Versions
 
