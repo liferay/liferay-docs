@@ -9,7 +9,7 @@ To add a new search engine adapter, developers must create the following
 components and publish them to Liferay's OSGi registry:
 
 1. Implement a new IndexSearcher that should convert the Liferay Search objects
-   to the underlying search engine’s dialects:
+   to the underlying search engine's dialects:
     - QueryTranslator: Translates Liferay Queries to the native search engine's
       queries.
     - FilterTranslator: Translates Liferay filters into native search engine's
@@ -24,7 +24,7 @@ components and publish them to Liferay's OSGi registry:
 2. Implement a new IndexWriter that should
     - Convert the Liferay Document to a format understood by the underlying
       search engine's Document Format.
-    - Use the search engine’s API to update, add, and delete documents.
+    - Use the search engine's API to update, add, and delete documents.
 
 3. Implement a new SearchEngineConfigurator that should extend
    `AbstractSearchEngineConfigurator` to perform proper wiring.

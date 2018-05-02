@@ -472,7 +472,7 @@ the provider:
     scope. These settings are specified by an admin via the System Settings
     application or with an OSGi configuration file.
 
-Here are a couple real world examples from Liferay’s source code:
+Here are a couple real world examples from Liferay's source code:
 
     JournalGroupServiceConfiguration configuration =
         configurationProvider.getGroupConfiguration(
