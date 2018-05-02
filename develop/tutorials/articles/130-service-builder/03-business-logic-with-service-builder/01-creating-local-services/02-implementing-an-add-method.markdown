@@ -70,7 +70,7 @@ parameters, creates an entry with a generated entry ID (primary key), populates
 the entry, persists the entry, and returns it. You can refer to this method as
 you create your own `add*` method. 
 
-## Step 1: Declare an `add*` method with parameters for creating the entity [](id=declare-an-add-method-with-parameters-for-creating-the-entity)
+## Step 1: Declare an add method with parameters for creating the entity [](id=declare-an-add-method-with-parameters-for-creating-the-entity)
 
 Create a public method for *adding* (creating) your application's entity. Make
 it a public method that returns the entity it creates. 
