@@ -1,100 +1,88 @@
 # Activating Your @product@ Server with LCS [](id=registering-your-dxp-server-with-lcs)
 
-Once you've addressed 
-[the LCS preconfiguration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration), 
-you're ready to activate your @product@ server with LCS. You'll use an 
-[LCS environment token](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens) 
-to do this: 
+Follow these steps to activate your @product@ server with LCS: 
 
-1. Log in to 
-   [lcs.liferay.com](https://lcs.liferay.com). This takes you to your company's 
-   LCS project. If your company has multiple projects, select the one you want 
-   to activate this server under from the user menu at the top right.
+1.  Ensure that you've completed the 
+    [LCS preconfiguration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration). 
 
-    ![Figure 1: Your company's LCS projects are shown under *Manage Projects* in your user menu.](../../images-dxp/lcs-user-menu-manage-projects.png)
+2.  Log in to 
+    [lcs.liferay.com](https://lcs.liferay.com). 
+    This takes you to your company's LCS project. If your company has multiple 
+    projects, select the one you want to activate this server under from the 
+    menu to the right of the Dashboard tab. 
 
-2. Ensure that an environment exists to activate your server under. If you have 
-   sufficient permissions in your company's project, you can create a new 
-   environment by selecting the *Add Environment* tab. Note that you must 
-   activate a clustered server in a clustered environment. LCS environments can 
-   only be designated as clustered when they are created. To create a clustered 
-   environment, click *Add Environment* and select the *Cluster* checkbox when 
-   filling out the environment's information. Note that you must set the portal 
-   property `cluster.link.enabled` to `true` in any servers that connect to a 
-   clustered environment. 
+    ![Figure 1: Select your LCS project from the menu highlighted by the red box in this screenshot.](../../images-dxp/lcs-select-project.png)
 
-    ![Figure 2: You must activate your @product@ server in an LCS environment. The red box in this screenshot highlights an environment.](../../images-dxp/lcs-registration-select-environment.png)
+3.  Select or create the environment to activate your server under. When 
+    activated, your server consumes an activation key from the subscription 
+    type assigned to the environment. Note that a subscription type can only be 
+    assigned to an environment when creating the environment. If you have 
+    sufficient permissions in your company's project, you can 
+    [create a new environment](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#creating-an-environment) 
+    by selecting *Add Environment*. 
 
-3. Select the *Subscriptions* tab, and check the *Assign Subscription Type* 
-   table to ensure that the environment you want to activate your server in has 
-   a subscription type. If the environment doesn't have a subscription type, you 
-   can assign it one by selecting the *No Subscriptions* link and then choosing 
-   a subscription type. You should **use caution** when setting an environment's 
-   subscription type. All the servers in an environment **must be shut down** to 
-   assign that environment's subscription type. Also, **once set, you can't 
-   change an environment's subscription type**. 
-   [Click here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#managing-liferay-dxp-subscriptions) 
-   for more information on using subscriptions in LCS. 
+    ![Figure 2: You must activate your server in an LCS environment. The red box in this screenshot highlights environments.](../../images-dxp/lcs-registration-select-environment.png)
 
-    ![Figure 3: The Environment Subscriptions table shows the subscription types assigned to your environments, and lets you make such assignments.](../../images-dxp/lcs-environment-subscriptions.png)
+4.  Select the environment's *Registration* tab. This is where you manage and 
+    download the 
+    [environment's token file](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens), 
+    which you'll use to activate servers in the environment. 
 
-4. Select the environment you want to activate the server under, and then select 
-   the *Registration* tab. This tab is where you can download and manage the 
-   environment's token. In the Registration tab's *Services* section, first 
-   select the LCS services that you want to use with all @product@ servers that 
-   connect to this environment. All services are selected by default. Your 
-   selections of LCS services here are embedded in the token file. 
+    In the Registration tab's *Services* section, change the LCS service 
+    selections, if needed. Note that if you change the LCS service selections 
+    and there are servers already activated in the environment, then you must 
+    regenerate the token file and use it to reconnect those servers to LCS. 
+    You'll regenerate and/or download the token in the next step. 
 
-    ![Figure 4: An environment's Registration tab lets you manage the token file used to connect @product@ instances to the environment.](../../images-dxp/lcs-registration.png) 
+    The selected services are enabled for all servers that connect to this 
+    environment. Portal Analytics, Fix Pack Management, and Portal Property 
+    Analysis are selected by default. If Portal Property Analysis is selected, 
+    you can prevent LCS from analyzing specific properties. Enter them into the 
+    box that appears when you select *Show Blacklisted Properties*. Note that 
+    [LCS doesn't access security sensitive properties](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers). 
 
-5. Now you must use the Registration tab to generate, regenerate, and/or 
-   download the token file. The actions you take here depend on two things: what 
-   you did in the previous step and whether the environment has a token file 
-   already. Note that if the environment already has a token file, the Generate 
-   Token button is replaced by the Download Token button: 
+    ![Figure 3: An environment's Registration tab lets you manage the token file used to activate your server in the environment.](../../images-dxp/lcs-registration.png)
 
-    - **No existing token file:** Generate the token by clicking *Generate 
-      Token*. 
-    - **Existing token file, and changed selections of LCS services:** 
-      Regenerate the token by clicking *Regenerate Token*. Note that if you 
-      regenerate the token, all @product@ servers that currently use it will be 
-      disconnected from LCS and won't be able to reconnect until receiving the 
-      new token. 
-    - **Existing token file, and no changes to selections of LCS services:** No 
-      token generation or regeneration is required.
+5.  What you do now depends on what you did in the previous step: 
 
-    Once you've taken the appropriate action, download the token file by 
-    clicking the *Download Token* button at the bottom of the screen. 
-    [Click here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens)
-    for more information on environment tokens.
+    -   **Changes to LCS service selections:** Regenerate and download the 
+        token. Regenerating a token causes all servers using the old token to 
+        disconnect from LCS. You must reconnect them using the new token. 
+    -   **No changes to LCS service selections:** Download the token. 
 
-6. Shut down your @product@ instance if it's running. Place the token file in 
-   your instance's `[Liferay_Home]/data` folder, and then start the instance. On 
-   startup, the LCS client app uses the environment token to activate your 
-   @product@ instance in the LCS environment that corresponds to the token. 
+6.  Place the token file in your server's `[Liferay Home]/data` folder. Note 
+    that 
+    [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
+    is usually the parent folder of the application server's folder. If your 
+    server is running, it should connect to LCS in about 1 minute. If your 
+    server isn't running, it connects to LCS on startup. Upon connection, your 
+    server activates by consuming an activation key from the environment's 
+    subscription type. You should see this in your LCS project's Subscriptions 
+    tab. 
 
-7. Celebrate! Your @product@ server is activated and connected to LCS. 
+7.  Celebrate! Your @product@ server is activated and connected to LCS. If for 
+    some reason it isn't, see the 
+    [LCS troubleshooting article](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection). 
 
 +$$$
 
-**Note:** You may be wondering what happens when your server can't reach LCS. 
-Don't worry, this won't cause a rift in the space-time continuum. Because LCS is 
-deployed on a global cloud infrastructure set up for automatic failure recovery, 
-the potential for non-availability is very low. In the event of an outage, 
-however, registered @product@ instances maintain a local copy of their uptime 
-information to transmit to LCS when it comes back online. Active @product@ 
-subscriptions also have a seven-day grace period to re-establish connectivity 
-and remain valid. This is ample time for LCS to come back online. Should an 
-extended LCS outage occur, Liferay support can provide temporary subscription 
-keys that don't require LCS. 
+**Note:** You may be wondering what happens if LCS goes offline. Don't worry, 
+this won't cause a rift in the space-time continuum. LCS is deployed on a global 
+cloud infrastructure set up for automatic failure recovery. The potential for 
+non-availability is very low. In the event of an outage, however, registered 
+servers maintain a local copy of their uptime information to transmit to LCS 
+when it comes back online. Active subscriptions also have a 30-day grace period 
+to re-establish connectivity and remain valid. This is ample time for LCS to 
+come back online. Should an extended LCS outage occur, Liferay Support can 
+provide temporary activation keys that don't require LCS. 
 
 $$$
 
+## Determining Your Server's LCS Connection Status [](id=determining-your-servers-lcs-connection-status)
+
 In your @product@ instance, you can view your LCS connection status in the LCS 
 client app. Access the client by clicking *Control Panel* &rarr; 
-*Configuration* &rarr; *Liferay Connected Services*. Note that you can change 
-which LCS services are enabled for your @product@ instance by clicking the 
-*Configure Services* link. 
+*Configuration* &rarr; *Liferay Connected Services*. 
 
 Here's a full description of what a connected LCS client app displays: 
 
@@ -104,19 +92,15 @@ Here's a full description of what a connected LCS client app displays:
     connection/reconnection and are unrelated to server metrics. It's therefore 
     common for a long period of time to pass before the client receives another 
     such message for a reconnection event. 
--   **Services:** The LCS services enabled for this @product@ instance. Note 
-    that all @product@ instances that connect to the same LCS environment must 
-    use the same set of LCS services. LCS services can't be enabled on an 
-    instance-by-instance basis. 
--   **Project Home:** This link takes you to this server's LCS project. The 
-    project home in LCS is also called the *dashboard*. 
--   **Environment:** This link takes you to this server's LCS environment. 
--   **Server Dashboard:** This link takes you to the server on LCS. 
+-   **Services:** The LCS services enabled for this server. Note that all 
+    servers in an environment use the same set of LCS services. LCS services 
+    can't be controlled on a server-by-server basis. 
+-   **Project Home:** a link to this server's LCS project. 
+-   **Environment:** a link to this server's LCS environment. 
+-   **Server Dashboard:** a link to the server on LCS. 
 
-![Figure 5: The server is connected to LCS.](../../images-dxp/lcs-server-connected.png)
+![Figure 4: The server is connected to LCS.](../../images-dxp/lcs-server-connected.png)
 
-Awesome! Now you know how to use environment tokens in LCS to activate your 
-@product@ server. 
-
-For information on using the other features of LCS, see 
-[the next article](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs). 
+Awesome! Now you know how to activate your server with LCS. See the article on 
+[using LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs) 
+for information on using LCS's other features. 

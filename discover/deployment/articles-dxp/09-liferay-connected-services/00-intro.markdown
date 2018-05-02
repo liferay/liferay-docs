@@ -1,14 +1,13 @@
 # Managing @product@ with Liferay Connected Services [](id=managing-liferay-with-liferay-connected-services)
 
 Liferay Connected Services (LCS) is a set of online tools and services that lets 
-you manage and monitor your @product@ instances. LCS can automatically install 
-the fix packs that you choose, monitor your @product@ instances' performance, 
-activate your @product@ instances, and help you manage your @product@ 
-subscriptions. In other words, LCS is like a butler for the mansion that is 
-@product@. Even better, the features of LCS work regardless of whether your 
-@product@ instance is on a single discreet server or distributed across a node. 
-It's like having a single butler that can serve several mansions at once! You 
-can find more information about LCS on its 
+you manage and monitor your @product@ instances. LCS can help you install fix 
+packs, monitor your instances' performance, activate your instances, and help 
+you manage your @product@ subscriptions. In other words, LCS is like a butler 
+for the mansion that is @product@. Even better, the features of LCS work 
+regardless of whether your instance is on a single discreet server or 
+distributed across a cluster. It's like having a single butler that can serve 
+several mansions at once! You can find more information about LCS on its 
 [official product page](http://www.liferay.com/products/liferay-connected-services). 
 
 Before going any further, you should take note of a few key terms used 
@@ -27,6 +26,7 @@ As you go through this guide, you'll cover the following topics:
 - LCS Preconfiguration 
 - Activating Your @product@ Server with LCS 
 - Using LCS 
+- Troubleshooting Your LCS Connection
 
 You'll get started with the configuration steps required to use LCS with 
 @product@. 
