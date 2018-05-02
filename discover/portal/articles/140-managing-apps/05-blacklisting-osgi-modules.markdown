@@ -12,14 +12,14 @@ Configuration screen are the best ways to create blacklist files.
 
 +$$$
 
-**Note**: Blacklisting OSGi modules appears in DXP Digital Enterprise Fix 7.0
+**Note**: Blacklisting OSGi modules appears in DXP Digital Enterprise 7.0 Fix 
 Pack 30 and Liferay CE Portal 7.0 GA5.
 
 $$$
 
 +$$$
 
-**Note**: Blacklisting OSGi components appears in DXP Digital Enterprise Fix 7.0
+**Note**: Blacklisting OSGi components appears in DXP Digital Enterprise 7.0 Fix
 Pack 40 and Liferay CE Portal 7.0 GA6.
 
 $$$
