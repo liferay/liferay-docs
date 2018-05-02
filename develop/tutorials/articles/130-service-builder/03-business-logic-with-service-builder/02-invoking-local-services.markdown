@@ -1,21 +1,21 @@
 # Invoking Local Services [](id=invoking-local-services)
 
-Application business logic involves operating on the application's entity model.
-The application's local services implement those operations. Service Builder
-generates local and remote service classes as OSGi Declarative Services (DS)
-components. These components are accessible to other DS components in your
-application. Here's how to make your application's DS components use your local
-service components:
+Once you deploy your services module, those services are available in the
+container. Service Builder generates local and remote service classes as OSGi
+Declarative Services (DS) components. These components are accessible to other
+DS components, so you can invoke them from other components, such as your web
+application. Here's how:
 
 1. [Add a reference to the local service component.](#step-1-reference-the-local-service-component) 
+
 2. [Call the component's methods.](#step-2-call-the-service-component-methods)
 
-The
-[Basic Service Builder Liferay Blade sample project's](/develop/reference/-/knowledge_base/7-1/service-builder-samples)
-`basic-web` module has a `Portlet` service component that demonstrates
-referencing a local service component. This module also has JSPs that invoke
-the component's methods. Your first step is to add a reference to the local
-service component object.
+There's a Blade sample called 
+[Basic Service Builder](/develop/reference/-/knowledge_base/7-1/service-builder-samples).
+Its `basic-web` module has a `Portlet` service component that demonstrates
+referencing a local service component. This module also has JSPs that invoke the
+component's methods. Your first step is to add a reference to the local service
+component object.
 
 ## Step 1: Reference the Local Service Component [](id=step-1-reference-the-local-service-component)
 
@@ -35,9 +35,9 @@ completely optional.
 
 +$$$
 
-**Note**: Service Builder generates `*LocalServiceImpl`, `*ServiceImpl`,  
+**Note**: Service Builder generates `*LocalServiceImpl`, `*ServiceImpl`, 
 `*PersistenceImpl`, and `[ENTITY_NAME]Impl` classes for your entities as Service
-Builder Spring Beans--not OSGi Declarative Services.
+Builder Spring Beans---not OSGi Declarative Services. 
 [Service Builder Spring Beans must use means other than the `@Reference` annotation to reference Liferay services and OSGi services](/develop/reference/-/knowledge_base/7-1/invoking-services-from-service-builder-code).
 
 $$$
@@ -50,7 +50,7 @@ your class.
 You can make a service object available to JSPs by associating it with a
 `RenderRequest` attribute. For example, the `JSPPortlet`'s `render` method
 associates the `FooLocalService` object with an attribute called
-`"fooLocalService"`. 
+`fooLocalService`. 
 
     @Override
     public void render(RenderRequest request, RenderResponse response)
