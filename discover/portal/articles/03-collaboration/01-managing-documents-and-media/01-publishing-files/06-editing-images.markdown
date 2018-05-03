@@ -40,28 +40,22 @@ options. The menu options are described below:
 
 **Transform** (![Transform](../../../../images/icon-transform.png))
 
-    -   **Rotate**: Lets you rotate the image to the left or right, in 90 degree
-        increments.
-    -   **Resize**: Lets you resize the image in pixels. If the lock is closed, 
-        the aspect ratio remains locked, and changing either width or height 
-        will automatically adjust the other dimension to maintain the aspect 
-        ratio. When the lock is opened, the width and height can be changed 
-        individually, allowing the aspect ratio to be altered. This is not 
-        recommended though, as the image can become distorted.
-    -   **Crop**: Lets you reframe the image, by removing the outer portions.
+-   **Rotate**: Rotate the image to the left or right, in 90 degree increments.
+-   **Resize**: Resize the image. If the lock is closed, the aspect ratio is 
+    locked and changing either width or height automatically adjusts the other 
+    dimension to maintain the aspect ratio. When the lock is opened, the width 
+    and height can be changed individually, allowing the aspect ratio to change 
+    (this isn't recommended because the image can become distorted). 
+-   **Crop**: Crop the image.
 
 **Adjustment** (![Adjustment](../../../../images/icon-adjustment.png))
 
-    -   **Saturation**: Lets you adjust the amount of color saturation in the 
-        image. The default value of 50 is the current saturation. The slider 
-        values range from 0(completely desaturated) to 100(completely 
-        saturated). 
-    -   **Contrast**: Lets you adjust the difference between highlights and 
-        shadows. A value of 50 is the current level of contrast. The slider 
-        values range from 0 (no contrast) to 100 (full contrast). 
-    -   **Brightness**: Lets you adjust the amount of light in the image. A 
-        value of 50 is the current brightness. The slider ranges from 0 
-        (completely black) to 100 (completely white). 
+-   **Saturation**: Adjust the color saturation. The default value is 50. Values 
+    range from 0 (completely desaturated) to 100 (completely saturated). 
+-   **Contrast**: Adjust the contrast. The default value is 50. Values range 
+    from 0 (no contrast) to 100 (full contrast). 
+-   **Brightness**: Adjust the brightness. The default value is 50. Values range 
+    from 0 (completely black) to 100 (completely white). 
 
 **Filter** (![Wand](../../../../images/icon-wand.png))
 
