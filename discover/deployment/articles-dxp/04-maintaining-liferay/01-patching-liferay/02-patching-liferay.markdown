@@ -52,23 +52,23 @@ issue the following command:
 
     patching-tool install
 
+To make sure the all changed OSGi bundles replace the existing ones, it is
+recommended to delete the `osgi/state` folder from the
+[Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home). 
+
 +$$$
 
-**Note:** If @product@ isn't running Fix Pack 13 or later, you must delete the
-`/osgi/state` folder from the [Liferay Home
-folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
-after a successful patch installation. Later versions contain a [bug
-fix](https://issues.liferay.com/browse/LPS-71424) that obviates this
-requirement. 
+**Note**: The `osgi/state` folder in the
+[Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+contains OSGi bundle state information. If an OSGi bundle in a patch is changed
+in such a way that the OSGI framework cannot detect any changes externally, the
+existing OSGi bundle, and its state information, is not changed. Hot fixes, for
+example, may contain in-place changes that do not use the API---the framework
+cannot detect such changes. Fix Packs may also contain changes that the
+framework cannot detect. It is recommended, therefore, to delete the
+`osgi/state` folder after doing any patching. 
 
-Deleting the `/osgi/state` folder is undesirable, as important state information
-is stored there. For example, when an application is uninstalled through the
-[App Manager](discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps), the uninstalled state is
-stored in the state folder. Installing a patch, deleting the state folder, and
-restarting @product@ causes all applications, including those previously
-uninstalled, to be reinstalled and started automatically.
-
-$$$
+$$$ 
 
 If there are new database indexes created by the patch, the Patching Tool tells
 you to update them. To get the list, run this command:
