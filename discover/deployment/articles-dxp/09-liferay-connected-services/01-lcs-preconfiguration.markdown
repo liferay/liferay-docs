@@ -14,30 +14,27 @@ guide walk you through these steps:
 
 Also, 
 [the last section](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#upgrading-the-lcs-client-app) 
-in this guide shows you how to upgrade the LCS client app once your @product@ 
-instance is registered and activated with LCS. You must do this upgrade whenever 
-Liferay releases a new version of the app. 
+in this guide shows you how to upgrade the LCS client app once your server is 
+registered and activated with LCS. We highly recommend that you upgrade the app 
+whenever Liferay releases a new version of it. 
 
 +$$$
 
-**Note:** These steps show how to preconfigure LCS and your @product@ servers 
-for use in production environments. To activate @product@ on a local workstation 
-for testing or development purposes, you don't need to use LCS. Instead, 
-navigate to 
+**Note:** These steps show how to preconfigure LCS and your servers for use in 
+production environments. To activate a server on a local workstation for testing 
+or development purposes, you don't need to use LCS. Instead, navigate to 
 [@product@'s activation page](https://web.liferay.com/group/customer/dxp/getting-started/activation) 
 and select your subscription project. After downloading your key, place it in 
 your local @product@ instance's `deploy` folder. 
 
 $$$
 
-First, you'll download the LCS client app. 
-
 ## Downloading the LCS Client App [](id=downloading-the-lcs-client-app)
 
 The LCS client app is included in each @product@ bundle and autodeploys when the 
-bundle starts. The included version of the app, however, may be outdated. You 
-must therefore download and install the latest version of the LCS client app. To 
-do this, you must first purchase the app. 
+bundle starts. The included version of the app, however, may be outdated. To get 
+the latest version of the LCS client app, you must first purchase it via Liferay 
+Marketplace. 
 
 +$$$
 
@@ -48,50 +45,49 @@ downloading a free app in a mobile app store adds the app to your account.
 
 $$$
 
-Use these steps to purchase and download the app (if you've already 
-purchased the app, you can skip to step three to download it): 
+Use these steps to purchase and download the app (if you've already purchased 
+the app, you can skip to step 3 to download it): 
 
-1. [Click here](https://web.liferay.com/marketplace/-/mp/application/71774947) 
-   to go to the LCS client app in Liferay Marketplace. Sign in to Marketplace, 
-   then click the the LCS client app's *Free* button. 
+1.  Navigate to 
+    [the LCS client app in Liferay Marketplace](https://web.liferay.com/marketplace/-/mp/application/71774947). 
+    Sign in to Marketplace, then click the the LCS client app's *Free* button. 
 
     ![Figure 1: Click the app's *Free* button to begin the purchase process.](../../images-dxp/lcs-client-app-marketplace.png)
 
-2. Select the project you want to associate the app with, accept the license 
-   agreement, and then click the *Purchase* button. Marketplace then displays 
-   your receipt. 
+2.  Select the project you want to associate the app with, accept the license 
+    agreement, and then click the *Purchase* button. Marketplace then displays 
+    your receipt. 
 
     ![Figure 2: Liferay Marketplace displays your receipt for the LCS client app.](../../images-dxp/lcs-client-app-receipt.png)
 
-3. On the receipt, click *See Purchased*. This takes you to the page where you 
-   can download the LCS client app. To download the app, click the *App* button 
-   next to the version of the app you want to download. 
+3.  On the receipt, click *See Purchased*. This takes you to the page where you 
+    can download the LCS client app. To download the app, click the *App* button 
+    next to the version of the app you want to download. 
 
     +$$$
 
     **Note:** If you need to download the LCS client app later, such as when 
     [upgrading it](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#upgrading-the-lcs-client-app), 
-    select *Purchased Apps* from the User menu at the top-right of the screen. 
-    This menu is available anywhere in liferay.com once you're logged in; you 
-    don't have to be in Marketplace to access it. On the Purchased Apps screen, 
-    select the project you associated with the LCS client app and then select 
-    the app. This takes you to the same download page shown in the screenshot. 
+    select *Purchased Apps* from the User menu at the top-right of Liferay 
+    Marketplace. On the Purchased Apps screen, select the project you associated 
+    with the LCS client app and then select the app. This takes you to the same 
+    downloads page shown in the screenshot. 
 
     $$$
 
     ![Figure 3: Click the *App* button next to the version of the app you want to download.](../../images-dxp/lcs-client-download-page.png)
 
-Great! You've successfully downloaded the LCS client app to your machine. Before 
-installing it, however, there are a few additional preconfiguration steps you 
-should complete. The following sections of this guide walk you through these, 
-and then show you how to install the app. 
+Great! You've successfully downloaded the LCS client app. Before installing it, 
+however, there are a few additional preconfiguration steps you should complete. 
+The following sections of this guide walk you through these, and then show you 
+how to install the app. 
 
 +$$$
 
 **Note:** If your server connects to the Internet through a proxy, you must 
-configure either your server or the LCS client app **before** deploying the app 
-to your @product@ instance. The following section contains instructions on this. 
-If your server doesn't connect through a proxy, you can skip this section. 
+configure either your server or the LCS client app **before** deploying the app. 
+The following section contains instructions on this. If your server doesn't 
+connect through a proxy, you can skip this section. 
 
 $$$
 
@@ -99,12 +95,11 @@ $$$
 
 If your server connects to the Internet through a proxy, you must set some 
 properties in either your server or the LCS client app **before** deploying the 
-app to your @product@ instance. There are therefore two ways to set these 
-properties, depending on whether you set them in your server or the LCS client 
-app: 
+app. There are therefore two ways to set these properties, depending on whether 
+you set them in your server or the LCS client app. 
 
-1. As JVM app server arguments. Set these properties to the appropriate values 
-   for your proxy: 
+1.  To set the properties in your server, set them as JVM app server arguments. 
+    Set these properties to the appropriate values for your proxy: 
 
         -Dhttp.proxyHost=
         -Dhttp.proxyPort=
@@ -124,10 +119,10 @@ app:
 
     $$$
 
-2. Inside the LCS client app's WAR file, before deploying the app. You can find 
-   this WAR file inside the app's LPKG file that downloads to your machine from 
-   Liferay Marketplace. Expand the LPKG file, then locate and expand the 
-   client's WAR file: `lcs-portlet-[version].war`. 
+2.  To set the properties inside the LCS client app's WAR file, you must first 
+    extract it from the app's LPKG file (the app downloads from Liferay 
+    Marketplace as an LPKG file). Expand the LPKG file, then locate and expand 
+    the client's WAR file: `lcs-portlet-[version].war`. 
 
     You must set the properties in the WAR's `portlet-ext.properties` file. 
     Follow these steps to do so: 
@@ -202,33 +197,42 @@ Next, you'll learn how to configure @product@'s patching tool.
 ## Configuring the Patching Tool [](id=configuring-the-patching-tool)
 
 LCS uses @product@'s patching tool to apply updates. In @product@ bundles, the
-patching tool is pre-installed. If you're not running a bundle, 
-[click here to download the patching tool](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool). 
-Then see 
-[how to install the patching tool](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-liferay). 
+patching tool is pre-installed. If you're not running a bundle, you must 
+[download](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool) 
+and 
+[install](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-liferay) 
+the patching tool separately. 
+
 Once installed, there are a few steps you must complete before LCS can use the 
 patching tool. Note that the commands below apply to Linux, Unix, and Mac. If 
 you're running Windows, drop the `.sh` from each command that has it. 
 
-1. Navigate to the `patching-tool` directory on the command line. It's typically 
-   located in the Liferay Home folder.
+1.  Navigate to the `patching-tool` directory on the command line. It's 
+    typically located in the 
+    [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
+    folder. Liferay Home is usually the parent folder of the application 
+    server's folder. 
 
-2. To let the patching tool discover your @product@ installation, run 
-   `patching-tool.sh auto-discovery`. 
+2.  To let the patching tool discover your @product@ installation, run this 
+    command: 
 
-3. To configure the patching tool, run `patching-tool.sh setup`. 
+        patching-tool.sh auto-discovery
 
-4. On server startup, the patching tool agent installs the patches downloaded by 
-   LCS. For the agent to start with your server, you must set the `javaagent` 
-   property in the JVM options to point to the `patching-tool-agent.jar` in your 
-   patching tool installation. Be sure to specify the correct file path to your 
-   patching tool installation's `patching-tool-agent.jar`: 
+3.  To configure the patching tool, run this command: 
+
+        patching-tool.sh setup
+
+4.  On server startup, the patching tool agent installs the patches downloaded 
+    by LCS. For the agent to start with your server, you must set the 
+    `javaagent` property in the JVM options to point to your patching tool 
+    installation's `patching-tool-agent.jar`. Be sure to specify the correct 
+    path to this file: 
 
         -javaagent:../../patching-tool/lib/patching-tool-agent.jar
 
-5. If your patching tool is installed in a location other than the Liferay Home 
-   folder, you must also specify the `patching-tool` folder's path as an app 
-   server JVM argument. Do this with the `patching.tool.home` property: 
+5.  If your patching tool is installed in a location other than the Liferay Home 
+    folder, you must also specify the `patching-tool` folder's path as an app 
+    server JVM argument. Do this with the `patching.tool.home` property: 
 
         -Dpatching.tool.home=/opt/liferay-dxp-digital-enterprise-7.0/patching-tool/
 
@@ -264,28 +268,26 @@ You can specify these as follows:
 Once you've addressed the above preconfiguration steps, you're ready to install 
 the LCS client app. Follow these steps to install the app:
 
-1. In your @product@ bundle's 
-   [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
-   folder (usually the parent folder of the application server's folder), delete 
-   this file: 
+1.  In your @product@ bundle's 
+    [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
+    folder (usually the parent folder of the application server's folder), 
+    delete this file: 
 
         osgi/marketplace/Liferay Connected Services Client.lpkg
 
-2. Place the new `Liferay Connected Services Client.lpkg` in `osgi/marketplace`. 
+2.  Place the new `Liferay Connected Services Client.lpkg` in 
+    `osgi/marketplace`. 
 
-Great! Now you're all set to activate your @product@ instance with LCS. For 
-instructions on this, 
-[click here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs) 
-to proceed to the next article. 
+Great! Now you're all set to 
+[activate your server with LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs). 
 
-The next section shows you how to upgrade the LCS client app. You'll need to do 
-this whenever Liferay releases a new version of the app. 
+The next section shows you how to upgrade the LCS client app. We highly 
+recommend that you do this whenever Liferay releases a new version of the app. 
 
 ## Upgrading the LCS Client App [](id=upgrading-the-lcs-client-app)
 
-Your @product@ instance should always be running the latest version of the LCS 
-client app. You must therefore upgrade the app when Liferay releases a new 
-version of it. There are two ways to do this, depending on the exact LCS 
+Your server should always be running the latest version of the LCS client app. 
+There are two ways to upgrade the app, depending on the exact LCS 
 preconfiguration steps you followed: 
 
 1.  Via Liferay Marketplace *inside* your running @product@ instance. Use this 
@@ -296,8 +298,8 @@ preconfiguration steps you followed:
 
     **Note:** If you choose this method and have a clustered environment, you 
     must perform the upgrade separately on each node in your cluster. Therefore, 
-    you may prefer to upgrade manually as detailed in step two to ensure that 
-    all your nodes are running the exact same version of the LCS client app. 
+    you may prefer to upgrade manually as detailed in step 2 to ensure that all 
+    your nodes are running the exact same version of the LCS client app. 
 
     $$$
 
@@ -318,17 +320,9 @@ preconfiguration steps you followed:
 
     $$$
 
-    To update the LCS client app manually, shut down your @product@ server and
-    follow the previous sections in this guide for downloading, preconfiguring,
-    and installing the app. Restart the server. If you encounter errors, you
-    might need to delete the `osgi/state` folder from [Liferay
-    Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home).
-    Be aware that deleting the state folder causes loss of information on the
-    state of your system's applications. For example, if you uninstalled a suite
-    of applications from the App Manager, those applications will be reinstalled
-    and started automatically after you restart the server. If you run into
-    errors on startup and deploy, it may also help to clear the app server's
-    `work` and `temp` folders. 
+    To update the LCS client app manually, follow the previous sections in this 
+    guide for downloading and preconfiguring the app. Then deploy it to 
+    `[Liferay Home]/deploy` as you would any other app. 
 
-Contact Liferay support if you need additional assistance with the upgrade 
+Contact Liferay Support if you need additional assistance with the upgrade 
 process. 

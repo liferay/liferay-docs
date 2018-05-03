@@ -9,7 +9,7 @@ tutorial.
 
 ## Setting Up Your Theme With Liferay Theme Generator [](id=setting-up-your-theme-with-liferay-theme-generator)
 
-You’ll use Liferay Theme Generator to get the upgrade process started. Liferay 
+You'll use Liferay Theme Generator to get the upgrade process started. Liferay 
 Theme Generator supplies your theme with the necessary tools to deploy and make 
 quick modifications.
 
@@ -458,7 +458,7 @@ For more in depth coverage, see [jQuery's documentation](http://api.jquery.com/)
 
 [Lodash](https://lodash.com/) is a modern JavaScript utility library delivering 
 modularity, performance & extras. It's used in @product@ to fill the void left 
-by YUI’s utility modules.
+by YUI's utility modules.
 
 For more in depth coverage, see [Lodash's documentation](http://lodash.com/docs/).
 

@@ -37,7 +37,7 @@ following properties, which it passes to the superclass initializer:
 - `screenlet`: A `BaseListScreenlet` reference. This ensures the Interactor 
   always has a Screenlet reference. 
 - `page`: The page number to retrieve. 
-- `computeRowCount`: Whether to call the Connector’s `doAddRowCountServiceCall` 
+- `computeRowCount`: Whether to call the Connector's `doAddRowCountServiceCall` 
   method. 
 
 Follow these steps to create Entry List Screenlet's Interactor: 

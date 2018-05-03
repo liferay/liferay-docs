@@ -288,7 +288,7 @@ Now that you understand the render logic, you can learn how the view layer works
 
 ## Configuring the View Layer [](id=configuring-the-view-layer)
 
-Your portlet also requires a view layer, and for that you’ll use Soy templates, 
+Your portlet also requires a view layer, and for that you'll use Soy templates, 
 which is the whole point of developing a Soy portlet, isn't it? This section 
 briefly covers how to get your view layer working, from including other Soy 
 templates, to creating a MetalJS component for rendering your views.

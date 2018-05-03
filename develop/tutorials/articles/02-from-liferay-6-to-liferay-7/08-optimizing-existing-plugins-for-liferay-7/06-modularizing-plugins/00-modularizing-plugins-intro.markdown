@@ -23,12 +23,12 @@ application to modules.
 
 **When not to convert?**
 
--   You have a portlet that’s JSR-168/286 compatible and you still want to be
+-   You have a portlet that's JSR-168/286 compatible and you still want to be
     able to deploy it to another portlet container. In this case, it's best to
     stay with the traditional WAR model. (To eliminate this reason for not
     converting, Liferay is discussing with other vendors the possibility of
     making modular portlets a standard.) 
--   You’re using a complex web framework that is heavily tied to the Java EE
+-   You're using a complex web framework that is heavily tied to the Java EE
     programming model and the amount of effort necessary to make it work with
     OSGi is more than you feel is necessary or warranted. 
 -   You want to minimize effort to get your application to working on

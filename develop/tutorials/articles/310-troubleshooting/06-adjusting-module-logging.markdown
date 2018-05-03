@@ -52,10 +52,10 @@ samples (among others) leverage module logging.
 +$$$
 
 Note: If the log level configuration isn't appearing (e.g., you set the log
-level to `ERROR` but you’re still getting `WARN` messages), make sure the log
+level to `ERROR` but you're still getting `WARN` messages), make sure the log
 configuration file name prefix matches the module's symbolic name. If you have
 Bnd installed, output from command `bnd print [path-to-bundle]` includes the
-module’s symbolic name ([Here](https://github.com/bndtools/bnd/wiki/Install-bnd-on-the-command-line)
+module's symbolic name ([Here](https://github.com/bndtools/bnd/wiki/Install-bnd-on-the-command-line)
 are instructions for installing Bnd for the command line).
 
 $$$

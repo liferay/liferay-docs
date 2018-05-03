@@ -3,7 +3,7 @@
 Although it's possible to install @product@ in a WebLogic Admin
 Server, this isn't recommended. It's best practice to install web apps,
 including @product@, in a WebLogic Managed server. By deploying to a Managed
-Server, you’ll be able to start/shutdown @product@ more quickly, and you’ll
+Server, you'll be able to start/shutdown @product@ more quickly, and you'll
 more easily be able to extend @product@ into a cluster configuration. This article
 therefore focuses on installing @product@ in a Managed Server. 
 
@@ -153,7 +153,7 @@ now:
    it doesn't exist).
 
 If you don't want to use @product@'s built-in Hypersonic database, you must also 
-add your database's driver JAR file to your domain’s `lib` folder. Note that 
+add your database's driver JAR file to your domain's `lib` folder. Note that 
 although Hypersonic is fine for testing purposes, you **should not** use it for 
 production @product@ instances. 
 
@@ -205,7 +205,7 @@ Next, you'll configure your mail session.
 ## Mail Configuration [](id=mail-configuration)
 
 If you want WebLogic to manage your mail session, use the following procedure. 
-If you want to use Liferay’s built-in mail session (recommended), you can skip 
+If you want to use Liferay's built-in mail session (recommended), you can skip 
 this section. 
 
 1. Start WebLogic and log in to your Admin Server's console.
