@@ -81,7 +81,8 @@ To create a specification label, you must first assign a label to a product.
 
 Next, edit the label to give it a value.
 
-1.  Click on the ![Options](../../images/icon-options.png) button next to the new label and hit *Edit*.
+1.  Click on the ![Options](../../images/icon-options.png) button next to the
+    new label and hit *Edit*.
 
 2.  Enter a value. For example, if your label is *Material*, then the value
     should describe what the product is made out of: *polymer*, *ceramic*, or

@@ -1,27 +1,75 @@
 # Product Relations [](id=product-relations)
 
-When a customer browses your web store, it makes sense to advertise products
-related to the specific item he or she is looking for. Often the advertised item
-is something most customers would buy anyway--a mouse to go with that new
-laptop, for example--but which they might buy from another vendor if they aren't
-aware of the breadth of your catalog.
+Product relations can be used to connect products irrespective of category,
+typically for the purpose of displaying links to one product on the detail page
+of another. Multiple types of product relations are supported:
 
-To create a product relation, click on the product in the catalog and then go to
-the *Product Relations* tab. Click on the *Add* button and select whichever
-items you wish to add links to on the product's display page.
+**Up-sell:** Display products that are comparable to the featured product
+but have a higher sale value.
 
-![Figure 1: The row of tabs at the left allows you to create multiple sets of related products.](../../../images/product-relations.png)
+**Spare:** Display products that are spare parts or components for the featured
+product.
 
-To the left of the screen, a number of product relation types are displayed:
-up-sell, cross-sell, accessories, etc. New product relations can be added in
-each tab. This allows for the creation of several different sets of product
-relations which can be easily alternated by configuring the Search Results
-portlet on the [product display page](discover/portal/-/knowledge_base/7-1/product-detail-page).
+**Related:** A catch-all set.
 
-<!--Ok. To create your own type, go into Control panel/system
-settings/category.commerce/Product relation types. Add as many types as you want
-and call them what you want-they all work the same way. To determine which type
-will be displayed, configure the search results portal on the product detail
-page. Not sure yet whether this can be customized by individual product or if
-you have to have individual pages to do that.-->
+**Accessories:** Display add-on products for use in conjunction with the featured products.
 
+**Cross-sell:** Display products complementary to the featured product.
+
+As far as the software is concerned, all of these types are identical---the
+difference is all in how you choose to use them. By populating each type with
+different sets of product relations you gain the ability to quickly change
+between sets. Additionally, you can display multiple types---each populated with
+different sets of products---of relations on a single page.
+
+## Setting Product Relationship Types
+
+The different types of product relations are flexible. Since each one functions
+the same way, you can add, remove, or rename types at will. Follow these steps:
+
+1.  Go to *Control Panel* &rarr; *System Settings* &rarr; *category.commerce*
+    &rarr; *Product Relationship Types*.
+
+2.  Click *Add* to create a new type, or click on the
+    ![Options](../../../images/icon-options.png) button to edit or delete an
+    existing one.
+
+3.  Remember, the different relation types differ only in name, so the name is
+    the only setting you have to worry about. Whether you're editing or creating
+    new, just set the name and then click *Save*.
+
+## Creating Product Relations
+
+Follow these steps:
+
+1.  Go to the catalog, select a product, and click on the *Product Relations*
+    tab.
+
+2.  Select a relationship type from the tabs on the left.
+
+    ![Figure 1: The row of tabs at the left allows you to create multiple sets
+    of related products.](../../../images/product-relations.png)
+
+3.  Click on the ![Add](../../../images/icon-add.png) button and then check the
+    box next to each product you want to set as a product relation of this type.
+    Click *Add*.
+
+## Displaying Product Relations
+
+You can display product relations on a product display page by configuring
+a search results portlet. You need to have a 
+[product display page](discover/portal/-/knowledge_base/7-1/product-detail-page)
+in place first.
+
+Follow these steps:
+
+1.  Go to your product display page and place a *Search Results* portlet on the
+    page.
+
+2.  Go to the portlet's ![Options](../../../images/icon-app-options.png) menu and
+    click *Configuration*.
+
+3.  Go to the *Configuration Method* drop-down menu and choose a product
+    relationship type to be displayed in the portlet.
+
+4.  Click *Save*.

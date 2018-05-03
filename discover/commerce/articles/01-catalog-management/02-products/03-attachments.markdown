@@ -1,19 +1,25 @@
 # Attachments [](id=attachments)
 
 An attachment is any kind of file that you want customers to be able to download
-before they purchase. For instance, you might post a .pdf of a user
-manual, or a video of a product demonstration.
+before they purchase. For instance, you might post a .pdf of a user manual, or
+a video of a product demonstration.
 
-To add an attachment to a product, click on the product in the catalog and then
-go to the *Attachments* tab. Click on the *Add* button and then click *Select
-File* to either upload a file or select one from the Documents and Media
-repository. Set a priority if you are attaching more than one file (lower
-numbers will appear first on the product page), and choose an option value from
-the drop-down box if you only want to associate the attachment with one option.
-To associate an attachment with more than one option, go back to the
-*Attachments* tab and then add it a second time from the docs and media
-repository (there's no need to upload it a second time), choosing a different
-option value the second time through. If you do not select an option value, then
-the attachment will be displayed for all values.
+Follow these steps to add an attachment to a product:
 
-That's it for attachments. The next section covers product relations.
+1. Go to the product's page (*Commerce* &rarr; *Catalog* &rarr; select product),
+   click on the *Attachments* tab and then the *Add* button in the upper-right
+   to display the *Add Attachment* form. Click *Select File* to upload a file or
+   to select one from the documents and media repository. Set a priority to
+   control the order in which attachments will be published on a page (lower
+   numbers come first).
+
+2. If you want to associate the attachment with a specific product variant,
+   select one from the *Options* section of the *Add Attachment* form. (Variants
+   will only be available to choose from if a product has options which are
+   designated as SKU contributors. See
+   [Options](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options)
+   for details).
+
+3. If you want the image to be displayed on the product page for a limited
+   period of time, specify display and expiration dates in the *Schedule*
+   section at the bottom of the form.

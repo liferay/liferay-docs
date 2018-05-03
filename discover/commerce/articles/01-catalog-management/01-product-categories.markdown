@@ -19,19 +19,19 @@ section.
 
 +$$$
 
-Note: Categories are designed to be nested into a hierarchy. While this allows
-multiple categories to be grouped together and handled as a single unit, it
-also makes it difficult for administrators to see the entire vocabulary. To
-view all categories at once, go to *Control Panel* &rarr; *Configuration*
-&rarr; *System Settings* &rarr; *Assets* and select *Flattened Tree* from the
-drop-down menu in *Asset Categories Web*. Then return to *Site Menu* &rarr;
-*Content* &rarr; *Categories*.
+Note: Categories nest hierarchically. While this allows multiple categories to
+be grouped together and handled as a single unit, it also makes it difficult for
+administrators to see the entire vocabulary. To view all categories at once, go
+to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr;
+*Assets* and select *Flattened Tree* from the drop-down menu in *Asset
+Categories Web*. Then return to *Site Menu* &rarr; *Content* &rarr;
+*Categories*.
 
 $$$
 
 ## Adding and Removing Products from Categories [](id=adding-and-removing-products-from-categories)
 
-To add a product to one or more categories:
+Follow these steps:
 
 1.  Go to the catalog, select a product, and open its *Categorization* tab.
 
@@ -39,7 +39,7 @@ To add a product to one or more categories:
     and in the pop-up that appears the check the box next to each category that
     applies.
 
-3.  Click Save.
+3.  Click *Save*.
 
 A product can be removed from a category the same way by unchecking the boxes in
 step 2. Alternatively, several products can be removed at once using the category
@@ -53,22 +53,16 @@ application:
 
 3.  Click *Remove*.
 
-## Other Category Associations [](id=other-category-associations)
+## Category Display Page [](id=category-display-page)
 
-You may want to associate more than just products with your categories. Creating
-relationships with pages and images can make it easier to display and maintain
-category content.
+You may want to associate more than just products with your categories. The
+category display page creates a relationship between a category, a specified
+page, and a URL for that page. This relationship helps display and organize
+content or applications related to that category, as changes made to the
+category are reflected on the page automatically. A typical use case uses the
+page to display category content for customers.
 
-### Category Display Page [](id=category-display-page)
-
-The category display page is a feature that creates a relationship between
-a category, a specified page, and a URL for that page. This relationship makes
-it easy to display and organize content or applications related to to that
-category, as changes made to the category will be automatically reflected on the
-page. A typical use case might involve using the page to display category
-content for customers.
-
-To create a category display page:
+Follow these steps to create a category display page:
 
 1.  Create a page.
 
@@ -88,16 +82,16 @@ This process creates a relationship between the category and a blank page. At
 any point, you can populate the page with whatever content or applications suit
 your purposes.
 
-### Images [](id=images)
+## Images [](id=images)
 
 You may want to upload images and associate them with product categories. This
-allows you to designate a generic category page that will automatically display
-images and products for whatever category a buyer is searching for. These images
-can be easily updated by publishing a new category image. For more details on
-setting up a generic category page to display content dynamically, see
-[Category Detail Page](/web/liferay-emporio/documentation/-/knowledge_base/7-1/category-detail-page).
+allows you to designate a generic category page that automatically displays
+images and products for whatever category a buyer wants. These images can be
+easily updated by publishing a new category image. For more details on setting
+up a generic category page to display content dynamically, see [Category Detail
+Page](/web/liferay-emporio/documentation/-/knowledge_base/7-1/category-detail-page).
 
-To assign images to a category:
+Follow these steps to assign images to a category:
 
 1.  Find the category you want at *Site Menu* &rarr; *Content* &rarr;
     *Categories*. Then click ![Options](../../images/icon-options.png)

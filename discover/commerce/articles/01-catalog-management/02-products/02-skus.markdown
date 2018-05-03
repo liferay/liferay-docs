@@ -1,31 +1,50 @@
 # SKUs [](id=skus)
 
-A SKU, or stock keeping unit, is an alphanumeric code representing a distinct
-item for sale. It is not the same as a product because a product can have
-multiple different options with varying attributes. Rather, a SKU can identify
+A SKU, or stock keeping unit, is an alphanumeric code representing a single
+product variant. It is not the same as a product because a product can have
+multiple different options with varying attributes. Rather a SKU can identify
 products at the most granular level, specifying an exact combination of product
 options.
 
+Because it is SKUs (not products) that represent unique items, it is SKUs to
+which prices are assigned, for which inventory is tracked, and to which shipping
+adjustments can be applied.
+
 ## Creating a SKU [](id=creating-an-sku)
 
-When you add a product, a single SKU called *default* is created. The default
-SKU applies to any product options for which you have not created a separate
-SKU. To create a new SKU, go to the catalog, click on a product, and select the
-*SKUs* tab. Click on the *Add* button in the lower right and select either *Add
-SKU* or *Generate all SKU combinations*. If you select the second option, you
-must manually enter prices for every possible combination of option values--not
-optimal for a typical use case where most variations on a product will be
-assigned the same price. To create a handful of SKUs to set prices for some
-options while letting the default SKU handle the rest, choose *Add SKU*.
+When you create a product, a single SKU called *default* is created. For
+products that have no options which are SKU contributors, no other SKUs are
+required. If a product does have options that are SKU contributors, then every
+possible combination of those options represents a separate product
+variant--each of which must have its own SKU in order to be sold.
 
-+$$$
+<!--Is it true that an option is always required if it is an SKU contributor?-->
 
-Below the Search & Filter bar, there is a toggle switch to *Ignore SKU
-Combinations*. If at any point you want give every product variant the default
-SKU's price regardless of what options it takes, enable this switch and you
-won't have to assign a price for each option individually.
+To create new SKUs, follow these steps:
 
-$$$
+1.  Go to the catalog, click on a product, and then go to the *SKUs* tab.
+
+2.  Click on the ![Add](../../../images/icon-add.png) button and select either
+    *Add SKU* or *Generate all SKU combinations.
+
+If you select *Add SKU*, a single SKU will be created and the *Add SKU* form
+will be displayed.
+
+If you select *Generate all SKU combinations*, 
+
+
+
+
+
+
+The default SKU applies to any product options for which you have not created
+a separate SKU. To create a new SKU, go to the catalog, click on a product, and
+select the *SKUs* tab. Click on the *Add* button in the lower right and select
+either *Add SKU* or *Generate all SKU combinations*. If you select the second
+option, you must manually enter prices for every possible combination of option
+values--not optimal for a typical use case where most variations on a product
+will be assigned the same price. To create a handful of SKUs to set prices for
+some options while letting the default SKU handle the rest, choose *Add SKU*.
 
 ## Editing a SKU [](id=editing-an-sku)
 
