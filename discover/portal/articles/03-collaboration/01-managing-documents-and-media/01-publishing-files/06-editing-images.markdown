@@ -73,7 +73,7 @@ As mentioned earlier, you can access the image editor in the Documents and Media
 repository, or in the item selector in blogs and web content articles. If you 
 edit and save the image in the Documents and Media repository, the file version 
 is incremented a minor version (e.g., from version 1.0 to version 1.1). You can 
-view the image's version history (and previous versions) by selecting the image, 
+view the image's version history (and previous versions) by clicking the image, 
 clicking its *Info* button (![**i**](../../../../images/icon-information.png)), 
 and then selecting *Versions* from the menu currently set to *Details*. In 
 contrast, if you edit and save an image via an item selector, a copy of the 
