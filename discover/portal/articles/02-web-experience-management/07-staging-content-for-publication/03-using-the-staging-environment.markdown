@@ -3,7 +3,7 @@
 After enabling staging (either Local Live or Remote Live) for a site, you'll
 notice additional options provided on the top Control Menu and also in the
 Menu to the left. If you haven't enabled staging for your site, see the
-[Enabling Staging](/discover/portal/-/knowledge_base/7-0/enabling-staging)
+[Enabling Staging](/discover/portal/-/knowledge_base/7-1/enabling-staging)
 section for instructions. These new menus help you manage staged pages. You'll
 also notice that most of your page management options have been removed, because
 now you can't directly edit live pages. You now must use the staging environment
@@ -19,16 +19,16 @@ are restored and you can access some new options related to staging.
 To test out the staging environment, add the Bookmarks application and then
 click on *Live* from the top menu. Notice that the Bookmarks app isn't there.
 That's because you've staged a change to the page but haven't published that
-change yet to the live site. Go back to the staged page and observe the options
+change yet to the live site. <!-- possible break up here. --> Go back to the staged page and observe the options
 you have to choose from to help in your staging conquest.
 
-**Site Pages Variations:** allows you to work in parallel on multiple versions
-of a staged site page. You'll learn more about this later.
+**Site Pages Variations:** lets you work in parallel on multiple versions of a
+staged site page. You'll learn more about this later.
 
-**Page Variations:** allows you to work in parallel on multiple versions of a
-staged page. You'll learn more about this later.
+**Page Variations:** lets you work in parallel on multiple versions of a staged
+page. You'll learn more about this later.
 
-**Undo/Redo:** allows you to step back/forward through recent changes to a page,
+**Undo/Redo:** lets you step back/forward through recent changes to a page,
 which can save you the time of manually adding or removing apps if you make a
 mistake.
 
@@ -48,6 +48,8 @@ configuration options for your publication. You can give your publication a name
 and view the changes since last publication. If everything looks good, you can
 click the *Publish to Live* button to publish your staged results to the live
 site.
+
+<!-- Possible break point for Advanced Publication option. -->
 
 If you'd like to further configure your publication, you can select the *Switch
 to Advanced Publication* button. Opening the Advanced Publication menu would be
@@ -163,6 +165,8 @@ Now that you have an idea of the available staging options, click *Mark as Ready
 for Publication*, and then click *Publish to Live* &rarr; *Now*. Select
 *Publish* to publish your Bookmarks application to the live site.
 
+<!-- possible break point "Staging Processes and Templates"-->
+
 If you create a bookmark in the staged site, it isn't visible in the live site
 until you publish it to the live site. If workflow is enabled for any new
 resource, the resource needs to go through the workflow process before it can be
@@ -265,7 +269,7 @@ staging are listed below:
 Notice that some of the permissions listed above are related to the
 export/import functionality. Since these permissions are directly affected by
 the Publish Staging permission, they are important to note. Visit the
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content)
 section for more details on importing/exporting site and page content.
 
 One of the most powerful features of staging is page variations. Next, you'll
