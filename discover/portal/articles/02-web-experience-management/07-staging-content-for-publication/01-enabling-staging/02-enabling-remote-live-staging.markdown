@@ -77,8 +77,8 @@ the changes immediately or attempts to schedule the publication for later.
 
 If only a few users should have permission to publish changes from staging to
 production, it's easy enough to create a few user accounts on the remote server
-that match a selected few on the local server. However, the more user accounts
-that you have to create, the more tedious this job becomes and the more likely
+that match a selected few on the local server. The more user accounts that you
+have to create, however, the more tedious this job becomes and the more likely
 you are to make a mistake. And you not only have to create identical user
 accounts, you also have to ensure that these users have identical permissions.
 For this reason, it's recommended that you use LDAP to copy selected user

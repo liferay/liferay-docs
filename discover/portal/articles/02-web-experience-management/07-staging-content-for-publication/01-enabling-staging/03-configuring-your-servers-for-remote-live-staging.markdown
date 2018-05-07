@@ -34,8 +34,8 @@ Follow the steps below to configure your servers for Remote Live staging.
     property.
 
     The values for these properties depend on the chosen configured encryption
-    algorithm, since different
-    encryption algorithms support keys of different lengths. Please see the
+    algorithm, since different encryption algorithms support keys of different
+    lengths. See the
     [HTTP Tunneling](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)
     properties documentation for more information. Note that the following key
     lengths are supported by the available encryption algorithms:
@@ -49,8 +49,8 @@ Follow the steps below to configure your servers for Remote Live staging.
     To prevent potential character encoding issues, you can use one of the
     following two strategies:
 
-    3a. Use hexadecimal encoding (recommended). For example, if your password was
-       *abcdefghijklmnop*, you'd use the following settings in your
+    3a. Use hexadecimal encoding (recommended). For example, if your password
+       was *abcdefghijklmnop*, you'd use the following settings in your
        `portal-ext.properties` file:
 
         tunneling.servlet.shared.secret=6162636465666768696a6b6c6d6e6f70
@@ -60,16 +60,17 @@ Follow the steps below to configure your servers for Remote Live staging.
        entropy.
 
     If you don't use hexadecimal encoding (i.e., if you use the default setting
-    `tunneling.servlet.shared.secret.hex=false`), the value of the
-    `tunneling.servlet.shared.secret` property *must* be ASCII compliant.
+    `tunneling.servlet.shared.secret.hex=false`), the
+    `tunneling.servlet.shared.secret` property's value *must* be ASCII
+    compliant.
 
-    Once you've chosen a key, make sure that value of your current server
-    matches the value of your remote server.
+    Once you've chosen a key, make sure the value of your current server matches
+    the value of your remote server.
 
     **Important:** Do not share the key with any user. It is used exclusively
     for communication between staging and production environments. Any user with
     possession of the key can manage the production server, execute server-side
-    Java code, or worse.
+    Java code, etc.
 
 4.  Update the *TunnelAuthVerfierConfiguration* of your remote Liferay instance.
     To do this, navigate to the Control Panel &rarr; *Configuration* &rarr;
@@ -106,7 +107,7 @@ below.
 
 ## Applying Patches When Using Remote Staging
 
-When applying patches to a remote staging environment, you must apply patches to
+When applying patches to a remote staging environment, you must apply them to
 all of your servers being used. Having servers on different patch levels is not
 a good practice and can lead to import failures and data corruption. It is
 essential that all servers are updated to the same patch level to ensure remote
@@ -133,14 +134,14 @@ buffer size is 10 megabytes.
 
 ## Validating IPv6 Addresses
 
-If your instance is set up to validate IPv6 addresses, you'll
-need to configure your Remote Live Connection Settings. Restart your Liferay
-instance and navigate back to the Staging page. Select the *Remote Live* radio
-selector and specify the fields for your remote site. The *Remote Host/IP* field
-should match the host you specified as your `tunnel.servlet.hosts.allowed`
-property in the `portal-ext.properties` file (e.g., *[0:0:0:0:0:0:0:1]*). Make
-sure to include the brackets. Fill in the rest of the information relevant to
-your site and click *Save*.
+If your instance is set up to validate IPv6 addresses, you'll need to configure
+your Remote Live Connection Settings. Restart your Liferay instance and navigate
+back to the Staging page. Select the *Remote Live* radio selector and specify
+the fields for your remote site. The *Remote Host/IP* field should match the
+host you specified as your `tunnel.servlet.hosts.allowed` property in the
+`portal-ext.properties` file (e.g., *[0:0:0:0:0:0:0:1]*). Make sure to include
+the brackets. Fill in the rest of the information relevant to your site and
+click *Save*.
 
 To check if the remote site is running on an IPv6 address, add a new application
 to the staged site, and then select *Staging* &rarr; *Publish to Live* from the

@@ -11,10 +11,10 @@ staging is enabled), and setup configurations, such as the properties set in the
 `portal-ext.properties` file. The cloned site becomes the staging environment
 and the original site becomes the live environment.
 
-You can enable local staging for a site by navigating to the
-*Publishing &rarr; *Staging* menu. To get some hands-on experience with enabling
-Local Live staging, you can complete a brief example which creates a Local Live
-staging environment for your site. 
+You can enable local staging for a site by navigating to the *Publishing &rarr;
+*Staging* menu. To get some hands-on experience with enabling Local Live
+staging, you can complete a brief example which creates a Local Live staging
+environment for your site. 
 
 1.  Navigate to the Product Menu (left side) and select *Publishing* &rarr;
     *Staging*.

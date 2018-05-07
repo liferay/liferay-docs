@@ -4,13 +4,13 @@ Today's enterprises are generating an enormous amount of content for their
 users. You can use advanced publishing tools to make the content easily and
 reliably available for users.
 
-Staging is an important feature of Liferay's WCM suite. The concept of staging
-is a simple one: you can modify your site behind the scenes and then publish all
-your updates in one shot. You don't want users seeing your web site change
-before their eyes as you're modifying it, do you? The staging environment lets
-you make changes to your site in a specialized *staging area*, which is linked
-to a production environment. Typically the staging site has a more limited
-audience (e.g., content editors, site administrators, etc.) while the production
+Staging is an important feature of @product@. The concept of staging is a simple
+one: you can modify your site behind the scenes and then publish all your
+updates in one shot. You don't want users seeing your web site change before
+their eyes as you're modifying it, do you? The staging environment lets you make
+changes to your site in a specialized *staging area*, which is linked to a
+production environment. Typically the staging site has a more limited audience
+(e.g., content editors, site administrators, etc.) while the production
 environment is accessible for most users. When you're finished, you can publish
 all your site changes at once.
 

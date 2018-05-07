@@ -92,7 +92,7 @@ about the other supported apps, as well. -Cody
 Before you activate staging, you can choose which of these applications' data
 you'd like to copy to staging. You'll learn about many of the collaboration
 apps listed under the Staged Portlets heading when you read the
-[Collaboration Suite](/discover/portal/-/knowledge_base/7-1/collaboration)
+[Collaboration Suite's](/discover/portal/-/knowledge_base/7-1/collaboration)
 section of articles. For now, you just need to be aware that you can enable or
 disable staging for any of these applications. Why might you want to enable
 staging for some application types but not others? In the case of collaborative
@@ -117,7 +117,7 @@ creators have control over the process on different levels: staging can be
 enabled for a content group and a content group can be selected for publication.
 
 Turning Staging on and off for individual portlet data could cause data
-inconsistencies between the staging the live sites. Because of this, it's not
+inconsistencies between the staging and live sites. Because of this, it's not
 possible to modify the individual portlet configuration once you enable staging.
 In case you need adjustments later on, you must turn staging off and re-enable
 it with your new configuration.
