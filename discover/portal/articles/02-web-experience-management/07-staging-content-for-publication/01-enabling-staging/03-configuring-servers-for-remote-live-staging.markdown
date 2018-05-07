@@ -1,4 +1,4 @@
-# Configuring Servers for Remote Live Staging
+# Configuring Servers for Remote Live Staging [](id=configuring-servers-for-remote-live-staging)
 
 Before you can enable Remote Live staging for a site, you must satisfy some
 necessary requirements:
@@ -105,7 +105,7 @@ $$$
 For additional information on configuring Remote Live staging, see the topics
 below.
 
-## Applying Patches When Using Remote Staging
+## Applying Patches When Using Remote Staging [](id=applying-patches-when-using-remote-staging)
 
 When applying patches to a remote staging environment, you must apply them to
 all of your servers being used. Having servers on different patch levels is not
@@ -113,7 +113,7 @@ a good practice and can lead to import failures and data corruption. It is
 essential that all servers are updated to the same patch level to ensure remote
 staging works correctly.
 
-## Configuring Remote Staging's Buffer Size
+## Configuring Remote Staging's Buffer Size [](id=configuring-remote-stagings-buffer-size)
 
 Similar to Local Live staging, it is generally a good idea to turn remote
 staging on at the beginning of your site's development for good performance.
@@ -132,7 +132,7 @@ for remote staging exceeds this size, the file will be split into multiple files
 prior to transmission and then reassembled on the remote server. The default
 buffer size is 10 megabytes.
 
-## Validating IPv6 Addresses
+## Validating IPv6 Addresses [](id=validating-ipv6-addresses)
 
 If your instance is set up to validate IPv6 addresses, you'll need to configure
 your Remote Live Connection Settings. Restart your Liferay instance and navigate
