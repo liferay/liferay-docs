@@ -1,93 +1,100 @@
-## Creating Folders
+# Creating Folders
 
-Let's continue with our example and create folders to organize the Lunar Resort
-guest photos and videos that we'll upload. From the document library's Add menu,
-select *Folder*. The new folder form appears. Since the folder is for storing
-Lunar Resort guest media, name the folder *Resort Guest Media*. You can
-optionally describe the folder. Initially, anyone can view the folder, but we'll
-change that after we create it. Expand the *Permissions* section. By default,
-site members are able to add files, subfolders, and shortcuts and subscribe to
-changes to the folder's files. Click the *More Options* link and deselect all of
-these checkboxes, as we only want resort media managers to modify the folder's
-files. Click *Save* to finish creating the folder. 
+Adding files to your site's Document Library is all fine and well, but you'll 
+also need folders to organize all but the most limited set of files. Here, 
+you'll learn the following for working with folders in a Document Library: 
 
-Note that, document type restrictions and workflow definitions can be associated
-with each folder. Child folders inherit their parent folder's document type
-restrictions, by default. If workflow is enabled for the Document Library, you
-can specify workflow definitions per folder and document type. You can specify a
-folder's document type restrictions and workflow definitions from the folder's
-edit screen, after the folder's been created.
+-   [Adding a Folder](#adding-a-folder)
+-   [Document Type Restrictions and Workflow](#document-type-restrictions-and-workflow)
+-   [Setting Folder Permissions](#setting-folder-permissions)
 
-![Figure 3: From a folder's Edit screen, you can restrict the document types it supports and select the folder's workflow.](../../../../images/dm-doc-type-restrictions-and-workflow.png)
+## Adding a Folder
 
-Document types are a powerful way to enforce rules for documents. For our
-example's folder, however, we'll keep the default supported document types and
-workflow settings.
+Follow these steps to add a folder to your Document Library:
 
-You've created a folder named *Resort Guest Media*. You can now specify its
-permissions. 
+1.  Open the *Menu* (![Product Menu](../../../../images/icon-menu.png)), click 
+    on your site's name, and navigate to *Content &rarr; Documents and Media* 
+    for your site. The Documents and Media screen appears and displays the 
+    Documents and Media library's *Home* (its root folder). 
+
+2.  Click the *Add* icon (![Add](../../../../images/icon-add.png)) and select 
+    *Folder*. The new folder form appears. 
+
+3.  In the new folder form, name and describe your folder. Then expand the 
+    *Permissions* section.
+
+4.  In the Permissions section of the new folder form, set the folder's 
+    permissions. The *Viewable by* menu lets you select who has view permission 
+    for the folder:
+
+    -   Anyone (the Guest role; this is the default option)
+    -   Site Members
+    -   Owner
+
+    Click the *More Options* link to choose the other folder permissions for the 
+    Guest and Site Member roles. By default, site members are able to add files, 
+    subfolders, shortcuts, and subscribe to changes to the folder's files. 
+    Guests don't have any such permissions, which is typically what you'll want. 
+
+    ![Figure 1: Select your folder's permissions.](../../../../images/dm-folder-permissions.png)
+
+5.  To finish creating the folder, click *Save* after making your selections in 
+    the Permissions section. 
+
+Upon creating the folder, it appears in your Document Library. Opening the 
+folder's *Actions* menu 
+(![Actions](../../../../images/icon-actions.png)) presents several options for 
+managing the folder. The following sections describe some of these options.
+
+## Document Type Restrictions and Workflow
+
+After creating a folder, you can restrict what document types are allowed in it. 
+You can also choose what 
+[workflow](/discover/portal/-/knowledge_base/7-1/using-workflow) 
+(if any) to use for approving files added to or edited in the folder. 
+
+Follow these steps to change a folder's document type restrictions and workflow: 
+
+1.  Click the folder's *Actions* menu 
+    (![Actions](../../../../images/icon-actions.png)) and select *Edit*. 
+
+2.  Expand the *Document Type Restrictions and Workflow* section. In this 
+    section, choose from the following options:
+
+    -   Use Document Type Restrictions and Workflow of the Parent Folder 
+        (default)
+    -   Define Specific Document Type Restrictions and Workflow for this Folder
+    -   Default Workflow for this Folder
 
 ## Setting Folder Permissions
 
-Since we only want the *Resort Guest Media Manager* role to manage files in it, 
-we must fine tune the folder's permissions. Click on the folder's *Actions* icon (![Actions](../../../../images/icon-actions.png)) and select the *Permissions* 
-action. The Permissions window appears.
+When creating a folder, you can set some of its permissions via the new folder 
+form. Fine tuning a folder's permissions, however, can only be done after 
+creating the folder. 
 
-The folder permissions enable a role to perform the following actions:
+Follow these steps to fine tune a folder's permissions: 
 
-**Access**: Access the folder's contents from a Windows desktop.
+1.  Click the folder's *Actions* menu 
+    (![Actions](../../../../images/icon-actions.png)) and select *Permissions*. 
+    The Permissions window appears. 
 
-**Update**: Edit the folder's attributes and move the folder under a new parent
-folder.
+2.  In the Permissions window, set the permissions you want to use for this 
+    folder. The following permissions are available for each role:
 
-**Add Subfolder**: Create folders within the folder.
+    -   **Access**: Access the folder's contents.
+    -   **Update**: Edit the folder's attributes and/or move the folder under a 
+        new parent folder.
+    -   **Add Subfolder**: Create folders within the folder.
+    -   **Add Shortcut**: Create a shortcut (link) to any file in the folder 
+        that the role is authorized to view.
+    -   **Subscribe**: Receive email notifications when files are added to or 
+        modified in the folder. Note that you can specify the email sender and 
+        template from the Documents and Media's *Options* 
+        (![Options](../../../../images/icon-options.png)) &rarr; *Configuration* 
+        menu. 
+    -   **Add Document**: Add a new file to the folder. 
+    -   **Permissions**: View and modify the folder's permissions.
+    -   **Delete**: Move the folder to the Recycle Bin.
+    -   **View**: View the folder.
 
-**Add Shortcut**: Create a shortcut (link) to any Documents and Media file the
-role is authorized to view.
-
-**Subscribe**: Receive email notification when files are added to or modified in
-the folder.
-
-**Add Document**: Add a new file to the folder.
-
-**Permissions**: View and modify the folder's permissions.
-
-**Delete**: Move the folder to the Recycle Bin.
-
-**View**: View the folder.
-
-Grant all the permissions to the *Resort Guest Media Manager* role, revoke all
-permissions from all the other roles, and click *Save*. Users assigned to the
-*Resort Guest Media Manager* role are now the only non-admin users who can
-upload and manage media files in the *Resort Guest Media* folder.
-
-You've created the *Resort Guest Media* folder and set appropriate permissions
-for it. 
-
-While you're signed in as the admin user, click on Documents and Media's
-*Options* icon (![Options](../../../../images/icon-options.png)) and select
-*Configuration*. From here you can specify the email sender and email templates
-for email sent to Document Library folder subscribers. 
-
-Now, sign in as a *Resort Guest Media Manager* role user. Since Snappy, the
-Lunar Resort's photographer, belongs to this role, you can sign in as her. Then
-go to *Documents and Media* in Site Administration, navigate to the *Resort
-Guest Media* folder, and click the folder's name. The folder provides a
-workspace for members of the *Resort Guest Media Manager* role to manage files
-and subfolders.
-
-Snappy has plenty of pictures of guests Mr. and Mrs. Spacey on her local file
-system. To separate the Spacey's files from those of other guests, we'll create
-a subfolder named *Spacey Party*. To create it, click the Add icon, and select
-the *Subfolder* action. In the *New Folder* form that appears, name the folder
-*Spacey Party* and describe the folder's purpose (e.g., "The Spacey's photos
-from their visit to the Lunar Resort"). Click the *More Options* link and
-deselect all the permissions within it, as we only want media managers to be
-able to edit the folder. *Save* the new subfolder. You return to the folder
-*Resort Guest Media*, which now lists your new subfolder *Spacey Party*.
-Navigate into it. The Document and Media library's navigation breadcrumbs show
-your folder's path: *Home &rarr; Resort Guest Media &rarr;Spacey Party*.
-
-In your Document Library's *Resort Guest Media* folder, you've created a
-subfolder named *Spacey Party*. Next, let's add the Spacey's photos to the
-subfolder.
+3.  Click *Save* when you're finished setting permissions. 
