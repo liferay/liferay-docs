@@ -12,6 +12,4 @@ them. You can upload all kinds of files, including custom file types, to the
 Document Library. Users can then browse and view files from the Media Gallery or
 Documents and Media apps. You'll learn how to use both apps. And lastly, you'll
 learn how to collaborate on files from within several environments, including
-your browser, local desktop, and mobile device. We've pulled out all the stops
-to simplify online file management. Let's get the ball rolling by adding files
-to a Document Library. 
+your browser and local desktop file system. 
