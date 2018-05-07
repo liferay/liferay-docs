@@ -25,37 +25,30 @@ Unlike the staging enablement process where there was an initial publication,
 disabling staging does not start a publication; the staging site is deleted. If
 the staged site contains a large amount of content, however, those deletions
 could take a substantial amount of time to process. For this reason, you should
-not disable staging when your portal instance is under a big load.
+not disable staging when your portal instance is using a large amount of memory
+elsewhere.
 
 ## Disabling Remote Live Staging
 
-Disabling Remote Live staging does not delete the staged site; it only disables
-the connection between the live site and remote staging site.
-<!-- ^ Is this true? Wrote this based on my own understanding. -Cody -->
+Disabling remote staging does not delete the staged site; it only disables the
+connection between the live site and remote staging site. This means no data is
+deleted from the live or remote staging sites after the connection is disabled.
+Since no data is erased and no processes are started, disabling remote staging
+is almost instantaneous.
 
 When Remote Live staging is enabled, certain information (e.g., which portlet is
 being staged) is recorded on both the live and staged sites. For this reason,
-when remote staging is disabled, the network link is still active to allow for
-staging to properly be disabled (i.e., the information must be reset once
-staging is turned off).
+when remote staging is disabled, you must ensure the live site is still
+accessible to allow for staging to be properly disabled. Do not shut down your
+live site and then attempt to disable remote staging from your staged site; this
+results in errors.
 
-If remote staging must be turned off, you should make sure the live site is
-still accessible.
-
-Turning off remote staging does not erase data on the live site.
-
-In case the network connection is lost between the staged site and the live site
-instances, there is an option to forcibly turn staging off. This is only an
-option for the staged site; the site's staging information will be erased---not
-the content. On the contrary, the live site will remain in a locked state. A
-possible workaround is to create a new live site, and import content to it if
-necessary.
-
-Turning remote staging off does not start any kind of process; also, because no
-data is being erased, it's almost instantaneous.
-
-
-
+If there's ever a lost network connection between the remote staged site and the
+live site, a message is displayed informing you of the error and a way to
+forcibly disable staging. This is only an option for the staged site; executing
+this option erases the staged site's staging information---not the content. On
+the contrary, the live site remains in a locked state. A possible workaround is
+to create a new live site and import content to it, if necessary.
 
 ## Steps to Disable Staging
 
