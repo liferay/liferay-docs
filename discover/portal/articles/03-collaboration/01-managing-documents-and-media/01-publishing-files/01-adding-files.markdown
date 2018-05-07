@@ -78,15 +78,6 @@ Follow these steps to add files to your site's Document Library:
     -   **Basic Document**: Upload a single file. By default, basic documents 
         aren't described by any metadata sets. 
 
-<!--
-    -   **Google Docs**: Available via the Liferay Plugin for Google Drive&trade; 
-        from the 
-        [Liferay Marketplace](https://web.liferay.com/marketplace). 
-        This lets you create a file entry that links to a Google document. For 
-        more information, see 
-        [the documentation on accessing Google Docs&trade;](/discover/portal/-/knowledge_base/7-1/accessing-google-docs). 
--->
-
     The remaining items in the Add menu are default document types that are each 
     described by a unique metadata set. When you add a document belonging to a 
     specific document type, a form appears for picking the file to upload and 
@@ -104,3 +95,15 @@ Follow these steps to add files to your site's Document Library:
 
 3.  When you're finished selecting the file to upload and filling out any 
     document type fields that are necessary, click *Publish*. 
+
+<!--
+Add this to the Add menu items in step 2 once the Google Drive plugin is released
+for 7.1
+
+    -   **Google Docs**: Available via the Liferay Plugin for Google Drive&trade; 
+        from the 
+        [Liferay Marketplace](https://web.liferay.com/marketplace). 
+        This lets you create a file entry that links to a Google document. For 
+        more information, see 
+        [the documentation on accessing Google Docs&trade;](/discover/portal/-/knowledge_base/7-1/accessing-google-docs). 
+-->
