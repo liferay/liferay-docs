@@ -20,7 +20,7 @@ Follow these steps:
 2.  Create a `src/main/resources/META-INF/resources/js` folder in your module, 
     copy the original JavaScript file into it, and rename it. For 
     example, create a copy of the `session.js` module and rename it
-    `session-override.js`.
+    `session-override.js`. Also rename the module definition inside the `session-override.js`, e.g. to `AUI().add('liferay-session-override', ...`
 
 3.  Apply your modifications and save the file.
 
