@@ -18,13 +18,13 @@ Follow these steps to add a folder to your Document Library:
     Documents and Media library's *Home* (its root folder). 
 
 2.  Click the *Add* icon (![Add](../../../../images/icon-add.png)) and select 
-    *Folder*. The new folder form appears. 
+    *Folder*. The New Folder form appears. 
 
-3.  In the new folder form, name and describe your folder. Then expand the 
+3.  In the New Folder form, name and describe your folder. Then expand the 
     *Permissions* section.
 
 4.  In the Permissions section of the new folder form, set the folder's 
-    permissions. The *Viewable by* menu lets you select who has view permission 
+    permissions. The *Viewable by* menu lets you select who has View permission 
     for the folder:
 
     -   Anyone (the Guest role; this is the default option)
@@ -44,7 +44,9 @@ Follow these steps to add a folder to your Document Library:
 Upon creating the folder, it appears in your Document Library. Opening the 
 folder's *Actions* menu 
 (![Actions](../../../../images/icon-actions.png)) presents several options for 
-managing the folder. The following sections describe some of these options.
+managing the folder. The following sections describe some of these options. 
+
+![Figure 2: Your new folder appears in the Document Library.](../../../../images/dm-folder.png)
 
 ## Document Type Restrictions and Workflow
 
@@ -61,10 +63,13 @@ Follow these steps to change a folder's document type restrictions and workflow:
 2.  Expand the *Document Type Restrictions and Workflow* section. In this 
     section, choose from the following options:
 
-    -   Use Document Type Restrictions and Workflow of the Parent Folder 
-        (default)
-    -   Define Specific Document Type Restrictions and Workflow for this Folder
-    -   Default Workflow for this Folder
+    -   Use Document Type Restrictions and Workflow of the Parent Folder (the 
+        parent folder)
+    -   Define Specific Document Type Restrictions and Workflow for this Folder 
+        (the current folder)
+    -   Default Workflow for this Folder (the current folder)
+
+![Figure 3: You can set the document type restrictions and workflow to use for a folder's files.](../../../../images/dm-restrictions-workflow.png)
 
 ## Setting Folder Permissions
 

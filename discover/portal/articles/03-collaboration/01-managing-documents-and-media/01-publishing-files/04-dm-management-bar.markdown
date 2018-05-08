@@ -3,57 +3,80 @@
 Documents and Media lists your current folder's subfolders and file entries. A
 *file entry* is the Document Library's representation of a file. It wraps the
 file to better leverage it within @product@ and to associate additional
-information and metadata with the file. File entries are displayed using icons,
-by default. You can select either icon
-(![Icon](../../../../images/icon-icon-style.png)), descriptive
-(![Descriptive](../../../../images/icon-descriptive-style.png)), or list
-(![List](../../../../images/icon-list-style.png)) display style. The icon 
-display style shows a file as a cover image. If the file is an image type file, 
-the image is used as the file entry's cover image. If the file isn't an image,
-Documents and Media displays a generic image for that file type. Also displayed
-with each file icon is the file's suffix (e.g., *JPG* for a file ending in
-`.jpg`), last modification timestamp, name, and status (e.g., *Approved*,
-*Draft*, etc.). And each file has an Actions menu. The actions are also
-available from within the file entry's view, which we'll explore soon. The
-descriptive and list display styles provide the same functionality, but display
-the file entries in rows.
+information and metadata with the file. You can display file entries in these 
+styles, which you select by clicking the appropriate button in the Management 
+Bar:
 
-![Figure 5: Documents and Media's lists files using several display styles: icon (as shown here), descriptive, and list. And breadcrumbs show the current folder's path in the library.](../../../../images/dm-images-in-admin.png)
+-   **Icon** (![Icon](../../../../images/icon-icon-style.png)): Shows a 
+    rendering of the file. If the file isn't an image, Documents and Media 
+    displays a generic image for that file type. Also displayed with each file 
+    icon is the file's suffix (e.g., *JPG* for a file ending in `.jpg`), last 
+    modification timestamp, name, and status (e.g., *Approved*, *Draft*, etc.). 
+
+-   **Descriptive** (![Descriptive](../../../../images/icon-descriptive-style.png)): 
+    Shows the same information as the icon display style, in a list with small 
+    file renderings. 
+
+-   **List** (![List](../../../../images/icon-list-style.png)): Shows the same 
+    information as the icon display style, in a list with no file renderings. 
+    Also, the file information is in columns. 
+
+In all display styles, each file has an Actions menu 
+(![Actions](../../../../images/icon-actions.png)). These actions are also
+available in the file entry's view, which you'll see soon. 
+
+![Figure 1: Documents and Media's lists files using several display styles: icon (shown here), descriptive, and list. And breadcrumbs show the current folder's path in the library.](../../../../images/dm-images-in-admin.png)
 
 To see the current folder's details click the *Information* icon
 (![**i**](../../../../images/icon-information.png)). An area with the folder's 
-name appears. It shows the number of items in the folder. It also shows a 
-*Subscribe* icon 
-(![Subscribe](../../../../images/icon-star.png)) you can select to get
-notifications about files added to or modified in the folder. Lastly, the
-Actions icon lists actions you can perform on the current folder. Above the
-Information icon and Display Styles is a *Search* that enables you to find files
-by keywords.
+name appears. It shows the number of items in the folder. It also shows these 
+buttons: 
 
-On the other side of the screen also in the top area is a filtering selector.
-It's default option is *All*. Click it to see the other filter options. The
-*All* option (default) shows all of the current folder's immediate subfolders
-and files. The *Recent* filter shows the most recently modified files, *Mine*
-lists all the current user's files (no matter their folder), and *Document
-Types* filters on files of the selected document type. If a Document Library
-contains more documents than it can display at once, you can use the navigation
-tool at the bottom of the app's window to either switch your view to another
-page or configure the page to display more documents per page.
+-   **Subscribe** (![Subscribe](../../../../images/icon-star.png)): Get 
+    notifications about files added to or modified in the folder. 
+-   **Actions** (![Actions](../../../../images/icon-actions.png)): Lists actions 
+    you can perform on the current folder. 
 
-Next to the filtering selector, the *Order by* selector lets you select criteria
-for ordering the files and folders. You can order them by creation date, title,
-number of downloads, modification date (default), or size. The up and down
-arrows next to the *Order by* selector, let you arrange them in ascending or
-descending order.
+Next to the Information icon and display styles is a *Search* that lets you find 
+files by keywords. 
 
-From the list view, Documents and Media lets you act on one or more files at
-once. When you select a checkbox for one or more files, the following action
-icons appear: ![Action Icons](../../../../images/dm-action-icons.png). 
+The up and down arrows next to the search let you arrange files and folders in 
+ascending or descending order.
+
+To the left of the up and down arrows, the *Order by* selector lets you select 
+criteria for ordering the files and folders. You can order them by these 
+criteria:
+
+-   Modified date (default)
+-   Creation Date
+-   Title
+-   Number of downloads
+-   Size
+
+To the left of the *Order by* selector, another selector menu lets you filter 
+the files to display. It contains these options: 
+
+-   **All:** Shows all of the current folder's immediate subfolders and files 
+    (default).
+-   **Recent:** Shows the most recently modified files.
+-   **Mine:** Shows all the current user's files (no matter their folder).
+-   **Document Types:** Shows the files of the selected document type. Upon 
+    choosing this option, you must select the document type you want from a 
+    popup. 
+
+The checkbox on the left-most side of the Management Bar selects all currently 
+displayed files/folders. Selecting multiple files/folders lets you act on all of 
+them at once. You can also select multiple files/folders individually by using 
+the checkboxes for each. When you select a checkbox for one or more files, the 
+following action icons appear: ![Action Icons](../../../../images/dm-action-icons.png). 
 Describing them from left to right, the X is for canceling file checkout, the 
 secured lock is for file check-out, the unsecured lock is for file check-in, the 
 arrows are for moving the files, and the trash can is for moving files to the 
 Recycle Bin. You can also move selected files to a subfolder via drag and drop. 
 File check-out and check-in is explained in
-[Collaborating on Files](/discover/portal/-/knowledge_base/7-0/collaborating-on-files).
+[Collaborating on Files](/discover/portal/-/knowledge_base/7-1/collaborating-on-files).
 
-![Figure 6: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../../../images/dm-file-entry-details.png)
+Note that if a Document Library contains more documents than it can display at 
+once, you can use the navigation tool that appears at the bottom of the app's 
+window to either switch your view to another page or configure the page to 
+display more documents per page.

@@ -50,10 +50,10 @@ in your site's Documents and Media:
 Follow these steps to add files to your site's Document Library:
 
 1.  Open the *Menu* (![Product Menu](../../../../images/icon-menu.png)), click 
-    on your site's name, and navigate to *Content &rarr; Documents and Media* 
-    for your site. The Documents and Media screen appears and displays the 
-    Documents and Media library's *Home* (its root folder). As you add files and 
-    folders to the Document Library, they're listed here. 
+    on your site's name, and navigate to *Content &rarr; Documents and Media*. 
+    The Documents and Media screen appears and displays the Documents and Media 
+    library's *Home* (its root folder). As you add files and folders to the 
+    Document Library, they're listed here. 
 
     ![Figure 2: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload and add all kinds of documents to the library.](../../../../images/dm-admin-add-menu.png)
 
@@ -73,16 +73,19 @@ Follow these steps to add files to your site's Document Library:
         [store types documentation](/discover/portal/-/knowledge_base/7-0/liferay-store-types)
         for more information. 
 
-    -   **Multiple Documents**: Upload several documents at once.
+    -   **Multiple Documents**: Upload several files at once. You can apply a 
+        single description and document type to all the files. You can also 
+        [categorize and tag](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories) 
+        the files, and assign them default permissions. 
 
     -   **Basic Document**: Upload a single file. By default, basic documents 
         aren't described by any metadata sets. 
 
-    The remaining items in the Add menu are default document types that are each 
-    described by a unique metadata set. When you add a document belonging to a 
-    specific document type, a form appears for picking the file to upload and 
-    entering the data defined by the document type's metadata set. The 
-    *Contract* type appears below as an example. 
+    The remaining items in the Add menu are default document types described by 
+    a unique metadata set. When you add a document belonging to a specific 
+    document type, a form appears that lets you pick the file to upload and 
+    enter the data defined by the document type's metadata set. As an example, 
+    the *Contract* document type is described here: 
 
     -   **Contract**: Upload a file and apply the *Contract* document type to 
         it. This document type is intended to be used to describe legal 
@@ -90,8 +93,8 @@ Follow these steps to add files to your site's Document Library:
         effective date, expiration date, contract type, status, legal reviewer, 
         signing authority, and deal name. 
 
-    -   Any custom documents types that have been defined also appear in the Add 
-        menu. 
+    Any custom document types that have been defined also appear in the Add 
+    menu. 
 
 3.  When you're finished selecting the file to upload and filling out any 
     document type fields that are necessary, click *Publish*. 
