@@ -93,5 +93,5 @@ Next, edit the label to give it a value.
 If you want, you can also override the specification group that was selected
 when the label was created. When editing the label to assign a value, you can
 choose any group from the *Group* drop-down box. This change is only applied to
-current product--it has no effect on any other products which use the same
+the current product--it has no effect on any other products which use the same
 label.

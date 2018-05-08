@@ -37,7 +37,7 @@ To create new SKUs, follow these steps:
 If you select *Add SKU*, a single SKU is created and the *Add SKU* form is
 displayed (See *Details*, below).
 
-If you select *Generate all SKU combinations*, then an SKU will be created for
+If you select *Generate all SKU combinations*, then a SKU will be created for
 every product variant. To configure these SKUs, you must edit each individually.
 
 ## Editing a SKU [](id=editing-an-sku)
@@ -53,7 +53,7 @@ displayed.
 The *Details* tab mirrors the *Add SKU* form that is displayed when a single SKU
 is created. It contains the following fields:
 
-**SKU:** If the SKU was created singly, you must create an SKU code. This field
+**SKU:** If the SKU was created singly, you must create a SKU code. This field
 is automatically filled when SKUs are generated.
 
 **Global Trade Item Number, Manufacturer Part Number:** Enter a trade item
@@ -87,7 +87,7 @@ for details.
 
 ### Price Lists [](id=price-lists)
 
-Price lists set special prices for certain user segments. To add an SKU to
+Price lists set special prices for certain user segments. To add a SKU to
 a price list, go to the *Price Lists* tab:
 
 1.  Click on the ![Add](../../../images/icon-add.png) button, and select
