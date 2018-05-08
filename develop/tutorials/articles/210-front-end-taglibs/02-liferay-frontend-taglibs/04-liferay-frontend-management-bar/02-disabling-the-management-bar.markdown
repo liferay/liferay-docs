@@ -1,7 +1,7 @@
 # Disabling All or Portions of the Management Bar [](id=disabling-all-or-portions-of-the-management-bar)
 
-When there's no content in the app, you should disable all the Management Bar's 
-buttons, except the sidenav toggler button. 
+When there are no search results to display, you should disable all the 
+Management Bar's buttons, except the sidenav toggler button. 
 
 You can disable the Management Bar by adding the `disabled` attribute to the 
 `liferay-frontend:management-bar` tag:
@@ -21,7 +21,7 @@ effect when there aren't any results to view:
             disabled="<%= total == 0 %>"
             displayViews='<%= new String[] {"descriptive", "icon", "list"} %>'
             portletURL="<%= changeDisplayStyleURL %>"
-            selectedDisplayStyle="<%= displayStyle( %>"
+            selectedDisplayStyle="<%= displayStyle %>"
     />
 
 ![Figure 1: You can disable all or portions of the Management Bar.](../../../../images/liferay-frontend-taglib-management-bar-disabled.png)

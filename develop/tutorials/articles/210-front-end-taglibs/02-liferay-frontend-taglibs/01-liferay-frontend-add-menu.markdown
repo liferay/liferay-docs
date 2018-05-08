@@ -1,21 +1,34 @@
 # Liferay Frontend Add Menu [](id=liferay-frontend-add-menu)
 
 The add menu tag creates an add menu button for one or multiple items. It is 
-used for actions that add entities (e.g. a new blog entry). Use the 
-`<liferay-frontend:add-menu>` tag to create the add menu, and nest a 
-`<liferay-frontend:add-menu-item>` tag for each item. 
+used for actions that add entities (e.g. a new blog entry), and is part of the 
+Management Bar. Use the `<liferay-frontend:add-menu>` tag to create the add 
+menu, and nest a `<liferay-frontend:add-menu-item>` tag for each item. 
+
++$$$
+
+**Note:** This pattern is deprecated as of @product-ver@. We recommend that you 
+migrate to using the creation menu pattern covered in the 
+[Clay Management Toolbar](tutorial link goes here) 
+tutorial instead.
+
+$$$
 
 When the menu has one item, the button triggers the item's action, as shown in 
 the example below for the Blogs Admin App:
 
-    <liferay-frontend:add-menu
-      inline="<%= true %>"
-    >
-      <liferay-frontend:add-menu-item
-        title='<%= LanguageUtil.get(request, "add-blog-entry") %>'
-        url="<%= addEntryURL %>"
-      />
-    </liferay-frontend:add-menu>
+    <liferay-frontend:management-bar-buttons>
+        ...
+        <liferay-frontend:add-menu
+          inline="<%= true %>"
+        >
+          <liferay-frontend:add-menu-item
+            title='<%= LanguageUtil.get(request, "add-blog-entry") %>'
+            url="<%= addEntryURL %>"
+          />
+        </liferay-frontend:add-menu>
+
+    </liferay-frontend:management-bar-buttons>
 
 ![Figure 1: The add button pattern consists of an `add-menu` tag and at least one `add-menu-item` tag.](../../../images/liferay-frontend-taglib-add-menu-one-item.png)
 

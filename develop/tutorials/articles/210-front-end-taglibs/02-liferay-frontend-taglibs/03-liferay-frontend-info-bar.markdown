@@ -27,12 +27,12 @@ for the `icon` attribute.
 sidebar panel:
 
     <div class="closed container-fluid-1280 sidenav-container sidenav-right" id="<portlet:namespace />infoPanelId">
-    <liferay-frontend:sidebar-panel>
-      <div>
-      <h2>sidebar content</h2>
-      <p>Here is some content</p>
-      </div>
-    </liferay-frontend:sidebar-panel>
+        <liferay-frontend:sidebar-panel>
+          <div>
+          <h2>sidebar content</h2>
+          <p>Here is some content</p>
+          </div>
+        </liferay-frontend:sidebar-panel>
     </div>
 
 Note that the sidebar panel's wrapper `<div>` has the classes `closed` and 

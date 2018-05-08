@@ -9,6 +9,15 @@ requires.
 
 ![Figure 1: The Management Bar lets the user customize how the app displays content.](../../../../images/liferay-frontend-taglib-management-bar-message-boards.png)
 
++$$$
+
+**Note:** The Liferay Frontend Management Bar is deprecated as of @product-ver@. 
+We recommend that you use the 
+[Clay Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar) 
+instead.
+
+$$$
+
 The Management Bar is divided into a few key sections. Each section is grouped 
 and configured using different taglibs:
 

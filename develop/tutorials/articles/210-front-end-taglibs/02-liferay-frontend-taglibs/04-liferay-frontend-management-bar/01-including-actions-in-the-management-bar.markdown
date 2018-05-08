@@ -4,8 +4,8 @@ While an actions menu is typically included with each search container result,
 you can also include these actions in the management bar. This keeps everything 
 organized within the same UI. This update adds a checkbox next to each search 
 container result, as well as adds one in the management bar itself to select all 
-results. The actions are displayed when a checkbox is checked--individual or 
-select all--and hidden from view otherwise. 
+results. The actions are displayed when a checkbox is checked---individual or 
+select all---and hidden from view otherwise. 
 
 ![Figure 1: You can select individual results or all results at once.](../../../../images/liferay-frontend-taglib-management-bar-include-checkbox.png)
 
@@ -37,7 +37,7 @@ Follow these steps to include actions in your management bar:
         	/>
 
         	<liferay-frontend:management-bar-button
-        		href="javascript:;"
+        		href="javascript:deleteEntries();"
         		icon="trash"
         		id="deleteSites"
         		label="delete"
