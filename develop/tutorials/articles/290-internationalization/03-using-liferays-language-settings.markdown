@@ -4,8 +4,8 @@ For a given locale, you can
 [override @product@'s core UI messages](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys).
 Modifying language key values provides a lot of localization flexibility in
 itself, but we're always looking for new ways to give you more control. There
-are language settings in @product@'s `Language_xx.properties` files that give
-you even more localization options.
+are language settings in `Language_xx.properties` files that give you even more
+localization options.
 
 -  In the add and edit user forms, configure the name fields that are displayed
    and the field values available in select fields. For example, leave out the
@@ -21,7 +21,7 @@ To see how these settings are configured, open @product@'s core
 
         liferay-portal/portal-impl/src/content/Language.properties
 
-2. From a @product@ bundle's `portal-impl.jar`.
+2. From a bundle's `portal-impl.jar`.
 
         [Liferay Home]/tomcat-[version]/webapps/ROOT/WEB-INF/lib/portal-impl.jar
 
@@ -70,7 +70,7 @@ between locales. Because of this, user name fields are configurable in the
 following ways:
 
 -  Remove certain name fields and make others appear more than once. Some
-   locale's need more than one last name, for example.
+   locales need more than one last name, for example.
 
         lang.user.name.field.names=prefix,first-name,middle-name,last-name,suffix
 
@@ -135,9 +135,9 @@ Compare those to the Spanish (`Language_es.properties`) settings:
 
 ![Figure 2: The Spanish user name settings omit the suffix and middle name fields entirely.](../../images/spanish-user-name-fields.png)
 
-The biggest difference between the English and Spanish form fields in the images
-above is that the middle name and suffix fields are omitted in the Spanish
-configuration. Other differences include the specific prefix values.
+The biggest difference between the English and Spanish form fields is that the
+middle name and suffix fields are omitted in the Spanish configuration. Other
+differences include the specific prefix values.
 
 ¡Muy excelente! Localizing the forms for adding and editing users is
 accomplished using the same method by which @product@'s UI messages are
@@ -145,9 +145,9 @@ localized: overriding one of its `Lanuguage_xx.properties` files.
 
 ## Identifying User Initials [](id=identifying-user-initials)
 
-A user's initials is the default avatar (i.e., portrait) for their account.
-Some cultures use initials differently, so there's a way to configure them in
-the `Language.properties` file.
+The default avatar displays a user's initials. Some cultures use initials
+differently, so there's a way to configure them in the `Language.properties`
+file.
 
     lang.user.default.portrait=initials
     lang.user.initials.field.names=first-name,last-name
@@ -171,12 +171,11 @@ Now you can manage how a user's initials are displayed!
 ## Right to Left or Left to Right? [](id=right-to-left-or-left-to-right)
 
 The first three properties in the `Language.properties`'s Language Settings
-section are used for changing the direction in which the language's characters
-are displayed. Most languages are read from left to right, but some languages
-are meant to be read from right to left (e.g., Arabic, Hebrew, and Persian). It
-can also be changed for languages that have been traditionally displayed left to
-right (like English) as a funny practical joke. Just don't tell anyone that you
-got the idea here.
+section change the direction in which the language's characters are displayed.
+Most languages are read from left to right, but some languages are read from
+right to left (e.g., Arabic, Hebrew, and Persian). You can also change it for
+languages that have been traditionally displayed left to right (like English) as
+a funny practical joke. Just don't tell anyone that you got the idea here.
 
 Here's what the relevant language properties look like for a language that
 should be displayed from right to left:

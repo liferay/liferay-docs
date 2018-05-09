@@ -6,9 +6,9 @@ or even a language module that holds these keys, you're in the right place. In
 this tutorial, you'll explore the following capabilities:
 
 -  Generating language properties files for each supported locale with a single
-   command. This prevents you from having to manually create a language
-   properties file for each locale. The same command also propagates the keys
-   from the default language file to all translation files.
+   command. This prevents you from having to create a language properties file
+   for each locale manually. The same command also propagates the keys from the
+   default language file to all translation files.
 
 -  Generating automatic translations using Microsoft's Translator Text API. This
    prevents you from translating each message manually.
@@ -51,13 +51,12 @@ you must make a small modification to your application's build file.
 2.  Create (if necessary) a default `Language.properties` file in the
     `src/main/resources/content` folder. 
 
-3.  Run the `gradlew buildLang` task from your project's root directory to
+3.  Run the `gradlew buildLang` task from your project's root folder to
     generate default translation files.
 
-    The generated files contain automatic copies of all the keys and values
-    in your default `Language.properties` files. That way you don't have to
-    copy your language keys manually into all of the files. Run the
-    `buildLang` task each time you change the default language file.
+    The generated files contain copies of all the keys and values in your
+    default `Language.properties` files. Run the `buildLang` task each time you
+    change the default language file.
 
     When the task completes, it prints `BUILD SUCCESSFUL` with this log output:
 
