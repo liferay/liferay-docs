@@ -69,6 +69,8 @@ Follow these steps to change a folder's document type restrictions and workflow:
         (the current folder)
     -   Default Workflow for this Folder (the current folder)
 
+3.  Click *Save* when you're finished. 
+
 ![Figure 3: You can set the document type restrictions and workflow to use for a folder's files.](../../../../images/dm-restrictions-workflow.png)
 
 ## Setting Folder Permissions
