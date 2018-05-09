@@ -140,8 +140,7 @@ To display the form on a dedicated page accessed only by its link:
 Next learn how to view the form entries. Since there aren't any yet, fill out and
 submit the form a few times. 
 
-Now you know the basics of creating and managing forms in Liferay. But this
+Now you know the basics of creating and managing forms in Liferay, but this
 presentation didn't do the Forms application justice. It's much more powerful
-than hinted at here. Read the next article to see what the Forms app can do for
-your more advanced form buiding needs.
-
+than hinted at here. The remaining articles in this section will get you
+immersed in more advanced form building features.
