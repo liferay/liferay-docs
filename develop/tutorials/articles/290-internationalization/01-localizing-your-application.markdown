@@ -82,7 +82,7 @@ are used.
 ## What Locales are Available By Default? [](id=what-locales-are-available-by-default)
 
 There are a bunch of locales available by default in Liferay. Look in the
-`portal.properties` file
+`portal.properties`
 [file](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones)
 to find them.
 
