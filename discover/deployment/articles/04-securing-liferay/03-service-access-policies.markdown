@@ -115,7 +115,7 @@ You can create new default service access policies:
 1.  Navigate to the *Configuration* &rarr; *Service Access Policy* section of
     the Control Panel. 
  
-2.  Click *Add* (![add](../../../icon-add.png)). 
+2.  Click *Add* (![add](../../images/icon-add.png)). 
  
 3.  Flip the switch to enable your policy.
 
