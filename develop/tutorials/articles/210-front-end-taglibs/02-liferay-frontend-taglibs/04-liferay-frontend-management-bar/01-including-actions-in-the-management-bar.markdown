@@ -48,8 +48,6 @@ Follow these steps to include actions in your management bar:
 
 ## Related Topics [](id=related-topics)
 
-[Creating Display Options for Search Results](/develop/tutorials/-/knowledge_base/7-1/creating-display-options-for-search-results)
-
 [Disabling All or Portions of the Management Bar](/develop/tutorials/-/knowledge_base/7-1/disabling-all-or-portions-of-the-management-bar)
 
-[Sorting Search Results with the Management Bar](/develop/tutorials/-/knowledge_base/7-1/sorting-search-results-with-the-management-bar)
+[Clay Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar)

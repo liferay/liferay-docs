@@ -98,7 +98,7 @@ card for a web content article when an image preview is available:
       </liferay-frontend:vertical-card-footer>
     </liferay-frontend:vertical-card>
 
-![Figure 4: vertical cards are perfect to display files and documents](../../../images/liferay-frontend-taglib-cards-vertical.png)
+![Figure 3: vertical cards are perfect to display files and documents](../../../images/liferay-frontend-taglib-cards-vertical.png)
 
 ## User Vertical Card [](id=user-vertical-card)
 
@@ -126,7 +126,7 @@ portlet:
       </liferay-frontend:vertical-card-header>
     </liferay-frontend:user-vertical-card>
 
-![Figure 5: user vertical cards are perfect to display files and documents](../../../images/liferay-frontend-taglib-cards-user-vertical.png)
+![Figure 4: user vertical cards are perfect to display files and documents](../../../images/liferay-frontend-taglib-cards-user-vertical.png)
 
 ## Related Topics [](id=related-topics)
 

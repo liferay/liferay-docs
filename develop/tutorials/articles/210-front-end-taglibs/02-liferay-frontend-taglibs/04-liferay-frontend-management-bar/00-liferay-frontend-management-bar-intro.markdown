@@ -97,7 +97,4 @@ For example, here's the Management Bar configuration in the Trash app:
            icon="trash" id="deleteSelectedEntries" label="delete" />
        </liferay-frontend:management-bar-action-buttons>
     </liferay-frontend:management-bar>
-   
-If this code example doesn't make sense, don't worry. In this section of 
-tutorials, you'll learn how to use these tags to create a management bar for 
-your app. 
+

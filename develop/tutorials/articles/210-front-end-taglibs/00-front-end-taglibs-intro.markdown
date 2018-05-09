@@ -11,8 +11,8 @@ tutorials:
 [Clay components](https://clayui.com/docs/components/alerts.html), 
   such as alerts, buttons, drop-down menus, form elements, and more to your apps. 
 
-- Frontend: Add menus, visualize information, manage search container results, 
-  and more. 
+- Frontend: Lets you create UI components commonly used throughout Portal's 
+  apps, such as add menus, cards, management bars, and more.
 
 - Liferay UI: lets you create common UI components such as icons, tabs, and 
   more.

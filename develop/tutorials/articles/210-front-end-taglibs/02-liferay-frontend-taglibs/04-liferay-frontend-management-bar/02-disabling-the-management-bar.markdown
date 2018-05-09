@@ -28,8 +28,6 @@ effect when there aren't any results to view:
 
 ## Related Topics [](id=related-topics)
 
-[Filtering Search Results with the Management Bar](/develop/tutorials/-/knowledge_base/7-1/filtering-search-results-with-the-management-bar)
-
 [Including Actions in the Management Bar](/develop/tutorials/-/knowledge_base/7-1/including-actions-in-the-management-bar)
 
-[Sorting Search Results with the Management Bar](/develop/tutorials/-/knowledge_base/7-1/sorting-search-results-with-the-management-bar)
+[Clay Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar)

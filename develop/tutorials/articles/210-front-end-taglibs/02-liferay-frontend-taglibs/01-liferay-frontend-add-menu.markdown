@@ -8,9 +8,9 @@ menu, and nest a `<liferay-frontend:add-menu-item>` tag for each item.
 +$$$
 
 **Note:** This pattern is deprecated as of @product-ver@. We recommend that you 
-migrate to using the creation menu pattern covered in the 
-[Clay Management Toolbar](tutorial link goes here) 
-tutorial instead.
+use the Clay Management Toolbar's 
+[creation menu pattern](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar#creation-menu) 
+instead.
 
 $$$
 
