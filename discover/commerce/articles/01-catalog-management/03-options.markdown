@@ -1,55 +1,43 @@
 # Options [](id=options)
 
-**An option** is a product feature that a buyer can select or specify. An
+**An option** is a product feature that a buyer can select or specify.  An
 option could prompt a buyer to choose between engines of different
 displacements, building materials of different dimensions, or T-shirts of
 different colors.
 
 To create an option, you must first create an option template and then a set of
-option values. You must also 
-[assign the template to a product](/web/liferay-emporio/documentation/-/knowledge_base/7-1/assigning-options-to-products).
+option values. You must also [apply the template to
+a product](/web/liferay-emporio/documentation/-/knowledge_base/7-1/adding-options-to-products).
 
 **An Option Template** describes the kind of variation that the option defines.
 If the buyer should be prompted to choose between product variants of different
 sizes, then the template would be defined as *Size*.
 
-**An Option Value** refers to a specific selection a buyer might choose. For
-example, an option template called *Size* might be assigned the option values
+**An Option Value** refers to a specific selection a buyer can choose. For
+example, an option template called *Size* can be assigned the option values
 *Small*, *Medium*, and *Large*.
 
 +$$$
 
-Note: not every option requires option values. Values must be defined in order
-to prompt buyers to choose from among preset variants. Values are not required
-for options that are more open-ended: for instance, the buyer might be prompted
+Note: not every option requires option values. Values allow
+buyers to choose from among preset variants. Values are not required
+for options that are open-ended: for instance, the buyer can be prompted
 to enter custom text to be printed or engraved on the product, or asked to
-provide schematics of a custom product for fabrication or 3D-print
+provide schematics of a custom product for fabrication or 3D-printing.
 
 You can select whether an option template requires values when you set its field
 type (see below).
 
 $$$
 
-**Scope:** When an option template is created, its default scope is the catalog.
-Every product it's assigned to inherits the template's configuration. However,
-when you deploy a template to an individual product, you can make changes to the
-template that are scoped only to that product---other products in the catalog are
-not affected.
-
-Option values can be scoped either to an option template or to a product. Values
-that are scoped to a template apply to all products that deploy that template.
-Values scoped to a product apply only to that product, but can override any
-template-scoped values.
-
-+$$$
-
-Note: changes at the catalog scope are not propagated to the product scope. This
-means that if you edit an option template, it does not affect any products to
-which that template has already been assigned. This ensures that products that
-override the template are not unintentionally tampered with by future template
-changes.
-
-$$$
+When an option template is created, it can be applied to any product in the
+catalog. This makes it easy to apply frequently-used options to a large number
+of products. Once the template is applied, however, the relationship between
+template and product does not persist: future changes to the template will not
+affect the product, and future changes to the product's options will not affect
+the template. This allows each product's options to easily customized, and
+ensures that those customizations will not be unintentionally tampered with by
+future template changes.
 
 ## Creating an Option Template [](id=creating-an-option-template)
 
@@ -101,9 +89,9 @@ option values.
 filtered for this option.
 
 **Required**: forces customers to make a selection before purchasing products
-that deploy this option.
+that use this option.
 
-**SKU Contributor:** an SKU contributor can be assigned a unique price and other
+**SKU Contributor:** a SKU contributor can be assigned a unique price and other
 attributes for each variant via
 [SKUs](/web/liferay-emporio/documentation/-/knowledge_base/7-1/SKUs). If
 checked, the option must have an SKU in order to be sold.
@@ -114,7 +102,7 @@ this field is filled automatically, most users can safely leave it alone.
 Once an option has been created and saved, it is displayed in the list on the
 left side of the screen.
 
-## Creating Option Values at the Catalog Scope [](id=creating-option-values-at-the-catalog-scope)
+## Creating Option Values [](id=creating-option-values-at-the-catalog-scope)
 
 Depending on what Field Type you specified when you created your template, you
 may need to create values for your option. 
@@ -139,7 +127,6 @@ Follow these steps:
 
 3.  Click *Save*. Repeat steps 2 and 3 to create additional values.
 
-Keep in mind that values scoped to the catalog apply to every product assigned
-to your template. You can override these values for individual products when
-you [assign the template to
-a product](/web/liferay-emporio/documentation/-/knowledge_base/7-1/assigning-options-to-products).
+These values apply to every product where the template is applied. You can
+override these values for individual products when you 
+[apply the template to a product](/web/liferay-emporio/documentation/-/knowledge_base/7-1/adding-options-to-products).
