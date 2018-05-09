@@ -16,7 +16,7 @@ Follow these steps:
 
 1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *User Segments*.
 
-2.  Click on the [Add](../../images/icon-add.png) button at the top right and
+2.  Click on the ![Add](../images/icon-add.png) button at the top right and
     enter a name for the segment when prompted. Click *Submit*.
 
 3.  Click on the user group to edit it. Fill in the following fields:
@@ -35,7 +35,7 @@ Now you've created a user segment, but it has no members. Follow these steps to
 add users:
 
 1.  After creating a segment, click on the *Criteria* tab. Then click on the
-    [Add](../../images/icon-add.png) button to open the *Add Criterion* form.
+    ![Add](../images/icon-add.png) button to open the *Add Criterion* form.
 
 2.  Select a *Type* from the drop-down menu and choose whether to add *Users*,
     *Organizations*, *User Groups*, or *Roles* to the segment.
