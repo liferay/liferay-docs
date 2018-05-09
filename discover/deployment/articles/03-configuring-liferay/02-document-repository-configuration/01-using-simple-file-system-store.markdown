@@ -1,4 +1,4 @@
-# Using the File System Store [](id=using-the-file-system-store)
+# Using the Simple File System Store [](id=using-the-simple-file-system-store)
 
 This is the default store. It's a simple file storage implementation that uses a
 local folder to store files. You can use the file system for your clustered
