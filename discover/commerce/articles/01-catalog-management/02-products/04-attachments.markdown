@@ -20,6 +20,6 @@ Follow these steps to add an attachment to a product:
    [Options](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options)
    for details).
 
-3. If you want the image to be displayed on the product page for a limited
+3. If you want the attachment to be displayed on the product page for a limited
    period of time, specify display and expiration dates in the *Schedule*
    section at the bottom of the form.
