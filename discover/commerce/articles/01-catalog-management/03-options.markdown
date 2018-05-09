@@ -13,15 +13,15 @@ a product](/web/liferay-emporio/documentation/-/knowledge_base/7-1/adding-option
 If the buyer should be prompted to choose between product variants of different
 sizes, then the template would be defined as *Size*.
 
-**An Option Value** refers to a specific selection a buyer might choose. For
-example, an option template called *Size* might be assigned the option values
+**An Option Value** refers to a specific selection a buyer can choose. For
+example, an option template called *Size* can be assigned the option values
 *Small*, *Medium*, and *Large*.
 
 +$$$
 
-Note: not every option requires option values. Values must be defined in order
-to prompt buyers to choose from among preset variants. Values are not required
-for options that are more open-ended: for instance, the buyer might be prompted
+Note: not every option requires option values. Values allow
+buyers to choose from among preset variants. Values are not required
+for options that are open-ended: for instance, the buyer can be prompted
 to enter custom text to be printed or engraved on the product, or asked to
 provide schematics of a custom product for fabrication or 3D-printing.
 
