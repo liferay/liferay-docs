@@ -106,17 +106,20 @@ the Elasticsearch, Shield, and Marvel plugins. Create a
 
 file with these contents:
 
-    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch",
-        "com.liferay.portal.search.elasticsearch.shield",
-        "com.liferay.portal.search.elasticsearch.marvel.web"]
+    blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch","com.liferay.portal.search.elasticsearch.shield","com.liferay.portal.search.elasticsearch.marvel.web"]
 
 Place the file in `Liferay Home/osgi/configs`.
 
-Alternatively, use the App Manager. If you're a Digital Enterprise customer, use
-the blacklist feature described above. The App Manager relies on the
-`osgi/state` folder to "remember" the state of the bundle.  If you delete this
-folder (recommended during patching) the Elasticsearch connector will be
-reinstalled and started automatically. 
++$$$
+
+**Note:** If you're a Digital Enterprise customer, use the blacklist feature
+described above. The App Manager relies on the `osgi/state` folder to "remember"
+the state of the bundle. If you delete this folder (recommended during patching)
+the Elasticsearch connector will be reinstalled and started automatically.
+
+$$$
+
+Alternatively, use the App Manager.
 
 1.  Navigate to Control Panel &rarr; Apps &rarr; App Manager.
 
