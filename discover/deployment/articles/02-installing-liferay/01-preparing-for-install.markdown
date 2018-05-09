@@ -105,20 +105,20 @@ The recommended way of setting up your @product@ database is also the simplest.
 @product@ takes care of just about everything. You only need to take two simple
 steps:
 
-1. Create a blank database encoded with the character set UTF-8. @product@ is a
-   multilingual application and needs UTF-8 encoding to display all of its
-   supported character sets.
+1.  Create a blank database encoded with the character set UTF-8. @product@ is a
+    multilingual application and needs UTF-8 encoding to display all of its
+    supported character sets.
 
-   +$$$
+    +$$$
 
-   **Note:** If you plan to migrate from one database vendor to another,
-   [configure the database to use the default query result order you expect for entities @product@ lists](/develop/tutorials/-/knowledge_base/7-0/sort-order-changed-with-a-different-database). 
+    **Note:** If you plan to migrate from one database vendor to another,
+    [configure the database to use the default query result order you expect for entities @product@ lists](/develop/tutorials/-/knowledge_base/7-0/sort-order-changed-with-a-different-database). 
 
-   $$$
+    $$$
 
-2. Create a database user for accessing this database. Grant this database user
-   all rights, including the rights to create and drop tables, to the blank
-   @product@ database.
+2.  Create a database user for accessing this database. Grant this database user
+    all rights, including the rights to create and drop tables, to the blank
+    @product@ database.
 
 @product@ uses this database user's credentials to connect to the @product@
 database either directly or through its application server. During its initial
