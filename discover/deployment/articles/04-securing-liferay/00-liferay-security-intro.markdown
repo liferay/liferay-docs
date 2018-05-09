@@ -1,4 +1,4 @@
-# Securing @product@ 
+# Securing @product@ [](id=securing-product)
 
 Liferay follows the OWASP Top 10 (2013) and CWE/SANS Top 25 lists to ensure
 @product@ is as secure as possible. Following these recommendations protects the

@@ -31,7 +31,7 @@ request fails.
 checks. The user invoking a web service must have permission to invoke the
 service.
 
-![Figure x: To get to a service, a request must pass through the door lock of user permissions, the padlock of the verification layer, the brick wall of service access policies, and finally the safe of predefined IP permissions. ](../../images/service-access-policies-security-layers.png)
+![Figure 1: To get to a service, a request must pass through the door lock of user permissions, the padlock of the verification layer, the brick wall of service access policies, and finally the safe of predefined IP permissions. ](../../images/service-access-policies-security-layers.png)
 
 Note that service access policies respect the permissions system. If a service
 access policy grants a user access to a remote service, the user must still have

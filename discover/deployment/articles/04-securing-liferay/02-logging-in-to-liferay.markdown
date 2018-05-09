@@ -10,7 +10,7 @@ available to everybody, including unauthenticated users (called *guest* users).
 different users, please see the [Roles and Permissions]() documentation. (Not
 yet written) -->
 
-## Authentication Types
+## Authentication Types [](id=authentication-types)
 
 There are three authentication types: by email address, screen
 name, or user ID. To choose an authentication type, navigate to the Control
@@ -33,14 +33,14 @@ adding restrictions on the kinds of passwords that are allowed or required
 (e.g., to require a minimum password length or require special characters),
 please see the [Password Policies]() documentation. -->
 
-## The Sign In Portlet
+## The Sign In Portlet [](id=the-sign-in-portlet)
 
 The Sign In portlet is how users log in. By default, the Sign In portlet can
 create new accounts or request a password reset. The default home page contains
 a Sign In portlet. You can access this page at
 [http://localhost:8080/web/guest/home](http://localhost:8080/web/guest/home).
 
-![Figure 1: By default, the Sign In portlet allows users to log in, create a new account, or request a password reset.](../../../images/sign-in-portlet.png)
+![Figure 1: By default, the Sign In portlet allows users to log in, create a new account, or request a password reset.](../../images/sign-in-portlet.png)
 
 If the Sign In portlet doesn't appear on any page, you can still access it here:
 
@@ -65,7 +65,7 @@ Panel, click on *Configuration* &rarr; *Instance Settings* &rarr;
 can also prevent users from requesting forgotten passwords or from requesting
 password reset links by unchecking the appropriate boxes. 
 
-![Figure 2: Here's a view of the Sign In portlet with the *Create Account* and *Forgot Password* options removed.](../../../images/sign-in-portlet2.png)
+![Figure 2: Here's a view of the Sign In portlet with the *Create Account* and *Forgot Password* options removed.](../../images/sign-in-portlet2.png)
 
 Remember that the Sign In portlet is the default way for users to log in, but
 it's not the only way. User accounts can be imported from and exported to LDAP
