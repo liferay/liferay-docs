@@ -7,8 +7,8 @@ creating service entities, you'll want to create
 and
 [`delete*`](#implementing-a-delete-method)
 methods for updating and deleting them. They're easy to implement. The main
-difference between them and the `add*` method is that they need an entity
-instance or way to fetch one to operate on. 
+difference between them and the `add*` method is they must know which entity
+they're updating or deleting. 
 
 ## Implementing an update method [](id=implementing-an-update-method)
 
@@ -77,13 +77,13 @@ Refer to the example method above as you follow the steps to create your own
 
 ### Step 1: Declare an update method with parameters for updating the entity [](id=declare-an-update-method-with-parameters-for-updating-the-entity)
 
-Create a public method for *updating* your application's entity. 
+Create a public method for updating your application's entity. 
 
     public [ENTITY] update[ENTITY](...)
         throws PortalException {
         
     } 
-    
+ 
 Replace `[ENTITY]` with your entity's name or nickname.  Create a parameter list
 that satisfies the entity attributes you're updating. Include an entity instance
 parameter or an ID parameter for fetching the entity instance.
@@ -107,8 +107,8 @@ Similar to validating the
 [`add*` method](/develop/tutorials/-/knowledge_base/7-1/implementing-an-add-method)
 parameters, validate your `update*` parameters. Your `add*` and `update*`
 methods might be able to use the same validation code. Throw a 
-[`PortalException`](@platform-ref@/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html),
-or an extension of `PortalException`, for any invalid parameters. 
+[`PortalException`](@platform-ref@/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html)
+or an extension of `PortalException` for any invalid parameters. 
 
 ### Step 3: Retrieve the entity instance [](id=retrieve-the-entity-instance)
 
@@ -145,7 +145,7 @@ caller.
 
 ### Step 6: Run Service Builder [](id=run-service-builder)
 
-Lastly, run Service Builder to propagate your new service method to the
+Finally, run Service Builder to propagate your new service method to the
 `*LocalService` interface. 
 
 You've created a service method to update your entity. If you thought that was
@@ -184,9 +184,6 @@ For example, here's paraphrased code from
 
 After implementing your `delete*` method, run Service Builder to propagate your
 new service method to the `*LocalService` interface. 
-
-The requirements for implementing `update*` and `delete*` methods are
-straightforward. 
 
 ## Related Topics [](id=related-topics)
 
