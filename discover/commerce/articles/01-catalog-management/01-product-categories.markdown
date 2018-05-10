@@ -13,8 +13,7 @@ then assign products to them.
 
 To create vocabularies, categories and subcategories, go to *Site Menu* &rarr;
 *Content* &rarr; *Categories*. To learn more about the process, go to the
-[Defining Categories for
-Content][/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories#defining-categories-for-content]
+[Defining Categories for Content][/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories#defining-categories-for-content]
 section.
 
 +$$$
@@ -84,12 +83,12 @@ your purposes.
 
 ## Images [](id=images)
 
-You may want to upload images and associate them with product categories. This
-allows you to designate a generic category page that automatically displays
-images and products for whatever category a buyer wants. These images can be
-easily updated by publishing a new category image. For more details on setting
-up a generic category page to display content dynamically, see [Category Detail
-Page](/web/liferay-emporio/documentation/-/knowledge_base/7-1/category-detail-page).
+Uploading images and associating them with product categories lets you
+designate a generic category page that automatically displays images and
+products for whatever category a buyer wants. These images can be updated by
+publishing a new category image. For more details on setting up a generic
+category page to display content dynamically, see 
+[Category Detail Page](/web/liferay-emporio/documentation/-/knowledge_base/7-1/category-detail-page).
 
 Follow these steps to assign images to a category:
 
