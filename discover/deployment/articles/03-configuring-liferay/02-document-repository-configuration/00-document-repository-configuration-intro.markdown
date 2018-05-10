@@ -13,7 +13,8 @@ You can specify a different root directory from within
 To access System Settings, open the *Menu*
 (![Menu](../../../images/icon-menu.png))
 and navigate to *Control Panel &rarr; Configuration &rarr; System Settings*.
-From System Settings, navigate to *Platform* and then search for and click *File Storage*
+From System Settings, navigate to *Platform* and then search for and click *File
+Storage*
 (![Folder](../../../images/icon-folder.png)).
 For the store's *Root directory* value, specify a path relative to
 [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
@@ -24,10 +25,10 @@ switches immediately to the new folder.
 
 +$$$
 
-**Note:** To propagate store configuration in a multi-node environment, export
-your store settings from your store's *File Storage* screen in System Settings
-to a `.config` file and copy the file to the `[Liferay-Home]/osgi/config` folder
-in each node. To export the configuration, select *Export* from the options icon
+**Note:** To propagate store configuration in a cluster, export your store 
+settings from your store's *File Storage* screen in System Settings to a
+`.config` file and copy the file to the `[Liferay-Home]/osgi/config` folder in
+each node. To export the configuration, select *Export* from the options icon
 ![Options](../../../images/icon-options.png).
 
 $$$
@@ -50,6 +51,7 @@ document repository. You can use any JCR client to access the files. The files
 are stored to the server's file system by default. You can optionally configure
 JCRStore to store files in a database. 
 
-**S3 Store (Amazon Simple Storage)**: uses Amazon's cloud-based storage solution.
+**S3 Store (Amazon Simple Storage)**: uses Amazon's cloud-based storage 
+solution.
 
 These articles explain details for each one.  
