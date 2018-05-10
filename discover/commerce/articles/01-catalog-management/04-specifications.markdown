@@ -1,18 +1,26 @@
 # Specifications [](id=specifications)
 
-Specifications are pieces of structured product information. The data are
-structured into three components: *groups*, *labels* and *values*. This
-makes the data easy to display and maintain.
+A specification stores a single piece of product information. A product's
+dimensions, color, weight, capacity, or almost any other attribute can be
+recorded as a specification. Specifications make it easy to present product
+information and simplify the process of comparing similar products.
 
-Values are identified by labels, which in turn are organized into groups. In
-the image below, *14.4* is a value, *Voltage* is a label, and *Technical
-Details* is a group.
+![Figure 1: Specifications are most visible on product display pages.](../../specifications.png)
 
-![Figure 1: In this image, *Technical Details* is a group, *Voltage* is a label, and *14.4* is a value.](../../images/spec-group.png)
+To organize specifications and make them easy to display and maintain, the data
+are structured into three components: groups, labels and values.
 
-Creating a specification involves creating a group and then creating a label to
-assign to it. Finally, you must create a value, which will be assigned to both
-a label and a product.
+**A Specification Group** is a container for specifications. Several
+specifications with common characteristics can be organized into a group. In
+the image above, *Hardware* is a group.
+
+**A Specification Label** names a specification. In the image above, *Display*
+is a label.
+
+**A Specification Value** provides product-specific information. In the image
+above, 1920x1080 is a value.
+
+![Figure 2: Specification groups and labels exist independently of products, but values do not.](../../images/specification-diagram.png)
 
 ## Specification Groups [](id=specification-groups)
 
@@ -32,8 +40,8 @@ its labels have in common.
 **Priority**: Priority establishes the order in which specification groups will
 be displayed. Smallest numbers go first.
 
-**Key**: A key is a programmatic identifier for this specification group. This
-field auto-fills; if entered manually, it needs to be unique.
+**Key**: A unique identifier for referring to this group programmatically. As
+this field is filled automatically, most users can safely leave it alone.
 
 Once the form is complete, click *Save*.
 
