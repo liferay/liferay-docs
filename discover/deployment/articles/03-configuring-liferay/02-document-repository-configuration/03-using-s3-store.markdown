@@ -4,29 +4,57 @@ Amazon's simple storage service (S3) is a cloud-based storage solution that you
 can use with @product@. All you need is an account, and you can store your
 documents to the cloud from all nodes, seamlessly. 
 
-When you sign up for the service, Amazon assigns you unique keys that link
-you to your account. In Amazon's interface, you can create "buckets" of data
-optimized by region. Once you've created these to your specifications, use [these instructions](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration#s3) 
-to connect your S3 account to @product@. 
+When you sign up for the service, Amazon assigns you unique keys that link you
+to your account. In Amazon's interface, you can create "buckets" of data
+optimized by region. 
 
-If you are using Tomcat as your app server, it doesn't contain a `SAXParser`.
-You must include this property in `system-ext.properties`: 
+Here are the steps for configuring @product@ to use your S3 account for file
+storage:
 
-    org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser
+1.  Amazon S3 requires a `SAXParser` from the application server to operate. If 
+    you are using an app server, such as Apache Tomcat, that doesn't contain  a
+    `SAXParser`, you must include this property in a `system-ext.properties`
+    file: 
 
-Other app servers also need this configuration if they don't contain a
-`SAXParser`. Remember to place your `system-ext.properties` file in a folder
-that resides in your @product@ installation's class path  (e.g.,
-`/WEB-INF/classes/`).
+        org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser
+
+2.  Place your `system-ext.properties` file in a folder that resides in your 
+    @product@ installation's class path  (e.g., `/WEB-INF/classes/`).
+
+3.  Set the following property in a `portal-ext.properties` file in your
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+    folder: 
+
+        dl.store.impl=com.liferay.portal.store.cmis.CMISStore
+
+4.  Restart @product@.
+
+5.  In the Control Panel, navigate to *Configuration* &rarr; *System
+    Settings* &rarr; *File Storage*.
+
+6.  In the *S3 Store Configuration* screen, configure the store your way.
+
+Your @product@ instance is using the Amazon S3 store. 
+
+To use the S3 store in a cluster, follow these steps: 
+
+1.  Export the configuration from the *S3 Store Configuration* screen to a 
+    [`.config` file](/discover/portal/-/knowledge_base/7-1/configuration-files).
+
+2.  Copy the `.config` file to each node's `[Liferay Home]/osgi/configs` 
+    folder. 
+
+3.  Copy the `portal-ext.properties` to each node's
+    [`Liferay Home` folder](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home). 
+
+4.  Copy the `system-ext.properties` (if you're using one) to a folder in the 
+    app server class path on each node. 
+
+5.  Restart @product@ on the nodes. 
+
+@product@ is using the Amazon S3 store throughout your cluster.
 
 +$$$
-
-**Note:** Amazon S3 requires a SAXParser from the application server to operate.
-For some application servers (e.g. Tomcat), it's necessary to define a SAXParser
-in order to prevent errors while utilizing this store. This may be set in
-`system-ext.properties`. For example,
-
-    org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser
 
 **Warning:** If a database transaction rollback occurs in a Document Library
 that uses a file system based store, file system changes that have occurred
