@@ -1,6 +1,6 @@
 # Installing Liferay Workspace [](id=installing-liferay-workspace)
 
-You can install Liferay Workspace using the Liferay Workspace installer. This
+You can install Liferay Workspace using the Liferay Project SDK installer. This
 installs JPM and
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) into your user
 home folder and optionally initializes a Liferay Workspace folder. This is the
@@ -11,11 +11,12 @@ tutorial.
 Follow the steps below to download and install Liferay Workspace:
 
 1.  Download the
-    [Liferay Workspace installer](https://sourceforge.net/projects/lportal/files/Liferay%20Workspace).
-    Make sure to select the version folder (for example, 1.5.0.1) and then
-    select the Workspace version corresponding to your operating system (e.g.,
-    Windows, MacOS, or Linux). Do **not** select the large green download
-    button; this downloads Liferay Portal instead.
+    [Liferay Project SDK installer](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/3.2.0%20M1/).
+    The Project SDK installer is currently listed under *Liferay IDE*, so select
+    the latest IDE version for the latest Project SDK installer. You can select
+    an installer that includes @ide@, depending on your needs. Do **not**
+    select the large green download button; this downloads Liferay Portal
+    instead.
 
 2.  Run the installer. Click *Next* to step through the installer's
     introduction.
