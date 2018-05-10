@@ -40,6 +40,15 @@ to a `.config` file and copy the file to the `[Liferay-Home]/osgi/config` folder
 in each node. To export the configuration, select *Export* from the options icon
 ![Options](../../../images/icon-options.png).
 
+$$$ 
+
++$$$
+
+**Warning:** If a database transaction rollback occurs in the Document Library,
+file system changes that have occurred since the start of the transaction won't
+be reversed. Inconsistencies between Document Library files and those in the
+file system store can occur and may require manual synchronization. 
+
 $$$
 
 The Simple File System Store binds documents very closely to @product@, and may
