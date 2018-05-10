@@ -16,10 +16,9 @@ Start with getting entities that match criteria.
 
 ## Getter Methods [](id=getter-methods)
 
-The `findByPrimaryKey` methods and `findBy*` methods Service Builder generates
-in your `*Persistence` classes search for and return entity instances based on
-criteria. In your local service implementation, all your getter methods need to
-do is wrap calls to the finder methods that get what you want.
+The `findByPrimaryKey` methods and `findBy*` methods search for and return
+entity instances based on criteria. Your local service implementation must only
+wrap calls to the finder methods that get what you want.
 
 Here's how to create a method that gets an entity based on an ID (primary key):
 
@@ -48,7 +47,7 @@ Here's how to get entities based on criteria:
     `findBy*` method you want to call.  Depending on your `finder` element
     columns, Service Builder might overload the method to include these
     parameters:
-    
+ 
     -   `int start` and `int end` parameters for specifying a range of 
         entities.
     -   `com.liferay.portal.kernel.util.OrderByComparator orderByComparator` 
@@ -122,7 +121,7 @@ based on each finder and its columns.
     	}
 
 Now your local service can get entities matching your criteria and return quick
-entity counts.  
+entity counts. 
 
 ## Related Topics [](id=related-topics)
 
