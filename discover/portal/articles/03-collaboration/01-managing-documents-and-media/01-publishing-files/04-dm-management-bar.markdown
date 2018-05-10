@@ -52,9 +52,9 @@ available in when viewing each item separately.
 
 To display an info panel with the current folder's details, click the 
 *Information* icon
-(![**i**](../../../../images/icon-information.png)). The info panel slides out 
-from the right side of the screen and contains the folder's name and number of 
-items. It also has these buttons: 
+(![**i**](../../../../images/icon-information-dm.png)). The info panel slides 
+out from the right side of the screen and contains the folder's name and number 
+of items. It also has these buttons: 
 
 -   **Subscribe** (![Subscribe](../../../../images/icon-star.png)): Get 
     notifications about files added to or modified in the folder. 
