@@ -5,7 +5,7 @@ model objects in Java and your database fields and tables. Service Builder maps
 the entities you define automatically, giving you a facility for taking Java
 objects and persisting them. For the Bookmarks application, two entities are
 created according to its
-[service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
+[service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/service.xml)
 --one for bookmark entries and one for bookmark folders.
 
 Here's a summary of the `BookmarksEntry` entity information:

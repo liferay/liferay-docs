@@ -14,9 +14,9 @@ classes are generated. The package path for Bookmarks ensures that the `*-api`
 module's service classes are generated in the `com.liferay.bookmarks` package.
 The persistence classes are generated in a package of the same name in the
 `*-service` module. For example, examine the Bookmarks application's
-[bookmarks-api](https://github.com/liferay/liferay-portal/tree/master/modules/apps/collaboration/bookmarks/bookmarks-api)
+[bookmarks-api](https://github.com/liferay/liferay-portal/tree/master/modules/apps/bookmarks/bookmarks-api)
 and
-[bookmarks-service](https://github.com/liferay/liferay-portal/tree/master/modules/apps/collaboration/bookmarks/bookmarks-service)
+[bookmarks-service](https://github.com/liferay/liferay-portal/tree/master/modules/apps/bookmarks/bookmarks-service)
 modules to see how these are automatically generated for you. A
 later tutorial 
 [describes the package content](/develop/tutorials/-/knowledge_base/7-1/running-service-builder). 
