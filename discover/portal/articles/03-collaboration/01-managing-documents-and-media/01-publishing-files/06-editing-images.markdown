@@ -1,52 +1,38 @@
 # Editing Images
 
-You've uploaded an image to the document library. It's almost perfect, but it's 
-missing a little something. It could use a little more focus to really highlight 
-the message you're trying to communicate. Just a little editing and the image 
-would draw your readers in. You could edit the image in your favorite image 
-editing program and re-upload it, but that's a bit tedious for the minor changes 
-this image requires.
-
-What else can you do? 
-
-Lucky for you, @product@ has its own built-in image editor. 
-
-A crop here and there, a little bit more contrast, and some adjustments in 
-saturation, and boom! The image is ready to go. 
-
-To access the image editor, go to the Documents and Media repository and locate 
-the image you want to edit. Click the Actions icon 
+Editing and re-uploading images when you only need to apply simple edits is 
+tedious. @product@ contains a simple built-in image editor for exactly this 
+reason. To access the image editor, go to the Documents and Media repository and 
+locate the image you want to edit. Click the Actions icon 
 (![Actions](../../../../images/icon-actions.png)) and select *Edit With Image 
-Editor*.
+Editor*. 
 
 ![Figure 1: You can access the image editor through the Documents and Media repository.](../../../../images/image-editor-docs-and-media.png)
 
-The image editor can also be accessed through an item selector. Anywhere an 
-image is, you can edit it. For example, you can access the image editor via item 
-selector preview windows in blog entries and web content articles. To do this, 
-click the pencil icon 
+You can also access the image editor when selecting an image to insert in 
+content (i.e., via an item selector). Anywhere an image is, you can edit it. For 
+example, you can access the image editor via item selector preview windows in 
+blog entries and web content articles. To do this, click the pencil icon 
 (![Pencil](../../../../images/icon-edit-pencil.png)) in the bottom-right corner 
 of the preview window. 
 
 ![Figure 2: You can access the image editor through the item selector preview window.](../../../../images/image-editor-preview-window.png)
 
-The image editor was designed with quick editing in mind, and offers a minimal, 
-user-friendly UI:
+Liferay designed the image editor with quick editing in mind. It offers a 
+minimal, user-friendly UI. The main toolbar consists of three buttons, each of 
+which contain a subset of options: 
 
 ![Figure 3: The image editor's UI is clear and to the point, offering only what you need.](../../../../images/image-editor-tools.png)
-
-The main toolbar consists of three buttons, each of which contain a subset of
-options. The menu options are described below:
 
 **Transform** (![Transform](../../../../images/icon-transform.png))
 
 -   **Rotate**: Rotate the image to the left or right, in 90 degree increments.
 -   **Resize**: Resize the image. If the lock is closed, the aspect ratio is 
-    locked and changing either width or height automatically adjusts the other 
+    locked and changing width or height automatically adjusts the other 
     dimension to maintain the aspect ratio. When the lock is opened, the width 
-    and height can be changed individually, allowing the aspect ratio to change 
+    and height can be changed individually, letting the aspect ratio change 
     (this isn't recommended because the image can become distorted). 
--   **Crop**: Crop the image.
+-   **Crop**: Crop the image. 
 
 **Adjustment** (![Adjustment](../../../../images/icon-adjustment.png))
 
@@ -70,11 +56,12 @@ reverting all changes made in the editor.
 ![Figure 5: The history bar lets you undo, redo, and reset changes.](../../../../images/image-editor-history-bar.png)
 
 As mentioned earlier, you can access the image editor in the Documents and Media
-repository, or in the item selector in blogs and web content articles. If you 
-edit and save the image in the Documents and Media repository, the file version 
-is incremented a minor version (e.g., from version 1.0 to version 1.1). You can 
-view the image's version history (and previous versions) by clicking the image, 
-clicking its *Info* button (![**i**](../../../../images/icon-information.png)), 
-and then selecting *Versions* from the menu currently set to *Details*. In 
-contrast, if you edit and save an image via an item selector, a copy of the 
-image is created and saved to the document library. 
+repository, or in an item selector. If you edit and save the image in the 
+Documents and Media repository, the file version is incremented a minor version 
+(e.g., from version 1.0 to version 1.1). You can view the image's version 
+history (and previous versions) by clicking the image, clicking its *Info* 
+button 
+(![**i**](../../../../images/icon-information.png)), and then selecting 
+*Versions* from the menu currently set to *Details*. In contrast, if you edit 
+and save an image via an item selector, a copy of the image is created and saved 
+to the document library. 
