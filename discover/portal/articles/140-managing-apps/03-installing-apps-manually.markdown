@@ -6,6 +6,19 @@ on Marketplace? What if all you have is the app's file? In this case, you must
 install the app manually. This article shows you how to do this. You can use the 
 procedures here to install any app. 
 
++$$$
+
+**Important**: When uninstalling an app or module, make sure to use the same 
+agent as you  used to install the app. If you installed it with Marketplace,
+uninstall it with
+[Marketplace](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace).
+If you installed it with the file system, use the file system to uninstall it.
+If you installed it with the App Manager, however, use 
+[Blacklisting](/discover/portal/-/knowledge_base/7-0/blacklisting-osgi-modules)
+to uninstall it. 
+
+$$$
+
 ## Using the Control Panel to Install Apps [](id=using-the-control-panel-to-install-apps)
 
 To install an app manually via your running Liferay instance, navigate to 

@@ -110,6 +110,19 @@ There are two places to manage your purchased apps:
    to its Marketplace entry. 
 
     ![Figure 4: You can also manage your purchased apps from within a running Liferay instance.](../../images/marketplace-purchased.png)
+    
+   
++$$$
+
+**Important**: When uninstalling an app or module, make sure to use the same 
+agent as you used to install the app. If you installed it with Marketplace,
+uninstall it with Marketplace. If you installed it with the file system, use the
+[file system](/discover/portal/-/knowledge_base/7-0/installing-apps-manually)
+to uninstall it. If you installed it with the App Manager, however, use 
+[Blacklisting](/discover/portal/-/knowledge_base/7-0/blacklisting-osgi-modules)
+to uninstall it. 
+
+$$$
 
 Great! Now you know how to use Liferay Marketplace to discover, install, and 
 manage apps. 
