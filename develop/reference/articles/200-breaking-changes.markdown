@@ -633,21 +633,21 @@ counter-intuitive.
 
 ---------------------------------------
 
-### Updated Liferay Portal's Portlet API Implementation
+### Updated Liferay Portal's Portlet API Implementation [](id=updated-liferay-portals-portlet-api-implementation)
 - **Date:** 2018-May-10
 - **JIRA Ticket:** LPS-73282
 
-#### What changed?
+#### What changed? [](id=what-changed-13)
 
 Liferay Portal 7.1 implements the Portlet 3.0 API. Previous versions implemented
 the Portlet 2.0 API.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-13)
 
 This affects developers planning to upgrade custom portlets from earlier
 versions of Liferay Portal.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-13)
 
 There are four specific development use-cases:
 
@@ -714,7 +714,7 @@ There are four specific development use-cases:
    will be made available at
    [https://www.liferayfaces.org](https://www.liferayfaces.org) at that time.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-13)
 
 This change provides the latest features offered by the Portlet 3.0
 Specification, which was released in early 2017.
