@@ -20,16 +20,20 @@ file system store. To cluster this, you must point the store to a network
 mounted file system that all the nodes can access, and that networked file
 system must support concurrent requests and file locking. Otherwise, you may
 experience data corruption issues if two users attempt to write to the same file
-at the same time from two different nodes. 
+at the same time from two different nodes.
 
-To use advanced file system store, configure `portal-ext.properties` with this
-property: 
+To use the advanced file system store, follow these steps:
 
-    dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
+1.  Configure `portal-ext.properties` with this property: 
 
-Restart @product@. In the Control Panel in *Configuration* &rarr; *System
-Settings* &rarr; *Platform* &rarr; *File Storage* &rarr; *Advanced File System
-Store*, configure the store your way. 
+        dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
+
+2.  Restart @product@.
+
+3.  In the Control Panel, navigate to *Configuration* &rarr; *System
+    Settings* &rarr; *File Storage*. 
+
+4.  In the *Advanced File System Store* screen, configure the store your way. 
 
 To use advanced file system store in a multi-node environment, follow these
 steps:
