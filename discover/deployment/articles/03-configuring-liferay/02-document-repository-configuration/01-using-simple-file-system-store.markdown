@@ -32,6 +32,16 @@ the same table.
 
 $$$
 
++$$$
+
+**Note:** To propagate store configuration in a multi-node environment, export
+your store settings from your store's *File Storage* screen in System Settings
+to a `.config` file and copy the file to the `[Liferay-Home]/osgi/config` folder
+in each node. To export the configuration, select *Export* from the options icon
+![Options](../../../images/icon-options.png).
+
+$$$
+
 The Simple File System Store binds documents very closely to @product@, and may
 not be exactly what you want. If you've been using the default settings for a
 while and need to migrate your documents, @product@ provides a migration utility
