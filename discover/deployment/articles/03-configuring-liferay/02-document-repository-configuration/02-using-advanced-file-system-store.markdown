@@ -46,7 +46,18 @@ steps:
 
 3.  Copy the `.config` file to each node's `[Liferay Home]/osgi/configs` folder. 
 
-4.  Restart @product@ on the nodes.  
+4.  Restart @product@ on the nodes.
+  
+@product@ is using the advanced file system store. 
+
++$$$
+
+**Warning:** If a database transaction rollback occurs in the Document Library,
+file system changes that have occurred since the start of the transaction won't
+be reversed. Inconsistencies between Document Library files and those in the
+file system store can occur and may require manual synchronization. 
+
+$$$
 
 You may decide the advanced file system store for whatever reason doesn't serve
 your needs. If this is the case, you can of course mount other file systems into
