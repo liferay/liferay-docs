@@ -5,7 +5,7 @@ dimensions, color, weight, capacity, or almost any other attribute can be
 recorded as a specification. Specifications make it easy to present product
 information and simplify the process of comparing similar products.
 
-![Figure 1: Specifications are most visible on product display pages.](../../specifications.png)
+![Figure 1: Specifications are most visible on product display pages.](../../images/specifications.png)
 
 To organize specifications and make them easy to display and maintain, the data
 are structured into three components: groups, labels and values.
