@@ -27,8 +27,9 @@ property:
 
     dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
 
-Restart @product@. In the Control Panel under *System Settings* &rarr;
-*Foundation* &rarr; *Advanced File System Store*, configure the store your way. 
+Restart @product@. In the Control Panel in *Configuration* &rarr; *System
+Settings* &rarr; *Platform* &rarr; *File Storage* &rarr; *Advanced File System
+Store*, configure the store your way. 
 
 To use advanced file system store in a multi-node environment, follow these
 steps:
