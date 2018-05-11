@@ -1,21 +1,21 @@
 # Integrating with Liferay's Frameworks [](id=integrating-with-liferays-frameworks)
 
 New car buyers expect certain features to be standard: power windows, cruise
-control, floor mats (at least the cheap ones), etc. Similarly, application users
+control, floor mats (at least the cheap ones), and so on. Similarly, users
 expect applications to have certain features and expect those features to behave
-consistently across applications.  
+consistently across applications. 
 
-For example, an app user might expect the app's content can be shared socially
+For example, a user might expect the app's content can be shared socially
 on Twitter and Facebook. The user might expect a way to tag and rate the app
 content, and a way to comment on it. You must meet, and even exceed, these
-expectations. Good news is that Liferay's frameworks implement features users
-know and love. Integrating with the frameworks is straightforward and the
-frameworks provide intuitive, consistent user experiences. 
+expectations. Liferay's frameworks implement these features users know and love.
+Integrating with the frameworks is straightforward and the frameworks provide
+intuitive, consistent user experiences. 
 
 Here are some of Liferay's most popular frameworks:
 
 - [Permissions](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions):
-Defines resource for entities and actions for performing on the resources.   
+Defines resource for entities and actions for performing on the resources. 
 
 - [Configurable Applications](/develop/tutorials/-/knowledge_base/7-1/configurable-applications):
 Makes applications configurable from within the Control Panel. 
@@ -70,7 +70,7 @@ Liferay's frameworks are rich with features users expect in applications. Click
 on the framework tutorial links to start leveraging the frameworks. Next are
 tutorials on invoking local services. 
 
-**Related Topics**:
+## Related Topics:
 
 [Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
 
