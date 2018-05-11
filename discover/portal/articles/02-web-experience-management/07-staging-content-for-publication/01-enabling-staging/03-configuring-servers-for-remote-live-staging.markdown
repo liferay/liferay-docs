@@ -26,9 +26,9 @@ Follow the steps below to configure your servers for Remote Live staging.
     @product@'s use of a pre-shared key between your staging and production
     environments helps secure the remote publication process. It also removes
     the need to send the publishing user's password to the remote server for web
-    service authentication. Using a pre-shared key allows @product@ to create an
-    authorization context (permission checker) from the provided email address,
-    screen name, or user ID *without* the user's password.
+    service authentication. Using a pre-shared key creates an authorization
+    context (permission checker) from the provided email address, screen name,
+    or user ID *without* the user's password.
 
 3.  Specify the values for the servers' `tunneling.servlet.shared.secret`
     property.
@@ -108,22 +108,21 @@ below.
 ## Applying Patches When Using Remote Staging [](id=applying-patches-when-using-remote-staging)
 
 When applying patches to a remote staging environment, you must apply them to
-all of your servers being used. Having servers on different patch levels is not
-a good practice and can lead to import failures and data corruption. It is
-essential that all servers are updated to the same patch level to ensure remote
-staging works correctly.
+all your servers. Having servers on different patch levels is not a good
+practice and can lead to import failures and data corruption. It is essential
+that all servers are updated to the same patch level to ensure remote staging
+works correctly.
 
 ## Configuring Remote Staging's Buffer Size [](id=configuring-remote-stagings-buffer-size)
 
-Similar to Local Live staging, it is generally a good idea to turn remote
-staging on at the beginning of your site's development for good performance.
-When you're using Remote Live staging, and you are publishing a large amount of
-content, your publication could be slow and cause a large amount of network
-traffic. @product@'s system is very fast for the amount of data being
-transferred over the network. This is because the data transfer is completed
-piecemeal, instead of one large data dump. You can control the size of data
-transactions by setting the following portal property in your
-`portal-ext.properties` file:
+Similar to Local Live staging, it is a good idea to turn remote staging on at
+the beginning of your site's development for good performance. When you're using
+Remote Live staging, and you are publishing a large amount of content, your
+publication could be slow and cause a large amount of network traffic.
+@product@'s system is very fast for the amount of data being transferred over
+the network. This is because the data transfer is completed piecemeal, instead
+of one large data dump. You can control the size of data transactions by setting
+the following portal property in your `portal-ext.properties` file:
 
     staging.remote.transfer.buffer.size
 
