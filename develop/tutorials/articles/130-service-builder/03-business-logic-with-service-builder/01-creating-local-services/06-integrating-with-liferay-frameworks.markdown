@@ -70,7 +70,7 @@ Liferay's frameworks are rich with features users expect in applications. Click
 on the framework tutorial links to start leveraging the frameworks. Next are
 tutorials on invoking local services. 
 
-## Related Topics:
+## Related Topics: [](id=related-topics)
 
 [Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
 
