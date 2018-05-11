@@ -693,9 +693,9 @@ There are four specific development use-cases:
           %>
 
 3. The return values of
-   [`MimeResponse.createActionURL()`](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/MimeResponse.html#createActionURL())
+   [`MimeResponse.createActionURL()`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/MimeResponse.html#createActionURL())
    and
-   [`MimeResponse.createRenderURL()`](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/MimeResponse.html#createRenderURL())
+   [`MimeResponse.createRenderURL()`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/MimeResponse.html#createRenderURL())
    have changed. Although this is a binary-runtime-compatible type of change, it
    can possibly cause compilation failures or `ClassCastException`s to be thrown
    during request/response processing.
