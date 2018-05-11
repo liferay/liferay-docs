@@ -1,17 +1,17 @@
 # Installing Elasticsearch [](id=installing-elasticsearch)
 
-@product@ uses Elasticsearch to index its content. By default, @product@ uses
-Elasticsearch as an embedded service. It works, but it's not a supported
-configuration for a production server. Feel free to use it while testing or
-developing, but when you're ready to put your site in production, run
-Elasticsearch as a standalone process. This is better anyway, because it frees
-you to design your infrastructure the way you want it. If you've got hardware or
-a VM to spare, you can separate your search infrastructure from @product@ and
-reap some performance gains by putting search on a separate box. If you're more
-budget-conscious, you can still increase performance by running Elasticsearch in
-a separate, individually tunable JVM on the same box. 
+@product@ uses Elasticsearch to index its content. By default, it's installed as
+an embedded service. It works, but it's not a supported configuration for
+a production server. Feel free to use it while testing or developing, but when
+you're ready to put your site in production, you must run Elasticsearch as
+a standalone process. This is better anyway, because it frees you to design your
+infrastructure the way you want it. If you've got hardware or a VM to spare, you
+can separate your search infrastructure from @product@ and reap some performance
+gains by putting search on a separate box. If you're more budget-conscious, you
+can still increase performance by running Elasticsearch in a separate,
+individually tunable JVM on the same box. 
 
-Installing Elasticsearch for @product@ is pretty easy and takes only six steps: 
+Installing Elasticsearch is pretty easy and takes only six steps: 
 
 1. Find the version of Elasticsearch that's embedded in the version of @product@
    you have, and then download that version from [Elastic's](https://www.elastic.co) 
@@ -40,9 +40,10 @@ Home]/bin/elasticsearch.in.sh`:
 
 $$$
 
-Now you'll actually perform these steps, and when you're done, you'll have a
-production-ready instance of @product@ up and running. After you're done
-following the installation guide, refer to the [Configuring Elasticsearch](/discover/deployment/-/knowledge_base/7-1/configuring-elasticsearch-for-liferay-0)
+Now you'll perform these steps, and when you're done, you'll have
+a production-ready instance of @product@ up and running. After you're done
+following the installation guide, refer to the 
+[Configuring Elasticsearch](/discover/deployment/-/knowledge_base/7-1/configuring-elasticsearch-for-liferay-0)
 article for more details on configuring @product@ for Elasticsearch. For more
 information on installing a search engine, see
 [here](/discover/deployment/-/knowledge_base/7-1/installing-a-search-engine).
@@ -55,10 +56,7 @@ Visit port 9200 on localhost to access the embedded Elasticsearch:
 
     http://localhost:9200
 
-A JSON document is returned that varies slightly, but should look similar to
-this: 
-
-<!-- UPDATE with 6.1 info -->
+A JSON document is returned that looks similar to this: 
 
     {
       "name" : "g0m223N",
@@ -91,9 +89,8 @@ resources you have available and the size of your installation. Regardless of
 what you decide, either way you get the benefit of a separately tunable search
 infrastructure. 
 
-Once you have a copy of the right version of Elasticsearch, extract it to a
-folder on the machine where you want it running. That's all there is to this
-step. 
+Once you have a copy of the right version of Elasticsearch, extract it to
+a folder on the machine where you want it running. That's it!. 
 
 ### Step Three: Install Elasticsearch Plugins [](id=step-three-install-elasticsearch-plugins)
 
