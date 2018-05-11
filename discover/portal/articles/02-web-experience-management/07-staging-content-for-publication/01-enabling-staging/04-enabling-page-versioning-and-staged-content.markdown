@@ -5,7 +5,7 @@ multiple versions of the site's pages. Page versioning also maintains a history
 of all updates to the site from the time page versioning was enabled. Site
 administrators can revert to a previous version of the site at any time. This
 flexibility is very important in cases where a mistake is found and it's
-important to quickly publish a fix. 
+important to publish a fix quickly. 
 
 You can enable page versioning for public pages or private pages on the Staging
 Configuration page below the menu for selecting your staging environment (Local
@@ -22,8 +22,8 @@ Configuration page.
 Choosing content to be staged may sound self-explanatory, but content must have
 specific attributes in @product@ to use it in a staged environment. Content or
 an entity should be site-scoped, so they are always part of a site; otherwise,
-they are not eligible for staging. @product@ supports the following content
-groups for staging, by default:
+they are not eligible for staging. @product@ by default supports the following
+content groups for staging:
 
 - Application Display Templates
 - Blogs
@@ -89,26 +89,26 @@ about the other supported apps, as well. -Cody
     during the process.
 -->
 
-Before you activate staging, you can choose which of these applications' data
-you'd like to copy to staging. You'll learn about many of the collaboration
-apps listed under the Staged Portlets heading when you read the
+Before you activate staging, choose which of these applications' data you'd
+like to copy to staging. You'll learn about many of the collaboration apps
+listed under the Staged Portlets heading when you read the
 [Collaboration Suite's](/discover/portal/-/knowledge_base/7-1/collaboration)
-section of articles. For now, you just need to be aware that you can enable or
-disable staging for any of these applications. Why might you want to enable
-staging for some application types but not others? In the case of collaborative
-apps, you probably *don't* want to enable staging since such applications are
-designed for user interaction. If their content were staged, you'd have to
-manually publish your site whenever somebody posted a message on the message
-boards to make that message appear on the live site. Generally, you'll want web
-content to be staged because end users aren't creating that kind of content--web
-content is the stuff you publish to your site. But applications like the Message
-Boards or Wiki would likely benefit from *not* being staged. Notice which
-applications are marked for staging by default: if you enable staging and accept
-the defaults, staging is *not* enabled for the collaborative apps.
+section of articles. For now, be aware that you can enable or disable staging
+for any of these applications. Why might you want to enable staging for some
+application types but not others? In the case of collaborative apps, you
+probably *don't* want to enable staging since such applications are designed
+for user interaction. If their content were staged, you'd have to 
+publish your site manually whenever somebody posted a message on the message
+boards to make that message appear on the live site. Generally, you want web
+content to be staged because end users aren't creating that kind of
+content---web content is the stuff you publish to your site. But applications
+like the Message Boards or Wiki should *not* be staged. Notice which
+applications are marked for staging by default: if you enable staging and
+accept the defaults, staging is *not* enabled for the collaborative apps.
 
-The listed applications, or content groups, contain one or more specific entity.
-For example, selecting the Web Content application does not mean you're only
-selecting web content itself, but also web content folders.
+The listed applications, or content groups, contain one or more specific
+entity. For example, selecting the Web Content application does not mean you're
+only selecting web content itself, but also web content folders.
 
 Certain content types can be linked together and can reference each other on
 different levels. One of the responsibilities of staging is to discover and
@@ -122,14 +122,14 @@ possible to modify the individual portlet configuration once you enable staging.
 In case you need adjustments later on, you must turn staging off and re-enable
 it with your new configuration.
 
-Besides managing the app-specific content, @product@ also operates with several
-special content types such as pages or users. For instance, pages are a part of
-the site and can reference other content types, but in a special way. The page
-references apps, which means publishing a page also implies publishing its apps.
-The content gives the backbone of the site; however, content alone is useless.
-To display content to the end user, you'll need apps as the building blocks for
-your site.
+Besides managing the app-specific content, @product@ also has several special
+content types such as pages or users. For instance, pages are a part of the
+site and can reference other content types, but in a special way. The page
+references apps, which means publishing a page also implies publishing its
+apps. The content gives the backbone of the site; however, content alone is
+useless. To display content to the end user, you'll need apps as the building
+blocks for your site.
 
 Before you begin exploring the Staging UI, it's important to understand the
-publishing process for staging, and making informed decisions so you use the
+publishing process for staging to make informed decisions so you use the
 staging environment efficiently and effectively.
