@@ -7,12 +7,11 @@ and
 Whether you enable Local Live or Remote Live staging, the interface for managing
 and publishing staged pages is the same.
 
-So when should you use Local Live staging and when should you use Remote Live
-staging? Local Live staging lets you publish site changes quickly, since the
+Local Live staging lets you publish site changes quickly, since the
 staged and live environments are on the same server. It's also easier to switch
 between the staged and live environments using Local Live staging. Since the
 staged content, however, is stored in the same database as the production
-content, your server needs to have more resources, and the content isn't as well
+content, your server must have more resources, and the content isn't as well
 protected or backed up as with Remote Live staging. Also, you can't install new
 versions of apps for testing purposes in a Local Live staging environment, since
 only one version of an app can be installed at any given time on a single
