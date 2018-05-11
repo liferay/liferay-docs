@@ -12,11 +12,11 @@ is required to identify them.
 
 Follow these steps to create a thumbnail preview for your theme:
 
-1.  With your theme applied to your site, with optional color scheme chosen, 
+1.  With your theme applied to your site and an optional color scheme chosen, 
     take a screenshot that best represents it.
 
 2.  Crop any unwanted areas and re-size the screenshot to 150 pixels high by 120 
-    pixels wide. Your thumbnail **must be** these exact dimensions to display 
+    pixels wide. Your thumbnail *must be* these exact dimensions to display 
     properly. 
 
 3.  Save the image as a `.png` file named `thumbnail.png` and place it in the
