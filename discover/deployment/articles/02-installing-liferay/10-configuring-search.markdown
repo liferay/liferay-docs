@@ -89,14 +89,6 @@ the default, embedded version. To install Elasticsearch 6.1.x,
 
 4.  Configure the Elasticsearch 6 adapter (see step 5 below for guidance).
 
-To disable the default Elasticsearch adapter, use the App Manager. Navigate to
-Control Panel &rarr; Apps &rarr; App Manager.
-
-Once you're in the App Manager, search for *elasticsearch*. Find the Liferay
-Portal Search Elasticsearch module and click the edit
-((![Edit](../../images/icon-edit.png))) button. Choose the Deactivate
-option. This leaves the bundle installed, but stops it in the OSGi runtime.
-
 To learn more about upgrading an existing system to Elasticsearch 6.1, read the
 [upgrade article](/discover/deployment/-/knowledge_base/7-0/upgrading-to-elasticsearch-6).
 
@@ -183,19 +175,40 @@ can find Elasticsearch on the network.
 +$$$
 
 **Elasticsearch 6.1:** Before continuing, install the 
-[Liferay Connector to Elasticsearch 6 application](https://web.liferay.com/marketplace) from Liferay Marketplace and
-stop the default Elasticsearch 2.x adapter, which connects to Elasticsearch 2.x.
+[Liferay Connector to Elasticsearch 6 application](https://web.liferay.com/marketplace) 
+from Liferay Marketplace and stop the default Elasticsearch 2.x adapter, which
+connects to Elasticsearch 2.x.
 
-1.  Navigate to *Control Panel* &rarr; *Apps* &rarr; *App Manager*.
+1.  Create a file called
 
-2.  Search for *elasticsearch*. Find the Liferay Portal Search Elasticsearch
-    module and click the edit ((![Edit](../../images/icon-edit.png))) button.
-    Choose the Deactivate option. This leaves the bundle installed, but stops it
-    in the OSGi runtime.
+        com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
 
-3.  Once you've downloaded the LPKG file with the Elasticsearch 6 adapter,
+    If you already have one of these files in `Liferay Home/osgi/configs`, just
+    open it.
+
+2. Place the Bundle Symbolic Name of the Elasticsearch connector in the
+   `blacklistBundleSymbolicNames` property:
+
+        blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch"]
+
+3. Place the file in `Liferay Home/osgi/configs`.
+
+Alternatively, deactivate the Elasticsearch connector using the App Manager in
+*Control Panel* &rarr; *Apps* &rarr; *App Manager*. If you're a Digital
+Enterprise customer, use the blacklist feature as described above. The App
+Manager relies on the `osgi/state` folder to "remember" the state of the bundle.
+If you delete this folder (recommended during patching) the Elasticsearch
+connector will be reinstalled and started automatically.
+
+1.  Search for *elasticsearch* in the App Manager. Find the Liferay Portal
+    Search Elasticsearch module and click the edit
+    ((![Edit](../../images/icon-edit.png))) button.  Choose the Deactivate
+    option. This leaves the bundle installed, but stops it in the OSGi runtime.
+
+2.  Once you've downloaded the LPKG file with the Elasticsearch 6 adapter,
     place it in Liferay Home's `deploy` folder. Find more detailed
-    information on deploying Marketplace applications [here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace).
+    information on deploying Marketplace applications 
+    [here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace).
 
 $$$
 
