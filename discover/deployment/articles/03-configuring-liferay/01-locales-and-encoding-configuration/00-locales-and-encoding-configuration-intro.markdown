@@ -19,7 +19,7 @@ Control Panel, at the Instance level.
 
 3.  Click on the *Miscellaneous* tab. 
 
-![Figure 1: You can change the default and available languages and the time zone in Instance Settings.](../../images/instance-locales.png)
+![Figure 1: You can change the default and available languages and the time zone in Instance Settings.](../../../images/instance-locales.png)
 
 The central left and right arrows let you add or remove available languages and
 locales. You can also set these as properties in your `portal-ext.properties`
