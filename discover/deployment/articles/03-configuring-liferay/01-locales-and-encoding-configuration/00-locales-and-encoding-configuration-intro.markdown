@@ -1,13 +1,13 @@
 # Locales and Encoding Configuration [](id=locales-and-encoding-configuration)
 
-@product@ lets you display content based on language, time zone, "right to left"
-(that is, languages such as Hebrew, Arabic, and Persian), and lets you localize
-user names and titles. Administrators can localize specific core UI messages so
-that the messages display in certain languages.
+You can display content based on language, time zone, "right to left" (that is,
+languages such as Hebrew, Arabic, and Persian), and you can localize user names
+and titles. Administrators can localize specific core UI messages so that the
+messages display in certain languages.
 
 ## Time Zones [](id=time-zones)
 
-Time zones can be set in the Control Panel and theoretically in the JVM (but
+You can set time zones in the Control Panel and theoretically in the JVM (but
 this must be set to GMT: see below). 
 
 Time zone configuration and default language customization are done in the
@@ -37,16 +37,15 @@ As an example, the above property changes the locale to English, Great Britain.
  
 ## Set the JVM Time Zone to GMT [](id=set-the-jvm-time-zone-to-gmt)
 
-It is possible to set time zones at the JVM level. However, this causes issues
-such as Calendar Events and Web Content articles displaying the wrong dates.
-This happens because the system assumes each date stored in the database is
-stored in GMT time. When the system needs to display one stored date to the end
-users, @product@ calculates the display date based on the current date of the
-*application server*. This date is affected by the configured JVM level time
-zone and the stored GMT format date. To make sure the display date is calculated
-correctly, the time zone must be configured to GMT at the JVM level. Otherwise,
-an incorrect time zone offset at the JVM level causes the display date to be
-wrongly calculated and displayed. 
+If you set the time zone in the JVM, it causes issues such as Calendar Events
+and Web Content articles displaying the wrong dates. This happens because the
+system assumes each date stored in the database is stored in GMT time. When the
+system needs to display one stored date to the end users, the display date is
+calculated by the application server's current date. This date is affected by
+the configured JVM level time zone and the stored GMT format date. To make sure
+the display date is calculated correctly, the time zone must be configured to
+GMT at the JVM level. Otherwise, an incorrect time zone offset at the JVM level
+causes the display date to be wrongly calculated and displayed. 
 
 ## Friendly URLs and Locales [](id=friendly-urls-and-locales)
 
@@ -66,11 +65,10 @@ file:
 		<url-pattern>/de/*</url-pattern>
 	</servlet-mapping>
 	
-The defaults that Liferay provides should be sufficient for nearly all
-circumstances. Because `web.xml` changes require stopping and possibly
-redeploying @product@ (depending on your app server), test the defaults and make
-sure you really need to modify these settings. If you're clustered, you must
-make these changes on all nodes.
+The defaults should be sufficient for nearly all circumstances. Because
+`web.xml` changes require stopping and possibly redeploying @product@ (depending
+on your app server), test the defaults and make sure you really need to modify
+these settings. If you're clustered, you must make these changes on all nodes.
 
 ## Modifying Language Keys [](id=modifying-language-keys)
 
