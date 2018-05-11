@@ -42,10 +42,10 @@ $$$
 
 Now you'll actually perform these steps, and when you're done, you'll have a
 production-ready instance of @product@ up and running. After you're done
-following the installation guide, refer to the [Configuring Elasticsearch](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0)
+following the installation guide, refer to the [Configuring Elasticsearch](/discover/deployment/-/knowledge_base/7-1/configuring-elasticsearch-for-liferay-0)
 article for more details on configuring @product@ for Elasticsearch. For more
 information on installing a search engine, see
-[here](/discover/deployment/-/knowledge_base/7-0/installing-a-search-engine).
+[here](/discover/deployment/-/knowledge_base/7-1/installing-a-search-engine).
 
 ### Step One: Find the Right Version of Elasticsearch [](id=step-one-find-the-right-version-of-elasticsearch)
 
@@ -78,31 +78,6 @@ this:
 
 The version of Elasticsearch that's running is the value of the `"number"` field.
 In this example, it's 6.1.3. 
-
-<!--+$$$
-
-**Elasticsearch 6.1:** Elasticsearch 6.1.x is supported for @product@ systems
-running Fix Pack 42 or later, although version 2.x remains the default, embedded
-version. To install Elasticsearch 6.1.x, take these steps:
-
-1. Make sure you're running FP-42 or later.
-2. Install Elasticsearch 6.1.x (follow steps 2-4  in this article for guidance).
-3. Install the [Elasticsearch 6 Adapter from Marketplace](LINK WHEN AVAILABLE)
-   and stop the default Elasticsearch adapter.
-4. Configure the Elasticsearch 6 adapter (see step 5 below for guidance).
-
-To disable the default Elasticsearch adapter, use the App Manager. Navigate to
-Control Panel &rarr; Apps &rarr; App Manager.
-
-Once you're in the App Manager, search for *elasticsearch*. Find the Liferay
-Portal Search Elasticsearch module and click the edit
-((![Edit](../../images/icon-edit.png))) button. Choose the Deactivate
-option. This leaves the bundle installed, but stops it in the OSGi runtime.
-
-To learn more about upgrading an existing system to Elasticsearch 6.1, read the
-[upgrade article](/discover/deployment/-/knowledge_base/7-1/upgrading-to-elasticsearch-6).
-
-$$$ -->
 
 Now that you know the version of Elasticsearch you need, go to
 [Elastic's](https://www.elastic.co) website and download that version. 
@@ -174,17 +149,17 @@ can find Elasticsearch on the network.
 
 Now that you're ready to configure @product@, start it if you haven't already,
 log in, and then click on *Control Panel* &rarr; *Configuration* &rarr; *System
-Settings* &rarr; *Foundation*. Find *Elasticsearch* (or *Elasticsearch 6*)in the
-list of settings and click on it. Now you can configure it. Here are the
-options you need to change: 
+Settings* &rarr; *Search*. Enter the term *elasticsearch* in the search bar and
+click the *Elasticsearch 6* entry from the list of settings. Now you can
+configure it. Here are the configuration options to change: 
 
-**Cluster name:** Enter the name of the cluster as you defined it in
+**Cluster Name:** Enter the name of the cluster as you defined it in
 Elasticsearch. 
 
-**Operation mode:** Defaults to EMBEDDED. Change it to REMOTE to connect to a
+**Operation Mode:** Defaults to EMBEDDED. Change it to REMOTE to connect to a
 standalone Elasticsearch. 
 
-**Transport addresses:** Enter a delimited list of transport addresses for
+**Transport Addresses:** Enter a delimited list of transport addresses for
 Elasticsearch nodes. Here, you'll enter the transport address from the
 Elasticsearch server you started. The default value is `localhost:9300`, which
 will work. 
@@ -194,7 +169,7 @@ When finished, click *Save*. You're almost done.
 ### Step Six: Restart @product@ and Reindex [](id=step-five-restart-liferay-and-reindex)
 
 Stop and restart @product@. When it's back up, log in as an administrative user
-and click on *Control Panel* &rarr; *Configuration* &rarr; *Server Administration* and
+and click on *Control Panel* &rarr; *Configuration* &rarr; *Search* and
 click the *Execute* button for *Reindex all search indexes*. When you do that,
 you should see some messages scroll up in the Elasticsearch log. 
 
