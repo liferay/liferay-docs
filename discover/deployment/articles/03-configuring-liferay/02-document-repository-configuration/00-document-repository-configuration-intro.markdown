@@ -43,15 +43,14 @@ store files.
 mounted share) to store files, Advanced File System Store nests the files into
 more folders by version, for faster performance and to store more files.
 
+**S3 Store (Amazon Simple Storage)**: uses Amazon's cloud-based storage 
+solution. 
+
 **CMIS Store (Content Management Interoperability Services)**: uses a system
 separate from @product@ to store files. 
 
-**JCR Store (Java Content Repository)**: stores files to a JSR-170 compliant
-document repository. You can use any JCR client to access the files. The files
-are stored to the server's file system by default. You can optionally configure
-JCRStore to store files in a database. 
-
-**S3 Store (Amazon Simple Storage)**: uses Amazon's cloud-based storage 
-solution.
+**DBStore (Database Storage)**: stores the files in the @product@ database. 
+DBStore's file (stored as a blob) size is 1 gigabyte. To store files larger than
+1 gigabyte, use Simple File System Store or Advanced File System Store. 
 
 These articles explain details for each one.  
