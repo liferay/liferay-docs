@@ -1,16 +1,16 @@
 # Enabling Remote Live Staging [](id=enabling-remote-live-staging)
 
-When Remote Live staging is enabled for a site, a connection is established
-between the current site and another site on a remote Liferay server. The remote
-site becomes the live environment and the current site becomes the staging
-environment--an instance of Liferay used solely for staging. The remote (live)
-Liferay server and the local (staging) Liferay server should be completely
-separate systems. They should not, for example, share the same database. When
-Remote Live staging is enabled, all the necessary information is transferred
-over the network connecting the two servers. Content creators can use the
-staging server to make their changes while the live server handles the incoming
-user traffic. When changes to the site are ready to be published, they are
-pushed over the network to the remote live server. 
+In Remote Live staging, a connection is established between the current site and
+another site on a remote Liferay server. The remote site becomes the live
+environment and the current site becomes the staging environment---an instance
+of Liferay used solely for staging. The remote (live) Liferay server and the
+local (staging) Liferay server should be completely separate systems. They
+should not, for example, share the same database. When Remote Live staging is
+enabled, all the necessary information is transferred over the network
+connecting the two servers. Content creators use the staging server to make
+their changes while the live server handles the incoming user traffic. When
+changes to the site are ready to be published, they are pushed over the network
+to the remote live server. 
 
 Before enabling Remove Live staging, ensure you've configured your Liferay
 server and remote server appropriately. Follow the
@@ -40,16 +40,16 @@ Live staging environment for your site.
     Remote Port field. You only need to enter a Remote Path Context if a
     non-root portal servlet context is being used on the remote Liferay server.
 
-5.  Enter the site ID of the site on the remote Liferay server that will be used
-    for the Live environment. If a site hasn't already been prepared for you on
-    the remote Liferay server, you can log in to the remote Liferay server and
-    create a new blank site.
+5.  Enter the ID of the site on the remote Liferay server that's for the Live
+    environment. If a site hasn't already been prepared on the remote Liferay
+    server, you can log in to the remote Liferay server and create a new blank
+    site.
 
     After the site has been created, note the site ID so you can enter it into
     the Remote Site ID field on your local Liferay server. You can find any
     site's ID by selecting the site's name on the Sites page of the Control
     Panel.
-    
+ 
 6.  Check the *Use a Secure Network Connection* field to use HTTPS for the
     publication of pages from your local (staging) Liferay server to your remote
     (live) Liferay server.
@@ -63,13 +63,13 @@ Live staging environment for your site.
 
 You've officially begun the staging process!
 
-If you fail to properly configure your current and remote server, you won't be
+If you fail to configure your current and remote server properly, you won't be
 able to enable staging and an error message appears. If you have issues,
 [verify you've configured your servers properly](/discover/portal/-/knowledge_base/7-1/configuring-servers-for-remote-live-staging).
 
-When a user attempts to publish changes from the local (staging) server to the
-remote (live) server, @product@ passes the user's email address, screen name, or
-user ID to the remote server to perform a permission check. For a publishing
+When a user publishes changes from the local (staging) server to the remote
+(live) server, @product@ passes the user's email address, screen name, or user
+ID to the remote server to perform a permission check. For a publishing
 operation to succeed, the operation must be performed by a user that has
 identical credentials and permissions on both the local (staging) and the remote
 (live) server. This is true regardless of whether the user attempts to publish
