@@ -8,13 +8,13 @@ developers and are easily installed using the Liferay Marketplace. Since you
 don't have any themes beyond the default one installed yet, you'll use the
 default theme for your pages.
 
-![Figure 5: The Look and Feel interface allows you to choose a theme for the current site.](../../../../images/look-and-feel-pages.png)
+![Figure 1: The Look and Feel interface allows you to choose a theme for the current site.](../../../../images/look-and-feel-pages.png)
 
 You can apply themes to individual pages as well by selecting *Configure*
 &rarr; *Define a specific look and feel for this page* option under the page's
 *Look and Feel* category. 
 
-![Figure 6: You can define a specific look and feel for a page.](../../../../images/define-a-specific-look-and-feel.png)
+![Figure 2: You can define a specific look and feel for a page.](../../../../images/define-a-specific-look-and-feel.png)
 
 Many themes include more than one color scheme, which keeps the existing look
 and feel while giving the site a different flavor. The Color Schemes option

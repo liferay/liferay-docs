@@ -249,7 +249,7 @@ use a configuration preset.
 Follow these steps to use a liferay-npm-bundler configuration preset in your 
 `.npmbundlerrc` file:
 
-1.  Create a `.npmbundlerrc` file in your project’s root folder, if it doesn't 
+1.  Create a `.npmbundlerrc` file in your project's root folder, if it doesn't 
     already exist.
 
 2.  Install the liferay-npm-bundler configuration preset. For example, you can 

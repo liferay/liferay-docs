@@ -41,6 +41,9 @@ columns for each of your entities.
 
 4.  Specify whether the attribute is a primary key for the entity.
 
+**Note**: On deploying a `*service` module, Service Builder automatically 
+generates indexes for all entity primary keys. 
+
 Create a column for each attribute of your entity or entities.
 
 ## Support Multi-tenancy [](id=support-multi-tenancy)
