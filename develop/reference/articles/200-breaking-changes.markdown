@@ -677,7 +677,7 @@ There are four specific development use-cases:
     - `windowState`
     - `stateAwareResponse`
 
-    For example, JSP scriptlets like the following had to be removed from
+    For example, JSP scriptlets like the following ones had to be removed from
     several of Liferay's out-of-the-box portlets' `view.jsp`:
 
           <%=
