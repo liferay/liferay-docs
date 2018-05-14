@@ -13,18 +13,15 @@ of the two. Once you have @product@ installed in more than one application
 server node, there are several optimizations that need to be made. At a minimum,
 @product@ should be configured in the following way for a clustered environment:
 
-1.  All nodes should be pointing to the same @product@ database or database 
-    cluster. 
+1.  [All nodes should be pointing to the same @product@ database or database  cluster.](/discover/deployment/-/knowledge_base/7-1/point-all-nodes-to-the-same-product-database) 
 
-2.  Documents and Media repositories must have the same configuration and be
-    accessible to all nodes of the cluster. 
+2.  [Documents and Media repositories must have the same configuration and be accessible to all nodes of the cluster.](/discover/deployment/-/knowledge_base/7-1/configure-documents-and-media-the-same-for-all-nodes) 
 
-3.  Search should be on a separate search server that is optionally clustered. 
+3.  [Search should be on a separate search server that is optionally clustered.](/discover/deployment/-/knowledge_base/7-1/clustering-search) 
 
-4.  Cluster Link must be enabled so the cache replicates across all nodes of the
-    cluster. 
+4.  [Cluster Link must be enabled so the cache replicates across all nodes of the cluster.](/discover/deployment/-/knowledge_base/7-1/enabling-cluster-link) 
 
-5.  Applications must be auto-deployed to each node individually. 
+5.  [Applications must be auto-deployed to each node individually.](/discover/deployment/-/knowledge_base/7-1/auto-deploy-to-all-nodes) 
 
 If you haven't configured your application server to use farms for deployment,
 the auto-deploy folder should be a separate folder for all the nodes, and plugins
