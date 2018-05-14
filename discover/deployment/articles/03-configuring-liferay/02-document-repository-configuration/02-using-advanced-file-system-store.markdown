@@ -1,14 +1,14 @@
 # Using the Advanced File System Store
 
-@product@'s advanced file system store is similar to the simple file system
+The advanced file system store is similar to the simple file system
 store (the default store). Like that store, it saves files to the local file
-system--which, of course, could be a remote file system mount. It uses a
+system---which, of course, could be a remote file system mount. It uses a
 slightly different folder structure to store files, which is pictured below. 
 
 ![Figure 1: The advanced file system store creates a more nested folder structure than the file system store.](../../../images/enterprise-adv-file-system-store.png)
 
 So what makes the advanced file system store *advanced*? Several operating
-systems have limitations on the number of files which can be stored in a
+systems have limitations on the number of files that can be stored in a
 particular folder. The advanced file system store overcomes this limitation by
 programmatically creating a structure that can expand to millions of files, by
 alphabetically nesting the files in folders. This not only allows for more files
@@ -47,15 +47,15 @@ steps:
 3.  Copy the `.config` file to each node's `[Liferay Home]/osgi/configs` folder. 
 
 4.  Restart @product@ on the nodes.
-  
+ 
 @product@ is using the advanced file system store. 
 
 +$$$
 
 **Warning:** If a database transaction rollback occurs in the Document Library,
-file system changes that have occurred since the start of the transaction won't
-be reversed. Inconsistencies between Document Library files and those in the
-file system store can occur and may require manual synchronization. 
+file system changes that have occurred since the start of the transaction
+aren't reversed. Inconsistencies between Document Library files and those in
+the file system store can occur and may require manual synchronization. 
 
 $$$
 
