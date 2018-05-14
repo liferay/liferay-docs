@@ -1,4 +1,4 @@
-# Clustering Search 
+# Clustering Search [](id=clustering-search)
 
 Search should always run on a separate environment from your @product@ server.
 @product@ supports [Elasticsearch](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0) 

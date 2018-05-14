@@ -1,12 +1,14 @@
-# Point all Nodes to the Same @Product@ Database 
+# Point all Nodes to the Same @Product@ Database [](id=point-all-nodes-to-the-same-product-database)
 
 @product@ allows you to use two different data sources for reading and writing.
 This enables you to split your database infrastructure into two sets: one
-optimized for reading and one optimized for writing. Since all @product@'s
-supported databases support replication, you can use your database vendor's
-replication mechanism to keep the database nodes in sync.
+optimized for reading and one optimized for writing. Since all supported
+databases support replication, use your database vendor's replication mechanism
+to keep the database nodes in sync.
 
-Enabling a read-writer database is simple. In your `portal-ext.properties` file:
+Set up the databases for replication now. 
+
+Then enable a read-writer database in your `portal-ext.properties` file:
 
 1.  Set the default database connection pool provider to `dbcp`, `tomcat`, or 
     `c3po`. Note, provider HikariCP does not support read/write splitting.
@@ -15,10 +17,9 @@ Enabling a read-writer database is simple. In your `portal-ext.properties` file:
         jdbc.default.liferay.pool.provider=dbcp
 
     All the portal JDBC configuration properties are documented
-    [here](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#JDBC).
+    [here](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#JDBC).
 
-2.  Configure two different data sources for @product@ to use, one for reading,
-    and one for writing:
+2.  Configure two different data sources, one for reading, and one for writing:
 
         jdbc.read.driverClassName=com.mysql.jdbc.Driver
         jdbc.read.url=jdbc:mysql://dbread.com/lportal?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
@@ -48,7 +49,8 @@ Enabling a read-writer database is simple. In your `portal-ext.properties` file:
         jdbc.read.validationQuery=SELECT releaseId FROM Release_
         jdbc.write.validationQuery=SELECT releaseId FROM Release_
 
-    These settings are related to issue [LPS-64624](https://issues.liferay.com/browse/LPS-64624).
+    These settings are related to issue 
+    [LPS-64624](https://issues.liferay.com/browse/LPS-64624).
 
 4.  Enable the read-writer database configuration by uncommenting the following 
     Spring configuration files from the `spring.configs` and
@@ -65,8 +67,7 @@ Enabling a read-writer database is simple. In your `portal-ext.properties` file:
             [..]
 
     The Spring configuration portal properties are documented 
-    [here](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Spring).
+    [here](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Spring).
 
 The next time you start @product@, it uses the two data sources you have
-defined. Make sure to correctly set up your two databases for replication before
-starting @product@.
+defined. 

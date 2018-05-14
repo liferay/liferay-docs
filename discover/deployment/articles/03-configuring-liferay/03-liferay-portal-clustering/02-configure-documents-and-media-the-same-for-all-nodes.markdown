@@ -1,4 +1,4 @@
-# Configure Documents and Media the Same for all Nodes 
+# Configure Documents and Media the Same for all Nodes [](id=configure-documents-and-media-the-same-for-all-nodes)
 
 @product@'s Documents and Media Library can mount several repositories at a time
 while presenting a unified interface to the user. By default, users can use the

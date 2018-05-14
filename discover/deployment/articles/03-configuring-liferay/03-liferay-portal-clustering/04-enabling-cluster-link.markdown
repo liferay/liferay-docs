@@ -1,4 +1,4 @@
-# Enabling Cluster Link
+# Enabling Cluster Link [](id=enabling-cluster-link)
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
 caching enables some RMI (Remote Method Invocation) cache listeners that are
