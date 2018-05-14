@@ -97,7 +97,7 @@ Follow these steps to assign images to a category:
     *Categories*. Then click ![Options](../../images/icon-options.png)
     &rarr; *Edit*, and select the *images* tab.
 
-2.  Click on the [Add](../../images/icon-add.png) button. You can either
+2.  Click on the ![Add](../../images/icon-add.png) button. You can either
     upload an image or choose one from the Documents and Media Repository.
 
 3.  Click *Save*.

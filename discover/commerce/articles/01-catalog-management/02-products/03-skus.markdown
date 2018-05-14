@@ -1,23 +1,62 @@
 # SKUs [](id=skus)
 
-A SKU, or stock keeping unit, is an alphanumeric code representing a single
-product variant. It is not the same as a product because a product can have
-multiple different options with varying attributes. Rather a SKU identifies
-products at the most granular level, specifying an exact combination of product
-options.
+The catalog stores pricing, inventory, and other information by attaching it to
+a SKU, or stock keeping unit. A SKU is an alphanumeric code representing
+a single product variant; all products have at least one SKU and many have more
+than one.
 
-Because it is SKUs (not products) that represent unique items, it is SKUs that
-are tracked in inventory and to which prices are assigned.
+When a product has only one SKU, the SKU represents the product directly.
+
+![Figure 1: The SKU is a holder for certain kinds of product information.](../../../images/single-SKU.png)
+
+When a product has more than one SKU, each SKU represents a unique product
+variant.
+
+![Figure 2: SKUs organize information that is unique to each variant.](../../../images/multiple-SKUs.png)
+
+A product must have multiple SKUs if it has one or more
+[options](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options) which
+are SKU contributors. Marking an option as a SKU contributor indicates that the
+option differentiates items that may be priced differently, or which must be
+tracked separately in inventory. Every product variant defined by SKU
+contributing options must have its own SKU in order to be purchasable.
+
++$$$
+
+When should an option be a SKU contributor? Take an example: if a product is
+available in a variety of colors, the option to select a color must be a SKU
+contributor in order for the inventory engine to track each color
+separately. Using a SKU contributor in this case also allows prices to vary by
+color.
+
+Alternatively, suppose that a store offered free gift-wrapping for some
+products. The gift-wrap option would not be a SKU contributor, as neither
+pricing nor inventory would be affected.
+
+$$$
+
+Since the product variant that a SKU represents is defined by a combination of
+[options](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options),
+all of a product's options should be finalized before creating or editing SKUs.
 
 ## Creating a SKU [](id=creating-an-sku)
 
 When you create a product, a single SKU called *default* is created. For
-products that have no
-[options](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options)
-which are SKU contributors, no other SKUs are required. If a product does have
-options that are SKU contributors, then every possible combination of those
-options represents a separate product variant---each of which must have its own
-SKU in order to be sold.
+products that require only one SKU, the default is all that is needed. To
+properly configure it, see the instructions for editing a SKU below.
+
+If a product requires multiple SKUs, then you need to add them. Follow these
+steps:
+
+1.  Go to the catalog, click on a product, and go to the *SKUs* tab.
+
+2.  Click on the ![Add](../../../images/icon-add.png) button and select
+    *Generate all SKU combinations*. This will create a SKU for each combination
+    of option values a product could take.
+
+    Alternatively, you could create a single SKU by selecting *Add SKU* instead,
+    but keep in mind that any product variant that does have have a SKU will not
+    be purchasable.
 
 +$$$
 
@@ -26,19 +65,6 @@ However, if you reactivate it (click on the SKU and hit *Publish*), the default
 SKU's price is displayed on the product page when no options have been selected.
 
 $$$
-
-To create new SKUs, follow these steps:
-
-1.  Go to the catalog, click on a product, and go to the *SKUs* tab.
-
-2.  Click on the ![Add](../../../images/icon-add.png) button and select either
-    *Add SKU* or *Generate all SKU combinations.
-
-If you select *Add SKU*, a single SKU is created and the *Add SKU* form is
-displayed (See *Details*, below).
-
-If you select *Generate all SKU combinations*, then a SKU will be created for
-every product variant. To configure these SKUs, you must edit each individually.
 
 ## Editing a SKU [](id=editing-an-sku)
 
@@ -53,8 +79,7 @@ displayed.
 The *Details* tab mirrors the *Add SKU* form that is displayed when a single SKU
 is created. It contains the following fields:
 
-**SKU:** If the SKU was created singly, you must create a SKU code. This field
-is automatically filled when SKUs are generated.
+**SKU:** Enter the SKU.
 
 **Global Trade Item Number, Manufacturer Part Number:** Enter a trade item
 number (such as an ISBN) or a part number if applicable. These numbers can be
