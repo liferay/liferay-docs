@@ -1,22 +1,21 @@
 # Document Repository Configuration [](id=document-repository-configuration)
 
-There are several options available for configuring how @product@'s Documents
-and Media library stores files. Each option is a *store* which can be configured
-through the `portal-ext.properties` file by setting the
-[`dl.store.impl=` property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Document%20Library%20Service). 
+You can configure file storage in several ways. Each option is a *store* which
+can be configured through the `portal-ext.properties` file by setting the
+[`dl.store.impl=`
+property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Document%20Library%20Service). 
 
-By default, @product@ uses a document library store option called Simple File
-Store to store documents and media files on a file system (local or mounted).
-The store's default root folder is `[Liferay Home]/data/document_library`.
-You can specify a different root directory from within
-[System Settings](/discover/portal/-/knowledge_base/7-1/system-settings).
+The default store is called Simple File Store. It stores documents and media
+files on a file system (local or mounted). The store's default root folder is
+`[Liferay Home]/data/document_library`. You can specify a different root
+directory from within 
+[System Settings](/discover/portal/-/knowledge_base/7-1/system-settings). 
 To access System Settings, open the *Menu*
-(![Menu](../../../images/icon-menu.png))
-and navigate to *Control Panel &rarr; Configuration &rarr; System Settings*.
-From System Settings, navigate to *Platform* and then search for and click *File
-Storage*
-(![Folder](../../../images/icon-folder.png)).
-For the store's *Root directory* value, specify a path relative to
+(![Menu](../../../images/icon-menu.png)) and navigate to *Control Panel &rarr;
+Configuration &rarr; System Settings*. From System Settings, navigate to
+*Platform* and then search for and click *File Storage*
+(![Folder](../../../images/icon-folder.png)). For the store's *Root directory*
+value, specify a path relative to 
 [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
 or an absolute path; then click the *Save* button. The document library store
 switches immediately to the new folder. 
@@ -41,16 +40,16 @@ store files.
 
 **Advanced File System Store**: in addition to using the file system (local or a
 mounted share) to store files, Advanced File System Store nests the files into
-more folders by version, for faster performance and to store more files.
+folders by version, for faster performance and to store more files.
 
 **S3 Store (Amazon Simple Storage)**: uses Amazon's cloud-based storage 
 solution. 
 
-**CMIS Store (Content Management Interoperability Services)**: uses a system
-separate from @product@ to store files. 
+**CMIS Store (Content Management Interoperability Services)**: connects to
+a CMIS-compliant server to store files. 
 
-**DBStore (Database Storage)**: stores the files in the @product@ database. 
-DBStore's file (stored as a blob) size is 1 gigabyte. To store files larger than
-1 gigabyte, use Simple File System Store or Advanced File System Store. 
+**DBStore (Database Storage)**: stores the files in the database. DBStore's file
+(stored as a blob) size is 1 gigabyte. To store files larger than 1 gigabyte,
+use Simple File System Store or Advanced File System Store. 
 
-These articles explain details for each one.  
+These articles explain details for each one. 
