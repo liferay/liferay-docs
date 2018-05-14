@@ -1,7 +1,7 @@
 # Using the DBStore [](id=using-the-dbstore)
 
-You can store Documents and Media files in your @product@ instance's database
-using DBStore. DBStore's file (stored as a blob) size is 1 gigabyte. To store
+You can store Documents and Media files in your @product@ database using
+DBStore. DBStore's maximum file (stored as a blob) size is 1 gigabyte. To store
 files larger than that, use Simple File System Store or Advanced File System
 Store. 
 
@@ -15,5 +15,4 @@ Here are the DBStore configuration steps:
 
 2.  Restart @product@. 
 
-Documents and Media on your @product@ instance is using @product@'s database via
-DBStore. 
+Documents and Media now uses @product@'s database via DBStore. 
