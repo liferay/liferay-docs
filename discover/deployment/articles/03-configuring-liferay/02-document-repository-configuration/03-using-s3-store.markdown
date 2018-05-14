@@ -1,8 +1,8 @@
 # Using Amazon Simple Storage Service [](id=using-amazon-simple-storage-service)
 
 Amazon's simple storage service (S3) is a cloud-based storage solution that you
-can use with @product@. All you need is an account, and you can store your
-documents to the cloud from all nodes, seamlessly. 
+can use with Documents and Media. All you need is an account, and you can store
+your documents to the cloud from all nodes, seamlessly. 
 
 When you sign up for the service, Amazon assigns you unique keys that link you
 to your account. In Amazon's interface, you can create "buckets" of data
@@ -11,10 +11,9 @@ optimized by region.
 Here are the steps for configuring @product@ to use your S3 account for file
 storage:
 
-1.  Amazon S3 requires a `SAXParser` from the application server to operate. If 
-    you are using an app server, such as Apache Tomcat, that doesn't contain  a
-    `SAXParser`, you must include this property in a `system-ext.properties`
-    file: 
+1.  Amazon S3 requires a `SAXParser` from the application server to operate. If
+    you are using an app server like Apache Tomcat that have one, you must
+    include this property in a `system-ext.properties` file: 
 
         org.xml.sax.driver=com.sun.org.apache.xerces.internal.parsers.SAXParser
 
@@ -58,7 +57,7 @@ To use the S3 store in a cluster, follow these steps:
 
 **Warning:** If a database transaction rollback occurs in a Document Library
 that uses a file system based store, file system changes that have occurred
-since the start of the transaction won't be reversed. Inconsistencies between
+since the start of the transaction aren't reversed. Inconsistencies between
 Document Library files and those in the file system store can occur and may
 require manual synchronization. All stores except DBStore are vulnerable to this
 limitation.
