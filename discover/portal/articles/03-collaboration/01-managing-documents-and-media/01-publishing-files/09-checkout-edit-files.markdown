@@ -1,8 +1,8 @@
 ## Checking Out and Editing Files
 
 When you check out a document in the Document Library, only you can make changes 
-to it until you check it back in. This prevents conflicting edits by multiple 
-users on the same document. While the file is checked out, you can download it, 
+to it until you check it back in. This prevents conflicting edits on the same 
+document by multiple users. When you check out a file, you can download it, 
 replace it, move it to another Document Library folder, check it in, or cancel 
 the checkout. Checking in a file also increments its version, which lets you 
 keep track of changes. 
@@ -58,8 +58,7 @@ the following actions on that file version:
 
 -   **Download**: Download the selected version of the file to your machine. 
 -   **View**: View the file entry screen for the selected version of the file. 
--   **Revert**: Restores the selected file version's content as a new major 
-    version of the file. 
+-   **Revert**: Restores the selected file version as a new major file version. 
 -   **Delete Version**: Remove the file version from the Document Library. All 
     other file versions remain intact. 
 

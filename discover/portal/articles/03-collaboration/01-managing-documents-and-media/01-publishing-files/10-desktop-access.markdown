@@ -2,12 +2,12 @@
 
 You can access the Document Library from your desktop file manager via 
 [WebDAV](https://en.wikipedia.org/wiki/WebDAV). 
-WebDAV is a set of methods based on HTTP that lets users create, edit, move, or 
+WebDAV is a set of methods based on HTTP that let users create, edit, move, or 
 delete files stored on web servers. WebDAV is supported by most major operating 
-systems and desktop environments, including Linux, macOS, and Windows. Also, 
-using your file manager via WebDAV doesn't bypass the functionality of 
-@product@'s web interface---@product@ increments the version numbers of files 
-edited and uploaded via WebDAV. 
+systems and desktop environments, including Linux, macOS, and Windows. Using 
+your file manager via WebDAV doesn't bypass the functionality of @product@'s 
+web interface---@product@ increments the version numbers of files edited and 
+uploaded via WebDAV. 
 
 To access the Document Library folder from a file browser, you must use log-in 
 credentials for the @product@ instance, and the WebDAV URL of the folder you 
@@ -27,7 +27,7 @@ want to access. Follow these steps to do this:
         Library folder appears in the network drive. From your file browser, you 
         can now add, edit, move, or delete files in this folder. 
 
-    -   **macOS:** Select *Go* &rarr; *Connect to Server* in Finder. In the 
+    -   **macOS:** In the Finder, select *Go* &rarr; *Connect to Server*. In the 
         Server Address field, enter the WebDAV URL of the folder you want to 
         access, then click *Connect* and enter your credentials for your 
         @product@ instance when prompted. 
