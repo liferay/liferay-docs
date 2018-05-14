@@ -59,17 +59,16 @@ text is displayed.
 
 ## Making Images Editable
 
-Like text, images can also be set as editable. When an editable image is 
-defined, the final image can be selected from the user's local files or from
-the Documents and Media Library. You need to be careful with defining styles 
-for editable images since an image that does not have the proper dimensions 
-could have major negative effects on your layout. Similarly, an image that is 
-forced into a poorly sized space.
+Like text, you can set images images as editable. An editable image can be
+selected from the user's local files or from the Documents and Media Library.
+You must be careful with defining styles for editable images since an image that
+without the proper dimensions or that is forced into a poorly sized space can
+have major negative effects on your layout. 
 
 Images use the same `<lfr-editable>` tag as text, but with the `img` type, like 
 this:
     
-    <lfr-editable id=”unique-id” type="img">
+    <lfr-editable id="unique-id" type="img">
        <img src="...">
     </lfr-editable>
 
@@ -140,14 +139,13 @@ Now you need to add it to a Content Page to display it.
 
 If you have a custom widget that you want to embed in a fragment, you can 
 configure that widget to be embeddable. In order to embed your widget, it must
-be an OSGi Component. Inside of the `@Component` annotation for the portlet 
-class that you want to embed, add this property:
+be an OSGi Component. Inside the `@Component` annotation for the portlet class
+that you want to embed, add this property:
 
     "com.liferay.fragment.entry.processor.portlet.alias=app-name"
-    
-When you deploy your widget, it will be picked up and be available to add. The 
-name you specify in the property simply needs to be appended to the 
-`lfr-widget` tag like this:
+ 
+When you deploy your widget, it's available to add. The name you specify in the
+property must be appended to the `lfr-widget` tag like this:
 
     <lfr-widget-app-name /> 
 
