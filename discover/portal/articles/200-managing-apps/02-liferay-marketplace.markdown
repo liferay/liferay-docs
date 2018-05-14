@@ -12,9 +12,9 @@ There are two ways to access the Marketplace.
     If you're new to Marketplace, this is the easiest way to access it. You can 
     browse Marketplace without signing in with your liferay.com account. 
 
-2.  **Via a running @product@ instance: In the Control Panel, navigate to *Apps* 
-    &rarr; *Store*. To view Marketplace, you must sign in with your liferay.com 
-    account. 
+2.  **Via a running @product@ instance:** In the Control Panel, navigate to 
+    *Apps* &rarr; *Store*. To view Marketplace, you must sign in with your 
+    liferay.com account. 
 
 No matter how you access Marketplace, you'll see the same content. Note that to 
 download apps, you must have a liferay.com account and agree to the Marketplace 
@@ -27,16 +27,16 @@ If you've used an app store before, then you'll instantly be familiar with
 Marketplace. Marketplace displays apps in the center of the page, in the 
 following sections: 
 
-- Featured Apps: Liferay features a different set of apps each month
+- Featured Apps: Liferay features a different set of apps each month.
 
-- New and Interesting: The latest apps added to Marketplace
+- New and Interesting: The latest apps added to Marketplace.
 
-- Most Viewed in the Past Month: The top 5 most viewed apps in the last month
+- Most Viewed in the Past Month: The top 5 most viewed apps in the last month.
 
 - Themes and Site Templates: Apps that change your Liferay instance's look and 
-  feel
+  feel.
 
-- App categories: Communication, productivity, security, etc...
+- App categories: Communication, productivity, security, etc.
 
 In each of these sections, you can view more by clicking the *See All* button at 
 the top-right. At the top of the page, you can search Marketplace by category, 
@@ -82,6 +82,19 @@ the same. For details, see the article
 
 ## Managing Purchased Apps [](id=managing-purchased-apps)
 
++$$$
+
+**Important**: When uninstalling an app or module, make sure to use the same 
+agent you used to install the app. For example, if you installed it with 
+Marketplace, uninstall it with Marketplace. If you installed it with the file 
+system, use the 
+[file system](/discover/portal/-/knowledge_base/7-1/installing-apps-manually)
+to uninstall it. If you installed it with the App Manager, however, use 
+[Blacklisting](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules)
+to uninstall it. 
+
+$$$
+
 There are two places to manage your purchased apps:
 
 1.  Your liferay.com account's homepage. After signing in on liferay.com, click 
@@ -106,17 +119,3 @@ There are two places to manage your purchased apps:
     entry. 
 
     ![Figure 4: You can also manage your purchased apps from within a running Liferay instance.](../../images/marketplace-purchased.png)
-
-
-+$$$
-
-**Important**: When uninstalling an app or module, make sure to use the same 
-agent you used to install the app. For example, if you installed it with 
-Marketplace, uninstall it with Marketplace. If you installed it with the file 
-system, use the 
-[file system](/discover/portal/-/knowledge_base/7-1/installing-apps-manually)
-to uninstall it. If you installed it with the App Manager, however, use 
-[Blacklisting](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules)
-to uninstall it. 
-
-$$$
