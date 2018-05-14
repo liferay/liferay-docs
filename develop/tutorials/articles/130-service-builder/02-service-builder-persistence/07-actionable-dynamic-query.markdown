@@ -1,21 +1,20 @@
 # Actionable Dynamic Queries [](id=actionable-dynamic-queries)
 
-Suppose your portal has over a million users, and you want to perform some kind
-of mass update to a subset of them. One approach might be to use a dynamic query
-to retrieve the list of users in question. Once loaded into memory, you could
-loop through the list and update each user. However, with over a million users,
-the memory cost of such an operation would be too great. In general, retrieving
-large numbers of Service Builder entities using dynamic queries requires too
-much memory and time. 
+Suppose you have over a million users, and you want to perform some kind of mass
+update to some of them. One approach might be to use a dynamic query to retrieve
+the list of users in question. Once loaded into memory, you could loop through
+the list and update each user. However, with over a million users, the memory
+cost of such an operation would be too great. In general, retrieving large
+numbers of Service Builder entities using dynamic queries requires too much
+memory and time. 
 
 Liferay actionable dynamic queries solve this problem. Actionable dynamic
-queries use a pagination strategy to load only small numbers of Service Builder
-entities into memory at a time and perform processing (i.e., perform an
-*action*) on each entity. So instead of trying to use a dynamic query to load a
-million users into memory and then perform some processing on each of them, a
-much better strategy to process them is to use an actionable dynamic query. This
-way, only small numbers of entities (e.g., users) are loaded into memory at a
-time, but you still process all them.
+queries use a pagination strategy to load only small numbers of entities into
+memory at a time and perform processing (i.e., perform an *action*) on each
+entity. So instead of trying to use a dynamic query to load a million users into
+memory and then perform some processing on each of them, a much better strategy
+is to use an actionable dynamic query. This way, you can still process your
+million users, but only small numbers are loaded into memory at a time. 
 
 Here's how to use actionable dynamic query:
 
@@ -28,7 +27,7 @@ Here's how to use actionable dynamic query:
     and `setAddOrderCriteriaMethod` methods. 
 
 3.  Set an action to perform on the matching entities, using 
-    `setPerformActionMethod`.  
+    `setPerformActionMethod`. 
 
 4.  Execute the action on each matching entity, by invoking the query's 
     `performActions` method. 
@@ -69,7 +68,7 @@ query restriction and an action, and executes the query:
 	}
  
 The example method demonstrates executing an actionable dynamic query on `Bar`
-entities that match certain criteria.  
+entities that match certain criteria. 
 
 1.  Retrieve an 
     [`ActionableDynamicQuery`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/ActionableDynamicQuery.html)
@@ -80,7 +79,7 @@ entities that match certain criteria.
     +$$$
  
     **Note:** Service Builder generates method `getActionableDynamicQuery()` in 
-    each entity's `*LocalService` interface and implements it in each entitie's
+    each entity's `*LocalService` interface and implements it in each entity's
     `*BaseLocalServiceImpl` class. 
 
         @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -124,9 +123,9 @@ entities that match certain criteria.
         }
 
 Actionable dynamic queries let you act on large numbers of entities in smaller
-groups. Its an efficient and performant way to affect entities. 
+groups. It's an efficient and high performing way to update entities. 
 
-**Related Topics**
+## Related Topics
 
 [Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)
 
