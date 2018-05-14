@@ -18,7 +18,7 @@ retrieve a new entity on a node which doesn't have that entity cached results in
 a cache *miss*. The miss triggers the node to retrieve the entity from the
 database and store it in its local cache. 
 
-![Figure 2: @product@'s cache algorithm is extremely efficient. ](../../images-dxp/clustering-cache-efficient-algorithm.png)
+![Figure 2: @product@'s cache algorithm is extremely efficient. ](../../../images-dxp/clustering-cache-efficient-algorithm.png)
 
 To enable Cluster Link, add this property to `portal-ext.properties`: 
 
@@ -36,7 +36,7 @@ Cluster Link contains an enhanced algorithm that provides one-to-many type
 communication between the nodes. This is implemented by default with JGroups's
 UDP multicast, but unicast and TCP are also available. 
 
-### Multicast over UDP [](id=multicast-over-udp)
+## Multicast over UDP [](id=multicast-over-udp)
 
 When you enable Cluster Link, @product@'s default clustering configuration is
 enabled. This configuration defines IP multicast over UDP. @product@ uses two
@@ -86,7 +86,7 @@ right IP addresses are declared using:
 
 3. Test your load and then optimize your settings if necessary.
 
-### Unicast over TCP [](id=unicast-over-tcp)
+## Unicast over TCP [](id=unicast-over-tcp)
 
 If your network configuration or the sheer distance between nodes prevents you
 from using UDP Multicast clustering, you can configure @product@ to use TCP
@@ -111,13 +111,13 @@ your nodes or if your nodes are in different geographical locations.
     rest of these steps; the others are covered below. 
 
 3.  Download the OSGi Dependencies from the Customer Portal or access them from
-    your existing @product@ installation. In the dependencies' `marketplace`
-    folder is a @product@ package called `Liferay Foundation.lpkg` Inside this
-    .lpkg (which is just a compressed zip file) is a .jar file called
-    `com.liferay.portal.cluster.multiple-[version].jar`. In this .jar's `lib`
-    folder is a file called `jgroups-[version].Final.jar`. Open it and find
-    `tcp.xml`. Extract this file to a location accessible to @product@. You'll
-    use this file on all your nodes.
+    your existing @product@ installation. In the dependencies' `portal` folder
+    is a .jar file called `com.liferay.portal.cluster.multiple-[version].jar`.
+    In this .jar's `lib` folder is a file called `jgroups-[version].Final.jar`.
+    Open it and find `tcp.xml`. Extract this file to a location accessible to
+    @product@. You'll use this file on all your nodes.
+
+    <!-- TODO Check for the com.liferay.portal.cluster.multiple JAR in the downloadable OSGi Dependencies. - Jim -->
 
 4.  If you're vertically clustering (i.e., you have multiple @product@ servers
     running on the same physical or virtual system), you must change the port on
@@ -157,7 +157,7 @@ your nodes or if your nodes are in different geographical locations.
 You're now set up for Unicast over TCP clustering! Repeat this process for each
 node you want to add to the cluster. 
 
-#### JDBC Ping [](id=jdbc-ping)
+### JDBC Ping [](id=jdbc-ping)
 
 Rather than use TCP Ping to discover cluster members, you can use a central
 database accessible by all the nodes to help them find each other. Cluster
@@ -174,7 +174,7 @@ corresponding `JDBCPING` tag:
 The above example uses MySQL as the database. For further information about
 JDBC Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
 
-#### S3 Ping [](id=s3-ping)
+### S3 Ping [](id=s3-ping)
 
 Amazon S3 Ping can be used for servers running on Amazon's EC2 cloud service.
 Each node uploads a small file to an S3 bucket, and all the other nodes read the
@@ -192,12 +192,12 @@ tag:
 Supply your Amazon keys as values for the parameters above. For further
 information about S3 Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
 
-#### Other Pings [](id=other-pings)
+### Other Pings [](id=other-pings)
 
 JGroups supplies other means for cluster members to discover each other,
 including Rackspace Ping, BPing, File Ping, and others. Please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols) for information about these discovery methods. 
 
-### Modifying the Cache Configuration with a Module [](id=modifying-the-cache-configuration-with-a-module)
+## Modifying the Cache Configuration with a Module [](id=modifying-the-cache-configuration-with-a-module)
 
 It's recommended to test your system under a load that best simulates the kind
 of traffic your system needs to handle. If you'll be serving up a lot of message
@@ -207,15 +207,16 @@ your site, your script should reflect that too.
 As a result of a load test, you may find that the default distributed cache
 settings aren't optimized for your site. In this case, you should tweak the
 settings yourself. You can modify the @product@ installation directly or you can
-use a module to do it. Either way, the settings you change are the same. 
-A benefit of working with modules is that you can install a module on
-each node and change the settings without taking down the cluster. Modifying the
-Ehcache settings with a module is recommended over modifying the Ehcache
-settings directly. 
+use a module to do it. Either way, the settings you change are the same. A
+benefit of working with modules is that you can install a module on each node
+and change the settings without taking down the cluster. Modifying the Ehcache
+settings with a module is recommended over modifying the Ehcache settings
+directly. 
 
-We've made this as easy as possible by [creating the project](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip) 
+We've made this as easy as possible by
+[creating the project](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip) 
 for you. Download the project and unzip it into a 
-[Liferay Workspace](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/liferay-workspace), 
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace), 
 in the workspace's `modules` folder. To override your cache settings, you only
 have to modify one Ehcache configuration file, which you'll find in this folder
 structure: 
@@ -228,32 +229,31 @@ structure:
                     - override-liferay-multi-vm-clustered.xml
 
 In the sample project, this file contains a configuration for @product@'s
-`GroupImpl` object which handles sites. You may wish to add other objects to
-the cache; in fact, the default file caches many other objects. For example, if
-you have a vibrant community, a large portion of your traffic may be directed at
-the message boards portlet, as in the example above.  To cache the threads on
-the message boards, configure a block with the `MBMessageImpl` class:
+`GroupImpl` object which handles sites. You may wish to add other objects to the
+cache; in fact, the default file caches many other objects. For example, if you
+have a vibrant community, a large portion of your traffic may be directed at the
+message boards portlet, as in the example above. To cache the threads on the
+message boards, configure a block with the `MBMessageImpl` class:
 
     <cache
-		eternal="false"
-		maxElementsInMemory="10000"
-		name="com.liferay.portlet.messageboards.model.impl.MBMessageImpl"
-		overflowToDisk="false"
-		timeToIdleSeconds="600"
-	>
-	</cache>
+        eternal="false"
+        maxElementsInMemory="10000"
+        name="com.liferay.portlet.messageboards.model.impl.MBMessageImpl"
+        overflowToDisk="false"
+        timeToIdleSeconds="600"
+    >
+    </cache>
 
 If you're overriding these properties, it's because you want to customize the
 configuration for your own site. A good way to start with this is to extract
 Liferay's cluster configuration file and then customize it. You'll find it in
-the Liferay Foundation application suite's
-`com.liferay.portal.ehcache-[version].jar` file. You can get this JAR from the
-`Liferay Foundation.lpkg` file in the `osgi/marketplace` folder. The file you
-want is `liferay-multi-vm-clustered.xml`, in the `/ehcache` folder inside the
-`com.liferay.portal.ehcache-[version].jar` file. Once you have the file, replace
-the contents of the `override-liferay-multi-vm-clustered.xml` file above with
-the contents of this file. Now you'll be using the default configuration as a
-starting point. 
+the `com.liferay.portal.cache.ehcache.impl.jar` file the `[Liferay
+Home]/osgi/portal` folder. The file you want is
+`liferay-multi-vm-clustered.xml`, in the `/ehcache` folder inside the
+`com.liferay.portal.cache.ehcache.impl.jar` file. Once you have the file,
+replace the contents of the `override-liferay-multi-vm-clustered.xml` file above
+with the contents of this file. Now you'll be using the default configuration as
+a starting point. 
 
 Once you've made your changes to the cache, save the file, build, and deploy the
 module, and your settings override the default settings. In this way, you can
