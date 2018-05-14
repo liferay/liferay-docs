@@ -589,7 +589,7 @@ to override its default settings.
 
 If you are implementing your own JavaScript minifier, you should extract it to
 its own OSGi module. See module
-[frontend-js-minifier](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-js/frontend-js-minifier)
+[frontend-js-minifier](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-js/frontend-js-minifier)
 for an example of how to do this.
 
 #### Why was this change made? [](id=why-was-this-change-made-11)
