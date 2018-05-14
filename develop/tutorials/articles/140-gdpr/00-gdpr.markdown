@@ -4,8 +4,7 @@ Enforcement of the General Data Protection Regulation (GDPR) begins May 25,
 2018. Companies processing the personal data of EU residents must adopt
 appropriate measures to protect their user data. A wealth of available
 resources discuss the implications of the regulation and the steps
-companies must take to ensure compliance lest they potentially incur heavy
-fines.
+companies must take to ensure compliance.
 
 The goal of this article is to help you tackle two of GDPR's technically
 challenging requirements, the 
@@ -18,10 +17,18 @@ describes new features to more easily tackle these requirements. These same
 features will be available for @product@ version 7.0 in a future service pack
 release following the release of @product@ version 7.1. Until then, the
 principles and code described here equally apply to versions 6.2 and 7.0.
+Version 7.1 will have better native support for complying with GDPR. Consider
+upgrading to leverage those features (and more, of course).
 
-The code provided here is meant to be used as an example solution. You could
-provide code like this in a script, or in a web plugin.
-UPDATE THIS: HOW SHOULD WE WORD THIS?
+The code supplied here demonstrates an approach you can use when developing two
+particularly difficult requirements of your full GDPR solution. It's your
+responsibility to determine the full extent of work required to comply with
+GDPR. 
+
+The code referenced here could be deployed via the scripting console, or
+compiled in a web plugin. It's up to you. A sample web plugin containing this
+code that can be referenced.
+[here](LINK WHEN AVAILABLE).
 
 ## Right to Data Portability
 
