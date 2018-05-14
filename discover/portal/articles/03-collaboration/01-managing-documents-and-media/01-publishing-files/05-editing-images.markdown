@@ -1,4 +1,4 @@
-# Editing Images
+# Editing Images [](id=editing-images)
 
 Editing and re-uploading images when you only need to apply simple edits is 
 tedious. @product@ contains a simple built-in image editor for exactly this 

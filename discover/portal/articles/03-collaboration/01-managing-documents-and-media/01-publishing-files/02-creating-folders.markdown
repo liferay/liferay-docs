@@ -1,4 +1,4 @@
-# Creating Folders
+# Creating Folders [](id=creating-folders)
 
 Adding files to your site's Document Library is all fine and well, but you'll 
 also need folders to organize all but the most limited set of files. Here, 
@@ -8,7 +8,7 @@ you'll learn the following for working with folders in a Document Library:
 -   [Document Type Restrictions and Workflow](#document-type-restrictions-and-workflow)
 -   [Setting Folder Permissions](#setting-folder-permissions)
 
-## Adding a Folder
+## Adding a Folder [](id=adding-a-folder)
 
 Follow these steps to add a folder to your Document Library:
 
@@ -48,7 +48,7 @@ managing the folder. The following sections describe some of these options.
 
 ![Figure 2: Your new folder appears in the Document Library.](../../../../images/dm-folder.png)
 
-## Document Type Restrictions and Workflow
+## Document Type Restrictions and Workflow [](id=document-type-restrictions-and-workflow)
 
 After creating a folder, you can restrict what document types are allowed in it. 
 You can also choose what 
@@ -73,7 +73,7 @@ Follow these steps to change a folder's document type restrictions and workflow:
 
 ![Figure 3: You can set the document type restrictions and workflow to use for a folder's files.](../../../../images/dm-restrictions-workflow.png)
 
-## Setting Folder Permissions
+## Setting Folder Permissions [](id=setting-folder-permissions)
 
 When creating a folder, you can set some of its permissions via the new folder 
 form. Fine tuning a folder's permissions, however, can only be done after 

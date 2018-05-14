@@ -1,4 +1,4 @@
-# Desktop Access to Documents and Media
+# Desktop Access to Documents and Media [](id=desktop-access-to-documents-and-media)
 
 You can access the Document Library from your desktop file manager via 
 [WebDAV](https://en.wikipedia.org/wiki/WebDAV). 

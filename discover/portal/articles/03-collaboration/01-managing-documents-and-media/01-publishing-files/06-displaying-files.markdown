@@ -1,4 +1,4 @@
-# Displaying Files
+# Displaying Files [](id=displaying-files)
 
 Once your Document Library contains files, you'll likely want to display them in 
 your site. Here are some ways you can display your files:
@@ -10,7 +10,7 @@ your site. Here are some ways you can display your files:
 
 Here, you'll learn to use the Media Gallery. 
 
-## Using the Media Gallery
+## Using the Media Gallery [](id=using-the-media-gallery)
 
 The Media Gallery lets you display your media files in a simple gallery-like 
 style. It shows a large thumbnail of each media file, lets the user download 

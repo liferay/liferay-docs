@@ -1,4 +1,4 @@
-# Adding Files to a Document Library
+# Adding Files to a Document Library [](id=adding-files-to-a-document-library)
 
 Adding files to your site's Document Library is the first step to letting 
 administrators and users work with files throughout your site. This article 
@@ -12,7 +12,7 @@ Document Library:
 2.  **Adding Files:** Add specific types of files, and their associated 
     metadata, to your Document Library. 
 
-## Granting File Permissions and Roles
+## Granting File Permissions and Roles [](id=granting-file-permissions-and-roles)
 
 You should carefully manage who can add, view, and update files in your Document 
 Library. You can store files of all kinds for various purposes. For example, you 
@@ -45,7 +45,7 @@ in your site's Documents and Media:
     information on this and other topics related to roles, see 
     [the documentation on roles and permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions).
 
-## Using the Add Menu
+## Using the Add Menu [](id=using-the-add-menu)
 
 Follow these steps to add files to your site's Document Library:
 

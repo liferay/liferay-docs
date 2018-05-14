@@ -1,4 +1,4 @@
-# Publishing Files
+# Publishing Files [](id=publishing-files)
 
 As you create sites, you'll probably want to share files on them. @product@'s 
 Documents and Media library (Document Library) let's you upload and publish all 

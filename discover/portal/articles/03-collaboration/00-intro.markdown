@@ -1,4 +1,4 @@
-# Collaboration
+# Collaboration [](id=collaboration)
 
 What comes to mind when you think of *collaboration*? 
 

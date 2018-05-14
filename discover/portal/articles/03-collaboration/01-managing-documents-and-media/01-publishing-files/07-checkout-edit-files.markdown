@@ -1,4 +1,4 @@
-## Checking Out and Editing Files
+# Checking Out and Editing Files [](id=checking-out-and-editing-files)
 
 When you check out a document in the Document Library, only you can make changes 
 to it until you check it back in. This prevents conflicting edits on the same 
