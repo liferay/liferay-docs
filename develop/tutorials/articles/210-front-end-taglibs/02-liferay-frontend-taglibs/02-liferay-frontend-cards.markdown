@@ -7,7 +7,6 @@ more. There are four main types of Cards covered in this tutorial:
 
 - Horizontal Cards
 - Icon Cards
-<!--- Image Cards- Are clay:image-cards used instead of this. Should this be removed? -->
 - Vertical Cards
 - User Cards
 
