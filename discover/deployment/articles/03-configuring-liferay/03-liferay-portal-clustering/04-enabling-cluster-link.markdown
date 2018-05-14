@@ -1,12 +1,12 @@
 # Enabling Cluster Link [](id=enabling-cluster-link)
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
-caching enables some RMI (Remote Method Invocation) cache listeners that are
+caching enables RMI (Remote Method Invocation) cache listeners that are
 designed to replicate the cache across a cluster. Cluster Link uses 
 [Ehcache](http://www.ehcache.org), 
 which has robust distributed caching support. The cache is distributed across 
 multiple @product@ nodes running concurrently. The Ehcache global settings are in the
-[`portal.properties` file](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Ehcache). 
+[`portal.properties` file](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Ehcache). 
 
 By default Liferay does not copy cached entities between nodes. If an entity is
 deleted or changed, for example, Cluster Link sends an *remove* message to the
@@ -22,7 +22,7 @@ To enable Cluster Link, add this property to `portal-ext.properties`:
 
     cluster.link.enabled=true
 
-### Modifying the Cache Configuration with a Module [](id=modifying-the-cache-configuration-with-a-module)
+## Modifying the Cache Configuration with a Module [](id=modifying-the-cache-configuration-with-a-module)
 
 It's recommended to test your system under a load that best simulates the kind
 of traffic your system needs to handle. If you'll be serving up a lot of message
@@ -32,15 +32,16 @@ your site, your script should reflect that too.
 As a result of a load test, you may find that the default distributed cache
 settings aren't optimized for your site. In this case, you should tweak the
 settings yourself. You can modify the @product@ installation directly or you can
-use a module to do it. Either way, the settings you change are the same.  A
+use a module to do it. Either way, the settings you change are the same. A
 benefit of working with modules is that you can install a module on each node
 and change the settings without taking down the cluster. Modifying the Ehcache
 settings with a module is recommended over modifying the Ehcache settings
 directly. 
 
-We've made this as easy as possible by [creating the project](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip) 
+We've made this as easy as possible by
+[creating the project](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip) 
 for you. Download the project and unzip it into a 
-[Liferay Workspace](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/liferay-workspace), 
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace), 
 in the workspace's `modules` folder. To override your cache settings, you only
 have to modify one Ehcache configuration file, which you'll find in this folder
 structure: 
@@ -60,13 +61,13 @@ message boards portlet, as in the example above. To cache the threads on the
 message boards, configure a block with the `MBMessageImpl` class:
 
     <cache
-		eternal="false"
-		maxElementsInMemory="10000"
-		name="com.liferay.portlet.messageboards.model.impl.MBMessageImpl"
-		overflowToDisk="false"
-		timeToIdleSeconds="600"
-	>
-	</cache>
+        eternal="false"
+        maxElementsInMemory="10000"
+        name="com.liferay.portlet.messageboards.model.impl.MBMessageImpl"
+        overflowToDisk="false"
+        timeToIdleSeconds="600"
+    >
+    </cache>
 
 If you're overriding these properties, it's because you want to customize the
 configuration for your own site. A good way to start with this is to extract
