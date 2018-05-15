@@ -176,4 +176,4 @@ procedure is straightforward:
 3.  Make sure that `elasticsearch.yml` and the Elasticsearch 2 adapter's configuration
     are configured to use the same port (9200 by default).
 
-Learn more about configuring Elasticsearch in [this article](/discover/deployment/-/knowledge_base/7-1/configuring-elasticsearch-for-liferay-0).
+Learn more about configuring Elasticsearch in [this article](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0).
