@@ -1,4 +1,4 @@
-# Using the Liferay Marketplace
+# Using the Liferay Marketplace [](id=using-the-liferay-marketplace)
 
 Liferay Marketplace is a hub for sharing, browsing, and downloading @product@ 
 apps. Marketplace leverages the entire Liferay ecosystem to release and share 

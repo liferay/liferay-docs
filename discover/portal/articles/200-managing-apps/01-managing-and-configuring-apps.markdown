@@ -1,4 +1,4 @@
-# Managing and Configuring Apps
+# Managing and Configuring Apps [](id=managing-and-configuring-apps)
 
 There are two places in the Control Panel where you can manage and configure 
 apps: the App Manager, and the Components listing. The App Manager lets you 

@@ -1,4 +1,4 @@
-# Installing Apps Manually
+# Installing Apps Manually [](id=installing-apps-manually)
 
 By default, apps you download in a running @product@ instance via Liferay 
 Marketplace install automatically. But what if the app you want to install isn't 

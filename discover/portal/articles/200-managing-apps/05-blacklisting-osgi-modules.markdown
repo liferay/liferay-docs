@@ -1,4 +1,4 @@
-# Blacklisting OSGi Modules and Components
+# Blacklisting OSGi Modules and Components [](id=blacklisting-osgi-modules-and-components)
 
 Blacklists are used for good and evil. An evil blacklist penalizes unfairly; a
 good blacklist protects. @product@'s OSGi module and component blacklists are 

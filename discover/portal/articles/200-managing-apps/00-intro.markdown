@@ -1,4 +1,4 @@
-# Managing Apps
+# Managing Apps [](id=managing-apps)
 
 Apps are the central focus of @product@. For example, the web experience 
 management, collaboration, and business productivity features all consist of 

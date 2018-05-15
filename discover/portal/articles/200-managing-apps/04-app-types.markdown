@@ -1,4 +1,4 @@
-# App Types
+# App Types [](id=app-types)
 
 For maximum flexibility, @product@ supports several different types of apps. 
 Some apps can even contain other apps. The types of apps that @product@ can run 
