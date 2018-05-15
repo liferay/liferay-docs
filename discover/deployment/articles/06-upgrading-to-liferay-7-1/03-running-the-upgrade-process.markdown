@@ -40,23 +40,26 @@ to the `[Liferay Home]/osgi/configs` folder with the following content:
     autoUpgrade="false"
 
 This configuration prevents automatic module upgrade, but causes the upgrade
-tool to open a Gogo shell after finishing the core upgrade. 
+tool to open a Gogo shell for
+[upgrading modules](#gogo-shell-commands-for-module-upgrades)
+after finishing the core upgrade. 
 
-The upgrade tool resides in the `[Liferay
-Home]/tools/portal-tools-db-upgrade-client` folder. 
+The `db-upgrade.sh` script (`db-upgrade.bat` on Windows) invokes the upgrade
+tool. It resides in the  `[Liferay Home]/tools/portal-tools-db-upgrade-client`
+folder. 
 
-This command starts the upgrade tool: 
+This command prints the upgrade tool usage: 
 
-    java -jar com.liferay.portal.tools.db.upgrade.client.jar
+    db-upgrade.sh --help
 
 +$$$
 
 **Warning**: To prevent the tool's expanded command from growing too large for
-Windows, execute the initial command in the
-`com.liferay.portal.tools.db.upgrade.client.jar` file's folder.
+Windows, execute the upgrade tool script from the `[Liferay
+Home]/tools/portal-tools-db-upgrade-client` folder.
 
 $$$
-
+ 
 Here are the tool's default Java parameters:
     
     -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
@@ -65,11 +68,11 @@ The `-j` option lets you override the JVM parameters. For example, these options
 set the JVM memory to 10GB, which is a good starting point for this process
 type:
 
-    java -jar com.liferay.portal.tools.db.upgrade.client.jar -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
+    db-upgrade.sh -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
 
 The `-l` option lets you specify the tool's log file name: 
 
-    java -jar com.liferay.portal.tools.db.upgrade.client.jar -l "output.log"
+    db-upgrade.sh -l "output.log"
 
 Here are all the upgrade tool command line options:
 
