@@ -85,7 +85,7 @@ is created. It contains the following fields:
 **Global Trade Item Number, Manufacturer Part Number:** Enter a trade item
 number (such as an ISBN) or a part number if applicable. These numbers can be
 displayed on the product page (see [Product Detail
-Page](/discover/portal/-knowledge_base/7_1/catalog-options) and used in search
+Page](/discover/portal/-knowledge_base/7_1/catalog-options)) and used in search
 results. <!--will appear in search results?-->
 
 **Purchasable:** Unchecking this box will leave an item visible to customers but
@@ -105,11 +105,11 @@ The *Pricing* tab contains three fields:
 
 **Cost:** Enter seller's costs to help track margins.
 
-**Price:** Set the SKU's selling price.
+**Price:** Set the SKU's base selling price.
 
-**Promo Price:** Enter a promotional rate. See
-[Pricing](/discover/portal/-/knowledge_base/7.1/pricing#price-lists)
-for details.
+**Promo Price:** Enter a promotional rate which will override the base price.
+See [Pricing](/discover/portal/-/knowledge_base/7.1/pricing#price-lists) for
+details.
 
 ### Price Lists [](id=price-lists)
 
@@ -132,7 +132,7 @@ For more information on creating and using price lists, see
 
 The *Inventory* tab has one field for each warehouse you have in use. (If you
 use more than one warehouse, see
-[warehouses](/web/liferay-emporio/documentation/-/knowledge_base/7-1/inventory).
+[warehouses](/web/liferay-emporio/documentation/-/knowledge_base/7-1/inventory)).
 Enter the number in stock at each warehouse. The quantity will be automatically
 adjusted as orders are processed.
 
