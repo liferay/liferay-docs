@@ -55,20 +55,21 @@ steps:
     of option values a product could take.
 
     Alternatively, you could create a single SKU by selecting *Add SKU* instead,
-    but keep in mind that any product variant that does have have a SKU will not
+    but keep in mind that any product variant that does not have a SKU will not
     be purchasable.
 
 +$$$
 
 When you create new SKUs, the default SKU is automatically set to *Inactive*.
-However, if you reactivate it (click on the SKU and hit *Publish*), the default
-SKU's price is displayed on the product page when no options have been selected.
+However, if you reactivate it (click on the SKU and click *Publish*), the
+default SKU's price is displayed on the product page when no options have been
+selected.
 
 $$$
 
 ## Editing a SKU [](id=editing-an-sku)
 
-When you create a SKU, or hit the ![Options](../../../images/icon-options.png)
+When you create a SKU, or click the ![Options](../../../images/icon-options.png)
 button &rarr; *Edit* to the right of an existing one, a new column of tabs is
 displayed. 
 
@@ -84,7 +85,7 @@ is created. It contains the following fields:
 **Global Trade Item Number, Manufacturer Part Number:** Enter a trade item
 number (such as an ISBN) or a part number if applicable. These numbers can be
 displayed on the product page (see [Product Detail
-Page](/discover/portal/-knowledge_base/7_1/catalog-options) and used in search
+Page](/discover/portal/-knowledge_base/7_1/catalog-options)) and used in search
 results. <!--will appear in search results?-->
 
 **Purchasable:** Unchecking this box will leave an item visible to customers but
@@ -100,15 +101,15 @@ check both the *Published* and *Never Expire* boxes.
 
 ### Pricing [](id=pricing)
 
-The *Pricing* tab contains just three fields:
+The *Pricing* tab contains three fields:
 
 **Cost:** Enter seller's costs to help track margins.
 
-**Price:** Set the SKU's selling price.
+**Price:** Set the SKU's base selling price.
 
-**Promo Price:** Enter a promotional rate. See
-[Pricing](/discover/portal/-/knowledge_base/7.1/pricing#price-lists)
-for details.
+**Promo Price:** Enter a promotional rate which will override the base price.
+See [Pricing](/discover/portal/-/knowledge_base/7.1/pricing#price-lists) for
+details.
 
 ### Price Lists [](id=price-lists)
 
@@ -125,20 +126,20 @@ a price list, go to the *Price Lists* tab:
     list's user segment.
 
 For more information on creating and using price lists, see 
-[Price Lists](/discover/portal/-/knowledge_base/7.1/pricing#price-lists)). 
+[Price Lists](/discover/portal/-/knowledge_base/7.1/pricing#price-lists). 
 
 ### Inventory [](id=inventory)
 
 The *Inventory* tab has one field for each warehouse you have in use. (If you
 use more than one warehouse, see
-[warehouses](/web/liferay-emporio/documentation/-/knowledge_base/7-1/inventory).
+[warehouses](/web/liferay-emporio/documentation/-/knowledge_base/7-1/inventory)).
 Enter the number in stock at each warehouse. The quantity will be automatically
 adjusted as orders are processed.
 
 ### Shipping Adjustment [](id=shipping-adjustment)
 
-A product's shipping adjustment is set in *Configuration* tab &rarr; *Shipping*.
-To override this adjustment for a single SKU, enter it the SKU's *Shipping
-Adjustment* tab. See 
-[shipping methods](/discover/portal/-/knowledge_base/7.1/shipping-methods)
-for more details.
+A product's shipping rate may be adjusted based on its weight or dimensions,
+which are are set in *Configuration* tab &rarr; *Shipping*. To override these
+dimensions for a single SKU, enter it the SKU's *Shipping Adjustment* tab. See
+[shipping methods](/discover/portal/-/knowledge_base/7.1/shipping-methods) for
+more details.
