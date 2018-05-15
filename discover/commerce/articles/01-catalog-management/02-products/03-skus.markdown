@@ -103,13 +103,13 @@ check both the *Published* and *Never Expire* boxes.
 
 The *Pricing* tab contains three fields:
 
-**Cost:** Enter seller's costs to help track margins.
-
 **Price:** Set the SKU's base selling price.
 
 **Promo Price:** Enter a promotional rate which will override the base price.
 See [Pricing](/discover/portal/-/knowledge_base/7.1/pricing#price-lists) for
 details.
+
+**Cost:** Enter seller's costs to help track margins.
 
 ### Price Lists [](id=price-lists)
 
