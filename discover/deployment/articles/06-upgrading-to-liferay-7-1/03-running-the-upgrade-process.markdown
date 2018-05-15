@@ -82,7 +82,22 @@ Here are all the upgrade tool command line options:
 **--shell** or **-s**: Automatically connects you to the Gogo shell after
 finishing the upgrade process.
 
-### Configuring the Upgrade [](id=configuring-the-core-upgrade)
+### Configuring Module upgrades [](id=configuring-module-upgrades)
+
+You can configure the upgrade tool to upgrade all installed modules
+automatically or to open a Gogo shell (after core upgrade completes) for you to
+execute module upgrades manually. 
+
+If the upgrade tool's `autoUpgrade` property is set to `true` (the default
+setting), upgrade processes for all installed modules are run too. 
+
+If you set `autoUpgrade=false` in a file called
+`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
+and copy the file into the `[Liferay Home]/osgi/configs` folder, the upgrade
+tool opens Gogo shell after the core upgrade. In the Gogo shell, you can 
+[administer module upgrades](#gogo-shell-commands-for-module-upgrades). 
+
+### Configuring the Core Upgrade [](id=configuring-the-core-upgrade)
 
 The core upgrade requires configuration. You can configure it at runtime via the
 command line interface or pre-configure it in these files:
@@ -188,14 +203,6 @@ Here are example upgrade configuration files that you can customize:
 The upgrade tool first executes the core's upgrade processes and verifiers. On
 completing the core upgrade, the upgrade tool lists any and all installed
 patches. 
-
-If the upgrade tool's `autoUpgrade` property is set to `true` (the default
-setting), upgrade processes for all installed modules are run too. 
-
-If you set `autoUpgrade=false` in a file called
-`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
-and copy the file into the `[Liferay Home]/osgi/configs` folder, the upgrade tool opens Gogo shell
-automatically after the core upgrade.
 
 The Gogo shell lets you upgrade modules, check module upgrade status, and verify
 upgrades.  Read on to learn how to use Gogo shell commands to use the
