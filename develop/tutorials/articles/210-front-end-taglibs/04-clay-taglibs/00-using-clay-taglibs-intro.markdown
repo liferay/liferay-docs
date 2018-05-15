@@ -16,7 +16,7 @@ To use the Clay taglib, add the following declaration to your JSP:
     <%@ taglib prefix="clay" uri="http://liferay.com/tld/clay" %>
 
 The 
-[`com.liferay.frontend.taglib.clay.sample.web` portlet](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/foundation/frontend-taglib/frontend-taglib-clay-sample-web) 
+[`com.liferay.frontend.taglib.clay.sample.web` portlet](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-taglib/frontend-taglib-clay-sample-web) 
 is referenced throughout this tutorial as an example. It's included 
 out-of-the-box. Open the Control Menu and add the *Clay Sample* portlet from the 
 *Applications* &rarr; *Sample* menu to see it in action. 

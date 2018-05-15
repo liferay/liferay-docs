@@ -43,7 +43,7 @@ build tool to recognize it in other folders. Service Builder
 terminology calls model classes *entities*. For example, the Bookmarks
 application has two entities: `BookmarksEntry` and `BookmarksFolder`. The
 requirements for each are defined in the `bookmarks-service` module's
-[service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
+[service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/service.xml)
 listed in the `<column />` elements. 
 
 Once Service Builder reads the `service.xml` file, you can define your entities.

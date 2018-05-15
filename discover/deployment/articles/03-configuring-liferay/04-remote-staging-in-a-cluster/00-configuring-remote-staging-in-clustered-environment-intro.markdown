@@ -14,7 +14,7 @@ you have
 - two nodes that call two Liferay app servers (e.g., *App Server 1* and *App
   Server 2*), both of which are connected to the same database.
 
-![Figure 1: This is the assumed setup for your clustered environment.](../../images/remote-staging-clustering.png)
+![Figure 1: This is the assumed setup for your clustered environment.](../../../images/remote-staging-clustering.png)
 
 The steps below also assume your web tier, application tier, and cluster
 environment are already configured. You may need to adjust the configurations in
@@ -93,7 +93,7 @@ Let's begin!
     Product Menu and select *Publishing* &rarr; *Staging*. Then select *Remote
     Live*.
 
-    ![Figure 2: When selecting the Remote Staging radio button, you're given a list of options to configure.](../../images/remote-staging-menu.png)
+    ![Figure 2: When selecting the Remote Staging radio button, you're given a list of options to configure.](../../../images/remote-staging-menu.png)
 
 6.  For the Remote Host/IP field, insert the balancer's IP of your web tier.
     Configuring the Staging instance with the balancer's IP ensures the

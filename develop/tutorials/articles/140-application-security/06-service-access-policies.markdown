@@ -95,7 +95,7 @@ Liferay itself has used to implement
 
    These OSGi modules are active by default, and you can use them to manage
    Service Access Policies programmatically. You can find their source code 
-   [here in GitHub](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/portal-security).
+   [here in GitHub](https://github.com/liferay/liferay-portal/tree/master/modules/apps/portal-security).
    Each module publishes a list of packages and services that can be
    consumed by other OSGi modules.
 

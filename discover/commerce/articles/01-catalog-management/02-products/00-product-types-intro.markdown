@@ -6,7 +6,7 @@ The catalog supports three product types: simple, grouped and virtual.
 any physical item can be a simple product.
 
 **Grouped Product:** two or more products from the catalog, packaged together to
-be sold as a single item.  Grouped products are not tracked in
+be sold as a single item. Grouped products are not tracked in
 inventory---instead, the catalog tracks all of the products contained in the
 group individually. A grouped product can contain simple products, other grouped
 products, or virtual products.
