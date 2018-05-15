@@ -52,7 +52,7 @@ Parameter Name | Type | Default Value | Description
 <a name="basedir"></a>`baseDir` | `File` | `"src/META-INF/resources"` | The base directory that contains the SCSS files to compile.
 `dirNames` | `List<String>` | `["/"]` | The name of the directories, relative to [`baseDir`](#basedir), which contain the SCSS files to compile.
 `generateSourceMap` | `boolean` | `false` | Whether to generate [source maps](https://developers.google.com/web/tools/chrome-devtools/debug/readability/source-maps) for easier debugging.
-`importDir` | `File` | `null` | The `META-INF/resources` directory of the [Liferay Frontend Common CSS](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-css/frontend-css-common) artifact. This is required in order to make [Bourbon](http://bourbon.io) and other CSS libraries available to the compilation.
+`importDir` | `File` | `null` | The `META-INF/resources` directory of the [Liferay Frontend Common CSS](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-css/frontend-css-common) artifact. This is required in order to make [Bourbon](http://bourbon.io) and other CSS libraries available to the compilation.
 `outputDirName` | `String` | `".sass-cache/"` | The name of the sub-directories where the SCSS files are compiled to. For each directory that contains SCSS files, a sub-directory with this name is created.
 `precision` | `int` | `9` | The numeric precision of numbers in Sass.
 `rtlExcludedPathRegexps` | `List<String>` |  | The SCSS file patterns to exclude when converting for right-to-left (RTL) support.

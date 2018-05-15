@@ -22,9 +22,9 @@ JSP files: it's the gateway for injecting JavaScript into your editor instance:
 
     Liferay injects JavaScript code for some applications: 
 
-    - [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_definition.js) for the wiki
-    - [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_show.js) also for the wiki
-    - [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/dialog_definition.js) for various applications
+    - [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_definition.js) for the wiki
+    - [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_show.js) also for the wiki
+    - [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/dialog_definition.js) for various applications
 
     These JS files redefine the fields that show in dialogs, depending on what
     the selected language (HTML, BBCode, Creole) supports. For example, Creole
@@ -74,7 +74,7 @@ JSP files: it's the gateway for injecting JavaScript into your editor instance:
     suggested previously dealing with Creole's deficiency with displaying
     background colors in table cells. Liferay implemented this in the
     `include(...)` method in the
-    [`CKEditorCreoleOnEditorCreateDynamicInclude`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/java/com/liferay/frontend/editor/ckeditor/web/internal/servlet/taglib/CKEditorCreoleOnEditorCreateDynamicInclude.java)
+    [`CKEditorCreoleOnEditorCreateDynamicInclude`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-editor/frontend-editor-ckeditor-web/src/main/java/com/liferay/frontend/editor/ckeditor/web/internal/servlet/taglib/CKEditorCreoleOnEditorCreateDynamicInclude.java)
     class.
 
 7.  Make sure you've instantiated your bundle's context so you can successfully 
