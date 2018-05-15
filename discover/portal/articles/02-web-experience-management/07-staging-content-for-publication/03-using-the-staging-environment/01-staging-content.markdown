@@ -49,7 +49,11 @@ publish content.
 
 5.  Select the *Ready for Publication* button to confirm you're ready to publish
     the staged content from the staged site to the live site. This prepares the
-    staged content for publication.
+    staged content for publication. If workflow is enabled for any new resource,
+    the resource needs to go through the workflow process before it can be
+    published to the live site.
+
+    ![Figure 1: The staging toolbar indicates whether you're able to publish to the live site.](../../../images/staging-publish-bar.png)
 
 6.  Click the *Publish to Live* button. A popup window appears with come
     configuration options for your publication.
@@ -59,7 +63,7 @@ publish content.
 8.  Observe the changes listed in the menu. This lists the changed content
     planned for publication.
 
-    ![Figure 1: The Simple Publication menu displays the changes since last publication and a way to name your publication.](../../../../images/simple-staging-publication.png)
+    ![Figure 2: The Simple Publication menu displays the changes since last publication and a way to name your publication.](../../../../images/simple-staging-publication.png)
 
 9.  Click the *Publish to Live* button to publish your staged results to the
     live site.
