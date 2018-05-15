@@ -1,6 +1,6 @@
 # Installing Liferay on GlassFish 4 [](id=installing-liferay-on-glassfish-4)
 
-*Liferay Home* is three folders above your GlassFish domain folder.
+*Liferay Home* is three folders below your GlassFish domain folder.
 
 For example, if your domain location is
 `/glassfish-4.0-web/glassfish4/glassfish/domains/domain1`, Liferay Home is
