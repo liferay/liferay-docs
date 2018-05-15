@@ -34,10 +34,10 @@ manually, you can download the upgrade tool separately from the same location on
 [liferay.com](https://www.liferay.com/). 
 
 To upgrade only the core, add a file called
-`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
+`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.config`
 to the `[Liferay Home]/osgi/configs` folder with the following content:
 
-    autoUpgrade=false
+    autoUpgrade="false"
 
 This configuration prevents automatic module upgrade, but causes the upgrade
 tool to open a Gogo shell after finishing the core upgrade. 
@@ -91,8 +91,8 @@ execute module upgrades manually.
 If the upgrade tool's `autoUpgrade` property is set to `true` (the default
 setting), upgrade processes for all installed modules are run too. 
 
-If you set `autoUpgrade=false` in a file called
-`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
+If you set `autoUpgrade="false"` in a file called
+`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.config`
 and copy the file into the `[Liferay Home]/osgi/configs` folder, the upgrade
 tool opens Gogo shell after the core upgrade. In the Gogo shell, you can 
 [administer module upgrades](#gogo-shell-commands-for-module-upgrades). 
