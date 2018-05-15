@@ -33,14 +33,14 @@ discusses these.
 Portlets are small web applications that run in a portion of a web page. For 
 example, the built-in Blogs app is a portlet. Portlet applications, like servlet 
 applications, are a Java standard implemented by various portal server vendors. 
-The JSR-168 standard defines the portlet 1.0 specification and the JSR-286 
-standard defines the portlet 2.0 specification. A Java standard portlet should 
-be deployable on any portlet container that supports the standard. Portlets are 
-placed on the page in a certain order by the end user and are served up 
-dynamically by the portal server. This means certain things that apply to 
-servlet-based projects, such as control over URLs or access to the 
-`HttpServletRequest` object, don't apply in portlet projects because the portal 
-server generates these objects dynamically. 
+The JSR-168 standard defines the portlet 1.0 specification, the JSR-286 standard 
+defines the portlet 2.0 specification, and the JSR-362 standard defines the 
+portlet 3.0 specification. A Java standard portlet should be deployable on any 
+portlet container that supports the standard. Portlets are placed on the page in 
+a certain order by the end user and are served up dynamically by the portal 
+server. This means certain things that apply to servlet-based projects, such as 
+control over URLs or access to the `HttpServletRequest` object, don't apply in 
+portlet projects because the portal server generates these objects dynamically. 
 
 Portlets can be composed of OSGi modules (recommended), or contained in WAR 
 files. For information on developing OSGi modules for Liferay, including 
