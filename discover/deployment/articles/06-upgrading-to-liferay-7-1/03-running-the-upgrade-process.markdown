@@ -185,7 +185,9 @@ Here are example upgrade configuration files that you can customize:
         liferay.home=/home/user/servers/liferay7
         module.framework.base.dir=/home/user/servers/liferay7/osgi
 
-The upgrade tool first executes the core's upgrade processes and verifiers.
+The upgrade tool first executes the core's upgrade processes and verifiers. On
+completing the core upgrade, the upgrade tool lists any and all installed
+patches. 
 
 If the upgrade tool's `autoUpgrade` property is set to `true` (the default
 setting), upgrade processes for all installed modules are run too. 
