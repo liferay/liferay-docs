@@ -17,12 +17,12 @@ product.
 
 **Cross-sell:** Display products complementary to the featured product.
 
-As far as the software is concerned, all of these types are identical---the
+As far as the software is concerned, all these types are identical---the
 difference is all in how you choose to use them. By populating each type with
 different product relations, you gain the ability to display multiple sets of
 relations on a single page.
 
-## Setting Product Relationship Types [](id=setting-product-relationship-types)
+## Adding Product Relationship Types [](id=setting-product-relationship-types)
 
 The different types of product relations are flexible. Since each one functions
 the same way, you can add, remove, or rename types at will. Follow these steps:
