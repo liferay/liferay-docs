@@ -25,7 +25,7 @@ Follow these steps to include actions in your management bar:
         <liferay-frontend:management-bar-action-buttons>
 
         </liferay-frontend:management-bar-action-buttons>
-        
+ 
 3.  Use the available management bar button taglibs 
     (e.g. `management-bar-button`) to build the action buttons for your app's 
     management bar. A code snippet from the Site admin portlet is shown below: 

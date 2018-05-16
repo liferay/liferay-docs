@@ -1,25 +1,24 @@
-# Liferay Frontend Management Bar [](id=liferay-frontend-management-bar)
+# Liferay Front-end Management Bar [](id=liferay-frontend-management-bar)
 
-The Management Bar gives administrators control over search container results in 
-their apps. It lets you filter, sort, and choose a display style for search 
-results, so you can quickly identify the document, web content, asset 
-entry, etc. that you're looking for in your app. The Management Bar is fully 
-customizable, so you can implement all the controls, or just the ones your app 
-requires. 
+The Management Bar gives administrators control over search container results.
+It lets you filter, sort, and choose a display style for search results, so you
+can quickly identify the document, web content, asset entry, or whatever you're
+looking for in your app. The Management Bar is fully customizable, so you can
+implement all the controls, or just the ones your app requires. 
 
 ![Figure 1: The Management Bar lets the user customize how the app displays content.](../../../../images/liferay-frontend-taglib-management-bar-message-boards.png)
 
 +$$$
 
-**Note:** The Liferay Frontend Management Bar is deprecated as of @product-ver@. 
+**Note:** The Liferay Front-end Management Bar is deprecated as of @product-ver@. 
 We recommend that you use the 
 [Clay Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar) 
 instead.
 
 $$$
 
-The Management Bar is divided into a few key sections. Each section is grouped 
-and configured using different taglibs:
+The Management Bar has a few key sections. Each section is grouped and
+configured using different taglibs:
 
 The 
 [`<liferay-frontend:management-bar-buttons>` tag](@app-ref@/foundation/latest/taglibdocs/liferay-frontend/management-bar-buttons.html) 

@@ -3,31 +3,30 @@
 The Management Toolbar gives administrators control over search container 
 results in their apps. It lets you filter, sort, and choose a view type for 
 search results, so you can quickly identify the document, web content, asset 
-entry, etc. that you're looking for. The Management Toolbar is fully 
+entry, or whatever you're looking for. The Management Toolbar is fully 
 customizable, so you can implement all the controls or just the ones your app 
 requires. 
 
 ![Figure 1: The Management ToolBar lets the user customize how the app displays content.](../../../images/clay-taglib-management-toolbar.png)
 
 To create the Management Toolbar, use the `clay:management-toolbar` taglib. The 
-toolbar is divided into a few key sections. Each section is grouped and 
-configured using different attributes. These attributes are described in more 
-detail below. 
+toolbar contains a few key sections. Each section is grouped and configured
+using different attributes. These attributes are described in more detail
+below. 
 
 ## Checkbox and Actions [](id=checkbox-and-actions)
 
 The `actionItems`, `searchContainerId`, and `selectable` attributes let you 
 include a checkbox in the toolbar to select all search container results and run 
 bulk actions on them. Actions display when either an individual result is 
-checked, or when the master checkbox is checked in the toolbar.  
+checked, or when the master checkbox is checked in the toolbar. 
 
 `actionItems`: The list of dropdown items to display when a result is checked or 
 the master checkbox in the management toolbar is checked. You can select 
 multiple results between pages. The management toolbar keeps track of the number 
 of selected results for you.
 
-`searchContainerId`: The ID of the search container that the management toolbar 
-is connected to
+`searchContainerId`: The ID of the search container connected to the management toolbar 
 
 `selectable`: Whether to include a checkbox in the management toolbar
 
@@ -63,7 +62,7 @@ An example configuration is shown below:
 
 Action items are listed in the Actions menu.
 
-![Figure 2: Actions are also listed in the management toolbar's dropdown menu when an item, multiple items, or the master checkbox is checked. .](../../../images/clay-taglib-management-toolbar-actions.png)
+![Figure 2: Actions are also listed in the management toolbar's dropdown menu when an item, multiple items, or the master checkbox is checked.](../../../images/clay-taglib-management-toolbar-actions.png)
 
 If an action has an icon specified, such as the Delete and Download actions in 
 the example above, the icon is displayed next to the action menu as well. 
@@ -76,7 +75,7 @@ The `filterItems`, `sortingOrder`, and `sortingURL` attributes let you filter
 and sort search container results. Filtering and sorting are grouped together in 
 one convenient dropdown menu. 
 
-`filterItems`: sets the search container's filtering options. This filter should 
+`filterItems`: Sets the search container's filtering options. This filter should 
 be included in all control panel applications. Filtering options can include 
 sort criteria, sort ordering, and more.
 
@@ -201,17 +200,17 @@ The `viewTypes` attribute specifies the display options for the search container
 results. There are three display options to choose from, but only one must 
 be implemented:
 
-- **Cards:** displays search result columns on a horizontal or vertical card 
+**Cards:** Displays search result columns on a horizontal or vertical card. 
 
 ![Figure 7: The Management Toolbar's icon display view gives a quick summary of the content's description and status.](../../../images/clay-taglib-management-toolbar-view-type-card.png)
 
-- **List:** displays a detailed description along with summarized details for 
-the search result columns  
+**List:** Displays a detailed description along with summarized details for 
+the search result columns. 
 
 ![Figure 8: The Management Toolbar's List view type gives the content's full description.](../../../images/clay-taglib-management-toolbar-view-type-list.png)
 
-- **Table:** the default view, which list the search result columns from left to 
-right 
+**Table:** The default view. Lists the search result columns from left to 
+right. 
 
 ![Figure 9: The Management Toolbar's Table view type list the content's information in individual columns.](../../../images/clay-taglib-management-toolbar-view-type-table.png)
 
@@ -244,7 +243,7 @@ An example configuration is shown below:
 ## Creation Menu [](id=creation-menu)
 
 The `creationMenu` attribute creates an add menu button for one or multiple 
-items. It is used for creating new entities (e.g. a new blog entry).
+items. It's used for creating new entities (e.g. a new blog entry).
 
 Use the `addPrimaryDropdownItem()` method to add the top level items to the 
 dropdown menu, or use the `addFavoriteDropdownItem()` method to add secondary 

@@ -1,9 +1,9 @@
-# Liferay Frontend Add Menu [](id=liferay-frontend-add-menu)
+# Liferay Front-end Add Menu [](id=liferay-frontend-add-menu)
 
-The add menu tag creates an add menu button for one or multiple items. It is 
+The add menu tag creates an add menu button for one or multiple items. It's 
 used for actions that add entities (e.g. a new blog entry), and is part of the 
 Management Bar. Use the `<liferay-frontend:add-menu>` tag to create the add 
-menu, and nest a `<liferay-frontend:add-menu-item>` tag for each item. 
+menu and nest a `<liferay-frontend:add-menu-item>` tag for each item. 
 
 +$$$
 
@@ -14,7 +14,7 @@ instead.
 
 $$$
 
-When the menu has one item, the button triggers the item's action, as shown in 
+When the menu has one item, the button triggers the item's action as shown in 
 the example below for the Blogs Admin App:
 
     <liferay-frontend:management-bar-buttons>
