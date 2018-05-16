@@ -13,7 +13,7 @@ any user group:
 
 1.  Go to the Control Panel and then click on *Users* &rarr; *Roles*.
 
-2.  On the Regular Roles screen, click *Add* (![Add](../../images/icon-add.png)).
+2.  On the Regular Roles screen, click *Add* (![Add](../../../images/icon-add.png)).
 
 3.  After naming your role, click *Save*.
 
@@ -37,7 +37,7 @@ any user group:
 
 9.  Click *Save*.
 
-![Figure 2: When defining permissions on a role, the Summary view provides a list of permissions that have already been defined for the role. The area on the left side of the screen lets you drill down through various categories of permissions.](../../images/roles-define-permissions.png)
+![Figure 1: When defining permissions on a role, the Summary view provides a list of permissions that have already been defined for the role. The area on the left side of the screen lets you drill down through various categories of permissions.](../../../images/roles-define-permissions.png)
 
 Now the User Group Manager role has all the permissions necessary for adding
 users to user groups. After all, user group managers can view user groups,
@@ -46,14 +46,14 @@ view users in the Control Panel was necessary because you must view users to
 assign them as members of a role. Without this permission, user group managers
 would see an empty list if they try to add users to a role.
 
-![Figure 5: Users assigned to the User Group Manager role can't find any users to add unless they have view permissions on the User resource.](../../images/roles-no-users-found.png)
+![Figure 2: Users assigned to the User Group Manager role can't find any users to add unless they have view permissions on the User resource.](../../../images/roles-no-users-found.png)
 
 +$$$
 
 **Note:** The Roles application in the Control Panel is not the only place where
 permissions are configured. You can configure a role's permissions for a
 particular application instance from its *Options*
-(![Options](../../images/icon-options.png)) \
+(![Options](../../../images/icon-options.png)) \
 menu. However, permissions granted or removed in the Control Panel override
 those made at the more granular level.
 
@@ -78,7 +78,7 @@ Site application permissions affect the application as a whole. Using the
 Message Boards as an example, an application permission might define who can add
 the Message Boards portlet to a page.
 
-![Figure 3: You can fine-tune which actions are defined for a role within a specific application like the Message Boards.](../../images/roles-message-board-content-permissions.png)
+![Figure 3: You can fine-tune which actions are defined for a role within a specific application like the Message Boards.](../../../images/roles-message-board-content-permissions.png)
 
 The Control Panel permissions affect how the Control Panel appears to the user
 in the Control Panel. The Control Panel appears differently to different users,
@@ -91,12 +91,12 @@ the gear icon next to the permission and then choose a new scope. After you
 click *Save*, you'll see a list of all permissions currently granted to the
 role. From the Summary view, you can add more permissions or go back to the Role
 Application default view by clicking on the *Back*
-(![Back](../../images/icon-back.png)) icon.
+(![Back](../../../images/icon-back.png)) icon.
 
 Sometimes you might find that a certain permission grants more or less access
 than what you expected--always test your permissions configurations! 
 
-## Delegating Social Activities Configuration
+## Delegating Social Activities Configuration [](id=delegating-social-activities-configuration)
 
 There's a permission that allows site administrators to delegate responsibility
 for configuring social activities to other users. To add this permission to a
