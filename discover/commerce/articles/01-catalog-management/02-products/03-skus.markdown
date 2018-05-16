@@ -2,8 +2,8 @@
 
 The catalog stores pricing, inventory, and other information by attaching it to
 a SKU, or stock keeping unit. A SKU is an alphanumeric code representing
-a single product variant; all products have at least one SKU and many have more
-than one.
+a single product variant. A product must have at least one SKU in order to be
+purchased.
 
 When a product has only one SKU, the SKU represents the product directly.
 
@@ -14,12 +14,12 @@ variant.
 
 ![Figure 2: SKUs organize information that is unique to each variant.](../../../images/multiple-SKUs.png)
 
-A product must have multiple SKUs if it has one or more
-[options](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options) which
-are SKU contributors. Marking an option as a SKU contributor indicates that the
-option differentiates items that may be priced differently, or which must be
-tracked separately in inventory. Every product variant defined by SKU
-contributing options must have its own SKU in order to be purchasable.
+A product must have a different SKU for each of its variants.  A product has
+different variants if it has been assigned options which are SKU contributors
+(see [options](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options)
+for details).  Giving a SKU to each variant allows the inventory engine to track
+each variant individually. It also allows you to set a unique price for each
+variant.
 
 +$$$
 
