@@ -33,6 +33,7 @@ Clay taglibs provide the following UI components for your apps:
 - [Form Elements](/develop/tutorials/-/knowledge_base/7-1/clay-form-elements)
 - [Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons)
 - [Labels and links](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links)
+- [Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar)
 - [Navigation Bars](/develop/tutorials/-/knowledge_base/7-1/clay-navigation-bars)
 - [Progress Bars](/develop/tutorials/-/knowledge_base/7-1/clay-progress-bars)
 - [Stickers](/develop/tutorials/-/knowledge_base/7-1/clay-stickers)
