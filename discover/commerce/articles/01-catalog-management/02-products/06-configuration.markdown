@@ -8,7 +8,7 @@ To get to a product's configuration page, go to the catalog, select a product,
 and click on the *Configuration* tab. This page has four more tabs of its own:
 *Inventory*, *Shipping*, *Display Page,* and *Tax Category*.
 
-## Inventory
+## Inventory [](id=inventory)
 
 The *Inventory* tab contains the following fields:
 
@@ -50,7 +50,7 @@ entered. An entry of "2, 4, 6" allows buyers to only purchase those quantities.
 **Multiple Order Quantity:** Only permit order quantities that are multiples of
 the number entered.
 
-## Shipping
+## Shipping [](id=shipping)
 
 The *Shipping* tab contains the following fields:
 
@@ -73,7 +73,7 @@ weight (see
 purposes, or---with the development of custom code---to calculate shipping
 costs.
 
-## Display Page
+## Display Page [](id=display-page)
 
 Designating a unique product display page creates a relationship between the
 product and the specified page. For a less labor intensive way to create
@@ -93,7 +93,7 @@ This process creates a relationship between the product and a blank page. At any
 point, you can populate the page with whatever content or applications suit your
 purposes.
 
-## Tax Category
+## Tax Category [](id=tax-category)
 
 The *Tax Category* tab contains the following fields:
 

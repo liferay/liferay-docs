@@ -22,7 +22,7 @@ difference is all in how you choose to use them. By populating each type with
 different product relations, you gain the ability to display multiple sets of
 relations on a single page.
 
-## Setting Product Relationship Types
+## Setting Product Relationship Types [](id=setting-product-relationship-types)
 
 The different types of product relations are flexible. Since each one functions
 the same way, you can add, remove, or rename types at will. Follow these steps:
@@ -38,7 +38,7 @@ the same way, you can add, remove, or rename types at will. Follow these steps:
     the only setting you have to worry about. Whether you're editing or creating
     new, just set the name and then click *Save*.
 
-## Creating Product Relations
+## Creating Product Relations [](id=creating-product-relations)
 
 Follow these steps:
 
@@ -54,7 +54,7 @@ Follow these steps:
     box next to each product you want to set as a product relation of this type.
     Click *Add*.
 
-## Displaying Product Relations
+## Displaying Product Relations [](id=displaying-product-relations)
 
 You can display product relations on a product display page by configuring
 a search results portlet. You need to have a 

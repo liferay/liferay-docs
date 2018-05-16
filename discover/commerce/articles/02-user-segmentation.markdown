@@ -1,4 +1,4 @@
-# User Segmentation
+# User Segmentation [](id=user-segmentation)
 
 User Segmentation allows you to organize users, primarily customers, into
 groups. This allows price lists, discounts, and other features to be precisely
@@ -10,7 +10,7 @@ limited to one type; for example you could create a segment that consists of the
 members of an organization plus a number of other users that you designate
 individually.
 
-## Creating a User Segment
+## Creating a User Segment [](id=creating-a-user-segment)
 
 Follow these steps:
 
