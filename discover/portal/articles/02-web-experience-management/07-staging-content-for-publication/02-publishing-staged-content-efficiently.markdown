@@ -7,7 +7,7 @@ decisions about how you want to publish your site's content.
 
 ## Understanding the Publication Process [](id=understanding-the-publication-process)
 
-In simple terms, publication is the process where all content, referenced
+In simple terms, a publication is the process where all content, referenced
 content, apps and their preferences, pages, etc. are transferred from the
 staging scope to the live site. If you've enabled remote staging, this process
 involves network communication with another remote site. From a low level
@@ -40,7 +40,7 @@ discarding the current publication. This is a necessary action to safeguard
 against publishing incomplete information, which could break an otherwise
 well-designed live site.
 
-If the file system is not "database-stored" (e.g., DBStore), it's not
+If the file system is not *database-stored* (e.g., DBStore), it's not
 transactional and won't be reverted automatically if a staging failure occurs.
 This could potentially cause a discrepancy between a file and where it's being
 referenced from. Because of this, administrators should take great care if they
@@ -60,7 +60,9 @@ process. There are several factors to evaluate.
 - **Content (amount, type, and structure):** Depending on the content you'd like
   to use in your site, you can turn on staging for only the necessary content
   types, and leave others turned off to avoid unnecessary work. Publication can
-  also be configured to publish only certain types of content.
+  also be configured to publish only certain types of content. See the
+  [Managing Content Types](/discover/portal/-/knowledge_base/7-1/managing-content-types-in-staging)
+  article for more information.
 
 - **Hardware Environment:** You should plan your environment according to the
   content types you're using. If your site operates on large images and video
@@ -71,9 +73,11 @@ process. There are several factors to evaluate.
 
 - **Customizations and Custom Logic for Your Staging Environment:** Your
   organization's business logic is most likely implemented in an app, and if you
-  want to support staging for that app, you'll need to write some code to
-  accomplish this. You can also consider changing default UI settings by writing
-  new JSP code, if you want your staging environment's look and feel to change.
+  want to support staging for that app, you'll need to
+  [write some code](/develop/tutorials/-/knowledge_base/7-1/export-import-and-staging)
+  to accomplish this. You can also consider changing default UI settings by
+  writing new JSP code, if you want your staging environment's look and feel to
+  change.
 
 Once you've finished planning for your site, it is advised to turn on staging at
 the very beginning of the site creation process. This allows the site creator to

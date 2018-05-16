@@ -5,7 +5,7 @@ select the *Publish to Live* button from the Staging Bar. To configure advanced
 publication options, select the *Switch to Advanced Publication* button. Opening
 the Advanced Publication menu would be useful if you'd like to schedule a time
 to publish your content, edit the pages/content to include in the publication,
-manage permissions, etc. You're presented a custom publication menu, where you
+manage permissions, etc. You're presented a custom publication menu where you
 can perform advanced editing to your publication process.
 
 ## Date
@@ -40,13 +40,11 @@ The Content area lets you select the content to be published. If you choose a
 page to be published from the Pages menu, the portlets and their references are
 always published, even if you specify differently in the Content section.
 
-There are other filtering sub-options for certain content types. Next, you'll
-look at these content filtering options.
-
-You first must choose what content to publish based on date. Specifying a
-date range lets you choose content to publish based on when it was created or
-last modified. Select the option that best fits your workflow. The available
-options are described in more detail below:
+There are other filtering sub-options for certain content types. You first must
+choose what content to publish based on date. Specifying a date range lets you
+choose content to publish based on when it was created or last modified. Select
+the option that best fits your workflow. The available options are described in
+more detail below:
 
 **All:** publishes all content regardless of its creation or last modification
 date.
@@ -100,7 +98,7 @@ delete operations performed for content types. You have two options to manage fo
 deletions:
 
 **Delete Application Data Before Importing:** all data created by the
-application will be deleted before the import process. Ensure you understand the
+application is deleted before the import process. Ensure you understand the
 ramifications of this option before selecting it. Some applications in other
 pages may be referencing this data. This process cannot be undone. If you are
 unsure, complete an export first.

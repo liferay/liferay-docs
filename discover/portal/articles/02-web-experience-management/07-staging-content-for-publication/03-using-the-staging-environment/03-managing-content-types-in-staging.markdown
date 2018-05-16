@@ -8,7 +8,7 @@ article, you can navigate to the Content area of the Advanced Publication menu
 to select content you want to publish. There are options attached to each
 content group (e.g., Web Content) that you can manage too.
 
-![Figure 1: Click the *Change* button for a content group to manage its specific content.](../../../images/web-content-version-history-box.png)
+![Figure 1: Click the *Change* button for a content group to manage its specific content.](../../../../images/web-content-version-history-box.png)
 
 You'll learn about some of these options and their best practices next.
 
@@ -20,20 +20,19 @@ This is represented by
 - Documents and Media files (e.g., images) included in web content.
 - etc.
 
-Staging can exclude some of this content during publication or export to speed
-up the process. These references are validated during the publication process or
-an import, so the images must be published or imported first.
+You can exclude some of this content during publication or export to speed up
+the process. These references are validated during the publication process or an
+import, so the images must be published or imported first.
 
 ## Version History
 
 Web content tends to be frequently updated, often more so than other kinds of
 content. Sometimes this can result in high numbers of versions, into the
-hundreds. This makes it take a long time to publish these articles. @product@
-addresses this issue by letting you choose whether or not to publish the
-*Version History*, or the past versions of the web content articles to be
-published. If you disable this option, only the last **approved** version of
-each web content article is published to Live. This can significantly speed up
-the publication process.
+hundreds. This makes it take a long time to publish these articles. You can
+bypass this issue by choosing to not publish the *Version History* (i.e., the
+past versions of the web content articles to be published). If you disable this
+option, only the last **approved** version of each web content article is
+published to Live. This can significantly speed up the publication process.
 
 You can set this option globally. If you navigate to the Control Panel &rarr;
 *Configuration* &rarr; *System Settings* &rarr; *Web Content Administration*,
@@ -52,7 +51,7 @@ should be careful about publishing previews and thumbnails to the live site.
 Imagine a scenario where a site has approximately 4000 images or documents. If
 the previews and thumbnails are turned on, this could end up in 28000 physical
 files on the disk. If staging is set up to publish the previews and thumbnails,
-this would mean that instead of taking care of the 4000 images, it will process
+this would mean that instead of taking care of the 4000 images, it would process
 seven times more files! If you still want to use the previews on your live
 environment, you can set up that Liferay instance to generate them
 automatically.
@@ -60,8 +59,8 @@ automatically.
 It depends on your environment for whether you can use the publishing of the
 previews and thumbnails. Publishing them is a heavy operation, and you also have
 to transfer the LAR file over the network if you use remote staging. If you
-decide to generate them on the live site, understand that this will take some
-time, and is also a CPU intense operation.
+decide to generate them on the live site, understand that this could take some
+time, since it's a CPU intense operation.
 
 ## Vocabularies
 

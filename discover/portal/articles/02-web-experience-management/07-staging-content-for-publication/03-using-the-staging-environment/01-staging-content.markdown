@@ -53,9 +53,9 @@ publish content.
     the resource needs to go through the workflow process before it can be
     published to the live site.
 
-    ![Figure 1: The staging toolbar indicates whether you're able to publish to the live site.](../../../images/staging-publish-bar.png)
+    ![Figure 1: The staging toolbar indicates whether you're able to publish to the live site.](../../../../images/staging-publish-bar.png)
 
-6.  Click the *Publish to Live* button. A popup window appears with come
+6.  Click the *Publish to Live* button. A popup window appears with
     configuration options for your publication.
     
 7.  Enter the name of your publication.
