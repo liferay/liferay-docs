@@ -103,8 +103,8 @@ Property Name | Type | Default Value | Description
 <a name="parentname"></a>`parentName` | `String` | `null` | The name of the parent theme. It sets the `--parent-name` argument.
 <a name="templateextension"></a>`templateExtension` | `String` | `null` | The extension of the template files, usually `"ftl"` or `"vm"`. It sets the `--template-extension` argument.
 <a name="themename"></a>`themeName` | `String` | `null` | The name of the new theme. It sets the `--name` argument.
-<a name="unstyleddir"></a>`unstyledDir` | `File` | `null` | The directory of [Liferay Frontend Theme Unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-unstyled). It sets the `--unstyled-dir` argument.
-<a name="unstyledfile"></a>`unstyledFile` | `File` | `null` | The JAR file of [Liferay Frontend Theme Unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-unstyled). If `unstyledDir` is specified, this property has no effect. It sets the `--unstyled-dir` argument.
+<a name="unstyleddir"></a>`unstyledDir` | `File` | `null` | The directory of [Liferay Frontend Theme Unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-theme/frontend-theme-unstyled). It sets the `--unstyled-dir` argument.
+<a name="unstyledfile"></a>`unstyledFile` | `File` | `null` | The JAR file of [Liferay Frontend Theme Unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-theme/frontend-theme-unstyled). If `unstyledDir` is specified, this property has no effect. It sets the `--unstyled-dir` argument.
 
 The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
 Moreover, it is possible to use Closures and Callables as values for the
@@ -131,9 +131,9 @@ dependencies {
 
 By default, the plugin creates a configuration called `parentThemes` and adds
 dependencies to the latest released versions of the
-[Liferay Frontend Theme Styled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-styled),
-[Liferay Frontend Theme Unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-unstyled),
-and [Liferay Frontend Theme Classic](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-classic)
+[Liferay Frontend Theme Styled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-theme/frontend-theme-styled),
+[Liferay Frontend Theme Unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-theme/frontend-theme-unstyled),
+and [Liferay Frontend Theme Classic](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-theme/frontend-theme-classic)
 artifacts. It is possible to override this setting and use a specific version of
 the artifacts by manually adding dependencies to the `parentThemes`
 configuration:

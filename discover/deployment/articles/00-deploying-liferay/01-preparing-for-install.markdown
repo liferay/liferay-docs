@@ -135,6 +135,15 @@ maintain its database automatically during upgrades or when various @product@
 plugins that create database tables of their own are installed. This method is
 by far the best way to set up your @product@ database.
 
++$$$
+
+**Warning:** If you're using an Oracle database, use the `ojdbc8.jar` driver 
+library with at least Oracle 12.2.0.1.0 JDBC 4.2 versioning because
+[data truncation issues](https://issues.liferay.com/browse/LPS-79229)
+have been detected reading data from CLOB columns.
+
+$$$
+
 If you choose to set up @product@'s database with the recommended permissions
 described in this section, you can skip to the next section.
 
