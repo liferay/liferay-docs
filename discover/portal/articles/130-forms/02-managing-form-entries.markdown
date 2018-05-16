@@ -20,14 +20,14 @@ it at some point.
 2.  Click the *Actions* (![Actions](../../images/icon-actions.png)) button for
     the form and select *View Entries*.
 
-    ![Figure 8: You can view the entries right in the Forms application. ](../../images/forms-view-entries.png)
+    ![Figure 1: You can view the entries right in the Forms application. ](../../images/forms-view-entries.png)
 
 3.  What if you  have a lot of form fields and you can't see all of the data for
     each entry in the search container? Just click the *Actions*
     (![Actions](../../images/icon-actions.png)) button for the entry and select
     *View*. You'll be able to see all the specifics for that form entry.
 
-    ![Figure 9: You can view a single entry right in the Forms application.](../../images/forms-view-entry.png)
+    ![Figure 2: You can view a single entry right in the Forms application.](../../images/forms-view-entry.png)
 
 Viewing entries is great, but this is serious data we're talking about. You
 might need to get all the entries into a spreadsheet so you can work with them,
@@ -51,7 +51,7 @@ with them? No problem.
     favorite spreadsheet program and confirm that your form entries are entered
     into a spreadsheet for you.
 
-![Figure 10: You can export entries as CSV, XLS, or XML.](../../images/forms-export-csv.png)
+![Figure 3: You can export entries as CSV, XLS, or XML.](../../images/forms-export-csv.png)
 
 +$$$
 
@@ -80,7 +80,7 @@ entries by checking the box next to *Filter and Order*. A trash can icon
 (![Trash](../../images/icon-trash.png)) appears in the top right corner of
 the Form Entries screen. Click it.
 
-![Figure 12: Delete all form entries in one fell swoop.](../../images/forms-delete-entries.png)
+![Figure 4: Delete all form entries in one fell swoop.](../../images/forms-delete-entries.png)
 
 If you just wanted to delete a single entry, you'd just select that entry by checking
 its box, then click the trash can.
