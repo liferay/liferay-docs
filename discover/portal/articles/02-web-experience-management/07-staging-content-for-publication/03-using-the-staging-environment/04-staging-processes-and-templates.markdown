@@ -1,4 +1,4 @@
-# Staging Processes and Templates
+# Staging Processes and Templates [](id=staging-processes-and-templates)
 
 When you make a staging publication, it's captured as a staging process and
 stored for future reference. You can manage these processes by navigating to the

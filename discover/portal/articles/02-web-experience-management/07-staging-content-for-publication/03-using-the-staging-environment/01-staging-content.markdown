@@ -1,4 +1,4 @@
-# Staging Content
+# Staging Content [](id=staging-content)
 
 When you're on the staged site, you have several options in the Staging Bar to
 choose from to help start your staging conquest.

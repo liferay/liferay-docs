@@ -1,4 +1,4 @@
-# Advanced Publication with Staging
+# Advanced Publication with Staging [](id=advanced-publication-with-staging)
 
 Once you've finished your changes on the staged site and want to publish them,
 select the *Publish to Live* button from the Staging Bar. To configure advanced
@@ -8,7 +8,7 @@ to publish your content, edit the pages/content to include in the publication,
 manage permissions, etc. You're presented a custom publication menu where you
 can perform advanced editing to your publication process.
 
-## Date
+## Date [](id=date)
 
 You have two options to choose from for the Date category:
 
@@ -21,7 +21,7 @@ the week every Monday morning without any further intervention.
 Choosing dates for publication gives you the flexibility to plan staging
 schedules in advance.
 
-## Pages
+## Pages [](id=pages)
 
 This area of the menu gives you the option to choose which pages to include when
 you publish. You can choose the page group (Public or Private) to publish by
@@ -34,7 +34,7 @@ processes separately if you want to publish both page groups.
 You can also choose specific pages to publish, and the look and feel of those
 pages.
 
-## Content
+## Content [](id=content)
 
 The Content area lets you select the content to be published. If you choose a
 page to be published from the Pages menu, the portlets and their references are
@@ -91,7 +91,7 @@ See the
 [Managing Content Types in Staging](/discover/portal/-/knowledge_base/7-1/managing-content-types-in-staging)
 article for more information on managing content during the publication process.
 
-## Deletions
+## Deletions [](id=deletions)
 
 This portion of the menu lets you delete portlet metadata before publishing and
 delete operations performed for content types. You have two options to manage for
@@ -106,7 +106,7 @@ unsure, complete an export first.
 **Replicate Individual Deletions:** operations performed for content in the
 staging environment are replicated to the target site.
 
-## Permissions
+## Permissions [](id=permissions)
 
 This area lets you include permissions for the pages and portlets when the
 changes are published. Select the *Publish Permissions* checkbox to enable this

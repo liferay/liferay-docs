@@ -1,4 +1,4 @@
-# Using the Staging Environment
+# Using the Staging Environment [](id=using-the-staging-environment)
 
 After [enabling staging](/discover/portal/-/knowledge_base/7-1/enabling-staging)
 (either Local Live or Remote Live) for a site, you'll notice additional options

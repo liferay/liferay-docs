@@ -1,4 +1,4 @@
-# Managing Content Types in Staging
+# Managing Content Types in Staging [](id=managing-content-types-in-staging)
 
 When managing content in Staging's Advanced Publication menu, there are several
 factors to consider when preparing your content for publication. As described in
@@ -12,7 +12,7 @@ content group (e.g., Web Content) that you can manage too.
 
 You'll learn about some of these options and their best practices next.
 
-## Referenced Content
+## Referenced Content [](id=referenced-content)
 
 This is represented by
 
@@ -24,7 +24,7 @@ You can exclude some of this content during publication or export to speed up
 the process. These references are validated during the publication process or an
 import, so the images must be published or imported first.
 
-## Version History
+## Version History [](id=version-history)
 
 Web content tends to be frequently updated, often more so than other kinds of
 content. Sometimes this can result in high numbers of versions, into the
@@ -42,7 +42,7 @@ administrators must manually uncheck the *Version History* box to publish only
 the latest approved version of web content articles. To change the default
 behavior, enable the checkbox in System Settings.
 
-## Previews and Thumbnails
+## Previews and Thumbnails [](id=previews-and-thumbnails)
 
 Previews and thumbnails are automatically generated for documents. Disabling
 this, though, can greatly increase your publishing speed in some cases. You
@@ -62,7 +62,7 @@ to transfer the LAR file over the network if you use remote staging. If you
 decide to generate them on the live site, understand that this could take some
 time, since it's a CPU intense operation.
 
-## Vocabularies
+## Vocabularies [](id=vocabularies)
 
 When working within a site, a user may select vocabularies from both the current
 site as well as the global site. While this doesn't pose an issue when creating
@@ -82,7 +82,7 @@ templates, document types, and dynamic data lists can also be shared by a parent
 to its child sites. In this case, ensure that the ancestor's dependencies are
 published before the site in question.
 
-## Deletions
+## Deletions [](id=deletions)
 
 The Staging framework gathers deletions (including trashed entities) in a site.
 These deletions can be published to clean up the live site. If it's not a
