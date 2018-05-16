@@ -17,8 +17,8 @@ it at some point.
 1.  From the Menu, navigate back to the *Content* &rarr; *Forms* section of The
     Lunar Resort site.
 
-2.  Click the *Actions* (![Actions](../../images/icon-actions.png)) button and
-    select *View Entries*.
+2.  Click the *Actions* (![Actions](../../images/icon-actions.png)) button for
+    the form and select *View Entries*.
 
     ![Figure 8: You can view the entries right in the Forms application. ](../../images/forms-view-entries.png)
 
@@ -61,7 +61,7 @@ access from the application's Configuration menu
 export the application configuration and its data (forms and form entries). The
 file format for this type of import and export is a LAR file. For more
 information, see the article on
-[importing and exporting application content.](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content).
+[importing and exporting application content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content).
 
 $$$
 
@@ -76,7 +76,7 @@ Liferay database? It's easy to delete all of a form's entries at once.
 Navigate back to the Forms application In The Lunar Resort Content section.
 Click the *Actions* (![Actions](../../images/icon-actions.png)) button next
 to the Guest Survey form and select *View Entries* again. Select all of the
-entries by checking the box next to *All*. A trash can icon
+entries by checking the box next to *Filter and Order*. A trash can icon
 (![Trash](../../images/icon-trash.png)) appears in the top right corner of
 the Form Entries screen. Click it.
 
@@ -89,6 +89,6 @@ If you're worried about deleting everything irrecoverably by accident, don't
 worry. You'll have to confirm the deletion in a dialog box that pops up after
 clicking the trash can.
 
-Now you can create basic forms and mange the entries. Keep reading in this
+Now you can create basic forms and manage the entries. Keep reading in this
 section to learn about the many additional form building features available to
 you.

@@ -106,8 +106,7 @@ published form to targeted users:
 To display the form on a site page in The Lunar Resort site:
 
 1.  Add a page to the site (choose Full Page Application for the page type if
-    you only want the form application on the page). Call it *Guest Survey
-    Page*.
+    you only want the form application on the page). Call it *Guest Survey*.
 
     ![Figure 4: Add a page for guests to view and fill out your new form.](../../images/forms-guest-survey-page.png)
 
