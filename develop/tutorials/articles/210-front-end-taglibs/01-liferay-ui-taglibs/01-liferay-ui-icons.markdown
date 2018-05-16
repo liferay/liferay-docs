@@ -6,7 +6,7 @@ either the `icon`, `iconCssClass`, or `image` attribute. An example of each use
 case is shown below.
 
 The `image` attribute specifies 
-[Liferay UI icons](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/images) 
+[Liferay UI icons](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/images) 
 to use (as defined in the Unstyled theme's `images/common` folder). Here's an
 example configuration:
 

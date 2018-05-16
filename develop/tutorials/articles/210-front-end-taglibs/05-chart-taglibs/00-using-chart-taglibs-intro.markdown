@@ -11,7 +11,7 @@ To use the Liferay-Chart taglib, add the following declaration to your JSP:
     <%@ taglib prefix="liferay-chart" uri="http://liferay.com/tld/chart" %>
 
 The 
-[`com.liferay.frontend.taglib.chart.sample.web` portlet](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-taglib/frontend-taglib-chart-sample-web) 
+[`com.liferay.frontend.taglib.chart.sample.web` portlet](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-taglib/frontend-taglib-chart-sample-web) 
 is referenced throughout this tutorial as an example. It's included 
 out-of-the-box. Open the Control Menu and add the *Chart Sample* portlet from 
 the *Applications* &rarr; *Sample* menu to see it in action. 

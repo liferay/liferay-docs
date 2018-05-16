@@ -95,7 +95,7 @@ If you need to use non-ANSI SQL, it's best to write it in the [`UpgradeProcess` 
 `runSQL` or `alter` methods, along with tokens that allow porting the sentences
 to different databases. 
 
-For example, consider the journal-service module's [`UpgradeSchema` upgrade step class](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/internal/upgrade/v0_0_4/UpgradeSchema.java): 
+For example, consider the journal-service module's [`UpgradeSchema` upgrade step class](https://github.com/liferay/liferay-portal/blob/master/modules/apps/journal/journal-service/src/main/java/com/liferay/journal/internal/upgrade/v0_0_4/UpgradeSchema.java): 
 
     package com.liferay.journal.internal.upgrade.v0_0_4;
 
@@ -326,9 +326,9 @@ needed.
 for that service's availability. To specify that your upgrade is to be executed
 only after that service is available, add an OSGi reference to that service. 
 
-For example, the [`WikiServiceUpgrade` registrator class](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/collaboration/wiki/wiki-service/src/main/java/com/liferay/wiki/upgrade/WikiServiceUpgrade.java)
+For example, the [`WikiServiceUpgrade` registrator class](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/wiki/wiki-service/src/main/java/com/liferay/wiki/upgrade/WikiServiceUpgrade.java)
 references the `SettingsFactory` class. The upgrade step class 
-[`UpgradePortletSettings` upgrade step](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/collaboration/wiki/wiki-service/src/main/java/com/liferay/wiki/upgrade/v1_0_0/UpgradePortletSettings.java)
+[`UpgradePortletSettings` upgrade step](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/wiki/wiki-service/src/main/java/com/liferay/wiki/upgrade/v1_0_0/UpgradePortletSettings.java)
 uses it. Here's the `WikiServiceUpgrade` class:
 
 	@Component(immediate = true, service = UpgradeStepRegistrator.class)
@@ -389,7 +389,7 @@ Here are the target's required attributes:
 - `release.bundle.symbolic.name`: module's bundle symbolic name
 - `release.schema.version`: module's current schema version
 
-For example, the `com.liferay.comment.page.comments.web` module's [`PageCommentsPortlet` class](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/collaboration/comment/comment-page-comments-web/src/main/java/com/liferay/comment/page/comments/web/internal/portlet/PageCommentsPortlet.java)
+For example, the `com.liferay.comment.page.comments.web` module's [`PageCommentsPortlet` class](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/comment/comment-page-comments-web/src/main/java/com/liferay/comment/page/comments/web/internal/portlet/PageCommentsPortlet.java)
 assures upgrading to schema version `1.0.0` by defining the following reference:
 
     @Reference(
