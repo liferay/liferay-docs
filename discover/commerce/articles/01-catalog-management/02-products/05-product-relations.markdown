@@ -2,7 +2,8 @@
 
 Product relations can be used to connect products irrespective of category,
 typically for the purpose of displaying links to one product on the detail page
-of another. Multiple types of product relations are supported:
+of another. Multiple types of product relations are supported, with the
+following types available out of the box:
 
 **Up-sell:** Display products that are comparable to the featured product
 but have a higher sale value.
@@ -18,9 +19,8 @@ product.
 
 As far as the software is concerned, all of these types are identical---the
 difference is all in how you choose to use them. By populating each type with
-different sets of product relations you gain the ability to quickly change
-between sets. Additionally, you can display multiple types---each populated with
-different sets of products---of relations on a single page.
+different product relations, you gain the ability to display multiple sets of
+relations on a single page.
 
 ## Setting Product Relationship Types
 
@@ -63,13 +63,13 @@ in place first.
 
 Follow these steps:
 
-1.  Go to your product display page and place a *Search Results* portlet on the
+1.  Go to your product display page and place a *Search Results* widget on the
     page.
 
-2.  Go to the portlet's ![Options](../../../images/icon-app-options.png) menu and
+2.  Go to the widget's ![Options](../../../images/icon-app-options.png) menu and
     click *Configuration*.
 
 3.  Go to the *Configuration Method* drop-down menu and choose a product
-    relationship type to be displayed in the portlet.
+    relationship type to be displayed in the widget.
 
 4.  Click *Save*.
