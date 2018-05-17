@@ -329,6 +329,21 @@ preconfiguration steps you followed:
     and started automatically after you restart the server. If you run into
     errors on startup and deploy, it may also help to clear the app server's
     `work` and `temp` folders. 
+    
+    +$$$
+    
+    **Note**: The `osgi/state` folder contains OSGi bundle state information. If
+    an OSGi bundle's changes in a patch are internal only and are, therefore,
+    invisible to the OSGi framework, that OSGi bundle, and its state
+    information, is not changed. Hot fixes, for example, may contain in-place
+    changes that do not use the API---the framework cannot detect such changes.
+    Fix Packs may also contain changes that the framework cannot detect. It is
+    recommended, therefore, to delete the `osgi/state` folder after applying fix
+    packs and hot fixes. The ONLY scenarios in which the `osgi/state` folder
+    should deleted, however, are when working in development environments or
+    applying fix packs or hot fixes. 
+    
+    $$$ 
 
 Contact Liferay support if you need additional assistance with the upgrade 
 process. 
