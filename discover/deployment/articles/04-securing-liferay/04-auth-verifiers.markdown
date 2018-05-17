@@ -59,8 +59,7 @@ resolved user ID setting `ThreadLocal`s to the resolved user.
 
 The resolved user can be the user returned by one of the `AuthVerifier`
 instances or a guest user if no instance was able to verify the provided
-credentials.
-
+credentials. 
 `AuthVerifier`s are created by developers, and are processed automatically as
 long as they're registered in the OSGi runtime. Each Auth Verifier gets its own
 configuration in *Control Panel* &rarr; *System Settings* &rarr; *Security*
@@ -83,7 +82,30 @@ This Auth Verifier allows the remote client to authenticate using
 Configure it by providing URL paths that should be authenticated this way. The
 default URLs are `/api/*,/xmlrpc*` for web services. 
 
-## 
+## HTTP Tunnel Extender
+
+As Liferay embraced modularity, this extender was written to enable modules to
+be part of `TunnelServlet`. It maps `TunnelServlet` and
+`TunnelingServletAuthVerifier` to the module servlet context. Configure it by
+setting host IP addresses allowed to tunnel. For more information, please see
+[the properties documentation](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)
+as well as 
+[remote staging](/discover/portal/-/knowledge_base/7-1/enabling-remote-live-staging).
+
+## Image Request Authentication Verifier
+
+When connected to LibreOffice/OpenOffice, the Office process must download
+images from @product@ to render docs with images. To do this, a 
+[JWT Token](https://jwt.io) is created to access the images securely. 
+
+Configure this by setting the Hosts Allowed, URLs included, and URLs excluded if
+necessary. 
+
+## Portal Sessions Auth Verifiers
+
+Enter URL includes here to allow endpoints to verify authentication using an
+existing portal session. 
+
 
 ## Related Topics [](id=related-topics)
 
