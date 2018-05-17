@@ -11,7 +11,7 @@ Any content that has these features can be searched.
 
 ![Figure 1: The Type Facet configuration lists the searchable out-of-the-box asset types.](../../images/search-assets.png)
 
-## What's new with Search?
+## What's new with Search? [](id=whats-new-with-search)
 
 There are lots of new features in the @product-ver@ search functionality.
 
@@ -25,7 +25,7 @@ available, keep in mind the setting you're looking for might be in a slightly
 different location due to the modularization of search in @product-ver@. The
 articles here will help familiarize you with the new look.
 
-![Figure x: The search functionality is now distributed across several portlets.](../../images/search-widgets.png)
+![Figure 2: The search functionality is now distributed across several portlets.](../../images/search-widgets.png)
 
 Search Administration
 : Carry out search administration tasks (like reindexing the search indexes) in
@@ -69,7 +69,7 @@ relevancy scores. For more technical details, see the [Introduction to
 Search](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search)
 developer article.
 
-## Elasticsearch
+## Elasticsearch [](id=elasticsearch)
 
 The default search engine used by @product@ is Elasticsearch, which is backed by
 the Lucene search library. There's an Elasticsearch server embedded in @product@
@@ -84,13 +84,13 @@ guide](/discover/deployment/-/knowledge_base/7-1/installing-a-search-engine).
 Searching is simple and straightforward. Find a search bar (there's one embedded
 in every page by default), enter a term, and click *Enter*.
 
-![Figure 2: There's a search bar embedded on all pages by default.](../../images/search-bar.png)
+![Figure 3: There's a search bar embedded on all pages by default.](../../images/search-bar.png)
 
 A results page is displayed. If there are hits to search engine documents,
 you'll see them as search results in the right hand column. In the left hand
 column you'll see search facets.
 
-![Figure 3: Results are displayed in the Search Results portlet.](../../images/search-results.png)
+![Figure 4: Results are displayed in the Search Results portlet.](../../images/search-results.png)
 
 The search bar, search results, and search facets make up three powerful
 features in the search UI.
@@ -130,7 +130,7 @@ for a longer discussion of relevance.
 
 Facets are a core feature of the Search functionality.
 
-![Figure 4: *Site* and *Type* are two of the facet sets you'll encounter. They let you drill down to results that contain the search terms you entered.](../../images/search-faceted-search.png)
+![Figure 5: *Site* and *Type* are two of the facet sets you'll encounter. They let you drill down to results that contain the search terms you entered.](../../images/search-faceted-search.png)
 
 Facets allow users of the Search application to filter search results. Think of
 facets as buckets that hold similar search results. You might want to see the
