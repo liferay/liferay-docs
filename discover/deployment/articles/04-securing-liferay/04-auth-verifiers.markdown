@@ -86,11 +86,18 @@ default URLs are `/api/*,/xmlrpc*` for web services.
 
 As Liferay embraced modularity, this extender was written to enable modules to
 be part of `TunnelServlet`. It maps `TunnelServlet` and
-`TunnelingServletAuthVerifier` to the module servlet context. Configure it by
-setting host IP addresses allowed to tunnel. For more information, please see
+`TunnelingServletAuthVerifier` to the module servlet context. Modules with
+`Http-Tunnel` in the manifest can make use of the Tunnel Servlet, and can access
+the API via `/o/_module_/api/liferay/do`. 
+
+Configure it by setting host IP addresses allowed to tunnel. For more
+information, please see 
 [the properties documentation](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)
 as well as 
 [remote staging](/discover/portal/-/knowledge_base/7-1/enabling-remote-live-staging).
+
+Note that this is not a recommended way to make use of remote APIs; it's far
+better to use remote services like JSON. 
 
 ## Image Request Authentication Verifier
 
