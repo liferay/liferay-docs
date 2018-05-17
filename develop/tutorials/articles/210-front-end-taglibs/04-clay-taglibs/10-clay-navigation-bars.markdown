@@ -10,7 +10,7 @@ white text (inverted).
 Default navigation bar:
 
     <clay:navigation-bar 
-        items="<%= navigationBarsDisplayContext.getNavigationItems() %>" 
+        navigationItems="<%= navigationBarsDisplayContext.getNavigationItems() %>" 
     />
 
 ![Figure 1: You can include navigation bars in your apps.](../../../images/clay-taglib-nav-bars.png)
@@ -19,7 +19,7 @@ Inverted navigation bar (set `inverted` attribute to `true`):
 
     <clay:navigation-bar 
         inverted="<%= true %>" 
-        items="<%= navigationBarsDisplayContext.getNavigationItems() %>" 
+        navigationItems="<%= navigationBarsDisplayContext.getNavigationItems() %>" 
     />
 
 ![Figure 2: Navigation bars can be inverted if you prefer.](../../../images/clay-taglib-nav-bars-inverted.png)
