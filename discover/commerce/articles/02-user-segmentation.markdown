@@ -7,8 +7,16 @@ targeted to appropriate segments.
 Segments can be defined in a variety of ways. You can select users individually,
 by role, or select whole organizations or user groups to include. You are not
 limited to one type; for example you could create a segment that consists of the
-members of an organization plus a number of other users that you designate
-individually.
+members of an organization plus a number of other users that you designate by
+role.
+
++$$$
+
+User segments are not static. At any point, you can return to a segment and make
+changes to its membership. Any changes you make will be applied to any price
+lists or other features associated with the segment.
+
+$$$
 
 ## Creating a User Segment [](id=creating-a-user-segment)
 
@@ -24,10 +32,12 @@ Follow these steps:
     **Key:** A unique identifier for referring to this segment programmatically.
     This field is filled automatically, so most users can safely leave it alone.
 
-    **Priority:** In most cases, priority establishes the order in which
-    will be listed on a page. Lower numbers come first.
+    **Priority:** If a user is in more than one segment and a conflict occurs,
+    the segment with the higher priority is used. Segments are prioritized in
+    numerical order.
 
-    **Active:** The user segment will be unusable unless this box is checked.
+    **Active:** Uncheck this box to disable the segment and treat its users as
+    if they were not members.
 
 4.  Click *Save*.
 
@@ -46,4 +56,15 @@ add users:
 
 4.  Set a priority for the criterion and hit *Save*.
 
-5.  To add additional criteria, repeat steps 1 through 4. 
+5.  To add additional criteria, repeat steps 1 through 4, selecting a different
+    type in step 2.
+
++$$$
+
+Note: When you create a user segment with more than one criteria, the criteria
+are combined inclusively. For example, if you make a user segment including
+members of the organization "Procurement" in addition to the user group
+"Purchasing Managers", the resulting segment would every user who is a member of
+*either* group. It would not be limited to users who are members of *both*.
+
+$$$

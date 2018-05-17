@@ -1,12 +1,41 @@
 # Pricing [](id=pricing)
 
-On its most basic level, pricing is handled in the catalog [link]. When all you
-want to do is assign one price to one SKU, that's all you need. But sometimes
-you may want to do something a little more sophisticated, and that's where
-*discounts* and *price lists* are useful. The basic distinction between these
-two features is simple: discounts are special prices only for specified periods
-of time, while price lists offer discounts only to specified groups of
-customers.
+On its most basic level, pricing is handled in the catalog (see
+[SKUs](web/liferay-emporio/documentation/-/knowledge_base/7-1/adding-options-to-products#Pricing)).
+When all you want to do is assign one price to one SKU, that's all you need. But
+sometimes you may want to do something a little more sophisticated, and that's
+where *discounts* and *price lists* are useful.
+
+A **Price List** allows you to change a product's base price exclusively for
+members of a specified user segment.
+
+A **Discount** does not change a product's base price but instead applies
+a modifier to it.
+
++$$$
+
+Should you use a price list or a discount to adjust your products prices?
+
+It depends. If you want to offer a special price exclusively to particular group
+of customers, and you want to be able to manually set the adjusted price for
+each product individually, then you should use a price list.
+
+If you want to apply a blanket modifier to a group of products, however---for
+instance, 10% off everything in the catalog, or $10 off everything in
+a particular category---then you should use a discount.
+
+If you want limit the number of products that can be bought for the adjusted
+price, or create a schedule so that prices automatically revert to normal at
+a given time, then you should use a discount.
+
+
+
+
+
+
+The basic distinction between these two features is simple: discounts are
+special prices only for specified periods of time, while price lists offer
+discounts only to specified groups of customers.
 
 If you want to offer a special price on a certain product, but only to customers
 who also make other specified purchases, look into Grouped Products [link].
