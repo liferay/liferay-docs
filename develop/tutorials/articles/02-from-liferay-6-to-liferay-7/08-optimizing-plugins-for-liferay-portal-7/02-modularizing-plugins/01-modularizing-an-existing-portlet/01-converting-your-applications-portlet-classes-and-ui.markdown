@@ -220,7 +220,7 @@ Here are the steps for creating the folder structure:
         resource.actions.configs=resource-actions/default.xml
 
     As an example, see the Directory application's
-    [`default.xml`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/directory/directory-web/src/main/resources/resource-actions/default.xml).
+    [`default.xml`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/directory/directory-web/src/main/resources/resource-actions/default.xml).
 
     Note that 
     [the permissions API has changed in 7.1](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions);
