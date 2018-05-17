@@ -9,28 +9,28 @@ and have an
 [Indexer class](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search#indexers).
 Any content that has these features can be searched. 
 
-<!--REPLACE[Figure 1: There are many searchable out-of-the-box asset types.](../../images/search-assets.png)-->
+![Figure 1: The Type Facet configuration lists the searchable out-of-the-box asset types.](../../images/search-assets.png)
 
 ## What's new with Search?
 
-There are lots of new features in the default search functionality in.
+There are lots of new features in the @product-ver@ search functionality.
 
 Modularized Search Functionality
 : Users of search in prior versions will think of all the search functionality
 existing in one place: the Search portlet. While the search portlet is still
-available out of the box and embedded on each page in the default theme, each
-separate feature is available as its own portlet, so you can drag and drop your
-way to the perfectly customized search page. While all of the search
-configurations that existed in the previous version are still available, keep in
-mind the setting you're looking for might be in a slightly different location
-due to the modularization of search in @product-ver@. The articles here will help
-familiarize you with the new look.
+available out of the box, each separate feature is available as its own portlet,
+so you can drag and drop your way to the perfectly customized search page. While
+all of the search configurations that existed in the previous version are still
+available, keep in mind the setting you're looking for might be in a slightly
+different location due to the modularization of search in @product-ver@. The
+articles here will help familiarize you with the new look.
 
-<!--SCREENSHOT[Figure x: Search is now distributed across several portlets.](../../images/search-portlets.png)-->
+![Figure x: The search functionality is now distributed across several portlets.](../../images/search-widgets.png)
 
 Search Administration
 : Carry out search administration tasks (like reindexing the search indexes) in
-the Search Administration application in the Control Panel.
+the Search administration application in the Control Panel (Control Panel
+&rarr; Configuration &rarr; Search).
 
 Default/Customizable Search Pages
 : There's a pre-configured search page template you can use to get a sensible
@@ -44,9 +44,11 @@ Multiple Facet Selection
 refining by selecting as many facets as necessary. Previously, only one facet
 could be used at a time.
 
-Despite these changes, the old way of doing search, inside one portlet, is still
-enabled by default. The default embedded search portlet still exists on each
-page.
+To learn mroe about using these new features, see the remaining documentation in
+this section. And keepin mind that despite the modularization of the search
+functionality, the old way of doing search, inside one portlet, is still just
+one checkbox away (located in Control Panel &rarr; Configuration &rarr; System
+Settings &rarr; Search &rarr; Search Web). 
 
 ## Searching the Index, not the Database [](id=searching-the-index-not-the-database)
 
@@ -82,13 +84,13 @@ guide](/discover/deployment/-/knowledge_base/7-1/installing-a-search-engine).
 Searching is simple and straightforward. Find a search bar (there's one embedded
 in every page by default), enter a term, and click *Enter*.
 
-<!--REPLACE[Figure 2: There's a search bar embedded on all pages by default.](../../images/search-bar.png)-->
+![Figure 2: There's a search bar embedded on all pages by default.](../../images/search-bar.png)
 
 A results page is displayed. If there are hits to search engine documents,
 you'll see them as search results in the right hand column. In the left hand
 column you'll see search facets.
 
-<!-- REPLACE[Figure 3: Search results can be displayed in a maximized view of the Search portlet itself,](../../images/search-results.png)-->
+![Figure 3: Results are displayed in the Search Results portlet.](../../images/search-results.png)
 
 The search bar, search results, and search facets make up three powerful
 features in the search UI.
@@ -128,7 +130,7 @@ for a longer discussion of relevance.
 
 Facets are a core feature of the Search functionality.
 
-<!--REPLACE[Figure 4: *Sites* and *Asset Entries* are two of the facet sets you'll encounter. They let you drill down to results that contain the search terms you entered.](../../images/search-faceted-search.png)-->
+![Figure 4: *Site* and *Type* are two of the facet sets you'll encounter. They let you drill down to results that contain the search terms you entered.](../../images/search-faceted-search.png)
 
 Facets allow users of the Search application to filter search results. Think of
 facets as buckets that hold similar search results. You might want to see the
