@@ -24,8 +24,8 @@ Follow these steps:
     **Key:** A unique identifier for referring to this segment programmatically.
     This field is filled automatically, so most users can safely leave it alone.
 
-    **Priority:** Priority establishes the order in which segments will be
-    listed on a page. Lower numbers come first.
+    **Priority:** In most cases, priority establishes the order in which
+    will be listed on a page. Lower numbers come first.
 
     **Active:** The user segment will be unusable unless this box is checked.
 

@@ -104,5 +104,3 @@ to cover tax. See
 for details on creating and using tax categories.
 
 **Tax Exempt:** If this box is checked, no tax will be charged on this product.
-
-**Telecommunication, Broadcasting or Electronic Services:**
