@@ -26,8 +26,8 @@ above, 1920x1080 is a value.
 
 Follow these steps to create a specification group:
 
-1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Catalog* and open the
-    *Specification Groups* tab. 
+1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Catalog*, open the
+    *Specifications* tab and then the *Specification Groups* sub-tab. 
 
 2.  Then click on the ![Add](../../images/icon-add.png) button and fill in
     the following fields:
@@ -49,8 +49,8 @@ Once the form is complete, click *Save*.
 
 Follow these steps to create a specification label:
 
-1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Catalog* and open the
-    *Specification Labels* tab. 
+1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Catalog*, open the
+    *Specifications* tab and then the *Specification Labels* sub-tab.
 
 2.  Click on the ![Add](../../images/icon-add.png) button and fill in
     the following fields:
