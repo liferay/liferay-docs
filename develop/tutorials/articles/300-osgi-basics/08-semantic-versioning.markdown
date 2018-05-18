@@ -58,9 +58,9 @@ Add it to your Gradle build configuration and execute the following command:
     ./gradlew baseline
 
 See the
-[Baseline Gradle Plugin](/develop/reference/-/knowledge_base/7-1/baseline-gradle-plugin)
+[Baseline Gradle Plugin](/develop/reference/-/knowledge_base/7-0/baseline-gradle-plugin)
 article for configuration details. This plugin is not provided in
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 by default.
 
 When you run the `baseline` command, the plugin baselines your new module
