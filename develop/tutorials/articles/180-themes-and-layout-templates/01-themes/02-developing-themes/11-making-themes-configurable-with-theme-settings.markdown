@@ -1,18 +1,17 @@
 # Making Configurable Theme Settings [](id=making-configurable-theme-settings)
 
-Every time you want to make a change to a theme, you have to make the change and 
-then deploy it to your server. For a Site Administrator, this process can be 
-tedious, especially if they just request a minor change to a theme, such as a 
-banner color change. What if they decide they want to change it back? They have 
-to go through the process again. For larger theme changes, this development 
-process is unavoidable, but for smaller changes, there's a better way: 
-configurable theme settings. The Theme Developer can control the visibility and 
-value of theme elements and provide variations of theme elements for the Site 
-Administrator to configure and choose from. Changes can be made on the fly 
-through the control panel. No back and forth is needed. This tutorial covers how 
-to create configurable theme settings for your theme. 
+Every time you want to make a change to a theme, you must make the change and
+then deploy it to your server. For a Site Administrator, this process is
+tedious, especially if it's a minor change to a theme, such as a banner color
+change. What happens when it must be changed back? It must be deployed again.
+For larger theme changes, this process is unavoidable, but for smaller changes,
+there's a better way: configurable theme settings. The Theme Developer can
+control the visibility and value of theme elements and provide variations of
+theme elements for the Site Administrator to configure and choose in the Control
+Panel. This tutorial covers how to create configurable theme settings for your
+theme. 
 
-Follow these steps to create configurable theme settings:
+Follow these steps:
 
 1.  Open your theme's `WEB-INF/liferay-look-and-feel.xml` file, or create it if 
     it doesn't exist, and follow the pattern below to nest a `<setting/>` 
@@ -67,7 +66,7 @@ Follow these steps to create configurable theme settings:
         <#assign my_variable_name =
         getterUtil.getBoolean(themeDisplay.getThemeSetting("theme-setting-key"))/>
 
-    Strings (a text input or textarea input):
+    Strings (a text input or text area input):
 
         <#assign my_variable_name =
         getterUtil.getString(themeDisplay.getThemeSetting("theme-setting-key"))/>
