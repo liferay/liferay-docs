@@ -11,45 +11,6 @@ Any content that has these features can be searched.
 
 ![Figure 1: The Type Facet configuration lists the searchable out-of-the-box asset types.](../../images/search-assets.png)
 
-## What's new with Search? [](id=whats-new-with-search)
-
-There are lots of new features in the @product-ver@ search functionality.
-
-Modularized Search Functionality
-: Users of search in prior versions will think of all the search functionality
-existing in one place: the Search portlet. While the search portlet is still
-available out of the box, each separate feature is available as its own portlet,
-so you can drag and drop your way to the perfectly customized search page. While
-all of the search configurations that existed in the previous version are still
-available, keep in mind the setting you're looking for might be in a slightly
-different location due to the modularization of search in @product-ver@. The
-articles here will help familiarize you with the new look.
-
-![Figure 2: The search functionality is now distributed across several portlets.](../../images/search-widgets.png)
-
-Search Administration
-: Carry out search administration tasks (like reindexing the search indexes) in
-the Search administration application in the Control Panel (Control Panel
-&rarr; Configuration &rarr; Search).
-
-Default/Customizable Search Pages
-: There's a pre-configured search page template you can use to get a sensible
-default search page up and running.
-
-Advanced Search Syntax
-: Use Elasticsearch's Query String syntax to create advanced search queries.
-
-Multiple Facet Selection
-: Narrow search results using Facets. In @product-ver@, continue
-refining by selecting as many facets as necessary. Previously, only one facet
-could be used at a time.
-
-To learn mroe about using these new features, see the remaining documentation in
-this section. And keepin mind that despite the modularization of the search
-functionality, the old way of doing search, inside one portlet, is still just
-one checkbox away (located in Control Panel &rarr; Configuration &rarr; System
-Settings &rarr; Search &rarr; Search Web). 
-
 ## Searching the Index, not the Database [](id=searching-the-index-not-the-database)
 
 @product@ stores its data in a database. Instead of directly searching the
