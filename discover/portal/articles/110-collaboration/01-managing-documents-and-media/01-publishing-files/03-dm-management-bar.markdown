@@ -2,7 +2,7 @@
 
 The Documents and Media *Management Bar* is where people that manage documents 
 go to unwind after a long day at work. Just kidding. The Management Bar, as its 
-name implies, contains tools that let you manage the files and folders in your 
+name implies, contains tools for managing the files and folders in your 
 Document Library. It appears above the files and folders in Documents and Media. 
 
 ![Figure 1: The Management Bar is a great place to hang out if you're managing documents.](../../../../images/dm-management-bar.png)
@@ -16,8 +16,8 @@ rest of the Management Bar.
 
 **Note:** If a Document Library contains more items than it can display at once, 
 you can use the navigation tool that appears at the bottom of the window to 
-either switch your view to another page or configure the page to display more 
-items per page. 
+switch your view to another page or configure the page to display more items
+per page. 
 
 $$$
 
@@ -64,15 +64,15 @@ of items. It also has these buttons:
 ## Finding and Arranging Items [](id=finding-and-arranging-items)
 
 The Management Bar also contains tools that help you locate and arrange items in 
-the Document Library. The most prominent of these tools is the *Search* bar. It 
-lets you find files by keywords. 
+the Document Library. The most prominent of these tools is the *Search* bar, where 
+you can find files by keywords. 
 
 To the left of the Search bar, the Sort button 
-(![Sort](../../../../images/icon-sort.png)) lets you arrange items in ascending 
+(![Sort](../../../../images/icon-sort.png)) arranges items in ascending 
 or descending order. 
 
-You can also arrange items via the *Filter and Order* selector. It lets you 
-filter items for display via these criteria: 
+You can also arrange items via the *Filter and Order* selector using these
+criteria: 
 
 -   **All:** Shows all of the current folder's immediate subfolders and files 
     (default).

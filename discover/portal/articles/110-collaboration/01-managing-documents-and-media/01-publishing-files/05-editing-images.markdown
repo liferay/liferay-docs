@@ -1,11 +1,10 @@
 # Editing Images [](id=editing-images)
 
 Editing and re-uploading images when you only need to apply simple edits is 
-tedious. @product@ contains a simple built-in image editor for exactly this 
-reason. To access the image editor, go to the Documents and Media repository and 
-locate the image you want to edit. Click the Actions icon 
-(![Actions](../../../../images/icon-actions.png)) and select *Edit With Image 
-Editor*. 
+tedious. Docs & Media contains a simple built-in image editor for exactly this 
+reason. To access the image editor, locate the image you want to edit. Click
+the Actions icon (![Actions](../../../../images/icon-actions.png)) and select
+*Edit With Image Editor*. 
 
 You can also access the image editor when selecting an image to insert in 
 content (i.e., via an item selector). Anywhere an image is, you can edit it. For 

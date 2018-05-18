@@ -10,9 +10,8 @@ keep track of changes.
 Unless you're using
 [Liferay Sync](/discover/portal/-/knowledge_base/7-1/using-liferay-sync-on-your-desktop)
 or a 
-[local drive mapped to the file's WebDAV URL](https://www.liferay.com/), 
-you'll typically follow these steps to edit a Document Library file from your 
-machine: 
+[local drive mapped to the file's WebDAV URL](/discover/portal/-/knowledge_base/7-1/desktop-access-to-documents-and-media), 
+follow these steps to edit a Document Library file from your machine: 
 
 1.  Checkout the file by clicking its Actions icon 
     (![Actions](../../../../images/icon-actions.png)) &rarr; *Checkout*. Upon 
@@ -29,7 +28,7 @@ machine:
 
 5.  From the file's Edit screen, select the edited local file for upload. 
 
-6.  Click *Save and Check In*. In the popup that appears, select whether your 
+6.  Click *Save and Check In*. In the pop-up that appears, select whether your 
     change is a major or minor version, add any version notes that you need, and 
     click *Save*. 
 
@@ -56,10 +55,13 @@ Each file version has an Actions menu
 (![Actions](../../../../images/icon-actions.png)) that you can use to perform 
 the following actions on that file version:
 
--   **Download**: Download the selected version of the file to your machine. 
--   **View**: View the file entry screen for the selected version of the file. 
--   **Revert**: Restores the selected file version as a new major file version. 
--   **Delete Version**: Remove the file version from the Document Library. All 
-    other file versions remain intact. 
+**Download**: Download the selected version of the file to your machine. 
+
+**View**: View the file entry screen for the selected version of the file. 
+
+**Revert**: Restores the selected file version as a new major file version. 
+
+**Delete Version**: Remove the file version from the Document Library. All 
+other file versions remain intact. 
 
 ![Figure 1: The version history actions let you inspect, delete, and reinstate file versions.](../../../../images/dm-file-version-actions.png)
