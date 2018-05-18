@@ -1,4 +1,4 @@
-# Publishing Files 
+# Publishing Files [](id=publishing-files-site)
 
 Once your Document Library contains files, you may want to publish them in your
 site. Here are some ways to publish files:
