@@ -103,10 +103,13 @@ documenting. -Cody -->
     documentation residing in an article hosted on the `master` branch) cannot
     be validated and, therefore, will not be checked.
 
-    You can check legacy links that are already published to LDN by adding the
-    `-Dlegacy.links=true` parameter to your `check-links` execution. This checks
-    all links pointing to articles in the current branch **and** all legacy
-    links hosted on LDN.
+    The following options are available for the `check-links` task:
+
+    - `-Dapi.links`: Set this to `true` to check API links hosted on
+      [docs.liferay.com](https://docs.liferay.com/).
+    - `-Dlegacy.links`: Set this to `true` to check legacy links already
+      published to LDN. This checks all links pointing to articles in the
+      current branch **and** all legacy links hosted on LDN.
 
 -   `dist-article-ce`: Creates a ZIP file for importing the specified article
     (``-Darticle=...``), its images, and supporting structure to a Knowledge

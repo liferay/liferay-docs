@@ -1,19 +1,7 @@
-<?xml version="1.0"?> 
+<?xml version="1.0"?>
 
-<!-- 
-Use the targets in this script to convert the separate markdown chapter files of
-our documents into complete markdown, html, odt, and epub files. 
-
-Remember to use the script in the root directory of the document to be 
-converted, NOT THIS ONE.
-
-For example, use the "ant markdown-to-all" command from the
-documentation/trunk/userGuide directory to convert the userGuide into complete
-English markdown, html, odt, and epub documents.
- -->
-
-<project name="Markdown Document Conversion" default="echo-props" basedir=".">
-	<property name="project.dir" value=".." />
+<project name="Dev Site Documentation Management" basedir=".">
+	<property name="project.dir" value="../.." />
 
 	<path id="lib.classpath">
 		<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -24,25 +12,24 @@ English markdown, html, odt, and epub documents.
 		<path refid="lib.classpath" />
 	</path>
 
-    <property environment="env" />
+	<property environment="env" />
 
-    <property file="../build.${USERNAME}.properties" />
-    <property file="../build.${user.name}.properties" />
-    <property file="../build.${env.COMPUTERNAME}.properties" />
-    <property file="../build.${env.HOST}.properties" />
-    <property file="../build.${env.HOSTNAME}.properties" />
-    <property file="../build.properties" />
+	<property file="../../build.${USERNAME}.properties" />
+	<property file="../../build.${user.name}.properties" />
+	<property file="../../build.${env.COMPUTERNAME}.properties" />
+	<property file="../../build.${env.HOST}.properties" />
+	<property file="../../build.${env.HOSTNAME}.properties" />
+	<property file="../../build.properties" />
 
-    <!-- property "doc.dir" will be specified in the build.xml of the document root directory. -->
-    <property name="lang" value="en"/>
-    <property name="build.dir" value="./build"/>
-    <property name="dist.dir" value="./dist"/>
-
-    <property name="pandoc.app" location="/home/${user.name}/.cabal/bin/pandoc"/>
+	<property name="build.dir" value="./build"/>
+	<property name="dist.dir" value="./dist"/>
+	<property name="metadata.filename" value=".METADATA"/>
+	<property name="temp.dir" value="temp"/>
+	<property name="temp.dir2" value="prepare-temp"/>
 
 	<!-- taskdefs -->
 
-	<taskdef name="checkimgs" classname="com.liferay.documentation.util.CheckImagesTask">
+	<taskdef name="checkarticleimgssite" classname="com.liferay.documentation.util.CheckArticleImagesTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -53,7 +40,7 @@ English markdown, html, odt, and epub documents.
 		</classpath>
 	</taskdef>
 
-	<taskdef name="checkdocprops" classname="com.liferay.documentation.util.CheckDocPropsTask">
+	<taskdef name="checkimgssite" classname="com.liferay.documentation.util.CheckImagesTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -64,7 +51,7 @@ English markdown, html, odt, and epub documents.
 		</classpath>
 	</taskdef>
 
-	<taskdef name="cleanimgs" classname="com.liferay.documentation.util.CleanImagesTask">
+	<taskdef name="checkintros" classname="com.liferay.documentation.util.CheckIntrosTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -75,7 +62,7 @@ English markdown, html, odt, and epub documents.
 		</classpath>
 	</taskdef>
 
-	<taskdef name="numberimages" classname="com.liferay.documentation.util.NumberImagesTask">
+	<taskdef name="distdiff" classname="com.liferay.documentation.util.DistDiffTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -86,7 +73,7 @@ English markdown, html, odt, and epub documents.
 		</classpath>
 	</taskdef>
 
-	<taskdef name="stripheaderids" classname="com.liferay.documentation.util.StripHeaderIdsTask">
+	<taskdef name="numberimgssite" classname="com.liferay.documentation.util.NumberImagesTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -96,420 +83,459 @@ English markdown, html, odt, and epub documents.
 			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
 		</classpath>
 	</taskdef>
-	
-	<taskdef name="concatmarkdown" classname="com.liferay.documentation.util.ConcatMarkdown">
+
+	<taskdef name="concatmarkdown" classname="com.liferay.documentation.util.ConcatMarkdownTask">
 	  <classpath>
 	    <fileset dir="${project.dir}/lib" includes="*.jar" />
-	    
+
 	    <fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
 	  </classpath>
+
 	</taskdef>
+
 
 	<!-- targets -->
 
-    <target name="display-pandoc-version">
-        <exec executable="${pandoc.app}">
-            <arg value="-v" />
-        </exec>
-    </target>
-
-    <target name="echo-props">
-        <echo message="pandoc.app -> ${pandoc.app}"/>
-    </target>
-
-	<target name="check-images" description="verifies all images referenced in markdown files for a document or chapter">
-		<checkimgs docdir="${doc.dir}" lang="${lang}" chapter="${chapter}">
-		</checkimgs>
+	<target name="add-article-to-temp" depends="process-article-to-temp, check-images-dist" description="Processes the article (-Darticle=...) and its parent article structure, adding the target article and all related parent articles and images to temp/">
 	</target>
 
-	<target name="check-doc-props" description="checks that all document dirs have a valid doc.properties file">
-		<checkdocprops lang="${lang}" basedir="${project.dir}">
-		</checkdocprops>
+	<target name="article-to-html" depends="prepare, check-article-images" description="Converts a single Markdown article to an HTML file.">
+		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
+		<java
+			classname="com.liferay.documentation.util.MarkdownToHtml"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${article}"/>
+			<arg value="${build.dir}/${article}.html"/>
+		</java>
 	</target>
 
-    <target name="clean-all" description="deletes residual directories">
-        <echo message="... deleting build directory"/>
-        <delete dir="${build.dir}"/>
-        <delete dir="${dist.dir}"/>
-    </target>
+	<target name="article-to-html-dxp" depends="prepare, check-article-images-dxp" description="Converts a single Markdown DXP article to an HTML file.">
+		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
+		<java
+			classname="com.liferay.documentation.util.MarkdownToHtml"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${article}"/>
+			<arg value="${build.dir}/${article}.html"/>
+		</java>
+	</target>
 
-    <target name="clean-dist" description="deletes dist directory">
+	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
+		<java
+			classname="com.liferay.documentation.util.CheckHeaders"
+			classpathref="project.classpath"
+			fork="true"
+			failonerror="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="ce"/>
+		</java>
+	</target>
+
+	<target name="check-headers-dist" description="Check the headers of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp">
+		<java
+			classname="com.liferay.documentation.util.CheckHeaders"
+			classpathref="project.classpath"
+			fork="true"
+			failonerror="true"
+		>
+			<arg value="${doc.dir}/${temp.dir}"/>
+			<arg value="dist"/>
+		</java>
+	</target>
+
+	<target name="check-headers-dxp" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
+		<java
+			classname="com.liferay.documentation.util.CheckHeaders"
+			classpathref="project.classpath"
+			fork="true"
+			failonerror="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="dxp"/>
+		</java>
+	</target>
+
+	<target name="concat-markdown" description="Concatenates the Markdown files in a specific folder for preparation to convert to other formats.">
+	  <concatmarkdown docdir="${doc.dir}">
+	  </concatmarkdown>
+	  <move file="./book.markdown" tofile="${dist.dir}/book/text/${doc.dir}.markdown" />
+	  <copy todir="${dist.dir}/images">
+            <fileset dir="images" includes="*.*"/>
+        </copy>
+	</target>
+
+	<target name="check" depends="check-images, check-intros, number-headers, number-images, check-headers" description="Checks for necessary requirements before CE distribution.">
+
+	</target>
+
+	<target name="check-dxp" depends="check-images-dxp, check-intros-dxp, number-headers-dxp, number-images-dxp, check-headers-dxp" description="Checks for necessary requirements before DXP distribution.">
+
+	</target>
+
+	<target name="check-article-images" description="Verifies all images referenced in a single Markdown article.">
+		<checkarticleimgssite docdir="${doc.dir}" article="${article}" imagedir="images">
+		</checkarticleimgssite>
+	</target>
+
+	<target name="check-article-images-dxp" description="Verifies all images referenced in a single Markdown article.">
+		<checkarticleimgssite docdir="${doc.dir}" article="${article}" imagedir="images-dxp">
+		</checkarticleimgssite>
+	</target>
+
+	<target name="check-images" description="Verifies all images referenced in a project's Markdown articles found in ${doc.dir}/articles.">
+		<checkimgssite docdir="${doc.dir}" producttype="ce">
+		</checkimgssite>
+	</target>
+
+	<target name="check-images-dist" description="Verifies all images referenced in a project's Markdown articles.">
+		<mkdir dir="${temp.dir}/images"/>
+		<checkimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist" resolveimages="true">
+		</checkimgssite>
+	</target>
+
+	<target name="check-images-dxp" description="Verifies all images referenced in a project's Markdown articles found in ${doc.dir}/articles.">
+		<checkimgssite docdir="${doc.dir}" producttype="dxp">
+		</checkimgssite>
+	</target>
+
+	<target name="check-intros" description="Verifies all Learning Path article folders are accompanied with an introduction Markdown article.">
+		<checkintros docdir="${doc.dir}">
+		</checkintros>
+	</target>
+
+	<target name="check-intros-dist" description="Verifies all Learning Path article folders are accompanied with an introduction Markdown article.">
+		<checkintros docdir="${doc.dir}/${temp.dir}">
+		</checkintros>
+	</target>
+
+	<target name="check-intros-dxp" description="Verifies all Learning Path article folders are accompanied with an introduction Markdown article.">
+		<property name="base.filepath" value="${doc.dir}" />
+		<mkdir dir="${temp.dir}"/>
+		<copy todir="${temp.dir}">
+			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+				<include name="articles/**/*.markdown"/>
+				<include name="articles-dxp/**/*.markdown"/>
+			</fileset>
+		</copy>
+		<move todir="${temp.dir}/articles" failonerror="false">
+			<fileset dir="${temp.dir}/articles-dxp"/>
+		</move>
+		<checkintros docdir="${doc.dir}/${temp.dir}">
+		</checkintros>
+		<delete dir="${temp.dir}"/>
+	</target>
+
+    <target name="clean-dist" description="Deletes dist directory">
         <echo message="... deleting dist directory"/>
         <delete dir="${dist.dir}"/>
     </target>
 
-    <target name="clean-images" description="removes unused images for a document">
-	<cleanimgs docdir="${doc.dir}" lang="${lang}">
-	</cleanimgs>
+    <target name="clean-images" description="Deletes images from ${doc.dir}/images and ${doc.dir}/images-dxp that are not referenced in any of the markdown files in any subdirectory of ${doc.dir}/articles and ${doc.dir}/articles-dxp">
+			<java
+				classname="com.liferay.documentation.util.CleanImages"
+				classpathref="project.classpath"
+				failonerror="true"
+				fork="true"
+			>
+				<arg value="${doc.dir}"/>
+			</java>
+	</target>
+
+    <target name="clean-temp">
+        <delete dir="${temp.dir}"/>
     </target>
 
-    <target name="clean-lang" description="deletes build/${lang} directory">
-        <echo message="... deleting language specific residual directories"/>
-        <delete dir="${build.dir}/${lang}"/>
-        <delete dir="${dist.dir}/${lang}"/>
-    </target>
-
-    <target name="prepare" description="creates build/${lang} directory">
-        <echo message="... creating build/${lang} directory"/>
-        <mkdir dir="${build.dir}/${lang}"/>
-        <copy todir="${build.dir}/images">
-            <fileset dir="./${lang}/images"/>
-        </copy>
-    </target>
-
-    <target name="prepare-dist" depends="check-images, number-headers, number-images-dir" description="numbers the headers and images in the files, creates dist directory, copies images and overriding with language specific images">
-        <echo message="... creating ${dist.dir}/${lang} directory"/>
-        <mkdir dir="${dist.dir}/${lang}"/>
-        <copy todir="${dist.dir}/${lang}/images">
-            <fileset dir="images" includes="*.*"/>
-        </copy>
-        <copy overwrite="true" todir="${dist.dir}/${lang}/images">
-            <fileset dir="${lang}/images" includes="*.*"/>
-        </copy>
-    </target>
-
-    <target name="dist" depends="clean-lang, prepare-dist, concat-markdown-files" description="prepares document zip file for asset import">
-        <property file="./doc.properties" />
-        <copy todir="${dist.dir}/${lang}">
-		    <fileset dir="${build.dir}/${lang}">
-                <include name="${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
-            </fileset>
-        </copy>
-        <zip destfile="${dist.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.zip">
-            <fileset dir="${dist.dir}/${lang}" includes="images/*.*"/>
-            <fileset dir="${dist.dir}/${lang}" includes="${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
-        </zip>
-    </target>
-
-    <target name="concat-markdown-files" depends="prepare" description="concatenates multiple markdown files into a single one">
-        <property file="./doc.properties" />
-        <echo message="... concatenating markdown files for ${product.name} ${product.version}-${doc.name} (${lang})"/>
-        <concat destfile="./${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown" fixlastline = "yes">
-            <fileset dir="./${lang}" casesensitive="yes">
-                <include name="**/*.markdown"/>
-            </fileset>
-        </concat>
-    </target>
-
-    <target name="markdown-to-html" depends="check-images, add-markdown-metadata" description="converts markdown file to an html file">
-        <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to html"/>
-        <!-- pandoc -f markdown -t html -o test-guide.html  test-guide.markdown -->
-        <exec executable="${pandoc.app}">
-            <arg value="-f" />
-            <arg value="markdown"/>
-            <arg value="-t"/>
-            <arg value="html"/>
-            <!--<arg value="+RTS"/>
-            <arg value="-K64m"/>
-            <arg value="-RTS"/>
-            <arg value="-smart"/>-->
-            <arg value="-o"/>
-            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.html"/>
-            <arg value="${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
-        </exec>      
-    </target>
-
-    <target name="markdown-to-html-win" depends="check-images, concat-markdown-files" description="converts markdown file to an html file on windows">
-        <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to html"/>
-        <!-- pandoc -f markdown -t html +RTS K64m -RTS -o 01-chapter-02.html  01-chapter-02.markdown -->
-	<exec executable="cmd" dir="${build.dir}/${lang}">
-            <arg value="/C" />
-            <arg value="pandoc"/>
-            <arg value="-f" />
-            <arg value="markdown"/>
-            <arg value="-t"/>
-            <arg value="html"/>
-            <!--<arg value="+RTS"/>
-            <arg value="-K64m"/>
-            <arg value="-RTS"/>-->
-            <arg value="-smart"/>
-            <arg value="-o"/>
-            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.html"/>
-            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
-        </exec>      
-    </target>
-
-    <target name="markdown-to-odt" depends="check-images, add-markdown-metadata" description="converts markdown file to an odt file">
-        <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to odt"/>
-        <!-- pandoc -f markdown -t odt -o test-guide.odt  test-guide.markdown -->
-        <exec executable="${pandoc.app}" dir="${build.dir}/${lang}">
-            <arg value="-f" />
-            <arg value="markdown"/>
-            <arg value="-t"/>
-            <arg value="odt"/>
-            <arg value="+RTS"/>
-            <arg value="-K64m"/>
-            <arg value="-RTS"/>
-            <arg value="-smart"/>
-            <arg value="-o"/>
-            <arg value="./${lang}-${product.abbrev}-${product.version}-${doc.dir}.odt"/>
-            <arg value="./${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
-        </exec>      
-    </target>
-
-    <target name="markdown-to-odt-win" depends="check-images, concat-markdown-files" description="converts markdown file to an ODT file on Windows">
-        <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to odt on windows"/>
-        <!-- pandoc -f markdown -t odt +RTS K64m -RTS -o 01-chapter-02.odt 01-chapter-02.markdown -->
-	<exec executable="cmd" dir="${build.dir}/${lang}">
-            <arg value="/C" />
-            <arg value="pandoc"/>
-            <arg value="-f" />
-            <arg value="markdown"/>
-            <arg value="-t"/>
-            <arg value="odt"/>
-            <arg value="+RTS"/>
-            <arg value="-K64m"/>
-            <arg value="-RTS"/>
-            <arg value="-smart"/>
-            <arg value="-o"/>
-            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.odt"/>
-            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
-        </exec>      
-    </target>
-
-    <target name="markdown-to-epub" depends="check-images, add-markdown-metadata" description="converts markdown file to an epub file">
-        <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to epub"/>
-        <!-- pandoc -f markdown -t epub -o test-guide.epub  test-guide.markdown -->
-        <exec executable="${pandoc.app}" dir="${build.dir}/${lang}">
-            <arg value="-f" />
-            <arg value="markdown"/>
-            <arg value="-t"/>
-            <arg value="epub"/>
-            <!--<arg value="+RTS"/>
-            <arg value="-K64m"/>
-            <arg value="-RTS"/>
-            <arg value="-smart"/>-->
-            <arg value="-o"/>
-            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.epub"/>
-            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
-        </exec>      
-    </target>
-
-    <target name="markdown-to-epub-win" depends="check-images, concat-markdown-files" description="converts markdown file to an epub file on windows">
-        <echo message="... converting ${product.name} ${product.version}-${doc.name} (${lang}) to epub"/>
-	<exec executable="cmd" dir="${build.dir}/${lang}">
-            <arg value="/C" />
-            <arg value="pandoc"/>
-            <arg value="-f" />
-            <arg value="markdown"/>
-            <arg value="-t"/>
-            <arg value="epub"/>
-            <!--<arg value="+RTS"/>
-            <arg value="-K64m"/>
-            <arg value="-RTS"/>-->
-            <arg value="-o"/>
-            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.epub"/>
-            <arg value="${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
-        </exec>      
-    </target>
-
-    <target name="markdown-to-all" depends="markdown-to-html,markdown-to-odt,markdown-to-epub" description="converts markdown file to html, odt, and epub files" />
-
-    <target name="markdown-to-all-win" depends="markdown-to-html-win,markdown-to-odt-win,markdown-to-epub-win" description="converts markdown file to html, odt, and epub files on windows" />
-
-	<target name="number-headers" depends="check-doc-props" description="numbers the headers of markdown files found in ${lang}/chapters/">
+	<target name="compare-portal-source" depends="prepare" description="Generates reports comparing a Liferay 6 source directory (-DoldDir) to a Liferay 7+ source directory (-DnewDir).">
+		<property name="movedClassesFile" value="${build.dir}/moved-classes.html"/>
+		<property name="removedClassesFile" value="${build.dir}/removed-classes.html"/>
 		<java
-			classname="com.liferay.documentation.util.NumberHeadersTask"
+			classname="com.liferay.documentation.movedclassreporter.MovedClassReporterMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${oldDir}"/>
+			<arg value="${newDir}"/>
+			<arg value="${movedClassesFile}"/>
+			<arg value="${removedClassesFile}"/>
+		</java>
+	</target>
+
+	<target name="compare-with-older-branch" description="Compares your current branch with an older branch, specified by -Dolder.branch=someOlderBranch.">
+		<java
+			classname="com.liferay.documentation.util.GitCompare"
 			classpathref="project.classpath"
 			failonerror="true"
 			fork="true"
 		>
 			<arg value="${doc.dir}"/>
-			<arg value="${lang}"/>
+			<arg value="${purpose.dir}"/>
+			<arg value="${older.branch}"/>
 		</java>
 	</target>
 
-	<target name="number-images-dir" description="numbers the images of markdown files found in ${lang}/chapters/">
-		<numberimages lang="${lang}" docDir="${doc.dir}">
-		</numberimages>
+	<target name="create-metadata-file" description="Builds a metadata file.">
+		<!-- Use base.filepath property to distinguish between tutorials and learning-paths directories. The build.xml file
+		in the learning-paths directory overwrites this value with "learning-paths/${doc.dir}" -->
+		<property name="base.filepath" value="${doc.dir}" />
+
+		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${base.filepath}/${metadata.filename}"/>
+		<delete file="${metadata.file}" failonerror="false"/>
+		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${base.filepath}</concat>
 	</target>
 
-    <target name="strip-header-ids-dir" description="strips out the header ids of markdown files found in ${lang}/chapters/">
-		<stripheaderids lang="${lang}" docDir="${doc.dir}">
-		</stripheaderids>
+	<target name="dist-article-ce" depends="clean-temp, add-article-to-temp, dist-temp" description="Creates a ZIP file for importing the specified article (-Darticle=...), its images, and supporting structure to a Knowledge Base.">
 	</target>
 
-    <target name="copy-single-chapter" depends="prepare" description="copies chapter to be converted">
-        <echo message="... copying ${chapter}"/>
-        <copy file="./en/chapters/${chapter}.markdown" todir="./${build.dir}/${lang}"/>
-        <move file="./${build.dir}/${lang}/${chapter}.markdown" tofile="./${build.dir}/${lang}/${lang}-${chapter}.markdown" />
-    </target>
-    
-    <target name="chapter-to-html" depends="check-images, copy-single-chapter" description="converts single markdown chapter to an html file">
-        <echo message="... converting ${chapter} (${lang}) to html"/>
-        <!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
-	<exec executable="${pandoc.app}" dir="${build.dir}/${lang}">
-            <arg value="-f" />
-            <arg value="markdown"/>
-            <arg value="-t"/>
-            <arg value="html"/>
-            <!--<arg value="+RTS"/>
-            <arg value="-K64m"/>
-            <arg value="-RTS"/>
-            <arg value="-smart"/>-->
-            <arg value="-o"/>
-            <arg value="${lang}-${chapter}.html"/>
-            <arg value="${lang}-${chapter}.markdown"/>
-        </exec>      
-    </target>
-    
-    <target name="chapter-to-html-win" depends="check-images, copy-single-chapter" description="converts single markdown chapter to an html file on windows">
-        <echo message="... converting ${chapter} (${lang}) to html"/>
-        <!-- pandoc -f markdown -t html -o 01-introduction-to-liferay-ui.html 01-introduction-to-liferay-ui.markdown -->
-	<exec executable="cmd" dir="${build.dir}/${lang}">
-            <arg value="/C" />
-            <arg value="pandoc"/>
-            <arg value="-f" />
-            <arg value="markdown"/>
-            <arg value="-t"/>
-            <arg value="html"/>
-            <!--<arg value="+RTS"/>
-            <arg value="-K64m"/>
-            <arg value="-RTS"/>-->
-            <arg value="-smart"/>
-            <arg value="-o"/>
-            <arg value="${lang}-${chapter}.html"/>
-            <arg value="${lang}-${chapter}.markdown"/>
-        </exec>      
-    </target>
-    
-    <target name="chapter-to-odt" depends="copy-single-chapter" description="converts single markdown chapter to an odt file">
-        <echo message="... converting ${chapter} (${lang}) to odt"/>
-        <!-- pandoc -f markdown -t odt -o 01-introduction-to-liferay-ui.odt 01-introduction-to-liferay-ui.markdown -->
-        <exec executable="${pandoc.app}" dir="${build.dir}/${lang}">
-            <arg value="-f" />
-            <arg value="markdown"/>
-            <arg value="-t"/>
-            <arg value="odt"/>
-            <arg value="+RTS"/>
-            <arg value="-K64m"/>
-            <arg value="-RTS"/>
-            <arg value="-smart"/>
-            <arg value="-o"/>
-            <arg value="./${lang}-${chapter}.odt"/>
-            <arg value="./${lang}-${chapter}.markdown"/>
-        </exec>      
-    </target>
-    
-    <target name="chapter-to-odt-win" depends="copy-single-chapter" description="converts single markdown chapter to an odt file on windows">
-        <echo message="... converting ${chapter} (${lang}) to odt"/>
-        <!-- pandoc -f markdown -t odt -o 01-introduction-to-liferay-ui.odt 01-introduction-to-liferay-ui.markdown -->
-        <exec executable="cmd">
-            <arg value="/C" />
-            <arg value="pandoc"/>
-            <arg value="-f" />
-            <arg value="markdown"/>
-            <arg value="-t"/>
-            <arg value="odt"/>
-            <!--<arg value="+RTS"/>
-            <arg value="-K64m"/>
-            <arg value="-RTS"/>-->
-            <arg value="-smart"/>
-            <arg value="-o"/>
-            <arg value="${build.dir}/${lang}/${lang}-${chapter}.odt"/>
-            <arg value="${build.dir}/${lang}/${lang}-${chapter}.markdown"/>
-        </exec>      
-    </target>
-    
-    <target name="chapter-to-epub" depends="copy-single-chapter" description="converts single markdown chapter to an epub file">
-        <echo message="... converting ${chapter} (${lang}) to epub"/>
-        <!-- pandoc -f markdown -t epub -o 01-introduction-to-liferay-ui.odt 01-introduction-to-liferay-ui.markdown -->
-        <exec executable="${pandoc.app}">
-            <arg value="-f" />
-            <arg value="markdown"/>
-            <arg value="-t"/>
-            <arg value="epub"/>
-            <!--<arg value="+RTS"/>
-            <arg value="-K64m"/>
-            <arg value="-RTS"/>
-            <arg value="-smart"/>-->
-            <arg value="-o"/>
-            <arg value="${build.dir}/${lang}/${lang}-${chapter}.epub"/>
-            <arg value="${build.dir}/${lang}/${lang}-${chapter}.markdown"/>
-        </exec>      
-    </target>
-    
-    <target name="chapter-to-epub-win" depends="copy-single-chapter" description="converts single markdown chapter to an epub file on windows">
-        <echo message="... converting ${chapter} (${lang}) to epub"/>
-        <!-- pandoc -f markdown -t epub -o 01-introduction-to-liferay-ui.odt 01-introduction-to-liferay-ui.markdown -->
-        <exec executable="cmd">
-            <arg value="/C" />
-            <arg value="pandoc"/>
-            <arg value="-f" />
-            <arg value="markdown"/>
-            <arg value="-t"/>
-            <arg value="epub"/>
-            <!--<arg value="+RTS"/>
-            <arg value="-K64m"/>
-            <arg value="-RTS"/>-->
-            <arg value="-smart"/>
-            <arg value="-o"/>
-            <arg value="${build.dir}/${lang}/${lang}-${chapter}.epub"/>
-            <arg value="${build.dir}/${lang}/${lang}-${chapter}.markdown"/>
-        </exec>      
-    </target>
-    
-    <target name="chapter-to-all" depends="chapter-to-html,chapter-to-odt,chapter-to-epub" description="converts markdown chapter file to html, odt, and epub files" />
+	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, number-headers" description="Processes the CE articles and images and zips them up for importing.">
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
+			<fileset dir="${temp.dir}" includes="articles/" />
+			<fileset dir="${temp.dir}" includes="images/" />
+			<fileset dir="./" includes="${metadata.filename}" />
+		</zip>
 
-    <target name="chapter-to-all-win" depends="chapter-to-html-win,chapter-to-odt-win,chapter-to-epub-win" description="converts markdown chapter file to html, odt, and epub files on windows" />
+		<delete dir="${temp.dir}"/>
+	</target>
+	
+	<target name="dist-ce-temp" description="Processes the article tokens and copies the CE articles and images to temp/ for zipping up.">
+		<property file="${project.dir}/release-site.properties" />
+		<property name="base.filepath" value="${doc.dir}" />
+		<mkdir dir="${temp.dir}"/>
+		<copy todir="${temp.dir}">
+			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+				<include name="articles/**/*.markdown"/>
+			</fileset>
+			<filterchain>
+				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
+					<param type="token" name="${product.token}" value="${product.name}"/>
+					<param type="token" name="${product.token.app.reference}" value="${product.app.reference}"/>
+                    <param type="token" name="${product.token.commerce}" value="${product.commerce.name}"/>
+                    <param type="token" name="${product.token.commerce.version}" value="${product.commerce.name.version}"/>
+					<param type="token" name="${product.token.ide}" value="${product.ide.name}"/>
+					<param type="token" name="${product.token.platform.reference}" value="${product.platform.reference}"/>
+                    <param type="token" name="${product.token.version}" value="${product.name.version}"/>
+				</filterreader>
+			</filterchain>
+		</copy>
+		<mkdir dir="${temp.dir}/images"/>
+		<copy todir="${temp.dir}">
+			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+				<include name="images/**"/>
+			</fileset>
+		</copy>
+	</target>
 
-    <target name="reset-images" description="resets the image numbers in a markdown chapter file">
-        <echo message="... resetting image numbers in ${chapter} (${lang})"/>
-	<java jar="../lib/liferay-doc-utils.jar" fork="true">
-	    <arg value="ResetImages"/>
-            <arg value="./${lang}/chapters/${chapter}.markdown"/>
-            <!-- This is useful if you want to save the output to a new file without overwriting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
-        </java>
-    </target>
+	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, number-headers-dxp" description="Processes the article tokens and copies the DXP articles and images to temp/ for zipping up.">
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}.zip">
+			<fileset dir="${temp.dir}" includes="articles/" />
+			<fileset dir="${temp.dir}" includes="images/" />
+			<fileset dir="./" includes="${metadata.filename}" />
+		</zip>
 
-<!-- Example: From liferay-docs/userGuide, enter the following command: ant number-images -Dchapter=12-administering-liferay-portal. Check liferay-docs/userGuide/build for your new file. The images should be numbered correctly. -->
-    <target name="number-images" depends="reset-images" description="numbers the images in a markdown chapter file">
-        <echo message="... numbering images in ${chapter} (${lang})"/>
-        <java jar="../lib/liferay-doc-utils.jar" fork="true">
-            <!-- <arg value="${build.dir}/${chapter}.markdown"/> -->
-	    <arg value="NumberImages"/>
-            <arg value="./${lang}/chapters/${chapter}.markdown" />
-            <!-- This is useful if you want to save the output to a new file without overwriting the original <arg value="${build.dir}/${chapter}.markdown"/> -->
-        </java>
-    </target>
+		<delete dir="${temp.dir}"/>
+	</target>
 
- <!-- deprecated on Jan. 6, 2012 -->
-    <target name="add-markdown-metadata" depends="concat-markdown-files" description="adds metadata to the top of a concatenated markdown file">
-        <echo message="... adding metadata to ${product.name} ${product.version}-${doc.name} (${lang})"/>
-        <java jar="../lib/liferay-doc-utils.jar" fork="true">
-	    <arg value="AddMarkdownMetadata"/>
-            <arg value="./${build.dir}/${lang}/${lang}-${product.abbrev}-${product.version}-${doc.dir}.markdown"/>
-            <arg value="${title}"/>
-            <arg value="${author}"/>
-            <arg value="${date}"/>
-        </java>
-    </target>
-    
-    <target name="add-markdown-ch-template" description="adds metadata template to the top of a markdown chapter file">
-        <echo message="... adding metadata template to ${chapter} (${lang})"/>
-        <java jar="../lib/liferay-doc-utils.jar" fork="true">
-	    <arg value="AddMarkdownChTemplate"/>
-            <arg value="./${lang}/chapters/${chapter}.markdown"/>
-        </java>
-    </target>
+	<target name="dist-dxp-temp" description="Zips up the folder's CE and DXP articles and images for importing.">
+		<property file="${project.dir}/release-site.properties" />
+		<property name="base.filepath" value="${doc.dir}" />
+		<mkdir dir="${temp.dir}"/>
+		<copy todir="${temp.dir}">
+			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+				<include name="articles/**/*.markdown"/>
+				<include name="articles-dxp/**/*.markdown"/>
+			</fileset>
+			<filterchain>
+				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
+					<param type="token" name="${product.token}" value="${product.name.enterprise}"/>
+					<param type="token" name="${product.token.app.reference}" value="${product.app.enterprise.reference}"/>
+                    <param type="token" name="${product.token.commerce}" value="${product.commerce.name.enterprise}"/>
+                    <param type="token" name="${product.token.commerce.version}" value="${product.commerce.name.enterprise.version}"/>
+					<param type="token" name="${product.token.ide}" value="${product.ide.name.enterprise}"/>
+					<param type="token" name="${product.token.platform.reference}" value="${product.platform.enterprise.reference}"/>
+                    <param type="token" name="${product.token.version}" value="${product.name.enterprise.version}"/>
+				</filterreader>
+			</filterchain>
+		</copy>
+		<mkdir dir="${temp.dir}/images"/>
+		<!-- Cannot use filtering for images (due to corruption), so must copy separately -->
+		<copy todir="${temp.dir}">
+			<fileset dir="${project.dir}/${purpose.dir}/${base.filepath}">
+				<include name="images/**"/>
+				<include name="images-dxp/**"/>
+			</fileset>
+		</copy>
 
-	<target name="add-index" description="adds an index to the LaTeX source of a document before converting it to PDF">
-		<echo message="... adding index"/>
-		<java jar="../lib/liferay-doc-utils.jar" fork="true">
-			<arg value="AddIndex"/>
-			<arg value="en/print/en-userGuide.tex"/>
-			<arg value="userguide.lexicon"/>
-			<arg value="en/print/indexed-en-userGuide.tex"/>
+		<move todir="${temp.dir}/articles" failonerror="false">
+			<fileset dir="${temp.dir}/articles-dxp"/>
+		</move>
+		<move todir="${temp.dir}/images" failonerror="false">
+			<fileset dir="${temp.dir}/images-dxp"/>
+		</move>
+	</target>
+
+	<target name="dist-diffs" depends="prepare-dist" description="Zips up the document's articles and images that are new or modified, as specified in the git-modified-list.txt file.">
+		<mkdir dir="${dist.dir}"/>
+		<distdiff docdir="${doc.dir}" purposedir="${purpose.dir}">
+		</distdiff>
+
+        <!-- Until the Markdown converter no longer requires intro files that need to be added manually to the diffs.zip, include ALL images in the ZIP. -->
+		<zip destfile="${dist.dir}/diffs.zip" update="true">
+			<fileset dir="./" includes="images/" />
+			<fileset dir="./" includes="${metadata.filename}" />
+		</zip>
+	</target>
+
+	<target name="dist-temp"  depends="prepare-dist, number-headers" description="Prepares the temp files and zips them up for importing.">
+		<property file="${project.dir}/release-site.properties" />
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
+			<fileset dir="${temp.dir}" includes="articles/" />
+			<fileset dir="${temp.dir}" includes="images/" />
+			<fileset dir="./" includes="${metadata.filename}" />
+		</zip>
+	</target>
+
+	<target name="number-headers" description="Numbers the headers of Markdown articles found in ${doc.dir}/articles">
+		<property file="${project.dir}/release-site.properties" />
+		<java
+			classname="com.liferay.documentation.util.NumberHeaders"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="ce"/>
 		</java>
-		<exec executable="xelatex">
-			<arg value="en/print/indexed-en-userGuide.tex"/>
-		</exec>
-		<exec executable="makeindex">
-			<arg value="en/print/indexed-en-userGuide"/>
-		</exec>
-		<exec executable="xelatex">
-			<arg value="en/print/indexed-en-userGuide.tex"/>
-		</exec>
 	</target>
 
+	<target name="number-headers-dist" description="Numbers the headers of Markdown articles.">
+		<property file="${project.dir}/release-site.properties" />
+		<java
+			classname="com.liferay.documentation.util.NumberHeaders"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${doc.dir}/${temp.dir}"/>
+			<arg value="dist"/>
+		</java>
+	</target>
+
+	<target name="number-headers-dxp" description="Numbers the headers of Markdown articles.">
+		<property file="${project.dir}/release-site.properties" />
+		<java
+			classname="com.liferay.documentation.util.NumberHeaders"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+			<arg value="dxp"/>
+		</java>
+	</target>
+
+	<target name="number-images" description="numbers the images in a markdown chapter file">
+		<numberimgssite docdir="${doc.dir}" producttype="ce">
+		</numberimgssite>
+	</target>
+
+	<target name="number-images-dist" description="Numbers the images of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp.">
+		<numberimgssite docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		</numberimgssite>
+	</target>
+
+	<target name="number-images-dxp" description="Numbers the images of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp.">
+		<numberimgssite docdir="${doc.dir}" producttype="dxp">
+		</numberimgssite>
+	</target>
+
+	<target name="prepare" description="Creates build directory.">
+		<!-- Use base.filepath property to distinguish between tutorials and learning-paths directories. The build.xml file
+		in the learning-paths directory overwrites this value with "learning-paths/${doc.dir}" -->
+		<property name="base.filepath" value="${doc.dir}" />
+
+		<echo message="... creating build directory"/>
+		<mkdir dir="${project.dir}/${purpose.dir}/${base.filepath}/${build.dir}"/>
+		<touch file="${project.dir}/${purpose.dir}/${base.filepath}/${build.dir}/${article}.html" mkdirs="true"/>
+		<mkdir dir="${build.dir}/images"/>
+		<copy todir="${build.dir}/images" overwrite="true">
+			<fileset dir="./images"/>
+		</copy>
+		<mkdir dir="${build.dir}/images-dxp"/>
+		<copy todir="${build.dir}/images-dxp" overwrite="true">
+			<fileset dir="./images-dxp"/>
+		</copy>
+	</target>
+
+	<target name="prepare-dist" depends="check-images-dist, check-intros-dist, clean-dist, number-headers-dist, number-images-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
+		<echo message="... creating ${dist.dir} directory"/>
+		<mkdir dir="${dist.dir}"/>
+	</target>
+
+	<target name="check-links" description="Checks URL links to see if they're broken.">
+		<property file="${project.dir}/release-site.properties" />
+		<java
+			classname="com.liferay.documentation.util.CheckLinks"
+			classpathref="project.classpath"
+			failonerror="false"
+			fork="true"
+		>
+			<arg value="${legacy.links}"/>
+			<arg value="${api.links}"/>
+			<arg value="${doc.dir}"/>
+			<arg value="${product.token.platform.reference}"/>
+			<arg value="${product.token.app.reference}"/>
+			<arg value="${product.platform.reference}"/>
+			<arg value="${product.app.reference}"/>
+		</java>
+	</target>
+
+	<target name="process-article-to-temp"  description="Generates the target article's parent structure and then processes the articles' tokens. The resulting articles are copied (no images) to temp/.">
+		<property file="${project.dir}/release-site.properties" />
+		<property name="base.filepath" value="${doc.dir}" />
+		<mkdir dir="${temp.dir}"/>
+		<mkdir dir="${temp.dir2}"/>
+		<java
+			classname="com.liferay.documentation.util.FindParentIntros"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${article}"/>
+			<arg value="${doc.dir}"/>
+			<arg value="${temp.dir2}"/>
+		</java>
+		<copy todir="${temp.dir}">
+			<fileset dir="${temp.dir2}"/>
+			<filterchain>
+				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
+					<param type="token" name="${product.token}" value="${product.name}"/>
+					<param type="token" name="${product.token.app.reference}" value="${product.app.reference}"/>
+					<param type="token" name="${product.token.ide}" value="${product.ide.name}"/>
+					<param type="token" name="${product.token.platform.reference}" value="${product.platform.reference}"/>
+					<param type="token" name="${product.token.version}" value="${product.name.version}"/>
+				</filterreader>
+			</filterchain>
+		</copy>
+		<delete dir="${temp.dir2}"/>
+	</target>
+
+	<target name="report-moved-portal-service-classes" depends="prepare" description="Compares two portal source trees to generate an HTML report of classes moved from the portal-service folder.">
+		<echo message="... comparing portal-service classes from ${old.src.dir} with those from ${new.src.dir}"/>
+		<java
+			classname="com.liferay.documentation.movedclassreporter.MovedClassReporterMain"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${old.src.dir}"/>
+			<arg value="${new.src.dir}"/>
+			<arg value="${build.dir}/portal-service-moved-classes.html"/>
+		</java>
+	</target>
 </project>

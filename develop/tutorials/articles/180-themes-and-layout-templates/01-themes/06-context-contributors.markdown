@@ -168,6 +168,6 @@ power of your chosen templating language.
 
 [Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
+[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
 
 [Theme Contributors](/develop/tutorials/-/knowledge_base/7-1/theme-contributors)

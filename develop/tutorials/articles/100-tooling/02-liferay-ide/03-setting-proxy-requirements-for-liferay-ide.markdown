@@ -1,7 +1,7 @@
-# Setting Proxy Requirements for Liferay @ide@ [](id=setting-proxy-requirements-for-liferay-ide)
+# Setting Proxy Requirements for Liferay Dev Studio [](id=setting-proxy-requirements-for-liferay-ide)
 
 If you have proxy server requirements and want to configure your http(s) proxy		
-to work with Liferay @ide@, follow the instructions below.
+to work with Liferay Dev Studio, follow the instructions below.
 
 1.  Navigate to Eclipse's *Window* &rarr; *Preferences* &rarr; *General*
     &rarr; *Network Connections* menu.
@@ -11,7 +11,7 @@ to work with Liferay @ide@, follow the instructions below.
 3.  Under *Proxy entries*, configure both proxy HTTP and HTTPS by clicking the
     field and selecting the *Edit* button.
 
-    ![Figure 1: You can configure your proxy settings in @ide@'s Network Connections menu.](../../../images/ide-network-connections.png)
+    ![Figure 1: You can configure your proxy settings in Dev Studio's Network Connections menu.](../../../images/ide-network-connections.png)
 
 4.  For each schema (HTTP and HTTPS), enter your proxy server's host, port, and
     authentication settings (if necessary).
@@ -21,12 +21,12 @@ to work with Liferay @ide@, follow the instructions below.
 
 5.  Once you've configured your proxy entry, click *OK* &rarr; *OK*.
 
-If you're working with a Liferay Workspace in @ide@, you'll need to configure
+If you're working with a Liferay Workspace in Dev Studio, you'll need to configure
 your proxy settings for that environment too. See the
 [Setting Proxy Requirements for Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/setting-proxy-requirements-for-liferay-workspace)
 for more details.
 
-Awesome! You've successfully configured Liferay @ide@'s proxy settings!
+Awesome! You've successfully configured Dev Studio's proxy settings!
 
 ## Additional Proxy Settings [](id=additional-proxy-settings)
 
