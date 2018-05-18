@@ -1,16 +1,16 @@
 # Enabling Cluster Link [](id=enabling-cluster-link)
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
-caching enables some RMI (Remote Method Invocation) cache listeners that are
-designed to replicate the cache across a cluster. Cluster Link uses 
+caching enables some RMI (Remote Method Invocation) cache listeners that
+replicate the cache across a cluster. Cluster Link uses
 [Ehcache](http://www.ehcache.org), 
 which has robust distributed caching support. The cache is distributed across 
 multiple @product@ nodes running concurrently. The Ehcache global settings are in the
 [`portal.properties` file](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Ehcache). 
 
 By default Liferay does not copy cached entities between nodes. If an entity is
-deleted or changed, for example, Cluster Link sends an *remove* message to the
-other nodes to invalidate this entity in their local cache. Requesting that
+deleted or changed, for example, Cluster Link sends a *remove* message to the
+other nodes to invalidate this entity in their local caches. Requesting that
 entity on another node results in a cache *miss*; the entity is then retrieved
 from the database and put into the local cache. Entities added to one node's
 local cache are not copied to local caches of the other nodes. An attempt to
@@ -24,7 +24,7 @@ To enable Cluster Link, add this property to `portal-ext.properties`:
 
     cluster.link.enabled=true
 
-Cluster Link depends on [JGroups](http://www.jgroups.org), and provides an API
+Cluster Link depends on [JGroups](http://www.jgroups.org) and provides an API
 for nodes to communicate. It can
 
 - Send messages to all nodes in a cluster
@@ -36,7 +36,7 @@ Cluster Link contains an enhanced algorithm that provides one-to-many type
 communication between the nodes. This is implemented by default with JGroups's
 UDP multicast, but unicast and TCP are also available. 
 
-## Multicast over UDP [](id=multicast-over-udp)
+## Multicast Over UDP [](id=multicast-over-udp)
 
 When you enable Cluster Link, @product@'s default clustering configuration is
 enabled. This configuration defines IP multicast over UDP. @product@ uses two
@@ -66,32 +66,34 @@ address with this property:
 
 Set it to connect to some other host that's contactable by your server. By
 default, it points to Google, but this may not work if your server is behind a
-firewall. If you set the address manually using the properties above, you
-don't need to set the autodetect address. 
+firewall. If you set the address manually using the properties above, you don't
+need to set the auto-detect address. 
 
 Your network configuration may preclude the use of multicast over TCP, so below
 are some other ways you can get your cluster communicating. Note that these
 methods are all provided by JGroups. 
 
-Checkpoint: 1. If you are using multicast to handle your cluster, add this
-property to `portal-ext.properties`:
+### Checkpoint: 
 
-    `cluster.link.enabled=true`
+1.  If you are using multicast to handle your cluster, add this property to
+    `portal-ext.properties`:
 
-2. If you are binding the IP address instead of using `localhost`, make sure the
-right IP addresses are declared using: 
+        `cluster.link.enabled=true`
 
-    `cluster.link.bind.addr["cluster-link-control"]=localhost`    
-    `cluster.link.bind.addr["cluster-link-udp"]=localhost`
+2.  If you are binding the IP address instead of using `localhost`, make sure
+    the right IP addresses are declared using these properties: 
 
-3. Test your load and then optimize your settings if necessary.
+        `cluster.link.bind.addr["cluster-link-control"]=localhost` 
+        `cluster.link.bind.addr["cluster-link-udp"]=localhost`
+
+3.  Test your load and then optimize your settings if necessary.
 
 ## Unicast over TCP [](id=unicast-over-tcp)
 
 If your network configuration or the sheer distance between nodes prevents you
-from using UDP Multicast clustering, you can configure @product@ to use TCP
-Unicast. You'll definitely need this if you have a firewall separating any of
-your nodes or if your nodes are in different geographical locations.
+from using UDP Multicast clustering, you can configure TCP Unicast. You must use
+this if you have a firewall separating any of your nodes or if your nodes are in
+different geographical locations.
 
 1.  Add a parameter to your app server's JVM:
 
@@ -99,7 +101,7 @@ your nodes or if your nodes are in different geographical locations.
  
     Use the node's IP address. 
 
-2.  Now you have to determine the discovery protocol the nodes should use to
+2.  Now you must determine the discovery protocol the nodes should use to
     find each other. You have four choices: 
 
         - TCPPing
@@ -107,23 +109,22 @@ your nodes or if your nodes are in different geographical locations.
         - S3_Ping
         - Rackspace_Ping
 
-    If you aren't sure which one to choose, use TCPPing. This is used in the
+    If you aren't sure which one to choose, use `TCPPing`. This is used in the
     rest of these steps; the others are covered below. 
 
 3.  Download the OSGi Dependencies from the Customer Portal or access them from
-    your existing @product@ installation. In the dependencies' `portal` folder
-    is a .jar file called `com.liferay.portal.cluster.multiple-[version].jar`.
-    In this .jar's `lib` folder is a file called `jgroups-[version].Final.jar`.
-    Open it and find `tcp.xml`. Extract this file to a location accessible to
-    @product@. You'll use this file on all your nodes.
+    your existing installation. In the dependencies' `portal` folder is a .jar
+    file called `com.liferay.portal.cluster.multiple-[version].jar`. In this
+    .jar's `lib` folder is a file called `jgroups-[version].Final.jar`. Open it
+    and find `tcp.xml`. Extract this file to a location accessible to @product@.
+    Use this file on all your nodes.
 
     <!-- TODO Check for the com.liferay.portal.cluster.multiple JAR in the downloadable OSGi Dependencies. - Jim -->
 
-4.  If you're vertically clustering (i.e., you have multiple @product@ servers
-    running on the same physical or virtual system), you must change the port on
-    which discovery communicates for all nodes other than the first one, to
-    avoid TCP port collision. To do this, modify the TCP tag's `bind_port`
-    parameter: 
+4.  If you're vertically clustering (i.e., you have multiple servers running on
+    the same physical or virtual system), you must change the port on which
+    discovery communicates for all nodes other than the first one, to avoid TCP
+    port collision. To do this, modify the TCP tag's `bind_port` parameter: 
 
         <TCP bind_port="[some unused port]"
             ... 
@@ -133,7 +134,8 @@ your nodes or if your nodes are in different geographical locations.
 
 5.  Add to the same tag the parameter `singleton_name="liferay_cluster"`. This
     merges the transport and control channels to reduce the number of thread
-    pools. See [JGroups documentation](http://www.jgroups.org/manual-3.x/html/user-advanced.html) 
+    pools. See 
+    [JGroups documentation](http://www.jgroups.org/manual-3.x/html/user-advanced.html) 
     for further information. 
 
     Usually, no further JGroups configuration is required. However, in a very
@@ -141,10 +143,9 @@ your nodes or if your nodes are in different geographical locations.
     multiple networks, then the parameter `external_addr` must be set on each
     host to the external (public IP) address of the firewall. This kind of
     configuration is usually only necessary when nodes are geographically
-    separated.  By setting this, clustered nodes that are deployed to separate
-    networks (e.g. separated by different firewalls) can communicate together.
-    This configuration will likely be flagged in security audits of your system.
-    See 
+    separated. By setting this, clustered nodes deployed to separate networks
+    (e.g. separated by different firewalls) can communicate together. This
+    configuration may be flagged in security audits of your system. See 
     [JGroups documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#Transport)
     for more information. 
 
@@ -195,45 +196,43 @@ information about S3 Ping, please see the [JGroups Documentation](http://www.jgr
 ### Other Pings [](id=other-pings)
 
 JGroups supplies other means for cluster members to discover each other,
-including Rackspace Ping, BPing, File Ping, and others. Please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols) for information about these discovery methods. 
+including Rackspace Ping, BPing, File Ping, and others. Please see the 
+[JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols)
+for information about these discovery methods. 
 
 ## Modifying the Cache Configuration with a Module [](id=modifying-the-cache-configuration-with-a-module)
 
 It's recommended to test your system under a load that best simulates the kind
-of traffic your system needs to handle. If you'll be serving up a lot of message
+of traffic your system must handle. If you serve a lot of message
 board messages, your script should reflect that. If web content is the core of
 your site, your script should reflect that too. 
 
 As a result of a load test, you may find that the default distributed cache
-settings aren't optimized for your site. In this case, you should tweak the
-settings yourself. You can modify the @product@ installation directly or you can
-use a module to do it. Either way, the settings you change are the same. A
-benefit of working with modules is that you can install a module on each node
-and change the settings without taking down the cluster. Modifying the Ehcache
-settings with a module is recommended over modifying the Ehcache settings
-directly. 
+settings aren't optimized for your site. In this case, tweak the settings using
+a module. You can install the module on each node and change the settings
+without taking down the cluster. 
 
 We've made this as easy as possible by
 [creating the project](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip) 
 for you. Download the project and unzip it into a 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace), 
-in the workspace's `modules` folder. To override your cache settings, you only
-have to modify one Ehcache configuration file, which you'll find in this folder
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+in the workspace's `modules` folder. To override your cache settings, you must
+only modify one Ehcache configuration file, which you'll find in this folder
 structure: 
 
-- src
-    - main
-        - java
-            - resources
-                - ehcache
-                    - override-liferay-multi-vm-clustered.xml
+- `src`
+    - `main`
+        - `java`
+            - `resources`
+                - `ehcache`
+                    - `override-liferay-multi-vm-clustered.xml`
 
-In the sample project, this file contains a configuration for @product@'s
-`GroupImpl` object which handles sites. You may wish to add other objects to the
-cache; in fact, the default file caches many other objects. For example, if you
-have a vibrant community, a large portion of your traffic may be directed at the
-message boards portlet, as in the example above. To cache the threads on the
-message boards, configure a block with the `MBMessageImpl` class:
+In the sample project, this file contains a configuration for the `GroupImpl`
+object which handles sites. You may wish to add other objects to the cache; in
+fact, the default file caches many other objects. For example, if you have
+a vibrant community, a large portion of your traffic may be directed at the
+message boards portlet, as mentioned above. To cache the threads on the message
+boards, configure a block with the `MBMessageImpl` class:
 
     <cache
         eternal="false"
@@ -244,9 +243,9 @@ message boards, configure a block with the `MBMessageImpl` class:
     >
     </cache>
 
-If you're overriding these properties, it's because you want to customize the
-configuration for your own site. A good way to start with this is to extract
-Liferay's cluster configuration file and then customize it. You'll find it in
+You can preserve the default settings while customizing them with your own
+by extracting Liferay's cluster configuration file and putting it into
+your module project. You'll find it in
 the `com.liferay.portal.cache.ehcache.impl.jar` file the `[Liferay
 Home]/osgi/portal` folder. The file you want is
 `liferay-multi-vm-clustered.xml`, in the `/ehcache` folder inside the

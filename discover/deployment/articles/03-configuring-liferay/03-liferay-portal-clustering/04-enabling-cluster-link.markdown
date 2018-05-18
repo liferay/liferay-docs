@@ -1,20 +1,20 @@
 # Enabling Cluster Link [](id=enabling-cluster-link)
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
-caching enables RMI (Remote Method Invocation) cache listeners that are
-designed to replicate the cache across a cluster. Cluster Link uses 
+caching enables RMI (Remote Method Invocation) cache listeners that replicate
+the cache across a cluster. Cluster Link uses 
 [Ehcache](http://www.ehcache.org), 
 which has robust distributed caching support. The cache is distributed across 
 multiple @product@ nodes running concurrently. The Ehcache global settings are in the
 [`portal.properties` file](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Ehcache). 
 
 By default Liferay does not copy cached entities between nodes. If an entity is
-deleted or changed, for example, Cluster Link sends an *remove* message to the
-other nodes to invalidate this entity in their local cache. Requesting that
+deleted or changed, for example, Cluster Link sends a *remove* message to the
+other nodes to invalidate this entity in their local caches. Requesting that
 entity on another node results in a cache *miss*; the entity is then retrieved
 from the database and put into the local cache. Entities added to one node's
 local cache are not copied to local caches of the other nodes. An attempt to
-retrieve a new entity on a node which doesn't have that entity cached results in
+retrieve a new entity on a node that doesn't have that entity cached results in
 a cache *miss*. The miss triggers the node to retrieve the entity from the
 database and store it in its local cache. 
 
@@ -24,41 +24,37 @@ To enable Cluster Link, add this property to `portal-ext.properties`:
 
 ## Modifying the Cache Configuration with a Module [](id=modifying-the-cache-configuration-with-a-module)
 
-It's recommended to test your system under a load that best simulates the kind
-of traffic your system needs to handle. If you'll be serving up a lot of message
-board messages, your script should reflect that. If web content is the core of
-your site, your script should reflect that too. 
+You should test your system under a load that best simulates the kind of traffic
+your system must handle. If you serve a lot of message board messages, your
+script should reflect that. If web content is the core of your site, your script
+should reflect that too. 
 
 As a result of a load test, you may find that the default distributed cache
-settings aren't optimized for your site. In this case, you should tweak the
-settings yourself. You can modify the @product@ installation directly or you can
-use a module to do it. Either way, the settings you change are the same. A
-benefit of working with modules is that you can install a module on each node
-and change the settings without taking down the cluster. Modifying the Ehcache
-settings with a module is recommended over modifying the Ehcache settings
-directly. 
+settings aren't optimized for your site. In this case, tweak the settings using
+a module. You can install the module on each node and change the settings
+without taking down the cluster. 
 
 We've made this as easy as possible by
 [creating the project](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip) 
 for you. Download the project and unzip it into a 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace), 
-in the workspace's `modules` folder. To override your cache settings, you only
-have to modify one Ehcache configuration file, which you'll find in this folder
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+in the workspace's `modules` folder. To override the cache settings, you must
+only modify one Ehcache configuration file, which you'll find in this folder
 structure: 
 
-- src
-    - main
-        - java
-            - resources
-                - ehcache
-                    - override-liferay-multi-vm-clustered.xml
+- `src`
+    - `main`
+        - `java`
+            - `resources`
+                - `ehcache`
+                    - `override-liferay-multi-vm-clustered.xml`
 
-In the sample project, this file contains a configuration for @product@'s
-`GroupImpl` object which handles sites. You may wish to add other objects to the
-cache; in fact, the default file caches many other objects. For example, if you
-have a vibrant community, a large portion of your traffic may be directed at the
-message boards portlet, as in the example above. To cache the threads on the
-message boards, configure a block with the `MBMessageImpl` class:
+In the sample project, this file contains a configuration for the `GroupImpl`
+object which handles sites. You may wish to add other objects to the cache; in
+fact, the default file caches many other objects. For example, if you have
+a vibrant community, a large portion of your traffic may be directed at the
+message boards portlet, as mentioned above. To cache the threads on the message
+boards, configure a block with the `MBMessageImpl` class:
 
     <cache
         eternal="false"
@@ -69,10 +65,10 @@ message boards, configure a block with the `MBMessageImpl` class:
     >
     </cache>
 
-If you're overriding these properties, it's because you want to customize the
-configuration for your own site. A good way to start with this is to extract
-Liferay's cluster configuration file and then customize it. You'll find it in
-the `com.liferay.portal.cache.ehcache.impl.jar` file the `[Liferay
+You can preserve the default settings while customizing them with your own
+by extracting Liferay's cluster configuration file and putting it into
+your module project. You'll find it in the
+`com.liferay.portal.cache.ehcache.impl.jar` file the `[Liferay
 Home]/osgi/portal` folder. The file you want is
 `liferay-multi-vm-clustered.xml`, in the `/ehcache` folder inside the
 `com.liferay.portal.cache.ehcache.impl.jar` file. Once you have the file,

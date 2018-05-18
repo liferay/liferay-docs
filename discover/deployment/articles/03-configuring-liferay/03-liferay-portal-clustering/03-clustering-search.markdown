@@ -16,7 +16,7 @@ Once @product@ servers have been properly configured as a cluster and the same
 for Elasticsearch, change @product@ from *embedded* mode to *remote* mode. On
 the first connection, the two sets of clustered servers communicate with each
 other the list of all IP addresses; in case of a node going down, the proper
-failover protocols enable. Queries and indices can continue to be sent for all
+failover protocols enable. Queries and indexes can continue to be sent for all
 nodes.
 
 <!-- Uncomment when Solr adapter is available. 

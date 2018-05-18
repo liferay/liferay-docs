@@ -1,7 +1,16 @@
-# Point all Nodes to the Same @Product@ Database [](id=point-all-nodes-to-the-same-product-database)
+# Point all Nodes to the Same @Product@ Database [](id=point-all-nodes-to-the-same-database)
 
-@product@ allows you to use two different data sources for reading and writing.
-This enables you to split your database infrastructure into two sets: one
+Each node should have a data source that points to one @product@ database
+(or a database cluster) that all the nodes share. This means, of course,
+@product@ cannot (and should not) use the embedded HSQL database that is
+shipped with the bundles (but you already knew that, right?). And, of course,
+the database server should be on a separate system from the @product@ server.
+
+## Read-Writer Database Configuration
+
+For even better performance, you can also use a read-writer database
+configuration. This strategy uses two different data sources for reading and
+writing, so you can split your database infrastructure into two sets: one
 optimized for reading and one optimized for writing. Since all supported
 databases support replication, use your database vendor's replication mechanism
 to keep the database nodes in sync.
@@ -10,14 +19,16 @@ Set up the databases for replication now.
 
 Then enable a read-writer database in your `portal-ext.properties` file:
 
-1.  Set the default database connection pool provider to `dbcp`, `tomcat`, or 
-    `c3po`. Note, provider HikariCP does not support read/write splitting.
-    Here's an example setting: 
+1.  If you're not using JNDI, set the default database connection pool provider
+    to `dbcp`, `tomcat`, or `c3po`. Note, provider HikariCP does not support
+    read/write splitting. Here's an example setting: 
 
         jdbc.default.liferay.pool.provider=dbcp
 
     All the portal JDBC configuration properties are documented
     [here](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#JDBC).
+
+    Skip to step 3 to use JNDI. 
 
 2.  Configure two different data sources, one for reading, and one for writing:
 
@@ -31,14 +42,14 @@ Then enable a read-writer database in your `portal-ext.properties` file:
         jdbc.write.username=**your user name**
         jdbc.write.password=**your password**
 
-    To use the JNDI instead of the JDBC data sources, set the `*.username` and
-    `*.password` properties above to your JNDI user name and password and set
+3.  To use the JNDI instead of the JDBC data sources, set the `*.username` and
+    `*.password` properties from step 2 to your JNDI user name and password and set
     these additional properties:
 
         jdbc.read.jndi.name=**your read JNDI name**
         jdbc.write.jndi.name=**your read-write JNDI name**
 
-3.  Avoid using the `default` data source, by setting this:
+4.  Avoid using the `default` data source, by setting this:
 
         counter.jdbc.prefix=jdbc.write.
 
@@ -52,7 +63,7 @@ Then enable a read-writer database in your `portal-ext.properties` file:
     These settings are related to issue 
     [LPS-64624](https://issues.liferay.com/browse/LPS-64624).
 
-4.  Enable the read-writer database configuration by uncommenting the following 
+5.  Enable the read-writer database configuration by uncommenting the following 
     Spring configuration files from the `spring.configs` and
     `spring.infrastructure.configs` properties:
 

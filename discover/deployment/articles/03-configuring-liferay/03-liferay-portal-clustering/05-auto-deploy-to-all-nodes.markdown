@@ -6,7 +6,7 @@ cluster nodes. Because @product@
 you cannot rely on your application server's means of installing WAR files (even
 if you only intend to install WAR files) to deploy an application to the entire
 cluster. Instead, place the application in each node's auto deploy folder (e.g.,
-`[Liferay Home]\deploy`). 
+`[Liferay Home]/deploy`). 
 
 This, as you might imagine, can be done with a script. Write a shell script that
 uploads applications to each node using sftp or some other service. This way,
