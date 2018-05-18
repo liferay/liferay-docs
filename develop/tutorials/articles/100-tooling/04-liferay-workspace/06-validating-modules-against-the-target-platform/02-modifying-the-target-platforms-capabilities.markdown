@@ -1,4 +1,4 @@
-# Modifying the Target Platform's Capabilities
+# Modifying the Target Platform's Capabilities [](id=modifying-the-target-platforms-capabilities)
 
 In a perfect world, everything the `resolve` task gathers and checks against
 would work during your development process. Unfortunately, there are exceptions
@@ -16,7 +16,7 @@ modification for your project to pass the resolver check.
 
 You'll explore these use cases next.
 
-## Depending on Third Party Libraries Not Included in @product@
+## Depending on Third Party Libraries Not Included in @product@ [](id=depending-on-third-party-libraries-not-included-in-product)
 
 The `resolve` task, by default, gathers all of @product@'s capabilities and the
 capabilities of your workspace's modules. What if, however, your module depends
@@ -37,7 +37,7 @@ For help resolving third party dependency errors, see the
 [Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
 tutorial.
 
-### Embed the Third Party Library in Your Module
+### Embed the Third Party Library in Your Module [](id=embed-the-third-party-library-in-your-module)
 
 If you only have one module that depends on the third party project, you can
 bypass the resolver failure by embedding the JAR in your module. This is not
@@ -46,7 +46,7 @@ module. See the
 [Embedding Libraries in a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module#embedding-libraries-in-a-module)
 section for more details.
 
-### Add the Third Party Library's Capabilities to the Current Static Set of Resolver Capabilities
+### Add the Third Party Library's Capabilities to the Current Static Set of Resolver Capabilities [](id=add-the-third-party-librarys-capabilities-to-the-current-static-set-of-reso)
 
 You can add your third party dependencies to the target platform's default list
 of capabilities by listing them as provided modules. Do this by adding the
@@ -68,7 +68,7 @@ This both provides the third party dependency to the resolver, and it downloads
 and includes it in your @product@ bundle's `osgi/modules` folder when you
 initialize it (e.g., `gradlew initBundle`).
 
-### Skip the Resolving Process for Your Module
+### Skip the Resolving Process for Your Module [](id=skip-the-resolving-process-for-your-module)
 
 It may be easiest to skip validating a particular module during the resolve
 process. To do this, open your workspace's root `build.gradle` file and insert
@@ -97,7 +97,7 @@ management.
 
 Now the `resolve` task skips your module project.
 
-## Depending on a Customized Distribution of @product@
+## Depending on a Customized Distribution of @product@ [](id=depending-on-a-customized-distribution-of-product)
 
 There are times when manually specifying your project's list of dependent JARs
 does not suffice. If your app requires a customized @product@ instance to

@@ -1,11 +1,9 @@
-# Managing the Target Platform for Liferay Workspace
+# Managing the Target Platform for Liferay Workspace [](id=managing-the-target-platform-for-liferay-workspace)
 
 Liferay Workspace helps you target a specific release of @product@, so
 dependencies get resolved properly. This makes upgrades easy: specify your
 target platform, and Workspace points to the new version. All your dependencies
 are updated to the latest ones provided in the targeted release.
-
-<!-- TODO: Add note below once Semantic Versioning tutorial is available. -Cody
 
 +$$$
 
@@ -15,8 +13,6 @@ is better than tracking exact versions. See the
 tutorial for more details.
 
 $$$
-
--->
 
 [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) 
 helps you streamline targeting a specific version eve more. @ide@ can index the
@@ -37,7 +33,7 @@ section for more info on applying the Target Platform Gradle plugin.
 
 Next, you'll discover how all of this is possible.
 
-## Dependency Management with BOMs
+## Dependency Management with BOMs [](id=dependency-management-with-boms)
 
 You can target a version by importing a predefined bill of materials (BOM). This
 only requires that you specify a property in your workspace's
@@ -56,7 +52,7 @@ section in Maven's official documentation.
 
 Pretty cool, right? Next, you'll step through an example configuration.
 
-## Setting the Target Platform
+## Setting the Target Platform [](id=setting-the-target-platform)
 
 Setting the version to develop for takes two steps: 
 
@@ -99,7 +95,7 @@ tutorial to do this.
 You now know how to configure a target platform in workspace and how
 dependencies without versions appear in your Gradle build files. You're all set!
 
-## Targeting a Platform Outside of Workspace
+## Targeting a Platform Outside of Workspace [](id=targeting-a-platform-outside-of-workspace)
 
 If you prefer to not use Liferay Workspace, but still want to target a platform,
 you must apply the 

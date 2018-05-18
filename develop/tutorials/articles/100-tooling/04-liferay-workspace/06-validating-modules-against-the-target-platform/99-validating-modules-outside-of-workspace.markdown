@@ -1,4 +1,4 @@
-# Validating Modules Outside of Workspace
+# Validating Modules Outside of Workspace [](id=validating-modules-outside-of-workspace)
 
 If you prefer to not use Liferay Workspace, but still want to validate modules
 against a target platform, you must apply the

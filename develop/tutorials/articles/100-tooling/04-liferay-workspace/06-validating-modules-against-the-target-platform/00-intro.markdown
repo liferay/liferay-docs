@@ -1,4 +1,4 @@
-# Validating Modules Against the Target Platform
+# Validating Modules Against the Target Platform [](id=validating-modules-against-the-target-platform)
 
 After you write a module in Liferay Workspace, you can validate it before
 deployment to make sure of several things: 

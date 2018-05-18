@@ -1,4 +1,4 @@
-# Resolving Common Output Errors Reported by the resolve Task
+# Resolving Common Output Errors Reported by the resolve Task [](id=resolving-common-output-errors-reported-by-the-resolve-task)
 
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
 provides the `resolve` Gradle task to
@@ -14,7 +14,7 @@ tutorial section.
 For help interpreting the `resolve` task's output, see the list below for common
 output errors, what they mean, and how to fix them.
 
-## Missing Import Error
+## Missing Import Error [](id=missing-import-error)
 
 When your module refers to an unavailable import, the container throws this
 error. For example, suppose you have a module `test-service` that depends on
@@ -45,7 +45,7 @@ the
 [Depending on Third Party Libraries Not Included in @product@](/develop/tutorials/-/knowledge_base/7-1/depending-on-third-party-libraries-not-included-in-product)
 section to learn how to do this.
 
-## Missing Service Reference
+## Missing Service Reference [](id=missing-service-reference)
 
 If your module references a non-existent service, an error is thrown.
 This is helpful because service reference issues are hard to diagnose during
@@ -86,7 +86,7 @@ the case, it isn't included in the target platform's default capabilities. You
 can make the custom service capability available to reference by
 [generating a new custom distro JAR](/develop/reference/-/knowledge_base/7-1/modifying-the-target-platforms-capabilities#depending-on-a-customized-distrobution-of-product).
 
-## Missing Fragment Host
+## Missing Fragment Host [](id=missing-fragment-host)
 
 Referring to a non-existent fragment host throws an error. For example, if your
 `test.login` fragment is configured to modify a fragment host named
