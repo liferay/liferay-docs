@@ -265,6 +265,13 @@ Listing example. However, it's possible to use multiple columns as the primary
 key for an entity. In this case, the combination of columns makes up a compound
 primary key for the entity.
 
++$$$
+
+**Note**: On deploying a `*service` module, Service Builder automatically 
+generates indexes for all entity primary keys. 
+
+$$$
+
 Similar to the way you used the form table for adding entities, add attribute
 columns for each of your entities. Create each attribute by clicking on the Add
 icon (![Add](../../../images/icon-add-ide.png)). Then fill in the name of the
@@ -387,6 +394,18 @@ camel-case naming convention when naming finders since the finder's name is used
 to name the methods that Service Builder creates. The IDE creates a new
 finder sub-node under the *Finders* node in the outline. Next, you'll learn how
 to specify the finder column for this node. 
+
++$$$
+
+**Important**: DO NOT create finders that use entity primary key as parameters. 
+They're unnecessary as Service Builder automatically generates
+`findeByPrimaryKey` and `fetchByPrimaryKey` methods for all entity primary keys.
+On deploying a `*service` module, Service Builder creates indexes for all entity
+primary key columns and finder columns. Adding finders that use entity primary
+keys results in attempts to create multiple indexes for the same
+columns---Oracle DB, for example, reports these attempts as errors. 
+
+$$$
 
 Under the new finder node, the IDE created a *Finder Columns* node. Select the
 *Finder Columns* node to specify the columns for your finder's parameters.

@@ -24,7 +24,7 @@ has such permissions on the server. The client app doesn't even need
 access to the Calendar API methods that create, update, and delete
 appointments. It only needs access to the remote service methods for
 finding and retrieving appointments. A service access policy on the
-server can restrict the client’s access to only these service methods.
+server can restrict the client's access to only these service methods.
 Otherwise, once authenticated it would have access to all the remote
 services the user has permission to access when logged in: services that
 create, update, and delete calendar appointments, as well as those that

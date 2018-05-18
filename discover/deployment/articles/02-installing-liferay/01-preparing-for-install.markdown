@@ -105,20 +105,20 @@ The recommended way of setting up your @product@ database is also the simplest.
 @product@ takes care of just about everything. You only need to take two simple
 steps:
 
-1. Create a blank database encoded with the character set UTF-8. @product@ is a
-   multilingual application and needs UTF-8 encoding to display all of its
-   supported character sets.
+1.  Create a blank database encoded with the character set UTF-8. @product@ is a
+    multilingual application and needs UTF-8 encoding to display all of its
+    supported character sets.
 
-   +$$$
+    +$$$
 
-   **Note:** If you plan to migrate from one database vendor to another,
-   [configure the database to use the default query result order you expect for entities @product@ lists](/develop/tutorials/-/knowledge_base/7-0/sort-order-changed-with-a-different-database). 
+    **Note:** If you plan to migrate from one database vendor to another,
+    [configure the database to use the default query result order you expect for entities @product@ lists](/develop/tutorials/-/knowledge_base/7-0/sort-order-changed-with-a-different-database). 
 
-   $$$
+    $$$
 
-2. Create a database user for accessing this database. Grant this database user
-   all rights, including the rights to create and drop tables, to the blank
-   @product@ database.
+2.  Create a database user for accessing this database. Grant this database user
+    all rights, including the rights to create and drop tables, to the blank
+    @product@ database.
 
 @product@ uses this database user's credentials to connect to the @product@
 database either directly or through its application server. During its initial
@@ -129,6 +129,15 @@ This is the recommended way to set up @product@. It enables @product@ to maintai
 its database automatically during upgrades or when various @product@ plugins that
 create database tables of their own are installed. This method is by far the
 best way to set up your @product@ database.
+
++$$$
+
+**Warning:** If you're using an Oracle database, use the `ojdbc8.jar` driver 
+library with at least Oracle 12.2.0.1.0 JDBC 4.2 versioning because
+[data truncation issues](https://issues.liferay.com/browse/LPS-79229)
+have been detected reading data from CLOB columns.
+
+$$$
 
 If you choose to set up @product@'s database with the recommended permissions
 described in this section, you can skip to the next section.

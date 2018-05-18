@@ -36,7 +36,7 @@ you'll pass to the superclass initializer:
 
 - `startRow`: The number representing the page's first row. 
 - `endRow`: The number representing the page's last row. 
-- `computeRowCount`: Whether to call the Connector’s `doAddRowCountServiceCall` 
+- `computeRowCount`: Whether to call the Connector's `doAddRowCountServiceCall` 
   method. 
 
 Follow these steps to create Guestbook List Screenlet's Connector: 
