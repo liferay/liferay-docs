@@ -6,14 +6,14 @@ at the top of the page. For example, on your home page, the Control Menu offers
 default options for accessing the Product Menu, Simulation Menu, and Add Menu.
 You can think of this menu as the gateway to configuring options in Liferay.
 
-![Figure 1: The Control Menu has three configurable areas: left, right, and middle.](../../images/control-menu-home.png)
+![Figure 1: The Control Menu has three configurable areas: left, right, and middle.](../../../images/control-menu-home.png)
 
 If you navigate away from the home page, the Control Menu adapts and provides
 helpful functionality for what ever option you're using. For example, if you
 navigated to Site Administration &rarr; *Content* &rarr; *Web Content*, you'd be
 displayed a Control Menu with different functionality tailored for that option.
 
-![Figure 2: When switching your context to web content, the Control Menu adapts to provide helpful options for that area.](../../images/control-menu-web-content.png)
+![Figure 2: When switching your context to web content, the Control Menu adapts to provide helpful options for that area.](../../../images/control-menu-web-content.png)
 
 The default Control Menu is made up of three categories that represent the left,
 middle, and right portions of the menu. You can create navigation entries for

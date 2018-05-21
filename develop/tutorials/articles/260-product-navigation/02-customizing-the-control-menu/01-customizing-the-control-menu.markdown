@@ -1,4 +1,4 @@
-# Creating Control Menu Entries
+# Creating Control Menu Entries [](id=creating-control-menu-entries)
 
 Now we'll create entries to customize the Control Menu. Make sure to read
 [Adding Custom Panel Categories](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-categories)
@@ -30,7 +30,7 @@ panel category. You'll begin by creating an entry for the Control Menu.
     three categories: Sites (left portion), Tools (middle portion), and User 
     (right portion).
 
-    ![Figure 3: This image shows where your entry will reside depending on the category you select.](../../images/control-menu-areas.png)
+    ![Figure 1: This image shows where your entry will reside depending on the category you select.](../../../images/control-menu-areas.png)
 
     To specify the category, reference the appropriate key in the
     [ProductNavigationControlMenuCategoryKeys](@app-ref@/web-experience/latest/javadocs/com/liferay/product/navigation/control/menu/constants/ProductNavigationControlMenuCategoryKeys.html)
@@ -161,7 +161,7 @@ panel category. You'll begin by creating an entry for the Control Menu.
         }
 
     The `getIconJspPath()` method provides the Product Menu icon
-    (![Menu Closed](../../images/icon-menu.png) &rarr; ![Menu Open](../../images/icon-menu-open.png))
+    (![Menu Closed](../../../images/icon-menu.png) &rarr; ![Menu Open](../../../images/icon-menu-open.png))
     and the `getBodyJspPath()` method adds the UI body for the entry outside of
     the Control Menu. The latter method must be used when providing a UI outside
     the Control Menu. You can easily test this when you open and close the
