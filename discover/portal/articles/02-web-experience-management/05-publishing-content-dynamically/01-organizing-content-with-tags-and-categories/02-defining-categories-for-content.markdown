@@ -20,14 +20,14 @@ using the Asset Publisher and faceted search.
 $$$
 
 Adding vocabularies and categories is similar to adding tags. Visit the site for
-which you want to create categories and then click *Content* &rarr; *Categories*
-to view the Categories application.
+which you want to create categories and then click *Categorization* &rarr; 
+*Categories* to view the Categories application.
 
-![Figure 3: After adding new vocabularies, you'll notice your vocabularies indicate the amount of categories existing beneath them.](../../../images/vocabulary-list.png)
+![Figure 3: After adding new vocabularies, you'll notice your vocabularies indicate the amount of categories existing beneath them.](../../../../images/vocabulary-list.png)
 
 Clicking on a vocabulary displays any categories that have been created under
 that vocabulary. To create a new vocabulary, click on the *Add Vocabulary*
-button (![Add Vocabulary](../../../images/icon-add.png)). Enter a name and,
+button (![Add Vocabulary](../../../../images/icon-add.png)). Enter a name and,
 optionally, a description. By default, the *Allow Multiple Categories* option is
 enabled. This allows multiple categories from the vocabulary to be applied to an
 asset. If the box is disabled, only one category from the vocabulary can be
@@ -44,9 +44,9 @@ Creating new categories is similar to creating new tags except that categories
 must be added to an existing vocabulary and they can only be created by site
 administrators. Once created, however, regular users can apply categories to any
 assets they have permission to create or edit. To create a new category, click
-the *Add Category* icon (![Add Category](../../../images/icon-add.png)) if you're
+the *Add Category* icon (![Add Category](../../../../images/icon-add.png)) if you're
 already viewing a vocabulary, or you can select the *Actions* button
-(![Actions](../../../images/icon-actions.png)) next to an existing vocabulary and
+(![Actions](../../../../images/icon-actions.png)) next to an existing vocabulary and
 select *Add Category*. Enter a name for the new category and, optionally, a
 description. Just as with tags, you can configure the permissions
 of the category, choosing which roles (guest, site member, owner) can view the
@@ -98,46 +98,3 @@ them were mentioned already when the *Allow Multiple Categories* and *Required*
 selectors for vocabularies and categories were discussed. The three new
 features are targeted vocabularies, single/multi-valued vocabularies, and
 separated widgets for every vocabulary.
-
-## Targeted Vocabularies [](id=targeted-vocabularies)
-
-Targeted Vocabularies allow you to decide which vocabularies can be applied to
-an asset type and which vocabularies are required for an asset type. To
-configure these settings, go to the Categories application in Site
-Administration and select a vocabulary's *Actions* icon. Select the *Associated
-Asset Types* tab to reveal a dialog box like the one below.
-
-![Figure 4: You can target vocabularies by checking the *Allow Multiple Categories* selector and then selecting the Asset Types.](../../../images/targeted-vocabularies.png)
-
-The default value for *Associated Asset Types* is *All Asset Types*. You can
-fine tune your choices by using the *+* and *-* buttons, which narrows the scope
-of the vocabulary to specific assets. In the screenshot above, notice that the
-vocabulary is configured to be available for Web Content articles and Blog
-entries, but it is not required. It is mandatory, however, for Bookmark entries.
-
-## Single and Multi-valued Vocabularies [](id=single-and-multi-valued-vocabularies)
-
-You can also decide if users can choose one or more categories from the same
-vocabulary to apply to an asset. If a vocabulary is single-valued you can only
-choose one. If it allows more, you can choose several categories from the
-vocabulary to apply to an asset.
-
-![Figure 5: Multi-valued vocabularies allow multiple categories from the vocabulary to be applied to an asset. Single-valued vocabularies only allow one category from the vocabulary to be applied. Here, the *Dining* and *Nightlife* categories are selected to be applied but the *Scenic Adventures* category is not.](../../../images/multi-valued-vocabularies.png)
-
-You can configure the single-valued or multi-valued status of a vocabulary
-through the Categories application. Edit a vocabulary and deselect the *Allow
-Multiple Categories* selector to create a single-valued vocabulary. Use the
-default option to create a multi-valued vocabulary.
-
-## Separated Widgets [](id=separated-widgets)
-
-A third feature of vocabularies and categories is that every vocabulary has its
-own separated widget. These widgets appear in the Categorization section of the
-form for editing an asset and they allow users to easily select appropriate
-categories for that asset.
-
-![Figure 6: Vocabularies have their own widgets, making it easy to select available categories.](../../../images/separated-widgets.png)
-
-It's important to use tags and categories with all your content, so that content
-is easier for users to find. Now that your content is categorized and tagged,
-you'll learn how to define content relationships next.

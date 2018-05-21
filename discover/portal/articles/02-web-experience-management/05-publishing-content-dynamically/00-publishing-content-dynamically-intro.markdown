@@ -1,15 +1,12 @@
 # Publishing Content Dynamically [](id=publishing-content-dynamically)
 
-Any type of content in @product@ is considered an asset. In the 
-[Creating Web Content](/discover/portal/-/knowledge_base/7-0/creating-web-content)
+Most content types in @product@ are Assets. In the 
+[Creating Web Content](/discover/portal/-/knowledge_base/7-1/creating-web-content)
 chapter, you examined @product@'s most common type of asset: web content. Other
 types of assets include blog posts, wiki articles, message board posts,
 bookmarks, and documents. It's possible for developers to define custom asset
-types that utilize @product@'s asset framework. Originally, the asset framework
-was created to provide a mechanism for adding tags to blog entries, wiki
-articles, and web content without reimplementing the same functionality multiple
-times. The asset framework has been greatly extended since then and it now
-supports tags, categories, vocabularies, comments, ratings, and asset
+types that utilize @product@'s asset framework. The asset framework provides 
+support for tags, categories, vocabularies, comments, ratings, and asset 
 relationships.
 
 The Asset Publisher application is designed to display multiple assets. It has

@@ -6,7 +6,7 @@ aren't in the same category. The Related Assets application only displays
 content that meets the criteria you've specified, and also is listed as a
 related asset for a piece of content that is published using the Asset
 Publisher. You'll learn more about the Asset Publisher in the
-[Publishing Assets](/discover/portal/-/knowledge_base/7-0/publishing-assets)
+[Publishing Assets](/discover/portal/-/knowledge_base/7-1/publishing-assets)
 section. For now, you'll focus on how to define relationships between assets so
 when you begin publishing assets, the Related Assets application can
 successfully display those relationships. You'll take a closer look at the
