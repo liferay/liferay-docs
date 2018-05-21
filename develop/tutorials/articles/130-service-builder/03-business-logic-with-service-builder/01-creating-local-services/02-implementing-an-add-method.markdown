@@ -21,7 +21,7 @@ steps for implementing an `add*` method:
 7.  [Return the entity instance.](#return-the-entity)
 
 This tutorial refers to the Bookmarks application's `addEntry` method from 
-[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.1.0-a1/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
+[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
 as an example. To keep things simple, we have excluded the code that integrates
 with Liferay services, such as assets, social bookmarks, and more. 
 
@@ -135,9 +135,9 @@ The `*Peristence` instance associated with your entity has a `create(long id)`
 method that constructs an entity instance with the given ID. Every
 `*BaseLocalServiceImpl` has a `*Persistence` field that references a
 `*Persistence` object for the entity. For example,
-[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.1.0-a1/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
+[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
 can access
-[`BookmarksEntryLocalServiceBaseImpl`](https://github.com/liferay/liferay-portal/blob/7.1.0-a1/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/base/BookmarksEntryLocalServiceBaseImpl.java)'s
+[`BookmarksEntryLocalServiceBaseImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/base/BookmarksEntryLocalServiceBaseImpl.java)'s
 field `bookmarksEntryPersistence`, which is a reference to a
 `BookmarksEntryPersistence` instance. 
 

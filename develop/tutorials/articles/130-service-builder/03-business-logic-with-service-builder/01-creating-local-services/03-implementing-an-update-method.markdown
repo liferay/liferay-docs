@@ -30,7 +30,7 @@ most because it has parameters for setting entity attribute values. Create an
 6.  [Run Service Builder.](#run-service-builder)
 
 The following code snippets from 
-[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.1.0-a1/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s
+[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s
 `updateEntry` method are helpful to examine. 
 
 	public BookmarksEntry updateEntry(
@@ -115,7 +115,7 @@ or an extension of `PortalException` for any invalid parameters.
 If you're passing in an entity instance, you can update it directly. Otherwise,
 pass in the entity ID (the primary key).  The `*Persistence` class Service
 Builder injects into `*BaseLocalServiceImpl` classes has a
-`findByPrimaryKey(long)` method that retrieves instances by ID. For example, the [`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.1.0-a1/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
+`findByPrimaryKey(long)` method that retrieves instances by ID. For example, the [`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
 retrieves the `BookmarksEntry` that matches the primary key `entryId`. 
 
     BookmarksEntry entry = bookmarksEntryPersistence.findByPrimaryKey(
@@ -169,7 +169,7 @@ Here's what a `delete*` method looks like:
 Make sure to replace `[ENTITY]` with your entity's name or nickname. 
 
 For example, here's paraphrased code from 
-[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.1.0-a1/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s 
+[`BookmarksEntryLocalServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)'s 
 `deleteEntry` method:
 
     public BookmarksEntry deleteEntry(BookmarksEntry entry)
