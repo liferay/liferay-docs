@@ -1,5 +1,4 @@
-
-## Preventing Accidental File Deletion
+# Preventing Accidental File Deletion
 
 Liferay Sync's power rests in its ability to propagate between the @product@ 
 instance and connected Sync clients. When a user deletes a file from a connected 

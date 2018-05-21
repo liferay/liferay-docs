@@ -1,4 +1,4 @@
-## Ensuring Sync Security
+# Ensuring Sync Security
 
 As an administrator, you're undoubtedly concerned about the security of all
 connections to and from your @product@ instance. As long as your server is 
@@ -9,7 +9,7 @@ and securely transmit files, your @product@ server must also use SSL. The next
 section demonstrates how Sync's permissions work with your @product@ instance's 
 permissions. 
 
-### Liferay Sync Permissions Demonstration [](id=liferay-sync-permissions-demonstration)
+## Liferay Sync Permissions Demonstration [](id=liferay-sync-permissions-demonstration)
 
 Sync uses @product@'s default permissions to determine files and folders to sync
 with the user's devices. It can only sync files a user can access in the 
@@ -48,7 +48,7 @@ site's default file permissions are View Only. After attempting the sync, a red
 *x* appears next to the file in the local Sync folder. Right click the file to 
 see the error. It confirms the user doesn't have the required permissions. 
 
-![Figure 1: The upload error occurs because the user only has permission to view files.](../../../images/sync-file-permissions-error.png)
+![Figure 1: The upload error occurs because the user only has permission to view files.](../../../../images/sync-file-permissions-error.png)
 
 To confirm that the error didn't propagate through Sync, open the file in the 
 secretagent user's local Sync folder. It still contains the original text. 

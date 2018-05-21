@@ -11,7 +11,7 @@ Sync Connector Admin has three tabs:
 1.  **Settings:** Control Sync's general behavior. These settings apply globally 
     to Sync. 
 
-    ![Figure 1: The Control Panel's Configuration section contains Sync Connector Admin.](../../../images/sync-admin-01.png)
+    ![Figure 1: The Control Panel's Configuration section contains Sync Connector Admin.](../../../../images/sync-admin-01.png)
 
     - **Allow the use of Sync?:** Whether Sync is enabled.
 
@@ -54,13 +54,13 @@ Sync Connector Admin has three tabs:
 
 2.  **Sites:** Control Sync on a per-site basis. 
 
-    ![Figure 2: Sync Connector Admin's Sites tab lets you manage Sync on a per-site basis.](../../../images/sync-admin-02.png)
+    ![Figure 2: Sync Connector Admin's Sites tab lets you manage Sync on a per-site basis.](../../../../images/sync-admin-02.png)
     
     For each site in the @product@ instance, the Sites tab lists each site's 
     default file permissions (more on this in a moment) and whether Sync is 
     enabled for that site. Sync is enabled by default for all sites. To disable 
     Sync for a site, click the site's *Actions* button 
-    (![Actions](../../../images/icon-actions.png)) and select 
+    (![Actions](../../../../images/icon-actions.png)) and select 
     *Disable Sync Site*. **Please use caution** when disabling Sync for a site, 
     as doing so **deletes** files for that site from the Sync clients. Disabling 
     Sync for a site, however, doesn't affect the site's files in the @product@ 
@@ -92,7 +92,7 @@ Sync Connector Admin has three tabs:
     permissions for that site. Click *Choose* for the permissions you want to 
     use. 
 
-    ![Figure 3: Click *Choose* to select the default file permissions for a site in Sync.](../../../images/sync-admin-03.png)
+    ![Figure 3: Click *Choose* to select the default file permissions for a site in Sync.](../../../../images/sync-admin-03.png)
 
     To set the default file permissions for several sites, select the checkboxes 
     for the sites, click the *Default File Permissions* link that appears above 
@@ -107,19 +107,19 @@ Sync Connector Admin has three tabs:
 
 3.  **Devices:** View and manage the devices registered with Sync. 
 
-    ![Figure 4: Sync Connector Admin's Devices tab lists all the devices Sync has registered for the @product@ instance.](../../../images/sync-admin-devices.png)
+    ![Figure 4: Sync Connector Admin's Devices tab lists all the devices Sync has registered for the @product@ instance.](../../../../images/sync-admin-devices.png)
 
     Each row in the Devices tab's table represents a device. The *Name* column 
     lists the user that registered the device. The remaining columns list each 
     device's location, client type, client build number, last connection date, 
     and status. Each device's Actions button 
-    (![Actions](../../../images/icon-actions.png)) lets you manage that device. 
-    You can change a device's status from Active to Inactive by selecting 
-    *Actions* &rarr; *Disable Sync Device*. Inactive devices can't sync with the 
-    @product@ instance. Inactive mobile devices also can't access local Sync 
-    files. Once a device is Inactive, you can erase Sync files from it by 
-    selecting *Actions* &rarr; *Wipe Sync Device*. This also signs the device 
-    out and removes the account from the client. If the device is offline, this 
-    happens when it tries to reconnect. The Actions menu also lets you enable or 
-    delete an Inactive device. Deleting a device only removes it from the list 
-    of registered devices; it can still reconnect and reregister. 
+    (![Actions](../../../../images/icon-actions.png)) lets you manage that 
+    device. You can change a device's status from Active to Inactive by 
+    selecting *Actions* &rarr; *Disable Sync Device*. Inactive devices can't 
+    sync with the @product@ instance. Inactive mobile devices also can't access 
+    local Sync files. Once a device is Inactive, you can erase Sync files from 
+    it by selecting *Actions* &rarr; *Wipe Sync Device*. This also signs the 
+    device out and removes the account from the client. If the device is 
+    offline, this happens when it tries to reconnect. The Actions menu also lets 
+    you enable or delete an Inactive device. Deleting a device only removes it 
+    from the list of registered devices; it can still reconnect and reregister. 
