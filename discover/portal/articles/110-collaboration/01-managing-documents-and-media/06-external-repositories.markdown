@@ -65,7 +65,7 @@ Follow these steps to configure @product@ for this authentication requirement:
 2.  Make sure to authenticate the same way on both @product@ and the repository. 
     You can do so by authenticating based on screen name. To do this in the same 
     `portal-ext.properties` file, set the 
-    [`company.security.auth.type`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Company)
+    [`company.security.auth.type`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Company)
     portal property to `screenName`: 
 
         company.security.auth.type=screenName
@@ -181,7 +181,7 @@ Follow these steps to access a repository with CMIS Web Services:
  
 6.  Leave *Repository ID* blank, as @product@ generates the ID automatically. 
 
-7.  Click *Save*
+7.  Click *Save*.
 
 Your repository appears in Documents and Media. You can navigate to the 
 repository and work with files as you do other files in Documents and Media. 
