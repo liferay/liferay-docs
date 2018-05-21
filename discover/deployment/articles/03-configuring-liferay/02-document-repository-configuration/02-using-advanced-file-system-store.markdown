@@ -1,4 +1,4 @@
-# Using the Advanced File System Store
+# Using the Advanced File System Store [](id=using-the-advanced-file-system-store)
 
 The advanced file system store is similar to the simple file system
 store (the default store). Like that store, it saves files to the local file
