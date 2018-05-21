@@ -203,9 +203,8 @@ Here are example upgrade configuration files that you can customize:
         liferay.home=/home/user/servers/liferay7
         module.framework.base.dir=/home/user/servers/liferay7/osgi
 
-The upgrade tool first executes the core's upgrade processes and verifiers. On
-completing the core upgrade, the upgrade tool lists any and all installed
-patches. 
+The patch level will be showed at beginning of the upgrade log, then the upgrade
+tool first executes the core's upgrade processes and verifiers.
 
 The Gogo shell lets you upgrade modules, check module upgrade status, and verify
 upgrades.  Read on to learn how to use Gogo shell commands to use the
