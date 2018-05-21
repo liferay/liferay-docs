@@ -1,4 +1,4 @@
-# Ensuring Sync Security
+# Ensuring Liferay Sync Security [](id=ensuring-liferay-sync-security)
 
 As an administrator, you're undoubtedly concerned about the security of all
 connections to and from your @product@ instance. As long as your server is 

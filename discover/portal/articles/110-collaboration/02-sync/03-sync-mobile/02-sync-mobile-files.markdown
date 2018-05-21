@@ -1,4 +1,4 @@
-# Managing Files and Folders
+# Managing Files and Folders in Liferay Sync Mobile [](id=managing-files-and-folders-in-liferay-sync-mobile)
 
 Whether you're working in My Documents or My Sites, you manage files and folders
 the same way. Pressing a site or folder shows you a list of its files and
@@ -62,10 +62,3 @@ swipe to the right. The following screenshot shows the options available in a
 file's context menu. 
 
 ![Figure 3: The badge on the file's icon shows the file's version in the @product@ instance. You can also share files that you've downloaded.](../../../../images/sync-mobile-file-actions.png)
-
-Awesome! You've seen how Liferay Sync keeps you up to date with the files on
-your @product@ sites. Any new or modified files on your sites are automatically
-propagated to your desktop and mobile environments. This lets you view and work
-with your files from within those environments. What's more, other users you
-collaborate with can also use Sync to get your latest contributions. This way,
-entire teams can always work with the latest version of every document. 

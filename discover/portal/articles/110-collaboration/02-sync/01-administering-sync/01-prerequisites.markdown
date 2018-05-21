@@ -1,4 +1,4 @@
-## Installing Sync's Prerequisites
+# Installing Liferay Sync's Prerequisites [](id=installing-liferay-syncs-prerequisites)
 
 Liferay Sync requires that your @product@ instance contains the most recent 
 versions of the following 

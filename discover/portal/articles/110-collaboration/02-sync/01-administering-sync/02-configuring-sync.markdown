@@ -1,4 +1,4 @@
-## Configuring Liferay Sync
+# Configuring Liferay Sync [](id=configuring-liferay-sync)
 
 Sync Connector lets you manage how, or if, clients connect to your @product@ 
 instance. You can also configure default file permissions on a per-site basis, 

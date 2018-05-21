@@ -1,4 +1,4 @@
-# Using the Liferay Sync Desktop Client 
+# Using the Liferay Sync Desktop Client [](id=using-the-liferay-sync-desktop-client)
 
 When Liferay Sync is running its icon appears in your task bar (Windows) or menu 
 bar (Mac). Clicking this icon opens a menu that lets you work with and manage 
@@ -34,7 +34,7 @@ the following three options:
 Next, you'll learn how to use Sync's preferences to control how Sync functions 
 on your machine. 
 
-## Using Sync Preferences
+## Using Sync Preferences [](id=using-sync-preferences)
 
 You can use Sync's preferences to add/remove @product@ instances to sync with, 
 edit connection settings, and control Sync's basic behavior. Open Sync's 
@@ -53,7 +53,7 @@ The *Accounts* tab contains the following:
   should use caution when deleting an account from your Sync client, as doing so 
   also deletes any local files and folders for that account. Adding an account 
   takes you through the same set of steps you used to set up the Sync client. 
-  [Click here](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop#configuring-the-liferay-sync-desktop-client) 
+  [Click here](/discover/portal/-/knowledge_base/7-1/installing-and-configuring-the-desktop-liferay-sync-client#configuring-the-liferay-sync-desktop-client) 
   for instructions on this. 
 
 - **Syncing Sites:** the sites you have permission to sync with for the selected 
@@ -62,7 +62,7 @@ The *Accounts* tab contains the following:
   change the sites you sync with, click the *Manage Sites* button. The window 
   that appears lets you select and/or unselect sites to sync with. This window 
   is identical to the one that appeared when you first configured the client. 
-  [Click here](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop#configuring-the-liferay-sync-desktop-client) 
+  [Click here](/discover/portal/-/knowledge_base/7-1/installing-and-configuring-the-desktop-liferay-sync-client#configuring-the-liferay-sync-desktop-client) 
   and see step two for instructions on using it. Use caution when de-selecting
   sites. De-selecting a site deletes its folder on your machine. 
 

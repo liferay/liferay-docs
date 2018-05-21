@@ -1,4 +1,4 @@
-# Installing and Configuring the Desktop Liferay Sync Client
+# Installing and Configuring the Desktop Liferay Sync Client [](id=installing-and-configuring-the-desktop-liferay-sync-client)
 
 You can download the desktop client from the
 [Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
@@ -6,7 +6,7 @@ Note that you'll need a Liferay account for this. Once you've downloaded the
 appropriate desktop client for your operating system, installing Liferay Sync on 
 Windows or Mac OS is straightforward. 
 
-## Installing the Liferay Sync Desktop Client
+## Installing the Liferay Sync Desktop Client [](id=installing-the-liferay-sync-desktop-client)
 
 To install the Liferay Sync client on Windows, you must have administrator
 privileges. Upon launching the Windows application installer, you're prompted
@@ -38,7 +38,7 @@ appears when installing or upgrading the tool.
 
 Next, you'll configure the Sync client. 
 
-## Configuring the Liferay Sync Desktop Client 
+## Configuring the Liferay Sync Desktop Client [](id=configuring-the-liferay-sync-desktop-client)
 
 Now that you've installed Sync, you're ready to configure it! The configuration 
 steps for Sync on Windows and Mac are identical. 
@@ -99,5 +99,3 @@ steps for Sync on Windows and Mac are identical.
     top-right. 
 
     ![Figure 7: Congratulations, you've successfully set up Liferay Sync!](../../../../images/sync-setup-04.png)
-
-Next, you'll learn how to use the Liferay Sync desktop client. 
