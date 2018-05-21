@@ -18,6 +18,4 @@ within easy reach.
 
 This guide walks you through setting up and using the Liferay Sync client on
 your desktop. Before proceeding, check with your @product@ instance or site 
-administrator to ensure that Sync is enabled for your sites. You must then 
-install the Sync client on your desktop device. The next section walks you 
-through installing the client. 
+administrator to ensure that Sync is enabled for your sites. 

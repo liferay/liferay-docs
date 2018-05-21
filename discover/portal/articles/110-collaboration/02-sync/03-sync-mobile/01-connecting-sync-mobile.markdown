@@ -25,7 +25,7 @@ device by encrypting them. Using Security Mode requires you to set up a passcode
 to use when accessing the Sync app. Security Mode protects the files on your 
 device and @product@ instance in the event your device is lost or stolen. You 
 should note, however, downloading and opening files in Security Mode takes 
-slightly longer than usual because the @product@ server must use SSL--if it 
+slightly longer than usual because the @product@ server must use SSL---if it 
 didn't, your files would be transmitting in the open. Below the Security Mode 
 toggle are the app's version and a link to send app feedback to Liferay. 
 
