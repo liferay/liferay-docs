@@ -1,0 +1,19 @@
+# Using Liferay Sync on Your Mobile Device
+
+Liferay Sync for Android and iOS contains most of the
+[desktop Sync client](/discover/portal/-/knowledge_base/6-2/using-liferay-sync-on-your-desktop)'s
+functionality. The mobile client can, however, only be connected to one 
+@product@ instance account at a time. Also, mobile Sync doesn't automatically 
+download files to your device. To save precious storage space on your device, 
+the Sync mobile app lets you choose the files you want to work with. As with the 
+Sync desktop clients, the latest versions of Sync on Android and iOS provide a 
+consistent user experience across platforms. While this article details using 
+Sync on Android, the instructions also apply to Sync on iOS. 
+
+You need to download and install Sync on your Android or iOS device through its 
+respective app store, the same as you do any other mobile app. To find the app, 
+search Google Play or the App Store for *Liferay*. You can also download Sync 
+from the 
+[Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
+Once you've installed the Sync app on your device, follow the instructions below 
+to learn how to use it. 
