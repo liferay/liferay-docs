@@ -16,7 +16,7 @@ a currency other than the store's default.
 Follow these steps:
 
 1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Price Lists* and click on the
-    ![Add](../images/icon-add.png) button at the top right.
+    ![Add](../../images/icon-add.png) button at the top right.
 
 2.  Fill in the follow fields and click *Publish* when finished:
 
@@ -43,7 +43,7 @@ products to it. Follow these steps:
     published a list, you are already on this page. Click on the list you want
     to add products to.
 
-2.  Click on the *Entries* tab and then the ![Add](../images/icon-add.png)
+2.  Click on the *Entries* tab and then the ![Add](../../images/icon-add.png)
     button. In the pop-up, check the box next to each SKU you want to add to the
     list. Then click *Add*.
 
@@ -84,7 +84,7 @@ Follow these steps to set up tiered pricing for a product:
 
 2.  Click on a product's name and then on the *Tier Price Entries* tab.
 
-3.  Click the ![Add](../images/icon-add.png) button and fill in the *Price* and
+3.  Click the ![Add](../../images/icon-add.png) button and fill in the *Price* and
     *Minimum Quantity* fields. You can also override the price with a *Promo
     Price* (see above) if you want. Click *Save*.
 
