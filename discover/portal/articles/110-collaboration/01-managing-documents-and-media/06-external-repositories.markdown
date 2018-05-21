@@ -1,4 +1,4 @@
-# Using External Repositories 
+# Using External Repositories [](id=using-external-repositories)
 
 @product@'s Documents and Media lets you access external repositories as well as 
 the built-in document repository. Administrators can learn how to set options 
@@ -115,7 +115,7 @@ Follow these steps to access a repository with CMIS AtomPub:
     (![Add](../../../images/icon-add.png)) and select *Repository*. The *New
     Repository* form appears. 
 
-    ![Figure 2: Here's the form for accessing a CMIS repository using AtomPub.](../../../images/dm-repo-types-new-repo-config.png)
+    ![Figure 1: Here's the form for accessing a CMIS repository using AtomPub.](../../../images/dm-repo-types-new-repo-config.png)
 
 3.  Enter an arbitrary name for the repository and optionally enter a 
     description. 
@@ -177,7 +177,7 @@ Follow these steps to access a repository with CMIS Web Services:
 
     $$$
 
-    ![Figure 3: Here's an example of the web service URLs for an Alfresco repository.](../../../images/dm-repo-types-alfresco-ws.png)
+    ![Figure 2: Here's an example of the web service URLs for an Alfresco repository.](../../../images/dm-repo-types-alfresco-ws.png)
  
 6.  Leave *Repository ID* blank, as @product@ generates the ID automatically. 
 

@@ -1,4 +1,4 @@
-# Store Types
+# Store Types [](id=store-types)
 
 You can change the file system (the *store*) that the Documents and Media 
 library uses to store files. This is configured in the `portal-ext.properties` 

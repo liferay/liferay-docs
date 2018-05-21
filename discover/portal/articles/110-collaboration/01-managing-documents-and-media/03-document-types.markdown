@@ -1,4 +1,4 @@
-# Document Types
+# Document Types [](id=document-types)
 
 Document types let you specify the metadata fields that are available to users 
 creating Document Library files. For example, the built-in *Contract* document 
@@ -11,14 +11,14 @@ faster. You can also apply workflows to specific document types. And you can
 more cleanly organize document libraries by designating folders to exclusively 
 hold particular document types. 
 
-## Managing Document Types
+## Managing Document Types [](id=managing-document-types)
 
 To see the document types available in your @product@ instance, open the *Menu* 
-(![Product Menu](../../../../images/icon-menu.png)), expand your site's menu, 
+(![Product Menu](../../../images/icon-menu.png)), expand your site's menu, 
 and navigate to *Content* &rarr; *Documents and Media*. Then click the *Document 
 Types* tab. A searchable table lists the document types. The following actions 
 are available for each document type via its Actions button 
-(![Actions Menu](../../../../images/icon-actions.png)): 
+(![Actions Menu](../../../images/icon-actions.png)): 
 
 -   **Edit**: Edit the document type. 
 -   **Permissions**: Set the document type's permissions. 
@@ -26,11 +26,11 @@ are available for each document type via its Actions button
 
 ![Figure 1: The Document Types management window lets you view existing document types and create new ones.](../../../images/dm-doc-types-list.png)
 
-## Creating Document Types
+## Creating Document Types [](id=creating-document-types)
 
 Follow these steps to create a document type: 
 
-1.  From the *Menu* (![Product Menu](../../../../images/icon-menu.png)), expand 
+1.  From the *Menu* (![Product Menu](../../../images/icon-menu.png)), expand 
     your site's menu and navigate to *Content &rarr; Documents and Media*. Then 
     click the *Document Types* tab. 
 

@@ -1,4 +1,4 @@
-# Metadata Sets
+# Metadata Sets [](id=metadata-sets)
 
 @product@ lets you define the metadata fields that users can fill out when they 
 create or edit Document Library files. You do this by creating *metadata sets* 
@@ -7,10 +7,10 @@ and thus apply your metadata fields to the files. Although you apply metadata
 sets via document types, metadata sets exist independently and you can apply 
 them to any number of document types. 
 
-## Managing Metadata Sets
+## Managing Metadata Sets [](id=managing-metadata-sets)
 
 To see the metadata sets available in your @product@ instance, open the *Menu* 
-(![Product Menu](../../../../images/icon-menu.png)), expand your site's menu, 
+(![Product Menu](../../../images/icon-menu.png)), expand your site's menu, 
 and navigate to *Content* &rarr; *Documents and Media*. Then click the 
 *Metadata Sets* tab. The sets appear in a table. 
 
@@ -28,7 +28,7 @@ ascending or descending order, respectively. You can also use the Search bar to
 search for a set. 
 
 In the table, each metadata set has an Actions button 
-(![Actions Menu](../../../../images/icon-actions.png)) that lets you perform the 
+(![Actions Menu](../../../images/icon-actions.png)) that lets you perform the 
 following actions on that set: 
 
 -   **Edit**: Edit the set. Alternatively, click the set's name in the table.
@@ -42,7 +42,7 @@ following actions on that set:
 
 Follow these steps to create a metadata set: 
 
-1.  From the *Menu* (![Product Menu](../../../../images/icon-menu.png)), click 
+1.  From the *Menu* (![Product Menu](../../../images/icon-menu.png)), click 
     your site's name and navigate to *Content &rarr; Documents and Media*. Then 
     click the *Metadata Sets* tab. 
 
