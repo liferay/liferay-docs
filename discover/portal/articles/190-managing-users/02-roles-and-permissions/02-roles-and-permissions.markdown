@@ -51,11 +51,13 @@ would see an empty list if they try to add users to a role.
 +$$$
 
 **Note:** The Roles application in the Control Panel is not the only place where
-permissions are configured. You can configure a role's permissions for a
-particular application instance from its *Options*
-(![Options](../../../images/icon-options.png)) \
-menu. However, permissions granted or removed in the Control Panel override
-those made at the more granular level.
+permissions are configured. You can configure a role's permissions on a resource
+at a more granular instance. For example, from a particular application
+instance, click its *Options* (![Options](../../../images/icon-options.png))
+menu and select *Permissions*. There you can configure permissions for the
+resource that overlap with those configured in the Control Panel's Roles
+application. However, permissions granted or removed in the Control Panel
+override those made at the more granular level.
 
 $$$
 

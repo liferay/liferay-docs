@@ -10,6 +10,9 @@ Roles collect permissions that define a particular function within
 users are assigned to roles, either directly or through their association with a
 User Group, an Organization, or a Site. 
 
+![Figure x: Assign Users to a role, directly or by their association with a
+Site, Organization, or User Group.](../../images/roles-assignees.png)
+
 Take a Message Board Administrator role, for example. A role with that name
 is likely to have permissions relevant to the specific Message Board portlets
 delegated to it. Users with this role inherit the permissions collected underneath
