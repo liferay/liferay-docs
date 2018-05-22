@@ -27,8 +27,8 @@ GDPR.
 
 The code referenced here could be deployed via the scripting console, or
 compiled in a web plugin. It's up to you. A sample web plugin containing this
-code that can be referenced.
-[here](LINK WHEN AVAILABLE).
+code can be referenced
+[here](https://github.com/liferay/liferay-plugins/tree/6.2.x/webs/sample-personal-data-web).
 
 ## Right to Data Portability
 
