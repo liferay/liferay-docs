@@ -57,7 +57,7 @@ published:
 The template saves automatically, and when it is turned into a page, the new
 text is displayed.
 
-## Making Images Editable
+## Making Images Editable [](id=making-images-editable)
 
 Like text, you can set images images as editable. An editable image can be
 selected from the user's local files or from the Documents and Media Library.
@@ -76,7 +76,7 @@ After you add the `lfr-editable` tag with the type `img` to a Fragment, when
 you add that Fragment to a page, you can then click on the editable image and 
 select a replacement.
 
-![Figure X: You can replace images in the Page Template editor.](../../../images/editing-fragment-image.png)
+<!--Figure X: You can replace images in the Page Template editor.../../../images/editing-fragment-image.png -->
 
 ## Including Widgets Within A Fragment [](id=including-widgets-within-a-fragment)
 
@@ -135,7 +135,7 @@ Now you need to add it to a Content Page to display it.
 
 10. Now go back to your site, and select your new page.
 
-## Embedding Your Widget in a Fragment
+## Embedding Your Widget in a Fragment [](id=embedding-your-widget-in-a-fragment)
 
 If you have a custom widget that you want to embed in a fragment, you can 
 configure that widget to be embeddable. In order to embed your widget, it must
