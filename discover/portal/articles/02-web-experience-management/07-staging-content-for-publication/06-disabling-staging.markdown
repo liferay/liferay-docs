@@ -2,21 +2,21 @@
 
 Disabling staging is straightforward, but should not be taken lightly. It's
 important to know the consequences of turning the staging environment off so you
-you know whether it's a smart decision for your situation.
+you know whether it's a smart decision for your circumstances.
 
 The consequences for disabling Local Live and Remote Live staging are slightly
 different, so you'll learn about both.
 
 ## Disabling Local Live Staging [](id=disabling-local-live-staging)
 
-Conceptually, the live site is viewed as the final approved version of your
-site, whereas the staging site is a temporary workspace containing information
-that is not finalized.
+Conceptually, the live site is the final approved version of your site, whereas
+the staging site is a temporary workspace containing information that is not
+finalized.
 
-Disabling local staging completely removes the staging environment altogether,
-which means all content that was not published to your live site is erased. This
-means that before disabling staging, you must ensure all necessary information
-on the staged site is published or preserved elsewhere.
+Disabling local staging completely removes the staging environment, which means
+all content that was not published to your live site is erased. Therefore,
+before disabling staging, you must ensure all necessary information on the
+staged site is published or preserved elsewhere.
 
 Keep in mind that draft content types are not published, so they can be lost
 too.
