@@ -1,4 +1,4 @@
-# Creating Multi and Single Page Variations
+# Creating Multi and Single Page Variations [](id=creating-multi-and-single-page-variations)
 
 You can create two types of page variations:
 

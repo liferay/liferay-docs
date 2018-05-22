@@ -1,4 +1,4 @@
-# Using Multi and Single Page Variations
+# Using Multi and Single Page Variations [](id=using-multi-and-single-page-variations)
 
 There are two page variation options available from the Staging Bar:
 
@@ -24,7 +24,7 @@ however, **does** affect every site page variation.
 
 You'll learn about enabling page versioning next.
 
-## Enabling Page Versioning
+## Enabling Page Versioning [](id=enabling-page-versioning)
 
 Page Versioning is enabled on the Staging Configuration screen when first
 [enabling staging](/discover/portal/-/knowledge_base/7-1/enabling-staging).
@@ -41,7 +41,7 @@ environment, navigate to the Product Menu &rarr; *Publishing* &rarr; *Staging*
 &rarr; *Options* (![Options](../../../../images/icon-options.png)) &rarr;
 *Staging Configuration*. You can enable the page versioning options there.
 
-## Using Site Pages Variations
+## Using Site Pages Variations [](id=using-site-pages-variations)
 
 Site pages variations are useful when you must plan multiple page sets for your
 site at once. For example, consider this scenario:
@@ -85,7 +85,7 @@ variation called *Mondays* which is published to the live site every Monday and
 another one called *Day 1* which is published to the live site every first day
 of each month.
 
-## Using Page Variations
+## Using Page Variations [](id=using-page-variations)
 
 You can also have variations for a single page inside a site pages variation,
 which lets you work in parallel on different versions of a page. For example,
@@ -104,7 +104,7 @@ and that is the one that gets published to the live site. To publish a variation
 to the live site, click on *Publish to Live* in the staging menu and then select
 *Publish to Live*.
 
-## Managing Variation Permissions
+## Managing Variation Permissions [](id=managing-variation-permissions)
 
 It's also possible to set permissions on each variation, so certain users have
 access to manage some, but not all variations. To do this,
