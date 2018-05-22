@@ -3,7 +3,7 @@
 The liferay-npm-bundler is configured via a `.npmbundlerrc` file placed in the 
 portlet project's root folder. You can create the configuration manually or use 
 a configuration preset. Use the configuration presets described here as a guide 
-to create your own custom configurations.
+to create your own custom configurations. 
 
 This tutorial explains the `.npmbundlerrc` file's structure and shows how to use 
 the available presets to configure the liferay-npm-bundler.
@@ -46,8 +46,13 @@ Here's an example `.npmbundlerrc` configuration:
             (same as wildcard format (`*`) contents below)
         ]
       },
+      "include-dependencies": {
+          "some-package","another-package"...
+      },
       "output":(relative path to output directory),
       "process-serially":(true|false),
+      "verbose": (true|false),
+      "dump-report": (true|false),
       "*" : {
         "plugins": [
           <list of plugins>
@@ -59,12 +64,26 @@ Here's an example `.npmbundlerrc` configuration:
           <list of plugins>
         ]
       },
-      "some-package-name" : {
-        (same as wildcard format (`*`) contents above)
-      },
-      "some-package-name@1.1.10" : {
-        (same as wildcard format (`*`) contents above)
-      }
+      "packages": {
+    		"some-package-name@version" : {
+    			"plugins": [
+    				"test-4",
+    				["test-5", "config-5"]
+    			],
+    			"post-plugins": [
+    				"test-6",
+    				["test-7", "config-7"]
+    			],
+    			".babelrc": {
+    				"config": "config-package@1.0.0"
+    			}
+    		},
+    		"some-package-name" : {
+    			".babelrc": {
+    				"config": "config-name"
+    			}
+    		}
+    	}
       ...
     }
 
@@ -79,9 +98,15 @@ provides.
 
 $$$
 
-Below are the options possible in the `.npmbundlerrc` file:
+Below are the configuration options for the `.npmbundlerrc` file:
 
 *exclude:* defines files to exclude from bundling from all or specific packages.
+
+*include-dependencies:* defines packages to include in bundling, even if they 
+are not listed under the `dependencies` section of `package.json`. These 
+packages must be available in the `node_modules` folder (i.e. installed 
+manually, without saving them to `package.json`, or listed in the 
+`devDependencies` section).
 
 *output:* by default the bundler writes packages to the standard Gradle 
 resources folder: `build/resources/main/META-INF/resources`. Set this value to 
@@ -90,6 +115,13 @@ override the default output folder.
 *process-serially:* Process packages in parallel, leveraging Node.js 
 asynchronous model, or one by one. The default value is `false`, (parallel), but 
 if you get EMFILE errors, you can disable this.
+
+*verbose:* Sets whether to output detailed information about what the tool is 
+doing to the commandline.
+
+*dump-report:* Sets whether to generate a debugging report. If `true`, an HTML 
+file is generated in the project directory with information such as what the 
+liferay-npm-bundler is doing with each package.
 
 *list of plugins:* a comma separated call list of liferay-npm-bundler plugins to 
 call.
@@ -105,8 +137,21 @@ only applied to packages with this name and *any* version.
 `some-package-name@version` scope is only applied to packages with the specified 
 *package name* and *version*.
 
-Now that you know the structure of the `.npmbundlerrc` file, you can learn 
-about the available configuration presets.
++$$$
+
+**Note:** Prior to version 1.4.0 of the liferay-npm-bundler, package 
+configurations were placed next to the tools options 
+(`*`, `output`, `exclude`, etc.) To prevent package name collisions, package 
+configurations are now namespaced and placed under the `packages` section. To 
+maintain backwards compatibility, the liferay-npm-bundler falls back to the root 
+section outside `packages` for package configuration, if no package 
+configurations (`package-name@version`, `package-name`, or `*`) are found in the 
+`packages` section.
+
+$$$
+
+Now that you know the structure of the `.npmbundlerrc` file, you can learn about 
+the available configuration presets.
 
 ## liferay-npm-bundler Configuration Presets [](id=liferay-npm-bundler-configuration-presets)
 
@@ -114,17 +159,17 @@ The liferay-npm-bundler comes with default configuration presets that bundle
 several plugin types. You can use these presets to quickly configure your 
 `.npmbundlerrc` file: 
 
--  [Liferay-npm-bundler-preset-amd](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-amd)
+-  [Liferay-npm-bundler-preset-amd](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-amd)
 
--  [Liferay-npm-bundler-preset-angular](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-angular)
+-  [Liferay-npm-bundler-preset-angular](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-angular)
 
--  [Liferay-npm-bundler-preset-isomorphic](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-isomorphic)
+-  [Liferay-npm-bundler-preset-isomorphic](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-isomorphic)
 
--  [Liferay-npm-bundler-preset-react](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-react)
+-  [Liferay-npm-bundler-preset-react](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-react)
 
--  [Liferay-npm-bundler-preset-standard](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-standard)
+-  [Liferay-npm-bundler-preset-standard](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-standard)
 
--  [Liferay-npm-bundler-preset-vue](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-vue)
+-  [Liferay-npm-bundler-preset-vue](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-vue)
 
 Below is an example `.npmbundlerrc` file that uses the *standard* configuration 
 preset:
@@ -146,9 +191,7 @@ from `liferay-npm-bundler-preset-standard`:
 
     {
       "*": {
-        "plugins": [
-          "replace-browser-modules"
-        ],
+        "plugins": ["replace-browser-modules"],
         ".babelrc": {
           "presets": ["liferay-standard"]
         }
@@ -171,7 +214,7 @@ configuration preset example above, you can define your own `.babelrc` value in
 $$$
 
 The 
-[`liferay-standard` preset] (https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-preset-liferay-standard) 
+[`liferay-standard` preset] (https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/babel-preset-liferay-standard) 
 applies the following plugins:
 
 - [babel-plugin-normalize-requires](https://github.com/izaera/liferay-npm-build-tools/tree/master/packages/babel-plugin-normalize-requires)
@@ -206,7 +249,7 @@ use a configuration preset.
 Follow these steps to use a liferay-npm-bundler configuration preset in your 
 `.npmbundlerrc` file:
 
-1.  Create a `.npmbundlerrc` file in your project’s root folder, if it doesn't 
+1.  Create a `.npmbundlerrc` file in your project's root folder, if it doesn't 
     already exist.
 
 2.  Install the liferay-npm-bundler configuration preset. For example, you can 

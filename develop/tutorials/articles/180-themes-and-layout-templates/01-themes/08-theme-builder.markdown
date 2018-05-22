@@ -1,7 +1,7 @@
 # Theme Builder [](id=theme-builder)
 
 Liferay's Theme Builder gives developers who aren't using
-[Liferay's Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
+[Liferay's Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
 (e.g., Gradle or Maven) a way to compile and build a theme WAR file. To use the
 Theme Builder, you must apply it to your project. If you're unsure how to
 structure themes for @product@, see the
@@ -80,6 +80,6 @@ tutorial for details.
 
 ## Related Topics [](id=related-topics)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
+[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
 
 [Theme Template](/develop/reference/-/knowledge_base/7-0/theme-template)

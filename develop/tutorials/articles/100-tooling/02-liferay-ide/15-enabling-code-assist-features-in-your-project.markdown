@@ -1,15 +1,15 @@
 # Enabling Code Assist Features in Your Project [](id=enabling-code-assist-features-in-your-project)
 
-Liferay @ide@'s integration of [Tern](http://ternjs.net/) provides many valuable
-front-end and back-end development tools for code inference and completion. This
-tutorial covers how to enable Tern features for your projects. 
+Liferay Dev Studio's integration of [Tern](http://ternjs.net/) provides many
+valuable front-end and back-end development tools for code inference and
+completion. This tutorial covers how to enable Tern features for your projects. 
 
-Before beginning this tutorial, make sure your @ide@ instance has the necessary
-development tooling and Tern integration installed. To do this, go to *Help*
-&rarr; *About Eclipse* &rarr; *Installation Details* and search for *Liferay IDE
-AlloyUI* under *Installed Software*. If you have it installed, you can continue
-to the *Setting Up Tern Features* section; if you do not, you'll need to install
-it by following the instructions below. 
+Before beginning this tutorial, make sure your Dev Studio instance has the
+necessary development tooling and Tern integration installed. To do this, go to
+*Help* &rarr; *About Eclipse* &rarr; *Installation Details* and search for
+*Liferay IDE AlloyUI* under *Installed Software*. If you have it installed, you
+can continue to the *Setting Up Tern Features* section; if you do not, you'll
+need to install it by following the instructions below. 
 
 1.  Navigate to *Help* &rarr; *Install New Software...*.
 
@@ -51,12 +51,12 @@ follow the steps below:
 
 3.  Check any additional modules you wish to use in your project and click *OK*. 
 
-Your project is now set up to use @ide@'s Tern features. 
+Your project is now set up to use Dev Studio's Tern features. 
 
 ## Related Topics [](id=related-topics)
 
-[Using Front-End Code Assist Features in @ide@](/develop/tutorials/-/knowledge_base/7-1/using-front-end-code-assist-features-in-ide)
+[Using Front-End Code Assist Features in Dev Studio](/develop/tutorials/-/knowledge_base/7-1/using-front-end-code-assist-features-in-ide)
 
-[Creating Modules with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide)
+[Creating Modules with Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide)
 
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
