@@ -1,13 +1,13 @@
-# Disabling Staging
+# Disabling Staging [](id=disabling-staging)
 
 Disabling staging is straightforward, but should not be taken lightly. It's
 important to know the consequences of turning the staging environment off so you
-you know whether it's a smart decision for your scenario.
+you know whether it's a smart decision for your situation.
 
 The consequences for disabling Local Live and Remote Live staging are slightly
 different, so you'll learn about both.
 
-## Disabling Local Live Staging
+## Disabling Local Live Staging [](id=disabling-local-live-staging)
 
 Conceptually, the live site is viewed as the final approved version of your
 site, whereas the staging site is a temporary workspace containing information
@@ -28,7 +28,7 @@ could take a substantial amount of time to process. For this reason, you should
 not disable staging when your portal instance is using a large amount of memory
 elsewhere.
 
-## Disabling Remote Live Staging
+## Disabling Remote Live Staging [](id=disabling-remote-live-staging)
 
 Disabling remote staging does not delete the staged site; it only disables the
 connection between the live site and remote staging site. This means no data is
@@ -50,14 +50,14 @@ this option erases the staged site's staging information---not the content. On
 the contrary, the live site remains in a locked state. A possible workaround is
 to create a new live site and import content to it, if necessary.
 
-## Steps to Disable Staging
+## Steps to Disable Staging [](id=steps-to-disable-staging)
 
 Follow the steps below to disable Local Live or Remote Live staging:
 
 1.  Navigate to the *Publishing* &rarr; *Staging* option, which is only
     available from the staged site.
 
-2.  Click the *Options* icon (![Options](../../../../images/icon-options.png))
+2.  Click the *Options* icon (![Options](../../../images/icon-options.png))
     from the upper right corner of the page and select *Staging Configuration*.
 
 3.  Select the *None* radio button and click *Save*.
