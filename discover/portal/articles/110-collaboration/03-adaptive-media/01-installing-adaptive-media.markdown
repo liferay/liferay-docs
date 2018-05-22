@@ -1,52 +1,14 @@
 # Installing Adaptive Media [](id=installing-adaptive-media)
 
-You can install the Adaptive Media app from 
+The Adaptive Media app is installed in @product@ by default. The app is also 
+available on 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
-for Liferay Portal CE 7.1 or Liferay DXP 7.1. Search for *Adaptive Media* in the 
+if you need to update or reinstall it (search for *Adaptive Media* in the 
 Marketplace and follow the app installation instructions at 
-[Using the Liferay Marketplace](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace). 
+[Using the Liferay Marketplace](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace)). 
 
-If you're running Liferay Portal CE 7.0 GA6+, or Liferay DXP with Fix Pack 35+, 
-then installing the Adaptive Media app is all you need to do. If you're running 
-Liferay Portal CE 7.0 GA5, however, then you must also install another module. 
-The next section explains how to do this. 
-
-## Installing Adaptive Media in Liferay Portal CE 7.0 GA5 [](id=installing-adaptive-media-in-liferay-portal-ce-7-0-ga5)
-
-If you're running Liferay Portal CE 7.0 GA5, then you must install another 
-module after installing the Adaptive Media app: 
-
-1.  Shut down your @product@ server. 
-
-2.  [Click here](https://web.liferay.com/documents/4426623/103634825/com.liferay.journal.service.jar/4ba168ec-9e1a-41cb-ab27-f7473eb0085c) 
-    to download the module (it's a JAR file). 
-
-3.  Copy the module into this folder of your @product@ installation: 
-
-        [Liferay_Home]/osgi/marketplace/override/
-
-    Create the `override` folder if it doesn't exist. 
-
-4.  Start your @product@ server. You should see these log messages during 
-    startup: 
-
-        INFO  [Start Level: Equinox Container: 60d02f03-ed0b-0018-179d-ebc04e65241e][LPKGBundleTrackerCustomizer:411] 
-            Disabled Liferay CE Web Experience:/com.liferay.journal.service-3.17.3.jar
-        INFO  [Start Level: Equinox Container: 60d02f03-ed0b-0018-179d-ebc04e65241e][DefaultLPKGDeployer:393] 
-            Installed override JAR bundle  LPKG-Override::/liferay-ce-portal-7.0-ga5/osgi/marketplace/override/com.liferay.journal.service.jar
-
-    These messages indicate that the new module has successfully replaced the 
-    old module. 
-
-5.  You can verify this by running the command `lb "Journal Service"` from the 
-    [Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell). 
-    It should indicate that the module is active: 
-
-        ID|State      |Level|Name
-        524|Active     |   10|Liferay Journal Service (3.18.0.ADAPTIVE-MEDIA)
-
-Well done! Next, you'll learn which modules in the Adaptive Media app are 
-mandatory or optional. 
+The following sections describe the Adaptive Media app's modules, and how to 
+prepare Adaptive Media to handle animated GIFs. 
 
 ## Adaptive Media's Modules [](id=adaptive-medias-modules)
 
