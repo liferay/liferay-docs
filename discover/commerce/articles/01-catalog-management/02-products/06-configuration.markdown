@@ -12,16 +12,14 @@ and click on the *Configuration* tab. This page has four more tabs of its own:
 
 The *Inventory* tab contains the following fields:
 
-**Inventory Engine:** Select what system you want to use to track this product's
-inventory. Out of the box, the only option is *Default*---@commerce@'s own
-inventory engine. However, a developer could add additional options to this
-drop-down menu for users who need to integrate with another system (see
-[developer doc link].
+**Inventory Engine:** The inventory engine tracks the catalog's inventory data
+and keeps it up to date as orders are placed. If you develop a custom inventory
+engine---say, for the sake of integrating closely with a supplier---you can
+activated it for individual products with this drop-down menu.
 
-**Low Stock Activity:** Select what action should be automatically taken with
-the *Minimum Stock Quantity* (see below) is reached. Out of the box, the only
-option is to unpublish the product, but developer could add other options (see
-[developer doc link]).
+**Low Stock Activity:** Select an action to be taken automatically when
+a product's inventory falls below a certain level. You can set the level that
+triggers this action below, in the *Minimum Stock Quantity* field.
 
 **Availability Range:** This is an estimate for how long it will take for the
 product to be restocked. This drop-down menu is populated from *Settings* &rarr;
