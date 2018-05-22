@@ -2,9 +2,9 @@
 
 With the staging environment, there are many different options to use for
 building and managing a site and its pages. Sometimes limiting the access to
-a subset of the powerful features of staging is desired by some administrators.
-You can manage access to the staging environment by creating or modifying a role
-to possess certain permissions. To create/modify a role, complete the following
+staging's subset of powerful features is desired by some administrators. You can
+manage access to the staging environment by creating or modifying a role to
+possess certain permissions. To create/modify a role, complete the following
 steps:
 
 1.  Navigate to the *Control Panel* &rarr; *Users* &rarr; *Roles*.
@@ -34,24 +34,33 @@ These permissions are located in the *Control Panel* &rarr; *Sites* &rarr;
 *Sites* section in the Define Permissions menu. The relevant site resource
 permissions related to staging are listed below:
 
-- *Add Page Variation:* hides/shows the *Add* button on the Staging Bar &rarr;
-  Manage Page Variations screen.
-- *Add Site Pages Variation:* hides/shows the *Add* button on the Staging Bar
-  &rarr; Manage Site Page Variations screen.
-- *Export/Import Application Info:* if the Publish Staging permission is not
-  granted, hides/shows the application level Export/Import menu. The
-  Configuration permission for the Export/Import app is also required.
-- *Export/Import Pages:* if the Publish Staging permission is not granted,
-  hides/shows the Export/Import app in the Site Administration menu.
-- *Manage Staging:* hides/shows the staging configuration menu in the Staging
-  app in the Site Administration menu.
-- *Publish Application Info:* hides/shows the application level Staging menu.
-- *Publish Staging:* hides/shows the *Publish to Live* button on the Staging Bar
-  and hides/shows the *Add* button in the Staging app in the Site Administration
-  menu.
-- *View Staging:* if Publish Staging, Manage Pages, Manage Staging, or Update
-  permissions are not granted, hides/shows the Staging app in the Site
-  Administration menu.
+**Add Page Variation:** hides/shows the *Add Page Variation* button on the
+Staging Bar's Manage Page Variations screen.
+
+**Add Site Pages Variation:** hides/shows the *Add Site Pages Variation* button
+on the Staging Bar's Manage Site Page Variations screen.
+
+**Export/Import Application Info:** if the Publish Staging permission is not
+granted, hides/shows the application level Export/Import menu. The Configuration
+permission for the Export/Import app is also required.
+
+**Export/Import Pages:** if the Publish Staging permission is not granted,
+hides/shows the Export/Import app in the Site Administration menu.
+
+**Manage Staging:** hides/shows the Staging Configuration menu located in the
+Site Administration &rarr; *Publishing* &rarr; *Staging* &rarr; *Options*
+(![Options](../../../images/icon-options.png)) menu.
+
+**Publish Application Info:** hides/shows the application level Staging menu.
+
+**Publish Staging:** hides/shows the *Publish to Live* button on the Staging Bar
+and hides/shows the *Add Staging Process* button
+(![Add](../../../images/icon-add.png)) in the Site Administration menu's Staging
+app.
+
+**View Staging:** if Publish Staging, Manage Pages, Manage Staging, or Update
+permissions are not granted, hides/shows the Site Administration menu's Staging
+app.
 
 Notice that some of the permissions listed above are related to the
 export/import functionality. Since these permissions are directly affected by

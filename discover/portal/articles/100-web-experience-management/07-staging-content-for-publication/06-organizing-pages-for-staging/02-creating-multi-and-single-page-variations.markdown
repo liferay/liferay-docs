@@ -5,10 +5,10 @@ You can create two types of page variations:
 - Site Pages Variation (multiple pages)
 - Page Variation (single page)
 
-You can learn more about these page variations in the
+You can learn more about these variations in the
 [Using Multi and Single Page Variations](/discover/portal/-/knowledge_base/7-1/using-multi-and-single-page-variations).
 As an example, you'll step through creating a site pages variation next. Both
-page variation processes, however, are similar.
+variation processes, however, are similar.
 
 1.  Select the *Options* icon
     (![Options](../../../../images/icon-options.png)) in the Staging Bar and select
@@ -37,8 +37,8 @@ page variation processes, however, are similar.
     (e.g., *Main Variation*). The current variation must be marked as ready for
     publication.
 
-    This option is not available for page variation creation. A new page
-    variation is a copy of the current page variation and site pages variation
+    The copy option is not available for page variation creation. A new page
+    variation is a copy of the current site pages variation's page variation
     you're creating it from.
 
 5.  Click *Add* to create the site pages variation.
@@ -47,8 +47,7 @@ page variation processes, however, are similar.
 
 **Note:** You can rename any variation after it's created, if necessary. For
 example, edit the Main Variation and change its name to something that makes
-more sense in your site, such as *Basic*, *Master*, or *Regular*, and create a
-variation for.
+more sense in your site, such as *Basic*, *Master*, or *Regular*.
 
 $$$
 
