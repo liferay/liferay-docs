@@ -205,6 +205,9 @@ Here are example upgrade configuration files that you can customize:
 
 The upgrade tool shows the patch level at the beginning of the upgrade. Then it
 executes the core upgrade processes and verifiers. 
+ 
+Executing the upgrade tool after a core upgrade step for Portal 7.1 (or newer)
+fails, starts the upgrade at that step. 
 
 The Gogo shell lets you upgrade modules, check module upgrade status, and verify
 upgrades.  Read on to learn how to use Gogo shell commands to use the
