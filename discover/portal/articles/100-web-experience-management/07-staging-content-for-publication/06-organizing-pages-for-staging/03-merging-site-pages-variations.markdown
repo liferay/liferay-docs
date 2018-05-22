@@ -5,17 +5,17 @@ possibility of *merging* Site Pages Variations. To merge two Site Pages
 Variations, follow the instructions below.
 
 1.  Click the Staging Bar's *Options* button
-    (![Options](../../../images/icon-options.png)) and select *Site Pages
+    (![Options](../../../../images/icon-options.png)) and select *Site Pages
     Variation*.
 
 2.  Click the Site Pages Variation's *Actions* button
-    (![Actions](../../../images/icon-actions.png)) you want to use as the
+    (![Actions](../../../../images/icon-actions.png)) you want to use as the
     base for merging and select *Merge*.
 
 3.  Select the site pages variation to merge on top of the base site pages
     variation.
 
-    ![Figure 1: Select the site pages variation you'd like to merge with your base variation.](../../../images/merge-site-pages-variation.png)
+    ![Figure 1: Select the site pages variation you'd like to merge with your base variation.](../../../../images/merge-site-pages-variation.png)
 
     Merging works as follows:
 

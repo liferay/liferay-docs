@@ -28,7 +28,7 @@ You'll learn about enabling page versioning next.
 Page Versioning is enabled on the Staging Configuration screen when first
 enabling staging.
 
-![Figure 1: You can enable page versioning for public and/or private pages.](../../../images/page-versioning.png)
+![Figure 1: You can enable page versioning for public and/or private pages.](../../../../images/page-versioning.png)
 
 You can enable page versioning for public and private pages. When page
 versioning is enabled, the page variation options are available in the Staging
@@ -37,7 +37,7 @@ are both called *Main Variation*.
 
 If you did not enable page versioning during the initial setup of your staging
 environment, navigate to the Product Menu &rarr; *Publishing* &rarr; *Staging*
-&rarr; *Options* (![Options](../../../images/icon-options.png)) &rarr; *Staging
+&rarr; *Options* (![Options](../../../../images/icon-options.png)) &rarr; *Staging
 Configuration*. You can enable the page versioning options there.
 
 ## Using Site Pages Variations
@@ -71,7 +71,7 @@ current variation. The same happens when you add a new page. If you try to
 access a page which was deleted in the current variation, Liferay informs you
 this page is not *enabled* in this variation and you must enable it. 
 
-![Figure 2: Select the *Enable* button to create a missing page in the current site pages variation.](../../../images/enable-unavailable-page.png)
+![Figure 2: Select the *Enable* button to create a missing page in the current site pages variation.](../../../../images/enable-unavailable-page.png)
 
 To publish a variation to the live site, click on *Publish to Live* in the
 staging menu and then select *Publish to Live*. Publications can also be

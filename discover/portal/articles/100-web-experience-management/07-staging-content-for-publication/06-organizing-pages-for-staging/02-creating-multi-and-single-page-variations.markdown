@@ -11,14 +11,14 @@ As an example, you'll step through creating a site pages variation next. Both
 page variation processes, however, are similar.
 
 1.  Select the *Options* icon
-    (![Options](../../../images/icon-options.png)) in the Staging Bar and select
+    (![Options](../../../../images/icon-options.png)) in the Staging Bar and select
     the variation option. For example, select the *Site Pages Variation* option.
     This brings you to a list of the existing site page variations for your
     site.
 
 2.  Click *Add Site Pages Variation* to create a new one.
 
-    ![Figure 1: When selecting the *Site Pages Variation* link from the Staging Bar, you're able to add and manage your site pages variations.](../../../images/staging-page-variations.png)
+    ![Figure 1: When selecting the *Site Pages Variation* link from the Staging Bar, you're able to add and manage your site pages variations.](../../../../images/staging-page-variations.png)
 
 3.  Set a name and description for your new site pages variation.
 
