@@ -84,7 +84,7 @@ options:
 
 - *Apply to Shipment*: Apply the discount to shipping costs.
 
-- *Apply to Subtotal:* Apply the discount to orders before shipping and taxes.
+- *Apply to Subtotal*: Apply the discount to orders before shipping and taxes.
 
 - *Apply to Total*: Apply the discount to orders after shipping and taxes are
 added.
