@@ -11,7 +11,7 @@ challenging requirements, the
 [right to data portability](https://gdpr-info.eu/art-20-gdpr/) 
 and the 
 [right to be forgotten](https://gdpr-info.eu/art-17-gdpr/) 
-on Liferay Portal 6.2. For the upcoming release of Digital Enterprise 7.1, this 
+on Liferay Portal 6.2. For the upcoming release of @product@ 7.1, this 
 [blog post](https://web.liferay.com/web/dennis.ju/blog/-/blogs/upcoming-gdpr-focused-features-for-liferay-d-1)
 describes new features to more easily tackle these requirements. These same
 features will be available for @product@ version 7.0 in a future service pack
@@ -21,8 +21,8 @@ Version 7.1 will have better native support for complying with GDPR. Consider
 upgrading to leverage those features (and more, of course).
 
 The code supplied here demonstrates an approach you can use when developing two
-particularly difficult requirements of your full GDPR solution. It's your
-responsibility to determine the full extent of work required to comply with
+particularly difficult requirements of your full GDPR solution. It's ultimately your
+responsibility to assess your own organization's usage of personal data and the work required to fully comply with
 GDPR. 
 
 The code referenced here could be deployed via the scripting console, or
@@ -35,7 +35,7 @@ code can be referenced
 The 
 [right to data portability](https://gdpr-info.eu/art-20-gdpr/) 
 requires organizations to provide a machine-readable export of a user's personal
-data upon request within 30 days.
+data upon request.
 
 There's no easy way through the UI to export a given user's personal data on
 Liferay Portal 6.2. One straightforward way to programmatically fulfill this
@@ -194,7 +194,7 @@ classes, it's possible to generalize this solution using reflection.
 The 
 [right to erasure](https://gdpr-info.eu/art-17-gdpr/) 
 (also known as the "right to be forgotten") requires organizations to erase a
-user's personal data upon request within 30 days (excluding data the
+user's personal data upon request (excluding data the
 organization has a legitimate reason to retain like financial records, public
 interest data, etc).
 
