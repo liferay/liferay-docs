@@ -1,9 +1,9 @@
 # Installing Apps Manually [](id=installing-apps-manually)
 
-By default, apps you download in a running @product@ instance via Liferay 
-Marketplace install automatically. But what if the app you want to install isn't 
-on Marketplace? What if all you have is the app's file? In this case, you must 
-install the app manually. This article shows you how to do this. You can use the 
+By default, apps you download from the Control Panel via Liferay Marketplace
+install automatically. But what if the app you want to install isn't on
+Marketplace? What if all you have is the app's file? In this case, you must
+install the app manually. This article shows you how to do this. You can use the
 procedures here to install any app. 
 
 +$$$
@@ -21,28 +21,26 @@ $$$
 
 ## Using the Control Panel to Install Apps [](id=using-the-control-panel-to-install-apps)
 
-To install an app manually via your running @product@ instance, navigate to 
-*Control Panel* &rarr; *Apps* &rarr; *App Manager*, and select *Upload* from the 
-options button 
-(![Options](../../images/icon-options.png)). In the Upload dialog, choose the 
-app on your machine and then click *Install*. When the install completes, close 
+To install an app manually from the Control Panel, navigate to *Control Panel*
+&rarr; *Apps* &rarr; *App Manager*, and select *Upload* from the options button
+(![Options](../../images/icon-options.png)). In the Upload dialog, choose the
+app on your machine and then click *Install*. When the install completes, close
 the dialog and you're ready to roll! 
 
 ![Figure 1: Installing an app via the Upload dialog in the App Manager is very simple.](../../images/app-manager-plugin-upload.png)
 
 ## Using Your File System to Install Apps [](id=using-your-file-system-to-install-apps)
 
-To install an app manually via the file system your @product@ instance is 
-running on, put the app in the `[Liferay Home]/deploy` folder (the Liferay Home 
-folder is typically the app server's parent folder). That's it. The hot deploy 
-mechanism in @product@ takes care of the rest. 
+To install an app manually on the @product server, put the app in the `[Liferay
+Home]/deploy` folder (the Liferay Home folder is typically the app server's
+parent folder). That's it. The auto deploy mechanism takes care of the rest. 
 
-You might now be thinking, "Whoa there! What do you mean by 'the rest'? What 
-exactly happens here? And what if my app server doesn't support hot deploy?" 
-These are fantastic questions! When you put an app in the 
-`[Liferay Home]/deploy` folder, @product@'s OSGi container deploys the app to 
-the appropriate subfolder in `[Liferay Home]/osgi`. By default, the following 
-subfolders are used for apps matching the indicated file type: 
+You might now be thinking, "Whoa there! What do you mean by 'the rest?' What
+exactly happens here? And what if my app server doesn't support auto deploy?"
+These are fantastic questions! When you put an app in the `[Liferay
+Home]/deploy` folder, the OSGi container deploys the app to the appropriate
+subfolder in `[Liferay Home]/osgi`. By default, the following subfolders are
+used for apps matching the indicated file type: 
 
 -   `marketplace`: Marketplace LPKG packages
 -   `modules`: OSGi modules
@@ -67,9 +65,9 @@ file are as follows:
 Note that the `configs` subfolder isn't for apps: it's for configuration files 
 [imported from other @product@ instances](/discover/portal/-/knowledge_base/7-1/system-settings#exporting-and-importing-configurations). 
 
-But what happens if your app server doesn't support hot deploy? No problem! 
-@product@'s module framework (OSGi) enables hot deploy. Any app server running 
-@product@ therefore also supports this hot deploy mechanism. 
+But what happens if your app server doesn't support auto deploy? No problem!
+@product@'s module framework (OSGi) enables auto deploy. Any app server running
+@product@ therefore also supports this auto deploy mechanism. 
 
 ## Manually Deploying an LPKG App [](id=manually-deploying-an-lpkg-app)
 
