@@ -8,8 +8,12 @@ First, however, you must have your warehouses in order.
 
 ## Using a Single Warehouse
 
-If you are operating with only one warehouse, <!--insert some explanation here
-for why you need to enter the address and coordinates-->.
+If you are operating with only one warehouse, there is no need to geocode its
+location or enter exact coordinates. However, if you integrate your system with
+a shipping company's (see 
+[Shipping Methods](web/liferay-emporio/documentation/-/knowledge_base/7-1/shipping-methods)
+for details), you will need to enter your warehouse's address to calculate
+shipping costs.
 
 +$$$
 
@@ -28,8 +32,8 @@ Follow these steps:
 
 2.  Make sure the *Use Single Address* radio button is selected.
 
-3.  Fill in the form, giving your warehouse a name and entering its address and
-    coordinates. Click *Save*.
+3.  Fill in the form, giving your warehouse a name and entering its address.
+    Click *Save*.
 
 ## Using Multiple Warehouses [](id=using-multiple-warehouses)
 
@@ -75,7 +79,6 @@ closest available warehouse:
 
 2.  Paste your key from Microsoft into the *API Key* field and click *Save*.
 
-3.  If you are using a single warehouse, it will be geocoded automatically. If
-    multiple warehouses are in use, return to the *Warehouses* tab in *Site
-    Menu* &rarr; *Commerce* &rarr; *Settings* and click
-    ![options](../images/icon-options.png) &rarr; *Geolocate* for each facility.
+3.  Return to the *Warehouses* tab in *Site Menu* &rarr; *Commerce* &rarr;
+    *Settings* and click ![options](../images/icon-options.png) &rarr;
+    *Geolocate* for each facility.
