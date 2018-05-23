@@ -1,8 +1,7 @@
 # App Types [](id=app-types)
 
-For maximum flexibility, @product@ supports several different types of apps. 
-Some apps can even contain other apps. The types of apps that @product@ can run 
-include: 
+There are several different kinds of apps. Some apps can even contain other
+apps. The types of apps you can install include: 
 
 - OSGi Modules
 - Portlets
@@ -19,11 +18,11 @@ module is a JAR file adapted to run on OSGi. Although it's possible for a single
 module to implement a single app, an app typically consists of multiple modules 
 that are packaged together. Also note that apps in OSGi modules aren't required 
 to have a UI. For example, @product@ can run OSGi modules that expand built-in 
-APIs without requiring any user interaction. This is crucial for developers that 
-need to leverage custom APIs. By providing such an API via one or more OSGi 
-modules, you can let developers leverage your API. To see a list of @product@'s 
-API modules, see the reference article 
-[Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules). 
+APIs without requiring any user interaction. This is crucial for developers that
+must leverage custom APIs. By providing such an API via one or more OSGi
+modules, you can let developers leverage your API. To see a list of @product@'s
+API modules, see the reference article [Finding Liferay API
+Modules](/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules). 
 
 OSGi modules can also contain apps that have a UI: portlets. The next section 
 discusses these. 
@@ -49,11 +48,10 @@ portlets, see
 
 ## Web Plugins [](id=web-plugins)
 
-Web plugins are regular Java EE web modules designed to work with @product@. 
-@product@ supports integration with various Enterprise Service Bus (ESB) 
-implementations, as well as Single Sign-On implementations, workflow engines, 
-and so on. These are implemented as web modules used by @product@ portlets to 
-provide functionality. 
+Web plugins are regular Java EE web modules designed to work with @product@. You
+can integrate with various Enterprise Service Bus (ESB) implementations, as well
+as Single Sign-On implementations, workflow engines, and so on. These are
+implemented as web modules used by @product@ portlets to provide functionality. 
 
 ## Templates and Themes [](id=templates-and-themes)
 
@@ -66,11 +64,10 @@ of your own.
 
 Themes can completely transform @product@'s look and feel. Most organizations 
 have their own look and feel standards that apply to all of their web sites and 
-applications. By using a theme plugin, an organization can apply these standards 
-throughout their @product@ instance. There are many available theme plugins on 
-Liferay's web site and more are being added every day. This makes it easy for 
-theme developers, as they can customize existing themes instead of writing a new 
-one from scratch. 
+applications. By using a theme plugin, an organization can apply these standards
+on @product@. There are many available theme plugins on Liferay's web site and
+more are being added every day. This makes it easy for theme developers, as they
+can customize existing themes instead of writing a new one from scratch. 
 
 For information on developing themes and templates, see 
 [this section of tutorials](/develop/tutorials/-/knowledge_base/7-1/themes-and-layout-templates). 
