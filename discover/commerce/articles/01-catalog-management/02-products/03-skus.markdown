@@ -130,16 +130,15 @@ For more information on creating and using price lists, see
 
 ### Inventory [](id=inventory)
 
-The *Inventory* tab has one field for each warehouse you have in use. (If you
-use more than one warehouse, see
-[warehouses](/web/liferay-emporio/documentation/-/knowledge_base/7-1/inventory)).
-Enter the number in stock at each warehouse. The quantity will be automatically
-adjusted as orders are processed.
+The *Inventory* tab has one field for each warehouse you have in use. (See
+[inventory](/web/liferay-emporio/documentation/-/knowledge_base/7-1/inventory)
+for more on warehouses). Enter the number in stock at each warehouse. The
+quantity will be automatically adjusted as orders are processed.
 
 ### Shipping Adjustment [](id=shipping-adjustment)
 
 A product's shipping rate may be adjusted based on its weight or dimensions,
 which are are set in *Configuration* tab &rarr; *Shipping*. To override these
 dimensions for a single SKU, enter it the SKU's *Shipping Adjustment* tab. See
-[shipping methods](/discover/portal/-/knowledge_base/7.1/shipping-methods) for
+[shipping methods](/web/liferay-emporio/documentation/-/knowledge_base/7.1/shipping-methods) for
 more details.
