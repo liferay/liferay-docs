@@ -4,10 +4,10 @@ You can set up a whole web site devoted just to blogging if you wish. The Blogs
 Aggregator lets you publish entries from multiple bloggers on one page, giving 
 further visibility to blog entries. You can add it to a page from the 
 *Collaboration* category in the *Add* 
-(![Add](../../../images/icon-add-app.png)) *&rarr; Widgets* menu. 
+(![Add](../../../../images/icon-add-app.png)) *&rarr; Widgets* menu. 
 
 If you click *Configuration* from the *Options* icon
-(![Options](../../../images/icon-app-options.png)) in the app's title bar, the
+(![Options](../../../../images/icon-app-options.png)) in the app's title bar, the
 Blogs Aggregator's configuration page appears. The *Setup* tab contains these 
 options: 
 
