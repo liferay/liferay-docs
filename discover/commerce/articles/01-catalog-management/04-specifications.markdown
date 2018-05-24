@@ -29,16 +29,16 @@ Follow these steps to create a specification group:
 1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Catalog*, open the
     *Specifications* tab and then the *Specification Groups* sub-tab. 
 
-2.  Then click on the ![Add](../../images/icon-add.png) button and fill in
+2.  Then click the ![Add](../../images/icon-add.png) button and fill in
     the following fields:
 
-**Title**: Give the group a title. Typically a group's title will indicate what
+**Title**: Give the group a name. Typically a group's title will indicate what
 its labels have in common.
 
-**Description**: Enter a description of the group if necessary.
+**Description**: If necessary, explain the group more fully.
 
-**Priority**: Priority establishes the order in which specification groups will
-be displayed. Smallest numbers go first.
+**Priority**: Priority establishes the order to display the specification
+groups. Smallest numbers go first.
 
 **Key**: A unique identifier for referring to this group programmatically. As
 this field is filled automatically, most users can safely leave it alone.
@@ -55,16 +55,16 @@ Follow these steps to create a specification label:
 2.  Click on the ![Add](../../images/icon-add.png) button and fill in
     the following fields:
 
-**Title**: Give the label a title that describes the values that may be
-assigned to it.
+**Title**: Give the label a name that describes the values that may be assigned
+to it.
 
-**Description**: Enter a description of the label if necessary.
+**Description**: If necessary, explain the label more fully. 
 
 **Use in faceted navigation**: Check this box to make search results filterable
 for this specification.
 
 **Specification Group**: Pick the group to which this label belongs. This is
-optional, and can be overridden at the product level where specification values
+optional and can be overridden at the product level where specification values
 are defined (see below for details).
 
 Click *Save*. The label has been created, but assigning a value to it must
@@ -93,13 +93,13 @@ Next, edit the label to give it a value.
     new label and hit *Edit*.
 
 2.  Enter a value. For example, if your label is *Material*, then the value
-    should describe what the product is made out of: *polymer*, *ceramic*, or
+    should describe what the product is made of: *polymer*, *ceramic*, or
     *stainless steel*. 
  
-3.  Set the priority and hit save.
+3.  Set the priority and hit *Save*.
 
 If you want, you can also override the specification group that was selected
 when the label was created. When editing the label to assign a value, you can
-choose any group from the *Group* drop-down box. This change is only applied to
-the current product--it has no effect on any other products which use the same
+choose any group from the *Group* drop-down box. This change applies only to the
+current product---it has no effect on any other products which use the same
 label.
