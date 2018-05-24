@@ -1,54 +1,63 @@
-# Fixed Shipping Method [](id=fixed-shipping-method)
+# Flat Rate Shipping [](id=fixed-shipping-method)
 
-A fixed rate shipping method is the easiest to set up, but does not offer any
-option to vary shipping costs by product automatically (although you can
-manually set a shipping adjustment for select products in the catalog: see
-[link]).
+When you create a flat rate shipping method, you create a method that any buyer
+can choose to use to ship any product. By creating multiple flat rate methods,
+you can give customers various choices in terms of cost, speed, and security.
 
-## Details [](id=details)
+Flat rate shipping imposes the same cost on every product in the catalog.
+However, you can create exceptions for individual products from the *Shipping
+Extra Price* field in the product's
+[Configuration](/web/liferay-emporio/documentation/-/knowlede_base/7-1/configuration#shipping)
+tab.
 
-To enter a fixed shipping method, go to *Site Menu* &rarr; *Commerce* &rarr;
-*Settings* and click on the *Shipping Methods* tab and the *Fixed*. This opens
-the shipping methods *details* tab, which contains the following fields:
+## Creating a Flat Rate Shipping Method
 
-    - Name: The default name for the fixed shipping method is *Fixed*. This name
-    cannot ordinarily be seen by customers, but depending on what customizations are in use
-    it may make sense to change it.
+Follow these steps:
 
-    - Description: This is not used by default, but can be displayed to the
-    product page or the checkout page via customization.
+1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click on the
+    *Shipping Method* tab. Click on the *Flat Rate* method and then on the
+    *Shipping Options* tab.
 
-    - Image: an image uploaded to the field will be displayed in checkout page
-    when the user selects shipping options.
+2.  Click on the ![Add](../../images/icon-add.png) button and fill in the
+    following fields:
 
-The *Active* box must be checked for the fixed shipping method to be displayed
-to customers. Enter a priority to determine the order in which shipping methods
-will be displayed on a page.
+    **Name:** This is the name that buyers will see when they are prompted to
+    select a shipping option.
 
-## Shipping Options [](id=shipping-options)
+    **Description:** Information about the method---delivery time, guarantees,
+    insurance and the like---should go in this field.
 
-Activating Fixed Shipping will have no effect if no Shipping options have been
-defined. For most users, it makes sense to define a number of different options,
-so that customers can choose between low-cost and high-speed shipping.
+    **Amount:** Set the method's cost.
 
-To create a new shipping option, first open the *Fixed* shipping method and then
-click on the *Shipping Option* tab. The following dialog box appears:
+    **Priority:** Sets the order in which methods will be displayed. Lower
+    numbers come first.
 
-![Figure 1: Setting up a new shipping option is a simple matter describing the option and setting a price.](../../images/fixed-shipping-option.png)
+3.  Click *Save*. To create more than one method, repeat steps 2 and 3 as
+    needed.
 
-Fill in these fields:
+4.  Click on the *Details* tab and check the *Active* box. Click *Save*.
 
-    - Name: The option should have an informative title, as it will be
-    selectable by customers.
+The *Details* tab also contains fields for changing the name and description of
+the flat rate shipping method type, which may be useful for reference, but the
+text is not automatically displayed to customers. You can also set a priority,
+which orders flat rate shipping methods relative to other types.
 
-    - Description: Pertinent information on the option (delivery time, any
-    guarantees) should go in this field.
+## Restrictions
 
-    - Amount: Sets the price for this option.
-    
-    - Priority: Sets the order in which options will be displayed. Lower numbers
-    come first.
+You may not want a shipping method to be available to customers all over the
+world. Follow these steps to limit flat rate shipping methods to specified
+countries:
 
-Click *Save* and you're set. Customers will be able to ship any item in your
-catalog for the price you just entered. The follow sections cover more flexible options.
+1.  From the *Flat Rate* page (*Site Menu* &rarr; *Commerce* &rarr; *Settings*
+    &rarr; *Shipping Methods* &rarr; *Flat Rate*), click on the *Restrictions*
+    tab.
 
+2.  Click on the ![Add](../../images/icon-add.png) button and check the box next
+    to each country for which you want to permit flat rate shipping. Click
+    *Add*.
+
+These restrictions apply to all flat rate shipping methods you create,
+but not to methods of any other type.
+
+To permit shipping to all countries, it is not necessary to list each one
+separately. Simply leave the restriction list empty.
