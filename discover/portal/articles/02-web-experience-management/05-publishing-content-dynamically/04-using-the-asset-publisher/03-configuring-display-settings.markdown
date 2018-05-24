@@ -1,13 +1,6 @@
 # Configuring Display Settings [](id=configuring-display-settings)
 
-Open the *Display Settings* subtab of the Setup tab of the Asset Publisher's
-Configuration window. Here, you can configure many more settings that control
-the Asset Publisher's behavior and that determine how the Asset Publisher
-displays content. The Display Settings section gives you precise control over
-the display of your assets. There are many options available to configure how
-you want your content to appear. Many of these, such as printing, flags,
-ratings, comments, comment ratings, and social bookmarks work the same way they
-do in the Web Content Display application.
+From the Asset Publisher's configuration page, open the *Display Settings* subtab of the Setup tab. This section gives you precise control over the display of your assets. There are many options available to configure how you want your content to appear. Many of these, such as printing, flags, ratings, comments, comment ratings, and social bookmarks work the same way they do in the Web Content Display application.
 
 **Show Add Content Button**: When selected, this selector adds an *Add New*
 button that lets users add new assets directly from the Asset Publisher
@@ -30,7 +23,7 @@ default site:
     There's also the *Rich Summary* and *Map* display templates that belong to
     the global scope. The Rich Summary template provides a summary view of each
     asset along with a *Read More* link to the article's full content. The Map
-    template displays [geolocalized assets](/discover/portal/-/knowledge_base/7-0/geolocating-assets)
+    template displays [geolocalized assets](/discover/portal/-/knowledge_base/7-1/geolocating-assets)
     in either a Google Map or an Open Street Map provider. The map provider can
     be configured in Instance Settings, and Site Settings in the Advanced
     section.
@@ -63,10 +56,9 @@ you to the full article.
 $$$
 
 **Number of Items to Display**: This selector lets you select the maximum number
-of assets that can be displayed by the Asset Publisher. If pagination, however,
-is enabled, there's no limit to the number of of assets that the Asset Publisher
-can display. So with pagination enabled, this number represents the maximum
-number of assets that can be displayed per page.
+of assets that can be displayed by the Asset Publisher. If pagination is 
+enabled, this number represents the maximum number of assets that can be 
+displayed per page.
 
 **Pagination Type**: This can be set to *None*, *Simple*, or *Regular*. With
 pagination set to *None*, the Asset Publisher displays at most the number of
@@ -90,24 +82,6 @@ an instanceable app; multiple Asset Publishers can be added to a page and each
 has an independent configuration. The default Asset Publisher for a page is the
 one used to display any web content associated with the page.
 
-**Enable Conversion To:** If you have enabled Liferay's OpenOffice/LibreOffice
-integration, you can allow your users to convert the content to one of several
-formats:
-
-- DOC
-- ODT
-- PDF
-- RTF
-- SXW
-- TXT
-
-    Please refer to the section on
-    [Liferay Server Administration](/discover/portal/-/knowledge_base/6-2/server-administration)
-    for information on setting up Liferay's OpenOffice/LibreOffice document
-    conversion functionality.
-
-    <!-- Update link above when available for 7.0. -Cody -->
-
 **Enable ...**: The Asset Publisher's Display Settings allow you to
 enable/disable the following options for displayed assets:
 
@@ -117,7 +91,6 @@ enable/disable the following options for displayed assets:
 - Ratings
 - Comments
 - Comment Ratings
-- Social Bookmarks
 
 Enabling the Print option adds a *Print* link to the full view of an asset
 displayed in the Asset Publisher. Clicking *Print* opens a new browser window
@@ -134,11 +107,7 @@ have feedback for.
 
 $$$
 
-When enabling social bookmarks, you're given sub-options to edit the display
-style of your social bookmarks and whether they are listed at the top or bottom
-of the Asset Publisher.
-
-**Show Metadata:** Lets you select various metadata types to be displayed (see
+**Metadata:** Lets you select various metadata types to be displayed (see
 below). For example, you can select tags and categories for display. Upon saving
 your configuration, the Asset Publisher displays tags and categories for each
 displayed asset. Then users can click on the tags and categories to manually
@@ -146,9 +115,5 @@ filter the displayed assets.
 
 ![Figure 3: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../../images/available-metadata-fields.png)
 
-The Display Settings section of the Asset Publisher has numerous options to help
-you configure how your content selections are displayed to your users. Even
-though there are many choices, it's easy to go through the options and quickly
-adjust the ones that apply to your situation. You'll want to use the Asset
-Publisher to query for different kinds of assets in @product@ that contain
-relevant information for your users.
+Next you'll learn about configuring subscriptions for email and RSS through the 
+Asset Publisher. 

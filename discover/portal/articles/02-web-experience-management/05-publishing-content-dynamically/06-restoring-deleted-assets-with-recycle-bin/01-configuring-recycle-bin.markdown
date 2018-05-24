@@ -7,21 +7,26 @@ enabled instance-wide. You'll go into more detail for adding this property and
 several others to your properties file later in the section. First, you'll
 explore the UI and see what the Recycle Bin can do.
 
-First, you'll configure the Recycle Bin for site-specific scoping. Choose the
-site you'd like configure for the Recycle Bin from the Site Administration menu.
-Then click *Configuration* &rarr; *Site Settings*. Next, select the top
-*Advanced* tab and click *Recycle Bin*. You'll notice a few configurable
-options:
+First, you'll configure the Recycle Bin for site-specific scoping.
 
-**Enable Recycle Bin:** enable and disable settings for the Recycle Bin's
-site-specific scope.
+1.  Choose the site you'd like configure for the Recycle Bin from the Site 
+    Administration menu.
 
-**Trash Entries Max Age:** customize the number of minutes a file is kept in the
-Recycle Bin until its permanent deletion (default is 43200 minutes, or 30 days).
+2.  Click *Configuration* &rarr; *Site Settings*.
+
+3.  Next, select the top *Advanced* tab and click *Recycle Bin*. You'll notice 
+    a few configurable options.
+
+    **Enable Recycle Bin:** enable and disable settings for the Recycle Bin's
+    site-specific scope.
+
+    **Trash Entries Max Age:** customize the number of minutes a file is kept   
+    in the Recycle Bin until its permanent deletion (default is 43200 minutes, 
+    or 30 days).
 
 ![Figure 1: The Recycle Bin offers several configurable options for your site.](../../../images/recycle-bin-site-settings.png)
 
-When you've finished configuring your Recycle Bin settings, click *Save*.
+4.  When you've finished configuring your Recycle Bin settings, click *Save*.
 
 +$$$
 

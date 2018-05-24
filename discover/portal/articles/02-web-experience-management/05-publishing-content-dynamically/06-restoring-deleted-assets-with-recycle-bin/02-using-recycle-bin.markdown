@@ -25,13 +25,13 @@ then restore it. You'll run through two different methods of restoring the file.
 
 1.  Go to Site Administration and select *Content* &rarr; *Web Content*.
 
-2.  Select the *Add* button (![Add Web Content](../../../images/icon-add.png))
+2.  Select the *Add* button (![Add Web Content](../../../../images/icon-add.png))
     and click *Basic Web Content*.
 
 3.  Enter some text for the Title and Content and click *Publish*.
 
 4.  Click the article's *Actions* button
-    (![Actions](../../../images/icon-actions.png)) and click
+    (![Actions](../../../../images/icon-actions.png)) and click
     *Move to the   Recycle Bin*.
 
 	Note that the *Delete* button is not listed. @product@ avoids the risk of
@@ -68,7 +68,7 @@ the same way as a single file.
 The *Delete* within the Recycle Bin is the permanent delete button. Once you 
 select this, your file cannot be retrieved and is gone forever. There is also 
 an *Empty the Recycle Bin* option accessible from the
-(![Options](../../../images/icon-options.png)) button at the top of the Recycle
+(![Options](../../../../images/icon-options.png)) button at the top of the Recycle
 Bin screen. This permanently deletes all the files from the Recycle Bin.
 
 ## Drag and Drop [](id=drag-and-drop)

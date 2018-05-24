@@ -1,18 +1,19 @@
 # Defining Content Relationships [](id=defining-content-relationships)
 
-Related Assets is a feature that enables you to connect an asset to other assets
-within the same site or to global assets, even if they don't share any tags and
-aren't in the same category. The Related Assets application only displays
-content that meets the criteria you've specified, and also is listed as a
-related asset for a piece of content that is published using the Asset
-Publisher. You'll learn more about the Asset Publisher in the
+Related Assets is a feature that connects an asset to other assets, even if 
+they don't share any tags and aren't in the same category. The Related Assets 
+widget only displays content that meets the criteria you've specified, and 
+also is listed as a related asset for a piece of content that is published 
+using the Asset Publisher. You'll learn more about the Asset Publisher in the
 [Publishing Assets](/discover/portal/-/knowledge_base/7-1/publishing-assets)
 section. For now, you'll focus on how to define relationships between assets so
-when you begin publishing assets, the Related Assets application can
+when you begin publishing assets, the Related Assets widget can
 successfully display those relationships. You'll take a closer look at the
-Related Assets application next.
+Related Assets widget next.
 
-By default, the Related Assests application is configured to display any related
+## The Related Assets Widget
+
+By default, the Related Assets widget is configured to display any related
 asset of the asset selected in the Asset Publisher. You can configure what
 content relationships to display, if you prefer not to show every related asset
 for the selected asset. To do this, go to the Related Assets app and select the
@@ -33,7 +34,7 @@ author, modification date, tags, and view count. You can even enable RSS
 subscriptions and customize their display settings. When you're finished setting
 the Source and Filter options, click *Save*.
 
-Now that you've configured the Related Assets application to display specific
+Now that you've configured the Related Assets widget to display specific
 content types, you need to actually define the relationships for your assets.
 Next, you'll go through a simple example of defining related assets for a web
 content article and then display those related assets.
