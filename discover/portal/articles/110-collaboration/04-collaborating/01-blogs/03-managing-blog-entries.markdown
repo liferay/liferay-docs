@@ -9,16 +9,16 @@ tab is selected by default, which lists the site's blog entries.
 ![Figure 1: The Blogs app in Site Administration lists the site's blog entries.](../../../../images/blog-entries-site-admin.png)
 
 You can use the Management Bar to manage your site's blog entries. If you've 
-added files or folders to your Document Library, then you're already familiar 
-with the Management Bar's *Add* button 
+added blog entries via your site's Blogs app, then you're already familiar with 
+the Management Bar's *Add* button 
 (![Add](../../../../images/icon-add.png)). The sections that follow describe the 
 rest of the Management Bar. 
 
 ## View Types
 
 The *View Types* button is to the left of the Add button. It lets you choose how 
-to display the Document Library's items. The View Types button's icon depends on 
-the selected view type: 
+to display the blog entries in the Blogs app. The View Types button's icon 
+depends on the selected view type: 
 
 -   **Cards** (![Cards](../../../../images/icon-view-type-cards.png)): Shows a 
     card-like rendering of the blog entry, with the author's profile picture. If 
@@ -36,7 +36,7 @@ the selected view type:
     same information as the other view types, in a list with no file renderings. 
     Also, the blog entry information is in columns. 
 
-## Finding and Arranging Items
+## Finding and Arranging Blog Entries
 
 The Management Bar also contains tools that help you locate and arrange blog 
 entries. The most prominent of these tools is the *Search* bar, where you can 
@@ -53,7 +53,7 @@ criteria:
 -   **Mine:** Shows all the current user's entries. 
 -   **Display Date:** Orders the entries by display date. 
 
-## Selecting Items [](id=selecting-items)
+## Selecting Blog Entries
 
 The checkbox on the left-most side of the Management Bar selects all currently 
 displayed blog entries. Selecting multiple entries lets you act on all of them 

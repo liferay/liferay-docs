@@ -5,8 +5,8 @@ behaves for all blogs in your site. To access this app, click the Menu button
 (![Menu](../../../../images/icon-menu.png)) to open the product menu, then 
 expand the menu for your site and select *Content* &rarr; *Blogs*. The *Options* 
 menu 
-(![Options](../../../images/icon-options.png)) at the top-right of the Blogs app 
-lets you configure permissions and notifications, or import/export the app's 
+(![Options](../../../../images/icon-options.png)) at the top-right of the Blogs 
+app lets you configure permissions and notifications, or import/export the app's 
 content. 
 
 ![Figure 1: You can configure the options for your site's Blogs app.](../../../../images/blog-instance-options.png)
