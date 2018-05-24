@@ -1,4 +1,4 @@
-# Managing the Target Platform for Liferay Workspace
+# Managing the Target Platform for Liferay Workspace [](id=managing-the-target-platform-for-liferay-workspace)
 
 Liferay Workspace provides a way to target a specific release of @product@ to
 develop against. This greatly decreases the need to manage dependencies and
@@ -45,7 +45,7 @@ section for more info on applying the Target Platform Gradle plugin.
 
 Next, you'll discover how all of this is possible.
 
-## Dependency Management with BOMs
+## Dependency Management with BOMs [](id=dependency-management-with-boms)
 
 Targeting a @product@ version to develop against is possible by importing a
 predefined bill of materials (BOM). Don't worry; this is handled behind the
@@ -65,7 +65,7 @@ section in Maven's official documentation.
 
 Pretty cool, right? Next, you'll step through an example configuration.
 
-## Setting the Target Platform
+## Setting the Target Platform [](id=setting-the-target-platform)
 
 Setting a @product@ version to develop against is easy in Liferay Workspace.
 Open the workspace's `gradle.properties` file and set the
@@ -107,7 +107,7 @@ tutorial to do this.
 You now know how to configure a target platform in workspace and how
 dependencies without versions appear in your Gradle build files. You're all set!
 
-## Targeting a Platform Outside of Workspace
+## Targeting a Platform Outside of Workspace [](id=targeting-a-platform-outside-of-workspace)
 
 If you prefer to not use Liferay Workspace, but still want to target a platform
 to develop against, you must apply the

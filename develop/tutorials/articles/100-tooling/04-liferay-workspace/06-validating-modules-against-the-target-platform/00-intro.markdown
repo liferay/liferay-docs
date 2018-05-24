@@ -1,4 +1,4 @@
-# Validating Modules Against the Target Platform
+# Validating Modules Against the Target Platform [](id=validating-modules-against-the-target-platform)
 
 Once you've finished developing your custom module in Liferay Workspace, you're
 ready to deploy it and see how it looks. Right before deploying your app for the

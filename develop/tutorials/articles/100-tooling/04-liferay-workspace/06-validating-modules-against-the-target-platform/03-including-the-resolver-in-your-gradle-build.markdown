@@ -1,4 +1,4 @@
-# Including the Resolver in Your Gradle Build
+# Including the Resolver in Your Gradle Build [](id=including-the-resolver-in-your-gradle-build)
 
 By default, Liferay Workspace provides the `resolve` task as an independent
 executable. It's provided by the
