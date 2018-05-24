@@ -91,4 +91,4 @@ top-right of code view:
     vertically. You can also hide the preview pane so the HTML editor takes up 
     the entire window space. 
 
-![Figure 3: Editing in code view lets you work with your blog entry's underlying HTML.](../../../../images/blogs-code-view.png)
+![Figure 2: Editing in code view lets you work with your blog entry's underlying HTML.](../../../../images/blogs-code-view.png)

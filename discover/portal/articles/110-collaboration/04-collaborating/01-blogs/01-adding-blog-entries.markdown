@@ -1,8 +1,8 @@
 # Adding Blog Entries
 
-Each site contains a built-in blog instance, so you can add blog posts to it 
+Each site contains a built-in blog instance, so you can add blog entries to it 
 right away. The easiest way to do this is in the Site Administration menu. 
-Follow these steps to add a blog post in Site Administration: 
+Follow these steps to add a blog entry in Site Administration: 
 
 1.  Click the Menu button 
     (![Menu](../../../../images/icon-menu.png)) to open the product menu. Then
@@ -107,4 +107,7 @@ Follow these steps to add a blog post in Site Administration:
     -   **Delete Discussion**: Delete any comments on the blog entry.
     -   **Add Discussion**: Comment on the blog entry. 
 
-10. Click *Publish* to publish your blog entry. 
+10. Click *Publish* to publish your blog entry. It now appears in the *Entries* 
+    tab. 
+
+    ![Figure 3: The Blogs app in Site Administration lists the site's blog entries.](../../../../images/blog-entries-site-admin.png)
