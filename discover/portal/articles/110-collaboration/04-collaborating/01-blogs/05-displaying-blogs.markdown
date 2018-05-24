@@ -96,3 +96,5 @@ There are also other tabs in *Configuration*:
     blog (default), the global blog, or the page's blog. If the page doesn't
     already have a blog instance, you can select scope option *\[Page Name\]
     \(Create New\)* to create a page-scoped blog instance. 
+
+When you finish setting the options, click *Save* and then close the dialog box. 
