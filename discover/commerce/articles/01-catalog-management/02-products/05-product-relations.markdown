@@ -18,7 +18,7 @@ product.
 **Cross-sell:** Display products complementary to the featured product.
 
 As far as the software is concerned, all these types are identical---the
-difference is all in how you choose to use them. By populating each type with
+difference is in how you choose to use them. By populating each type with
 different product relations, you gain the ability to display multiple sets of
 relations on a single page.
 
@@ -27,10 +27,10 @@ relations on a single page.
 The different types of product relations are flexible. Since each one functions
 the same way, you can add, remove, or rename types at will. Follow these steps:
 
-1.  Go to *Control Panel* &rarr; *System Settings* &rarr; *category.commerce*
+1.  Go to *Control Panel* &rarr; *System Settings* &rarr; *Commerce*
     &rarr; *Product Relationship Types*.
 
-2.  Click *Add* to create a new type, or click on the
+2.  Click *Add* to create a new type, or click the
     ![Options](../../../images/icon-options.png) button to edit or delete an
     existing one.
 
@@ -42,7 +42,7 @@ the same way, you can add, remove, or rename types at will. Follow these steps:
 
 Follow these steps:
 
-1.  Go to the catalog, select a product, and click on the *Product Relations*
+1.  Go to the catalog, select a product, and click the *Product Relations*
     tab.
 
 2.  Select a relationship type from the tabs on the left.
@@ -50,15 +50,15 @@ Follow these steps:
     ![Figure 1: The row of tabs at the left allows you to create multiple sets
     of related products.](../../../images/product-relations.png)
 
-3.  Click on the ![Add](../../../images/icon-add.png) button and then check the
+3.  Click the ![Add](../../../images/icon-add.png) button and then check the
     box next to each product you want to set as a product relation of this type.
     Click *Add*.
 
 ## Displaying Product Relations [](id=displaying-product-relations)
 
 You can display product relations on a product display page by configuring
-a search results portlet. You need to have a 
-[product display page](discover/portal/-/knowledge_base/7-1/product-detail-page)
+a search results portlet. You must have a 
+[product display page](discover/portal/-/knowledge_base/7-1/product-detail-page) 
 in place first.
 
 Follow these steps:
