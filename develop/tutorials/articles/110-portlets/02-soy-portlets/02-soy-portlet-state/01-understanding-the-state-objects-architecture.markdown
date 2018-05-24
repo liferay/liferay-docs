@@ -15,7 +15,7 @@ An example `STATE` object configuration appears below:
 State properties have these configuration options:
 
 **setter:** Normalizes the state key's value. The setter function receives the
-new value that was set and return the value that should be stored.
+new value that was set and returns the value that should be stored.
 
 **validator:** Validates the state key's value. When it returns `false`, the new
 value is ignored.

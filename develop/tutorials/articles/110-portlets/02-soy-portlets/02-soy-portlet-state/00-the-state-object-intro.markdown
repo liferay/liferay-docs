@@ -3,10 +3,10 @@
 MetalJS's `component` class, which your 
 [view component](/develop/tutorials/-/knowledge_base/7-1/creating-a-soy-portlet#configuring-the-view-layer) 
 extends, extends MetalJS's `state` class. The `state` class provides a `STATE` 
-object that contains state properties, as well as watches these properties for 
+object that contains state properties and watches these properties for 
 changes. Any 
 [template parameters](/develop/tutorials/-/knowledge_base/7-1/creating-a-soy-portlet#using-portlet-template-parameters-in-the-soy-template) 
-defined in your portlet classes are automatically added as properties to the 
+defined in your portlet classes are added automatically as properties to the 
 portlet's `STATE` object. The `component` class provides additional rendering 
 logic, such as automatically re-rendering the component when the `state` class 
 detects a change in a state property. This means that you can 

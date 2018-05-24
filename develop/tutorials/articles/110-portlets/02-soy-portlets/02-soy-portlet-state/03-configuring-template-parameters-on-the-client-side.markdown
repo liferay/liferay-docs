@@ -80,7 +80,7 @@ Follow these steps:
 1.  Open the console in your web browser.
 
 2.  Retrieve your portlet's component by passing the Soy portlet's ID in the 
-    method `Liferay.component()`. An example configuration is shown below:
+    method `Liferay.component()`. Here's an example configuration:
 
         Liferay.component('_MyStateSoyPortlet_');
  
