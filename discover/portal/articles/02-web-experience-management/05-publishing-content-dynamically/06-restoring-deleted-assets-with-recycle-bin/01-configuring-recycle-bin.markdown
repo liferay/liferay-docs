@@ -24,14 +24,14 @@ First, you'll configure the Recycle Bin for site-specific scoping.
     in the Recycle Bin until its permanent deletion (default is 43200 minutes, 
     or 30 days).
 
-![Figure 1: The Recycle Bin offers several configurable options for your site.](../../../images/recycle-bin-site-settings.png)
+    ![Figure 1: The Recycle Bin offers several configurable options for your site.](../../../../images/recycle-bin-site-settings.png)
 
 4.  When you've finished configuring your Recycle Bin settings, click *Save*.
 
 +$$$
 
 **Note:** If you disable the Recycle Bin while it's still holding recycled
-items, the recycled items reappear in the Recycle Bin if it is re-enabled.
+items, the recycled items remain stored and will reappear in the Recycle Bin if it is re-enabled.
 
 $$$
 
@@ -58,7 +58,7 @@ for all sites in the portal (default is *true*).
 held before being permanently deleted.
 
 Visit the
-[portal.properties](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Trash)
+[portal.properties](https://docs.liferay.com/portal/7.1/propertiesdoc/portal.properties.html#Trash)
 file to view all of the configurable properties for the Recycle Bin.
 
 Next, you should make sure permissions are set properly for users who can

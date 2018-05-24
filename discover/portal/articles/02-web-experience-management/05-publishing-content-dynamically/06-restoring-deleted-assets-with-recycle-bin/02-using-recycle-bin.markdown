@@ -10,7 +10,7 @@ them. You can recycle several different types of assets, including:
 - Web Content
 - Wiki (and attachments)
 
-![Figure 2: The Recycle Bin provides a seamless administrative experience for deleting and removing content.](../../../images/recycle-bin-overview.png)
+![Figure 2: The Recycle Bin provides a seamless administrative experience for deleting and removing content.](../../../../images/recycle-bin-overview.png)
 
 +$$$
 
@@ -51,7 +51,7 @@ then restore it. You'll run through two different methods of restoring the file.
 
 9.  You can restore or delete the content. Select *Restore*.
 
-	![Figure 3: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../../images/recycle-bin-restore.png)
+	![Figure 3: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../../../images/recycle-bin-restore.png)
 
 10. Navigate back to the Web Content screen and notice that your sample web
     content is back to its original place.
@@ -81,5 +81,5 @@ moved, and the Recycle Bin is highlighted, showing you where the files can be
 dropped. After you drop the asset onto the Recycle Bin portlet, the asset is 
 removed from its original location and transferred to the Recycle Bin.
 
-![Figure 4: A quick and easy way of disposing your items is the drag and drop method.](../../../images/recycle-bin-drag.png)
+![Figure 4: A quick and easy way of disposing your items is the drag and drop method.](../../../../images/recycle-bin-drag.png)
 
