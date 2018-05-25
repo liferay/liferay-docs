@@ -7,11 +7,18 @@ role is just the pretty face, so to speak.
 
 Roles collect permissions that define a particular function within
 @product@, according to a particular scope. Roles collect permissions, and
-users are assigned to roles, either directly or through their association with a
-User Group, an Organization, or a Site. 
+users are assigned to roles.
 
-![Figure x: Assign Users to a role, directly or by their association with a
-Site, Organization, or User Group.](../../images/roles-assignees.png)
++$$$
+
+**Note:** Roles are assigned to Users, but it's tedious to assign each user to
+role intended for lots of Users. Recall that Users are grouped in Sites,
+Organizations, and User Groups. Implicitly assign regular scoped permissions to
+Users by assigning a role directly to one of these user groupings.
+
+![Figure x: Assign Users to a role, directly or by their association with a Site, Organization, or User Group.](../../images/roles-assignees.png)
+
+$$$
 
 Take a Message Board Administrator role, for example. A role with that name
 is likely to have permissions relevant to the specific Message Board portlets
