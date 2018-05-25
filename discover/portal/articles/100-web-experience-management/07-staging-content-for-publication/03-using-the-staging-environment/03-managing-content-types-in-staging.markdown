@@ -2,9 +2,9 @@
 
 When managing content in Staging's Advanced Publication menu, there are several
 factors to consider when preparing your content for publication. As described in
-the
-[Advanced Publication with Staging](/discover/portal/-/knowledge_base/7-1/advanced-publication-with-staging)
-article, you can navigate to the Content area of the Advanced Publication menu
+
+[Advanced Publication with Staging](/discover/portal/-/knowledge_base/7-1/advanced-publication-with-staging),
+you can navigate to the Content area of the Advanced Publication menu
 to select content you want to publish. There are options attached to each
 content group (e.g., Web Content) that you can manage too.
 
@@ -26,12 +26,12 @@ import, so the images must be published or imported first.
 
 ## Version History [](id=version-history)
 
-Web content tends to be frequently updated, often more so than other kinds of
-content. Sometimes this can result in high numbers of versions, into the
-hundreds. This makes it take a long time to publish these articles. You can
-bypass this issue by choosing to not publish the *Version History* (i.e., the
-past versions of the web content articles to be published). If you disable this
-option, only the last **approved** version of each web content article is
+Web content tends to be updated frequently, often more so than other kinds of
+content. Sometimes this can result in high numbers of versions. If there are
+hundreds of versions, it can take a long time to publish these articles. You
+can bypass this by choosing to not publish the *Version History* (i.e.,
+the past versions of the web content articles to be published). If you disable
+this, only the last **approved** version of each web content article is
 published to Live. This can significantly speed up the publication process.
 
 You can set this option globally. If you navigate to the Control Panel &rarr;
@@ -44,7 +44,7 @@ behavior, enable the checkbox in System Settings.
 
 ## Previews and Thumbnails [](id=previews-and-thumbnails)
 
-Previews and thumbnails are automatically generated for documents. Disabling
+Previews and thumbnails are generated automatically for documents. Disabling
 this, though, can greatly increase your publishing speed in some cases. You
 should be careful about publishing previews and thumbnails to the live site.
 
@@ -57,8 +57,8 @@ environment, you can set up that Liferay instance to generate them
 automatically.
 
 It depends on your environment for whether you can use the publishing of the
-previews and thumbnails. Publishing them is a heavy operation, and you also have
-to transfer the LAR file over the network if you use remote staging. If you
+previews and thumbnails. Publishing them is a heavy operation, and you must
+also transfer the LAR file over the network if you use remote staging. If you
 decide to generate them on the live site, understand that this could take some
 time, since it's a CPU intense operation.
 
@@ -70,12 +70,12 @@ content, it can cause issues when publishing.
 
 For environments that use both global and local vocabularies, note that global
 vocabularies must be published to the live site through global site staging. One
-way to avoid confusion with vocabularies is to simply keep all vocabularies
-local or global.
+way to avoid confusion with vocabularies is to keep all vocabularies local or
+global.
 
-If both must be used, this dependency issue can be resolved by ensuring that
-dependencies (e.g., categories and vocabularies) are published before publishing
-the site that depends on them (whether the dependencies are local or global).
+If both must be used, you can resolve the issue by ensuring that dependencies
+(e.g., categories and vocabularies) are published before publishing the site
+that depends on them (whether the dependencies are local or global).
 
 Assets like tags, categories, structures, templates, application display
 templates, document types, and dynamic data lists can also be shared by a parent
@@ -85,6 +85,6 @@ published before the site in question.
 ## Deletions [](id=deletions)
 
 The Staging framework gathers deletions (including trashed entities) in a site.
-These deletions can be published to clean up the live site. If it's not a
-problem to have lingering data on the live, or it is going to be processed
-later, this can be turned off as well to save execution time during the process.
+These deletions can be published to clean up the live site. If you plan to
+process it later, or if it's not a problem to have lingering data on live,
+this can be turned off as well to save execution time during the process.
