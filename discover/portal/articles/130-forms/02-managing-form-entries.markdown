@@ -11,8 +11,8 @@ Start by learning how to access and view the entries.
 
 ## Viewing Form Entries [](id=viewing-form-entries)
 
-When users fill out forms, they're generating data. You're going to want to see
-it at some point. 
+When users fill out forms, they're generating data. You'll want to see it at
+some point. 
 
 1.  From the Menu, navigate back to the *Content* &rarr; *Forms* section of The
     Lunar Resort site.
@@ -22,7 +22,7 @@ it at some point.
 
     ![Figure 1: You can view the entries right in the Forms application. ](../../images/forms-view-entries.png)
 
-3.  What if you  have a lot of form fields and you can't see all of the data for
+3.  What if you  have a lot of form fields and you can't see all the data for
     each entry in the search container? Just click the *Actions*
     (![Actions](../../images/icon-actions.png)) button for the entry and select
     *View*. You'll be able to see all the specifics for that form entry.
@@ -30,12 +30,11 @@ it at some point.
     ![Figure 2: You can view a single entry right in the Forms application.](../../images/forms-view-entry.png)
 
 Viewing entries is great, but this is serious data we're talking about. You
-might need to get all the entries into a spreadsheet so you can work with them,
-for example.
+might need to get all the entries into a spreadsheet so you can work with them. 
 
 ## Exporting Form Entries [](id=exporting-form-entries)
 
-So, you need to put your form entries in a spreadsheet to do spreadhseet things
+So you need to put your form entries in a spreadsheet to do spreadhseet things
 with them? No problem.
 
 1.  Navigate to the Forms application in The Lunar Resort site's Content section
@@ -75,19 +74,19 @@ Liferay database? It's easy to delete all of a form's entries at once.
 
 Navigate back to the Forms application In The Lunar Resort Content section.
 Click the *Actions* (![Actions](../../images/icon-actions.png)) button next
-to the Guest Survey form and select *View Entries* again. Select all of the
-entries by checking the box next to *Filter and Order*. A trash can icon
-(![Trash](../../images/icon-trash.png)) appears in the top right corner of
-the Form Entries screen. Click it.
+to the Guest Survey form and select *View Entries* again. Select all entries by
+checking the box next to *Filter and Order*. A trash can icon
+(![Trash](../../images/icon-trash.png)) appears in the top right corner of the
+Form Entries screen. Click it.
 
 ![Figure 4: Delete all form entries in one fell swoop.](../../images/forms-delete-entries.png)
 
-If you just wanted to delete a single entry, you'd just select that entry by checking
-its box, then click the trash can.
+If you just wanted to delete a single entry, select that entry by checking its
+box; then click the trash can.
 
 If you're worried about deleting everything irrecoverably by accident, don't
-worry. You'll have to confirm the deletion in a dialog box that pops up after
-clicking the trash can.
+worry. You must confirm the deletion in a dialog box that pops up after clicking
+the trash can.
 
 Now you can create basic forms and manage the entries. Keep reading in this
 section to learn about the many additional form building features available to
