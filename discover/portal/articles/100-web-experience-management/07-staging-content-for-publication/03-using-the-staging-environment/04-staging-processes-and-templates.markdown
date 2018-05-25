@@ -11,16 +11,13 @@ scheduled for future publication dates.
 
 ![Figure 1: Your staging processes can be viewed at any time.](../../../../images/staging-processes.png)
 
-If you find yourself repeatedly creating staging processes that are very similar
-to each other, you should think about using Publish Templates.
+If you find yourself repeatedly creating similar staging processes, you should
+think about using Publish Templates.
 
 Instead of manually having to customize a publication process every time you're
-looking to publish pages/content, you can use a publish template. Using publish
-templates provides you the convenience of storing publication process settings
-so they can be reused. If you publish content frequently and usually select the
-same options to publish, the task of selecting options repeatedly can become
-tedious. With publish templates, you can select a custom template and
-immediately publish with the options you configured.
+looking to publish pages/content, you can use a publish template. With publish
+templates, you can select a custom template and immediately publish with the
+options you configured.
 
 Follow the steps below to create and use a publish template.
 
@@ -40,21 +37,19 @@ Follow the steps below to create and use a publish template.
     (![Actions](../../../../images/icon-actions.png)) next to the template and
     select *Publish to Live*.
 
-    This automatically fills the fields and options for publishing pages and
-    their content. All you have to do is give the publication process a custom
-    name. Once you confirm the configuration settings, your staging settings are
-    published.
+    This automatically sets the options for publishing pages and their content.
+    All you have to do is give the publication process a name. Once you confirm
+    the configuration settings, your staging settings are published.
 
 +$$$
 
 **Note:** When staging is enabled, the options available from the *Publishing*
-tab are modified. When in the Live environment, you're only able to access the
-*Export* feature. When in the Staging environment, you're only able to access
-the *Import* and *Staging* features. The features that are not available for
-each environment don't make sense in that context. For example, you shouldn't be
-able to import content when in the live environment; it must be imported into
-the staged environment and then published before it is available in the live
-site.
+tab are modified. When in the Live environment, you can only access the *Export*
+feature. When in the Staging environment, you can only access the *Import* and
+*Staging* features. The disabled features for each environment don't make sense
+in that context. For example, you shouldn't be able to import content when in
+the live environment; it must be imported into the staged environment and then
+published before it is available in the live site.
 
 $$$
 
