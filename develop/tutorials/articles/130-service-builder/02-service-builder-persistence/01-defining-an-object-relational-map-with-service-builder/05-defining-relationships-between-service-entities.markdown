@@ -27,7 +27,7 @@ As mentioned earlier, each bookmark must have a folder. Therefore, each
 Congratulations! You've related two entities. Their relationship shows in
 Diagram mode and looks similar to the relationship in the figure below. 
 
-![Figure 3: Relating entities is a snap in Liferay @ide@'s *Diagram* mode for `service.xml`.](../../../../images/service-builder-relate-entities.png)
+![Figure 1: Relating entities is a snap in Liferay @ide@'s *Diagram* mode for `service.xml`.](../../../../images/service-builder-relate-entities.png)
 
 Switch to *Source* mode in the editor for your `service.xml` file and note that
 Liferay @ide@ created a column element in the first selected entity to hold the

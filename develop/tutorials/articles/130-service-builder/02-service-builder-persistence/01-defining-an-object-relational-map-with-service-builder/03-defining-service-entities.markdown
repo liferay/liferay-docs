@@ -35,7 +35,7 @@ Here are steps to create entities using Liferay @ide@:
 
 Add as many entities as you need.
 
-![Figure 2: Adding service entities in your `service.xml` file is easy with Liferay @ide@'s *Overview* mode.](../../../../images/service-add-entity.png)
+![Figure 1: Adding service entities in your `service.xml` file is easy with Liferay @ide@'s *Overview* mode.](../../../../images/service-add-entity.png)
 
 The entity's database table name includes the entity name prefixed with the
 namespace. The Bookmarks example creates one database table named

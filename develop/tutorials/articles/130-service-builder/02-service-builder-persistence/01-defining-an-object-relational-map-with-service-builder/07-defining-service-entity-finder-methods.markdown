@@ -55,7 +55,7 @@ columns---Oracle DB, for example, reports these attempts as errors.
 
 $$$
 
-![Figure 4: Creating Finder entities is easy with Liferay @ide@.](../../../../images/service-builder-finders.png)
+![Figure 1: Creating Finder entities is easy with Liferay @ide@.](../../../../images/service-builder-finders.png)
 
 If you're creating site-scoped entities (entities whose data should be unique to
 each site), follow the steps described above to create finders by `groupId` for

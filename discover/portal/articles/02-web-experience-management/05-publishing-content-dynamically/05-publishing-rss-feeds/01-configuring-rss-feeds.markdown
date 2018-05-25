@@ -4,17 +4,18 @@ To manage a Liferay site's RSS feeds, navigate to the Site Administration &rarr;
 *Content* page of your site and click *Web Content*. Site administrators can use
 this Web Content menu option to manage their site's web content, including web
 content structures and templates, which you learned in the 
-[Creating Web Content](/discover/portal/-/knowledge_base/7-0/creating-web-content)
+[Creating Web Content](/discover/portal/-/knowledge_base/7-1/creating-web-content)
 section. Site administrators can also use this option to manage their site's RSS
-feeds. Click the *Options* icon (![Options](../../../images/icon-options.png))
-at the top right of your screen and then *Feeds* if you'd like to add, edit, or
-delete RSS feeds.
+feeds. To add a new feed:
 
-![Figure 1: Clicking *Options* &rarr; *Feeds* from the Site Administration's Web Content option opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../../images/web-content-manage-feeds.png)
+1.  Go to the the *Feeds* tab.
 
-Click the *Add Feed* button to add a new feed. You need to enter a name, select
-a target page, and select a web content structure for the feed. A feed's target
-page serves two purposes:
+2.  Click the *Add Feed* button.
+
+3.  Enter a *Name*, select a *Target Page*, and select a *Web Content 
+    Structure* for the feed.
+
+A feed's target page serves two purposes:
 
 1. The site to which the target page belongs determines which web content
    articles appear in the feed. For example, if the target page belongs to the
@@ -33,7 +34,7 @@ page serves two purposes:
    page. When users click on such links for orphaned articles, the full content
    of the orphaned article is displayed on the target page.
 
-![Figure 2: To create a new RSS feed, you only need to specify a name, target page, and web content structure. Of course, you can also configure other features of the feed such as its permissions, web content constraints, and presentation settings.](../../../images/web-content-new-feed.png)
+![Figure 2: To create a new RSS feed, you only need to specify a name, target page, and web content structure. Of course, you can also configure other features of the feed such as its permissions, web content constraints, and presentation settings.](../../../../images/web-content-new-feed.png)
 
 To specify a target page, you need to enter the target page's friendly URL. Note
 that friendly URLs do not include the host name. For example, the friendly URL
@@ -74,11 +75,11 @@ content articles appear in your feed.
 When you're done configuring your RSS feed, click *Save* to create your feed.
 
 Once one or more feeds have been created, they'll appear in a list in the Feeds
-popup window when you click *Options* &rarr; *Feeds*. You can edit existing
-feeds using the same form used for creating them. The main difference is that
-when you edit an existing feed, the URL field is populated. Copy this URL into a
-new browser tab or window to test your feed. From the Feeds popup window, you
-can also customize the permissions of feeds or delete feeds.
+tab. You can edit existing feeds using the same form used for creating them. 
+The main difference is that when you edit an existing feed, the URL field is 
+populated. Copy this URL into a new browser tab or window to test your feed. 
+From the Feeds popup window, you can also customize the permissions of feeds or 
+delete feeds.
 
 It's possible to completely disable RSS feeds at the instance level. You can do
 this by setting the `rss.feeds.enabled` property to `false` in your

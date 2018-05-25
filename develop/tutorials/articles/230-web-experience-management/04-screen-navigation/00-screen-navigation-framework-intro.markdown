@@ -11,7 +11,7 @@ a `ScreenNavigationEntry`. Categories are usually represented by tabs, while
 entries use a second level of navigation. You need not have any Entries in your
 application, but you must have at least one Category.
 
-![Figure X: A typical application using screen navigation has three categories and numerous entries.](../../../images/screen-nav-sample-screen-1.png)
+![Figure 1: A typical application using screen navigation has three categories and numerous entries.](../../../images/screen-nav-sample-screen-1.png)
 
 The Screen structure normally renders Navigation Categories as horizontal tabs
 at the top of the page and Navigation Entries as a vertical list of items along
@@ -21,4 +21,4 @@ of the screen. You can customize this default layout for your needs.
 Secondary navigation is optional; you may only need category tabs with no
 additional navigation.
 
-![Figure X: Secondary navigation is optional; you may opt to have only tabs.](../../../images/screen-nav-one-level.png)
+![Figure 2: Secondary navigation is optional; you may opt to have only tabs.](../../../images/screen-nav-one-level.png)
