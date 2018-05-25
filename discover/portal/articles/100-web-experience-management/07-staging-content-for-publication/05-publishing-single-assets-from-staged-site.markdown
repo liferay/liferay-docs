@@ -30,7 +30,7 @@ You'll step through an example to see how this is done.
 
 3.  Once you've saved the new web content article, select its the *Actions*
     button (![Actions](../../../../images/icon-actions.png)) next to the article
-    and select *Publish*.
+    and select *Publish to Live*.
 
     ![Figure 1: You can publish the single web content article to the live site.](../../../../images/single-asset-publish.png)
 
