@@ -21,7 +21,7 @@ Follow these steps:
 
 3.  If you chose *Apply to Products* as the discount's target (see the *Add
     Discount* form below), an additional tab, *Products* is displayed at the top
-    of the page. Click on it an then click the ![Add](../../images/icon-add.png)
+    of the page. Click on it and then click the ![Add](../../images/icon-add.png)
     at the top right. Check the box next to the products you want and click
     *Add*.
 
