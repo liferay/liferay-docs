@@ -2,17 +2,17 @@
 
 @product-ver@ bundled with Tomcat is available on the
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
-(DE) or
+(DXP) or
 [Liferay Downloads](https://www.liferay.com/downloads)
-(CE). The @product@ Tomcat bundle contains JARs, scripts, and configuration
-files required for installing @product@ on a clean Tomcat application server.
-Copying these files from a @product@ Tomcat bundle facilitates installing
-@product@ on Tomcat.
+(Portal CE). The @product@ Tomcat bundle contains JARs, scripts, and
+configuration files required for installing @product@ on a clean Tomcat
+application server. Copying these files from a @product@ Tomcat bundle
+facilitates installing @product@ on Tomcat.
 
 Whether you copy bundle files (recommended) or download and create the files,
 you must download these files for
-[DE](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise) or
-[CE](https://www.liferay.com/downloads):
+[DXP](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise) or
+[Portal CE](https://www.liferay.com/downloads):
 
 - @product@ WAR file
 - Dependencies ZIP file
