@@ -13,7 +13,7 @@ then assign products to them.
 
 To create vocabularies, categories and subcategories, go to *Site Menu* &rarr;
 *Content* &rarr; *Categories*. To learn more about the process, go to the
-[Defining Categories for Content][/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories#defining-categories-for-content]
+[Defining Categories for Content](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories#defining-categories-for-content)
 section.
 
 +$$$
