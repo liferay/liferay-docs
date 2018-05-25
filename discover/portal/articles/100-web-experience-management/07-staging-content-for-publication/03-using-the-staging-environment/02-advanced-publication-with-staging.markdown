@@ -3,31 +3,30 @@
 Once you've finished your changes on the staged site and want to publish them,
 select the *Publish to Live* button from the Staging Bar. To configure advanced
 publication options, select the *Switch to Advanced Publication* button. Opening
-the Advanced Publication menu would be useful if you'd like to schedule a time
-to publish your content, edit the pages/content to include in the publication,
-manage permissions, etc. You're presented a custom publication menu where you
-can perform advanced editing to your publication process.
+the Advanced Publication menu presents options for scheduling a time to publish
+your content, editing the pages/content to include in the publication, managing
+permissions, etc. This lets you perform advanced editing to your publication
+process.
 
 ## Date [](id=date)
 
-You have two options to choose from for the Date category:
+You have two options for the Date category:
 
 **Now:** immediately pushes any changes to the live site.
 
-**Schedule:** lets you set a specific date to publish or to set up recurring
-publishing. You could use this, for example, to publish all changes made during
-the week every Monday morning without any further intervention.
+**Schedule:** set a specific date to publish or to set up recurring publishing.
+You could use this to publish all changes made during the week every Monday
+morning without any further intervention.
 
-Choosing dates for publication gives you the flexibility to plan staging
-schedules in advance.
+These options let you plan staging schedules in advance.
 
 ## Pages [](id=pages)
 
 This area of the menu gives you the option to choose which pages to include when
 you publish. You can choose the page group (Public or Private) to publish by
 selecting the *Change to Public Pages* or *Change to Private Pages*. You cannot
-publish both at the same time; you'll have to complete their publication
-processes separately if you want to publish both page groups.
+publish both at the same time; you must complete their publication processes
+separately if you want to publish both page groups.
 
 ![Figure 1: You have several ways to specify the pages you want included in your publication.](../../../../images/staging-advanced-publication.png)
 
@@ -62,11 +61,11 @@ from the current time.
 
 Under the date options are the different types of content that can be published.
 This list is populated based on the provided date range. For example, if at
-least one article has been created or modified in the given date range, a Web
-Content section appears in the list, and the number of articles is shown next to
-the Web Content label. Otherwise, the Web Content section is absent.
+least one article is created or modified in the given date range, a Web Content
+section appears in the list, and the number of articles is shown next to the Web
+Content label. Otherwise, the Web Content section is absent.
 
-The *Categories* content type is not dependent on the date range, and is always
+The *Categories* content type is not dependent on the date range and is always
 shown in the list.
 
 +$$$
@@ -80,12 +79,12 @@ Unchecking the checkbox next to a certain content type excludes it from the
 current publication to the live site.
 
 Some of the content types in the list, like Web Content and Documents and Media,
-have further filtering options related to them. For instance, when the Web
-Content section is present and checked, it shows a comma-separated list of
-related items to be published, including the articles themselves. A sample list
-of related items for web content might look like this: *Web Content(12),
-Structures(3), Referenced Content, Include Always, Version History*. You can
-remove items by clicking the *Change* button next to the list.
+have further filtering options. For instance, when the Web Content section is
+present and checked, it shows a comma-separated list of related items to be
+published, including the articles themselves. A sample list of related items for
+web content might look like this: *Web Content(12), Structures(3), Referenced
+Content, Include Always, Version History*. You can remove items by clicking the
+*Change* button next to the list.
 
 See the
 [Managing Content Types in Staging](/discover/portal/-/knowledge_base/7-1/managing-content-types-in-staging)
@@ -93,15 +92,18 @@ article for more information on managing content during the publication process.
 
 ## Deletions [](id=deletions)
 
-This portion of the menu lets you delete portlet metadata before publishing and
-delete operations performed for content types. You have two options to manage for
-deletions:
+This portion of the menu lets you delete two things: 
+
+- portlet metadata before publishing 
+- operations performed for content types. 
+
+You have two options to manage for deletions:
 
 **Delete Application Data Before Importing:** all data created by the
 application is deleted before the import process. Ensure you understand the
 ramifications of this option before selecting it. Some applications in other
-pages may be referencing this data. This process cannot be undone. If you are
-unsure, complete an export first.
+pages may reference this data. This process cannot be undone. If you are unsure,
+complete an export first.
 
 **Replicate Individual Deletions:** operations performed for content in the
 staging environment are replicated to the target site.
