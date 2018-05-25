@@ -65,7 +65,7 @@ $$$
 When you create a SKU or click ![Options](../../../images/icon-options.png)
 &rarr; *Edit* to the right of an existing one, a new column of tabs appears. 
 
-![Figure 1:An SKU's functions are accessed through these tabs.](../../../images/skus.png)
+![Figure 2:An SKU's functions are accessed through these tabs.](../../../images/skus.png)
 
 ### Details [](id=details)
 
