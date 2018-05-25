@@ -35,7 +35,8 @@ You'll step through an example to see how this is done.
     ![Figure 1: You can publish the single web content article to the live site.](../../../images/single-asset-publish.png)
 
 4.  You're presented a Process Details page where you can view the progress of
-    your single asset publication request.
+    your single asset publication request. Ensure the web content article is
+    published successfully.
 
 There you have it! If you navigate to your live site's Web Content section, the
 new web content article is available.
