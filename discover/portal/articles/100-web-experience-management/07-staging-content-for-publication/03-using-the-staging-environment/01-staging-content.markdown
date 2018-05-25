@@ -1,7 +1,7 @@
 # Staging Content [](id=staging-content)
 
 When you're on the staged site, you have several options in the Staging Bar to
-choose from to help start your staging conquest.
+help start your staging conquest.
 
 **Site Pages Variation:** lets you work in parallel on multiple versions of a
 staged site page. You can choose the site page variation from the dropdown menu
@@ -17,12 +17,12 @@ Staging Bar. See the
 [Using Site Pages Variations](/discover/portal/-/knowledge_base/7-1/using-site-pages-variations)
 article for more information.
 
-**Undo/Redo:** lets you step back/forward through recent changes to a page,
-which can save you the time of manually adding or removing apps if you make a
-mistake. To access *Undo*/*Redo*, select the *Options* icon
+**Undo/Redo:** steps back/forward through recent changes to a page, which can
+save you the time of manually adding or removing apps if you make a mistake. To
+access *Undo*/*Redo*, select the *Options* icon
 (![Options](../../../../images/icon-options.png)) in the Staging Bar.
 
-**History:** shows you the list of revisions of the page, based on publication
+**History:** shows the list of revisions of the page, based on publication
 dates. You can go to any change in the revision history and see how the pages
 looked at that point. To access *History*, select the *Options* icon
 (![Options](../../../../images/icon-options.png)) in the Staging Bar.
@@ -30,8 +30,8 @@ looked at that point. To access *History*, select the *Options* icon
 **Ready for Publication:** After you're done making changes to the staged page,
 click this button. The status of the page changes from *Draft* to *Ready for
 Publication* and any changes you've made can be published to the Live Site. When
-you publish a page to live, only the version which was *Marked as Ready for
-Publication* is published.
+you publish a page to live, only the version *Marked as Ready for Publication*
+is published.
 
 Now you'll step through a brief example for using the Staging Bar to stage and
 publish content.
@@ -48,16 +48,16 @@ publish content.
 4.  Select the web content article you created to display in the new widget.
 
 5.  Select the *Ready for Publication* button to confirm you're ready to publish
-    the staged content from the staged site to the live site. This prepares the
+    the content from the staged site to the live site. This prepares the
     staged content for publication. If workflow is enabled for any new resource,
-    the resource needs to go through the workflow process before it can be
-    published to the live site.
+    the resource must go through the workflow process before it can be published
+    to the live site.
 
     ![Figure 1: The staging toolbar indicates whether you're able to publish to the live site.](../../../../images/staging-publish-bar.png)
 
-6.  Click the *Publish to Live* button. A popup window appears with
+6.  Click the *Publish to Live* button. A pop-up window appears with
     configuration options for your publication.
-    
+ 
 7.  Enter the name of your publication.
 
 8.  Observe the changes listed in the menu. This lists the changed content
