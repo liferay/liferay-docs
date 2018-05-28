@@ -89,14 +89,14 @@ Next, create the permissions file:
                 <supports>
                     <action-key>ADD_GUESTBOOK</action-key>
                     <action-key>ADD_ENTRY</action-key>
-				    <action-key>VIEW</action-key>
+                    <action-key>VIEW</action-key>
                 </supports>
                 <site-member-defaults>
                     <action-key>ADD_ENTRY</action-key>
                 </site-member-defaults>
                 <guest-defaults>
-				    <action-key>VIEW</action-key>
-			    </guest-defaults>
+                    <action-key>VIEW</action-key>
+                </guest-defaults>
                 <guest-unsupported>
                     <action-key>ADD_GUESTBOOK</action-key>
                     <action-key>ADD_ENTRY</action-key>
