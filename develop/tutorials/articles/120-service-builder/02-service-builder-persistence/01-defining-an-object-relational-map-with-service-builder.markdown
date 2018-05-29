@@ -38,7 +38,7 @@ terminology, your model classes are called entities. For example, the Bookmarks
 application has two entities: `BookmarksEntry` and `BookmarksFolder`. The
 requirements for each of these entities are defined in the `bookmarks-service`
 module's
-[service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
+[service.xml](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
 listed in the `<column />` elements. 
 
 Once Service Builder reads the `service.xml` file, you can define your entities.
@@ -179,7 +179,7 @@ the model objects in Java and the fields and tables in your database. Once your
 entities are defined, Service Builder handles the mapping automatically, giving
 you a facility for taking Java objects and persisting them. For the Bookmarks
 application, two entities are created according to its
-[service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
+[service.xml](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
 --one for bookmark entries and one for bookmark folders.
 
 Here's a summary of the information used for the BookmarksEntry entity:

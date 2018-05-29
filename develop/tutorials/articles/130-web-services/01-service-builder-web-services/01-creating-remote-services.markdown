@@ -45,10 +45,10 @@ $$$
 As an example, consider @product@'s Blogs app. Articles are represented by the 
 `JournalArticle` entity. This entity is declared in the `journal-service` 
 module's 
-[`service.xml` file](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-service/service.xml) 
+[`service.xml` file](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/web-experience/journal/journal-service/service.xml) 
 with the `remote-service` attribute set to `true`. Service Builder therefore 
 generates 
-[the remote service class `JournalArticleServiceImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/service/impl/JournalArticleServiceImpl.java) 
+[the remote service class `JournalArticleServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/service/impl/JournalArticleServiceImpl.java) 
 to hold the remote service method implementations. If you were developing this 
 app from scratch, this class would initially be empty; you must use it to 
 implement the entity's remote service methods. Also, note that the remote 
@@ -56,7 +56,7 @@ service method implementations in `JournalArticleServiceImpl` follow best
 practice by checking permissions and calling the corresponding local service 
 method. For example, each `addArticle` method in `JournalArticleServiceImpl` 
 checks permissions via 
-[the custom permissions class `JournalFolderPermission`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/service/permission/JournalFolderPermission.java) 
+[the custom permissions class `JournalFolderPermission`](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/service/permission/JournalFolderPermission.java) 
 and then calls the local service's matching `addArticle` method: 
 
     @Override
@@ -74,7 +74,7 @@ to perform permissions checks on. Also note that the local service is called via
 the `journalArticleLocalService` field. This is a Spring bean of type 
 `JournalArticleLocalServiceImpl` that's injected into 
 `JournalArticleServiceImpl` by Service Builder. See 
-[the class `JournalArticleServiceBaseImpl`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/service/base/JournalArticleServiceBaseImpl.java) 
+[the class `JournalArticleServiceBaseImpl`](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/service/base/JournalArticleServiceBaseImpl.java) 
 for a complete list of Spring beans available in `JournalArticleServiceImpl`. 
 
 After you've finished adding remote service methods to your `*ServiceImpl` 

@@ -13,7 +13,7 @@ Now it's time to get started!
 
 You can use the following tags in the JSPs you provide for adding/editing custom
 entities. Here's what the tags look like in the
-[edit_entry.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-web/src/main/resources/META-INF/resources/blogs/edit_entry.jsp) 
+[edit_entry.jsp](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/blogs/blogs-web/src/main/resources/META-INF/resources/blogs/edit_entry.jsp) 
 for the Blogs portlet: 
 
     <liferay-ui:asset-categories-error />

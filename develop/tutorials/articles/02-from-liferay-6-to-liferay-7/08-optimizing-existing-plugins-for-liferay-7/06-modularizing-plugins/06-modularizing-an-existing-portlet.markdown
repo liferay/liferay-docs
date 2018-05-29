@@ -246,7 +246,7 @@ $$$
         resource.actions.configs=resource-actions/default.xml
 
     As an example, you can view the Directory application's
-    [`default.xml`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/directory/directory-web/src/main/resources/resource-actions/default.xml)
+    [`default.xml`](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/directory/directory-web/src/main/resources/resource-actions/default.xml)
     file.
 
 12. Add any language keys that your application uses to the

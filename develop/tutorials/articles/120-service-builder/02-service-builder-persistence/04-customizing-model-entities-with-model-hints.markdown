@@ -33,7 +33,7 @@ the next time Service Builder runs. However, you can safely edit the
 $$$
 
 As an example, consider 
-[the Bookmarks app's model hints file](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/resources/META-INF/portlet-model-hints.xml):
+[the Bookmarks app's model hints file](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/resources/META-INF/portlet-model-hints.xml):
 
     <?xml version="1.0"?>
 
@@ -148,7 +148,7 @@ I'm not sure what the `check-tab` hint does. Would be worth asking the UI team.
 - Jim -->
 
 Note that Liferay has 
-[its own `portal-model-hints.xml` file](https://github.com/liferay/liferay-portal/blob/master/portal-impl/src/META-INF/portal-model-hints.xml). 
+[its own `portal-model-hints.xml` file](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/portal-impl/src/META-INF/portal-model-hints.xml). 
 This file contains many hint examples, so you can reference it when customizing 
 your `portlet-model-hints.xml` file. 
 
