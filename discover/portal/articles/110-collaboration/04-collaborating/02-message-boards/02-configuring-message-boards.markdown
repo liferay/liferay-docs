@@ -83,3 +83,67 @@ notifications:
 
 -   **Message Updated Email:** This tab is identical to the Message Added Email 
     tab, except it defines the email that users receive when a post is updated. 
+
+## Thread Priorities [](id=thread-priorities)
+
+The *Thread Priorities* tab lets you define custom priorities for message 
+threads. This lets privileged roles tag a thread with a certain priority, which 
+highlights it for users. Three priorities are defined by default: 
+
+-   Urgent
+-   Sticky
+-   Announcement
+
+To define a thread priority, enter its name, a URL to its image icon, and a 
+priority number. Threads with a higher priority are posted above threads with a 
+lower priority. 
+
+**Thread Icons**
+
+  &nbsp;**Icon** | **Definition** | 
+:-------------------: | :---------------- |
+   ![Urgent](../../../../images/icon-message-boards-urgent.png) |  Urgent |
+   ![Announcement](../../../../images/icon-message-boards-announcement.png) |  Announcement |
+   ![Sticky](../../../../images/icon-message-boards-sticky.png) |  Sticky |
+   ![Question](../../../../images/icon-message-boards-question.png) |  Question |
+
+The localized language field lets you name the priorities in each locale. You
+can select the locale, update the priority names for it, and save your updates. 
+
+## User Ranks
+
+The User Ranks tab lets you rank users by the number of messages they have 
+posted. Default ranks from 0 to 1000 are provided for you, but you can set 
+custom ranks here as well. 
+
+You can also choose message boards labels for users to display in their 
+profiles. For example, you can use the message boards label *Moderator* for 
+anyone who is a part of any of the Message Boards Administrator groups: the site 
+role, the organization, the organization role, the regular role, or the user 
+group: 
+
+    Moderator=organization:Message Boards Administrator
+
+    Moderator=organization-role:Message Boards Administrator
+
+    Moderator=regular-role:Message Boards Administrator
+    
+    Moderator=site-role:Message Boards Administrator
+
+    Moderator=user-group:Message Boards Administrator
+
+As with thread priority names, the *Localized Language* field lets you localize
+rank names. 
+
+## RSS
+
+Message board threads can be published as RSS feeds. The RSS tab lets you 
+enable/disable RSS subscriptions and define how the feeds are generated: 
+
+-   **Maximum Items to Display:** The number of items to display in the feed. 
+-   **Display Style:** The feed's appearance. You can publish the full content,
+    an abstract, or just the thread title. 
+-   **Format:** The feed's format: RSS 1.0, RSS 2.0, or Atom 1.0. 
+
+Once you've finished configuring your message board, make sure to *Save* your
+changes. 
