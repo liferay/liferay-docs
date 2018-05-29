@@ -1,4 +1,4 @@
-# Context Contributors [](id=context-contributors)
+# Injecting Additional Context Variables and Functionality into Your Templates [](id=injecting-additional-context-variables-and-functionality-into-your-templates)
 
 JSP templates are the predominant templating framework in @product@. Themes,
 application display templates (ADTs), DDM templates, and more make use of JSPs

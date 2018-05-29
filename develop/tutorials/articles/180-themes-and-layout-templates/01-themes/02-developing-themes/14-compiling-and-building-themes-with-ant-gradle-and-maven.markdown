@@ -1,4 +1,4 @@
-# Theme Builder [](id=theme-builder)
+# Compiling and Building Themes with Ant, Gradle, and Maven [](id=compiling-and-building-themes-with-ant-gradle-and-maven)
 
 Liferay's Theme Builder gives developers who aren't using
 [Liferay's Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
