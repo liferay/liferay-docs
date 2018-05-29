@@ -62,7 +62,7 @@ To export or import app data from a widget, follow the steps below:
 Now that you know how to navigate to the *Export/Import* menus, you'll explore
 the export process next.
 
-## Exporting App Data
+## Exporting App Data [](id=exporting-app-data)
 
 To export app data, create a new export process by selecting the *New Export
 Process* tab (default). You have several export options to configure.
@@ -110,7 +110,7 @@ After you've exported your app's data, switch to the *Current and Previous* tab
 to view ongoing export processes and the history of past exports. You can also
 download the exported `.lar` file from this tab.
 
-## Importing App Data
+## Importing App Data [](id=importing-app-data)
 
 To import app data, you can select the LAR using your file explorer or by
 dragging and dropping the file between the dotted lines.
