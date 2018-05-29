@@ -38,7 +38,9 @@ Follow these steps to create a message board category:
 5.  Open the *Mailing List* section of the form and set the mailing list options 
     you want. To enable a mailing list for the category, set the *Active* toggle 
     to *YES*. To enable anonymous emails in the list, set the *Allow Anonymous 
-    Emails* to *YES*. The default for both toggles is *NO*. 
+    Emails* toggle to *YES*. The default for both toggles is *NO*. For an 
+    explanation of these features, see 
+    [the documentation on mailing lists for Message Boards](https://www.liferay.com/). 
 
 6.  Open the *Permissions* section and set the category's permissions. The 
     *Viewable by* selector lets you choose who can view the category: 
