@@ -1,34 +1,67 @@
 # Exporting/Importing App Data [](id=exporting-importing-app-data)
 
 There are times when you want to export/import specific content created from an
-application, and not deal with site data at all. Many Liferay apps allow you to
-export or import their app data indiviually. These include many of Liferay's
-collaborative applications, such as the Blogs, Wiki, and Message Boards apps. To
-export or import app data, click on the *Options* icon
-(![Options](../../../images/icon-options.png)) of your app and select
-*Export/Import*. Exporting app data produces a `.lar` file that you can save
+application, and not deal with site data at all. There are many apps that let
+you export or import their app data individually. For example, 
+
+- Web Content
+- Blogs
+- Message Boards
+- Wiki
+- etc.
+
+Exporting app data produces a `.lar` file that you can save
 and import into another application of the same type. To import app
 data, you must select a `.lar` file. Be careful not to confuse app-specific
 `.lar` files with site-specific `.lar` files. See the
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content)
 section for a discussion of importing and exporting site page data.
 
-You can export/import app content two ways. You can navigate to the
-app's administrative area located in the Menu, or you can visit the
-indiviual app that resides on a Liferay page. Both export/import menus work
-the same, but the administrative area may hold different content than its indiviual
-app counterpart (e.g., Web Content Admin in Menu and Web Content Display app
-will not offer same content for export/import), so be wary of your app
-selection. To reach the Export/Import menu for an app listed in the Menu,
-navigate to the app in the Menu, and then select the *Options* icon
-(![Options](../../../images/icon-options.png)) from the top right of the page
-and click *Export/Import*. Likewise, you can navigate to the Export/Import menu
-for an individual app by navigating to the app's Options menu and selecting
-*Export/Import*.
+You can export/import app content two ways. You can navigate to the app's
+administrative area located in the Product Menu, or you can visit the
+corresponding widget that resides on a page. Both export/import menus work the
+same, but the administrative area may hold different content than its widget
+counterpart (e.g., Web Content Admin in Product Menu and Web Content Display
+widget do not offer same content for export/import), so be wary of your
+selection. 
 
-![Figure 1: You can access the *Export/Import* feature for an app by selecting its Options menu.](../../../images/portlet-export-import-feature.png)
+To export or import app data from the app's administrative area, follow the
+steps below.
 
-You'll explore the export process for apps first.
+1.  Navigate to the app's designated area in the Product Menu. For example, if
+    you plan to export Web Content data, navigate to *Content* &rarr; *Web
+    Content*.
+
+2.  Click on the *Options* icon (![Options](../../../images/icon-options.png))
+    from the top right of the page and select *Export/Import*.
+
+3.  Select the *Export* or *Import* tab to begin configuring the respective
+    process.
+
+![Figure 1: You can access an app's administrative *Export/Import* feature by selecting its Options menu.](../../../images/admin-app-export-import-feature.png)
+
+To export or import app data from a widget, follow the steps below:
+
+1.  Ensure the widget you're interested in exporting/importing from is available
+    on a page. You can add widgets from the *Add*
+    (![Add](../../../images/icon-add-app.png)) &rarr; *Widgets* menu.
+
+2.  Select the widget's *Options* button
+    (![Options](../../../images/icon-widget-options.png)) and select
+    *Export/Import*.
+
+3.  Select the *Export* or *Import* tab to begin configuring the respective
+    process.
+
+![Figure 2: You can access a widget's *Export/Import* feature by selecting its Options menu.](../../../images/widget-export-import-feature.png)
+
+Now that you know how to navigate to the *Export/Import* menus, you'll explore
+the export process next.
+
+## Exporting App Data
+
+To export app data, create a new export process by selecting the *New Export
+Process* tab (default).
 
 First, you can choose to export your application's configuration settings. This
 exports your customized settings that you've configured from your application's
@@ -40,54 +73,59 @@ included in the `.lar` file. You also have options of choosing *All* dates or
 just the most recently added content, or *Last*.
 
 By checking the *Content* box, you can choose specific content you'd like to
-export. When you check the *Content* box, more options appear, allowing you to
+export. When you check the *Content* box, more options appear, letting you
 choose specific kinds of metadata to include. For example, if you have a wiki
 page with referenced content that you don't wish to include, you can simply
 check the *Wiki Pages* checkbox and uncheck the *Referenced Content* checkbox.
 Another option in the Content section of the Export/Import window is the
 selection of content types. Two familiar content types in your Liferay instance
-is *Comments* and *Ratings*. If you wish to include these entities in your
-`.lar` file, select *Change* and select them from the checklist.
+are *Comments* and *Ratings*. If you wish to include these entities in your
+`.lar` file, select *Change* and select them from the checklist. For more
+information on managing content types, see the
+[Managing Content Types in Staging](/discover/portal/-/knowledge_base/7-1/managing-content-types-in-staging)
+article.
 
 Lastly, you can choose whether to include permissions for your exported content.
-The permissions assigned for the exported app window will be included if the
-*Export Permissions* selector is enabled. After you've exported your app's data,
-switch to the *Current and Previous* tab to view ongoing export processes and
-the history of past exports.
+The permissions assigned for the exported app window are included if you enable
+the *Export Permissions* selector.
 
-![Figure 2: When importing app data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../../images/import-menu.png)
+After you've exported your app's data, switch to the *Current and Previous* tab
+to view ongoing export processes and the history of past exports. You can also
+download the exported `.lar` file from this tab.
+
+## Importing App Data
 
 To import app data, you can select the LAR using your file explorer or by
-dragging and dropping the file between the dotted lines. Your LAR file is
-uploaded and displayed to you for review. Click *Continue*.
+dragging and dropping the file between the dotted lines.
+
+![Figure 3: When importing app data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../../images/import-menu.png)
+
+Your LAR file is uploaded and displayed to you for review. Click *Continue*.
 
 Now that you've uploaded and confirmed your LAR file, you're given a similar
 screen to what you'd be offered during export. Several of these options are
 covered in great detail in the
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
-section. There are a couple of additional options, however, available -- *Update
-Data* and *Authorship of the Content*. Here's options and descriptions for each
-section:
+[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content)
+section. There are a couple of additional options, however, available---*Update
+Data* and *Authorship of the Content*. Here's options and descriptions
+*for each section:
 
 **Update Data**
 
-* *Mirror*: All data and content inside the imported LAR will be created as new
-the first time while maintaining a reference to the source. Subsequent imports
-from the same source will update entries instead of creating new entries.
-* *Mirror with overwriting*: Same behavior as the mirror strategy, but if a
-document or an image with the same name is found, it is overwritten.
-* *Copy as New*: All data and content inside the imported LAR will be created as
-new entries within the current site every time the LAR is imported.
+- *Mirror*: All data and content inside the imported LAR is newly created
+  the first time while maintaining a reference to the source. Subsequent imports
+  from the same source updates entries instead of creating new entries.
+- *Mirror with overwriting*: Same behavior as the mirror strategy, but if a
+  document or an image with the same name is found, it is overwritten.
+- *Copy as New*: All data and content inside the imported LAR is created as new
+  entries within the current site every time the LAR is imported.
 
 **Authorship of the Content**
 
-* *Use the Original Author*: Keep authorship of imported content whenever
-possible. Use the current user as author if the original one is not found.
-* *Use the Current User as Author*: Assign the current user as the author of all
-imported content.
+- *Use the Original Author*: Keep authorship of imported content whenever
+  possible. Use the current user as author if the original one is not found.
+- *Use the Current User as Author*: Assign the current user as the author of all
+  imported content.
 
 Once you've selected the appropriate options, select *Import*, and your
 app's data is imported and ready for use.
-
-Next, you'll learn how to communicate between applications in a Liferay
-instance.
