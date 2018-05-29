@@ -50,7 +50,7 @@ exposing the ADT functionality to users. You'll walk through these steps now:
 
     As an example `*PortletDisplayTemplateHandler` implementation, you can look
     at
-    [WikiPortletDisplayTemplateHandler.java](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/wiki/wiki-web/src/main/java/com/liferay/wiki/web/internal/portlet/template/WikiPortletDisplayTemplateHandler.java).
+    [WikiPortletDisplayTemplateHandler.java](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/wiki/wiki-web/src/main/java/com/liferay/wiki/web/internal/portlet/template/WikiPortletDisplayTemplateHandler.java).
 
 2. Since the ability to add ADTs is new to your portlet, you must configure
    permissions so that administrative users can grant permissions to the roles
