@@ -1,4 +1,4 @@
-# Managing User Personal data
+# Managing User Personal Data
 
 Enforcement of the General Data Protection Regulation (GDPR) begins May 25,
 2018. Companies processing the personal data of EU residents must adopt
@@ -11,7 +11,7 @@ challenging requirements, the
 [right to data portability](https://gdpr-info.eu/art-20-gdpr/) 
 and the 
 [right to be forgotten](https://gdpr-info.eu/art-17-gdpr/) 
-on Liferay Portal 6.2. For the upcoming release of @product@ 7.1, this 
+on @product-ver@. For the upcoming release of @product@ version 7.1, this 
 [blog post](https://web.liferay.com/web/dennis.ju/blog/-/blogs/upcoming-gdpr-focused-features-for-liferay-d-1)
 describes new features to more easily tackle these requirements. These same
 features will be available for @product@ version 7.0 in a future service pack
@@ -26,9 +26,7 @@ responsibility to assess your own organization's usage of personal data and the 
 GDPR. 
 
 The code referenced here could be deployed via the scripting console, or
-compiled in a web plugin. It's up to you. A sample web plugin containing this
-code can be referenced
-[here](https://github.com/liferay/liferay-plugins/tree/6.2.x/webs/sample-personal-data-web).
+compiled in an OSGi module. It's up to you. 
 
 ## Right to Data Portability
 
@@ -37,9 +35,9 @@ The
 requires organizations to provide a machine-readable export of a user's personal
 data upon request.
 
-There's no easy way through the UI to export a given user's personal data on
-Liferay Portal 6.2. One straightforward way to programmatically fulfill this
-requirement for applications built using Service Builder is to leverage
+There's currently no easy way through the UI to export a given user's personal
+data. One straightforward way to programmatically fulfill this requirement for
+applications built using Service Builder is to leverage
 [Actionable Dynamic Queries](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/dynamic-query).
 
 In this example, we'll export all of a user's blogs created using Liferay's
