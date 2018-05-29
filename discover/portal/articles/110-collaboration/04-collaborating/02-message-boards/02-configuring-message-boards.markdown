@@ -7,7 +7,7 @@ To open the message board's configuration screen, click the message board's
 *Options* menu 
 (![Options](../../../../images/icon-options.png)) and select *Configuration*. 
 From the Configuration tabs, you can configure the message board for the 
-behavior you want. 
+behavior you want. The below sections cover these tabs.
 
 ## General Setup
 
