@@ -31,8 +31,9 @@ The liferay-npm-bundler uses the process below to create the OSGi bundle:
 
 3.  For each npm package dependency:
 
-    a.  Copy the npm package to the output folder (in plain *package*@*version* 
-        format, rather than the standard node_modules tree format).
+    a.  Copy the npm package to the output folder and prefix the bundle's name 
+        to it (in plain *bundle-name$package*@*version* format, rather than the 
+        standard node_modules tree format).
 
     b.  Pre-process the npm package with any configured plugins.
 

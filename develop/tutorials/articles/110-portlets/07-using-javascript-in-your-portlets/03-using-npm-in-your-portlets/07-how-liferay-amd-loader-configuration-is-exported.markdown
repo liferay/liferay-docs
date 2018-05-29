@@ -1,4 +1,4 @@
-# Understanding How @product@ Exposes Configuration For Liferay AMD Loader [](id=how-liferay-portal-exposes-configuration-for-amd)
+# Understanding How Liferay AMD Loader Configuration is Exported [](id=how-liferay-amd-loader-configuration-is-exported)
 
 **NOTE:** This tutorial is for users who know how Liferay AMD Loader works under 
 the hood. You can learn more about Liferay AMD Loader in the 
@@ -53,7 +53,10 @@ For example, for the specified structure (shown above), as explained in
 [The Structure of OSGi Bundles Containing npm Packages](/develop/tutorials/-/knowledge_base/7-1/the-structure-of-osgi-bundles-containing-npm-packages) 
 tutorial, the following configuration is published for Liferay AMD loader to 
 consume:
-
+<!--
+Do resolved modules still exist, since ?
+If not, what would the updated URLS look like below?
+-->
     Liferay.PATHS = {
       ...
       'my-bundle-package@1.0.0/lib/index': '/o/js/resolved-module/my-bundle-package@1.0.0/lib/index',

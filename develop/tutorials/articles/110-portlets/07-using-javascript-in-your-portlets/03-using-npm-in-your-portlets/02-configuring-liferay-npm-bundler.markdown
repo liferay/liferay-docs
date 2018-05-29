@@ -125,7 +125,9 @@ liferay-npm-bundler is doing with each package.
 
 *list of plugins:* a comma separated call list of liferay-npm-bundler plugins to 
 call.
-
+<!--
+add example inject-peer-dependencies plugin
+-->
 *standard .babelrc file:* a `.babelrc` file as defined in 
 [Babel's documentation](https://babeljs.io/docs/usage/babelrc/) that 
 liferay-npm-bundler passes to Babel when called.
