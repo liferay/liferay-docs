@@ -4,9 +4,13 @@ There are times when you want to export/import specific content created from an
 application, and not deal with site data at all. There are many apps that let
 you export or import their app data individually. For example, 
 
-- Web Content
 - Blogs
+- Bookmarks
+- Dynamic Data Lists
+- Forms
+- Knowledge Base
 - Message Boards
+- Web Content
 - Wiki
 - etc.
 
@@ -15,7 +19,7 @@ and import into another application of the same type. To import app
 data, you must select a `.lar` file. Be careful not to confuse app-specific
 `.lar` files with site-specific `.lar` files. See the
 [Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content)
-section for a discussion of importing and exporting site page data.
+article for information on importing/exporting site page data.
 
 You can export/import app content two ways. You can navigate to the app's
 administrative area located in the Product Menu, or you can visit the
@@ -29,10 +33,10 @@ To export or import app data from the app's administrative area, follow the
 steps below.
 
 1.  Navigate to the app's designated area in the Product Menu. For example, if
-    you plan to export Web Content data, navigate to *Content* &rarr; *Web
+    you plan to export Web Content app data, navigate to *Content* &rarr; *Web
     Content*.
 
-2.  Click on the *Options* icon (![Options](../../../images/icon-options.png))
+2.  Click the *Options* button (![Options](../../../images/icon-options.png))
     from the top right of the page and select *Export/Import*.
 
 3.  Select the *Export* or *Import* tab to begin configuring the respective
@@ -61,7 +65,7 @@ the export process next.
 ## Exporting App Data
 
 To export app data, create a new export process by selecting the *New Export
-Process* tab (default).
+Process* tab (default). You have several export options to configure.
 
 First, you can choose to export your application's configuration settings. This
 exports your customized settings that you've configured from your application's
@@ -69,8 +73,18 @@ exports your customized settings that you've configured from your application's
 
 Next, you can select a *Date Range* of content that you'd like to export.
 Content that has been added to your app within your specified date range is
-included in the `.lar` file. You also have options of choosing *All* dates or
-just the most recently added content, or *Last*.
+included in the `.lar` file. The following date range choices are available:
+
+**All:** publishes all content regardless of its creation or last modification
+date.
+
+**Date Range:** publishes content based on a specified date range. You can set a
+start and end date/time window. The content created or modified within that
+window of time is published.
+
+**Last...:** publishes content based on a set amount of time since the current
+time. For example, you can set the date range to the past 48 hours, starting
+from the current time.
 
 By checking the *Content* box, you can choose specific content you'd like to
 export. When you check the *Content* box, more options appear, letting you
@@ -84,6 +98,9 @@ are *Comments* and *Ratings*. If you wish to include these entities in your
 information on managing content types, see the
 [Managing Content Types in Staging](/discover/portal/-/knowledge_base/7-1/managing-content-types-in-staging)
 article.
+
+Next, you can choose to export individual deletions. This lets delete operations
+performed for content types be exported to the LAR file.
 
 Lastly, you can choose whether to include permissions for your exported content.
 The permissions assigned for the exported app window are included if you enable
@@ -108,7 +125,7 @@ covered in great detail in the
 [Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content)
 section. There are a couple of additional options, however, available---*Update
 Data* and *Authorship of the Content*. Here's options and descriptions
-*for each section:
+for each section:
 
 **Update Data**
 
@@ -127,5 +144,5 @@ Data* and *Authorship of the Content*. Here's options and descriptions
 - *Use the Current User as Author*: Assign the current user as the author of all
   imported content.
 
-Once you've selected the appropriate options, select *Import*, and your
-app's data is imported and ready for use.
+Once you've selected the appropriate options, select *Import*, and your app's
+data is imported and ready for use.
