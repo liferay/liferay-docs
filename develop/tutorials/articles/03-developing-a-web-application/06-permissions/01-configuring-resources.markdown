@@ -105,8 +105,8 @@ Next, create the permissions file:
         </model-resource>
 
     This defines the baseline configuration for the `Guestbook` and `Entry` 
-    entities. The supported actions are `ADD_GUESTBOOK` and `ADD_ENTRY`. Site 
-    members can `ADD_ENTRY` by default, while guests can't perform either 
+    entities. The supported actions are `ADD_GUESTBOOK`, `ADD_ENTRY` and `VIEW`.
+    Site members can `ADD_ENTRY` by default, while guests can't perform either 
     action (but they can view). 
 
 6.  Below that, but above the closing `</resource-action-mapping>`, place the
