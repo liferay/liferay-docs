@@ -122,7 +122,19 @@ Checkpoint:
 
 ## Configuring Tomcat [](id=tomcat-configuration)
 
-You must configure Tomcat for running @product@.
+Configuring Tomcat to run @product@ includes these things:
+
+- Setting environment variables
+- Specifying a web application context for @product@
+- Setting properties and descriptors
+
+Optionally, you can configure Tomcat to manage these things for @product@:
+
+- [Data source](#database-configuration)
+- [Mail session](#mail-configuration)
+
+Start with configuring Tomcat to run @product@. 
+
 
 1.  If you have a @product@ Tomcat bundle, copy the `setenv.bat` and `setenv.sh`
     files from it to your `$CATALINA_BASE/bin` folder. If not, create these
