@@ -1,4 +1,4 @@
-# Creating Forums with Message Boards
+# Creating Forums with Message Boards [](id=creating-forums-with-message-boards)
 
 @product@'s Message Boards app is a state of the art forum app similar to many 
 forums you may have participated in. This app, however, leverages the rest of 

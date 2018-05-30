@@ -1,11 +1,11 @@
-# Creating Message Boards
+# Creating Message Boards [](id=creating-message-boards)
 
 You can create and manage message boards in the global, site, and page scopes. 
 Regardless of scope, you manage a message board via the Site Administration 
 menu. The following sections show you how to use this menu to manage message 
 boards in each of these scopes. 
 
-## Site-scoped Message Boards
+## Site-scoped Message Boards [](id=site-scoped-message-boards)
 
 By default, the Message Boards app in Site Administration is scoped to the 
 current site. To administer this message board, open the *Menu* 
@@ -17,7 +17,7 @@ access this screen.
 
 ![Figure 1: A Message Board instance starts empty, ready for you to configure for your purposes.](../../../../images/message-boards-administration.png)
 
-## Page-scoped Message Boards
+## Page-scoped Message Boards [](id=page-scoped-message-boards)
 
 If you need a page-scoped message board, you must add a Message Boards app to 
 that page and then set its scope to the page. Follow these steps to do this: 
@@ -60,7 +60,7 @@ menu's active scope. Follow these steps to do this:
 3.  Select *Message Boards* from the *Content* menu. Any changes you make here 
     apply to the scope that you selected in step 2. 
 
-## Globally-scoped Message Boards
+## Globally-scoped Message Boards [](id=globally-scoped-message-boards)
 
 To manage a message board in the global scope, follow these steps:
 

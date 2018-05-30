@@ -1,4 +1,4 @@
-# Configuring Message Boards
+# Configuring Message Boards [](id=configuring-message-boards)
 
 Before using a message board, you should configure it to your needs. First, open 
 the Message Boards app in your scope's Site Administration menu, as described in 
@@ -9,7 +9,7 @@ To open the message board's configuration screen, click the message board's
 From the Configuration tabs, you can configure the message board for the 
 behavior you want. The below sections cover these tabs.
 
-## General Setup
+## General Setup [](id=general-setup)
 
 The *General* tab lets you configure the following:
 
@@ -54,7 +54,7 @@ The *General* tab lets you configure the following:
     However, the post itself isn't deleted; it remains accessible everywhere 
     else in the message board. 
 
-## Email Setup 
+## Email Setup [](id=email-setup)
 
 Use these tabs to configure how the Message Boards app handles email 
 notifications:
@@ -110,7 +110,7 @@ lower priority.
 The localized language field lets you name the priorities in each locale. You
 can select the locale, update the priority names for it, and save your updates. 
 
-## User Ranks
+## User Ranks [](id=user-ranks)
 
 The User Ranks tab lets you rank users by the number of messages they have 
 posted. Default ranks from 0 to 1000 are provided for you, but you can set 
@@ -135,7 +135,7 @@ group:
 As with thread priority names, the *Localized Language* field lets you localize
 rank names. 
 
-## RSS
+## RSS [](id=rss)
 
 Message board threads can be published as RSS feeds. The RSS tab lets you 
 enable/disable RSS subscriptions and define how the feeds are generated: 

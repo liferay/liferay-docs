@@ -1,4 +1,4 @@
-# Message Board Permissions
+# Message Board Permissions [](id=message-board-permissions)
 
 To edit message board permissions, first open the Message Boards app in your 
 scope's Site Administration menu, as described in 

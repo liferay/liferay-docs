@@ -1,4 +1,4 @@
-# User Subscriptions and Mailing Lists
+# User Subscriptions and Mailing Lists [](id=user-subscriptions-and-mailing-lists)
 
 The Message Boards app can use 2 different mechanisms to notify users of message 
 boards activity via email:
@@ -15,7 +15,7 @@ a mailing list with your message board.
 
 $$$
 
-## User Subscriptions
+## User Subscriptions [](id=user-subscriptions)
 
 In the user subscriptions mechanism, the Message Boards app uses its configured 
 *Email From* address to send email notifications to subscribed users. The app 
@@ -83,7 +83,7 @@ client's Username or Email field with `recent:`.
 
 $$$
 
-## Mailing Lists
+## Mailing Lists [](id=mailing-lists)
 
 Alternatively, the Message Boards app can use mailing lists to send email 
 notifications. Any category in a message board can have its own mailing list. 

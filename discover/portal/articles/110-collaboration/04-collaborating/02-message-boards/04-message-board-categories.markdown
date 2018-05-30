@@ -1,4 +1,4 @@
-# Message Board Categories
+# Message Board Categories [](id=message-board-categories)
 
 Message Board categories let users organize threads by topic. This makes it 
 easier for users to find and discuss the information they want, and can also 
@@ -7,7 +7,7 @@ board may have separate categories for freshwater and saltwater topics.
 
 This article shows you how to create and manage message board categories.
 
-## Adding Categories
+## Adding Categories [](id=adding-categories)
 
 Follow these steps to create a message board category:
 
@@ -79,7 +79,7 @@ subcategories, threads, and posts in each one.
 
 ![Figure 2: Categories help you organize threads so users can find topical threads that interest them.](../../../../images/message-boards-home.png)
 
-## Adding Subcategories
+## Adding Subcategories [](id=adding-subcategories)
 
 Categories can contain as many subcategories as you like. Note that if you nest 
 categories too deep, however, users can have trouble finding them. 
@@ -97,7 +97,7 @@ Follow these steps to add a subcategory to a category:
 3.  Click *Save* when you're finished. Your subcategory now appears in the 
     table. 
 
-## Moving and Merging Categories
+## Moving and Merging Categories [](id=moving-and-merging-categories)
 
 Categories are very flexible. Each category can have any number of threads, and 
 you can add as many categories and subcategories as you wish. You can also move 

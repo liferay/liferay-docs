@@ -1,4 +1,4 @@
-# Managing Message Boards
+# Managing Message Boards [](id=managing-message-boards)
 
 Message boards can become unwieldy if left unmanaged. The Message Boards in Site 
 Administration facilitates day-to-day thread administration. You may wish to 
@@ -28,14 +28,14 @@ Follow these steps to create such a role:
 
 5.  Add users to this role. 
 
-## Locking Threads
+## Locking Threads [](id=locking-threads)
 
 You may encounter threads that you think should be preserved, but stopped. You
 can halt activity on a thread by selecting *Lock* from the thread's *Actions* 
 menu 
 (![Actions](../../../../images/icon-actions.png)). 
 
-## Moving Threads
+## Moving Threads [](id=moving-threads)
 
 If someone posts a thread to the wrong category, you can move it to the proper 
 one. Follow these steps to do so:
@@ -51,7 +51,7 @@ one. Follow these steps to do so:
 
 4.  Click *Move* to move the thread. 
 
-## Deleting Threads
+## Deleting Threads [](id=deleting-threads)
 
 Sometimes users begin discussing topics that are inappropriate or that reveal
 confidential information. In this case, administrators can delete the thread 
@@ -59,7 +59,7 @@ from the message boards. To do so, select *Move to Recycle Bin* from the
 thread's *Actions* menu 
 (![Actions](../../../../images/icon-actions.png)). 
 
-## Banning Users
+## Banning Users [](id=banning-users)
 
 Unfortunately, message board users can be abusive. In this case, you can ban the 
 user from the message boards. While viewing any of the user's posts in any 
@@ -71,7 +71,7 @@ Administration. Navigate to this app and select the *Banned Users* tab. Select
 the user's *Actions* menu 
 (![Actions](../../../../images/icon-actions.png)) and select *Unban this User*. 
 
-## Splitting Threads
+## Splitting Threads [](id=splitting-threads)
 
 Sometimes a thread will go on for a while and the discussion completely changes
 into something else. In this case, you can split the thread where the discussion
@@ -81,7 +81,7 @@ certain post, administrators can select that post's *Actions* menu
 This brings up a form that lets you add an explanation post to the split thread. 
 Click *OK* to split the thread. 
 
-## Editing Posts
+## Editing Posts [](id=editing-posts)
 
 Administrative users can edit anyone's posts, not just their own. Sometimes 
 users will post links to copyrighted material or unsuitable pictures. By editing 
@@ -92,7 +92,7 @@ priority or mark a reply as an answer to a thread's question.
 To edit a post, select its *Actions* menu 
 (![Actions](../../../../images/icon-actions.png)) and select *Edit*. 
 
-## Permissions
+## Post Permissions [](id=post-permissions)
 
 Permissions can be set not only on threads, but also on individual posts. You
 can choose to limit a particular conversation or post to only a select group of 

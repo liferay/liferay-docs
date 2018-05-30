@@ -1,4 +1,4 @@
-# Using the Message Boards
+# Using the Message Boards [](id=using-the-message-boards)
 
 You can add a Message Boards widget to a page from the *Add* 
 (![Add](../../../../images/icon-control-menu-add.png)) menu's *Collaboration*
@@ -17,7 +17,7 @@ Threads can be viewed many ways. At the top of the widget is a set of tabs:
 -   **Statistics:** The number of categories, posts, participants, and a list of 
     the top contributors. 
 
-## Posting New Threads
+## Posting New Threads [](id=posting-new-threads)
 
 Follow these steps to post a new thread: 
 
@@ -87,7 +87,7 @@ Follow these steps to post a new thread:
 9.  Click *Publish* to publish the thread. Once it's published, it's listed 
     along with the other threads in the category. 
 
-## Participating in Message Board Threads
+## Participating in Message Board Threads [](id=participating-in-message-board-threads)
 
 To find message board threads that interest you, browse a message board's
 Categories or Recent Posts tabs. In the Categories tab, you can view a 
@@ -100,7 +100,7 @@ Click a thread to view it. Messages are shown in a threaded view so that replies
 are aligned under their parent thread. This makes it easy to follow 
 conversations. Thread replies are indented under their parent thread. 
 
-![Figure 5: A thread's view displays author information and thread content, for the thread and all replies to the thread.](../../../../images/message-boards-participate-in-threads.png)
+![Figure 3: A thread's view displays author information and thread content, for the thread and all replies to the thread.](../../../../images/message-boards-participate-in-threads.png)
 
 Subscribing to a thread causes Message Boards to send the user an email whenever
 a new message is posted to the thread. If you have enabled the mailing list
