@@ -1,4 +1,4 @@
-# Adding Blog Entries
+# Adding Blog Entries [](id=adding-blog-entries)
 
 Each site contains a built-in blog instance, so you can add blog entries to it 
 right away. The easiest way to do this is in the Site Administration menu. 

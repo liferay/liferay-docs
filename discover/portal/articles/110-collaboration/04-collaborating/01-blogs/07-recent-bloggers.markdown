@@ -1,4 +1,4 @@
-# Highlighting Recent Bloggers
+# Highlighting Recent Bloggers [](id=highlighting-recent-bloggers)
 
 The Recent Bloggers app lets you highlight the work of your site's most recent 
 blog authors. This app lists each recent author's name, profile picture, and 

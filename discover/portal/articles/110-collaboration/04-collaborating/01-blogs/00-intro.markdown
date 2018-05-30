@@ -1,4 +1,4 @@
-# Publishing Blogs
+# Publishing Blogs [](id=publishing-blogs)
 
 Blog authors and administrators expect a feature-rich publishing environment. 
 They need a powerful editor *and* an enjoyable authoring experience. Admins need 

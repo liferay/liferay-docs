@@ -1,4 +1,4 @@
-# Managing Blog Entries 
+# Managing Blog Entries [](id=managing-blog-entries)
 
 The Blogs app in Site Administration helps bloggers and blog administrators 
 manage blog entries. To access this app, click the Menu button 
@@ -14,7 +14,7 @@ the Management Bar's *Add* button
 (![Add](../../../../images/icon-add.png)). The sections that follow describe the 
 rest of the Management Bar. 
 
-## View Types
+## View Types [](id=view-types)
 
 The *View Types* button is to the left of the Add button. It lets you choose how 
 to display the blog entries in the Blogs app. The View Types button's icon 
@@ -36,7 +36,7 @@ depends on the selected view type:
     same information as the other view types, in a list with no file renderings. 
     Also, the blog entry information is in columns. 
 
-## Finding and Arranging Blog Entries
+## Finding and Arranging Blog Entries [](id=finding-and-arranging-blog-entries)
 
 The Management Bar also contains tools that help you locate and arrange blog 
 entries. The most prominent of these tools is the *Search* bar, where you can 
@@ -53,7 +53,7 @@ criteria:
 -   **Mine:** Shows all the current user's entries. 
 -   **Display Date:** Orders the entries by display date. 
 
-## Selecting Blog Entries
+## Selecting Blog Entries [](id=selecting-blog-entries)
 
 The checkbox on the left-most side of the Management Bar selects all currently 
 displayed blog entries. Selecting multiple entries lets you act on all of them 

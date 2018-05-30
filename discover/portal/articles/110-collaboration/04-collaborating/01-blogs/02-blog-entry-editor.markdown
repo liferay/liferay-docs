@@ -1,4 +1,4 @@
-# Using the Blog Entry Editor
+# Using the Blog Entry Editor [](id=using-the-blog-entry-editor)
 
 When you 
 [create a new blog entry](/discover/portal/-/knowledge_base/7-1/adding-blog-entries), 
@@ -17,7 +17,7 @@ This guide shows you how to use this editor to create and edit blog entries.
 
 ![Figure 1: This screenshot shows some of the blog entry editor's controls.](../../../../images/blogs-edit-entry.png)
 
-## Using the Editor's Text View
+## Using the Editor's Text View [](id=using-the-editors-text-view)
 
 When you create or edit a blog entry, the editor is in text view by default. 
 Text view is a WYSIWYG editor that lets you enter and edit text and other types 
@@ -72,7 +72,7 @@ instructions to insert each:
     appears in your content. Such lines are good for separating sections of 
     content in a large blog entry. 
 
-## Using the Editor's Code View
+## Using the Editor's Code View [](id=using-the-editors-code-view)
 
 To switch to code view, click the the *Source* icon (`</>`) that appears when 
 you place your cursor in the Content area. The following buttons exist at the 

@@ -1,4 +1,4 @@
-# Configuring the Blogs App
+# Configuring the Blogs App [](id=configuring-the-blogs-app)
 
 By configuring the Blogs app in Site Administration, you can control how the app 
 behaves for all blogs in your site. To access this app, click the Menu button 
