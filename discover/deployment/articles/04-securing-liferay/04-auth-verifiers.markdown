@@ -63,7 +63,8 @@ credentials.
 `AuthVerifier`s are created by developers, and are processed automatically as
 long as they're registered in the OSGi runtime. Each Auth Verifier gets its own
 configuration in *Control Panel* &rarr; *System Settings* &rarr; *Security*
-&rarr; *API Authentication*. Auth Verifiers that ship with the product include
+&rarr; *API Authentication*. Configuration for Auth Verifiers that ship with 
+the product include
 
 - Basic Auth Header 
 - Digest Authentication 
@@ -73,14 +74,33 @@ configuration in *Control Panel* &rarr; *System Settings* &rarr; *Security*
 - Request Parameter
 - Tunnel Auth 
 
-Not all of these require configuration; the ones that do are described below. 
+Only following Auth Verifiers are enabled by default and can be used to access
+remote API out-of-the-box:
+
+- Basic Auth Header
+- Portal Sessions 
 
 ## Basic Auth Header
 
 This Auth Verifier allows the remote client to authenticate using 
 [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). 
-Configure it by providing URL paths that should be authenticated this way. The
-default URLs are `/api/*,/xmlrpc*` for web services. 
+Configure it by providing URL paths that should be authenticated this way. 
+When Force Basic Authentication field is checked then HTTP Basic Authentication is 
+required.
+
+The default URLs are `/api/*,/xmlrpc*` for web services. The mapping excludes 
+`/api/liferay*` to prevent accessing `TunnelServlet`. For more information please 
+see  Tunnel Authentication Verifiers.
+
+## Digest Auth Header
+
+This Auth Verifier allows the remote client to authenticate using 
+[HTTP Digest Authentication](https://en.wikipedia.org/wiki/Digest_access_authentication). 
+Configure it by providing URL paths that should be authenticated this way. 
+When Force Digest Authentication field is checked then HTTP Basic Authentication is 
+required.
+
+This Auth Verifier is not enabled by default.
 
 ## HTTP Tunnel Extender
 
@@ -109,11 +129,43 @@ images from @product@ to render docs with images. To do this, a
 Configure this by setting the Hosts Allowed, URLs included, and URLs excluded if
 necessary. 
 
+This Auth Verifier is not enabled by default.
+
 ## Portal Sessions Auth Verifiers
 
-Enter URL includes here to allow endpoints to verify authentication using an
-existing portal session. 
+Enables portal JavaScripts to access Liferay JSON Web Services using an existing
+portal session with browser.
 
+In the default configuration URLs included field shields access to JSONWS a legacy 
+JSON remote services layer: `/api/json*,/api/jsonws*,/c/portal/json_service*`.
+
+## Request Parameter Auth Verifiers
+
+For backwards compatibility with `RequestParameterAutoLogin` it is possible to authenticate
+and access portal endpoints with credentials inside HTTP request parameters 
+`parameterAutoLoginLogin` and `parameterAutoLoginPassword`.
+
+This Auth Verifier is not enabled by default.
+
+## Tunnel Authentication Verifiers
+
+`TunnelServlet` is a legacy remote API endpoint mapped at `/api/liferay/do` to 
+provide access to the portal remote services. Tunnel Auth Verifier allows trusted 
+remote clients an authenticated access using any userId provided, on behalf of 
+the user.
+
+An example of the trusted remote client is portal Remote Publishing feature.
+
+Trusted remote clients authenticate using shared secret stored in portal 
+property `tunneling.servlet.shared.secret`. The default value is empty and
+forbids any access. 
+
+Even though the default configuration is enabled by default, access is
+limited to localhost only. Configure it by setting client IP addresses allowed 
+to tunnel. For more information, please see 
+[the properties documentation](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)
+as well as 
+[remote staging](/discover/portal/-/knowledge_base/7-1/enabling-remote-live-staging).
 
 ## Related Topics [](id=related-topics)
 
