@@ -1,11 +1,11 @@
 # Installing @product@ on Tomcat [](id=installing-product-on-tomcat)
 
-@product-ver@ bundled with Tomcat is available on the
+@product-ver@ bundled with Tomcat 9 is available on the
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
 (DXP) or
 [Liferay Downloads](https://www.liferay.com/downloads)
 (Portal CE). The @product@ Tomcat bundle contains JARs, scripts, and
-configuration files required for installing @product@ on a clean Tomcat
+configuration files required for installing @product@ on a clean Tomcat 9
 application server. Copying these files from a @product@ Tomcat bundle
 facilitates installing @product@ on Tomcat.
 
