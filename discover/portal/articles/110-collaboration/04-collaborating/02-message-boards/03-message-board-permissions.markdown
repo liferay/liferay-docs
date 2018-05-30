@@ -2,7 +2,7 @@
 
 To edit message board permissions, first open the Message Boards app in your 
 scope's Site Administration menu, as described in 
-[the article on creating message boards](https://www.liferay.com/). 
+[the article on creating message boards](/develop/tutorials/-/knowledge_base/7-1/creating-message-boards). 
 Then click the *Options* icon 
 (![Options](../../../../images/icon-options.png)) and select the 
 *Home Category Permissions* option. This permissions screen lets you grant and 

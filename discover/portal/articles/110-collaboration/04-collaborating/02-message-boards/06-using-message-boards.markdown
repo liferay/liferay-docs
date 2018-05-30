@@ -15,7 +15,8 @@ Threads can be viewed many ways. At the top of the widget is a set of tabs:
 -   **My Posts:** The current user's posts. 
 -   **My Subscriptions:** Lets users view and manage their thread subscriptions. 
 -   **Statistics:** The number of categories, posts, participants, and a list of 
-    the top contributors. 
+    the top contributors. You can also access this from the same tab in Site 
+    Administration's Message Board app. 
 
 ## Posting New Threads [](id=posting-new-threads)
 
@@ -36,7 +37,7 @@ Follow these steps to post a new thread:
     further instructions, see the documentation on 
     [using the editor](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor). 
     Also note that you can 
-    [mention](https://www.liferay.com/) 
+    [mention](/discover/portal/-/knowledge_base/7-1/mentioning-users) 
     other users by entering the `@` character and their user name. 
 
 4.  If you want to add attachments, open the *Attachments* section and add them 

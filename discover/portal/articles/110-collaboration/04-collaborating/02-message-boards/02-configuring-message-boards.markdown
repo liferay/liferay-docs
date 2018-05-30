@@ -2,7 +2,7 @@
 
 Before using a message board, you should configure it to your needs. First, open 
 the Message Boards app in your scope's Site Administration menu, as described in 
-[the article on creating message boards](https://www.liferay.com/). 
+[the article on creating message boards](/develop/tutorials/-/knowledge_base/7-1/creating-message-boards). 
 To open the message board's configuration screen, click the message board's 
 *Options* menu 
 (![Options](../../../../images/icon-options.png)) and select *Configuration*. 
