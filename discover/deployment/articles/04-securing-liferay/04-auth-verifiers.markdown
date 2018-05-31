@@ -133,32 +133,33 @@ This Auth Verifier is not enabled by default.
 
 ## Portal Sessions Auth Verifiers
 
-Enables portal JavaScripts to access Liferay JSON Web Services using an existing
-portal session with browser.
+Enables JavaScript in a browser to access Liferay JSON Web Services using an
+existing portal session.
 
-In the default configuration URLs included field shields access to JSONWS a legacy 
-JSON remote services layer: `/api/json*,/api/jsonws*,/c/portal/json_service*`.
+In the default configuration, the URLs included field shields access to the
+legacy JSON remote services layer:
+`/api/json*,/api/jsonws*,/c/portal/json_service*`.
 
 ## Request Parameter Auth Verifiers
 
-For backwards compatibility with `RequestParameterAutoLogin` it is possible to authenticate
-and access portal endpoints with credentials inside HTTP request parameters 
-`parameterAutoLoginLogin` and `parameterAutoLoginPassword`.
+For backwards compatibility with `RequestParameterAutoLogin` you can
+authenticate and access portal endpoints with credentials inside HTTP request
+parameters `parameterAutoLoginLogin` and `parameterAutoLoginPassword`.
 
 This Auth Verifier is not enabled by default.
 
 ## Tunnel Authentication Verifiers
 
-`TunnelServlet` is a legacy remote API endpoint mapped at `/api/liferay/do` to 
-provide access to the portal remote services. Tunnel Auth Verifier allows trusted 
-remote clients an authenticated access using any userId provided, on behalf of 
-the user.
+`TunnelServlet` is a legacy remote API endpoint mapped at `/api/liferay/do` to
+provide access to the portal remote services. The Tunnel Auth Verifier allows
+trusted remote clients authenticated access using any user ID provided, on
+behalf of the user.
 
-An example of the trusted remote client is portal Remote Publishing feature.
+An example of a trusted remote client is the Staging remote publishing feature.
 
-Trusted remote clients authenticate using shared secret stored in portal 
+Trusted remote clients authenticate using a shared secret stored in the portal
 property `tunneling.servlet.shared.secret`. The default value is empty and
-forbids any access. 
+forbids all access. 
 
 Even though the default configuration is enabled by default, access is
 limited to localhost only. Configure it by setting client IP addresses allowed 
