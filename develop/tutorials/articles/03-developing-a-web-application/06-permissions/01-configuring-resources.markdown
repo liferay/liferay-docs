@@ -89,14 +89,14 @@ Next, create the permissions file:
                 <supports>
                     <action-key>ADD_GUESTBOOK</action-key>
                     <action-key>ADD_ENTRY</action-key>
-				    <action-key>VIEW</action-key>
+                    <action-key>VIEW</action-key>
                 </supports>
                 <site-member-defaults>
                     <action-key>ADD_ENTRY</action-key>
                 </site-member-defaults>
                 <guest-defaults>
-				    <action-key>VIEW</action-key>
-			    </guest-defaults>
+                    <action-key>VIEW</action-key>
+                </guest-defaults>
                 <guest-unsupported>
                     <action-key>ADD_GUESTBOOK</action-key>
                     <action-key>ADD_ENTRY</action-key>
@@ -104,10 +104,10 @@ Next, create the permissions file:
             </permissions>
         </model-resource>
 
-    This defines the baseline configuration for the `Guestbook` and `Entry` 
-    entities. The supported actions are `ADD_GUESTBOOK` and `ADD_ENTRY`. Site 
-    members can `ADD_ENTRY` by default, while guests can't perform either 
-    action (but they can view). 
+    This defines the baseline configuration for the `Guestbook` and `Entry`
+    entities. The supported actions are `ADD_GUESTBOOK`, `ADD_ENTRY`, and
+    `VIEW`. Site members can `ADD_ENTRY` by default, while guests can't perform
+    either add action (but they can view). 
 
 6.  Below that, but above the closing `</resource-action-mapping>`, place the
     `Guestbook` model permissions: 
