@@ -62,7 +62,7 @@ add this to your `build.gradle` file:
 
     buildscript {
         dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.0.23"
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.12.19"
         }
 
         repositories {
@@ -77,11 +77,9 @@ add this to your `build.gradle` file:
     apply plugin: "com.liferay.plugin"
 
     dependencies {
-        compile group: "com.liferay", name: "com.liferay.dynamic.data.mapping.api", version: "3.2.0"
-        compile group: "com.liferay", name: "com.liferay.dynamic.data.mapping.form.field.type", version: "2.0.5"
-        compile group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
-        compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
-        compileOnly group: "org.osgi", name: "org.osgi.compendium", version: "5.0.0"
+        compileOnly group: "com.liferay", name: "com.liferay.dynamic.data.mapping.api", version: "4.0.1"
+        compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.0.0"
+        compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
     }
 
     repositories {
@@ -92,24 +90,7 @@ add this to your `build.gradle` file:
         }
     }
 
-    classes {
-        dependsOn buildSoy
-    }
-
-    transpileJS {
-        soySrcIncludes = ""
-        srcIncludes = "**/*.es.js"
-    }
-
-    wrapSoyAlloyTemplate {
-        enabled = true
-        moduleName = "liferay-ddm-form-field-time-template"
-        namespace = "ddm"
-    }
-
-Along with the regular Java `dependencies`, there's some JavaScript
-dependency configuration you need to include here. It's all boilerplate and can
-be copied directly into your module's `build.gradle` if you follow the
+It's all boilerplate and can be copied directly into your module's `build.gradle` if you follow the
 conventions presented here. 
 
 Next craft the OSGi Component that marks your class as an implementation of
@@ -123,8 +104,9 @@ If you're creating a *Time* field type, define the Component at the top of your
     @Component(
       immediate = true,
       property = {
-        "ddm.form.field.type.display.order:Integer=8",
-        "ddm.form.field.type.icon=star-o",
+        "ddm.form.field.type.description=time-field-type-description",
+        "ddm.form.field.type.display.order:Integer=10",
+        "ddm.form.field.type.icon=time",
         "ddm.form.field.type.js.class.name=Liferay.DDM.Field.Time",
         "ddm.form.field.type.js.module=liferay-ddm-form-field-time",
         "ddm.form.field.type.label=time-field-type-label",
@@ -138,12 +120,15 @@ implementing the `DDMFormFieldType` service (`service=...`).
 
 `DDMFormFieldType` Components can have several properties:
 
+`ddm.form.field.type.description`
+: It's an optional property which describes the field type. Its localized value appears in the sidebar of the form builder, just below the `ddm.form.field.type.label`.
+
 `ddm.form.field.type.display.order`
-: Integer that defines the field type's position in the *Choose a Field Type* dialog of the form builder.
+: Integer that defines the field type's position in the sidebar.
 
 `ddm.form.field.type.icon`
 : The icon to be used for the field type. Choosing one of the 
-[Lexicon icons](https://liferay.github.io/clay/content/icons-lexicon/) makes your form
+[Lexicon icons](https://lexicondesign.io/docs/patterns/icons.html) makes your form
 field blends in with the existing form field types.
 
 `ddm.form.field.type.js.class.name`
@@ -155,8 +140,7 @@ the field type's behavior.
 can be loaded when needed.
 
 `ddm.form.field.type.label`
-: The field type's label. Its localized value appears in the *Choose a Field
-Type* dialog.
+: The field type's label. Its localized value appears in the sidebar.
 
 `ddm.form.field.type.name`
 : The field type's name must be unique. Each Component in a field type module
@@ -174,10 +158,12 @@ After extending `BaseDDMFormFieldType`, override the `getName` method by
 specifying the name of your new field type:
 
     public class TimeDDMFormFieldType extends BaseDDMFormFieldType {
+
         @Override
         public String getName() {
             return "time";
         }
+
     }
 
 That's all there is to defining the field type. Next determine how your field
@@ -200,9 +186,9 @@ framework:
 
 There's another abstract class to leverage, this time
 `BaseDDMFormFieldRenderer`. It gives you a default implementation of the
-`render` method, the only required method for implementing the API. The form
+`render` method, the only required method for implementing the API. The Form
 engine calls the render method for every form field type present in a form, and
-returns the plain HMTL of the rendered field type. The abstract implementation
+returns the plain HTML of the rendered field type. The abstract implementation
 also includes some utility methods. Here's what the time field's
 `DDMFormFieldRenderer` looks like:
 
@@ -215,7 +201,7 @@ also includes some utility methods. Here's what the time field's
 
         @Override
         public String getTemplateNamespace() {
-            return "ddm.time";
+            return "DDMTime.render";
         }
 
         @Override
@@ -233,7 +219,7 @@ also includes some utility methods. Here's what the time field's
     }
 
 Here you're setting the templating language (Soy closure templates), the
-template namespace (`ddm.time`), and pointing to the location of the templates
+template namespace (`DDMTime`) and name (`render`), and pointing to the location of the templates
 within your module (`/META-INF/resource/time.soy`).
 
 +$$$
@@ -257,71 +243,108 @@ Create
 
 and populate it with these contents:
 
-    {namespace ddm}
+    {namespace DDMTime}
 
     /**
-     * Prints the DDM form time field.
-     *
-     * @param label
-     * @param name
-     * @param readOnly
-     * @param required
-     * @param showLabel
-     * @param tip
-     * @param value
-     */
-    {template .time autoescape="deprecated-contextual"}
-        <div class="form-group liferay-ddm-form-field-time" data-fieldname="{$name}">
-            {if $showLabel}
-                <label class="control-label">
-                    {$label}
+    * Defines the delegated template for the time field.
+    */
+    {deltemplate ddm.field variant="'time'"}
+        {call .render data="all" /}
+    {/deltemplate}
+
+    /**
+    * Prints the DDM form time field.
+    */
+    {template .render}
+        {@param name: string}
+        {@param pathThemeImages: string}
+        {@param value: ?}
+        {@param visible: bool}
+        {@param? dir: string}
+        {@param? label: string}
+        {@param? predefinedValue: string}
+        {@param? readOnly: bool}
+        {@param? required: bool}
+        {@param? showLabel: bool}
+        {@param? tip: string}
+
+        {let $displayValue: $value ? $value : $predefinedValue ? $predefinedValue : '' /}
+
+        <div class="form-group {$visible ? '' : 'hide'} liferay-ddm-form-field-time"
+            data-fieldname="{$name}">
+            {if $showLabel or $required}
+                <label for="{$name}">
+                    {if $showLabel}
+                        {$label}{sp}
+                    {/if}
 
                     {if $required}
-                        <span class="icon-asterisk text-warning"></span>
+                        <svg aria-hidden="true" class="lexicon-icon lexicon-icon-asterisk reference-mark">
+                            <use xlink:href="{$pathThemeImages}/lexicon/icons.svg#asterisk" />
+                        </svg>
                     {/if}
                 </label>
+            {/if}
 
+            {if $showLabel}
                 {if $tip}
-                    <p class="liferay-ddm-form-field-tip">{$tip}</p>
+                    <span class="form-text">{$tip}</span>
                 {/if}
             {/if}
 
-            <input class="field form-control" id="{$name}" name="{$name}" {if $readOnly}readonly{/if} type="text" value="{$value}">
+            <div class="input-group">
+                <div class="input-group-item">
+                    <input class="field form-control"
+                        {if $dir}dir="{$dir}"{/if}
+                        {if $readOnly}disabled{/if}
+                        id="{$name}"
+                        name="{$name}"
+                        type="text"
+                        value="{$displayValue}">
+                </div>
+            </div>
         </div>
     {/template}
 
-There are three important things to do in the template:
+There are four important things to do in the template:
 
 1.  Define the template namespace. The template namespace allows you to define
     multiple templates for your field type by adding the namespace as a prefix.
 
-        {namespace ddm}
+        {namespace DDMTime}
 
-2.  Describe the template parameters. The template above uses some of the
+2.  Set the template that will be called to render the time field. The `variant="'time'"` identifies the time field and the `.render` names the template in charge to render it. The template comes just below this part and is defined through the block `{template .render}...{/template}`.
+
+        /**
+        * Defines the delegated template for the time field.
+        */
+        {deltemplate ddm.field variant="'time'"}
+            {call .render data="all" /}
+        {/deltemplate}
+
+3.  Describe the template parameters. The template above uses some of the
     parameters as flags to display or hide some parts of the HTML (for example,
-    the `$required` parameter). If you extend `BaseDDMFormFieldRenderer`, all
-    the listed parameters are passed by default.
+    the `$required` parameter). All listed parameters are available by default.
     <!-- A figure with a screenshot of the time configuration sidebar or one of
     the default field config sidebars would be helpful-->
 
+        {@param name: string}
+        {@param pathThemeImages: string}
+        {@param value: ?}
+        {@param visible: bool}
+        {@param? dir: string}
+        {@param? label: string}
+        {@param? predefinedValue: string}
+        {@param? readOnly: bool}
+        {@param? required: bool}
+        {@param? showLabel: bool}
+        {@param? tip: string}
 
-        /**
-         * Prints the DDM form time field.
-         *
-         * @param label
-         * @param name
-         * @param readOnly
-         * @param required
-         * @param showLabel
-         * @param tip
-         * @param value
-         */
-
-3.  Write the template logic (everything encapsulated by the
-    `{template}...{/template}` block). In the above example the template does
+4.  Write the template logic (everything encapsulated by the
+    `{template .render}...{/template}` block). In the above example the template does
     these things:
     - Checks whether to show the label of the field, and if so, adds it.
-    - Checks if the field is required, and adds `icon-asterisk` if it is.
+    - Checks if the field is required, and adds `asterisk` if it is.
     - Checks if a tip is provided, and displays it.
     - Provides the markup for the time field in the `<input>` tag. In this case
     a text input field is defined.
@@ -329,24 +352,33 @@ There are three important things to do in the template:
 Once you have your template defined, write the JavaScript file modeling your
 field. Call it `time_field.js` and give it these contents:
 
-    AUI.add('liferay-ddm-form-field-time', function(A) {
-        var TimeField = A.Component.create({
-            ATTRS : {
-                type : {
-                    value : 'time'
+    AUI.add(
+        'liferay-ddm-form-field-time',
+        function(A) {
+            var TimeField = A.Component.create(
+                {
+                    ATTRS: {
+                        type: {
+                            value: 'time'
+                        }
+                    },
+
+                    EXTENDS: Liferay.DDM.Renderer.Field,
+
+                    NAME: 'liferay-ddm-form-field-time',
+
+                    prototype: {
+                    }
                 }
-            },
+            );
 
-            EXTENDS : Liferay.DDM.Renderer.Field,
-            NAME : 'liferay-ddm-form-field-time',
-
-            prototype : {}
-        });
-
-        Liferay.namespace('DDM.Field').Time = TimeField;
-    }, '', {
-        requires : [ 'liferay-ddm-form-renderer-field' ]
-    });
+            Liferay.namespace('DDM.Field').Time = TimeField;
+        },
+        '',
+        {
+            requires: ['liferay-ddm-form-renderer-field']
+        }
+    );
 
 The JavaScript above creates a component called `TimeField`. The component
 extends `Liferay.DDM.Renderer.Field`, which gives you automatic injection of the
@@ -354,46 +386,42 @@ default field parameters.
 
 All that's left to do is create the `config.js` file:
 
-    ;
-    (function() {
-        AUI().applyConfig({
-            groups : {
-                'field-time' : {
-                    base : MODULE_PATH + '/',
-                    combine : Liferay.AUI.getCombine(),
-                    modules : {
-                        'liferay-ddm-form-field-time' : {
-                            condition : {
-                                trigger : 'liferay-ddm-form-renderer'
-                            },
-                            path : 'time_field.js',
-                            requires : [ 'liferay-ddm-form-renderer-field' ]
+    ;(function() {
+        AUI().applyConfig(
+            {
+                groups: {
+                    'field-time': {
+                        base: MODULE_PATH + '/',
+                        combine: Liferay.AUI.getCombine(),
+                        filter: Liferay.AUI.getFilterConfig(),
+                        modules: {
+                            'liferay-ddm-form-field-time': {
+                                condition: {
+                                    trigger: 'liferay-ddm-form-renderer'
+                                },
+                                path: 'time_field.js',
+                                requires: [
+                                    'liferay-ddm-form-renderer-field'
+                                ]
+                            }
                         },
-                        'liferay-ddm-form-field-time-template' : {
-                            condition : {
-                                trigger : 'liferay-ddm-form-renderer'
-                            },
-                            path : 'time.soy.js',
-                            requires : [ 'soyutils' ]
-                        }
-                    },
-                    root : MODULE_PATH + '/'
+                        root: MODULE_PATH + '/'
+                    }
                 }
             }
-        });
+        );
     })();
 
 This file is entirely boilerplate, and you'll never need anything different if
 you follow the conventions described above. In fact, if you use Blade CLI to
-generate a field type module, you won't need to modify anything in this file.
-So what is the `config.js` file for? It's a JavaScript file that defines the
+generate a field type module, you will get this file ready to use. So what is the `config.js` file for? It's a JavaScript file that defines the
 dependencies of the declared JavaScript components (`requires...`), and where
 the files are located (`path...`). The `config.js` is used by the Alloy loader
 when it satisfies dependencies for each JavaScript component. For more
 information about the Alloy loader see the [tutorial on its
-usage](/developer/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader).
+usage](/develop/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader).
 
-[![Figure 1: Add your own form field types to the Forms application.](../../../images/forms-time-field-type.png)
+![Figure 1: Add your own form field types to the Forms application.](../../../images/forms-time-field-type.png)
 
 If you build and deploy your new field type module, you'll see that you get
 exactly what you described in the `time.soy` file: a single text input field. Of
@@ -404,36 +432,45 @@ course, that's not what you want! You need a time picker.
 If you want to do more than simply provide a text input field, define the
 behavior in the `time_field.js` file. To add an AlloyUI timepicker, first
 specify that your component requires the `aui-timepicker` in the `requires...`
-block: 
+block of the `time_field.js` and `config.js`:
 
     {
         requires: ['aui-timepicker','liferay-ddm-form-renderer-field']
     }
 
-Since you're now changing the default rendering of the field, overwrite the base
-`render` logic and instantiate the time picker. This occurs in the `prototype`
-block:
+Since you're now changing the default rendering of the field, overwrite the base `render` logic, instantiate the time picker and add the chosen time to the field. This occurs in the `prototype` block:
 
     prototype: {
         render: function() {
-
             var instance = this;
 
             TimeField.superclass.render.apply(instance, arguments);
 
-            instance._timePicker = new A.TimePicker(
+            instance.timePicker = new A.TimePicker(
                 {
                     trigger: instance.getInputSelector(),
                     popover: {
                         zIndex: 1
+                    },
+                    after: {
+                        selectionChange: A.bind('afterSelectionChange', instance)
                     }
                 }
             );
+        },
+
+        afterSelectionChange: function(event) {
+            var instance = this;
+
+            var time = event.newSelection;
+
+            instance.set('value', time);
         }
+    }
 
 Invoke the original render method--it prints markup required by the Alloy time
 picker. Then instantiate the time picker, passing the field type input as a
-`trigger`. See the [Alloy documentation for more
+`trigger`. In addition, add a callback method (`afterSelectionChange`) to be executed `after` the time is chosen in the time picker. This method is resposible for update the field's value. See the [Alloy documentation for more
 information](http://alloyui.com/tutorials/timepicker/). 
 
 Now when the field is rendered, there's a real time picker.
@@ -443,4 +480,4 @@ Now when the field is rendered, there's a real time picker.
 Now you know how to create a new field type and define its behavior. Currently,
 the field type only contains the default settings it inherits from its
 superclasses. If that's not sufficient, create additional settings for your
-field type. See the next tutorial (not yet written) to learn how.
+field type. See the next tutorial to learn how.
