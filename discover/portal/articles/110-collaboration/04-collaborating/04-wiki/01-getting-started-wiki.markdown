@@ -50,7 +50,7 @@ The following options are available in this menu:
 Follow these steps to create a new wiki node: 
 
 1.  Click the *Add* icon 
-    (![Add](../../../images/icon-add.png)) to start creating a new wiki node. 
+    (![Add](../../../../images/icon-add.png)) to start creating a new wiki node. 
     The *New Wiki Node* form appears. 
 
 2.  Add a name and description for the wiki node. 
@@ -72,7 +72,7 @@ Follow these steps to create a new wiki node:
 ## Wiki Node Options
 
 Next to each listed wiki node is an *Actions* menu 
-(![Actions](../../../images/icon-actions.png)). Here are the actions available 
+(![Actions](../../../../images/icon-actions.png)). Here are the actions available 
 in this menu: 
 
 -   **Edit**: Edit the wiki's name and description.
