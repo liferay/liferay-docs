@@ -1,8 +1,7 @@
 # Getting Started with Wikis
 
 The Menu (![Menu](../../../../images/icon-menu.png)) 
-is the best place to start working with your wikis. To start working with wikis 
-for your site, click the *Menu* 
+is the best place to start working with your wikis. Click the *Menu* 
 (![Menu](../../../../images/icon-menu.png)), navigate to your site, and select 
 the *Content* section. If you're updating an existing page-scoped wiki app 
 instance, you can select that page scope from the scope menu that the Gear icon
