@@ -64,15 +64,15 @@ described below.
     - `jta.jar`- [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
     - `jutf7.jar` - [http://mvnrepository.com/artifact/com.beetstra.jutf7/jutf7](http://mvnrepository.com/artifact/com.beetstra.jutf7/jutf7)
     - `mail.jar` - [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
-    - `mariadb.jar` - [https://downloads.mariadb.org/](https://downloads.mariadb.org/)
-    - `mysql.jar` - [http://dev.mysql.com/downloads/connector/j](http://dev.mysql.com/downloads/connector/j)
+    - `mariadb.jar` (if needed) - [https://downloads.mariadb.org/](https://downloads.mariadb.org/)
+    - `mysql.jar` (if needed) - [http://dev.mysql.com/downloads/connector/j](http://dev.mysql.com/downloads/connector/j)
     - `persistence.jar`- [http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1](http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1)
-    - `postgresql.jar` - [https://jdbc.postgresql.org/download/postgresql-42.0.0.jar](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
+    - `postgresql.jar` (if needed) - [https://jdbc.postgresql.org/download/postgresql-42.0.0.jar](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
     - `support-tomcat.jar` - [http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat)
 
 3.  Copy the JDBC driver for your database to the `$CATALINA_BASE/lib/ext` 
-    folder. You copied the `mysql.jar` and `postgresql.jar` driver JARs there
-    already. 
+    folder. The `mariadb.jar`, `mysql.jar`, and `postgresql.jar`
+    driver JARs are available in the Tomcat bundle. 
 
 4.  Create an `osgi` folder in your Liferay Home. Then extract the folders
     (i.e., `configs`, `core`, and more) from OSGi ZIP file to the `osgi` folder.
