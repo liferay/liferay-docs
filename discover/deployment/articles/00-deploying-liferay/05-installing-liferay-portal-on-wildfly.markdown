@@ -1,64 +1,87 @@
-# Installing @product@ on Wildfly 10 [](id=installing-liferay-on-wildfly-10)
+# Installing @product@ on Wildfly
 
-Liferay Digital Enterprise 7.0 bundled with Wildfly 10 is available on 
-[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
-Even if you want to manually install @product@ on an existing Wildfly 10
-application server, it can be helpful to download a @product@ Wildfly bundle. The
-bundle contains many required dependencies and configuration files. Before
-proceeding, you should also 
-[download the latest @product@ WAR file](https://web.liferay.com/downloads/liferay-portal/available-releases#additional-versions)
-as well as the dependencies ZIP file and OSGi JARs ZIP file.
+@product-ver@ bundled with Wildfly 11 is available on the
+[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
+(DXP) or [Liferay Downloads](https://www.liferay.com/downloads) (Portal CE).
+@product-ver@ supports deployment to Wildfly 10 and Wildfly 11. Even if you want
+to manually install @product@ on an existing Wildfly application server, it can
+be helpful to download a @product@ Wildfly bundle. The bundle contains many
+required dependencies and configuration files. Before proceeding, you should
+also download these files for
+[DXP](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
+and [Portal CE](https://www.liferay.com/downloads):
+
+- @product@ WAR file
+- Dependencies ZIP file
+- OSGi JARs ZIP file
 
 Installing @product@ manually requires these basic steps:
 
-- Installing @product@ dependencies to your application server
-- Configuring your application server for @product@
-- Installing the @product@ WAR file to your application server
+- [Installing dependencies to your application server](#installing-dependencies)
+- [Configuring your application server for @product@](#configuring-wildfly)
+- [Deploying the @product@ WAR file to your application server](#deploying-product)
 
-**Liferay Home** is one folder above Wildfly's install location.
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
-refers to the folder containing your Wildfly server folder. When @product@ is
-installed on Wildfly, the Liferay Home folder contains the Wildfly server folder
-as well as `data`, `deploy`, `logs`, and `osgi` folders. You'll also see the
-term `$WILDFLY_HOME` used in this guide. `$WILDFLY_HOME` refers to your Wildfly
-server folder. This folder is usually named `wildfly-[version]`.
+[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+is the folder containing your Wildfly server folder. After installing and
+deploying @product@, the Liferay Home folder contains the Wildfly server folder
+as well as `data`, `deploy`, `logs`, and `osgi` folders. `$WILDFLY_HOME` refers
+to your Wildfly server folder. It is usually named `wildfly-[version]`.
 
-## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
+## Installing Dependencies
 
-@product@ depends on many JARs that are included in the @product@ Wildfly bundle.
-Some JARs in the bundle are not strictly required but can still be useful. If
-you don't have a @product@ Wildfly bundle, you can download the required JARs from
-third-parties, as described below.
+@product@ depends on many JARs that are included in the @product@ Wildfly
+bundle. Some of the bundle's JARs are not strictly required but can still be
+useful. If you don't have a @product@ Wildfly bundle, you can download the
+required JARs from third-parties, as described below.
 
-1. Create the folder `$WILDFLY_HOME/modules/com/liferay/portal/main`. Unzip the
-   the @product@ Dependencies zip file and copy the `.jar` files to this
-   folder. 
+1.  Create the folder `$WILDFLY_HOME/modules/com/liferay/portal/main` if it
+    doesn't exist and extract the dependencies ZIP JARs to it. Here are the
+    JARs:
 
-2. Download your database driver `.jar` file and copy it into the
-   same folder. For example, for MySQL,
-   [download the MySQL Connector/J driver ](http://dev.mysql.com/downloads/connector/j/)
-   and put its `.jar` file into the
-   `$WILDFLY_HOME/modules/com/liferay/portal/main` folder.
+    - `com.liferay.registry.api.jar`
+    - `hsql.jar`
+    - `portal-kernel.jar`
+    - `portlet.jar`
 
-3. Download the remaining required JARs and insert them into the same folder. 
+2.  Download your database driver `.jar` file and copy it into the
+    same folder. For example, for MySQL,
+    [download the MySQL Connector/J driver](http://dev.mysql.com/downloads/connector/j/)
+    and put its `.jar` file into the
+    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder.
 
-    - [`com.liferay.osgi.service.tracker.collections.jar`](http://mvnrepository.com/artifact/com.liferay/com.liferay.osgi.service.tracker.collections)
-    - [`com.liferay.registry.api.jar`](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.registry.api)
+3.  Download the remaining required JARs and insert them into the same folder. 
 
-    Be sure to remove the version number from the JAR file names or update
-    their names where they're defined (you'll see where the
-    `com.liferay.registry.api.jar` is defined next).
+    - `com.liferay.petra.concurrent` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/)
+    - `com.liferay.petra.executor.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/)
+    - `com.liferay.petra.function.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/)
+    - `com.liferay.petra.io.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/)
+    - `com.liferay.petra.lang.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.lang/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.lang/)
+    - `com.liferay.petra.memory.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.memory/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.memory/)
+    - `com.liferay.petra.nio.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.nio/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.nio/)
+    - `com.liferay.petra.process.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.process/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.process/)
+    - `com.liferay.petra.reflect.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.reflect/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.reflect/)
+    - `com.liferay.petra.string.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.string/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.string/)
 
-4. Create the file `module.xml` in the
-   `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert the
-   following contents:
+4.  Create the file `module.xml` in the
+    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert the
+    following contents:
 
         <?xml version="1.0"?>
 
         <module xmlns="urn:jboss:module:1.0" name="com.liferay.portal">
             <resources>
-                <resource-root path="com.liferay.registry.api-[version].jar" />
-                <resource-root path="mysql-connector-java-[version]-bin.jar" />
+                <resource-root path="com.liferay.petra.concurrent.jar" />
+                <resource-root path="com.liferay.petra.executor.jar" />
+                <resource-root path="com.liferay.petra.function.jar" />
+                <resource-root path="com.liferay.petra.io.jar" />
+                <resource-root path="com.liferay.petra.lang.jar" />
+                <resource-root path="com.liferay.petra.memory.jar" />
+                <resource-root path="com.liferay.petra.nio.jar" />
+                <resource-root path="com.liferay.petra.process.jar" />
+                <resource-root path="com.liferay.petra.reflect.jar" />
+                <resource-root path="com.liferay.petra.string.jar" />
+                <resource-root path="com.liferay.registry.api.jar" />
+                <resource-root path="mysql-connector-java-[version].jar" />
                 <resource-root path="portal-kernel.jar" />
                 <resource-root path="portlet.jar" />
             </resources>
@@ -75,51 +98,64 @@ third-parties, as described below.
     driver. If you are using a different database, replace the MySQL `.jar` with 
     the driver JAR for your database (e.g., HSQL, PostgreSQL, etc.).
 
-5. Create an `osgi` folder in your Liferay Home folder. Then extract the OSGi
-   ZIP file that you downloaded into the `osgi` folder.
+5.  Create an `osgi` folder in your Liferay Home folder. Then extract the OSGi
+    ZIP file that you downloaded into the `osgi` folder.
 
     @product@ requires an OSGi runtime, and the `osgi` folder provides this with
     many required JAR files and configuration files.
 
-Checkpoint: 
+**Checkpoint:**
 
-1. At this point, you should have the following files in the 
-`$WILDFLY_HOME/modules/com/liferay/portal/main` folder:
+1.  At this point, you should have the following files in the 
+    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder:
 
+- `com.liferay.petra.concurrent`
+- `com.liferay.petra.executor.jar`
+- `com.liferay.petra.function.jar`
+- `com.liferay.petra.io.jar`
+- `com.liferay.petra.lang.jar`
+- `com.liferay.petra.memory.jar` 
+- `com.liferay.petra.nio.jar`
+- `com.liferay.petra.process.jar`
+- `com.liferay.petra.reflect.jar`
+- `com.liferay.petra.string.jar`
 - `com.liferay.registry.api.jar`
 - `portal-kernel.jar`
 - `portlet.jar`
-- a database `jar` such as the MySQL Connector.
+- a database JAR such as the MySQL Connector.
 
-2. The `module.xml` has listed all jars in the `<resource-root-path>` elements.
+2. The `module.xml` has listed all JARs in the `<resource-root-path>` elements.
 
 3. The `osgi` folder has the following subfolders:
 
 - `configs`
 - `core`
 - `marketplace`
-- `target-platform`
+- `modules`
+- `portal`
+- `static`
 - `test`
+- `war`
 
 Great! You have your `.jar` files ready. 
 
-## Running @product@ on Wildfly 10.0 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-wildfly-10-0-in-standalone-mode-vs-domain-mode)
+## Running @product@ on Wildfly in Standalone Mode vs. Domain Mode
 
-Wildfly 10.0 can be launched in either *standalone* mode or *domain* mode. Domain
+Wildfly can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
 control point. A collection of such application servers is known as a *domain*.
 For more information on standalone mode vs. domain mode, please refer to the
 section on this topic in the
-[Wildfly 10 Admin Guide](https://docs.jboss.org/author/display/WFLY10/Admin+Guide#AdminGuide-Operatingmodes).
-@product@ fully supports Wildfly 10.0 when it runs in standalone mode but not when it
+[Wildfly Admin Guide](https://docs.jboss.org/author/display/WFLY/Admin+Guide#AdminGuide-Operatingmodes).
+@product@ fully supports Wildfly when it runs in standalone mode but not when it
 runs in domain mode.
 
-You can run @product@ on Wildfly 10.0 in domain mode, but this method is not fully
-supported. In particular, @product@'s hot-deploy does not work, since Wildfly 10.0
+You can run @product@ on Wildfly in domain mode, but this method is not fully
+supported. In particular, @product@'s hot-deploy does not work, since Wildfly
 cannot deploy non-exploded `.war` files in domain mode. Instead, `.war` files
-are in the `domain/data/content` directory. Deployments are only possible using
+are in the `domain/data/content` folder. Deployments are only possible using
 the command line interface. This prevents many @product@ plugins from working as
-intended. For example, JSP hooks don't work on Wildfly 10.0 running in domain
+intended. For example, JSP hooks don't work on Wildfly running in domain
 mode, since @product@'s JSP override mechanism relies on the application server
 reloading customized JSP files from the exploded plugin `.war` file location.
 Other plugins, such as service or action hooks, should still work properly since
@@ -128,48 +164,57 @@ exploded `.war` file on the file system.
 
 +$$$
 
-**Note:** This does not prevent @product@ from running in a clustered environment
-on multiple Wildfly servers. You can set up a cluster of @product@ instances
-running on Wildfly 10.0 servers running in standalone mode. Please refer to the
-chapter of this guide on
-[Configuring @product@ for High Availability](/discover/deployment/-/knowledge_base/6-2/configuring-liferay-for-high-availability)
+**Note:** This does not prevent @product@ from running in a clustered
+environment on multiple Wildfly servers. You can set up a cluster of @product@
+instances running on Wildfly servers running in standalone mode. Please refer to
+the chapter of this guide on
+[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)
 for information on setting up a @product@ cluster.
 
 $$$
 
-<!-- Replace link in note above, when available. -Cody -->
-
 ## Configuring Wildfly [](id=configuring-wildfly)
 
-Now you'll make some adjustments in your configuration to support using @product@.
+Configuring Wildfly to run @product@ includes these things:
 
-You can specify the Wildfly server instance's configuration in the XML file
-`$WILDFLY_HOME/standalone/configuration/standalone.xml`. You must also make some
-modifications to your configuration and startup scripts found in the
-`$WILDFLY_HOME/bin/` folder.  Lastly, you'll need to make some modifications in
-your `$WILDFLY_HOME/modules/`. You'll begin with making changes to
-`standalone.xml`.
+- Setting environment variables
+- Setting properties and descriptors
+- Removing unnecessary configurations
+- etc.
 
-Make the following modifications to `standalone.xml`:
+Optionally, you can configure Wildfly to manage these things for @product@:
 
-1. Locate the closing `</extensions>` tag. Directly beneath that tag, insert the
-   following system properties:
+- [Data source](#database-configuration)
+- [Mail session](#mail-configuration)
+
+Start with configuring Wildfly to run @product@.
+
+Make the following modifications to
+`$WILDFLY_HOME/standalone/configuration/standalone.xml`:
+
+1.  Locate the closing `</extensions>` tag. Directly beneath that tag, insert
+    the following system properties:
 
         <system-properties>
             <property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8" />
             <property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true" />
         </system-properties>
 
-2. Add a timeout for the deployment scanner by setting
-`deployment-timeout="360"` as seen in the excerpt below.
+2.  Add the following `<filter-spec>` tag within the `<console-handler>` tag,
+    directly below the `<level name="INFO"/>` tag:
+
+        <filter-spec value="not(any(match(&quot;WFLYSRV0059&quot;),match(&quot;WFLYEE0007&quot;)))" />
+
+3.  Add a timeout for the deployment scanner by setting
+    `deployment-timeout="360"` as seen in the excerpt below.
 
         <subsystem xmlns="urn:jboss:domain:deployment-scanner:2.0">
             <deployment-scanner deployment-timeout="360" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000" runtime-failure-causes-rollback="${jboss.deployment.scanner.rollback.on.failure:false}"/>
         </subsystem>
 
-3. Add the following JAAS security domain to the security subsystem
-   `<security-domains>` defined in element `<subsystem
-   xmlns="urn:jboss:domain:security:1.2">`.
+4.  Add the following JAAS security domain to the security subsystem
+    `<security-domains>` defined in element `<subsystem
+    xmlns="urn:jboss:domain:security:2.0">`.
 
         <security-domain name="PortalRealm">
             <authentication>
@@ -177,39 +222,53 @@ Make the following modifications to `standalone.xml`:
             </authentication>
         </security-domain>
 
-4. Remove the following tags (if necessary):
+5.  Remove the following Weld-related tags:
 
-    - `<location name="/" handler="welcome-content"/>`
     - `<extension module="org.jboss.as.weld"/>`
-    - `<subsystem xmlns="urn:jboss:domain:weld:2.0"/>`
-    - `<subsystem xmlns="urn:jboss:domain:weld:3.0"/>`
+    - `<subsystem xmlns="urn:jboss:domain:weld:4.0"/>`
 
-5. Find the `<jsp-config/>` tag and insert the `development="true"` attribute
-   into the tag. Once finished, the tag should look like the following:
+6.  Remove the two code snippets providing welcome content:
+
+        <location name="/" handler="welcome-content"/>
+
+    and
+
+        <handlers>
+            <file name="welcome-content" path="${jboss.home.dir}/welcome-content"/>
+        </handlers>
+
+7.  Find the `<jsp-config/>` tag and insert the `development="true"` attribute
+    into the tag. Once finished, the tag should look like this:
 
         <jsp-config development="true" />
 
-Checkpoint:
+**Checkpoint:**
 
-Before continuing, verify the following properties have been set in the `standalone.xml` file:
+Before continuing, verify the following properties have been set in the
+`standalone.xml` file:
 
-1. A new `<system-property>` has been created.
+1.  The new `<system-property>` is created.
 
-2. The `<deployment-timeout>` has been set to `360`.
+2.  The new `<filter-spec>` is added.
 
-3. A new `<security-domain>` has been created.
+3.  The `<deployment-timeout>` is set to `360`.
 
-4. Four tags have been removed.
+4.  The new `<security-domain>` is created.
 
-5. `<jsp-config development>` has been set to `true`.
+5.  Weld tags are removed.
+
+6.  Welcome content is removed.
+
+7.  The `<jsp-config development>` is set to `true`.
 
 Now it's time for some changes to your configuration and startup scripts.
  
-Make the following modifications to your standalone domain's configuration
+You must make a few modifications to your standalone domain's configuration
 script file `standalone.conf` (`standalone.conf.bat` on Windows) found in your
 `$WILDFLY_HOME/bin/` folder.
 
 These modifications change the following options: 
+
 - Set the file encoding
 - Set the user time-zone
 - Set the preferred protocol stack
@@ -217,25 +276,31 @@ These modifications change the following options:
 
 Make the following edits as applicable to your operating system:
 
-On Windows, comment out the initial `JAVA_OPTS` assignment as demonstrated in
-the following line:
+**Windows:**
+
+1.  Comment out the initial `JAVA_OPTS` assignment like this:
 
         rem set "JAVA_OPTS=-Xms64M -Xmx512M -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m"
 
-Then add the following `JAVA_OPTS` assignment one line above the
-`:JAVA_OPTS_SET` line found at end of the file:
+2.  Add the following `JAVA_OPTS` assignment one line above the `:JAVA_OPTS_SET`
+    line found at end of the file:
 
-        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$WILDFLY_HOME/bin/server.policy -Dwildfly.home.dir=$WILDFLY_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m -XX:MetaspaceSize=200m"
+        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=512m -XX:MetaspaceSize=200m"
 
-On Unix, merge the following values into your settings for `JAVA_OPTS`, 
-replacing any matching attributes with the ones found in the assignment
-below:
+**Unix:**
 
-        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$WILDFLY_HOME/bin/server.policy -Dwildfly.home.dir=$WILDFLY_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m -XX:MetaspaceSize=200m
+1.  Below the `if [ "x$JAVA_OPTS" = "x" ];` statement, replace this `JAVA_OPTS`
+    statement:
 
-Make sure you replace the `$WILDFLY_HOME` references with the appropriate
-directory. You'll notice some Java security options. You'll finish configuring
-the Java security options in the *Security Configuration* section. 
+        JAVA_OPTS="-Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true"
+
+    with this:
+
+        JAVA_OPTS="-Djava.net.preferIPv4Stack=true"
+
+2.  Add the following statement to the bottom of the file:
+
+        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true  -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=512m -XX:MetaspaceSize=200m"
 
 +$$$
 
@@ -252,41 +317,40 @@ insert the following path names inside the `<paths>...</paths>` element:
 
     <path name="com/sun/crypto" />
     <path name="com/sun/crypto/provider" />
-    <path name="com/sun/image/codec/jpeg" />
     <path name="com/sun/org/apache/xml/internal/resolver" />
     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
 
 The added paths resolve issues with portal deployment exceptions and image
-uploading problems on a @product@ instance running on Wildfly 10.0.x. 
+uploading problems on @product@ instance's running on Wildfly. 
 
 $$$
 
-Checkpoint: 
+**Checkpoint:**
 
-At this point, you'll have finished configuring the application
-server's JVM settings. 
+At this point, you've finished configuring the application server's JVM
+settings. 
 
-1. The file encoding, user time-zone, preferred protocol stack have been set in
-   the `JAVA_OPTS` in the `standalone.conf.bat` file.
+1.  The file encoding, user time-zone, preferred protocol stack have been set in
+    the `JAVA_OPTS` in the `standalone.conf.bat` file.
 
-2. The default amount of memory available has been increased.
-
-3. If using IBM's JDK, the `sun crypto` properties have been set in the
-   `$WILDFLY_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file.
+2.  The default amount of memory available has been increased.
 
 The prescribed script modifications are now complete for your @product@
-installation on Wildfly. Next you'll configure mail and the database. 
+installation on Wildfly. Next you'll configure your database. 
 
-## Database Configuration [](id=database-configuration)
+### Database Configuration [](id=database-configuration)
 
-If you want Wildfly to manage your data source, follow the instructions in this
-section. If you want to use the built-in @product@ data source, you can skip this
-section.
+The easiest way to handle your database configuration is to let @product@ manage
+your data source. @product@'s
+[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-product#using-liferays-setup-wizard)
+page lets you configure @product@'s built-in data source. If you want to use the
+built-in data source, skip this section.
 
-Modify `standalone.xml` and add your data source and driver in the
-`<datasources>` element of your data sources subsystem.
+If you want Wildfly to manage your data source, follow these steps:
 
-1. First, add your data source inside the `<datasources>` element.
+1.  Add your data source inside
+    `$WILDFLY_HOME/standalone/configuration/standalone.xml` file's
+    `<datasources>` element:
 
         <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" jta="true" use-java-context="true" use-ccm="true">
             <connection-url>jdbc:mysql://localhost/lportal</connection-url>
@@ -308,8 +372,8 @@ Modify `standalone.xml` and add your data source and driver in the
 
     $$$
 
-2. Add your driver to the `<drivers>` element also found within the
-   `<datasources>` element.
+2.  Add your driver to the `standalone.xml` file's `<drivers>` element also
+    found within the `<datasources>` element:
 
         <drivers>
             <driver name="mysql" module="com.liferay.portal"/>
@@ -333,14 +397,25 @@ Your final data sources subsystem should look like this:
             </datasources>
         </subsystem>
 
+3.  In a `portal-ext.properties` file in your Liferay Home, specify your data
+    source:
+
+        jdbc.default.jndi.name=java:jboss/datasources/ExampleDS
+
 Now that you've configured your data source, the mail session is next. 
 
-## Mail Configuration [](id=mail-configuration)
+### Mail Configuration [](id=mail-configuration)
 
-If you want Wildfly to manage your mail session, use the following instructions.
-If you want to use the built-in @product@ mail session, you can skip this section.
+As with database configuration, the easiest way to configure mail is to let
+@product@ handle your mail session. If you want to use @product@'s built-in mail
+session, skip this section and
+[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-product#configuring-mail)
+in the Control Panel.
 
-Specify your mail subsystem in `standalone.xml` as in the following example:
+If you want to manage your mail session with Wildfly, follow these steps:
+
+1.  Specify your mail subsystem in the
+    `$WILDFLY_HOME/standalone/configuration/standalone.xml` file like this:
 
     <subsystem xmlns="urn:jboss:domain:mail:2.0">
         <mail-session jndi-name="java:jboss/mail/MailSession" name="mail-smtp">
@@ -354,86 +429,27 @@ Specify your mail subsystem in `standalone.xml` as in the following example:
             <remote-destination host="smtp.gmail.com" port="465"/>
         </outbound-socket-binding>
     </socket-binding-group>
- 
-You've got mail! Next, you'll make sure @product@ can connect using your new mail
-session and database.
 
-## Configuring data sources and mail sessions [](id=configuring-data-sources-and-mail-sessions)
-
-Now that your data source and mail session are set up, you need to ensure
-@product@ can access them.
-
-1.  First, navigate to the Liferay Home folder, which is one folder above
-    Wildfly's install location (i.e. `$WILDFLY_HOME/..`).
-
-2.  If you're using *Wildfly* to manage your data source, add the following
-    configuration to your `portal-ext.properties` file in your *Liferay Home* to
-    refer to your data source:
-
-        jdbc.default.jndi.name=java:jboss/datasources/ExampleDS
-
-    If you're using *@product@* to manage your data source, follow the
-    instructions for using the setup wizard.
-
-3.  If you're using *@product@* to manage your mail session, this
-    configuration is done in @product@. That is, after starting your
-    portal as described in the *Deploy @product@* section, go to *Control Panel
-    &rarr; Server Administration &rarr; Mail* and enter the settings for your
-    mail session.
-
-    If you're using Wildfly to manage your mail session, add the following
-    configuration to your `portal-ext.properties` file to reference that mail
+2.  In your `portal-ext.properties` file in Liferay Home, reference your mail
     session:
 
         mail.session.jndi.name=java:jboss/mail/MailSession
+ 
+You've got mail! Next, you'll deploy @product@ to your Wildfly app server.
 
-Before you deploy @product@ on your Wildfly app server, you should enable
-and configure Java security so you can use @product@'s plugin security manager
-with your downloaded @product@ applications.
+## Deploying @product@
 
-## Security Configuration [](id=security-configuration)
-
-When you're ready to begin using other people's apps from Marketplace, you'll
-want to protect your @product@ instance and your Wildfly server from security
-threats. To do so, you can enable Java Security on your Wildfly server and
-specify a security policy to grant your @product@ instance access to your server.
-
-Remember, you set the `-Dsecmgr` and `-Djava.security.policy` Java options in
-the `standalone.conf.bat` file earlier in the *Configuring Wildfly* section. The
-`-Dsecmgr` Java option enables security on Wildfly. Likewise, the
-`-Djava.security.policy` Java option lists the permissions for your server's
-Java security policy. If you have not set these options, you'll need to do so
-before using Java security.
-
-This configuration opens up all permissions. You can tune the permissions in
-your policy later. Create the `$WILDFLY_HOME/bin/server.policy` file and add the
-following contents:
-
-    grant {
-        permission java.security.AllPermission;
-    };
-
-For extensive information on Java SE Security Architecture, see its
-specification documents at
-[http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
-Also, see the
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
-tutorial to learn how to configure @product@ plugin access to resources.
-
-<!-- JSF configuration sections go here, when they've been tested for @product-ver@
-+ Wildfly 10 bundles. -Cody -->
-
-## Deploy @product@ [](id=deploy-liferay)
+Now you're ready to deploy @product@ using the @product@ WAR file.
 
 1. If the folder `$WILDFLY_HOME/standalone/deployments/ROOT.war` already exists
    in your Wildfly installation, delete all of its subfolders and files.
-   Otherwise, create a new folder
+   Otherwise, create a new folder called
    `$WILDFLY_HOME/standalone/deployments/ROOT.war`.
 
 2. Unzip the @product@ `.war` file into the `ROOT.war` folder.
 
 3. To trigger deployment of `ROOT.war`, create an empty file named
-   `ROOT.war.dodeploy` in  your `$WILDFLY_HOME/standalone/deployments/` folder.
+   `ROOT.war.dodeploy` in your `$WILDFLY_HOME/standalone/deployments/` folder.
    On startup, Wildfly detects the presence of this file and deploys it as a web
    application.
 
