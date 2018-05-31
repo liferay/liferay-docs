@@ -18,6 +18,10 @@ Threads can be viewed many ways. At the top of the widget is a set of tabs:
     the top contributors. You can also access this from the same tab in Site 
     Administration's Message Board app. 
 
+You can also use the search bar at the top of the widget to search for threads 
+and posts. Although search works on threads and posts within categories, it 
+doesn't work on categories themselves. 
+
 ## Posting New Threads [](id=posting-new-threads)
 
 Follow these steps to post a new thread: 
