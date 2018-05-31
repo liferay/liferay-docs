@@ -1,18 +1,18 @@
 # Metadata Sets [](id=metadata-sets)
 
-@product@ lets you define the metadata fields that users can fill out when they 
-create or edit Document Library files. You do this by creating *metadata sets* 
-and then associating them with document types, which wrap Document Library files 
-and thus apply your metadata fields to the files. Although you apply metadata 
-sets via document types, metadata sets exist independently and you can apply 
-them to any number of document types. 
+You can define metadata fields that users fill out when they create or edit
+Document Library files. You do this by creating *metadata sets* and then
+associating them with document types, which wrap Document Library files and thus
+apply your metadata fields to the files. Although you apply metadata sets via
+document types, metadata sets exist independently and you can apply them to any
+number of document types. 
 
 ## Managing Metadata Sets [](id=managing-metadata-sets)
 
-To see the metadata sets available in your @product@ instance, open the *Menu* 
-(![Product Menu](../../../images/icon-menu.png)), expand your site's menu, 
-and navigate to *Content* &rarr; *Documents and Media*. Then click the 
-*Metadata Sets* tab. The sets appear in a table. 
+To see the available metadata sets, open the *Menu* 
+(![Product Menu](../../../images/icon-menu.png)), expand your site's menu, and
+navigate to *Content* &rarr; *Documents and Media*. Then click the *Metadata
+Sets* tab. The sets appear in a table. 
 
 To select a metadata set, select the checkbox to its left. To select all the 
 sets, select the checkbox in the Management Bar. With 1 or more sets selected, 
@@ -20,16 +20,16 @@ the Recycle Bin icon
 (![Recycle Bin](../../../images/icon-trash.png)) appears in the Management Bar. 
 Clicking it moves the selected sets to the Recycle Bin. 
 
-The Management Bar also contains other options for managing the metadata sets. 
-The selector menu to the right of the checkbox lets you filter the sets that the 
-table displays (its set to *All* by default). The *Order by* selector lets you 
-order the sets by Modified Date or ID. The up and down arrows sort the sets in 
-ascending or descending order, respectively. You can also use the Search bar to 
-search for a set. 
+The Management Bar also contains other options for managing the metadata sets.
+The selector menu to the right of the checkbox filters the sets that the table
+displays (it's set to *All* by default). The *Order by* selector orders the sets
+by Modified Date or ID. The up and down arrows sort the sets in ascending or
+descending order, respectively. You can also use the Search bar to search for
+a set. 
 
 In the table, each metadata set has an Actions button 
-(![Actions Menu](../../../images/icon-actions.png)) that lets you perform the 
-following actions on that set: 
+(![Actions Menu](../../../images/icon-actions.png)) for performing the following
+actions on that set: 
 
 -   **Edit**: Edit the set. Alternatively, click the set's name in the table.
 -   **Permissions**: Configure the set's permissions. 
@@ -42,12 +42,12 @@ following actions on that set:
 
 Follow these steps to create a metadata set: 
 
-1.  From the *Menu* (![Product Menu](../../../images/icon-menu.png)), click 
-    your site's name and navigate to *Content &rarr; Documents and Media*. Then 
+1.  From the *Menu* (![Product Menu](../../../images/icon-menu.png)), click your
+    site's name and navigate to *Content* &rarr; *Documents and Media*. Then
     click the *Metadata Sets* tab. 
 
 2.  Click the *Add* button 
-    (![Add](../../../images/icon-add.png)). The *New Metadata Set* form appears. 
+    (![Add](../../../images/icon-add.png)). The New Metadata Set form appears. 
 
 3.  Give your metadata set a name. 
 
@@ -55,51 +55,49 @@ Follow these steps to create a metadata set:
     description or select a metadata set to extend (both are optional). To 
     select a metadata set to extend, click the *Select* button for *Parent 
     Metadata Set* and then select the metadata set. When a user creates a 
-    document of a document type that uses an extended metadata set, the parent 
-    metadata set's fields appear above those of the extended metadata set. 
+    document of a document type that uses an extended metadata set, the parent
+    metadata set's fields appear above the extended metadata set's. 
 
-5.  Add the metadata fields that you want to be part of this metadata set. To do 
+5.  Add the metadata fields that should be part of this metadata set. To do 
     this, first select the editor's *View* tab and select the *Fields* tab 
     within it. Icons representing the field types are listed on one side and the 
-    metadata set's canvas is on the other side. To add a field type to the 
-    metadata set, select its icon and then drag and drop it onto the canvas. The 
-    field shows on the canvas as it will for document type users. Note, by 
-    dragging a field onto a field that's already on the canvas, you can nest the 
-    new field in the existing field. When you mouse over a field on the canvas, 
-    the field action icons 
-    (![Icons](../../../images/icon-dm-metadata-actions.png)) appear. Clicking 
-    the *+* icon creates a duplicate of the current field and adds it below the 
-    current field. Clicking the trash can deletes the field. 
+    metadata set's canvas is on the other side. To add a field type to the
+    metadata set, select its icon, drag, and drop it onto the canvas. The field
+    shows on the canvas as for document type users. By dragging a field onto
+    a field that's already on the canvas, you can nest the new field in the
+    existing field. When you mouse over a field on the canvas, the field action
+    icons (![Icons](../../../images/icon-dm-metadata-actions.png))
+    appear. Clicking the *+* icon creates a duplicate of the current field and
+    adds it below the current field. Clicking the trash can deletes the field. 
 
     The following metadata fields are available:
 
     -   **Boolean:** A check box. 
-    -   **Color:** Lets you specify a color. 
-    -   **Date:** Lets you enter a date. A valid date format is required for the 
+    -   **Color:** Specifies a color. 
+    -   **Date:** Enter a date. A valid date format is required for the 
         date field, but you don't have to enter a date manually. When you select 
         the date field a mini-calendar pops up which you can use to select a 
         date. 
-    -   **Decimal:** Lets you enter a decimal number. The value is persisted as 
-        a double. 
-    -   **Documents and Media:** Lets you select a file from one of the 
-        @product@ instance's Documents and Media libraries. 
-    -   **Geolocation:** Lets you specify a location to associate with the 
+    -   **Decimal:** Enter a decimal number. The value is persisted as 
+        a `double`. 
+    -   **Documents and Media:** Select a file from a Documents and Media library. 
+    -   **Geolocation:** Specify a location to associate with the 
         document.
     -   **HTML:** An area that uses a WYSIWYG editor to enhance the content. 
-    -   **Integer:** Lets you enter an integer. The value is persisted as an 
-        int. 
-    -   **Link to Page:** Lets you link to another page in the same site.
-    -   **Number:** Lets you enter a decimal number or an integer. The value is
-        persisted either as a double or an int, depending on the input's type.
+    -   **Integer:** Enter an integer. The value is persisted as an 
+        `int`. 
+    -   **Link to Page:** Link to another page in the same site.
+    -   **Number:** Enter a decimal number or an integer. The value is
+        persisted either as a `double` or an `int`, depending on the input's type.
     -   **Radio:** Displays several clickable options. The default number of 
         options is three but this is customizable. Only one option can be 
         selected at a time.
     -   **Select:** This is just like the radio field except that the options 
         are hidden and must be accessed from a drop-down menu. 
-    -   **Text:** Lets you enter a single line of text.
+    -   **Text:** Enter a single line of text.
     -   **Text Box:** This is just like the text field except you can enter 
         multiple lines of text or separate paragraphs. 
-    -   **Web Content:** Lets you select web content.
+    -   **Web Content:** Select web content.
 
     ![Figure 2: Add your metadata set's fields to the canvas.](../../../images/dm-metadata-set-fields.png)
 
@@ -113,14 +111,14 @@ Follow these steps to create a metadata set:
 
     Labels, default values, variable names, mouse-over tips, widths, and other
     settings can be configured for most fields. Some fields have a *Required*
-    setting that lets you specify whether users must populate the field. If a 
-    field's *Repeatable* setting is set to *Yes*, users can add multiple 
-    consecutive instances of the field to the document's metadata. 
+    setting for specifying whether users must populate the field. If a field's
+    *Repeatable* setting is set to *Yes*, users can add multiple consecutive
+    instances of the field to the document's metadata. 
 
-    Also note that you can translate each of a metadata set's field values to 
-    any of the locales your @portal@ instance supports. To specify a field value 
-    for a translation, select the flag that represents the locale and enter the 
-    field value for the locale. 
+    Also note that you can translate each of a metadata set's field values to
+    any supported locales. To specify a field value for a translation, select
+    the flag that represents the locale and enter the field value for the
+    locale. 
 
     ![Figure 3: Edit your metadata set's fields to match the metadata that you want each field to hold.](../../../images/dm-metadata-set-settings.png)
 

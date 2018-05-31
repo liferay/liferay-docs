@@ -6,8 +6,8 @@ file by setting the `dl.store.impl=`property. Configuring stores is covered in
 [the Document Repository Configuration guide](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration). 
 Here, you'll consider the ramifications of different stores: 
 
--   **Simple File System Store:** Uses the file system (local, or a mounted 
-    share) to store files. This is @product@'s default store. 
+-   **Simple File System Store:** Uses the file system (local or a mounted 
+    share) to store files. This is the default store. 
 
 -   **Advanced File System Store:** Nests files into directories by version, for 
     faster performance and to store more files. 
@@ -22,17 +22,17 @@ Here, you'll consider the ramifications of different stores:
 -   **S3Store (Amazon Simple Storage)**: Uses Amazon's cloud-based storage 
     solution. 
 
-If you need to move your files from one store to another, use the migration 
-utility in *Control Panel* &rarr; *Configuration* &rarr; *Server Administration* 
-&rarr; *Data Migration*. 
+If you must move your files from one store to another, use the migration utility
+in *Control Panel* &rarr; *Configuration* &rarr; *Server Administration* &rarr;
+*Data Migration*. 
 
 ## Simple File System Store [](id=using-the-file-system-store)
 
-The Simple File System Store is @product@'s default store. It stores Documents 
-and Media files on the portal server's file system (local or mounted). This 
-store is heavily bound to @product@'s database. The store's default root folder 
-is `[Liferay Home]/data/document_library`. You can change this via the 
-`dl.store.file.system.root.dir=` property in a `portal-ext.properties` file, or 
+The Simple File System Store is the default store. It stores Documents and Media
+files on the server's file system (local or mounted). This store is heavily
+bound to @product@'s database. The store's default root folder is
+`[Liferay Home]/data/document_library`. You can change this via the
+`dl.store.file.system.root.dir=` property in a `portal-ext.properties` file, or
 in the Control Panel. For instructions on this, see the 
 [Document Repository Configuration guide](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration).
 
@@ -73,10 +73,9 @@ $$$
 The Advanced File System Store, like the Simple File System Store, saves files 
 to the local file system. It uses a slightly different folder structure, 
 however, and can overcome operating system limitations on the number of files 
-that can be stored in a particular folder. It overcomes this limitation by
-programmatically creating a structure that can expand to millions of files, by
-alphabetically nesting the files in folders. This also improves performance, as 
-there are fewer files stored per folder. 
+stored in a particular folder by programmatically creating a structure that can
+expand to millions of files. It alphabetically nests the files in folders. This
+also improves performance, as there are fewer files stored per folder. 
 
 ![Figure 2: The Advanced File System Store creates a more nested folder structure than the Simple File System Store.](../../../images/enterprise-adv-file-system-store.png)
 
@@ -94,9 +93,9 @@ for instructions on using the Advanced File System Store.
 ## Using the CMIS Store [](id=using-the-cmis-store)
 
 Though you can mount as many different CMIS (Content Management Interoperability
-Services) repositories as you like in the Documents and Media library, you can 
-also redefine the @product@ repository to point to a CMIS repository. This lets 
-users create a folder or upload content to the that repository without the 
+Services) repositories as you like in the Documents and Media library, you can
+also redefine the @product@ repository to point to a CMIS repository. Then users
+can create a folder or upload content to the that repository without the
 administrator having to mount that repository via the UI. 
 
 +$$$
