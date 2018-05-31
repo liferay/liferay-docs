@@ -71,22 +71,6 @@ the more relevant a document is considered. The particular relevance algorithm
 used is dependent on [algorithms provided by the search engine
 (Elasticsearch by default)](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html#relevance-intro).
 
-In short, answers to questions like these determine the relevance score of a hit
-(matching document): 
-
-- How many times does the search term appear in a document's field?
-- How many times does the search term appear in the same field of all the other
-  documents in the index?
-- How long is the field where the term appears?
-
-If the search term appears with greater frequency in the field of one document
-than is the case for the same field in other documents, the score will be
-higher. However, if it's a long field (like a *content* field for a Blogs Entry
-document) then the presence of the search term is discounted. Its presence in a
-shorter field (like a *title* field) produces a higher relevance score. See [the
-Search Results article](/discover/portal/-/knowledge_base/7-1/search-results)
-for a longer discussion of relevance.
-
 ### Search Facets [](id=search-facets)
 
 Facets are a core feature of the Search functionality.
@@ -105,9 +89,12 @@ what facets are included in @product by default?
 - Tag
 - Type
 - User
+- Modified
+- Custom
 
 You've probably used something similar on any number of sites. You search for an
 item, are presented with a list of results, and a list of buckets you can click
-to further refine the search results, without entering additional search terms.
-Search facets work the same way in @product@. Facets are, of course,
+to further drill down into the search results, without entering additional
+search terms.  Search facets work the same way in @product@. Facets are, of
+course,
 [configurable](/discover/portal/-/knowledge_base/7-1/configuring-facets).
