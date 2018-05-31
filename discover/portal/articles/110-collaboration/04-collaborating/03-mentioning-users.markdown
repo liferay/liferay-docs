@@ -1,4 +1,4 @@
-# Mentioning Users
+# Mentioning Users [](id=mentioning-users)
 
 Have you ever wanted to include another user in a discussion on the Message
 Boards? Have you ever wanted to give kudos to a colleague in content you're
