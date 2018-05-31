@@ -77,10 +77,12 @@ In this example, it's 2.4.0.
 +$$$
 
 **Elasticsearch 6.1:** Elasticsearch 6.1.x is supported for Liferay Digital
-Enterprise systems running Fix Pack 42 or later, although version 2.x remains
-the default, embedded version. To install Elasticsearch 6.1.x, 
+Enterprise systems running Fix Pack 42 or later, and Liferay Portal GA 7 or
+later. Despite this support, Elasticsearch version 2.x remains the default,
+embedded version. To install Elasticsearch 6.1.x, 
 
-1.  Make sure you're running FP-42 or later.
+1.  Make sure you're running at least Digital Enterprise FP-42 or Liferay Portal
+    GA 7.
 
 2.  Install Elasticsearch 6.1.x (follow steps 2-4 in this article for guidance).
 
