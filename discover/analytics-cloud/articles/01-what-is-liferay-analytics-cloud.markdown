@@ -15,32 +15,18 @@ It all starts with understanding people.
 
 Existing and prospective customers interact with your company in person, on your
 websites, and via email and messaging. On Liferay Digital Enterprise (DE)
-websites, people are registered users or visitors. Software applications, such
-as Salesforce, contain customer contact information too. Liferay Analytics Cloud
-(Analytics Cloud) integrates contacts from your Liferay DE instances,
-Salesforce, and CSV files into a single view. Analytics Cloud merges contact
-data into rich profiles of *Individuals*---unique contacts (people). Analytics
-Cloud lets you name contact fields your way, making them most useful to you and
-your company.
+websites, people are registered users or visitors. Liferay Analytics Cloud
+(Analytics Cloud) integrates contacts from your Liferay DE instances and CSV
+files into a single view. Analytics Cloud merges contact data into rich profiles
+of *Individuals*---unique contacts (people). Analytics Cloud lets you name
+contact fields your way, making them most useful to you and your company.
 
-Analytics Cloud lets you aggregate Individuals into *Accounts* and *Segments*.
-Accounts comprise Individuals that belong to the same company. They give you a
-better picture of company attributes, background, and interests. It helps you
-identify a company's decision makers and subject matter experts.
-
-Segments are aggregates of Individuals or Accounts that have common
-characteristics. Here are some example Segments:
-
-- Contacts in a particular geographic region
-- Accounts whose companies are a particular size
-- Accounts in a particular industry
-- Accounts with whom you've done the most business
-
-Analytics Cloud lets you create Segments dynamically based on criteria or
-statically (comprising hand selected Individuals and Accounts). You can use
-industry, for example, as a criteria. Industry Segment Analytics shows
-industries engaging with you most and identifies your content that interests
-them. 
+Analytics Cloud lets you aggregate Individuals into *Segments*. Segments are
+aggregates of Individuals that have common characteristics. You can create
+Segments dynamically based on criteria or statically (comprising hand selected
+Individuals). You can use industry, for example, as a criteria. Industry Segment
+Analytics shows industries engaging with you most and identifies your content
+that interests them. 
 
 Contact profiles are a big part of Analytics Cloud, but analytics about people's
 interaction with your website pages and assets is a bigger part. This type of
