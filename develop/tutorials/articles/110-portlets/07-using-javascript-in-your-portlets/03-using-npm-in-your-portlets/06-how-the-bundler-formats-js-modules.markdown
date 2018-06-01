@@ -91,29 +91,15 @@ Note the module's dependencies:
 object and the local `require` function, as defined in the AMD specification.
 
 The subsequent dependencies state the modules on which this module depends. Note 
-that `isarray` in the example is not a package, but rather an alias of the 
-`my-bundle-package$isarray` package's main module (thus, it is equivalent to 
-`my-bundle-package$isarray/index`).
-<!--
-Resolved packages no longer needed, so this paragraph can be removed
+that `my-bundle-package$isarray` in the example is not a package, but rather an 
+alias of the `my-bundle-package$isarray` package's main module (thus, it is 
+equivalent to `my-bundle-package$isarray/index`).
 
 Also note that there is enough information in the `package.json` files 
-to know that `isarray` refers to `my-bundle-package$isarray/index`, but also 
-that it must be resolved to version `1.0.0` of such package, i.e., that 
-`isarray/index` in this case refers to `isarray@1.0.0/index`.
--->
-
-You can leverage liferay-npm-bundler with the correct presets to process your 
-npm modules for AMD. All liferay-npm-bundler presets 
-(*liferay-npm-bundler-preset-*) found in the [liferay-npm-build-tools](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages) 
-repository include some or all of the following Babel plugins to accomplish the 
-AMD conversion:
-
--  [babel-plugin-wrap-modules-amd](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/babel-plugin-wrap-modules-amd)
-
--  [babel-plugin-name-amd-modules](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/babel-plugin-name-amd-modules)
-
--  [Babel-plugin-namespace-amd-define](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/babel-plugin-namespace-amd-define)
+to know that `my-bundle-package$isarray` refers to 
+`my-bundle-package$isarray/index`, but also that it must be resolved to version 
+`1.0.0` of such package, i.e., that `my-bundle-package$isarray/index` in this 
+case refers to `my-bundle-package$isarray@1.0.0/index`.
 
 Now you have a better understanding of how liferay-npm-bundler formats 
 JavaScript modules for AMD!

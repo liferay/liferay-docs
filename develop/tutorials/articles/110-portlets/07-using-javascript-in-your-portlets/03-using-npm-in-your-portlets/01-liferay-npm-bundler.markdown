@@ -31,17 +31,28 @@ The liferay-npm-bundler uses the process below to create the OSGi bundle:
 
 3.  For each npm package dependency:
 
-    a.  Copy the npm package to the output folder and prefix the bundle's name 
-        to it (in plain *bundle-name$package*@*version* format, rather than the 
-        standard node_modules tree format).
+    a. Copy the npm package to the output folder and prefix the bundle's name
+    to it. Note that the bundler stores packages in a plain
+    _bundle-name$package_@_version_ format, rather than the standard
+    node_modules tree format.
 
-    b.  Pre-process the npm package with any configured plugins.
+    b. Pre-process the npm package with any configured plugins.
 
-    c.  Run 
-        [Babel](https://babeljs.io/) with configured plugins for each `.js` file 
-        inside the npm package.
+    c. Run
+    [Babel](https://babeljs.io/) with configured plugins for each `.js` file
+    inside the npm package.
 
-    d.  Post-process the npm package with any configured plugins.
+    d. Post-process the npm package with any configured plugins.
+
+4.  For the project:
+
+    a. Pre-process the project's package with any configured plugins.
+
+    c. Run
+    [Babel](https://babeljs.io/) with configured plugins for each `.js` file
+    inside the project.
+
+    d. Post-process the project package with any configured plugins.
 
 The only difference between the pre-process and post-process steps are when they
 are run (before or after Babel is run, respectively). During this workflow,

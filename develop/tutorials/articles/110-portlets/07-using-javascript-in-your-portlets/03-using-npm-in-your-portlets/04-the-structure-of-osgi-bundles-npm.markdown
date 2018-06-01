@@ -47,14 +47,21 @@ similar to the one below:
 
 +$$$
 
-**Note:** the bundle name is prefixed to each package 
+**Note:** the package names are prefixed with the bundle name since version 
+2.0.0 of the bundler, but were left intact in previous versions. This strategy
+is used to isolate packages from different bundles between them.
+
+The example shown here follows that convention because it is the recommended 
+path to follow, but you can still deploy bundler 1.x packages (without prefix) 
+and they still work as they used to do.
 
 $$$
 
 The packages inside `node_modules` are the same format as the npm tool and can 
-be copied (after a little processing) from a standard `node_modules` folder. The 
-`node_modules` folder can hold any number of npm packages (even different 
-versions of the same package), or no npm packages at all.
+be copied (after a little processing for things like converting to AMD, for 
+example) from a standard `node_modules` folder. The `node_modules` folder can 
+hold any number of npm packages (even different versions of the same package), 
+or no npm packages at all.
 
 Now that you know the structure for OSGi bundles containing npm packages, you 
 can learn how the liferay-npm-bundler handles inline JavaScript packages. 
@@ -63,8 +70,8 @@ can learn how the liferay-npm-bundler handles inline JavaScript packages.
 
 The resulting OSGi bundle that the liferay-npm-bundler creates lets you deploy 
 one inline JavaScript package (named `my-bundle-package` in the example) with 
-several npm packages. The npm packages are prefixed with the bundle's name and 
-placed inside a `node_modules` folder, one package per folder.  
+several npm packages that are placed inside the `node_modules` folder, one 
+package per folder.  
 
 The inline package is nested in the OSGi standard `META-INF/resources` folder 
 and is defined by a standard npm `package.json` file.
