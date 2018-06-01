@@ -141,7 +141,18 @@ is specified as the app server type and the `app.server.tomcat.dir` property is
 specified. See the Plugins SDK's `build.properties` for the name of the app
 server property that matches your app server. 
 
-Save your `build.[username].properties` file. 
++$$$
+
+**Note:** Liferay's Plugins SDK 6.2 was designed to compile classes using Java
+(JDK) 7. If you prefer to use Java 8, you must set the following property in
+your `build.[username].properties`:
+
+    javac.compiler=modern
+
+Once this is added, you can successfully use Java 8 to build Liferay Portal 6.2
+plugins.
+
+$$$
 
 You're set to start using your Liferay Plugins SDK! 
 
