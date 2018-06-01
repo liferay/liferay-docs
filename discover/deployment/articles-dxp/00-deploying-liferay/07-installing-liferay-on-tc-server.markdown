@@ -1,15 +1,15 @@
 # Installing @product@ on tc Server [](id=installing-liferay-on-tc-server)
 
-@product@ is supported on tc Server. Please see the 
-[Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf)
-for the supported version. 
+@product@ is supported on tc Server 4. Installing @product@ on tc server 
+requires the following pieces: 
 
--  A @product@ WAR file
+- A @product@ WAR file
 
--  A compressed file with The OSGi JARs that contain much of @product@'s functionality
+- A compressed file with The OSGi JARs that contain much of @product@'s 
+  functionality
 
--  A compressed file with the necessary @product@ dependencies and additional
-   libraries you need for your installation
+- A compressed file with the necessary @product@ dependencies and additional 
+  libraries you need for your installation
 
 Once you have those pieces of the puzzle, you just need to assemble them.
 
@@ -23,79 +23,161 @@ Installing @product@ manually requires these basic steps:
 +$$$
 
 **Note:** You'll see the term
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
 used in this installation guide. *Liferay Home* refers to the folder containing
 your tc Server instance and some @product@-specific folders:. `data`, `deploy`,
 `licenses`, and `osgi` folders. 
 
 $$$
 
+## Creating a tc Server [](id=creating-a-tc-server)
+
+1.  Download and unzip a tc Server, available 
+    [here](https://network.pivotal.io/products/pivotal-tcserver). 
+    This will be referred to as `[TCSERVER_INSTANCE_HOME]`. 
+
+2.  Create a folder called `servers` inside `[TCSERVER_INSTANCE_HOME]`. (e.g. 
+    `/opt/pivotal-tc-server/servers`). This folder becomes *Liferay Home* 
+    (see note above) and you should not confuse the two.
+
+3.  Next, create an instance called *dxp-server* where @product@ will be 
+    deployed. Navigate to the `[TCSERVER_INSTANCE_HOME]\developer-4.0.0.RELEASE` 
+    folder and run the command:
+
+        tcserver create -i ../servers dxp-server
+        
+    By default, new instances are created in the 
+    `[TCSERVER_INSTANCE_HOME]\instances` folder. The `-i` specifies a different 
+    directory to create the instance in. The instance location can also be 
+    changed via a properties file. See the  
+    [tc Server documentation](https://tcserver.docs.pivotal.io/4x/docs-tcserver/topics/tcserver-properties-reference.html) 
+    for more information.
+      
+Checkpoint: 
+
+1.  A new folder called `servers` has been created. 
+
+2.  A new folder called `dxp-server` has been created inside the `servers` 
+    folder. The following folders have been created inside the `dxp-server` 
+    folder: 
+
+    - `bin` 
+    - `conf` 
+    - `lib` 
+    - `logs` 
+    - `temp` 
+    - `webapps` 
+    - `work`
+
+Next you can install the required dependencies.
+
 ## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
 
-@product@ depends on some additional JARs that aren't included with tc Server by
-default. There are even more JARs that you'd find in a @product@ bundle
-that are not required but can be useful. If you don't have a @product@
-bundle, you can download the required JARs from third parties, as
-described below.
+@product@ depends on some additional JARs that aren't included with tc Server by 
+default. There are even more JARs that you'd find in a @product@ bundle that are 
+not required but can be useful. If you don't have a @product@ bundle, you can 
+download the required JARs from third parties, as described below.
 
 +$$$
 
-**Note:** Many required and useful JARs are pre-installed when you build
+**Note:** Many required and useful JARs are pre-installed when you build 
 @product@ from the source code or 
 [download a @product@ bundle](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
-If you want to acquire all of the JARs that ship with a @product@ bundle
+If you want to acquire all of the JARs that ship with a @product@ bundle 
 quickly, using one of these sources might save you time.
 
 $$$
 
-Here are the JARs included in the dependencies zip file: 
+1.  extract the JARs from the dependencies ZIP to the 
+    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder. The JARs are 
+    listed below:
 
-- `com.liferay.registry.api-1.0.4.jar`
+    - `com.liferay.registry.api.jar`
+    - `hsql.jar`
+    - `portal-kernel.jar`
+    - `portlet.jar` 
+<!--
+Is this the correct lib folder, or do these need to be placed in lib/ext? Also, 
+should this lib folder be in Liferay Home instead of TCSERVER_INSTANCE_HOME ?
+-->
+2.  Download the following JARs or copy them from a @product@ bundle to the 
+    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder:
 
-- `hsql.jar`
+    - `activation.jar` - [http://www.oracle.com/technetwork/java/javase/jaf-136260.html](http://www.oracle.com/technetwork/java/javase/jaf-136260.html)
+    - `ccpp.jar` - [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
+    - `com.liferay.petra.concurrent` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/)
+    - `com.liferay.petra.executor.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/)
+    - `com.liferay.petra.function.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/)
+    - `com.liferay.petra.io.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/)
+    - `com.liferay.petra.lang.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.lang/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.lang/)
+    - `com.liferay.petra.memory.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.memory/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.memory/)
+    - `com.liferay.petra.nio.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.nio/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.nio/)
+    - `com.liferay.petra.process.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.process/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.process/)
+    - `com.liferay.petra.reflect.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.reflect/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.reflect/)
+    - `com.liferay.petra.string.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.string/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.string/)
+    - `jms.jar`- [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
+    - `jta.jar`- [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
+    - `jutf7.jar` - [http://mvnrepository.com/artifact/com.beetstra.jutf7/jutf7](http://mvnrepository.com/artifact/com.beetstra.jutf7/jutf7)
+    - `mail.jar` - [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
+    - `mariadb.jar` (if needed) - [https://downloads.mariadb.org/](https://downloads.mariadb.org/)
+    - `mysql.jar` (if needed) - [http://dev.mysql.com/downloads/connector/j](http://dev.mysql.com/downloads/connector/j)
+    - `persistence.jar`- [http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1](http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1)
+    - `postgresql.jar` (if needed) - [https://jdbc.postgresql.org/download/postgresql-42.0.0.jar](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
+    - `support-tomcat.jar` - [http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat)
+<!--
+Is this the correct location for the JDBC drivers?
+-->
+3.  Copy the JDBC driver for your database to the 
+    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder. The `mariadb.jar`, 
+    `mysql.jar`, and `postgresql.jar` driver JARs are available in the @product@ 
+    bundle. 
 
-- `portal-kernel.jar`
+4.  Create an `osgi` folder in your *Liferay Home*. Then, extract the folders 
+    (i.e., `configs`, `core`, and more) from OSGi ZIP file to the `osgi` folder. 
+    These folders contain the OSGi runtime, many required JAR files, and 
+    configuration files.
 
-- `portlet.jar`
+Checkpoint:
 
-One JAR you definitely need that is not included in the dependencies zip is
-your database driver. Database drivers for *MySQL* and *PostgreSQL* can be found
-in a @product@ bundle or in the @product@ source code.
+1.  Your `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder has these 
+    JARs:
 
-There are several other dependency JARs that aren't included in the dependencies
-zip. If you don't have them already on hand or have access to a @product@ bundle,
-you'll have to download them yourself.
+    - `activation.jar`
+    - `ccpp.jar`
+    - `com.liferay.petra.concurrent.jar`
+    - `com.liferay.petra.executor.jar`
+    - `com.liferay.petra.function.jar`
+    - `com.liferay.petra.io.jar`
+    - `com.liferay.petra.lang.jar`
+    - `com.liferay.petra.memory.jar`
+    - `com.liferay.petra.nio.jar`
+    - `com.liferay.petra.process.jar`
+    - `com.liferay.petra.reflect.jar`
+    - `com.liferay.petra.string.jar`
+    - `com.liferay.registry.api.jar`
+    - `hsql.jar`
+    - `jms.jar`
+    - `jta.jar`
+    - `jutf7.jar`
+    - `mail.jar`
+    - `mariadb.jar`
+    - `mysql.jar`
+    - `persistence.jar`
+    - `portal-kernel.jar`
+    - `portlet.jar`
+    - `postgresql.jar`
+    - `support-tomcat.jar`
 
-- `jta.jar`: Support for Java transactions. You can get this `.jar`, which manages transactions, from
-  [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
+2. Your `[Liferay Home]/osgi` folder has these subfolders:
 
-- `mail.jar`: Support for the Java Mail API. You can get this `.jar` from
-  [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
-
-- `persistence.jar`: Support for the Java Persistence API. You can get this `.jar` from
-  [http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html](http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
-
-- `activation.jar`: This is an implementation of the Java Activation Framework. 
-   You can get this `.jar` from 
-   [http://www.oracle.com/technetwork/java/jaf11-139815.html](http://www.oracle.com /technetwork/java/jaf11-139815.html)
-
-- `ccpp.jar`: Enables Composite Capability/Preference Profiles. You can get this `.jar` from 
-  [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
-
-- `jms.jar`: The Java Messaging Service. You can get this `.jar` from
-  [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
-
-- `jutf7.jar`: Provides UTF-7 and Modified UTF-7 charsets for Java. You can get this `.jar` from 
-  [http://sourceforge.net/projects/jutf7/](http://sourceforge.net/projects/jutf7/)
-
-- `junit.jar`: Lets you run unit tests. You can get this `.jar` from 
-  [http://sourceforge.net/projects/junit/](http://sourceforge.net/projects/junit/)
-
-Place these JARs in *Liferay Home*'s `lib` folder (not tc Server's) (see more steps below).
-
-@product@ includes an OSGi runtime. Extract the OSGi ZIP file that you downloaded
-and copy the `osgi` folder to your Liferay Home folder. The `osgi` folder
-contains many required JAR files and a few configuration files.
+    - `configs`
+    - `core`
+    - `marketplace`
+    - `modules`
+    - `portal`
+    - `static`
+    - `test`
+    - `war`
 
 ## Configuring tc Server [](id=configuring-tc-server)
 
@@ -103,60 +185,9 @@ There are a few configuration edits to make so @product@ runs well on tc Server.
 All of these configuration changes should be made in your tc Server runtime
 instance.
 
-1. Download and unzip tc Server available
-[here](https://network.pivotal.io/products/pivotal-tcserver). This will be
-referred to as `[TCSERVER_INSTANCE_HOME]`. 
-
-2. Create a folder called `servers` inside `[TCSERVER_INSTANCE_HOME]`. (e.g.
-`/opt/pivotal-tc-server-standard-3.1.8.release/servers`). This folder becomes
-*Liferay Home* (see note above) and you should not confuse the two.
-
-3. Next, create an instance called *dxp-server* where @product@ will be
-deployed. Run the command:
-
-        tcruntime-instance.bat|sh create -i servers dxp-server
- 
-4. Copy the dependencies `jars` inside the `lib` folder inside `[TCSERVER_INSTANCE_HOME]/servers/dxp-server`.
-
-Checkpoint: 
-
-1. A new folder called `servers` has been created. 
-
-2. A new folder called `dxp-server` has been created inside the `servers`
-   folder. The following folders have been created inside the `dxp-server` folder: 
-
-- `bin` 
-- `conf` 
-- `lib` 
-- `logs` 
-- `temp` 
-- `webapps` 
-- `work`
-
-@product dependencies have been placed inside the
- `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder:
-
-- `com.liferay.registry.api-1.0.4.jar` 
-- `hsql.jar` 
-- `portal-kernel.jar` 
-- `portlet.jar` 
-- `jta.jar` 
-- `junit.jar` 
-- `jutf7.jar` 
-- `jms.jar` 
-- `mail.jar`
-- `persistence.jar` 
-- `activation.jar`
-- `ccp.jar` 
-- a database jar for other than HSQL (e.g. mariadb, mysql, db2) 
- 
-There are a few more configuration changes for @product@ to run well on tc
-Server 3. All of these configuration changes should be made in the tc Server
-runtime instance.
-
-
-1. Navigate to the `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/bin` folder. In
-`setenv.sh` replace this line
+1.  Navigate to the 
+    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/bin` folder. In `setenv.sh` 
+    replace this line:
 
         JVM_OPTS="-Xmx512M -Xss256K"
 
@@ -173,9 +204,9 @@ runtime instance.
         set JVM_OPTS=-Xmx1024M -Xss512K -XX:MaxMetaspaceSize=512m
 
 
-2. Next, you should make sure that UTF-8 URI encoding is used consistently. Open
-`[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/server.xml` and make sure the
-`Connector` tag includes setting the `URIEncoding` to `UTF-8`.
+2.  Next, you should make sure that UTF-8 URI encoding is used consistently. 
+    Open `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/server.xml` and 
+    make sure the `Connector` tag includes setting the `URIEncoding` to `UTF-8`.
 
         <Connector acceptCount="100"
                    connectionTimeout="20000"
@@ -187,28 +218,24 @@ runtime instance.
                    URIEncoding="UTF-8" />
 
 
-3. If you're installing @product@ and tc Server on Windows, open
-`[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/wrapper.conf` and replace
+3.  If you're installing @product@ and tc Server on Windows, open
+    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/wrapper.conf` and 
+    replace
 
-        wrapper.java.additional.8=-Xmx512M
-
-    with
-
-        wrapper.java.additional.8="-Xmx1024M"
-
-    and
-
-        wrapper.java.additional.9=-Xss256K
+        wrapper.java.additional.8=-Xss256K
 
     with
 
-        wrapper.java.additional.9="-Xss512K"
-        wrapper.java.additional.10="-XX:MaxMetaspaceSize=256M"
-        wrapper.java.additional.11="-Dfile.encoding=UTF-8"
+        wrapper.java.additional.8=-Xmx1024M
 
+    and add these properties:
 
-4. Last, open `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/web.xml` and add the following after `<load-on-startup>3</load-on-startup>`    
+        wrapper.java.additional.9=-Xss512K
+        wrapper.java.additional.10=-XX:MaxMetaspaceSize=256M
+        wrapper.java.additional.11=-Dfile.encoding=UTF-8
 
+4.  Last, open `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/web.xml` and 
+    add the following after `<load-on-startup>3</load-on-startup>`:   
 
         <init-param>
             <param-name>compilerSourceVM</param-name>
@@ -219,108 +246,130 @@ runtime instance.
             <param-value>1.8</param-value>
         </init-param> 
 
+### Database Configuration [](id=database-configuration)
 
-## Database Configuration [](id=database-configuration)
-
-The easiest way to handle your database configuration is to let @product@ manage
-your data source. If you want to use @product@'s built-in data source, you can
+The easiest way to handle your database configuration is to let @product@ manage 
+your data source. If you want to use @product@'s built-in data source, you can 
 skip this section. 
 <!-- check this after using @product@ to manage the connection -->
 
 If you want tc Server to manage your data source, use this procedure:
 
-1. Make sure your database server is installed and working. If it's installed
-   on a different machine, make sure it's accessible from your @product@ machine.
+1.  Make sure your database server is installed and working. If it's installed
+    on a different machine, make sure it's accessible from your @product@ 
+    machine.
 
-2. Add your data source as a resource in the context of your web application
-specified in `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/Catalina/localhost/ROOT.xml` (create this file if you don't
-have it already):
+2.  Add your data source as a resource in the context of your web application 
+    specified in 
+    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/Catalina/localhost/ROOT.xml` 
+    (create this file if you don't have it already). An example configuration is 
+    shown below:
 
-        <Resource
-            name="jdbc/LiferayPool"
-            auth="Container"
-            type="javax.sql.DataSource"
-            driverClassName="com.mysql.jdbc.Driver"
-            url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
-            username="root"
-            password="root"
-            maxActive="100"
-            maxIdle="30"
-            maxWait="10000"
-        />
+        <Context crossContext="true" path="">
+          <Resources>
+        		<PreResources
+        			base="${catalina.base}/lib/ext/portal"
+        			className="com.liferay.support.tomcat.webresources.ExtResourceSet"
+        			webAppMount="/WEB-INF/lib"
+        		/>
+        	</Resources>
+          <Resource
+              name="jdbc/LiferayPool"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost/lportal?useUnicode=true&amp;characterEncoding=UTF-8"
+              username="root"
+              password="root"
+              maxActive="100"
+              maxIdle="30"
+              maxWait="10000"
+          />
+        </Context>
 
-Note that the above resource definition assumes your database name is *lportal*,
-that you're using MySQL, and that your MySQL *username* and *password* are both
-*root*. You'll have to update these values with your own database name and
-credentials.
+    Note that the above resource definition assumes your database name is 
+    *lportal*, that you're using MySQL, and that your MySQL *username* and 
+    *password* are both *root*. You'll have to update these values with your own 
+    database name and credentials.
 
-Your data source is now configured. Next set up the mail session.
-
-## Mail Configuration [](id=mail-configuration)
-
-As with database configuration, the easiest way to handle mail configuration is
-to let @product@ handle your mail session. If you want to use @product@'s built-in
-mail session, skip this section and use @product@'s Control Panel to configure a
-mail server after @product@ has been installed and started.
-
-To create a mail session bound to `mail/MailSession`, edit
-`[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/Catalina/localhost/ROOT.xml`
-and configure your mail session in a `Resource` tag. Make sure to replace the
-example mail session values with your own.
-
-    <Resource
-        name="mail/MailSession"
-        auth="Container"
-        type="javax.mail.Session"
-        mail.pop3.host="pop.gmail.com"
-        mail.pop3.port="110"
-        mail.smtp.host="smtp.gmail.com"
-        mail.smtp.port="465"
-        mail.smtp.user="user"
-        mail.smtp.password="password"
-        mail.smtp.auth="true"
-        mail.smtp.starttls.enable="true"
-        mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
-        mail.imap.host="imap.gmail.com"
-        mail.imap.port="993"
-        mail.transport.protocol="smtp"
-        mail.store.protocol="imap"
-    />
-
-Your mail session is configured. Next, you'll make sure @product@ can 
-access your mail session and database.
-
-## Configuring a Database and Mail Session [](id=configuring-a-database-and-mail-session)
-
-In this section you'll specify appropriate properties for @product@ to use in
-connecting to your database and mail session.
-
-1. If you are using tc Server to manage your data source, add the following line
-to the `portal-ext.properties` file in your *Liferay Home*.
+3.  In your `portal-ext.properties` file (create this file if it doesn't exist) 
+    in your *Liferay Home*, specify your data source:
 
         jdbc.default.jndi.name=jdbc/LiferayPool
 
-2. If you are using tc Server to manage your mail session, add the following to
-    `portal-ext.properties`:
+Your data source is now configured. Next set up the mail session.
+
+### Mail Configuration [](id=mail-configuration)
+
+As with database configuration, the easiest way to handle mail configuration is 
+to let @product@ handle your mail session. If you want to use @product@'s 
+built-in mail session, skip this section and 
+[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-product#configuring-mail) 
+in the Control Panel.
+
+To create a mail session bound to `mail/MailSession`, follow these steps: 
+
+1.  Edit 
+    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/Catalina/localhost/ROOT.xml` 
+    and configure your mail session in a `Resource` tag. Make sure to replace 
+    the example mail session values with your own. An example configuration is 
+    shown below:
+
+        <Context crossContext="true" path="">
+          <Resources>
+            <PreResources
+              base="${catalina.base}/lib/ext/portal"
+              className="com.liferay.support.tomcat.webresources.ExtResourceSet"
+              webAppMount="/WEB-INF/lib"
+            />
+          </Resources>
+          ...
+          <Resource
+              name="mail/MailSession"
+              auth="Container"
+              type="javax.mail.Session"
+              mail.pop3.host="pop.gmail.com"
+              mail.pop3.port="110"
+              mail.smtp.host="smtp.gmail.com"
+              mail.smtp.port="465"
+              mail.smtp.user="user"
+              mail.smtp.password="password"
+              mail.smtp.auth="true"
+              mail.smtp.starttls.enable="true"
+              mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+              mail.imap.host="imap.gmail.com"
+              mail.imap.port="993"
+              mail.transport.protocol="smtp"
+              mail.store.protocol="imap"
+          />
+        </Context>
+
+2.  Reference your mail session in your `portal-ext.properties` file 
+    (create this file if it doesn't exist):
 
         mail.session.jndi.name=mail/MailSession
+
+Your mail session is configured. Next, you'll make sure @product@ can access 
+your mail session and database.
 
 ## Deploying @product@ [](id=deploying-liferay)
 
 Now you're ready to deploy @product@ using your @product@ WAR file.
 
-1. If you are manually installing @product@ on a clean tc Server instance, delete
-the contents of the `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/webapps/ROOT` directory. This
-removes the default Tomcat home page.
+1.  If you are manually installing @product@ on a clean tc Server instance, 
+    delete the contents of the 
+    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/webapps/ROOT` 
+    directory. This removes the default Tomcat home page.
 
-2. Extract the @product@ `.war` file to `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/webapps/ROOT`.
+2.  Extract the @product@ `.war` file to 
+    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/webapps/ROOT`.
 
     Now it's time to launch @product@!
 
-3. Start tc Server by navigating to the runtime instance's `bin` folder and
-executing `./tcruntime-ctl.sh run` or `/tcruntime-ctl.sh start`. If you're on
-Windows you can use the `.bat` version of the startup script only if you
-installed the tc Server instance as a Windows service. Alternatively,
-you can use `./catalina.sh run` or `catalina.bat run`.
+3.  Start tc Server by navigating to the runtime instance's 
+    `[TCSERVER_INSTANCE_HOME]/developer-4.0.0.RELEASE` folder 
+    and run the following command:
+
+        tcserver run -i ../servers dxp-server
 
 After you set up your account you can start [using @product@](/discover/portal).
