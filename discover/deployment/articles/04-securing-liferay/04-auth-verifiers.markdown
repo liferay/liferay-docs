@@ -80,7 +80,7 @@ remote API out-of-the-box:
 - Basic Auth Header
 - Portal Sessions 
 
-## Basic Auth Header
+## Basic Auth Header [](id=basic-auth-header)
 
 This Auth Verifier allows the remote client to authenticate using 
 [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). 
@@ -92,7 +92,7 @@ The default URLs are `/api/*,/xmlrpc*` for web services. The mapping excludes
 `/api/liferay*` to prevent accessing `TunnelServlet`. For more information please 
 see  Tunnel Authentication Verifiers.
 
-## Digest Auth Header
+## Digest Auth Header [](id=digest-auth-header)
 
 This Auth Verifier allows the remote client to authenticate using 
 [HTTP Digest Authentication](https://en.wikipedia.org/wiki/Digest_access_authentication). 
@@ -102,7 +102,7 @@ required.
 
 This Auth Verifier is not enabled by default.
 
-## HTTP Tunnel Extender
+## HTTP Tunnel Extender [](id=http-tunnel-extender)
 
 As Liferay embraced modularity, this extender was written to enable modules to
 be part of `TunnelServlet`. It maps `TunnelServlet` and
@@ -120,7 +120,7 @@ Note that this is not a recommended way to export remote APIs; it's far
 better to expose remote services using JAX-RS or Liferay JSON Web Service 
 technologies.
 
-## Image Request Authentication Verifier
+## Image Request Authentication Verifier [](id=image-request-authentication-verifier)
 
 When connected to LibreOffice/OpenOffice, the Office process must download
 images from @product@ to render docs with images. To do this, a 
@@ -131,7 +131,7 @@ necessary.
 
 This Auth Verifier is not enabled by default.
 
-## Portal Sessions Auth Verifiers
+## Portal Sessions Auth Verifiers [](id=portal-sessions-auth-verifiers)
 
 Enables JavaScript in a browser to access Liferay JSON Web Services using an
 existing portal session.
@@ -140,7 +140,7 @@ In the default configuration, the URLs included field shields access to the
 legacy JSON remote services layer:
 `/api/json*,/api/jsonws*,/c/portal/json_service*`.
 
-## Request Parameter Auth Verifiers
+## Request Parameter Auth Verifiers [](id=request-parameter-auth-verifiers)
 
 For backwards compatibility with `RequestParameterAutoLogin` you can
 authenticate and access portal endpoints with credentials inside HTTP request
@@ -148,7 +148,7 @@ parameters `parameterAutoLoginLogin` and `parameterAutoLoginPassword`.
 
 This Auth Verifier is not enabled by default.
 
-## Tunnel Authentication Verifiers
+## Tunnel Authentication Verifiers [](id=tunnel-authentication-verifiers)
 
 `TunnelServlet` is a legacy remote API endpoint mapped at `/api/liferay/do` to
 provide access to the portal remote services. The Tunnel Auth Verifier allows
