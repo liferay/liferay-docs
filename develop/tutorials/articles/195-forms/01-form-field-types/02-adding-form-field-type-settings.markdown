@@ -1,7 +1,7 @@
 # Adding Settings to Form Field Types [](id=adding-settings-to-form-field-types)
 
 Once you develop a 
-[Form Field Type](/developer/tutorials/-/knowledge_base/7-0/creating-form-field-types), 
+[Form Field Type](/develop/tutorials/-/knowledge_base/7-1/creating-form-field-types), 
 you might need to add settings to it. For example, your time field might need to
 be configured to accept different time formats. Here you'll learn how to add
 settings to form field types by adding a *mask* and a *placeholder* to the Time
@@ -21,7 +21,7 @@ $$$
 To add settings to form field types, you'll use these steps:
 
 - Write an interface that extends the default field type configuration,
-  `DefaultDDMFormFieldTypesettings`.
+  `DefaultDDMFormFieldTypeSettings`.
 - Update the `*FormFieldRenderer` so it makes the new configuration options
   available to the JavaScript component and/or the Soy template for rendering.
 - Update the JavaScript component (defined in `time_field.js` in our example) to
@@ -38,45 +38,52 @@ To add type settings, you need a `*TypeSettings` class that extends
 `DefaultDDMFormFieldTypeSettings`. Since this example works with a Time field
 type, call it `TimeDDMFormFieldTypeSettings`.
 
-This class sets up the *Add [Field Type]* configuration form.
+This class sets up the *Field Type* configuration form.
 
 ![Figure 1: Like your custom field types, the text field type's settings are configured in a Java interface.](../../../images/forms-text-settings.png)
 
 Here's what it looks like:
 
-    package com.liferay.docs.ddm.time;
+    package com.liferay.dynamic.data.mapping.type.time;
 
-    import ...
+    import com.liferay.dynamic.data.mapping.annotations.DDMForm;
+    import com.liferay.dynamic.data.mapping.annotations.DDMFormField;
+    import com.liferay.dynamic.data.mapping.annotations.DDMFormLayout;
+    import com.liferay.dynamic.data.mapping.annotations.DDMFormLayoutColumn;
+    import com.liferay.dynamic.data.mapping.annotations.DDMFormLayoutPage;
+    import com.liferay.dynamic.data.mapping.annotations.DDMFormLayoutRow;
+    import com.liferay.dynamic.data.mapping.form.field.type.DefaultDDMFormFieldTypeSettings;
 
     @DDMForm
     @DDMFormLayout(
         paginationMode = com.liferay.dynamic.data.mapping.model.DDMFormLayout.TABBED_MODE,
         value = {
             @DDMFormLayoutPage(
-                title = "basic",
-                value = {
-                    @DDMFormLayoutRow(
-                        {
-                            @DDMFormLayoutColumn(
-                                size = 12,
-                                value = {"label", "required", "tip", "mask", "placeholder"}
-                            )
-                        }
-                    )
-                }
-            ),
-            @DDMFormLayoutPage(
-                title = "properties",
+                title = "%basic",
                 value = {
                     @DDMFormLayoutRow(
                         {
                             @DDMFormLayoutColumn(
                                 size = 12,
                                 value = {
-                                    "predefinedValue", "visibilityExpression",
-                                    "fieldNamespace", "indexType", "localizable",
-                                    "readOnly", "dataType", "type", "name",
-                                    "showLabel", "repeatable"
+                                    "label", "required", "tip", "mask",
+                                    "placeholder"
+                                }
+                            )
+                        }
+                    )
+                }
+            ),
+            @DDMFormLayoutPage(
+                title = "%properties",
+                value = {
+                    @DDMFormLayoutRow(
+                        {
+                            @DDMFormLayoutColumn(
+                                size = 12,
+                                value = {
+                                    "dataType", "name", "showLabel", "repeatable",
+                                    "type", "validation", "visibilityExpression"
                                 }
                             )
                         }
@@ -91,9 +98,9 @@ Here's what it looks like:
         @DDMFormField(label = "%mask", predefinedValue="%I:%M %p")
         public String mask();
 
-        @DDMFormField(label = "%placeholder")
+        @DDMFormField(label = "%placeholder-text")
         public String placeholder();
-
+        
     }
 
 Would you look at that! Most of the work you need to do is in the class's
@@ -108,10 +115,10 @@ One thing to note is that all the default settings must be present in your
 settings form. Note the list of settings present for each tab (each
 `@DDMFormLayoutPage`) above. If you need to make one of the default settings
 unusable in the settings form for your field type, configure a *hide rule* for
-the field. Form field rules are configured using the `@DDMFormFieldRule`
+the field. Form field rules are configured using the `@DDMFormRule`
 annotation. More information on configuring form rules will be written soon.
 
-Your interface is extending the `DefaultDDMFormfieldTypeSettings` class. That's
+Your interface is extending the `DefaultDDMFormFieldTypeSettings` class. That's
 why the default settings are available to use in the class annotation, without
 setting them up in the class, as was necessary for the mask and placeholder.
 
@@ -138,14 +145,8 @@ Under `value`, specify any `@DDMFormLayoutPage`s that you want to use.
 `value`, where title is a String value that names the section of the form and
 value is one or more `@DDMFormLayoutRow`s.
 
-**Note:** The title of the layout pages are `basic` and `properties` for all of
-@product@'s field types: in future versions of the Forms application, the
-localized value of the key you specify here will be the heading for the form
-section (the layout page is a section of the form). In the current version of
-@product@ (at the time of this writing, DE DXP SP1 and CE 7.0 GA3), these
-are not displayed. To remain consistent with the Forms application's
-default fields, it's best to follow the standard approach and use `basic` and
-`properties`. 
+**Note:** The default title of the layout pages are `%basic` and `%properties` for all of
+@product@'s field types, but Forms allows it to be customized if it's desired. If you want to change the title of one of the layout pages, you just need to create a new key in the language resources files (`src/resources/content/Language_xx_XX.properties`) and replace the current title of a layout page by it. For example, consider you've created the key `advanced=Advanced` in the `src/resources/content/Language.properties`, then you only need to change the `title` from `%basic` to `%advanced`.
 
 `@DDMFormLayoutRow`
 : Use this to lay out the number of columns you want in the row. Most settings
@@ -168,22 +169,64 @@ class for your form field type.
 ## Updating the Renderer Class [](id=updating-the-renderer-class)
 
 To send the new configuration settings to the Soy template so they can be
-displayed to the end user, you need to modify the `*DDMFormFieldRenderer`.
+displayed to the end user, you need to create a new Java class which implements the interface `DDMFormFieldTemplateContextContributor` and modify the existent class `*DDMFormFieldRenderer`.
 
-Add this method to `TimeDDMFormFieldRenderer`:
+The interface `DDMFormFieldTemplateContextContributor` only has one single method named `getParameters` that gets the new configuration settings, specific for a form field type, and sends for the resources which need them, like the Soy template. In order to get these settings, let's create the new class `TimeDDMFormFieldTemplateContextContributor`. First of all, create the OSGI component:
 
-	@Override
+    @Component(
+        immediate = true,
+        property = "ddm.form.field.type.name=time",
+        service = {
+            DDMFormFieldTemplateContextContributor.class,
+            TimeDDMFormFieldTemplateContextContributor.class
+        }
+    )
+
+Then, override the method `getParameters` and get the new configurations settings, `placeholder` and `mask`:
+
+    @Component(
+        immediate = true, property = "ddm.form.field.type.name=time",
+        service = {
+            DDMFormFieldTemplateContextContributor.class,
+            TimeDDMFormFieldTemplateContextContributor.class
+        }
+    )
+    public class TimeDDMFormFieldTemplateContextContributor
+        implements DDMFormFieldTemplateContextContributor {
+
+        @Override
+        public Map<String, Object> getParameters(
+            DDMFormField ddmFormField,
+            DDMFormFieldRenderingContext ddmFormFieldRenderingContext) {
+
+            Map<String, Object> parameters = new HashMap<>();
+
+            parameters.put(
+                "placeholder", (String)ddmFormField.getProperty("placeholder"));
+            parameters.put("mask", (String)ddmFormField.getProperty("mask"));
+
+            return parameters;
+        }
+
+    }
+
+Now, it's time to pass the configuration settings to the template and you'll be able to do this task through the creation of the new method `populateOptionalContext` in `TimeDDMFormFieldRenderer`:
+
+    @Override
 	protected void populateOptionalContext(
 		Template template, DDMFormField ddmFormField,
 		DDMFormFieldRenderingContext ddmFormFieldRenderingContext) {
 
-		template.put(
-			"placeholder", (String)ddmFormField.getProperty("placeholder"));
+		Map<String, Object> parameters =
+			timeDDMFormFieldTemplateContextContributor.getParameters(
+				ddmFormField, ddmFormFieldRenderingContext);
 
-        template.put(
-            "mask", (String)ddmFormField.getProperty("mask"));	
+		template.putAll(parameters);
+	}
 
-        }
+	@Reference
+	protected TimeDDMFormFieldTemplateContextContributor
+		timeDDMFormFieldTemplateContextContributor;
 
 The `populateOptionalContext` method takes three parameters: The template
 object, the `DDMFormField`, and the `DDMFormFieldRenderingContext`. The
@@ -193,12 +236,9 @@ and placeholder settings in our case). The `DDMFormFieldRenderingContext` object
 contains extra information about the form such as the user's locale, the HTTP
 request and response objects, the portlet namespace, and more (all of
 its included properties can be found
-[here](https://docs.liferay.com/ce/apps/forms-and-workflow/latest/javadocs/com/liferay/dynamic/data/mapping/render/DDMFormFieldRenderingContext.html).
+[here](https://docs.liferay.com/ce/apps/forms-and-workflow/latest/javadocs/com/liferay/dynamic/data/mapping/render/DDMFormFieldRenderingContext.html)).
 
-You're putting the new settings into the template object, which is just an
-extension of a Map that takes a String and an Object (in this case the Object is
-the property configured in the `@DDMFormField` in your `*TypeSettings` class,
-retrieved by the name of the field: `placeholder` and `mask`, respectively.
+In addition, the above method uses an OSGI reference (`@Reference`) to access the `TimeDDMFormFieldTemplateContextContributor` and call its method `getParameters` to receive the specific configuration settings of the time field. Then, these settings are added into the template object.
 
 Now the JavaScript component and the Soy template can access the new settings.
 Next, update the JavaScript Component so it handles these properties and can
@@ -262,21 +302,24 @@ Then in the component's render method, add the mask as an [attribute of the
 AUI Timepicker](http://alloyui.com/api/classes/A.TimePicker.html#attr_mask)
 using `mask: instance.get('mask')`. 
 
-           render: function() {
-            var instance = this;
+    render: function() {
+        var instance = this;
 
-            TimeField.superclass.render.apply(instance, arguments);
+        TimeField.superclass.render.apply(instance, arguments);
 
-            instance._timePicker = new A.TimePicker(
-                {
-                    trigger: instance.getInputSelector(),
-                    mask: instance.get('mask'),
-                    popover: {
-                        zIndex: 1
-                    }
+        instance.timePicker = new A.TimePicker(
+            {
+                trigger: instance.getInputSelector(),
+                mask: instance.get('mask'),
+                popover: {
+                    zIndex: 1
+                },
+                after: {
+                    selectionChange: A.bind('afterSelectionChange', instance)
                 }
-            );
-        }
+            }
+        );
+    },
 
 Now the field type JavaScript component is configured to include the settings.
 All you have left to do is to update the Soy template so the placeholder can be
@@ -287,50 +330,80 @@ rendered in the form with the time field.
 After all that, adding the placeholder setting to your Soy template's logic is
 simple.
 
-The whole template is included below, but the only additions are in the commented
-section (adds the placeholder to the list of parameters--the `?` indicates that
+The whole template is included below, but the only additions are in the list of parameters (adds the placeholder to the list of parameters--the `?` indicates that
 the placeholder is not required), and then in the `<input>` tag, where you use
 the parameter value to configure the placeholder HTML property with the proper
 value.
 
-    {namespace ddm}
+    {namespace DDMTime}
 
     /**
-     * Prints the DDM form time field.
-     *
-     * @param label
-     * @param name
-     * @param? placeholder
-     * @param readOnly
-     * @param required
-     * @param showLabel
-     * @param tip
-     * @param value
-     */
-    {template .time autoescape="deprecated-contextual"}
-        <div class="form-group liferay-ddm-form-field-time" data-fieldname="{$name}">
-            {if $showLabel}
-                <label class="control-label">
-                    {$label}
+    * Defines the delegated template for the time field.
+    */
+    {deltemplate ddm.field variant="'time'"}
+        {call .render data="all" /}
+    {/deltemplate}
+
+    /**
+    * Prints the DDM form time field.
+    */
+    {template .render}
+        {@param name: string}
+        {@param pathThemeImages: string}
+        {@param value: ?}
+        {@param visible: bool}
+        {@param? placeholder: string}
+        {@param? dir: string}
+        {@param? label: string}
+        {@param? predefinedValue: string}
+        {@param? readOnly: bool}
+        {@param? required: bool}
+        {@param? showLabel: bool}
+        {@param? tip: string}
+
+        {let $displayValue: $value ? $value : $predefinedValue ? $predefinedValue : '' /}
+
+        <div class="form-group {$visible ? '' : 'hide'} liferay-ddm-form-field-time"
+            data-fieldname="{$name}">
+            {if $showLabel or $required}
+                <label for="{$name}">
+                    {if $showLabel}
+                        {$label}{sp}
+                    {/if}
 
                     {if $required}
-                        <span class="icon-asterisk text-warning"></span>
+                        <svg aria-hidden="true" class="lexicon-icon lexicon-icon-asterisk reference-mark">
+                            <use xlink:href="{$pathThemeImages}/lexicon/icons.svg#asterisk" />
+                        </svg>
                     {/if}
                 </label>
+            {/if}
 
+            {if $showLabel}
                 {if $tip}
-                    <p class="liferay-ddm-form-field-tip">{$tip}</p>
+                    <span class="form-text">{$tip}</span>
                 {/if}
             {/if}
 
-            <input class="field form-control" id="{$name}" name="{$name}" placeholder="{$placeholder}" {if $readOnly}readonly{/if} type="text" value="{$value}">
+            <div class="input-group">
+                <div class="input-group-item">
+                    <input class="field form-control"
+                        {if $dir}dir="{$dir}"{/if}
+                        {if $readOnly}disabled{/if}
+                        id="{$name}"
+                        name="{$name}"
+                        placeholder="{$placeholder}"
+                        type="text"
+                        value="{$value}">
+                </div>
+            </div>
         </div>
     {/template}
 
 Why isn't the mask parameter added to the Soy template? The mask is not needed
 in the template because it's only used in the JavaScript for configuring the
 behavior of the timepicker. You don't need the dynamic rendering of the soy
-template to take the mask setting and configure it in the form. The maskv set by
+template to take the mask setting and configure it in the form. The mask set by
 the form builder is captured in the rendering of the timepicker itself.
 
 Now when you build the project and deploy your time field, you have a fully
