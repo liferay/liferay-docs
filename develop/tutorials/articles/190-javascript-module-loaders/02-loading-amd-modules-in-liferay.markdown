@@ -1,11 +1,10 @@
 # Loading AMD Modules in Liferay [](id=loading-amd-modules-in-liferay)
 
-Modularizing pieces of JavaScript code is a specification for the JavaScript 
-language called Asynchronous Module Definition, or AMD. The 
+Modularized JavaScript code is a specification for the JavaScript language
+called Asynchronous Module Definition, or AMD. The 
 [Liferay AMD Module Loader](https://github.com/liferay/liferay-amd-loader#amd-module-loader) 
-is Portal's native loader that you can use to load your AMD modules. This 
-tutorial covers how to use the Liferay AMD Module Loader to load your AMD 
-modules in Portal. 
+is the native loader that you can use to load your AMD modules. This tutorial
+covers how to use the Liferay AMD Module Loader. 
 
 +$$$
 
