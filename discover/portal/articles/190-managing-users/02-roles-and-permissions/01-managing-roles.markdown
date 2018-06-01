@@ -1,11 +1,11 @@
 # Managing Roles [](id=managing-roles)
 
-Manage roles and permissions in the Control Panel (*Control Panel* &rarr;
-*Users* &rarr; *Roles*). There you'll find an application for creating roles,
-granting them permissions, and assigning users to them. Roles can be scoped by
-portal, site, or organization.
+You manage Roles and Permissions in the Control Panel (*Control Panel* &rarr;
+*Users* &rarr; *Roles*). There you'll find an application for creating Roles,
+granting them permissions, and assigning Users to them. Roles can be scoped by
+portal, Site, or Organization.
 
-Defining a role's permissions is a topic deserving its own article. Read
+Defining a Role's permissions is a topic deserving its own article. Read
 [here](/discover/portal/-/knowledge_base/7-1/defining-role-permissions) about
 defining a role's permissions.
 
@@ -13,31 +13,31 @@ defining a role's permissions.
 
 ## Creating Roles [](id=creating-roles)
 
-Determine the scope of the role you must create. Roles can be scoped to the
-whole portal (Regular roles), to a specific site (Site roles), or to an
-organization (Organization roles). 
+Determine the scope of the Role you must create. Roles can be scoped globally
+(Regular Roles), to a specific Site (Site Roles), or to an Organization
+(Organization Roles). 
 
-To create a role:
+To create a Role:
 
-1.  Click the tab for the proper role scope, then click the *Add*
+1.  Click the tab for the proper Role scope, then click the *Add*
     (![Add](../../../images/icon-add.png)) button. 
 
-2.  Enter a title and description for the role. The title field is required but
-    the description is optional. 
+2.  Enter a title and description. The title field is required but the
+    description is optional. 
 
 3.  Enter a Key, if desired. This required field provides a key that can be
-    used to refer to the role programmatically. It's auto-populated with the
+    used to refer to the Role programmatically. It's auto-populated with the
     title text, but you can override it if desired.
 
 4.  Click *Save*.
 
-Now the role is present in the database, and ready for further configuration.
+Now the Role is present in the database and ready for further configuration.
 
 ## Assigning Users to a Role [](id=assigning-users-to-a-role)
 
-Assign users to a role in the Assignees tab of the Add/Edit Role
+Assign users to a Role in the Assignees tab of the Add/Edit Role
 form. Roles are assigned to to Users, Sites, Organizations, or User Groups.
-Here's how to assign the User Group Manager role created in the last section to
+Here's how to assign the User Group Manager Role created in the last section to
 Users:
 
 1.  In the Assignees tab of the Add/Edit Role form, click the second level tab
@@ -45,11 +45,11 @@ Users:
 
 2.  Click the Add button (![Add](../../../images/icon-add.png)).
 
-3.  Select the users you want to add to the role and click *Add*.
+3.  Select the Users you want to add to the Role and click *Add*.
 
-If assigning a group, note that all users assigned to that group will inherit
-the role as well. 
+If assigning a group, note that all Users assigned to that group inherit the
+role as well. 
 
-That's a good start, but your role isn't worth the database row it occupies
-without defining permissions for the role. Read the next article to learn
+That's a good start, but your Role isn't worth the database row it occupies
+without defining permissions for the Role. Read the next article to learn
 how.
