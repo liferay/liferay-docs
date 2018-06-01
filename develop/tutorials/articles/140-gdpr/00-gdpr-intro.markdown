@@ -1,4 +1,4 @@
-# GDPR: Right to be Forgotten and Data Portability
+# GDPR: Right to be Forgotten and Data Portability [](id=gdpr-right-to-be-forgotten-and-data-portability)
 
 Enforcement of the General Data Protection Regulation (GDPR) began May 25,
 2018. Companies processing the personal data of EU residents must adopt
@@ -30,7 +30,7 @@ compiled in a web plugin. It's up to you. A sample web plugin containing this
 code can be referenced
 [here](https://github.com/liferay/liferay-plugins/tree/6.2.x/webs/sample-personal-data-web).
 
-## Right to Data Portability
+## Right to Data Portability [](id=right-to-data-portability)
 
 The 
 [right to data portability](https://gdpr-info.eu/art-20-gdpr/) 
@@ -187,7 +187,7 @@ Now the exported data is cleaner and only contains user-inputted personal data.
 As this code is essentially boilerplate for all of Liferay's service generated
 classes, you can generalize this solution using reflection. 
 
-## Right to be Forgotten
+## Right to be Forgotten [](id=right-to-be-forgotten)
 
 The 
 [right to erasure](https://gdpr-info.eu/art-17-gdpr/) 
@@ -196,7 +196,7 @@ user's personal data upon request (excluding data the
 organization has a legitimate reason to retain like financial records, public
 interest data, etc).
 
-### Erasing the data
+### Erasing the data [](id=erasing-the-data)
 
 Unfortunately, simply deleting the `User` object by calling
 `UserLocalServiceUtil.deleteUser(User user)` does not sufficiently fulfill this
@@ -226,7 +226,7 @@ matches.
 
     actionableDynamicQuery.performActions();
 
-### Anonymizing the data
+### Anonymizing the data [](id=anonymizing-the-data)
 
 But what if blogs contain valuable data we want to keep? Perhaps a community
 member wrote a blog post on DE 7.0 upgrade tips but now requests to be
@@ -304,7 +304,7 @@ Again, this solution is mostly boilerplate code and can be generalized to data
 built using 
 [Service Builder](/develop/tutorials/-/knowledge_base/6-2/service-builder).
 
-# Conclusion
+# Conclusion [](id=conclusion)
 
 These examples demonstrate how to leverage Liferay's existing APIs to address
 GDPR's new standard for personal data protection. Ultimately, true compliance
