@@ -36,7 +36,7 @@ and then edit the text before publishing:
           </lfr-editable>
         </h1>
 
-4. Click *Publish*.
+4.  Click *Publish*.
 
 Now your fragment contains editable text. Add it to a Content Page to be
 published:
@@ -56,6 +56,27 @@ published:
 
 The template saves automatically, and when it is turned into a page, the new
 text is displayed.
+
+## Making Images Editable [](id=making-images-editable)
+
+Like text, you can set images images as editable. An editable image can be
+selected from the user's local files or from the Documents and Media Library.
+You must be careful with defining styles for editable images since an image that
+without the proper dimensions or that is forced into a poorly sized space can
+have major negative effects on your layout. 
+
+Images use the same `<lfr-editable>` tag as text, but with the `img` type, like 
+this:
+    
+    <lfr-editable id="unique-id" type="img">
+       <img src="...">
+    </lfr-editable>
+
+After you add the `lfr-editable` tag with the type `img` to a Fragment, when 
+you add that Fragment to a page, you can then click on the editable image and 
+select a replacement.
+
+<!--Figure X: You can replace images in the Page Template editor.../../../images/editing-fragment-image.png -->
 
 ## Including Widgets Within A Fragment [](id=including-widgets-within-a-fragment)
 
@@ -113,6 +134,20 @@ Now you need to add it to a Content Page to display it.
 9.  Select the *Widget Page Template* and save.
 
 10. Now go back to your site, and select your new page.
+
+## Embedding Your Widget in a Fragment [](id=embedding-your-widget-in-a-fragment)
+
+If you have a custom widget that you want to embed in a fragment, you can 
+configure that widget to be embeddable. In order to embed your widget, it must
+be an OSGi Component. Inside the `@Component` annotation for the portlet class
+that you want to embed, add this property:
+
+    "com.liferay.fragment.entry.processor.portlet.alias=app-name"
+ 
+When you deploy your widget, it's available to add. The name you specify in the
+property must be appended to the `lfr-widget` tag like this:
+
+    <lfr-widget-app-name /> 
 
 Embedding widgets in Fragments opens a world of options. Now that you've
 explored some of the power of Fragments, next you'll learn about best practices
