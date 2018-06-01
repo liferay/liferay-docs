@@ -36,7 +36,7 @@ time you run Service Builder. All custom code should be placed in
 `*LocalServiceImpl`, where it will not be overwritten.
 
 For example, the Bookmarks application's
-[BookmarksEntryLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
+[BookmarksEntryLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
 class demonstrates the kinds of service methods that applications commonly need
 for working with an entity model. Click on the class's link to view some of its
 local service methods.
@@ -91,13 +91,13 @@ that, the generated `addEntry` method of `BookmarksEntryLocalServiceBaseImpl` is
 called to add the bookmark to the database. Lastly, the bookmark is added as a
 resource so that permissions can be applied to it later. To view the `addEntry`
 method in its entirety, see the
-[BookmarksEntryLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
+[BookmarksEntryLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksEntryLocalServiceImpl.java)
 class. 
 
 The Bookmarks application creates local services for BookmarksFolder entities as
 well as for BookmarksEntry entities. Take a look at the custom service methods
 available in the
-[BookmarksFolderLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksFolderLocalServiceImpl.java)
+[BookmarksFolderLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/service/impl/BookmarksFolderLocalServiceImpl.java)
 class for a better understanding of services available for bookmark folders.
 
 Before you can use any custom methods that you added to your `*LocalServiceImpl`

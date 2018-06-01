@@ -101,7 +101,7 @@ Here are descriptions of each of the `updateEntry` method's parameters:
     Low numbers take priority over higher numbers.
 
 The following code from Liferay's Wiki application's
-[WikiPageLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/wiki/wiki-service/src/main/java/com/liferay/wiki/service/impl/WikiPageLocalServiceImpl.java)
+[WikiPageLocalServiceImpl](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/wiki/wiki-service/src/main/java/com/liferay/wiki/service/impl/WikiPageLocalServiceImpl.java)
 Java class demonstrates invoking the `updateEntry` method on the wiki page
 entity called `WikiPage`. In your `add-` method, you could invoke `updateEntry`
 after adding your entity's resources. Likewise, in your `update-` method, you

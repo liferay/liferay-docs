@@ -23,10 +23,10 @@ are many services you'd like to expose only to your local project, and do not
 want other applications to have access to.
 
 In the Bookmarks application, for example, the
-[BookmarksEntryLocalService](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/service/BookmarksEntryLocalService.java)
+[BookmarksEntryLocalService](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/service/BookmarksEntryLocalService.java)
 interface provides the `openEntry` method, which opens a bookmark for viewing.
 The remote service interface
-[BookmarksEntryService](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/service/BookmarksEntryService.java),
+[BookmarksEntryService](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/service/BookmarksEntryService.java),
 however, does not
 provide this method. Why could this be?
 
@@ -41,7 +41,7 @@ tutorial.
 
 To see how you could call a local service from a portlet action class, you'll
 examine the
-[EditOrganizationMVCActionCommand](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/users-admin/users-admin-web/src/main/java/com/liferay/users/admin/web/portlet/action/EditOrganizationMVCActionCommand.java)
+[EditOrganizationMVCActionCommand](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/foundation/users-admin/users-admin-web/src/main/java/com/liferay/users/admin/web/portlet/action/EditOrganizationMVCActionCommand.java)
 class. Notice that this class has a private instance variable called
 `_dlAppLocalService`. The `_dlAppLocalService` instance variable of type
 `DLAppLocalService` gets an instance of `DLAppLocalService` at runtime via

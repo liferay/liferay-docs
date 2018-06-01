@@ -24,7 +24,7 @@ briefly in the sections that follow.
 The `<liferay-util:body-bottom>` tag is not a self-closing tag. The content 
 placed between the opening and closing of this tag is moved to the bottom 
 of the `body` tag. When something is passed using this taglib, the 
-[body_bottom.jsp](https://github.com/liferay/liferay-portal/blob/master/portal-web/docroot/html/common/themes/body_bottom.jsp#L25-L31) 
+[body_bottom.jsp](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/portal-web/docroot/html/common/themes/body_bottom.jsp#L26-L31) 
 is passed markup and outputs in this JSP. The attribute `outputKey` is the 
 reference key for this content.
 
@@ -56,7 +56,7 @@ Below is an example configuration for the `<liferay-util:body-bottom>` tag:
 
 The `<liferay-util:body-top>` tag is not a self-closing tag. The content placed 
 between the opening and closing of this tag is moved to the top of the 
-`body` tag. When something is passed using this taglib the [body_top.jsp](https://github.com/liferay/liferay-portal/blob/master/portal-web/docroot/html/common/themes/body_top.jsp#L25-L31) 
+`body` tag. When something is passed using this taglib the [body_top.jsp](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/portal-web/docroot/html/common/themes/body_top.jsp#L25-L31) 
 is passed markup and outputs in this JSP. The attribute `outputKey` is the 
 reference key for this content.
 
@@ -147,7 +147,7 @@ Here is an example that uses the `var` attribute:
 
 The `<liferay-util:html-bottom>` tag is not a self-closing tag. The content 
 placed between the opening and closing of this tag will be moved to the bottom 
-of the `html` tag. When something is passed using this taglib the [bottom.jsp](https://github.com/liferay/liferay-portal/blob/master/portal-web/docroot/html/common/themes/bottom.jsp#L53-L59) 
+of the `html` tag. When something is passed using this taglib the [bottom.jsp](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/portal-web/docroot/html/common/themes/bottom.jsp#L53-L59) 
 is passed markup and outputs in this JSP. The attribute `outputKey` is the 
 reference key for this content.
 
@@ -173,7 +173,7 @@ is passed to this tag:
 
 The `<liferay-util:html-top>` tag is not a self-closing tag. The content placed 
 between the opening and closing of this tag is moved to the `head` tag. 
-When something is passed using this taglib the [top_head.jsp](https://github.com/liferay/liferay-portal/blob/master/portal-web/docroot/html/common/themes/top_head.jsp#L147-L153) 
+When something is passed using this taglib the [top_head.jsp](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/portal-web/docroot/html/common/themes/top_head.jsp#L147-L153) 
 is passed markup and outputs in this JSP. The attribute `outputKey` is the 
 reference key for this content.
 

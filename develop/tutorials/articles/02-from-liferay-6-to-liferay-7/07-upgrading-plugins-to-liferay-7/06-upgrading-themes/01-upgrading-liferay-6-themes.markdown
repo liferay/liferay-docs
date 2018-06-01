@@ -596,8 +596,8 @@ Liferay Portal 6.1:
 
 See Liferay Portal's Breaking Changes for more details:
 
-- [Removed the Tags that Start with portlet:icon-](https://github.com/liferay/liferay-portal/blob/master/readme/7.0/BREAKING_CHANGES.markdown#removed-the-tags-that-start-with-portleticon-)
-- [Portlet Configuration Options May Not Always Be Displayed](https://github.com/liferay/liferay-portal/blob/master/readme/7.0/BREAKING_CHANGES.markdown#portlet-configuration-options-may-not-always-be-displayed)
+- [Removed the Tags that Start with portlet:icon-](/develop/reference/-/knowledge_base/7-0/breaking-changes#removed-the-tags-that-start-with-portleticon-)
+- [Portlet Configuration Options May Not Always Be Displayed](/develop/reference/-/knowledge_base/7-0/breaking-changes#portlet-configuration-options-may-not-always-be-displayed)
 
 #### Navigation Item Icons [](id=navigation-item-icons)
 
@@ -612,7 +612,7 @@ Liferay Portal 6.1:
 
     $theme.layoutIcon($nav_item.getLayout())
  
-See [Liferay Portal's Breaking Changes](https://github.com/liferay/liferay-portal/blob/master/readme/7.0/BREAKING_CHANGES.markdown#removed-the-icon-method-from-navitem) for more details.
+See [Liferay Portal's Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes#removed-the-icon-method-from-navitem) for more details.
 
 ### Upgrading Layout Templates [](id=upgrading-layout-templates)
 
