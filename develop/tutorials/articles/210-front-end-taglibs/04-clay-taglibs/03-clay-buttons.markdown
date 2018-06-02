@@ -106,4 +106,4 @@ Action button:
 
 [Clay Buttons](/develop/tutorials/-/knowledge_base/7-1/clay-buttons)
 
-[Clay Links](/develop/tutorials/-/knowledge_base/7-1/clay-links)
+[Clay Labels and Links](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links)

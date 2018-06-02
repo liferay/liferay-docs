@@ -159,17 +159,17 @@ The liferay-npm-bundler comes with default configuration presets that bundle
 several plugin types. You can use these presets to quickly configure your 
 `.npmbundlerrc` file: 
 
--  [Liferay-npm-bundler-preset-amd](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-amd)
+-  [Liferay-npm-bundler-preset-amd](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-amd)
 
--  [Liferay-npm-bundler-preset-angular](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-angular)
+-  [Liferay-npm-bundler-preset-angular](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-angular)
 
--  [Liferay-npm-bundler-preset-isomorphic](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-isomorphic)
+-  [Liferay-npm-bundler-preset-isomorphic](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-isomorphic)
 
--  [Liferay-npm-bundler-preset-react](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-react)
+-  [Liferay-npm-bundler-preset-react](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-react)
 
--  [Liferay-npm-bundler-preset-standard](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-standard)
+-  [Liferay-npm-bundler-preset-standard](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-standard)
 
--  [Liferay-npm-bundler-preset-vue](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-vue)
+-  [Liferay-npm-bundler-preset-vue](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-vue)
 
 Below is an example `.npmbundlerrc` file that uses the *standard* configuration 
 preset:
@@ -214,7 +214,7 @@ configuration preset example above, you can define your own `.babelrc` value in
 $$$
 
 The 
-[`liferay-standard` preset] (https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-preset-liferay-standard) 
+[`liferay-standard` preset] (https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/babel-preset-liferay-standard) 
 applies the following plugins:
 
 - [babel-plugin-normalize-requires](https://github.com/izaera/liferay-npm-build-tools/tree/master/packages/babel-plugin-normalize-requires)
@@ -249,7 +249,7 @@ use a configuration preset.
 Follow these steps to use a liferay-npm-bundler configuration preset in your 
 `.npmbundlerrc` file:
 
-1.  Create a `.npmbundlerrc` file in your project’s root folder, if it doesn't 
+1.  Create a `.npmbundlerrc` file in your project's root folder, if it doesn't 
     already exist.
 
 2.  Install the liferay-npm-bundler configuration preset. For example, you can 

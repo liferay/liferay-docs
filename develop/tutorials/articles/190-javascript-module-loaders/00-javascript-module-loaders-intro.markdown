@@ -1,14 +1,12 @@
 # JavaScript Module Loaders [](id=javascript-module-loaders)
 
-JavaScript modules encapsulate code into useful units that export their
-functions. Structuring an application this way makes it easier to work with in
-these ways: 
+A JavaScript module encapsulates code into a useful unit that exports its
+capability/value. This makes it easier to see the broader scope, easier to find
+what you're looking for, and keeps related code close together. A normal web
+page usually loads JavaScript files via HTML `script` tags. That's fine for
+small websites, but when developing large scale web applications, a more robust
+organization and loader is needed. A module loader lets an application load
+dependencies easily by specifying a string that identifies the JavaScript
+module's name.
 
-- Other modules can explicitly require this piece of code.
-- Structuring an application this way makes it easier to see the broader
-  scope.
-- Modular applications keep related functionality close together.
-- Modularized code makes it easier to find what you're looking for.
-
-These tutorials show you how to use JavaScript libraries not included in
-@product@ and how to load modules using AUI. 
+These tutorials show you how to load JavaScript modules in Portal. 

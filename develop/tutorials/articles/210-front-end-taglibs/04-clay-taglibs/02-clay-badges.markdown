@@ -73,7 +73,7 @@ Now you know how to use badges to keep track of values in your app.
 
 ## Related Topics [](id=related-topics)
 
-[Clay Labels](/develop/tutorials/-/knowledge_base/7-1/clay-labels)
+[Clay Labels and Links](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links)
 
 [Clay Cards](/develop/tutorials/-/knowledge_base/7-1/clay-cards)
 
