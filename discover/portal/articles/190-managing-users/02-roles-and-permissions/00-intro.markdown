@@ -72,6 +72,7 @@ In the Roles Application appears a list of all the Roles in Liferay, by
 scope. 
 
 These are some of the pre-configured regular Roles:
+
 - Guest: The Guest role is assigned to unauthenticated users and grants the
   lowest-level permissions. 
 - User: The User role is assigned to authenticated Users and grants basic
@@ -85,6 +86,7 @@ These are some of the pre-configured regular Roles:
   and Users.
 
 These are some of the pre-configured site roles:
+
 - Site Member: The Site Member Role grants basic privileges within a Site, such
   as permission to visit the Site's private pages.
 - Site Administrator: The Site Administrator Role grants permission to manage
@@ -99,6 +101,7 @@ These are some of the pre-configured site roles:
   Administrators or Site Owners.
 
 These are some of the pre-configured organization roles:
+
 - Organization User: The Organization User role grants basic privileges within
   an Organization. If the Organization has an attached Site, the Organization
   User Role implicitly grants the Site member Role within the attached Site.
