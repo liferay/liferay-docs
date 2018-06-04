@@ -7,13 +7,13 @@ in the remaining articles.
 **Modularized Search Functionality**
 : Users of search in prior versions will think of all the search functionality
 existing in one place: the Search portlet. Now each separate feature is
-available as its own portlet, so you can drag and drop your way to the perfectly
-customized search page. The search configurations that existed in the previous
-version are still available, but the setting you're looking for might be in a
-slightly different location due to the modularization of search in
+available in a separate portlet, so you can drag and drop your way to the
+perfectly customized search page. The search configurations that existed in the
+previous version are still available, but the setting you're looking for might
+be in a slightly different location due to the modularization of search in
 @product-ver@. The articles here will help familiarize you with the new look.
 
-![Figure 2: The search functionality is now distributed across several portlets.](../../images/search-widgets.png)
+![Figure 2: The search functionality is now distributed across several widgets.](../../images/search-widgets.png)
 
 **Search Administration**
 : Carry out search administration tasks (like reindexing the search indexes) in
