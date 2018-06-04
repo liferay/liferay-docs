@@ -49,18 +49,18 @@ in every page by default), enter a term, and click *Enter*.
 
 +$$$
 
-**Search Modularization:** If you're upgrading from an earlier @product@ version, you'll
-expect the embedded search bar to be the entry into the Search application.
-However, the search functionality is modularized now, and the Search Bar is its
-own widget now. See the 
+**Search Modularization:** If you're upgrading from an earlier @product@
+version, you'll expect the embedded search bar to be the entry into the Search
+application.  However, the search functionality is modularized now, and the
+Search Bar is a standalone application. See the 
 [article on new search features](/discover/portal/-/knowledge_base/7-1/whats-new-with-search) 
 for more information.
 
 $$$
 
-A results page is displayed. If there are hits to search engine documents,
-you'll see them as search results in the right hand column. In the left hand
-column you'll see search facets.
+After search is triggered, a results page is displayed. If there are hits to
+search engine documents, you'll see them as search results in the right hand
+column. In the left hand column you'll see search facets.
 
 ![Figure 3: Results are displayed in the Search Results portlet.](../../images/search-results.png)
 

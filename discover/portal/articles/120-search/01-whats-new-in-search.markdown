@@ -1,17 +1,18 @@
 # What's New with Search? [](id=whats-new-with-search)
 
-There are lots of new features in the @product-ver@ search functionality. Use
-this brief overview to get you familiar with the changes, and learn more details
-in the remaining articles.
+There are lots of new features in the search functionality. Use this brief
+overview to get you familiar with the changes, and learn more details in the
+remaining articles.
 
 **Modularized Search Functionality**
 : Users of search in prior versions will think of all the search functionality
 existing in one place: the Search portlet. Now each separate feature is
-available in a separate portlet, so you can drag and drop your way to the
-perfectly customized search page. The search configurations that existed in the
-previous version are still available, but the setting you're looking for might
-be in a slightly different location due to the modularization of search in
-@product-ver@. The articles here will help familiarize you with the new look.
+available in a separate portlet, and you can drag and drop search widgets onto a
+page, creating the perfectly customized search page. The search configurations
+that existed in the previous version are still available, but the setting you're
+looking for might be in a slightly different location due to the modularization
+of search in @product-ver@. The articles here will help familiarize you with the
+new look.
 
 ![Figure 1: The search functionality is now distributed across several widgets.](../../images/search-widgets.png)
 
@@ -23,23 +24,23 @@ the Search administration application in the Control Panel (Control Panel
 ![Figure 2: Reindexing content now happens in the Search administration application.](../../images/search-admin.png)
 
 **Default/Customizable Search Pages**
-: There's a pre-configured search page template you can use to get a sensible
-default search page up and running.
+: Use a pre-configured search page template to get a sensible default search
+page up and running.
 
 ![Figure 3: Use the search page template to create your site's dedicated search page.](../../images/search-page-template.png)
 
 **Advanced Search Syntax**
 : Use Elasticsearch's Query String syntax to create advanced search queries (if
-Elasticsearch is your Search Engine). The actual query syntax and further
+using Elasticsearch as your Search Engine). The actual query syntax and further
 processing are dependent on the search engine's implementation details. Consult
 your search provider's documentation for more information.
 
 ![Figure 4: Use Elastic's Query String syntax to construct advanced search queries.](../../images/search-advanced-syntax.png)
 
 **Multiple Facet and Term Selection**
-: Narrow search results using Facets. In @product-ver@, continue refining
-results by selecting as many facets and as many terms as necessary. Previously,
-only one facet term could be used at a time.
+: Narrow search results using Facets. Continue refining results by selecting as
+many facets and as many terms as necessary. Previously, only one facet term
+could be used at a time.
 
 ![Figure 5: Facets and their terms can be selected in multiples to refine search results.](../../images/search-multiple-facet-selection.png)
 

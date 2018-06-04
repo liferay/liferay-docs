@@ -1,7 +1,7 @@
 # Configuring Search Pages [](id=configuring-search-pages)
 
-In @product-ver@ there are multiple ways to skin the search cat (disclaimer: no
-actual cats have been harmed during the writing this article). 
+There are multiple ways to skin the search cat (disclaimer: no actual cats have
+been harmed during the writing this article). 
 
 If you're unsure which approach to take, use the
 [default](#default-search-pages) configuration. It provides a sensible starting
@@ -28,8 +28,8 @@ the out-of-the-box search experience has two components for end users:
 1. A search bar embedded on each page.
 2. A default search page where search requests are routed.
 
-Behind the scenes, The search bar widget is configured to point to the default
-search page with the friendly URL `/search`.
+Behind the scenes, The search bar widget points to a hidden search page with the
+friendly URL `/search`.
 
 ![Figure 1: By default, the embedded search bar points to the pre-configured `/search` destination page.](../../images/search-dest-page.png)
 
@@ -38,9 +38,10 @@ results are displayed in the Search Results widget.
 
 ![Figure 2: The default page is pre-configured with the Search Results widget and the various Facet widgets to provide a full search experience.](../../images/search-default-page.png)
 
-The default search page is based on a Search page template, but configured to
-not inherit changes from the page template. That means you can customize the
-search page directly without changing the template's inheritance configuration.
+The default search page is based on a Search page template, but but it doesn't
+inherit changes from the page template by default. That means you can customize
+the search page directly without changing the template's inheritance
+configuration.
 
 ![Figure 3: Configure the Search page. By default, it doesn't inherit changes
 from the page template.](../../images/search-page-config.png)
@@ -56,8 +57,8 @@ an option.
 It's reasonable to create the search experience from the ground up. If you're
 working from a newly created site, it's a necessity. These steps will show you
 how to switch to a manually configured search experience in the default site,
-but you can skip the steps on disabling the default search experience if you're
-starting with a new site:
+but you can skip the step on deleting the default search page if you're starting
+with a new site:
 
 1.  Delete the existent search page by navigating to the default site's menu and
     clicking *Build* &rarr; *Site Pages*. Click the Search page's Options menu
@@ -108,17 +109,17 @@ it's difficult to customize. If you liked the old application, it's still
 available. Enable it with these steps:
 
 1.  Delete the default search page. From the site menu, click *Build* &rarr;
-    *Site Pages*. Click the Options menu
-    (![Options](../../images/icon-options.png)) and choose *Delete*. 
+    *Pages*. Click the Options menu (![Options](../../images/icon-options.png))
+    for the Search page and choose *Delete*. 
 
-2.  Enable the legacy search application. Navigate to System Settings &rarr;
-    Search &rarr; Search Web and check the box for *Classic Search Widget in
-    Front Page*.
+2.  Enable the legacy search application. Go to Control Panel &rarr;
+    Configuration &rarr; System Settings &rarr; Search &rarr; Search Web and
+    check the box for *Classic Search Widget in Front Page*.
 
 Now your portal's search is backed by the legacy Search application, and it's
 embedded on each page in the default theme. To add the legacy Search application
 to a page, open the Add Widget menu, find the Search widget under the Tools
 category, and drag and drop it onto the page.
 
-Configure the default search behavior to suit your needs. Here you've seen three
-distinct search configurations for your portal pages.
+Configure the portal's search behavior to suit your needs. Here you've seen
+three distinct search configurations.
