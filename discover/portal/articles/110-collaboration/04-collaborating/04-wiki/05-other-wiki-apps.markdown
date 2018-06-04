@@ -8,7 +8,7 @@ particular wiki nodes. The following widgets are available:
 -   **Wiki Display:** Displays a single wiki node.
 
 You can find these widgets in the *Add* 
-(![Add](../../../images/icon-control-menu-add.png)) &rarr; *Widgets* &rarr; 
+(![Add](../../../../images/icon-control-menu-add.png)) &rarr; *Widgets* &rarr; 
 *Wiki* menu. 
 
 ## Page Menu [](id=page-menu)
@@ -19,7 +19,7 @@ Menu widget to a site page, you must set the wiki page it displays links from.
 Follow these steps to do so: 
 
 1.  Click the widget's *Options* icon 
-    (![Options](../../../images/icon-app-options.png)) and select 
+    (![Options](../../../../images/icon-app-options.png)) and select 
     *Configuration*. 
 
 2.  In the configuration's *Setup* tab, choose the wiki node then click *Save*. 
@@ -45,7 +45,7 @@ Follow these steps to configure the Tree Menu widget after adding it to a site
 page:
 
 1.  Click the widget's *Options* icon 
-    (![Options](../../../images/icon-app-options.png)) and select 
+    (![Options](../../../../images/icon-app-options.png)) and select 
     *Configuration*. 
 
 2.  In the configuration's *Setup* tab, choose the wiki node then select the 
@@ -66,7 +66,7 @@ The Wiki Display widget lets you focus user attention on one wiki node. After
 adding the widget to a page, follow these steps to configure it:
 
 1.  Click the widget's *Options* icon 
-    (![Options](../../../images/icon-app-options.png)) and select 
+    (![Options](../../../../images/icon-app-options.png)) and select 
     *Configuration*. 
 
 2.  In the configuration's *Setup* tab, choose the wiki node then click *Save*. 

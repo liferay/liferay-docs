@@ -14,7 +14,7 @@ Your site's wiki nodes appear in tabs across the top of the widget.
 ![Figure 1: Users can interact with your Wiki nodes when you add the Wiki widget to a page.](../../../../images/wiki-page-full.png)
 
 To view the Wiki widget's configuration options, click its *Options* icon 
-(![Options](../../../images/icon-app-options.png)) and select *Configuration*. 
+(![Options](../../../../images/icon-app-options.png)) and select *Configuration*. 
 The Configuration screen appears with these tabs:
 
 -   **Setup**: Lets you choose wikis to display and gives you several options 
