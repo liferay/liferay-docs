@@ -146,7 +146,7 @@ Under `value`, specify any `@DDMFormLayoutPage`s that you want to use.
 value is one or more `@DDMFormLayoutRow`s.
 
 **Note:** The default title of the layout pages are `%basic` and `%properties` for all of
-@product@'s field types, but Forms allows it to be customized if it's desired. If you want to change the title of one of the layout pages, you just need to create a new key in the language resources files (`src/resources/content/Language_xx_XX.properties`) and replace the current title of a layout page by it. For example, consider you've created the key `advanced=Advanced` in the `src/resources/content/Language.properties`, then you only need to change the `title` from `%basic` to `%advanced`.
+@product@'s field types, but Forms allows it to be customized if it's desired. If you want to change the title of one of the layout pages, you just need to create a new key in the language resources files (`src/resources/content/Language_xx_XX.properties`) and replace the current title of a layout page by it. For example, consider you've created the key `advanced=Advanced` in the `src/resources/content/Language.properties` with its respective translations in the other language resources files, then you only need to change the `title` from `%basic` to `%advanced`.
 
 `@DDMFormLayoutRow`
 : Use this to lay out the number of columns you want in the row. Most settings
