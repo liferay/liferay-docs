@@ -88,4 +88,53 @@ complete.
 
 ## Creating an Application
 
+When you have an application that can use OAuth 2.0 for authorization, you must
+register that application so @product@ can recognize it. Do this by accessing
+*Control Panel* &rarr; *Configuration* &rarr; *OAuth2 Administration*: 
 
+1.  Click the *Add* (![add](../../../icon-add.png)) button. 
+
+2.  Fill out the form (description below). 
+
+3.  Click *Save* to save the application. 
+
+![Figure x: Adding an application registers it so users can authorize access to their data.](../../images/oauth-new-application.png)
+
+**Name:** Give the application a recognizable title. 
+
+**Website URL:** Add a link to the application's website. 
+
+**Callback URIs:** Enter at least one (comma-separated) URI where users should
+be redirected after they authorize (or refuse to authorize) access to their
+accounts. This should link to a handler for whichever Allowed Authorization
+Types you support (see below). 
+
+**Client Profile:** Choose a template that selects the usual authorization types
+for that profile. For example, if your application is a web application, choose
+*Web Application*, and these authorization types are selected automatically:
+Authorization Code, Client Credentials, Refresh Token, and Resource Owner
+Password Credentials. These are OAuth 2 "flows" documented in the 
+[OAuth2 RFC 6749 Standards Document](https://tools.ietf.org/html/rfc6749). 
+If you want to select authorization types manually, select *Other*. 
+
+**Allowed Authorization Types:** Select the defined OAuth 2 
+[protocol flows](https://tools.ietf.org/html/rfc6749#section-1.2) your
+application supports. Several common combinations are defined for you in the
+various Client Profiles above. 
+
+After you save the form, it reappears with some additional fields: 
+
+**Client ID:** The system generates this for you; it's an identifier for your
+application, so that @product@ knows what application is being authorized to
+access user data. 
+
+**Client Secret:** Click the *pencil* icon to generate a client secret. The
+secret identifies the client is genuine during the authorization process (see
+figure 1 above). 
+
+**Icon:** Upload an icon that your application's users will identify with your
+application. This is displayed on the authorization screen. 
+
+**Privacy Policy URL:** Add a link to your application's privacy policy. 
+
+**Token Introspection:** ???
