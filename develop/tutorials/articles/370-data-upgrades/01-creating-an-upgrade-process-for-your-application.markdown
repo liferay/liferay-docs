@@ -38,9 +38,14 @@ It's time to get started.
 
 In your module's `bnd.bnd` file, specify a `Liferay-Require-SchemaVersion`
 header with the new schema version value. Here's an example schema version
-header for a module whose new schema is version `1.1.0`: 
+header for a module whose new schema is version `1.1`: 
 
-        Liferay-Require-SchemaVersion: 1.1.0
+    Liferay-Require-SchemaVersion: 1.1
+
+Specifying the major and minor schema version only (format `major.minor`) gives
+your module flexibility to use any micro schema version. This lets you disregard
+new micro schema versions or upgrade to them when you want. You can also revert
+micro schema versions. 
 
 +$$$
 
