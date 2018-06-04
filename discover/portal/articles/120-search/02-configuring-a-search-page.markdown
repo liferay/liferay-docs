@@ -1,4 +1,4 @@
-# Configuring Search Pages
+# Configuring Search Pages [](id=configuring-search-pages)
 
 In @product-ver@ there are multiple ways to skin the search cat (disclaimer: no
 actual cats have been harmed during the writing this article). 
@@ -20,7 +20,7 @@ understand the full suite of configuration options.
 Search display pages are where users go to enter search terms and browse search
 results. 
 
-## Default Search Pages
+## Default Search Pages [](id=default-search-pages)
 
 Using the default site and the default theme with the default search settings,
 the out-of-the-box search experience has two components for end users:
@@ -31,18 +31,18 @@ the out-of-the-box search experience has two components for end users:
 Behind the scenes, The search bar widget is configured to point to the default
 search page with the friendly URL `/search`.
 
-![Figure x: By default, the embedded search bar points to the pre-configured `/search` destination page.](../../images/search-dest-page.png)
+![Figure 1: By default, the embedded search bar points to the pre-configured `/search` destination page.](../../images/search-dest-page.png)
 
 Enter a search term and you're redirected to the default search page, where
 results are displayed in the Search Results widget.
 
-![Figure x: The default page is pre-configured with the Search Results widget and the various Facet widgets to provide a full search experience.](../../images/search-default-page.png)
+![Figure 2: The default page is pre-configured with the Search Results widget and the various Facet widgets to provide a full search experience.](../../images/search-default-page.png)
 
 The default search page is based on a Search page template, but configured to
 not inherit changes from the page template. That means you can customize the
 search page directly without changing the template's inheritance configuration.
 
-![Figure x: Configure the Search page. By default, it doesn't inherit changes
+![Figure 3: Configure the Search page. By default, it doesn't inherit changes
 from the page template.](../../images/search-page-config.png)
 
 If you require just a few changes to the default page, don't abandon it and
@@ -51,7 +51,7 @@ adding, configuring, and removing widgets on the page. On the other hand, if you
 want a clean break from the default search page, starting from scratch is also
 an option.
 
-## Manual Search Page Configuration
+## Manual Search Page Configuration [](id=manual-search-page-configuration)
 
 It's reasonable to create the search experience from the ground up. If you're
 working from a newly created site, it's a necessity. These steps will show you
@@ -67,7 +67,7 @@ starting with a new site:
     Once deleted, the search bar disappears from your site pages, replaced by a
     warning message visible only to site administrators:
 
-    ![Figure x: The search bar is only visible if it points to an existent page.](../../images/search-bar-warning.png)
+    ![Figure 4: The search bar is only visible if it points to an existent page.](../../images/search-bar-warning.png)
 
 2.  Create a new page named whatever you want (_Finders Keepers_, perhaps). Make
     it hidden or add it to the navigation, as you please (the default search
@@ -77,7 +77,7 @@ starting with a new site:
     template. Find the template in the Add Site Page form. It's under *Global
     Templates*.
 
-    ![Figure x: There's a handy page template for creating search pages.](../../images/search-page-template.png)
+    ![Figure 5: There's a handy page template for creating search pages.](../../images/search-page-template.png)
 
 3.  If you're creating a page not backed by the template, add and configure all
     the widgets you need. You'll find all the available search widgets in the
@@ -96,7 +96,7 @@ starting with a new site:
 
 Now your search page is up and running.
 
-## Legacy Search Experience
+## Legacy Search Experience [](id=legacy-search-experience)
 
 In prior versions, the search experience was encapsulated in one application,
 *Search*. It was embedded in the default theme, just like the search bar is now.

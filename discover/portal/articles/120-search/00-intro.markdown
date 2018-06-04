@@ -45,7 +45,7 @@ guide](/discover/deployment/-/knowledge_base/7-1/installing-a-search-engine).
 Searching is simple and straightforward. Find a search bar (there's one embedded
 in every page by default), enter a term, and click *Enter*.
 
-![Figure 3: There's a search bar embedded on all pages by default.](../../images/search-bar.png)
+![Figure 2: There's a search bar embedded on all pages by default.](../../images/search-bar.png)
 
 +$$$
 
@@ -62,7 +62,7 @@ A results page is displayed. If there are hits to search engine documents,
 you'll see them as search results in the right hand column. In the left hand
 column you'll see search facets.
 
-![Figure 4: Results are displayed in the Search Results portlet.](../../images/search-results.png)
+![Figure 3: Results are displayed in the Search Results portlet.](../../images/search-results.png)
 
 The search bar, search results, and search facets make up three powerful
 features in the search UI.
@@ -86,7 +86,7 @@ used is dependent on [algorithms provided by the search engine
 
 Facets are a core feature of the Search functionality.
 
-![Figure 5: *Site* and *Type* are two of the facet sets you'll encounter. They let you drill down to results that contain the search terms you entered.](../../images/search-faceted-search.png)
+![Figure 4: *Site* and *Type* are two of the facet sets you'll encounter. They let you drill down to results that contain the search terms you entered.](../../images/search-faceted-search.png)
 
 Facets allow users of the Search application to filter search results. Think of
 facets as buckets that hold similar search results. You might want to see the
