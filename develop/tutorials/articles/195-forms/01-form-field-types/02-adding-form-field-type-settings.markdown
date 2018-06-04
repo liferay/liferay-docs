@@ -394,7 +394,7 @@ value.
                         name="{$name}"
                         placeholder="{$placeholder}"
                         type="text"
-                        value="{$value}">
+                        value="{$displayValue}">
                 </div>
             </div>
         </div>
