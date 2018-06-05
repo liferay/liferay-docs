@@ -61,6 +61,8 @@ your server's activation upon reconnection (you shouldn't need to restart the
 server). If for some reason the connection can't be restored, Liferay Support 
 will provide an alternative way to activate your server. 
 
+![Figure 1: A warning message is displayed to administrators if the server can't connect to LCS to validate the subscription.](../../images-dxp/lcs-grace-period.png)
+
 While disconnected from LCS, the LCS client app continually attempts to 
 reconnect. If reconnection continues to fail, ensure that your server can access 
 `lcs.liferay.com` and `lcs-gateway.liferay.com`. If the LCS client app stops 
@@ -79,8 +81,6 @@ you can force reconnection by redeploying the app. Follow these steps to do so:
     [connect to LCS through a proxy](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#preconfiguring-the-lcs-client-to-connect-through-a-proxy), 
     and configured this inside the LCS client app, make sure the app you deploy 
     is also configured to do so. 
-
-![Figure 1: A warning message is displayed to administrators if the server can't connect to LCS to validate the subscription.](../../images-dxp/lcs-grace-period.png)
 
 You should also ensure that you've enabled email notifications in LCS for server 
 disconnection events. To do this, you must create a notification rule that sends 
