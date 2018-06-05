@@ -2,13 +2,13 @@
 
 @product@ contains an expansive collaboration suite that empowers users to 
 create content and communities that they couldn't create alone. A robust 
-document management system is a key component of this suite. As users produce 
-digital assets--documents, videos, audio--they can store and share them using 
-the Documents and Media Library. Documents and Media supports file check in and 
-check out to prevent conflicting edits from multiple users, and maintains a 
-version history of those files. It also contains its own repository, and for 
-added flexibility can connect to external repositories. Once files exist in 
-Documents and Media, users can insert them in other content like blog posts and 
+document management system is a key component of this suite. As users produce
+digital assets---documents, videos, audio---they can store and share them using
+the Documents and Media Library. Documents and Media supports file check in and
+check out to prevent conflicting edits from multiple users, and maintains
+a version history of those files. It also contains its own repository, and for
+added flexibility can connect to external repositories. Once files exist in
+Documents and Media, users can insert them in other content like blog posts and
 wiki articles. 
 
 The collaboration suite also contains apps that let users share information and 
