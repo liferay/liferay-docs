@@ -10,9 +10,6 @@ questions.
 - Which database will you use with @product@?
 - How do you plan to store your data?
 - Can your network support @product@?
-<!--
-- Will you enable Liferay's PACL security feature?
--->
 
 Next, you'll answer these questions and learn the basic steps for installing
 @product@.
@@ -270,12 +267,6 @@ Liferay Marketplace. Some of the key features the Marketplace plugin enables are
 -   Bundled Apps: easily manage apps that may come bundled with your @product@
 -   Developer Apps: ability to manage apps that you're developing
 -   License Manager: streamlined license management for your @product@ and apps
-
-<!-- TODO uncomment when PACL is supported. Jim
-You will want to make sure Portal Access Control Lists are enabled if you intend
-to download and install apps from Marketplace. This is an additional layer of
-security that defines various permissions that apps may or may not have.
---> 
 
 The portal installation process deploys and registers the Marketplace plugin
 automatically. If you're installing @product@ in an environment that would
