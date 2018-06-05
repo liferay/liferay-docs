@@ -1,30 +1,30 @@
-# Installing @product@ on JBoss EAP 6.4 [](id=installing-liferay-on-jboss-eap-6-4)
+# Installing @product@ on JBoss EAP
 
 Installing @product@ manually requires these basic steps:
 
-- Installing @product@ dependencies to your application server
-- Configuring your application server for @product@
-- Installing the @product@ WAR file to your application server
+- [Installing @product@ dependencies to your application server](#installing-dependencies)
+- [Configuring your application server for @product@](#configuring-jboss)
+- [Installing the @product@ WAR file to your application server](#deploying-product)
 
-In this article, you'll step through these basic steps and install @product@ on
-your existing JBoss EAP 6.4 application server. Before proceeding, you should
-also download the latest dependencies ZIP file and OSGi JARs ZIP file from
-[the available releases page](https://web.liferay.com/downloads/liferay-portal/available-releases)
-as well as the @product@ WAR file.
+In this article, you'll step through these steps and install @product@ on your
+existing JBoss EAP 7.1 application server. Before proceeding, you should
+download the following files from the
+[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise):
 
-**Liferay Home** is one folder above JBoss's install location.
+- @product@ WAR file
+- Dependencies ZIP file
+- OSGi JARs ZIP file
+
 [*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
-refers to the folder containing your JBoss server folder. When @product@ is
-installed on JBoss, the Liferay Home folder contains the JBoss server folder as
-well as `data`, `deploy`, `logs`, and `osgi` folders. You'll also see the term
-`$JBOSS_HOME` used in this guide. `$JBOSS_HOME` refers to your JBoss server
-folder. This folder is usually named `jboss-eap-[version]`.
+is the folder containing your JBoss server folder. After installing and
+deploying @product@, the Liferay Home folder contains the JBoss server folder as
+well as `data`, `deploy`, `logs`, and `osgi` folders. `$JBOSS_HOME` refers to
+your JBoss server folder. This folder is usually named `jboss-eap-[version]`.
 
-## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
+## Installing Dependencies [](id=installing-dependencies)
 
-@product@ depends on many JARs that are included in the @product@ JBoss bundle. Some
-JARs in the bundle are not strictly required but can still be useful. You can
-download the required JARs from third-parties, as described below.
+@product@ depends on several Liferay-specific and third-party JARs. You can
+download and install the required JARs, as described below.
 
 1. Create the folder `$JBOSS_HOME/modules/com/liferay/portal/main`. Unzip the
    the @product@ Dependencies zip file and copy the `.jar` files to this
@@ -415,7 +415,7 @@ tutorial to learn how to configure @product@ plugin access to resources.
 <!-- JSF configuration sections go here, when they've been tested for @product-ver@
 + JBoss bundles. -Cody -->
 
-## Deploy @product@ [](id=deploy-liferay)
+## Deploying @product@ [](id=deploying-product)
 
 1. If the folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists
    in your JBoss installation, delete all of its subfolders and files.
