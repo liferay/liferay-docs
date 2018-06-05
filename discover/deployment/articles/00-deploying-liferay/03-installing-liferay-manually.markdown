@@ -67,6 +67,8 @@ application server and point it to your mail server. Once you've created a mail
 session, you can point @product@ to it through your `portal-ext.properties` file
 or through the Control Panel.
 
+---
+
 You now have all the background information for deciding whether to use
 @product@'s built-in data source or the one provided by your application server.
 Similarly, you can now decide whether to use @product@'s mail session or your
