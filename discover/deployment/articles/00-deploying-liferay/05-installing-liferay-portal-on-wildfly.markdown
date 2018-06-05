@@ -47,7 +47,9 @@ required JARs from third-parties, as described below.
     same folder. For example, for MySQL,
     [download the MySQL Connector/J driver](http://dev.mysql.com/downloads/connector/j/)
     and put its `.jar` file into the
-    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder.
+    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder. The `mariadb.jar`,
+    `mysql.jar`, and `postgresql.jar` driver JARs are also available in the
+    Wildfly bundle.
 
 3.  Download the remaining required JARs and insert them into the same folder. 
 
