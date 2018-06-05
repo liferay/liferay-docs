@@ -81,7 +81,8 @@ required JARs from third-parties, as described below.
                 <resource-root path="com.liferay.petra.reflect.jar" />
                 <resource-root path="com.liferay.petra.string.jar" />
                 <resource-root path="com.liferay.registry.api.jar" />
-                <resource-root path="mysql-connector-java-[version].jar" />
+                <resource-root path="hsql.jar" />
+                <resource-root path="mysql.jar" />
                 <resource-root path="portal-kernel.jar" />
                 <resource-root path="portlet.jar" />
             </resources>
@@ -94,8 +95,7 @@ required JARs from third-parties, as described below.
             </dependencies>
         </module>
 
-    Make sure to replace `[version]` with the correct version of the MySQL JDBC
-    driver. If you are using a different database, replace the MySQL `.jar` with 
+    If you are using a different database, replace the MySQL `.jar` with 
     the driver JAR for your database (e.g., HSQL, PostgreSQL, etc.).
 
 5.  Create an `osgi` folder in your Liferay Home folder. Then extract the OSGi
@@ -361,7 +361,7 @@ If you want Wildfly to manage your data source, follow these steps:
             </security>
         </datasource>
 
-    Be sure to replace the database name (i.e. `lportal`), user name, and
+    Be sure to replace the database name (i.e., `lportal`), user name, and
     password with the appropriate values. 
 
     +$$$
@@ -376,7 +376,9 @@ If you want Wildfly to manage your data source, follow these steps:
     found within the `<datasources>` element:
 
         <drivers>
-            <driver name="mysql" module="com.liferay.portal"/>
+            <driver name="mysql" module="com.liferay.portal">
+                <driver-class>com.mysql.jdbc.Driver</driver-class>
+            </driver>
         </drivers>
 
 Your final data sources subsystem should look like this:
@@ -392,7 +394,9 @@ Your final data sources subsystem should look like this:
                     </security>
                 </datasource>
                 <drivers>
-                    <driver name="mysql" module="com.liferay.portal"/>
+                    <driver name="mysql" module="com.liferay.portal">
+                        <driver-class>com.mysql.jdbc.Driver</driver-class>
+                    </driver>
                 </drivers>
             </datasources>
         </subsystem>
@@ -417,7 +421,7 @@ If you want to manage your mail session with Wildfly, follow these steps:
 1.  Specify your mail subsystem in the
     `$WILDFLY_HOME/standalone/configuration/standalone.xml` file like this:
 
-    <subsystem xmlns="urn:jboss:domain:mail:2.0">
+    <subsystem xmlns="urn:jboss:domain:mail:3.0">
         <mail-session jndi-name="java:jboss/mail/MailSession" name="mail-smtp">
             <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp" username="USERNAME" password="PASSWORD"/>
        </mail-session>
