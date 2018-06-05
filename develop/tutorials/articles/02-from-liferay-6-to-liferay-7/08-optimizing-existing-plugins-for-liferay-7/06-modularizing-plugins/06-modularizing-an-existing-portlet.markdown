@@ -57,35 +57,30 @@ should be used in their respective build frameworks:
 
 $$$
 
-1.  Create the parent directory for your application. This parent directory is
-    home for your application's independent modules and configuration files. For
-    example, if your application's name is *Tasks*, then your parent directory
-    could be *tasks*.
+1.  Create your application's parent folder. It is home for your application's
+    independent modules and configuration files. For example, if your
+    application's name is *Tasks*, then your parent folder could be *tasks*.
     
-    If your application uses Liferay Service Builder, the
-    following Blade CLI command is needed. This command generates the service
-    implementation, service API modules, and expects the parent directory to be empty. 
-    It will create the parent directory, if it is not present, using the application name:
+    If your application uses Liferay Service Builder, use the following
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
+    command to generate the parent folder and service implementation and service
+    API modules in it. If the parent folder already exists, it must be empty.
+    This command names the parent folder after the `APPLICATION_NAME`: 
 
         blade create -t service-builder -p [ROOT_PACKAGE] [APPLICATION_NAME]
 
-2.  Create the directory structure skeleton for your web client module. You can
-    do this automatically by using Blade CLI. You can learn how to install
-    Blade CLI by visiting the
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
-    tutorial section and you can view examples of
-    [Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
-    by visiting the respective tutorials.
+    The `*-service` and `*-api` module folders are described later in this
+    tutorial. 
+
+2.  Create the folder structure for your web client module. You can do this 
+    automatically by using Blade CLI. The 
+    [portlet tutorials](/develop/tutorials/-/knowledge_base/7-0/portlets)
+    demonstrate creating all different kinds of portlets.
 
     Navigate to your parent directory (e.g., `tasks`) and run the following
     Blade CLI command to generate a generic web client module structure:
 
         blade create -t mvc-portlet -p [ROOT_PACKAGE] [APPLICATION_NAME]-web
-    
-
-    If you used the `blade create service-builder` command to generate
-    implementation and API modules, ignore the `*-service` and `*-api` folders
-    for now; you'll learn about them later in this tutorial.
 
 3.  Replace the `/src/main/java/[APPLICATION_NAME]` folder with your root
     package. For instance, if your application's root package name is
