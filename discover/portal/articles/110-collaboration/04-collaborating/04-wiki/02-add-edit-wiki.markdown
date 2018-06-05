@@ -1,4 +1,4 @@
-# Adding and Editing Wiki Pages
+# Adding and Editing Wiki Pages [](id=adding-and-editing-wiki-pages)
 
 Wiki nodes initially have no pages. When you navigate into a node for the first 
 time, a default page called *FrontPage* is created automatically. To view the 
@@ -10,7 +10,7 @@ page editing form then appears.
 +$$$
 
 **Note:** See the 
-[getting started article](https://www.liferay.com/) 
+[getting started article](/discover/portal/-/knowledge_base/7-1/getting-started-with-wikis) 
 for instructions on accessing your wiki nodes.
 
 $$$
@@ -90,11 +90,11 @@ you can take on the page:
 
 Each wiki page has a check box next to it. When you select a page's check box, 
 the Management Bar changes to show an Info icon 
-(![Info](../../../images/icon-information.png)) and Recycle Bin icon 
-(![Recycle Bin](../../../images/icon-trash.png)). To move the selected page to 
-the Recycle Bin, click the Recycle Bin icon. To get additional information about 
-the page via an info panel, click the Info icon. The info panel provides a star 
-icon that you can select to subscribe to the page's modifications. The info 
+(![Info](../../../../images/icon-information.png)) and Recycle Bin icon 
+(![Recycle Bin](../../../../images/icon-trash.png)). To move the selected page 
+to the Recycle Bin, click the Recycle Bin icon. To get additional information 
+about the page via an info panel, click the Info icon. The info panel provides a 
+star icon that you can select to subscribe to the page's modifications. The info 
 panel's Details section displays the page's summary, format, version, creation 
 and modification dates, number of attachments, and RSS link.
 

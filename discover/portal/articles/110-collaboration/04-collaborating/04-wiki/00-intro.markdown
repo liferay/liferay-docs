@@ -1,4 +1,4 @@
-# Working Together with the Wiki
+# Working Together with the Wiki [](id=working-together-with-the-wiki)
 
 @product@ contains a full-featured wiki app that also leverages the portal's 
 other features. As such, the wiki is completely integrated 

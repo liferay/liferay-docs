@@ -1,4 +1,4 @@
-# Other Wiki Widgets
+# Other Wiki Widgets [](id=other-wiki-widgets)
 
 The widgets that accompany the main Wiki widget help you display and navigate 
 particular wiki nodes. The following widgets are available: 
@@ -32,7 +32,7 @@ displays the wiki page associated with that link.
 
 ![Figure 1: The Page Menu widget displays a wiki page's outgoing links.](../../../../images/wiki-page-menu.png)
 
-## Tree Menu
+## Tree Menu [](id=tree-menu)
 
 The Tree Menu widget displays a wiki's page hierarchy as a tree that lets you 
 navigate all the wiki's pages. Much like the Page Menu setup, you configure 
@@ -60,7 +60,7 @@ display the respective wiki page.
 
 ![Figure 2: The Tree Menu widget displays a wiki node's hierarchy to the configured depth.](../../../../images/wiki-tree-menu.png)
 
-## Wiki Display
+## Wiki Display [](id=wiki-display)
 
 The Wiki Display widget lets you focus user attention on one wiki node. After 
 adding the widget to a page, follow these steps to configure it:

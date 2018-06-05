@@ -1,4 +1,4 @@
-# Using the Wiki on Site Pages
+# Using the Wiki on Site Pages [](id=using-the-wiki-on-site-pages)
 
 You can use the Wiki on site pages via the Wiki widget. Follow these steps to 
 add the Wiki widget to a page:
@@ -113,7 +113,8 @@ are enabled and your permissions:
 -   **Add Child Page:** Add a wiki page as a child of the current wiki page. 
 -   **Edit:** Edit the wiki page (if you have sufficient permissions). 
 -   **Details:** View the wiki page's details (if you have sufficient 
-    permissions). 
+    permissions). This is explained further in 
+    [the documentation on page details](/discover/portal/-/knowledge_base/7-1/wiki-page-details). 
 -   **Print:** Print the wiki page.
 
 Additional features appear below the wiki page's content. A view counter 

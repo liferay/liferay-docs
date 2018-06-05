@@ -1,4 +1,4 @@
-# Getting Started with Wikis
+# Getting Started with Wikis [](id=getting-started-with-wikis)
 
 The Menu (![Menu](../../../../images/icon-menu.png)) 
 is the best place to start working with your wikis. Click the *Menu* 
@@ -13,7 +13,7 @@ contain many wiki nodes. By default, it contains one node: *Main*.
 
 ![Figure 1: The Wiki app instance has a wiki node named *Main* with a single front page. You can build on the Main node or click the Add icon to create a new node.](../../../../images/wiki-admin-empty.png)
 
-## Configuring Wikis
+## Configuring Wikis [](id=configuring-wikis)
 
 Before adding to your wiki instance, you should configure it. The instance's 
 interfaces for permissions, export and import, configuration, and application 
@@ -44,7 +44,7 @@ The following options are available in this menu:
     instance's Options menu, access the menu's Configuration and Permissions
     options, and access any custom preference options added to the wiki app. 
 
-## Adding Wikis
+## Adding Wikis [](id=adding-wikis)
 
 Follow these steps to create a new wiki node: 
 
@@ -68,7 +68,7 @@ Follow these steps to create a new wiki node:
 
 ![Figure 2: The New Wiki Node form lets you describe your new node, set view permissions, and set permissions for the Guest and Site Member roles.](../../../../images/wiki-new-wiki-node.png)
 
-## Wiki Node Options
+## Wiki Node Options [](id=wiki-node-options)
 
 Next to each listed wiki node is an *Actions* menu 
 (![Actions](../../../../images/icon-actions.png)). Here are the actions available 
