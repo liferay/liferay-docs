@@ -132,9 +132,14 @@ access user data.
 secret identifies the client is genuine during the authorization process (see
 figure 1 above). 
 
-**Icon:** Upload an icon that your application's users will identify with your
+**Icon:** Upload an icon that your application's users identify with your
 application. This is displayed on the authorization screen. 
 
 **Privacy Policy URL:** Add a link to your application's privacy policy. 
 
-**Token Introspection:** ???
+**Token Introspection:** Allow your application to retrieve metadata from the
+token by requesting it from @product@. This implements 
+[RFC 7662](https://tools.ietf.org/html/rfc7662).
+
+Excellent! Now you know how to add OAuth2 authorization for your application to
+@product@! Next, you'll see how to make that authorization happen. 
