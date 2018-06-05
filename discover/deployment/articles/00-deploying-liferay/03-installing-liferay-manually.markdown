@@ -40,7 +40,7 @@ option. You might prefer to use the data source your application server provides
 source and the application server manages the connection pools. So you can
 configure @product@ to use your application server's data source, if you prefer.
 
-To do this, you must your own configuration file and skip the setup wizard.
+To do this, you must create your own configuration file and skip the setup wizard.
 Since you'd be creating this file *after* the wizard anyway, this isn't a big
 deal. 
 [Manual Configuration](#manual-configuration)
@@ -63,7 +63,7 @@ configuration, you must modify the defaults. To do this, use a
 `portal-ext.properties` file in your Liferay Home folder (see below).
 
 To use your application server's mail session, you must create it in your
-application server. Point it to your mail server. Once you've created a mail
+application server and point it to your mail server. Once you've created a mail
 session, you can point @product@ to it through your `portal-ext.properties` file
 or through the Control Panel.
 
