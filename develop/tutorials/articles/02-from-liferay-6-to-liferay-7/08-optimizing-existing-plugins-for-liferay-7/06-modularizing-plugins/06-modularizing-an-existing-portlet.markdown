@@ -61,6 +61,13 @@ $$$
     home for your application's independent modules and configuration files. For
     example, if your application's name is *Tasks*, then your parent directory
     could be *tasks*.
+    
+    If your application uses Liferay Service Builder, the
+    following Blade CLI command is needed. This command generates the service
+    implementation, service API modules, and expects the parent directory to be empty. 
+    It will create the parent directory, if it is not present, using the application name:
+
+        blade create -t service-builder -p [ROOT_PACKAGE] [APPLICATION_NAME]
 
 2.  Create the directory structure skeleton for your web client module. You can
     do this automatically by using Blade CLI. You can learn how to install
@@ -73,13 +80,8 @@ $$$
     Navigate to your parent directory (e.g., `tasks`) and run the following
     Blade CLI command to generate a generic web client module structure:
 
-        blade create -t mvc-portlet [APPLICATION_NAME]-web
-
-    If your application uses Liferay Service Builder, you'll need to run the
-    following Blade CLI command as well. This command generates the service
-    implementation and service API modules:
-
-        blade create -t service-builder -p [ROOT_PACKAGE] [APPLICATION_NAME]
+        blade create -t mvc-portlet -p [ROOT_PACKAGE] [APPLICATION_NAME]-web
+    
 
     If you used the `blade create service-builder` command to generate
     implementation and API modules, ignore the `*-service` and `*-api` folders
