@@ -1,4 +1,4 @@
-# Sending Alerts and Announcements
+# Sending Alerts and Announcements [](id=sending-alerts-and-announcements)
 
 You can use the Alerts and Announcements widgets on site pages to broadcast 
 important information to users. The Alerts widget is designed for displaying 
@@ -11,7 +11,7 @@ Announcements widgets on different pages. However, you can use either widget to
 display any information you wish. Besides the red tag, they function the same. 
 You can also scope your alerts and announcements to specific groups of users. 
 
-![Figure 1: The Alerts widget provides administrators with an easy way to communicate important information to appropriate groups of users.](../../../../images/alerts-widget.png)
+![Figure 1: The Alerts widget provides administrators with an easy way to communicate important information to appropriate groups of users.](../../../images/alerts-widget.png)
 
 These widgets have 2 tabs: 
 
@@ -19,12 +19,12 @@ These widgets have 2 tabs:
 -   **Read:** Alerts/announcements that have expired, or that you've read. 
 
 Click an alert/announcement's *Actions* button 
-(![Actions](../../../../images/icon-actions.png)) to edit or delete it. 
+(![Actions](../../../images/icon-actions.png)) to edit or delete it. 
 
-## Creating Alerts and Announcements
+## Creating Alerts and Announcements [](id=creating-alerts-and-announcements)
 
 You can add an Alerts or Announcements widget to your site page from the *Add* 
-(![Add](../../../../images/icon-control-menu-add.png)) &rarr; *Widgets* &rarr; 
+(![Add](../../../images/icon-control-menu-add.png)) &rarr; *Widgets* &rarr; 
 *News* menu. Once the widget is on your page, follow these steps to add an alert 
 or announcement: 
 
@@ -36,7 +36,7 @@ or announcement:
     explanation of the editor, see the 
     [Blogs documentation](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor). 
 
-    ![Figure 2: Enter your alert or announcement's title and content.](../../../../images/alerts-widget.png)
+    ![Figure 2: Enter your alert or announcement's title and content.](../../../images/alerts-widget.png)
 
 3.  Open the *Configuration* section of the form and set the following options, 
     if desired: 
@@ -74,17 +74,17 @@ or announcement:
         Once an alert/announcement expires, the widget displays it in the Read
         tab. Clicking the Expiration Date field opens the date-picker. 
 
-    ![Figure 3: Configure your new alert or announcement.](../../../../images/alerts-new-alert-config.png)
+    ![Figure 3: Configure your new alert or announcement.](../../../images/alerts-new-alert-config.png)
 
 4.  Click *Save* when you're done. Your alert/announcement then appears in the 
     widget. 
 
-## User Configuration
+## User Configuration [](id=user-configuration)
 
 Each user can configure how they'd like to receive announcements. 
 
 1.  From the Menu 
-    (![Menu](../../../../images/icon-menu.png)), open your user menu and select 
+    (![Menu](../../../images/icon-menu.png)), open your user menu and select 
     *My Account* &rarr; *Account Settings*. 
 
 2.  On the *Preferences* tab, select *Alerts and Announcements Delivery*. This 
@@ -99,9 +99,9 @@ Each user can configure how they'd like to receive announcements.
 
 4.  Click *Save* when you're finished. 
 
-    ![Figure 4: Each user can choose how they receive alerts and announcements.](../../../../images/alerts-delivery.png)
+    ![Figure 4: Each user can choose how they receive alerts and announcements.](../../../images/alerts-delivery.png)
 
-## Alert and Announcement Roles
+## Alert and Announcement Roles [](id=alert-and-announcement-roles)
 
 You can also create roles for users to make general announcements. For instance, 
 if you'd like an employee in your site to have strict control over what is 
@@ -111,7 +111,7 @@ create a simple Announcements role:
 1.  Navigate to *Control Panel* &rarr; *Users* &rarr; *Roles*. 
 
 2.  With the the *Regular Roles* tab selected, click the *Add* button 
-    (![Add](../../../../images/icon-add.png)). This opens the *New Role* form. 
+    (![Add](../../../images/icon-add.png)). This opens the *New Role* form. 
 
 3.  Name your role *Announcements*, give it a title and description, and click 
     *Save*. 
