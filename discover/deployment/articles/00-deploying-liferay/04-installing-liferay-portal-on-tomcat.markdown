@@ -50,7 +50,7 @@ described below.
 
     - `activation.jar` - [http://www.oracle.com/technetwork/java/javase/jaf-136260.html](http://www.oracle.com/technetwork/java/javase/jaf-136260.html)
     - `ccpp.jar` - [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
-    - `com.liferay.petra.concurrent` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/)
+    - `com.liferay.petra.concurrent.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/)
     - `com.liferay.petra.executor.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/)
     - `com.liferay.petra.function.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/)
     - `com.liferay.petra.io.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/)
@@ -71,8 +71,11 @@ described below.
     - `support-tomcat.jar` - [http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat)
 
 3.  Copy the JDBC driver for your database to the `$CATALINA_BASE/lib/ext` 
-    folder. The `mariadb.jar`, `mysql.jar`, and `postgresql.jar`
-    driver JARs are available in the Tomcat bundle. 
+    folder. Here are some of the drivers:  
+
+    - `mariadb.jar` - [https://downloads.mariadb.org/](https://downloads.mariadb.org/)
+    - `mysql.jar` - [http://dev.mysql.com/downloads/connector/j](http://dev.mysql.com/downloads/connector/j)
+    - `postgresql.jar` - [https://jdbc.postgresql.org/download/postgresql-42.0.0.jar](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
 
 4.  Create an `osgi` folder in your Liferay Home. Then extract the folders
     (i.e., `configs`, `core`, and more) from OSGi ZIP file to the `osgi` folder.
