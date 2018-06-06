@@ -142,4 +142,4 @@ token by requesting it from @product@. This implements
 [RFC 7662](https://tools.ietf.org/html/rfc7662).
 
 Excellent! Now you know how to add OAuth2 authorization for your application to
-@product@! Next, you'll see how to make that authorization happen. 
+@product@! Next, you must define scopes of user data the application can access.
