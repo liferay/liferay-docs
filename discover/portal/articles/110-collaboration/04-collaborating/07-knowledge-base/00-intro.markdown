@@ -17,10 +17,10 @@ Here are the Knowledge Base's key features:
 -   Metadata fields exist for the friendly URL, source URL, categorization, and 
     related assets.
 -   The *Edit on GitHub* button 
-    (![GitHub](../../../images/icon-edit-on-github.png))
+    (![GitHub](../../../../images/icon-edit-on-github.png)) 
     can take readers to an article's source repository location (if you choose 
-    to use it that way).
--   Markdown source files can be imported to create and update articles.
+    to use it that way). 
+-   Markdown source files can be imported to create and update articles. 
 
 The Knowledge Base has several widgets you can add to site pages: 
 
