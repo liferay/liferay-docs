@@ -5,21 +5,21 @@ brief demonstration will show you just how easy, yet powerful, ADTs can be for
 your Liferay instance.
 
 1.  Add the Media Gallery application to a page by navigating to *Add*
-    (![Add](../../images/icon-control-menu-add.png)) &rarr; *Widgets*
+    (![Add](../../../../../images/icon-control-menu-add.png)) &rarr; *Widgets*
     &rarr; *Content Management* &rarr; *Media Gallery*.
 
-2.  Click the app's *Add* button (![Actions](../../images/icon-app-add.png))
+2.  Click the app's *Add* button (![Actions](../../../../../images/icon-app-add.png))
     &rarr; *Multiple Media* and select two custom photos to display. Then click
     *Save*, and navigate back to the main application screen.
 
 3.  Notice the default format of the pictures. To change the display template 
     for this app, navigate to *Options*
-    (![Options](../../images/icon-app-options.png)) &rarr; *Configuration*.
+    (![Options](../../../../../images/icon-app-options.png)) &rarr; *Configuration*.
 
 4.  From the *Display Template* drop-down menu, select *Carousel*. Then click
     *Save*.
 
-	![Figure 4: After applying the Carousel ADT, your pictures are displayed as a carousel slideshow.](../../images/adt-carousel.png)
+	![Figure 4: After applying the Carousel ADT, your pictures are displayed as a carousel slideshow.](../../../../../images/adt-carousel.png)
 
 	The Media Gallery application is transformed into a carousel slideshow. At
 	this time, it's perfectly natural to be experiencing "I can conquer the

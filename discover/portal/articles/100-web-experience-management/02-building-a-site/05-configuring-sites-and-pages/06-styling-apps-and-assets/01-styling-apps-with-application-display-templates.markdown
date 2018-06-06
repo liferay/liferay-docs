@@ -12,7 +12,7 @@ over its appearance and functionality in your Liferay instance.
 Let's walk through the process of creating an ADT:
 
 1.  From Site Administration click the *Site Selector* button 
-    (![Compass](../../images/icon-compass.png)) to choose the site where you
+    (![Compass](../../../../../images/icon-compass.png)) to choose the site where you
     want to create the ADT. 
     
 2.  Open *Build* &rarr; *Application Display Templates*.    
@@ -22,10 +22,10 @@ templates available for your apps. These sample templates differ from the
 default templates already configured in the apps. If you choose a site to host 
 your template, you must create a custom template for that site's apps.
 
-![Figure 1: The Site Administration dropdown menu lets you choose the context in which your application display template resides.](../../images/context-selector.png)
+![Figure 1: The Site Administration dropdown menu lets you choose the context in which your application display template resides.](../../../../../images/context-selector.png)
 
 3.  Click the *Add*
-    (![Add](../../../../images/icon-add-app.png)) button and you will be 
+    (![Add](../../../../../images/icon-add-app.png)) button and you will be 
     prompted to select the type of template to create.
 
 - *Asset Publisher*
@@ -63,7 +63,7 @@ description. Because there are multiple kinds of ADTs, there are also different
 variables for each ADT. Thus, each template has a different set of variables 
 only applicable for that specific template. 
 
-![Figure 2: Liferay offers a versatile script editor to customize your ADT.](../../images/adt-script-editor.png)
+![Figure 2: Liferay offers a versatile script editor to customize your ADT.](../../../../../images/adt-script-editor.png)
 
 You can also use the autocomplete feature to add variables to your template. It
 can be invoked by typing *${* which opens a drop-down menu of available
@@ -83,7 +83,7 @@ tutorial.
 ## Configuring ADTs
 
 After you've completed the initial set up and saved your ADT, you can manage
-your ADT through its *Actions* (![Actions](../../images/icon-actions.png))
+your ADT through its *Actions* (![Actions](../../../../../images/icon-actions.png))
 button. This provides several options:
 
 - *Edit*: lets you modify the ADT's setup properties.
@@ -122,4 +122,4 @@ clicking the *Manage Display Templates for [SPECIFIC_SITE]* link next to the
 configured templates only available for your site with options to add new 
 templates or edit existing templates.
 
-![Figure 3: In the *Configuration* menu of an app, you can edit and manage available ADTs.](../../images/adt-configuration.png)
+![Figure 3: In the *Configuration* menu of an app, you can edit and manage available ADTs.](../../../../../images/adt-configuration.png)
