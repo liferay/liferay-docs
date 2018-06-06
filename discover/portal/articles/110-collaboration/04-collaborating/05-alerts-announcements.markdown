@@ -36,7 +36,7 @@ or announcement:
     explanation of the editor, see the 
     [Blogs documentation](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor). 
 
-    ![Figure 2: Enter your alert or announcement's title and content.](../../../images/alerts-widget.png)
+    ![Figure 2: Enter your alert or announcement's title and content.](../../../images/alerts-new-alert.png)
 
 3.  Open the *Configuration* section of the form and set the following options, 
     if desired: 
