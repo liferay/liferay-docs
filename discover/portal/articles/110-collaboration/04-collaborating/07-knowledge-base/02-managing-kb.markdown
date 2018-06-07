@@ -14,6 +14,8 @@ appropriate permissions using the Permissions window in Knowledge Base.
 
 $$$
 
+![Figure 1: You can manage Knowledge Base articles, folders, and suggestions.](../../../../images/kb-admin-articles.png)
+
 ## Setting the Knowledge Base's Options
 
 At the top-right of the Knowledge Base app, the Options menu 

@@ -27,7 +27,7 @@ app has 3 tabs:
 Select the *Articles* tab, then proceed to the sections below for instructions 
 on creating articles. 
 
-![Figure 1: You can manage Knowledge Base articles, folders, and suggestions.](../../../../images/kb-admin-articles.png)
+![Figure 1: The Knowledge Base app in Site Administration lets you create Knowledge Base articles.](../../../../images/kb-admin-articles.png)
 
 ## Authoring Articles in the Editor
 
@@ -41,15 +41,13 @@ Follow these steps to create an article in the editor:
     is added to the end of the article's friendly URL. You can manage the 
     friendly URL in the *Configuration* section's *Friendly URL* field. 
 
-3.  Use the WYSIWYG editor to create the article's content.
+3.  Use the WYSIWYG editor to create the article's content. To view or edit the 
+    article's HTML source, click the *Source* button in the editor. The sections 
+    below the editor let you add attachments and tags, specify related assets, 
+    and set permissions for the article. By default, View permission is granted 
+    to the Guest role, meaning anyone can view your article. 
 
     ![Figure 2: You can create and modify a Knowledge Base article's content using the WYSIWYG editor.](../../../../images/kb-admin-new-article.png)
-
-    Click the *Source* button in the editor to view the article's HTML source 
-    or write in HTML yourself. You can also add attachments and tags, specify 
-    related assets, and set permissions for the article in the sections below
-    the editor. By default, View permission is granted to the Guest role, 
-    meaning anyone can view your article.
 
 4.  Click *Publish* to submit the article for publication or click 
     *Save as Draft* to continue working on it later. Note that if you've enabled 
