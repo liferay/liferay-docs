@@ -1,0 +1,111 @@
+# Form Rules
+
+What's the difference between a chicken and a dog? Among other things, you can't
+train a chicken, while dogs are much more trainable. Don't believe me? Try
+teaching your chicken to sit on command or herd sheep. Better yet, get a team of
+chickens to pull a sled in the [Iditarod](http://iditarod.com/). The Forms
+application is much more like the dog than the useful (southwestern omelet
+anyone?) but untrainable chicken, and it's only getting more trainable as time
+goes on. 
+
+Form rules are a good example of the trainable nature of the Forms application.
+With form rules, you can train your form fields to behave as you wish. There are
+several actions you can subject your form fields to:
+
+Show/hide
+: Based on a predefined condition, set the visibility of a form field.
+
+Enable/disable
+: Make a form field enabled or disable based on a predefined condition.
+
+Require
+: Make a form field required based on a predefined condition.
+
+Jump to Page
+: Based on user input, skip to a relevant page in the form.
+
+Autofill with Data Provider 
+: Use a [data provider](/discover/portal/-/knowledge_base/7-1/creating-advanced-forms#populating-select-fields-with-rest-data-providers)
+to populate fields that are related to another field. <!--Incomplete-->
+
+Calculate: Calculate the value of a field based on data entered in
+    other fields. <!--Incomplete-->
+
+Form rules are for changing fields and form elements by acting on conditions.
+
+*If [condition] do [action].*
+
+If you're not already familiar with the Forms application, start
+[here](/discover/portal/-/knowledge_base/7-1/forms).
+Once you know how to create forms and publish forms, and add and configure form
+fields, come back here and learn about form rules.
+
+## The Anatomy of a Form Rule
+
+Each rule consists of one or more conditions and actions. 
+
+*Conditions* determine whether any actions are executed. 
+
+*Actions* determine what happens if the condition is met.
+
+Rules are stored in the @product@ database in JSON format by default.
+
+
+## Creating Form Rules with the Rule Builder
+
+Once you create a form and lay out its fields, you're ready to set up rules in
+your form. First, save the form.
+
+Open the Rules Manager window by clicking the *Rules* tab at the top
+of the *Edit Form* screen.
+
+![Figure x: caption](../../../images/forms-rule-builder.png)
+
+In the rule builder view, you can now begin developing your form rule. Click the
+Add button (![Add](../../../images/icon-add.png)) to get started.
+
+Before looking at each type of rule condition and action you can use to develop
+rules, consider the *OR* selector box at the right side of the *Condition* (it's
+grayed out and unusable at first). You can choose *OR* or *AND* here, depending
+on what relationship the conditions should have with the action.
+
+OR
+: The action is triggered if *any* of the conditions you specify evaluates to
+*true*
+
+AND
+: The action is triggered only if *all* the conditions you specify evaluate to
+*true*
+
+This box becomes usable once you click the Add button
+(![Add](../../../images/icon-add.png)) to add an extra condition.
+
+## Conditions
+
+Conditions are the gatekeepers of form rules. If the condition's if statement
+evaluates to *true*, the action is triggered. If it evaluates to *false*, no
+action happens.
+
+A condition checks whether one field's value
+
+- *Is equal to* a specific value or another field's value.
+- *Is not equal to* a specific value or another field's value.
+- *Contains* a specific value or another field's value.
+- *Does not contain* a specific value or another field's value.
+- *Is empty*. This assumes you want to do something if a field is empty.
+- *Is not empty*. This assumes you want to do something as long as a field is
+    *not* empty.
+
+One exception to this is the User condition, which is the last option in the
+Condition dropdown menu.
+
+The User condition doesn't act on a field at all. It checks whether a User
+belongs to a certain role. For example, if the condition
+
+If `User` *belongs to* `Administrator` 
+
+evaluates to *true*, an action is triggered. 
+
+A condition is the gateway into a form rule, but actions define what actually
+happens when the condition evaluates to *true*. The remaining articles discuss
+the various actions and demonstrate their use.
