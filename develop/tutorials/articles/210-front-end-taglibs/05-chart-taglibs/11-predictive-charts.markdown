@@ -1,6 +1,6 @@
 # Predictive Charts [](id=predictive-charts)
 
-Predictive charts take a combination of existing data and predicted/forecasted 
+Predictive charts take a combination of existing and predicted/forecasted 
 data and render it together, so you can visualize future values with current 
 values. Each data series (created with the `addDataColumn()` method) is defined 
 with a new instance of the 
@@ -12,7 +12,7 @@ Single number values define existing data. The arrays are used as the
 prediction/forecast data and contain three numbers: a minimum value, an 
 estimated value, and a maximum value. The estimated value is rendered solid and 
 surrounded by a highlighted area with borders specified by the minimum and 
-maximum values. This lets you visualize your estimated values, while also giving 
+maximum values. This lets you visualize your estimated values while also giving 
 you an idea of the possible value ranges. 
 
 ![Figure 1: Predicted/forecasted data is surrounded by a highlighted area of possible values.](../../../images/chart-taglib-predictive-value-range.png)
