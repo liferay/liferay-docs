@@ -1,4 +1,4 @@
-# Theme Contributors [](id=theme-contributors)
+# Packaging Independent UI Resources for Your Site [](id=packaging-independent-ui-resources-for-your-site)
 
 If you want to package UI resources independent of a specific theme and
 include them on a @product@ page, Theme Contributors are your best option. If,
