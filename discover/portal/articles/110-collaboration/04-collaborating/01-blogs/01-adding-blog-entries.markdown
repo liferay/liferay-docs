@@ -32,9 +32,8 @@ Follow these steps to add a blog entry in Site Administration:
     cover photo.
 
     Upon upload, the image appears in the pane. To center the image, drag it 
-    into place. Click the checkmark icon to save the image placement. You can 
-    even add a caption. And if you want to select a different image, you can 
-    click the *Change* icon
+    into place. You can also add a caption. If you want to select a different 
+    image, click the *Change* icon
     (![Change](../../../../images/icon-change.png)). Lastly, clicking the trash 
     can icon removes the image from the blog entry. 
 
@@ -75,8 +74,9 @@ Follow these steps to add a blog entry in Site Administration:
 
     You can also specify the blog entry's abstract. Enter a 400 character 
     text-only abstract, or a custom abstract that contains a thumbnail image and 
-    a manually written description. Below the abstract section, you can set the 
-    entry's display date and time. 
+    a manually written description. The *Small Image* section lets you add a 
+    small image that appears when blog entries are displayed in list view. Below 
+    the abstract section, you can set the entry's display date and time. 
 
     Lastly, you can allow *pingbacks* for the blog entry. Pingbacks are XML-RPC 
     requests that are automatically sent when you link to another site. If you 

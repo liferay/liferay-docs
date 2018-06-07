@@ -4,27 +4,27 @@ You can set up a whole web site devoted just to blogging if you wish. The Blogs
 Aggregator lets you publish entries from multiple bloggers on one page, giving 
 further visibility to blog entries. You can add it to a page from the 
 *Collaboration* category in the *Add* 
-(![Add](../../../../images/icon-add-app.png)) *&rarr; Widgets* menu. 
+(![Add](../../../../images/icon-add-app.png)) &rarr; *Widgets* menu. 
 
 If you click *Configuration* from the *Options* icon
-(![Options](../../../../images/icon-app-options.png)) in the app's title bar, the
-Blogs Aggregator's configuration page appears. The *Setup* tab contains these 
-options: 
+(![Options](../../../../images/icon-app-options.png)) in the widget's title bar, 
+the Blogs Aggregator's configuration page appears. The *Setup* tab contains 
+these options: 
 
--   **Selection Method:** Set how the app selects blogs for display. You can 
-    choose *Users* or *Scope*. If you select Users, the app aggregates the 
+-   **Selection Method:** Set how the widget selects blogs for display. You can 
+    choose *Users* or *Scope*. If you select Users, the widget aggregates the 
     entries of every blogger on your system. To refine the aggregation, you can 
     select an organization by which to filter the users. If you select Scope, 
-    the app aggregates the entries of users in the current scope. This limits 
-    the entries to members of the site where the app resides.
+    the widget aggregates the entries of users in the current scope. This limits 
+    the entries to members of the site where the widget resides.
 
 -   **Organization:** The organization whose blogs you want to aggregate.
 
 -   **Display Style:** Select the overall appearance for blog entries in the 
-    app: *Body and Image*, *Body*, *Abstract* (default), 
+    widget: *Body and Image*, *Body*, *Abstract* (default), 
     *Abstract without Title*, *Quote*, *Quote without Title*, and *Title*. 
 
--   **Maximum Items to Display:** The maximum number of entries the app 
+-   **Maximum Items to Display:** The maximum number of entries the widget 
     displays.
 
 -   **Enable RSS Subscription:** Whether to enable an RSS feed of the aggregated 
@@ -43,16 +43,16 @@ options:
 Here are descriptions for the other tabs in the Blogs Aggregator's 
 configuration: 
 
--   **Sharing:** Embed the application instance as a widget on any website, 
+-   **Sharing:** Embed the widget instance as a widget on any website, 
     Facebook, Netvibes, or as an OpenSocial Gadget. 
 
--   **Scope:** Specify the blog instance the app displays: the current site's 
+-   **Scope:** Specify the blog instance the widget displays: the current site's 
     blog (default), the global blog, or the page's blog. If the page doesn't
     already have a blog instance, you can select scope option *\[Page Name\]
     \(Create New\)* to create a page-scoped blog instance. 
 
 When you finish setting the options, click *Save* and then close the dialog box. 
-You'll notice that the Blogs Aggregator looks very much like the Blogs app, 
+You'll notice that the Blogs Aggregator looks very much like the Blogs widget, 
 except that it shows entries from multiple blogs. 
 
 ![Figure 1: The Blogs Aggregator lets you display blog entries authored by multiple authors from different sites.](../../../../images/blogs-aggregator.png)

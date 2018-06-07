@@ -41,7 +41,7 @@ above screenshot:
 -   **Link:** Link the selected text to a specific URL, or to an item in the 
     portal (e.g. a file in Documents and Media).
 
--   **Twitter:** Link the selected text to Twitter. 
+-   **Twitter:** Generates a link to tweet the selected text. 
 
 When you park your cursor in the entry's content area, the *Add* icon (`+`) 
 appears. If you click this icon, it shows controls for inserting an image, 

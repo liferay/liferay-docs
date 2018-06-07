@@ -50,7 +50,8 @@ You can also arrange entries via the *Filter and Order* selector using these
 criteria: 
 
 -   **All:** Shows all of the site's entries. 
--   **Mine:** Shows all the current user's entries. 
+-   **Mine:** Shows only the current user's entries. 
+-   **Title:** Orders the entries by title. 
 -   **Display Date:** Orders the entries by display date. 
 
 ## Selecting Blog Entries [](id=selecting-blog-entries)

@@ -1,38 +1,38 @@
 # Highlighting Recent Bloggers [](id=highlighting-recent-bloggers)
 
-The Recent Bloggers app lets you highlight the work of your site's most recent 
-blog authors. This app lists each recent author's name, profile picture, and 
-number of posts. You can add the Recent Bloggers app to a page from the 
-*Collaboration* category in the *Add* 
+The Recent Bloggers widget lets you highlight the work of your site's most 
+recent blog authors. This widget lists each recent author's name, profile 
+picture, and number of posts. You can add the Recent Bloggers widget to a page 
+from the *Collaboration* category in the *Add* 
 (![Add](../../../../images/icon-add-app.png)) &rarr; *Applications* menu. 
 
-To access the app's configuration options, click *Configuration* from the 
+To access the widget's configuration options, click *Configuration* from the 
 *Options* menu 
-(![Options](../../../../images/icon-app-options.png)) in the app's title bar. 
+(![Options](../../../../images/icon-app-options.png)) in the widget's title bar. 
 The *Setup* tab appears first: 
 
--   **Selection Method:** Set how the app selects blogs authors to highlight. 
-    You can choose *Users* or *Scope*. If you select Users, the app aggregates 
-    every recent blogger on your system. To refine the aggregation, you can 
-    select an organization by which to filter the users. If you select Scope, 
-    the app aggregates the recent bloggers in the current scope. This limits the 
-    entries to members of the site where the app resides. 
+-   **Selection Method:** Set how the widget selects blogs authors to highlight. 
+    You can choose *Users* or *Scope*. If you select Users, the widget 
+    aggregates every recent blogger on your system. To refine the aggregation, 
+    you can select an organization by which to filter the users. If you select 
+    Scope, the widget aggregates the recent bloggers in the current scope. This 
+    limits the entries to members of the site where the widget resides. 
 
 -   **Organization:** The organization whose recent bloggers you want to 
     aggregate. 
 
--   **Display Style:** Select how the app displays recent bloggers: 
+-   **Display Style:** Select how the widget displays recent bloggers: 
     *User Name and Image*, or *User*.
 
 -   **Maximum Bloggers to Display:** Select the maximum number of recent 
-    bloggers the app displays. 
+    bloggers the widget displays. 
 
-Here are descriptions for the other tabs in the app's configuration: 
+Here are descriptions for the other tabs in the widget's configuration: 
 
--   **Sharing:** Embed the application instance as a widget on any website, 
+-   **Sharing:** Embed the widget instance as a widget on any website, 
     Facebook, Netvibes, or as an OpenSocial Gadget. 
 
--   **Scope:** Specify the blog instance the app displays: the current site's 
+-   **Scope:** Specify the blog instance the widget displays: the current site's 
     blog (default), the global blog, or the page's blog. If the page doesn't
     already have a blog instance, you can select scope option *\[Page Name\]
     \(Create New\)* to create a page-scoped blog instance. 
