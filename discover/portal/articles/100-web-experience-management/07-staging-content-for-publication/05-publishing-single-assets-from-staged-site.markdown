@@ -14,10 +14,29 @@ and can be overkill. For example,
 
 You're in luck! You can publish single assets from the staged site to the live
 site without creating a staging publication process. You can publish the
-following assets straight from their respective menus:
+following assets straight from their respective app menus:
 
 - Web Content
+    - Web Content
+    - Folder
 - Documents and Media
+    - Document
+    - Folder
+    - Shortcut
+    - Document Type
+- Blogs
+    - Blog
+- Bookmarks
+    - Bookmark
+    - Folder
+
++$$$
+
+**Note:** When publishing a Web Content or Bookmarks folder, their respective
+entries and subfolders are included. Publishing a Documents and Media folder
+works the same way, but also includes any shortcuts.
+
+$$$
 
 You'll step through an example to see how this is done.
 
@@ -37,6 +56,16 @@ You'll step through an example to see how this is done.
 4.  You're presented a Process Details page where you can view the progress of
     your single asset publication request. Ensure the web content article is
     published successfully.
+
+    +$$$
+
+    **Note:** Sometimes the publication process doesn't start immediately (e.g.,
+    if there's another publication running). You can check a specific asset's
+    publication progress by navigating to the *Options*
+    (![Options](../../../../images/icon-options.png)) &rarr; *Staging* &rarr;
+     *Current and Previous* tab in its Site Admin app.
+
+    $$$
 
 There you have it! If you navigate to your live site's Web Content section, the
 new web content article is available.
