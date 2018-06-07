@@ -639,8 +639,11 @@ counter-intuitive.
 
 #### What changed? [](id=what-changed-13)
 
-Liferay Portal 7.1 implements the Portlet 3.0 API. Previous versions implemented
-the Portlet 2.0 API.
+Liferay Portal 7.1 CE GA1 provides the Portlet 3.0 API dependency in the runtime
+classpath. Previous versions provided the Portlet 2.0 API.
+
+Full support for Portlet 3.0 will not be available until Liferay Portal 7.1 CE
+GA2 is released.
 
 #### Who is affected? [](id=who-is-affected-13)
 
@@ -649,70 +652,96 @@ versions of Liferay Portal.
 
 #### How should I update my code? [](id=how-should-i-update-my-code-13)
 
-There are four specific development use-cases:
+There are three development use-cases to plan for:
 
-1. Portlets that were developed as `.jar` (not `.war`) portlet modules using
-   `@Component`. These portlets must upgrade from the `portlet-api-2.0`
-   dependency to the `portlet-api-3.0.1` dependency. In most cases, there are
-   zero code changes required.
+##### JSP Considerations [](id=jsp-considerations)
 
-2. JSPs that use `portlet:defineObjects` will encounter JSP compilation problems
-   if they have created reference variables with the following names in Java
-   scriptlets:
+Portlet 3.0 is a binary-backward-compatible upgrade. This means that Java source
+that was built against `portlet-api-2.0.0.jar` is compatible at runtime. Since
+JSP files are typically not compiled until the first request, however, they do
+not fall under the category of pre-compiled source.
 
-    - `actionParams`
-    - `clientDataRequest`
-    - `cookies`
-    - `contextPath`
-    - `locale`
-    - `locales`
-    - `mutableRenderParams`
-    - `namespace`
-    - `portletContext`
-    - `portletMode`
-    - `portletRequest`
-    - `portletResponse`
-    - `resourceParams`
-    - `windowId`
-    - `windowState`
-    - `stateAwareResponse`
+Specifically, if a JSP contains a Java scriptlet that calls
+[`MimeResponse.createActionURL()`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/MimeResponse.html#createActionURL())
+and
+[`MimeResponse.createRenderURL()`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/MimeResponse.html#createRenderURL()),
+then there is a possibility that the JSP will fail to compile or throw a
+`ClassCastException` at runtime. This is because the return type of these
+methods has changed.
 
-    For example, JSP scriptlets like the following ones had to be removed from
-    several of Liferay's out-of-the-box portlets' `view.jsp`:
+For example, a Liferay Portal sample portlet's `view.jsp` had to be changed
+from
 
-          <%=
-          PortletRequest portletRequest = (PortletRequest)request.getAttribute(JavaConstants.JAVAX_PORTLET_REQUEST);
+    <aui:form action="<%= renderResponse.createActionURL() %>" method="post" name="fm">
 
-          PortletResponse portletResponse = (PortletResponse)request.getAttribute(JavaConstants.JAVAX_PORTLET_RESPONSE);
+to
 
-          String namespace = AUIUtil.getNamespace(portletRequest, portletResponse);
+    <aui:form action="<%= (PortletURL)renderResponse.createActionURL() %>" method="post" name="fm">
 
-          if (Validator.isNull(namespace)) {
-              namespace = AUIUtil.getNamespace(request);
-          }
-          %>
+##### Upgrade Considerations [](id=upgrade-considerations)
 
-3. The return values of
-   [`MimeResponse.createActionURL()`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/MimeResponse.html#createActionURL())
-   and
-   [`MimeResponse.createRenderURL()`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/MimeResponse.html#createRenderURL())
-   have changed. Although this is a binary-runtime-compatible type of change, it
-   can possibly cause compilation failures or `ClassCastException`s to be thrown
-   during request/response processing.
+To take advantage of new features in Portlet 3.0, you must rebuild portlet
+projects against the `portlet-api-3.0.0.jar` dependency and *opt-in* by
+specifying version 3.0 in one of two ways:
 
-    For example, a Liferay Portal sample portlet's `view.jsp` had to be changed
-    from:
+1. Add the following tag in your portlet's `portlet.xml` file:
 
-        <aui:form action="<%= renderResponse.createActionURL() %>" method="post" name="fm">
+        <portlet-app version="3.0">
 
-    to:
+2. Add the following property in your portlet's `@Component` tag:
 
-        <aui:form action="<%= (PortletURL)renderResponse.createActionURL() %>" method="post" name="fm">
+        @Component(
+            property = {
+                "javax.portlet.version=3.0"
+            },
+            service = Portlet.class
+        )
 
-4. JSF Portlets must be upgraded to the latest version of Liferay Faces Bridge,
-   which is planned for release in Q4, 2018. Download and upgrade instructions
-   will be made available at
-   [https://www.liferayfaces.org](https://www.liferayfaces.org) at that time.
+In addition, you must opt-in to new JSP features by specifying the Portlet 3.0
+tag library in your JSP views. For example,
+
+    <%@ taglib uri="http://xmlns.jcp.org/portlet_3_0" prefix="portlet" %>
+
+JSPs that opt-in with the new tag library may encounter JSP compilation problems
+related to the `<portlet:defineObjects>` tag. Specifically, if JSPs reference
+variables with the following names in Java scriptlets, then a JSP compilation
+will occur:
+
+- `actionParams`
+- `clientDataRequest`
+- `cookies`
+- `contextPath`
+- `locale`
+- `locales`
+- `mutableRenderParams`
+- `namespace`
+- `portletContext`
+- `portletMode`
+- `portletRequest`
+- `portletResponse`
+- `resourceParams`
+- `windowId`
+- `windowState`
+- `stateAwareResponse`
+
+With the Portlet API 3.0 implementation, these variables are already added to
+this context by default, so attempting to initialize them in the JSP would
+duplicate them. Therefore, your JSP scriptlets adding them should be removed.
+
+For example, JSP scriptlets like the following had to be removed from
+several of Liferay Portal's out-of-the-box portlets' `view.jsp`:
+
+    <%=
+    PortletRequest portletRequest = (PortletRequest)request.getAttribute(JavaConstants.JAVAX_PORTLET_REQUEST);
+
+    PortletResponse portletResponse = (PortletResponse)request.getAttribute(JavaConstants.JAVAX_PORTLET_RESPONSE);
+
+    String namespace = AUIUtil.getNamespace(portletRequest, portletResponse);
+
+    if (Validator.isNull(namespace)) {
+        namespace = AUIUtil.getNamespace(request);
+    }
+    %>
 
 #### Why was this change made? [](id=why-was-this-change-made-13)
 
