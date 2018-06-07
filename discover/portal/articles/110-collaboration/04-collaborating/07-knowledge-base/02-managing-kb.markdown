@@ -65,8 +65,8 @@ You can also organize articles with folders. Follow these steps to create a
 folder:
 
 1.  Click the Add button
-    (![Add](../../../../images/icon-portlet-add-control.png)) and select 
-    *Folder*. This opens a form for creating the new folder. 
+    (![Add](../../../../images/icon-add.png)) and select *Folder*. This opens a 
+    form for creating the new folder. 
 
 2.  Enter a name and an optional description. 
 
