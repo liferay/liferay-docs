@@ -2,7 +2,7 @@
 
 To display 
 [adapted images](/discover/portal/-/knowledge_base/7-1/adapting-your-media-across-multiple-devices) 
-in your apps, Adaptive Media offers a convenient taglib in 
+in your apps, Adaptive Media offers a convenient tag library in 
 [the module `com.liferay.adaptive.media.image.taglib`](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-taglib). 
 This taglib only has one mandatory attribute: `fileVersion`. This attribute 
 indicates the file version of the adapted image that you want to display. You 

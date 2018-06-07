@@ -12,7 +12,7 @@ an HTML `<img>` tag).
 
 Adaptive Media's finder API lets you write queries that get adapted images based 
 on certain search criteria and filters. For example, you can get adapted images 
-that match a file version or resolution, or are ordered by an attribute like 
+that match a file version or resolution or are ordered by an attribute like 
 image width. You can even get adapted images that match approximate attribute 
 values (*fuzzy* attributes). 
 
