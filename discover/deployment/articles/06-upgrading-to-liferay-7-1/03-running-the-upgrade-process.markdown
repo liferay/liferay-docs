@@ -25,12 +25,11 @@ better for you. The point is, the @product-ver@ upgrade process is flexible.
 **Note:** Liferay enterprise subscribers can use the upgrade tool to execute 
 upgrades for fix packs. As of @product@ 7.1, a fix pack's micro upgrade
 processes (core database schema micro version changes) are not mandatory. This
-means, you can install a fix pack (i.e., core code) without having to execute
+means you can install a fix pack (i.e., core code) without having to execute
 the database schema micro version changes---you can execute micro version
-changes when you want, even outside of a @product@ major or minor version
-upgrade. Before using the upgrade tool to execute a fix pack's micro upgrade
-process, however, you must shut down the portal server, install the fix pack,
-and 
+changes when you want, even outside of a major or minor version upgrade. Before
+using the upgrade tool to execute a fix pack's micro upgrade process, however,
+you must shut down the server, install the fix pack, and 
 [back up the @product@ database, installation, and Document Library store](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation). 
 
 ## Running the Upgrade Tool [](id=running-the-upgrade)
@@ -219,6 +218,8 @@ executes the core upgrade processes and verifiers.
  
 Executing the upgrade tool after a core upgrade step for Portal 7.1 (or newer)
 fails, starts the upgrade at that step. 
+
+<!-- I have no idea what the above sentence means -Rich -->
 
 The Gogo shell lets you upgrade modules, check module upgrade status, and verify
 upgrades.  Read on to learn how to use Gogo shell commands to use the
