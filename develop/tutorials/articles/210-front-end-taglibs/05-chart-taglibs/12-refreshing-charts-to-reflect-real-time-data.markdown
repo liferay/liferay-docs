@@ -1,10 +1,10 @@
 # Refreshing Charts to Reflect Real Time Data [](id=refreshing-charts-to-reflect-real-time-data)
 
 The polling interval property is an optional property for all charts. It 
-specifies the time, in milliseconds, for the chart's data to refresh. You can 
-use this for charts that receive any kind of real time data, such as data coming 
-from a JSON file that changes periodically. This ensures that the chart is up to 
-date, reflecting the most recent data. 
+specifies the time in milliseconds for the chart's data to refresh. You can 
+use this for charts that receive any kind of real time data,  a JSON file that
+changes periodically. This ensures that the chart is up to date, reflecting the
+most recent data. 
 
 The example configuration below uses the `setPollingInterval()` method to 
 specify a 2 second refresh rate for the line chart's data:
@@ -47,7 +47,7 @@ JSP:
 
 To see this in action, you can add the Chart Sample Widget to the page. The 
 polling interval line chart uses the script below to update the chart's data 
-after 2 seconds:  
+after 2 seconds: 
 
     <aui:script>
     	Liferay.componentReady('polling-interval-line-chart').then(
