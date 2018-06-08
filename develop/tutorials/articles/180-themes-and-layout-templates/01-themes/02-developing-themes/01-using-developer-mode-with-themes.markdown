@@ -42,7 +42,7 @@ To enable Developer Mode for your server in @ide@, follow these steps:
 
 3.  Save the changes and start your server.
 
-![Figure 1: The *Use developer mode* option lets you enable Developer Mode for your server in @ide@.](../../../images/developer-mode-ide.png)
+![Figure 1: The *Use developer mode* option lets you enable Developer Mode for your server in @ide@.](../../../../images/developer-mode-ide.png)
 
 +$$$
 
