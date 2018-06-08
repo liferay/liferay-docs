@@ -17,9 +17,7 @@ provided dog food?* with two options: *Yes* and *No*.
 Add a numeric field called *Amount (US lb.)* and make it an Integer. Use field
 validation to make sure it's not greater than *100*.
 
-$$$
-
-To set up an enable/disable rule, 
+To set up the enable/disable rule, 
 
 1. Open the Rules tab of the Edit Form page and click the Add
    (![Add](../../../images/icon-add.png) button.
@@ -34,6 +32,8 @@ To set up an enable/disable rule,
     - Save the rule. 
 
     ![Figure x: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-enable-rule2.png)
+
+$$$
 
 Now the user can fill out the amount of dog food they'll need only if they
 specify that they do indeed want to use the provided food.

@@ -1,30 +1,13 @@
 # Action: Autofill
 
 Autofill rules let you the change the selection options of another field based
-on the value entered into a related field. For discussion purposes, let's call
-the field that's *not* autofilled, the one that the user enters data into first,
-the *controller field*. The field(s) to be autofilled can be called the
-*autofilled field*.
+on the value entered into a related field. A [data provider's]((/discover/portal/-/knowledge_base/7-1/data-providers)) output is used to
+populate a field, as long as the condition is met.
 
-For example, you coould use a *Zip Code* field as the controller to autofill
-some related fields: Country, Region, and City.
-
-Before configuring an autofill rule, [set up a data provider](LINK). That's how the
-autofilled fields will be populated. Pay careful attention to the input and
-output parameters you choose when setting up the rule.
-
-Input Parameters
-: Input parameters are used for telling the autofill rule you configure what the
-value of the controller field should correspond to in the data provider. If you
-use zip code, the data provider must contain a field that corresponds to the
-controller's value.
-
-Output Parameters
-: Data providers often have multiple fields per record (for example, a country
-data provider's records might have *name*, *shortName*, and *countryId* fields).
-This is where you pick which field to display for each record of the data
-provider. If it's a data provider with the countries of the world, for example,
-you'd probably use the name field.
+Before configuring an autofill rule, 
+[set up a data provider](/discover/portal/-/knowledge_base/7-1/data-providers). 
+That's how the autofilled field(s) is populated. Pay careful attention to the
+input and output parameters you choose when setting up the rule.
 
 To follow this example: 
 

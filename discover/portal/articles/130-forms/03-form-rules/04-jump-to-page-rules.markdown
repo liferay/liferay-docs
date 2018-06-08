@@ -23,9 +23,9 @@ To follow the example here:
 race registration form that asks *Are you a returning racer with the same team?*
 If you select *Yes*, when you click the form's *Next* button, you will skip to
 the final page of the form, since there's no need to fill out your animal's name
-again. Their personalized t-shirts will be ready at the start of the race.
+again. Their monogrammed t-shirts will be ready at the start of the race.
 
-To configure a Jump to Page rule, 
+To configure the Jump to Page rule, 
 
 1. Open the Rules tab of the Edit Form page and click the Add
    (![Add](../../../images/icon-add.png) button.

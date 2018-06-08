@@ -1,7 +1,7 @@
 # Action: Calculate
 
-Calculate rules let you automatically enter data into a field by calculating a
-value based on other fields. Calculations are limited to numeric fields.
+Calculate rules let you automatically populate a numeric field by calculating
+its value based on other fields. Calculations are limited to numeric fields.
 
 To follow the example below:
 

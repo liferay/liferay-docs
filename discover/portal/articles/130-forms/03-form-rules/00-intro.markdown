@@ -1,9 +1,9 @@
 # Form Rules
 
 What's the difference between a chicken and a dog? Among other things, you can't
-train a chicken, while dogs are much more trainable. Don't believe me? Try
+train a chicken, while dogs are quite trainable. If you're skeptical, try
 teaching your chicken to sit on command or herd sheep. Better yet, get a team of
-chickens to pull a sled in the [Iditarod](http://iditarod.com/). The Forms
+chickens to pull a sled in the [Iditarod](http://iditarod.com/).  The Forms
 application is much more like the dog than the useful (southwestern omelet
 anyone?) but untrainable chicken, and it's only getting more trainable as time
 goes on. 
@@ -26,10 +26,10 @@ Jump to Page
 
 Autofill with Data Provider 
 : Use a [data provider](/discover/portal/-/knowledge_base/7-1/creating-advanced-forms#populating-select-fields-with-rest-data-providers)
-to populate fields that are related to another field. <!--Incomplete-->
+to populate fields when a condition is met in another field.
 
-Calculate: Calculate the value of a field based on data entered in
-    other fields. <!--Incomplete-->
+Calculate
+: Populate a field with a calculated value using data entered in other fields.
 
 Form rules are for changing fields and form elements by acting on conditions.
 
@@ -50,19 +50,19 @@ Each rule consists of one or more conditions and actions.
 
 Rules are stored in the @product@ database in JSON format by default.
 
-
-## Creating Form Rules with the Rule Builder
+## Creating Form Rules: Rule Builder
 
 Once you create a form and lay out its fields, you're ready to set up rules in
 your form. First, save the form.
 
-Open the Rules Manager window by clicking the *Rules* tab at the top
-of the *Edit Form* screen.
-
-![Figure x: caption](../../../images/forms-rule-builder.png)
+Open the Rule Builder by clicking the *Rules* tab at the top of the *Edit Form*
+screen.
 
 In the rule builder view, you can now begin developing your form rule. Click the
 Add button (![Add](../../../images/icon-add.png)) to get started.
+
+![Figure x: The Rule Builder gives you a handy interface for creating dynamic
+form rules.](../../../images/forms-rule-builder.png)
 
 Before looking at each type of rule condition and action you can use to develop
 rules, consider the *OR* selector box at the right side of the *Condition* (it's
@@ -82,7 +82,7 @@ This box becomes usable once you click the Add button
 
 ## Conditions
 
-Conditions are the gatekeepers of form rules. If the condition's if statement
+Conditions are the gatekeepers of form rules. If the condition's *if statement*
 evaluates to *true*, the action is triggered. If it evaluates to *false*, no
 action happens.
 
@@ -92,7 +92,7 @@ A condition checks whether one field's value
 - *Is not equal to* a specific value or another field's value.
 - *Contains* a specific value or another field's value.
 - *Does not contain* a specific value or another field's value.
-- *Is empty*. This assumes you want to do something if a field is empty.
+- *Is empty*. This assumes you want to do something if a field *is* empty.
 - *Is not empty*. This assumes you want to do something as long as a field is
     *not* empty.
 
@@ -108,4 +108,4 @@ evaluates to *true*, an action is triggered.
 
 A condition is the gateway into a form rule, but actions define what actually
 happens when the condition evaluates to *true*. The remaining articles discuss
-the various actions and demonstrate their use.
+the available actions and demonstrate their use.

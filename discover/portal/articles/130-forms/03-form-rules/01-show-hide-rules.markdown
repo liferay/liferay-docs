@@ -3,14 +3,6 @@
 With a show and hide rule, you use one or more conditions to determine whether
 to show or hide a field if the condition evaluates to *true*.
 
-+$$$
-
-**Example:** If you're under 18 years old, you need the approval of a legal
-guardian to drive a sled in a sled dog race (even if you're racing chickens, not
-dogs). The form for registering your chicken team is going to ask you the age of
-the driver. If you enter a number less than 18, the Legal Guardian Email Address
-field appears.
-
 To set this example up, add these fields to a form: 
 
 - *I am 18 Years Old or Older*, a required single selection field with two options:
@@ -21,7 +13,13 @@ To set this example up, add these fields to a form:
   validation](/discover/portal/-/knowledge_base/7-1/creating-advanced-forms#validating-text-fields)
   to dictate input type).
 
-$$$
++$$$
+
+**Example:** If you're under 18 years old, you need the approval of a legal
+guardian to drive a sled in a sled dog race (even if you're racing chickens, not
+dogs). The form for registering your chicken team is going to ask you the age of
+the driver. If you enter a number less than 18, the Legal Guardian Email Address
+field appears.
 
 To configure a Show/Hide rule,
 
@@ -42,4 +40,6 @@ To configure a Show/Hide rule,
 Now the *Legal Guardian Email Address* field is only displayed in the form if
 the user selects *No* in the *I am 18 years old or older* field.
 
-Show rules let you keep a filed hidden until some condition is met.
+$$$
+
+Show rules let you keep a field hidden until some condition is met.
