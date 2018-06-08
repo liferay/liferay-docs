@@ -1,7 +1,7 @@
 # Configuring Search Pages [](id=configuring-search-pages)
 
 There are multiple ways to skin the search cat (disclaimer: no actual cats have
-been harmed during the writing this article). 
+been harmed during the writing of this article). 
 
 If you're unsure which approach to take, use the
 [default](#default-search-pages) configuration. It provides a sensible starting
@@ -10,8 +10,8 @@ point that can be modified alter, as needed.
 If you've been using @product@ for a long time and like the search experience
 you've always used, use the [legacy approach](#legacy-search-experience). 
 
-If you're in need of a fully customized experience, [manually
-configure](#manual-search-page-configuration) the search experience. 
+If you're in need of a fully customized experience, 
+[manually configure](#manual-search-page-configuration) the search experience. 
 
 After choosing your approach and reading here to get it up and running, find the
 articles on the [Search Bar](), [Search Facets](), and [Search Results]() to
@@ -38,13 +38,12 @@ results are displayed in the Search Results widget.
 
 ![Figure 2: The default page is pre-configured with the Search Results widget and the various Facet widgets to provide a full search experience.](../../images/search-default-page.png)
 
-The default search page is based on a Search page template, but but it doesn't
+The default search page is based on a Search page template, but it doesn't
 inherit changes from the page template by default. That means you can customize
 the search page directly without changing the template's inheritance
 configuration.
 
-![Figure 3: Configure the Search page. By default, it doesn't inherit changes
-from the page template.](../../images/search-page-config.png)
+![Figure 3: Configure the Search page. By default, it doesn't inherit changes from the page template.](../../images/search-page-config.png)
 
 If you require just a few changes to the default page, don't abandon it and
 create one manually. Just make the configuration changes you need, including
@@ -55,10 +54,10 @@ an option.
 ## Manual Search Page Configuration [](id=manual-search-page-configuration)
 
 It's reasonable to create the search experience from the ground up. If you're
-working from a newly created site, it's a necessity. These steps will show you
-how to switch to a manually configured search experience in the default site,
-but you can skip the step on deleting the default search page if you're starting
-with a new site:
+working from a newly created site, it's a necessity. These steps show you how to
+switch to a manually configured search experience in the default site, but you
+can skip the step on deleting the default search page if you're starting with
+a new site:
 
 1.  Delete the existent search page by navigating to the default site's menu and
     clicking *Build* &rarr; *Site Pages*. Click the Search page's Options menu
@@ -71,7 +70,7 @@ with a new site:
     ![Figure 4: The search bar is only visible if it points to an existent page.](../../images/search-bar-warning.png)
 
 2.  Create a new page named whatever you want (_Finders Keepers_, perhaps). Make
-    it hidden or add it to the navigation, as you please (the default search
+    it hidden or add it to the navigation as you please (the default search
     page is hidden from the navigation).
 
     If you want a pre-configured search page, create it from the Search page
@@ -82,8 +81,7 @@ with a new site:
 
 3.  If you're creating a page not backed by the template, add and configure all
     the widgets you need. You'll find all the available search widgets in the
-    Add Widget menu's Search section. Lay them out however you'd like on the
-    page.
+    Add Widget menu's Search section. Lay them out however you want on the page.
 
 4.  Configure the search bar at the top of the page, making sure it points to your
     new search page's friendly URL (for example, `/finders-keepers`). 
@@ -104,7 +102,7 @@ In prior versions, the search experience was encapsulated in one application,
 It looked very similar, with only the search bar visible in the default view of
 the application. Once a search term is entered, the maximized view of the
 application is presented, with all the search facets and results now in view. It
-looks a lot like the new search behavior, only it's monolithic structure means
+looks a lot like the new search behavior, only its monolithic structure means
 it's difficult to customize. If you liked the old application, it's still
 available. Enable it with these steps:
 

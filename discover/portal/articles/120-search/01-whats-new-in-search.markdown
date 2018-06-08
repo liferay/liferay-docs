@@ -1,18 +1,17 @@
 # What's New with Search? [](id=whats-new-with-search)
 
-There are lots of new features in the search functionality. Use this brief
-overview to get you familiar with the changes, and learn more details in the
-remaining articles.
+There are lots of new features in the search functionality. This brief overview
+can get you familiar with the changes. More details are in the remaining
+articles.
 
-**Modularized Search Functionality**
-: Users of search in prior versions will think of all the search functionality
-existing in one place: the Search portlet. Now each separate feature is
-available in a separate portlet, and you can drag and drop search widgets onto a
-page, creating the perfectly customized search page. The search configurations
-that existed in the previous version are still available, but the setting you're
-looking for might be in a slightly different location due to the modularization
-of search in @product-ver@. The articles here will help familiarize you with the
-new look.
+**Modularized Search Functionality** 
+: In prior versions, all the search functionality was in one place: the Search
+portlet. Now each separate feature is available in a separate portlet, and you
+can drag and drop search widgets onto a page, creating a perfectly customized
+search page. The search configurations that existed in the previous version are
+still available, but the setting you're looking for might be in a slightly
+different location due to the modularization of search in @product-ver@. The
+articles here help familiarize you with the new look.
 
 ![Figure 1: The search functionality is now distributed across several widgets.](../../images/search-widgets.png)
 
