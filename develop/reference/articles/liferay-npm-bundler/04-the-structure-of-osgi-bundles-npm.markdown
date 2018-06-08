@@ -1,7 +1,7 @@
 # The Structure of OSGi Bundles Containing npm Packages [](id=the-structure-of-osgi-bundles-containing-npm-packages)
 
 To deploy JavaScript modules, you must create an OSGi bundle with the npm 
-dependencies extracted from the project's `node_modules` folder, and modify them 
+dependencies extracted from the project's `node_modules` folder and modify them 
 to work with the 
 [Liferay AMD Loader](https://github.com/liferay/liferay-amd-loader). 
 The liferay-npm-bundler automates this process for you, creating a bundle 
@@ -45,18 +45,6 @@ similar to the one below:
                         - ...
                     - ...
 
-+$$$
-
-**Note:** the package names are prefixed with the bundle name since version 
-2.0.0 of the bundler, but were left intact in previous versions. This strategy
-is used to isolate packages from different bundles between them.
-
-The example shown here follows that convention because it is the recommended 
-path to follow, but you can still deploy bundler 1.x packages (without prefix) 
-and they still work as they used to do.
-
-$$$
-
 The packages inside `node_modules` are the same format as the npm tool and can 
 be copied (after a little processing for things like converting to AMD, for 
 example) from a standard `node_modules` folder. The `node_modules` folder can 
@@ -83,11 +71,3 @@ differentiate between inline and npm packages once they are published. The
 inline package is only used for organizational purposes. 
 
 Now you know how the liferay-npm-bundler creates OSGi bundles for npm packages!
-
-## Related Topics [](id=related-topics)
-
-[Configuring liferay-npm-bundler](/develop/tutorials/-/knowledge_base/7-1/configuring-liferay-npm-bundler)
-
-[liferay-npm-bundler](/develop/tutorials/-/knowledge_base/7-1/liferay-npm-bundler)
-
-[Adding liferay-npm-bundler to Your Portlet](/develop/tutorials/-/knowledge_base/7-1/adding-liferay-npm-bundler-to-your-portlet)
