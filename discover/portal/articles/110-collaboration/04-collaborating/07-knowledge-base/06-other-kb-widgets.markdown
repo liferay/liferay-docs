@@ -1,7 +1,7 @@
-# Other Knowledge Base Widgets
+# Other Knowledge Base Widgets [](id=other-knowledge-base-widgets)
 
 There are other Knowledge Base widgets you can add to site pages besides 
-[Knowledge Base Display](liferay.com): 
+[Knowledge Base Display](/discover/portal/-/knowledge_base/7-1/knowledge-base-display): 
 
 -   **Knowledge Base Article:** Display a single article's content.
 -   **Knowledge Base Section:** Publish articles associated with a specific 
@@ -12,7 +12,7 @@ You can add these widgets from *Add*
 (![Add](../../../../images/icon-add-app.png)) 
 &rarr; *Widgets* &rarr; *Content Management*. 
 
-## Knowledge Base Article
+## Knowledge Base Article [](id=knowledge-base-article)
 
 Knowledge Base Article lets you show a single article's content. It even shows 
 abstracts of child articles. You can add multiple Knowledge Base Article 
@@ -35,10 +35,10 @@ You can change your selection from the widget's *Options*
 
 Knowledge Base Article shares the same UI as the Knowledge Base Display to 
 display and manage its articles. Refer to the 
-[Knowledge Base Display article](liferay.com) 
+[Knowledge Base Display documentation](/discover/portal/-/knowledge_base/7-1/knowledge-base-display) 
 for a detailed description of the widget's UI. 
 
-## Knowledge Base Section
+## Knowledge Base Section [](id=knowledge-base-section)
 
 +$$$
 
@@ -56,7 +56,7 @@ specific topic (section). For example, a news site might have the sections
 To use sections, an administrator must first configure the feature in System 
 Settings, creating the section names for use in the Knowledge Base Section 
 widget. This process is covered in detail in 
-[Knowledge Base System Settings](liferay.com). 
+[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-1/knowledge-base-system-settings). 
 When creating or editing a Knowledge Base article, authors can then select the 
 article's section in the *Configuration* &rarr; *Section* field. 
 
@@ -79,7 +79,7 @@ widget:
 
 The matching articles are displayed in the app beneath their section heading. 
 
-## Knowledge Base Search
+## Knowledge Base Search [](id=knowledge-base-search)
 
 +$$$
 

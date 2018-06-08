@@ -1,4 +1,4 @@
-# Creating Knowledge Base Articles 
+# Creating Knowledge Base Articles [](id=creating-knowledge-base-articles)
 
 The Knowledge Base app in Site Administration contains everything you need to 
 create articles in the Knowledge Base. You can create articles by authoring them 
@@ -29,7 +29,7 @@ on creating articles.
 
 ![Figure 1: The Knowledge Base app in Site Administration lets you create Knowledge Base articles.](../../../../images/kb-admin-articles.png)
 
-## Authoring Articles in the Editor
+## Authoring Articles in the Editor [](id=authoring-articles-in-the-editor)
 
 Follow these steps to create an article in the editor: 
 
@@ -58,7 +58,7 @@ Follow these steps to create an article in the editor:
 Once the article is saved, it is converted automatically to HTML for the 
 Knowledge Base. Articles are listed in a table in the Articles tab. 
 
-## Importing Knowledge Base Articles
+## Importing Knowledge Base Articles [](id=importing-knowledge-base-articles)
 
 You can also create new Knowledge Base articles by importing them from a ZIP 
 archive that contains articles in the Markdown format (`.markdown`, `.md`). For 
@@ -67,8 +67,14 @@ in a ZIP file, and then import that ZIP file to create those articles in the
 Knowledge Base. The Knowledge Base can also prioritize articles by their 
 filenames' numerical prefixes. For example, the Knowledge Base would list 
 `01-article.markdown` and `02-article.markdown` in ascending order by their 
-numerical prefix (`01`, `02`). The section on managing articles discusses 
-article priority in more detail. 
+numerical prefix (`01`, `02`). For more information on article priority, see 
+[Managing Knowledge Base Articles](/discover/portal/-/knowledge_base/7-1/managing-the-knowledge-base#managing-knowledge-base-articles)
+For detailed information on the Knowledge Base importer, see the following 
+topics: 
+
+-   [Importing Knowledge Base Articles](/discover/portal/-/knowledge_base/7-1/importing-knowledge-base-articles)
+-   [Knowledge Base ZIP File Requirements](/discover/portal/-/knowledge_base/7-1/knowledge-base-zip-file-requirements)
+-   [Knowledge Base Importer FAQs](/discover/portal/-/knowledge_base/7-1/knowledge-base-importer-faqs)
 
 +$$$
 

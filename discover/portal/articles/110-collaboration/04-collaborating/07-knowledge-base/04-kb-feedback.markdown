@@ -1,4 +1,4 @@
-# Responding to Knowledge Base Feedback
+# Responding to Knowledge Base Feedback [](id=responding-to-knowledge-base-feedback)
 
 The Knowledge Base app's *Suggestions* tab shows user feedback on articles and 
 lets you mark progress on addressing the feedback. To navigate to this app, open 

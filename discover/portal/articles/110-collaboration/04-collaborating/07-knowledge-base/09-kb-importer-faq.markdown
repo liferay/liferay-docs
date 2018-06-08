@@ -1,4 +1,4 @@
-# Knowledge Base Importer FAQs
+# Knowledge Base Importer FAQs [](id=knowledge-base-importer-faqs)
 
 -   **What happens when I import an existing article?** 
 

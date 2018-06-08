@@ -1,4 +1,4 @@
-# Importing Knowledge Base Articles
+# Importing Knowledge Base Articles [](id=importing-knowledge-base-articles)
 
 As mentioned earlier, the Knowledge Base app can import articles in bulk. This 
 lets you have an offline process where articles are prepared ahead of time 

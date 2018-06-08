@@ -1,4 +1,4 @@
-# Knowledge Base System Settings
+# Knowledge Base System Settings [](id=knowledge-base-system-settings)
 
 Administrators can use the System Settings UI to set the Knowledge Base's global 
 configuration (across sites). You can access this UI in *Control Panel* &rarr; 
@@ -27,7 +27,7 @@ The Knowledge Base has several optional features that are disabled by default,
 but can be enabled and configured from System Settings. These include source
 URL, import file conventions, new article priority increment, and sections. 
 
-## Source URL Settings
+## Source URL Settings [](id=source-url-settings)
 
 The source URL settings define the source location of Markdown files for import. 
 This is intended to point to a source repository where the files are stored. 
@@ -51,7 +51,7 @@ Alternatively, you can specify the label explicitly:
 
     Edit on Bitbucket
 
-## Importer File Convention Settings
+## Importer File Convention Settings [](id=importer-file-convention-settings)
 
 These settings define the supported file extensions, the suffix for parent
 files, and the image folder's path within the imported ZIP files. These settings 
@@ -92,7 +92,7 @@ These settings define additional article configuration options for the importer:
     feature for each widget in the corresponding widget's configuration menu in 
     System Settings. 
 
-## Section Names Setting
+## Section Names Setting [](id=section-names-setting)
 
 The section names setting lets you specify names of arbitrary topics to 
 attribute to articles. Using the Knowledge Base Section widget, you can display 
@@ -111,7 +111,7 @@ Follow these steps to make new sections available:
 ![Figure 1: Create the sections you want to use with the Knowledge Base Section widget.](../../../../images/kb-section-setting.png)
 
 Once your sections are added, you can follow the steps in the 
-[Knowledge Base Section documentation](liferay.com) 
+[Knowledge Base Section documentation](/discover/portal/-/knowledge_base/7-1/other-knowledge-base-widgets#knowledge-base-section) 
 to learn how to use them.
 
 <!-- 

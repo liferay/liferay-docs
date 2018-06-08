@@ -1,4 +1,4 @@
-# Knowledge Base Display
+# Knowledge Base Display [](id=knowledge-base-display)
 
 You can use the Knowledge Base Display widget to display your published 
 Knowledge Base articles. You can customize how this widget displays articles, 
@@ -79,7 +79,7 @@ widget that lets them perform the following actions:
 Below the article's content is the rating interface, showing thumbs up/down 
 icons. Users can also submit suggestions or comments below the article in the 
 text box labeled *Do you have any suggestions?*. Administrators can 
-[view the suggestions and mark progress on them](liferay.com). 
+[view the suggestions and mark progress on them](/discover/portal/-/knowledge_base/7-1/responding-to-knowledge-base-feedback). 
 
 If the administrator enables the Knowledge Base app's source URL feature (more 
 on this in a moment) and an article has an assigned source URL, an 
@@ -89,9 +89,9 @@ appears to the right of the article's title. This button lets users access the
 article's source in GitHub. You can use this feature to encourage users to 
 contribute fixes or improvements to articles. If you're interested in this 
 feature, you can direct your administrator to follow the instructions in 
-[System Settings](liferay.com). 
+[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-1/knowledge-base-system-settings). 
 
-## Displaying Different Article Sets
+## Displaying Different Article Sets [](id=displaying-different-article-sets)
 
 As an administrator, say that you've used folders to aggregate similar articles,
 and you want to provide an easy way for users to switch between these sets of

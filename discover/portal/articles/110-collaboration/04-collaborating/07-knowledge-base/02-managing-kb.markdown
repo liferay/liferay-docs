@@ -1,4 +1,4 @@
-# Managing the Knowledge Base
+# Managing the Knowledge Base [](id=managing-the-knowledge-base)
 
 The Knowledge Base app in Site Administration contains a variety of options that 
 let you manage the Knowledge Base. To navigate to this app, open the Menu 
@@ -17,7 +17,7 @@ $$$
 
 ![Figure 1: You can manage Knowledge Base articles, folders, and suggestions.](../../../../images/kb-admin-articles.png)
 
-## Setting the Knowledge Base's Options
+## Setting the Knowledge Base's Options [](id=setting-the-knowledge-bases-options)
 
 At the top-right of the Knowledge Base app, the Options menu 
 (![Options](../../../../images/icon-options.png)) 
@@ -41,18 +41,18 @@ contains these options:
     available via RSS (RSS is enabled by default), and configure the RSS feed's 
     options. 
 
-![Figure 1: The Knowledge Base App's options.](../../../../images/kb-admin-options.png)
+![Figure 2: The Knowledge Base App's options.](../../../../images/kb-admin-options.png)
 
-## Managing Knowledge Base Articles
+## Managing Knowledge Base Articles [](id=managing-knowledge-base-articles)
 
 Each article also has a *priority* value that determines its position in the 
-[Knowledge Base Display widget's navigation](liferay.com). 
+[Knowledge Base Display widget's navigation](/discover/portal/-/knowledge_base/7-1/knowledge-base-display). 
 Each article's priority value is listed underneath the article's title. The 
 Knowledge Base Display widget's navigation arranges articles in ascending 
 priority. Priority 1 is the highest priority. The higher an article's priority, 
 the higher it appears in the navigation. Articles are assigned the next lowest 
 priority by default. This behavior can be changed via 
-[System Settings](liferay.com). 
+[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-1/knowledge-base-system-settings). 
 
 To assign articles a new priority value, follow these steps: 
 
@@ -83,7 +83,7 @@ app shows your position in the folder hierarchy. Click a folder's name in the
 hierarchy to navigate to it. You can also move articles into folders and create 
 child articles. Knowledge Base also supports nested folders.
 
-![Figure 2: This screenshot uses a red box to highlight the text that indicates the current position in the folder hierarchy.](../../../../images/kb-admin-folder-hierarchy.png)
+![Figure 3: This screenshot uses a red box to highlight the text that indicates the current position in the folder hierarchy.](../../../../images/kb-admin-folder-hierarchy.png)
 
 Each folder's Actions menu 
 (![Actions](../../../../images/icon-actions.png)) 

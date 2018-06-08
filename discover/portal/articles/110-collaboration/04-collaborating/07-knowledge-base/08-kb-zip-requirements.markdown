@@ -1,4 +1,4 @@
-# Knowledge Base ZIP File Requirements
+# Knowledge Base ZIP File Requirements [](id=knowledge-base-zip-file-requirements)
 
 The Knowledge Base importer supports article hierarchies, so Markdown files can 
 be specified anywhere in the ZIP file's directory structure. They can be nested 
@@ -122,7 +122,7 @@ ZIP files must meet the following requirements:
 -  Image files must be in a supported format and must use the appropriate file
    extensions. Supported extensions are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and 
     `.png`. They're specified via an app system setting. For details, see 
-   [Knowledge Base System Settings](liferay.com).
+   [Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-1/knowledge-base-system-settings).
 
 Once you have your article ZIP file, it's time to import it.
 
@@ -167,4 +167,4 @@ properties file and uses the base source URL to construct the source URL for
 all of the ZIP file's resulting articles. 
 
 To use the source URL feature, your administrator must enable it via the 
-[Knowledge Base System Settings](liferay.com). 
+[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-1/knowledge-base-system-settings). 

@@ -1,4 +1,4 @@
-# Using the Knowledge Base
+# Using the Knowledge Base [](id=using-the-knowledge-base)
 
 The Knowledge Base app lets you create and organize articles in a site. For 
 example, it can be used to display professional product documentation or form 
