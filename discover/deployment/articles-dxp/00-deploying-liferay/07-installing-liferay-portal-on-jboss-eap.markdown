@@ -141,25 +141,24 @@ section on this topic in the
 it runs in domain mode.
 
 You can run @product@ on JBoss EAP in domain mode, but this method is not fully
-supported. In particular, @product@'s hot-deploy does not work, since JBoss EAP
-cannot deploy non-exploded `.war` files in domain mode. Instead, `.war` files
-are in the `domain/data/content` directory. Deployments are only possible using
-the command line interface. This prevents many @product@ plugins from working as
-intended. For example, JSP hooks don't work on JBoss EAP running in domain mode,
-since @product@'s JSP override mechanism relies on the application server
-reloading customized JSP files from the exploded plugin `.war` file location.
-Other plugins, such as service or action hooks, should still work properly since
-they don't require JBoss to access anything (such as JSP files) from an exploded
-`.war` file on the file system.
+supported. In particular, @product@'s hot-deploy does not work with a managed
+deployment, since JBoss manages the content of a managed deployment by copying
+files (exploded or non-exploded). This prevents many @product@ plugins from
+working as intended. For example, JSP hooks don't work on JBoss EAP running in
+managed domain mode, since @product@'s JSP override mechanism relies on the
+application server. Other plugins, such as service or action hooks, should still
+work properly.
+
+Using the command line interface is recommended for deployments.
 
 +$$$
 
-**Note:** This does not prevent @product@ from running in a clustered environment
-on multiple JBoss servers. You can set up a cluster of @product@ instances
-running on JBoss EAP servers running in standalone mode. Please refer to the
-chapter of this guide on
+**Note:** This does not prevent @product@ from running in a clustered
+environment on multiple JBoss servers. You can set up a cluster of @product@
+instances running on JBoss EAP servers running in standalone mode. Please refer
+to the
 [@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)
-for information on setting up a @product@ cluster.
+section for information on setting up a @product@ cluster.
 
 $$$
 
@@ -190,16 +189,21 @@ Make the following modifications to
             <property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true" />
         </system-properties>
 
-2.  Add a timeout for the deployment scanner by setting
+2.  Add the following `<filter-spec>` tag within the `<console-handler>` tag,
+    directly below the `<level name="INFO"/>` tag:
+        
+        <filter-spec value="not(any(match(&quot;WFLYSRV0059&quot;),match(&quot;WFLYEE0007&quot;)))" />
+
+3.  Add a timeout for the deployment scanner by setting
     `deployment-timeout="360"` as seen in the excerpt below.
 
         <subsystem xmlns="urn:jboss:domain:deployment-scanner:2.0">
             <deployment-scanner deployment-timeout="360" path="deployments" relative-to="jboss.server.base.dir" scan-interval="5000"/>
         </subsystem>
 
-3.  Add the following JAAS security domain to the security subsystem
+4.  Add the following JAAS security domain to the security subsystem
     `<security-domains>` defined in element `<subsystem
-    xmlns="urn:jboss:domain:security:1.2">`.
+    xmlns="urn:jboss:domain:security:2.0">`.
 
         <security-domain name="PortalRealm">
             <authentication>
@@ -207,37 +211,57 @@ Make the following modifications to
             </authentication>
         </security-domain>
 
-4.  Disable the default JBoss Welcome page by setting the `enable-welcome-root`
-    attribute to `false`, as seen in the snippet below.
+5.  Remove the two code snippets providing welcome content:
 
-        <subsystem xmlns="urn:jboss:domain:web:2.2" default-virtual-server="default-host" native="false">
-            <connector name="http" protocol="HTTP/1.1" scheme="http" socket-binding="http"/>
-            <virtual-server name="default-host" enable-welcome-root="false">
-            ...
+        <location name="/" handler="welcome-content"/>
 
-5.  In the same `<subsystem ... />` element that was outlined in the previous
-    step, add the following snippet above the `<connector ... />` element:
+    and
+
+        <handlers>
+            <file name="welcome-content" path="${jboss.home.dir}/welcome-content"/>
+        </handlers>
+
+X.  <!-- Not in JBoss. Checking... --> In the same `<subsystem ... />` element
+    that was outlined in the previous step, add the following snippet above the
+    `<connector ... />` element:
 
         <configuration>
             <jsp-configuration source-vm="1.8" target-vm="1.8" development="true" />
         </configuration>
+
+<!-- 6. Find the `<jsp-config/>` tag and insert the `development="true"` attribute
+    into the tag. Once finished, the tag should look like this:
+
+        <jsp-config development="true" />
+-->
 
 **Checkpoint:**
 
 Before continuing, verify the following properties have been set in the
 `standalone.xml` file:
 
-1.  `deployment-timeout="360"` has been set. The value is in seconds.    
-2.  The JAAS security domain has been added.    
-3.  The property `enable-welcome-root="false"` has been set.    
-4.  The property `jsp-configuration source-vm="1.8" target-vm="1.8"
+1.  The new `<system-property>` is created.
+
+2.  The new `<filter-spec>` is added.
+
+3.  The `<deployment-timeout>` is set to `360`.
+
+4.  The new `<security-domain>` is created.
+
+5.  Welcome content is removed.
+
+X.  The property `jsp-configuration source-vm="1.8" target-vm="1.8"
     development="true"` has been set in the `<configuration>` element. This is
     required because @product@ runs on Java JDK 1.8 or else there will be a
     JasperException and the instance will fail to start.
 
+<!--
+6.  The `<jsp-config development>` is set to `true`.
+-->
+
 Now it's time for some changes to your configuration and startup scripts.
  
-Make the following modifications to your standalone domain's configuration
+You must make a few modifications to your standalone domain's configuration
 script file `standalone.conf` (`standalone.conf.bat` on Windows) found in your
 `$JBOSS_HOME/bin/` folder.
 
@@ -255,24 +279,27 @@ Make the following edits as applicable to your operating system:
 1.  Comment out the initial `JAVA_OPTS` assignment as demonstrated in the
     following line:
 
-        rem set "JAVA_OPTS=-Xms1G -Xmx1G -XX:MaxPermSize=256M"
+        rem set "JAVA_OPTS=-Xms1G -Xmx1G -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m"
 
 2.  Add the following `JAVA_OPTS` assignment one line above the `:JAVA_OPTS_SET`
     line found at end of the file:
 
-        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m"
+        set "JAVA_OPTS=%JAVA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m"
 
 **Unix**
 
-1.  Merge the following values into your settings for `JAVA_OPTS`, replacing any
-    matching attributes with the ones found in the assignment below:
+1.  Below the `if [ "x$JAVA_OPTS" = "x" ];` statement, replace this `JAVA_OPTS`
+    statement:
 
-        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m"
+        JAVA_OPTS="-Xms1303m -Xmx1303m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true
 
-Make sure you replace the `$JBOSS_HOME` references with the appropriate
-directory. 
+    with this:
 
-<!-- Requires changes ^ -Cody -->
+        JAVA_OPTS="-Djava.net.preferIPv4Stack=true"
+
+2.  Add the following statement to the bottom of the file:
+
+        JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=512m"
 
 +$$$
 
@@ -294,7 +321,7 @@ insert the following path names inside the `<paths>...</paths>` element:
     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
 
 The added paths resolve issues with portal deployment exceptions and image
-uploading problems on a @product@ instance running on JBoss EAP 6.4. 
+uploading problems on a @product@ instance running on JBoss EAP 7.1. 
 
 $$$
 
@@ -354,7 +381,7 @@ If you want JBoss to manage your data source, follow these steps:
 
     Your final data sources subsystem should look like this:
 
-        <subsystem xmlns="urn:jboss:domain:datasources:1.2">
+        <subsystem xmlns="urn:jboss:domain:datasources:5.0">
             <datasources>
                 <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" jta="true" use-java-context="true" use-ccm="true">
                     <connection-url>jdbc:mysql://localhost/lportal</connection-url>
@@ -372,7 +399,7 @@ If you want JBoss to manage your data source, follow these steps:
 
 3.  In a `portal-ext.properties` file in your Liferay Home, specify your data
     source:
-        
+
         jdbc.default.jndi.name=java:jboss/datasources/ExampleDS
 
 Now that you've configured your data source, the mail session is next. 
@@ -390,7 +417,7 @@ If you want to manage your mail session with JBoss, follow these steps:
 1.  Specify your mail subsystem in the
     `$WILDFLY_HOME/standalone/configuration/standalone.xml` file like this:
 
-        <subsystem xmlns="urn:jboss:domain:mail:1.2">
+        <subsystem xmlns="urn:jboss:domain:mail:3.0">
             <mail-session jndi-name="java:jboss/mail/MailSession" >
                 <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp">
                     <login username="USERNAME" password="PASSWORD"/>
@@ -407,7 +434,7 @@ If you want to manage your mail session with JBoss, follow these steps:
 
 2.  In your `portal-ext.properties` file in Liferay Home, reference your mail
     session:
-        
+
         mail.session.jndi.name=java:jboss/mail/MailSession
  
 You've got mail! Next, you'll deploy @product@ to your JBoss app server.
