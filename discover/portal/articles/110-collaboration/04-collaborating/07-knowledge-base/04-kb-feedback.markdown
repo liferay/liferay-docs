@@ -3,8 +3,9 @@
 The Knowledge Base app's *Suggestions* tab shows user feedback on articles and 
 lets you mark progress on addressing the feedback. To navigate to this app, open 
 the Menu 
-(![Menu](../../../../images/icon-menu.png)) then go to Site Administration (the 
-menu for your site) &rarr; *Content* &rarr; *Knowledge Base*. 
+(![Menu](../../../../images/icon-menu.png)) 
+then go to Site Administration (the menu for your site) &rarr; *Content* &rarr; 
+*Knowledge Base*. 
 
 +$$$
 
@@ -20,8 +21,8 @@ $$$
 Each suggestion provides the link to the associated article, the user's 
 feedback, the user's name, the feedback's time stamp, and the status on 
 addressing the suggestion. You can use each entry's Actions menu 
-(![Actions](../../../../images/icon-actions.png)) to move the entry between the 
-*New*, *In Progress*, and *Resolved* states.
+(![Actions](../../../../images/icon-actions.png)) 
+to move the entry between the *New*, *In Progress*, and *Resolved* states.
 
 +$$$
 
@@ -39,4 +40,5 @@ When you move the suggestion to a different state, an email is sent notifying
 the user of the change. You can view and configure the automated emails from the 
 Knowledge Base app's 
 *Options* 
-(![Options](../../../../images/icon-options.png)) &rarr; *Configuration* menu. 
+(![Options](../../../../images/icon-options.png)) 
+&rarr; *Configuration* menu. 

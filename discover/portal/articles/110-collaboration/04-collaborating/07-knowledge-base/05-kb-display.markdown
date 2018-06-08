@@ -16,8 +16,8 @@ Knowledge Base's Home folder. To change where the widget displays articles from,
 follow these steps: 
 
 1.  Click the widget's *Options* icon 
-    (![Options](../../../../images/icon-app-options.png)) and select 
-    *Configuration*. This opens the Configuration dialog. 
+    (![Options](../../../../images/icon-app-options.png)) 
+    and select *Configuration*. This opens the Configuration dialog. 
 
 2.  In the *Setup* tab, select the *General* tab then click *Select* in the 
     *Article or Folder* field. This brings up the *Select Entry* form.
@@ -31,8 +31,8 @@ follow these steps:
 ![Figure 1: Select the article or folder of articles that the Knowledge Base Display widget displays.](../../../../images/kb-display-config-article.png)
  
 The Knowledge Base Display widget's Options icon 
-(![Options](../../../../images/icon-app-options.png)) also provides these common 
-configuration options: 
+(![Options](../../../../images/icon-app-options.png)) 
+also provides these common configuration options: 
 
 -   Look and Feel Configuration 
 -   Export/Import 
@@ -106,8 +106,9 @@ Follow these steps to set up content folders:
 2.  Add articles to each content folder.
 
 3.  Select *Configuration* from Knowledge Base Display's *Options* menu 
-    (![Options](../../../../images/icon-app-options.png)). In the *Setup* &rarr; 
-    *General* tab, select the content folders' parent folder and click *Save*. 
+    (![Options](../../../../images/icon-app-options.png)). 
+    In the *Setup* &rarr; *General* tab, select the content folders' parent 
+    folder and click *Save*. 
 
 The content selector's values reflect the names of your content folders. Select 
 one to view its articles. 
@@ -117,7 +118,8 @@ one to view its articles.
 You can also add a common prefix to the names shown in the selector: 
 
 1.  Select *Configuration* from Knowledge Base Display's *Options* menu 
-    (![Options](../../../../images/icon-app-options.png)). In the Configuration
-    dialog, select the *Setup* &rarr; *Display Settings* tab. 
+    (![Options](../../../../images/icon-app-options.png)). 
+    In the Configuration dialog, select the *Setup* &rarr; *Display Settings* 
+    tab. 
  
 2.  Enter the prefix into the *Content Root Prefix* field and click *Save*. 

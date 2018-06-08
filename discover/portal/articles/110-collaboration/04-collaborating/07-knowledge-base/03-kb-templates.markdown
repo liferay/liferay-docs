@@ -5,8 +5,9 @@ templates that contain default headers or other content for articles. Templates
 help foster consistent formatting and content organization for articles. You can 
 create and manage templates from the Knowledge Base app in Site Administration. 
 To navigate to this app, open the Menu 
-(![Menu](../../../../images/icon-menu.png)) then go to Site Administration (the 
-menu for your site) &rarr; *Content* &rarr; *Knowledge Base*. 
+(![Menu](../../../../images/icon-menu.png)) 
+then go to Site Administration (the menu for your site) &rarr; *Content* &rarr; 
+*Knowledge Base*. 
 
 +$$$
 
@@ -26,8 +27,8 @@ To create a new template follow these steps:
 1.  Click the *Templates* tab. 
  
 2.  Click the Add button 
-    (![Add](../../../../images/icon-add.png)). This brings up the *New Template* 
-    form. 
+    (![Add](../../../../images/icon-add.png)). 
+    This brings up the *New Template* form. 
 
 3.  Enter a title for the template. 
 

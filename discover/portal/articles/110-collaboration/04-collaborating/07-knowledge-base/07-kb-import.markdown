@@ -3,9 +3,9 @@
 As mentioned earlier, the Knowledge Base app can import articles in bulk. This 
 lets you have an offline process where articles are prepared ahead of time 
 before they're published. Articles are imported into the Knowledge Base as 
-[Markdown](http://commonmark.org) files. Markdown is a text-only file format
-that is easy to read, yet supports all the things you'd need to do to format
-your articles. 
+[Markdown](http://commonmark.org) 
+files. Markdown is a text-only file format that is easy to read, yet supports 
+all the things you'd need to do to format your articles. 
 
 +$$$
 

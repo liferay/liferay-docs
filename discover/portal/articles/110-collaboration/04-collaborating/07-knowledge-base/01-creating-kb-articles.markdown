@@ -16,9 +16,9 @@ appropriate permissions using the Permissions window in Knowledge Base.
 $$$
 
 To navigate to the Knowledge Base app, open the Menu 
-(![Menu](../../../../images/icon-menu.png)) then go to Site Administration (the 
-menu for your site) &rarr; *Content* &rarr; *Knowledge Base*. The Knowledge Base 
-app has 3 tabs: 
+(![Menu](../../../../images/icon-menu.png)) 
+then go to Site Administration (the menu for your site) &rarr; *Content* &rarr; 
+*Knowledge Base*. The Knowledge Base app has 3 tabs: 
 
 -   **Articles:** Create and manage articles and folders. 
 -   **Templates:** Create and manage templates. 
@@ -34,8 +34,9 @@ on creating articles.
 Follow these steps to create an article in the editor: 
 
 1.  In the *Articles* tab, click the Add button 
-    (![Add](../../../../images/icon-add.png)) and choose *Basic Article* or the 
-    name of an available template. This brings up the New Article form. 
+    (![Add](../../../../images/icon-add.png)) 
+    and choose *Basic Article* or the name of an available template. This brings 
+    up the New Article form. 
 
 2.  Enter a title for the article. A URL-safe version of the title you provide 
     is added to the end of the article's friendly URL. You can manage the 
@@ -79,8 +80,8 @@ $$$
 Follow these steps to import articles into the Knowledge Base: 
 
 1.  In the *Articles* tab, click the Add button 
-    (![Add](../../../../images/icon-add.png)) and choose *Import*. This brings 
-    up the Import form. 
+    (![Add](../../../../images/icon-add.png)) 
+    and choose *Import*. This brings up the Import form. 
 
 2.  Click *Browse* and select the ZIP file that contains the articles you want 
     to import. 

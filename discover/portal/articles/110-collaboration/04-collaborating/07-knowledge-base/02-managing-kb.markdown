@@ -2,8 +2,9 @@
 
 The Knowledge Base app in Site Administration contains a variety of options that 
 let you manage the Knowledge Base. To navigate to this app, open the Menu 
-(![Menu](../../../../images/icon-menu.png)) then go to Site Administration (the 
-menu for your site) &rarr; *Content* &rarr; *Knowledge Base*. 
+(![Menu](../../../../images/icon-menu.png)) 
+then go to Site Administration (the menu for your site) &rarr; *Content* &rarr; 
+*Knowledge Base*. 
 
 +$$$
 
@@ -19,7 +20,8 @@ $$$
 ## Setting the Knowledge Base's Options
 
 At the top-right of the Knowledge Base app, the Options menu 
-(![Options](../../../../images/icon-options.png)) contains these options: 
+(![Options](../../../../images/icon-options.png)) 
+contains these options: 
 
 -   **Subscribe:** Get notified when Knowledge Base articles are created, 
     updated, or deleted. 
@@ -55,7 +57,8 @@ priority by default. This behavior can be changed via
 To assign articles a new priority value, follow these steps: 
 
 1.  Select *Move* from the Actions menu 
-    (![Actions](../../../../images/icon-actions.png)) next to the article. 
+    (![Actions](../../../../images/icon-actions.png)) 
+    next to the article. 
 
 2.  Enter a new priority value for the article. 
 
@@ -65,8 +68,8 @@ You can also organize articles with folders. Follow these steps to create a
 folder:
 
 1.  Click the Add button
-    (![Add](../../../../images/icon-add.png)) and select *Folder*. This opens a 
-    form for creating the new folder. 
+    (![Add](../../../../images/icon-add.png)) 
+    and select *Folder*. This opens a form for creating the new folder. 
 
 2.  Enter a name and an optional description. 
 
@@ -83,8 +86,8 @@ child articles. Knowledge Base also supports nested folders.
 ![Figure 2: This screenshot uses a red box to highlight the text that indicates the current position in the folder hierarchy.](../../../../images/kb-admin-folder-hierarchy.png)
 
 Each folder's Actions menu 
-(![Actions](../../../../images/icon-actions.png)) lets you perform the following 
-actions on the folder: 
+(![Actions](../../../../images/icon-actions.png)) 
+lets you perform the following actions on the folder: 
 
 -   **Edit:** Change the folder's name and description.
 
@@ -102,4 +105,5 @@ You can also delete multiple articles or folders at once. To do this, select the
 checkbox for each item that you want to delete and click the *X* button that 
 appears in the Management Bar. You can also see the info for selected items by 
 clicking the *Info* button 
-(![Info](../../../../images/icon-information-dm.png)) in the Management Bar. 
+(![Info](../../../../images/icon-information-dm.png)) 
+in the Management Bar. 

@@ -129,13 +129,13 @@ Once you have your article ZIP file, it's time to import it.
 Follow these steps to import your ZIP file:
 
 1.  In the Menu 
-    (![Menu](../../../../images/icon-menu.png)), navigate to 
-    *Site Administration* (the menu for your site) &rarr; *Content* &rarr; 
-    *Knowledge Base* &rarr; *Articles*. 
+    (![Menu](../../../../images/icon-menu.png)), 
+    navigate to *Site Administration* (the menu for your site) &rarr; *Content* 
+    &rarr; *Knowledge Base* &rarr; *Articles*. 
 
 2.  Click *Add* 
-    (![Add](../../../../images/icon-add.png)) &rarr; *Import* to bring up the 
-    importer page. 
+    (![Add](../../../../images/icon-add.png)) 
+    &rarr; *Import* to bring up the importer page. 
 
 3.  Browse to the location of your file, and in most cases leave the checkbox 
     for the article priorities checked, and then click *Save*. 

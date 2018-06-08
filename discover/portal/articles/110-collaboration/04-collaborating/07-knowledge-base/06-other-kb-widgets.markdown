@@ -9,8 +9,8 @@ There are other Knowledge Base widgets you can add to site pages besides
 -   **Knowledge Base Search:** Search for articles.
 
 You can add these widgets from *Add* 
-(![Add](../../../../images/icon-add-app.png)) *Widgets* &rarr; *Content 
-Management*. 
+(![Add](../../../../images/icon-add-app.png)) 
+&rarr; *Widgets* &rarr; *Content Management*. 
 
 ## Knowledge Base Article
 
@@ -28,8 +28,8 @@ the widget:
     click *Save*, and close the Configuration dialog. 
 
 You can change your selection from the widget's *Options* 
-(![Options](../../../../images/icon-app-options.png)) &rarr; *Configuration* 
-menu. 
+(![Options](../../../../images/icon-app-options.png)) 
+&rarr; *Configuration* menu. 
 
 ![Figure 1: The Knowledge Base Article app is great at displaying individual articles.](../../../../images/kb-article.png)
 
@@ -69,8 +69,8 @@ Follow these steps to configure an instance of the Knowledge Base Section
 widget:
 
 1.  Select *Configuration* from the Knowledge Base Section widget's *Options* 
-    menu (![Options](../../../../images/icon-app-options.png)). This opens the 
-    widget's Configuration dialog. 
+    menu (![Options](../../../../images/icon-app-options.png)). 
+    This opens the widget's Configuration dialog. 
 
 2.  In the Configuration dialog's *Setup* &rarr; *General* tab, select the 
     section or sections that you want to use and click *Save*.
@@ -102,6 +102,7 @@ in a table with the following criteria for each matching article:
 -   Number of views
 
 You can select the criteria to display in the widget's *Options* 
-(![Options](../../../../images/icon-app-options.png)) *Configuration* dialog. 
+(![Options](../../../../images/icon-app-options.png)) 
+*Configuration* dialog. 
 
 ![Figure 3: The Knowledge Base Search widget lets you search the Knowledge Base for keywords.](../../../../images/kb-search.png)
