@@ -1,24 +1,33 @@
 # Touchpoints: Engaging People
 
-Touchpoints are a key concept in Analytics Cloud. If you don't know what Touchpoints are,
-read the Analytics Cloud [introductory documentation](LINK). In summary, Touchpoints are:
+Touchpoints are a key concept in Analytics Cloud. If you don't know what
+Touchpoints are, read the Analytics Cloud 
+[introductory documentation](LINK). 
+In summary, Touchpoints are:
 
 - Pages on a website.
 - Imported during the initial Analytics Cloud setup.
-- Queried on a schedule.
-- Reported on in Analytics Cloud with the data reports shown in this article.
+- Queried on a schedule for up-to-date data.
+- Reported on in Analytics Cloud with the metrics and reports shown in this
+    article.
 
-Readers of this article have an understanding of what Analytics Cloud is and want to
-understand where Touchpoint data exists, what metrics it includes, and how to
-interpret the data and configure its views for easiest consumption by end users.
+Readers of this article want to understand Touchpoint metrics; they already have
+an understanding of what Analytics Cloud is and want to understand where
+Touchpoint data exists, what metrics it includes, and how to interpret the data
+and configure its views for easy consumption.
 
-## Finding Touchpoint Data
+## Viewing Touchpoint Data
 
 To view Touchpoint data directly:
 
 1.  Find the Engagement section of the menu.
 
 2. Click *Touchpoints*.
+
+3. From the list of Touchpoints, click any Touchpoint to see a detailed view and
+   metrics.
+
+4. The default screen is called *Overview*, and gives you 
 
 SCREENSHOT
 
@@ -79,7 +88,35 @@ SCREENSHOT
 Viewing the list of Touchpoints with their overview data is great, but what if
 you want to dive into each metric?
 
-## Metric: Touchpoint Engagement
+## Visitor Behavior
+
+The Overview tab of a Touchpoint's detail view has several data presentations.
+The first chart, called Visitor Behavior, is paramount. It contains four
+important metrics:
+
+- Engagement
+- Visitors
+- Views
+- Bounce Rate
+
+SCREENSHOT
+
+### Data Time Periods
+
+At the top right of the Visitor Behavior chart is a time period selector, which
+defaults to *Last 30 Days*. Select the time period of the data displayed. There
+are always two trend lines displayed: Selected Period and Previous Period. This
+facilitates comparisons. For example, take Views. If the Views are dropping over
+the selected time period, you might be concerned about the health of the
+Touchpoint. However, if you see that they're still higher than they were at any
+point during the previous time period, perhaps it puts the current data in
+context.
+
+SCREENSHOT
+
+So what are these metrics in the Visitor Behavior chart?
+
+### Metric: Touchpoint Engagement
 
 Touchpoint Engagement is an aggregation of metrics into one overall score. It
 incorporates these factors:
@@ -92,9 +129,9 @@ incorporates these factors:
 SCREENSHOT
 
 Use the Touchpoint Engagement score as a high level view of the Touchpoint's
-overall value. It might not tell you specifically what's so effective about a
-good Touchpoint or what can be improved, but it can tell you whether the Touchpoint
-needs improvement.
+overall value. It might not tell you specifically what's so effective (or weak)
+about a Touchpoint, but it can tell you if the Touchpoint is performing as
+desired over the selected time period.
 
 +$$$
 
@@ -102,23 +139,25 @@ needs improvement.
 with the classic individual metrics used to describe a non-pitcher's
 proficiency: Batting Average, Slugging Percentage, Fielding Percentage, and a
 few more. Now there are higher level aggregation metrics used to evaluate
-baseball players, such as BABIP (Batting Average on Balls in Play) and WAR (Wins
-above Replacement). Discussion of those metrics is not the point of this
-article. Think of  the simpler metrics offered by Analytics Cloud (Views,
-Visitors, Time on Page) as single snapshots into how useful a Touchpoint is, and
-think of Touchpoint Engagement as an advanced aggregation metric that captures
-the overall usefulness of a Touchpoint. Maybe the Analytics team can come up
-with a WAR-like metric next, to compare how valuable a Touchpoint is as compared
-with the average Touchpoint. It could be called TEAR (Touchpoint Engagement
-above Replacement).
+baseball players, such as BABIP (Batting Average on Balls In Play) and WAR (Wins
+Above Replacement). Discussion of those metrics is not the point here. Think of
+the simpler metrics offered by Analytics Cloud (Views, Visitors, Time on Page)
+as single snapshots into how useful a Touchpoint is, like looking at Batting
+Average and Fielding Percentage to evaluate baseball players. Think of
+Touchpoint Engagement as an advanced aggregation metric that captures the
+overall usefulness of a Touchpoint, similar to BABIP or WAR in baseball. Maybe
+the Analytics team can come up with a WAR-like metric next, to compare how
+valuable a Touchpoint is as compared with the average Touchpoint. It could be
+called TEAR (Touchpoint Engagement Above Replacement).
 
 $$$
 
-Touchpoint Engagement is useful to combine with the time period filtering
-ability of Analytics Cloud. Compare the engagement score from different periods
-to determine how your Touchpoint's performance changes over time.
+Touchpoint Engagement is useful to combine with time period filtering and
+comparative time period features. Comparing the engagement score from different
+periods is the best way to determine how your Touchpoint's performance changes
+over time.
 
-## Metric: Touchpoint Visitors
+### Metric: Touchpoint Visitors
 
 Useful with the time period filter, Touchpoint Visitors is the number of
 visitors that accessed a Touchpoint page in a given period of time.
@@ -128,7 +167,7 @@ different machine?
 
 SCREENSHOT
 
-## Metric: Touchpoint Views
+### Metric: Touchpoint Views
 
 Useful with the time period filter, Touchpoint View is the number of views for a
 Touchpoint page in a given period of time. It's not the same as the number of
@@ -139,9 +178,42 @@ last 30 days, one visitor (IP address) could come back to the Touchpoint page
 
 SCREENSHOT
 
-## Metric: Time on Touchpoint Page
+### Metric: Touchpoint Bounce Rate
+
+Bounce Rate is the percentage of 
+
+### Metric: Time on Touchpoint Page
 
 Time on Touchpoint Page calculates the average time on page for all the Views in
 the selected time period.
+
+SCREENSHOT
+
+## Views by Segment
+
+The Views by Segment bar graph shows how many times the Touchpoint was viewed by
+the top six segments over the selected time period. In addition, the views by
+the remaining segments are calculated (the seventh bar on the graph, labeled _X
+More Segments_). 
+
+SCREENSHOT
+
+## Views by Location
+
+View a pie chart to compare the views by location over the selected period. 
+
+SCREENSHOT
+
+## Views by Technology
+
+View a bar graph of the Touchpoint's views by operating system and web browser
+over the selected time period.
+
+SCREENSHOT
+
+## Assets
+
+View a list of the Assets on the Touchpoint page by their number of Interactions
+over the selected time period.
 
 SCREENSHOT
