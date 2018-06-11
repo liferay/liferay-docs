@@ -5,13 +5,13 @@ Touchpoints in Analytics Cloud. In summary, Assets are:
 
 - Content residing on a Touchpoint page.
 - Imported during the initial Analytics Cloud setup.
-- Queried on a schedule.
+- Queried and reported on at regular intervals.
 - Reported on in Analytics Cloud with the data reports shown in this article.
 
 Readers of this article have an understanding of what Analytics Cloud is and
 what they want to get out of their Asset data. They are here to understand where
 Asset data exists, what metrics it includes, and how to interpret the data and
-configure its views for easiest consumption by end users.
+configure its views for easiest consumption.
 
 # Where is Asset Data?
 
