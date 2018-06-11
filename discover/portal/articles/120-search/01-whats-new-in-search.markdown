@@ -67,7 +67,7 @@ non-analyzed keyword field.
 ![Figure 8: Configure a custom facet on the Class Type ID field.](../../images/search-custom-facet.png)
 
 **Search Options**
-: Configure page-wide search behavior by adding the Search Options widget from
+: Configure page scoped search behavior by adding the Search Options widget from
 the Add Widget menu.
 
 ![Figure 9: The Search Options widget configures the search experience for
