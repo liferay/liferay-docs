@@ -239,10 +239,11 @@ Make the following modifications to
             <file name="welcome-content" path="${jboss.home.dir}/welcome-content"/>
         </handlers>
 
-7.  Find the `<jsp-config/>` tag and insert the `development="true"` attribute
-    into the tag. Once finished, the tag should look like this:
+7.  Find the `<jsp-config/>` tag and set the `development`, `source-vm`, and
+    `target-vm` attributes in the tag. Once finished, the tag should look like
+    this:
 
-        <jsp-config development="true" />
+        <jsp-config development="true" source-vm="1.8" target-vm="1.8" />
 
 **Checkpoint:**
 
@@ -261,7 +262,7 @@ Before continuing, verify the following properties have been set in the
 
 6.  Welcome content is removed.
 
-7.  The `<jsp-config development>` is set to `true`.
+7.  The `<jsp-config>` tag contains its new attributes.
 
 Now it's time for some changes to your configuration and startup scripts.
  
