@@ -1,9 +1,9 @@
-# What Changed Between Liferay npm Bundler 1.x and 2.x
+# What Changed Between Liferay npm Bundler 1.x and 2.x [](id=changes-between-liferay-npm-bundler-1.x-and-2.x)
 
 This reference doc outlines the key changes between liferay-npm-bundler version 
 1.x and 2.x.
 
-## Automatically Formatting Modules for AMD
+## Automatically Formatting Modules for AMD [](id=automatically-formatting-modules-for-amd)
 
 In version series 1.x of the bundler it was the developer's responsibility to 
 wrap project modules in an AMD `define()` call. However, since 2.x the bundler 
@@ -11,7 +11,7 @@ does it for you, so the only requisite is that the project's code is
 transpiled/written for CommonJS modules model (the standard model for module 
 handling in Node.js, that uses `require()` calls to load modules).
 
-## Isolating Project Dependencies
+## Isolating Project Dependencies [](id=isolating-project-dependencies)
 
 Package names are prefixed with the bundle name since version 2.0.0 of the 
 bundler, but were left intact in previous versions. This strategy is used to 
@@ -19,7 +19,7 @@ isolate packages from different bundles. You can still deploy bundler 1.x
 packages (without prefix), and they will still work as they did for previous 
 versions of the bundler.
 
-## Improved Peer Dependency Support 
+## Improved Peer Dependency Support [](id=improved-peer-dependency-support)
 
 In bundler 1.x, there was only one shared peer dependency package available 
 between portlets. With isolated dependencies per portlet, it's easy to honor 
@@ -37,7 +37,7 @@ number required, without caret or any other semantic version operator. This is
 to honor the exact peer dependency found in the project. Injecting more relaxed 
 semantic version expressions could lead to unstable results.
 
-## Manually De-duplicating through Importing
+## Manually De-duplicating Through Importing [](id=manually-deduplicating-through-importing)
 
 Namespacing means that each portlet gets its own dependencies. Only using the 
 bundler this way obtains the same functionality as standard bundlers like 

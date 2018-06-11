@@ -2,7 +2,7 @@
 
 The liferay-npm-bundler comes with a default configuration preset: 
 [`liferay-npm-bundler-preset-standard`](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-standard)
----Note you may omitt the `liferay-npm-bundler` prefix from the npm package name 
+---Note you may omit the `liferay-npm-bundler` prefix from the npm package name 
 in your `.npmbundlerrc` file. This preset configures several plugins for the 
 build process and is automatically used (even if the `.npmbundlerrc` is 
 missing), unless you override it with one of your own. Running the 

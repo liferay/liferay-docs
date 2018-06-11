@@ -2,8 +2,8 @@
 
 When you deploy an OSGi bundle with the specified structure, as explained in 
 [The Structure of OSGi Bundles Containing NPM Packages](/develop/reference/-/knowledge_base/7-1/the-structure-of-osgi-bundles-containing-npm-packages) 
-reference, its modules are made available for consumption through canonical URLs. 
-To better illustrate resolved modules, the example structure below is the 
+reference, its modules are made available for consumption through canonical 
+URLs. To better illustrate resolved modules, the example structure below is the 
 standard structure that the liferay-npm-bundler 1.x generates, and therefore 
 doesn't have the namespaced packages that the 2.x version generates. Please 
 refer to the last sections of this article to know how liferay-npm-bundler 2.0 
@@ -99,7 +99,9 @@ replaced by `resolved-module`.
 $$$
 
 Next you can learn how the bundler (since version 2.0.0) isolates package 
-dependencies.
+dependencies. See 
+[What Changed Between liferay-npm-bundler 1.x and 2.x](/develop/reference/-/knowledge_base/7-1/changes-between-liferay-npm-bundler-1.x-and-2.x) 
+for more information on why this change was made. 
 
 ## Isolated Package Dependencies [](id=isolated-package-dependencies)
 
@@ -188,7 +190,7 @@ had in its `node_modules` folder when it was developed.
 Now that you understand how namespacing modules isolates bundle dependencies, 
 avoiding collisions, you can learn about de-duplication next. 
 
-## De-duplication through Importing
+## De-duplication through Importing [](id=deduplication-through-importing)
 
 Isolated dependencies are very useful, but there are times when sharing the same 
 package between modules would be more beneficial. To do this, the 
@@ -268,7 +270,7 @@ it keeps requiring `wui-provider$` prefixed modules all the way down.
 
 Next, you will learn possible strategies for importing.
 
-## Strategies when importing Packages
+## Strategies When Importing Packages [](id=strategies-when-importing-packages)
 
 De-duplication by importing is a powerful tool, but you must design a versioning 
 strategy suitable for you so that you don't run into errors. 

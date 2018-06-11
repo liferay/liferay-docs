@@ -1,8 +1,8 @@
 # Configuring liferay-npm-bundler [](id=configuring-liferay-npm-bundler)
 
-The liferay-npm-bundler is configured via a `.npmbundlerrc` file placed in the
-portlet project's root folder. You can create a complete configuration manually
-or extend a configuration preset (via Babel).
+The liferay-npm-bundler is configured via a `.npmbundlerrc` file placed in the 
+portlet project's root folder. You can create a complete configuration manually 
+or extend a configuration preset (via Babel). 
 
 This article explains the `.npmbundlerrc` file's structure. See the 
 [default preset reference](/develop/reference/-/knowledge_base/7-1/how-the-default-preset-configures-the-liferay-npm-bundler) 
@@ -94,7 +94,7 @@ Here's an example of a `.npmbundlerrc` configuration:
     	}
         "packages": {
             "a-package-name": [
-                "copy-plugins": ["exclude-imports"],
+            "copy-plugins": ["exclude-imports"],
         		"plugins": ["replace-browser-modules"],
         		".babelrc": {
         			"presets": ["liferay-standard"]
@@ -106,16 +106,16 @@ Here's an example of a `.npmbundlerrc` configuration:
         		]
             ],
             "other-package-name@1.0.10": [
-                "copy-plugins": ["exclude-imports"],
-        		"plugins": ["replace-browser-modules"],
-        		".babelrc": {
-        			"presets": ["liferay-standard"]
-        		},
-        		"post-plugins": [
-        			"namespace-packages",
-        			"inject-imports-dependencies",
-        			"inject-peer-dependencies"
-        		]
+              "copy-plugins": ["exclude-imports"],
+          		"plugins": ["replace-browser-modules"],
+          		".babelrc": {
+          			"presets": ["liferay-standard"]
+          		},
+          		"post-plugins": [
+          			"namespace-packages",
+          			"inject-imports-dependencies",
+          			"inject-peer-dependencies"
+          		]
             ]
         }
 

@@ -1,4 +1,4 @@
-# Formatting Your npm Modules for AMD [](id=using-the-bundler-to-prepare-your-npm-modules-for-the-liferay-amd-loader)
+# Formatting Your npm Modules for AMD [](id=formatting-your-npm-modules-for-amd)
 
 For @product@ to recognize your npm modules, they must be formatted for the 
 Liferay AMD Loader. Luckily, the liferay-npm-bundler handles this for you, you 
