@@ -221,19 +221,11 @@ Make the following modifications to
             <file name="welcome-content" path="${jboss.home.dir}/welcome-content"/>
         </handlers>
 
-X.  <!-- Not in JBoss. Checking... --> In the same `<subsystem ... />` element
-    that was outlined in the previous step, add the following snippet above the
-    `<connector ... />` element:
+6.  Find the `<jsp-config/>` tag and set the `development`, `source-vm`, and
+    `target-vm` attributes in the tag. Once finished, the tag should look like
+    this:
 
-        <configuration>
-            <jsp-configuration source-vm="1.8" target-vm="1.8" development="true" />
-        </configuration>
-
-<!-- 6. Find the `<jsp-config/>` tag and insert the `development="true"` attribute
-    into the tag. Once finished, the tag should look like this:
-
-        <jsp-config development="true" />
--->
+        <jsp-config development="true" source-vm="1.8" target-vm="1.8"/>
 
 **Checkpoint:**
 
@@ -250,14 +242,7 @@ Before continuing, verify the following properties have been set in the
 
 5.  Welcome content is removed.
 
-X.  The property `jsp-configuration source-vm="1.8" target-vm="1.8"
-    development="true"` has been set in the `<configuration>` element. This is
-    required because @product@ runs on Java JDK 1.8 or else there will be a
-    JasperException and the instance will fail to start.
-
-<!--
-6.  The `<jsp-config development>` is set to `true`.
--->
+6.  The `<jsp-config>` tag contains its new attributes.
 
 Now it's time for some changes to your configuration and startup scripts.
  
