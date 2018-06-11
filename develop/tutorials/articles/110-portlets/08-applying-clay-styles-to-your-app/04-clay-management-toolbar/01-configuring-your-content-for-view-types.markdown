@@ -23,14 +23,12 @@ Follow these steps to define the view types for your management toolbar:
     model:
 
         <%@ page import="com.liferay.frontend.taglib.clay.servlet.taglib.util.JSPViewTypeItemList" %>
-<!--  
-Verify this is the proper import for the gradle file
--->
+
 2.  Add the `frontend.taglib.clay` and `frontend.taglib.soy` module dependencies 
     to your app's `build.gradle` file:
 
         compileOnly group: "com.liferay", name: "com.liferay.frontend.taglib.soy", 
-        version: "1.0.0"
+        version: "1.0.10"
         
         compileOnly group: "com.liferay", name: "com.liferay.frontend.taglib.clay", 
         version: "1.0.0"
