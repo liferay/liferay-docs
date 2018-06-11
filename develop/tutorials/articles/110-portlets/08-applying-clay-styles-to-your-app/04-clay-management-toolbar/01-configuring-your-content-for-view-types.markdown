@@ -99,7 +99,7 @@ See the
 [Liferay Frontend Cards](/develop/tutorials/-/knowledge_base/7-1/liferay-frontend-cards) 
 tutorial for examples and use cases of each card. 
 
-![Figure 2: The Management Toolbar's card view gives a quick summary of the content's description and status.](../../../../images/clay-taglib-management-toolbar-view-type-card.png)
+![Figure 1: The Management Toolbar's card view gives a quick summary of the content's description and status.](../../../../images/clay-taglib-management-toolbar-view-type-card.png)
 
 Follow the steps below to create your card view:
 
@@ -146,7 +146,7 @@ Follow the steps below to create your card view:
 The list view displays the entry's complete description, along with a small icon 
 for the content type, and its name. 
 
-![Figure 3: The Management Toolbar's list view gives the content's full description.](../../../../images/clay-taglib-management-toolbar-view-type-list.png)
+![Figure 2: The Management Toolbar's list view gives the content's full description.](../../../../images/clay-taglib-management-toolbar-view-type-list.png)
 
 Inside the `<c:choose>` conditional block, add a condition for the descriptive 
 display style (list view type):
@@ -170,7 +170,7 @@ Column | Content Options | Example
 
 The table view list the search container columns from left to right. 
 
-![Figure 4: The Management Toolbar's table view list the content's information in individual columns.](../../../../images/clay-taglib-management-toolbar-view-type-table.png)
+![Figure 3: The Management Toolbar's table view list the content's information in individual columns.](../../../../images/clay-taglib-management-toolbar-view-type-table.png)
 
 Inside the `<c:choose>` conditional block, add a condition for the list display 
 style (table view type):

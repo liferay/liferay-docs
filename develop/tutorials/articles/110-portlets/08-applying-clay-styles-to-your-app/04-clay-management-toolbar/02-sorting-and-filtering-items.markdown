@@ -1,4 +1,4 @@
-# Filtering and Sorting Items with the Management Toolbar
+# Filtering and Sorting Items with the Management Toolbar [](id=filtering-and-sorting-items-with-the-management-toolbar)
 
 The Management Toolbar also lets you sort and filter your search container 
 results. You can choose a navigation filter or a order by filter and sort your 
@@ -15,7 +15,7 @@ Creating filters and sorting results involves the following process:
 - Including the selected column and sorting order in the portlet URL
 - Including the selected column and sorting order in the search container
 
-## Creating Filters for the Management Toolbar
+## Creating Filters for the Management Toolbar [](id=creating-filters-for-the-management-toolbar)
 
 There are two main types of filters: navigation and order. Both of these are 
 contained within the same dropdown menu. Follow these steps to create your 
@@ -115,7 +115,7 @@ filters:
         filterDropdownItems=
         "<%= ddmFormAdminDisplayContext.getFilterItemsDropdownItems() %>" 
 
-## Setting the Sorting Order for Columns
+## Setting the Sorting Order for Columns [](id=setting-the-sorting-order-for-columns)
 
 Defining the Navigation and Order filters is just one side of the equation. Once 
 an option is selected, you must then sort the results by the selected option, in 
@@ -249,7 +249,7 @@ Follow these steps to provide the logic for sorting your columns:
         sortingURL=
         "<%= ddmFormAdminDisplayContext.getSortingURL() %>"
 
-## Including the Selected Column and Sorting Order in the Portlet URL
+## Including the Selected Column and Sorting Order in the Portlet URL [](id=including-the-selected-column-and-sorting-order-in-the-portlet-url)
 
 Each time a filter is chosen or the sorting order is changed, you must update 
 the portlet URL to reflect the changes. You can see this in the previous 
@@ -268,7 +268,7 @@ build your portlet URL:
       return portletURL;
     }
 
-## Including the Selected Column and Sorting Order in the Search Container
+## Including the Selected Column and Sorting Order in the Search Container [](id=including-the-selected-column-and-sorting-order-in-the-search-container)
 
 Finally, you must update the search container to reflect the current order type 
 (ascending or descending), the column to sort by, and the comparator to use. An 
@@ -311,7 +311,7 @@ example configuration is shown below:
       return searchContainer;
     }
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Configuring Filtering and Sorting Management Toolbar Attributes](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar#filtering-and-sorting-search-results)
 
