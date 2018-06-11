@@ -153,16 +153,15 @@ section on this topic in the
 runs in domain mode.
 
 You can run @product@ on Wildfly in domain mode, but this method is not fully
-supported. In particular, @product@'s hot-deploy does not work, since Wildfly
-cannot deploy non-exploded `.war` files in domain mode. Instead, `.war` files
-are in the `domain/data/content` folder. Deployments are only possible using
-the command line interface. This prevents many @product@ plugins from working as
-intended. For example, JSP hooks don't work on Wildfly running in domain
-mode, since @product@'s JSP override mechanism relies on the application server
-reloading customized JSP files from the exploded plugin `.war` file location.
-Other plugins, such as service or action hooks, should still work properly since
-they don't require Wildfly to access anything (such as JSP files) from an
-exploded `.war` file on the file system.
+supported. In particular, @product@'s hot-deploy does not work with a managed
+deployment, since Wildfly manages the content of a managed deployment by copying
+files (exploded or non-exploded). This prevents many @product@ plugins from
+working as intended. For example, JSP hooks don't work on Wildfly running in
+managed domain mode, since @product@'s JSP override mechanism relies on the
+application server. Other plugins, such as service or action hooks, should still
+work properly.
+
+Using the command line interface is recommended for deployments.
 
 +$$$
 
