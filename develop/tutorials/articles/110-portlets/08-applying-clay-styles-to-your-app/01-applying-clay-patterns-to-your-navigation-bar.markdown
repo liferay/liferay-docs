@@ -85,6 +85,4 @@ Sweet! Now you know how to style a navigation bar with Clay.
 
 ## Related topics [](id=related-topics)
 
-[Applying the Add Button Pattern](/develop/tutorials/-/knowledge_base/7-1/applying-the-add-button-pattern)
-
 [Implementing the Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/implementing-the-management-toolbar)

@@ -1,10 +1,9 @@
 # Implementing the View Types [](id=implementing-the-view-types)
 
-The Management Toolbar has a few view types for your app's search container 
-results. Each style offers a slightly different look and feel. At least one 
-view type must be implemented. To provide these view types in your app, you must 
-make some updates to your search result columns. Start by defining the view 
-types you want to provide. 
+The Management Toolbar has three predefined view types for your app's search 
+container results. Each style offers a slightly different look and feel. To 
+provide these view types in your app, you must make some updates to your search 
+result columns. Start by defining the view types you want to provide. 
 
 ## Defining the View Types [](id=defining-the-view-types)
 

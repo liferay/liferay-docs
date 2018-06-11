@@ -18,6 +18,5 @@ Portal's built-in apps.
 
 The tutorials in this section cover the following topics:
 
-- The Add Button Pattern
 - Applying Clay to navigation
 - Implementing the Management Toolbar
