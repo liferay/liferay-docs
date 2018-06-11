@@ -12,7 +12,8 @@ Follow these steps to add a blog entry in Site Administration:
 
 2.  Click the *Add* button 
     (![Add](../../../../images/icon-add.png)) to create a new blog entry. This 
-    presents the blog entry editor. 
+    presents the blog entry editor. Note that the same form appears when editing 
+    a blog entry. 
 
     ![Figure 1: This screenshot shows some of the blog entry editor's controls.](../../../../images/blogs-new-entry.png)
 
@@ -62,7 +63,7 @@ Follow these steps to add a blog entry in Site Administration:
     might want to write a blog entry about a discussion that happened on the 
     forums. To link those two assets together, select the forum thread under 
     Related Assets. For more information, see the 
-    [related assets documentation](/discover/portal/-/knowledge_base/7-0/defining-content-relationships).
+    [related assets documentation](/discover/portal/-/knowledge_base/7-1/defining-content-relationships).
 
 8.  Expand the *Configuration* panel if you want to customize your blog entry's 
     URL, abstract, or display date. You can also set whether to allow pingbacks 
@@ -77,6 +78,12 @@ Follow these steps to add a blog entry in Site Administration:
     a manually written description. The *Small Image* section lets you add a 
     small image that appears when blog entries are displayed in list view. Below 
     the abstract section, you can set the entry's display date and time. 
+
+    Note that if you're editing an existing blog entry, the 
+    *Send Email Entry Updated* toggle appears. Setting this to *YES* causes an 
+    email to be sent to any subscribers when the blog entry is updated. You can 
+    customize this email when 
+    [configuring the Blogs app](/discover/portal/-/knowledge_base/7-1/configuring-the-blogs-app). 
 
     Lastly, you can allow *pingbacks* for the blog entry. Pingbacks are XML-RPC 
     requests that are automatically sent when you link to another site. If you 
