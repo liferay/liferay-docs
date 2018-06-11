@@ -1,4 +1,4 @@
-# Bookmarking Sites
+# Bookmarking Sites [](id=bookmarking-sites)
 
 You can use the Bookmarks widget to provide a list of bookmarks that benefit the 
 entire community. For example, a site that focuses on auto repair could use this 
@@ -7,7 +7,7 @@ maintenance tips, and more. Administrators can create bookmarks in the widget,
 and users can access them. Both internal pages as well as external sites can be 
 bookmarked. 
 
-## Creating Bookmarks and Folders
+## Creating Bookmarks and Folders [](id=creating-bookmarks-and-folders)
 
 To use the Bookmarks widget, you must first add it to a page. Select *Add* 
 (![Add](../../../images/icon-add-app.png)) 
@@ -62,7 +62,7 @@ You can also create folders for your bookmarks. Follow these steps to do so:
 
 ![Figure 2: The Add Bookmark form lets you create a bookmark.](../../../images/bookmarks-add-bookmark.png)
 
-### Importing and Exporting Bookmarks
+### Importing and Exporting Bookmarks [](id=importing-and-exporting-bookmarks)
 
 Follow these steps to import or export bookmarks: 
 
@@ -74,7 +74,7 @@ Follow these steps to import or export bookmarks:
     details, 
     [see the article on importing and exporting pages and content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content). 
 
-## Managing Bookmarks and Folders
+## Managing Bookmarks and Folders [](id=managing-bookmarks-and-folders)
 
 The Bookmarks widget provides several ways to manage your bookmarks and folders. 
 One is the Management Bar. Selecting the checkbox on the left-hand side of the 
