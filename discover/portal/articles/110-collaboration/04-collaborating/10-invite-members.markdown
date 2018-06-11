@@ -1,4 +1,4 @@
-# Inviting Members to Your Site
+# Inviting Members to Your Site [](id=inviting-members-to-your-site)
 
 You've built a new site and now you need to get the word out about it. What 
 better way to get the word out about your site then to invite users to join it. 
