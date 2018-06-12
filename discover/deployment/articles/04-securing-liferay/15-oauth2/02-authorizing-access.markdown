@@ -12,13 +12,12 @@ applications. The URL for this requires the following request parameters:
 
 - `response_type` 
 - `client_id` 
-- `client_secret`
 
 To construct a URL for this authorization, therefore, follow this pattern: 
 
-    https://[hostname]/o/oauth2/authorize?response_type=code&client_id=[client ID]&client_secret=[client secret]
+    https://[hostname]/o/oauth2/authorize?response_type=code&client_id=[client ID]
 
-The client ID and client secret come from registering the application. They are automatically
+The client ID comes from registering the application. It's automatically
 generated (though you can change it if you edit the application). 
 
 IMPORTANT: Sometimes the phrase "web application" is used loosely and also 
