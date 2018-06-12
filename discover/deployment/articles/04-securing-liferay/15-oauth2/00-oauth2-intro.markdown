@@ -6,7 +6,7 @@ seen this before: any time you see a "Log In with Facebook," or "Log In with
 Google" button, or you authorize a third-party Twitter client, you're seeing
 OAuth 2.0 in action. It works by authorizing password-less access to portions of
 user-owned resources (such as an email address, a user profile picture, or
-something else from your account). 
+something else from your account) and other permissioned resources.
 
 OAuth 2.0's design encrypts all authorization transport through HTTPS, which
 prevents data passed between the systems from being intercepted. 
@@ -25,7 +25,8 @@ Here's how OAuth 2.0 works:
     credentials from a Liferay-based website. In the application (web or
     mobile), the user requests authorization via OAuth, sending the browser or
     app to the Liferay-based website. When using PKCE (explained below), the
-    application also sends a code verifier. 
+    application also generates a code verifier, and sends a code challenge that 
+    is created by applying a transformation to it. 
 
 2.  The user authenticates and is shown the resources the application wants
     permission to access. When the user gives permission by clicking *Allow*,
@@ -33,13 +34,12 @@ Here's how OAuth 2.0 works:
     HTTPS. 
 
 3.  The application then requests a more permanent authorization token and
-    sends the code with the request (along with the PKCE code verifier
-    previously sent in the first request). 
+    sends the code with the request (along with the PKCE code verifier). 
 
-4.  If the authorization code and the code verifier match, Liferay
-    cryptographically generates an authorization token for this user and
-    application combination. It sends the token to the application over HTTPS.
-    Initial authorization is now complete! 
+4.  If the authorization code matches (and transformed PKCE code verifier matches 
+    the previously sent code challenge), Liferay cryptographically generates an 
+    authorization token for this user and application combination. It sends the 
+    token to the application over HTTPS. Initial authorization is now complete! 
 
 5.  When the application must retrieve data it's authorized to retrieve from
     Liferay, it sends the token with the request. 
@@ -79,7 +79,8 @@ are *password* (logging in with a user name and password), and *client
 credentials* (headless predefined application access). 
 
 **Scope:** A list of items that define what the application wants to access.
-This list is sent during the initial authorization request so the User can grant
+This list is sent during the initial authorization request (or otherwise defaults 
+to scopes selected in the application registration) so the User can grant
 or deny access to his/her resources. 
 
 **Callback URI:** Also called a Redirection Endpoint URI, this is a location the
@@ -109,11 +110,12 @@ be redirected after they authorize (or refuse to authorize) access to their
 accounts. This should link to a handler for whichever Allowed Authorization
 Types you support (see below). 
 
-**Client Profile:** Choose a template that selects the usual authorization types
-for that profile. For example, if your application is a web application, choose
-*Web Application*, and these authorization types are selected automatically:
-Authorization Code, Client Credentials, Refresh Token, and Resource Owner
-Password Credentials. These are OAuth 2 "flows" documented in the 
+**Client Profile:** Choose a template that filters the authorization types
+that are appropriate (secure) for that profile. For example, if your application
+is a web application, choose *Web Application*, and these authorization types 
+are available and selected automatically: Authorization Code, Client Credentials, 
+Refresh Token, and Resource Owner Password Credentials. These are OAuth 2 "flows" 
+documented in the 
 [OAuth2 RFC 6749 Standards Document](https://tools.ietf.org/html/rfc6749). 
 If you want to select authorization types manually, select *Other*. 
 
@@ -130,7 +132,9 @@ access user data.
 
 **Client Secret:** Click the *pencil* icon to generate a client secret. The
 secret identifies the client is genuine during the authorization process (see
-figure 1 above). 
+figure 1 above). Note: Not all client profiles require a client secret, because 
+quite simply some are incapable of keeping it secret! This is when the 
+aforementioned PKCE code challenge and verifier is needed.
 
 **Icon:** Upload an icon that your application's users identify with your
 application. This is displayed on the authorization screen. 
