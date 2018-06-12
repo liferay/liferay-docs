@@ -49,6 +49,7 @@ metrics:
 - Engagement score
 - Visitors
 - Views
+- Bounce Rate
 - Time on Page
 
 SCREENSHOT
@@ -180,7 +181,9 @@ SCREENSHOT
 
 ### Metric: Touchpoint Bounce Rate
 
-Bounce Rate is the percentage of 
+Bounce Rate is the percentage of visitors to the touchpoint that navigated away
+from the site after viewing the Touchpoint. If a Touchpoint has a consistently
+high bounce rate, there might be something wrong with it. ??????
 
 ### Metric: Time on Touchpoint Page
 
