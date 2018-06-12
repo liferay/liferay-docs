@@ -20,7 +20,7 @@ is a label.
 **A Specification Value** provides product-specific information. In the image
 above, 1920x1080 is a value.
 
-![Figure 2: Specification groups and labels exist independently of products, but values do not.](../../images/specification-diagram.png)
+![Figure 2: Specification groups and labels exist independently of products, but values do not.](../../images/specs-2x.png)
 
 ## Specification Groups [](id=specification-groups)
 

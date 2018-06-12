@@ -1,4 +1,4 @@
-# Theme Contributors [](id=theme-contributors)
+# Packaging Independent UI Resources for Your Site [](id=packaging-independent-ui-resources-for-your-site)
 
 If you want to package UI resources independent of a specific theme and
 include them on a @product@ page, Theme Contributors are your best option. If,
@@ -27,7 +27,7 @@ For example, the Control Menu, Product Menu, and Simulation Panel are packaged
 as Theme Contributor modules in @product@, separating them from the theme. This
 means that these UI components must be handled outside the theme.
 
-![Figure 1: The Control Menu, Product Menu, and Simulation Panel are packaged as Theme Contributor modules.](../../../images/theme-contributor-menus-diagram.png)
+![Figure 1: The Control Menu, Product Menu, and Simulation Panel are packaged as Theme Contributor modules.](../../../../images/theme-contributor-menus-diagram.png)
 
 If you want to edit or style these standard UI components, you'll need to create
 your own Theme Contributor and add your modifications on top. You can also add
