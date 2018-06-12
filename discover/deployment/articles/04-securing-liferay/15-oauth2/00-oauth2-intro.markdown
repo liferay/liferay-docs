@@ -1,4 +1,4 @@
-# OAuth 2.0 
+# OAuth 2.0 [](id=oauth-2-0)
 
 OAuth 2.0 is an industry-standard authorization protocol. Users can seamlessly
 share select credentials from another website to log into yours. You've probably
@@ -11,7 +11,7 @@ something else from your account) and other permissioned resources.
 OAuth 2.0's design encrypts all authorization transport through HTTPS, which
 prevents data passed between the systems from being intercepted. 
 
-## Flow of OAuth 2.0
+## Flow of OAuth 2.0 [](id=flow-of-oauth-2-0)
 
 OAuth 2.0 takes advantage of web standards wherever possible: transport is
 encrypted with HTTPS; tokens are implemented as HTTP headers; data is passed via
@@ -19,7 +19,7 @@ web services.
 
 Here's how OAuth 2.0 works: 
 
-![Figure x: OAuth 2.0 takes advantage of web standards.](../../images/oauth-flow.png)
+![Figure 1: OAuth 2.0 takes advantage of web standards.](../../../images/oauth-flow.png)
 
 1.  A user accesses a third-party application that supports authorization via
     credentials from a Liferay-based website. In the application (web or
@@ -49,7 +49,7 @@ Here's how OAuth 2.0 works:
 
 That description throws around a lot of terms. Definitions provided below. 
 
-## OAuth 2.0 Terminology
+## OAuth 2.0 Terminology [](id=oauth-2-0-terminology)
 
 **Authentication:** Providing credentials so a system can verify who you are by
 matching those credentials with what it has stored. OAuth is not an
@@ -87,19 +87,19 @@ or deny access to their resources.
 complete, the authorization server (i.e., Liferay) sends the client to this
 location. 
 
-## Creating an Application
+## Creating an Application [](id=creating-an-application)
 
 When you have an application that can use OAuth 2.0 for authorization, you must
 register that application so @product@ can recognize it. Do this by accessing
 *Control Panel* &rarr; *Configuration* &rarr; *OAuth2 Administration*: 
 
-1.  Click the *Add* (![add](../../../icon-add.png)) button. 
+1.  Click the *Add* (![add](../../../images/icon-add.png)) button. 
 
 2.  Fill out the form (description below). 
 
 3.  Click *Save* to save the application. 
 
-![Figure x: Adding an application registers it so users can authorize access to their data.](../../images/oauth-new-application.png)
+![Figure 2: Adding an application registers it so users can authorize access to their data.](../../../images/oauth-new-application.png)
 
 **Name:** Give the application a recognizable title. 
 

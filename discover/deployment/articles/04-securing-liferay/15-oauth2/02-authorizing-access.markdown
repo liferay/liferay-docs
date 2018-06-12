@@ -1,11 +1,11 @@
-# Authorizing Account Access with OAuth2
+# Authorizing Account Access with OAuth2 [](id=authorizing-account-access-with-oauth2)
 
 Once you have an application registered, you can start authorizing users. To do
 that, you must construct the URL to the authorization server (@product@). The
 authorization server sks users to authorize the requested permissions to their
 resources, defined as you saw in the previous tutorial as scopes. 
 
-## Authorization Code Flow
+## Authorization Code Flow [](id=authorization-code-flow)
 
 The most common OAuth flow is the Authorization Code flow, used for web
 applications. The URL for this requires the following request parameters: 
@@ -65,7 +65,7 @@ the Refresh Token Flow to obtain a new access token, with the same permissions,
 without further user authorization.  The authorization server only issues
 Refresh Tokens if your application registration is registered for this flow.
 
-## PKCE Extended Authorization Code Flow
+## PKCE Extended Authorization Code Flow [](id=pkce-extended-authorization-code-flow)
 
 This flow is the same as above with the addition of the Proof Key for Code
 Exchange (PKCE). It requires another request parameter: `code_challenge`. This
@@ -95,7 +95,7 @@ following parameter:
 
 	code_verifier=[Code Verifier that was transformed and sent as code_challenge previously]
 
-## Client Credentials and Resource Owner Flows
+## Client Credentials and Resource Owner Flows [](id=client-credentials-and-resource-owner-flows)
 
 There are two other, less used flows. If you have a scenario where two servers
 exchange agreed upon, non user-centric data, you can bypass the Allow/Deny
@@ -113,7 +113,7 @@ pattern looks like this:
 Users are prompted for their passwords, and upon successful log in, receive an
 authorization code. 
 
-## Token Use
+## Token Use [](id=token-use)
 
 All flows above result in an access token that's sent by the authorization
 server (@product@) to the client application. This token is sent in the response
@@ -130,7 +130,7 @@ could send a request like this:
 OAuth 2.0 provides a convenient way for client applications to be granted access
 to particular services (scopes) by users without sharing credential information. 
 
-## Revoking Access
+## Revoking Access [](id=revoking-access)
 
 Once access is granted, users or administrators are free to revoke access
 whenever they wish. If this happens to a client, the token becomes invalid and
@@ -138,7 +138,7 @@ the client must ask the user for authorization again. This puts users in control
 of what has access to their data, and they can exercise this control at any
 time. 
 
-![Figure x: Users have complete control over what applications have access to their data in their account profiles.](../../images/oauth-user-apps.png)
+![Figure 1: Users have complete control over what applications have access to their data in their account profiles.](../../../images/oauth-user-apps.png)
 
 In their account area, users can click *OAuth2 Connected Applications* and see
 a list of applications they've allowed to access their accounts. From here,
@@ -148,12 +148,12 @@ or the *Remove Access* button in the detail screen for the application.
 Administrators can view the authorizations in the Authorizations tab of any app
 in *Control Panel* &rarr; *Configuration* &rarr; *OAuth2 Administration*. 
 
-![Figure x: All authorizations for an app appear in the Authorizations tab for the app.](../../images/oauth-revoke-access.png)
+![Figure 2: All authorizations for an app appear in the Authorizations tab for the app.](../../../images/oauth-revoke-access.png)
 
 Clicking the *Revoke* button on any listed authorization revokes that
 application's access to that user's account. 
 
-## Summary
+## Summary [](id=summary)
 
 OAuth 2.0 provides a complete and secure authorization flow for users, without
 their having to share any credential information. Once applications are created
