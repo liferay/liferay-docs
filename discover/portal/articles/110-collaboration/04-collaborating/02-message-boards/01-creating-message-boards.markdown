@@ -19,7 +19,7 @@ access this screen.
 
 ## Page-scoped Message Boards [](id=page-scoped-message-boards)
 
-If you need a page-scoped message board, you must add a Message Boards app to 
+If you need a page-scoped message board, you must add a Message Boards widget to 
 that page and then set its scope to the page. Follow these steps to do this: 
 
 1.  Navigate to the page. 
@@ -28,11 +28,11 @@ that page and then set its scope to the page. Follow these steps to do this:
     (![Add](../../../../images/icon-add-app.png)), open *Widgets* &rarr; 
     *Collaboration*. 
 
-3.  Drag a *Message Boards* app onto the page. 
+3.  Drag a *Message Boards* widget onto the page. 
 
 4.  Click the *Options* icon 
-    (![Options](../../../../images/icon-app-options.png)) in the app's title bar 
-    and select *Configuration*.
+    (![Options](../../../../images/icon-app-options.png)) in the widget's title 
+    bar and select *Configuration*.
 
 5.  From the *Scope* menu in the *Scope* tab, select the page's name or 
     *PageName (Create New)* if the page scope doesn't exist yet. 
@@ -40,7 +40,7 @@ that page and then set its scope to the page. Follow these steps to do this:
 6.  Click *Save*, and then close the dialog. 
 
 Note that you must still use the Site Administration menu to administer a 
-page-scoped Message Boards app. You do so by setting the Site Administration 
+page-scoped Message Boards widget. You do so by setting the Site Administration 
 menu's active scope. Follow these steps to do this: 
 
 1.  Open the *Menu*

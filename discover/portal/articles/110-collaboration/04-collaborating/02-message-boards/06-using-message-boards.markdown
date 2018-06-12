@@ -64,8 +64,11 @@ Follow these steps to post a new thread:
     -   **Anonymous:** Whether this thread is posted anonymously. 
     -   **Subscribe Me:** Whether you receive notifications for activity on the 
         thread. 
-    -   **Priority:** The thread's priority in the Message Board. You can choose 
-        *Urgent*, *Sticky*, or *Announcement*. 
+    -   **Priority:** The thread's priority in the Message Board. By default, 
+        you can choose *Urgent*, *Sticky*, or *Announcement*. Additional 
+        priorities can also be 
+        [configured](/discover/portal/-/knowledge_base/7-1/configuring-message-boards) 
+        in the Message Boards app in Site Administration. 
     -   **Allow Pingbacks:** Whether 
         [pingbacks](https://en.wikipedia.org/wiki/Pingback) 
         are allowed for your thread. 
