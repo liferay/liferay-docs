@@ -9,7 +9,7 @@ where a *Legal Guardian Email Address* field appears if the user selects *No* in
 the *I am 18 years old or older* field. You also want to make the *Legal
 Guardian Email Address* field required.
 
-To configure a Require rule, 
+To configure a require rule, 
 
 1. Edit the [Show
    Rule](/discover/portal/-/knowledge_base/7-1/action-show-and-hide)
@@ -29,4 +29,4 @@ To configure a Require rule,
 
 $$$
 
-Require rules let you require fileds based on input from other fields.
+Require rules let you require fields based on input from other fields.

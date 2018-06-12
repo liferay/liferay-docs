@@ -22,7 +22,8 @@ Require
 : Make a form field required based on a predefined condition.
 
 Jump to Page
-: Based on user input, skip to a relevant page in the form.
+: Based on user input, skip over some form pages directly to a more relevant
+page. 
 
 Autofill with Data Provider 
 : Use a [data provider](/discover/portal/-/knowledge_base/7-1/creating-advanced-forms#populating-select-fields-with-rest-data-providers)

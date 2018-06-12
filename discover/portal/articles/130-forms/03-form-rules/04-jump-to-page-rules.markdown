@@ -28,7 +28,7 @@ again. Their monogrammed t-shirts will be ready at the start of the race.
 To configure the Jump to Page rule, 
 
 1. Open the Rules tab of the Edit Form page and click the Add
-   (![Add](../../../images/icon-add.png) button.
+   (![Add](../../../images/icon-add.png)) button.
 
 2. Define the rule:
     - If field *Are you a returning racer with the same team?* is equal to

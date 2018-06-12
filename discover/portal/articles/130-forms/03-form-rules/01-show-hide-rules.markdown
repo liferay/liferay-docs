@@ -24,7 +24,7 @@ field appears.
 To configure a Show/Hide rule,
 
 1. Open the Rules tab of the Edit Form page and click the Add
-   (![Add](../../../images/icon-add.png) button.
+   (![Add](../../../images/icon-add.png)) button.
 
 2. Define the rule:
     - If the *I am 18 years old or older* field is equal to *No*, show the

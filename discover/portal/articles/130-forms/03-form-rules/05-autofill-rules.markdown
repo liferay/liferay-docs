@@ -1,6 +1,6 @@
 # Action: Autofill
 
-Autofill rules let you the change the selection options of another field based
+Autofill rules let you change the selection options of another field based
 on the value entered into a related field. A [data provider's]((/discover/portal/-/knowledge_base/7-1/data-providers)) output is used to
 populate a field, as long as the condition is met.
 
@@ -38,11 +38,13 @@ provider.
 To configure an Autofill rule, 
 
 1. Open the Rules tab of the Edit Form page and click the Add
-   (![Add](../../../images/icon-add.png) button.
+   (![Add](../../../images/icon-add.png)) button.
 
 2. Define the rule:
     - If field *If I win I'd like my award to be* is equal to
-        *All Expenses Paid Vacation*, Autofill the *Choose a Destination Country* filed from the *countries* data provider (note that you might have named this differently when setting it u).
+        *All Expenses Paid Vacation*, Autofill the *Choose a Destination
+        Country* field from the *countries* data provider (note that you might
+        have named this differently when setting it up).
 
     ![Figure x: Build form rules quickly by defining your conditions and actions.](../../../images/forms-autofill.png)
 

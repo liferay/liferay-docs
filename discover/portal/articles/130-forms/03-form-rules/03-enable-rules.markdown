@@ -7,9 +7,9 @@ Use an enable/disable rule to make a field editable based on one or more conditi
 **Example:** Part of the race registration fee pays for dog food. You don't have
 to feed your chicken team with the provided dog food though. There's a single
 selection field that asks *Would you like use the provided dog food?*. If you
-check the box, you can select how much food, in US pounds, you'll need for your
-team throughout the race. Since you're racing chickens, you won't check the box,
-and the *Amount (US lb.)* field will be grayed out and disabled.
+select *Yes*, you can select how much food, in US pounds, you'll need for your
+team throughout the race. Since you're racing chickens, you'll select *No*, and
+the *Amount (US lb.)* field will be grayed out and disabled.
 
 To follow the example, add a single selection field *Would you like to use the
 provided dog food?* with two options: *Yes* and *No*.
@@ -20,7 +20,7 @@ validation to make sure it's not greater than *100*.
 To set up the enable/disable rule, 
 
 1. Open the Rules tab of the Edit Form page and click the Add
-   (![Add](../../../images/icon-add.png) button.
+   (![Add](../../../images/icon-add.png)) button.
 
 2. Define the rule:
     - If the *Would you like to use the provided dog food?* field is equal to *Yes*, enable the

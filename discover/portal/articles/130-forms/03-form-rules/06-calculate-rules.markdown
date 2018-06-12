@@ -27,7 +27,7 @@ Total Food Required field should be calculated based on this simple formula:
 To configure a calculate rule:
 
 1. Open the Rules tab of the Edit Form page and click the Add
-   (![Add](../../../images/icon-add.png) button.
+   (![Add](../../../images/icon-add.png)) button.
 
 2. Define the rule:
     - If field *Animal Weight 1* is greater than 0, Calculate the sum of the
