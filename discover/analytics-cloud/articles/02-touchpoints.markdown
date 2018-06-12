@@ -220,3 +220,28 @@ View a list of the Assets on the Touchpoint page by their number of Interactions
 over the selected time period.
 
 SCREENSHOT
+
+## Touchpoint Path Analytics
+
+Beside the Overview tab, there's the Path tab in a Touchpoint's screen. This
+diagram represents the most common entry points to viewing a Touchpoint page.
+
+After the top X paths to the Touchpount, the remaining paths are aggregated to
+show how many views came from _Other_ entry points.
+
+Clicking one of the entry point URLs brings you to its page.
+
+By default, all of the views of the Touchpoint are represented in the Paths
+diagram. The Paths can be filtered by location. Click the *Filter* menu and
+select one or more locations whose Path diagram you'd like to see. Click *Apply
+Filter* when finished, and the Path diagram is updated to represent the top
+Paths for only the selected locations.
+
+As you select filters, they're made visible at the top center of the Path
+screen.
+
+To remove a filter, click the X next to the location name.
+
+SCREENSHOT
+
+
