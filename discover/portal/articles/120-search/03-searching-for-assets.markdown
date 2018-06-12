@@ -1,0 +1,155 @@
+# Searching for Assets [](id=searching-for-assets)
+
+As explained in the 
+[Search introduction](/discover/portal/-/knowledge_base/7-1/search), 
+all indexed assets can be returned as search results. Developers can create
+their own assets, so your @product@ instance might have additional asset types
+beyond the ones included by default. 
+
++$$$
+
+**Searching for Users:** When you click an asset in the search results, it's
+displayed in an Asset Publisher (unless the *View in Context* option is selected
+in the Search Results portlet). Users are different, though. Think of them as
+invisible assets, not intended for display in the Asset Publisher application.
+While users appear as search results with other indexed assets, when you click
+one you're taken to the user's profile page. If 
+[public personal pages](/discover/portal/-/knowledge_base/7-1/creating-sites#customizing-personal-sites)
+have been disabled, clicking on a user from the list of search results shows you a
+blank page.
+
+$$$
+
+## Search Bar [](id=search-bar)
+
+The search bar is where users enter the search context. Users enter search
+terms, hit their *Enter* button (or click the magnifying glass icon), and
+they're taken to a 
+[search page](/discover/portal/-/knowledge_base/7-1/configuring-search-pages) 
+with various search widgets deployed. 
+
+If using the Search Bar in the legacy 
+[search portlet](discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience), 
+users are brought to a maximized view of the search portlet displaying any
+results and facets that apply. See the article on
+[configuring search pages](discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience) to learn more about these options.
+
+![Figure 1: The default search configuration displays a search bar in its default view,
+beckoning users to enter the search context.](../../images/search-bar.png)
+
+### Entering Search Terms [](id=entering-search-terms)
+
+Elasticsearch supports [*full text search*](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/full-text-queries.html).
+
+Full text search compares all the words entered in a search query (for example,
+*space vacation*) to all the words in each search document. A search engine like
+Elasticsearch allows relevance scores to be calculated to ensure the best
+results are returned first (like a Blogs Entry titled *Is a vacation in space
+right for you?*) and that lots of matching results are returned (anything with
+either the word *vacation* or *space* is returned). 
+
+In addition to full text search, advanced search syntax is supported. @product@
+relies on the underlying search engine for this behavior, so consult your search
+engine's documentation for the details. 
+
+![Figure 2: Search for text in a specific field using Elasticsearch's Query String syntax.](../../images/search-advanced-syntax.png)
+
+### Prefix Searching [](id=prefix-searching)
+
+If you're searching in a site for classical musicians, you might search for the
+term *instrument*. This search of course returns documents with the full word in
+them, but it also returns variants with *instruments* as the prefix. For
+example, results with *instruments*, *instrumental*, and *instrumentation* would
+also be returned.
+
+![Figure 2: Searching for *data* also returns *database*.](../../images/search-prefix.png)
+
+Another way to ensure users see results is using the spell check settings.
+
+### Configuring the Search Bar [](id=configuring-the-search-bar)
+
+The Search Bar's behavior is configured via its portlet configuration screen.
+
+![Figure x: Configure the search bar behavior in its configuration screen.](../../images/search-bar-configuration.png)
+
+There are several options:
+
+**Keywords Parameter Name**
+: Edit the parameter name for the keywords entered in the search. For example,
+the default URL when searching for the keyword term _liferay server_ looks like
+this: 
+
+    http://localhost:8080/web/guest/search?q=data
+
+If you change the Keywords Parameter Name to _keyword_ it looks like this:
+
+    http://localhost:8080/web/guest/search?keyword=data
+
+**Scope** 
+: Choose between three options: This Site (default), Everything, and
+Let the User Choose. This Site means only the assets associated with the site
+where the search is executed are searched. Expand the scope of the search to the
+entire Liferay Portal instance by selecting Everything. To let the user choose
+which scope they want to search, select Let the User Choose.
+
+![Figure x: Let the user choose which scope the search is executed for.](../../images/search-scope.png)
+
+**Scope Parameter Name**
+: Set the URL parameter name for the scope at which the search is taking place.
+This parameter only appears in the URL is the scope _Let the User Choose_ is
+selected. The default value is _scope_, so searching for the word
+_data_ produces the default URL of
+
+    http://localhost:8080/web/guest/search?q=data&scope=this-site
+
+Changing _scope_ to _target_ would produce this URL:
+
+    http://localhost:8080/web/guest/search?q=data&target=this-site
+
+**Destination Page**
+: Provide a friendly URL to the 
+[search page](/discover/portal/-/knowledge_base/7-1/configuring-search-pages).
+If not configured or if it points to a page that doesn't exist, there's a
+message displayed to administrators that the search bar must be configured for
+it to appear to users.
+
+**Use Advanced Search Syntax**
+: If using Elasticsearch, enabling this allows users to enter 
+[Query String Syntax](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/query-dsl-query-string-query.html#query-string-syntax) 
+into the Search Bar.
+
+## Search Suggestions
+
+Suggest search terms to users when their initial query is suboptimal. Spell
+check settings allow administrators to configure the Search application so that
+if a user types a search term that doesn't return many results (for example, a
+slightly misspelled werd), the user can be prompted to improve their
+search. 
+
+To configure the spell check settings, 
+
+1.  You must first reindex the spell check indexes. Go to *Control Panel* &rarr;
+    *Configuration* &rarr; *Search*, then click *Execute* next to *Reindex all
+    spell check indexes*.
+2.  Add the Suggestions widget to the search page.
+3.  Open its configuration screen. Click the widget Options button (![Options](../../../images/icon-app-options.png)) and select *Configuration*.
+
+![Figure 3: Configure the suggestion settings to allow for user input mistakes and help lead users to results.](../../images/search-suggestions.png)
+
+There are three main settings here:
+
+**Display "Did you mean..." if the number of search results does not meet the
+threshold.**
+: Present users alternate, spell checked search queries if their search did not
+return a minimum number of results (50 by default).
+
+**Display Related Queries**
+: If the number of search results doesn't meet the specified threshold (50 by
+default), display up to a maximum number of alternative queries (10 by default).
+
+**Add New Related Queries Based on Successful Queries**
+: Index a user's search query if it produces a minimum number of results (50 by
+default), so it can be displayed to users as a suggestion. If the Display
+Related Queries setting is enabled, it's used as a related query for similar
+search queries that don't produce enough results.
+
