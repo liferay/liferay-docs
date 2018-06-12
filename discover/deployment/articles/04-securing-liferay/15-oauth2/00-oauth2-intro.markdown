@@ -25,7 +25,7 @@ Here's how OAuth 2.0 works:
     credentials from a Liferay-based website. In the application (web or
     mobile), the user requests authorization via OAuth, sending the browser or
     app to the Liferay-based website. When using PKCE (explained below), the
-    application also generates a code verifier, and sends a code challenge that 
+    application also generates a code verifier and sends a code challenge that 
     is created by applying a transformation to it. 
 
 2.  The user authenticates and is shown the resources the application wants
@@ -41,8 +41,8 @@ Here's how OAuth 2.0 works:
     authorization token for this user and application combination. It sends the 
     token to the application over HTTPS. Initial authorization is now complete! 
 
-5.  When the application must retrieve data it's authorized to retrieve from
-    Liferay, it sends the token with the request. 
+5.  When the application must retrieve data, it sends the token with the request
+    to prove it's authorized to have that data.
 
 6.  Provided the token matches what Liferay has for that user and application,
     access is granted to retrieve the data. 
@@ -79,13 +79,13 @@ are *password* (logging in with a user name and password), and *client
 credentials* (headless predefined application access). 
 
 **Scope:** A list of items that define what the application wants to access.
-This list is sent during the initial authorization request (or otherwise defaults 
-to scopes selected in the application registration) so the User can grant
-or deny access to his/her resources. 
+This list is sent during the initial authorization request (or otherwise
+defaults to scopes selected in the application registration) so users can grant
+or deny access to their resources. 
 
-**Callback URI:** Also called a Redirection Endpoint URI, this is a location the
-authorization server (i.e., Liferay) sends the client to after authorization is
-complete. 
+**Callback URI:** Also called a Redirection Endpoint URI. After authorization is
+complete, the authorization server (i.e., Liferay) sends the client to this
+location. 
 
 ## Creating an Application
 
@@ -132,9 +132,9 @@ access user data.
 
 **Client Secret:** Click the *pencil* icon to generate a client secret. The
 secret identifies the client is genuine during the authorization process (see
-figure 1 above). Note: Not all client profiles require a client secret, because 
-quite simply some are incapable of keeping it secret! This is when the 
-aforementioned PKCE code challenge and verifier is needed.
+figure 1 above). Not all client profiles require a client secret, because
+some are incapable of keeping it secret! This is when the aforementioned PKCE
+code challenge and verifier is needed.
 
 **Icon:** Upload an icon that your application's users identify with your
 application. This is displayed on the authorization screen. 

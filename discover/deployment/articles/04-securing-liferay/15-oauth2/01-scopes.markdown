@@ -7,9 +7,8 @@ created in two ways:
 1.  By administrators, by creating a Service Access Policy for the scope
 
 2.  By developers, by creating a JAX-RS endpoint. By default, scopes are 
-	generated based on the HTTP verbs supported by the JAX-RS endpoint. 
-	And a special annotation can be used to override this behaviour and register
-	specific scopes
+    generated based on the HTTP verbs supported by the JAX-RS endpoint.
+    A special annotation override this behavior and register specific scopes. 
 
 ## Creating a Scope for a JSONWS Service
 
@@ -18,9 +17,9 @@ The most common way to create a scope is to create a
 prefixed with the name `OAUTH2_`. This naming convention causes the policy to appear
 in the OAuth application configuration screen as a scope. 
 
-For example, say the application needs access to a user's profile information in
-order to retrieve the email address. To grant the application access to this, go
-to *Control Panel* &rarr; *Configuration* &rarr; *Service Access Policy*, and
+For example, say the application needs access to a user's profile information to
+retrieve the email address. To grant the application access to this, go to
+*Control Panel* &rarr; *Configuration* &rarr; *Service Access Policy*, and
 create the policy pictured below. 
 
 ![Figure x: A Service Access Policy defines a scope for OAuth 2.0 applications.](../../images/oauth-service-access-policy.png)
@@ -41,9 +40,9 @@ Now you can select it and save your application.
 
 ## Creating a Scope for a JAX-RS Service
 
-Without any special Liferay OAuth2 annotations or properties, a standard OSGi 
-JAX-RS application will be inspected by the Liferay OAuth2 runtime and scopes 
-will be derived based on the HTTP verbs supported by the application.
+Without any special Liferay OAuth2 annotations or properties, a standard OSGi
+JAX-RS application is inspected by the Liferay OAuth2 runtime and scopes are
+derived based on the HTTP verbs supported by the application.
 
 When developers want more control, they can register their JAX-RS application 
 with the property `oauth2.scopechecker.type=annotations` and annotate endpoint 

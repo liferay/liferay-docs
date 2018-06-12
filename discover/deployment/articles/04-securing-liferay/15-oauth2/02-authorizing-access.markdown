@@ -1,9 +1,9 @@
 # Authorizing Account Access with OAuth2
 
 Once you have an application registered, you can start authorizing users. To do
-that, you must construct the URL to the authorization server (@product@). This
-asks users to authorize the requested permissions to their resources, defined as
-you saw in the previous tutorial as scopes. 
+that, you must construct the URL to the authorization server (@product@). The
+authorization server sks users to authorize the requested permissions to their
+resources, defined as you saw in the previous tutorial as scopes. 
 
 ## Authorization Code Flow
 
@@ -20,16 +20,16 @@ To construct a URL for this authorization, therefore, follow this pattern:
 The client ID comes from registering the application. It's automatically
 generated (though you can change it if you edit the application). 
 
-IMPORTANT: Sometimes the phrase "web application" is used loosely and also 
-implies applications where the above URL is requested from the web browser 
-directly. However in such cases the client secret would be leaked, compromising 
-security of the grant flow and the application. In such cases, you should select 
-the "User Agent Application" client profile when registring your application. 
-This will then make a secure alterntive available to your application: "PKCE 
-Extended Authorization Code" flow.
+IMPORTANT: Sometimes the phrase "web application" is used loosely, implying
+applications where the above URL is requested from the web browser directly. If
+this happens, you'd leak the client secret, compromising the security of the
+grant flow and the application. In such cases, select the "User Agent
+Application" client profile instead when registering your application. This
+makes a secure alternative available to your application: PKCE Extended
+Authorization Code flow (see below).
 
-Once the user has authorized the requested permissions to their resoures, the 
-authorization server returns an authorization code to your application at its 
+Once the user has authorized the requested permissions to their resources, the
+authorization server returns an authorization code to your application at its
 registered callback URI (a.k.a. redirect URI) as a query string parameter. 
 
 	[your callback URI]?code=[authorization server generated code]
@@ -40,7 +40,7 @@ by sending a POST request following this pattern:
 	http://localhost:8080/o/oauth2/token
 
 With the following parameters in the body (encoded as 
-application/x-www-form-urlencoded):
+`application/x-www-form-urlencoded`):
 
 	client_id=[client ID]
 	client_secret=[client secret]
@@ -61,23 +61,23 @@ In the body of HTTP response to this request, you will receive JSON like this:
 From this you should extract and persist the access token. If you intend to use 
 the token for an indefinite amount of time (beyond 600 seconds from the above 
 example) you also need the refresh token. This can be used in conjunction with 
-the Refresh Token Flow to obtain a new access token, with the same permissions, 
-without further user authorization.  The authorization server will only issue 
+the Refresh Token Flow to obtain a new access token, with the same permissions,
+without further user authorization.  The authorization server only issues
 Refresh Tokens if your application registration is registered for this flow.
 
 ## PKCE Extended Authorization Code Flow
 
 This flow is the same as above with the addition of the Proof Key for Code
 Exchange (PKCE). It requires another request parameter: `code_challenge`. This
-flow is for clients such as smartphone applications that may not have sole
-access to the URL (and thus the request parameters) redirected to by the
-authorization server after the user authorization. It protects against a 
-malicious application on the same system authorizing itself by reading the 
-response code. To do this, the client application sends a *code challenge* with 
-the authorization request: a string it has generated and which it only knows. To
-generate this string it first needs to create another secret string known as the 
-*Code Verifier*, and then apply a transformation to it. After authorization, the 
-code verifier is sent with the authorization code, validating the client. 
+flow is for clients like smartphone applications that may not have sole access
+to the URL (and thus the request parameters) redirected to by the authorization
+server after the user authorization. It protects against a malicious application
+on the same system authorizing itself by reading the response code. To do this,
+the client application sends a *code challenge* with the authorization request:
+a string it has generated and which it only knows. To generate this string it
+must first create another secret string known as the *Code Verifier*, and then
+apply a transformation to it. After authorization, the code verifier is sent
+with the authorization code, validating the client. 
 
 For more detail on how to do this, please refer to the 
 [PKCE specification](https://tools.ietf.org/html/rfc7636).
@@ -89,9 +89,9 @@ using PKCE, use a URL containing the `code_challenge` request parameter:
 
     https://[hostname]/o/oauth2/authorize?response_type=code&client_id=[client ID]&code_challenge=[PKCE code challenge]
 
-The rest of the process is identical to Authorization Code flow, except that 
-when making the final request to get the access token, you also need to provide 
-the following parameter:
+The rest of the process is identical to Authorization Code flow, except that
+when making the final request to get the access token, must also provide the
+following parameter:
 
 	code_verifier=[Code Verifier that was transformed and sent as code_challenge previously]
 
@@ -120,8 +120,8 @@ server (@product@) to the client application. This token is sent in the response
 for the client application to store and send along with any future request for
 data. 
 
-For example, if the authorization code `946856e2b5ddf0928f6fc55f657bab73` were
-sent to the client application, when the client requests data, this code must be
+For example, say the authorization code `946856e2b5ddf0928f6fc55f657bab73` was
+sent to the client application. When the client requests data, this code must be
 sent in each request header. Using a command line HTTP client such as Curl, you
 could send a request like this: 
 
@@ -134,14 +134,14 @@ to particular services (scopes) by users without sharing credential information.
 
 Once access is granted, users or administrators are free to revoke access
 whenever they wish. If this happens to a client, the token becomes invalid and
-the client would have to ask the user for authorization again. This puts users
-in control of what has access to their data, and they can exercise this control
-at any time. 
+the client must ask the user for authorization again. This puts users in control
+of what has access to their data, and they can exercise this control at any
+time. 
 
 ![Figure x: Users have complete control over what applications have access to their data in their account profiles.](../../images/oauth-user-apps.png)
 
 In their account area, users can click *OAuth2 Connected Applications* and see
-a list of any applications they've allowed to access their accounts. From here,
+a list of applications they've allowed to access their accounts. From here,
 they can revoke access by clicking the *Remove Access* item in the Action menu
 or the *Remove Access* button in the detail screen for the application. 
 
@@ -150,7 +150,7 @@ in *Control Panel* &rarr; *Configuration* &rarr; *OAuth2 Administration*.
 
 ![Figure x: All authorizations for an app appear in the Authorizations tab for the app.](../../images/oauth-revoke-access.png)
 
-Clicking the *Revoke* button on any authorization listed here revokes that
+Clicking the *Revoke* button on any listed authorization revokes that
 application's access to that user's account. 
 
 ## Summary
