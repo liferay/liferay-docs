@@ -749,3 +749,92 @@ This change provides the latest features offered by the Portlet 3.0
 Specification, which was released in early 2017.
 
 ---------------------------------------
+
+### Changed the Dependency for the liferay-util:html-top JSP tag
+- **Date:** 2018-Jun-07
+- **JIRA Ticket:** LPS-81983
+
+#### What changed?
+
+The usage of `portal-kernel`'s `StringBundler` has been deprecated in favor of
+Liferay's Petra `StringBundler`.
+
+#### Who is affected?
+
+This affects anyone using the `<liferay-util:html-top>` JSP tag.
+
+#### How should I update my code?
+
+You must add the following dependency in your build file for your JSPs to
+compile successfully:
+
+**build.gradle**:
+
+    dependencies {
+        ...
+        compileOnly group: "com.liferay", name: "com.liferay.petra.string", version: "1.2.0"
+        ...
+    }
+
+**pom.xml**:
+
+    <dependency>
+        <groupId>com.liferay</groupId>
+        <artifactId>com.liferay.petra.string</artifactId>
+        <version>1.2.0</version>
+        <scope>provided</scope>
+    </dependency>
+
+#### Why was this change made?
+
+This change helps stabilize the foundation of Liferay Portal's utilities.
+
+---------------------------------------
+
+### Decoupled Several Classes from PortletURLImpl
+- **Date:** 2018-Jun-08
+- **JIRA Ticket:** LPS-82119
+
+#### What changed?
+
+All classes implementing `javax.portlet.BaseURL` have had their inheritance
+hierarchy change. These classes include
+
+- `PortletURLImplWrapper`
+- `LiferayStrutsPortletURLImpl`
+- `StrutsActionPortletURL`
+
+#### Who is affected?
+
+This affects code that attempts to subclass or create a new instance of the
+classes listed previously.
+
+#### How should I update my code?
+
+You must refactor the constructors of your affected classes to receive
+`com.liferay.portal.kernel.portlet.LiferayPortletResponse` instead of
+`com.liferay.portlet.PortletResponseImpl`.
+
+In addition, their class hierarchies must be changed. For example, the
+`com.liferay.portal.struts.StrutsActionPortletURL` class hierarchy was changed
+from
+
+- `com.liferay.portlet.PortletURLImpl`
+    - `com.liferay.portlet.PortletURLImplWrapper`
+        - `com.liferay.portal.struts.StrutsActionPortletURL`
+
+to
+
+- `javax.portlet.filter.RenderStateWrapper`
+    - `javax.portlet.filter.BaseURLWrapper`
+        - `javax.portlet.filter.PortletURLWrapper`
+            - `com.liferay.portal.kernel.portlet.LiferayPortletURLWrapper`
+                - `com.liferay.portlet.PortletURLImplWrapper`
+                    - `com.liferay.portal.struts.StrutsActionPortletURL`
+
+#### Why was this change made?
+
+This change corrects a best practice violation regarding
+implementation-specific details being included within an API.
+
+---------------------------------------
