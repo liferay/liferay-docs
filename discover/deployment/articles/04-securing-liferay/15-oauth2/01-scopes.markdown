@@ -6,14 +6,16 @@ created in two ways:
 
 1.  By administrators, by creating a Service Access Policy for the scope
 
-2.  By developers, by creating a JAX-RS endpoint and marking it with a special
-    annotation
+2.  By developers, by creating a JAX-RS endpoint. By default, scopes are 
+	generated based on the HTTP verbs supported by the JAX-RS endpoint. 
+	And a special annotation can be used to override this behaviour and register
+	specific scopes
 
 ## Creating a Scope for a JSONWS Service
 
 The most common way to create a scope is to create a 
 [Service Access Policy](/discover/deployment/-/knowledge_base/7-1/service-access-policies)
-prefixed with the name `oauth2_`. This naming convention causes the policy to appear
+prefixed with the name `OAUTH2_`. This naming convention causes the policy to appear
 in the OAuth application configuration screen as a scope. 
 
 For example, say the application needs access to a user's profile information in
@@ -30,7 +32,7 @@ installation at this URL:
 
     http://[host]:[port]/api/jsonws/
 
-Once you create a policy and name it with the `oauth2_` prefix, it appears in
+Once you create a policy and name it with the `OAUTH2_` prefix, it appears in
 the *Scopes* tab in OAuth2 Administration. 
 
 ![Figure x: Scopes named with the proper prefix appear in the Scopes tab of your application configuration.](../../images/oauth-scopes-tab.png)
@@ -39,8 +41,13 @@ Now you can select it and save your application.
 
 ## Creating a Scope for a JAX-RS Service
 
-Developers creating JAX-RS web services can make their services appear as OAuth
-2.0 scopes by annotating endpoint resource methods or whole classes like this: 
+Without any special Liferay OAuth2 annotations or properties, a standard OSGi 
+JAX-RS application will be inspected by the Liferay OAuth2 runtime and scopes 
+will be derived based on the HTTP verbs supported by the application.
+
+When developers want more control, they can register their JAX-RS application 
+with the property `oauth2.scopechecker.type=annotations` and annotate endpoint 
+resource methods or whole classes like this:
 
     @RequiresScope("scopeName")
 
