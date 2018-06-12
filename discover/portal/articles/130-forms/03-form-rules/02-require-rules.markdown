@@ -1,4 +1,4 @@
-# Action: Require
+# Action: Require [](id=action-require)
 
 Use a require rule to make a field required based on one or more conditions.
 
@@ -20,12 +20,12 @@ To configure a require rule,
     - If the *I am 18 years old or older* field is equal to *No*, show the
         *Legal Guardian Email Address* field and make it required.
 
-    ![Figure x: Build form rules quickly by defining your conditions and
+    ![Figure 1: Build form rules quickly by defining your conditions and
     actions.](../../../images/forms-require-rule.png)
 
     - Save the rule. 
 
-    ![Figure x: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-require-rule2.png)
+    ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-require-rule2.png)
 
 $$$
 

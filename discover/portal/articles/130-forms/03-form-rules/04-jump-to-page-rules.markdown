@@ -1,4 +1,4 @@
-# Action: Jump to Page
+# Action: Jump to Page [](id=action-jump-to-page)
 
 Use a Jump to Page rule to automatically navigate to a specific page in the form
 based on one or more conditions. This is useful if some pages of the form don't
@@ -34,11 +34,11 @@ To configure the Jump to Page rule,
     - If field *Are you a returning racer with the same team?* is equal to
         *Yes*, Jump to Page *Final Confirmation*.
 
-    ![Figure x: Build form rules quickly by defining your conditions and actions.](../../../images/forms-jump-to-page.png)
+    ![Figure 1: Build form rules quickly by defining your conditions and actions.](../../../images/forms-jump-to-page.png)
 
     - Save the rule.
 
-    ![Figure x: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-jump-to-page2.png)
+    ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-jump-to-page2.png)
 
 $$$
 

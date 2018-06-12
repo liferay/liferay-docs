@@ -1,4 +1,4 @@
-# Form Rules
+# Form Rules [](id=form-rules)
 
 What's the difference between a chicken and a dog? Among other things, you can't
 train a chicken, while dogs are quite trainable. If you're skeptical, try
@@ -41,7 +41,7 @@ If you're not already familiar with the Forms application, start
 Once you know how to create forms and publish forms, and add and configure form
 fields, come back here and learn about form rules.
 
-## The Anatomy of a Form Rule
+## The Anatomy of a Form Rule [](id=the-anatomy-of-a-form-rule)
 
 Each rule consists of one or more conditions and actions. 
 
@@ -51,7 +51,7 @@ Each rule consists of one or more conditions and actions.
 
 Rules are stored in the @product@ database in JSON format by default.
 
-## Creating Form Rules: Rule Builder
+## Creating Form Rules: Rule Builder [](id=creating-form-rules-rule-builder)
 
 Once you create a form and lay out its fields, you're ready to set up rules in
 your form. First, save the form.
@@ -62,7 +62,7 @@ screen.
 In the rule builder view, you can now begin developing your form rule. Click the
 Add button (![Add](../../../images/icon-add.png)) to get started.
 
-![Figure x: The Rule Builder gives you a handy interface for creating dynamic
+![Figure 1: The Rule Builder gives you a handy interface for creating dynamic
 form rules.](../../../images/forms-rule-builder.png)
 
 Before looking at each type of rule condition and action you can use to develop
@@ -81,7 +81,7 @@ AND
 This box becomes usable once you click the Add button
 (![Add](../../../images/icon-add.png)) to add an extra condition.
 
-## Conditions
+## Conditions [](id=conditions)
 
 Conditions are the gatekeepers of form rules. If the condition's *if statement*
 evaluates to *true*, the action is triggered. If it evaluates to *false*, no

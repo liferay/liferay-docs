@@ -1,4 +1,4 @@
-# Action: Show and Hide
+# Action: Show and Hide [](id=action-show-and-hide)
 
 With a show and hide rule, you use one or more conditions to determine whether
 to show or hide a field if the condition evaluates to *true*.
@@ -30,12 +30,12 @@ To configure a Show/Hide rule,
     - If the *I am 18 years old or older* field is equal to *No*, show the
         *Legal Guardian Email Address* field.
 
-    ![Figure x: Build form rules quickly by defining your conditions and
+    ![Figure 1: Build form rules quickly by defining your conditions and
     actions.](../../../images/forms-rule-development.png)
 
     - Save the rule. 
 
-    ![Figure x: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-rule-list.png)
+    ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-rule-list.png)
 
 Now the *Legal Guardian Email Address* field is only displayed in the form if
 the user selects *No* in the *I am 18 years old or older* field.

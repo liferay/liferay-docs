@@ -1,4 +1,4 @@
-# Action: Calculate
+# Action: Calculate [](id=action-calculate)
 
 Calculate rules let you automatically populate a numeric field by calculating
 its value based on other fields. Calculations are limited to numeric fields.
@@ -33,11 +33,11 @@ To configure a calculate rule:
     - If field *Animal Weight 1* is greater than 0, Calculate the sum of the
         Animal Weight fields, multiplied by 0.25.
 
-    ![Figure x: Build calculate actions with a handy calculator.](../../../images/forms-calculate-rule.png)
+    ![Figure 1: Build calculate actions with a handy calculator.](../../../images/forms-calculate-rule.png)
 
     - Save the rule.
 
-    ![Figure x: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-calculate-rule2.png)
+    ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-calculate-rule2.png)
 
 $$$
 

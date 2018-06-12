@@ -1,4 +1,4 @@
-# Action: Enable and Disable
+# Action: Enable and Disable [](id=action-enable-and-disable)
 
 Use an enable/disable rule to make a field editable based on one or more conditions.
 
@@ -26,12 +26,12 @@ To set up the enable/disable rule,
     - If the *Would you like to use the provided dog food?* field is equal to *Yes*, enable the
         *Amount (US lb.)* field.
 
-    ![Figure x: Build form rules quickly by defining your conditions and
+    ![Figure 1: Build form rules quickly by defining your conditions and
     actions.](../../../images/forms-enable-rule.png)
 
     - Save the rule. 
 
-    ![Figure x: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-enable-rule2.png)
+    ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-enable-rule2.png)
 
 $$$
 

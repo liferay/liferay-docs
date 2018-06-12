@@ -1,4 +1,4 @@
-# Action: Autofill
+# Action: Autofill [](id=action-autofill)
 
 Autofill rules let you change the selection options of another field based
 on the value entered into a related field. A [data provider's]((/discover/portal/-/knowledge_base/7-1/data-providers)) output is used to
@@ -46,11 +46,11 @@ To configure an Autofill rule,
         Country* field from the *countries* data provider (note that you might
         have named this differently when setting it up).
 
-    ![Figure x: Build form rules quickly by defining your conditions and actions.](../../../images/forms-autofill.png)
+    ![Figure 1: Build form rules quickly by defining your conditions and actions.](../../../images/forms-autofill.png)
 
     - Save the rule.
 
-    ![Figure x: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-autofill2.png)
+    ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-autofill2.png)
 
 $$$
 
