@@ -12,45 +12,89 @@ applications. The URL for this requires the following request parameters:
 
 - `response_type` 
 - `client_id` 
-- `client_secret` (optional)
+- `client_secret`
 
 To construct a URL for this authorization, therefore, follow this pattern: 
 
-    https://[hostname]/o/oauth2/authorize?response_type=code&client_id=[client ID]
-
-The client ID comes from registering the application. It's automatically
-generated (though you can change it if you edit the application). 
-
-This same flow could include the client secret if you created one. This requires
-that the client know the secret as well as the ID to request an access token. In
-this example, the URL would also have to include the `client_secret` request
-parameter: 
-
     https://[hostname]/o/oauth2/authorize?response_type=code&client_id=[client ID]&client_secret=[client secret]
 
-Whether to use a client secret or not is up to you. You may wish to review the
-[OAuth 2.0 Documentation](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/)
-when you make your decision. 
+The client ID and client secret come from registering the application. They are automatically
+generated (though you can change it if you edit the application). 
 
-## Authorization with PKCE Flow
+IMPORTANT: Sometimes the phrase "web application" is used loosely and also 
+implies applications where the above URL is requested from the web browser 
+directly. However in such cases the client secret would be leaked, compromising 
+security of the grant flow and the application. In such cases, you should select 
+the "User Agent Application" client profile when registring your application. 
+This will then make a secure alterntive available to your application: "PKCE 
+Extended Authorization Code" flow.
+
+Once the user has authorized the requested permissions to their resoures, the 
+authorization server returns an authorization code to your application at its 
+registered callback URI (a.k.a. redirect URI) as a query string parameter. 
+
+	[your callback URI]?code=[authorization server generated code]
+
+Your application must then exchange this authorization code for an access token
+by sending a POST request following this pattern:
+
+	http://localhost:8080/o/oauth2/token
+
+With the following parameters in the body (encoded as 
+application/x-www-form-urlencoded):
+
+	client_id=[client ID]
+	client_secret=[client secret]
+	grant_type=authorization_code
+	code=[authorization server generated code]
+	redirect_uri=[registered callback URI]
+
+In the body of HTTP response to this request, you will receive JSON like this:
+
+	{
+		"access_token": "[authorization server generated access token]",
+		"token_type": "Bearer",
+		"expires_in": 600,
+		"scope": "[the scopes that were authorized by the user]",
+		"refresh_token": "[authorization server generated refresh token]"
+	}
+
+From this you should extract and persist the access token. If you intend to use 
+the token for an indefinite amount of time (beyond 600 seconds from the above 
+example) you also need the refresh token. This can be used in conjunction with 
+the Refresh Token Flow to obtain a new access token, with the same permissions, 
+without further user authorization.  The authorization server will only issue 
+Refresh Tokens if your application registration is registered for this flow.
+
+## PKCE Extended Authorization Code Flow
 
 This flow is the same as above with the addition of the Proof Key for Code
-Exchange (PKCE). It requires another request parameter: `code_verifier`. This
+Exchange (PKCE). It requires another request parameter: `code_challenge`. This
 flow is for clients such as smartphone applications that may not have sole
-access to the URL (and thus the request parameters) returned by the
-authorization server. It protects against a malicious application on the same
-system authorizing itself by reading the response code. To do this, the client
-application sends a *code verifier* with the authorization request: a string it
-has generated and which it only knows. After authorization, the code verifier is
-sent with the authorization code, validating the client. 
+access to the URL (and thus the request parameters) redirected to by the
+authorization server after the user authorization. It protects against a 
+malicious application on the same system authorizing itself by reading the 
+response code. To do this, the client application sends a *code challenge* with 
+the authorization request: a string it has generated and which it only knows. To
+generate this string it first needs to create another secret string known as the 
+*Code Verifier*, and then apply a transformation to it. After authorization, the 
+code verifier is sent with the authorization code, validating the client. 
+
+For more detail on how to do this, please refer to the 
+[PKCE specification](https://tools.ietf.org/html/rfc7636).
 
 To support this flow, you must have defined PKCE as an Allowed Authorization
-Type when you created the application. This is part of the Native Application
-client profile. To request an authorization code using PKCE, use a URL
-containing the `code_verifier` request parameter: 
+Type when you created the application. This is part of the Native Application 
+and User Agent Application client profiles. To request an authorization code 
+using PKCE, use a URL containing the `code_challenge` request parameter: 
 
+    https://[hostname]/o/oauth2/authorize?response_type=code&client_id=[client ID]&code_challenge=[PKCE code challenge]
 
-    https://[hostname]/o/oauth2/authorize?response_type=code&client_id=[client ID]&client_secret=[client secret]&code_verifier=[PKCE code]
+The rest of the process is identical to Authorization Code flow, except that 
+when making the final request to get the access token, you also need to provide 
+the following parameter:
+
+	code_verifier=[Code Verifier that was transformed and sent as code_challenge previously]
 
 ## Client Credentials and Resource Owner Flows
 
@@ -72,7 +116,7 @@ authorization code.
 
 ## Token Use
 
-All flows above result in an authorization code that's sent by the authorization
+All flows above result in an access token that's sent by the authorization
 server (@product@) to the client application. This token is sent in the response
 for the client application to store and send along with any future request for
 data. 
