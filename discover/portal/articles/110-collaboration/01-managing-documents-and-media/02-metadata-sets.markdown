@@ -16,9 +16,9 @@ Sets* tab. The sets appear in a table.
 
 To select a metadata set, select the checkbox to its left. To select all the 
 sets, select the checkbox in the Management Bar. With 1 or more sets selected, 
-the Recycle Bin icon 
-(![Recycle Bin](../../../images/icon-trash.png)) appears in the Management Bar. 
-Clicking it moves the selected sets to the Recycle Bin. 
+an `X` icon appears in the Management Bar. Clicking it deletes the selected 
+metadata set(s). Note that metadata sets don't support the Recycle Bin. If you 
+delete a metadata set, it's gone forever. 
 
 The Management Bar also contains other options for managing the metadata sets.
 The selector menu to the right of the checkbox filters the sets that the table
@@ -34,7 +34,7 @@ actions on that set:
 -   **Edit**: Edit the set. Alternatively, click the set's name in the table.
 -   **Permissions**: Configure the set's permissions. 
 -   **Copy**: Copy the metadata set. 
--   **Delete**: Move the set to the Recycle Bin.
+-   **Delete**: Delete the set. 
 
 ![Figure 1: The Metadata Sets management window lets you view existing sets and create new ones for applying to document types.](../../../images/dm-metadata-sets-list.png)
 

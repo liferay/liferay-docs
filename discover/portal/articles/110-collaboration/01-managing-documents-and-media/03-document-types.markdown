@@ -14,15 +14,17 @@ types exclusively.
 ## Managing Document Types [](id=managing-document-types)
 
 To see the available document types, open the *Menu* 
-(![Product Menu](../../../images/icon-menu.png)), expand your site's menu, and
-navigate to *Content* &rarr; *Documents and Media*. Then click the *Document
-Types* tab. A searchable table lists the document types. The following actions
-are available for each document type via its Actions button (![Actions
-Menu](../../../images/icon-actions.png)): 
+(![Product Menu](../../../images/icon-menu.png)), 
+expand your site's menu, and navigate to *Content* &rarr; *Documents and Media*. 
+Then click the *Document Types* tab. A searchable table lists the document 
+types. The following actions are available for each document type via its 
+Actions button 
+(![Actions](../../../images/icon-actions.png)): 
 
 -   **Edit**: Edit the document type. 
 -   **Permissions**: Set the document type's permissions. 
--   **Delete**: Move the document type to the Recycle Bin. 
+-   **Delete**: Delete the document type. Note that document types don't support 
+    the Recycle Bin. Once you delete a document type, it's gone forever. 
 
 ![Figure 1: The Document Types management window lets you view existing document types and create new ones.](../../../images/dm-doc-types-list.png)
 
