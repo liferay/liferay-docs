@@ -61,7 +61,7 @@ Liferay Home has folders for various purposes:
         -   `target-platform`: Target platform index
         -   `test`: Modules that support test integration
         -   `war`: WAR plugins you've deployed
-    -   `patching-tool`: (Liferay Digital Enterprise 7.1 only) This folder 
+    -   `patching-tool`: (Liferay DXP only) This folder 
         contains patches for @product@ and files for installing the patches.
     -   `tools`: For @product@ upgrade and target platform indexer.
     -   `work`: Module Jasper work files.
