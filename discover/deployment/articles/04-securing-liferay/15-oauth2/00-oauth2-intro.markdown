@@ -105,7 +105,7 @@ register that application so @product@ can recognize it. Do this by accessing
 
 **Website URL:** Add a link to the application's website. 
 
-**Callback URIs:** Enter at least one (comma-separated) URI where users should
+**Callback URIs:** Enter at least one (line-separated) URI where users should
 be redirected after they authorize (or refuse to authorize) access to their
 accounts. This should link to a handler for whichever Allowed Authorization
 Types you support (see below). 
