@@ -68,7 +68,7 @@ Facets allow users of the Search application to filter search results. Think of
 facets as buckets that hold similar search results. You might want to see the
 results in all the buckets, but after scanning the results, you might decide
 that the results of just one bucket better represent what you want. So what
-facets are included in @product by default?
+facets are included out of the box?
 
 - Category
 - Folder
