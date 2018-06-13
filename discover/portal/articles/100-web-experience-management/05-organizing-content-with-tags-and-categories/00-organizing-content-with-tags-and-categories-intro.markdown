@@ -9,7 +9,7 @@ form when creating or editing an asset, you'll find an interface for adding tags
 and categories. If no categories are available to be added to the asset (e.g.,
 if no categories have been created), the *Select* option won't appear.
 
-![Figure 1: Here is the Web Content application's metadata section.](../../../../images/web-content-categorization.png)
+![Figure 1: Here is the Web Content application's metadata section.](../../../images/web-content-categorization.png)
 
 +$$$
 
@@ -22,7 +22,7 @@ section.
 
 $$$
 
-The Menu (![Menu](../../../../images/icon-menu.png)) contains interfaces for
+The Menu (![Menu](../../../images/icon-menu.png)) contains interfaces for
 managing tags and categories for each site in @product@. Navigate to the Site
 Administration menu &rarr; *Categorization*, and you'll find the *Tags* and
 *Categories* options. These options can be used to manage all your site's tags

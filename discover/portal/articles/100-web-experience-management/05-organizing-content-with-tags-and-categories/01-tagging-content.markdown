@@ -22,9 +22,9 @@ existing site tags. To create tags in Site Administration:
     
     From this screen, you can view existing tags and create new ones.
 
-2.  To create a new tag, click the *Add Tag* icon (![Add Tag](../../../../images/icon-add.png)) and enter a name for the tag.
+2.  To create a new tag, click the *Add Tag* icon (![Add Tag](../../../images/icon-add.png)) and enter a name for the tag.
 
-![Figure 2: The Add Tag interface is very simple, only requiring the name of your tag.](../../../../images/new-tag-interface.png)
+![Figure 2: The Add Tag interface is very simple, only requiring the name of your tag.](../../../images/new-tag-interface.png)
 
 The process for adding tags during content creation is very similar. For
 example, to create tags for a new web content article:

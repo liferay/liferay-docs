@@ -26,12 +26,12 @@ Adding vocabularies and categories is similar to adding tags:
 2.  Click *Categorization* &rarr; *Categories* to view the Categories 
     application.
 
-![Figure 3: After adding new vocabularies, you'll notice your vocabularies indicate the amount of categories existing beneath them.](../../../../images/vocabulary-list.png)
+![Figure 3: After adding new vocabularies, you'll notice your vocabularies indicate the amount of categories existing beneath them.](../../../images/vocabulary-list.png)
 
 Clicking on a vocabulary displays any categories that have been created under
 that vocabulary. To create a new vocabulary:
 
-1.  Click on the *Add Vocabulary* button (![Add Vocabulary](../../../../images/icon-add.png)).
+1.  Click on the *Add Vocabulary* button (![Add Vocabulary](../../../images/icon-add.png)).
 
 2.  Enter a name and, optionally, a description.
 
@@ -54,11 +54,11 @@ must be added to an existing vocabulary and they can only be created by site
 administrators. Once created, however, regular users can apply categories to any
 assets they have permission to create or edit. To create a new category:
 
-1.  Click the *Add Category* icon (![Add Category](../../../../images/icon-add.png))
+1.  Click the *Add Category* icon (![Add Category](../../../images/icon-add.png))
 
 If you're already viewing a vocabulary:
 
-1.  Select the *Actions* button (![Actions](../../../../images/icon-actions.png)) next to an existing 
+1.  Select the *Actions* button (![Actions](../../../images/icon-actions.png)) next to an existing 
     vocabulary and select *Add Category*.
 
 2.  Enter a name for the new category and, optionally, a description.
