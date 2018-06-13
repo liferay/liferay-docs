@@ -161,7 +161,7 @@ managed domain mode, since @product@'s JSP override mechanism relies on the
 application server. Other plugins, such as service or action hooks, should still
 work properly.
 
-Using the command line interface is recommended for deployments.
+Using the command line interface is recommended for domain mode deployments.
 
 +$$$
 
@@ -181,7 +181,6 @@ Configuring Wildfly to run @product@ includes these things:
 - Setting environment variables
 - Setting properties and descriptors
 - Removing unnecessary configurations
-- etc.
 
 Optionally, you can configure Wildfly to manage these things for @product@:
 
@@ -347,6 +346,9 @@ your data source. @product@'s
 [Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-product#using-liferays-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
+
+This section demonstrates configuring a MySQL database. If you're using a
+different database, modify the data source and driver snippets as necessary.
 
 If you want Wildfly to manage your data source, follow these steps:
 
