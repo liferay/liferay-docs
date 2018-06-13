@@ -12,9 +12,6 @@ Here, you'll consider the ramifications of different stores:
 -   **Advanced File System Store:** Nests files into directories by version, for 
     faster performance and to store more files. 
 
--   **CMIS Store (Content Management Interoperability Services):** Uses a system 
-    separate from @product@ to store files. 
-
 -   **DBStore (Database Storage)**: Stores files in the @product@ database. The 
     file (stored as a blob) size limit is 1 GB. Use the Simple File System Store 
     or Advanced File System Store to store larger files. 
@@ -89,34 +86,6 @@ time from two different nodes.
 See the 
 [Document Repository Configuration guide](/discover/deployment/-/knowledge_base/7-1/using-the-advanced-file-system-store) 
 for instructions on using the Advanced File System Store. 
-
-## Using the CMIS Store [](id=using-the-cmis-store)
-
-Though you can mount as many different CMIS (Content Management Interoperability
-Services) repositories as you like in the Documents and Media library, you can
-also redefine the @product@ repository to point to a CMIS repository. Then users
-can create a folder or upload content to the that repository without the
-administrator having to mount that repository via the UI. 
-
-+$$$
-
-**Note:** The CMIS Store isn't suitable for production use and is deprecated as 
-of Liferay Portal CE 7.0 and Liferay DXP. Because the CMIS Store can have 
-performance issues with large repositories, you should a different store. This 
-deprecation doesn't affect the use of external repositories. You can still 
-[connect to external repositories](/discover/portal/-/knowledge_base/7-1/using-external-repositories) 
-using CMIS. 
-
-$$$
-
-When using the CMIS Store, the @product@ repository is connected to CMIS via the 
-CMIS store. As long as all nodes are pointing to your CMIS repository, 
-everything in your @product@ cluster should be fine, as the CMIS protocol 
-prevents multiple simultaneous file access from causing data corruption. 
-
-See the 
-[Document Repository Configuration guide](/discover/deployment/-/knowledge_base/7-1/using-the-cmis-store) 
-for instructions on using the CMIS Store. 
 
 ## Using Amazon Simple Storage Service [](id=using-amazon-simple-storage-service)
 
