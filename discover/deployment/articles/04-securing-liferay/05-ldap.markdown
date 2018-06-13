@@ -1,60 +1,94 @@
 # LDAP [](id=ldap)
 
 @product@ fully supports LDAP as a user store. Use the LDAP tab in Instance
-Settings's Authentication page to connect @product@ to an LDAP directory. Users
-can be imported into @product@ from LDAP or exported to LDAP from @product@. If your
-organization already stores user information on an LDAP server, it's convenient
-for both users and administrators to simply have the LDAP user information
-imported into @product@. Importing LDAP user information to @product@ means that
-users don't have to remember an extra set of credentials for @product@.  Importing
-LDAP user information to @product@ also means that administrators don't have to
-create a whole new set of user accounts for @product@. In this article, you'll
-learn how to connect @product@ to an LDAP server and how to configure import
-settings, export settings, and related LDAP configuration settings. 
+Settings's Authentication page to connect to an LDAP directory. Users can be
+imported from LDAP or exported to LDAP. If your organization already stores user
+information on an LDAP server, it's convenient for both users and administrators
+to import Users. In this article, you'll learn how to connect to an LDAP server
+and how to configure import settings, export settings, and related LDAP
+configuration settings. 
 
-## Configuring @product@'s LDAP Settings [](id=configuring-liferays-ldap-settings)
+## Configuring LDAP Settings [](id=configuring-ldap-settings)
 
-To access @product@'s LDAP configuration settings, navigate to *Control Panel
-&rarr; Configuration* &rarr; *Instance Settings*, then scroll down and expand the
+To access LDAP configuration settings, navigate to *Control Panel &rarr;
+Configuration* &rarr; *Instance Settings*, then scroll down and expand the
 form's *Authentication* section.  Go to the *LDAP* tab. Use this form to connect
-@product@ to an LDAP directory.
+to an LDAP directory.
 
 You configure the global values from the LDAP tab of the Authentication page.
 
 **Enabled:** Check this box to enable LDAP Authentication.
 
-**Required:** Check this box if LDAP authentication is required. @product@ then
-won't allow a user to log in unless he or she can successfully bind to the LDAP
-directory first. Uncheck this box if users with @product@ accounts but no LDAP
-accounts can log in to @product@.
+**Required:** Check this box if LDAP authentication is required. Users then
+can't log in unless they can bind to the LDAP directory successfully. Uncheck
+this box if users with @product@ accounts but no LDAP accounts can log in.
+
+**Method:** Choose *Bind* (the default) or *Password Compare*. Bind does
+a standard LDAP bind; Password Compare attempts to compare Liferay and LDAP
+passwords using the encryption algorithm specified in the field below. Password
+Compare is rarely used. 
+
+**Password Encryption Algorithm:** Choose the password encryption algorithm your
+LDAP server uses to encrypt passwords, so they can be compared, if using the
+Password Compare bind method. This is rarely used. 
 
 **LDAP Servers:** @product@ supports connections to multiple LDAP servers. Use
-the Add button beneath this heading to add LDAP servers. Each LDAP server has
-the following configuration options:
+the *Add* button beneath this heading to add LDAP servers. Each LDAP server has
+several configuration options that are explained in the next article. 
 
 **Import/Export:** You can import and export user data from LDAP directories
 using the following options:
 
-- *Enable Import:* Checking this box to cause @product@ to do a mass import
-  from your LDAP directories. Leave this unchecked to keep the default behavior,
-  which synchronizes users only when they log in. Definitely leave this
-  unchecked if you are working in a clustered environment. Otherwise, all of
-  your nodes would try to do a mass import when each of them starts up.
+**Enable Import:** Enable User import from LDAP directories. Users are imported
+as they log in, rather than all at once. 
 
-- *Enable Export:* Check this box to enable @product@ to export user accounts
-  from its database to LDAP. @product@ uses a listener to track any changes made
-  to the `User` object. @product@ pushes updates out to the LDAP server whenever
-  a `User` object is modified. Note that by default on every login, fields such
-  as `lastLoginDate` are updated. When export is enabled, this has the effect
-  of causing a user export every time the user logs in. You can prevent updates
-  to users' `lastLoginDate` fields from triggering LDAP user exports by setting
-  the following property in your `portal-ext.properties` file:
+**Enable Import on Startup:** Checking this box causes a mass import from your
+LDAP directories. Leave this unchecked to keep the default behavior, which
+synchronizes Users only when they log in. Definitely leave this unchecked if you
+are working in a clustered environment. Otherwise, all your nodes would try to
+do a mass import when each of them starts up.
+
+**Import Interval:** When mass importing users, enter the number of users batch
+imported at a time. 
+
+**Import Method:** Set either User or Group. If you set this to User, @product@
+imports all users from the specified portion of the LDAP tree. If you set this
+to Group, @product@ searches all the groups and imports the users in each group.
+If you have users who do not belong to any groups, they are not imported. 
+
+**Lock Expiration Time:** Set the account lock expiration time for LDAP User
+import. The default is one day. 
+
+**Import User Sync Strategy:** Set the strategy used to sync user accounts.
+Options are Auth Type (i.e., the way the user authenticates, like with screen
+name) and UUID (requires a UUID attribute in LDAP). 
+
+**Enable User Password on Import:** Assign a default password (see below) when
+users are imported, so they can be synced between the two systems. 
+
+**Autogenerate User Password on Import:** Create a random password on user
+import. 
+
+**Default User Password:** Enter the default password users are assigned when
+they first log in via LDAP. 
+
+**Enable Group Cache on Import:** Cache the imported groups so import isn't
+slowed by database access. 
+
+**Create Role per Group on Import:** For every LDAP group, create
+a corresponding Liferay Role. 
+
+**Enable Export:** Check this box to export user accounts to LDAP. A listener
+tracks changes made to the `User` object and pushes updates to the LDAP server
+whenever a `User` object is modified. Note that by default on every login,
+fields such as `lastLoginDate` are updated. When export is enabled, this causes
+a user export every time the user logs in. You can prevent updates to users'
+`lastLoginDate` fields from triggering LDAP user exports by setting the
+following property in your `portal-ext.properties` file:
 
         users.update.last.login=false
 
-- *Enable Import on Startup:* Checking this box instructs @product@ to run the
-  LDAP user import when it starts up. Note: This box only appears if you check
-  the *Enable Import* box described above.
+**Enable Group Export:** Export groups to LDAP. 
 
 **Use LDAP Password Policy:** @product@ uses its own password policy by default.
 This can be configured on the Control Panel's Password Policies page. Check the
@@ -66,40 +100,22 @@ these policies; the best it can do is pass through the messages returned by your
 LDAP server. It does this by parsing the messages in the LDAP controls the
 server returns. By default, @product@ is configured to parse the messages
 returned by the Fedora Directory Server. If you use a different LDAP server, you
-must customize the messages in *System Settings &rarr; Foundation &rarr; System
-LDAP Configuration*. 
+must customize the messages in *System Settings* &rarr; *Security* &rarr; *LDAP*
+&rarr; *Connection*. 
 
 Once you've finished configuring LDAP, click the *Save* button. 
 
 ### LDAP Options Available in System Settings [](id=ldap-options-available-in-system-settings)
 
 Although most LDAP configuration can be done from Instance Settings, there are
-several configuration parameters that are only available in System Settings. In
-previous versions of @product@, system scoped settings for LDAP were [set in the
-`portal.properties`
-file](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#LDAP)
-and modified using a `portal-ext.properties` file. Those settings must now be
-made via System Settings.
+several configuration parameters that are only available in System Settings. 
 
-If you need to change any of these options, navigate to *Control Panel* &rarr;
+If you must change any of these options, navigate to *Control Panel* &rarr;
 *Configuration* &rarr; *System Settings*. Go to the *Foundation* section and
 find the entries with LDAP in the title.
 
-- On the *LDAP Auth* page, you can set the authentication method and the password
-encryption algorithm. The Bind authentication method is preferred by
-most vendors so you don't have to worry about encryption strategies. Password
-compare does exactly what it sounds like: it reads the user's password out of
-LDAP, decrypts it and compares it with the user's password in @product@, syncing
-the two. If you use password compare, you can also choose the encryption
-algorithm to use for the comparison.
 
-- On the *LDAP Import* page, you can configure import
-settings from LDAP. One example is the import methods. If you set this to User,
-@product@ imports all users from the specified portion of the LDAP tree. If you
-set this to Group, @product@ searches all the groups and imports the users in each
-group. If you have users who do not belong to any groups, they are not imported.
- 
-- Use the *System LDAP Configuration* entry to manage error properties
+Use the *Connection* entry to manage error properties
 like *Error password age keywords* which lets you set a list of phrases from
 error messages which can possibly be returned by the LDAP server. When a user
 binds to LDAP, the server returns *controls* with its response of success or
@@ -125,9 +141,10 @@ since D defaults to A's settings because you created it from A.
 
 $$$
 
-In summary, if there's a configuration you need to set up @product@ with LDAP, and
-you don't find it in Instance Settings, look in the LDAP System Settings
-entries.
+In summary, if there's a configuration option you need with LDAP, and you don't
+find it in Instance Settings, look in the LDAP System Settings entries.
+
+Next, you'll learn how to add LDAP server connections. 
 
 ### Adding LDAP Servers [](id=adding-ldap-servers)
 
