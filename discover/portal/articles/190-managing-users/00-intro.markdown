@@ -25,11 +25,13 @@ to navigate quickly to the content you want:
     - [Important Additional User Management Topics](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics)
 - [Organizations](/discover/deployment/-/knowledge_base/7-1/organizations)
     - [Managing Organizations](/discover/deployment/-/knowledge_base/7-1/managing-organizations)
+- [Roles and Permissions](/discover/deployment/-/knowledge_base/7-1/roles-and-permissions)
+    - [Managing Roles](/discover/portal/-/knowledge_base/7-1/managing-roles)
+    - [Defining Role Permissions](/discover/portal/-/knowledge_base/7-1/defining-role-permissions)
 
 <!--These articles are planned but not yet written:
 
 - [User Groups](/discover/deployment/-/knowledge_base/7-1/user-groups)
-- [Roles and Permissions](/discover/deployment/-/knowledge_base/7-1/roles-and-permissions)
 - [Password Policies](/discover/deployment/-/knowledge_base/7-1/password-policies)
 - [Monitoring Users](/discover/deployment/-/knowledge_base/7-1/monitoring-users)
 - [Auditing Users](/discover/deployment/-/knowledge_base/7-1/auditing-users)
