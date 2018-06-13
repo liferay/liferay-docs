@@ -12,19 +12,11 @@ app that supports comments. A mention also links to the user's home page, so
 readers can find out more about that user. 
 
 ![Figure 1: As you enter a user name after the `@` character, links to users that match the text you enter are displayed. Select the user you want to mention and publish your content.](../../../images/mentions-at-mention-menu.png)
-                                                                     
+
 A selector appears after entering the `@` character, listing users that match 
 the name you're entering. In the selector, users are represented by their 
 profile picture, name, and user name. Click the user you want to mention and 
-finish editing your content.
-
-+$$$
-
-**Known Limitation**: In comments, homepage hyperlinks aren't displayed for
-mentioned users. For details, see 
-[LPS-56020](https://issues.liferay.com/browse/LPS-56020). 
-
-$$$
+finish editing your content. 
 
 On publishing the content, mentioned users receive a notification next to their 
 profile picture and an email, informing them that they've been mentioned. The 
