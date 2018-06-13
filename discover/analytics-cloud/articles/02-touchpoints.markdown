@@ -11,10 +11,10 @@ In summary, Touchpoints are:
 - Reported on in Analytics Cloud with the metrics and reports shown in this
     article.
 
-Readers of this article want to understand Touchpoint metrics; they already have
-an understanding of what Analytics Cloud is and want to understand where
-Touchpoint data exists, what metrics it includes, and how to interpret the data
-and configure its views for easy consumption.
+Readers of this article want to understand their Touchpoints' performance. They
+already have an understanding of what Analytics Cloud is and want to understand
+where Touchpoint data exists, what metrics it includes, and how to interpret the
+data and configure its views for easy consumption.
 
 ## Viewing Touchpoint Data
 
@@ -163,8 +163,9 @@ over time.
 Useful with the time period filter, Touchpoint Visitors is the number of
 visitors that accessed a Touchpoint page in a given period of time.
 
-How are visitors differentiated? IP Address? This could be the same person on a
-different machine?
+A unique visitor has a unique IP address in Analytics cloud. Therefore, if the
+same human being hits the Touchpoint page from a different device, it will be
+logged as a unique visitor to the Touchpoint.
 
 SCREENSHOT
 
@@ -176,14 +177,17 @@ visitors, because it doesn't try to count only unique IP addresses. So over the
 last 30 days, one visitor (IP address) could come back to the Touchpoint page
 100 times. That means there are 100 Touchpoint Views, but only one visitor
 (assuming they used the same machine to access the Touchpoint page each time.
+However, a unique view won't be logged for a single user unless at least 30
+minutes of inactivity on the Touchpoint page passes before the user interacts
+with the Touchpoint again.
 
 SCREENSHOT
 
 ### Metric: Touchpoint Bounce Rate
 
-Bounce Rate is the percentage of visitors to the touchpoint that navigated away
-from the site after viewing the Touchpoint. If a Touchpoint has a consistently
-high bounce rate, there might be something wrong with it. ??????
+Bounce Rate is the percentage of visitors to the Touchpoint page that navigated
+away from the site without doing anything after viewing the Touchpoint. If a
+Touchpoint has a high bounce rate, there might be something wrong with it.
 
 ### Metric: Time on Touchpoint Page
 
@@ -226,7 +230,7 @@ SCREENSHOT
 Beside the Overview tab, there's the Path tab in a Touchpoint's screen. This
 diagram represents the most common entry points to viewing a Touchpoint page.
 
-After the top X paths to the Touchpount, the remaining paths are aggregated to
+After the top X paths to the Touchpoint, the remaining paths are aggregated to
 show how many views came from _Other_ entry points.
 
 Clicking one of the entry point URLs brings you to its page.
