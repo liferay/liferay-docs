@@ -22,7 +22,7 @@ Require
 : Make a form field required based on a predefined condition.
 
 Jump to Page
-: Based on user input, skip over some form pages directly to a more relevant
+: Based on user input, skip over some form pages directly to a relevant
 page. 
 
 Autofill with Data Provider 
