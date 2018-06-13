@@ -169,7 +169,6 @@ Configuring JBoss to run @product@ includes these things:
 - Setting environment variables
 - Setting properties and descriptors
 - Removing unnecessary configurations
-- etc.
 
 Optionally, you can configure JBoss to manage these things for @product@:
 
@@ -321,7 +320,7 @@ settings.
 2.  The default amount of memory available has been increased.
 
 The prescribed script modifications are now complete for your @product@
-installation on JBoss. Next you'll configure mail and the database. 
+installation on JBoss. Next you'll configure the database and mail. 
 
 ## Database Configuration [](id=database-configuration)
 
@@ -330,6 +329,9 @@ your data source. @product@'s
 [Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-product#using-liferays-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
+
+This section demonstrates configuring a MySQL database. If you're using a
+different database, modify the data source and driver snippets as necessary.
 
 If you want JBoss to manage your data source, follow these steps:
 
@@ -344,7 +346,7 @@ If you want JBoss to manage your data source, follow these steps:
             </security>
         </datasource>
 
-    Be sure to replace the database name (i.e. `lportal`), user name, and
+    Be sure to replace the database name (i.e., `lportal`), user name, and
     password with the appropriate values. 
 
     +$$$
