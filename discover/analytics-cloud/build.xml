@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<project name="Analytics User and Admin Guide" basedir=".">
+
+	<import file="../build.xml" />
+
+	<property name="doc.dir" value="analytics-cloud"/>
+	<property name="doc.type" value="analytics-cloud"/>
+
+</project>
