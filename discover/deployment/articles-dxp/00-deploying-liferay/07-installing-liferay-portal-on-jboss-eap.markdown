@@ -149,7 +149,7 @@ managed domain mode, since @product@'s JSP override mechanism relies on the
 application server. Other plugins, such as service or action hooks, should still
 work properly.
 
-Using the command line interface is recommended for deployments.
+Using the command line interface is recommended for domain mode deployments.
 
 +$$$
 
