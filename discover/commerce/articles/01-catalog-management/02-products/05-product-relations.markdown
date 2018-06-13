@@ -57,19 +57,20 @@ Follow these steps:
 ## Displaying Product Relations [](id=displaying-product-relations)
 
 You can display product relations on a product display page by configuring
-a search results portlet. You must have a 
-[product display page](discover/portal/-/knowledge_base/7-1/product-detail-page) 
+a product publisher widget. You must have a 
+[product display page](web/liferay-emporio/documentation/-knowledge_base/7-1/displaying-product-pages)
 in place first.
 
 Follow these steps:
 
-1.  Go to your product display page and place a *Search Results* widget on the
+1.  Go to your product display page and place a *Product Publisher* widget on the
     page.
 
 2.  Go to the widget's ![Options](../../../images/icon-app-options.png) menu and
     click *Configuration*.
 
-3.  Go to the *Configuration Method* drop-down menu and choose a product
-    relationship type to be displayed in the widget.
+3.  Set *Product-Selection* to *dataSource*. Then go to the *Data-Source*
+    drop-down  menu and choose a product relationship type to be displayed in
+    the widget.
 
-4.  Click *Save*.
+4.  Click *Save* and close the dialog box.
