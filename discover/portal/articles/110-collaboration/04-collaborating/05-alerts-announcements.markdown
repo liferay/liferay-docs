@@ -23,22 +23,34 @@ Click an alert/announcement's *Actions* button
 
 ## Creating Alerts and Announcements [](id=creating-alerts-and-announcements)
 
-You can add an Alerts or Announcements widget to your site page from the *Add* 
-(![Add](../../../images/icon-control-menu-add.png)) &rarr; *Widgets* &rarr; 
-*News* menu. Once the widget is on your page, follow these steps to add an alert 
-or announcement: 
+There are 2 places where you can create alerts and announcements: 
 
-1.  Click the *Add Alert* or *Add Announcement* button. 
+1.  The *Announcements and Alerts* app in the Control Panel. In this app, 
+    announcements and alerts are in separate tabs. To begin creating an 
+    announcement or alert, select the appropriate tab and then click the *Add* 
+    button 
+    (![Add](../../../images/icon-add.png)). 
+    This app gives administrators a central location to create announcements and 
+    alerts that are then displayed on site pages by the Announcements and Alerts 
+    widgets. 
 
-2.  In the form that appears, use the *Title* field to give the alert or 
-    announcement a title. Then create your content in the field 
-    *Write your content here...*. For a detailed 
+2.  The Announcements and Alerts widgets, after adding them to a site page from 
+    the *Add* 
+    (![Add](../../../images/icon-control-menu-add.png)) 
+    &rarr; *Widgets* &rarr; *News* menu. To begin creating an announcement or 
+    alert, click the widget's *Add Alert* or *Add Announcement* button. 
+
+Regardless of where you create the alert or announcement, the form for creating 
+it is the same. Follow these steps to complete the form: 
+
+1.  Use the *Title* field to give the alert or announcement a title. Then create 
+    your content in the field *Write your content here...*. For a detailed 
     explanation of the editor, see the 
     [Blogs documentation](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor). 
 
     ![Figure 2: Enter your alert or announcement's title and content.](../../../images/alerts-new-alert.png)
 
-3.  Open the *Configuration* section of the form and set the following options, 
+2.  Open the *Configuration* section of the form and set the following options, 
     if desired: 
 
     -   **Distribution Scope:** The scope to display the alert/announcement in. 
@@ -76,7 +88,7 @@ or announcement:
 
     ![Figure 3: Configure your new alert or announcement.](../../../images/alerts-new-alert-config.png)
 
-4.  Click *Save* when you're done. Your alert/announcement then appears in the 
+3.  Click *Save* when you're done. Your alert/announcement then appears in the 
     widget. 
 
 ## User Configuration [](id=user-configuration)
