@@ -9,6 +9,14 @@ so you can require articles to be approved before publication. Additionally, the
 Knowledge Base app lets administrators create article templates that help users 
 follow a common outline. 
 
++$$$
+
+**Note:** To use the Knowledge Base, you must download and install the Knowledge 
+Base app from 
+[Liferay Marketplace](https://web.liferay.com/marketplace). 
+
+$$$
+
 Here are the Knowledge Base's key features: 
 
 -   Navigation is built into Knowledge Base Display. 
