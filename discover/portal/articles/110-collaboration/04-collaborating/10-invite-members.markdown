@@ -19,8 +19,9 @@ yet responded are listed with a check mark next to their names. You can also
 invite users to the *Site Owner*, *Site Content Reviewer*, and 
 *Site Administrator* roles for your site by selecting that role under the 
 *Invite to Role* heading. Once you've added all the users you want to invite and 
-have selected any roles they should have, click the *Send Invitations* button to 
-invite them.
+have selected the role they should have, click the *Send Invitations* button to 
+invite them. For more information on roles, see the 
+[Roles and Permissions documentation](/discover/portal/-/knowledge_base/7-1/roles-and-permissions). 
 
 The site invitation shows up under the *Requests List* tab on the user's 
 *Notifications* page. The user can then choose to *Confirm* or *Ignore* the 
