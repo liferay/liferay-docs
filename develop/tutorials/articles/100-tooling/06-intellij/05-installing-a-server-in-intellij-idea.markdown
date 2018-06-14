@@ -1,7 +1,16 @@
 # Installing a Server in IntelliJ IDEA
 
-Installing a server in IntelliJ is easy. In just a few steps, you'll have your
-server up and running. Follow these steps to install your server:
+Installing a Liferay server in IntelliJ is easy. In just a few steps, you'll
+have your server up and running.
+
++$$$
+
+**Note:** Tomcat is the only supported Liferay app server bundle available to
+install in IntelliJ.
+
+$$$
+
+Follow these steps to install your server:
 
 1.  Right-click your Liferay workspace and select *Liferay* &rarr; *InitBundle*.
 
