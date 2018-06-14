@@ -1,13 +1,14 @@
 # Creating A Social Network [](id=creating-a-social-network)
 
-@product@ contains several apps and widgets that let you leverage its social 
-framework. You can broadcast user activities, maintain user and group 
-statistics, and more. 
+@product@ contains several features and widgets that let you leverage its social 
+framework. The Activities widget lets you broadcast user activities on a site. 
+This is a good way for site members to see what's going on in their community. 
+When placed on a user's private Dashboard, the Activities widget displays the 
+activities of that user's social connections. Users can make those social 
+connections via the Contacts Center app, which lets them establish connections 
+and followers throughout the portal. What's more, widgets can be exported as 
+OpenSocial gadgets and/or used with Facebook. 
 
-Out-of-the box, @product@ includes these social apps: 
-
-- Activities
-- Group Statistics
-- User Statistics
+This guide shows you how to do these things, and more. 
 
 
