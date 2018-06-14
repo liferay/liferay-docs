@@ -1,4 +1,4 @@
-# Connecting Users
+# Connecting Users [](id=connecting-users)
 
 By adding the Contacts Center and Activities widgets to users' private 
 Dashboards, administrators can let users form social connections. The Contacts 

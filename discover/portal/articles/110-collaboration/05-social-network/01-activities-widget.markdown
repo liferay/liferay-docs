@@ -1,4 +1,4 @@
-# Using the Activities Widget
+# Using the Activities Widget [](id=using-the-activities-widget)
 
 The core social widget in @product@ is Activities. It displays information
 about user activity on the site where you added it. User activities tracked 
