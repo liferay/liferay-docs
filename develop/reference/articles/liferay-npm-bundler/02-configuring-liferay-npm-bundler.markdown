@@ -27,7 +27,7 @@ to use when running Babel through the package's `.js` files.
 +$$$
 
 **Note:** During this phase, Babel transforms package files (for example, to 
-convert them to AMD format, if necessary), but doesn't transpile them. in 
+convert them to AMD format, if necessary), but doesn't transpile them. In 
 theory, you could also transpile them by configuring the proper plugins. We 
 recommend transpiling before running the bundler, to avoid mixing both unrelated 
 processes.

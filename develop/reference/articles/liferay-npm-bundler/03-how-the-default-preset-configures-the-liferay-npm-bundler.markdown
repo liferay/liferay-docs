@@ -1,7 +1,7 @@
 # How the Default Preset Configures the liferay-npm-bundler [](id=how-the-default-preset-configures-the-liferay-npm-bundler)
 
 The liferay-npm-bundler comes with a default configuration preset: 
-[`liferay-npm-bundler-preset-standard`](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/liferay-npm-bundler-preset-standard)
+[`liferay-npm-bundler-preset-standard`](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-standard)
 ---Note you may omit the `liferay-npm-bundler` prefix from the npm package name 
 in your `.npmbundlerrc` file. This preset configures several plugins for the 
 build process and is automatically used (even if the `.npmbundlerrc` is 
@@ -42,31 +42,31 @@ configuration preset example above, you can define your own `.babelrc` value in
 $$$
 
 The 
-[`liferay-standard` preset](https://github.com/liferay/liferay-npm-build-tools/tree/1.x/packages/babel-preset-liferay-standard) 
+[`liferay-standard` preset](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-preset-liferay-standard) 
 applies the following plugins to packages:
 
-- [exclude-imports](https://github.com/izaera/liferay-npm-build-tools/tree/master/packages/babel-plugin-exclude-imports):
+- [exclude-imports](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-plugin-exclude-imports):
   Exclude packages declared in the `imports` section from the build.
 
-- [inject-imports-dependencies](https://github.com/izaera/liferay-npm-build-tools/tree/master/packages/babel-plugin-inject-imports-dependencies):
+- [inject-imports-dependencies](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-plugin-inject-imports-dependencies):
   Inject dependencies declared in the `imports` section in the dependencies' 
   `package.json` files.
 
-- [inject-peer-dependencies](https://github.com/izaera/liferay-npm-build-tools/tree/master/packages/babel-plugin-inject-peer-dependencies):
+- [inject-peer-dependencies](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-plugin-inject-peer-dependencies):
   Inject declared peer dependencies (as they are resolved in the project's 
   `node_modules` folder) in the dependencies' `package.json` files.
 
-- [namespace-packages](https://github.com/izaera/liferay-npm-build-tools/tree/master/packages/babel-plugin-namespace-packages):
+- [namespace-packages](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-plugin-namespace-packages):
   Namespace package names based on the root project's package name to isolate 
   packages per project and avoid collisions. This prepends 
   `<project-package-name>$` to each package name appearance in `package.json` 
   files.
 
-- [replace-browser-modules](https://github.com/izaera/liferay-npm-build-tools/tree/master/packages/babel-plugin-replace-browser-modules):
+- [replace-browser-modules](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-plugin-replace-browser-modules):
   Replace modules listed under `browser`/`unpkg`/`jsdelivr` section of 
   `package.json` files.
 
-- [resolve-linked-dependencies](https://github.com/izaera/liferay-npm-build-tools/tree/master/packages/babel-plugin-resolve-linked-dependencies):
+- [resolve-linked-dependencies](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-plugin-resolve-linked-dependencies):
   Replace linked dependencies versions appearing in `package.json` files 
   (those obtained from local file system or GitHub, for example) by their real 
   version number, as resolved in the project's `node_modules` directory.
@@ -99,5 +99,4 @@ preset, that invokes the following plugins:
   evaluate and replace it.
 
 Now you know the available configuration presets for `.npmbundlerrc` and how 
-they work. Next you can learn how to configure your `.npmbundlerrc` file to use 
-a configuration preset.
+they work. 

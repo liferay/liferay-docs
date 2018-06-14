@@ -67,7 +67,7 @@ $$$
 
 You can learn about package de-duplication next.
 
-## Package de-duplication [](id=package-deduplication)
+## Package De-duplication [](id=package-deduplication)
 
 Since two or more OSGi modules may export multiple copies of the same package 
 and version, Liferay Portal must de-duplicate such collisions. To accomplish 
