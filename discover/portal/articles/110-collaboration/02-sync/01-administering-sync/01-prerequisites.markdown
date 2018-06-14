@@ -1,29 +1,13 @@
 # Installing Liferay Sync's Prerequisites [](id=installing-liferay-syncs-prerequisites)
 
-Liferay Sync requires that your @product@ instance contains the most recent 
-versions of the following 
-[Liferay Marketplace](https://web.liferay.com/marketplace) 
-apps: 
+Liferay Sync requires the *Liferay CE Sync Connector* app from 
+[Liferay Marketplace](https://web.liferay.com/marketplace). 
+This app lets you enable and configure Sync in your @product@ instance. For 
+example, you can disable Sync across the instance or on a site-by-site basis. 
+Note that Sync is enabled by default for all your @product@ instance's sites. 
 
--   **Liferay CE IP Geocoder:** Uses geographic IP lookup to get the approximate 
-    location of devices that register with Sync. This is a security measure that 
-    lets you see where the devices are that connect to your @product@ instance 
-    via Sync. 
-
--   **Liferay CE Sync Connector:** Lets you enable and configure Sync in your 
-    @product@ instance. For example, you can disable Sync across the instance or 
-    on a site-by-site basis. Note that Sync is enabled by default for all your 
-    @product@ instance's sites. 
-
-These apps are preinstalled in the latest @product@ releases. To verify that 
-these apps are installed in your @product@ instance, navigate to *Control Panel* 
-&rarr; *Apps* &rarr; *App Manager*. The App Manager lists the installed apps. 
-It also lets you search for them via the *Search* field. If your @product@ 
-instance doesn't contain these apps, install them from Liferay Marketplace. 
-For instructions on this, see 
+For instructions on installing Marketplace apps, see 
 [the Liferay Marketplace documentation](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace). 
-
-Note that older Sync 1.x clients can't connect to the latest Sync Connector app. 
 
 +$$$
 
