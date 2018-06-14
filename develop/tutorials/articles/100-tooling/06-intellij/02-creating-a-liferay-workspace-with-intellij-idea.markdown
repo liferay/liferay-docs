@@ -4,9 +4,12 @@ In this tutorial, you'll learn how to generate a Liferay Workspace using
 IntelliJ IDEA, which runs on
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) behind the
 scenes. IntelliJ gives you a graphical interface instead of the command prompt,
-which can streamline your workflow. To learn more about Liferay Workspaces,
-visit its dedicated
+which can streamline your workflow. You'll also learn how to import an existing
+Liferay Workspace into IntelliJ. To learn more about Liferay Workspaces, visit
+its dedicated
 [tutorial section](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
+
+## Creating a Liferay Workspace
 
 Follow the steps below to create a Liferay Workspace:
 
@@ -30,3 +33,25 @@ Follow the steps below to create a Liferay Workspace:
     selected (i.e., Gradle or Maven). Verify the settings and click *OK*.
 
 Awesome! You've successfully created a Liferay Workspace in IntelliJ IDEA!
+
+## Importing a Liferay Workspace
+
+To import an existing workspace into IntelliJ, follow the steps below:
+
+1.  Select *File* &rarr; *New* &rarr; *Project from Existing Sources...*.
+
+2.  Select the workspace you'd like to import. Then click *OK*.
+
+    ![Figure 3: Specify your workspace's configurations.](../../../images/intellij-import-workspace.png)
+
+3.  Click the *Import project from external model* radio button and select the
+    build type your workspace is built with (e.g., Gradle or Maven).
+
+4.  Configure the project import (if necessary) and then click *Finish*. See the
+    [Import a Project](https://www.jetbrains.com/help/idea/creating-and-managing-projects.html#importing-project)
+    section of IntelliJ's official documentation for more information.
+
+5.  Step through the remaining import prompts and then open your imported
+    workspace as you desire (i.e., in the current window or a new window).
+
+Excellent! Your existing Liferay Workspace is now imported in IntelliJ IDEA!
