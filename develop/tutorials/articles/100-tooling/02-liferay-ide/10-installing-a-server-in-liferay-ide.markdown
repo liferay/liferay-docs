@@ -49,7 +49,7 @@ instance:
 - *Start* (![Start Server](../../../images/icon-start-server.png)): Starts the
   server.
 - *Stop* (![Stop Server](../../../images/icon-stop-server.png)): Stops the
-  the server.
+  server.
 - *Debug* (![Debug Server](../../../images/icon-debug-server.png)): Starts the
   server in debug mode. For more information on debugging in Dev Studio, see the
   [Debugging @product@ source in Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/debugging-product-source-liferay-ide)
