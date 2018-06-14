@@ -1,4 +1,4 @@
-# Sanitizing User Data
+# Sanitizing User Data [](id=sanitizing-user-data)
 
 Technically speaking, one of the challenging requirements of the General Data
 Protection Regulation (GDPR) is _the right to be forgotten_. The purpose of this
@@ -38,16 +38,16 @@ To begin sanitizing a user's data:
 3.  Complete the five-step process sequentially to erase the personal data
     associated with the User.
 
-![Figure x: ](../../images/users-data-erasure.png)
+![Figure 1: ](../../../images/users-data-erasure.png)
 
-## Step 1: Deactivation
+## Step 1: Deactivation [](id=step-1-deactivation)
 
 The end of this process is deleting the User. A user must always be deactivated
 before deletion. Click *Deactivate User*.
 
-![Figure x: ](../../images/users-data-erasure3.png)
+![Figure 2: ](../../../images/users-data-erasure3.png)
 
-## Step 2: Delete the User's Personal Site
+## Step 2: Delete the User's Personal Site [](id=step-2-delete-the-users-personal-site)
 
 The User's public pages (profile) and private pages (dashboard) must be deleted.
 Separating this step out allows the administrator to make sure no information
@@ -55,9 +55,9 @@ important to the enterprise is lost before the deletion is completed. Once any
 necessary data from the User's personal pages is preserved, click *Delete
 Personal Site*.
 
-![Figure x: ](../../images/users-data-erasure1.png)
+![Figure 3: ](../../../images/users-data-erasure1.png)
 
-## Step 3: Review Application Data 
+## Step 3: Review Application Data [](id=step-3-review-application-data)
 
 There's no automated process for anonymizing application data (Blogs Entries,
 Wiki Pages, etc.). The administrator must Review the User Associated Data (UAD;
@@ -68,14 +68,14 @@ that no UAD can be gleaned from the content if simply anonymized.
 After reviewing each piece of the data, the administrator either anonymizes it
 or deletes it to complete this step.
 
-![Figure x: ](../../images/users-data-erasure2.png)
+![Figure 4: ](../../../images/users-data-erasure2.png)
 
 To enter the review process, click *Review*.
 
 The Application Data Review screen displays a summary including how many content
 items in each application are associated with the User.
 
-![Figure x: ](../../images/users-app-data-review.png)
+![Figure 5: ](../../../images/users-app-data-review.png)
 
 To manage all the items for an application at once: 
 
@@ -94,7 +94,7 @@ To manage all the items for an application at once:
 Clicking an item takes you to the view/edit screen where you can see the
 application's particular items and take action. 
 
-![Figure x: ](../../images/users-item-data-review.png)
+![Figure 6: ](../../../images/users-item-data-review.png)
 
 Click the Actions button (![Actions](../../../images/icon-actions.png)) for an
 item and select *edit*, *Anonymize*, or *Delete*, as appropriate.
@@ -103,15 +103,15 @@ Once you've worked your way through the items and have taken action, the view in
 the Application Data Revie screen is updated to reflect that there ore no more
 items needed to review. Click the *Complete Step* button once finished.
 
-![Figure x: ](../../images/users-data-review-complete.png)
+![Figure 7: ](../../../images/users-data-review-complete.png)
 
-## Step 4: Anonymize Remaining Data
+## Step 4: Anonymize Remaining Data [](id=step-4-anonymize-remaining-data)
 
 In step 4, you must click *Anonymize Data*. This completes the anonymiation
 process for any remaining data 
 EXPLAIN WHAT DATE THIs ANONYMIZES
 
-![Figure x: ](../../images/users-data-erasure4.png)
+![Figure 8: ](../../../images/users-data-erasure4.png)
 
 This automatic anonymization process covers derived data on the User that
 resides in the database. 
@@ -120,10 +120,10 @@ It includes:
 
 LIST OF ANONYMIZED DATA
 
-## Step 5: Delete User
+## Step 5: Delete User [](id=step-5-delete-user)
 
 Once all data is reviewed, deleted, edited, and/or anonymized as appropriate,
 delete the User. This step is simple: Click *Delete User*.
 
-![Figure x: ](../../images/users-data-erasure5.png)
+![Figure 9: ](../../../images/users-data-erasure5.png)
 
