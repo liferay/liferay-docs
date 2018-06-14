@@ -1,4 +1,4 @@
-# Communication Between Apps [](id=communication-between-apps)
+# Communication Between Widgets [](id=communication-between-widgets)
 
 @product@ implements several communication mechanisms across widgets including
 those specified by the JSR-286 standard: public render parameters and events.
@@ -18,10 +18,10 @@ coming from other widgets to read the value from another parameter.
 
 Why might it be useful to ignore the values for certain parameters that come
 from other widgets? Consider a common use case for the Wiki application. The 
-Wiki widget is often used along with the Tags Navigation app so that when a 
+Wiki widget is often used along with the Tags Navigation widget so that when a 
 user clicks on a tag of the latter, the Wiki shows a list of pages with that 
 tag. In some cases, an administrator may want the Wiki to always show the front 
-page independently of any tag navigation done through other apps. This can be
+page independently of any tag navigation done through other widgets. This can be
 achieved by checking the *Ignore* checkbox so that the values of the parameter
 coming from those other widgets are ignored.
 
