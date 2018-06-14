@@ -1,4 +1,4 @@
-# Creating a Liferay Workspace with IntelliJ IDEA
+# Creating a Liferay Workspace with IntelliJ IDEA [](id=creating-a-liferay-workspace-with-intellij-idea)
 
 In this tutorial, you'll learn how to generate a Liferay Workspace using
 IntelliJ IDEA, which runs on
@@ -9,7 +9,7 @@ Liferay Workspace into IntelliJ. To learn more about Liferay Workspaces, visit
 its dedicated
 [tutorial section](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
 
-## Creating a Liferay Workspace
+## Creating a Liferay Workspace [](id=creating-a-liferay-workspace)
 
 Follow the steps below to create a Liferay Workspace:
 
@@ -34,7 +34,7 @@ Follow the steps below to create a Liferay Workspace:
 
 Awesome! You've successfully created a Liferay Workspace in IntelliJ IDEA!
 
-## Importing a Liferay Workspace
+## Importing a Liferay Workspace [](id=importing-a-liferay-workspace)
 
 To import an existing workspace into IntelliJ, follow the steps below:
 

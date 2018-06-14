@@ -1,4 +1,4 @@
-# Installing the Liferay IntelliJ Plugin
+# Installing the Liferay IntelliJ Plugin [](id=installing-the-liferay-intellij-plugin)
 
 To install the Liferay IntelliJ plugin in IntelliJ IDEA, follow the steps below:
 

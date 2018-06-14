@@ -1,4 +1,4 @@
-# Installing a Server in IntelliJ IDEA
+# Installing a Server in IntelliJ IDEA [](id=installing-a-server-in-intellij-idea)
 
 Installing a Liferay server in IntelliJ is easy. In just a few steps, you'll
 have your server up and running.

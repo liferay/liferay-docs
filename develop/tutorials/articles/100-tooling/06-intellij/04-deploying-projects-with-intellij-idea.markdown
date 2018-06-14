@@ -1,4 +1,4 @@
-# Deploying Projects with IntelliJ IDEA
+# Deploying Projects with IntelliJ IDEA [](id=deploying-projects-with-intellij-idea)
 
 Once you've
 [created a project](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-intellij-idea)

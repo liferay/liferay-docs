@@ -1,4 +1,4 @@
-# Creating Projects with IntelliJ IDEA
+# Creating Projects with IntelliJ IDEA [](id=creating-projects-with-intellij-idea)
 
 IntelliJ IDEA provides a New Liferay Modules wizard for users to create a
 variety of different module projects. You can also use the same wizard to create
