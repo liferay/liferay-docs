@@ -1,4 +1,4 @@
-# Installing @product@ [](id=installing-product)
+# Installing @product@ [](id=installing-liferay)
 
 Now that you've performed the steps needed to prepare for your installation,
 you're ready to install @product@! Since bundles are the easiest way to complete
