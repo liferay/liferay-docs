@@ -1,25 +1,25 @@
-# Exporting/Importing App Data [](id=exporting-importing-app-data)
+# Exporting/Importing Widget Data [](id=exporting-importing-app-data)
 
 There are times when you want to export/import specific content created from an
 application, and not deal with site data at all. Many Liferay apps allow you to
-export or import their app data individually. These include many of Liferay's
-collaborative applications, such as the Blogs, Wiki, and Message Boards apps. 
+export or import their widget data individually. These include many of Liferay's
+collaborative applications, such as the Blogs, Wiki, and Message Boards. 
 
-Exporting app data produces a `.lar` file that you can save and import into 
-another application of the same type. To import app data, you must select a 
-`.lar` file. Be careful not to confuse app-specific `.lar` files with 
+Exporting widget data produces a `.lar` file that you can save and import into 
+another widget of the same type. To import widget data, you must select a 
+`.lar` file. Be careful not to confuse widget-specific `.lar` files with 
 site-specific `.lar` files. See the [Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content) section for a discussion of importing and exporting site page data.
 
-You can export/import app content two ways. You can navigate to the
-app's administrative area located in the Menu, or you can visit the
+You can export/import widget content two ways. You can navigate to the
+widget's administrative area located in the Menu, or you can visit the
 individual widget that resides on a Liferay page. Both export/import menus work
 the same, but the administrative area may hold different content than its 
-individual app counterpart (e.g., Web Content Admin in Menu and Web Content 
+individual widget counterpart (e.g., Web Content Admin in Menu and Web Content 
 Display widget will not offer same content for export/import), so be wary of 
-your app selection. To reach the Export/Import menu for an app listed in the 
-Menu:
+your widget selection. To reach the Export/Import menu for an widget listed in 
+the Menu:
 
-1.  Go to the app in the Menu.
+1.  Go to the widget in the Menu.
 
 2.  Select the *Options* icon (![Options](../../../images/icon-options.png)) from the top right of the page.
 
@@ -33,18 +33,18 @@ Likewise, you can navigate to the Export/Import menu for an individual widget:
 
 3.  Select *Export/Import*.
 
-![Figure 1: You can access the *Export/Import* feature for an app by selecting its Options menu.](../../../images/portlet-export-import-feature.png)
+![Figure 1: You can access the *Export/Import* feature for an widget by selecting its Options menu.](../../../images/portlet-export-import-feature.png)
 
 ## Exporting Data
 
 The export process for widgets goes like this:
 
-1.  Choose if you want to export your application's configuration settings. This
+1.  Choose if you want to export your widgets's configuration settings. This
     exports your customized settings that you've configured from your 
-    application's *Options* &rarr; *Configuration* menu.
+    widget's *Options* &rarr; *Configuration* menu.
 
 2.  Select a *Date Range* of content that you'd like to export. Content that 
-    has been added to your app within your specified date range is included in 
+    has been added to your widget within your specified date range is included in 
     the `.lar` file. You also have options of choosing *All* dates or just the 
     most recently added content, or *Last*.
 
@@ -65,13 +65,13 @@ The export process for widgets goes like this:
 
 7.  Click *Export*.
 
-After you've exported your app's data, switch to the *Current and Previous* tab to view ongoing export processes and the history of past exports.
+After you've exported your widget's data, switch to the *Current and Previous* tab to view ongoing export processes and the history of past exports.
 
-![Figure 2: When importing app data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../../images/import-menu.png)
+![Figure 2: When importing widget data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../../images/import-menu.png)
 
 ## Importing Data
 
-To import app data:
+To import widget data:
 
 1.  Select the *Import* tab.
 
@@ -105,7 +105,7 @@ possible. Use the current user as author if the original one is not found.
 imported content.
 
 Once you've selected the appropriate options, select *Import*, and your
-app's data is imported and ready for use.
+widget's data is imported and ready for use.
 
-Next, you'll learn how to communicate between applications in a Liferay
+Next, you'll learn how to communicate between widgets in a Liferay
 instance.
