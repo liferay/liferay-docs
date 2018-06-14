@@ -25,8 +25,9 @@ Follow these steps to use the wiki page editing form:
     *Write your content here...*. This is a rich-text, WYSIWYG editor that is 
     almost identical to the one used in the Blogs app. The only difference is 
     that the wiki editor uses Creole instead of HTML as its source. Click the 
-    link *Show Syntax Help* if you need help with Creole syntax. For a detailed 
-    explanation of the editor, see the 
+    link *Show Syntax Help* if you need help with Creole syntax (e.g., syntax 
+    for text styling, header formatting, link creation, etc.). For a detailed 
+    explanation of the rest of the editor, see the 
     [Blogs documentation](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor). 
 
 2.  If you want to attach files to the page, open the *Attachments* section of 
