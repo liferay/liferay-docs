@@ -11,24 +11,48 @@ requires.
 
 To create the Management Toolbar, use the `clay:management-toolbar` taglib. The 
 toolbar contains a few key sections. Each section is grouped and configured
-using different attributes. These attributes are described in more detail
-below. 
+using different attributes. These attributes are described in more detail below. 
+
+## Using a Display Context to Provide the Management Toolbar's Configuration
+
+If you're using a display context---a separate class to configure your display 
+options for the Clay Management Toolbar---to define all or some of the 
+configuration options for the toolbar, you can specify the display context with 
+the `displayContext` attribute. An example is shown below:
+
+    <clay:management-toolbar 
+        displayContext="<%= viewUADEntitiesManagementToolbarDisplayContext %>" 
+    />
+
+You can see an example of a display context in the 
+[Filtering and Sorting Items with the Management Toolbar  tutorial](/develop/tutorials/-/knowledge_base/7-1/filtering-and-sorting-items-with-the-management-toolbar). 
+A display context is not required for the management toolbar's configuration. 
+You can provide as much or as little of the configuration options for the 
+management toolbar through the display context as you like.  
 
 ## Checkbox and Actions [](id=checkbox-and-actions)
 
-The `actionItems`, `searchContainerId`, and `selectable` attributes let you 
-include a checkbox in the toolbar to select all search container results and run 
-bulk actions on them. Actions display when either an individual result is 
-checked, or when the master checkbox is checked in the toolbar. 
+The `actionItems`, `searchContainerId`, `selectable`, and `totalItems` 
+attributes let you include a checkbox in the toolbar to select all search 
+container results and run bulk actions on them. Actions and total items display 
+when an individual result is checked, or when the master checkbox is checked in 
+the toolbar. 
 
 `actionItems`: The list of dropdown items to display when a result is checked or 
 the master checkbox in the management toolbar is checked. You can select 
 multiple results between pages. The management toolbar keeps track of the number 
 of selected results for you.
 
-`searchContainerId`: The ID of the search container connected to the management toolbar 
+`searchContainerId`: The ID of the search container connected to the management 
+toolbar 
 
 `selectable`: Whether to include a checkbox in the management toolbar
+
+`totalItems`: The total number of items across pagination. This number displays 
+when one or multiple items are selected.  
+<!--
+Check with Carlos if this is across all pagination or just the current page
+-->
 
 An example configuration is shown below:
 
@@ -60,7 +84,8 @@ An example configuration is shown below:
         }
     %>"
 
-Action items are listed in the Actions menu.
+Action items are listed in the Actions menu, along with the number of items 
+selected across pagination. 
 
 ![Figure 2: Actions are also listed in the management toolbar's dropdown menu when an item, multiple items, or the master checkbox is checked.](../../../images/clay-taglib-management-toolbar-actions.png)
 
@@ -179,17 +204,15 @@ result.
 
 `showInfoButton`: Whether to show the info button
 
-An example configuration is shown below:
+In the example configuration below, the `showInfoButton` attribute is provided 
+in the display context---specified with the `displayContext` attribute---and the 
+`infoPanelId` is explicitly set in the JSP:
 
     <clay:management-toolbar
-        disabled="<%= journalDisplayContext.isDisabledManagementBar() %>"
+        displayContext="<%= journalDisplayContext %>"
         infoPanelId="infoPanelId"
         namespace="<%= renderResponse.getNamespace() %>"
         searchContainerId="<=% searchContainerId %>"
-        selectable='<%= !user.isDefaultUser() && 
-        journalDisplayContext.isShowEditActions() && 
-        !Objects.equals(journalDisplayContext.getTabs1(), "versions") %>'
-        showInfoButton="<%= journalDisplayContext.isShowInfoPanel() %>"
     />
 
 ![Figure 6: The info panel keeps your UI clutter-free.](../../../images/clay-taglib-management-toolbar-info-panel.png)

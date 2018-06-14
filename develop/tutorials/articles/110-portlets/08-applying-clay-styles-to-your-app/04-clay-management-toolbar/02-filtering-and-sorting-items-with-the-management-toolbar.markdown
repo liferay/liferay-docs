@@ -1,12 +1,13 @@
 # Filtering and Sorting Items with the Management Toolbar [](id=filtering-and-sorting-items-with-the-management-toolbar)
 
-The Management Toolbar also lets you sort and filter your search container 
-results. You can choose a navigation filter or a order by filter and sort your 
-search container results in ascending or descending order. The configuration for 
-the filters and sorting order can be included in the JSP, but that can crowd the 
-JSP pretty quick. We recommend instead that you move this functionality to a 
+The Management Toolbar lets you filter and sort your search container results. 
+You can choose a navigation filter or a order by filter and sort your search 
+container results in ascending or descending order. The configuration for the 
+filters and sorting order can be included in the JSP, but that can crowd the JSP 
+pretty quick. We recommend instead that you move this functionality to a 
 separate java class, which we refer to as a display context throughout this 
-tutorial.  
+tutorial. A Display Context is a Java class that defines the configuration for 
+an app's UI elements. 
 
 Creating filters and sorting results involves the following process: 
 
@@ -18,102 +19,73 @@ Creating filters and sorting results involves the following process:
 ## Creating Filters for the Management Toolbar [](id=creating-filters-for-the-management-toolbar)
 
 There are two main types of filters: navigation and order. Both of these are 
-contained within the same dropdown menu. Follow these steps to create your 
-filters:
+contained within the same dropdown menu. Follow the steps below to create your 
+filters.
 
-1.  In your display context, create the main groups for the navigation filters 
-    and order by filters:
+1.  Depending on your needs, there are two classes that you can extend for your 
+    management toolbar display context. These base classes provide the required 
+    methods to create your navigation and order filters: 
     
-        public List<DropdownItem> getFilterDropdownItems() {
-          return new DropdownItemList() {
-            {
-              addGroup(
-                dropdownGroupItem -> {
-                  dropdownGroupItem.setDropdownItems(
-                    _getFilterNavigationDropdownItems());
-                  dropdownGroupItem.setLabel(
-                    LanguageUtil.get(_request, "filter-by-navigation"));
-                });
+    - [`BaseManagementToolbarDisplayContext`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-taglib/frontend-taglib-clay/src/main/java/com/liferay/frontend/taglib/clay/servlet/taglib/display/context/BaseManagementToolbarDisplayContext.java): 
+      for apps without a search container
+    - [`SearchContainerManagementToolbarDisplayContext`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-taglib/frontend-taglib-clay/src/main/java/com/liferay/frontend/taglib/clay/servlet/taglib/display/context/SearchContainerManagementToolbarDisplayContext.java): 
+      for apps with a search container (extends 
+      `BaseManagementToolbarDisplayContext` and provides additional logic for 
+      search containers)
 
-              addGroup(
-                dropdownGroupItem -> {
-                  dropdownGroupItem.setDropdownItems(
-                    _getOrderByDropdownItems());
-                  dropdownGroupItem.setLabel(
-                    LanguageUtil.get(_request, "order-by"));
-                });
-            }
-          };
-        }
-        
-2.  Define the navigation filter dropdown items. If your app doesn't require any 
-    navigation filters, you can just provide the *all* filter to display 
-    everything, as shown below:
+    An example configuration for each is shown below:
+    
+    `BaseManagementToolbarDisplayContext` example:
 
-        private List<DropdownItem> _getFilterNavigationDropdownItems() {
-        	return new DropdownItemList() {
-        		{
-        			add(
-        				dropdownItem -> {
-        					dropdownItem.setActive(true);
-        					dropdownItem.setHref(_renderResponse.createRenderURL());
-        					dropdownItem.setLabel(
-        						LanguageUtil.get(_request, "all"));
-        				});
-        		}
-        	};
-        }
+        public class MyManagementToolbarDisplayContext
+          extends BaseManagementToolbarDisplayContext {
 
-3.  Define the order dropdown items if you have any:
+          public MyManagementToolbarDisplayContext(
+            LiferayPortletRequest liferayPortletRequest,
+            LiferayPortletResponse liferayPortletResponse,
+            HttpServletRequest request) {
 
-        private List<DropdownItem> _getOrderByDropdownItems() {
-          return new DropdownItemList() {
-            {
-              add(
-                dropdownItem -> {
-                  dropdownItem.setActive(
-                    Objects.equals(getOrderByCol(), "create-date"));
-                  dropdownItem.setHref(
-                    getPortletURL(), "orderByCol", "create-date");
-                  dropdownItem.setLabel(
-                    LanguageUtil.get(_request, "create-date"));
-                });
-                
-                add(
-                  dropdownItem -> {
-                    dropdownItem.setActive(
-                      Objects.equals(getOrderByCol(), "name"));
-                    dropdownItem.setHref(
-                      getPortletURL(), "orderByCol", "name");
-                    dropdownItem.setLabel(
-                      LanguageUtil.get(_request, "name"));
-                  });
-            }
-          };
-        }
-
-4.  Add the `getOrderByCol()` Method. This method returns the column to sort by 
-    if one exist, or it sets the default column to order by if one is not found. 
-    The example below sets the default value to the `create-date` column:
-
-        public String getOrderByCol() {
-          if (Validator.isNotNull(_orderByCol)) {
-            return _orderByCol;
+            super(liferayPortletRequest, liferayPortletResponse, request);
           }
-
-          _orderByCol = ParamUtil.getString(
-            _request, "orderByCol", "create-date");
-
-          return _orderByCol;
+          ...
         }
 
-5.  open the JSP view that contains the Clay Management Toolbar and set its 
-    `filterDropdownItems` attribute to the `getFilterItemsDropdownItems()` 
-    method you defined in the display context. An example configuration is shown 
-    below:
-    
-        filterDropdownItems=
-        "<%= ddmFormAdminDisplayContext.getFilterItemsDropdownItems() %>" 
+    `SearchContainerManagementToolbarDisplayContext` example:
+
+        public class MyManagementToolbarDisplayContext
+          extends SearchContainerManagementToolbarDisplayContext {
+
+          public MyManagementToolbarDisplayContext(
+            LiferayPortletRequest liferayPortletRequest,
+            LiferayPortletResponse liferayPortletResponse,
+            HttpServletRequest request, SearchContainer searchContainer) {
+
+            super(
+              liferayPortletRequest, liferayPortletResponse, request,
+              searchContainer);
+          }
+        }
+
+2.  Override the `getNavigationKeys()` method to return the navigation filter 
+    dropdown item(s). If your app doesn't require any navigation filters, you 
+    can just provide the *all* filter to display everything. An example 
+    configuration is shown below:
+
+        @Override
+        protected String[] getNavigationKeys() {
+          return new String[] {"all", "pending", "done"};
+        }
+
+3.  override the `getOrderByKeys()` method to return the columns to order. An 
+    example configuration is shown below:
+
+        @Override
+        protected String[] getOrderByKeys() {
+          return new String[] {"name", "items", "status"};
+        }
+
+Now that you've defined the filter keys, you can provide the logic to sort the 
+columns. 
 
 ## Setting the Sorting Order for Columns [](id=setting-the-sorting-order-for-columns)
 
@@ -238,16 +210,13 @@ Follow these steps to provide the logic for sorting your columns:
           return _orderByType;
         }
 
-5.  Open the JSP containing the Management Toolbar and set its `sortingURL` 
-    attribute to the `getSortingURL()` method you defined in the display 
-    context, and set its `sortingOrder` attribute to the `getOrderByType()` 
-    method:
+5.  Open the JSP view that contains the Clay Management Toolbar and set its 
+    `displayContext` attribute to the display context you created. An example 
+    configuration is shown below:
     
-        sortingOrder=
-        "<%= ddmFormAdminDisplayContext.getOrderByType() %>"
-    
-        sortingURL=
-        "<%= ddmFormAdminDisplayContext.getSortingURL() %>"
+        displayContext= "<%= myManagementToolbarDisplayContext %>" 
+
+Next you can update the portlet URL. 
 
 ## Including the Selected Column and Sorting Order in the Portlet URL [](id=including-the-selected-column-and-sorting-order-in-the-portlet-url)
 
@@ -267,6 +236,9 @@ build your portlet URL:
 
       return portletURL;
     }
+
+Now that the portlet URL is updated, you can update the search container to 
+reflect the changes.
 
 ## Including the Selected Column and Sorting Order in the Search Container [](id=including-the-selected-column-and-sorting-order-in-the-search-container)
 
