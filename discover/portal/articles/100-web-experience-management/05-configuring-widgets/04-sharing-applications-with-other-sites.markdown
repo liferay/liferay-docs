@@ -1,20 +1,20 @@
-# Sharing Applications with Other Sites [](id=sharing-applications-with-other-sites)
+# Sharing Widgets with Other Sites [](id=sharing-widgets-with-other-sites)
 
 @product@ supports sharing its widgets with other sites. You can embed a particular instance of a widget running on your site into another site, such as Facebook. This opens up a whole new avenue of exposure to your web site that you would not have had otherwise. In fact, this is how all those Facebook games work.
 
-![Figure 1: The Sharing tab in your app's Configuration menu lets you share your widget in a variety of ways.](../../../images/collaboration-app-configuration-sharing.png)
+![Figure 1: The Sharing tab in your widget's Configuration menu lets you share your widget in a variety of ways.](../../../images/collaboration-app-configuration-sharing.png)
 
 To share one of your widgets, open the *Configuration* dialog box from
-the app's *Options* icon (![Options](../../../images/icon-options.png)) and
+the widget's *Options* icon (![Options](../../../images/icon-options.png)) and
 select the *Sharing* tab. There are five sub-tabs under sharing: Any Website,
 Facebook, OpenSocial Gadget, and Netvibes.
 
 ## Any Web Site [](id=any-web-site)
 
 Copy and paste the provided snippet of JavaScript code into the web site to
-which you want to add the application as a widget. That's all you need to do.
-When a user loads the page on the other website, the code will pull the relevant
-widget from your site and display it.
+which you want to add the widget. That's all you need to do. When a user loads 
+the page on the other website, the code will pull the relevant widget from your 
+site and display it.
 
 ## Facebook [](id=facebook)
 
