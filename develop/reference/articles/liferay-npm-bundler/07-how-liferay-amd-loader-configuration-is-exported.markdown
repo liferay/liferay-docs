@@ -1,15 +1,15 @@
-# Understanding How @product@ Exposes Configuration For Liferay AMD Loader [](id=how-liferay-portal-exposes-configuration-for-amd)
+# Understanding How Liferay AMD Loader Configuration is Exported [](id=how-liferay-amd-loader-configuration-is-exported)
 
-**NOTE:** This tutorial is for users who know how Liferay AMD Loader works under 
+**NOTE:** This article is for users who know how Liferay AMD Loader works under 
 the hood. You can learn more about Liferay AMD Loader in the 
 [Liferay AMD Module Loader](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/liferay-amd-module-loader) 
 tutorial.
 
-With [de-duplication](/develop/tutorials/-/knowledge_base/7-1/how-liferay-portal-publishes-npm-packages#package-deduplication) 
-in place, JavaScript modules are made available to Liferay AMD Loader through
+With [de-duplication](/develop/reference/-/knowledge_base/7-1/how-liferay-portal-publishes-npm-packages#package-deduplication) 
+in place, JavaScript modules are made available to Liferay AMD Loader through 
 the configuration returned by the `/o/js_loaded_modules` URL.
 
-The OSGi bundle shown below is used for reference in this tutorial:
+The OSGi bundle shown below is used for reference in this article:
 
 - `my-bundle/`
     - `META-INF/`
@@ -50,8 +50,8 @@ The OSGi bundle shown below is used for reference in this tutorial:
                     - ...
 
 For example, for the specified structure (shown above), as explained in 
-[The Structure of OSGi Bundles Containing npm Packages](/develop/tutorials/-/knowledge_base/7-1/the-structure-of-osgi-bundles-containing-npm-packages) 
-tutorial, the following configuration is published for Liferay AMD loader to 
+[The Structure of OSGi Bundles Containing npm Packages](/develop/reference/-/knowledge_base/7-1/the-structure-of-osgi-bundles-containing-npm-packages) 
+reference, the following configuration is published for Liferay AMD loader to 
 consume:
 
     Liferay.PATHS = {
@@ -100,14 +100,8 @@ Note:
 
 - The `Liferay.PATHS` property describes paths to the JavaScript module files.
 
-- The `Liferay.MODULES` property describes the dependency names and versions of each module.
+- The `Liferay.MODULES` property describes the dependency names and versions of 
+  each module.
 
-- The `Liferay.MAPS` property describes the aliases of the package's main modules.
-
-Now you know how @product@ exposes configuration for Liferay AMD Loader!
-
-# Related Topics [](id=related-topics)
-
-[How @product@ Publishes npm Packages](/develop/tutorials/-/knowledge_base/7-1/how-liferay-portal-publishes-npm-packages)
-
-[Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD](/develop/tutorials/-/knowledge_base/7-1/understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd)
+- The `Liferay.MAPS` property describes the aliases of the package's main 
+  modules.
