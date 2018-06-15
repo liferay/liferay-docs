@@ -24,7 +24,7 @@ Site's *Options* button
 
 (![Options](../../../../images/icon-actions.png)) and clicking *Join*.
 
-## Site Scope
+## Site Scope [](id=site-scope)
 
 Members of a Site can be given additional privileges in the Site by using
 permissions. It is also possible to assign different roles within the
@@ -39,7 +39,7 @@ Content, Categorization, Recycle Bin, Members, Configuration, and Publishing.
 
 ![Figure 1: Your Site's content resides in the Site Administration menu.](../../../../images/web-content-site-content.png)
 
-## Site Hierarchies
+## Site Hierarchies [](id=site-hierarchies)
 
 Sites can also be organized hierarchically, just like Organizations. The
 difference between Sites and Organizations, of course, is that Sites organize
@@ -88,7 +88,7 @@ determines how many levels of nested pages to display.
 
 ![Figure 2: The Site Map application lets users navigate among pages of a Site organized hierarchically.](../../../../images/site-directory-site-map.png)
 
-## Site Members
+## Site Members [](id=site-members)
 
 Another useful administrative application is the Site Members application. This
 enables administrators to survey all the users, organizations, and user groups
@@ -96,7 +96,7 @@ that reside in the Site. Similarly, Liferay provides the Portal Directory
 application, which functions the same as the Site Members app, but globally
 scoped for all Sites in the instance.
 
-## Page Sets
+## Page Sets [](id=page-sets)
 
 Sites have two categories of pages called page sets. There are two kinds of page
 sets: public pages and private pages. A Site can have only public pages, only

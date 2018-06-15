@@ -1,4 +1,4 @@
-# Authoring Content: Structured and Inline Content
+# Authoring Content: Structured and Inline Content [](id=authoring-content-structured-and-inline-content)
 
 The primary goal of Content Management isn't to show off the flashiest new 
 features or follow all the latest trends in design, but to provide you with the
@@ -7,7 +7,7 @@ and effectively. With this in mind, Liferay offers two core approaches to help
 you accelerate and simplify creating and organizing content: Structured Web
 Content and Inline Content.
 
-## Structured Web Content
+## Structured Web Content [](id=structured-web-content)
 
 If you've entered content into a CMS before, you may be familiar with the
 process of filling content into various fields like this:
@@ -38,7 +38,7 @@ In Liferay, those articles could be added to pages across the site, or
 displayed dynamically with tools like the Asset Publisher and Web Content 
 Display Pages.
 
-## Inline Content
+## Inline Content [](id=inline-content)
 
 Inline Content is content that is created directly within a page. Rather than 
 filling in fields to create content that's added to a page later, you have
@@ -54,7 +54,7 @@ Page. After a developer creates the page and a content writer or marketer
 provides the content, the content exists inline within the page, and is 
 published with it.
 
-## What's best for your use case?
+## What's best for your use case? [](id=whats-best-for-your-use-case)
 
 When you step back to look at the big picture, what you see are two different 
 paradigms for building pages: content pages, where the content is built into 

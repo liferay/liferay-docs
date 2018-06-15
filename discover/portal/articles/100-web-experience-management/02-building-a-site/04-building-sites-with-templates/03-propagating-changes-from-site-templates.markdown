@@ -16,7 +16,7 @@ In this section, you'll learn about the propagation of changes from Site
 templates to Sites and discuss the options available to Site administrators and 
 Site template administrators.
 
-## Site Template Page Behavior
+## Site Template Page Behavior [](id=site-template-page-behavior)
 
 If a Site's page set has been created from a Site template and the propagation
 of changes from the Site template is enabled, Site administrators can add new
@@ -39,7 +39,7 @@ in the Control Menu with the following message:
 
 ![Figure 3: You can click the Information icon to view important information about your Site template.](../../../../images/site-template-update-message.png)
 
-## Merging and Reseting Changes
+## Merging and Reseting Changes [](id=merging-and-reseting-changes)
 
 If the Site administrator clicks the *Reset Changes* button, changes are
 propagated from the Site template page to the corresponding Site page that was

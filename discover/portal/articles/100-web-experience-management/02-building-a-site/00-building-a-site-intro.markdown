@@ -1,4 +1,4 @@
-# Building a Site [](id=starting-site-development)
+# Building a Site [](id=building-a-site)
 
 A site is a set of pages where content or applications are published. Sites can
 be independent or serve as an associated organization's website. You can create

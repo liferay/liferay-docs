@@ -1,4 +1,4 @@
-# Managing Site Templates
+# Managing Site Templates [](id=managing-site-templates)
 
 To get started, click on *Site Templates* in the Sites section of the Control
 Panel. Here, you can add, manage, or delete Site templates. You can also
