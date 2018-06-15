@@ -55,7 +55,7 @@ your template.
 The following figure displays the form shown when editing the *Department*
 template's settings:
 
-![Figure 1: Site templates have several configurable options including the option to allow Site administrators to modify pages associated with the Site template.](../../../../images/Site-template-settings.png)
+![Figure 1: Site templates have several configurable options including the option to allow Site administrators to modify pages associated with the Site template.](../../../../images/site-template-settings.png)
 
 By default, the following Site templates are provided:
 

@@ -37,7 +37,7 @@ in the Site menu. From this menu, you can select the specific Site to work on.
 The Site Administration panel is available for your Site, which includes Build,
 Content, Categorization, Recycle Bin, Members, Configuration, and Publishing.
 
-![Figure 1: Your Site's content resides in the Site Administration menu.](../../../../images/web-content-Site-content.png)
+![Figure 1: Your Site's content resides in the Site Administration menu.](../../../../images/web-content-site-content.png)
 
 ## Site Hierarchies
 
@@ -86,7 +86,7 @@ configure a root page and a display depth. Just as Sites can have hierarchies,
 so can the pages within a Site. The display depth of the Site Map application
 determines how many levels of nested pages to display.
 
-![Figure 2: The Site Map application lets users navigate among pages of a Site organized hierarchically.](../../../../images/Site-directory-Site-map.png)
+![Figure 2: The Site Map application lets users navigate among pages of a Site organized hierarchically.](../../../../images/site-directory-site-map.png)
 
 ## Site Members
 

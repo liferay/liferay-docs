@@ -37,7 +37,7 @@ in the Control Menu with the following message:
     This page has been changed since the last update from the Site template. No
     further updates from the Site template will be applied.
 
-![Figure 3: You can click the Information icon to view important information about your Site template.](../../../../images/Site-template-update-message.png)
+![Figure 3: You can click the Information icon to view important information about your Site template.](../../../../images/site-template-update-message.png)
 
 ## Merging and Reseting Changes
 
