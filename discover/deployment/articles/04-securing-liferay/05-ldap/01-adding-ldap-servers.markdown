@@ -83,12 +83,12 @@ LDAP URL in the Base DN field to the secure version by changing the protocol to
 
 Save the changes. Communication to LDAP is now encrypted. 
 
-## Configuring LDAP Import/Export
+## Configuring LDAP Import/Export [](id=configuring-ldap-import-export)
 
 The other settings configure mappings between LDAP and @product@ so users and
 groups can be imported. 
 
-### Users 
+### Users [](id=users)
 
 This section contains settings for finding users in your LDAP directory.
 
@@ -149,7 +149,7 @@ match them with their mappings as a preview.
 
 ![Figure 1: Testing LDAP Users](../../../images/server-configuration-testing-ldap-users.png)
 
-### Groups 
+### Groups [](id=groups)
 
 This section contains settings for mapping LDAP groups to @product@ user groups.
 
@@ -171,7 +171,7 @@ required, the *Description* is optional.
 **Test LDAP Groups:** Click the *Test LDAP Groups* button to display a list of
 the groups returned by your search filter.
 
-### Export 
+### Export [](id=export)
 
 This section contains settings for exporting user data from LDAP.
 
@@ -190,8 +190,6 @@ When @product@ does an export, it exports the groups to this location.
 with the listed default object classes. To find out what your default object
 classes are, use an LDAP browser tool such as Apache Directory Studio to locate
 a group and view the Object Class attributes stored in LDAP for that group.
-
-![Figure 2: Mapping LDAP Groups](../../../images/server-configuration-mapping-ldap-groups.jpg)
 
 Once you set all your options and tested your connection, click *Save*. 
 

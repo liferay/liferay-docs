@@ -52,7 +52,7 @@ resource methods or whole classes like this:
 
 Once deployed, this becomes a scope in the OAuth 2.0 configuration. 
 
-## Creating the Authorization Page 
+## Creating the Authorization Page [](id=creating-the-authorization-page)
 
 Users need an interface to authorize access to their accounts. You must create
 this interface in your Site. 
@@ -70,7 +70,7 @@ this interface in your Site.
     site next. Click *Save*. 
 
 4.  Go to your Site's *Build* &rarr; *Pages* screen. Click the
-    ![add](../../../icon-add.png) button and choose *Private Page*. This forces
+    ![add](../../../images/icon-add.png) button and choose *Private Page*. This forces
     users to log in. 
 
 5.  Choose the *Full Page Application* type. 
