@@ -11,7 +11,7 @@ Liferay Analytics Cloud (Analytics Cloud) is a cloud-based SaaS offering that
 works with Liferay Digital Experience Platform (Liferay DXP) to give you
 insights into customer attributes and behavior. It aggregates your data from
 multiple sources and presents analytics, making it easier to understand people
-and their interests. The centralized contact data and analytics helps you
+and their interests. The centralized contact data and analytics help you
 communicate intelligently with people and create terrific user experiences that
 drive business and make people happier.
 
@@ -55,7 +55,7 @@ and the paths (or channels) that draw them to your sites.
 
 - [Understanding People](#understanding-people)
 
-- [Touchpoint Interaction](#touchpoint-interaction)
+- [Touchpoint Analytics](#touchpoint-analytics)
 
 - [Path Analytics](#path-analytics)
 
@@ -67,54 +67,54 @@ Existing and prospective customers interact with your company in person, on your
 websites, and via email and messaging. On Liferay DXP sites, people are
 registered users or visitors. Analytics Cloud integrates contacts (people) from
 multiple sources, including Liferay DXP sites, into a single view. It merges
-contact data into rich profiles of Individuals---unique contacts. Analytics
+contact data into rich profiles of *Individuals*---unique contacts. Analytics
 Cloud lets you name contact fields your way, making them most useful to you and
 your company.
 
-Analytics Cloud lets you aggregate Individuals into Segments. Segments are
+Analytics Cloud lets you aggregate Individuals into *Segments*. Segments are
 groups of Individuals with common characteristics. You can create Segments
 dynamically based on criteria or statically (comprising hand-selected
 Individuals). You can use industry, for example, as a criteria. Industry Segment
 Analytics shows industries engaging with you most and identifies your content
 that interests them. 
 
-![Figure 2: Dynamic Segment membership growth (and decline) depends on people matching the Segment's criteria.](../../images/segment-growth.png)
+![Figure 2: Dynamic Segment membership growth (and decline) reflects the number of people matching the Segment's criteria.](../../images/segment-growth.png)
 
 Contact profiles are a big part of Analytics Cloud, but analytics about people's
 interaction with your website pages and assets is a bigger part. This type of
 analytics (called Touchpoint Analytics) helps you determine content
 effectiveness in achieving your business goals.
 
-### Touchpoint Interaction [](id=touchpoint-interaction)
+### Touchpoint Analytics [](id=touchpoint-analytics)
 
 Touchpoints are the locations (pages) where people interact with content. Here
 are some of the Touchpoint Analytics:
 
--   Visitor count: the number of users (guest and signed in) visiting a 
-    Touchpoint
+-   *Visitor count:* the number of users (guest and signed in) visiting a 
+    Touchpoint.
 
--   Session length: amount of time people are spending on a channel (e.g., 
-    Liferay DXP instance).
+-   *Session length:* amount of time people are spending on a page's site.
 
--   Number of sessions: number of different people at a Touchpoint
+-   *Number of sessions:* number of different people on a page's site.
 
--   Time on page: amount of time people are spending at a Touchpoint
+-   *Time on page:* amount of time people are spending on a page.
 
--   Bounce rate: percentage of visitors to a particular website who navigate 
-    away  from the site after viewing only one particular touchpoint
+-   *Bounce rate:* percentage of visitors to a particular website who navigate 
+    away from the site after viewing only one page.
 
-Assets are specific types of content entities on Touchpoints. Traditional web
+Assets are specific types of content entities on site pages. Traditional web
 analytics are based on static websites---everyone sees the same page content. By
 additionally providing analytics on content articles, Analytics Cloud helps you
-determine the effectiveness of those articles. It also provides insight into
-people's interaction with personalized content. It generates charts on target
-audiences engagement with the content.
+determine the article effectiveness. It also provides insight into people's
+interaction with personalized content. It generates charts on target audience
+engagement with the content.
 
 Liferay Analytics Cloud (beta) supports these Liferay DXP Assets:
 
 - Blogs
 - Documents and Media
 - Forms
+- Web Content
 
 Regarding user behavior with a form, for example, Analytics Cloud shows the
 number of views and submissions, the percentage of users abandoning the form,
@@ -123,7 +123,7 @@ over time.
 
 ![Figure 3: See how the number of views, visitors, and more are trending on your pages.](../../images/page-views.png)
 
-As you view Touchpoint and Asset Analytics you can discern whether an action is
+As you view Page and Asset Analytics you can discern whether an action is
 positive or negative. Here are some examples.
 
 Positive:
@@ -158,10 +158,10 @@ for example, check its performance in the page's Path Analytics. If people are
 increasingly coming to your site pages from a particular social network,
 advertise more on that network. 
 
-Path Analytics includes analytics on device types and browser types that render
-your site content. Knowing the device types and browser types can help you
-determine which ones to test more and optimize user experiences on.
+Path Analytics includes reports the device types and browser types that render
+your site content. It helps you determine which devices and browsers to test
+more and optimize user experiences on.
 
 You've been introduced to Liferay Analytics Cloud and what it offers. You're now
-familiar with Segments, Touchpoints, Assets, and more. It's time to experience
+familiar with Segments, Touchpoints, Paths, and more. It's time to experience
 Analytics Cloud for yourself.
