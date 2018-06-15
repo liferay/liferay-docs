@@ -17,9 +17,7 @@ create such page via a site template. For instructions on this, see the
 [user groups documentation](/discover/portal/-/knowledge_base/7-1/user-groups). 
 You'll find the widgets in *Add* 
 (![Add](../../../images/icon-add.png)) 
-&rarr; *Widgets* &rarr; *Social*. If you want, you can also add a Requests 
-widget to the page to let users respond to connection requests. This is 
-optional, however, since connection requests also show up as notifications. 
+&rarr; *Widgets* &rarr; *Social*. 
 
 ![Figure 1: The Contacts Center widget lets users make connections.](../../../images/contacts-center.png)
 
