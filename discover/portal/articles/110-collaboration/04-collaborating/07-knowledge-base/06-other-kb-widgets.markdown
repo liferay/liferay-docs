@@ -42,8 +42,9 @@ for a detailed description of the widget's UI.
 
 +$$$
 
-**Note:** as of Knowledge Base 3.0.0, the Knowledge Base Sections app is 
-deprecated and replaced by Liferay Categories.
+**Note:** as of Knowledge Base 3.0.0, the Knowledge Base Sections widget is 
+deprecated and replaced by 
+[categories](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories). 
 
 $$$
 
