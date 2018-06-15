@@ -17,37 +17,37 @@ Follow these steps to add a blog entry in Site Administration:
 
     ![Figure 1: This screenshot shows some of the blog entry editor's controls.](../../../../images/blogs-new-entry.png)
 
-3.  The first input field, *Drag \& Drop to Upload*, is optional and lets you 
-    add a cover image for your entry. By default, an 
+3.  The first input field, *Drag \& Drop to Upload*, is for optionally adding
+    a cover image for your entry. By default, an 
     [Asset Publisher](/discover/portal/-/knowledge_base/7-1/publishing-assets)
     shows this cover image as part of the blog entry's abstract. You can insert 
     any image you like in this field, either via drag and drop or the *Select 
-    File* button. The latter lets you choose an existing image in the blog, an 
-    image from Documents and Media, or an image that you upload from outside the 
-    @product@ instance. 
+    File* button. The latter lets you choose an existing image in the blog, an
+    image from Documents and Media, or an image that you upload from your
+    machine. 
 
-    If you select an image from Documents and Media, you can use the 
-    [Image Editor](/discover/portal/-/knowledge_base/7-1/editing-images) 
-    if you need to make small changes to the image. Any edits you make are 
-    automatically applied to a copy of the image, which you can then use as your 
-    cover photo.
+    If you select an image from Documents and Media, you can make changes to it
+    with the 
+    [Image Editor](/discover/portal/-/knowledge_base/7-1/editing-images). 
+    Edits you make are applied automatically to a copy of the image, which you
+    can then use as your cover photo.
 
     Upon upload, the image appears in the pane. To center the image, drag it 
     into place. You can also add a caption. If you want to select a different 
     image, click the *Change* icon
-    (![Change](../../../../images/icon-change.png)). Lastly, clicking the trash 
+    (![Change](../../../../images/icon-change.png)). Clicking the trash 
     can icon removes the image from the blog entry. 
 
 4.  Enter a title for your blog entry. You can also add a subtitle if needed. 
 
-5.  Enter your blog entry's content in the *Content* field. This field is small 
-    at first, but it expands as you add content. The editor gives you a seamless 
-    writing experience, displaying the editing controls when you need them and 
-    hiding them from view when you don't. When you select text in your blog 
-    post, for example, a bar with context-specific editing controls appears. 
-    This keeps your canvas uncluttered so you can focus on writing. You can also 
-    add images, videos, and tables in your blog entry's content. See 
-    [Using the Blog Entry Editor](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor) 
+5.  Enter your blog entry's content in the *Content* field. This field is small
+    at first, but it expands as you add content. The editor displays the editing
+    controls when you need them and hides them from view when you don't. When
+    you select text in your blog post, for example, a bar with context-specific
+    editing controls appears. This keeps your canvas uncluttered so you can
+    focus on writing. You can also add images, videos, and tables in your blog
+    entry's content. See 
+    [Using the Blog Entry Editor](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor)
     for instructions on creating your blog entry's content. 
 
 6.  Expand the *Categorization* panel and associate your blog entry with 
@@ -79,24 +79,23 @@ Follow these steps to add a blog entry in Site Administration:
     small image that appears when blog entries are displayed in list view. Below 
     the abstract section, you can set the entry's display date and time. 
 
-    Note that if you're editing an existing blog entry, the 
-    *Send Email Entry Updated* toggle appears. Setting this to *YES* causes an 
-    email to be sent to any subscribers when the blog entry is updated. You can 
-    customize this email when 
+    Note that if you're editing an existing blog entry, the *Send Email Entry
+    Updated* toggle appears. Setting this to *YES* sends an email to any
+    subscribers when the blog entry is updated. You can customize this email
+    when 
     [configuring the Blogs app](/discover/portal/-/knowledge_base/7-1/configuring-the-blogs-app). 
 
-    Lastly, you can allow *pingbacks* for the blog entry. Pingbacks are XML-RPC 
-    requests that are automatically sent when you link to another site. If you 
-    link to another site in your blog entry, @product@ sends a pingback to the 
-    other site to notify that site that you linked to it. Similarly, if someone 
-    links to your blog entry, @product@ can receive a pingback from that 
-    person's site and record the link. 
+    Finally, you can allow *pingbacks* for the blog entry. Pingbacks are XML-RPC
+    requests that are sent automatically when you link to another site. If you
+    link to another site in your blog entry, @product@ sends a pingback to the
+    other site to notify that site that you linked to it. Similarly, if someone
+    links to your blog entry, @product@ can receive a pingback from that
+    site and record the link. 
 
     ![Figure 2: When creating a blog entry, the Configuration panel lets you control when and where the blog entry appears, and what to use for the entry's abstract.](../../../../images/blog-entry-configuration.png)
 
-9.  Expand the *Permissions* panel if you need to customize your blog entry's 
-    permissions. Use the *Viewable by* selector to set who can view the blog 
-    entry: 
+9.  Expand the *Permissions* panel to customize your blog entry's permissions.
+    Use the *Viewable by* selector to set who can view the blog entry: 
 
     -   **Anyone (Guest Role):** Anyone, including guests, can view the entry. 
     -   **Site members:** Only site members can view the entry.
