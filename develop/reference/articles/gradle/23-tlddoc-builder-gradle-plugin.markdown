@@ -19,7 +19,7 @@ buildscript {
 
     repositories {
         maven {
-            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+            url "https://repository-cdn.liferay.com/nexus/content/groups/public"
         }
     }
 }
@@ -51,7 +51,7 @@ all:
 ```gradle
 repositories {
     maven {
-        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        url "https://repository-cdn.liferay.com/nexus/content/groups/public"
     }
 }
 ```
