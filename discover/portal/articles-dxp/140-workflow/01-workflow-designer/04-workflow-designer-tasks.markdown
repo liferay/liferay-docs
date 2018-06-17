@@ -1,13 +1,13 @@
-# Creating Tasks in Kaleo Designer [](id=creating-tasks-in-kaleo-designer)
+# Creating Tasks in Workflow Designer
 
 Task nodes have several parts and are the most complex parts of a workflow
 definition. Unlike other workflow nodes, task nodes have Assignments, because a
-user is expected to *do something* (often approve or reject the submitted asset)
+User is expected to *do something* (often approve or reject the submitted asset)
 when a workflow process enters the task node: the assignment specifies who that
-user is. 
+User is. 
 
 Commonly, task nodes contain Notifications, Assignments, and Actions (defined in
-scripts). See more about Notifications and Actions in the article on [workflow nodes](/discover/portal/-/knowledge_base/7-0/workflow-definition-nodes). Task
+scripts). See more about Notifications and Actions in the article on [workflow nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes). Task
 nodes and their assignments are more complex and deserve their own article (this
 one).
 
@@ -26,10 +26,10 @@ node is for and how they are used. Include a script. -Rich -->
 
 ## Assignments [](id=assignments)
 
-Workflow tasks need to be completed by a @product@ user. You can choose how you
+Workflow tasks need to be completed by a User. You can choose how you
 want to configure your assignments. 
 
-![Figure 1: You can add an Assignment to a Task node.](../../../images-dxp/kaleo-designer-assignment.png)
+![Figure 1: You can add an Assignment to a Task node.](../../../images-dxp/workflow-designer-assignment.png)
 
 You can choose to add assignments to specific Roles, multiple roles of a Role
 Type (organization, site, or regular role types), to the Asset Creator, to
@@ -45,12 +45,12 @@ configure multiple assignments for a task.
 
 ### Resource Action Assignments [](id=resource-action-assignments)
 
-*Resource actions* are operations performed by users on an application or entity
-in @product@. For example, a user might have permission to update Message Boards
-Messages. This is called an UPDATE resource action, because the user can update
+*Resource actions* are operations performed by Users on an application or entity
+in @product@. For example, a User might have permission to update Message Boards
+Messages. This is called an UPDATE resource action, because the User can update
 the resource. If you're still uncertain about what resource actions are, refer to
 the developer tutorial on @product@'s 
-[permission system](/develop/tutorials/-/knowledge_base/7-0/adding-permissions-to-resources)
+[permission system](/develop/tutorials/-/knowledge_base/7-1/adding-permissions-to-resources)
 for a more detailed explanation.
 
 To find all the resource actions that have been configured in @product@, you
@@ -59,7 +59,7 @@ you need permission for the VIEW action on the roles resource).
 
 - Navigate to Control Panel &rarr; Users &rarr; Roles.
 - Add a new Regular Role. See the 
-  [article on managing roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions)
+  [article on managing roles](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
   for more information.
 - Once the role is added, navigate to the Define Permissions interface for the
   role.
@@ -67,16 +67,16 @@ you need permission for the VIEW action on the roles resource).
   assignment.
 
 How do you go from finding the resource action to using it in the workflow?  If
-you're running @product@ Fix Pack 13 or greater, use Kaleo Designer's interface
+you're running @product@ Fix Pack 13 or greater, use Workflow Designer's interface
 for setting up a resource action assignment.
 
 When configuring your task node's Assignment, select Resource Actions as the
 Assignment Type, then specify the Resource Actions to use for the assignment
 (for example, UPDATE).
 
-![Figure 2: Configure resource action assignments in Kaleo Designer.](../../../images-dxp/kaleo-designer-resource-action-assignment.png)
+![Figure 2: Configure resource action assignments in Workflow Designer.](../../../images-dxp/workflow-designer-resource-action-assignment.png)
 
-Here's what the assignment looks like in the Source (Kaleo XML) tab:
+Here's what the assignment looks like in the Source (Workflow XML) tab:
 
     <assignments>
         <resource-actions>
@@ -87,9 +87,9 @@ Here's what the assignment looks like in the Source (Kaleo XML) tab:
 As usual, assign the workflow to the appropriate workflow enabled asset.
 
 Now when the workflow proceeds to the task with the resource action assignment,
-users with `UPDATE` permission on the resource (for example, Message Boards
+Users with `UPDATE` permission on the resource (for example, Message Boards
 Messages) is notified of the task and can assign it to themselves (if the
-notification is set to Task Assignees). Specifically, users see the tasks
+notification is set to Task Assignees). Specifically, Users see the tasks
 in their *My Workflow Tasks* application under the tab *Assigned to My Roles*.
 
 Use all upper case letters for resource action names. Here are some common
@@ -156,12 +156,12 @@ the `roles` variable is where you specify any roles the task is assigned to. For
 example, when `roles.add(adminRole);` is called, the Administrator role is added
 to the assignment.
 
-## Related Topics [](id=related-topics)
+<!-- ## Related Topics [](id=related-topics)
 
-[Workflow Forms](/discover/portal/-/knowledge_base/7-0/workflow-forms)
+[Workflow Forms](/discover/portal/-/knowledge_base/7-1/workflow-forms)
 
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/enabling-workflow)
+[Using Workflow](/discover/portal/-/knowledge_base/7-1/enabling-workflow)
 
-[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-0/liferays-workflow-framework)
+[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
 
-[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications)
+[Creating Simple Applications](/discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->
