@@ -1,7 +1,7 @@
 # Workflow Definition Nodes [](id=workflow-definition-nodes)
 
-Once you know the basics of [creating workflow definitions](/discover/portal/-/knowledge_base/7-0/managing-workflow-definitions-with-kaleo-designer)
-with the Kaleo Designer, it's time to starts getting into the details. In this
+Once you know the basics of [creating workflow definitions](/discover/portal/-/knowledge_base/7-1/managing-workflow-definitions-with-workflow-designer)
+with the workflow Designer, it's time to starts getting into the details. In this
 article you'll learn about Actions and Notifications, two important features
 your workflow nodes can use. You'll also learn how to affect the processing of
 the workflow using Transitions, Forks, Joins, and Conditions.
@@ -16,10 +16,10 @@ There are several node types you can use in workflow definitions:
 - State nodes
 
 Because they're the most complex node, and often the meat of your workflow
-definitions, Task nodes are covered in a [separate article](/discover/portal/-/knowledge_base/7-0/creating-tasks-in-kaleo-designer).
+definitions, Task nodes are covered in a [separate article](/discover/portal/-/knowledge_base/7-1/creating-tasks-in-workflow-designer).
 
 Fork, Join, and Condition nodes are discussed, along with Transitions, in an
-article on [workflow processing](/discover/portal/-/knowledge_base/7-0/affecting-the-processing-of-workflow-definitions),
+article on [workflow processing](/discover/portal/-/knowledge_base/7-1/affecting-the-processing-of-workflow-definitions),
 since they're used for affecting the processing of the workflow.
 
 This article discusses State nodes, Start nodes, and End nodes, as well as
@@ -35,7 +35,7 @@ Actions are used to do some additional processing before entering the node,
 after exiting a node, or once a task node is assigned. They're configured by
 accessing a node's Settings tab, then double clicking *Actions*.
 
-![Figure 1: You can add an Action to a Task node.](../../../images-dxp/kaleo-designer-action.png)
+![Figure 1: You can add an Action to a Task node.](../../../images-dxp/workflow-designer-action.png)
 
 The Single Approver workflow contains an Update task with an action written in
 Groovy that sets the status of the asset as *denied*, then sets it to *pending*. 
@@ -47,7 +47,7 @@ Groovy that sets the status of the asset as *denied*, then sets it to *pending*.
     WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("pending"), workflowContext);
 
 Why would the action script first set the status to one thing and then to
-another like that?  Because for some assets, the *denied* status is used to send
+another like that? Because for some assets, the *denied* status is used to send
 the asset creator an email notification that the item has been denied.
 
 The end node in your workflow definition has an action configured on it by
@@ -77,7 +77,7 @@ process. They can be sent for tasks or any other type of node in the workflow.
 To set up notifications, double click on *Notifications* in a node's Settings tab
 and create a notification.
 
-![Figure 2: You can send notification from a Task node.](../../../images-dxp/kaleo-designer-notification.png)
+![Figure 2: You can send a Notification from a Task node.](../../../images-dxp/workflow-designer-notification.png)
 
 You'll need to specify the Notification Type, and you can choose User
 Notification, Email, Instant Messenger, or Private Message. You can use
@@ -125,9 +125,9 @@ from the initial state to approved.
 ## State Nodes [](id=state-nodes)
 
 State nodes can have Notifications and Actions. The default end node added by
-Kaleo Designer is a pre-configured state node that sets the workflow status to
+workflow Designer is a pre-configured state node that sets the workflow status to
 Approved. Perhaps you want to create a node that sets the status to *Expired*.
-You could create a state node for it by dragging one onto your Kaleo Designer
+You could create a state node for it by dragging one onto your workflow Designer
 canvas, then configuring an action in it that sets the status to Expired. Here's
 what it would look like in Groovy:
 
@@ -138,12 +138,12 @@ what it would look like in Groovy:
 
 Next, you'll learn to do parallel processing using fork and join nodes.
 
-## Related Topics [](id=related-topics)
+<!-- ## Related Topics [](id=related-topics)
 
-[Workflow Forms](/discover/portal/-/knowledge_base/7-0/workflow-forms)
+[Workflow Forms](/discover/portal/-/knowledge_base/7-1/workflow-forms)
 
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/enabling-workflow)
+[Using Workflow](/discover/portal/-/knowledge_base/7-1/enabling-workflow)
 
-[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-0/liferays-workflow-framework)
+[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
 
-[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications)
+[Creating Simple Applications](/discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->
