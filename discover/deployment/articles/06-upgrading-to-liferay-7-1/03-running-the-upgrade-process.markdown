@@ -147,13 +147,13 @@ Note that these properties correspond exactly to the
 [JDBC portal properties](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#JDBC)
 you'd use in a `portal-ext.properties` file. 
 
-**jdbc.default.driverClassName ***(required)*
+**jdbc.default.driverClassName** *(required)*
 
-**jdbc.default.url ***(required)*
+**jdbc.default.url** *(required)*
 
-**jdbc.default.username ***(required)*
+**jdbc.default.username** *(required)*
 
-**jdbc.default.password ***(required)*
+**jdbc.default.password** *(required)*
 
 #### Configuring portal-upgrade-ext.properties [](id=configuring-portal-upgrade-ext-properties)
 
