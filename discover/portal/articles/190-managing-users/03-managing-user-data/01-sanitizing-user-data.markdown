@@ -3,28 +3,44 @@
 Technically speaking, one of the challenging requirements of the General Data
 Protection Regulation (GDPR) is _the right to be forgotten_. The purpose of this
 article is not to go into the details of this requirement, but to show you how
-@product@ is providing a feature to assist you in satisfying this
+the personal data erasure functionality can assist you in satisfying this
 requirement. 
 
 A simple way to think of what it means to be _forgotten_ by software is to
 consider a scenario in which a new portal administrator is hired immediately
 after a User's right to be forgotten request has been honored. The new portal
 administrator has access to all of the instance's site content and
-administration capabilities. Despite this, the admin must not be able to glean
-information that could lead them to knowing the identity of the User whose
+administration capabilities. Despite this, the administrator must not be able to
+glean information that could lead them to knowing the identity of the User whose
 personal data was erased.
 
 Conceptually, forgetting a User means, at a minimum:
 
-- Erasing the User's identifying information. In @product@, this will entail
-    removing the User from database tables and search indexes.
-- Erasure of the User's content OR anonymizing the content so it cannot be
+- Erasing the User's identifying information from the system. In @product@, this 
+    entails removing the User from database tables and search indexes.
+- Erasing or anonymizing content the User has interacted with so it cannot be
     tracked to a real person.
 
-ADD A NOTE ABOUT NOT GUARANTEEING THAT THIS SATISFIES GDPR, IT'S UP TO THE
-COMPANY TO DETERMINE WHETHER THIS IS SATISFACTORY
+Users can already be deactivated and then deleted, so why add new functionality?
+Deleting removes the User from the table of Users in the database. The User's
+information is preserved in other locations, however. In a standard User
+deletion scenario, all of a User's personally created content is still assigned
+to the User and their identifiers (User ID and User Name) still appear in the UI
+next to content associated with them. This intentional preservation of
+user-identifying data is inadequate for satisfying some of the GDPR requirements
+and is the primary reason why the data erasure functionality was added in
+@product-ver@.
 
-ALSO DESCRIBE THE DEFICIENCIES OF SIMPLE DEACTIVATION AND DELETION
++$$$
+
+**Note:** Personal data erasure can help companies in their attempts to satisfy
+the requirements of GDPR. Using the data erasure tool described here provides no
+guarantee of compliance with the legal requirements of GDPR. Each company or
+individual whose website processes user personal data and is under the
+jurisdiction of GDPR must carefully determine the precise steps necessary to
+ensure they are fully compliant with GDPR.
+
+$$$
 
 To begin sanitizing a user's data:
 
@@ -38,24 +54,24 @@ To begin sanitizing a user's data:
 3.  Complete the five-step process sequentially to erase the personal data
     associated with the User.
 
-![Figure 1: ](../../../images/users-data-erasure.png)
+![Figure 1: Sequentially complete five steps to complete the data erasure process.](../../../images/users-data-erasure.png)
 
 ## Step 1: Deactivation [](id=step-1-deactivation)
 
 The end of this process is deleting the User. A user must always be deactivated
 before deletion. Click *Deactivate User*.
 
-![Figure 2: ](../../../images/users-data-erasure3.png)
+![Figure 2: Deactivating the User kicks off the data erasure process.](../../../images/users-data-erasure3.png)
 
 ## Step 2: Delete the User's Personal Site [](id=step-2-delete-the-users-personal-site)
 
-The User's public pages (profile) and private pages (dashboard) must be deleted.
+The User's public (profile) and private (dashboard) pages must be deleted.
 Separating this step out allows the administrator to make sure no information
 important to the enterprise is lost before the deletion is completed. Once any
 necessary data from the User's personal pages is preserved, click *Delete
 Personal Site*.
 
-![Figure 3: ](../../../images/users-data-erasure1.png)
+![Figure 3: The second step in personal data erasure is deleting the User personal site.](../../../images/users-data-erasure1.png)
 
 ## Step 3: Review Application Data [](id=step-3-review-application-data)
 
@@ -68,16 +84,16 @@ that no UAD can be gleaned from the content if simply anonymized.
 After reviewing each piece of the data, the administrator either anonymizes it
 or deletes it to complete this step.
 
-![Figure 4: ](../../../images/users-data-erasure2.png)
+![Figure 4: In the third data erasure step, review, delete, and/or anonymize the User's application data.](../../../images/users-data-erasure2.png)
 
 To enter the review process, click *Review*.
 
 The Application Data Review screen displays a summary including how many content
 items in each application are associated with the User.
 
-![Figure 5: ](../../../images/users-app-data-review.png)
+![Figure 5: The Application Data Review screen makes the third, and most complicated data erasure step, more manageable.](../../../images/users-app-data-review.png)
 
-To manage all the items for an application at once: 
+To manage (anonymize or delete) all the items for an application at once: 
 
 1.  Click the Actions button (![Actions](../../../images/icon-actions.png)) for
     the application.
@@ -88,42 +104,37 @@ To manage all the items for an application at once:
 3.  If you're sure simple anonymization is good enough for all of an
     application's items, choose *Anonymize*.
 
-4.  To view the item's for an application, choose *View* or click on the
+4.  To view the items for an application, choose *View* or click on the
     application in the table.
 
 Clicking an item takes you to the view/edit screen where you can see the
 application's particular items and take action. 
 
-![Figure 6: ](../../../images/users-item-data-review.png)
+![Figure 6: Drill down into a User's application data to determine if manual editing is necessary.](../../../images/users-item-data-review.png)
 
 Click the Actions button (![Actions](../../../images/icon-actions.png)) for an
-item and select *edit*, *Anonymize*, or *Delete*, as appropriate.
+item and select *Edit*, *Anonymize*, or *Delete*, as appropriate.
 
-Once you've worked your way through the items and have taken action, the view in
-the Application Data Revie screen is updated to reflect that there ore no more
-items needed to review. Click the *Complete Step* button once finished.
+Once you've worked your way through the items and taken action, the view in the
+Application Data Review screen is updated to reflect that there ore no more items
+needed to review. Click the *Complete Step* button once finished.
 
-![Figure 7: ](../../../images/users-data-review-complete.png)
+![Figure 7: Click *Complete Step* once all of the User's application data is reviewed and dealt with.](../../../images/users-data-review-complete.png)
 
 ## Step 4: Anonymize Remaining Data [](id=step-4-anonymize-remaining-data)
 
-In step 4, you must click *Anonymize Data*. This completes the anonymiation
-process for any remaining data 
-EXPLAIN WHAT DATE THIs ANONYMIZES
+In step 4, you must click *Anonymize Data*. This completes the anonymization
+process for remaining database references to the User's Name and ID. Some
+information is anonymized, but others, such as Notifications, are simply deleted
+as they will not make sense once the User is deleted.
 
-![Figure 8: ](../../../images/users-data-erasure4.png)
-
-This automatic anonymization process covers derived data on the User that
-resides in the database. 
-
-It includes:
-
-LIST OF ANONYMIZED DATA
+![Figure 8: Anonymize any remaining use of the User's identifier's remaining in the database.](../../../images/users-data-erasure4.png)
 
 ## Step 5: Delete User [](id=step-5-delete-user)
 
 Once all data is reviewed, deleted, edited, and/or anonymized as appropriate,
 delete the User. This step is simple: Click *Delete User*.
 
-![Figure 9: ](../../../images/users-data-erasure5.png)
+![Figure 9: To finish the data erasure process, delete the User.](../../../images/users-data-erasure5.png)
 
+Now the User's data is anonymized or deleted, and the User is also deleted.
