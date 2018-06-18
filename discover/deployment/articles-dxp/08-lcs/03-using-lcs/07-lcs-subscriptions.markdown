@@ -1,4 +1,4 @@
-# Managing Liferay DXP Subscriptions
+# Managing Liferay DXP Subscriptions [](id=managing-liferay-dxp-subscriptions)
 
 LCS lets you use and view your @product@ subscriptions. Recall that when you 
 [create an environment](liferay.com), 
@@ -61,7 +61,7 @@ increase the number of processor cores that your subscription allows per server.
 
 $$$
 
-## Decommissioning Servers
+## Decommissioning Servers [](id=decommissioning-servers)
 
 To decommission a server and free its activation key for reuse, select the 
 server's environment on the left and then select the server. In the server's 
@@ -70,7 +70,7 @@ server normally, its activation key is immediately freed for reuse. If the
 server crashes or its shutdown is forced (e.g., kill), its activation key is 
 freed for reuse within six minutes. 
 
-## Elastic Subscriptions
+## Elastic Subscriptions [](id=elastic-subscriptions)
 
 Elastic subscriptions let you register an unlimited number of servers. This is 
 crucial for auto-scaling environments in which servers are created and destroyed 

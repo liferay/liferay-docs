@@ -1,4 +1,4 @@
-# What LCS Stores About Your Liferay DXP Servers
+# What LCS Stores About Your Liferay DXP Servers [](id=what-lcs-stores-about-your-liferay-dxp-servers)
 
 At this point, you might be wondering what information about your servers is 
 stored on LCS's servers. Great question! To protect your users' privacy, LCS 

@@ -1,4 +1,4 @@
-# Understanding Environment Tokens
+# Understanding Environment Tokens [](id=understanding-environment-tokens)
 
 To activate a server in an environment, you must use that environment's token 
 file. LCS Administrators and Environment Managers can generate and distribute 

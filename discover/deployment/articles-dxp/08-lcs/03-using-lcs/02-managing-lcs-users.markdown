@@ -1,4 +1,4 @@
-# Managing LCS Users in Your Project
+# Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
 
 The Users section of LCS is where you manage the LCS users that are part of your 
 project. It's here that you can grant or revoke LCS roles. To manage users, 

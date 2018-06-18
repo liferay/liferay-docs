@@ -1,4 +1,4 @@
-# Managing LCS Servers
+# Managing LCS Servers [](id=managing-lcs-servers)
 
 Clicking a server in the Dashboard or environment view takes you to the server 
 view. Server view provides detailed information about a server, including 
@@ -26,7 +26,7 @@ benign `NullPointerException` for the LCS `TaskSchedulerServiceImpl` and
 
 $$$
 
-## Page Analytics
+## Page Analytics [](id=page-analytics)
 
 Page Analytics is displayed by default when you enter server view. Page 
 Analytics shows page views and load times for the selected site and time period. 
@@ -55,7 +55,7 @@ all load times greater than 3,000 ms in red text.
 
 ![Figure 1: The Page Analytics interface in the LCS Server view.](../../../images-dxp/lcs-page-analytics-01.png)
 
-## Snapshot Metrics
+## Snapshot Metrics [](id=snapshot-metrics)
 
 To view other metrics and statistics of your server's performance, click the 
 *Snapshot Metrics* tab near the top of the page. These metrics are broken down 
@@ -92,7 +92,7 @@ Note that in Snapshot Metrics, the application and garbage collector metrics are
 based on data collected by LCS from server registration to the present. Memory 
 and server metrics, however, show only the current state. 
 
-## Fix Packs
+## Fix Packs [](id=fix-packs)
 
 To view your server's fix packs, click the Fix Packs tab near the top of the 
 page. The available and installed fix packs appear in separate tables. The 
@@ -101,7 +101,7 @@ environment view for downloading and installing fix packs.
 
 ![Figure 5: The Fix Packs tab displays your server's available and installed fix packs.](../../../images-dxp/lcs-server-fix-packs.png)
 
-## Portal Properties
+## Portal Properties [](id=portal-properties)
 
 The *Portal Properties* tab lets you view your portal's property values in a 
 searchable table. This gives you a convenient display for seeing exactly what 
@@ -129,7 +129,7 @@ Values*.
 
 ![Figure 6: Click the gear icon to select the type of portal properties to show in the table.](../../../images-dxp/lcs-server-portal-properties.png)
 
-## Details
+## Details [](id=details)
 
 The *Details* tab shows general information about your server. There are three 
 tabs under Details: *Software*, *Java*, and *Hardware*. Each shows information, 
@@ -139,7 +139,7 @@ that you need their assistance.
 
 ![Figure 7: The Details tab shows information about your server.](../../../images-dxp/lcs-server-details.png)
 
-## Server Settings
+## Server Settings [](id=server-settings)
 
 Lastly, the *Server Settings* tab lets you view and edit your server's name, 
 location, and description. You can also unregister your server from LCS. 

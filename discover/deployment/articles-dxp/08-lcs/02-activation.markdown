@@ -1,4 +1,4 @@
-# Activating Your Liferay DXP Server with LCS
+# Activating Your Liferay DXP Server with LCS [](id=activating-your-liferay-dxp-server-with-lcs)
 
 Follow these steps to activate your @product@ server with LCS: 
 
@@ -78,7 +78,7 @@ provide temporary activation keys that don't require LCS.
 
 $$$
 
-## Determining Your Server's LCS Connection Status
+## Determining Your Server's LCS Connection Status [](id=determining-your-servers-lcs-connection-status)
 
 In your @product@ instance, you can view your LCS connection status in the LCS 
 client app. Access the client by clicking *Control Panel* &rarr; 

@@ -1,4 +1,4 @@
-# Using LCS
+# Using LCS [](id=using-lcs)
 
 Once your @product@ server is connected to LCS, you can get down to the business 
 that LCS is designed for---managing and monitoring your servers. If you're not 

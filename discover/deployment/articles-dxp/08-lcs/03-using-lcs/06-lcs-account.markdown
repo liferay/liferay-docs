@@ -1,4 +1,4 @@
-# Managing Your LCS Account
+# Managing Your LCS Account [](id=managing-your-lcs-account)
 
 To manage your LCS account, select *My Account* from the user menu in the 
 Dockbar. This takes you to a UI that contains three tabs: 
@@ -31,7 +31,7 @@ Dockbar. This takes you to a UI that contains three tabs:
 
     ![Figure 2: You can change your LCS account's general preferences.](../../../images-dxp/lcs-account-preferences.png)
 
-## Using Web Notifications
+## Using Web Notifications [](id=using-web-notifications)
 
 LCS also displays web notifications that you can view by clicking the bell icon 
 in the Dockbar. A red badge on this icon shows your unread notification count. 

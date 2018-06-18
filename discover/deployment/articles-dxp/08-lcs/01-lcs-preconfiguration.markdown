@@ -1,4 +1,4 @@
-# LCS Preconfiguration
+# LCS Preconfiguration [](id=lcs-preconfiguration)
 
 To activate your @product@ server and take full advantage of Liferay Connected 
 Services (LCS), you must first register your server with LCS. Before doing so, 
@@ -29,7 +29,7 @@ your local @product@ instance's `deploy` folder.
 
 $$$
 
-## Downloading the LCS Client App
+## Downloading the LCS Client App [](id=downloading-the-lcs-client-app)
 
 The LCS client app is included in each @product@ bundle and autodeploys when the 
 bundle starts. The included version of the app, however, may be outdated. To get 
@@ -91,7 +91,7 @@ connect through a proxy, you can skip this section.
 
 $$$
 
-## Preconfiguring LCS to Connect Through a Proxy
+## Preconfiguring LCS to Connect Through a Proxy [](id=preconfiguring-lcs-to-connect-through-a-proxy)
 
 If your server connects to the Internet through a proxy, you must set some 
 properties in either your server or the LCS client app **before** deploying the 
@@ -161,7 +161,7 @@ you set them in your server or the LCS client app.
 
 Next, you'll learn how to ensure that the LCS client can access LCS. 
 
-## Ensuring Access to LCS
+## Ensuring Access to LCS [](id=ensuring-access-to-lcs)
 
 For the LCS client app to work, it must be able to access the following DNS 
 names. If your server is behind a proxy and/or a firewall, then you must open 
@@ -174,7 +174,7 @@ As an added security measure, you can also restrict traffic to HTTPS.
 
 The next section discusses NTP server synchronization. 
 
-## NTP Server Synchronization
+## NTP Server Synchronization [](id=ntp-server-synchronization)
 
 For LCS to work properly, the application server running @product@ should be 
 synchronized with a time server. If it's not, you may get log errors similar to 
@@ -194,7 +194,7 @@ server, see your application server's documentation.
 
 Next, you'll learn how to configure @product@'s patching tool. 
 
-## Configuring the Patching Tool
+## Configuring the Patching Tool [](id=configuring-the-patching-tool)
 
 LCS uses @product@'s patching tool to apply updates. In @product@ bundles, the
 patching tool is pre-installed. If you're not running a bundle, you must 
@@ -263,7 +263,7 @@ You can specify these as follows:
 
         -Dpatching.tool.agent.properties=debug,nohalt
 
-## Installing the LCS Client App
+## Installing the LCS Client App [](id=installing-the-lcs-client-app)
 
 Once you've addressed the above preconfiguration steps, you're ready to install 
 the LCS client app. Follow these steps to install the app:
@@ -284,7 +284,7 @@ Great! Now you're all set to
 The next section shows you how to upgrade the LCS client app. We highly 
 recommend that you do this whenever Liferay releases a new version of the app. 
 
-## Upgrading the LCS Client App
+## Upgrading the LCS Client App [](id=upgrading-the-lcs-client-app)
 
 Your server should always be running the latest version of the LCS client app. 
 There are two ways to upgrade the app, depending on the exact LCS 

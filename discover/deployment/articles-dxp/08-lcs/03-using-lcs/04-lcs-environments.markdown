@@ -1,10 +1,10 @@
-# Managing LCS Environments
+# Managing LCS Environments [](id=managing-lcs-environments)
 
 Environments are the key components of your LCS project. When you register a 
 server in LCS, you do so in an environment. An environment is therefore the 
 gateway to managing and monitoring your servers in LCS. 
 
-## Creating Environments
+## Creating Environments [](id=creating-environments)
 
 You can create an environment by clicking the *Add Environment* tab from the 
 Dashboard. This opens the New Environment popup. 
@@ -46,9 +46,9 @@ Complete these fields to create your environment:
 
 When you're finished with your selections, click *Create Environment*. 
 
-![Figure 2: The New Environment popup.](../../../images-dxp/lcs-new-environment.png)
+![Figure 1: The New Environment popup.](../../../images-dxp/lcs-new-environment.png)
 
-## Working with Environments
+## Working with Environments [](id=working-with-environments)
 
 Clicking an environment on the left-hand side of the Dashboard takes you to the 
 environment view. The environment view lets you manage an environment in your 

@@ -1,4 +1,4 @@
-# Troubleshooting Your LCS Connection
+# Troubleshooting Your LCS Connection [](id=troubleshooting-your-lcs-connection)
 
 Since LCS activates @product@, your server must maintain its connection to LCS
 at all times. If this connection is interrupted, your server enters a grace
@@ -28,7 +28,7 @@ are applied.
 
 $$$
 
-## LCS Grace Periods
+## LCS Grace Periods [](id=lcs-grace-periods)
 
 There are 2 grace period types in LCS: 
 
@@ -50,7 +50,7 @@ in LCS.
 
 $$$
 
-### Connection Grace Period
+### Connection Grace Period [](id=connection-grace-period)
 
 If your server's LCS connection is interrupted, the server continues to run and 
 enters a grace period that lasts for up to 30 days to allow for reconnection. 
@@ -106,7 +106,7 @@ Add to table once the functionality is implemented:
 |   n/a     |        n/a         | The grace period warning is always displayed to administrators, on all pages. | A portal property can be used to restrict the grace period message to the License Manager and LCS pages in the Control Panel. |
 -->
 
-### Subscription Grace Period
+### Subscription Grace Period [](id=subscription-grace-period)
 
 At least 90 days before the subscription expires, Liferay will reach out to 
 begin the renewal process. 30 days before expiration, Liferay Support sends 
@@ -126,7 +126,7 @@ messages disappear within 24 hours. Note that by using XML activation keys
 
 ![Figure 2: LCS sends you a notification prior to the expiration of your subscription.](../../images-dxp/lcs-support-expiration.png)
 
-## Troubleshooting
+## Troubleshooting [](id=troubleshooting)
 
 If you encounter issues with LCS, the Liferay Support team is here to help. If 
 you need support, open a 
@@ -145,7 +145,7 @@ steps correctly.
 
 $$$
 
-### Server Can't Reach LCS
+### Server Can't Reach LCS [](id=server-cant-reach-lcs)
 
 If your server can't reach LCS, verify that you can access the public sites
 required by LCS:
@@ -157,7 +157,7 @@ required by LCS:
         curl -vk -I "https://lcs-gateway.liferay.com"
         telnet lcs-gateway.liferay.com 443
 
-### Subscription Issues
+### Subscription Issues [](id=subscription-issues)
 
 For issues related to your subscription, first review the documentation on 
 [managing your subscription](liferay.com). 
@@ -190,7 +190,7 @@ containers. For more information, see the
 
 $$$
 
-### Invalid Token
+### Invalid Token [](id=invalid-token)
 
 If the token is invalid, first review the documentation on 
 [using environment tokens](liferay.com). 
@@ -202,7 +202,7 @@ The following table lists causes and solutions for invalid tokens.
 | The token's file name is changed after download. | Download the token again from LCS. |
 | The token is regenerated. | Use the regenerated token. |
 
-## Increasing Log Levels
+## Increasing Log Levels [](id=increasing-log-levels)
 
 If you contact Liferay Support, you're asked to increase your server's log 
 levels and then provide your log files. You can find these log files in 
@@ -234,7 +234,7 @@ There are 2 ways to increase the log levels:
 
 The following sections cover both options. 
 
-### Control Panel
+### Control Panel [](id=control-panel)
 
 Follow these steps to increase the log levels via the Control Panel: 
 
@@ -251,7 +251,7 @@ Follow these steps to increase the log levels via the Control Panel:
     &rarr; *Liferay Connected Services* and take a screenshot of what you see 
     there. This is useful to Liferay Support. 
 
-### Log4j
+### Log4j [](id=log4j)
 
 Follow these steps to increase the log levels via Log4j: 
 
