@@ -1,4 +1,4 @@
-# Point all Nodes to the Same @Product@ Database [](id=point-all-nodes-to-the-same-database)
+# Point all Nodes to the Same @product@ Database [](id=point-all-nodes-to-the-same-database)
 
 Each node should have a data source that points to one @product@ database
 (or a database cluster) that all the nodes share. This means, of course,

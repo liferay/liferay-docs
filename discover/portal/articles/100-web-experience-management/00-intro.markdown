@@ -1,6 +1,6 @@
 # Web Experience Management [](id=web-experience-management)
 
-Experience; consider that word for a moment. Not the type of experience you 
+Experience: consider that word for a moment. Not the type of experience you 
 gain with repetition, but the contact or encounter you have with something. 
 Suppose you're buying a new phone. It's easy to look at the phone with the 
 biggest screen or the fastest processor and say that it's the best, but what 

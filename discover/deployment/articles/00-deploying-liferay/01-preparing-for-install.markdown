@@ -10,9 +10,6 @@ questions.
 - Which database will you use with @product@?
 - How do you plan to store your data?
 - Can your network support @product@?
-<!--
-- Will you enable Liferay's PACL security feature?
--->
 
 Next, you'll answer these questions and learn the basic steps for installing
 @product@.
@@ -203,7 +200,7 @@ enterprise-level document repositories. All of the repositories are connected to
 Once you have your database and document repository ready, you can install
 @product@ on your server.
 
-## Step Two: Gather Your Mail Credentials [](id=step-two-gather-your-mail-credentials)
+## Step 2: Gather Your Mail Credentials [](id=step-2-gather-your-mail-credentials)
 
 @product@ uses a mail server to send email notifications. As part of the
 install, therefore, you will need to have credentials that @product@ can use to
@@ -220,7 +217,7 @@ information:
 
 Once you've gathered this information, you're ready to move on to the next step. 
 
-## Step Three: Install [](id=step-three-install)
+## Step 3: Install [](id=step-3-install)
 
 The next step is to install @product@. You can do this in one of two ways: by
 [installing @product@ bundled with an application server](/discover/deployment/-/knowledge_base/7-1/installing-product),
@@ -233,7 +230,7 @@ By far the easiest way to get @product@ installed is to use a bundle. Though
 bundles are pre-packaged for demo purposes, it is very easy to turn them into
 full, production-ready @product@ instances. 
 
-## Step Four: Network Configuration [](id=step-four-network)
+## Step 4: Network Configuration [](id=step-4-network)
 
 @product@ supports both IPv4 and IPv6 address formats. You must
 [choose between IPv4 or IPv6](/discover/deployment/-/knowledge_base/7-0/choosing-ipv4-or-ipv6).
@@ -247,7 +244,7 @@ By default, @product@ uses IPv4 addresses. If you are using IPv6, you will have 
     (if one does not already exist) and set the `tunnel.servlet.hosts.allowed`
     property to the target hosts you want to allow (e.g., _0:0:0:0:0:0:0:1_). 
 
-## Step Five: Configure Elasticsearch [](id=step-five-configure-elastic-search)
+## Step 5: Configure Elasticsearch [](id=step-5-configure-elastic-search)
 
 @product@ by default ships with an embedded version of Elasticsearch. While this
 configuration works well for demo purposes, it is not supported in a production
@@ -258,7 +255,7 @@ either on the same machine you have @product@ on or a different machine. For
 performance purposes, it is better to
 [install Elasticsearch on a separate machine](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
 
-## Step Six: Liferay Marketplace and Portal Security [](id=step-six-liferay-marketplace-and-portal-security)
+## Step 6: Liferay Marketplace and Portal Security [](id=step-6-liferay-marketplace-and-portal-security)
 
 The Liferay Marketplace is an integral part of the @product@ experience. The
 Marketplace plugin is required to be installed on @product@. The Marketplace
@@ -270,12 +267,6 @@ Liferay Marketplace. Some of the key features the Marketplace plugin enables are
 -   Bundled Apps: easily manage apps that may come bundled with your @product@
 -   Developer Apps: ability to manage apps that you're developing
 -   License Manager: streamlined license management for your @product@ and apps
-
-<!-- TODO uncomment when PACL is supported. Jim
-You will want to make sure Portal Access Control Lists are enabled if you intend
-to download and install apps from Marketplace. This is an additional layer of
-security that defines various permissions that apps may or may not have.
---> 
 
 The portal installation process deploys and registers the Marketplace plugin
 automatically. If you're installing @product@ in an environment that would

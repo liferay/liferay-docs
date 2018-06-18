@@ -44,7 +44,8 @@ To use the S3 store in a cluster, follow these steps:
     folder. 
 
 3.  Copy the `portal-ext.properties` to each node's
-    [`Liferay Home` folder](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home). 
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+    folder. 
 
 4.  Copy the `system-ext.properties` (if you're using one) to a folder in the 
     app server class path on each node. 
