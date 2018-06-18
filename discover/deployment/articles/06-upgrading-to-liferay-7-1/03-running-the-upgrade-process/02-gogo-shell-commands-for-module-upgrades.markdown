@@ -1,7 +1,14 @@
 # Gogo Shell Commands for Module Upgrades [](id=gogo-shell-commands-for-module-upgrades)
 
-@product@'s Gogo shell commands let you upgrade modules, check module status, or
-execute verify processes.
+Liferay's Gogo shell commands let you upgrade and verify individual modules.
+It's a fine grained approach to upgrading the core and non-core modules. Here's
+what you can do with the commands: 
+
+- [Get command usage](#command-usage)
+- [List modules to upgrade](#listing-module-upgrade-processes)
+- [Upgrade modules](#executing-module-upgrades) 
+- [Check upgrade status](#checking-the-upgrade-status) 
+- [Verify upgrades](#executing-verify-processes) 
 
 +$$$
 
@@ -9,6 +16,10 @@ execute verify processes.
 is required before using Gogo shell commands to upgrade the core. 
 
 $$$
+
+First explore the command usage. 
+
+## Command Usage [](id=command-usage)
 
 If you ran the upgrade tool and it opened Gogo shell, you're already connected.
 Otherwise, you can connect to Gogo shell via telnet:
