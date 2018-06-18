@@ -50,7 +50,7 @@ Install Fix Packs in a Particular Environment | true | true | false |
 Now that you know what roles are available in an LCS project, and what they do, 
 you're ready to learn how to manage them.
 
-### Managing LCS Roles [](id=managing-lcs-roles)
+## Managing LCS Roles [](id=managing-lcs-roles)
 
 Follow these steps to manage a user's LCS roles:
 
