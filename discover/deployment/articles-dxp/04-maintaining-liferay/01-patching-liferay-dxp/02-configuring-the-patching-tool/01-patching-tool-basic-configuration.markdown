@@ -2,28 +2,26 @@
 
 There are two ways to configure the Patching Tool:
 
-1. Automatically by executing the `auto-discovery` command
+1.  Automatically by executing the `auto-discovery` command
 
-2. Manually by editing the configuration file (see the Advanced Configuration section)
+2.  Manually by editing the configuration file (see
+    [Patching Tool Advanced Configuration](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-tool-advanced-configuration))
 
-Automatic configuration generates the configuration files by looking for @product@
-files in the file system. By default the Patching Tool looks for the @product@
-files in the parent folder. To start the process run
+Automatic configuration generates the configuration files by looking for
+@product@ files in the local file system. By default the Patching Tool looks for
+them in its parent folder. To start the process, run this command in your
+Patching Tool folder (`patching-tool`):
 
     patching-tool auto-discovery
 
-If @product@ is not installed in the parent folder, you can specify its
-location: 
+If @product@ is not installed in the parent folder, specify its location: 
 
     patching-tool auto-discovery /opt/Liferay/tomcat-8.0.32
 
-That's it! Now that you've installed the Patching Tool and run auto-discovery,
-you're ready to download and install patches. You can install patches manually
-or automatically.
-
-If you specified the wrong folder or @product@ is not installed in the parent
-folder, the Patching Tool won't be able to find the [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
-folder and shows an error: 
+If you specified the wrong folder for @product@ or it is not in the parent
+folder, the Patching Tool can't find the
+[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
+and reports an error like this: 
 
     The .liferay-home has not been detected in the given directory tree.
 
@@ -35,9 +33,14 @@ folder and shows an error:
 
     The configuration hasn't been saved. Please save this to the default.properties file.
 
-In this case you can either add the folder manually to the configuration or
-create the `.liferay-home` file and re-run the auto-discovery process.
+Here are ways to resolve the Liferay Home issue:
 
+- Specify the Liferay Home path in the `default.properties` file.
+- If the Liferay Home is in the Patching Tool's tree, create a `.liferay-home` 
+file in the Liferay Home folder and re-run the  auto-discovery process. 
 
-When the patching tool is configured, you can run `patching-tool info` and receive information about the product version.
+When the Patching Tool is configured, running `patching-tool info` reports
+product version information. 
 
+That's it! Now that you've installed and configured the Patching Tool, you're
+ready to download and install patches. 
