@@ -18,14 +18,14 @@ Follow these steps to activate your @product@ server with LCS:
     type assigned to the environment. Note that a subscription type can only be 
     assigned to an environment when creating the environment. If you have 
     sufficient permissions in your company's project, you can 
-    [create a new environment](liferay.com) 
+    [create a new environment](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/managing-lcs-environments#creating-environments) 
     by selecting *Add Environment*. 
 
     ![Figure 2: You must activate your server in an LCS environment. The red box in this screenshot highlights environments.](../../images-dxp/lcs-registration-select-environment.png)
 
 4.  Select the environment's *Registration* tab. This is where you manage and 
     download the 
-    [environment's token file](liferay.com), 
+    [environment's token file](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/understanding-environment-tokens), 
     which you'll use to activate servers in the environment. 
 
     In the Registration tab's *Services* section, change the LCS service 
@@ -39,7 +39,7 @@ Follow these steps to activate your @product@ server with LCS:
     Analysis are selected by default. If Portal Property Analysis is selected, 
     you can prevent LCS from analyzing specific properties. Enter them into the 
     box that appears when you select *Show Blacklisted Properties*. Note that 
-    [LCS doesn't access security sensitive properties](liferay.com). 
+    [LCS doesn't access security sensitive properties](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/what-lcs-stores-about-your-liferay-dxp-servers). 
 
     ![Figure 3: An environment's Registration tab lets you manage the token file used to activate your server in the environment.](../../images-dxp/lcs-registration.png)
 

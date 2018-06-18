@@ -6,7 +6,7 @@ however, there are a few things you must take care of. The sections in this
 guide walk you through these steps: 
 
 1. [Downloading the LCS Client App](#downloading-the-lcs-client-app)
-2. [Preconfiguring LCS to Connect Through a Proxy](#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
+2. [Preconfiguring LCS to Connect Through a Proxy](#preconfiguring-lcs-to-connect-through-a-proxy)
 3. [Ensuring Access to LCS](#ensuring-access-to-lcs)
 4. [NTP Server Synchronization](#ntp-server-synchronization)
 5. [Configuring the Patching Tool](#configuring-the-patching-tool)
@@ -279,7 +279,7 @@ the LCS client app. Follow these steps to install the app:
     `osgi/marketplace`. 
 
 Great! Now you're all set to 
-[activate your server with LCS](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs). 
+[activate your server with LCS](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/activating-your-liferay-dxp-server-with-lcs). 
 
 The next section shows you how to upgrade the LCS client app. We highly 
 recommend that you do this whenever Liferay releases a new version of the app. 
