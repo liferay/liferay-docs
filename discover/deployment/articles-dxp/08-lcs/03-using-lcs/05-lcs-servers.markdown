@@ -53,7 +53,7 @@ background is red for values above 3,000 ms, orange for values from 2,000 to
 3,000 ms, and green for values less than 2,000 ms. Likewise, the table displays 
 all load times greater than 3,000 ms in red text. 
 
-![Figure 1: The Page Analytics interface in the LCS Server view.](../../images-dxp/lcs-page-analytics-01.png)
+![Figure 1: The Page Analytics interface in the LCS Server view.](../../../images-dxp/lcs-page-analytics-01.png)
 
 ## Snapshot Metrics
 
@@ -69,7 +69,7 @@ portlets in your server. The Cache category lists Liferay Single VM metrics and
 Hibernate metrics. The following screenshot shows the statistics in the Portlets 
 category.
 
-![Figure 2: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../images-dxp/lcs-server-metrics-application-portlets.png)
+![Figure 2: The LCS application metrics show portlet performance statistics, like frequency of use and average load time.](../../../images-dxp/lcs-server-metrics-application-portlets.png)
 
 The JVM category, as its name indicates, shows statistics about the JVM running 
 on your server. This includes data on the garbage collector and memory. The 
@@ -78,7 +78,7 @@ collector item. The memory metrics are presented in a bar chart that shows the
 usage of the PS Survivor Space, PS Old Gen, PS Eden Space, Code Cache, and PS 
 Perm Gen.
 
-![Figure 3: The LCS JVM metrics show performance data for memory and the garbage collector.](../../images-dxp/lcs-server-metrics-jvm.png)
+![Figure 3: The LCS JVM metrics show performance data for memory and the garbage collector.](../../../images-dxp/lcs-server-metrics-jvm.png)
 
 Server is the third category in Snapshot Metrics. The Server category shows 
 additional information about how your server is running. For example, a 
@@ -86,7 +86,7 @@ horizontal bar graph shows the number of current threads running on your server.
 Similarly, horizontal bar graphs are used to represent the JDBC connection 
 pools. 
 
-![Figure 4: The LCS server metrics show current threads and JDBC connection pools.](../../images-dxp/lcs-metrics-server.png)
+![Figure 4: The LCS server metrics show current threads and JDBC connection pools.](../../../images-dxp/lcs-metrics-server.png)
 
 Note that in Snapshot Metrics, the application and garbage collector metrics are 
 based on data collected by LCS from server registration to the present. Memory 
@@ -99,7 +99,7 @@ page. The available and installed fix packs appear in separate tables. The
 available fix packs table functions exactly like the Fix Packs table in 
 environment view for downloading and installing fix packs. 
 
-![Figure 5: The Fix Packs tab displays your server's available and installed fix packs.](../../images-dxp/lcs-server-fix-packs.png)
+![Figure 5: The Fix Packs tab displays your server's available and installed fix packs.](../../../images-dxp/lcs-server-fix-packs.png)
 
 ## Portal Properties
 
@@ -127,7 +127,7 @@ top-right of the table. For example, by checking the *Show Default Values* and
 custom property values. To show only the custom values, select only *Show Custom 
 Values*. 
 
-![Figure 6: Click the gear icon to select the type of portal properties to show in the table.](../../images-dxp/lcs-server-portal-properties.png)
+![Figure 6: Click the gear icon to select the type of portal properties to show in the table.](../../../images-dxp/lcs-server-portal-properties.png)
 
 ## Details
 
@@ -137,11 +137,11 @@ respectively, about your @product@ installation, Java installation, and
 hardware. This information is useful to the Liferay Support team in the event 
 that you need their assistance. 
 
-![Figure 7: The Details tab shows information about your server.](../../images-dxp/lcs-server-details.png)
+![Figure 7: The Details tab shows information about your server.](../../../images-dxp/lcs-server-details.png)
 
 ## Server Settings
 
 Lastly, the *Server Settings* tab lets you view and edit your server's name, 
 location, and description. You can also unregister your server from LCS. 
 
-![Figure 8: You can use the Server Settings tab to give your server a fun name.](../../images-dxp/lcs-server-settings.png)
+![Figure 8: You can use the Server Settings tab to give your server a fun name.](../../../images-dxp/lcs-server-settings.png)

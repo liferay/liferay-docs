@@ -15,7 +15,7 @@ You can access these features from the *Subscriptions* tab on the upper-left of
 the LCS site. This tab contains two other tabs: *Details* and *Elastic 
 Subscriptions*. 
 
-![Figure 1: LCS lets you view and manage your subscriptions.](../../images-dxp/lcs-subscriptions.png)
+![Figure 1: LCS lets you view and manage your subscriptions.](../../../images-dxp/lcs-subscriptions.png)
 
 There are four tables in the *Details* tab: 
 
@@ -85,7 +85,7 @@ be set as elastic when it's created. For more information, see the
 
 $$$
 
-![Figure 2: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../images-dxp/lcs-elastic-subscriptions.png)
+![Figure 2: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../../images-dxp/lcs-elastic-subscriptions.png)
 
 The *Elastic Subscriptions* tab displays the number of elastic servers online 
 and the uptime details for each. A graph shows the number of elastic servers 

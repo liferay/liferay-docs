@@ -19,7 +19,7 @@ Dockbar. This takes you to a UI that contains three tabs:
     other existing rules. Each has an Actions button that lets you edit or 
     delete it. 
 
-    ![Figure 1: You can add rules to determine the events that trigger notifications.](../../images-dxp/lcs-add-notification-rule.png)
+    ![Figure 1: You can add rules to determine the events that trigger notifications.](../../../images-dxp/lcs-add-notification-rule.png)
 
 -   **Notification History:** Displays your web notification history in a 
     searchable table. You can also select the date range from which to display 
@@ -29,7 +29,7 @@ Dockbar. This takes you to a UI that contains three tabs:
     change your account's language, time zone, and default LCS project. Your 
     default LCS project is the one shown each time you log in to LCS. 
 
-    ![Figure 2: You can change your LCS account's general preferences.](../../images-dxp/lcs-account-preferences.png)
+    ![Figure 2: You can change your LCS account's general preferences.](../../../images-dxp/lcs-account-preferences.png)
 
 ## Using Web Notifications
 
@@ -44,4 +44,4 @@ see your notification history, click the *Notifications History* button. You can
 also access your notification history by selecting *My Account* from the user 
 menu in the Dockbar. 
 
-![Figure 3: Web notifications let you know what's happening in your LCS projects.](../../images-dxp/lcs-user-web-notifications.png)
+![Figure 3: Web notifications let you know what's happening in your LCS projects.](../../../images-dxp/lcs-user-web-notifications.png)

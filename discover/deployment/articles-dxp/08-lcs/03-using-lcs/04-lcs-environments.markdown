@@ -46,7 +46,7 @@ Complete these fields to create your environment:
 
 When you're finished with your selections, click *Create Environment*. 
 
-![Figure 2: The New Environment popup.](../../images-dxp/lcs-new-environment.png)
+![Figure 2: The New Environment popup.](../../../images-dxp/lcs-new-environment.png)
 
 ## Working with Environments
 
@@ -86,4 +86,4 @@ The UI is segmented into three tabs:
     button to save any changes you make in the Environment Settings tab. You can 
     also delete the environment by clicking *Delete Environment*. 
 
-![Figure 2: The LCS environment view shows an overview of an LCS environment.](../../images-dxp/lcs-environment-view.png)
+![Figure 2: The LCS environment view shows an overview of an LCS environment.](../../../images-dxp/lcs-environment-view.png)

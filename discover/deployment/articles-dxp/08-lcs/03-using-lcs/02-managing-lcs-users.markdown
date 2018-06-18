@@ -12,7 +12,7 @@ app. To add users to your project, you must contact Liferay support.
 
 $$$
 
-![Figure 1: The Users tab lets you manage the LCS users in your project.](../../images-dxp/lcs-users.png)
+![Figure 1: The Users tab lets you manage the LCS users in your project.](../../../images-dxp/lcs-users.png)
 
 The *Users* tab displays a list of the users in your project. This list includes 
 each user's name, email, image, LCS roles, and a *Manage Roles* button. Each LCS 
@@ -68,4 +68,4 @@ LCS Environment Viewer) and the LCS Administrator role at the same time.
 
 $$$
 
-![Figure 2: You can assign or revoke a user's LCS roles.](../../images-dxp/lcs-user-roles.png)
+![Figure 2: You can assign or revoke a user's LCS roles.](../../../images-dxp/lcs-user-roles.png)

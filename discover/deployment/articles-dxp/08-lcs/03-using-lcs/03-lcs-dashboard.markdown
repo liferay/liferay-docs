@@ -19,7 +19,7 @@ message appears for a server when the server is offline. Status messages also
 appear for servers when fix packs are available, monitoring is unavailable, the 
 patching tool is unavailable, or other events occur that relate to LCS. 
 
-![Figure 1: The LCS project view shows an overview of your LCS project.](../../images-dxp/lcs-project-view.png)
+![Figure 1: The LCS project view shows an overview of your LCS project.](../../../images-dxp/lcs-project-view.png)
 
 LCS lists the environments in your project on the left side of the screen. You 
 can also create new environments here by clicking the *Add Environment* tab 
