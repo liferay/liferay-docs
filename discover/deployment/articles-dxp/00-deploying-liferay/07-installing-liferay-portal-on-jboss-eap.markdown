@@ -1,12 +1,12 @@
 # Installing @product@ on JBoss EAP
 
-Installing @product@ manually on JBoss EAP 7.1 requires these basic steps:
+Installing @product@ on JBoss EAP 7.1 requires these basic steps:
 
 - [Installing @product@ dependencies to your application server](#installing-dependencies)
 - [Configuring your application server for @product@](#configuring-jboss)
 - [Installing the @product@ WAR file to your application server](#deploying-product)
 
-Before proceeding, you should download the following files from the
+Before proceeding, download these files from the 
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise):
 
 - @product@ WAR file
@@ -21,40 +21,35 @@ your JBoss server folder. This folder is usually named `jboss-eap-[version]`.
 
 ## Installing Dependencies [](id=installing-dependencies)
 
-@product@ depends on several Liferay-specific and third-party JARs. You can
-download and install the required JARs, as described below.
+@product@ depends on several Liferay-specific and third-party JARs. 
+Download and install the required JARs as described below.
 
 1.  Create the folder `$JBOSS_HOME/modules/com/liferay/portal/main` if it
-    doesn't exist and extract the JARs from the dependencies ZIP to it. Here are
-    the JARs:
+    doesn't exist and extract the JARs from the dependencies ZIP to it: 
 
         - `com.liferay.registry.api.jar`
         - `hsql.jar`
         - `portal-kernel.jar`
         - `portlet.jar`
+        - `com.liferay.petra.concurrent` 
+        - `com.liferay.petra.executor.jar` 
+        - `com.liferay.petra.function.jar` 
+        - `com.liferay.petra.io.jar` 
+        - `com.liferay.petra.lang.jar` 
+        - `com.liferay.petra.memory.jar` 
+        - `com.liferay.petra.nio.jar` 
+        - `com.liferay.petra.process.jar` 
+        - `com.liferay.petra.reflect.jar` 
+        - `com.liferay.petra.string.jar` 
 
 2.  Download your database driver `.jar` file and copy it into the
-    same folder. For example, for MySQL, 
-    [download the MySQL Connector/J driver](http://dev.mysql.com/downloads/connector/j/).
-    and put its `.jar` file into the
-    `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
+    same folder. For example 
+    [copy MySQL's driver](http://dev.mysql.com/downloads/connector/j/)
+    into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
 
-3.  Download the remaining required JARs and insert them into the same folder.
-
-    - `com.liferay.petra.concurrent` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/)
-    - `com.liferay.petra.executor.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/)
-    - `com.liferay.petra.function.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/)
-    - `com.liferay.petra.io.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/)
-    - `com.liferay.petra.lang.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.lang/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.lang/)
-    - `com.liferay.petra.memory.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.memory/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.memory/)
-    - `com.liferay.petra.nio.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.nio/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.nio/)
-    - `com.liferay.petra.process.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.process/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.process/)
-    - `com.liferay.petra.reflect.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.reflect/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.reflect/)
-    - `com.liferay.petra.string.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.string/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.string/)
-
-4.  Create the file `module.xml` in the
-    `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert the
-    following contents:
+3.  Create the file `module.xml` in the
+    `$JBOSS_HOME/modules/com/liferay/portal/main` folder and insert this
+    configuration:
 
         <?xml version="1.0"?>
 
@@ -85,14 +80,14 @@ download and install the required JARs, as described below.
             </dependencies>
         </module>
 
-    If you are using a different database, replace the MySQL `.jar` with 
+    If you use a different database, replace the MySQL `.jar` with 
     the driver JAR for your database (e.g., HSQL, PostgreSQL, etc.).
 
-5.  Create an `osgi` folder in your Liferay Home folder. Then extract the OSGi
+4.  Create an `osgi` folder in your Liferay Home folder. Extract the OSGi
     ZIP file that you downloaded into the `osgi` folder.
 
-    @product@ requires an OSGi runtime, and the `osgi` folder provides this with
-    many required JAR files and configuration files.
+    The `osgi` folder provides the necessary modules for @product@'s OSGi
+    runtime.
 
 **Checkpoint:**
 
@@ -137,11 +132,9 @@ control point. A collection of such application servers is known as a *domain*.
 For more information on standalone mode vs. domain mode, please refer to the
 section on this topic in the
 [JBoss EAP Product Documentation](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html/introduction_to_jboss_eap/overview_of_jboss_eap#operating_modes).
-@product@ fully supports JBoss EAP when it runs in standalone mode but not when
-it runs in domain mode.
 
-You can run @product@ on JBoss EAP in domain mode, but this method is not fully
-supported. In particular, @product@'s hot-deploy does not work with a managed
+@product@ supports JBoss EAP when it runs in standalone mode but not when it
+runs in domain mode. @product@'s hot-deploy does not work with a managed
 deployment, since JBoss manages the content of a managed deployment by copying
 files (exploded or non-exploded). This prevents many @product@ plugins from
 working as intended. For example, JSP hooks don't work on JBoss EAP running in
@@ -245,11 +238,9 @@ Before continuing, verify the following properties have been set in the
 
 Now it's time for some changes to your configuration and startup scripts.
  
-You must make a few modifications to your standalone domain's configuration
-script file `standalone.conf` (`standalone.conf.bat` on Windows) found in your
-`$JBOSS_HOME/bin/` folder.
-
-These modifications change the following options: 
+In the `$JBOSS_HOME/bin` folder, you must make these modifications to your
+standalone domain's configuration script file `standalone.conf`
+(`standalone.conf.bat` on Windows):
 
 - Set the file encoding
 - Set the user time-zone
@@ -287,8 +278,8 @@ Make the following edits as applicable to your operating system:
 
 +$$$
 
-**Note:** If you plan on using the IBM JDK with your JBoss server, you'll need
-to complete some additional steps. First, navigate to the
+**Note:** If you plan on using the IBM JDK with your JBoss server, you must
+complete some additional steps. First, navigate to the
 `$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
 following dependency within the `<dependencies>` element:
 
@@ -351,7 +342,7 @@ If you want JBoss to manage your data source, follow these steps:
 
     +$$$
 
-    **Note:** If you'd like to change your datasource `jndi-name` to something
+    **Note:** If you must change your datasource `jndi-name` to something
     different, you'll need to also edit the `datasource` element in the
     `<default-bindings>` tag.
 
