@@ -1,11 +1,7 @@
 # Inviting Members to Your Site [](id=inviting-members-to-your-site)
 
-You've built a new site and now you need to get the word out about it. What 
-better way to get the word out about your site then to invite users to join it. 
-The Invite Members widget lets you to do just that!
-
-The Invite Members widget is only visible to site administrators, and lets them 
-send invitations to join the site. You can add this widget to a page from the 
+The Invite Members widget lets site administrators send invitations to join the 
+site. You can add this widget to a page from the 
 menu *Add* 
 (![Add](../../../images/icon-add-app.png)) 
 &rarr; *Widgets* &rarr; *Collaboration*. Click the button 
