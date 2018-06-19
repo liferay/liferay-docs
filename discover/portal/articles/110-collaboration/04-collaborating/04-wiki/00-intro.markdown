@@ -13,10 +13,12 @@ developed collaboratively by users from all over the world, using a wiki.
 -   Associate wiki articles with other assets in the portal. 
 -   And more.
 
-The wiki is completely integrated with the portal's 
+As you can see, @product@'s wiki is very flexible and can be configured to fit 
+nearly any use case. What's more, it's completely integrated with the portal's 
 [user management](/discover/portal/-/knowledge_base/7-1/user-management), 
 [tagging](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags), 
 and 
 [security](/discover/deployment/-/knowledge_base/7-1/liferay-portal-security) 
-features. 
+features. This lets administrators focus on building sites with wikis while the 
+portal handles everything else. 
 
