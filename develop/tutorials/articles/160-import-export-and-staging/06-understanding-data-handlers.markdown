@@ -205,5 +205,7 @@ visiting the
 tutorial.
 
 To learn how to develop data handlers for your app, visit the
-[Developing Data Handlers](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/developing-data-handlers)
-tutorial.
+[Developing Portlet Data Handlers](/develop/tutorials/-/knowledge_base/7-1/developing-portlet-data-handlers)
+and
+[Developing Staged Model Data Handlers](/develop/tutorials/-/knowledge_base/7-1/developing-staged-model-data-handlers)
+tutorials.

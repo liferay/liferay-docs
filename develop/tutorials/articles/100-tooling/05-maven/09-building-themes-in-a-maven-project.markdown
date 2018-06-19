@@ -186,4 +186,4 @@ build a theme. You'll learn how to do this next.
 
 You've successfully configured your Maven project to build a Liferay theme! For
 info on running the Theme Builder in your Maven project, see the
-[Theme Builder](/develop/tutorials/-/knowledge_base/7-1/theme-builder) tutorial.
+[Theme Builder](/develop/tutorials/-/knowledge_base/7-1/compiling-and-building-themes-with-ant-gradle-and-maven) tutorial.

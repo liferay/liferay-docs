@@ -176,4 +176,4 @@ those from traditional Java libraries, is a quite an accomplishment.
 
 [Exporting Packages](/develop/tutorials/-/knowledge_base/7-1/exporting-packages)
 
-[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-blade-cli)
+[Creating Projects with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli)

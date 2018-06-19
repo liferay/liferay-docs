@@ -15,7 +15,7 @@ Here are the steps for adding logic to MVC commands.
 3.  [Refer to the original implementation](#refer-to-the-original-implementation)
 4.  [Add the logic, and call the original](#add-the-logic)
 
-## Step 1: Implement the interface [](id=#implement-the-interface)
+## Step 1: Implement the interface [](id=implement-the-interface)
 
 Implement the respective MVC Command interface either directly or by extending
 an existing base class that implements it. Extending a base class for the

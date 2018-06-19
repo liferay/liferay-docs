@@ -20,7 +20,7 @@ This tutorial demonstrates how to
 
 Next, you'll learn how to create a Theme Contributor.
 
-## Creating Theme Contributors [](id=creating-theme-contributors)
+## Creating Theme Contributors [](id=creating-packaging-independent-ui-resources-for-your-site)
 
 The standard UI for User menus and navigation are packaged as Theme Contributors.
 For example, the Control Menu, Product Menu, and Simulation Panel are packaged
