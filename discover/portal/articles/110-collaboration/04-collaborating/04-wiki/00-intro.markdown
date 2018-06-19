@@ -1,24 +1,22 @@
 # Working Together with the Wiki [](id=working-together-with-the-wiki)
 
-@product@ contains a full-featured wiki app that also leverages the portal's 
-other features. As such, the wiki is completely integrated 
-with the portal's 
-[user management](/discover/portal/-/knowledge_base/7-1/user-management), 
-[tagging](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags), 
-and 
-[security](/discover/deployment/-/knowledge_base/7-1/liferay-portal-security) 
-features. 
-
 Wikis let users collaboratively build a collection of information. The most 
 famous wiki on the planet is Wikipedia. It's a full online encyclopedia 
 developed collaboratively by users from all over the world, using a wiki. 
+@product@ contains a full-featured wiki app that lets you do the following: 
 
-@product@'s Wiki app supports the 
-[WikiCreole](http://www.wikicreole.org/) 
-syntax. This syntax is a best-of-breed wiki syntax and should be familiar to 
-users of other wikis. The app provides a handy syntax cheat sheet on the editing 
-form, with a link to WikiCreole's full documentation.
+-   Create multiple wikis in a single wiki app instance. 
+-   Scope wikis to a page, a site, or the entire portal. 
+-   Create and edit wikis in 
+    [WikiCreole syntax](http://www.wikicreole.org/). 
+-   Attach files to wiki articles. 
+-   Associate wiki articles with other assets in the portal. 
+-   And more.
 
-An instance of the Wiki application can be created for each scope: the entire
-portal (global), a site, or a page. 
+The wiki is completely integrated with the portal's 
+[user management](/discover/portal/-/knowledge_base/7-1/user-management), 
+[tagging](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags), 
+and 
+[security](/discover/deployment/-/knowledge_base/7-1/liferay-portal-security) 
+features. 
 
