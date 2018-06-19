@@ -1,4 +1,4 @@
-# Activating Workflow
+# Activating Workflow [](id=activating-workflow)
 
 Assets are integrated with the 
 [workflow framework](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
@@ -51,11 +51,11 @@ application:
 
 Activate workflow for Web Content Folders from their folder settings menu:
 
-![Figure 2: Activate workflow on Web Content folders from the folder's edit screen.](../../images/workflow-web-content-folder.png)
+![Figure 1: Activate workflow on Web Content folders from the folder's edit screen.](../../images/workflow-web-content-folder.png)
 
 Activate workflow for Documents and Media Folders from their folder settings:
 
-![Figure x: Activate workflow on Documents and Media folders from the folder's
+![Figure 2: Activate workflow on Documents and Media folders from the folder's
 edit screen.](../../images/workflow-dm-folder.png)
 
 Enable workflow on Dynamic Data List entries in each list's Add form:
@@ -85,4 +85,3 @@ page, and the variation must be approved in the workflow, before it can be
 published to the live site.
 
 ![Figure 6: With workflow enabled on Page Revisions, the site administrator must submit their page variation for publication before it can go live.](../../images/page-revision-submission.png)
-
