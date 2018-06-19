@@ -35,10 +35,10 @@ Complete these fields to create your environment:
     environment. Elastic subscriptions let you register an unlimited number of 
     servers. This is crucial for auto-scaling environments in which servers are 
     created and destroyed automatically. For more information, see 
-    [the documentation on elastic subscriptions](liferay.com). 
+    [the documentation on elastic subscriptions](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/managing-liferay-dxp-subscriptions#elastic-subscriptions). 
 -   **Services:** The LCS services to enable in the environment. Note that 
     although 
-    [LCS doesn't access security sensitive properties](liferay.com), 
+    [LCS doesn't access security sensitive properties](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/what-lcs-stores-about-your-liferay-dxp-servers), 
     you may have additional properties you want to prevent LCS from analyzing. 
     Enter them into the popup that appears when you click *Blacklisted 
     Properties*. This Blacklisted Properties popup lists the currently 
