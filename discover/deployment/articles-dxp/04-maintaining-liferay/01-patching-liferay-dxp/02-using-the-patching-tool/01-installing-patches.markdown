@@ -1,18 +1,17 @@
 # Installing Patches [](id=installing-patches)
 
-The first thing you must do when installing patches is to shut down your server.
-On Windows operating systems, files that are in use are locked by the OS, and
-can't be patched. On Unix-style systems, you can usually replace files that are
-running, but that still leaves the old ones loaded in memory. So your best bet
-is to shut down the application server that's running @product@ before you install
-a patch. 
+Before installing any patches, you must shut down your server. On Windows
+operating systems, files that are in use are locked by the OS, and can't be
+patched. On Unix-style systems, you can usually replace files that are running,
+but the old ones reside in memory. For these reasons, it is best to shut down
+the application server that's running @product@ before installing patches. 
 
-Liferay distributes patches as `.zip` files, whether they are hotfixes or fix
-packs. When you receive one, either via a LESA ticket (hotfix) or through
-downloading a fix pack from the [Customer Portal](https://web.liferay.com/group/customer), 
-place it in the `patches` folder that's inside the Patching Tool's home
-folder. Once you've done that, it's a simple matter to install it. First,
-execute
+Liferay distributes all patches (fix packs and hotfixes) as ZIP files. When you
+download a patch, either from a LESA ticket (hotfix) or from the
+[Customer Portal](https://web.liferay.com/group/customer)
+(fix pack), place it in the Patching Tool's `patches` folder (e.g., `[Liferay
+Home]/patching-tool/patches`). To list your installed patches and available
+local patches, execute this command: 
 
     patching-tool info
  
@@ -26,7 +25,7 @@ issue the following command:
 
 To make sure the all changed OSGi bundles replace the existing ones, it is
 recommended to delete the `osgi/state` folder from the
-[Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home). 
+[Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home). 
 
 +$$$
 
@@ -54,31 +53,30 @@ you to update them. To get the list, run this command:
     patching-tool index-info
 
 Since there's no database connection at patching time, the indexes must be
-created at portal startup. To have the indexes created automatically, add the
-following line to the `portal-ext.properties` file if the server has permissions
-to modify the indexes on the database:
+created at portal startup. If the server has permissions to modify the database
+indexes, instruct @product@ to create the indexes automatically at startup by
+adding this setting to your `portal-ext.properties` file:
 
     database.indexes.update.on.startup=true
 
-Otherwise, you must create the indexes manually. Check the output of the
-`patching-tool index-info` command for more details.
+Otherwise, you must create the indexes manually. Check the 
+`patching-tool index-info` command output for more details.
 
-Once your patches have been installed, you can verify them by using the
-`patching-tool info` command, which now shows your patches in the list of
-installed patches. 
+After installing patches, you can execute the `patching-tool info` command to
+verify them. 
 
 +$$$
 
-**Note:** If there are any issues with the installed fixes, verify that there aren't
-any remaining files from the previous patch installation of a fix pack or
+**Note:** If there are any issues with the installed patches, verify that there 
+aren't any remaining files from the previous patch installation of a fix pack or
 hotfix within the application server cache.
 
 $$$
 
 During the installation, `patching-backup-deps.zip` and `patching-backup.zip`
-files are created and stored in the `ROOT/WEB-INF` folder. These files are
-necessary to restore the @product@'s original state; removing them would disable
-further patching. 
+files are created and stored in the web application's `WEB-INF` folder. These
+files are required to restore the @product@'s original state; removing them
+disables patching. 
 
 +$$$
 
@@ -95,35 +93,43 @@ one. To revert the installed fix pack, it examines the contents of the
 
 ## Handling Hotfixes and Patches [](id=handling-hot-fixes-and-patches)
 
-As stated above, hotfixes are short term fixes provided as quickly as possible,
-and fix packs are larger bundles of hotfixes provided to all customers at
-regular intervals. If you already have a hotfix installed and the fix pack
+As stated previously, hotfixes are short term fixes provided as quickly as
+possible, and fix packs are larger bundles of hotfixes provided to all customers
+at regular intervals. If you already have a hotfix installed and the fix pack
 that contains that hotfix is released, the Patching Tool can manage this for
-you. Fix packs always supersede hotfixes, so when you install your fix pack,
-the hotfix that it contains is uninstalled, and the fix pack version is
-installed in its place. 
+you. Fix packs always supersede hotfixes; so when you install your fix pack, the
+hotfix that it contains is uninstalled and the fix pack version is installed in
+its place. 
 
-Sometimes there can be a fix to a fix pack. This is also handled automatically.
-If a new version of a fix pack is released, you can use the Patching Tool to
-install it. The Patching Tool uninstalls the old fix pack and installs the new
-version in its place. 
+The Patching Tool applies fixes to fix packs automatically. If a new (fixed)
+version of a fix pack is released, install it with the Patching Tool. The
+Patching Tool uninstalls the old fix pack and installs the new version in its
+place. 
 
 ## Fix Pack Dependencies [](id=fix-pack-dependencies)
 
-Some hotfixes require a fix pack to be installed first. If you attempt to
-install a hotfix that depends on a fix pack, the Patching Tool notifies
-you. Go to the customer portal and obtain the hotfix dependency. Once all the
-necessary patches are available in the `patches` folder, the Patching Tool 
-installs them. 
+Some hotfixes depend on fix packs. If you attempt to install a hotfix that
+depends on a fix pack, the Patching Tool notifies you. Go to the 
+[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
+and obtain the hotfix dependency. Once all the necessary patches are available
+in the `patches` folder, the Patching Tool installs them. 
 
-The Patching Tool can also remove patches. 
+## Updating the Patching Tool [](id=updating-the-patching-tool)
+
+When a patch you're trying to install requires a Patching Tool update, the
+Patching Tool tells you. To update the Patching Tool, download the latest one
+from the
+[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool).
+Overwrite the existing Patching Tool by unzipping the new one to the
+`patching-tool` folder's parent folder. 
 
 ## Cleaning Up [](id=cleaning-up)
 
 After you've performed your patching procedure (whether you've installed or
-removed patches), it's important to clean up @product@'s cache of deployed code.
-This ensures that when you start the server, you're using the revision you've
-just installed the patches for. This is really easy to do. 
+[removed patches](/discover/deployment/-/knowledge_base/7-1/working-with-patches#uninstalling-patches)),
+it's important to clean up @product@'s cache of deployed code. This ensures that
+you're using the revision you've just installed the patches for when you start
+the server. This is really easy to do. 
 
-In the Liferay Home folder is a folder called `work`. Remove the contents of
-this folder to clear out the cached code. Now you're ready to start your server.
+To clear out the cached code, remove the contents of the `[Liferay Home]/work`
+folder. Now you're ready to start your server.

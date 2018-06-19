@@ -1,40 +1,50 @@
 # Working with Patches [](id=working-with-patches)
 
-TODO
+Here are some things you might need to do with patches as you work with them:
 
-## Including '*support-info*' in LESA Tickets [](id=including-support-info-in-lesa-tickets)
+- [Report Patch Levels to Liferay Support](#including-support-info-in-support-tickets)
+- [Uninstall Patches](#uninstalling-patches) 
+- [Compare Patch Levels](#comparing-patch-levels)
+- [Separate Patches from your Installation](#separating-patches-from-the-installation)
 
-To enable Liferay to reproduce subscriber issues, it is critical that the patch
-level in a given environment be made available to Liferay. 
+Start with reporting patch levels to Liferay Support.
 
-To generate the patch level for your environment, use the following command: 
+## Including support-info in Support Tickets [](id=including-support-info-in-support-tickets)
+
+Providing your environment's patch level to Liferay Support is critical for
+reproducing issues you report. Write your support information (includes your
+patch level) to a file by executing this command: 
 
     patching-tool support-info
 
-A text file called `patching-tool-support-info-actual-timestamp.txt` is created
-in the patching-tool folder. Please upload this file to the LESA ticket.
+The support information is written to file
+`patching-tool-support-info-actual-timestamp.txt` in your `patching-tool`
+folder. Please upload this file to the LESA ticket.
 
-## Removing or Reverting Patches [](id=removing-or-reverting-patches)
+## Uninstalling Patches [](id=uninstalling-patches)
 
 Have you noticed that the Patching Tool only seems to have an `install` command?
 This is because patches are managed not by the command, but by what appears in
 the `patches` folder. You manage the patches you have installed by adding or
-removing patches from this folder. If you currently have a patch installed that
-you don't want, remove it from the `patches` folder. When you run the
-`patching-tool install` command, and the patch is removed. 
+removing patches from this folder.
 
-If you want to remove all patches you've installed, use the `./patching-tool.sh
-revert` command. This removes all patches from your installation.
+Here's how to uninstall (remove) a patch:
 
-Prior to Fix Pack 13, the OSGi state folder could retain obsolete bundles in
-its cache. If you're running a version prior to Fix Pack 13, delete the
-*osgi/state* folder in Liferay Home.
+1.  Remove the patch from your `patches` folder. 
+
+2.  Run the `patching-tool install` command. 
+
+To revert ALL patches, run this command:
+
+    patching-tool revert
+
+Now you know how to remove and revert patches. 
 
 ## Comparing Patch Levels [](id=comparing-patch-levels)
 
 If you're a developer, the Patching Tool can show you what changed between
-different versions. These commands show you information about the different
-patch levels:
+different @product@ patches and versions. These commands show you information
+about the different patch levels:
 
 `patching-tool diff`: Prints the differences between two patch levels. At least
 one stored patch level must be available. This command accepts options for
@@ -47,8 +57,8 @@ filtering the output:
 For detailed usage information, run `patching-tool help diff`.
 
 `patching-tool store`: Manages patching level information for diff command. Your
-patches must contain source code to store the patch level and to prepare usable information for
-the "diff" command. This command has four options: 
+patches must contain source code to store the patch level and to prepare usable
+information for the `diff` command. Here are the `store` command options: 
 
 - `info`: Prints the list of patches which make up the stored patch level.
 - `add`: Stores the patch level that can be found in the patches directory.
@@ -57,29 +67,29 @@ the "diff" command. This command has four options:
 
 For detailed usage information, run `patching-tool help store`.
 
-## Separating the Patches from the @product@ Installation [](id=separating-the-patches-from-the-product-installation)
+## Separating Patches from the Installation [](id=separating-patches-from-the-installation)
 
-As of Patching Tool 2.0.6, there's a feature that helps reduce the patched
-@product@ bundle size. If the bundle has been patched, you can make it smaller
+The Patching Tool's `separate` command helps reduce the patched @product@
+installation size. If the installation has been patched, you can make it smaller
 by moving the restore files out of it.
 
-Patched bundles are large because the restore files by default are stored inside
-the web application's WEB-INF folder. These files are required for patching the
-@product@ instance again.
+Patched installations are large because the restore files are stored inside the
+web application's `WEB-INF` folder by default. These files are required for
+patching the installation again.
 
-If these files were removed, subsequent patching processes would fail. Because
-of this, Liferay added an option to separate the patching files from the
-@product@ bundle while still preserving restoring them safely when new patches
-arrive. To do this, you use this command: 
+If these files are removed, subsequent patching processes fail. Because of
+this, Liferay added an option to separate the patching files from the
+installation while still preserving and restoring them safely when new patches
+arrive. To do this, use this command: 
 
     patching-tool separate [separation_name] 
  
-This command produces a `liferay-patching-files-[separation-name].zip`file in
+This command produces a `liferay-patching-files-[separation-name].zip` file in
 the Patching Tool's `patches` folder. It contains the necessary files and
 metadata for patching, verification, and validation. Once you create this file,
 the patch files are removed from their default location and are now only
-available in this file. You can now move the file elsewhere to make the bundle's
-size smaller. 
+available in this file. You can store this file elsewhere to reduce your
+installation's size. 
 
 **WARNING:** If the product is separated from its patches in this way, you
 cannot run most of the Patching Tool commands until the patches are restored.
@@ -100,11 +110,11 @@ This is how you restore the patch files to your system. Details below.
 
 ## Restoring the Separated Patch Files [](id=restoring-the-separated-patch-files)
  
-When you need to patch @product@ again, you must restore the
-separated patch artifact. To do this, copy the
-`liferay-patching-files-[separation-name].zip` back to the
-Patching Tool's `patches` folder and run `patching-tool setup` command.
+When you need to patch @product@ again, you must restore the separated patch
+artifact. To do this, copy the `liferay-patching-files-[separation-name].zip`
+back to the Patching Tool's `patches` folder and run `patching-tool setup`
+command.
 
-If the command finds the necessary patching artifact, it restores the patch
-files to the bundle. After that, the Patching Tool works like it did prior to
+The command finds the necessary patching artifact and restores the patch files
+to the installation. After that, the Patching Tool works like it did prior to
 separating the patches. 
