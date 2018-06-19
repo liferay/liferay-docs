@@ -806,7 +806,7 @@ public class CheckLinks {
 
 		System.out.println(resultsNumber + ". " + "**" + message + "**\n File: " +
 				article.getPath() + ":" + lineNumber + "\n" +
-				" Line: " + line);
+				" Line: " + line + "\n");
 
 	}
 
