@@ -1,19 +1,19 @@
 # Sending Alerts and Announcements [](id=sending-alerts-and-announcements)
 
-You can use the Alerts and Announcements widgets on site pages to broadcast 
+You can use the Alerts and Announcements widgets on Site pages to broadcast 
 important information to users. The Alerts widget is designed for displaying 
 high-priority information (e.g. planned downtime alerts, security alerts, etc.). 
-Each alert is therefore labeled with a red *Important* tag. The Announcements 
-widget is designed to display all other information you want to broadcast on 
-your site. Each announcement therefore lacks the red tag. To separate important 
-alerts from more mundane announcements, you can place the Alerts and 
-Announcements widgets on different pages. However, you can use either widget to 
-display any information you wish. Besides the red tag, they function the same. 
-You can also scope your alerts and announcements to specific groups of users. 
+Each alert is therefore labeled with a red *Important* tag. The Announcements
+widget displays all other information you want to broadcast on your site. Each
+announcement therefore lacks the red tag. To separate important alerts from
+more mundane announcements, you can place the Alerts and Announcements widgets
+on different pages. However, you can use either widget to display any
+information you wish. Besides the red tag, they function the same. You can also
+scope your alerts and announcements to specific groups of users. 
 
 ![Figure 1: The Alerts widget provides administrators with an easy way to communicate important information to appropriate groups of users.](../../../images/alerts-widget.png)
 
-These widgets have 2 tabs: 
+These widgets have two tabs: 
 
 -   **Unread:** Non-expired alerts/announcements that you haven't read.
 -   **Read:** Alerts/announcements that have expired, or that you've read. 
@@ -23,7 +23,7 @@ Click an alert/announcement's *Actions* button
 
 ## Creating Alerts and Announcements [](id=creating-alerts-and-announcements)
 
-There are 2 places where you can create alerts and announcements: 
+There are two places where you can create alerts and announcements: 
 
 1.  The *Announcements and Alerts* app in the Control Panel. In this app, 
     announcements and alerts are in separate tabs. To begin creating an 
@@ -53,10 +53,10 @@ it is the same. Follow these steps to complete the form:
 2.  Open the *Configuration* section of the form and set the following options, 
     if desired: 
 
-    -   **Distribution Scope:** The scope to display the alert/announcement in. 
-        The *General* scope, which is the default, sends the alert/announcements 
-        to everyone. Alternatively, you can select your site or specific roles 
-        as the scope. 
+    -   **Distribution Scope:** The scope where the alert/announcement is
+        displayed. The default *General* scope sends the alert/announcements to
+        everyone. Alternatively, you can select your site or specific roles as
+        the scope. 
 
     -   **URL:** A URL (optional) to include with the alert/announcement. For 
         example, an announcement about a news story could include a link to the 
@@ -70,7 +70,7 @@ it is the same. Follow these steps to complete the form:
         for details. 
 
     -   **Priority:** The announcement's priority. This can be *Normal* or 
-        *Important*. Note that this is grayed out for alerts because alerts are 
+        *Important*. Note that this is disabled for alerts because alerts are 
         always high priority. 
 
     -   **Display Date:** The display date of the alert/announcement. This 
@@ -93,7 +93,7 @@ it is the same. Follow these steps to complete the form:
 
 ## User Configuration [](id=user-configuration)
 
-Each user can configure how they'd like to receive announcements. 
+Users can configure how they'd like to receive announcements. 
 
 1.  From the Menu 
     (![Menu](../../../images/icon-menu.png)), open your user menu and select 
@@ -116,27 +116,27 @@ Each user can configure how they'd like to receive announcements.
 ## Alert and Announcement Roles [](id=alert-and-announcement-roles)
 
 You can also create roles for users to make general announcements. For instance, 
-if you'd like an employee in your site to have strict control over what is 
-announced, you can assign them to an Announcements role. Follow these steps to 
-create a simple Announcements role: 
+if you want someone specific to have strict control over announcements, give
+that person an Announcements Role. Follow these steps to create a simple
+Announcements Role: 
 
 1.  Navigate to *Control Panel* &rarr; *Users* &rarr; *Roles*. 
 
-2.  With the the *Regular Roles* tab selected, click the *Add* button 
+2.  With the *Regular Roles* tab selected, click the *Add* button 
     (![Add](../../../images/icon-add.png)). This opens the *New Role* form. 
 
-3.  Name your role *Announcements*, give it a title and description, and click 
+3.  Name your Role *Announcements*, give it a title and description, and click 
     *Save*. 
 
-4.  Select the role's *Define Permissions* tab then grant these permissions: 
+4.  Select the Role's *Define Permissions* tab then grant these permissions: 
 
     -   In *Control Panel* &rarr; *General Permissions*, select *Add General 
         Announcements*. 
     -   In *Site Administration* &rarr; *Applications* &rarr; *Announcements*, 
         select all the resource permissions.
 
-    Click *Save* after selecting each permission. These permissions let the role 
+    Click *Save* after selecting each permission. These permissions let the Role 
     add alerts and announcements. 
 
-Now you have a simple Announcements role that can manage your site's general 
-announcements. Of course, you can adjust this role's permissions. 
+Now you have a simple Announcements Role that can manage your site's general 
+announcements. Of course, you can adjust this Role's permissions. 
