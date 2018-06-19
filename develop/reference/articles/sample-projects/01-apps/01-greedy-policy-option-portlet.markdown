@@ -31,8 +31,7 @@ Here are each module's file structures:
 - `service-reference/`
     - `bnd.bnd`
     - `configs/`
-        - `com.liferay.blade.reluctant.vs.greedy.portlet.portlet.ReluctantPortlet.config` &rarr; `ReluctantPortlet` configuration file for Liferay DXP DE 7.0 Fix Pack 8 or later and Liferay CE Portal 7.0 GA4 or later
-        - `com.liferay.blade.reluctant.vs.greedy.portlet.portlet.ReluctantPortlet.cfg` &rarr; `ReluctantPortlet` configuration file for Liferay DXP DE 7.0 Fix Packs earlier than Fix Pack 8 and Liferay CE Portal 7.0 GA3 or earlier
+        - `com.liferay.blade.reluctant.vs.greedy.portlet.portlet.ReluctantPortlet.config` &rarr; `ReluctantPortlet` configuration file
     - `src/main/java/com/liferay/blade/reluctant/vs/greedy/portlet/`
         - `api/`
             - `SomeService.java` &rarr; Service interface
@@ -224,9 +223,9 @@ instance.
 The service configuration filters on a service whose `component.name` is
 `com.liferay.blade.reluctant.vs.greedy.service.HigherRankedService`.
 
-Note: For deploying to Liferay DXP DE 7.0 Fix Pack 8 or later or Liferay CE
-Portal 7.0 GA4 or later, use file with suffix `.config`. For earlier versions,
-use the file with suffix `.cfg`.
+Note: For deploying to @product-ver@, use file with suffix `.config`. For
+earlier versions (i.e., Liferay DXP 7.0 Fix Packs earlier than Fix Pack 8 and
+Liferay CE Portal 7.0 GA3 or earlier), use the file with suffix `.cfg`.
 
 Here are the steps to reconfigure `ReluctantPortlet` to use
 `HigherRankedService`:

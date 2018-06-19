@@ -29,7 +29,7 @@ application.
 2.  Now you need to define a JNDI connection to your database. The way this is
     done depends on your application server. Here we demonstrate how to specify
     the JNDI connection for Tomcat. First, edit your
-    `[LIFERAY_HOME]/tomcat-8.0.32/conf/server.xml` file and add this resource
+    `[LIFERAY_HOME]/tomcat-9.0.6/conf/server.xml` file and add this resource
     element inside of the `<GlobalNamingResources>` element:
 
         <Resource
@@ -49,8 +49,8 @@ application.
     Replace the specified username and password with the correct values for your
     database.
 
-3.  Edit your `[LIFERAY_HOME]/tomcat-8.0.32/conf/context.xml` file and add
-    this resource link element inside of the `<Context>` element:
+3.  Edit your `[LIFERAY_HOME]/tomcat-9.0.6/conf/context.xml` file and add this
+    resource link element inside of the `<Context>` element:
 
         <ResourceLink name="jdbc/externalDataSource" global="jdbc/externalDataSource" type="javax.sql.DataSource"/>
 

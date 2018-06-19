@@ -38,7 +38,7 @@ First, note the language keys provided by each module:
     - `blade_language_web_override_LanguageWebPortlet.caption=Hello from the BLADE Language Module but you won't see me!`
 
 When you place the sample BLADE Language Web portlet on a @product@ page, you're
-presented with three language keys.
+presented with three language keys:
 
 ![Figure 2: The Language Web portlet displays three phrases, two of which are shared from a different module.](../../../images/shared-language-keys.png)
 
@@ -72,7 +72,7 @@ republishing an aggregate `ResourceBundleLoader`. This can be done two ways:
 
     You can get a reference to the registered service in your components as
     detailed in the
-		[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#overriding-a-modules-language-keys)
+		[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys#overriding-a-modules-language-keys)
 		tutorial. The main disadvantage of this approach is that it forces you to
 		provide a specific implementation of the `ResourceBundleLoader`, making it
 		harder to modularize in the future.
@@ -90,7 +90,7 @@ republishing an aggregate `ResourceBundleLoader`. This can be done two ways:
     the modules referencing them to recognize their updates.
 
 For more information on sharing language keys, visit the
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+[Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
 tutorials.
 
 ## Where Is This Sample? [](id=where-is-this-sample)

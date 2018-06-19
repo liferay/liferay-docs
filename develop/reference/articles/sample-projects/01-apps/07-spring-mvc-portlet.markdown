@@ -37,7 +37,7 @@ leverages all of the Liferay Workspace tools and Gradle to build the WAR. You
 must build and deploy the `service-builder/basic-api` and
 `service-builder/basic-service` modules for this sample to work properly. For
 more information on using Spring MVC portlets in @product@, visit the
-[Spring MVC](/develop/tutorials/-/knowledge_base/7-0/spring-mvc) tutorial.
+[Spring MVC](/develop/tutorials/-/knowledge_base/7-1/spring-mvc) tutorial.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 

@@ -2,7 +2,7 @@
 
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
-The Simulation Panel App provides new functionality in @product's Simulation
+The Simulation Panel App provides new functionality in @product@'s Simulation
 Menu. When deploying this sample with no customizations, the *Simulation Sample*
 feature is provided in the Simulation Menu with four options.
 
@@ -48,9 +48,9 @@ class implementing `PanelApp` to use other technologies, such as FreeMarker.
 
 To learn more about Liferay Portal's product navigation using panel categories
 and panel apps, see the
-[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
+[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu)
 tutorial. For more information on extending the Simulation Menu, see the
-[Extending the Simulation Menu](/develop/tutorials/-/knowledge_base/7-0/extending-the-simulation-menu)
+[Extending the Simulation Menu](/develop/tutorials/-/knowledge_base/7-1/extending-the-simulation-menu)
 tutorial.
 
 ## Where Is This Sample? [](id=where-is-this-sample)
