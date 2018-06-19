@@ -152,7 +152,7 @@ required by LCS:
 
 -   [`lcs.liferay.com`](https://lcs.liferay.com/) 
     should be viewable in a browser.
--   `lcs-gateway.liferay.com` should respond on ports 80 and 443: 
+-   `lcs-gateway.liferay.com` should respond on port 443: 
 
         curl -vk -I "https://lcs-gateway.liferay.com"
         telnet lcs-gateway.liferay.com 443
