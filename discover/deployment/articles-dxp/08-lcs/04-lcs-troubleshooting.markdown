@@ -148,11 +148,11 @@ $$$
 ### Server Can't Reach LCS [](id=server-cant-reach-lcs)
 
 If your server can't reach LCS, verify that you can access the public sites
-required by LCS:
+required by LCS: 
 
 -   [`lcs.liferay.com`](https://lcs.liferay.com/) 
-    should be viewable in a browser.
--   `lcs-gateway.liferay.com` should respond on ports 80 and 443: 
+    should be viewable in a browser. 
+-   `lcs-gateway.liferay.com` should respond on port 443: 
 
         curl -vk -I "https://lcs-gateway.liferay.com"
         telnet lcs-gateway.liferay.com 443
