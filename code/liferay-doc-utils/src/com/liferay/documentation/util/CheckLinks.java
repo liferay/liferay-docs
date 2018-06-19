@@ -257,7 +257,7 @@ public class CheckLinks {
 
 			if (!validUrl) {
 				logInvalidUrl(article, in.getLineNumber(), line, false);
-				System.out.println("Invalid Header: " + header);
+				System.out.println("Invalid Header: " + header + "\n");
 			}
 		}
 
@@ -293,7 +293,7 @@ public class CheckLinks {
 
 			if (!validUrl) {
 				logInvalidUrl(article, in.getLineNumber(), line, false);
-				System.out.println("Invalid Subheader: #" + secondaryHeader);
+				System.out.println("Invalid Subheader: #" + secondaryHeader + "\n");
 			}
 	    }
 	}
