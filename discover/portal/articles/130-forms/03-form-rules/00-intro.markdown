@@ -3,23 +3,23 @@
 What's the difference between a chicken and a dog? Among other things, you can't
 train a chicken, while dogs are quite trainable. If you're skeptical, try
 teaching your chicken to sit on command or herd sheep. Better yet, get a team of
-chickens to pull a sled in the [Iditarod](http://iditarod.com/).  The Forms
+chickens to pull a sled in the [Iditarod](http://iditarod.com). The Forms
 application is much more like the dog than the useful (southwestern omelet
 anyone?) but untrainable chicken, and it's only getting more trainable as time
-goes on. 
+passes. 
 
 Form rules are a good example of the trainable nature of the Forms application.
 With form rules, you can train your form fields to behave as you wish. There are
-several actions you can subject your form fields to:
+several things you can make them do: 
 
 Show/hide
 : Based on a predefined condition, set the visibility of a form field.
 
 Enable/disable
-: Make a form field enabled or disable based on a predefined condition.
+: Use a predefined condition to enable or disable a field.
 
 Require
-: Make a form field required based on a predefined condition.
+: Use a predefined condition to make a field required.
 
 Jump to Page
 : Based on user input, skip over some form pages directly to a relevant
@@ -37,9 +37,9 @@ Form rules are for changing fields and form elements by acting on conditions.
 *If [condition] do [action].*
 
 If you're not already familiar with the Forms application, start
-[here](/discover/portal/-/knowledge_base/7-1/forms).
-Once you know how to create forms and publish forms, and add and configure form
-fields, come back here and learn about form rules.
+[here](/discover/portal/-/knowledge_base/7-1/forms). Once you know how to create
+forms, add and configure fields, and then publish forms, come back here and
+learn about form rules.
 
 ## The Anatomy of a Form Rule [](id=the-anatomy-of-a-form-rule)
 
@@ -49,18 +49,20 @@ Each rule consists of one or more conditions and actions.
 
 *Actions* determine what happens if the condition is met.
 
-Rules are stored in the @product@ database in JSON format by default.
+Rules are stored in the database in JSON format by default.
 
 ## Creating Form Rules: Rule Builder [](id=creating-form-rules-rule-builder)
 
 Once you create a form and lay out its fields, you're ready to set up rules in
-your form. First, save the form.
+your form: 
 
-Open the Rule Builder by clicking the *Rules* tab at the top of the *Edit Form*
-screen.
+1.  Save the form.
 
-In the rule builder view, you can now begin developing your form rule. Click the
-Add button (![Add](../../../images/icon-add.png)) to get started.
+2.  Open the Rule Builder by clicking the *Rules* tab at the top of the *Edit
+    Form* screen.
+
+3.  In the rule builder view, you can now begin developing your form rule. Click
+    the *Add* button (![Add](../../../images/icon-add.png)) to get started.
 
 ![Figure 1: The Rule Builder gives you a handy interface for creating dynamic
 form rules.](../../../images/forms-rule-builder.png)

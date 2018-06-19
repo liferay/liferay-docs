@@ -1,13 +1,14 @@
 # Action: Jump to Page [](id=action-jump-to-page)
 
-Use a Jump to Page rule to automatically navigate to a specific page in the form
-based on one or more conditions. This is useful if some pages of the form don't
-apply to all the form's users. Even fields marked as required on the skipped
-pages can be successfully skipped using this rule.
+Use a Jump to Page rule to navigate automatically to a specific page in the form
+based on one or more conditions. This is useful if some pages don't apply to all
+the form's users. Even fields marked as required on the skipped pages can be
+successfully skipped using this rule.
 
-This action won't appear in the rule builder unless the form has multiple pages.
+This action doesn't appear in the rule builder unless the form has multiple
+pages.
 
-To follow the example here:
+To follow the example here,
 
 1.  Create a second form page called *Team Information*.
 
@@ -23,9 +24,9 @@ To follow the example here:
 
 **Example:** There's a question on the *Team Information* page of the dog sled
 race registration form that asks *Are you a returning racer with the same team?*
-If you select *Yes*, when you click the form's *Next* button, you will skip to
+If you select *Yes*, when you click the form's *Next* button, you skip to
 the final page of the form, since there's no need to fill out your animal's name
-again. Their monogrammed t-shirts will be ready at the start of the race.
+again. Their monogrammed T-shirts will be ready at the start of the race.
 
 To configure the Jump to Page rule, 
 

@@ -6,7 +6,7 @@ populate a field, as long as the condition is met.
 
 Before configuring an autofill rule, 
 [set up a data provider](/discover/portal/-/knowledge_base/7-1/data-providers). 
-That's how the autofilled field(s) is populated. Pay careful attention to the
+That's how autofilled fields are populated. Pay careful attention to the
 input and output parameters you choose when setting up the rule.
 
 To follow this example: 
@@ -23,10 +23,10 @@ To follow this example:
 2.  On the last form page, add two fields:
 
     - A Single Selection field called *If I win I'd like my award to be:*, with
-        two choices: *Cash* and  *All Expenses Paid Vacation*.
+      two choices: *Cash* and  *All Expenses Paid Vacation*.
 
     - A Select from List field called *Choose a Destination Country*. Under
-        *Create List*, choose *From Autofill*.
+      *Create List*, choose *From Autofill*.
 
 +$$$
 

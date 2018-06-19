@@ -9,7 +9,7 @@ to feed your chicken team with the provided dog food though. There's a single
 selection field that asks *Would you like use the provided dog food?*. If you
 select *Yes*, you can select how much food, in US pounds, you'll need for your
 team throughout the race. Since you're racing chickens, you'll select *No*, and
-the *Amount (US lb.)* field will be grayed out and disabled.
+the *Amount (US lb.)* field is disabled.
 
 To follow the example, add a single selection field *Would you like to use the
 provided dog food?* with two options: *Yes* and *No*.
@@ -35,5 +35,5 @@ To set up the enable/disable rule,
 
 $$$
 
-Now the user can fill out the amount of dog food they'll need only if they
-specify that they do indeed want to use the provided food.
+Now users can fill out the amount of dog food they'll need only if they specify
+that they do indeed want to use the provided food.

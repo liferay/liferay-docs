@@ -17,23 +17,23 @@ To set this example up, add these fields to a form:
 
 **Example:** If you're under 18 years old, you need the approval of a legal
 guardian to drive a sled in a sled dog race (even if you're racing chickens, not
-dogs). The form for registering your chicken team is going to ask you the age of
-the driver. If you enter a number less than 18, the Legal Guardian Email Address
+dogs). The form for registering your chicken team asks you the age of the
+driver. If you enter a number less than 18, the Legal Guardian Email Address
 field appears.
 
 To configure a Show/Hide rule,
 
-1. Open the Rules tab of the Edit Form page and click the Add
-   (![Add](../../../images/icon-add.png)) button.
+1.  Open the Rules tab of the Edit Form page and click the Add
+    (![Add](../../../images/icon-add.png)) button.
 
-2. Define the rule:
-    - If the *I am 18 years old or older* field is equal to *No*, show the
-        *Legal Guardian Email Address* field.
+2.  Define the rule:
+     - If the *I am 18 years old or older* field is equal to *No*, show the
+       *Legal Guardian Email Address* field.
 
     ![Figure 1: Build form rules quickly by defining your conditions and
     actions.](../../../images/forms-rule-development.png)
 
-    - Save the rule. 
+     - Save the rule. 
 
     ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-rule-list.png)
 
