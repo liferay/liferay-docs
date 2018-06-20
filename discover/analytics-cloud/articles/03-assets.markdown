@@ -1,12 +1,21 @@
 # Assets: Analyzing Content
 
-Assets are individual pieces of content, residing on the pages that make up the
-Touchpoints in Analytics Cloud. In summary, Assets are:
+Assets are individual pieces of content that exist in your Liferay Analytics
+Cloud data sources. In summary, Assets are:
 
 - Content residing on a Touchpoint page.
 - Imported during the initial Analytics Cloud setup.
 - Queried and reported on at regular intervals.
 - Reported on in Analytics Cloud with the data reports shown in this article.
+
+Metrics for these Assets are currently reported in Analytcis Cloud:
+
+- Forms
+- Blogs
+- Documents and Media
+- Web Content Articles
+
+<!-- Should we link to portal documentation on these assets?-->
 
 Readers of this article have an understanding of what Analytics Cloud is and
 what they want to get out of their Asset data. They are here to understand where

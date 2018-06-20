@@ -4,6 +4,10 @@ How are your website Pages performing? Do you know if visitors are abandoning
 your site when they hit a certain Page, or if one Page is constantly getting
 views, engaging users, and drawing visitors back to your site? 
 
+<!-- In the intro should we give some distinguishing information on how our page
+analytics are different, or alternatively, say that users of other analytics
+products will quickly understand how to use our Analytics product for pages? -->
+
 What are Pages in Liferay Analytics Cloud? Pages are:
 
 - Pages on a website.
