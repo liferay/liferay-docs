@@ -3,7 +3,7 @@
 Password policies can enhance the security of @product@. You can use the default
 policy that ships with Liferay (modified or as is), or you can create your own
 policies. Policies can be assigned to users or organizations, or can be set as
-the default password used throughout the @product@ instance. 
+the default policy used throughout the @product@ instance. 
 
 ## Adding and Configuring Password Policies [](id=adding-and-configuring-password-policies)
 
