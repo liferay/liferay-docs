@@ -75,4 +75,20 @@ are all published together. The same concept applies for folders---if you
 publish a folder containing several web content articles, all the articles and
 their associated dependencies are published too.
 
-Great! Now you know how to publish single assets.
+By default, publishing single assets is only available to those with permissions
+to publish widgets. Follow the steps below to modify these permissions for a
+role:
+
+1.  Navigate to the Control Panel &rarr; *Users* &rarr; *Roles*.
+
+2.  Select the role you want to update permissions for.
+
+3.  Click the *Define Permissions* tab.
+
+4.  In the left menu, navigate to *Control Panel* &rarr; *Sites* &rarr; *Sites*.
+
+5.  Under the Resource Permissions heading, select the *Export/Import
+    Application Info* option.
+
+Great! Now you know how to publish single assets and manage the permissions for
+who can do it.
