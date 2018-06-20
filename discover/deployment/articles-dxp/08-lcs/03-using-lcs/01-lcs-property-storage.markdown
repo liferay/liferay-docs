@@ -3,14 +3,42 @@
 At this point, you might be wondering what information about your servers is 
 stored on LCS's servers. Great question! To protect your users' privacy, LCS 
 only stores system-specific data. LCS doesn't gather or store data on your 
-users. To offer the best service possible, LCS stores the following information 
-about your servers: 
+users. 
 
-- Patches installed on each server 
-- `portal.properties` (except sensitive data) 
-- JVM metrics 
-- Portal and portlet metrics 
-- Cache and server metrics 
+By default, LCS stores the following information about your server:
+
+-   Portal build number and edition
+-   Patching Tool Version
+-   LCS Client Build Number 
+-   Application Server Name
+-   Database Name
+-   File Encoding
+-   OS Name and Version
+-   Timezone
+-   IP Address
+-   Java Version and Java Options
+-   Number of Processor Cores
+-   File System Usage
+-   Memory Usage 
+
+The other data LCS stores depends on the services you enable in your environment 
+token. For more information on this, see 
+[the article on activating servers with LCS](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/activating-your-liferay-dxp-server-with-lcs). When you enable the following services, LCS gathers and stores the 
+data listed for each: 
+
+-   **Portal analytics:** 
+
+    -   Portal and portlet metrics
+    -   JVM metrics
+    -   Cache and server metrics 
+
+-   **Fix pack management:**
+
+    -   Patches installed on the server 
+
+-   **Portal properties analysis:** 
+
+    -   `portal.properties` (except sensitive data) 
 
 Sensitive data is any key-value pair that contains usernames or passwords. For 
 example, LCS doesn't store the following properties because they contain 

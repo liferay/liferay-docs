@@ -88,24 +88,6 @@ an email whenever the server shuts down unexpectedly. The documentation on
 [managing your LCS account](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/managing-your-lcs-account) 
 explains how to do this. 
 
-LCS's grace period behavior has been implemented in several patches. If you're
-not running these patches, your server's grace period may be different. The
-following table lists each patch and how it changes the grace period. Note that
-each hotfix includes the preceding hotfixes, and each fix pack includes the
-preceding fix packs. 
-
-| &nbsp;Fix Pack | &nbsp;Hotfix Built After | Before | After |
-| --------- | ------------------ | ------ | ----- |
-| 40 | 05 March 2018 | The grace period lasts 7 days. | The grace period lasts 30 days. |
-| 33 | 17 Nov 2017 | The grace period is only invoked for lost network connections. | The grace period is also invoked for failed subscription validation, if the server was previously registered. |
-| 32 | 20 Oct 2017 | The grace period warning is displayed as soon as the LCS connection is lost. | The grace period warning is displayed only after the connection has been out for 1 hour. This prevents false alarms for temporary network problems. |
-
-<!-- 
-Add to table once the functionality is implemented: 
-
-|   n/a     |        n/a         | The grace period warning is always displayed to administrators, on all pages. | A portal property can be used to restrict the grace period message to the License Manager and LCS pages in the Control Panel. |
--->
-
 ### Subscription Grace Period [](id=subscription-grace-period)
 
 At least 90 days before the subscription expires, Liferay will reach out to 
