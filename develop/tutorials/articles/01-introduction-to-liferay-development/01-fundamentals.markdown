@@ -172,7 +172,7 @@ You can also use any JavaScript library, including
 -   [Metal.js](http://metaljs.com/) (developed by Liferay)
 -   [jQuery](https://jquery.com/) (included) 
 -   Lodash (included)
--   Angular 1 or 2
+-   Angular JS or Angular
 -   React
 -   Your library of choice
 
