@@ -4,20 +4,18 @@ The catalog stores pricing, inventory, and other information by attaching it to
 a SKU, or Stock Keeping Unit. A SKU is an alphanumeric code representing
 a single product variant. A product must have at least one SKU to be purchased.
 
-When a product has only one SKU, the SKU represents the product directly.
-
-![Figure 1: The SKU is a holder for certain kinds of product information.](../../../images/single-SKU.png)
-
-When a product has more than one SKU, each SKU represents a unique product
+When a product has only one SKU, the SKU represents the product directly. But
+when a product has more than one SKU, each SKU represents a unique product
 variant.
 
-![Figure 2: SKUs organize information that is unique to each variant.](../../../images/multiple-SKUs.png)
+![Figure 1: The SKU is a holder for certain kinds of product information. When a product requires that data---price, inventory levels---to be stored separately for different variants, then it requires more than on SKU.](../../../images/skus-2x.png)
 
 A product must have a different SKU for each of its variants.  A product has
 different variants if it has been assigned options which are SKU contributors
-(see [options](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options)
-for details). Giving a SKU to each variant allows the inventory engine to track
-each variant individually. It also lets you set a unique price for each variant.
+(such as color, in the figure above---see
+[options](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options) for
+details). Giving a SKU to each variant allows the inventory engine to track each
+variant individually. It also lets you set a unique price for each variant.
 
 +$$$
 
@@ -36,7 +34,7 @@ Since the product variant a SKU represents is defined by a combination of
 [options](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options),
 all options should be finalized before creating or editing SKUs.
 
-## Creating a SKU [](id=creating-an-sku)
+## Creating a SKU [](id=creating-a-sku)
 
 When you create a product, a single SKU called *default* is created. For
 products that require only one SKU, the default is all that is needed. To
@@ -67,7 +65,7 @@ $$$
 When you create a SKU or click ![Options](../../../images/icon-options.png)
 &rarr; *Edit* to the right of an existing one, a new column of tabs appears. 
 
-![Figure 1:An SKU's functions are accessed through these tabs.](../../../images/skus.png)
+![Figure 2:An SKU's functions are accessed through these tabs.](../../../images/skus.png)
 
 ### Details [](id=details)
 

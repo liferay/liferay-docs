@@ -85,10 +85,6 @@ Here are some key standards @product@ supports:
 -   [JAX-WS and JAX-RS](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs):
     Incorporated since Liferay 7 as the preferred tooling to create web
     services.
-<!--
-    -   [WSRP](https://www.oasis-open.org/committees/wsrp) 1
-    and 2: Allows execution of portlets running in a remote container. TODO uncomment once the WSRP app is released on Marketplace.
--->
 -   [OSGi r6](https://www.osgi.org):
     Liferay supports a wide range of the OSGi family of standards through its
     own implementations and also integrates the high quality implementations of
