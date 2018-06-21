@@ -14,14 +14,14 @@ To see the available metadata sets, open the *Menu*
 navigate to *Content* &rarr; *Documents and Media*. Then click the *Metadata
 Sets* tab. The sets appear in a table. 
 
-To select a metadata set, select the checkbox to its left. To select all the 
-sets, select the checkbox in the Management Bar. With 1 or more sets selected, 
-an `X` icon appears in the Management Bar. Clicking it deletes the selected 
-metadata set(s). Note that metadata sets don't support the Recycle Bin. If you 
+To select a metadata set, select the checkbox to its left. To select all the
+sets, select the checkbox in the Management Bar. With one or more sets selected,
+an `X` icon appears in the Management Bar. Clicking it deletes the selected
+metadata set(s). Note that metadata sets don't support the Recycle Bin. If you
 delete a metadata set, it's gone forever. 
 
 The Management Bar also contains other options for managing the metadata sets.
-The selector menu to the right of the checkbox filters the sets that the table
+The selector menu to the right of the checkbox filters the sets the table
 displays (it's set to *All* by default). The *Order by* selector orders the sets
 by Modified Date or ID. The up and down arrows sort the sets in ascending or
 descending order, respectively. You can also use the Search bar to search for
@@ -43,7 +43,7 @@ actions on that set:
 Follow these steps to create a metadata set: 
 
 1.  From the *Menu* (![Product Menu](../../../images/icon-menu.png)), click your
-    site's name and navigate to *Content* &rarr; *Documents and Media*. Then
+    Site's name and navigate to *Content* &rarr; *Documents and Media*. Then
     click the *Metadata Sets* tab. 
 
 2.  Click the *Add* button 

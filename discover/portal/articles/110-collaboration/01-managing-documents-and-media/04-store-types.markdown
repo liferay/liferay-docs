@@ -33,11 +33,11 @@ bound to @product@'s database. The store's default root folder is
 in the Control Panel. For instructions on this, see the 
 [Document Repository Configuration guide](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration).
 
-The Simple File System Store is a simple file storage implementation that uses a 
-local folder to store files. You can use the file system for your clustered 
-configuration, but you must make sure the folder you point the store at can 
-handle things like concurrent requests and file locking. You must therefore use 
-a Storage Area Network or a clustered file system. 
+The Simple File System Store uses a local folder to store files. You can use the
+file system for your clustered configuration, but you must make sure the folder
+you point the store at can handle things like concurrent requests and file
+locking. You must therefore use a Storage Area Network or a clustered file
+system. 
 
 The Simple File System Store creates a folder structure based on primary keys in 
 @product@'s database. If, for example, you upload a presentation with the file 
