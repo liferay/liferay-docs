@@ -224,7 +224,7 @@ Make the following modifications to
 Before continuing, verify the following properties have been set in the
 `standalone.xml` file:
 
-1.  The new `<system-property>` is created.
+1.  The new `<system-property>` is added.
 
 2.  The new `<filter-spec>` is added.
 
