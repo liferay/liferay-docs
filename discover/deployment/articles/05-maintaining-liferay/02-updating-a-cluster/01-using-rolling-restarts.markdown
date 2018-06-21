@@ -26,20 +26,11 @@ Here are the rolling restart steps:
 
 Maintenance scenarios vary in how they behave in rolling restarts. For example,
 UI changes in a plugin update are only visible on the updated nodes. Users on
-nodes that haven't been updated don't see the UI changes. There are specific
-cases that cannot be performed in rolling restarts. The following sections
-describe each scenario and any cases that are disqualified from rolling restart. 
+nodes that haven't been updated don't see the UI changes. Maintenance scenarios
+might have specific cases that cannot be performed in rolling restarts---the
+scenario descriptions mention these cases. 
 
-- [New Modules and Plugins](#new-plugins-and-modules)
-- [Updating Existing Modules and Plugins](#updating-existing-plugins-and-modules)
-- [Applying Fix Packs (DXP only)](#applying-fix-packs-dxp-only)
-- [Reverting Fix Packs (DXP only)](#reverting-fix-packs-dxp-only)
-- [Portal Properties controlled by `portal-ext.properties`](#portal-properties-controlled-by-portal-ext-properties)
-- [System Settings controlled by Configuration Admin Files](#system-settings-controlled-by-configuration-admin-files)
-- [Application Server or JVM setting modifications](#application-server-or-jvm-setting-modifications)
-- [Java Version Updates](#java-version-updates)
-
-New module and plugin installation is first. 
+The maintenance scenarios eligible for rolling restart are described below. 
 
 ## New Modules and Plugins [](id=new-plugins-and-modules)
 
@@ -47,15 +38,6 @@ For a new plugin or module (one that does not already exist in the cluster) to
 be eligible for rolling restart it must not modify data, or delete or rename
 database columns in a way that breaks compatibility with existing plugins or
 modules. 
-
-+$$$
-
-**Warning:** NEVER auto deploy or hot deploy plugins or modules in a cluster as
-doing so risks PermGen/Metaspace leaks. Deploying modules and plugins on a node
-that is shut down mitigates such risks. For this reason, rolling restart is
-much safer for deploying modules and plugins. 
-
-$$$
 
 ## Updating Existing Modules and Plugins [](id=updating-existing-plugins-and-modules)
 
