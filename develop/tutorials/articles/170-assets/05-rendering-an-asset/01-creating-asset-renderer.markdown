@@ -205,7 +205,7 @@ class, which configures the asset renderer framework for the Blogs application.
     Publisher's *Options* &rarr;
     *Configuration* &rarr; *Setup* &rarr; *Display Settings* section.
 
-    ![Figure 2: Enable printing in the Asset Publisher to display the Print icon for your asset.](../../../images/asset-publisher-printing.png)
+    ![Figure 1: Enable printing in the Asset Publisher to display the Print icon for your asset.](../../../images/asset-publisher-printing.png)
 
 11. If your asset is protected by permissions, you can set permissions for
     the asset via the asset renderer. See the logic below for an example used 

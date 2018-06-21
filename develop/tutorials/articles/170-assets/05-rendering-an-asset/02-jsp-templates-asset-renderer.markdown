@@ -70,7 +70,7 @@ asset renderer is put together to satisfy JSP template development requirements.
     view. Using the `include(...)` method, however, follows the best practice
     for MVC portlets.
 
-    ![Figure 3: The abstract and full content views are rendererd differently for blogs.](../../../images/blogs-asset-views.png)
+    ![Figure 1: The abstract and full content views are rendererd differently for blogs.](../../../images/blogs-asset-views.png)
 
 Terrific! You've learned how to apply JSPs supported by the Asset Publisher for
 your asset. That's not all you can do with JSP templates, however! The asset
@@ -153,7 +153,7 @@ override the ones provided by the `AssetRenderer` interface. The third template,
 `preview`, could also be customized. You can view the default `preview.jsp`
 template rendered in the *Add* &rarr; *Content* menu.
 
-![Figure 4: The `preview` template displays a preview of the asset in the Content section of the Add menu.](../../../images/preview-template-asset-renderer.png)
+![Figure 2: The `preview` template displays a preview of the asset in the Content section of the Add menu.](../../../images/preview-template-asset-renderer.png)
 
 You've learned all about implementing the `AssetRenderer`'s provided templates
 and customizing them to fit your needs. Next, you'll put your asset renderer
