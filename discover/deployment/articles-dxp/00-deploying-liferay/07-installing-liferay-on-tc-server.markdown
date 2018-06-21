@@ -92,10 +92,20 @@ $$$
     `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder. The JARs are 
     listed below:
 
+    - `com.liferay.petra.concurrent.jar`
+    - `com.liferay.petra.executor.jar`
+    - `com.liferay.petra.function.jar`
+    - `com.liferay.petra.io.jar`
+    - `com.liferay.petra.lang.jar`
+    - `com.liferay.petra.memory.jar`
+    - `com.liferay.petra.nio.jar`
+    - `com.liferay.petra.process.jar`
+    - `com.liferay.petra.reflect.jar`
+    - `com.liferay.petra.string.jar`
     - `com.liferay.registry.api.jar`
     - `hsql.jar`
     - `portal-kernel.jar`
-    - `portlet.jar` 
+    - `portlet.jar`
 <!--
 Is this the correct lib folder, or do these need to be placed in lib/ext? Also, 
 should this lib folder be in Liferay Home instead of TCSERVER_INSTANCE_HOME ?
@@ -105,39 +115,27 @@ should this lib folder be in Liferay Home instead of TCSERVER_INSTANCE_HOME ?
 
     - `activation.jar` - [http://www.oracle.com/technetwork/java/javase/jaf-136260.html](http://www.oracle.com/technetwork/java/javase/jaf-136260.html)
     - `ccpp.jar` - [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
-    - `com.liferay.petra.concurrent` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/)
-    - `com.liferay.petra.executor.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/)
-    - `com.liferay.petra.function.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/)
-    - `com.liferay.petra.io.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/)
-    - `com.liferay.petra.lang.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.lang/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.lang/)
-    - `com.liferay.petra.memory.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.memory/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.memory/)
-    - `com.liferay.petra.nio.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.nio/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.nio/)
-    - `com.liferay.petra.process.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.process/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.process/)
-    - `com.liferay.petra.reflect.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.reflect/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.reflect/)
-    - `com.liferay.petra.string.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.string/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.string/)
     - `jms.jar`- [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
     - `jta.jar`- [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
     - `jutf7.jar` - [http://mvnrepository.com/artifact/com.beetstra.jutf7/jutf7](http://mvnrepository.com/artifact/com.beetstra.jutf7/jutf7)
     - `mail.jar` - [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
-    - `mariadb.jar` (if needed) - [https://downloads.mariadb.org/](https://downloads.mariadb.org/)
-    - `mysql.jar` (if needed) - [http://dev.mysql.com/downloads/connector/j](http://dev.mysql.com/downloads/connector/j)
     - `persistence.jar`- [http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1](http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1)
-    - `postgresql.jar` (if needed) - [https://jdbc.postgresql.org/download/postgresql-42.0.0.jar](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
     - `support-tomcat.jar` - [http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat)
-<!--
-Is this the correct location for the JDBC drivers?
--->
+
 3.  Copy the JDBC driver for your database to the 
-    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder. The `mariadb.jar`, 
-    `mysql.jar`, and `postgresql.jar` driver JARs are available in the @product@ 
-    bundle. 
+    `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder. Here are some 
+    common drivers: 
+    
+    - `mariadb.jar` - [https://downloads.mariadb.org/](https://downloads.mariadb.org/)
+    - `mysql.jar` - [http://dev.mysql.com/downloads/connector/j](http://dev.mysql.com/downloads/connector/j)
+    - `postgresql.jar` - [https://jdbc.postgresql.org/download/postgresql-42.0.0.jar](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
 
 4.  Create an `osgi` folder in your *Liferay Home*. Then, extract the folders 
     (i.e., `configs`, `core`, and more) from OSGi ZIP file to the `osgi` folder. 
     These folders contain the OSGi runtime, many required JAR files, and 
     configuration files.
 
-Checkpoint:
+**Checkpoint:**
 
 1.  Your `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder has these 
     JARs:
@@ -193,7 +191,7 @@ instance.
 
     with this one
 
-        JVM_OPTS="-Xmx1024M -Xss512K -XX:MaxMetaspaceSize=512m"
+        JVM_OPTS="-Xmx2048M -Xss512K -XX:MaxMetaspaceSize=512m"
 
     In `setenv.bat` replace
 
@@ -201,7 +199,7 @@ instance.
 					
     with
 
-        set JVM_OPTS=-Xmx1024M -Xss512K -XX:MaxMetaspaceSize=512m
+        set JVM_OPTS=-Xmx2048M -Xss512K -XX:MaxMetaspaceSize=512m
 
 
 2.  Next, you should make sure that UTF-8 URI encoding is used consistently. 
@@ -226,7 +224,7 @@ instance.
 
     with
 
-        wrapper.java.additional.8=-Xmx1024M
+        wrapper.java.additional.8=-Xmx2048M
 
     and add these properties:
 
@@ -251,7 +249,6 @@ instance.
 The easiest way to handle your database configuration is to let @product@ manage 
 your data source. If you want to use @product@'s built-in data source, you can 
 skip this section. 
-<!-- check this after using @product@ to manage the connection -->
 
 If you want tc Server to manage your data source, use this procedure:
 
