@@ -1,24 +1,28 @@
 # Application Server Tuning [](id=application-server-tuning)
 
-Although the actual setting names may differ, these concepts are applicable
-across most application servers. For brevity, we will use Tomcat as an example.
-For other application servers, consult the application server provider's
-documentation for additional specific settings.
+Although actual setting names may differ, these concepts are applicable to most
+application servers. To keep things simple, Tomcat is used as the example. For
+other application servers, consult the provider's documentation for additional
+specific settings. 
+
+Here are the topics tuning topics:
+
+- [Database Connection Pool](#database-connection-pool)
+- [Deactivating Development Settings in the JSP Engine](#deactivate-development-settings-in-the-jsp-engine)
+- [Thread Pool](#thread-pool)
 
 ## Database Connection Pool [](id=database-connection-pool)
 
 The database connection pool is usually sized at roughly 30-40% of the thread
-pool size. The connection pool provides a connection whenever @product@ needs to
-retrieve data from the database (e.g. user login, etc.). If this size is too
-small, requests queue in the server waiting for database connections. Too large
-a setting, however, means wasting resources with idle database connections. 
-
-As with thread pools, monitor these settings and adjust them based on your
-performance tests.
+pool size. It provides a connection whenever @product@ needs to retrieve data
+from the database (e.g., user login). If the pool size is too small, requests
+queue in the server waiting for database connections. If the size is too large,
+however, wastes resources with idle database connections. As with thread pools,
+monitor these settings and adjust them based on your performance tests. 
 
 In Tomcat, the connection pools are configured in the Resource elements in
-``$CATALINA_HOME/conf/ Catalina/localhost/ROOT.xml``. Liferay Engineering uses
-the following configuration during testing:
+`$CATALINA_HOME/conf/Catalina/localhost/ROOT.xml`. Liferay Engineering tests 
+with this configuration:
 
     <Resource auth="Container"         
         description="Digital Enterprise DB Connection"   
@@ -30,31 +34,29 @@ the following configuration during testing:
         password="XXXXXXXXX"           
         factory="org.apache.naming.factory.BeanFactory"
         type="com.mchange.v2.c3p0.ComboPooledDataSource"
-        jdbcUrl="jdbc:mysql://someServer:3306/liferay_dxp?useUnicode=true
-        &amp;characterEncoding=UTF-8&amp;useFastDateParsing=false"/>
+        jdbcUrl="jdbc:mysql://someServer:3306/liferay_dxp?useUnicode=true&amp;characterEncoding=UTF-8&amp;useFastDateParsing=false"/>
  
-In this configuration, we start with 10 threads and increment by 5 as needed to
-a maximum of 75 connections in the pool.
+This configuration starts with 10 threads and increments by 5 as needed to a
+maximum of 75 connections in the pool.
 
-You may choose from a variety of database connection pool providers, including
-DBCP, C3P0, HikariCP, and Tomcat. You may also choose to configure the Liferay
-JDBC settings in your portal.properties.
+There are a variety of database connection pool providers, including DBCP, C3P0,
+HikariCP, and Tomcat. You may also configure the Liferay JDBC settings in your
+[`portal-ext.properties` file](https://docs.liferay.com/ce/portal/7.1-latest/propertiesdoc/portal.properties.html). 
 
-## Deactivate Development Settings in the JSP Engine [](id=deactivate-development-settings-in-the-jsp-engine)
+## Deactivating Development Settings in the JSP Engine [](id=deactivate-development-settings-in-the-jsp-engine)
 
-Many application servers have their JSP Engines configured for development mode
-by default. Liferay recommends deactivating these settings prior to entering
-production:
+Many application servers JSP Engines are configured for development mode by
+default. Deactivate these settings prior to entering production:
 
 **Development mode:** This makes the JSP container poll the file system for
 changes to JSP files. Since you won't be making changes on the fly like this in
-production, you should turn this off. 
+production, turn off this mode. 
 
 **Mapped File:** Generates static content with one print statement versus one
 statement per line of JSP text.
 
-To do this in Tomcat, you modify the `$CATALINA_HOME/conf/web.xml` file.
-Update the JSP servlet to look like the following configuration:
+To disable these in Tomcat, for example, update the
+`$CATALINA_HOME/conf/web.xml` file's JSP servlet configuration to this:
 
     <servlet>   
         <servlet-name>jsp</servlet-name>
@@ -70,6 +72,8 @@ Update the JSP servlet to look like the following configuration:
         <load-on-startup>3</load-on-startup> 
     </servlet>
 
+Development mode and mapped files are disabled. 
+
 ## Thread Pool [](id=thread-pool)
 
 Each incoming request to the application server consumes a worker thread for the
@@ -79,16 +83,15 @@ tuned system, the number of threads in the thread pool should be balanced with
 the total number of concurrent requests. There should not be a significant
 amount of threads left idle to service requests. 
 
-Liferay Engineering recommends an initial setting of 50 threads and then
-monitoring it within your application server's monitoring consoles. You may wish
-to use a higher number (e.g., 250) if your average page times are in the 2-3
-seconds range. Too few threads in the thread pool may lead to excessive request
-queuing while too many threads may lead to excessive context switching.
+Use an initial thread pool setting of 50 threads and then monitor it within your
+application server's monitoring consoles. You may wish to use a higher number
+(e.g., 250) if your average page times are in the 2-3 second range. Too few
+threads in the thread pool might queue excessive requests; too many threads can
+cause excessive context switching.
 
-In Tomcat, the thread pools are configured in the Connector element in
-`$CATALINA_HOME/conf/server.xml`. Further information can be found in the
-[Apache Tomcat documentation](https://tomcat.apache.org/tomcat-8.0-doc/config/http.html).
-Liferay Engineering used the following configuration during testing:
+In Tomcat, the thread pools are configured in the
+`$CATALINA_HOME/conf/server.xml` file's `Connector` element. The
+[Apache Tomcat documentation](https://tomcat.apache.org/tomcat-9.0-doc/config/http.html) provides more details. Liferay Engineering tests with this configuration:
 
     <Connector maxThreads="75" minSpareThreads="50" 
         maxConnections="16384" port="8080"     
@@ -97,5 +100,5 @@ Liferay Engineering used the following configuration during testing:
         maxKeepAliveRequests="-1" address="xxx.xxx.xxx.xxx"/>
  
 Additional tuning parameters around Connectors are available, including the
-connector types,  the connection timeouts, and TCP queue. Consult the
-appropriate Tomcat documentation for further details.
+connector types, the connection timeouts, and TCP queue. Consult your
+application server's documentation for further details.
