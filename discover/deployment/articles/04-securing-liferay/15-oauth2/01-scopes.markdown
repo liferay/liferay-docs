@@ -52,5 +52,41 @@ resource methods or whole classes like this:
 
 Once deployed, this becomes a scope in the OAuth 2.0 configuration. 
 
-Great! Now that you understand scopes, it's time to make the authorization
+## Creating the Authorization Page [](id=creating-the-authorization-page)
+
+Users need an interface to authorize access to their accounts. You must create
+this interface in your Site. 
+
+1.  Go to *Control Panel* &rarr; *System Settings* &rarr; *Security* &rarr;
+    *OAuth2*. Click the bottom item on the left, labeled *Authorize Screen*. 
+
+2.  Two defaults appear. The first is the URL to the authorize page. By default,
+    it's `/group/guest/authorize-oauth2-application`. This corresponds to the
+    default site's URL and a page on that site called
+    `authorize-oauth2-application`. 
+
+3.  If you have customized the name and URL of your default site, make the
+    appropriate change here so the URL matches the page you'll create in that
+    site next. Click *Save*. 
+
+4.  Go to your Site's *Build* &rarr; *Pages* screen. Click the
+    ![add](../../../images/icon-add.png) button and choose *Private Page*. This forces
+    users to log in. 
+
+5.  Choose the *Full Page Application* type. 
+
+6.  Give the page the same name you configured in step 2. 
+
+7.  Uncheck the box labeled *Add this Page to the following Menus:*. You don't
+    want this page showing up in your Site navigation. 
+
+8.  On the page that appears next, verify the Friendly URL matches the URL you
+    configured in step 2. 
+
+9.  Under *Full Page Application*, choose *OAuth2 Authorize Portlet*. 
+
+10. Click *Save*. 
+
+Excellent! Users now have a UI to go through the authorization process. Now that
+you have the UI and you understand scopes, it's time to make the authorization
 process happen in your application. 
