@@ -1,13 +1,12 @@
 # Creating Remote Services
 
-Many default @product@ services are available as web services. @product@ exposes its
-web services via JSON and SOAP web services. If you're running the portal locally
-on port 8080, visit the following URL to browse @product@'s default JSON web
-services:
+Many default @product@ services are published as JSON and SOAP web services. If
+you're running the portal locally on port 8080, visit this URL to browse the
+default JSON web services:
 
     http://localhost:8080/api/jsonws/
 
-To browse @product@'s default SOAP web services, visit this URL:
+Visit this URL to browse the default SOAP web services:
 
     http://localhost:8080/api/axis
 
@@ -42,44 +41,45 @@ don't have to duplicate permissions code.
 
 $$$
 
-As an example, consider @product@'s Blogs app. Articles are represented by the 
-`JournalArticle` entity. This entity is declared in the `journal-service` 
-module's 
-[`service.xml` file](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/web-experience/journal/journal-service/service.xml) 
+As an example, consider Web Content articles. Web Content articles are
+represented by the `JournalArticle` entity. This entity is declared in the
+`journal-service` module's 
+[`service.xml` file](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/journal/journal-service/service.xml) 
 with the `remote-service` attribute set to `true`. Service Builder therefore 
 generates 
-[the remote service class `JournalArticleServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/service/impl/JournalArticleServiceImpl.java) 
-to hold the remote service method implementations. If you were developing this 
-app from scratch, this class would initially be empty; you must use it to 
-implement the entity's remote service methods. Also, note that the remote 
-service method implementations in `JournalArticleServiceImpl` follow best 
-practice by checking permissions and calling the corresponding local service 
-method. For example, each `addArticle` method in `JournalArticleServiceImpl` 
-checks permissions via 
-[the custom permissions class `JournalFolderPermission`](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/service/permission/JournalFolderPermission.java) 
-and then calls the local service's matching `addArticle` method: 
+[the remote service class `JournalArticleServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/journal/journal-service/src/main/java/com/liferay/journal/service/impl/JournalArticleServiceImpl.java) 
+to hold the remote service method implementations. If you were developing this
+app from scratch, this class would initially be empty; you must use it to
+implement the entity's remote service methods. Also, note that the remote
+service method implementations in `JournalArticleServiceImpl` follow the best
+practice of checking permissions and calling the corresponding local service
+method. For example, each `addArticle` method in `JournalArticleServiceImpl`
+checks permissions and then calls the local service's matching `addArticle`
+method: 
 
     @Override
     public JournalArticle addArticle(...)
         throws PortalException {
 
-        JournalFolderPermission.check(
-            getPermissionChecker(), groupId, folderId, ActionKeys.ADD_ARTICLE);
+		ModelResourcePermissionHelper.check(
+			_journalFolderModelResourcePermission, getPermissionChecker(),
+			groupId, folderId, ActionKeys.ADD_ARTICLE);
 
         return journalArticleLocalService.addArticle(...);
     }
 
-You'll also need to develop custom permissions classes for each entity you need 
-to perform permissions checks on. Also note that the local service is called via 
-the `journalArticleLocalService` field. This is a Spring bean of type 
-`JournalArticleLocalServiceImpl` that's injected into 
-`JournalArticleServiceImpl` by Service Builder. See 
-[the class `JournalArticleServiceBaseImpl`](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/service/base/JournalArticleServiceBaseImpl.java) 
+Note the use of `ModelResourcePermissionHelper.check(...)`. This handy helper
+class was introduced in Liferay 7.1. For model resource permission checks, you
+can use this helper class instead of using a custom permissions helper class.
+Also note that the local service is called via the `journalArticleLocalService`
+field. This is a Spring bean of type `JournalArticleLocalServiceImpl` that's
+injected into `JournalArticleServiceImpl` by Service Builder. See 
+[the class `JournalArticleServiceBaseImpl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/journal/journal-service/src/main/java/com/liferay/journal/service/base/JournalArticleServiceBaseImpl.java) 
 for a complete list of Spring beans available in `JournalArticleServiceImpl`. 
 
-After you've finished adding remote service methods to your `*ServiceImpl` 
-class, save it and run Service Builder again. After running Service Builder, 
-deploy your project and check the @product@ JSON web services URL 
+After you've finished adding remote service methods to your `*ServiceImpl`
+class, save it and run Service Builder again. After running Service Builder,
+deploy your project and check the JSON web services URL 
 [http://localhost:8080/api/jsonws/](http://localhost:8080/api/jsonws/) 
 to make sure that your remote services appear when you select your application's 
 context path. 
@@ -261,16 +261,16 @@ intended, though.
 
 ![Figure 1: To find your app's modules, including its WSDD module, search for your app in the App Manager. The `*-service` module's name in the App Manager is also the module's context.](../../../images/app-manager-remote-services.png)
 
-Next, you'll learn how to build the WSDD module for @product@'s built-in apps 
-that don't include a WSDD by default. If you don't need to do this, you can move 
+Next, you'll learn how to build the WSDD module for built-in apps that don't
+include a WSDD by default. If you don't need to do this, you can move 
 on to the tutorial 
 [Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services). 
 
-## Building the WSDD for Built-in @product@ Apps
+## Building the WSDD for Built-in Apps
 
 @product@ doesn't provide WSDD modules for built-in apps that exist outside 
 of the portal context. This means that by default you can't access SOAP web 
-services for apps like Bookmarks or Blogs. To make SOAP web services available 
+services for apps like Wiki or Blogs. To make SOAP web services available 
 for such an app, you must build and deploy its WSDD from the 
 [`liferay-portal` GitHub repository](https://github.com/liferay/liferay-portal). 
 The apps are in the `liferay-portal/modules/apps` folder. Note that to build 
