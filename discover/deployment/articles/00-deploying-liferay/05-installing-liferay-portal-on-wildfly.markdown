@@ -6,8 +6,8 @@
 @product-ver@ supports deployment to Wildfly 10 and Wildfly 11. Even if you want
 to manually install @product@ on an existing Wildfly application server, it can
 be helpful to download a @product@ Wildfly bundle. The bundle contains many
-required dependencies and configuration files. Before proceeding, you should
-also download these files for
+required dependencies and configuration files. Before proceeding, also
+download these files for
 [DXP](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
 and [Portal CE](https://www.liferay.com/downloads):
 
@@ -31,40 +31,36 @@ to your Wildfly server folder. It is usually named `wildfly-[version]`.
 
 @product@ depends on many JARs that are included in the @product@ Wildfly
 bundle. Some of the bundle's JARs are not strictly required but can still be
-useful. If you don't have a @product@ Wildfly bundle, you can download the
-required JARs from third-parties, as described below.
+useful. If you don't have a @product@ Wildfly bundle, download the required JARs
+from third-parties as described below.
 
 1.  Create the folder `$WILDFLY_HOME/modules/com/liferay/portal/main` if it
-    doesn't exist and extract the dependencies ZIP JARs to it. Here are the
-    JARs:
+    doesn't exist and extract the dependencies ZIP JARs to it:
 
+    - `com.liferay.petra.concurrent.jar`
+    - `com.liferay.petra.executor.jar`
+    - `com.liferay.petra.function.jar`
+    - `com.liferay.petra.io.jar`
+    - `com.liferay.petra.lang.jar`
+    - `com.liferay.petra.memory.jar`
+    - `com.liferay.petra.nio.jar`
+    - `com.liferay.petra.process.jar`
+    - `com.liferay.petra.reflect.jar`
+    - `com.liferay.petra.string.jar`
     - `com.liferay.registry.api.jar`
     - `hsql.jar`
     - `portal-kernel.jar`
     - `portlet.jar`
 
+
 2.  Download your database driver `.jar` file and copy it into the
-    same folder. For example, for MySQL,
-    [download the MySQL Connector/J driver](http://dev.mysql.com/downloads/connector/j/)
-    and put its `.jar` file into the
-    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder. The `mariadb.jar`,
-    `mysql.jar`, and `postgresql.jar` driver JARs are also available in the
-    Wildfly bundle.
+    same folder. For example,
+    [copy MySQL's driver](http://dev.mysql.com/downloads/connector/j/)
+    into the `$WILDFLY_HOME/modules/com/liferay/portal/main` folder. The
+    `mariadb.jar`, `mysql.jar`, and `postgresql.jar` driver JARs are also
+    available in the Wildfly bundle.
 
-3.  Download the remaining required JARs and insert them into the same folder. 
-
-    - `com.liferay.petra.concurrent` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/)
-    - `com.liferay.petra.executor.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/)
-    - `com.liferay.petra.function.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/)
-    - `com.liferay.petra.io.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/)
-    - `com.liferay.petra.lang.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.lang/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.lang/)
-    - `com.liferay.petra.memory.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.memory/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.memory/)
-    - `com.liferay.petra.nio.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.nio/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.nio/)
-    - `com.liferay.petra.process.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.process/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.process/)
-    - `com.liferay.petra.reflect.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.reflect/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.reflect/)
-    - `com.liferay.petra.string.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.string/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.string/)
-
-4.  Create the file `module.xml` in the
+3.  Create the file `module.xml` in the
     `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert the
     following contents:
 
@@ -97,14 +93,14 @@ required JARs from third-parties, as described below.
             </dependencies>
         </module>
 
-    If you are using a different database, replace the MySQL `.jar` with 
-    the driver JAR for your database (e.g., HSQL, PostgreSQL, etc.).
+    If you use a different database, replace the MySQL `.jar` with the driver
+    JAR for your database (e.g., HSQL, PostgreSQL, etc.).
 
-5.  Create an `osgi` folder in your Liferay Home folder. Then extract the OSGi
-    ZIP file that you downloaded into the `osgi` folder.
+4.  Create an `osgi` folder in your Liferay Home folder. Extract the OSGi ZIP
+    file that you downloaded into the `osgi` folder.
 
-    @product@ requires an OSGi runtime, and the `osgi` folder provides this with
-    many required JAR files and configuration files.
+    The `osgi` folder provides the necessary modules for @product@'s OSGi
+    runtime.
 
 **Checkpoint:**
 
@@ -263,12 +259,10 @@ Before continuing, verify the following properties have been set in the
 7.  The `<jsp-config>` tag contains its new attributes.
 
 Now it's time for some changes to your configuration and startup scripts.
- 
-You must make a few modifications to your standalone domain's configuration
-script file `standalone.conf` (`standalone.conf.bat` on Windows) found in your
-`$WILDFLY_HOME/bin/` folder.
 
-These modifications change the following options: 
+In the `$WILDFLY_HOME/bin/` folder, you must make these modifications to your
+standalone domain's configuration script file `standalone.conf`
+(`standalone.conf.bat` on Windows):
 
 - Set the file encoding
 - Set the user time-zone
@@ -305,8 +299,8 @@ Make the following edits as applicable to your operating system:
 
 +$$$
 
-**Note:** If you plan on using the IBM JDK with your Wildfly server, you'll need
-to complete some additional steps. First, navigate to the
+**Note:** If you plan on using the IBM JDK with your Wildfly server, you must
+complete some additional steps. First, navigate to the
 `$WILDFLY_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
 following dependency within the `<dependencies>` element:
 
@@ -370,7 +364,7 @@ If you want Wildfly to manage your data source, follow these steps:
 
     +$$$
 
-    **Note:** If you'd like to change your datasource `jndi-name` to something
+    **Note:** If you must change your datasource `jndi-name` to something
     different, you'll need to also edit the `datasource` element in the
     `<default-bindings>` tag.
 
