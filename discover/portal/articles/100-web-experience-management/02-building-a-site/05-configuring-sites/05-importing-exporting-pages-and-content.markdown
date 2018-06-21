@@ -65,7 +65,7 @@ backup purposes.
 
 2.  Click on the *Export* button.
 
-3.  Click the *Add* button (![Custom Export](../../../images/icon-add.png)). 
+3.  Click the *Add* button (![Custom Export](../../../../images/icon-add.png)). 
 
 A *New Custom Export* page loads, allowing you to configure what pages and 
 content you'd like to export from your site. 
@@ -84,13 +84,13 @@ content you'd like to export from your site.
     theme you're using. Lastly, you can select whether the permissions for your 
     exported pages and content are included.
 
-![Figure 1: You can configure your export options manually by selecting pages, content, and permissions.](../../../images/export-page-templates.png)
+![Figure 1: You can configure your export options manually by selecting pages, content, and permissions.](../../../../images/export-page-templates.png)
 
 4. Click *Export*.
 
 Once you click *Export*, the menu automatically switches to the *Processes* tab,
 where you'll see the status of your exported LAR file. You can select the
-*Download* icon (![Download](../../../images/icon-download.png)) to download the
+*Download* icon (![Download](../../../../images/icon-download.png)) to download the
 export to your local machine. Once you have the file, you can copy it to a
 backup location for safekeeping or import it into another installation of
 Liferay. If you must rebuild or wish to revert back to this version of your
@@ -110,9 +110,9 @@ quickly export with your standard options.
 
 To create an export template:
 
-1.  Select the *Options* icon (![Options](../../../images/icon-options.png)) from the top right corner of the screen and select *Export Templates*.
+1.  Select the *Options* icon (![Options](../../../../images/icon-options.png)) from the top right corner of the screen and select *Export Templates*.
 
-2.  Click the *Add* button (![Add Export Template](../../../images/icon-add.png)).
+2.  Click the *Add* button (![Add Export Template](../../../../images/icon-add.png)).
 
 3.  Assign the template a *Name* and *Description*.
 
@@ -123,7 +123,7 @@ To create an export template:
 Your template is now available to use from the *Export Templates* menu. To use 
 the template:
 
-1.  Click the *Actions* (![Actions](../../../images/icon-actions.png)) next to the template.
+1.  Click the *Actions* (![Actions](../../../../images/icon-actions.png)) next to the template.
 
 2.  Select *Export*.
 
