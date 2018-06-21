@@ -26,7 +26,7 @@ Adding vocabularies and categories is similar to adding tags:
 2.  Click *Categorization* &rarr; *Categories* to view the Categories 
     application.
 
-![Figure 3: After adding new vocabularies, you'll notice your vocabularies indicate the amount of categories existing beneath them.](../../../images/vocabulary-list.png)
+![Figure 1: After adding new vocabularies, you'll notice your vocabularies indicate the amount of categories existing beneath them.](../../../images/vocabulary-list.png)
 
 Clicking on a vocabulary displays any categories that have been created under
 that vocabulary. To create a new vocabulary:
