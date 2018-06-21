@@ -34,7 +34,7 @@ A feed's target page serves two purposes:
    users click on such links for orphaned articles, the full content of the
    orphaned article is displayed on the target page.
 
-![Figure 2: To create a new RSS feed, you only need to specify a name, target page, and web content structure. Of course, you can also configure other features of the feed such as its permissions, web content constraints, and presentation settings.](../../../../images/web-content-new-feed.png)
+![Figure 1: To create a new RSS feed, you only need to specify a name, target page, and web content structure. Of course, you can also configure other features of the feed such as its permissions, web content constraints, and presentation settings.](../../../../images/web-content-new-feed.png)
 
 To specify a target page, you must enter the target page's friendly URL. Note
 that friendly URLs don't include the host name. For example, the friendly URL

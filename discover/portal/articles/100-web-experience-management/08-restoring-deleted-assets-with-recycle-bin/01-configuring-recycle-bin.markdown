@@ -9,7 +9,7 @@ explore the UI and see what the Recycle Bin can do.
 
 First, you'll configure the Recycle Bin for site-specific scoping.
 
-1.  Choose the site you'd like configure for the Recycle Bin from the Site 
+1.  Choose the Site you'd like configure for the Recycle Bin from the Site 
     Administration menu.
 
 2.  Click *Configuration* &rarr; *Site Settings*.
@@ -20,18 +20,19 @@ First, you'll configure the Recycle Bin for site-specific scoping.
     **Enable Recycle Bin:** enable and disable settings for the Recycle Bin's
     site-specific scope.
 
-    **Trash Entries Max Age:** customize the number of minutes a file is kept   
+    **Trash Entries Max Age:** customize the number of minutes a file is kept 
     in the Recycle Bin until its permanent deletion (default is 43200 minutes, 
     or 30 days).
 
-    ![Figure 1: The Recycle Bin offers several configurable options for your site.](../../../../images/recycle-bin-site-settings.png)
+    ![Figure 1: The Recycle Bin offers several configurable options for your site.](../../../images/recycle-bin-site-settings.png)
 
 4.  When you've finished configuring your Recycle Bin settings, click *Save*.
 
 +$$$
 
 **Note:** If you disable the Recycle Bin while it's still holding recycled
-items, the recycled items remain stored and will reappear in the Recycle Bin if it is re-enabled.
+items, the recycled items remain stored and reappear in the Recycle Bin if it is
+re-enabled.
 
 $$$
 

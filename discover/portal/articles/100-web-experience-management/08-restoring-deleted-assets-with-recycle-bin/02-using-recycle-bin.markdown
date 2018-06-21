@@ -1,7 +1,7 @@
 # Using the Recycle Bin [](id=using-the-recycle-bin)
 
 The Recycle Bin is temporary storage where assets go when you delete 
-them. You can recycle several different types of assets, including:
+them. You can recycle several different types of assets:
 
 - Blogs
 - Bookmarks
@@ -10,7 +10,7 @@ them. You can recycle several different types of assets, including:
 - Web Content
 - Wiki (and attachments)
 
-![Figure 2: The Recycle Bin provides a seamless administrative experience for deleting and removing content.](../../../../images/recycle-bin-overview.png)
+![Figure 1: The Recycle Bin provides a seamless administrative experience for deleting and removing content.](../../../images/recycle-bin-overview.png)
 
 +$$$
 
@@ -25,14 +25,14 @@ then restore it. You'll run through two different methods of restoring the file.
 
 1.  Go to Site Administration and select *Content* &rarr; *Web Content*.
 
-2.  Select the *Add* button (![Add Web Content](../../../../images/icon-add.png))
+2.  Select the *Add* button (![Add Web Content](../../../images/icon-add.png))
     and click *Basic Web Content*.
 
 3.  Enter some text for the Title and Content and click *Publish*.
 
 4.  Click the article's *Actions* button
-    (![Actions](../../../../images/icon-actions.png)) and click
-    *Move to the   Recycle Bin*.
+    (![Actions](../../../images/icon-actions.png)) and click
+    *Move to the Recycle Bin*.
 
 	Note that the *Delete* button is not listed. @product@ avoids the risk of
 	accidental deletion of your files by funneling the content through the
@@ -51,7 +51,7 @@ then restore it. You'll run through two different methods of restoring the file.
 
 9.  You can restore or delete the content. Select *Restore*.
 
-	![Figure 3: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../../../images/recycle-bin-restore.png)
+	![Figure 2: In the Recycle Bin, you have the option of restoring or permanently deleting the content.](../../../images/recycle-bin-restore.png)
 
 10. Navigate back to the Web Content screen and notice that your sample web
     content is back to its original place.
@@ -65,10 +65,10 @@ Recycle Bin. Keep in mind that this sends any sub-folders of the deleted folder
 all the files it contains to the Recycle Bin. Folders are restored and deleted 
 the same way as a single file.
 
-The *Delete* within the Recycle Bin is the permanent delete button. Once you 
+*Delete* within the Recycle Bin is the permanent delete button. Once you 
 select this, your file cannot be retrieved and is gone forever. There is also 
 an *Empty the Recycle Bin* option accessible from the
-(![Options](../../../../images/icon-options.png)) button at the top of the Recycle
+(![Options](../../../images/icon-options.png)) button at the top of the Recycle
 Bin screen. This permanently deletes all the files from the Recycle Bin.
 
 ## Drag and Drop [](id=drag-and-drop)
@@ -81,5 +81,5 @@ moved, and the Recycle Bin is highlighted, showing you where the files can be
 dropped. After you drop the asset onto the Recycle Bin portlet, the asset is 
 removed from its original location and transferred to the Recycle Bin.
 
-![Figure 4: A quick and easy way of disposing your items is the drag and drop method.](../../../../images/recycle-bin-drag.png)
+![Figure 3: A quick and easy way of disposing your items is the drag and drop method.](../../../images/recycle-bin-drag.png)
 

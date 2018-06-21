@@ -1,4 +1,4 @@
-# Selecting Assets
+# Selecting Assets [](id=selecting-assets)
 
 You can configure Asset Publisher to select assets manually or dynamically 
 through various criteria. Within those options there is flexibility in what

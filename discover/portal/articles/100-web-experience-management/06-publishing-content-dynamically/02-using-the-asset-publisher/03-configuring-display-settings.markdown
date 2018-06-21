@@ -108,7 +108,7 @@ configuration, the Asset Publisher displays tags and categories for each
 displayed asset. Then users can click on the tags and categories to filter the
 displayed assets manually. 
 
-![Figure 3: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../../../images/available-metadata-fields.png)
+![Figure 1: You can configure the Asset Publisher to display various kinds of metadata about the displayed assets.](../../../../images/available-metadata-fields.png)
 
 Next you'll learn about configuring subscriptions for email and RSS through the 
 Asset Publisher. 
