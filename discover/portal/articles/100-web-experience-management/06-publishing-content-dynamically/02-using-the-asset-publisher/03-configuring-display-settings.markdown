@@ -1,22 +1,26 @@
 # Configuring Display Settings [](id=configuring-display-settings)
 
-From the Asset Publisher's configuration page, open the *Display Settings* subtab of the Setup tab. This section gives you precise control over the display of your assets. There are many options available to configure how you want your content to appear. Many of these, such as printing, flags, ratings, comments, comment ratings, and social bookmarks work the same way they do in the Web Content Display application.
+From the Asset Publisher's configuration page, open the Setup tab's *Display
+Settings* sub-tab. This section gives you precise control over the display of
+your assets. There are many options available to configure how you want your
+content to appear. Many of these, such as printing, flags, ratings, comments,
+comment ratings, and social bookmarks work the same way they do in the Web
+Content Display application.
 
-**Show Add Content Button**: When selected, this selector adds an *Add New*
-button that lets users add new assets directly from the Asset Publisher
-application. This is checked by default.
+**Show Add Content Button**: When selected, an *Add New* button appears that
+lets users add new assets directly from the Asset Publisher application. This
+is checked by default.
 
 **Display Template**: This selector lets you choose an application display
-template to customize how the Asset Publisher displays assets. @product@ creates
-the following display templates for each newly created site, including the
-default site:
+template to customize how the Asset Publisher displays assets. These templates
+are in every site by default:
 
-- *Abstracts:* This display template shows the first 200-500 characters of the
+- *Abstracts:* Shows the first 200-500 characters of the
   content, defined by the **Abstract Length** field. This is the default display
-  template of the Asset Publisher.
-- *Table:* This display template displays the content in an HTML table which can
+  template. 
+- *Table:* Displays the content in an HTML table which can
   be styled by a theme developer.
-- *Title List:* This display template displays the content's title as defined by
+- *Title List:* Displays the content's title as defined by
   the user who entered it.
 - *Full Content:* This display template displays the entire content of the entry.
 
