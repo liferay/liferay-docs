@@ -13,7 +13,7 @@ fall into these categories:
 
 You should use rolling restarts if possible as it maximizes uptime and mitigates
 risks of changes harming your deployment. But the following types of updates
-must be done using approaches
+must be done using
 [other techniques](/discover/deployment/-/knowledge_base/7-1/other-cluster-update-techniques). 
 
 -   Cluster code changes.
