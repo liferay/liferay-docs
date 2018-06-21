@@ -27,11 +27,7 @@ Download and install the required JARs as described below.
 1.  Create the folder `$JBOSS_HOME/modules/com/liferay/portal/main` if it
     doesn't exist and extract the JARs from the dependencies ZIP to it: 
 
-        - `com.liferay.registry.api.jar`
-        - `hsql.jar`
-        - `portal-kernel.jar`
-        - `portlet.jar`
-        - `com.liferay.petra.concurrent` 
+        - `com.liferay.petra.concurrent.jar`
         - `com.liferay.petra.executor.jar` 
         - `com.liferay.petra.function.jar` 
         - `com.liferay.petra.io.jar` 
@@ -41,9 +37,13 @@ Download and install the required JARs as described below.
         - `com.liferay.petra.process.jar` 
         - `com.liferay.petra.reflect.jar` 
         - `com.liferay.petra.string.jar` 
+        - `com.liferay.registry.api.jar`
+        - `hsql.jar`
+        - `portal-kernel.jar`
+        - `portlet.jar`
 
-2.  Download your database driver `.jar` file and copy it into the
-    same folder. For example 
+2.  Download your database driver `.jar` file and copy it into the same folder.
+    For example
     [copy MySQL's driver](http://dev.mysql.com/downloads/connector/j/)
     into the `$JBOSS_HOME/modules/com/liferay/portal/main` folder.
 
@@ -80,11 +80,11 @@ Download and install the required JARs as described below.
             </dependencies>
         </module>
 
-    If you use a different database, replace the MySQL `.jar` with 
-    the driver JAR for your database (e.g., HSQL, PostgreSQL, etc.).
+    If you use a different database, replace the MySQL `.jar` with the driver
+    JAR for your database (e.g., HSQL, PostgreSQL, etc.).
 
-4.  Create an `osgi` folder in your Liferay Home folder. Extract the OSGi
-    ZIP file that you downloaded into the `osgi` folder.
+4.  Create an `osgi` folder in your Liferay Home folder. Extract the OSGi ZIP
+    file that you downloaded into the `osgi` folder.
 
     The `osgi` folder provides the necessary modules for @product@'s OSGi
     runtime.
