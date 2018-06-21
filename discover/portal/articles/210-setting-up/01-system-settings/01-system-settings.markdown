@@ -9,13 +9,14 @@ To make configuration changes to an application in a system-wide fashion, use
 the System Settings application at Control Panel &rarr; Configuration &rarr;
 System Settings.
 
-![Figure 1: System Settings are accessed through the Control Panel.](../../../images/system-settings-product-menu.png)
+![Figure 1: System Settings are accessed through the Control Panel.](../../../images/system-settings-categories.png)
 
 ## Editing the Default Configuration [](id=editing-the-default-configuration)
 
-In System Settings, the configuration options are categorized into logical 
-groupings based on their functionality, and there's a Search box to make finding 
-the app you want to configure easier. 
+In System Settings, the configuration options are organized into logical
+sections (for example, Content) and categories (for example, Workflow) based on
+their functionality. There's also a Search bar to make finding configuration
+entries easier. 
 
 ![Figure 2: System Settings are organized by component.](../../../images/system-settings-nav-search.png)
 
@@ -28,7 +29,7 @@ applied throughout the system.
 
 ![Figure 3: After saving changes to a configuration, the actions *Reset Default Values* and *Export* are available for it.](../../../images/system-settings-actions.png)
 
-Keep in mind that some configurations can be made at more than one scope. Once a
+Keep in mind that some configurations are available at more than one scope. Once a
 configuration change is made at a more granular scope, making a change at the
 system level won't do anything. 
 
@@ -39,7 +40,7 @@ public page and add the Blogs Widget to the page. Click the Actions button
 (![Actions](../../../images/icon-actions.png)) for the Widget and select
 *Configuration*. You'll see the same Enable Comments checkbox, and its default
 is now false (unchecked). Checking the box in the Widget Configuration screen
-will break its link with the System Settings entry. Changing the System
+breaks its link with the System Settings entry. Changing the System
 Settings configuration does nothing to this Widget Instance anymore.
 
 If you make some regrettable configuration decisions and can't recall exactly
@@ -55,12 +56,12 @@ has a *Name* and a *Scope*. This scope is different than the overall
 application configuration scope discussed in the introduction to this section.
 This is the System Settings application after all, so all of the configuration
 done here affects the System scope. The Scope field here refers to the scope at 
-which this default, system-wide configuration can be overridden. There are four 
+which this default, system-wide configuration is overridden. There are four 
 values that you'll see under Scope: 
 
 - *System:* Any configuration made at the system scope here becomes the final
   value for the application in a system-wide fashion. It affects the whole
-  system and cannot be overridden anywhere else. 
+  system and isn't overridden anywhere else. 
 
     ![Figure 4: Some System Settings entries have a System scope.](../../../images/system-settings-system-scope.png)
 
@@ -69,11 +70,11 @@ values that you'll see under Scope:
 
     ![Figure 5: Some System Settings entries have a Default Configuration for Application scope.](../../../images/system-settings-application-scope.png)
 
-- *Site Scope* Configuration at this scope can be overridden in each site. 
+- *Site Scope* Configuration at this scope is overridden in each site. 
 
     ![Figure 6: Some System Settings entries have a Default Configuration for All Sites scope.](../../../images/system-settings-site-scope.png)
 
-- *Widget Scope:* Configuration at this scope can be overridden in each
+- *Widget Scope:* Configuration at this scope is overridden in each
     Widget Instance (like the Blogs example above). 
 
     ![Figure 7: Some System Settings entries have a Default Configuration for All Instances scope.](../../../images/system-settings-instance-scope.png)
@@ -86,7 +87,7 @@ entry.
 
 ![Figure 8: Some Instance Settings entries have a *Reset Values* button so you can safely revert your configuration changes, falling back to the System Settings defaults.](../../../images/instance-settings-reset-values.png)
 
-The Reset Values button removes configuration values from the @product@ database
+The Reset Values button removes configuration values from the database
 so you can rely on the defaults specified in System Settings. If there is no
 Reset Values button for an Instance Settings entry, once you use Instance
 Settings to configure the application, you can't later decide to use System
@@ -95,7 +96,7 @@ Settings. Only changes to Instance Settings will be recognized.
 ## Exporting and Importing Configurations [](id=exporting-and-importing-configurations)
 
 What if you change many default configurations in System Settings, and then need
-to make the same changes in another @product@ installation? Don't worry, you
+to make the same changes in another installation? Don't worry, you
 don't need to remember and duplicate every choice you made. The System Settings
 application lets you export a single entry's configurations, or all the settings
 you made in the System Settings interface. The exported files are deployable to
@@ -111,7 +112,7 @@ the System Settings options button
 Settings*. The `.config` files for all the entries you edited then download in a 
 ZIP file. 
 
-To make these configurations active in the destination @product@ system, simply 
+To make these configurations active in the destination system, simply 
 unzip and place the `.config` files in the `[Liferay_Home]/osgi/configs` folder. 
 
 Now you know what System Settings is and how to use it. All that's left is to

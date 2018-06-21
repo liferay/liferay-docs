@@ -1,8 +1,8 @@
 # System Wide Settings [](id=system-wide-settings)
 
-It can be hard to keep track of where all the configuration interfaces reside.
-Fortunately, the Control Panel is most often the place to look, and there's a
-tidy *Configruation* section there that houses a lot of the higher level (for
+It can be hard to keep track of all the configuration interfaces.  Fortunately,
+the Control Panel is most often the place to look, and there's a tidy
+*Configuration* section there that houses a lot of the higher level (for
 example, system and instance scoped) configuration options. This section
 considers the configuration options dealing with the *System* scope.
 Configuration at the system level affects all the *Virtual Instances* of Liferay

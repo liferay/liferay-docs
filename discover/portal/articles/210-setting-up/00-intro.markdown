@@ -1,4 +1,4 @@
-# Setting Up
+# Setting Up [](id=setting-up)
 
 If @product@ is anything, it's configurable. As the core is shrinking
 due to its increased modularity, it's important that all the applications in
@@ -51,7 +51,7 @@ Here's an overview of the available configuration scopes:
 *System:* configuring Liferay and its applications through System Settings
 provides default settings for all portal instances, sites, or portlet instances.
 
-*Portal Instance:* Configuring Liferay in Instance Settings provides settings that
+*Instance:* Configuring Liferay in Instance Settings provides settings that
 act on the specific portal instance for which they are made, including sites
 and portlet instances in the portal instance.
 
