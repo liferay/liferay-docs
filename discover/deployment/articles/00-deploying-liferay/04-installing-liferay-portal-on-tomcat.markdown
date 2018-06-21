@@ -34,12 +34,22 @@ usually named `tomcat-[version]` or `apache-tomcat-[version]`.
 
 @product@ depends on many JARs that the @product@ Tomcat bundle includes. Some
 of the bundle's JARs are not strictly required but can still be useful. If you
-don't have a bundle, you can download the required JARs from third-parties, as
-described below.
+don't have a bundle, download the required JARs from third-parties, as described
+below.
 
 1.  Create the folder `$TOMCAT_HOME/lib/ext` if it doesn't exist and extract the
     JARs from the dependencies ZIP to it. Here are the JARs:
-
+    
+    - `com.liferay.petra.concurrent.jar`
+    - `com.liferay.petra.executor.jar`
+    - `com.liferay.petra.function.jar`
+    - `com.liferay.petra.io.jar`
+    - `com.liferay.petra.lang.jar`
+    - `com.liferay.petra.memory.jar`
+    - `com.liferay.petra.nio.jar`
+    - `com.liferay.petra.process.jar`
+    - `com.liferay.petra.reflect.jar`
+    - `com.liferay.petra.string.jar`
     - `com.liferay.registry.api.jar`
     - `hsql.jar`
     - `portal-kernel.jar`
@@ -50,37 +60,23 @@ described below.
 
     - `activation.jar` - [http://www.oracle.com/technetwork/java/javase/jaf-136260.html](http://www.oracle.com/technetwork/java/javase/jaf-136260.html)
     - `ccpp.jar` - [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
-    - `com.liferay.petra.concurrent.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.concurrent/)
-    - `com.liferay.petra.executor.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.executor/)
-    - `com.liferay.petra.function.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.function/)
-    - `com.liferay.petra.io.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.io/)
-    - `com.liferay.petra.lang.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.lang/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.lang/)
-    - `com.liferay.petra.memory.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.memory/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.memory/)
-    - `com.liferay.petra.nio.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.nio/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.nio/)
-    - `com.liferay.petra.process.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.process/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.process/)
-    - `com.liferay.petra.reflect.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.reflect/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.reflect/)
-    - `com.liferay.petra.string.jar` - [https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.string/](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.petra.string/)
     - `jms.jar`- [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
     - `jta.jar`- [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
     - `jutf7.jar` - [http://mvnrepository.com/artifact/com.beetstra.jutf7/jutf7](http://mvnrepository.com/artifact/com.beetstra.jutf7/jutf7)
     - `mail.jar` - [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
-    - `mariadb.jar` (if needed) - [https://downloads.mariadb.org/](https://downloads.mariadb.org/)
-    - `mysql.jar` (if needed) - [http://dev.mysql.com/downloads/connector/j](http://dev.mysql.com/downloads/connector/j)
     - `persistence.jar`- [http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1](http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1)
-    - `postgresql.jar` (if needed) - [https://jdbc.postgresql.org/download/postgresql-42.0.0.jar](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
     - `support-tomcat.jar` - [http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat)
 
 3.  Copy the JDBC driver for your database to the `$CATALINA_BASE/lib/ext` 
-    folder. Here are some of the drivers:  
+    folder. Here are some common drivers:  
 
     - `mariadb.jar` - [https://downloads.mariadb.org/](https://downloads.mariadb.org/)
     - `mysql.jar` - [http://dev.mysql.com/downloads/connector/j](http://dev.mysql.com/downloads/connector/j)
     - `postgresql.jar` - [https://jdbc.postgresql.org/download/postgresql-42.0.0.jar](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
 
-4.  Create an `osgi` folder in your Liferay Home. Then extract the folders
-    (i.e., `configs`, `core`, and more) from OSGi ZIP file to the `osgi` folder.
-    These folders contain the OSGi runtime, many required JAR files, and
-    configuration files.
+4.  Create an `osgi` folder in your Liferay Home. Extract the folders (i.e., 
+    `configs`, `core`, and more) from OSGi ZIP file to the `osgi` folder. The
+    `osgi` folder provides the necessary modules for @product@'s OSGi runtime.
 
 Checkpoint:
 
@@ -168,8 +164,8 @@ Start with configuring Tomcat to run @product@.
     around them causes problems with the logging system), sets the time zone to
     GMT, gives the JVM 1GB of RAM, and limits Metaspace to 500MB. 
 
-    After installation you should tune your system (including these JVM options)
-    for performance. 
+    After installation, tune your system (including these JVM options) for
+    performance. 
 
 2.  If you have a @product@ Tomcat bundle, copy its
     `$CATALINA_BASE/conf/Catalina/localhost/ROOT.xml` file to the corresponding
@@ -250,9 +246,9 @@ Start with configuring Tomcat to run @product@.
     `$CATALINA_HOME/bin` and `$CATALINA_BASE/bin` folders executable by running
     this command in each folder:
 
-        chmod a+x *.sh
+    `chmod a+x *.sh`
 
-Checkpoint:
+**Checkpoint:**
 
 Your application server is configured to run @product@.
 
@@ -308,7 +304,8 @@ If you want Tomcat to manage your data source, follow these steps:
     has a user named `root` whose password is `root`. Replace these values with
     your own. 
 
-3.  In a `portal-ext.properties` file in your Liferay Home, specify your data source:
+3.  In a `portal-ext.properties` file in your Liferay Home, specify your data 
+    source:
 
         jdbc.default.jndi.name=jdbc/LiferayPool
 
