@@ -1,7 +1,7 @@
 # Catalog Rules
 
 Catalog Rules are a tool for managing the catalog's visibility. They work with
-[user segments](web/liferay-emporio/documentation/-/knowledge_base/7-1/user-segmentation),
+[user segments](/web/liferay-emporio/documentation/-/knowledge_base/1-0/user-segmentation)
 to restrict specified buyers so that they can only see a limited portion of the
 catalog. This can help focus the attention of a customer who---for instance---is
 only authorized to purchase products associated with a particular support plan,
