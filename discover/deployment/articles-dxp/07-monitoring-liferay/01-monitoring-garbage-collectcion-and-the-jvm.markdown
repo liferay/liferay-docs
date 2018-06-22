@@ -9,9 +9,15 @@ you monitor Oracle JVM performance.
 ## Visual VM [](id=visual-vm)
 
 This tool provides a centralized console for viewing Oracle JVM performance
-information, including garbage collector activities.
+information, including garbage collector activities (with Visual GC plugin).
 
 ![Figure 1: Visual VM shows the garbage collector in real-time.](../../images-dxp/visual-vm-gc.png)
+
++$$$
+
+**Note:** Oracle JDK has VisualVM bundled (`$JAVA_HOME/bin/jvisualvm`). However, we recommend to always download the latest version from VisualVM's [official website](https://visualvm.github.io/).
+
+$$$
 
 ## JMX Console [](id=jmx-console)
 
@@ -29,8 +35,10 @@ $$$
 To enable JMX connections, add the following configuration to your application
 server's JVM arguments:
 
-    -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote. port=5000
-    -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun. management.jmxremote.ssl=false
+    -Dcom.sun.management.jmxremote=true
+    -Dcom.sun.management.jmxremote.port=5000
+    -Dcom.sun.management.jmxremote.authenticate=false
+    -Dcom.sun.management.jmxremote.ssl=false
 
 ![Figure 2: Visual VM lets you monitor using Java Management Extensions.](../../images-dxp/visual-vm-jmx.png)
 
