@@ -35,9 +35,9 @@ specification. On Linux machines, report the number of available CPUs by running
 `cat /proc/cpuinfo`.
 
 **Note:** There are additional "new" algorithms like G1, but Liferay
-Engineering's tests for G1 indicate that it does not improve performance. Since
-your application performance might vary, incorporate additional algorithms in
-your testing and tuning plans.
+Engineering's tests for G1 indicated that it does not improve performance. Since
+your application performance may vary, you should add G1 to your testing and
+tuning plans. 
 
 ## Code Cache [](id=code-cache)
 
