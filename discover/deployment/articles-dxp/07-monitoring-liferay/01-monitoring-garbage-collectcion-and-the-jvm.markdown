@@ -6,16 +6,18 @@ give you a good start to JVM tuning, you must monitor GC performance to ensure
 you have the best settings to meet your needs. There are several tools to help
 you monitor Oracle JVM performance. 
 
-## Visual VM [](id=visual-vm)
+## VisualVM [](id=visual-vm)
 
-This tool provides a centralized console for viewing Oracle JVM performance
-information, including garbage collector activities (with Visual GC plugin).
+VisualVM provides a centralized console for viewing Oracle JVM performance
+information and its Visual GC plugin shows garbage collector activities.
 
-![Figure 1: Visual VM shows the garbage collector in real-time.](../../images-dxp/visual-vm-gc.png)
+![Figure 1: VisualVM's Visual GC plugin shows the garbage collector in real-time.](../../images-dxp/visual-vm-gc.png)
 
 +$$$
 
-**Note:** Oracle JDK has VisualVM bundled (`$JAVA_HOME/bin/jvisualvm`). However, we recommend to always download the latest version from VisualVM's [official website](https://visualvm.github.io/).
+**Note:** Oracle's JDK has VisualVM bundled (`$JAVA_HOME/bin/jvisualvm`). 
+However, always download and use the latest version from VisualVM's
+[official website](https://visualvm.github.io/).
 
 $$$
 
@@ -40,7 +42,7 @@ server's JVM arguments:
     -Dcom.sun.management.jmxremote.authenticate=false
     -Dcom.sun.management.jmxremote.ssl=false
 
-![Figure 2: Visual VM lets you monitor using Java Management Extensions.](../../images-dxp/visual-vm-jmx.png)
+![Figure 2: VisualVM lets you monitor using Java Management Extensions.](../../images-dxp/visual-vm-jmx.png)
 
 ## Garbage Collector Verbose Logging [](id=garbage-collector-verbose-logging)
 
