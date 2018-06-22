@@ -1,14 +1,15 @@
 # Searching @product@ Source in Liferay @ide@ [](id=searching-product-source-in-liferay-ide)
 
 In Liferay @ide@, you can search through @product@'s source code to aid in the
-development of your Liferay project. Liferay provides great resources to help
-with development (official documentation,
+development of your project. Liferay provides great resources to help with
+development (e.g., official documentation,
 [docs.liferay.com](https://docs.liferay.com/),
 [sample projects](/develop/reference/-/knowledge_base/7-1/sample-modules),
-etc.), but sometimes, searching through Liferay's platform and official apps
-for patterns is just as useful. For example, if you're creating a custom app
-that extends a class provided in Liferay's `portal-kernel` JAR, you can inspect
-that class and research how it's used in other areas of @product@'s codebase.
+etc.), but sometimes, searching through Liferay's codebase (i.e., platform and
+official apps) for patterns is just as useful. For example, if you're creating a
+custom app that extends a class provided in Liferay's `portal-kernel` JAR, you
+can inspect that class and research how it's used in other areas of @product@'s
+codebase.
 
 To do this, you must be developing in a
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
