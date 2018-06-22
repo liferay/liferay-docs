@@ -60,7 +60,16 @@ Setting the version to develop for takes two steps:
     `liferay.workspace.target.platform.version` property to the version you want
     to target. For example,
 
-        liferay.workspace.target.platform.version=7.1.0
+        liferay.workspace.target.platform.version=7.1-GA1
+
+    If you're using Liferay DXP, you can set the property like this:
+
+        liferay.workspace.target.platform.version=7.1-
+
+    The versions following a GA1 release of DXP follow service pack versions
+    (e.g., `7.1-sp2`).
+
+    <!-- TODO: Still need to find the proper GA1 DXP version syntax. -Cody -->
 
 2.  Once the target platform is configured, check to make sure no dependencies
     in your Gradle build files specify a version. The versions are now imported
@@ -107,7 +116,7 @@ To do this, your `build.gradle` file should look similar to this:
 
     buildscript {
         dependencies {
-            classpath group: "com.liferay", name: "com.lifereay.gradle.plugins.target.platform", version "1.0.0"
+            classpath group: "com.liferay", name: "com.lifereay.gradle.plugins.target.platform", version "1.0.1"
         }
         repositories {
             maven {
@@ -122,10 +131,6 @@ To do this, your `build.gradle` file should look similar to this:
         targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.1.0"
         targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.1.0"
     }
-
-<!-- TODO: The temporary place to reference Liferay's portal artifacts for 7.1
-is still TBD, according to Greg. Update this in the future, if necessary -Cody
--->
 
 This Gradle code
 

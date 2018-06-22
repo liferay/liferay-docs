@@ -42,7 +42,16 @@ this, open your workspace's `gradle.properties` file and set the
 `liferay.workspace.target.platform.version` property to the version you want to
 target. For example,
 
-    liferay.workspace.target.platform.version=7.1.0
+    liferay.workspace.target.platform.version=7.1-GA1
+
+If you're using Liferay DXP, you can set the property like this:
+
+    liferay.workspace.target.platform.version=7.1-
+
+The versions following a GA1 release of DXP follow service pack versions
+(e.g., `7.1-sp2`).
+
+<!-- TODO: Still need to find the proper GA1 DXP version syntax. -Cody -->
 
 This provides a static *distro* JAR for the specified version of @product@,
 which contains all the metadata (i.e., capabilities, packages, versions, etc.)
