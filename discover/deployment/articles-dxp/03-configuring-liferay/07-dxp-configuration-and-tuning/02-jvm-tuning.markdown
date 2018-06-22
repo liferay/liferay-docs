@@ -1,48 +1,55 @@
 # Java Virtual Machine Tuning [](id=java-virtual-machine-tuning)
 
-Tuning the JVM primarily focuses on tuning the garbage collector and the Java
-memory heap. These parameters are used to optimize the throughput of your
-application. We used Oracle's 1.8 JVM for the reference architecture. You may
-also choose other supported JVM versions and implementations. Please consult the
-[Liferay Digital Enterprise Compatibility Matrix](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix)
+Java Virtual Machine (JVM) tuning primarily focuses on adjusting the garbage
+collector and the Java memory heap. They optimize application throughput. We
+used Oracle's 1.8 JVM for the reference architecture. You may choose other
+supported JVM versions and implementations. Please consult the
+[Liferay DXP Compatibility Matrix](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix)
 for additional compatible JVMs.
+
+Here are the JVM tuning topics:
+
+- [Garbage Collector](#garbage-collector)
+- [Code Cache](#code-cache)
+- [Java Heap](#java-heap)
+- [JVM Advanced Options](#jvm-advanced-options)
+
+Garbage collection is first. 
 
 ## Garbage Collector [](id=garbage-collector)
 
 Choosing the appropriate garbage collector (GC) helps improve the responsiveness
-of your @product@ deployment. Liferay recommends using the concurrent low pause
-collectors:
+of your @product@ deployment. Use the concurrent low pause collectors:
 
     -XX:+UseParNewGC -XX:ParallelGCThreads=16 -XX:+UseConcMarkSweepGC
     -XX:+CMSParallelRemarkEnabled -XX:+CMSCompactWhenClearAllSoftRefs
     -XX:CMSInitiatingOccupancyFraction=85 -XX:+CMSScavengeBeforeRemark
  
-You may choose from other available GC algorithms including parallel throughput
-collectors and G1 collectors. Liferay recommends first starting your tuning
-using parallel collectors in the new generation and concurrent mark sweep (CMS)
-in the old generation.
+You may choose from other available GC algorithms, including parallel throughput
+collectors and G1 collectors. Start tuning using parallel collectors in the new
+generation and concurrent mark sweep (CMS) in the old generation.
 
-**Note:** the value 16 in `ParallelGCThreads=16` varies based on the type of
-CPUs available. We recommend setting the value according to CPU specification.
-On Linux machines, you may find the number of available CPUs by running
+**Note:** the `ParallelGCThreads` value (e.g., `ParallelGCThreads=16`) varies 
+based on the type of CPUs available. Set the value according to CPU
+specification. On Linux machines, report the number of available CPUs by running
 `cat /proc/cpuinfo`.
 
 **Note:** There are additional "new" algorithms like G1, but Liferay
-Engineering's tests for G1 have indicated that it does not improve performance.
-Your application performance may vary and you should add it to your testing and
-tuning plans.
+Engineering's tests for G1 indicate that it does not improve performance. Since
+your application performance might vary, incorporate additional algorithms in
+your testing and tuning plans.
 
 ## Code Cache [](id=code-cache)
 
-Java uses a just-in-time (JIT) compiler that generates native code to improve
-performance. The default size is 48M. This may not be sufficient for larger
-applications. Too small a code cache reduces performance as the JIT isn't able
-to optimize high frequency methods. For Digital Enterprise, we recommend
-starting with 64M for the initial code cache size.
+Java's just-in-time (JIT) compiler generates native code to improve performance.
+The default size is `48m`. This may not be sufficient for larger applications.
+Too small a code cache reduces performance, as the JIT isn't able to optimize
+high frequency methods. For @product@,  start with `64m` for the initial code
+cache size.
 
-    -XX:InitialCodeCacheSize=32m -XX:ReservedCodeCacheSize=96m
+    -XX:InitialCodeCacheSize=64m -XX:ReservedCodeCacheSize=96m
  
-You can examine the efficacy of the parameter changes by adding the following
+Examine the efficacy of the parameter changes by adding the following logging
 parameters:
 
     -XX:+PrintCodeCache -XX:+PrintCodeCacheOnCompilation
@@ -52,14 +59,14 @@ parameters:
 When most people think about tuning the Java memory heap, they think of setting
 the maximum and minimum memory of the heap. Unfortunately, most deployments
 require far more sophisticated heap tuning to obtain optimal performance,
-including tuning the young generation size, tenuring durations, survivor spaces
+including tuning the young generation size, tenuring durations, survivor spaces,
 and many other JVM internals.
 
-For most systems, Liferay recommends starting with at least the following memory
+For most systems, it's best to start with at least the following memory
 settings:
 
-    -server -XX:NewSize=700m -XX:MaxNewSize=700m -Xms2048m -Xmx2048m -XX:MetaspaceSize=300m
-    -XX:MaxMetaspaceSize=300m -XX:SurvivorRatio=6 -XX:TargetSurvivorRatio=9 -XX:MaxTenuringThreshold=15
+    -server -XX:NewSize=700m -XX:MaxNewSize=700m -Xms2048m -Xmx2048m -XX:MetaspaceSize=512m
+    -XX:MaxMetaspaceSize=512m -XX:SurvivorRatio=6 -XX:TargetSurvivorRatio=9 -XX:MaxTenuringThreshold=15
 
 On systems that require large heap sizes (e.g., above 4GB), it may be beneficial
 to use large page sizes. You may activate large page sizes using the following
@@ -96,7 +103,7 @@ options.
 Combining the above recommendations together, we have this configuration:
 
     -server -XX:NewSize=1024m -XX:MaxNewSize=1024m -Xms4096m
-    -Xmx4096m -XX:MetaspaceSize=300m -XX:MaxMetaspaceSize=300m
+    -Xmx4096m -XX:MetaspaceSize=512m -XX:MaxMetaspaceSize=512m
     -XX:SurvivorRatio=12 -XX:TargetSurvivorRatio=90
     -XX:MaxTenuringThreshold=15 -XX:+UseLargePages 
     -XX:LargePageSizeInBytes=256m -XX:+UseParNewGC 
@@ -111,13 +118,13 @@ Combining the above recommendations together, we have this configuration:
 +$$$
 
 **Caution:** The above JVM settings should formulate a starting point for your
-performance tuning. Every system's final parameters vary due to many factors
+performance tuning. Every system's final parameters vary due to many factors,
 including number of current users and transaction speed.
 
 $$$
 
-Liferay recommends monitoring the garbage collector statistics to ensure your
-environment has sufficient allocations for metaspace and also for the survivor
-spaces. Simply using the guideline numbers above may result in dangerous
-runtime scenarios like out of memory failures. Improperly tuned survivor spaces
-also lead to wasted heap space.
+Monitor the garbage collector statistics to ensure your environment has
+sufficient allocations for metaspace and also for the survivor spaces. Simply
+using the guideline numbers above may result in dangerous runtime scenarios like
+out of memory failures. Improperly tuned survivor spaces also lead to wasted
+heap space.
