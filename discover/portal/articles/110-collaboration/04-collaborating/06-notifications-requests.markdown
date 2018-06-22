@@ -9,12 +9,12 @@ notifications or requests.
 
 ![Figure 1: The number of notifications and requests are displayed above your profile image](../../../images/notifications-icon.png)
 
-To access notifications and requests, you can click the notifications 
-icon on your user profile image or open the Menu 
+To access notifications and requests, click the notifications icon on your user
+profile image or open the Menu 
 (![Menu](../../../images/icon-menu.png)) 
 and select *My Account* &rarr; *Notifications* under your user menu. The 
 *Notifications List* tab is selected by default. This is where all your 
-notifications are displayed. Click the *Requests List* tab to view and manage 
+notifications appear. Click the *Requests List* tab to view and manage 
 your requests. 
 
 ![Figure 2: The *Notifications List* section displays all your notifications in a paginated list.](../../../images/notifications-list.png)
@@ -48,7 +48,8 @@ read/unread, or delete the notification.
 You can also manage multiple notifications at once. Select the checkbox next to
 notifications you want to manage and choose an option from the Management Bar.
 Select the checkbox above the notifications list to select all notifications on
-the current page. The Management Bar shows 3 actions for selected notifications: 
+the current page. The Management Bar shows three actions for selected
+notifications: 
 
 -   Mark as Read 
     (![Open Envelope](../../../images/icon-envelope-open.png))
@@ -57,7 +58,7 @@ the current page. The Management Bar shows 3 actions for selected notifications:
 -   Delete 
     (![Delete Button](../../../images/icon-delete.png))
 
-You can also select *Mark all notifications as read* in the app's Options menu 
+You can also select *Mark all notifications as read* in the Options menu 
 (![Options](../../../images/icon-options.png)). Note that this feature is only 
 available if at least one notification is unread. Clicking it marks all 
 notifications as read, selected or not. 
