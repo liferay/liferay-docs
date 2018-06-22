@@ -1,4 +1,4 @@
-# Factory Configurations
+# Factory Configurations [](id=factory-configurations)
 
 Configurations supporting multiple independent occurrences of the same
 configuration entry are called *factory configurations*. 
@@ -22,7 +22,7 @@ $$$
 If a service is meant to support factory configurations, its System Settings
 entry has an ADD button. 
 
-![Figure 1: If a System Settings entry has an ADD button, it's suitable for factory configurations.](../images/factory-configuration-entry.png)
+![Figure 1: If a System Settings entry has an ADD button, it's suitable for factory configurations.](../../../../images/factory-configuration-entry.png)
 
 As with single-instance configurations, you can set factory configurations in 
 the System Settings interface (as described in the example above) or via 

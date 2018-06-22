@@ -1,4 +1,4 @@
-# Creating Configuration Files
+# Creating Configuration Files [](id=creating-configuration-files)
 
 System Settings provides an
 [*Export*](/discover/portal/-/knowledge_base/7-1/system-settings#exporting-and-importing-configurations)
@@ -15,7 +15,7 @@ functionality, has this file name:
 
     com.liferay.journal.configuration.JournalServiceConfiguration.config
 
-![Figure 1: The Web Content System Settings entry has the backend ID `com.liferay.journal.configuration.JournalServiceConfiguration`.](../images/config-web-content-entry.png)
+![Figure 1: The Web Content System Settings entry has the backend ID `com.liferay.journal.configuration.JournalServiceConfiguration`.](../../../../images/config-web-content-entry.png)
 
 Configuration files use the `.config` property value format defined by the 
 [Apache Felix Configuration Admin framework](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html).
@@ -24,7 +24,7 @@ The `.cfg` file format is common in OSGi environments, so @product@ supports it,
 but `.config` files are preferable. You can specify a property value's type, and
 have multi-valued properties. The syntax described below is for `.config` files. 
 
-## Key/Value Syntax
+## Key/Value Syntax [](id=key-value-syntax)
 
 The general syntax for all keys and values in a `.config` file is the same: 
 
@@ -34,7 +34,7 @@ For single value configurations without special characters, that's all there is
 to know. Settings with multiple values and certain characters require slight
 modifications. 
 
-## Multi-Value Settings
+## Multi-Value Settings [](id=multi-value-settings)
 
 Configuration entries can have properties that accept multiple values. For 
 example, a configuration property for specifying supported file extensions needs 
@@ -50,14 +50,14 @@ Open the Web Content entry from System Settings, and select *Web Content* for
 the virtual instance scope. You'll see what looks like multiple single value 
 entries for *Characters Blacklist*: 
 
-![Figure 2: The Web Content System Settings entry has many *Characters Blacklist* fields.](../images/config-web-content-blacklist.png)
+![Figure 2: The Web Content System Settings entry has many *Characters Blacklist* fields.](../../../../images/config-web-content-blacklist.png)
 
 In the configuration file, this is really a single key with an array of 
 comma-separated values: 
 
     charactersblacklist=["&","'","@","\\","]","}",":","\=",">","/","<","[","{","%","+","#","`","?","\"",";","*","~"]
 
-## Escaping Characters
+## Escaping Characters [](id=escaping-characters)
 
 Double quotes (`"`) and equals signs (`=`) must be *escaped* in `.config` files. 
 Escaping is using another character to denote that a character shouldn't be used 
@@ -81,7 +81,7 @@ properly:
 If you don't escape spaces yourself, the framework adds the backslash for you 
 after deployment. 
 
-## Typed Values
+## Typed Values [](id=typed-values)
 
 The `.config` file format supports specifying the type of a configuration value
 by inserting a special type marker character. Because @product@ already knows
@@ -96,7 +96,7 @@ example included above functions identically without the type marker:
 
     addDefaultStructures="true"
 
-## Deploying a Configuration File
+## Deploying a Configuration File [](id=deploying-a-configuration-file)
 
 Once you have a configuration file, deploy it so @product@ recognizes it and 
 updates the targeted configuration values. 
@@ -106,7 +106,7 @@ To deploy the `.config` file, place it in your
 `osgi/configs` folder. To change the configuration further, you can edit the 
 `.config` file directly or use System Settings. 
 
-### Configuration Files and Clustering 
+### Configuration Files and Clustering [](id=configuration-files-and-clustering)
 
 In a clustered environment, each node needs the same configuration values for
 each entry. For example, all nodes should use the same *Blogs* configuration

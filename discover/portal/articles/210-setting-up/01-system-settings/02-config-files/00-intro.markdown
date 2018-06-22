@@ -1,4 +1,4 @@
-# Understanding System Configuration Files
+# Understanding System Configuration Files [](id=understanding-system-configuration-files)
 
 @product@'s 
 [System Settings app](/discover/portal/-/knowledge_base/7-1/system-settings) 
