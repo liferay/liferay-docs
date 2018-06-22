@@ -14,7 +14,7 @@ tutorial for more details.
 
 $$$
 
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) 
+[Liferay @ide@ 3.2+](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) 
 helps you streamline targeting a specific version eve more. @ide@ can index the
 configured @product@ source code to
 
