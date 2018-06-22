@@ -2,22 +2,22 @@
 
 The Knowledge Base app in Site Administration contains everything you need to 
 create articles in the Knowledge Base. You can create articles by authoring them 
-in the app's WYSIWYG editor, or by importing them from Markdown files 
+in the app's WYSIWYG editor or by importing them from Markdown files 
 (`.markdown`, `.md`) in a ZIP archive. The sections below cover both ways of 
 creating articles. 
 
 +$$$
 
-**Note:** To access Knowledge Base in Site Administration, a role must have the 
+**Note:** To access Knowledge Base in Site Administration, a Role must have the 
 permission *Knowledge Base* &rarr; *Access in Site Administration*. To add or 
-act on articles, folders, or suggestions, the site administrator must grant the 
+act on articles, folders, or suggestions, the Site administrator must grant the 
 appropriate permissions using the Permissions window in Knowledge Base. 
 
 $$$
 
 To navigate to the Knowledge Base app, open the Menu 
 (![Menu](../../../../images/icon-menu.png)) 
-then go to Site Administration (the menu for your site) &rarr; *Content* &rarr; 
+then go to Site Administration (the menu for your Site) &rarr; *Content* &rarr; 
 *Knowledge Base*. The Knowledge Base app has 3 tabs: 
 
 -   **Articles:** Create and manage articles and folders. 
@@ -33,7 +33,7 @@ on creating articles.
 
 Follow these steps to create an article in the editor: 
 
-1.  In the *Articles* tab, click the Add button 
+1.  In the Articles tab, click the *Add* button 
     (![Add](../../../../images/icon-add.png)) 
     and choose *Basic Article* or the name of an available template. This brings 
     up the New Article form. 
@@ -78,14 +78,14 @@ topics:
 
 +$$$
 
-**Note:** To import articles, your role must have the permission 
-*Knowledge Base* &rarr; *Resource Permissions: Import Articles*. 
+**Note:** To import articles, your Role must have the permission *Knowledge
+Base* &rarr; *Resource Permissions: Import Articles*. 
 
 $$$
 
 Follow these steps to import articles into the Knowledge Base: 
 
-1.  In the *Articles* tab, click the Add button 
+1.  In the Articles tab, click the *Add* button 
     (![Add](../../../../images/icon-add.png)) 
     and choose *Import*. This brings up the Import form. 
 
@@ -99,7 +99,7 @@ Follow these steps to import articles into the Knowledge Base:
 4.  Click *Save* when you're finished. 
 
 Like all articles, imported articles are automatically converted to HTML for the 
-Knowledge Base, and listed in a table with the rest of the articles in the 
+Knowledge Base and listed in a table with the rest of the articles in the 
 Articles tab. 
 
 ![Figure 3: You can import ZIP files that contain Knowledge Base articles in Markdown format.](../../../../images/kb-admin-import.png)

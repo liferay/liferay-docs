@@ -1,13 +1,11 @@
 # Using the Knowledge Base [](id=using-the-knowledge-base)
 
-The Knowledge Base app lets you create and organize articles in a site. For 
-example, it can be used to display professional product documentation or form 
-complete books or guides. It even lets you import article source files written 
-in Markdown. It's 
-[workflow-enabled](/discover/portal/-/knowledge_base/7-1/using-workflow), 
-so you can require articles to be approved before publication. Additionally, the 
-Knowledge Base app lets administrators create article templates that help users 
-follow a common outline. 
+The Knowledge Base app can be used to display professional product documentation
+or form complete books or guides. It even lets you import article source files
+written in Markdown. It's 
+[workflow-enabled](/discover/portal/-/knowledge_base/7-1/using-workflow), so you
+can require articles to be approved before publication. Additionally, you can
+create article templates that help users follow a common outline. 
 
 +$$$
 

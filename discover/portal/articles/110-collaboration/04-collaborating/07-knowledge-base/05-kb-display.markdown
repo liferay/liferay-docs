@@ -2,7 +2,7 @@
 
 You can use the Knowledge Base Display widget to display your published 
 Knowledge Base articles. You can customize how this widget displays articles, 
-and which ones it displays. To get started, add the widget to the site page
+and which ones it displays. To get started, add the widget to the Site page
 you want to display articles on:
 
 1.  Navigate to the page and open the *Add* menu 
@@ -11,9 +11,9 @@ you want to display articles on:
 2.  Open the *Widgets* &rarr; *Content Management* section, then add *Knowledge 
     Base Display* to the page. 
 
-By default, the Knowledge Base Display widget displays articles from the 
-Knowledge Base's Home folder. To change where the widget displays articles from, 
-follow these steps: 
+By default, the Knowledge Base Display widget displays articles from the
+Knowledge Base's Home folder. To change the location of its articles, follow
+these steps: 
 
 1.  Click the widget's *Options* icon 
     (![Options](../../../../images/icon-app-options.png)) 
@@ -52,7 +52,7 @@ to display it in the viewing area. The currently displayed article's link
 appears in bold in the navigation. You can also move between articles by 
 clicking the links with arrows at the bottom of the widget. 
 
-![Figure 2: Knowledge Base Display's navigation and viewing area make reading Knowledge Base articles a breeze.](../../../../images/kb-display.png)
+![Figure 2: Knowledge Base Display's navigation and viewing provide a great reading experience.](../../../../images/kb-display.png)
 
 Knowledge Base Display can also show article hierarchies. Viewing an article 
 that has child articles expands the navigation tree to show links to the child 

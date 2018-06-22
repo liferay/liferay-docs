@@ -9,7 +9,7 @@ all the things you'd need to do to format your articles.
 
 +$$$
 
-**Note:** To import articles, your role must be granted the *Knowledge Base* 
+**Note:** To import articles, your Role must be granted the *Knowledge Base* 
 &rarr; *Resource Permissions: Import Articles* permission.
 
 $$$

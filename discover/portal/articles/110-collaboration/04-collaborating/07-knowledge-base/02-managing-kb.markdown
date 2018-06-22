@@ -1,14 +1,13 @@
 # Managing the Knowledge Base [](id=managing-the-knowledge-base)
 
-The Knowledge Base app in Site Administration contains a variety of options that 
-let you manage the Knowledge Base. To navigate to this app, open the Menu 
-(![Menu](../../../../images/icon-menu.png)) 
-then go to Site Administration (the menu for your site) &rarr; *Content* &rarr; 
+The Knowledge Base app in Site Administration manages the Knowledge Base. To
+navigate to this app, open the Menu (![Menu](../../../../images/icon-menu.png))
+then go to Site Administration (the menu for your site) &rarr; *Content* &rarr;
 *Knowledge Base*. 
 
 +$$$
 
-**Note:** To access Knowledge Base in Site Administration, a role must have the 
+**Note:** To access Knowledge Base in Site Administration, a Role must have the 
 permission *Knowledge Base* &rarr; *Access in Site Administration*. To add or 
 act on articles, folders, or suggestions, the site administrator must grant the 
 appropriate permissions using the Permissions window in Knowledge Base. 
@@ -23,35 +22,34 @@ At the top-right of the Knowledge Base app, the Options menu
 (![Options](../../../../images/icon-options.png)) 
 contains these options: 
 
--   **Subscribe:** Get notified when Knowledge Base articles are created, 
-    updated, or deleted. 
+**Subscribe:** Get notified when Knowledge Base articles are created, 
+updated, or deleted. 
 
--   **Home Folder Permissions:** Define detailed permissions for the Knowledge 
-    Base app. You can choose the roles that can perform the following tasks: 
+**Home Folder Permissions:** Define detailed permissions for the Knowledge 
+Base app. You can choose the Roles that can perform the following tasks: 
 
-    -   Add/delete articles, folders, and templates 
-    -   Change the Knowledge Base app's permissions 
-    -   Subscribe to articles
-    -   View templates and suggestions
+-   Add/delete articles, folders, and templates 
+-   Change the Knowledge Base app's permissions 
+-   Subscribe to articles
+-   View templates and suggestions
 
--   **Export/Import:** Export or import the Knowledge Base app's configuration. 
+**Export/Import:** Export or import the Knowledge Base app's configuration. 
 
--   **Configuration:** Configure email notifications for article subscriptions 
-    and suggestions. You can also make the Knowledge Base app's articles 
-    available via RSS (RSS is enabled by default), and configure the RSS feed's 
-    options. 
+**Configuration:** Configure email notifications for article subscriptions and
+suggestions. You can also make the Knowledge Base app's articles available via
+RSS (enabled by default), and configure the RSS feed's options. 
 
 ![Figure 2: The Knowledge Base App's options.](../../../../images/kb-admin-options.png)
 
 ## Managing Knowledge Base Articles [](id=managing-knowledge-base-articles)
 
 Each article also has a *priority* value that determines its position in the 
-[Knowledge Base Display widget's navigation](/discover/portal/-/knowledge_base/7-1/knowledge-base-display). 
-Each article's priority value is listed underneath the article's title. The 
-Knowledge Base Display widget's navigation arranges articles in ascending 
-priority. Priority 1 is the highest priority. The higher an article's priority, 
-the higher it appears in the navigation. Articles are assigned the next lowest 
-priority by default. This behavior can be changed via 
+[Knowledge Base Display widget's navigation](/discover/portal/-/knowledge_base/7-1/knowledge-base-display). Each
+article's priority value appears beneath the article's title. The Knowledge Base
+Display widget's navigation arranges articles in ascending priority. Priority
+1 is the highest priority. The higher an article's priority, the higher it
+appears in the navigation. Articles are assigned the next lowest priority by
+default. This behavior can be changed via 
 [Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-1/knowledge-base-system-settings). 
 
 To assign articles a new priority value, follow these steps: 
@@ -89,17 +87,15 @@ Each folder's Actions menu
 (![Actions](../../../../images/icon-actions.png)) 
 lets you perform the following actions on the folder: 
 
--   **Edit:** Change the folder's name and description.
+**Edit:** Change the folder's name and description.
 
--   **Move:** Relocate the folder under a new parent folder or update its
-    priority. 
+**Move:** Relocate the folder under a new parent folder or update its priority. 
 
--   **Delete:** Remove the folder and its articles from the Knowledge Base. 
+**Delete:** Remove the folder and its articles from the Knowledge Base. 
 
--   **Permissions:** Grant or revoke the following permissions: add an article 
-    to the folder, add a sub-folder to the folder, delete the folder, move the 
-    folder, set permissions on the folder, edit (update) the folder, and view 
-    the folder. 
+**Permissions:** Grant or revoke the following permissions: add an article to
+the folder, add a sub-folder to the folder, delete the folder, move the folder,
+set permissions on the folder, edit (update) the folder, and view the folder. 
 
 You can also delete multiple articles or folders at once. To do this, select the 
 checkbox for each item that you want to delete and click the *X* button that 

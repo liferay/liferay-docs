@@ -1,6 +1,6 @@
 # Other Knowledge Base Widgets [](id=other-knowledge-base-widgets)
 
-There are other Knowledge Base widgets you can add to site pages besides 
+There are other Knowledge Base widgets you can add to Site pages besides 
 [Knowledge Base Display](/discover/portal/-/knowledge_base/7-1/knowledge-base-display): 
 
 -   **Knowledge Base Article:** Display a single article's content.
@@ -14,8 +14,8 @@ You can add these widgets from *Add*
 
 ## Knowledge Base Article [](id=knowledge-base-article)
 
-Knowledge Base Article lets you show a single article's content. It even shows 
-abstracts of child articles. You can add multiple Knowledge Base Article 
+Knowledge Base Article displays a single article's content. It even shows
+abstracts of child articles. You can add multiple Knowledge Base Article
 instances to a page, and each one can show a different article. 
 
 After adding Knowledge Base Article to a page, follow these steps to configure 
@@ -49,7 +49,7 @@ deprecated and replaced by
 $$$
 
 The Knowledge Base Section widget lets you publish articles associated with a 
-specific topic (section). For example, a news site might have the sections 
+specific topic (section). For example, a news Site might have the sections 
 *World*, *Politics*, *Business*, and *Entertainment*. 
 
 ![Figure 2: The Knowledge Base Section widget.](../../../../images/kb-section.png)

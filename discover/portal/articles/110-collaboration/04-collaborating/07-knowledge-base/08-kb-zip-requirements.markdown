@@ -10,10 +10,10 @@ attachments.
 **Note:** Imported articles are independent of the workflow settings. This 
 means that **imported articles are automatically approved.**
 
-Only users with the *Import Articles* permission assigned to their role are 
+Only users with the *Import Articles* permission assigned to their Role are 
 able to import articles. This permission can be assigned manually through 
 *Control Panel* &rarr; *Users* &rarr; *Roles*. If you've upgraded from Liferay 
-Portal 6.2, you can also assign this role to every role that was already able to 
+Portal 6.2, you can also assign this Role to every Role that was already able to 
 add articles with a command from the Gogo shell. 
 
 Open the Gogo shell: `telnet localhost 11311`. Type 
@@ -60,7 +60,7 @@ so far:
     - `00-summer-excursions-intro.markdown`
     - `01-lunar-rock-scrambling.markdown`
     - `02-extra-terrestrial-mountain-biking.markdown`
-    - `03-summer-olympics/`
+    - `03-lunar-olympics/`
         - `00-lunar-olympics-intro.markdown`
         - `01-zero-gravity-diving.markdown`
 

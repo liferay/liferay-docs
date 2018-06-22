@@ -29,11 +29,11 @@ URL, import file conventions, new article priority increment, and sections.
 
 ## Source URL Settings [](id=source-url-settings)
 
-The source URL settings define the source location of Markdown files for import. 
-This is intended to point to a source repository where the files are stored. 
-GitHub is assumed as the default. Once defined, the Knowledge Base displays a 
-button (default label is *Edit on GitHub*) above each displayed article. Users 
-can click the button to navigate to an article's source location.
+The source URL settings define the source location of Markdown files for import.
+This should point to a source repository where the files are stored. GitHub is
+assumed as the default. Once defined, the Knowledge Base displays a button
+(default label is *Edit on GitHub*) above each displayed article. Users can
+click the button to navigate to an article's source location.
 
 The source URL settings are accessible in the *Knowledge Base Service* section 
 of the Knowledge Base's System Settings. To enable the source URL, check the 
@@ -60,12 +60,11 @@ System Settings.
 
 The following settings specify the importer's supported file extensions: 
 
--   **Markdown Importer article extensions:** Sets the supported article 
-    extensions. The default values are `.markdown` and `.md`. 
+**Markdown Importer article extensions:** Sets the supported article extensions.
+The default values are `.markdown` and `.md`. 
 
--   **Markdown Importer Image File Extensions:** Sets the supported image file 
-    extensions. The default values are `.bmp`, `.gif`, `.jpeg`, `.jpg`, and 
-    `.png`. 
+**Markdown Importer Image File Extensions:** Sets the supported image file
+extensions. The default values are `.bmp`, `.gif`, `.jpeg`, `.jpg`, and `.png`. 
 
 Follow these steps to modify the supported file extensions: 
 
@@ -78,19 +77,19 @@ Follow these steps to modify the supported file extensions:
 
 These settings define additional article configuration options for the importer: 
  
--   **Markdown Importer Article Intro:** Sets the parent article's file suffix. 
-    The default value is `intro.markdown`. 
+**Markdown Importer Article Intro:** Sets the parent article's file suffix. 
+The default value is `intro.markdown`. 
 
--   **Markdown Importer Image Folder:** Sets the image folder path the importer 
-    looks for in the ZIP file. The default path is `/images`. 
+**Markdown Importer Image Folder:** Sets the image folder path the importer 
+looks for in the ZIP file. The default path is `/images`. 
 
--   **Article Increment Priority Enabled:** Whether to increment new article 
-    priorities by `1.0`. To disable this increment so that articles get a flat 
-    value of `1.0`, deselect the checkbox. 
+**Article Increment Priority Enabled:** Whether to increment new article 
+priorities by `1.0`. To disable this increment so that articles get a flat 
+value of `1.0`, deselect the checkbox. 
 
-    Alternatively, you can enable or disable the article increment priority 
-    feature for each widget in the corresponding widget's configuration menu in 
-    System Settings. 
+Alternatively, you can enable or disable the article increment priority 
+feature for each widget in the corresponding widget's configuration menu in 
+System Settings. 
 
 ## Section Names Setting [](id=section-names-setting)
 
@@ -114,7 +113,3 @@ Once your sections are added, you can follow the steps in the
 [Knowledge Base Section documentation](/discover/portal/-/knowledge_base/7-1/other-knowledge-base-widgets#knowledge-base-section) 
 to learn how to use them.
 
-<!-- 
-For a full list of the available System Settings for Knowledge Base see 
-[Knowledge Base Configuration](/discover/reference/-/knowledge_base/7-0/knowledge-base-configuration).
--->
