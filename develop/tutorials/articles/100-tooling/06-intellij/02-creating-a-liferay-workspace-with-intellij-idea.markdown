@@ -40,12 +40,12 @@ To import an existing workspace into IntelliJ, follow the steps below:
 
 1.  Select *File* &rarr; *New* &rarr; *Project from Existing Sources...*.
 
-2.  Select the workspace you'd like to import. Then click *OK*.
+2.  Select the workspace you want to import. Then click *OK*.
 
     ![Figure 3: Specify your workspace's configurations.](../../../images/intellij-import-workspace.png)
 
 3.  Click the *Import project from external model* radio button and select the
-    build type your workspace is built with (e.g., Gradle or Maven).
+    build tool your workspace uses (e.g., Gradle or Maven).
 
 4.  Configure the project import (if necessary) and then click *Finish*. See the
     [Import a Project](https://www.jetbrains.com/help/idea/creating-and-managing-projects.html#importing-project)

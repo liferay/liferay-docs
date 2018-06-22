@@ -1,8 +1,8 @@
 # Creating Projects with IntelliJ IDEA [](id=creating-projects-with-intellij-idea)
 
-IntelliJ IDEA provides a New Liferay Modules wizard for users to create a
-variety of different module projects. You can also use the same wizard to create
-theme projects, WAR-style projects, etc. Before beginning, ensure you've
+IntelliJ IDEA provides a New Liferay Modules wizard to create a variety of
+different module projects. You can also use the same wizard to create theme
+projects, WAR-style projects, and more. Before beginning, ensure you've
 [created/imported a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/creating-a-liferay-workspace-with-intellij-idea)
 in your IntelliJ environment. Follow the steps below to create a @product@
 module:

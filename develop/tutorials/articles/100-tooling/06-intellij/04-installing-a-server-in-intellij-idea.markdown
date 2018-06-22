@@ -50,4 +50,4 @@ For reference, here's how the IntelliJ configuration buttons work with your
   [IntelliJ Debugging](https://www.jetbrains.com/help/idea/debugging-code.html)
   article.
 
-Now you’re ready to use your server in IntelliJ!
+Now you're ready to use your server in IntelliJ!
