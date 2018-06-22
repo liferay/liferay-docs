@@ -31,18 +31,16 @@ is important to the operation of @product@. In Liferay Home, @product@ creates
 certain files and folders that it needs to run. On WebSphere, Liferay Home is 
 typically `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 
 
-And lastly, download @product@'s WAR file and dependencies from the customer 
-portal on 
-[liferay.com](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
+To start, download @product@'s WAR file and dependencies from the customer
+portal on
+[liferay.com](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise).
 You'll need the following files: 
 
-- `liferay-dxp-digital-enterprise-[version].war`: @product@ WAR file
+- `liferay-dxp-digital-enterprise-[version].war`
 
-- `liferay-dxp-digital-enterprise-dependencies-[version].zip`: @product@
-  dependencies
+- `liferay-dxp-digital-enterprise-dependencies-[version].zip` 
 
-- `liferay-dxp-digital-enterprise-osgi-[version].zip`: @product@ OSGi
-  dependencies
+- `liferay-dxp-digital-enterprise-osgi-[version].zip` 
 
 Without any further ado, get ready to install @product@ in WebSphere! 
 
@@ -53,13 +51,13 @@ Management Tool* to create a profile appropriate for @product@.
 
 1.  Click *Create...*, choose *Application Server*, and then click *Next*. 
 
-2.  Click the *Advanced* profile creation option and then click *Next*. Why 
-    Advanced? You can specify your own values for settings such as the location 
-    of the profile and names of the profile, node and host. You can assign your 
-    own ports. You can optionally choose whether to deploy the administrative 
-    console and sample application and also add web-server definitions if you 
-    wish. Web server definitions are used with IBM HTTP Server. See the 
-    WebSphere documentation for more information about these options. 
+2.  Click the *Advanced* profile creation option and then click *Next*. You need
+    the advanced profile to  specify your own values for settings such as the
+    location of the profile and names of the profile, node and host, to assign
+    your own ports, or to optionally choose whether to deploy the administrative
+    console and sample application and also add web-server definitions for IBM
+    HTTP Server. See the WebSphere documentation for more information about
+    these options. 
 
     ![Figure 1: Choose the Advanced profile option to specify your own settings.](../../images-dxp/websphere-01-profile.png)
 
@@ -73,7 +71,7 @@ Management Tool* to create a profile appropriate for @product@.
     server. See the WebSphere documentation for more information about 
     performance tuning settings. Click *Next*. 
 
-5.  Choose node, server, and host names for your server. These will be specific 
+5.  Choose node, server, and host names for your server. These are specific 
     to your environment. Click *Next*. 
 
 6.  Administrative security in WebSphere is a way to restrict who has access to 
@@ -117,14 +115,14 @@ are a few things you need to configure in your application server.
 In this version of WebSphere, servlet filters are not initialized on web 
 application startup, but rather, on first access. This can cause problems when 
 deploying certain apps to @product@. To configure servlet filters to initialize 
-on application startup (i.e., deployment), you need to set the following 
-`webcontainer` custom properties in your WebSphere application server: 
+on application startup (i.e., deployment), set the following `webcontainer`
+properties in your WebSphere application server: 
 
     com.ibm.ws.webcontainer.initFilterBeforeInitServlet = true
     com.ibm.ws.webcontainer.invokeFilterInitAtStartup = true
 
-To set `webcontainer` custom properties in the WebSphere application server, 
-follow the instructions 
+To set `webcontainer` properties in the WebSphere application server, follow the
+instructions 
 [here in WebSphere's documentation](http://www-01.ibm.com/support/docview.wss?rss=180&uid=swg21284395). 
 
 ### Setting up JVM Parameters for Liferay DXP [](id=setting-up-jvm-parameters-for-liferay-dxp)
@@ -141,10 +139,10 @@ Add `maximumHeapSize="2048"` inside the `jvmEntries` tag. For example:
 
 +$$$
 
-**Note:** The JVM parameters used here are defaults intended for production 
-systems development purposes. Administrators can change the settings to other 
-values that best address their specific environments. These will need to be 
-tuned depending on need. 
+**Note:** The JVM parameters used here are defaults intended for initial
+deployment of production systems. Administrators should change the settings to
+values that best address their specific environments. These must be tuned
+depending on need. 
 
 $$$
 
@@ -167,7 +165,7 @@ In `[Install Location]/WebSphere/AppServer/profiles/your-profile/config/cells/yo
 Delete the `secureSessionCookie` tag containing 
 `xmi:id="SecureSessionCookie_1"`. 
 
-If this tag is not removed, an error similar to the one here may occur: 
+If this tag is not removed, an error similar to this may occur: 
 
     WSVR0501E: Error creating component com.ibm.ws.runtime.component.CompositionUnitMgrImpl@d74fa901    
     com.ibm.ws.exception.RuntimeWarning: com.ibm.ws.webcontainer.exception.WebAppNotLoadedException: Failed to load webapp: Failed to load webapp: SRVE8111E: The application, LiferayEAR, is trying to modify a cookie which matches a pattern in the restricted programmatic session cookies list [domain=*, name=JSESSIONID, path=/].
@@ -220,11 +218,10 @@ for @product@. Once it starts, you're ready to configure your database.
 
 ## Database Configuration [](id=database-configuration)
 
-If you want WebSphere to manage the database connections, follow the 
-instructions below. Note this is not necessary if you're planning on using 
-@product@'s standard database configuration; in that case, skip this section. 
-You'll set your database information in @product@'s setup wizard after the 
-install. 
+If you want WebSphere to manage the database connections, follow the
+instructions below. Note this is not necessary if you plan to use @product@'s
+standard database configuration; in that case, skip this section. You'll set
+your database information in @product@'s setup wizard after the install. 
 
 +$$$
 
@@ -233,7 +230,7 @@ you **should not** use it for production @product@ instances.
 
 $$$
 
-    ![Figure 3: WebSphere JDBC providers](../../images-dxp/websphere-jdbc-providers.png)
+![Figure 3: WebSphere JDBC providers](../../images-dxp/websphere-jdbc-providers.png)
 
 1.  Start WebSphere. 
 
@@ -246,10 +243,10 @@ $$$
 5.  Select your database type, provider type, and implementation type. If you 
     select a predefined database, the wizard fills in the name and description 
     fields for you. If the database you want to use isn't listed, select 
-    *User-defined* from the *Database type* field and then fill in the 
-    *Implementation Class Name*. For example, if you are using MySQL, select 
-    *Database type* &rarr; *User-defined*, and then enter 
-    `com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource` in 
+    *User-defined* from the *Database type* field and then fill in the
+    *Implementation Class Name*. For example, if you use MySQL, select *Database
+    type* &rarr; *User-defined*, and then enter
+    `com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource` in
     *Implementation Class Name*. Click *Next* when you are finished. 
 
 6.  Clear any text in the classpath settings. You already copied the necessary 
@@ -407,10 +404,10 @@ You've now installed @product@!
 
 ## Setting the JDK Version for Compiling JSPs [](id=setting-the-jdk-version-for-compiling-jsps)
 
-@product@ requires that its JSPs are compiled on Java 8. To ensure that
-WebSphere does this, shut down WebSphere after you've deployed the @product@
-`.war` file. Navigate to the `WEB_INF` folder and add the following setting to
-the `ibm-web-ext.xml` or in most cases the `ibm-web-ext.xmi` file:
+@product@ requires that its JSPs are compiled to the Java 8 bytecode format. To
+ensure that WebSphere does this, shut down WebSphere after you've deployed the
+@product@ `.war` file. Navigate to the `WEB_INF` folder and add the following
+setting to the `ibm-web-ext.xml` or in most cases the `ibm-web-ext.xmi` file:
 
     <jsp-attribute name="jdkSourceLevel" value="18" />
 
@@ -427,42 +424,6 @@ official documentation for
 
 Now restart WebSphere. 
 
-## Enabling Security for Portal Access Control Lists [](id=enabling-security-for-portal-access-control-lists)
-
-When you are ready to start using apps from Liferay Marketplace, you must 
-enable Liferay's Portal Access Control Lists (PACL) to enforce security policies 
-on Marketplace applications. To do so, you must enable Java Security on your 
-WebSphere server and specify a security policy to grant @product@ access to your 
-server. 
-
-In WebSphere's administrative console, go to *Security* &rarr; 
-*Global Security*. Check the box to enable Java 2 security, and click *Apply*. 
-Save to the master configuration. 
-
-![Figure 7: Enabling security can be done by checking one box, but it still needs to be configured.](../../images-dxp/websphere-security.png)
-
-Now you must configure the security policy for the IBM JRE that WebSphere runs 
-on. With your WebSphere server shut down, open the following security policy 
-file: 
-
-    [WebSphere-Install-Location]/java_1.8_64/jre/lib/security/java.policy
-
-Replace this file's contents with the following configuration: 
-
-    grant {
-        permission java.security.AllPermission;
-    };
-
-This configuration opens all permissions. As best practices, opening all 
-permissions when starting Liferay Digital Enterprise 7.0 for the first time 
-allows for the creation of all required processes. Users can change security 
-settings later and restrict which plugins have access. (Users have the options 
-of using either the application server's security policies or Liferay DXP's.) 
-See this article 
-[concerning a Known Issues when generating PACL](https://customer.liferay.com/documentation/knowledge-base/-/kb/156397). 
-
-Once this permission has been set, users can start @product@. 
-
 ## Start @product@ [](id=start-liferay-dxp)
 
 1. If you plan to use @product@'s setup wizard, skip to the next step. If you 
@@ -475,9 +436,9 @@ Once this permission has been set, users can start @product@.
         setup.wizard.enabled=false
 
 2. In the WebSphere administrative console, navigate to *Enterprise 
-   Applications*, select the @product@ application, and click *Start*. While 
-   @product@ is starting, WebSphere displays a spinny little graphic. Don't 
-   watch it too closely, or you might get hypnotized. 
+   Applications*, select the @product@ application, and click *Start*. While
+   @product@ is starting, WebSphere displays a spinning graphic. Don't watch it
+   too closely, or you might get hypnotized. 
 
 3. In @product@'s setup wizard, select and configure your database type. Click 
    *Finish* when you're done. @product@ then creates the tables it needs in the 
