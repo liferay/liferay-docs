@@ -11,7 +11,7 @@ other file types:
 
 -   [**ImageMagick:**](https://www.imagemagick.org/script/index.php) 
     Generate higher-quality image previews, for many types of images. 
-    
+
 -   [**Xuggler:**](http://www.xuggle.com/xuggler/) 
     Convert and generate previews for audio and video files. 
 
@@ -66,6 +66,8 @@ app's External Services tab:
 3.  Verify that the paths to the ImageMagick and Ghostscript executables are 
     correct. 
 
+![Figure 1: Enable ImageMagick and Ghostscript, and verify that the paths are correct.](../images/imagemagick-ghostscript.png)
+
 ## Xuggler Configuration
 
 Follow these steps to install and configure Xuggler: 
@@ -86,3 +88,5 @@ Follow these steps to install and configure Xuggler:
         your application server: 
 
             xuggler.enabled=true
+
+![Figure 2: Install Xuggler.](../images/xuggler-install.png)

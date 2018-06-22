@@ -2,8 +2,11 @@
 
 The Server Administration app lets you manage and monitor your @product@ server. 
 You can access this app by clicking *Control Panel* &rarr; *Configuration* 
-&rarr; *Server Administration*. The app's functionality is segmented into these 
-tabs: 
+&rarr; *Server Administration*. 
+
+![Figure 1: The Resources tab of Server Administration shows a graph of your server's memory usage.](../images/server-admin-memory.png)
+
+The Server Administration app's functionality is segmented into these tabs: 
 
 -   **Resources:** View memory usage and perform management tasks like running 
     the garbage collector, clear the database cache, and more. For more 
