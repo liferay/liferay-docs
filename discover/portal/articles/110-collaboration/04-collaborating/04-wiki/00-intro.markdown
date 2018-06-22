@@ -1,24 +1,22 @@
 # Working Together with the Wiki [](id=working-together-with-the-wiki)
 
-Wikis let users collaboratively build a collection of information. The most 
-famous wiki on the planet is Wikipedia. It's a full online encyclopedia 
-developed collaboratively by users from all over the world, using a wiki. 
-@product@ contains a full-featured wiki app that lets you do the following: 
+Wikis are for collaboratively building a collection of information. The most
+famous wiki on the planet is Wikipedia. It's a full encyclopedia developed
+collaboratively by users from all over the world, using a wiki. @product@'s wiki
+does these things: 
 
--   Create multiple wikis in a single wiki app instance. 
--   Scope wikis to a page, a site, or the entire portal. 
--   Create and edit wikis in 
+-   Creates multiple wikis in a single wiki app instance. 
+-   Scopes wikis to a page, a site, or the entire portal. 
+-   Creates and edit wikis in 
     [WikiCreole syntax](http://www.wikicreole.org/). 
--   Attach files to wiki articles. 
--   Associate wiki articles with other assets in the portal. 
+-   Attaches files to wiki articles. 
+-   Associates wiki articles with other assets in the portal. 
 -   And more.
 
-As you can see, @product@'s wiki is very flexible and can be configured to fit 
+As you can see, @product@'s wiki is flexible and can be configured to fit 
 nearly any use case. What's more, it's completely integrated with the portal's 
 [user management](/discover/portal/-/knowledge_base/7-1/user-management), 
 [tagging](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags), 
 and 
 [security](/discover/deployment/-/knowledge_base/7-1/liferay-portal-security) 
-features. This lets administrators focus on building sites with wikis while the 
-portal handles everything else. 
-
+features. 

@@ -21,13 +21,13 @@ $$$
 
 Follow these steps to use the wiki page editing form: 
 
-1.  Enter your content in the field that contains the text 
-    *Write your content here...*. This is a rich-text, WYSIWYG editor that is 
-    almost identical to the one used in the Blogs app. The only difference is 
-    that the wiki editor uses Creole instead of HTML as its source. Click the 
-    link *Show Syntax Help* if you need help with Creole syntax (e.g., syntax 
-    for text styling, header formatting, link creation, etc.). For a detailed 
-    explanation of the rest of the editor, see the 
+1.  Enter your content in the field that contains the text *Write your content
+    here...*. This is a rich-text, WYSIWYG editor that is almost identical to
+    the one used in the Blogs app. The only difference is that the wiki editor
+    uses Creole instead of HTML as its source. Click the link *Show Syntax
+    Help* if you need help with Creole syntax (e.g., syntax for text styling,
+    header formatting, link creation, etc.). For a detailed explanation of the
+    rest of the editor, see the 
     [Blogs documentation](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor). 
 
 2.  If you want to attach files to the page, open the *Attachments* section of 
@@ -71,23 +71,22 @@ page listings, each page's Actions menu
 (![Actions](../../../../images/icon-actions.png)) lists the following actions 
 you can take on the page: 
 
--   **Edit**: Opens the page in the page editor.
+**Edit**: Opens the page in the page editor.
 
--   **Permissions**: Lets you determine which roles can view, update, delete,
-    subscribe to, or set permissions on the page, and add, update, or delete 
-    page discussions (comments).
+**Permissions**: Lets you determine which roles can view, update, delete,
+subscribe to, or set permissions on the page, and add, update, or delete page
+discussions (comments).
 
--   **Copy**: Opens a page editor window with all the content from the source 
-    wiki page. You're prompted to specify a new title for it. 
+**Copy**: Opens a page editor window with all the content from the source wiki
+page. You're prompted to specify a new title for it. 
 
--   **Move**: Opens a dialog that lets you rename the page or assign the page to 
-    a new parent page within the wiki node. 
+**Move**: Opens a dialog that lets you rename the page or assign the page to
+a new parent page within the wiki node. 
 
--   **Subscribe (or Unsubscribe)**: Subscribes you to (or unsubscribes you from)
-    notifications for the wiki page's modifications. 
+**Subscribe (or Unsubscribe)**: Subscribes you to (or unsubscribes you from)
+notifications for the wiki page's modifications. 
 
--   **Move to Recycle Bin**: Deletes the wiki page from the wiki node and moves
-    it to the Recycle Bin.
+**Move to Recycle Bin**: Moves the wiki node to the Recycle Bin.
 
 Each wiki page has a check box next to it. When you select a page's check box, 
 the Management Bar changes to show an Info icon 
@@ -100,21 +99,22 @@ panel's Details section displays the page's summary, format, version, creation
 and modification dates, number of attachments, and RSS link.
 
 There are several more features in the wiki node view's Management Bar. The 
-*Filter and Order* menu lets you order the pages by title or modification date, 
-and filter them by page type. The arrows button lets you sort the pages in 
-ascending or descending order. The search bar lets you search for pages. 
+*Filter and Order* menu orders the pages by title or modification date 
+and filters them by page type. The arrows button sorts the pages in 
+ascending or descending order. The search bar searches for pages. 
 
 The *View Types* button is next to the Info icon. It lets you choose how to 
 display the pages. The View Types button's icon depends on the selected view 
 type: 
 
--   **List** (![List](../../../../images/icon-view-type-list.png)): 
-    Shows the pages in a list with an icon representing each page. Each page's 
-    entry contains the name of its author, when it was last modified, and its  [workflow](/discover/portal/-/knowledge_base/7-1/using-workflow) 
-    status (e.g., Approved, Draft, etc.). 
+**List** (![List](../../../../images/icon-view-type-list.png)): Shows the pages
+in a list with an icon representing each page. Each page's entry contains the
+name of its author, when it was last modified, and its
+[workflow](/discover/portal/-/knowledge_base/7-1/using-workflow) status (e.g.,
+Approved, Draft, etc.). 
 
--   **Table** (![Table](../../../../images/icon-view-type-table.png)): Shows the 
-    same information as the List view type, in a smaller list with no page icon. 
-    Also, the page's information is in columns and includes the revision number. 
+**Table** (![Table](../../../../images/icon-view-type-table.png)): Shows the
+same information as the List view type, in a smaller list with no page icon.
+Also, the page's information is in columns and includes the revision number. 
 
 ![Figure 3: The wiki node's view in site administration has features that help you access and learn information about a wiki node's pages.](../../../../images/wiki-node-view-in-admin.png)
