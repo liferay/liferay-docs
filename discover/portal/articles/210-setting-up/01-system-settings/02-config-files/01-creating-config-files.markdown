@@ -17,13 +17,6 @@ functionality, has this file name:
 
 ![Figure 1: The Web Content System Settings entry has the backend ID `com.liferay.journal.configuration.JournalServiceConfiguration`.](../../../../images/config-web-content-entry.png)
 
-Configuration files use the `.config` property value format defined by the 
-[Apache Felix Configuration Admin framework](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html).
-
-The `.cfg` file format is common in OSGi environments, so @product@ supports it,
-but `.config` files are preferable. You can specify a property value's type, and
-have multi-valued properties. The syntax described below is for `.config` files. 
-
 ## Key/Value Syntax [](id=key-value-syntax)
 
 The general syntax for all keys and values in a `.config` file is the same: 
@@ -43,12 +36,12 @@ file:
 
     multiValueSetting=["Value 1","Value 2", ...]
 
-Do not use a space character between values (after the comma). An errant space
-character can cause a failure to load the property.
+Do not use a space character between values (after the comma). The property
+won't be loaded.
 
-Open the Web Content entry from System Settings, and select *Web Content* for 
-the virtual instance scope. You'll see what looks like multiple single value 
-entries for *Characters Blacklist*: 
+Open the Web Content category in System Settings (under the Content section), and
+select *Web Content* for the virtual instance scope. You'll see what looks like
+multiple single value entries for *Characters Blacklist*: 
 
 ![Figure 2: The Web Content System Settings entry has many *Characters Blacklist* fields.](../../../../images/config-web-content-blacklist.png)
 
@@ -98,17 +91,17 @@ example included above functions identically without the type marker:
 
 ## Deploying a Configuration File [](id=deploying-a-configuration-file)
 
-Once you have a configuration file, deploy it so @product@ recognizes it and 
-updates the targeted configuration values. 
+Once you have a configuration file, deploy it. It's registered and 
+the targeted configuration values are updated automatically. 
 
 To deploy the `.config` file, place it in your 
 [Liferay Home's](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
 `osgi/configs` folder. To change the configuration further, you can edit the 
 `.config` file directly or use System Settings. 
 
-### Configuration Files and Clustering [](id=configuration-files-and-clustering)
+## Configuration Files and Clustering [](id=configuration-files-and-clustering)
 
 In a clustered environment, each node needs the same configuration values for
 each entry. For example, all nodes should use the same *Blogs* configuration
-settings. To accomplish this, deploy a `.config` file to *one* node. @product@
-uses an internal system that applies the change to all nodes in the cluster. 
+settings. To accomplish this, deploy a `.config` file to *one* node.  An
+internal system applies the change to all nodes in the cluster. 

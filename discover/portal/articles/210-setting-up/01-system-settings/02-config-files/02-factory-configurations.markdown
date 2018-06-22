@@ -5,16 +5,16 @@ configuration entry are called *factory configurations*.
 
 +$$$
 
-**Factory Configuration Example:** @product@ supports the publication of 
-[JAX-WS and JAX-RS web services](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs). 
-These services must use a 
-[CXF Endpoint](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#cxf-endpoints), 
-which is a context path where the web services are deployed and accessed. 
+**Factory Configuration Example:** 
+[JAX-WS and JAX-RS web services](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs) 
+are supported. These services must use a [CXF
+Endpoint](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#cxf-endpoints),
+which is a context path where the web services are deployed and accessed.
 Endpoints can be created via factory configuration by navigating to the CXF
-Endpoints entry in System Settings (System Settings &rarr; Platform &rarr; Web 
-API &rarr; CXF Endpoints). Click *ADD*, enter the desired configuration values, 
-then repeat the process to add as many CXF Endpoint configurations as needed. 
-Creating CXF Endpoint configurations also creates CXF Endpoints themselves. This 
+Endpoints entry in System Settings (System Settings &rarr; Platform &rarr; Web
+API &rarr; CXF Endpoints). Click *ADD*, enter the desired configuration values,
+then repeat the process to add as many CXF Endpoint configurations as needed.
+Creating CXF Endpoint configurations also creates CXF Endpoints themselves. This
 is how factory configurations work. 
 
 $$$
@@ -31,8 +31,8 @@ this:
 
     my.service.ServiceConfiguration.config
 
-If your service supports factory configurations, use @product@'s convention of 
-calling the configuration's first instance `-default.config`: 
+If your service supports factory configurations, use the convention of calling
+the configuration's first instance `-default.config`: 
 
     my.service.ServiceConfiguration-default.config
 
@@ -64,7 +64,7 @@ for its subname, like this:
     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-a6f67e48-6dca-49c6-bf6b-8fd5e6016b2d.config
 
 This guarantees that the file has a unique name. If you're exporting the 
-configuration file for deployment in a separate @product@ system, you can rename 
+configuration file for deployment in a separate system, you can rename 
 the exported file to use a more descriptive subname. If you rename the file and 
 deploy it to the same system it was exported from, the new subname marks it as 
 an entirely new configuration. You'll end up with an additional configuration 
