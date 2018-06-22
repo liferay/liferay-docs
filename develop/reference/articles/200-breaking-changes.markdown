@@ -196,7 +196,7 @@ configuration changes.
 ---------------------------------------
 
 ### Moved OpenOffice Properties to OSGi Configuration [](id=moved-openoffice-properties-to-osgi-configuration)
-- **Date:** 2017-March-24
+- **Date:** 2017-Mar-24
 - **JIRA Ticket:** [LPS-71382](https://issues.liferay.com/browse/LPS-71382)
 
 #### What changed? [](id=what-changed-3)
@@ -502,3 +502,339 @@ migrate to FreeMarker. Also, Velocity has had no new releases for a long time.
 
 The removal of Velocity support for Liferay Portal 7.1 themes allows for an
 increased focus on existing and new template engines.
+
+---------------------------------------
+
+### Moved Organization Type Properties to OSGi Configuration [](id=moved-organization-type-properties-to-osgi-configuration)
+- **Date:** 2018-Jan-19
+- **JIRA Ticket:** [LPS-77183](https://issues.liferay.com/browse/LPS-77183)
+
+#### What changed? [](id=what-changed-10)
+
+The organization type properties have been moved from `portal.properties` to an
+OSGi configuration named `OrganizationsTypesConfiguration.java` in the
+`users-admin-api` module.
+
+#### Who is affected? [](id=who-is-affected-10)
+
+This affects anyone using the following portal properties:
+
+- `organizations.types`
+- `organizations.rootable`
+- `organizations.children.types`
+- `organizations.country.enabled`
+- `organizations.country.required`
+
+#### How should I update my code? [](id=how-should-i-update-my-code-10)
+
+Instead of overriding the `portal.properties` file, you can manage the
+properties from Portal's configuration administrator. This can be accessed by
+navigating to Liferay Portal's *Control Panel* &rarr; *Configuration* &rarr;
+*System Settings* &rarr; *Foundation* &rarr; *Organization Type* and editing
+the settings there.
+
+If you would like to include the new configuration in your application, follow
+the instructions for
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-your-applications-configurable).
+
+#### Why was this change made? [](id=why-was-this-change-made-10)
+
+This change was made as part of the modularization efforts to ease portal
+configuration changes.
+
+---------------------------------------
+
+### Updated jQuery and Lodash Bundled Versions [](id=updated-jquery-and-lodash-bundled-versions)
+- **Date:** 2018-Feb-07
+- **JIRA Ticket:** [LPS-66645](https://issues.liferay.com/browse/LPS-66645),
+[LPS-66646](https://issues.liferay.com/browse/LPS-66646)
+
+#### What changed? [](id=what-changed-11a)
+
+The bundled jQuery version has been updated from 2.1.4 to 3.3.1. The bundled
+Lodash version has been updated from 3.10.1 to 4.17.4.
+
+#### Who is affected? [](id=who-is-affected-11a)
+
+This affects anyone using the previous API versions in their code.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-11a)
+
+Follow the changelogs on the [jQuery](http://jquery.com/upgrade-guide/3.0/) and
+[Lodash](https://github.com/lodash/lodash/wiki/Changelog#v400) sites to update
+any affected code.
+
+#### Why was this change made? [](id=why-was-this-change-made-11a)
+
+This change provides the latest jQuery and Lodash versions available.
+
+---------------------------------------
+
+### Removed JavaScript Minification Properties minifier.javascript.impl and yui.compressor.* from portal.properties [](id=removed-javascript-minification-properties-minifier-javascript-impl-and-yui)
+- **Date:** 2018-Feb-28
+- **JIRA Ticket:** [LPS-74375](https://issues.liferay.com/browse/LPS-74375)
+
+#### What changed? [](id=what-changed-11)
+
+The JavaScript minifiers have been extracted from `portal-kernel` and moved to
+their own OSGi module. Thus, they are not configured in `portal.properties` any
+more, but rather, through OSGi configuration.
+
+#### Who is affected? [](id=who-is-affected-11)
+
+This affects anyone who had the Yahoo JavaScript minifier active and configured
+to override its default settings.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-11)
+
+If you are implementing your own JavaScript minifier, you should extract it to
+its own OSGi module. See module
+[frontend-js-minifier](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-js/frontend-js-minifier)
+for an example of how to do this.
+
+#### Why was this change made? [](id=why-was-this-change-made-11)
+
+The JavaScript minifiers were not easy to customize. For example, the Google
+minifier used an old version of the closure-compiler, which was difficult to
+upgrade because it required `portal-kernel` dependency changes. This could
+create conflicts.
+
+Having JavaScript minifiers in their own OSGi modules requires less dependency
+management and makes it easier to provide new implementations of JavaScript
+minifiers. Also, configuration can now be done using OSGi standards.
+
+---------------------------------------
+
+### Changed Behavior of liferay-ui:input-date Taglib's showDisableCheckbox Argument [](id=changed-behavior-of-liferay-uiinput-date-taglibs-showdisablecheckbox-argume)
+- **Date:** 2018-Mar-06
+- **JIRA Ticket:** [LPS-78475](https://issues.liferay.com/browse/LPS-78475)
+
+#### What changed? [](id=what-changed-12)
+
+Previously, when the `liferay-ui:input-date` taglib's `showDisableCheckbox`
+argument was set to `true`, the disable checkbox was hidden. Now, the value
+`true` displays it, and `false` hides it.
+
+#### Who is affected? [](id=who-is-affected-12)
+
+This affects anyone trying to hide the `liferay-ui:input-date` taglib's disable
+checkbox.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-12)
+
+If you are setting the `showDisableCheckbox` argument to `true` to hide the
+`liferay-ui:input-date` taglib's disable checkbox, you should now set it to
+`false`, and vice versa.
+
+#### Why was this change made? [](id=why-was-this-change-made-12)
+
+The behavior did not match with the name of the argument and was
+counter-intuitive.
+
+---------------------------------------
+
+### Updated Liferay Portal's Portlet API Implementation [](id=updated-liferay-portals-portlet-api-implementation)
+- **Date:** 2018-May-10
+- **JIRA Ticket:** [LPS-73282](https://issues.liferay.com/browse/LPS-73282)
+
+#### What changed? [](id=what-changed-13)
+
+Liferay Portal 7.1 CE GA1 provides the Portlet 3.0 API dependency in the runtime
+classpath. Previous versions provided the Portlet 2.0 API.
+
+Full support for Portlet 3.0 will not be available until Liferay Portal 7.1 CE
+GA2 is released.
+
+#### Who is affected? [](id=who-is-affected-13)
+
+This affects developers planning to upgrade custom portlets from earlier
+versions of Liferay Portal.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-13)
+
+There are three development use-cases to plan for:
+
+##### JSP Considerations [](id=jsp-considerations)
+
+Portlet 3.0 is a binary-backward-compatible upgrade. This means that Java source
+that was built against `portlet-api-2.0.0.jar` is compatible at runtime. Since
+JSP files are typically not compiled until the first request, however, they do
+not fall under the category of pre-compiled source.
+
+Specifically, if a JSP contains a Java scriptlet that calls
+[`MimeResponse.createActionURL()`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/MimeResponse.html#createActionURL())
+and
+[`MimeResponse.createRenderURL()`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/MimeResponse.html#createRenderURL()),
+then there is a possibility that the JSP will fail to compile or throw a
+`ClassCastException` at runtime. This is because the return type of these
+methods has changed.
+
+For example, a Liferay Portal sample portlet's `view.jsp` had to be changed
+from
+
+    <aui:form action="<%= renderResponse.createActionURL() %>" method="post" name="fm">
+
+to
+
+    <aui:form action="<%= (PortletURL)renderResponse.createActionURL() %>" method="post" name="fm">
+
+##### Upgrade Considerations [](id=upgrade-considerations)
+
+To take advantage of new features in Portlet 3.0, you must rebuild portlet
+projects against the `portlet-api-3.0.0.jar` dependency and *opt-in* by
+specifying version 3.0 in one of two ways:
+
+1. Add the following tag in your portlet's `portlet.xml` file:
+
+        <portlet-app version="3.0">
+
+2. Add the following property in your portlet's `@Component` tag:
+
+        @Component(
+            property = {
+                "javax.portlet.version=3.0"
+            },
+            service = Portlet.class
+        )
+
+In addition, you must opt-in to new JSP features by specifying the Portlet 3.0
+tag library in your JSP views. For example,
+
+    <%@ taglib uri="http://xmlns.jcp.org/portlet_3_0" prefix="portlet" %>
+
+JSPs that opt-in with the new tag library may encounter JSP compilation problems
+related to the `<portlet:defineObjects>` tag. Specifically, if JSPs reference
+variables with the following names in Java scriptlets, then a JSP compilation
+will occur:
+
+- `actionParams`
+- `clientDataRequest`
+- `cookies`
+- `contextPath`
+- `locale`
+- `locales`
+- `mutableRenderParams`
+- `namespace`
+- `portletContext`
+- `portletMode`
+- `portletRequest`
+- `portletResponse`
+- `resourceParams`
+- `windowId`
+- `windowState`
+- `stateAwareResponse`
+
+With the Portlet API 3.0 implementation, these variables are already added to
+this context by default, so attempting to initialize them in the JSP would
+duplicate them. Therefore, your JSP scriptlets adding them should be removed.
+
+For example, JSP scriptlets like the following had to be removed from
+several of Liferay Portal's out-of-the-box portlets' `view.jsp`:
+
+    <%=
+    PortletRequest portletRequest = (PortletRequest)request.getAttribute(JavaConstants.JAVAX_PORTLET_REQUEST);
+
+    PortletResponse portletResponse = (PortletResponse)request.getAttribute(JavaConstants.JAVAX_PORTLET_RESPONSE);
+
+    String namespace = AUIUtil.getNamespace(portletRequest, portletResponse);
+
+    if (Validator.isNull(namespace)) {
+        namespace = AUIUtil.getNamespace(request);
+    }
+    %>
+
+#### Why was this change made? [](id=why-was-this-change-made-13)
+
+This change provides the latest features offered by the Portlet 3.0
+Specification, which was released in early 2017.
+
+---------------------------------------
+
+### Changed the Dependency for the liferay-util:html-top JSP tag [](id=changed-the-dependency-for-the-liferay-utilhtml-top-jsp-tag)
+- **Date:** 2018-Jun-07
+- **JIRA Ticket:** [LPS-81983](https://issues.liferay.com/browse/LPS-81983)
+
+#### What changed? [](id=what-changed-14)
+
+The usage of `portal-kernel`'s `StringBundler` has been deprecated in favor of
+Liferay's Petra `StringBundler`.
+
+#### Who is affected? [](id=who-is-affected-14)
+
+This affects anyone using the `<liferay-util:html-top>` JSP tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-14)
+
+You must add the following dependency in your build file for your JSPs to
+compile successfully:
+
+**build.gradle**:
+
+    dependencies {
+        ...
+        compileOnly group: "com.liferay", name: "com.liferay.petra.string", version: "1.2.0"
+        ...
+    }
+
+**pom.xml**:
+
+    <dependency>
+        <groupId>com.liferay</groupId>
+        <artifactId>com.liferay.petra.string</artifactId>
+        <version>1.2.0</version>
+        <scope>provided</scope>
+    </dependency>
+
+#### Why was this change made? [](id=why-was-this-change-made-14)
+
+This change helps stabilize the foundation of Liferay Portal's utilities.
+
+---------------------------------------
+
+### Decoupled Several Classes from PortletURLImpl [](id=decoupled-several-classes-from-portleturlimpl)
+- **Date:** 2018-Jun-08
+- **JIRA Ticket:** [LPS-82119](https://issues.liferay.com/browse/LPS-82119)
+
+#### What changed? [](id=what-changed-15)
+
+All classes implementing `javax.portlet.BaseURL` have had their inheritance
+hierarchy change. These classes include
+
+- `PortletURLImplWrapper`
+- `LiferayStrutsPortletURLImpl`
+- `StrutsActionPortletURL`
+
+#### Who is affected? [](id=who-is-affected-15)
+
+This affects code that attempts to subclass or create a new instance of the
+classes listed previously.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-15)
+
+You must refactor the constructors of your affected classes to receive
+`com.liferay.portal.kernel.portlet.LiferayPortletResponse` instead of
+`com.liferay.portlet.PortletResponseImpl`.
+
+In addition, their class hierarchies must be changed. For example, the
+`com.liferay.portal.struts.StrutsActionPortletURL` class hierarchy was changed
+from
+
+- `com.liferay.portlet.PortletURLImpl`
+    - `com.liferay.portlet.PortletURLImplWrapper`
+        - `com.liferay.portal.struts.StrutsActionPortletURL`
+
+to
+
+- `javax.portlet.filter.RenderStateWrapper`
+    - `javax.portlet.filter.BaseURLWrapper`
+        - `javax.portlet.filter.PortletURLWrapper`
+            - `com.liferay.portal.kernel.portlet.LiferayPortletURLWrapper`
+                - `com.liferay.portlet.PortletURLImplWrapper`
+                    - `com.liferay.portal.struts.StrutsActionPortletURL`
+
+#### Why was this change made? [](id=why-was-this-change-made-15)
+
+This change corrects a best practice violation regarding
+implementation-specific details being included within an API.
+
+---------------------------------------

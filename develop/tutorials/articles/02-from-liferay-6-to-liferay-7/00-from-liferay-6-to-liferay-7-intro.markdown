@@ -34,4 +34,4 @@ interested in upgrading your plugins first, skip to
 $$$
 
 You'll start by seeing the familiar, good things that remain the same and then
-examine what’s changed the most since Liferay Portal 6. 
+examine what's changed the most since Liferay Portal 6. 

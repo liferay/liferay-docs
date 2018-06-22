@@ -1,7 +1,7 @@
-# Installing a Server in Liferay @ide@ [](id=installing-a-server-in-liferay-ide)
+# Installing a Server in Liferay Dev Studio [](id=installing-a-server-in-liferay-ide)
 
-Installing a server in Liferay @ide@ is easy. In just a few steps you'll have
-your server up and running. Follow these steps to install your server:
+Installing a server in Liferay Dev Studio is easy. In just a few steps you'll
+have your server up and running. Follow these steps to install your server:
 
 1.  In the Servers view, click the *No Servers are available* link. If you
     already have a server installed, you can install a new server by
@@ -28,7 +28,7 @@ your server up and running. Follow these steps to install your server:
     server installation is finished; you can skip steps 3-5.
 
 3.  Enter a name for your server. This is the name for the @product@ runtime
-    configuration used by @ide@. This is not the display name used in the
+    configuration used by Dev Studio. This is not the display name used in the
     Servers tab.
 
 4.  Browse to the installation folder of the @product@ bundle. For example,
@@ -41,9 +41,9 @@ your server up and running. Follow these steps to install your server:
 
     ![Figure 3: Your new server appears under the *Servers* view.](../../../images/new-server-added.png)
 
-Your server is now available in Liferay @ide@!
+Your server is now available in Liferay Dev Studio!
 
-For reference, here's how the @ide@ server buttons work with your @product@
+For reference, here's how the Dev Studio server buttons work with your @product@
 instance:
 
 - *Start* (![Start Server](../../../images/icon-start-server.png)): Starts the
@@ -51,8 +51,8 @@ instance:
 - *Stop* (![Stop Server](../../../images/icon-stop-server.png)): Stops the
   the server.
 - *Debug* (![Debug Server](../../../images/icon-debug-server.png)): Starts the
-  server in debug mode. For more information on debugging in @ide@, see the
-  [Debugging @product@ source in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/debugging-product-source-liferay-ide)
+  server in debug mode. For more information on debugging in Dev Studio, see the
+  [Debugging @product@ source in Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/debugging-product-source-liferay-ide)
   article.
 
-Now you're ready to use your server in Liferay @ide@!
+Now you're ready to use your server in Liferay Dev Studio!

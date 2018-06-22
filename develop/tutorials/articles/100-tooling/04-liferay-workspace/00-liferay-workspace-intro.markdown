@@ -13,10 +13,10 @@ tutorial to learn about using Liferay Workspace with Maven.
 Liferay Workspaces can be used in many different development environments, which
 makes it flexible and applicable to many different developers. You can download
 the
-[Liferay Workspace installer](https://sourceforge.net/projects/lportal/files/Liferay%20Workspace)
+[Liferay Project SDK installer](https://sourceforge.net/projects/lportal/files/Liferay%20Workspace)
 and run it to install
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) (default CLI for
-workspace) and initialize a new Liferay Workspace.
+workspace), initialize a new Liferay Workspace, and download @ide@.
 
 You can also use it with other developer IDEs. For example, a Liferay Workspace
 easily integrates with Liferay @ide@, providing a seamless development

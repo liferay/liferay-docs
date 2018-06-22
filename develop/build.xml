@@ -2,7 +2,7 @@
 
 <project name="Develop" basedir=".">
 
-	<import file="../build-site-common.xml" />
+	<import file="../build-common.xml" />
 
 	<property name="purpose.dir" value="develop"/>
 

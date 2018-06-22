@@ -19,7 +19,7 @@ site when the theme is applied.
 
 To help you with your bearings as you modify your portlet's template, below is
 a quick look at the
-[`portlet.ftl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-classic/src/templates/portlet.ftl)
+[`portlet.ftl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-theme/frontend-theme-classic/src/templates/portlet.ftl)
 file that's included in the default theme of @product-ver@.
 
     <#assign

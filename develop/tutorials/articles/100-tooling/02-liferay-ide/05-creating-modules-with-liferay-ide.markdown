@@ -1,6 +1,6 @@
-# Creating Modules with Liferay @ide@ [](id=creating-modules-with-liferay-ide)
+# Creating Modules with Liferay Dev Studio [](id=creating-modules-with-liferay-ide)
 
-@ide@ provides a Module Project Wizard for users to create a variety of
+Dev Studio provides a Module Project Wizard for users to create a variety of
 different module projects. You can create a new Liferay module project by
 navigating to *File* &rarr; *New* &rarr; *Liferay Module Project*.
 
@@ -19,13 +19,13 @@ a template that requires a component class, you must configure it in the wizard.
 You can specify your component class's name, package name, and its properties.
 The properties you assign are the ones found in the `@Component` annotation's
 `property = {...}` assignment. See more about creating a component class in
-Liferay @ide@ in the [Creating Component Classes](#creating-component-classes)
+Liferay Dev Studio in the [Creating Component Classes](#creating-component-classes)
 section.
 
 Once you've configured your module, click *Finish* to create your project.
 
 Now that you've created your module project, you can configure your project's
-presentation in the @ide@'s Project Explorer. To change the project's
+presentation in the Dev Studio's Project Explorer. To change the project's
 presentation, select the default *Hierarchical* or *Flat* views. To do this,
 navigate to the Project Explorer's *View Menu*
 (![View Menu](../../../images/icon-ide-view-menu.png)), select *Projects
@@ -36,7 +36,7 @@ the Flat view displays the modules separately from their project.
 ![Figure 3: The Hierarchical project presentation mode is set, by default.](../../../images/workspace-presentation.png)
 
 You now have the knowledge to create a Liferay module project from Liferay
-@ide@.
+Dev Studio.
 
 ## Creating Component Classes [](id=creating-component-classes)
 
@@ -64,16 +64,16 @@ Template` list:
 - *Struts in Action*: creates a new struts action
 - *Struts Portlet Action*: creates a new struts portlet action
 
-Next you'll learn how to import existing projects into @ide@.
+Next you'll learn how to import existing projects into Dev Studio.
 
 ## Importing Existing Module Projects [](id=importing-existing-module-projects)
 
-@ide@ also provides a method to import existing module projects. You can import a
+Dev Studio also provides a method to import existing module projects. You can import a
 module project by navigating to *File* &rarr; *Import* &rarr; *Liferay* &rarr;
 *Liferay Module Project(s)*. Then point to the project location and click
 *Finish*.
 
 ![Figure 4: Select the *Liferay Module Project(s)* to import a module project.](../../../images/import-wizard.png)
 
-You're now equipped to import module projects into Liferay @ide@. Now go out
-there and get stuff done!
+You're now equipped to import module projects into Liferay Dev Studio. Now go
+out there and get stuff done!

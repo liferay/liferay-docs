@@ -38,6 +38,13 @@ You can use `aui:script` to load your ES2015 and Metal.js modules like this:
         new metalClipboardSrcClipboard.default();
     </aui:script>
 
+alternatively, you can specify a variable for your module by adding 
+`as variableName` after the module name, as shown in the example below:
+
+    <aui:script require="metal-clipboard/src/Clipboard as myModule">
+        new myModule.default();
+    </aui:script>
+
 This resolves the dependencies of the registered `Clipboard.js` and loads them 
 in order until all of them are satisfied and the requested module can be safely
 executed.
