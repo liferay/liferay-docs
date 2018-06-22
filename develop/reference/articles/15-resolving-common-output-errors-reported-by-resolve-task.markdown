@@ -1,15 +1,15 @@
 # Resolving Common Output Errors Reported by the resolve Task [](id=resolving-common-output-errors-reported-by-the-resolve-task)
 
 The `resolve` Gradle task is provided by a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 to
-[validates modules](/develop/tutorials/-/knowledge_base/7-1/resolving-your-modules).
+[validates modules](/develop/tutorials/-/knowledge_base/7-0/resolving-your-modules).
 This is very useful for finding issues and reporting them as output before
 deployment. For more information on running this task from Liferay Workspace,
 see the
-[Validating Modules Against the Target Platform](/develop/tutorials/-/knowledge_base/7-1/validating-modules-against-the-target-platform)
+[Validating Modules Against the Target Platform](/develop/tutorials/-/knowledge_base/7-0/validating-modules-against-the-target-platform)
 tutorial section. For general help with OSGi related issues, visit the
-[Troubleshooting FAQ](/develop/tutorials/-/knowledge_base/7-1/troubleshooting)
+[Troubleshooting FAQ](/develop/tutorials/-/knowledge_base/7-0/troubleshooting)
 tutorial section.
 
 For help interpreting the `resolve` task's output, see the list below for common
@@ -36,14 +36,14 @@ both dependencies cannot be satisfied. These types of scenarios are difficult to
 diagnose, but with the `resolve` task, can be found with ease.
 
 To fix missing import errors, you may need to adjust the
-[export](/develop/tutorials/-/knowledge_base/7-1/exporting-packages) and/or
-[import](/develop/tutorials/-/knowledge_base/7-1/importing-packages)
+[export](/develop/tutorials/-/knowledge_base/7-0/exporting-packages) and/or
+[import](/develop/tutorials/-/knowledge_base/7-0/importing-packages)
 configuration of your modules. Also, see the
-[Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
+[Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module)
 tutorial for more information on resolving import errors. Sometimes, this kind
 of error can be solved by editing the `resolve` task's list of capabilities. See
 the
-[Depending on Third Party Libraries Not Included in @product@](/develop/tutorials/-/knowledge_base/7-1/depending-on-third-party-libraries-not-included-in-product)
+[Depending on Third Party Libraries Not Included in @product@](/develop/tutorials/-/knowledge_base/7-0/depending-on-third-party-libraries-not-included-in-product)
 section to learn how to do this.
 
 ## Missing Service Reference [](id=missing-service-reference)
@@ -51,7 +51,7 @@ section to learn how to do this.
 If your module is referencing a service that does not exist, an error is thrown.
 This is very helpful because service reference issues are hard to diagnose
 during deployment without using the
-[Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+[Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
 
 For example, if your module `test-portlet` is referencing a service (e.g.,
 `test.api.TestApi`) it does not have access to, the following error is thrown:
@@ -85,7 +85,7 @@ If you're unable to track down your missing service, it may be provided by a
 customized @product@ core feature or an external @product@ feature. If this is
 the case, it will not be included in the target platform's default capabilities.
 You can make the custom service capability available to reference by
-[generating a new custom distro JAR](/develop/reference/-/knowledge_base/7-1/modifying-the-target-platforms-capabilities#depending-on-a-customized-distrobution-of-product).
+[generating a new custom distro JAR](/develop/reference/-/knowledge_base/7-0/modifying-the-target-platforms-capabilities#depending-on-a-customized-distrobution-of-product).
 
 ## Missing Fragment Host [](id=missing-fragment-host)
 
@@ -108,7 +108,7 @@ To fix this, you should inspect your target platform to ensure it includes the
 JAR you're attempting to add a fragment for. Your fragment host header may be
 referencing an incorrect bundle symbolic name (BSN) or version. The easiest way
 to check this is by using the
-[Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+[Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
 Follow the steps below to find the bundle symbolic name:
 
 1.  Start your target platform instance.

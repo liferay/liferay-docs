@@ -4,7 +4,7 @@ In a perfect world, everything the `resolve` task gathers and checks against
 would work during your development process. Unfortunately, there are exceptions
 that may force you to modify the default functionality of the `resolve` task. If
 you're unfamiliar with workspace's `resolve` task, see the
-[Resolving Your Modules](/develop/tutorials/-/knowledge_base/7-1/resolving-your-modules)
+[Resolving Your Modules](/develop/tutorials/-/knowledge_base/7-0/resolving-your-modules)
 tutorial for more information.
 
 There are two scenarios you may run into during development that require a
@@ -34,7 +34,7 @@ There are three ways you can do this:
 - [Skip the resolving process for your module](#skip-the-resolving-process-for-your-module)
 
 For help resolving third party dependency errors, see the
-[Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
+[Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module)
 tutorial.
 
 ### Embed the Third Party Library in Your Module [](id=embed-the-third-party-library-in-your-module)
@@ -43,7 +43,7 @@ If you only have one module that depends on the third party project, you can
 bypass the resolver failure by embedding the JAR in your module. This is not
 best practice if more than one project in your @product@ instance depends on
 that module. See the
-[Embedding Libraries in a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module#embedding-libraries-in-a-module)
+[Embedding Libraries in a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module#embedding-libraries-in-a-module)
 section for more details.
 
 ### Add the Third Party Library's Capabilities to the Current Static Set of Resolver Capabilities [](id=add-the-third-party-librarys-capabilities-to-the-current-static-set-of-reso)
@@ -143,7 +143,7 @@ current workspace's @product@ instance, follow the steps below:
 
 3.  From the root folder of you workspace, run the following command:
 
-        bnd remote distro -o custom_distro.jar com.liferay.ce.portal.distro 7.1.0
+        bnd remote distro -o custom_distro.jar com.liferay.ce.portal.distro 7.0.6
 
     This connects to the newly deployed BND agent running in @product@ and
     generates a new distro JAR named `custom_distro.jar`. All other capabilities

@@ -12,32 +12,28 @@ target platform, you update your workspace to point to a different @product@
 version and all your dependencies are updated to the latest ones provided in the
 targeted release.
 
-<!-- TODO: Add note below once Semantic Versioning tutorial is available. -Cody
-
 +$$$
 
 **Note:** There are times when configuring dependencies based on a version range
 is better than tracking exact versions. See the
-[Semantic Versioning](/develop/tutorials/-/knowledge_base/7-1/semantic-versioning)
+[Semantic Versioning](/develop/tutorials/-/knowledge_base/7-0/semantic-versioning)
 tutorial for more details.
 
 $$$
 
--->
-
 The option to target a specific @product@ version to develop against also offers
 additional features if you're using
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) for
+[Liferay @ide@ 3.2+](/develop/tutorials/-/knowledge_base/7-0/liferay-ide) for
 development. @ide@ can index the configured @product@ source code to
 
 - provide advanced Java search (Open Type and Reference Searching)
-  ([tutorial](/develop/tutorials/-/knowledge_base/7-1/searching-product-source-in-liferay-ide))
+  ([tutorial](/develop/tutorials/-/knowledge_base/7-0/searching-product-source-in-liferay-ide))
 - debug @product@ sources
-  ([tutorial](/develop/tutorials/-/knowledge_base/7-1/debugging-product-source-in-liferay-ide))
+  ([tutorial](/develop/tutorials/-/knowledge_base/7-0/debugging-product-source-in-liferay-ide))
 
 These options in @ide@ are only available when developing in a Liferay
 Workspace, or if you have the
-[Target Platform](/develop/reference/-/knowledge_base/7-1/target-platform-gradle-plugin)
+[Target Platform](/develop/reference/-/knowledge_base/7-0/target-platform-gradle-plugin)
 Gradle plugin applied to your multi-module Gradle project with specific
 configurations. See the
 [Targeting a Platform Outside of Workspace](#targeting-a-platform-outside-of-workspace)
@@ -72,7 +68,10 @@ Open the workspace's `gradle.properties` file and set the
 `liferay.workspace.target.platform.version` property to the version you want to
 target. For example,
 
-    liferay.workspace.target.platform.version=7.1.0
+    liferay.workspace.target.platform.version=7.0-GA7
+
+**Important:** You can leverage the target platform features in @product-ver@
+GA6+. Previous versions do not provide these features.
 
 Once the target platform is configured, check to make sure no dependencies in
 your Gradle build files specify a version. The versions are now imported from
@@ -93,7 +92,7 @@ the configured target platform's BOM. For example, a simple MVC portlet's
 **Note**: The `liferay.workspace.target.platform.version` property also sets
 the distro JAR, which can be used in to validate your projects during the build
 process. See the
-[Validating Modules Against the Target Platform](/develop/tutorials/-/knowledge_base/7-1/validating-projects-against-the-target-platform)
+[Validating Modules Against the Target Platform](/develop/tutorials/-/knowledge_base/7-0/validating-projects-against-the-target-platform)
 tutorials for more info.
 
 $$$
@@ -101,7 +100,7 @@ $$$
 The target platform functionality is available in Liferay Workspace version
 1.9.0+. If you have an older version, you must update it to leverage platform
 targeting. See the
-[Updating Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/updating-liferay-workspace)
+[Updating Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/updating-liferay-workspace)
 tutorial to do this.
 
 You now know how to configure a target platform in workspace and how
@@ -111,7 +110,7 @@ dependencies without versions appear in your Gradle build files. You're all set!
 
 If you prefer to not use Liferay Workspace, but still want to target a platform
 to develop against, you must apply the
-[Target Platform](/develop/reference/-/knowledge_base/7-1/target-platform-gradle-plugin)
+[Target Platform](/develop/reference/-/knowledge_base/7-0/target-platform-gradle-plugin)
 Gradle plugin to the root `build.gradle` file of your custom multi-module Gradle
 build.
 
@@ -119,7 +118,7 @@ To do this, your `build.gradle` file should look similar to this:
 
     buildscript {
         dependencies {
-            classpath group: "com.liferay", name: "com.lifereay.gradle.plugins.target.platform", version "1.0.0"
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version "1.0.1"
         }
         repositories {
             maven {
@@ -131,13 +130,9 @@ To do this, your `build.gradle` file should look similar to this:
     apply plugin: "com.liferay.target.platform"
 
     dependencies {
-        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.1.0"
-        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.1.0"
+        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.0.6"
+        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.0.6"
     }
-
-<!-- TODO: The temporary place to reference Liferay's portal artifacts for 7.1
-is still TBD, according to Greg. Update this in the future, if necessary -Cody
--->
 
 This Gradle code
 
@@ -152,11 +147,11 @@ This Gradle code
       (e.g., `org.osgi.core`).
 
 If you're interested in
-[advanced search](/develop/tutorials/-/knowledge_base/7-1/searching-product-source-in-liferay-ide)
+[advanced search](/develop/tutorials/-/knowledge_base/7-0/searching-product-source-in-liferay-ide)
 and/or
-[debugging](/develop/tutorials/-/knowledge_base/7-1/debugging-product-source-in-liferay-ide)
+[debugging](/develop/tutorials/-/knowledge_base/7-0/debugging-product-source-in-liferay-ide)
 @product@'s source using
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide), you must
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide), you must
 also apply the following configuration:
 
     targetPlatformIDE {

@@ -9,7 +9,7 @@ resolving your modules before deployment. This can be done by calling the
 
 This task gathers all the capabilities provided by
     
-- the specified version of @product@ (i.e., [targeted platform](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace))
+- the specified version of @product@ (i.e., [targeted platform](/develop/tutorials/-/knowledge_base/7-0/managing-the-target-platform-for-liferay-workspace))
 - the current workspace's modules
 
 Some capabilities/information gathered by the `resolve` task that are validated
@@ -43,7 +43,10 @@ specify the version you intend to deploy to. To do this, open your workspace's
 `gradle.properties` file and set the `liferay.workspace.target.platform.version`
 property to the version you want to target. For example,
 
-    liferay.workspace.target.platform.version=7.1.0
+    liferay.workspace.target.platform.version=7.0-GA7
+
+**Important:** You can leverage the target platform features in @product-ver@
+GA6+. Previous versions do not provide these features.
 
 This provides a static *distro* JAR for the specified version of @product@,
 which contains all the metadata (i.e., capabilities, packages, versions, etc.)
@@ -54,8 +57,8 @@ of capabilities that your modules are validated against.
 You can now validate your module projects before deploying them to @product@!
 Sometimes, you must modify the `resolve` task's default behavior to successfully
 validate your app. See the
-[Modifying the Target Platform's Capabilities](/develop/tutorials/-/knowledge_base/7-1/modifying-the-target-platforms-capabilities)
+[Modifying the Target Platform's Capabilities](/develop/tutorials/-/knowledge_base/7-0/modifying-the-target-platforms-capabilities)
 tutorial for more information. For help resolving common output errors printed
 by the `resolve` task, see the
-[Resolving Common Output Errors Reported by the resolve Task](/develop/reference/-/knowledge_base/7-1/resolving-common-output-errors-reported-by-the-resolve-task)
+[Resolving Common Output Errors Reported by the resolve Task](/develop/reference/-/knowledge_base/7-0/resolving-common-output-errors-reported-by-the-resolve-task)
 article.

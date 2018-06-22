@@ -2,10 +2,10 @@
 
 If you prefer to not use Liferay Workspace, but still want to validate modules
 against a target platform, you must apply the
-[Target Platform](/develop/reference/-/knowledge_base/7-1/target-platform-gradle-plugin)
+[Target Platform](/develop/reference/-/knowledge_base/7-0/target-platform-gradle-plugin)
 Gradle plugin to the root `build.gradle` file of your custom multi-module Gradle
 build. Follow the
-[Targeting a Platform Outside of Workspace](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace#targeting-a-platform-outside-of-workspace)
+[Targeting a Platform Outside of Workspace](/develop/tutorials/-/knowledge_base/7-0/managing-the-target-platform-for-liferay-workspace#targeting-a-platform-outside-of-workspace)
 section to do this.
 
 Once you have the Target Platform plugin and its BOM dependencies configured,
@@ -14,9 +14,9 @@ root `build.gradle` file and add it to the list of dependencies. It should look
 like this:
 
     dependencies {
-        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.1.0"
-        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.1.0"
-        targetPlatformDistro group: "com.liferay", name "com.liferay.ce.portal.distro", version: "7.1.0"
+        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.0.6"
+        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.0.6"
+        targetPlatformDistro group: "com.liferay", name "com.liferay.ce.portal.distro", version: "7.0.6"
     }
 
 Now you can validate your modules against a target platform!

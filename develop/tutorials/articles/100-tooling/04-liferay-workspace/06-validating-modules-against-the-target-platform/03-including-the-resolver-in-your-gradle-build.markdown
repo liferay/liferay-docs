@@ -2,7 +2,7 @@
 
 By default, Liferay Workspace provides the `resolve` task as an independent
 executable. It's provided by the
-[Target Platform](/develop/reference/-/knowledge_base/7-1/target-platform-gradle-plugin)
+[Target Platform](/develop/reference/-/knowledge_base/7-0/target-platform-gradle-plugin)
 Gradle plugin and is not integrated in any other Gradle processes. This is
 designed to give you all authority of your Gradle build and not impose
 strategies you may not want included in your default build process.
