@@ -1,4 +1,4 @@
-# Service Security Layers [](id=service-security-layers)
+# Service Security Layers
 
 Liferay's remote services are secured by default. They sit behind a layer of
 security that allows only local connections. To invoke Liferay services from a 
@@ -36,7 +36,7 @@ can configure security settings for the Axis Servlet, the Liferay Tunnel
 Servlet, the Spring Remoting Servlet, the JSON Servlet, the JSON Web Service 
 Servlet, and the WebDAV Servlet. The `portal.properties` file (online version is 
 available at 
-[@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html))
+[@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html))
 describes these properties. 
 
 $$$
@@ -94,11 +94,12 @@ Use the following syntax to call the Axis web service using credentials.
     [port]/api/axis/" + serviceName
 
 The `emailAddressOrScreenNameOrUserIdAsString` should be the user's email
-address, screen name, or user ID. The Liferay instance's authentication type 
-setting determines which one to use. A user can find his or her ID by logging in 
-as the user and accessing *My Account* &rarr; *Account Settings* from the User 
-Menu. On this interface, the user ID appears below the user's profile picture 
-and above the birthday field. 
+address, screen name, or user ID. The Liferay instance's authentication type
+setting determines which one to use. Authentication by email address is the
+default. A user can find his or her user ID by logging in as the user and
+accessing *My Account* &rarr; *Account Settings* from the User Menu. On this
+interface, the user ID appears below the user's profile picture and above the
+birthday field. 
 
 Suppose that your Liferay instance is set to authenticate by user ID, and that 
 there's a user with an ID of `2` and a password of `test`. You can access 
@@ -149,7 +150,7 @@ layers of security checks:
 - *IP permission layer*: The IP address must be pre-configured in the server's
   portal properties. 
 - *Authentication/verification layer (web services only)*: Liferay verifies that
-  the caller's authorization token can be associated with an instance user.  
+  the caller's authorization token can be associated with an instance user.
 - *User permission layer*: The user needs permission to access the related
   resources. 
 
@@ -159,14 +160,14 @@ have been configured to allow access.
 
 **Related Topics**
 
-[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services)
+[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/portal-configuration-of-json-web-services)
 
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services)
+[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services)
 
-[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/invoking-json-web-services)
+[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/invoking-json-web-services)
 
-[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invoker)
+[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invoker)
 
-[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invocation-examples)
+[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invocation-examples)
 
-[SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services)
+[SOAP Web Services](/develop/tutorials/-/knowledge_base/7-1/soap-web-services)
