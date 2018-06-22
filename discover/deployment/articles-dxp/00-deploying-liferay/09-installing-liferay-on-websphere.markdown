@@ -176,15 +176,21 @@ You must now install @product@'s dependencies. Recall that earlier you
 downloaded two ZIP files containing these dependencies. Install their contents 
 now: 
 
-1. `liferay-dxp-digital-enterprise-dependencies-[version].zip`: Unzip this file 
-   and place its contents in your WebSphere application server's 
-   `[Install Location]/WebSphere/AppServer/lib/ext` folder. If you have a JDBC 
-   database driver `JAR`, copy it to this location as well. 
+1.  `liferay-dxp-digital-enterprise-dependencies-[version].zip`: Unzip this file
+    and place its contents in your WebSphere application server's `[Install
+    Location]/WebSphere/AppServer/lib/ext` folder. If you have a JDBC database
+    driver `JAR`, copy it to this location as well. 
 
-2. `liferay-dxp-digital-enterprise-osgi-[version].zip`: Unzip this file and 
-   place its contents in the `[Liferay Home]/osgi` folder (create this folder if 
-   it doesn't exist). This is typically 
-   `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay/osgi`. 
+2.  From the same archive, copy `portlet.jar`into `[Install
+    Location]/WebSphere/AppServer/java/jre/lib/ext`. WebSphere already contains
+    an older version of `portlet.jar` which must be overridden at the highest
+    classloader level. The new `portlet.jar` (version 3) is
+    backwards-compatible. 
+
+3.  `liferay-dxp-digital-enterprise-osgi-[version].zip`: Unzip this file and 
+    place its contents in the `[Liferay Home]/osgi` folder (create this folder
+    if it doesn't exist). This is typically `[Install
+    Location]/WebSphere/AppServer/profiles/your-profile/liferay/osgi`. 
 
 Before starting the server, verify that all the following jars have been copied 
 to the correct folders. Optional jars are available (italics) and are used to 
