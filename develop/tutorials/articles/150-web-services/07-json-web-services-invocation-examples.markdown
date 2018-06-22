@@ -32,8 +32,8 @@ If you're not working in a JSP, you won't have access to taglibs. In this case,
 create an AUI context manually. For example, use the following HTML fragment to 
 load the AUI seed and CSS files:
 
-    <script src="http://cdn.alloyui.com/3.0.0/aui/aui-min.js"></script>
-    <link href="http://cdn.alloyui.com/3.0.0/aui-css/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="https://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
+    <link href="https://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet"></link>
 
 Then you can create an AUI context like this:
 
@@ -51,7 +51,7 @@ First, examine the following JSON web service invocation, written in JavaScript:
         '/user/get-user-by-email-address',
         {
             companyId: Liferay.ThemeDisplay.getCompanyId(),
-            emailAddress: 'test@liferay.com`
+            emailAddress: 'test@liferay.com'
         },
         function(obj) {
             console.log(obj);
@@ -60,9 +60,6 @@ First, examine the following JSON web service invocation, written in JavaScript:
 
 If you run this code, the test@liferay.com user (JSON object) is logged to the
 JavaScript console.
-<!-- 22 June 2018: Tried this from browser console. The test@liferay.com user
-is NOT logged to the console, an HTTP 403 occurs instead. (Was logged in as
-test@liferay.com.) -->
 
 The `Liferay.Service(...)` function takes three arguments:
 
