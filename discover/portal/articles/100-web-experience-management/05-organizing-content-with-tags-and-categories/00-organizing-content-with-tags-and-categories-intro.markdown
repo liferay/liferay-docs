@@ -7,13 +7,13 @@ assets is easy. You can tag or categorize an asset at creation time or when
 editing an existing asset. If you click on the *Metadata* section of the
 form when creating or editing an asset, you'll find an interface for adding tags
 and categories. If no categories are available to be added to the asset (e.g.,
-if no categories have been created), the *Select* option won't appear.
+if no categories have been created), the *Select* option doesn't appear.
 
 ![Figure 1: Here is the Web Content application's metadata section.](../../../images/web-content-categorization.png)
 
 +$$$
 
-**Note:** You'll notice in figure 1 above that there is also a *Priority* field
+**Note:** You'll notice in Figure 1 above that there is also a *Priority* field
 for web content. This field is not related to categories and tags, but rather,
 specifies the order in which the web content article is listed when displayed in
 the Asset Publisher. To learn more about the Asset Publisher, see the

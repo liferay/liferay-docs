@@ -1,7 +1,7 @@
 # Targeted Vocabularies [](id=targeted-vocabularies)
 
-Targeted Vocabularies allow you to decide which vocabularies can be applied to
-an asset type and which vocabularies are required for an asset type. To
+You can decide which vocabularies can be applied to an asset type and which
+vocabularies are required for an asset type with Targeted Vocabularies. To
 configure these settings, go to the Categories application in Site
 Administration and select a vocabulary's *Actions* icon. Select the *Associated
 Asset Types* tab to reveal a dialog box like the one below.
@@ -32,11 +32,12 @@ default option to create a multi-valued vocabulary.
 
 A third feature of vocabularies and categories is that every vocabulary has its
 own separated entry. These entries appear in the Categorization section of the
-form for editing an asset and they allow users to easily select appropriate
+form for editing an asset, and they allow users to easily select appropriate
 categories for that asset.
 
 ![Figure 3: Vocabularies have their own entries, making it easy to select available categories.](../../../images/separated-entries.png)
 
 It's important to use tags and categories with all your content, so that content
-is easier for users to find. Now that your content is categorized and tagged,
-you'll learn how to define content relationships next.
+is easier for users to find. 
+
+Next, you'll learn how to geo-locate assets.
