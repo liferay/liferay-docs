@@ -30,7 +30,7 @@ triggers this action below, in the *Minimum Stock Quantity* field.
 long it should take to resupply the product if inventory is depleted. This
 estimate will be displayed on the product's page whenever it is out of stock.
 The drop-down menu is populated from *Settings* &rarr; *Availability Estimates*.
-See [Settings](/web/liferay-emporio/documentation/-/knowledge_base/7-1/settings)
+See [Settings](/web/liferay-emporio/documentation/-/knowledge_base/1-0/settings)
 for details.
 
 **Display Availability:** Check this box to display a notice on the product page
@@ -63,7 +63,7 @@ contains the following fields:
 This option should be disabled for virtual products.
 
 **Free Shipping:** Enable to override 
-[Shipping Methods](/web/liferay-emporio/documentation/-/knowledge_base/7-1/shipping-methods-intro)
+[Shipping Methods](/web/liferay-emporio/documentation/-/knowledge_base/1-0/shipping-methods-intro)
 and ship for free.
 
 **Ship Separately:** Enable to require that this product be shipped in its own
@@ -73,7 +73,7 @@ package.
 
 **Width, Height, Depth and Weight:** If you are calculating shipping charges by
 weight (see 
-[Shipping Methods](/web/liferay-emporio/documentation/-/knowledge_base/7-1/))
+[Variable Rate Shipping](/web/liferay-emporio/documentation/-/knowledge_base/1-0/variable-rate-shipping))
 then enter the product's weight. Other dimensions can be entered for reference
 purposes, or---with the development of custom code---to calculate shipping
 costs.
@@ -83,7 +83,7 @@ costs.
 Designating a unique product display page creates a relationship between the
 product and the specified page. For a less labor intensive way to create
 a generic product page, see 
-[Product Detail Page](/web/liferay-emporio/documentation/-/knowledge_base/7-1/product-detail-page).
+[Displaying Product Pages](/web/liferay-emporio/documentation/-/knowledge_base/1-0/displaying-product-pages).
 To create a unique product page for this product, follow these steps:
 
 1.  Create a page.
@@ -106,7 +106,7 @@ contains the following fields:
 **Tax Category:** Select from available tax categories in the drop-down menu.
 This determines the amount that will be charged when this product is purchased
 to cover tax. See
-[Taxes](/web/liferay-emporio/documentation/-/knowledge_base/7-1/taxes)
+[Taxes](/web/liferay-emporio/documentation/-/knowledge_base/1-0/taxes)
 for details on creating and using tax categories.
 
 **Tax Exempt:** If this box is checked, no tax will be charged on this product.
