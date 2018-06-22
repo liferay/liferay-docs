@@ -1,4 +1,4 @@
-# Exporting User Data
+# Exporting User Data [](id=exporting-user-data)
 
 User Management practices must account for the EU's General Data Protection
 Regulation. One of its tenets is that Users have a right to _data portability_.
@@ -21,7 +21,7 @@ The Control Panel's User Management system now natively supports the export of a
 User's personal data and download to a ZIP file. The data format for the files
 containing the data is XML.
 
-## Exporting and Downloading
+## Exporting and Downloading [](id=exporting-and-downloading)
 
 To export user data:
 
@@ -37,7 +37,7 @@ To export user data:
     do: click the Add button (![Add](../../../images/icon-add.png)). The tool
     for exporting the User's data appears.
 
-    ![Figure x: The Export Personal Data tool lets you export all or some of the User's data.](../../../images/user-export-data.png)
+    ![Figure 1: The Export Personal Data tool lets you export all or some of the User's data.](../../../images/users-export-data.png)
 
 4.  Most of the time you want to export all the available data. Click *Select
     Items*, and all of the applications containing User data are selected in the
@@ -46,13 +46,13 @@ To export user data:
 5.  Click *Export*. You're taken back to the User's Export Personal Data screen,
     but now there's an export process in the list.
 
-    ![Figure x: Once User data is successfully exported, the export process is displayed in the User's Export Personal Data list.](../../../images/users-export-processes.png)
+    ![Figure 2: Once User data is successfully exported, the export process is displayed in the User's Export Personal Data list.](../../../images/users-export-processes.png)
 
 6.  Download the data. Click the Actions button
     (![Actions](../../../images/icon-actions.png)) for the process and select
     *Download*.
 
-## Examining Exported Data
+## Examining Exported Data [](id=examining-exported-data)
 
 So what doe sthe exported data look like? Since it's best for the data to be
 human and machine readable, it's exported as XML content. While not the most eye
@@ -101,7 +101,7 @@ User information was recorded in the `MBMessage` model's database table.
 
 This actually corresponds with a comment on a Blogs Entry:
 
-![Figure x: A Comment on a blog post is User Associated Data.](../../../images/users-mbmessage.png)
+![Figure 3: A Comment on a blog post is User Associated Data.](../../../images/users-mbmessage.png)
 
 Exporting User data informs site owners and Users about how much personal data the
 sight may have.
