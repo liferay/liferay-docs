@@ -288,12 +288,12 @@ web service invocations worked!
 Here are a few things to note about this example:
 
 - Authentication is done using HTTP Basic Authentication, which isn't
-  appropriate for a production environment since the password is unencrypted. 
+  appropriate for a production environment since the password is unencrypted.
   It's simply used for convenience in this example. In production, you should
-  set `company.security.auth.requires.https=false` in a `portal.properties` 
-  file. Refer to Liferay's
+  use SSL. Refer to Liferay's
   [`portal.properties`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html)
-  file for more information. 
+  file and look up the `company.security.auth.requires.https` and
+  `web.server.protocol` properties for more information.
 - The screen name and password are passed in the URL as credentials. 
 - The name of the service (e.g. `Portal_UserGroupService`) is specified at the
   end of the URL. Remember that the service name can be found in the web service
