@@ -45,14 +45,22 @@ property to the version you want to target. For example,
 
     liferay.workspace.target.platform.version=7.0-GA7
 
-**Important:** You can leverage the target platform features in @product-ver@
+**Important:** You can leverage the target platform features in Liferay Portal
 GA6+. Previous versions do not provide these features.
+    
+If you're using Liferay DXP, the versions are specified based on service packs.
+For example, you could set your target platform workspace Gradle property to
+    
+    liferay.workspace.target.platform.version=7.0-sp7
+    
+<!-- TODO: Still need to find the earliest service pack version available for
+Liferay 7.0 DXP and document it here. -Cody -->
 
-This provides a static *distro* JAR for the specified version of @product@,
-which contains all the metadata (i.e., capabilities, packages, versions, etc.)
-running inside @product@. The distro JAR is a complete snapshot of everything
-provided in @product@'s OSGi runtime; this serves as the target platform's list
-of capabilities that your modules are validated against.
+Setting this property provides a static *distro* JAR for the specified version
+of @product@, which contains all the metadata (i.e., capabilities, packages,
+versions, etc.) running inside @product@. The distro JAR is a complete snapshot
+of everything provided in @product@'s OSGi runtime; this serves as the target
+platform's list of capabilities that your modules are validated against.
 
 You can now validate your module projects before deploying them to @product@!
 Sometimes, you must modify the `resolve` task's default behavior to successfully
