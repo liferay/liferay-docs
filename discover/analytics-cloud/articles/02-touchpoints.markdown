@@ -1,6 +1,6 @@
 # Understanding Page Analytics
 
-How are your website Pages performing? Do you know if visitors are abandoning
+How are your Site Pages performing? Do you know if visitors are abandoning
 your site when they hit a certain Page, or if one Page is constantly getting
 views, engaging users, and drawing visitors back to your site? 
 
@@ -22,7 +22,8 @@ already have an understanding of what Analytics Cloud is and want to understand
 its Page metrics and how to interpret the data. They're ready to understand and
 act on their Pages' data.
 
-BETTER FOR INTRO SINCE It DESCRIBES FUNCTIONALITY THAT'S FOR ASSETS TOO
+<!-- Might be better for analytics intro material since it's descriptive of common
+functionality-->
 
 ## Time Periods
 
@@ -65,7 +66,7 @@ SCREENSHOT
 At the top right of the Visitor Behavior chart is a time period selector, which
 defaults to *Last 30 Days*. Select the time period of the data displayed. There
 are always two trend lines displayed: Selected Period and Previous Period. This
-facilitates comparisons between time periods. For example, take Views ove rthe
+facilitates comparisons between time periods. For example, take Views over the
 last 30 days. 
 
 If the Views are dropping over the selected time period, you might be concerned
