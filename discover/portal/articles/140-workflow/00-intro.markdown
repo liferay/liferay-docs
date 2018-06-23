@@ -13,7 +13,7 @@ for workflows, called the Workflow Designer.
 
 There are several aspects to workflow that you need to understand: 
 
-- Enabling workflow
+- Activating workflow
 
 - Designing review processes
 
@@ -23,9 +23,9 @@ There are several aspects to workflow that you need to understand:
 
 - Using workflow with other applications
 
-After all that, you should be familiar with how to use Liferay's Kaleo workflow
-to set up approval process for any kind of content before it is published to
-your portal. 
+After all that, you'll be familiar with using Liferay's Kaleo workflow to
+set up approval process for any 
+[workflow-enabled content](/discover/portal/-/knowledge_base/7-1/activating-workflow).
 
 ## What's New with Workflow [](id=whats-new-with-workflow)
 
@@ -35,7 +35,8 @@ There are some noteworthy enhancements to the workflow functionality:
 
 - Preview and restore a prior version.
 
-- Save draft workflows and retain them in an unpublished state.
+- Save draft workflows and retain them in an unpublished state (this is a new
+    feature for Liferay Portal CE workflow users).
 
 - All Control Panel workflow functionality is unified under one entry, found at
     Control Panel &rarr; Configuration &rarr; Workflow.
@@ -49,12 +50,12 @@ Create your own workflows from scratch or leverage existing workflows.
 ## Embedded Workflows [](id=embedded-workflows)
 
 In addition to the Single Approver definition, there are some workflow
-definitions that ship with @proudct@ but are not pre-installed, since they're
+definitions that ship with @product@ but are not pre-installed, since they're
 primarily included for test cases. They can be found in the Liferay source code
 in
-`modules/aps/forms-and-workflow/portal-workflow/portal-workflow-kaleo-runtime-impl/src/main/resources/META-INF/definitions`,
+`/modules/apps/portal-workflow/portal-workflow-kaleo-runtime-impl/src/main/resources/META-INF/definitions`,
 or in your Liferay installation itself. Open your Liferay installation's
-`osgi/marketplace/Liferay CE Forms and Workflow.lpkg`, and then find and open
+`osgi/portal/com.liferay.portal.workflow.kaleo.runtime.impl.jar`, and then find and open
 the `com.liferay.workflow.kaleo.runtime.impl-[version].jar`. The definitions are
 in the `META-INF/definitions` folder (see the diagrams
 [here](/develop/tutorials/-/knowledge_base/6-2/designing-a-kaleo-workflow-definition)).
@@ -77,7 +78,7 @@ workflows, upload it:
 
 ## Published Versus Unpublished [](id=published-versus-unpublished)
 
-The difference between a published and unpublished workfow is impiortant:
+The difference between a published and unpublished workflow is important:
 
 Published
 : Validation is complete, and the workflow can be assigned to assets.
@@ -115,7 +116,7 @@ to revert to the prior version and start editing it from scratch.
     Actions button (![Actions](../../images/icon-actions.png)) and select
     either *Preview* or *Restore*.
 
-4.  When you click *Restore* and see the success message, the prior version is
+4.  When you click *Restore* and see the success message, the prior version
     becomes the current version of the workflow. You can now edit the restored
     version of the workflow. 
 
