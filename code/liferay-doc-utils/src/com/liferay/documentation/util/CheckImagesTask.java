@@ -334,17 +334,26 @@ public class CheckImagesTask extends Task {
 		
 		// Match lines containing expressions of the form ![...](...)
 		String regex = ".*!\\[.*\\]\\(.*\\).*";
+		int lineNumber = 0;
 
 		for (String line : lines) {
+			lineNumber++;
 			line = line.trim();
 			
 			if (line.matches(regex)) {
 				int begin = line.lastIndexOf("(");
 				line = line.substring(begin);
-
 				int end = line.indexOf(")");
-				line = line.substring(0, end);
-				
+
+				try {
+					line = line.substring(0, end);
+				}
+				catch (StringIndexOutOfBoundsException e) {
+					throw new BuildException("ERROR: The following article has multiple "
+							+ "closing parentheses on a line. Please move the "
+							+ "last closing parenthesis to a new line.\n"
+							+ "ARTICLE:LINE - " + article.getPath() + ":" + lineNumber);
+				}
 				line = line.replace("(", "");
 				line = line.replace(")", "");
 				
