@@ -5,8 +5,8 @@ that contain default headers or other content for articles. Templates help
 foster consistent formatting and content organization for articles. You can
 create and manage templates from the Knowledge Base app in Site Administration. 
 To navigate to this app, open the Menu
-(![Menu](../../../../images/icon-menu.png)) and go to Site Administration (the
-menu for your Site) &rarr; *Content* &rarr; *Knowledge Base*. 
+(![Menu](../../../../images/icon-menu.png)) and go to Site Administration
+(the menu for your Site) &rarr; *Content* &rarr; *Knowledge Base*. 
 
 +$$$
 
