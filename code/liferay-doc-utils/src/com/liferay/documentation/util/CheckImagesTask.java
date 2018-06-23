@@ -350,8 +350,8 @@ public class CheckImagesTask extends Task {
 				}
 				catch (StringIndexOutOfBoundsException e) {
 					throw new BuildException("ERROR: The following article has multiple "
-							+ "closing parentheses on a line. Please move the "
-							+ "last closing parenthesis to a new line.\n"
+							+ "opening parentheses on a line. Please move the "
+							+ "last opening parenthesis to a new line.\n"
 							+ "ARTICLE:LINE - " + article.getPath() + ":" + lineNumber);
 				}
 				line = line.replace("(", "");
