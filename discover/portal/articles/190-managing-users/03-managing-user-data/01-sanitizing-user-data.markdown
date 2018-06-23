@@ -1,10 +1,9 @@
 # Sanitizing User Data [](id=sanitizing-user-data)
 
-Technically speaking, one of the challenging requirements of the General Data
-Protection Regulation (GDPR) is _the right to be forgotten_. The purpose of this
-article is not to go into the details of this requirement, but to show you how
-the personal data erasure functionality can assist you in satisfying this
-requirement. 
+One of the technically challenging requirements of the General Data Protection
+Regulation (GDPR) is _the right to be forgotten_. The purpose of this article is
+not to go into the details of this requirement, but to show you how the personal
+data erasure functionality can assist you in satisfying this requirement. 
 
 A simple way to think of what it means to be _forgotten_ by software is to
 consider a scenario in which a new portal administrator is hired immediately
@@ -58,17 +57,18 @@ To begin sanitizing a user's data:
 
 ## Step 1: Deactivation [](id=step-1-deactivation)
 
-The end of this process is deleting the User. A user must always be deactivated
-before deletion. Click *Deactivate User*.
+Deactivating the User first ensures they don't create more content as you're
+sanitizing them from the system. Click *Deactivate User*.
 
 ![Figure 2: Deactivating the User kicks off the data erasure process.](../../../images/users-data-erasure3.png)
 
 ## Step 2: Delete the User's Personal Site [](id=step-2-delete-the-users-personal-site)
 
-The User's public (profile) and private (dashboard) pages must be deleted.
-Separating this step out allows the administrator to make sure no information
-important to the enterprise is lost before the deletion is completed. Once any
-necessary data from the User's personal pages is preserved, click *Delete
+The User's public (profile) and private (dashboard) pages will be deleted when
+the User is deleted. Separating this step out allows the administrator to make
+sure no information important to the enterprise is lost before the personal site
+deletion is completed. Review the User's personal site (click the provided links
+to navigate directly there) and preserve any necessary data. Then click *Delete
 Personal Site*.
 
 ![Figure 3: The second step in personal data erasure is deleting the User personal site.](../../../images/users-data-erasure1.png)
@@ -116,7 +116,7 @@ Click the Actions button (![Actions](../../../images/icon-actions.png)) for an
 item and select *Edit*, *Anonymize*, or *Delete*, as appropriate.
 
 Once you've worked your way through the items and taken action, the view in the
-Application Data Review screen is updated to reflect that there ore no more items
+Application Data Review screen is updated to reflect that there are no more items
 needed to review. Click the *Complete Step* button once finished.
 
 ![Figure 7: Click *Complete Step* once all of the User's application data is reviewed and dealt with.](../../../images/users-data-review-complete.png)
