@@ -47,6 +47,8 @@ public class CheckLinks {
 
 		userGuideHeaders = findHeaders(userGuideArticles);
 		adminGuideHeaders = findHeaders(adminGuideArticles);
+		analyticsCloudHeaders = findHeaders(analyticsCloudArticles);
+		commerceHeaders = findHeaders(commerceArticles);
 		userGuideReferenceHeaders = findHeaders(userGuideReferenceArticles);
 		tutorialHeaders = findHeaders(tutorialArticles);
 		devGuideReferenceHeaders = findHeaders(devGuideReferenceArticles);
@@ -156,6 +158,14 @@ public class CheckLinks {
 			headers = adminGuideHeaders;
 		}
 
+		else if (lineSubstring.contains(commerceDir)) {
+			headers = commerceHeaders;
+		}
+
+		else if (lineSubstring.contains(analyticsCloudDir)) {
+			headers = analyticsCloudHeaders;
+		}
+
 		else if (lineSubstring.contains(userGuideReferenceDir)) {
 			headers = userGuideReferenceHeaders;
 		}
@@ -188,6 +198,14 @@ public class CheckLinks {
 
 			if (articleDir.equals(adminGuideDir)) {
 				adminGuideArticles = findArticles(adminGuideDir);
+			}
+
+			if (articleDir.equals(commerceDir)) {
+				commerceArticles = findArticles(commerceDir);
+			}
+
+			if (articleDir.equals(analyticsCloudDir)) {
+				analyticsCloudArticles = findArticles(analyticsCloudDir);
 			}
 
 			if (articleDir.equals(userGuideReferenceDir)) {
@@ -830,6 +848,14 @@ public class CheckLinks {
 	private static List<File> adminGuideArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> adminGuideHeaders = new ArrayList<List<String>>();
 
+	private static String commerceDir = "discover/commerce";
+	private static List<File> commerceArticles = new ArrayList<File>();
+	private static ArrayList<List<String>> commerceHeaders = new ArrayList<List<String>>();
+
+	private static String analyticsCloudDir = "discover/analytics-cloud";
+	private static List<File> analyticsCloudArticles = new ArrayList<File>();
+	private static ArrayList<List<String>> analyticsCloudHeaders = new ArrayList<List<String>>();
+
 	private static String userGuideReferenceDir = "discover/reference";
 	private static List<File> userGuideReferenceArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> userGuideReferenceHeaders = new ArrayList<List<String>>();
@@ -844,6 +870,6 @@ public class CheckLinks {
 	private static List<File> devGuideReferenceArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> devGuideReferenceHeaders = new ArrayList<List<String>>();
 
-	private static String[] articleDirs = {userGuideDir, adminGuideDir, userGuideReferenceDir,
+	private static String[] articleDirs = {userGuideDir, adminGuideDir, commerceDir, analyticsCloudDir, userGuideReferenceDir,
 			tutorialDir, devGuideReferenceDir};
 }
