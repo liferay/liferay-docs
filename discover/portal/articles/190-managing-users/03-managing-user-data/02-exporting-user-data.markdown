@@ -3,8 +3,8 @@
 User Management practices must account for the EU's General Data Protection
 Regulation. One of its tenets is that Users have a right to _data portability_.
 
-Data portability means that a User should be able to receive a report containing
-the system data that's applicable to them. 
+Data portability means that a User has the right to receive their personal data
+in a machine-readable format.
 
 +$$$
 
@@ -54,10 +54,7 @@ To export user data:
 
 ## Examining Exported Data [](id=examining-exported-data)
 
-So what doe sthe exported data look like? Since it's best for the data to be
-human and machine readable, it's exported as XML content. While not the most eye
-pleasing, many systems can parse XML data easily, and it is possible to
-manually read the data.
+So what doe the exported data look like?
 
     <?xml version="1.0"?>
 
