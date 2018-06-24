@@ -82,7 +82,7 @@ To send messages asynchronously, consider using
 
 The [`SingleDestinationMessageSender` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SingleDestinationMessageSender.html)
 wraps the Message Bus to send messages asynchronously. This class demonstrates
-using a `SynchronousMessageSender`:
+using a `SingleDestinationMessageSender`:
 
     @Component(
         immediate = true,
