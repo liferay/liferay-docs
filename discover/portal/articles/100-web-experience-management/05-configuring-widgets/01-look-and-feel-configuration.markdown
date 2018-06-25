@@ -44,7 +44,7 @@ On the General tab, you have the following options:
     off; some themes assume that widget borders are turned on and may not 
     display correctly with them turned off.
 
-![Figure 2: The General tab of the Look and Feel Configuration menu allows you to define a custom widget title, link widget URLs to a specific page, and select the widget contrast option using decorators.](../../../images/look-and-feel-portlet-configuration-menu.png)
+![Figure X: The General tab of the Look and Feel Configuration menu allows you to define a custom widget title, link widget URLs to a specific page, and select the widget contrast option using decorators.](../../../images/look-and-feel-portlet-configuration-menu.png)
 
 ## Text Styles
 
@@ -82,7 +82,7 @@ The Background Styles tab allows you to specify the widget's background color.
 When you select the text space, you're given a color palette to choose your
 background color or you can manually enter any six digit hex color code.
 
-![Figure 4: The Background Styles tab lets you specify the widget's background color.](../../../images/look-and-feel-background-styles.png)
+![Figure X: The Background Styles tab lets you specify the widget's background color.](../../../images/look-and-feel-background-styles.png)
 
 ## Border Styles
 
@@ -90,7 +90,7 @@ On the Border Styles tab, you can configure your widget's border width, style, a
 color. For each of these attributes, leave the *Same for All* selector enabled
 to apply the same settings to top, right, bottom, and left borders.
 
-![Figure 5: The Border Styles tab lets you specify a border width, style, and color for each side of the widget.](../../../images/look-and-feel-border-styles.png)
+![Figure X: The Border Styles tab lets you specify a border width, style, and color for each side of the widget.](../../../images/look-and-feel-border-styles.png)
 
 For border width, you can specify any % value, em value, or px value. For
 border style, you can select Dashed, Double, Dotted, Groove, Hidden, Inset,
@@ -105,7 +105,7 @@ the edges of your widget. Just like for border styles, leave the *Same for All*
 selector enabled to apply the same settings to each side (top, right, bottom,
 and left) of the widget.
 
-![Figure 6: The Margin and Padding tab allows you to specify margin and padding lengths for the sides of your widget.](../../../images/look-and-feel-margin-and-padding.png)
+![Figure X: The Margin and Padding tab allows you to specify margin and padding lengths for the sides of your widget.](../../../images/look-and-feel-margin-and-padding.png)
 
 For both padding and margin, you can specify any % value, em value, or px
 value.
@@ -115,7 +115,7 @@ value.
 The Advanced Styling tab displays current information about your widget, including
 your widget's Liferay ID and CSS classes.
 
-![Figure 7: The Advanced Styling tab displays your widget's Liferay ID and allows you to enter CSS code to customize the look and feel of your widget.](../../../images/look-and-feel-advanced-styling.png)
+![Figure X: The Advanced Styling tab displays your widget's Liferay ID and allows you to enter CSS code to customize the look and feel of your widget.](../../../images/look-and-feel-advanced-styling.png)
 
 On this tab, you can also enter custom CSS class names for your widget and 
 custom CSS code. Clicking the *Add a CSS rule for just this portlet* or *Add a 
