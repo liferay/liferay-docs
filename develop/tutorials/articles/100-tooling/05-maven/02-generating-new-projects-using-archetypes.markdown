@@ -30,7 +30,7 @@ for upcoming 7.1 Maven archetypes. -Cody -->
 
 Here's a brief list of some popular Maven archetypes provided by Liferay:
 
-- [Activator](/develop/reference/-/knowledge_base/7-1/using-the-activator-template)
+- [Activator](/develop/reference/-/knowledge_base/7-1/activator-template)
 - [Fragment](/develop/reference/-/knowledge_base/7-1/using-the-fragment-template)
 - [Liferay Faces](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
   portlets

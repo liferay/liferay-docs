@@ -39,4 +39,4 @@ To kickstart your theme, follow these steps:
 
 [Creating Reusable Pieces of Code for Your Themes](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes)
 
-[Deploying Themes](/develop/tutorials/-/knowledge_base/7-1/deploying-themes)
+[Deploying Themes](/develop/tutorials/-/knowledge_base/7-1/deploying-your-theme)
