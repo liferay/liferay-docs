@@ -151,11 +151,10 @@ runs in domain mode.
 You can run @product@ on Wildfly in domain mode, but this method is not fully
 supported. In particular, @product@'s hot-deploy does not work with a managed
 deployment, since Wildfly manages the content of a managed deployment by copying
-files (exploded or non-exploded). This prevents many @product@ plugins from
+files (exploded or non-exploded). This prevents JSP hooks and Ext plugins from
 working as intended. For example, JSP hooks don't work on Wildfly running in
 managed domain mode, since @product@'s JSP override mechanism relies on the
-application server. Other plugins, such as service or action hooks, should still
-work properly.
+application server.
 
 Using the command line interface is recommended for domain mode deployments.
 
