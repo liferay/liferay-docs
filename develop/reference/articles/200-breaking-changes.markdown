@@ -838,3 +838,38 @@ This change corrects a best practice violation regarding
 implementation-specific details being included within an API.
 
 ---------------------------------------
+
+### Disabled Access to Gogo Shell Using Telnet
+- **Date:** 2018-Jun-25
+- **JIRA Ticket:** [LPS-82849](https://issues.liferay.com/browse/LPS-82849)
+
+#### What changed?
+
+The ability to access and interact with Liferay Portal's OSGi framework using
+the Gogo shell via your system's telnet client has been disabled.
+
+#### Who is affected?
+
+This affects anyone who used their system's telnet client to access the Gogo
+shell, or leveraged the Gogo shell in external plugins/tooling using the telnet
+client.
+
+#### How should I update my code?
+
+Liferay Portal now offers the Gogo Shell portlet, which you can access in the
+Control Panel &rarr; *Configuration* &rarr; *Gogo Shell*.
+
+If you prefer using your telnet client to access the Gogo shell, you must enable
+Developer Mode. You can do this by creating a `portal-ext.properties` file in
+your Liferay home folder and adding the following property:
+
+    include-and-override=portal-developer.properties
+
+Developer Mode is enabled upon starting your app server.
+
+#### Why was this change made?
+
+This was done to strengthen Liferay Portal's security due to potential XXE/SSRF
+vulnerabilities.
+
+---------------------------------------
