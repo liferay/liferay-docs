@@ -75,13 +75,12 @@ are all published together. The same concept applies for folders---if you
 publish a folder containing several web content articles, all the articles and
 their associated dependencies are published too.
 
-By default, publishing single assets is only available to those with permissions
-to publish widgets. Follow the steps below to modify these permissions for a
-role:
+By default, only those with permissions to publish widgets can publish single
+assets. Follow the steps below to modify these permissions for a Role:
 
 1.  Navigate to the Control Panel &rarr; *Users* &rarr; *Roles*.
 
-2.  Select the role you want to update permissions for.
+2.  Select the Role you're updating.
 
 3.  Click the *Define Permissions* tab.
 
