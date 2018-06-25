@@ -1,4 +1,4 @@
-# Installing @product@ on Wildfly
+# Installing @product@ on Wildfly [](id=installing-product-on-wildfly)
 
 @product-ver@ bundled with Wildfly 11 is available on the
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
@@ -27,7 +27,7 @@ deploying @product@, the Liferay Home folder contains the Wildfly server folder
 as well as `data`, `deploy`, `logs`, and `osgi` folders. `$WILDFLY_HOME` refers
 to your Wildfly server folder. It is usually named `wildfly-[version]`.
 
-## Installing Dependencies
+## Installing Dependencies [](id=installing-dependencies)
 
 @product@ depends on many JARs that are included in the @product@ Wildfly
 bundle. Some of the bundle's JARs are not strictly required but can still be
@@ -51,7 +51,6 @@ from third-parties as described below.
     - `hsql.jar`
     - `portal-kernel.jar`
     - `portlet.jar`
-
 
 2.  Download your database driver `.jar` file and copy it into the
     same folder. For example,
@@ -107,37 +106,37 @@ from third-parties as described below.
 1.  At this point, you should have the following files in the 
     `$WILDFLY_HOME/modules/com/liferay/portal/main` folder:
 
-- `com.liferay.petra.concurrent`
-- `com.liferay.petra.executor.jar`
-- `com.liferay.petra.function.jar`
-- `com.liferay.petra.io.jar`
-- `com.liferay.petra.lang.jar`
-- `com.liferay.petra.memory.jar` 
-- `com.liferay.petra.nio.jar`
-- `com.liferay.petra.process.jar`
-- `com.liferay.petra.reflect.jar`
-- `com.liferay.petra.string.jar`
-- `com.liferay.registry.api.jar`
-- `portal-kernel.jar`
-- `portlet.jar`
-- a database JAR such as the MySQL Connector.
+    - `com.liferay.petra.concurrent`
+    - `com.liferay.petra.executor.jar`
+    - `com.liferay.petra.function.jar`
+    - `com.liferay.petra.io.jar`
+    - `com.liferay.petra.lang.jar`
+    - `com.liferay.petra.memory.jar` 
+    - `com.liferay.petra.nio.jar`
+    - `com.liferay.petra.process.jar`
+    - `com.liferay.petra.reflect.jar`
+    - `com.liferay.petra.string.jar`
+    - `com.liferay.registry.api.jar`
+    - `portal-kernel.jar`
+    - `portlet.jar`
+    - a database JAR such as the MySQL Connector.
 
 2. The `module.xml` has listed all JARs in the `<resource-root-path>` elements.
 
 3. The `osgi` folder has the following subfolders:
 
-- `configs`
-- `core`
-- `marketplace`
-- `modules`
-- `portal`
-- `static`
-- `test`
-- `war`
+    - `configs`
+    - `core`
+    - `marketplace`
+    - `modules`
+    - `portal`
+    - `static`
+    - `test`
+    - `war`
 
 Great! You have your `.jar` files ready. 
 
-## Running @product@ on Wildfly in Standalone Mode vs. Domain Mode
+## Running @product@ on Wildfly in Standalone Mode vs. Domain Mode [](id=running-product-on-wildfly-in-standalone-mode-vs-domain-mode)
 
 Wildfly can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
@@ -438,23 +437,23 @@ If you want to manage your mail session with Wildfly, follow these steps:
  
 You've got mail! Next, you'll deploy @product@ to your Wildfly app server.
 
-## Deploying @product@
+## Deploying @product@ [](id=deploying-product)
 
 Now you're ready to deploy @product@ using the @product@ WAR file.
 
-1. If the folder `$WILDFLY_HOME/standalone/deployments/ROOT.war` already exists
-   in your Wildfly installation, delete all of its subfolders and files.
-   Otherwise, create a new folder called
-   `$WILDFLY_HOME/standalone/deployments/ROOT.war`.
+1.  If the folder `$WILDFLY_HOME/standalone/deployments/ROOT.war` already exists
+    in your Wildfly installation, delete all of its subfolders and files.
+    Otherwise, create a new folder called
+    `$WILDFLY_HOME/standalone/deployments/ROOT.war`.
 
-2. Unzip the @product@ `.war` file into the `ROOT.war` folder.
+2.  Unzip the @product@ `.war` file into the `ROOT.war` folder.
 
-3. To trigger deployment of `ROOT.war`, create an empty file named
-   `ROOT.war.dodeploy` in your `$WILDFLY_HOME/standalone/deployments/` folder.
-   On startup, Wildfly detects the presence of this file and deploys it as a web
-   application.
+3.  To trigger deployment of `ROOT.war`, create an empty file named
+    `ROOT.war.dodeploy` in your `$WILDFLY_HOME/standalone/deployments/` folder.
+    On startup, Wildfly detects the presence of this file and deploys it as a
+    web application.
 
-4. Start the Wildfly application server by navigating to `$WILDFLY_HOME/bin`
-   and running `standalone.bat` or `standalone.sh`.
+4.  Start the Wildfly application server by navigating to `$WILDFLY_HOME/bin`
+    and running `standalone.bat` or `standalone.sh`.
 
 You're now an expert when it comes to deploying @product@ on Wildfly!

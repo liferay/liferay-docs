@@ -20,7 +20,7 @@ value, specify a path relative to
 or an absolute path; then click the *Save* button. The document library store
 switches immediately to the new folder. 
 
-![Figure x: The File Storage page in System Settings lets you configure document repository storage.](../../../images/file-storage.png)
+![Figure 1: The File Storage page in System Settings lets you configure document repository storage.](../../../images/file-storage.png)
 
 +$$$
 
