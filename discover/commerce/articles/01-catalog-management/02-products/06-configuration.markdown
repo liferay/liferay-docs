@@ -6,12 +6,12 @@ can be sold, and any special circumstances involving shipping or taxes.
 
 To get to a product's configuration page, go to the catalog, select a product,
 and click on the *Configuration* tab. This page has four more tabs of its own:
-*Inventory*, *Shipping*, *Display Page,* and *Tax Category*.
+Inventory, Shipping, Display Page, and Tax Category.
 
 ## Inventory [](id=inventory)
 
-You can control how a product's inventory data is tracked and communicated to
-buyers through the *Inventory* tab, which contains the following fields:
+The Inventory tab controls how a product's inventory data is tracked and
+communicated to buyers. It contains these fields:
 
 **Inventory Engine:** Select an inventory engine for this product by making
 a selection from the drop-down menu. The default inventory engine, which is the
@@ -28,28 +28,28 @@ triggers this action below, in the *Minimum Stock Quantity* field.
 
 **Availability Estimate:** Select an estimate from the drop-down to indicate how
 long it should take to resupply the product if inventory is depleted. This
-estimate will be displayed on the product's page whenever it is out of stock.
-The drop-down menu is populated from *Settings* &rarr; *Availability Estimates*.
-See [Settings](/web/liferay-emporio/documentation/-/knowledge_base/1-0/settings)
-for details.
+estimate is displayed on the product's page whenever it is out of stock. The
+drop-down menu is populated from *Settings* &rarr; *Availability Estimates*. See
+[Settings](/web/liferay-emporio/documentation/-/knowledge_base/1-0/settings) for
+details.
 
-**Display Availability:** Check this box to display a notice on the product page
-indicating whether it is in stock.
+**Display Availability:** Check this box to display an in stock/out of stock
+notice on the product page. 
 
-**Display Stock Quantity:** Check this box to display a notice on the product's
-page indicating its inventory level.
+**Display Stock Quantity:** Check this box to display an inventory level notice
+on the product's page. 
 
-**Minimum Stock Quantity:** When the product's inventory level falls to the
-number entered in this field, the *Low Stock Activity* is triggered.
+**Minimum Stock Quantity:** Enter a number to trigger the *Low Stock Activity*
+threshold. 
 
-**Allow Back Orders:** Check this box to permit orders to be placed when the
-product is out of stock.
+**Allow Back Orders:** Check this box to permit orders even when the product is
+out of stock.
 
 **Minimum/Maximum Order Quantity:** Set the least and greatest quantities that
 can be purchased in a single transaction.
 
-**Allowed Order Quantities:** Order quantities will be limited to any numbers
-entered. An entry of "2, 4, 6" allows buyers to only purchase those quantities.
+**Allowed Order Quantities:** Order quantities are limited to any numbers
+entered. An entry of "2, 4, 6" allows buyers to purchase only those quantities.
 
 **Multiple Order Quantity:** Only permit order quantities that are multiples of
 the number entered.
@@ -57,16 +57,16 @@ the number entered.
 ## Shipping [](id=shipping)
 
 The *Shipping* tab governs how shipping costs for a product are calculated. It
-contains the following fields:
+contains these fields:
 
-**Shippable:** If disabled, then no shipping costs will be calculated at all.
-This option should be disabled for virtual products.
+**Shippable:** If disabled, no shipping costs are calculated at all. Disable
+this for virtual products.
 
 **Free Shipping:** Enable to override 
 [Shipping Methods](/web/liferay-emporio/documentation/-/knowledge_base/1-0/shipping-methods-intro)
 and ship for free.
 
-**Ship Separately:** Enable to require that this product be shipped in its own
+**Ship Separately:** Enable to require this product be shipped in its own
 package.
 
 **Shipping Extra Price:** Enter a shipping surcharge for this product.
@@ -74,7 +74,7 @@ package.
 **Width, Height, Depth and Weight:** If you are calculating shipping charges by
 weight (see 
 [Variable Rate Shipping](/web/liferay-emporio/documentation/-/knowledge_base/1-0/variable-rate-shipping))
-then enter the product's weight. Other dimensions can be entered for reference
+enter the product's weight. Other dimensions can be entered for reference
 purposes, or---with the development of custom code---to calculate shipping
 costs.
 
@@ -101,12 +101,11 @@ purposes.
 ## Tax Category [](id=tax-category)
 
 The *Tax Category* tab governs how a product's sales tax is calculated. It
-contains the following fields:
+contains these fields:
 
 **Tax Category:** Select from available tax categories in the drop-down menu.
-This determines the amount that will be charged when this product is purchased
-to cover tax. See
-[Taxes](/web/liferay-emporio/documentation/-/knowledge_base/1-0/taxes)
-for details on creating and using tax categories.
+This determines the amount of tax that's charged when this product is purchased.
+See [Taxes](/web/liferay-emporio/documentation/-/knowledge_base/1-0/taxes) for
+details on creating and using tax categories.
 
-**Tax Exempt:** If this box is checked, no tax will be charged on this product.
+**Tax Exempt:** If this box is checked, no tax is charged on this product.
