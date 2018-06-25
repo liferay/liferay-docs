@@ -56,7 +56,7 @@ Authentication has several tabs: General, OpenSSO, CAS, NTLM, LDAP, OpenID,
 Facebook, Google, and OpenId Connect. Use any of these to configure how Users
 authenticate.
 
-![Figure 3: Configure general authentication behavior and settings for external authentication systems.](../../../images/instance-settings-auth.png)
+![Figure 2: Configure general authentication behavior and settings for external authentication systems.](../../../images/instance-settings-auth.png)
 
 The General tab's settings affect only @product@'s standard authentication
 functionality and don't have anything to do with the integration options on the
@@ -152,7 +152,7 @@ Web Content.
 2.  Click on the Terms of Use article. Its ID is displayed at the top of the
     screen, with the Version and Workflow Status.
 
-![Figure x: The Web Content Article ID is displayed in the edit screen.](../../../images/instance-settings-wc-id.png)
+![Figure 3: The Web Content Article ID is displayed in the edit screen.](../../../images/instance-settings-wc-id.png)
 
 The Group ID is the ID of the site the Web Content is associated with. To find
 the Group/Site ID:
@@ -162,13 +162,13 @@ the Group/Site ID:
 2.  Find the Site ID field in the General tab. Enter it into the Group ID
     field.
 
-![Figure x: The Site ID in Site Settings is the Group ID in the terms of Use configuration.](../../../images/instance-settings-group-id.png)
+![Figure 4: The Site ID in Site Settings is the Group ID in the terms of Use configuration.](../../../images/instance-settings-group-id.png)
 
 Save the configuration and now your Terms of Use article is seen by all Users
 signing in for the first time. Users must agree to the Terms of Use to register
 their User Account.
 
-![Figure x: Turn a Web Content Article into the site's Terms of Use page.](../../../images/instance-settings-terms-of-use.png)
+![Figure 5: Turn a Web Content Article into the site's Terms of Use page.](../../../images/instance-settings-terms-of-use.png)
 
 ## Mail Host Names [](id=mail-host-names)
 
@@ -183,14 +183,14 @@ email address.  By default, these are `Test Test` and `test@liferay.com`. This
 name and email address appear in the *From* field in all email messages sent by
 the virtual instance.
 
-![Figure 4: Customize the email template for the email messages sent to new Users.](../../../images/instance-settings-account-created.png)
+![Figure 6: Customize the email template for the email messages sent to new Users.](../../../images/instance-settings-account-created.png)
 
 The remaining tabs (Account Created Notification, Email Verification
 Notification, Password Changed Notification and Password Reset Notification) are
 used to customize the email messages sent to Users each time any of those four
 events occur.
 
-![Figure 5: There are some handy variables available for use in email templates.](../../../images/instance-settings-definition-of-terms.png)
+![Figure 7: There are some handy variables available for use in email templates.](../../../images/instance-settings-definition-of-terms.png)
 
 A list of tokens, entitled "Definition of Terms," is provided for insertion of
 certain values (such as the portal URL or the User ID) into custom email

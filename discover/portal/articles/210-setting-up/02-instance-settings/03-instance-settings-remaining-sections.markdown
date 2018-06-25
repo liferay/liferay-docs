@@ -1,4 +1,4 @@
-# Instance Settings: Remaining Sections
+# Instance Settings: Remaining Sections [](id=instance-settings-remaining-sections)
 
 This article covers the virtual instance settings not included in the 
 [previous article](/discover/portal/-/knowledge_base/7-1/instance-settings).
@@ -20,7 +20,7 @@ choose whether Users can mention (*@Username*) other Users, and if so, whether
 all Users have the capability or whether you want to further refine the mentions
 configuration.
 
-![Figure 2: Configure the Mentions capability throughout a virtual instance.](../../../images/instance-settings-mentions.png)
+![Figure 1: Configure the Mentions capability throughout a virtual instance.](../../../images/instance-settings-mentions.png)
 
 ## Miscellaneous: Display Settings [](id=miscellaneous-display-settings)
 
@@ -32,7 +32,7 @@ space. Large images might overlap with the navigation.
 
 <!-- Should we provide a range of recommended parameters for custom logos?  -->
 
-## Miscellaneous: Integrations
+## Miscellaneous: Integrations [](id=miscellaneous-integrations)
 
 In the Miscellaneous tab, below the Display Settings form, there are
 three additional configuration forms for these integrations:
