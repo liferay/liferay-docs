@@ -36,7 +36,7 @@ server's OSGi container.
 ![Figure 1: Blade CLI accesses the Gogo shell script to run the `lb` command.](../../../images/blade-sh.png)
 
 You can run any Gogo command using `blade sh`. This command requires
-[Developer Mode](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes#setting-developer-mode-for-your-server-in-liferay-ide)
+[Developer Mode](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes#setting-developer-mode-for-your-server-using-portal-developer-properties)
 to be enabled. Developer Mode is enabled in
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
 by default. See the
