@@ -81,7 +81,7 @@ $$$
 
 Service Pack detection is available behind a proxy server. To configure your
 proxy, use the following settings, making sure to replace `[PROXY_IP_ADDRESS]`
-with your proxy server's IP address: 
+with your proxy server's IP address and replace the port numbers with yours: 
 
     ### Proxy settings
 
