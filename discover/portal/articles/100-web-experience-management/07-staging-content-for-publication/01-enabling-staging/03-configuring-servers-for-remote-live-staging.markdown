@@ -74,9 +74,9 @@ Follow the steps below to configure your servers for Remote Live staging.
 
 4.  Update the *TunnelAuthVerfierConfiguration* of your remote Liferay instance.
     To do this, navigate to the Control Panel &rarr; *Configuration* &rarr;
-    *System Settings* &rarr; *Foundation* &rarr; *Tunnel Auth Verifier*. Click
-    */api/liferay/do* and insert the additional IP addresses you're using in the
-    *Hosts allowed* field. Then select *Update*.
+    *System Settings* &rarr; *API Authentication* &rarr; *Tunnel Authentication
+    Verifiers*. Click */api/liferay/do* and insert the additional IP addresses
+    you're using in the *Hosts allowed* field. Then select *Update*.
 
     Alternatively, you can also write this configuration into an OSGi file (e.g.,
     `osgi/configs/com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.config`)
