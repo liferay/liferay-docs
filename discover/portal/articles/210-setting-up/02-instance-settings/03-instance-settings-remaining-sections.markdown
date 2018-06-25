@@ -20,7 +20,7 @@ choose whether Users can mention (*@Username*) other Users, and if so, whether
 all Users have the capability or whether you want to further refine the mentions
 configuration.
 
-![Figure 2: You can configure the Mentions capability throughout a Liferay instance.](../../../images/instance-settings-mentions.png)
+![Figure 2: Configure the Mentions capability throughout a virtual instance.](../../../images/instance-settings-mentions.png)
 
 ## Miscellaneous: Display Settings [](id=miscellaneous-display-settings)
 

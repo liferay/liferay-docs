@@ -13,12 +13,12 @@ Virtual instances are separate Liferay installations (each with their own
 virtual host) that share a server and database. Each instance can be configured
 differently.
 
-So what kind of configuration do you need to do in your instance? Here's what
-these articles cover:
+These articles cover:
 
 - Adding a virtual instance
 
 - Configuring a virtual instance
 
 Get started by learning about adding a virtual instance.
+
 
