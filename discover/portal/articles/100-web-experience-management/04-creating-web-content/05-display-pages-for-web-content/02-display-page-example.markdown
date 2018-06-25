@@ -22,7 +22,6 @@ specific Web Content Structure.
 
 ![Figure X: Editing a Display Page with some Fragments added.](../../../../images/display-page-with-fragments.png)
 
-
 Notice that in our example, we have an editable title and text body, and a 
 static footer with graphics and links. After you have added some fragments to 
 the page, you can map them like this:
@@ -44,7 +43,7 @@ the page, you can map them like this:
 6.  Click on an editable text area and then click *Map*. A dialog will appear 
     with a list of fields that can be mapped to that area.
     
-7.  Click on *Content*.
+7.  Map your *Title* and *Content* to the appropriate area.
 
 8.  Click *Publish* at the top of the page to save your work.
 
@@ -61,7 +60,7 @@ of the user selected fields would display here as well.
 
 $$$
 
-## Using Display Pages
+## Publishing with Display Pages
 
 Now let's create a short article to display with this display page.
 
