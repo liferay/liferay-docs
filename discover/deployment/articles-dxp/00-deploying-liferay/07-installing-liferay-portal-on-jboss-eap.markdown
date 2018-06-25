@@ -1,4 +1,4 @@
-# Installing @product@ on JBoss EAP
+# Installing @product@ on JBoss EAP [](id=installing-product-on-jboss-eap)
 
 Installing @product@ on JBoss EAP 7.1 requires these basic steps:
 
@@ -124,7 +124,7 @@ Download and install the required JARs as described below.
 
 Great! You have your `.jar` files ready.
 
-## Running @product@ on JBoss EAP in Standalone Mode vs. Domain Mode
+## Running @product@ on JBoss EAP in Standalone Mode vs. Domain Mode [](id=running-product-on-jboss-eap-in-standalone-mode-vs-domain-mode)
 
 JBoss EAP can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
