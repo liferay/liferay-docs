@@ -2,9 +2,11 @@
 
 Display Pages provide a new level of control over the look and feel of your 
 content. Display pages empower marketers and designers to creating stunning 
-designs and layouts for Web Content. Display Pages combine Page Fragments with 
+designs for Web Content. Display Pages combine Page Fragments with 
 Web Content to provide an easier way to create beautiful layouts for displaying 
 articles.
+
+USE CASE
 
 ## Creating Display Pages
 
