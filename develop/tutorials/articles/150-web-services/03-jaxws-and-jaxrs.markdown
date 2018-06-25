@@ -1,4 +1,4 @@
-# JAX-WS and JAX-RS [](id=jax-ws-and-jax-rs)
+# JAX-WS and JAX-RS
 
 Liferay supports 
 [JAX-WS](https://en.wikipedia.org/wiki/Java_API_for_XML_Web_Services) and 
@@ -45,47 +45,46 @@ with Liferay's Control Panel. This tutorial shows you how to do both, and then
 shows you how to publish JAX-WS and JAX-RS web services. The following topics 
 are covered:
 
-- [Configuring Endpoints and Extenders with the Control Panel](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs#configuring-endpoints-and-extenders-with-the-control-panel)
+- [Configuring Endpoints and Extenders with the Control Panel](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#configuring-endpoints-and-extenders-with-the-control-panel)
 
-    - [CXF Endpoints](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs#cxf-endpoints)
+    - [CXF Endpoints](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#cxf-endpoints)
 
-    - [SOAP Extenders](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs#soap-extenders)
+    - [SOAP Extenders](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#soap-extenders)
 
-    - [REST Extenders](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs#rest-extenders)
+    - [REST Extenders](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#rest-extenders)
 
-- [Configuring Endpoints and Extenders Programmatically](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs#configuring-endpoints-and-extenders-programmatically)
+- [Configuring Endpoints and Extenders Programmatically](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#configuring-endpoints-and-extenders-programmatically)
 
-- [Publishing JAX-WS Web Services](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs#publishing-jax-ws-web-services)
+- [Publishing JAX-WS Web Services](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#publishing-jax-ws-web-services)
 
-- [Publishing JAX-RS Web Services](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs#publishing-jax-rs-web-services)
+- [Publishing JAX-RS Web Services](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#publishing-jax-rs-web-services)
 
-## Configuring Endpoints and Extenders with the Control Panel [](id=configuring-endpoints-and-extenders-with-the-control-panel)
+## Configuring Endpoints and Extenders with the Control Panel
 
 Liferay's Control Panel lets administrators configure endpoints and extenders 
 for JAX web services. Note that you must be an administrator in your Liferay
 instance to access the settings here. First, you'll learn how to create CXF
 endpoints. 
 
-### CXF Endpoints [](id=cxf-endpoints)
+### CXF Endpoints
 
 To configure a CXF endpoint with the Control Panel, first go to *Control Panel*
-&rarr; *Configuration* &rarr; *System Settings* &rarr; *Foundation*. Then select
-*CXF Endpoints* from the table. If there are any existing CXF endpoints, they're
-shown here. To add a new one, select the *Add* button
-(![Add](../../images/icon-add.png)) in the lower right-hand corner. The form 
-that appears lets you configure a new CXF endpoint by filling out these fields: 
+&rarr; *Configuration* &rarr; *System Settings* &rarr; *Web API*. Then select
+*CXF Endpoints* from the list. If there are any existing CXF endpoints, they're
+shown here. To add a new one, click on the *Add* button. The form that appears
+lets you configure a new CXF endpoint by filling out these fields: 
 
-- **Context path:** The path the JAX web services are deployed to on the Liferay 
+- **Context Path:** The path the JAX web services are deployed to on the Liferay 
   server. For example, if you define the context path `/web-services`, any 
   services deployed there are available at 
   `http://your-server:your-port/o/web-services`. 
 
 - **`AuthVerifier` properties:** Any properties defined here are passed as-is to 
   the `AuthVerifier` filter. See the 
-  [`AuthVerifier` documentation](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-0/authentication-verifiers) 
+  [`AuthVerifier` documentation](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-1/authentication-verifiers) 
   for more details. 
 
-- **Required extensions:** CXF normally loads its default extension classes, but 
+- **Required Extensions:** CXF normally loads its default extension classes, but 
   in some cases you can override them to replace the default behavior. In most
   cases, you can leave this field blank: overriding extensions isn't common. By
   specifying custom extensions here via [OSGi filters](https://osgi.org/javadoc/r6/core/org/osgi/framework/Filter.html), 
@@ -97,16 +96,15 @@ that appears lets you configure a new CXF endpoint by filling out these fields:
 Next, you'll learn how to use the Control Panel to create SOAP extenders for 
 JAX-WS web services. 
 
-### SOAP Extenders [](id=soap-extenders)
+### SOAP Extenders
 
-For an app to deploy JAX-WS web services, you must configure a SOAP extender. To 
-configure a SOAP extender with the Control Panel, first go to 
-*Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; 
-*Foundation*. Then select *SOAP Extenders* from the table. If there are any 
-existing SOAP extenders, they're shown here. To add a new one, select the *Add* 
-button 
-(![Add](../../images/icon-add.png)) in the lower right-hand corner. The form 
-that appears lets you configure a new SOAP extender by filling out these fields: 
+For an app to deploy JAX-WS web services, you must configure a SOAP extender.
+To configure a SOAP extender with the Control Panel, first go to *Control
+Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Web API*. Then
+select *SOAP Extenders* from the list. If there are any existing SOAP
+extenders, they're shown here. To add a new one, click on the *Add* button. The
+form that appears lets you configure a new SOAP extender by filling out these
+fields: 
 
 - **Context paths:** Specify at least one CXF endpoint here. This is where the 
   services affected by this extender are deployed. In the preceding CXF endpoint 
@@ -135,15 +133,13 @@ that appears lets you configure a new SOAP extender by filling out these fields:
 Next, you'll learn how to use the Control Panel to create REST extenders for 
 JAX-RS web services. 
 
-### REST Extenders [](id=rest-extenders)
+### REST Extenders
 
-To configure a REST extender with the Control Panel, first go to 
-*Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; 
-*Foundation*. Then select *REST Extender* from the table. If there are any 
-existing REST extenders, they're shown here. To add a new one, select the *Add* 
-button 
-(![Add](../../images/icon-add.png)) in the lower right-hand corner. The form 
-that appears lets you configure a new REST extender by filling out these fields: 
+To configure a REST extender with the Control Panel, first go to *Control
+Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Web API*. Then
+select *REST Extender* from the list. If there are any existing REST extenders,
+they're shown here. To add a new one, click on the *Add* button. The form that
+appears lets you configure a new REST extender by filling out these fields: 
 
 - **Context paths:** Specify at least one CXF endpoint here. This is where the 
   services affected by this extender are deployed. In the preceding CXF endpoint 
@@ -161,10 +157,10 @@ that appears lets you configure a new REST extender by filling out these fields:
   implement any of the interfaces supported by JAX-RS for providers. These 
   JAX-RS providers are added to the JAX-RS application as if they had been 
   returned by the `getSingletons()` method of `javax.ws.rs.core.Application`. 
-  The following links list some of the supported JAX-RS providers: 
+  To learn about supported JAX-RS providers, please refer to the Jersey documentation:
 
-    - [JAX-RS Entity Providers](https://jersey.java.net/documentation/latest/message-body-workers.html) 
-    - [Filters and Interceptors](https://jersey.java.net/documentation/latest/filters-and-interceptors.html) 
+    - [JAX-RS Entity Providers](https://jersey.github.io/documentation/latest/message-body-workers.html) 
+    - [Filters and Interceptors](https://jersey.github.io/documentation/latest/filters-and-interceptors.html) 
 
 - **jax.rs.service.filters:** Here you can specify a set of OSGi filters that 
   selects services registered in the OSGi framework that are valid JAX-RS 
@@ -176,7 +172,7 @@ that appears lets you configure a new REST extender by filling out these fields:
 
 Next, you'll learn how to configure endpoints and extenders programmatically.
 
-## Configuring Endpoints and Extenders Programmatically [](id=configuring-endpoints-and-extenders-programmatically)
+## Configuring Endpoints and Extenders Programmatically
 
 To configure endpoints or extenders programmatically, you must use Liferay's 
 configurator extender. The configurator extender provides a way for OSGi modules 
@@ -194,15 +190,8 @@ configuration sets the `ConfigurationPath` to
     Liferay-Releng-Module-Group-Description:
     Liferay-Releng-Module-Group-Title: Data Management
 
-+$$$
-
-**Note:** If you're using any version before Liferay CE GA4 or Liferay DXP
-Fixpack 22, the `Liferay-Configuration-Path` directive above is
-`Configuration-Path`. As of 
-[LPS-62571](https://issues.liferay.com/browse/LPS-62571), Liferay-specific Bnd
-instructions are prefixed with `Liferay` to avoid conflicts. 
-
-$$$
+Note that Liferay-specific Bnd instructions are prefixed with `Liferay` to
+avoid conflicts. 
 
 There are two different configuration types in 
 [OSGi's `ConfigurationAdmin`](https://osgi.org/javadoc/r4v42/org/osgi/service/cm/ConfigurationAdmin.html): 
@@ -259,19 +248,18 @@ configuration fields `contextPaths`, `jaxWsHandlerFilterStrings`, and
     }
 
 You can use similar techniques to create REST extenders. For example, see 
-[the `RestExtenderConfiguration` interface](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/portal-remote/portal-remote-rest-extender/src/main/java/com/liferay/portal/remote/rest/extender/configuration/RestExtenderConfiguration.java) 
+[the `RestExtenderConfiguration` interface](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/portal-remote/portal-remote-rest-extender/src/main/java/com/liferay/portal/remote/rest/extender/configuration/RestExtenderConfiguration.java) 
 in Liferay's source code. 
 
 Next, you'll learn how to publish JAX-WS web services. 
 
-## Publishing JAX-WS Web Services [](id=publishing-jax-ws-web-services)
+## Publishing JAX-WS Web Services
 
-To publish JAX-WS web services via SOAP in a @product-ver@ module, annotate the 
-class and its methods with standard JAX-WS annotations, and then register it as 
-a service in the OSGi framework. For example, the following class uses the 
-`@WebService` annotation for the class and `@WebMethod` annotations for its 
-methods. You must also set the `jaxws` property to `true` in the OSGi 
-`@Component` annotation: 
+To publish JAX-WS web services via SOAP in a module, annotate the class and its
+methods with standard JAX-WS annotations, and then register it as a service in
+the OSGi framework. For example, the following class uses the `@WebService`
+annotation for the class and `@WebMethod` annotations for its methods. You must
+also set the `jaxws` property to `true` in the OSGi `@Component` annotation: 
 
     import javax.jws.WebMethod;
     import javax.jws.WebService;
@@ -311,7 +299,7 @@ You should also make sure that you include `org.osgi.core` and
 
 Next, you'll learn how to publish JAX-RS web services. 
 
-## Publishing JAX-RS Web Services [](id=publishing-jax-rs-web-services)
+## Publishing JAX-RS Web Services
 
 You can publish JAX-RS web services in a Liferay module the same way you would 
 outside of Liferay. You must also, however, register the class in the OSGi 
@@ -353,6 +341,6 @@ simple *"Hello!"*:
 
 Nice work! Now you know how JAX-WS and JAX-RS works in Liferay. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-0/service-builder-web-services)
+[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)
