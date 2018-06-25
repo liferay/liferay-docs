@@ -3,49 +3,18 @@
 This tutorial provides examples of invoking Liferay's JSON web services via
 JavaScript, URL, and 
 [cURL](http://curl.haxx.se/). 
-To illustrate the differences between these, the same two use cases (getting a 
-user and adding a user) are shown in each example. This tutorial also includes 
-an example of using JavaScript to invoke Liferay's JSON web services from a 
+To illustrate the differences between these, the same two use cases (getting a
+user and adding a user) are shown in each example. This tutorial also includes
+an example of using JavaScript to invoke Liferay's JSON web services from a
 portlet. 
-
-## Loading AlloyUI
-
-Liferay web pages use the AlloyUI JavaScript framework. Among the JavaScript
-objects created for each Liferay page is a `Liferay` object. This object
-includes a `Service` function that you can use to invoke Liferay's API. To 
-invoke Liferay web services via `Liferay.Service(...)`, your JavaScript context
-must include the AlloyUI JavaScript framework. Liferay uses AlloyUI 3.0. If 
-you're working in a JSP, you can load the AlloyUI taglib and wrap your 
-JavaScript code in an `<aui:script>` tag. Here's the required import:
-
-    <%@ taglib uri="http://alloy.liferay.com/tld/aui" prefix="aui" %>
-
-By default, the `<aui:script>` tag includes the base AUI module. To load 
-specific AUI modules, specify them via the `use` attribute. For example, to use 
-the AUI `node` and `event` modules, wrap your code like this: 
-
-    <aui:script use="node, event">
-        // Liferay service invocation here
-    </aui:script>
-
-If you're not working in a JSP, you won't have access to taglibs. In this case, 
-create an AUI context manually. For example, use the following HTML fragment to 
-load the AUI seed and CSS files:
-
-    <script src="https://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
-    <link href="https://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet"></link>
-
-Then you can create an AUI context like this:
-
-    AUI().use('aui-base', function(A){
-        // Liferay service invocation here
-    });
-
-Now you're ready to invoke Liferay's JSON web services.
 
 ## Get User JSON Web Service Invocation via JavaScript
 
-First, examine the following JSON web service invocation, written in JavaScript: 
+Among the JavaScript objects that Liferay creates for each page is a `Liferay`
+object. This object includes a `Service` function that you can use to invoke
+Liferay's API. 
+
+Examine the following JSON web service invocation, written in JavaScript: 
 
     Liferay.Service(
         '/user/get-user-by-email-address',
@@ -58,8 +27,14 @@ First, examine the following JSON web service invocation, written in JavaScript:
         }
     );
 
-If you run this code, the test@liferay.com user (JSON object) is logged to the
-JavaScript console.
+The simplest way to run this example is to wrap it in a script tag like this:
+
+	<script type="text/javascript">
+	// Liferay service invocation here
+	</script>
+
+When you run this example, the test@liferay.com user (JSON object) is returned.
+You can examine the returned object from your browser console.
 
 The `Liferay.Service(...)` function takes three arguments:
 
