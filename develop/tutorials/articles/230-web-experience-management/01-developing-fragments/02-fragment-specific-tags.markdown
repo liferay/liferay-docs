@@ -22,6 +22,27 @@ You can make any text of a fragment editable by enclosing it in an
  
 The `lfr-editable` tag doesn't render without a unique `id`. 
 
+The following three `type` options are available inside of of `lfr-editable` tag:
+
+-  **"text"** creates a space for plain text which can be edited before 
+    publishing. 
+
+-  **"image"** must contain a valid `<img>` tag which can then be replaced 
+    before publishing with any image---including those from Documents and Media.
+    
+-  **"rich-text"** is similar to the text field, but will provide an WYSIWYG
+    editor for editing before publication.
+    
+    
++$$$
+
+**WARNING:** Be careful with the `rich-text` type. Users can use the editor to 
+provide their own HTML in the provided field which could have catastrophic 
+results for your layout if misused. Be sure that your content creators 
+understand the responsibility that must come with such great power.
+
+$$$
+
 Now add editable text to a Fragment, add the Fragment to a Content Page, 
 and then edit the text before publishing:
 
@@ -54,6 +75,10 @@ published:
 
 ![Figure 1: You can edit text in the Page Template editor.](../../../images/editing-fragment-text.png)
 
+Similarly, the `"rich-text"` type provides the same functionality with additional features in the editor.
+
+![Figure 2: Rich text provides a fuller editing experience.](../../../images/editing-rich-text.png)
+
 The template saves automatically, and when it is turned into a page, the new
 text is displayed.
 
@@ -68,15 +93,13 @@ have major negative effects on your layout.
 Images use the same `<lfr-editable>` tag as text, but with the `img` type, like 
 this:
     
-    <lfr-editable id="unique-id" type="img">
+    <lfr-editable id="unique-id" type="image">
        <img src="...">
     </lfr-editable>
 
 After you add the `lfr-editable` tag with the type `img` to a Fragment, when 
 you add that Fragment to a page, you can then click on the editable image and 
 select a replacement.
-
-<!--Figure X: You can replace images in the Page Template editor.../../../images/editing-fragment-image.png -->
 
 ## Including Widgets Within A Fragment [](id=including-widgets-within-a-fragment)
 

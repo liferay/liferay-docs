@@ -1,10 +1,10 @@
 # Creating a Fragment [](id=creating-a-fragment)
 
 The first example is simple. If you aren't sure about the basics of Fragments
-and Collections, you should read our User Documentation [link] first so you know
-what you're getting yourself into.
+and Collections, you should read [Creating Page Fragments](/discover/portal/-/knowledge_base/7-1/creating-page-fragments) first 
+so you know what you're getting yourself into.
 
-1.  Go to *Site Administration* and for your selected site click *Content*
+1.  Go to *Site Administration* and for your selected site click *Build*
     &rarr; *Fragments*.
  
 2.  Create a new Collection named *Developing Fragments*.
@@ -53,5 +53,4 @@ As you work, you can observe the preview in the preview pane.
 ![Figure 1: The Fragment editor with HTML and CSS code and a live preview.](../../../images/fragment-editor-basic.png)
 
 From here, the Fragment can be used to create a Content Page. To see this 
-process in action, see the Creating Content Pages [link] tutorial. Next, you'll
-explore some Fragment-specific tags. 
+process in action, see the [Building Content Pages from Fragments]()/discover/deployment/-/knowledge_base/7-1/building-content-pages-from-fragments) tutorial. Next, you'll explore some Fragment-specific tags. 
