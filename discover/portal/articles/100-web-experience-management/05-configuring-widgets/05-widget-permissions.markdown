@@ -11,6 +11,8 @@ of the widgets's configuration dialog box. You can grant roles permission to:
 - Modify the widget's preferences
 - View the widget
 
+![Figure 1: Viewing the permissions configuration for a widget.](../../../images/widget-permissions.png)
+
 To set these permissions, go to the widget's *Options* icon
 (![Options](../../../images/icon-options.png)) and click select *Permissions*.
 This shows you a table of roles defined in the Liferay instance. Use the check
@@ -18,7 +20,7 @@ boxes to grant certain permissions to different roles. Click *Save* after you've
 made your selections.
 
 Beyond this, specific permissions are generally defined for specific
-applications. For example, Message Boards contains a *Ban User* permission. 
-This makes no sense in the context of another applications, say, the Blogs. 
-You'll go over permissions for specific applications in the sections for those 
-applications. Next, you'll explore how to sharing applications.
+widgets. For example, Message Boards contains a *Ban User* permission. 
+This makes no sense in the context of most other widgets. 
+You'll go over permissions for specific widgets in the sections for those 
+widgets. Next, you'll explore how to share widgets.

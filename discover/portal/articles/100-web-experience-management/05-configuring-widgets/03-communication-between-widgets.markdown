@@ -1,11 +1,10 @@
 # Communication Between Widgets [](id=communication-between-widgets)
 
-@product@ implements several communication mechanisms across widgets including
-those specified by the JSR-286 standard: public render parameters and events.
-Public render parameters are easy to use and can be quite powerful. Some
-Liferay widgets provide a configuration UI to help you get the most out of
-this communication mechanism. To access this UI, open your widget's
-configuration window by clicking on the *Options* icon
+Liferay provides options for communication between widgets, including public 
+render parameters and events. Public render parameters are easy to use and can 
+be quite powerful. Some Liferay widgets provide a configuration UI to help you 
+get the most out of this communication mechanism. To access this UI, open your 
+widget's configuration window by clicking on the *Options* icon
 (![Options](../../../images/icon-options.png)) and selecting *Configuration*.
 Then click on the *Communication* tab.
 
@@ -20,9 +19,9 @@ Why might it be useful to ignore the values for certain parameters that come
 from other widgets? Consider a common use case for the Wiki application. The 
 Wiki widget is often used along with the Tags Navigation widget so that when a 
 user clicks on a tag of the latter, the Wiki shows a list of pages with that 
-tag. In some cases, an administrator may want the Wiki to always show the front 
-page independently of any tag navigation done through other widgets. This can be
-achieved by checking the *Ignore* checkbox so that the values of the parameter
+tag. An administrator may want the Wiki to always show the front page 
+independently of any tag navigation done through other widgets. This is done by 
+checking the *Ignore* checkbox so that the values of the parameter
 coming from those other widgets are ignored.
 
 Reading the value of a parameter from another widget is an advanced but very

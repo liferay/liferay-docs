@@ -2,22 +2,18 @@
 
 There are times when you want to export/import specific content created from an
 application, and not deal with site data at all. Many Liferay apps allow you to
-export or import their widget data individually. These include many of Liferay's
-collaborative applications, such as the Blogs, Wiki, and Message Boards. 
+export or import their widget data individually.
 
 Exporting widget data produces a `.lar` file that you can save and import into 
-another widget of the same type. To import widget data, you must select a 
-`.lar` file. Be careful not to confuse widget-specific `.lar` files with 
-site-specific `.lar` files. See the [Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content) section for a discussion of importing and exporting site page data.
+another widget of the same type. Be careful not to confuse widget-specific 
+`.lar` files with  site-specific `.lar` files. See the [Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content) section for a discussion of importing and exporting site page data.
 
 You can export/import widget content two ways. You can navigate to the
-widget's administrative area located in the Menu, or you can visit the
-individual widget that resides on a Liferay page. Both export/import menus work
-the same, but the administrative area may hold different content than its 
-individual widget counterpart (e.g., Web Content Admin in Menu and Web Content 
-Display widget will not offer same content for export/import), so be wary of 
-your widget selection. To reach the Export/Import menu for an widget listed in 
-the Menu:
+widget's administrative area located in Site Administration, or you can visit 
+the individual widget that resides on a Liferay page. If your widget is not 
+site-scoped, it will have different data to export than the Site Administration 
+configuration application. To reach the Export/Import menu for an widget listed 
+in the Menu:
 
 1.  Go to the widget in the Menu.
 

@@ -1,42 +1,42 @@
 # Widget Scope [](id=widget-scope)
 
-As you learned earlier, roles can be scoped by the instance, by a site, or by an
+As you learned earlier, roles can be scoped by the instance, by Site, or by an
 organization. A role only takes effect within its scope. For example, a Message
 Boards Administrator role with complete access to the Message Boards
 has different permissions based on the role's scope. If it's a instance role,
 members have permission to administer message boards across the entire instance.
-If it's a site role, members only have permission to administer message boards
-within the site where they've been assigned the role. For organizations with
-sites, site roles are automatically assigned to organization members based on
+If it's a Site role, members only have permission to administer message boards
+within the Site where they've been assigned the role. For organizations with
+Sites, Site roles are automatically assigned to organization members based on
 the organization roles they have. So for an organization-scoped Message Boards
 administrator role, members only have permission to administer message boards
-within the site of the organization that assigned the role to them. 
+within the Site of the organization that assigned the role to them. 
 
 You've also heard the word *scope* refer to the data set of an widget. By 
-default, when a widget is added to a page in a site, it is *scoped* for that 
-site. This means that its data belongs to that site. If the widget is added to 
-a page in a different site, it employs a completely different data set. This 
-enables you to place a Message Boards widget in one site with one set of 
+default, when a widget is added to a page in a Site, it is *scoped* for that 
+Site. This means that its data belongs to that Site. If the widget is added to 
+a page in a different Site, it employs a completely different data set. This 
+enables you to place a Message Boards widget in one Site with one set of 
 categories and threads, and place another Message Boards widget in different 
-site with a different set of categories and threads.
+Site with a different set of categories and threads.
 
-Scoping by site means that you can only have one Message Boards widget per 
-site. If you add one Message Boards widget to a page in a site and add another 
-Message Boards widget to a different page in the same site, the second Message 
+Scoping by Site means that you can only have one Message Boards widget per 
+Site. If you add one Message Boards widget to a page in a Site and add another 
+Message Boards widget to a different page in the same Site, the second Message 
 Boards widget contains exactly the same data as the first. This is because, by 
-default, the Message Boards widget is scoped by site. Most of @product@'s other 
-widgets also default to being scoped by site.
+default, the Message Boards widget is scoped by Site. Most of @product@'s other 
+widgets also default to being scoped by Site.
 
-To avoid this limitation, many Liferay widgets can be scoped by page. In this 
-case, the data sets of page-scoped widget serve a single page, not an entire 
-site. If you set the scope of a widget to *page* instead of *site*, you can add 
-any number of these widgets to different pages, and then they have different 
-sets of data. This allows you to have more than one message board per site if 
-you wish. Most widgets, however, default to the "native" configuration, and 
-have their scopes set to the site where they are placed.
+To avoid this limitation, many Liferay widgets can be scoped by page. The data 
+sets of page-scoped widget serve a single page, not an entire Site. If you set 
+the scope of a widget to *page* instead of *Site*, you can add any number of 
+these widgets to different pages, and then they have different sets of data. 
+This allows you to have more than one message board per Site if you wish. Most 
+widgets, however, default to the "native" configuration, and have their scopes 
+set to the Site where they are placed.
 
 Unless otherwise noted, all the widget in this chapter support scoping by 
-instance(global), site (default), or page. This grants you some flexibility in 
+instance (global), Site (default), or page. This grants you some flexibility in 
 how you want to set up your Liferay instance. You can configure the scope of an 
 app with just a few simple steps.
 

@@ -24,15 +24,14 @@ button to discard changes.
 
 On the General tab, you have the following options:
 
--  **Use Custom Title** allows you to change your widget's title. The value you 
-    enter in the title box will be displayed at the top of the widget's window 
-    on the page. You can also select a language from the app title drop-down 
-    menu. If you've provided a language key translation for the language you 
-    select, then your widget's title will be displayed in the selected language.
+-  **Use Custom Title** enables changes to your widget's title. The value in 
+    the title box will be displayed on widget's decorator. The title is
+    localizable and you can provide translations of the title for different
+    languages.
 
 -  **Link Portlet URLs to Page** configures all URLs inside the widget 
-    (including pagination URLs) to link to the context of the page you 
-    selected. The current page is the default. This is intended as an elegant 
+    (including pagination URLs) to link to the context of the selected page. 
+    The current page is the default. This is intended as an elegant 
     way to show web content articles' full view from the Asset Publisher. If 
     you use the View in a Specific Portlet feature or web content articles' 
     Display Page attribute, you must be careful since it redirects all links 
@@ -86,9 +85,9 @@ background color or you can manually enter any six digit hex color code.
 
 ## Border Styles
 
-On the Border Styles tab, you can configure your widget's border width, style, and
-color. For each of these attributes, leave the *Same for All* selector enabled
-to apply the same settings to top, right, bottom, and left borders.
+On the Border Styles tab, you can configure your widget's border width, style, 
+and color. For each of these attributes, leave the *Same for All* selector 
+enabled to apply the same settings to top, right, bottom, and left borders.
 
 ![Figure X: The Border Styles tab lets you specify a border width, style, and color for each side of the widget.](../../../images/look-and-feel-border-styles.png)
 
@@ -112,8 +111,8 @@ value.
 
 ## Advanced Styling
 
-The Advanced Styling tab displays current information about your widget, including
-your widget's Liferay ID and CSS classes.
+The Advanced Styling tab displays current information about your widget, 
+including your widget's Liferay ID and CSS classes.
 
 ![Figure X: The Advanced Styling tab displays your widget's Liferay ID and allows you to enter CSS code to customize the look and feel of your widget.](../../../images/look-and-feel-advanced-styling.png)
 
