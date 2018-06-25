@@ -16,9 +16,7 @@ follows a similar format. Usually it's something like this:
 
 -  Main Body
 
-    -  In-article image
-
-    -  Highlighted Quote
+-  Highlighted Quote
     
 -  Footer with links to related articles or other content
 
