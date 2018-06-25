@@ -1,4 +1,4 @@
-# Display Page Example
+# Display Page Example [](id=display-page-example)
 
 To see this in practice, you'll create a new display page
 
@@ -12,7 +12,7 @@ To create a new Display Page:
 
 4.  Name your Display Page "Lunar Resort Display Page" and click *Submit*.
 
-![Figure X: The Display Page creation interface.](../../../../images/create-display-page.png)
+![Figure 1: The Display Page creation interface.](../../../../images/create-display-page.png)
 
 To build the Display Page, you can add any number of Fragments --- both those 
 with editable content and those without editable content --- to the page to 
@@ -20,7 +20,7 @@ build your design. Any Fragments with editable content can have their editable
 fields mapped to be filled by a Web Content article. You can also base it on a 
 specific Web Content Structure.
 
-![Figure X: Editing a Display Page with some Fragments added.](../../../../images/display-page-with-fragments.png)
+![Figure 2: Editing a Display Page with some Fragments added.](../../../../images/display-page-with-fragments.png)
 
 Notice that in our example, we have an editable title and text body, and a 
 static footer with graphics and links. After you have added some fragments to 
@@ -33,7 +33,7 @@ the page, you can map them like this:
 3.  For this example, select *Web Content Article* for the Asset Type and 
     *Basic Web Content* for the subtype.
 
-![Figure X: Selecting the Asset type and Subtype.](../../../../images/display-page-asset-type.png)
+![Figure 3: Selecting the Asset type and Subtype.](../../../../images/display-page-asset-type.png)
 
 4.  Click *Save*.
 
@@ -60,7 +60,7 @@ of the user selected fields would display here as well.
 
 $$$
 
-## Publishing with Display Pages
+## Publishing with Display Pages [](id=publishing-with-display-pages)
 
 Now let's create a short article to display with this display page.
 
@@ -76,13 +76,13 @@ Now let's create a short article to display with this display page.
 
 6.  Click *Publish*.
 
-![Figure X: Selecting the Asset type and Subtype.](../../../../images/display-page-creating-content.png)
+![Figure 4: Selecting the Asset type and Subtype.](../../../../images/display-page-creating-content.png)
 
 When you click publish, the content will be available to view at it's Friendly 
 URL (you can find the Friendly URL while editing a Web Content article under 
 *Friendly URL*) or when you click on the content in an Asset Publisher with 
 *Asset Link Behavior* set to *View in Context*.
 
-![Figure X: Selecting the Asset type and Subtype.](../../../../images/display-page-in-context.png)
+![Figure 5: Selecting the Asset type and Subtype.](../../../../images/display-page-in-context.png)
 
 

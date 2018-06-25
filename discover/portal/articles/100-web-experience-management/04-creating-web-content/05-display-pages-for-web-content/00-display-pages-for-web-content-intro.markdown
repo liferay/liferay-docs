@@ -1,4 +1,4 @@
-# Display Pages for Web Content
+# Display Pages for Web Content [](id=display-pages-for-web-content)
 
 Display Pages provide a new level of control over the look and feel of your 
 content. Display pages empower marketers and designers to creating stunning 

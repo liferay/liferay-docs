@@ -1,4 +1,4 @@
-## Creating Display Pages
+# Creating Display Pages [](id=creating-display-pages)
 
 Display Pages are created initially in much the same way as Content Pages. You 
 select any number of page fragments and add them to the page to create your 
@@ -40,7 +40,7 @@ these fields:
 
 -  Quote (Text area)
 
-![Figure X: Connecting structure fields to fragment data.](../../../../images/structure-to-fragment.png)
+![Figure 1: Connecting structure fields to fragment data.](../../../../images/structure-to-fragment.png)
 
 The Display Page maps the fields from the Web Content Structure 
 to the fragment. So when the Display Page is assigned for an article with that
