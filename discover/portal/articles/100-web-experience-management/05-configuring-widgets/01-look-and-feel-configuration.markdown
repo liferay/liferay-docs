@@ -20,7 +20,7 @@ After making customizations click *Save* and refresh your page to apply your
 changes. If you don't like the effect of your changes, some tabs have a *Reset*
 button to discard changes.
 
-## General Settings
+## General Settings [](id=general-settings)
 
 On the General tab, you have the following options:
 
@@ -43,9 +43,9 @@ On the General tab, you have the following options:
     off; some themes assume that widget borders are turned on and may not 
     display correctly with them turned off.
 
-![Figure X: The General tab of the Look and Feel Configuration menu allows you to define a custom widget title, link widget URLs to a specific page, and select the widget contrast option using decorators.](../../../images/look-and-feel-portlet-configuration-menu.png)
+![Figure 1: The General tab of the Look and Feel Configuration menu allows you to define a custom widget title, link widget URLs to a specific page, and select the widget contrast option using decorators.](../../../images/look-and-feel-portlet-configuration-menu.png)
 
-## Text Styles
+## Text Styles [](id=text-styles)
 
 *Text Styles* allows you to configure the format of the text that appears
 in the widget. The options include:
@@ -64,7 +64,7 @@ in the widget. The options include:
 
 -  **Text Decoration** can be set to *Underline*, *Overline*, or *Strikethrough*. The default text decoration is *None*.
 
-![Figure 3: The Text Styles tab lets you configure the format of the text that appears in the widget.](../../../images/look-and-feel-text-styles.png)
+![Figure 2: The Text Styles tab lets you configure the format of the text that appears in the widget.](../../../images/look-and-feel-text-styles.png)
 
 -  **Word Spacing** can be set from -1 em to 0.95 em, with 0.05 em
     increments. 0 em is the default.
@@ -75,21 +75,21 @@ in the widget. The options include:
 -  **Letter Spacing** can be set from -10 px to 50 px, with 1 px increments. 0 
     px is the default.
 
-## Background Styles
+## Background Styles [](id=background-styles)
 
 The Background Styles tab allows you to specify the widget's background color.
 When you select the text space, you're given a color palette to choose your
 background color or you can manually enter any six digit hex color code.
 
-![Figure X: The Background Styles tab lets you specify the widget's background color.](../../../images/look-and-feel-background-styles.png)
+![Figure 3: The Background Styles tab lets you specify the widget's background color.](../../../images/look-and-feel-background-styles.png)
 
-## Border Styles
+## Border Styles [](id=border-styles)
 
 On the Border Styles tab, you can configure your widget's border width, style, 
 and color. For each of these attributes, leave the *Same for All* selector 
 enabled to apply the same settings to top, right, bottom, and left borders.
 
-![Figure X: The Border Styles tab lets you specify a border width, style, and color for each side of the widget.](../../../images/look-and-feel-border-styles.png)
+![Figure 4: The Border Styles tab lets you specify a border width, style, and color for each side of the widget.](../../../images/look-and-feel-border-styles.png)
 
 For border width, you can specify any % value, em value, or px value. For
 border style, you can select Dashed, Double, Dotted, Groove, Hidden, Inset,
@@ -97,24 +97,24 @@ Outset, Ridge, or Solid. For border color, you can enter any six digit hex
 color code, just like for the text color and background color. You can also use
 the color palette.
 
-## Margin and Padding
+## Margin and Padding [](id=margin-and-padding)
 
 The Margin and Padding tab allows you to specify margin and padding lengths for
 the edges of your widget. Just like for border styles, leave the *Same for All*
 selector enabled to apply the same settings to each side (top, right, bottom,
 and left) of the widget.
 
-![Figure X: The Margin and Padding tab allows you to specify margin and padding lengths for the sides of your widget.](../../../images/look-and-feel-margin-and-padding.png)
+![Figure 5: The Margin and Padding tab allows you to specify margin and padding lengths for the sides of your widget.](../../../images/look-and-feel-margin-and-padding.png)
 
 For both padding and margin, you can specify any % value, em value, or px
 value.
 
-## Advanced Styling
+## Advanced Styling [](id=advanced-styling)
 
 The Advanced Styling tab displays current information about your widget, 
 including your widget's Liferay ID and CSS classes.
 
-![Figure X: The Advanced Styling tab displays your widget's Liferay ID and allows you to enter CSS code to customize the look and feel of your widget.](../../../images/look-and-feel-advanced-styling.png)
+![Figure 6: The Advanced Styling tab displays your widget's Liferay ID and allows you to enter CSS code to customize the look and feel of your widget.](../../../images/look-and-feel-advanced-styling.png)
 
 On this tab, you can also enter custom CSS class names for your widget and 
 custom CSS code. Clicking the *Add a CSS rule for just this portlet* or *Add a 
@@ -123,4 +123,4 @@ your custom CSS text box. If you check the *Update my styles as I type* box,
 your CSS code will be dynamically applied to your widget so you can see the 
 effects of your edits.
 
-Next, you'll learn about exporting and importing widget data.
+Next, you'll learn about communication between widgets.
