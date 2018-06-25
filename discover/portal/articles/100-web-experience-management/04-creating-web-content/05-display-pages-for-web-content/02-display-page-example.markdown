@@ -1,26 +1,6 @@
-# Display Pages for Web Content
+# Display Page Example
 
-Display Pages provide a new level of control over the look and feel of your 
-content. Display pages empower marketers and designers to creating stunning 
-designs for Web Content. Display Pages combine Page Fragments with 
-Web Content to provide an easier way to create beautiful layouts for displaying 
-articles.
-
-USE CASE
-
-## Creating Display Pages
-
-Display Pages are created initially in much the same way as Content Pages. You 
-select any number of fragments and add them to the page to create your page. 
-Where Display pages are different is that after you add the fragments, you can 
-then map editable fields in those fragments to a Web Content article.
-
-[link to more info on creating Page Fragments and content pages]
-
-Display Pages connect to Page Fragments through the editable portions of the 
-fragment. Within a fragment, developers can specify editable text or image 
-areas. A Display Page will fill in those editable areas with the text and 
-images from a Web Content article. 
+To see this in practice, you'll create a new display page
 
 To create a new Display Page:
 
@@ -28,11 +8,11 @@ To create a new Display Page:
 
 2.  Go to the *Display Pages* tab.
 
-3.  Click the *Add* button (![Add](../../../images/icon-add.png)).
+3.  Click the *Add* button (![Add](../../../../images/icon-add.png)).
 
 4.  Name your Display Page "Lunar Resort Display Page" and click *Submit*.
 
-![Figure X: The Display Page creation interface.](../../../images/create-display-page.png)
+![Figure X: The Display Page creation interface.](../../../../images/create-display-page.png)
 
 To build the Display Page, you can add any number of Fragments --- both those 
 with editable content and those without editable content --- to the page to 
@@ -40,10 +20,12 @@ build your design. Any Fragments with editable content can have their editable
 fields mapped to be filled by a Web Content article. You can also base it on a 
 specific Web Content Structure.
 
-![Figure X: Editing a Display Page with some Fragments added.](../../../images/display-page-with-fragments.png)
+![Figure X: Editing a Display Page with some Fragments added.](../../../../images/display-page-with-fragments.png)
 
 
-After you have added some fragments to the page, you can map them like this:
+Notice that in our example, we have an editable title and text body, and a 
+static footer with graphics and links. After you have added some fragments to 
+the page, you can map them like this:
 
 1.  Click on the *Mapping* tab inside of the *Fragments* section.
 
@@ -52,7 +34,7 @@ After you have added some fragments to the page, you can map them like this:
 3.  For this example, select *Web Content Article* for the Asset Type and 
     *Basic Web Content* for the subtype.
 
-![Figure X: Selecting the Asset type and Subtype.](../../../images/display-page-asset-type.png)
+![Figure X: Selecting the Asset type and Subtype.](../../../../images/display-page-asset-type.png)
 
 4.  Click *Save*.
 
@@ -87,7 +69,7 @@ Now let's create a short article to display with this display page.
 
 2.  Add a Basic Web Content article.
 
-3.  Name it "Short Testimonial", and fill in some short content.
+3.  Name it "Thoughts About Space", and fill in some short content.
 
 4.  Scroll down open the *Display Page* section and click choose.
 
@@ -95,13 +77,13 @@ Now let's create a short article to display with this display page.
 
 6.  Click *Publish*.
 
-![Figure X: Selecting the Asset type and Subtype.](../../../images/display-page-creating-content.png)
+![Figure X: Selecting the Asset type and Subtype.](../../../../images/display-page-creating-content.png)
 
 When you click publish, the content will be available to view at it's Friendly 
 URL (you can find the Friendly URL while editing a Web Content article under 
 *Friendly URL*) or when you click on the content in an Asset Publisher with 
 *Asset Link Behavior* set to *View in Context*.
 
-![Figure X: Selecting the Asset type and Subtype.](../../../images/display-page-in-context.png)
+![Figure X: Selecting the Asset type and Subtype.](../../../../images/display-page-in-context.png)
 
 
