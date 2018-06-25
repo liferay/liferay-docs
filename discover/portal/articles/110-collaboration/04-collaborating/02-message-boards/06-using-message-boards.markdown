@@ -2,7 +2,7 @@
 
 You can add a Message Boards widget to a page from the *Add* 
 (![Add](../../../../images/icon-control-menu-add.png)) menu's *Collaboration*
-section. The Message Boards interface is very similar to other message boards 
+section. The Message Boards interface is similar to other message boards 
 that populate the Internet. In any case, it can't hurt to explore how to use 
 @product@'s Message Boards and discover its features. 
 
@@ -62,7 +62,7 @@ Follow these steps to post a new thread:
     -   **Mark as a Question:** Whether to mark this thread as a question. This 
         lets you later select a post in the thread as the answer. 
     -   **Anonymous:** Whether this thread is posted anonymously. 
-    -   **Subscribe Me:** Whether you receive notifications for activity on the 
+    -   **Subscribe Me:** Receive notifications for activity on the 
         thread. 
     -   **Priority:** The thread's priority in the Message Board. By default, 
         you can choose *Urgent*, *Sticky*, or *Announcement*. Additional 
@@ -74,7 +74,7 @@ Follow these steps to post a new thread:
         are allowed for your thread. 
 
 8.  Open the *Permissions* section and set the thread's permissions. Possible 
-    values in the *Viewable by* selector are:
+    values in the *Viewable by* selector are
 
     -   Anyone (Guest Role)
     -   Site Members
@@ -92,7 +92,7 @@ Follow these steps to post a new thread:
     so, select the thread's Actions menu 
     (![Add](../../../../images/icon-actions.png)) and select *Permissions*. 
 
-9.  Click *Publish* to publish the thread. Once it's published, it's listed 
+9.  Click *Publish* to publish the thread. Once it's published, it appears 
     along with the other threads in the category. 
 
 ## Participating in Message Board Threads [](id=participating-in-message-board-threads)
@@ -104,16 +104,16 @@ you can subscribe to an RSS feed and/or emails that inform you about activity in
 that category. The Recent Posts tab also lists threads, except they're the 
 latest threads across all categories. 
 
-Click a thread to view it. Messages are shown in a threaded view so that replies 
-are aligned under their parent thread. This makes it easy to follow 
+Click a thread to view it. Messages appear in a threaded view so that replies
+are aligned under their parent thread. This makes it easy to follow
 conversations. Thread replies are indented under their parent thread. 
 
 ![Figure 3: A thread's view displays author information and thread content, for the thread and all replies to the thread.](../../../../images/message-boards-participate-in-threads.png)
 
 Subscribing to a thread causes Message Boards to send the user an email whenever
 a new message is posted to the thread. If you have enabled the mailing list
-feature for the category in which the thread resides, users can simply reply to
-these messages to post back to the thread, without having to visit your site.
+feature for the thread's category, users can reply to these messages to post
+back to the thread without having to visit your site.
 
 Most threads get more interesting as users reply to them. Follow these steps to 
 reply to a message in a thread:

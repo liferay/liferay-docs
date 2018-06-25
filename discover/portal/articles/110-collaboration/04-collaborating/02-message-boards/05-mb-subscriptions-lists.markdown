@@ -1,7 +1,7 @@
 # User Subscriptions and Mailing Lists [](id=user-subscriptions-and-mailing-lists)
 
-The Message Boards app can use 2 different mechanisms to notify users of message 
-boards activity via email:
+The Message Boards notifies users of message boards activity via email in two
+ways:
 
 -   User subscriptions
 -   Mailing lists
@@ -11,7 +11,7 @@ boards activity via email:
 **Note:** Since multiple sites can use a globally scoped message board, such 
 message boards don't support user subscriptions or mailing lists. Make sure to 
 use a site-scoped or page-scoped message board if you need user subscriptions or 
-a mailing list with your message board. 
+a mailing list. 
 
 $$$
 
@@ -19,11 +19,10 @@ $$$
 
 In the user subscriptions mechanism, the Message Boards app uses its configured 
 *Email From* address to send email notifications to subscribed users. The app 
-can also import email replies to message board notifications directly into the 
-message board. This lets users interact on the message board via email without 
-needing to log in and view the message board directly. This is disabled by 
-default. To enable it, add the following line to your `portal-ext.properties` 
-file: 
+can also import email replies to message board notifications directly into the
+message board. Then, users can interact on the message board via email without
+logging in to view the message board directly. This is disabled by default. To
+enable it, add the following line to your `portal-ext.properties` file: 
 
     pop.server.notifications.enabled=true
 
@@ -74,12 +73,12 @@ new mail every minute, but you can set it to whatever you like:
 
 +$$$
 
-**Note**: Depending on your mail provider, if you're using multiple devices to 
-access email through POP, you might need to configure in your POP settings 
-something like Gmail's *recent mode*. In Gmail, recent mode assures that emails 
-go to all your devices instead of only the the first client that receives the 
-email. To enable recent mode in Gmail, for example, prefix the value of your POP 
-client's Username or Email field with `recent:`. 
+**Note**: Depending on your mail provider, if you use multiple devices to access
+email through POP, you might need to configure in your POP settings something
+like Gmail's *recent mode*. In Gmail, recent mode assures that emails go to all
+your devices instead of only the first client that receives the email. To
+enable recent mode in Gmail, for example, prefix the value of your POP client's
+Username or Email field with `recent:`. 
 
 $$$
 
@@ -110,28 +109,35 @@ To enable the mailing list functionality for a category, follow these steps:
 2.  Click the category's *Actions* icon
     (![Actions](../../../../images/icon-actions.png)) and select *Edit*. 
 
-3.  In the *Mailing List* section of the form, set the *Active* slider to *YES*.  
+3.  In the *Mailing List* section of the form, set the *Active* slider to *YES*. 
     Several options then appear. Fill these out as follows: 
 
-    -   **Email Address:** The email address of the account that receives the 
-        messages. 
-    -   **Protocol:** Select POP or IMAP.
-    -   **Server Name:** Your mail server's host name. 
-    -   **Server Port:** The port on which your mail service is running.
-    -   **Use a Secure Network Connection:** Whether to use an encrypted 
-        connection if your server supports it. 
-    -   **User Name:** The login name on the mail server. 
-    -   **Password:** The password for the account on the server. 
-    -   **Read Interval (Minutes):** How often @product@ polls the server 
-        looking for new messages to post to the message board. 
-    -   **Email Address (Outgoing):** The email address that messages from this
-        category should come from. If you want your users to be able to reply to 
-        the categories using email, this should be the same address as the first 
-        *Email Address* field (the incoming email address). 
-    -   **Use Custom Outgoing Server:** Whether to use a different mail server 
-        than the one configured for the @product@ instance. If you check this
-        box, more options appear that let you configure the server's name, port, 
-        user name, password, and whether to use a secure connection. 
+    **Email Address:** The email address of the account that receives the 
+    messages. 
+
+    **Protocol:** Select POP or IMAP.
+
+    **Server Name:** Your mail server's host name. 
+
+    **Server Port:** The port on which your mail service is running.
+
+    **Use a Secure Network Connection:** Whether to use an encrypted 
+    connection if your server supports it. 
+
+    **User Name:** The login name on the mail server. 
+
+    **Password:** The password for the account on the server. 
+
+    **Read Interval (Minutes):** How often to poll the server looking for new
+    messages to post. 
+
+    **Email Address (Outgoing):** The email address originating messages from
+    this category. If you want your users to be able to reply to the categories
+    using email, this should be the same address as the incoming email address. 
+
+    **Use Custom Outgoing Server:** Use a different mail server than global
+    default. Fields appear for configuring the server's name, port, user name,
+    password, and secure connection. 
 
 4.  If you want to let emails from anonymous users post to the message board 
     category, set the *Allow Anonymous Emails* toggle to *YES*. 

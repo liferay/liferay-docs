@@ -1,9 +1,9 @@
 # Message Board Categories [](id=message-board-categories)
 
-Message Board categories let users organize threads by topic. This makes it 
-easier for users to find and discuss the information they want, and can also 
-help discussions stay on topic. For example, a tropical fishkeeping message 
-board may have separate categories for freshwater and saltwater topics. 
+Message Board categories organize threads by topic. This makes it easier to find
+the right topic for discussion, and can also help discussions stay on topic. For
+example, a tropical fishkeeping message board may have separate categories for
+freshwater and saltwater topics. 
 
 This article shows you how to create and manage message board categories.
 
@@ -29,10 +29,10 @@ Follow these steps to create a message board category:
     -   **Default:** Classic display style for general purpose discussions.
     -   **Question:** Threads appear in a question and answer style. 
 
-    It's possible to create custom display styles and make them available for 
-    selection in this form. You must set the available display styles via the 
-    [portal property](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Message%20Boards%20Portlet)
-    `message.boards.category.display.styles`. Similarly, you can set the default 
+    You can create custom display styles and make them available for selection
+    in this form. You must set the available display styles via the [portal
+    property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Message%20Boards%20Portlet)
+    `message.boards.category.display.styles`. Similarly, you can set the default
     display style in `message.boards.category.display.styles.default`. 
 
 5.  Open the *Mailing List* section of the form and set the mailing list options 
@@ -42,8 +42,8 @@ Follow these steps to create a message board category:
     explanation of these features, see 
     [the documentation on mailing lists for Message Boards](/develop/tutorials/-/knowledge_base/7-1/user-subscriptions-and-mailing-lists#mailing-lists). 
 
-6.  Open the *Permissions* section and set the category's permissions. The 
-    *Viewable by* selector lets you choose who can view the category: 
+6.  Open the *Permissions* section and set the category's permissions. The
+    *Viewable by* selector lets you pick who can view the category: 
 
     -   Anyone (Guest Role)
     -   Site Members
@@ -53,19 +53,28 @@ Follow these steps to create a message board category:
     the rest of the category's permissions, which you can assign to the Guest 
     and Site Member roles: 
 
-    -   **Lock Thread:** Stop any further additions or modifications to a 
-        thread's messages. 
-    -   **Add Subcategory:** Add a new category within this category. 
-    -   **Update:** Edit the category. 
-    -   **Subscribe:** Enlist yourself to receive notifications on new and 
-        modified posts. 
-    -   **Reply to Message:** Respond to existing messages. 
-    -   **Add File:** Attach a file to any of your messages. 
-    -   **Permissions:** View and modify permissions. 
-    -   **Delete:** Remove the category. 
-    -   **Add Message:** Post a new thread. 
-    -   **Update Thread Priority:** Modify a thread's priority. 
-    -   **Move Thread:** Move a thread to a different category or subcategory. 
+    **Lock Thread:** Stop any further additions or modifications to a 
+    thread's messages. 
+
+    **Add Subcategory:** Add a new category within this category. 
+
+    **Update:** Edit the category. 
+
+    **Subscribe:** Receive notifications on new and modified posts. 
+
+    **Reply to Message:** Respond to existing messages. 
+
+    **Add File:** Attach a file to any of your messages. 
+
+    **Permissions:** View and modify permissions. 
+
+    **Delete:** Remove the category. 
+
+    **Add Message:** Post a new thread. 
+
+    **Update Thread Priority:** Modify a thread's priority. 
+
+    **Move Thread:** Move a thread to a different category or subcategory. 
 
     Note that after creating a category, you can revisit its permission options 
     by clicking the category's *Actions* icon
@@ -73,16 +82,16 @@ Follow these steps to create a message board category:
 
 7.  Click *Save* when you're finished. Your category now appears in the table. 
 
-As you add categories to a message board, they're listed on the message board's
-home. The list displays the names of the categories and the numbers of
+As you add categories to a message board, they appear on the message board's
+home screen. The list displays the category names and the numbers of
 subcategories, threads, and posts in each one. 
 
 ![Figure 2: Categories help you organize threads so users can find topical threads that interest them.](../../../../images/message-boards-home.png)
 
 ## Adding Subcategories [](id=adding-subcategories)
 
-Categories can contain as many subcategories as you like. Note that if you nest 
-categories too deep, however, users can have trouble finding them. 
+Categories can contain as many subcategories as you like. If, however, you nest
+categories too deep, users can have trouble finding them. 
 
 Follow these steps to add a subcategory to a category:
 
@@ -99,9 +108,8 @@ Follow these steps to add a subcategory to a category:
 
 ## Moving and Merging Categories [](id=moving-and-merging-categories)
 
-Categories are very flexible. Each category can have any number of threads, and 
-you can add as many categories and subcategories as you wish. You can also move 
-and merge categories. 
+Each category can have any number of threads, and you can add as many categories
+and subcategories as you wish. You can also move and merge categories. 
 
 Follow these steps to move a category or merge it with another: 
 

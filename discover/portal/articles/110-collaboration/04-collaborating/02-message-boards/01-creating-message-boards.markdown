@@ -1,6 +1,6 @@
 # Creating Message Boards [](id=creating-message-boards)
 
-You can create and manage message boards in the global, site, and page scopes. 
+You can create and manage message boards in the Global, Site, and Page scopes. 
 Regardless of scope, you manage a message board via the Site Administration 
 menu. The following sections show you how to use this menu to manage message 
 boards in each of these scopes. 
@@ -8,8 +8,8 @@ boards in each of these scopes.
 ## Site-scoped Message Boards [](id=site-scoped-message-boards)
 
 By default, the Message Boards app in Site Administration is scoped to the 
-current site. To administer this message board, open the *Menu* 
-(![Menu](../../../../images/icon-menu.png)), expand the menu for your site, then 
+current Site. To administer this message board, open the *Menu* 
+(![Menu](../../../../images/icon-menu.png)), expand the menu for your Site, then 
 navigate to *Content* &rarr; *Message Boards*. The Message Boards administration 
 screen then appears. Note that the options available on this screen are the same 
 regardless of scope. The next sections show you how to change scope and then 
@@ -20,7 +20,7 @@ access this screen.
 ## Page-scoped Message Boards [](id=page-scoped-message-boards)
 
 If you need a page-scoped message board, you must add a Message Boards widget to 
-that page and then set its scope to the page. Follow these steps to do this: 
+that page and then set its scope to the page. Follow these steps: 
 
 1.  Navigate to the page. 
 
@@ -44,15 +44,15 @@ page-scoped Message Boards widget. You do so by setting the Site Administration
 menu's active scope. Follow these steps to do this: 
 
 1.  Open the *Menu*
-    (![Menu](../../../../images/icon-menu.png)), expand the menu for your site, 
+    (![Menu](../../../../images/icon-menu.png)), expand the menu for your Site, 
     then expand *Content*. 
 
 2.  The current scope appears just below the *Content* heading. *Default Scope* 
-    is the current site. To change this, click the gear icon 
-    (![Gear](../../../../images/icon-control-menu-gear.png)) and then select the 
-    scope you want to work in. This changes the Site Administration menu to 
-    reflect scope you selected. To work in a page's scope, for example, select 
-    that page from the gear icon. That page's name then becomes the Site 
+    is the current Site. To change this, click the gear icon 
+    (![Gear](../../../../images/icon-control-menu-gear.png)) and then select
+    your desired scope. This changes the Site Administration menu to reflect
+    scope you selected. To work in a page's scope, for example, select that
+    page from the gear icon. That page's name then becomes the Site
     Administration menu's title. 
 
     ![Figure 2: Select the page's scope under the *Content* menu in Site Administration.](../../../../images/mb-site-admin-scope.png)
