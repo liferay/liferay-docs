@@ -79,28 +79,29 @@ Patching Tool 2.0.4+.
 
 $$$ 
 
-Service Pack detection is available behind a proxy server. Use the following
-settings to configure your proxy: 
+Service Pack detection is available behind a proxy server. To configure your
+proxy, use the following settings, making sure to replace `[PROXY_IP_ADDRESS]`
+with your proxy server's IP address: 
 
     ### Proxy settings
 
     # HTTP Proxy
 
-    #proxy.http.host=192.168.211.39
+    #proxy.http.host=[PROXY_IP_ADDRESS]
     #proxy.http.port=80
     #proxy.http.user=user
     #proxy.http.password=password
 
     # HTTPS Proxy
 
-    proxy.https.host=192.168.211.39
+    proxy.https.host=[PROXY_IP_ADDRESS]
     proxy.https.port=808
     proxy.https.user=user
     proxy.https.password=password
 
     # SOCKS Proxy
 
-    #proxy.socks.host=192.168.211.39
+    #proxy.socks.host=[PROXY_IP_ADDRESS]
     #proxy.socks.port=1080
     #proxy.socks.user=user
     #proxy.socks.password=password
