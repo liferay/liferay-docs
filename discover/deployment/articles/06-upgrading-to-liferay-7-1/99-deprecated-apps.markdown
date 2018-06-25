@@ -22,7 +22,10 @@ There are 3 types of deprecated apps:
     available for download via 
     [Liferay Marketplace](https://web.liferay.com/marketplace) 
     or 
-    [Liferay's public Nexus repository](https://repository.liferay.com). 
+    [Liferay's public Nexus repository](https://repository.liferay.com). For 
+    instructions on installing apps, see the 
+    [Managing Apps](/discover/portal/-/knowledge_base/7-1/managing-apps) 
+    documentation. 
 
 3.  Deprecated apps that have been removed from @product@, and aren't available 
     for download. 
@@ -34,27 +37,27 @@ they're still available.
 
 | App | &nbsp;Availability | &nbsp;Notes |
 | --- | ------------------ | ----------- | 
-| Microblogs | Nexus |  |
-| Recently Downloaded | Nexus |  |
-| Directory | Nexus |  |
-| Group Statistics | Nexus |  |
-| Social Activity | Nexus |  |
-| User Statistics | Nexus |  |
 | Bookmarks | Marketplace |  |
-| Social Networking | Nexus | Formerly available as an unsupported Labs app via Marketplace. |
-| Quick Note | Nexus |  |
-| Friend Requests | Removed |  |
-| Invitation | Removed |  |
 | Chat | Removed |  |
+| Directory | Nexus |  |
 | Documentum Connector | Removed |  |
 | Events List | Removed |  |
+| Friend Requests | Removed |  |
+| Group Statistics | Nexus |  |
 | IP Geocoder | Removed |  |
+| Invitation | Removed |  |
 | JAMWiki | Removed |  |
 | JSPWiki | Removed |  |
 | Media Wiki | Removed |  |
 | Message Boards Subscription Manager | Removed |  |
+| Microblogs | Nexus |  |
 | Private Messaging | Removed |  |
+| Quick Note | Nexus |  |
+| Recently Downloaded | Nexus |  |
+| Social Activity | Nexus |  |
+| Social Networking | Nexus | Formerly available as an unsupported Labs app via Marketplace. |
 | Twitter | Removed |  |
+| User Statistics | Nexus |  |
 
 ## Foundation
 
