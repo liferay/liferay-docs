@@ -2,12 +2,12 @@
 
 In this tutorial, you'll learn how to generate a Liferay Workspace using
 IntelliJ IDEA, which runs on
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) behind the
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) behind the
 scenes. IntelliJ gives you a graphical interface instead of the command prompt,
 which can streamline your workflow. You'll also learn how to import an existing
 Liferay Workspace into IntelliJ. To learn more about Liferay Workspaces, visit
 its dedicated
-[tutorial section](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
+[tutorial section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
 
 ## Creating a Liferay Workspace [](id=creating-a-liferay-workspace)
 

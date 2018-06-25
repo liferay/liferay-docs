@@ -3,7 +3,7 @@
 IntelliJ IDEA provides a New Liferay Modules wizard to create a variety of
 different module projects. You can also use the same wizard to create theme
 projects, WAR-style projects, and more. Before beginning, ensure you've
-[created/imported a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/creating-a-liferay-workspace-with-intellij-idea)
+[created/imported a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-intellij-idea)
 in your IntelliJ environment. Follow the steps below to create a @product@
 module:
 
@@ -14,7 +14,7 @@ module:
 2.  Select the project you want to create. Although the wizard characterizes
     itself for *modules*, there are many available projects that are not
     OSGi-based modules (e.g., `theme`, `war-mvc-portlet`, etc.). See the
-    [Project Templates](/develop/reference/-/knowledge_base/7-1/project-templates)
+    [Project Templates](/develop/reference/-/knowledge_base/7-0/project-templates)
     reference section for more information on the available templates.
 
     ![Figure 2: Choose the project template to create your module.](../../../images/intellij-modules.png)
