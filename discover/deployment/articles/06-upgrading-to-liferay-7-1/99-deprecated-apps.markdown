@@ -3,22 +3,32 @@
 During the development of any software product, it's sometimes necessary to stop 
 development on or remove outdated or unpopular features. @product-ver@ is no 
 different. Liferay has deprecated several apps in @product-ver@. It's important 
-to note what, exactly, *deprecated* means here. All apps deprecated by Liferay 
-are no longer in active development. Such an app, however, may still be 
-available. There are 3 types of deprecated apps: 
+to note what, exactly, *deprecated* means here. 
 
-1.  Deprecated apps that remain in @product@, but will be removed in some future 
-    release. You should therefore plan to stop using any such apps. 
++$$$
+
+**Note:** All apps deprecated by Liferay are no longer in active development. 
+You should therefore plan to stop using these apps. Such apps, however, may 
+still be available for download. 
+
+$$$
+
+There are 3 types of deprecated apps: 
+
+1.  Deprecated apps that remain in @product@, but will be removed in a future 
+    release. 
 
 2.  Deprecated apps that have been removed from @product@, yet are still 
-    available for download via Liferay Marketplace or Liferay's public 
-    repository. 
+    available for download via 
+    [Liferay Marketplace](https://web.liferay.com/marketplace) 
+    or 
+    [Liferay's public Nexus repository](https://repository.liferay.com). 
 
 3.  Deprecated apps that have been removed from @product@, and aren't available 
-    for download elsewhere. 
+    for download. 
 
 This article lists the apps deprecated in @product-ver@, and tells you if 
-they're still available. Note that Nexus is Liferay's public repository. 
+they're still available. 
 
 ## Collaboration
 
@@ -31,7 +41,7 @@ they're still available. Note that Nexus is Liferay's public repository.
 | Social Activity | Nexus |  |
 | User Statistics | Nexus |  |
 | Bookmarks | Marketplace |  |
-| Social Networking | Nexus |  |
+| Social Networking | Nexus | Formerly available as an unsupported Labs app via Marketplace. |
 | Quick Note | Nexus |  |
 | Friend Requests | Removed |  |
 | Invitation | Removed |  |
@@ -45,7 +55,6 @@ they're still available. Note that Nexus is Liferay's public repository.
 | Message Boards Subscription Manager | Removed |  |
 | Private Messaging | Removed |  |
 | Twitter | Removed |  |
-
 
 ## Foundation
 
