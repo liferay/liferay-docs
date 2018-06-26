@@ -161,7 +161,7 @@ Follow the steps below to leverage the Model Adapter Builder in your app.
             assetLink, AssetLink.class, StagedAssetLink.class);
 
     Once you've created
-    [Staged Model Data Handlers](/develop/tutorials/-/knowledge_base/7-1/developing-data-handlers),
+    [Staged Model Data Handlers](/develop/tutorials/-/knowledge_base/7-1/developing-staged-model-data-handlers),
     you can begin exporting/importing your now Staging-compatible entities:
 
         StagedModelDataHandlerUtil.exportStagedModel(

@@ -838,3 +838,33 @@ This change corrects a best practice violation regarding
 implementation-specific details being included within an API.
 
 ---------------------------------------
+
+### Changed the Request Object in Web Content Templates [](id=changed-the-request-object-in-web-content-templates)
+- **Date:** 2018-Jun-12
+- **JIRA Ticket:** LPS-77766
+
+#### What changed? [](id=what-changed-16)
+
+The request object is no longer accessible as a map, but rather, as an object of
+type `javax.servlet.http.HttpServletRequest`.
+
+#### Who is affected? [](id=who-is-affected-16)
+
+This affects users with Web Content templates that access request parameters
+as a map like this:
+
+    <#assign containerId = request["theme-display"]["portlet-display"]["instance-id"] >
+
+#### How should I update my code? [](id=how-should-i-update-my-code-16)
+
+To keep retrieving the request parameter values as a map, `requestMap` must be
+used instead:
+
+    <#assign containerId = requestMap["theme-display"]["portlet-display"]["instance-id"] >
+
+#### Why was this change made? [](id=why-was-this-change-made-16)
+
+This was done to allow template context contributors to work in Web Content
+templates.
+
+---------------------------------------

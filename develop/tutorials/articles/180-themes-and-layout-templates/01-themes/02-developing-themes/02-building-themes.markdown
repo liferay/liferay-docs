@@ -25,4 +25,4 @@ Follow these steps to build your theme's files:
 
 [Copying an Existing Theme's Files](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files)
 
-[Deploying Themes](/develop/tutorials/-/knowledge_base/7-1/deploying-themes)
+[Deploying Themes](/develop/tutorials/-/knowledge_base/7-1/deploying-your-theme)
