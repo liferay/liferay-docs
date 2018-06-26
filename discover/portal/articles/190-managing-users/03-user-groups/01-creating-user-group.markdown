@@ -2,7 +2,7 @@
 
 Follow these steps to create a user group: 
 
-1.  Opening the Menu 
+1.  Open the Menu 
     (![Menu](../../../images/icon-menu.png)) 
     and select *Control Panel* &rarr; *Users Groups*. Any existing user groups 
     appear here in a table. 
