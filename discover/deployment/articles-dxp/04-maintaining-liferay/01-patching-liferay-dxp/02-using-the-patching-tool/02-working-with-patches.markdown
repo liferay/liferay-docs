@@ -53,9 +53,11 @@ filtering the output:
 - `source`: Shows the source differences between the two patch levels.
 - `files`: Shows a list of the modified files.
 - `fixed-issues`: Shows a list of LPS/LPE issues from our issue tracking system.
-- `html`: Writes the differences to an HTML file
-(`[names-of-the-two-things-compared]-diff.html`) in the `diffs` folder,
-coloring additions green and deletions red. 
+- `html`: Specify this along with one of the filtering options (`source`, 
+    `files`, or `fixed-issues`) and after the patch levels, to write the
+    differences to an HTML file
+    (`<stored-name-1>-<stored-name-2>-[type]-diff.html`) in the `diffs` folder.
+    Additions are colored green and deletions are colored red.
 
 For detailed usage information, run `patching-tool help diff`.
 
