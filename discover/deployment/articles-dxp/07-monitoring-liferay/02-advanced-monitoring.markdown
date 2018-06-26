@@ -1,4 +1,4 @@
-# Advanced Monitoring: APM Tools - Dynatrace [](id=advanced-monitoring-apm-tools-dynatrace-id)
+# Advanced Monitoring: APM Tools; Dynatrace [](id=advanced-monitoring-apm-tools-dynatrace-id)
 
 Advanced performance monitoring tools like
 [Dynatrace's](https://www.dynatrace.com)
