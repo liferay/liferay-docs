@@ -45,6 +45,6 @@ your theme will inherit the updated base theme's files.
 
 [Configuring Your Theme's App Server](/develop/tutorials/-/knowledge_base/7-1/configuring-your-themes-app-server)
 
-[Deploying Themes](/develop/tutorials/-/knowledge_base/7-1/deploying-themes)
+[Deploying Themes](/develop/tutorials/-/knowledge_base/7-1/deploying-your-theme)
 
 [Listing Your Theme's Extensions](/develop/tutorials/-/knowledge_base/7-1/listing-your-themes-extensions)

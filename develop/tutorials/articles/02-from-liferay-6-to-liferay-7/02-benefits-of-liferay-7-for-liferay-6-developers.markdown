@@ -139,7 +139,7 @@ between traditional projects and new projects at your own pace.
 Finally, we have also developed a lightweight tool called
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli),
 which facilitates
-[starting new projects from templates](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-blade-cli) -- it's
+[starting new projects from templates](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli) -- it's
 especially useful for Gradle which doesn't have Maven's concept of archetypes.
 Blade CLI also offers 
 [commands](/develop/tutorials/-/knowledge_base/7-1/blade-cli)

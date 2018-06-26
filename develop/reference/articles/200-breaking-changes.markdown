@@ -839,6 +839,36 @@ implementation-specific details being included within an API.
 
 ---------------------------------------
 
+### Changed the Request Object in Web Content Templates [](id=changed-the-request-object-in-web-content-templates)
+- **Date:** 2018-Jun-12
+- **JIRA Ticket:** LPS-77766
+
+#### What changed? [](id=what-changed-16)
+
+The request object is no longer accessible as a map, but rather, as an object of
+type `javax.servlet.http.HttpServletRequest`.
+
+#### Who is affected? [](id=who-is-affected-16)
+
+This affects users with Web Content templates that access request parameters
+as a map like this:
+
+    <#assign containerId = request["theme-display"]["portlet-display"]["instance-id"] >
+
+#### How should I update my code? [](id=how-should-i-update-my-code-16)
+
+To keep retrieving the request parameter values as a map, `requestMap` must be
+used instead:
+
+    <#assign containerId = requestMap["theme-display"]["portlet-display"]["instance-id"] >
+
+#### Why was this change made? [](id=why-was-this-change-made-16)
+
+This was done to allow template context contributors to work in Web Content
+templates.
+
+---------------------------------------
+
 ### Disabled Access to Gogo Shell Using Telnet [](id=disabled-access-to-gogo-shell-using-telnet)
 - **Date:** 2018-Jun-25
 - **JIRA Ticket:** [LPS-82849](https://issues.liferay.com/browse/LPS-82849)

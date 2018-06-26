@@ -15,7 +15,7 @@ in your theme. To do this, add the following property to your theme's
     `resources-importer-developer-mode-enabled=true`
 
 This is enabled by default for themes generated with the 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator). 
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes). 
 This is a convenience feature for theme developers. With this setting enabled,
 importing resources into a site or site template that already exists recreates
 the site or site template. Importing resources into a site template reapplies
