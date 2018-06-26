@@ -4,7 +4,7 @@ What do you do if the language keys you want to modify are in one of Liferay's
 applications or another module whose source code you don't control? Since module
 language keys are in the respective module, the process for overriding a
 module's language keys is different from
-[the process of overriding Liferay's language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-liferays-language-keys). 
+[the process of overriding Liferay's language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys). 
 
 Here is the process:
 
@@ -257,7 +257,7 @@ to provide the classes imported above.
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
 core. You can
-[override Liferay's language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-liferays-language-keys)
+[override Liferay's language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys)
 too.
 
 ## Related Topics [](id=related-topics)

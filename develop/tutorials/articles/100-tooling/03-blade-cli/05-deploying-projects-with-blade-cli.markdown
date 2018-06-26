@@ -3,7 +3,7 @@
 Deploying projects to a Liferay server using Blade CLI is easy. To use
 the Blade `deploy` command, you must first have built a project to deploy. See
 the
-[Creating Projects with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-blade-cli)
+[Creating Projects with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli)
 tutorials for more information about creating Liferay projects. Once you've
 built a project, navigate to it in your terminal window and execute the following
 command to deploy it:
