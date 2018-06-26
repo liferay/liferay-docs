@@ -19,12 +19,12 @@ also a Search bar to make finding configuration entries easier. Search for the
 name of a specific configuration entry, or even a specific field within an
 entry.
 
-![Figure 2: System Settings are organized by component.](../../../images/system-settings-nav-search.png)
+![Figure 2: System Settings are organized by section and category.](../../../images/system-settings-nav-search.png)
 
-Changing an application's configuration values isn't difficult: 
+Changing a configuration isn't difficult: 
 
-1.  Find the configuration you need, either by searching or navigating through
-    the sections and categories.
+1.  Find the configuration you need, either by searching or browsing the
+    sections and categories.
 
 2.  Open the configuration form for the entry. Click the name of the component
     you want to configure. 
@@ -43,8 +43,8 @@ Values*.
 
 While browsing the categories of System Settings, you'll notice that clicking
 into a topic (for example, Blogs) reveals entries at different scopes. All the
-settings here act at the system scope. For scopes other than System, these
-configurations act as defaults. In other words, they identify where the
+settings here act at the system scope. For scopes labeled other than System,
+these configurations act as defaults. In other words, they identify where the
 system-wide configuration is overridden. System scoped configurations are, of
 course, not overridden at more granular scopes. There are four values that
 you'll see under Scope:
@@ -55,8 +55,8 @@ you'll see under Scope:
 
     ![Figure 4: Some System Settings entries are system scoped.](../../../images/system-settings-system-scope.png)
 
-- *Virtual Instance Scope:* Sets the default value for each Configuration at the
-    Virtual Instance Scope is overridden in Instance Settings.
+- *Virtual Instance Scope:* Configuration at the Virtual Instance level is
+    overridden in Instance Settings.
 
     ![Figure 7: Some System Settings are virtual instance scoped.](../../../images/system-settings-instance-scope.png)
 

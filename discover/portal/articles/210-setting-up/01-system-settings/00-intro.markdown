@@ -1,6 +1,6 @@
 # System Wide Settings [](id=system-wide-settings)
 
-It can be hard to keep track of all the configuration interfaces.  The Control
+It can be hard to keep track of all the configuration interfaces. The Control
 Panel's Configuration section houses a lot of the higher level (for example,
 system and instance scoped) configuration options. This section considers the
 configuration options dealing with the *System* scope. Configuration at the
