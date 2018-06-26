@@ -1,34 +1,31 @@
 # Advanced Site Settings
 
-Advanced Settings are settings that relate to security (like User Roles) or 
-that require some kind of external configuration (like creating a Google 
-Analytics account) in order to use.
+Advanced Settings relate to security (like User Roles) or require external
+configuration (like creating a Google Analytics account) to use.
 
 ### Default User Associations [](id=default-user-associations)
 
-*Default User Associations* is the leading option when opening the Advanced 
-tab. It is for configuring site roles and teams that newly assigned site 
-members will have by default. If you'd like to learn more about creating roles 
+*Default User Associations* configures Site roles and teams that newly assigned Site 
+members have by default. If you'd like to learn more about creating roles 
 and/or teams, visit the [Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
-and [Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/7-1/creating-teams-for-advanced-site-membership-management)
-sections, respectively.
+and [Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/7-1/creating-teams-for-advanced-site-membership-management).
 
 ## Analytics [](id=analytics)
 
-@product@ includes built-in support to use Google Analytics for analyzing 
-traffic on your site. Google Analytics provides a snippet of code is provided 
-which you add to your pages enable tracking. Adding this code to every page on 
-a site would be tedious, especially if it's a large site with a lot of 
-user-generated content.
+@product@ includes built-in support for Google Analytics for analyzing 
+traffic on your Site. Google Analytics provides a snippet of code which you add
+to your pages enable tracking. Adding this code to every page on a Site would
+be tedious, especially if it's a large Site with a lot of user-generated
+content.
 
 There are two ways to mitigate this problem:
 
-1.  A web developer can hardcode the tracking code into a theme, and every page 
-    that uses the theme will have it embedded.
+1.  A web developer can hard-code the tracking code into a theme, which embeds
+    it on every page.
 
-2.  An administrator can enter the tracking code in site settings.
+2.  An administrator can enter the tracking code in Site settings.
 
-To use options #2:
+To use option #2:
 
 1.  Go to *Site Settings* &rarr; *Advanced*.
 
@@ -38,11 +35,10 @@ To use options #2:
 
 4.  Click *Save*.
 
-    All the pages in the site you selected will now have the Google Analytics 
-    code in them and will be tracked. 
+    All the pages in the Site you selected now have the Google Analytics code
+    and can be tracked. 
 
 ![Figure X: To set up Google Analytics: sign up, receive an ID, and then enter it into the Google Analytics ID field.](../../../../images/maintaining-google-analytics.png)
-
 
 To enable a different analytics service:
 
@@ -54,39 +50,34 @@ To enable a different analytics service:
     field provided.
 
 4.  Once you have entered the name, go to the *Site Settings* &rarr; *Advanced* 
-    &rarr; *Analytics* page for the site where you wish to add analytics.
-    
+    &rarr; *Analytics* page for the Site where you wish to add analytics.
+ 
 5.  Copy the JavaScript tracking code provided by your analytics platform into 
-    corresponding field for your service.
+    the corresponding field for your service.
 
-    Now all pages on the selected site contain the tracking script and will 
-    send analytics data to your analytics platform. 
-
-This procedure lets you use any tool you want to visualize your site's traffic.
+Now all pages on the selected Site contain the tracking script and send
+analytics data to your analytics platform. 
 
 ## Maps [](id=maps)
 
-The *Maps* options lets you configure the maps API provider used by your Liferay
+The *Maps* option configures the maps API provider used by your Liferay
 instance when displaying geolocalized assets. Geolocalized assets can be
 displayed for documents, web content articles, DDL records, etc. Maps is
 available under the Advanced tab. You can read more about Geolocation in [Geolocating Assets](/discover/portal/-/knowledge_base/7-1/geolocating-assets).
 
-
 ### Recycle Bin [](id=recycle-bin)
 
-The *Recycle Bin* option under the Advanced tab provides the option to
-enable/disable the Recycle Bin for your site. You can also regulate the age (in
-minutes) for which content is able to be stored in the Recycle Bin until it is
-permanently deleted. For a full explanation of the Recycle Bin, see the
-[Restoring Deleted Assets](/discover/portal/-/knowledge_base/7-1/restoring-deleted-assets)
-section.
+The *Recycle Bin* option enables or disables the Recycle Bin for your Site. You
+can also regulate the age (in minutes) for which content is able to be stored
+in the Recycle Bin until it is permanently deleted. For a full explanation of
+the Recycle Bin, see [Restoring Deleted Assets](/discover/portal/-/knowledge_base/7-1/restoring-deleted-assets).
 
 ### Content Sharing [](id=content-sharing)
 
 If you select the *Content Sharing* tab from the Advanced tab, you can
-configure whether sub-sites can display content from this site. Administrators
-of this site's sub-sites can use all structures, templates, categories,
-application display templates, etc. from this parent site. Even if you
-initially allowed content sharing between the parent site and its sub-sites,
-you're able to disable this option and immediately revoke content sharing from
-all sub-sites.
+configure whether sub-Sites can display content from this Site. Administrators
+of this Site's sub-Sites can use all structures, templates, categories,
+application display templates, and more from this parent Site. Even if you
+initially allowed content sharing between the parent Site and its sub-Sites,
+you can disable this option and immediately revoke content sharing from
+all sub-Sites.
