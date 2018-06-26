@@ -1,4 +1,4 @@
-# Social Bookmark Template
+# Social Bookmark Template [](id=social-bookmark-template)
 
 In this article, you'll learn how to create a Liferay social bookmark as a
 Liferay module. To create a social bookmark as a module via the command line
