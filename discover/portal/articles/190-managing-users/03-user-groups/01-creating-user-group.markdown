@@ -4,8 +4,8 @@ Follow these steps to create a user group:
 
 1.  Open the Menu 
     (![Menu](../../../images/icon-menu.png)) 
-    and select *Control Panel* &rarr; *Users Groups*. Any existing user groups 
-    appear here in a table. 
+    and select *Control Panel* &rarr; *Users* &rarr; *Users Groups*. Any 
+    existing user groups appear here in a table. 
 
 2.  Click the *Add* button 
     (![Add](../../../images/icon-add.png)). 
@@ -13,9 +13,9 @@ Follow these steps to create a user group:
 
 3.  Give your user group a name and description. 
 
-4.  If you want to create My Profile and My Dashboard pages for the user group's 
-    members, then select a page layout to use from the *My Profile* and 
-    *My Dashboard* selector menus. 
+4.  If you want to create My Profile and/or My Dashboard pages for the user 
+    group's members, then select a site template to use from the *My Profile* 
+    and *My Dashboard* selector menus. 
 
 5.  Click *Save*. The new user group then appears in the table. 
 
@@ -32,8 +32,8 @@ Follow these steps to add existing users to a user group:
 
 1.  If you're not already there, open the Menu 
     (![Menu](../../../images/icon-menu.png)) 
-    and select *Control Panel* &rarr; *Users Groups*. The available user groups 
-    appear here in a table. 
+    and select *Control Panel* &rarr; *Users* &rarr; *Users Groups*. The 
+    available user groups appear here in a table. 
 
 2.  Click *Actions*
     (![Actions](../../../images/icon-actions.png)) 
