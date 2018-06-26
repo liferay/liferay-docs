@@ -47,7 +47,8 @@ content.
 Here's an overview of the available configuration scopes:
 
 *System:* configuring Liferay and its applications through System Settings
-provides default settings for all virtual instances, sites, or widgets.
+provides system scoped configurations and sets default values for all virtual
+instances, sites, or widgets.
 
 *Virtual Instance:* Configuring in Instance Settings provides settings that
 act on the specific virtual instance for which they are made, including sites
@@ -86,7 +87,7 @@ Setting up a virtual instance:
     configuration.
 
 - Custom Fields is where additional database fields are added to existing
-    virtaul instance entities.
+    virtual instance entities.
 
 All of these are accessed through the Control Panel. Start by learning to
 configure modules system-wide in the System Settings Control Panel app.
