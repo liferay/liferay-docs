@@ -99,9 +99,9 @@ group's public and/or private pages via these links in the user group's
 *Actions* button 
 (![Actions](../../../images/icon-actions.png)): 
 
--   *Go to Profile Pages*: Opens the user group's public *My Profile* page(s) in 
-    a new browser window.
--   *Go to Dashboard Pages* Opens the user group's private *My Dashboard* 
+-   **Go to Profile Pages:** Opens the user group's public *My Profile* page(s) 
+    in a new browser window. 
+-   **Go to Dashboard Pages:** Opens the user group's private *My Dashboard* 
     page(s) in a new browser window. 
 
 In the new window, you can add more pages and portlets and configure site 
