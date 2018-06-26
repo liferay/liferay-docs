@@ -3,9 +3,9 @@
 Virtual instance settings are configured in the Instance Settings section of the
 Control Panel. 
 
-Instance Settings is divided into *Configuration*, *Identification*, *Social*,
-and *Miscellaneous*. This article covers the first and largest section,
-Configuration. The remaining sections are covered in the next article.
+Instance Settings has four sections: *Configuration*, *Identification*,
+*Social*, and *Miscellaneous*. This article covers the first and largest
+section, Configuration. The remaining sections are covered in the next article.
 
 ![Figure 1: The configuration options in Instance Settings are divided into four categories.](../../../images/instance-settings-navigation.png)
 
@@ -29,15 +29,15 @@ default landing page to be
 
 use `/web/guest/login`. Use the variable `${liferay:screenName}` as part of the
 address. This comes in handy if you want to redirect Users to their personal
-pages upon login. For example, the User `marvin` has this default llURL to his
+pages upon login. For example, the User `marvin` has this default URL to his
 personal page: 
 
-    http://localhost:8080/User/marvin
+    http://localhost:8080/user/marvin
 
 To make sure he's directed there on login, place this in the Default Landing
 Page field:
 
-    /User/${liferay:screenName}
+    /user/${liferay:screenName}
 
 Alternatively, set these URLs in a `portal-ext.properties` file:
 
@@ -53,12 +53,11 @@ company type, SIC code, ticker symbol, industry and industry type.
 ## Authentication [](id=authentication)
 
 Authentication has several tabs: General, OpenSSO, CAS, NTLM, LDAP, OpenID,
-Facebook, Google, and OpenId Connect. Use any of these to configure how Users
-authenticate.
+Facebook, Google, and OpenId Connect. These configure how Users authenticate.
 
 ![Figure 2: Configure general authentication behavior and settings for external authentication systems.](../../../images/instance-settings-auth.png)
 
-The General tab's settings affect only @product@'s standard authentication
+The General tab's settings affect only the platform's built-in authentication
 functionality and don't have anything to do with the integration options on the
 other tabs. There are several general authentication settings:
 
@@ -101,18 +100,16 @@ email address is an important default for the following reasons:
     Keeping the email address at the forefront of a User's mind when she logs in
     helps ensure the User keeps it current. 
 
-To use a third party authentication service or set up Single Sign On (SSO), see
-the documentation on 
-[@product@ Security](/discover/deployment/-/knowledge_base/7-1/liferay-portal-security) 
-to learn about the supported services and how to configure them.
+To leanr to configure a third party authentication service or set up Single Sign
+On (SSO), see the 
+[security documentation](/discover/deployment/-/knowledge_base/7-1/liferay-portal-security).
 
 ## Users [](id=Users)
 
 The *Users* section has three tabs: Fields, Reserved Credentials and Default
 User Associations.
 
-The Fields tab allows you to enable/disable these fields on the Add/Edit User
-Form:
+In the Fields tab, enable/disable these fields on the Add/Edit User Form:
 
 - Autogeneration of screen names
 
@@ -121,16 +118,14 @@ Form:
 - Gender field
 
 In the Reserved Credentials tab, specify the screen names and email addresses
-that you don't want Users to claim. Users are prevented from registering with
-these screen names and email addresses. You might use this feature to prevent
-Users from creating IDs that look like administrative IDs or that have reserved
-words in their names.
+Users aren't allowed to register with. Use this feature to prevent Users from
+creating IDs that look like administrative IDs or that have reserved words in
+their names.
 
-The Default User Associations tab has four fields allowing you to list (one per
-line) Sites, Organization Sites, Soles, and User Groups you want new Users to
-become members of automatically. By default, new Users are assigned to only the
-Users role. You can also choose whether to apply these configurations to
-existing Users.
+Default User Associations has four fields for listing (one per line) Sites,
+Organization Sites, Soles, and User Groups you want new Users to become members
+of automatically. By default, new Users are assigned to only the Users role. You
+can also choose whether to apply these configurations to existing Users.
 
 User groups are handy tools for pre-populating your Users' private sites with
 a certain page set, defined by a site template. If you've done that and want all

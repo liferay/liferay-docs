@@ -1,4 +1,4 @@
-# Setting Up an Instance [](id=setting-up-an-instance)
+# Setting Up a Virtual Instance [](id=setting-up-a-virtual-instance)
 
 Once @product@ is installed, the configuration begins. Whether that means adding
 another virtual instance or setting up the initial instance to suit your needs.

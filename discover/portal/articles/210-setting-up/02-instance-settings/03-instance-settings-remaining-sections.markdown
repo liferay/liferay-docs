@@ -1,7 +1,9 @@
 # Instance Settings: Remaining Sections [](id=instance-settings-remaining-sections)
 
 This article covers the virtual instance settings not included in the 
-[previous article](/discover/portal/-/knowledge_base/7-1/instance-settings).
+[previous article](/discover/portal/-/knowledge_base/7-1/instance-settings).  
+Instance Settings is accessed at control Panel &rarr; Configuration &rarr;
+Instance Settings.
 
 Start with the Identification section.
 
