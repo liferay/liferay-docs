@@ -16,13 +16,14 @@ System Settings.
 In System Settings, the configuration options are organized into logical
 sections (for example, Content) and categories (for example, Workflow) based on
 their functionality. There's also a Search bar to make finding configuration
-entries easier. 
+entries easier. Search for the name of a specific configuration entry, or even a
+specific field within an entry.
 
 ![Figure 2: System Settings are organized by component.](../../../images/system-settings-nav-search.png)
 
-Changing an application's default configuration options in System Settings isn't
-difficult. Once you find what you're looking for, simply click the name of the
-component you want to configure, or click the actions button
+Changing an application's configuration in System Settings isn't difficult. Once
+you find what you're looking for, simply click the name of the component you
+want to configure, or click the actions button
 (![Actions](../../../images/icon-actions.png)) then click *Edit*. Make any
 changes you'd like, then click *Save*. Your configuration changes are saved and
 applied throughout the system. 
@@ -33,15 +34,18 @@ Keep in mind that some configurations are available at more than one scope. Once
 configuration change is made at a more granular scope, making a change at the
 system level won't do anything. 
 
-For example, whether to allow comments on Blogs Entries is configurable. Set the default behavior is set at Control Panel &rarr; Configuration &rarr; System Settings &rarr; Blogs. In the Blogs entry under Widget Scope, disable the *Enable Comments* checkbox. 
+For example, whether to allow comments is configurable for each Blogs Entry. Set
+the default behavior at Control Panel &rarr; Configuration &rarr; System
+Settings &rarr; Blogs. In the Blogs Entry under Widget Scope, disable the
+*Enable Comments* checkbox. 
 
 Now add a Blog Entry to a site's Content &rarr; Blogs application. Then go to a
 public page and add the Blogs Widget to the page. Click the Actions button
 (![Actions](../../../images/icon-actions.png)) for the Widget and select
 *Configuration*. You'll see the same Enable Comments checkbox, and its default
 is now false (unchecked). Checking the box in the Widget Configuration screen
-breaks its link with the System Settings entry. Changing the System
-Settings configuration does nothing to this Widget Instance anymore.
+breaks its link with the System Settings entry. Changing the System Settings
+configuration does nothing to this widget anymore.
 
 If you make some regrettable configuration decisions and can't recall exactly
 what you did, start over by clicking the actions button
@@ -51,33 +55,32 @@ Values*.
 ## Configuration Scope [](id=configuration-scope)
 
 While browsing the categories of System Settings, you'll notice that clicking
-into a topic (for example, Blogs) reveals entries at different scopes.each entry
-has a *Name* and a *Scope*. This scope is different than the overall
-application configuration scope discussed in the introduction to this section.
-This is the System Settings application after all, so all of the configuration
-done here affects the System scope. The Scope field here refers to the scope at 
-which this default, system-wide configuration is overridden. There are four 
-values that you'll see under Scope: 
+into a topic (for example, Blogs) reveals entries at different scopes. All the
+settings here act at the system scope. For scopes other than System, these
+configurations act as defaults. In other words, they identify where the
+system-wide configuration is overridden. System scoped configurations are, of
+course, not overridden at more granular scopes. There are four values that
+you'll see under Scope:
 
 - *System:* Any configuration made at the system scope here becomes the final
   value for the application in a system-wide fashion. It affects the whole
   system and isn't overridden anywhere else. 
 
-    ![Figure 4: Some System Settings entries have a System scope.](../../../images/system-settings-system-scope.png)
+    ![Figure 4: Some System Settings entries are system scoped.](../../../images/system-settings-system-scope.png)
 
-- *Virtual Instance Scope:* Making configuration changes at this level affects
-    the entire Virtual Instance. 
+- *Virtual Instance Scope:* Sets the default value for each Configuration at the Virtual Instance Scope 
+    is overridden in Instance Settings.
 
-    ![Figure 5: Some System Settings entries have a Default Configuration for Application scope.](../../../images/system-settings-application-scope.png)
+    ![Figure 7: Some System Settings are virtual instance scoped.](../../../images/system-settings-instance-scope.png)
 
-- *Site Scope* Configuration at this scope is overridden in each site. 
+- *Site Scope:* Configuration at this scope is overridden in each site. 
 
-    ![Figure 6: Some System Settings entries have a Default Configuration for All Sites scope.](../../../images/system-settings-site-scope.png)
+    ![Figure 6: Some System Settings are site scoped.](../../../images/system-settings-site-scope.png)
 
 - *Widget Scope:* Configuration at this scope is overridden in each
     Widget Instance (like the Blogs example above). 
 
-    ![Figure 7: Some System Settings entries have a Default Configuration for All Instances scope.](../../../images/system-settings-instance-scope.png)
+    ![Figure 5: Some System Settings entries are widget scoped.](../../../images/system-settings-application-scope.png)
 
 If an application is configurable from Instance Settings and System Settings,
 use System Settings to configure it whenever possible. If you use Instance
@@ -87,11 +90,11 @@ entry.
 
 ![Figure 8: Some Instance Settings entries have a *Reset Values* button so you can safely revert your configuration changes, falling back to the System Settings defaults.](../../../images/instance-settings-reset-values.png)
 
-The Reset Values button removes configuration values from the database
-so you can rely on the defaults specified in System Settings. If there is no
-Reset Values button for an Instance Settings entry, once you use Instance
-Settings to configure the application, you can't later decide to use System
-Settings. Only changes to Instance Settings will be recognized. 
+The Reset Values button removes configuration values from the database so you
+can rely on the defaults that were provided out-of-the-box. If there is no Reset
+Values button for an Instance Settings entry, once you use Instance Settings to
+configure the application, you can't later decide to use System Settings. Only
+changes to Instance Settings will be recognized. 
 
 ## Exporting and Importing Configurations [](id=exporting-and-importing-configurations)
 
