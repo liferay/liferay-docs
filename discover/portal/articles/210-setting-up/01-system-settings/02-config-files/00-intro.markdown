@@ -14,7 +14,13 @@ configuration approach.
 Configuration files use the `.config` property value format defined by the 
 [Apache Felix Configuration Admin framework](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html).
 
-The `.cfg` file format is common in OSGi environments, and it's a supported
-format, but `.config` files are preferable. You can specify a property value's
-type, and have multi-valued properties. The syntax described in these articles
-is for `.config` files. 
++$$$
+
+**Note:** The `.cfg` file format is common in OSGi environments, and it's a
+supported format, but `.config` files are preferable. You can specify a property
+value's type, and have multi-valued properties. The syntax described in these
+articles is for `.config` files. 
+
+$$$
+
+

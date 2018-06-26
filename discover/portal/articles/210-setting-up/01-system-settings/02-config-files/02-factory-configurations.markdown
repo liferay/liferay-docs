@@ -1,7 +1,6 @@
 # Factory Configurations [](id=factory-configurations)
 
-Configurations supporting multiple independent occurrences of the same
-configuration entry are called *factory configurations*. 
+Configurations supporting multiple entries are called *factory configurations*. 
 
 +$$$
 
@@ -56,10 +55,10 @@ services, and you create another endpoint with a different context path for
 +$$$
 
 **Note:** Some System Settings entries (like the CXF Endpoints entry) don't ship
-with a configuration file, so anything you create is the first occurrence. 
-However, if you configure one and export it to obtain the `.config` file, it's 
-not named `-default.config`. Instead it's given a guaranteed unique identifier
-for its subname, like this:
+with a configuration file, so anything you create is the first occurrence.
+However, if you configure one and export it to obtain the `.config` file, it
+doesn't use the `-default.config` naming convention. Instead it's given a
+guaranteed unique identifier for its subname, like this:
 
     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-a6f67e48-6dca-49c6-bf6b-8fd5e6016b2d.config
 
@@ -74,22 +73,22 @@ $$$
 
 +$$$
 
-**Warning::** For configuration entries supporting factory configurations, 
-omitting the subname from a `.config` file's name breaks the System Settings
-app's functionality (but only for the configuration entry targeted by the 
-`.config` file). This is caused by a known bug. See
+**Warning::** For configuration entries supporting factory configurations,
+omitting the subname from a `.config` file's name causes System Settings to
+disallow adding new entries for the configuration (only the configuration entry
+targeted by this `.config` file). This is caused by a known bug. See
 [LPS-76352](https://issues.liferay.com/browse/LPS-76352) 
-for more information. Once an improperly named configuration file is deployed, 
-you can't add any entries for the configuration in question from its System 
-Settings entry. For example, if you deploy the following file to configure a CXF 
-Endpoint, not only does this not add a CXF Endpoint, it also prevents you from 
+for more information. Once an improperly named configuration file is deployed,
+you can't add any entries for the configuration in question from its System
+Settings entry. For example, if you deploy the following file to configure a CXF
+Endpoint, not only does this not add a CXF Endpoint, it also prevents you from
 adding any CXF Endpoints via System Settings: 
 
     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration.config
 
-Deploying an erroneous (lacking a subname) `.config` file doesn't break anything 
-permanently. Just rename the file using the proper convention described above or 
-remove it entirely and start over. 
+Deploying an erroneous (lacking a subname) `.config` file doesn't disable
+anything permanently. Just rename the file using the proper convention described
+above or remove it entirely and start over. 
 
 $$$
 
