@@ -13,6 +13,8 @@ Follow these steps to assign a user group to a site:
 2.  In the Site Administration menu, select *Members* &rarr; *Site Memberships*. 
     This opens the Site Memberships screen. 
 
+    ![Figure 1: Select *Site Memberships* from the Site Administration menu.](../../../images/site-memberships.png)
+
 3.  In Site Memberships, select the *User Groups* tab. This tab displays any 
     user groups currently assigned to the site. 
 
@@ -21,4 +23,4 @@ Follow these steps to assign a user group to a site:
     select any user groups you want to assign to the site, then click *Done*. 
     The user groups you selected now appear in the User Groups tab. 
 
-![Figure 1: The User Groups tab in Site Memberships shows the user groups currently assigned to the site.](../../../images/user-groups-site-memberships.png)
+![Figure 2: The User Groups tab in Site Memberships shows the user groups currently assigned to the site.](../../../images/user-groups-site-memberships.png)
