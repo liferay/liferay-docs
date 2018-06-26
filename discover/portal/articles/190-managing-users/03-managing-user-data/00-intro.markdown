@@ -40,7 +40,7 @@ $$$
 ## Anonymizing Data [](id=anonymizing-data)
 
 Deleting User data is the safest way to honor _right to be forgotten_ requests.
-When Userr data must be preserved, automatic anonymization of the data is in
+When User data must be preserved, automatic anonymization of the data is in
 order. A User being anonymized must have their identifiers (for example, User ID
 and their User Name) removed from content they've interacted with. However,
 portal content usually requires this information for its applications to work
