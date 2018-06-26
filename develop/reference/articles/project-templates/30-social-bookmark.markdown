@@ -1,4 +1,4 @@
-# Social Bookmark Template [](id=social-bookmark-template)
+# Social Bookmark Template
 
 In this article, you'll learn how to create a Liferay social bookmark as a
 Liferay module. To create a social bookmark as a module via the command line
@@ -68,8 +68,7 @@ Gradle-specific files, but otherwise, appears exactly the same.
 
 The generated module is a working application and is deployable to a @product@
 instance. An unmodified module generated as described above creates a social
-bookmark named *MySocialBookmark* that searches the current URL using Google
-Search.
+bookmark named *Test* that searches the current URL using Google Search.
 
 ![Figure 1: Click the magnifying glass icon to search the current URL using Google Search.](../../images/social-bookmark-project-template.png)
 
