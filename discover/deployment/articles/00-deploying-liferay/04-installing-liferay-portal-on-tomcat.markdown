@@ -4,10 +4,10 @@
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
 (DXP) or
 [Liferay Downloads](https://www.liferay.com/downloads)
-(Portal CE). The @product@ Tomcat bundle contains JARs, scripts, and
-configuration files required for installing @product@ on a clean Tomcat 9
-application server. Copying these files from a @product@ Tomcat bundle
-facilitates installing @product@ on Tomcat.
+(Portal CE). The Tomcat bundle contains JARs, scripts, and configuration files
+required for installing @product@ on a clean Tomcat 9 application server.
+Copying these files from a @product@ Tomcat bundle facilitates installing
+@product@ on Tomcat.
 
 Whether you copy bundle files (recommended) or download and create the files,
 you must download these files for
@@ -32,14 +32,14 @@ usually named `tomcat-[version]` or `apache-tomcat-[version]`.
 
 ## Installing Dependencies [](id=installing-liferay-dependencies)
 
-@product@ depends on many JARs that the @product@ Tomcat bundle includes. Some
-of the bundle's JARs are not strictly required but can still be useful. If you
-don't have a bundle, download the required JARs from third-parties, as described
+@product@ depends on many JARs included by @product@ Tomcat bundle. Some of the
+bundle's JARs are not strictly required but can still be useful. If you don't
+have a bundle, download the required JARs from third-parties, as described
 below.
 
 1.  Create the folder `$TOMCAT_HOME/lib/ext` if it doesn't exist and extract the
     JARs from the dependencies ZIP to it. Here are the JARs:
-    
+ 
     - `com.liferay.petra.concurrent.jar`
     - `com.liferay.petra.executor.jar`
     - `com.liferay.petra.function.jar`
@@ -58,21 +58,21 @@ below.
 2.  Download the following JARs or copy them from a @product@ Tomcat bundle to 
     the `$TOMCAT_HOME/lib/ext` folder:
 
-    - `activation.jar` - [http://www.oracle.com/technetwork/java/javase/jaf-136260.html](http://www.oracle.com/technetwork/java/javase/jaf-136260.html)
-    - `ccpp.jar` - [http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
-    - `jms.jar`- [http://www.oracle.com/technetwork/java/docs-136352.html](http://www.oracle.com/technetwork/java/docs-136352.html)
-    - `jta.jar`- [http://www.oracle.com/technetwork/java/javaee/jta/index.html](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
-    - `jutf7.jar` - [http://mvnrepository.com/artifact/com.beetstra.jutf7/jutf7](http://mvnrepository.com/artifact/com.beetstra.jutf7/jutf7)
-    - `mail.jar` - [http://www.oracle.com/technetwork/java/index-138643.html](http://www.oracle.com/technetwork/java/index-138643.html)
-    - `persistence.jar`- [http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1](http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1)
-    - `support-tomcat.jar` - [http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat)
+    - [`activation.jar`](http://www.oracle.com/technetwork/java/javase/jaf-136260.html)
+    - [`ccpp.jar`](http://mvnrepository.com/artifact/javax.ccpp/ccpp/1.0)
+    - [`jms.jar`](http://www.oracle.com/technetwork/java/docs-136352.html)
+    - [`jta.jar`](http://www.oracle.com/technetwork/java/javaee/jta/index.html)
+    - [`jutf7.jar`](http://mvnrepository.com/artifact/com.beetstra.jutf7/jutf7)
+    - [`mail.jar`](http://www.oracle.com/technetwork/java/index-138643.html)
+    - [`persistence.jar`](http://mvnrepository.com/artifact/org.eclipse.persistence/javax.persistence/2.1.1)
+    - [`support-tomcat.jar`](http://mvnrepository.com/artifact/com.liferay.portal/com.liferay.support.tomcat)
 
 3.  Copy the JDBC driver for your database to the `$CATALINA_BASE/lib/ext` 
-    folder. Here are some common drivers:  
+    folder. Here are some common drivers: 
 
-    - `mariadb.jar` - [https://downloads.mariadb.org/](https://downloads.mariadb.org/)
-    - `mysql.jar` - [http://dev.mysql.com/downloads/connector/j](http://dev.mysql.com/downloads/connector/j)
-    - `postgresql.jar` - [https://jdbc.postgresql.org/download/postgresql-42.0.0.jar](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
+    - [`mariadb.jar`](https://downloads.mariadb.org/)
+    - [`mysql.jar`](http://dev.mysql.com/downloads/connector/j)
+    - [`postgresql.jar`](https://jdbc.postgresql.org/download/postgresql-42.0.0.jar)
 
 4.  Create an `osgi` folder in your Liferay Home. Extract the folders (i.e., 
     `configs`, `core`, and more) from OSGi ZIP file to the `osgi` folder. The
@@ -134,13 +134,12 @@ Optionally, you can configure Tomcat to manage these things for @product@:
 
 Start with configuring Tomcat to run @product@. 
 
-
 1.  If you have a @product@ Tomcat bundle, copy the `setenv.bat` and `setenv.sh`
     files from it to your `$CATALINA_BASE/bin` folder. If not, create these
     scripts. 
 
-    The scripts are used to set JVM options for Catalina, which is Tomcat's
-    servlet container. Among these options is the location of the Java runtime
+    The scripts set JVM options for Catalina, which is Tomcat's servlet
+    container. Among these options is the location of the Java runtime
     environment. If this environment is not available on your server globally,
     you must set its location in in these files so Tomcat can run. Do this by
     pointing the `JAVA_HOME` environment variable to a @product@-supported JRE:
@@ -162,7 +161,7 @@ Start with configuring Tomcat to run @product@.
     prevents Tomcat from working around garbage collection bugs relating to
     static or final fields (these bugs don't exist in @product@ and working
     around them causes problems with the logging system), sets the time zone to
-    GMT, gives the JVM 1GB of RAM, and limits Metaspace to 500MB. 
+    GMT, gives the JVM 2GB of RAM, and limits Metaspace to 500MB. 
 
     After installation, tune your system (including these JVM options) for
     performance. 
@@ -354,7 +353,7 @@ If you want to manage your mail session with Tomcat, follow these steps:
         mail.session.jndi.name=mail/MailSession
 
 You've created a mail session for Tomcat to manage and configured @product@ to
-use it. It's just that easy! 
+use it. 
 
 ## Deploying @product@ [](id=deploying-liferay)
 
@@ -364,7 +363,7 @@ Now you're ready to deploy @product@ using the @product@ WAR file.
     the contents of the `$CATALINA_BASE/webapps/ROOT` folder. This removes
     the default Tomcat home page.
 
-2.  Extract the @product@ `.war` file to `$CATALINA_BASE/webapps/ROOT`.     
+2.  Extract the @product@ `.war` file to `$CATALINA_BASE/webapps/ROOT`. 
 
     It's time to launch @product@ on Tomcat!
 
