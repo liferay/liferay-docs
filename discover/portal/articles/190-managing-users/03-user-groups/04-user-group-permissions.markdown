@@ -1,4 +1,4 @@
-# Configuring User Group Permissions
+# Configuring User Group Permissions [](id=configuring-user-group-permissions)
 
 Administrators commonly create user groups to allow the group's users to take 
 some specific action in a site. This is done by assigning the permissions for 
@@ -7,8 +7,8 @@ grants the role's permissions to the user group's users.
 
 Follow these steps to grant permissions to users in a user group: 
 
-1.  [Create the user group](liferay.com).
-2.  [Assign the user group to a site](liferay.com). 
+1.  [Create the user group](/discover/portal/-/knowledge_base/7-1/creating-a-user-group).
+2.  [Assign the user group to a site](/discover/portal/-/knowledge_base/7-1/user-groups-and-site-membership). 
 3.  [Create the site role and define its permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions). 
 4.  Assign the role to the user group. 
 

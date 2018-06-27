@@ -1,4 +1,4 @@
-# User Groups
+# User Groups [](id=user-groups)
 
 A user group is a group of users created for a specific purpose. User groups can 
 also be created across the hierarchical boundaries of 

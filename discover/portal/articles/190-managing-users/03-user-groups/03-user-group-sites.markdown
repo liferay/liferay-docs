@@ -1,4 +1,4 @@
-# User Group Sites
+# User Group Sites [](id=user-group-sites)
 
 Each user has a personal site that consists of public (Profile) and private 
 (Dashboard) pages. A *user group site* determines the base pages of the user 
@@ -11,14 +11,14 @@ and public pages are added for the user group site. If users belong to multiple
 user groups, all the pages from those user group sites are made part of their 
 personal sites. 
 
-[When creating a user group](liferay.com), 
+[When creating a user group](/discover/portal/-/knowledge_base/7-1/creating-a-user-group), 
 you can create the user group site via the 
 [site templates](/discover/portal/-/knowledge_base/7-1/building-sites-from-templates) 
 available for selection in the *My Profile* and *My Dashboard* selector menus. 
 You can also create a user group site later, either manually or via a site 
 template. 
 
-## Creating User Group Sites From Site Templates
+## Creating User Group Sites From Site Templates [](id=creating-user-group-sites-from-site-templates)
 
 Follow these steps to create a user group site from a 
 [site template](/discover/portal/-/knowledge_base/7-1/building-sites-from-templates), 
@@ -34,7 +34,7 @@ for a user group that already exists:
     &rarr; *Edit* for the user group you want to create a site for. This opens 
     a form that you can use to edit the user group. Note that this is the same 
     form that appears when 
-    [creating a user group](liferay.com). 
+    [creating a user group](/discover/portal/-/knowledge_base/7-1/creating-a-user-group). 
 
 3.  To use a site template to create a public profile for the users on their 
     *My Profile* site, select that site template from the *My Profile* menu. To 
@@ -73,7 +73,7 @@ option to automatically propagate site template changes, see the
 
 $$$
 
-## Creating User Group Sites Manually
+## Creating User Group Sites Manually [](id=creating-user-group-sites-manually)
 
 You can create a user group's site manually, instead of basing it on a site
 template. Follow these steps to do so: 
@@ -107,7 +107,7 @@ group's public and/or private pages via these links in the user group's
 In the new window, you can add more pages and portlets and configure site 
 settings. 
 
-## Legacy User Group Sites Behavior
+## Legacy User Group Sites Behavior [](id=legacy-user-group-sites-behavior)
 
 Since the inheritance of user group site pages is now dynamic, even if there are
 hundreds of thousands of users, even millions, there won't be an exponential
