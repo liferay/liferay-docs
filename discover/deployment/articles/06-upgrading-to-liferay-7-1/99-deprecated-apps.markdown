@@ -61,6 +61,22 @@ they're still available.
 
 ## Foundation
 
+| App | &nbsp;Availability | &nbsp;Notes |
+| --- | ------------------ | ----------- |
+| AlloyUI | Release (bundle) | Replaced by [Metal.js](https://metaljs.com/). | 
+| Columns Layout | Removed | |
+| Google Login | Release (bundle) | Replaced by OpenID Connect. |
+| Marvel Integration | Removed | Replaced by X-Pack. |
+| OpenID | Release (bundle) | Replaced by OpenID Connect. |
+| OpenSocial Gadget | Removed | |
+| Plugins SDK | Github | Deprecated in 7.0, but released for EXT support. Replaced by a Gradle plugin. |
+| Ruby Console | Removed | |
+| Shield Integration | Removed | Replaced by X-Pack. |
+| Template Engines | Release (bundle) | Replaced by Freemarker. |
+| vLDAP plugin (Virtual LDAP Server EE) | Removed | |
+| WSRP | Removed | |
+| WYSIWYG | [Nexus](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.wysiwyg.web/) &rarr; Will be removed. |  Final version released for 7.0. |
+
 ## Web Experience
 
 ## Forms and Workflow
