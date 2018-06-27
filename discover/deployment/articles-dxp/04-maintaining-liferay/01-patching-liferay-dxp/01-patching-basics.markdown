@@ -8,10 +8,14 @@ Liferay ships @product-ver@ fixes through three different channels:
 
 ## Fix Packs [](id=fix-packs)
 
-On a regular schedule, the latest fixes that patch the core are bundled together
-into fix packs that are provided to all of Liferay's customers. Fix packs
-include fixes for both the core and the applications and modules that ship with
-@product@. 
+The latest low-risk fixes that patch the core are bundled together weekly into
+fix packs that are provided to all of Liferay's customers. Fix packs include
+fixes for both the core and the applications and modules that ship with
+@product@. The fixes address regressions or obvious bugs, and are low risk and
+don't require you to make additional changes. 
+
+Fixes that don't fit these requirements are considered for service packs or hot
+fixes. 
 
 ## Hotfixes [](id=hotfixes)
 
@@ -24,11 +28,18 @@ modules.
 
 ## Service Packs [](id=service-packs)
 
-Service packs for the @product@ are released about every two months. The
-schedule depends on the need and security fix releases. They include the latest
-patches and updates---they're for customers starting new projects. The service
-packs are built on the top of the original @product@ release and repackaged with
-the latest fix pack, Patching Tool, and modules.
+Every tenth fix pack is a service pack, so their frequency varies. Their version
+number always ends in a zero (e.g., `10`, `20`, etc.). Service packs are built
+on the top of the original @product@ release and repackaged with the latest fix
+pack, Patching Tool, and modules. They include the latest patches and
+updates---they're for customers starting new projects.
+
+Service packs can also include changes that have these characteristics:
+
+- Higher risk. The changes are tested more extensively and over longer periods 
+of time but are riskier than fixes in fix packs. 
+- Require some of your attention, such as updating your documentation.
+- Improve the product. 
 
 Rather than updating existing @product@ systems with service packs, you should
 
