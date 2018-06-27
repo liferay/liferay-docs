@@ -22,7 +22,7 @@ difference is in how you choose to use them. By populating each type with
 different product relations, you gain the ability to display multiple sets of
 relations on a single page.
 
-## Adding Product Relationship Types [](id=setting-product-relationship-types)
+## Adding Product Relationship Types [](id=adding-product-relationship-types)
 
 The different types of product relations are flexible. Since each one functions
 the same way, you can add, remove, or rename types at will. Follow these steps:
@@ -58,7 +58,7 @@ Follow these steps:
 
 You can display product relations on a product display page by configuring
 a product publisher widget. You must have a 
-[product display page](web/liferay-emporio/documentation/-knowledge_base/7-1/displaying-product-pages)
+[product display page](web/liferay-emporio/documentation/-knowledge_base/1-0/displaying-product-pages)
 in place first.
 
 Follow these steps:

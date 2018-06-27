@@ -82,7 +82,7 @@ Your custom JSP is live.
 
 ## Related Topics [](id=related-topics)
 
-[Overriding App JSPs](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-jsps)
+[Customizing JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)
 
 [Upgrading Core JSP Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-core-jsp-hooks)
 
