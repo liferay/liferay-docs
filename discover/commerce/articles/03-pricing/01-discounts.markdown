@@ -14,7 +14,7 @@ and never increases it.
 Follow these steps:
 
 1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Discounts* and click on the
-    ![Add](../images/icon-add.png) button at the top right. This displays the
+    ![Add](../../images/icon-add.png) button at the top right. This displays the
     *Add Discount* form.
 
 2.  Fill out the *Add Discount* Form (see below) then click *Publish*.
