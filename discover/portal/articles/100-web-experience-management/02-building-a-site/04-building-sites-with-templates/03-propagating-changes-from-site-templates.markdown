@@ -37,7 +37,7 @@ in the Control Menu with the following message:
     This page has been changed since the last update from the Site template. No
     further updates from the Site template will be applied.
 
-![Figure 3: You can click the Information icon to view important information about your Site template.](../../../../images/site-template-update-message.png)
+![Figure 1: You can click the Information icon to view important information about your Site template.](../../../../images/site-template-update-message.png)
 
 ## Merging and Reseting Changes [](id=merging-and-reseting-changes)
 
@@ -69,7 +69,7 @@ you've squared away your conflict, navigate to your Site's *Site Administration*
 &rarr; *Configuration* &rarr; *Site Settings* and click the *Reset and
 Propagate* button.
 
-![Figure 4: This type of warning is given when there are friendly URL conflicts with Site template pages.](../../../../images/friendly-url-propagation-failure.png)
+![Figure 2: This type of warning is given when there are friendly URL conflicts with Site template pages.](../../../../images/friendly-url-propagation-failure.png)
 
 The *Reset and Propagate* button resets the merge fail count and attempts to
 propagate your Site changes again. This process gives you the opportunity to
