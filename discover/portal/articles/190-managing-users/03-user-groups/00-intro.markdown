@@ -12,12 +12,6 @@ to serve the most common use cases.
 
 User groups are most often used for one of the following: 
 
--   **Collect permissions:** Assign roles and permissions to a group of users 
-    that don't share an organization. For example, in a university's portal, a 
-    user group could be created to group all teachers independently of their 
-    departments (organization). This would make it easier to assign one or 
-    several roles at once to all the teachers. 
-
 -   **Manage site membership:** Grant site membership to all users in a user 
     group. Using the previous example, the teachers user group could be added 
     as a member of the sites *University Employees* and 
@@ -29,4 +23,9 @@ User groups are most often used for one of the following:
     be created to ensure the home page on all teachers' personal sites has the 
     same layout and applications. 
 
+-   **Collect permissions:** Assign roles and permissions to a group of users 
+    that don't share an organization. For example, in a university's portal, a 
+    user group could be created to group all teachers independently of their 
+    departments (organization). This would make it easier to assign one or 
+    several roles at once to all the teachers. 
 
