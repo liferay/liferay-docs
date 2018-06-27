@@ -1,4 +1,4 @@
-# Mobile Device Actions
+# Mobile Device Actions [](id=mobile-device-actions)
 
 After you've created Families and applied rules to define those families, you 
 can associate specific actions that will occur when a user visits that site on 
@@ -14,7 +14,7 @@ To add actions to a selected rule group:
     
 3.  Click *Add Action*.
 
-![Figure X: Getting to the Manage Actions page.](../../../../../../images/manage-mobile-actions.png)
+![Figure 1: Getting to the Manage Actions page.](../../../../../../images/manage-mobile-actions.png)
 
 
 By default, there are four kinds of actions that can be configured for mobile families:
@@ -65,7 +65,7 @@ mobile device requests are received, take the following steps:
 4.  Define one or more actions for your family that describe how requests should
     be handled.
 
-## Mobile Device Rules Example
+## Mobile Device Rules Example [](id=mobile-device-rules-example)
 
 Now you'll look at an example of using mobile device rules. Suppose you'd like 
 to create a rule so that when a site is accessed by an Android or iOS tablet, a 
@@ -96,7 +96,7 @@ Next create a rule for the family:
 
 6.  Click *Save*.
 
-![Figure X: Creating the Classification rule.](../../../../../../images/example-classification-rule.png)
+![Figure 2: Creating the Classification rule.](../../../../../../images/example-classification-rule.png)
 
 As with the previous example, you only need one rule to describe your 
 device family. Now, you need to apply the rule to some pages.
@@ -123,7 +123,7 @@ Now you just need to define an action for your Android and iOS Tablets rule grou
 
 5.  Click *Save*.
 
-![Figure X: Creating the Actions for Android and iOS Tablets.](../../../../../../images/example-mobile-action.png)
+![Figure 3: Creating the Actions for Android and iOS Tablets.](../../../../../../images/example-mobile-action.png)
 
 Now the Liferay site's pages are presented to Android and iOS tablet users with 
 the 1 Column layout template.

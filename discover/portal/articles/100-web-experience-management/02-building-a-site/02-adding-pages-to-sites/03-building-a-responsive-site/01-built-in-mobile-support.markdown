@@ -1,4 +1,4 @@
-# Built-in Mobile Support
+# Built-in Mobile Support [](id=built-in-mobile-support)
 
 Out of the box, you have several features that help make your pages look just 
 as good and have the same functionality on mobile devices as they do on a 
@@ -7,17 +7,17 @@ desktop:
 -  Liferay Widgets and custom widgets which use Liferay's UI frameworks will
     automatically scale to fit the screen size.
 
-![Figure X: A demonstration of how a widget adjusts its size.](../../../../../images/widget-adjustment.png)
+![Figure 1: A demonstration of how a widget adjusts its size.](../../../../../images/widget-adjustment.png)
 
 -  UI elements like the navigation and Product Menu will automatically adjust to
     remain usable on smaller screens.
 
-![Figure X: A demonstration of how the main navigation adjusts its size.](../../../../../images/navigation-adjustment.png)
+![Figure 2: A demonstration of how the main navigation adjusts its size.](../../../../../images/navigation-adjustment.png)
 
 -  When the screen width is low, Liferay will combine columns so that all 
     content remains legible.
 
-![Figure X: A demonstration of how columns combine.](../../../../../images/columns-adjustment.png)    
+![Figure 3: A demonstration of how columns combine.](../../../../../images/columns-adjustment.png)    
     
 -  For web developers, Liferay's theme tools provide a number of tools to help
     ensure optimum mobile performance.
@@ -28,7 +28,7 @@ verify that everything is going to display as intended. The Device Simulator (![
 particular is a powerful tool that shows you how pages will look on different 
 devices. 
 
-## Using the Device Simulator
+## Using the Device Simulator [](id=using-the-device-simulator)
 
 When creating a page or reviewing a page before it is published, one of your 
 most important tools is the Device Simulator found in the top right corner of 
@@ -44,7 +44,7 @@ options:
 -  **Mobile** puts your page in an even smaller box to demonstrate how the page 
     will look to your average smartphone user.
 
-![Figure X: The Simulation panel.](../../../../../images/device-simulation.png)    
+![Figure 4: The Simulation panel.](../../../../../images/device-simulation.png)    
 
 There are also two options available to display 
 
@@ -61,7 +61,7 @@ layout looks good and that all functionality remains, it's also important to
 make sure that automatic features---like how columns are combined at lower 
 resolutions---doesn't have any unintended effects.
 
-## Designing Mobile Friendly Pages
+## Designing Mobile Friendly Pages [](id=designing-mobile-friendly-pages)
 
 @product@ provides the tools you need, but building pages that provide a good 
 experience across all kinds of devices still means working across all levels of 

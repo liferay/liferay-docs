@@ -1,4 +1,4 @@
-# Using Full Page Applications
+# Using Full Page Applications [](id=using-full-page-applications)
 
 While Content Pages provide a way to focus on a specific design and create 
 content in that context and Widget Pages provide a high level of customization 
@@ -7,7 +7,7 @@ and optimize a page for one specific purpose. Full Page Applications are the
 ideal way to display a Message Board, Wiki, or other application that demands a 
 full page.
 
-## Configuring the Page
+## Configuring the Page [](id=configuring-the-page)
 
 Creating a Full Page Application starts just like creating any other type of 
 page.
@@ -29,7 +29,7 @@ need to configure the page for it to function.
     set the *Full Page Application* as well as access other page configuration
     options in the other tabs.
     
-![Figure X: The Full Page Application configuration page.](../../../../../images/full-page-app-configure.png)
+![Figure 1: The Full Page Application configuration page.](../../../../../images/full-page-app-configure.png)
     
 2.  Set the *Full Page Application* to *Wiki* and click *Save*.
 
@@ -44,7 +44,7 @@ need to configure the page for it to function.
 Now the page is configured to display the Wiki and only the Wiki. No other 
 widgets can be added to the page, and the Wiki app cannot be removed.
 
-![Figure X: The Wiki displayed as a Full Page Application.](../../../../../images/single-page-app-wiki.png)
+![Figure 2: The Wiki displayed as a Full Page Application.](../../../../../images/single-page-app-wiki.png)
 
 Note that all of the applications that can be added to the page are 
 "noninstanceable" and the content of whichever application you select will be 
@@ -61,7 +61,7 @@ you can configure that through the application on the page.
 
 3.  Open the *Scope* menu and select *Space Wiki*.
 
-![Figure X: Configuring the scope.](../../../../../images/configuring-scope.png)
+![Figure 3: Configuring the scope.](../../../../../images/configuring-scope.png)
 
 Now the Wiki will be configured to have it's own data solely for this page, and 
 not share data with the Site or Global scoped Wiki.

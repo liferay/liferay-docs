@@ -36,7 +36,7 @@ From *Site Pages* you can do several things:
 
 3.  Create child pages by clicking the `+` button next to an existing page.
 
-![Figure X: Understanding the options on Site Pages.](../../../../images/site-pages-breakdown.png)
+![Figure 2: Understanding the options on Site Pages.](../../../../images/site-pages-breakdown.png)
 
 Adding a child page creates child pages in the hierarchy below the page you've 
 selected. You can nest pages as deep as you like and you can manage that 
@@ -78,14 +78,14 @@ To the left, under Collections, you can choose to view the basic page types
 or a collection of page templates. By default, only *Global Templates*
 appears, but additional collections you create appear here as well.
 
-![Figure X: You must select a page type when adding pages.](../../../../images/page-types-adding.png)
+![Figure 3: You must select a page type when adding pages.](../../../../images/page-types-adding.png)
 
 After you've added a page, it may be difficult to track what kind of page you're
 currently viewing. The page type appears at the top of the page to help you
 determine the administration options you have and where you need to go to
 configure the page.
 
-![Figure X: Here are three different page with three different types as they as displayed in the heading.](../../../../images/page-type-guide.png)
+![Figure 4: Here are three different page with three different types as they as displayed in the heading.](../../../../images/page-type-guide.png)
 
 Now that you know the basics of adding pages, you can start working on the Lunar
 Resort Site. If you're not currently on the right Site, navigate to Site

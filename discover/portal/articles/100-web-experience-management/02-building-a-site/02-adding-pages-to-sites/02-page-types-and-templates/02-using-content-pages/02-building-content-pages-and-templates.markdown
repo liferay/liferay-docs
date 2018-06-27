@@ -35,17 +35,17 @@ same Fragment to the page multiple times. To see which Fragments the current
 page is made up of, you can check the *Added* tab. The template is 
 automatically saved as you work.
 
-![Figure X: The Page Template Creation page.](../../../../../../images/content-page-template-creation.png)
+![Figure 1: The Page Template Creation page.](../../../../../../images/content-page-template-creation.png)
 
 If the template contains editable text, you can click on the editable text area to change the text.
 
-![Figure X: Editing text inline.](../../../../../../images/edit-text-inline.png)
+![Figure 2: Editing text inline.](../../../../../../images/edit-text-inline.png)
 
 If the template contains an editable image, you can click on the image and 
 replace it by either uploading your own image, or selecting one from Documents 
 and Media.
 
-![Figure X: When you mouse over an editable image a blue outline will appear. You can replace it by clicking on it.](../../../../../../images/edit-image-inline.png)
+![Figure 3: When you mouse over an editable image a blue outline will appear. You can replace it by clicking on it.](../../../../../../images/edit-image-inline.png)
 
 +$$$
 
@@ -73,7 +73,7 @@ edited during the creation of the page or page template.
 
 4.  Click Save.
 
-![Figure 2: Selecting you page template.](../../../../../../images/selecting-template.png)
+![Figure 4: Selecting you page template.](../../../../../../images/selecting-template.png)
 
 Alternatively, you can select the page type first, and then the template. After you click the `+` to add a page do the following:
 

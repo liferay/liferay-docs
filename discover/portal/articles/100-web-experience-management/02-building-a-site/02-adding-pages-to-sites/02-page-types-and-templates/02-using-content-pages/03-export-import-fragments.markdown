@@ -23,7 +23,7 @@ top level of the Fragments page:
 
 3.  Select a Collection or multiple Collections to be exported. Each collection will export in a separate file.
 
-![Figure X: Selecting Collections to export.](../../../../../../images/collections-export.png)
+![Figure 1: Selecting Collections to export.](../../../../../../images/collections-export.png)
 
 Each Collection `.zip` will contain all of the data for the Collection as well 
 as the Fragments within it.
@@ -38,7 +38,7 @@ following actions from the Fragments page:
     the Collection name. A `.zip` file will be generated downloaded 
     automatically.
     
-![Figure X: Exporting all of the Fragments in a Collection.](../../../../../../images/fragments-export-individual.png)
+![Figure 2: Exporting all of the Fragments in a Collection.](../../../../../../images/fragments-export-individual.png)
     
 3.  To export a single Fragment click *Actions* (![Actions](../../../../../../images/icon-actions.png)) *Export* next to 
     the Fragment. A `.zip` file will be generated downloaded 
@@ -49,7 +49,7 @@ you will need to have an existing Collection to import them into.
 
 Now that you've done all this exporting, it's time to import it all back it.
 
-## Importing
+## Importing [](id=importing)
 
 There are a few options for importing fragments, depending on how you exported 
 them. You can import a Collection which was created in Liferay, a Collection 
@@ -62,7 +62,7 @@ they are added to a page.
 See the [Developing a Fragment Using Desktop Tools](/discover/portal/-/knowledge_base/7-1/recommendations-and-best-practices#developing-a-fragment-using-desktop-tools) section for more information on 
 creating and importing Fragments using other tools.
 
-### Importing Collections
+### Importing Collections [](id=importing-collections)
 
 You can import collections that were exported @product@, or that were created 
 using other tools. To import a collection, do the following:
@@ -71,7 +71,7 @@ using other tools. To import a collection, do the following:
 
 2.  Next to *Collections* click *Actions* (![Actions](../../../../../../images/icon-actions.png)) and select *Import*.
 
-![Figure X: The Sites Pages page allows you to edit your site pages as a whole.](../../../../../../images/collections-import.png)
+![Figure 3: The Sites Pages page allows you to edit your site pages as a whole.](../../../../../../images/collections-import.png)
 
 3.  On the next screen click *Choose File* and select the file you want to 
     import.
@@ -82,7 +82,7 @@ using other tools. To import a collection, do the following:
 5.  Click *Import* and the collection will be uploaded.
 
 
-### Importing Individual Page Fragments
+### Importing Individual Page Fragments [](id=importing-individual-page-fragments)
 
 You can also import a single Page Fragment or a set of them that were exported
 outside of a collection.

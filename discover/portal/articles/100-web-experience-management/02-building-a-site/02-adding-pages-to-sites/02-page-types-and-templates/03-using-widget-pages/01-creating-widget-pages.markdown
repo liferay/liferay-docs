@@ -1,4 +1,4 @@
-# Creating Widget Pages
+# Creating Widget Pages [](id=creating-widget-pages)
 
 Widget Pages are what you might think of as the standard type of page in 
 @product@. They're simple to create and fill with content or functionality. You 
@@ -6,7 +6,7 @@ create a blank page, define a layout, and then add widgets to the layout. Those
 widgets could be for displaying content or for providing some tool or function 
 for the user.
 
-## Adding a Widget Page
+## Adding a Widget Page [](id=adding-a-widget-page)
 
 When you first start @product@ you get a widget page for free as your front 
 page. To create a new widget page, do the following:
@@ -25,7 +25,7 @@ page. To create a new widget page, do the following:
 6.  On the next screen you can select a Layout Template or manage other options.
     Leave the defaults and click *Save*.
 
-![Figure X: Configuring page settings.](../../../../../../images/creating-community-page.png)
+![Figure 1: Configuring page settings.](../../../../../../images/creating-community-page.png)
 
 Creating a page, by default, also adds it to any Navigation Menus that are 
 configured to have new pages added to them. If you don't want a new page added 
@@ -41,10 +41,10 @@ Your new page is now added to the navigation.
 
 Currently the page is empty. Next you'll add some widgets to give it functionality.
 
-![Figure X: Your page has been added to the navigation automatically.](../../../../../../images/community-page-created.png)
+![Figure 2: Your page has been added to the navigation automatically.](../../../../../../images/community-page-created.png)
 
 
-## Adding Widgets to a Page
+## Adding Widgets to a Page [](id=adding-widgets-to-a-page)
 
 To add widget to a page, go to the page and click the *Add* button  
 (![Add](../../../../../../images/icon-control-menu-add.png)) 
@@ -68,7 +68,7 @@ Collaboration apps to the Lunar Resort site.
 See how easy it is to add applications to your pages? You've added the Wiki
 app and Blogs Aggregator app to a page. 
 
-![Figure 1: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../../../../images/app-layout-design.png)
+![Figure 3: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../../../../images/app-layout-design.png)
 
 If the default layout options provided aren't enough, you can even develop your
 own. For more information about developing custom layout templates, see the

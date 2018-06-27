@@ -1,4 +1,4 @@
-# Creating Mobile Device Rules
+# Creating Mobile Device Rules [](id=creating-mobile-device-rules)
 
 In order to configure mobile device rules, you need a way to find out the
 characteristics of the device. While some of the characteristics are provided by
@@ -35,7 +35,7 @@ To access the Mobile Device Families administrative page:
 
 1.  Open the *Product Menu*.
 
-2.  Use the *Site Selector* (![Site Selector](../../../../../images/icon-compass.png)) to choose the site that you
+2.  Use the *Site Selector* (![Site Selector](../../../../../../images/icon-compass.png)) to choose the site that you
     want to define Mobile Device Rules for.
     
 3.  Select *Configuration* &rarr; *Mobile Device Families*.
@@ -45,7 +45,7 @@ You can also add families for all sites by navigating to the Control Panel
 displays a list of defined families and lets you add more. To add rules, you 
 first need to add a family.
 
-1.  Click *Add* button (![Add Family](../../../../../images/icon-add.png)) to 
+1.  Click *Add* button (![Add Family](../../../../../../images/icon-add.png)) to 
     add a *New Device Family*.
 
 2.  Enter a *Name* and *Description*.
@@ -54,7 +54,7 @@ first need to add a family.
 
 4.  Click on the name of the Mobile Device Family to access the rules page.
 
-![Figure 1: Creating a Mobile Device Family.](../../../../../images/mobile-device-families.png)
+![Figure 1: Creating a Mobile Device Family.](../../../../../../images/mobile-device-families.png)
 
 The rules defined for a family, along with the priorities of the families
 selected for a particular site or page, determine which family's actions are
@@ -64,7 +64,7 @@ type, physical screen size, and screen resolution. Remember that you can add as
 many rules to a family as you need in order to classify the devices on which
 you'd like to take actions.
 
-1.  Click on the *Add* button (![Add Classification Rule](../../../../../images/icon-add.png)) to add a new rule.
+1.  Click on the *Add* button (![Add Classification Rule](../../../../../../images/icon-add.png)) to add a new rule.
 
 2.  Enter a *Name* and *Description*.
 
@@ -78,7 +78,7 @@ You'll notice after saving the classification rule that it's characterized as a
 are designed to be extensible, and additional rule types can be added by your 
 developers.
 
-![Figure 2: Select the operating system and device type for your rule.](../../../../../images/mobile-device-editing-rule.png)
+![Figure 2: Select the operating system and device type for your rule.](../../../../../../images/mobile-device-editing-rule.png)
 
 Once you've created some mobile device families and added some rules to them,
 you'll be ready to set up some actions. The actions defined for a family

@@ -1,4 +1,4 @@
-# Creating Widget Pages from Templates
+# Creating Widget Pages from Templates [](id=creating-widget-pages-from-templates)
 
 Page templates provides a pre-configured page to reuse. Page Templates can take a couple different forms in @product-ver@. There are Widget Page templates, which consist of a portlet layout and configuration and Content 
 Page templates, which are constructed from Fragments. You can read about [Content Page Templates in this tutorial](/develop/tutorials/-/knowledge_base/7-1/building-content-page-templates).
@@ -67,7 +67,7 @@ To use your template to create a new page:
 Pages based on templates have one option that's not included in the  configuration for other pages - the ability to activate or deactivate inheriting
 changes from the page template.
 
-![Figure X: You can choose whether or not to inherit changes made to the page template.](../../../../../../images/automatic-application-page-template-changes.png)
+![Figure 2: You can choose whether or not to inherit changes made to the page template.](../../../../../../images/automatic-application-page-template-changes.png)
 
 Note that by default, when a site administrator creates pages based on a page
 template, any future changes to the template are automatically propagated to
@@ -86,7 +86,7 @@ Changes* selector does not appear.
 
 You can read more about staging in the[Staging Content for Publication tutorial](/discover/portal/-/knowledge_base/7-1/staging-content-for-publication).
 
-## Sharing Widget Page Templates
+## Sharing Widget Page Templates [](id=sharing-widget-page-templates)
 
 If you want to export a page that uses a page template to a different 
 environment (through a LAR file or remote publication), the template must be 
