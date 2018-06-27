@@ -19,7 +19,7 @@ to a `.config` file and copy the file to the `[Liferay-Home]/osgi/config` folder
 in each node. To export the configuration, select *Export* from the options icon
 ![Options](../../../images/icon-options.png).
 
-$$$ 
+$$$
 
 The Simple File System store uses this folder path format for storing documents:
 
