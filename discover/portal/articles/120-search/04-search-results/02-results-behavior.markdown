@@ -61,52 +61,70 @@ on an asset won't see it in the search results. A logged in User with the Site
 Administrator role will likely see more search results than a guest User to the
 site. 
 
+In the background, there are two rounds of permissions checks. Think of them as
+an initial permissions filtering and a final permissions filtering of results.
+They're both configurable.
+
+### Initial Permissions Checking
+
+The first round of search results permissions filtering adds filter clauses to
+the search query. This ensures that results come back pre-filtered, with only
+results the current user can view.
+
+This initial permission checking is configurable at *Control Panel* &rarr;
+*Configuration* &rarr; *System Settings* &rarr; *Search* &rarr; *Permission
+Checker*. It includes two system level settings to configure how search
+processes User permissions:
+
+1.  Ignore the first setting, Include Inherited Permissions: it's deprecated,
+    no longer used anywhere, and will be removed in a future release.
+
+2.  The second setting, Permissions Term Limit, limits the number of permission
+    search clauses added to the search query before this level of permission
+    checking is aborted. Permission checking then relies solely on the final
+    permission filtering described below.
+
+Why would you want to limit the number of permissions clauses in the search
+query? Performance. Too many search terms in a query can make the search engine
+timeout. That's bad user experience.
+
+### Final Permissions Checking
+
 Prior to presenting results in the UI, there's a final round of permission
-checking, referred to as *post filtering*. For example, the User searches for
-*liferay*, and the search engine returns all relevant forum posts. As the Search
-Portlet iterates through the list of relevant forum posts, it performs one last
-permission check of the post to ensure the User can view the post and the
-categories it exists within. If a matching forum post exists in a category the
-User doesn't have permission to view, it isn't displayed in the list of search
-results.
+checking. For example, the User searches for *liferay*, and the search engine
+returns all relevant forum posts. As the Search Results iterates through the
+list of relevant forum posts, it performs one last permission check of the post
+to ensure the User can view the post and the categories it exists within. If a
+matching forum post exists in a category the User doesn't have permission to
+view, it isn't displayed in the list of search results.
 
-Search permission checking behavior is configurable:
+This final round of permission checking is configurable at *Control Panel*
+&rarr; *Configuration* &rarr; *System Settings* &rarr; *Search* &rarr; *Default
+Search Result Permission Filter*. It includes two settings:
 
-1.  *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Search*
-    &rarr; *Default Search Result Permission Filter* includes two settings.
-
-    The first setting, Permission Filtered Search Result Accurate Count
-    Threshold, specifies the maximum number of search results to permission
-    filter before results are counted. A higher threshold increases count
-    accuracy, but decreases performance. Any value below the search results
+1.  The first setting, Permission Filtered Search Result Accurate Count
+    Threshold, specifies the maximum number of search results to
+    permissions-filter before results are counted. A higher threshold increases
+    count accuracy, but decreases performance. Since results in the currently
+    displayed page are always checked, any value below the search results
     pagination delta effectively disables this behavior.
 
-    The second setting, Search Query Result Window Limit, sets a limit to the
-    number of search results returned from the search engine.
-
-    Note that a high number in either of these settings will cause a decrase in
-    performance.
-
-2.  *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Search* &rarr;
-    *Permission Checker* includes two settings to configure how search processes
-    User permissions.
-
-    The first setting, Include Inherited Permissions, specifies whether
-    inherited permissions (from User Group or Organization membership) are
-    considered when permissions filtering search results.
-    <!-- Can we provide a case where this isn't desirable? -->
-
-    The second setting, Permissions Term Limit, limits the number of permission
-    search terms added to the search query. If exceeded, no permission search
-    terms are added. Instead, permission checking falls back to the search
-    permission filter.
-    <!-- Ripped from the system settings help text, do not understand. -->
+2.  The second setting, Search Query Result Window Limit, sets the maximum batch
+    size for each permission checking request. <!-- OR limits the number of
+    results to include in each permission checked request/response cycle to and
+    from the search engine-->. This is again impacted by pagination. For
+    example, if there are 100 results per page, and a User wants to jump all the
+    way to page 200 of the search results, all results between page one and 200
+    must be checked to ensure the User has permission. That's 20,000 results to
+    permissions check. Doing this in one trip to and form the search engine can
+    result in performance issues. Set the maximum batch size for each permission
+    checking request. 
 
 ## Search and Staging [](id=search-and-staging)
 
-@product@ supports the concept of
+With
 [staging](/discover/portal/-/knowledge_base/7-1/staging-content-for-publication),
-where content is first placed in a preview and testing environment before being
+content is first placed in a preview and testing environment before being
 published for consumption by end Users (on the live site). Content added to the
 search index is marked so that the search API can decipher whether an item is
 live or not. In the live version of the site, it's quite simple: only content
