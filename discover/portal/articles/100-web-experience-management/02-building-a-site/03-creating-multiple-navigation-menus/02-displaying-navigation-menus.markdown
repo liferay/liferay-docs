@@ -1,9 +1,9 @@
-# Displaying Navigation Menus
+# Displaying Navigation Menus [](id=displaying-navigation-menus)
 
 After you have created Navigation Menus, you can display them in different ways
 on your site. You may want to configure different menus and display styles for things like a main menu, sidebar, and footer menu all on one pages.
 
-## The Navigation Menu Widget
+## The Navigation Menu Widget [](id=the-navigation-menu-widget)
 
 With the Navigation Menu widget, you can add navigation all over your site, but 
 you probably want to be pretty judicious about how you do that. You can place 
@@ -25,9 +25,9 @@ From here there are three main categories that you can configure.
 
 -  What level of navigation to display
 
-![Figure X: Configuring the Navigation Menu Widget.](../../../../images/nav-widget-configuration.png)
+![Figure 1: Configuring the Navigation Menu Widget.](../../../../images/nav-widget-configuration.png)
 
-### Choosing a Navigation Menu
+### Choosing a Navigation Menu [](id=choosing-a-navigation-menu)
 
 The Navigation Menu Widget has two ways to select a menu. You can choose to 
 *Select Navigation* or *Choose Menu*.
@@ -40,7 +40,7 @@ The Navigation Menu Widget has two ways to select a menu. You can choose to
     
 Once you select a menu, you need to choose how to display it.
 
-### Display Template
+### Display Template [](id=display-template)
 
 The *Display Template* option lets you select an [Application Display Template](/discover/portal/-/knowledge_base/7-0/application-display-templates) 
 which has been predefined for Navigation Menus. There ten included by default:
@@ -63,7 +63,7 @@ which has been predefined for Navigation Menus. There ten included by default:
 
 You can also add your own custom templates.
 
-### Menu Items to Show
+### Menu Items to Show [](id=menu-items-to-show)
 
 The *Menu Items to Show* section provided options to configure which pages at 
 what level from the menu are displayed in the widget. It provides options for 
@@ -80,8 +80,8 @@ sublevels.
     navigation will reveal navigation levels one at a time automatically, or 
     will just reveal all the levels all at once.
     
-## Using Navigation Menus
+## Using Navigation Menus [](id=using-navigation-menus)
 
 Now you can see how there are a variety of customizations and configurations available for navigation menus that you can implement for your site.
 
-![Figure X: Demonstrating multiple Navigation Menus with different menus and configurations.](../../../../images/navigation-menu-examples.png)
+![Figure 2: Demonstrating multiple Navigation Menus with different menus and configurations.](../../../../images/navigation-menu-examples.png)
