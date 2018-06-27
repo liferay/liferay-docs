@@ -28,7 +28,7 @@ $$$
 scope so that it is available to all Sites. This structure and template are 
 used automatically if a custom structure and template are not added.
 
-## Structure Fields
+## Structure Fields [](id=structure-fields)
 
 Now, create a new Structure:
 

@@ -4,7 +4,7 @@ You can create simple articles using Liferay's Web Content editor, but when you
 scrolled past all the options, you might get the notion that the Web
 Content editor is capable of creating more than a plain text article.
 
-## Basic Editor Functions
+## Basic Editor Functions [](id=basic-editor-functions)
 
 To explore these options, go back into the article you just created and make it 
 better:
@@ -38,7 +38,7 @@ it, controls for inserting an image, table, or horizontal line
      changes specifically for your article.
      
      
-![Figure 3: You can access the image editor through the item selector window.](../../../../images/image-editor-preview-window.png)
+![Figure 1: You can access the image editor through the item selector window.](../../../../images/image-editor-preview-window.png)
 
 After adding an image to the web content article, click it to bring up controls
 ([![Image Controls](../../../../images/icon-wysiwyg-image-controls.png)) for
@@ -46,7 +46,7 @@ formatting it. You can also make it a link and define the `alt` HTML attribute.
 
 You can also insert a table into your article. Click the table to access edit controls. They let you designate the first row and/or column as table headers, and also enable you to add rows, columns, and cells. You can also insert a horizontal line as a separator between between sections.
 
-## Editing the Article Source
+## Editing the Article Source [](id=editing-the-article-source)
 
 If you need to work directly with the HTML, you can switch to source view. 
 
@@ -63,7 +63,7 @@ In HTML mode, click on the *Enlarge* icon
 shows your HTML code on the left and a preview pane on the right. You can 
 arrange the HTML and preview panes horizonally or vertically.
 
-![Figure 4: You can view how your HTML would render by using the preview pane.](../../../../images/web-content-editor-html.png)
+![Figure 2: You can view how your HTML would render by using the preview pane.](../../../../images/web-content-editor-html.png)
 
 Every 25 seconds, the entry you're creating is automatically saved as a draft.
 Because of this, you never have to worry about losing your work if something
@@ -74,12 +74,12 @@ Add a few short sentences announcing the grand opening of the Lunar Resort. The
 content can be localized in whatever language you want. You'll learn more about
 localizing your content later on.
 
-## Web Content Options
+## Web Content Options [](id=web-content-options)
 
 The bottom menu of the New Web Content form provides options for customizing
 your web content.
 
-![Figure 7: New web content can be customized in various ways using the menu located below the editor.](../../../../images/wcm-menu.png)
+![Figure 3: New web content can be customized in various ways using the menu located below the editor.](../../../../images/wcm-menu.png)
 
 **Structure and Template:** lets you customize the web content article's
 structure and template. To learn more about web content structures and
@@ -120,7 +120,7 @@ more about defining content relationships and publishing links to those related
 assets, visit the [Defining Content Relationships](/discover/portal/-/knowledge_base/7-1/defining-content-relationships)
 section.
 
-![Figure 8: This blog entry has links to three Related Assets: an article and a 
+![Figure 4: This blog entry has links to three Related Assets: an article and a 
 message board thread.](../../../../images/related-assets-link.png)
 
 **Permissions:** customizes who has access to the content. By default, content

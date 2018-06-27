@@ -4,7 +4,7 @@ Publishing content won't always be a neat and simply process. Here are some
 important options and tools that you can use to enhance your content and user
 experience.
 
-## Localizing Content
+## Localizing Content [](id=localizing-content)
 
 When you create a new piece of web content, you have the ability to choose a
 default language. First, you'll need to change the system configuration to 
@@ -33,7 +33,7 @@ When you select a language, all of the fields in the article will switch to the
 new language. To create the new translation, fill in the fields in the selected 
 language and publish the article. 
 
-![Figure 11: Adding a translation to an 
+![Figure 1: Adding a translation to an 
 article.](../../../../images/web-content-translation.png)
 
 You can modify the language translation list by inserting `locales.enabled=`
@@ -60,7 +60,7 @@ can make sure those fields aren't listed as localizable. When you follow the
 steps above to localize content, only fields within the structure that had the
 *Localizable* box checked appear within the translation window.
 
-## Xuggler for Embedding Video
+## Xuggler for Embedding Video [](id=xuggler-for-embedding-video)
 
 Xuggler is a tool which generates video previews and makes it possible to embed
 videos from your Documents and Media library in web content and elsewhere on the
@@ -80,9 +80,9 @@ site. To enable Xuggler:
 Once Xuggler has been installed and enabled, you can embed a video or audio 
 file in a web content article the same way you added images previously. 
 
-![Figure 5: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../../../images/web-content-audio-video.png)
+![Figure 2: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../../../images/web-content-audio-video.png)
 
-## XML Format Downloads
+## XML Format Downloads [](id=xml-format-downloads)
 
 @product@ provides tools like the [Resource Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-your-themes) and Site Initiators which can be deployed to build a site almost 
 instantly. To import Web Content like this, you need to have it individually
@@ -98,9 +98,9 @@ exported in XML format. To export the content:
 This displays the raw XML source of the article. You can copy this content to 
 save into an XML file locally.
 
-![Figure 6: The *View Source* button is available from the *Options* button.](../../../../images/web-content-download.png)
+![Figure 3: The *View Source* button is available from the *Options* button.](../../../../images/web-content-download.png)
 
-## Subscribing to Content
+## Subscribing to Content [](id=subscribing-to-content)
 
 An administrator or web content writer can subscribe to an article or folder to follow changes being made to it. To do this:
 
@@ -113,7 +113,7 @@ An administrator or web content writer can subscribe to an article or folder to 
 Anytime an asset that you follow is modified, you'll receive an email notifying 
 you of the change.
 
-![Figure 16: Click the Subscribe icon in the web content entity's *Information* menu to begin receiving web content notifications.](../../../../images/web-content-subscribe.png)
+![Figure 4: Click the Subscribe icon in the web content entity's *Information* menu to begin receiving web content notifications.](../../../../images/web-content-subscribe.png)
 
 That's pretty much all there is to basic content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of

@@ -1,4 +1,4 @@
-# Configuring Structure Fields
+# Configuring Structure Fields [](id=configuring-structure-fields)
 
 There are a number of options available for configuring each structure field. 
 Some of them relate to how the fields are displayed or how users interact with
@@ -90,7 +90,7 @@ To edit a structure's default values:
 
     This form allows you to manage the structure settings.
 
-![Figure 3: You can edit default values via the *Actions* button of the Manage Structures interface.](../../../../../images/structure-actions.png)
+![Figure 1: You can edit default values via the *Actions* button of the Manage Structures interface.](../../../../../images/structure-actions.png)
 
 Every new web content you create with this structure is preloaded with the
 data you inserted. Next, you'll learn about assigning permissions.

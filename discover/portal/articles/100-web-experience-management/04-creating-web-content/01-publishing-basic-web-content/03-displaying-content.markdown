@@ -3,7 +3,7 @@
 In the previous sections you created and edited an article. Now it's time to 
 display it. 
 
-## Publishing Content
+## Publishing Content [](id=publishing-content)
 
 1.  Go to the *Welcome* page of the Lunar Resort Site.
 
@@ -13,7 +13,7 @@ display it.
 
 3.  Find the *Web Content Display* and add it to the page.
 
-![Figure 12: Add the Web Content Display app to a page to begin displaying your new web content article.](../../../../images/add-web-content-display.png)
+![Figure 1: Add the Web Content Display app to a page to begin displaying your new web content article.](../../../../images/add-web-content-display.png)
 
 You can drag a widget to the position on the page where you want your content 
 to appear. You can have as many Web Content Display widgets on a page as you 
@@ -49,7 +49,7 @@ two entities have the following options to choose from, by default:
 on the page for a particular language, you can select the translation of your 
 content that goes with your locale.
 
-![Figure 13: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../../../images/web-content-choosing-web-content.png)
+![Figure 2: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../../../images/web-content-choosing-web-content.png)
 
 If you have enabled OpenOffice.org integration with your Liferay instance, you
 can also enable document conversion for your content. This gives your users the
@@ -85,7 +85,7 @@ they're all implemented as simple selector buttons to be enabled or disabled at
 need. Once you've selected the features you want to include in your Web Content
 Display spp, click the *Save* and close the configuration window.
 
-## Editing Published Content
+## Editing Published Content [](id=editing-published-content)
 
 If you need to edit published content, you can do it directly from the Web 
 Content Display app or from Site Administration. To edit it from
@@ -101,7 +101,7 @@ the Web Content Display app:
     *Edit Template* launches the template editor for the web content article's 
     template.
 
-![Figure 14: You can select and edit an article, or edit its template directly from the Web Content Display app.](../../../../images/web-content-display-icons.png)
+![Figure 3: You can select and edit an article, or edit its template directly from the Web Content Display app.](../../../../images/web-content-display-icons.png)
 
 If you edit the article from Site Administration, you can also view the article's evolution.
 
@@ -123,7 +123,7 @@ If you edit the article from Site Administration, you can also view the article'
 
     The tool provides color coded highlighting to emphasize additions and deletions between the two articles.
 
-![Figure 15: Comparing web content articles is a great feature to use during the Workflow process.](../../../../images/web-content-diff-feature.png)
+![Figure 4: Comparing web content articles is a great feature to use during the Workflow process.](../../../../images/web-content-diff-feature.png)
 
 When you publish updates to a web content article that's already being displayed
 the content is immediately updated unless you have a workflow enabled, which is discussed in greater detail in

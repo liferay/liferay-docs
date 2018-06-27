@@ -61,4 +61,4 @@ To finish it up, all you need to is add some content:
     
 3. Insert some content and publish!
 
-![Figure 5: The the Lunar Resort News Article with some content added in.](../../../../../images/web-content-structures-templates-completed.png)
+![Figure 1: The the Lunar Resort News Article with some content added in.](../../../../../images/web-content-structures-templates-completed.png)

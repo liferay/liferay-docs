@@ -1,4 +1,4 @@
-# Introduction to Web Content [](id=creating-web-content)
+# Introduction to Web Content [](id=introduction-web-content)
 
 @product@'s Web Content Management (WCM) system allows non-technical users to
 publish content to the web without having advanced knowledge of web technology

@@ -1,4 +1,4 @@
-# Embedding Widgets in Templates
+# Embedding Widgets in Templates [](id=embedding-widgets-in-templates)
 
 You can also embed widgets in web content templates. Core apps and custom apps, 
 whether instanceable or non-instanceable can be embedded in web content 
@@ -39,5 +39,5 @@ Below are examples of embedding template in FreeMarker and Velocity:
 
 The *Template Key* can be found when editing a previously published template.
 
-![Figure x: You can find the Template Key when view the Edit page for a template..](../../../../../images/find-template-key.png)
+![Figure 1: You can find the Template Key when view the Edit page for a template..](../../../../../images/find-template-key.png)
 

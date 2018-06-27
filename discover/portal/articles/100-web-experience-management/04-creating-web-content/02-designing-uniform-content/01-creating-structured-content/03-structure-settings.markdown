@@ -1,4 +1,4 @@
-# Structure Settings
+# Structure Settings [](id=structure-settings)
 
 After you have created a structure and configured its fields, there is
 additional configuration that you should be aware of including permissions and
@@ -14,12 +14,12 @@ be able to create structures and templates. Users, of course, should be able to
 view structures. The *View* permission enables them to make use of the
 structures to create content.
 
-![Figure 4: You're able to assign structure permissions via the *Actions* button.](../../../../../images/web-content-structure-permissions.png)
+![Figure 1: You're able to assign structure permissions via the *Actions* button.](../../../../../images/web-content-structure-permissions.png)
 
 You can grant or deny permissions based on Roles and this is the recommended way
 to handle permissions for structures.
 
-### WebDAV URL
+### WebDAV URL [](id=webdav-url)
 
 The WebDAV URL feature is available for web content structures and templates so
 users could upload and organize resources from both a web interface and the file
