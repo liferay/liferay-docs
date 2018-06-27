@@ -5,24 +5,13 @@ When you build services with Service Builder, all remote-enabled services
 (i.e., `service.xml` entities with the property `remote-service="true"`) are
 exposed as JSON web services. When each `*Service.java` interface is created
 for a remote-enabled service, the `@JSONWebService` annotation is added to that
-interface at the class level. All of the public methods of that interface
-become registered and available as JSON web services.
+interface at the class level. All the public methods of that interface become
+registered and available as JSON web services.
 
-The `*Service.java` interface source file should never be modified by the user.
-If you need more control over its methods (e.g., if you need to hide some
-methods while exposing others), you can configure the `*ServiceImpl` class. When
-the service implementation class (`*ServiceImpl`) is annotated with the
-`@JSONWebService` annotation, the service interface is ignored and the service
-implementation class is used for configuration in its place. In other words,
-`@JSONWebService` annotations in the service implementation override any JSON
-web service configuration in the service interface.
-
-That's it! Liferay scans all OSGi bundles registered with the `@Component` 
-annotation or in a `*BundleActivator` class for remote services. Each class that 
-uses the `@JSONWebService` annotation is examined and its methods become exposed 
-via the JSON web services API. As explained previously, the `*ServiceImpl` 
-configuration overrides the `*Service` interface configuration during 
-registration. 
+Liferay scans all OSGi bundles registered with the `@Component` annotation or in
+a `*BundleActivator` class for remote services. Each class that uses the
+`@JSONWebService` annotation is examined and its methods become exposed via the
+JSON web services API. 
 
 +$$$
 
@@ -39,24 +28,23 @@ Liferay's remote services are exposed as JSON web services out-of-the-box.
 
 ## Registering an App's JSON Web Services
 
-As an example, say you have an app named `SupraSurf` that has some services, and 
-you decide to expose them as remote services. After enabling the 
-`remote-service` attribute on its `SurfBoard` entity, you rebuild the services. 
-Service Builder regenerates the `SurfBoardService` interface, adding the
-`@JSONWebService` annotation to it. This annotation tells Liferay that the 
-interface's public methods are to be exposed as JSON web services, making them
-a part of the app's JSON API. Start up your Liferay instance if it isn't 
-running, and then deploy your app to Liferay. 
+For example, say your app named `SupraSurf` has some services you want exposed
+as remote services. After enabling the `remote-service` attribute on its
+`SurfBoard` entity, you rebuild the services. Service Builder regenerates the
+`SurfBoardService` interface, adding the `@JSONWebService` annotation to it.
+This annotation tells Liferay that the interface's public methods are to be
+exposed as JSON web services, making them a part of the app's JSON API. Start 
+your Liferay instance, and then deploy your app to Liferay. 
 
 To get some feedback from your Liferay instance on registering your 
 application's services, configure the instance to log the application's 
-informational messages (i.e., its `INFO ...` messages). See the tutorials on 
-Liferay's logging system for details. 
-<!-- Link to logging system tutorials once they exist -->
+informational messages (i.e., its `INFO ...` messages). See the tutorials on
+Liferay's 
+[logging system](/discover/portal/-/knowledge_base/7-1/server-administration#log-levels) 
+for details. 
 
 To test Liferay's JSON web service registration process, add a simple method to
-your app's services. Edit your `*ServiceImpl` class and add the following
-method:
+your app's services. Edit your `*ServiceImpl` class and add this method:
 
     public String helloWorld(String worldName) {
         return "Hello world: " + worldName;
@@ -64,11 +52,11 @@ method:
 
 Rebuild the services and re-deploy your app's modules. You can now invoke this 
 service method via JSON. For instructions on doing this, see the JSON invocation 
-tutorials listed in 
-[this section of tutorials](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services). 
+tutorials listed 
+[here](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services). 
 
-This same mechanism registers Liferay's own services. They're conveniently 
-enabled by default, so you don't have to configure them. 
+This same mechanism registers Liferay's own services. They're enabled by
+default, so you don't have to configure them. 
 
 Next, you'll learn how to form a mapped URL for the remote service so you can
 predictably access it. 
@@ -82,11 +70,11 @@ convention below:
 
 Look at the last three bracketed items more closely: 
 
-- `context-name` is the app's context name (e.g., `suprasurf` in the previous 
-  example). Its value is specified via the `json.web.service.context.path` 
-  property in the `@OSGiBeanProperties` annotation. For example, for Liferay web 
-  content articles, Liferay's `JournalArticleService` class includes the 
-  following annotation (among others): 
+- `context-name` is the app's context name (e.g., `suprasurf`). Its value is
+  specified via the `json.web.service.context.path` 
+  property in the `@OSGiBeanProperties` annotation. For example, for Liferay web
+  content articles, Liferay's `JournalArticleService` class includes this
+  annotation (among others): 
 
         @OSGiBeanProperties(property =  {
             "json.web.service.context.name=journal", "json.web.service.context.path=JournalArticle"}, service = JournalArticleService.class)
@@ -102,7 +90,7 @@ The following example demonstrates these naming conventions by mapping a service
 method's URL using the naming conventions both on a custom service and on a 
 Liferay service.
 
-For the custom service method, the URL looks like:
+For the custom service method, the URL looks like
 
     http://localhost:8080/api/jsonws/suprasurf.surfboard/hello-world
 
@@ -118,18 +106,19 @@ Here's that Liferay service method's URL:
     http://localhost:8080/api/jsonws/user/get-user-by-id
 
 Each service method is bound to one HTTP method type. Any method with a name
-starting with `get`, `is`, or `has` is assumed to be a read-only method and is
-mapped as a *GET HTTP* method by default. All other methods are mapped as *POST
-HTTP* methods. 
+starting with `get`, `is`, or `has` is a read-only method and is mapped as
+a *GET HTTP* method by default. All other methods are mapped as *POST HTTP*
+methods. 
 
-Recall that you can see a list of your Liferay instance's JSON web services at 
-[http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws). 
-When you select a method on this page, the part of its HTTP method URL that 
-follows `http://[server]:[port]/api/jsonws` is listed at the top of the screen. 
+In the list of JSON web services at
+[http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws), when you
+select a method, the part of its HTTP method URL that follows
+`http://[server]:[port]/api/jsonws` appears at the top of the screen. 
 
-Conveniently, remote service requests can leverage the authentication 
-credentials associated with the user's current Liferay session. Next, you'll 
-learn how to prevent a method from being exposed as a service. 
+Conveniently, remote service requests can use authentication credentials
+associated with the user's current session. 
+
+Next, you'll learn how to prevent a method from being exposed as a service. 
 
 ## Ignoring a Method
 
@@ -161,14 +150,14 @@ name is ignored:
     @JSONWebService("/add-something-very-specific")
     public boolean addBoard(
 
-Similarly, you can change the class name part of the URL, by setting the value
+Similarly, you can change the class name part of the URL by setting the value
 in a class-level annotation:
 
     @JSONWebService("sbs")
     public class SurfBoardServiceImpl extends SurfBoardServiceBaseImpl {
 
-This maps all of the service's methods to a URL class name `sbs` instead
-of the default class name `surfboard`.
+This maps all the service's methods to a URL class name `sbs` instead of the
+default class name `surfboard`.
 
 Next, you'll learn a different approach to exposing your methods via manual 
 registration.
@@ -177,10 +166,10 @@ registration.
 
 Up to now, it's assumed that you want to expose most of your service methods,
 while hiding some specific methods (the *blacklist* approach). Sometimes, 
-however, you want the opposite: to explicitly specify only the methods you want 
-to expose (the *whitelist* approach). This is possible by specifying *manual 
-mode* on the class-level annotation. Then it's up to you to annotate only those 
-methods you want to expose. For example:
+however, you want the opposite: to explicitly specify only the methods you want
+to expose (the *whitelist* approach). This is possible by specifying
+a class-level annotation with *manual mode*. Then it's up to you to annotate
+only those methods you want to expose: 
 
     @JSONWebService(mode = JSONWebServiceMode.MANUAL)
     public class SurfBoardServiceImpl extends SurfBoardServiceBaseImpl{
@@ -189,8 +178,8 @@ methods you want to expose. For example:
         public boolean addBoard(
 
 Now only the `addBoard` method and any other method annotated with 
-`@JSONWebService` are part of the JSON Web Service API; all of this service's 
-other methods are excluded from the API. 
+`@JSONWebService` are part of the JSON Web Service API; all other methods are
+excluded from the API. 
 
 ## Related Topics
 
