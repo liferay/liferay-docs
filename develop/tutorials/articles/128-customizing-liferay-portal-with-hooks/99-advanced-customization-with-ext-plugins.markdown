@@ -57,8 +57,8 @@ You can also create an Ext plugin in a Liferay Maven project.
 This tutorial covers how to create an Ext plugin in a Plugins SDK project using 
 Ant. This is shown from both Liferay IDE and the terminal. To learn how to 
 create Liferay Maven projects, see the tutorial 
-[Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide-lp-6-2-develop-tutorial) 
-or the tutorial [Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin-lp-6-2-develop-tutorial). 
+[Creating Liferay Maven plugins from IDE](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-liferay-ide) 
+or the tutorial [Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/creating-liferay-maven-plugins-from-the-command-lin). 
 
 First, follow along with creating an Ext plugin using Liferay IDE!
 
