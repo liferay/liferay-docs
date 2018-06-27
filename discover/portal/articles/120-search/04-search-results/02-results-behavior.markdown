@@ -61,15 +61,18 @@ on an asset won't see it in the search results. A logged in User with the Site
 Administrator role will likely see more search results than a guest User to the
 site. 
 
-In the background, there are two rounds of permissions checks. Think of them as
-an initial permissions filtering and a final permissions filtering of results.
-They're both configurable.
+In the background, there are two rounds of permissions checks. The first
+permissions check happens in the search engine's index. This is faster than
+leaning on the databse permissions information, but occasionally the search
+index can have stale permissions information. To ensure the search engine's
+index has correct, up-to-date permissions information, a second, last-second
+permissions check is performed on the results prior to their display.
 
 ### Initial Permissions Checking
 
 The first round of search results permissions filtering adds filter clauses to
-the search query. This ensures that results come back pre-filtered, with only
-results the current user can view.
+the search query. This ensures that results come back from the search engine
+pre-filtered, with only results the current user can view.
 
 This initial permission checking is configurable at *Control Panel* &rarr;
 *Configuration* &rarr; *System Settings* &rarr; *Search* &rarr; *Permission
@@ -86,7 +89,7 @@ processes User permissions:
 
 Why would you want to limit the number of permissions clauses in the search
 query? Performance. Too many search terms in a query can make the search engine
-timeout. That's bad user experience.
+time out.
 
 ### Final Permissions Checking
 
