@@ -10,7 +10,7 @@ they should. And sometimes, content is published that should never have seen the
 light of day.
 
 <div class="video-link">
-<img alt="video thumbnail" src="../../../images/vid-struc-temp-thumbnail.png" />
+<img alt="video thumbnail" src="../../../../images/vid-struc-temp-thumbnail.png" />
 </div>
 
 Thankfully, Liferay WCM helps you handle all of those situations. You can use

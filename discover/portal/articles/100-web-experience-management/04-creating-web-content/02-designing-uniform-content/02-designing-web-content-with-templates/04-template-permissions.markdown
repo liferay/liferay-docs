@@ -8,7 +8,7 @@ scripts. To determine who views and interacts with the template:
 
 1.  Go to the *Templates* tab.
 
-2.  Click the Action* button (![Actions](../../../images/icon-actions.png))
+2.  Click the Action* button (![Actions](../../../../../images/icon-actions.png))
     for a template that you created and select *Permissions*.
 
 You can grant or deny permissions based on Roles. For instance, you may create a

@@ -17,7 +17,7 @@ If the variable name doesn't give you sufficient information on the variable's
 functionality, you can hover your pointer over it for a more detailed 
 description.
 
-![Figure 6: You can hover your pointer over a variable for a more detailed description.](../../../images/web-content-templates-create.png)
+![Figure 6: You can hover your pointer over a variable for a more detailed description.](../../../../../images/web-content-templates-create.png)
 
 The interactive template editor is available for the FreeMarker, Velocity, and
 XSL languages. Depending on which language you select, the variable content
