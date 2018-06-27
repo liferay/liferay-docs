@@ -1,4 +1,4 @@
-# Catalog Rules
+# Catalog Rules [](id=catalog-rules)
 
 Catalog Rules manage the catalog's visibility. They work with 
 [user segments](/web/liferay-emporio/documentation/-/knowledge_base/1-0/user-segmentation)
