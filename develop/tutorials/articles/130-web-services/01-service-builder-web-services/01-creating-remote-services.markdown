@@ -125,7 +125,7 @@ Builder project in a Liferay Workspace, do the following in the workspace's
 
         repositories {
             maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
 
@@ -158,7 +158,7 @@ Builder project in a Liferay Workspace, do the following in the workspace's
 
             repositories {
                 maven {
-                    url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                    url "https://repository-cdn.liferay.com/nexus/content/groups/public"
                 }
             }
         }
@@ -200,7 +200,7 @@ the project:
 
         repositories {
             maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
     }

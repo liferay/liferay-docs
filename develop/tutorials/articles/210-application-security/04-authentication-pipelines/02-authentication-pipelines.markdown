@@ -299,7 +299,7 @@ compile time, which is when `build.gradle` is running:
             mavenLocal()
 
             maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
     }
@@ -317,7 +317,7 @@ compile time, which is when `build.gradle` is running:
         mavenLocal()
 
         maven {
-            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+            url "https://repository-cdn.liferay.com/nexus/content/groups/public"
         }
     }
 
