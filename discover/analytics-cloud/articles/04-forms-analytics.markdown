@@ -32,19 +32,27 @@ SCREENSHOT
 
 ### Submissions
 
-Submissions is a daily count of the number of times the Submit button was
-clicked on a Form over the selected time period. It's the best metric for
-judging a form's effectiveness, because that's why the form was created in the
-first place: to collect data entered into the form. If the Submit button isn't
-clicked, you don't get the data you were after.
+Submissions counts the number of times the Submit button was clicked on a Form.
+It's the gold standard metric for a form, because that''s why the form was
+created in the first place: to collect data entered into the form. If the Submit
+button isn't clicked, you don't get the data you were after.
+
+The Submissions trend line shows the number of times the Submit button was
+clicked each day over the selected time period. 
 
 ### Views
 
 Views is a common metric among all Assets (and Pages).
 
-Useful with the time period filter, Views is the daily number of views for a
-Form in a given period of time. <!-- are there mising details we should provide
-on exactly how a View is calculated for an asset? -->
+Useful with the time period filter, Views is the number of views for a Form in a
+given period of time. It's not the same as the number of visitors, because it
+doesn't try to count only unique IP addresses. So over the last 30 days, one
+visitor (IP address) could come back to the Page 100 times. That means there are
+100 Page Views, but only one visitor (assuming they used the same device to
+access the Page each time.  However, a unique view won't be logged for a single
+user unless at least 30 minutes of inactivity <!-- need info on whether 30
+minutes is accurate and that this is how views are calculated--> on the Page
+passes before the user interacts with the Page again.
 
 SCREENSHOT
 
