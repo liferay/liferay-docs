@@ -11,7 +11,7 @@ The top-level files/folder of a Liferay (Gradle) Workspace are outlined below:
   files serve as your global configuration files for all @product@ servers and
   projects residing in your workspace. To learn more about using the `configs`
   folder, see the
-  [Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-modules)
+  [Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
   section.
 - `gradle`: holds the Gradle Wrapper used by your workspace.
 - `modules`: holds your custom modules.
@@ -61,7 +61,7 @@ of these properties.
 
 **Note:** Liferay Workspace provides many subprojects for you behind the scenes,
 which hides some complexities of Gradle. You can learn more about this in the
-[Building Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#building-modules)
+[Building Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#building-projects)
 section.
 
 $$$
@@ -130,7 +130,7 @@ Your distribution file is available from the workspace's `/build` folder.
 
 **Note:** You can define different environments for your Liferay bundle for
 easy testing. You can learn more about this in the
-[Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-modules)
+[Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
 section.
 
 $$$

@@ -41,7 +41,8 @@ Some production environments do not have the necessary database permissions for
 3.  Once the database is created, remove the permissions for creating tables and
     dropping tables from the @product@ database user.
 
-See the [database server and new database instructions](/discover/deployment/-/knowledge_base/7-1/preparing-for-install#installation)
+See the
+[database server and new database instructions](/discover/deployment/-/knowledge_base/7-1/preparing-for-install#step-1-choose-a-database-server-and-create-a-new-database)
 for more information. Note that many sophisticated
 @product@ apps---not just the Marketplace app---require new tables when
 deployed. If your environment restricts database access, you may need to repeat

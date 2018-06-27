@@ -18,7 +18,7 @@ To use Liferay's Dynamic Query API, you need to create a finder implementation
 for your model entity. You can
 [define model entities in `service.xml`](/develop/tutorials/-/knowledge_base/7-1/defining-an-object-relational-map-with-service-builder)
 and
-[run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
+[run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
 to generate model, persistence, and service layers for your application. This
 tutorial assumes that you're creating a Liferay application consisting of a
 service module, an API module, and a web module. Once you've used Service

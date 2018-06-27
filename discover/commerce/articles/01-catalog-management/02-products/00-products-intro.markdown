@@ -97,7 +97,7 @@ View* (</>) button on the right to edit the html directly.
 
 **Friendly URL**: This is the URL for the product page. It auto-fills but can be
 changed. If you create a product display page (see
-[configuration](/web/liferay-emporio/documentation/-/knowledge_base/7-1/configuration#display-page)),
+[configuration](/web/liferay-emporio/documentation/-/knowledge_base/1-0/configuration#display-page)),
 you establish a relationship between the product, the page, and the URL entered
 in this field.
 
