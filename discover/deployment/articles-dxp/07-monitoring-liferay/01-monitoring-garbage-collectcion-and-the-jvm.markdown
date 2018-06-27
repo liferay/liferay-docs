@@ -34,20 +34,19 @@ performance.
 
 $$$
 
-To enable JMX connections, add the following configuration to your application
-server's JVM arguments:
+To enable JMX connections, add these JVM arguments:
 
     -Dcom.sun.management.jmxremote=true
     -Dcom.sun.management.jmxremote.port=5000
     -Dcom.sun.management.jmxremote.authenticate=false
     -Dcom.sun.management.jmxremote.ssl=false
 
-![Figure 2: VisualVM lets you monitor using Java Management Extensions.](../../images-dxp/visual-vm-jmx.png)
+![Figure 2: VisualVM monitors the JVM using Java Management Extensions.](../../images-dxp/visual-vm-jmx.png)
 
 ## Garbage Collector Verbose Logging [](id=garbage-collector-verbose-logging)
 
-Add the following configuration to your JVM arguments to activate verbose
-logging for the JVM garbage collector.
+Add these JVM arguments to activate verbose logging for the JVM garbage
+collector.
 
     -verbose:gc -Xloggc:/tmp/liferaygc1.log -XX:+PrintGCDetails 
     -XX:+PrintGCCause -XX:+PrintGCApplicationConcurrentTime 
@@ -55,9 +54,11 @@ logging for the JVM garbage collector.
 
 Examining these logs helps you tune the JVM properly. 
 
-**Note:** Adding these JVM arguments generates a heap dump if an `OutOfMemoryError` occurs. The dump is written to the heap dump path specified. Specify the path to use:
+**Note:** Adding these JVM arguments generates a heap dump if an
+`OutOfMemoryError` occurs. The dump is written to the heap dump path specified.
+Specify the path to use:
 
     -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/heap/dump/path/
 
-Now you can monitor garbage collection and the JVM and tune them for top
+Now you can monitor garbage collection in the JVM and tune it for top
 performance. 
