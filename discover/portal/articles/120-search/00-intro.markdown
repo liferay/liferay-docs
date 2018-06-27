@@ -1,8 +1,8 @@
 # Search [](id=search)
 
-@product@ sites often feature lots of content split over lots of asset types.
-Web content articles, documents and media files, and blogs entries are just a few
-examples. Most content types are *assets*. Under the hood, assets use the
+Sites often feature lots of content split over lots of asset types.  Web content
+articles, documents and media files, and blogs entries are just a few examples.
+Most content types are *assets*. Under the hood, assets use the
 [Asset API](/develop/tutorials/-/knowledge_base/7-1/asset-framework) 
 and have an 
 [Indexer class](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search#indexers).
@@ -18,7 +18,7 @@ for testing and development purposes. Production environments must install
 a separate, remote Elasticsearch server (or even better, cluster of servers).
 For information on how to set up Elasticsearch for @product@ in production, read
 the 
- [deployment guide](/discover/deployment/-/knowledge_base/7-1/installing-a-search-engine).
+[deployment guide](/discover/deployment/-/knowledge_base/7-1/installing-a-search-engine).
 
 ## Search Features [](id=product-search-features)
 
@@ -31,7 +31,7 @@ in every page by default), enter a term, and click *Enter*.
 
 **Search Modularization:** If you're upgrading from an earlier @product@
 version, you'll expect the embedded search bar to be the entry into the Search
-application. However, the search functionality is modularized now, and the
+application.  However, the search functionality is modularized now, and the
 Search Bar is a standalone application. See the 
 [article on new search features](/discover/portal/-/knowledge_base/7-1/whats-new-with-search) 
 for more information.
