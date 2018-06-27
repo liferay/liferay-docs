@@ -1,9 +1,9 @@
 # Java Virtual Machine Tuning [](id=java-virtual-machine-tuning)
 
 Java Virtual Machine (JVM) tuning primarily focuses on adjusting the garbage
-collector and the Java memory heap. They optimize application throughput. We
-used Oracle's 1.8 JVM for the reference architecture. You may choose other
-supported JVM versions and implementations. Please consult the
+collector and the Java memory heap. We used Oracle's 1.8 JVM for the reference
+architecture. You may choose other supported JVM versions and implementations.
+Please consult the 
 [Liferay DXP Compatibility Matrix](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix)
 for additional compatible JVMs.
 
@@ -69,8 +69,7 @@ settings:
     -XX:MaxMetaspaceSize=512m -XX:SurvivorRatio=6 -XX:TargetSurvivorRatio=9 -XX:MaxTenuringThreshold=15
 
 On systems that require large heap sizes (e.g., above 4GB), it may be beneficial
-to use large page sizes. You may activate large page sizes using the following
-JVM options:
+to use large page sizes. You can activate large page sizes like this:
 
     -XX:+UseLargePages -XX:LargePageSizeInBytes=256m
  
@@ -78,8 +77,8 @@ You may choose to specify different page sizes based on your application
 profile.
 
 **Note:** To use large pages in the JVM, you must configure your underlying
-operation system to activate them. In Linux, run `cat /proc/meminfo` and look
-at "huge page" items. 
+operating system to activate them. In Linux, run `cat /proc/meminfo` and look at
+"huge page" items. 
 
 +$$$
 
@@ -100,7 +99,7 @@ environment:
 Please consult your JVM documentation for additional details on advanced JVM
 options.
 
-Combining the above recommendations together, we have this configuration:
+Combining the above recommendations together, makes this configuration:
 
     -server -XX:NewSize=1024m -XX:MaxNewSize=1024m -Xms4096m
     -Xmx4096m -XX:MetaspaceSize=512m -XX:MaxMetaspaceSize=512m
@@ -124,7 +123,7 @@ including number of current users and transaction speed.
 $$$
 
 Monitor the garbage collector statistics to ensure your environment has
-sufficient allocations for metaspace and also for the survivor spaces. Simply
-using the guideline numbers above may result in dangerous runtime scenarios like
-out of memory failures. Improperly tuned survivor spaces also lead to wasted
-heap space.
+sufficient allocations for metaspace and also for the survivor spaces. Using the
+configuration above in the wrong environment could result in dangerous runtime
+scenarios like out of memory failures. Improperly tuned survivor spaces also
+lead to wasted heap space.
