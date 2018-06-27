@@ -1,96 +1,14 @@
-# Search Results [](id=search-results)
+# Search Results Behavior
 
-The ideal search experience involves a User entering a search term, waiting an
-infinitesimal amount of time, and having the perfectly matching asset delivered
-to them at the top of a list of other extremely relevant hits. Like this:
+The previous article covered ways to display search results. This
+article covers these additional concepts and configurations: 
 
-![Figure 1: The goal is to return the perfect results to Users searching your site.](../../images/search-results-perfect.png)
-
-The developers of an asset control much about how the asset's information is
-stored in the search engine (this process is called
-[*indexing*](/develop/tutorials/-/knowledge_base/7-1/understanding-search-and-indexing)),
-and how its information is searched and returned in the search results.
-Developers who dislike how a particular asset behaves in search can use an
-[*Indexer Post
-Processor*](/develop/reference/-/knowledge_base/7-1/indexer-post-processor) to
-modify the asset's indexing behavior, and how search queries are constructed to
-look up the assets in @product@.
-
-There are also ways to influence the way search results are displayed from the
-User interface. This article covers the following topics:
-
-- [Configuring search results display](#configuring-results-display)
-- [Understanding search results relevance](#search-results-relevance)
 - [Filtering search results with facets](#filtering-results-with-facets)
+- [Understanding search results relevance](#search-results-relevance)
 - [The effect of permissions on search results](#permissions-and-search-results)
 - [Search results in the staging environment](#search-and-staging)
 - [Search results summaries](#result-summaries)
-- [Search term highlighting](#highlighting)
-
-Search results, called *hits* in the backend search infrastructure, are
-configurable.
-
-## Configuring Results Display [](id=configuring-results-display)
-
-The Search Results widget's default results layout lists and summarizes the hits
-to a search query. Click on a specific result to look at it in more detail.
-Configure display options by opening the Search Results options menu
-(![Options](../../images/icon-app-options.png)) and selecting *Configuration*. 
-
-**Enable Highlighting**
-: Highlight the search terms where they appear in the search result's title or
-summary.
-
-**Display Results in Document Form**
-: Display results as [search
-documents](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search).
-Never use this in production. Developers use this feature to view search
-responses in their indexed, document-based format. Part of a developer's job
-when writing [search
-indexers](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search#indexers)
-is to convert documents (the objects that get indexed) to the actual object and
-back again. This option allows developers to see how their objects are being
-indexed. Once enabled, click the *Details...* link below the result summary to
-expand the result's document view.
-
-![Figure 3: Viewing results in their document form lets you inspect exactly
-what's being indexed for a particular asset. This screenshot shows just a small portion of one document.](../../images/search-result-document.png)
-
-**Display Selected Result in Context**
-: When an asset is clicked, show it in its native application. For example, if
-you click on a blog post in the search results, you'll be taken to the page
-where the Blogs Entry is posted in the Blogs application. Note that you will no
-longer be in the search context after clicking on a search result. When this
-option is unchecked, the asset displays in an Asset Publisher window while still
-in the search context. If you have the right permissions, you can even edit the
-content directly from the Search context. Click the back arrow to return to the
-search results.
-
-The next three configurations concern results pagination.
-
-![Figure x: The number of results per page and the URL parameter names used to control pagination behavior are configurable.](../../images/search-results-pagination.png)
-
-**Pagination Start Parameter Name**
-: Set the name of the URL parameter for the results page. If the default value
-*start* is preserved, this URL is displayed when the User navigates to the
-second results page after searching for *test*:
-
-    http://localhost:8080/web/guest/search?q=test&start=2
-
-**Pagination Delta**
-: Set the number of results to display per results page. Defaults to *20*.
-
-**Pagination Delta Parameter Name**
-: Set the name of the URL parameter that stores the Pagination Delta value. This
-becomes visible in the browser if the User changes the number. If the User
-selects 10 results per page and searches for *test*, the Search Page is reloaded
-with this URL:
-
-    http://localhost:8080/web/guest/search?q=test&delta=10
-
-For further reading, check out how to [return suggestions for better search
-terms](/discover/portal/-/knowledge_base/7-1/searching-for-assets#search-suggestion)
-(for example, "Did you mean...") when not enough results are returned initially.
+- [Search results term highlighting](#highlighting)
 
 ## Filtering Results with Facets [](id=filtering-results-with-facets)
 

@@ -31,7 +31,7 @@ in every page by default), enter a term, and click *Enter*.
 
 **Search Modularization:** If you're upgrading from an earlier @product@
 version, you'll expect the embedded search bar to be the entry into the Search
-application.  However, the search functionality is modularized now, and the
+application. However, the search functionality is modularized now, and the
 Search Bar is a standalone application. See the 
 [article on new search features](/discover/portal/-/knowledge_base/7-1/whats-new-with-search) 
 for more information.
