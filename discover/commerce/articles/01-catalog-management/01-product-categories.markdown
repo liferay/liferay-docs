@@ -88,7 +88,7 @@ designate a generic category page that automatically displays images and
 products for whatever category a buyer wants. These images can be updated by
 publishing a new category image. For more details on setting up a generic
 category page to display content dynamically, see 
-[Category Detail Page](/web/liferay-emporio/documentation/-/knowledge_base/7-1/category-detail-page).
+[Category Detail Page](/web/liferay-emporio/documentation/-/knowledge_base/1-0/displaying-category-pages).
 
 Follow these steps to assign images to a category:
 
