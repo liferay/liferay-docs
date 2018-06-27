@@ -1,7 +1,7 @@
 # Angular npm Portlet [](id=angular-npm-portlet)
 
-**Important:** This sample works for Liferay DXP Fix Pack 30+ and Liferay Portal
-CE GA5+.
+**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
+CE GA7+.
 
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
@@ -29,7 +29,7 @@ To accomplish the bundling, the project's build process relies on a `build`
 script inside its `package.json` file:
 
     "scripts": {
-        "build": "tsc && babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
+        "build": "tsc && liferay-npm-bundler"
     },
 
 ## Where Is This Sample? [](id=where-is-this-sample)
@@ -43,4 +43,4 @@ build tool:
 TODO: Replace above when tool is available for other build tools. -Cody
 -->
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm/angular-npm-portlet)
+*   [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm/angular-npm-portlet)

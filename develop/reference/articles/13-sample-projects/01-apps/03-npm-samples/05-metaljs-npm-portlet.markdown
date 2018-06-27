@@ -1,7 +1,7 @@
 # Metal.js npm Portlet [](id=metal-js-npm-portlet)
 
-**Important:** This sample works for Liferay DXP Fix Pack 30+ and Liferay Portal
-CE GA5+.
+**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
+CE GA7+.
 
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
@@ -33,9 +33,9 @@ script inside its `package.json` file:
     },
 
 ## Where Is This Sample? [](id=where-is-this-sample)
-    
+
 This sample is built with the following build tool:
-    
+
 <!--
 There are three different versions of this sample, each built with a different
 build tool:
@@ -43,4 +43,4 @@ build tool:
 TODO: Replace above when tool is available for other build tools. -Cody
 -->
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm/metaljs-npm-portlet)
+*   [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm/metaljs-npm-portlet)

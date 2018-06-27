@@ -1,16 +1,17 @@
-# jQuery npm Portlet [](id=jquery-npm-portlet)
+# Angular Provider [](id=angular-provider)
 
 **Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
 CE GA7+.
 
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
-The jQuery npm Portlet sample provides a portlet that uses the
-[jQuery](https://jquery.com/) framework to render its output.
+The Angular Provider sample generates an OSGi bundle that that provides a
+deduplicated instance of
+[Angular](https://angular.io/) framework for portlets to share when rendering
+their output..
 
-![Figure 1: Clicking on the portlet's hand symbol displays a message.](../../../../images/jquery-npm-sample.png)
-
-This portlet showcases the fast HTML document traversal jQuery offers.
+This bundle must be deployed to the server for the
+[Angular Consumer Portlet](angular-consumer-portlet) sample to run.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
@@ -28,7 +29,7 @@ To accomplish the bundling, the project's build process relies on a `build`
 script inside its `package.json` file:
 
     "scripts": {
-        "build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
+        "build": "liferay-npm-bundler"
     },
 
 ## Where Is This Sample? [](id=where-is-this-sample)
@@ -38,8 +39,8 @@ This sample is built with the following build tool:
 <!--
 There are three different versions of this sample, each built with a different
 build tool:
-    
+
 TODO: Replace above when tool is available for other build tools. -Cody
 -->
 
-*   [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm/jquery-npm-portlet)
+*   [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm/angular-npm-portlet)

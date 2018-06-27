@@ -1,6 +1,6 @@
-# npm Samples [](id=npm-samples)
+# npm With Deduplication Samples [](id=npm-deduplication-samples)
 
-This section focuses on Liferay npm sample portlets built with Gradle. You can
+This section focuses on Liferay npm sample portlets and providers built with Gradle. You can
 view these samples by visiting the
 [gradle/apps/npm](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm)
 folder in the `liferay-blade-samples` Github repository.
@@ -19,12 +19,7 @@ build tool:
 
 The following npm samples are documented:
 
-*   [Angular npm Portlet](angular-npm-portlet)
-*   [Billboard.js npm Portlet](billboard-js-npm-portlet)
-*   [jQuery npm Portlet](jquery-npm-portlet)
-*   [Metal.js npm Portlet](metal-js-npm-portlet)
-*   [React npm Portlet](react-npm-portlet)
-*   [Simple npm Portlet](simple-npm-portlet)
-*   [Vue.js npm Portlet](vue-js-npm-portlet)
+*   [Angular Consumer Portlet](angular-consumer-portlet)
+*   [Angular Provider](angular-provider)
 
 Visit a particular sample page to learn more!
