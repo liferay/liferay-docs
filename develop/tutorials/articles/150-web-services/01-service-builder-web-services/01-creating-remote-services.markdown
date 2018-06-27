@@ -1,8 +1,8 @@
 # Creating Remote Services
 
 Many default @product@ services are published as JSON and SOAP web services. If
-you're running the portal locally on port 8080, visit this URL to browse the
-default JSON web services:
+you run the portal locally on port 8080, visit this URL to browse the default
+JSON web services:
 
     http://localhost:8080/api/jsonws/
 
@@ -12,12 +12,12 @@ Visit this URL to browse the default SOAP web services:
 
 These web services APIs can be accessed by many different kinds of clients,
 including non-portlet and even non-Java clients. You can use Service Builder to
-generate similar remote services for your projects' custom entities. When you
-run Service Builder with the `remote-service` attribute set to `true` for an
-entity, all the classes, interfaces, and files required to support both SOAP and
-JSON web services are generated for that entity. Service Builder generates
-methods that call existing services, but it's up to you to implement the methods
-that are exposed remotely. In this tutorial, you'll learn how to generate remote
+generate similar remote services for your projects' entities. When you run
+Service Builder with the `remote-service` attribute set to `true` for an entity,
+all the classes, interfaces, and files required to support both SOAP and JSON
+web services are generated for that entity. Service Builder generates methods
+that call existing services, but it's up to you to implement the methods that
+are exposed remotely. In this tutorial, you'll learn how to generate remote
 services for your application. When you're done, your application's remote
 service methods can be called remotely via JSON and SOAP web services. 
 
@@ -35,19 +35,19 @@ entity model. Add these service methods to `*LocalServiceImpl`. Then create
 corresponding remote services methods in `*ServiceImpl`. Add permission checks
 to the remote service methods and make the remote service methods invoke the
 local service methods. The remote service methods can have the same names as the
-local service methods that they call. Within your application, only call the
-remote services. This ensures that your service methods are secured and that you
-don't have to duplicate permissions code.
+local service methods they call. Within your application, only call the remote
+services. This ensures that your service methods are secured and that you don't
+have to duplicate permissions code.
 
 $$$
 
-As an example, consider Web Content articles. Web Content articles are
-represented by the `JournalArticle` entity. This entity is declared in the
-`journal-service` module's 
-[`service.xml` file](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/journal/journal-service/service.xml) 
-with the `remote-service` attribute set to `true`. Service Builder therefore 
+For example, consider Web Content articles. Web Content articles are represented
+by the `JournalArticle` entity. This entity is declared in the `journal-service`
+module's [`service.xml`
+file](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/journal/journal-service/service.xml)
+with the `remote-service` attribute set to `true`. Service Builder therefore
 generates 
-[the remote service class `JournalArticleServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/journal/journal-service/src/main/java/com/liferay/journal/service/impl/JournalArticleServiceImpl.java) 
+[the remote service class `JournalArticleServiceImpl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/journal/journal-service/src/main/java/com/liferay/journal/service/impl/JournalArticleServiceImpl.java)
 to hold the remote service method implementations. If you were developing this
 app from scratch, this class would initially be empty; you must use it to
 implement the entity's remote service methods. Also, note that the remote
@@ -73,9 +73,8 @@ class was introduced in Liferay 7.1. For model resource permission checks, you
 can use this helper class instead of using a custom permissions helper class.
 Also note that the local service is called via the `journalArticleLocalService`
 field. This is a Spring bean of type `JournalArticleLocalServiceImpl` that's
-injected into `JournalArticleServiceImpl` by Service Builder. See 
-[the class `JournalArticleServiceBaseImpl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/journal/journal-service/src/main/java/com/liferay/journal/service/base/JournalArticleServiceBaseImpl.java) 
-for a complete list of Spring beans available in `JournalArticleServiceImpl`. 
+injected into `JournalArticleServiceImpl` by Service Builder. Your Service
+Builder-generated classes do the same thing. 
 
 After you've finished adding remote service methods to your `*ServiceImpl`
 class, save it and run Service Builder again. After running Service Builder,
@@ -111,17 +110,17 @@ project. If you have a standalone module project, skip ahead to the section
 
 ### Installing the WSDD Builder Plugin in a Multi-module Project
 
-To install the WSDD Builder plugin in a multi-module project like a Service 
-Builder project in a Liferay Workspace, do the following in the workspace's 
-`settings.gradle` file: 
+To install the WSDD Builder plugin in a multi-module project like a Service
+Builder project in a Liferay Workspace, modify the workspace's `settings.gradle`
+file: 
  
-1. Add the `ServiceBuilderPlugin` and `WSDDBuilderPlugin` imports to the top of 
-   the file: 
+1.  Add the `ServiceBuilderPlugin` and `WSDDBuilderPlugin` imports to the top of
+    the file: 
 
         import com.liferay.gradle.plugins.service.builder.ServiceBuilderPlugin
         import com.liferay.gradle.plugins.wsdd.builder.WSDDBuilderPlugin
 
-2. In the `repositories` block, add the Liferay CDN repository via Maven: 
+2.  In the `repositories` block, add the Liferay CDN repository via Maven: 
 
         repositories {
             maven {
@@ -129,12 +128,12 @@ Builder project in a Liferay Workspace, do the following in the workspace's
             }
         }
 
-    This repository hosts the WSDD Builder library, its transitive dependencies, 
-    and other Liferay libraries. Note that if you created your Service Builder 
-    project with the `service-builder` template in Blade CLI or Liferay @ide@, then 
-    your `settings.gradle` file should already contain this. 
+     This repository hosts the WSDD Builder library, its transitive
+     dependencies, and other Liferay libraries. Note that if you created your
+     Service Builder project with the `service-builder` template in Blade CLI or
+     Liferay @ide@, your `settings.gradle` file should already contain this. 
 
-3. Add this code to the end of the file: 
+3.  Add this code to the end of the file: 
 
         gradle.beforeProject {
             project ->
@@ -144,9 +143,9 @@ Builder project in a Liferay Workspace, do the following in the workspace's
             }
         }
 
-    This is the code that applies the WSDD Builder plugin in every module in the 
-    Liferay Workspace that uses Service Builder. Your `settings.gradle` file 
-    should now look something like this: 
+     This is the code that applies the WSDD Builder plugin in every module in
+     the Liferay Workspace that uses Service Builder. Your `settings.gradle`
+     file should now look like this: 
 
         import com.liferay.gradle.plugins.service.builder.ServiceBuilderPlugin
         import com.liferay.gradle.plugins.wsdd.builder.WSDDBuilderPlugin
@@ -173,8 +172,8 @@ Builder project in a Liferay Workspace, do the following in the workspace's
             }
         }
 
-4. Refresh the Liferay Workspace's Gradle project. Close and restart Liferay @ide@ 
-   if you're using it. 
+4.  Refresh the Liferay Workspace's Gradle project. Close and restart Liferay
+    @ide@ if you're using it. 
 
 Now that you've installed the WSDD Builder plugin, you're ready to build and 
 deploy the WSDD. For instructions on this, proceed to the section *Building and 
@@ -182,11 +181,13 @@ Deploying the WSDD*.
 
 ### Installing the WSDD Builder Plugin in a Standalone Module Project
 
-To install the WSDD Builder plugin in a standalone `*-service` module that uses 
-Service Builder, do the following in the module's `build.gradle` file: 
+To install the WSDD Builder plugin in a standalone `*-service` module that uses
+Service Builder, modify the module's `build.gradle` file: 
 
 1. Add the plugin as a dependency in your `buildscript`. 
+
 2. Add the Liferay CDN repository via Maven. 
+
 3. Apply the plugin to your project. 
 
 For example, the following part of an example `build.gradle` file in a 
@@ -223,11 +224,11 @@ module. Exactly how you do this depends on your development tools:
   wrapper (`gradlew`) may vary. For Liferay Workspace projects, it's typically 
   in the root workspace folder. 
 
-So what should you do if `buildWSDD` fails? A common cause of `buildWSDD` 
-failures is failing to satisfy the dependencies needed by the WSDD Builder for 
-your `*-service` module. Note that these dependencies vary depending on your 
-project's code--there's no standard set. That said, the following are often 
-required for portlet development: 
+So what should you do if `buildWSDD` fails? A common cause of `buildWSDD`
+failures is not satisfying the dependencies needed by the WSDD Builder for your
+`*-service` module. Note that these dependencies vary depending on your
+project's code---there's no standard set. That said, the following dependencies
+are often required for portlet development: 
 
     compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
 	compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
@@ -250,14 +251,13 @@ For example, if an app called *Foo* consists of the modules `foo-api`,
 
     http://localhost:8080/o/foo-service/api/axis
 
-If you don't know an app's `*-service` module context, you can find it by 
-searching for the app in the App Manager of the @product@ instance in which the 
-app is running. For example, the following screenshot shows the Foo app's 
-modules in the App Manager. The name of the `*-service` module in the App 
-Manager, `foo-service`, is also its context. Also note that the app's WSDD 
-module is grayed out and listed as Resolved instead of Active. This is normal. 
-WSDD modules are OSGi fragments, which can't be activated. They still work as 
-intended, though. 
+If you don't know an app's `*-service` module context, you can find it by
+searching for the app in the App Manager where the app is running. For example,
+the following screenshot shows the Foo app's modules in the App Manager. The
+name of the `*-service` module in the App Manager, `foo-service`, is also its
+context. Also note that the app's WSDD module is grayed out and listed as
+Resolved instead of Active. This is normal. WSDD modules are OSGi fragments,
+which can't be activated. They still work as intended, though. 
 
 ![Figure 1: To find your app's modules, including its WSDD module, search for your app in the App Manager. The `*-service` module's name in the App Manager is also the module's context.](../../../images/app-manager-remote-services.png)
 
@@ -284,16 +284,15 @@ JAR in the `tools/sdk/dist` folder of your local `liferay-portal` copy.
 Otherwise, building an app's WSDD is the same as in the preceding section. 
 
 For example, to build the WSDD for the Bookmarks app, first navigate to the 
-`liferay-portal/modules/apps/collaboration/bookmarks/bookmarks-service` folder 
+`liferay-portal/modules/apps/bookmarks/bookmarks-service` folder 
 in your terminal. Then run the following command:
 
     ../../../../../gradlew buildWSDD
 
 Next, deploy the 
-`liferay-portal/tools/sdk/dist/com.liferay.bookmarks.service-wsdd-[version].jar` 
-to your @product@ instance. If your instance is running locally on 
-`localhost:8080`, you should then be able to view the Bookmarks app's SOAP 
-services at 
+`liferay-portal/tools/sdk/dist/com.liferay.bookmarks.service-wsdd-[version].jar`.
+If your instance is running locally on `localhost:8080`, you should then be able
+to view the Bookmarks app's SOAP services at 
 [http://localhost:8080/o/com.liferay.bookmarks.service/api/axis](http://localhost:8080/o/com.liferay.bookmarks.service/api/axis). 
 
 Fantastic! Once you've created remote web services, you'll want to know how to 
