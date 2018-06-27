@@ -1,10 +1,10 @@
 # Invoking Remote Services
 
 You can invoke the remote services of any installed Liferay application the same
-way that you invoke your local services. Doing so could be described as
-"invoking remote services locally." One reason to invoke a remote service
-instead of the corresponding local service might be to take advantage of the
-remote service's permission checks. Consider the following common scenario:
+way you invoke your local services. Doing so could be described as "invoking
+remote services locally." One reason to invoke a remote service instead of the
+corresponding local service is to take advantage of the remote service's
+permission checks. Consider the following common scenario:
 
 - Both a local service implementation and a remote service implementation have
   been created for a particular service.
@@ -23,7 +23,7 @@ remotely. Service Builder can expose your project's remote web services both via
 a JSON API and via SOAP. By default, running Service Builder with 
 `remote-service` set to `true` for your entities generates a JSON web services
 API for your project. You can access your project's JSON-based RESTful services
-via a convenient web interface. 
+through a convenient web interface. 
 
 ## Invoking Liferay Services Remotely
 
@@ -57,13 +57,13 @@ tutorial for details.
 
 $$$
 
-Each entity's available service methods are listed in the left column of the
+Each entity's available service methods appear in the left column of the
 JSON web services page. To view details about a service method, click it. The
-full package path to the service's `*Impl` class is displayed along with the
+full package path to the service's `*Impl` class appears along with the
 method's parameters, return type, and possible exceptions. You can also invoke
 the service from this page. For example, in the `portal` context click the
 `AnnouncementsEntry` entity's `get-entry` method. This brings up that service
-method's details page, where you can also invoke the service:
+method's details page, where you can also invoke the service.
 
 ![Figure 1: The JSON web services page for an entity's remote service method also lets you invoke that service.](../../../images/jsonws-details.png)
 
