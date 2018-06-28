@@ -1,4 +1,4 @@
-# Getting Started [](id=getting-started)
+# Introduction [](id=Introduction)
 
 Liferay invites the Liferay Analytics Cloud Owner (the person who purchased the
 product) to your company’s Liferay Analytics Cloud project. If you’re not the
