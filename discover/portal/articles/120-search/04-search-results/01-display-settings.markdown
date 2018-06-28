@@ -22,7 +22,7 @@ back again. This option allows developers to see how their objects are being
 indexed. Once enabled, click the *Details...* link below the result summary to
 expand the result's document view.
 
-![Figure 1: Viewing results in their document form lets you inspect exactly what's being indexed for a particular asset. This screenshot shows just a small portion of one document.](../../../images/search-results-document.png)
+![Figure 1: Viewing a results document lets you inspect exactly what's being indexed for a particular asset. This is just a small portion of one document.](../../../images/search-results-document.png)
 
 **Display Selected Result in Context**
 : When an asset is clicked, show it in its native application. For example, if

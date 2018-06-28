@@ -1,7 +1,7 @@
 # Search Results Behavior [](id=search-results-behavior)
 
-The previous article covered ways to display search results. This
-article covers these additional concepts and configurations: 
+The previous article covered ways to display search results. This article
+covers these additional Search Results concepts and configurations: 
 
 - [Filtering search results with facets](#filtering-results-with-facets)
 - [Understanding search results relevance](#search-results-relevance)
@@ -31,11 +31,6 @@ total score of a returned document, and all of the implementation details of how
 relevance scoring works are dependent algorithms provided by the 
 [search engine](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html#relevance-intro).
 
-See the 
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/scoring-theory.html#tfidf) 
-for more information on 
-[relevancy scoring](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html#relevance-intro).
-
 ## Permissions and Search Results [](id=permissions-and-search-results)
 
 Users lacking
@@ -46,16 +41,16 @@ site.
 
 In the background, there are two rounds of permissions checks. The first
 permissions check happens in the search engine's index. This is faster than
-leaning on the databse permissions information, but occasionally the search
-index can have stale permissions information. To ensure the search engine's
-index has correct, up-to-date permissions information, a second, last-second
-permissions check is performed on the results prior to their display.
+checking database permissions information, but occasionally the search index can
+have stale permissions information. To ensure the search engine's index has
+correct, up-to-date permissions information, a second, last-second permissions
+check is performed on the results prior to their display.
 
 ### Initial Permissions Checking [](id=initial-permissions-checking)
 
 The first round of search results permissions filtering adds filter clauses to
 the search query. This ensures that results come back from the search engine
-pre-filtered, with only results the current user can view.
+pre-filtered, with only results the current User can view.
 
 This initial permission checking is configurable at *Control Panel* &rarr;
 *Configuration* &rarr; *System Settings* &rarr; *Search* &rarr; *Permission
@@ -121,11 +116,10 @@ searchable.
 
 ## Result Summaries [](id=result-summaries)
 
-Search results must be displayed to Users to be useful. If each result was
-displayed in its JSON document form, Users would faint and User Experience
-Designers around the world might spontaneously combust. Liferay values end Users
-and User Experience Designers alike, so a list of results displaying summaries is
-returned instead. 
+If each search result was displayed as a raw JSON document, Users would faint
+and User Experience Designers around the world might spontaneously combust.
+Liferay values end Users and User Experience Designers alike, so a list of
+results displaying summaries is returned instead. 
 
 So what's included in a result summary? The information from a document that the
 asset's developer felt is most useful to end Users searching for the asset.
@@ -157,7 +151,7 @@ Bookmarks entries show the title and the URL.
 ## Highlighting [](id=highlighting)
 
 By now you've probably noticed that search terms appearing in the summary are
-<mark>highlighted</mark> by default. This is disabled in the widget
+<mark>highlighted</mark> by default. Highlgihting is disabled in the widget
 configuration screen. 
 
 ![Figure 4: Some document summaries have lots of highlights, if the search term matches text that appears in the summary.](../../../images/search-results-highlight.png)
@@ -173,4 +167,3 @@ email address returns the User, but no term is highlighted.
 ![Figure 5: Results that match the search term won't always have highlights.](../../../images/search-results-no-highlight.png)
 
 There are additional cases where search results won't have highlighting.
-
