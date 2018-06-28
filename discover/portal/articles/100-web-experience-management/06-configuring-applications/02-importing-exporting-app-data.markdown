@@ -133,20 +133,23 @@ for each section:
 
 **Update Data**
 
-- *Mirror*: All data and content inside the imported LAR is newly created
-  the first time while maintaining a reference to the source. Subsequent imports
-  from the same source updates entries instead of creating new entries.
-- *Mirror with overwriting*: Same behavior as the mirror strategy, but if a
-  document or an image with the same name is found, it is overwritten.
-- *Copy as New*: All data and content inside the imported LAR is created as new
-  entries within the current site every time the LAR is imported.
+*Mirror*: All data and content inside the imported LAR is newly created the
+first time while maintaining a reference to the source. Subsequent imports from
+the same source updates entries instead of creating new entries.
+
+*Mirror with overwriting*: Same behavior as the mirror strategy, but if a
+document or an image with the same name is found, it is overwritten.
+
+*Copy as New*: All data and content inside the imported LAR is created as new
+entries within the current site every time the LAR is imported.
 
 **Authorship of the Content**
 
-- *Use the Original Author*: Keep authorship of imported content whenever
-  possible. Use the current user as author if the original one is not found.
-- *Use the Current User as Author*: Assign the current user as the author of all
-  imported content.
+*Use the Original Author*: Keep authorship of imported content whenever
+possible. Use the current user as author if the original one is not found.
 
-Once you've selected the appropriate options, select *Import*, and your widget's
+*Use the Current User as Author*: Assign the current user as the author of all
+imported content.
+
+Once you've selected the appropriate options, select *Import* and your widget's
 data is imported and ready for use.
