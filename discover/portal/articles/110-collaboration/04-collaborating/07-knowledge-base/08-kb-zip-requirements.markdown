@@ -16,8 +16,9 @@ able to import articles. This permission can be assigned manually through
 Portal 6.2, you can also assign this Role to every Role that was already able to 
 add articles with a command from the Gogo shell. 
 
-Open the Gogo shell: `telnet localhost 11311`. Type 
-`knowledgeBase:addImportArticlePermissions` and hit enter. 
+Open the
+[Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+Type `knowledgeBase:addImportArticlePermissions` and hit enter. 
 
 $$$
 
