@@ -1,6 +1,6 @@
 # Installing @product@ on JBoss EAP [](id=installing-product-on-jboss-eap)
 
-Installing @product@ on JBoss EAP 7.1 requires these basic steps:
+Installing @product@ on JBoss EAP 7.1 takes three steps:
 
 - [Installing @product@ dependencies to your application server](#installing-dependencies)
 - [Configuring your application server for @product@](#configuring-jboss)
@@ -139,9 +139,10 @@ deployment, since JBoss manages the content of a managed deployment by copying
 files (exploded or non-exploded). This prevents JSP hooks and Ext plugins from
 working as intended. For example, JSP hooks don't work on JBoss EAP running in
 managed domain mode, since @product@'s JSP override mechanism relies on the
-application server.
+application server. Since both of these features are deprecated, however, you
+may not be using them. 
 
-Using the command line interface is recommended for domain mode deployments.
+The command line interface is recommended for domain mode deployments.
 
 +$$$
 
@@ -173,7 +174,7 @@ Make the following modifications to
 `$JBOSS_HOME/standalone/configuration/standalone.xml`:
 
 1.  Locate the closing `</extensions>` tag. Directly beneath that tag, insert
-    the following system properties:
+    these system properties:
 
         <system-properties>
             <property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8" />
@@ -235,7 +236,7 @@ Before continuing, verify the following properties have been set in the
 
 6.  The `<jsp-config>` tag contains its new attributes.
 
-Now it's time for some changes to your configuration and startup scripts.
+Now you should configure your JVM and startup scripts.
  
 In the `$JBOSS_HOME/bin` folder, you must make these modifications to your
 standalone domain's configuration script file `standalone.conf`
@@ -295,7 +296,7 @@ insert the following path names inside the `<paths>...</paths>` element:
     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
 
 The added paths resolve issues with portal deployment exceptions and image
-uploading problems on a @product@ instance running on JBoss EAP 7.1. 
+uploading problems. 
 
 $$$
 
@@ -315,7 +316,7 @@ installation on JBoss. Next you'll configure the database and mail.
 ## Database Configuration [](id=database-configuration)
 
 The easiest way to handle your database configuration is to let @product@ manage
-your data source. @product@'s
+your data source. The 
 [Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-product#using-liferays-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
@@ -342,7 +343,7 @@ If you want JBoss to manage your data source, follow these steps:
     +$$$
 
     **Note:** If you must change your datasource `jndi-name` to something
-    different, you'll need to also edit the `datasource` element in the
+    different, you must also edit the `datasource` element in the
     `<default-bindings>` tag.
 
     $$$
@@ -433,4 +434,4 @@ You've got mail! Next, you'll deploy @product@ to your JBoss app server.
 4.  Start the JBoss application server by navigating to `$JBOSS_HOME/bin`
     and running `standalone.bat` or `standalone.sh`.
 
-You're now an expert when it comes to deploying @product@ on JBoss!
+Congratulations; you've now deployed @product@ on JBoss!
