@@ -69,7 +69,11 @@ Process* tab (default). You have several export options to configure.
 
 First, you can choose to export your widget's configuration settings. This
 exports your customized settings that you've configured from your widget's
-*Options* &rarr; *Configuration* menu.
+*Options* &rarr; *Configuration* menu. For some widgets, the configuration
+export might also include content too. For example, a Web Content Display widget
+configured to show a web content article also exports the article when exported,
+even though no content is selected. This applies when publishing a Web Content
+Display widget too; the configured article is published with the widget.
 
 Next, you can select a *Date Range* of content that you'd like to export.
 Content that has been added to your widget within your specified date range is
