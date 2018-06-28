@@ -9,7 +9,7 @@ Additional Information. Under Main Configuration:
 
 - Set the virtual host.
 
-- Set the content delivery network address.
+- Set the URLs to a CDN configured to servve static resources.
 
 Under the Navigation heading, set a home page for your virtual instance as well
 as default landing and logout pages. To set these pages, use the part of the
