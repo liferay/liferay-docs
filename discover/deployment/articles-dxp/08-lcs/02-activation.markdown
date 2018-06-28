@@ -1,5 +1,14 @@
 # Activating Your Liferay DXP Server with LCS [](id=activating-your-liferay-dxp-server-with-lcs)
 
++$$$
+
+**Note:** You must use LCS for activation of containerized instances, cloud 
+deployments, and instances that use Liferay Analytics Cloud and/or elastic 
+subscriptions. Otherwise, you don't have to use LCS for activation. You can 
+instead request an XML activation key from Liferay Support. 
+
+$$$
+
 Follow these steps to activate your @product@ server with LCS: 
 
 1.  Ensure that you've completed the 
@@ -74,7 +83,7 @@ servers maintain a local copy of their uptime information to transmit to LCS
 when it comes back online. Active subscriptions also have a 30-day grace period 
 to re-establish connectivity and remain valid. This is ample time for LCS to 
 come back online. Should an extended LCS outage occur, Liferay Support can 
-provide temporary activation keys that don't require LCS. 
+provide activation keys that don't require LCS. 
 
 $$$
 

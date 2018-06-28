@@ -20,12 +20,10 @@ whenever Liferay releases a new version of it.
 
 +$$$
 
-**Note:** These steps show how to preconfigure LCS and your servers for use in 
-production environments. To activate a server on a local workstation for testing 
-or development purposes, you don't need to use LCS. Instead, navigate to 
-[@product@'s activation page](https://web.liferay.com/group/customer/dxp/getting-started/activation) 
-and select your subscription project. After downloading your key, place it in 
-your local @product@ instance's `deploy` folder. 
+**Note:** You must use LCS for activation of containerized instances, cloud 
+deployments, and instances that use Liferay Analytics Cloud and/or elastic 
+subscriptions. Otherwise, you don't have to use LCS for activation. You can 
+instead request an XML activation key from Liferay Support. 
 
 $$$
 

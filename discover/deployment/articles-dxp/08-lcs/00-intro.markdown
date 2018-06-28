@@ -10,6 +10,15 @@ distributed across a cluster. It's like having a single butler that can serve
 several mansions at once! You can find more information about LCS on its 
 [official product page](http://www.liferay.com/products/liferay-connected-services). 
 
++$$$
+
+**Note:** You must use LCS for activation of containerized instances, cloud 
+deployments, and instances that use Liferay Analytics Cloud and/or elastic 
+subscriptions. Otherwise, you don't have to use LCS for activation. You can 
+instead request an XML activation key from Liferay Support. 
+
+$$$
+
 Before going any further, you should take note of a few key terms used 
 throughout this guide: 
 

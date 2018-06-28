@@ -1,9 +1,18 @@
 # Troubleshooting Your LCS Connection [](id=troubleshooting-your-lcs-connection)
 
-Since LCS activates @product@, your server must maintain its connection to LCS
-at all times. If this connection is interrupted, your server enters a grace
-period to allow for reconnection. Lengthy interruptions, however, can affect
-your server's uptime. 
+If you use LCS to activate @product@, your server must maintain its connection 
+to LCS at all times. If this connection is interrupted, your server enters a 
+grace period to allow for reconnection. Lengthy interruptions, however, can 
+affect your server's uptime. 
+
++$$$
+
+**Note:** You must use LCS for activation of containerized instances, cloud 
+deployments, and instances that use Liferay Analytics Cloud and/or elastic 
+subscriptions. Otherwise, you don't have to use LCS for activation. You can 
+instead request an XML activation key from Liferay Support. 
+
+$$$
 
 The following sections in this document provide some background information and 
 help you troubleshoot problems with your server's LCS connection: 
