@@ -1,8 +1,8 @@
-# Exporting/Importing App Data [](id=exporting-importing-app-data)
+# Exporting/Importing Widget Data [](id=exporting-importing-widget-data)
 
-There are times when you want to export/import specific content created from an
-application, and not deal with site data at all. There are many apps that let
-you export or import their app data individually. For example, 
+There are times when you want to export/import specific content created from a
+widget, and not deal with site data at all. There are many widgets that let
+you export or import their data individually. For example, 
 
 - Blogs
 - Bookmarks
@@ -14,14 +14,14 @@ you export or import their app data individually. For example,
 - Wiki
 - etc.
 
-Exporting app data produces a `.lar` file that you can save
-and import into another application of the same type. To import app
-data, you must select a `.lar` file. Be careful not to confuse app-specific
-`.lar` files with site-specific `.lar` files. See the
+Exporting widget data produces a `.lar` file that you can save and import into
+another widget of the same type. To import widget data, you must select a `.lar`
+file. Be careful not to confuse widget-specific `.lar` files with site-specific
+`.lar` files. See the
 [Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content)
 article for information on importing/exporting site page data.
 
-You can export/import app content two ways. You can navigate to the app's
+You can export/import widget content two ways. You can navigate to the widget's
 administrative area located in the Product Menu, or you can visit the
 corresponding widget that resides on a page. Both export/import menus work the
 same, but the administrative area may hold different content than its widget
@@ -29,11 +29,11 @@ counterpart (e.g., Web Content Admin in Product Menu and Web Content Display
 widget do not offer same content for export/import), so be wary of your
 selection. 
 
-To export or import app data from the app's administrative area, follow the
-steps below.
+To export or import data from the widget's administrative area, follow the steps
+below.
 
-1.  Navigate to the app's designated area in the Product Menu. For example, if
-    you plan to export Web Content app data, navigate to *Content* &rarr; *Web
+1.  Navigate to the widget's designated area in the Product Menu. For example,
+    if you plan to export Web Content data, navigate to *Content* &rarr; *Web
     Content*.
 
 2.  Click the *Options* button (![Options](../../../images/icon-options.png))
@@ -42,9 +42,9 @@ steps below.
 3.  Select the *Export* or *Import* tab to begin configuring the respective
     process.
 
-![Figure 1: You can access an app's administrative *Export/Import* feature by selecting its Options menu.](../../../images/admin-app-export-import-feature.png)
+![Figure 1: You can access a widget's administrative *Export/Import* feature by selecting its Options menu.](../../../images/admin-app-export-import-feature.png)
 
-To export or import app data from a widget, follow the steps below:
+To export or import data from a widget, follow the steps below:
 
 1.  Ensure the widget you're interested in exporting/importing from is available
     on a page. You can add widgets from the *Add*
@@ -62,17 +62,17 @@ To export or import app data from a widget, follow the steps below:
 Now that you know how to navigate to the *Export/Import* menus, you'll explore
 the export process next.
 
-## Exporting App Data [](id=exporting-app-data)
+## Exporting Widget Data [](id=exporting-widget-data)
 
-To export app data, create a new export process by selecting the *New Export
+To export widget data, create a new export process by selecting the *New Export
 Process* tab (default). You have several export options to configure.
 
-First, you can choose to export your application's configuration settings. This
-exports your customized settings that you've configured from your application's
+First, you can choose to export your widget's configuration settings. This
+exports your customized settings that you've configured from your widget's
 *Options* &rarr; *Configuration* menu.
 
 Next, you can select a *Date Range* of content that you'd like to export.
-Content that has been added to your app within your specified date range is
+Content that has been added to your widget within your specified date range is
 included in the `.lar` file. The following date range choices are available:
 
 **All:** publishes all content regardless of its creation or last modification
@@ -103,19 +103,19 @@ Next, you can choose to export individual deletions. This lets delete operations
 performed for content types be exported to the LAR file.
 
 Lastly, you can choose whether to include permissions for your exported content.
-The permissions assigned for the exported app window are included if you enable
-the *Export Permissions* selector.
+The permissions assigned for the exported widget window are included if you
+enable the *Export Permissions* selector.
 
-After you've exported your app's data, switch to the *Current and Previous* tab
-to view ongoing export processes and the history of past exports. You can also
-download the exported `.lar` file from this tab.
+After you've exported your widget's data, switch to the *Current and Previous*
+tab to view ongoing export processes and the history of past exports. You can
+also download the exported `.lar` file from this tab.
 
-## Importing App Data [](id=importing-app-data)
+## Importing Widget Data [](id=importing-widget-data)
 
-To import app data, you can select the LAR using your file explorer or by
+To import widget data, you can select the LAR using your file explorer or by
 dragging and dropping the file between the dotted lines.
 
-![Figure 3: When importing app data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../../images/import-menu.png)
+![Figure 3: When importing widget data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../../images/import-menu.png)
 
 Your LAR file is uploaded and displayed to you for review. Click *Continue*.
 
@@ -144,5 +144,5 @@ for each section:
 - *Use the Current User as Author*: Assign the current user as the author of all
   imported content.
 
-Once you've selected the appropriate options, select *Import*, and your app's
+Once you've selected the appropriate options, select *Import*, and your widget's
 data is imported and ready for use.
