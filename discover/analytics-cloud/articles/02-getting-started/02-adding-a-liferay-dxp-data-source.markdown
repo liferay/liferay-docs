@@ -1,22 +1,11 @@
 # Adding a Liferay DXP Data Source [](id=adding-a-liferay-dxp-data-source)
 
-Analytics Cloud lets you sync contact data, such as customer profiles from CSV
-files and Liferay DXP user models, and web analytics data on user interaction
-with Liferay DXP pages and assets. In a future Analytics Cloud release, Liferay
-plans to support syncing with contact data from Salesforce too.
-
-The contact data is merged and consolidated into a single customer view. Liferay
-DXP data sources let you select Organizations and User Groups from which to
-sync. Individual contacts are matched by email address. The best part is that
-you can define the contact data model your way---you can use field names and
-types that work best for you. Analytics Cloud even takes the guesswork out of
-defining trivial model fields by suggesting values. 
-
-Configuring web analytics from Liferay DXP sites is straightforward, letting you
-select the sites from which to sync. 
-
-Before adding your instances as data sources, though, you must connect your
-Analytics Cloud project to them. 
+Your Liferay DXP instances are rich with contact data from Users and web
+analytics data on user interaction with Liferay DXP pages and assets. Creating
+Liferay DXP data sources is straightforward. You can select web analytics data
+from the Liferay DXP Sites you want and select contact data from  all Users or
+specific Users in User Groups and Organizations. Before adding your instances as
+data sources, though, you must connect your Analytics Cloud project to them. 
 
 ## Liferay DXP Data Source Prerequisites [](id=liferay-dxp-data-source-prerequisites)
 
@@ -68,12 +57,14 @@ for details.
 
 2.  Select *Settings* in the navigation panel.
 
-3.  Click on *Data Sources*. The *Connect Data Source* page appears. 
+3.  Click on *Data Sources*. A listing of your existing data sources appears.
 
-4.  Select the *Liferay DXP* icon. The *Connect to Instance* page appears and 
+4.  Click on *Add Data Sources*. The *Connect Data Source* page appears. 
+
+5.  Select the *Liferay DXP* icon. The *Connect to Instance* page appears and 
 lists your available Liferay DXP instances. 
 
-5.  Select the instance to connect. The Liferay DXP Data Sources page appears, 
+6.  Select the instance to connect. The Liferay DXP Data Sources page appears, 
     showing the instance description fields and configuration options. 
 
     *Description*
@@ -88,12 +79,12 @@ lists your available Liferay DXP instances.
     - *Configure Contacts:* Configures the contact data only.
     - *Configure Analytics:* Configures the assets and touchpoints only.
 
-6. Name your data source.
+7. Name your data source.
 
-7. Click on *Configure All*. The Liferay DXP data source wizard appears, 
+8. Click on *Configure All*. The Liferay DXP data source wizard appears, 
 showing the page for configuring contacts. 
 
-8. Configuring contacts involves selecting contacts to sync from the Liferay 
+9. Configuring contacts involves selecting contacts to sync from the Liferay 
 DXP instance and its Organizations and User Groups. 
 
     - *Sync All Contacts*: Selects all Liferay DXP instance contacts and disables options for selecting specific Organizations and User Groups.
@@ -104,21 +95,21 @@ DXP instance and its Organizations and User Groups.
 
     ![Figure 1: Analytics Cloud lets you select and import contacts from a Liferay DXP instance and its Organizations and User Groups.](../../images/select-dxp-contacts-by-org.png)
 
-9. Click *Next* to import the selected contacts. Analytics Cloud imports the 
+10. Click *Next* to import the selected contacts. Analytics Cloud imports the 
 contact data and attempts to map it to your Analytics Cloud contact data model.
 The initial import can take a while---it depends on the number of Liferay DXP
 Users.
 
-10. Follow instructions for
-[Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/03-mapping-contact-data.markdown)
+11. Follow instructions for
+[Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/04-mapping-contact-data.markdown)
 to  map contact data from your Liferay DXP instance to your Analytics Cloud
 contact data model. Once you’ve mapped the data, click *Next*. The Liferay DXP
 site analytics registration page appears. 
 
-11. Select the Liferay DXP sites to register for analytics and click *Next*. 
+12. Select the Liferay DXP sites to register for analytics and click *Next*. 
 The analytics key page appears. 
 
-12. Integrate your Liferay DXP instance with Analytics Cloud by addressing 
+13. Integrate your Liferay DXP instance with Analytics Cloud by addressing 
 these options: 
 
     - *Analytics Key:* This key is generated automatically and used to 
@@ -128,9 +119,11 @@ these options:
     - *Connection Status:* Test communication between your Liferay DXP instance 
     and Analytics Cloud. 
 
-13. Click on the *Done* button. 
+14. Click on the *Done* button. 
 
-The Contacts and Analytics data start syncing into Analytics Cloud. **Initially the sync takes a while. After the initial sync, changes are synced periodically.**
+The Contacts and Analytics data start syncing into Analytics Cloud. **Initially 
+the sync takes a while. After the initial sync, changes are synced 
+periodically.**
 
 If you have contact profile data from other sources, such as a database, you
 might be able to export the data to a CSV file. Then you can add the CSV file as

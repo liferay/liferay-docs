@@ -31,7 +31,7 @@ file. The CSV configuration page appears.
     formatted the way you want, adjust your CSV file’s format. 
 
 5. Follow instructions for
-[Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/03-mapping-contact-data.markdown)
+[Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/04-mapping-contact-data.markdown)
 to map contact data from your CSV file to your Analytics Cloud contact data
 model. Once you’ve mapped the data, click *Next*. 
 

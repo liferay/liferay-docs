@@ -59,6 +59,5 @@ take to your pages.
 your Analytics Cloud usage. 
 
 If no data sources are connected, a message near the top of the main area tells
-you so and links you to the page for adding data sources. Your Liferay DXP
-instances are a rich source for customer data. Adding a Liferay DXP instance as
-a data source is next. 
+you so and links you to the page for adding data sources. Adding data sources is
+next. 

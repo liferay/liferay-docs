@@ -39,4 +39,6 @@ Your custom model field is ready to match with source fields.
 
 When you’re done mapping the data, click the *Done* button. Congratulations on mapping contacts from your data source to your Analytics Field contact model. 
 
-Finish creating your data source. Then learn how to edit your data sources. 
+Once you've mapped your contact data and finished adding your data sources, you
+can start learning more about your customers. The *Understanding People*
+articles are all about that.
