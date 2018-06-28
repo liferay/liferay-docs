@@ -4,7 +4,7 @@ On the
 [Customer Portal](https://web.liferay.com/group/customer/dxp),
 Liferay Subscription Services announces all fix packs and service packs. The
 approximate frequency of fix pack and service pack releases is explained
-[here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-basics).
+[here](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-basics).
 
 Click the *Downloads* button on the
 [Liferay Digital Experience Platform page](https://web.liferay.com/group/customer/dxp)
