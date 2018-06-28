@@ -1,20 +1,20 @@
 # Using the Patching Tool [](id=patching-tool)
 
-The Patching Tool is a Java based application for installing, removing,
-comparing, and preparing @product@ patches. It is pre-installed in @product@
-bundles, easy to install into @product@ manual installations, and easy to
-update. The Patching Tool's executable scripts facilitate patching. 
+The Patching Tool installs, removes, compares, and prepares @product@ patches.
+It is pre-installed in @product@ bundles, easy to install into @product@ manual
+installations, and easy to update. The Patching Tool's executable scripts
+facilitate patching. 
 
 Here are the essentials to get started using the Patching Tool:
 
-- [Installing the Patching Tool](#installing-the-patching-tool) (for @product@ manual installations only)
+- [Installing the Patching Tool](#installing-the-patching-tool) (for manual installations only)
 - [Executables](#executables)
 
 ## Installing the Patching Tool [](id=installing-the-patching-tool)
 
 @product@ bundles come with the Patching Tool pre-installed (in `[Liferay
 Home]/patching-tool`) and pre-configured with the default settings. Skip this
-section if you're using a @product@ bundle. 
+section if you're using a bundle. 
 
 If you installed @product@ manually, however, you must also install the Patching
 Tool manually. 

@@ -1,10 +1,10 @@
 # Installing Patches [](id=installing-patches)
 
 Before installing any patches, you must shut down your server. On Windows
-operating systems, files that are in use are locked by the OS, and can't be
-patched. On Unix-style systems, you can usually replace files that are running,
-but the old ones reside in memory. For these reasons, it is best to shut down
-the application server that's running @product@ before installing patches. 
+operating systems, files in use are locked by the OS, and can't be patched. On
+Unix-style systems, you can usually replace files that are running, but the old
+ones reside in memory. For these reasons, it is best to shut down @product@
+before installing patches. 
 
 Liferay distributes all patches (fix packs and hotfixes) as ZIP files. When you
 download a patch, either from a LESA ticket (hotfix) or from the
@@ -23,27 +23,27 @@ issue the following command:
 
     patching-tool install
 
-To make sure the all changed OSGi bundles replace the existing ones, it is
-recommended to delete the `osgi/state` folder from the
+To make sure the all changed OSGi bundles replace the existing ones, delete the
+`osgi/state` folder from the 
 [Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home). 
 
 +$$$
 
-**Important**: The `osgi/state` folder should ONLY be deleted when working in a 
-development environment or when applying a fix pack or hot fix. 
+**Note**: The `osgi/state` folder contains OSGi bundle state information. If an
+OSGi bundle's changes in a hot fix or fix pack are internal only, they are
+invisible to the OSGi framework, that OSGi bundle stays installed, and its state
+information stays unchanged. Hot fixes, for example, may contain in-place
+changes that do not use the API. The framework cannot detect such changes.
+A fix pack's changes may also be transparent to the framework. For these
+reasons, deleting the `osgi/state` folder after applying fix packs and hot fixes
+is recommended. 
 
 $$$
 
 +$$$
 
-**Note**: The `osgi/state` folder in the contains OSGi bundle state information.
-If an OSGi bundle's changes in a hot fix or fix pack are internal only and are,
-therefore, invisible to the OSGi framework, that OSGi bundle stays installed and
-its state information stays unchanged. Hot fixes, for example, may contain
-in-place changes that do not use the API---the framework cannot detect such
-changes. A fix pack's changes may also be transparent to the framework. For
-these reasons, deleting the `osgi/state` folder after applying fix packs and hot
-fixes is recommended. 
+**Important**: The `osgi/state` folder should ONLY be deleted when working in a 
+development environment or when applying a fix pack or hot fix. 
 
 $$$
 
@@ -98,7 +98,7 @@ possible, and fix packs are larger bundles of hotfixes provided to all customers
 at regular intervals. If you already have a hotfix installed and the fix pack
 that contains that hotfix is released, the Patching Tool can manage this for
 you. Fix packs always supersede hotfixes; so when you install your fix pack, the
-hotfix that it contains is uninstalled and the fix pack version is installed in
+hotfix it contains is uninstalled and the fix pack version is installed in
 its place. 
 
 The Patching Tool applies fixes to fix packs automatically. If a new (fixed)

@@ -1,6 +1,6 @@
 # Working with Patches [](id=working-with-patches)
 
-Here are some things you might need to do with patches as you work with them:
+Here are some things you might need to do with patches:
 
 - [Report Patch Levels to Liferay Support](#including-support-info-in-support-tickets)
 - [Uninstall Patches](#uninstalling-patches) 
