@@ -2,29 +2,27 @@
 
 With the proper permissions, users can publish assets. Even if your enterprise
 has the greatest employees in the world, many of the items they'll wish to
-publish must still be reviewed, for a variety of reasons. The Kaleo Designer in
-@product@ lets you design workflow definitions so your assets go through a
-review process before publication.
+publish must still be reviewed, for a variety of reasons. The Kaleo Designer
+lets you design workflow definitions so your assets go through a review process
+before publication.
 
-Kaleo Designer lets you develop workflow definitions using a convenient drag and
-drop user interface, so you don't need to be familiar with writing XML
+With Kaleo Designer, you develop workflow definitions using a convenient drag
+and drop user interface. You don't need to be familiar with writing XML
 definitions by hand. However, some of the features can be enhanced if you're
-familiar with Groovy, a Java-based scripting language @product@ supports in
-its scripting engine. All that is to say, don't be scared off when you come to a
-block of code in these articles. Just decide if you need the feature and find
-someone familiar with Java or Groovy to help you out.
+familiar with Groovy, a supported Java-based scripting language. All that is to
+say, don't be scared off when you come to a block of code in these articles.
+Just decide if you need the feature and find someone familiar with Java or
+Groovy to help you out.
 
 +$$$
 
 **Note:** By default, there's only one workflow definition that's installed in
 @product@: the Single Approver Workflow definition. What you might not know is
-that you have access to several others too. If you have a local @product@
-installation, look in `[Liferay_Home]/osgi/marketplace/Liferay Forms and
-Workflow.lpkg` 
-and find the `com.liferay.portal.workflow.kaleo.runtime.impl-[version].jar`.
-Open it up and then look in `META-INF/definitions`. You'll see the following
-workflow definitions:
-<!--Note, in my master-private  build the JAr is in osgi/portal/blah.jar-->
+that you have access to several others too. Look in
+`[Liferay_Home]/osgi/portal/` and find the
+`com.liferay.portal.workflow.kaleo.runtime.impl-[version].jar`.  Open it up and
+then look in `META-INF/definitions`. You'll see the following workflow
+definitions:
 
     category-specific-definition.xml
     legal-marketing-definition.xml

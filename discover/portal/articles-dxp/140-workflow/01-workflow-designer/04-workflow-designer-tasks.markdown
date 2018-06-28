@@ -1,4 +1,4 @@
-# Creating Tasks in Workflow Designer [](id=creating-tasks-in-workflow-designer)
+# Creating Tasks in Kaleo Designer [](id=creating-tasks-in-workflow-designer)
 
 Task nodes have several parts and are the most complex parts of a workflow
 definition. Unlike other workflow nodes, task nodes have Assignments, because a
@@ -7,13 +7,14 @@ when a workflow process enters the task node: the assignment specifies who that
 User is. 
 
 Commonly, task nodes contain Notifications, Assignments, and Actions (defined in
-scripts). See more about Notifications and Actions in the article on [workflow nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes). Task
-nodes and their assignments are more complex and deserve their own article (this
-one).
+scripts). See more about Notifications and Actions in the article on 
+[workflow nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes). 
+Task nodes and their assignments are more complex and deserve their own article
+(this one).
 
 To get started, drag and drop a task node on your workflow canvas if you haven't
-already. Open its settings and give it a name as described above. Then double
-click *Actions* in the task's Settings pane.
+already. Open its Properties and give it a name. Then double click *Actions* in
+the task's Properties pane.
 
 You can define a notification (often Task Assignee is appropriate), or write a
 Groovy script defining an action that's triggered for your task.
@@ -66,15 +67,14 @@ you need permission for the VIEW action on the roles resource).
 - Find the resource whose action you want to use for defining your workflow
   assignment.
 
-How do you go from finding the resource action to using it in the workflow?  If
-you're running @product@ Fix Pack 13 or greater, use Workflow Designer's interface
-for setting up a resource action assignment.
+How do you go from finding the resource action to using it in the workflow? Use
+Kaleo Designer's interface for setting up a resource action assignment.
 
 When configuring your task node's Assignment, select Resource Actions as the
 Assignment Type, then specify the Resource Actions to use for the assignment
 (for example, UPDATE).
 
-![Figure 2: Configure resource action assignments in Workflow Designer.](../../../images-dxp/workflow-designer-resource-action-assignment.png)
+![Figure 2: Configure resource action assignments in Kaleo Designer.](../../../images-dxp/workflow-designer-resource-action-assignment.png)
 
 Here's what the assignment looks like in the Source (Workflow XML) tab:
 
@@ -110,9 +110,9 @@ replace the space with an underscore, and you have the action name.
 
 ### Scripted Assignments [](id=scripted-assignments)
 
-You can also use a script to manage the assignment. Here's the
-script for the Review task assignment in the Scripted Single Approver workflow
-definition:
+You can also use a script to manage the assignment. Here's the script for the
+Review task assignment in the Scripted Single Approver workflow definition
+(`single-approver-definition-scripted-assignment.xml`):
 
     import com.liferay.portal.kernel.model.Group;
     import com.liferay.portal.kernel.model.Role;

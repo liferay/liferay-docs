@@ -33,7 +33,7 @@ Any node can have Actions and Notifications.
 
 Actions are used to do some additional processing before entering the node,
 after exiting a node, or once a task node is assigned. They're configured by
-accessing a node's Settings tab, then double clicking *Actions*.
+accessing a node's Properties tab, then double clicking *Actions*.
 
 ![Figure 1: You can add an Action to a Task node.](../../../images-dxp/workflow-designer-action.png)
 
@@ -74,7 +74,7 @@ get a notification that something is required in the workflow.
 Notifications are often sent to tell task assignees that something is required
 of them in the workflow or to update asset creators on the status of the
 process. They can be sent for tasks or any other type of node in the workflow.
-To set up notifications, double click on *Notifications* in a node's Settings tab
+To set up notifications, double click on *Notifications* in a node's Properties tab
 and create a notification.
 
 ![Figure 2: You can send a Notification from a Task node.](../../../images-dxp/workflow-designer-notification.png)
@@ -104,7 +104,7 @@ notification.
 Start and end nodes kick off the workflow processing and bring the asset to its
 final, approved state. Often you can use the default start and end nodes without
 modification. If you want to do some more processing (in the case of a start
-node), add an action to the node using the Settings tab, as described in the
+node), add an action to the node using the Properties tab, as described in the
 section on Actions above.
 
 End nodes have a default action that sets the workflow status to Approved using

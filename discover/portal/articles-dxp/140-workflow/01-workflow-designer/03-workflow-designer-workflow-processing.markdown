@@ -30,16 +30,16 @@ to another node. If you stop before reaching the edge of the next node, a pop-up
 displays node types you can create and connect to on-the-fly. To connect with an
 existing node, continue dragging the connector to that node.
 
-When developing workflows in Workflow Designer, make sure you go through all the
-transitions and name them appropriately. By default, these transitions get system
-generated names, so rename them all to something more human-readable, as they're
-displayed to workflow users as links that will send the workflown item to the
-next step in the workflow.
+When developing workflows in Kaleo Designer, make sure you go through all the
+transitions and name them appropriately. By default, these transitions get
+system generated names, so rename them all to something more human-readable, as
+they're displayed to workflow users as links that will send the item to the next
+step in the workflow.
 
 ![Figure 2: In the Single Approver workflow, a user in the Review task can choose to Approve or Reject the asset, which sends the asset either to the EndNode or to the Update task.](../../../images-dxp/workflow-designer-transition-link.png)
 
 To rename transitions, click on the arrow representing the transition
-and use the Setting tab to set the name just like you do for a node.
+and use the Properties tab to set the name just like you do for a node.
 
 ## Forks and Joins [](id=forks-and-joins)
 

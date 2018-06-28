@@ -1,27 +1,27 @@
-# Managing Workflows with Workflow Designer [](id=managing-workflows-with-workflow-designer)
+# Managing Workflows with Kaleo Designer [](id=managing-workflows-with-kaleo-designer)
 
-The Workflow Designer gives you a convenient and intuitive interface for creating
+The Kaleo Designer gives you a convenient and intuitive interface for creating
 workflow definitions, from the simplest approval processes to the most complex
 business processes you can imagine. It features a drag and drop interface,
 workflow definition versioning, and the ability to configure definitions and
-their nodes. With Workflow Designer you might never need to look at a single line
-of XML. If you didn't have Workflow Designer, your entire worklfow definition
-would need to be hand crafted in XML. Of course, the Workflow Designer also
+their nodes. With Kaleo Designer you might never need to look at a single line
+of XML. If you didn't have Kaleo Designer, your entire workflow definition
+would need to be hand crafted in XML. Of course, the Kaleo Designer also
 provides the ability to directly manipulate the XML (using the *Source* tab),
 if you find it convenient.
 
 So how do you add a workflow definition?
 
-## Adding New Workflow Definitions with Workflow Designer [](id=adding-new-workflow-definitions-with-workflow-designer)
+## Adding New Workflow Definitions with Kaleo Designer [](id=adding-new-workflow-definitions-with-workflow-designer)
 
-Access Workflow Designer by going to the Control Panel, then clicking
+Access Kaleo Designer by going to the Control Panel, then clicking
 Configuration &rarr; Workflow. Click the Add icon
 (![Add](../../../images-dxp/icon-add.png)).
 
 Give the workflow definition a title and you're ready to start designing your
 workflow.
 
-![Figure 1: The Workflow Designer's graphical interface makes designing workflows intuitive.](../../../images-dxp/workflow-designer-canvas.png)
+![Figure 1: The Kaleo Designer's graphical interface makes designing workflows intuitive.](../../../images-dxp/workflow-designer-canvas.png)
 
 ## Saving and Publishing Workflow Definitions [](id=saving-and-publishing-workflow-definitions)
 
@@ -29,10 +29,13 @@ First, look below the canvas to see the buttons that let you *Save* or
 *Publish*. Saving the definition as a draft lets you save your work so it's not
 lost (due to a timeout, for example). It won't be published (and assignable to
 assets), and it won't be considered a version until the Publish button is
-clicked. Each time you save the workflow as a draft, the Draft Version field is
-incremented, and each time you publish the workflow, a new Version is added.
+clicked. Each time you save the workflow as a draft, a new revision is added to
+the Revision history. To see the Revision history and manage workflow versions,
+open the Info sidebar (![Information](../../../images/icon-information.png)) and
+click  *Revision History*.
 
-![Figure 2: View a list of the current workflows that can be edited in the Workflow Designer.](../../../images-dxp/workflow-designer-definitions.png)
+
+![Figure 2: View a list of the current workflows that can be edited in the Kaleo Designer.](../../../images-dxp/workflow-designer-definitions.png)
 
 ## Adding Nodes [](id=adding-nodes)
 
@@ -47,7 +50,7 @@ the workflow.
    can't be used in the workflow. Delete the existing transition and then you
    can make new transitions to direct the *flow* of your workflow (see more
    about transitions below if you're not sure what they're for or how to use
-   them in Workflow Designer).
+   them in Kaleo Designer).
 
 Alternatively, start by deleting the default transition, then click the edge of
 the start node, drag a new transition from the start node to a blank spot on the
