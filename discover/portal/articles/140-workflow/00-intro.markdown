@@ -1,17 +1,16 @@
 # Workflow [](id=workflow)
 
-The ancient Greeks were pretty important, so we decided to name Liferay's
-workflow engine *Kaleo*. In Greek, Kaleo means "called ones," which is
-appropriate for a workflow engine that calls users to participate in a review
-process designed for them. Kaleo workflow allows a user to define any number of
-simple to complex business processes/workflows, deploy them, and manage them
-through a portal interface. The processes have knowledge of users, groups and
-roles. You don't have to write a single line of code to accomplish this: all
-you have to do is create one XML document, or if you're a Liferay Digital
+Liferay's workflow engine is named *Kaleo*. In Greek, Kaleo means "called ones,"
+which is appropriate for a workflow engine that calls users to participate in
+a review process designed for them. Kaleo workflow makes it possible to define
+any number of simple to complex business processes/workflows, deploy them, and
+manage them through a portal interface. The processes have knowledge of Users,
+Groups and Roles. You don't have to write a single line of code to accomplish
+this: it can be defined in an XML document, or if you're a Liferay Digital
 Experience Platform (DXP) customer, you have access to a nifty visual designer
 for workflows, called the Workflow Designer. 
 
-There are several aspects to workflow that you need to understand: 
+There are several steps to effective workflowing: 
 
 - Activating workflow
 
@@ -23,8 +22,8 @@ There are several aspects to workflow that you need to understand:
 
 - Using workflow with other applications
 
-After all that, you'll be familiar with using Liferay's Kaleo workflow to
-set up approval process for any 
+After all that, you'll be familiar with using Liferay's Kaleo workflow to set up
+approval processes for any 
 [workflow-enabled content](/discover/portal/-/knowledge_base/7-1/activating-workflow).
 
 ## What's New with Workflow [](id=whats-new-with-workflow)
@@ -36,14 +35,14 @@ There are some noteworthy enhancements to the workflow functionality:
 - Preview and restore a prior version.
 
 - Save draft workflows and retain them in an unpublished state (this is a new
-    feature for Liferay Portal CE workflow users).
+  feature for Liferay Portal CE workflow users).
 
 - All Control Panel workflow functionality is unified under one entry, found at
-    Control Panel &rarr; Configuration &rarr; Workflow.
+  Control Panel &rarr; Configuration &rarr; Workflow.
 
 - Create workflows (using a text editor for Liferay Portal CE users, and the Workflow
-    Designer for Liferay DXP customers) at Control Panel &rarr; Configuration
-    &rarr; Workflow. Just click the Add button.
+  Designer for Liferay DXP customers) at Control Panel &rarr; Configuration
+  &rarr; Workflow. Just click the Add button.
 
 Create your own workflows from scratch or leverage existing workflows.
 
@@ -69,12 +68,14 @@ workflows, upload it:
 
 2.  Click the Add button (![Add](../../images/icon-add.png)).
 
-3.  Give the workflow a descriptive title, then click the link to _import a
+3.  Give the workflow a descriptive title; then click the link to _import a
     file_. 
+
 4.  Find the XML file and upload it. Once uploaded, its XML is displayed in the
     workflow editor and it can be further edited if necessary.
-5.  If it's ready to publish, click *Publish*. Otherwise, *Save* it and it will
-    be in Unpublished status.
+
+5.  If it's ready to publish, click *Publish*. Otherwise, *Save* it and it stays
+    Unpublished.
 
 ## Published Versus Unpublished [](id=published-versus-unpublished)
 
@@ -93,28 +94,28 @@ You're making a simple edit to a workflow, when suddenly you remember you were
 supposed to have a meeting with your boss. Quickly you save the workflow and
 hurry off to your meeting. Congratulations! You were promoted to Director of
 Business Productivity! You have no time to edit workflows now, so your colleague
-needs to finish your edits and publish the workflow. Unfortunately, in all the
+must finish your edits and publish the workflow. Unfortunately, in all the
 excitement of your promotion, you forgot what you did to the workflow. It's best
 to revert to the prior version and start editing it from scratch.
 
-1.  Open the workflow editor. Go to Control Panel &rarr; Configuration
-    &rarr; Workflow, and click the workflow from the list.
+1.  Open the workflow editor. Go to *Control Panel* &rarr; *Configuration*
+    &rarr; *Workflow*, and click the workflow from the list.
 
 2.  Open the information panel. Click the Information button
     (![Information](../../images/icon-information.png))
 
-3.  There are two sections to the information panel, Details and Revision
+3.  There are two sections to the information panel: Details and Revision
     History.
 
     The Details screen shows information about the creation of the workflow,
-    information about it's last modification, and a summary of the total
+    information about its last modification, and a summary of the total
     modifications.
 
-    The Revision History screen shows the current version and prior, restorable
-    versions of the workflow. To view a workflow you're interested in
-    restoring or to restore it if you're sure it's the right version, click the
-    Actions button (![Actions](../../images/icon-actions.png)) and select
-    either *Preview* or *Restore*.
+    The Revision History screen shows the current and prior, restorable versions
+    of the workflow. To view an old workflow or to restore it if you're sure
+    it's the right version, click the Actions button
+    (![Actions](../../images/icon-actions.png)) and select either *Preview* or
+    *Restore*.
 
 4.  When you click *Restore* and see the success message, the prior version
     becomes the current version of the workflow. You can now edit the restored
