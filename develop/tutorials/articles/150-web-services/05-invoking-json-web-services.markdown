@@ -1,6 +1,6 @@
 # Invoking JSON Web Services
 
-If you know the URL and are connected to the internet, you can invoke Liferay's
+If you know the URL and are connected to the Internet, you can invoke Liferay's
 JSON web service API in any language you want or directly with the URL or
 [cURL](http://curl.haxx.se/). Additionally, Liferay provides a handy JSON web
 services page that allows you to browse and invoke service methods. 
@@ -17,8 +17,8 @@ invoking the web service.
 
 ![Figure 1: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../../images/jsonws-javascript.png)
 
-This tutorial explains general techniques for working with JSON web services
-and includes details about invoking them via URL. For examples of invoking 
+This tutorial explains techniques for working with JSON web services and
+includes details about invoking them via URL. For examples of invoking
 Liferay's JSON web services via JavaScript, URL, and cURL, see the
 [JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invocation-examples) 
 tutorial. 
@@ -30,7 +30,7 @@ invocation is matched to a method, especially in the case of overloaded service
 methods.
 
 The general rule is that you provide the service method's name and *all* the 
-service method's parameters--even if you only provide `null` values. It's 
+service method's parameters---even if you only provide `null` values. It's 
 important to provide all parameters, but it doesn't matter *how* you do it
 (e.g., as part of the URL line, as request parameters, etc.). The order of the
 parameters doesn't matter either. 
@@ -51,15 +51,14 @@ the parameters are required. You'll learn to use hints next.
 
 ## Using Hints When Invoking a Service via URL
 
-Adding numeric hints lets you specify how many method arguments a service has.
-If you don't specify an argument for a parameter, it's automatically passed in 
-as `null`. Syntactically, you can add hints as numbers separated by a dot in the 
-method name. Here's an example: 
+Numeric hints specify how many method arguments a service has. Syntactically,
+you can add hints as numbers separated by a dot in the method name. Here's an
+example: 
 
     /foo/get-bar.2/param1/123/-param2
 
 Here, the `.2` is a numeric hint specifying that only service methods with two
-arguments are matched; others will be ignored for matching. 
+arguments are matched; others are ignored for matching. 
 
 There's an important distinction to make between matching with hints and 
 matching without hints. When a hint is specified, you don't have to specify all
@@ -68,7 +67,7 @@ example may be called like this:
 
     /foo/get-bar.2/param1/123
 
-In this example, `param2` will automatically be set to `null`. 
+In this example, `param2` is automatically set to `null`. 
 
 Here's a real Liferay example:
 
@@ -114,18 +113,17 @@ Next, you'll learn how to pass parameters as part of the URL path.
 
 ## Passing Parameters as Part of a URL Path
 
-To pass method parameters as part of the URL path, specify them in name-value 
-pairs after the service URL. Parameter names must be formed from method argument 
-names by converting them from camel case to names that use all lower case, 
-dash-separated words. For example, this returns all top-level bookmark folders 
-from the specified site: 
+Specify parameters in name-value pairs after the service URL. Parameter names
+must be formed from method argument names by converting them from camel case to
+all lower case, dash-separated names. For example, this returns all top-level
+bookmark folders from the specified site: 
 
     http://localhost:8080/api/jsonws/bookmarks.bookmarksfolder/get-folders/group-id/20181/parent-folder-id/0
 
-You can pass parameters in any order; it's not necessary to follow the order in
-which the arguments are specified in the method signatures. 
+You can pass parameters in any order; you need not follow the order of the
+arguments in the method signatures. 
 
-When a method name is overloaded, the *best match* will be used. The method that
+When a method name is overloaded, the *best match* is used. The method that
 contains the least number of undefined arguments is chosen and invoked for you. 
 
 You can also pass parameters in a URL query. The next section shows you how to 
@@ -141,9 +139,9 @@ set them equal to their argument value. For example:
 As with passing parameters as part of a URL path, the parameter order is not 
 important and the best match rule applies for overloaded methods. 
 
-Now you know a few different ways to pass parameters. It's also possible to pass
-URL parameters in a mixed way. For example, some can be part of the URL path 
-while others can be specified as request parameters. 
+Now you know a few different ways to pass parameters. You can also pass URL
+parameters in a mixed way. For example, some can be part of the URL path while
+others can be specified as request parameters. 
 
 Parameter values are sent as strings using the HTTP protocol. Before a matching
 Java service method is invoked, each parameter value is converted from a 
@@ -152,9 +150,9 @@ to convert each object to its appropriate common type. Although it's possible to
 add or change the conversion for certain types, this tutorial only covers the 
 standard conversion process. 
 
-Conversion for common types (e.g., `long`, `String`, `boolean`) is 
-straightforward. Dates can be given in milliseconds. Locales can be passed as
-locale names (e.g. `en` and `en_US`). To pass in an array of numbers, send a
+Conversion for common types (e.g., `long`, `String`, `boolean`) happens
+directly. Dates can be given in milliseconds. Locales can be passed as locale
+names (e.g. `en` and `en_US`). To pass in an array of numbers, send a
 string of comma-separated numbers (e.g. the string `4,8,15,16,23,42` can be
 converted to `long[]` type). You get the picture! 
 
@@ -170,7 +168,7 @@ object. These types of conversions are performed in two steps:
   the method signature). This step is only executed if the Java argument type
   uses generics. 
 
-As an example, consider the conversion of a `String` array `[en,fr]` as JSON web 
+For example, consider the conversion of a `String` array `[en,fr]` as JSON web 
 service parameters for a `List<Locale>` Java method argument type: 
 
 - *Step 1--JSON deserialization*: The JSON array is deserialized to a
@@ -218,14 +216,14 @@ of the query it's encoded as a plus sign (`+`).
 All these encoding rules apply to ASCII and international (non-ASCII)
 characters. Since Liferay works in UTF-8 mode, parameter values must be encoded 
 as UTF-8 values. Liferay doesn't decode request URLs and request parameter 
-values to UTF-8 itself; it relies on the web server layer. When
-accessing services through JSON-RPC, encoding parameters to UTF-8 isn't
-enough--you need to send the encoding type in a Content-Type header (e.g.
-`Content-Type : "text/plain; charset=utf-8"`).
+values to UTF-8 itself; it relies on the web server. When accessing services
+through JSON-RPC, encoding parameters to UTF-8 isn't enough---you need to send
+the encoding type in a Content-Type header (e.g. `Content-Type : "text/plain;
+charset=utf-8"`).
 
 For example, suppose you want to pass the value
 "&#1057;&#1091;&#1087;&#1077;&#1088;" ("Super" in Cyrillic) to a JSON web
-service method. This name first has to be converted to UTF-8 (resulting in an 
+service method. This name must first be converted to UTF-8 (resulting in an 
 array of 10 bytes) and then encoded for URLs or request parameters. The 
 resulting value is the string `%D0%A1%D1%83%D0%BF%D0%B5%D1%80` that can be 
 passed to your service method. When received, this value is first translated to 
@@ -349,20 +347,19 @@ Find out how next.
 
 ## Inner Parameters
 
-<!-- Link to ServiceContext tutorial once it exists -->
 When you pass in an object parameter, you'll often need to populate its inner
 parameters (i.e., fields). Consider a default parameter `serviceContext` of type
 `ServiceContext`. To make an appropriate call to JSONWS, you might need to set 
 the `serviceContext` parameter's `addGroupPermissions` and `scopeGroupId` 
 fields. 
 
-You can pass inner parameters by using dot notation to specify them. Just append 
-the name of the parameter with a dot (i.e., a period, `.`), followed by the 
-inner parameter's name. For the `ServiceContext` inner parameters mentioned 
-previously, you'll specify `serviceContext.addGroupPermissions` and 
-`serviceContext.scopeGroupId`. These are recognized as inner parameters and 
-their values are injected into existing parameters before the API service method 
-is executed. 
+You can pass inner parameters by using dot notation to specify them. Append the
+name of the parameter with a dot (i.e., a period, `.`), followed by the inner
+parameter's name. For the `ServiceContext` inner parameters mentioned
+previously, you'll specify `serviceContext.addGroupPermissions` and
+`serviceContext.scopeGroupId`. These are recognized as inner parameters and
+their values are injected into existing parameters before the API service
+method is executed. 
 
 Inner parameters aren't counted as regular parameters for matching methods and 
 are ignored during matching. 
@@ -374,7 +371,7 @@ created object parameter instances!
 
 $$$
 
-Next, let's see what values are returned when a JSON web service is invoked.
+Next, you'll examine returned values when a JSON web service is invoked.
 
 ## Returned Values
 
@@ -382,9 +379,8 @@ No matter how a JSON web service is invoked, it returns a JSON string that
 represents the service method result. Returned objects are *loosely* serialized
 to a JSON string and returned to the caller.
 
-Now you'll look at some values returned from service calls. You'll create a 
-`UserGroup` as in the SOAP web service client examples. To make it easy, you'll 
-use the test form provided with the JSON web service in our browser. 
+Here's an example. To make it easy, you'll use the test form provided with the
+JSON web service in our browser. 
 
 1.  Sign in to a local Liferay instance as an administrator and then point your 
     browser to the JSON web service method that adds a `BookmarksFolder`:
@@ -399,7 +395,7 @@ use the test form provided with the JSON web service in our browser.
     `parentFolderId` value of `0`. Set the name to an arbitrary value like
     *News*. Set the description to something like *Created via JSON WS*.
 
-3.  Click *Invoke* and you'll get a result similar to the following:
+3.  Click *Invoke* and you'll get a result like this: 
         
         {
           "companyId": "20202",
@@ -425,10 +421,9 @@ use the test form provided with the JSON web service in our browser.
 The returned `String` represents the `BookmarksFolder` object you just created,
 serialized into a JSON string. To find out more about JSON strings, go to
 [json.org](http://www.json.org/). Also, note that Liferay provides a
-`JSONFactory` service that allows developers to create JSON objects and arrays,
-serialize and deserialize JSON strings, and perform other JSON-related
-operations:
-[https://github.com/liferay/liferay-portal/blob/7.1.x/portal-kernel/src/com/liferay/portal/kernel/json/JSONFactory.java](https://github.com/liferay/liferay-portal/blob/7.1.x/portal-kernel/src/com/liferay/portal/kernel/json/JSONFactory.java).
+[`JSONFactory`](https://github.com/liferay/liferay-portal/blob/7.1.x/portal-kernel/src/com/liferay/portal/kernel/json/JSONFactory.java) 
+service that allows developers to create JSON objects and arrays, serialize and
+deserialize JSON strings, and perform other JSON-related operations.
 
 ## Common JSON Web Service Errors
 
@@ -444,9 +439,9 @@ errors are listed here:
 
 -   *Missing value for parameter*
 
-    If you see this error, you didn't pass a parameter value along with the
-    parameter name in your URL path. The parameter value must follow the
-    parameter name, like in this example:
+    If you see this error, you didn't pass a parameter value with the parameter
+    name in your URL path. The parameter value must follow the parameter name.
+    This is wrong:
 
         /api/jsonws/user/get-user-by-id/userId
 
@@ -462,10 +457,10 @@ errors are listed here:
 	data (method name and argument names). This can be due to various reasons.
 	For example, arguments may be misspelled, the method name may be formatted
 	incorrectly, and so on. Since JSON web services reflect the underlying Java
-	API, any changes in the respective Java API are automatically propagated to
-	the JSON web services. For example, if a new argument is added to a method
-	or an existing argument is removed from a method, the parameter data must
-	match that of the new method signature. 
+    API, any changes there are automatically propagated to the JSON web
+    services. For example, if a new argument is added to a method or an
+    existing argument is removed from a method, the parameter data must match
+    the new method signature. 
 
 -   *Unmatched argument type*
 
