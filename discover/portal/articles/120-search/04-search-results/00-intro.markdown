@@ -4,7 +4,7 @@ The ideal search experience involves a User entering a search term, waiting an
 infinitesimal amount of time, and having the perfectly matching asset delivered
 to them at the top of a list of other extremely relevant hits. Like this:
 
-![Figure 1: The goal is to return the perfect results to Users searching your site.](../../images/search-results-perfect.png)
+![Figure 1: The goal is to return the perfect results to Users searching your site.](../../../images/search-results-perfect.png)
 
 The developers of an asset control much about how the asset's information is
 stored in the search engine (this process is called

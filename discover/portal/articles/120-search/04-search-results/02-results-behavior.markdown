@@ -1,4 +1,4 @@
-# Search Results Behavior
+# Search Results Behavior [](id=search-results-behavior)
 
 The previous article covered ways to display search results. This
 article covers these additional concepts and configurations: 
@@ -31,23 +31,6 @@ total score of a returned document, and all of the implementation details of how
 relevance scoring works are dependent algorithms provided by the 
 [search engine](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html#relevance-intro).
 
-To look in depth at the relative contribution of each to a result set's
-documents, access Elasticsearch's API via URL, like this generalized form:
-
-    http://host:port/index-name/type/_search?q=title:searchTerm&explain
-
-Consider a specific example for an Elasticsearch running on `localhost:9200`,
-with an index name of `liferay-20116`, with a type of `LiferayDocumentType`, and
-searching the title field for the word *ziti*. Importantly, the `explain`
-option is appended to the URL, ensuring that the scoring details are returned
-for each result:
-
-    http://localhost:9200/liferay-20116/LiferayDocumentType/_search?q=title:ziti&explain
-
-The results are returned in JSON format:
-
-![Figure 4: The scoring explanation of search results, displayed in JSON.](../../images/search-results-scoring-json.png)
-
 See the 
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/scoring-theory.html#tfidf) 
 for more information on 
@@ -68,7 +51,7 @@ index can have stale permissions information. To ensure the search engine's
 index has correct, up-to-date permissions information, a second, last-second
 permissions check is performed on the results prior to their display.
 
-### Initial Permissions Checking
+### Initial Permissions Checking [](id=initial-permissions-checking)
 
 The first round of search results permissions filtering adds filter clauses to
 the search query. This ensures that results come back from the search engine
@@ -91,7 +74,7 @@ Why would you want to limit the number of permissions clauses in the search
 query? Performance. Too many search terms in a query can make the search engine
 time out.
 
-### Final Permissions Checking
+### Final Permissions Checking [](id=final-permissions-checking)
 
 Prior to presenting results in the UI, there's a final round of permission
 checking. For example, the User searches for *liferay*, and the search engine
@@ -141,26 +124,22 @@ searchable.
 Search results must be displayed to Users to be useful. If each result was
 displayed in its JSON document form, Users would faint and User Experience
 Designers around the world might spontaneously combust. Liferay values end Users
-and User Experience Designers alike, so a list of result summaries is returned
-instead. 
-
-![Figure 5: Highlighting is useful for drawing attention to your search terms,
-where they appear in the result summary.](../../images/search-highlight-summary.png)
+and User Experience Designers alike, so a list of results displaying summaries is
+returned instead. 
 
 So what's included in a result summary? The information from a document that the
 asset's developer felt is most useful to end Users searching for the asset.
-That means that each asset can have different fields included in their search
-result summaries. For assets with text content, a common summary format is to
-include the title and the content of the asset. The title is displayed first.
-The asset type (for example, Document in the example image above) is always
-displayed on the second line, and a snippet of the content that includes a match
-to the search term on the last line. Some assets, like Documents and Media
-documents, display the description field if no content is available to display.
+Each asset can have different fields included in the summary. For assets with
+text content, a common summary format is to include the *title* and some of the
+*content*, with title displayed first. The asset type is always displayed on the
+second line, and a snippet of the content that includes a match to the search
+term on the last line. Assets without content fields, like Documents and Media
+documents, display the description instead.
 
 Users are different. Only the User's full name and the asset type (User) are
 displayed in User result summaries.
 
-![Figure 6: User summaries contain only the User's full name.](../../images/search-User.png)
+![Figure 1: User summaries contain only the User's full name.](../../../images/search-results-user.png)
 
 For assets that contain other assets (Web Content, Documents & Media, and
 Bookmarks folders) or whose content is not amenable to display (Dynamic Data
@@ -168,12 +147,12 @@ List Records and Calendar Events), it makes more sense to display the title,
 asset type, and description in results summaries. There'd never be anything in a
 content field for these assets.
 
-![Figure 7: Documents and Media, Web Content, and Bookmarks folders include
-titles and descriptions in their summaries.](../../images/search-folder.png)
+![Figure 2: Documents and Media, Web Content, and Bookmarks folders include
+titles and descriptions in their summaries.](../../../images/search-results-folder.png)
 
 Bookmarks entries show the title and the URL.
 
-![Figure 8: Bookmarks Entries summaries show the title and the URL.](../../images/search-bookmarks.png)
+![Figure 3: Bookmarks Entries summaries show the title and the URL.](../../../images/search-results-bookmark.png)
 
 ## Highlighting [](id=highlighting)
 
@@ -181,7 +160,7 @@ By now you've probably noticed that search terms appearing in the summary are
 <mark>highlighted</mark> by default. This is disabled in the widget
 configuration screen. 
 
-![Figure 9: Some document summaries have lots of highlights, if the search term matches text that appears in the summary.](../../images/search-highlights.png)
+![Figure 4: Some document summaries have lots of highlights, if the search term matches text that appears in the summary.](../../../images/search-results-highlight.png)
 
 Highlighting is a helpful visual cue that hints at why the result is returned,
 but beware. A hit can score well, and thus be returned near the top of the
@@ -191,7 +170,7 @@ address of *acc@authors.org*, which is searchable. Because results summaries for
 Users only contain the full name of the User, searching for Mr. Clarke by his
 email address returns the User, but no term is highlighted. 
 
-![Figure 10: Results that match the search term won't always have highlights.](../../images/search-no-highlights.png)
+![Figure 5: Results that match the search term won't always have highlights.](../../../images/search-results-no-highlight.png)
 
 There are additional cases where search results won't have highlighting.
 

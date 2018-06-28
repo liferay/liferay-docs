@@ -1,9 +1,9 @@
-# Display Settings
+# Display Settings [](id=display-settings)
 
 The Search Results widget's default display is a paginated list. Each list item
 is a summarized hit to a search query. Click on a specific result to look at it
 in more detail. Configure display options by opening the Search Results options
-menu (![Options](../../images/icon-app-options.png)) and selecting
+menu (![Options](../../../images/icon-app-options.png)) and selecting
 *Configuration*. 
 
 **Enable Highlighting**
@@ -22,7 +22,7 @@ back again. This option allows developers to see how their objects are being
 indexed. Once enabled, click the *Details...* link below the result summary to
 expand the result's document view.
 
-![Figure 3: Viewing results in their document form lets you inspect exactly what's being indexed for a particular asset. This screenshot shows just a small portion of one document.](../../images/search-result-document.png)
+![Figure 1: Viewing results in their document form lets you inspect exactly what's being indexed for a particular asset. This screenshot shows just a small portion of one document.](../../../images/search-results-document.png)
 
 **Display Selected Result in Context**
 : When an asset is clicked, show it in its native application. For example, if
@@ -36,7 +36,7 @@ search results.
 
 The next three configurations concern results pagination.
 
-![Figure x: The number of results per page and the URL parameter names used to control pagination behavior are configurable.](../../images/search-results-pagination.png)
+![Figure 2: The number of results per page and the URL parameter names used to control pagination behavior are configurable.](../../../images/search-results-pagination.png)
 
 **Pagination Start Parameter Name**
 : Set the name of the URL parameter for the results page. If the default value
