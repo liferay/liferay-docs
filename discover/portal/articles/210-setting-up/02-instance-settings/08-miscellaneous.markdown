@@ -1,4 +1,7 @@
-# Miscellaneous
+# Miscellaneous Settings [](id=miscellaneous-settings)
+
+The Miscellaneous tab of Control Panel &rarr; Configuration &rarr; Instance
+Settings contains display settings and a few integration configuration.
 
 ## Miscellaneous: Display Settings [](id=miscellaneous-display-settings)
 

@@ -1,9 +1,13 @@
 # Authentication [](id=authentication)
 
+Configure authentication at Control Panel &rarr; Configuration &rarr; Instance
+Settings. In the Configuration tab, scroll down to the Authentication section
+and expand it.
+
 Authentication has several tabs: General, OpenSSO, CAS, NTLM, LDAP, OpenID,
 Facebook, Google, and OpenId Connect. These configure how Users authenticate.
 
-![Figure 2: Configure general authentication behavior and settings for external authentication systems.](../../../images/instance-settings-auth.png)
+![Figure 1: Configure general authentication behavior and settings for external authentication systems.](../../../images/instance-settings-auth.png)
 
 The General tab's settings affect only the platform's built-in authentication
 functionality and don't have anything to do with the integration options on the

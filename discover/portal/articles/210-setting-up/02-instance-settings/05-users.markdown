@@ -1,5 +1,9 @@
 # Users [](id=Users)
 
+Configure user settings at Control Panel &rarr; Configuration &rarr; Instance
+Settings. In the Configuration tab, scroll down to the Users section and expand
+it.
+
 The *Users* section has three tabs: Fields, Reserved Credentials and Default
 User Associations.
 

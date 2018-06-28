@@ -1,10 +1,15 @@
-# Email and Content
+# Email and Content [](id=email-and-content)
 
-There are a few tabs dedicated to configuring email and content sharing:
+There are a few sections of the Configuration tab dedicated to configuring
+email and content sharing:
 
 - Mail Host Names
 - Email notifications
 - Content Sharing
+
+Configure these settings at Control Panel &rarr; Configuration &rarr; Instance
+Settings. In the Configuration tab, scroll down to the bottom. These three
+entries are the last in the tab.
 
 ## Mail Host Names [](id=mail-host-names)
 
@@ -19,14 +24,14 @@ email address.  By default, these are `Test Test` and `test@liferay.com`. This
 name and email address appear in the *From* field in all email messages sent by
 the virtual instance.
 
-![Figure 6: Customize the email template for the email messages sent to new Users.](../../../images/instance-settings-account-created.png)
+![Figure 1: Customize the email template for the email messages sent to new Users.](../../../images/instance-settings-account-created.png)
 
 The remaining tabs (Account Created Notification, Email Verification
 Notification, Password Changed Notification and Password Reset Notification) are
 used to customize the email messages sent to Users each time any of those four
 events occur.
 
-![Figure 7: There are some handy variables available for use in email templates.](../../../images/instance-settings-definition-of-terms.png)
+![Figure 2: There are some handy variables available for use in email templates.](../../../images/instance-settings-definition-of-terms.png)
 
 A list of tokens, entitled "Definition of Terms," is provided for insertion of
 certain values (such as the portal URL or the User ID) into custom email

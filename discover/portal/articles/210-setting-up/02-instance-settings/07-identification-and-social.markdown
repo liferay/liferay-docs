@@ -1,8 +1,9 @@
-# Identification and Social
+# Identification and Social [](id=identification-and-social)
 
 The Identification and Social sections of Instance Settings are smaller thatn
-some of the other sections, but contain important Instance Settings for some
-virtual isntances.
+some of the other sections, but contain important settings for some virtual
+isntances. Both are top level tabs of Control Panel &rarr; Configuration &rarr;
+Instance Settings.
 
 ## Identification [](id=identification)
 

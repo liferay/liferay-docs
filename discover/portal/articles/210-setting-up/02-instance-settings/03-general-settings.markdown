@@ -1,4 +1,8 @@
 # General Settings[](id=general-settings)
+ 
+General virtual instance settings are configured at Control Panel &rarr;
+Configuration &rarr; Instance Settings. The General settings are at the top of
+the first tab, Configuration.
 
 The General section has three headings: Main Configuration, Navigation, and
 Additional Information. Under Main Configuration:
