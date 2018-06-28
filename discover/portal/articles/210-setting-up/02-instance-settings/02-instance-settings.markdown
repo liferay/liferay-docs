@@ -9,21 +9,26 @@ section, Configuration. The remaining sections are covered in the next article.
 
 ![Figure 1: The configuration options in Instance Settings are divided into four categories.](../../../images/instance-settings-navigation.png)
 
-The Configuration section of In stance Settings is divided into seven
+The Configuration section of Instance Settings is divided into seven
 sub-sections. The first is General.
 
 ## General [](id=general)
 
 The General section has three headings: Main Configuration, Navigation, and
-Additional Information. Under Main Configuration, set the name of the entity
-responsible for running the virtual instance. Additionally, define the name of
-your virtual instance's default site, set the mail domain, virtual host and
-content delivery network address.
+Additional Information. Under Main Configuration:
+
+- Set the name of the entity responsible for running the virtual instance.
+
+- Set the mail domain.
+
+- Set the virtual host.
+
+- Set the content delivery network address.
 
 Under the Navigation heading, set a home page for your virtual instance as well
-as default landing and logout pages. To set these pages, use the part
-of the page's address that follows your domain. For example, to set the
-default landing page to be 
+as default landing and logout pages. To set these pages, use the part of the
+page's address that follows your domain. For example, to set the default landing
+page to be 
 
 `http://localhost:8080/web/guest/login`
 
@@ -39,11 +44,16 @@ Page field:
 
     /user/${liferay:screenName}
 
-Alternatively, set these URLs in a `portal-ext.properties` file:
+These URLs can also be set at the system scope, in a `portal-ext.properties`
+file:
 
     default.landing.page.path=
     default.logout.page.path=
     company.default.home.url=
+
+All virtual instances will share the values specified in the properties file.
+Changes made in Instance Settings override the values set in the properties
+file.
 
 For more information, see the [Portal Properties documentation](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html)
 
@@ -100,8 +110,8 @@ email address is an important default for the following reasons:
     Keeping the email address at the forefront of a User's mind when she logs in
     helps ensure the User keeps it current. 
 
-To leanr to configure a third party authentication service or set up Single Sign
-On (SSO), see the 
+Learn to configure a third party authentication service or set up Single Sign On
+(SSO) in the
 [security documentation](/discover/deployment/-/knowledge_base/7-1/liferay-portal-security).
 
 ## Users [](id=Users)
@@ -122,19 +132,19 @@ Users aren't allowed to register with. Use this feature to prevent Users from
 creating IDs that look like administrative IDs or that have reserved words in
 their names.
 
-Default User Associations has four fields for listing (one per line) Sites,
-Organization Sites, Soles, and User Groups you want new Users to become members
-of automatically. By default, new Users are assigned to only the Users role. You
+Default User Associations has four fields for listing (one per line) the Sites,
+Organization Sites, Roles, and User Groups you want all new Users assigned to
+automatically. By default, new Users are assigned to only the Users role. You
 can also choose whether to apply these configurations to existing Users.
 
 User groups are handy tools for pre-populating your Users' private sites with
-a certain page set, defined by a site template. If you've done that and want all
-Users you add to immediately be added to the User group and inherit those pages,
-add the User group here.
+pages, assigning roles and permissions, and managing site membership. 
 
 ## Terms of Use [](id=terms-of-use)
 
-Terms of Use are important when you need them, but not all sites do. This is
+Terms of Use are important when you need them, but not all sites do. Since
+they're enabled by default, one of your first actions should be to disable or
+replace the default, placeholder terms. This section of Instance Settings is
 where you disable the requirement for all Users to read the terms of use, and
 where you set the Group ID and Article ID for the Web Content Article you're
 using for your Terms of Use.
