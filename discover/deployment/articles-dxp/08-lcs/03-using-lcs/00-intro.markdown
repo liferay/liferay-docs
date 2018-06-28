@@ -3,8 +3,9 @@
 Once your @product@ server is connected to LCS, you can get down to the business 
 that LCS is designed for---managing and monitoring your servers. If you're not 
 already there, log in with your account on 
-[lcs.liferay.com](https://lcs.liferay.com). This is where you'll apply updates, 
-view server metrics, manage environments, and more. 
+[lcs.liferay.com](https://lcs.liferay.com). 
+This is where you'll apply updates, view server metrics, manage environments, 
+and more. 
 
 This articles in this section each detail one or more of LCS's features: 
 
