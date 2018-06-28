@@ -58,7 +58,7 @@ site.
 From the 
 [Theme Builder Gradle Plugin](/develop/reference/-/knowledge_base/7-1/theme-builder-gradle-plugin), 
 to the 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator), 
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes), 
 to 
 [@ide@](/develop/tutorials/-/knowledge_base/7-1/creating-themes-with-liferay-ide), 
 to 
@@ -75,8 +75,8 @@ the stability, conformity, and future evolution of your applications.
 
 Below are some of the available front-end extensions:
 
-- [Theme Contributors](/develop/tutorials/-/knowledge_base/7-1/theme-contributors)
-- [Context Contributors](/develop/tutorials/-/knowledge_base/7-1/context-contributors)
+- [Theme Contributors](/develop/tutorials/-/knowledge_base/7-1/packaging-independent-ui-resources-for-your-site)
+- [Context Contributors](/develop/tutorials/-/knowledge_base/7-1/injecting-additional-context-variables-into-your-templates)
 - [Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/portlet-decorators)
 - [Editor Config Contributors](/develop/tutorials/-/knowledge_base/7-1/modifying-an-editors-configuration)
 

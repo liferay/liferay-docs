@@ -13,12 +13,12 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.source.formatter", version: "2.3.152"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.source.formatter", version: "2.3.195"
     }
 
     repositories {
         maven {
-            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+            url "https://repository-cdn.liferay.com/nexus/content/groups/public"
         }
     }
 }
@@ -33,7 +33,7 @@ transitive dependencies. The Liferay CDN repository hosts them all:
 ```gradle
 repositories {
     maven {
-        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        url "https://repository-cdn.liferay.com/nexus/content/groups/public"
     }
 }
 ```
@@ -122,7 +122,7 @@ manually adding a dependency to the `sourceFormatter` configuration:
 
 ```gradle
 dependencies {
-    sourceFormatter group: "com.liferay", name: "com.liferay.source.formatter", version: "1.0.625"
+    sourceFormatter group: "com.liferay", name: "com.liferay.source.formatter", version: "1.0.668"
 }
 ```
 

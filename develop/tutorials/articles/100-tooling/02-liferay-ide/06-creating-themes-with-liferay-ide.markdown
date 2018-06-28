@@ -36,6 +36,6 @@ Under the hood, Dev Studio is using the
 [theme project template](/develop/reference/-/knowledge_base/7-1/theme-template).
 If you're interested in creating Liferay themes using the
 Liferay Theme Generator, see its dedicated
-[tutorial](/develop/tutorials/-/knowledge_base/7-1/themes-generator). For more
+[tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-themes). For more
 general information on Liferay themes, visit their dedicated tutorial section
 [Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/themes-and-layout-templates).

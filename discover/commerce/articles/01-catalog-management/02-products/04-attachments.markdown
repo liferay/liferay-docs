@@ -17,7 +17,7 @@ Follow these steps to add an attachment to a product:
     select one from the *Options* section of the *Add Attachment* form.
     (Variants are available to choose from only if a product has options
     designated as SKU contributors. See
-    [Options](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options)
+    [Options](/web/liferay-emporio/documentation/-/knowledge_base/1-0/options)
     for details).
 
 3.  If you want the attachment to be displayed on the product page for a limited

@@ -14,12 +14,12 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.soy", version: "3.1.4"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.soy", version: "3.1.6"
     }
 
     repositories {
         maven {
-            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+            url "https://repository-cdn.liferay.com/nexus/content/groups/public"
         }
     }
 }
@@ -48,7 +48,7 @@ transitive dependencies. The Liferay CDN repository hosts them all:
 ```gradle
 repositories {
     maven {
-        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        url "https://repository-cdn.liferay.com/nexus/content/groups/public"
     }
 }
 ```
