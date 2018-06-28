@@ -69,8 +69,7 @@ steps below:
 
 1.  Start your target platform instance.
 
-2.  Start the Gogo shell from a local telnet session (e.g., `telnet localhost
-    11311`).
+2.  Open the Gogo shell.
 
 3.  List all services containing a keyword by running `services | grep
     "SERVICE_NAME"`. It's easiest to do this rather than listing all services
@@ -112,8 +111,7 @@ Follow the steps below to find the bundle symbolic name:
 
 1.  Start your target platform instance.
 
-2.  Start the Gogo shell from a local telnet session (e.g., `telnet localhost
-    11311`).
+2.  Open the Gogo shell.
 
 3.  List all installed bundles by BSN with the command `lb -s`. You can search
     through the output to find the BSN. If you already know the BSN and want to
