@@ -69,7 +69,7 @@ they're still available.
 | Marvel Integration | Removed | Replaced by X-Pack. |
 | OpenID | Release (bundle) | Replaced by OpenID Connect. |
 | OpenSocial Gadget | Removed | |
-| Plugins SDK | Github | Deprecated in 7.0, but released for EXT support. Replaced by a Gradle plugin. |
+| Plugins SDK | [GitHub](https://github.com/liferay/liferay-plugins) | Deprecated in 7.0. Replaced by [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace). |
 | Ruby Console | Removed | |
 | Shield Integration | Removed | Replaced by X-Pack. |
 | Template Engines | Release (bundle) | Replaced by Freemarker. |
@@ -80,4 +80,3 @@ they're still available.
 ## Web Experience
 
 ## Forms and Workflow
-
