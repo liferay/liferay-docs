@@ -36,8 +36,8 @@ updates---they're for customers starting new projects.
 
 Service packs can also include changes that have these characteristics:
 
-- Higher risk. The changes are tested more extensively and over longer periods 
-of time but are riskier than fixes in fix packs. 
+- Higher risk. To mitigate risk, the changes are tested more extensively and 
+over longer periods of time. 
 - Require some of your attention, such as updating your documentation.
 - Improve the product. 
 
