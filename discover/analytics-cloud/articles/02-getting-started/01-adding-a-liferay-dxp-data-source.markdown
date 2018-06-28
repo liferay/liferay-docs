@@ -55,7 +55,7 @@ using the
 Congratulations on setting up your Liferay DXP instance to be an Analytics Cloud
 data source! It's time to add your Liferay DXP instance as a data source. 
 
-## Adding a Liferay DXP Data Source [](id=adding-a-liferay-dxp-data-source)
+## Adding the DXP Data Source [](id=adding-the-dxp-data-source)
 
 Adding a Liferay DXP Data Source connects your Analytics Cloud project with a Liferay DXP instance. 
 
