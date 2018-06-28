@@ -18,7 +18,7 @@ Download the necessary artifacts from the
 
 ## Install the patch on the @product@ WAR and artifacts [](id=how-to-install-a-fix-pack-on-the-liferay-war)
 
-1.  Create an arbitrary folder and unzip the dependency artifacts and the 
+1.  Create an arbitrary folder. Unzip the dependency artifacts and the 
     Patching Tool into it. The folder contents should look like this:
 
     - `[patching-home]/`
@@ -37,8 +37,7 @@ Download the necessary artifacts from the
         liferay.home=/patching-home/
 
     If you're using a different OSGi folder structure, you can specify it as
-    the
-    [Patching Tool Advanced     Configuration](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-tool-advanced-configuration) 
+    the [Patching Tool Advanced Configuration](/discover/deployment/7-1/knowledge_base/patching-tool-advanced-configuration)
     documentation describes: 
 	
         module.framework.core.path=/osgi-home/osgi/core
@@ -47,10 +46,10 @@ Download the necessary artifacts from the
         module.framework.portal.path=/osgi-home/osgi/portal
         module.framework.static.path=/osgi-home/osgi/static	
 
-3.  Download the patch (fix pack or hotfix) to install and place
-    it to the Patching Tool's `patches` folder
+3.  Download the patch (fix pack or hotfix) to install and put it in the
+    Patching Tool's `patches` folder. 
 
-4.  Executing the Patching Tool's `info` command should look like this:
+4.  Execute the Patching Tool's `info` command:
 
         /patching-home/patching-tool> patching-tool.sh info
 
@@ -90,6 +89,3 @@ deployed on any supported Application Server.
 
 [Deploying @product@](/discover/deployment/-/knowledge_base/7-1/deploying-product)
 
-Installing @product@ on WebLogic
-
-Installing @product@ on WebSphere 

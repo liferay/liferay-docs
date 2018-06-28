@@ -1,12 +1,13 @@
 # Patching Tool Advanced Configuration [](id=patching-tool-advanced-configuration)
 
-By default, the Patching Tool's configuration file called `default.properties` is in the tool's folder.
+By default, the Patching Tool's configuration file called `default.properties`
+is in the tool's folder.
 
 A Patching Tool configuration file typically looks like this:
 
     patching.mode=binary
-    war.path=../tomcat-8.0.32/webapps/ROOT/
-    global.lib.path=../tomcat-8.0.32/lib/ext/
+    war.path=../tomcat-9.0.6/webapps/ROOT/
+    global.lib.path=../tomcat-9.0.6/lib/ext/
     liferay.home=../
 
 The properties above (described fully [below](#using-profiles-with-the-patching-tool)) 
@@ -24,7 +25,7 @@ properties:
     module.framework.modules.path=path_to_modules_modules_dir
     module.framework.portal.path=path_to_modules_portal_dir
     module.framework.static.path=path_to_modules_static_dir
-    
+ 
 Using auto-discovery and working with the default profile `default.properties`
 is the easiest way to use the Patching Tool, and is great for smaller, single
 server installations. But many @product@ installations serve millions of pages
@@ -35,12 +36,13 @@ Patching Tool profiles to manage patching for all of them.
 ## Using Profiles with the Patching Tool [](id=using-profiles-with-the-patching-tool)
 
 You can create profiles for multiple runtimes by running auto-discovery or
-creating them manually. To auto-discover other runtimes, run the Patching Tool with parameters like this: 
+creating them manually. To auto-discover other runtimes, run the Patching Tool
+with parameters like this: 
 
     ./patching-tool.sh [name of profile] auto-discovery [path/to/runtime]
 
-This runs the same discovery process, but on the path you specify, and writes
-the profile information to a file called `[name of profile].properties`.
+This runs the same discovery process, but on the path you specify. It writes the
+profile information to a file called `[name of profile].properties`.
 Alternatively, you can manually create profile property files in your
 `patching-tool` folder. 
 
@@ -50,19 +52,19 @@ The Patching Tool configuration properties (profile properties) are next.
 
 Here are the Patching Tool configuration properties: 
 
-**patching.mode:** This can be `binary` (the default) or `source`, if you're
+**patching.mode:** This can be `binary` (the default) or `source` if you're
 patching a source tree. Patches contain both binary and source patches. If your
-development team is extending @product@, have them patch their source tree. 
+development team extends @product@, have them patch their source tree. 
 
-**patches.folder:** Specify the location for the patches to reside. The default 
-location is `./patches`. 
+**patches.folder:** Specify where to store patches. The default location is
+`./patches`. 
 
 **war.path:** Specify the location of the @product@ installation inside your
 application server. Alternatively, you can specify a `.war` file here, and you
 can patch a @product@ `.war` for installation to your application server. 
 
 **global.lib.path:** Specify the location for storing `.jar` files on the global
-classpath. If you're not sure, search for your `portal-kernel.jar` file; it's on
+classpath. If you're not sure, search for `portal-kernel.jar`; it's on
 the global classpath. This property is only valid if your `patching.mode` is
 `binary`. 
 

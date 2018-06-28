@@ -18,7 +18,7 @@ If @product@ is not installed in the parent folder, specify its location:
 
     patching-tool auto-discovery /opt/Liferay/tomcat-8.0.32
 
-If you specified the wrong folder for @product@ or it is not in the parent
+If you specified the wrong location of @product@ or it is not in the parent
 folder, the Patching Tool can't find the
 [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-portal#liferay-home)
 and reports an error like this: 
@@ -37,7 +37,7 @@ Here are ways to resolve the Liferay Home issue:
 
 - Specify the Liferay Home path in the `default.properties` file.
 - If the Liferay Home is in the Patching Tool's tree, create a `.liferay-home` 
-file in the Liferay Home folder and re-run the  auto-discovery process. 
+  file in the Liferay Home folder and re-run the  auto-discovery process. 
 
 When the Patching Tool is configured, running `patching-tool info` reports
 product version information. 

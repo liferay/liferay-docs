@@ -1,9 +1,8 @@
 # Configuring the Patching Tool [](id=configuring-the-patching-tool)
 
-The Patching Tool installs @product@ patches. It's already configured in the
-prepackaged @product@ installation (bundle). If any of the following scenarios
-describes your @product@ installation, however, you must configure the Patching
-Tool manually:
+The Patching Tool installs @product@ patches. It ships with prepackaged
+@product@ bundles. If any of the following scenarios describes your @product@
+installation, however, you must configure the Patching Tool manually:
 
 - Installed @product@ manually on an existing application server
 - Customized your @product@ folder structure
