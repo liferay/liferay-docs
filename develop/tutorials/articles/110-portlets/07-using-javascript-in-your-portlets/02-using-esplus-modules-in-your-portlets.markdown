@@ -44,6 +44,6 @@ in your portlet is a piece of cake!
 
 ## Related Topics [](id=related-topics)
 
-[Overriding a Module's JSPs](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-jsps)
+[Customizing JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)
 
 [Web Services](/develop/tutorials/-/knowledge_base/7-1/web-services)

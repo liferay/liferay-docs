@@ -1,9 +1,7 @@
 # Overriding @product@'s Default YUI and AUI Modules [](id=overriding-liferays-default-yui-and-aui-modules)
 
 @product@ contains several default YUI/AUI modules. You may need to override
-functionality provided by these module's scripts. It's possible to 
-[override JSPs using fragments](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-jsps),
-but you can't override JavaScript files with fragments. Instead, you must create 
+functionality provided by these module's scripts. To do this, you must create 
 a custom AUI module containing three things:
 
 - A copy of the original module's JavaScript file containing your modifications
@@ -78,8 +76,6 @@ Now you know how to override @product@'s default YUI/AUI modules!
 
 ## Related Topics [](id=related-topics)
 
-[Overriding Core JSPs](/develop/tutorials/-/knowledge_base/7-1/overriding-core-jsps)
-
-[Overriding App JSPs](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-jsps)
+[Customizing JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)
 
 [Configuring Modules for @product@'s Module Loaders](/develop/tutorials/-/knowledge_base/7-1/configuring-modules-for-products-loaders)

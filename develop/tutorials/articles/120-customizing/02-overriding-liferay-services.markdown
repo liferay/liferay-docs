@@ -91,4 +91,4 @@ Congratulations! You've created and deployed a Liferay service wrapper!
 
 [Installing Blade CLI](/develop/tutorials/-/knowledge_base/7-1/installing-blade-cli)
 
-[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-blade-cli)
+[Creating Projects with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli)
