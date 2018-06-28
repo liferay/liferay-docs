@@ -1,4 +1,4 @@
-# Configuring Individual Pages
+# Configuring Individual Pages [](id=configuring-individual-pages)
 
 After you've configured your Page Set, you can reconfigure some options at the
 individual page level. When you decide to customize a single page, options that

@@ -1,23 +1,23 @@
-# Page Set Look and Feel
+# Page Set Look and Feel [](id=page-set-look-and-feel)
 
 Page Set configuration starts with the *Look and Feel* tab. Here you have an 
 interface for choosing a theme for the current Site.
 
 ![Figure 1: The Look and Feel page set tab.](../../../../../images/page-set-look-and-feel.png)
 
-## Themes
+## Themes [](id=themes)
 
 Themes can transform the entire look of your Site. They are created by 
 developers and are easily installed using Liferay Marketplace.
 
-![Figure 1: The Look and Feel interface allows you to choose a theme for the current site.](../../../../../images/look-and-feel-pages.png)
+![Figure 2: The Look and Feel interface allows you to choose a theme for the current site.](../../../../../images/look-and-feel-pages.png)
 
 You can apply themes to the entire Site or to individual pages. For the Site,
 go to *Pages* &rarr; the Site (public or private), and click the Gear icon. For
 individual pages, click *Configure* &rarr; *Define a specific look and feel for
 this page* option under the page's *Look and Feel* category. 
 
-![Figure 2: You can define a specific look and feel for a page.](../../../../../images/define-a-specific-look-and-feel.png)
+![Figure 3: You can define a specific look and feel for a page.](../../../../../images/define-a-specific-look-and-feel.png)
 
 Many themes include more than one color scheme, which keeps the existing look
 and feel while giving the Site a different flavor. The Color Schemes option
