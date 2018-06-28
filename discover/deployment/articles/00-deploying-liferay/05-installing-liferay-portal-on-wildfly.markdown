@@ -5,9 +5,8 @@
 (DXP) or [Liferay Downloads](https://www.liferay.com/downloads) (Portal CE).
 @product-ver@ supports deployment to Wildfly 10 and Wildfly 11. Even if you want
 to manually install @product@ on an existing Wildfly application server, it can
-be helpful to download a @product@ Wildfly bundle. The bundle contains many
-required dependencies and configuration files. Before proceeding, also
-download these files for
+be helpful to download a @product@ Wildfly bundle to make gathering the 
+dependencies easier. Before proceeding, also download these files for
 [DXP](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
 and [Portal CE](https://www.liferay.com/downloads):
 
@@ -15,7 +14,7 @@ and [Portal CE](https://www.liferay.com/downloads):
 - Dependencies ZIP file
 - OSGi JARs ZIP file
 
-Installing @product@ manually requires these basic steps:
+Installing @product@ manually takes three steps:
 
 - [Installing dependencies to your application server](#installing-dependencies)
 - [Configuring your application server for @product@](#configuring-wildfly)
@@ -60,8 +59,8 @@ from third-parties as described below.
     available in the Wildfly bundle.
 
 3.  Create the file `module.xml` in the
-    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert the
-    following contents:
+    `$WILDFLY_HOME/modules/com/liferay/portal/main` folder and insert this 
+    configuration:
 
         <?xml version="1.0"?>
 
@@ -144,8 +143,7 @@ control point. A collection of such application servers is known as a *domain*.
 For more information on standalone mode vs. domain mode, please refer to the
 section on this topic in the
 [Wildfly Admin Guide](https://docs.jboss.org/author/display/WFLY/Admin+Guide#AdminGuide-Operatingmodes).
-@product@ fully supports Wildfly when it runs in standalone mode but not when it
-runs in domain mode.
+@product@ fully supports Wildfly in standalone mode but not in domain mode.
 
 You can run @product@ on Wildfly in domain mode, but this method is not fully
 supported. In particular, @product@'s hot-deploy does not work with a managed
@@ -153,9 +151,10 @@ deployment, since Wildfly manages the content of a managed deployment by copying
 files (exploded or non-exploded). This prevents JSP hooks and Ext plugins from
 working as intended. For example, JSP hooks don't work on Wildfly running in
 managed domain mode, since @product@'s JSP override mechanism relies on the
-application server.
+application server. Since both of these features are deprecated, however, you
+may not be using them.
 
-Using the command line interface is recommended for domain mode deployments.
+The command line interface is recommended for domain mode deployments.
 
 +$$$
 
@@ -176,10 +175,8 @@ Configuring Wildfly to run @product@ includes these things:
 - Setting properties and descriptors
 - Removing unnecessary configurations
 
-Optionally, you can configure Wildfly to manage these things for @product@:
-
-- [Data source](#database-configuration)
-- [Mail session](#mail-configuration)
+Optionally, you can configure Wildfly to manage @product@'s data source and mail
+session. 
 
 Start with configuring Wildfly to run @product@.
 
@@ -256,7 +253,7 @@ Before continuing, verify the following properties have been set in the
 
 7.  The `<jsp-config>` tag contains its new attributes.
 
-Now it's time for some changes to your configuration and startup scripts.
+Now you must configure your JVM and startup scripts.
 
 In the `$WILDFLY_HOME/bin/` folder, you must make these modifications to your
 standalone domain's configuration script file `standalone.conf`
@@ -267,7 +264,7 @@ standalone domain's configuration script file `standalone.conf`
 - Set the preferred protocol stack
 - Increase the default amount of memory available.
 
-Make the following edits as applicable to your operating system:
+Make the following edits as applicable for your operating system:
 
 **Windows:**
 
@@ -313,8 +310,8 @@ insert the following path names inside the `<paths>...</paths>` element:
     <path name="com/sun/org/apache/xml/internal/resolver" />
     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
 
-The added paths resolve issues with portal deployment exceptions and image
-uploading problems on @product@ instance's running on Wildfly. 
+The added paths resolve issues with deployment exceptions and image uploading
+problems. 
 
 $$$
 
@@ -333,14 +330,14 @@ installation on Wildfly. Next you'll configure your database.
 
 ### Database Configuration [](id=database-configuration)
 
-The easiest way to handle your database configuration is to let @product@ manage
-your data source. @product@'s
+The easiest way to handle database configuration is to let @product@ manage your
+data source. The 
 [Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-product#using-liferays-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
 
-This section demonstrates configuring a MySQL database. If you're using a
-different database, modify the data source and driver snippets as necessary.
+MySQL is used as the example below. If you're using a different database, modify
+the data source and driver snippets as necessary.
 
 If you want Wildfly to manage your data source, follow these steps:
 
@@ -363,7 +360,7 @@ If you want Wildfly to manage your data source, follow these steps:
     +$$$
 
     **Note:** If you must change your datasource `jndi-name` to something
-    different, you'll need to also edit the `datasource` element in the
+    different, you must also edit the `datasource` element in the
     `<default-bindings>` tag.
 
     $$$
@@ -377,7 +374,7 @@ If you want Wildfly to manage your data source, follow these steps:
             </driver>
         </drivers>
 
-Your final data sources subsystem should look like this:
+    Your final data sources subsystem should look like this:
 
         <subsystem xmlns="urn:jboss:domain:datasources:1.0">
             <datasources>
@@ -417,18 +414,18 @@ If you want to manage your mail session with Wildfly, follow these steps:
 1.  Specify your mail subsystem in the
     `$WILDFLY_HOME/standalone/configuration/standalone.xml` file like this:
 
-    <subsystem xmlns="urn:jboss:domain:mail:3.0">
-        <mail-session jndi-name="java:jboss/mail/MailSession" name="mail-smtp">
-            <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp" username="USERNAME" password="PASSWORD"/>
-       </mail-session>
-    </subsystem>
-    ...
-    <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
-    ...
-    <outbound-socket-binding name="mail-smtp">
-            <remote-destination host="smtp.gmail.com" port="465"/>
-        </outbound-socket-binding>
-    </socket-binding-group>
+        <subsystem xmlns="urn:jboss:domain:mail:3.0">
+            <mail-session jndi-name="java:jboss/mail/MailSession" name="mail-smtp">
+                <smtp-server ssl="true" outbound-socket-binding-ref="mail-smtp" username="USERNAME" password="PASSWORD"/>
+           </mail-session>
+        </subsystem>
+        ...
+        <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
+        ...
+        <outbound-socket-binding name="mail-smtp">
+                <remote-destination host="smtp.gmail.com" port="465"/>
+            </outbound-socket-binding>
+        </socket-binding-group>
 
 2.  In your `portal-ext.properties` file in Liferay Home, reference your mail
     session:
@@ -456,4 +453,4 @@ Now you're ready to deploy @product@ using the @product@ WAR file.
 4.  Start the Wildfly application server by navigating to `$WILDFLY_HOME/bin`
     and running `standalone.bat` or `standalone.sh`.
 
-You're now an expert when it comes to deploying @product@ on Wildfly!
+Congratulations; you've deployed @product@ on Wildfly!
