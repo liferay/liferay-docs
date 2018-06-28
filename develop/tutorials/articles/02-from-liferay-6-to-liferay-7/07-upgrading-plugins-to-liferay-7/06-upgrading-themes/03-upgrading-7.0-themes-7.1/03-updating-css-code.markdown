@@ -1,4 +1,4 @@
-## Updating CSS Code [](id=updating-css-code)
+# Updating CSS Code [](id=updating-css-code)
 
 @product-ver@'s UI improvements required these CSS-related changes:
 
@@ -10,7 +10,7 @@ The theme upgrade process involves conforming to these changes. In this section,
 you'll update your theme's CSS files to reflect these changes. Start with 
 updating CSS file names. 
 
-### Updating CSS File Names for Clay [](id=updating-css-file-names-for-clay)
+## Updating CSS File Names for Clay [](id=updating-css-file-names-for-clay)
 
 Some of the CSS filenames have changed to reflect the introduction of Clay 
 (previously Lexicon CSS). The filename changes for the unstyled theme are listed 
@@ -36,7 +36,7 @@ Rename the aui files to match the updated 7.1 clay filenames shown below:
 Next, you can note the removed and deprecated variables and mixins for Bootstrap 
 4 and Lexicon.
 
-### Class Variable Changes [](id=class-variable-changes)
+## Class Variable Changes [](id=class-variable-changes)
 
 @product-ver@ uses Bootstrap 4's CSS rule syntax. The new syntax lets developers
 leverage Bootstrap 4 features and improvements. If your theme does not use the 
@@ -169,8 +169,10 @@ Lexicon's `select-box-icon($color)` mixin is deprecated as of v1.0.10 and was
 removed in v2.0.0. Please use `background-image: lx-icon($name, $color)` 
 instead. 
 
-Note that the `gulp upgrade` task collects the deprecated variables your theme 
-uses and places them in a `_variables_deprecated.scss` file. If you wish to 
+Note that if the `gulp upgrade` task detects any variables in your theme that 
+have been removed in Clay from the previous LexiconCSS version, it adds the 
+`_variables_deprecated.scss` file to your theme with the variables to make sure 
+the theme compiles and to decouple it from future upgrades. If you wish to 
 include this file manually, its contents are shown below for reference:
 
 	@warn "You're using deprecated variables. Please refer to the update guides 
@@ -270,7 +272,7 @@ include this file manually, its contents are shown below for reference:
 After updating your theme's CSS variables and mixins, you should update the Font 
 Awesome Icon imports. 
 
-### Updating Font Awesome Icon Imports [](id=updating-font-awesome-icons) 
+## Updating Font Awesome Icon Imports [](id=updating-font-awesome-icons) 
 
 Originally in Liferay Portal CE 7.0 and Liferay DXP, Font Awesome icons were 
 imported in `_aui_variables.scss` (now renamed `_clay_variables.scss`). Font 
@@ -300,6 +302,6 @@ table below:
 
 ## Related Topics [](id=related-topics)
 
-[]()
+[Updating Theme Templates](/develop/tutorials/-/knowledge_base/7-1/updating-theme-templates)
 
-[]()
+[Copying an Existing Theme's Files](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files)

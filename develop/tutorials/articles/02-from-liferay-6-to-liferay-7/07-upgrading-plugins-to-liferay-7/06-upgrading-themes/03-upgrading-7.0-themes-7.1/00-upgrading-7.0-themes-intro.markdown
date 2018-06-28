@@ -17,9 +17,3 @@ the
 [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes). 
 If you're upgrading in an environment other than the themes generator, follow 
 the other tutorials in this section to upgrade your theme manually. 
-
-## Related Topics [](id=related-topics)
-
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
-
-[Upgrading to @product-ver@](/discover/deployment/-/knowledge_base/7-1/upgrading-to-liferay-71)

@@ -1,4 +1,4 @@
-## Updating Theme Templates [](id=updating-theme-templates)
+# Updating Theme Templates [](id=updating-theme-templates)
 
 @product-ver@ theme templates are essentially the same as Liferay Portal 7.0 
 theme templates. Here are the main changes:
@@ -65,7 +65,7 @@ applicable. For reference, the main changes are listed below:
 Next, you'll learn how to update various theme templates to @product-ver@. If 
 you didn't modify any theme templates, you can skip these sections.
 
-### Updating Portal Normal FTL [](id=updating-portal-normal-ftl)
+## Updating Portal Normal FTL [](id=updating-portal-normal-ftl)
 
 The first one to update is the `portal_normal.ftl` theme template. If you didn't 
 customize `portal_normal.ftl`, you can skip this section. Follow the steps below 
@@ -85,7 +85,7 @@ to update `portal_normal.ftl`:
 If you modified the portlet template for your theme, follow the steps in the 
 next section. 
 
-### Updating Portlet FTL [](id=updating-portlet-ftl)
+## Updating Portlet FTL [](id=updating-portlet-ftl)
 
 Follow these steps to update your modified `portlet.ftl` file:
 
@@ -114,6 +114,6 @@ that the `gulp upgrade` task reports.
 
 ## Related Topics [](id=related-topics)
 
-[]()
+[Updating CSS Code](/develop/tutorials/-/knowledge_base/7-1/updating-css-code)
 
-[]()
+[Making Configurable Theme Settings](/develop/tutorials/-/knowledge_base/7-1/making-configurable-theme-settings)

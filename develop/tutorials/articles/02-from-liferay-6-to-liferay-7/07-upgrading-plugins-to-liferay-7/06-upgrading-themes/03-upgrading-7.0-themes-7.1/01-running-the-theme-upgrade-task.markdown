@@ -1,4 +1,4 @@
-## Upgrading Themes Created With the Liferay Theme Generator [](id=upgrading-themes-created-with-the-theme-generator)
+# Upgrading Themes Created With the Liferay Theme Generator [](id=upgrading-themes-created-with-the-theme-generator)
 
 A Liferay Portal 7.0 theme can be upgraded to @product-ver@, regardless of its 
 project environment (Liferay Theme Generator, Plugins SDK, Maven, etc.). But a 
@@ -13,11 +13,7 @@ Here's what the Upgrade Task does:
 - Updates the theme's Liferay version
 - Updates the theme's Bootstrap version
 - Updates the theme's Lexicon version
-- Updates the CSS<!-- dont think this happens for 7.0 upgrade task-->
 - Suggests specific code updates
-
-The Gulp task automatically upgrades CSS code that it can identify. For 
-everything else, it suggests upgrades. 
 
 Here are the steps for using the theme Gulp `upgrade` task:
 
@@ -54,22 +50,22 @@ executing `gulp upgrade:revert`.
 
 $$$
 
-The Gulp task makes a best effort to upgrade the theme's Bootstrap code from 
-version 3 to 4. For other areas of the code it suspects might need updates, it 
-logs suggestions. The task also reports changes that may affect 
+The Gulp task list any deprecated or removed variables. For other areas of the 
+code it suspects might need updates, it logs suggestions. The task also reports 
+changes that may affect 
 [theme templates](/develop/tutorials/-/knowledge_base/7-1/updating-theme-templates). 
 
 The Gulp `upgrade` task jump-starts the upgrade process, but it doesn't complete 
 it. Manual updates are required. 
 
 The rest of the tutorials in this section explain all the theme upgrade steps, 
-regardless of whether the `upgrade` Gulp task performs them. Steps the upgrade 
+regardless of whether the `gulp upgrade` task performs them. Steps the upgrade 
 task performs are noted in context. Even if you've already executed the upgrade 
 task, it's best to learn all the steps and make sure they're applied to your 
 theme. 
 
 ## Related Topics [](id=related-topics)
 
-[]()
+[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
 
-[]()
+[Updating Project Metadata](/develop/tutorials/-/knowledge_base/7-1/updating-project-metadata)

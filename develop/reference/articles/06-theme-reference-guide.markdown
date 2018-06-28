@@ -1,56 +1,31 @@
 # Theme Reference Guide [](id=theme-reference-guide)
 
 A theme is made up of several files. Although most of the files are named after 
-their matching components, their function may be unclear. 
-
-This document explains each file's usage to make clear which files to modify 
-and which files to leave untouched.
+their matching components, their function may be unclear. This reference guide 
+explains each file's usage to make clear which files to modify.
 
 ## Theme Anatomy [](id=theme-anatomy)
 
 There are two main approaches to theme development for @product-ver@: themes 
 built using the Node.js build tools with the [theme generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
-and [themes built using @ide@](/develop/tutorials/-/knowledge_base/7-1/creating-themes-with-liferay-ide).
-<!-- themes built using the Plugins SDK -->
+and [themes built using @ide@](/develop/tutorials/-/knowledge_base/7-1/creating-themes-with-liferay-ide). 
 
 Themes developed with the theme generator have the anatomy shown below. Although 
 themes developed with @ide@ have a slightly different anatomy built with the
 [theme project template](/develop/reference/-/knowledge_base/7-1/theme-template), 
-the core theme files are the same. Note that the `build` folder is shown for 
-reference, and is generated when the theme is compiled.
+the core theme files are the same. 
 
 - `theme-name/`
-    - `build/`(generated when the theme is compiled)
+    - `src/`
         - `css/`
-            - [`_application.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#application-scss)
-            - [`_base.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#base-scss)
             - [`_clay_custom.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#claycustom-scss)
             - [`_clay_variables.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#clayvariables-scss)
             - [`_custom.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#custom-scss)
-            - [`_extras.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#extras-scss)
-            - [`_imports.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#imports-scss)
-            - [`_layout.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#layout-scss)
-            - [`_liferay_custom.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#liferaycustom-scss)
             - [`_liferay_variables_custom.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#liferayvariablescustom-scss)
-            - [`_liferay_variables.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#liferayvariables-scss)
-            - [`_navigation.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#navigation-scss)
-            - [`_portal.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#portal-scss)
-            - [`_portlet.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#portlet-scss)
-            - [`_taglib.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#taglib-scss)
-            - [`_widget.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#widget-scss)
-            - `application/`
-            - `base/`
-            - `clay/`
-            - [`clay.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#clay-scss)
-            - `compat/`
-            - `font-awesome/`
-            - [`font-awesome.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#font-awesome-scss)
-            - `layout/`
-            - [`main.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#main-scss)
-            - `navigation/`
-            - `portal/`
-            - `portlet/`
-            - `taglib/`
+        - `images/`
+            -   (custom images)
+        - `js/`
+            - [`main.js`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#main-js)
         - `templates/`
             - [`init_custom.ftl`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#initcustom-ftl)
             - [`init.ftl`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#init-ftl)
@@ -58,35 +33,17 @@ reference, and is generated when the theme is compiled.
             - [`portal_normal.ftl`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#portalnormal-ftl)
             - [`portal_pop_up.ftl`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#portalpopup-ftl)
             - [`portlet.ftl`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#portlet-ftl)
-            - (other directories that have been copied from src)
-    - `dist/` (generated when the theme is compiled. This is where the theme's 
-    war file is placed after a build/deploy.)
-    - [`gulpfile.js`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#gulpfile-js)
-    - [`liferay-theme.json`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#liferay-theme-json)
-    - `node_modules/` (generated when an `npm install` command is run from the 
-    root of the theme, and can be deleted at anytime and re-generated by running 
-    `npm install`.)
-        - (many directories)
-    - [`package.json`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#package-json)
-    - `src/`
-        - `css/`
-            - (modified CSS files)
-        - `images/`
-            -   (many directories)
-        - `js/`
-            - [`main.js`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#main-js)
-        - `templates/`
-            - (Modified theme templates)
         - `WEB-INF/`
-                - `lib/`
             - [`liferay-look-and-feel.xml`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#liferay-look-and-feel-xml)
             - [`liferay-plugin-package.properties`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#liferay-plugin-package-properties)
             - `src/`
                 - `resources-importer/`
                     - (Many directories)
+    - [`liferay-theme.json`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#liferay-theme-json)
+    - [`package.json`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#package-json)
                     
 Regarding CSS files, it is recommended that you only modify 
-`_custom.scss`, `_clay_custom.scss`, `_clay_variables.scss`, and 
+`_clay_custom.scss`, `_clay_variables.scss`, `_custom.scss`, and 
 `_liferay_variables_custom.scss`.
 
 You can of course overwrite any CSS file that you wish, but if you modify any 
@@ -95,110 +52,34 @@ to work properly.
 
 ## Theme Files [](id=theme-files)
 
-### _application.scss [](id=application-scss)
-
-Contains imports for application styles. Generally these files style components 
-that aren't Liferay specific, i.e. Alloy or Bootstrap components.
-
 ### _clay_custom.scss [](id=claycustom-scss)
 
-Used for Clay custom styles, i.e. styles for a third party Bootstrap theme.
+Used for Clay custom styles, i.e. styles for a third party Bootstrap theme. 
 Anything written in this file is compiled in the same scope as Bootstrap/Lexicon, 
 so you can use their variables, mixins, etc. You can also implement any of the 
 variables you define in `_clay_variables.scss`.
 
-### _clay_variables.scss [](id=clayvariables-scss)
+### _clay_variables.scss [](id=auivariables-scss)
 
 Used to store custom Sass variables. This file get's injected into the 
 Bootstrap/Lexicon build, so you can overwrite variables and change how those 
 libraries are compiled.
 
-### _base.scss [](id=base-scss)
-
-Contains imports for the base styles for Liferay.
-
 ### _custom.scss [](id=custom-scss)
 
 Used for custom CSS styles. It is recommended that you place all of your custom 
-CSS modfications in this file.
-
-### _extras.scss [](id=extras-scss)
-
-Contains styling that is considered non-essential and potentially dated in the 
-near future i.e. box-shadows, rounded corners, etc. This allows for easy
-maintenance.
-
-### _imports.scss [](id=imports-scss)
-
-Contains imports for third-party libraries required for the theme e.g. Bourbon, 
-Liferay Mixins, Lexicon Base Variables, and Bootstrap Mixins.
-
-### _layout.scss [](id=layout-scss)
-
-Contains imports for layout styles and variables.
-
-### _liferay_custom.scss [](id=liferaycustom-scss)
-
-Contains @product@ styles that are compiled in the same scope as Bootstrap/Lexicon.
-
-**It's recommended that you NOT overwrite this file.**
+CSS modifications in this file.
 
 ### _liferay_variables_custom.scss [](id=liferayvariablescustom-scss)
 
 Used for overwriting variables defined in `_liferay_variables.scss` without 
 wiping out the whole file.
 
-### _liferay_variables.scss [](id=liferayvariables-scss)
-
-Contains variables that are used in `_liferay_custom.scss`.
-
-**It's recommended that you NOT overwrite this file.**
-
-### _navigation.scss [](id=navigation-scss)
-
-Contains imports for navigation styles.
-
-### _portal.scss [](id=portal-scss)
-
-Contains imports for Portal components.
-
-### _portlet.scss [](id=portlet-scss)
-
-Contains imports for portlet components.
-
-### _taglib.scss [](id=taglib-scss)
-
-Contains imports for taglib styles.
-
-### clay.scss [](id=clay-scss)
-
-Contains the Clay base CSS import. If you want to just use Bootstrap, or use 
-Atlas, you can do so by adding one of the following imports:
-
-    @import "clay/lexicon/bootstrap";
-
-or
-
-    @import "clay/lexicon/atlas"; 
-    
-### font-awesome.scss [](id=font-awesome-scss)
-
-Contains the Font Awesome icon imports for Liferay.
-
-### main.scss [](id=main-scss)
-
-Contains imports for the core CSS files.
-
 ### init_custom.ftl [](id=initcustom-ftl)
 
-Used for custom FreeMarker variables i.e. theme setting variables.
-
-### init.ftl [](id=init-ftl)
-
-Contains common FreeMarker variables that are available to use in your theme 
-templates. Useful for reference if you need access to theme objects.
-
-**It's recommended that you NOT overwrite this file.**
+Used for custom FreeMarker variables i.e. 
+[theme setting](/develop/tutorials/-/knowledge_base/7-1/making-configurable-theme-settings) 
+variables.
 
 ### navigation.ftl [](id=navigation-ftl)
 
@@ -221,23 +102,20 @@ theme settings. See the
 [Portlet Decorators tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers) 
 for more info.
 
-### gulpfile.js [](id=gulpfile-js)
-
-Defines the required gulp tasks for Node.js tool developed themes.
-
-**It's recommended that you NOT overwrite this file.**
-
 ### liferay-theme.json [](id=liferay-theme-json)
 
 Contains the configuration settings for your app server, in Node.js tool based 
 themes. You can change this file manually at any time to update your server 
-settings. The file can also be updated via the `gulp init` task. 
+settings. The file can also be updated via the 
+[`gulp init` task](/develop/tutorials/-/knowledge_base/7-1/configuring-your-themes-app-server). 
 
 ### package.json [](id=package-json)
 
-contains theme setting information such as the theme template langauge, version, 
+contains theme setting information such as the theme template language, version, 
 and base theme, for Node.js tool developed themes. This file can be updated 
-manually. The `gulp extend` task can also be used to change the base theme.
+manually. The 
+[`gulp extend` task](/develop/tutorials/-/knowledge_base/7-1/changing-your-base-theme) 
+can also be used to change the base theme. 
 
 ### main.js [](id=main-js)
 
@@ -245,12 +123,15 @@ Used for custom JavaScript.
 
 ### liferay-look-and-feel.xml [](id=liferay-look-and-feel-xml)
 
-Contains basic information for the theme. If your theme has [theme settings](/develop/tutorials/-/knowledge_base/7-1/making-configurable-theme-settings)
-, they are defined in this file. For a full explanation of this file please see
-the [Definitions docs](@platform-ref@/7.1-latest/definitions/liferay-look-and-feel_7_1_0.dtd.html).
+Contains basic information for the theme. If your theme has 
+[theme settings](/develop/tutorials/-/knowledge_base/7-1/making-configurable-theme-settings), 
+they are defined in this file. For a full explanation of this file please see the 
+[Definitions docs](@platform-ref@/7.1-latest/definitions/liferay-look-and-feel_7_1_0.dtd.html). 
 
 ### liferay-plugin-package.properties [](id=liferay-plugin-package-properties)
 
-Contains general properties for the theme. [Resources Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme) 
+Contains general properties for the theme. 
+[Resources Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme) 
 configuration settings are also placed in this file. For a full explanation of 
-the properties available for this file please see the [7.1 Propertiesdoc](@platform-ref@/7.1-latest/propertiesdoc/liferay-plugin-package_7_1_0.properties.html).
+the properties available for this file please see the 
+[7.1 Propertiesdoc](@platform-ref@/7.1-latest/propertiesdoc/liferay-plugin-package_7_1_0.properties.html). 
