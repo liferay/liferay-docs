@@ -99,6 +99,23 @@ receives a notification when assigned a task in the workflow. To do this you
 just choose *Task Assignees* under Recipient Type when configuring the
 notification.
 
++$$$
+
+**Note:** The _from name_ and _from address_ of an email notification are
+configurable via portal properties. Place these settings into a
+`portal-ext.properties` file, placed inside your Liferay Home folder. Then
+restart the server:
+
+    workflow.email.from.name=
+    workflow.email.from.address=
+
+However, these can also be set programmatically into the `WorkflowContext`, and
+the programmatic setting will always take precedence over the system scoped
+portal property.
+
+$$$
+
+
 ## Start and End Nodes [](id=start-and-end-nodes)
 
 Start and end nodes kick off the workflow processing and bring the asset to its
