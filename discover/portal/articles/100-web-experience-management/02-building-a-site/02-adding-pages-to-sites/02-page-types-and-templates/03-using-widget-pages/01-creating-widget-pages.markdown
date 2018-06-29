@@ -1,15 +1,14 @@
 # Creating Widget Pages [](id=creating-widget-pages)
 
-Widget Pages are what you might think of as the standard type of page in 
-@product@. They're simple to create and fill with content or functionality. You 
-create a blank page, define a layout, and then add widgets to the layout. Those 
-widgets could be for displaying content or for providing some tool or function 
-for the user.
+Widget Pages are the classic type of page in @product@. They're simple to create
+and fill with content or functionality. You create a blank page, define
+a layout, and then add widgets to the layout. Widgets can display content or
+provide some tool or function for Users.
 
 ## Adding a Widget Page [](id=adding-a-widget-page)
 
-When you first start @product@ you get a widget page for free as your front 
-page. To create a new widget page, do the following:
+When you first start @product@ you get a widget page by default as your home
+page. To create a new widget page,
 
 1.  Go to *Site Administration* &rarr; *Build* &rarr; *Pages*.
 
@@ -17,15 +16,15 @@ page. To create a new widget page, do the following:
 
 3.  Select the *Widget Page* type.
 
-4.  Name the page "Community" and leave the box checked to *Add this Page to the
+4.  Name the page *Community* and leave the box checked to *Add this Page to the
     following Menus: Default*.
-    
+ 
 5.  Click *Submit*.
-    
-6.  On the next screen you can select a Layout Template or manage other options.
+ 
+6.  On the next screen, you can select a Layout Template or manage other options.
     Leave the defaults and click *Save*.
 
-![Figure 1: Configuring page settings.](../../../../../../images/creating-community-page.png)
+![Figure 1: Create a page called *Community* with two columns.](../../../../../../images/creating-community-page.png)
 
 Creating a page, by default, also adds it to any Navigation Menus that are 
 configured to have new pages added to them. If you don't want a new page added 
@@ -34,9 +33,9 @@ box for that menu.
 
 Your new page is now added to the navigation.
 
-1.  Click the logo in the top left of the page to go back to your site's front 
-    page. You will see the page you just created in the main navigation now.
-    
+1.  Click the logo in the top left of the page to go back to your Site's front
+    page. The page you just created appears in the main navigation.
+ 
 2.  Click on *Community* to go to the page.
 
 Currently the page is empty. Next you'll add some widgets to give it functionality.
@@ -46,15 +45,15 @@ Currently the page is empty. Next you'll add some widgets to give it functionali
 
 ## Adding Widgets to a Page [](id=adding-widgets-to-a-page)
 
-To add widget to a page, go to the page and click the *Add* button  
+To add widget to a page, go to the page and click the *Add* button 
 (![Add](../../../../../../images/icon-control-menu-add.png)) 
 from the  top menu and select the *Widgets* tab. You can either browse
 through the categories of available widgets until you find the one you want, or 
-you can search for widgets by name. Once you've found an widget, click the 
+you can search for widgets by name. Once you've found a widget, click the 
 *Add* button to add it to the current page. Once there, you can drag it to a 
 new position. Alternatively, you can drag the widget directly from the Widgets 
 menu to a specific location on the page. Follow the steps below to add some
-Collaboration apps to the Lunar Resort site.
+Collaboration apps to the Lunar Resort Site.
 
 1.  From the top menu, select *Add* &rarr; *Widgets*.
 
@@ -70,9 +69,8 @@ app and Blogs Aggregator app to a page.
 
 ![Figure 3: Your page layout options are virtually limitless with a slew of application and layout combinations.](../../../../../../images/app-layout-design.png)
 
-If the default layout options provided aren't enough, you can even develop your
-own. For more information about developing custom layout templates, see the
-tutorial 
+If the default layout options provided aren't enough, you can create your own.
+For more information about developing custom layout templates, see the tutorial
 [Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator-0). 
 
 Next, you'll look at creating reusable templates for widget pages.
