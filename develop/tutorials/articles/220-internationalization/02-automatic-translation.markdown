@@ -50,7 +50,7 @@ Here's what a configuration of the `com.liferay.lang.builder` plugin looks in a
 
             repositories {
                 maven {
-                    url "http://cdn.repository.liferay.com/nexus/content/groups/public"
+                    url "http://repository-cdn.liferay.com/nexus/content/groups/public"
                 }
             }
         }
@@ -59,7 +59,7 @@ Here's what a configuration of the `com.liferay.lang.builder` plugin looks in a
 
         repositories {
             maven {
-                url "http://cdn.repository.liferay.com/nexus/content/groups/public"
+                url "http://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
 Now you can start translating your application's messages. If you want to
@@ -117,7 +117,7 @@ all the steps above?
 
         repositories {
             maven {
-                url "http://cdn.repository.liferay.com/nexus/content/groups/public"
+                url "http://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
     }
@@ -130,7 +130,7 @@ all the steps above?
 
     repositories {
         maven {
-            url "http://cdn.repository.liferay.com/nexus/content/groups/public"
+            url "http://repository-cdn.liferay.com/nexus/content/groups/public"
         }
     }
 
