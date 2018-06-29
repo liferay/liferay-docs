@@ -12,17 +12,21 @@ page. To create a new widget page,
 
 1.  Go to *Site Administration* &rarr; *Build* &rarr; *Pages*.
 
-2.  Click the `+` button in the top right to add a new page.
+2.  Click the *Add* icon (
+    ![Add](../../../../../../images/icon-add.png)) in the top right and select 
+    *Public Page* to add a new page.
+    
+3.  Select *Basic Pages* if it is not selected by default.
 
-3.  Select the *Widget Page* type.
+4.  Select the *Widget Page* type. 
 
-4.  Name the page *Community* and leave the box checked to *Add this Page to the
+5.  Name the page *Community* and leave the box checked to *Add this Page to the
     following Menus: Default*.
  
-5.  Click *Submit*.
+6.  Click *Submit*.
  
-6.  On the next screen, you can select a Layout Template or manage other options.
-    Leave the defaults and click *Save*.
+7.  On the next screen, you can select a Layout Template or manage other 
+    options. Leave the defaults and click *Save*.
 
 ![Figure 1: Create a page called *Community* with two columns.](../../../../../../images/creating-community-page.png)
 

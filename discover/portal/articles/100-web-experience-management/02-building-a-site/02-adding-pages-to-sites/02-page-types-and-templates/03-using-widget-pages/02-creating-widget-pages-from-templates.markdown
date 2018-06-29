@@ -18,30 +18,30 @@ Three sample layout page templates are bundled with Liferay:
 
 To add a new widget page template,
 
-1.  Go to *Build* &rarr; *Site Pages*.
+1.  Go to *Build* &rarr; *Pages*.
 
 2.  Select the *Page Templates* tab.
 
 3.  Create a Collection named *Lunar Resort Templates*.
 
-4.  Click the *Add* icon (![Add Page Template](../../../../../../images/icon-add.png)).
+4.  Click the *Add* icon (![Add Page Template](../../../../../../images/icon-add.png)) and select *Widget Page 
+    Template.
 
-5.  Enter a name and description for your template.
+5.  Enter a *Name*.
 
-6.  Leave the *Active* button enabled.
+6.  Click *Save*.
 
-7.  Click *Save*.
+You are immediately taken to the editing page for the template. You can add 
+widgets to the page or access page configuration now. The changes you make are
+instantly applied to the template.
 
-To edit the page template,
+After you leave this screen, to edit the page template:
 
-1.  Click the *Actions* icon (![Actions](../../../../../../images/icon-actions.png)).
+1.  Go back to the *Page Templates* tab.
 
-2.  Click *Edit*.
+2.  Click the *Actions* icon (![Actions](../../../../../../images/icon-actions.png)).
 
-3.  Make any changes to the page.
-
-4.  The changes are instantly applied to the template. You don't need to
-    save before quitting to keep them.
+3.  Click *Edit*.
 
 Note that after a new page template has been created, the default permissions
 only allow the creator to use the page template. To give other users access to
@@ -63,7 +63,8 @@ To use your template to create a new page,
  
 2.  Click the *Add* icon (![Add Page](../../../../../../images/icon-add.png)).
 
-3.  Inside the Lunar Resort collection, select the *Community* page.
+3.  Inside the Lunar Resort collection, select the page template that you 
+    created.
 
 4.  Enter the name of your page and click *Submit*.
 

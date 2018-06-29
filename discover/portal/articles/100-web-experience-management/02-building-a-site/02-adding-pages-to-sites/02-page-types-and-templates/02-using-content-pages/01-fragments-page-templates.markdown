@@ -36,7 +36,7 @@ created.
 1.  Click on the Collection you created.
 
 2.  Click the *Add* icon (
-    ![New](../../../../../../images/icon-add.png))  button to create a Fragment.
+    ![New](../../../../../../images/icon-add.png)) to create a Fragment.
 
 3.  Give it a *Name* and click *Submit*.
 
