@@ -63,11 +63,12 @@ should update your instance's Home URL field so that page requests to
 Once you've entered this setting, page requests to `localhost:8080` redirect
 to the friendly URL of your Liferay instance's new home page.
 
-The other setting you can configure under the Site URL tab is *Virtual Hosts* 
-which connects a domain name to a Site. You can use this to define a domain 
-name (i.e., `www.lunar-resort.com`) for your Site. This can be a full domain or a 
+You can also configure Virtual Hosts, which connects a domain name to a Site, under *Site URL*. You can use this to define a domain name (i.e., 
+`www.lunar-resort.com`) for your Site. This can be a full domain or a 
 subdomain. You can use this to host a number of web sites as separate Sites on 
 one Liferay server.
+
+![Figure 1: When configuring virtual hosts, the public and private pages of a site can be configured to different domains.](../../../../images/settting-virtual-hosts.png)
 
 For instance, if you set this up for the Lunar Resort's development network,
 users in that Site would access `developers.lunar-resort.com`,
