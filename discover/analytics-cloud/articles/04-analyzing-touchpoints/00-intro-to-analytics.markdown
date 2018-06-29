@@ -1,45 +1,33 @@
 # Viewing and Understanding Analytics
 
 Combining traditional Page Analytics with Path Analytics and Asset Analytics is
-what makes Liferay Analytics Cloud special.
+what sets Liferay Analytics Cloud apart from other analytics tools.
 
-A Liferay DXP site often features pages and content. Understanding traditional
-Page Analytics like Views, Visitors, and Bounce Rate is great. You can glean
-lots of good information about how site visitors are interacting with your site
-pages. Liferay Analytics offers that functionality, but provides a novel set of
-metrics for your site pages, Path Analytics, in additioon to traditionaly Page
-Analytics. In addition, several Liferay DXP Assets have even more fine-grained
-metrics to let you drill down deeper than the page level to determine how you
-can improve the performance of your site.
+A Liferay DXP site often features pages and content. Traditional Page Analytics
+like Views, Visitors, and Bounce Rate provide lots of good information about how
+site visitors are interacting with your site pages. Liferay Analytics offers
+that functionality, but provides a novel set of metrics for your site pages,
+Path Analytics, in additioon to traditional Page Analytics. In addition,
+several Liferay DXP Assets have even more fine-grained metrics to let you drill
+down deeper than the page level to determine how you can improve the performance
+of your site.
+
+![Figure x: Pages and Assets are important Touchpoints in Analytics Cloud.](../../images/pages-touchpoints-menu.png)
+
+This article shows you where to find the analytics for Pages and Assets. The
+remaining articles explain their metrics.
 
 ## Viewing Page Data
 
-To view page data directly:
+To view the list of Pages with summary data:
 
-1.  Find the Engagement section of the menu.
+1.  Find the Touchpints section of the menu.
 
-2. Click *Pages*.
+2.  Click *Pages*.
 
-3. From the list of pages, click any one to see a detailed view and
-   metrics.
+![Figure x: The Page list contains useful summary data.](../../images/pages-list.png)
 
-4. The default screen is called *Overview*, and gives you 
-
-SCREENSHOT
-
-To view the Touchpoint data for a particular Individual or Segment:
-
-1.  Navigate to the Individuals or Segments screen in the People section of the
-    menu.
-
-2. The Overview tab contains analytics on the Individual's (or Segment's)
-   interaction with Touchpoints.
-
-SCREENSHOT
-
-The table of Touchpoints provides two ways to visualize Touchpoints: 
-
-Order Touchpoints by ascending or descending order based on any one of these
+Order Pages in ascending or descending order based on any one of these
 metrics:
 
 - Average Engagement Score
@@ -48,26 +36,20 @@ metrics:
 - Average Bounce Rate
 - Average Time on Page
 
-SCREENSHOT
+<!--SCREENSHOT:currently there's no data to screenshot-->
 
-In addition to ordering the Touchpoints, filter them by entering search terms.
+<!-- In addition to ordering the Touchpoints, filter them by entering search terms.
 There's a prominent search bar at the top of the Touchpoints table. Run a basic
 search and see the matching Touchpoints returned.
-
-SCREENSHOT
 
 Once you have some returned results, perhaps being ordered by one of the
 available metrics in descending order, turn your attention to the Time Period
 selector next to the search bar. It recalculates the result based on the time
 period selected. If you go from a shorter time period to longer, you'll
-naturally see more results. In addition, metrics are recalculated. Take
-Views as an example to see how this works:
+naturally see more results. In addition, metrics are recalculated. -->
 
-If the example project was for Liferay's own sites, searching for *symposium*
-and ordering the results in descending order would give us a healthy sample.
-However, you must specify the time period for which you'd like to view the
-metrics. The default is 30 days, but this is configurable. The following values
-are supported:
+The metrics for ordering the Page list are calculated based on the time period
+selected in the time period filter. The following values are supported:
 
 - Last 24 hours
 - Yesterday
@@ -76,42 +58,56 @@ are supported:
 - Last 30 days (default)
 - Last 90 days
 
-Take 90 days for our example search for *symposium*. Now all Touchpoints
-containing the word *symposium* are returned, in descending order of views *in
-the last 90 days*.
+To see this in action, select *Order* &rarr; *Visitors*. Keep the default
+descending order, and select *Last 90 days* from the time period menu. The list
+of Pages is  recalculated, and the first result is the Page with the most number
+of visitors in the last 90 days.
 
-SCREENSHOT
+![Figure x: Order the pages in ascending or descending order, over a selected time period.](../../images/pages-order.png)
 
-Viewing the list of Touchpoints with their overview data is great, but what if
-you want to dive into each metric?
+To View the data for one particular page:
 
-# Where is Asset Data?
+1.  From the list of pages, click any one to see a detailed view and metrics.
 
-To view Asset data directly:
+2.  The default screen is called *Overview*.
 
-1.  Find the Engagement section of the menu.
+![Figure x: Most Page metrics are available in the Overview tab.](../../images/pages-overview.png)
 
-2. Click *Assets*.
+See the [article on Page Analytics](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/04-analyzing-touchpoints/01-page-analytics.markdown) for more information.
 
-To view the Asset data for a particular Individual or Segment:
+## Finding Asset Data
 
-1.  Navigate to the Individuals or Segments screen in the People section of the
-    menu.
+To view the list of Assets with summary data:
 
-2. The Overview tab contains analytics on the Individual's (or Segment's)
-   interaction with Assets. <!-- CHECK THIS -->
+1.  Find the Touchpoints section of the menu.
 
-SCREENSHOT
+2.  Click *Assets*.
 
-The table of Assets provides two ways to visualize Assets: 
+3.  Choose which Asset type you want to view: Blogs, Documents and Media, Forms,
+    or Web content.
 
-Order Assets by ascending or descending order based on any one of the Asset's
+Order Assets in ascending or descending order based on any one of the Asset's
 metrics. The specific metrics differ between Assets. See each Asset's
-documentation for more information.
+documentation for more information. In addition, calculate the metrics over a
+selected time period.
 
-SCREENSHOT
+The following values are supported:
 
-In addition to ordering the Assets, filter them by entering search terms.
+- Last 24 hours
+- Yesterday
+- Last 7 days
+- Last 28 days
+- Last 30 days (default)
+- Last 90 days
+
+To see this in action, select *Blogs* &rarr; *Order* &rarr; *Shares*. Keep the
+default descending order, and select *Last 7 days* from the time period menu.
+The list of Blogs is recalculated, and the first result is the Blogs Entry with
+the most shares in the last 7 days.
+
+![Figure x: Order Blogs in ascending or descending order, over a selected time period.](../../images/assets-blogs-order.png)
+
+<!-- In addition to ordering the Assets, filter them by entering search terms.
 There's a prominent search bar at the top of the Assets table. Run a basic
 keyword search and see the matching Assets returned. 
 
@@ -139,9 +135,19 @@ days, but this is configurable. The following time values are supported:
 
 Take 90 days for our example search for *symposium*. Now all Forms containing
 the word *symposium* are returned, in descending order of views *in the last 90
-days*.
+days*.-->
 
-SCREENSHOT
+To view a single Asset:
+
+1.  Find the Touchpints section of the menu.
+
+2.  Click *Assets*.
+
+3.  Click the desired Asset type.
+
+4. Click an individual Asset from the list.
+
+![Figure x: Once you find an Asset, click it to see its metrics.](../../images/assets-overview-blogs.png)
 
 Viewing and searching the list of Asset, with overview data displayed, is quite
 helpful. But what if you want to dive into a single Asset's metrics?
