@@ -5,6 +5,15 @@ npm and adding it to your npm build process.
 
 ## Installing liferay-npm-bundler [](id=installing-liferay-npm-bundler)
 
++$$$
+
+**Note:** liferay-npm-bundler 1.x performs aggressive semantic version 
+resolution, which can potentially lead to unstable results. To avoid issues, we 
+recommend that you use the latest version of the bundler (2.x at the time of 
+this writing). 
+
+$$$
+
 Follow these steps to install liferay-npm-bundler:
 
 1.  Install NodeJS >= [v6.11.0](http://nodejs.org/dist/v6.11.0/) if you 
@@ -30,8 +39,8 @@ project.
 
 $$$
 
-Now that you have the liferay-npm-bundler installed, you can add it to your 
-npm build process.
+Now that you have the liferay-npm-bundler installed, you can add it to your npm 
+build process.
 
 ## Adding liferay-npm-bundler to Your Build Process [](id=adding-liferay-npm-bundler-to-your-build-process)
 

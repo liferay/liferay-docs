@@ -106,7 +106,7 @@ directly related to that event is printed. In summary, the
 print messages to the log when an export/import event occurs. Other good
 examples of event lifecycle listeners are
 [CacheExportImportLifecycleListener](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/lifecycle/CacheExportImportLifecycleListener.html)
-and [JournalCacheExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/internal/exportimport/lifecycle/JournalCacheExportImportLifecycleListener.java).
+and [JournalCacheExportImportLifecycleListener](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/internal/exportimport/lifecycle/JournalCacheExportImportLifecycleListener.java).
 
 For an example of a lifecycle listener extending the
 `BaseProcessExportImportLifecycleListener` class, inspect the

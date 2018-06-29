@@ -52,21 +52,27 @@ issue the following command:
 
     patching-tool install
 
+To make sure the all changed OSGi bundles replace the existing ones, it is
+recommended to delete the `osgi/state` folder from the
+[Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home). 
+
 +$$$
 
-**Note:** If @product@ isn't running Fix Pack 13 or later, you must delete the
-`/osgi/state` folder from the [Liferay Home
-folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
-after a successful patch installation. Later versions contain a [bug
-fix](https://issues.liferay.com/browse/LPS-71424) that obviates this
-requirement. 
+**Important**: The `osgi/state` folder should ONLY be deleted when working in a 
+development environment or when applying a fix pack or hot fix. 
 
-Deleting the `/osgi/state` folder is undesirable, as important state information
-is stored there. For example, when an application is uninstalled through the
-[App Manager](discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps), the uninstalled state is
-stored in the state folder. Installing a patch, deleting the state folder, and
-restarting @product@ causes all applications, including those previously
-uninstalled, to be reinstalled and started automatically.
+$$$
+
++$$$
+
+**Note**: The `osgi/state` folder in the contains OSGi bundle state information.
+If an OSGi bundle's changes in a hot fix or fix pack are internal only and are,
+therefore, invisible to the OSGi framework, that OSGi bundle stays installed and
+its state information stays unchanged. Hot fixes, for example, may contain
+in-place changes that do not use the API---the framework cannot detect such
+changes. A fix pack's changes may also be transparent to the framework. For
+these reasons, deleting the `osgi/state` folder after applying fix packs and hot
+fixes is recommended. 
 
 $$$
 

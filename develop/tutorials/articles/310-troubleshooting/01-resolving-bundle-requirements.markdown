@@ -58,7 +58,7 @@ First, note the module's dependencies. Here is the `dependencies` section of the
 
 Then use
 [Felix Gogo Shell's `lb command`](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
-to verify the dependencies in Liferay’s OSGi Runtime:
+to verify the dependencies in Liferay's OSGi Runtime:
 
     lb
     START LEVEL 1

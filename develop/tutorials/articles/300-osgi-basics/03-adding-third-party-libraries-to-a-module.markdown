@@ -19,7 +19,7 @@ are available at these locations:
 
 Deploying the module to Liferay's OSGi framework lets you share it on the
 system. If you find a module for the library you need,
-[deploy](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module)
+[deploy](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
 it. Then add a `compileOnly` dependency for it in your module. When you deploy
 your module, the OSGi framework wires the dependency module to your module. If
 you don't find an OSGi module based on the Java library, go to Step 2. 

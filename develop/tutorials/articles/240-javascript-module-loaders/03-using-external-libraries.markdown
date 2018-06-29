@@ -42,8 +42,20 @@ Next you can learn how to load external libraries as browser globals.
 ## Loading Libraries as Browser Globals [](id=loading-libraries-as-browser-globals)
 
 If you want to use a library that doesn't export itself as a named module 
-(as is the case for many plugins) or load the library as a browser global, you 
-can use the following steps:
+(as is the case for many plugins) or load the library as a browser global, 
+follow the steps in this section.
+
++$$$
+
+**Note:** These steps only apply to users on Liferay Portal CE 7.0 GA4, Liferay 
+Digital Enterprise 7.0 SP2 (Fix Pack 8), or lower patch levels. If you're on a 
+higher patch level, follow the steps in the 
+[Using Libraries that You Host](/develop/tutorials/-/knowledge_base/7-0/using-external-libraries#using-libraries-that-you-host) 
+section.
+
+$$$
+
+Follow these steps to load your libraries as browser globals:
 
 1.  Add a `<script>` tag with the following content before loading your module:
 
@@ -70,8 +82,23 @@ how to load libraries that you host.
 
 ## Using Libraries That You Host [](id=using-libraries-that-you-host)
 
-If you're hosting the library (and not loading it from a CDN), you can follow 
-these steps to use your library:
+If you're hosting the library (and not loading it from a CDN), you must hide the 
+Liferay AMD Loader to use your Library. 
+
+If you're running Liferay Portal CE 7.0 GA4, Liferay Digital Enterprise 7.0 SP2 
+(Fix Pack 8), or a higher patch level, you can hide the Liferay AMD Loader 
+through the control panel. Follow these steps:
+
+1.  Open the Control Panel, navigate to *Configuration* &rarr; 
+    *System Settings*. 
+
+2.  Click *JavaScript Loader* under the *Foundation* tab. 
+
+3.  Uncheck the `expose global` option.
+
+If you're running a lower patch level than Liferay Portal CE 7.0 GA4 or Liferay 
+Digital Enterprise 7.0 SP2 (Fix Pack 8), follow these steps to hide the Liferay 
+AMD Loader:
 
 1.  Name the library in the define function, as covered in the 
     [Configuring Libraries to Support UMD](/develop/tutorials/-/knowledge_base/7-0/using-external-libraries#configuring-libraries-to-support-umd)
@@ -89,16 +116,6 @@ these steps to use your library:
     
     This task names the library and generates the appropriate loader 
     configuration for you.
-
-+$$$
-
-**Note:** With the release of Liferay Portal CE 7.0 GA4 and Liferay Digital 
-Enterprise 7.0 SP2 (Fix Pack 8), it will be possible to hide the Liferay AMD 
-Loader through @product@'s System Settings. Open the Control Panel, navigate to 
-*Configuration* &rarr; *System Settings*, and click *JavaScript Loader* under 
-the *Foundation* tab. Finally, uncheck the `expose global` option.
-
-$$$
 
 Now you know how to adapt external libraries for Liferay's JavaScript Loaders.
 

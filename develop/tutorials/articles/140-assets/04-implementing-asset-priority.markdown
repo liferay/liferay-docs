@@ -37,7 +37,7 @@ available in your service layer via the `ServiceContext` variable
 `serviceContext`. Retrieve it with `serviceContext.getAssetPriority()`, and then
 pass it as the last argument to the `assetEntryLocalService.updateEntry` call in
 your `-LocalServiceImpl`. You can see an example of this in 
-[the `BlogsEntryLocalServiceImpl` class](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-service/src/main/java/com/liferay/blogs/service/impl/BlogsEntryLocalServiceImpl.java)
+[the `BlogsEntryLocalServiceImpl` class](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/portal-impl/src/com/liferay/portlet/blogs/service/impl/BlogsEntryLocalServiceImpl.java)
 of @product@'s Blogs app. The `updateAsset` method takes a `priority` argument,
 which it passes as the last argument to its `assetEntryLocalService.updateEntry` 
 call: 

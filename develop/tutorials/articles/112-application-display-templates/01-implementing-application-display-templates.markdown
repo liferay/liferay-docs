@@ -50,7 +50,7 @@ exposing the ADT functionality to users. You'll walk through these steps now:
 
     As an example `*PortletDisplayTemplateHandler` implementation, you can look
     at
-    [WikiPortletDisplayTemplateHandler.java](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/wiki/wiki-web/src/main/java/com/liferay/wiki/web/internal/portlet/template/WikiPortletDisplayTemplateHandler.java).
+    [WikiPortletDisplayTemplateHandler.java](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/wiki/wiki-web/src/main/java/com/liferay/wiki/web/internal/portlet/template/WikiPortletDisplayTemplateHandler.java).
 
 2. Since the ability to add ADTs is new to your portlet, you must configure
    permissions so that administrative users can grant permissions to the roles
@@ -122,7 +122,7 @@ exposing the ADT functionality to users. You'll walk through these steps now:
     them manually in your configuration class.
 
     As an example JSP, see the Wiki application's
-    [configuration.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/wiki/wiki-web/src/main/resources/META-INF/resources/wiki/configuration.jsp). 
+    [configuration.jsp](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/wiki/wiki-web/src/main/resources/META-INF/resources/wiki/configuration.jsp). 
 
 5. You must now extend your view code to render your portlet with the selected
    ADT. This allows you to decide which part of your view will be rendered by
@@ -166,7 +166,7 @@ exposing the ADT functionality to users. You'll walk through these steps now:
     - `entries`: accepts a list of your entities (e.g., `List<YourEntity>`).
 
     For an example that demonstrates implementing this, see
-    [configuration.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/site-navigation/site-navigation-site-map-web/src/main/resources/META-INF/resources/configuration.jsp).
+    [configuration.jsp](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/web-experience/site-navigation/site-navigation-site-map-web/src/main/resources/META-INF/resources/configuration.jsp).
 
 Now that your portlet supports ADTs, you can create your own scripts to change
 the display of your portlet. You can experiment by adding your own custom ADT.

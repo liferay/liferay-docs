@@ -27,8 +27,8 @@ growing inventory of content.
 
 You can enable staging on an individual site basis, depending on your needs.
 This makes it easy to put strict controls in place for your public web site,
-while opening things up for individual sites that don’t need such strict
-controls. @product@’s staging environment is extremely easy to use and makes
+while opening things up for individual sites that don't need such strict
+controls. @product@'s staging environment is extremely easy to use and makes
 maintaining a content-rich web site a snap. Another management feature used to
 control publishing of content is the web content schedular. Similar to staging,
 the schedular provides more control of your publishing process.

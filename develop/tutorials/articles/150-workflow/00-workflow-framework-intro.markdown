@@ -1,10 +1,10 @@
 # Liferay's Workflow Framework [](id=liferays-workflow-framework)
 
 Enabling your application's entities to support workflow is so easy, you could do it in
-your sleep (but don’t try). Workflow enabled entities require a few things:
+your sleep (but don't try). Workflow enabled entities require a few things:
 
--  A workflow handler class to interact with Liferay’s workflow back end and
-   the entity’s service layer.
+-  A workflow handler class to interact with Liferay's workflow back end and
+   the entity's service layer.
 
 -  Some extra fields in their database table that help keep track of their
    status.
@@ -17,8 +17,8 @@ your sleep (but don’t try). Workflow enabled entities require a few things:
     The service layer needs code to populate the new fields when entities are added to the
     database. 
 
-    The service layer needs to send the entity through Liferay’s workflow, and it needs
-    to handle the workflow status of the entity when it’s returned by the workflow. 
+    The service layer needs to send the entity through Liferay's workflow, and it needs
+    to handle the workflow status of the entity when it's returned by the workflow. 
 
     The service layer needs getters that return entities of the desired workflow
     status (usually *approved*).

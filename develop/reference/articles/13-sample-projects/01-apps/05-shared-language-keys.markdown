@@ -29,13 +29,13 @@ sample's targeted demonstration.
 
 First, note the language keys provided by each module:
 
-`language-web`
-- `blade_language_web_LanguageWebPortlet.caption=Hello from BLADE Language Web!`
-- `blade_language_web_override_LanguageWebPortlet.caption=I have overridden the key from BLADE Language Module!`
+- `language-web`
+    - `blade_language_web_LanguageWebPortlet.caption=Hello from BLADE Language Web!`
+    - `blade_language_web_override_LanguageWebPortlet.caption=I have overridden the key from BLADE Language Module!`
 
-`language`
-- `blade_language_LanguageWebPortlet.caption=Hello from the BLADE Language Module!`
-- `blade_language_web_override_LanguageWebPortlet.caption=Hello from the BLADE Language Module but you won't see me!`
+- `language`
+    - `blade_language_LanguageWebPortlet.caption=Hello from the BLADE Language Module!`
+    - `blade_language_web_override_LanguageWebPortlet.caption=Hello from the BLADE Language Module but you won't see me!`
 
 When you place the sample BLADE Language Web portlet on a @product@ page, you're
 presented with three language keys.

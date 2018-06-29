@@ -596,11 +596,11 @@ role with the ability to update the template and create a second role that can
 both update and delete. @product@ makes it possible to assign permissions based on
 the roles and responsibilities within your organization.
 
-Whether your site is small and static or large and dynamic, Liferay’s WCM
+Whether your site is small and static or large and dynamic, Liferay's WCM
 enables you to plan and manage it. With tools such as the WYSIWYG editor,
 structures and templates, you can quickly add and edit content. With the Web
 Content Display, you can rapidly select and configure what content to display.
-You'll find that managing your site becomes far easier when using @product@’s Web
+You'll find that managing your site becomes far easier when using @product@'s Web
 Content Management system.
 
 <div class="video-tag" data-name="Creating Content with Structures and Templates">

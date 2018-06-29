@@ -739,7 +739,7 @@ You can now use your new list Screenlet
 
     Note that to set a comparator, you must use its fully qualified class name. 
     For example, to use 
-    [the Bookmarks portlet's `EntryURLComparator`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/util/comparator/EntryURLComparator.java), 
+    [the Bookmarks portlet's `EntryURLComparator`](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/util/comparator/EntryURLComparator.java), 
     set `app:comparator` in the Screenlet XML as follows: 
 
         app:comparator="com.liferay.bookmarks.util.comparator.EntryURLComparator"

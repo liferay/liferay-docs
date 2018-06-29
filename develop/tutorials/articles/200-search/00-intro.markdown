@@ -49,10 +49,10 @@ we define mappings using `liferay-type-mappings.json` and `schema.xml`,
 respectively.
 
 The Elasticsearch mapping JSON file can be seen here:
-[https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/portal-search/portal-search-elasticsearch/src/main/resources/META-INF/mappings/liferay-type-mappings.json](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/portal-search/portal-search-elasticsearch/src/main/resources/META-INF/mappings/liferay-type-mappings.json)
+[https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/foundation/portal-search/portal-search-elasticsearch/src/main/resources/META-INF/mappings/liferay-type-mappings.json](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/foundation/portal-search/portal-search-elasticsearch/src/main/resources/META-INF/mappings/liferay-type-mappings.json)
 
 The Solr `schema.xml` can be seen here:
-[https://github.com/liferay/liferay-portal/blob/master/modules/apps/portal-search-solr/portal-search-solr/src/main/resources/META-INF/resources/schema.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/portal-search-solr/portal-search-solr/src/main/resources/META-INF/resources/schema.xml)
+[https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/portal-search-solr/portal-search-solr/src/main/resources/META-INF/resources/schema.xml](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/portal-search-solr/portal-search-solr/src/main/resources/META-INF/resources/schema.xml)
 
 These are default mapping files that are shipped with the product. You can
 further customize these mappings to fit your needs. For example, you might want

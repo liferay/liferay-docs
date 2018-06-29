@@ -67,7 +67,7 @@ You can override `MVCRenderCommand` for any portlet that uses Liferay's MVC
 framework and publishes an `MVCRenderCommand` component.
 
 For example, Liferay's Blogs application has a class called
-[`EditEntryMVCRenderCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/portlet/action/EditEntryMVCRenderCommand.java),
+[`EditEntryMVCRenderCommand`](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/portlet/action/EditEntryMVCRenderCommand.java),
 with this component:
 
 

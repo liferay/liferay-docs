@@ -56,14 +56,31 @@ If your server's LCS connection is interrupted, the server continues to run and
 enters a grace period that lasts for up to 30 days to allow for reconnection. 
 During this grace period, @product@ displays a warning message to
 administrators. Upon seeing this message, administrators should contact Liferay
-Support and follow the troubleshooting steps below. If for some reason the
-connection can't be restored, Liferay Support will provide an alternative way
-to activate your server. LCS automatically restores your server's activation
-upon reconnection (you shouldn't need to restart the server). If this doesn't
-happen, you can force it by redeploying the LCS client app and/or restarting
-the server. 
+Support and follow the troubleshooting steps below. LCS automatically restores 
+your server's activation upon reconnection (you shouldn't need to restart the 
+server). If for some reason the connection can't be restored, Liferay Support 
+will provide an alternative way to activate your server. 
 
 ![Figure 1: A warning message is displayed to administrators if the server can't connect to LCS to validate the subscription.](../../images-dxp/lcs-grace-period.png)
+
+While disconnected from LCS, the LCS client app continually attempts to 
+reconnect. If reconnection continues to fail, ensure that your server can access 
+`lcs.liferay.com` and `lcs-gateway.liferay.com`. If the LCS client app stops 
+attempting to reconnect, there will be no activity in the logs. In this case, 
+you can force reconnection by redeploying the app. Follow these steps to do so: 
+
+1.  In your server's 
+    [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
+    folder (usually the parent folder of the application server's folder), 
+    remove this file: 
+
+        osgi/marketplace/Liferay Connected Services Client.lpkg
+
+2.  Place `Liferay Connected Services Client.lpkg` in `[Liferay Home]/deploy`. 
+    If you 
+    [connect to LCS through a proxy](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#preconfiguring-the-lcs-client-to-connect-through-a-proxy), 
+    and configured this inside the LCS client app, make sure the app you deploy 
+    is also configured to do so. 
 
 You should also ensure that you've enabled email notifications in LCS for server 
 disconnection events. To do this, you must create a notification rule that sends 
@@ -135,7 +152,7 @@ required by LCS:
 
 -   [`lcs.liferay.com`](https://lcs.liferay.com/) 
     should be viewable in a browser.
--   `lcs-gateway.liferay.com` should respond on ports 80 and 443: 
+-   `lcs-gateway.liferay.com` should respond on port 443: 
 
         curl -vk -I "https://lcs-gateway.liferay.com"
         telnet lcs-gateway.liferay.com 443

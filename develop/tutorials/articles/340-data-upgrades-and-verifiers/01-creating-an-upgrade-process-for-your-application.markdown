@@ -95,7 +95,7 @@ If you need to use non-ANSI SQL, it's best to write it in the [`UpgradeProcess` 
 `runSQL` or `alter` methods, along with tokens that allow porting the sentences
 to different databases. 
 
-For example, consider the journal-service module's [`UpgradeSchema` upgrade step class](https://github.com/liferay/liferay-portal/blob/master/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/internal/upgrade/v0_0_4/UpgradeSchema.java): 
+For example, consider the journal-service module's [`UpgradeSchema` upgrade step class](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/web-experience/journal/journal-service/src/main/java/com/liferay/journal/internal/upgrade/v0_0_4/UpgradeSchema.java): 
 
     package com.liferay.journal.internal.upgrade.v0_0_4;
 

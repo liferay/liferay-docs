@@ -310,7 +310,7 @@ Before you deploy @product@, you should configure a Portal Access Control List
 
 ## Enabling PACL [](id=enabling-pacl)
 
-To enable PACL, you need to enable Tomcat’s security manager. Make sure
+To enable PACL, you need to enable Tomcat's security manager. Make sure
 `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/catalina.policy` specifies the permissions
 
     grant {

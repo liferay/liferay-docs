@@ -7,7 +7,7 @@ when necessary.
 
 First, use the `<portlet:actionURL>` tag to create the action URL in your JSP. 
 For example, the edit blog entry action in Liferay's Blogs app is defined in the 
-[`edit_entry.jsp` file](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-web/src/main/resources/META-INF/resources/blogs/edit_entry.jsp) 
+[`edit_entry.jsp` file](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/blogs/blogs-web/src/main/resources/META-INF/resources/blogs/edit_entry.jsp) 
 as follows: 
 
     <portlet:actionURL name="/blogs/edit_entry" var="editEntryURL" />

@@ -57,7 +57,7 @@ legacy struts action.
 
 Using the beginning login example once again, the `struts-action-path` mapping, 
 `/login/login`, remains the same for the `MVCCommand` mapping in @product-ver@, but
-some of the mappings may have changed. It’s best to check Liferay's source code
+some of the mappings may have changed. It's best to check Liferay's source code
 to determine the correct mapping.
 
 Depending on the URL it is a different parameter:

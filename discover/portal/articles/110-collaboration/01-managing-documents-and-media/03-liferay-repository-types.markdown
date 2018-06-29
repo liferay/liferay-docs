@@ -9,7 +9,7 @@ Deployment Guide. Let's consider the ramifications of the various store options.
 
 By default, Liferay Portal uses a document library store option called
 Simple File Store to store documents and media files on the file system
-(local or mounted) of the server Liferay Portal’s running on. The
+(local or mounted) of the server Liferay Portal's running on. The
 store's default root folder is
 `[Liferay Home]/data/document_library`. You can specify a different root
 folder from within 
@@ -18,7 +18,7 @@ To access System Settings, open the *Menu*
 (![icon-menu.png](../../../images/icon-menu.png))
 and navigate to *Control Panel &rarr; Configuration &rarr; System Settings*. From
 System Settings, navigate to *Platform* and then search for and select
-the entry *Simple File System Store*. For the store’s *Root dir* value,
+the entry *Simple File System Store*. For the store's *Root dir* value,
 specify a path relative to the 
 [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
 or an absolute path; then click the *Update* button. The document

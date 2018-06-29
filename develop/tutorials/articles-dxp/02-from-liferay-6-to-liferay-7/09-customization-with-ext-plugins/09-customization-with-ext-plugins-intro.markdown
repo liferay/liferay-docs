@@ -415,7 +415,7 @@ targets report success or failure.
 Frequently, you'll want to add further customizations to your original Ext
 plugin. You can make unlimited customizations to an Ext plugin that has already
 been deployed, but the redeployment process is different from other project
-types. You’ll learn more on redeploying your Ext plugin next.
+types. You'll learn more on redeploying your Ext plugin next.
 
 ### Redeployment [](id=redeployment)
 
@@ -556,7 +556,7 @@ to the original file in @product@:
       for adding applications and the categories in which they're organized.
     - **Original file in @product@:** `portal-web/docroot/WEB-INF/liferay-display.xml`
 
-You’ll learn how to deploy your Ext plugin in production next.
+You'll learn how to deploy your Ext plugin in production next.
 
 ## Deploying in Production [](id=deploying-in-production)
 

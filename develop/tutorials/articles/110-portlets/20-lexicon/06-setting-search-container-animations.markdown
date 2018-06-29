@@ -45,11 +45,11 @@ file](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundati
             "taglib-empty-result-message-header-has-plus-btn"
             );
     }
- 
+
 Alternatively you can use the `emptyResultsMessageCssClass` attribute of the 
-`liferay-ui:search-container` tag to set the animation. Below is an example 
-snippet from the [`com.liferay.users.admin.web` module's `view_tree.jsp`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/users-admin/users-admin-web/src/main/resources/META-INF/resources/view_tree.jsp#L158):
-    
+[`liferay-ui:search-container`](https://docs.liferay.com/portal/7.0/taglibs/util-taglib/liferay-ui/search-container.html)
+tag to set the animation. For example,
+
     <liferay-ui:search-container
       emptyResultsMessage="no-results-were-found"
       emptyResultsMessageCssClass="taglib-empty-result-message-header-has-plus-btn"

@@ -38,7 +38,7 @@ terminology, your model classes are called entities. For example, the Bookmarks
 application has two entities: `BookmarksEntry` and `BookmarksFolder`. The
 requirements for each of these entities are defined in the `bookmarks-service`
 module's
-[service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
+[service.xml](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
 listed in the `<column />` elements. 
 
 Once Service Builder reads the `service.xml` file, you can define your entities.
@@ -179,7 +179,7 @@ the model objects in Java and the fields and tables in your database. Once your
 entities are defined, Service Builder handles the mapping automatically, giving
 you a facility for taking Java objects and persisting them. For the Bookmarks
 application, two entities are created according to its
-[service.xml](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
+[service.xml](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-service/service.xml)
 --one for bookmark entries and one for bookmark folders.
 
 Here's a summary of the information used for the BookmarksEntry entity:
@@ -264,6 +264,13 @@ represents the entire primary key for the entity. This is the case in the Event
 Listing example. However, it's possible to use multiple columns as the primary
 key for an entity. In this case, the combination of columns makes up a compound
 primary key for the entity.
+
++$$$
+
+**Note**: On deploying a `*service` module, Service Builder automatically 
+generates indexes for all entity primary keys. 
+
+$$$
 
 Similar to the way you used the form table for adding entities, add attribute
 columns for each of your entities. Create each attribute by clicking on the Add
@@ -387,6 +394,18 @@ camel-case naming convention when naming finders since the finder's name is used
 to name the methods that Service Builder creates. The IDE creates a new
 finder sub-node under the *Finders* node in the outline. Next, you'll learn how
 to specify the finder column for this node. 
+
++$$$
+
+**Important**: DO NOT create finders that use entity primary key as parameters. 
+They're unnecessary as Service Builder automatically generates
+`findeByPrimaryKey` and `fetchByPrimaryKey` methods for all entity primary keys.
+On deploying a `*service` module, Service Builder creates indexes for all entity
+primary key columns and finder columns. Adding finders that use entity primary
+keys results in attempts to create multiple indexes for the same
+columns---Oracle DB, for example, reports these attempts as errors. 
+
+$$$
 
 Under the new finder node, the IDE created a *Finder Columns* node. Select the
 *Finder Columns* node to specify the columns for your finder's parameters.

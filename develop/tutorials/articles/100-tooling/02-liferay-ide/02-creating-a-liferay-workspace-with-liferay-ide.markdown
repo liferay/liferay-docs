@@ -24,6 +24,17 @@ Ant-based development tools such as the Plugins SDK.
 To create a Liferay Workspace in @ide@, select *File* &rarr; *New* &rarr;
 *Liferay Workspace Project*.
 
++$$$
+
+**Note:** Creating or importing a Liferay Workspace in IDE leverages Gradle
+scripts provided by the
+[Buildship](https://projects.eclipse.org/projects/tools.buildship) plugin. When
+using @ide@ 3.1.x, you should be using Buildship 2.1.x. If you leverage higher
+versions of Buildship (e.g., 2.2.x), @ide@ cannot successfully create or import
+a workspace.
+
+$$$
+
 ![Figure 1: By selecting *Liferay Workspace*, you begin the process of creating a new workspace for your Liferay projects.](../../../images/selecting-liferay-workspace.png)
 
 A New Liferay Workspace dialog appears, presenting several configuration

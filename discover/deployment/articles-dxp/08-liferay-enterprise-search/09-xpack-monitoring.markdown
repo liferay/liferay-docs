@@ -25,7 +25,7 @@ This document assumes you're enabling security *and* monitoring, though it's not
 a requirement. Differences in the process are noted as appropriate.
 
 For the X-Pack installation procedure, refer to the 
-[X-Pack security article](/discover/deployment/-/knowledge_base-7-1/securing-elasticsearch-6-with-x-pack).
+[X-Pack security article](/discover/deployment/-/knowledge_base-7-0/securing-elasticsearch-6-with-x-pack).
 
 This guide starts with the installation of Kibana.
 
@@ -123,7 +123,7 @@ there is to it.
 
 1.  Once the connector is installed and Kibana and Elasticsearch are securely
     configured, create a 
-    [configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
+    [configuration file](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
     named
 
         com.liferay.portal.search.elasticsearch6.xpack.monitoring.web.internal.configuration.XPackMonitoringConfiguration.config

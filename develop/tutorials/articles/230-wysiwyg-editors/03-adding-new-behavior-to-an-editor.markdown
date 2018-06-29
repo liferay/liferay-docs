@@ -27,10 +27,10 @@ extension point, you should follow these steps:
     immediately following editor initialization.
 
     Some examples of JS files that are injected into the CKEditor are
-    [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_definition.js),
-    [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_show.js),
+    [creole_dialog_definition.js](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_definition.js),
+    [creole_dialog_show.js](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/creole_dialog_show.js),
     and
-    [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/dialog_definition.js).
+    [dialog_definition.js](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/extension/dialog_definition.js).
     These JS files are used by @product@ to redefine which fields show in
     different dialogs, depending on what the selected language (HTML, BBCode,
     Creole) supports. For example, Creole doesn't support background color in
@@ -46,7 +46,7 @@ extension point, you should follow these steps:
     and ending with *DynamicInclude* (e.g.,
     `CKEditorCreoleOnEditorCreateDynamicInclude.java`). Your Java class should
     implement the
-   [DynamicInclude](https://github.com/liferay/liferay-portal/blob/master/portal-kernel/src/com/liferay/portal/kernel/servlet/taglib/DynamicInclude.java)
+   [DynamicInclude](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/portal-kernel/src/com/liferay/portal/kernel/servlet/taglib/DynamicInclude.java)
    interface.
 
 4.  Directly above the class's declaration, insert the following code:
@@ -79,7 +79,7 @@ extension point, you should follow these steps:
     suggested previously dealing with Creole's deficiency with displaying
     background colors in table cells. You can look at how this could be
     done by looking at the `include(...)` method in the
-    [CKEditorCreoleOnEditorCreateDynamicInclude](https://github.com/liferay/liferay-portal/blob/master/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/java/com/liferay/frontend/editor/ckeditor/web/servlet/taglib/CKEditorCreoleOnEditorCreateDynamicInclude.java)
+    [CKEditorCreoleOnEditorCreateDynamicInclude](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/java/com/liferay/frontend/editor/ckeditor/web/internal/servlet/taglib/CKEditorCreoleOnEditorCreateDynamicInclude.java)
     class.
 
 7.  Make sure you've instantiated your bundle's context so you

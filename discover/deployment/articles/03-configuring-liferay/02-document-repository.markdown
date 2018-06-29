@@ -13,7 +13,7 @@ You can specify a different root directory from within
 System Settings, open the *Menu*
 (![Menu](../../images/icon-menu.png)) and navigate to *Control Panel &rarr;
 Configuration &rarr; System Settings*. From System Settings, navigate to
-*Platform* and then search for and select the entry *Simple File System Store*.
+*Foundation* and then search for and select the entry *Simple File System Store*.
 For the store's *Root dir* value, specify a path relative to
 [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
 or an absolute path; then click the *Update* button. The document library store
