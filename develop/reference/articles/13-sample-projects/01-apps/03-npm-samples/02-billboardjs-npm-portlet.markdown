@@ -17,7 +17,7 @@ charts and a more advanced custom chart. These are all built using Billboard.js.
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
-[npm development workflow support](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/using-npm-in-your-portlets).
+[npm development workflow support](/develop/tutorials/-/knowledge_base/7-0/using-npm-in-your-portlets).
 
 ## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
@@ -44,4 +44,4 @@ build tool:
 TODO: Replace above when tool is available for other build tools. -Cody
 -->
 
-*   [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm/billboardjs-npm-portlet)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm/billboardjs-npm-portlet)

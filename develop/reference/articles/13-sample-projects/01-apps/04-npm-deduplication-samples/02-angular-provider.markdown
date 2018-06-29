@@ -5,10 +5,10 @@ CE GA7+.
 
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
-The Angular Provider sample generates an OSGi bundle that that provides a
+The Angular Provider sample generates an OSGi bundle that provides a
 deduplicated instance of
 [Angular](https://angular.io/) framework for portlets to share when rendering
-their output..
+their output.
 
 This bundle must be deployed to the server for the
 [Angular Consumer Portlet](angular-consumer-portlet) sample to run.
@@ -25,8 +25,8 @@ dependencies and uses the
 [liferay-npm-bundler tool](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler)
 to bundle the project dependencies inside the OSGi bundle JAR file.
 
-To accomplish the bundling, the project's build process relies on a `build`
-script inside its `package.json` file:
+To accomplish bundling, the project's build process relies on a `build` script
+inside its `package.json` file:
 
     "scripts": {
         "build": "liferay-npm-bundler"
@@ -43,4 +43,4 @@ build tool:
 TODO: Replace above when tool is available for other build tools. -Cody
 -->
 
-*   [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm/angular-npm-portlet)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm/angular-npm-portlet)

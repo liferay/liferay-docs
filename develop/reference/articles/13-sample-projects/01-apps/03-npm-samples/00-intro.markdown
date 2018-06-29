@@ -19,12 +19,12 @@ build tool:
 
 The following npm samples are documented:
 
-*   [Angular npm Portlet](angular-npm-portlet)
-*   [Billboard.js npm Portlet](billboard-js-npm-portlet)
-*   [jQuery npm Portlet](jquery-npm-portlet)
-*   [Metal.js npm Portlet](metal-js-npm-portlet)
-*   [React npm Portlet](react-npm-portlet)
-*   [Simple npm Portlet](simple-npm-portlet)
-*   [Vue.js npm Portlet](vue-js-npm-portlet)
+- [Angular npm Portlet](angular-npm-portlet)
+- [Billboard.js npm Portlet](billboard-js-npm-portlet)
+- [jQuery npm Portlet](jquery-npm-portlet)
+- [Metal.js npm Portlet](metal-js-npm-portlet)
+- [React npm Portlet](react-npm-portlet)
+- [Simple npm Portlet](simple-npm-portlet)
+- [Vue.js npm Portlet](vue-js-npm-portlet)
 
 Visit a particular sample page to learn more!
