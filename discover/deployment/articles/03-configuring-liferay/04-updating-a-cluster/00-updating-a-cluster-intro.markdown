@@ -21,12 +21,12 @@ must be done using
     [fix packs](/discover/deployment/-/knowledge_base/7-1/maintaining-liferay). 
 -   Module/plugin data changes (modifying data in existing columns). 
 -   Module/plugin data schema changes that break compatibility with the existing
-    version. Breaking changes include but are not limited to  dropping columns,
+    version. Breaking changes include but are not limited to dropping columns,
     changing column types, and changing data formats used in columns (such as
     changing from XML to JSON). 
 -   Updating a data schema to a version outside of a Service Builder service 
     module's
     [required data schema range](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app#specifying-the-schema-version). 
 
-Since rolling restart eligible changes should be done that way, rolling restart
-is explained first. 
+Since eligible changes should be done with rolling restarts it's explained
+first. 

@@ -7,9 +7,9 @@ can be used in container and image based environments.
 
 +$$$
 
-**Note:** Rolling restart does not include concepts for blue-green 
-architectures, as these concepts specifically address multi-cluster style
-developments.
+**Note:** Rolling restart does not include concepts for blue-green (separate,
+but identical environments) architectures, as these concepts specifically
+address multi-cluster style developments.
 
 $$$
 
@@ -42,7 +42,7 @@ modules.
 ## Updating Existing Modules and Plugins [](id=updating-existing-plugins-and-modules)
 
 For a new version of an existing plugin or module to be eligible for rolling
-restart it must not modify data or delete or rename database columns in a way
+restart, it must not modify data or delete or rename database columns in a way
 that breaks compatibility with the existing version of the plugin or module. 
 
 ## Applying Fix Packs (DXP only) [](id=applying-fix-packs-dxp-only)
@@ -75,11 +75,10 @@ restarts.
 
 Minor version updates of Java can be applied in rolling restarts. Major version
 updates are not supported in rolling restarts, and should instead be done when
-on all cluster nodes are shut down. 
+all cluster nodes are shut down. 
 
 All rolling restart eligible updates can be applied using the rolling restart
-steps listed earlier. Other updates must be done using different means as
-described next. 
+steps listed earlier. Other updates must be done differently as described next. 
 
 ## Related Topics [](id=related-topics)
 

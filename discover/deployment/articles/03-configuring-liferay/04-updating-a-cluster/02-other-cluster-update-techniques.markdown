@@ -53,7 +53,7 @@ schema version and triggers a data upgrade process. If you install such a module
 on one node, the schema version in the `Release_` table no longer matches the
 `Liferay-Require-SchemaVersion` of the modules on the other nodes. The module's
 Service Builder services become unavailable. Such changes cannot be
-reverted---the database must be restored from a backup. These schema version
+reverted: the database must be restored from a backup. These schema version
 changes must be applied while all nodes are shut down. 
 
 ## Cluster Code Changes [](id=cluster-code-changes)
