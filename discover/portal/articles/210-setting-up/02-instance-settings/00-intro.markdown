@@ -10,7 +10,7 @@ by configuration done at this scope. The instance scope applies only to one
 particular virtual instance. 
 
 Virtual instances have unique domain names but share a server and database. Each
-virtual instance can have independent data an configurations.
+virtual instance can have independent data and configurations.
 
 These articles cover:
 
