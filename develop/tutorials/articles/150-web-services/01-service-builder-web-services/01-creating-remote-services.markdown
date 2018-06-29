@@ -124,7 +124,7 @@ file:
 
         repositories {
             maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
 
@@ -157,7 +157,7 @@ file:
 
             repositories {
                 maven {
-                    url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                    url "https://repository-cdn.liferay.com/nexus/content/groups/public"
                 }
             }
         }
@@ -201,7 +201,7 @@ the project:
 
         repositories {
             maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
     }
