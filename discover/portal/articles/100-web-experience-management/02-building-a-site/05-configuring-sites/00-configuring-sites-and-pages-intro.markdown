@@ -1,4 +1,4 @@
-# Configuring Sites
+# Configuring Sites [](id=configuring-sites)
 
 Just like there's more than one way to cook and an egg --- or eat an egg for 
 that matter --- there's more than one way to build a site. Liferay is created 

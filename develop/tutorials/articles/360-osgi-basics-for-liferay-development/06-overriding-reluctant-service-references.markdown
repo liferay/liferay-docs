@@ -61,7 +61,7 @@ components. The Gogo Shell command `scr:info [componentName]` lists the
 component's attributes, including the services it uses. Execute the command
 using
 [Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) or in
-[Gogo Shell via telnet](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell). 
+[Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell). 
 
 Here's an example of executing the `scr:info` command:
 

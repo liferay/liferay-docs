@@ -1,4 +1,4 @@
-# Individual Page Settings
+# Individual Page Settings [](id=individual-page-settings)
 
 On the Configure page are four tabs: General, SEO, Look and Feel, and 
 Advanced. Options selected here have no effect on the rest of the 
@@ -15,21 +15,21 @@ based on the user's locale.
 The *General* tab lets you configure the basic information and design for the 
 page. You can change the *Name*, *Friendly URL*, and *Page Layout*. 
 
-### Name and Friendly URL
+### Name and Friendly URL [](id=name-and-friendly-url)
 
 The *Name* is the title that appears in the browser's title bar, and how the 
 page is identified in the navigation. The *Friendly URL* defines the page's
 link. It is a best practice to have the URL match the name of the Page, so
 these two should generally be updated together.
 
-### Page Layout
+### Page Layout [](id=page-layout)
 
 For Widget Pages, you can select a Layout Template that defines droppable
 locations for widgets. Layout templates define a number of sections with
 columns and rows. Widgets added to a section expand (or contract) 
 horizontally to fill the space and can be stacked vertically. 
 
-![Figure X: Setting a layout template for your page.](../../../../../images/page-select-layout.png)
+![Figure 1: Setting a layout template for your page.](../../../../../images/page-select-layout.png)
 
 ## Categorization and SEO [](id=categorization-and-seo)
 
@@ -69,7 +69,7 @@ page. See
 [Customizing the Look and Feel of Site Pages](/discover/portal/-/knowledge_base/7-1/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages)
 for more details.
 
-![Figure X: Viewing the Look and Feel page configuration. .](../../../../../images/page-look-and-feel.png)
+![Figure 2: Viewing the Look and Feel page configuration. .](../../../../../images/page-look-and-feel.png)
 
 ## Advanced Settings [](id=advanced-settings)
 
