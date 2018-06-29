@@ -15,11 +15,11 @@ functionality, has this file name:
 
     com.liferay.journal.configuration.JournalServiceConfiguration.config
 
-![Figure 1: The Web Content System Settings entry has the backend ID `com.liferay.journal.configuration.JournalServiceConfiguration`.](../../../../images/config-web-content-entry.png)
+![Figure 1: The Web Content System Settings entry has the back-end ID `com.liferay.journal.configuration.JournalServiceConfiguration`.](../../../../images/config-web-content-entry.png)
 
 ## Key/Value Syntax [](id=key-value-syntax)
 
-The general syntax for all keys and values in a `.config` file is the same: 
+The syntax for all keys and values in a `.config` file is the same: 
 
     configurationName="value"
 
@@ -56,7 +56,7 @@ Double quotes (`"`) and equals signs (`=`) must be *escaped* in `.config` files.
 Escaping is using another character to denote that a character shouldn't be used 
 in its normal way. Since double quotes and equals signs are already used in 
 `.config` files, escaping them tells the framework not to read them the normal 
-way, but to pass them through as part of the value. Use a `\` to escape 
+way, but to pass them through as part of the value. Use a `\\` to escape 
 characters in the `.config` file: 
 
     charactersblacklist=["&","\"","\="]
@@ -66,7 +66,7 @@ character (`&`), and two escaped ones (`\"` and `\=`).
 
 Along with the mandatory escaping of double quotes and equals characters, it's
 beneficial to escape spaces inside values to avoid problems. In this example, a 
-`\` is used before each space character to ensure it's read and processed 
+`\\` is used before each space character to ensure it's read and processed 
 properly: 
 
     blacklistBundleSymbolicNames=["Liferay\ Marketplace","Liferay\ Sharepoint\ Connector"]

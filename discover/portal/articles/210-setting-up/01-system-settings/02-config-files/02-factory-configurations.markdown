@@ -6,8 +6,8 @@ Configurations supporting multiple entries are called *factory configurations*.
 
 **Factory Configuration Example:** 
 [JAX-WS and JAX-RS web services](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs) 
-are supported. These services must use a [CXF
-Endpoint](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#cxf-endpoints),
+are supported. These services must use a 
+[CXF Endpoint](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#cxf-endpoints),
 which is a context path where the web services are deployed and accessed.
 Endpoints can be created via factory configuration by navigating to the CXF
 Endpoints entry in System Settings (System Settings &rarr; Platform &rarr; Web
@@ -41,8 +41,8 @@ It's good practice to use a descriptive name:
     my.service.ServiceConfiguration-port9080.config
 
 To follow the CXF Endpoints example described above, if Liferay's developers had
-shipped an initial CXF Endpoint `.config` file with @product@, it would have 
-been named: 
+shipped an initial CXF Endpoint `.config` file with @product@, it would have
+been named this: 
 
     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-default.config
 
@@ -92,9 +92,9 @@ above or remove it entirely and start over.
 
 $$$
 
-In many cases, configuration files can be used to force a factory configuration 
-scenario, but not all configurations are designed to be used this way. It's best 
-to stick to the intended use cases. Use System Settings as described above to 
-determine if using factory configurations is a good idea. If not, stick to the 
-single occurrence mode of configuration (specifying only one configuration file 
-for the service). 
+In many cases, configuration files can be used to force a factory configuration
+scenario, but not all configurations can be used this way. It's best to stick to
+the intended use cases. Use System Settings as described above to determine if
+using factory configurations is a good idea. If not, stick to the single
+occurrence mode of configuration (specifying only one configuration file for the
+service). 
