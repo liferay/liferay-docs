@@ -18,13 +18,13 @@ configurable, and created a mechanism for developers to make their
 
 Liferay's configuration takes place in the following places: 
 
-User Interface: configuration through Liferay's UI is stored in a database. The
+**User Interface:** configuration through Liferay's UI is stored in a database. The
 values set in the UI always override configurations set in properties files.
 
-Properties files: properties files  that set default behavior may be included in
+**Properties files:** properties files that set default behavior may be included in
 the platform or the modules. Keep in mind that these settings can always be
-overwritten by a system administrator in the UI. To find what properties are
-configurable this way, visit 
+overridden by a system administrator in the UI. To find what properties are
+configurable this way, visit
 [docs.liferay.com](https://docs.liferay.com/portal/7.1-latest/propertiesdoc).
 
 The UI location where these configuration options appear depends on the scope
@@ -35,30 +35,30 @@ you want to affect with the settings you choose.
 Depending on the configuration scope of a setting you change, you'll impact the
 platform and its applications with more or less granularity. At one end of the
 spectrum, you can affect the scope of the whole system. Configurations made at
-the system scope affect all virtual instances, sites, and widgets. At the
+the system scope affect all virtual instances, Sites, and widgets. At the
 opposite end of the spectrum, configurations made at the widget level provide
-configuration settings only for that particular instance of the widget. 
+configuration settings only for that instance of the widget. 
 
 Take Language settings, for example. You can set the default language used by
-the virtual instance. You can also set the default language of a site. Some
+the virtual instance. You can also set the default language of a Site. Some
 applications even let you set the default language used by a specific piece of
 content. 
 
 Here's an overview of the available configuration scopes:
 
-*System:* configuring Liferay and its applications through System Settings
+**System:** Configuring Liferay and its applications through System Settings
 provides system scoped configurations and sets default values for all virtual
 instances, sites, or widgets.
 
-*Virtual Instance:* Configuring in Instance Settings provides settings that
-act on the specific virtual instance for which they are made, including sites
+**Virtual Instance:** Configuring in Instance Settings provides settings that
+act on the specific virtual instance for which they are made, including Sites
 and widgets in the virtual instance.
 
-*Site:* Configurations made at the site scope, where you select the site to
-configure in the site selector, provide settings that take place only in that
-site. Alternate configurations can be made in different sites.
+**Site:** Configurations made at the Site scope, where you select the Site to
+configure in the Site selector, provide settings that take place only in that
+Site. Alternate configurations can be made in different Sites.
 
-*Widget Scope:* configuring a specific widget only provides a
+**Widget Scope:** Configuring a specific widget only provides a
 configuration for that particular widget.
 
 Scopes in Liferay are hierarchical so that one scope can set the default values
@@ -76,18 +76,18 @@ System wide configuration:
 - System Settings is the primary location for system configuration.
 
 - Server Administration contains some lower-level server configuration options, such
-    as logging.
+  as logging.
 
 Setting up a virtual instance:
 
-- Virtual Instances is the location where virtual instances are added and
-    edited.
+- Virtual Instances is where virtual instances are added and
+  edited.
 
 - Instance Settings is the primary location for a virtual instance's
-    configuration.
+  configuration.
 
 - Custom Fields is where additional database fields are added to existing
-    virtual instance entities.
+  virtual instance entities.
 
 All of these are accessed through the Control Panel. Start by learning to
 configure modules system-wide in the System Settings Control Panel app.

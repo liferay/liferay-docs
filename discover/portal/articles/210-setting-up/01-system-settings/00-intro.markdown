@@ -13,6 +13,6 @@ There are several Control Panel sections with system scoped configurations:
 - System Settings is the primary location for system configuration.
 
 - Server Administration contains some lower-level server configuration options, such
-as logging.
+  as logging.
 
 Get started by learning about System Settings.
