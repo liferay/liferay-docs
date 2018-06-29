@@ -1,30 +1,30 @@
 # Building Content Pages from Fragments [](id=building-content-pages-from-fragments)
 
-After the Page Fragment collections that you need are published, you are ready 
-to create Page Templates.  The Page Template will be composed of some number of 
-Fragments - it could be one or it could be fifty.
+After Page Fragment collections are published, you are ready to create Page
+Templates.  A Page Template is composed of some number of Fragments---one or
+fifty; it doesn't matter.
 
 ## Creating a Page Template [](id=creating-a-page-template)
 
 You create Page Templates in the *Pages* page in Site Administration.
 
-1.  From Site Administation for your site, go to *Build* &rarr; *Pages*.
+1.  From Site Administration for your Site, go to *Build* &rarr; *Pages*.
 
 2.  Select the Page Templates tab.
 
-Like Fragments, Content Page Templates must be created in Collections. You see 
-all of your current Collections at the root of the Page Templates page. 
-Collections will also enable you to quickly select templates when creating 
-pages. Next you want to create a Page Template.
+Like Fragments, Content Page Templates must be created in Collections. Your
+Collections appear on the Page Templates page. Next you want to create a Page
+Template.
 
-1.  Click the `+` icon to *Add Collection*.
+1.  Click the *New* button to add a Collection.
 
 2.  *Name* your Collection, provide a *Description*, and click *Save*.
 
 3.  Click on the new Collection.
 
-4.  Click the *Add* icon (![Add Page Template](../../../../../../images/icon-add.png)) from inside of the 
-    Collection to *Add Page Template*.
+4.  Click the *Add* icon (
+    ![Add Page Template](../../../../../../images/icon-add.png)) 
+    from inside the Collection to add a Content Page Template.
 
 5.  Set the *Name* and click *Submit*.
 
