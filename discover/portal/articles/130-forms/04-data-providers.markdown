@@ -1,10 +1,10 @@
 # Data Providers
 
 Select from List fields can hold a lot of options. There are around 200
-countries on earth, for example. If you have unbusy unpaid interns you could ask
-them to type each country into the Select from List field manually, or you could
-auto-populate your select fields using a REST web service. This saves you (or
-your interns) the trouble of typing all those options, and you can rely on
+countries on earth, for example. If you have unoccupied unpaid interns you could
+ask them to type each country into the Select from List field manually, or you
+could auto-populate your select fields using a REST web service. This saves you
+(or your interns) the trouble of typing all those options, and you can rely on
 someone else (hopefully a trustworthy expert) to keep the data updated.
 
 When setting up a data provider, you're accessing a 
@@ -124,7 +124,7 @@ Administration* &rarr; *Content* &rarr; *Forms*). Open the Options menu
 the data provider you want to configure, click the Actions button
 (![Actions](../../../images/icon-actions.png)), then *Permissions*. 
 
-Confgirue the permissions you need. If Guests are to fill out the form, they
+Configure the permissions you need. If Guests are to fill out the form, they
 need the *View* permission, or else they won't be able to see the options
 provided by the data provider. Once you grant permissions, click *Save*.
 
@@ -140,7 +140,7 @@ results.
 
 *Cache data on the first request.*
 : If the data is cached, a second load of the select list field is much faster,
-since a second call to the RESt service provider is unnecessary.
+since a second call to the REST service provider is unnecessary.
 
 *Timeout*
 : The time (in ms) to allow the REST service call to process before aborting the
