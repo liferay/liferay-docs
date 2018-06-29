@@ -4,16 +4,13 @@ For Liferay customers who are evaluating @product@ on a trial basis, **the
 plugins can be accessed from within the *Apps* &rarr; *Store* (i.e.,
 Marketplace) section of the Control Panel in your product installation**. 
 
-*At a later date, the Marketplace website on Liferay.COM will be accessible to
-@product@ trial customers. For now, please access EE Plugins through the portal
-installation itself.* 
-
 ## Installation Process
 
 Follow the steps below to install a trial plugin:
 
-1.  Sign in to your Liferay.COM account (LRDC) on Liferay's home page. If you
-    don't have an account, register by clicking the same link. 
+1.  Register a Liferay.COM account (LRDC) account by visiting Liferay's home
+    page (if necessary). Do this by clicking *Sign In/Create Account* button
+    from the top right Profile button.
 
     ![Figure 1: Hover over the Profile button and click *Sign In/Create Account*.](../../images-dxp/liferay-com-sign-in.png)
 
@@ -36,17 +33,11 @@ Follow the steps below to install a trial plugin:
     *Install* button located to the far right of the respective plugin.
     Similarly, click the *Update* button to update a plugin.
 
-Trial users have access to the Customer Portal during their trial. This also
-includes access to the @product@-specific plugins from the Liferay
-[Marketplace website](https://www.liferay.com/marketplace) on Liferay.COM
-(LRDC). Trial users do not have access to Liferay's customer Knowledge Base and
-LESA (Liferay's support ticketing system).
-
 +$$$
 
-**Note:** Liferay is currently working on providing access to @product@ plugins
-on the Marketplace website for @product@ trial customers, which would also
-include access from within the @product@ installation. 
+**Note:** At a later date, the Marketplace website on Liferay.COM will be
+accessible to @product@ trial customers. For now, please access subscription
+apps through the portal installation itself. 
 
 $$$
 
@@ -54,7 +45,7 @@ $$$
 
 **Q:** Where are the *@product@ Trial Plugins*?
 
-**A:** There is no such thing. The @product@ Plugins in Liferay Marketplace are
+**A:** There is no such thing. The @product@ plugins in Liferay Marketplace are
 the same ones that you get to try out with your @product@ trial license for your
 portal. The @product@ license (trial or official @product@ subscriber) gives you
 access to the @product@ plugins. Also, there is no difference code-wise or
