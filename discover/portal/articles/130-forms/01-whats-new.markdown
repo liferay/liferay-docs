@@ -1,4 +1,4 @@
-# What's New with Liferay Forms
+# What's New with Liferay Forms [](id=whats-new-with-liferay-forms)
 
 Liferay Forms is evolving. Features that were new in the last (and first)
 version have been enhanced, and new features added. This article compiles the
@@ -9,26 +9,26 @@ other articles of this section.
 : Set dynamic form behavior by specifying conditions (*if this happens in field
 X*) and actions (*then do this: X*). Available actions include Require,Enable,
 
-![Figure x: Form Rules trigger an action in response to some condition.](../../images/forms-rule-development.png)
+![Figure 1: Form Rules trigger an action in response to some condition.](../../images/forms-rule-development.png)
 
 **Form Translation**
 : Provide translations of the same form into the platform's supported languages.
 Form Users select the language they'd like to see.
 
-![Figure x: Translate a Form into a supported language.](../../images/forms-translation.png)
+![Figure 2: Translate a Form into a supported language.](../../images/forms-translation.png)
 
 **New Fields and Properties**
 : File Upload fields let logged in Users upload documents tot he Form. Numeric
 fields validate that input is numeric. Grid fields let Users select from options
 laid out in rows and columns. One selection can be made per row. 
 
-![Figure x: File Upload, Grid, and Numeric fields are new.](../../images/forms-sidebar.png)
+![Figure 3: File Upload, Grid, and Numeric fields are new.](../../images/forms-sidebar.png)
 
 **Element Sets**
 : Create reusable Form fragments that can be used to quickly populate new Forms
 with common fields and configurations.
 
-![Figure x: Reusable Element Sets are great](../../images/forms-element-set.png)
+![Figure 4: Reusable Element Sets are great](../../images/forms-element-set.png)
 
 **Autosave**
 : By default, a Form is autosaved every minute (without the Form builder
@@ -36,34 +36,34 @@ clicking *Save*). The duration is configurable in Control Panel &rarr;
 Configuration &rarr; System Settings &rarr; Forms. Autosaves do not propagate
 to published Forms. 
 
-![Figure x: ](../../images/forms-autosave-interval.png)
+![Figure 5: ](../../images/forms-autosave-interval.png)
 
 **Autocomplete Text Fields**
 : Using a Data Provider or manually typed options, configure a Text field to
 offer Users automcompleted values to choose from as they type in the Text field.
 Set up autocomplete in Text field's Properties.
 
-![Figure x: A User beings typing in a Text field and is pleasantly surprised by a list of
+![Figure 6: A User beings typing in a Text field and is pleasantly surprised by a list of
 autocomplete options.](../../images/forms-autocomplete.png)
 
 **Form Success Page**
 : Add a Form Page that displays after a successful Form submission.
 
-![Figure x: A Success Page provides feedback to the User that the form
+![Figure 7: A Success Page provides feedback to the User that the form
 Submission was successful.](../../images/forms-success-page.png)
 
 **Duplicate Forms and Form Fields**
 : Duplicate a Form to avoid building a similar one from scratch. Duplicate Form
 Fields if you need multiple similarly configured fields.
 
-![Figure x: Duplicate a Form to get a head start on your next, similar Form.](../../images/forms-duplicate.png)
+![Figure 8: Duplicate a Form to get a head start on your next, similar Form.](../../images/forms-duplicate.png)
 
 **Validate Text Field Entries**
 : Add validation logic to a Text field and create custom messages for form
 validation errors.
 <!-- I don't see RegEx Validation. Did that not make it into 7.1-->
 
-![Figure x: Validate Text fields to ensure Users fill in the correct data.](../../images/forms-text-validation.png)
+![Figure 9: Validate Text fields to ensure Users fill in the correct data.](../../images/forms-text-validation.png)
 
 **Data Provider Enhancements**
 : Data Providers are still used to populate Select from List fields. Now, the
@@ -71,11 +71,11 @@ Data Provider setup form has been overhauled, and you can now import and export
 Data Provider definitions. Data Providers are also linked with the Auotcomplete
 feature and the Autofill rule.
 
-![Figure x: The Data Provider interface was redesigned and new options added.](../../images/forms-data-provider.png)
+![Figure 10: The Data Provider interface was redesigned and new options added.](../../images/forms-data-provider.png)
 
 **XLS Form Entries Data**
 : Export entries to XLS format.
 
-![Figure x: Export Form Entries to XLS. CSV and XML are also available.](../../images/forms-xls.png)
+![Figure 11: Export Form Entries to XLS. CSV and XML are also available.](../../images/forms-xls.png)
 
 
