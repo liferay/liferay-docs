@@ -64,12 +64,12 @@ Setting the version to develop for takes two steps:
 
     If you're using Liferay DXP, you can set the property like this:
 
-        liferay.workspace.target.platform.version=7.1-
-
-    The versions following a GA1 release of DXP follow service pack versions
-    (e.g., `7.1-sp2`).
+        liferay.workspace.target.platform.version=7.1-DXP-GA1
 
     <!-- TODO: Still need to find the proper GA1 DXP version syntax. -Cody -->
+
+    The versions following a GA1 release of DXP follow service pack versions
+    (e.g., `7.1-sp2`, `7.1-sp3`, etc.).
 
 2.  Once the target platform is configured, check to make sure no dependencies
     in your Gradle build files specify a version. The versions are now imported
