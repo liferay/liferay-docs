@@ -1,8 +1,8 @@
 # Scheduling Web Content Publication [](id=scheduling-web-content-publication)
 
-Liferay's WCM lets you define when your content goes live. You can determine
+Liferay's WEM lets you define when your content goes live. You can determine
 when the content is displayed, expired, and/or reviewed. This is an excellent
-way to keep your site current and free from outdated (and perhaps incorrect)
+way to keep your Site current and free from outdated (and perhaps incorrect)
 information. The scheduler is built right into the form your users access to add
 web content. Specifically, it can be found in the bottom panel listed with
 several other configurable settings.
@@ -11,15 +11,15 @@ several other configurable settings.
 
 The scheduler offers several configurable options:
 
-**Display Date:** sets (within a minute) when content will be displayed.
+**Display Date:** Sets (within a minute) when content will be displayed.
 
-**Expiration Date:** sets a date to expire the content. The default is one year.
+**Expiration Date:** Sets a date to expire the content. The default is one year.
 
-**Never Expire:** sets your content to never expire.
+**Never Expire:** Sets your content to never expire.
 
-**Review Date:** sets a content review date.
+**Review Date:** Sets a content review date.
 
-**Never Review:** sets the content to never be reviewed.
+**Never Review:** Sets the content to never be reviewed.
 
 As an example, you'll step through the process of scheduling a web content
 article.
@@ -34,10 +34,10 @@ article.
 4.  Select the *Schedule* dropdown menu on the web content form. Configure the
     publication schedule.
 
-5.  Click *Publish*. Your web content article is now created and will abide by
+5.  Click *Publish*. Your web content article is now created and abides by
     the scheduling parameters you've set.
 
 The scheduling feature gives you great control in managing when, and for how
-long, your web content is displayed on your site. Additionally, you have the
-ability to determine when your content should be reviewed for accuracy and/or
-relevance. This makes it possible to manage your growing inventory of content.
+long, your web content is displayed on your Site. Additionally, you can
+determine when your content should be reviewed for accuracy and/or relevance.
+This makes it possible to manage your growing inventory of content.
