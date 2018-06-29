@@ -207,6 +207,6 @@ The `displayStyle`'s value is set to the
 
 ## Related Topics [](id=related-topics)
 
-[Disabling All or Portions of the Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/disabling-all-or-portions-of-the-management-bar)
+[Configuring the Clay Management Toolbar Taglib](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar)
 
-[Including Actions in the Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/including-actions-in-the-management-bar)
+[Filtering and Sorting Items with the Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/filtering-and-sorting-items-with-the-management-toolbar)
