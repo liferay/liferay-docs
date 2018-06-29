@@ -35,13 +35,13 @@ following actions from the Fragments page:
 
 2.  To export all of the Fragments in the Collection without exporting any
     Collection data, click *Actions* (![Actions](../../../../../../images/icon-actions.png)) *Export* next to 
-    the Collection name. A `.zip` file will be generated downloaded 
+    the Collection name. A `.zip` file will be generated and downloaded 
     automatically.
     
 ![Figure 2: Exporting all of the Fragments in a Collection.](../../../../../../images/fragments-export-individual.png)
     
 3.  To export a single Fragment click *Actions* (![Actions](../../../../../../images/icon-actions.png)) *Export* next to 
-    the Fragment. A `.zip` file will be generated downloaded 
+    the Fragment. A `.zip` file will be generated and downloaded 
     automatically.
 
 When you export a single Fragment or a group of Fragments without a collection, 

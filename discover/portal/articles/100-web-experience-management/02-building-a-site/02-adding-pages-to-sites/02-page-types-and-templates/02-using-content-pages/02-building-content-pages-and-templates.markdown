@@ -24,7 +24,7 @@ Template.
 
 4.  Click the *Add* icon (
     ![Add Page Template](../../../../../../images/icon-add.png)) 
-    from inside the Collection to add a Content Page Template.
+    and select *Content Page Template* from inside the Collection.
 
 5.  Set the *Name* and click *Submit*.
 
@@ -33,7 +33,8 @@ a Collection from the *Fragments* tab on the right and adding them to the page.
 You can add multiple Fragments from different collections, and you can add the 
 same Fragment to the page multiple times. To see which Fragments the current 
 page is made up of, you can check the *Added* tab. The template is 
-automatically saved as you work.
+automatically saved as you work, but you must click *Publish* to make it 
+available for use.
 
 ![Figure 1: The Page Template Creation page.](../../../../../../images/content-page-template-creation.png)
 
@@ -62,28 +63,37 @@ a Content Page. A Content Page is basically a page created from Fragments. Any
 aspects of the page that were defined by the developer as editable can be 
 edited during the creation of the page or page template.
 
-1.  Go back to the main *Navigation* &rarr; *Site Pages* page.
+1.  Go back to the main *Build* &rarr; *Pages* page.
 
-2.  Click the `+` button for *Add Page*.
+2.  Click the *Add* icon (
+    ![Add Page](../../../../../../images/icon-add.png)) for *Add Page* and 
+    select *Public Page*.
 
-3.  Click on the tab for the Collection which contains the template you want to 
-    use.
+3.  Select the Collection which contains the template you want to 
+    use from the *Collections* menu on the left.
 
-3.  Enter a *Name*.
+4.  Click on the template you want to use.
 
-4.  Click Save.
+5.  Enter a *Name*.
+
+6.  Click *Save*.
+
+The page is published immediately, but you are given the opportunity to edit 
+the final page. You can change which Fragments are used here, and edit any 
+editable fields so that the final page is different from the Page Template.
 
 ![Figure 4: Selecting you page template.](../../../../../../images/selecting-template.png)
 
-Alternatively, you can select the page type first, and then the template. After you click the `+` to add a page do the following:
+Alternatively, you can create a Content Page without a template. From the page
+creation screen,
 
-1.  Select the *Basic Pages* tab.
+1.  Select *Basic Pages* from under *Collections*.
 
-2.  Select *Content*.
+2.  Select *Content Page*.
 
-3.  Choose the *Page Template* you want to use from the selector.
+3.  Enter a *Name* and click *Save*.
 
-4.  Click *Add Page*
+5.  Add Fragments to create your new page.
     
 By default, your new page will be added to the Navigation Menu and users can 
 access the page you created. Next you'll learn how to import and export 

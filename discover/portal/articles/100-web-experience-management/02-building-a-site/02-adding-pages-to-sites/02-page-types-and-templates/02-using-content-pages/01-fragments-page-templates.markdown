@@ -14,11 +14,11 @@ Start in Site Administration. You can find Fragments in the Content section.
 2.  Under *Site Administration*, make sure the Site where you want to work is 
     selected.
 
-3.  In the *Build* section, select *Fragments*.
+3.  In the *Build* section, select *Page Fragments*.
 
-![Figure 1: The Fragments page with no Fragments or Collections created.](../../../../../../images/empty-fragments-page.png)
+![Figure 1: Here is the Page Fragments page with no Fragments or Collections created.](../../../../../../images/empty-fragments-page.png)
 
-Fragments are organized in *Collections*. The main Fragments page shows
+Fragments are organized in *Collections*. The main Page Fragments page shows
 available Collections, provides the option to Import and Export, and enables you
 to create Collections. You can also manage the organization and display of
 Fragments and Collections once you have them created. To create a Fragment, you
@@ -35,7 +35,8 @@ created.
 
 1.  Click on the Collection you created.
 
-2.  Click the `+` button to create a Fragment.
+2.  Click the *Add* icon (
+    ![New](../../../../../../images/icon-add.png))  button to create a Fragment.
 
 3.  Give it a *Name* and click *Submit*.
 
