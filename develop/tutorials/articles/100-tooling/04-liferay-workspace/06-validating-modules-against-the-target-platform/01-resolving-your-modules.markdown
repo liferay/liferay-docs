@@ -44,16 +44,13 @@ target. For example,
 
     liferay.workspace.target.platform.version=7.0-GA7
 
-**Important:** You can leverage the target platform features in Liferay Portal
-GA6+. Previous versions do not provide these features.
-
 If you're using Liferay DXP, the versions are specified based on service packs.
 For example, you could set your target platform workspace Gradle property to
 
     liferay.workspace.target.platform.version=7.0-sp7
 
-<!-- TODO: Still need to find the earliest service pack version available for
-Liferay 7.0 DXP and document it here. -Cody -->
+**Important:** You can leverage the target platform features in Liferay Portal
+GA6+ and Liferay DXP SP7+. Previous versions do not provide these features.
 
 This provides a static *distro* JAR for the specified version of @product@,
 which contains all the metadata (i.e., capabilities, packages, versions, etc.)
