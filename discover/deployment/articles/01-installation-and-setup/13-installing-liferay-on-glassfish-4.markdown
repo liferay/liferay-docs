@@ -94,7 +94,7 @@ with this:
 
     <jvm-options>-Xmx1024m</jvm-options>
 
-Edit your `domain1/config/config/server-policy.xml` and append the following
+Edit your `domain1/config/server.policy` and append the following
 lines to the end of the file:
 
     grant {
