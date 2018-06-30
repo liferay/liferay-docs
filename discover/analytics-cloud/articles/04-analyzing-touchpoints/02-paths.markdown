@@ -6,7 +6,7 @@ more in the introduction.-->
 A weary sojourner winds their way through the twisted paths of the internet,
 seeking answers to their important questions. Nearly ready to give up their
 search and instead look at Grumpy Cat memes, they scroll to the bottom of the
-page they're on, skimming the page's content.  Unexpectedly, their eyes come to
+page they're on, skimming the page's content.  Their weary eyes come to
 rest on a promising link offered at the very bottom of the page. They click it
 in desperation, hoping it offers the solution to their pressing problem.
 Through this haphazard placement of an advertisement, they are led to your site,
@@ -25,38 +25,41 @@ advertising.
 
 ## Viewing Page Path Analytics
 
-Page Analytics are reported in the Path tab of a Page's screen. The intuitive
-diagram reports the most common ways visitors accessed the Page.
+A Page's Path Analytics are reported in the Path tab of a Page's screen. The intuitive
+diagram reports the most common pages from which visitors accessed this Page.
 
-SCREENSHOT
+![Figure x: On top of being pretty to look at, the Path Diagram contains important information.](../../images/paths-diagram.png)
 
 After the top three paths to the Page, the remaining paths are aggregated to
-show how many views came from _Other_ points.
+show how many views came from _Other_ pages.
 
 If a Page in one of your Liferay DXP sites is also a Path to the current Page,
 clicking the path URL brings you to its Overview screen. If it's not a
-page that's loaded from the data source, <!-- What happens on click? Nothing? -->
+page that's loaded from the data source, nothing happens.
 
-By default, all of the views of the Page are represented in the Paths diagram.
-Filter the Paths being viewed by location and device (OS and web browser). Click
-the *Filter* menu and select one location whose Path diagram you'd like to see.
-Click *Apply Filter* when finished, and the Path diagram is updated to represent
-the top Paths for only the selected locations. The same filtering can be used
-for Device, and the Device and Location filters cna be combined. For example,
-view the Path diagram for views coming from tablets in Japan. 
+By default, all of the views of the Page in the selected time period are
+represented in the Paths diagram. Filter the Paths being viewed by Location and
+Device Type. Click the *Filter* menu and select one Location whose Path diagram
+you'd like to see.  The Path diagram is updated to represent the top Paths for
+only the selected Location.  The same filtering can be used for Device Type, and
+the Device Type and Location filters can be combined. For example, view the Path
+diagram for views coming from tablets in Japan. 
 
 As you select filters, they're made visible at the top center of the Path
 screen.
 
-To remove a filter, click the *x* next to the location name.
+![Figure x: One German smartphone User visited this Page in the last 30 days. The
+User came to the Page from `wwww.google.com.de`.](../../images/paths-filters.png)
+
+To remove a filter, click the *x* next to the filter name.
 
 ## Assets
 
 Pages have Assets on them. If a Page containing the Analytics Cloud client is
 reported in the Path diagram, a *Show Top 5 Assets* link is displayed. Clicking
-it opens a dropdown list of the top five assets on the Page, as determined by
-interaction with the Assets. Each Asset uses the most appropriate interaction
-metric available:
+it opens a dropdown list. Up to the top five assets on the Page is displayed, as
+determined by interaction with the Assets. Each Asset uses the most appropriate
+interaction metric available:
 
 - Forms uses Submissions
 - Blogs uses Views
@@ -66,16 +69,16 @@ metric available:
 Clicking an asset brings you to the Asset's Overview page. See the documentation
 on Assets for more information on analyzing Asset metrics <!--Link when possible-->.
 
-SCREENSHOT
+![Figure x: ](../../images/paths-assets.png)
 
 ## Location and Device Type
 
-Path Analytics can be filtered by Location and Device type. Knowing the OS and
-browser visitors use to access your site's Pages helps you determine whether
-your site is optimized for certain browsers and OS environments.
-<!-- Is there a better way to interpret these metrics? -->
+Path Analytics can be filtered by Location and Device Type. Knowing the Location
+and Device Type visitors most commonly use to access your site's Pages helps you
+determine whether your site and its content are optimized properly.  <!-- Is
+there a better way to interpret these metrics? -->
 
-Path Analytics includes analytics on device types and browser types that render
-your site content. Knowing the device types and browser types can help you
-determine which ones to test more and optimize user experiences on.
+Path Analytics includes analytics on the devices your Users are browsing from,
+and their locations. This helps you determine which environments to target and
+optimize user experiences on.
 
