@@ -8,7 +8,7 @@ Marketplace) section of the Control Panel in your product installation**.
 
 Follow the steps below to install a trial plugin:
 
-1.  Register a Liferay.COM account (LRDC) account by visiting Liferay's home
+1.  Register a `liferay.com` account (LRDC) account by visiting Liferay's home
     page (if necessary). Do this by clicking *Sign In/Create Account* button
     from the top right Profile button.
 
@@ -17,7 +17,7 @@ Follow the steps below to install a trial plugin:
 2.  Start your @product@ instance (trial license is OK).
 
 3.  After signing in as an Admin in your @product@ trial server, go to the
-    Control Panel &rarr; *Apps* &rarr; *Store* and configure the Liferay.COM
+    Control Panel &rarr; *Apps* &rarr; *Store* and configure the `liferay.com`
     (LRDC) account to log in to the Marketplace. Authorize Marketplace to access
     your local account.
 
@@ -35,7 +35,7 @@ Follow the steps below to install a trial plugin:
 
 +$$$
 
-**Note:** At a later date, the Marketplace website on Liferay.COM will be
+**Note:** At a later date, the Marketplace website on `liferay.com` will be
 accessible to @product@ trial customers. For now, please access subscription
 apps through the portal installation itself. 
 
@@ -55,13 +55,13 @@ non-trial installation. The only difference is the license.
 **Q:** Why can't I go to liferay.com/marketplace? Why can't I *purchase* from
 the Marketplace site?
 
-**A:** DXP trial users must use the Marketplace accessed from within the
-product's Control Panel (instructions above). You do not need to *purchase* any
-DXP plugins because if you access Marketplace from within the Control Panel,
+**A:** DXP trial users must use the Marketplace from within the product's
+Control Panel (instructions above). You do not need to *purchase* any DXP
+plugins because if you access Marketplace from within the Control Panel,
 Marketplace sees that you have a DXP license installed and gives access to DXP
-plugins. Official DXP subscription customers (i.e., non trial) will be able to
-log into liferay.com with their designated DXP subscriber login and access all
-DXP plugins through the Marketplace website. 
+plugins. Official DXP subscription customers (i.e., non trial) can log into
+`liferay.com` with their designated DXP subscriber login and access all DXP
+plugins through the Marketplace website. 
 
 **Q:** Why are the plugins under the Purchased tab? If I click on the
 *DXP Marketplace* link, it does not let me get the DXP plugins.
@@ -72,8 +72,7 @@ then click on the *EE* subtab.
 **Q:** What happens when DXP trial customers become official Liferay Digital
 Experience subscribers?
 
-**A:** They will still be able to complete the above process, or they
-can also visit the
+**A:** They can still complete the above process, or they can also visit the
 [Liferay Marketplace website](https://www.liferay.com/marketplace).
 
 **Q:** Do DXP trial customers get the DXP source code?
