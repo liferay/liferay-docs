@@ -53,7 +53,7 @@ the home page from wherever you are in the application. Here are the left naviga
 - *Touchpoints*: Analyze *page* and *asset* performance and view paths users 
 take to your pages. 
 
-- *User icon:* Lets you sign out.
+- *User icon:* Lets you switch projects and sign out.
 
 - *Settings*: Provides options for managing data sources, users, and updating 
 your Analytics Cloud usage. 
