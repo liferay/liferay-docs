@@ -20,10 +20,9 @@ Activate a workflow for these assets in Control Panel &rarr; Configuration
 - User
 - Web Content Article
 - Wiki Page
+- Knowledge Base
 
-If the Knowledge Base application is installed, it also appears here.
-
-Activate workflow for these assets at the site level in Site &rarr;
+Activate workflow for these assets at the Site level in Site &rarr;
 Configuration &rarr; Workflow:
 
 - Blogs Entry
@@ -33,18 +32,17 @@ Configuration &rarr; Workflow:
 - Page Revision
 - Web Content Article
 - Wiki Page
+- Knowledge Base
 
-If the Knowledge Base application is installed, it also appears here. 
+What's the difference between the Site workflow configuration and the Control
+Panel Workflow configuration? As with most scoped configurations, the higher
+level setting (in the Control Panel) sets the default behavior. It's overridden
+at the more granular level (in the Site menu).
 
-What's the difference between the site workflow configuration and the Control
-Panel Workflow configuration? As with most scoped configuratio, the higher level
-setting (in the Control Panel) sets the default behavior. It's overridden at the
-more granular level (in the site menu).
-
-User doesn't appear on the site list because adding users is strictly a
+User doesn't appear on the Site list because adding users is strictly a
 portal-wide administrator activity. Only assets that can be added and configured
-at the site level (for example, those that are accessed from the site menu) have
-workflow configuration controls at the site level.
+at the Site level (for example, those that are accessed from the Site menu) have
+workflow configuration controls at the Site level.
 
 Some assets that are workflow-enabled are activated in their respective
 application: 
@@ -81,7 +79,7 @@ Page revisions are slightly different. Page revisions only occur in
 [staging environments](/discover/deployment/-/knowledge_base/7-1/staging-content-for-publication) 
 that have Page Versioning enabled. When a Page Variation or Site Page Variation
 is created, its creator must click *Submit for Publication* at the top of the
-page, and the variation must be approved in the workflow, before it can be
-published to the live site.
+page, and the variation must be approved in the workflow before it can be
+published to the live Site.
 
-![Figure 6: With workflow enabled on Page Revisions, the site administrator must submit their page variation for publication before it can go live.](../../images/page-revision-submission.png)
+![Figure 6: With workflow enabled on Page Revisions, the Site administrator must submit their page variation for publication before it can go live.](../../images/page-revision-submission.png)
