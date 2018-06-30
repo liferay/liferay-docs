@@ -1,4 +1,4 @@
-# Server Administration: Resources
+# Server Administration: Resources [](id=server-administration-resources)
 
 The Server Administration app's Resources tab contains several server wide 
 actions that an administrator can execute. These include the following items: 
@@ -56,4 +56,4 @@ actions that an administrator can execute. These include the following items:
 -   **Clean up portlet preferences:** This action cleans up database entries if 
     portlet preferences become orphaned in the @product@ database. 
 
-![Figure 1: The Resources tab of Server Administration lets you execute several server maintenance tasks.](../images/server-admin-resources.png)
+![Figure 1: The Resources tab of Server Administration lets you execute several server maintenance tasks.](../../../../images/server-admin-resources.png)

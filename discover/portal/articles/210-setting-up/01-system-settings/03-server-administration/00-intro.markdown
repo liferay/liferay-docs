@@ -1,17 +1,17 @@
-# Server Administration
+# Server Administration [](id=server-administration)
 
-The Server Administration app lets you manage and monitor your @product@ server. 
-You can access this app by clicking *Control Panel* &rarr; *Configuration* 
-&rarr; *Server Administration*. 
+Server Administration lets you manage and monitor your @product@ server. Access
+the application by clicking *Control Panel* &rarr; *Configuration* &rarr;
+*Server Administration*. 
 
-![Figure 1: The Resources tab of Server Administration shows a graph of your server's memory usage.](../images/server-admin-memory.png)
+![Figure 1: The Resources tab of Server Administration shows a graph of your server's memory usage.](../../../../images/server-admin-memory.png)
 
-The Server Administration app's functionality is segmented into these tabs: 
+Server Administration's functionality is segmented into these tabs: 
 
 -   **Resources:** View memory usage and perform management tasks like running 
     the garbage collector, clear the database cache, and more. For more 
     information, see 
-    [the article on using this tab](liferay.com). 
+    [the article on Resources](/discover/portal/-/knowledge_base/7-1/server-administration-resources).
 
 -   **Log Levels:** View and set logging levels. You can make dynamic 
     modifications of log levels for any class hierarchy in @product@. Custom 
@@ -50,7 +50,7 @@ The Server Administration app's functionality is segmented into these tabs:
 
 -   **External Services:** Configure external services for generating file 
     previews. For more information, see 
-    [the article on using this tab](liferay.com). 
+    [the article on External Services](/discover/portal/-/knowledge_base/7-1/server-administration-external-services).
 
 -   **Script:** A scripting console for executing migration or management code. 
     The Groovy scripting language is supported out of the box. See the 

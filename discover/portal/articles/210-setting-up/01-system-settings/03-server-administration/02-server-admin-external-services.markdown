@@ -1,4 +1,4 @@
-# Server Administration: External Services
+# Server Administration: External Services [](id=server-administration-external-services)
 
 Users can upload and share any type of file via the Documents and Media library, 
 a customizable and permissions-enabled online repository for files (see the 
@@ -30,7 +30,7 @@ may need to update glibc to version 2.6 or later.
 
 $$$
 
-## ImageMagick Configuration
+## ImageMagick Configuration [](id=imagemagick-configuration)
 
 Before configuring ImageMagick to generate image and PDF previews, install it
 and its dependency, Ghostscript. This differs by operating system: on Linux,
@@ -66,9 +66,9 @@ app's External Services tab:
 3.  Verify that the paths to the ImageMagick and Ghostscript executables are 
     correct. 
 
-![Figure 1: Enable ImageMagick and Ghostscript, and verify that the paths are correct.](../images/imagemagick-ghostscript.png)
+![Figure 1: Enable ImageMagick and Ghostscript, and verify that the paths are correct.](../../../../images/imagemagick-ghostscript.png)
 
-## Xuggler Configuration
+## Xuggler Configuration [](id=xuggler-configuration)
 
 Follow these steps to install and configure Xuggler: 
 
@@ -89,4 +89,4 @@ Follow these steps to install and configure Xuggler:
 
             xuggler.enabled=true
 
-![Figure 2: Install Xuggler.](../images/xuggler-install.png)
+![Figure 2: Install Xuggler.](../../../../images/xuggler-install.png)
