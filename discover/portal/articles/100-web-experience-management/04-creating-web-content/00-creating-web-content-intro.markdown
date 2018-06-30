@@ -1,14 +1,12 @@
 # Introduction to Web Content [](id=introduction-web-content)
 
-Web Content Management (WCM) is a toolkit that allows users who are not web
-developers to publish content with a simple point and click interface. A few
-minutes spent learning its features will enable you to create, edit, and publish
-content.
+Web Content Management (WCM) helps users who are not web developers publish
+content with a simple point and click interface, while enabling developers to
+create complex templates with dynamic elements. Once these templates have been
+deployed into @product@, your non-technical users can use them to manage complex
+content as easily as they would manage basic content.
 
-To complement basic web content, developers can create complex templates with
-dynamic elements. Once these templates have been deployed into @product@, your
-non-technical users can use them to manage complex content as easily as they
-would manage basic content.
+It has these components: 
 
 **Web Content Editor:** A complete HTML editor for modifying fonts, adding
 color, inserting images, and much more.
@@ -22,26 +20,22 @@ structure.
 
 **Web Content Display:** Place web content on pages in your Site.
 
-**Asset Publisher:** Aggregate and display different types of
-content together in one view. This is covered in more detail in the
-[Publishing Assets](/discover/portal/-/knowledge_base/7-1/publishing-assets)
-section.
+**Asset Publisher:** Aggregate and display different types of content together
+in one view. This is covered in more detail in 
+[Publishing Assets](/discover/portal/-/knowledge_base/7-1/publishing-assets).
 
 **Scheduler:** Schedule when content is reviewed, displayed or removed. This
-is covered in more detail in the 
-[Scheduling Web Content Publication](/discover/portal/-/knowledge_base/7-1/scheduling-web-content-publication)
-section.
+is covered in more detail in 
+[Scheduling Web Content Publication](/discover/portal/-/knowledge_base/7-1/scheduling-web-content-publication).
 
 **Workflow Integration:** Run your content through a review process. This is
-covered in more detail in the 
-[Using Workflow](/discover/portal/-/knowledge_base/7-1/using-workflow)
-section.
+covered in more detail in 
+[Using Workflow](/discover/portal/-/knowledge_base/7-1/using-workflow).
 
 **Staging:** Use a separate staging server or stage your content locally so you
 can keep your changes separate from the live site. This is covered in more
-detail in the 
-[Using the Staging Environment](/discover/portal/-/knowledge_base/7-1/using-the-staging-environment)
-section.
+detail in 
+[Using the Staging Environment](/discover/portal/-/knowledge_base/7-1/using-the-staging-environment).
 
 These tools streamline the content creation process for end users and are also
 integrated with Liferay's services so advanced template developers can use them
