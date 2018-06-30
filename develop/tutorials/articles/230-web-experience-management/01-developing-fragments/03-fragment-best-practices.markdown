@@ -23,47 +23,46 @@ You can develop a fragment using any preferred desktop tools. Since the Fragment
 is HTML, CSS, and JavaScript, you could use a text editor or a specialized tool
 with its own built in previews. 
 
-To import a Collection into Liferay, they must be archived in a 
-`.zip` with the contents in the following format:
+To import a Collection into Liferay, it must be archived in a `.zip` with the
+contents in the following format:
 
 - `collection.json`: a text file which describes your collection with the 
      format  `{"name":"<collection-name>","description":"<collection-description>"}`
-  
-  - `<fragment-name>\`: a folder which contains all of the files for a single 
+ 
+  - `[fragment-name]/`: a folder containing all of the files for a single 
      Page Fragment.
-     
+ 
     - `fragment.json`: a text file that describes a Page Fragment with the 
         format `{"jsPath":"src/index.js","htmlPath":"src/index.html","cssPath":"src/index.css","name":"<fragment-name>"}`
-     
-    - `src/`: a folder which contains the source code files for the fragment.
-     
+ 
+    - `src/`: a folder containing the source code files for the fragment.
+ 
        - `index.html`: the HTML source for the fragment
-      
+ 
        - `index.css`: the CSS source for the fragment
-      
+ 
        - `index.js`: the JavaScript source for the fragment
 
-A collection can contain any number of fragments, so there could be any number 
-of subfolders in the collection. If your collection is created in this format, 
-it will be just as good as importing a collection that was created and exported 
-from within Liferay.
+A collection can contain any number of fragments, so you can have lots of
+subfolders in the collection. This format is the same as what's exported from
+within Liferay.
 
-Developers can also create fragments to be imported into an existing 
-collection. Fragments would be in a `.zip` in a similar format, but without the 
-Collection information at the top level:
+Developers can also create fragments to be imported into an existing collection.
+Put them in a similarly formatted `.zip`, but without the Collection information
+at the top level:
 
-- `<fragment-name>\`: a folder which contains all of the files for a single 
+- `[fragment-name]/`: a folder containing all the files for a single 
      Page Fragment.
-     
+ 
  - `fragment.json`: a text file that describes a Page Fragment with the 
         format `{"jsPath":"src/index.js","htmlPath":"src/index.html","cssPath":"src/index.css","name":"<fragment-name>"}`
-     
-  - `src/`: a folder which contains the source code files for the fragment.
-     
+ 
+  - `src/`: a folder containing the source code files for the fragment.
+ 
      - `index.html`: the HTML source for the fragment
-      
+ 
      - `index.css`: the CSS source for the fragment
-      
+ 
      - `index.js`: the JavaScript source for the fragment
 
 Multiple fragments can be included in a single `.zip` file with each having 

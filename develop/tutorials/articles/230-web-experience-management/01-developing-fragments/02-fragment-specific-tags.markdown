@@ -24,22 +24,20 @@ The `lfr-editable` tag doesn't render without a unique `id`.
 
 The following three `type` options are available inside of of `lfr-editable` tag:
 
--  **"text"** creates a space for plain text which can be edited before 
-    publishing. 
+`text`: Creates a space for plain text that can be edited before publishing. 
 
--  **"image"** must contain a valid `<img>` tag which can then be replaced 
-    before publishing with any image---including those from Documents and Media.
-    
--  **"rich-text"** is similar to the text field, but will provide an WYSIWYG
-    editor for editing before publication.
-    
-    
+`image`: Must contain a valid `<img>` tag which can then be replaced with any
+image before publishing---including those from Documents and Media.
+ 
+`rich-text`: Similar to the text field, but provides an WYSIWYG editor for
+editing before publication.
+
 +$$$
 
-**WARNING:** Be careful with the `rich-text` type. Users can use the editor to 
-provide their own HTML in the provided field which could have catastrophic 
-results for your layout if misused. Be sure that your content creators 
-understand the responsibility that must come with such great power.
+**WARNING:** Be careful with the `rich-text` type. Users can use the editor to
+provide their own HTML in the provided field which may have catastrophic results
+for your layout if misused. Be sure that your content creators understand the
+responsibility that must come with such great power.
 
 $$$
 
@@ -75,7 +73,8 @@ published:
 
 ![Figure 1: You can edit text in the Page Template editor.](../../../images/editing-fragment-text.png)
 
-Similarly, the `"rich-text"` type provides the same functionality with additional features in the editor.
+Similarly, the `rich-text` type provides the same functionality with additional
+features in the editor.
 
 ![Figure 2: Rich text provides a fuller editing experience.](../../../images/editing-rich-text.png)
 
