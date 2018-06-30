@@ -28,13 +28,13 @@ on it, controls for inserting an image, video, table, or horizontal line
 
 2.  Select the icon that depicts a mountain silhouette to insert the image.
 
-3.  In the image file selector select an image to add to the article.
+3.  In the image file selector, select an image to add to the article.
 
-     Select an image from your computer or from the Site's 
-     Documents and Media repository. If you select an from your 
-     Documents and Media  repository, you can access the [image 
-     editor](/discover/portal/-/knowledge_base/7-1/editing-images) to make
-     changes specifically for your article.
+    Select an image from your computer or from the Site's Documents and Media
+    repository. If you select one from your Documents and Media  repository, you
+    can access the 
+    [image editor](/discover/portal/-/knowledge_base/7-1/editing-images) to make
+    changes specifically for your article.
 
 ![Figure 1: You can access the image editor through the item selector window.](../../../../images/image-editor-preview-window.png)
 
@@ -61,8 +61,8 @@ If you need to work directly with the HTML, you can switch to source view.
     ![Regular Mode](../../../../images/icon-text.png)
     ) to go back once you're done editing HTML.
 
-The HTML editor is syntax highlighting, and you can switch between a dark and 
-light theme by choosing the moon and sun icons.
+The HTML editor highlights syntax, and you can switch between a dark and light
+theme by choosing the moon and sun icons.
 
 In HTML mode, click on the *Fullscreen* icon
 (![Fullscreen](../../../../images/icon-enlarge.png)) to access a dual pane view
@@ -72,13 +72,12 @@ arrange the HTML and preview panes horizontally or vertically.
 ![Figure 2: You can view how your HTML would render by using the preview pane.](../../../../images/web-content-editor-html.png)
 
 Every 25 seconds, the entry you're creating is automatically saved as a draft.
-Because of this, you never have to worry about losing your work if something
-unforeseen happens in your browser or on your computer. You can exit the
-enlarged editor by clicking the *Done* button at the bottom of the screen.
+You can exit the enlarged editor by clicking the *Done* button at the bottom of
+the screen.
 
 Add a few short sentences announcing the grand opening of the Lunar Resort. The
 content can be localized in whatever language you want. You'll learn more about
-localizing your content later on.
+localizing your content later.
 
 ## Web Content Options [](id=web-content-options)
 
@@ -103,15 +102,15 @@ your web content.
 
 For example, if you had a news site with different sections---Sports,
 Technology, Culture---you could create a display page for each section with
-unique banners, formatting, and embedded widgets, or other features. By
-selecting a display page, you would ensure that content appears on the page with
-the appropriate features. You'll work through an example of creating a display
-page in the
+unique banners, formatting, embedded widgets, or other features. By selecting
+a display page, you would ensure that content appears on the page with the
+appropriate features. You'll work through an example of creating a display page
+in the
 [Display Pages for Web Content](/discover/portal/-/knowledge_base/7-1/display-pages-for-web-content)
 tutorial.
 
-**Friendly URL:** Set the friendly URL where the article can be viewed alone.
-If a specific display page is set, the URL will link to it.
+**Friendly URL:** Set the friendly URL where the article can be viewed alone. If
+a specific display page is set, the URL links to it.
 
 **Schedule:** Customize the date and time your content publishes and/or expires.
 To learn more about scheduling content, see 
