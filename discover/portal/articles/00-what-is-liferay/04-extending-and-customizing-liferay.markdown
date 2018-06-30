@@ -1,8 +1,8 @@
 # Extending and customizing Liferay for your own needs [](id=extending-and-customizing-liferay-for-your-own-needs)
 
-@product@ was designed to be extended and modified, beyond what even most open
-source projects provide. Though its source code is available, @product@'s
-developers have made many extension points available so you don't have to
+@product@ was specifically designed to be extended and modified, beyond what
+even most open source projects provide. Though its source code is available,
+@product@'s developers have created many extension points so you don't have to
 customize the source to make @product@ yours. 
 
 The first (and easiest) way of customizing parts of @product@ is with

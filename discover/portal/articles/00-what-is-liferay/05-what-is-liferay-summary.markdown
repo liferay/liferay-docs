@@ -5,7 +5,7 @@ much. What we've essentially done is say it's a totally awesome content and
 document managing, user collaborating, socially enabling, application
 developing, corporate integrating, completely customizable platform for building
 the Internet. If we'd said that up front, you may have thought we were
-exaggerating. Hopefully now you can see that we really believe that, and we
+exaggerating. Hopefully now you can see that we really believe it, and we
 continue striving to make @product@ better and better. 
 
 But please don't take our word for it.

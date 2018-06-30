@@ -7,8 +7,8 @@ that it's built for all clients that access the web, not just desktop browsers.
 
 All the page controls are right there for you. For example, to add content or
 applications to the page, click the *+* button, and then you can add any kind
-of content @product@ supports. The interface has been designed to get out of
-your way and let you do your work. 
+of content @product@ supports. The interface gets out of your way so you can do
+your work. 
 
 Liferay Web Experience Management scales to work for the tiniest of sites all
 the way up to the largest of sites. You can get started quickly by clicking
@@ -36,18 +36,18 @@ hierarchies, as the figure below shows.
 ![Figure x: Liferay's page hierarchies are easy to create, using a tree structure that's familiar to anyone who has used a file manager.](../../images/01-page-hierarchy.png)
 
 Pages can be added, removed, or reordered any time, and you have the full
-flexibility of all the HTML page attributes, such as meta tags and robot file
+flexibility of all the HTML page attributes like meta tags and robot file
 declarations, as well as full control over the layout. 
 
 Pages are also integrated with Liferay's powerful permissions system, so it's
 easy to restrict access to certain portions of your site. You can give
 individual users sites of their own, with public pages that have their content
-and blog, and private pages that contain their calendars and email. 
+and blog and private pages that contain their calendars and profiles. 
 
-If you're running a large website that has lots of different sub-sites for
-individuals and groups, you can use page templates and site templates. Page
-templates are predefined with layouts and applications already on them, and
-site template predefine a whole site made up of multiple, page templates. 
+If you run a large website with lots of different sub-sites for individuals
+and groups, you can use page templates and site templates. Page templates have
+layouts and applications already on them, and site template predefine a whole
+site made up of multiple page templates. 
 
 Web content is one example of an *asset*. Assets are meta-data attached to
 content types, and that meta-data aggregates similar assets together in
@@ -55,28 +55,27 @@ searches or as published content. One way to do this is to tag and categorize
 content so it can be found more easily by users. 
 
 There is much more to web content. You can create structures (pre-defined
-content formats), templates (designs for formatting structures), abstracts,
-schedule when content is published and when it should be taken down (or
-reviewed), define related assets, and more. 
+content formats), templates (designs for formatting structures), schedule when
+content is published and when it should be taken down (or reviewed), define
+related assets, stage multiple variations of your site, and more. 
 
 This is just the web content portion of the content management system.
 @product@ is also great at managing file-based content. 
 
 ## Keeping Track of Documents, Images, Video, and More [](id=keeping-track-of-documents-images-video-and-more)
 
-You'll find Liferay's file-based content management system in an application
-called *Documents and Media Library*. This application, as shown below, looks
-very much like the file manager that you're already familiar with from your
-operating system. 
+Liferay's file-based content management system is in an application called
+*Documents and Media Library*. This application, as shown below, looks like the
+file manager that you're already familiar with from your operating system. 
 
 ![Figure x: @product@'s Documents and Media library was purposefully designed to be familiar to anyone who uses a computer.](../../images/01-docs-and-media.png)
 
 Like a file manager, you can browse files and folders in nested hierarchies. You
 can also mount other repositories that you might have in your environment, such
 as any system that implements Content Management Interoperability Services
-(CMIS). It provides previews of many document types. And, like a file manager,
+(CMIS). It generates previews of many document types. And, like a file manager,
 you can upload, copy, and move files between folders by dragging and dropping
-them. Of course, if you still want to use your operating system's file manager,
+them. Of course, if you still want to use your operating system's file manager
 you can, because the Documents and Media library supports WebDAV, using the
 same credentials you use to log in. 
 
@@ -93,13 +92,10 @@ Meeting Minutes. The file format doesn't matter: whether it's a Microsoft Word
 document, an HTML file, or a text file, the document contains meeting minutes. 
 
 Of course, the system goes much further than this. Folders can be set so that
-only certain document types can be added to them. Workflow rules can also be
-added to folders to run files through an approval process that you define. In
-short, @product@'s file-based content management system gives you what you need
+only certain document types can be added to them. You can add workflow rules to
+folders so files go through an approval process that you define. In short,
+@product@'s file-based content management system gives you what you need
 to manage and share files in a group. 
 
-Many @product@ users see it as a robust content management system, and they
-use it primarily for that purpose. Now, hopefully, you can see why. You can
-explore the system in-depth in the relevant section on the left, but you might
-want to see some of the other ways you can use @product@, starting with its
+There are many other ways you can use @product@, starting with its
 collaborative tools. 

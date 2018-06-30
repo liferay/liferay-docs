@@ -5,8 +5,8 @@ with an extensive upgrade to forms. The user experience has also been
 streamlined throughout the platform to help save time while managing sites.
 There are new tools to support data protection in accordance with the recent
 GDPR requirements. Finally, there are several significant technology updates
-such as OAuth 2.0 that help you develop new competitive advantages with modern
-development tools for mobile and web.
+that help you develop new competitive advantages with modern development tools
+for mobile and web.
 
 Evolve your digital presence with new features to create stunning, personalized
 experiences for every audience.
@@ -16,14 +16,15 @@ experiences for every audience.
 @product-ver@ introduces a powerful new way to design websites. From carefully
 designed page fragments to full control over page menus, @product@ frees web
 developers and designers to execute web experiences exactly as they envision.
-This is in addition to, not a replacement of, the web content management system
-Liferay has always had. 
+This is an enhancement of the content management system that you can adopt as
+you see fit. To differentiate the two, the new pages are called Content Pages,
+while the existing system uses Widget Pages. 
 
 ### Content Pages
 
 Users can now easily create and add unstructured content directly to pages. This
-is useful for site pages that don't need to leverage structured web content
-within Liferay, such as one-off landing pages for marketing campaigns.
+is useful for site pages that don't need to leverage structured web content,
+such as one-off landing pages for marketing campaigns.
 
 When creating a new page, users can choose either the new content pages or
 widget pages, which use the traditional method of creating pages through adding
@@ -34,17 +35,17 @@ and configuring applications.
 ### Fragments
 
 Fragments are a new way of creating and implementing content page designs. Web
-developers can now save page sections as fragments and reuse them across a Site.
-This allows developers to create a library of designed components for building
-pages quickly without having to touch code. Fragments are organized in
+developers can now save page sections as Fragments and reuse them across a Site.
+Developers can now create a library of designed components for others to
+build pages quickly without having to touch code. Fragments are organized in
 collections and leverage familiar asset management features such as drafts,
-thumbnail previews, search and permissions.
+thumbnail previews, search, and permissions.
 
 ![Figure x. Non-technical users can use Fragments as building blocks for pages.](../../images/01-page-fragments.jpg)
 
 ### Fragment Editor
 
-Web developers can use the Fragment Editor within the browser to create or edit
+Web developers can use the Fragment Editor in the browser to create or edit
 their Fragments. Alternatively, developers can create Fragments with their
 preferred tools and import the fragments into Liferay.
 
@@ -56,11 +57,11 @@ The introduction of Fragments opens up new ways to create pages and templates
 through a visual page editor. 
 
 The new Page Editor is for laying out page designs visually and saving them as
-reusable templates. Business users can search through collections and easily
-add, remove and position fragments on the page. Marketers can then customize
-text with in-line editing, swapping in new images and other elements. Fragments
-can display Liferay's out-of-the-box applications, and you can configure them
-within the page editor.
+reusable templates. Users can search through collections and easily add, remove
+and position fragments on the page. Marketers can then customize text with
+in-line editing, swapping in new images and other elements. Fragments can
+display Liferay's out-of-the-box applications, and you can configure them within
+the page editor.
 
 ![Figure x. The Page Editor makes it easy to build pages out of Fragments.](../../images/01-page-editor.jpg)
 
@@ -68,7 +69,7 @@ within the page editor.
 
 Display Pages have been improved to make it easier to create standard templates
 for web content that must have a consistent look and feel, such as press
-releases. Use page fragments to implement designs and map content sections
+releases. Use page Fragments to implement designs and map content sections
 without touching code. When web content is published with a display page
 template, it automatically gets its own page with a unique URL, replacing the
 default content in the template with the newly added web content.
@@ -98,7 +99,7 @@ fragments, auto-saving of forms, and so much more it had to be
 ### User Experience
 
 @product-ver@ rolls out several user experience refinements for externally
-facing content such as blogs, as well as omnichannel support for how media is
+facing content such as blogs, as well as omni-channel support for how media is
 displayed and delivered on different devices. These integrated improvements help
 you deliver a better experience to your users out of the box.
 
@@ -109,16 +110,16 @@ device being used. It also offers deep control over how images are loaded and
 displayed, which helps you address performance issues across a wide variety of
 devices and varying network speeds between users and countries. Adaptive Media
 does most of the work in the background automatically, but developers can edit
-image resolutions and define which devices should trigger various resolutions.
-This level of control enables consistent experiences that avoid poor page
-layouts and slow load times.
+image resolutions and define devices that trigger various resolutions. This
+level of control enables consistent experiences that avoid poor page layouts and
+slow load times.
 
 ### Blogs and Message Boards
 
 Blog refinements make it easier to deliver experiences that are tailored to your
 blog audience. These include support for creating friendly URLs, displaying
-estimated reading times, unsubscribe from email notifications, a new cards
-design, and support for videos from external services  Message Boards now
+estimated reading times, unsubscribing from email notifications, a new cards
+design, and support for videos from external services. Message Boards now
 supports drag and drop for uploading attachments, section renaming, category and
 thread grouping, notification management, and a new design for comments.
 
@@ -129,6 +130,14 @@ thread grouping, notification management, and a new design for comments.
 In addition to its new features, @product-ver@ is easier to administer.
 Streamlined administration tools mean less time managing sites, while still
 offering granular control. 
+
+### OAuth 2.0
+
+OAuth 2.0 has become a de-facto standard that allows users to authorize access
+to parts of their accounts without giving up authentication credentials. With
+@product-ver@, now users can "Sign in with [insert your site here]," granting
+mobile and web applications secure, token-based access to user profile
+information they have complete control over and can revoke at any time. 
 
 ### Data Protection
 
@@ -150,7 +159,7 @@ enterprise search for their sites.
 
 A new Control Panel makes it easier to take care of all administration tasks
 with the click of a button. Users can configure the search engine, start and
-monitor any reindexes, and much more.
+monitor re-indexes, and much more.
 
 ![Figure x. Search administration is now separated from server administration.](../../images/01-search.jpg){width="6.5in" height="3.1839in"}
 
@@ -167,8 +176,8 @@ bringing page management into one central location.
 Workflow management 
 [has received](/discover/portal/-/knowledge_base/7-1/workflow#whats-new-with-workflow) 
 a complete UI overhaul, with all configuration consolidated under one area in
-the Control Panel. Existing workflows can now be duplicated and definitions
-are versioned, and you can save drafts and restore previous versions.
+the Control Panel. Existing workflows can now be duplicated, definitions are
+versioned, and you can save drafts and restore previous versions.
 
 ## Developer Improvements
 
@@ -179,19 +188,17 @@ and development of Liferay projects.
 
 Liferay Screens 3.0 enables software developers to use Apache Cordova or
 Xamarin to build cross-platform applications from one codebase designed
-for the web on a PC and embed that content into a Screens app for mobile
-use. Sites and applications designed for PC can be rendered in
-screenlets with no additional code. The resulting apps allow native
-mobile capabilities and navigation to be mixed with HTML content
-seamlessly.
+for the web and embed that content into a Screens app for mobile use. Sites and
+applications designed for PC can be rendered in screenlets with no additional
+code. The resulting apps allow native mobile capabilities and navigation to be
+mixed with HTML content seamlessly.
 
 ### Modern JavaScript Frameworks Compatibility
 
-@product@ leverages its own npm bundler so developers can manage
-dependencies between applications. @product-ver@ provides support for
-popular JavaScript frameworks such as Angular, Vue.js, React and modern
-JavaScript workflows, so that npm modules can be deployed inside of
-@product@.
+@product@ leverages its own npm bundler so developers can manage dependencies
+between applications. @product-ver@ provides support for popular JavaScript
+frameworks such as Angular, Vue.js, React and modern JavaScript workflows, so
+that npm modules can be deployed inside of @product@.
 
 ### Modularity Update
 
