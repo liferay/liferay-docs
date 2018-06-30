@@ -1,12 +1,12 @@
 # Creating Widget Pages from Templates [](id=creating-widget-pages-from-templates)
 
-Page templates provide a pre-configured pages to reuse. There are two types of
+Page templates provide pre-configured pages to reuse. There are two types of
 page templates in @product-ver@: Widget Page templates consist of a portlet
 layout and configuration. Content Page templates are constructed from
 Fragments. You can read about 
 [Content Page Templates in this tutorial](/develop/tutorials/-/knowledge_base/7-1/building-content-page-templates).
 
-Three sample layout page templates are bundled with Liferay:
+Three sample layout page templates are installed by default:
 
 - **Search:** Contains a search bar and configuration to display various facets.
  
@@ -31,11 +31,11 @@ To add a new widget page template,
 
 6.  Click *Save*.
 
-You are immediately taken to the editing page for the template. You can add 
-widgets to the page or access page configuration now. The changes you make are
-instantly applied to the template.
+The editing page for the template appears. You can add widgets to the page or
+access page configuration now. The changes you make are instantly applied to
+the template.
 
-After you leave this screen, to edit the page template:
+If you want to edit the template again, 
 
 1.  Go back to the *Page Templates* tab.
 

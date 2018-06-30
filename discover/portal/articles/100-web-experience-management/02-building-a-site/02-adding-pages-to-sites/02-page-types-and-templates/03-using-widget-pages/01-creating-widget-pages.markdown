@@ -15,7 +15,7 @@ page. To create a new widget page,
 2.  Click the *Add* icon (
     ![Add](../../../../../../images/icon-add.png)) in the top right and select 
     *Public Page* to add a new page.
-    
+ 
 3.  Select *Basic Pages* if it is not selected by default.
 
 4.  Select the *Widget Page* type. 
@@ -30,7 +30,7 @@ page. To create a new widget page,
 
 ![Figure 1: Create a page called *Community* with two columns.](../../../../../../images/creating-community-page.png)
 
-Creating a page, by default, also adds it to any Navigation Menus that are 
+Creating a page by default also adds it to any Navigation Menus that are 
 configured to have new pages added to them. If you don't want a new page added 
 to a specific Navigation Menu that is listed during page creation, uncheck the 
 box for that menu.
@@ -51,7 +51,7 @@ Currently the page is empty. Next you'll add some widgets to give it functionali
 
 To add widget to a page, go to the page and click the *Add* button 
 (![Add](../../../../../../images/icon-control-menu-add.png)) 
-from the  top menu and select the *Widgets* tab. You can either browse
+from the top menu and select the *Widgets* tab. You can either browse
 through the categories of available widgets until you find the one you want, or 
 you can search for widgets by name. Once you've found a widget, click the 
 *Add* button to add it to the current page. Once there, you can drag it to a 
