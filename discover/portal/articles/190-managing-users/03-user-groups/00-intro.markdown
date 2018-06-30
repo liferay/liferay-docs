@@ -1,11 +1,11 @@
 # User Groups [](id=user-groups)
 
-A user group is a group of users created for a specific purpose. User groups can 
-also be created across the hierarchical boundaries of 
+A user group is a group of users created for a specific purpose. User groups
+can also be created across the hierarchical boundaries of 
 [organizations](/discover/portal/-/knowledge_base/7-1/organizations). 
 For example, an administrator could create a user group for managing a site's 
 message boards, and assign users from several organizations to that user group. 
-User groups are also integrated with roles, sites, site templates, and 
+User groups are integrated with roles, sites, site templates, and 
 permissions. This flexibility means that there are many different use cases for 
 user groups. The articles in this section show you how to work with user groups 
 to serve the most common use cases. 

@@ -13,11 +13,11 @@ Follow these steps to grant permissions to users in a user group:
 4.  Assign the role to the user group. 
 
 For instructions on the first 3 steps, click those links above. This article 
-shows you how to assign a role to a user group. Follow these steps to do so: 
+shows you how to assign a role to a user group. Follow these steps: 
 
 1.  Open the Menu 
     (![Menu](../../../images/icon-menu.png)), 
-    select the site you want to work in, then open its Site Administration menu. 
+    select the site to work in, then open its Site Administration menu. 
 
 2.  In the Site Administration menu, select *Members* &rarr; *Site Memberships*. 
     This opens the Site Memberships screen. 
