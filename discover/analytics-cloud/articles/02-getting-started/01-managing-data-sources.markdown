@@ -47,7 +47,7 @@ show you how to configure their prerequisites and add them.
 
 Once you've created your data sources, you might need to modify them from time to time.
 
-## Editing a Data Source [](id=editing-a-data-source)
+## Modifying a Data Source [](id=editing-a-data-source)
 
 The Data Sources lets you page through the data source listing or use *Search*
 to find one that matches a keyword. Once you've found the data source, click on
@@ -56,6 +56,12 @@ it to edit it. Here’s what you can modify:
 - Name of the data source
 - Contact mapping
 - Enable/disable Contact or Analytics sync 
+
+Here's how to delete a data source:
+
+1. Click on the listed data source. The data source's page appears. 
+
+2. Click on the *Delete Data Source* button. The data source is deleted. 
 
 Your Liferay DXP instances are a rich source for customer profile and behavior
 data. Adding a Liferay DXP instance as a data source is next. 
