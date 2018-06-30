@@ -7,12 +7,25 @@ instances. Dynatrace's web-based dashboards display real time system information
 on memory usage, garbage collection, CPU levels, and heap dumps. Each dashboard
 is its own detailed report. You can view live information on @product@ server
 performance metrics down to the individual user.
+
++$$$
+
+**Note:** Dynatrace now offers
+[*Dynatrace SaaS*](https://www.dynatrace.com/support/dynatrace/).
+Its default configuration detects lots of interesting data. Although the
+Dynatrace SaaS offering doesn't offer dashboards as deep as those in the
+[Liferay FastPack](#liferay-digital-enterprise-fastpack),
+its UI is very intuitive. Dynatrace SaaS's big advantage over the installed
+Dynatrace app is that it requires no installation, maintenance, or upgrade. 
+
+$$$
  
 Using Dynatrace's dashboards with @product@ requires these things:
 
 - Dynatrace client which contains the user interface (UI)
 - Dynatrace license
-- Dynatrace agent
+- Dynatrace server 
+- JVM agents, installed on 
 
 Lastly, sign up for a Dynatrace account to get Dynatrace support.
 
@@ -44,8 +57,8 @@ more.
 Returning to the root level lets you view performance metrics from other parts
 of the environment. For example, clicking the database component (e.g., *MySQL*)
 shows database transactions---you can view this without installing an agent, but
-deploying a  separate database agent is optional because the Dynatrace Collector
-contains  database management functionality out of the box (see 
+deploying a separate database agent is optional because the Dynatrace Collector
+contains database management functionality out of the box (see 
 [Database Monitoring](https://community.dynatrace.com/community/display/DOCDT65/Database+Monitoring).
 
 
@@ -91,7 +104,7 @@ The Liferay DXP FastPack is available for download on the
 [Dynatrace site](https://community.dynatrace.com/community/display/DL/Liferay+Digital+Enterprise+FastPack). 
 These dashboards go beyond dashboards Dynatrace includes out-of-the-box. 
 
-The fastpack is distributed as a `.dtp` file. To install the fastpack, follow 
+The FastPack is distributed as a `.dtp` file. To install the FastPack, follow 
 these steps:
 
 1. In the Dynatrace Client, click *Tools* &rarr; *Manage Plugins*.
@@ -177,17 +190,17 @@ Client.
         tcp        0      0 :::6699    :::*     LISTEN    (port for dynaTrace collector connections)    
         tcp        0      0 :::9998    :::*     LISTEN    (port for dynaTrace agent connections)
 
-Congratulations! You installed the Dynatrace client! 
+Congratulations! You installed the Dynatrace Server and Collector! 
 
-### Dynatrace Agent Configuration [](id=dynatrace-agent-configuration)
+### JVM Agent Configuration [](id=dynatrace-agent-configuration)
 
-Deploy the Dynatrace agent to the @product@ servers. The agent sits on top of
+Deploy a JVM agent on each @product@ server. The agent sits on top of
 existing infrastructure (in this example, Apache Tomcat). 
 
 1.  Download the agent `.jar` for your operating system. Use this agent only if
     the Dynatrace Client and the @product@ bundle on the app server are
-    connected remotely. You must install the agent on the same machine @product@
-    is on. 
+    connected remotely. You must install the agent on the same machine as each
+    @product@ instance. 
 
 2.  The location of the agent must be set in each application server. If the
     client and @product@ are on the same machine, you don't have to install
@@ -207,8 +220,7 @@ existing infrastructure (in this example, Apache Tomcat).
     For other application servers, place the property in the file where other
     JVM settings are set (for example, `standalone.conf.bat` for JBoss EAP). 
 
-3.  Connect the @product@ with the Dynatrace agent to the Dynatrace instance.
-    Refer to 
+3.  Connect the @product@ with the JVM agent to the Dynatrace instance. Refer to
     [Dynatrace's documentation](https://community.dynatrace.com/community/display/EVAL/Step+3+-+Connect+Agent+to+Dynatrace)
     for further details. Select the Application Servers tab on the right. The
     example below uses Apache Tomcat but according to Dynatrace, the steps are
