@@ -26,7 +26,7 @@ Unless otherwise noted, all widgets in @product@ support this feature. This is
 particularly useful for widgets that have a lot of configuration options, such
 as the Message Boards application. 
 
-## Summary 
+## Summary [](id=summary)
 
 You've now explored the configuration options available for Liferay widgets.
 You learned how to customize your widgets, export/import data, communicate
