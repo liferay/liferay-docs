@@ -1,4 +1,4 @@
-# Understanding Page Analytics
+# Understanding Page Analytics [](id=understanding-page-analytics)
 
 How are your Site Pages performing? Do you know if visitors are abandoning
 your site when they hit a certain Page, or if one Page is constantly getting
@@ -21,7 +21,7 @@ already have an understanding of what Analytics Cloud is and want to understand
 its Page metrics and how to interpret the data. They're ready to understand and
 act on their Pages' data.
 
-## Data Time Periods
+## Data Time Periods [](id=data-time-periods)
 
 All Pages data in Analytics Cloud is displayed for a specified time period. The
 time period selector recalculates the metrics based on the time period selected.
@@ -36,7 +36,7 @@ supported:
 - Last 30 days (default)
 - Last 90 days
 
-## Visitor Behavior
+## Visitor Behavior [](id=visitor-behavior)
 
 The Overview tab of a Page's metrics has several data presentations.  The first
 chart, called Visitor Behavior, is paramount. It contains four important
@@ -48,7 +48,7 @@ metrics:
 - Bounce Rate
 - Average Time on Page
 
-![Figure x: The Visitors Behavior chart contains interesting rend lines.](../../images/pages-visitor-behavior.png)
+![Figure 1: The Visitors Behavior chart contains interesting rend lines.](../../images/pages-visitors-behavior.png)
 
 Select the time period of the data displayed. There are always two trend lines
 displayed: Selected Period and Previous Period. This facilitates comparisons
@@ -61,7 +61,7 @@ puts the current data in context. -->
 
 So what are these metrics in the Visitor Behavior chart?
 
-### Metric: Engagement
+### Metric: Engagement [](id=metric-engagement)
 
 Engagement, or average Page Engagement is an aggregation of metrics into one
 overall score. It incorporates these factors:
@@ -101,7 +101,7 @@ Page Engagement is useful to combine with time period filtering and comparative
 time period features. Comparing the engagement score from different periods is
 the best way to determine how your Page's performance changes over time.
 
-### Metric: Page Visitors
+### Metric: Page Visitors [](id=metric-page-visitors)
 
 Useful with the time period filter, Page Visitors is the number of
 visitors that accessed a Page in a given period of time.
@@ -111,7 +111,7 @@ visitors are calculated--> in Analytics cloud. Therefore, if the same human
 being hits the Page from a different device, it's logged as a unique
 visitor to the Page.
 
-### Metric: Page Views
+### Metric: Page Views [](id=metric-page-views)
 
 Useful with the time period filter, Page View is the number of views for a Page
 Page in a given period of time. It's not the same as the number of visitors,
@@ -123,14 +123,14 @@ for a single user unless at least 30 minutes of inactivity <!-- need info on
 whether 30 minutes is accurate and that this is how views are calculated--> on
 the Page passes before the user interacts with the Page again.
 
-### Metric: Page Bounce Rate
+### Metric: Page Bounce Rate [](id=metric-page-bounce-rate)
 
 Bounce Rate is the percentage of visitors to the Page that navigated away from
 the site without any page interaction (including scrolling on the page) after
 the initial page load. It's calculated as a daily rate (percentage per day), and
 the daily rate trend line is displayed over the selected time period. 
 
-### Metric: Average Time on Page
+### Metric: Average Time on Page [](id=metric-average-time-on-page)
 
 Time on Page calculates the average time spent on a Page for all the Views each
 day. It's displayed for the selected time period.
@@ -142,7 +142,7 @@ This metric is calculated like this for each 24 hour period:
 That concludes the Visitors Behavior chart, but there's more Page data to look
 at. Just scroll down a little bit.
 
-## Views by Segment
+## Views by Segment [](id=views-by-segment)
 
 Segments are created by the Analytics Cloud administrator in the People &rarr;
 Segments section. Segments are groups of Individuals with common
@@ -153,31 +153,31 @@ the top seven Segments over the selected time period. If there are more than
 seven Segments, the top six are displayed, and views by the remaining Segments
 are aggregated in the seventh bar on the graph, labeled _X More Segments_).
 
-![Figure x: See which Segments are most commonly viewing the Page.](../../images/pages-views-segments.png)
+![Figure 2: See which Segments are most commonly viewing the Page.](../../images/pages-views-segments.png)
 
-## Views by Location
+## Views by Location [](id=views-by-location)
 
 View a bubble chart to compare the views by country over the selected period. Up
 to the top five countries are displayed, and the sixth bubble is an aggregation
 of the remaining countries.
 
-![Figure x: See where the Page is most popular.](../../images/pages-views-location.png)
+![Figure 3: See where the Page is most popular.](../../images/pages-views-location.png)
 
-## Views by Technology
+## Views by Technology [](id=views-by-technology)
 
 View a stacked bar graph of the Page's views by operating system (grouped by
 device type) in the default tab. Hover over each bar to see the detailed
 breakdown of data.
 
-![Figure x: Which OS is most commonly being used to access the Page?](../../images/pages-views-os.png)
+![Figure 4: Which OS is most commonly being used to access the Page?](../../images/pages-views-os.png)
 
 Click *Web Browser* to see a donut chart displaying up to the top eight web
 browsers over the selected time period. If applicable, remaining web borwsers
 are aggregated in the ninth donut segment.
 
-![Figure x: Which browser should your page be optimized for?](../../images/pages-views-browser.png)
+![Figure 5: Which browser should your page be optimized for?](../../images/pages-views-browser.png)
 
-## Assets
+## Assets [](id=assets)
 
 View a list of the Assets on the Page by their number of Interactions
 over the selected time period.
@@ -190,7 +190,7 @@ on:
 - Forms reports Submissions.
 - Web Content reports Views.
 
-![Figure x: Which Assets on the Page are getting the most interactions?](../../images/pages-assets.png)
+![Figure 6: Which Assets on the Page are getting the most interactions?](../../images/pages-assets.png)
 
 After all those fundamental metrics, you're really getting to know your Pages.
 But there's some interesting Page data you haven't seen. Discover how people

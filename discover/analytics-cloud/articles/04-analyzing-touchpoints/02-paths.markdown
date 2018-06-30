@@ -1,4 +1,4 @@
-# Path Analytics
+# Path Analytics [](id=path-analytics)
 
 <!-- Intro needs work. I want to point out how Path Analytics can be used to
 make targeted advertising decisions. Let me know if that's wrong or I should do
@@ -23,12 +23,12 @@ By knowing the Paths your page Visitors use to come to your Page, you'll make
 better decisions about whether to continue, discontinue, or modify your
 advertising.
 
-## Viewing Page Path Analytics
+## Viewing Page Path Analytics [](id=viewing-page-path-analytics)
 
 A Page's Path Analytics are reported in the Path tab of a Page's screen. The intuitive
 diagram reports the most common pages from which visitors accessed this Page.
 
-![Figure x: On top of being pretty to look at, the Path Diagram contains important information.](../../images/paths-diagram.png)
+![Figure 1: On top of being pretty to look at, the Path Diagram contains important information.](../../images/paths-diagram.png)
 
 After the top three paths to the Page, the remaining paths are aggregated to
 show how many views came from _Other_ pages.
@@ -48,12 +48,12 @@ diagram for views coming from tablets in Japan.
 As you select filters, they're made visible at the top center of the Path
 screen.
 
-![Figure x: One German smartphone User visited this Page in the last 30 days. The
+![Figure 2: One German smartphone User visited this Page in the last 30 days. The
 User came to the Page from `wwww.google.com.de`.](../../images/paths-filters.png)
 
 To remove a filter, click the *x* next to the filter name.
 
-## Assets
+## Assets [](id=assets)
 
 Pages have Assets on them. If a Page containing the Analytics Cloud client is
 reported in the Path diagram, a *Show Top 5 Assets* link is displayed. Clicking
@@ -69,9 +69,9 @@ interaction metric available:
 Clicking an asset brings you to the Asset's Overview page. See the documentation
 on Assets for more information on analyzing Asset metrics <!--Link when possible-->.
 
-![Figure x: ](../../images/paths-assets.png)
+![Figure 3: ](../../images/paths-assets.png)
 
-## Location and Device Type
+## Location and Device Type [](id=location-and-device-type)
 
 Path Analytics can be filtered by Location and Device Type. Knowing the Location
 and Device Type visitors most commonly use to access your site's Pages helps you

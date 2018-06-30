@@ -1,4 +1,4 @@
-# Blogs Analytics
+# Blogs Analytics [](id=blogs-analytics)
 
 [Blogs Entries](/discover/portal/-/knowledge_base/7-1/blogs) 
 are important content on websites. They attract readers, who return to view new
@@ -7,47 +7,54 @@ blog posts and interact in discussion.
 Analytics Cloud gives you important insights into how engaged readers are with
 your blog posts.
 
-## Visitor Behavior
+![Figure 1: By default, Blogs are listed in descending order of Views.](../../images/assets-blogs.png)
+
+## Visitor Behavior [](id=visitor-behavior)
 
 The Overview tab of an Asset's detail presents several data presentations. The
 first chart, called Visitor Behavior, is paramount. It contains five four important
 metrics:
 
-- Views
-- Reading time
-- Shares
-- Comments
-- Rating
+- Total Views
+- Average Reading time
+- Total Shares
+- Total Comments
+- Average Rating
 
-SCREENSHOT
+![Figure 2: The Visitors Behavior chart contains important trend lines.](../../images/assets-blogs-vb.png)
 
-### Views
+### Views [](id=views)
 
 The Views plot shows the trend-line for the number of times a Blogs Entry was
-viewed each day.
+viewed each day (or hour, if *Yesterday* or *Last 24 Hours* are selected).
 
-SCREENSHOT
-
-### Reading Time
+### Reading Time [](id=reading-time)
 
 Reading Time is the average reading time per view of a Blogs Entry. The daily
-average reading time per view is plotted for the time period.
+(or hourly, if *Yesterday* or *Last 24 Hours* are selected) average reading time
+per view is plotted for the time period.
 
-### Shares
+### Shares [](id=shares)
 
 The count of total Shares per day is plotted to establish the Shares trend-line.
 
-### Comments
+### Comments [](id=comments)
 
 The Comments trend-line plots the total number of comments on a Blogs Entry per
-day over the selected time period.
+day (or hour, if *Yesterday* or *Last 24 Hours* are selected) over the selected
+time period.
 
-### Rating
+### Rating [](id=rating)
 
-[Readers can rate blogs.](/discover/portal/-/knowledge_base/7-1/displaying-blogs) The ratings for a Blogs Entry 
-WHAT'S THIS METRIC? By Default Blogs Ratings are just thumbs up or down?
+[Readers can rate blogs.](/discover/portal/-/knowledge_base/7-1/displaying-blogs). 
+Whether the rating is a simple Thumb Up/Thumbs Down, or a Stars rating (0-5
+Stars), the Rating in Analytics Cloud is a calculation that lets you compare Blog
+posts to each other. A Blog post announcing Free Swag is likely to have a higher
+rating than a Blog post announcing that prices are increasing. The rating is
+reported as a number out of 10.
+<!-- todo: get more detail from the devs -->
 
-## Views by Segment
+## Views by Segment [](id=views-by-segment)
 
 Scroll down from the Visitor Behavior chart and you'll see the Views by Segment
 bar graph, which is present for all Asset types and Pages.
@@ -58,29 +65,34 @@ Segments viewed the Asset, the top six are displayed, and views by the remaining
 Segments are aggregated in the seventh bar on the graph, labeled _X More
 Segments_.
 
-## Views by Location
+![Figure 3: Which Segments are looking at the Asset most frequently?](../../images/assets-vbs.png)
+
+## Views by Location [](id=views-by-location)
 
 View a bubble chart to compare the views by country over the selected period. Up
 to the top five countries are displayed, and the sixth bubble is an aggregation
 of the remaining countries.
 
-## Views by Technology
+![Figure 4: Which location interacts with the Asset most frequently?](../../images/assets-interaction-location.png)
+
+## Views by Technology [](id=views-by-technology)
 
 View a stacked bar graph of the Page's views by operating system (grouped by
 device type) in the default tab.
 
-SCREENSHOT
+![Figure 5: What technologies are used to interact with the Asset?](../../images/assets-dm-dbt.png)
 
 Click *Web Browser* to see a donut chart displaying up to the top eight web
-browsers over the selected time period. If applicable, remaining web borwsers
-are aggregated in the ninth <!-- (ninth what? can't view the test server right
-now)-->.
+browsers over the selected time period. If applicable, remaining web browsers
+are aggregated in the ninth donut segment.
 
-## Asset Appears On
+## Asset Appears On [](id=asset-appears-on)
 
-The Asset Appears On table includes a Page Name and URL for a Page that's been
-pulled in to Analytics Cloud from your Data Source. It's important to note that
-the link doesn't take you to the actual Page with the Asset on it. Instead, it
-leads to the Page Analytics view of the Page. From there you can click the URL
-to the actual Page.
+The Asset Appears On table includes a Page Name and URL. Like any Page data in
+Analytics Cloud, only Pages that were interacted with in some way by site
+visitors are tracked and reported on.  It's important to note that the link
+doesn't take you to the actual Page with the Asset on it. Instead, it leads to
+the Page Analytics view of the Page. From there you can click the URL to the
+actual Page.
 
+![Figure 6: What Pages does the Asset appear on?](../../images/assets-appears-on.png)
