@@ -7,7 +7,7 @@ These applications range from personal productivity applications like a calendar
 and email, to community-building applications like message boards, blogs, and
 wikis. 
 
-![Figure x: @product@'s message boards are as fully featured as any standalone forum application, with the added benefit that they're integrated with the rest of the system.](../../images/01-message-boards.png)
+![Figure 1: @product@'s message boards are as fully featured as any standalone forum application, with the added benefit that they're integrated with the rest of the system.](../../images/01-message-boards.png)
 
 This is a suite of integrated applications with all the features of similar,
 standalone applications. For example, @product@'s Message Boards include
@@ -24,7 +24,7 @@ content and documents---is the Recycle Bin. If users delete content that must
 be restored later, you don't have to find it in your backups: it's in the
 Recycle Bin. 
 
-![Figure x: The Recycle Bin can hold any kind of content.](../../images/recycle-bin-overview.png)
+![Figure 2: The Recycle Bin can hold any kind of content.](../../images/recycle-bin-overview.png)
 
 @product@'s suite of collaborative applications includes a Blog (complete
 with blog aggregation features so you can publish multiple users' blog entries

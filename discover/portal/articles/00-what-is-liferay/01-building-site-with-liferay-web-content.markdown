@@ -3,7 +3,7 @@
 When you log into @product@ and look at its default screen, one thing to notice is
 that it's built for all clients that access the web, not just desktop browsers. 
 
-![Figure x: If you click this button, a preview appears that lets you see how the page would look when displayed at various device resolutions.](../../images/01-simulate.png)
+![Figure 1: If you click this button, a preview appears that lets you see how the page would look when displayed at various device resolutions.](../../images/01-simulate.png)
 
 All the page controls are right there for you. For example, to add content or
 applications to the page, click the *+* button, and then you can add any kind
@@ -17,9 +17,9 @@ can immediately start typing content into a WYSIWYG editor, in place.
 
 If you are comfortable with developing websites, you can instead click the Menu
 button on the left 
-(![Menu](../../../images/icon-menu.png)), select *Build* &rarr; *Page Fragments*, and use the Fragment Editor to build a page out of HTML, CSS, and JavaScript. 
+(![Menu](../../images/icon-menu.png)), select *Build* &rarr; *Page Fragments*, and use the Fragment Editor to build a page out of HTML, CSS, and JavaScript. 
 
-![Figure x: Fragments comprise HTML, CSS, and JavaScript, and can be used as building blocks for pages.](../../images/01-fragment-editor.png)
+![Figure 2: Fragments comprise HTML, CSS, and JavaScript, and can be used as building blocks for pages.](../../images/01-fragment-editor.png)
 
 Large organizations can use @product@ to host many different websites, all
 with their own domain names. Each site can take advantage of a separate staging
@@ -33,7 +33,7 @@ By default, @product@ starts with a single site that has a single page. You
 can build any website you wish out of this, complete with multi-nested page
 hierarchies, as the figure below shows. 
 
-![Figure x: Liferay's page hierarchies are easy to create, using a tree structure that's familiar to anyone who has used a file manager.](../../images/01-page-hierarchy.png)
+![Figure 3: Liferay's page hierarchies are easy to create, using a tree structure that's familiar to anyone who has used a file manager.](../../images/01-page-hierarchy.png)
 
 Pages can be added, removed, or reordered any time, and you have the full
 flexibility of all the HTML page attributes like meta tags and robot file
@@ -68,7 +68,7 @@ Liferay's file-based content management system is in an application called
 *Documents and Media Library*. This application, as shown below, looks like the
 file manager that you're already familiar with from your operating system. 
 
-![Figure x: @product@'s Documents and Media library was purposefully designed to be familiar to anyone who uses a computer.](../../images/01-docs-and-media.png)
+![Figure 4: @product@'s Documents and Media library was purposefully designed to be familiar to anyone who uses a computer.](../../images/01-docs-and-media.png)
 
 Like a file manager, you can browse files and folders in nested hierarchies. You
 can also mount other repositories that you might have in your environment, such
