@@ -4,9 +4,8 @@ How are your Site Pages performing? Do you know if visitors are abandoning
 your site when they hit a certain Page, or if one Page is constantly getting
 views, engaging users, and drawing visitors back to your site? 
 
-<!-- In the intro should we give some distinguishing information on how our page
-analytics are different, or alternatively, say that users of other analytics
-products will quickly understand how to use our Analytics product for pages? -->
+If you're familiar with page analytics in some other product, you'll be right at
+home in Analytics Cloud. 
 
 What are Pages in Liferay Analytics Cloud? Pages are:
 
@@ -22,18 +21,13 @@ already have an understanding of what Analytics Cloud is and want to understand
 its Page metrics and how to interpret the data. They're ready to understand and
 act on their Pages' data.
 
-<!-- Might be better for analytics intro material since it's descriptive of common
-functionality-->
+## Data Time Periods
 
-## Time Periods
-
-Pages are displayed in Analytics Cloud in ascending or descending order by one
-of the available metrics. The Time Period selector next to the search bar
-recalculates the result based on the time period selected. If you go from a
-shorter time period to longer, you'll naturally see more results. In addition,
-metrics are recalculated. You must specify a time period for which you'd like to
-view the metrics. The default is 30 days, but this is configurable. The
-following values are supported:
+All Pages data in Analytics Cloud is displayed for a specified time period. The
+time period selector recalculates the metrics based on the time period selected.
+You must specify a time period for which you'd like to view the metrics. The
+default is 30 days, but this is configurable. The following values are
+supported:
 
 - Last 24 hours
 - Yesterday
@@ -41,11 +35,6 @@ following values are supported:
 - Last 28 days
 - Last 30 days (default)
 - Last 90 days
-
-If you select 90 days, all Pages (filtered by your search terms, if any) are
-returned, in descending order of the Views (by default) *in the last 90 days*.
-
-SCREENSHOT
 
 ## Visitor Behavior
 
@@ -56,48 +45,40 @@ metrics:
 - Average Engagement Score
 - Total Visitors
 - Total Views
-- Average Bounce Rate <!-- Is this really an average? what's being averaged? or just a rate? -->
+- Bounce Rate
 - Average Time on Page
 
-SCREENSHOT
+![Figure x: The Visitors Behavior chart contains interesting rend lines.](../../images/pages-visitor-behavior.png)
 
-### Data Time Periods
+Select the time period of the data displayed. There are always two trend lines
+displayed: Selected Period and Previous Period. This facilitates comparisons
+between time periods. 
 
-At the top right of the Visitor Behavior chart is a time period selector, which
-defaults to *Last 30 Days*. Select the time period of the data displayed. There
-are always two trend lines displayed: Selected Period and Previous Period. This
-facilitates comparisons between time periods. For example, take Views over the
-last 30 days. 
-
-If the Views are dropping over the selected time period, you might be concerned
+<!-- REMOVING INTERPRETIVE ANALYSIS FOR NOW: If the Views are dropping over the selected time period, you might be concerned
 about the health of the Page. However, if you see that they're still
 higher than they were at any point during the previous time period, perhaps it
-puts the current data in context.
-
-SCREENSHOT
+puts the current data in context. -->
 
 So what are these metrics in the Visitor Behavior chart?
 
-### Metric: Page Engagement
+### Metric: Engagement
 
-Average Page Engagement is an aggregation of metrics into one overall score. It
-incorporates these factors:
+Engagement, or average Page Engagement is an aggregation of metrics into one
+overall score. It incorporates these factors:
 
 - Depth of scroll on the Page
 - Number of clicks
 - Time spent on the Page
 - More!
 
-SCREENSHOT
-
-Use the engagement score as a high level view of the Page's overall performance, as
-compared with other Pages. It might not tell you specifically what's so
-effective (or weak) about a Page, but it can tell you if the Page is
-performing as desired over the selected time period.
+Use the engagement score as a high level view of the Page's overall performance,
+as compared with other Pages. It might not tell you specifically what's so
+effective (or weak) about a Page, but it can tell you if the Page is performing
+as desired over the selected time period.
 
 <!-- Remove since most likely not sensible to non-US readers. Keeping for now in
 case there's some other analogy that might be more universal. -->
-+$$$
+<!--+$$$
 
 **Baseball Analogy:** Are you a baseball fan? If so you're probably familiar
 with the classic individual metrics used to describe a non-pitcher's
@@ -114,12 +95,11 @@ the Analytics team can come up with a WAR-like metric next, to compare how
 valuable a Page is as compared with the average Page. It could be
 called TEAR (Page Engagement Above Replacement).
 
-$$$
+$$$-->
 
-Page Engagement is useful to combine with time period filtering and
-comparative time period features. Comparing the engagement score from different
-periods is the best way to determine how your Page's performance changes
-over time.
+Page Engagement is useful to combine with time period filtering and comparative
+time period features. Comparing the engagement score from different periods is
+the best way to determine how your Page's performance changes over time.
 
 ### Metric: Page Visitors
 
@@ -130,8 +110,6 @@ A unique visitor has a unique IP address <!--need more info on how unique
 visitors are calculated--> in Analytics cloud. Therefore, if the same human
 being hits the Page from a different device, it's logged as a unique
 visitor to the Page.
-
-SCREENSHOT
 
 ### Metric: Page Views
 
@@ -145,18 +123,12 @@ for a single user unless at least 30 minutes of inactivity <!-- need info on
 whether 30 minutes is accurate and that this is how views are calculated--> on
 the Page passes before the user interacts with the Page again.
 
-SCREENSHOT
-
 ### Metric: Page Bounce Rate
 
-Bounce Rate is the percentage of visitors (to the Page that navigated away from
+Bounce Rate is the percentage of visitors to the Page that navigated away from
 the site without any page interaction (including scrolling on the page) after
-the initial page load. It's calculated for a daily rate, and the daily rate is
-displayed over the selected time period. 
-
-<!-- I don't understand how this can be an average. It's the total number of
-visitors who bounced divided by the total number of page loads over the period
-being calculated (daily), right? So its a daily rate, not an average. -->
+the initial page load. It's calculated as a daily rate (percentage per day), and
+the daily rate trend line is displayed over the selected time period. 
 
 ### Metric: Average Time on Page
 
@@ -167,10 +139,8 @@ This metric is calculated like this for each 24 hour period:
 
     (view-1-time + view-2-time + ...) / total-number-views
 
-<!-- is some sort of formula presentation for each metric desirable? or are the
-actual formulas more complicated and this type of notation won't be helpful?  -->
-
-SCREENSHOT
+That concludes the Visitors Behavior chart, but there's more Page data to look
+at. Just scroll down a little bit.
 
 ## Views by Segment
 
@@ -183,7 +153,7 @@ the top seven Segments over the selected time period. If there are more than
 seven Segments, the top six are displayed, and views by the remaining Segments
 are aggregated in the seventh bar on the graph, labeled _X More Segments_).
 
-SCREENSHOT
+![Figure x: See which Segments are most commonly viewing the Page.](../../images/pages-views-segments.png)
 
 ## Views by Location
 
@@ -191,21 +161,21 @@ View a bubble chart to compare the views by country over the selected period. Up
 to the top five countries are displayed, and the sixth bubble is an aggregation
 of the remaining countries.
 
-SCREENSHOT
+![Figure x: See where the Page is most popular.](../../images/pages-views-location.png)
 
 ## Views by Technology
 
 View a stacked bar graph of the Page's views by operating system (grouped by
-device type) in the default tab.
+device type) in the default tab. Hover over each bar to see the detailed
+breakdown of data.
 
-SCREENSHOT
+![Figure x: Which OS is most commonly being used to access the Page?](../../images/pages-views-os.png)
 
 Click *Web Browser* to see a donut chart displaying up to the top eight web
 browsers over the selected time period. If applicable, remaining web borwsers
-are aggregated in the ninth <!-- (ninth what? can't view the test server right
-now)-->.
+are aggregated in the ninth donut segment.
 
-SCREENSHOT
+![Figure x: Which browser should your page be optimized for?](../../images/pages-views-browser.png)
 
 ## Assets
 
@@ -220,34 +190,8 @@ on:
 - Forms reports Submissions.
 - Web Content reports Views.
 
-SCREENSHOT
+![Figure x: Which Assets on the Page are getting the most interactions?](../../images/pages-assets.png)
 
-
-<!-- Move to new article or section of articles, needs much more discussion
-## Page Path Analytics
-
-Beside the Overview tab, there's the Path tab in a Page's screen. This
-diagram represents the most common ways people used to access a Page.
-
-After the top three paths to the Page, the remaining paths are aggregated to
-show how many views came from _Other_ points.
-
-Clicking one of the path URLs brings you to its Overview screen.
-What if it's not a page that's loaded form the data source? For example, what if
-it's a google search?
-
-By default, all of the views of the Page are represented in the Paths
-diagram. The Paths can be filtered by location and technology (OS and web
-browser). Click the *Filter* menu and
-select one location whose Path diagram you'd like to see. Click *Apply
-Filter* when finished, and the Path diagram is updated to represent the top
-Paths for only the selected locations.
-
-As you select filters, they're made visible at the top center of the Path
-screen.
-
-To remove a filter, click the X next to the location name.
-
-SCREENSHOT
--->
-
+After all those fundamental metrics, you're really getting to know your Pages.
+But there's some interesting Page data you haven't seen. Discover how people
+came to teh Page in the first place. Learn about Path Analytics next.
