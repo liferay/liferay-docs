@@ -19,7 +19,7 @@ It's exciting to give and receive invitations. Carry that excitement with you as
 you invite your team's analysts, data integrators, and marketers to your
 Analytics Cloud project. 
 
-1. In the *User Managment* page, click on the *Invite Users* button. The 
+1. In the *User Management* page, click on the *Invite Users* button. The 
 *Invite Users* dialog appears. 
 
 2. Enter the email addresses (separated by a space or comma) of the people to invite to the project. 

@@ -2,7 +2,7 @@
 
 Project administrators are responsible for connecting data sources to the
 project, managing project users, and tracking project usage against the current
-plan's limits. 
+plan limits. 
 
 The
 [Getting Started](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/00-getting-started-intro.markdown)
