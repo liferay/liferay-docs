@@ -14,10 +14,10 @@ functionality and don't have anything to do with the integration options on the
 other tabs. There are several general authentication settings:
 
 -   Authenticate by email address (default), screen name, or User ID (a
-    numerical ID auto-generated in the database--not recommended).
+    numerical ID auto-generated in the database---not recommended).
 
 -   Enable/Disable automatic log in. If enabled, a User can check
-    a box which will cause the site to "remember" the login information by
+    a box which will cause the Site to "remember" the login information by
     placing a cookie on the browser. If disabled, Users must always log in
     manually.
 
@@ -26,10 +26,10 @@ other tabs. There are several general authentication settings:
 -   Enable/Disable request password reset links.
 
 -   Enable/Disable account creation by strangers. If running an Internet
-    site, leave this enabled so visitors can create accounts on your site.
+    site, leave this enabled so visitors can create accounts on your Site.
 
 -   Enable/Disable account creation by those using an email address in the
-    domain of the company running the site (which is set on the General page of
+    domain of the company running the Site (which is set on the General page of
     Instance Settings). This is handy if you're using Liferay to host both
     internal and external web sites. Make sure all internal IDs are created by
     administrators but external Users can register for IDs themselves.

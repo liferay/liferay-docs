@@ -16,14 +16,13 @@ In the Fields tab, enable/disable these fields on the Add/Edit User Form:
 - Gender field
 
 In the Reserved Credentials tab, specify the screen names and email addresses
-Users aren't allowed to register with. Use this feature to prevent Users from
-creating IDs that look like administrative IDs or that have reserved words in
-their names.
+Users aren't allowed to use. This prevents Users from creating IDs that look
+like administrative IDs or that have reserved words in their names.
 
 Default User Associations has four fields for listing (one per line) the Sites,
 Organization Sites, Roles, and User Groups you want all new Users assigned to
-automatically. By default, new Users are assigned to only the Users role. You
+automatically. By default, new Users are assigned to only the Users Role. You
 can also choose whether to apply these configurations to existing Users.
 
-User groups are handy tools for pre-populating your Users' private sites with
-pages, assigning roles and permissions, and managing site membership. 
+User groups are handy tools for pre-populating your Users' private Sites with
+pages, assigning Roles and permissions, and managing site membership. 
