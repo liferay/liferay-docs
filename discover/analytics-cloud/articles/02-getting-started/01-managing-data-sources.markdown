@@ -25,6 +25,8 @@ The Data Sources page appears and lists all existing data sources.
 
 ![Figure 1: The Data Sources page lets you view, edit, and add data sources.](../../images/data-source-list.png)
 
+Figure 1: The Data Sources page lets you view, edit, and add data sources.
+
 Unless a teammate has already added a data source, the list is empty. You'll add
 some data sources shortly. Before then, you'll get an overview of adding and
 managing data sources.

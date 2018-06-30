@@ -95,6 +95,9 @@ DXP instance and its Organizations and User Groups.
 
     ![Figure 1: Analytics Cloud lets you select and import contacts from a Liferay DXP instance and its Organizations and User Groups.](../../images/select-dxp-contacts-by-org.png)
 
+    Figure 1: Analytics Cloud lets you select and import contacts from a Liferay
+    DXP instance and its Organizations and User Groups.
+
 10. Click *Next* to import the selected contacts. Analytics Cloud imports the 
 contact data and attempts to map it to your Analytics Cloud contact data model.
 The initial import can take a while---it depends on the number of Liferay DXP

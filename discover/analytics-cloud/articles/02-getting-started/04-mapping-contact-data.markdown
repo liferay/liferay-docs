@@ -8,7 +8,8 @@ source (e.g., Liferay DXP or CSV) to your unified contact data model.
 
 Analytics Cloud provides several contact data mapping options:
 
-- Choose the most appropriate data model field---Analytics Cloud *suggests* possible matches
+- Choose the most appropriate data model field---Analytics Cloud *suggests* 
+possible matches.
 
 - Add a new custom data model field and map source data to it.
 
@@ -21,6 +22,9 @@ As you map source fields to the data model, you can search for and select from
 the data model fields, use a *suggested* field, or create a new custom field. 
 
 ![Figure 1: Analytics Cloud facilitates finding appropriate data model fields and offering suggestions.](../../images/mapping-contact-data.png)
+
+Figure 1: Analytics Cloud facilitates finding appropriate data model fields and
+offering suggestions.
 
 Creating custom contact data model fields is straightforward. 
 
@@ -40,5 +44,6 @@ Your custom model field is ready to match with source fields.
 When you’re done mapping the data, click the *Done* button. Congratulations on mapping contacts from your data source to your Analytics Field contact model. 
 
 Once you've mapped your contact data and finished adding your data sources, you
-can start learning more about your customers. The *Understanding People*
+can start learning more about your customers. The
+[Understanding People](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/03-understanding-people/00-understanding-people-intro.markdown)
 articles are all about that.

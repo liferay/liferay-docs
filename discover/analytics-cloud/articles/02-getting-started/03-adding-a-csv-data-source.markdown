@@ -37,6 +37,9 @@ model. Once you’ve mapped the data, click *Next*.
 
 ![Figure 1: When configuring a CSV file data source, you can describe the data context and view the data to make sure it’s formatted properly.](../../images/configure-csv-data-source.png)
 
+Figure 1: When configuring a CSV file data source, you can describe the data
+context and view the data to make sure it’s formatted properly.
+
 The contact profile data starts syncing. The time it takes to sync depends on
 the number of contacts. 
 
