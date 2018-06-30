@@ -9,8 +9,8 @@ each of these workflow-enabled assets.
 
 ## Workflow Assets [](id=workflow-assets)
 
-Many assets are enabled for workflow. Activate a workflow for these assets in
-Control Panel &rarr; Configuration &rarr; Workflow, in the Schemes tab:
+Activate a workflow for these assets in Control Panel &rarr; Configuration
+&rarr; Workflow, in the Schemes tab:
 
 - Blogs Entry
 - Calendar Event
@@ -23,7 +23,7 @@ Control Panel &rarr; Configuration &rarr; Workflow, in the Schemes tab:
 
 If the Knowledge Base application is installed, it also appears here.
 
-Configure workflow for these assets at the site level in Site &rarr;
+Activate workflow for these assets at the site level in Site &rarr;
 Configuration &rarr; Workflow:
 
 - Blogs Entry
@@ -36,8 +36,8 @@ Configuration &rarr; Workflow:
 
 If the Knowledge Base application is installed, it also appears here. 
 
-What's the difference between the site workflow confiugration and the Control
-Panel Workflow configuration? As with most scoped activities, the higher level
+What's the difference between the site workflow configuration and the Control
+Panel Workflow configuration? As with most scoped configuratio, the higher level
 setting (in the Control Panel) sets the default behavior. It's overridden at the
 more granular level (in the site menu).
 
@@ -49,11 +49,11 @@ workflow configuration controls at the site level.
 Some assets that are workflow-enabled are activated in their respective
 application: 
 
-Activate workflow for Web Content Folders from their folder settings menu:
+Activate workflow for Web Content Folders from the folder settings menu:
 
 ![Figure 1: Activate workflow on Web Content folders from the folder's edit screen.](../../images/workflow-web-content-folder.png)
 
-Activate workflow for Documents and Media Folders from their folder settings:
+Activate workflow for Documents and Media Folders from the folder settings:
 
 ![Figure 2: Activate workflow on Documents and Media folders from the folder's
 edit screen.](../../images/workflow-dm-folder.png)
@@ -71,8 +71,8 @@ Activate workflow for each individual form's entries from the Form Settings scre
 Most of the resources listed above behave just as you might expect with workflow
 activated: The Publish button for the resource's *Add* form is replaced by a
 *Submit for Publication* button, and instead of instant publication, the asset
-has its status set as *Pending* and must proceed through the workflow
-before publication. 
+has its status set as *Pending* and must proceed through the workflow before
+publication. 
 
 ![Figure 5: Instead of a Publish button, a Submit for Publication button appears
 for workflow-enabled resources.](../../images/submit-for-publication.png)
