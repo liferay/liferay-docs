@@ -93,7 +93,8 @@ Behavior* from the selector.
 3. Select the page or asset acted on from the *Select Asset* selector. 
 
 4. Select a timeframe from the *Since* selector. A preview list of matching 
-Individuals appears on the right. *Search* lets you find Individuals in the list. 
+Individuals appears on the right. *Search* lets you find Individuals in the
+list. 
 
 You’ve set a behavior criteria.
 
@@ -103,7 +104,7 @@ AND and OR to add and chain together all the criteria your Segment needs.
 - *AND:* Click on the *AND* button to combine a new criteria with the previous 
 criteria. This narrows the Segment’s selection of Individuals. 
 
-- *OR:* Click on the *OR* button to add a alternative criteria an alternative to 
+- *OR:* Click on the *OR* button to add a alternative criteria an alternative to
 the previous criteria. This broadens the selection of Individuals.
 
 Once you’ve completed defining your Segment, click on the *Create* button. Your
