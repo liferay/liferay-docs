@@ -1,4 +1,4 @@
-# General Settings [](id=general-settings)
+# General Settings [](id=configuring-site-settings)
 
 General settings range from core configuration, like your Site's Membership
 Type, to finer details like Documents and Media indexing options.
