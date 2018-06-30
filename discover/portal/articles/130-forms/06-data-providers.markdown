@@ -1,7 +1,7 @@
 # Data Providers [](id=data-providers)
 
 Select from List fields can hold a lot of options. There are around 200
-countries on earth, for example. If you have unoccupied unpaid interns you could
+countries on Earth, for example. If you have unoccupied unpaid interns you could
 ask them to type each country into the Select from List field manually, or you
 could auto-populate your select fields using a REST web service. This saves you
 (or your interns) the trouble of typing all those options, and you can rely on
@@ -11,14 +11,14 @@ When setting up a data provider, you're accessing a
 [REST web service](https://en.wikipedia.org/wiki/Representational_state_transfer). 
 Use the 
 [JSON web services registered in Liferay](/develop/tutorials/-/knowledge_base/7-0/registering-json-web-services),
-or any other REST web service you have access to. To find a list of the
-ready-to-use registered JSON web services in @product@, navigate to
-[http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws) 
-(assuming you're running a local server). Browse the available Liferay services.
-Many times, the services useful to you in the Forms application will get a list
-of something. Find the `get-countries` JSON web service (there are two---use
-either one) and click on it, then click *Invoke*. The *Result* tab shows a list
-of countries using JSON syntax, like this:
+or any other REST web service you can access. To find a list of the ready-to-use
+registered JSON web services in @product@, navigate to
+[http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws) (assuming
+you're running a local server). Browse the available Liferay services. Many
+times, the services useful to you in the Forms application get a list of
+something. Find the `get-countries` JSON web service (there are two---use either
+one) and click on it, then click *Invoke*. The *Result* tab shows a list of
+countries using JSON syntax, like this:
 
     [
       {
@@ -38,13 +38,13 @@ the URL you entered into the data provider form is the same as the one generated
 for accessing the `get-countries` JSON web service. Find the URL for any
 registered JSON web service using this same procedure. 
 
-Note the field you want Users to select. With this particular service, it's most
-likely `nameCurrentValue`, because it contains the full, properly capitalized
-name of the country.
+Note the field you want Users to select. With this service, it's most likely
+`nameCurrentValue`, because it contains the full, properly capitalized name of
+the country.
 
 ## Adding a Basic Data Provider [](id=adding-a-basic-data-provider)
 
-To add a *Countries of the World* Data Provider for use in your Forms:
+To add a *Countries of the World* Data Provider for use in your Forms,
 
 1.  Go to the Forms application.
 
@@ -68,8 +68,8 @@ To add a *Countries of the World* Data Provider for use in your Forms:
 
     Password:`test`
 
-6.  In the Outputs fields, specify which field from the REST service is
-    populating your select list. 
+6.  In the Outputs fields, specify which field from the REST service populates
+    your select list. 
 
     Label: `Country Name`
 
@@ -117,9 +117,9 @@ Once the Data Provider is configured, use it to populate a Select from List fiel
 
 ![Figure 2: Form users select an option form the list populated by the Data Provider.](../../images/forms-select-data-provider.png)
 
-Your Data Provider is now being used to populate a select field. However,
-this form is going to be submitted by Guest users, who don't currently have
-permission to see the list of results from the data provider.
+Your Data Provider is now being used to populate a select field. However, this
+form should be submitted by Guest users, who don't currently have permission to
+see the list of results from the data provider. Arrgh! Now what? 
 
 ## Granting Data Provider Permissions [](id=granting-data-provider-permissions)
 
@@ -142,15 +142,15 @@ there are more options.
 : Filter the REST service call's results by a valid parameter from the REST
 service.-->
 
-*Cache data on the first request.*
+**Cache data on the first request.**
 : If the data is cached, a second load of the select list field is much faster,
 since a second call to the REST service provider is unnecessary.
 
-*Timeout*
+**Timeout**
 : The time (in ms) to allow the REST service call to process before aborting the
 request, if a response is not returned.
 
-*Inputs*
+**Inputs**
 : Configure parameters from the REST service to use to filter the REST service's
 response (displayed in the Outputs parameter configured below). Specify the
 Label, Parameter, and Type (Text or Number), and Choose whether the input is
@@ -158,7 +158,7 @@ required to use the Data Provider. You can add multiple Inputs. These are used
 in Form Rules. A User enters input into one field, and their input is sent to
 the REST service. The REST service's response data is filtered by the input.
 
-*Outputs*
+**Outputs**
 : The Parameter to display in Select from List fields. You can add multiple
 Outputs. Outputs can be filtered by inputs (see above) but can also be displayed
 without configuring input filtering. Specify the Label, Path, and Type (Text,
