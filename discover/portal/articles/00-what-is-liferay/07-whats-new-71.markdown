@@ -161,7 +161,7 @@ A new Control Panel makes it easier to take care of all administration tasks
 with the click of a button. Users can configure the search engine, start and
 monitor re-indexes, and much more.
 
-![Figure x. Search administration is now separated from server administration.](../../images/01-search.jpg){width="6.5in" height="3.1839in"}
+![Figure x. Search administration is now separated from server administration.](../../images/01-search.jpg)
 
 ### Page Management [](id=page-management)
 
