@@ -1,4 +1,4 @@
-# Introduction
+# Introduction [](id=introduction)
 
 Project administrators are responsible for connecting data sources to the
 project, managing project users, and tracking project usage against the current
