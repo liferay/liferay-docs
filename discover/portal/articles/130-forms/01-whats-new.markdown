@@ -1,9 +1,8 @@
 # What's New with Liferay Forms [](id=whats-new-with-liferay-forms)
 
-Liferay Forms is evolving. Features that were new in the last (and first)
-version have been enhanced, and new features added. This article compiles the
-prominent changes and additions. More details on these features are found in the
-other articles of this section.
+Liferay Forms is evolving. This article compiles the prominent changes and
+additions to Forms. More details on these features are found in the other
+articles of this section.
 
 **Form Rules**
 : Set dynamic form behavior by specifying conditions (*if this happens in field
@@ -31,17 +30,17 @@ with common fields and configurations.
 
 ![Figure 4: Reusable Element Sets are great for quickly populating new forms.](../../images/forms-element-set.png)
 
-**Autosave**
-: By default, a Form is autosaved every minute (without the Form builder
+**Autosave** 
+: By default, a Form is auto-saved every minute (without the Form builder
 clicking *Save*). The duration is configurable in Control Panel &rarr;
-Configuration &rarr; System Settings &rarr; Forms. Autosaves do not propagate
-to published Forms. 
+Configuration &rarr; System Settings &rarr; Forms. Auto-saves do not propagate to
+published Forms. 
 
 ![Figure 5: Autosaving Forms ensures your recent changes are preserved.](../../images/forms-autosave-interval.png)
 
 **Autocomplete Text Fields**
 : Using a Data Provider or manually typed options, configure a Text field to
-offer Users automcompleted values to choose from as they type in the Text field.
+offer Users autocompleted values to choose from as they type in the Text field.
 Set up autocomplete in the Text field's Properties.
 
 ![Figure 6: A User beings typing in a Text field and is pleasantly surprised by a list of
@@ -69,7 +68,7 @@ validation errors.
 **Data Provider Enhancements**
 : Data Providers are still used to populate Select from List fields. The Data
 Provider setup form has been overhauled, and you can import and export Data
-Provider definitions. Data Providers are also linked with the Auotcomplete
+Provider definitions. Data Providers are also linked with the Autocomplete
 feature and the Autofill rule.
 
 ![Figure 10: The Data Provider interface was redesigned and new options added.](../../images/forms-data-provider.png)
