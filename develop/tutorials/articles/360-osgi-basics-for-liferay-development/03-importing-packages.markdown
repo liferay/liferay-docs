@@ -1,7 +1,7 @@
 # Importing Packages [](id=importing-packages)
 
 Your modules will often need to use Java classes from packages
-[exported](/develop/reference/-/knowledge_base/7-1/exporting-packages) by other
+[exported](/develop/tutorials/-/knowledge_base/7-1/exporting-packages) by other
 modules. When a module is set up to import, the OSGi framework finds other
 registered modules that export the needed packages and wires them to the
 importing module. At run time, the importing module gets the class from the

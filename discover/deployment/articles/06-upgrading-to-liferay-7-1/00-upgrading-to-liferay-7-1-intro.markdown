@@ -7,7 +7,8 @@ directly, you must be coming from Liferay Portal 6.1 or higher.
 If you're on Liferay Portal 6.0 or below, you should upgrade to Liferay Portal
 6.2 before approaching an upgrade to the @product-ver@ platform. Please see the
 [Upgrading to Liferay Portal 6.2](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
-article for information on upgrading to Liferay Portal 6.2 first.
+article for information on upgrading to Liferay Portal 6.2 first. You can
+upgrade from Liferay Portal 6.1 and above directly to @product-ver@. 
 
 Before you do anything, however, you should follow the
 [pre-upgrade process of cleaning and normalizing your data](/discover/deployment/-/knowledge_base/7-1/pre-upgrade-speed-up-the-process).

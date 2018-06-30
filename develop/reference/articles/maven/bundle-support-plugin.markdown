@@ -90,7 +90,7 @@ Parameter Name | Type | Default Value | Description
 `password` | `String` | `null` | The password to use when downloading a DXP bundle. This password must match the one registered for your DXP subscription.
 `passwordFile` | `File` | `null` | The file to hold your password used when downloading a DXP bundle.
 `tokenFile` | `File` | `${user.home}/.liferay/token` | The file to hold the Liferay bundle authentication token.
-`tokenUrl` | `URL` | `https://cdn.lfrs.sl/releases.liferay.com/portal/7.1.0-a1/liferay-ce-portal-tomcat-7.1-a1-20180410105031513.zip` | The URL pointing to the bundle Zip to download.
+`tokenUrl` | `URL` | `https://releases-cdn.liferay.com/portal/7.1.0-b3/liferay-ce-portal-tomcat-7.1-b3-20180611140920623.zip` | The URL pointing to the bundle Zip to download.
 
 After executing the `create-token` goal, you're prompted for your email address
 and password, both of which are used to generate your token. It's recommended to
