@@ -1,16 +1,16 @@
 # Server Administration: External Services [](id=server-administration-external-services)
 
 Users can upload and share any type of file via the Documents and Media library, 
-a customizable and permissions-enabled online repository for files (see the 
-[publishing files documentation](/discover/portal/-/knowledge_base/7-1/publishing-files) 
+a customizable and permissions-enabled online repository for files (see 
+[publishing files ](/discover/portal/-/knowledge_base/7-1/publishing-files) 
 for more information). 
 [PDFBox](https://pdfbox.apache.org/) 
-is included with @product@ and generates automatic previews for certain file 
-types (mostly PDFs). You can install 2 additional tools to generate previews for 
-other file types: 
+is included with @product@ and generates automatic previews for certain file
+types (mostly PDFs). You can install two additional tools to generate previews
+for other file types: 
 
 -   [**ImageMagick:**](https://www.imagemagick.org/script/index.php) 
-    Generate higher-quality image previews, for many types of images. 
+    Generate higher-quality image previews for many types of images. 
 
 -   [**Xuggler:**](http://www.xuggle.com/xuggler/) 
     Convert and generate previews for audio and video files. 
@@ -80,7 +80,7 @@ Follow these steps to install and configure Xuggler:
 
 3.  Restart your application server. 
 
-4.  Enable Xuggler for your portal. There are 2 ways to do this: 
+4.  Enable Xuggler for your portal. There are two ways to do this: 
 
     -   In the Control Panel, navigate to the *Server Administration* &rarr; 
         *External Services* tab, select *Enabled*, then click *Save*. 
