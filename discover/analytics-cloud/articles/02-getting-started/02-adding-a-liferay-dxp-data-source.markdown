@@ -27,7 +27,7 @@ Installing the Liferay Analytics Cloud Connector (the Connector) on your Liferay
 DXP instance is straightforward:
 
 1. Go to the
-[downloads page](https://web.liferay.com/group/customer/dxp/downloads). 
+[downloads page](https://web.liferay.com/group/customer/dxp/downloads/analytics-cloud). 
 
 2. Download the Connector ZIP file for your Liferay DXP version.
 
