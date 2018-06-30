@@ -11,7 +11,7 @@ located in Control Panel &rarr; Configuration &rarr; System Settings.
 
 ![Figure 1: System Settings are accessed through the Control Panel.](../../../images/system-settings-categories.png)
 
-## Editing System Configurations
+## Editing System Configurations [](id=editing-system-configurations)
 
 System Settings is organized into sections (for example, Content) and categories
 (for example, Workflow) based on the functionality being configured.  There's
@@ -58,7 +58,7 @@ you'll see under Scope:
 - *Virtual Instance Scope:* Configuration at the Virtual Instance level is
   overridden in Instance Settings.
 
-  ![Figure 7: Some System Settings are virtual instance scoped.](../../../images/system-settings-instance-scope.png)
+  ![Figure 5: Some System Settings are virtual instance scoped.](../../../images/system-settings-instance-scope.png)
 
 - *Site Scope:* Configuration at this scope is overridden in each site. 
 
@@ -67,7 +67,7 @@ you'll see under Scope:
 - *Widget Scope:* Configuration at this scope is overridden in each Widget
   Instance (like the Blogs example below). 
 
-  ![Figure 5: Some System Settings entries are widget scoped.](../../../images/system-settings-application-scope.png)
+  ![Figure 7: Some System Settings entries are widget scoped.](../../../images/system-settings-application-scope.png)
 
 If a configuration changed in System Settings is also configurable at a
 different scope, the System Settings value acts as a default that can be

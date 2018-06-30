@@ -28,6 +28,9 @@ respective app menus:
     - Bookmark
     - Folder
 
+**Important:** Single asset publication is not supported for page-scoped
+content.
+
 +$$$
 
 **Note:** When publishing a Web Content or Bookmarks folder, their respective
