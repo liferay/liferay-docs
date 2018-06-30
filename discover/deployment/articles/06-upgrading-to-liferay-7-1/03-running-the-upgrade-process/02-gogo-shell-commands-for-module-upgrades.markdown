@@ -22,9 +22,8 @@ First explore the command usage.
 ## Command Usage [](id=command-usage)
 
 If you ran the upgrade tool and it opened Gogo shell, you're already connected.
-Otherwise, you can connect to Gogo shell via telnet:
-
-`telnet localhost 11311`
+Otherwise, you can execute commands using the
+[Gogo Shell portlet](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
 
 Here are the commands available in the `upgrade` namespace:
 
