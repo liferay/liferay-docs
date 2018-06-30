@@ -1,4 +1,4 @@
-# Data Providers
+# Data Providers [](id=data-providers)
 
 Select from List fields can hold a lot of options. There are around 200
 countries on earth, for example. If you have unoccupied unpaid interns you could
@@ -16,9 +16,9 @@ ready-to-use registered JSON web services in @product@, navigate to
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws) 
 (assuming you're running a local server). Browse the available Liferay services.
 Many times, the services useful to you in the Forms application will get a list
-of something. Find the `get-countries` JSON web service and click on it, then
-click *Invoke*. The *Result* tab shows a list of countries using JSON syntax,
-like this:
+of something. Find the `get-countries` JSON web service (there are two---use
+either one) and click on it, then click *Invoke*. The *Result* tab shows a list
+of countries using JSON syntax, like this:
 
     [
       {
@@ -38,16 +38,20 @@ the URL you entered into the data provider form is the same as the one generated
 for accessing the `get-countries` JSON web service. Find the URL for any
 registered JSON web service using this same procedure. 
 
-## Adding a Basic Data Provider
+Note the field you want Users to select. With this particular service, it's most
+likely `nameCurrentValue`, because it contains the full, properly capitalized
+name of the country.
+
+## Adding a Basic Data Provider [](id=adding-a-basic-data-provider)
 
 To add a *Countries of the World* Data Provider for use in your Forms:
 
 1.  Go to the Forms application.
 
-2.  Click the Options button (![Options](../../../images/icon-option.png)) and
+2.  Click the Options button (![Options](../../images/icon-options.png)) and
     click *Data Providers*.
 
-3.  Click the Add button (![Add](../../../images/icon-add.png)).
+3.  Click the Add button (![Add](../../images/icon-add.png)).
 
     The REST Data Provider form loads.
 
@@ -75,7 +79,8 @@ To add a *Countries of the World* Data Provider for use in your Forms:
 
 7.  Save the Data Provider.
 
-SCREENSHOT
+![Figure 1: Set up a simple data provider in no time.](../../images/forms-simple-data-provider.png)
+
 
 <!--    provides the full, properly capitalized country name, and that’s what you want users of the form to see. We are using JsonPath to navigate the returning xml structure. JsonPath uses special notation to represent nodes and their connections to adjacent nodes in a path. There are two styles of notation, namely dot and bracket.
 You can check more detail on this topic on the links showing in your screen:
@@ -110,7 +115,7 @@ Once the Data Provider is configured, use it to populate a Select from List fiel
 
 5.  Publish the form and test it. 
 
-SCREENSHOT
+![Figure 2: Form users select an option form the list populated by the Data Provider.](../../images/forms-select-data-provider.png)
 
 Your Data Provider is now being used to populate a select field. However,
 this form is going to be submitted by Guest users, who don't currently have
@@ -120,23 +125,22 @@ permission to see the list of results from the data provider.
 
 To configure the data provider's permissions, go to the Forms application (*Site
 Administration* &rarr; *Content* &rarr; *Forms*). Open the Options menu
-(![Options](../../../images/icon-options.png)) and select *Data Providers*. For
+(![Options](../../images/icon-options.png)) and select *Data Providers*. For
 the data provider you want to configure, click the Actions button
-(![Actions](../../../images/icon-actions.png)), then *Permissions*. 
+(![Actions](../../images/icon-actions.png)), then *Permissions*. 
 
 Configure the permissions you need. If Guests are to fill out the form, they
 need the *View* permission, or else they won't be able to see the options
 provided by the data provider. Once you grant permissions, click *Save*.
 
-## Data Provider Configuration
+## Data Provider Configuration [](id=data-provider-configuration)
 
 The above instructions for adding a basic Data Provider are a good start, but
 there are more options.
 
-*Support filtering by keyword.*
-: If activated<!-- what does this do?--> Enter a valid parameter from the REST service into the
-Filter Parameter Name. This parameter is used to filter the REST service's
-results.
+<!-- NOT WORKING, LEAVE OUT UNTIL I CONFIRM IT'S NON-FUNCTIONAL *Support filtering by keyword.*
+: Filter the REST service call's results by a valid parameter from the REST
+service.-->
 
 *Cache data on the first request.*
 : If the data is cached, a second load of the select list field is much faster,
@@ -147,11 +151,19 @@ since a second call to the REST service provider is unnecessary.
 request, if a response is not returned.
 
 *Inputs*
-: Specify <!--what does this do? --> Enter a Label, the Parameter that ............, and the
-Type (Text or Number). Choose whether the input is required. You can add
-multiple Inputs.
+: Configure parameters from the REST service to use to filter the REST service's
+response (displayed in the Outputs parameter configured below). Specify the
+Label, Parameter, and Type (Text or Number), and Choose whether the input is
+required to use the Data Provider. You can add multiple Inputs. These are used
+in Form Rules. A User enters input into one field, and their input is sent to
+the REST service. The REST service's response data is filtered by the input.
 
 *Outputs*
-: You can add multiple Outputs.
+: The Parameter to display in Select from List fields. You can add multiple
+Outputs. Outputs can be filtered by inputs (see above) but can also be displayed
+without configuring input filtering. Specify the Label, Path, and Type (Text,
+Number, or List). The Path field is specified in JsonPath syntax.
+
+![Figure 3: Set up Data Providers to display data retrieved from a REST service.](../../images/forms-data-provider-configuration.png)
 
 
