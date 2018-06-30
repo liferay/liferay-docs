@@ -7,7 +7,8 @@ other articles of this section.
 
 **Form Rules**
 : Set dynamic form behavior by specifying conditions (*if this happens in field
-X*) and actions (*then do this: X*). Available actions include Require,Enable,
+X*) and actions (*then do this: X*). Available actions include Show, Enable,
+Require, Autofill, Calculate, and Jump to Page.
 
 ![Figure 1: Form Rules trigger an action in response to some condition.](../../images/forms-rule-development.png)
 
@@ -18,7 +19,7 @@ Form Users select the language they'd like to see.
 ![Figure 2: Translate a Form into a supported language.](../../images/forms-translation.png)
 
 **New Fields and Properties**
-: File Upload fields let logged in Users upload documents tot he Form. Numeric
+: File Upload fields let logged in Users upload documents to the Form. Numeric
 fields validate that input is numeric. Grid fields let Users select from options
 laid out in rows and columns. One selection can be made per row. 
 
@@ -28,7 +29,7 @@ laid out in rows and columns. One selection can be made per row.
 : Create reusable Form fragments that can be used to quickly populate new Forms
 with common fields and configurations.
 
-![Figure 4: Reusable Element Sets are great](../../images/forms-element-set.png)
+![Figure 4: Reusable Element Sets are great for quickly populating new forms.](../../images/forms-element-set.png)
 
 **Autosave**
 : By default, a Form is autosaved every minute (without the Form builder
@@ -36,12 +37,12 @@ clicking *Save*). The duration is configurable in Control Panel &rarr;
 Configuration &rarr; System Settings &rarr; Forms. Autosaves do not propagate
 to published Forms. 
 
-![Figure 5: ](../../images/forms-autosave-interval.png)
+![Figure 5: Autosaving Forms ensures your recent changes are preserved.](../../images/forms-autosave-interval.png)
 
 **Autocomplete Text Fields**
 : Using a Data Provider or manually typed options, configure a Text field to
 offer Users automcompleted values to choose from as they type in the Text field.
-Set up autocomplete in Text field's Properties.
+Set up autocomplete in the Text field's Properties.
 
 ![Figure 6: A User beings typing in a Text field and is pleasantly surprised by a list of
 autocomplete options.](../../images/forms-autocomplete.png)
@@ -61,14 +62,14 @@ Fields if you need multiple similarly configured fields.
 **Validate Text Field Entries**
 : Add validation logic to a Text field and create custom messages for form
 validation errors.
-<!-- I don't see RegEx Validation. Did that not make it into 7.1-->
+<!-- I don't see RegEx Validation. Did that not make it into 7.1? -->
 
-![Figure 9: Validate Text fields to ensure Users fill in the correct data.](../../images/forms-text-validation.png)
+![Figure 9: Validate Text fields to ensure Users enter the correct data.](../../images/forms-text-validation.png)
 
 **Data Provider Enhancements**
-: Data Providers are still used to populate Select from List fields. Now, the
-Data Provider setup form has been overhauled, and you can now import and export
-Data Provider definitions. Data Providers are also linked with the Auotcomplete
+: Data Providers are still used to populate Select from List fields. The Data
+Provider setup form has been overhauled, and you can import and export Data
+Provider definitions. Data Providers are also linked with the Auotcomplete
 feature and the Autofill rule.
 
 ![Figure 10: The Data Provider interface was redesigned and new options added.](../../images/forms-data-provider.png)
@@ -78,4 +79,4 @@ feature and the Autofill rule.
 
 ![Figure 11: Export Form Entries to XLS. CSV and XML are also available.](../../images/forms-xls.png)
 
-
+More enhancements are planned for the future. 
