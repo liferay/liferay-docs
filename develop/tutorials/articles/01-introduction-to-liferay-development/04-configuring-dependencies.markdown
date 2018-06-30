@@ -100,11 +100,9 @@ If you don't know a deployed module's group, use the
 [Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell) 
 to find it: 
 
-1.  Open a Gogo Shell session by entering the following into a command prompt: 
-
-        telnet localhost 11311
-
-    This results in a `g!`: the Felix Gogo Shell command prompt. 
+1.  Navigate to the Gogo Shell portlet in the Control Panel &rarr;
+    *Configuration* &rarr; *Gogo Shell*. You can enter commands in the provided
+    Felix Gogo Shell command prompt. 
 
 2.  Search for the module by its display name (e.g., `Liferay Bookmarks API`) or
     a keyword. In the results, note the module's number. You can use it in the 
@@ -132,14 +130,10 @@ to find it:
         Bundle-Version = 2.0.1
         ... 
 
-4.  Disconnect from the Gogo Shell session: 
-
-        g! disconnect
-
-5.  On [Maven Central](https://search.maven.org/), search for the module by its
+4.  On [Maven Central](https://search.maven.org/), search for the module by its
     artifact ID. 
 
-6.  Determine the group ID by matching the `Bundle-Vendor` value from step 3 
+5.  Determine the group ID by matching the `Bundle-Vendor` value from step 3 
     with a group listed that provides the artifact. 
 
 Now you know to find a module's symbolic name, version, and group ID using the

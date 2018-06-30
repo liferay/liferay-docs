@@ -1,4 +1,4 @@
-# Advanced Site Settings
+# Advanced Site Settings [](id=advanced-site-settings)
 
 Advanced Settings relate to security (like User Roles) or require external
 configuration (like creating a Google Analytics account) to use.
@@ -38,7 +38,7 @@ To use option #2:
     All the pages in the Site you selected now have the Google Analytics code
     and can be tracked. 
 
-![Figure X: To set up Google Analytics: sign up, receive an ID, and then enter it into the Google Analytics ID field.](../../../../images/maintaining-google-analytics.png)
+![Figure 1: To set up Google Analytics: sign up, receive an ID, and then enter it into the Google Analytics ID field.](../../../../images/maintaining-google-analytics.png)
 
 To enable a different analytics service:
 
