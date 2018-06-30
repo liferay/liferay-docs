@@ -1,4 +1,4 @@
-# Viewing and Understanding Analytics [](id=viewing-and-understanding-analytics)
+# Introduction [](id=introduction)
 
 Combining traditional Page Analytics with Path Analytics and Asset Analytics is
 what sets Liferay Analytics Cloud apart from other analytics tools.
