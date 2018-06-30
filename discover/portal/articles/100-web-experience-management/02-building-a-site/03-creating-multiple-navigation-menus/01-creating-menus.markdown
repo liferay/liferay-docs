@@ -1,45 +1,37 @@
 # Creating and Managing Navigation Menus [](id=creating-and-managing-navigation-menus)
 
-Navigation menus can be created for a number of reasons. In some cases, you 
-might want to display a different top level navigation on different pages of 
-the same site. In other cases, you might need a second level menu which 
-provides additional navigation options on a specific page. To better understand 
-Navigation Menus, it's time to create a new menu which uses a number of 
-features.
+To better understand Navigation Menus, it's time to create a new menu.
 
 ## Creating a Navigation Menu [](id=creating-a-navigation-menu)
 
-To get started with Navigation Menus:
-
 1.  Go to *Site Administration* &rarr; *Build* &rarr; *Navigation Menus*.
 
-2.  Click on the `+` button to add a new menu.
+2.  Click the `+` button to add a new menu.
 
 3.  Give your menu a name and click *Submit*.
 
-On the next page, you're presented with a number of elements that you can add 
-to a menu.
+On the next page appears a number of elements that you can add to a menu.
 
-**Page**: Select an existing page from the current site to add to the navigation
+**Page**: Select an existing page from the current Site to add to the navigation
 menu.
 
-**Submenu**: Use this to create a second level of menu navigation.
+**Submenu**: Create a second level of menu navigation.
 
-**URL**: Create a link to any page outside of the current site or portal with
-a URL link, which appears just like any other option in your menu.
+**URL**: Create a link to any page anywhere by providing a URL. The link appears
+just like any other option in your menu.
  
-Click on *Page* and you see a view of all the current pages on the current site.
+Click on *Page* and you see a view of all the current pages on the current Site.
 Select a page and click *Add* to add that page to the menu.
 
 +$$$
 
-**Note:** When you click on a page, you select that page. Multiple pages can
-be selected by clicking on each page one at a time. To deselect a page click on
+**Note:** When you click on a page, you select that page. Multiple pages can be
+selected by clicking on each page one at a time. To deselect a page, click on
 the page again.
 
 $$$
 
-Now you are menu management screen. From here, you can drag and drop menu 
+Now you see the menu management screen. From here, you can drag and drop menu
 elements to rearrange or nest them. You can also manage options for this menu by
 clicking the gear icon in the top right. Let's add another item to the menu.
 
@@ -47,25 +39,25 @@ clicking the gear icon in the top right. Let's add another item to the menu.
 
 2.  Select *Submenu* in the menu that pops up.
 
-3.  Name your menu "External Links".
+3.  Name your menu *External Links*.
 
 4.  Click *Add*.
 
-Click the `+` button again and select URL. You're prompted to enter a page
+Click the `+` button again and select *URL*. You're prompted to enter a page
 name and URL.
 
 1.  Enter a *Name*.
 
-2.  Enter the *URL* for an external site.
+2.  Enter the *URL* for an external Site.
 
 3.  Click *Add*.
 
 Drag the URL item onto the *External Links* submenu. This nests the URL item in
 the submenu.
 
-![Figure 1: A menu with a standard page, a submenu, and a URL link in the submenu.](../../../../images/basic-nav-menu.png)
+![Figure 1: Menus can have a standard page, a submenu, and a URL link in the submenu.](../../../../images/basic-nav-menu.png)
 
-Now that you understand the basics of creating menus, you learn the details.
+Now that you can see how menus work, you can learn the details.
 
 ## Managing Menus [](id=managing-menus)
 
@@ -84,22 +76,19 @@ added to the menu automatically.
 
 **Create Date**: When the menu was created.
 
-The menu types are used primarily for theme and fragment developers to 
-determine how a menu should be styled. **Primary Navigation** is for the main
-navigation for a page. **Secondary Navigation** is for a second level of
-navigation, possibly a side bar or a separate menu within a page. **Social
-Navigation** is for menus that containing links for sharing content on social
-media or similar tasks.
+Theme and Fragment developers primarily use the menu types to determine how
+a menu should be styled. **Primary Navigation** is the main navigation for
+a page. **Secondary Navigation** is a second level of navigation, possibly
+a sidebar or a separate menu within a page. **Social Navigation** is for menus
+that contain links for sharing content on social media or similar tasks.
 
 ### Modifying Menus [](id=modifying-menus)
 
-Next click on the options menu at the far left of your new navigation menu. 
-You'll see these options:
+Next click on the options menu at the far left of your new navigation menu: 
 
-![Figure 2: A menu with a standard page, a submenu, and a URL link in the submenu.](../../../../images/nav-menu-options.png)
+![Figure 2: Menus with a standard page, a submenu, and a URL link in the submenu are created for different reasons.](../../../../images/nav-menu-options.png)
 
-**Edit**: Takes you to the interface for adding, removing, and organizing menu
-items.
+**Edit**: Add, remove, or organize menu items.
 
 **Rename**: Change the name of your menu.
 
