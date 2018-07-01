@@ -182,7 +182,8 @@ now:
     driver `JAR`, copy it to this location as well. 
 
 2.  From the same archive, copy `portlet.jar`into `[Install
-    Location]/WebSphere/AppServer/java/jre/lib/ext`. WebSphere already contains
+    Location]/WebSphere/AppServer/java/java-[version]/jre/lib/ext` for WebSphere 8.5.5.11 or `[Install
+    Location]/WebSphere/AppServer/javaext` for WebSphere 9.0.0.x. WebSphere already contains
     an older version of `portlet.jar` which must be overridden at the highest
     classloader level. The new `portlet.jar` (version 3) is
     backwards-compatible. 
@@ -219,8 +220,22 @@ The following folders should be present within the `/liferay/osgi` folder:
 8. `War`
 
 
-Once you've installed these dependencies, start the server profile you created 
-for @product@. Once it starts, you're ready to configure your database. 
+### Ensuring that @product@'s portlet.jar is loaded first [](id=enforce-portlet) 
+
+In addition to placing the `portlet.jar` in the correct folder, you must
+configure the `config.ini` file so that it is loaded first. Navigate to
+`/IBM/WebSphere/AppServer/configuration/config.ini`.
+
+1. Find the property `com.ibm.CORBA,com.ibm`
+
+2. Insert the property `javax.portlet,javax.portlet.filter,javax.portlet.annotations`
+   after `com.ibm.CORBA` and before `com.ibm`.
+
+3. Save the file.
+
+Once you've installed these dependencies and configured the `config.ini` file,
+start the server profile you created for @product@. Once it starts, you're ready
+to configure your database.
 
 ## Database Configuration [](id=database-configuration)
 
@@ -451,3 +466,20 @@ Now restart WebSphere.
    database. 
 
 Congratulations! You've installed @product@ on WebSphere! 
+
+After deploying @product@, you may see an excessive amount of the following
+warnings and log messages in the console involving the `PhaseOptimizer`. These
+are benign and can be ignored. Make sure you adjust your app server's logging
+level or log filters to avoid excessive log messages.
+
+    May 2, 2018 9:12:27,295 PM GMT> <Warning> <com.google.javascript.jscomp.PhaseOptimizer> <BEA-000000> <Skipping pass checkConsts>
+    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+    WARNING: Skipping pass gatherExternProperties
+    <May 2, 2018 9:12:27,296 PM GMT> <Warning> <com.google.javascript.jscomp.PhaseOptimizer> <BEA-000000> <Skipping pass gatherExternProperties>
+    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+    WARNING: Skipping pass checkControlFlow
+    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+    INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
+    current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
+    <May 2, 2018 9:12:27,295 PM GMT>
+
