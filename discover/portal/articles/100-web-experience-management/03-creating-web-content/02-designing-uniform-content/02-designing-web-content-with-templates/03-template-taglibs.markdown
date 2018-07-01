@@ -7,7 +7,7 @@ access these taglibs by indicating the TLD's file name with underscores.
 
 When you're using @product@'s template editor, you can find variables on the 
 left side of the template editor. To place one of the variables onto
-the template editor:
+the template editor,
 
 1.  Position your cursor where you want the variable placed.
 

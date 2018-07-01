@@ -6,18 +6,21 @@ To start, go to the *Structures* page.
 
 2.  Open the *Structures* tab.
 
-This page shows you all the web content structures in this Site. You can add new web content structures, edit existing ones, manage the templates associated with a structure, edit the permissions of a structure, and copy or delete structures.
+This page shows you all the web content structures in this Site. You can add
+new web content structures, edit existing ones, manage the templates associated
+with a structure, edit the permissions of a structure, and copy or delete
+structures.
 
 ![Figure 1: Structures are not pre-installed. You have to make your own.](../../../../../images/manage-structures.png)
 +$$$
 
-Note: When you copy a structure, @product@ generates a unique portal ID for the 
-copied structure, but every other attribute of the copied structure, including 
-the name, is the same as that of the original. When you copy web content 
-structure, enter a new name for it to avoid confusing it with the original. 
-During the copy process, you'll be prompted to choose whether to copy any detail
-templates or list templates associated with the structure. For information on
-detail templates and list templates, please refer to 
+Note: When you copy a structure, @product@ generates a unique ID for the copied
+structure, but every other attribute of the copied structure, including the
+name, is the same as that of the original. When you copy web content structure,
+enter a new name for it to avoid confusing it with the original. During the
+copy process, you're prompted to choose whether to copy any detail templates or
+list templates associated with the structure. For information on detail
+templates and list templates, please refer to 
 [Using Web Forms and Dynamic Data Lists](/discover/portal/-/knowledge_base/7-1/using-web-forms-and-dynamic-data-lists)
 .
 
@@ -35,60 +38,59 @@ Now, create a new Structure:
 
 2.  Give your Structure a name.
 
-Structures are essentially a set of fields which are organized in a certain way.
-The interface on this page provides an easy way to add and organize whatever 
-fields you need. Each element that you add will have three icon options that 
-you can click:
+Structures are essentially a set of fields organized in a certain way. The
+interface on this page provides an easy way to add and organize whatever fields
+you need. Each element that you add has three icon options that you can click:
 
-**Settings** (![Settings](../../../../../images/icon-wrench.png)) lets you 
-change the name and label and set other information about
-the field, like whether or not it is required. 
+**Settings:** (![Settings](../../../../../images/icon-wrench.png)) Changes the
+name and label and set other information about the field, like whether or not
+it is required. 
 
-**Delete** (![Delete](../../../../../images/icon-trash.png)) removes the field 
+**Delete:** (![Delete](../../../../../images/icon-trash.png)) Removes the field 
 from the structure.
 
-**Duplicate** (![Duplicate](../../../../../images/icon-add-2.png)) duplicates the 
-field and all of it's setting and iterates the *Name* to avoid conflicts.
+**Duplicate:** (![Duplicate](../../../../../images/icon-add-2.png)) Duplicates the 
+field and all its settings and iterates the *Name* to avoid conflicts.
 
 Web content structures can inherit characteristics from other structures. A 
 child structure inherits all the parent's fields and settings. You can use this 
 to make a similar structure to one that already exists. For example, if you 
 have *Sports Article* and you want to create *In-depth Sports Article*, set 
-*Sports Article* as the parent and the *In-dept Sports Article* will inherit all of its fields and you can add new ones for more in-depth information.
+*Sports Article* as the parent and the *In-dept Sports Article* inherits
+all its fields, letting you add new ones for more in-depth information.
 
 +$$$
 
 **Note:** Due to import/export operations it's possible to have both a global
 and a Site-scoped structure with the same `structureKey`. If this happens, the 
-Site-scoped structure will take precedence and you will not be able to access 
-the global structure from that Site.
+Site-scoped structure takes precedence, and you can't access the global
+structure from that Site.
 
 $$$
 
-
 You can also manually customize a structure's XML in *Source* mode. By default 
 the *View* mode is selected, but you can click the *Source* tab to switch. This 
-method is for the more experienced developers.
+method is for more experienced developers.
 
 Take a moment to add, delete, and rearrange different elements.
 
 ![Figure 2: The structure editor gives you many options to customize your Web Content.](../../../../../images/web-content-structure-editor.png)
 
-@product@ supports the following fields in structures:
+The following fields can be in structures:
 
 **Boolean:** Adds a checkbox onto your structure, which stores either `true`
 (checked) or `false` (unchecked). Template developers can use this as a display
 rule.
 
-**Date:** Adds a preformatted text field that displays a convenient date picker
-to assist in selecting the desired data. The format for the date is governed by
-the current locale.
+**Date:** Adds a pre-formatted text field that displays a date picker to assist
+in selecting the desired data. The format for the date is governed by the
+current locale.
 
 **Decimal:** Similar to *Number*, except that it requires a decimal point (.) be
 present.
 
 **Documents and Media:** Adds an existing uploaded document to attach to the
-structure. Also has the ability to upload documents into the Document Library.
+structure. Can also upload documents into the Document Library.
 
 **Geolocation:** Adds a map that displays a configured location. The geolocation
 system can work in two ways: letting the system know your current location
@@ -97,10 +99,10 @@ another place.
 
 **HTML:** An area that uses a WYSIWYG editor to enhance the content.
 
-**Image:** Adds the browse image application into your structure. You have the
-option of selecting an image from the Documents and Media library or to upload
-an image from your computer's storage. If uploading an image from your personal
-computer to the web content article, it is only available for that article.
+**Image:** Adds the browse image application into your structure. You can
+select an image from the Documents and Media library or upload an image from
+your computer's storage. If uploading an image from your personal computer to
+the web content article, it is only available for that article.
 
 **Integer:** Similar to *Number*, except that it constrains user input to
 whole numbers.

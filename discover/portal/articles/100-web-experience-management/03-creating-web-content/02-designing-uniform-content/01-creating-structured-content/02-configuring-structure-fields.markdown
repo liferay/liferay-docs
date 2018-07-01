@@ -1,24 +1,24 @@
 # Configuring Structure Fields [](id=configuring-structure-fields)
 
-There are a number of options available for configuring each structure field. 
-Some of them relate to how the fields are displayed or how users interact with
-them, but probably the most important field configuration is the **Name**. When
-you create a new field, it has a random name generated that looks something 
-like `TextField4882`. In most cases, you will want to change this to something
-that is more memorable and more descriptive. When it comes time to create the
-template, you don't want to be trying to remember if `TextField4882` was the 
-field for entering an applicant's name or their annual salary.
+There are many options available for configuring each structure field. Some of
+them relate to how the fields are displayed or how users interact with them, but
+probably the most important field configuration is the **Name**. When you create
+a new field, it has a random name generated that looks like `TextField4882`. In
+most cases, you should change this to something that is more memorable and more
+descriptive. When it comes time to create the template, you don't want to be
+trying to remember if `TextField4882` was the field for entering an applicant's
+name or annual salary.
 
-Let's do this now.
+Practice this now.
 
 1.  In your structure, add an *HTML* element.
 
 2.  Hover over the field and select the *Configuration* icon 
     (![Configuration](../../../../../images/icon-wrench.png)).
 
-3.  Change the *Field Label* value to *Instructions* and the *Name* value 
-    to *steps*. Now your template writer has a variable by 
-    which he or she can refer to this field.
+3.  Change the *Field Label* value to *Instructions* and the *Name* value to
+    *steps*. Now your template writer has a variable by which he or she can
+    refer to this field.
 
 Here's a list of all the configurable settings available for a structure's
 fields:
@@ -43,24 +43,24 @@ structure that has predefined values for various fields, the predefined values
 appear in the form as defaults for those fields.
 
 **Tip:** Each field can have a small help icon, with a tooltip attached that
-displays helpful information. If you would like to provide text for the tooltip
-you may enter it here.
+displays helpful information. If you want to provide text for the tooltip, you
+may enter it here.
 
 **Indexable:** Select *Yes* to permit your field to be indexed for search.
 
 **Localizable:** Select *Yes* to permit localization for this field.
 
-**Repeatable:** Select *Yes* to make your field repeatable. Your users can then
-add as many copies of this field as they like. For example, if you're creating a
-structure for articles, you might want a repeatable Author field in case you
+**Repeatable:** Select *Yes* to make your field repeatable. Users can then add
+as many copies of this field as they need. For example, if you're creating
+a structure for articles, you might want a repeatable Author field in case you
 have multiple authors for a particular article.
 
 **Multiple:** Select *Yes* to enable a multi-selection list (only available for
 the Select field).
 
-**Options:** Changes the options available for selection. You're able to add and
-remove options as well as edit each individual option's display name and value
-(only available for Radio and Select fields).
+**Options:** Changes the options available for selection. You can add and remove
+options as well as edit each individual option's display name and value (only
+available for Radio and Select fields).
 
 **Style:** Changes the line separator's style (only available for Separator).
 
@@ -86,9 +86,9 @@ To edit a structure's default values:
     for the desired structure and select *Edit Default Values* from the menu to 
     view a window like the one below.
 
-    This form allows you to manage the structure settings. It duplicates the
-    function of the *Predefined Value* field setting (see above), but is much
-    more convenient for setting or editing a large number of defaults at once.
+    This form manages the structure settings. It duplicates the function of the
+    *Predefined Value* field setting (see above), but is much more convenient
+    for setting or editing a large number of defaults at once.
 
 ![Figure 1: You can edit default values via the *Actions* button of the Manage Structures interface.](../../../../../images/structure-actions.png)
 
