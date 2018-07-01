@@ -259,8 +259,6 @@ context. Also note that the app's WSDD module is grayed out and listed as
 Resolved instead of Active. This is normal. WSDD modules are OSGi fragments,
 which can't be activated. They still work as intended, though. 
 
-![Figure 1: To find your app's modules, including its WSDD module, search for your app in the App Manager. The `*-service` module's name in the App Manager is also the module's context.](../../../images/app-manager-remote-services.png)
-
 Next, you'll learn how to build the WSDD module for built-in apps that don't
 include a WSDD by default. If you don't need to do this, you can move 
 on to the tutorial 

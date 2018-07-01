@@ -76,8 +76,6 @@ published:
 Similarly, the `rich-text` type provides the same functionality with additional
 features in the editor.
 
-![Figure 2: Rich text provides a fuller editing experience.](../../../images/editing-rich-text.png)
-
 The template saves automatically, and when it is turned into a page, the new
 text is displayed.
 
