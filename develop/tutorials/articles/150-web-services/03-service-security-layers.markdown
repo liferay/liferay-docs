@@ -1,4 +1,4 @@
-# Service Security Layers
+# Service Security Layers [](id=service-security-layers)
 
 Liferay's remote services are secured by default, because they only allow local
 connections. Enabling remote access requires peeling away several layers of
