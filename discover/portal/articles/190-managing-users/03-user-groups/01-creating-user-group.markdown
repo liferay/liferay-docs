@@ -14,7 +14,7 @@ Follow these steps to create a user group:
 3.  Give your user group a name and description. 
 
 4.  If you want to create My Profile and/or My Dashboard pages for the user 
-    group's members, then select a site template to use from the *My Profile* 
+    group's members, select a Site Template to use from the *My Profile* 
     and *My Dashboard* selector menus. 
 
 5.  Click *Save*. The new user group then appears in the table. 
