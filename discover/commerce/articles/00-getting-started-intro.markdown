@@ -3,6 +3,13 @@
 @commerce@ is a digital commerce platform built from the ground up to work with Liferay DXP, making it easy to leverage a fully integrated content management system and best-in-breed portal capabilities in commerce websites.Any website built with
 @product-ver@ can be integrated seamlessly with a store built with @commerce@.
 
+## Installation [](id=installation)
+
+You can install @commerce@ from 
+[Liferay Developer Network](https://dev.liferay.com/web/liferay-emporio).
+You will also need @product-ver@; see installation instructions 
+[here](/discover/deployment/-/knowledge_base/7-1/deploying-product).
+
 ## Overview [](id=overview)
 
 @commerce@ is equipped with a 
@@ -32,6 +39,7 @@ the ability to manage their own accounts, allowing them to designate their own
 buyers, order managers, and account managers.
 
 In addition, @commerce@ features a user control system that is integrated with
+
 @product@'s roles and permissions functionality. 
 [User segmentation](/web/liferay-emporio/documentation/-/knowledge_base/1-0/user-segmentation)
 allows pricing, catalog visibility, and other features to be precisely targeted
