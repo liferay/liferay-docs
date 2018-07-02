@@ -1,4 +1,4 @@
-# Activating Liferay DXP
+# Activating Liferay DXP [](id=activating-liferay-dxp)
 
 There are 2 ways to activate your Liferay DXP instance: 
 
