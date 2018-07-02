@@ -39,9 +39,6 @@ and assets) the customer acted on during that day only.
 
 ![Figure 1: An Individual’s Overview tab is a great place to learn how a person is interacting with your business.](../../images/individual-overview.png)
 
-Figure 1: An Individual’s Overview tab is a great place to learn how the person
-is interacting with your business. 
-
 Clicking on the engagement score switches to a histogram of the customer's engagement
 level over the past 90 days. The Engagement score tells you how much the
 customer is interacting with your sites. See

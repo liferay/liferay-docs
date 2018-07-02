@@ -42,9 +42,6 @@ condition.
 
 ![Figure 1: You can define Dynamic Segment criteria based on Individual properties and behavior.](../../images/create-dynamic-segment-on-property-or-behavior.png)
 
-Figure 1: You can define Dynamic Segment criteria based on Individual
-properties and behavior. 
-
 Start with defining property criteria for matching Individuals. 
 
 ### Property Criteria [](id=property-criteria)
@@ -112,9 +109,6 @@ Once you’ve completed defining your Segment, click on the *Create* button. You
 appears. 
 
 ![Figure 2: As you define criteria and chain them together using AND and OR logic, a preview of Individuals that match the criteria appears on the right.](../../images/create-dynamic-segment.png)
-
-Figure 2: As you define criteria and chain them together using AND and OR logic,
-a preview of Individuals that match the criteria appears on the right. 
 
 Static Segments provide analytics for hand-selected Individuals. 
 

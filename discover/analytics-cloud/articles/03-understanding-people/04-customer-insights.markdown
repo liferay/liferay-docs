@@ -14,11 +14,6 @@ the Individual belongs to.
 
 ![Figure 1: Clicking on an Interest topic for a Segment (or Individual) shows a histogram of the Segment’s interaction with pages and assets mentioning the topic. In this figure, *Intranets* is the selected topic. Clicking on a histogram point shows the pages and assets viewed during that time period.](../../images/interests-insight.png)
 
-Figure 1: Clicking on an Interest topic for a Segment (or Individual) shows a
-histogram of the Segment’s interaction with pages and assets mentioning the
-topic. In this figure, *Intranets* is the selected topic. Clicking on a
-histogram point shows the pages and assets viewed during that time period. 
-
 For example, let’s say your site has pages that mention these topics:
 
 - Clothing
@@ -45,10 +40,6 @@ involvement with your company and its sites. High Engagement scores serve as
 leads to new customers and new business. 
 
 ![Figure 2: A Segment’s Engagement insight includes the Segment’s Engagement score average and scores at different time points. Selecting a chart point lists the Segment members in descending order by Engagement score during that time period.](../../images/engagement-insight.png)
-
-Figure 2: A Segment’s Engagement insight includes the Segment’s Engagement score
-average and scores at different time points. Selecting a chart point lists the
-Segment members in descending order by Engagement score during that time period. 
 
 The Engagement score is calculated based on the following scores, calculated
 during people’s sessions on your sites.

@@ -32,10 +32,7 @@ As a marketer, you might want to generate more customer prospects in a specific
 industry. If you create a Dynamic Segment with that industry as criteria, you
 can view its membership histogram to monitor customer growth in that industry. 
 
-![Figure 3: The Overview tab’s main area shows the Segment’s membership growth and engagement score.](../../images/segment-overview.png)
-
-Figure 3: The Overview tab’s main area shows the Segment’s membership growth and
-engagement score. 
+![Figure 1: The Overview tab’s main area shows the Segment’s membership growth and engagement score.](../../images/segment-overview.png)
 
 The Engagement histogram shows you how involved an audience is with your brand,
 based on their activities on your site. See 
