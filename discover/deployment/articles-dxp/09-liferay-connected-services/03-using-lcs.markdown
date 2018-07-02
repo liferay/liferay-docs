@@ -43,14 +43,43 @@ This article's sections each detail one or more of LCS's features:
 At this point, you might be wondering what information about your servers is 
 stored on LCS's servers. Great question! To protect your users' privacy, LCS 
 only stores system-specific data. LCS doesn't gather or store data on your 
-users. To offer the best service possible, LCS stores the following information 
-about your servers: 
+users. 
 
-- Patches installed on each server 
-- `portal.properties` (except sensitive data) 
-- JVM metrics 
-- Portal and portlet metrics 
-- Cache and server metrics 
+By default, LCS stores the following information about your server:
+
+-   Portal build number and edition
+-   Patching Tool Version
+-   LCS Client Build Number 
+-   Application Server Name
+-   Database Name
+-   File Encoding
+-   OS Name and Version
+-   Timezone
+-   IP Address
+-   Java Version and Java Options
+-   Number of Processor Cores
+-   File System Usage
+-   Memory Usage 
+
+The other data LCS stores depends on the services you enable in your environment 
+token. For more information on this, see 
+[the article on activating servers with LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs).
+When you enable the following services, LCS gathers and stores the data listed 
+for each: 
+
+-   **Portal analytics:** 
+
+    -   Portal and portlet metrics
+    -   JVM metrics
+    -   Cache and server metrics 
+
+-   **Fix pack management:**
+
+    -   Patches installed on the server 
+
+-   **Portal properties analysis:** 
+
+    -   `portal.properties` (except sensitive data) 
 
 Sensitive data is any key-value pair that contains usernames or passwords. For 
 example, LCS doesn't store the following properties because they contain 
@@ -77,12 +106,7 @@ non-sensitive properties:
 
 LCS also lets you prevent it from analyzing specific properties of your 
 choosing. For more information on this, see 
-[the section on using environment tokens](#using-environment-tokens). 
-
-Now that you know what information is stored on the LCS servers, you're ready to 
-learn how to manage your LCS projects. This includes renaming projects and 
-requesting membership to projects you don't administer. You'll also learn how to 
-manage the users in your LCS project and assign them to the correct LCS roles. 
+[the article on activating servers with LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs).
 
 ## Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
 
