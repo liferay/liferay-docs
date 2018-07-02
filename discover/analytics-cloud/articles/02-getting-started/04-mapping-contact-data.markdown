@@ -23,9 +23,6 @@ the data model fields, use a *suggested* field, or create a new custom field.
 
 ![Figure 1: Analytics Cloud facilitates finding appropriate data model fields and offering suggestions.](../../images/mapping-contact-data.png)
 
-Figure 1: Analytics Cloud facilitates finding appropriate data model fields and
-offering suggestions.
-
 Creating custom contact data model fields is straightforward. 
 
 1. Click on the data model field’s selector.

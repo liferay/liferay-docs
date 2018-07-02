@@ -12,8 +12,6 @@ appears.
 
 ![Figure 1: Your project’s home page welcomes you to all Analytics Cloud offers.](../../images/home-page-intial.png)
 
-Figure 1: Your project’s home page welcomes you to all Analytics Cloud offers.
-
 Your project’s home page welcomes you to all Analytics Cloud offers. The center
 main area describes and links to each key component page:
 
