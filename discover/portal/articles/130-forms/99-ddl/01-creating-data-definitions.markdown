@@ -3,22 +3,22 @@
 Follow these steps to create a data definition: 
 
 1.  Open the Menu 
-    (![Menu](../../../../images/icon-menu.png)) 
+    (![Menu](../../../images/icon-menu.png)) 
     and expand your site's menu (the Site Administration menu). Then select 
     *Content* &rarr; *Dynamic Data Lists*. This opens the Dynamic Data Lists 
     screen. A table lists any existing dynamic data lists. 
 
 2.  Click the *Options* button at the top-right 
-    (![Options](../../../../images/icon-options.png)) 
+    (![Options](../../../images/icon-options.png)) 
     and select *Manage Data Definitions*. The Data Definitions screen appears. A 
     table lists any existing data definitions. By default, @product@ contains 
     several predefined data definitions for common use cases like contacts, 
     events, inventory, and more. 
 
-    ![Figure 1: The Data Definitions screen.](../../../../images/ddl-definitions.png)
+    ![Figure 1: The Data Definitions screen.](../../../images/ddl-definitions.png)
 
 3.  Click the *Add* button 
-    (![Add](../../../../images/icon-add.png)) 
+    (![Add](../../../images/icon-add.png)) 
     to begin creating a new data definition. This opens the 
     *New Data Definition* form. 
 
@@ -43,7 +43,7 @@ Follow these steps to create a data definition:
     *Parent Data Definition* field and then select an existing definition in the 
     dialog that appears. 
 
-    ![Figure 2: After naming your data definition, expand the Details section of the form and give your definition a description and parent definition, if desired.](../../../../images/ddl-definition-form-01.png)
+    ![Figure 2: After naming your data definition, expand the Details section of the form and give your definition a description and parent definition, if desired.](../../../images/ddl-definition-form-01.png)
 
 6.  Add the data definition's fields. You'll do this in the data definition 
     designer, which is below the form's Details section. The designer's *View* 
@@ -58,7 +58,7 @@ Follow these steps to create a data definition:
     a field onto a field that's already on the canvas, you can nest the new 
     field in the existing field. When you mouse over a field on the canvas, the 
     field action icons 
-    (![Icons](../../../../images/icon-ddl-actions.png)) 
+    (![Icons](../../../images/icon-ddl-actions.png)) 
     appear. Clicking the *+* icon creates a duplicate of the current field and
     adds it below the current field. Clicking the trash can deletes the field. 
 
@@ -99,7 +99,7 @@ Follow these steps to create a data definition:
         multiple lines of text or separate paragraphs. 
     -   **Web Content:** Select web content.
 
-    ![Figure 3: Use the data definition designer to add fields to the data definition.](../../../../images/ddl-data-definition-designer.png)
+    ![Figure 3: Use the data definition designer to add fields to the data definition.](../../../images/ddl-data-definition-designer.png)
 
 7.  Edit your fields to reflect their intended data. For example, a text field's 
     default label is *Text*. If you want to use the text field as a title, for 
@@ -141,7 +141,7 @@ Follow these steps to create a data definition:
         fields. You can add and remove options, and edit each option's display 
         name and value. 
 
-    ![Figure 4: Configure the settings for each field in your data definition.](../../../../images/ddl-data-definition-settings.png)
+    ![Figure 4: Configure the settings for each field in your data definition.](../../../images/ddl-data-definition-settings.png)
 
 8.  Click *Save* when you're done. Your new data definition then appears in the 
     table with any others. 

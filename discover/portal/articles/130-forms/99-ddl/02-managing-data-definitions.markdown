@@ -7,20 +7,20 @@ manage its templates, copy it, or delete it.
 Follow these steps to access your portal's data definitions: 
 
 1.  Open the Menu 
-    (![Menu](../../../../images/icon-menu.png)) 
+    (![Menu](../../../images/icon-menu.png)) 
     and expand your site's menu (the Site Administration menu). Then select 
     *Content* &rarr; *Dynamic Data Lists*. This opens the Dynamic Data Lists 
     screen. A table lists any existing dynamic data lists. 
 
 2.  Click the *Options* button at the top-right 
-    (![Options](../../../../images/icon-options.png)) 
+    (![Options](../../../images/icon-options.png)) 
     and select *Manage Data Definitions*. The Data Definitions screen appears. A 
     table lists the data definitions. 
 
-![Figure 1: You can copy an existing data definition, manage its templates, and more.](../../../../images/ddl-definitions-actions.png)
+![Figure 1: You can copy an existing data definition, manage its templates, and more.](../../../images/ddl-definitions-actions.png)
 
 You can manage your data definitions via the *Actions* menu 
-(![Actions](../../../../images/icon-actions.png)) 
+(![Actions](../../../images/icon-actions.png)) 
 for each definition. The following options are available: 
 
 -   **Edit:** Edit the data definition. The edit screen uses the same form 
