@@ -25,7 +25,7 @@ Liferay Workspace is able to provide debugging capabilities by targeting a
 specific @product@ version, which indexes the configured @product@ source code.
 Without specifying a target platform, @product@'s source code
 cannot be accessed by @ide@. See the
-[Managing the Target Platform in Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-in-liferay-workspace)
+[Managing the Target Platform in Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace)
 tutorial for more information on how this works.
 
 **Important:** The target platform should match the Liferay server version you

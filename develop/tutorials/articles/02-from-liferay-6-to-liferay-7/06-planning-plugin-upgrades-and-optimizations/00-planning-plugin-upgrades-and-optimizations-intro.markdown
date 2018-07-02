@@ -115,7 +115,7 @@ Follow these upgrade and optimization phases:
 
  Plugin | Upgrade path | Optimizations (optional) |
  :----------------- | :----------- | :----------------------- |
- Ext | [Customization with Ext Plugins](/develop/tutorials/-/knowledge_base/7-1/advanced-customization-with-ext-plugins)  | None |
+ Ext | [Customization with Ext Plugins](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins)  | None |
  Hook - Language files | - [Upgrading Core Language Key Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-core-language-key-hooks)<br>- [Upgrading Portlet Language Key Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-portlet-language-key-hooks) | Same |
  Hook - Override a @product@ Core JSP | [Upgrading Core JSP Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-core-jsp-hooks) | Same |
  Hook - Override an app's JSP | [Upgrading App JSP Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-app-jsp-hook-plugins) | Same |
