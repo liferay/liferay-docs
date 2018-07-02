@@ -1,12 +1,12 @@
 # Managing Files and Folders in Liferay Sync Mobile [](id=managing-files-and-folders-in-liferay-sync-mobile)
 
 Whether you're working in My Documents or My Sites, you manage files and folders
-the same way. Pressing a site or folder shows you a list of its files and
+the same way. Pressing a Site or folder shows you a list of its files and
 folders. It displays each file's size and modification date. You can refresh the
 list by pulling down from the top of the screen. Your current location in the
 navigation hierarchy also appears at the top of the screen alongside a plus
-icon. Pressing the plus icon launches an upload screen that lets you add content
-in the current location. You can add a new folder, upload a file, or launch your
+icon. Pressing the plus icon launches an upload screen for adding content in the
+current location. You can add a new folder, upload a file, or launch your
 device's camera app to take and upload a picture or video. Pressing the *X* icon
 on the upload screen's top right corner cancels any action and returns you to
 the current file list. 
@@ -31,25 +31,24 @@ the right of each file and folder in the list is a circle icon with three dots.
 Pressing this icon slides open a context menu on the right that lets you move, 
 rename, or delete that item. The screenshots below show these options. Note that 
 you should use **extreme caution** when deleting files or folders. Deleting 
-files or folders in the mobile Sync app also deletes them from your @product@ 
-instance and across any synced clients. Accidentally deleted files can be 
-restored from the instance's Recycle Bin, which is enabled by default. If the 
-instance or site administrator disables the Recycle Bin, however, recovering 
-deleted files is impossible. 
+files or folders in the mobile Sync app also deletes them from @product@ and
+across any synced clients. Accidentally deleted files can be restored from the
+Recycle Bin, which is enabled by default. If the instance or Site administrator
+disables the Recycle Bin, however, recovering deleted files is impossible. 
 
 What if you want to delete a file on your device without also deleting it in the
 instance? Currently, you can only do this by signing out of your account in the
 app's Settings menu. Doing so removes all downloaded files from your device, but
-preserves them in the instance. If you're on Android, it may be possible to use 
-a system file browser app to manually remove downloaded files. 
+preserves them in the instance. If you're on Android, it may be possible to use
+a system file browser app to remove downloaded files manually. 
 
 +$$$
 
-**Warning:** Deleting a file in the mobile Sync app deletes it in the @product@ 
-instance and across any synced clients. If you accidentally delete a file, the 
-instance or site administrator can restore it from the instance's Recycle Bin. 
-The Recycle Bin is enabled by default. If the instance or site administrator 
-disables the Recycle Bin, however, recovering deleted files is impossible. 
+**Warning:** Deleting a file in the mobile Sync app deletes it in @product@ and
+across any synced clients. If you accidentally delete a file, the instance or
+Site administrator can restore it from the instance's Recycle Bin. The Recycle
+Bin is enabled by default. If the instance or Site administrator disables the
+Recycle Bin, however, recovering deleted files is impossible. 
 
 $$$
 

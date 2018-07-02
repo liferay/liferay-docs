@@ -2,19 +2,18 @@
 
 When Liferay Sync first starts on your mobile device, press the *Get Started*
 button to begin setup. The setup screen asks for your login credentials and your
-@product@ instance's address. Once you enter them, press *Sign In*. After 
-signing in, the app takes you to a panel that shows your name, a gear icon for 
-accessing the app's settings, and navigation options *My Sites* and *My 
-Documents*. My Sites and My Documents encompass the sites in your @product@ 
-instance that you can sync with. My Documents is your personal user site, while 
-My Sites shows the other sites with which you can sync. No matter how deep you 
-are in the folder hierarchy of a site, swiping to the right returns you to this 
-panel. If you're in the first level of My Sites or My Documents, pressing the 
-location bar at the top slides the screen slightly to the right to reveal a 
-compact view of the panel. The following screenshots show both views of the 
-panel. 
+server's address. Once you enter them, press *Sign In*. After signing in, you
+see a panel that shows your name, a gear icon for accessing the app's settings,
+and navigation options *My Sites* and *My Documents*. My Sites and My Documents
+encompass the Sites in @product@ that you can sync with. My Documents is your
+personal user Site, while My Sites shows the other Sites with which you can
+sync. No matter how deep you are in the folder hierarchy of a Site, swiping to
+the right returns you to this panel. If you're in the first level of My Sites
+or My Documents, pressing the location bar at the top slides the screen
+slightly to the right to reveal a compact view of the panel. The following
+screenshots show both views of the panel. 
 
-![Figure 1: This panel lets you access the app's settings, as well as your sites and documents.](../../../../images/sync-mobile-panel.png)
+![Figure 1: This panel lets you access the app's settings, as well as your Sites and documents.](../../../../images/sync-mobile-panel.png)
 
 ![Figure 2: Tapping the title bar at the top of My Sites or My Documents opens the main Sync panel's compact view.](../../../../images/sync-mobile-panel-compact.png)
 

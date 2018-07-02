@@ -17,33 +17,32 @@ For instructions on installing Marketplace apps, see
 +$$$
 
 **Note:** The Liferay Sync Security module that Sync requires is included and 
-enabled by default in @product@. You can verify this by ensuring that the 
-`SYNC_DEFAULT` and `SYNC_TOKEN` entries are enabled in *Control Panel* &rarr; 
-*Configuration* &rarr; *Service Access Policy*. 
+enabled by default. You can verify this by ensuring that the `SYNC_DEFAULT` and
+`SYNC_TOKEN` entries are enabled in *Control Panel* &rarr; *Configuration*
+&rarr; *Service Access Policy*. 
 
 $$$
 
-If you want to use Sync Connector's default settings and are fine with Sync 
-being enabled for all your @product@ instance's sites, you can skip the articles 
-that follow on configuring sync. However, before directing your users to install 
-and configure the Sync desktop and mobile clients, **make sure to read** this 
-guide's articles on preventing accidental file deletion and ensuring Sync 
-security. You should also **warn your users** about the potential for accidental 
-data loss. 
+If you want to use Sync Connector's default settings and are fine with enabling
+Sync for all your Sites, you can skip the articles that follow on configuring
+Sync. However, before directing your users to install and configure the Sync
+desktop and mobile clients, **make sure to read** this guide's articles on
+preventing accidental file deletion and ensuring Sync security. You should also
+**warn your users** about the potential for accidental data loss. 
 
 ## Configuring Sync to Use SSO [](id=configuring-sync-to-use-sso)
 
-If your @product@ installation uses an SSO (single sign-on) server, you must
-ensure that Sync can access the following URLs without being redirected to your
-SSO server. Sync can't work without direct access to these URLs. You must
-therefore whitelist these URLs: 
+If you use an SSO (single sign-on) solution, you must ensure that Sync can
+access the following URLs without being redirected to your SSO server. Sync
+can't work without direct access to these URLs. You must therefore whitelist
+these URLs: 
 
     http(s)://<portal-address>/c/portal/oauth/*
     http(s)://<portal-address>/api/jsonws/sync-web.*
     http(s)://<portal-address>/sync-web/*
 
-For example, if your @product@ installation's address is
-`https://www.joesblog.com`, then you must whitelist the following URLs: 
+For example, if your installation's address is `https://www.joesblog.com`, then
+you must whitelist the following URLs: 
 
     https://www.joesblog.com/c/portal/oauth/*
     https://www.joesblog.com/api/jsonws/sync-web.*
