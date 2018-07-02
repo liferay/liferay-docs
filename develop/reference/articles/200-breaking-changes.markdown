@@ -838,3 +838,68 @@ This change corrects a best practice violation regarding
 implementation-specific details being included within an API.
 
 ---------------------------------------
+
+### Changed the Request Object in Web Content Templates [](id=changed-the-request-object-in-web-content-templates)
+- **Date:** 2018-Jun-12
+- **JIRA Ticket:** LPS-77766
+
+#### What changed? [](id=what-changed-16)
+
+The request object is no longer accessible as a map, but rather, as an object of
+type `javax.servlet.http.HttpServletRequest`.
+
+#### Who is affected? [](id=who-is-affected-16)
+
+This affects users with Web Content templates that access request parameters
+as a map like this:
+
+    <#assign containerId = request["theme-display"]["portlet-display"]["instance-id"] >
+
+#### How should I update my code? [](id=how-should-i-update-my-code-16)
+
+To keep retrieving the request parameter values as a map, `requestMap` must be
+used instead:
+
+    <#assign containerId = requestMap["theme-display"]["portlet-display"]["instance-id"] >
+
+#### Why was this change made? [](id=why-was-this-change-made-16)
+
+This was done to allow template context contributors to work in Web Content
+templates.
+
+---------------------------------------
+
+### Disabled Access to Gogo Shell Using Telnet [](id=disabled-access-to-gogo-shell-using-telnet)
+- **Date:** 2018-Jun-25
+- **JIRA Ticket:** [LPS-82849](https://issues.liferay.com/browse/LPS-82849)
+
+#### What changed? [](id=what-changed-17)
+
+The ability to access and interact with Liferay Portal's OSGi framework using
+the Gogo shell via your system's telnet client has been disabled.
+
+#### Who is affected? [](id=who-is-affected-17)
+
+This affects anyone who used their system's telnet client to access the Gogo
+shell, or leveraged the Gogo shell in external plugins/tooling using the telnet
+client.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-17)
+
+Liferay Portal now offers the Gogo Shell portlet, which you can access in the
+Control Panel &rarr; *Configuration* &rarr; *Gogo Shell*.
+
+If you prefer using your telnet client to access the Gogo shell, you must enable
+Developer Mode. You can do this by creating a `portal-ext.properties` file in
+your Liferay home folder and adding the following property:
+
+    include-and-override=portal-developer.properties
+
+Developer Mode is enabled upon starting your app server.
+
+#### Why was this change made? [](id=why-was-this-change-made-17)
+
+This was done to strengthen Liferay Portal's security due to potential XXE/SSRF
+vulnerabilities.
+
+---------------------------------------

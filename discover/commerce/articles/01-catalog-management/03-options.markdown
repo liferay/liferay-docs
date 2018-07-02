@@ -6,7 +6,7 @@ materials of different dimensions, or engines of different displacements.
 
 To create an option, you must first create an option template and then a set of
 option values. You must also 
-[apply the template to a product](/web/liferay-emporio/documentation/-/knowledge_base/7-1/adding-options-to-products).
+[apply the template to a product](/web/liferay-emporio/documentation/-/knowledge_base/1-0/adding-options-to-products).
 
 **An Option Template** describes the kind of variation that the option defines.
 If the buyer should be prompted to choose between product variants of different
@@ -90,7 +90,7 @@ that use this option.
 
 **SKU Contributor:** a SKU contributor can be assigned a unique price and other
 attributes for each variant via
-[SKUs](/web/liferay-emporio/documentation/-/knowledge_base/7-1/SKUs). If
+[SKUs](/web/liferay-emporio/documentation/-/knowledge_base/1-0/SKUs). If
 checked, the option must have an SKU in order to be sold.
 
 **Key**: A unique identifier for referring to this option programmatically. As
@@ -99,7 +99,7 @@ this field is filled automatically, most users can safely leave it alone.
 Once an option has been created and saved, it is displayed in the list on the
 left side of the screen.
 
-## Creating Option Values [](id=creating-option-values-at-the-catalog-scope)
+## Creating Option Values [](id=creating-option-values)
 
 Depending on the Field Type you specified when you created your template, you
 may need to create values for your option. 
@@ -126,4 +126,4 @@ safely leave it alone.
 
 These values apply to every product where the template is applied. You can
 override these values for individual products when you 
-[apply the template to a product](/web/liferay-emporio/documentation/-/knowledge_base/7-1/adding-options-to-products).
+[apply the template to a product](/web/liferay-emporio/documentation/-/knowledge_base/1-0/adding-options-to-products).
