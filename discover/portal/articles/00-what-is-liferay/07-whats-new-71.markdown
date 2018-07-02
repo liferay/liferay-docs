@@ -1,4 +1,4 @@
-# What's New in @product-ver@ [](id=whats-new-in-product-ver)
+# What's New in @product-ver@ [](id=whats-new-in-71)
 
 @product-ver@ launches new features for efficient, beautiful page design, along
 with an extensive upgrade to forms. The user experience has also been
