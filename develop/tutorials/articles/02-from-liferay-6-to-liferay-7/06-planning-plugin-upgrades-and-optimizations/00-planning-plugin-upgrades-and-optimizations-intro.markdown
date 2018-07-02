@@ -129,12 +129,17 @@ Follow these upgrade and optimization phases:
  Layout Template | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies)<br>3. [Update Layout Template](/develop/tutorials/-/knowledge_base/7-1/upgrading-layout-templates) | - [Migrate to Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/migrating-a-6-2-theme-to-liferay-7) (Node.js/Gulp/Yeoman) |
  Portlet - GenericPortlet | [Upgrading a GenericPortlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-genericportlet) | - [Migrate to Workspace/Gradle](/develop/tutorials/-/knowledge_base/7-1/migrating-traditional-plugins-to-workspace-web-applications)<br>- [Apply Lexicon](/develop/tutorials/-/knowledge_base/7-1/applying-lexicon-styles-to-your-app)<br>- [Convert to OSGi modules](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet) |
  Portlet - Liferay MVC | [Upgrading a Liferay MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-liferay-mvc-portlet) | - [Migrate to Workspace/Gradle](/develop/tutorials/-/knowledge_base/7-1/migrating-traditional-plugins-to-workspace-web-applications)<br>- [Apply Lexicon](/develop/tutorials/-/knowledge_base/7-1/applying-lexicon-styles-to-your-app)<br>- [Convert to OSGi modules](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet) |
- Portlet - JSF | [Upgrading a Liferay JSF Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-liferay-jsf-portlet) | None |
  Portlet - Servlet/JSP | [Upgrading a Servlet-based Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-servlet-based-portlet) | Coming soon |
  Portlet - Spring MVC | [Upgrading a Spring MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-spring-mvc-portlet) | None |
  Portlet - Struts 1 | [Upgrading a Struts Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-struts-portlet) | None |
  Theme | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies)<br>3. [Upgrade Theme](/develop/tutorials/-/knowledge_base/7-1/upgrading-themes) | - [Migrate to Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/migrating-a-6-2-theme-to-liferay-7) (Node.js/Gulp/Yeoman)<br>- [Use Themelets](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes) |
  Web plugin | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies) | [Convert to OSGi module](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet), e.g., `portlet-x-web` | 
+
+<!-- Readd when JSF is available. -Cody
+
+ Portlet - JSF | [Upgrading a Liferay JSF Portlet](develop/tutorials/-/knowledge_base/7-1/upgrading-a-liferay-jsf-portlet) | None |
+
+-->
 
 ### Feature Upgrade and Optimization Paths [](id=feature-upgrade-and-optimization-paths)
 
