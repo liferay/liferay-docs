@@ -54,11 +54,13 @@ could be used at a time.
 ![Figure 6: Facets and their terms can be selected in multiples to refine search results.](../../images/search-multiple-facet-selection.png)
 
 **Search System Settings**
-: Configure system wide search behavior from the Search Web System Settings
-entry and other search-related System Settings entries, all found in Control
-Panel &rarr; Configuration &rarr; System Settings &rarr; Search.
+: Configure system wide search behavior from the Search System Settings category
+found in Control Panel &rarr; Configuration &rarr; System Settings &rarr;
+Search. The Search Web entry reverts the default search experience from using
+the new Search Widgets to the classic Search Portlet that was standard in past
+releases. 
 
-![Figure 7: Use the Search Web entry in System Settings to configure system wide search behavior.](../../images/search-system-settings.png)
+![Figure 7: Use the Search Web entry in System Settings to enable the classic, monolithic Search widget.](../../images/search-web-system-settings.png)
 
 **Custom Facets**
 : Configure a custom facet to create a new result aggregation on any
