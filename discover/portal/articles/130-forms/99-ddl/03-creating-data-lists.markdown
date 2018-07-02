@@ -47,14 +47,14 @@ these steps to give other users this permission as well:
 
 1.  Navigate to *Content* &rarr; *Dynamic Data Lists* in Site Administration. 
 
-2.  Click the *Actions* menu 
+2.  Click *Actions* 
     (![Actions](../../../images/icon-actions.png)) 
-    for the list you want to add the permission to and select *Permissions*. 
+    &rarr; *Permissions* for the list you want to add the permission to. 
 
 3.  Select *Add Record* for the roles you want to have that permission, then 
     click *Save*. 
 
-You can create new records in a list from the same 2 places you can create the 
+You can create new records in a list from the same places you can create the 
 lists themselves: 
 
 1.  **Site Administration:** In Site Administration, navigate to *Content* 
