@@ -1,4 +1,4 @@
-# Creating Remote Services
+# Creating Remote Services [](id=creating-remote-services)
 
 Many default @product@ services are published as JSON and SOAP web services. If
 you run the portal locally on port 8080, visit this URL to browse the default
@@ -21,7 +21,7 @@ are exposed remotely. In this tutorial, you'll learn how to generate remote
 services for your application. When you're done, your application's remote
 service methods can be called remotely via JSON and SOAP web services. 
 
-## Using Service Builder to Generate Remote Services
+## Using Service Builder to Generate Remote Services [](id=using-service-builder-to-generate-remote-services)
 
 Remember that you should implement your application's local service methods in 
 `*LocalServiceImpl`. You should implement your application's remote service 
@@ -90,7 +90,7 @@ section shows you how to do this. If you don't need to generate SOAP web
 services, you can move on to the tutorial
 [Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services). 
 
-## Generating Your App's WSDD
+## Generating Your App's WSDD [](id=generating-your-apps-wsdd)
 
 @product@ uses Apache Axis to make SOAP web services available. Since Axis 
 requires a WSDD to make an app's remote services available via SOAP, you must 
@@ -108,7 +108,7 @@ The next section shows you how to install the WSDD builder in a multi-module
 project. If you have a standalone module project, skip ahead to the section 
 *Installing the WSDD Builder Plugin in a Standalone Module Project*. 
 
-### Installing the WSDD Builder Plugin in a Multi-module Project
+### Installing the WSDD Builder Plugin in a Multi-module Project [](id=installing-the-wsdd-builder-plugin-in-a-multi-module-project)
 
 To install the WSDD Builder plugin in a multi-module project like a Service
 Builder project in a Liferay Workspace, modify the workspace's `settings.gradle`
@@ -124,7 +124,7 @@ file:
 
         repositories {
             maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
 
@@ -157,7 +157,7 @@ file:
 
             repositories {
                 maven {
-                    url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                    url "https://repository-cdn.liferay.com/nexus/content/groups/public"
                 }
             }
         }
@@ -179,7 +179,7 @@ Now that you've installed the WSDD Builder plugin, you're ready to build and
 deploy the WSDD. For instructions on this, proceed to the section *Building and 
 Deploying the WSDD*. 
 
-### Installing the WSDD Builder Plugin in a Standalone Module Project
+### Installing the WSDD Builder Plugin in a Standalone Module Project [](id=installing-the-wsdd-builder-plugin-in-a-standalone-module-project)
 
 To install the WSDD Builder plugin in a standalone `*-service` module that uses
 Service Builder, modify the module's `build.gradle` file: 
@@ -201,7 +201,7 @@ the project:
 
         repositories {
             maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
     }
@@ -211,7 +211,7 @@ the project:
 Now you're ready to build and deploy the WSDD. The next section shows you how to 
 do this. 
 
-## Building and Deploying the WSDD
+## Building and Deploying the WSDD [](id=building-and-deploying-the-wsdd)
 
 To build the WSDD, you must run the `buildWSDD` Gradle task in your `*-service` 
 module. Exactly how you do this depends on your development tools: 
@@ -259,14 +259,12 @@ context. Also note that the app's WSDD module is grayed out and listed as
 Resolved instead of Active. This is normal. WSDD modules are OSGi fragments,
 which can't be activated. They still work as intended, though. 
 
-![Figure 1: To find your app's modules, including its WSDD module, search for your app in the App Manager. The `*-service` module's name in the App Manager is also the module's context.](../../../images/app-manager-remote-services.png)
-
 Next, you'll learn how to build the WSDD module for built-in apps that don't
 include a WSDD by default. If you don't need to do this, you can move 
 on to the tutorial 
 [Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services). 
 
-## Building the WSDD for Built-in Apps
+## Building the WSDD for Built-in Apps [](id=building-the-wsdd-for-built-in-apps)
 
 @product@ doesn't provide WSDD modules for built-in apps that exist outside 
 of the portal context. This means that by default you can't access SOAP web 
@@ -299,7 +297,7 @@ Fantastic! Once you've created remote web services, you'll want to know how to
 invoke them. To learn how, see the tutorial 
 [Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services). 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services)
 

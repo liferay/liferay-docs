@@ -26,7 +26,7 @@ Here's how to create a page only administrators can see:
 
 5.  Click the *Save* button.
 
-![Figure X: The Permissions offer a plethora of options for each role.](../../../../../images/web-content-page-permissions.png)
+![Figure 1: The Permissions offer a plethora of options for each role.](../../../../../images/web-content-page-permissions.png)
 
 Congratulations! You've changed the permissions for this page so only Site
 administrators can view it. Any users you add to this Role can now see the page.

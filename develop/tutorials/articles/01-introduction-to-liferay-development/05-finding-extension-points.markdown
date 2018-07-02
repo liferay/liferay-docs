@@ -75,8 +75,8 @@ Once you have the component that relates to the functionality you want to
 extend, you can use the Gogo shell's Service Component Runtime (SCR) commands to
 inspect it. You can execute SCR commands using
 [Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) or in
-[Gogo shell via telnet](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
-This tutorial assumes you're using the Gogo shell via telnet.
+[Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+This tutorial assumes you're using the Gogo shell.
 
 Execute the following command:
 
