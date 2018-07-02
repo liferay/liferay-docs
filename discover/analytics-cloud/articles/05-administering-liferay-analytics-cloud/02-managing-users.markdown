@@ -28,8 +28,6 @@ Analytics Cloud project.
 
 ![Figure 1: The invitation email looks like this, except your project number shows in place of the red rectangle.](../../images/invitation-email.png)
 
-Figure 1: The invitation email looks like this, except your project number shows in place of the red rectangle.
-
 You can set the user's permissions even as their invitation acceptance is
 pending. 
 

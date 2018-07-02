@@ -4,9 +4,6 @@ Analytics Cloud plans are limited by the total amount of Individuals and Pages V
 
 ![Figure 1: The Usage page reports when you're approaching or exceeding your plan limits.](../../images/current-usage.png)
 
-Figure 1: The Usage page reports when you're approaching or exceeding your plan
-limits. 
-
 The plans and add-ons are described on the right side of the page. 
 
 ## Plans [](id=plans)
