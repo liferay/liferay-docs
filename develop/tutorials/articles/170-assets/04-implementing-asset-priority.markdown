@@ -76,7 +76,7 @@ Sweet! Now you know how to enable priorities for your app's assets.
 
 ## Related Topics [](id=related-topics)
 
-[Adding, Updating, and Deleting Assets For Custom Entities](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets-for-custom-entities)
+[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
 
 [Implementing Asset Categorization and Tagging](/develop/tutorials/-/knowledge_base/7-1/implementing-asset-categorization-and-tagging)
 
