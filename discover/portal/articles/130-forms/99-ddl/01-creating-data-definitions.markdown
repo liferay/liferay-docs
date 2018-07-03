@@ -1,4 +1,4 @@
-# Creating Data Definitions
+# Creating Data Definitions [](id=creating-data-definitions)
 
 Follow these steps to create a data definition: 
 
@@ -67,7 +67,7 @@ Follow these steps to create a data definition:
     **NOTE:** When you nest fields, they will not appear when the list entries
     are displayed with the default display template. For more information about
     templates, see the documentation on 
-    [Using Templates to Display Forms and Lists](liferay.com).
+    [Using Templates to Display Forms and Lists](/discover/portal/-/knowledge_base/7-1/using-templates-to-display-forms-and-lists). 
 
     $$$
 

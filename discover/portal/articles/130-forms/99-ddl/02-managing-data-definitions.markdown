@@ -1,4 +1,4 @@
-# Managing Data Definitions
+# Managing Data Definitions [](id=managing-data-definitions)
 
 There are several things you can do to manage your data definitions. Of course, 
 you can edit a data definition, but you can also configure its permissions, 
@@ -25,14 +25,14 @@ for each definition. The following options are available:
 
 -   **Edit:** Edit the data definition. The edit screen uses the same form 
     that's used to 
-    [create data definitions](liferay.com). 
+    [create data definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions). 
     Note that if you edit a data definition that is referenced elsewhere (e.g., 
     by a dynamic data list or display template), then you'll need to update that 
     reference. 
 
 -   **Manage Templates:** Opens the *Manage Templates* screen, which lets you 
     create and manage templates for the data definition. For details, see the 
-    [documentation on templates](liferay.com). 
+    [documentation on templates](/discover/portal/-/knowledge_base/7-1/using-templates-to-display-forms-and-lists). 
 
 -   **Permissions:** Configure the data definition's permissions. Note that 
     these permissions are for an individual definition accessed through the 

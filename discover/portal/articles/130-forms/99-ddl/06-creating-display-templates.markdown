@@ -1,4 +1,4 @@
-# Creating Display Templates
+# Creating Display Templates [](id=creating-display-templates)
 
 For every data definition, you can create as many displays as you need. If 
 you've created a form template that doesn't show all the fields of a particular
@@ -22,7 +22,7 @@ display template and work off of it for your new display template.
 $$$
 
 As with 
-[form templates](liferay.com), 
+[form templates](/discover/portal/-/knowledge_base/7-1/creating-form-templates), 
 you can create display templates from the Dynamic Data Lists app in Site 
 Administration, or the Dynamic Data Lists Display widget. 
 
@@ -72,7 +72,7 @@ Alternatively, you can use the Dynamic Data Lists Display widget to create
 display templates: 
 
 1.  Follow the instructions in the 
-    [Creating Data Lists article](liferay.com) 
+    [Creating Data Lists article](/discover/portal/-/knowledge_base/7-1/creating-data-lists) 
     for adding and configuring the widget in a site page. Make sure to configure 
     the widget to show the list whose definition you want to create a template 
     for. 

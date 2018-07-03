@@ -1,4 +1,4 @@
-# Using Templates to Display Forms and Lists
+# Using Templates to Display Forms and Lists [](id=using-templates-to-display-forms-and-lists)
 
 After creating data definitions and lists, you can control how the form appears
 to your users, and how the resulting list of records is displayed. You do this
@@ -13,12 +13,12 @@ Data definitions can have as many form and display templates as you care to
 create (or none, if you're satisfied with the default templates). You then 
 choose a list's template in the Dynamic Data Lists Display widget. 
 
-## Managing Display and Form Templates
+## Managing Display and Form Templates [](id=managing-display-and-form-templates)
 
 Since Display and Form Templates correspond to a particular data definition, 
 they're accessed from the Data Definitions screen of the Dynamic Data Lists app 
 in Site Administration. See the 
-[Creating Data Definitions article](liferay.com) 
+[Creating Data Definitions article](/discover/portal/-/knowledge_base/7-1/creating-data-definitions) 
 for instructions on accessing this screen. 
 
 The Data Definitions screen lists each definition in a table. To start working 
