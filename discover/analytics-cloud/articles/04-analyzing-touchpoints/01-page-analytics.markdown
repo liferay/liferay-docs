@@ -1,25 +1,18 @@
 # Understanding Page Analytics [](id=understanding-page-analytics)
 
-How are your Site Pages performing? Do you know if visitors are abandoning
-your site when they hit a certain Page, or if one Page is constantly getting
-views, engaging users, and drawing visitors back to your site? 
+How are your Site Pages performing? Are visitors abandoning your site when they
+hit a certain Page? Is one Page constantly getting views, engaging users, and
+drawing visitors back to your site? 
 
-If you're familiar with page analytics in some other product, you'll be right at
-home in Analytics Cloud. 
+Liferay Analytics Cloud answers these questions.
 
-What are Pages in Liferay Analytics Cloud? Pages are:
+- Its server registers and tracks pages for analysis the first time a Page
+    interaction is detected by the Analytics Cloud client.
+- It queries pages on a schedule for up-to-date data.
+- It reports on pages with the metrics described in this article.
 
-- Pages on a website.
-- Registered and tracked by the Analytics Cloud server for analysis the first
-    time a Page interaction is detected by the Analytics Cloud client.
-- Queried on a schedule for up-to-date data.
-- Reported on in Analytics Cloud with the metrics and reports shown in this
-    article.
-
-Readers of this article want to understand their Pages' performance. They
-already have an understanding of what Analytics Cloud is and want to understand
-its Page metrics and how to interpret the data. They're ready to understand and
-act on their Pages' data.
+Continue reading for details on how to interpret Analytics Cloud data to better
+understand your pages' performance.
 
 ## Data Time Periods [](id=data-time-periods)
 
@@ -39,8 +32,7 @@ supported:
 ## Visitor Behavior [](id=visitor-behavior)
 
 The Overview tab of a Page's metrics has several data presentations.  The first
-chart, called Visitor Behavior, is paramount. It contains four important
-metrics:
+chart, called Visitor Behavior, contains four important metrics:
 
 - Average Engagement Score
 - Total Visitors
@@ -50,7 +42,7 @@ metrics:
 
 ![Figure 1: The Visitors Behavior chart contains interesting rend lines.](../../images/pages-visitors-behavior.png)
 
-Select the time period of the data displayed. There are always two trend lines
+Select the time period for the data displayed. There are always two trend lines
 displayed: Selected Period and Previous Period. This facilitates comparisons
 between time periods. 
 
@@ -108,8 +100,8 @@ visitors that accessed a Page in a given period of time.
 
 A unique visitor has a unique IP address <!--need more info on how unique
 visitors are calculated--> in Analytics cloud. Therefore, if the same human
-being hits the Page from a different device, it's logged as a unique
-visitor to the Page.
+being hits the Page from a different device, it's logged as two unique visitors
+to the Page.
 
 ### Metric: Page Views [](id=metric-page-views)
 
@@ -139,8 +131,8 @@ This metric is calculated like this for each 24 hour period:
 
     (view-1-time + view-2-time + ...) / total-number-views
 
-That concludes the Visitors Behavior chart, but there's more Page data to look
-at. Just scroll down a little bit.
+That concludes the Visitors Behavior chart, but see below for more Page
+data.
 
 ## Views by Segment [](id=views-by-segment)
 
@@ -172,7 +164,7 @@ breakdown of data.
 ![Figure 4: Which OS is most commonly being used to access the Page?](../../images/pages-views-os.png)
 
 Click *Web Browser* to see a donut chart displaying up to the top eight web
-browsers over the selected time period. If applicable, remaining web borwsers
+browsers over the selected time period. If applicable, remaining web browsers
 are aggregated in the ninth donut segment.
 
 ![Figure 5: Which browser should your page be optimized for?](../../images/pages-views-browser.png)
@@ -194,4 +186,4 @@ on:
 
 After all those fundamental metrics, you're really getting to know your Pages.
 But there's some interesting Page data you haven't seen. Discover how people
-came to teh Page in the first place. Learn about Path Analytics next.
+came to the Page in the first place. Learn about Path Analytics next.

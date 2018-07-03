@@ -30,7 +30,7 @@ important metrics:
 ### Submissions [](id=submissions)
 
 Submissions counts the number of times the Submit button was clicked on a Form.
-It's the gold standard metric for a form, because that''s why the form was
+It's the gold standard metric for a form, because that's why the form was
 created in the first place: to collect data entered into the form. If the Submit
 button isn't clicked, you don't get the data you were after.
 
@@ -83,21 +83,21 @@ Segments_.
 
 ## Submissions by Location [](id=submissions-by-location)
 
-View a bubble chart to compare the views by country over the selected period. Up
-to the top five countries are displayed, and the sixth bubble is an aggregation
-of the remaining countries.
+View a bubble chart comparing submissions by country over the selected period.
+Up to the top five countries are displayed, and the sixth bubble is an
+aggregation of the remaining countries.
 
 ![Figure 4: Which location interacts with the Asset most frequently?](../../images/assets-interaction-location.png)
 
 ## Submissions by Technology [](id=submissions-by-technology)
 
-View a stacked bar graph of the Page's views by operating system (grouped by
-device type) in the default tab.
+View a stacked bar graph of the Page's submissions by operating system (grouped
+by device type) in the default tab.
 
 ![Figure 5: What technologies are used to interact with the Asset?](../../images/assets-forms-sbt.png)
 
 Click *Web Browser* to see a donut chart displaying up to the top eight web
-browsers over the selected time period. If applicable, remaining web borwsers
+browsers over the selected time period. If applicable, remaining web browsers
 are aggregated in the ninth donut segment.
 
 ## Field Analysis [](id=field-analysis)
@@ -120,8 +120,8 @@ Field Analysis gives you these metrics on each form field:
 - The time spent interacting with the field (includes abandonments)
 
 - The refill percent for the field. Out of the total number that filled out the
-    field, this answers the question, "What percent had to edit or enter new
-    information into the field after moving on in the form. 
+    field, this answers the question, "What percentage had to edit or enter new
+    information into the field after moving on in the form?" 
 
 ![Figure 6: See how Form Users interact with the Form's fields.](../../images/assets-forms-fa.png)
 

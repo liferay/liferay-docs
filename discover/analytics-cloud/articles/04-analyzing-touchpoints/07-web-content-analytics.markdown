@@ -10,8 +10,8 @@ content.
 ## Visitor Behavior [](id=visitor-behavior)
 
 The Overview tab of an Asset's detail presents several data presentations. The
-first chart, called Visitor Behavior, is paramount. It contains one important
-metric: total Views.
+first chart, called Visitor Behavior, it contains one important metric: total
+Views.
 
 ![Figure 2: The Visitors Behavior chart contains important trend lines.](../../images/assets-wc-vb.png)
 
@@ -48,14 +48,14 @@ device type) in the default tab.
 ![Figure 5: What technologies are used to interact with the Asset?](../../images/assets-blogs-vbt.png)
 
 Click *Web Browser* to see a donut chart displaying up to the top eight web
-browsers over the selected time period. If applicable, remaining web borwsers
+browsers over the selected time period. If applicable, remaining web browsers
 are aggregated in the ninth donut segment.
 
 ## Asset Appears On [](id=asset-appears-on)
 
 The Asset Appears On table includes a Page Name and URL. Like any Page data in
 Analytics Cloud, only Pages that were interacted with in some way by site
-visitors are tracked and reported on.  It's important to note that the link
+visitors are tracked and reported.  It's important to note that the link
 doesn't take you to the actual Page with the Asset on it. Instead, it leads to
 the Page Analytics view of the Page. From there you can click the URL to the
 actual Page.

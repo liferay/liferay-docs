@@ -1,16 +1,15 @@
 # Introduction [](id=introduction)
 
-Combining traditional Page Analytics with Path Analytics and Asset Analytics is
+Combining traditional Page Analytics with Path and Asset Analytics is
 what sets Liferay Analytics Cloud apart from other analytics tools.
 
-A Liferay DXP site often features pages and content. Traditional Page Analytics
-like Views, Visitors, and Bounce Rate provide lots of good information about how
-site visitors are interacting with your site pages. Liferay Analytics offers
-that functionality, but provides a novel set of metrics for your site pages,
-Path Analytics, in additioon to traditional Page Analytics. In addition,
-several Liferay DXP Assets have even more fine-grained metrics to let you drill
-down deeper than the page level to determine how you can improve the performance
-of your site.
+Traditional Page Analytics, such as Views, Visitors, and Bounce Rate, provide
+lots of information about how visitors are interacting with your site's pages.
+Liferay Analytics offers that functionality, but also provides a novel set of
+metrics for your site pages in the form of Path Analytics. In addition, several
+Liferay DXP Assets have even more fine-grained metrics to let you drill deeper
+than the page level to determine how you can improve the performance of your
+site.
 
 ![Figure 1: Pages and Assets are important Touchpoints in Analytics Cloud.](../../images/pages-touchpoints-menu.png)
 
@@ -19,11 +18,9 @@ remaining articles explain their metrics.
 
 ## Viewing Page Data [](id=viewing-page-data)
 
-To view the list of Pages with summary data:
+1.  Find the Touchpoints section of the menu.
 
-1.  Find the Touchpints section of the menu.
-
-2.  Click *Pages*.
+2.  Click *Pages* to view the list of Pages with summary data.
 
 ![Figure 2: The Page list contains useful summary data.](../../images/pages-list.png)
 
@@ -60,16 +57,12 @@ selected in the time period filter. The following values are supported:
 
 To see this in action, select *Order* &rarr; *Visitors*. Keep the default
 descending order, and select *Last 90 days* from the time period menu. The list
-of Pages is  recalculated, and the first result is the Page with the most number
-of visitors in the last 90 days.
+of Pages is  recalculated, and the first result is the Page with the most 
+visitors in the last 90 days.
 
 ![Figure 3: Order the pages in ascending or descending order, over a selected time period.](../../images/pages-order.png)
 
-To View the data for one particular page:
-
-1.  From the list of pages, click any one to see a detailed view and metrics.
-
-2.  The default screen is called *Overview*.
+To view detailed metrics for a single page, click a page in the list. 
 
 ![Figure 4: Most Page metrics are available in the Overview tab.](../../images/pages-overview.png)
 
@@ -77,21 +70,18 @@ See the [article on Page Analytics](https://github.com/liferay/liferay-docs/blob
 
 ## Finding Asset Data [](id=finding-asset-data)
 
-To view the list of Assets with summary data:
-
 1.  Find the Touchpoints section of the menu.
 
-2.  Click *Assets*.
+2.  Click *Assets* to view a list of Assets with summary data.
 
 3.  Choose which Asset type you want to view: Blogs, Documents and Media, Forms,
     or Web content.
 
 Order Assets in ascending or descending order based on any one of the Asset's
 metrics. The specific metrics differ between Assets. See each Asset's
-documentation for more information. In addition, calculate the metrics over a
-selected time period.
-
-The following values are supported:
+documentation for more information. In addition, calculate the metrics over
+a selected time period by selecting one of the following values from the period
+menu:
 
 - Last 24 hours
 - Yesterday
@@ -137,20 +127,10 @@ Take 90 days for our example search for *symposium*. Now all Forms containing
 the word *symposium* are returned, in descending order of views *in the last 90
 days*.-->
 
-To view a single Asset:
-
-1.  Find the Touchpints section of the menu.
-
-2.  Click *Assets*.
-
-3.  Click the desired Asset type.
-
-4. Click an individual Asset from the list.
+Click on an Asset in the list to see more granular detail. Remember that there
+are separate lists for different Asset types.
 
 ![Figure 6: Once you find an Asset, click it to see its metrics.](../../images/assets-overview-blogs.png)
 
-Viewing and searching the list of Asset, with overview data displayed, is quite
-helpful. But what if you want to dive into a single Asset's metrics?
-
-Each Asset's metrics are covered in a separate article.
-
+More details on each Asset type's metrics are covered in the subsequent
+tutorials.
