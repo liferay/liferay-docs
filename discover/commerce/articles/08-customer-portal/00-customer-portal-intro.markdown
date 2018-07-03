@@ -1,18 +1,19 @@
 # Customer Portal [](id=customer-portal)
 
-The Beryl Customer Portal is a sample store that models a B2B scenario in which
-each buyer is provided with an account through which to conduct transactions.
-Beryl can be used simply as a sandbox to gain familiarity with @commerce@, but
-it can also give you a head start on setting up a fully functional store.
+The Beryl Customer Portal is a sample store that models a B2B scenario where
+each buyer has an account to conduct transactions. You can use Beryl as
+a sandbox to gain familiarity with @commerce@, but it's also a head start on
+setting up a fully functional store.
 
 Beryl gives you a working portal with an account management system, a sample
-catalog, and working pages for checkout, order processing and managing
+catalog, and working pages for checkout, order processing, and managing
 shipments. Other features, such as payment methods, shipping methods, and taxes,
-still need to be set up manually.
+must still be set up manually.
 
 ## Setting up Beryl [](id=setting-up-beryl)
 
-To use Beryl, you must create your store site via a site initializer. Follow these steps: 
+To use Beryl, you must create your store site via a site initializer. Follow
+these steps: 
 
 1.  Go to *Control Panel* &rarr; *Sites* &rarr; *Sites*.
 
