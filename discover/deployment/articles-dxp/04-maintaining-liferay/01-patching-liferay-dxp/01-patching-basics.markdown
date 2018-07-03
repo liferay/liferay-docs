@@ -36,7 +36,7 @@ updates---they're for customers starting new projects.
 
 Service packs can also include changes that have these characteristics:
 
-- Require extensive and over longer periods of time. 
+- Require more extensive testing. 
 - Require some of your attention, such as updating your documentation.
 - Improve the product. 
 
