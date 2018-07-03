@@ -1,4 +1,4 @@
-# General Settings
+# General Settings [](id=configuring-site-settings)
 
 General settings range from core configuration, like your Site's Membership
 Type, to finer details like Documents and Media indexing options.
@@ -9,7 +9,7 @@ Type, to finer details like Documents and Media indexing options.
 This allows an administrator to change the description and membership type of
 a Site.
 
-### Membership Options
+### Membership Options [](id=membership-options)
 
 The membership type can be set as open, restricted, or private based on the
 privacy needs of the Site. Users can join and leave an open Site at will. To
@@ -18,20 +18,20 @@ can request membership through the Sites section of the Control Panel.
 A private Site works like a restricted Site but is hidden from users who aren't
 members.
 
-### Site Hierarchies
+### Site Hierarchies [](id=site-hierarchies)
 
 Sites can be organized into hierarchies. At the bottom of the Details
 sub-section is the Parent Site section. When you select the parent Site for the
 Site you're currently on, a checkbox appears for limiting membership to members
 of the parent Site.
 
-## Pages
+## Pages [](id=pages)
 
 Under Pages you can view your Site's Public or Private Pates, if any exist. If
 they don't exist, a *Site Templates* selector appears for creating pages with
 a Site Template.
 
-![Figure X: Selecting a Site Template.](../../../../images/selecting-site-template.png)
+![Figure 1: Selecting a Site Template.](../../../../images/selecting-site-template.png)
 
 ## Categorization [](id=categorization)
 
@@ -63,11 +63,12 @@ should update your instance's Home URL field so that page requests to
 Once you've entered this setting, page requests to `localhost:8080` redirect
 to the friendly URL of your Liferay instance's new home page.
 
-The other setting you can configure under the Site URL tab is *Virtual Hosts* 
-which connects a domain name to a Site. You can use this to define a domain 
-name (i.e., `www.lunar-resort.com`) for your Site. This can be a full domain or a 
+You can also configure Virtual Hosts, which connects a domain name to a Site, under *Site URL*. You can use this to define a domain name (i.e., 
+`www.lunar-resort.com`) for your Site. This can be a full domain or a 
 subdomain. You can use this to host a number of web sites as separate Sites on 
 one Liferay server.
+
+![Figure 2: When configuring virtual hosts, the public and private pages of a site can be configured to different domains.](../../../../images/settting-virtual-hosts.png)
 
 For instance, if you set this up for the Lunar Resort's development network,
 users in that Site would access `developers.lunar-resort.com`,

@@ -1,4 +1,4 @@
-# Social Settings and Languages
+# Social Settings and Languages [](id=social-settings-and-languages)
 
 The Social tab provides options for managing the social interactions on your
 Site. Languages lets you configure language options and change the default
@@ -27,6 +27,6 @@ The *Languages* tab lets you configure the language options for your Site. You
 can use the default language or define another supported language as the default
 for your Site. 
 
-![Figure X: Setting up Google Analytics for your Site is very easy: sign up for Google Analytics, receive an ID, and then enter it into the Google Analytics ID field.](../../../../images/site-language.png)
+![Figure 1: Setting up Google Analytics for your Site is very easy: sign up for Google Analytics, receive an ID, and then enter it into the Google Analytics ID field.](../../../../images/site-language.png)
 
 Now that you know how to configure Sites, you're ready for the advanced settings.

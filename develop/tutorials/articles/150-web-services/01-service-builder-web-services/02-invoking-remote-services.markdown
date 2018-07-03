@@ -1,4 +1,4 @@
-# Invoking Remote Services
+# Invoking Remote Services [](id=invoking-remote-services)
 
 You can invoke the remote services of any installed Liferay application the same
 way you invoke your local services. Doing so could be described as "invoking
@@ -25,7 +25,7 @@ a JSON API and via SOAP. By default, running Service Builder with
 API for your project. You can access your project's JSON-based RESTful services
 through a convenient web interface. 
 
-## Invoking Liferay Services Remotely
+## Invoking Liferay Services Remotely [](id=invoking-liferay-services-remotely)
 
 Many default Liferay services are available as web services. Liferay exposes its
 web services via SOAP and JSON web services. If you're running Liferay locally
@@ -110,7 +110,7 @@ tutorial.
 For more information on Liferay services, see the Liferay Portal CE Javadocs at
 [@platform-ref@/7.0-latest/javadocs/](@platform-ref@/7.1-latest/javadocs/).
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/invoking-json-web-services)
 

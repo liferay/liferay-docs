@@ -63,7 +63,7 @@ section for information on backing up Liferay.
 
 $$$
 
-## Page Export Example
+## Page Export Example [](id=page-export-example)
 
 Here's how the export process works: 
 
@@ -104,7 +104,7 @@ Site, you can import this file by clicking the *Import* button from the
 Publishing menu, browsing to it, and selecting it. You can also drag a LAR file
 inside the dotted area, which also executes the import process.
 
-## Export Templates
+## Export Templates [](id=export-templates)
 
 Instead of manually customizing an export process every time you export
 pages/content, you can use an Export Template. This provides you the

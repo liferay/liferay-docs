@@ -1,4 +1,4 @@
-# Advanced Page Set Options
+# Advanced Page Set Options [](id=advanced-page-set-options)
 
 There are some powerful options that should only be used by those with a firm
 command of the technology, or they could have major unintended side effects. You
