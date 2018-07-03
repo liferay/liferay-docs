@@ -2,7 +2,7 @@
 
 Once you have an application registered, you can start authorizing users. To do
 that, you must construct the URL to the authorization server (@product@). The
-authorization server prompts users to authorize the requested permissions to their
+authorization server asks users to authorize the requested permissions to their
 resources, defined as you saw in the previous tutorial as scopes. 
 
 ## Authorization Code Flow [](id=authorization-code-flow)
