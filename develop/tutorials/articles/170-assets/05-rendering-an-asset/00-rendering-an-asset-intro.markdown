@@ -2,7 +2,7 @@
 
 Before you create a way to render your asset, make sure it's added to the asset
 framework by following the
-[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets-for-custom-entities)
+[[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
 tutorial. Once you add your asset to the framework, you can render the asset
 using the Asset Publisher application. The default render, however, only
 displays the asset's title and description text. Anything else requires
