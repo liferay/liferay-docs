@@ -8,11 +8,11 @@ Liferay ships @product-ver@ fixes through three different channels:
 
 ## Fix Packs [](id=fix-packs)
 
-The latest low-risk fixes that patch the core are bundled together weekly into
-fix packs that are provided to all of Liferay's customers. Fix packs include
-fixes for both the core and the applications and modules that ship with
-@product@. The fixes address regressions or obvious bugs, and are low risk and
-don't require you to make additional changes. 
+The latest fixes that patch the core are bundled together weekly into fix packs
+that are provided to all of Liferay's customers. Fix packs include fixes for
+both the core and the applications and modules that ship with @product@. The
+fixes address regressions or obvious bugs and don't require you to make
+additional changes. 
 
 Fixes that don't fit these requirements are considered for service packs or hot
 fixes. 
@@ -36,14 +36,13 @@ updates---they're for customers starting new projects.
 
 Service packs can also include changes that have these characteristics:
 
-- Higher risk. To mitigate risk, the changes are tested more extensively and 
-over longer periods of time. 
+- Require extensive and over longer periods of time. 
 - Require some of your attention, such as updating your documentation.
 - Improve the product. 
 
 Rather than updating existing @product@ systems with service packs, you should
 
-1.  Keep systems up-to-date with fix packs (according to your own deployment    
+1.  Keep systems up-to-date with fix packs (according to your own deployment
     schedule).
 
 2.  Install the latest Marketplace updates frequently.
@@ -58,7 +57,7 @@ scheduled deployments and avoiding full environment rebuilds.
 Liferay extensively tests service packs, fix packs, and hotfixes to ensure high
 quality. Fixes in fix packs go through both automated regression testing and
 manual testing. Hotfixes receive similar automated testing, and the support
-engineer who fixes a reported issue tests it.  
+engineer who fixes a reported issue tests it. 
 
 Before releasing a service pack, Liferay runs test suites on the packaged
 service pack. 
