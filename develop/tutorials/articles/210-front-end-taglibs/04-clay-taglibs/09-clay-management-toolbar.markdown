@@ -9,26 +9,47 @@ requires.
 
 ![Figure 1: The Management ToolBar lets the user customize how the app displays content.](../../../images/clay-taglib-management-toolbar.png)
 
-To create the Management Toolbar, use the `clay:management-toolbar` taglib. The 
+To create a management toolbar, use the `clay:management-toolbar` taglib. The 
 toolbar contains a few key sections. Each section is grouped and configured
-using different attributes. These attributes are described in more detail
-below. 
+using different attributes. These attributes are described in more detail below. 
+
+## Using a Display Context to Configure the Management Toolbar [](id=using-a-display-context-to-configure-the-management-toolbar)
+
+If you're using a Display Context---a separate class to configure your display 
+options for your management toolbar---to define all or some of the configuration 
+options for the toolbar, you can specify the Display Context with the 
+`displayContext` attribute. An example is shown below:
+
+    <clay:management-toolbar 
+        displayContext="<%= viewUADEntitiesManagementToolbarDisplayContext %>" 
+    />
+
+You can see an example use case of a Display Context in the 
+[Filtering and Sorting Items with the Management Toolbar  tutorial](/develop/tutorials/-/knowledge_base/7-1/filtering-and-sorting-items-with-the-management-toolbar). 
+A Display Context is not required for a management toolbar's configuration. You 
+can provide as much or as little of the configuration options for your 
+management toolbar through the Display Context as you like.  
 
 ## Checkbox and Actions [](id=checkbox-and-actions)
 
-The `actionItems`, `searchContainerId`, and `selectable` attributes let you 
-include a checkbox in the toolbar to select all search container results and run 
-bulk actions on them. Actions display when either an individual result is 
-checked, or when the master checkbox is checked in the toolbar. 
+The `actionItems`, `searchContainerId`, `selectable`, and `totalItems` 
+attributes let you include a checkbox in the toolbar to select all search 
+container results and run bulk actions on them. Actions and total items display 
+when an individual result is checked, or when the master checkbox is checked in 
+the toolbar. 
 
 `actionItems`: The list of dropdown items to display when a result is checked or 
-the master checkbox in the management toolbar is checked. You can select 
-multiple results between pages. The management toolbar keeps track of the number 
+the master checkbox in the Management Toolbar is checked. You can select 
+multiple results between pages. The Management Toolbar keeps track of the number 
 of selected results for you.
 
-`searchContainerId`: The ID of the search container connected to the management toolbar 
+`searchContainerId`: The ID of the search container connected to the Management 
+Toolbar 
 
-`selectable`: Whether to include a checkbox in the management toolbar
+`selectable`: Whether to include a checkbox in the Management Toolbar
+
+`totalItems`: The total number of items across pagination. This number displays 
+when one or multiple items are selected. 
 
 An example configuration is shown below:
 
@@ -60,14 +81,15 @@ An example configuration is shown below:
         }
     %>"
 
-Action items are listed in the Actions menu.
+Action items are listed in the Actions menu, along with the number of items 
+selected across pagination. 
 
-![Figure 2: Actions are also listed in the management toolbar's dropdown menu when an item, multiple items, or the master checkbox is checked.](../../../images/clay-taglib-management-toolbar-actions.png)
+![Figure 2: Actions are also listed in the Management Toolbar's dropdown menu when an item, multiple items, or the master checkbox is checked.](../../../images/clay-taglib-management-toolbar-actions.png)
 
 If an action has an icon specified, such as the Delete and Download actions in 
 the example above, the icon is displayed next to the action menu as well. 
 
-![Figure 3: The management toolbar keeps track of the results selected and displays the actions to execute on them.](../../../images/clay-taglib-management-toolbar-selectable.png)
+![Figure 3: The Management Toolbar keeps track of the results selected and displays the actions to execute on them.](../../../images/clay-taglib-management-toolbar-selectable.png)
 
 ## Filtering and Sorting Search Results [](id=filtering-and-sorting-search-results)
 
@@ -141,7 +163,7 @@ The example below adds two filter options and two sorting options:
 
 The `clearResultsURL`, `searchActionURL`, `searchFormName`, `searchInputName`, 
 and `searchValue` attributes let you configure the search form. The main portion 
-of the management toolbar is reserved for the search form.
+of the Management Toolbar is reserved for the search form.
 
 `clearResultsURL`: The URL to reset the search
 
@@ -167,7 +189,7 @@ An example configuration is shown below:
         totalItems="<%= totalItems %>"
     />
 
-![Figure 5: The search form comprises most of the management toolbar, letting users search through the search container results.](../../../images/clay-taglib-management-toolbar-search-form.png)
+![Figure 5: The search form comprises most of the Management Toolbar, letting users search through the search container results.](../../../images/clay-taglib-management-toolbar-search-form.png)
 
 ## Info Panel [](id=info-panel)
 
@@ -179,17 +201,15 @@ result.
 
 `showInfoButton`: Whether to show the info button
 
-An example configuration is shown below:
+In the example configuration below, the `showInfoButton` attribute is provided 
+in the Display Context---specified with the `displayContext` attribute---and the 
+`infoPanelId` is explicitly set in the JSP:
 
     <clay:management-toolbar
-        disabled="<%= journalDisplayContext.isDisabledManagementBar() %>"
+        displayContext="<%= journalDisplayContext %>"
         infoPanelId="infoPanelId"
         namespace="<%= renderResponse.getNamespace() %>"
         searchContainerId="<=% searchContainerId %>"
-        selectable='<%= !user.isDefaultUser() && 
-        journalDisplayContext.isShowEditActions() && 
-        !Objects.equals(journalDisplayContext.getTabs1(), "versions") %>'
-        showInfoButton="<%= journalDisplayContext.isShowInfoPanel() %>"
     />
 
 ![Figure 6: The info panel keeps your UI clutter-free.](../../../images/clay-taglib-management-toolbar-info-panel.png)
@@ -197,8 +217,7 @@ An example configuration is shown below:
 ## View Types [](id=view-types)
 
 The `viewTypes` attribute specifies the display options for the search container 
-results. There are three display options to choose from, but only one must 
-be implemented:
+results. There are three display options to choose from:
 
 **Cards:** Displays search result columns on a horizontal or vertical card. 
 
@@ -237,6 +256,10 @@ An example configuration is shown below:
             }
         }
     %>"
+
+While the example above shows how to configure the view types in the JSP, you 
+must also 
+[specify when to use each view type](/develop/tutorials/-/knowledge_base/7-1/implementing-the-view-types).
 
 ![Figure 10: The Management Toolbar offers three view type options.](../../../images/clay-taglib-management-toolbar-view-types.png)
 
@@ -282,7 +305,7 @@ secondary creation menu items:
       	};
     %>"
 
-![Figure 11: The management toolbar lets you optionally add a Creation Menu for creating new entities.](../../../images/clay-taglib-management-toolbar-creation-menu.png)
+![Figure 11: The Management Toolbar lets you optionally add a Creation Menu for creating new entities.](../../../images/clay-taglib-management-toolbar-creation-menu.png)
 
 ## Related Topics [](id=related-topics)
 

@@ -635,12 +635,15 @@ counter-intuitive.
 
 ### Updated Liferay Portal's Portlet API Implementation [](id=updated-liferay-portals-portlet-api-implementation)
 - **Date:** 2018-May-10
-- **JIRA Ticket:** LPS-73282
+- **JIRA Ticket:** [LPS-73282](https://issues.liferay.com/browse/LPS-73282)
 
 #### What changed? [](id=what-changed-13)
 
-Liferay Portal 7.1 implements the Portlet 3.0 API. Previous versions implemented
-the Portlet 2.0 API.
+Liferay Portal 7.1 CE GA1 provides the Portlet 3.0 API dependency in the runtime
+classpath. Previous versions provided the Portlet 2.0 API.
+
+Full support for Portlet 3.0 will not be available until Liferay Portal 7.1 CE
+GA2 is released.
 
 #### Who is affected? [](id=who-is-affected-13)
 
@@ -649,74 +652,254 @@ versions of Liferay Portal.
 
 #### How should I update my code? [](id=how-should-i-update-my-code-13)
 
-There are four specific development use-cases:
+There are three development use-cases to plan for:
 
-1. Portlets that were developed as `.jar` (not `.war`) portlet modules using
-   `@Component`. These portlets must upgrade from the `portlet-api-2.0`
-   dependency to the `portlet-api-3.0.1` dependency. In most cases, there are
-   zero code changes required.
+##### JSP Considerations [](id=jsp-considerations)
 
-2. JSPs that use `portlet:defineObjects` will encounter JSP compilation problems
-   if they have created reference variables with the following names in Java
-   scriptlets:
+Portlet 3.0 is a binary-backward-compatible upgrade. This means that Java source
+that was built against `portlet-api-2.0.0.jar` is compatible at runtime. Since
+JSP files are typically not compiled until the first request, however, they do
+not fall under the category of pre-compiled source.
 
-    - `actionParams`
-    - `clientDataRequest`
-    - `cookies`
-    - `contextPath`
-    - `locale`
-    - `locales`
-    - `mutableRenderParams`
-    - `namespace`
-    - `portletContext`
-    - `portletMode`
-    - `portletRequest`
-    - `portletResponse`
-    - `resourceParams`
-    - `windowId`
-    - `windowState`
-    - `stateAwareResponse`
+Specifically, if a JSP contains a Java scriptlet that calls
+[`MimeResponse.createActionURL()`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/MimeResponse.html#createActionURL())
+and
+[`MimeResponse.createRenderURL()`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/MimeResponse.html#createRenderURL()),
+then there is a possibility that the JSP will fail to compile or throw a
+`ClassCastException` at runtime. This is because the return type of these
+methods has changed.
 
-    For example, JSP scriptlets like the following ones had to be removed from
-    several of Liferay's out-of-the-box portlets' `view.jsp`:
+For example, a Liferay Portal sample portlet's `view.jsp` had to be changed
+from
 
-          <%=
-          PortletRequest portletRequest = (PortletRequest)request.getAttribute(JavaConstants.JAVAX_PORTLET_REQUEST);
+    <aui:form action="<%= renderResponse.createActionURL() %>" method="post" name="fm">
 
-          PortletResponse portletResponse = (PortletResponse)request.getAttribute(JavaConstants.JAVAX_PORTLET_RESPONSE);
+to
 
-          String namespace = AUIUtil.getNamespace(portletRequest, portletResponse);
+    <aui:form action="<%= (PortletURL)renderResponse.createActionURL() %>" method="post" name="fm">
 
-          if (Validator.isNull(namespace)) {
-              namespace = AUIUtil.getNamespace(request);
-          }
-          %>
+##### Upgrade Considerations [](id=upgrade-considerations)
 
-3. The return values of
-   [`MimeResponse.createActionURL()`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/MimeResponse.html#createActionURL())
-   and
-   [`MimeResponse.createRenderURL()`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/MimeResponse.html#createRenderURL())
-   have changed. Although this is a binary-runtime-compatible type of change, it
-   can possibly cause compilation failures or `ClassCastException`s to be thrown
-   during request/response processing.
+To take advantage of new features in Portlet 3.0, you must rebuild portlet
+projects against the `portlet-api-3.0.0.jar` dependency and *opt-in* by
+specifying version 3.0 in one of two ways:
 
-    For example, a Liferay Portal sample portlet's `view.jsp` had to be changed
-    from:
+1. Add the following tag in your portlet's `portlet.xml` file:
 
-        <aui:form action="<%= renderResponse.createActionURL() %>" method="post" name="fm">
+        <portlet-app version="3.0">
 
-    to:
+2. Add the following property in your portlet's `@Component` tag:
 
-        <aui:form action="<%= (PortletURL)renderResponse.createActionURL() %>" method="post" name="fm">
+        @Component(
+            property = {
+                "javax.portlet.version=3.0"
+            },
+            service = Portlet.class
+        )
 
-4. JSF Portlets must be upgraded to the latest version of Liferay Faces Bridge,
-   which is planned for release in Q4, 2018. Download and upgrade instructions
-   will be made available at
-   [https://www.liferayfaces.org](https://www.liferayfaces.org) at that time.
+In addition, you must opt-in to new JSP features by specifying the Portlet 3.0
+tag library in your JSP views. For example,
+
+    <%@ taglib uri="http://xmlns.jcp.org/portlet_3_0" prefix="portlet" %>
+
+JSPs that opt-in with the new tag library may encounter JSP compilation problems
+related to the `<portlet:defineObjects>` tag. Specifically, if JSPs reference
+variables with the following names in Java scriptlets, then a JSP compilation
+will occur:
+
+- `actionParams`
+- `clientDataRequest`
+- `cookies`
+- `contextPath`
+- `locale`
+- `locales`
+- `mutableRenderParams`
+- `namespace`
+- `portletContext`
+- `portletMode`
+- `portletRequest`
+- `portletResponse`
+- `resourceParams`
+- `windowId`
+- `windowState`
+- `stateAwareResponse`
+
+With the Portlet API 3.0 implementation, these variables are already added to
+this context by default, so attempting to initialize them in the JSP would
+duplicate them. Therefore, your JSP scriptlets adding them should be removed.
+
+For example, JSP scriptlets like the following had to be removed from
+several of Liferay Portal's out-of-the-box portlets' `view.jsp`:
+
+    <%=
+    PortletRequest portletRequest = (PortletRequest)request.getAttribute(JavaConstants.JAVAX_PORTLET_REQUEST);
+
+    PortletResponse portletResponse = (PortletResponse)request.getAttribute(JavaConstants.JAVAX_PORTLET_RESPONSE);
+
+    String namespace = AUIUtil.getNamespace(portletRequest, portletResponse);
+
+    if (Validator.isNull(namespace)) {
+        namespace = AUIUtil.getNamespace(request);
+    }
+    %>
 
 #### Why was this change made? [](id=why-was-this-change-made-13)
 
 This change provides the latest features offered by the Portlet 3.0
 Specification, which was released in early 2017.
+
+---------------------------------------
+
+### Changed the Dependency for the liferay-util:html-top JSP tag [](id=changed-the-dependency-for-the-liferay-utilhtml-top-jsp-tag)
+- **Date:** 2018-Jun-07
+- **JIRA Ticket:** [LPS-81983](https://issues.liferay.com/browse/LPS-81983)
+
+#### What changed? [](id=what-changed-14)
+
+The usage of `portal-kernel`'s `StringBundler` has been deprecated in favor of
+Liferay's Petra `StringBundler`.
+
+#### Who is affected? [](id=who-is-affected-14)
+
+This affects anyone using the `<liferay-util:html-top>` JSP tag.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-14)
+
+You must add the following dependency in your build file for your JSPs to
+compile successfully:
+
+**build.gradle**:
+
+    dependencies {
+        ...
+        compileOnly group: "com.liferay", name: "com.liferay.petra.string", version: "1.2.0"
+        ...
+    }
+
+**pom.xml**:
+
+    <dependency>
+        <groupId>com.liferay</groupId>
+        <artifactId>com.liferay.petra.string</artifactId>
+        <version>1.2.0</version>
+        <scope>provided</scope>
+    </dependency>
+
+#### Why was this change made? [](id=why-was-this-change-made-14)
+
+This change helps stabilize the foundation of Liferay Portal's utilities.
+
+---------------------------------------
+
+### Decoupled Several Classes from PortletURLImpl [](id=decoupled-several-classes-from-portleturlimpl)
+- **Date:** 2018-Jun-08
+- **JIRA Ticket:** [LPS-82119](https://issues.liferay.com/browse/LPS-82119)
+
+#### What changed? [](id=what-changed-15)
+
+All classes implementing `javax.portlet.BaseURL` have had their inheritance
+hierarchy change. These classes include
+
+- `PortletURLImplWrapper`
+- `LiferayStrutsPortletURLImpl`
+- `StrutsActionPortletURL`
+
+#### Who is affected? [](id=who-is-affected-15)
+
+This affects code that attempts to subclass or create a new instance of the
+classes listed previously.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-15)
+
+You must refactor the constructors of your affected classes to receive
+`com.liferay.portal.kernel.portlet.LiferayPortletResponse` instead of
+`com.liferay.portlet.PortletResponseImpl`.
+
+In addition, their class hierarchies must be changed. For example, the
+`com.liferay.portal.struts.StrutsActionPortletURL` class hierarchy was changed
+from
+
+- `com.liferay.portlet.PortletURLImpl`
+    - `com.liferay.portlet.PortletURLImplWrapper`
+        - `com.liferay.portal.struts.StrutsActionPortletURL`
+
+to
+
+- `javax.portlet.filter.RenderStateWrapper`
+    - `javax.portlet.filter.BaseURLWrapper`
+        - `javax.portlet.filter.PortletURLWrapper`
+            - `com.liferay.portal.kernel.portlet.LiferayPortletURLWrapper`
+                - `com.liferay.portlet.PortletURLImplWrapper`
+                    - `com.liferay.portal.struts.StrutsActionPortletURL`
+
+#### Why was this change made? [](id=why-was-this-change-made-15)
+
+This change corrects a best practice violation regarding
+implementation-specific details being included within an API.
+
+---------------------------------------
+
+### Changed the Request Object in Web Content Templates [](id=changed-the-request-object-in-web-content-templates)
+- **Date:** 2018-Jun-12
+- **JIRA Ticket:** LPS-77766
+
+#### What changed? [](id=what-changed-16)
+
+The request object is no longer accessible as a map, but rather, as an object of
+type `javax.servlet.http.HttpServletRequest`.
+
+#### Who is affected? [](id=who-is-affected-16)
+
+This affects users with Web Content templates that access request parameters
+as a map like this:
+
+    <#assign containerId = request["theme-display"]["portlet-display"]["instance-id"] >
+
+#### How should I update my code? [](id=how-should-i-update-my-code-16)
+
+To keep retrieving the request parameter values as a map, `requestMap` must be
+used instead:
+
+    <#assign containerId = requestMap["theme-display"]["portlet-display"]["instance-id"] >
+
+#### Why was this change made? [](id=why-was-this-change-made-16)
+
+This was done to allow template context contributors to work in Web Content
+templates.
+
+---------------------------------------
+
+### Disabled Access to Gogo Shell Using Telnet [](id=disabled-access-to-gogo-shell-using-telnet)
+- **Date:** 2018-Jun-25
+- **JIRA Ticket:** [LPS-82849](https://issues.liferay.com/browse/LPS-82849)
+
+#### What changed? [](id=what-changed-17)
+
+The ability to access and interact with Liferay Portal's OSGi framework using
+the Gogo shell via your system's telnet client has been disabled.
+
+#### Who is affected? [](id=who-is-affected-17)
+
+This affects anyone who used their system's telnet client to access the Gogo
+shell, or leveraged the Gogo shell in external plugins/tooling using the telnet
+client.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-17)
+
+Liferay Portal now offers the Gogo Shell portlet, which you can access in the
+Control Panel &rarr; *Configuration* &rarr; *Gogo Shell*.
+
+If you prefer using your telnet client to access the Gogo shell, you must enable
+Developer Mode. You can do this by creating a `portal-ext.properties` file in
+your Liferay home folder and adding the following property:
+
+    include-and-override=portal-developer.properties
+
+Developer Mode is enabled upon starting your app server.
+
+#### Why was this change made? [](id=why-was-this-change-made-17)
+
+This was done to strengthen Liferay Portal's security due to potential XXE/SSRF
+vulnerabilities.
 
 ---------------------------------------

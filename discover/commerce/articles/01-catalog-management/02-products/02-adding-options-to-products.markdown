@@ -1,15 +1,15 @@
-# Adding Options to Products [](id=assigning-options-to-products)
+# Adding Options to Products [](id=adding-options-to-products)
 
 **An option** is a product feature that a buyer can select or specify. To create
 an option and apply it to a product, you must first create an 
-[option template](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options). 
+[option template](/web/liferay-emporio/documentation/-/knowledge_base/1-0/options). 
 Then you can apply that template to any product in your catalog.
 
 Once you apply a template to a product, you can make any changes to the
 product's option that you want. These changes will not affect the option
 template or any other product.
 
-## Applying an Option Template to a Product [](id=assigning-an-option-template-to-a-product)
+## Applying an Option Template to a Product [](id=applying-an-option-template-to-a-product)
 
 To assign an option template to a product, follow these steps:
 
@@ -18,7 +18,7 @@ To assign an option template to a product, follow these steps:
 2.  Click on the ![Add](../../../images/icon-add.png) button and select option
     templates from the pop-up. Click *Add* to close the pop-up.
 
-## Editing an Option Template [](id=editing-an-option-template-at-the-product-scope)
+## Editing an Option Template [](id=editing-an-option-template)
 
 Once an option template has been applied to a product, you can make changes to
 the option that only affect that product. Follow these steps:
@@ -36,7 +36,7 @@ the option that only affect that product. Follow these steps:
     indicates where on a page the option is displayed---lower numbers come
     first.
 
-## Editing Option Values [](id=creating-option-values-at-the-product-scope)
+## Editing Option Values [](id=creating-option-values)
 
 After an option template has been applied to a product, you can edit and delete
 its option values or add new ones. These changes will not affect the template or
