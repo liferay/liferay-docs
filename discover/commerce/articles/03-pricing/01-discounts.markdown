@@ -1,68 +1,63 @@
 # Discounts
 
-A discount applies a modifier to a product's base price. It can be expressed as
-either an absolute number or as a percentage, and can be applied to either
-a limited number of products or to the entire catalog. It can be available
-either to all buyers or to a defined 
+A discount applies a modifier to a product's base price. It can be an absolute
+number or a percentage, and can be applied to a limited number of products or to
+the entire catalog. It can be available to all buyers or to a defined 
 [user segment](web/liferay-emporio/documentation/-/knowledge_base/1-0/user-segmentation),
-or to an even more narrowly defined group of customers that meet certain
-qualifications. Unlike a price list, a discount always reduces the base price
-and never increases it.
+or to a more narrowly defined group of customers that meet certain
+qualifications. Unlike a price list, a discount always *reduces* the base price.
 
 ## Creating a Discount
 
-Follow these steps:
-
 1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Discounts* and click on the
-    ![Add](../../images/icon-add.png) button at the top right. This displays the
-    *Add Discount* form.
+    ![Add](../../images/icon-add.png) button at the top right.
 
 2.  Fill out the *Add Discount* Form (see below) then click *Publish*.
 
-3.  If you chose *Apply to Products* as the discount's target (see the *Add
-    Discount* form below), an additional tab, *Products* is displayed at the top
-    of the page. Click on it and then click the ![Add](../../images/icon-add.png)
-    at the top right. Check the box next to the products you want and click
-    *Add*.
+    Discounts have targets: 
 
-4.  If you chose *Apply to Categories* as the discount's target, a *Categories*
-    tab is displayed at the top of the page. Click on it and then click
-    *Select*. Click on any number of categories and click *Done*. Then click
-    *Save*.
+3.  If you chose *Apply to Products* (see the *Add Discount* form below),
+    a *Products* tab appears. Click it and then click the
+    ![Add](../../images/icon-add.png). Check
+    the box next to the products you want and click *Add*.
+
+4.  If you chose *Apply to Categories*, a *Categories* tab appears. Click it and
+    then click *Select*. Choose any number of categories and click *Done*. Then
+    click *Save*.
 
 ## Adding Rules to a Discount
 
-You can create rules that limit the conditions under which a buyer can take
-advantage of the discount. There are six types of rules:
+You can create rules that limit the buyer's discount conditions. There are six
+types of rules:
 
-**cart-total**: A buyer will only be able to benefit from the discount if his
-order contains products worth a specified amount.
+**cart-total**: Buyers can benefit from the discount if their orders contain
+products worth a specified amount.
 
-**purchased-all**: Only buyers who have already purchased specified products
-will be able to benefit from the discount.
+**purchased-all**: Buyers whose past purchases include specified products can
+benefit from the discount.
 
-**had-purchased-one-of-these-products**: Only buyers who have already purchased
-at least one of a number of specified products will be able to benefit.
+**had-purchased-one-of-these-products**: Buyers whose past purchases include at
+least one from a list of specified products can benefit.
 
-**had-spent-amount**: Only buyers who have already spent a specified minimum
-amount will be able to benefit.
+**had-spent-amount**: Buyers who have already spent a specified minimum amount
+can benefit.
 
-**has-all-of-these-products**: A buyer will only be able to benefit if his order
-includes all of a number of specified products.
+**has-all-of-these-products**: Buyers can benefit if their orders include all
+from a list of specified products.
 
-**has-one-of-these-products**: A buyer will only benefit if his order contains
-at least one of a number of specified products.
+**has-one-of-these-products**: Buyers can benefit if their orders contain at
+least one from a list of specified products.
 
 Follow these steps:
 
-1.  Create a discount or click on an existing one at *Site Menu* &rarr;
-    *Commerce* &rarr; *Discounts.
+1.  Create a discount or choose an existing one at *Site Menu* &rarr; *Commerce*
+    &rarr; *Discounts*.
 
-2.  Click on the *Rules* tab and select one of the above types from the
+2.  Click the *Rules* tab and select one of the above types from the
     drop-down menu.
 
-3.  If you chose either the *cart-total* or the *had-spent-amount* type, enter
-    an amount in the field that appears.
+3.  If you chose the *cart-total* or the *had-spent-amount* type, enter an
+    amount in the field that appears.
 
     If you chose any other type, click the *Select* button and check the box
     next to each appropriate product. Click *Add*.
@@ -95,29 +90,27 @@ discount, click *Select* and choose a segment or segments. See
 for details.
 
 **Coupon Code**: Set the toggle to *Yes* and enter text in the field that
-appears. Customers will be required to enter that text to take advantage of the
-discount.
+appears. Customers must enter that text to take advantage of the discount.
 
 **Use Percentage**: Set the toggle to *Yes* to express the discount amount as
 a percentage off the list price. Set it to *No* to enter a set amount.
 
 **Maximum Discount Amount**: Set the maximum amount by which a product or order
-will be discounted. If this field is left a zero, no discount will be applied.
-This field only appears when the *Use Percentage* toggle is enabled.
+can be discounted. If this field is left at zero, no discount is applied. This
+field only appears when the *Use Percentage* toggle is enabled.
 
-**Level 1**: Set the percentage that will be discounted from the product or
-order. Hit the *Add* button next to the field to create a discount series up to
-three levels deep. This field also only appears when the *Use Percentage* toggle
-is enabled.
+**Level 1**: Set the order discount percentage. Hit the *Add* button next to the
+field to create a discount series up to three levels deep. This field only
+appears when the *Use Percentage* toggle is enabled.
 
-**Discount Amount**: Set the amount that will be taken off of each discounted
+**Discount Amount**: Set the currency amount reduced from each discounted
 product or order. This field only appears when the *Use Percentage* toggle is
 disabled.
 
-**Limitation Type**: Choose whether to limit the number of times buyers can take
-advantage of the discount. Choose *Limited* to set a hard limit on how many
-times the discount will be applied. Choose *Limited For Users** to limit the
-number of times an individual buyer can benefit.
+**Limitation Type**: Choose the number of times buyers can use the discount.
+Choose *Limited* to set a hard limit on how many times the discount can be
+applied. Choose *Limited For Users** to limit the number of times an individual
+buyer can benefit.
 
 **Limitation Times**: Set the limit specified in the previous field.
 
@@ -127,5 +120,5 @@ discounts.
 **Active**: This box must be checked for the discount to be applied.
 
 **Schedule**: Enter a display and expiration date to limit the time in which the
-discount will apply. Alternately, check *Never Expire* to ignore the expiration
+discount applies. Alternately, check *Never Expire* to ignore the expiration
 date.
