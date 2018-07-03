@@ -1,12 +1,12 @@
 # Customizing the Product Menu [](id=customizing-the-product-menu)
 
 Liferay's Product Menu comes with three major sections to choose from, by
-default: the Control Panel, User Settings, and Site Administration. These
-options are called panel categories, which is the term used to differentiate
-between sections of the menu. For instance, the Control Panel is a single panel
-category, and when clicking on it, you're presented with four other child panel
-categories: *Users*, *Sites*, *Apps*, and *Configuration*. It you click on one
-of these child panel categories, you're presented with panel apps.
+default: the Control Panel, User Menu, and Site Administration. These
+options are called panel categories. For instance, the Control Panel is a 
+single panel category, and when clicking on it, you're presented with four 
+other child panel categories: *Users*, *Sites*, *Apps*, and *Configuration*. It 
+you click on one of these child panel categories, you're presented with panel 
+apps.
 
 +$$$
 
