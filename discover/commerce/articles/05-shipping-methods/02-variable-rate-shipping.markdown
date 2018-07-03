@@ -1,9 +1,8 @@
 # Variable Rate Shipping [](id=variable-rate-shipping)
 
-Variable rate shipping uses a formula to calculate shipping costs on the basis
-of three factors: the order's total weight, its subtotal (cost before shipping
-and taxes), and any fixed price you choose to impose. To what degree each factor
-is weighted---if at all---is up to you.
+Variable rate shipping calculates shipping costs using three factors: the
+order's weight, its subtotal (cost before shipping and taxes), and any fixed
+price you impose. You choose the priority of each factor. 
 
 You can create multiple different shipping options with variable rates. For
 example, you might create a "Standard Ground" option with a relatively low cost
@@ -12,43 +11,39 @@ same way but results in a higher price.
 
 ## Creating a Variable Rate Shipping Option [](id=creating-a-variable-rate-shipping-option)
 
-Variable-rate shipping costs are determined by the following formula: shipping
+Variable-rate shipping costs are determined by the following formula: `shipping
 costs = [fixed price] + ([order total weight] x [rate unit weight price])
-+ ([order subtotal] x [rate percentage]).
++ ([order subtotal] x [rate percentage])`.
 
 Follow these steps:
 
-1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click on the
-    *Shipping Method* tab. Click on the *Variable Rate* method and then on the
+1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click the
+    *Shipping Method* tab. Choose the *Variable Rate* method and then the
     *Shipping Options* tab.
 
-2.  Click the ![Add](../../images/icon-add.png) button and fill in the
-    following fields:
+2.  Click ![Add](../../images/icon-add.png) and fill in the following fields:
 
-    **Name:** This is the name that buyers will see when they are prompted to
-    select a shipping option.
+    **Name:** Buyers see this name when selecting a shipping option.
 
     **Description:** Information about the option---delivery time, guarantees,
     insurance and the like---should go in this field.
 
-    **Priority:** Sets the order in which options will be displayed. Lower
-    numbers come first.
+    **Priority:** Sets the option display order. Lower numbers come first.
 
 3.  Click *Save*. Then click the *Shipping Option Settings* tab.
 
-4.  Click the ![Add](../../images/icon-add.png) button and fill in the following
+4.  Click ![Add](../../images/icon-add.png) and fill in the following
     fields:
 
-    **Shipping Option:** Select the shipping option to which this setting should
-    be applied. The first time through, you should select the option you named
-    in step 2.
+    **Shipping Option:** Select the shipping option for this setting. The first
+    time through, select the option you named in step 2.
 
-    **Warehouse:** Select a warehouse if you want this method to apply only to
+    **Warehouse:** Select a warehouse if this method should apply only to
     shipments from one location. Leave blank to use this method for all
     warehouses.
 
-    **Country, Region, Zip:** Make an entry if you want to restrict the use of
-    this shipping method to destinations within the area you define.
+    **Country, Region, Zip:** Make an entry if this shipping method should be
+    restricted to destinations within the area you define.
 
     **Weight From, Weight To:** Enter a weight range for orders that can use
     this option.
@@ -66,9 +61,9 @@ Follow these steps:
 5.  Click *Save*. To create more than one option, return to the *Shipping
     Options* tab and repeat steps 2 through 4.
 
-6.  Click on the *Details* tab and check the *Active* box. Click *Save*.
+6.  Click the *Details* tab and check the *Active* box. Click *Save*.
 
 The *Details* tab also contains fields for changing the name and description of
-the flat rate shipping method type, which may be useful for reference but the
+the flat rate shipping method type. They may be useful for reference, but the
 text is not automatically displayed to buyers. You can also set a priority,
 which orders variable rate shipping methods relative to other types.

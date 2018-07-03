@@ -10,19 +10,17 @@ units used by the catalog and by the
 [variable-rate shipping method](/web/liferay-emporio/documentation/-/knowledge_base/1-0/variable-rate-shipping). 
 
 If you use Courier Shipping to integrate your shipping cost calculations with
-shipping providers system, you'll need to have the units used by that provider
-defined as well. If the provider uses units that are different from your
-primary, the conversion will be handled automatically.
+a shipping provider's system, you must have the provider's units defined as
+well. If the provider uses units that are different from your primary, the
+conversion is handled automatically.
 
 ## Adding a New Measurement Unit [](id=adding-a-new-measurement-unit)
 
-Follow these steps:
-
-1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click on the
-    *Measurement Units* tab. The select the appropriate sub-tab for either
+1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and select the
+    *Measurement Units* tab. Then choose the appropriate sub-tab for
     *Dimensions* or *Weight*.
 
-2.  Click the ![Add](../../images/icon-add.png) button and fill in the following
+2.  Click ![Add](../../images/icon-add.png) and fill in the following
     fields:
 
     **Name:** Enter the unit's name.
@@ -35,11 +33,11 @@ Follow these steps:
     **Ratio to:** If the unit is not primary, enter its ratio to the primary in
     terms of how many of the new unit are equal to one primary. For example, if
     the primary unit is *kilogram* and the new unit is *metric ton*, the ratio
-    should be 0.001. If the unit is primary, then you'll need to adjust the
-    ratios of your other units (see below).
+    should be 0.001. If the unit is primary, then you must adjust the ratios of
+    your other units (see below).
 
-    **Priority:** Priority sets the order in which units will be displayed on
-    a page. Lower numbers come first.
+    **Priority:** Sets the order in which units are displayed on a page. Lower
+    numbers come first.
 
 3.  Click *Save*.
 
@@ -48,8 +46,8 @@ Follow these steps:
 The default primary units are pound for weight and inch for distance. Follow
 these steps to set another unit as primary:
 
-1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click on the
-    *Measurement Units* tab. The select the appropriate sub-tab for either
+1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click the
+    *Measurement Units* tab. Select the appropriate sub-tab for either
     *Dimensions* or *Weight*.
 
 2.  Find the measurement unit you want to set as primary. Click on the
@@ -61,6 +59,6 @@ these steps to set another unit as primary:
 4.  Once a new primary has been set, you must reset the other unit's ratios.
     Click on the ![Options](../../images/icon-options.png) button next to each
     unit, click *Edit*, and change the *Ratio to* value to reflect the new
-    primary. (The ratio should indicate the number secondary units that are
+    primary. The ratio should indicate the number of secondary units that are
     equal to one primary. If the primary is *kilogram*, the ratio would be 1000
-    for *gram* and 0.001 for *metric ton*).
+    for *gram* and 0.001 for *metric ton*.
