@@ -1,14 +1,11 @@
 # User Segmentation [](id=user-segmentation)
 
-User Segmentation allows you to organize users into groups. This allows price
-lists, discounts, and other features to be precisely targeted to appropriate
-segments.
+User Segmentation organizes users into groups, so price lists, discounts, and
+other features can be precisely targeted to those users.
 
-Segments can be defined in a variety of ways. You can select users individually,
-by role, or select whole organizations or user groups to include. You are not
-limited to one type; for example you could create a segment that consists of the
-members of an organization plus a number of other users that you designate by
-role.
+You can define segments by individual users, by Role, or by whole Organizations
+or User Groups. You are not limited to one type: a segment can have members of
+an Organization plus other users that you designate by Role.
 
 +$$$
 
@@ -20,12 +17,10 @@ $$$
 
 ## Creating a User Segment [](id=creating-a-user-segment)
 
-Follow these steps:
-
 1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *User Segments*.
 
-2.  Click on the ![Add](../images/icon-add.png) button at the top right and
-    enter a name for the segment when prompted. Click *Submit*.
+2.  Click ![Add](../images/icon-add.png) and enter a name for the segment when
+    prompted. Click *Submit*.
 
 3.  Click on the user group to edit it. Fill in the following fields:
 
@@ -44,15 +39,15 @@ Follow these steps:
 Now you've created a user segment, but it has no members. Follow these steps to
 add users:
 
-1.  After creating a segment, click on the *Criteria* tab. Then click on the
-    ![Add](../images/icon-add.png) button to open the *Add Criterion* form.
+1.  After creating a segment, choose the *Criteria* tab. Then click 
+    ![Add](../images/icon-add.png) to open the *Add Criterion* form.
 
-2.  Select a *Type* from the drop-down menu and choose whether to add *Users*,
-    *Organizations*, *User Groups*, or *Roles* to the segment.
+2.  Select a *Type* from the drop-down menu and choose *Users*, *Organizations*,
+    *User Groups*, or *Roles* to add. 
 
 3.  When you make your choice, a *Select* button appears beneath the drop-down.
-    Click on it and then check the box next to each user (or organization, user
-    group, or role) you want to include in the segment. Click *Add*.
+    Click it and then check the box next to each User (or Organization, User
+    Group, or Role) to include in the segment. Click *Add*.
 
 4.  Set a priority for the criterion and hit *Save*.
 
@@ -61,11 +56,10 @@ add users:
 
 +$$$
 
-Note: When you create a user segment with more than one criteria, the criteria
-are combined inclusively. For example, if you make a user segment including
-members of the organization "Procurement" in addition to the user group
-"Purchasing Managers", the resulting segment would include every user who is
-a member of *either* group. It would not be limited to users who are members of
-*both*.
+Note: When you create a user segment with more than one criterion, the criteria
+are combined inclusively. For example, if a user segment includes members of the
+Organization *Procurement* and the User Group *Purchasing Managers*, the
+resulting segment includes every user who is a member of *either* group. It is
+not limited to users who are members of *both*.
 
 $$$
