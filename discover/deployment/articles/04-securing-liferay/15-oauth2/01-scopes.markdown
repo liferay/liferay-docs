@@ -46,7 +46,7 @@ derived based on the HTTP verbs supported by the application.
 
 When developers want more control, they can register their JAX-RS application 
 with the property `oauth2.scopechecker.type=annotations` and annotate endpoint 
-resource methods or whole classes like this:
+resource methods or whole classes like this using `com.liferay.oauth2.provider.scope.RequiresScope` exported from the `Liferay OAuth2 Provider Scope API` bundle:
 
     @RequiresScope("scopeName")
 
