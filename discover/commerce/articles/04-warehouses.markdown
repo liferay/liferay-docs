@@ -1,19 +1,18 @@
 # Warehouses [](id=warehouses)
 
-Initially, inventory levels for all of your products have to be entered
-manually. From then on, inventory levels will be tracked automatically as orders
-are filled. To set a product's inventory level, see
+Initially, inventory levels for all products must be entered manually. From then
+on, inventory levels are tracked automatically as orders are filled. To set
+a product's inventory level, see
 [SKUs](/web/liferay-emporio/documentation/-/knowledge_base/1.0/skus#inventory).
 First, however, you must have your warehouses in order.
 
 ## Using a Single Warehouse [](id=using-a-single-warehouse)
 
-If you are operating with only one warehouse, there is no need to geocode its
-location or enter exact coordinates. However, if you integrate your system with
-a shipping company's (see 
+If you have only one warehouse, there is no need to geocode its location.
+However, if you integrate your system with a shipping company's (see 
 [Shipping Methods](/web/liferay-emporio/documentation/-/knowledge_base/1-0/shipping-methods)
-for details), you will need to enter your warehouse's address to calculate
-shipping costs.
+for details), you must enter your warehouse's address to calculate shipping
+costs.
 
 +$$$
 
@@ -27,7 +26,7 @@ $$$
 
 Follow these steps:
 
-1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click on the
+1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click the
     *Shipping* tab.
 
 2.  Make sure the *Use Single Address* radio button is selected.
@@ -37,21 +36,21 @@ Follow these steps:
 
 ## Using Multiple Warehouses [](id=using-multiple-warehouses)
 
-If you are using more than one warehouse, then you need not only to track
-inventories at different locations separately, but you also need a way to
-determine from which warehouse a product should be shipped.
+If you have more than one warehouse, then you not only must track inventories at
+different locations separately, but also must determine from which warehouse
+a product should be shipped.
 
-First, you need to enter the location of each warehouse. Follow these steps:
+First, you must enter the location of each warehouse. Follow these steps:
 
-1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click on the
+1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click the
     *Shipping* tab.
 
 2.  Make sure the *Use Closest Warehouse* radio button is selected and click
-    *Save*. A new tab, *Warehouses* appears at the top of the screen.
+    *Save*. A new tab, *Warehouses*, appears at the top of the screen.
 
-3.  Click on the *Warehouses* tab then on the ![Add](../images/icon-add.png)
-    button. Enter a name, description, and address for the warehouse. The
-    *Active* box must be checked before the warehouse can be used, but the
+3.  Click the ![Add](../images/icon-add.png) button on the *Warehouses* tab.
+    Enter a name, description, and address for the warehouse. The *Active* box
+    must be checked before the warehouse can be used, but the
     latitude and longitude fields can be left blank for now (see *Geocoding*,
     below). Click *Save*.
 
@@ -59,23 +58,22 @@ First, you need to enter the location of each warehouse. Follow these steps:
 
 ## Geocoding Warehouses [](id=geocoding-warehouses)
 
-@commerce@ will automatically process orders so that products are shipped from
-the closest warehouse. On its own, however, the software does not have the
-capability to calculate which warehouse is closest to the delivery point solely
-on the basis of street address---maintaining a record of the coordinates of
-every address on the planet isn't in the mission profile.
+@commerce@ automatically processes orders so products are shipped from the
+closest warehouse. On its own, however, the software cannot calculate which
+warehouse is closest to the delivery point solely on the basis of street
+address---maintaining a record of the coordinates of every address on the planet
+isn't in the mission profile.
 
 The default solution is integration with Microsoft's Bing Maps, which Microsoft
 makes available free of charge---though this depends on use case and volume. At
-the time of this writing, instructions on obtaining a Bing API key were
-published at 
-[Microsoft Developer Network](https://msdn.microsoft.com/en-us/library/ff428642.aspx).
+the time of this writing, instructions on obtaining a Bing API key are published
+at [Microsoft Developer Network](https://msdn.microsoft.com/en-us/library/ff428642.aspx).
 
 Once you have an API key, follow these steps to set products to ship from the
 closest available warehouse:
 
 1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* and
-    click on category.commerce &rarr; *Bing Geocoder*.
+    click on *Commerce* &rarr; *Bing Geocoder*.
 
 2.  Paste your key from Microsoft into the *API Key* field and click *Save*.
 
