@@ -29,11 +29,7 @@ For security reasons, BBCode is preferred.
 **Enable Report Inappropriate Content:** Choose if users can report content as
 inappropriate. This sends a message to administrators so they can take action. 
 
-**Enable Ratings:** Choose if users can score posts. The Social Activity system
-uses the scores to rank Site members by how helpful their contributions are. You
-can read more about social activity in the 
-[Measuring Social Activity](/discover/portal/-/knowledge_base/7-1/measuring-social-activity)
-article. 
+**Enable Ratings:** Choose if users can rate posts. 
 
 **Thread as Question by Default:** This automatically checks the *Mark as
 question* box in the new thread window. Threads marked as questions display
