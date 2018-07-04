@@ -15,10 +15,10 @@ appears.
 The welcome screen describes and links to each key component page:
 
 **Segments:** Aggregate customers into Segments based on similar profiles and
-behavior data. Track Segment growth, discover patterns of interest and improve
+behavior data. Track Segment growth, discover patterns of interest, and improve
 their level of engagement with your brand. Discover your target audience.
 
-**Individuals:** Learn how individual customers interact with your sites. View
+**Individuals:** Learn how individual customers interact with your Sites. View
 holistic profiles that combine customer's profile data with their page and asset
 interactions for deep insight into their level of engagement. 
 

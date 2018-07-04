@@ -4,7 +4,7 @@ Liferay Analytics Cloud requires two kinds of data. First, you need web
 analytics data on user interactions with Liferay DXP Pages and Assets. Second,
 you need profile data on the users themselves. Analytics Cloud can sync these
 two kinds of data so that you can see not only how users are interacting with
-your site, but also who those users are. First, however, you need to provide it
+your site, but also who those users are. First, however, you must provide it
 with appropriate data sources.
 
 Both kinds of data can be obtained from a 7.0 or 7.1 Liferay DXP instance. If
@@ -30,7 +30,7 @@ The Data Sources page appears and lists all existing data sources.
 ![Figure 1: View, edit, and add data sources from the Data Sources page.](../../images/data-source-list.png)
 
 Unless a teammate has already added a data source, the list is empty. To add
-a new data source see the following tutorials:
+a new data source, see the following tutorials:
 
 - [Adding a Liferay DXP Data Source](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/02-adding-a-liferay-dxp-data-source.markdown)
 - [Adding a CSV Data Source](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/03-adding-a-csv-data-source.markdown)
@@ -53,5 +53,5 @@ Here's how to delete a data source:
 
 2. Click *Delete Data Source*. 
 
-Your Liferay DXP instances are a rich source for customer profile and behavior
+Your Liferay DXP instances are rich sources of customer profile and behavior
 data. Adding a Liferay DXP instance as a data source is next. 

@@ -34,7 +34,7 @@ Here's how to integrate contact data from a CSV file:
 5. Follow instructions for
 [Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/04-mapping-contact-data.markdown)
 to map contact data from your CSV file to your Analytics Cloud contact data
-model. Once you’ve mapped the data, click *Next*. 
+model. Once you've mapped the data, click *Next*. 
 
 ![Figure 1: When configuring a CSV file data source, you can describe the data context and view the data to make sure it’s formatted properly.](../../images/configure-csv-data-source.png)
 
@@ -42,5 +42,5 @@ The contact profile data starts syncing. The time it takes to sync depends on
 the number of contacts. 
 
 From time to time you might need to modify your data source configurations. If
-you've already explored *Mapping Contact Data*, which is the next topic, skip
+you've already explored *Mapping Contact Data* (the next topic) skip
 ahead to *Editing Data Sources*, to see how easy it is.
