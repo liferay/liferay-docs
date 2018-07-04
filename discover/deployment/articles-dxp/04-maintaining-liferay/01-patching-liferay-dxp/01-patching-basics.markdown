@@ -21,18 +21,17 @@ fixes.
 
 A hotfix is provided to customers when they contact Liferay about an emergency
 situation, and Liferay's support team---working with the customer---determines
-that the problem is a product issue that needs to be fixed very quickly. Support
-fixes the bug and provides a hotfix to the customer immediately. This is a
-short-term fix. Hotfixes can patch both the core and the applications and
-modules. 
+that the problem is a product issue that must be fixed very quickly. Support
+fixes the bug and provides a hotfix to the customer immediately. This is
+a short-term fix. Hotfixes can patch the core, the applications, and modules. 
 
 ## Service Packs [](id=service-packs)
 
 Every tenth fix pack is a service pack, so their frequency varies. Their version
-number always ends in a zero (e.g., `10`, `20`, etc.). Service packs are built
-on the top of the original @product@ release and repackaged with the latest fix
-pack, Patching Tool, and modules. They include the latest patches and
-updates---they're for customers starting new projects.
+numbers always end in a zero (e.g., `10`, `20`, etc.). Service packs are built
+on top of the original @product@ release and repackaged with the latest fix
+pack, Patching Tool, and modules. They include the latest patches and updates.
+If starting a new project, always start with the latest service pack. 
 
 Service packs can also include changes that have these characteristics:
 
