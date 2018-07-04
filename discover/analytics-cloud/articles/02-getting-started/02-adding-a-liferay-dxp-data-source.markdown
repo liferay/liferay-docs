@@ -1,11 +1,12 @@
 # Adding a Liferay DXP Data Source [](id=adding-a-liferay-dxp-data-source)
 
 Your Liferay DXP instances are rich with contact data from Users and web
-analytics data on user interaction with Liferay DXP pages and assets. Creating
-Liferay DXP data sources is straightforward. You can select web analytics data
-from the Liferay DXP Sites you want and select contact data from  all Users or
-specific Users in User Groups and Organizations. Before adding your instances as
-data sources, though, you must connect your Analytics Cloud project to them. 
+analytics data on user interaction with Liferay DXP pages and assets. When you
+Create Liferay DXP data sources, you can select web analytics data from the
+Liferay DXP Sites you want. In Users and Organizations, you can choose to use
+contact data from all Users or a specified subset of them. Before adding an
+instances as a data sources, though, you must connect it to your Analytics Cloud
+project. 
 
 ## Liferay DXP Data Source Prerequisites [](id=liferay-dxp-data-source-prerequisites)
 
@@ -22,10 +23,6 @@ Register your Liferay DXP instance with
 to your Liferay DXP instance. 
 
 #### Step 3: Install the Liferay Analytics Cloud Connector [](id=step-3-install-the-liferay-analytics-cloud-connector)
-
-Installing the Liferay Analytics Cloud Connector (the Connector) on your Liferay
-DXP instance is straightforward:
-
 1. Go to the
 [downloads page](https://web.liferay.com/group/customer/dxp/downloads/analytics-cloud). 
 
@@ -38,8 +35,8 @@ DXP instance is straightforward:
 5. Start your server.
 
 **Note:** If you’re running Liferay DXP in a cluster, install the Connector 
-using the
-[rolling restarts](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-rolling-restarts). 
+using 
+[rolling restarts](https://customer.liferay.com/documentation/7-1/deploy/-/official_documentation/deployment/using-rolling-restarts). 
 
 Congratulations on setting up your Liferay DXP instance to be an Analytics Cloud
 data source! It's time to add your Liferay DXP instance as a data source. 
@@ -50,19 +47,17 @@ Adding a Liferay DXP Data Source connects your Analytics Cloud project with a Li
 
 Here’s how to add a Liferay DXP data source:
 
-1.  Make sure to configure your Liferay DXP instance to connect with Liferay 
-Analytics Cloud. See the previous section
-[Liferay DXP Data Source Prerequisites](#liferay-dxp-data-source-prerequisites).
-for details. 
+1.  If you haven't already, configure your Liferay DXP instance to connect with Liferay
+    Analytics Cloud (see above).
 
 2.  Select *Settings* in the navigation panel.
 
-3.  Click on *Data Sources*. A listing of your existing data sources appears.
+3.  Click *Data Sources*. A listing of your existing data sources appears.
 
-4.  Click on *Add Data Sources*. The *Connect Data Source* page appears. 
+4.  Click *Add Data Sources*. The *Connect Data Source* page appears. 
 
-5.  Select the *Liferay DXP* icon. The *Connect to Instance* page appears and 
-lists your available Liferay DXP instances. 
+5.  Select the *Liferay DXP* icon. The *Connect to Instance* page appears and
+    lists your available Liferay DXP instances. 
 
 6.  Select the instance to connect. The Liferay DXP Data Sources page appears, 
     showing the instance description fields and configuration options. 
@@ -79,13 +74,13 @@ lists your available Liferay DXP instances.
     - *Configure Contacts:* Configures the contact data only.
     - *Configure Analytics:* Configures the assets and touchpoints only.
 
-7. Name your data source.
+7.  Name your data source.
 
-8. Click on *Configure All*. The Liferay DXP data source wizard appears, 
-showing the page for configuring contacts. 
+8.  Click *Configure All*. The Liferay DXP data source wizard appears, showing
+    the page for configuring contacts. 
 
-9. Configuring contacts involves selecting contacts to sync from the Liferay 
-DXP instance and its Organizations and User Groups. 
+9.  Configuring contacts involves selecting contacts to sync from the Liferay
+    DXP instance and its Organizations and User Groups. 
 
     - *Sync All Contacts*: Selects all Liferay DXP instance contacts and disables options for selecting specific Organizations and User Groups.
 
@@ -100,17 +95,17 @@ contact data and attempts to map it to your Analytics Cloud contact data model.
 The initial import can take a while---it depends on the number of Liferay DXP
 Users.
 
-11. Follow instructions for
-[Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/04-mapping-contact-data.markdown)
-to  map contact data from your Liferay DXP instance to your Analytics Cloud
-contact data model. Once you’ve mapped the data, click *Next*. The Liferay DXP
-site analytics registration page appears. 
+11. Follow instructions for [Mapping Contact
+    Data](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/04-mapping-contact-data.markdown)
+    to  map contact data from your Liferay DXP instance to your Analytics Cloud
+    contact data model. Once you’ve mapped the data, click *Next*. The Liferay
+    DXP site analytics registration page appears. 
 
-12. Select the Liferay DXP sites to register for analytics and click *Next*. 
-The analytics key page appears. 
+12. Select the Liferay DXP sites to register for analytics and click *Next*.
+    The analytics key page appears. 
 
-13. Integrate your Liferay DXP instance with Analytics Cloud by addressing 
-these options: 
+13. Integrate your Liferay DXP instance with Analytics Cloud by addressing
+    these options: 
 
     - *Analytics Key:* This key is generated automatically and used to 
     communicate with your Liferay DXP instance. 
@@ -119,7 +114,7 @@ these options:
     - *Connection Status:* Test communication between your Liferay DXP instance 
     and Analytics Cloud. 
 
-14. Click on the *Done* button. 
+14. Click the *Done* button. 
 
 The Contacts and Analytics data start syncing into Analytics Cloud. **Initially 
 the sync takes a while. After the initial sync, changes are synced 
