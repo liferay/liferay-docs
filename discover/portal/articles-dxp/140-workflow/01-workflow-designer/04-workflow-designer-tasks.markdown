@@ -27,43 +27,43 @@ node is for and how they are used. Include a script. -Rich -->
 
 ## Assignments [](id=assignments)
 
-Workflow tasks need to be completed by a User. You can choose how you
-want to configure your assignments. 
+Workflow tasks must be completed by a User. You can choose how you want to
+configure your assignments. 
 
 ![Figure 1: You can add an Assignment to a Task node.](../../../images-dxp/workflow-designer-assignment.png)
 
-You can choose to add assignments to specific Roles, multiple roles of a Role
-Type (organization, site, or regular role types), to the Asset Creator, to
+You can choose to add assignments to specific Roles, multiple Roles of a Role
+Type (Organization, Site, or regular Role types), to the Asset Creator, to
 Resource Actions, or to specific Users. Additionally, you can write a script to
 define the assignment.
 
 Assigning tasks to Roles, Organizations, or Asset Creators is a straightforward
 concept, but what does it mean to assign a workflow task to a Resource Action?
 Imagine an *UPDATE* resource action. If your workflow definition specifies the
-UPDATE action in an assignment, then anyone who has permission to update the
-type of asset being processed in the workflow is assigned to the task. You can
-configure multiple assignments for a task.
+UPDATE action in an assignment, anyone who has permission to update the type of
+asset being processed in the workflow is assigned to the task. You can configure
+multiple assignments for a task.
 
 ### Resource Action Assignments [](id=resource-action-assignments)
 
-*Resource actions* are operations performed by Users on an application or entity
-in @product@. For example, a User might have permission to update Message Boards
+*Resource actions* are operations performed by Users on an application or
+entity. For example, a User might have permission to update Message Boards
 Messages. This is called an UPDATE resource action, because the User can update
-the resource. If you're still uncertain about what resource actions are, refer to
-the developer tutorial on @product@'s 
+the resource. If you're still uncertain about what resource actions are, refer
+to the developer tutorial on the 
 [permission system](/develop/tutorials/-/knowledge_base/7-1/adding-permissions-to-resources)
 for a more detailed explanation.
 
-To find all the resource actions that have been configured in @product@, you
-need access to the Roles Admin application in the Control Panel (in other words,
-you need permission for the VIEW action on the roles resource).
+To find all the resource actions that have been configured, you need access to
+the Roles Admin application in the Control Panel (in other words, you need
+permission for the VIEW action on the Roles resource).
 
 - Navigate to Control Panel &rarr; Users &rarr; Roles.
 - Add a new Regular Role. See the 
   [article on managing roles](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
   for more information.
-- Once the role is added, navigate to the Define Permissions interface for the
-  role.
+- Once the Role is added, navigate to the Define Permissions interface for the
+  Role.
 - Find the resource whose action you want to use for defining your workflow
   assignment.
 
@@ -88,9 +88,9 @@ As usual, assign the workflow to the appropriate workflow enabled asset.
 
 Now when the workflow proceeds to the task with the resource action assignment,
 Users with `UPDATE` permission on the resource (for example, Message Boards
-Messages) is notified of the task and can assign it to themselves (if the
-notification is set to Task Assignees). Specifically, Users see the tasks
-in their *My Workflow Tasks* application under the tab *Assigned to My Roles*.
+Messages) are notified of the task and can assign it to themselves (if the
+notification is set to Task Assignees). Specifically, Users see the tasks in
+their *My Workflow Tasks* application under the tab *Assigned to My Roles*.
 
 Use all upper case letters for resource action names. Here are some common
 resource actions:
@@ -147,12 +147,12 @@ Review task assignment in the Scripted Single Approver workflow definition
     user = null;
 						
 Don't let all that code intimidate you. It's just assigning the task to the
-*Administrator* role, then checking whether the *group* of the asset is an
-Organization and assigning it to the *Organization Content Reviewer* role if it
-is. If it's not, it's assigning the task to the *Site Content Reviewer* role.
+*Administrator* Role, then checking whether the *group* of the asset is an
+Organization and assigning it to the *Organization Content Reviewer* Role if it
+is. If it's not, it's assigning the task to the *Site Content Reviewer* Role.
 
 Note the `roles = new ArrayList<Role>();` line above. In a scripted assignment,
-the `roles` variable is where you specify any roles the task is assigned to. For
+the `roles` variable is where you specify any Roles the task is assigned to. For
 example, when `roles.add(adminRole);` is called, the Administrator role is added
 to the assignment.
 

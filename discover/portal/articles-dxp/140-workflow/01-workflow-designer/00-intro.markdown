@@ -1,14 +1,14 @@
 # Kaleo Designer [](id=kaleo-designer)
 
 With the proper permissions, users can publish assets. Even if your enterprise
-has the greatest employees in the world, many of the items they'll wish to
-publish must still be reviewed, for a variety of reasons. The Kaleo Designer
-lets you design workflow definitions so your assets go through a review process
-before publication.
+has the greatest employees in the world, many of the items they want to publish
+must still be reviewed, for a variety of reasons. The Kaleo Designer lets you
+design workflow definitions so your assets go through a review process before
+publication.
 
 With Kaleo Designer, you develop workflow definitions using a convenient drag
 and drop user interface. You don't need to be familiar with writing XML
-definitions by hand. However, some of the features can be enhanced if you're
+definitions by hand. Some of the features can be enhanced, however, if you're
 familiar with Groovy, a supported Java-based scripting language. All that is to
 say, don't be scared off when you come to a block of code in these articles.
 Just decide if you need the feature and find someone familiar with Java or
@@ -16,11 +16,10 @@ Groovy to help you out.
 
 +$$$
 
-**Note:** By default, there's only one workflow definition that's installed in
-@product@: the Single Approver Workflow definition. What you might not know is
-that you have access to several others too. Look in
-`[Liferay_Home]/osgi/portal/` and find the
-`com.liferay.portal.workflow.kaleo.runtime.impl-[version].jar`.  Open it up and
+**Note:** By default, only one workflow definition is installed: the Single
+Approver Workflow definition. What you might not know is that you have access to
+several others too. Look in `[Liferay_Home]/osgi/portal/` and find the
+`com.liferay.portal.workflow.kaleo.runtime.impl-[version].jar`. Open it up and
 then look in `META-INF/definitions`. You'll see the following workflow
 definitions:
 
@@ -30,7 +29,7 @@ definitions:
     single-approver-definition-scripted-assignment.xml
 
 To work with any of these definitions in Kaleo Designer, extract them from the
-JAR file first. Once you have the XML files locally: 
+JAR file first. Once you have the XML files locally, 
 
 1.  Add a new workflow. Go to Control Panel &rarr; Configuration &rarr;
     Workflow, and click the Add button (![Add](../../../images/icon-add.png)).
@@ -43,7 +42,7 @@ JAR file first. Once you have the XML files locally:
     draft) or *Publish* (see below for more information on saving and
     publishing). 
 
-Now you can begin exploring or modifying the definition as you'd like.
+Now you can begin exploring or modifying the definition. 
 
 $$$
 

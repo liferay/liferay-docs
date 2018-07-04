@@ -2,7 +2,7 @@
 
 Workflow definitions all contain nodes: a Start Node, and End node, and at least
 one Task node. You might know that for the workflow to progress from one node to
-the other, you need Transitions. In this article you'll learn about using
+the other, you need Transitions. In this tutorial you'll learn about using
 transitions to move the asset through the workflow from node to node, but you'll
 also learn about some other features that affect the processing of the workflow. 
 
@@ -32,9 +32,9 @@ existing node, continue dragging the connector to that node.
 
 When developing workflows in Kaleo Designer, make sure you go through all the
 transitions and name them appropriately. By default, these transitions get
-system generated names, so rename them all to something more human-readable, as
-they're displayed to workflow users as links that will send the item to the next
-step in the workflow.
+system generated names, so rename them to something more human-readable, as
+they're displayed to workflow users as links that send the item to the next step
+in the workflow.
 
 ![Figure 2: In the Single Approver workflow, a user in the Review task can choose to Approve or Reject the asset, which sends the asset either to the EndNode or to the Update task.](../../../images-dxp/workflow-designer-transition-link.png)
 
@@ -62,9 +62,9 @@ together.
 
 ## Conditions [](id=conditions)
 
-Sometimes you need to inspect an asset or its execution context, and depending
-on the result, send it to the appropriate transition. You need a node for a
-script that concludes by setting a value to one of your transitions.
+Sometimes you must inspect an asset or its execution context, and depending on
+the result, send it to the appropriate transition. You need a node for a script
+that concludes by setting a value to one of your transitions.
 
 From the *Category Specific Approval* (`category-specific-definition.xml`),
 this is the script in the condition node that starts the workflow (coming
