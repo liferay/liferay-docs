@@ -49,11 +49,11 @@ After upgrading your plugins you can consider optimizations such as these:
 -   Migrating plugins to
     [Gradle](/develop/tutorials/-/knowledge_base/7-1/migrating-traditional-plugins-to-workspace-web-applications)
     or Maven to leverage their development commands and rich
-    [Liferay plugin templates](/develop/tutorials/-/knowledge_base/7-1/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#developing-modules-with-liferay-workspace). 
+    [Liferay plugin templates](/develop/tutorials/-/knowledge_base/7-1/developing-modules-with-liferay-workspace). 
 -   [Migrating themes to the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/migrating-a-6-2-theme-to-liferay-7)
-    to add [Themelets](/develop/tutorials/-/knowledge_base/7-1/themelets) (new) 
+    to add [Themelets](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes) (new) 
     and to leverage
-    [Node.js, Yeoman, and Gulp](/develop/tutorials/-/knowledge_base/7-1/themes-generator). 
+    [Node.js, Yeoman, and Gulp](/develop/tutorials/-/knowledge_base/7-1/creating-themes). 
 -   [Converting plugins to modules](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet)
     to leverage Declarative Services, extendability, and more
     [modularity benefits](/develop/tutorials/-/knowledge_base/7-1/osgi-and-modularity-for-liferay-6-developers).
@@ -69,13 +69,13 @@ You *can* continue using the Plugins SDK to develop plugins. But the Plugins
 SDK is deprecated  as of 7.0. In light of the deprecation, you should
 consider migrating plugins from the Plugins SDK to one of the new environments:
 
--   [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#from-the-plugins-sdk-to-liferay-workspace)
+-   [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/from-the-plugins-sdk-to-liferay-workspace)
     is a Gradle environment that supports developing modules and traditional
     plugins.
     [Blade's ](/develop/tutorials/-/knowledge_base/7-1/migrating-traditional-plugins-to-workspace-web-applications) 
     [`migrateWar  command`](/develop/tutorials/-/knowledge_base/7-1/migrating-traditional-plugins-to-workspace-web-applications)
     moves Plugins SDK portlets to Liferay Workspace (Workspace) in a snap. 
--   [Liferay's Maven](/develop/tutorials/-/knowledge_base/7-1/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#whats-new-in-product-ver-for-maven-users) 
+-   [Liferay's Maven](/develop/tutorials/-/knowledge_base/7-1/whats-new-for-maven-users) 
     plugins and archetypes support developing modules and traditional plugins.
     There's also a Liferay Workspace archetype for generating a Workspace that uses Maven. 
 
@@ -125,7 +125,7 @@ Follow these upgrade and optimization phases:
  Hook - Properties | - If the property is now a [System Setting](/discover/portal/-/knowledge_base/7-1/system-settings), edit it there and/or use a `.config` file<br>- If the property is in the [liferay-hook.xml's DTD](@platform-ref@/7.1-latest/definitions/liferay-hook_7_1_0.dtd.html), then [adapt code to API](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool) and [resolve dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies) | None |
  Hook - Service Wrappers | [Upgrading Service Wrappers](/develop/tutorials/-/knowledge_base/7-1/upgrading-service-wrappers) | Coming soon |
  Hook - Servlet Filter | [Upgrading Servlet Filter Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-servlet-filter-hooks) | Coming soon |
- Hook - Struts actions | - [StrutsAction &rarr; StrutsActionWrapper](/develop/tutorials/-/knowledge_base/7-1/converting-strutsactionwrappers-to-mvccommands)<br> - [processAction &rarr; MVCActionCommand](/develop/tutorials/-/knowledge_base/7-1/overriding-mvc-commands#overriding-mvcactioncommand)<br> - [render &rarr; MVCRenderCommand](/develop/tutorials/-/knowledge_base/7-1/overriding-mvc-commands#overriding-mvcrendercommand)<br> - [serveResource &rarr; MVCResourceCommand](/develop/tutorials/-/knowledge_base/7-1/overriding-mvc-commands#overriding-mvcresourcecommand) | Same |
+ Hook - Struts actions | - [StrutsAction &rarr; StrutsActionWrapper](/develop/tutorials/-/knowledge_base/7-1/converting-strutsactionwrappers-to-mvccommands)<br> - [processAction &rarr; MVCActionCommand](/develop/tutorials/-/knowledge_base/7-1/overriding-mvcactioncommand)<br> - [render &rarr; MVCRenderCommand](/develop/tutorials/-/knowledge_base/7-1/overriding-mvcrendercommand)<br> - [serveResource &rarr; MVCResourceCommand](/develop/tutorials/-/knowledge_base/7-1/overriding-mvcresourcecommand) | Same |
  Layout Template | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies)<br>3. [Update Layout Template](/develop/tutorials/-/knowledge_base/7-1/upgrading-layout-templates) | - [Migrate to Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/migrating-a-6-2-theme-to-liferay-7) (Node.js/Gulp/Yeoman) |
  Portlet - GenericPortlet | [Upgrading a GenericPortlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-genericportlet) | - [Migrate to Workspace/Gradle](/develop/tutorials/-/knowledge_base/7-1/migrating-traditional-plugins-to-workspace-web-applications)<br>- [Apply Lexicon](/develop/tutorials/-/knowledge_base/7-1/applying-lexicon-styles-to-your-app)<br>- [Convert to OSGi modules](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet) |
  Portlet - Liferay MVC | [Upgrading a Liferay MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-liferay-mvc-portlet) | - [Migrate to Workspace/Gradle](/develop/tutorials/-/knowledge_base/7-1/migrating-traditional-plugins-to-workspace-web-applications)<br>- [Apply Lexicon](/develop/tutorials/-/knowledge_base/7-1/applying-lexicon-styles-to-your-app)<br>- [Convert to OSGi modules](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet) |
@@ -133,7 +133,7 @@ Follow these upgrade and optimization phases:
  Portlet - Servlet/JSP | [Upgrading a Servlet-based Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-servlet-based-portlet) | Coming soon |
  Portlet - Spring MVC | [Upgrading a Spring MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-spring-mvc-portlet) | None |
  Portlet - Struts 1 | [Upgrading a Struts Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-struts-portlet) | None |
- Theme | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies)<br>3. [Upgrade Theme](/develop/tutorials/-/knowledge_base/7-1/upgrading-themes) | - [Migrate to Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/migrating-a-6-2-theme-to-liferay-7) (Node.js/Gulp/Yeoman)<br>- [Use Themelets](/develop/tutorials/-/knowledge_base/7-1/themelets) |
+ Theme | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies)<br>3. [Upgrade Theme](/develop/tutorials/-/knowledge_base/7-1/upgrading-themes) | - [Migrate to Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/migrating-a-6-2-theme-to-liferay-7) (Node.js/Gulp/Yeoman)<br>- [Use Themelets](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes) |
  Web plugin | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies) | [Convert to OSGi module](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet), e.g., `portlet-x-web` | 
 
 ### Feature Upgrade and Optimization Paths [](id=feature-upgrade-and-optimization-paths)

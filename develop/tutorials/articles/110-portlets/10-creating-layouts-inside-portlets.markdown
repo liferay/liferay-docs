@@ -13,16 +13,16 @@ Follow these steps:
         <%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %>
  
 2.  Wrap your portlet's content in 
-    [`<aui:container>` tags](#aui-container-). 
+    [`<aui:container>` tags](#aui-container). 
     If you wish to only have a portion of your portlet's content in a layout, 
     wrap that portion with a `<aui:container>` tags.
 
 3.  In between the `<aui:container>...</aui:container>` tags, add a set of 
-    [`<aui:row>` tags](#aui-row-) 
+    [`<aui:row>` tags](#aui-row) 
     for each row that you want in your portlet's layout.
 
 4.  Add a set of 
-    [`<aui:col>` tags](#aui-col-) 
+    [`<aui:col>` tags](#aui-col) 
     for each column that you want in the row. Repeat this step for each row in 
     the layout.
  
