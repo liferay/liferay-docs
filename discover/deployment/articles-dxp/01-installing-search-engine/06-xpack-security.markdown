@@ -43,7 +43,7 @@ of
 
         bin/elasticsearch-plugin install x-pack --batch
 
-    on each running Elasticsearch node. The `--batch` option bypasses
+    on each Elasticsearch node. The `--batch` option bypasses
     installation prompts for granting permissions to X-Pack. 
 
     You'll see log output detailing the permissions granted, finishing with
@@ -190,9 +190,9 @@ the Liferay Connector to X-Pack Security [Elastic Stack 6.x]. Install the LPKG
 file by copying it into the `Liferay Home/deploy` folder. That's all there is to
 it.
 
-To configure the X-Pack adapter, navigate to *Control Panel*
-&rarr; *Configuration* &rarr; *System Settings*. Find the *Foundation* category and
-click on the *X-Pack Security* entry. You can enter the property values here, but
+To configure the X-Pack adapter, navigate to *Control Panel* &rarr;
+*Configuration* &rarr; *System Settings*. Find the *Search* category and click
+on the *X-Pack Security* entry. You can enter the property values here, but
 it's more common to use a 
 [configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
 deployed to `Liferay Home/osgi/configs`. For the X-Pack adapter, create a file

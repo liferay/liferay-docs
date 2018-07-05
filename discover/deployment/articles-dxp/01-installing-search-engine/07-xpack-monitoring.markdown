@@ -91,7 +91,7 @@ these steps or refer to
 
 Follow these steps to configure Kibana if X-Pack encrypts communication with the
 Elasticsearch cluster. Consult 
-[Elastic's guide](https://www.elastic.co/guide/en/kibana/6.2/using-kibana-with-security.html#using-kibana-with-security)
+[Elastic's guide](https://www.elastic.co/guide/en/kibana/6.1/using-kibana-with-security.html#using-kibana-with-security)
 for more information.
 
 Add these settings to `kibana.yml`:
@@ -136,7 +136,7 @@ there is to it.
 
     Alternatively, configure the monitoring adapter from the Control Panel.
     Navigate to *Configuration* &rarr; *System Settings* and find the X-Pack
-    Monitoring entry in the Foundation category. All the configuration 
+    Monitoring entry in the Search category. All the configuration 
     options for the monitoring connector appear there.
 
     The values differ depending on your Kibana configuration. 
