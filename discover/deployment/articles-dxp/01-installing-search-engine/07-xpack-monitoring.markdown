@@ -1,4 +1,4 @@
-# Installing X-Pack Monitoring
+# Installing X-Pack Monitoring [](id=installing-x-pack-monitoring)
 
 Monitor Elasticsearch with X-Pack Monitoring. First 
 [install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-1/installing-x-pack-security)

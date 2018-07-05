@@ -1,4 +1,4 @@
-# Installing a Search Engine
+# Installing a Search Engine [](id=installing-a-search-engine)
 
 Search engines are a critical component of your @product@ installation. They allow
 you to provide documents in an index that can quickly be searched, rather than

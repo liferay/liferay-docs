@@ -1,4 +1,4 @@
-# Installing X-Pack Security
+# Installing X-Pack Security [](id=installing-x-pack-security)
 
 X-Pack is an 
 [Elastic extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)
