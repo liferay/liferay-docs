@@ -35,7 +35,7 @@ you must make a small modification to your application's build file.
 
                 repositories {
                     maven {
-                        url "http://cdn.repository.liferay.com/nexus/content/groups/public"
+                        url "http://repository-cdn.liferay.com/nexus/content/groups/public"
                     }
                 }
             }
@@ -44,7 +44,7 @@ you must make a small modification to your application's build file.
 
             repositories {
                 maven {
-                    url "http://cdn.repository.liferay.com/nexus/content/groups/public"
+                    url "http://repository-cdn.liferay.com/nexus/content/groups/public"
                 }
             }
 
@@ -120,7 +120,7 @@ all the steps above?
 
         repositories {
             maven {
-                url "http://cdn.repository.liferay.com/nexus/content/groups/public"
+                url "http://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
     }
@@ -133,7 +133,7 @@ all the steps above?
 
     repositories {
         maven {
-            url "http://cdn.repository.liferay.com/nexus/content/groups/public"
+            url "http://repository-cdn.liferay.com/nexus/content/groups/public"
         }
     }
 

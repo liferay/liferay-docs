@@ -18,7 +18,7 @@ retrieve a new entity on a node which doesn't have that entity cached results in
 a cache *miss*. The miss triggers the node to retrieve the entity from the
 database and store it in its local cache. 
 
-![Figure 2: @product@'s cache algorithm is extremely efficient. ](../../../images-dxp/clustering-cache-efficient-algorithm.png)
+![Figure 1: @product@'s cache algorithm is extremely efficient. ](../../../images-dxp/clustering-cache-efficient-algorithm.png)
 
 To enable Cluster Link, add this property to `portal-ext.properties`: 
 
@@ -73,7 +73,7 @@ Your network configuration may preclude the use of multicast over TCP, so below
 are some other ways you can get your cluster communicating. Note that these
 methods are all provided by JGroups. 
 
-### Checkpoint: 
+### Checkpoint: [](id=checkpoint)
 
 1.  If you are using multicast to handle your cluster, add this property to
     `portal-ext.properties`:

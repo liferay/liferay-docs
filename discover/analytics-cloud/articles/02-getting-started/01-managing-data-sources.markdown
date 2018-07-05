@@ -1,49 +1,39 @@
 # Managing Data Sources [](id=managing-data-sources)
 
-Analytics Cloud lets you sync contact data, such as customer profiles from CSV
-files and Liferay DXP user models, and web analytics data on user interaction
-with Liferay DXP pages and assets. In a future Analytics Cloud release, Liferay
-plans to support syncing with contact data from Salesforce too.
+Liferay Analytics Cloud requires two kinds of data. First, you need web
+analytics data on user interactions with Liferay DXP Pages and Assets. Second,
+you need profile data on the users themselves. Analytics Cloud can sync these
+two kinds of data so that you can see not only how users are interacting with
+your site, but also who those users are. First, however, you must provide it
+with appropriate data sources.
+
+Both kinds of data can be obtained from a 7.0 or 7.1 Liferay DXP instance. If
+you have other user profile data---in addition to what is already stored in
+Liferay DXP user models---you can import it from a CSV file. In a future
+Analytics Cloud release, Liferay plans to support syncing with contact data from
+Salesforce too.
 
 The contact data is merged and consolidated into a single customer view. Liferay
-DXP data sources let you select Organizations and User Groups from which to
-sync. Individual contacts are matched by email address. The best part is that
-you can define the contact data model your way---you can use field names and
-types that work best for you. Analytics Cloud even takes the guesswork out of
-defining trivial model fields by suggesting values. 
+DXP data sources let you select Organizations and User Groups to sync.
+Individual contacts are matched by email address. You can define the contact
+data model using whatever field names and types you want, but Analytics Cloud
+makes it easy to define trivial model fields by suggesting values.
 
-Configuring web analytics from Liferay DXP sites is straightforward, letting you
-select the sites from which to sync.  
+Your data sources can be viewed from the navigation panel.
 
-To see your data sources:
-
-1. Select *Settings* in the navigation panel.
+1. Select *Settings*.
 
 2. Click on *Data Sources*.
 
-The Data Sources page appears and lists all existing data sources.  
+The Data Sources page appears and lists all existing data sources.
 
-![Figure 1: The Data Sources page lets you view, edit, and add data sources.](../../images/data-source-list.png)
+![Figure 1: View, edit, and add data sources from the Data Sources page.](../../images/data-source-list.png)
 
-Unless a teammate has already added a data source, the list is empty. You'll add
-some data sources shortly. Before then, you'll get an overview of adding and
-managing data sources.
+Unless a teammate has already added a data source, the list is empty. To add
+a new data source, see the following tutorials:
 
-## Adding a Data Source [](id=adding-a-data-source)
-
-Adding a data source straightforward:
-
-1.  Click on the *Add Data Source* button. The *Connect Data Source* page 
-appears and lists the supported data source types. 
-
-    - *Liferay DXP:* A Liferay DXP 7.1 or 7.0 instance.
-    - *CSV File:* A comma-separated version file. 
-
-2.  Here you can select the type of data source to add. The following articles 
-show you how to configure their prerequisites and add them. 
-
-    - [Adding a Liferay a DXP Data Source](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/02-adding-a-liferay-dxp-data-source.markdown)
-    - [Adding a CSV Data Source](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/03-adding-a-csv-data-source.markdown)
+- [Adding a Liferay DXP Data Source](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/02-adding-a-liferay-dxp-data-source.markdown)
+- [Adding a CSV Data Source](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/03-adding-a-csv-data-source.markdown)
 
 Once you've created your data sources, you might need to modify them from time to time.
 
@@ -51,7 +41,7 @@ Once you've created your data sources, you might need to modify them from time t
 
 The Data Sources lets you page through the data source listing or use *Search*
 to find one that matches a keyword. Once you've found the data source, click on
-it to edit it. Here’s what you can modify:
+it to edit it. Here's what you can modify:
 
 - Name of the data source
 - Contact mapping
@@ -61,7 +51,7 @@ Here's how to delete a data source:
 
 1. Click on the listed data source. The data source's page appears. 
 
-2. Click on the *Delete Data Source* button. The data source is deleted. 
+2. Click *Delete Data Source*. 
 
-Your Liferay DXP instances are a rich source for customer profile and behavior
+Your Liferay DXP instances are rich sources of customer profile and behavior
 data. Adding a Liferay DXP instance as a data source is next. 

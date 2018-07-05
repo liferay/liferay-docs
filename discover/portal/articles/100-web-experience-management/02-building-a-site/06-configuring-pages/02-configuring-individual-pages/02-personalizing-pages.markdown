@@ -8,7 +8,7 @@ of a page layout. Page customizations are only visible to the user who made the
 customizations. By default, Site members can make page customizations but
 non-Site members and guests can't.
 
-## Enabling Page Customizations
+## Enabling Page Customizations [](id=enabling-page-customizations)
 
 To enable page customizations as an administrator,
 
@@ -20,7 +20,7 @@ To enable page customizations as an administrator,
 
 3.  Click the *Customizable* selector button to activate customizations.
 
-    ![Figure X: To enable page customizations, click on the *Configure Page* button next to the page, expand the *Customization Settings* area, and click on the *Customizable* button.](../../../../../images/page-customizations.png)
+    ![Figure 1: To enable page customizations, click on the *Configure Page* button next to the page, expand the *Customization Settings* area, and click on the *Customizable* button.](../../../../../images/page-customizations.png)
 
 4.  Select the sections of the page that should be customizable.
  
@@ -34,9 +34,9 @@ toggle whether to view or hide the customizable regions. If you toggle the
 selector to view customizable regions, the regions on the page are color-coded
 to help distinguish customizable vs. non-customizable sections of the page.
 
-![Figure X: Customizable regions are colored green and non-customizable regions are colored red.](../../../../../images/color-coded-customizable-regions.png)
+![Figure 2: Customizable regions are colored green and non-customizable regions are colored red.](../../../../../images/color-coded-customizable-regions.png)
 
-## Customization Permissions
+## Customization Permissions [](id=customization-permissions)
 
 Administrators must grant users permission to customize pages under the Site
 section. This can be achieved by assigning permission to a Role, then assigning
@@ -49,7 +49,7 @@ permission is assigned to the Role *Site Member*.
 The *Customize* permission also lets users customize the look and feel of
 apps and import or export app settings.
 
-## Customizing Pages
+## Customizing Pages [](id=customizing-pages)
 
 With customization active, Site members can access the Add menu from the top
 right side of the screen when viewing their customizable page, which lets them
@@ -66,12 +66,12 @@ Users can make two kinds of customizations to customizable regions:
 page to match the default page, discarding their customizations so they can
 start anew. 
 
-![Figure X: Customizable areas are highlighted green when organizing apps on the page.](../../../../../images/customizable-regions.png)
+![Figure 3: Customizable areas are highlighted green when organizing apps on the page.](../../../../../images/customizable-regions.png)
 
 Users can't change a non-instanceable app's configuration inside a customizable
 region since those apps are tied to the Site where they've been added. 
 
-## Viewing Customized Pages
+## Viewing Customized Pages [](id=viewing-customized-pages)
 
 Site members can also choose between viewing their customized page and viewing
 the default page by selecting the *Options* button
@@ -86,7 +86,7 @@ administrators to non-customizable sections in the default view are immediately
 applied for all users. Changes made by administrators to customizable sections,
 however, do *not* overwrite users' customizations.
 
-## Customization Example
+## Customization Example [](id=customization-example)
 
 As an administrator,
 
@@ -109,4 +109,4 @@ a translation of your Site into their native language. After closing the
 Configuration dialog box of the Language Selector app, the customized Welcome
 page looks like this:
 
-![Figure X: In this example, the user added the Language app, and changed the display style from icons to a select box.](../../../../../images/customized-portal-homepage.png)
+![Figure 4: In this example, the user added the Language app, and changed the display style from icons to a select box.](../../../../../images/customized-portal-homepage.png)
