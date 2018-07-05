@@ -87,14 +87,14 @@ You must be careful with defining styles for editable images since an image that
 without the proper dimensions or that is forced into a poorly sized space can
 have major negative effects on your layout. 
 
-Images use the same `<lfr-editable>` tag as text, but with the `img` type, like 
+Images use the same `<lfr-editable>` tag as text, but with the `image` type, like 
 this:
     
     <lfr-editable id="unique-id" type="image">
        <img src="...">
     </lfr-editable>
 
-After you add the `lfr-editable` tag with the type `img` to a Fragment, when 
+After you add the `lfr-editable` tag with the type `image` to a Fragment, when 
 you add that Fragment to a page, you can then click on the editable image and 
 select a replacement.
 
