@@ -1,9 +1,7 @@
 # What LCS Stores About Your Liferay DXP Servers [](id=what-lcs-stores-about-your-liferay-dxp-servers)
 
-At this point, you might be wondering what information about your servers is 
-stored on LCS's servers. Great question! To protect your users' privacy, LCS 
-only stores system-specific data. LCS doesn't gather or store data on your 
-users. 
+To protect your users' privacy, LCS only stores system-specific data. LCS
+doesn't gather or store data on your users. 
 
 By default, LCS stores the following information about your server:
 
@@ -40,8 +38,8 @@ data listed for each:
 
     -   `portal.properties` (except sensitive data) 
 
-Sensitive data is any key-value pair that contains usernames or passwords. For 
-example, LCS doesn't store the following properties because they contain 
+Sensitive data is any key-value pair that contains user names or passwords. For
+example, LCS doesn't store the following properties because they contain
 sensitive data: 
 
     omniadmin.users
@@ -65,4 +63,4 @@ non-sensitive properties:
 
 LCS also lets you prevent it from analyzing specific properties of your 
 choosing. For more information on this, see 
-[the article on activating servers with LCS](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/activating-your-liferay-dxp-server-with-lcs). 
+[Activating Servers with LCS](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/activating-your-liferay-dxp-server-with-lcs). 

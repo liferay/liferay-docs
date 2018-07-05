@@ -5,8 +5,8 @@ file. LCS Administrators and Environment Managers can generate and distribute
 this file. It contains all the information the LCS client app needs to activate 
 the server in the environment. When the server starts up, it uses the token to 
 connect to LCS and consume an activation key from the environment's 
-subscription. This lets you activate servers automatically on startup--no 
-interaction is required. 
+subscription, making it possible to activate servers automatically on
+startup: no interaction is required. 
 
 +$$$
 

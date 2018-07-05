@@ -1,6 +1,6 @@
 # Activating Liferay DXP [](id=activating-liferay-dxp)
 
-There are 2 ways to activate your Liferay DXP instance: 
+There are two ways to activate your Liferay DXP instance: 
 
 -   With an XML activation key that you request and receive from Liferay 
     Support. 

@@ -19,7 +19,7 @@ Subscriptions*.
 
 There are four tables in the *Details* tab: 
 
-1.  **Subscriptions:** shows a list of the available subscriptions in your LCS 
+1.  **Subscriptions:** Shows a list of the available subscriptions in your LCS 
     project. For each subscription, this table shows the following information: 
 
     - Subscription Type
@@ -35,14 +35,14 @@ There are four tables in the *Details* tab:
     Note that *Processor Cores Allowed* shows the number of processor cores that 
     the subscription allows for each server. 
 
-2.  **Subscriptions Summary:** shows how your subscriptions are currently used 
+2.  **Subscriptions Summary:** Shows how your subscriptions are currently used 
     in your project. For each subscription type, this table shows the number of 
     servers allowed, used, and available. 
 
-3.  **Project Environments:** shows your project's environments and their 
+3.  **Project Environments:** Shows your project's environments and their 
     assigned subscription types. Each environment must have a subscription type. 
 
-4.  **Project Servers:** shows the environment and subscription type for each 
+4.  **Project Servers:** Shows the environment and subscription type for each 
     server in your LCS project. 
 
 If any of the information in these tables is missing or incorrect, contact 
@@ -73,7 +73,7 @@ freed for reuse within six minutes.
 ## Elastic Subscriptions [](id=elastic-subscriptions)
 
 Elastic subscriptions let you register an unlimited number of servers. This is 
-crucial for auto-scaling environments in which servers are created and destroyed 
+crucial for auto-scaling environments where servers are created and destroyed 
 automatically. You can view data on your elastic servers from the 
 *Subscriptions* tab's *Elastic Subscriptions* tab. 
 
