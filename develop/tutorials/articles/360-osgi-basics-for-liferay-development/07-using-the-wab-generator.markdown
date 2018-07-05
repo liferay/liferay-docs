@@ -119,6 +119,7 @@ Awesome! You've seen the WAB Generator in action!
 [Generating a JSF Application](develop/tutorials/-/knowledge_base/7-1/generating-a-jsf-application)
 -->
 
-[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu)
-
+<!-- Uncomment in Product Nav Branch
+[Customizing the Product Menu](develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu)
+-->
 [Configuration](/develop/tutorials/-/knowledge_base/7-1/configuration)

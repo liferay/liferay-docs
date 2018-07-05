@@ -45,7 +45,7 @@ tutorial for more info.
 +$$$
 
 **Tip:** You can specify an 
-[application display template](/discover/portal/-/knowledge_base/7-1/styling-apps-with-application-display-templates) 
+[application display template](/discover/portal/-/knowledge_base/7-1/styling-apps-and-assets) 
 (ADT) for a portlet in the `sitemap.json` file by setting the `displayStyle` and 
 `displayStyleGroupId` portlet preferences, as shown in the example below:
 

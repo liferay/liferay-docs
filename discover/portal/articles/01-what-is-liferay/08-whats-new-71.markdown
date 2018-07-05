@@ -184,6 +184,42 @@ versioned, and you can save drafts and restore previous versions.
 @product-ver@ includes an updated collection of tools to facilitate the support
 and development of Liferay projects.
 
+### Targeting a Liferay Platform
+
+Liferay Workspace helps target a specific release of @product@, so dependencies
+get resolved properly. This makes upgrading your applications easy: specify your
+target platform, and Workspace points to the new version. All your dependencies
+are updated to the latest ones provided in the targeted release. 
+
+### Resolving Modules Before Deployment
+
+Avoid the painful process of deploying modules only to be met with console
+errors or mysterious problems by resolving modules before deployment. This can
+be done by calling the new *resolve* Gradle task provided by Liferay Workspace. 
+
+### 7.1 Code Upgrade Tool
+
+The Code Upgrade Tool in Liferay Developer Studio helps you upgrade your legacy
+application code to @product@: 
+
+- Identifies code affected by the API changes
+- Describes each API change related to the code
+- Suggests how to adapt the code
+- Provides options, in some cases, to adapt code automatically. 
+
+### IntelliJ Support
+
+Liferay development is now officially supported on IntelliJ IDEA which offers
+wizards to 
+
+- Create a Liferay Workspace
+- Create projects leveraging Liferay's project templates
+- Create a Liferay server runtime for project deployment and debugging
+
+### Maven Support for Blade CLI
+
+Create Maven projects and Maven Liferay Workspaces using Blade CLI. 
+
 ### Hybrid Mobile App Development [](id=hybrid-mobile-app-development)
 
 Liferay Screens 3.0 enables software developers to use Apache Cordova or

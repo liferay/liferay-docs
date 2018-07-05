@@ -9,7 +9,7 @@ content article appear alongside that entry in the Asset Publisher application.
 
 Now you'll learn how to provide a way for authors to relate content.
 This tutorial assumes that you've
-[asset enabled](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets-for-custom-entities)
+[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
 your application. If you've already done this, go ahead and begin relating your
 assets!
 
@@ -137,7 +137,7 @@ Excellent! Now you know how to implement related assets in your apps.
 
 ## Related Topics [](id=related-topics)
 
-[Adding, Updating, and Deleting Assets for Custom Entities](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets-for-custom-entities)
+[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
 
 [What is Service Builder?](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
 

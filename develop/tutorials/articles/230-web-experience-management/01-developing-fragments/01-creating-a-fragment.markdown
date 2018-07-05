@@ -1,7 +1,7 @@
 # Creating a Fragment [](id=creating-a-fragment)
 
 The first example is simple. If you aren't sure about the basics of Fragments
-and Collections, you should read [Creating Page Fragments](/discover/portal/-/knowledge_base/7-1/creating-page-fragments) first 
+and Collections, you should read [Creating Page Fragments](/discover/portal/-/knowledge_base/7-1/creating-fragments) first 
 so you know what you're getting yourself into.
 
 1.  Go to *Site Administration* and for your selected site click *Build*
