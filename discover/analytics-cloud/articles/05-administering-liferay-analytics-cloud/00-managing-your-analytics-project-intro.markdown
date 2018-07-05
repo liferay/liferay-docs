@@ -1,4 +1,4 @@
-# Introduction [](id=introduction)
+# Managing Your Analytics Project [](id=managing-your-analytics-project)
 
 Project administrators are responsible for connecting data sources to the
 project, managing project users, and tracking project usage against the current
