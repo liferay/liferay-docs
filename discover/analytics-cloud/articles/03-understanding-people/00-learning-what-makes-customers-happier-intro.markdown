@@ -1,4 +1,4 @@
-# Introduction [](id=introduction)
+# Learning What Makes Customers Happier [](id=learning-what-makes-customers-happier)
 
 Analytics Cloud creates a single source of truth that brings together the
 various facets of customer knowledge to paint a more rounded, more informed
