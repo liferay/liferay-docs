@@ -25,15 +25,14 @@ Using Dynatrace's dashboards with @product@ requires these things:
 - Dynatrace client which contains the user interface (UI)
 - Dynatrace license
 - Dynatrace server 
-- JVM agents, installed on 
+- installed JVM agents
 
-Lastly, sign up for a Dynatrace account to get Dynatrace support.
+Finally, sign up for a Dynatrace account to get Dynatrace support.
 
 ## Dashboards [](id=dashboards)
 
-Multiple dashboards are available to display ongoing transactions and processes.
-Because the entire @product@ stack can be analyzed, there are dashboards for
-each component:
+Dynatrace contains displays ongoing transactions and processes. Because the
+entire @product@ stack can be analyzed, there are dashboards for each component:
 
 - web server
 - browser
@@ -54,13 +53,12 @@ more.
 
 ![Figure 2: Monitoring the application server during a load gives you valuable information on your system's performance.](../../images-dxp/dynatrace02.png)
 
-Returning to the root level lets you view performance metrics from other parts
-of the environment. For example, clicking the database component (e.g., *MySQL*)
-shows database transactions---you can view this without installing an agent, but
-deploying a separate database agent is optional because the Dynatrace Collector
-contains database management functionality out of the box (see 
+The root level shows performance metrics from other parts of the environment.
+For example, the database component (e.g., *MySQL*) shows database
+transactions: you can view this without installing an agent. Deploying
+a separate database agent is optional because the Dynatrace Collector contains
+database management functionality out of the box (see 
 [Database Monitoring](https://community.dynatrace.com/community/display/DOCDT65/Database+Monitoring).
-
 
 ![Figure 3: You can view live database transactions.](../../images-dxp/dynatrace04-db.png)
 
@@ -76,7 +74,7 @@ A *satisfied* visit is one in which 1) no action failed; and 2) more than 50% of
 all actions were satisfied.
 
 A *frustrated* visit is one in which 1) the last action failed (the web site
-does not work); and 2) the  user's last action was frustrated (e.g., the web
+does not work); and 2) the user's last action was frustrated (e.g., the web
 site was too slow). See 
 [How Does UEM Work?](https://community.dynatrace.com/community/pages/viewpage.action?pageId=221381305#HowDoesUEMWork) 
 for more information. 
@@ -85,13 +83,13 @@ for more information.
 
 You can import custom dashboards you've created (e.g., in XML format):
 
-1. Click the *Dashboard* menu &rarr; *Open*. 
+1.  Click the *Dashboard* menu &rarr; *Open*. 
 
-2. Browse for and select your custom dashboard. 
+2.  Browse for and select your custom dashboard. 
 
-3. Click *Open Dashboard*.
+3.  Click *Open Dashboard*.
 
-The next section describes the custom dashboard created for Liferay DXP. 
+But there's more: a custom dashboard created for @product@. 
 
 ## Liferay DXP FastPack [](id=liferay-digital-enterprise-fastpack)
 
@@ -107,20 +105,20 @@ These dashboards go beyond dashboards Dynatrace includes out-of-the-box.
 The FastPack is distributed as a `.dtp` file. To install the FastPack, follow 
 these steps:
 
-1. In the Dynatrace Client, click *Tools* &rarr; *Manage Plugins*.
+1.  In the Dynatrace Client, click *Tools* &rarr; *Manage Plugins*.
 
-2. Click *Install Plugin...*.
+2.  Click *Install Plugin...*.
 
-3. Browse to and select the `.dtp` file.
+3.  Browse to and select the `.dtp` file.
 
-4. Click *OK* in the *Import Resource Pack* confirmation window.
+4.  Click *OK* in the *Import Resource Pack* confirmation window.
 
-5. Click *OK* to close the *Configure Plugins* window.
+5.  Click *OK* to close the *Configure Plugins* window.
 
-6. *Liferay* now appears in the Systems Profile left control panel.
+6.  *Liferay* now appears in the Systems Profile left control panel.
 
-7. Disable any other profile so that the Liferay profile is the only active 
-profile.
+7.  Disable any other profile so that the Liferay profile is the only active
+    profile.
 
 ## Dynatrace Client Configuration [](id=dynatrace-client-configuration)
 
@@ -151,12 +149,12 @@ Client.
     below). 
 
     - Request the Dynatrace license key; the key is available either through
-    your web credentials or from a link in the welcome email. Place the file in
-    a suitable location. When the client starts for the first time and prompts
-    for the license, navigate to and select the file. 
+      your web credentials or from a link in the welcome email. Place the file
+      in a suitable location. When the client starts for the first time and
+      prompts for the license, navigate to and select the file. 
 
     - Once the license has been successfully imported, the Dynatrace Client
-    prompts for a server restart. Restart the server. 
+      prompts for a server restart. Restart the server. 
 
 3.  After the server restarts, verify that the following services have started: 
 
@@ -211,7 +209,7 @@ existing infrastructure (in this example, Apache Tomcat).
 
     In Unix/Linux `setenv.sh`:
 
-    `-agentpath:${location of the dtagent .dll}"=name=Tomcat_Monitoring,server=liferay-cfe3684:9998`    
+    `-agentpath:${location of the dtagent .dll}"=name=Tomcat_Monitoring,server=liferay-cfe3684:9998` 
 
     In Windows `setenv.bat`: 
 
@@ -233,12 +231,12 @@ existing infrastructure (in this example, Apache Tomcat).
     - Select *Java 5 or later (64 bit)*. 
     - Select whether the Tomcat bundle is *local* or *remote*. 
     - As long as the connector is on, it should find the @product@ instance. For
-    testing purposes, the @product@ bundle is local. 
+      testing purposes, the @product@ bundle is local. 
 
 4.  After you import the fast pack, you must do these things:
  
     - Select the Liferay profile as the only active system profile in 
-    Dynatrace. 
+      Dynatrace. 
     - Restart the application server. 
 
 Your Liferay agent starts sending data into the newly imported profile.
