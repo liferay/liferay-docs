@@ -91,7 +91,7 @@ Setting the version to develop for takes two steps:
 **Note**: The `liferay.workspace.target.platform.version` property also sets
 the distro JAR, which can be used in to validate your projects during the build
 process. See the
-[Validating Modules Against the Target Platform](/develop/tutorials/-/knowledge_base/7-0/validating-projects-against-the-target-platform)
+[Validating Modules Against the Target Platform](/develop/tutorials/-/knowledge_base/7-0/validating-modules-against-the-target-platform)
 tutorials for more info.
 
 $$$
