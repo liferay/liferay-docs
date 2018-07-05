@@ -4,17 +4,12 @@ Marvel is a monitoring tool for Elasticsearch. It lets you view the performance
 and health of your Elasticsearch cluster, so you can anticipate issues ahead of
 time, troubleshoot them quickly, and scale your cluster appropriately.
 
-To use Marvel with @product@, you need the *Enterprise Search-Standard*
-subscription. With it you'll get an adapter plugin for configuring @product@ for
-Marvel, and a Marvel Portlet that can be added to a page in your @product@
-installation. This makes it easy to monitor your Elasticsearch cluster right
-from @product@, since the Marvel portlet gives you access to all of Marvel's
+To obtain Marvel and the client application for @product@, you need the
+*Enterprise Search-Standard* subscription. With it you'll get a connector
+plugin for configuring @product@ for Marvel, and a Marvel Portlet that can be
+added to a page. The Marvel portlet gives you access to all of Marvel's
 functionality. If you don't yet have an Enterprise Search subscription, contact
 your sales representative.
-
-In addition to your subscription with @product@, you need a license from
-Elasticsearch if you want to use Marvel in production. Visit Elasticsearch's
-[website for more details](https://www.elastic.co/products/marvel).
 
 This article shows you how to install and configure Marvel for @product@--and
 @product@ for Marvel--with these general steps:
