@@ -9,7 +9,8 @@ For the Site Facet to display multiple sites, the search bar must be configured
 to search "Everything". See more about search scope
 [here](/discover/portal/-/knowledge_base/7-1/searching-for-assets#configuring-the-search-bar).
 If not searching for everything, only the current site is searched, and the Site
-Facet has nothing to display.
+Facet has nothing to display. When this occurs, the Site Facet is hidden on the
+page.
 
 Note that all search bar portlet instances pointing to the search page,
 including the one on the search page, must be configured to search for

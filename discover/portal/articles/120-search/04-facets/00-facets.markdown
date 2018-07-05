@@ -24,7 +24,7 @@ results that are Blogs Entries). So what facets are included by default?
     [here](/discover/portal/-/knowledge_base/7-1/custom-facet) 
     for more information.
 
-Each item n a facet (selected using the checkbox) is called a *Facet Term*
+Each item in a facet (selected using the checkbox) is called a *Facet Term*
 (term for short).
 
 In this article, explore how facets and their terms are used and how
@@ -53,9 +53,6 @@ list in the search query, and the results list is refined by the selected
 facets. 
 
 ![Figure 3: After clicking the *Web Content Article* type in the Asset Types facet, it's the only asset type listed.](../../../images/search-facet-wc.png).
-
-![Figure 4: Click the *Any Asset* link to clear the filtering for a facet. Now
-all the available asset types are visible.](../../../images/search-facet-any.png)
 
 ## Multiple Facet Selection [](id=multiple-facet-selection)
 
@@ -87,6 +84,42 @@ by Marvin and James are not displayed. Content that isn't Blog Entries or Web
 Content Articles created by other Users are obviously not searched.
 
 ![Figure 7: Both intra-facet and inter-facet selection is possible.](../../../images/search-facet-selections.png)
+
++$$$
+
+**Note:** The new Search Facet widgets support the multiple selection of facet
+terms. Multiple facet selection is not supported in the classic Search portlet.
+
+$$$
+
+## Facets and Friendly URLs
+
+In the classic, monolithic Search portlet, URLs like this were not uncommon:
+
+    http://localhost:8080/web/guest/home?_com_liferay_portal_search_web_portlet_SearchPortlet_formDate=1529671834606&p_p_id=com_liferay_portal_search_web_portlet_SearchPortlet&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&_com_liferay_portal_search_web_portlet_SearchPortlet_mvcPath=%2Fsearch.jsp&_com_liferay_portal_search_web_portlet_SearchPortlet_redirect=http%3A%2F%2Flocalhost%3A7011%2Fweb%2Fguest%2Fhome%3Fp_p_id%3Dcom_liferay_portal_search_web_portlet_SearchPortlet%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview&_com_liferay_portal_search_web_portlet_SearchPortlet_keywords=test&_com_liferay_portal_search_web_portlet_SearchPortlet_scope=this-site
+
+The new Search functionality includes using friendly search URLs for facet
+filtering. With the default settings,
+here's the default main search URL when searching for keyword _test_:
+
+    http://localhost:8080/web/guest/search?q=test
+
+Selecting a facet term causes a new parameter to the above URL. For example,
+selecting _Blogs Entry_ from the Type facet results in this URL:
+
+    http://localhost:8080/web/guest/search?q=test&type=com.liferay.blogs.model.BlogsEntry
+
+Selecting another facet term from the same facet category appends the same
+parameter again, but with the newly selected value:
+
+    http://localhost:8080/web/guest/search?q=test&type=com.liferay.blogs.model.BlogsEntry&type=com.liferay.portal.kernel.model.User
+
+The rest of the facets work the same way. Filtering by the last hour option in
+the Last Modified facet portlet produces this URL:
+
+    http://localhost:8080/web/guest/search?q&modified=past-hour
+
+The parameter names are configurable for each facet.
 
 Now that you know how facets work, read about configuring each of the included
 facets.

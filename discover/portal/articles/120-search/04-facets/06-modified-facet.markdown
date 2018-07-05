@@ -3,7 +3,7 @@
 The Modified Facet narrows down search results to those that matche the searched
 keyword and that were created or modified during a certain time period.
 
-![Figure 1: Each time period with matching content is a facet term.](../../../images/search-user-facet.png)
+![Figure 1: Each time period with matching content is a facet term.](../../../images/search-modified-facet.png)
 
 In addition to selecting a pre-configured time period, Users can select a Custom
 Range, specifying a From and To date using a date picker:
