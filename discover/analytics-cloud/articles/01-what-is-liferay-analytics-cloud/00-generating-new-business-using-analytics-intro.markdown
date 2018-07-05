@@ -1,4 +1,4 @@
-# What is Liferay Analytics Cloud? [](id=what-is-liferay-analytics-cloud)
+# Generating New Business Using Analytics [](id=generating-new-business-using-analytics)
 
 Your company interacts with lots of people, including existing and prospective
 customers. On your websites they browse products and services, ask questions,
