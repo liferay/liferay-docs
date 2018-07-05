@@ -133,7 +133,7 @@ tutorial for a description of the contents of these packages.
 Service Builder uses the service namespace in naming the database tables it
 generates for the service. For example, *Event* could serve as the namespace for
 an Event Listing portlet service. Service Builder uses the namespace in the
-following SQL scripts it generates in your `src/main/resources/sql` folder:
+following SQL scripts it generates in your `src/main/resources/META-INF/sql` folder:
 
 - `indexes.sql`
 - `sequences.sql`
