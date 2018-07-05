@@ -7,7 +7,7 @@ drawing visitors back to your site?
 Liferay Analytics Cloud answers these questions.
 
 - Its server registers and tracks pages for analysis the first time a Page
-    interaction is detected by the Analytics Cloud client.
+  interaction is detected by the Analytics Cloud client.
 - It queries pages on a schedule for up-to-date data.
 - It reports on pages with the metrics described in this article.
 
@@ -16,11 +16,10 @@ understand your pages' performance.
 
 ## Data Time Periods [](id=data-time-periods)
 
-All Pages data in Analytics Cloud is displayed for a specified time period. The
-time period selector recalculates the metrics based on the time period selected.
-You must specify a time period for which you'd like to view the metrics. The
-default is 30 days, but this is configurable. The following values are
-supported:
+All Pages data in Analytics Cloud appears for a specified time period. The time
+period selector recalculates the metrics based on the time period selected. You
+must specify a time period to view the metrics. The default is 30 days, but this
+is configurable. The following values are supported:
 
 - Last 24 hours
 - Yesterday
@@ -68,26 +67,23 @@ as compared with other Pages. It might not tell you specifically what's so
 effective (or weak) about a Page, but it can tell you if the Page is performing
 as desired over the selected time period.
 
-<!-- Remove since most likely not sensible to non-US readers. Keeping for now in
-case there's some other analogy that might be more universal. -->
-<!--+$$$
++$$$
 
-**Baseball Analogy:** Are you a baseball fan? If so you're probably familiar
-with the classic individual metrics used to describe a non-pitcher's
-proficiency: Batting Average, Slugging Percentage, Fielding Percentage, and a
-few more. Now there are higher level aggregation metrics used to evaluate
-baseball players, such as BABIP (Batting Average on Balls In Play) and WAR (Wins
-Above Replacement). Discussion of those metrics is not the point here. Think of
-the simpler metrics offered by Analytics Cloud (Views, Visitors, Time on Page)
-as single snapshots into how useful a Page is, like looking at Batting
-Average and Fielding Percentage to evaluate baseball players. Think of
-Page Engagement as an advanced aggregation metric that captures the
-overall usefulness of a Page, similar to BABIP or WAR in baseball. Maybe
-the Analytics team can come up with a WAR-like metric next, to compare how
-valuable a Page is as compared with the average Page. It could be
-called TEAR (Page Engagement Above Replacement).
+**Baseball Analogy:** Are you a baseball fan? If so you might be familiar with
+the classic individual metrics used to describe a non-pitcher's proficiency:
+Batting Average, Slugging Percentage, Fielding Percentage, and a few more. Now
+there are higher level aggregation metrics used to evaluate baseball players,
+such as BABIP (Batting Average on Balls In Play) and WAR (Wins Above
+Replacement). Discussion of those metrics is not the point here. Think of the
+simpler metrics offered by Analytics Cloud (Views, Visitors, Time on Page) as
+single snapshots into how useful a Page is, like looking at Batting Average and
+Fielding Percentage to evaluate baseball players. Think of Page Engagement as an
+advanced aggregation metric that captures the overall usefulness of a Page,
+similar to BABIP or WAR in baseball. Maybe the Analytics team can come up with
+a WAR-like metric next, to compare how valuable a Page is as compared with the
+average Page. It could be called TEAR (Page Engagement Above Replacement).
 
-$$$-->
+$$$
 
 Page Engagement is useful to combine with time period filtering and comparative
 time period features. Comparing the engagement score from different periods is
@@ -107,13 +103,13 @@ to the Page.
 
 Useful with the time period filter, Page View is the number of views for a Page
 Page in a given period of time. It's not the same as the number of visitors,
-because it doesn't try to count only unique IP addresses. So over the last 30
+because it doesn't try to count only unique IP addresses. Over the last 30
 days, one visitor (IP address) could come back to the Page 100 times. That means
-there are 100 Page Views, but only one visitor (assuming they used the same
-machine to access the Page each time.  However, a unique view won't be logged
-for a single user unless at least 30 minutes of inactivity <!-- need info on
-whether 30 minutes is accurate and that this is how views are calculated--> on
-the Page passes before the user interacts with the Page again.
+there are 100 Page Views, but only one visitor (assuming she used the same
+machine to access the Page each time. However, a unique view isn't logged for
+a single user unless at least 30 minutes of inactivity <!-- need info on whether
+30 minutes is accurate and that this is how views are calculated--> on the Page
+passes before the user interacts with the Page again.
 
 ### Metric: Page Bounce Rate [](id=metric-page-bounce-rate)
 
@@ -174,8 +170,7 @@ are aggregated in the ninth donut segment.
 View a list of the Assets on the Page by their number of Interactions
 over the selected time period.
 
-Depending on the Asset being viewed, a different Interaction metric is reported
-on:
+Depending on the Asset being viewed, a different Interaction metric is reported:
 
 - Blogs reports Views.
 - Documents and Media reports Downloads.

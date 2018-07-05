@@ -2,7 +2,7 @@
 
 [Forms](/discover/portal/-/knowledge_base/7-1/forms) 
 are important direct data gathering tools for enterprises. Are your web forms
-providing you invaluable information or turning users away?  Analytics Cloud
+providing you invaluable information or turning users away? Analytics Cloud
 gives you important insights.
 
 In Analytics Cloud, find the Touchpoints section of the menu and click *Assets*.
@@ -32,7 +32,7 @@ important metrics:
 Submissions counts the number of times the Submit button was clicked on a Form.
 It's the gold standard metric for a form, because that's why the form was
 created in the first place: to collect data entered into the form. If the Submit
-button isn't clicked, you don't get the data you were after.
+button isn't clicked, you don't get the data you wanted.
 
 The Submissions trend line shows the number of times the Submit button was
 clicked each day (or hour, if *Yesterday* or *Last 24 Hours* are selected) over
@@ -46,8 +46,8 @@ Useful with the time period filter, Views is the number of views for a Form in a
 given period of time. It's not the same as the number of visitors, because it
 doesn't try to count only unique IP addresses. So over the last 30 days, one
 visitor (IP address) could come back to the Page 100 times. That means there are
-100 Page Views, but only one visitor (assuming they used the same device to
-access the Page each time.  However, a unique view won't be logged for a single
+100 Page Views, but only one visitor (assuming the same device was used to
+access the Page each time). However, a unique view isn't be logged for a single
 user unless at least 30 minutes of inactivity <!-- need info on whether 30
 minutes is accurate and that this is how views are calculated--> on the Page
 passes before the user interacts with the Page again.
@@ -70,12 +70,12 @@ Analytics.
 
 ## Views by Segment [](id=views-by-segment)
 
-Scroll down from the Visitor Behavior chart and you'll see the Views by Segment
-bar graph, which is present for all Asset types and Pages.
+Scroll down from the Visitor Behavior chart to see the Views by Segment bar
+graph, which is present for all Asset types and Pages.
 
 The Views by Segment bar graph shows how many times the Asset was viewed by up
 to the top seven Segments over the selected time period. If more than seven
-Segments viewed the Asset, the top six are displayed, and views by the remaining
+Segments viewed the Asset, the top six appear, and views by the remaining
 Segments are aggregated in the seventh bar on the graph, labeled _X More
 Segments_.
 
@@ -104,8 +104,8 @@ are aggregated in the ninth donut segment.
 
 The Field Analysis chart is unique to Forms. 
 
-Field analysis is displayed as a bar graph. The height of the first bar shows
-the total number of people (Views) who have interacted with the form in any way,
+Field analysis appears as a bar graph. The height of the first bar shows the
+total number of people (Views) who have interacted with the form in any way,
 even just scrolling past it on the page. The rest of the bars show the
 percentage of those people that interacted with a specific field by clicking
 into it. The gross numbers on the right y-axis are the number of people who
@@ -120,16 +120,16 @@ Field Analysis gives you these metrics on each form field:
 - The time spent interacting with the field (includes abandonments)
 
 - The refill percent for the field. Out of the total number that filled out the
-    field, this answers the question, "What percentage had to edit or enter new
-    information into the field after moving on in the form?" 
+  field, this answers the question, "What percentage had to edit or enter new
+  information into the field after moving on in the form?" 
 
 ![Figure 6: See how Form Users interact with the Form's fields.](../../images/assets-forms-fa.png)
 
 Field Analysis helps you get down to the field level in diagnosing potential
 issues with your forms. For example, in your Newsletter Sign-Up form, if you
 included a required field that asked for users to provide their first child's
-full name, you'll undoubtedly see a lot of form abandonment on that field, and
-not only because some form users don't have children. If you make that field not
+full name, you may see a lot of form abandonment on that field, not only
+because some form users don't have children. If you make that field not
 required, you'll get less abandonment on that field, and if you remove that
 field from the form entirely, you'll eliminate all abandonment from offended
 parents. 
@@ -138,7 +138,7 @@ parents.
 
 The Asset Appears On table includes a Page Name and URL. Like any Page data in
 Analytics Cloud, only Pages that were interacted with in some way by site
-visitors are tracked and reported on.  It's important to note that the link
+visitors are tracked and reported.  It's important to note that the link
 doesn't take you to the actual Page with the Asset on it. Instead, it leads to
 the Page Analytics view of the Page. From there you can click the URL to the
 actual Page.

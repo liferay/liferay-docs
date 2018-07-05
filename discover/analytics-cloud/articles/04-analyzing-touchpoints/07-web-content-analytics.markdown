@@ -10,7 +10,7 @@ content.
 ## Visitor Behavior [](id=visitor-behavior)
 
 The Overview tab of an Asset's detail presents several data presentations. The
-first chart, called Visitor Behavior, it contains one important metric: total
+first chart, called Visitor Behavior, contains one important metric: total
 Views.
 
 ![Figure 2: The Visitors Behavior chart contains important trend lines.](../../images/assets-wc-vb.png)
@@ -21,8 +21,8 @@ line. Use this to evaluate how well the content engages visitors over time.
 
 ## Views by Segment [](id=views-by-segment)
 
-Scroll down from the Visitor Behavior chart and you'll see the Views by Segment
-bar graph, which is present for all Asset types and Pages.
+Scroll down from the Visitor Behavior chart to see the Views by Segment bar
+graph, which is present for all Asset types and Pages.
 
 The Views by Segment bar graph shows how many times the Asset was viewed by up
 to the top seven Segments over the selected time period. If more than seven
@@ -55,7 +55,7 @@ are aggregated in the ninth donut segment.
 
 The Asset Appears On table includes a Page Name and URL. Like any Page data in
 Analytics Cloud, only Pages that were interacted with in some way by site
-visitors are tracked and reported.  It's important to note that the link
+visitors are tracked and reported. It's important to note that the link
 doesn't take you to the actual Page with the Asset on it. Instead, it leads to
 the Page Analytics view of the Page. From there you can click the URL to the
 actual Page.

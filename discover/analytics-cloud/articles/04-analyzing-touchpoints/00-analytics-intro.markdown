@@ -1,20 +1,19 @@
-# Introduction [](id=introduction)
+# Finding Touchpoint Data
 
-Combining traditional Page Analytics with Path and Asset Analytics is
-what sets Liferay Analytics Cloud apart from other analytics tools.
+Combining traditional Page Analytics with Path and Asset Analytics sets Liferay
+Analytics Cloud apart from other analytics tools.
 
 Traditional Page Analytics, such as Views, Visitors, and Bounce Rate, provide
-lots of information about how visitors are interacting with your site's pages.
-Liferay Analytics offers that functionality, but also provides a novel set of
-metrics for your site pages in the form of Path Analytics. In addition, several
-Liferay DXP Assets have even more fine-grained metrics to let you drill deeper
-than the page level to determine how you can improve the performance of your
-site.
+lots of information about how visitors interact with your site's pages. Liferay
+Analytics offers that functionality, but also provides a novel set of metrics
+for your site pages in the form of Path Analytics. In addition, several
+@product@ Assets have even more fine-grained metrics to drill deeper than the
+page level to determine how you can improve the performance of your site.
 
 ![Figure 1: Pages and Assets are important Touchpoints in Analytics Cloud.](../../images/pages-touchpoints-menu.png)
 
-This article shows you where to find the analytics for Pages and Assets. The
-remaining articles explain their metrics.
+This tutorial shows where to find the analytics for Pages and Assets. The
+remaining tutorials explain their metrics.
 
 ## Viewing Page Data [](id=viewing-page-data)
 
@@ -24,8 +23,7 @@ remaining articles explain their metrics.
 
 ![Figure 2: The Page list contains useful summary data.](../../images/pages-list.png)
 
-Order Pages in ascending or descending order based on any one of these
-metrics:
+Order Pages in ascending or descending order based on any one of these metrics:
 
 - Average Engagement Score
 - Total Visitors
@@ -56,8 +54,8 @@ selected in the time period filter. The following values are supported:
 - Last 90 days
 
 To see this in action, select *Order* &rarr; *Visitors*. Keep the default
-descending order, and select *Last 90 days* from the time period menu. The list
-of Pages is  recalculated, and the first result is the Page with the most 
+descending order and select *Last 90 days* from the time period menu. The list
+of Pages is recalculated, and the first result is the Page with the most 
 visitors in the last 90 days.
 
 ![Figure 3: Order the pages in ascending or descending order, over a selected time period.](../../images/pages-order.png)
@@ -66,22 +64,21 @@ To view detailed metrics for a single page, click a page in the list.
 
 ![Figure 4: Most Page metrics are available in the Overview tab.](../../images/pages-overview.png)
 
-See the [article on Page Analytics](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/04-analyzing-touchpoints/01-page-analytics.markdown) for more information.
+See [Page Analytics](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/04-analyzing-touchpoints/01-page-analytics.markdown) 
+for more information.
 
 ## Finding Asset Data [](id=finding-asset-data)
 
 1.  Find the Touchpoints section of the menu.
 
-2.  Click *Assets* to view a list of Assets with summary data.
+2.  Click *Assets* for a list of Assets with summary data.
 
-3.  Choose which Asset type you want to view: Blogs, Documents and Media, Forms,
-    or Web content.
+3.  Choose an Asset type: Blogs, Documents and Media, Forms, or Web content.
 
 Order Assets in ascending or descending order based on any one of the Asset's
-metrics. The specific metrics differ between Assets. See each Asset's
-documentation for more information. In addition, calculate the metrics over
-a selected time period by selecting one of the following values from the period
-menu:
+metrics. The metrics differ between Assets. See each Asset's documentation for
+more information. In addition, calculate the metrics over a selected time period
+by selecting one of the following values from the period menu:
 
 - Last 24 hours
 - Yesterday
@@ -91,7 +88,7 @@ menu:
 - Last 90 days
 
 To see this in action, select *Blogs* &rarr; *Order* &rarr; *Shares*. Keep the
-default descending order, and select *Last 7 days* from the time period menu.
+default descending order and select *Last 7 days* from the time period menu.
 The list of Blogs is recalculated, and the first result is the Blogs Entry with
 the most shares in the last 7 days.
 

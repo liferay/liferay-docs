@@ -1,7 +1,7 @@
 # Blogs Analytics [](id=blogs-analytics)
 
 [Blogs Entries](/discover/portal/-/knowledge_base/7-1/blogs) 
-are important content on websites. They attract readers, who return to view new
+are important content on websites. They attract readers who return to view new
 blog posts and interact in discussion.
 
 Analytics Cloud gives you important insights into how engaged readers are with
@@ -12,7 +12,7 @@ your blog posts.
 ## Visitor Behavior [](id=visitor-behavior)
 
 The Overview tab of an Asset's detail presents several data presentations. The
-first chart, called Visitor Behavior, contains five four important metrics:
+first chart, called Visitor Behavior, contains five important metrics:
 
 - Total Views
 - Average Reading time
@@ -47,20 +47,19 @@ time period.
 
 [Readers can rate blogs.](/discover/portal/-/knowledge_base/7-1/displaying-blogs). 
 Whether the rating is a simple Thumb Up/Thumbs Down, or a Stars rating (0-5
-Stars), the Rating in Analytics Cloud is a calculation that lets you compare Blog
-posts to each other. A Blog post announcing Free Swag is likely to have a higher
-rating than a Blog post announcing that prices are increasing. The rating is
-reported as a number out of 10.
-<!-- todo: get more detail from the devs -->
+Stars), the Rating in Analytics Cloud lets you compare Blog posts to each other.
+A Blog post announcing Free Swag may have a higher rating than a Blog post
+announcing that prices are increasing. The rating is reported as a number out of
+10. <!-- todo: get more detail from the devs -->
 
 ## Views by Segment [](id=views-by-segment)
 
-Scroll down from the Visitor Behavior chart and you'll see the Views by Segment
-bar graph, which is present for all Asset types and Pages.
+Scroll down from the Visitor Behavior chart to see the Views by Segment bar
+graph, which is present for all Asset types and Pages.
 
 The Views by Segment bar graph shows how many times the Asset was viewed by up
 to the top seven Segments over the selected time period. If more than seven
-Segments viewed the Asset, the top six are displayed, and views by the remaining
+Segments viewed the Asset, the top six appear, and views by the remaining
 Segments are aggregated in the seventh bar on the graph, labeled _X More
 Segments_.
 
@@ -89,7 +88,7 @@ are aggregated in the ninth donut segment.
 
 The Asset Appears On table includes a Page Name and URL. Like any Page data in
 Analytics Cloud, only Pages that were interacted with in some way by site
-visitors are tracked and reported.  It's important to note that the link
+visitors are tracked and reported. It's important to note that the link
 doesn't take you to the actual Page with the Asset on it. Instead, it leads to
 the Page Analytics view of the Page. From there you can click the URL to the
 actual Page.
