@@ -7,9 +7,9 @@ you should secure it with X-Pack. The security features of X-Pack include
 authenticating access to the Elasticsearch cluster's data and encrypting
 Elasticsearch's internal and external communications. These are necessary
 security features for most production systems. A Liferay Enterprise Search
-Premium subscription gets you access to both monitoring and security, while a
-Liferay Enterprise Search Standard subscription gets you the monitoring
-integration. Contact
+Premium subscription gets you access to two X-Pack Connectors for @product@:
+monitoring and security. A Liferay Enterprise Search Standard subscription gets
+you the monitoring integration. Contact
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
 Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
@@ -30,9 +30,9 @@ Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
 5.  Restart Elasticsearch. These steps require a full cluster restart.
 
 Following these instructions gives you a basic working installation of
-Elasticsearch communicating freely with @product@, but read Elastic's
-documentation to learn about additional configuration options, features, and the
-architecture of
+Elasticsearch communicating freely with @product@. Read Elastic's documentation
+to learn about additional configuration options, features, and the architecture
+of
 [X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-security.html). 
 
 ## Installing X-Pack [](id=installing-x-pack)
@@ -43,8 +43,8 @@ architecture of
 
         bin/elasticsearch-plugin install x-pack --batch
 
-    on each cluster node. The `--batch` option bypasses installation prompts for
-    granting permissions to X-Pack. 
+    on each running Elasticsearch node. The `--batch` option bypasses
+    installation prompts for granting permissions to X-Pack. 
 
     You'll see log output detailing the permissions granted, finishing with
     `Installed x-pack`:
@@ -85,9 +85,10 @@ architecture of
 
     This property is `true` by default, so if you don't see it in
     `elasticsearch.yml`, there's nothing to worry about. See [Elastic's
-    documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docs-index_.html#index-creation) for more information on automatic index creation.
+    documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docs-index_.html#index-creation) 
+    for more information on automatic index creation.
 
-3.  Restart Elasticsearch.
+3.  Restart Elasticsearch. Make sure @product@ is shut down during this step.
 
 Once X-Pack is installed, configure its built-in user passwords.
 
@@ -104,7 +105,7 @@ Kibana's UI or the
 [Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/security-api-change-password.html).
 
 The `interactive` argument lets you set the passwords for all built-in users.
-The configuraiton shown in these articles assumes you set all of the
+The configuration shown in these articles assumes you set all of the
 passwords to *liferay*. Of course, that's not recommended for production systems.
 
     ./bin/x-pack/setup-passwords interactive
@@ -126,7 +127,7 @@ whenever one is needed. Customize these as appropriate for your installation.
 ### Generate Node Certificates [](id=generate-node-certificates)
 
 [Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#node-certificates)
-for each node. You can, of course, use a Certificate Authority toobtain node 
+for each node. You can, of course, use a Certificate Authority to obtain node 
 certificates.
 
 1.  Create a certificate authority, using 
@@ -147,10 +148,10 @@ certificates.
 
 +$$$
 
-**Note:** The `certutil` command defaults to using the *PKSC#12* format
-for certificate generation. Kibana does not work with PKSC#12
-certificates, so the `--pem` option (to generate the certificate in PEM
-format) is important if you're using X-Pack monitoring.
+**Note:** The `certutil` command defaults to using the *PKSC#12* format for
+certificate generation. Kibana does not work with PKSC#12 certificates, so the
+`--pem` option (to generate the certificate in PEM format) is important if
+you're using X-Pack monitoring.
 
 $$$
 
@@ -193,7 +194,7 @@ To configure the X-Pack adapter, navigate to *Control Panel*
 &rarr; *Configuration* &rarr; *System Settings*. Find the *Foundation* category and
 click on the *X-Pack Security* entry. You can enter the property values here, but
 it's more common to use a 
-[configuration file](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
+[configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
 deployed to `Liferay Home/osgi/configs`. For the X-Pack adapter, create a file
 called
 
@@ -208,16 +209,19 @@ these contents:
     certificateFormat="PEM"
     requiresAuthentication="true"
     username="elastic"
-    password="GqhoaEUyTM@tp1*wQd~F"
+    password="liferay"
     sslCertificateAuthoritiesPaths="/path/to/[Elasticsearch Home]/config/ca.crt"
     transportSSLVerificationMode="certificate"
     transportSSLEnabled="true"
+
+Note that the `password` should match what you set during the X-Pack password
+setup above. 
 
 Enable authentication by setting authentication to `required` and providing the
 credentials for the Elasticsearch user. For SSL, enable transport SSL, set the
 certificate verification mode and certificate format, and provide the path to
 the certificate, key, and certificate authority. Of course, the exact values
-will differ if you configured X-Pack differently.
+differ if you configured X-Pack differently.
 
 Here's the complete list of configuration options for the X-Pack Connector:
 
