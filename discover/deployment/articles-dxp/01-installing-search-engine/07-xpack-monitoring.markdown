@@ -1,7 +1,7 @@
-# Installing X-Pack Security
+# Installing X-Pack Monitoring
 
-To monitor Elasticsearch, use X-Pack Monitoring. First 
-[install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-0/securing-elasticsearch-6-with-x-pack)
+Monitor Elasticsearch with X-Pack Monitoring. First 
+[install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-1/installing-x-pack-security)
 and configure security if you're using X-Pack's security features. Then come
 back here for instructions on installing and configuring Kibana (the monitoring
 server) with X-Pack so that Elasticsearch (secured with X-Pack), Kibana (secured
@@ -25,9 +25,9 @@ This document assumes you're enabling security *and* monitoring, though it's not
 a requirement. Differences in the process are noted as appropriate.
 
 For the X-Pack installation procedure, refer to the 
-[X-Pack security article](/discover/deployment/-/knowledge_base-7-0/securing-elasticsearch-6-with-x-pack).
+[X-Pack security article](/discover/deployment/-/knowledge_base-7-1/installing-x-pack-security).
 
-This guide starts with the installation of Kibana.
+Start with the installation of Kibana.
 
 ## Install Kibana [](id=install-kibana)
 
@@ -118,12 +118,12 @@ with a Kibana user. The last step is to hook Kibana up with @product@.
 
 If you have a Liferay Enterprise Search (Premium or Standard) subscription,
 download the Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]. Install
-the LPKG file by copying it into the `Liferay Home/deploy` folder. That'sall
+the LPKG file by copying it into the `Liferay Home/deploy` folder. That's all
 there is to it.
 
 1.  Once the connector is installed and Kibana and Elasticsearch are securely
     configured, create a 
-    [configuration file](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
+    [configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
     named
 
         com.liferay.portal.search.elasticsearch6.xpack.monitoring.web.internal.configuration.XPackMonitoringConfiguration.config
@@ -191,7 +191,4 @@ See the Elastic documentation for information on
 [monitoring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/es-monitoring.html)
 and 
 [monitoring production systems](https://www.elastic.co/guide/en/x-pack/6.1/monitoring-production.html).
-
-
-
 
