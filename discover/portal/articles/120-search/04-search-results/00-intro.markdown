@@ -2,7 +2,7 @@
 
 The ideal search experience involves a User entering a search term, waiting an
 infinitesimal amount of time, and having the perfectly matching asset delivered
-to them at the top of a list of other extremely relevant hits. Like this:
+at the top of a list of other extremely relevant hits. Like this:
 
 ![Figure 1: The goal is to return the perfect results to Users searching your site.](../../../images/search-results-perfect.png)
 
@@ -11,9 +11,8 @@ stored in the search engine (this process is called
 [*indexing*](/develop/tutorials/-/knowledge_base/7-1/understanding-search-and-indexing)),
 and how its information is searched and returned in the search results.
 Developers who dislike how a particular asset behaves in search can use an
-[*Indexer Post
-Processor*](/develop/reference/-/knowledge_base/7-1/indexer-post-processor) to
-modify the asset's indexing behavior, and how search queries are constructed to
+[*Indexer Post Processor*](/develop/reference/-/knowledge_base/7-1/indexer-post-processor) to
+modify the asset's indexing behavior and how search queries are constructed to
 look up the assets in @product@.
 
 The Search Results behavior configurable through the UI is covered in this

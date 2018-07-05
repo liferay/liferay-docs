@@ -18,21 +18,20 @@ responses in their indexed, document-based format. Part of a developer's job
 when writing 
 [search indexers](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search#indexers)
 is to convert documents (the objects that get indexed) to the actual object and
-back again. This option allows developers to see how their objects are being
-indexed. Once enabled, click the *Details...* link below the result summary to
-expand the result's document view.
+back again. Thus, developers can see how their objects are being indexed. Once
+enabled, click the *Details...* link below the result summary to expand the
+result's document view.
 
 ![Figure 1: Viewing a results document lets you inspect exactly what's being indexed for a particular asset. This is just a small portion of one document.](../../../images/search-results-document.png)
 
 **Display Selected Result in Context**
 : When an asset is clicked, show it in its native application. For example, if
-you click on a blog post in the search results, you'll be taken to the page
-where the Blogs Entry is posted in the Blogs application. Note that you will no
-longer be in the search context after clicking on a search result. When this
-option is unchecked, the asset displays in an Asset Publisher window while still
-in the search context. If you have the right permissions, you can even edit the
-content directly from the Search context. Click the back arrow to return to the
-search results.
+you click on a blog post in the search results, you see where the Blogs Entry is
+posted in the Blogs application. Note that you're not in the search context
+after clicking on a search result. When this option is unchecked, the asset
+displays in an Asset Publisher window while still in the search context. If you
+have the right permissions, you can even edit the content directly from the
+Search context. Click the back arrow to return to the search results.
 
 The next three configurations concern results pagination.
 
@@ -40,8 +39,8 @@ The next three configurations concern results pagination.
 
 **Pagination Start Parameter Name**
 : Set the name of the URL parameter for the results page. If the default value
-*start* is preserved, this URL is displayed when the User navigates to the
-second results page after searching for *test*:
+*start* is preserved, this URL displays when the User navigates to the second
+results page after searching for *test*:
 
     http://localhost:8080/web/guest/search?q=test&start=2
 

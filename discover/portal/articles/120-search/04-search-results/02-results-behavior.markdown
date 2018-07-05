@@ -12,11 +12,11 @@ covers these additional Search Results concepts and configurations:
 
 ## Filtering Results with Facets [](id=filtering-results-with-facets)
 
-Results are filtered using *facets*. Most Users will have encountered similar
-filtering capabilities in other online applications, particularly during online
-commerce activities. Users enter a search term, are presented with a list of
-results and search facets, which you can think of as buckets that group results
-together if they share a common characteristic.
+Results are filtered using *facets*. Most users have encountered similar
+filtering capabilities in other applications, particularly during commerce
+activities. Users enter a search term, are presented with a list of results and
+search facets, which you can think of as buckets that group results together if
+they share a common characteristic.
 
 Administrators can configure facets. Read about 
 [configuring facets](/discover/portal/-/knowledge_base/7-1/configuring-facets) 
@@ -24,24 +24,24 @@ to learn more.
 
 ## Search Results Relevance [](id=search-results-relevance)
 
-How does the search engine decide which results to return at the top of the
-list? It uses the concept of *relevance*. Relevance is based on a score
-calculated by the search engine. There are numerous factors contributing to the
-total score of a returned document, and all of the implementation details of how
-relevance scoring works are dependent algorithms provided by the 
+The search engine decides which results appear at the top of the list using the
+concept of *relevance*. Relevance is a score calculated by the search engine.
+There are numerous factors contributing to the total score of a returned
+document, and all of the implementation details of how relevance scoring works
+are algorithms provided by the 
 [search engine](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html#relevance-intro).
 
 ## Permissions and Search Results [](id=permissions-and-search-results)
 
 Users lacking
-[VIEW permission](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) 
-on an asset won't see it in the search results. A logged in User with the Site
-Administrator role will likely see more search results than a guest User to the
+[VIEW permission](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
+on an asset don't see it in the search results. A logged in User with the Site
+Administrator role likely sees more search results than a guest User to the
 site. 
 
 In the background, there are two rounds of permissions checks. The first
-permissions check, _pre-filtering_, happens in the search engine's index. This
-is faster than checking database permissions information, but occasionally the
+permissions check, _pre-filtering_, happens in the search engine's index. It's
+faster than checking database permissions information, but occasionally the
 search index can have stale permissions information. To ensure the search
 engine's index has correct, up-to-date permissions information, a second,
 last-second permissions check, _post-filtering_, is performed on the results
@@ -50,8 +50,8 @@ prior to their display.
 ### Initial Permissions Checking [](id=initial-permissions-checking)
 
 The first round of search results permissions filtering adds filter clauses to
-the search query. This ensures that results come back from the search engine
-pre-filtered, with only results the current User can view.
+the search query. This ensures that results return from the search engine
+pre-filtered, containing results the current User can view.
 
 This initial permission checking is configurable at *Control Panel* &rarr;
 *Configuration* &rarr; *System Settings* &rarr; *Search* &rarr; *Permission
@@ -67,20 +67,20 @@ removed in a future release.
 before this level of permission checking is aborted. Permission checking then
 relies solely on the final permission filtering described below.
 
-Why would you want to limit the number of permissions clauses in the search
-query? Performance. Users with administrative access to lots of sites and
-organizations will generate many permissions terms added to the query. Too many
-terms in a query can make the search engine time out.
+The only reason to limit permissions terms is performance. Users with
+administrative access to lots of sites and organizations generate many
+permissions terms added to the query. Too many terms in a query can make the
+search engine time out.
 
 ### Final Permissions Checking [](id=final-permissions-checking)
 
-Prior to presenting results in the UI, there's a final round of permission
-checking. For example, the User searches for *liferay*, and the search engine
-returns all relevant forum posts. As the Search Results iterates through the
-list of relevant forum posts, it performs one last permission check of the post
-to ensure the User can view the post and the categories it exists within. If a
-matching forum post exists in a category the User doesn't have permission to
-view, it isn't displayed in the list of search results.
+A final round of permission checking happens prior to presenting results in the
+UI. For example, the User searches for *liferay*, and the search engine returns
+all relevant forum posts. As the Search Results iterates through the list of
+relevant forum posts, it performs one last permission check of the post to
+ensure the User can view the post and its categories. If a matching forum post
+exists in a category the User doesn't have permission to view, it isn't
+displayed in the list of search results.
 
 This final round of permission checking is configurable at *Control Panel*
 &rarr; *Configuration* &rarr; *System Settings* &rarr; *Search* &rarr; *Default
@@ -108,33 +108,27 @@ Search Result Permission Filter*. It includes two settings:
 
 With
 [staging](/discover/portal/-/knowledge_base/7-1/staging-content-for-publication),
-content is first placed in a preview and testing environment before being
+content is placed first in a preview and testing environment before being
 published for consumption by end Users (on the live site). Content added to the
 search index is marked so that the search API can decipher whether an item is
-live or not. In the live version of the site, it's quite simple: only content
-that's marked for the live site is searchable. 
+live or not. In the live version of the site, only content that's marked for the
+live site is searchable. 
 
-In the staged version of the site, all content, whether live or staged, is
-searchable.
+In the staged version of the site, all content---live or staged---is searchable.
 
 ## Result Summaries [](id=result-summaries)
 
-If each search result was displayed as a raw JSON document, Users would faint
-and User Experience Designers around the world might spontaneously combust.
-Liferay values end Users and User Experience Designers alike, so a list of
-results displaying summaries is returned instead. 
+A result summary includes the information from a document that the asset's
+developer felt is most useful to end Users searching for the asset. Each asset
+can have different fields included in the summary. For assets with text content,
+a common summary format includes the *title* and some of the *content*, with
+title displayed first. The asset type always appears on the second line, and
+a snippet of the content that matches the search term is on the last line.
+Assets without content fields, like Documents and Media documents, display the
+description instead.
 
-So what's included in a result summary? The information from a document that the
-asset's developer felt is most useful to end Users searching for the asset.
-Each asset can have different fields included in the summary. For assets with
-text content, a common summary format is to include the *title* and some of the
-*content*, with title displayed first. The asset type is always displayed on the
-second line, and a snippet of the content that includes a match to the search
-term on the last line. Assets without content fields, like Documents and Media
-documents, display the description instead.
-
-Users are different. Only the User's full name and the asset type (User) are
-displayed in User result summaries.
+Users are different. Only the User's full name and the asset type (User) appear
+in User result summaries.
 
 ![Figure 1: User summaries contain only the User's full name.](../../../images/search-results-user.png)
 
@@ -152,9 +146,9 @@ Bookmarks entries show the title and the URL.
 ![Figure 3: Bookmarks Entries summaries show the title and the URL.](../../../images/search-results-bookmark.png)
 
 The asset developer determines which fields are summary-enabled, but there's
-logic invoked at search time that determines precisely which part of the summary
+logic invoked at search time that determines precisely the part of the summary
 fields to display. For example, a `content` field can have a lot of text, but
-the summary doesn't show it all. Instead, it shows just a snippet of the field's
+the summary doesn't show it all. Instead, it shows a snippet of the field's
 text. If the keyword searched for is present in the summary field, that portion
 of the field is used in the summary. In addition, the matching keyword is
 highlighted in the summary.
@@ -165,17 +159,16 @@ By now you've probably noticed that search terms appearing in the summary are
 <mark>highlighted</mark> by default. If this is undesirable, disable it in the
 widget configuration screen. 
 
-![Figure 4: Some document summaries have lots of highlights, if the search term matches text that appears in the summary.](../../../images/search-results-highlight.png)
+![Figure 4: Some document summaries have lots of highlights if the search term matches text that appears in the summary.](../../../images/search-results-highlight.png)
 
 Highlighting is a helpful visual cue that hints at why the result is returned,
-but beware. A hit can score well, and thus be returned near the top of the
-results, without having any highlights appear in the summary. That's because not
-all indexed fields appear in the summary. Consider a User named Arthur C.
-Clarke. He has an email address of *acc@authors.org*, which is searchable.
-Because results summaries for Users only contain the full name of the User,
-searching for Mr. Clarke by his email address returns the User, but no term is
-highlighted. 
+but beware. A hit can score well and thus be returned near the top of the
+results, without having any highlights in the summary. That's because not all
+indexed fields appear in the summary. Consider a User named Arthur C. Clarke. He
+has an email address of *acc@authors.org*, which is searchable. Because results
+summaries for Users only contain the full name of the User, searching for Mr.
+Clarke by his email address returns the User, but no term is highlighted. 
 
 ![Figure 5: Results that match the search term won't always have highlights.](../../../images/search-results-no-highlight.png)
 
-There are additional cases where search results won't have highlighting.
+There are additional cases where search results don't have highlighting.
