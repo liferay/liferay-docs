@@ -40,11 +40,12 @@ Administrator role will likely see more search results than a guest User to the
 site. 
 
 In the background, there are two rounds of permissions checks. The first
-permissions check happens in the search engine's index. This is faster than
-checking database permissions information, but occasionally the search index can
-have stale permissions information. To ensure the search engine's index has
-correct, up-to-date permissions information, a second, last-second permissions
-check is performed on the results prior to their display.
+permissions check, _pre-filtering_, happens in the search engine's index. This
+is faster than checking database permissions information, but occasionally the
+search index can have stale permissions information. To ensure the search
+engine's index has correct, up-to-date permissions information, a second,
+last-second permissions check, _post-filtering_, is performed on the results
+prior to their display.
 
 ### Initial Permissions Checking [](id=initial-permissions-checking)
 
@@ -55,19 +56,21 @@ pre-filtered, with only results the current User can view.
 This initial permission checking is configurable at *Control Panel* &rarr;
 *Configuration* &rarr; *System Settings* &rarr; *Search* &rarr; *Permission
 Checker*. It includes two system level settings to configure how search
-processes User permissions:
+processes User permissions.
 
-1.  Ignore the first setting, Include Inherited Permissions: it's deprecated,
-    no longer used anywhere, and will be removed in a future release.
+**Include Inherited Permissions**
+: Ignore this setting. It's deprecated, no longer used anywhere, and will be
+removed in a future release.
 
-2.  The second setting, Permissions Term Limit, limits the number of permission
-    search clauses added to the search query before this level of permission
-    checking is aborted. Permission checking then relies solely on the final
-    permission filtering described below.
+**Permissions Term Limit**
+: Limits the number of permission search clauses added to the search query
+before this level of permission checking is aborted. Permission checking then
+relies solely on the final permission filtering described below.
 
 Why would you want to limit the number of permissions clauses in the search
-query? Performance. Too many search terms in a query can make the search engine
-time out.
+query? Performance. Users with administrative access to lots of sites and
+organizations will generate many permissions terms added to the query. Too many
+terms in a query can make the search engine time out.
 
 ### Final Permissions Checking [](id=final-permissions-checking)
 
@@ -148,21 +151,30 @@ Bookmarks entries show the title and the URL.
 
 ![Figure 3: Bookmarks Entries summaries show the title and the URL.](../../../images/search-results-bookmark.png)
 
+The asset developer determines which fields are summary-enabled, but there's
+logic invoked at search time that determines precisely which part of the summary
+fields to display. For example, a `content` field can have a lot of text, but
+the summary doesn't show it all. Instead, it shows just a snippet of the field's
+text. If the keyword searched for is present in the summary field, that portion
+of the field is used in the summary. In addition, the matching keyword is
+highlighted in the summary.
+
 ## Highlighting [](id=highlighting)
 
 By now you've probably noticed that search terms appearing in the summary are
-<mark>highlighted</mark> by default. Highlgihting is disabled in the widget
-configuration screen. 
+<mark>highlighted</mark> by default. If this is undesirable, disable it in the
+widget configuration screen. 
 
 ![Figure 4: Some document summaries have lots of highlights, if the search term matches text that appears in the summary.](../../../images/search-results-highlight.png)
 
 Highlighting is a helpful visual cue that hints at why the result is returned,
 but beware. A hit can score well, and thus be returned near the top of the
-results, without having any highlights. That's because not all indexed fields
-appear in the summary. Consider a User named Arthur C. Clarke. He has an email
-address of *acc@authors.org*, which is searchable. Because results summaries for
-Users only contain the full name of the User, searching for Mr. Clarke by his
-email address returns the User, but no term is highlighted. 
+results, without having any highlights appear in the summary. That's because not
+all indexed fields appear in the summary. Consider a User named Arthur C.
+Clarke. He has an email address of *acc@authors.org*, which is searchable.
+Because results summaries for Users only contain the full name of the User,
+searching for Mr. Clarke by his email address returns the User, but no term is
+highlighted. 
 
 ![Figure 5: Results that match the search term won't always have highlights.](../../../images/search-results-no-highlight.png)
 

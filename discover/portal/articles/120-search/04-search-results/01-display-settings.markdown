@@ -46,7 +46,9 @@ second results page after searching for *test*:
     http://localhost:8080/web/guest/search?q=test&start=2
 
 **Pagination Delta**
-: Set the number of results to display per results page. Defaults to *20*.
+: Set the number of results to display per results page. Defaults to *20* unless
+you customized the `search.container.page.default.delta` property in your
+`portal-ext.properties` file.
 
 **Pagination Delta Parameter Name**
 : Set the name of the URL parameter that stores the Pagination Delta value. This
