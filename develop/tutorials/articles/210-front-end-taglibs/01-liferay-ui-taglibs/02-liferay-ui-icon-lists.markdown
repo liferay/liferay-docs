@@ -2,7 +2,7 @@
 
 An icon list displays icons in a horizontal list, instead of in a pop-up
 navigation menu like an 
-[icon menu](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icon-menu). You
+[icon menu](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icon-menus). You
 can see an example of an icon list menu in a message board thread. The thread's
 actions are visible at all times for administrators:
 

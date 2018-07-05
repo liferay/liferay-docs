@@ -33,7 +33,7 @@ a theme. To include a layout template with a theme, follow these steps:
         </template-path>
     
 4.  Specify the 
-    [layout template thumbnail's](/develop/tutorials/-/knowledge_base/7-1/creating-a-custom-thumbnail-for-your-layout-template) 
+    [layout template thumbnail's](/develop/tutorials/-/knowledge_base/7-1/creating-custom-layout-template-thumbnail-previews) 
     path with a `<thumbnail-path>` tag, as shown below:
 
         <thumbnail-path>

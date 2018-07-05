@@ -75,7 +75,7 @@ used:
 That's it! You've successfully configured and leveraged the Theme Builder in
 your project. You can also use the Theme Builder to migrate a Plugins SDK
 theme to Liferay Workspace. See the
-[Migrating a Theme from the Plugins SDK to Workspace](/develop/tutorials/-/knowledge_base/7-1/migrating-a-theme-from-the-plugins-sdk-to-workspace)
+[Migrating a Theme from the Plugins SDK to Workspace](/develop/tutorials/-/knowledge_base/7-0/migrating-a-theme-from-the-plugins-sdk-to-workspace)
 tutorial for details.
 
 ## Related Topics [](id=related-topics)
