@@ -31,13 +31,13 @@ tool to open a Gogo shell for
 [upgrading modules](/discover/deployment/-/knowledge_base/7-1/gogo-shell-commands-for-module-upgrades)
 after finishing the core upgrade. 
 
-The `db-upgrade.sh` script (`db-upgrade.bat` on Windows) invokes the upgrade
+The `db_upgrade.sh` script (`db_upgrade.bat` on Windows) invokes the upgrade
 tool. It resides in the  `[Liferay Home]/tools/portal-tools-db-upgrade-client`
 folder. 
 
 This command prints the upgrade tool usage: 
 
-    db-upgrade.sh --help
+    db_upgrade.sh --help
 
 +$$$
 
@@ -55,11 +55,11 @@ The `-j` option lets you override the JVM parameters. For example, these options
 set the JVM memory to 10GB, which is a good starting point for this process
 type:
 
-    db-upgrade.sh -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
+    db_upgrade.sh -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
 
 The `-l` option lets you specify the tool's log file name: 
 
-    db-upgrade.sh -l "output.log"
+    db_upgrade.sh -l "output.log"
 
 Here are all the upgrade tool command line options:
 
