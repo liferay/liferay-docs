@@ -58,7 +58,7 @@ Parameter Name | Type | Default Value | Description
 `pluginName` | `String` | `null` | If specified, a plugin can enable additional generation features, such as `Clp` class generation, for non-OSGi modules.
 `propsUtil` | `String` | `"com.liferay.portal.util.PropsUtil"` | The fully qualified class name of the service properties util class to generate.
 `readOnlyPrefixes` | `String` | `"fetch, get, has, is, load, reindex, search"` | Prefixes of methods to consider read-only.
-`resourceActionsConfigs` | `String` | `"META-INF/resource-actions/default.xml, resource-actions/default.xml"` | Paths to the [resource actions](/develop/tutorials/-/knowledge_base/7-1/adding-permissions-to-resources) files for Liferay Service Builder to use in generating the service layer.
+`resourceActionsConfigs` | `String` | `"META-INF/resource-actions/default.xml, resource-actions/default.xml"` | Paths to the [resource actions](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions) files for Liferay Service Builder to use in generating the service layer.
 `resourcesDirName` | `String` | `"src"` | A directory where the service non-Java files are generated.
 `springFileName` | `String` | `"src/META-INF/portal-spring.xml"` | A service Spring file to generate.
 `springNamespaces` | `String` | `"beans"` | Namespaces of Spring XML Schemas to add to the service Spring file.
