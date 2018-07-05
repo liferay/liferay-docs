@@ -1,4 +1,4 @@
-# Introduction [](id=Introduction)
+# Your New Home for Analytics [](id=your-new-home-for-analytics)
 
 Liferay invites the Liferay Analytics Cloud Owner (the person who purchased the
 product) to your company’s Liferay Analytics Cloud project. If you’re not the
