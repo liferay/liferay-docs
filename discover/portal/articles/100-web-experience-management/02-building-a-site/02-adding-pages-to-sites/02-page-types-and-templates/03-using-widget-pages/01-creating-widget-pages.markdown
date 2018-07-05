@@ -75,6 +75,6 @@ app and Blogs Aggregator app to a page.
 
 If the default layout options provided aren't enough, you can create your own.
 For more information about developing custom layout templates, see the tutorial
-[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator-0). 
+[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator). 
 
 Next, you'll look at creating reusable templates for widget pages.

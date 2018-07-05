@@ -3,7 +3,7 @@
 Export/Import lets you backup and restore your Site and app data as a LAR
 (Liferay Archive). There are two primary places Export/Import is used: Sites
 and apps. You can learn more about exporting/importing app data in the
-[Exporting/Importing App Content](/discover/portal/-/knowledge_base/7-1/exporting-importing-app-data)
+[Exporting/Importing Widget Content](/discover/portal/-/knowledge_base/7-1/exporting-importing-widget-data)
 section. In this section, you'll learn how to export and import content for
 Sites.
 
