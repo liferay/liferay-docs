@@ -53,8 +53,6 @@ Now you know how to adapt external libraries for Liferay's JavaScript Loaders.
 
 ## Related Topics [](id=related-topics)
 
-[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-1/configuring-modules-for-products-loaders)
+[Liferay AMD Module Loader](/develop/tutorials/-/knowledge_base/7-1/loading-amd-modules-in-liferay)
 
-[Liferay AMD Module Loader](/develop/tutorials/-/knowledge_base/7-1/liferay-amd-module-loader)
-
-[Using ES2015 Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-1/using-es2015-modules-in-your-portlet)
+[Using ES2015+ Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-1/preparing-your-javascript-files-for-esplus)

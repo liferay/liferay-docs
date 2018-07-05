@@ -48,7 +48,7 @@ a Cart Content widget.
 
 Follow these steps to set up a cart:
 
-1.  [Create a page](/discover/portal/-knowledge_base/7-1/creating-and-managing-pages).
+1.  [Create a page](/discover/portal/-/knowledge_base/7-1/creating-pages).
 
 2.  Go to *Add Menu* &rarr; *Widgets* &rarr; *Commerce* and add *Commerce
     Cart Content* and *Commerce Cart Content Total* widgets to the page. This
@@ -63,7 +63,7 @@ Follow these steps to set up a cart:
 The purchase process is handled by a *Commerce Checkout* widget. Follow
 these steps:
 
-1.  [Create a page](/discover/portal/-knowledge_base/7-1/creating-and-managing-pages).
+1.  [Create a page](/discover/portal/-/knowledge_base/7-1/creating-pages).
 
 2.  Go to the *Add Menu* &rarr; *Widgets* &rarr; *Commerce* and add a *Commerce
     Checkout* Widget to the page.
@@ -133,7 +133,7 @@ respectively.
 The product comparison feature displays the details of multiple products on
 a single page. Follow these steps to enable this feature:
 
-1.  [Create a page](/discover/portal/-knowledge_base/7-1/creating-and-managing-pages).
+1.  [Create a page](/discover/portal/-/knowledge_base/7-1/creating-pages).
 
 2.  Go to *Add Menu* &rarr; *Widgets* &rarr; *Commerce* and add a *Compare
     Products* widget to the page.

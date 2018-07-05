@@ -8,7 +8,7 @@ deployment. For more information on running this task from Liferay Workspace,
 see the
 [Validating Modules Against the Target Platform](/develop/tutorials/-/knowledge_base/7-1/validating-modules-against-the-target-platform)
 tutorial section. For general help with OSGi related issues, visit the
-[Troubleshooting FAQ](/develop/tutorials/-/knowledge_base/7-1/troubleshooting)
+[Troubleshooting FAQ](/develop/tutorials/-/knowledge_base/7-0/troubleshooting)
 tutorial section.
 
 For help interpreting the `resolve` task's output, see the list below for common
@@ -42,7 +42,7 @@ configuration of your modules. Also, see the
 tutorial for more information on resolving import errors. Sometimes, this kind
 of error can be solved by editing the `resolve` task's list of capabilities. See
 the
-[Depending on Third Party Libraries Not Included in @product@](/develop/tutorials/-/knowledge_base/7-1/depending-on-third-party-libraries-not-included-in-product)
+[Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
 section to learn how to do this.
 
 ## Missing Service Reference [](id=missing-service-reference)
@@ -83,7 +83,7 @@ If you're unable to track down your missing service, it may be provided by a
 customized @product@ core feature or an external @product@ feature. If this is
 the case, it isn't included in the target platform's default capabilities. You
 can make the custom service capability available to reference by
-[generating a new custom distro JAR](/develop/reference/-/knowledge_base/7-1/modifying-the-target-platforms-capabilities#depending-on-a-customized-distrobution-of-product).
+[generating a new custom distro JAR](/develop/tutorials/-/knowledge_base/7-1/modifying-the-target-platforms-capabilities#depending-on-a-customized-distribution-of-product).
 
 ## Missing Fragment Host [](id=missing-fragment-host)
 

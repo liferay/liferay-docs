@@ -63,7 +63,7 @@ these property-related updates:
     [migrate the Image Gallery](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images).
 
 -   If you have a sharded environment,
-    [configure your upgrade for sharding](/discover/deployment/-/knowledge_base/7-1/upgrading-sharded-environment).
+    [configure your upgrade for sharding](/discover/deployment/-/knowledge_base/7-0/upgrading-sharded-environment).
 
 When a new version of @product@ is released, there are often changes to default
 settings, and this release is no different. If you rely on the defaults from
@@ -137,7 +137,7 @@ provides more information.
 Next,
 [install @product@ on your application server](/discover/deployment/-/knowledge_base/7-1/deploying-product)
 or
-[use @product@ bundled with your application server of choice](/discover/deployment/-/knowledge_base/7-1/installing-product).
+[use @product@ bundled with your application server of choice](/discover/deployment/-/knowledge_base/7-1/installing-liferay).
 
 **Important**: Once you have installed @product-ver@, **DON'T START IT!** In
 previous versions, once you prepared your system for an upgrade, the upgrade

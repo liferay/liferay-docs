@@ -33,10 +33,10 @@ tutorials and samples demonstrate developing in these environments.
 
 -   [Maven in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide),
     [Maven tutorials](/develop/tutorials/-/knowledge_base/7-1/maven),
-    and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-modules)
+    and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 
 -   [Gradle in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/using-gradle-in-liferay-ide)
-    and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-modules)
+    and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 
 $$$
 

@@ -837,8 +837,10 @@ caption {
        
 </table>
 
+<!-- TODO: Add back when this article is available:
 For help finding API modules for specific common classes, see
-[@product-ver@ API Modules](/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules).
+[@product-ver@ API Modules](develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules).
+-->
 
 For help finding module attributes and configuring dependencies, see 
 [Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies). 

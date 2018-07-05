@@ -203,7 +203,7 @@ otherwise follow the pattern below:
     />
 
 The `displayStyle`'s value is set to the 
-[current view type](/develop/tutorials/-/knowledge_base/7-1/configuring-your-content-for-the-view-types#defining-the-view-types).
+[current view type](/develop/tutorials/-/knowledge_base/7-1/implementing-the-view-types#defining-the-view-types).
 
 ## Related Topics [](id=related-topics)
 

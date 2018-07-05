@@ -135,7 +135,7 @@ settings there.
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-1)
 
@@ -186,7 +186,7 @@ navigating to Liferay Portal's *Control Panel* &rarr; *Configuration* &rarr;
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-2)
 
@@ -224,7 +224,7 @@ settings there.
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-3)
 
@@ -296,7 +296,7 @@ there.
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-5)
 
@@ -333,7 +333,7 @@ Settings* &rarr; *Collaboration* &rarr; *Documents & Media Service* or
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-6a)
 
@@ -535,7 +535,7 @@ the settings there.
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-your-applications-configurable).
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-10)
 
