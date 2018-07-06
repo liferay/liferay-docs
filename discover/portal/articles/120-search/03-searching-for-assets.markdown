@@ -99,6 +99,17 @@ Configure the Search Bar's behavior via its portlet configuration screen.
 
 ![Figure 5: Configure the search bar behavior in its configuration screen.](../../images/search-bar-configuration.png)
 
++$$$
+
+**Note:** The Search Bar widget embedded on each page by default is only one
+instance, no matter how many pages you have. Configuring any one configures all
+of them to match. 
+
+All the Search Bar widgets you add manually are separate instances. Each one
+must be configured separately.
+
+$$$
+
 There are several options:
 
 **Keywords Parameter Name**
