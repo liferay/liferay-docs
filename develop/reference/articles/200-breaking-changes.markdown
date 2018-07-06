@@ -797,7 +797,8 @@ This change helps stabilize the foundation of Liferay Portal's utilities.
 
 #### What changed?
 
-The way how the publication process works when we're using the default "From Last Publish Date” option.
+The way how the publication process works when we're using the default "From
+Last Publish Date” option.
 
 #### Who is affected?
 
@@ -805,15 +806,23 @@ This affects anyone who implemented Staging support for their custom entities.
 
 #### How should I update my code?
 
-You must create a `StagingModelListener` class for your custom entity which extends the `com.liferay.portal.kernel.model.BaseModelListener`.
-See the `com.liferay.blogs.internal.model.listener.BlogsEntryStagingModelListener` as an example.
+You must create a `StagingModelListener` class for your custom entity which
+extends the `com.liferay.portal.kernel.model.BaseModelListener`. See the
+`com.liferay.blogs.internal.model.listener.BlogsEntryStagingModelListener` as an
+example.
 
-You must update the `doPrepareManifestSummary` method in your custom `PortletDataHandler` to use the `populateLastPublishDateCounts` method from `com.liferay.exportimport.internal.staging.StagingImpl` in case of a "From Last Publish Date” publication.
-See the `om.liferay.blogs.web.internal.exportimport.data.handler.BlogsPortletDataHandler` as an example.
+You must update the `doPrepareManifestSummary` method in your custom
+`PortletDataHandler` to use the `populateLastPublishDateCounts` method from
+`com.liferay.exportimport.internal.staging.StagingImpl` in case of a "From Last
+Publish Date” publication. See the
+`om.liferay.blogs.web.internal.exportimport.data.handler.BlogsPortletDataHandler`
+as an example.
 
 #### Why was this change made?
 
-It was hard to collect which entities should be published to Live. Instead of running queries to find the contents which were modified since the last publication, now the Changesets are used to track this information.
+It was hard to collect which entities should be published to Live. Instead of
+running queries to find the contents which were modified since the last
+publication, now the Changesets are used to track this information.
 
 ---------------------------------------
 
