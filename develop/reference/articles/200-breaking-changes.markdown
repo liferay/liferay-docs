@@ -791,11 +791,37 @@ This change helps stabilize the foundation of Liferay Portal's utilities.
 
 ---------------------------------------
 
+### Staging publication using the default "From Last Publish Date" option[](id=staging-publication-using-the-default-from-last-publish-date-option)
+- **Date:** 2018-Jun-06
+- **JIRA Ticket:** [LPS-81695](https://issues.liferay.com/browse/LPS-81695)
+
+#### What changed? [](id=what-changed-15)
+
+The way how the publication process works when we're using the default "From Last Publish Date” option.
+
+#### Who is affected? [](id=who-is-affected-15)
+
+This affects anyone who implemented Staging support for their custom entities.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-15)
+
+You must create a `StagingModelListener` class for your custom entity which extends the `com.liferay.portal.kernel.model.BaseModelListener`.
+See the `com.liferay.blogs.internal.model.listener.BlogsEntryStagingModelListener` as an example.
+
+You must update the `doPrepareManifestSummary` method in your custom `PortletDataHandler` to use the `populateLastPublishDateCounts` method from `com.liferay.exportimport.internal.staging.StagingImpl` in case of a "From Last Publish Date” publication.
+See the `om.liferay.blogs.web.internal.exportimport.data.handler.BlogsPortletDataHandler` as an example.
+
+#### Why was this change made? [](id=why-was-this-change-made-15)
+
+It was hard to collect which entities should be published to Live. Instead of running queries to find the contents which were modified since the last publication, now the Changesets are used to track this information.
+
+---------------------------------------
+
 ### Decoupled Several Classes from PortletURLImpl [](id=decoupled-several-classes-from-portleturlimpl)
 - **Date:** 2018-Jun-08
 - **JIRA Ticket:** [LPS-82119](https://issues.liferay.com/browse/LPS-82119)
 
-#### What changed? [](id=what-changed-15)
+#### What changed? [](id=what-changed-16)
 
 All classes implementing `javax.portlet.BaseURL` have had their inheritance
 hierarchy change. These classes include
@@ -804,12 +830,12 @@ hierarchy change. These classes include
 - `LiferayStrutsPortletURLImpl`
 - `StrutsActionPortletURL`
 
-#### Who is affected? [](id=who-is-affected-15)
+#### Who is affected? [](id=who-is-affected-16)
 
 This affects code that attempts to subclass or create a new instance of the
 classes listed previously.
 
-#### How should I update my code? [](id=how-should-i-update-my-code-15)
+#### How should I update my code? [](id=how-should-i-update-my-code-16)
 
 You must refactor the constructors of your affected classes to receive
 `com.liferay.portal.kernel.portlet.LiferayPortletResponse` instead of
@@ -832,7 +858,7 @@ to
                 - `com.liferay.portlet.PortletURLImplWrapper`
                     - `com.liferay.portal.struts.StrutsActionPortletURL`
 
-#### Why was this change made? [](id=why-was-this-change-made-15)
+#### Why was this change made? [](id=why-was-this-change-made-16)
 
 This change corrects a best practice violation regarding
 implementation-specific details being included within an API.
@@ -843,26 +869,26 @@ implementation-specific details being included within an API.
 - **Date:** 2018-Jun-12
 - **JIRA Ticket:** LPS-77766
 
-#### What changed? [](id=what-changed-16)
+#### What changed? [](id=what-changed-17)
 
 The request object is no longer accessible as a map, but rather, as an object of
 type `javax.servlet.http.HttpServletRequest`.
 
-#### Who is affected? [](id=who-is-affected-16)
+#### Who is affected? [](id=who-is-affected-17)
 
 This affects users with Web Content templates that access request parameters
 as a map like this:
 
     <#assign containerId = request["theme-display"]["portlet-display"]["instance-id"] >
 
-#### How should I update my code? [](id=how-should-i-update-my-code-16)
+#### How should I update my code? [](id=how-should-i-update-my-code-17)
 
 To keep retrieving the request parameter values as a map, `requestMap` must be
 used instead:
 
     <#assign containerId = requestMap["theme-display"]["portlet-display"]["instance-id"] >
 
-#### Why was this change made? [](id=why-was-this-change-made-16)
+#### Why was this change made? [](id=why-was-this-change-made-17)
 
 This was done to allow template context contributors to work in Web Content
 templates.
@@ -873,18 +899,18 @@ templates.
 - **Date:** 2018-Jun-25
 - **JIRA Ticket:** [LPS-82849](https://issues.liferay.com/browse/LPS-82849)
 
-#### What changed? [](id=what-changed-17)
+#### What changed? [](id=what-changed-18)
 
 The ability to access and interact with Liferay Portal's OSGi framework using
 the Gogo shell via your system's telnet client has been disabled.
 
-#### Who is affected? [](id=who-is-affected-17)
+#### Who is affected? [](id=who-is-affected-18)
 
 This affects anyone who used their system's telnet client to access the Gogo
 shell, or leveraged the Gogo shell in external plugins/tooling using the telnet
 client.
 
-#### How should I update my code? [](id=how-should-i-update-my-code-17)
+#### How should I update my code? [](id=how-should-i-update-my-code-18)
 
 Liferay Portal now offers the Gogo Shell portlet, which you can access in the
 Control Panel &rarr; *Configuration* &rarr; *Gogo Shell*.
@@ -897,7 +923,7 @@ your Liferay home folder and adding the following property:
 
 Developer Mode is enabled upon starting your app server.
 
-#### Why was this change made? [](id=why-was-this-change-made-17)
+#### Why was this change made? [](id=why-was-this-change-made-18)
 
 This was done to strengthen Liferay Portal's security due to potential XXE/SSRF
 vulnerabilities.
