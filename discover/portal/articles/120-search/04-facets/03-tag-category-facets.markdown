@@ -1,9 +1,9 @@
 # Tag and Category Facets [](id=tag-and-category-facets)
 
-If tags or categories were applied to an asset appearing in the result set, it's
-displayed in the Tag or Category facet, respectively.  Like other facets with
-the Frequency Threshold configuration option, not all tags necessarily appear.
-By default the top 10 tags or categories are listed.
+If tags or categories were applied to an asset appearing in the result set,
+they're displayed in the Tag or Category facet, respectively. Like other facets
+with the Frequency Threshold configuration option, not all tags necessarily
+appear. By default the top 10 tags or categories are listed.
 
 ![Figure 1: Each Tag or Category with matching content is a facet term.](../../../images/search-tag-facet.png)
 
@@ -28,7 +28,7 @@ matching terms are found for the facet.
 **Frequency Threshold**
 : Set the minimum frequency required for terms to appear in the result list. For
 example, if the frequency threshold of a facet is set to `3`, a term with two
-matching results won't appear in the term result list.
+matching results doesn't appear in the term result list.
 
 **Display Frequencies**
 : Choose whether or not to display the term frequencies.

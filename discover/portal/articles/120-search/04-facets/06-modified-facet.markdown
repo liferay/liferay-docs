@@ -1,6 +1,6 @@
 # Modified Facet [](id=modified-facet)
 
-The Modified Facet narrows down search results to those that matche the searched
+The Modified Facet narrows search results down to those that match the searched
 keyword and that were created or modified during a certain time period.
 
 ![Figure 1: Each time period with matching content is a facet term.](../../../images/search-modified-facet.png)
@@ -10,9 +10,9 @@ Range, specifying a From and To date using a date picker:
 
 ![Figure 2: Users can include a Custom Range in the Modified Facet.](../../../images/search-modified-facet-custom.png)
 
-The Modified Facet allows supports configuration actions:
+The Modified Facet supports configuration actions:
 
-- Modfiy existing time ranges
+- Modify existing time ranges
 - Delete existing time ranges
 - Create new time ranges
 
@@ -31,16 +31,16 @@ The available time range aliases include:
 Each Range has an alias and a Label.
 
 By default, all the default ranges end in `*`, which evaluates to *now*. For
-example, the past-week range:
+example, the past-week range is
 
     [past-week TO *]
 
-You're not limited to ending Ranges now. Instead of the `*`, specify another
+You're not limited to ending Ranges. Instead of the `*`, specify another
 time range alias as the ending point.
 
 To set up a range from 12 months ago to one month ago, 
 
-1. Click the plus button in one of the existing ranges.
+1.  Click the plus button in one of the existing ranges.
 
 2.  Give it the label **1-12 Months Ago**.
 

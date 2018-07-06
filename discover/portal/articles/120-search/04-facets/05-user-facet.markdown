@@ -1,6 +1,6 @@
 # User Facet [](id=user-facet)
 
-The User Facet narrows down search results to those created by a certain User.
+The User Facet narrows search results down to those created by a certain User.
 
 ![Figure 1: Each User with matching content is a facet term.](../../../images/search-user-facet.png)
 
@@ -21,12 +21,7 @@ many matching terms are found for the facet.
 **Frequency Threshold**
 : Set the minimum frequency required for terms to appear in the result list. For
 example, if the frequency threshold of a facet is set to `3`, a term with two
-matching results won't appear in the facet.
+matching results doesn't appear in the facet.
 
 **Display Frequencies**
 : Choose whether or not to display the term frequencies.
-
-
-
-
-

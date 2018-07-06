@@ -1,6 +1,6 @@
 # Type Facet [](id=type-facet)
 
-The Type Facet narrows down search results to those associated with a certain
+The Type Facet narrows search results down to those associated with a certain
 Asset Type. Each Type with content matching the searched keyword appears as a
 facet term.
 

@@ -1,7 +1,7 @@
 # Folder Facet [](id=folder-facet)
 
-The Folder Facet narrows down search results to those contained in a certain
-Asset Folder. If you search for *space*, a Folder titled *Space Images* won't
+The Folder Facet narrows search results down to those contained in a certain
+Asset Folder. If you search for *space*, a Folder titled *Space Images* doesn't
 necessarily show up here. The content inside the folder must match the keyword.
 Only if its content matches the searched keyword does the Folder appear in the
 Folder Facet.
@@ -31,7 +31,7 @@ many matching terms are found for the facet.
 **Frequency Threshold**
 : Set the minimum frequency required for terms to appear in the result list. For
 example, if the frequency threshold of a facet is set to `3`, a term with two
-matching results won't appear in the term result list.
+matching results doesn't appear in the term result list.
 
 **Display Frequencies**
 : Choose whether or not to display the term frequencies.
