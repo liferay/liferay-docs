@@ -27,7 +27,7 @@ widget to search for Everything.
 To configure the search scope,
 
 1.  Open the Search Bar's Options menu
-    (![Options](../../../images/icon-option.png))
+    (![Options](../../../images/icon-options.png))
     and click *Configuration*.
 
 2.  Set the Scope option to *Everything*.
