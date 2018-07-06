@@ -130,7 +130,7 @@ To do this, your `build.gradle` file should look similar to this:
         targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.1.0"
     }
 
-Liferay DXP users, use the `7.1.10.0` version syntax.
+Liferay DXP users must use the `7.1.10.0` version syntax.
 
 This Gradle code
 
