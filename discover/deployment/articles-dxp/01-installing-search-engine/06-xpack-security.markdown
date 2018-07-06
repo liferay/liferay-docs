@@ -29,10 +29,9 @@ Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
 
 5.  Restart Elasticsearch. These steps require a full cluster restart.
 
-Following these instructions gives you a basic working installation of
-Elasticsearch communicating freely with @product@. Read Elastic's documentation
-to learn about additional configuration options, features, and the architecture
-of
+Following these instructions gives you a working installation of Elasticsearch
+communicating freely with @product@. Read Elastic's documentation to learn about
+additional configuration options, features, and the architecture of
 [X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-security.html). 
 
 ## Installing X-Pack [](id=installing-x-pack)
@@ -104,9 +103,9 @@ first-use passwords for the first time. To update a password subsequently, use
 Kibana's UI or the 
 [Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/security-api-change-password.html).
 
-The `interactive` argument lets you set the passwords for all built-in users.
-The configuration shown in these articles assumes you set all of the
-passwords to *liferay*. Of course, that's not recommended for production systems.
+The `interactive` argument sets the passwords for all built-in users. The
+configuration shown in these articles assumes you set all of the passwords to
+*liferay*. Of course, that's not recommended for production systems.
 
     ./bin/x-pack/setup-passwords interactive
 
@@ -114,8 +113,8 @@ See Elastic's documentation on the
 [setup-passwords command](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-passwords.html) 
 for additional options.
 
-Since you're securing Elasticsearch, make sure you keep track of the password
-set for the `elastic` user. 
+Since you're securing Elasticsearch, make sure you keep track of the `elastic`
+user's password. 
 
 We recommend enabling transport layer security on each node.
 

@@ -16,13 +16,12 @@ this integration.  Contact
     settings.
 
 3.  Download and install the 
-[Liferay Connector to X-Pack Monitoring](https://www.liferay.com/marketplace)
-[Elastic Stack 6.x].
+    [Liferay Connector to X-Pack Monitoring](https://www.liferay.com/marketplace) [Elastic Stack 6.x].
 
 4.  Configure the connector to communicate with Elasticsearch.
 
-This document assumes you're enabling security *and* monitoring, though it's not
-a requirement. Differences in the process are noted as appropriate.
+This document assumes you're enabling security *and* monitoring, though
+differences in the process are noted as appropriate.
 
 For the X-Pack installation procedure, refer to the 
 [X-Pack security article](/discover/deployment/-/knowledge_base-7-1/installing-x-pack-security).
@@ -118,8 +117,7 @@ with a Kibana user. The last step is to hook Kibana up with @product@.
 
 If you have a Liferay Enterprise Search (Premium or Standard) subscription,
 download the Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]. Install
-the LPKG file by copying it into the `Liferay Home/deploy` folder. That's all
-there is to it.
+the LPKG file by copying it into the `Liferay Home/deploy` folder. 
 
 1.  Once the connector is installed and Kibana and Elasticsearch are securely
     configured, create a 
@@ -153,8 +151,10 @@ there is to it.
 
     Note that once you set the `server.basePath`, you cannot access the Kibana
     UI through Kibana's URL (for example, `https://localhost:5601`). All access
-    to the Kibana UI is via the monitoring portlet, which is only accessible to
-    logged in @product@ users. Navigate directly to the portlet using this URL:
+    to the Kibana UI is through the monitoring portlet, which is only accessible
+    to logged in @product@ users. Navigate directly to the portlet using this
+    URL:
+
     [http://localhost:8080/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy/app/monitoring](http://localhost:8080/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy/app/monitoring)
 
 5.  Because you're using the Monitoring portlet in @product@ as a proxy to
