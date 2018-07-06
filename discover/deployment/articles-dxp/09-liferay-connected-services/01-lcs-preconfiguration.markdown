@@ -5,12 +5,12 @@ Services (LCS), you must first register your server with LCS. Before doing so,
 however, there are a few things you must take care of. The sections in this 
 guide walk you through these steps: 
 
-1. [Downloading the LCS Client App](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#downloading-the-lcs-client-app)
-2. [Preconfiguring LCS to Connect Through a Proxy](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
-3. [Ensuring Access to LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#ensuring-access-to-lcs)
-4. [NTP Server Synchronization](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#ntp-server-synchronization)
-5. [Configuring the Patching Tool](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#configuring-the-patching-tool)
-6. [Installing the LCS Client App](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#installing-the-lcs-client-app)
+1. [Downloading the LCS Client App](#downloading-the-lcs-client-app)
+2. [Preconfiguring LCS to Connect Through a Proxy](#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
+3. [Ensuring Access to LCS](#ensuring-access-to-lcs)
+4. [NTP Server Synchronization](#ntp-server-synchronization)
+5. [Configuring the Patching Tool](#configuring-the-patching-tool)
+6. [Installing the LCS Client App](#installing-the-lcs-client-app)
 
 Also, 
 [the last section](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration#upgrading-the-lcs-client-app) 
@@ -20,12 +20,10 @@ whenever Liferay releases a new version of it.
 
 +$$$
 
-**Note:** These steps show how to preconfigure LCS and your servers for use in 
-production environments. To activate a server on a local workstation for testing 
-or development purposes, you don't need to use LCS. Instead, navigate to 
-[@product@'s activation page](https://web.liferay.com/group/customer/dxp/getting-started/activation) 
-and select your subscription project. After downloading your key, place it in 
-your local @product@ instance's `deploy` folder. 
+**Note:** You must use LCS for activation of containerized instances, cloud 
+deployments, and instances that use Liferay Analytics Cloud and/or elastic 
+subscriptions. Otherwise, you don't have to use LCS for activation. You can 
+instead request an XML activation key from Liferay Support. 
 
 $$$
 
