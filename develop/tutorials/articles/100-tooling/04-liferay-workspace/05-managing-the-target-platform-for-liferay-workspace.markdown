@@ -64,9 +64,7 @@ Setting the version to develop for takes two steps:
 
     If you're using Liferay DXP, you can set the property like this:
 
-        liferay.workspace.target.platform.version=7.1-DXP-GA1
-
-    <!-- TODO: Still need to find the proper GA1 DXP version syntax. -Cody -->
+        liferay.workspace.target.platform.version=7.1.10.0
 
     The versions following a GA1 release of DXP follow service pack versions
     (e.g., `7.1-sp2`, `7.1-sp3`, etc.).
@@ -131,6 +129,8 @@ To do this, your `build.gradle` file should look similar to this:
         targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.1.0"
         targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.1.0"
     }
+
+Liferay DXP users, use the `7.1.10.0` version syntax.
 
 This Gradle code
 
