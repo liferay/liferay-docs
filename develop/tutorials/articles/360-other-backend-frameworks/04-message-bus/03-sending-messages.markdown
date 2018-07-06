@@ -143,7 +143,7 @@ Here's an example of using `SynchronousMessageSender` in `DEFAULT` mode.
 
             SingleDestinationSynchronousMessageSender messageSender = 
                 _messageSenderFactory.createSingleDestinationSynchronousMessageSender(
-                    "myDestinationName", SynchronousMessageSender.MODE.DEFAULT);
+                    "myDestinationName", SynchronousMessageSender.Mode.DEFAULT);
 
             messageSender.send(message);
 
