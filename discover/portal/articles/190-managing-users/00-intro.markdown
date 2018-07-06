@@ -32,9 +32,9 @@ to navigate quickly to the content you want:
 
 <!--These articles are planned but not yet written:
 
-- Password Policies](/discover/portal/-/knowledge_base/7-1/password-policies)
-- Monitoring Users](/discover/portal/-/knowledge_base/7-1/monitoring-users)
-- Auditing Users](/discover/portal/-/knowledge_base/7-1/auditing-users)
+- Password Policies(/discover/portal/-/knowledge_base/7-1/password-policies)
+- Monitoring Users(/discover/portal/-/knowledge_base/7-1/monitoring-users)
+- Auditing Users(/discover/portal/-/knowledge_base/7-1/auditing-users)
 -->
 
 ## What's New with User Management? [](id=whats-new-with-user-management)

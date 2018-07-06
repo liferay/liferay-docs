@@ -54,7 +54,7 @@ previews. For more information, see
 
 **Script:** A scripting console for executing migration or management code. 
 The Groovy scripting language is supported out of the box. <!-- See the 
-scripting article](/discover/portal/-/knowledge_base/7-1/using-liferays-script-engine)
+scripting article(/discover/portal/-/knowledge_base/7-1/using-liferays-script-engine)
 for more information and examples on using the scripting console-->. 
 
 **Shutdown:** Schedule a shutdown that notifies logged-in users of the
