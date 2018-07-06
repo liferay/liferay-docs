@@ -6,7 +6,7 @@ time, troubleshoot them quickly, and scale your cluster appropriately.
 
 To obtain Marvel and the client application for @product@, you need the
 *Enterprise Search-Standard* subscription. With it you'll get a connector
-plugin for configuring @product@ for Marvel, and a Marvel Portlet that can be
+plugin for configuring @product@ for Marvel and a Marvel Portlet that can be
 added to a page. The Marvel portlet gives you access to all of Marvel's
 functionality. If you don't yet have an Enterprise Search subscription, contact
 your sales representative.
