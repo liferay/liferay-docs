@@ -791,20 +791,20 @@ This change helps stabilize the foundation of Liferay Portal's utilities.
 
 ---------------------------------------
 
-### Changed the From Last Publish Date Option in Staging
+### Changed the From Last Publish Date Option in Staging [](id=changed-the-from-last-publish-date-option-in-staging)
 - **Date:** 2018-Jun-06
 - **JIRA Ticket:** [LPS-81695](https://issues.liferay.com/browse/LPS-81695)
 
-#### What changed?
+#### What changed? [](id=what-changed-15a)
 
 The *From Last Publish Date* option used in the publication process has
 programmatically changed.
 
-#### Who is affected?
+#### Who is affected? [](id=who-is-affected-15a)
 
 This affects anyone who implemented Staging support for their custom entities.
 
-#### How should I update my code?
+#### How should I update my code? [](id=how-should-i-update-my-code-15a)
 
 You must create a `*StagingModelListener` class for your custom entity, which
 extends the
@@ -820,7 +820,7 @@ in case of a *From Last Publish Date* publication. See the
 [`BlogsPortletDataHandler`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/exportimport/data/handler/BlogsPortletDataHandler.java)
 as an example.
 
-#### Why was this change made?
+#### Why was this change made? [](id=why-was-this-change-made-15a)
 
 It was hard to collect which entities should be published to the live site.
 Instead of running queries to find the contents that were modified since the
