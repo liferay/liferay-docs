@@ -791,6 +791,43 @@ This change helps stabilize the foundation of Liferay Portal's utilities.
 
 ---------------------------------------
 
+### Changed the From Last Publish Date Option in Staging [](id=changed-the-from-last-publish-date-option-in-staging)
+- **Date:** 2018-Jun-06
+- **JIRA Ticket:** [LPS-81695](https://issues.liferay.com/browse/LPS-81695)
+
+#### What changed? [](id=what-changed-15a)
+
+The *From Last Publish Date* option used in the publication process has
+programmatically changed.
+
+#### Who is affected? [](id=who-is-affected-15a)
+
+This affects anyone who implemented Staging support for their custom entities.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-15a)
+
+You must create a `*StagingModelListener` class for your custom entity, which
+extends the
+[`com.liferay.portal.kernel.model.BaseModelListener`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/BaseModelListener.html).
+You can examine the
+[`BlogsEntryStagingModelListener`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/model/listener/BlogsEntryStagingModelListener.java)
+class as an example.
+
+You must also update the `doPrepareManifestSummary` method in your custom
+`*PortletDataHandler` to use the `populateLastPublishDateCounts` method from the
+[`com.liferay.exportimport.internal.staging.StagingImpl`](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staging/StagingImpl.html),
+in case of a *From Last Publish Date* publication. See the
+[`BlogsPortletDataHandler`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/exportimport/data/handler/BlogsPortletDataHandler.java)
+as an example.
+
+#### Why was this change made? [](id=why-was-this-change-made-15a)
+
+It was hard to collect which entities should be published to the live site.
+Instead of running queries to find the contents that were modified since the
+last publication, now changesets are used to track this information.
+
+---------------------------------------
+
 ### Decoupled Several Classes from PortletURLImpl [](id=decoupled-several-classes-from-portleturlimpl)
 - **Date:** 2018-Jun-08
 - **JIRA Ticket:** [LPS-82119](https://issues.liferay.com/browse/LPS-82119)
