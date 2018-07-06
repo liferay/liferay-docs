@@ -1,12 +1,12 @@
-# Organizations [](id=organizations)
+ Organizations [](id=organizations)
 
 An *Organization* groups
-[*Users*](/discover/deployment/-/knowledge_base/7-1/users) 
+[*Users*](/discover/portal/-/knowledge_base/7-1/users) 
 hierarchically. For example, you can model a company's departments (i.e., Human
 Resources and Customer Support) with organizations. Organizations often have
 their own sites. The *how-to* portion of managing Organizations is in the next
 article, 
-[Managing Organizations](/discover/deployment/-/knowledge_base/7-1/managing-organizations).
+[Managing Organizations](/discover/portal/-/knowledge_base/7-1/managing-organizations).
 This article contains important conceptual information on what Organizations are
 and when they're needed.
 
@@ -144,7 +144,7 @@ requirements for permissions within an Organization, you can create custom
 Organization-scoped Roles to assemble the permissions you wish to grant to
 particular Users. Alternatively, attach a Site to your Organization and use Site
 Teams to assemble the sets of permissions (see below). See the 
-[Roles and Permissions article](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
+[Roles and Permissions article](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
 for more detail.
 
 ### Organization Sites [](id=organization-sites)

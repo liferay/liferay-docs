@@ -76,10 +76,9 @@ the Add Widget menu.
 the page it's deployed on.](../../images/search-options.png)
 
 **Code Changes and Improvements**
-: See the 
-[developer guide](/develop/tutorials/-/knowledge_base/7-1/search) 
-to learn about the new, deprecated, and removed APIs and extension points for
-search infrastructure.
+: See the developer guide
+<!--(/develop/tutorials/-/knowledge_base/7-1/search)--> to learn about the new,
+deprecated, and removed APIs and extension points for search infrastructure.
 
 **Legacy Search**
 : We're cheating with this one. It isn't a new feature, but the old way of doing

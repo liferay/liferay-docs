@@ -35,7 +35,7 @@ click through the tabs at the top. Peruse the sections for the three tabs
 You don't have to fill anything else out right now. Just note that when the user
 account was created, a password was automatically generated. If Liferay was
 correctly installed and a 
-[mail server was set up](/discover/portal/-/knowledge_base/7-1/server-administration#mail), 
+[mail server was set up](/discover/portal/-/knowledge_base/7-1/server-administration), 
 an email message with the User's new password was sent to the User's email
 address.
 

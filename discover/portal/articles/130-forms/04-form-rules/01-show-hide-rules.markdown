@@ -9,9 +9,7 @@ To set this example up, add these fields to a form:
   *Yes* and *No*.
 
 - *Legal Guardian Email Address*, a text field that accepts valid email
-  addresses (use [text field
-  validation](/discover/portal/-/knowledge_base/7-1/creating-advanced-forms#validating-text-fields)
-  to dictate input type).
+  addresses (use text field validation to dictate input type).
 
 +$$$
 
@@ -30,8 +28,7 @@ To configure a Show/Hide rule,
      - If the *I am 18 years old or older* field is equal to *No*, show the
        *Legal Guardian Email Address* field.
 
-    ![Figure 1: Build form rules quickly by defining your conditions and
-    actions.](../../../images/forms-rule-development.png)
+    ![Figure 1: Build form rules quickly by defining your conditions and actions.](../../../images/forms-rule-development.png)
 
      - Save the rule. 
 

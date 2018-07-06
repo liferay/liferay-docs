@@ -19,7 +19,7 @@ search facets, which you can think of as buckets that group results together if
 they share a common characteristic.
 
 Administrators can configure facets. Read about 
-[configuring facets](/discover/portal/-/knowledge_base/7-1/configuring-facets) 
+[configuring facets](/discover/portal/-/knowledge_base/7-1/facets) 
 to learn more.
 
 ## Search Results Relevance [](id=search-results-relevance)

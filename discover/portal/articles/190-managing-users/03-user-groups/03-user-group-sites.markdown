@@ -69,7 +69,7 @@ Sites update automatically when that template changes. If you disable this
 option but enable it again later, the template's pages are copied to the users' 
 Sites, overwriting any changes they may have made. For more information on the
 automatically propagating Site Template changes, see 
-[Site Templates](/discover/portal/-/knowledge_base/7-1/building-sites-from-templates). 
+[Site Templates](/discover/portal/-/knowledge_base/7-1/building-sites-from-templates).
 
 $$$
 
