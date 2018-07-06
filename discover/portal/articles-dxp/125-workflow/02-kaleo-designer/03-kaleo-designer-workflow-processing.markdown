@@ -33,7 +33,7 @@ existing node, continue dragging the connector to that node.
 When developing workflows in Kaleo Designer, make sure you go through all the
 transitions and name them appropriately. By default, these transitions get system
 generated names, so rename them all to something more human-readable, as they're
-displayed to workflow users as links that will send the workflown item to the
+displayed to workflow users as links that will send the workflow item to the
 next step in the workflow.
 
 ![Figure 2: In the Single Approver workflow, a user in the Review task can choose to Approve or Reject the asset, which sends the asset either to the EndNode or to the Update task.](../../../images-dxp/kaleo-designer-transition-link.png)
@@ -48,8 +48,7 @@ to another one. Instead, you want to do two or more things at the same time. To
 do this, transition to a fork node, make two transitions from the fork to
 your parallel tasks, and then come back together using a join node.
 
-![Figure 3: Forks and Joins are used to enable parallel processing in the
-workflow.](../../../images-dxp/kaleo-designer-fork-join.png)
+![Figure 3: Forks and Joins are used to enable parallel processing in the workflow.](../../../images-dxp/kaleo-designer-fork-join.png)
 
 With a regular Join node, for the workflow to proceed beyond the join, the
 transition from both parallel executions must be invoked. However, if you use a
@@ -65,6 +64,8 @@ together.
 Sometimes you need to inspect an asset or its execution context, and depending
 on the result, send it to the appropriate transition. You need a node for a
 script that concludes by setting a value to one of your transitions.
+
+![Figure 4: The Category Specific Approval definition starts with a Condition node.](../../../images-dxp/workflow-designer-cat-specific-condition.png)
 
 From the *Category Specific Approval* (`category-specific-definition.xml`),
 this is the script in the condition node that starts the workflow (coming
