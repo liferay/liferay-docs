@@ -15,7 +15,7 @@ a wide range of product data---product variations, pricing, images,
 specifications---and makes it readily available to the store's customer-facing
 pages.
 
-![Figure 1: The catalog stores inventory levels, category assignments, and other product information.](../images/catalog.png)
+![Figure 1: The catalog stores inventory levels, category assignments, and other product information.](../../images/catalog.png)
 
 @commerce@ includes a wide range of tools for setting up a 
 [storefront](/web/liferay-emporio/documentation/-/knowledge_base/1-0/setting-up-a-storefront).
@@ -23,7 +23,7 @@ New search tools, for instance, are designed specifically for product catalogs,
 while customizable widgets make it easy to add common UI elements---such as
 *Checkout* and *View Cart*---to a page.
 
-![Figure 2: Product pages are ready to go out-of-the-box, but can be customized extensively.](../images/product-detail.png)
+![Figure 2: Product pages are ready to go out-of-the-box, but can be customized extensively.](../../images/product-detail.png)
 
 @commerce@ is optimized for business-to-business (B2B) transactions, combining
 modern site experiences with features that address B2B needs. 
@@ -48,7 +48,7 @@ and multi-currency transaction. Meanwhile,
 [payments](/web/liferay-emporio/documentation/-/knowledge_base/1-0/payment-methods)
 can be handled through integration with a third-party payment processor such as PayPal.
 
-![Figure 3: Any number of different payment methods can be added.](../images/payment-methods.png)
+![Figure 3: Any number of different payment methods can be added.](../../images/payment-methods.png)
 
 Products can be shipped by a number of different
 [methods](/web/liferay-emporio/documentation/-/knowledge_base/1-0/shipping-methods):
