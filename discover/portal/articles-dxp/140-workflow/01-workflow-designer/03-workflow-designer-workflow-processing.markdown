@@ -66,6 +66,8 @@ Sometimes you must inspect an asset or its execution context, and depending on
 the result, send it to the appropriate transition. You need a node for a script
 that concludes by setting a value to one of your transitions.
 
+![Figure 4: The Category Specific Approval definition starts with a Condition node.](../../../images-dxp/workflow-designer-cat-specific-condition.png)
+
 From the *Category Specific Approval* (`category-specific-definition.xml`),
 this is the script in the condition node that starts the workflow (coming
 directly from the start node):
