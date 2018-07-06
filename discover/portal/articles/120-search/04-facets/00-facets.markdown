@@ -91,7 +91,7 @@ terms. Multiple facet selection is not supported in the classic Search portlet.
 
 $$$
 
-## Facets and Friendly URLs
+## Facets and Friendly URLs [](id=facets-and-friendly-urls)
 
 In the classic, monolithic Search portlet, URLs like this were not uncommon:
 
