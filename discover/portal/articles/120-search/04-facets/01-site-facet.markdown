@@ -5,19 +5,36 @@ Each Site with content matching the searched keyword appears as a facet term.
 
 ![Figure 1: Each Site with matching content is a facet term.](../../../images/search-site-facet.png)
 
-For the Site Facet to display multiple sites, the search bar must be configured
+For the Site Facet to display multiple sites, the Search Bar must be configured
 to search *Everything*. See more about search scope
 [here](/discover/portal/-/knowledge_base/7-1/searching-for-assets#configuring-the-search-bar).
-If not searching for everything, only the current site is searched, and the Site
+If not searching for Everything, only the current site is searched, and the Site
 Facet has nothing to display. When this occurs, the Site Facet is hidden on the
 page.
 
-Note that all search bar portlet instances pointing to the search page,
-including the one on the search page, must be configured to search for
-Everything. The global Search Bar widget embedded on each page by default is
-only one instance, so configuring it once is sufficient. If there are
-several separate Search Bar instances throughout Site Pages, they must be
-configured individually to use the Everything scope. 
++$$$
+
+**Note:** Configuring the globally embedded page-top Search Bar to search for
+Everything not only configures the embedded Search Bar on all pages. It also
+ensures that the Search Page's Search Bar searches Everything, because the
+page-top Search Bar's configuration overrides the Search Page's Search Bar
+configuration. The same does not apply to other Search Bar widgets in the site.
+Each of these must be configured as desired.
+
+If the global Search Bar is disabled, configure the Search Page's Search Bar
+widget to search for Everything.
+
+To configure the search scope,
+
+1.  Open the Search Bar's Options menu
+    (![Options](../../../images/icon-option.png))
+    and click *Configuration*.
+
+2.  Set the Scope option to *Everything*.
+
+3.  Click *Save* and close the pop-up.
+
+$$$
 
 The Site Facet contains several configuration options:
 
