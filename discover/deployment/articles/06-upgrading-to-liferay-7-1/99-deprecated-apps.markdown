@@ -82,8 +82,8 @@ they're still available.
 | App | &nbsp;Availability | &nbsp;Notes |
 | --- | ------------------ | ----------- |
 | User Group Pages (Copy Mode) | Release (bundle) |  |
-| Web Proxy Portlet | Nexus |  |
-| Web Content Search Portlet | Nexus | The new Search widget can be configured to replace all the unique functionality of the Web Content Search |
+| Web Proxy Portlet | [Nexus](https://repository.liferay.com/nexus/service/local/repositories/liferay-public-releases/content/com/liferay/com.liferay.web.proxy.web/2.0.0/com.liferay.web.proxy.web-2.0.0.jar) |  |
+| Web Content Search Portlet | [Nexus](https://repository.liferay.com/nexus/service/local/repositories/liferay-public-releases/content/com/liferay/com.liferay.journal.content.search.web/2.0.0/com.liferay.journal.content.search.web-2.0.0.jar) | The new Search widget can be configured to replace all the unique functionality of the Web Content Search |
 | Web Content List | Removed | The Asset Publisher can be configured to replace all the unique functionality of the Web Content List |
 
 ## Forms and Workflow [](id=forms-and-workflow)
