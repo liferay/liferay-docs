@@ -19,7 +19,7 @@ Register your Liferay DXP instance with
 
 ### Step 2: Install Required Liferay DXP Fix Packs [](id=step-2-install-required-liferay-dxp-fix-packs)
 
-[Install the latest fix packs](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-liferay)
+[Install fix pack 52](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-liferay)
 to your Liferay DXP instance. 
 
 ### Step 3: Install the Liferay Analytics Cloud Connector [](id=step-3-install-the-liferay-analytics-cloud-connector)
