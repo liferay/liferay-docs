@@ -3,10 +3,10 @@
 A Liferay Portal 7.0 theme can be upgraded to @product-ver@, regardless of its 
 project environment (Liferay Theme Generator, Plugins SDK, Maven, etc.). But a 
 theme created with the Liferay Theme Generator can leverage the theme's 
-`gulp upgrade` task. If you're developing your theme in an environment other 
-than the Themes Generator, the `gulp upgrade` task will not work for your theme. 
-Please follow the manual directions in the remaining tutorials in this section 
-to manually upgrade your theme. 
+`gulp upgrade` task. If you're developing your theme in an environment other
+than the Themes Generator, the `gulp upgrade` task doesn't work for your theme.
+Please follow the manual directions in the remaining tutorials in this section
+to upgrade your theme manually. 
 
 Here's what the Upgrade Task does:
 
@@ -34,8 +34,8 @@ Here are the steps for using the theme Gulp `upgrade` task:
 
         gulp upgrade
 
-    Here's what it does initially:
-    
+    Here's what it does:
+
     - Copies the existing theme to a folder called `_backup`
     - Creates core code for generating theme base files
     - Collects removed Bootstrap and Lexicon variables

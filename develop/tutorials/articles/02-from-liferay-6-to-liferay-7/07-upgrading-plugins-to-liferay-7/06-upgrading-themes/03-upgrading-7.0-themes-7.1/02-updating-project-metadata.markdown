@@ -36,10 +36,9 @@ follow the steps below to update your theme's metadata manually:
         	"version": "7.1"
         },
 
-4.  Update the `liferay-theme-deps-7-0` dev dependency to 
-    `liferay-theme-deps-7.1` with the version below, and add the 
-    `liferay-theme-tasks` dependency as shown in the example configuration 
-    below: 
+4.  Update the `liferay-theme-deps-7-0` dependency to `liferay-theme-deps-7.1`
+    with the version below, and add the `liferay-theme-tasks` dependency as
+    shown in the example configuration below: 
 
         "devDependencies": {
         	"gulp": "3.9.1",

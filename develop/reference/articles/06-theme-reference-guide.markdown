@@ -1,7 +1,7 @@
 # Theme Reference Guide [](id=theme-reference-guide)
 
-A theme is made up of several files. Although most of the files are named after 
-their matching components, their function may be unclear. This reference guide 
+A theme is made up of several files. Although most of the files are named after
+their matching components, their functions may be unclear. This reference guide
 explains each file's usage to make clear which files to modify.
 
 ## Theme Anatomy [](id=theme-anatomy)
@@ -41,14 +41,12 @@ the core theme files are the same.
                     - (Many directories)
     - [`liferay-theme.json`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#liferay-theme-json)
     - [`package.json`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#package-json)
-                    
-Regarding CSS files, it is recommended that you only modify 
-`_clay_custom.scss`, `_clay_variables.scss`, `_custom.scss`, and 
-`_liferay_variables_custom.scss`.
+ 
+Regarding CSS files, you should only modify `_clay_custom.scss`,
+`_clay_variables.scss`, `_custom.scss`, and `_liferay_variables_custom.scss`.
 
-You can of course overwrite any CSS file that you wish, but if you modify any 
-other files, you will most likely be removing styling that @product-ver@ needs 
-to work properly.
+You can of course overwrite any CSS file you want, but if you modify any other
+files, you're removing styling that @product-ver@ needs to work properly.
 
 ## Theme Files [](id=theme-files)
 
@@ -61,14 +59,14 @@ variables you define in `_clay_variables.scss`.
 
 ### _clay_variables.scss [](id=auivariables-scss)
 
-Used to store custom Sass variables. This file get's injected into the 
+Used to store custom Sass variables. This file gets injected into the 
 Bootstrap/Lexicon build, so you can overwrite variables and change how those 
 libraries are compiled.
 
 ### _custom.scss [](id=custom-scss)
 
-Used for custom CSS styles. It is recommended that you place all of your custom 
-CSS modifications in this file.
+Used for custom CSS styles. You should place all of your custom CSS
+modifications in this file.
 
 ### _liferay_variables_custom.scss [](id=liferayvariablescustom-scss)
 
@@ -87,8 +85,8 @@ The theme template for the theme's navigation.
 
 ### portal_normal.ftl [](id=portalnormal-ftl)
 
-Similar to the `index.html` of a website, this file acts as a hub for all of the 
-theme templates.
+Similar to a static site's `index.html`, this file acts as a hub for all theme
+templates.
 
 ### portal_pop_up.ftl [](id=portalpopup-ftl)
 
@@ -97,25 +95,25 @@ The theme template for pop up dialogs for the theme's portlets.
 ### portlet.ftl [](id=portlet-ftl)
 
 The theme template for the theme's portlets. If your theme uses Application 
-Decorators, you can modify this file to create application decorator specific 
+Decorators, you can modify this file to create application decorator-specific 
 theme settings. See the 
 [Portlet Decorators tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers) 
 for more info.
 
 ### liferay-theme.json [](id=liferay-theme-json)
 
-Contains the configuration settings for your app server, in Node.js tool based 
+Contains the configuration settings for your app server, in Node.js tool-based 
 themes. You can change this file manually at any time to update your server 
 settings. The file can also be updated via the 
 [`gulp init` task](/develop/tutorials/-/knowledge_base/7-1/configuring-your-themes-app-server). 
 
 ### package.json [](id=package-json)
 
-contains theme setting information such as the theme template language, version, 
-and base theme, for Node.js tool developed themes. This file can be updated 
+Contains theme setting information such as the theme template language, version,
+and base theme, for Node.js tool developed themes. You can update this file
 manually. The 
-[`gulp extend` task](/develop/tutorials/-/knowledge_base/7-1/changing-your-base-theme) 
-can also be used to change the base theme. 
+[`gulp extend` task](/develop/tutorials/-/knowledge_base/7-1/changing-your-base-theme) can also
+be used to change the base theme. 
 
 ### main.js [](id=main-js)
 
@@ -124,9 +122,9 @@ Used for custom JavaScript.
 ### liferay-look-and-feel.xml [](id=liferay-look-and-feel-xml)
 
 Contains basic information for the theme. If your theme has 
-[theme settings](/develop/tutorials/-/knowledge_base/7-1/making-configurable-theme-settings), 
-they are defined in this file. For a full explanation of this file please see the 
-[Definitions docs](@platform-ref@/7.1-latest/definitions/liferay-look-and-feel_7_1_0.dtd.html). 
+[theme settings](/develop/tutorials/-/knowledge_base/7-1/making-configurable-theme-settings),
+they are defined in this file. For a full explanation of this file, please see
+the [Definitions docs](@platform-ref@/7.1-latest/definitions/liferay-look-and-feel_7_1_0.dtd.html). 
 
 ### liferay-plugin-package.properties [](id=liferay-plugin-package-properties)
 
@@ -134,4 +132,4 @@ Contains general properties for the theme.
 [Resources Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme) 
 configuration settings are also placed in this file. For a full explanation of 
 the properties available for this file please see the 
-[7.1 Propertiesdoc](@platform-ref@/7.1-latest/propertiesdoc/liferay-plugin-package_7_1_0.properties.html). 
+[7.1 Properties documentation](@platform-ref@/7.1-latest/propertiesdoc/liferay-plugin-package_7_1_0.properties.html). 

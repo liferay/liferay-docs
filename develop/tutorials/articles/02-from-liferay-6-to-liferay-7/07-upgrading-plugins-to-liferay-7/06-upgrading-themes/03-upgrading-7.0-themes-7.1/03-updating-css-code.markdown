@@ -6,9 +6,9 @@
 - Class variable changes
 - Updating core imports
 
-The theme upgrade process involves conforming to these changes. In this section, 
-you'll update your theme's CSS files to reflect these changes. Start with 
-updating CSS file names. 
+The theme upgrade process involves conforming to these changes. Now you'll
+update your theme's CSS files to reflect these changes. Start with updating CSS
+file names. 
 
 ## Updating CSS File Names for Clay [](id=updating-css-file-names-for-clay)
 
@@ -56,9 +56,9 @@ Bank theme:
 		    $brand-default was deprecated in Lexicon CSS 1.x.x and has been removed 
 				in the new Clay 2.x.x version
 
-The log list variables that have been removed and/or deprecated and suggests 
-possible changes. For each update performed and suggested, the task reports a 
-file name. For reference, the full list of variable changes is shown below:
+The log lists removed and/or deprecated variables and suggests possible changes.
+For each update performed or suggested, the task reports a file name. For
+reference, here's the full list of variable changes: 
 
 The following variables were removed in Bootstrap 4:
 
@@ -172,8 +172,8 @@ instead.
 Note that if the `gulp upgrade` task detects any variables in your theme that 
 have been removed in Clay from the previous LexiconCSS version, it adds the 
 `_variables_deprecated.scss` file to your theme with the variables to make sure 
-the theme compiles and to decouple it from future upgrades. If you wish to 
-include this file manually, its contents are shown below for reference:
+the theme compiles and to decouple it from future upgrades. If you wish to
+include this file manually, here are its contents for reference:
 
 	@warn "You're using deprecated variables. Please refer to the update guides 
 	to remove its usage";

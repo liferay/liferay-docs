@@ -38,26 +38,22 @@ For example, here is the `gulp upgrade` log for the Westeros Bank theme:
         Warning: .navbar-header has been removed. This container should be 
         removed in most cases. Please, use your own container if necessary.
 
-The log warns about removed and deprecated code and suggests replacements when 
-applicable. For reference, the main changes are listed below:
+The log warns about removed and deprecated code and suggests replacements when
+applicable. For reference, the main changes appear below:
 
-- List items inside a container with the `list-inline` class now require the 
-  `list-inline-item` class, see 
-  [https://getbootstrap.com/docs/4.0/migration/#typography](https://getbootstrap.com/docs/4.0/migration/#typography) 
-  for more information.
+- List items inside a container with the `list-inline` class 
+  [now require](https://getbootstrap.com/docs/4.0/migration/#typography) 
+  the `list-inline-item` class. 
 
 - The `container-fluid-1280` class has been deprecated. Please use 
   `container-fluid container-fluid-max-xl` instead.
 
-- Responsive navbar behaviors are now applied to the `navbar` class via the 
-  required `navbar-expand-{breakpoint}` class, see 
-  [https://getbootstrap.com/docs/4.0/migration/#navbar](https://getbootstrap.com/docs/4.0/migration/#navbar) 
-  for more information.
+- Responsive navbar behaviors 
+  [are now applied](https://getbootstrap.com/docs/4.0/migration/#navbar)
+  to the `navbar` class via the required `navbar-expand-{breakpoint}` class. 
 
-- The `navbar-toggle` class is now `navbar-toggler` and has different inner 
-  markup, see 
-  [https://getbootstrap.com/docs/4.0/migration/#navbar](https://getbootstrap.com/docs/4.0/migration/#navbar) 
-  for more information.
+- The `navbar-toggle` class is now `navbar-toggler` and 
+  [has different inner markup](https://getbootstrap.com/docs/4.0/migration/#navbar). 
 
 - The `navbar-header` class has been removed. This container should be removed 
   in most cases. Please, use your own container if necessary.
@@ -95,7 +91,7 @@ Follow these steps to update your modified `portlet.ftl` file:
     to it:
 
         <a 
-          class="icon-monospaced list-styled portlet-icon-back text-default" 
+          class="icon-monospaced list-unstyled portlet-icon-back text-default" 
           href="${portlet_back_url}" 
           title="<@liferay.language key="return-to-full-page" />"
         >
@@ -106,7 +102,7 @@ Follow these steps to update your modified `portlet.ftl` file:
         <div class="autofit-float autofit-row portlet-header">
 
 The portlet template is updated. That covers most, if not all, of the required 
-theme template changes. If you modified any other  FreeMarker theme templates, 
+theme template changes. If you modified any other FreeMarker theme templates, 
 you can compare them with templates in the 
 [`_unstyled` theme](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates). 
 If your theme uses the Liferay Theme Generator, refer to the suggested changes 
