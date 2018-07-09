@@ -54,24 +54,24 @@ Follow these steps to create a new option template:
 **Field Type**: Select from the following different ways to display
 options to customers:
 
-- *Select from List:* displays option values in a drop-down box.
+- *Select from List:* Displays option values in a drop-down box.
 
-- *Single Selection:* displays option values with a radio button next to each. Since radio
-buttons cannot be deselected, this field type should only be be used for options
-where a selection is required.
+- *Single Selection:* Displays option values with a radio button next to each.
+  Since radio buttons cannot be deselected, only use this field type for options where
+  a selection is required.
 
-- *Date:* prompts buyers to select a specific date---applicable for services,
+- *Date:* Prompts buyers to select a specific date---applicable for services,
 deliveries, and the like. It does not take option values.
 
-- *Boolean Question:* displays a checkbox next to the option template. It does
+- *Boolean Question:* Displays a checkbox next to the option template. It does
 not does not take option values. It is useful where an option is a simple
 binary, such as "gift-wrap".
 
-- *Multiple Selection:* displays a checkbox next to each option value. This
+- *Multiple Selection:* Displays a checkbox next to each option value. This
  allows more than one value to be selected for a single template---useful for offering
 a choice among add-ons or accessories.
 
-- *Numeric:* displays a field where a number can be entered, for
+- *Numeric:* Displays a field where a number can be entered, for
 entering custom dimensions or the like. It does not take option values.
 
 **Use in faceted navigation**: enable to allow search results to be filtered for

@@ -16,7 +16,7 @@ To assign an option template to a product, follow these steps:
 1.  Go to the catalog, open a product, and click on the *Options* tab in the
     product tab menu.
 
-    ![It may look like you have two options, but you really only have one. Click
+    ![Figure x: It may look like you have two options, but you really only have one. Click
     on this one.](../../../images/two-options.png)
 
 2.  Click on the ![Add](../../../images/icon-add.png) button and select option
@@ -47,9 +47,9 @@ its option values or add new ones. These changes will not affect the template or
 any other product. Follow these steps:
 
 1.  Go to the catalog and select the desired product. Click on the *Options* tab
-    from the product tab menu, find the template for which you want to create
-    values and click on the *values* button next to its title. This displays
-    a list of option values.
+    from the product tab menu, find the template you want to create values for,
+    and click on the *values* button next to its title. This displays a list of
+    option values.
 
 2.  To edit a value, select it and then make changes to the *Option
     Value Detail* form on the right. To delete it, select it and then hit
