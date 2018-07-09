@@ -13,9 +13,9 @@ still be available for download.
 
 $$$
 
-There are 3 types of deprecated apps: 
+There are three types of deprecated apps: 
 
-1.  Deprecated apps that remain in @product@, but will be removed in a future 
+1.  Deprecated apps that remain in @product@, but will be removed in a future
     release. 
 
 2.  Deprecated apps that have been removed from @product@, yet are still 
@@ -27,11 +27,11 @@ There are 3 types of deprecated apps:
     [Managing Apps](/discover/portal/-/knowledge_base/7-1/managing-apps) 
     documentation. 
 
-3.  Deprecated apps that have been removed from @product@, and aren't available 
+3.  Deprecated apps that have been removed from @product@ and aren't available 
     for download. 
 
-This article lists the apps deprecated in @product-ver@, and tells you if 
-they're still available. 
+This article lists the apps deprecated in @product-ver@, along with their 
+availability. 
 
 ## Collaboration [](id=collaboration)
 
@@ -92,3 +92,10 @@ they're still available.
 | --- | ------------------ | ----------- |
 | Dynamic Data List Form | Removed |  |
 | Web Form | Nexus &rarr; Will be removed. | Final version released for 7.0. |
+
+## Security 
+
+| App | &nbsp;Availability | &nbsp;Notes |
+| --- | ------------------ | ----------- |
+| OAuth 1.0a | Marketplace | Replaced by OAuth 2.0, which is included in the bundle. |
+| OpenID | Release (bundle) | Low usage. Use OAuth 2.0 instead. |
