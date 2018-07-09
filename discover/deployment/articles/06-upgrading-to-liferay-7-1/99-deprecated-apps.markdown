@@ -98,4 +98,4 @@ availability.
 | App | &nbsp;Availability | &nbsp;Notes |
 | --- | ------------------ | ----------- |
 | OAuth 1.0a | Marketplace | Replaced by OAuth 2.0, which is included in the bundle. |
-| OpenID | Release (bundle) | Low usage. Use OAuth 2.0 instead. |
+| OpenID | Release (bundle) | Low usage. Use OpenID Connect instead. |
