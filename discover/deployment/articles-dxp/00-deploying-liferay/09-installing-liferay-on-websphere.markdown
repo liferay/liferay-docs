@@ -220,7 +220,7 @@ The following folders should be present within the `/liferay/osgi` folder:
 8. `War`
 
 
-### Ensuring that @product@'s portlet.jar is loaded first [](id=enforce-portlet) 
+### Ensuring that @product@'s portlet.jar is loaded first [](id=enforce-portlet)
 
 In addition to placing the `portlet.jar` in the correct folder, you must
 configure the `config.ini` file so that it is loaded first. Navigate to
