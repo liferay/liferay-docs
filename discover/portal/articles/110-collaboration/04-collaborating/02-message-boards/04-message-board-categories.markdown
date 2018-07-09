@@ -13,7 +13,7 @@ Follow these steps to create a message board category:
 
 1.  Open the Message Boards app in your scope's Site Administration menu, as 
     described in 
-    [the article on creating message boards](/develop/tutorials/-/knowledge_base/7-1/creating-message-boards).
+    [the article on creating message boards](/discover/portal/-/knowledge_base/7-1/creating-message-boards).
 
 2.  Click the *Add* icon
     (![Add](../../../../images/icon-add.png)) and select *Category*. This opens 
@@ -40,7 +40,7 @@ Follow these steps to create a message board category:
     to *YES*. To enable anonymous emails in the list, set the *Allow Anonymous 
     Emails* toggle to *YES*. The default for both toggles is *NO*. For an 
     explanation of these features, see 
-    [the documentation on mailing lists for Message Boards](/develop/tutorials/-/knowledge_base/7-1/user-subscriptions-and-mailing-lists#mailing-lists). 
+    [the documentation on mailing lists for Message Boards](/discover/portal/-/knowledge_base/7-1/user-subscriptions-and-mailing-lists#mailing-lists). 
 
 6.  Open the *Permissions* section and set the category's permissions. The
     *Viewable by* selector lets you pick who can view the category: 

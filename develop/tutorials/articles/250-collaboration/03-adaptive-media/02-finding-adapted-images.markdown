@@ -208,6 +208,6 @@ Awesome! Now you know how to find and use adapted images.
 
 [Displaying Adapted Images in Your App](/develop/tutorials/-/knowledge_base/7-1/displaying-adapted-images-in-your-app)
 
-[Changing Adaptive Media's Image Processing](/develop/tutorials/-/knowledge_base/7-1/changing-adaptive-medias-image-processing)
+[Changing Adaptive Media's Image Scaling](/develop/tutorials/-/knowledge_base/7-1/changing-adaptive-medias-image-scaling)
 
 [Adapting Your Media Across Multiple Devices](/discover/portal/-/knowledge_base/7-1/adapting-your-media-across-multiple-devices)
