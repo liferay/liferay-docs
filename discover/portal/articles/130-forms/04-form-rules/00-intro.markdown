@@ -26,7 +26,7 @@ Jump to Page
 page. 
 
 Autofill with Data Provider 
-: Use a [data provider](/discover/portal/-/knowledge_base/7-1/creating-advanced-forms#populating-select-fields-with-rest-data-providers)
+: Use a [data provider](/discover/portal/-/knowledge_base/7-1/data-providers)
 to populate fields when a condition is met in another field.
 
 Calculate

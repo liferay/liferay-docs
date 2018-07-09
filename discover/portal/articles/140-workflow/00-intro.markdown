@@ -12,15 +12,17 @@ for workflows, called the Workflow Designer.
 
 There are several steps to effective workflowing: 
 
-- Activating workflow
+- [Designing review processes in XML](/develop/tutorials/-/knowledge_base/7-1/crafting-xml-workflow-definitions)
 
-- Designing review processes
+- [DXP only] [Designing review process in Kaleo Designer](/discover/portal/knowledge_base/7-1/kaleo-designer)
 
-- Uploading workflow definitions
+- [Uploading workflow definitions](#uploading-workflow-definitions)
 
-- Configuring assets to use workflows
+- [Activating workflow for enabled assets](/discover/portal/-/knowledge_base/7-1/activating-workflow)
 
-- Using workflow with other applications
+- Managing Workflow definitions (not yet written)
+
+- Sending assets through review (not yet written)
 
 After all that, you'll be familiar with using Liferay's Kaleo workflow to set up
 approval processes for any 

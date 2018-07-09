@@ -4,21 +4,19 @@ Sites often feature lots of content split over lots of asset types.  Web content
 articles, documents and media files, and blogs entries are just a few examples.
 Most content types are *assets*. Under the hood, assets use the
 [Asset API](/develop/tutorials/-/knowledge_base/7-1/asset-framework) 
-and have an 
-[Indexer class](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search#indexers).
-Any content that has these features can be searched. 
+and have an Indexer class. Any content that has these features can be
+searched. 
 
 ![Figure 1: The Type Facet configuration lists the searchable out-of-the-box asset types.](../../images/search-assets.png)
 
 ## Elasticsearch [](id=elasticsearch)
 
-The default search engine is Elasticsearch, which is backed by the Lucene search
-library. There's an Elasticsearch server embedded in all bundles, which is handy
-for testing and development purposes. Production environments must install
-a separate, remote Elasticsearch server (or even better, cluster of servers).
-For information on how to set up Elasticsearch for @product@ in production, read
-the 
-[deployment guide](/discover/deployment/-/knowledge_base/7-1/installing-a-search-engine).
+The default search engine is Elasticsearch, which is backed by the Lucene
+search library. There's an Elasticsearch server embedded in all bundles, which
+is handy for testing and development purposes. Production environments must
+install a separate, remote Elasticsearch server (or even better, cluster of
+servers).  For information on how to install Elasticsearch, read the 
+[deployment guide](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
 
 ## Search Features [](id=product-search-features)
 
@@ -85,4 +83,4 @@ You've probably used something similar on any number of sites. You search for an
 item, are presented with a list of results, and a list of buckets you can click
 to further drill down into the search results, without entering additional
 search terms. Search facets work the same way. Facets are, of course,
-[configurable](/discover/portal/-/knowledge_base/7-1/configuring-facets).
+[configurable](/discover/portal/-/knowledge_base/7-1/facets).

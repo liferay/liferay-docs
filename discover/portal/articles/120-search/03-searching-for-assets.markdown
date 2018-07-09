@@ -9,14 +9,13 @@ the ones included by default.
 +$$$
 
 **Searching for Users:** When you click an asset in the search results, it's
-displayed in an Asset Publisher (unless the *View in Context* option is selected
-in the Search Results portlet). Users are different, though. Think of them as
-invisible assets, not intended for display in the Asset Publisher application.
-While Users appear as search results with other indexed assets, when you click
-one you're taken to the User's profile page. If 
-[public personal pages](/discover/portal/-/knowledge_base/7-1/creating-sites#customizing-personal-sites)
-have been disabled, clicking on a User from the list of search results shows you a
-blank page.
+displayed in an Asset Publisher (unless the *View in Context* option is
+selected in the Search Results portlet). Users are different, though. Think of
+them as invisible assets, not intended for display in the Asset Publisher
+application.  While Users appear as search results with other indexed assets,
+when you click one you're taken to the User's profile page. If public personal
+pages are disabled, clicking on a User from the list of search results shows
+you a blank page.
 
 $$$
 

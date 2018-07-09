@@ -12,11 +12,11 @@ User inquiries into how their data is stored and processed.
 Liferay is aware of the need for functionality to address User data management,
 and added two important features toward this end:
 
-[Erase and/or anonymize data associated with a User](/discover/deployment/-/knowledge_base/7-1/sanitizing-user-data)
+[Erase and/or anonymize data associated with a User](/discover/portal/-/knowledge_base/7-1/sanitizing-user-data)
 : Administrative Users go through a step by step process, choosing to erase
 certain pieces of data and anonymize others.
 
-[Export a User's personal data](/discover/deployment/-/knowledge_base/7-1/exporting-user-data)
+[Export a User's personal data](/discover/portal/-/knowledge_base/7-1/exporting-user-data)
 : Export ZIP files containing the data associated with a User.
 
 These features are tools that get you closer to meeting two of GDPR's

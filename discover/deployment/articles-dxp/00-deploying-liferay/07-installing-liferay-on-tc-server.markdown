@@ -78,7 +78,7 @@ download the required JARs from third parties, as described below.
 
 **Note:** Many required and useful JARs are pre-installed when you build 
 @product@ from the source code or 
-[download a @product@ bundle](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
+[download a @product@ bundle](https://web.liferay.com/group/customer/dxp/downloads/7-1). 
 If you want to acquire all of the JARs that ship with a @product@ bundle 
 quickly, using one of these sources might save you time.
 
