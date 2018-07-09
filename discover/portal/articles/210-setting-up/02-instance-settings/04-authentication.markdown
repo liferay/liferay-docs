@@ -54,4 +54,4 @@ email address is an important default for the following reasons:
 
 Learn to configure a third party authentication service or set up Single Sign On
 (SSO) in the
-[security documentation](/discover/deployment/-/knowledge_base/7-1/liferay-portal-security).
+[security documentation](/discover/deployment/-/knowledge_base/7-1/securing-product).

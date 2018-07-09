@@ -20,21 +20,21 @@ Audit section also appears.
 That's what this section of articles describes: User Management. Use these links
 to navigate quickly to the content you want:
 
-- [Users](/discover/deployment/-/knowledge_base/7-1/users-and-organizations)
-    - [Adding, Editing, and Deleting Users](/discover/deployment/-/knowledge_base/7-1/adding-editing-and-deleting-users)
-    - [Important Additional User Management Topics](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics)
-- [Organizations](/discover/deployment/-/knowledge_base/7-1/organizations)
-    - [Managing Organizations](/discover/deployment/-/knowledge_base/7-1/managing-organizations)
-- [Roles and Permissions](/discover/deployment/-/knowledge_base/7-1/roles-and-permissions)
+- [Users](/discover/portal/-/knowledge_base/7-1/users-and-organizations)
+    - [Adding, Editing, and Deleting Users](/discover/portal/-/knowledge_base/7-1/adding-editing-and-deleting-users)
+    - [Important Additional User Management Topics](/discover/portal/-/knowledge_base/7-1/user-management-additional-topics)
+- [Organizations](/discover/portal/-/knowledge_base/7-1/organizations)
+    - [Managing Organizations](/discover/portal/-/knowledge_base/7-1/managing-organizations)
+- [Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
     - [Managing Roles](/discover/portal/-/knowledge_base/7-1/managing-roles)
     - [Defining Role Permissions](/discover/portal/-/knowledge_base/7-1/defining-role-permissions)
+- [User Groups](/discover/portal/-/knowledge_base/7-1/user-groups)
 
 <!--These articles are planned but not yet written:
 
-- [User Groups](/discover/deployment/-/knowledge_base/7-1/user-groups)
-- [Password Policies](/discover/deployment/-/knowledge_base/7-1/password-policies)
-- [Monitoring Users](/discover/deployment/-/knowledge_base/7-1/monitoring-users)
-- [Auditing Users](/discover/deployment/-/knowledge_base/7-1/auditing-users)
+- Password Policies(/discover/portal/-/knowledge_base/7-1/password-policies)
+- Monitoring Users(/discover/portal/-/knowledge_base/7-1/monitoring-users)
+- Auditing Users(/discover/portal/-/knowledge_base/7-1/auditing-users)
 -->
 
 ## What's New with User Management? [](id=whats-new-with-user-management)
@@ -46,16 +46,16 @@ enhancements could be made. In @product-ver@, we're excited to announce some new
 features for user administrators:
 
 1.  Numeric screen names can be used without issue out of the box. Read
-    [here](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics#numeric-screen-names) 
+    [here](/discover/portal/-/knowledge_base/7-1/user-management-additional-topics#numeric-screen-names) 
     for the details.
 
 2.  Add organization types from System Settings. There's no need for portal
     properties anymore, or the requisite system restart. Read
-    [here](/discover/deployment/-/knowledge_base/7-1/managing-organizations#organization-types) 
+    [here](/discover/portal/-/knowledge_base/7-1/managing-organizations#organization-types) 
     for the details.
 
 3.  Configure default user profile pictures from System Settings. Read
-    [here](/discover/deployment/-/knowledge_base/7-1/user-management-additional-topics#user-profile-pictures) 
+    [here](/discover/portal/-/knowledge_base/7-1/user-management-additional-topics#user-profile-pictures) 
     for the details.
 
 Begin exploring Liferay's User Management functionality by reading about

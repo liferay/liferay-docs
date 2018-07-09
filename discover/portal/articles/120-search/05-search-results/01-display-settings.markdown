@@ -12,11 +12,11 @@ summary.
 
 **Display Results in Document Form**
 : Display results as 
-[search documents](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search).
+search documents<!--(/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search)-->.
 Never use this in production. Developers use this feature to view search
 responses in their indexed, document-based format. Part of a developer's job
 when writing 
-[search indexers](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search#indexers)
+search indexers<!--(/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-search#indexers)-->
 is to convert documents (the objects that get indexed) to the actual object and
 back again. Thus, developers can see how their objects are being indexed. Once
 enabled, click the *Details...* link below the result summary to expand the
@@ -57,6 +57,6 @@ with this URL:
 
     http://localhost:8080/web/guest/search?q=test&delta=10
 
-For further reading, check out how to [return suggestions for better search
-terms](/discover/portal/-/knowledge_base/7-1/searching-for-assets#search-suggestion)
+For further reading, check out how to 
+[return suggestions for better search terms](/discover/portal/-/knowledge_base/7-1/searching-for-assets#search-suggestions)
 (for example, "Did you mean...") when not enough results are returned initially.
