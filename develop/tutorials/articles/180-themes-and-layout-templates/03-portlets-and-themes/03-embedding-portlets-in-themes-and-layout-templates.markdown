@@ -143,7 +143,7 @@ Follow these steps to set default portlet preferences for an embedded portlet:
 
 1.  Retrieve portlet preferences using the `freeMarkerPortletPreferences` 
     object. The example below retrieves the `barebone` 
-    [portlet decorator](/develop/tutorials/-/knowledge_base/7-1/portlet-decorators):
+    [portlet decorator](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers):
 
         <#assign preferences = freeMarkerPortletPreferences.getPreferences(
           "portletSetupPortletDecoratorId", "barebone"
@@ -238,7 +238,7 @@ is embedded on the page.
 
 ## Related Topics [](id=related-topics)
 
-[Providing Portlets to Manage Requests](/develop/tutorials/-/knowledge_base/7-1/providing-portlets-to-manage-requests)
+[Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes-and-layout-templates)
 
 [Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets)
 

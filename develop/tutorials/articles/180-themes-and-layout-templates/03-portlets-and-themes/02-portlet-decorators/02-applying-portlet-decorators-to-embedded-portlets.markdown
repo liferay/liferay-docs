@@ -57,4 +57,4 @@ Your embedded portlets now have a custom default Application Decorator!
 
 [Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes-and-layout-templates)
 
-[Providing Portlets to Manage Requests](/develop/tutorials/-/knowledge_base/7-1/providing-portlets-to-manage-requests)
+[Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes-and-layout-templates)

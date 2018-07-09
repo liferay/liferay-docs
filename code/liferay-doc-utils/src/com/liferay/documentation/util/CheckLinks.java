@@ -79,7 +79,7 @@ public class CheckLinks {
 							primaryHeader = splitHeaders[0];
 							String secondaryHeader = splitHeaders[1];
 
-							validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader, 0);
+							validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader, 0, false);
 						}
 						else if (header.equals("")) {
 							continue;
@@ -87,7 +87,7 @@ public class CheckLinks {
 						else {
 
 							primaryHeader = header;
-							validUrl = isUrlValid(line, article, in, primaryHeader, null, 0);
+							validUrl = isUrlValid(line, article, in, primaryHeader, null, 0, false);
 						}
 
 						if (!validUrl) {
@@ -251,6 +251,16 @@ public class CheckLinks {
 			String headerValue = pair.getValue().toString();
 			int headerIndex = Integer.parseInt(headerValue);
 
+			// Find version for each header so we can accurately check them
+			String substringLineStart = line.substring(headerIndex);
+			int headerStart = substringLineStart.indexOf(findStr) + findStr.length();
+			String version = substringLineStart.substring(headerStart, headerStart + 3);
+			boolean differingDefaultVersion = false;
+
+			if (!version.equals("7-1")) {
+				differingDefaultVersion = true;
+			}
+
 			// end of >1 logic
 
 			String primaryHeader = null;
@@ -262,7 +272,7 @@ public class CheckLinks {
 				primaryHeader = splitHeaders[0];
 				String secondaryHeader = splitHeaders[1];
 
-				validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader, headerIndex);
+				validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader, headerIndex, differingDefaultVersion);
 			}
 			else if (header.equals("")) {
 				continue;
@@ -270,7 +280,7 @@ public class CheckLinks {
 			else {
 
 				primaryHeader = header;
-				validUrl = isUrlValid(line, article, in, primaryHeader, null, headerIndex);
+				validUrl = isUrlValid(line, article, in, primaryHeader, null, headerIndex, differingDefaultVersion);
 			}
 
 			if (!validUrl) {
@@ -759,7 +769,8 @@ public class CheckLinks {
 	 * @throws IOException if an IO exception occurred
 	 */
 	private static boolean isUrlValid(String line, File article, LineNumberReader in,
-			String primaryHeader, String secondaryHeader, int lineIndex) throws IOException {
+			String primaryHeader, String secondaryHeader, int lineIndex,
+			boolean differingDefaultVersion) throws IOException {
 
 		boolean validURL = false;
 		ArrayList<List<String>> headers = new ArrayList<List<String>>();
@@ -767,7 +778,7 @@ public class CheckLinks {
 		headers = assignDirHeaders(line, lineIndex);
 
 		// Check 7.1 links from local liferay-docs repo
-		if (line.contains("/7-1/")) {
+		if (line.contains("/7-1/") && !differingDefaultVersion) {
 
 			if (Validator.isNull(secondaryHeader)) {
 

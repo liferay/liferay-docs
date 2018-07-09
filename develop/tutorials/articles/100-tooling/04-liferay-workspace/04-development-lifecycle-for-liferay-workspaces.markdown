@@ -93,7 +93,7 @@ You don't have to worry about applying these subprojects because the workspace
 plugin does it for you. Likewise, if a folder in the `/themes` folder includes a
 `liferay-theme.json` file, the `gulp` plugin is applied to it; if a folder in
 the `/modules` folder includes a `bnd.bnd` file, the
-[liferay-gradle](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-modules)
+[liferay-gradle](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 plugin is applied to it. See the
 [Gradle](/develop/reference/-/knowledge_base/7-1/gradle) reference article for a
 list of Liferay Gradle plugins automatically provided for all Workspace

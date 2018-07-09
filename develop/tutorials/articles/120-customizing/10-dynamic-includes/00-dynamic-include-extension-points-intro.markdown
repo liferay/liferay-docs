@@ -4,7 +4,7 @@ Dynamic includes expose extension points in JSPs for injecting additional
 HTML, adding resources, modifying editors, and more. Several dynamic includes
 are available. Once you know the dynamic include's key, you can
 use it to 
-[create a module to inject your content](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-dynamic-includes). 
+[create a module to inject your content](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps-with-dynamic-includes). 
 
 This section of tutorials lists the available dynamic include keys, along with a 
 description of their use cases and a code example. 

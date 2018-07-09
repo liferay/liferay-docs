@@ -1,6 +1,6 @@
 # Creating and Managing Site Navigation Menus [](id=creating-and-managing-site-navigation-menus)
 
-With @product_ver@, pages are now decoupled from menus. Navigation Menus let you
+With @product-ver@, pages are now decoupled from menus. Navigation Menus let you
 arrange your page taxonomy any way you want. Marketers can leave one-off
 marketing landing pages out of the navigation, and you can create 
 multiple navigation menus: a main menu, secondary menus, footer menus, and

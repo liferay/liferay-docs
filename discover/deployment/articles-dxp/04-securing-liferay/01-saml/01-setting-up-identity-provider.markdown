@@ -42,7 +42,7 @@ Here are the steps for setting up @product@ to act as a SAML Identity Provider:
 2.  To begin configuring @product@ to use SAML, select a SAML role for @product@ and
     choose an entity ID.
 
-    ![Figure 1: Select a SAML role for Liferay and enter an entity ID.](../../../../images-dxp/saml-initial-config.png)
+    <!-- [Figure 1: Select a SAML role for Liferay and enter an entity ID.](../../../images-dxp/saml-initial-config.png) -->
 
     Select the *Identity Provider* SAML role. Enter *liferaysamlidp* if you're
     setting up an example @product@ instance. Alternatively, choose your own
@@ -75,7 +75,7 @@ Here are the steps for setting up @product@ to act as a SAML Identity Provider:
     replace the current certificate with a new one if your old one has expired
     or if you want to change the key's password. 
 
-    ![Figure 2: The General tab of the SAML Admin portlet displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](../../../../images-dxp/saml-keystore-info.png)
+    <!-- [Figure 2: The General tab of the SAML Admin portlet displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](../../../images-dxp/saml-keystore-info.png) -->
 
     Three more tabs now appear: 
 

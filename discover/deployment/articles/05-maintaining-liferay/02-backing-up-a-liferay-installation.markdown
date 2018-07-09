@@ -28,7 +28,7 @@ Next, let's examine the @product@ installation items you should back up.
 ## Backing up @product@'s File System [](id=backing-up-liferays-file-system)
 
 The
-[Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+[Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 stores @product@'s properties configuration files, such as `portal-setup-
 wizard.properties` and `portal-ext.properties`. You should absolutely back them
 up. In fact, it's best to back up your entire application server and  Liferay

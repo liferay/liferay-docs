@@ -8,7 +8,7 @@ Store.
 Here are the DBStore configuration steps:
 
 1.  Set the following property in a `portal-ext.properties` file in your
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
     folder: 
 
         dl.store.impl=com.liferay.portal.store.db.DBStore

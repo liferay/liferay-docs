@@ -85,6 +85,6 @@ app's content authors.
 
 [Relating Assets](/develop/tutorials/-/knowledge_base/7-1/relating-assets)
 
-[Adding, Updating, and Deleting Assets for Custom Entities](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets-for-custom-entities)
+[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
 
 [What is Service Builder?](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)

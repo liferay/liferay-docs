@@ -100,7 +100,7 @@ $$$
 
 Next you can learn how the bundler (since version 2.0.0) isolates package 
 dependencies. See 
-[What Changed Between liferay-npm-bundler 1.x and 2.x](/develop/reference/-/knowledge_base/7-1/changes-between-liferay-npm-bundler-1.x-and-2.x) 
+[What Changed Between liferay-npm-bundler 1.x and 2.x](/develop/reference/-/knowledge_base/7-1/changes-between-liferay-npm-bundler-1x-and-2x) 
 for more information on why this change was made. 
 
 ## Isolated Package Dependencies [](id=isolated-package-dependencies)

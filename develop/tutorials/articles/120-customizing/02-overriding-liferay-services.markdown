@@ -82,6 +82,14 @@ Each of these methods overrides a Liferay service method. These implementations
 merely execute a few print statements that before executing the original service
 implementations.
 
+Lastly, you must add the following method to the bottom of your service wrapper
+so it can find the appropriate service it's overriding on deployment.
+
+    @Reference(unbind = "-")
+    private void serviceSetter(UserLocalService userLocalService) {
+        setWrappedService(userLocalService);
+    }
+
 [Build and deploy your module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module).
 Congratulations! You've created and deployed a Liferay service wrapper!
 

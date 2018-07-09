@@ -152,11 +152,19 @@ know that most if not all of the tools you're familiar with are there. If you're
 writing applications on Liferay, the sky's the limit: you can use any
 web framework you like, and you can write both servlet and portlet-based
 applications. If you're looking for a recommendation, though, we're happy to
-point you to either our
+point you to our
+[MVCPortlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
+framework.
+
+
+<!-- TODO: readd JSF article when available. -Cody
+
+either our
 [MVCPortlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
 or our JSF-based
-[LiferayFaces](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
+[LiferayFaces](develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
 frameworks. 
+-->
 
 On the front-end, Liferay has kept pace with the most recent progressions in
 that space. If you've used Liferay in the past, you can of course continue to
@@ -172,7 +180,7 @@ You can also use any JavaScript library, including
 -   [Metal.js](http://metaljs.com/) (developed by Liferay)
 -   [jQuery](https://jquery.com/) (included) 
 -   Lodash (included)
--   Angular 1 or 2
+-   Angular JS or Angular
 -   React
 -   Your library of choice
 
