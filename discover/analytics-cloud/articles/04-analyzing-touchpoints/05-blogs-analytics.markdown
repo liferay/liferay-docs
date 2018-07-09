@@ -50,7 +50,9 @@ Whether the rating is a simple Thumb Up/Thumbs Down, or a Stars rating (0-5
 Stars), the Rating in Analytics Cloud lets you compare Blog posts to each other.
 A Blog post announcing Free Swag may have a higher rating than a Blog post
 announcing that prices are increasing. The rating is reported as a number out of
-10. <!-- todo: get more detail from the devs -->
+10.
+
+<!-- todo: get more detail from the devs -->
 
 ## Views by Segment [](id=views-by-segment)
 

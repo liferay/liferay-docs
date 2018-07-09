@@ -5,7 +5,7 @@ are important assets for presenting site visitors with information.  Analytics
 Cloud gives you important insights into how site users are engaging with your
 content.
 
-![Figure 1: By default, Web Content is listed in descending order of Views.](../../images/assets-dm.png)
+![Figure 1: By default, Web Content is listed in descending order of Views.](../../images/assets-wc.png)
 
 ## Visitor Behavior [](id=visitor-behavior)
 
