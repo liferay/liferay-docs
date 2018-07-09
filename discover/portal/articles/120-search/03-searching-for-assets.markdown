@@ -9,14 +9,13 @@ the ones included by default.
 +$$$
 
 **Searching for Users:** When you click an asset in the search results, it's
-displayed in an Asset Publisher (unless the *View in Context* option is selected
-in the Search Results portlet). Users are different, though. Think of them as
-invisible assets, not intended for display in the Asset Publisher application.
-While Users appear as search results with other indexed assets, when you click
-one you're taken to the User's profile page. If 
-[public personal pages](/discover/portal/-/knowledge_base/7-1/creating-sites#customizing-personal-sites)
-have been disabled, clicking on a User from the list of search results shows you a
-blank page.
+displayed in an Asset Publisher (unless the *View in Context* option is
+selected in the Search Results portlet). Users are different, though. Think of
+them as invisible assets, not intended for display in the Asset Publisher
+application.  While Users appear as search results with other indexed assets,
+when you click one you're taken to the User's profile page. If public personal
+pages are disabled, clicking on a User from the list of search results shows
+you a blank page.
 
 $$$
 
@@ -98,6 +97,17 @@ Another way to ensure users see results is through
 Configure the Search Bar's behavior via its portlet configuration screen.
 
 ![Figure 5: Configure the search bar behavior in its configuration screen.](../../images/search-bar-configuration.png)
+
++$$$
+
+**Note:** When you configure the globally embedded Search Bar widget at the top
+of one page, it configures the page-top Search Bar widget on all pages in the
+site. It also overrides the destination 
+[Search Page's](discover/portal/-/knowledge_base/7-1/configuring-search-pages) 
+Search Bar portlet, if they're configured differently. However, it does not
+override Search Bar widgets manually placed on other pages.
+
+$$$
 
 There are several options:
 

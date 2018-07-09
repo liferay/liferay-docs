@@ -77,7 +77,7 @@ Below are some of the available front-end extensions:
 
 - [Theme Contributors](/develop/tutorials/-/knowledge_base/7-1/packaging-independent-ui-resources-for-your-site)
 - [Context Contributors](/develop/tutorials/-/knowledge_base/7-1/injecting-additional-context-variables-into-your-templates)
-- [Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/portlet-decorators)
-- [Editor Config Contributors](/develop/tutorials/-/knowledge_base/7-1/modifying-an-editors-configuration)
+- [Creating Configurable Styles for Portlet Wrappers](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers)
+- [Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor)
 
 Read on to learn more. 

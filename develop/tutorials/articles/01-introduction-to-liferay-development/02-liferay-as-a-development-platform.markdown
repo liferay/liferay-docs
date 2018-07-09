@@ -17,12 +17,17 @@ application on a single page. Applications written this way are called
 *portlets*, and are a mainstay of Liferay's platform. You can use
 [Liferay's MVC Portlet framework](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
 or common frameworks such as [Spring MVC](/develop/tutorials/-/knowledge_base/7-1/spring-mvc)
-or [JSF](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
 to write portlets. If you plan to have a web-based interface to your
 application, and want its administrator to have a lot of flexibility configuring
 it, portlets provide a very powerful model. In this model you can create several
 portlets instead of a larger application and let the administrator choose how to
 combine them with other pre-existing portlets into a larger interface. 
+
+<!--TODO: readd when available. -Cody
+
+or common frameworks such as [Spring MVC](/develop/tutorials/-/knowledge_base/7-1/spring-mvc)
+or [JSF](develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
+-->
 
 That's not to say you don't have other choices. Since Liferay decouples its
 business logic from its UI (which is provided in separate modules), you have

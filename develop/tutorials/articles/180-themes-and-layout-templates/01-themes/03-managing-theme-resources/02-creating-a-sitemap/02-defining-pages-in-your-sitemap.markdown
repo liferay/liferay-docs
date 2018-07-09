@@ -125,8 +125,8 @@ Possible values are `copy` (copy of a page of this site), `embedded`,
 
 ## Related Topics [](id=related-topics)
 
-[Preparing and organizing resources](/develop/tutorials/-/knowledge_base/7-1/preparing-resources-for-the-importer)
+[Preparing and Organizing Web Content for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/preparing-and-organizing-web-content-for-the-resources-importer)
 
 [Defining Layout Templates in a Sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-layout-templates-in-a-sitemap)
 
-[Specifying where to import the resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-resources)
+[Specifying Where to Import Your Theme's Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-your-themes-resources)

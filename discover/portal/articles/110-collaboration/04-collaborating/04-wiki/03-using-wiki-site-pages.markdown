@@ -72,7 +72,7 @@ The Wiki's Options menu also contains the usual widget options:
 **Look and Feel Configuration:** Set the widget's [look and
 feel](/discover/portal/-/knowledge_base/7-1/look-and-feel-configuration).
 
-**Export/Import:** [Export or import widget data](/discover/portal/-/knowledge_base/7-1/exporting-importing-app-data).
+**Export/Import:** [Export or import widget data](/discover/portal/-/knowledge_base/7-1/exporting-importing-widget-data).
 
 **Permissions:** Set the widget's permissions.
 

@@ -39,12 +39,16 @@ non-native (to OSGi) Dependency Injection framework.
 -   Calling OSGi services from a
     [Spring MVC portlet](/develop/tutorials/-/knowledge_base/7-1/spring-mvc)
 -   Calling OSGi services from a
-    [JSF portlet](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
--   Calling OSGi services from a
     [WAR-packaged portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
     that's been upgraded to run on @product-ver@, but not
     [fully modularized](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet)
     and made into an OSGi module
+
+<!-- TODO: readd JSF part, when available. -Cody
+
+-   Calling OSGi services from a
+    [JSF portlet](develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
+-->
 
 +$$$
 

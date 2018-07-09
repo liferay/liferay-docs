@@ -31,13 +31,13 @@ tool to open a Gogo shell for
 [upgrading modules](/discover/deployment/-/knowledge_base/7-1/gogo-shell-commands-for-module-upgrades)
 after finishing the core upgrade. 
 
-The `db-upgrade.sh` script (`db-upgrade.bat` on Windows) invokes the upgrade
+The `db_upgrade.sh` script (`db_upgrade.bat` on Windows) invokes the upgrade
 tool. It resides in the  `[Liferay Home]/tools/portal-tools-db-upgrade-client`
 folder. 
 
 This command prints the upgrade tool usage: 
 
-    db-upgrade.sh --help
+    db_upgrade.sh --help
 
 +$$$
 
@@ -55,11 +55,11 @@ The `-j` option lets you override the JVM parameters. For example, these options
 set the JVM memory to 10GB, which is a good starting point for this process
 type:
 
-    db-upgrade.sh -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
+    db_upgrade.sh -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
 
 The `-l` option lets you specify the tool's log file name: 
 
-    db-upgrade.sh -l "output.log"
+    db_upgrade.sh -l "output.log"
 
 Here are all the upgrade tool command line options:
 
@@ -103,7 +103,7 @@ command line interface or pre-configure it in these files:
     the upgrade requires. You might want to copy your current portal properties
     (except your database properties) into this file. Before copying your
     current properties, make sure you've
-    [updated the portal properties for @product-ver@](/discover/portal/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7#step-4-update-your-portal-properties). 
+    [updated the portal properties for @product-ver@](/discover/deployment/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7#step-4-update-your-portal-properties). 
 
 Each file's properties are described next. 
 
@@ -141,7 +141,7 @@ you'd use in a `portal-ext.properties` file.
 
 Specify the following information to configure the upgrade itself: 
 
-**liferay.home:** the [Liferay home folder](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home) *(required)*
+**liferay.home:** the [Liferay home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) *(required)*
 
 **hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
 set to *250* by default *(optional)* 

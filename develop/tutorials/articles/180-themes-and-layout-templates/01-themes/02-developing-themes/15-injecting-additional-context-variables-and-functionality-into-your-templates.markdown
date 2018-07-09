@@ -165,9 +165,9 @@ additional variables to any context in @product@, you're free to fully harness t
 power of your chosen templating language.
 
 ## Related Topics [](id=related-topics)
-
+<!-- Uncomment in Product Nav Branch
 [Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu)
-
+-->
 [Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
 
 [Theme Contributors](/develop/tutorials/-/knowledge_base/7-1/packaging-independent-ui-resources-for-your-site)

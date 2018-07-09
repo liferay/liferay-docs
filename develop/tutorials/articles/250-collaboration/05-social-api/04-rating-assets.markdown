@@ -47,7 +47,7 @@ simple messages in a guestbook.
 
     You can also make the rating type configurable by administrators. To do 
     this, see the tutorial 
-    [Implementing Ratings Type Selection and Value Type Transformation](/develop/tutorials/-/knowledge_base/7-1/ratings). 
+    [Implementing Ratings Type Selection and Value Type Transformation](/develop/tutorials/-/knowledge_base/7-1/implementing-ratings-type-selection-and-value-transformation). 
 
 Great! Now you know how to let users rate content in your asset-enabled apps. 
 

@@ -23,11 +23,11 @@ Follow these steps:
 3.  Apply your modifications and save the file.
 
 4.  Next, 
-    [write your module's configuration file](/develop/tutorials/-/knowledge_base/7-1/configuring-modules-for-products-loaders#writing-the-configuration-file)
+    [write your module's configuration file](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders#writing-the-configuration-file)
     (`config.js`) to apply your override. Add the `config.js` file to the
     module's `src/main/resources/META-INF/resources/js` folder. The example
     `config.js` file below specifies the `condition` that the 
-    [YUI/AUI Loader](/develop/tutorials/-/knowledge_base/7-1/configuring-modules-for-products-loaders#writing-the-configuration-file)
+    [YUI/AUI Loader](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders#writing-the-configuration-file)
     should load the custom AUI module (`liferay-session-override`) `instead`
     (indicated with the `when` property) of the `trigger` module
     (`liferay-session`). You can follow this same pattern to create your
@@ -77,5 +77,3 @@ Now you know how to override @product@'s default YUI/AUI modules!
 ## Related Topics [](id=related-topics)
 
 [Customizing JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)
-
-[Configuring Modules for @product@'s Module Loaders](/develop/tutorials/-/knowledge_base/7-1/configuring-modules-for-products-loaders)

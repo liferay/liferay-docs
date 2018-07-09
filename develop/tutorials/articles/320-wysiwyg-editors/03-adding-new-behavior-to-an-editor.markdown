@@ -120,7 +120,7 @@ you've specified. You're now able to use JavaScript to add new behavior to your
 
 ## Related Topics [](id=related-topics)
 
-[Modifying an Editor's Configuration](/develop/tutorials/-/knowledge_base/7-1/modifying-an-editors-configuration)
+[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor)
 
 [Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes-and-layout-templates)
 

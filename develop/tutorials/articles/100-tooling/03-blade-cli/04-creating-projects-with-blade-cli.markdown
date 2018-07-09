@@ -149,7 +149,7 @@ learning best practices on structuring their projects to accomplish specific
 tasks. These samples can be found in the
 [liferay-blade-samples](https://github.com/liferay/liferay-blade-samples) Github
 repository. You can also learn more about these samples by visiting the
-[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-modules)
+[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 article.
 
 You can generate these samples using Blade CLI for convenience, instead of

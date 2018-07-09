@@ -2,11 +2,13 @@
 
 Search should always run on a separate environment from your @product@ server.
 @product@ supports [Elasticsearch](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch), 
+
 <!--Uncomment when Solr adapters is available. 
 or 
-[Solr](/discover/deployment/-/knowledge_base/7-1/using-solr), 
+[Solr](discover/deployment/-/knowledge_base/7-1/using-solr), 
 and either of those environments
 -->
+
 which can also be clustered. 
 
 For more information on how to cluster Elasticsearch, see 
