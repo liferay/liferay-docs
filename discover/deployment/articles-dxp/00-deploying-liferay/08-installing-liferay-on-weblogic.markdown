@@ -19,7 +19,7 @@ You should also read the following articles to familiarize yourself with
 - [Installing @product@ Manually](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually)
 
 Finally, download @product@'s WAR file and dependencies from the 
-[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise).
+[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1).
 You'll need these files:
 
 - `liferay-dxp-digital-enterprise-[version].war`: @product@ WAR file

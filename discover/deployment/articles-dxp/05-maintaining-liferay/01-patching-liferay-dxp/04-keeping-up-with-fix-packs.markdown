@@ -10,8 +10,8 @@ Click the *Downloads* button on the
 [Liferay Digital Experience Platform page](https://web.liferay.com/group/customer/dxp)
 to access these items: 
 
-1. [Latest Patching Tool](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool)
-2. [Latest fix packs](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/fix-packs)
+1. [Latest Patching Tool](https://web.liferay.com/group/customer/dxp/downloads/7-1/patching-tool)
+2. [Latest fix packs](https://web.liferay.com/group/customer/dxp/downloads/7-1/fix-packs)
 3. [All security patches](https://web.liferay.com/group/customer/products/portal/security-vulnerability/known-vulnerabilities)
 
 Click the *Announcements* button in the center of the

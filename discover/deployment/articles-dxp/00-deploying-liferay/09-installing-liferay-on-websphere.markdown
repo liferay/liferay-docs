@@ -33,7 +33,7 @@ typically `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`
 
 To start, download @product@'s WAR file and dependencies from the customer
 portal on
-[liferay.com](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise).
+[liferay.com](https://web.liferay.com/group/customer/dxp/downloads/7-1).
 You'll need the following files: 
 
 - `liferay-dxp-digital-enterprise-[version].war`
