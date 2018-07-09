@@ -1,15 +1,7 @@
 # Adding Custom Panel Apps [](id=adding-custom-panel-apps)
 
-Just as adding panel categories is straight-forward and dynamic, so too is the
-process for adding panel apps. Panel apps are, by default, links provided in a
-panel category that allow you to access an application. For instance, if you 
-navigate to the Site Administration &rarr; *Content* panel category, you can 
-select the *Web Content* option, which is a panel app that allows you to access
-web content. Panel apps can also have a custom UI in the same way Panel
-categories could have a more complex UI.
-
-Follow the steps below to add a panel app to your Liferay instance's Product
-Menu.
+After you have the Category created, create a Panel app to go in that 
+category:
 
 1. Create a generic OSGi module using your favorite third party tool, or use
    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). Blade CLI
@@ -58,33 +50,33 @@ Menu.
             service = PanelApp.class
         )
 
-4. Implement the `PanelApp` interface. A popular way to do this is by
-   extending the
-   [BasePanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BasePanelApp.html)
-   abstract class. Just as you learned in the previous sub-section on panel
-   categories, if you need to create a more complex UI to render in the panel, 
-   you can do so. If you want to use JSPs to render that UI, you can extend an 
-   additional abstract class which extends `BasePanelApp` called 
-   [BaseJSPPanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BaseJSPPanelApp.html).
-   This provides additional methods you can use to incorporate JSP functionality
-   into your app's listing in the Product Menu. 
+4.  Implement the `PanelApp` interface.
+
+    A popular way to do this is by extending the [BasePanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BasePanelApp.html)
+    abstract class. Just as you learned in the previous sub-section on panel
+    categories, if you need to create a more complex UI to render in the panel, 
+    you can do so.
+    
+    If you want to use JSPs to render that UI, you can extend an 
+    additional abstract class which extends `BasePanelApp` called  [BaseJSPPanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BaseJSPPanelApp.html).
+    This provides additional methods you can use to incorporate JSP 
+    functionality into your app's listing in the Product Menu. 
 
     JSPs are not the only way to provide frontend functionality to your panel
     apps. You can create your own class implementing `PanelCategory` to use 
     other technologies, such as FreeMarker.
 
-5. Since you're implementing the
-   [PanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/PanelApp.html)
-   interface, you must implement its methods if you're not extending a base 
-   class. The `BlogsPanelApp` is a simple example of how to specify your portlet 
-   as a panel app. This class extends the `BasePanelApp`, overriding the 
-   `getPortletId` and `setPortlet` methods. These methods specify and set the 
-   Blogs portlet as a panel app. 
+5.  Since you're implementing the [PanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/PanelApp.html)
+    interface, you must implement its methods if you're not extending a base 
+    class. The `BlogsPanelApp` is a simple example of how to specify your 
+    portlet as a panel app. This class extends the `BasePanelApp`, overriding 
+    the `getPortletId` and `setPortlet` methods. These methods specify and set 
+    the Blogs portlet as a panel app. 
 
-    Each panel app must belong to a portlet and each portlet can have at most one
-    panel app. If more than one panel app is needed, another custom portlet must 
-    be created. By default, the panel app will only be shown if the user has 
-    permission to view the associated portlet.
+    Each panel app must belong to a portlet and each portlet can have at most 
+    one panel app. If more than one panel app is needed, another custom portlet 
+    must be created. By default, the panel app will only be shown if the user 
+    has permission to view the associated portlet.
 
     This is how those methods look for the Blogs portlet:
 
@@ -102,13 +94,12 @@ Menu.
             super.setPortlet(portlet);
         }
 
-    @product@ also lets you customize your panel app's appearance in the Product 
-    Menu. As you learned before, the `BaseJSPPanelApp` abstract class can be 
-    extended to provide further functionality with JSPs. For instance, the
-    Navigation category in Site Administration offers a dynamic Pages panel app
-    that provides much more than a simple link to access a portlet. This is
-    accomplished by extending `BaseJSPPanelApp` in the
-    [GroupPagesPanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/layout/admin/web/internal/application/list/GroupPagesPanelApp.html)
+    @product@ also lets you customize your panel app's appearance in the 
+    Product Menu. As you learned before, the `BaseJSPPanelApp` abstract class 
+    can be extended to provide further functionality with JSPs. For instance, 
+    the Navigation category in Site Administration offers a dynamic Pages panel 
+    app that provides much more than a simple link to access a portlet. This is
+    accomplished by extending `BaseJSPPanelApp` in the [GroupPagesPanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/layout/admin/web/internal/application/list/GroupPagesPanelApp.html)
     class, which provides this functionality in the Product Menu.
 
     In `GroupPagesPanelApp`, notice that the portlet ID is still returned
@@ -120,8 +111,6 @@ Menu.
         public String getJspPath() {
             return "/panel/app/layouts_tree.jsp";
         }
-
-    <!-- Elaborate more on JSP! -Cody -->
 
     Since you're including custom JSPs in your module, you'll also need to set
     the right `ServletContext`.

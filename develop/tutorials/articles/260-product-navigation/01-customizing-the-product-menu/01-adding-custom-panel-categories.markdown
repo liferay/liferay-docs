@@ -1,8 +1,9 @@
 # Adding Custom Panel Categories [](id=adding-custom-panel-categories)
 
-Liferay provides an easy way to extend the Product Menu and customize it to
-display what is most helpful in your particular situation. First, you'll learn
-how to add a panel category.
+To customize the Product Menu you can create a new panel category and then 
+create a panel app to be displayed in that category. Multiple Panel Apps can be 
+contained within a single category. In the default Product Menu, you have Panel 
+Categories like *Content*, *Build*, and *Configuration*, which contain Panel Apps like *Web Content*, *Page Fragments*, and *Site Settings*. Create a new panel category now::
 
 1. Create a generic OSGi module using your favorite third party tool, or use
    [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli). Blade CLI
@@ -52,23 +53,22 @@ how to add a panel category.
             service = PanelCategory.class
         )
 
-4. Implement the `PanelCategory` interface. A popular way to do this is by
-   extending the
-   [BasePanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BasePanelCategory.html)
-   or 
-   [BaseJSPPanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BaseJSPPanelCategory.html)
-   abstract classes. Typically, the `BasePanelCategory` is extended for basic
-   categories (e.g., the Control Panel category) that only display the category
-   name or other simple functionality. If you'd like to provide a custom UI for
-   your panel, you can do so using any frontend technology, you only need to
-   implement the methods `include()` or `includeHeader()` from the
-   `PanelCategory` interface. The `includeHeader` method is used to render the
-   header of the section and the `include` method is used to render the body.
-   Implementing a custom UI gives you the flexibility to add more complex
-   functionality. If you are going to use JSPs as the frontend technology, a
-   base class called `BaseJSPPanelCategory` can be extended that already
-   implements the methods `include()` and `includeHeader()` for you. This will
-   be elaborated on more extensively later.
+4.  Implement the `PanelCategory` interface.
+
+    A popular way to do this is by extending the [BasePanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BasePanelCategory.html)
+    or [BaseJSPPanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BaseJSPPanelCategory.html)
+    abstract classes. Typically, the `BasePanelCategory` is extended for basic
+    categories (e.g., the Control Panel category) that only display the category
+    name or other simple functionality. If you'd like to provide a custom UI for
+    your panel, you can do so using any frontend technology, you only need to
+    implement the methods `include()` or `includeHeader()` from the
+    `PanelCategory` interface. The `includeHeader` method is used to render the
+    header of the section and the `include` method is used to render the body.
+    Implementing a custom UI gives you the flexibility to add more complex
+    functionality. If you are going to use JSPs as the frontend technology, a
+    base class called `BaseJSPPanelCategory` can be extended that already
+    implements the methods `include()` and `includeHeader()` for you. This will
+    be elaborated on more extensively later.
 
     +$$$
 
@@ -94,9 +94,9 @@ how to add a panel category.
       database. This is used to save the state of the panel category when
       navigating away from the menu.
 
-6. Add any other methods that are necessary to create your custom panel
-   category. As you learned earlier, you can extend the `BasePanelCategory` and
-   `BaseJSPPanelCategory` abstract classes to implement `PanelCategory`.
+6.  Add any other methods that are necessary to create your custom panel
+    category. As you learned earlier, you can extend the `BasePanelCategory` and
+    `BaseJSPPanelCategory` abstract classes to implement `PanelCategory`.
 
     If you'd like to provide something simple for your panel category like a
     name, extending `BasePanelCategory` is probably sufficient. For example, the

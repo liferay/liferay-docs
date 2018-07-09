@@ -33,12 +33,12 @@ In this tutorial, you'll learn how to customize the User Personal Bar. You'll
 create a single Java class where you'll specify a portlet to replace the
 existing default portlet.
 
-1. [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development).
+1.  [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development).
 
-2. Create a unique package name in the module's `src` directory and create a
-   new Java class in that package.
+2.  Create a unique package name in the module's `src` directory and create a
+    new Java class in that package.
 
-3. Directly above the class's declaration, insert the following annotation:
+3.  Directly above the class's declaration, insert the following annotation:
 
         @Component(
             immediate = true,
@@ -49,30 +49,28 @@ existing default portlet.
             service = ViewPortletProvider.class
         )
 
-    The `model.class.name` property must be set to the class name of the entity
-    type you want the portlet to handle. In this case, you want your portlet to
-    be provided based on whether or not it can be displayed in the User Personal
-    Bar. You may recall from the
-    [Portlet Providers](/develop/tutorials/-/knowledge_base/7-1/portlet-provider-template)
-    tutorial that you can request portlets in several different ways (e.g.,
-    *Edit*, *Browse*, etc.).
+     The `model.class.name` property must be set to the class name of the entity
+     type you want the portlet to handle. In this case, you want your portlet to
+     be provided based on whether or not it can be displayed in the User 
+     Personal Bar. You may recall from the [Portlet Providers](/develop/tutorials/-/knowledge_base/7-1/portlet-provider-template)
+     tutorial that you can request portlets in several different ways (e.g.,
+     *Edit*, *Browse*, etc.).
 
-    You should also specify the service rank for your new portlet so it
-    overrides the default one provided by @product@. Make sure to set the
-    `service.ranking:Integer` property to a number that is ranked higher than
-    the portlet being used by default.
+     You should also specify the service rank for your new portlet so it
+     overrides the default one provided by @product@. Make sure to set the
+     `service.ranking:Integer` property to a number that is ranked higher than
+     the portlet being used by default.
 
      Since you're only wanting the User Personal Bar to display your portlet,
      you'll always have the `service` element be `ViewPortletProvider.class`.
 
-4. Update the class's declaration to extend the
-   [BasePortletProvider](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
-   abstract class and implement `ViewPortletProvider`:
+4.  Update the class's declaration to extend the [BasePortletProvider](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
+    abstract class and implement `ViewPortletProvider`:
 
        public class ExampleViewPortletProvider extends BasePortletProvider implements ViewPortletProvider {
 
-5. Specify the portlet you'd like to provide in the User Personal Bar by
-   declaring the following method in your class:
+5.  Specify the portlet you'd like to provide in the User Personal Bar by
+    declaring the following method in your class:
 
         @Override
         public String getPortletName() {
