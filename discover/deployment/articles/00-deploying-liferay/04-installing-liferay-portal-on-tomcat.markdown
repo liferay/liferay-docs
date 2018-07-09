@@ -1,7 +1,7 @@
 # Installing @product@ on Tomcat [](id=installing-product-on-tomcat)
 
 @product-ver@ bundled with Tomcat 9 is available on the
-[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
+[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1)
 (DXP) or
 [Liferay Downloads](https://www.liferay.com/downloads)
 (Portal CE). The Tomcat bundle contains JARs, scripts, and configuration files
@@ -11,7 +11,7 @@ Copying these files from a @product@ Tomcat bundle facilitates installing
 
 Whether you copy bundle files (recommended) or download and create the files,
 you must download these files for
-[DXP](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise) or
+[DXP](https://web.liferay.com/group/customer/dxp/downloads/7-1) or
 [Portal CE](https://www.liferay.com/downloads):
 
 - @product@ WAR file

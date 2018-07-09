@@ -193,7 +193,7 @@ Next, you'll learn how to configure @product@'s patching tool.
 
 LCS uses @product@'s patching tool to apply updates. In bundles, the patching
 tool is pre-installed. If you're not running a bundle, you must 
-[download](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool) 
+[download](https://web.liferay.com/group/customer/dxp/downloads/7-1/patching-tool) 
 and 
 [install](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-liferay) 
 the patching tool separately. 

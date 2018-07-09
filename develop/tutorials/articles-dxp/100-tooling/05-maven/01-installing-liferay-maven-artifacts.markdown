@@ -109,7 +109,7 @@ Liferay offers a utility available from Liferay's Customer Portal that lets you
 download all of Liferay's artifacts and install them to a Maven repository of
 your choice.
 
-1.  Navigate to the [Digital Enterprise](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
+1.  Navigate to the [Digital Enterprise](https://web.liferay.com/group/customer/dxp/downloads/7-1)
     download page in Liferay's Customer Portal and select *Maven* from the
     drop-down list to download the latest version of @product@ Maven.
 

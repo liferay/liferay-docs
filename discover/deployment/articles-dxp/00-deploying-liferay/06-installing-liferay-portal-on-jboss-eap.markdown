@@ -7,7 +7,7 @@ Installing @product@ on JBoss EAP 7.1 takes three steps:
 - [Installing the @product@ WAR file to your application server](#deploying-product)
 
 Before proceeding, download these files from the 
-[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise):
+[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1):
 
 - @product@ WAR file
 - Dependencies ZIP file
