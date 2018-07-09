@@ -22,10 +22,10 @@ and immediately see their new theme in action.
 
 Using the Resources Importer involves the following steps:
 
-- [Preparing and Organizing Resources](/develop/tutorials/-/knowledge_base/7-1/preparing-resources-for-the-importer)
-- [Defining the Sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-the-sitemap)
-- [Defining the Assets](/develop/tutorials/-/knowledge_base/7-1/defining-the-assets) (optional)
-- [Specifying Where to Import the Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-resources) 
+- [Preparing and Organizing  Resources](/develop/tutorials/-/knowledge_base/7-1/preparing-and-organizing-web-content-for-the-resources-importer)
+- [Creating a Sitemap for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/creating-a-sitemap-for-the-resources-importer)
+- [Defining Assets for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/defining-assets-for-the-resources-importer) (optional)
+- [Specifying Where to Import Your Theme's Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-your-themes-resources) 
 
 This section of tutorials explains how to use the Resources Importer to import 
 resources with your theme. 

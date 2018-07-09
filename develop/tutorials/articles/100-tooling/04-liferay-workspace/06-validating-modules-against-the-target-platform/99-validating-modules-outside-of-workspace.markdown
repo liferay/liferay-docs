@@ -19,4 +19,7 @@ like this:
         targetPlatformDistro group: "com.liferay", name "com.liferay.ce.portal.distro", version: "7.1.0"
     }
 
+For Liferay DXP users, the versions follow a slightly different format:
+`7.1.10.0`.
+
 Now you can validate your modules against a target platform!

@@ -119,4 +119,8 @@ Awesome! You've seen the WAB Generator in action!
 
 [Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu)
 
+<!-- TODO: add back, when available. -Cody
+[Generating a JSF Application](develop/tutorials/-/knowledge_base/7-1/generating-a-jsf-application)
+-->
+
 [Configuration](/develop/tutorials/-/knowledge_base/7-1/configuration)

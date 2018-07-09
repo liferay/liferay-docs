@@ -1,7 +1,7 @@
 # Installing @product@ on Tomcat [](id=installing-product-on-tomcat)
 
 @product-ver@ bundled with Tomcat 9 is available on the
-[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
+[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1)
 (DXP) or
 [Liferay Downloads](https://www.liferay.com/downloads)
 (Portal CE). The Tomcat bundle contains JARs, scripts, and configuration files
@@ -11,7 +11,7 @@ Copying these files from a @product@ Tomcat bundle facilitates installing
 
 Whether you copy bundle files (recommended) or download and create the files,
 you must download these files for
-[DXP](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise) or
+[DXP](https://web.liferay.com/group/customer/dxp/downloads/7-1) or
 [Portal CE](https://www.liferay.com/downloads):
 
 - @product@ WAR file
@@ -24,7 +24,7 @@ Here are the basic steps for installing @product@ on Tomcat:
 - [Configuring your application server for @product@](#tomcat-configuration)
 - [Deploying the @product@ WAR file to your application server](#deploying-liferay)
 
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 is the folder containing your Tomcat server folder. After installing and
 deploying @product@, Liferay Home contains `data`, `deploy`, `license`, and
 `osgi` folders. `$TOMCAT_HOME` refers to your Tomcat server folder. It is
@@ -270,7 +270,7 @@ Your application server is configured to run @product@.
 
 The easiest way to handle your database configuration is to let @product@ manage
 your data source. @product@'s
-[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-product#using-liferays-setup-wizard)
+[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
 
@@ -316,7 +316,7 @@ it. Mail session configuration is next.
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s built-in mail
 session, skip this section and
-[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-product#configuring-mail)
+[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)
 in the Control Panel.
 
 If you want to manage your mail session with Tomcat, follow these steps:

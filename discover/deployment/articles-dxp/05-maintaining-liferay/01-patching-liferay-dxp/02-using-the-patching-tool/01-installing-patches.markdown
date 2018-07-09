@@ -110,7 +110,7 @@ place.
 
 Some hotfixes depend on fix packs. If you attempt to install a hotfix that
 depends on a fix pack, the Patching Tool notifies you. Go to the 
-[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
+[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1)
 and obtain the hotfix dependency. Once all the necessary patches are available
 in the `patches` folder, the Patching Tool installs them. 
 
@@ -119,7 +119,7 @@ in the `patches` folder, the Patching Tool installs them.
 When a patch you're trying to install requires a Patching Tool update, the
 Patching Tool tells you. To update the Patching Tool, download the latest one
 from the
-[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool).
+[Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1/patching-tool).
 Overwrite the existing Patching Tool by unzipping the new one to the
 `patching-tool` folder's parent folder. 
 

@@ -49,8 +49,8 @@ Now you know how to obtain an OSGi bundle's dependency npm packages descriptors!
 
 ## Related Topics [](id=related-topics)
 
-[Obtaining an OSGi bundle's npm Package Descriptors](/develop/tutorials/-/knowledge_base/7-1/obtaining-npm-package-descriptors)
+[Referencing an npm Module's Package](/develop/tutorials/-/knowledge_base/7-1/referencing-an-npm-modules-package)
 
-[The Structure of OSGi Bundles Containing npm Packages](/develop/tutorials/-/knowledge_base/7-1/the-structure-of-osgi-bundles-containing-npm-packages)
+[The Structure of OSGi Bundles Containing npm Packages](/develop/reference/-/knowledge_base/7-1/the-structure-of-osgi-bundles-containing-npm-packages)
 
-[How @product@ Publishes npm Packages](/develop/tutorials/-/knowledge_base/7-1/how-liferay-portal-publishes-npm-packages)
+[How @product@ Publishes npm Packages](/develop/reference/-/knowledge_base/7-1/how-liferay-portal-publishes-npm-packages)

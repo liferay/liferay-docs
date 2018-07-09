@@ -30,7 +30,7 @@ When creating a new page, users can choose either the new content pages or
 widget pages, which use the traditional method of creating pages through adding
 and configuring applications.
 
-![Figure x. Users can now choose to create Content Pages.](../../images/01-creating-pages.jpg)
+![Figure x: Users can now choose to create Content Pages.](../../images/01-creating-pages.jpg)
 
 ### Fragments [](id=fragments)
 
@@ -41,7 +41,7 @@ build pages quickly without having to touch code. Fragments are organized in
 collections and leverage familiar asset management features such as drafts,
 thumbnail previews, search, and permissions.
 
-![Figure x. Non-technical users can use Fragments as building blocks for pages.](../../images/01-page-fragments.jpg)
+![Figure x: Non-technical users can use Fragments as building blocks for pages.](../../images/01-page-fragments.jpg)
 
 ### Fragment Editor [](id=fragment-editor)
 
@@ -49,7 +49,7 @@ Web developers can use the Fragment Editor in the browser to create or edit
 their Fragments. Alternatively, developers can create Fragments with their
 preferred tools and import the fragments into Liferay.
 
-![Figure x. The Fragment editor has a three-pane view for HTML, CSS, and JavaScript, with a preview pane rendering the final result.](../../images/01-fragment-editor.png)
+![Figure x: The Fragment editor has a three-pane view for HTML, CSS, and JavaScript, with a preview pane rendering the final result.](../../images/01-fragment-editor.png)
 
 ### Page Editor [](id=page-editor)
 
@@ -63,7 +63,7 @@ in-line editing, swapping in new images and other elements. Fragments can
 display Liferay's out-of-the-box applications, and you can configure them within
 the page editor.
 
-![Figure x. The Page Editor makes it easy to build pages out of Fragments.](../../images/01-page-editor.jpg)
+![Figure x: The Page Editor makes it easy to build pages out of Fragments.](../../images/01-page-editor.jpg)
 
 ### Display Pages [](id=display-pages)
 
@@ -81,7 +81,7 @@ custom menus for sections of the site or remove marketing landing pages from
 menus. You can easily manage menu hierarchies and save different menu sets with
 a new drag-and-drop interface.
 
-![Figure x. Menus are now decoupled from page navigation, and can be edited
+![Figure x: Menus are now decoupled from page navigation, and can be edited
 independently.](../../images/01-menus.jpg)
 
 ### Forms [](id=forms)
@@ -94,7 +94,7 @@ be translated into any language. There are new fields and properties, form
 fragments, auto-saving of forms, and so much more it had to be 
 [described separately](/discover/portal/-/knowledge_base/7-1/whats-new-with-liferay-forms).
 
-![Figure x. Forms have many improvements.](../../images/01-forms.jpg)
+![Figure x: Forms have many improvements.](../../images/01-forms.jpg)
 
 ### User Experience [](id=user-experience)
 
@@ -123,7 +123,7 @@ design, and support for videos from external services. Message Boards now
 supports drag and drop for uploading attachments, section renaming, category and
 thread grouping, notification management, and a new design for comments.
 
-![Figure x. The new cards design for blogs displays entries in a visual grid.](../../images/01-blogs.jpg)
+![Figure x: The new cards design for blogs displays entries in a visual grid.](../../images/01-blogs.jpg)
 
 ## Administration Improvements [](id=administration-improvements)
 
@@ -161,7 +161,7 @@ A new Control Panel makes it easier to take care of all administration tasks
 with the click of a button. Users can configure the search engine, start and
 monitor re-indexes, and much more.
 
-![Figure x. Search administration is now separated from server administration.](../../images/01-search.jpg)
+![Figure x: Search administration is now separated from server administration.](../../images/01-search.jpg)
 
 ### Page Management [](id=page-management)
 
@@ -169,7 +169,7 @@ A new interface for visualizing and managing complex page hierarchies makes page
 management easier. Page templates and display pages are now integrated nicely,
 bringing page management into one central location.
 
-![Figure x. The new page management interface puts all page functions in one place.](../../images/01-new-page-management.jpg)
+![Figure x: The new page management interface puts all page functions in one place.](../../images/01-new-page-management.jpg)
 
 ### Workflow Management [](id=workflow-management)
 
@@ -183,6 +183,42 @@ versioned, and you can save drafts and restore previous versions.
 
 @product-ver@ includes an updated collection of tools to facilitate the support
 and development of Liferay projects.
+
+### Targeting a Liferay Platform [](id=targeting-a-liferay-platform)
+
+Liferay Workspace helps target a specific release of @product@, so dependencies
+get resolved properly. This makes upgrading your applications easy: specify your
+target platform, and Workspace points to the new version. All your dependencies
+are updated to the latest ones provided in the targeted release. 
+
+### Resolving Modules Before Deployment [](id=resolving-modules-before-deployment)
+
+Avoid the painful process of deploying modules only to be met with console
+errors or mysterious problems by resolving modules before deployment. This can
+be done by calling the new *resolve* Gradle task provided by Liferay Workspace. 
+
+### 7.1 Code Upgrade Tool [](id=7-1-code-upgrade-tool)
+
+The Code Upgrade Tool in Liferay Developer Studio helps you upgrade your legacy
+application code to @product@: 
+
+- Identifies code affected by the API changes
+- Describes each API change related to the code
+- Suggests how to adapt the code
+- Provides options, in some cases, to adapt code automatically. 
+
+### IntelliJ Support [](id=intellij-support)
+
+Liferay development is now officially supported on IntelliJ IDEA which offers
+wizards to 
+
+- Create a Liferay Workspace
+- Create projects leveraging Liferay's project templates
+- Create a Liferay server runtime for project deployment and debugging
+
+### Maven Support for Blade CLI [](id=maven-support-for-blade-cli)
+
+Create Maven projects and Maven Liferay Workspaces using Blade CLI. 
 
 ### Hybrid Mobile App Development [](id=hybrid-mobile-app-development)
 

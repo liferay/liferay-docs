@@ -46,10 +46,10 @@ Follow these steps to use the taglib:
     For example, 
     [the Adaptive Media Samples app's `view.jsp`](https://github.com/sergiogonzalez/adaptive-media-samples/blob/master/adaptive-media-sample-web/src/main/resources/META-INF/resources/view.jsp) 
     uses the taglib to display the adapted images in a grid with the `col-md-6` 
-    [column container class](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-manually#column-container). 
+    [column container class](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-manually). 
     Looking at the markup the app generates, you can see that it uses the 
     `<picture>` tag as described in the article 
-    [Creating Content with Adapted Images](/discover/portal/-/knowledge_base/7-1/creating-content-with-adaptive-media-images). 
+    [Creating Content with Adapted Images](/discover/portal/-/knowledge_base/7-1/creating-content-with-adapted-images). 
 
     ![Figure 1: The Adaptive Media Samples app shows all the site's adapted images.](../../../images/adaptive-media-sample.png)
 
@@ -59,6 +59,6 @@ Well done! Now you know how to display adapted images in your app.
 
 [Finding Adapted Images](/develop/tutorials/-/knowledge_base/7-1/finding-adapted-images)
 
-[Changing Adaptive Media's Image Processing](/develop/tutorials/-/knowledge_base/7-1/changing-adaptive-medias-image-processing)
+[Changing Adaptive Media's Image Scaling](/develop/tutorials/-/knowledge_base/7-1/changing-adaptive-medias-image-scaling)
 
 [Adapting Your Media Across Multiple Devices](/discover/portal/-/knowledge_base/7-1/adapting-your-media-across-multiple-devices)

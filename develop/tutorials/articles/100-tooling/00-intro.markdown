@@ -15,7 +15,7 @@ They include
   and manage Liferay Workspaces and @product@ projects.
 - [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace):
   a generated environment built to hold and manage @product@ projects.
-- [Liferay IntelliJ plugin](/develop/tutorials/-/knowledge_base/7-1/intellij):
+- [Liferay IntelliJ plugin](/develop/tutorials/-/knowledge_base/7-1/intellij-idea):
   a plugin providing support for @product@ development with IntelliJ IDEA.
 
 Liferay also provides a plethora of

@@ -9,12 +9,12 @@ do that.
 ## Prerequisites [](id=prerequisites)
 
 Download the necessary artifacts from the 
-[Customer Portal:](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise)
+[Customer Portal:](https://web.liferay.com/group/customer/dxp/downloads/7-1)
 
 - @product@ WAR file (`liferay-dxp-digital-enterprise-[version].war`)
 - Dependencies ZIP file (`liferay-dxp-digital-enterprise-dependencies-[version].zip`)
 - OSGi JARs ZIP file (`liferay-dxp-*osgi-[version].zip`) 
-- [Latest Patching Tool](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool)
+- [Latest Patching Tool](https://web.liferay.com/group/customer/dxp/downloads/7-1/patching-tool)
 
 ## Install the patch on the @product@ WAR and artifacts [](id=how-to-install-a-fix-pack-on-the-liferay-war)
 

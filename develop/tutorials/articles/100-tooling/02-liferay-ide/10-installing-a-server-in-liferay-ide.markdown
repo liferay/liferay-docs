@@ -52,7 +52,7 @@ instance:
   server.
 - *Debug* (![Debug Server](../../../images/icon-debug-server.png)): Starts the
   server in debug mode. For more information on debugging in Dev Studio, see the
-  [Debugging @product@ source in Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/debugging-product-source-liferay-ide)
+  [Debugging @product@ source in Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/debugging-product-source-in-liferay-ide)
   article.
 
 Now you're ready to use your server in Liferay Dev Studio!

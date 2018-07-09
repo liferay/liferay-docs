@@ -30,7 +30,7 @@ resolver to bypass this.
 There are three ways you can do this:
 
 - [Embed the third party library in your module](#embed-the-third-party-project-in-your-module)
-- [Add the third party library's capabilities to the current static set of resolver capabilities](#add-the-third-party-librarys-capabilities-to-the-current-static-set-of-resolver-capabilities)
+- [Add the third party library's capabilities to the current static set of resolver capabilities](#add-the-third-party-librarys-capabilities-to-the-current-static-set-of-reso)
 - [Skip the resolving process for your module](#skip-the-resolving-process-for-your-module)
 
 For help resolving third party dependency errors, see the
@@ -144,6 +144,8 @@ current workspace's @product@ instance, follow the steps below:
 3.  From the root folder of your workspace, run the following command:
 
         bnd remote distro -o custom_distro.jar com.liferay.ce.portal.distro 7.1.0
+
+    Liferay DXP users must use the `7.1.10.0` version syntax.
 
     This connects to the newly deployed BND agent running in @product@ and
     generates a new distro JAR named `custom_distro.jar`. All other capabilities

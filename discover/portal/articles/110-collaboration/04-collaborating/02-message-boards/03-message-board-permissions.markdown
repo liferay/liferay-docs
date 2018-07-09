@@ -1,11 +1,12 @@
 # Message Board Permissions [](id=message-board-permissions)
 
-Open the Message Boards app in your scope's Site Administration menu, as
-described in [the article on creating message
-boards](/develop/tutorials/-/knowledge_base/7-1/creating-message-boards). Then
-click the *Options* icon (![Options](../../../../images/icon-options.png)) and
-select the *Home Category Permissions* option. This permissions screen is for
-granting and revoking access to message board functions. 
+Open the Message Boards app in your scope's Site Administration menu, as 
+described in 
+[the article on creating message boards](/discover/portal/-/knowledge_base/7-1/creating-message-boards). 
+Then click the *Options* icon 
+(![Options](../../../../images/icon-options.png)) 
+and select the *Home Category Permissions* option. This permissions screen is 
+for granting and revoking access to message board functions. 
 
 The permissions enable a Role to perform the following actions: 
 

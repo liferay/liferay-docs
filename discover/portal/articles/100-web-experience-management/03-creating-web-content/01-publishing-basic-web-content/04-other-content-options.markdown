@@ -82,7 +82,7 @@ file in a web content article the same way you added images previously.
 ## XML Format Downloads [](id=xml-format-downloads)
 
 Tools like the 
-[Resource Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-your-themes)
+[Resource Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
 and Site Initiators can be deployed to build a site almost instantly. Before you
 can use them to import Web Content, however, you first need to have the content
 exported individually in XML format. To export the content,

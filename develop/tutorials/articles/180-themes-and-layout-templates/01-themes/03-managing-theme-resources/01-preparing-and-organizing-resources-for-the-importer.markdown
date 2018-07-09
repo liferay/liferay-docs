@@ -139,8 +139,8 @@ folder and its subfolders. Place your resources in the folders outlined below:
 
 ## Related Topics [](id=related-topics)
 
-[Defining the Sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-the-sitemap)
+[Creating a Sitemap for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/creating-a-sitemap-for-the-resources-importer)
 
-[Defining the Assets](/develop/tutorials/-/knowledge_base/7-1/defining-the-assets)
+[Defining Assets for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/defining-assets-for-the-resources-importer)
 
-[Specifying Where to Import the Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-resources)
+[Specifying Where to Import Your Theme's Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-your-themes-resources)

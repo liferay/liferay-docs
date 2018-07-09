@@ -90,8 +90,8 @@ It's just that easy to import resources with your theme!
 
 ## Related Topics [](id=related-topics)
 
-[Preparing and organizing resources](/develop/tutorials/-/knowledge_base/7-1/preparing-resources-for-the-importer)
+[Preparing and Organizing Web Content for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/preparing-and-organizing-web-content-for-the-resources-importer)
 
-[Defining the Sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-the-sitemap)
+[Creating a Sitemap for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/creating-a-sitemap-for-the-resources-importer)
 
-[Defining the Assets](/develop/tutorials/-/knowledge_base/7-1/defining-the-assets)
+[Defining Assets for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/defining-assets-for-the-resources-importer)
