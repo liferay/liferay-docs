@@ -96,3 +96,9 @@ In the browser, the `aui:script` translates to the full HTML shown below:
     </script>
  
 Now you know how to load modules with the `aui:script` tag!
+
+## Related Topics [](id=related-topics)
+
+[Using External JavaScript Libraries](/develop/tutorials/-/knowledge_base/7-1/using-external-javascript-libraries)
+
+[Loading AMD Modules](/develop/tutorials/-/knowledge_base/7-1/loading-amd-modules-in-liferay)
