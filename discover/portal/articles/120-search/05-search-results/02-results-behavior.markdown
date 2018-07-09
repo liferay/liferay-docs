@@ -148,10 +148,10 @@ Bookmarks entries show the title and the URL.
 The asset developer determines which fields are summary-enabled, but there's
 logic invoked at search time that determines precisely the part of the summary
 fields to display. For example, a `content` field can have a lot of text, but
-the summary doesn't show it all. Instead, it shows a snippet of the field's
-text. If the keyword searched for is present in the summary field, that portion
-of the field is used in the summary. In addition, the matching keyword is
-highlighted in the summary.
+the summary doesn't show it all. Instead, it shows a relevant snippet of the
+field's text. If the keyword searched for is present in the summary field, that
+portion of the field is used in the summary. In addition, the matching keyword
+is highlighted in the summary.
 
 ## Highlighting [](id=highlighting)
 

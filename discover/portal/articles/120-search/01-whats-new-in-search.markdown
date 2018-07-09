@@ -75,6 +75,12 @@ the Add Widget menu.
 ![Figure 9: The Search Options widget configures the search experience for
 the page it's deployed on.](../../images/search-options.png)
 
+**Search Facet Friendly URLs**
+: Using the new Search widgets, filter some search results by applying a facet
+term. The URL is now friendly:
+
+    http://localhost:8080/web/guest/search?q=test&modified=past-hour
+
 **Code Changes and Improvements**
 : See the 
 [developer guide](/develop/tutorials/-/knowledge_base/7-1/search) 

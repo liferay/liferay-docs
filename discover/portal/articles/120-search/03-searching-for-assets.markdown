@@ -101,12 +101,12 @@ Configure the Search Bar's behavior via its portlet configuration screen.
 
 +$$$
 
-**Note:** The Search Bar widget embedded on each page by default is only one
-instance, no matter how many pages you have. Configuring any one configures all
-of them to match. 
-
-All the Search Bar widgets you add manually are separate instances. Each one
-must be configured separately.
+**Note:** When you configure the globally embedded Search Bar widget at the top
+of one page, it configures the page-top Search Bar widget on all pages in the
+site. It also overrides the destination 
+[Search Page's](discover/portal/-/knowledge_base/7-1/configuring-search-pages) 
+Search Bar portlet, if they're configured differently. However, it does not
+override Search Bar widgets manually placed on other pages.
 
 $$$
 

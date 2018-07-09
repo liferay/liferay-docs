@@ -116,7 +116,7 @@ parameter again, but with the newly selected value:
 The rest of the facets work the same way. Filtering by the last hour option in
 the Last Modified facet portlet produces this URL:
 
-    http://localhost:8080/web/guest/search?q&modified=past-hour
+    http://localhost:8080/web/guest/search?q=test&modified=past-hour
 
 The parameter names are configurable for each facet.
 
