@@ -83,8 +83,10 @@ To create a specification label, you must first assign a label to a product.
 1.  Go to *Site Menu* &rarr; *Catalog*, select a product, and click on the
     *Specifications* tab.
 
+    ![Click on the *Specifications* tab in the product tab menu.](../../images/two-specifications.png)-
+
 2.  Click on the ![Add](../../images/icon-add.png) button and select from the
-    list of option labels that is displayed. Click *Add* to close the pop-up.
+    list of specification labels that is displayed. Click *Add* to close the pop-up.
     This assigns the selected labels to the product.
 
 Next, edit the label to give it a value.
