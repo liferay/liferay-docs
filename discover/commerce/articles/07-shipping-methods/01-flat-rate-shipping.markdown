@@ -7,7 +7,7 @@ security.
 Flat rate shipping imposes the same cost on every product in the catalog. You
 can create exceptions, however, for individual products from the *Shipping Extra
 Price* field in the product's
-[Configuration](/web/liferay-emporio/documentation/-/knowlede_base/1-0/configuration#shipping)
+[Configuration](/web/liferay-emporio/documentation/-/knowledge_base/1-0/configuration#shipping)
 tab.
 
 ## Creating a Flat Rate Shipping Option [](id=creating-a-flat-rate-shipping-option)

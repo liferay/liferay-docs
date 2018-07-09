@@ -124,8 +124,8 @@ The two facet widgets that filter the catalog are *Specification Option Facets*
 and *Option Facets*, both of which are in *Add Menu* &rarr; *Widgets* &rarr;
 *Commerce*. Place either widget onto a page that also contains a search results
 portlet to filter results by
-[specification](/web/liferay-emporio/documentations/-/knowledge_base/7-1/specifications)
-or [option](/web/liferay-emporio/documentation/-/knowledge_base/7-1/options),
+[specification](/web/liferay-emporio/documentation/-/knowledge_base/1-0/specifications)
+or [option](/web/liferay-emporio/documentation/-/knowledge_base/1-0/options),
 respectively.
 
 ## Compare Products [](id=compare-products)

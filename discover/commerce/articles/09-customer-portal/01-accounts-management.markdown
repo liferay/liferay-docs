@@ -65,7 +65,7 @@ Follow these steps to add a new user to an account:
 
 Once you have added users to an account, you must assign Roles to them. Roles
 can be customized any way you want (see 
-[Roles and Permissions](/discover/portal/-/knowledge_base/7_1/roles-and-permissions)). By
+[Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)). By
 default, however, the customer portal uses three Roles for customer users:
 Buyers, Order Managers, and Account Managers.
 
@@ -84,7 +84,7 @@ administrators still retain ultimate control over account management.
 
 Site Administrators can assign these Roles to users just as they would any other
 Organization Role (see 
-[Managing Roles](/discover/portal/-/knowledge_base/7_1/managing-roles). However,
+[Managing Roles](/discover/portal/-/knowledge_base/7-1/managing-roles). However,
 you can also allow your customer's account managers to do this. Account managers
 cannot add new users to your system, but they can add existing users to their
 accounts and assign permissions to them.
