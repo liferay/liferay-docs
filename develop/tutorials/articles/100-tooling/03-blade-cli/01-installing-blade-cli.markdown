@@ -57,12 +57,14 @@ to initialize a Liferay Workspace folder, that is also available.
 
 +$$$
 
-**Note:** The Liferay Project SDK installer adds JPM to your path. This is used
-to install/update Blade CLI. For Windows, it uses the Windows registry. For
-Mac/Linux, it uses `.bashrc` or `.zshrc`; other shells are not supported.
+**Note:** The Liferay Project SDK installer attempts to add JPM to your path.
+For Windows, it uses the Windows registry. For Mac/Linux, it updates `.bashrc`
+or `.zshrc`. 
 
-Mac/Linux users must open a new shell after the installer finishes for the new
-features to be available.
+At a minimum, Mac/Linux users must open a new shell after the installer finishes
+for the new features to be available. If, however, you're using a different
+shell (i.e., Korn, csh, etc.) or you've customized your CLI via `.profile` or
+some other configuration file, you must add JPM to your path manually. 
 
 $$$
 
