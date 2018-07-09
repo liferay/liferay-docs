@@ -2,9 +2,9 @@
 
 Individuals share common properties and behavior. Aggregating them into Segments
 helps you understand groups of similar people. Segment analytics gives you
-insight into people's interests and their engagement level with your brand. In
-the navigation panel, *Segments* is at the top of the *People* section because
-it's where you'll spend most of your time gaining customer insights. 
+insight into people's interests. In the navigation panel, *Segments* is at the
+top of the *People* section because it's where you'll spend most of your time
+gaining customer insights. 
 
 You can create Segments dynamically based on criteria or statically (comprising
 hand-selected Individuals). Dynamic Segment criteria can be based on
