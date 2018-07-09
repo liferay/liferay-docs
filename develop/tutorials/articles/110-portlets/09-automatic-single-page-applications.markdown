@@ -264,4 +264,4 @@ Now you know how to configure and use SPA in @product@!
 
 [Preparing your JavaScript Files for ES2015+](/develop/tutorials/-/knowledge_base/7-1/preparing-your-javascript-files-for-esplus)
 
-[Using ES2015+ Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-1/preparing-your-javascript-files-for-esplus)
+[Using ES2015+ Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-1/using-esplus-modules-in-your-portlet)
