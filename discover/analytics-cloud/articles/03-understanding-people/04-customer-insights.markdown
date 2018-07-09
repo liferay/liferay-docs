@@ -1,9 +1,8 @@
 # Customer Insights [](id=customer-insights)
 
-Learning who's highly involved with your site tells you who to target for new
-sales. Finding out topics they're interested in helps you relate your products
-and services to them. Analytics Cloud's Interests and Engagement insights
-empower you with rich, easy-to-understand visuals that provide this information. 
+Finding out topics people are interested in helps you relate your products and
+services to them. Analytics Cloud's Interests insight empowers you with rich,
+easy-to-understand visuals that provide this information. 
 
 ## Interests [](id=interests)
 
@@ -31,42 +30,3 @@ you could use this information:
 Either way, the Interests insight helps generate new business. The Interests
 insight tells you the most common topics mentioned by the pages and assets
 customers visit most. 
-
-## Engagement [](id=engagement)
-
-The Engagement score generated for Individuals and Segments indicates their
-involvement with your company and its sites. High Engagement scores serve as
-leads to new customers and new business. 
-
-![Figure 2: A Segment's Engagement insight includes the Segment's Engagement score average and scores at different time points. Selecting a chart point lists the Segment members in descending order by Engagement score during that time period.](../../images/engagement-insight.png)
-
-The Engagement score is calculated based on the following scores, during
-people's sessions on your sites.
-
-- *Interaction Score:* 
-
-    - Length of time the Individual stays on each page.
-    - Scroll depth and scroll speed.
-
-- *Variety Score:* Number of distinct pages the Individual visits.
-
-- *Loyalty Score:* Number of days before an Individual returns to the site.
-
-- *Purpose Score:* Number of converted call actions (performed actions) for 
-  pages and assets that have call actions, such as a form submit action or other
-  call action.
-
-The Overview profile tab for each Individual and Segment contains an Engagement
-histogram. 
-
-1. Select the *Moving Avg. Engagement* score in the main area to show it.
-
-2. Select a chart point, shows the average Engagement score for that time
-   period.
-
-If you're viewing Engagement for a Segment, the bottom part of the page lists
-the Individuals in descending order by Engagement score. Once again, Segments
-are your fast track to learning about customers. 
-
-In conclusion, Engagement scores give you an overall idea of customer
-involvement and interest in your brand, so you can decide where to focus your attention. 

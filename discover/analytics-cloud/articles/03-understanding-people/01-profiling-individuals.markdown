@@ -3,9 +3,9 @@
 Many individuals visit your sites. Learning who they are and their activities
 and interests helps you improve business with them. Individual profiles help
 your Sales, Customer Service, and Customer Relations teams work personally with
-them. The profiles help you gain more context on what people do on your
-websites, their interests, and level of engagement, so you can communicate with
-them intelligently according to their needs. 
+them. The profiles help you gain more context on what people do on your websites
+and their interests, so you can communicate with them intelligently according to
+their needs. 
 
 Here's how to view Individual profiles:
 
@@ -31,19 +31,13 @@ Let's explore them to learn more about people you do business with.
 
 ## Overview [](id=overview)
 
-The Overview tab shows the person's recent activities and engagement score using
-a histogram of the customer's activities and frequency in the past 90 days. The
-activities include page views, downloads, and form submissions. If you click on
-a specific day, it lists the Touchpoints (pages and assets) the customer acted
-on during that day only.
+The Overview tab shows the person's recent activities using a histogram of the
+customer's activities and frequency in the past 90 days. The activities include
+page views, downloads, and form submissions. If you click on a specific day, it
+lists the Touchpoints (pages and assets) the customer acted on during that day
+only.
 
 ![Figure 1: An Individual's Overview tab is a great place to learn how a person is interacting with your business.](../../images/individual-overview.png)
-
-Clicking on the engagement score switches to a histogram of the customer's
-engagement level over the past 90 days. The Engagement score tells you how much
-the customer is interacting with your sites. See
-[Customer Insights](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/03-understanding-people/04-customer-insights.markdown)
-for details on the Engagement insight. 
 
 The Overview tab also gives you a glimpse of a person's profile data, topics of
 interest, and associated audience segments. Clicking the *View all ...* link

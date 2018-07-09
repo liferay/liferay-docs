@@ -26,9 +26,8 @@ picture of people by aggregating their profile properties and behavior data from
 multiple sources, including Liferay DXP sites.
 
 - **Identify and track target audiences:** You can focus on characteristics and 
-behaviors common to targeted individuals and aggregate those individuals into
-Segments. Track Segment growth and monitor engagement level with your brand to
-determine where to invest in content for target audiences.
+behaviors common to targeted individuals, aggregate those individuals into
+Segments, and track Segment growth.
 
 - **Learn people's interests:** Once you know topics that interest people, 
 you can engage them on those topics. You can also produce stimulating content
