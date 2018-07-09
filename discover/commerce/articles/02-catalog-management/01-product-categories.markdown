@@ -12,7 +12,7 @@ then assign products to them.
 ## Creating Categories [](id=creating-categories)
 
 To create vocabularies, categories and subcategories, go to *Site Menu* &rarr;
-*Content* &rarr; *Categories*. To learn more about the process, go to the
+*Categorization* &rarr; *Categories*. To learn more about the process, go to the
 [Defining Categories for Content](/discover/portal/-/knowledge_base/7-1/defining-categories-for-content)
 section.
 
@@ -44,7 +44,7 @@ A product can be removed from a category the same way by unchecking the boxes in
 step 2. Alternatively, several products can be removed at once using the category
 application:
 
-1.  Find the category you want at *Site Menu* &rarr; *Content* &rarr;
+1.  Find the category you want at *Site Menu* &rarr; *Categorization* &rarr;
     *Categories*. Then click ![Options](../../images/icon-options.png)
     &rarr; *Edit*, and select the *Products* tab.
 
@@ -66,14 +66,13 @@ Follow these steps to create a category display page:
 1.  Create a page.
 
 2.  Find the category you want to associate with the page in *Site Menu* &rarr;
-    *Content* &rarr; *Categories*. Then click
+    *Categorization* &rarr; *Categories*. Then click
     ![Options](../../images/icon-options.png) &rarr; *Edit*, and select the
     Category Display Page tab. 
 
 3.  Click *Choose* and select the page you just created.
 
-4.  Change the *Friendly URL* if you want it to be something other than the
-    default.
+4.  Enter a *Friendly URL*.
 
 5.  Click *Done* to close the pop-up and then click *Save*.
 
@@ -96,7 +95,7 @@ Follow these steps to assign images to a category:
     *Categories*. Then click ![Options](../../images/icon-options.png)
     &rarr; *Edit*, and select the *images* tab.
 
-2.  Click on the [Add](../../images/icon-add.png) button. You can either
+2.  Click on the ![Add](../../images/icon-add.png) button. You can either
     upload an image or choose one from the Documents and Media Repository.
 
 3.  Click *Save*.

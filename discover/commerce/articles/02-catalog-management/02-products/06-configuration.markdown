@@ -63,7 +63,7 @@ contains these fields:
 this for virtual products.
 
 **Free Shipping:** Enable to override 
-[Shipping Methods](/web/liferay-emporio/documentation/-/knowledge_base/1-0/shipping-methods-intro)
+[Shipping Methods](/web/liferay-emporio/documentation/-/knowledge_base/1-0/shipping-methods)
 and ship for free.
 
 **Ship Separately:** Enable to require this product be shipped in its own
