@@ -1,20 +1,19 @@
 # Providing the User Personal Bar [](id=providing-the-user-personal-bar)
 
-Liferay offers a touch of personability with the User Personal Bar. This
-navigation menu is used to display options that are unique to the current logged
-in user. By default, Liferay displays this menu as a simple avatar button that
-expands the User Settings sub-menu in the Product Menu.
+The User Personal Bar is used to display options that are unique to the current 
+logged in user. By default, Liferay displays this menu as a simple avatar 
+button that expands the User Settings sub-menu in the Product Menu. In a custom 
+theme, the User Personal Bar could be configured to appear anywhere in the 
+interface.
 
-![Figure 1: By default, the User Personal Bar contains the signed-in user's avatar, which navigates to the Product Menu when selected.](../../images/user-personal-bar.png)
+![Figure 1: By default, the User Personal Menu contains the signed-in user's avatar, which navigates to the Product Menu when selected.](../../images/user-personal-bar.png)
 
-Although Liferay's default usage of the User Personal Bar is bare-bones, you can
+Although Liferay's default User Personal Bar is bare-bones, you can
 add more functionality to the user bar to fit your needs. Unlike other product
 navigation menus (e.g., Product Menu), the User Personal Bar does not require
 the extension/creation of panel categories and panel apps. It uses another
 common Liferay framework for providing functionality:
-[Portlet Providers](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests).
-Be sure to visit the linked tutorial to learn about how the Portlet Providers
-framework works in Liferay.
+[Portlet Providers](/develop/tutorials/-/knowledge_base/7-1/portlet-provider-template).
 
 The User Personal Bar can be seen as a placeholder in every Liferay theme. By
 default, Liferay provides one sample *User Personal Bar* portlet that fills that
@@ -34,7 +33,7 @@ In this tutorial, you'll learn how to customize the User Personal Bar. You'll
 create a single Java class where you'll specify a portlet to replace the
 existing default portlet.
 
-1. [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module).
+1. [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development).
 
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package.
@@ -54,7 +53,7 @@ existing default portlet.
     type you want the portlet to handle. In this case, you want your portlet to
     be provided based on whether or not it can be displayed in the User Personal
     Bar. You may recall from the
-    [Portlet Providers](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
+    [Portlet Providers](/develop/tutorials/-/knowledge_base/7-1/portlet-provider-template)
     tutorial that you can request portlets in several different ways (e.g.,
     *Edit*, *Browse*, etc.).
 
@@ -89,7 +88,7 @@ existing default portlet.
 You've successfully provided a portlet to be displayed in the User Personal Bar.
 If you'd like to inspect the entire module used for Liferay's default User
 Personal Bar, see
-[product-navigation-user-personal-bar-web](https://github.com/liferay/liferay-portal/tree/7.0.2-ga3/modules/apps/web-experience/product-navigation/product-navigation-user-personal-bar-web).
+[product-navigation-user-personal-bar-web](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/product-navigation/product-navigation-user-personal-bar-web).
 Besides the `*ViewPortletProvider` class, this module contains two classes
 defining constants and a portlet class defining the default portlet to provide.
 Although these additional classes are not required, your module should have
