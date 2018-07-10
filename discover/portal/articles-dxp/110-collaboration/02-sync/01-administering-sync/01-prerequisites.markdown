@@ -1,15 +1,28 @@
 # Installing Liferay Sync's Prerequisites [](id=installing-liferay-syncs-prerequisites)
 
-Liferay Sync requires the *Liferay Sync Connector* app from 
-[Liferay Marketplace](https://web.liferay.com/marketplace). 
-This app lets you enable and configure Sync in your @product@ instance. For 
-example, you can disable Sync across the instance or on a site-by-site basis. 
-Note that Sync is enabled by default for all your @product@ instance's sites. 
+Liferay Sync requires that you install the following apps from Liferay 
+Marketplace. Be sure to install them in this order: 
 
-If you want to use Sync with SSO (single sign-on), you must install the 
-*Liferay OAuth 1 Provider* app from Liferay Marketplace. This enables OAuth 1 in 
-your @product@ installation (note that Sync isn't compatible with OAuth 2). The 
-next section details additional steps that are required to use Sync with SSO. 
+1.  [Liferay Connector to OAuth 1.0a](https://web.liferay.com/marketplace/-/mp/application/45261909): 
+    Enables OAuth 1 in your @product@ installation (note that Sync isn't 
+    compatible with OAuth 2). You **must** install this app **before** 
+    installing the *Liferay Sync Connector* app. Otherwise, your portal will not 
+    be able to start. 
+
+2.  [Liferay Sync Connector](https://web.liferay.com/marketplace/-/mp/application/31709100): 
+    Lets you enable and configure Sync in your @product@ instance. For example, 
+    you can disable Sync across the instance or on a site-by-site basis. Note 
+    that Sync is enabled by default for all your @product@ instance's sites. 
+    You **must** install this app **after** installing the 
+    *Liferay Connector to OAuth 1.0a* app. Otherwise, your portal will not be 
+    able to start. 
+
++$$$
+
+**Warning:** If you install *Liferay Sync Connector* before installing 
+*Liferay Connector to OAuth 1.0a*, your portal will not be able to start. 
+
+$$$
 
 For instructions on installing Marketplace apps, see 
 [the Liferay Marketplace documentation](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace). 
