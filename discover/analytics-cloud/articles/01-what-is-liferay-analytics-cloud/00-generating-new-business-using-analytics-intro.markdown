@@ -8,7 +8,7 @@ understanding how they interact with your digital content can help you improve
 their experience. 
 
 Liferay Analytics Cloud (Analytics Cloud) is a cloud-based SaaS offering that
-works with Liferay Digital Experience Platform (Liferay DXP) to give you
+works with Liferay Digital Experience Platform 7.0 (Liferay DXP 7.0) to give you
 insights into customer attributes and behavior. It aggregates your data from
 multiple sources and presents analytics, making it easier to understand people
 and their interests. The centralized contact data and analytics help you

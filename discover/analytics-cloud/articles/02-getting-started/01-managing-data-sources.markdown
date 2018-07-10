@@ -7,11 +7,10 @@ two kinds of data so that you can see not only how users are interacting with
 your site, but also who those users are. First, however, you must provide it
 with appropriate data sources.
 
-Both kinds of data can be obtained from a 7.0 or 7.1 Liferay DXP instance. If
-you have other user profile data---in addition to what is already stored in
-Liferay DXP user models---you can import it from a CSV file. In a future
-Analytics Cloud release, Liferay plans to support syncing with contact data from
-Salesforce too.
+Both kinds of data can be obtained from a Liferay DXP instance. If you have
+other user profile data---in addition to what is already stored in Liferay DXP
+user models---you can import it from a CSV file. In a future Analytics Cloud
+release, Liferay plans to support syncing with contact data from Salesforce too.
 
 The contact data is merged and consolidated into a single customer view. Liferay
 DXP data sources let you select Organizations and User Groups to sync.
