@@ -56,8 +56,9 @@ Once deployed, this becomes a scope in the OAuth 2.0 configuration.
 
 ## Creating the Authorization Page [](id=creating-the-authorization-page)
 
-Users need an interface to authorize access to their accounts. You must create
-this interface in your Site. 
+This step is optional. Users need an interface to authorize access to their
+accounts, and one is provided automatically. If, however, you want to customize
+the page, you can create an authorization page in your Site. 
 
 1.  Go to *Control Panel* &rarr; *System Settings* &rarr; *Security* &rarr;
     *OAuth2*. Click the bottom item on the left, labeled *Authorize Screen*. 
@@ -89,6 +90,6 @@ this interface in your Site.
 
 10. Click *Save*. 
 
-Excellent! Users now have a UI to go through the authorization process. Now that
-you have the UI and you understand scopes, it's time to make the authorization
-process happen in your application. 
+Excellent! Users can use the default or the UI of your design to go through the
+authorization process. Now that you have the UI and you understand scopes, it's
+time to make the authorization process happen in your application. 
