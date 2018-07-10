@@ -10,17 +10,17 @@ project.
 
 ## Liferay DXP Data Source Prerequisites [](id=liferay-dxp-data-source-prerequisites)
 
-Follow these steps to connect your project to your Liferay DXP instance.
+Follow these steps to connect your project to your Liferay DXP 7.0 instance.
 
 ### Step 1: Register your Liferay DXP instance with Liferay Connected Services [](id=step-1-register-your-liferay-dxp-instance-with-liferay-connected-services)
 
-Register your Liferay DXP instance with
+Register your Liferay DXP 7.0 instance with
 [Liferay Connected Services](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services). 
 
 ### Step 2: Install Required Liferay DXP Fix Packs [](id=step-2-install-required-liferay-dxp-fix-packs)
 
-[Install fix pack 52](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-liferay)
-to your Liferay DXP instance. 
+[Install Liferay DXP 7.0 fix pack 52](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-liferay)
+to your Liferay DXP 7.0 instance. 
 
 ### Step 3: Install the Liferay Analytics Cloud Connector [](id=step-3-install-the-liferay-analytics-cloud-connector)
 
