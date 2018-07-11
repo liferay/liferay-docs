@@ -63,6 +63,14 @@ this document for simplicity.
 
 ### Liferay Descriptor Mappings [](id=liferay-descriptor-mappings)
 
+#### Liferay Display 
+
+|`liferay-display.xml` XPath | OSGi Portlet Service Property|
+|----|----|
+|`/display/category\[@name\]`|`com.liferay.portlet.display-category=<value>`|
+
+#### Liferay Portlet 
+
 **Note:** XPath notation derived from **Liferay Portlet** [5](#five) is used in
 this document for simplicity.
 
