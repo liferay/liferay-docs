@@ -1,12 +1,11 @@
 # Portlet Descriptor to OSGi Service Property Map [](id=portlet-descriptor-to-osgi-service-property-map)
 
-This section describes the mapping of portlet XML descriptor values to OSGi
-service properties that can be used when publishing OSGi Portlets. 
+This article maps portlet XML descriptor values to OSGi service properties for
+publishing OSGi Portlets. 
 
-OSGi services can contain properties in their definitions. Using OSGi service
-properties makes dealing with configuration concerns simple and cohesive. These
-properties are typically represented as key-value pairs or, more generally, as a
-Map-like object.
+OSGi service definitions can use properties. OSGi service properties centralize
+and simplify portlet configuration. They are typically represented as key-value
+pairs or, more generally, as a Map-like object.
 
 Portlet spec property keys are prefixed by:
 
@@ -16,9 +15,8 @@ Liferay property keys are prefixed by:
 
 	com.liferay.portlet.
 
-The mappings essentially flatten what is found in the XML descriptor, sticking
-relatively closely to the original naming in order to have a memorable
-relationship with those definitions.
+The mappings essentially flatten what is found in the XML descriptor. The
+property names resemble the original descriptor names. 
 
 ### JSR-168 & JSR-286 Descriptor Mappings [](id=jsr-168-jsr-286-descriptor-mappings)
 
@@ -151,4 +149,4 @@ this document for simplicity.
 - [<a name="two">2</a>] Multiples of these properties may be used. This results in an array of values.
 - [<a name="three">3</a>] This type is registered as an OSGi service.
 - [<a name="four">4</a>] http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
-- [<a name="five">5</a>] http://www.liferay.com/dtd/liferay-portlet-app_7_0_0.dtd
+- [<a name="five">5</a>] [http://www.liferay.com/dtd/liferay-portlet-app_7_1_0.dtd](@platform-ref@/7.1-latest/definitions/liferay-portlet-app_7_1_0.dtd.html)
