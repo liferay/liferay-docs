@@ -56,6 +56,7 @@ this document for simplicity.
 |`/portlet-app/filter`<br/>`/portlet-app/filter-mapping`|[3](#three)|
 |`/portlet-app/default-namespace`|not supported|
 |`/portlet-app/event-definition`|not supported|
+|`/portlet-app/filter/init-param/name`|`javax.portlet.init-param.<name>=<value>`|
 |`/portlet-app/public-render-parameter`|not supported|
 |`/portlet-app/listener`|not supported<br/>?`javax.portlet.PortletURLGenerationListener`?|
 |`/portlet-app/container-runtime-option`|not supported|
