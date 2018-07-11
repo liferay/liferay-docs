@@ -30,6 +30,7 @@ this document for simplicity.
 |`/portlet-app/portlet/display-name`|`javax.portlet.display-name=<String>`|
 |`/portlet-app/portlet/portlet-class`|[1](#one)|
 |`/portlet-app/portlet/init-param/name`|`javax.portlet.init-param.<name>=<value>`|
+|`/portlet-app/portlet/dependency`|`javax.portlet.dependency=<name>;<scope>;<version>` [6](#six), [7](#seven)|
 |`/portlet-app/portlet/expiration-cache`|`javax.portlet.expiration-cache=<int>`|
 |`/portlet-app/portlet/cache-scope`|not supported|
 |`/portlet-app/portlet/supports/mime-type`|`javax.portlet.mime-type=<mime-type>`|
@@ -160,3 +161,21 @@ this document for simplicity.
 - [<a name="three">3</a>] This type is registered as an OSGi service.
 - [<a name="four">4</a>] http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
 - [<a name="five">5</a>] [http://www.liferay.com/dtd/liferay-portlet-app_7_1_0.dtd](@platform-ref@/7.1-latest/definitions/liferay-portlet-app_7_1_0.dtd.html)
+- [<a name="six">6</a>] Multiples of this property may be used. This results in an
+array of values.
+- [<a name="seven">7</a>] For example, these properties `"javax.portlet.dependency=jquery;com.jquery;2.1.1", "javax.portlet.dependency=jsutil;com.mycompany;1.0.0"` are equivalent to this `portlet.xml` usage:  
+
+        <portlet>
+        	...
+        	<dependency>
+        		<name>jquery</name>
+        		<scope>com.jquery</scope>
+        		<version>2.1.1</version>
+        	</dependency>
+        	<dependency>
+        		<name>jsutil</name>
+        		<scope>com.mycompany</scope>
+        		<version>1.0.0</version>
+        	</dependency>
+        	...
+        </portlet>
