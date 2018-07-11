@@ -23,16 +23,25 @@ property names resemble the original descriptor names.
 **Note:** XPath notation derived from the **Portlet XSD** [4](#four) is used in
 this document for simplicity.
 
-|`portlet.xml` XPath | OSGi Portlet Service Property|
+| portlet.xml XPath | OSGi Portlet Service Property|
 |----|----|
 |`/portlet-app/portlet/description`|`javax.portlet.description=<String>`|
 |`/portlet-app/portlet/portlet-name`|`javax.portlet.name=<String>`|
 |`/portlet-app/portlet/display-name`|`javax.portlet.display-name=<String>`|
 |`/portlet-app/portlet/portlet-class`|[1](#one)|
 |`/portlet-app/portlet/init-param/name`|`javax.portlet.init-param.<name>=<value>`|
-|`/portlet-app/portlet/dependency`|`javax.portlet.dependency=<name>;<scope>;<version>` [6](#six), [7](#seven)|
+|`/portlet-app/portlet/dependency`|`javax.portlet.dependency=<name>;<scope>;<version>` [2](#two), [6](#six)|
+|`/portlet-app/portlet/async-supported`|`javax.portlet.async-supported=<boolean>`|
 |`/portlet-app/portlet/expiration-cache`|`javax.portlet.expiration-cache=<int>`|
 |`/portlet-app/portlet/cache-scope`|not supported|
+|`/portlet-app/portlet/container-runtime-option`|`javax.portlet.container-runtime-option.<name>=<value>` [2](#two)|
+|`/liferay-portlet-app/portlet/header-request-attribute-prefix`|`header-request-attribute-prefix=<String>` [7](#seven)|
+|`/liferay-portlet-app/portlet/header-timeout`|`header-timeout=<int>`|
+|`/portlet-app/portlet/multipart-config/location`|`javax.portlet.multipart.location=<String>`|
+|`/portlet-app/portlet/multipart-config/max-file-size`|`javax.portlet.multipart.max-file-size=<Long>`|
+|`/portlet-app/portlet/multipart-config/max-request-size`|`javax.portlet.multipart.max-request-size=<Long>`|
+|`/portlet-app/portlet/multipart-config/file-size-threshold`|`javax.portlet.multipart.file-size-threshold=<Integer>`|
+|`/portlet-app/portlet/supported-locale`|`javax.portlet.supported-locale=<String>` [2](#two)|
 |`/portlet-app/portlet/supports/mime-type`|`javax.portlet.mime-type=<mime-type>`|
 |`/portlet-app/portlet/supports/portlet-mode`|`javax.portlet.portlet-mode=<mime-type>;<portlet-mode>[,<portlet-mode>]*`|
 |`/portlet-app/portlet/supports/window-state`|`javax.portlet.window-state=<mime-type>;<window-state>[,<window-state>]*`|
@@ -47,8 +56,10 @@ this document for simplicity.
 |`/portlet-app/portlet/supported-publishing-event`|`javax.portlet.supported-publishing-event=<String>`<br/>OR<br/>`javax.portlet.supported-publishing-event=<String>;<QName>`[2](#two)|
 |`/portlet-app/portlet/supported-public-render-parameter`|`javax.portlet.supported-public-render-parameter=<String>`[2](#two)|
 |`/portlet-app/portlet/container-runtime-option`|not supported|
+|`/portlet-app/portlet/version`|`javax.portlet.version=<listener-class>;<ordinal>` [8](#eight)|
 |`/portlet-app/custom-portlet-mode`|not supported|
 |`/portlet-app/custom-window-state`|not supported|
+|`/portlet-app/default-namespace`|`javax.portlet.default-namespace=<String>`|
 |`/portlet-app/user-attribute`|not supported|
 |`/portlet-app/security-constraint`|not supported|
 |`/portlet-app/resource-bundle`|not supported|
@@ -65,7 +76,7 @@ this document for simplicity.
 
 ### Liferay Display [](id=liferay-display)
 
-|`liferay-display.xml` XPath | OSGi Portlet Service Property|
+|liferay-display.xml XPath | OSGi Portlet Service Property|
 |----|----|
 |`/display/category\[@name\]`|`com.liferay.portlet.display-category=<value>`|
 
@@ -74,7 +85,7 @@ this document for simplicity.
 **Note:** XPath notation derived from **Liferay Portlet** [5](#five) is used in
 this document for simplicity.
 
-|`liferay-portlet.xml` XPath | OSGi Liferay Portlet Service Property|
+|liferay-portlet.xml XPath | OSGi Liferay Portlet Service Property|
 |----|----|
 |`/liferay-portlet-app/portlet/portlet-name`|not supported|
 |`/liferay-portlet-app/portlet/icon`|`com.liferay.portlet.icon=<String>`|
@@ -156,14 +167,18 @@ this document for simplicity.
 |`/liferay-portlet-app/portlet/include`|not supported|
 
 
-- [<a name="one">1</a>] Portlets are registered as concrete objects.
-- [<a name="two">2</a>] Multiples of these properties may be used. This results in an array of values.
-- [<a name="three">3</a>] This type is registered as an OSGi service.
-- [<a name="four">4</a>] http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
-- [<a name="five">5</a>] [http://www.liferay.com/dtd/liferay-portlet-app_7_1_0.dtd](@platform-ref@/7.1-latest/definitions/liferay-portlet-app_7_1_0.dtd.html)
-- [<a name="six">6</a>] Multiples of this property may be used. This results in an
-array of values.
-- [<a name="seven">7</a>] For example, these properties `"javax.portlet.dependency=jquery;com.jquery;2.1.1", "javax.portlet.dependency=jsutil;com.mycompany;1.0.0"` are equivalent to this `portlet.xml` usage:  
+-   [<a name="one">1</a>] Portlets are registered as concrete objects.
+-   [<a name="two">2</a>] Multiples of these properties may be used. This 
+    results in an array of values.
+-   [<a name="three">3</a>] This type is registered as an OSGi service.
+-   [<a name="four">4</a>] 
+    http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
+-   [<a name="five">5</a>] 
+    [http://www.liferay.com/dtd/liferay-portlet-app_7_1_0.dtd](@platform-ref@/7.1-latest/definitions/liferay-portlet-app_7_1_0.dtd.html)
+-   [<a name="six">6</a>] For example, these properties 
+    `"javax.portlet.dependency=jquery;com.jquery;2.1.1",
+    "javax.portlet.dependency=jsutil;com.mycompany;1.0.0"` are equivalent to
+    this `portlet.xml` usage:  
 
         <portlet>
         	...
@@ -178,4 +193,27 @@ array of values.
         		<version>1.0.0</version>
         	</dependency>
         	...
+        </portlet>
+
+-   [<a name="seven">7</a>] For example, this property 
+    `"header-request-attribute-prefix=com.mycompany"` is equivalent to this
+    `portlet.xml` usage:
+
+        <portlet>
+        	...
+        	<header-request-attribute-prefix>com.mycompany</header-request-attribute-prefix>
+        	...
+        </portlet>
+        
+-   [<a name="eight">8</a>] For example, this property 
+    `"javax.portlet.version=com.mycompany.MyPortletURLGenerationListener;1"` is equivalent to this
+    `portlet.xml` usage:
+
+        <portlet>
+            ...
+            <listener>
+                <listener-class>com.mycompany.MyPortletURLGenerationListener</listener-class>
+                <ordinal>1</ordinal>
+            </listener>
+            ...
         </portlet>
