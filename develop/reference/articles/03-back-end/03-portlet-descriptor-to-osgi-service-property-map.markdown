@@ -58,6 +58,7 @@ this document for simplicity.
 |`/portlet-app/public-render-parameter`|not supported|
 |`/portlet-app/listener`|not supported<br/>?`javax.portlet.PortletURLGenerationListener`?|
 |`/portlet-app/container-runtime-option`|not supported|
+|`/portlet-app/version`|`javax.portlet.version=<value>`|
 
 ## Liferay Descriptor Mappings [](id=liferay-descriptor-mappings)
 
