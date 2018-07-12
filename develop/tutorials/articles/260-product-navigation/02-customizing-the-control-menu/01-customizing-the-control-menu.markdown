@@ -3,7 +3,7 @@
 Now we'll create entries to customize the Control Menu. Make sure to read
 [Adding Custom Panel Categories](/develop/tutorials/-/knowledge_base/7-1/adding-custom-panel-categories)
 before beginning this tutorial. This tutorial assumes you know how to create a 
-panel category. To create an entry for the Control Menu:
+panel category. Creating  Control Menu Entry follows the same basic pattern as creating a category:
 
 1.  Create the basic OSGi structure and metadata.
 
@@ -14,7 +14,7 @@ panel category. To create an entry for the Control Menu:
 
 ## Creating the OSGi Module
 
-First you need to create a project.
+First you need to create the project.
 
 1.  Create a generic OSGi module. Your module must contain a Java class, 
     `bnd.bnd` file, and build file (e.g., `build.gradle` or `pom.xml`). You'll 
@@ -55,7 +55,7 @@ Next, you need to connect your OSGi module to Liferay's frameworks and use those
 
         "product.navigation.control.menu.category.key=" + ProductNavigationControlMenuCategoryKeys.TOOLS
 
-    Similar to panel categories, you'll also need to specify an integer for the
+    Like panel categories, you need to specify an integer for the
     order in which your entry will be displayed in the category. Entries are
     ordered from left to right. For example, an entry with order `1` will be
     listed to the left of an entry with order `2`. If the order is not
