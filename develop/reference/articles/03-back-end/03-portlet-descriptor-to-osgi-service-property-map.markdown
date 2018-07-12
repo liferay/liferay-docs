@@ -35,7 +35,7 @@ this document for simplicity.
 |`/portlet-app/portlet/expiration-cache`|`javax.portlet.expiration-cache=<int>`|
 |`/portlet-app/portlet/cache-scope`|not supported|
 |`/portlet-app/portlet/container-runtime-option`|`javax.portlet.container-runtime-option.<name>=<value>` [2](#two)|
-|`/liferay-portlet-app/portlet/header-request-attribute-prefix`|`header-request-attribute-prefix=<String>` [7](#seven)|
+|`/liferay-portlet-app/portlet/header-request-attribute-prefix`|`com.liferay.portlet.header-request-attribute-prefix=<String>` [7](#seven)|
 |`/liferay-portlet-app/portlet/header-timeout`|`header-timeout=<int>`|
 |`/portlet-app/portlet/multipart-config/location`|`javax.portlet.multipart.location=<String>`|
 |`/portlet-app/portlet/multipart-config/max-file-size`|`javax.portlet.multipart.max-file-size=<Long>`|
@@ -174,22 +174,11 @@ this document for simplicity.
     http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
 -   [<a name="five">5</a>] 
     [http://www.liferay.com/dtd/liferay-portlet-app_7_1_0.dtd](@platform-ref@/7.1-latest/definitions/liferay-portlet-app_7_1_0.dtd.html)
--   [<a name="six">6</a>] For example, the properties used in this component
+-   [<a name="six">6</a>] Here's an example of using multiple 
+    `javax.portlet.dependency` properties.
 
-        @Component(
-            immediate = true, property = {
-                "javax.portlet.name=my_portlet",
-                "javax.portlet.display-name=my-portlet",
-                "javax.portlet.dependency=jquery;com.jquery;2.1.1",
-                "javax.portlet.dependency=jsutil;com.mycompany;1.0.0"
-            }, service = Portlet.class
-        )
-        public class MyPortlet extends GenericPortlet {
-        ...
-        } 
-
-    are equivalent to this `portlet.xml` usage:  
-
+    *Old:*
+    
         <portlet>
         	...
         	<dependency>
@@ -205,19 +194,51 @@ this document for simplicity.
         	...
         </portlet>
 
--   [<a name="seven">7</a>] For example, this property 
-    `"header-request-attribute-prefix=com.mycompany"` is equivalent to this
-    `portlet.xml` usage:
+    *New:*
+
+        @Component(
+            immediate = true, property = {
+                "javax.portlet.name=my_portlet",
+                "javax.portlet.display-name=my-portlet",
+                "javax.portlet.dependency=jquery;com.jquery;2.1.1",
+                "javax.portlet.dependency=jsutil;com.mycompany;1.0.0"
+            }, service = Portlet.class
+        )
+        public class MyPortlet extends GenericPortlet {
+            ...
+        } 
+
+
+-   [<a name="seven">7</a>] Here's an example for the 
+    `com.liferay.portlet.header-request-attribute-prefix` property.
+
+    *Old:*
 
         <portlet>
         	...
         	<header-request-attribute-prefix>com.mycompany</header-request-attribute-prefix>
         	...
         </portlet>
+    
+    *New:* 
+
+        @Component(
+            immediate = true, property = {
+                "javax.portlet.name=my_portlet",
+                "javax.portlet.display-name=my-portlet",
+                "javax.portlet.dependency=jquery;com.jquery;2.1.1",
+                "javax.portlet.dependency=jsutil;com.mycompany;1.0.0",
+                "com.liferay.portlet.header-request-attribute-prefix=com.mycompany"
+            }, service = Portlet.class
+        )
+        public class MyPortlet extends GenericPortlet {
+            ...
+        } 
         
--   [<a name="eight">8</a>] For example, this property 
-    `"javax.portlet.version=com.mycompany.MyPortletURLGenerationListener;1"` is equivalent to this
-    `portlet.xml` usage:
+-   [<a name="eight">8</a>] Here's an example for the 
+    `javax.portlet.version` property.
+
+    *Old:*
 
         <portlet>
             ...
@@ -227,7 +248,21 @@ this document for simplicity.
             </listener>
             ...
         </portlet>
--   [<a name="nine">9</a>] For example, this property couple be used like this: 
+
+    *New:*
+
+        @Component(
+            immediate = true,
+            property = {"javax.portlet.name=myPortlet",
+                "javax.portlet.version=com.mycompany.MyPortletURLGenerationListener;1"
+            }, service = Portlet.class
+        )
+        public class MyPortlet extends GenericPortlet {
+            ...
+        } 
+
+-   [<a name="nine">9</a>] An `javax.portlet.init-param` property can be 
+    declared like this: 
 
         @Component(
             immediate = true,
