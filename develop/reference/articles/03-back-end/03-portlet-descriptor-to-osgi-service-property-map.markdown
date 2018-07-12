@@ -174,10 +174,21 @@ this document for simplicity.
     http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
 -   [<a name="five">5</a>] 
     [http://www.liferay.com/dtd/liferay-portlet-app_7_1_0.dtd](@platform-ref@/7.1-latest/definitions/liferay-portlet-app_7_1_0.dtd.html)
--   [<a name="six">6</a>] For example, these properties 
-    `"javax.portlet.dependency=jquery;com.jquery;2.1.1",
-    "javax.portlet.dependency=jsutil;com.mycompany;1.0.0"` are equivalent to
-    this `portlet.xml` usage:  
+-   [<a name="six">6</a>] For example, the properties used in this component
+
+        @Component(
+            immediate = true, property = {
+                "javax.portlet.name=my_portlet",
+                "javax.portlet.display-name=my-portlet",
+                "javax.portlet.dependency=jquery;com.jquery;2.1.1",
+                "javax.portlet.dependency=jsutil;com.mycompany;1.0.0"
+            }, service = Portlet.class
+        )
+        public class MyPortlet extends GenericPortlet {
+        ...
+        } 
+
+    are equivalent to this `portlet.xml` usage:  
 
         <portlet>
         	...
