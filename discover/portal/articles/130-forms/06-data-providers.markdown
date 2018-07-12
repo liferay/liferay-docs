@@ -138,9 +138,18 @@ provided by the data provider. Once you grant permissions, click *Save*.
 The above instructions for adding a basic Data Provider are a good start, but
 there are more options.
 
+**URL** : The URL of a REST Web Service, which can be an internal or an external REST Web Service. In both cases, the URL can receive two types of parameters, the path parameters and the query parameters. The path parameters make part of the URL and are added following the pattern `{path_parameter_name}`, like in `https://restcountries.eu/rest/v2/name/{name}` where the `{name}` is the path parameter. Once this type of parameter makes part of the URL, it's mandatory. On the other hand, the query parameters are used as a complementary part of the URL and follows the pattern `?query_parameter=query_parameter_value` like in `https://restcountries.eu/rest/v2/all?fields=capital`. Moreover, the query parameters, differently from the path parameters, are optional.
+
+**User Name** and **Password** : Credentials used to autheticate in the REST Web Service. These credentials are valid for internal and external REST Web Services.
+
 <!-- NOT WORKING, LEAVE OUT UNTIL I CONFIRM IT'S NON-FUNCTIONAL *Support filtering by keyword.*
 : Filter the REST service call's results by a valid parameter from the REST
-service.-->
+service.
+
+When this parameter is enabled, a new field named Filter Parameter Name is displayed in the Data Provider configuration. This field receives the name of a query parameter, which will be used to filter the results of the Data Provider. It's important to emphasize that this field only supports a single query parameter.
+
+This field was created some time ago and it was designed to work as the Autocomplete of the Text field, i.e. the user types a text and this text is used as a Data Provider query parameter, which will filter the results on the fly. Although, with the Forms evolution, its funcionality was replaced by the Inputs field and this field isn't working anymore. The goal is remove the Support filtering by keyword option and the field Filter Parameter Name in a near future.
+-->
 
 **Cache data on the first request.**
 : If the data is cached, a second load of the select list field is much faster,
@@ -151,19 +160,14 @@ since a second call to the REST service provider is unnecessary.
 request, if a response is not returned.
 
 **Inputs**
-: Configure parameters from the REST service to use to filter the REST service's
-response (displayed in the Outputs parameter configured below). Specify the
+: Configure parameters (path parameter or query parameter) from the REST service to use to filter the REST service's response (displayed in the Outputs parameter configured below). Specify the
 Label, Parameter, and Type (Text or Number), and Choose whether the input is
 required to use the Data Provider. You can add multiple Inputs. These are used
 in Form Rules. A User enters input into one field, and their input is sent to
 the REST service. The REST service's response data is filtered by the input.
 
 **Outputs**
-: The Parameter to display in Select from List fields. You can add multiple
-Outputs. Outputs can be filtered by inputs (see above) but can also be displayed
-without configuring input filtering. Specify the Label, Path, and Type (Text,
+: The Parameter to display in Select from List or Text fields, the Text field only if the Autocomplete setting is enabled. You can add multiple Outputs. Outputs can be filtered by inputs (see above) but can also be displayed without configuring input filtering. Specify the Label, Path, and Type (Text,
 Number, or List). The Path field is specified in JsonPath syntax.
 
 ![Figure 3: Set up Data Providers to display data retrieved from a REST service.](../../images/forms-data-provider-configuration.png)
-
-
