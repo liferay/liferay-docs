@@ -31,7 +31,7 @@ the selected view type:
     card-like rendering of the item. If the item isn't an image, a generic image 
     for the item's type is displayed. For files, each card also contains the 
     file's suffix (e.g., JPG, PNG, etc.), timestamp, name, and 
-    [workflow](/discover/portal/-/knowledge_base/7-1/using-workflow) 
+    [workflow](/discover/portal/-/knowledge_base/7-1/workflow) 
     status (e.g., Approved, Draft, etc.). 
 
 -   **List** (![List](../../../../images/icon-view-type-list.png)): 

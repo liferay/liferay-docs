@@ -134,7 +134,7 @@ Here are the steps for creating the folder structure:
     application's JSP files belong in the web client module.
 
 8.  Copy your portlet classes and supporting classes that aren't related to
-    [Service Builder](/develop/tutorials/-/knowledge_base/7-0/running-service-builder)
+    [Service Builder](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
     into their respective package folders in the web client module. Organizing
     classes into sub-packages can make them easier to manage. 
 

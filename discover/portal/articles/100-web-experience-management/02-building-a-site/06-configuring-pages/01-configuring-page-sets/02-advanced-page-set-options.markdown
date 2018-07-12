@@ -22,7 +22,7 @@ behaviors for specific mobile devices or types. Mobile device rules are
 inherited from your Public Pages, but you can define specific rules per page.
 You can edit the Look and Feel of specific pages for mobile devices, including
 the theme. This is explained in 
-[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/7-1/displaying-pages-on-mobile-devices).
+[Mobile Device Rules](/discover/portal/-/knowledge_base/7-1/mobile-device-rules).
 
 ## Robots [](id=configuring-rules-for-virtual-hosting)
 

@@ -151,7 +151,7 @@ passes the render request and render response objects to the base class via its
 
 **Note:** Are you wondering how to call Service Builder services in 
 @product-ver@?
-[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/7-1/finding-and-invoking-liferay-services)
+[Invoking Services from Service Builder Code](/develop/tutorials/-/knowledge_base/7-1/invoking-services-from-service-builder-code)
 can help. In short, obtain a reference to the service by annotating one of your
 fields of that service type with the `@Reference` Declarative Services
 annotation.

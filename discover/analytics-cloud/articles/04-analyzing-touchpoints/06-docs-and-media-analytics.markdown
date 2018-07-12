@@ -1,6 +1,6 @@
 # Documents and Media Analytics [](id=documents-and-media-analytics)
 
-[Documents and Media files](/discover/portal/-/knowledge_base/7-1/documents-and-media) 
+[Documents and Media files](/discover/portal/-/knowledge_base/7-1/managing-documents-and-media) 
 are assets you want site users to look at or download. 
 
 Are your Documents and Media engaging site visitors? Analytics Cloud can give
