@@ -65,8 +65,7 @@ this document for simplicity.
 |`/portlet-app/resource-bundle`|not supported|
 |`/portlet-app/default-namespace`|not supported|
 |`/portlet-app/event-definition`|not supported|
-|`/portlet-app/filter/init-param/name`|`javax.portlet.init-param.<name>=<value>`|
-|`/portlet-app/filter`<br/>`/portlet-app/filter-mapping`|[3](#three)|
+|`/portlet-app/filter`<br/>`/portlet-app/filter/init-param/name`<br/>`/portlet-app/filter-mapping`|[3](#three)<br/>`javax.portlet.init-param.<name>=<value>` [3](#three), [9](#nine)<br/>[3](#three)|
 |`/portlet-app/public-render-parameter`|not supported|
 |`/portlet-app/listener`|not supported<br/>?`javax.portlet.PortletURLGenerationListener`?|
 |`/portlet-app/container-runtime-option`|not supported|
@@ -217,3 +216,14 @@ this document for simplicity.
             </listener>
             ...
         </portlet>
+-   [<a name="nine">9</a>] For example, this property couple be used like this: 
+
+        @Component(
+            immediate = true,
+            property = {"javax.portlet.name=myPortlet", 
+                "javax.portlet.init-param.myInitParam=1234"},
+            service = PortletFilter.class
+        )
+        public class MyFilter implements RenderFilter {
+            ...
+        }
