@@ -272,7 +272,7 @@ include this file manually, here are its contents for reference:
 After updating your theme's CSS variables and mixins, you should update the Font 
 Awesome Icon imports. 
 
-## Updating Font Awesome Icon Imports [](id=updating-font-awesome-icons) 
+## Updating Font Awesome Icon Imports [](id=updating-font-awesome-icons)
 
 Originally in Liferay Portal CE 7.0 and Liferay DXP, Font Awesome icons were 
 imported in `_aui_variables.scss` (now renamed `_clay_variables.scss`). Font 
@@ -288,7 +288,7 @@ imports shown below:
 
 Next you can update the core imports. 
 
-## Updating Core Imports
+## Updating Core Imports [](id=updating-core-imports)
 
 Update the old aui lexicon paths to use the clay paths instead, as shown in the 
 table below:

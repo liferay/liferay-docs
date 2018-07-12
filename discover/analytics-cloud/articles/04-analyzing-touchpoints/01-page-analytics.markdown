@@ -67,8 +67,6 @@ as compared with other Pages. It might not tell you specifically what's so
 effective (or weak) about a Page, but it can tell you if the Page is performing
 as desired over the selected time period.
 
-+$$$
-
 **Baseball Analogy:** Are you a baseball fan? If so you might be familiar with
 the classic individual metrics used to describe a non-pitcher's proficiency:
 Batting Average, Slugging Percentage, Fielding Percentage, and a few more. Now
@@ -83,7 +81,6 @@ similar to BABIP or WAR in baseball. Maybe the Analytics team can come up with
 a WAR-like metric next, to compare how valuable a Page is as compared with the
 average Page. It could be called TEAR (Page Engagement Above Replacement).
 
-$$$
 
 Page Engagement is useful to combine with time period filtering and comparative
 time period features. Comparing the engagement score from different periods is

@@ -41,12 +41,11 @@ customizations aren't unintentionally changed by future template changes.
 Follow these steps to create a new option template:
 
 1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Catalog* and click on the
-    *Option Templates* tab. This displays a list of existing templates on the
-    left of the page and the *Option Template Detail* form on the right.
+    *Options* tab. This displays a list of existing templates on the left of the
+    page and the *Option Template Detail* form on the right.
 
-2.  Then click the ![Add](../../images/icon-add.png) button at the top of the
-    screen, fill in the following fields from the Option Template Detail form,
-    and click *Save*.
+2.  Then click ![Add](../../images/icon-add.png), fill in the following fields
+    from the Option Template Detail form, and click *Save*.
 
 **Title**: Give the template a name, such as *size* or *color*.
 
@@ -55,35 +54,28 @@ Follow these steps to create a new option template:
 **Field Type**: Select from the following different ways to display
 options to customers:
 
-- *Select:* displays option values in a drop-down box.
+- *Select from List:* Displays option values in a drop-down box.
 
-- *Radio:* displays option values with a radio button next to each. Since radio
-buttons cannot be deselected, this field type should be used for options where
-a selection is not required.
+- *Single Selection:* Displays option values with a radio button next to each.
+  Since radio buttons cannot be deselected, only use this field type for options where
+  a selection is required.
 
-- *Date:* prompts buyers to select a specific date---applicable for services,
+- *Date:* Prompts buyers to select a specific date---applicable for services,
 deliveries, and the like. It does not take option values.
 
-- *Checkbox:* displays a checkbox next to the option template. It does
+- *Boolean Question:* Displays a checkbox next to the option template. It does
 not does not take option values. It is useful where an option is a simple
 binary, such as "gift-wrap".
 
-- *checkbox_multiple:* displays a checkbox next to each option value. This
+- *Multiple Selection:* Displays a checkbox next to each option value. This
  allows more than one value to be selected for a single template---useful for offering
 a choice among add-ons or accessories.
 
-- *Numeric:* displays a field where a number can be entered, for
+- *Numeric:* Displays a field where a number can be entered, for
 entering custom dimensions or the like. It does not take option values.
 
-- *Text:* allows the buyer to enter custom text. It can be used to enter text to
-be printed (or engraved, embroidered, etc.) on the product, or as an open-ended
-way for the buyer to provide other information to the seller. It does not take
-option values.
-
-- *Paragraph:* works exactly like *text*, but provides a larger field.
-
-**Use in faceted navigation**: Check this box to allow search results to be
-filtered for this option.
+**Use in faceted navigation**: enable to allow search results to be filtered for
+this option.
 
 **Required**: forces customers to make a selection before purchasing products
 that use this option.
@@ -91,7 +83,7 @@ that use this option.
 **SKU Contributor:** a SKU contributor can be assigned a unique price and other
 attributes for each variant via
 [SKUs](/web/liferay-emporio/documentation/-/knowledge_base/1-0/SKUs). If
-checked, the option must have an SKU in order to be sold.
+enabled, the option must have an SKU in order to be sold.
 
 **Key**: A unique identifier for referring to this option programmatically. As
 this field is filled automatically, most users can safely leave it alone.
@@ -106,7 +98,7 @@ may need to create values for your option.
 
 Follow these steps:
 
-1.  Go to the catalog and select the *Option Templates* tab. Find the template
+1.  Go to the catalog and select the *Options* tab. Find the template
     you want to create values for and click on the *values* button next to its
     title.
 

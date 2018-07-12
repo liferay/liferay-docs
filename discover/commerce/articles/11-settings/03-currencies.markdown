@@ -30,7 +30,7 @@ occupied. A value of 0.01 in the above format would be displayed as $0.01.
 displayed to the right of the decimal point.
 
 **Rounding Mode:** Select a 
-[rounding mode](https:en.wikipedia.org/wiki/Rounding#Directed_rounding_to_an_integer)
+[rounding mode](https://en.wikipedia.org/wiki/Rounding#Directed_rounding_to_an_integer)
 from the drop-down menu.
 
 Check the *Primary* box to make this currency your store's default. Check the

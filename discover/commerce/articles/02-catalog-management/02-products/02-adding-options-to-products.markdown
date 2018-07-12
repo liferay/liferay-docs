@@ -13,7 +13,11 @@ template or any other product.
 
 To assign an option template to a product, follow these steps:
 
-1.  Go to the catalog, open a product, and click on the *Options* tab.
+1.  Go to the catalog, open a product, and click on the *Options* tab in the
+    product tab menu.
+
+    ![Figure x: It may look like you have two options, but you really only have one. Click
+    on this one.](../../../images/two-options.png)
 
 2.  Click on the ![Add](../../../images/icon-add.png) button and select option
     templates from the pop-up. Click *Add* to close the pop-up.
@@ -24,8 +28,8 @@ Once an option template has been applied to a product, you can make changes to
 the option that only affect that product. Follow these steps:
 
 1.  Go to the catalog, select the product in question, and open the *Options*
-    tab. If you just finished applying a template to the product, then you are
-    already on this page.
+    tab from the product tab menu. If you just finished applying a template to
+    the product, then you are already on this page.
 
 2.  On the left side of the page is a list of the option templates this product
     uses. Click on the one you want to edit.
@@ -42,9 +46,10 @@ After an option template has been applied to a product, you can edit and delete
 its option values or add new ones. These changes will not affect the template or
 any other product. Follow these steps:
 
-1.  Go to the catalog and select the desired product. Click on the *Options*
-    tab, find the template for which you want to create values and click on the
-    *values* button next to its title. This displays a list of option values.
+1.  Go to the catalog and select the desired product. Click on the *Options* tab
+    from the product tab menu, find the template you want to create values for,
+    and click on the *values* button next to its title. This displays a list of
+    option values.
 
 2.  To edit a value, select it and then make changes to the *Option
     Value Detail* form on the right. To delete it, select it and then hit

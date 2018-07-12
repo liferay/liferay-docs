@@ -1,4 +1,4 @@
- Organizations [](id=organizations)
+# Organizations [](id=organizations)
 
 An *Organization* groups
 [*Users*](/discover/portal/-/knowledge_base/7-1/users) 

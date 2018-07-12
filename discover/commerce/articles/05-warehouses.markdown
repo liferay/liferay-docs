@@ -3,7 +3,7 @@
 Initially, inventory levels for all products must be entered manually. From then
 on, inventory levels are tracked automatically as orders are filled. To set
 a product's inventory level, see
-[SKUs](/web/liferay-emporio/documentation/-/knowledge_base/1.0/skus#inventory).
+[SKUs](/web/liferay-emporio/documentation/-/knowledge_base/1-0/skus#inventory).
 First, however, you must have your warehouses in order.
 
 ## Using a Single Warehouse [](id=using-a-single-warehouse)
