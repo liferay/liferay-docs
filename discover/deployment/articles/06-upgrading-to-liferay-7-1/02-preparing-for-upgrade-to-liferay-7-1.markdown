@@ -39,7 +39,7 @@ it to the live site. If you skip this step, you must run a full publish (or
 manually publish changes) after the upgrade, since the system won't know what
 content changed since the last publishing date.
 
-## Step 3: Remove Duplicate Web Content Structure Field Names [](id=-remove-duplicate-web-content-structure-field-names)
+## Step 3: Remove Duplicate Web Content Structure Field Names [](id=remove-duplicate-web-content-structure-field-names)
 
 If you've used Web Content Management extensively, you might have structures
 whose field names aren't unique. You must 
