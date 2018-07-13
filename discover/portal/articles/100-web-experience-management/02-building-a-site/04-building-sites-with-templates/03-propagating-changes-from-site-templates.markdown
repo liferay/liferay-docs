@@ -1,4 +1,4 @@
-# Propagating Changes from Site Templates to Sites [](id=propagating-changes-from-Site-templates-to-Sites)
+# Propagating Changes from Site Templates to Sites [](id=propagating-changes-from-site-templates-to-sites)
 
 Site Template administrators can add, update, or delete Site Template pages.
 Changes made to a Site Template can be propagated to Sites whose page sets are

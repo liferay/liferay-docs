@@ -78,7 +78,7 @@ those pages. Site administrators can disable this behavior by disabling the
 *Inherit Changes* selector. Occasionally, propagation for page templates fails
 due to unintended errors. To learn how to manage a failed page template
 propagation, visit the
-[Propagating Changes from Site Templates to Sites](/discover/portal/-/knowledge_base/7-1/building-sites-from-templates#propagating-changes-from-site-templates-to-sites)
+[Propagating Changes from Site Templates to Sites](/discover/portal/-/knowledge_base/7-1/propagating-changes-from-site-templates-to-sites)
 tutorial.
 
 If staging has been enabled, changes to the page template are automatically

@@ -1,4 +1,4 @@
-# Sharing Site Templates [](id=sharing-Site-templates)
+# Sharing Site Templates [](id=sharing-site-templates)
 
 If you want to export a Site that uses Site or Page Templates to a different
 environment (through a LAR file or remote publication), the templates must be

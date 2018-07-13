@@ -36,7 +36,7 @@ Follow these steps to use the wiki page editing form:
 3.  If you want to associate a tag with the page, open the *Categorization* 
     section and use the *Select* button to select an existing tag. You can also 
     create a new tag by entering it in the *Tags* field and clicking *Add*. See 
-    [the documentation on tags](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags) 
+    [the documentation on tags](/discover/portal/-/knowledge_base/7-1/tagging-content) 
     for more information. 
 
 4.  If you want to select an existing asset in the portal (e.g., a media file, 

@@ -23,7 +23,7 @@ Comments*, *Enable Ratings for Comments*, and *Enable Highlighting* check boxes
 enable or disable those features for the Wiki. You can set how you want users
 to interact with wiki documents. The *Display Template* selector menu lets you
 choose the Wiki's 
-[Application Display Template](/discover/portal/-/knowledge_base/7-1/styling-apps-with-application-display-templates).
+[Application Display Template](/discover/portal/-/knowledge_base/7-1/styling-widgets-with-application-display-templates).
 Below this, you can set which wiki nodes are visible. For example, you might
 host two wikis on a given site, exposing one to the public and keeping the
 other private for site members.

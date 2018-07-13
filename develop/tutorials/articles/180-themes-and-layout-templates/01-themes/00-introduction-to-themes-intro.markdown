@@ -53,6 +53,6 @@ Once your theme is developed it is packaged as a WAR (Web application ARchive)
 file and can be deployed to the server, either manually or using build tools.
 
 Once your theme is deployed, apply it to your pages through the 
-[Look and Feel menu](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages).
+[Look and Feel menu](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/page-set-look-and-feel).
 
 The only limitation is your imagination.
