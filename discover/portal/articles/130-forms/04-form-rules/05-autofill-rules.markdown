@@ -1,11 +1,11 @@
 # Action: Autofill [](id=action-autofill)
 
 Autofill rules let you change the selection options of another field based
-on the value entered into a related field. A [data provider's]((/discover/portal/-/knowledge*base/7-1/data-providers)) output is used to
+on the value entered into a related field. A [data provider's]((/discover/portal/-/knowledge_base/7-1/data-providers)) output is used to
 populate a field, as long as the condition is met.
 
 Before configuring an autofill rule, 
-[set up a data provider](/discover/portal/-/knowledge*base/7-1/data-providers). 
+[set up a data provider](/discover/portal/-/knowledge_base/7-1/data-providers). 
 That's how autofilled fields are populated. Pay careful attention to the
 input and output parameters you choose when setting up the rule.
 
@@ -18,7 +18,7 @@ To follow this example:
 
     Make sure the output parameter is set to `nameCurentValue`. If you're unsure
     how to do this, first read the article on 
-    [Data Providers](/discover/portal/-/knowledge*base/7-1/data-providers).
+    [Data Providers](/discover/portal/-/knowledge_base/7-1/data-providers).
 
 2.  On the last form page, add two fields:
 
@@ -73,7 +73,7 @@ Region field (for example, Americas, Europe, or Oceania),
     (*List*).
 
     To understand more about these values, read the 
-    [Data Provider documentation](/discover/portal/-/knowledge*base/7-1/data-providers).
+    [Data Provider documentation](/discover/portal/-/knowledge_base/7-1/data-providers).
 
     ![Figure 3: ](../../../images/forms-autofill-data-provider.png)
 
