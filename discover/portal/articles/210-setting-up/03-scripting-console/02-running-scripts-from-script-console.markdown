@@ -1,16 +1,21 @@
 # Running Scripts From the Script Console [](id=running-scripts-from-the-script-console)
 
-To see a very simple example of the script console in action, log into the
-portal as an administrator and navigate to the *Control Panel* &rarr; *Server
-Administration* area of the Control Panel. Then click on *Script*. This is
-@product@'s script console. Change the script type to *Groovy* and replace the
-code in the script console with the following: 
+To see a very simple example of the script console in action, do the following:
 
-    number = com.liferay.portal.kernel.service.UserLocalServiceUtil.getUsersCount(); 
-    out.println(number); 
+1.  Log into the portal as an administrator
 
-Click the *Execute* button and check the script console or the log for the
-output.
+2.  Navigate to the *Control Panel* &rarr; *Server Administration* area of the 
+    Control Panel.
+    
+3.  Click on *Script*. This is @product@'s script console.
+
+4.  Replace the code in the script console with the following: 
+
+        number = com.liferay.portal.kernel.service.UserLocalServiceUtil.getUsersCount(); 
+        out.println(number); 
+
+5.  Click the *Execute* button and check the script console or the log for the
+    output.
 
 Next, consider a less simplistic example. You'll retrieve some user information
 from the database, make some changes, and then save those changes to Liferay's
@@ -22,45 +27,50 @@ variable is `true`, @product@ will not present the user with the terms of use.
 However, if you set this flag to `false` for each user, each user must agree to
 the terms of use again before they can log in. 
 
-You'll use Groovy again. Ensure that the script type in the script console is set
-to Groovy. Then execute the following code to check the status of the
-`agreedToTermsOfUse` user attribute:
+1.  Enter the following code into the *Script* console:
 
-    import com.liferay.portal.kernel.service.UserLocalServiceUtil
+        import com.liferay.portal.kernel.service.UserLocalServiceUtil
 
-    userCount = UserLocalServiceUtil.getUsersCount()
-    users = UserLocalServiceUtil.getUsers(0, userCount)
+        userCount = UserLocalServiceUtil.getUsersCount()
+        users = UserLocalServiceUtil.getUsers(0, userCount)
 
-    for (user in users) { println("User Name: " + user.getFullName() + " -- " +
-    user.getAgreedToTermsOfUse()) }
+        for (user in users) { println("User Name: " + user.getFullName() + " -- " +
+        user.getAgreedToTermsOfUse()) }
 
-The code above just prints the value of the `agreedToTermsOfUse` attribute for
-each user. Next, you'll actually update each user in the system to set his or
-her `agreedToTermsOfUse` attribute to `false`. Your script will make sure to
-skip the default user as well as the default admin user that's currently logged
-in and running the script. If you're logged in as someone other than
-test@liferay.com, make sure to update the following script before running it. 
 
-    import com.liferay.portal.kernel.service.UserLocalServiceUtil
-
-    userCount = UserLocalServiceUtil.getUsersCount()
-    users = UserLocalServiceUtil.getUsers(0, userCount)
-
-    for (user in users){
+    This code to checks the status of the `agreedToTermsOfUse` user attribute, 
+    and prints the value for each user. 
     
-        if(!user.isDefaultUser() && 
-            !user.getEmailAddress().equalsIgnoreCase("test@liferay.com")) {
+2.  Now replace that with this script:
+    
+        import com.liferay.portal.kernel.service.UserLocalServiceUtil
+
+        userCount = UserLocalServiceUtil.getUsersCount()
+        users = UserLocalServiceUtil.getUsers(0, userCount)
+
+        for (user in users){
+    
+            if(!user.isDefaultUser() && 
+                !user.getEmailAddress().equalsIgnoreCase("test@liferay.com")) {
             
-                user.setAgreedToTermsOfUse(false)
-                UserLocalServiceUtil.updateUser(user)
+                    user.setAgreedToTermsOfUse(false)
+                    UserLocalServiceUtil.updateUser(user)
+        
+            }
         
         }
-        
-    }
+
+    This updates each user in the system to set his or her `agreedToTermsOfUse` 
+    attribute to `false`. Your script will make sure to skip the default user 
+    as well as the default admin user that's currently logged in and running 
+    the script. If you're logged in as someone other than test@liferay.com, 
+    update the script with your email address.
+
+3.  Click *Execute*.
  
-To verify the script has updated the records, run the first script again and you
-should see that all users (except the default user and your user) have been
-updated. 
+4.  To verify the script has updated the records, run the first script again. 
+
+    You should see that all users (except the default user and your user) have been updated. 
 
 That's all that's needed to run scripts and to access the Liferay service layer.
 

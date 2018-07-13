@@ -4,8 +4,8 @@ Many scripting scenarios require invoking @product@'s services.
 
 To illustrate the correct syntax for interacting with Liferay services, consider
 a simple example that uses the `UserLocalService` API to retrieve a list of
-users and print their names to Liferay's log file. We'll initially
-implement the example in Java pseudo-code:
+users and print their names to Liferay's log file. You could create and deploy 
+a module written in Java to do this. Your module might look something like this:
 
     import com.liferay.portal.kernel.model.User;
     import com.liferay.portal.kernel.service.UserLocalServiceUtil;
@@ -22,50 +22,7 @@ implement the example in Java pseudo-code:
 
     ...
 
-@product@'s script engine only supports Groovy by default. In later versions,
-support may be added for other scripting languages. 
-
-<!--If you
-want to try out the non-Groovy examples below, you need to install the
-appropriate modules:
-
-- `portal-scripting-groovy` (installed by default)
-- `portal-scripting-beanshell` (available from Liferay Marketplace)
-- `portal-scripting-javascript` (available from Liferay Marketplace)
-- `portal-scripting-python` (available from Liferay Marketplace)
-- `portal-scripting-ruby` (available from Liferay Marketplace)
-
-These modules are all freely available on
-[Liferay Marketplace](www.liferay.com/marketplace).
-
-First, let's see how this would work in Beanshell, which is very similar to
-Java.
- 
-## Beanshell [](id=beanshell)
-
-Beanshell is a Java scripting language that's designed to run Java code with
-little or no changes. In this example, we only have one small change to make
-because Beanshell doesn't support the use of Java Generics:
-
-    import com.liferay.portal.model.User;
-    import com.liferay.portal.service.UserLocalServiceUtil;
-    import java.util.List;
-
-    int userCount = UserLocalServiceUtil.getUsersCount();
-    List users = UserLocalServiceUtil.getUsers(0, userCount);
-    
-    for (User user:users) {
-        System.out.println("User Name: " + user.getFullName());
-    }
- 
-Next, we'll show the same thing in Groovy, another scripting language designed
-to be similar to Java. -->
-
-## Groovy [](id=groovy)
-
-Groovy is based on Java, and code written in Java also runs in Groovy. This
-means we can execute the exact same code from our Java example without any
-changes:
+Or you could use Groovy---which is based on Java---and do the whole thing right from the script console with the same code:
 
     import com.liferay.portal.kernel.model.User;
     import com.liferay.portal.kernel.service.UserLocalServiceUtil;
@@ -78,8 +35,7 @@ changes:
         System.out.println("User Name: " + user.getFullName());
     } 
  
-Of course, we could make this somewhat Groovier by simplifying the program as
-follows: 
+You can even make this somewhat Groovier and simplify the program:
 
     import com.liferay.portal.kernel.service.UserLocalServiceUtil
 
@@ -92,52 +48,6 @@ follows:
 Liferay's services can be easily accessed from the script console. Next, let's
 look at some practical uses for @product@'s script engine.
 
-<!-- Liferay's script engine supports more than just Java-like languages. Despite the
-name, you should be aware that JavaScript bears little resemblance to Java, but
-you can still use it in Liferay's script engine. 
-
-## JavaScript [](id=javascript)
-
-@product@ uses the Rhino JavaScript Engine to provide JavaScript support in the
-script engine. The following code provides a JavaScript version of our original
-Java program:
-
-    userCount = Packages.com.liferay.portal.service.UserLocalServiceUtil.getUsersCount(); 
-    users = new Packages.java.util.ArrayList;
-    users = Packages.com.liferay.portal.service.UserLocalServiceUtil.getUsers(0, userCount);
-    user = Packages.com.liferay.portal.service.UserLocalServiceUtil.createUser(0);
-
-    for (i=0;i<users.size();i++) {
-        Packages.java.lang.System.out.println(users.get(i).getFullName());
-    }
- 
-You can see that the JavaScript example is compact. Ruby is even more compact. 
-
-## Ruby [](id=ruby)
-
-Ruby is supported through the use of JRuby. Our example could be implemented in
-Ruby as follows: 
-
-    userCount = com.liferay.portal.service.UserLocalServiceUtil.getUsersCount();
-    users = com.liferay.portal.service.UserLocalServiceUtil.getUsers(0, userCount);
-    users.each{ |user| print user.getFullName() + "\n"}
- 
-Python users aren't left out either. 
-
-## Python [](id=python)
-
-@product@ provides Python support based on Jython. Our example could be
-implemented with the following code:
-
-    from com.liferay.portal.service import UserLocalServiceUtil
-    from com.liferay.portal.model import User
-
-    userCount = UserLocalServiceUtil().getUsersCount()
-    users = UserLocalServiceUtil().getUsers(0,userCount)
-
-    for user in users:
-        print user.getFullName()
--->
 ## Related Topics [](id=related-topics)
 
 [Running Scripts From the Script Console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console)

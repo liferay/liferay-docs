@@ -1,15 +1,11 @@
 # Using Liferay's Script Engine [](id=using-liferays-script-engine)
 
-@product@ provides a robust script engine that can be used to execute scripts in a
-variety of languages. @product@'s script engine was originally developed to allow
-developers to write portlets in languages other than Java such as PHP, Groovy,
-Ruby, and Python. Since then, the script engine has been extended to do much
-more. For example, when @product@'s workflow framework was introduced, the script
-engine was leveraged to support the execution of scripts from within a workflow
-module. @product@ now provides a script console in the Server Administration area
-of the Control Panel. The script console provides an easy way for system
-administrators to execute scripts to perform repetitive user maintenance
-operations, bulk invocations of Liferay's API, or even system level operations.
+@product@ provides a robust script engine that can be used to execute scripts. 
+The script engine is used on the backend to perform tasks like running workflow 
+scripts, and you can use the script console in the Server Administration area 
+of the Control Panel to execute scripts to perform repetitive user 
+maintenance operations, bulk invocations of Liferay's API, or even system level 
+operations.
 
 The tutorials in this section explain how to use Liferay's script engine and
 script console. They cover the following topics: 
@@ -24,9 +20,13 @@ script console. They cover the following topics:
 
 Invoking Liferay's API is probably the most common task for which you'll want to
 run a script. If you have any familiarity with Liferay's API, this will be very
-easy for you. To access Liferay's scripting console, navigate to the Control
-Panel, click on *Server Administration* under the System heading, then click on
-the *Script* tab.
+easy for you. To access Liferay's scripting console:
+
+1.  Navigate to the Control Panel.
+
+2.  Click on *Server Administration* under the System heading.
+
+3.  Click on the *Script* tab.
 
 **Important:** Liferay's script engine supports the following languages:
 Beanshell, JavaScript, Groovy, Python, and Ruby. In previous versions of
