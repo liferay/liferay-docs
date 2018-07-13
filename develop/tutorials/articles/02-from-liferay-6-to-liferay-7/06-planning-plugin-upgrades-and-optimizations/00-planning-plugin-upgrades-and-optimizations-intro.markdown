@@ -65,9 +65,13 @@ See the
 [optimization tutorials](/develop/tutorials/-/knowledge_base/7-1/optimizing-plugins-for-liferay-7)
 for more options and details. 
 
-You *can* continue using the Plugins SDK to develop plugins. But the Plugins
-SDK is deprecated  as of 7.0. In light of the deprecation, you should
-consider migrating plugins from the Plugins SDK to one of the new environments:
+The Plugins SDK is no longer available to develop plugins for @product-ver@. 
+Visit the
+[Deprecated Apps in 7.1: What To Do](/discover/deployment/-/knowledge_base/7-1/deprecated-apps-in-7-1-what-to-do#foundation)
+article for more information on the Plugins SDK removal.
+
+In light of the removal, you should consider migrating plugins from the Plugins
+SDK to one of the new environments:
 
 -   [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/from-the-plugins-sdk-to-liferay-workspace)
     is a Gradle environment that supports developing modules and traditional
@@ -79,17 +83,13 @@ consider migrating plugins from the Plugins SDK to one of the new environments:
     plugins and archetypes support developing modules and traditional plugins.
     There's also a Liferay Workspace archetype for generating a Workspace that uses Maven. 
 
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) 
-supports developing in Workspaces using Gradle or 
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) supports
+developing in Workspaces using Gradle or 
 [Maven](/develop/tutorials/-/knowledge_base/7-1/using-maven-in-liferay-ide).
 
-In short, there's plenty of time to move plugins out of the Plugins SDK, but you
-should at least plan for migrating to a new environment that works best for
-you. 
-
-Speaking of planning, properly planned upgrades and optimizations reduce the
-time and effort they take. To help guide you through the upgrade and
-optimization tutorials, you get these things:
+Properly planned upgrades and optimizations reduce the time and effort they
+take. To help guide you through the upgrade and optimization tutorials, you get
+these things:
 
 -   Upgrade and optimization phase descriptions
 -   Upgrade and optimization paths

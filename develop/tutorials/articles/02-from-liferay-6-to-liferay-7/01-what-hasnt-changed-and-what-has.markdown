@@ -33,10 +33,6 @@ and other developer tools and libraries continue to work as they have in 6.2.
 6. Traditional plugins for portlets and hooks still work (once they're
 adapted to @product-ver@'s API) through a [compatibility layer](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator).
 
-7. The Plugins SDK can also still be used and transition to the
-new [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
-if desired, is easy.
-
 Here are some key changes of interest to existing Liferay developers:
 
 1. Extraction of many features as modules: So far you have been used to
@@ -76,6 +72,12 @@ much more powerful than plugins ever were.
 Builder) within [Maven](/develop/tutorials/-/knowledge_base/7-1/maven)
 and [Gradle](/develop/reference/-/knowledge_base/7-1/gradle).
 Additionally we've adopted some new tools such as bnd.
+
+8. The Plugins SDK is no longer available. Visit the
+[Deprecated Apps in 7.1: What To Do](/discover/deployment/-/knowledge_base/7-1/deprecated-apps-in-7-1-what-to-do#foundation)
+article for more information on the Plugins SDK removal.
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+succeeds the Plugins SDK as Liferay's opinionated development environment.
 
 Since the modularization of the Liferay web application is the change most
 relevant to you as a developer, let's dig deeper into that change and how it

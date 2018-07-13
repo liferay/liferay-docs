@@ -129,12 +129,13 @@ developing on Liferay will be easier than ever before. We have built
 for typical Liferay-specific development tasks (such as using Service Builder)
 and provide a collection of new archetypes.
 
-And if you want to continue using the Plugins SDK, we've got you covered. The
-Plugins SDK is available to facilitate your transition to @product-ver@. In
-fact, a
-[Plugins SDK structure can reside in a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
-alongside new developments that use the new build environment; you can switch
-between traditional projects and new projects at your own pace.
+The Plugins SDK is no longer available for @product-ver@.
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+succeeds the Plugins SDK as Liferay's opinionated development environment. You
+can transition from a Plugins SDK by adding it to your workspace and migrating
+projects at your own pace. See the
+[Using a Plugins SDK from Your Workspace](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
+article for more information.
 
 Finally, we have also developed a lightweight tool called
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli),
