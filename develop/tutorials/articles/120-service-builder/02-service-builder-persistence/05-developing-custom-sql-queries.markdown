@@ -107,6 +107,7 @@ Run Service Builder to generate the `*Finder` interface, which is based on
 the `*FinderImpl` class. Modify your `*FinderImpl` class to have it implement
 the `*Finder` interface you just generated:
 
+    @ProviderType
     public class *FinderImpl extends BasePersistenceImpl<Event>
         implements EntryFinder {
 
