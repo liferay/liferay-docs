@@ -1,4 +1,4 @@
-## Assigning Forms for Workflow Tasks [](id=adding-task-forms)
+# Assigning Forms for Workflow Tasks [](id=adding-task-forms)
 
 In the fourth (and final) step of the New Process wizard, assign a form to each
 task in the workflow definition (and to the StartNode to get the process kicked
@@ -11,21 +11,6 @@ defined in step two, or a subset of it.
 user input). If you forgot to add a Select field to the field set in step two,
 for example, you cannot add one here. Instead go back and add it to the field
 set.
-
-While you can't add form fields, you can configure the existing fields
-differently for each form, and you can add these elements to the form that
-enhance its usability:
-
-1. Add a *Fieldset* to provide headings in a form. For example, name it
-   after the workflow task to provide clarity to the task assignee.
-2. Use a *Paragraph* field to add a block of text to the form. For example,
-   provide instructions to assignees about what's expected of them to complete
-   the task.
-3. Use the *Separator* to separate sections of the form visually. For example,
-   combine a Paragraph and a Separator to instruct the assignee to focus on a
-   certain section of the form.
-
-![Figure 4: Use Fieldsets, Paragraphs, and Separators to enhance the appearance of your workflow task forms.](../../../images-dxp/kaleo-forms-field-types.png)
 
 $$$
 
@@ -52,19 +37,21 @@ Technician Claim, Managerial Approval, and Final Order. Next you'll assign a
 form for each of the four nodes.
 
 
-# Assigning Kaleo Forms
+## Assigning Kaleo Forms
 
-![Figure 5: You can assign a form to each task in the workflow, and for the initial state (*created* in this case.)](../../../images-dxp/kaleo-forms-task-forms.png)
+![Figure 5: You can assign a form to each task in the workflow, and for the initial state (*Created* in this case.)](../../../images-dxp/kaleo-forms-task-forms.png)
 
-Click on the kebab menu (![Action](../../../images-dxp/icon-actions.png)) next
-to the Request Entered task and then click *Assign Form*. The screen that
-appears lets you create a new form if you click the *Add* button
-(![Add](../../../images-dxp/icon-add.png)). 
+1.  Click on the actions menu (![Action](../../../images-dxp/icon-actions.png)) next to the Request Entered task
 
--   First, name the initial form (call it *Spa Order Process--Order Form* if 
+2.  Click *Assign Form*.
+
+3.  Click the *Add* button (![Add](../../../images-dxp/icon-add.png)) on the 
+    next screen.
+
+4.  Name the initial form (call it *Spa Order Process--Order Form* if 
     you like). 
--   Next look at the available fields. In this stage of the workflow, you don't 
-    need all the fields. Delete these fields from the form (mouse over
+
+5.  Delete these fields from the form (mouse over
     the field and click the delete
     icon--![Delete](../../../images/icon-trash.png)):
     

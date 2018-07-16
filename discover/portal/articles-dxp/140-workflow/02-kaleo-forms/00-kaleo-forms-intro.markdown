@@ -60,6 +60,5 @@ $$$
 
 Since Kaleo Forms is accessed through a site's administration menu (under
 Content &rarr; Kaleo Forms Admin), make sure the intended users of your Kaleo
-Processes have access to the application. See the article on [roles and
-permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) if
+Processes have access to the application. See the article on [roles and permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) if
 you're unsure how that works.

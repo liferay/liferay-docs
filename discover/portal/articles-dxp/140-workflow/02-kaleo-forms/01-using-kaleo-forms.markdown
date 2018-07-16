@@ -1,6 +1,6 @@
 # Creating Kaleo Forms Process [](id=creating-kaleo-forms-process)
 
-To start creating a Kaleo Forms Process, go to Kaleo Forms Admin: 
+To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin: 
 
 1.  Go to *Site Administration* &rarr; *Content*.
 
@@ -15,7 +15,7 @@ To start creating a Kaleo Forms Process, go to Kaleo Forms Admin:
 
 ## Creating the Process
     
-Now you must got through the four steps to complete the process. In the first step, enter the basic information about the process:
+In the first step, enter the basic information about the process:
 
 1.  Enter *Spa Order Process* for the *Name* and add a *Description*.
     Name
