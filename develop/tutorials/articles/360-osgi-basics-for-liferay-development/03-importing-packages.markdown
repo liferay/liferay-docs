@@ -21,7 +21,7 @@ manifest. Here are the different package import scenarios:
 
 - [Automatic Package Import Generation](#automatic-package-import-generation)
 
-- [Using Portable Java Contracts](#using-portable-java-contracts)
+- [Importing Java Platform Packages](#importing-java-platform-packages)
 
 - [Manually Adding Package Imports](#manually-adding-package-imports)
 
@@ -86,26 +86,50 @@ detects their use in the WAR's JSPs, descriptor files, and classes (in
 descriptor files. It adds package imports for classes that are neither found in
 the plugin's `WEB-INF/classes` folder nor in embedded JARs. 
 
-Packages such as Java platform packages are not versioned. OSGi Portable Java Contract Definitions let you get Java packages based on the JSR specification you're using. 
+Java platform packages (e.g., `javax.portlet.*` ) are handled differently.  
 
-## Using Portable Java Contracts [](id=using-portable-java-contracts)
+## Importing Java Platform Packages [](id=importing-java-platform-packages)
 
-@product@'s OSGi framework wires your module with Java platform packages based
-on the JSR specification of the Java API artifact you use and the Java platform
-packages available at run time. Here's how it works for different tool chains:
+You'll want to make sure the Java platform APIs you compile against are
+available at runtime. Since the API packages aren't versioned, you must use OSGi
+Portable Java Contracts to assure Java packages for the JSR you require are
+provided at runtime. 
 
--   Liferay's Gradle defaults in Blade CLI and Liferay @ide@ projects inherit 
-    the JavaPortlet contract, which generates Java platform package imports
-    automatically. 
--   If you use any other tool chain that provides bnd, add the
-    `-contract: JavaPortlet` to your bnd instructions. 
--   If you have neither the Liferay Gradle defaults or bnd, add the Java   
-    platform package imports (e.g., `Import-Package: javax.portlet`) to your
-    OSGi manifest, but DO NOT specify any package version--let the OSGi 
-    framework wire your module to an appropriate provider.  
+Here's how to set up Java platform API contracts in different module projects:
 
-For Portable Java Contract Definition details, see 
-[https://www.osgi.org/portable-java-contract-definitions/](https://www.osgi.org/portable-java-contract-definitions/). 
+- **Blade CLI and Liferay @ide@ projects** handle it automatically! They set up
+Java contracts based on the versions of `JavaPortlet` and `JavaServlet` you
+compiled against. 
+
+    - **Gradle projects** add the `JavaPortlet` and `JavaPortlet` contracts to
+    the module JAR manifest on assembly.
+    - **Maven projects** have `-contract` instructions for `JavaPortlet` and
+    `JavaPortlet` in their `bnd.bnd` file. 
+
+- **Other projects that use bnd** that are not created using Blade CLI or
+Liferay @ide@ must specify contracts in their `bnd.bnd` file. The Portable Java
+Contracts framework adds `Require-Capability` entries that contract the Java
+APIs and *removes* version information from the corresponding Java API
+`Import-Package` entries.
+
+        -contract: JavaPortlet
+        -contract: JavaServlet 
+
+- **Projects using other tool chains** must explicitly specify contracts in
+their OSGi manifest. For example, here's how to contract for `JavaPortlet` 3.0
+in your `META-INF/MANIFEST.MF` file:
+
+        Import-Package: javax.portlet
+        Require-Capability: osgi.contract;filter:=(&(osgi.contract=JavaPortlet)(version=3.0))
+
+In all these project scenarios, the contract requirement and capability
+specifies the module's relationship with the imported package. If the system
+you're running does *not* provide the exact contract, your module does not
+resolve. Resolving the missing package is better than getting an incompatibility
+failure during execution. 
+
+For Portable Java Contract details, see 
+[Portable Java Contract Definitions](https://www.osgi.org/portable-java-contract-definitions/). 
 
 ## Manually Adding Package Imports [](id=manually-adding-package-imports)
 
