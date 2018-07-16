@@ -17,8 +17,17 @@ if a module needs classes from the `javax.portlet` and
 Import packages must sometimes be specified manually, but not always.
 Conveniently, @product@ project templates and tools automatically detect the
 packages a module uses and add them to the package imports in the module JAR's
-manifest. Let's explore how package imports are specified in different
-scenarios.
+manifest. Here are the different package import scenarios:
+
+- [Automatic Package Import Generation](#automatic-package-import-generation)
+
+- [Using Portable Java Contracts](#using-portable-java-contracts)
+
+- [Manually Adding Package Imports](#manually-adding-package-imports)
+
+Let's explore how package imports are specified in these scenarios. 
+
+## Automatic Package Import Generation [](id=automatic-package-import-generation)
 
 [Gradle and Maven module projects](/develop/reference/-/knowledge_base/7-1/project-templates)
 created using
@@ -76,6 +85,29 @@ detects their use in the WAR's JSPs, descriptor files, and classes (in
 `liferay-web.xml`, `portlet.xml`, `liferay-portlet.xml`, and `liferay-hook.xml`
 descriptor files. It adds package imports for classes that are neither found in
 the plugin's `WEB-INF/classes` folder nor in embedded JARs. 
+
+Packages such as Java platform packages are not versioned. OSGi Portable Java Contract Definitions let you get Java packages based on the JSR specification you're using. 
+
+## Using Portable Java Contracts [](id=using-portable-java-contracts)
+
+@product@'s OSGi framework wires your module with Java platform packages based
+on the JSR specification of the Java API artifact you use and the Java platform
+packages available at run time. Here's how it works for different tool chains:
+
+-   Liferay's Gradle defaults in Blade CLI and Liferay @ide@ projects inherit 
+    the JavaPortlet contract, which generates Java platform package imports
+    automatically. 
+-   If you use any other tool chain that provides bnd, add the
+    `-contract: JavaPortlet` to your bnd instructions. 
+-   If you have neither the Liferay Gradle defaults or bnd, add the Java   
+    platform package imports (e.g., `Import-Package: javax.portlet`) to your
+    OSGi manifest, but DO NOT specify any package version--let the OSGi 
+    framework wire your module to an appropriate provider.  
+
+For Portable Java Contract Definition details, see 
+[https://www.osgi.org/portable-java-contract-definitions/](https://www.osgi.org/portable-java-contract-definitions/). 
+
+## Manually Adding Package Imports [](id=manually-adding-package-imports)
 
 The WAB Generator and bnd don't add package imports for classes referenced in
 these places:
