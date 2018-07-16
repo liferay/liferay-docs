@@ -146,10 +146,8 @@ integrating a workflow and a form into a new entity, the Kaleo Process.
 
 ## Related Topics [](id=related-topics)
 
-[Kaleo Designer](/discover/portal/-/knowledge_base/7-0/kaleo-designer)
+[Kaleo Designer](/discover/portal/-/knowledge_base/7-1/kaleo-designer)
 
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/enabling-workflow)
+[Using Workflow](/discover/portal/-/knowledge_base/7-1/activating-workflow)
 
-[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-0/liferays-workflow-framework)
-
-[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications)
+[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
