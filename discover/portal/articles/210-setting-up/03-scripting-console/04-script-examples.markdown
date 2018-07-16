@@ -1,8 +1,7 @@
 # Script Examples
 
-To help you make better use of Liferay's script console, you can use these examples. Note: These examples originated from this Liferay blog
-post:
-[https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console](https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
+Here are some examples to help you use Liferay's script console. Note: These 
+originated from this Liferay blog post: [https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console](https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
 The following scripts are Groovy scripts but they can be adapted to other
 languages.
 
@@ -185,8 +184,8 @@ you'll learn how to leverage Liferay's script engine for designing workflows.
 
 ## Related Topics [](id=related-topics)
 
-[Invoking Liferay Services From Scripts](/discover/portal/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
+[Running Scripts From the Script Console](/discover/portal/-/knowledge_base/7-1/running-scripts-from-the-script-console)
 
-[Leveraging the Script Engine in Workflow](/discover/portal/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow)
+[Leveraging the Script Engine in Workflow](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow)
 
-[Using Liferay's Script Engine](/discover/portal/-/knowledge_base/7-0/using-liferays-script-engine)
+[Using Liferay's Script Engine](/discover/portal/-/knowledge_base/7-1/using-liferays-script-engine)

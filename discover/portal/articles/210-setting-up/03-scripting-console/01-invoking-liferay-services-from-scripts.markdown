@@ -50,8 +50,10 @@ look at some practical uses for @product@'s script engine.
 
 ## Related Topics [](id=related-topics)
 
-[Running Scripts From the Script Console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console)
+[Running Scripts From the Script Console](/discover/portal/-/knowledge_base/7-1/running-scripts-from-the-script-console)
 
-[Leveraging the Script Engine in Workflow](/discover/portal/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow)
+[Leveraging the Script Engine in Workflow](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow)
 
-[Using Liferay's Script Engine](/discover/portal/-/knowledge_base/7-0/using-liferays-script-engine)
+[Using Liferay's Script Engine](/discover/portal/-/knowledge_base/7-1/using-liferays-script-engine)
+
+[Script Examples](/discover/portal/-/knowledge_base/7-1/script-examples)
