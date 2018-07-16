@@ -60,7 +60,13 @@ form for each of the four nodes.
     - Approved
     - Managerial Comments
 
-![Figure 6: Workflow task forms are a subset of the original form.](../../../images-dxp/kaleo-forms-form-builder.png)
+    ![Figure 6: Workflow task forms are a subset of the original form.](../../../images-dxp/kaleo-forms-form-builder.png)
+
+6.  Click *Save*.
+
+7.  On the next screen, click on your new form to choose it.
+
+    Now the workflow definition's StartNode has a form associated with it.
 
 +$$$
 
@@ -72,16 +78,21 @@ over it and clicking the wrench icon.
 
 $$$
 
-If you don't need to change any field settings in the form, click *Save*. On the
-next screen choose your new form by clicking on it. Now the workflow
-definition's StartNode has a form associated with it.
+You have three more fields to create using these steps.
 
-Next create a form named *Spa Order Process--Technician Claim Form* for the
-Technician Claim workflow task. Follow the same procedure used above, this time
-deleting these fields from the full field set:
+1.  *Spa Order Process--Technical Claim Form*
 
-- Approved
-- Managerial Comments
+    For the Technician Claim workflow task. Follow the same procedure used 
+    above, this time deleting these fields from the full field set:
+
+    - Approved
+    - Managerial Comments
+
+
+2.  *Spa Order Process--Managerial Approval Form*
+
+    The manager can change anything she wants about the order, so include the 
+    entire field set in the form.
 
 +$$$
 
@@ -92,9 +103,10 @@ and that all technicians are fulfilling their share of the spa's duties.
 
 $$$
 
-Create a form to be used in the Managerial Approval task, called *Spa Order
-Process--Managerial Approval Form*. The manager can change anything she wants
-about the order, so include the entire field set in the form.
+3.  *Spa Order Process--Final Order Form*
+
+    Like the last form, it should have all the form's fields so that the 
+    customer service representative can review the order with the customer.
 
 +$$$
 
@@ -103,10 +115,6 @@ order and gets back to the customer on the final details (available time, name
 of technician, and confirms the services they want).
 
 $$$
-
-There's one more form to create: the *Spa Order Process--Final Order Form*. Like
-the last form, it should have all the form's fields so that the customer service
-representative can review the order with the customer.
 
 ![Figure 7: Once created, your process is listed in Kaleo Forms.](../../../images-dxp/kaleo-forms-processes.png)
 
