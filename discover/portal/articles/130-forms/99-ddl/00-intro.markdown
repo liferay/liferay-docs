@@ -38,4 +38,31 @@ dynamic data lists. You'll cover these topics:
 -   Creating dynamic data lists. 
 -   Creating form and display templates. 
 
+## System Configuration
 
+There are two Dynamic Data Lists entries in System Settings:
+
+The Dynamic Data Lists Service entry contains one setting:
+
+**Add Default Structures:**
+: This is enabled by default, and pre-loads several embedded data definitions to
+base data lists on. Once loaded on portal startup, these definitions must be
+manually deleted from the site menu. Dynamic Data Lists application. This
+setting applies to the first start of a virtual instance.
+
+The Dynamic Data Lists entry contains three settings:
+
+**Changeable Default Language:**
+: If enabled, the default language of a data definition becomes changeable.
+
+**CSV Export:**
+: Choose whether DDL records can be exported in CSV format with or without a
+warning, or disable this option. The warning displayed when the records are being
+exported says
+
+    Warning: This CSV file contains user supplied inputs. Opening a CSV file 
+    in a spreadsheet program may be dangerous.
+
+**Default Display View:**
+: Choose whether to use a table based default view or a list based default view. 
+<!-- I couldn't see this working. Might be non-functional-->
