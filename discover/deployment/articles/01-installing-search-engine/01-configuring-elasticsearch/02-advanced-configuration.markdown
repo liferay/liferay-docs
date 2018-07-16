@@ -22,16 +22,13 @@ specify the settings you need by using one or more of the
 
 ![Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../images/cfg-elasticsearch-additional-configs.png)
 
-`additionalConfigurations` is used to define extra settings (defined in YAML)
-for the embedded Elasticsearch or the local Elasticsearch client when running
-in remote mode. 
-
-All settings for the client are available as default configuration
-options in the Liferay Elasticsearch connector. <!--See the Elasticsearch
-Settings](/discover/reference/-/knowledge_base/7-1/elasticsearch-settings)
-reference article for more information.--> See the [Elasticsearch
-documentation](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.1/transport-client.html)
-for a description of all the client settings.
+`additionalConfigurations` allows developers to define extra settings (defined
+in YAML) for the embedded Elasticsearch. This is only useful for testing
+environments using the embedded Elasticsearch server, and is unnecessary for
+production environments operating in remote mode. Any node settings normally set
+in `elasticsearch.yml` can be declared in this setting. See the
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/index.html) 
+for a description of all possible node settings.
 
 `additionalIndexConfigurations` is used to define extra settings (in JSON or
 YAML format) that are applied to the @product@ index when it's created. For
@@ -39,7 +36,8 @@ example, you can create custom analyzers and filters using this setting. For
 a complete list of available settings, see the 
 [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/index-modules.html).
 
-Here's an example that shows how to configure [analysis](https://www.elastic.co/guide/en/elasticsearch/guide/current/analysis-intro.html#analysis-intro) that can be applied to a
+Here's an example that shows how to configure 
+[analysis](https://www.elastic.co/guide/en/elasticsearch/guide/current/analysis-intro.html#analysis-intro) that can be applied to a
 dynamic template (see below).
 
     {  
@@ -175,27 +173,6 @@ Now modify whatever mappings you'd like. The changes take effect once you save
 the changes and trigger a reindex from Server Administration. If you need to add
 new custom mappings without overriding any defaults, use
 `additionalTypeMappings` instead.
-
-+$$$
-
-**Note:** There's actually a third way to add configuration options to the
-Elasticsearch adapter. You or your favorite developer can publish a Settings
-Contributor Component and deploy it to Liferay's OSGi runtime. A developer
-tutorial on Search Extension Points will be written for this. In summary, the
-contributor module needs these things:
-
--  A class that implements either
-`com.liferay.portal.search.elasticsearch.settings.SettingsContributor` or
-`com.liferay.portal.search.elasticsearch.settings.IndexSettingsContributor`.
-    -  If you're adding settings that would go into `additionalConfigurations`,
-    override `SettingsContributor`. 
-    -  If you want to add settings that would go into
-    `additionalIndexConfigurations` or `additionalTypeMappings`, implement
-    `IndexSettingsContributor`.
--  An OSGi Declarative Services `@Component` annotation for either of the
-    implementations mentioned in the last step.
-
-$$$
 
 ## Multi-line YAML Configurations [](id=multi-line-yaml-configurations)
 
