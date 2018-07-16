@@ -18,6 +18,18 @@ Liferay property keys are prefixed by:
 The mappings essentially flatten what is found in the XML descriptor. The
 property names resemble the original descriptor names. 
 
+This article covers these descriptor mappings:
+
+- [JSR-168 & JSR-286 Descriptor Mappings from `portlet.xml`](#jsr-168-jsr-286-descriptor-mappings)
+
+- [Liferay Descriptor Mappings](#liferay-descriptor-mappings)
+
+    - [From `liferay-display.xml`](#liferay-display)
+
+    - [From `liferay-portlet.xml`](#liferay-portlet)
+
+The standard portlet descriptor mappings are first. 
+
 ## JSR-168 & JSR-286 Descriptor Mappings [](id=jsr-168-jsr-286-descriptor-mappings)
 
 **Note:** XPath notation derived from the **Portlet XSD** [4](#four) is used in
