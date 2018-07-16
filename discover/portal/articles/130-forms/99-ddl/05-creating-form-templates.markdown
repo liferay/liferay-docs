@@ -1,7 +1,7 @@
 # Creating Form Templates [](id=creating-form-templates)
 
-Form templates let you control how the data entry form appears for a data 
-definition. Follow these steps to create a form template for a definition: 
+Form templates control how the data entry form appears for a data definition.
+Follow these steps to create a form template for a definition: 
 
 1.  Open the Menu 
     (![Menu](../../../images/icon-menu.png)) 

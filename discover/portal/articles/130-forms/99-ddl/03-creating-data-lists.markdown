@@ -1,6 +1,6 @@
 # Creating Data Lists [](id=creating-data-lists)
 
-There are 2 places from which you can create a new dynamic data list: 
+There are two places where dynamic data lists are created: 
 
 1.  **Site Administration:** Open the Menu 
     (![Menu](../../../images/icon-menu.png)) 
@@ -8,10 +8,10 @@ There are 2 places from which you can create a new dynamic data list:
     *Content* &rarr; *Dynamic Data Lists*. This opens the Dynamic Data Lists 
     screen. A table contains any existing lists. Click the *Add* button 
     (![Add](../../../images/icon-add.png)) 
-    to begin creating a list. This opens the *New List* form. 
+    to open *New List* form. 
 
-    To do this, you must have permission to access the Dynamic Data Lists app in 
-    Site Administration. 
+    To add Dynamic Data Lists, you must have permission to access the Dynamic
+    Data Lists app in Site Administration. 
 
 2.  **Dynamic Data Lists Display widget:** Navigate to the site page you want to 
     place this widget on, and add it to the page from *Add* 
@@ -26,11 +26,10 @@ List form are the same:
 
 1.  Give the list a name and a description. 
 
-2.  Select the list's data definition. To do this, click *Select* under the 
-    *Data Definition* field, then click the definition you want to use. 
+2.  Select the list's data definition: click *Select* under the *Data
+    Definition* field, then click the definition you want to use. 
 
-3.  If you want to use a workflow with this list, select it from the *Workflow* 
-    menu. 
+3.  To use a workflow with this list, select it from the *Workflow* menu. 
 
 4.  To change the list's default permissions, expand the form's *Permissions* 
     section and make your selections. 
@@ -51,11 +50,12 @@ these steps to give other users this permission as well:
     (![Actions](../../../images/icon-actions.png)) 
     &rarr; *Permissions* for the list you want to add the permission to. 
 
-3.  Select *Add Record* for the roles you want to have that permission, then 
-    click *Save*. 
+3.  Select *Add Record* for the roles you want to have that permission, then
+    click *Save*. Allow unauthenticated Users to add records by giving Guest the
+    Add Record permission.
 
-You can create new records in a list from the same places you can create the 
-lists themselves: 
+Create new records in a list from the same places you can create the lists
+themselves: 
 
 1.  **Site Administration:** In Site Administration, navigate to *Content* 
     &rarr; *Dynamic Data Lists*. Click a list in the table to view any existing 
@@ -104,13 +104,13 @@ and select *Configuration*. This opens the Configuration dialog, with the
     -   **Display Template:** The widget's display template.
     -   **Form Template:** The widget's form template. 
     -   **Editable:** Whether users can add records to the widget's list. 
-    -   **Form View:** Whether to display a form that users can use to create 
-        new records. Note that even without this selected, users can still add 
-        records via the widget's *Add* button 
-        (![Add](../../../images/icon-add.png)). 
-    -   **Spreadsheet View:** Whether to display each record in a row, with 
-        columns for the record attributes. 
+    -   **Form View:** Whether to display the Add Record form bey default,
+            instead of the List View. Note that even without this selected,
+            users can still add  records via the widget's *Add* button
+            (![Add](../../../images/icon-add.png)). 
+    -   **Spreadsheet View:** Whether the List View displays each record in a
+            row, with  columns for the record attributes. 
 
-When you're finished, click *Save* and close the Configuration dialog. 
+When finished, click *Save* and close the Configuration dialog. 
 
 ![Figure 3: The Dynamic Data Lists Display widget's optional configuration.](../../../images/ddl-widget-options.png)

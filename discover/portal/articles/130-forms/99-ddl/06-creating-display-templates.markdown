@@ -1,16 +1,17 @@
 # Creating Display Templates [](id=creating-display-templates)
 
-For every data definition, you can create as many displays as you need. If 
+For every data definition, you can create as many displays as you need. If
 you've created a form template that doesn't show all the fields of a particular
-data definition, you probably don't want to display those fields in the list, 
-either. 
+data definition in the data list's form view, you probably don't want to display
+those fields in the list view, either. Modify the list view using Display
+Templates. 
 
 +$$$
 
 **Note:** If you're familiar with 
 [web content templates](/discover/portal/-/knowledge_base/7-1/designing-web-content-with-templates), 
 display templates customize the display of a list in the same way. Display 
-templates can be written in FreeMarker or Velocity, pulling data from the data 
+templates are written in FreeMarker or Velocity, pulling data from the data 
 definition in the same way that web content templates pull data from their 
 structures. Also similar to web content templates, display templates can be 
 embedded in other display templates. This allows for reusable code, JS library 
@@ -80,8 +81,93 @@ display templates:
 2.  Click the widget's *Add Display Template* button. This opens the same form 
     as above for creating a display template for the list's definition. 
 
-<!-- 
-Per Russ, include a more detailed example of creating a template, when possible. 
-See example in the analogous 7.0.x article, and figure out which code isn't 
-specific to the cross-article Lunar Resort example in those docs. 
--->
+## Display Templae Editor
+
+Helper variables are available in the template editor. These provide access to
+most of the data that you'll use in creating Display Templates. The variables
+under the heading Data List Variables let you inject specific information about
+the data definition the template is being created for:
+
+    reserved_ddm_structure_id
+    
+    reserved_record_set_description
+    
+    reserved_record_set_id
+    
+    reserved_record_set_name
+
+    reserved_ddm_template_id
+
+Inside a template, these variables give the ID for the record set (that contains
+all of the volunteers in our list), as well as the name, description and data
+definition. 
+
+Display the list of records by retrieving them and assigning them to the handy
+`records` variable. Retrieve the list's records from `DDLDisplayTemplateHelper`,
+which contains these functions:
+
+    getDocumentLibraryPreviewURL
+
+    getHTMLContent
+
+    getLayoutFriendlyURL
+
+    getRecords
+
+    renderRecordFieldValue
+
+`DDLDisplayTemplateHelper` provides the ability to perform some common tasks
+without any difficulty. The `getRecords` method can be used to access all of a data
+definition's existing entries, and assigned to a `records` variable:: 
+
+    <#assign records = ddlDisplayTemplateHelper.getRecords(reserved_record_set_id)>
+
+This *fetches* the records of the data list the template is associated with. You
+haven't done anything with them yet, so your display is still empty. To list all
+the records, use the *Data List Records* helper in the sidebar of the template
+editor. Remember to place your cursor in the proper place in the template editor
+window, then click *Data List Records*. You'll see
+
+    <#if records?has_content>
+        <#list records as cur_record>
+            ${cur_record}
+        </#list>
+    </#if>
+
+appear wherever you placed your cursor. You might think you'll have a nicely
+formatted list of all the data records, but you won't. It will spit out
+everything in the database for the given data definition, which is ugly and
+practically useless:
+
+    {uuid=52c4ac1c-afe7-963c-49c6-5279b7030a99, recordId=35926, groupId=20126, 
+    companyId=20099, userId=20139, userName=Test Test, versionUserId=20139, 
+    versionUserName=Test Test, createDate=2018-07-16 14:31:51.056, 
+    modifiedDate=2018-07-16 14:31:51.058, DDMStorageId=35927, recordSetId=35922, 
+    recordSetVersion=1.0, version=1.0, displayIndex=0, lastPublishDate=null}
+
+Here's a simple example template that uses a list based on the embedded Contacts
+data definition, and just displays the Company Name and Email fields in a
+bulleted list:
+
+    <#assign records = ddlDisplayTemplateHelper.getRecords(reserved_record_set_id)>
+
+        <h1>Here are contacts by company name and email address.</h1>
+
+        <#if records?has_content>
+            <#list records as cur_record>
+                <ul>
+                    <li>
+                        <#-- The below gets the Company field and wraps it in an <em> tag -->
+                        Company Name: <em>${ddlDisplayTemplateHelper.renderRecordFieldValue(cur_record.getDDMFormFieldValues("company")?first, locale)}</em><br /> 
+                        <#-- The below gets the Email field  and wraps it in an <em> tag --> 
+                        Email: ${ddlDisplayTemplateHelper.renderRecordFieldValue(cur_record.getDDMFormFieldValues("email")?first, locale)} 
+                    </li> 
+                </ul> 
+            </#list> 
+        </#if>
+
+Here's what it looks like: 
+
+![Figure x: ](../../../images/ddl-contacts-template.png)
+
+Now you're prepared to make data lists beautiful using Diplay Templates.

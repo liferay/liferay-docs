@@ -35,14 +35,14 @@ for each definition. The following options are available:
     [documentation on templates](/discover/portal/-/knowledge_base/7-1/using-templates-to-display-forms-and-lists). 
 
 -   **Permissions:** Configure the data definition's permissions. Note that 
-    these permissions are for an individual definition accessed through the 
-    Dynamic Data Lists app in *Site Administration* &rarr; *Content* &rarr; 
-    *Dynamic Data Lists*. For example, if site members have View permission for 
-    a data definition, any site member who also has a role that can access the 
-    Dynamic Data Lists app and its data definitions can see this definition 
-    listed in the Manage Data Definitions screen. If you don't want this, 
-    deselect the View permission for Site Member, and site members won't see 
-    your data definition listed with the others. 
+    these permissions are for an individual definition accessed through the
+    Dynamic Data Lists application in *Site Administration* &rarr; *Content*
+    &rarr; *Dynamic Data Lists*. For example, if site members have View
+    permission for a data definition, any site member who also has a role that
+    can access the Dynamic Data Lists app and its data definitions can see this
+    definition listed in the Manage Data Definitions screen. If you don't want
+    this, deselect the View permission for Site Member, and site members won't
+    see your data definition listed with the others. 
 
 -   **Copy:** Opens the *Copy Data Definition* form, which lets you copy the 
     definition and its templates. In the form, give the copied definition a new 

@@ -14,21 +14,22 @@ To summarize:
 -   **Data Definitions:** Define a form's fields. 
 -   **Dynamic Data Lists:** Display a form based on a data definition. 
 
-You can use a single data definition to create multiple dynamic data lists. The 
-data that users enter in such dynamic data lists is kept separate. For instance, 
-you could use the example data definition above to create several dynamic data 
-lists, and then place them anywhere you need to get feedback from users. Because 
-each dynamic data list's form data is separate, you don't need to worry about 
-trying to figure out which dynamic data list the user comment came from. 
+Create one or multiple dynamic data lists from a single data definition. The
+user data entered for each dynamic data list is kept separate, even if the data
+definition is shared. For instance, you could use the example data definition
+above to create several dynamic data lists, and then place them anywhere you
+need to get feedback from users. Because each dynamic data list's form data is
+separate, you don't need to worry about trying to figure out which dynamic data
+list the user comment came from. 
 
-Dynamic data lists are also very flexible. You can create them, and data 
-definitions, without writing a single line of code. You create data definitions 
-and dynamic data lists in @product@'s UI. However, you can format a dynamic data 
-list with 
+Dynamic data lists are flexible. Creating data definitions and lists doesn't
+require any coding. Create data definitions and dynamic data lists in from the
+Site Menu's Content &rarr; Dynamic Data Lists application. However, additional
+formatting can be added with 
 [FreeMarker](https://freemarker.apache.org/) 
-templates if you so choose. And you don't have to restrict dynamic data lists to 
-simple input. You could create something as complex as an entire data entry 
-system for real estate listings. 
+templates. And you don't have to restrict dynamic data lists to simple input.
+You could create something as complex as an entire data entry system for real
+estate listings, or any other simple list-based application you can think of.
 
 This section of articles shows you how to create and use data definitions and 
 dynamic data lists. You'll cover these topics: 

@@ -10,10 +10,9 @@ Follow these steps to create a data definition:
 
 2.  Click the *Options* button at the top-right 
     (![Options](../../../images/icon-options.png)) 
-    and select *Manage Data Definitions*. The Data Definitions screen appears. A 
-    table lists any existing data definitions. By default, @product@ contains 
-    several predefined data definitions for common use cases like contacts, 
-    events, inventory, and more. 
+    and select *Manage Data Definitions*. The Data Definitions screen appears. A
+    table lists any existing data definitions. Several definitions are embedded
+    for common use cases like contacts, events, inventory, and more. 
 
     ![Figure 1: The Data Definitions screen.](../../../images/ddl-definitions.png)
 
@@ -27,49 +26,39 @@ Follow these steps to create a data definition:
     definition. Then expand the *Details* section of the form and give it a 
     description. 
 
-5.  The Details section of the form also contains the field 
-    *Parent Data Definition*. This optional field lets you select an existing 
-    data definition (the parent) to form the basis of the new one (the child). 
-    The child definition inherits the parent's fields and settings, which you 
-    can then add to. When you create a dynamic data list from a child 
-    definition, it includes the fields of the parent and child definitions. This 
-    lets you use a common definition (the parent) as the basis of a specialized 
-    definition (the child). For example, if you were planning a rock climbing 
-    trip, you could use the default Events definition as the parent of a Rock 
-    Climbing Trip definition that contains fields unique to rock climbing (e.g., 
-    climbing equipment availability, altitude, etc.). 
+5.  The Details section of the form also contains the field *Parent Data
+    Definition*. This optional field lets you select an existing data definition
+    (the parent) to form the basis of the new one (the child). The child
+    definition inherits the parent's fields and settings, which you can then add
+    to. When you create a dynamic data list from a child definition, it includes
+    the fields of the parent and child definitions. This lets you use a common
+    definition (the parent) as the basis of a specialized definition (the
+    child). For example, if you were planning a rock climbing trip, you could
+    use the default Events definition as the parent of a Rock Climbing Trip
+    definition that contains fields unique to rock climbing (e.g., climbing
+    equipment availability, altitude, etc.). 
 
-    To choose a parent definition, click the *Select* button below the 
-    *Parent Data Definition* field and then select an existing definition in the 
-    dialog that appears. 
+    To choose a parent definition, click the *Select* button below the *Parent
+    Data Definition* field and then select an existing definition in the dialog
+    that appears. 
 
     ![Figure 2: After naming your data definition, expand the Details section of the form and give your definition a description and parent definition, if desired.](../../../images/ddl-definition-form-01.png)
 
-6.  Add the data definition's fields. You'll do this in the data definition 
-    designer, which is below the form's Details section. The designer's *View* 
-    tab, which is selected by default, lets you create the definition in a 
-    WYSIWYG editor. You can click the *Source* tab to work with the definition's 
-    underlying XML, but we recommend sticking with the WYSIWYG editor. 
+6.  Add the data definition's fields in the data definition designer, which is
+    below the form's Details section. The designer's *View* tab, which is
+    selected by default, lets you create the definition in a WYSIWYG editor. You
+    can click the *Source* tab to work with the definition's underlying XML, but
+    it's much easier to stick with the WYSIWYG editor. 
 
-    With the *View* tab selected, select the *Fields* tab within it. Icons 
-    representing the field types are listed on one side and the data 
-    definition's canvas is on the other side. To add a field type to the 
-    definition, select its icon, drag, and drop it onto the canvas. By dragging 
-    a field onto a field that's already on the canvas, you can nest the new 
-    field in the existing field. When you mouse over a field on the canvas, the 
-    field action icons 
+    In the *View* tab select the *Fields* tab. Icons representing the field
+    types are listed on one side and the data definition's canvas is on the
+    other side. To add a field type to the definition, select its icon, drag,
+    and drop it onto the canvas. By dragging a field onto a field that's already
+    on the canvas, you can nest the new field in the existing field. When you
+    mouse over a field on the canvas, the field action icons 
     (![Icons](../../../images/icon-ddl-actions.png)) 
     appear. Clicking the *+* icon creates a duplicate of the current field and
     adds it below the current field. Clicking the trash can deletes the field. 
-
-    +$$$
-
-    **NOTE:** When you nest fields, they will not appear when the list entries
-    are displayed with the default display template. For more information about
-    templates, see the documentation on 
-    [Using Templates to Display Forms and Lists](/discover/portal/-/knowledge_base/7-1/using-templates-to-display-forms-and-lists). 
-
-    $$$
 
     The following fields are available:
 
@@ -101,19 +90,17 @@ Follow these steps to create a data definition:
 
     ![Figure 3: Use the data definition designer to add fields to the data definition.](../../../images/ddl-data-definition-designer.png)
 
-7.  Edit your fields to reflect their intended data. For example, a text field's 
-    default label is *Text*. If you want to use the text field as a title, for 
-    instance, then you should change the field's label to *Title*. To do this, 
-    first select the field on the canvas. This automatically selects the 
-    *Settings* tab on the left. Alternatively, you can access the Settings tab 
-    by clicking the field's wrench icon. To edit a setting value, double-click 
-    it in the Settings table and enter the new value. The available settings are 
-    listed below. 
+7.  Edit field labels to reflect their intended data. A text field's default
+    label is *Text*. To use the text field as a title, then you should change
+    the field's label to *Title*. First select the field on the canvas. This
+    automatically selects the *Settings* tab on the left. Alternatively, you
+    can access the Settings tab by clicking the field's wrench icon. To edit a
+    setting value, double-click it in the Settings table and enter the new
+    value. The available settings are listed below. 
 
-    Also note that you can translate each of a data definition's field values to 
-    any supported locales. To specify a field value for a translation, select 
-    the flag that represents the locale and enter the field value for the 
-    locale. 
+    You can translate each of a data definition's field values to any supported
+    locales. To specify a field value for a translation, select the flag that
+    represents the locale and enter the field value for the locale. 
 
     The following field settings are available. Note that some of these settings 
     are only available for specific field types:
@@ -143,5 +130,5 @@ Follow these steps to create a data definition:
 
     ![Figure 4: Configure the settings for each field in your data definition.](../../../images/ddl-data-definition-settings.png)
 
-8.  Click *Save* when you're done. Your new data definition then appears in the 
-    table with any others. 
+8.  Click *Save* when you're done. Your new data definition then appears in the
+    table with the pre-defined ones and any you've already added. 
