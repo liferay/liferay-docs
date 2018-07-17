@@ -1,23 +1,20 @@
 # JSON Web Services Invoker
 
-To use JSON web services, you send a request that defines a service method and 
-parameters, and you receive the result as a JSON object. As straightforward as 
-this seems, it can be improved. In this tutorial, you'll learn how to use JSON 
-web services more efficiently and pragmatically. 
+With JSON web services, you send a request to a service method with parameters,
+and you receive the result as a JSON object. As straightforward as this seems,
+it can be improved. In this tutorial, you'll learn how. 
 
-Consider the following example. You're working with two related objects: a
-`User` and its corresponding `Contact`. With simple JSON web service calls, you
-first call the user service to get the user object, and then you use that 
-object's contact ID to call the contact service. You end up sending two HTTP
-requests to get two JSON objects that aren't even bound together. There's no
-contact information in the user object (i.e. no `user.contact`). This approach
-is suboptimal with respect to performance (sending two HTTP calls) and usability
+Say you're working with two related objects: a `User` and its corresponding
+`Contact`. Normally you first call the user service to get the user object, and
+then you use that object's contact ID to call the contact service. This sends
+two HTTP requests to get two separate JSON objects. There's no contact
+information in the user object (i.e. no `user.contact`). This approach is
+suboptimal with respect to performance (sending two HTTP calls) and usability
 (manually managing the relationship between two objects). It'd be nicer if you
 had a tool to address these inefficiencies. Fortunately, the JSON Web Service
 Invoker does just that! 
 
-Liferay's JSON Web Service Invoker helps optimize your JSON Web Services use. In 
-the following sections, you'll learn how. 
+Liferay's JSON Web Service Invoker helps optimize your JSON Web Services use. 
 
 ## Simple Invoker Calls
 
@@ -25,9 +22,9 @@ The Invoker is accessible from the following fixed address:
 
     http://[address]:[port]/api/jsonws/invoke
 
-It only accepts a `cmd` request parameter--this is the Invoker's command. If the
-command request parameter is missing, the request body is used as the command.
-So you can specify the command by either using the request parameter `cmd` or
+It only accepts a `cmd` request parameter---this is the Invoker's command. If
+the command request parameter is missing, the request body is used as the
+command. So you can specify the command by using the request parameter `cmd` or
 the request body. 
 
 The Invoker command is a plain JSON map that describes how JSON web services are
@@ -45,23 +42,27 @@ The service call is defined as a JSON map. The key specifies the service URL
 (i.e. the service method to be invoked) and the key's value specifies a map of
 service parameter names (i.e. `userId` and `param1`) and their values. In the
 example above, the retrieved user is returned as a JSON object. Since the
-command is a JSON string, null values can be specified either by explicitly
-using the `null` keyword or by placing a dash before the parameter name and 
-leaving the value empty (e.g. `"-param1": ''`).
+command is a JSON string, null values can be specified by explicitly using the
+`null` keyword or by placing a dash before the parameter name and leaving the
+value empty (e.g. `"-param1": ''`).
 
 The example Invoker calls functions exactly the same way as the following
 standard JSON Web Service call: 
 
     /user/get-user-by-id?userId=123&-param1
 
-Next, suppose that you're running Liferay locally on port `8080`. Consider the
-following example of a real Liferay JSON web service invoker call. Suppose that
-you're signed in to Liferay as the default admin user whose email address is
-`test@liferay.com` and whose user ID is `20127`. And suppose that the value of
-your `p_auth` authentication token is `htXjvt5d`. You can then invoke the 
-following URL to obtain a JSON representation of your user object: 
+If you're running Liferay locally on port `8080`, here's how you invoke a JSON
+web service: 
 
-    http://localhost:8080/api/jsonws/invoke?cmd={%22/user/get-user-by-id%22:{%22userId%22:20172}}&p_auth=htXjvt5d
+1.  Collect your credentials. Here's an example: 
+
+    - Email: `test@liferay.com` 
+    - User ID: `20127`
+    - Authorization Token: `htXjvt5d`
+
+2.  Invoke the service: 
+
+        http://localhost:8080/api/jsonws/invoke?cmd={%22/user/get-user-by-id%22:{%22userId%22:20172}}&p_auth=htXjvt5d
 
 This URL uses the following JSON map. Note that it's supplied in the URL by 
 using the `cmd` URL parameter:
@@ -72,22 +73,21 @@ using the `cmd` URL parameter:
         }
     }
 
-Note in the URL that the double quotes are URL-encoded. Also, if you're not sure 
-what your user ID is, you can find it in the User Menu under *My Account* &rarr; 
-*Account Settings*. If you're not sure what the value of your `p_auth` 
-authentication token is, navigate to
-[Liferay's JSON web services API page](http://localhost:8080/api/jsonws) and
-click on any method in the list. The value of your `p_auth` token appears under
-the Execute heading along with any other parameters of the selected API method. 
+In the URL, the double quotes are URL-encoded. To find your user ID, check the
+User Menu under *My Account* &rarr; *Account Settings*. To find your `p_auth`
+authentication token, navigate to 
+[Liferay's JSON web services API page](http://localhost:8080/api/jsonws) 
+and click on any method in the list. The value of your `p_auth` token appears
+under the Execute heading along with any other parameters of the selected API
+method. 
 
-You can use JSON syntax for supplying values for objects and arrays that you
-need to supply as parameters. To supply a value for an object, use curly
-brackets: `{` and `}`. To supply a value for an array, use square brackets: `[`
-and `]`. Suppose as before that you're signed in to Liferay as an admin user and
-that the value of your `p_auth` authentication token is `htXjvt5d`. Furthermore,
-suppose that two vocabularies have been created with vocabulary IDs of `20783`
-and `20784`. Here's a Liferay JSON web service invoker example that demonstrates 
-how to pass an array as a parameter:
+Use JSON syntax to supply values for objects and arrays as parameters. To supply
+a value for an object, use curly brackets: `{` and `}`. To supply a value for an
+array, use square brackets: `[` and `]`. 
+
+If you want to pass an array as a parameter using the same credential token as
+above, here's an example how, using two vocabularies with vocabulary IDs of
+`20783` and `20784`:
 
     http://localhost:8080/api/jsonws/invoke?cmd={%22/assetvocabulary/get-vocabularies%22:{%22vocabularyIds%22:[20783,20784]}}&p_auth=htXjvt5d
 
@@ -99,7 +99,7 @@ This URL uses the following JSON map:
         }
     }
 
-As before, the double quotes in the URL are URL-encoded. Also, the 
+As before, the double quotes in the URL are URL-encoded. Also, the
 `vocabularyIds` parameter is an array, so its value is supplied as a JSON array.
 
 Finally, here's one more Liferay JSON web service invoker example that
@@ -234,20 +234,18 @@ from your web service call. Here's how you whitelist the properties you need:
 
 In this example, the returned user object has only the `firstName` and
 `emailAddress` properties (it still has the `contact` property, too). To specify 
-whitelist properties, you simply place the properties in square brackets (e.g., 
+whitelist properties, place the properties in square brackets (e.g.,
 `[whiteList]`) immediately following the name of your variable. 
 
 Next, you'll learn about making calls in batch. 
 
 ## Making Batch Calls
 
-When nesting service calls, the intent is to invoke multiple services with a 
-single HTTP request. Using a single request for multiple service calls is 
-helpful for gathering related information from the service call results, but it
-can also be advantageous to use a single request to invoke multiple unrelated
-service calls. The Invoker lets you batch service calls together to improve
-performance. It's simple: just pass in a JSON array of commands using the
-following format: 
+When nesting service calls, you invoke multiple services with a single HTTP
+request. This is helpful for gathering related information from the service call
+results, but it you can also use a single request to invoke multiple unrelated
+service calls by batching service calls together to improve performance. Do this
+by passing in a JSON array of commands: 
 
     [
         {/* first command */},
