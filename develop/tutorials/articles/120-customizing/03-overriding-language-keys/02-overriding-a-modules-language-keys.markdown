@@ -192,7 +192,7 @@ The setter method `setResourceBundleLoader` assigns an aggregate of this class's
 resource bundle loader and the target resource bundle loader to the
 `_resourceBundleLoader` field. 
         
-    @Reference(target = "(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
+    @Reference(target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
     )
     public void setResourceBundleLoader(
         ResourceBundleLoader resourceBundleLoader) {
@@ -229,6 +229,7 @@ Resource bundle loader components have these class imports.
     import com.liferay.portal.kernel.util.ClassResourceBundleLoader;
     import com.liferay.portal.kernel.util.ResourceBundleLoader;
 
+    import java.util.Locale;
     import java.util.ResourceBundle;
 
     import org.osgi.service.component.annotations.Component;
