@@ -109,4 +109,4 @@ Here are the actions you can take on the selected items:
 -   Move to Recycle Bin (![Delete](../../../../images/icon-trash.png))
 
 File checkout and checkin is explained in 
-[Collaborating on Files](/discover/portal/-/knowledge_base/7-1/collaborating-on-files). 
+[Checking out and Editing Files](/discover/portal/-/knowledge_base/7-1/checking-out-and-editing-files). 

@@ -323,7 +323,7 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
         </liferay-util:html-top>
     
     You can learn more about using the `liferay-util` taglibs in the tutorial 
-    [Using the Liferay Util Taglib](/develop/tutorials/-/knowledge_base/7-1/using-the-liferay-util-taglib). 
+    [Using the Liferay Util Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-util-taglib). 
 
 3.  This snippet creates the UI to display the layout entities. It uses the 
     [`liferay-layout:layouts-tree` taglib](@platform-ref@/7.0-latest/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/layouts-tree.html) 

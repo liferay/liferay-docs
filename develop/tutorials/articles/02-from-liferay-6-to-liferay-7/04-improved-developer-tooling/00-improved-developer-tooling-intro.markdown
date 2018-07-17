@@ -35,11 +35,11 @@ to create modules for developing in any Gradle or Maven environment.
 Liferay's tools also streamline the application upgrade process. Liferay @ide@'s
 [Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 adapts traditional plugins to @product-ver@ APIs. The
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
 tool
-[migrates](/develop/tutorials/-/knowledge_base/7-1/migrating-a-6-2-theme-to-liferay-7)
+[migrates](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
 themes and layout templates to the new Node.js-based environment and
-[adapts](/develop/tutorials/-/knowledge_base/7-1/upgrading-themes#running-the-upgrade-task-for-themes-generator-themes)
+[adapts](/develop/tutorials/-/knowledge_base/7-1/upgrading-themes-intro) 
 them to @product-ver@.
 
 Here are the tooling improvement topics:

@@ -2,7 +2,7 @@
 
 **NOTE:** This article is for users who know how Liferay AMD Loader works under 
 the hood. You can learn more about Liferay AMD Loader in the 
-[Liferay AMD Module Loader](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/liferay-amd-module-loader) 
+[Liferay AMD Module Loader](/develop/tutorials/-/knowledge_base/7-1/loading-amd-modules-in-liferay) 
 tutorial.
 
 With [de-duplication](/develop/reference/-/knowledge_base/7-1/how-liferay-portal-publishes-npm-packages#package-deduplication) 

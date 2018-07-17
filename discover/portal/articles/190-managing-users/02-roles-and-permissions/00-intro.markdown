@@ -47,9 +47,9 @@ Team
 : Permissions are defined within a specific Site and are assigned within that
 specific Site.
 
-Read 
-[here](/discover/portal/-/knowledge_base/7-1/creating-teams-for-advanced-site-membership-management) 
-for more information about Teams.
+<!-- Read 
+/discover/portal/-/knowledge_base/7-1/creating-teams-for-advanced-site-membership-management) 
+for more information about Teams. -->
 
 ## Deleting Asset Containers [](id=deleting-asset-containers)
 

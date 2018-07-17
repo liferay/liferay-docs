@@ -63,7 +63,7 @@ these property-related updates:
     [migrate the Image Gallery](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images).
 
 -   If you have a sharded environment,
-    [configure your upgrade for sharding](/discover/deployment/-/knowledge_base/7-1/upgrading-sharded-environment).
+    [configure your upgrade for sharding](/discover/deployment/-/knowledge_base/7-0/upgrading-sharded-environment).
 
 When a new version of @product@ is released, there are often changes to default
 settings, and this release is no different. If you rely on the defaults from
@@ -101,7 +101,7 @@ provide property details and examples.
 ## Step 5: Configuring Your Documents and Media File Store [](id=configuring-your-documents-and-media-file-store)
 
 Your next task is to review your Documents and Media configuration. Look at
-[Document Library documentation](/discover/portal/-/knowledge_base/7-1/liferay-repository-types)
+[Document Library documentation](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
 to see all the options in @product-ver@ before executing an upgrade process.
 There are, however, two important pieces of configuration that have changed: 
 
@@ -114,14 +114,16 @@ There are, however, two important pieces of configuration that have changed:
 
 If you use the default store but don't want to store the files in the default
 location (`[Liferay Home]/data/document_library`), you must create a file called
-`com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg`
+`com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.config`
 in your `[Liferay Home]/osgi/configs` folder and add the following content:
 
-    rootDir={document_library_path}
+    rootDir="{document_library_path}"
+
+Replace `{document_library_path}` with the path to your document library. 
 
 If you use the Advanced File System Store method to persist document library
 files, you'd call that file
-`com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`.
+`com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.config`.
 
 The configuration file name must match the name of the class that implements the
 configuration. 
@@ -135,7 +137,7 @@ provides more information.
 Next,
 [install @product@ on your application server](/discover/deployment/-/knowledge_base/7-1/deploying-product)
 or
-[use @product@ bundled with your application server of choice](/discover/deployment/-/knowledge_base/7-1/installing-product).
+[use @product@ bundled with your application server of choice](/discover/deployment/-/knowledge_base/7-1/installing-liferay).
 
 **Important**: Once you have installed @product-ver@, **DON'T START IT!** In
 previous versions, once you prepared your system for an upgrade, the upgrade
@@ -163,10 +165,10 @@ indexing to prevent upgrade process performance issues that arise when the
 indexer attempts to reindex content. 
 
 To disable indexing, create a file called
-`com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.cfg` in
-your `[Liferay Home]/osgi/configs` folder and add the following content: 
+`com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config`
+in your `[Liferay Home]/osgi/configs` folder and add the following content: 
 
-    indexReadOnly=true
+    indexReadOnly="true"
 
 After you complete the upgrade (described in the next article), re-enable
 indexing by setting this property to `false`. 

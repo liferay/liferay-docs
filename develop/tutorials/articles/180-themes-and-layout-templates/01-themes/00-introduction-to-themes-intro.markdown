@@ -15,11 +15,16 @@ or
 [Theme Template](/develop/reference/-/knowledge_base/7-1/theme-template) 
 to create themes.
 
-Themes created with the Liferay Theme Generator give you access to 
-[theme gulp tasks](/develop/reference/-/knowledge_base/7-1/theme-gulp-tasks) 
-that offer basic functions, such as `build` and `deploy`, as well as 
-more complex interactions, such as auto deploying when a change is made and 
-setting the base theme.
+Themes created with the Liferay Theme Generator give you access to several 
+[theme gulp tasks](/develop/reference/-/knowledge_base/7-1/developing-themes) 
+that offer basic functions, such as 
+[`build`](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files) 
+and 
+[`deploy`](/develop/tutorials/-/knowledge_base/7-1/deploying-your-theme), 
+as well as more complex interactions, such as 
+[auto deploying when a change is made](/develop/tutorials/-/knowledge_base/7-1/automatically-deploying-theme-changes) 
+and 
+[setting the base theme](/develop/tutorials/-/knowledge_base/7-1/changing-your-base-theme).
 
 What if you only wish to make a minor change to the overall look and feel? Let's
 say you just want to change a menu animation. Instead of creating an entire

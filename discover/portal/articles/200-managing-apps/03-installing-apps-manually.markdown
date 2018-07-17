@@ -31,7 +31,7 @@ the dialog and you're ready to roll!
 
 ## Using Your File System to Install Apps [](id=using-your-file-system-to-install-apps)
 
-To install an app manually on the @product server, put the app in the `[Liferay
+To install an app manually on the @product@ server, put the app in the `[Liferay
 Home]/deploy` folder (the Liferay Home folder is typically the app server's
 parent folder). That's it. The auto deploy mechanism takes care of the rest. 
 

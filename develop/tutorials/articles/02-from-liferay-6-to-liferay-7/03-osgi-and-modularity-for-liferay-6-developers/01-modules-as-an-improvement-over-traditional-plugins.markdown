@@ -9,14 +9,14 @@ from all @product@ and OSGi offer, however, you should use OSGi modules.
 Modules offer these benefits:
 
 - **Better Encapsulation** - The only classes a module exposes publicly are
-those in [packages it exports](/develop/reference/-/knowledge_base/7-1/exporting-packages)
+those in [packages it exports](/develop/tutorials/-/knowledge_base/7-1/exporting-packages)
 explicitly. This lets you define internal public classes transparent to
 external clients.
 
 - **Dependencies by Package** - Dependencies are specified by Java package, not
 by JAR file. In traditional plugins, you had to add *all* of a JAR file's
 classes to the classpath to use *any* of its classes. With OSGi, you need only
-[import packages](/develop/reference/-/knowledge_base/7-1/importing-packages)
+[import packages](/develop/tutorials/-/knowledge_base/7-1/importing-packages)
 containing the classes you need. Only the classes in those packages are added to
 the module's classpath.
 

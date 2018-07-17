@@ -113,9 +113,9 @@ these directories into your theme:
     frontend-theme-classic/src/js
     frontend-theme-classic/src/templates
 
-You can also automatically copy these files into your theme using the 
-[Liferay Theme Tasks](/develop/reference/-/knowledge_base/7-1/theme-gulp-tasks) 
-`gulp kickstart` command and following the prompts.
+You can also automatically 
+[copy these files into your theme](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files) 
+using the `gulp kickstart` command and following the prompts. 
 
 Next you can learn how to customize the Clay Base.
 

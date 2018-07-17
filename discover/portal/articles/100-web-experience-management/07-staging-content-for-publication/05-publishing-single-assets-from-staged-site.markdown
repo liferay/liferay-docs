@@ -28,6 +28,9 @@ respective app menus:
     - Bookmark
     - Folder
 
+**Important:** Single asset publication is not supported for page-scoped
+content.
+
 +$$$
 
 **Note:** When publishing a Web Content or Bookmarks folder, their respective
@@ -75,4 +78,19 @@ are all published together. The same concept applies for folders---if you
 publish a folder containing several web content articles, all the articles and
 their associated dependencies are published too.
 
-Great! Now you know how to publish single assets.
+By default, only those with permissions to publish widgets can publish single
+assets. Follow the steps below to modify these permissions for a Role:
+
+1.  Navigate to the Control Panel &rarr; *Users* &rarr; *Roles*.
+
+2.  Select the Role you're updating.
+
+3.  Click the *Define Permissions* tab.
+
+4.  In the left menu, navigate to *Control Panel* &rarr; *Sites* &rarr; *Sites*.
+
+5.  Under the Resource Permissions heading, select the *Export/Import
+    Application Info* option.
+
+Great! Now you know how to publish single assets and manage the permissions for
+who can do it.

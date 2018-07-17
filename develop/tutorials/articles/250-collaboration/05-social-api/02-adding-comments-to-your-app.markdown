@@ -61,7 +61,7 @@ These steps use a sample Guestbook app as an example:
         </liferay-ui:panel-container>
 
 If you haven't already connected your portlet's view to the JSP for your entity,
-[see the tutorial on relating assets](/develop/tutorials/-/knowledge_base/7-1/relating-assets#creating-a-url-to-your-new-jsp).
+[see the tutorial on Configuring JSP Templates](/develop/tutorials/-/knowledge_base/7-1/configuring-jsp-templates-for-an-asset-renderer).
 
 Great! Now you know how to let users comment on content in your asset enabled
 portlets.

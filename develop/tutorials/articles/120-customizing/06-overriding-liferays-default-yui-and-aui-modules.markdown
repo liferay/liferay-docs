@@ -1,9 +1,7 @@
 # Overriding @product@'s Default YUI and AUI Modules [](id=overriding-liferays-default-yui-and-aui-modules)
 
 @product@ contains several default YUI/AUI modules. You may need to override
-functionality provided by these module's scripts. It's possible to 
-[override JSPs using fragments](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-jsps),
-but you can't override JavaScript files with fragments. Instead, you must create 
+functionality provided by these module's scripts. To do this, you must create 
 a custom AUI module containing three things:
 
 - A copy of the original module's JavaScript file containing your modifications
@@ -25,11 +23,11 @@ Follow these steps:
 3.  Apply your modifications and save the file.
 
 4.  Next, 
-    [write your module's configuration file](/develop/tutorials/-/knowledge_base/7-1/configuring-modules-for-products-loaders#writing-the-configuration-file)
+    [write your module's configuration file](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders#writing-the-configuration-file)
     (`config.js`) to apply your override. Add the `config.js` file to the
     module's `src/main/resources/META-INF/resources/js` folder. The example
     `config.js` file below specifies the `condition` that the 
-    [YUI/AUI Loader](/develop/tutorials/-/knowledge_base/7-1/configuring-modules-for-products-loaders#writing-the-configuration-file)
+    [YUI/AUI Loader](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders#writing-the-configuration-file)
     should load the custom AUI module (`liferay-session-override`) `instead`
     (indicated with the `when` property) of the `trigger` module
     (`liferay-session`). You can follow this same pattern to create your
@@ -78,8 +76,4 @@ Now you know how to override @product@'s default YUI/AUI modules!
 
 ## Related Topics [](id=related-topics)
 
-[Overriding Core JSPs](/develop/tutorials/-/knowledge_base/7-1/overriding-core-jsps)
-
-[Overriding App JSPs](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-jsps)
-
-[Configuring Modules for @product@'s Module Loaders](/develop/tutorials/-/knowledge_base/7-1/configuring-modules-for-products-loaders)
+[Customizing JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)

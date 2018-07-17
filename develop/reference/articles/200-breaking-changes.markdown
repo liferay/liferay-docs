@@ -135,7 +135,7 @@ settings there.
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-1)
 
@@ -186,7 +186,7 @@ navigating to Liferay Portal's *Control Panel* &rarr; *Configuration* &rarr;
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-2)
 
@@ -224,7 +224,7 @@ settings there.
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-3)
 
@@ -296,7 +296,7 @@ there.
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-5)
 
@@ -333,7 +333,7 @@ Settings* &rarr; *Collaboration* &rarr; *Documents & Media Service* or
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-6a)
 
@@ -535,7 +535,7 @@ the settings there.
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-your-applications-configurable).
+[making your applications configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-10)
 
@@ -791,6 +791,43 @@ This change helps stabilize the foundation of Liferay Portal's utilities.
 
 ---------------------------------------
 
+### Changed the From Last Publish Date Option in Staging [](id=changed-the-from-last-publish-date-option-in-staging)
+- **Date:** 2018-Jun-06
+- **JIRA Ticket:** [LPS-81695](https://issues.liferay.com/browse/LPS-81695)
+
+#### What changed? [](id=what-changed-15a)
+
+The *From Last Publish Date* option used in the publication process has
+programmatically changed.
+
+#### Who is affected? [](id=who-is-affected-15a)
+
+This affects anyone who implemented Staging support for their custom entities.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-15a)
+
+You must create a `*StagingModelListener` class for your custom entity, which
+extends the
+[`com.liferay.portal.kernel.model.BaseModelListener`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/BaseModelListener.html).
+You can examine the
+[`BlogsEntryStagingModelListener`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/internal/model/listener/BlogsEntryStagingModelListener.java)
+class as an example.
+
+You must also update the `doPrepareManifestSummary` method in your custom
+`*PortletDataHandler` to use the `populateLastPublishDateCounts` method from the
+[`com.liferay.exportimport.internal.staging.StagingImpl`](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staging/StagingImpl.html),
+in case of a *From Last Publish Date* publication. See the
+[`BlogsPortletDataHandler`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/blogs/blogs-web/src/main/java/com/liferay/blogs/web/internal/exportimport/data/handler/BlogsPortletDataHandler.java)
+as an example.
+
+#### Why was this change made? [](id=why-was-this-change-made-15a)
+
+It was hard to collect which entities should be published to the live site.
+Instead of running queries to find the contents that were modified since the
+last publication, now changesets are used to track this information.
+
+---------------------------------------
+
 ### Decoupled Several Classes from PortletURLImpl [](id=decoupled-several-classes-from-portleturlimpl)
 - **Date:** 2018-Jun-08
 - **JIRA Ticket:** [LPS-82119](https://issues.liferay.com/browse/LPS-82119)
@@ -836,5 +873,70 @@ to
 
 This change corrects a best practice violation regarding
 implementation-specific details being included within an API.
+
+---------------------------------------
+
+### Changed the Request Object in Web Content Templates [](id=changed-the-request-object-in-web-content-templates)
+- **Date:** 2018-Jun-12
+- **JIRA Ticket:** LPS-77766
+
+#### What changed? [](id=what-changed-16)
+
+The request object is no longer accessible as a map, but rather, as an object of
+type `javax.servlet.http.HttpServletRequest`.
+
+#### Who is affected? [](id=who-is-affected-16)
+
+This affects users with Web Content templates that access request parameters
+as a map like this:
+
+    <#assign containerId = request["theme-display"]["portlet-display"]["instance-id"] >
+
+#### How should I update my code? [](id=how-should-i-update-my-code-16)
+
+To keep retrieving the request parameter values as a map, `requestMap` must be
+used instead:
+
+    <#assign containerId = requestMap["theme-display"]["portlet-display"]["instance-id"] >
+
+#### Why was this change made? [](id=why-was-this-change-made-16)
+
+This was done to allow template context contributors to work in Web Content
+templates.
+
+---------------------------------------
+
+### Disabled Access to Gogo Shell Using Telnet [](id=disabled-access-to-gogo-shell-using-telnet)
+- **Date:** 2018-Jun-25
+- **JIRA Ticket:** [LPS-82849](https://issues.liferay.com/browse/LPS-82849)
+
+#### What changed? [](id=what-changed-17)
+
+The ability to access and interact with Liferay Portal's OSGi framework using
+the Gogo shell via your system's telnet client has been disabled.
+
+#### Who is affected? [](id=who-is-affected-17)
+
+This affects anyone who used their system's telnet client to access the Gogo
+shell, or leveraged the Gogo shell in external plugins/tooling using the telnet
+client.
+
+#### How should I update my code? [](id=how-should-i-update-my-code-17)
+
+Liferay Portal now offers the Gogo Shell portlet, which you can access in the
+Control Panel &rarr; *Configuration* &rarr; *Gogo Shell*.
+
+If you prefer using your telnet client to access the Gogo shell, you must enable
+Developer Mode. You can do this by creating a `portal-ext.properties` file in
+your Liferay home folder and adding the following property:
+
+    include-and-override=portal-developer.properties
+
+Developer Mode is enabled upon starting your app server.
+
+#### Why was this change made? [](id=why-was-this-change-made-17)
+
+This was done to strengthen Liferay Portal's security due to potential XXE/SSRF
+vulnerabilities.
 
 ---------------------------------------
