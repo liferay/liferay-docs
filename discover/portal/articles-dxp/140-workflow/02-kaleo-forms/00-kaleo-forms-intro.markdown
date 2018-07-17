@@ -8,14 +8,14 @@ completion, when each interested party has seen and manipulated the data. To
 write an app for each of these fluid processes is laborious and not cost
 effective. Instead, a tool for quickly defining a process to suit each use case
 is needed. The process architect must define the data that gets collected and
-define the process the data must move through to reach its final state. To
-accomplish this, @product@ already includes the 
+the process the data moves through to reach its final state. To accomplish this,
+@product@ already includes the 
 [Dynamic Data Lists application](/discover/portal/-/knowledge_base/7-1/creating-data-definitions)
-for defining forms, and the [Kaleo Designer
-application](/discover/portal/-/knowledge_base/7-1/kaleo-designer) for designing
-workflows. The Kaleo Forms solution combines the features of these applications,
-letting you design an integrated process for sending forms through a workflow in
-one intuitive UI.
+for defining forms, and the 
+[Kaleo Designer application](/discover/portal/-/knowledge_base/7-1/kaleo-designer) 
+for designing workflows. The Kaleo Forms solution combines the features of these
+applications, letting you design an integrated process for sending forms through
+a workflow in one intuitive UI.
 
 The entire process includes:
 
@@ -60,5 +60,4 @@ $$$
 
 Since Kaleo Forms is accessed through a site's administration menu (under
 Content &rarr; Kaleo Forms Admin), make sure the intended users of your Kaleo
-Processes have access to the application. See the article on [roles and permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) if
-you're unsure how that works.
+Processes have access to the application. See the article on [roles and permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) if you're unsure how that works.
