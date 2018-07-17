@@ -1,6 +1,6 @@
 # Web Content Analytics [](id=web-content-analytics)
 
-[Web Content Articles](/discover/portal/-/knowledge_base/7-1/web-content) 
+[Web Content Articles](/discover/portal/-/knowledge_base/7-1/introduction-web-content) 
 are important assets for presenting site visitors with information.  Analytics
 Cloud gives you important insights into how site users are engaging with your
 content.

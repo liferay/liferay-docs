@@ -6,7 +6,7 @@ implementations to be swapped out or removed entirely, and your module must not
 just survive but thrive in this environment. 
 
 If you 
-[call services](/develop/tutorials/-/knowledge_base/7-1/finding-and-invoking-liferay-services)
+[call services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
 from `@Component` classes, it's easy: you just use another 
 [Declarative Services (DS)](https://osgi.org/specification/osgi.cmpn/7.0.0/service.component.html)
 annotation, `@Reference`, to get a service reference. The component activates

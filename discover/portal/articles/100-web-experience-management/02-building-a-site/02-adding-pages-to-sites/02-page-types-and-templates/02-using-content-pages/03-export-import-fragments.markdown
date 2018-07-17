@@ -59,7 +59,7 @@ is to ensure that there are no errors in any imported fragments before they are
 added to a page.
 
 See 
-[Developing a Fragment Using Desktop Tools](/discover/portal/-/knowledge_base/7-1/recommendations-and-best-practices#developing-a-fragment-using-desktop-tools) for more information on 
+[Developing a Fragment Using Desktop Tools](/develop/tutorials/-/knowledge_base/7-1/recommendations-and-best-practices#developing-a-fragment-using-desktop-tools) for more information on 
 creating and importing Fragments using other tools.
 
 ### Importing Collections [](id=importing-collections)
