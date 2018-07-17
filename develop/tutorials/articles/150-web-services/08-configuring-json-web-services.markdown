@@ -1,14 +1,14 @@
 # Configuring JSON Web Services
 
-JSON web services are enabled in Liferay by default. If you need to disable 
-them, specify this portal property setting in a `portal-ext.properties` file: 
+JSON web services are enabled in Liferay by default. If you must disable them,
+specify this portal property setting in a `portal-ext.properties` file: 
 
     json.web.service.enabled=false
 
 This tutorial presents other properties that you can use to fine-tune exactly
 how JSON web services work in your Liferay instance. You can find these, and
 other properties, in 
-[the portal properties reference documentation](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html). 
+[the portal properties reference documentation](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html). 
 As with the preceding property, you should set portal properties in a 
 `portal-ext.properties` file. 
 
@@ -28,9 +28,9 @@ Next, you'll learn how to disable HTTP methods.
 ## Disabling HTTP Methods
 
 When strict HTTP method mode is enabled, you can filter web service access based
-on HTTP methods used by the services. For example, you can set your Liferay 
-instance's JSON web services to work in read-only mode by disabling HTTP methods 
-other than `GET`. For example: 
+on HTTP methods used by the services. For example, set your Liferay instance's
+JSON web services to work in read-only mode by disabling HTTP methods other than
+`GET`: 
 
     jsonws.web.service.invalid.http.methods=DELETE,POST,PUT
 
@@ -51,7 +51,7 @@ using any HTTP method. If you need the strict mode, you can set it as follows:
 
     jsonws.web.service.strict.http.method=true
 
-When using strict mode, you must use the correct HTTP methods to calll service 
+When using strict mode, you must use the correct HTTP methods to call service 
 methods. When strict HTTP mode is enabled, you still might need to disable HTTP
 methods. You'll learn how next. 
 
@@ -71,12 +71,12 @@ service action paths that aren't allowed even if they match one of the patterns
 set in `jsonws.web.service.paths.includes`. 
 
 Note that these properties support wildcards. For example, if you set 
-`jsonws.web.service.paths.includes=get*,has*,is*`, Liferay makes all read-only 
-JSON methods publicly accessible. All other JSON methods are secured. To disable 
-access to all exposed methods, you can leave the right side of the `=` symbol 
-empty. To enable access to all exposed methods, specify `*`. Remember that if a 
-path matches both the `jsonws.web.service.paths.includes` and 
-`jsonws.web.service.paths.excludes` properties, the 
+`jsonws.web.service.paths.includes=get*,has*,is*`, Liferay makes all read-only
+JSON methods publicly accessible. All other JSON methods are disabled. To
+disable access to all exposed methods, you can leave the right side of the `=`
+symbol empty. To enable access to all exposed methods, specify `*`. Remember
+that if a path matches both the `jsonws.web.service.paths.includes` and
+`jsonws.web.service.paths.excludes` properties, the
 `jsonws.web.service.paths.excludes` property takes precedence. 
 
 ## Related Topics
