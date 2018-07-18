@@ -25,13 +25,11 @@ To enable workflow in a form:
 2.  Click the Options button (![Options](../../images/icon-options.png)) and
     choose *Settings*.
 
-    ![Figure 3: Enable workflow for each form in its Settings window.](../../images/form-settings.png)
-
 3.  The Settings window has a *Select a Workflow* dropdown. Find the workflow
     you're interested in, select it, and then click *Done*.
 
-    ![Figure 4: Select the form's workflow using the Select a Workflow dropdown
-menu.](../../images/forms-workflow.png)
+    ![Figure 3: Enable workflow for each form in its Settings window.](../../images/form-settings.png)
+
 
 ## Testing the Workflow [](id=testing-the-workflow)
 
