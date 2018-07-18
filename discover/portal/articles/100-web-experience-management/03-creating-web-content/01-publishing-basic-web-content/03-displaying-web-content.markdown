@@ -125,5 +125,5 @@ tool compares these versions and highlights the differences between them.
 Whenever you publish updates to a web content article that's already being
 displayed, the content is immediately updated unless you have a workflow
 enabled (See 
-[Using Workflow](/discover/portal/-/knowledge_base/7-1/using-workflow)
+[Workflow](/discover/portal/-/knowledge_base/7-1/workflow)
 for details).

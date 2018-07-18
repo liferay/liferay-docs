@@ -232,7 +232,7 @@ permissions definition file. For your service and your web modules, create
 a `portlet.properties` file in `src/main/resources` and make sure it has this
 property: 
 
-    resource.actions.config=resource-actions/default.xml
+    resource.actions.configs=resource-actions/default.xml
 
 Once you've defined portlet permissions, root model permissions, and model
 permissions, you've completed step 1 (the *D* in DRAC). Congratulations! You're

@@ -192,7 +192,7 @@ The setter method `setResourceBundleLoader` assigns an aggregate of this class's
 resource bundle loader and the target resource bundle loader to the
 `_resourceBundleLoader` field. 
         
-    @Reference(target = "(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
+    @Reference(target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
     )
     public void setResourceBundleLoader(
         ResourceBundleLoader resourceBundleLoader) {
@@ -229,6 +229,7 @@ Resource bundle loader components have these class imports.
     import com.liferay.portal.kernel.util.ClassResourceBundleLoader;
     import com.liferay.portal.kernel.util.ResourceBundleLoader;
 
+    import java.util.Locale;
     import java.util.ResourceBundle;
 
     import org.osgi.service.component.annotations.Component;
@@ -246,7 +247,7 @@ to provide the classes imported above.
  **Important**: If your module
  [uses language keys from another module](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-a-language-module)
  and
- [overrides any of that other module's keys](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-other-resource-bundles-in-addition-to-your-own),
+ [overrides any of that other module's keys](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-a-language-module-from-a-module),
  make sure to use OSGi headers to specify the capabilities your module requires
  and provides. This lets you prioritize resource bundles from the modules. 
 

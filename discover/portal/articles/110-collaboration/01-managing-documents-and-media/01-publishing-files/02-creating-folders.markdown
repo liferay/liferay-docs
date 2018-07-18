@@ -50,7 +50,7 @@ managing the folder. The following sections describe some of these options.
 
 After creating a folder, you can restrict what document types are allowed in it. 
 You can also choose what 
-[workflow](/discover/portal/-/knowledge_base/7-1/using-workflow) 
+[workflow](/discover/portal/-/knowledge_base/7-1/workflow) 
 (if any) to use for approving files added to or edited in the folder. 
 
 Follow these steps to change a folder's document type restrictions and workflow: 

@@ -41,7 +41,7 @@ harness the full power of document previews. These tools include:
 After installing these tools, you can configure them via portal properties in 
 the Control Panel's Server Administration screen, or in a 
 `portal-ext.properties` file. To learn how to use these tools, refer to 
-[Configuring @product@](/discover/portal/-/knowledge_base/7-1/configuring-liferay). 
+[Configuring @product@](/discover/portal/-/knowledge_base/7-1/setting-up). 
 
 With these tools installed and configured, a customized viewer displays 
 Documents and Media content, depending on the content type. For example, you can 

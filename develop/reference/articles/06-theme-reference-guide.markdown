@@ -19,7 +19,7 @@ the core theme files are the same.
     - `src/`
         - `css/`
             - [`_clay_custom.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#claycustom-scss)
-            - [`_clay_variables.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#clayvariables-scss)
+            - [`_clay_variables.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#auivariables-scss)
             - [`_custom.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#custom-scss)
             - [`_liferay_variables_custom.scss`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#liferayvariablescustom-scss)
         - `images/`
@@ -28,7 +28,6 @@ the core theme files are the same.
             - [`main.js`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#main-js)
         - `templates/`
             - [`init_custom.ftl`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#initcustom-ftl)
-            - [`init.ftl`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#init-ftl)
             - [`navigation.ftl`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#navigation-ftl)
             - [`portal_normal.ftl`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#portalnormal-ftl)
             - [`portal_pop_up.ftl`](/develop/reference/-/knowledge_base/7-1/theme-reference-guide#portalpopup-ftl)

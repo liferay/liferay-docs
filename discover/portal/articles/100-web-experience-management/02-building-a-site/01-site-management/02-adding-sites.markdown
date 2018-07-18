@@ -7,7 +7,7 @@ Sites, Apps, and Configuration. In this section, you'll learn how to use the
 Control Panel to manage Sites.  For information about the Apps, Users, and
 Configuration sections of the Control Panel, see the 
 [Leveraging the Liferay Marketplace](/discover/portal/-/knowledge_base/7-1/leveraging-the-liferay-marketplace),
-[User Management](/discover/portal/-/knowledge_base/7-1/user-management), and
+[User Management](/discover/portal/-/knowledge_base/7-1/managing-users), and
 [Using the Control Panel](/discover/portal/-/knowledge_base/7-1/using-the-control-panel) sections,
 respectively.
 
@@ -134,6 +134,6 @@ to any Site based on it. A checkbox appears for unlinking the Site template if
 the User has permission to do so.
 
 Once the Site has been created, you should configure its settings to fit your
-needs. You can learn more about Site Settings in [Configuring Sites and Pages](/discover/portal/-/knowledge_base/7-1/configuring-sites-and-pages).
+needs. You can learn more about Site Settings in [Configuring Sites](/discover/portal/-/knowledge_base/7-1/configuring-sites).
 
 Next, you'll learn about creating pages.

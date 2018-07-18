@@ -54,7 +54,7 @@ In addition to standard HTML, CSS, and JavaScript, developers can also embed
 widgets and provide fields with editable text and images. The text and images
 can be edited during the final Content Page publication process. Fragment 
 development is covered in depth in 
-[Developing Fragments](/discover/portal/-/knowledge_base/7-1/developing-fragments).
+[Developing Fragments](/develop/tutorials/-/knowledge_base/7-1/developing-fragments).
 
 After some Fragments have been created and published, you can start creating 
 Page Templates to combine Fragments into pages.

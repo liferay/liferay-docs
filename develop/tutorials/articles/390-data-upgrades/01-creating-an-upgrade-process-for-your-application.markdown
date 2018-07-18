@@ -431,6 +431,6 @@ class. That's all there is to it!
 
 [Upgrading Plugins to Liferay 7](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
 
-[Configuration](/develop/tutorials/-/knowledge_base/7-1/configuration)
+[Configurable Applications](/develop/tutorials/-/knowledge_base/7-1/configurable-applications)
 
 [Migrating Data Upgrade Processes to the New Framework for Modules](/develop/tutorials/-/knowledge_base/7-1/optimizing-app-upgrade-processes)

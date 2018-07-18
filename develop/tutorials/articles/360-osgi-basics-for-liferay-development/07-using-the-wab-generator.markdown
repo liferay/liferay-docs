@@ -122,4 +122,4 @@ Awesome! You've seen the WAB Generator in action!
 <!-- Uncomment in Product Nav Branch
 [Customizing the Product Menu](develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu)
 -->
-[Configuration](/develop/tutorials/-/knowledge_base/7-1/configuration)
+[Configurable Applications](/develop/tutorials/-/knowledge_base/7-1/configurable-applications)

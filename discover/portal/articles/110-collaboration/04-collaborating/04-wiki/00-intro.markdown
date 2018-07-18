@@ -15,8 +15,7 @@ does these things:
 
 As you can see, @product@'s wiki is flexible and can be configured to fit 
 nearly any use case. What's more, it's completely integrated with the portal's 
-[user management](/discover/portal/-/knowledge_base/7-1/user-management), 
-[tagging](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags), 
-and 
-[security](/discover/deployment/-/knowledge_base/7-1/liferay-portal-security) 
+[user management](/discover/portal/-/knowledge_base/7-1/managing-users), 
+[tagging](/discover/portal/-/knowledge_base/7-1/tagging-content), and
+[security](/discover/deployment/-/knowledge_base/7-1/securing-product) 
 features. 
