@@ -1,4 +1,4 @@
-# Configuring the Liferay Elasticsearch Connector
+# Configuring the Liferay Elasticsearch Connector [](id=configuring-the-liferay-elasticsearch-connector)
 
 For detailed Elasticsearch configuration information, refer to the
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/settings.html).
@@ -87,13 +87,13 @@ Settings application:
    &rarr; *Foundation*. 
 3.  Find the *Elasticsearch* entry (scroll down and browse to it or use the
    search box) and click the Actions icon
-   (![Actions](../../images/icon-actions.png)), then *Edit*.
+   (![Actions](../../../images/icon-actions.png)), then *Edit*.
 
-    ![Figure 1: Use the System Settings application in @product@'s Control Panel to configure the Elasticsearch adapter.](../../images/cfg-elasticsearch-sys-settings.png)
+    ![Figure 1: Use the System Settings application in @product@'s Control Panel to configure the Elasticsearch adapter.](../../../images/cfg-elasticsearch-sys-settings.png)
 
 4.  Make any edits to the configuration, then click *Save*.
 
-    ![Figure 2: Set configurations for the Elasticsearch connector, like settings the Operation Mode to *Remote*.](../../images/cfg-elasticsearch-sys-settings2.png)
+    ![Figure 2: Set configurations for the Elasticsearch connector, like settings the Operation Mode to *Remote*.](../../../images/cfg-elasticsearch-sys-settings2.png)
 
 +$$$
 

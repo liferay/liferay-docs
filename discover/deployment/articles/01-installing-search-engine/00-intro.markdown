@@ -14,7 +14,7 @@ a standalone or remote Elasticsearch server or cluster
 If you need to use Solr, it's also supported in @product@. <!--and you can read more
 about its configuration [here](discover/deployment/-/knowledge_base/7-0/using-solr).-->
 
-## Choosing a Search Engine
+## Choosing a Search Engine [](id=choosing-a-search-engine)
 
 Elasticsearch and Solr are both supported, but there are some differences in how
 they work with @product@. 
