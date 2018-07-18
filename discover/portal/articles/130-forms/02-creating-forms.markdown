@@ -116,7 +116,7 @@ To display the form on a site page in The Lunar Resort site:
     and choose *Dynamic Data Mapping Form* from the Full Page Application
     dropdown.
 
-    3. Once the Form application is on the page, click *Select Form*, choose the *Guest
+3. Once the Form application is on the page, click *Select Form*, choose the *Guest
     Survey* form, and click *Save*.
 
 4. Close the Form dialog window and your form is ready for use by users in The
