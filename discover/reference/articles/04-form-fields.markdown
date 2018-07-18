@@ -2,25 +2,24 @@
 
 A form without fields is no form at all. To meet your form-building needs,
 Liferay Forms provides useful and highly configurable field types. To see
-examples of the form fields described here, visit the [Collecting Information from
-Users](/discover/portal/-/knowledge_base/7-0/collecting-information-from-users)
+examples of the form fields described here, visit the [Forms](/discover/portal/-/knowledge_base/7-1/forms)
 section of the User Guide.
 
 ![Figure 1: Out of the box form field types.](../images/forms-field-types.png)
 
-Form Text
+Paragraph
 : This is static text on the form. Users do not enter data into Form Text
 fields. The form creator enters text that form users see displayed on the form.
 This is useful for longer instructions.
 
-![Figure 2: A form text field.](../images/forms-form-text.png)
+![Figure 2: A form text field.](../images/forms-paragraph.png)
 
 Text Field
 : Users enter text into these fields. For example, a Full Name field is a text
 field. By default, a text field keeps all input on a single line of text. To
 accommodate longer responses, choose the multi-line setting when
 configuring the text field 
-[as in this example](/discover/portal/-/knowledge_base/7-0/basic-forms#building-a-form).
+[as in this example](/discover/portal/-/knowledge_base/7-1/creating-and-managing-forms#building-a-form).
 Place limits on the text users can enter (numbers from 1-10, or email addresses,
 for example) by using the Text field's validation options (as in [this
 example](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#validating-text-fields)).
@@ -47,16 +46,12 @@ the Date field type.
 
 ![Figure 6: A date field.](../images/forms-date.png)
 
-Multiple Selection/Single Checkbox
+Multiple Selection
 : Users select one or more options from check boxes (or switchers, if
-configured). The Single Checkbox field is only available to Digital Enterprise
-subscribers, but its functionality can be obtained with the Multiple
-Selection field. The Single Checkbox field will be removed in the next version
-of Liferay DXP Digital Enterprise.
+configured).
 
 ![Figure 7: A multiple selection field using a switcher.](../images/forms-switcher.png)
 
-<!-- Unreleased fields
 Grid
 : Using radio buttons, users select from options laid out in rows and columns.
 One selection can be made per row. This is useful when the same response metric
@@ -72,4 +67,9 @@ Non-number input is not accepted. For example, configure a numeric field that
 accepts integers to ask users how many pets they have.
 
 ![Figure 9: A numeric field.](../images/forms-numeric.png)
--->
+
+Upload
+: Users can select a file from the Documents and Media library or upload a file
+from their local filesystem.
+
+![Figure 9: A numeric field.](../images/forms-upload.png)
