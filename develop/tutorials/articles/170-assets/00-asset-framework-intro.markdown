@@ -42,4 +42,4 @@ It's time to start your asset framework training!
 
 [Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-1/service-builder-persistence)
 
-[Configuration](/develop/tutorials/-/knowledge_base/7-1/configuration)
+[Configurable Applications](/develop/tutorials/-/knowledge_base/7-1/configurable-applications)

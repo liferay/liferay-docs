@@ -3,7 +3,7 @@
 The Knowledge Base app can be used to display professional product documentation
 or form complete books or guides. It even lets you import article source files
 written in Markdown. It's 
-[workflow-enabled](/discover/portal/-/knowledge_base/7-1/using-workflow), so you
+[workflow-enabled](/discover/portal/-/knowledge_base/7-1/workflow), so you
 can require articles to be approved before publication. Additionally, you can
 create article templates that help users follow a common outline. 
 

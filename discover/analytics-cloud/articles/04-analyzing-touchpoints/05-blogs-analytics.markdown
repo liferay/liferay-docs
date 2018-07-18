@@ -1,6 +1,6 @@
 # Blogs Analytics [](id=blogs-analytics)
 
-[Blogs Entries](/discover/portal/-/knowledge_base/7-1/blogs) 
+[Blogs Entries](/discover/portal/-/knowledge_base/7-1/publishing-blogs) 
 are important content on websites. They attract readers who return to view new
 blog posts and interact in discussion.
 

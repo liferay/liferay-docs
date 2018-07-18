@@ -29,8 +29,8 @@ is covered in more detail in
 [Scheduling Web Content Publication](/discover/portal/-/knowledge_base/7-1/scheduling-web-content-publication).
 
 **Workflow Integration:** Run your content through a review process. This is
-covered in more detail in 
-[Using Workflow](/discover/portal/-/knowledge_base/7-1/using-workflow).
+covered in more detail in the
+[Workflow](/discover/portal/-/knowledge_base/7-1/workflow) section.
 
 **Staging:** Use a separate staging server or stage your content locally so you
 can keep your changes separate from the live site. This is covered in more

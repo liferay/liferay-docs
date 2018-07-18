@@ -29,7 +29,7 @@ resolver to bypass this.
 
 There are three ways you can do this:
 
-- [Embed the third party library in your module](#embed-the-third-party-project-in-your-module)
+- [Embed the third party library in your module](#embed-the-third-party-library-in-your-module)
 - [Add the third party library's capabilities to the current static set of resolver capabilities](#add-the-third-party-librarys-capabilities-to-the-current-static-set-of-reso)
 - [Skip the resolving process for your module](#skip-the-resolving-process-for-your-module)
 

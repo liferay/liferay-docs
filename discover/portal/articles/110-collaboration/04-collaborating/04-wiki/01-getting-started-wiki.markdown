@@ -107,5 +107,5 @@ associate a workflow with them. For example, you could create a workflow that
 requires an administrator's approval to publish a wiki page modification (add,
 update, or delete). You can access your site's default *Wiki Page* workflow from
 within the Site Administration Menu, by navigating to *Configuration* &rarr; 
-*Workflow* for your site. To learn how to use workflow, see 
-[Using Workflow](/discover/portal/-/knowledge_base/7-1/using-workflow). 
+*Workflow* for your site. To learn how to use workflow, see the
+[Workflow](/discover/portal/-/knowledge_base/7-1/workflow) section. 

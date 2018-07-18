@@ -66,7 +66,7 @@ page.
 *Look and Feel* lets you set a page-specific theme. You can inherit what you
 already have configured for your Page Set's theme, or you can define a theme per
 page. See 
-[Customizing the Look and Feel of Site Pages](/discover/portal/-/knowledge_base/7-1/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages)
+[Customizing the Look and Feel of Site Pages](/discover/portal/-/knowledge_base/7-1/page-set-look-and-feel)
 for more details.
 
 ![Figure 2: Viewing the Look and Feel page configuration. .](../../../../../images/page-look-and-feel.png)
@@ -108,7 +108,7 @@ the page.
 
 Widgets can be embedded on a page via web content template or fragment. To
 learn more about this, see 
-[Adding Templates](/discover/portal/-/knowledge_base/7-1/designing-uniform-content#adding-templates).
+[Adding Templates](/discover/portal/-/knowledge_base/7-1/adding-templates).
 You can embed a widget on a page layout or theme programmatically. If you're
 interested in learning more about this, visit the
 [Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes-and-layout-templates)
@@ -119,7 +119,7 @@ tutorial.
 This configuration option in the *Advanced* tab lets you mark specific
 sections of the page you want users to be able to customize. You can learn more
 about page customizations in 
-[Personalizing Pages](/discover/portal/-/knowledge_base/7-1/creating-and-managing-pages#personalizing-pages).
+[Personalizing Pages](/discover/portal/-/knowledge_base/7-1/personalizing-pages).
 
 ### JavaScript [](id=javascript)
 
