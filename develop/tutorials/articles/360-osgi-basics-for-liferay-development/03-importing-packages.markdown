@@ -90,43 +90,41 @@ Java platform packages (e.g., `javax.portlet.*` ) are handled differently.
 
 ## Importing Java Platform Packages [](id=importing-java-platform-packages)
 
-You'll want to make sure the Java platform APIs you compile against are
-available at runtime. Since the API packages aren't versioned, you must use OSGi
-Portable Java Contracts to assure Java packages for the JSR you require are
-provided at runtime. 
+Since Java platform packages aren't versioned, @product@ exports them with OSGi
+Portable Java Contracts. The contracts specify the JSRs that the Java platform
+packages satisfy. Modules that use these packages must specify requirements on
+their contracts. Blade CLI and Liferay @ide@ module projects do this
+automatically! 
 
-Here's how to set up Java platform API contracts in different module projects:
+For example, if you compile against a Java Portlet 3.0 package, a contract
+requirement for the package is added to your module's manifest.  The contract
+requirement specifies the module's relationship with the imported package. If
+the system you're running does *not* provide the exact contract, your module
+does not resolve. Resolving the missing package is better than handling an
+incompatibility failure during execution.
 
-- **Blade CLI and Liferay @ide@ projects** handle it automatically! They set up
-Java contracts based on the versions of `JavaPortlet` and `JavaServlet` you
-compiled against. 
++$$$
 
-    - **Gradle projects** add the `JavaPortlet` and `JavaPortlet` contracts to
-    the module JAR manifest on assembly.
-    - **Maven projects** have `-contract` instructions for `JavaPortlet` and
-    `JavaPortlet` in their `bnd.bnd` file. 
+**Note:** Module projects that use bnd but are not created using Blade CLI or
+Liferay @ide@ must specify contracts in their `bnd.bnd` file. For example, here
+are contract instructions for Java Portlet and Java Servlet APIs:
 
-- **Other projects that use bnd** that are not created using Blade CLI or
-Liferay @ide@ must specify contracts in their `bnd.bnd` file. The Portable Java
-Contracts framework adds `Require-Capability` entries that contract the Java
-APIs and *removes* version information from the corresponding Java API
-`Import-Package` entries.
+    -contract: JavaPortlet
+    -contract: JavaServlet 
 
-        -contract: JavaPortlet
-        -contract: JavaServlet 
+At build time, bnd adds the contract instructions to your module's manifest. It
+adds a requirement for the first version of the API found in your classpath and
+*removes* version range information from any corresponding `Import-Package`
+entries--the package version information isn't needed. 
 
-- **Projects using other tool chains** must explicitly specify contracts in
-their OSGi manifest. For example, here's how to contract for `JavaPortlet` 3.0
-in your `META-INF/MANIFEST.MF` file:
+Projects that don't use bnd must specify contracts in their module manifest. For
+example, here's how to contract for `JavaPortlet` 3.0 in your
+`META-INF/MANIFEST.MF` file:
 
-        Import-Package: javax.portlet
-        Require-Capability: osgi.contract;filter:=(&(osgi.contract=JavaPortlet)(version=3.0))
+    Import-Package: javax.portlet
+    Require-Capability: osgi.contract;filter:=(&(osgi.contract=JavaPortlet)(version=3.0))
 
-In all these project scenarios, the contract requirement and capability
-specifies the module's relationship with the imported package. If the system
-you're running does *not* provide the exact contract, your module does not
-resolve. Resolving the missing package is better than getting an incompatibility
-failure during execution. 
+$$$
 
 For Portable Java Contract details, see 
 [Portable Java Contract Definitions](https://www.osgi.org/portable-java-contract-definitions/). 
