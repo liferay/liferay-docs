@@ -3,7 +3,7 @@
 ## What does this sample do when deployed? [](id=what-does-this-sample-do-when-deployed)
 
 This sample is similar to the
-[`basic` Service Builder sample](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/service-builder/basic),
+[`basic` Service Builder sample](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/service-builder/basic),
 which lets you perform CRUD (create, read, update, delete) operations on service
 builder entities. The distinctive feature of the Service Builder Actionable
 Dynamic Query (ADQ) sample is that it also lets you perform a mass update on all

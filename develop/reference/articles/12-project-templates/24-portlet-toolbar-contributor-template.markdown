@@ -64,5 +64,5 @@ The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
 files to the folders outlined above. This generated project, by default, creates
 a new button on the Hello World portlet's toolbar. You can visit the
-[portlet-toolbar-contributor](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/extensions/portlet-toolbar-contributor)
+[portlet-toolbar-contributor](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/extensions/portlet-toolbar-contributor)
 sample project for a more expanded sample of a portlet toolbar contributor.

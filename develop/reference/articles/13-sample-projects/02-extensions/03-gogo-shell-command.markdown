@@ -68,6 +68,6 @@ tutorial.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/extensions/gogo)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/extensions/gogo)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/extensions/gogo)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/extensions/gogo)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/extensions/gogo)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.0/maven/extensions/gogo)

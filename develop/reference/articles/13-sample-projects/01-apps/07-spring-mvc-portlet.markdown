@@ -57,6 +57,6 @@ Java class.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/springmvc-portlet)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/wars/springmvc-portlet)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/apps/springmvc-portlet)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/springmvc-portlet)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/wars/springmvc-portlet)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.0/maven/apps/springmvc-portlet)

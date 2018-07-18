@@ -64,6 +64,6 @@ tutorial.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/overrides/module-jsp-override)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/overrides/module-jsp-override)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/overrides/module-jsp-override)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/overrides/module-jsp-override)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/overrides/module-jsp-override)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.0/maven/overrides/module-jsp-override)

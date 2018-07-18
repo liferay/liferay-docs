@@ -81,6 +81,6 @@ worry about missing out on the updates you make to the JSPs.
 There are three different versions of this sample, each built with a different
 build tool:
    
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/extensions/document-action)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/extensions/document-action)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/extensions/document-action)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/extensions/document-action)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/extensions/document-action)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.0/maven/extensions/document-action)
