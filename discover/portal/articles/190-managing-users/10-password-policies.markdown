@@ -32,10 +32,9 @@ minimum length, and more in this section.
 history, preventing users from reusing an old password.
 
 **Password Expiration:** Decide whether passwords will expire. If they will,
-specify how long passwords are valid, whether a warning will be sent, when
-and whether a warning will be sent, and how many times they can log in after the
-password is expired, before needing to set a new password (called a *Grace
-Limit*). 
+specify how long passwords are valid, when and whether a warning will be sent,
+and how many times they can log in after the password is expired before needing
+to set a new password (called a *Grace Limit*). 
 
 **Lockout:** If enabled, set a maximum number of failed authentication
 attempts before the account is locked, how long the number of attempts is
@@ -50,8 +49,8 @@ this disabled.
 Just making sure you were paying attention; that last one doesn't actually
 exist. 
 
-Once you configure the policy to your liking, click *Save* and it is both added
-to the list of password policies and ready to use.
+Once you configure the policy to your liking, click *Save* to add it to the list
+of ready-to-use password policies.
 
 ## Assigning Members to a Password Policy [](id=assigning-members-to-a-password-policy)
 
@@ -76,7 +75,7 @@ The Default Password Policy is set as the default and configured in Liferay's
 [portal.properties](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Passwords)
 file. If you want to make changes, including changing the default policy, add
 whichever properties and values you choose to modify in your
-`portal-ext.properties` file, as usual. Restart Liferay and your changes will
+`portal-ext.properties` file, as usual. Restart @product@ and your changes will
 take effect.
 
     #
@@ -87,5 +86,5 @@ take effect.
     passwords.default.policy.name=Default Password Policy
     ...
 
-As you can see, Liferay's Password Policies application gives you a simple yet powerful
+As you can see, the Password Policies application gives you a simple yet powerful
 tool for setting the rules for user passwords.
