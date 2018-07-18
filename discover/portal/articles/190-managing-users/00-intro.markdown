@@ -37,6 +37,19 @@ to navigate quickly to the content you want:
 - Auditing Users(/discover/portal/-/knowledge_base/7-1/auditing-users)
 -->
 
++$$$
+
+**Anonymous User:** *Anonymous Anonymous* is used for the new 
+[Managing User Data](/discover/portal/-/knowledge_base/7-1/managing-user-data)
+functionality. Created the first time an administrator clicks *Delete Personal
+Data* for a User, *Anonymous Anonymous* is a deactivated User assigned 
+[anonymized assets](/discover/portal/-/knowledge_base/7-1/managing-user-data#anonymizing-data). 
+The Anonymous User is configurable, so the name and configuration details might
+be different in your virtual instance.
+
+$$$
+
+
 ## What's New with User Management? [](id=whats-new-with-user-management)
 
 In @product@ version 7.0, the user management functionality and behavior didn't
