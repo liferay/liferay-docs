@@ -3,19 +3,24 @@
 Liferay's Kaleo workflow engine provides a robust system for reviewing and
 approving content in an enterprise environment. Even if you don't leverage
 custom scripts, it's a powerful and robust workflow solution. Adding custom
-scripts takes it to the next level.
+scripts takes it to the next level. These scripts aren't run from the script
+console, but are embedded in 
+[XML workflow definitions](/discover/portal/-/knowledge_base/7-1/crafting-xml-workflow-definitions) 
+and run during the execution of the workflow.
 
-The final step in a workflow runs a script that makes content available
-for use. In the snippet below, JavaScript is used to access the Java class 
-associated with the workflow to set content's status to *approved*.
+The final step in a workflow runs a script that makes content available for use.
+The snippet below accesses the Java class associated with the workflow to set
+content's status to *approved*.
 
     <script>
         <![CDATA[
-            Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("denied"), workflowContext);
-            Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("pending"), workflowContext);
+            import com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil;
+            import com.liferay.portal.kernel.workflow.WorkflowConstants;
+
+            WorkflowStatusManagerUtil.updateStatus(WorkflowConstants.getLabelStatus("approved"), workflowContext);
         ]]>
     </script>
-    <script-language>javascript</script-language>
+    <script-language>groovy</script-language>
 
 At virtually any point in a workflow, you can use Liferay's script engine to
 access workflow APIs or other Liferay APIs. There are a lot of different ways
@@ -102,9 +107,9 @@ Review` task.
     <script-language>groovy</script-language>
 
 Within a workflow, the next task or state is chosen based on the return value.
-For a complete example of a workflow script that uses the above Groovy script,
-please see this `legal-workflow-script.xml` file:
-[https://github.com/liferay/liferay-docs/blob/6.2.x/userGuide/code/legal-workflow-script.xml](https://github.com/liferay/liferay-docs/blob/6.2.x/userGuide/code/legal-workflow-script.xml).
+See some examples of workflow scripts by accessing the
+[embedded workflows](/discover/portal/-/knowledge_base/7-1/workflow#embedded-workflows) 
+and inspecting the XML.
 
 ## Calling OSGi Services [](id=calling-osgi-services)
 

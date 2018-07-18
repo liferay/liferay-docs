@@ -46,7 +46,7 @@ You can even make this somewhat Groovier and simplify the program:
     }
  
 Liferay's services can be easily accessed from the script console. Next, let's
-look at some practical uses for @product@'s script engine.
+look at some practical uses for the script engine.
 
 ## Related Topics [](id=related-topics)
 

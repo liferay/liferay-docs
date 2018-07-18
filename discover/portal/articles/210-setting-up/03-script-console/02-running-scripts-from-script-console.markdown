@@ -6,7 +6,7 @@ To see a very simple example of the script console in action, do the following:
 
 2.  Navigate to the *Control Panel* &rarr; *Server Administration* area of the 
     Control Panel.
-    
+
 3.  Click on *Script*. This is @product@'s script console.
 
 4.  Replace the code in the script console with the following: 
@@ -17,15 +17,16 @@ To see a very simple example of the script console in action, do the following:
 5.  Click the *Execute* button and check the script console or the log for the
     output.
 
-Next, consider a less simplistic example. You'll retrieve some user information
-from the database, make some changes, and then save those changes to Liferay's
-database. Suppose that your company has updated the terms of use and wants each
-user to be presented with the updated terms of use whenever they next log in.
-When users agree to the terms of use, a boolean attribute called
+Next, consider a less simplistic example that retrieves some user information
+from the database, makes changes, and then saves the changes in the database.
+Suppose that your company has updated the 
+[terms of use](/discover/portal/-/knowledge_base/7-1/terms-of-use)
+and wants each user to be presented with the updated terms of use whenever they
+next log in. When users agree to the terms of use, a boolean attribute called
 `agreedToTermsOfUse` is set in their user records. As long as the value of this
-variable is `true`, @product@ will not present the user with the terms of use.
-However, if you set this flag to `false` for each user, each user must agree to
-the terms of use again before they can log in. 
+variable is `true`, the user won't be presented with the terms of use when they
+log in.  However, if you set this flag to `false` for each user, each user must
+agree to the terms of use again before they can log in. 
 
 1.  Enter the following code into the *Script* console:
 
@@ -40,7 +41,7 @@ the terms of use again before they can log in.
 
     This code to checks the status of the `agreedToTermsOfUse` user attribute, 
     and prints the value for each user. 
-    
+
 2.  Now replace that with this script:
     
         import com.liferay.portal.kernel.service.UserLocalServiceUtil
