@@ -73,7 +73,7 @@ Next go find the form entry in the Forms application:
 10. Navigate back to the View Entries screen for the form, and now the entry is
     marked as *Approved*. 
 
-![Figure 5: Each entry's status is visible in the Forms application's View Entries screen.](../../images/forms-view-entries-status.png)
+![Figure 4: Each entry's status is visible in the Forms application's View Entries screen.](../../images/forms-view-entries-status.png)
 
 ## Example Use Case: Win a Free, All-Inclusive Trip to the Lunar Resort [](id=example-win-a-free-all-inclusive-trip-to-the-lunar-resort)
 
@@ -82,7 +82,7 @@ families. All a user must do is click the *I Want a Free Trip* link from the
 site homepage, and they're directed to a form they can fill out and submit in
 under three minutes:
 
-![Figure 6: The Lunar Resort Giveaway form is ready to be filled out.](../../images/lunar-resort-giveaway.png)
+![Figure 5: The Lunar Resort Giveaway form is ready to be filled out.](../../images/lunar-resort-giveaway.png)
 
 The Lunar Resort wants to exclude folks who don't meet certain qualifications:
 
@@ -103,5 +103,5 @@ record was submitted. Go to the View Entries screen and see that the form record
 is currently marked as Pending. Once the review is completed, it's marked as
 Approved.
 
-![Figure 7: Assign a workflow to a form in several steps.](../../images/lunar-resort-giveaway-workflow-new.gif)
+![Figure 6: Assign a workflow to a form in several steps.](../../images/lunar-resort-giveaway-workflow-new.gif)
 
