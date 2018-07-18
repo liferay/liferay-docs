@@ -14,11 +14,10 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
     Process. 
 
 ## Creating the Process
-    
+
 In the first step, enter the basic information about the process:
 
 1.  Enter *Spa Order Process* for the *Name* and add a *Description*.
-    Name
 
 2.  Click *Next*.
 
@@ -30,12 +29,13 @@ In the second step of the New Process Wizard, define the fields that can appear
 in your process's forms. There are two methods:
 
 1.  Choose a predefined field set. To use a field set that already exists, pick
-    one from the list of field sets by clicking the Kebab menu
+    one from the list of field sets by clicking the Actions menu
     (![Actions](../../../images-dxp/icon-actions.png)) next to its entry and
     selecting *Choose*. 
 
-2.  Create a new field set. Use the *Add Field Set* button to add a new field
-    set. If you're not sure about creating a field set, see the documentation on
+2.  Create a new field set/data definition. Use the *Add Field Set* button to
+    add a new field set. If you don't understand what this means, see the
+    documentation on
     [creating data definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions)
     first.
     - For this example, Add a new field set: 
@@ -91,7 +91,7 @@ you're not already familiar with it.
 This workflow exhibits simple linear processing, so that the initial form is
 filled out (in the StartNode) and then the workflow moves to the first task
 (Technician Claim), then to the second task (Managerial Approval), and finally,
-to the final order task.
+to the third task (Final Order).
 
 The task assignments of this workflow are as follows:
 
