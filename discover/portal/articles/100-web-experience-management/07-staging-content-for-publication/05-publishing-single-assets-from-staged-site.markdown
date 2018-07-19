@@ -92,5 +92,10 @@ assets. Follow the steps below to modify these permissions for a Role:
 5.  Under the Resource Permissions heading, select the *Export/Import
     Application Info* option.
 
+If the *Publish Staging* permission is enabled for a role, it also gives users
+the power to publish single assets. See the
+[Managing Permissions](/develop/tutorials/-/knowledge_base/7-1/managing-permissions)
+tutorial for more information.
+
 Great! Now you know how to publish single assets and manage the permissions for
 who can do it.
