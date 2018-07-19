@@ -21,7 +21,7 @@ manifest. Here are the different package import scenarios:
 
 - [Automatic Package Import Generation](#automatic-package-import-generation)
 
-- [Importing Java Platform Packages](#importing-java-platform-packages)
+- [Using Portable Java Contracts for Java APIs](#using-portable-java-contracts-for-java-apis)
 
 - [Manually Adding Package Imports](#manually-adding-package-imports)
 
@@ -86,20 +86,21 @@ detects their use in the WAR's JSPs, descriptor files, and classes (in
 descriptor files. It adds package imports for classes that are neither found in
 the plugin's `WEB-INF/classes` folder nor in embedded JARs. 
 
-Java platform packages (e.g., `javax.portlet.*` ) are handled differently.  
+Java APIs that aren't semantically versioned but have OSGi Portable Java
+Contracts are handled differently.  
 
-## Importing Java Platform Packages [](id=importing-java-platform-packages)
+## Using Portable Java Contracts for Java APIs [](id=using-portable-java-contracts-for-java-apis)
 
-Since Java platform packages aren't versioned, @product@ exports them with OSGi
-Portable Java Contracts. The contracts specify the JSRs that the Java platform
-packages satisfy. Modules that use these packages must specify requirements on
-their contracts. Blade CLI and Liferay @ide@ module projects do this
-automatically! 
+Packages for Java APIs, such as Java Portlet, aren't semantically versioned but
+have Portable Java Contracts. Each API's contract specifies the JSR it
+satisfies. Modules that use these APIs must specify requirements on the API
+contracts. Blade CLI and Liferay @ide@ module projects do this automatically! 
 
-For example, if you compile against a Java Portlet 3.0 package, a contract
-requirement for the package is added to your module's manifest.  The contract
-requirement specifies the module's relationship with the imported package. If
-the system you're running does *not* provide the exact contract, your module
+For example, if your Blade CLI and Liferay @ide@ module uses the Java Portlet
+API and you compile against the Java Portlet 3.0 artifact, a contract
+requirement for the package is added to your module's manifest. The contract
+requirement specifies your module's relationship with the imported API packages.
+If the system you're running does *not* provide the exact contract, your module
 does not resolve. Resolving the missing package is better than handling an
 incompatibility failure during execution.
 
@@ -114,8 +115,8 @@ are contract instructions for Java Portlet and Java Servlet APIs:
 
 At build time, bnd adds the contract instructions to your module's manifest. It
 adds a requirement for the first version of the API found in your classpath and
-*removes* version range information from any corresponding `Import-Package`
-entries--the package version information isn't needed. 
+*removes* version range information from `Import-Package` entries for
+corresponding API packages--the package version information isn't needed. 
 
 Projects that don't use bnd must specify contracts in their module manifest. For
 example, here's how to contract for `JavaPortlet` 3.0 in your
