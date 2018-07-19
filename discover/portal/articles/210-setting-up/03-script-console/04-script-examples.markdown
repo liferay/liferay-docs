@@ -1,42 +1,77 @@
-# Script Examples
+# Script Examples [](id=script-examples)
 
-Here are some examples to help you use Liferay's script console. Note: These 
-originated from this Liferay blog post: [https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console](https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
+Here are some examples to help you use Liferay's script console. Note: Most of
+these originated from this Liferay blog post: 
+[https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console](https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
 The following scripts are Groovy scripts but they can be adapted to other
 languages.
 
-## Example 1: Using the Predefined Variables [](id=example-1-use-the-predefined-variables)
+- [Example 1: Presenting New Terms of Use to Users](#example-1-presenting-new-terms-of-use-to-users)
 
-The following predefined variables are available to scripts executed from
-Liferay's script console:
+- [Example 2: Embedding HTML Markup in Script Outputs](#example-2-embed-html-markup-in-script-outputs)
 
-- `out` (`java.io.PrintWriter`)
-- `actionRequest` (`javax.portlet.ActionRequest`)
-- `actionResponse` (`javax.portlet.ActionReponse`)
-- `portletConfig` (`javax.portlet.PortletConfig`)
-- `portletContext` (`javax.portlet.PortletContext`)
-- `preferences` (`javax.portlet.PortletPreferences`)
-- `userInfo` (`java.util.Map<String, String>`)
+- [Example 3: Show Exceptions in the Script Console](#example-3-show-exceptions-in-the-script-console)
 
-Note that if you use `System.out.println`, for example, your output will be
-printed to Liferay's log file. If you use `out.println` instead (using the
-predefined variable), your output will be printed to the script console.
+- [Example 4: Implement a Preview Mode](#example-4-implement-a-preview-mode)
 
-The predefined variables can all be very useful when you're creating scripts.
-The `actionRequest` variable can be especially useful, as this script
-demonstrates:
+- [Example 5: Plan a File Output for Long-Running Scripts](#example-5-plan-a-file-output-for-long-running-scripts)
 
-    import com.liferay.portal.kernel.util.*
+## Example 1: Presenting New Terms of Use to Users [](id=example-1-presenting-new-terms-of-use-to-users)
 
-    company = PortalUtil.getCompany(actionRequest)
-    out.println("Current Company:${company.getName()}\n")
+This example retrieves some user information from the database, makes changes,
+and then saves the changes in the database. Suppose that your company has
+updated the 
+[terms of use](/discover/portal/-/knowledge_base/7-1/terms-of-use)
+and wants present each user with the updated terms of use whenever they sign in
+next. When users agree to the terms of use, a boolean attribute called
+`agreedToTermsOfUse` is set in their user records. As long as the value of this
+variable is `true`, the user aren't presented with the terms of use when they
+sign in. However, if you set this flag to `false` for each user, each user must
+agree to the terms of use again before they can sign in. 
 
-    out.println("User Info:")
-    userInfo.each { 
-            k,v -> out.println("${k}:${v}") 
-    }
+1.  Enter and execute the following code in the script console:
 
-![Figure 1: Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the current user.](../../../images/groovy-script-current-user-info.png)
+        import com.liferay.portal.kernel.service.UserLocalServiceUtil
+
+        userCount = UserLocalServiceUtil.getUsersCount()
+        users = UserLocalServiceUtil.getUsers(0, userCount)
+
+        for (user in users) { println("User Name: " + user.getFullName() + " -- " +
+        user.getAgreedToTermsOfUse()) }
+
+    This code prints each user's `agreedToTermsOfUse` attribute value. 
+
+2.  Replace that with this script:
+    
+        import com.liferay.portal.kernel.service.UserLocalServiceUtil
+
+        userCount = UserLocalServiceUtil.getUsersCount()
+        users = UserLocalServiceUtil.getUsers(0, userCount)
+
+        for (user in users){
+
+            if(!user.isDefaultUser() && 
+                !user.getEmailAddress().equalsIgnoreCase("test@liferay.com")) {
+
+                    user.setAgreedToTermsOfUse(false)
+                    UserLocalServiceUtil.updateUser(user)
+
+            }
+
+        }
+
+    This sets each user's `agreedToTermsOfUse` attribute to `false`. It skips
+    the default user as well as the default admin user that's currently signed
+    in and running the script. If you're signed in as someone other than
+    `test@liferay.com`, update the script with your email address.
+
+3.  Click *Execute*.
+ 
+4.  Verify the script updated the records, by running the first script again. 
+
+    All users (except the default user and your user) have been updated. 
+
+You've enabled the new terms of use agreement for all users to accept. 
 
 ## Example 2: Embedding HTML Markup in Script Outputs [](id=example-2-embed-html-markup-in-script-outputs)
 
@@ -61,7 +96,7 @@ example:
 When any exception occurs during script execution, the error message is always
 the same:
 
-    Your request failed to complete.
+`Your request failed to complete.`
 
 This message gives no detail about the error. To find information about the
 error and what caused it, you usually need to examine the server logs.
@@ -165,7 +200,7 @@ consider this script:
     } 
 
 The script above creates a subfolder of
-[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 called `scripting` and saves the script output to a file in this folder. After
 running the script above, it's possible to read the generated file without
 direct access to the file system. Here's a second script that demonstrates this:
@@ -178,9 +213,6 @@ One advantage of using a dedicated output file instead of using a classic logger
 is that it's easier to get the script output data back. Getting the script
 output data would be more difficult to obtain from the portal log, for example,
 because of all the other information there.
-
-Of course, Liferay's script engine has uses beyond the script console. Next,
-you'll learn how to leverage Liferay's script engine for designing workflows.
 
 ## Related Topics [](id=related-topics)
 

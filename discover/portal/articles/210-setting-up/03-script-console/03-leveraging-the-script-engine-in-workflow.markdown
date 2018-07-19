@@ -34,7 +34,7 @@ you could use this. Here are a few practical examples:
 
 Of course, before you try any of this, you need to know the appropriate syntax
 for inserting a script into a workflow. In an XML workflow definition, a script
-can be used in any XML type that can contain an *actions* tag: those types are
+can be used in any XML type that can contain an `actions` tag: those types are
 `<state>`, `<task>`, `<fork>` and `<join>`. Inside of one of those types, format
 your script like this:
 
@@ -117,7 +117,7 @@ How do you call OSGi services from a workflow script, accounting for the dynamic
 environment of the OSGi runtime, where services your script depends on can
 disappear without notice? 
 [Use a service tracker](/develop/tutorials/-/knowledge_base/7-1/service-trackers). 
-That way you can check to make sure your code has access to the service it
+That way you can make sure your code has access to the service it
 needs, and if not, do something appropriate in response. Here's a little example
 code to show you how this might look in Groovy (import statements excluded):
 
@@ -129,10 +129,13 @@ code to show you how this might look in Groovy (import statements excluded):
         st = new ServiceTracker(bundle.getBundleContext(), JournalArticleLocalService.class, null);
         st.open();
 
-        if (!st.isEmpty()) {
-            SomeLocalService _SomeLocalService = st.getService();
-
-            //Do cool stuff with the service you retrieved
+        SomeService someService = st.waitForService(500);
+        
+        if (someService == null) {
+            _log.warn("The required service 'SomeService' is not available.");
+        }
+        else {
+            someService.doSomethingCool();
         }
     }
     catch(Exception e) {
@@ -148,12 +151,12 @@ If you read the article on
 [service trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers), 
 the only odd looking piece of the above code is the `getBundle` call: why is
 `GroovyExecutor.class` passed as a parameter? The parameter passed to the
-`FrameworkUtil.getBundle` call must be a class from the bundle executing the
-workflow script. This is different from the context of a plugin project, where
-you'd want to get the bundle hosting the class where you're making the call
-(using `this.getClass()`, for example). Note that for another scripting engine,
-you must pass in a concrete class from the particular bundle executing your
-script.
+`FrameworkUtil.getBundle` call must be a class from the OSGi bundle executing
+the workflow script. This is different from the context of a plugin project,
+where you'd want to get the bundle hosting the class where you're making the
+call (using `this.getClass()`, for example). Note that for another scripting
+engine, you must pass in a concrete class from the particular bundle executing
+your script.
 
 The combination of Liferay's script and workflow engines is incredibly powerful.
 However, since it provides users with the ability to execute code, it can be
@@ -166,7 +169,5 @@ workflow, see the
 ## Related Topics [](id=related-topics)
 
 [Running Scripts From the Script Console](/discover/portal/-/knowledge_base/7-1/running-scripts-from-the-script-console)
-
-[Using Liferay's Script Engine](/discover/portal/-/knowledge_base/7-1/using-liferays-script-engine)
 
 [Script Examples](/discover/portal/-/knowledge_base/7-1/script-examples)

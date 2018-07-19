@@ -1,88 +1,85 @@
 # Running Scripts From the Script Console [](id=running-scripts-from-the-script-console)
 
-To see a very simple example of the script console in action, do the following:
+The script console provides a single view for executing Groovy scripts on @product@ and printing their output. The console has predefined variables that facilitate printing output and working with portlets and @product@ users. Here you'll learn these things:
 
-1.  Log into the portal as an administrator
+- [How to execute a script in the script console](#running-the-sample-script) 
 
-2.  Navigate to the *Control Panel* &rarr; *Server Administration* area of the 
-    Control Panel.
+- [The predefined variables available in the script console](#predefined-variables)
 
-3.  Click on *Script*. This is @product@'s script console.
+- [Tips for running scripts in the script console](#tips)
 
-4.  Replace the code in the script console with the following: 
+Start with running the script console's sample script. 
 
-        number = com.liferay.portal.kernel.service.UserLocalServiceUtil.getUsersCount(); 
-        out.println(number); 
+## Running the Sample Script [](id=running-the-sample-script)
 
-5.  Click the *Execute* button and check the script console or the log for the
-    output.
+Here's how to run the sample script in the script console:
 
-Next, consider a less simplistic example that retrieves some user information
-from the database, makes changes, and then saves the changes in the database.
-Suppose that your company has updated the 
-[terms of use](/discover/portal/-/knowledge_base/7-1/terms-of-use)
-and wants each user to be presented with the updated terms of use whenever they
-next log in. When users agree to the terms of use, a boolean attribute called
-`agreedToTermsOfUse` is set in their user records. As long as the value of this
-variable is `true`, the user won't be presented with the terms of use when they
-log in.  However, if you set this flag to `false` for each user, each user must
-agree to the terms of use again before they can log in. 
+1.  Sign in to @product@ as an administrator.
 
-1.  Enter the following code into the *Script* console:
+2.  In the *Product Menu*, navigate to *Control Panel* &rarr; *Configuration*
+    &rarr; *Server Administration*. 
 
-        import com.liferay.portal.kernel.service.UserLocalServiceUtil
+3.  Click on *Script*. This is the script console. The default sample script
+    prints the User count to the console output. 
 
-        userCount = UserLocalServiceUtil.getUsersCount()
-        users = UserLocalServiceUtil.getUsers(0, userCount)
+        // ### Groovy Sample ###
 
-        for (user in users) { println("User Name: " + user.getFullName() + " -- " +
-        user.getAgreedToTermsOfUse()) }
+        number = com.liferay.portal.kernel.service.UserLocalServiceUtil.getUsersCount();
 
+        out.println(number);
 
-    This code to checks the status of the `agreedToTermsOfUse` user attribute, 
-    and prints the value for each user. 
+4.  Click *Execute* and check the script console *Output* for the User count.
 
-2.  Now replace that with this script:
-    
-        import com.liferay.portal.kernel.service.UserLocalServiceUtil
+![Figure 1: The script console's sample Groovy script prints the User count to the console's *Output* section.](../../../images/groovy-script-sample.png)
 
-        userCount = UserLocalServiceUtil.getUsersCount()
-        users = UserLocalServiceUtil.getUsers(0, userCount)
+The Groovy sample invokes Liferay service utility `UserLocalServiceUtil` to get
+the user count. Then it uses the `out` (a built-in `PrintWriter`) to output the
+count to the script console. 
 
-        for (user in users){
-    
-            if(!user.isDefaultUser() && 
-                !user.getEmailAddress().equalsIgnoreCase("test@liferay.com")) {
-            
-                    user.setAgreedToTermsOfUse(false)
-                    UserLocalServiceUtil.updateUser(user)
-        
-            }
-        
-        }
+## Predefined Variables [](id=predefined-variables)
 
-    This updates each user in the system to set his or her `agreedToTermsOfUse` 
-    attribute to `false`. Your script will make sure to skip the default user 
-    as well as the default admin user that's currently logged in and running 
-    the script. If you're logged in as someone other than test@liferay.com, 
-    update the script with your email address.
+Here are the predefined variables available to scripts executed in the script
+console:
 
-3.  Click *Execute*.
- 
-4.  To verify the script has updated the records, run the first script again. 
+- `out` (`java.io.PrintWriter`)
+- `actionRequest` (`javax.portlet.ActionRequest`)
+- `actionResponse` (`javax.portlet.ActionReponse`)
+- `portletConfig` (`javax.portlet.PortletConfig`)
+- `portletContext` (`javax.portlet.PortletContext`)
+- `preferences` (`javax.portlet.PortletPreferences`)
+- `userInfo` (`java.util.Map<String, String>`)
 
-    You should see that all users (except the default user and your user) have been updated. 
+This script demonstrates using the `actionRequest` variable to get the portal
+instance's `Company`:
 
-That's all that's needed to run scripts and to access the Liferay service layer.
+    import com.liferay.portal.kernel.util.*
 
-Keep these things in mind when working with the script console: 
+    company = PortalUtil.getCompany(actionRequest)
+    out.println("Current Company:${company.getName()}\n")
+
+    out.println("User Info:")
+    userInfo.each { 
+            k,v -> out.println("${k}:${v}") 
+    }
+
+![Figure 1: Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the company and current user.](../../../images/groovy-script-current-user-info.png)
+
+Note that if you use `System.out.println`, for example, your output is printed
+to Liferay's log file. If you use `out.println` instead (using the predefined
+variable), your output is printed to the script console.
+
+## Tips [](id=tips)
+
+Keep these things in mind when using the script console: 
 
 - There is no undo.
 - There is no preview.
-- When invoking local services, no permissions checking is enforced.
-- Scripts are executed synchronously. Be careful with scripts that might take a
-  long time to execute. 
+- Permissions checking is not enforced for local services.
+- Scripts are executed synchronously. Avoid executing scripts that might take a
+  long time. 
 
-For these reasons, you should use the script console cautiously. It's best to
-test run your scripts on non-production systems before running them on
-production.
+For these reasons, use the script console cautiously. Test your scripts on
+non-production systems before running them on production. 
+
+Of course, Liferay's script engine can be used outside of the script console.
+Next, you'll learn how workflows leverage Liferay's script engine.
