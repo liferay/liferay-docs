@@ -110,8 +110,7 @@ incompatibility failure during execution.
 Liferay @ide@ must specify contracts in their `bnd.bnd` file. For example, here
 are contract instructions for Java Portlet and Java Servlet APIs:
 
-    -contract: JavaPortlet
-    -contract: JavaServlet 
+    -contract: JavaPortlet,JavaServlet 
 
 At build time, bnd adds the contract instructions to your module's manifest. It
 adds a requirement for the first version of the API found in your classpath and
