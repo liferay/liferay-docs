@@ -1,8 +1,9 @@
 # Action: Autofill [](id=action-autofill)
 
-Autofill rules let you change the selection options of another field based
-on the value entered into a related field. A [data provider's]((/discover/portal/-/knowledge_base/7-1/data-providers)) output is used to
-populate a field, as long as the condition is met.
+Autofill rules let you change the selection options of another field based on
+the value entered into a related field. A 
+[data provider's](/discover/portal/-/knowledge_base/7-1/data-providers) 
+output is used to populate a field, as long as the condition is met.
 
 Before configuring an autofill rule, 
 [set up a data provider](/discover/portal/-/knowledge_base/7-1/data-providers). 
@@ -16,7 +17,7 @@ To follow this example:
         
         http://localhost:8080/api/jsonws?contextName=&signature=%2Fcountry%2Fget-countries-0
 
-    Make sure the output parameter is set to `nameCurentValue`. If you're unsure
+    Make sure the output parameter is set to `$..nameCurentValue`. If you're unsure
     how to do this, first read the article on 
     [Data Providers](/discover/portal/-/knowledge_base/7-1/data-providers).
 
@@ -58,7 +59,7 @@ $$$
 
 The above example is simple, using only an Output to autofill a Select from List
 field if another field has a certain value. Many times, the response from the
-Rest provider must be filtered before returning results in the Select from List
+REST provider must be filtered before returning results in the Select from List
 field. For this, a Data Provider Input field is required. For example, to
 configure an autofill rule to display the countries of the world filtered by a
 Region field (for example, Americas, Europe, or Oceania),

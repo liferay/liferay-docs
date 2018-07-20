@@ -73,13 +73,19 @@ To add a *Countries of the World* Data Provider for use in your Forms,
 
     Label: `Country Name`
 
-    Path: `nameCurrentValue` 
+    Path: `$..nameCurrentValue` 
 
     Type: `List`
 
 7.  Save the Data Provider.
 
 ![Figure 1: Set up a simple data provider in no time.](../../images/forms-simple-data-provider.png)
+
+What's that `$..` before `nameCurrentValue`? It's JsonPath syntax to navigate
+the JSON data structure and specify the path to the output. Learn more about
+JsonPath
+[here](https://github.com/json-path/JsonPath/blob/master/README.md) and
+[here](http://goessner.net/articles/JsonPath/).
 
 ## Using a Data Provider in a Select Field [](id=using-a-data-provider-in-a-select-field)
 
@@ -173,7 +179,8 @@ The REST service's response data is filtered by the input parameter.
 enabled. You can add multiple Outputs. Outputs can be filtered by inputs (see
 above) but can also be displayed without configuring input filtering. Specify
 the Label, Path, and Type (Text, Number, or List). The Path field is specified
-in JsonPath syntax. Using the `restcountries.eu` service, specify the `name`
-field as am Output by entering enter `$..name` in the Path field.
+in [JsonPath syntax](https://github.com/json-path/JsonPath/blob/master/README.md). 
+Using the `restcountries.eu` service, specify the `name` field as an Output by
+entering enter `$..name` in the Path field.
 
 ![Figure 3: Set up Data Providers to display data retrieved from a REST service.](../../images/forms-data-provider-configuration.png)
