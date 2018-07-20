@@ -106,6 +106,17 @@ generated:
 
     }
 
+Before implementing your finder method you need to add the dependency to the CustomSQL API and the @ServiceReference in your `EntryFinderImpl`. 
+
+build.gradle:
+
+    compileOnly group: "com.liferay", name: "com.liferay.portal.dao.orm.custom.sql.api", version: "1.0.1"
+    
+`EntryFinderImpl`: 
+
+    @ServiceReference(type = CustomSQL.class)
+	private CustomSQL _customSQL;
+
 Now you can create a finder method in your `EntryFinderImpl` class. Add your
 finder method and static field to the `*FinderImpl` class. For example, here's
 how you could write the `EntryFinderImpl` class:
@@ -118,7 +129,7 @@ how you could write the `EntryFinderImpl` class:
         try {
             session = openSession();
 
-            String sql = CustomSQLUtil.get(
+            String sql = _customSQL.get(
                 getClass(),
                 FIND_BY_ENTRYNAME_ENTRYMESSAGE_GUESTBOOKNAME);
 
@@ -153,7 +164,7 @@ how you could write the `EntryFinderImpl` class:
             ".findByEntryNameEntryMessageGuestbookName";
 
 The custom finder method opens a new Hibernate session and uses Liferay's
-`CustomSQLUtil.get(String id)` method to get the custom SQL to use for the
+`CustomSQL.get(String id)` method to get the custom SQL to use for the
 database query. The `FIND_BY_ENTRYNAME_ENTRYMESSAGE_GUESTBOOKNAME` static field
 contains the custom SQL query's ID. The
 `FIND_BY_EVENTNAME_EVENTDESCRIPTON_LOCATIONNAME` string is based on the
