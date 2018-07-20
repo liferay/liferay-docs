@@ -6,7 +6,7 @@ tag's `require` attribute makes it easy.
 
 This tutorial covers how to access in your portlets the modules you've exposed.
 The example module `logger.es` was written inside the
-[Console Logger Portlet]( https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/console-logger-portlet).
+[Console Logger Portlet](https://github.com/liferay/liferay-docs/tree/7.0.x/develop/tutorials/code/osgi/modules/console-logger-portlet).
 Once the portlet is deployed, and added to a page, you'll notice a printout in
 the console.
 
