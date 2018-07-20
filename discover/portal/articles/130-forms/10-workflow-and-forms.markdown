@@ -1,7 +1,7 @@
 # Workflow and Forms [](id=sending-form-entries-through-a-workflow)
 
 [Kaleo](/discover/portal/-/knowledge_base/7-1/using-workflow) is a workflow 
-engine that directs a submitted asset through a workflow process before it's 
+engine for sending a submitted asset through a workflow process before it's 
 published. Most assets are configured to use workflow at the instance or site 
 level.
 
@@ -10,8 +10,7 @@ level.
 Forms is different, and that's why its assets don't appear in the above image.
 There are so many use cases for forms, and there could be so many per site, that
 a site---or instance---scoped workflow configuration won't serve your needs 
-well. Instead, the Forms application lets you configure workflow for *each 
-form* separately.
+well. Instead, configure workflow for *each form* separately.
 
 ## Enabling Workflow in a Form [](id=enabling-workflow-in-a-form)
 
@@ -25,11 +24,10 @@ To enable workflow in a form:
 2.  Click the Options button (![Options](../../images/icon-options.png)) and
     choose *Settings*.
 
-3.  The Settings window has a *Select a Workflow* dropdown. Find the workflow
+3.  The Settings window has a *Select a Workflow* drop-down. Find the workflow
     you're interested in, select it, and then click *Done*.
 
     ![Figure 3: Enable workflow for each form in its Settings window.](../../images/form-settings.png)
-
 
 ## Testing the Workflow [](id=testing-the-workflow)
 
@@ -37,14 +35,13 @@ Test the workflow process:
 
 1.  Add the form to a page.
 
-2.  Click *Submit to Publication* to submit the form entry.
+2.  Click *Submit for Publication* to submit the form entry.
 
 3.  Approve the entry.
 
-    If you're using the Single Approver workflow that ships with @product@ and 
-    you're the administrative user, you'll see a notification come in after 
-    submitting the form entry, alerting you that there's a form record to 
-    review. 
+    If you're using the Single Approver workflow and you're the administrative
+    user, you'll see a notification come in after submitting the form entry,
+    alerting you that there's a form record to review. 
 
 Next go find the form entry in the Forms application:
 
@@ -92,8 +89,7 @@ The Lunar Resort wants to exclude folks who don't meet certain qualifications:
     Dark Side of the Moon".
 
 To compile a list of finalists, each form entry should go through a workflow
-with one review task. The Single Approver workflow that ships with @product@
-works nicely for this.
+with one review task. The Single Approver workflow works nicely for this.
 
 After creating the form in the above image, select the Single Approver workflow
 from the form's Settings window, as described in the [above
