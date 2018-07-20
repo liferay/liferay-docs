@@ -1,4 +1,4 @@
-# Adding a SharePoint Documents and Media Repository to @product@ [](id=adding-a-sharepoint-documents-and-media-repository-to-liferay)
+# Adding a SharePoint Documents and Media Repository [](id=adding-a-sharepoint-documents-and-media-repository)
 
 Follow these steps to add your SharePoint Library to Documents and Media in 
 @product@:
