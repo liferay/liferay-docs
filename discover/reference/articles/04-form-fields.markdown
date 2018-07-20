@@ -9,7 +9,7 @@ section of the User Guide.
 
 Paragraph
 : This is static text on the form. Users do not enter data into Form Text
-fields. The form creator enters text that form users see displayed on the form.
+fields. The form creator enters text that form Users see displayed on the form.
 This is useful for longer instructions.
 
 ![Figure 2: A form text field.](../images/forms-paragraph.png)
@@ -20,9 +20,9 @@ field. By default, a text field keeps all input on a single line of text. To
 accommodate longer responses, choose the multi-line setting when
 configuring the text field 
 [as in this example](/discover/portal/-/knowledge_base/7-1/creating-and-managing-forms#building-a-form).
-Place limits on the text users can enter (numbers from 1-10, or email addresses,
+Place limits on the text Users can enter (numbers from 1-10, or email addresses,
 for example) by using the Text field's validation options (as in [this
-example](/discover/portal/-/knowledge_base/7-0/creating-advanced-forms#validating-text-fields)).
+example](/discover/portal/-/knowledge_base/7-1/validating-text-and-numeric-fields)).
 
 ![Figure 3: A multiline text form.](../images/forms-multiline.png)
 
@@ -35,7 +35,7 @@ select from list field populated by a Countries of the World data provider.
 ![Figure 4: A select from list field.](../images/forms-select-list.png)
 
 Single Selection
-: Using a radio button, users select one option from a list of options displayed
+: Using a radio button, Users select one option from a list of options displayed
 on the form. 
 
 ![Figure 5: A single selection field.](../images/forms-single-selection.png)
@@ -53,10 +53,10 @@ configured).
 ![Figure 7: A multiple selection field using a switcher.](../images/forms-switcher.png)
 
 Grid
-: Using radio buttons, users select from options laid out in rows and columns.
+: Using radio buttons, Users select from options laid out in rows and columns.
 One selection can be made per row. This is useful when the same response metric
 is needed for multiple questions. For example, a product survey form might ask
-users to rate a list of their product's characteristics as Wonderful, Pretty
+Users to rate a list of their product's characteristics as Wonderful, Pretty
 Good, Not So Good, or Awful.
 
 ![Figure 8: A grid field.](../images/forms-grid.png)
@@ -64,7 +64,7 @@ Good, Not So Good, or Awful.
 Numeric
 : Users enter numeric data (integers or decimals) into numeric fields.
 Non-number input is not accepted. For example, configure a numeric field that
-accepts integers to ask users how many pets they have.
+accepts integers to ask Users how many pets they have.
 
 ![Figure 9: A numeric field.](../images/forms-numeric.png)
 
