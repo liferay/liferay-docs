@@ -4,14 +4,17 @@ To monitor Elasticsearch, use X-Pack Monitoring. First
 [install X-Pack onto Elasticsearch](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack)
 and configure security if you're using X-Pack's security features. Then come
 back here for instructions on installing and configuring Kibana (the monitoring
-server) with X-Pack so that Elasticsearch, Kibana, and @product@ can communicate effortlessly and securely (if you're using X-Pack's security). A Liferay
+server) with X-Pack so that Elasticsearch, Kibana, and @product@ can communicate
+effortlessly and securely (if you're using X-Pack Security). A Liferay
 Enterprise Search Standard subscription (included with Premium) is necessary for
-this integration.  Contact 
+this integration. Contact 
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
 1.  Download and install Kibana.
 
-2.  Install X-Pack onto Kibana, configure Kibana and, in case you're using X-Pack's security, the proper security settings.
+2.  Install X-Pack onto Kibana and configure Kibana 
+
+    If using X-Pack's security, this includes proper security configuration.
 
 3.  Download and install the 
 [Liferay Connector to X-Pack Monitoring](https://www.liferay.com/marketplace)
@@ -19,7 +22,8 @@ this integration.  Contact
 
 4.  Configure the connector to communicate with Elasticsearch.
 
-This document assumes you're enabling security *and* monitoring or just monitoring. Differences in the process are noted as appropriate.
+The exact steps differ if you're enabling security *and* monitoring or just
+monitoring. Differences in the process are noted as appropriate.
 
 For the X-Pack installation procedure, refer to the 
 [X-Pack security article](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack).
@@ -53,7 +57,8 @@ for details.
     from Kibana Home.
 
 If you're using X-Pack's security features, there's additional configuration
-required that you can find below and is related to [Securing Elasticsearch 6 with X-Pack](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack).
+required that you can find below and is related to 
+[Securing Elasticsearch 6 with X-Pack](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack).
 
 ### Configure Kibana with Authentication [](id=configure-kibana-with-authentication)
 
@@ -112,7 +117,7 @@ with a Kibana user. The last step is to hook Kibana up with @product@.
 
 If you have a Liferay Enterprise Search (Premium or Standard) subscription,
 download the Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]. Install
-the LPKG file by copying it into the `Liferay Home/deploy` folder. That'sall
+the LPKG file by copying it into the `Liferay Home/deploy` folder. That's all
 there is to it.
 
 1.  Once the connector is installed and Kibana and Elasticsearch are securely
@@ -133,7 +138,8 @@ there is to it.
     Monitoring entry in the Foundation category. All the configuration 
     options for the monitoring connector appear there.
 
-    The values differ depending on your Kibana configuration (for instance, kibanaURL="https://localhost:5601" if you’re using X-Pack’s security features). 
+    The values differ depending on your Kibana configuration. For example,
+    `kibanaURL="https://localhost:5601"` if using X-Pack Security features.
 
 3.  Deploy this configuration file to `Liferay Home/osgi/configs`, and the
     settings are picked up by your running instance. There's no need to restart
@@ -152,8 +158,9 @@ there is to it.
     [http://localhost:8080/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy/app/monitoring](http://localhost:8080/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy/app/monitoring)
 
 5.  Because you're using the Monitoring portlet in @product@ as a proxy to
-    Kibana's UI, and only if you are using X-Pack’s security features, you must configure the application server's startup JVM
-    parameters to recognize a valid *truststore* and *password*.
+    Kibana's UI, if you are using X-Pack Security, you must configure the
+    application server's startup JVM parameters to recognize a valid
+    *truststore* and *password*.
 
     First, navigate to Elasticsearch Home and generate a PKSC#12 certificate
     from the CA you created when setting up X-Pack security:
