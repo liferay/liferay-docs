@@ -5,7 +5,7 @@
 **Note:** This tutorial is targeted for developers who are interested in
 installing the latest 3.2.0 IDE (Dev Studio) milestone. If you're interested in
 the latest 3.1.x GA release of IDE, see the
-[Installing Liferay IDE](/develop/reference/-/knowledge_base/7-0/installing-liferay-ide)
+[Installing Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-ide)
 tutorial.
 
 $$$

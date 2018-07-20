@@ -74,7 +74,7 @@ Users can be assigned to sites, teams, user groups, or organizations. Custom
 roles can be created, permissions can be assigned to those roles, and those
 roles can be applied to users. Roles are scoped to apply only with a specific
 context like a site, an organization, or globally. See the 
-[Roles and Permissions (not yet written)]() documentation for more information.
+[Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) documentation for more information.
 
 +$$$
 

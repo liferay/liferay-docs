@@ -20,7 +20,7 @@ that content. Content won't get stale, because you can take advantage of the
 [Scheduling](/discover/portal/-/knowledge_base/7-1/scheduling-web-content-publication)
 feature to determine when content is displayed and when it's removed.
 Additionally, you can configure @product@'s built-in
-[Workflow](/discover/portal/-/knowledge_base/7-1/using-workflow) system to set
+[Workflow](/discover/portal/-/knowledge_base/7-1/workflow) system to set
 up a review and publishing process so only what you want winds up on the live
 site. This gives you what you need to run everything from a simple, one-page web
 site to an enormous, content-rich site.

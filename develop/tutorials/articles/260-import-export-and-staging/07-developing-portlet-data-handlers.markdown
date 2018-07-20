@@ -139,8 +139,8 @@ Bookmarks application.
     The `set` methods must be annotated with the
     [@Reference](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
     annotation. Visit the
-    [Invoking Liferay Services Locally](/develop/tutorials/-/knowledge_base/7-1/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
-    section for more information on using the `@Reference` annotation in
+    [Invoking Local Services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
+    tutorial for more information on using the `@Reference` annotation in
     @product@.
 
     **Important:** @product@'s official Bookmarks app does not use local

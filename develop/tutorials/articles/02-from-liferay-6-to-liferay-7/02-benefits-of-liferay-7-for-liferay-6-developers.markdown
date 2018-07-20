@@ -148,7 +148,7 @@ to start/stop the server and deploy and administer modules.
 ## Powerful Configurability [](id=powerful-configurability)
 
 Creating
-[configurable code](/develop/tutorials/-/knowledge_base/7-1/configuration)
+[configurable code](/develop/tutorials/-/knowledge_base/7-1/configurable-applications)
 is a breeze with @product-ver@. And applications that use Liferay's new
 Configuration API allow administrators to change the configuration on the fly,
 through an auto-generated user interface called

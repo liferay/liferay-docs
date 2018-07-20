@@ -107,7 +107,7 @@ Follow these steps to add a blog entry in Site Administration:
     -   **Update**: Edit and modify the blog entry.
     -   **Permissions**: View and modify the blog entry's permissions.
     -   **Delete**: Move the blog entry to the 
-        [Recycle Bin](/discover/portal/-/knowledge_base/7-1/restoring-deleted-assets#using-the-recycle-bin).
+        [Recycle Bin](/discover/portal/-/knowledge_base/7-1/using-the-recycle-bin).
     -   **View**: View the blog entry.
     -   **Update Discussion**: Edit another user's comment on the blog entry.
     -   **Delete Discussion**: Delete any comments on the blog entry.

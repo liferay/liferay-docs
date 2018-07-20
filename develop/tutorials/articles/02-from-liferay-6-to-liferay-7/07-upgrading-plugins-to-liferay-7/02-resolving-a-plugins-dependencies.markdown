@@ -383,6 +383,6 @@ is a sure-fire way to verify existing module installations.
 
 [Invoking Local Services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
 
-[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/7-1/finding-and-invoking-liferay-services)
+[Invoking Services from Service Builder Code](/develop/tutorials/-/knowledge_base/7-1/invoking-services-from-service-builder-code)
 
 [Tooling](/develop/tutorials/-/knowledge_base/7-1/tooling)

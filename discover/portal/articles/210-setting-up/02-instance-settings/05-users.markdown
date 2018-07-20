@@ -1,4 +1,4 @@
-# Users [](id=Users)
+# Users [](id=users)
 
 Configure user settings at Control Panel &rarr; Configuration &rarr; Instance
 Settings. In the Configuration tab, scroll down to the Users section and expand

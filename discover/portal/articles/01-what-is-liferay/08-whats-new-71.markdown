@@ -30,7 +30,7 @@ When creating a new page, users can choose either the new content pages or
 widget pages, which use the traditional method of creating pages through adding
 and configuring applications.
 
-![Figure x: Users can now choose to create Content Pages.](../../images/01-creating-pages.jpg)
+![Figure 1: Users can now choose to create Content Pages.](../../images/01-creating-pages.jpg)
 
 ### Fragments [](id=fragments)
 
@@ -41,7 +41,7 @@ build pages quickly without having to touch code. Fragments are organized in
 collections and leverage familiar asset management features such as drafts,
 thumbnail previews, search, and permissions.
 
-![Figure x: Non-technical users can use Fragments as building blocks for pages.](../../images/01-page-fragments.jpg)
+![Figure 2: Non-technical users can use Fragments as building blocks for pages.](../../images/01-page-fragments.jpg)
 
 ### Fragment Editor [](id=fragment-editor)
 
@@ -49,7 +49,7 @@ Web developers can use the Fragment Editor in the browser to create or edit
 their Fragments. Alternatively, developers can create Fragments with their
 preferred tools and import the fragments into Liferay.
 
-![Figure x: The Fragment editor has a three-pane view for HTML, CSS, and JavaScript, with a preview pane rendering the final result.](../../images/01-fragment-editor.png)
+![Figure 3: The Fragment editor has a three-pane view for HTML, CSS, and JavaScript, with a preview pane rendering the final result.](../../images/01-fragment-editor.png)
 
 ### Page Editor [](id=page-editor)
 
@@ -63,7 +63,7 @@ in-line editing, swapping in new images and other elements. Fragments can
 display Liferay's out-of-the-box applications, and you can configure them within
 the page editor.
 
-![Figure x: The Page Editor makes it easy to build pages out of Fragments.](../../images/01-page-editor.jpg)
+![Figure 4: The Page Editor makes it easy to build pages out of Fragments.](../../images/01-page-editor.jpg)
 
 ### Display Pages [](id=display-pages)
 
@@ -81,7 +81,7 @@ custom menus for sections of the site or remove marketing landing pages from
 menus. You can easily manage menu hierarchies and save different menu sets with
 a new drag-and-drop interface.
 
-![Figure x: Menus are now decoupled from page navigation, and can be edited
+![Figure 5: Menus are now decoupled from page navigation, and can be edited
 independently.](../../images/01-menus.jpg)
 
 ### Forms [](id=forms)
@@ -94,7 +94,7 @@ be translated into any language. There are new fields and properties, form
 fragments, auto-saving of forms, and so much more it had to be 
 [described separately](/discover/portal/-/knowledge_base/7-1/whats-new-with-liferay-forms).
 
-![Figure x: Forms have many improvements.](../../images/01-forms.jpg)
+![Figure 6: Forms have many improvements.](../../images/01-forms.jpg)
 
 ### User Experience [](id=user-experience)
 
@@ -123,7 +123,7 @@ design, and support for videos from external services. Message Boards now
 supports drag and drop for uploading attachments, section renaming, category and
 thread grouping, notification management, and a new design for comments.
 
-![Figure x: The new cards design for blogs displays entries in a visual grid.](../../images/01-blogs.jpg)
+![Figure 7: The new cards design for blogs displays entries in a visual grid.](../../images/01-blogs.jpg)
 
 ## Administration Improvements [](id=administration-improvements)
 
@@ -161,7 +161,7 @@ A new Control Panel makes it easier to take care of all administration tasks
 with the click of a button. Users can configure the search engine, start and
 monitor re-indexes, and much more.
 
-![Figure x: Search administration is now separated from server administration.](../../images/01-search.jpg)
+![Figure 8: Search administration is now separated from server administration.](../../images/01-search.jpg)
 
 ### Page Management [](id=page-management)
 
@@ -169,7 +169,7 @@ A new interface for visualizing and managing complex page hierarchies makes page
 management easier. Page templates and display pages are now integrated nicely,
 bringing page management into one central location.
 
-![Figure x: The new page management interface puts all page functions in one place.](../../images/01-new-page-management.jpg)
+![Figure 9: The new page management interface puts all page functions in one place.](../../images/01-new-page-management.jpg)
 
 ### Workflow Management [](id=workflow-management)
 
