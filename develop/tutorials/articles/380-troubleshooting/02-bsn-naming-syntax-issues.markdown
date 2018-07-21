@@ -1,6 +1,6 @@
 # Resolving Bundle-SymbolicName Syntax Issues [](id=resolving-bundle-symbolicname-syntax-issues)
 
-An OSGi bundle's `Bundle-SymbolicName` and  `Bundle-Version` manifest headers
+An OSGi bundle's `Bundle-SymbolicName` and `Bundle-Version` manifest headers
 uniquely identify it. You can specify a bundle's `Bundle-SymbolicName` in these
 ways:
 
@@ -17,11 +17,11 @@ For plugin WARs, specifying the `Bundle-SymbolicName` in the
 
 **Important**: `Bundle-SymbolicName` values must not contain spaces. On bundle
 deployment, Liferay's OSGi Runtime framework throws an
-`IllegalContextNameException`  if its `Bundle-SymbolicName` has a space.
+`IllegalContextNameException` if its `Bundle-SymbolicName` has a space.
 
 For example, if you deploy a plugin WAR that has no `Bundle-SymbolicName` header
 in its `liferay-plugin-package.properties`, the
-[WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
 uses the WAR's name as the WAB's `Bundle-SymbolicName`. If the WAR's name has a
 space in it (e.g., `space-program-theme v1.war`) an
 `IllegalContextNameException` occurs on deployment.
@@ -29,8 +29,8 @@ space in it (e.g., `space-program-theme v1.war`) an
     org.apache.catalina.core.ApplicationContext.log The context name 'space-program-theme v1' does not follow Bundle-SymbolicName syntax.
     org.eclipse.equinox.http.servlet.internal.error.IllegalContextNameException: The context name 'space-program-theme v1' does not follow Bundle-SymbolicName syntax.
 
-To avoid using spaces and to follow naming best practices, you can use a
-reverse-domain name in your `Bundle-SymbolicName`.
+To avoid using spaces and to follow naming best practices, use a reverse-domain
+name in your `Bundle-SymbolicName`.
 
 Here's an example domain name and reverse domain name:
 
@@ -42,4 +42,4 @@ However you set your a `Bundle-SymbolicName`, refrain from using spaces.
 
 ## Related Topics [](id=related-topics)
 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
