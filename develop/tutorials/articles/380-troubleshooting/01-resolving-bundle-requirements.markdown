@@ -28,7 +28,7 @@ The bundle exception message follows this general pattern:
 -   etc.
 -   Module Z provides `www.xxx` but has an unresolved  requirement `yyy.zzz`.
 
-The pattern stops at the final requirement no module provides. The last module's
+The pattern stops at the final requirement no module satisfies. The last module's
 dependencies are key to resolving the bundle exception. There are two possible
 causes:
 
@@ -45,8 +45,7 @@ filter:="(osgi.extender=osgi.serviceloader.processor)"`. To resolve the
 requirement, make sure all of `com.liferay.petra.io`'s dependencies are
 deployed. 
 
-First, note the module's dependencies. Here is the `dependencies` section of the
-`com.liferay.petra.io` module's `build.gradle` file. 
+The `com.liferay.petra.io` module's `build.gradle` file lists its dependencies: 
 
     dependencies {
         provided group: "com.liferay", name: "com.liferay.petra.concurrent", version: "1.0.0"
@@ -57,8 +56,8 @@ First, note the module's dependencies. Here is the `dependencies` section of the
     }
 
 Then use
-[Felix Gogo Shell's `lb command`](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
-to verify the dependencies in Liferay's OSGi Runtime:
+[Felix Gogo Shell's `lb command`](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+to verify the dependencies are in Liferay's OSGi Runtime:
 
     lb
     START LEVEL 1
@@ -77,19 +76,21 @@ to verify the dependencies in Liferay's OSGi Runtime:
     ...
 
 Notice the dependency module `org.apache.aries.spifly.dynamic.bundle` is missing
-from the runtime bundle list. Examining the module's `MANIFEST.MF` file shows it
-provides the requirement capability `osgi.extender;
-filter:="(osgi.extender=osgi.serviceloader.processor)"`. 
-
+from the runtime bundle list. The `org.apache.aries.spifly.dynamic.bundle`
+module's `MANIFEST.MF` file shows it  provides the requirement capability
+`osgi.extender; filter:="(osgi.extender=osgi.serviceloader.processor)"`:
 
     Provide-Capability: osgi.extender;osgi.extender="osgi.serviceloader.regi
      strar";version:Version="1.0",osgi.extender;osgi.extender="osgi.servicel
      oader.processor";version:Version="1.0"
 
-Deploying this missing bundle `org.apache.aries.spifly.dynamic.bundle` resolves
-the example's bundle exception. 
+This capability `osgi.extender; filter:="(osgi.extender=osgi.serviceloader.processor)"`
+was the unresolved
+requirement we identified earlier. Deploying this missing bundle
+`org.apache.aries.spifly.dynamic.bundle` satisfies the example module's
+requirement and allows the module to resolve and install. 
 
-You can follow these similar steps to resolve your bundle exceptions. 
+You can resolve your bundle exceptions by following steps similar to these. 
 
 +$$$
 
@@ -101,10 +102,10 @@ $$$
 
 ## Related Topics [](id=related-topics)
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
 
-[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module)
+[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
 
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
 
-[Resolving a Plugins's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+[Resolving a Plugins's Dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies)
