@@ -62,3 +62,7 @@ $$$
 
 That's it for module log configuration. You're all set to print the information
 you want.
+
+## Related Topics [](id=related-topics)
+
+[Implementing Logging](/develop/tutorials/-/knowledge_base/7-1/implementing-logging)
