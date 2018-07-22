@@ -22,14 +22,9 @@ steps to add it:
 
         Import-Package: com.liferay.demo.foo;resolution:="optional"
 
-    <!-- 
-    Replace the blog article link with a link to actual documentation. Need to 
-    find actual documentation explaining the difference between optional imports 
-    and dynamic imports. 
-    -->
     Note that you can use either an optional or dynamic import. The differences 
     are explained 
-    [in this blog post](http://web.ist.utl.pt/ist162500/?p=65). 
+    [here](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html#i2548181). 
 
 2.  Create a component to use the optional package: 
 
@@ -73,14 +68,12 @@ dependency, refreshing your module triggers the OSGi bundle lifecycle events
 that trigger your controller's `activate` method and the check for the optional
 dependency. Since the dependency exists, your client component uses it. 
 
-Note that you can refresh a bundle from @product@'s Gogo shell with this 
-command: 
+Note that you can refresh a bundle from
+[Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+with this command: 
 
-    equinox:refresh [bundle ID]
-
-For more information about optional dependencies, see 
-[OSGi Enroute's documentation](http://enroute.osgi.org/tutorial_wrap/220-optional-dependencies). 
+    equinox:refresh [bundle ID] 
 
 ## Related Topics [](id=related-topics)
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
