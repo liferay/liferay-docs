@@ -12,9 +12,9 @@ following code demonstrates this.
     // the data source you look up using JNDI
 
     ClassLoader origLoader = thread.getContextClassLoader();
-    
+
     // Set Liferay's class loader on the thread
-    
+
     thread.setContextClassLoader(PortalClassLoaderUtil.getClassLoader());
 
     try {
@@ -47,10 +47,22 @@ following code demonstrates this.
     }
 
 The example code sets @product@'s classloader on the thread to access the JNDI
-API. After working with the data source, the code reinstates the thread's
+API. 
+
+    thread.setContextClassLoader(PortalClassLoaderUtil.getClassLoader());
+
+It uses JNDI to look up the data source.
+
+    InitialContext ctx = new InitialContext();
+    DataSource datasource = (DataSource)
+        ctx.lookup("java:comp/env/jdbc/TestDB"); 
+
+After working with the data source, the code reinstates the thread's
 original classloader.
 
-Here are the class imports for the code above:
+     thread.setContextClassLoader(origLoader);
+
+Here are the class imports for the example code:
 
     import java.sql.Connection;
     import java.sql.SQLException;
@@ -78,8 +90,8 @@ without using @product@'s classloader:
 $$$
 
 An easier way to work with databases is to 
-[connect to them using Service Builder](/develop/tutorials/-/knowledge_base/7-0/connecting-service-builder-to-external-data-sources). 
+[connect to them using Service Builder](/develop/tutorials/-/knowledge_base/7-1/connecting-service-builder-to-external-databases). 
 
 ## Related Topics [](id=related-topics)
 
-[Connecting Service Builder to External Data Sources](/develop/tutorials/-/knowledge_base/7-0/connecting-service-builder-to-external-data-sources)
+[Connecting Service Builder to External Databases](/develop/tutorials/-/knowledge_base/7-1/connecting-service-builder-to-external-databases)
