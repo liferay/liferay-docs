@@ -9,8 +9,8 @@ environments is straightforward.
 -   `NoClassDefFoundError`: occurs when a compiled class references
     another class that isn't on the runtime classpath.
 
-In OSGi environments, however, there are additional cases where a
-`ClassNotFoundException` or `NoClassDefFoundError` can occur. Here are three:
+In OSGi environments, however, there are these additional cases where a
+`ClassNotFoundException` or `NoClassDefFoundError` can occur:
 
 1.  The missing class belongs to a module dependency that's an OSGi module. 
 2.  The missing class belongs to a module dependency that's *not* an OSGi 
@@ -32,7 +32,7 @@ In this case, there are two possible causes:
     consuming module tries to access the class without importing it, a 
     `ClassNotFoundException` or `NoClassDefFoundError` occurs. 
 
-    In the consuming module, make sure you import the correct package. First 
+    In the consuming module, make sure to import the correct package. First 
     check the package name. If the package import is correct but you still get 
     the exception or error, the class might no longer exist in the package. 
 
@@ -64,7 +64,7 @@ In this case, there are two possible causes:
 
     -   Revert to the module version you used previously. Deployed module 
         versions reside in `[Liferay_Home]/osgi/`. For details, see
-        [Backing up Liferay Installations](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation#backing-up-liferays-file-system). 
+        [Backing up Liferay Installations](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation#backing-up-liferays-file-system). 
 
     Do what you think is best to get your module working properly. 
 
@@ -85,7 +85,7 @@ In this case, you have two options:
 2.  Embed the dependency in your module by embedding the dependency `JAR` file's
     packages as private packages in your module. If you want to embed a non-OSGi
     `JAR` file in your application, see the tutorial 
-    [Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module). 
+    [Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module). 
 
 ## Case 3: The Missing Class Belongs to a Global Library [](id=case-3-the-missing-class-belongs-to-a-global-library)
 
@@ -98,7 +98,8 @@ exported and can't think of **any** other solution, you can consider adding the
 required package for export by the system module. There are two ways to do this: 
 
 1.  In your `portal-ext.properties` file, use the property
-    `module.framework.system.packages.extra` to specify the packages to export. 
+    [`module.framework.system.packages.extra`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Module%20Framework)
+    to specify the packages to export. Preserve the property's current list. 
 
 2.  If the package you need is from a @product@ JAR, you might be able to add 
     the module to the list of exported packages in
@@ -109,7 +110,7 @@ required package for export by the system module. There are two ways to do this:
 If the package you need is from a @product@ module, (i.e., it's **NOT** 
 from a global library), you can add the package to that module's `bnd.bnd` 
 exports. You should **NOT**, however, undertake this lightly. The package would
-already be be exported if Liferay intended for it to be available. 
+already be exported if Liferay intended for it to be available. 
 
 ## Case 4: The Missing Class Belongs to a Java Runtime Package [](id=case-4-the-missing-class-belongs-to-a-java-runtime-package)
 
@@ -121,14 +122,15 @@ packages must be specified in the boot delegation list to get on the classpath.
 Here's how to add packages to the boot delegation list:
 
 1.  In a `portal-ext.properties` file, override
-    [portal property `org.osgi.framework.bootdelegation`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework).
+    [portal property `org.osgi.framework.bootdelegation`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Module%20Framework).
     Preserve the property's current list. 
+
 2.  Add the missing package to the list. 
 
 ## Related Topics [](id=related-topics)
 
-[Backing up Liferay Installations](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
+[Backing up Liferay Installations](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
 
-[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module)
+[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
 
-[Bundle Classloading Flow](/develop/tutorials/-/knowledge_base/7-0/bundle-classloading-flow)
+[Bundle Classloading Flow](/develop/tutorials/-/knowledge_base/7-1/bundle-classloading-flow)
