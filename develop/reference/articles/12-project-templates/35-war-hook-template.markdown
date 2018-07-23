@@ -4,7 +4,7 @@ In this article, you'll learn how to create a Liferay WAR hook project. To
 create a Liferay WAR hook via the command line using Blade CLI or Maven, use one
 of the commands with the following parameters:
 
-    blade create -t war-hook [-p packageName] [-c className] projectName
+    blade create -t war-hook -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -13,7 +13,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.war.hook \
         -DartifactId=[projectName]
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -23,7 +24,7 @@ a WAR hook project called `my-war-hook-project` with a package name of
 `com.liferay.docs` and a class name of `MyWarHook`. You could run the following
 command to accomplish this:
 
-    blade create -t war-hook -p com.liferay.docs -c MyWarHook my-war-hook-project
+    blade create -t war-hook -v 7.0 -p com.liferay.docs -c MyWarHook my-war-hook-project
 
 or
 
@@ -34,7 +35,8 @@ or
         -DartifactId=my-war-hook-project \
         -Dpackage=com.liferay.docs \
         -DclassName=MyWarHook \
-        -Dversion=1.0
+        -Dversion=1.0 \
+        -DliferayVersion=7.0
 
 After running the command above, your project's folder structure looks like
 this: 

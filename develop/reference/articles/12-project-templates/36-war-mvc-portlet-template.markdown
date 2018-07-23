@@ -4,15 +4,16 @@ In this article, you'll learn how to create a Liferay MVC portlet project as a
 WAR file. To create a Liferay MVC portlet project as a WAR via the command line
 using Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t war-mvc-portlet [-p packageName] projectName
+    blade create -t war-mvc-portlet -v 7.0 [-p packageName] projectName
 
 or
 
     mvn archetype:generate \
         -DarchetypeGroupId=com.liferay \
         -DarchetypeArtifactId=com.liferay.project.templates.war.mvc.portlet \
-        -DartifactId=[projectName]
-        -Dpackage=[packageName]
+        -DartifactId=[projectName] \
+        -Dpackage=[packageName] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -22,7 +23,7 @@ create a WAR MVC portlet project called `my-war-mvc-portlet-project` with a
 package name of `com.liferay.docs.war.mvc` and a class name of
 `MyWarMvcPortlet`. You could run the following command to accomplish this:
 
-    blade create -t war-mvc-portlet -p com.liferay.docs.war.mvc my-war-mvc-portlet-project
+    blade create -t war-mvc-portlet -v 7.0 -p com.liferay.docs.war.mvc my-war-mvc-portlet-project
 
 or
 
@@ -32,7 +33,8 @@ or
         -DgroupId=com.liferay \
         -DartifactId=my-war-mvc-portlet-project \
         -Dpackage=com.liferay.docs.war.mvc \
-        -Dversion=1.0
+        -Dversion=1.0 \
+        -DliferayVersion=7.0
 
 After running the command above, your project's folder structure looks like
 this: 
