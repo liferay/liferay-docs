@@ -64,8 +64,7 @@ accordingly.
 
 ## Installation [](id=installation)
 
-Enterprise subscribers with a Liferay Commerce order can install @commerce@
-from the 
+Enterprise subscribers with a Liferay Commerce order can install from the 
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/commerce).
 You will need either an order number that includes @commerce@ or an .xml
 activation key. You will also need @product-ver@; see installation instructions
