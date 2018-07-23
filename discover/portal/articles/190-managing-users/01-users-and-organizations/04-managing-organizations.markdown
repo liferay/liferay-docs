@@ -137,7 +137,7 @@ parent type.
 Once you configure additional Organization types and click Save, you'll find
 your new type(s) available for selection in the Add Organization form.
 
-![Figure 3: Custom configuration tpyes are available in the Add Organization
+![Figure 3: Custom configuration types are available in the Add Organization
 form.](../../../images/orgs-add-custom-organization.png)
 
 Users can join or be assigned to Sites when they share a common interest. Users
