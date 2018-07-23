@@ -4,7 +4,7 @@ In this article, you'll learn how to create a Liferay form field as a Liferay
 module. To create a Liferay form field via the command line using Blade CLI or
 Maven, use one of the commands with the following parameters:
 
-    blade create -t form-field [-p packageName] [-c className] projectName
+    blade create -t form-field -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -23,7 +23,7 @@ create a form field project called `my-form-field-project` with a package name
 of `com.liferay.docs.form.field` and a class name prefix of `MyFormField`. You
 could run one of the following commands to accomplish this:
 
-    blade create -t form-field -p com.liferay.docs -c MyFormField my-form-field-project
+    blade create -t form-field -v 7.0 -p com.liferay.docs -c MyFormField my-form-field-project
 
 or
 

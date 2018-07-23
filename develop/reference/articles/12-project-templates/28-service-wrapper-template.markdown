@@ -4,7 +4,7 @@ In this article, you'll learn how to create a Liferay service wrapper as a
 Liferay module. To create a Liferay service wrapper via the command line using
 Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t service-wrapper [-p packageName] [-c className] [-s serviceWrapperClass] projectName
+    blade create -t service-wrapper -v 7.0 [-p packageName] [-c className] [-s serviceWrapperClass] projectName
 
 or
 
@@ -27,7 +27,7 @@ create a service wrapper project called `service-override` with a package name o
 `com.liferay.portal.service.UserLocalServiceWrapper` class. You could run the
 following command to accomplish this:
 
-    blade create -t service-wrapper -p com.liferay.docs.serviceoverride -c UserLocalServiceOverride -s com.liferay.portal.kernel.service.UserLocalServiceWrapper service-override
+    blade create -t service-wrapper -v 7.0 -p com.liferay.docs.serviceoverride -c UserLocalServiceOverride -s com.liferay.portal.kernel.service.UserLocalServiceWrapper service-override
 
 or
 

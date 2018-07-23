@@ -5,7 +5,7 @@ application as a WAR. To create a Liferay Spring MVC portlet via the command
 line using Blade CLI or Maven, use one of the commands with the following
 parameters:
 
-    blade create -t spring-mvc-portlet [-p packageName] [-c className] projectName
+    blade create -t spring-mvc-portlet -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -25,7 +25,7 @@ with a package name of `com.liferay.docs.springmvcportlet` and a class name of
 `MySpringMvcPortlet`. Also, you'd like to create a Spring-annotated portlet
 class named `MySpringMvcPortletViewController`.
 
-    blade create -t spring-mvc-portlet -p com.liferay.docs.springmvcportlet -c MySpringMvcPortlet my-spring-mvc-portlet-project
+    blade create -t spring-mvc-portlet -v 7.0 -p com.liferay.docs.springmvcportlet -c MySpringMvcPortlet my-spring-mvc-portlet-project
 
 or
 

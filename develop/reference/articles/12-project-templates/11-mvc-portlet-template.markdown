@@ -5,7 +5,7 @@ a Liferay module. To create a Liferay MVC portlet application via the command
 line using Blade CLI or Maven, use one of the commands with the following
 parameters:
 
-    blade create -t mvc-portlet [-p packageName] [-c className] projectName
+    blade create -t mvc-portlet -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -28,7 +28,7 @@ you'd like to create a service of type `javax.portlet.Portlet` that extends the
 type* is to say *component type*. You could run the following command to
 accomplish this:
 
-    blade create -t mvc-portlet -p com.liferay.docs.mvcportlet -c MyMvcPortlet my-mvc-portlet-project
+    blade create -t mvc-portlet -v 7.0 -p com.liferay.docs.mvcportlet -c MyMvcPortlet my-mvc-portlet-project
 
 or
 

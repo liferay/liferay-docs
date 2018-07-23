@@ -5,7 +5,7 @@ a Liferay module. To create a Liferay panel app and category via the command
 line using Blade CLI or Maven, use one of the commands with the following
 parameters:
 
-    blade create -t panel-app [-p packageName] [-c className] projectName
+    blade create -t panel-app -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -24,7 +24,7 @@ a panel app project called `my-panel-app-project` with a package name prefix of
 `com.liferay.docs` and a class name prefix of `Sample`. You could run the
 following command to accomplish this:
 
-    blade create -t panel-app -p com.liferay.docs -c Sample my-panel-app-project
+    blade create -t panel-app -v 7.0 -p com.liferay.docs -c Sample my-panel-app-project
 
 or
 

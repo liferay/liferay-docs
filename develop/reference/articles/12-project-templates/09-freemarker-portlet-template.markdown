@@ -5,7 +5,7 @@ application as a Liferay module. To create a Liferay FreeMarker portlet
 application via the command line using Blade CLI or Maven, use one of the
 commands with the following parameters:
 
-    blade create -t freemarker-portlet [-p packageName] [-c className] projectName
+    blade create -t freemarker-portlet -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -28,7 +28,7 @@ with a package name of `com.liferay.docs.freemarkerportlet` and a class name of
 means an OSGi service, not a Liferay API. Another way to say *service type* is
 to say *component type*. You could run the following command to accomplish this:
 
-    blade create -t freemarker-portlet -p com.liferay.docs.freemarkerportlet -c MyFreemarkerPortlet my-freemarker-portlet-project
+    blade create -t freemarker-portlet -v 7.0 -p com.liferay.docs.freemarkerportlet -c MyFreemarkerPortlet my-freemarker-portlet-project
 
 or
 

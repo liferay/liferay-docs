@@ -4,7 +4,7 @@ In this article, you'll learn how to create an npm Vue.js portlet as a
 Liferay module. To create an npm Vue.js portlet via the command line using
 Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t npm-vuejs-portlet [-p packageName] [-c className] projectName
+    blade create -t npm-vuejs-portlet -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -28,7 +28,7 @@ package name of `com.liferay.npm.vuejs` and a class name of
 type* is to say *component type*. You could run the following command to
 accomplish this:
 
-    blade create -t npm-vuejs-portlet -p com.liferay.npm.vuejs -c MyNpmVuejsPortlet my-npm-vuejs-portlet
+    blade create -t npm-vuejs-portlet -v 7.0 -p com.liferay.npm.vuejs -c MyNpmVuejsPortlet my-npm-vuejs-portlet
 
 or
 
