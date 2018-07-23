@@ -1,4 +1,4 @@
-# Configuring JSON Web Services
+# Configuring JSON Web Services [](id=configuring-json-web-services)
 
 JSON web services are enabled in Liferay by default. If you must disable them,
 specify this portal property setting in a `portal-ext.properties` file: 
@@ -15,7 +15,7 @@ As with the preceding property, you should set portal properties in a
 First, you'll learn about setting whether JSON web services are discoverable via 
 the API page. 
 
-## Discoverability
+## Discoverability [](id=discoverability)
 
 By default, JSON web services are discoverable via the API page at 
 `http://[address]:[port]/api/jsonws`. To disable this, set the following 
@@ -25,7 +25,7 @@ property:
 
 Next, you'll learn how to disable HTTP methods. 
 
-## Disabling HTTP Methods
+## Disabling HTTP Methods [](id=disabling-http-methods)
 
 When strict HTTP method mode is enabled, you can filter web service access based
 on HTTP methods used by the services. For example, set your Liferay instance's
@@ -39,7 +39,7 @@ are ignored.
 
 Next, you'll learn how to restrict public access to exposed JSON APIs. 
 
-## Strict HTTP Methods
+## Strict HTTP Methods [](id=strict-http-methods)
 
 All JSON web services are mapped to either `GET` or `POST` HTTP methods. If a
 service method name starts with `get`, `is` or `has`, the service is assumed to
@@ -55,7 +55,7 @@ When using strict mode, you must use the correct HTTP methods to call service
 methods. When strict HTTP mode is enabled, you still might need to disable HTTP
 methods. You'll learn how next. 
 
-## Controlling Public Access
+## Controlling Public Access [](id=controlling-public-access)
 
 Each service method knows whether a given user has permission to invoke the 
 chosen action. If you're concerned about security, you can restrict access
@@ -79,7 +79,7 @@ that if a path matches both the `jsonws.web.service.paths.includes` and
 `jsonws.web.service.paths.excludes` properties, the
 `jsonws.web.service.paths.excludes` property takes precedence. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Registering JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/registering-json-web-services)
 
