@@ -39,8 +39,7 @@ for details.
 1.  [Download Kibana](https://www.elastic.co/downloads/kibana) and extract it.
     The root folder is referred to as *Kibana Home*.
 
-2.  If you're using X-Pack Security on your Elasticsearch cluster, you must
-    install X-Pack into Kibana:
+2.  Install X-Pack into Kibana:
 
         ./bin/kibana-plugin install x-pack
 
