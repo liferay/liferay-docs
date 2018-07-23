@@ -96,7 +96,7 @@ have Portable Java Contracts. Each API's contract specifies the JSR it
 satisfies. Modules that use these APIs must specify requirements on the API
 contracts. Blade CLI and Liferay @ide@ module projects do this automatically! 
 
-For example, if your Blade CLI and Liferay @ide@ module uses the Java Portlet
+For example, if your Blade CLI or Liferay @ide@ module uses the Java Portlet
 API and you compile against the Java Portlet 3.0 artifact, a contract
 requirement for the package is added to your module's manifest. The contract
 requirement specifies your module's relationship with the imported API packages.
