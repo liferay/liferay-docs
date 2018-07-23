@@ -5,7 +5,7 @@ contributor as a Liferay module. To create a portlet toolbar contributor entry
 via the command line using Blade CLI or Maven, use one of the commands with the
 following parameters:
 
-    blade create -t portlet-toolbar-contributor -v 7.1 [-p packageName] [-c className] projectName
+    blade create -t portlet-toolbar-contributor [-p packageName] [-c className] projectName
 
 or
 
@@ -26,7 +26,7 @@ you want to create a portlet toolbar contributor project called
 `SamplePortletToolbarContributor`. You could run the following command to
 accomplish this:
 
-    blade create -t portlet-toolbar-contributor -v 7.1 -p com.liferay.docs -c Sample my-portlet-toolbar-contributor
+    blade create -t portlet-toolbar-contributor -p com.liferay.docs -c Sample my-portlet-toolbar-contributor
 
 or
 

@@ -4,7 +4,7 @@ In this article, you'll learn how to create an npm Angular portlet as a Liferay
 module. To create an npm Angular portlet via the command line using Blade CLI or
 Maven, use one of the commands with the following parameters:
 
-    blade create -t npm-angular-portlet -v 7.1 [-p packageName] [-c className] projectName
+    blade create -t npm-angular-portlet [-p packageName] [-c className] projectName
 
 or
 
@@ -28,7 +28,7 @@ package name of `com.liferay.npm.angular` and a class name of
 type* is to say *component type*. You could run the following command to
 accomplish this:
 
-    blade create -t npm-angular-portlet -v 7.1 -p com.liferay.npm.angular -c MyNpmAngularPortlet my-npm-angular-portlet
+    blade create -t npm-angular-portlet -p com.liferay.npm.angular -c MyNpmAngularPortlet my-npm-angular-portlet
 
 or
 

@@ -9,7 +9,7 @@ article and in section 3.14 of the
 To create a Liferay fragment via the command line using Blade CLI or
 Maven, use one of the commands with the following parameters:
 
-    blade create -t fragment -v 7.1 [-h hostBundleName] [-H hostBundleVersion] projectName
+    blade create -t fragment [-h hostBundleName] [-H hostBundleVersion] projectName
 
 or
 
@@ -28,7 +28,7 @@ a fragment project called `my-fragment-project` with a host bundle symbolic name
 of `com.liferay.login.web` and host bundle version of `1.0.0`. You could run the
 following command to accomplish this:
 
-    blade create -t fragment -v 7.1 -h com.liferay.login.web -H 1.0.0 my-fragment-project
+    blade create -t fragment -h com.liferay.login.web -H 1.0.0 my-fragment-project
 
 or
 

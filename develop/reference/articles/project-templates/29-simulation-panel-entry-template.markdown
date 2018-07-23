@@ -4,7 +4,7 @@ In this article, you'll learn how to create a Liferay simulation panel entry as
 a Liferay module. To create a simulation panel entry via the command line using
 Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t simulation-panel-entry -v 7.1 [-p packageName] [-c className] projectName
+    blade create -t simulation-panel-entry [-p packageName] [-c className] projectName
 
 or
 
@@ -25,7 +25,7 @@ want to create a simulation panel entry project called
 `SampleSimulationPanelApp`. You could run the following command to accomplish
 this:
 
-    blade create -t simulation-panel-entry -v 7.1 -p com.liferay.docs -c Sample my-simulation-panel-entry
+    blade create -t simulation-panel-entry -p com.liferay.docs -c Sample my-simulation-panel-entry
 
 or
 

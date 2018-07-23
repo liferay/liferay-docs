@@ -4,7 +4,7 @@ In this article, you'll learn how to create an npm React portlet as a Liferay
 module. To create an npm React portlet via the command line using Blade CLI or
 Maven, use one of the commands with the following parameters:
 
-    blade create -t npm-react-portlet -v 7.1 [-p packageName] [-c className] projectName
+    blade create -t npm-react-portlet [-p packageName] [-c className] projectName
 
 or
 
@@ -27,7 +27,7 @@ Here, *service* means an OSGi service, not a Liferay API. Another way to say
 *service type* is to say *component type*. You could run the following command
 to accomplish this:
 
-    blade create -t npm-react-portlet -v 7.1 -p com.liferay.npm.react -c MyNpmReactPortlet my-npm-react-portlet
+    blade create -t npm-react-portlet -p com.liferay.npm.react -c MyNpmReactPortlet my-npm-react-portlet
 
 or
 

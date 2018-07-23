@@ -5,7 +5,7 @@ contributor as a Liferay module. To create a template context contributor via
 the command line using Blade CLI or Maven, use one of the commands with the
 following parameters:
 
-    blade create -t template-context-contributor -v 7.1 [-p packageName] [-c className] projectName
+    blade create -t template-context-contributor [-p packageName] [-c className] projectName
 
 or
 
@@ -26,7 +26,7 @@ you want to create a template context contributor project called
 `SampleTemplateContextContributor`. You could run the following command to
 accomplish this:
 
-    blade create -t template-context-contributor -v 7.1 -p com.liferay.docs -c Sample my-template-context-contributor
+    blade create -t template-context-contributor -p com.liferay.docs -c Sample my-template-context-contributor
 
 or
 
