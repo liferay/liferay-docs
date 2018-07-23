@@ -20,7 +20,7 @@ to see what's polyfilled.
 
 Once you've completed writing your module, you can expose it by creating a
 `package.json` file that specifies your bundle's name and version. Make sure to
-create this in your module's root folder. The [js-logger]( https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/js-logger)
+create this in your module's root folder. The [js-logger](https://github.com/liferay/liferay-docs/tree/7.0.x/develop/tutorials/code/osgi/modules/js-logger)
 module, for example, specifies the following values in its `package.json` file:
 
     {
