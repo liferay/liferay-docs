@@ -1,5 +1,13 @@
 # Why Aren't JSP overrides I Made Using Fragments Showing? [](id=why-arent-jsp-overrides-i-made-using-fragments-showing)
 
++$$$
+
+**Important:** Using OSGi fragments to override JSPs is deprecated as of 
+@product@ 7.0 and is replaced by
+[using portlet filters](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-portlet-filters). 
+
+$$$
+
 The fragment module must specify the exact version of the host module. A 
 @product@ upgrade might have changed some JSPs in the host module, prompting a 
 version update. If this occurs, check that your JSP customizations are 
@@ -14,14 +22,13 @@ specify the host module and host module version:
     Bundle-Version: 1.0.0
     Fragment-Host: com.liferay.login.web;bundle-version="1.1.18"
 
-For information on finding the versions of your deployed modules, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts). 
-
-For more information on overriding JSPs, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps). 
+[Finding versions of deployed modules](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts)
+is straightforward.  
 
 ## Related Topics [](id=related-topics)
 
-[Overriding JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps)
+[JSP Overrides using Portlet Filters](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-portlet-filters)
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+[Customizing JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)
+
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
