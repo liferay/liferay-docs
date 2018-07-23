@@ -13,7 +13,7 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.war.mvc.portlet \
         -DartifactId=[projectName]
         -Dpackage=[packageName] \
-        -DliferayVersion=[liferayVersion]
+        -DliferayVersion=7.1
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.

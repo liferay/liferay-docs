@@ -19,7 +19,7 @@ or
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
         -DclassName=[className] \
-        -DliferayVersion=[liferayVersion]
+        -DliferayVersion=7.1
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
