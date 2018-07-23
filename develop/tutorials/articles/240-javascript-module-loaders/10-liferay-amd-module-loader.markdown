@@ -112,19 +112,17 @@ and load modules. Here's how it works:
    other configurations specified, to create a `config.json` file. Below is an
    example of a generated `config.json` file:
 
-```json
-{
-    "frontend-js-web@1.0.0/html/js/parser": {
-        "dependencies": []
-    },
-    "frontend-js-web@1.0.0/html/js/list-display": {
-        "dependencies": ["exports"]
-    },
-    "frontend-js-web@1.0.0/html/js/autocomplete": {
-        "dependencies": ["exports", "./parser", "./list-display"]
-    }
-}
-```
+        {
+            "frontend-js-web@1.0.0/html/js/parser": {
+                "dependencies": []
+            },
+            "frontend-js-web@1.0.0/html/js/list-display": {
+                "dependencies": ["exports"]
+            },
+            "frontend-js-web@1.0.0/html/js/autocomplete": {
+                "dependencies": ["exports", "./parser", "./list-display"]
+            }
+        }
 
 This configuration object tells the loader which modules are available, where 
 they are, and what dependencies they require.
