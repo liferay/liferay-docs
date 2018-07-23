@@ -93,7 +93,7 @@ These are covered next.
 There are several default macros defined in the 
 [`FTL_Liferay.ftl` template](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl)
 that you can use in your FreeMarker theme templates. Likewise, 
-[VM_liferay.vm](https://raw.githubusercontent.com/liferay/liferay-portal/master/modules/apps/foundation/portal-template/portal-template-velocity/src/main/resources/VM_liferay.vm) 
+[VM_liferay.vm](https://raw.githubusercontent.com/liferay/liferay-portal/7.0.x/modules/apps/foundation/portal-template/portal-template-velocity/src/main/resources/VM_liferay.vm) 
 defines the default macros for Velocity. The table below lists the available 
 macros and parameters:
 

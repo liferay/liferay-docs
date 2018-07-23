@@ -15,7 +15,7 @@ in your theme.
 To define a default Application Decorator for your theme's embedded portlets,
 you must set a default decorator in the portlet preferences.
 
-For example, the [Classic theme](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/foundation/frontend-theme/frontend-theme-classic/src/templates/navigation.ftl)
+For example, the [Classic theme](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/frontend-theme/frontend-theme-classic/src/templates/navigation.ftl)
 declares an Application Decorator with Id `barebone` and applies it to the
 embedded Navigation Menu portlet and Search portlet in its
 `navigation.ftl`:
