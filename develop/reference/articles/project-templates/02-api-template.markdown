@@ -4,7 +4,7 @@ In this tutorial, you'll learn how to create a Liferay API as a Liferay module.
 To create a Liferay API via the command line using Blade CLI or Maven, use one
 of the commands with the following parameters:
 
-    blade create -t api -v 7.1 [-p packageName] [-c className] projectName
+    blade create -t api [-p packageName] [-c className] projectName
 
 or
 
@@ -13,7 +13,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.api \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.1
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -24,7 +25,7 @@ want to create an API project called `my-api-project` with a package name of
 `com.liferay.docs.api` and a class name of `MyApi`. You could run the following
 command to accomplish this:
 
-    blade create -t api -v 7.1 -p com.liferay.docs -c MyApi my-api-project
+    blade create -t api -p com.liferay.docs -c MyApi my-api-project
 
 or
 
@@ -36,7 +37,8 @@ or
         -Dpackage=com.liferay.docs \
         -Dversion=1.0 \
         -DclassName=MyApi \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.1
 
 After running the Blade command above, your project's directory structure looks
 like this:

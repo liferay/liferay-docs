@@ -4,14 +4,15 @@ In this article, you'll learn how to create a Liferay theme as a WAR project. To
 create a Liferay theme via the command line using Blade CLI or Maven, use one of
 the commands with the following parameters:
 
-    blade create -t theme -v 7.1 projectName
+    blade create -t theme projectName
 
 or
 
     mvn archetype:generate \
         -DarchetypeGroupId=com.liferay \
         -DarchetypeArtifactId=com.liferay.project.templates.theme \
-        -DartifactId=[projectName]
+        -DartifactId=[projectName] \
+        -DliferayVersion=7.1
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -20,7 +21,7 @@ The template for this kind of project is `theme`. Suppose you want to create a
 theme project called `my-theme-project` as a WAR file. You could run the
 following command to accomplish this:
 
-    blade create -t theme -v 7.1 my-theme-project
+    blade create -t theme my-theme-project
 
 or
 
@@ -29,7 +30,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.theme \
         -DgroupId=com.liferay \
         -DartifactId=my-theme-project \
-        -Dversion=1.0
+        -Dversion=1.0 \
+        -DliferayVersion=7.1
 
 After running the Blade command above, your project's folder structure looks
 like this: 

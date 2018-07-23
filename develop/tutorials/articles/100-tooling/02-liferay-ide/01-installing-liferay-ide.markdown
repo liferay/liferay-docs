@@ -1,20 +1,14 @@
 # Installing Liferay @ide@ [](id=installing-liferay-ide)
 
-+$$$
-
-**Note:** This tutorial is targeted for developers who are interested in
-installing the latest 3.2.0 IDE (Dev Studio) milestone. If you're interested in
-the latest 3.1.x GA release of IDE, see the
-[Installing Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-ide)
-tutorial.
-
-$$$
-
 Liferay @ide@ is a plugin for Eclipse that brings many Liferay-specific features
 to the table. You can install it into your existing Eclipse environment, or
 Liferay provides a bundled version included in its Project SDK. In this
 tutorial, you'll learn the different methods available for installing Dev
-Studio.
+Studio:
+
+- [install the Dev Studio bundle from scratch](#install-the-liferay-ide-bundle)
+- [install Dev Studio into an existing Eclipse instance using an update URL](#install-liferay-ide-into-eclipse)
+- [install Dev Studio into an existing Eclipse instance using a ZIP file](#install-liferay-ide-into-eclipse-from-a-zip-file)
 
 **Important:** If you're installing Dev Studio into an existing Eclipse
 environment, you must be on Eclipse Oxygen or newer. For instructions on
@@ -35,8 +29,8 @@ update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
     [Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
     page. 
 
-2.  Download Liferay's
-    [Project SDK with @ide@](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/3.2.0%20M1/)
+2.  Download Liferay's latest 3.2.x
+    [Project SDK with @ide@](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
     executable that correlates to your operating system. The Project SDK
     includes @ide@,
     [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
