@@ -1,6 +1,6 @@
 # Importing Packages [](id=importing-packages)
 
-Your modules will often need to use Java classes from packages
+Your modules often must use Java classes from packages
 [exported](/develop/tutorials/-/knowledge_base/7-1/exporting-packages) by other
 modules. When a module is set up to import, the OSGi framework finds other
 registered modules that export the needed packages and wires them to the
@@ -87,7 +87,7 @@ descriptor files. It adds package imports for classes that are neither found in
 the plugin's `WEB-INF/classes` folder nor in embedded JARs. 
 
 Java APIs that aren't semantically versioned but have OSGi Portable Java
-Contracts are handled differently.  
+Contracts are handled differently. 
 
 ## Using Portable Java Contracts for Java APIs [](id=using-portable-java-contracts-for-java-apis)
 
@@ -115,10 +115,10 @@ are contract instructions for Java Portlet and Java Servlet APIs:
 At build time, bnd adds the contract instructions to your module's manifest. It
 adds a requirement for the first version of the API found in your classpath and
 *removes* version range information from `Import-Package` entries for
-corresponding API packages--the package version information isn't needed. 
+corresponding API packages---the package version information isn't needed. 
 
 Projects that don't use bnd must specify contracts in their module manifest. For
-example, here's how to contract for `JavaPortlet` 3.0 in your
+example, here's the specified contract for `JavaPortlet` 3.0, which goes in your
 `META-INF/MANIFEST.MF` file:
 
     Import-Package: javax.portlet
