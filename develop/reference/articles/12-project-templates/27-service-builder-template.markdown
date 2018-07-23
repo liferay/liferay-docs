@@ -14,7 +14,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.service.builder \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DapiPath=[apiPath]
+        -DapiPath=[apiPath] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -35,7 +36,8 @@ or
         -DartifactId=tasks \
         -Dpackage=com.liferay.docs.tasks \
         -Dversion=1.0 \
-        -DapiPath=com.liferay.api.path
+        -DapiPath=com.liferay.api.path \
+        -DliferayVersion=7.0
 
 <!-- How do we set apiPath param in blade command? -Cody -->
 

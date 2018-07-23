@@ -18,7 +18,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.fragment \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -40,7 +41,8 @@ or
         -Dversion=1.0 \
         -Dpackage= \
         -DhostBundleSymbolicName=com.liferay.login.web \
-        -DhostBundleVersion=1.0.0
+        -DhostBundleVersion=1.0.0 \
+        -DliferayVersion=7.0
 
 The folder structure is created, but there are no files. The only files created
 are the `bnd.bnd` and `build.gradle` files, which specify your host bundle and

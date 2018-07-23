@@ -14,7 +14,8 @@ or
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
         -DclassName=[className] \
-        -DserviceWrapperClass=[serviceWrapperClass]
+        -DserviceWrapperClass=[serviceWrapperClass] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -40,7 +41,8 @@ or
         -Dversion=1.0 \
         -DclassName=UserLocalServiceOverride \
         -DserviceWrapperClass=com.liferay.portal.kernel.service.UserLocalServiceWrapper \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.0
 
 Here, *service* means an OSGi service, not a Liferay API. Another way to say
 *service type* is to say *component type*.

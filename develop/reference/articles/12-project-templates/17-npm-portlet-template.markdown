@@ -13,7 +13,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.npm.portlet \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -39,7 +40,8 @@ or
         -Dpackage=com.liferay.npm \
         -Dversion=1.0 \
         -DclassName=MyNpmPortlet \
-        -DpackageJsonVersion=1.0.0
+        -DpackageJsonVersion=1.0.0 \
+        -DliferayVersion=7.0
 
 After running the command above, your project's directory structure looks like
 this:

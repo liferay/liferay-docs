@@ -11,7 +11,8 @@ or
     mvn archetype:generate \
         -DarchetypeGroupId=com.liferay \
         -DarchetypeArtifactId=com.liferay.project.templates.theme \
-        -DartifactId=[projectName]
+        -DartifactId=[projectName] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -29,7 +30,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.theme \
         -DgroupId=com.liferay \
         -DartifactId=my-theme-project \
-        -Dversion=1.0
+        -Dversion=1.0 \
+        -DliferayVersion=7.0
 
 After running the command above, your project's folder structure looks like
 this: 

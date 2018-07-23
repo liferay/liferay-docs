@@ -13,7 +13,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.war.hook \
         -DartifactId=[projectName]
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -34,7 +35,8 @@ or
         -DartifactId=my-war-hook-project \
         -Dpackage=com.liferay.docs \
         -DclassName=MyWarHook \
-        -Dversion=1.0
+        -Dversion=1.0 \
+        -DliferayVersion=7.0
 
 After running the command above, your project's folder structure looks like
 this: 
