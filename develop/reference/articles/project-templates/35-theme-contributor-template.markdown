@@ -13,7 +13,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.theme.contributor \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DcontributorType=[contributorType]
+        -DcontributorType=[contributorType] \
+        -DliferayVersion=[liferayVersion]
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -34,7 +35,8 @@ or
         -DartifactId=my-theme-contributor \
         -Dpackage=com.liferay.docs.theme.contributor \
         -Dversion=1.0 \
-        -DcontributorType=my-contributor
+        -DcontributorType=my-contributor \
+        -DliferayVersion=7.1
 
 After running the Blade command above, your project's folder structure would
 look like this: 

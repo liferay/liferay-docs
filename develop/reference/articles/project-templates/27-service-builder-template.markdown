@@ -14,7 +14,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.service.builder \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DapiPath=[apiPath]
+        -DapiPath=[apiPath] \
+        -DliferayVersion=[liferayVersion]
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -35,7 +36,8 @@ or
         -DartifactId=tasks \
         -Dpackage=com.liferay.docs.tasks \
         -Dversion=1.0 \
-        -DapiPath=com.liferay.api.path
+        -DapiPath=com.liferay.api.path \
+        -DliferayVersion=7.1
 
 This task creates the `tasks-api` and `tasks-service` folders. In many cases, a
 Service Builder project also requires a `-web` folder to hold, for example,

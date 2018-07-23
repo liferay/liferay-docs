@@ -14,7 +14,8 @@ or
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
         -DclassName=[className]
-        -DserviceName=[serviceName]
+        -DserviceName=[serviceName] \
+        -DliferayVersion=[liferayVersion]
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -39,7 +40,8 @@ or
         -Dversion=1.0 \
         -DclassName=Service \
         -DclassName=com.liferay.portal.kernel.events.LifecycleAction \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.1
 
 After running the Blade command above, your project's directory structure would
 look like this

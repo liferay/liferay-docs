@@ -13,7 +13,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.social.bookmark \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=[liferayVersion]
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -35,7 +36,8 @@ or
         -Dpackage=com.liferay.docs.socialbookmark \
         -Dversion=1.0 \
         -DclassName=Test \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.1
 
 After running the Blade command above, your project's directory structure looks
 like this:
