@@ -7,11 +7,11 @@ OSGi service definitions can use properties. OSGi service properties centralize
 and simplify portlet configuration. They are typically represented as key-value
 pairs or, more generally, as a Map-like object.
 
-Portlet spec property keys are prefixed by:
+Portlet spec property keys are prefixed by
 
 	javax.portlet.
 
-Liferay property keys are prefixed by:
+Liferay property keys are prefixed by
 
 	com.liferay.portlet.
 
