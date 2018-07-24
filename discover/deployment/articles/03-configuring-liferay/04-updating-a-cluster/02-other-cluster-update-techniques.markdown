@@ -4,11 +4,11 @@ Several update scenarios cannot be done by
 [rolling restart](/discover/deployment/-/knowledge_base/7-0/using-rolling-restarts)
 because they affect cluster communication, break compatibility with existing
 plugins/modules, or break Service Builder services. Also non-revertible updates
-are disqualified because reversing their affects requires restoring data from a 
+are disqualified because reversing their effects requires restoring data from a 
 [backup](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation). 
 
-Maintenance changes that are ineligible for rolling restart are typically done
-on all nodes at once, when they're shut down. The following sections describe
+Maintenance changes ineligible for rolling restart are typically done on all
+nodes at once, when they're shut down. The following sections describe
 techniques for applying these changes.
 
 - [Custom Plugin/Module Data Schema Changes](#custom-plugin-module-data-schema-changes)
@@ -42,7 +42,7 @@ Data changes to modules or plugins you've developed require these steps:
 ## Non-revertible Fix Packs (DXP only) [](id=non-revertible-fix-packs-dxp-only)
 
 The Customer Portal identifies fix packs that are not revertible. Non-revertible
-fix packs must be applied to all nodes when they are all shut down. 
+fix packs must be applied to nodes when they are all shut down. 
 
 ## Service Builder Service Schema Version Changes [](id=service-builder-service-schema-version-changes)
 

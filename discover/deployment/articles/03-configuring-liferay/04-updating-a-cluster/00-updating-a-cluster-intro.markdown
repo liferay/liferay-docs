@@ -5,16 +5,15 @@ Maintaining a
 is a big responsibility. It includes deploying new and updated modules and
 plugins, applying fixes and improvements, making configuration changes, and
 more. Maximizing server uptime and minimizing risks take priority when applying
-changes. @product@ supports using standard cluster maintenance techniques. They
-fall into these categories:
-
-- [Rolling restarts](/discover/deployment/-/knowledge_base/7-0/using-rolling-restarts)
-- [Other cluster maintenance techniques](/discover/deployment/-/knowledge_base/7-0/other-cluster-update-techniques)
+changes. @product@ supports 
+[standard cluster maintenance techniques](/discover/deployment/-/knowledge_base/7-0/other-cluster-update-techniques),
+such as 
+[rolling restarts](/discover/deployment/-/knowledge_base/7-0/using-rolling-restarts).
 
 You should use rolling restarts if possible as it maximizes uptime and mitigates
-risks of changes harming your deployment. But the following types of updates
-must be done using
-[other techniques](/discover/deployment/-/knowledge_base/7-0/other-cluster-update-techniques). 
+risks of changes harming your deployment. 
+[Other techniques](/discover/deployment/-/knowledge_base/7-0/other-cluster-update-techniques)
+include
 
 -   Cluster code changes.
 -   Non-revertible
@@ -28,5 +27,5 @@ must be done using
     module's
     [required data schema range](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app#specifying-the-schema-version). 
 
-Since eligible changes should be done with rolling restarts it's explained
+Since eligible changes should be done with rolling restarts, it's explained
 first. 
