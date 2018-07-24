@@ -47,6 +47,6 @@ tutorial.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/themes/template-context-contributor)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/themes/template-context-contributor)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/themes/template-context-contributor)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/themes/template-context-contributor)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/themes/template-context-contributor)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/themes/template-context-contributor)

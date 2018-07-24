@@ -23,7 +23,7 @@ build tools used to generate them:
 
 **Note:** The Liferay Workspace folder stores WAR-type samples in a separate
 folder named
-[wars](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/wars).
+[wars](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/wars).
 The Gradle and Maven tool folders mix WAR samples with the other sample types
 (apps, extensions, etc.).
 

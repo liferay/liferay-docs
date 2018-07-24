@@ -42,6 +42,6 @@ needs, see the Javadoc listed in this sample's `BladeCustomJspBag` class.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/overrides/core-jsp-override)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/overrides/core-jsp-override)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/overrides/core-jsp-override)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/overrides/core-jsp-override)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/overrides/core-jsp-override)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/overrides/core-jsp-override)

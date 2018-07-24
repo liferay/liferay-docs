@@ -43,4 +43,4 @@ build tool:
 TODO: Replace above when tool is available for other build tools. -Cody
 -->
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm/vuejs-npm-portlet)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/npm/vuejs-npm-portlet)

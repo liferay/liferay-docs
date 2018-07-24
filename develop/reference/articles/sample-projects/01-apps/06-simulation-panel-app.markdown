@@ -61,6 +61,6 @@ tutorial.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/simulation-panel-app)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/apps/simulation-panel-app)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/apps/simulation-panel-app)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/simulation-panel-app)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/apps/simulation-panel-app)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/apps/simulation-panel-app)

@@ -4,9 +4,9 @@ This section focuses on Liferay sample overrides. You can view these sample
 overrides by visiting the `overrides` folder corresponding to your preferred
 build tool:
 
-- [Gradle sample overrides](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/overrides)
-- [Liferay Workspace sample overrides](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/overrides)
-- [Maven sample overrides](https://github.com/liferay/liferay-blade-samples/tree/master/maven/overrides)
+- [Gradle sample overrides](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/overrides)
+- [Liferay Workspace sample overrides](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/overrides)
+- [Maven sample overrides](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/overrides)
 
 The following samples are documented:
 
