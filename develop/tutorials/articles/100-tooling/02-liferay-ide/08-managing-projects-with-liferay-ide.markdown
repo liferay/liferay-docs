@@ -31,7 +31,7 @@ deployed successfully.
 
 ![Figure 2: You can check to see if your project deployed successfully to Liferay using the Gogo shell.](../../../images/gogo-deploy-successful.png)
 
-@ide@'s Gogo shell usage requires
+Dev Studio's Gogo shell usage requires
 [Developer Mode](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes#setting-developer-mode-for-your-server-in-liferay-ide)
 to be enabled. Developer Mode is enabled in
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)

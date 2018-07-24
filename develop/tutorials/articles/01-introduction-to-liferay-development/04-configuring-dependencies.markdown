@@ -15,6 +15,14 @@ attributes. Artifacts have these attributes:
 -   *Artifact ID*: Name/identifier 
 -   *Version*: Release number 
 
++$$$
+
+**Note:** The
+[App Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps)
+shows each module's version number. 
+
+$$$
+
 This tutorial shows you how to make sure your projects have the right
 dependencies: 
 
@@ -255,6 +263,8 @@ Nice! Now you know how to find artifacts and configure them as dependencies. Now
 that's a skill you can depend on! 
 
 ## Related Topics [](id=related-topics)
+
+[Using the App Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps)
 
 [Reference](/develop/reference/-/knowledge_base/7-1/development-reference)
 

@@ -5,7 +5,7 @@ icon as a Liferay module. To create a portlet configuration icon via the command
 line using Blade CLI or Maven, use one of the commands with the following
 parameters:
 
-    blade create -t portlet-configuration-icon -v 7.1 [-p packageName] [-c className] projectName
+    blade create -t portlet-configuration-icon [-p packageName] [-c className] projectName
 
 or
 
@@ -14,7 +14,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.portlet.configuration.icon \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.1
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -26,7 +27,7 @@ you want to create a portlet configuration icon project called
 `SamplePortletConfigurationIcon`. You could run the following command to
 accomplish this:
 
-    blade create -t portlet-configuration-icon -v 7.1 -p com.liferay.docs -c Sample my-portlet-config-icon
+    blade create -t portlet-configuration-icon -p com.liferay.docs -c Sample my-portlet-config-icon
 
 or
 
@@ -38,7 +39,8 @@ or
         -Dpackage=com.liferay.docs \
         -Dversion=1.0 \
         -DclassName=Sample \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.1
 
 After running the Blade command above, your project's directory structure would
 look like this

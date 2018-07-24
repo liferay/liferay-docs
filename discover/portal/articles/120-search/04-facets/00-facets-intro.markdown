@@ -60,14 +60,14 @@ same facet expands the search results, because it's processed as if you want to
 see results matching *Term-1* OR *Term-2*, OR etc. To remove all the term
 selections from a facet, click the *Clear* link. 
 
-![Figure 5: Facet terms are additive when applied in the same facet. Any Blogs Entry OR Web Content article matching the keyword is shown here.](../../../images/search-multiple-terms.png)
+![Figure 4: Facet terms are additive when applied in the same facet. Any Blogs Entry OR Web Content article matching the keyword is shown here.](../../../images/search-multiple-terms.png)
 
 Facet term selections from different facets are exclusive. Clicking facet terms
 from multiple facets narrows the results because they're processed as if you
 want to see results matching *Facet-1* AND *Facet-2*, AND etc. This is
 intuitive. The facets 
 
-![Figure 6: Facet terms selected from different facets are exclusive. These results must be of type Blogs Entry AND be from the User Marvin Smart.](../../../images/search-multiple-facets.png)
+![Figure 5: Facet terms selected from different facets are exclusive. These results must be of type Blogs Entry AND be from the User Marvin Smart.](../../../images/search-multiple-facets.png)
 
 Considering a case where you make two term selections in the Type Facet: (Blogs
 Entry and Web Content Article), and two term selections in the User Facet (James
@@ -82,7 +82,7 @@ Web Content created by other Users are not shown, and assets of other Type
 created by Marvin and James are not displayed. Content that isn't Blog Entries
 or Web Content Articles created by other Users are obviously not searched.
 
-![Figure 7: Both intra-facet and inter-facet selection is possible.](../../../images/search-facet-selections.png)
+![Figure 6: Both intra-facet and inter-facet selection is possible.](../../../images/search-facet-selections.png)
 
 +$$$
 

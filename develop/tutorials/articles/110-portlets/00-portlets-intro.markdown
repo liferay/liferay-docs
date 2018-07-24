@@ -154,3 +154,11 @@ techniques:
 <!-- TODO: readd JSF link, when available. -Cody.
 - [JSF Portlets with Liferay Faces](develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
 -->
+
+## Related Topics [](id=related-topics)
+
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
+
+[Importing Packages](/develop/tutorials/-/knowledge_base/7-1/importing-packages)
+
+[Exporting Packages](/develop/tutorials/-/knowledge_base/7-1/exporting-packages)

@@ -39,7 +39,7 @@ obtain a reference to it:
 
 3.  For Spring beans, it is possible to use the same mechanism as for Service
     Builder services (`@ServiceReference`). Check the documentation on 
-    [how to integrate Spring beans with OSGi services](/develop/tutorials/-/knowledge_base/7-1/finding-and-invoking-liferay-services#referencing-osgi-services)
+    [how to integrate Spring beans with OSGi services](/develop/tutorials/-/knowledge_base/7-1/invoking-services-from-service-builder-code#referencing-an-osgi-service)
     for more details.
 
 4.  For anything else, call the same methods from the utility class,

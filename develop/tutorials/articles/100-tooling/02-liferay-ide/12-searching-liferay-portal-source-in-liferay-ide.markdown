@@ -1,7 +1,7 @@
-# Searching @product@ Source in Liferay @ide@ [](id=searching-product-source-in-liferay-ide)
+# Searching @product@ Source in Liferay Dev Studio [](id=searching-product-source-in-liferay-ide)
 
-In Liferay @ide@, you can search through @product@'s source code to aid in the
-development of your project. Liferay provides great resources to help with
+In Liferay Dev Studio, you can search through @product@'s source code to aid in
+the development of your project. Liferay provides great resources to help with
 development (e.g., official documentation,
 [docs.liferay.com](https://docs.liferay.com/),
 [sample projects](/develop/reference/-/knowledge_base/7-1/liferay-sample-projects),
@@ -26,8 +26,8 @@ useful.
 - [Search declarations](#search-method-declarations)
 - [Search references](#search-annotation-references)
 
-These examples are just a small subset of what you can search in Liferay @ide@.
-See Eclipse's documentation on
+These examples are just a small subset of what you can search in Liferay Dev
+Studio. See Eclipse's documentation on
 [Java Search](http://help.eclipse.org/oxygen/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Fconcepts%2Fconcept-java-search.htm&resultof=%22%6a%61%76%61%22%20)
 for a comprehensive guide.
 
@@ -37,7 +37,7 @@ Inspecting classes that extend a similar superclass can help you find useful
 patterns and examples for how you can develop your own app. For example, suppose
 your app extends the
 [MVCPortlet](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
-class. You an search classes that extend that same class in @ide@ by
+class. You an search classes that extend that same class in Dev Studio by
 right-clicking the `MVCPortlet` declaration and selecting *Open Type Hierarchy*.
 This opens a window that lets you inspect all classes residing in the target
 platform that extend `MVCPortlet`.
@@ -49,10 +49,10 @@ class/interface to aid in your quest for developing the perfect app.
 
 ## Search Method Declarations [](id=search-method-declarations)
 
-Sometimes you want a search to be more granular, exploring the declarations of
-a specific method provided by a class/interface. Liferay @ide@'s advanced search
-has no limits; Liferay Workspace's target platform indexing provides method
-exploration too!
+Sometimes you want a search to be more granular, exploring the declarations of a
+specific method provided by a class/interface. Liferay Dev Studio's advanced
+search has no limits; Liferay Workspace's target platform indexing provides
+method exploration too!
 
 Suppose in the
 [MVCPortlet](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
