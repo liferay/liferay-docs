@@ -88,7 +88,7 @@ Follow these steps to upgrade your layout template:
 
     The `[device-size]` value must be `xs`, `sm`, `md`, or `lg`. In most 
     cases, an `md` device size works well. You can read more about the Bootstrap
-    grid system on their site at [http://getbootstrap.com/css/#grid](http://getbootstrap.com/css/#grid).
+    grid system on their site at [https://getbootstrap.com/docs/3.3/css/#grid](https://getbootstrap.com/docs/3.3/css/#grid).
 
     The `[number]` value must be an integer from `1` to `12`. A row's width is
     divisible by twelve; so the combined width of a row's columns must equal `12`.

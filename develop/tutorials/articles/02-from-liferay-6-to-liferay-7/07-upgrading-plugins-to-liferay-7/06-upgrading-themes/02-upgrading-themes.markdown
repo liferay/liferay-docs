@@ -257,7 +257,7 @@ number range.
 
 Since Bootstrap 3 adopts the `box-sizing: border-box` property for all elements
 and pseudo-elements (e.g., `:before` and `:after`), padding no longer affects
-dimensions. [Bootstrap's documentation](http://getbootstrap.com/css/#less-mixins-box-sizing)
+dimensions. [Bootstrap's documentation](https://getbootstrap.com/docs/3.3/css/#less-mixins-box-sizing)
 describes the box sizing changes. Consider the padding updates the `upgrade`
 task reports for CSS rules. 
 
@@ -636,7 +636,7 @@ file:
 1.  Remove the `required-deployment-contexts` property.
 
     The plugin no longer needs this property as the resources importer is now an
-    [OSGi module](https://github.com/liferay/liferay-portal/tree/master/modules/apps/web-experience/export-import/export-import-resources-importer)
+    [OSGi module](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/web-experience/export-import/export-import-resources-importer)
     built-in and deployed with @product-ver@.
 
 2.  Since the group model class's fully-qualified class name has changed, replace the
@@ -778,7 +778,7 @@ rendering requires a template. Follow these steps to update your web content:
 
     `device-size` can be `xs`, `sm`, `md`, or `lg`. `md` works for most cases.
     Bootstrap's site at
-    [http://getbootstrap.com/css/#grid](http://getbootstrap.com/css/#grid)
+    [https://getbootstrap.com/docs/3.3/css/#grid](https://getbootstrap.com/docs/3.3/css/#grid)
     explains the Bootstrap 3 grid system
 
     Continuing with the `2 column description.xml` article example, here is its

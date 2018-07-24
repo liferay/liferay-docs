@@ -5,7 +5,7 @@ does not define any portlet decorators, none are available. It is recommended
 that you provide a few decorators for your portlets, to cover the basic use
 cases.
 
-For example, the Liferay Portal CE 7.0 [Classic theme](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-classic-web)
+For example, the Liferay Portal CE 7.0 [Classic theme](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/foundation/frontend-theme/frontend-theme-classic)
 includes three Portlet Decorators:
 
 -   Decorate: this is the default Application Decorator when using the

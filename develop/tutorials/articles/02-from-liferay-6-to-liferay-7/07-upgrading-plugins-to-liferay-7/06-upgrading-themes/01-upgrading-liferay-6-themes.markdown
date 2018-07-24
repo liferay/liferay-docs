@@ -617,7 +617,7 @@ See [Liferay Portal's Breaking Changes](/develop/reference/-/knowledge_base/7-0/
 ### Upgrading Layout Templates [](id=upgrading-layout-templates)
 
 The only significant change to Layout Templates has been the addition of 
-[Bootstrap's Grid system](http://getbootstrap.com/css/#grid).
+[Bootstrap's Grid system](https://getbootstrap.com/docs/3.3/css/#grid).
 
 If you're using any custom Layout Templates, you'll want to integrate Bootstrap 
 into them.
