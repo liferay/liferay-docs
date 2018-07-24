@@ -4,7 +4,7 @@ In this article, you'll learn how to create a Liferay social bookmark as a
 Liferay module. To create a social bookmark as a module via the command line
 using Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t social-bookmark -v 7.1 [-p packageName] [-c className] projectName
+    blade create -t social-bookmark [-p packageName] [-c className] projectName
 
 or
 
@@ -13,7 +13,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.social.bookmark \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.1
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -23,7 +24,7 @@ create a social bookmark project called `my-social-bookmark-project` with a
 package name of `com.liferay.docs.socialbookmark` and a class name of
 `TestSocialBookmark`. You could run the following command to accomplish this:
 
-    blade create -t social-bookmark -v 7.1 -p com.liferay.docs.socialbookmark -c Test my-social-bookmark-project
+    blade create -t social-bookmark -p com.liferay.docs.socialbookmark -c Test my-social-bookmark-project
 
 or
 
@@ -35,7 +36,8 @@ or
         -Dpackage=com.liferay.docs.socialbookmark \
         -Dversion=1.0 \
         -DclassName=Test \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.1
 
 After running the Blade command above, your project's directory structure looks
 like this:
