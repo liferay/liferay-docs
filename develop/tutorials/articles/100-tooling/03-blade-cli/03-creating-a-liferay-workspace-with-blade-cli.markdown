@@ -23,9 +23,9 @@ To create a Maven based workspace, run this instead:
 
 Initializing a workspace requires no downloading or access to the internet.
 
-If you still plan on using a Plugins SDK and wish to use it in conjunction with
-a workspace, navigate to your Plugins SDK root folder and run the following
-command:
+If you still plan on using a legacy Plugins SDK and wish to use it in
+conjunction with a workspace, navigate to your Plugins SDK root folder and run
+the following command:
 
     blade init -u
 
