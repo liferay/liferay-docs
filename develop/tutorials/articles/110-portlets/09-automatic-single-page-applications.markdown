@@ -189,6 +189,29 @@ That's all you need to do to disable SPA in your app.
 Now that you know how to disable SPA, you can learn about the available SPA
 lifecycle events next.
 
+### Specifying How Resources Are Loaded During Navigation [](id=specifying-how-resources-are-loaded-during-navigation)
+
+By default, @product@ unloads CSS resources from the `<head>` element on 
+navigation. JavaScript resources, however, are not removed on navigation. This 
+functionality can be customized by setting the resource's `data-senna-track` 
+attribute. Follow these steps to customize your resources:
+
+1.  Select the resource you want to modify the default behavior for.
+
+2.  Add the `data-senna-track` attribute to the resource.
+
+3.  Set the `data-senna-track` attribute to `permanent` to prevent a resource 
+    from unloading on navigation.
+    
+    Alternatively, set the `data-senna-track` attribute to `temporary` to unload 
+    the resource on navigation. The example below ensures that the JS resource 
+    is unloaded during navigation:
+    
+        <script src="myscript.js" data-senna-track="temporary" />
+    
+Note that this attribute can be added to resources loaded outside of the 
+`<head>` element as well to override their default behavior. 
+
 ## Listening to SPA Lifecycle Events [](id=listening-to-spa-lifecycle-events)
 
 During development, you may need to know when navigation has started or stopped
