@@ -131,7 +131,7 @@ and provide a collection of new archetypes.
 
 The Plugins SDK is no longer available for @product-ver@.
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
-succeeds the Plugins SDK as Liferay's opinionated development environment. You
+is now Liferay's opinionated development environment. You
 can transition from a Plugins SDK by adding it to your workspace and migrating
 projects at your own pace. See the
 [Using a Plugins SDK from Your Workspace](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)

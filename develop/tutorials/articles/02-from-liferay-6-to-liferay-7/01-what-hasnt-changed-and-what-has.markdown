@@ -77,7 +77,7 @@ Additionally we've adopted some new tools such as bnd.
 [Deprecated Apps in 7.1: What To Do](/discover/deployment/-/knowledge_base/7-1/deprecated-apps-in-7-1-what-to-do#foundation)
 article for more information on the Plugins SDK removal.
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
-succeeds the Plugins SDK as Liferay's opinionated development environment.
+is now Liferay's opinionated development environment.
 
 Since the modularization of the Liferay web application is the change most
 relevant to you as a developer, let's dig deeper into that change and how it
