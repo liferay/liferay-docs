@@ -5,7 +5,7 @@ a Liferay module. To create a Liferay panel app and category via the command
 line using Blade CLI or Maven, use one of the commands with the following
 parameters:
 
-    blade create -t panel-app -v 7.1 [-p packageName] [-c className] projectName
+    blade create -t panel-app [-p packageName] [-c className] projectName
 
 or
 
@@ -14,7 +14,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.panel.app \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.1
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -24,7 +25,7 @@ a panel app project called `my-panel-app-project` with a package name prefix of
 `com.liferay.docs` and a class name prefix of `Sample`. You could run the
 following command to accomplish this:
 
-    blade create -t panel-app -v 7.1 -p com.liferay.docs -c Sample my-panel-app-project
+    blade create -t panel-app -p com.liferay.docs -c Sample my-panel-app-project
 
 or
 
@@ -36,7 +37,8 @@ or
         -Dpackage=com.liferay.docs \
         -Dversion=1.0 \
         -DclassName=Sample \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.1
 
 After running the Blade command above, your project's directory structure would
 look like this

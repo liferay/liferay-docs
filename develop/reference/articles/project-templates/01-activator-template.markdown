@@ -4,7 +4,7 @@ In this article, you'll learn how to create a Liferay activator as a Liferay
 module. To create a Liferay activator via the command line using Blade CLI or
 Maven, use one of the commands with the following parameters:
 
-    blade create -t activator -v 7.1 [-p packageName] [-c className] projectName
+    blade create -t activator [-p packageName] [-c className] projectName
 
 or
 
@@ -13,7 +13,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.activator \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.1
 
 You can also insert the `-b maven` parameter in the Blade command to generate
 a Maven project using Blade CLI.
@@ -23,7 +24,7 @@ an activator project called `my-activator-project` with a package name of
 `com.liferay.docs.activator` and a class name of `Activator`. You could run the
 following command to accomplish this:
 
-    blade create -t activator -v 7.1 -p com.liferay.docs.activator -c Activator my-activator-project
+    blade create -t activator -p com.liferay.docs.activator -c Activator my-activator-project
 
 or
 
@@ -35,7 +36,8 @@ or
         -Dpackage=com.liferay.docs.activator \
         -Dversion=1.0 \
         -DclassName=Activator \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.1
 
 Note that in your class, you're implementing the
 `org.osgi.framework.BundleActivator` interface.

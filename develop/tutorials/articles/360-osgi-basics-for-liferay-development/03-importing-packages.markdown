@@ -1,6 +1,6 @@
 # Importing Packages [](id=importing-packages)
 
-Your modules will often need to use Java classes from packages
+Your modules often must use Java classes from packages
 [exported](/develop/tutorials/-/knowledge_base/7-1/exporting-packages) by other
 modules. When a module is set up to import, the OSGi framework finds other
 registered modules that export the needed packages and wires them to the
@@ -17,8 +17,17 @@ if a module needs classes from the `javax.portlet` and
 Import packages must sometimes be specified manually, but not always.
 Conveniently, @product@ project templates and tools automatically detect the
 packages a module uses and add them to the package imports in the module JAR's
-manifest. Let's explore how package imports are specified in different
-scenarios.
+manifest. Here are the different package import scenarios:
+
+- [Automatic Package Import Generation](#automatic-package-import-generation)
+
+- [Using Portable Java Contracts for Java APIs](#using-portable-java-contracts-for-java-apis)
+
+- [Manually Adding Package Imports](#manually-adding-package-imports)
+
+Let's explore how package imports are specified in these scenarios. 
+
+## Automatic Package Import Generation [](id=automatic-package-import-generation)
 
 [Gradle and Maven module projects](/develop/reference/-/knowledge_base/7-1/project-templates)
 created using
@@ -76,6 +85,51 @@ detects their use in the WAR's JSPs, descriptor files, and classes (in
 `liferay-web.xml`, `portlet.xml`, `liferay-portlet.xml`, and `liferay-hook.xml`
 descriptor files. It adds package imports for classes that are neither found in
 the plugin's `WEB-INF/classes` folder nor in embedded JARs. 
+
+Java APIs that aren't semantically versioned but have OSGi Portable Java
+Contracts are handled differently. 
+
+## Using Portable Java Contracts for Java APIs [](id=using-portable-java-contracts-for-java-apis)
+
+Packages for Java APIs, such as Java Portlet, aren't semantically versioned but
+have Portable Java Contracts. Each API's contract specifies the JSR it
+satisfies. Modules that use these APIs must specify requirements on the API
+contracts. Blade CLI and Liferay @ide@ module projects do this automatically! 
+
+For example, if your Blade CLI or Liferay @ide@ module uses the Java Portlet
+API and you compile against the Java Portlet 3.0 artifact, a contract
+requirement for the package is added to your module's manifest. The contract
+requirement specifies your module's relationship with the imported API packages.
+If the system you're running does *not* provide the exact contract, your module
+does not resolve. Resolving the missing package is better than handling an
+incompatibility failure during execution.
+
++$$$
+
+**Note:** Module projects that use bnd but are not created using Blade CLI or
+Liferay @ide@ must specify contracts in their `bnd.bnd` file. For example, here
+are contract instructions for Java Portlet and Java Servlet APIs:
+
+    -contract: JavaPortlet,JavaServlet 
+
+At build time, bnd adds the contract instructions to your module's manifest. It
+adds a requirement for the first version of the API found in your classpath and
+*removes* version range information from `Import-Package` entries for
+corresponding API packages---the package version information isn't needed. 
+
+Projects that don't use bnd must specify contracts in their module manifest. For
+example, here's the specified contract for `JavaPortlet` 3.0, which goes in your
+`META-INF/MANIFEST.MF` file:
+
+    Import-Package: javax.portlet
+    Require-Capability: osgi.contract;filter:=(&(osgi.contract=JavaPortlet)(version=3.0))
+
+$$$
+
+For Portable Java Contract details, see 
+[Portable Java Contract Definitions](https://www.osgi.org/portable-java-contract-definitions/). 
+
+## Manually Adding Package Imports [](id=manually-adding-package-imports)
 
 The WAB Generator and bnd don't add package imports for classes referenced in
 these places:
