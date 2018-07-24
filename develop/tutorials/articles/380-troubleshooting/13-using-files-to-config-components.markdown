@@ -9,7 +9,7 @@ of
 to let you use files to configure module service components. 
 
 To learn how to work with configuration files, first review 
-[Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files). 
+[Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files). 
 
 ## Configuration File Formats [](id=configuration-file-formats)
 
@@ -20,25 +20,24 @@ There are two different configuration file formats:
 -   `.config`: A format that supports strings, type information, and other
     non-string values in its properties. 
 
-Although @product@ supports both formats, we recommend `.config` files 
-for their flexibility. Since `.cfg` file lacks type information, if you want to
-store anything but a String, you'll need a properties utility class that casts
-the Strings to their proper types (and you must carefully document properties
-that aren't Strings). Since `.config` files can include type information, using
-them eliminates this need. The articles below provide a detailed explanation of
-these file formats, including their syntax: 
+Although @product@ supports both formats, use `.config` files  for their
+flexibility and ability to use type information. Since `.cfg` files lack type
+information, if you want to store anything but a String, you must use properties
+utility classes to cast Strings to intended types (and you must carefully
+document properties that aren't Strings). `.config` files eliminate this need by
+letting you include type information. The articles below explain the file
+formats and their syntax: 
 
--   [Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
+-   [Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
 -   [Configuration file (`.config`) syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config)
 -   [Properties file(`.cfg`) syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#property-files-cfg)
 
 ## Naming Configuration Files [](id=naming-configuration-files)
 
 Before you
-[create a configuration file](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files#creating-configuration-files),
-you should determine whether multiple instances of the component can be created, 
-or if the component is intended to be a singleton. Follow these steps to make 
-that determination:
+[create a configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files#creating-configuration-files),
+follow these steps to determine whether multiple instances of the component can
+be created,  or if the component is intended to be a singleton:
 
 1.  Deploy the component's module if you haven't done so already. 
 
@@ -57,7 +56,7 @@ that determination:
 for *persistent identity*) and end with `.config` or `.cfg`. 
 
 For example, this class uses 
-[Declarative Services](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#osgi-services-and-dependency-injection-with-declarative-services) 
+[Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services) 
 to define a component:
 
     package com;
@@ -69,10 +68,10 @@ start with the PID `com.Foo`.
 
 For each non-singleton component instance you want to create or update with a
 configuration, you must use a uniquely named configuration file that starts with
-the component's PID and ends with `.config` or `.cfg`. Creating configurations 
-for multiple component instances requires that the configuration files use 
-different *subnames*. A subname is the part of a configuration file name after 
-the PID and before the suffix `.config` or `.cfg`. Here's the configuration file 
+the component's PID and ends with `.config` or `.cfg`. Creating configurations
+for multiple component instances requires that the configuration files use
+different *subnames*. A subname is the part of a configuration file name after
+the PID and before the suffix `.config` or `.cfg`. Here's the configuration file
 name pattern for non-singleton components: 
 
 -   `[PID]-[subname1].config`
@@ -99,13 +98,13 @@ a component's first instance. The file name pattern is therefore:
     [PID]-default.config
 
 A singleton component's configuration file must also start with `[PID]` and end
-with `.config` or `.cfg`. Here's the common pattern used for singleton component 
+with `.config` or `.cfg`. Here's the common pattern used for singleton component
 configuration file names: 
 
     [PID].config
 
 When you're done creating a configuration file, you can
-[deploy it](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files#deploying-a-configuration-file). 
+[deploy it](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files#deploying-a-configuration-file). 
 
 ## Resolving Configuration File Deployment Failures [](id=resolving-configuration-file-deployment-failures)
 
@@ -116,11 +115,11 @@ issue:
     java.io.IOException: Unexpected token 78; expected: 61 (line=0, pos=107)
 
 To resolve this, fix the 
-[configuration file's syntax](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-product-modules#configuration-file-formats). 
+[configuration file's syntax](#configuration-file-formats). 
 
 Great! Now you know how to configure module components using configuration 
 files. 
 
 ## Related Articles [](id=related-articles)
 
-[Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
+[Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
