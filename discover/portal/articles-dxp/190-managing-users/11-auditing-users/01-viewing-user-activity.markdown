@@ -103,6 +103,6 @@ Watson.
 ![Figure 4: If you've delegated administration to multiple users, you can use the Audit application to determine who made what change. And, of course, you'll never leave the default administrative user enabled on a production system, right?](../../images-dxp/audit-unassign-detail.png)
 
 As you can see, the Audit application gives you a lot of power to see what's
-happening. You can use this information to troubleshoot problems, determine
-ownership of particular actions, or, as Harry is about to do, find out who made
-permission changes they weren't supposed to make. 
+happening. Use this information to troubleshoot problems, determine ownership of
+particular actions, or, as Harry (from the story in the introduction) is about
+to do, find out who made permission changes they weren't supposed to make. 

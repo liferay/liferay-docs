@@ -10,7 +10,7 @@ There are two main ways to configure @product@:
     saved to Liferay's database.
 
 2.  Edit a configuration via an OSGi configuration file (`.config` file) in your
-    `[LIFERAY_HOME]/osgi/modules` folder.
+    `[LIFERAY_HOME]/osgi/configs` folder.
 
 These methods apply to each of the audit configuration options explained below.
 
