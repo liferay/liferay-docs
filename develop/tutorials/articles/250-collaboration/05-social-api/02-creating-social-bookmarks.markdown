@@ -13,7 +13,7 @@ this.
 Follow these steps to implement the `SocialBookmark` interface: 
 
 1.  Create your `*SocialBookmark` class and register a component that defines 
-    the `social.bookmarks.type` property. This property's value is what you'll 
+    the `social.bookmarks.type` property. This property's value is what you 
     enter for the `liferay-social-bookmarks:bookmarks` tag's `type` attribute 
     when you use your social bookmark. 
 
@@ -24,7 +24,7 @@ Follow these steps to implement the `SocialBookmark` interface:
 
 2.  Create a 
     [`ResourceBundleLoader`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html) 
-    reference. You'll use this to help localize the social bookmark's name. 
+    reference to help localize the social bookmark's name. 
 
         @Reference(
                 target = "(bundle.symbolic.name=com.liferay.social.bookmark.twitter)"
@@ -65,12 +65,11 @@ Follow these steps to implement the `SocialBookmark` interface:
         )
         private ServletContext _servletContext;
 
-6.  Implement the `render` method. This method is called when the inline display 
-    style is selected. You'll typically use this method to render a link to the 
-    share URL (e.g., a share button), but you can use it for whatever you need. 
-    To keep a consistent look and feel with the default social bookmarks, you 
-    can use a 
-    [Clay icon](/develop/tutorials/-/knowledge_base/7-1/clay-icons). 
+6.  Implement the `render` method, which is called when the inline
+    display style is selected. Typically, this method renders a link to the
+    share URL (e.g., a share button), but you can use it for whatever you need.
+    To keep a consistent look and feel with the default social bookmarks, you
+    can use a [Clay icon](/develop/tutorials/-/knowledge_base/7-1/clay-icons). 
 
     This example gets a `RequestDispatcher` for the JSP that contains a Clay 
     icon (`page.jsp`), and then includes that JSP in the response: 
@@ -118,17 +117,16 @@ these steps to create such a JSP for your own social bookmark:
         String url = GetterUtil.getString((String)request.getAttribute("liferay-social-bookmarks:bookmark:url"));
         %>
 
-    Note that the title and URL are set via the `liferay-social-bookmarks` 
+    The title and URL are set via the `liferay-social-bookmarks` 
     taglib when 
     [applying the social bookmark](/develop/tutorials/-/knowledge_base/7-1/applying-social-bookmarks).
 
 4.  Add the Clay link. This example sets the following `clay:link` attributes: 
 
-    -   `buttonStyle`: 
-        [The button's type](/develop/tutorials/-/knowledge_base/7-1/clay-buttons#types). 
-        This example renders the button as a secondary button.
-    -   `elementClasses`: The custom CSS to use for styling the button. This is 
-        optional.
+    -   `buttonStyle`: This example renders 
+        [The button's type](/develop/tutorials/-/knowledge_base/7-1/clay-buttons#types)
+        as a secondary button.
+    -   `elementClasses`: The custom CSS to use for styling the button (optional).
     -   `href`: The button's URL. You should specify this by calling your 
         `SocialBookmark` instance's `getPostURL` method. 
     -   `icon`: The button's icon. This example specifies the Twitter icon 
