@@ -10,15 +10,18 @@ customizations, sample text is added to the bottom of Liferay's default theme.
 
 ![Figure 1: Deploying a core JSP override overrides core functionality, like @product@'s default theme.](../../../images/blade-core-jsp-hook.png)
 
-For more information on how to customize Liferay's Core using JSP overrides,
-visit the
-[Overriding Core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)
-tutorial.
+**Important:** You must restart your portal server for the changes to take
+effect.
+
+For more information on other ways to customize Liferay's Core using JSP
+overrides, visit the
+[Customizing JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)
+tutorials.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
-[CustomJspBag](@platform-ref@/7.0-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html)
+[CustomJspBag](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html)
 API.
 
 **Important:** Using core JSP overrides should be a last resort option only when

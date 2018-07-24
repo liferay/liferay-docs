@@ -54,9 +54,8 @@ in a module). You can also add new JSPs to an existing module with this
 technique. If you need to override a core JSP, see the `core-jsp-override`
 sample.
 
-For more information on using fragment bundles to override application JSPs, see
-the
-[Overriding App JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
+For more information on other ways to customize JSPs, see the
+[Customizing JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)
 tutorial.
 
 ## Where Is This Sample? [](id=where-is-this-sample)
