@@ -16,5 +16,6 @@ The following samples are documented:
 - [Indexer Post Processor](indexer-post-processor)
 - [Model Listener](model-listener)
 - [Screen Name Validator](screen-name-validator)
+- [Servlet](servlet)
 
 Visit a particular sample page to learn more!

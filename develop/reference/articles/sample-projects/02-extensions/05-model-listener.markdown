@@ -13,16 +13,16 @@ message is printed to the console:
 
 ![Figure 1: The sample model listener's message in the console.](../../../images/model-listener-1.png)
 
-You can also verify that the  model listener sample was executed by navigating
-to the new page's *Configure Page* &rarr; *SEO* option. The HTML Title field
-looks like this:
+You can also verify that the model listener sample was executed by navigating
+to the new page's *Options* &rarr; *Configure Page* &rarr; *SEO* option. The
+HTML Title field looks like this:
 
 ![Figure 2: The page's HTML title updated by the model listener sample.](../../../images/model-listener-2.png)
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
-[ModelListener](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/ModelListener.html)
+[ModelListener](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/ModelListener.html)
 API.
 
 ## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
@@ -40,7 +40,7 @@ There are two steps to create a new model listener:
 
 This sample adds the model listener logic in a new Java class named
 `CustomLayoutListener` that extends
-[BaseModelListener](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/BaseModelListener.html).
+[BaseModelListener](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/BaseModelListener.html).
 
     public class CustomLayoutListener extends BaseModelListener<Layout> {
 
@@ -67,7 +67,7 @@ accomplished by the following annotation (if using Declarative Services):
     @Component(immediate = true, service = ModelListener.class)
 
 For more information on model listeners, see the
-[Creating Model Listeners](/develop/tutorials/-/knowledge_base/7-0/model-listeners)
+[Creating Model Listeners](/develop/tutorials/-/knowledge_base/7-1/model-listeners)
 tutorial.
 
 ## Where Is This Sample? [](id=where-is-this-sample)

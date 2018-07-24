@@ -26,7 +26,7 @@ publish the blog, the following message is logged in the console:
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
-[IndexerPostProcessor](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/search/IndexerPostProcessor.html)
+[IndexerPostProcessor](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/search/IndexerPostProcessor.html)
 API.
 
 ## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
@@ -69,8 +69,10 @@ the following methods:
 - `postProcessSummary`
 
 For more information on Liferay's Search API, refer to the
-[Introduction to Liferay Search](/developer/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
+[Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
 tutorial.
+
+<!-- Update 7.0 link above when 7.1 version is available (LRDOCS-4372). -Cody -->
 
 ## Where Is This Sample? [](id=where-is-this-sample)
 

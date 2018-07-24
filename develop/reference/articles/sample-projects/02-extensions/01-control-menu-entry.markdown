@@ -53,7 +53,7 @@ The following methods are implemented:
 Refer to this sample's `BladeProductNavigationControlMenuEntry` class for
 Javadocs describing these methods. For more information on how to customize
 Liferay Portal's Control Menu, visit the
-[Customizing the Control Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-control-menu)
+[Customizing the Control Menu](/develop/tutorials/-/knowledge_base/7-1/customizing-the-control-menu)
 tutorial.
 
 ## Where Is This Sample? [](id=where-is-this-sample)

@@ -11,6 +11,7 @@ The following samples are documented:
 
 - [Greedy Policy Option Portlet](#greedy-policy-option-portlet)
 - [Kotlin Portlet](#kotlin-portlet)
+- [Service Builder](#service-builder-samples)
 - [Shared Language Keys](#shared-language-keys)
 - [Simulation Panel App](#simulation-panel-app)
 - [Spring MVC Portlet](#spring-mvc-portlet)

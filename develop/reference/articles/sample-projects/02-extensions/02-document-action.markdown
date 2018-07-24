@@ -44,6 +44,8 @@ There are four Java classes used in this sample:
    [GenericPortlet](https://portals.apache.org/pluto/portlet-2.0-apidocs/javax/portlet/GenericPortlet.html).
    This class generates what is shown when the context menu option is selected.
 
+<!-- Update 7.0 link above when 7.1 version is available (LRDOCS-4313). -Cody -->
+
 A Display Context is a Java class that controls access to a portlet screen's UI
 elements. For example, the Document Library would use Display Contexts to
 provide its screens all their UI elements. It would use one Display Context for

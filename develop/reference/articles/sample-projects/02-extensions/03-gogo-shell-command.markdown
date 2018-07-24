@@ -14,10 +14,9 @@ installation.
 To test this sample, follow the instructions below:
 
 1.  Start a @product@ installation.
-2.  Using a command line tool, connect to your local Gogo shell. For example,
-    you can do this by executing `telnet localhost 11311`.
-3.  Run `help` to view all the available commands. The sample Gogo shell command
-    is listed.
+2.  Navigate to the Control Panel &rarr; *Configuration* &rarr; *Gogo Shell*.
+3.  Execute `help` to view all the available commands. The sample Gogo shell
+    command is listed.
 
     ![Figure 1: The sample Gogo shell command is listed with all the available commands.](../../../images/gogo-shell-1.png)
 
@@ -60,7 +59,7 @@ This method uses *Declarative Services* to get a reference for the
 number of users currently in the system.
 
 For more information on using the Gogo shell, see the
-[Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+[Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
 tutorial.
 
 ## Where Is This Sample? [](id=where-is-this-sample)
