@@ -9,8 +9,8 @@ under the hood?" Here are common reasons for asking that question:
 
 You might have similar reasons for asking "What's under the *DXP's* hood?" And
 since you get access to DXP Digital Enterprise (DXP)'s source code, you can
-attach a debugger see it in action! Setting up the code locally is your ticket
-to exploring DXP, investigating issues, and making improvements and
+attach a debugger and see it in action! Setting up the code locally is your
+ticket to exploring DXP, investigating issues, and making improvements and
 customizations.
 
 Here's how:
@@ -24,11 +24,11 @@ Here's how:
 ## Step 1: Download DXP, the DXP source code, and patches [](id=download-dxp-the-dxp-source-code-and-patches)
 
 1.  Download a DXP bundle (or DXP JARs) and the DXP source code for the version
-    you're using from the [customer
-    portal](https://web.liferay.com/group/customer/dxp).
+    you're using from the
+    [customer portal](https://web.liferay.com/group/customer/dxp/downloads/7-1).
 
 2.  Download fix packs and their source code from
-    [here](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/fix-packs).
+    [here](https://web.liferay.com/group/customer/dxp/downloads/7-1).
     Fix pack ZIP files that end in `-src.zip` contain a fix pack and source
     code.
 
@@ -45,7 +45,7 @@ Preparing DXP locally involves installing, configuring, and patching DXP.
 
 Here's how to install and configure DXP: 
 
-1.   [Install and Deploy DXP](/discover/deployment/-/knowledge_base/7-0/deploying-liferay-portal)
+1.   [Install and Deploy DXP](/discover/deployment/-/knowledge_base/7-1/deploying-product)
 locally. 
 
 2.  Start DXP.
@@ -64,20 +64,20 @@ Here's how to patch DXP:
     `[LIFERAY_HOME]/patching-tool/patches`. The `-src.zip` fix pack files are
     best to use because they contain both the fix pack binaries and source code. 
 
-2.  Open a terminal window to `[LIFERAY_HOME]/patching-tool`.
+2.  Open a command line to `[LIFERAY_HOME]/patching-tool`.
 
 3.  Run the command `patching-tool.sh auto-discovery` to generate the default
     patching profile called `default.properties`. Make sure the profile's
     properties refer to your DXP installation. See the
-    [patching tool documentation](/discover/deployment/-/knowledge_base/7-0/patching-tool)
+    [patching tool documentation](/discover/deployment/-/knowledge_base/7-1/patching-tool)
     for more details.
 
     Here's an example profile:
 
-            patching.mode=binary
-            war.path=../tomcat-8.0.32/webapps/ROOT/
-            global.lib.path=../tomcat-8.0.32/lib/ext/
-            liferay.home=../
+        patching.mode=binary
+        war.path=../tomcat-9.0.6/webapps/ROOT/
+        global.lib.path=../tomcat-9.0.6/lib/ext/
+        liferay.home=../
 
 4.  To list all the patch files available in
     `[LIFERAY_HOME]/patching-tool/patches`, execute the following command:
@@ -89,7 +89,7 @@ Here's how to patch DXP:
         patching-tool.sh install
 
     The
-    [patching tool documentation](/discover/deployment/-/knowledge_base/7-0/patching-tool)
+    [patching tool documentation](/discover/deployment/-/knowledge_base/7-1/patching-tool)
     describes additional steps that might apply to your situation, such as
     creating database indexes.
 
@@ -114,8 +114,8 @@ Here's how to create a profile that refers to your source code.
     `patching.mode` property to `source` and set the `source.path` property to
     your source code path:
 
-            patching.mode=source
-            source.path=[DXP source code path]
+        patching.mode=source
+        source.path=[DXP source code path]
 
 It's time to apply the DXP patches you downloaded earlier. 
 
@@ -125,13 +125,15 @@ DXP's patching tool is safe and easy to use. Beyond installing patches, it has
 these functions:
 
 -   List a patch's code changes
--   List the issues (LPS/LPE tickets) a patch fixes
+-   List the issues
+    ([LPS/LPE tickets](https://issues.liferay.com))
+    a patch fixes
 -   Revert a patch
 
 See the following patching tool documentation for more details:
 
--   [Comparing Patch Levels](/discover/deployment/-/knowledge_base/7-0/patching-tool#comparing-patch-levels)
--   [Removing or Reverting Patches](/discover/deployment/-/knowledge_base/7-0/patching-tool#removing-or-reverting-patches)
+-   [Comparing Patch Levels](/discover/deployment/-/knowledge_base/7-1/working-with-patches#comparing-patch-levels)
+-   [Removing or Reverting Patches](/discover/deployment/-/knowledge_base/7-1/working-with-patches#uninstalling-patches)
 
 +$$$
 
@@ -146,7 +148,7 @@ Here are commands for setting up the DXP source code in Git:
     git add .
     git commit -a
 
-Here's are the command descriptions:
+Here are the command descriptions:
 
 -   `init` creates a Git repository for the current folder (i.e., the root
     folder) and all its contents.
@@ -184,6 +186,6 @@ Congratulations! You're free to explore DXP inside and out!
 
 ## Related Topics (id=related-topics) [](id=related-topics-idrelated-topics)
 
-[Troubleshooting](/develop/tutorials/-/knowledge_base/7-0/troubleshooting)
+[Troubleshooting](/develop/tutorials/-/knowledge_base/7-1/troubleshooting)
 
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
