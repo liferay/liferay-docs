@@ -8,6 +8,13 @@ The script console provides a single view for executing Groovy scripts on @produ
 
 - [Tips for running scripts in the script console](#tips)
 
++$$$
+
+**Important:** The script console is for system operations and maintenance and 
+not for end users. Limit script console access to portal administrators.
+
+$$$
+
 Start with running the script console's sample script. 
 
 ## Running the Sample Script [](id=running-the-sample-script)

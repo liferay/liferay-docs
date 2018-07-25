@@ -169,6 +169,13 @@ Here's an example Groovy script that show the preview mode concept in action:
 
 ## Example 5: Plan a File Output for Long-Running Scripts [](id=example-5-plan-a-file-output-for-long-running-scripts)
 
++$$$
+
+**Important:** The script console is for system operations and maintenance and 
+not for end users. Limit script console access to portal administrators.
+
+$$$
+
 When a script has been running for a long time, it's possible for the script
 console to return an error even though the script can continue running and
 potentially conclude successfully. But it's impossible to know the outcome
