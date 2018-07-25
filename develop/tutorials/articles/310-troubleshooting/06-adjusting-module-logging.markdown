@@ -44,7 +44,7 @@ The log messages are printed to Liferay log files in `[Liferay_Home]/logs`.
 
 You can see examples of module logging in several
 [Liferay sample projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules).
-For example, the [action-command-portlet](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/action-command-portlet),
+For example, the [action-command-portlet](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/action-command-portlet),
 [document-action](/develop/reference/-/knowledge_base/7-0/document-action), and
 [service-builder/jdbc](/develop/reference/-/knowledge_base/7-0/service-builder-application-using-external-database-via-jdbc)
 samples (among others) leverage module logging.

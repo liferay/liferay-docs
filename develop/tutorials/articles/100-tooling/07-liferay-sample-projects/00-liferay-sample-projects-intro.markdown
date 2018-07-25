@@ -42,7 +42,7 @@ users developing for Liferay.
 Some samples also come configured with logging to help you fully understand
 what the sample is accomplishing behind the scenes. For example, OSGi module
 logging is implemented for several samples (e.g.,
-[action-command-portlet](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/action-command-portlet),
+[action-command-portlet](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/action-command-portlet),
 [document-action](/develop/reference/-/knowledge_base/7-0/document-action),
 [service-builder/jdbc](/develop/reference/-/knowledge_base/7-0/service-builder-application-using-external-database-via-jdbc),
 etc.), which lets OSGi modules supply their own logging configuration defaults

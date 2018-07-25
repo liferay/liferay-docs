@@ -4,8 +4,8 @@ You can upgrade your portlet language key hooks to @product-ver@ by following
 these steps: 
 
 1.  Create a new module based on the Blade sample `resource-bundle` 
-    ([Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/extensions/resource-bundle)
-    or [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/extensions/resource-bundle) project). 
+    ([Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/extensions/resource-bundle)
+    or [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.0/maven/extensions/resource-bundle) project). 
 
     Here are the module folder structure's main files:
 

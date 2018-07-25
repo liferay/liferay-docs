@@ -98,6 +98,6 @@ tutorials.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/shared-language-keys)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/apps/shared-language-keys)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/apps/shared-language-keys)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/shared-language-keys)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/apps/shared-language-keys)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.0/maven/apps/shared-language-keys)
