@@ -34,7 +34,7 @@ in `[LIFERAY_HOME]/osgi/modules` folder containing these properties:
 	#logMessageFormat="JSON"
 	outputToConsole="true"
 
-As you can see, these are the same options from the Control Panel. Edit them
+As you can see, these are the same options from the Control Panel. Edit them as
 you see fit.
 
 Regardless of configuration approach, you must also extend Liferay's
