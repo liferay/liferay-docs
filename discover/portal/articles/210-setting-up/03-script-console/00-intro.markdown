@@ -2,9 +2,7 @@
 
 @product@ provides a robust script engine for executing
 [Groovy](http://groovy-lang.org/)
-scripts. The script engine performs back-end tasks like running workflow
-scripts, and you can use the engine from the script console to execute scripts to
-perform repetitive user maintenance operations, bulk invocations of Liferay's
+scripts. You can execute scripts in the engine from the scripting console.  You can execute scripts to perform maintenance tasks like data cleanup, user maintenance operations, bulk invocations of Liferay's
 API, or even system level operations.
 
 These tutorials cover the following scripting topics: 
