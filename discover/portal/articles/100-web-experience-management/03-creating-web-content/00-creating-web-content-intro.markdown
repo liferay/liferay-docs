@@ -1,4 +1,4 @@
-# Introduction to Web Content [](id=introduction-web-content)
+# Creating Web Content [](id=introduction-web-content)
 
 Web Content Management (WCM) helps users who are not web developers publish
 content with a simple point and click interface, while enabling developers to
