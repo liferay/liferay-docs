@@ -119,9 +119,17 @@ disappear without notice?
 [Use a service tracker](/develop/tutorials/-/knowledge_base/7-1/service-trackers). 
 That way you can make sure your code has access to the service it
 needs, and if not, do something appropriate in response. Here's a little example
-code to show you how this might look in Groovy (import statements excluded):
+code to show you how this might look in Groovy:
 
-    ServiceTracker<SomeLocalService,SomeLocalService> st;
+    import com.liferay.journal.model.JournalArticle;
+    import com.liferay.journal.service.JournalArticleLocalService;
+    import com.liferay.portal.scripting.groovy.internal.GroovyExecutor;
+
+    import org.osgi.framework.Bundle;
+    import org.osgi.framework.FrameworkUtil;
+    import org.osgi.util.tracker.ServiceTracker;
+
+    ServiceTracker<JournalArticleLocalService, JournalArticleLocalService> st;
 
     try {
         Bundle bundle = FrameworkUtil.getBundle(GroovyExecutor.class);
@@ -129,13 +137,18 @@ code to show you how this might look in Groovy (import statements excluded):
         st = new ServiceTracker(bundle.getBundleContext(), JournalArticleLocalService.class, null);
         st.open();
 
-        SomeService someService = st.waitForService(500);
+        JournalArticleLocalService jaService = st.waitForService(500);
         
-        if (someService == null) {
-            _log.warn("The required service 'SomeService' is not available.");
+        if (jaService == null) {
+            _log.warn("The required service 'JournalArticleLocalService' is not available.");
         }
         else {
-            someService.doSomethingCool();
+            java.util.List<JournalArticle>articles = jaService.getArticles();
+            if (articles != null) {
+                _log.info("Article count: " + articles.size());
+            } else {
+                _log.info("no articles");
+            }
         }
     }
     catch(Exception e) {
