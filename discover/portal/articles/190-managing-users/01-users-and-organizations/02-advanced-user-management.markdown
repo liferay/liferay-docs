@@ -30,10 +30,10 @@ are default accounts, hackers know about them, so it's better to set up your own
 administrator account. Add a user with your information, then give your user
 account the same administrative rights as the default administrator's account: 
 
-1.  Click the *Roles* link in the left navigation pane (in the General tab).
-    This page of the form shows the Roles to which your account is currently
-    assigned. No roles appear by default (the User role does not appear since it
-    can't be removed). 
+1.  Click the *Roles* link in the left navigation pane (in the *Edit User*
+    page's *General* tab).  This page of the form shows the Roles to which your
+    account is currently assigned. No roles appear by default (the User role
+    does not appear since it can't be removed). 
 
 2.  Click *Select* under Regular Roles and assign the Administrator Role to your
     user account. A dialog box pops up with a list of all the regular
@@ -51,7 +51,7 @@ a second level of User permissions and assign it to those Users. If there are
 certain custom permissions that you'd like all of your portal Users to have, you
 can grant these permissions to the User Role. You can also customize the default
 Roles a new User receives via *Default User Associations*. This is covered in
-the article on Instance Settings.
+the article on [Instance Settings](/discover/portal/-/knowledge_base/7-1/users).
 
 $$$
 
@@ -78,7 +78,7 @@ default icons:
 
 1.  Navigate to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*. 
 
-2.  Find the Users category. Click *User Images*.
+2.  Find the Platform category. Click *Users* &rarr; *User Images*.
 
 3.  Deselect *Use Initials for Default User Portrait*.
 
@@ -147,14 +147,14 @@ names conflicted with site IDs. In @product-ver@, this property defaults to
 
     users.screen.name.allow.numeric=true
 
-This means you're free to set a user screen name to *97854*, or whatever other
+This means you're free to set a user screen name to *24601*, or whatever other
 number you can think of, and imports from systems that allow numeric screen
 names go more smoothly. That's everything you need to know to take advantage of
 this feature. Keep reading to understand what enabled the change.
 
-Because users have personal sites, the URL to user *97854*'s personal site is
+Because users have personal sites, the URL to user *24601*'s personal site is
 
-    http://localhost:8080/web/97854
+    http://localhost:8080/web/24601
 
 Meanwhile, a default site URL to cleverly named *Test Site* is
 
@@ -165,14 +165,14 @@ There's no conflict here, but two conditions could easily lead to one:
 1.  *Test Site*'s group ID matches the number chosen for the user's screen
     name. Each site has a unique numeric identifier in the database, called
     group ID. There's nothing stopping it from matching the user's numeric
-    screen name, so it could easily be `97854` just like the hypothetical user
+    screen name, so it could easily be `24601` just like the hypothetical user
     above.
 
 2.  A site administrator comes along and changes the site's friendly URL to
     match its `groupId`. Hello, URL conflict! Now the site's URL matches the
     user's URL:
 
-        http://localhost:8080/web/97854
+        http://localhost:8080/web/24601
 
 This conflict is no longer possible. In @product-ver@, a site's friendly URL
 is not allowed to be numeric. See for yourself:
@@ -180,7 +180,7 @@ is not allowed to be numeric. See for yourself:
 1.  Navigate to the site's *Configuration* &rarr; *Site Settings* &rarr; *Site URL*
     section.
 
-2.  In the Friendly URL section, enter *97854* and save the form. A failure
+2.  In the Friendly URL section, enter *24601* and save the form. A failure
     message appears if you don't have a user with the matching screen name:
 
         The friendly URL may conflict with another page.
