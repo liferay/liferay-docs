@@ -1,7 +1,7 @@
 # Detecting Unresolved OSGi Components [](id=detecting-unresolved-osgi-components)
 
 @product@ includes 
-[Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell) 
+[Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell) 
 commands that come in handy when trying to diagnose a problem due to an 
 unresolved OSGi component. The specific tools to use depend on the component 
 framework of the unresolved component. Most @product@ components are developed 
@@ -134,7 +134,7 @@ situation where your application has an unresolved Spring-related  OSGi
 component. This can occur, for example, if you update your application's
 database schema but forget to trigger an upgrade (for information on creating
 database upgrade processes for your @product@ applications, see the tutorial 
-[Creating an Upgrade Process for Your App](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)). 
+[Creating an Upgrade Process for Your App](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)). 
 
 These features detect unresolved Service Builder related components. 
 
