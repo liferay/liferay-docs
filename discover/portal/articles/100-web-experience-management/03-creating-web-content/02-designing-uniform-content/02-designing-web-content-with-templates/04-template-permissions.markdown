@@ -1,10 +1,13 @@
 # Assigning Template Permissions [](id=assigning-template-permissions)
 
-Permissions for templates are similar to permissions for structures. As with
-structures, you only want specific developers editing and creating templates.
-You may, however, want to make the templates viewable to some content creators
-who understand the template scripting language but are not directly writing the
-scripts. To determine who views and interacts with the template,
+Permissions for templates are similar to permissions for structures. You have 
+two roles that need to access templates: the template developer who 
+creates the template, and the web content writer who needs to be able to view 
+the template. Templates are very powerful and could be used to run malicious 
+code, so the only people who should have permission to create and edit template 
+are the template developers. Content writers should only have access to view 
+the template and not to write the scripts. To determine who views and interacts 
+with the template,
 
 1.  Go to the *Templates* tab.
 
