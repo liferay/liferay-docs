@@ -1,8 +1,7 @@
 # Configuring Elasticsearch [](id=configuring-elasticsearch-for-liferay-0)
 
-@product@ is an open source project, so you won't be surprised to learn that its
-default search engine is also an open source project. Elasticsearch is a highly
-scalable, full-text search and analytics engine.
+Elasticsearch is an open source, highly scalable, full-text search and analytics
+engine.
 
 By default, Elasticsearch runs as an embedded search engine, but it's only
 supported in production as a separate server or cluster. This guide walks you
@@ -16,18 +15,17 @@ on installing and configuring Solr. -->
 
 To get up and running quickly with Elasticsearch as a remote server, refer to
 the [Installing Elasticsearch article](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
-In that article you'll find the basic instructions for the installation and
-configuration of Elasticsearch in a single server environment. This article
-includes more details and information on clustering and tuning Elasticsearch. In
-this article you'll learn to configure your existing Elasticsearch installation
-for use in production environments. 
+Those are basic instructions for installing and configuring Elasticsearch in
+a single server environment. This article includes more details and information
+on clustering and tuning Elasticsearch. Here, you'll learn to configure your
+existing Elasticsearch installation for use in production environments. 
 
 If you've come here looking for information on search engines in general, or the
 low level search infrastructure of @product@, refer instead to the developer
 tutorial 
 Introduction to Liferay Search (not yet written).
 
-These terms will be useful to understand as you read this guide:
+These terms are useful to understand as you read this guide:
 
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
    installation (for example, `elasticsearch-6.1.3`). 
@@ -38,10 +36,9 @@ These terms will be useful to understand as you read this guide:
 
 ## Embedded vs. Remote Operation Mode [](id=embedded-vs-remote-operation-mode)
 
-When you install @product@, there's an embedded Elasticsearch already installed.
-In embedded mode, Elasticsearch search runs in the same JVM to make it easy to
-test-drive with minimal configuration. Running both servers in the same process
-has drawbacks:
+When you install @product@, Elasticsearch is already embedded. In embedded mode,
+Elasticsearch search runs in the same JVM to make it easy to test-drive with
+minimal configuration. Running both servers in the same process has drawbacks:
 
 -  Elasticsearch must use the same JVM options as @product@.
 -  @product@ and Elasticsearch compete for resources. 

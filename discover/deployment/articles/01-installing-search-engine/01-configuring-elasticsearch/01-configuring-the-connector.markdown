@@ -6,7 +6,7 @@ For detailed Elasticsearch configuration information, refer to the
 The name of your Elasticsearch cluster is important. When you're running
 Elasticsearch in remote mode, the cluster name is used by @product@ to recognize
 the Elasticsearch cluster. To learn about setting the Elasticsearch cluster name
-on the @product@ side, refer below to the section called [Configuring the Liferay
+on the @product@ side, refer below to the section called Configuring the Liferay
 Elasticsearch Connector.
 
 Elasticsearch's configuration files are written in [YAML](http://www.yaml.org)
@@ -20,9 +20,9 @@ Home]/config/elasticsearch.yml` and specify
 
     cluster.name: LiferayElasticsearchCluster
 
-Since `LiferayElasticsearchCluster` is the default name given to the cluster in
-@product@, this would work just fine. Of course, you can name your cluster
-whatever you'd like (we humbly submit the recommendation
+Since `LiferayElasticsearchCluster` is the default name given to the cluster,
+this would work just fine. Of course, you can name your cluster whatever you'd
+like (we humbly submit the recommendation
 `clustery_mcclusterface`).<sup>[1](#footnote1)</sup> You can configure your node
 name using the same syntax (setting the `node.name` property).
 
@@ -50,16 +50,12 @@ To run as a daemon in the background, add the `-d` switch to either command:
 
     ./bin/elasticsearch -d
 
-When you have Elasticsearch itself installed and running, and @product@
-installed and running (do that if you haven't already) introduce @product@ and
-Elasticsearch to each other. Fortunately, the connector that assists in finding
-and integrating the Elasticsearch cluster.
+Once both Elasticsearch and @product@ are installed and running, introduce
+@product@ and Elasticsearch to each other. 
 
 ## Configuring the Liferay Elasticsearch Connector [](id=configuring-the-liferay-elasticsearch-connector)
 
-The Elasticsearch connector consists of an *API* and *Impl* module deployed to
-the OSGi runtime, titled *Liferay Portal Connector to Elasticsearch 6 -
-[API/IMPL]*. This connector provides integration between Elasticsearch and
+The Elasticsearch connector provides integration between Elasticsearch and
 @product@. Before you configure the connector, make sure Elasticsearch is
 running.
 
@@ -72,26 +68,27 @@ There are two ways to configure the adapter:
 It's convenient to configure the Elasticsearch adapter from System Settings, but
 this is often only possible during development and testing. If you're not
 familiar with System Settings, you can read about it
-[here](/discover/portal/-/knowledge_base/7-1/system-settings). Even if you need
-a configuration file so you can use the same configuration on another @product@
-system, you can still use System Settings. Just make the configuration edits you
-need, then export the `.config` file with your configuration.
+[here](/discover/portal/-/knowledge_base/7-1/system-settings). Remember that you
+can generate configuration files for deployment to other systems by configuring
+System Settings, and then exporting the `.config` file with your configuration.
 
 ### Configuring the Adapter in the Control Panel [](id=configuring-the-adapter-in-the-control-panel)
 
-Here are the steps to configure the Elasticsearch adapter from the System
-Settings application:
+Here's how to configure the Elasticsearch adapter from the System Settings
+application:
 
 1.  Start @product@.
+
 2.  Navigate to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*
-   &rarr; *Foundation*. 
+    &rarr; *Foundation*. 
+
 3.  Find the *Elasticsearch* entry (scroll down and browse to it or use the
-   search box) and click the Actions icon
-   (![Actions](../../../images/icon-actions.png)), then *Edit*.
+    search box) and click the Actions icon
+    (![Actions](../../../images/icon-actions.png)), then *Edit*.
 
     ![Figure 1: Use the System Settings application in @product@'s Control Panel to configure the Elasticsearch adapter.](../../../images/cfg-elasticsearch-sys-settings.png)
 
-4.  Make any edits to the configuration, then click *Save*.
+4.  Make any edits to the configuration and click *Save*.
 
     ![Figure 2: Set configurations for the Elasticsearch connector, like settings the Operation Mode to *Remote*.](../../../images/cfg-elasticsearch-sys-settings2.png)
 
@@ -105,10 +102,9 @@ $$$
 
 ### Configuring the Adapter with an OSGi `.config` File [](id=configuring-the-adapter-with-an-osgi-config-file)
 
-When preparing a system for production deployment, you want to set up a
-repeatable deployment process. Therefore, it's best to use the OSGi
-configuration file, where your configuration is maintained in a controlled
-source.
+When preparing a system for production deployment, you should have a repeatable
+deployment process. Therefore, it's best to use the OSGi configuration file,
+where your configuration is maintained in a controlled source.
 
 Follow these steps to configure the Elasticsearch adapter using an OSGi
 configuration file:
@@ -149,43 +145,42 @@ servers. To make @product@ aware of the Elasticsearch cluster, set
     transportAddresses=[IP address of Elasticsearch Node]:9300
 
 in the Elasticsearch connector's OSGi configuration file. List as many or as few
-Elasticsearch nodes in this property as you'd like. This tells @product@ the IP
-address or host name where search requests are to be sent. If using System
+Elasticsearch nodes in this property as you want. This tells @product@ the IP
+address or host name where search requests should be sent. If using System
 Settings, set the value in the *Transport Addresses* property.
 
 +$$$
 
 **Note:** In an Elasticsearch cluster you can list the transport addresses for
-multiple Elasticsearch nodes, if appropriate. Just use a comma-separated list in
-the `transportAddresses` property. If you set only one transport address,
-@product@ loses contact with Elasticsearch if that node goes down.
+multiple Elasticsearch nodes as a comma-separated list in the
+`transportAddresses` property. If you set only one transport address, @product@
+loses contact with Elasticsearch if that node goes down.
 
 $$$
 
 On the Elasticsearch side, set the `network.host` property in your
 `elaticsearch.yml` file. This property simultaneously sets both the *bind host*
-(the host Elasticsearch listens on for requests) and the *publish host* (the
-host name or IP address Elasticsearch uses to communicate with other nodes). See
+(the host where Elasticsearch listens for requests) and the *publish host*
+(the host name or IP address Elasticsearch uses to communicate with other
+nodes). See
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-network.html)
 for more information.
 
 ## Clustering Elasticsearch in Remote Operation Mode [](id=clustering-elasticsearch-in-remote-operation-mode)
 
-Clustering Elasticsearch is easy. Each time you run the Elasticsearch start
-script, a new local storage node is added to the cluster. If you want four nodes
-running locally, for example, just run `./bin/elasticsearch` four times.
-However, to start multiple local storage nodes in Elasticsearch 6, you must also
-configure `node.max_local_storage_nodes` to be something greater than `1`. See
+Clustering Elasticsearch is easy. First, set `node.max_local_storage_nodes` to
+be something greater than `1`. When you run the Elasticsearch start script,
+a new local storage node is added to the cluster. If you want four nodes running
+locally, for example, run `./bin/elasticsearch` four times. See
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-node.html#max-local-storage-nodes)
 for more information.
 
-Elasticsearch 6 removed the setting that specifies the number of shards and
-replicas in the `elasticsearch.yml`file. Configure these index-level settings in
-the Elasticsearch 6 adapter, using the `indexNumberOfShards` and
-`indexNumberOfReplicas` properties to specify the number of primary shards and
-number of replica shards, respectively. Elasticsearch's default configuration
-works for a cluster of up to ten nodes, since the default number of shards is
-`5`, while the default number of replica shards is `1`.
+Configure the number of shards and replicas in the Elasticsearch 6 adapter,
+using the `indexNumberOfShards` and `indexNumberOfReplicas` properties to
+specify the number of primary shards and number of replica shards, respectively.
+Elasticsearch's default configuration works for a cluster of up to ten nodes,
+since the default number of shards is `5` and the default number of replica
+shards is `1`.
 
 +$$$
 

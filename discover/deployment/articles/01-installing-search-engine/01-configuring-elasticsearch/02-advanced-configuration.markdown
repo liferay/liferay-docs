@@ -13,25 +13,24 @@ adapter.
 
 The available configuration options <!--available configuration
 options](/discover/reference/-/knowledge_base/7-1/elasticsearch-settings)--> are
-divided into two groups: the ones you'll use most often by default, and a
-catch-all for everything else. So if the necessary setting isn't available by
-default, you can still configure it with the Liferay Elasticsearch adapter. Just
-specify the settings you need by using one or more of the
+divided into two groups: the ones used most often by default and a
+catch-all for everything else. If the necessary setting isn't available by
+default, you can still configure it with the Liferay Elasticsearch adapter.
+Specify the settings you need by using one or more of the
 `additionalConfigurations`, `additionalIndexConfigurations`, or
 `additionalTypeMappings`, and `overrideTypeMappings` settings. 
 
 ![Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../images/cfg-elasticsearch-additional-configs.png)
 
-`additionalConfigurations` allows developers to define extra settings (defined
-in YAML) for the embedded Elasticsearch. This is only useful for testing
-environments using the embedded Elasticsearch server, and is unnecessary for
-production environments operating in remote mode. Any node settings normally set
-in `elasticsearch.yml` can be declared in this setting. See the
+`additionalConfigurations` defines extra settings (in YAML) for the embedded
+Elasticsearch. This is only useful for testing environments using the embedded
+Elasticsearch server. Any node settings normally set in `elasticsearch.yml` can be
+declared here. See the
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/index.html) 
 for a description of all possible node settings.
 
-`additionalIndexConfigurations` is used to define extra settings (in JSON or
-YAML format) that are applied to the @product@ index when it's created. For
+`additionalIndexConfigurations` defines extra settings (in JSON or
+YAML) that are applied to the @product@ index when it's created. For
 example, you can create custom analyzers and filters using this setting. For
 a complete list of available settings, see the 
 [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/index-modules.html).
@@ -60,15 +59,15 @@ dynamic template (see below).
         }
     }
 
-`additionalTypeMappings` is used to define extra field mappings for the
-`LiferayDocumentType` type definition, which are applied when the index is
+`additionalTypeMappings` defines extra field mappings for the
+`LiferayDocumentType` type definition. These are applied when the index is
 created. Add these field mappings in using JSON syntax. For more information see
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/mapping.html)
 and
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/indices-put-mapping.html).
 Use `additionalTypeMappings` for new field mappings, but do not try to override
 existing `properties` mappings. If any of the `properties` mappings set here
-overlap with existing mappings, index creation will fail. Use
+overlap with existing mappings, index creation fails. Use
 `overrideTypeMappings` to replace the default `properties` mappings.
 
 Here's an example of a 
@@ -122,16 +121,16 @@ for more details on Elasticsearch's field datatypes.
 $$$
 
 The above example shows how a `fooName` field might be added to @product@'s type
-mapping. Because `fooName` is not an existing property in the mapping, it will
-work just fine. If you try to override an existing property mapping, index
-creation will fail. Instead use the `overrideTypeMappings` setting to override
+mapping. Because `fooName` is not an existing property in the mapping, it 
+works fine. If you try to override an existing property mapping, index
+creation fails. Instead use the `overrideTypeMappings` setting to override
 `properties` in the mapping.
 
 +$$$
 
 **Note:** To see that your additional mappings have been added to the
 `LiferayDocumentType`, use `curl` to access this URL after saving your additions
-and reindexing:
+and re-indexing:
 
     curl http://[HOST]:[ES_PORT]/liferay-[COMPANY_ID]/_mapping/LiferayDocumentType?pretty
 
@@ -170,7 +169,7 @@ Then, from the end of the mappings, delete the concluding three curly braces.
     }
 
 Now modify whatever mappings you'd like. The changes take effect once you save
-the changes and trigger a reindex from Server Administration. If you need to add
+the changes and trigger a re-index from Server Administration. If you need to add
 new custom mappings without overriding any defaults, use
 `additionalTypeMappings` instead.
 
