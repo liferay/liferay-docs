@@ -19,7 +19,7 @@ The response (below) has two main parts:
     in the response. This lets any clients know how to operate with the 
     collection. 
 
-Below is the full response for this example. This response is in the 
+This response is in the 
 [JSON-LD hypermedia format](https://json-ld.org/spec/latest/json-ld/), 
 which is the default response format for web APIs in @product@. For information 
 on specifying other response formats, see the 
