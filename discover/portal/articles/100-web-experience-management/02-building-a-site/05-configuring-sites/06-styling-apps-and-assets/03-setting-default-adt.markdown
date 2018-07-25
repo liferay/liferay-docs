@@ -1,4 +1,4 @@
-# Setting a Default ADT
+# Setting a Default ADT [](id=setting-a-default-adt)
 
 You can change the ADT for an individual widget through its own configuration, 
 but to configure the default ADT for all widgets of that type, you need to go 
@@ -19,7 +19,7 @@ you want to use. To get the Template Key, go to the *Application Display
 Template* list for a given site, and retrieve it from the ADT listing. Then,
 enter the display style as `"ddmTemplate_[template-key]"`.
 
-## Default ADT Example
+## Default ADT Example [](id=default-adt-example)
 
 For example, Configure the Language Selector ADTs like this:
 
@@ -48,4 +48,4 @@ Now any Language Selector widgets that are added to a page will use the new
 defaults. This will not effect widgets that have already been added to a page
 or already configured.
 
-![Figure 2: You can see the new default configuration.](../../../../../images/adt-new default.png)
+![Figure 3: You can see the new default configuration.](../../../../../images/adt-new-default.png)
