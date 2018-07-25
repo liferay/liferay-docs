@@ -51,7 +51,8 @@ a second level of User permissions and assign it to those Users. If there are
 certain custom permissions that you'd like all of your portal Users to have, you
 can grant these permissions to the User Role. You can also customize the default
 Roles a new User receives via *Default User Associations*. This is covered in
-the article on [Instance Settings](/discover/portal/-/knowledge_base/7-1/users).
+the article on 
+[Instance Settings](/discover/portal/-/knowledge_base/7-1/setting-up-a-virtual-instance).
 
 $$$
 
@@ -78,7 +79,7 @@ default icons:
 
 1.  Navigate to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*. 
 
-2.  Find the Platform category. Click *Users* &rarr; *User Images*.
+2.  In the Platform section, click *Users* &rarr; *User Images*.
 
 3.  Deselect *Use Initials for Default User Portrait*.
 
