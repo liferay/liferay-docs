@@ -1,14 +1,29 @@
 # Web Services [](id=web-services)
 
-Generating and invoking web services is a central part of the Liferay 
-development experience. After all, what good is it if you can't generate remote 
-services for an app you're developing, or call Liferay's built-in remote 
-services? It's no good at all! Liferay without web services would be like a 
-luxury car without wheels. Fortunately, Liferay comes with full set of JSON and 
-SOAP web services that you can invoke until your heart's content. Liferay also 
-provides Service Builder to generate local and remote services for your apps. 
+It's important for software on one machine to be able to communicate with 
+software on other machines. To enable this, an app can expose an API with the 
+features that remote components can invoke. Such remote components can include 
+client apps that present information to a user, server apps that process data in 
+B2B setting, or an IoT device that needs data to do its work. @product@ is no 
+exception. It exposes a web API that lets developers consume its features from 
+external apps. Developers can also extend that API or develop new services so 
+external apps can use them. 
 
-The tutorials that follow show you how to work with web services in Liferay. 
-You'll learn how to use Service Builder to generate remote services for your 
-apps. You'll also learn how to invoke those services, and any other Liferay web 
-services. 
+There are two different approaches for client apps to connect to @product@'s web 
+APIs: 
+
+-   **Hypermedia REST APIs:** Services that are designed and built in an 
+    opinionated way, and thus decoupled from the internal model. These APIs 
+    follow well-known industry standards and are intended evolve as much as 
+    possible without breaking clients. This is the modern, preferred way to work 
+    with web services in @product@. These services will progressively enable 
+    headless operation of @product@. Hypermedia REST APIs are available starting 
+    with Liferay DXP 7.1 Fix Pack 1, and Liferay Portal CE 7.1 GA2. 
+
+-   **Plain Web/REST Services:** This is the old way to build and consume web 
+    services, but is still supported in @product-ver@. For example, you can use 
+    JAX-RS, JAX-WS, or Liferay's Service Builder to implement plain REST or SOAP 
+    web services. 
+
+The tutorials that follow show you how to consume and create web services in 
+@product@, beginning with hypermedia REST APIs. 
