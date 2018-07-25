@@ -1,58 +1,59 @@
 # Virtual Instances [](id=virtual-instances)
 
-Here's a quick scenario: you already have a server hosting a site created with
-Liferay. That means you already have a hosted Liferay database. Let's say you
-need to set up another site that runs on Liferay. While there's more than one
-way to skin this cat, if you want to kill two birds with one stone, just create
-an additional Virtual Instance of Liferay. You'll get to have two separate sites
-(the birds), with a shared server and database (the stone). If you don't mind
-that the sites have a shared database and server, you can set up a
-separate Virtual Instance in two shakes of a lambs tail. 
+Here's a quick scenario: you already have a server hosting an @product@
+installation, and a hosted database. It has lots of Users, Sites, and other
+global portal settings defined. If you need another installation with its own
+Users, Sites, and portal settings, adding a Virtual Instance might be right for
+you. 
 
-It's important to note before proceeding that no real animals were harmed in the
-writing of the above paragraph (virtual animals, however...).
+Run more than one Virtual Instance on a single server, with a shared shared
+database, but separate data and configurations. Note that Virtual Instances
+share an application server and an OSGi container, so these customizations are
+shared between Virtual Instances:
 
-Now without the idioms: run more than one virtual instance on a single server,
-shared database, but separate data and configurations. 
+- All custom code
+- System scoped configurations (for example, `.config` files)
+- Application server configuration
 
-The Virtual Instances section of the Control Panel appears under the
-Configuration heading. This section lets you manage multiple Liferay instances
-from a single Liferay installation. Each instance's data is kept separate from
-every other instance's data. All instance data, however, is kept in the same
-database.
+Manage Virtual Instances in the Virtual Instances section of the Control Panel,
+under the Configuration heading. Each instance's data is kept separate from
+every other instance's data, though all virtual Instances share a database.
 
-Each virtual instance has its own domain name. Liferay directs users to the
-proper instance based on this domain name. Before you configure an instance,
-configure its domain name in your network first. When you're ready to add an
-instance, click the *Add* (![Add](../../../images/icon-add.png)) button here.
+Users are directed to the proper Virtual Instance because each one has its own
+domain name. Before you configure an instance, configure its domain name in your
+network. To add an instance, 
+
+1.  Go to Control Panel &rarr; Configuration &rarr; Virtual Instances.
+
+2.  Click the *Add* (![Add](../../../images/icon-add.png)) button.
 
 ![Figure 1: Add and manage virtual instances of Liferay in the Control Panel's *Configuration* &rarr; *Virtual Instances* section.](../../../images/virtual-instances.png)
 
-You'll be prompted for four fields and a check box:
+You'll be prompted to fill out four fields and a check box:
 
 **Web ID** 
-: A general convention is to use the domain name for this. It's a user-generated
-ID for the instance.
+: Enter an ID for the instance. A common convention is to use the domain name.
 
 **Virtual Host** 
-: Put the domain name you configured in your network here. When users are
-directed to your Liferay server via this domain name, Liferay will then be able
-to send them to the proper virtual instance.
+: Enter the domain name you configured in your network here. When users are
+directed to your server via this domain name, they'll be sent to the proper
+Virtual Instance.
 
 **Mail Domain** 
-: Enter the domain name for the mail host for this instance.  Liferay will use
-this to send email notifications from the instance.
+: Enter the domain name for the mail host for the Virtual Instance.  Email
+notifications are sent from the instance using this domain.
 
 **Max Users** 
-: Enter the maximum numbers of user accounts you would like your virtual
-instance to support.
+: Enter the maximum number of user accounts the Virtual Instance supports.
+Enter *0* if the virtual instance supports unlimited Users.
 
 **Active** 
 : Use this check box to choose whether to create an active or an inactive
-virtual instance.
+virtual instance. Inactive Virtual Instances aren't accessible to anyone, even
+the Administrator.
 
-When you are finished filling out the form, click *Save*. Now navigate to the
-instance using your new domain name. You are brought to what looks like a clean
-install of Liferay. This is your new virtual instance which can be configured
-any way you like. Read the remaining articles of this section on configuring an
-instance's settings.
+When finished filling out the form, click *Save* and navigate to the instance
+using its domain name. You're brought to what looks like a clean install of
+@product@. This is your new Virtual Instance which can be configured any way you
+like. Read the remaining articles in this section on configuring an instance's
+settings.
