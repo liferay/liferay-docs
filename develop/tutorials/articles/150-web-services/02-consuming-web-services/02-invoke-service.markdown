@@ -1,7 +1,7 @@
 # Get Started: Invoke a Service [](id=get-started-invoke-a-service)
 
 Once you identify the resource you want via the 
-[API's root entry point](liferay.com), 
+[API's root entry point](/develop/tutorials/-/knowledge_base/7-1/get-started-discover-the-api), 
 you can access that resource's URL. Suppose you want to manage the users 
 organizations defined in the portal, and accessing the API's home URL returns 
 the following: 
@@ -103,7 +103,7 @@ the JSON-LD MIME type:
 
 Of course, there are other hypermedia formats, and the API's consumer can select 
 which one to use. The 
-[Content Negotiation tutorial](liferay.com) 
+[content negotiation tutorial](/develop/tutorials/-/knowledge_base/7-1/hypermedia-formats-and-content-negotiation) 
 discusses this further. 
 
 Note that all the web APIs in the portal are secured. When you make 
@@ -112,3 +112,9 @@ to remove any items that the user making the request doesn't have permission to
 view. Unauthenticated requests access the API as a generic guest user, and 
 therefore retrieve only public items. Next, you'll learn how to make 
 authenticated requests. 
+
+## Related Topics
+
+[Get Started: Discover the API](/develop/tutorials/-/knowledge_base/7-1/get-started-discover-the-api)
+
+[Navigating Between Related Resources](/develop/tutorials/-/knowledge_base/7-1/navigating-between-related-resources)

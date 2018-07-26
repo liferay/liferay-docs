@@ -2,7 +2,7 @@
 
 Requests for getting a collection are the same as those for non-collection 
 resources. For example, an 
-[authenticated request](liferay.com) 
+[authenticated request](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests) 
 to the `person` endpoint returns a collection that contains the portal's users. 
 When sending a this request, use the credentials of an administrative user who 
 has permission to view other portal users: 
@@ -23,7 +23,7 @@ This response is in the
 [JSON-LD hypermedia format](https://json-ld.org/spec/latest/json-ld/), 
 which is the default response format for web APIs in @product@. For information 
 on specifying other response formats, see the 
-[Content Negotiation tutorial](liferay.com). 
+[content negotiation tutorial](/develop/tutorials/-/knowledge_base/7-1/hypermedia-formats-and-content-negotiation). 
 
     {
         "totalItems": 2,
@@ -83,3 +83,11 @@ on specifying other response formats, see the
         ],
         "@type": ["Collection"],
     }
+
+## Related Topics
+
+[Pagination](/develop/tutorials/-/knowledge_base/7-1/pagination)
+
+[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests)
+
+[Hypermedia Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-1/hypermedia-formats-and-content-negotiation)

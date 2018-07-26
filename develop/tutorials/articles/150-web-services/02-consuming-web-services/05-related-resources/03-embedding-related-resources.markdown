@@ -1,6 +1,6 @@
 # Embedding Related Resources [](id=embedding-related-resources)
 
-[The tutorial on getting related resources](liferay.com) 
+[The tutorial on getting related resources](/develop/tutorials/-/knowledge_base/7-1/navigating-to-a-related-resource) 
 shows you how to send a request to a resource and identify related resources in 
 the response. Getting information on such a related resource, however, requires 
 that you send another request to that resource. Instead, you can get information 
@@ -14,10 +14,10 @@ increases the response's size. Responses that include more than one attribute or
 recurse into higher levels of nested resources can be especially large. You can 
 alleviate this by telling the server via the request which fields it should 
 include in the response. This is known as sparse fieldsets, which are covered in 
-the tutorial 
-[Retrieving Only Specific Resource Fields](liferay.com). 
-API clients typically use embedded resources and sparse fieldsets together to 
-tune latency and performance of client-server communication. 
+another tutorial. API clients typically use embedded resources and sparse 
+fieldsets together to tune latency and performance of client-server 
+communication. 
+<!-- Link to sparse fieldsets tutorial once it exists. -->
 
 To make a request with an embedded resource, include the `embedded` parameter in 
 the URL with the name of the related resource's attribute. For example, to get 
@@ -116,3 +116,7 @@ send a request to the `web-site` endpoint without specifying a site, and add
 information for every site: 
 
     curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/web-site/?embedded=contentSpace
+
+## Related Resources
+
+[Navigating to a Related Resource](/develop/tutorials/-/knowledge_base/7-1/navigating-to-a-related-resource)

@@ -8,7 +8,7 @@ endpoints.
 You can therefore navigate from: 
 
 -   The home URL to any of the root resources. The 
-    [getting started tutorial on discovering the API](liferay.com) 
+    [getting started tutorial on discovering the API](/develop/tutorials/-/knowledge_base/7-1/get-started-discover-the-api) 
     contains an example of this. 
 -   A collection to any of its elements. 
 -   A resource to a related resource. 

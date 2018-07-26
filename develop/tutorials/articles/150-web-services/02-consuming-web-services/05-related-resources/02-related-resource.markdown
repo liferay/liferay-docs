@@ -3,7 +3,7 @@
 Once you retrieve a resource, you can use the response to get its related 
 resources. For example, the get request to the *Livingstone Hotels & Resorts* 
 site in the 
-[previous tutorial](liferay.com) 
+[previous tutorial](/develop/tutorials/-/knowledge_base/7-1/navigating-from-a-collection-to-its-elements) 
 produces a response that contains information about that site, including any 
 related resources: 
 
@@ -54,9 +54,17 @@ group related resource URLs separate from other URLs.
 Alternatively, you can identify related resources by consulting the schema 
 definition for the resources. The schema sets the attributes' semantics and 
 type. For more information about schemas and the model used in the API, see the 
-[API Vocabulary](liferay.com) 
+[API Vocabulary](/develop/tutorials/-/knowledge_base/7-1/api-vocabulary) 
 tutorial.
 
 Note that it's typically easier to identify related resources via the response, 
 because it's easier to automate. Relying on the API vocabulary or schema 
 requires understanding and parsing the schema. 
+
+## Related Topics
+
+[Navigating from a Collection to its Elements](/develop/tutorials/-/knowledge_base/7-1/navigating-from-a-collection-to-its-elements)
+
+[API Vocabulary](/develop/tutorials/-/knowledge_base/7-1/api-vocabulary)
+
+[Hypermedia Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-1/hypermedia-formats-and-content-negotiation)

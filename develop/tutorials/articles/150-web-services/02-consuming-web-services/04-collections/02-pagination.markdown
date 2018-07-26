@@ -23,7 +23,7 @@ pages, in the following attributes:
 
 For example, suppose that there are 123 users your portal and you want to get 
 information on them. To do this, send an 
-[authenticated request](liferay.com) 
+[authenticated request](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests) 
 to the person URL: 
 
     curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/person
@@ -120,3 +120,7 @@ Also note that in this example, the last page includes only 3 elements. You can
 reflect this (and remove the *Next* button) in your client's pagination UI: 
 
 ![Figure 3: The last page lists the number of items it displays, and no longer includes a *Next* button.](../../../../images/apio-pagination-03.png)
+
+## Related Topics
+
+[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests)

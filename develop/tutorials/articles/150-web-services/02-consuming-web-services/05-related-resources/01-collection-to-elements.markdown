@@ -2,13 +2,13 @@
 
 When you retrieve a collection, it contains links that you can use to navigate 
 through the pages of that collection. The 
-[pagination tutorial](liferay.com) 
+[pagination tutorial](/develop/tutorials/-/knowledge_base/7-1/pagination) 
 describes this in detail. You can also retrieve details from an element in the 
 collection. Follow these steps to do so: 
 
 1.  Retrieve a collection of data. This example gets a list of the sites in the 
     portal by sending an 
-    [authenticated request](liferay.com) 
+    [authenticated request](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests) 
     to the `web-site` collection: 
 
         curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/web-site
@@ -83,3 +83,10 @@ collection. Follow these steps to do so:
 
         curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/web-site/20126
 
+## Related Topics
+
+[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-1/working-with-collections-of-data)
+
+[Pagination](/develop/tutorials/-/knowledge_base/7-1/pagination)
+
+[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests)

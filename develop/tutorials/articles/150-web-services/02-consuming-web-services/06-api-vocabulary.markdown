@@ -36,3 +36,7 @@ Once schema is defined and schema.liferay.org is live, add a new section on the
 schema, and examples.
 
 -->
+
+## Related Topics
+
+[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)

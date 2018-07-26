@@ -53,3 +53,9 @@ As you can see, accessing the home URL lets you know the root resources handled
 by the API and includes URLs to access them. You don't need to remember specific 
 URLs other than the home URL. This discoverability is a key advantage of 
 @product@'s web APIs. 
+
+## Related Topics
+
+[Get Started: Invoke a Service](/develop/tutorials/-/knowledge_base/7-1/get-started-invoke-a-service)
+
+[Navigating Between Related Resources](/develop/tutorials/-/knowledge_base/7-1/navigating-between-related-resources)

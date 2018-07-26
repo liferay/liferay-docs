@@ -57,10 +57,10 @@ request:
 The response contains significantly more data than the response from an 
 unauthenticated request to the same URL. This is because the authenticated user 
 has permission to access the resources in the response. For more information on 
-the response's structure, see the tutorials 
-[API Vocabulary](liferay.com) 
+the response's structure, see the documentation on 
+[API vocabulary](/develop/tutorials/-/knowledge_base/7-1/api-vocabulary) 
 and 
-[Operating with Collections of Data](liferay.com). 
+[collections](/develop/tutorials/-/knowledge_base/7-1/working-with-collections-of-data). 
 
     {
         "totalItems": 2,
@@ -149,3 +149,11 @@ For example:
 
 The response contains the resources that the authenticated user has permission 
 to access, just like the response from Basic authentication. 
+
+## Related Topics
+
+[OAuth 2.0](/discover/deployment/-/knowledge_base/7-1/oauth-2-0)
+
+[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-1/working-with-collections-of-data)
+
+[API Vocabulary](/develop/tutorials/-/knowledge_base/7-1/api-vocabulary)

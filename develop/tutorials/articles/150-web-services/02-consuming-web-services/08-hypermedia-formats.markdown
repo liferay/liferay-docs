@@ -5,7 +5,7 @@ The responses in the preceding examples use the
 which is the default response format for @product@'s hypermedia REST APIs. You 
 can, however, use other formats. Other well-known hypermedia formats include 
 HAL, Siren, Collection+JSON, and Atom. Formats typically differ in the structure 
-or semantics of a resource’s metadata. Note that there's no best hypermedia 
+or semantics of a resource's metadata. Note that there's no best hypermedia 
 format. You should use the one that best fits your use case. 
 
 +$$$
@@ -100,3 +100,8 @@ Requesting the headers, you can see that the response is in the HAL format:
     Content-Type: application/hal+json
     Transfer-Encoding: chunked
 
+## Related Topics
+
+[API Vocabulary](/develop/tutorials/-/knowledge_base/7-1/api-vocabulary)
+
+[Navigating Between Related Resources](/develop/tutorials/-/knowledge_base/7-1/navigating-between-related-resources)

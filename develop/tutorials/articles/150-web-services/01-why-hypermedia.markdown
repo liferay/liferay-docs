@@ -23,10 +23,10 @@ of app or external system to the core portal features. In other words,
 hypermedia REST APIs let developers create client apps that can invoke portal 
 features without the need to use the standard mechanism of developing @product@ 
 apps. This lets developers choose the tools and programming language that best 
-fits their needs for the task at hand. This also enables 
-[headless](liferay.com) 
-use of @product@, where users access portal features entirely through a custom 
-app that leverages the hypermedia REST APIs. 
+fits their needs for the task at hand. This also enables headless use of 
+@product@, where users access portal features entirely through a custom app that 
+leverages the hypermedia REST APIs. 
+<!-- Link to "Going Headless with Hypermedia REST APIs" article, once it exists. -->
 
 @product@'s hypermedia REST APIs can be broken down into two main parts: 
 
@@ -51,3 +51,7 @@ app that leverages the hypermedia REST APIs.
     -   And much more! API consumers can discover API features by navigating 
         hypermedia links in the responses. You'll see examples of this in the 
         tutorials that follow. 
+
+## Related Topics
+
+[Consuming Web Services](/develop/tutorials/-/knowledge_base/7-1/consuming-web-services)
