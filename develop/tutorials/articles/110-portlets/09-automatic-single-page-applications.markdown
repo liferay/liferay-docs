@@ -186,15 +186,15 @@ For example `<a data-senna-off="true" href="/pages/page2.html">Page 2</a>`
 
 That's all you need to do to disable SPA in your app.
 
-Now that you know how to disable SPA, you can learn about the available SPA
-lifecycle events next.
+Now that you know how to disable SPA, you can learn how to specify how resources 
+are loaded during navigation.
 
 ### Specifying How Resources Are Loaded During Navigation [](id=specifying-how-resources-are-loaded-during-navigation)
 
 By default, @product@ unloads CSS resources from the `<head>` element on 
-navigation. JavaScript resources, however, are not removed on navigation. This 
-functionality can be customized by setting the resource's `data-senna-track` 
-attribute. Follow these steps to customize your resources:
+navigation. JavaScript resources in the `<head>`, however, are not removed on 
+navigation. This functionality can be customized by setting the resource's 
+`data-senna-track` attribute. Follow these steps to customize your resources:
 
 1.  Select the resource you want to modify the default behavior for.
 
@@ -204,13 +204,20 @@ attribute. Follow these steps to customize your resources:
     from unloading on navigation.
     
     Alternatively, set the `data-senna-track` attribute to `temporary` to unload 
-    the resource on navigation. The example below ensures that the JS resource 
-    is unloaded during navigation:
+    the resource on navigation. 
     
-        <script src="myscript.js" data-senna-track="temporary" />
+    +$$$
+
+    **Note:** the `data-senna-track` attribute can be added to resources loaded 
+    outside of the `<head>` element as well to specify navigation behavior.  
+
+    $$$
     
-Note that this attribute can be added to resources loaded outside of the 
-`<head>` element as well to override their default behavior. 
+The example below ensures that the JS resource isn't unloaded during navigation:
+    
+    <script src="myscript.js" data-senna-track="permanent" />
+
+Next you can learn about the available SPA lifecycle events next.
 
 ## Listening to SPA Lifecycle Events [](id=listening-to-spa-lifecycle-events)
 
