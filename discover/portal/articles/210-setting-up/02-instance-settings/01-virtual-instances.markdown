@@ -3,17 +3,24 @@
 Here's a quick scenario: you already have a server hosting an @product@
 installation, and a hosted database. It has lots of Users, Sites, and other
 global portal settings defined. If you need another installation with its own
-Users, Sites, and portal settings, adding a Virtual Instance might be right for
+[Users](/discover/portal/-/knowledge_base/7-1/users-and-organizations),
+[Sites](/discover/portal/-/knowledge_base/7-1/building-a-site),
+[Instance Settings](/discover/portal/-/knowledge_base/7-1/general-settings),
+and other specific customizations, adding a Virtual Instance might be right for
 you. 
 
 Run more than one Virtual Instance on a single server, with a shared shared
-database, but separate data and configurations. Note that Virtual Instances
-share an application server and an OSGi container, so these customizations are
-shared between Virtual Instances:
+database, but separate data and configurations. Because Virtual Instances share
+an application server and an OSGi container, the following customizations are
+also shared between Virtual Instances:
 
-- All custom code
-- System scoped configurations (for example, `.config` files)
-- Application server configuration
+- All 
+    [custom code](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-development)
+    custom code your developers have deployed
+- All 
+    [System scoped](/discover/portal/-/knowledge_base/7-1/system-settings)
+    configurations (for example, `.config` files)
+- All application server configuration
 
 Manage Virtual Instances in the Virtual Instances section of the Control Panel,
 under the Configuration heading. Each instance's data is kept separate from
