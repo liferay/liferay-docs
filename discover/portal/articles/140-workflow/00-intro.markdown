@@ -8,7 +8,7 @@ manage them through a portal interface. The processes have knowledge of Users,
 Groups and Roles. You don't have to write a single line of code to accomplish
 this: it can be defined in an XML document, or if you're a Liferay Digital
 Experience Platform (DXP) customer, you have access to a nifty visual designer
-for workflows, called the Workflow Designer. 
+for workflows, called Kaleo Designer. 
 
 There are several steps to effective workflowing: 
 
@@ -64,7 +64,7 @@ in the `META-INF/definitions` folder (see the diagrams
 ## Uploading Workflow Definitions [](id=uploading-workflow-definitions)
 
 If you have an XML definition file locally (perhaps one of the embedded
-workflows, upload it:
+workflows), upload it to Liferay Portal CE:
 
 1.  Navigate to Control Panel &rarr; Configuration &rarr; Workflow.
 
@@ -78,6 +78,33 @@ workflows, upload it:
 
 5.  If it's ready to publish, click *Publish*. Otherwise, *Save* it and it stays
     Unpublished.
+
+DXP customers use the 
+[Kaleo Designer](https://customer.liferay.com/documentation/7.1/admin/-/official_documentation/portal/kaleo-designer)
+to create workflows by default. To upload existing XML files in the Designer,
+
+1.  Navigate to Control Panel &rarr; Configuration &rarr; Workflow.
+
+2.  Click the Add button (![Add](../../images/icon-add.png)).
+
+    The Kaleo Designer palette appears.
+
+3.  Click the *Source* tab.
+
+4.  Click the hyperlink *import a file* in the sentence
+
+        Write your definition or import a file
+
+5.  Find the XML file and upload it. Once uploaded, its XML is displayed in the
+    workflow editor and it can be further edited if necessary. 
+
+6.  To edit using the Kaleo Designer drag-and-drop interface, click the
+    *Diagram* tab.
+
+7.  If it's ready to publish, click *Publish*. Otherwise, *Save* it and it stays
+    Unpublished.
+
+What's the difference between saving and publishing?
 
 ## Published Versus Unpublished [](id=published-versus-unpublished)
 
