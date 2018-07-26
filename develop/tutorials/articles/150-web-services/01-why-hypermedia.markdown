@@ -17,6 +17,16 @@ available on each resource. Again, this isn’t a new concept.
 specifies that an API uses hypermedia to provide the information that clients 
 need to use the API. 
 
++$$$
+
+**Note:** Hypermedia REST APIs are available starting with Liferay DXP 7.1 Fix 
+Pack 1, and Liferay Portal CE 7.1 GA2. To work with web services in earlier 
+releases, you must do so via 
+[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services), 
+JAX-RS, or JAX-WS. 
+
+$$$
+
 Hypermedia REST APIs will progressively offer all the features that @product@ 
 has in its built-in user interface, which lets developers connect any other kind 
 of app or external system to the core portal features. In other words, 

@@ -117,6 +117,6 @@ information for every site:
 
     curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/web-site/?embedded=contentSpace
 
-## Related Resources
+## Related Topics
 
 [Navigating to a Related Resource](/develop/tutorials/-/knowledge_base/7-1/navigating-to-a-related-resource)

@@ -40,3 +40,5 @@ schema, and examples.
 ## Related Topics
 
 [Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)
+
+[Hypermedia Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-1/hypermedia-formats-and-content-negotiation)

@@ -69,7 +69,7 @@ collection. Follow these steps to do so:
                 "https://www.w3.org/ns/hydra/core#"
             ],
             "@type": ["Collection"],
-    }
+        }
 
 2.  In the collection, locate the URL of the element you want to get information 
     from. Since the response from the first step is in the 

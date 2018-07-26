@@ -22,8 +22,9 @@ APIs:
 
 -   **Plain Web/REST Services:** This is the old way to build and consume web 
     services, but is still supported in @product-ver@. For example, you can use 
-    JAX-RS, JAX-WS, or Liferay's Service Builder to implement plain REST or SOAP 
-    web services. 
+    JAX-RS, JAX-WS, or 
+    [Liferay's Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services) 
+    to implement plain REST or SOAP web services. 
 
 The tutorials that follow show you how to consume and create web services in 
 @product@, beginning with hypermedia REST APIs. 
