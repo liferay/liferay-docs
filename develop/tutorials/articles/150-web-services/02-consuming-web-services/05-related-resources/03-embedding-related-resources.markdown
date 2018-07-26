@@ -70,5 +70,49 @@ contains the same information you could retrieve via a separate request to the
         ]
     }
 
-<!-- include additional examples from Google doc -->
+To get information on multiple attributes, supply them to the `embedded` 
+parameter in a comma-delimited list. This example does so by adding the 
+hypothetical attributes `field02` and `field03` to `contentSpace`: 
 
+    curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/web-site/20126?embedded=contentSpace,field02,field03
+
+You can also embed nested attributes in the request via dot notation. For 
+example, to get `contentSpace`'s folder attribute, add `contentSpace.folder` to 
+the embedded parameter. Note that this also gets `contentSpace` itself: 
+
+    curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/web-site/20126?embedded=contentSpace.folder
+
+Also note that even though the response includes all the requested information 
+(e.g., the site and `contentSpace`), this example omits it to focus on the 
+folder: 
+
+    {
+        "@id": "http://localhost:8080/o/api/p/web-site/20126",
+        "name": "Livingstone Hotels & Resorts",
+        // ... 
+        "contentSpace": {
+            "@id": "http://localhost:8080/o/api/p/content-space/20126",
+            "name": "Livingstone Hotels & Resorts",
+            "membershipType": "open",
+            // ... 
+            "folder": {
+                "@id": "http://localhost:8080/o/api/p/root-folder/20126",
+                "folders": "http://localhost:8080/o/api/p/root-folder/20126/folder",
+                "mediaObjects": "http://localhost:8080/o/api/p/root-folder/20126/media-object",
+                "@type": ["Folder"],
+            // ... 
+            },
+        // ... 
+        },
+        // ... 
+    }
+
+The embedded parameter also works with collection resources to return the 
+specified related resource for every item in the collection. The efficiency 
+gains of this approach are significant, because it saves the API client from 
+sending a different request for each collection element. For example, if you 
+send a request to the `web-site` endpoint without specifying a site, and add 
+`embedded=contentSpace`, the response includes detailed `contentSpace` 
+information for every site: 
+
+    curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/web-site/?embedded=contentSpace
