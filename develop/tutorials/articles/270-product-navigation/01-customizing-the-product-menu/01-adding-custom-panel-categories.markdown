@@ -13,7 +13,7 @@ There are three basic steps to creating a new category:
 
 3.  Define the Control Menu Category.
 
-## Creating the OSGi Module
+## Creating the OSGi Module [](id=creating-the-osgi-module)
 
 First you need to create the project.
 
@@ -28,7 +28,7 @@ First you need to create the project.
    class a unique name followed by *PanelCategory* (e.g.,
    `ControlPanelCategory`).
 
-## Implementing Liferay's Frameworks
+## Implementing Liferay's Frameworks [](id=implementing-liferays-frameworks)
 
 Next, you need to connect your OSGi module to Liferay's frameworks and use those
 to define information about your entry.
@@ -125,14 +125,14 @@ technologies such as FreeMarker.
 
 $$$
 
-## Defining the Control Menu Category
+## Defining the Control Menu Category [](id=defining-the-control-menu-category)
 
 After establishing the framework you're using to create the category, you  must 
 add any other methods that are necessary to create your custom panel category. 
 As you learned earlier, you can extend the `BasePanelCategory` and
 `BaseJSPPanelCategory` abstract classes to implement `PanelCategory`.
 
-### BasePanelCategory
+### BasePanelCategory [](id=basepanelcategory)
 
 If you'd like to provide something simple for your panel category like a
 name, extending `BasePanelCategory` is probably sufficient. For example, the
@@ -145,7 +145,7 @@ display the panel category name.
             return LanguageUtil.get(locale, "control-panel");
         }
 
-### BaseJSPPanelCategory
+### BaseJSPPanelCategory [](id=basejsppanelcategory)
 
 If you'd like to provide functionality that is more complex, you can use
 JSPs or any other similar technology to render the panel category. You can

@@ -12,7 +12,7 @@ panel category. Creating  Control Menu Entry follows the same basic pattern as c
 3.  Define the Control Menu Entry
 
 
-## Creating the OSGi Module
+## Creating the OSGi Module [](id=creating-the-osgi-module)
 
 First you need to create the project.
 
@@ -26,7 +26,7 @@ First you need to create the project.
     (e.g.,`StagingProductNavigationControlMenuEntry`).
 
 
-## Implementing Liferay's Frameworks
+## Implementing Liferay's Frameworks [](id=implementing-liferays-frameworks)
 
 Next, you need to connect your OSGi module to Liferay's frameworks and use those
 to define information about your entry.
@@ -75,12 +75,12 @@ to define information about your entry.
     you can extend `BaseJSPProductNavigationControlMenuEntry` to save time. This
     is covered in more detail below.
 
-## Defining the Control Menu Entry
+## Defining the Control Menu Entry [](id=defining-the-control-menu-entry)
 
 Now you need to define your Control Menu Entry. Let's look at some examples to 
 understand your options for defining your entry. 
 
-### Control Menu Examples
+### Control Menu Examples [](id=control-menu-examples)
 
 The
 [IndexingProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/foundation/portal-search/portal-search-web/src/main/java/com/liferay/portal/search/web/internal/product/navigation/control/menu/IndexingProductNavigationControlMenuEntry.java)
@@ -147,7 +147,7 @@ module like this:
             super.setServletContext(servletContext);
         }
 
-### Displaying Your Control Menu Entry
+### Displaying Your Control Menu Entry [](id=displaying-your-control-menu-entry)
 
 Part of creating the entry is defining when it should be displayed. The Control
 Menu displays different entries depending on the page you're on. You can specify
@@ -195,7 +195,7 @@ administration page (e.g., *Site Administration*, *My Account*, etc.):
             return true;
         }
 
-### Defining Dependencies
+### Defining Dependencies [](id=defining-dependencies)
 
 Dependencies for your Control Menu Entry are defined in your build file (e.g., 
 `build.grade` or `pom.xml`). For example, some popular dependencies (in Gradle format) are defined below:
