@@ -64,12 +64,8 @@ Your cluster nodes have the modules needed for running in a cluster.
 
 +$$$
 
-**Note:** When you start @portal@ in a cluster, a log file message shows your 
-cluster's name (e.g., `cluster=liferay-channel-control`): 
-
-------------------------------------------------------------------- 
-GMS: address=oz-52865, cluster=liferay-channel-control, physical address=192.168.1.10:50643 
--------------------------------------------------------------------
+**Important:** Make sure to complete the steps for 
+[configuring clustering](/discover/portal/-/knowledge_base/7-1/liferay-clustering).
 
 $$$
 
