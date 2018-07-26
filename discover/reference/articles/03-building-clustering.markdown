@@ -1,21 +1,21 @@
-# Building Clustering for Liferay Portal CE [](id=building-clustering-for-liferay)
+# Building Clustering for Liferay Portal [](id=building-clustering-for-liferay)
 
 +$$$
 
 **Note:** These instructions are for adding the clustering modules to **Liferay 
-Portal CE**. Skip them if you're running Liferay DXP, as it has clustering
+Portal**. Skip them if you're running Liferay DXP, as it has clustering
 available out-of-the-box. 
 
 $$$
 
-RMI-based clustering with Liferay Portal CE requires building and deploying
+RMI-based clustering with Liferay Portal requires building and deploying
 clustering modules and blacklisting the single node modules. 
 
 ## Build Liferay Portal from source [](id=build-liferay-portal-from-source)
 
 These instructions assume building against master but will also work with the latest branch version.
 
-1.  Clone the Liferay Portal CE GitHub repository for the branch or tag you 
+1.  Clone the Liferay Portal GitHub repository for the branch or tag you 
     want. For example, this command clones the `7.1.0-ga1` tag:
 
         git clone https://github.com/liferay/liferay-portal --branch 7.1.0-ga1 --single-branch --depth 1
@@ -25,13 +25,13 @@ These instructions assume building against master but will also work with the la
         cd liferay-portal
         ant all
 
-A Liferay Portal CE bundle is built to the `../bundles/` folder. 
+A Liferay Portal bundle is built to the `../bundles/` folder. 
 
 ## Blacklist Single Node Modules 
 
 Prevent the single node modules from deploying by
 [blacklisting](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules-and-components)
-them or removing them from your Liferay Portal CE installation's `/osgi/portal`
+them or removing them from your Liferay Portal installation's `/osgi/portal`
 folder.
 
 For example, here are the commands for removing them from the `../bundles/`

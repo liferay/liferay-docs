@@ -13,7 +13,7 @@ of the two. Once you have @product@ installed on more than one application
 server node, there are several optimizations that must be made. At a minimum,
 @product@ should be configured in the following way for a clustered environment:
 
-1.  (Liferay Portal CE only)
+1.  (Liferay Portal only)
     [Build and deploy the cluster modules to all cluster nodes.](/discover/reference/-/knowledge_base/7-1/building-clustering-for-liferay)
 
 2.  [All nodes should be pointing to the same database or database  cluster.](/discover/deployment/-/knowledge_base/7-1/point-all-nodes-to-the-same-database) 
