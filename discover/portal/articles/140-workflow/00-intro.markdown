@@ -64,7 +64,7 @@ in the `META-INF/definitions` folder (see the diagrams
 ## Uploading Workflow Definitions [](id=uploading-workflow-definitions)
 
 If you have an XML definition file locally (perhaps one of the embedded
-workflows), upload it to Liferay Portal CE:
+workflows), upload it to Liferay Portal:
 
 1.  Navigate to Control Panel &rarr; Configuration &rarr; Workflow.
 
