@@ -1,4 +1,4 @@
-# Navigating from a Collection to its Elements
+# Navigating from a Collection to its Elements [](id=navigating-from-a-collection-to-its-elements)
 
 When you retrieve a collection, it contains links that you can use to navigate 
 through the pages of that collection. The 

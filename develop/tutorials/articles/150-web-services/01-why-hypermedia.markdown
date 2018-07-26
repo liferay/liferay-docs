@@ -1,4 +1,4 @@
-# Why Hypermedia REST APIs?
+# Why Hypermedia REST APIs? [](id=why-hypermedia-rest-apis)
 
 Before explaining how to use and create hypermedia REST APIs, you should first 
 understand what *hypermedia* is. In short, hypermedia is the ability to 

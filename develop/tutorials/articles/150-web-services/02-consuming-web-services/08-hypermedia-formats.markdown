@@ -1,4 +1,4 @@
-# Hypermedia Formats and Content Negotiation
+# Hypermedia Formats and Content Negotiation [](id=hypermedia-formats-and-content-negotiation)
 
 The responses in the preceding examples use the 
 [JSON-LD hypermedia format](https://json-ld.org/), 

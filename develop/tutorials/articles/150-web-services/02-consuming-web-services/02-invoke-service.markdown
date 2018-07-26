@@ -1,4 +1,4 @@
-# Get Started: Invoke a Service
+# Get Started: Invoke a Service [](id=get-started-invoke-a-service)
 
 Once you identify the resource you want via the 
 [API's root entry point](liferay.com), 

@@ -1,4 +1,4 @@
-# Getting Collections
+# Getting Collections [](id=getting-collections)
 
 Requests for getting a collection are the same as those for non-collection 
 resources. For example, an 

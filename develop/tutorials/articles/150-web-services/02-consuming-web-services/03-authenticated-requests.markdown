@@ -1,4 +1,4 @@
-# Making Authenticated Requests
+# Making Authenticated Requests [](id=making-authenticated-requests)
 
 When you make an unauthenticated request, you do so as a guest user and receive 
 only public information in the response. To make an authenticated request, you 
@@ -16,7 +16,7 @@ There are two authentication mechanisms available when invoking web APIs:
 
 First, you'll learn how send requests with basic authentication. 
 
-## Basic Authentication
+## Basic Authentication [](id=basic-authentication)
 
 Basic authentication requires that you send an HTTP `Authorization` header 
 containing the encoded username and password. You must first get that encoded 
@@ -111,7 +111,7 @@ and
         "@type": ["Collection"],
     }
 
-## OAuth 2.0 Authentication
+## OAuth 2.0 Authentication [](id=oauth-2-0-authentication)
 
 @product-ver@ supports authorization via OAuth 2.0, which is a token-based 
 authentication mechanism. For more details, see 
@@ -119,7 +119,7 @@ authentication mechanism. For more details, see
 The following sections show you how to use OAuth 2.0 to authenticate web API 
 requests. 
 
-### Obtaining the OAuth 2.0 Token
+### Obtaining the OAuth 2.0 Token [](id=obtaining-the-oauth-2-0-token)
 
 Before using OAuth 2.0 to invoke a web API, you must register your application 
 (your web API's consumer) as an authorized OAuth client. To do this, follow the 
@@ -138,7 +138,7 @@ ID and Client Secret values that appear at the top of the form.
 Next, you must get an OAuth 2.0 access token. To do this, see the tutorial 
 [Authorization Account Access with OAuth 2](/discover/deployment/-/knowledge_base/7-1/authorizing-account-access-with-oauth2). 
 
-### Invoking the Service with an OAuth 2.0 Token
+### Invoking the Service with an OAuth 2.0 Token [](id=invoking-the-service-with-an-oauth-2-0-token)
 
 Once you have a valid OAuth 2.0 token, include it in the request's 
 `Authorization` header, specifying that the authentication type is a 

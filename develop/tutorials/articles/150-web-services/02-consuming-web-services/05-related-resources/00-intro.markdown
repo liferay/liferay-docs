@@ -1,4 +1,4 @@
-# Navigating Between Related Resources
+# Navigating Between Related Resources [](id=navigating-between-related-resources)
 
 A main benefit of hypermedia REST APIs is the ability to discover and navigate 
 all the services from a single starting point, the API's home URL. This is 

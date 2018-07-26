@@ -1,4 +1,4 @@
-# Navigating to a Related Resource
+# Navigating to a Related Resource [](id=navigating-to-a-related-resource)
 
 Once you retrieve a resource, you can use the response to get its related 
 resources. For example, the get request to the *Livingstone Hotels & Resorts* 

@@ -1,4 +1,4 @@
-# Working with Collections of Data
+# Working with Collections of Data [](id=working-with-collections-of-data)
 
 Collection resources are a common resource type that you'll encounter when 
 working with @product@ web APIs. If you followed along with the previous 

@@ -1,4 +1,4 @@
-# Pagination
+# Pagination [](id=pagination)
 
 A small collection can be transmitted in a single response without difficulty. 
 Transmitting a large collection all at once, however, can consume too much 

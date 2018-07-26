@@ -1,4 +1,4 @@
-# Embedding Related Resources
+# Embedding Related Resources [](id=embedding-related-resources)
 
 [The tutorial on getting related resources](liferay.com) 
 shows you how to send a request to a resource and identify related resources in 

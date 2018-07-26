@@ -1,4 +1,4 @@
-# API Vocabulary
+# API Vocabulary [](id=api-vocabulary)
 
 When defining an API, the developer must decide how to expose the representation 
 of its resources. This determines how easy it is to use the API, and how the API 

@@ -14,7 +14,7 @@ $$$
 As an example, consider some example SOAP web service clients for Liferay's 
 `Company`, `User`, and `UserGroup` services that perform these tasks: 
 
-1. List each user group the user with the screenname *test* belongs to. 
+1. List each user group the user with the screen name *test* belongs to. 
 
 2. Add a new user group named *MyGroup*.
 
@@ -114,7 +114,7 @@ WSDLs:
 
     http://localhost:8080/api/axis/Portal_UserGroupService?wsdl
 
-![Figure 1: Service Definition](../../../images/api-web-svc-wsdl.png)
+![Figure 1: Service Definition](../../images/api-web-svc-wsdl.png)
 
 When you specify a WSDL, Eclipse automatically adds the auxiliary files and
 libraries required to consume that web service. After you've created your web 

@@ -1,4 +1,4 @@
-# Get Started: Discover the API
+# Get Started: Discover the API [](id=get-started-discover-the-api)
 
 To begin consuming services you must first know where they are (e.g., a service 
 catalog), what operations you can invoke, and how to invoke them. With 
