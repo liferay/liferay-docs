@@ -1,16 +1,15 @@
 # Extending the Simulation Menu [](id=extending-the-simulation-menu)
 
-When testing how Liferay pages and apps will appear for users, it's critical to
-simulate their views on as many useful ways as possible. By default, Liferay
-provides the Simulation Menu on the right-side of the main page. If you need to 
-simulate something in Liferay that is not provided by the Simulation Menu you 
-can to extend the Simulation Menu.
+When testing how pages and apps will appear for users, it's important to
+simulate their views in as many ways as possible. The Simulation Menu on the
+right-side of the main page allows this, and you can extend the menu if you
+need to simulate something that it does not provide.
 
-The first thing you'll need to do is get accustomed to using panel
-categories/apps. This is covered in detail in the
+First, you need to get accustomed to using panel categories/apps. This is
+covered in detail in the
 [Customizing The Product Menu](/develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu)
 tutorial. Once you know the difference between panel categories and panel apps,
-and know how to create them, continue on in this tutorial.
+and know how to create them, continue with this tutorial.
 
 There are few differences between the Simulation Menu and Product Menu, mostly
 because they extend the same base classes. The Simulation Menu, by default, is
@@ -22,13 +21,13 @@ This is the app and functionality you see in the Simulation Menu by default.
 ![Figure 1: The Simulation Menu offers a device preview application.](../../images/simulation-menu-preview.png)
 
 To provide your own functionality in the Simulation Menu, you'll need to create
-a panel app in the `SimulationPanelCategory`. If you're looking to add extensive
+a panel app in `SimulationPanelCategory`. If you're looking to add extensive
 functionality, you can even create additional panel categories in the menu to
 divide up your panel apps. This tutorial will cover the simpler case of creating
 a panel app for the already present hidden category.
 
-1.  Follow the steps documented in the [Adding Custom Panel Apps](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)
-    section for creating custom panel apps. Once you've created the foundation 
+1.  Follow the steps documented in [Adding Custom Panel Apps](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)
+    for creating custom panel apps. Once you've created the foundation 
     of your panel app, move on to learn how to tweak it so it customizes the
     Simulation Menu.
 
@@ -47,12 +46,11 @@ a panel app for the already present hidden category.
     [com.liferay.product.navigation.simulation](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.product.navigation.simulation/).
 
     Be sure to also specify the order you'd like to display your new panel app,
-    which was explained in the [Adding Custom Panel Apps](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)
-    section.
+    which was explained in [Adding Custom Panel Apps](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps).
 
 3.  This tutorial assumes you're using JSPs. 
     Therefore, you should extend the [BaseJSPPanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BaseJSPPanelApp.html)
-    abstract class. This class implements the [PanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/PanelApp.html)
+    abstract class, which implements the [PanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/PanelApp.html)
     interface and also provides additional methods necessary for specifying JSPs
     to render your panel app's UI. Remember that you can also implement your own
     `include()` method to use any frontend technology you want, if you'd like to
@@ -97,12 +95,12 @@ a panel app for the already present hidden category.
         }
 
     Audience Targeting also provides a good example of how to extend the
-    Simulation Menu. When the Audience Targeting app is deployed, the Simulation
-    Menu is extended to offer more functionality, in particular, for Audience
-    Targeting User Segments and Campaigns. You can simulate particular scenarios
-    for campaigns and users directly from the Simulation Menu. Its panel app
-    class is very similar to `DevicePreviewPanelApp`, except it points to a
-    different portlet and JSP.
+    Simulation Menu. When the Audience Targeting app is deployed, the
+    Simulation Menu is extended to offer more functionality for Audience
+    Targeting User Segments and Campaigns. You can simulate particular
+    scenarios for campaigns and users directly from the Simulation Menu. Its
+    panel app class is very similar to `DevicePreviewPanelApp`, except it
+    points to a different portlet and JSP.
 
     ![Figure 2: The Audience Targeting app extends the Simulation Menu to help simulate different users and campaign views.](../../images/simulation-menu-at.png)
 

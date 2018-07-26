@@ -1,8 +1,8 @@
 # Defining Icons and Tooltips
 
-When you're creating your Control Menu entry, you can use an icon in
-addition to, or in place of, text. You can also use tooltips to provide a more
-in depth explanation.
+When creating a Control Menu entry, you can use an icon in addition to or in
+place of text. You can also use tooltips to provide a more in depth
+explanation.
 
 ## Control Menu Entry Icons
 
@@ -59,7 +59,3 @@ this:
 You need to create a `Language.properties` to store your labels. You can learn 
 more about resource bundles in the [Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
 tutorials.
-
-
-
-

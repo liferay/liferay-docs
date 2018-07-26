@@ -28,7 +28,8 @@ First you need to create the project.
 
 ## Implementing Liferay's Frameworks
 
-Next, you need to connect your OSGi module to Liferay's frameworks and use those to define information about your entry.
+Next, you need to connect your OSGi module to Liferay's frameworks and use those
+to define information about your entry.
 
 1. Directly above the class's declaration, insert the following:
 
@@ -41,10 +42,9 @@ Next, you need to connect your OSGi module to Liferay's frameworks and use those
             service = ProductNavigationControlMenuEntry.class
         )
 
-    The `product.navigation.control.menu.category.key` property specifies the
-    category your entry should reside in. The default Control Menu provides 
-    three categories: Sites (left portion), Tools (middle portion), and User 
-    (right portion).
+    The `product.navigation.control.menu.category.key` property specifies your
+    entry's category. The default Control Menu provides three categories: Sites
+    (left portion), Tools (middle portion), and User (right portion).
 
     ![Figure 1: This image shows where your entry will reside depending on the category you select.](../../../images/control-menu-areas.png)
 
@@ -57,7 +57,7 @@ Next, you need to connect your OSGi module to Liferay's frameworks and use those
 
     Like panel categories, you need to specify an integer for the
     order in which your entry will be displayed in the category. Entries are
-    ordered from left to right. For example, an entry with order `1` will be
+    ordered from left to right: an entry with order `1` will be
     listed to the left of an entry with order `2`. If the order is not
     specified, it's chosen at random based on which service was registered first
     in the OSGi container. Lastly, your `service` element should specify the
@@ -73,7 +73,7 @@ Next, you need to connect your OSGi module to Liferay's frameworks and use those
     buttons or a sub-menu, you can do so by overriding the `include()` and
     `includeBody()` methods. If you are going to use JSPs for generating the UI,
     you can extend `BaseJSPProductNavigationControlMenuEntry` to save time. This
-    will be elaborated on more extensively in the next step.
+    is covered in more detail below.
 
 ## Defining the Control Menu Entry
 
@@ -82,20 +82,21 @@ understand your options for defining your entry.
 
 ### Control Menu Examples
 
-First, the [IndexingProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/foundation/portal-search/portal-search-web/src/main/java/com/liferay/portal/search/web/internal/product/navigation/control/menu/IndexingProductNavigationControlMenuEntry.java) is a simple example for 
-providing text and an icon. It extends the 
-`BaseProductNavigationControlMenuEntry` class and is used when 
-Liferay is indexing. The indexing entry is displayed in the *Tools* (middle) 
-area of the Control Menu with a *Refresh* icon and text stating *The Portal is 
-currently indexing*. 
+The
+[IndexingProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/foundation/portal-search/portal-search-web/src/main/java/com/liferay/portal/search/web/internal/product/navigation/control/menu/IndexingProductNavigationControlMenuEntry.java)
+is a simple example for providing text and an icon. It extends the
+`BaseProductNavigationControlMenuEntry` class and is used when Liferay is
+indexing. The indexing entry is displayed in the *Tools* (middle) area of the
+Control Menu with a *Refresh* icon and text stating *The Portal is currently
+indexing*. 
 
-
-The [ProductMenuProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/java/com/liferay/product/navigation/product/menu/web/internal/product/navigation/control/menu/ProductMenuProductNavigationControlMenuEntry.java)
-is a more advanced example. This entry displays in the *Sites* (left) area
-of the Control Menu, but unlike the previous example, it extends the
+The
+[ProductMenuProductNavigationControlMenuEntry](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/web-experience/product-navigation/product-navigation-product-menu-web/src/main/java/com/liferay/product/navigation/product/menu/web/internal/product/navigation/control/menu/ProductMenuProductNavigationControlMenuEntry.java)
+is more sophisticated. This entry displays in the *Sites* (left) area of the
+Control Menu, but unlike the previous example, it extends the
 `BaseJSPProductNavigationControlMenuEntry` class. This provides several more
-methods that lets you use JSPs to define your entry's UI. There are two
-methods to pay special attention to:
+methods that lets you use JSPs to define your entry's UI. There are two methods
+to pay special attention to:
  
         @Override
         public String getBodyJspPath() {
@@ -115,18 +116,19 @@ Menu. The latter method must be used when providing a UI outside the Control
 Menu. You can easily test this when you open and close the
 Product Menu on the home page.
 
-Lastly, if you're planning on providing functionality that will stay
-exclusively inside the Control Menu, the `StagingProductNavigationControlMenuEntry` class calls its JSP like this:
+Lastly, if you're planning on providing functionality that will stay exclusively
+inside the Control Menu, the `StagingProductNavigationControlMenuEntry` class
+calls its JSP like this:
 
         @Override
         public String getIconJspPath() {
             return "/control_menu/entry.jsp";
         }
 
-In particular, the `entry.jsp` is returned, which embeds the Staging Bar
+The `entry.jsp` is returned, which embeds the Staging Bar
 portlet into the Control Menu.
 
-You will also need to specify the servlet context from where you are loading
+You also need to specify the servlet context from where you are loading
 the JSP files. If this is inside an OSGi module, make sure your `bnd.bnd`
 file has defined a web context path:
 
@@ -147,10 +149,9 @@ module like this:
 
 ### Displaying Your Control Menu Entry
 
-Part of creating the entry is defining when it should be displayed. The Control 
-Menu displays different entries depending on the page you've navigated to. You 
-can specify when your entry should display using the 
-`isShow(HttpServletRequest)` method. 
+Part of creating the entry is defining when it should be displayed. The Control
+Menu displays different entries depending on the page you're on. You can specify
+when your entry should display using the `isShow(HttpServletRequest)` method. 
 
 For example, the `IndexingProductNavigationControlMenuEntry` class queries
 the number of indexing jobs when calling `isShow`. If the query count is
@@ -168,10 +169,9 @@ the number of indexing jobs when calling `isShow`. If the query count is
             return super.isShow(request);
         }
 
-The `StagingProductNavigationControlMenuEntry` class is selective over which
-pages to display for. The staging entry is configured to never display if
-the page is an administration page (e.g., *Site Administration*, *My
-Account*, etc.):
+The `StagingProductNavigationControlMenuEntry` class selects which pages to
+display for. The staging entry is configured to never display if the page is an
+administration page (e.g., *Site Administration*, *My Account*, etc.):
 
         @Override
         public boolean isShow(HttpServletRequest request) throws PortalException {

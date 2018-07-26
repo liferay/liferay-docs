@@ -18,7 +18,7 @@ Control Panel, user account settings, and Site Administration functionality.
 The Control Menu is the top menu offering navigation to the Product Menu, 
 Simulation Menu (the right menu), and *Add* button. When certain settings are 
 enabled (e.g., Staging, Page Customization, etc.) more tools are offered. The 
-Simulation Menu offers options to simulate your site's look for different scenarios (devices, user segments, etc.). Lastly, the User Peronsal Menu is used to hold selectable items that aid with a user's own account settings.
+Simulation Menu offers options to simulate your site's look for different scenarios (devices, user segments, etc.). Lastly, the User Personal Menu is used to hold selectable items that aid with a user's own account settings.
 
 In this section of tutorials, you'll learn about the various ways you can extend
 and customize Liferay's product navigation to fit your needs.

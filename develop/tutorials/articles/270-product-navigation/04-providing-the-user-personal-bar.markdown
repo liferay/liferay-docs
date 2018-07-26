@@ -1,10 +1,9 @@
 # Providing the User Personal Bar [](id=providing-the-user-personal-bar)
 
-The User Personal Bar is used to display options that are unique to the current 
-logged in user. By default, Liferay displays this menu as a simple avatar 
-button that expands the User Settings sub-menu in the Product Menu. In a custom 
-theme, the User Personal Bar could be configured to appear anywhere in the 
-interface.
+The User Personal Bar is used to display options that are unique to the current
+user. By default, Liferay displays this menu as a simple avatar button that
+expands the User Settings sub-menu in the Product Menu. In a custom theme, the
+User Personal Bar could be configured to appear anywhere in the interface.
 
 ![Figure 1: By default, the User Personal Menu contains the signed-in user's avatar, which navigates to the Product Menu when selected.](../../images/user-personal-bar.png)
 
@@ -57,9 +56,9 @@ existing default portlet.
      *Edit*, *Browse*, etc.).
 
      You should also specify the service rank for your new portlet so it
-     overrides the default one provided by @product@. Make sure to set the
-     `service.ranking:Integer` property to a number that is ranked higher than
-     the portlet being used by default.
+     overrides the default. Make sure to set the `service.ranking:Integer`
+     property to a number that is ranked higher than the portlet being used by
+     default.
 
      Since you're only wanting the User Personal Bar to display your portlet,
      you'll always have the `service` element be `ViewPortletProvider.class`.
