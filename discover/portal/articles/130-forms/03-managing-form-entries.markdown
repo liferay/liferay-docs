@@ -34,7 +34,7 @@ might need to get all the entries into a spreadsheet so you can work with them.
 
 ## Exporting Form Entries [](id=exporting-form-entries)
 
-So you need to put your form entries in a spreadsheet to do spreadhseet things
+So you need to put your form entries in a spreadsheet to do spreadsheet things
 with them? No problem.
 
 1.  Navigate to the Forms application in The Lunar Resort site's Content section
@@ -43,8 +43,8 @@ with them? No problem.
 2.  Click the *Actions* (![Actions](../../images/icon-actions.png)) button and
     select *Export*. 
 
-3.  Choose a File Extension. You can get entries in CSV, XLS, or XML. For this
-    example, pick CSV.
+3.  Choose a File Extension. You can get entries in CSV, XLS, or XML by default.
+    For this example, pick CSV.
 
 4.  Click *Okay*, and open the file or save it locally. Open it with your
     favorite spreadsheet program and confirm that your form entries are entered
@@ -63,6 +63,26 @@ information, see the article on
 [importing and exporting application content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content).
 
 $$$
+
+There's a system level setting to determine whether administrators can export
+entries in CSV format:
+
+1.  Go to Control Panel &rarr; Configuration &rarr; System Settings and click
+    the *Forms* category in the Content section.
+
+2.  Click the *Forms* entry under SITE SCOPE.
+
+3.  The CSV Export property has three options:
+
+    - *Enabled* to enable CSV Export without a warning
+
+    - *Enabled (Show Warning)* to enable CSV Export with the following warning
+        to administrators:
+
+        This CSV file contains user supplied inputs. 
+        Opening a CSV file in a spreadsheet program may be dangerous.
+
+    - *Disabled* to turn off CSV Export.
 
 Once you export a batch of form entries, it can make sense to delete them from
 the database.
