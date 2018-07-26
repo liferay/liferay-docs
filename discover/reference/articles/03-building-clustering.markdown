@@ -13,7 +13,7 @@ clustering modules and blacklisting the single node modules.
 
 ## Build Liferay Portal from source [](id=build-liferay-portal-from-source)
 
-These instructions assume building against master but will also work with the latest branch version.
+These instructions assume building against the latest tagged release but but will also work with any branch.
 
 1.  Clone the Liferay Portal CE GitHub repository for the branch or tag you 
     want. For example, this command clones the `7.1.0-ga1` tag:
