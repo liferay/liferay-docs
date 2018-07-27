@@ -1,8 +1,8 @@
 # Virtual Instances [](id=virtual-instances)
 
 Here's a quick scenario: you already have a server hosting an @product@
-installation, and a hosted database. It has lots of Users, Sites, and other
-global portal settings defined. If you need another installation with its own
+installation, and a hosted database. It has lots of Users, Sites, and specific
+Instance Settings defined. If you need another installation with its own
 [Users](/discover/portal/-/knowledge_base/7-1/users-and-organizations),
 [Sites](/discover/portal/-/knowledge_base/7-1/building-a-site),
 [Instance Settings](/discover/portal/-/knowledge_base/7-1/general-settings),
