@@ -19,18 +19,21 @@ of the two. Once you have @product@ installed in more than one application
 server node, there are several optimizations that need to be made. At a minimum,
 @product@ should be configured in the following way for a clustered environment:
 
-1.  All nodes should be pointing to the same @product@ database or database 
+1.  (Liferay Portal CE only)
+    [Build and deploy the cluster modules to all cluster nodes.](/discover/reference/-/knowledge_base/7-0/building-clustering-for-liferay)
+
+2.  All nodes should be pointing to the same @product@ database or database 
     cluster. 
 
-2.  Documents and Media repositories must have the same configuration and be
+3.  Documents and Media repositories must have the same configuration and be
     accessible to all nodes of the cluster. 
 
-3.  Search should be on a separate search server that is optionally clustered. 
+4.  Search should be on a separate search server that is optionally clustered. 
 
-4.  Cluster Link must be enabled so the cache replicates across all nodes of the
+5.  Cluster Link must be enabled so the cache replicates across all nodes of the
     cluster. 
 
-5.  Hot deploy applications to each node individually. 
+6.  Hot deploy applications to each node individually. 
 
 If you haven't configured your application server to use farms for deployment,
 the hot deploy folder should be a separate folder for all the nodes, and plugins
