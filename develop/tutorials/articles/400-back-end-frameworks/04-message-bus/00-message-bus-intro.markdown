@@ -29,9 +29,9 @@ Bus activities.
 
 The Message Bus topics are covered in these tutorials:
 
-- [Messaging Destinations](/develop/tutorials/-/knowledge_base/7-0/messaging-destinations) 
-- [Message Listeners](/develop/tutorials/-/knowledge_base/7-0/message-listeners) 
-- [Sending Messages](/develop/tutorials/-/knowledge_base/7-0/sending-messages) 
+- [Messaging Destinations](/develop/tutorials/-/knowledge_base/7-1/messaging-destinations) 
+- [Message Listeners](/develop/tutorials/-/knowledge_base/7-1/message-listeners) 
+- [Sending Messages](/develop/tutorials/-/knowledge_base/7-1/sending-messages) 
 
 Since all messages are sent to and received at destinations, messaging
 destinations is worth exploring first. 

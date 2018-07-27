@@ -5,7 +5,7 @@ them. That is, you must create and register a message listener for the
 destination. 
 
 To create a message listener, implement the
-[`MessageListener` interface](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageListener.html)
+[`MessageListener` interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageListener.html)
 and override its `receive(Message)` method to process messages your way. 
 
     public void receive(Message message) {
@@ -15,8 +15,10 @@ and override its `receive(Message)` method to process messages your way.
 Here are the ways to register your listener with Message Bus:
 
 -   **Automatic Registration as a Component**: Publish the listener to the OSGi
-    registry as a Declarative Services Component that specifies a destination.
-    Message Bus automatically wires the listener to the destination.
+    registry as a
+    [Declarative Services Component](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services)
+    that specifies a destination. Message Bus automatically wires the listener
+    to the destination.
 
 -   **Registering via MessageBus**: Obtain a reference to the Message Bus and
     use it directly to register the listener to a destination.
@@ -27,8 +29,9 @@ Here are the ways to register your listener with Message Bus:
 
 +$$$
 
-**Note**: The [`DestinationNames` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
-defines `String` constants for Liferay's preconfigured destinations. 
+**Note**: The
+[`DestinationNames` class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
+defines `String` constants for @product@'s preconfigured destinations. 
 
 $$$
 
@@ -64,7 +67,8 @@ to destinations.
 
 ## Registering via MessageBus [](id=registering-via-messagebus)
 
-You can use the [`MessageBus` instance](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageBus.html)
+You can use the
+[`MessageBus` instance](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageBus.html)
 directly to register message listeners to destinations. You might want to do
 this if, for example, you want to create some special proxy wrappers. Here's a
 registrator that demonstrates registering a listener this way:
@@ -112,7 +116,7 @@ listener.
 
 You can use a `Destination` instance to register a listener to that destination.
 You might want to do this if, for example, you want to create some special proxy
-wrappers.  Here's a registrator that demonstrates registering a listener this
+wrappers. Here's a registrator that demonstrates registering a listener this
 way:
 
     @Component (
@@ -157,6 +161,6 @@ messages sent to the destinations.
 
 ## Related Topics [](id=related-topics)
 
-[Messaging Destinations](/develop/tutorials/-/knowledge_base/7-0/messaging-destinations) 
+[Messaging Destinations](/develop/tutorials/-/knowledge_base/7-1/messaging-destinations) 
 
-[Sending Messages](/develop/tutorials/-/knowledge_base/7-0/sending-messages)
+[Sending Messages](/develop/tutorials/-/knowledge_base/7-1/sending-messages)

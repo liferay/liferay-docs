@@ -22,7 +22,8 @@ Start by creating a message.
 
 Here's how to create a message:
 
-1.  Call the [`Message` constructor](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/Message.html).
+1.  Call the
+    [`Message` constructor](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/Message.html).
 
     `Message message = new Message();`
 
@@ -52,7 +53,8 @@ First, let's consider using Message Bus directly.
 
 ### Directly Using the Message Bus [](id=directly-using-the-message-bus)
 
-This method involves obtaining a [`MessageBus` instance](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageBus.html)
+This method involves obtaining a
+[`MessageBus` instance](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageBus.html)
 and invoking it to send messages. Here's an example of directly using Message
 Bus to send a message.
 
@@ -80,7 +82,7 @@ To send messages asynchronously, consider using
  
 ### Using SingleDestinationMessageSender [](id=using-singledestinationmessagesender)
 
-The [`SingleDestinationMessageSender` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SingleDestinationMessageSender.html)
+The [`SingleDestinationMessageSender` class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SingleDestinationMessageSender.html)
 wraps the Message Bus to send messages asynchronously. This class demonstrates
 using a `SingleDestinationMessageSender`:
 
@@ -115,10 +117,10 @@ sends the message through the sender.
 
 ### Using a SynchronousMessageSender [](id=using-a-synchronousmessagesender)
 
-A [`SynchronousMessageSender` instance](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SynchronousMessageSender.html)
+A [`SynchronousMessageSender` instance](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SynchronousMessageSender.html)
 sends a message to the Message Bus and blocks until receiving a response or the
 response times out. A `SynchronousMessageSender` has these
-[operating modes](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SynchronousMessageSender.Mode.html):
+[operating modes](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SynchronousMessageSender.Mode.html):
 
 -   `DEFAULT`: Delivers the message in a separate thread and also provides
     timeouts, in case the message is not delivered properly.
@@ -161,7 +163,7 @@ message listener to that destination.
 
 To ensure a message sent to a destination is received by all cluster nodes, you
 must register a
-[`ClusterBridgeMessageListener`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/cluster/messaging/ClusterBridgeMessageListener.html)
+[`ClusterBridgeMessageListener`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/cluster/messaging/ClusterBridgeMessageListener.html)
 at that destination. This bridges the local destination to the cluster.
 
 Here's a message listener registrator that bridges a destination for
@@ -199,7 +201,7 @@ field. The `activate` method creates a `ClusterBridgeMessageListener`, sets its
 priority queue, and registers it to the destination. Messages sent to the
 destination are distributed across the cluster's JVMs. 
 
-The [`com.liferay.portal.kernel.cluster.Priority` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/cluster/Priority.html)
+The [`com.liferay.portal.kernel.cluster.Priority` class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/cluster/Priority.html)
 has ten levels (`Level_1` through `Level_10`, with `Level 10` being the most
 important). Each level is a priority queue for sending messages through the
 cluster. This is similar in concept to thread priorities: `Thread.MIN_PRIORITY`,
@@ -211,6 +213,6 @@ destination in a clustered environment.
 
 ## Related Topics [](id=related-topics)
 
-[Messaging Destinations](/develop/tutorials/-/knowledge_base/7-0/messaging-destinations) 
+[Messaging Destinations](/develop/tutorials/-/knowledge_base/7-1/messaging-destinations) 
 
-[Message Listeners](/develop/tutorials/-/knowledge_base/7-0/message-listeners)
+[Message Listeners](/develop/tutorials/-/knowledge_base/7-1/message-listeners)
