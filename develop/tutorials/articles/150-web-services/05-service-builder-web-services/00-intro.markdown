@@ -36,7 +36,7 @@ possibilities. This section includes the following tutorials:
   See examples of how to invoke Liferay's JSON web services via JavaScript, URL, 
   and cURL. 
 
-- [Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/portal-configuration-of-json-web-services):
+- [Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/configuring-json-web-services):
   Learn which properties you can use to control how JSON web services behave in 
   your Liferay instance. 
 
