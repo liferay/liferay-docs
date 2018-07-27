@@ -2,7 +2,7 @@
 
 It's been scientifically proved that Internet users are lazy (not you or
 I--other Internet users). Citizens of some countries might not fill out your
-form if you make them type the entire title of their country in the employment
+form if you make them type the entire title of their country in an employment
 application. This is doubly true if they're filling out the form on their mobile
 device. In this article you'll learn to make users' lives easier by configuring
 autocomplete on a form's text fields.

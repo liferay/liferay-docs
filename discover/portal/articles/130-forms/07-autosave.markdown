@@ -1,6 +1,6 @@
 # Auto-Save
 
-Losing progress on a partially created form is bad. Make sure you save your work
+Losing progress on a partially created form is bad. Make sure to save your work
 frequently as you're creating forms. If you happen to forget to save your work,
 Liferay Forms has your back.
 
@@ -13,8 +13,8 @@ Published forms are different. The information auto-saved isn't automatically
 propagated to a published form. The form builder must click the *Save* button in
 the form builder view to publish changes. 
 
-The auto-save duration is configurable in Control Panel &rarr; Configuration
-&rarr; System Settings &rarr; Forms (in the Content section). 
+Set the auto-save duration in Control Panel &rarr; Configuration &rarr; System
+Settings &rarr; Forms (in the Content section). 
 
 ![Figure x: Configure the auto-save duration.](../../images/forms-autosave-interval.png)
 

@@ -1,7 +1,7 @@
 # Translating Forms
 
-Forms are translatable, into any locale supported by @product@. The form
-builder specifies a translation of the Default Language for the form. 
+Forms are translatable into any locale supported by @product@. The form builder
+specifies a translation of the Default Language for the form. 
 
 ![Figure x: A form is translate-able into any supported language.](../../images/forms-translate1.png)
 
@@ -36,7 +36,4 @@ To fill out a translated form in a translated language,
 
 ![Figure x: ](../../images/forms-translate3.png)
 
-With form translations,make it easy for your form Users to input their data.
-
-
-
+With form translations, make it easy for your form Users to input their data.

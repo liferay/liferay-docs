@@ -1,6 +1,6 @@
 # Form Notifications
 
-Send a notification email sent each time a form entry is submitted. 
+Send a notification email each time a form entry is submitted. 
 
 1.  Open the form's Form Settings section by clicking the *Options*
     (![Options](../../images/icon-options.png)) button &rarr; *Settings*). 

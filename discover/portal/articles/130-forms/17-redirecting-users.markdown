@@ -17,7 +17,4 @@ Form Settings section (click the *Options*
 
 ![Figure x: Redirect Users after form submission.](../../images/forms-redirect.png)
 
-So, your form is all set up ready to be filled out by users. However, you
-haven't configured the permissions yet, so the only user with permission to add
-records is you, the owner! There's a good chance you'll want to customize the
-form's permissions.
+Now when Users submit the form, they're not left wondering what to do next.
