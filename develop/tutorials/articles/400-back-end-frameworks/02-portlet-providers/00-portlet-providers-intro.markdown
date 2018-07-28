@@ -1,57 +1,83 @@
-# Providing Portlets to Manage Requests [](id=providing-portlets-to-manage-requests)
+# Portlet Providers [](id=portlet-providers)
 
-In this tutorial, you'll learn how to declare an entity type and action for a
-desired function, and you'll create a module that finds the correct application
-(portlet) to use based on those given parameters.
+If you're tired of specifying portlets to interact with the *Portlet Providers*
+framework is for you. It finds portlets that let you operate on the entity types
+you want. You specify the entity type and an operation genre (e.g., VIEW
+entities or MANAGE entities), and the Portlet Providers framework gives you the
+ID or URL of an active portlet to service your requests. What's more, you can
+add preferable portlets to the mix. 
 
-## Specifying a Desired Portlet Behavior [](id=specifying-a-desired-portlet-behavior)
+Here you'll learn how to
 
-To find the portlet you need for your particular request, you'll use the
-*Portlet Providers* framework. The first thing you'll need to do is call the
-[PortletProviderUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProviderUtil.html)
-class and request the framework find a portlet suitable for the current task.
-You can request the portlet ID or portlet URL, depending on what you prefer.
-Here's an example declaration:
+-   [Use `PortletProviderUtil` to request a portlet](#requesting-a-portlet-for-a-desired-behavior)
+    that can perform a specific genre of operations on an entity type.  
+
+-   [Create a `PortletProvider`](#creating-a-portlet-provider)
+    to prioritize preferable portlet ahead of a default portlet. 
+
+Start with requesting a portlet from `PortletProviderUtil`. 
+
+## Requesting a Portlet for a Desired Behavior [](id=requesting-a-portlet-for-a-desired-behavior)
+
+The
+[`PortletProviderUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProviderUtil.html)
+class finds portlets to execute a particular actions on particular entities. You
+can request the portlet ID or portlet URL, depending on what you prefer. To get the ID of a portlet that can view Recycle Bin
+entries, for example, declare this:
 
     String portletId = PortletProviderUtil.getPortletId(
-        "com.liferay.portlet.trash.model.TrashEntry", PortletProvider.Action.VIEW);
+        "com.liferay.portlet.trash.model.TrashEntry", 
+        PortletProvider.Action.VIEW);
 
-This declaration expects two parameters: the class name of the entity type you
-want the portlet to handle and the type of action. The above code requests a
-portlet ID for a portlet that can view Recycle Bin entries.
-
-There are five different kinds of actions supported by the Portlet Providers
-framework: `ADD`, `BROWSE`, `EDIT`, `PREVIEW`, and `VIEW`. Find the portlet ID
-or portlet URL (depending on your needs), and specify the entity type and action
-you want the portlet to handle.
+The call passes in the name of the entity
+`com.liferay.portlet.trash.model.TrashEntry` and the action type
+`PortletProvider.Action.VIEW` to perform on it. 
 
 +$$$
 
 **Note:** The `getPortletURL` methods require an additional `HttpServletRequest`
-or `PortletRequest` parameter, depending on which you use. Make sure to account
-for this additional parameter when using the `getPortletURL` method.
+or `PortletRequest` parameter, depending on which you use. Make sure to include this additional parameter.
 
 $$$
 
+When you call `PortletProviderUtil` methods, make sure to use the entity's fully qualified class name. For the action, specify one of the 
+[`PortletProvider.Action`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProvider.Action.html)
+Enums:
+
+- `ADD`
+- `BROWSE`
+- `EDIT`
+- `MANAGE`
+- `PREVIEW`
+- `VIEW`
+
 You've successfully requested the portlet ID/portlet URL of a portlet that
-matches your entity and action type. The portal, however, is not yet configured
-to handle this request. You'll need to create a module that can find the correct 
-portlet to handle the request.
+matches your entity and action type. If @product@'s runtime has a portlet
+provider to handle the request, a non empty portlet ID/portlet URL is returned.
+If, however, there's no portlet provider to handle your request or you want to
+prioritize a different portlet over the default, you must create a portlet
+provider. 
 
-1. [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module).
+## Creating a Portlet Provider [](id=creating-a-portlet-provider)
 
-2. Create a unique package name in the module's `src` directory and create a
-   new Java class in that package. To follow naming conventions, name the class
-   based on the element type and action type, followed by *PortletProvider*
-   (e.g., `LanguageEntryViewPortletProvider`). The class should extend the
-   [`BasePortletProvider`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
-   class and implement the appropriate portlet provider interface based on the
-   action type you chose your portlet to handle (e.g.,
-   [ViewPortletProvider](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/ViewPortletProvider.html),
-   [BrowsePortletProvider](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BrowsePortletProvider.html),
-   etc.).
+Here's how to create a portlet provider:
 
-3. Directly above the class's declaration, insert the following annotation:
+1.  [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module).
+
+2.  In your module, follow the recommended naming convention as you create your 
+    portlet provider class, starting its name with the element type, followed by
+    the action type, followed by *PortletProvider* (e.g.,
+    `LanguageEntryViewPortletProvider`). Extend the
+    [`BasePortletProvider`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
+    class and implement a 
+    [`PortletProvider`](https://docs.liferay.com/ce/portal/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProvider.html) 
+    subinterface (e.g.,
+    [ViewPortletProvider](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/ViewPortletProvider.html),
+    [BrowsePortletProvider](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BrowsePortletProvider.html),
+    etc.) that matches your action type.
+
+3.  Make the class an OSGi Component by adding an annotation like this one 
+    above the class declaration: 
 
         @Component(
             immediate = true,
@@ -59,13 +85,18 @@ portlet to handle the request.
             service = INTERFACE.class
         )
 
-    The `property` element should match the element type you specified in your
-    `getPortletID/getPortletURL` declaration (e.g.,
-    `com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry`). Also, your
-    `service` element should match the interface you're implementing (e.g.,
-    `ViewPortletProvider.class`). You can view an example of a similar
-    `@Component` annotation in the
-    [RolesSelectorEditPortletProvider](https://github.com/liferay/liferay-portal/blob/7.0.4-ga5/modules/apps/foundation/roles/roles-selector-web/src/main/java/com/liferay/roles/selector/web/internal/portlet/RolesSelectorEditPortletProvider.java)
+    The `immediate = true` element specifies that the component should be
+    activated immediately upon installation. The property `model.class.name` is
+    assigned the entity class name. Replace `CLASS_NAME` with your entity's
+    fully qualified class name. Here's an example entity class name: 
+
+        com.liferay.portal.kernel.servlet.taglib.ui.LanguageEntry
+
+    Assign the `service` element the portlet provider subinterface you're
+    implementing (e.g., `ViewPortletProvider.class`).
+
+    Here's an example `@Component` annotation from the
+    [RolesSelectorEditPortletProvider](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/roles/roles-selector-web/src/main/java/com/liferay/roles/selector/web/internal/portlet/RolesSelectorEditPortletProvider.java#L26-L30)
     class:
 
         @Component(
@@ -74,28 +105,28 @@ portlet to handle the request.
             service = EditPortletProvider.class
         )
 
-4. In some cases, a default portlet is already in place to handle the entity
-   and action type requested. To override the default portlet with a custom
-   portlet, you can assign your portlet a higher service ranking. You can do
-   this by setting the following property in your `@Component` declaration:
+4.  In some cases, a default portlet is already in place to handle the entity
+    and action type requested. To override the default portlet with your own
+    custom portlet, specify a `service.ranking:Integer` `@Component`
+    property with a higher integer randing than the default portlet. 
 
         property= {"service.ranking:Integer=10"}
 
-    Make sure to replace the integer with a number that is ranked higher than
-    the portlet being used by default. 
+5.  Implement the provider methods you want making sure to retrieve the
+    ID/URL of the portlet you're providing. 
 
-5. Specify the methods you'd like to implement. Make sure to retrieve the
-   portlet ID/portlet URL that should be provided when this service is called.
+6.  [Deploy your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module). 
 
-Lastly, generate the module's JAR file and deploy it to your portal instance.
-Now a portlet that can handle the entity and action type you specified is used
-when requesting a portlet ID/URL. You can now specify portlet usage without
-hardcoding a specific portlet!
+Now your portlet provider is available to return the ID/URL of the portlet you
+want to handle specific entity operations. 
+
+Now you can use portlet providers to loosely couple with portlets to operate on
+entities. 
 
 ## Related Topics [](id=related-topics)
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+[Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets)
 
-[Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
+[Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes-and-layout-templates)
 
-[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
+[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-1/customizing-liferay-services-service-wrappers)
