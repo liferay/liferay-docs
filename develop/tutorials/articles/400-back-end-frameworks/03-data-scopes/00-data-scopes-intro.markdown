@@ -93,7 +93,7 @@ gives you techniques to do this. Your app's scope is available:
 
 3.  By calling the `getScopeGroupId()` method on a `ServiceContext` object. The
     tutorial
-    [Understanding `ServiceContext`](/develop/tutorials/-/knowledge_base/7-0/understanding-servicecontext)
+    [Understanding `ServiceContext`](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext)
     provides an example and details. 
     If you know your app always needs the portal instance ID, use the 
     `ServiceContext` object's `getCompanyId()` method. 
@@ -106,7 +106,7 @@ app.
 
 There may be times when you need to access a different app's site-scoped data from your app that is scoped to a page or the portal. For example, web 
 content articles can be created in the page, site, or portal scope. 
-[Structures and Templates](/discover/portal/-/knowledge_base/7-0/designing-uniform-content) 
+[Structures and Templates](/discover/portal/-/knowledge_base/7-1/designing-uniform-content) 
 for such articles, however, exist only in the site scope. The above techniques
 return the app's scope, which might not be the site scope. What a pickle! Never
 fear, the `ThemeDisplay` method `getSiteGroupId()` is here! This method always
