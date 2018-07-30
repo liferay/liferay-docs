@@ -148,10 +148,10 @@ Here's some code which deletes an asset entry and an index associated with a
 portlet's entity. 
 
     assetEntryLocalService.deleteEntry(
-        ENTITY.class.getName(), ENTITY.getInsultId());
+        ENTITY.class.getName(), entity.getEntityId());
 
-    Indexer indexer = IndexerRegistryUtil.nullSafeGetIndexer(ENTITY.class);
-    indexer.delete(ENTITY);
+    Indexer<ENTITY> indexer = IndexerRegistryUtil.nullSafeGetIndexer(ENTITY.class);
+    indexer.delete(entity);
 
 In your `-LocalServiceImpl` class, you can write similar code. Replace the
 *ENTITY* class name and variable with your entity's name.
