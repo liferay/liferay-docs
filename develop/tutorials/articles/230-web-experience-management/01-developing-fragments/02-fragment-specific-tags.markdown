@@ -106,11 +106,12 @@ will be available in the future.
 
 To include a widget you need to know its registered name. For example, the Site 
 Navigation Menu portlet is registered as `nav`. Each portlet which is registered
-has an `lfr-app-[name]` tag that's used to embed it. For example: the Navigation
-Menu tag is `<lfr-app-nav />`. You could embed it in a block like this:
+has an `lfr-widget-[name]` tag that's used to embed it. For example: the Navigation
+Menu tag is `<lfr-widget-nav />`. You could embed it in a block like this:
 
     <div class=”nav-widget”>
-        <lfr-app-nav />
+        <lfr-widget-nav>
+        </lfr-widget-nav>
     </div>
 
 Implement this in your Fragment:
@@ -125,7 +126,8 @@ Implement this in your Fragment:
         <div class=”container-fluid”>
           <div class=”row”>
             <div class=”col-md-10”>
-               <lfr-widget-nav />
+               <lfr-widget-nav>
+               </lfr-widget-nav>
             </div>
           </div>
         </div>
@@ -167,7 +169,18 @@ that you want to embed, add this property:
 When you deploy your widget, it's available to add. The name you specify in the
 property must be appended to the `lfr-widget` tag like this:
 
-    <lfr-widget-app-name /> 
+    <lfr-widget-app-name>
+    </lfr-widget-app-name>
+
+
++$$$
+
+**NOTE:** According to the W3C HTML standards, custom elements cannot be self 
+closing. Therefore, even though you cannot add anything between the opening and
+closing `<lfr-widget...>` tags, you cannot use the self closing notation for 
+the tag.
+
+$$$
 
 Embedding widgets in Fragments opens a world of options. Now that you've
 explored some of the power of Fragments, next you'll learn about best practices
