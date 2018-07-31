@@ -21,7 +21,6 @@ The following npm samples are documented:
 
 - [Angular npm Portlet](angular-npm-portlet)
 - [Billboard.js npm Portlet](billboard-js-npm-portlet)
-- [Isomorphic npm Portlet](isomorphic-npm-portlet)
 - [jQuery npm Portlet](jquery-npm-portlet)
 - [Metal.js npm Portlet](metal-js-npm-portlet)
 - [React npm Portlet](react-npm-portlet)
