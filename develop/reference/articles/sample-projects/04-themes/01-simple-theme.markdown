@@ -3,14 +3,14 @@
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Simple Theme sample provides the base files for a theme, using the
-[Theme Builder Gradle plugin](/develop/reference/-/knowledge_base/7-0/theme-builder-gradle-plugin).
+[Theme Builder Gradle plugin](/develop/reference/-/knowledge_base/7-1/theme-builder-gradle-plugin).
 When deploying this sample with no customizations, a theme based off of the 
 `_styled` base theme is created.
 
 ![Figure 1: A theme based off of the Styled base theme is created when the Theme Blade sample is deployed to Liferay Portal.](../../../images/theme.png)
 
 For more information on themes, visit the 
-[Introduction to Themes](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes)
+[Introduction to Themes](/develop/tutorials/-/knowledge_base/7-1/introduction-to-themes)
 tutorial.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)

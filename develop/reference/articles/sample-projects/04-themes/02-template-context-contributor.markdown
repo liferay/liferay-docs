@@ -39,7 +39,7 @@ fit your needs, see the Javadoc listed in this sample's
 `com.liferay.blade.samples.theme.contributorBladeTemplateContextContributor`
 class. For more information on context contributors and how to create them in
 @product@, visit the
-[Context Contributors](/develop/tutorials/-/knowledge_base/7-0/context-contributors)
+[Context Contributors](/develop/tutorials/-/knowledge_base/7-1/injecting-additional-context-variables-into-your-templates)
 tutorial.
 
 ## Where Is This Sample? [](id=where-is-this-sample)
