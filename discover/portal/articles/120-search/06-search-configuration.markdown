@@ -113,6 +113,12 @@ search indexes is a system scoped action.
     - An individual indexable asset
     - All spell check indexes
 
+Portal properties are system scoped configurations as well. The 
+[Lucene Search](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#Lucene%20Search) 
+portal properties are available for configuring low level search behavior.
+Review the properties and their descriptions and determine if they apply to your
+search requirements.
+
 ## Site Scoped Search Configuration
 
 The only available site configuration option for search is the use of
