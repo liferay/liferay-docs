@@ -16,7 +16,7 @@ a workflow task to complete.
 ## Assigning the Task [](id=assigning-the-task)
 
 Workflow Tasks can be completed only by certain users, based on the 
-[Assignment](/discover/portal/-/knowledge_base/7-1/workflow-task-nodes#assignments).
+[Assignment](/develop/tutorials/-/knowledge_base/7-1/workflow-task-nodes#assignments).
 
 All workflow tasks assigned directly to a user are listed in the My Workflow
 Task widget's *Assigned to Me* tab.
