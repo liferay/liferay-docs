@@ -79,8 +79,7 @@ in the Control Panel and on pages. For example, you can modify a portlet's title
 and publish the change to live. This is possible because portlet configurations
 are always staged.
 
-To publish a portlet on a page, you must publish the page containing the portlet
-first.
+To publish a portlet that is on a page, you must publish the page first.
 
 $$$
 
