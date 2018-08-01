@@ -4,12 +4,17 @@ Solr is a popular enterprise search platform build on Apache Lucene. It's
 popular for its reliability, scalability, and fault tolerance. Read more about
 it [here](http://lucene.apache.org/solr/).
 
-Although [Elasticsearch](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0)
+Although [Elasticsearch](/discover/deployment/-/knowledge_base/7-1/configuring-elasticsearch-for-liferay-0)
 is the default search engine that ships with @product@, it's perfectly valid to
 use Solr instead. In particular, if you've already been using Solr with a
 previous version of @product@, or your deployment system (for example, your OS or
 JVM) [isn't supported by Elasticsearch](https://www.elastic.co/support/matrix),
 you might choose to use Solr to search and index your @product@ data.
+
+There are circumstances that force you to use Elasticsearch instead of Solr.
+Read
+[here](/discover/deployment/-/knowledge_base/7-1/installing-a-search-engine#choosing-a-search-engine)
+for more information.
 
 Liferay's support for Solr is compatible with Solr versions 5.2.x through 5.5.x.
 To make @product@ and Solr talk to each other, you'll need to install the Liferay
@@ -125,7 +130,7 @@ Portal Search Elasticsearch module and click the edit
 ((![Edit](../../images/icon-edit.png))) button. Choose the Deactivate
 option. This leaves the bundle installed, but stops it in the OSGi runtime.
 
-Alternatively, use the [Felix Gogo shell](/developer/tutorials/-/knowledge_base/7-0/using-the-felix-gogo-shell) to
+Alternatively, use the [Felix Gogo shell](/developer/tutorials/-/knowledge_base/7-1/using-the-felix-gogo-shell) to
 stop the Elasticsearch adapter.  First, open a Gogo shell and enter
 
     lb elasticsearch
@@ -145,7 +150,7 @@ In the case above, the `[bundle ID]` is `239`.
 +$$$
 
 **Liferay Digital Enterprise:** Digital Enterprise customers should 
-[blacklist](/discover/portal/-/knowledge_base/7-0/blacklisting-osgi-modules) 
+[blacklist](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules) 
 the Elasticsearch, Shield, and Marvel plugins. 
 
 1.  Create a 
@@ -302,7 +307,7 @@ Liferay's Solr adapter.
 
 **Note:** For a complete list of settings available in the Solr adapter, see the
 [Solr Settings reference
-article](/discover/reference/-/knowledge_base/7-0/solr-settings).
+article](/discover/reference/-/knowledge_base/7-1/solr-settings).
 
 $$$
 
