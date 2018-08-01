@@ -1,6 +1,6 @@
 # Configuring Search
 
-Come on, what kind of a title is _Configuring Search_? That could mean lots of
+_Configuring Search_ is a vague title for an article. It could mean lots of
 different things: 
 
 - System scoped search configuration
@@ -10,7 +10,7 @@ different things:
 - Configuring the connectors that let @product@ and the search engine
     communicate
 
-It's true, _Configuring Search_ means all those things. This article provides a
+In fact, _Configuring Search_ means all those things. This article provides a
 high level overview of what search behavior is configurable out of the box, and
 importantly, _where_ to find search configuration options.
 
@@ -48,15 +48,15 @@ useful for speeding up large data imports, but it should be disabled and a full
 reindex executed once the import is finished.
 
 **Indexer Writer Helper**
-: Setting Index Commit Immediately to true (the default) may negatively impact
-search engine performance, as each write request forces the search engine to
-refresh the index reader, potentially flushing transactions to disk. The default
-behavior is to commit immediately for index writing on individual assets (e.g.
-add blog, update blog) but delay commits for bulk index writing operations (e.g.
-index all users, index all form entries) until all entries have been sent to the
-search engine. Setting this to false changes the behavior for individual index
-operations, and may cause applications like Asset Publisher to exhibit a delayed
-response when showing newly added content. See
+: When Index Commit Immediately is *true* (the default), each write request
+forces the search engine to refresh the index reader, potentially flushing
+transactions to disk. This may negatively impact search engine performance. The
+default behavior is to commit immediately for index writing on individual assets
+(e.g. add blog, update blog) but delay commits for bulk index writing
+operations (e.g.  index all users, index all form entries) until all entries
+have been sent to the search engine. Setting this to false changes the behavior
+for individual index operations, and may cause applications like Asset Publisher
+to exhibit a delayed response when showing newly added content. See
 https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html
 for more information.
 
