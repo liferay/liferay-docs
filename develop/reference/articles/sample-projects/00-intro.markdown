@@ -1,4 +1,4 @@
-# Sample Projects [](id=sample-modules)
+# Sample Projects [](id=sample-projects)
 
 +$$$
 
@@ -30,5 +30,5 @@ The Gradle and Maven tool folders mix WAR samples with the other sample types
 $$$
 
 For more information on these sample projects, visit the 
-[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 tutorial.

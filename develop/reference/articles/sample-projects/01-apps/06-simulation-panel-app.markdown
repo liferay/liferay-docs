@@ -6,10 +6,10 @@ The Simulation Panel App provides new functionality in @product@'s Simulation
 Menu. When deploying this sample with no customizations, the *Simulation Sample*
 feature is provided in the Simulation Menu with four options.
 
-<!-- Fix image below when Simulation Panel App works properly (Blade-267). -Cody
--->
+<!-- Fix image below when Simulation Panel App works properly (BLADE-267). -Cody
 
 [Figure 1: A simulation panel app adds new functionality to the Simulation Menu.](../../../images/simulation-panel-app.png)
+-->
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 

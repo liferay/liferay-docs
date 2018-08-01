@@ -13,7 +13,7 @@ language. For example, the text changes to *Añadir entrada sobreescrita*.
 [Figure 1: The customized Blogs application displays the new `add-blog-entry` language key in English.](../../../images/hook-resourcebundle.png)
 
 Replace image when this sample can override a proper language key for Blogs in
-7.1. -Cody -->
+7.1. (BLADE-273) -Cody -->
 
 For reference, the Blogs application's language keys are stored in the
 [liferay-portal](https://github.com/liferay/liferay-portal) Github repo's
