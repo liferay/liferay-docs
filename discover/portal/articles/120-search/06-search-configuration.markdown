@@ -60,12 +60,14 @@ response when showing newly added content. See
 https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html
 for more information.
 
-<!-- **Index Registry**
-Settings: Buffered (true by default), Buffered Execution Mode (DEFAULT by
-default), Maximum Buffer Size (10000 by default), Minimum Buffer Availability
-Percentage.
--->
-<!-- Need more info -->
+**Index Registry**
+: Disable or configure the buffering of indexing requests. To stop the buffering
+of index requests, set the Buffered property to *Disabled*.If buffering is
+enabled, set the Maximum Buffer Size so that any additional indexing requests
+are executed immediately. Minimum Buffer Availability Percentage sets a
+different threshold: when the capacity of the buffer has only a certain percent
+of space left, the existing requests in the buffer are executed in one batch and
+removed from the buffer.
 
 **Index Query Preprocessor**
 : Fields with names matching the patterns set here are treated as non-analyzed
@@ -81,6 +83,13 @@ usually performs better.
 per batch for model types that support batch indexing. Defaults to 10000. For
 models with large documents, decreasing this value may improve stability when
 executing a full reindex.
+
+**Engine Helper**
+: Specify Excluded Entry Class Names to exclude an asset type from being
+searched in the catchall query constructed for the Search application. For
+example, fields of the Organization asset must be indexed to be searchable from
+the Users and Organizations application, but should not be searched in the
+Search application. Thus, Organizations are added to `excludedEntryClassNames`.
 
 **Permission Checker**
 : Configure *pre-filtering permission checking* (permission checking on the
