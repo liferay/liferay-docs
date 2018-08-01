@@ -5,7 +5,7 @@ approving content in an enterprise environment. Even if you don't leverage
 custom scripts, it's a powerful and robust workflow solution. Adding custom
 scripts takes it to the next level. These scripts aren't run from the script
 console, but are embedded in 
-[XML workflow definitions](/discover/portal/-/knowledge_base/7-1/crafting-xml-workflow-definitions) 
+[XML workflow definitions](/develop/tutorials/-/knowledge_base/7-1/crafting-xml-workflow-definitions) 
 and run during the execution of the workflow.
 
 The final step in a workflow runs a script that makes content available for use.
