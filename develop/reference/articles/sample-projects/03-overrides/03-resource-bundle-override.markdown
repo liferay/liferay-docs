@@ -9,14 +9,15 @@ to display *Overriden Add Blog Entry*. If you change @product@'s default
 language to Spanish, the modified language key is translated to display in that
 language. For example, the text changes to *Añadir entrada sobreescrita*.
 
-![Figure 1: The customized Blogs application displays the new `add-blog-entry` language key in English.](../../../images/hook-resourcebundle.png)
+<!--
+[Figure 1: The customized Blogs application displays the new `add-blog-entry` language key in English.](../../../images/hook-resourcebundle.png)
 
-<!-- Replace image when this sample can override a proper language key for Blogs
-in 7.1. -Cody -->
+Replace image when this sample can override a proper language key for Blogs in
+7.1. -Cody -->
 
 For reference, the Blogs application's language keys are stored in the
 [liferay-portal](https://github.com/liferay/liferay-portal) Github repo's
-`modules/apps/collaboration/blogs/blogs-web/src/main/resources/content` folder.
+`modules/apps/blogs/blogs-web/src/main/resources/content` folder.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
