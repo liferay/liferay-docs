@@ -10,10 +10,9 @@ different things:
 - Configuring the connectors that let @product@ and the search engine
     communicate
 
-It's true, _Configuring Search_ can mean all those thing, and that's exactly
-what's intended. This article provides a high level overview of what search
-behavior is configurable out of the box, and importantly, _where_ to find search
-configuration options.
+It's true, _Configuring Search_ means all those things. This article provides a
+high level overview of what search behavior is configurable out of the box, and
+importantly, _where_ to find search configuration options.
 
 ## System Scoped Search Configuration
 
@@ -43,8 +42,10 @@ that occurs after the results are returned from the search index). Read
 for more information.
 
 **Index Status Manager**
-: Enable *Index Read Only*. By default this is disabled.
-<!-- Need more information on this.-->
+: Enable *Index Read Only* to suspend all indexing operations and writes to the
+search engine. Searches return only the documents already indexed. This is
+useful for speeding up large data imports, but it should be disabled and a full
+reindex executed once the import is finished.
 
 **Indexer Writer Helper**
 : Setting Index Commit Immediately to true (the default) may negatively impact
@@ -58,32 +59,28 @@ operations, and may cause applications like Asset Publisher to exhibit a delayed
 response when showing newly added content. See
 https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html
 for more information.
-<!-- Q1: I just want to confirm: setting Index Commit Immediately to false only
-changes the behavior for index writing on individual assets (add blogs entry,
-for instance)? -->
-<!-- Q2: Why is there another *Index Read Only* setting here? How does it differ
-from the one in Index Status Manager? Are the values read in different places,
-or is one not used at all?-->
 
-**Index Registry**
+<!-- **Index Registry**
 Settings: Buffered (true by default), Buffered Execution Mode (DEFAULT by
 default), Maximum Buffer Size (10000 by default), Minimum Buffer Availability
 Percentage.
-<!-- I need more information on these properties.-->
+-->
+<!-- Need more info -->
 
 **Index Query Preprocessor**
-: Set the field name patterns ...
-<!-- Need more information -->
+: Fields with names matching the patterns set here are treated as non-analyzed
+keyword fields. Instead of scored full text queries, matching is performed by
+non-scored wildcard queries. This is a resource intensive operation that
+degrades search engine performance as indexes grow larger. For substring
+matching, relying on the
+[ngram tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/analysis-ngram-tokenizer.html) 
+usually performs better.
 
 **Reindex**
 : Use the Indexing Batch Sizes property to set the number of documents indexed
 per batch for model types that support batch indexing. Defaults to 10000. For
 models with large documents, decreasing this value may improve stability when
 executing a full reindex.
-
-**Engine Helper**
-: Set the Excluded Entry Class Names property to exclude an asset type from ...
-<!-- Need more information -->
 
 **Permission Checker**
 : Configure *pre-filtering permission checking* (permission checking on the
