@@ -115,9 +115,8 @@ renderer factory.
         private BlogsEntryLocalService _blogsEntryLocalService;
 
     The setter method is annotated with the `@Reference` tag. Visit the
-    [Invoking Liferay Services Locally](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
-    section of the *Finding and Invoking Liferay Services* tutorial for more
-    information.
+    [Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
+    tutorial for more information.
 
     b. You must specify the resource bundle loader since it was specified in
        the `BlogsEntryAssetRenderer`'s constructor:

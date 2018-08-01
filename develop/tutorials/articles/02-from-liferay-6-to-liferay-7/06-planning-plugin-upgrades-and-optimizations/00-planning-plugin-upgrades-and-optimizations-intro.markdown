@@ -65,9 +65,13 @@ See the
 [optimization tutorials](/develop/tutorials/-/knowledge_base/7-1/optimizing-plugins-for-liferay-7)
 for more options and details. 
 
-You *can* continue using the Plugins SDK to develop plugins. But the Plugins
-SDK is deprecated  as of 7.0. In light of the deprecation, you should
-consider migrating plugins from the Plugins SDK to one of the new environments:
+The Plugins SDK is no longer available to develop plugins for @product-ver@. 
+Visit the
+[Deprecated Apps in 7.1: What To Do](/discover/deployment/-/knowledge_base/7-1/deprecated-apps-in-7-1-what-to-do#foundation)
+article for more information on the Plugins SDK removal.
+
+In light of the removal, you should consider migrating plugins from the Plugins
+SDK to one of the new environments:
 
 -   [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/from-the-plugins-sdk-to-liferay-workspace)
     is a Gradle environment that supports developing modules and traditional
@@ -79,17 +83,13 @@ consider migrating plugins from the Plugins SDK to one of the new environments:
     plugins and archetypes support developing modules and traditional plugins.
     There's also a Liferay Workspace archetype for generating a Workspace that uses Maven. 
 
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) 
-supports developing in Workspaces using Gradle or 
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) supports
+developing in Workspaces using Gradle or 
 [Maven](/develop/tutorials/-/knowledge_base/7-1/using-maven-in-liferay-ide).
 
-In short, there's plenty of time to move plugins out of the Plugins SDK, but you
-should at least plan for migrating to a new environment that works best for
-you. 
-
-Speaking of planning, properly planned upgrades and optimizations reduce the
-time and effort they take. To help guide you through the upgrade and
-optimization tutorials, you get these things:
+Properly planned upgrades and optimizations reduce the time and effort they
+take. To help guide you through the upgrade and optimization tutorials, you get
+these things:
 
 -   Upgrade and optimization phase descriptions
 -   Upgrade and optimization paths
@@ -146,7 +146,7 @@ Follow these upgrade and optimization phases:
  Feature | Upgrade path | Optimizations (optional) |
  :----------------- | :----------- | :----------------------- |
  JNDI data source | [Use @product@'s classloader to access the app server's JNDI API](/develop/tutorials/-/knowledge_base/7-1/connecting-to-data-sources-using-jndi) | None |
- Services - Invoke a service from @product@ Core or another portlet or module | [Implement a Service Tracker](/develop/tutorials/-/knowledge_base/7-1/service-trackers) | [Invoke Liferay services from a module](/develop/tutorials/-/knowledge_base/7-1/finding-and-invoking-liferay-services) |
+ Services - Invoke a service from @product@ Core or another portlet or module | [Implement a Service Tracker](/develop/tutorials/-/knowledge_base/7-1/service-trackers) | [Invoke Liferay services from a module](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services) |
  Services - Module dependency | Copy `x-service.jar` to `WEB-INF/lib` | - [Migrate to Gradle/Maven](/develop/tutorials/-/knowledge_base/7-1/migrating-traditional-plugins-to-workspace-web-applications) and [add dependency](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies) on the OSGi service |
  Services - Service Builder | [Upgrading Portlets that use Service Builder](/develop/tutorials/-/knowledge_base/7-1/upgrading-portlets-that-use-service-builder) | [Convert to OSGi modules](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet), e.g., `x-api` and `x-service` |
  Services - Web services | 1. [Adapt code to API](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)<br>2. [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies) | [Use a Service Builder service with JAX-RS with a REST service in front](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs) |

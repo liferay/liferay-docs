@@ -13,7 +13,7 @@ restored and you can access some new options related to staging.
 ![Figure 1: You can see the new staging options added to the top and left of your screen.](../../../../images/staging-live-page.png)
 
 To test out the staging environment, add the Bookmarks widget and then click on
-*Live* from the top menu. Notice that the Bookmarks app isn't there. That's
+*Live* from the top menu. Notice that the Bookmarks widget isn't there. That's
 because you've staged a change to the page but haven't published that change yet
 to the live site.
 

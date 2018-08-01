@@ -115,7 +115,7 @@ To create the new document type with geolocation:
 
 Once your assets are geolocation enabled, you can use the [Asset Publisher](/discover/portal/-/knowledge_base/7-1/publishing-assets) 
 to display the location of the assets on a map, using the map display template.
-Check out the [Configuring Display Settings](/discover/portal/-/knowledge_base/7-1/using-the-asset-publisher#configuring-display-settings)
+Check out the [Configuring Display Settings](/discover/portal/-/knowledge_base/7-1/configuring-display-settings)
 section to learn more.
 
 ![Figure 5: The Asset Publisher can display your geolocated assets on a map.](../../../images/geo-map.png)
