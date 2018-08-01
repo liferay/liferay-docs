@@ -8,8 +8,8 @@ the view, and the controller). This lets you swap out those parts if necessary.
 A *persistence* layer and a *service* layer are added to these three parts of 
 your application. To get the prototype working, you used Portlet Properties to 
 create a rudimentary persistence layer. Since this isn't a long-term solution, 
-you'll now replace that layer by persisting your guestbooks and their entries to 
-a database. 
+you'll now replace that layer by persisting your guestbooks and their entries 
+to a database. 
 
 ![Figure 1: Service Builder generates the shaded layers of your application.](../../../images/application-layers.png)
 

@@ -6,8 +6,8 @@
 
 The persistence layer saves and retrieves your model data. The service layer is
 a buffer between your application and persistence layers: having it lets you 
-swap out your persistence layer for a different implementation without modifying 
-anything but the calls in the service layer. 
+swap out your persistence layer for a different implementation without 
+modifying anything but the calls in the service layer. 
 
 To model the guestbooks and entries, you'll create guestbook and entry model 
 classes. But you won't do this directly in Java. Instead, you'll define them in 
