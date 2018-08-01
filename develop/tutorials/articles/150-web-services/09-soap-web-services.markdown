@@ -1,4 +1,4 @@
-# SOAP Web Services
+# SOAP Web Services [](id=soap-web-services)
 
 You can access Liferay's web services via Simple Object Access Protocol (SOAP) 
 over HTTP. The packaging protocol is SOAP, and the transport protocol is HTTP. 
@@ -89,7 +89,7 @@ To use the service, you pass in the WSDL URL along with your login credentials
 to the SOAP service locator for your service. The next section shows you an 
 example of this. 
 
-## SOAP Java Client
+## SOAP Java Client [](id=soap-java-client)
 
 Now you'll learn how to invoke Liferay's SOAP web services. As an example, 
 you'll do this by setting up a Java web services client in Eclipse. You can use 
@@ -308,7 +308,7 @@ specified in the WSDL for each Liferay web service. It's all there for you!
 
 Next, you'll learn how to implement a web service client in PHP. 
 
-## SOAP PHP Client
+## SOAP PHP Client [](id=soap-php-client)
 
 You can write your client in any language that supports web services invocation. 
 The following example code invokes the same operations as before, but uses PHP 
@@ -352,7 +352,7 @@ and a PHP SOAP client instead of Java:
 Remember, you can implement a web service client in any language that supports 
 SOAP web services. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Service Security Layers](/develop/tutorials/-/knowledge_base/7-1/service-security-layers)
 
