@@ -3,19 +3,16 @@
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 This example overrides the default `add-blog-entry` language key (English and
-Spanish) for @product@'s default Blogs application. After deploying this sample
-hook to @product@, the Blogs application's *Add Blog Entry* button is modified
-to display *Overriden Add Blog Entry*. If you change @product@'s default
-language to Spanish, the modified language key is translated to display in that
-language. For example, the text changes to *Añadir entrada sobreescrita*.
+Spanish) for @product@'s default Blogs Admin portlet. After deploying this
+sample to @product@, the Blogs Admin portlet's *Add Blog Entry* button is
+modified to display *Overridden Add Blog Entry*. If you change @product@'s
+default language to Spanish, the modified language key is translated to display
+in that language. For example, the text changes to *Añadir entrada
+sobreescrita*.
 
-<!--
-[Figure 1: The customized Blogs application displays the new `add-blog-entry` language key in English.](../../../images/hook-resourcebundle.png)
+![Figure 1: The customized Blogs Admin portlet displays the new `add-blog-entry` language key in English.](../../../images/hook-resourcebundle.png)
 
-Replace image when this sample can override a proper language key for Blogs in
-7.1. (BLADE-273) -Cody -->
-
-For reference, the Blogs application's language keys are stored in the
+For reference, the Blogs portlet's language keys are stored in the
 [liferay-portal](https://github.com/liferay/liferay-portal) Github repo's
 `modules/apps/blogs/blogs-web/src/main/resources/content` folder.
 
@@ -27,11 +24,11 @@ API.
 
 ## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
-This sample conveys the recommended approach to override an application's
+This sample conveys the recommended approach to override a portlet's
 language keys file for any module that is deployed to @product@'s OSGi runtime
 (not applicable to @product@'s core language keys).
 
-The steps to override applications' language keys are
+The steps to override a portlet's language keys are
 
 - Implement a resource bundle loader.
 - Register the service.
@@ -98,13 +95,13 @@ Lastly, the new `language.properties` files should be added to the folder
 example's goal is to only override the English and Spanish keys, the
 `Language_en.properties` and `Language_es.properties` are added.
 
-This approach can be used to override any application's language keys (i.e.,
+This approach can be used to override any portlet's language keys (i.e.,
 `language.properties` files that are inside a module deployed to @product@'s
 OSGi runtime). If you need to override @product@'s core language keys, see the
 [Overriding Global Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-global-language-keys)
 tutorial.
 
-For more information on using a resource bundle to override an application's
+For more information on using a resource bundle to override a module's
 language keys, see the
 [Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-language-keys)
 tutorial.
