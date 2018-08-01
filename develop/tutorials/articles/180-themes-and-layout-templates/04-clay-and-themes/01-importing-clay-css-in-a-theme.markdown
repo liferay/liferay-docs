@@ -130,7 +130,7 @@ In your custom theme's `/src/css` folder (legacy ant themes:
     
         $FontAwesomePath: "font-awesome/font";
         
-        @import "font-awesome/scss/font-awesome"
+        @import "font-awesome/scss/font-awesome";
 
 Then in that same folder, add a file named `_clay_variables.scss`. All your
 Atlas, Bootstrap, and Clay Base variable modifications must be placed in this
