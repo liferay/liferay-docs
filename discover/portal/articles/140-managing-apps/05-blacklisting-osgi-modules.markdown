@@ -68,7 +68,7 @@ $$$
 Type |  &nbsp;Bundle Symbolic Name | 
 :--------- | :--------------|
  Module JAR | `Bundle-SymbolicName` in `bnd.bnd` or `MANIFEST.MF` file |
- LPKG | `title` in `liferay-marketplace.properties` file |
+ LPKG | LPKG file name without the `.lpkg` extension |
  WAR | Servlet context name in `liferay-plugin-package.properties` file or the WAR file name (minus `.war`), if there is no servlet context name property | 
 
 @product@ removes installed modules on the blacklist. Blacklisted modules can't
