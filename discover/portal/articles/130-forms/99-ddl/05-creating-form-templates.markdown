@@ -5,7 +5,7 @@ Follow these steps to create a form template for a definition:
 
 1.  Open the Menu 
     (![Menu](../../../images/icon-menu.png)) 
-    and expand your site's menu (the Site Administration menu). Then select 
+    and expand your Site's menu (the Site Administration menu). Then select 
     *Content* &rarr; *Dynamic Data Lists*. This opens the Dynamic Data Lists 
     screen. A table lists any existing dynamic data lists. 
 
@@ -16,8 +16,7 @@ Follow these steps to create a form template for a definition:
 
 3.  Click the definition's *Actions* button 
     (![Options](../../../images/icon-options.png)) 
-    and select *Manage Templates*. This opens a screen that lists the 
-    definition's templates. 
+    and select *Manage Templates*. This lists the definition's templates. 
 
 4.  Click the *Add* button 
     (![Add](../../../images/icon-add.png)) 
@@ -30,7 +29,7 @@ Follow these steps to create a form template for a definition:
     template applies to (*Create* or *Edit*). 
 
 6.  Scroll down to the graphical designer in the *View* tab, and make your 
-    desired changes. For example, you can move or delete fields, change field   
+    desired changes. For example, you can move or delete fields, change field 
     labels, and more. 
 
 7.  Click *Save* when you're finished. 
@@ -40,8 +39,8 @@ widget:
 
 1.  Follow the instructions in the 
     [Creating Data Lists article](/discover/portal/-/knowledge_base/7-1/creating-data-lists) 
-    for adding and configuring the widget in a site page. Make sure to configure 
-    the widget to show the list whose definition you want to create a template 
+    for adding and configuring the widget in a Site page. Make sure to configure 
+    the widget to show the list definition you want to create a template 
     for. 
 
 2.  Click the widget's *Add Form Template* button. This opens the same form as 

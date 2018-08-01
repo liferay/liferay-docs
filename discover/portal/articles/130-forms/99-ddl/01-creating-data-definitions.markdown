@@ -21,21 +21,20 @@ Follow these steps to create a data definition:
     to begin creating a new data definition. This opens the 
     *New Data Definition* form. 
 
-4.  Give your data definition a name. Note that the definition's name will 
-    appear to any users filling out a dynamic data list that uses the 
-    definition. Then expand the *Details* section of the form and give it a 
-    description. 
+4.  Give your data definition a name. Note that the definition's name appears
+    for any users filling out a dynamic data list that uses the definition. Then
+    expand the *Details* section of the form and give it a description. 
 
 5.  The Details section of the form also contains the field *Parent Data
     Definition*. This optional field lets you select an existing data definition
     (the parent) to form the basis of the new one (the child). The child
-    definition inherits the parent's fields and settings, which you can then add
-    to. When you create a dynamic data list from a child definition, it includes
-    the fields of the parent and child definitions. This lets you use a common
-    definition (the parent) as the basis of a specialized definition (the
-    child). For example, if you were planning a rock climbing trip, you could
-    use the default Events definition as the parent of a Rock Climbing Trip
-    definition that contains fields unique to rock climbing (e.g., climbing
+    definition inherits the parent's fields and settings, which you can then
+    customize. When you create a dynamic data list from a child definition, it
+    includes the fields of the parent and child definitions. This lets you use
+    a common definition (the parent) as the basis of a specialized definition
+    (the child). For example, if you were planning a rock climbing trip, you
+    could use the default Events definition as the parent of a Rock Climbing
+    Trip definition that contains fields unique to rock climbing (e.g., climbing
     equipment availability, altitude, etc.). 
 
     To choose a parent definition, click the *Select* button below the *Parent
@@ -44,11 +43,11 @@ Follow these steps to create a data definition:
 
     ![Figure 2: After naming your data definition, expand the Details section of the form and give your definition a description and parent definition, if desired.](../../../images/ddl-definition-form-01.png)
 
-6.  Add the data definition's fields in the data definition designer, which is
-    below the form's Details section. The designer's *View* tab, which is
-    selected by default, lets you create the definition in a WYSIWYG editor. You
-    can click the *Source* tab to work with the definition's underlying XML, but
-    it's much easier to stick with the WYSIWYG editor. 
+6.  Add the data definition's fields in the data definition designer, below the
+    form's Details section. The designer's default *View* tab lets you create
+    the definition in a WYSIWYG editor. You can click the *Source* tab to work
+    with the definition's underlying XML, but it's much easier to stick with the
+    WYSIWYG editor. 
 
     In the *View* tab select the *Fields* tab. Icons representing the field
     types are listed on one side and the data definition's canvas is on the
