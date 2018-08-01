@@ -27,7 +27,7 @@ You can test this sample by following the following steps:
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
-[ScreenNameValidator](@product-ref@/portal-kernel/com/liferay/portal/kernel/security/auth/ScreenNameValidator.html)
+[ScreenNameValidator](@product-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/auth/ScreenNameValidator.html)
 API.
 
 ## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
