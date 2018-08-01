@@ -57,7 +57,7 @@ URL parameter to append to the URL. In this example, a URL parameter named
 Note that your `GuestbookPortlet` class (located in your `guestbook-web` 
 module's `com.liferay.docs.guestbook.portlet` package) extends Liferay's 
 `MVCPortlet` class. In a 
-[Liferay MVC portlet](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet), 
+[Liferay MVC portlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet), 
 the `mvcPath` URL parameter indicates a page within your portlet. To navigate to 
 another page in your portlet, use a portal URL with the parameter `mvcPath` to 
 link to the specific page. 

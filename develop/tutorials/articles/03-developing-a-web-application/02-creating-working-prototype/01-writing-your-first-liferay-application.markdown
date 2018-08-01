@@ -109,26 +109,28 @@ configuration was created for you; you'll examine it later.
 
 ## Deploying the Application [](id=deploying-the-application)
 
-Even though all you've done is generate it, the `guestbook-web` project is ready 
-to be built and deployed to @product@. Make sure that your server is running, 
-and if it isn't, select it in @ide@'s Servers pane and click the start button. 
-After it starts, drag and drop the `guestbook-web` project from the Project 
-Explorer to the server. If this is your first time starting @product@, you'll go 
-through a short wizard to set up your server. In this wizard, make sure you use 
-the default database (Hypersonic). Although this database isn't intended for 
-production use, it works fine for development and testing. 
+Even though all you've done is generate it, the `guestbook-web` project is ready to be built and deployed to @product@.
 
-<!-- Needs an image here showing the drag and drop, because it's not intuitive
-unless you see it. -Rich -->
+1.  Make sure that your server is running, and if it isn't, select it in 
+    @ide@'s Servers pane and click the start button (![Start Server](../../../images/icon-start-server.png).
 
-Next, check that your application is available in @product@. Open a browser,
-navigate to your portal ([http://localhost:8080](http://localhost:8080) by
-default), and add your application to a page. To add an application to a page,
-click the *Add* button in the upper right hand corner (it looks like a plus 
-sign), and then select *Applications*. In the Applications list, your 
-application should appear in the Sample category. Its name should be 
-`guestbook-web-module Portlet`. 
+2.  After it starts, drag and drop the `guestbook-web` project from the Project 
+    Explorer to the server.
+    
+    ![Figure 4: Drag and drop the module.](../../../images/deploy-module.gif)
 
-![Figure 4: This is the default Liferay homepage. It contains several portlets, including the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)
+3.  Open a browser and navigate to your portal 
+    ([http://localhost:8080](http://localhost:8080) by default).
+
+    If this is your first time starting @product@, you'll go through a short 
+    wizard to set up your server. In this wizard, make sure you use the default 
+    database (Hypersonic). Although this database isn't intended for production 
+    use, it works fine for development and testing. 
+    
+4.  To add an application to a page, click *Add* (![Add Widget](../../../images/icon-add-app.png)) in the upper right hand corner.
+
+5.  Select *Applications*. In the Applications list, your application should appear in the Sample category. Its name will be `Guestbook`. 
+
+![Figure 4: This is the default Liferay homepage. It contains the Hello World widget the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)
 
 Now you're ready to jump in and start developing your Guestbook portlet. 

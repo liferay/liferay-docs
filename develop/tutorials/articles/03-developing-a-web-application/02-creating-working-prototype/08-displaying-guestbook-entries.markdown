@@ -201,6 +201,10 @@ Container* to make this happen.
 
 Save your work, deploy your application, and try adding some guestbook entries. 
 
+![Figure 1: You have a form to enter information.](../../../images/guestbook-prototype-form.png)
+
+![Figure 2: Submitted entries are displayed here..](../../../images/guestbook-prototype-container.png)
+
 Awesome! You've finished your working prototype! You have a working application
 that adds and saves guestbook entries. 
 
