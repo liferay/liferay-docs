@@ -84,7 +84,7 @@ Follow these steps to customize the Atlas theme:
         
         $FontAwesomePath: "font-awesome/font";
         
-        @import "font-awesome/scss/font-awesome"
+        @import "font-awesome/scss/font-awesome";
  
 4.  Add a file named `_clay_variables.scss`. All your Atlas, Bootstrap, and Clay 
     Base variable modifications must be placed in this file.
