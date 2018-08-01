@@ -25,7 +25,7 @@ provides the `src/main/resources/resources-importer`, `src/main/webapp/WEB-INF`,
 and `src/main/webapp/css` folders for you. Add your style modifications to the
 provided `css/_custom.scss` file. For a complete explanation of a theme's files,
 see the
-[Theme Reference Guide](/develop/reference/-/knowledge_base/7-0/theme-reference-guide).
+[Theme Reference Guide](/develop/reference/-/knowledge_base/7-1/theme-reference-guide).
 
 ## Where Is This Sample? [](id=where-is-this-sample)
 

@@ -55,7 +55,7 @@ browser's console window using the following JS logic:
     console.log('Hello Blade Theme Contributor!');
 
 For more information on Theme Contributors, visit the
-[Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors)
+[Theme Contributors](/develop/tutorials/-/knowledge_base/7-1/packaging-independent-ui-resources-for-your-site)
 tutorial.
 
 ## Where Is This Sample? [](id=where-is-this-sample)
