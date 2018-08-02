@@ -2,121 +2,65 @@
 
 To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin: 
 
-1.  Go to *Site Administration* &rarr; *Content*.
+1.  Go to *Site Administration* (your site's menu) &rarr; *Content* &rarr; 
+    *Kaleo Forms Admin*. The Kaleo Forms app appears with a list of any defined 
+    processes. 
 
-2.  Select *Kaleo Forms Admin*.
+2.  Click the *Add* button 
+    (![Add](../../../images-dxp/icon-add.png)) 
+    to open the New Process Wizard. 
 
-    Kaleo Forms appears with a listing of the defined processes. If you're 
-    coming here for the first time, there won't be any, so create one. 
+3.  Give the process a name and a description, then click *Next*. 
 
-3.  Click the *Add* (![Add](../../../images-dxp/icon-add.png)) button to open 
-    the New Process Wizard and begin the first step in creating a Kaleo 
-    Process. 
+    ![Figure 1: Add a Kaleo Forms Process to link a form with a workflow definition.](../../../images-dxp/kaleo-forms-add.png)
 
-## Creating the Process
+4.  Define the fields that can appear in your process's forms. There are two 
+    ways to do this: 
 
-In the first step, enter the basic information about the process:
+    -   Use an existing field set. To do this, click the field set's Actions 
+        button 
+        (![Actions](../../../images-dxp/icon-actions.png)) 
+        and select *Choose*.
 
-1.  Enter *Spa Order Process* for the *Name* and add a *Description*.
+    -   Create a new field set/data definition. To do this, click the 
+        *Add Field Set* button. If you need help with this, see the 
+        documentation on
+        [creating data definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions). 
 
-2.  Click *Next*.
+    Click *Next* to move to the wizard's next step. 
 
-![Figure 1: Add a Kaleo Forms Process to link a form with a workflow definition.](../../../images-dxp/kaleo-forms-add.png)
+    ![Figure 2: Define and choose your form's fields.](../../../images-dxp/kaleo-forms-fields.png)
 
-## Creating the Form [](id=creating-the-form)
+5.  Select a workflow to use for your forms. To do this, click the workflow's 
+    *Actions* button 
+    (![Actions](../../../images-dxp/icon-actions.png)) 
+    and select *Choose*. 
 
-In the second step of the New Process Wizard, define the fields that can appear
-in your process's forms. There are two methods:
+    You can also edit an existing workflow or create a new one: 
 
-1.  Choose a predefined field set. To use a field set that already exists, pick
-    one from the list of field sets by clicking the Actions menu
-    (![Actions](../../../images-dxp/icon-actions.png)) next to its entry and
-    selecting *Choose*. 
+    -   To edit a workflow, click its *Actions* button 
+        (![Actions](../../../images-dxp/icon-actions.png)) 
+        and select *Edit*. 
 
-2.  Create a new field set/data definition. Use the *Add Field Set* button to
-    add a new field set. If you don't understand what this means, see the
-    documentation on
-    [creating data definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions)
-    first.
-    - For this example, Add a new field set: 
-        - A Text field called *Customer Name* 
-        - A Text Box called *Requested Spa Technician*
-        - A Select field called *Services Requested* with these options: 
-            - Massage
-            - Fish Pedicure
-            - Sauna
-            - Acupuncture
-            - Moon Mud Facial Mask
-        - A Boolean field called *Returning Customer?*
-        - A Date field called *Preferred Date*
-        - A Text field called *Preferred Time*
-        - A Date field called *Available Date*
-        - A Text field called *Available Time*
-        - A Boolean field called *Approved*
-        - A Text Box field called *Managerial Comments*
+    -   To begin creating a new workflow, click the *Add Workflow* button. 
 
-Click *Next* to move to the next step in the wizard: adding a workflow for
-the process.
+    In either case, you use the same UI to edit/create the workflow. This UI is 
+    called 
+    [Kaleo Designer](/discover/portal/-/knowledge_base/7-1/kaleo-designer). It 
+    lets you create your workflow graphically instead of via code. 
 
-![Figure 2: In the second step of the New Process Wizard, define and choose the fields for your form.](../../../images-dxp/kaleo-forms-fields.png)
+    Once you select a workflow to use with your forms, click *Next*. 
 
-## Selecting a Workflow [](id=choosing-a-workflow)
+    ![Figure 3: This example workflow has three tasks that happen sequentially.](../../../images-dxp/kaleo-forms-spa-order-definition.png)
 
-In the third step of the New Process Wizard you select a workflow to use for
-your forms. The Single Approver workflow is included by default. See how it's
-defined by opening it in the Kaleo Designer.
+6.  Create a form to use for each workflow task. To do this, click each task's 
+    *Actions* button 
+    (![Actions](../../../images-dxp/icon-actions.png)) 
+    and select *Assign Form*. On the screen that appears, click the *Add* button 
+    (![Add](../../../images-dxp/icon-add.png)) 
+    and then create the form. 
 
-1.  Click the actions menu (![Actions](../../../images-dxp/icon-actions.png))
+    Click *Save* when you're finished. Your process is done, and appears in 
+    Kaleo Forms Admin's table. 
 
-2.  Select *Edit*. 
-
-The graphical interface for editing or defining a workflow appears below the
-Single Approver edit screen's Details section. 
-
-If you don't want to base your workflow on the Single Approver definition (or
-any definition already available in your system), add a new workflow from
-scratch using the Kaleo Designer. Click the *Add Workflow* button to get
-started.
-
-- For the Spa Order Process, make a new workflow definition called *Spa Order
-    Workflow*:
-
-![Figure 3: The Spa Order Process has three tasks that happen sequentially.](../../../images-dxp/kaleo-forms-spa-order-definition.png)
-
-The definition has a StartNode and three task nodes. Develop it in the graphical
-designer built into Kaleo Forms. There's a more detailed write-up of the
-Kaleo Designer [here](/discover/portal/-/knowledge_base/7-1/kaleo-designer) if
-you're not already familiar with it. 
-
-This workflow exhibits simple linear processing, so that the initial form is
-filled out (in the StartNode) and then the workflow moves to the first task
-(Technician Claim), then to the second task (Managerial Approval), and finally,
-to the third task (Final Order).
-
-The task assignments of this workflow are as follows:
-
-- Technician Claim: Assigned to the Spa Technician Role.
-- Managerial Approval: Assigned to the Spa Manager Role.
-- Final Order: Assigned to the Asset Creator.
-
-+$$$
-
-**Note:** Create the Spa Technician Role and the Spa Manager Role as 
-[Site Roles](/discover/portal/-/knowledge_base/7-1/roles-and-permissions), 
-and give them
-[permission](/discover/portal/-/knowledge_base/7-1/defining-role-permissions)
-to access the Kaleo Forms application. In the role's page for defining
-permissions, they're under Site Administration &rarr; Content &rarr; Kaleo Forms
-Admin. Give both roles all of the permissions available for Kaleo Forms Admin.
-
-$$$
-
-Once the workflow is done, select it:
-
-1.  Click *Actions* &rarr; *Choose* on the workflow you just created.
-
-2.  Click *Next*.
-
-Now that you have the workflow definition completed assigned, you must create
-and assign forms for each workflow task. 
-
+    ![Figure 4: Assign a form to each task in the workflow, and for the initial state.](../../../images-dxp/kaleo-forms-task-forms.png)
