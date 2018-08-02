@@ -128,3 +128,7 @@ To customize email notifications for event invitations and reminders, follow the
     event's name, date or location. It's a good idea to include a link to the
     event (use the variable *[$EVENT_URL$]*) as users will need to navigate to
     the calendar widget in order to respond.
+
+Click *Save*. Now your notifications will contain the proper text. The next
+section covers setting up calendar resources and porting data from one
+installation to another.

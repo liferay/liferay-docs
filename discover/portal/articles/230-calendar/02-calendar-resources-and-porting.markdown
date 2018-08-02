@@ -99,3 +99,5 @@ Follow these steps to import a LAR:
     current user as the author.
 
 7. Click *Import*.
+
+Your calendar is set up and ready to go! Better check it to see what's next on the agenda.
