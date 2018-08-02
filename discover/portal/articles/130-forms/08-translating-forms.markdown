@@ -1,4 +1,4 @@
-# Translating Forms
+# Translating Forms [](id=translating-forms)
 
 Forms can be translated to any locale that @product@ supports. The form builder 
 specifies a translation of the form's default language. 

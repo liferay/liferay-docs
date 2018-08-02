@@ -1,4 +1,4 @@
-# Autocompleting Text Fields
+# Autocompleting Text Fields [](id=autocompleting-text-fields)
 
 It's been scientifically proven that Internet users are lazy (not you, of 
 course---other Internet users). For example, some users may not fill out your 
@@ -18,7 +18,7 @@ Autocomplete gives you the flexibility of a text field (accepting any response
 that meets your validation criteria) while giving users common choices to select 
 from. It's a win-win situation. 
 
-## Configuring Autocomplete
+## Configuring Autocomplete [](id=configuring-autocomplete)
 
 Before configuring autocomplete for your text fields, 
 [create a form and add a text field](/discover/portal/-/knowledge_base/7-1/creating-and-managing-forms). 

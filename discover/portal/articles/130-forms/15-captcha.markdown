@@ -1,4 +1,4 @@
-# Enabling CAPTCHA on Form Submissions
+# Enabling CAPTCHA on Form Submissions [](id=enabling-captcha-on-form-submissions)
 
 [CAPTCHA](https://en.wikipedia.org/wiki/CAPTCHA) 
 prevents a bot from submitting forms. It's often used in 

@@ -1,4 +1,4 @@
-# Styling Form Pages
+# Styling Form Pages [](id=styling-form-pages)
 
 Let's face it: nobody likes an ugly, confusing form. Styling your 
 [form pages](/discover/portal/-/knowledge_base/7-1/form-pages) 

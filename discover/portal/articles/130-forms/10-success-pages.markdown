@@ -1,4 +1,4 @@
-# Form Success Pages
+# Form Success Pages [](id=form-success-pages)
 
 After users submit one of your whiz-bang forms, what's next? How will they know
 they're done and can close the browser window or tab? What if they think their
@@ -18,7 +18,7 @@ the title. A common alternative to using a success page is to
 What should you put in a success page? Whatever you want. If you can't think
 of anything important or creative to say, use the default message: 
 
-![Figure 1: There's a default success page message if you can't think of anything else to say.](../../images/forms-success-page-default.png)
+![Figure 2: There's a default success page message if you can't think of anything else to say.](../../images/forms-success-page-default.png)
 
 To configure a success page: 
 
@@ -29,7 +29,7 @@ To configure a success page:
     (![Actions](../../images/icon-actions.png)) 
     and choose *Add Success Page*. 
 
-![Figure 1: Add a success page using the edit menu for the form page.](../../images/forms-success-page-add.png)
+![Figure 3: Add a success page using the edit menu for the form page.](../../images/forms-success-page-add.png)
 
 Once the success page is added to your form, fill in the *Title* and 
 *Description* fields however you please. When the form is saved and published, 

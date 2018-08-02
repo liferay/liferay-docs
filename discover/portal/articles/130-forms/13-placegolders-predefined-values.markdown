@@ -1,4 +1,4 @@
-# Help Text, Placeholder Text, and Predefined Values
+# Help Text, Placeholder Text, and Predefined Values [](id=help-text-placeholder-text-and-predefined-values)
 
 Form fields can have help text, placeholder text, and predefined values.
 

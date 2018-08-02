@@ -1,4 +1,4 @@
-# Validating Text and Numeric Fields
+# Validating Text and Numeric Fields [](id=validating-text-and-numeric-fields)
 
 Validation ensures that only certain values are entered in a field. Validation
 functionality is available for text and numeric fields. 
@@ -14,7 +14,7 @@ To enable validation:
 
 ![Figure 1: Validate data to ensure you're collecting only useful information.](../../images/forms-text-validation.png)
 
-## Validating Text Fields
+## Validating Text Fields [](id=validating-text-fields)
 
 Validation for text fields contains several options. You must first choose a 
 list of available conditions to check: 
@@ -28,7 +28,7 @@ list of available conditions to check:
 If the condition isn't met, an error message is displayed to the user. Where you 
 go from there depends on which condition you used. 
 
-### If Input Contains/Does Not Contain
+### If Input Contains/Does Not Contain [](id=if-input-contains-does-not-contain)
 
 When you validate text data to check if it contains a certain value, there are 
 two additional steps to take after selecting the condition: 
@@ -39,7 +39,7 @@ two additional steps to take after selecting the condition:
 
 ![Figure 2: If *Liferay* isn't part of the field's value, an error message is displayed.](../../images/forms-text-val-contains.png)
 
-### If Input Is not URL/Email
+### If Input Is not URL/Email [](id=if-input-is-not-url-email)
 
 Checking for properly formatted URLs and emails is easy. Just choose the 
 condition from the *If Input* drop-down, and enter the error message. 
@@ -49,7 +49,7 @@ Valid URLs begin with `http://` or `https://`. Valid emails must contain `@`.
 
 ![Figure 3: Use text field validation to make sure users enter a valid email address or URL.](../../images/forms-text-val-email.png)
 
-### If Input Does Not Match
+### If Input Does Not Match [](id=if-input-does-not-match)
 
 The *Does Not Match* condition is used for entering 
 [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) 
@@ -65,7 +65,7 @@ entering the proper data.
 
 ![Figure 4: Regular expression text validation opens up countless possibilities.](../../images/forms-text-val-regex.png)
 
-## Validating Numeric Fields
+## Validating Numeric Fields [](id=validating-numeric-fields)
 
 Numeric field validation is similar to text field validation, but the conditions 
 compare the value of the number entered to some other value. 

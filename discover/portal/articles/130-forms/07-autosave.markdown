@@ -1,4 +1,4 @@
-# Auto-Save
+# Auto-Save [](id=auto-save)
 
 Losing progress on a partially created form is bad. Make sure to save your work
 frequently as you're creating forms. But if you forget to save your work, 

@@ -1,4 +1,4 @@
-# Form Notifications
+# Form Notifications [](id=form-notifications)
 
 You can configure the Forms app to send a notification email each time a form 
 entry is submitted.

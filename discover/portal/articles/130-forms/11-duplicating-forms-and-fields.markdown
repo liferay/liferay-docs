@@ -1,4 +1,4 @@
-# Duplicating Forms and Form Fields
+# Duplicating Forms and Form Fields [](id=duplicating-forms-and-form-fields)
 
 Duplicating effort wastes time and increases the likelihood that something won't 
 be perfectly replicated. Instead of duplicating effort, duplicate forms and form 

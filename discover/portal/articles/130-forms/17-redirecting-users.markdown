@@ -1,4 +1,4 @@
-# Redirecting Users
+# Redirecting Users [](id=redirecting-users)
 
 When users submit a form, you can present them with another page indicating 
 success or some other information related to their submission. Sometimes all you 
