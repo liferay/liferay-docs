@@ -22,11 +22,34 @@ must specify a time period to view the metrics. The default is 30 days, but this
 is configurable. The following values are supported:
 
 - Last 24 hours
+
+    Displays data generated over the last 24 hours
+
 - Yesterday
+
+    Displays all data generated yesterday, beginning at 12:00 AM and ending at
+    11:59 PM.
+
 - Last 7 days
+
+    Displays data generated for the previous 7 full days (the current day is
+    excluded), in daily increments.
+
 - Last 28 days
+
+    Displays data generated for the previous 28 full days (the current day is
+    excluded), in weekly increments.
+
 - Last 30 days (default)
+
+
+    Displays data generated for the previous 30 full days (the current day is
+    excluded), in weekly increments.
+
 - Last 90 days
+
+    Displays data generated for the previous 90 full days (the current day is
+    excluded), in two-week increments.
 
 ## Visitor Behavior [](id=visitor-behavior)
 
