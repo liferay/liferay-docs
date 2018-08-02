@@ -31,13 +31,8 @@ script inside its `package.json` file:
 
 ## Where Is This Sample? [](id=where-is-this-sample)
 
-This sample is built with the following build tool:
-
-<!--
-There are three different versions of this sample, each built with a different
+There are two different versions of this sample, each built with a different
 build tool:
 
-TODO: Replace above when tool is available for other build tools. -Cody
--->
-
 - [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/npm/vuejs-npm-portlet)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/apps/npm/vuejs-npm-portlet)
