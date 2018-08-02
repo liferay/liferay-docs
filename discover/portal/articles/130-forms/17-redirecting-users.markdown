@@ -1,20 +1,20 @@
 # Redirecting Users
 
-Send users to any URL you want upon form submission. You might have a particular
-*Thanks for your submission!* type page with a link to the home page, or you
-might want to direct a user somewhere specific based on the form they just
-submitted. Sometimes all you need is a 
-[success page in the form itself](/discover/portal/-/knowledge_base/7-1/success-pages),
-but other times you'll want.
+When users submit a form, you can present them with another page indicating 
+success or some other information related to their submission. Sometimes all you 
+need is a 
+[success page](/discover/portal/-/knowledge_base/7-1/form-success-pages), 
+but other times you might want to send users to a specific URL. 
 
-Whatever your use case is, set up a redirect URL by 
+Whatever your use case is, follow these steps to set up a redirect URL: 
 
-1.  Opening the form's
-Form Settings section (click the *Options*
-(![Options](../../images/icon-options.png)) button &rarr; *Settings*). 
+1.  Open the form's *Form Settings* section by clicking the *Options* button 
+    (![Options](../../images/icon-options.png)) 
+    and select *Settings*. 
 
-2.  In the *Redirect URL* just type the URL. That's it.
+2.  Enter the redirect URL in the *Redirect URL* field. 
 
-![Figure x: Redirect Users after form submission.](../../images/forms-redirect.png)
+That's it! Now when users submit the form, they're not left wondering what to do 
+next. 
 
-Now when Users submit the form, they're not left wondering what to do next.
+![Figure 1: Redirect users after they submit a form.](../../images/forms-redirect.png)

@@ -1,27 +1,28 @@
 # Form Notifications
 
-Send a notification email each time a form entry is submitted. 
+You can configure the Forms app to send a notification email each time a form 
+entry is submitted.
 
-1.  Open the form's Form Settings section by clicking the *Options*
-    (![Options](../../images/icon-options.png)) button &rarr; *Settings*). 
+1.  Open the form's *Form Settings* section by clicking the *Options* button 
+    (![Options](../../images/icon-options.png)) 
+    and selecting *Settings*. 
 
-2.  Click the *Email Notifications* tab, enable the option to *Send an email
-    notification for each entry*, and fill out the fields:
+2.  Click the *Email Notifications* tab, enable the option 
+    *Send an email notification for each entry*, and fill out these fields: 
 
-    -  From Name: The name of the sender. This could be the site name, the form,
-       name, or anything else that will be informative to the recipient.
-    -  From Address: You can use something like *noreply@liferay-forms.com*, so that
-       recipients of the notification don't try to reply.
-    -  To Address: This should be the email address of the notification recipient
-       (for example, *test@liferay.com*). 
-    -  Subject: An informative subject line tells the recipient what happened:
-       *An application for employment was submitted in The Lunar Resort*, for
-       example.
+    -   **From Name:** The sender's name. This could be the site name, the form 
+        name, or anything else informative to the recipient.
+    -   **From Address:** The sender's email address. You can use something like 
+        `noreply@liferay-forms.com`, so that recipients don't try to reply. 
+    -   **To Address:** The recipient's email address (e.g., 
+        `test@liferay.com`). 
+    -   **Subject:** The email's subject. An informative subject line tells the 
+        recipient what happened. For example, 
+       *An application for employment was submitted in The Lunar Resort*. 
 
-![Figure x: Configure email notifications each time a form entry is submitted.](../../images/forms-notification-email.png)
+Note that if you 
+[enabled workflow for the form](/discover/portal/-/knowledge_base/7-1/workflow-and-forms) 
+and it already sends a notification, you might not need to configure the Forms 
+app to generate a notification. 
 
-If you 
-[enabled workflow for the form](/discover/portal/-/knowledge_base/7-1/workflow-and-forms),
-and there's already a notification going to the people who need to process the
-form entry, you might not need to generate any notification from the Forms
-application itself.
+![Figure 1: Configure email notifications each time a form entry is submitted.](../../images/forms-notification-email.png)

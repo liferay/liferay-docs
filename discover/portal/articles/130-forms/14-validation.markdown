@@ -80,7 +80,7 @@ Available conditions to check include:
 -   Is less than
 
 For example, to make sure users don't enter a number over 10, enable validation
-and use *Is greater than or equal to* with a value of *10*. Use the message 
+and use *Is greater than* with a value of *10*. Use the message 
 *Please enter 10 or less*. 
 
 ![Figure 5: Numeric conditions constrain user-entered numeric data.](../../images/forms-numeric-val2.png)
@@ -89,5 +89,5 @@ and use *Is greater than or equal to* with a value of *10*. Use the message
 
 Note that numeric fields are text fields validated to only allow numeric data 
 entry. That's why they're in the Customized Elements section of the form fields 
-list. In addition, the property on the Basic tab of a numeric form called 
-*My numeric type is* (can be Integer or Decimal) is another form of validation. 
+list. In addition, the property *My numeric type is* (can be Integer or Decimal) 
+on the Basic tab of a numeric form is another form of validation. 

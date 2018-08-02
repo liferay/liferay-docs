@@ -14,7 +14,7 @@ users to close the browser window or tab.
 
 A success page is simple. It has a title in bold text and a description beneath 
 the title. A common alternative to using a success page is to 
-[redirect users to a different page in your site](/discover/portal/-/knowledge_base/7-1/creating-advanced-forms#redirecting-users-after-form-submission). 
+[redirect users to a different page in your site](/discover/portal/-/knowledge_base/7-1/redirecting-users). 
 What should you put in a success page? Whatever you want. If you can't think
 of anything important or creative to say, use the default message: 
 
@@ -26,7 +26,8 @@ To configure a success page:
     &rarr; *Forms*. 
 
 2.  Click on the form page's *Actions* button 
-    (![Actions](../../images/icon-actions.png)) and choose *Add Success Page*. 
+    (![Actions](../../images/icon-actions.png)) 
+    and choose *Add Success Page*. 
 
 ![Figure 1: Add a success page using the edit menu for the form page.](../../images/forms-success-page-add.png)
 

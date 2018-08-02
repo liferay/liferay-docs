@@ -1,37 +1,34 @@
 # Form Permissions
 
-By default, you can grant the following permissions for a form:
+To access a form's permissions, first navigate to the Forms app in 
+*Site Administration* (your site's menu) &rarr; *Content* &rarr; *Forms*. Then 
+click the form's *Actions* button 
+(![Actions](../../images/icon-actions.png)), 
+and select *Permissions*. 
 
--  Delete: Permission to delete the form.
--  Permissions: This gives any role with the permission the ability to configure
-   the form's permissions.
--  Add Record: Permission to submit form entries.
--  Update: Permission to update form entries.
--  View: All the other permissions you can configure for the form depend on this
-   one. Think about it: if you can't see the form, how can you add a record?
+By default, you can grant these permissions for a form: 
 
-![Figure 14: You can configure the permissions for a form.](../../images/forms-form-permissions.png)
+-   **Delete:** Delete the form. 
+-   **Permissions:** Access and configure the form's permissions. 
+-   **Add Record:** Submit form entries. 
+-   **Update:** Update form entries. 
+-   **View:** View the form. 
 
-By default, unauthenticated visitors to your site (Guests) can view and fill out
-forms, because the *Guest* role has *View* and *Add Record* permissions.
+![Figure 1: You can configure a form's permissions.](../../images/forms-form-permissions.png)
 
-Navigate to the Forms application (*Site Administration* &rarr; *Content* &rarr;
-*Forms*). Click the form's  *Actions* button
-(![Actions](../../images/icon-actions.png)), and select *Permissions*.  Give the
-Guest role the View and Add permissions, then click *Save*.
+Note that guest users can view and fill out forms by default. The *Guest* role 
+has *View* and *Add Record* permissions. 
 
 +$$$
 
 **Note:** By default, all users inherit the Guest role's permissions. The Guest
-role represents unauthenticated visitors of your site, and it makes sense that
-if you want to allow Guest users to submit forms, you're fine with your site
-members and portal users submitting forms, as well. If you want to disable the
-automatic inheritance of the Guest role permissions, there's a
-[property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Permissions) 
-you can set in your `portal-ext.properties` file:
+role represents unauthenticated visitors of your site. If you want to let Guest 
+users submit forms, which is the default setting, it makes sense that 
+authenticated users can also. To disable automatic inheritance of the Guest 
+role's permissions, set 
+[this property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Permissions) 
+in your `portal-ext.properties` file: 
 
     permissions.check.guest.enabled=false
 
 $$$
-
-Configure appropriate form permissions for each form.
