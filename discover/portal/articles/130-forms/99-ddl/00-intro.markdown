@@ -39,7 +39,7 @@ data lists:
 -   Creating dynamic data lists. 
 -   Creating form and display templates. 
 
-## System Configuration
+## System Configuration [](id=system-configuration)
 
 There are two Dynamic Data Lists entries in System Settings. The Dynamic Data
 Lists Service entry contains one setting:

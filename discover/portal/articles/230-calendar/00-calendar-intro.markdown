@@ -1,4 +1,4 @@
-# Using the Calendar [](id=using-the-calendar) 
+# Using the Calendar [](id=using-the-calendar)
 
 The Calendar widget is a tool for storing and sharing scheduled events. It can
 be used as either a personal planner for individual users, as shared calendar
@@ -19,7 +19,7 @@ $$$
 ## Configuring the Calendar[](id=configuring-the-calendar-portlet)
 
 Once you've added the Calendar widget to a page, go to
-![Options](../../images/icon-app.options.png) in the widget's header and click
+![Options](../../images/icon-app-options.png) in the widget's header and click
 *Configuration*.<!--deleted references to tabs because there isn't any material
 here on the Display Settings and RSS tabs -NR-->
 

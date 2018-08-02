@@ -1,11 +1,11 @@
-# Calendar Resources and Porting
+# Calendar Resources and Porting [](id=calendar-resources-and-porting)
 
 There are two more things you may need to know about using the calendar. One is
 calendar resources, a concept that enables you to "invite" entities other than
 people to your events. The other is how to port your calendar's data from one
 installation of @product@ to another.
 
-## Calendar Resources
+## Calendar Resources [](id=calendar-resources)
 
 A calendar resource can be anything you might need for an event other than the
 actual attendees. For instance, a conference room, A/V equipment, or a table
@@ -15,7 +15,7 @@ Follow these steps to add a new calendar resource:
 
 1.  Click on the *Resources* tab and click *Add Resource*.
 
-    ![Figure 7: Resources are accessed from the tab menu at the top of the widget.](../../images/calendar-resources.png)
+    ![Figure 1: Resources are accessed from the tab menu at the top of the widget.](../../images/calendar-resources.png)
 
 2.  Fill in the *New Resource* form. Enter a name, give it a description and
     choose whether to set it as active. You can also tag it, assign it to
@@ -61,7 +61,7 @@ version. Follow these steps to export:
 3.  Click *Export*. When a success message displays (this may take a few
     moments) you can click on the LAR's filename to download it.
 
-    ![Figure 8: This LAR is ready to be downloaded.](../../images/calendar-lar.png)
+    ![Figure 2: This LAR is ready to be downloaded.](../../images/calendar-lar.png)
 
 Follow these steps to import a LAR:
 
