@@ -48,8 +48,8 @@ is configurable. The following values are supported:
 
 - Last 90 days
 
-    Displays data generated for the previous 90 full days (the current day is
-    excluded), in two-week increments.
+    Displays data generated for the previous 90 full days (data for the current
+    day is _included_), in two-week increments.
 
 ## Visitor Behavior [](id=visitor-behavior)
 
