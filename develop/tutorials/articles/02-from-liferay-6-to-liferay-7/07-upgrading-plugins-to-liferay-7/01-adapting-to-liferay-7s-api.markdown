@@ -491,6 +491,8 @@ re-open the Code Upgrade Tool to facilitate upgrades.
 
 [Development Reference](/develop/reference/-/knowledge_base/7-1/development-reference)
 
+[Classes Moved from portal-serice.jar](/develop/reference/-/knowledge_base/7-1/classes-moved-from-portal-service-jar)
+
 [Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet)
 
 [Tooling](/develop/tutorials/-/knowledge_base/7-1/tooling)
