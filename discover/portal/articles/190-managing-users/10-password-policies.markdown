@@ -1,16 +1,15 @@
 # Password Policies [](id=password-policies)
 
-Password policies enhance the security of @product@. Use the default policy that
-ships with Liferay (modified or as is), or create your own policies. Password
-policies can be assigned to Users or Organizations, or set as the default policy
-used throughout a virtual instance. 
+Password policies enforce password rules to help users specify secure passwords.
+Use the default policy that ships with Liferay (modified or as is), or create
+your own policies. Password policies can be assigned to Users or Organizations,
+or set as the default policy used throughout a virtual instance. 
 
-## Adding and Configuring Password Policies
-[](id=adding-and-configuring-password-policies)
+## Adding and Configuring Password Policies [](id=adding-and-configuring-password-policies)
 
 To add or edit password policies, 
 
-1.  Navigate to the *Control Panel* &rarr; *Users* &rarr; *Password Policies*. 
+1.  Navigate to *Control Panel* &rarr; *Users* &rarr; *Password Policies*. 
 
     There's already a default password policy in the system. 
 
@@ -20,8 +19,8 @@ To add or edit password policies,
 3.  To add a new policy, click the *Add*
     (![Add](../../images/icon-add.png)) button.
 
-The Details page opens and lets you provide the *Name* (required),
-*Description*, and specific configuration options for your new password policy.
+    Provide the *Name* (required), *Description*, and specific configuration options
+    for your new password policy.
 
 ![Figure 1: You can create new password policies to suit your needs.](../../images/password-policy-add.png)
 
@@ -64,15 +63,14 @@ exist.
 Once you configure the policy, click *Save* to add it to the list of
 ready-to-use password policies.
 
-## Assigning Members to a Password Policy [](id=assigning-members-to-a-password-policy)
+## Assigning Users to a Password Policy [](id=assigning-users-to-a-password-policy)
 
-To use the default password policy that ships with Liferay, you don't have to do
-anything: like its name suggests, it's the default. If you create a new password
-policy, however, you must assign users to it. To do this click *Actions*
+To use the default password policy, you don't have to do anything: like its name
+suggests, it's the default. If you create a new password policy, however, you
+must assign users to it. To do this click *Actions*
 (![Actions](../../images/icon-actions.png)) &rarr; *Assign Members*.
 
-![Figure 2: Assign members to new password policies to make them take
-effect.](../../images/password-policy-assign-members.png)
+![Figure 2: Assign members to new password policies to make them take effect.](../../images/password-policy-assign-members.png)
 
 Choose whether to assign users directly or to assign organizations to the
 password policy, then click *Add* (![Add](../../images/icon-add.png)).
@@ -98,5 +96,5 @@ Restart the application server and your changes take effect.
     passwords.default.policy.name=Default Password Policy
     ...
 
-As you can see, the Password Policies application gives you a simple yet
-powerful way to set password rules.
+As you can see, Password Policies give you a simple yet powerful way to set
+password rules.
