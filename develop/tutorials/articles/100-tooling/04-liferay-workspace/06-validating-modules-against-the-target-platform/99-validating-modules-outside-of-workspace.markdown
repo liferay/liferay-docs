@@ -14,12 +14,16 @@ root `build.gradle` file and add it to the list of dependencies. It should look
 like this:
 
     dependencies {
-        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.1.0"
-        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.1.0"
-        targetPlatformDistro group: "com.liferay", name "com.liferay.ce.portal.distro", version: "7.1.0"
+        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom", version: "7.1.0"
+        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "7.1.0"
+        targetPlatformDistro group: "com.liferay.portal", name "release.portal.distro", version: "7.1.0"
     }
 
-For Liferay DXP users, the versions follow a slightly different format:
-`7.1.10.0`.
+Liferay DXP users must replace the artifact names and versions:
+    
+- `release.portal.bom` &rarr; `release.dxp.bom`
+- `release.portal.bom.compile.only` &rarr; `release.dxp.bom.compile.only`
+- `release.portal.distro` &rarr; `release.dxp.distro`
+- `7.1.0` &rarr; `7.1.10.0`
 
 Now you can validate your modules against a target platform!
