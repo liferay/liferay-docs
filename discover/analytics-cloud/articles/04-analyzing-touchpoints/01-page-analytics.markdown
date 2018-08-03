@@ -42,14 +42,23 @@ is configurable. The following values are supported:
 
 - Last 30 days (default)
 
-
     Displays data generated for the previous 30 full days (the current day is
     excluded), in weekly increments.
 
 - Last 90 days
 
-    Displays data generated for the previous 90 full days (data for the current
-    day is _included_), in two-week increments.
+    Displays data generated over the previous 90 days in weekly increments,
+    counting back from the end of the current week. The time period always
+    begins on a Sunday, and ends with the current, incomplete week (unless
+    viewed on a Saturday approaching midnight).
+
+    Displays data generated over a thirteen week period, beginning 90 days prior
+    to the end of the current week. The time period always begins on a Sunday,
+    and ends with the current, incomplete week (unless viewed on a Saturday
+    approaching midnight). 
+
+    Note that the first Sunday of the time period is not included.
+
 
 ## Visitor Behavior [](id=visitor-behavior)
 
