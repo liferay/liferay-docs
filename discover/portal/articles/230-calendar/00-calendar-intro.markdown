@@ -1,10 +1,11 @@
 # Using the Calendar [](id=using-the-calendar)
 
-The Calendar widget is a tool for storing and sharing scheduled events. It can
-be used as either a personal planner for individual users, as shared calendar
-for an entire site, or both. It can be used to create multiple calendars for
-a single site or user, to overlay the events stored in multiple calendars for
-simultaneous view, to send email reminders to users, and more.
+The Calendar widget is an updated, digitized, 3D-printed sundial. Okay, it's
+really a tool for storing and sharing scheduled events. It's a personal planner
+for individual users, a shared calendar for an entire site, or both at the same
+time. It can be used to create multiple calendars for a single site or user, to
+overlay the events stored in multiple calendars for simultaneous view, to send
+email reminders to users, and more.
 
 +$$$
 
@@ -18,15 +19,15 @@ $$$
 
 ## Configuring the Calendar[](id=configuring-the-calendar-portlet)
 
-Once you've added the Calendar widget to a page, go to
-![Options](../../images/icon-app-options.png) in the widget's header and click
-*Configuration*.<!--deleted references to tabs because there isn't any material
-here on the Display Settings and RSS tabs -NR-->
+Once the Calendar widget is on a page, open the
+![Options](../../images/icon-app-options.png) menu in the widget's header and
+click *Configuration*.<!--deleted references to tabs because there isn't any
+material here on the Display Settings and RSS tabs -NR-->
 
 ![Figure 1: The Setup &rarr; User Settings tab provides the options you need to get started quickly.](../../images/new-calendar-configuration.png)
 
-From the *User Settings* tab, you can customize your calendar's default
-view and settings. 
+From the *User Settings* tab, customize the calendar's default view and
+settings. 
 
 **Time Format:** Choose *AM/PM* or to *24 Hour*. *AM/PM* is the default; with
 this time format, times such as 8AM or 11PM are displayed. With the *24 Hour*
@@ -54,5 +55,30 @@ the Calendar portlet is viewed by a guest, or by a user who is not logged in,
 the Calendar portlet displays events using the time zone set by the portal
 administrator in *Control Panel* &rarr; *Portal Settings* &rarr; *Display
 Settings* &rarr; *Time Zone*.
+
+From the *Display Settings* tab, set the display behavior for the calendar.
+
+**Display Scheduler Only:** By default, the list of calendars and a
+mini-calendar view (used for quickly navigating to a particular date) are
+displayed. Check this to display only the scheduler (the large calendar view
+showing the calendar and scheduled events).
+
+**Display User Events:** Turns off the display of the current, logged in User's
+personal calendar and events.
+
+**Display Scheduler's Header:** If disabled, removes the ability to toggle
+through the calendar views (for example, Day/Week/Month/Agenda) and access to
+the Add Event button.
+
+**Enabled Views:** If one of the available views is disabled (Day, Week, Month,
+Agenda), it disappears from the scheduler's header.
+
+**Maximum Days to Display:** Set the maximum number of days to display in the
+Agenda view.
+
+**Maximum Events to Display:** Set the maximum number of events to display in
+the Agenda view.
+
+Use the *RSS* tab to disable RSS subscription or configure the RSS behavior. 
 
 Next, let's look at the widget itself.

@@ -1,15 +1,18 @@
 # Calendar Resources and Porting [](id=calendar-resources-and-porting)
 
-There are two more things you may need to know about using the calendar. One is
-calendar resources, a concept that enables you to "invite" entities other than
-people to your events. The other is how to port your calendar's data from one
-installation of @product@ to another.
+With calendar resources, you can invite entities other than people to your
+events. This is beneficial for finding the availability of important resources
+your event requires, like a conference room, laptop, or, at The Lunar Resort,
+the Sasquatch Space Suit used scare guests out on Lunar hikes. 
+
+Another important topic is porting your calendar's data from one installation of
+@product@ to another.
 
 ## Calendar Resources [](id=calendar-resources)
 
-A calendar resource can be anything you might need for an event other than the
-actual attendees. For instance, a conference room, A/V equipment, or a table
-reservation might all be designated as calendar resources.
+A calendar resource is anything you might need for an event other than the
+actual attendees. For instance, a conference room, A/V equipment, or the
+aforementioned Sasquatch Space Suit. 
 
 Follow these steps to add a new calendar resource:
 
@@ -33,14 +36,16 @@ these steps to assign a new calendar to the resource:
 2.  Click *Add Calendar* and continue just as if you were creating a calendar
     for a user or a site.
 
-Once a resource is set up, you can invite it to your events just as you would an
+Once a resource is set up, invite it to your events just as you would an
 attendee.
 
 ## Exporting and Importing Calendar Data [](id=exporting-and-importing-calendar-data)
 
-The calendar allows data to be exported or imported as LAR files. As with all
-LAR files, data can only be ported between @product@ installations of the same
-version. Follow these steps to export:
+Like other Liferay Applications, the calendar allows data to be exported or
+imported as 
+[LAR files](/discover/portal/-/knowledge_base/7-1/exporting-importing-widget-data)
+LAR files. As with all LAR files, data can only be ported between installations
+of the same version.
 
 1.  From the calendar widget, click the
     ![Options](../../images/icon-app-options.png) button  in the widget header and select
@@ -100,4 +105,5 @@ Follow these steps to import a LAR:
 
 7. Click *Import*.
 
-Your calendar is set up and ready to go! Better check it to see what's next on the agenda.
+Your calendar is set up and ready to go! Better check it to see what's next on
+the agenda.

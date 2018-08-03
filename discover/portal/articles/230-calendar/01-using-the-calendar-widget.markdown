@@ -1,21 +1,21 @@
 # Using the Calendar Widget [](id=using-the-calendar-widget)
 
-The calendar widget displays a small monthly calendar which provides you with
-an overview of upcoming events. A larger area shows a more detailed calendar
+The calendar widget displays a small monthly calendar showing an overview of
+upcoming events. A larger area shows the Scheduler, a more detailed calendar
 with a number of options: you can set it to to display a *Day*, *Week*, or
 *Month*, or choose a more event-oriented *Agenda* setting.
 
 ![Figure 1: The default view is set in configuration, but a user can change it at any time.](../../images/calendar-view.png)
 
-Two calendars are included by default when the widget is added to a page:
+Two calendars are included by default when the widget is first added to a page:
 a personal calendar for the current user, and a site calendar for the current
-site. These are displayed in the widget's lower left. Next to each calendar is
-a colored box: click on it to show/hide that calendars events in the main
-viewing area.
+site. These are displayed in the widget's lower left. Next to each calendar is a
+colored box: click on it to show/hide that calendars events in the main viewing
+area.
 
 ## Adding New Calendars [](id=adding-new-calendars)
 
-Follow these steps to create a new personal calendar:
+To create a new personal calendar,
 
 1.  Click on the arrow to the right of the *My Calendars* header and select
     *Add Calendar* from the menu. 
@@ -29,16 +29,16 @@ Follow these steps to create a new personal calendar:
     configure permissions.
 
 To edit an existing calendar instead of adding a new one, select *Manage
-Calendars* from the menu in step 1.
+Calendars* from the menu.
 
 To add or edit a site calendar, open the menu next to the header with the
-site's name instead of *My Calendars*.
+site's name.
 
 ![Figure 2: Personal and site calendars are shown in the lower left. This image shows calendars belonging to user *Test Test* and site *Liferay DXP*.](../../images/new-calendar-manage-calendars.png)
 
 ## Adding Events to a Calendar [](id=adding-events-to-a-calendar)
 
-Follow these steps:
+To add events to a calendar, 
 
 1.  Click on any day in the main viewing area to open an event creation pop up.
     If you've selected the *Day* or *Week* view, you can click on the specific
@@ -46,12 +46,12 @@ Follow these steps:
 
     ![Figure 3: When you click anywhere on the calendar, you'll see the event creation pop up appear. Click *Edit* to specify details for your event.](../../images/new-calendar-event-popup.png)
 
-2.  Name your event and select and assign it to a calendar. Click *Save* to
+2.  Name your event and assign it to a calendar. Click *Save* to
     create the event immediately or *Edit* to enter additional information.
 
     ![Figure 4: You can specify event details such as the event title, start date, end date, description, location, and more.](../../images/new-calendar-event-details.png)
 
-3.  If clicked *Edit*, fill in the *Edit Event* form. Enter a start and end
+3.  If you clicked *Edit*, complete the *Edit Event* form. Enter a start and end
     time and enter a description. To schedule an event that will reoccur
     regularly, check the *Repeat* box and fill in the *Repeat* pop up.
 
@@ -60,30 +60,30 @@ Follow these steps:
 ### Additional Event Functions [](id=additional-event-functions)
 
 At the bottom of the *Edit Event* form, there are several collapsed sections:
-*Details*, *Invitations*, *Reminders*, *Categorization*, and related *Related
+*Details*, *Invitations*, *Reminders*, *Categorization*, and *Related
 Assets*.
 
 #### Details [](id=details)
 
-In the Details collapsible section, you can change the calendar to which the
-event belongs, enter a location, and configure the event's permissions.
+In the Details section, change the calendar to which the event belongs, enter a
+location, and configure the event's permissions.
 
 Giving a user permission to add, delete, or update discussion allows them to
 make, edit and remove comments on the event. The *Permissions* permission
-allows a role to update permissions for the event.
+allows a Role to update permissions for the event.
 
 #### Invitations [](id=invitations)
 
-In the invitations section, you can invite users, groups, or resources (see
-the next tutorial for more on resources: in brief, a resource is anything you might need
-for an event--a conference room, a vehicle, etc.). Follow these steps:
+In the invitations section, invite Users, Sites, or Calendar Resources (see the
+next tutorial for more on resources: in brief, a resource is anything you might
+need for an event--a conference room, a vehicle, etc.). Follow these steps:
 
-1.  Enter the name of an invitee (user, group, or resource) in the
+1.  Enter the name of an invitee (User, Site, or Resource) in the
     *Invitations* field. Hit enter to add them to the *Pending* column.
 
-2.  If you want, check their availability by clicking on the arrow next to the
-    invitee's name and selecting *Check Availability*. This displays the
-    invitee's calendar (assuming you have permission to view it).
+2.  Check the availability of invitees by clicking on the arrow next to the
+    their name and selecting *Check Availability*. This displays the invitee's
+    calendar (assuming you have permission to view it).
 
 An automated email is sent to invitees, who must navigate to the calendar
 widget to respond. See below to customize the content of the invitation.
@@ -100,19 +100,19 @@ See below to customize the content of the reminder email.
 
 #### Categorization [](id=categorization)
 
-If you want, you can tag your event or assign it to a category. This causes it
-to appear in appropriate search results, and allows it to be be published by an
-asset publisher set to publish content assigned to its category.
+Tag your event or assign it to a category so it appears in appropriate search
+results, and is published by any asset publisher set to publish content assigned
+to the same category.
 
 #### Related Assets [](id=related-assets)
 
-You can list an asset---such as an agenda or supplementary material for
-a meeting---as related to your event. Links to related assets are displayed in
-the *Event Details* window.
+List an asset---such as an agenda or supplementary material for a meeting---as
+related to your event. Links to related assets are displayed in the *Event
+Details* window.
 
 ## Customizing Email Notifications [](id=customizing-email-notifications)
 
-To customize email notifications for event invitations and reminders, follow these steps:
+To customize email notifications for event invitations and reminders,
 
 1.  From the Calendar widget, click on the arrow next to a calendar and select
     *Calendar Settings*.
@@ -129,6 +129,7 @@ To customize email notifications for event invitations and reminders, follow the
     event (use the variable *[$EVENT_URL$]*) as users will need to navigate to
     the calendar widget in order to respond.
 
-Click *Save*. Now your notifications will contain the proper text. The next
-section covers setting up calendar resources and porting data from one
+Click *Save*. Now your notifications will contain the proper text. 
+
+The next article covers setting up calendar resources and porting data from one
 installation to another.
