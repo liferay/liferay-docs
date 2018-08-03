@@ -7,7 +7,7 @@ under the hood?" Here are common reasons for asking that question:
 -   Curiosity about the car's capability and inner-workings
 -   Desire to improve or customize the car
 
-You might have similar reasons for asking "What's under the *DXP's* hood?" And
+You might have similar reasons for asking "What's under *DXP's* hood?" And
 since you get access to DXP Digital Enterprise (DXP)'s source code, you can
 attach a debugger and see it in action! Setting up the code locally is your
 ticket to exploring DXP, investigating issues, and making improvements and
@@ -32,9 +32,9 @@ Here's how:
     Fix pack ZIP files that end in `-src.zip` contain a fix pack and source
     code.
 
-Next you'll install and configure DXP. DXP's patching tool lets you install fix
-packs and fix pack source code. If you have a patched DXP installation already
-and want to use it, skip to the section
+Next install and configure DXP. DXP's patching tool lets you install fix packs
+and fix pack source code. If you have a patched DXP installation already and
+want to use it, skip to the section
 [Patching the DXP Source Code](#patch-the-dxp-source-code).
 
 ## Step 2: Prepare DXP [](id=prepare-dxp)
@@ -45,8 +45,7 @@ Preparing DXP locally involves installing, configuring, and patching DXP.
 
 Here's how to install and configure DXP: 
 
-1.   [Install and Deploy DXP](/discover/deployment/-/knowledge_base/7-1/deploying-product)
-locally. 
+1.  [Install and Deploy DXP](/discover/deployment/-/knowledge_base/7-1/deploying-product) locally. 
 
 2.  Start DXP.
 
