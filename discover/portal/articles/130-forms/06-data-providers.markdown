@@ -141,10 +141,10 @@ query parameters.
 Path parameters are part of the URL calling the REST web service, and are added
 using the pattern `https://service-url.com/service/{path_parameter_name}`: 
 
-In the `restcountries.eu` service, using the `region` endpoint, the path
-parameter is `{region}`. Path parameters are mandatory parts of the URL, so make
-sure you specify an Input (see below) with a _Parameter_ field value matching
-the path parameter from the URL. 
+The `restcountries.eu` service's `region` endpoint's path parameter is
+`{region}`. Path parameters are mandatory parts of the URL, so make sure you
+specify an Input (see below) with a _Parameter_ field value matching the path
+parameter from the URL. 
 
 Query parameters are complementary parts of the URL that filter the output of
 the service call, following the pattern
@@ -168,7 +168,7 @@ request, if a response is not returned.
 **Inputs**
 : Configure path or query parameters from the REST service to filter the REST
 service's response. Specify the Label, Parameter, and Type (Text or Number), and
-Choose whether the input is required to use the Data Provider. You can add
+choose whether the input is required to use the Data Provider. You can add
 multiple Inputs. To provide a way for users to specify the input value, use an
 [_Autofill_ Form Rule](/discover/portal/-/knowledge_base/7-1/action-autofill).
 A User enters input into one field, and their input is sent to the REST service.

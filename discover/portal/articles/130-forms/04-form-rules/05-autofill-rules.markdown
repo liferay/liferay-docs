@@ -59,45 +59,51 @@ $$$
 
 The above example is simple, using only an Output to autofill a Select from List
 field if another field has a certain value. Many times, the response from the
-REST provider must be filtered before returning results in the Select from List
-field. For this, a Data Provider Input field is required. For example, to
-configure an autofill rule to display the countries of the world filtered by a
-Region field (for example, Americas, Europe, or Oceania),
+REST provider must be filtered before display in the Select from List field. For
+this, a Data Provider Input field is required. For example, to configure an
+autofill rule to display the countries of the world filtered by a Region field
+(for example, Americas, Europe, or Oceania),
 
 1.  Create a Data Provider.
 
-    **Name:** restcountries
-    **URL:** https://restcountries.eu/rest/v2/region/{region}?fields=name
+    **Name:** `restcountries`
+
+    **URL:** `https://restcountries.eu/rest/v2/region/{region}?fields=name`
+
     **Inputs:** Fill in the Label (*region*), Parameter (*region*), and Type
     (*Text*).
-    **Outputs:** fill out a  Label (**name*), Path (*$..name*), and Type
+
+    **Outputs:** fill out a  Label (*name*), Path (*$..name*), and Type
     (*List*).
 
     To understand more about these values, read the 
     [Data Provider documentation](/discover/portal/-/knowledge_base/7-1/data-providers).
 
-    ![Figure 3: ](../../../images/forms-autofill-data-provider.png)
+    ![Figure 3: Create a data provider for the autofill rule.](../../../images/forms-autofill-data-provider.png)
 
 2.  Create a form with these fields:
 
-    **Text::** Use the Label *Region*.
+    **Text:** Use the Label *Region*.
+
     **Select from List:** Label it *Country*, and choose *From Autofill* under
     Create List.
 
-    ![Figure 4: ](../../../images/forms-autofill-input-output-fields.png)
+    ![Figure 4: Create a form with a text field and a select from list field. These are used to provide the input to the data provider and be autofilled by its output.](../../../images/forms-autofill-input-output-fields.png)
 
 3.  Configure the Autofill rule.
 
     **Condition:** If *Region* **Is not Empty**
-    **Action:** Do **Autofill** From Data Provider *restcountries*, Data
+
+    **Action:** Do **Autofill** From Data Provider `restcountries`, Data
     Provider's Input: region---*Region*, Data Provider's Output:
     name---*Country*.
 
-    ![Figure 5: ](../../../images/forms-autofill-rule.png)
+    ![Figure 5: Create the autofill rule. Brag of your prowess.](../../../images/forms-autofill-rule.png)
 
 Once you're done, publish the form and try it out, by entering a valid region
 into the Region field, and observing that the options in the Select from List
-Field are filtered based on the Region. The [restcountries.eu]() service has
+Field are filtered based on the Region. The
+[restcountries.eu](https://restcountries.eu) service has
 these regions you can use: Africa, Americas, Asia, Europe, Oceania, and Polar.
 
 ![Figure 6: Filter countries by region of the world.](../../../images/forms-autofill-region.gif)
