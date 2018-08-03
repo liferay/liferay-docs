@@ -1,7 +1,7 @@
 # Updating 6.2 Project Metadata [](id=updating-6.2-project-metadata)
 
 If your theme uses the 
-[Liferay Themes SDk tools](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
+[Liferay Themes Node.js SDK](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
 the 
 [Gulp `upgrade` task](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6.2-themes) 
 automatically updates some of your theme's metadata as part of the upgrade 
@@ -27,7 +27,7 @@ process. Follow the steps below to update your theme's metadata manually:
 3.  While you're updating `liferay-look-and-feel.xml`, enable your theme to use 
     [Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/adding-portlet-decorators-to-a-theme).
 
-4.  If your theme uses the Liferay Themes SDK development tools, the 
+4.  If your theme uses the Liferay Themes Node.js SDK, the 
     [Gulp `upgrade` task](/develop/tutorials/-/knowledge_base/7-1/upgrading-6.2-liferay-theme-sdk-themes-with-the-gulp-upgrade-task) 
     updates the `package.json` file's Liferay version references to `7.1`, and 
     it Updates the `liferayTheme`'s `templateLanguage` to `ftl` 

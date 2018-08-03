@@ -3,12 +3,12 @@
 A Liferay Portal 6.2 theme can be upgraded to @product-ver@, regardless of its 
 project environment (Plugins SDK, Maven, etc.). Themes created with the 
 [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
-or migrated to use the Liferay Themes SDK build tools that generated themes use, 
-as this tutorial covers, however, can leverage the theme's Gulp `upgrade` task. 
-If you're developing your theme in an environment other than the Liferay Themes 
-SDK and don't want to migrate your theme to use the Liferay Themes SDK tools, 
-follow the directions in the remaining tutorials in this section to upgrade your 
-theme manually. 
+or migrated to use the Liferay Themes Node.js SDK that generated themes use, as 
+this tutorial covers, however, can leverage the theme's Gulp `upgrade` task. If 
+you're developing your theme in an environment other than the Liferay Themes 
+Node.js SDK and don't want to migrate your theme to use the Liferay Themes 
+Node.js SDK, follow the directions in the remaining tutorials in this section to 
+upgrade your theme manually. 
 
 Here's what the Upgrade Task does:
 
@@ -19,18 +19,39 @@ Here's what the Upgrade Task does:
 
 Here are the steps for using the Gulp `upgrade` task:
 
-1.  Migrate your 6.2 theme to use the Liferay Themes SDK development tools. Note 
-    that **you must** have the 
+1.  Migrate your 6.2 theme to use the Liferay Themes Node.js SDK. Note that 
+    **you must** have the 
     [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
-    installed to migrate your theme to use the Liferay Theme SDK development 
-    tools:
+    installed to migrate your theme to use the Liferay Themes Node.js SDK:
 
         yo liferay-theme:import
 
     **You must** provide the absolute path to your 6.2 theme's root folder. The 
     import task does not work for relative paths.
 
-2.  Navigate to your theme's root directory and run the command below to 
+2.  Open your theme's `package.json` file and update the `liferay-theme-tasks` 
+    to `8.0.0-beta.1`:
+    
+        "devDependencies": {
+        	"gulp": "^3.8.10",
+        	"liferay-theme-tasks": "8.0.0-beta.1",
+        	"liferay-theme-deps-6.2": "*"
+        },
+
+    +$$$
+
+    **Note:** 8.0.0-beta.1 is the latest version at the time of this writing. We 
+    recommend that you always use the latest version for full compatibility. You 
+    can find the latest version listed in the 
+    [liferay-themes-sdk change log](https://github.com/liferay/liferay-themes-sdk/blob/master/CHANGELOG.md).
+
+    $$$
+
+3.  Install the updated dependency:
+
+        npm install
+
+4.  Navigate to your theme's root directory and run the command below to 
     initially upgrade your 6.2 theme to 7.0:
 
         gulp upgrade
@@ -55,28 +76,6 @@ Here are the steps for using the Gulp `upgrade` task:
 
     The upgrade task automatically upgrades CSS code that it can identify. For 
     everything else, it suggests upgrades. 
-
-3.  Open your theme's `package.json` file and update the `liferay-theme-deps` 
-    and `liferay-theme-tasks` dependencies to `8.0.0-beta.1`:
-    
-        "devDependencies": {
-        	"gulp": "^3.8.10",
-        	"liferay-theme-tasks": "8.0.0-beta.1",
-        	"liferay-theme-deps-7.0": "8.0.0-beta.1"
-        },
-
-    +$$$
-
-    **Note:** 8.0.0-beta.1 is the latest version at the time of this writing. We 
-    recommend that you always use the latest version for full compatibility. You 
-    can find the latest version listed in the 
-    [liferay-themes-sdk change log](https://github.com/liferay/liferay-themes-sdk/blob/master/CHANGELOG.md).
-
-    $$$
-
-4.  In your theme's root directory, install the updated dependencies:
-
-        npm install
 
 5.  Use the command below to run the 7.0 to 7.1 upgrade task:
 

@@ -4,7 +4,7 @@
 
 - Renaming CSS files
 - Removing unneeded CSS files
-- Variable deprecations and removals
+- Updating CSS rules and imports
 - Modifications to CSS responsiveness tokens
 
 The theme upgrade process involves conforming to these changes. In this section, 

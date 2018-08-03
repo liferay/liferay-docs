@@ -20,20 +20,26 @@ Learning Path. It's similar to many Liferay Portal 6.2 themes, as it extends the
 adding configurable settings and incorporating a responsive design that 
 leverages Font Awesome icons and Bootstrap. The theme 
 [ZIP file](/documents/10184/656312/lunar-resort-theme-migration-6.2.zip) 
-contains its original source code.
+contains its original source code. 
 
 ![Figure 1: The Lunar Resort example theme upgraded in this tutorial uses a clean, minimal design.](../../../../images/finished-7-1-theme.png)
 
 Before upgrading a theme, consider 
-[migrating the theme](/develop/tutorials/-/knowledge_base/7-1/upgrading-6.2-liferay-theme-sdk-themes-with-the-gulp-upgrade-task) 
-to use the [Liferay Themes SDK tools](https://github.com/liferay/liferay-themes-sdk/tree/master/packages). 
-@product-ver@ doesn't require this migration, but the Liferay Themes SDK's Gulp 
-`upgrade` task automates many upgrade steps. Themes that use the Liferay Themes 
-SDK tools can also leverage exclusive features, such as 
+[migrating the theme](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6.2-themes) 
+to use the 
+[Liferay Themes Node.js SDK](https://github.com/liferay/liferay-themes-sdk/tree/master/packages). 
+@product-ver@ doesn't require this migration, but the Liferay Themes Node.js 
+SDK's Gulp `upgrade` task automates many upgrade steps. Themes that use the 
+Liferay Themes Node.js SDK can also leverage exclusive features, such as 
 [Themelets](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes). 
 
+If your theme uses Bootstrap 3 and Lexicon CSS, not to worry. You can still 
+use Bootstrap 3 and Lexicon CSS alongside Bootstrap 4 and Clay CSS markup, 
+thanks to @product@'s 
+[compatibility layer](/develop/tutorials/-/knowledge_base/7-1/using-the-bootstrap-3-lexicon-css-compatibility-layer). 
+
 Follow the steps in the 
-[Running the 6.2 theme uprade task](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6.2-themes) 
-tutorial to learn how to migrate your theme to use the Liferay Themes SDK tools 
-and use their Gulp `upgrade` task. Otherwise, you can follow the steps in the 
+[Running the 6.2 theme upgrade task](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6.2-themes) 
+tutorial to learn how to migrate your theme to use the Liferay Themes Node.js 
+SDK and its Gulp `upgrade` task. Otherwise, you can follow the steps in the 
 remaining tutorials in this section to manually upgrade your 6.2 theme to 7.1. 

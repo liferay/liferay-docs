@@ -89,7 +89,7 @@ these steps to update `portal_normal.ftl`:
     `${theme.wrapPortlet("portlet.ftl", content_include)}` | `<@liferay_theme["wrap-portlet"] page="portlet.ftl"> <@liferay_util["include"] page=content_include /> </@>` |
     `${theme.include(body_bottom_include)}`                | `<@liferay_util["include"] page=body_bottom_include />`                                                      |
     `${theme.include(bottom_include)}`                     | `<@liferay_util["include"] page=bottom_include />`                                                           |
-    `${theme.getSetting("my-theme-setting")}`              | `${theme_settings["my-theme-setting"]}`                                                                      |
+    `${theme_settings["my-theme-setting"]}`                | `${themeDisplay.getThemeSetting("my-theme-setting")}`                                                                      |
     `${theme.runtime("56", "articleId=" + my_article_id)}` | `<@liferay_portlet["runtime"] portletName=`<br/>`"com_liferay_journal_content_web_portlet_JournalContentPortlet"` <br/>`queryString="articleId=" + my_article_id />`|
 
 2.  Optionally remove the breadcrumbs and page title code:
@@ -218,8 +218,8 @@ For example, the Lunar Resort theme's updated theme settings are shown below:
 That covers most, if not all, of the theme template changes. If you modified any 
 other FreeMarker theme templates, compare them with templates in the 
 [`_unstyled` theme](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates). 
-If your theme uses the Liferay Themes SDK tools, refer to the suggested changes 
-that the Gulp `upgrade` task reports. 
+If your theme uses the Liferay Themes Node.js SDK, refer to the suggested 
+changes that the Gulp `upgrade` task reports. 
 
 ## Related Topics [](id=related-topics)
 

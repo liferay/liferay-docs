@@ -1,11 +1,12 @@
-# Updating 6.2 CSS Rules [](id=updating-6.2-css-rules)
+# Updating 6.2 CSS Rules and Imports [](id=updating-6.2-css-rules-and-imports)
 
 @product-ver@ uses Bootstrap 4's CSS rule syntax. The new syntax lets developers 
-leverage Bootstrap 4 features and improvements. If your theme uses the Liferay 
-Themes SDK development tools, the Gulp `upgrade` task reports automatic CSS 
-updates and suggests manual updates. For example, here is part of the task log 
-for the Lunar Resort theme upgrade from 6.2 to 7.0. For each update performed 
-and suggested, the task reports a file name and line number range.:
+leverage Bootstrap 4 features and improvements. Font Awesome icons have also 
+been moved, requiring changes to your imports. If your theme uses the Liferay 
+Themes Node.js SDK, the Gulp `upgrade` task reports automatic CSS updates and 
+suggests manual updates. For example, here is part of the task log for the Lunar 
+Resort theme upgrade from 6.2 to 7.0. For each update performed and suggested, 
+the task reports a file name and line number range:
 
     ----------------------------------------------------------------
      Bootstrap Upgrade (2 to 3)
@@ -25,6 +26,8 @@ and suggested, the task reports a file name and line number range.:
         change your rule (lines 207-226)
         Line 212: You would change height from "62px" to "82px"
         ...
+
+## Manually Updating CSS Rules [](id=manually-updating-css-rules)
 
 Follow these steps to update your theme's CSS rules manually:
 
@@ -110,6 +113,15 @@ See the
 for CSS rules that changed in Bootstrap 3. Likewise, you can refer to the 
 [Migrating to v4 guide](https://getbootstrap.com/docs/4.0/migration/) 
 for updating CSS rules to Bootstrap 4. 
+
+## Updating Font Awesome Imports [](id=updating-font-awesome-imports)
+
+Font Awesome icons were moved to their own file (`font-awesome.scss`) to avoid 
+the IE9 CSS selector limitation. If you include these imports in your 
+`_custom.scss` file, you must remove them:
+
+    @import "aui/alloy-font-awesome/scss/mixins-alloy";
+    @import "aui/alloy-font-awesome/scss/variables";
 
 ## Related Topics
 

@@ -6,16 +6,21 @@ a web implementation of Liferay's
 [Lexicon Experience Language](https://lexicondesign.io/). 
 The Lexicon Experience Language provides styling guidelines and best practices 
 for application UIs. Clay's CSS, HTML, and JavaScript components enable 
-developers to build fully-realized UIs quickly and effectively. This section 
-demonstrates how to apply Lexicon to your HTML markup. For example, this is the 
-Liferay Portal 6.2 Lunar Resort's reservation form:
+developers to build fully-realized UIs quickly and effectively. @product@'s 
+[compatibility layer](/develop/tutorials/-/knowledge_base/7-1/using-the-bootstrap-3-lexicon-css-compatibility-layer) 
+let's you use 
+[Lexicon CSS](https://lexiconcss.wedeploy.io/) 
+markup alongside 
+[Clay CSS](https://clayui.com/). 
+This section demonstrates how to apply Clay to your HTML markup. For example, 
+this is the Liferay Portal 6.2 Lunar Resort's reservation form:
 
     <p>
-    Thanks for choosing to stay at the Liferay Lunar Resort! Please fill out the
-    form below to book your stay. We know you have a choice in where to stay on
-    the
-    Moon... oh wait no you don't. Thanks for picking us anyways. We'll see you
-    soon on the Moon!
+    Thanks for choosing to stay at the Liferay Lunar Resort! Please fill out the 
+    form below to book your stay. We know you have a choice in where to stay on 
+    the Moon... 
+    oh wait no you don't. Thanks for picking us anyways. We'll see you soon on 
+    the Moon!
     </p>
 
     <form class="form-horizontal">
@@ -44,26 +49,21 @@ Liferay Portal 6.2 Lunar Resort's reservation form:
     </form>
 
     <p style="padding-bottom:25px;">
-    Thanks again for booking with Liferay. When you book with Liferay, you
-    remember your stay. Please take a moment to fill out our guestbook below.
+    Thanks again for booking with Liferay. When you book with Liferay, you 
+    remember your stay. Please take a moment to fill out our guestbook below. 
     </p>
 
 The HTML code above uses Bootstrap 2's markup and CSS classes. Here's the Lunar 
 Resort form's updated Clay markup:
 
-    <?xml version="1.0"?>
+    <p>
+    Thanks for choosing to stay at the Liferay Lunar Resort! Please fill out the 
+    form below to book your stay. We know you have a choice in where to stay on 
+    the Moon... 
+    oh wait no you don't. Thanks for picking us anyways. We'll see you soon on 
+    the Moon!
+    </p>
 
-    <root available-locales="en_US" default-locale="en_US">
-            <dynamic-element name="content" type="text_area"
-            index-type="keyword" index="0">
-                    <dynamic-content language-id="en_US">
-                            <![CDATA[
-                                    <p>Thanks for choosing to stay at the
-                                    Liferay Lunar Resort! Please fill out the
-                                    form below to book your stay. We know you
-                                    have a choice in where to stay on the Moon...
-                                    oh wait no you don't. Thanks for picking us
-                                    anyways. We'll see you soon on the Moon!</p>
     <form role="form-horizontal">
             <fieldset>
               <legend>Reservation Form</legend>
@@ -84,13 +84,9 @@ Resort form's updated Clay markup:
             </fieldset>
     </form>
 
-    <p style="padding-bottom:25px;">Thanks again for booking with Liferay. When
-    you book with Liferay, you remember your stay. Please take a moment to fill
+    <p style="padding-bottom:25px;">Thanks again for booking with Liferay. When 
+    you book with Liferay, you remember your stay. Please take a moment to fill 
     out our guestbook below.</p>
-                            ]]>
-                    </dynamic-content>
-            </dynamic-element>
-    </root>
 
 The Clay updates applied to the form are as follows:
 
