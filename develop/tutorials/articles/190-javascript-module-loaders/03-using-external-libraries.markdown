@@ -45,9 +45,9 @@ Liferay AMD Loader to use your Library. Follow these steps:
 1.  Open the Control Panel, navigate to *Configuration* &rarr; 
     *System Settings*. 
 
-2.  Click *JavaScript Loader* under the *Infrastructure* tab. 
+2.  Click *JavaScript Loader* under *Platform* &rarr; *Infrastructure*. 
 
-3.  Uncheck the `expose global` option.
+3.  Uncheck the `expose global` option. 
 
 Now you know how to adapt external libraries for Liferay's JavaScript Loaders.
 
