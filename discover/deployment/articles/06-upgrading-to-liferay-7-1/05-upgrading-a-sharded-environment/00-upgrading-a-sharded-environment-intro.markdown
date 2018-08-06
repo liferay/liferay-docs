@@ -1,15 +1,15 @@
 # Upgrading a Sharded environment [](id=upgrading-sharded-environment)
 
-Beginning in 7.0, Liferay has decided to remove its own physical partitioning
-implementation(also known as sharding) in favor of the capabilities provided
+Since @product@ 7.0, Liferay removed its own physical partitioning
+implementation (also known as sharding) in favor of the capabilities provided
 natively by database vendors. Liferay will continue to support its logical
 partitioning capabilities (also known as instances) for the foreseeable future.
 
-If you come from a sharded installation of Liferay Portal 6.2, you can upgrade to
-@product-ver@ by following these steps. Please note that after the upgrade, your
-installation will no longer be sharded and as a result you will have as many 
-independent databases as shards you had in the past. The example below upgrades an
-installation with three shards. 
+If you come from a sharded installation of Liferay Portal 6.2, you can upgrade
+to @product-ver@ by following these steps. Please note that after the upgrade,
+your installation will no longer be sharded and as a result you will have as
+many independent databases as shards you had in the past. The example below
+upgrades an installation with three shards. 
 
 ## Upgrading default shard [](id=upgrading-default-shard)
 
