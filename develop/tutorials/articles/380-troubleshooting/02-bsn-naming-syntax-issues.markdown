@@ -1,10 +1,18 @@
 # Resolving Bundle-SymbolicName Syntax Issues [](id=resolving-bundle-symbolicname-syntax-issues)
 
-An OSGi bundle's `Bundle-SymbolicName` and `Bundle-Version` manifest headers
-uniquely identify it. You can specify a bundle's `Bundle-SymbolicName` in these
-ways:
+Liferay's OSGi Runtime framework sometimes throws an
+`IllegalContextNameException`. Often, this is because an OSGi bundle's
+`Bundle-SymbolicName` manifest header has a space in it.
 
-1.  `Bundle-SymbolicName` header in a bundle's (module's) `bnd.bnd` file.
+The `Bundle-SymbolicName` uniquely identifies the bundle---along with the
+`Bundle-Version` manifest header---and cannot contain spaces. To follow naming
+best practices, use a reverse-domain name in your `Bundle-SymbolicName`. For
+example, a module with the domain `troubleshooting.liferay.com` would be
+reversed to `com.liferay.troubleshooting.`.
+
+There are three ways to specify a bundles `Bundle-SymbolicName`:
+
+1.  `Bundle-SymbolicName` header in a bundle's `bnd.bnd` file.
 
 2.  `Bundle-SymbolicName` header in a plugin WAR's
     `liferay-plugin-package.properties` file.
@@ -15,10 +23,6 @@ ways:
 For plugin WARs, specifying the `Bundle-SymbolicName` in the
 `liferay-plugin-package.properties` file is preferred. 
 
-**Important**: `Bundle-SymbolicName` values must not contain spaces. On bundle
-deployment, Liferay's OSGi Runtime framework throws an
-`IllegalContextNameException` if its `Bundle-SymbolicName` has a space.
-
 For example, if you deploy a plugin WAR that has no `Bundle-SymbolicName` header
 in its `liferay-plugin-package.properties`, the
 [WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
@@ -28,15 +32,6 @@ space in it (e.g., `space-program-theme v1.war`) an
 
     org.apache.catalina.core.ApplicationContext.log The context name 'space-program-theme v1' does not follow Bundle-SymbolicName syntax.
     org.eclipse.equinox.http.servlet.internal.error.IllegalContextNameException: The context name 'space-program-theme v1' does not follow Bundle-SymbolicName syntax.
-
-To avoid using spaces and to follow naming best practices, use a reverse-domain
-name in your `Bundle-SymbolicName`.
-
-Here's an example domain name and reverse domain name:
-
-**Module domain**: `troubleshooting.liferay.com`
-
-**Module reverse-domain**: `com.liferay.troubleshooting`
 
 However you set your a `Bundle-SymbolicName`, refrain from using spaces.
 

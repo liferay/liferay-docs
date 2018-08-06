@@ -9,7 +9,7 @@ environments is straightforward.
 -   `NoClassDefFoundError`: occurs when a compiled class references
     another class that isn't on the runtime classpath.
 
-In OSGi environments, however, there are these additional cases where a
+In OSGi environments, however, there are additional cases where a
 `ClassNotFoundException` or `NoClassDefFoundError` can occur:
 
 1.  The missing class belongs to a module dependency that's an OSGi module. 
@@ -17,7 +17,7 @@ In OSGi environments, however, there are these additional cases where a
     module. 
 3.  The missing class belongs to a global library, either at the @product@ 
     webapp scope or the application server scope. 
-4.  The missing class belongs to a Java runtime package.  
+4.  The missing class belongs to a Java runtime package.
 
 This tutorial explains how to handle each case.
 
@@ -29,22 +29,20 @@ In this case, there are two possible causes:
     consume another module's exported class, the consuming module must import 
     the exported package that contains the class. To do this, you add an
     `Import-Package` header in the consuming module's `bnd.bnd` file. If the
-    consuming module tries to access the class without importing it, a 
+    consuming module tries to access the class without importing the package, a 
     `ClassNotFoundException` or `NoClassDefFoundError` occurs. 
 
-    In the consuming module, make sure to import the correct package. First 
-    check the package name. If the package import is correct but you still get 
-    the exception or error, the class might no longer exist in the package. 
+    Check the package name and make sure the consuming module imports the right
+    one. If the package import is correct but you still get the exception or
+    error, the class might no longer exist in the package. 
 
-2.  **The class no longer exists in the imported package:** In OSGi runtime 
-    environments, modules can change and come and go. If you reference another
-    module's class that its developer removed, a `NoClassDefFoundError` or
-    `ClassNotFoundException` occurs.
-    [Semantic Versioning](http://semver.org) 
-    guards against this scenario: removing a class from an 
-    exported package constitutes a new major version for that package. 
-    Neglecting to increment the package's major version breaks dependent 
-    modules. 
+2.  **The class no longer exists in the imported package:** Modules are changed
+    frequently In OSGi runtime environments. If you reference another module's
+    class that its developer removed, a `NoClassDefFoundError` or
+    `ClassNotFoundException` occurs. [Semantic Versioning](http://semver.org)
+    guards against this scenario: removing a class from an exported package
+    constitutes a new major version for that package. Neglecting to increment
+    the package's major version breaks dependent modules. 
 
     For example, say a module that consumes the class `com.foo.Bar` specifies the 
     package import `com.foo;version=[1.0.0, 2.0.0)`. The module uses `com.foo` 
@@ -56,7 +54,7 @@ In this case, there are two possible causes:
     `ClassNotFoundException` or `NoClassDefFoundError` when other modules look 
     up or reference that class. 
 
-    You have these options since the class no longer exists in the package: 
+    You have limited options when the class no longer exists in the package: 
 
     -   Adapt to the new API. To learn how to do this, read the 
         package's/module's Javadoc, release notes, and or formal documentation. 
@@ -89,13 +87,12 @@ In this case, you have two options:
 
 ## Case 3: The Missing Class Belongs to a Global Library [](id=case-3-the-missing-class-belongs-to-a-global-library)
 
-In this case, you can configure @product@ so the OSGi system module exports 
-the missing class's package. Then your module can import it. You should **NOT**, 
-however, undertake this lightly. If Liferay intended to make a global library 
+In this case, you can configure @product@ so the OSGi system module exports the
+missing class's package. Then your module can import it. You should **NOT**,
+however, undertake this lightly. If Liferay intended to make a global library
 available for use by developers, the system module would already export this
-library! Still, if you must access a global library that's not currently 
-exported and can't think of **any** other solution, you can consider adding the 
-required package for export by the system module. There are two ways to do this: 
+library! Proceed only if you have no other solution, and watch out for
+unintended consequences. There are two ways to export the package: 
 
 1.  In your `portal-ext.properties` file, use the property
     [`module.framework.system.packages.extra`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Module%20Framework)

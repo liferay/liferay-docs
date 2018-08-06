@@ -1,7 +1,7 @@
 # Resolving Bundle Requirements [](id=resolving-bundle-requirements)
 
-If one of your bundles imports a package that no other bundle in the Liferay
-OSGi runtime exports, you get a bundle exception. Here's an example
+If one of your bundles needs a package that is not exported by any other bundle
+in the Liferay OSGi runtime, you get a bundle exception. Here's an example
 exception:
 
     ! could not resolve the bundles: [com.liferay.messaging.client.command-1.0.0.201707261701 org.osgi.framework.BundleException: Could not resolve module: com.liferay.messaging.client.command [1]
@@ -16,9 +16,8 @@ exception:
     com.liferay.petra.io [16]
     Unresolved requirement: Require-Capability osgi.extender; filter:="(osgi.extender=osgi.serviceloader.processor)"
 
-The first part of the message states *could not resolve the bundles*. The rest
-of the message shows a string of unresolved requirements. Liferay's OSGi Runtime
-could not resolve one of the bundle's transitive requirements.
+The first line states *could not resolve the bundles*. What follows is a string
+of requirements that Lferay's OSGi Runtime could not resolve.
 
 The bundle exception message follows this general pattern:
 
@@ -28,9 +27,9 @@ The bundle exception message follows this general pattern:
 -   etc.
 -   Module Z provides `www.xxx` but has an unresolved  requirement `yyy.zzz`.
 
-The pattern stops at the final requirement no module satisfies. The last module's
-dependencies are key to resolving the bundle exception. There are two possible
-causes:
+The pattern stops at the final requirement which no module satisfies. The last
+module's dependencies are key to resolving the bundle exception. There are two
+possible causes:
 
 1.  A dependency that satisfies the final requirement might be missing from the
     build file.
@@ -75,7 +74,7 @@ to verify the dependencies are in Liferay's OSGi Runtime:
        10|Active     |    1|Apache Felix Gogo Runtime (1.0.0)|1.0.0
     ...
 
-Notice the dependency module `org.apache.aries.spifly.dynamic.bundle` is missing
+The dependency module `org.apache.aries.spifly.dynamic.bundle` is missing
 from the runtime bundle list. The `org.apache.aries.spifly.dynamic.bundle`
 module's `MANIFEST.MF` file shows it  provides the requirement capability
 `osgi.extender; filter:="(osgi.extender=osgi.serviceloader.processor)"`:
@@ -85,7 +84,7 @@ module's `MANIFEST.MF` file shows it  provides the requirement capability
      oader.processor";version:Version="1.0"
 
 This capability `osgi.extender; filter:="(osgi.extender=osgi.serviceloader.processor)"`
-was the unresolved
+is the unresolved
 requirement we identified earlier. Deploying this missing bundle
 `org.apache.aries.spifly.dynamic.bundle` satisfies the example module's
 requirement and allows the module to resolve and install. 
