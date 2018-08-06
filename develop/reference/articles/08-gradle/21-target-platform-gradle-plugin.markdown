@@ -13,7 +13,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
 	dependencies {
-		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "1.1.0"
+		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "1.1.1"
 	}
 
 	repositories {
@@ -87,9 +87,10 @@ into the Bndrun resolve operation.
 The plugin applies the [Target Platform](#target-platform-plugin) and the
 [`eclipse`](https://docs.gradle.org/current/userguide/eclipse_plugin.html)
 plugins to your project, and also adds a special `targetPlatformIDE`
-configuration, which is used to configure the Eclipse model in Gradle to add all
-target platform artifacts to the classpath so they are visible to Eclipse's Java
-Model Search (for looking up sources to classes).
+configuration, which is used to configure both the `eclipse` model and `idea`
+plugin model in Gradle to add all target platform artifacts to the classpath so
+they are visible to both Eclipse and IntelliJ's Java Model Search (for looking
+up sources to classes).
 
 ## Project Extension [](id=project-extension)
 
