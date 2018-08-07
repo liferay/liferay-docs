@@ -1,20 +1,20 @@
 # Bean Portlet - Portlet 3 [](id=bean-portlet-portlet-3)
 
-@product-ver@ GA2 onward supports the [JSR
-362](https://jcp.org/en/jsr/detail?id=362) Portlet 3.0 standard from the JCP. It
-features a new style of portlet development known as "bean portlets" that
-utilize Contexts and Dependency Injection (CDI). Bean portlets provide the
-ability to fully leverage [all the new
-features](https://portals.apache.org/pluto/v301/v3Features.html) in Portlet 3.0
-within compliant portals like Liferay.
+@product-ver@ GA2 onward supports the
+[JSR 362](https://jcp.org/en/jsr/detail?id=362)
+Portlet 3.0 standard from the Java Community Process (JCP). Portlet 3.0 features
+a new style of portlet development called "bean portlets" that use Contexts and
+Dependency Injection (CDI). Bean portlets let you fully leverage
+[all the new Portlet 3.0 features](https://portals.apache.org/pluto/v301/v3Features.html)
+in compliant portals, such as Liferay.
 
 Here you'll learn how to create and deploy a bean portlet. And if you're
 familiar with developing OSGi portlets, we'll help you relate what you already
-know to bean Portlet development---It's straightforward!
+know to bean portlet development---It's straightforward!
 
 ## Creating a bean portlet project [](id=creating-a-bean-portlet-project)
 
-CDI bean portlets have a Maven archetype.
+Bean portlets have a Maven archetype.
 
 - Group: `com.liferay`
 - Artifact: `com.liferay.project.templates.cdi.bean.portlet`
@@ -22,24 +22,26 @@ CDI bean portlets have a Maven archetype.
 
 To create a bean portlet project, execute a Maven command like this one:  
 
-```mvn archetype:generate \
-  -DarchetypeGroupId=com.liferay \
-  -DarchetypeArtifactId=com.liferay.project.templates.cdi.bean.portlet \
-  -DarchetypeVersion=1.0.0 \
-  -DgroupId=com.mycompany \
-  -DartifactId=com.mycompany.demo.bean.portlet```
+    mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay \
+    -DarchetypeArtifactId=com.liferay.project.templates.cdi.bean.portlet \
+    -DarchetypeVersion=1.0.0 \
+    -DgroupId=com.mycompany \
+    -DartifactId=com.mycompany.demo.bean.portlet
 
 Maven prompts you for a project author name, version, and portlet class
 name. For this example, the defaults are fine for everything else. 
 
-If you were to enter "Foo" as the portlet class name, then the generated project
-would have the following layout:
+If you entered `Foo` as the portlet class name, for example, generates this
+project layout: 
 
 - `com.mycompany.demo.bean.portlet` &rarr; Arbitrary project name.
     - `src/main/java`
-        - `com.mycompany.constants.FooPortletKeys` &rarr; Declares portlet constants.
+        - `com.mycompany.constants.FooPortletKeys` &rarr; Declares portlet 
+        constants.
         - `com.mycompany.portlet.FooPortlet` &rarr; CDI bean portlet class.
-    - `src/main/webapp/WEB-INF/beans.xml` &rarr; Signals CDI to scan the portlet for annotations. 
+    - `src/main/webapp/WEB-INF/beans.xml` &rarr; Signals CDI to scan the 
+    portlet for annotations. 
     - `pom.xml` &rarr; Specifies the project's dependencies and packaging.
 
 When Maven generates the project based on the archetype, it uses the class name
@@ -47,17 +49,19 @@ that you entered for the CDI bean portlet class filename. It also uses it as
 the value of a portlet key constant. 
 
 The generated bean portlet project depends on the Portlet 3.0 API and the "Weld"
-implementation of Contexts and Dependency Injection (CDI). In order to
-facilitate registration of bean portlets, the project also depends on Liferay's
-CDI portable extension. See the project's `pom.xml` for the complete list of
-dependencies.
+implementation of CDI. The project also depends on Liferay's CDI portable
+extension, which facilitates bean portlet registration. The `pom.xml` file lists
+all the dependencies.
 
 +$$$
 
-**Note:** A bean portlet is packaged as a WAR. It differs from a traditional 
-portlet and Liferay portlet WAR in that the `portlet.xml` and
-`liferay-portlet.xml` descriptors are optional. Instead, annotations are used
-to specifiy portlet configuration.
+**Note:** A bean portlet is packaged as a WAR. The bean portlet project created 
+using the above archetype differs from a traditional  portlet and Liferay
+portlet project in that it doesn't have a `portlet.xml` and
+`liferay-portlet.xml` descriptor. You can configure bean portlets using either
+configuration annotations (described next), descriptors, or both. If using
+annotations and descriptors, the descriptors take precedence. Annotations,
+however, let you configure the portlet in its source code. 
 
 $$$ 
 
@@ -115,10 +119,10 @@ annotations, each specifying a different value for the `locale` element.
 
 The `@LiferayPortletConfiguration` annotation specifies Liferay-specific
 configurable poperties. Assign the portlet's name via the `portletName`
-property. Assign the Widget category in which to make the portlet available to
-users via the`com.liferay.portlet.display-category` property. Setting the
-`com.liferay.portlet.instanceable=true` property makes it possible for users add
-multiple instances of the portlet to a portal page.
+property. Use the the`com.liferay.portlet.display-category` property to assign
+the Widget category in which to make the portlet available to users. Setting the
+`com.liferay.portlet.instanceable=true` lets users add multiple instances of the
+portlet to a page.
 
 +$$$
 
@@ -127,7 +131,8 @@ annotations are synonymous with the `javax.portlet.*` and
 `com.liferay.portlet.*` properties in the OSGi `@Component` annotation (used in
 [Liferay MVC Portlets](/develop/tutorials/-/knowledge_base/7-1/creating-an-mvc-portlet#creating-a-portlet-component), for example).
 If you're familiar with the `portlet.xml` and `liferay-portlet.xml` descrptors,
-the [Portlet Descriptor to OSGi Service Property Map](https://dev.liferay.com/develop/reference/-/knowledge_base/7-1/portlet-descriptor-to-osgi-service-property-map) 
+the
+[Portlet Descriptor to OSGi Service Property Map](https://dev.liferay.com/develop/reference/-/knowledge_base/7-1/portlet-descriptor-to-osgi-service-property-map) 
 shows you the OSGi `@Component` property equivalent---there's an
 `@PortletConfiguration` or `@LiferayPortletConfiguration` equivalent setting for
 each `@Component` property. 
@@ -135,18 +140,17 @@ each `@Component` property.
 $$$
 
 The `portletConfig` field's `@Inject` annotation instructs CDI to inject the
-bean portlet with the
+bean portlet with a
 [`PortletConfig`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/PortletConfig.html)
-instance that corresponds to the configuration specified in the aforementioned
-annotations.
+instance specified by the aforementioned annotations.
 
 The `doView` method prints a greeting to the portlet. The
 [`@RenderMethod`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/RenderMethod.html)
 annotation assures that the `doView` method is executed during the
 `RENDER_PHASE` of the portlet lifecycle. The annotation's `include =
-"/WEB-INF/jsp/view.jsp"` element specifies a JSP that is to dispatched-to during
+"/WEB-INF/jsp/view.jsp"` element specifies a JSP that is dispatched to during
 the `RENDER_PHASE`. The `portletNames = {FooPortletKeys.Foo}` element associates
-the `doView` method with the "Foo" portlet.
+the `doView` method with the portlet named `Foo`. 
 
 ## Deploying the bean portlet [](id=deploying-the-bean-portlet)
 
