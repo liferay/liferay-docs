@@ -127,11 +127,18 @@ search requirements.
 
 ## Site Scoped Search Configuration
 
-The only available site configuration option for search is the use of
-[Search Pages](/discover/portal/-/knowledge_base/7-1/configuring-search-pages).
+Search isn't configurable at the Site Scope by the strict definition of 
+[Site Scoped Configuration](/discover/portal/-/knowledge_base/7-1/setting-up#configuratino-scope)
+However, the use of
+[Search Pages](/discover/portal/-/knowledge_base/7-1/configuring-search-pages)
+is a way to influence site-specific search behavior. Search pages contain the
+search widgets used to search for content within a particular site.
 
-Search pages contain the search widgets used to search for content within a
-particular site.
+Note that 
+[configuration of a Search Bar](/discover/portal/-/knowledge_base/7-1/searching-for-assets#configuring-the-search-bar) 
+widget added to a page, or configuration of the classic Search Application,
+still available for adding to a page in @product-ver@, is page-scoped
+configuration.
 
 ## Widget Scoped Search Configuration
 
