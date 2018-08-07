@@ -37,10 +37,11 @@ a patch.
 
 Liferay distributes patches as `.zip` files, whether they are hotfixes or fix
 packs. When you receive one, either via a LESA ticket (hotfix) or through
-downloading a fix pack from the [Customer Portal](https://web.liferay.com/group/customer), 
-place it in the `patches` folder that's inside the Patching Tool's home
-folder. Once you've done that, it's a simple matter to install it. First,
-execute
+downloading a fix pack from the
+[Customer Portal](https://web.liferay.com/group/customer), 
+place it in the Patching Tool's `patches` folder (e.g., `[Liferay
+Home]/patching-tool/patches`) without unzipping it. Once you've done that, it's
+a simple matter to install it. First, execute
 
     patching-tool info
  
