@@ -13,7 +13,7 @@ of the two. Once you have @product@ installed on more than one application
 server node, there are several optimizations that must be made. At a minimum,
 @product@ should be configured in the following way for a clustered environment:
 
-1.  [All nodes should be pointing to the same database or database  cluster.](/discover/deployment/-/knowledge_base/7-1/point-all-nodes-to-the-same-database) 
+1.  [All nodes should point to the same database or database  cluster.](/discover/deployment/-/knowledge_base/7-1/point-all-nodes-to-the-same-database) 
 
 2.  [Documents and Media repositories must have the same configuration and be accessible to all nodes of the cluster.](/discover/deployment/-/knowledge_base/7-1/configure-documents-and-media-the-same-for-all-nodes) 
 

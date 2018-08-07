@@ -2,9 +2,9 @@
 
 +$$$
 
-**Note:** These instructions are for adding the clustering modules to **Liferay 
-Portal**. Skip them if you're running Liferay DXP, as it has clustering
-available out-of-the-box. 
+**Note:** These instructions are for adding the clustering modules to **Liferay
+Portal**. Skip them if you're running Liferay DXP, as clustering is built-in out
+of the box. 
 
 $$$
 
@@ -44,7 +44,7 @@ folder:
 
 ## Build and Deploy the Clustering Modules [](id=build-and-deploy-clustering-modules)
 
-It's time to build and deploy the clustering modules:
+Now build and deploy the clustering modules:
 
 1.  Build and deploy the clustering modules to the `../bundles/osgi/portal` 
     folder:
