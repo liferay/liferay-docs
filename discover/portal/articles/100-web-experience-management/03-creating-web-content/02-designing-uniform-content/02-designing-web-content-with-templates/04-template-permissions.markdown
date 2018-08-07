@@ -1,20 +1,35 @@
 # Assigning Template Permissions [](id=assigning-template-permissions)
 
-Permissions for templates are similar to permissions for structures. As with
-structures, you only want specific developers editing and creating templates.
-You may, however, want to make the templates viewable to some content creators
-who understand the template scripting language but are not directly writing the
-scripts. To determine who views and interacts with the template,
+Structures and Templates provide direct access to Liferay's APIs which makes
+them powerful, but it also means that they can be dangerous in the wrong hands.
+Only trusted users should be given access. The recommended practice is to
+create two Roles with access to structures and templates:
+
+-  **Content Developers** get full permission to create and edit structures 
+   and templates.
+ 
+-  **Content Creators** only need permission to view the structures and 
+   templates so they can use them to create content.
+
+When creating the Roles, define them to have global permission for all
+structures and templates across the entire instance or only for specific
+Sites. For more information on creating Roles, see the 
+[Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) 
+article.
+
+## Assigning Permissions for Individual Templates
+
+You can also control access to specific templates separately. To determine who 
+can view and interact with a template,
 
 1.  Go to the *Templates* tab.
 
 2.  Click the Action* button (![Actions](../../../../../images/icon-actions.png))
     for a template that you created and select *Permissions*.
 
-You can grant or deny permissions based on Roles. For instance, you may create
-a Role that can update the template and a second Role that can both update and
-delete. @product@ makes it possible to assign permissions based on the roles and
-responsibilities within your organization.
+Here permissions for a template can be set for Roles or Teams. Use this option 
+to provide access to templates on a case by case basis for users that shouldn't
+have access to templates on a larger level granted by a Role.
 
 Whether your Site is small and static or large and dynamic, Liferay's Web
 Content Management system enables you to plan and manage it. With tools such as
