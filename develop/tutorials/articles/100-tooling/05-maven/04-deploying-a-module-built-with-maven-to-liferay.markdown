@@ -70,7 +70,7 @@ tutorial for more information.
     An example configuration would look like this:
 
         <configuration>
-            <liferayHome>C:/liferay/liferay-ce-portal-7.0-ga3</liferayHome>
+            <liferayHome>C:/liferay/liferay-ce-portal-7.0-ga7</liferayHome>
         </configuration>
 
     +$$$
