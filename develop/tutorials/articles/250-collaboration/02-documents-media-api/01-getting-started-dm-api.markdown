@@ -15,30 +15,29 @@ main interfaces you'll use.
     to create these services. Because the remote service contains permission 
     checks, it's 
     [best practice](/develop/tutorials/-/knowledge_base/7-1/creating-remote-services#using-service-builder-to-generate-remote-services) 
-    to call the remote service instead of the local service. See the section 
-    below for instructions on getting a service reference. 
+    to call it instead of the local service. See the section below for 
+    instructions on getting a service reference. 
 
 -   **Entity Interfaces:** These interfaces represent entities in the Documents 
     and Media Library. Here are the primary ones you'll work with: 
 
-        -   `FileEntry`: Represents a file. 
-        -   `Folder`: Represents a folder.
-        -   `FileShortcut`: Represents a shortcut to a file.
+    -   `FileEntry`: Represents a file. 
+    -   `Folder`: Represents a folder.
+    -   `FileShortcut`: Represents a shortcut to a file.
 
 ## Getting a Service Reference
 
 Before you can do anything with the Documents and Media API, you must get a 
-service reference. 
-[Getting a service reference in OSGi](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services) 
-is straightforward. For example, here's a reference to `DLAppService`:
+service reference. You must use the `@Reference` annotation to 
+[get a service reference in an OSGi component via Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services). 
+For example, this code gets such a reference to `DLAppService`: 
 
     @Reference
     private DLAppService _dlAppService;
 
-Getting the reference via the `@Reference` annotation ensures that you leverage 
-OSGi's dependency management features. Although you can access the service via 
-its static `*Util` class (e.g., `DLAppServiceUtil` or `DLAppLocalServiceUtil`), 
-doing so bypasses OSGi's dependency management features, which could result in a 
-`NullPointerException`. Therefore, the only place you should use these `*Util` 
-classes is somewhere not managed by OSGi (e.g., JSPs). But even then, you should 
-avoid leveraging these `*Util` classes if at all possible. 
+Getting the reference this way ensures that you leverage OSGi's 
+[dependency management](/develop/tutorials/-/knowledge_base/7-1/leveraging-dependencies) 
+features. If you need to get a reference somewhere outside of an OSGi component 
+(e.g., in a JSP), then you should use a 
+[service tracker](/develop/tutorials/-/knowledge_base/7-1/service-trackers). 
+
