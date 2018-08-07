@@ -2,9 +2,9 @@
 
 Liferay's Kaleo workflow engine provides a robust system for reviewing and
 approving content in an enterprise environment. Even if you don't leverage
-custom scripts, it's a powerful and robust workflow solution. Adding custom
-scripts takes it to the next level. These scripts aren't run from the script
-console, but are embedded in 
+scripts, it's a powerful and robust workflow solution. Adding scripts takes it
+to the next level. These scripts aren't run from the script console, but are
+embedded in 
 [XML workflow definitions](/develop/tutorials/-/knowledge_base/7-1/crafting-xml-workflow-definitions) 
 and run during the execution of the workflow.
 
@@ -28,9 +28,9 @@ you could use this. Here are a few practical examples:
 
 -  Getting a list of users with a specific workflow-related role
 -  Sending an email to the designated content approver with a list of people to
-    contact if he is unable to review the content
+   contact if he is unable to review the content
 -  Creating an alert to be displayed in the Alerts portlet for any user assigned
-    to approve content
+   to approve content
 
 Of course, before you try any of this, you need to know the appropriate syntax
 for inserting a script into a workflow. In an XML workflow definition, a script
@@ -48,13 +48,12 @@ your script like this:
         ...
     </actions>
 
-Here's an example of a workflow script created in Groovy. This one is designed
-to be used with a `Condition` statement in Kaleo. It accesses Liferay's asset
-framework to determine the category of an asset in the workflow. The script uses
-the category to automatically determine the correct approval process. If the
-category `legal` has been applied to the asset, the asset is sent to the `Legal
-Review` task upon submission. Otherwise, the asset is sent to the `Default
-Review` task.
+Here's an example of a workflow script created in Groovy. This one is used with
+a `Condition` statement in Kaleo. It accesses Liferay's asset framework to
+determine the category of an asset. The script uses the category to determine
+the correct approval process automatically.  If the category `legal` has been
+applied to the asset, the asset is sent to the `Legal Review` task upon
+submission. Otherwise, the asset is sent to the `Default Review` task.
 
     <script>
         <![CDATA[
@@ -172,11 +171,10 @@ engine, you must pass in a concrete class from the particular bundle executing
 your script.
 
 The combination of Liferay's script and workflow engines is incredibly powerful.
-However, since it provides users with the ability to execute code, it can be
-dangerous. When configuring your permissions, be aware of the potential
-consequences of poorly or maliciously written scripts inside of a workflow
-definition. For more information on creating workflow definitions with Kaleo
-workflow, see the 
+Since, however, it enables users to execute code, it can be dangerous. When
+configuring your permissions, be aware of the potential consequences of poorly
+or maliciously written scripts inside a workflow definition. For more
+information on creating workflow definitions with Kaleo workflow, see the
 [workflow documentation](/discover/portal/-/knowledge_base/7-1/workflow).
 
 ## Related Topics [](id=related-topics)

@@ -1,8 +1,8 @@
 # Script Examples [](id=script-examples)
 
 Here are some examples to help you use Liferay's script console. Note: Most of
-these originated from this Liferay blog post: 
-[https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console](https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
+these originated from a [Liferay blog post](https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
+
 The following scripts are Groovy scripts but they can be adapted to other
 languages.
 
@@ -18,15 +18,15 @@ languages.
 
 ## Example 1: Presenting New Terms of Use to Users [](id=example-1-presenting-new-terms-of-use-to-users)
 
-This example retrieves some user information from the database, makes changes,
-and then saves the changes in the database. Suppose that your company has
+This example retrieves user information from the database, makes changes, and
+then saves the changes in the database. Suppose that your company has
 updated the 
 [terms of use](/discover/portal/-/knowledge_base/7-1/terms-of-use)
-and wants present each user with the updated terms of use whenever they sign in
-next. When users agree to the terms of use, a boolean attribute called
+and wants present users with the updated terms of use whenever they sign in
+next. When they agree to the terms of use, a boolean attribute called
 `agreedToTermsOfUse` is set in their user records. As long as the value of this
-variable is `true`, the user aren't presented with the terms of use when they
-sign in. However, if you set this flag to `false` for each user, each user must
+variable is `true`, users aren't presented with the terms of use when they
+sign in. If you set this flag to `false` for each user, each user must
 agree to the terms of use again before they can sign in. 
 
 1.  Enter and execute the following code in the script console:
@@ -67,7 +67,7 @@ agree to the terms of use again before they can sign in.
 
 3.  Click *Execute*.
  
-4.  Verify the script updated the records, by running the first script again. 
+4.  Verify the script updated the records by running the first script again. 
 
     All users (except the default user and your user) have been updated. 
 
@@ -76,7 +76,7 @@ You've enabled the new terms of use agreement for all users to accept.
 ## Example 2: Embedding HTML Markup in Script Outputs [](id=example-2-embed-html-markup-in-script-outputs)
 
 The output of the script console is rendered as HTML content. Thus, you can
-embed HTML markup in your outputs to change their look and feel. Here's an
+embed HTML markup in your output to change its look and feel. Here's an
 example:
 
     import com.liferay.portal.kernel.service.*
@@ -99,12 +99,12 @@ the same:
 `Your request failed to complete.`
 
 This message gives no detail about the error. To find information about the
-error and what caused it, you usually need to examine the server logs.
+error and what caused it, you must usually examine the server logs.
 
-However, you can use the following technique to make exception details appear in
-the script console. Wrap your code with a try / catch block and print the stack
-trace to the console output from the catch clause. Note that even this technique
-does not catch script syntax errors. Here's an example:
+You can, however, use the following technique to make exception details appear in
+the script console. Wrap your code with a try / catch block and print the
+stacktrace to the console output from the catch clause. Note that even this
+technique does not catch script syntax errors. Here's an example:
 
     try {
             nullVar = null
@@ -118,18 +118,18 @@ does not catch script syntax errors. Here's an example:
 
 ## Example 4: Implement a Preview Mode [](id=example-4-implement-a-preview-mode)
 
-Since Liferay's script console does not provide an undo feature, it can be very
-convenient to set up a kind of preview mode. The purpose of a preview mode is to
-determine any permanent effects of a script before any information is actually
-saved to the Liferay database. The preview mode consists in using a
-`previewMode` flag which determines whether the operations with permanent
-effects should be executed or not. If `previewMode` is `true`, all of the data
-which would be permanently affected by the script is systematically printed.
-This providers the user executing the script with an outline of the data
-impacted by the script. If the user determines that everything is OK, the flag
-can be switched so that the script can make permanent updates to the database.
+Since Liferay's script console does not provide an undo feature, it can be
+convenient to set up a kind of preview mode. The purpose of a preview mode is
+to determine any permanent effects of a script before any information is
+actually saved to the Liferay database. The preview mode consists in using
+a `previewMode` flag which determines whether the operations with permanent
+effects should be executed or not. If `previewMode` is `true`, all the data
+that would be permanently affected by the script is printed instead. Then you
+can see an outline of the data impacted by the script. If everything is okay,
+switch the flag so the script can make permanent updates to the database.
 
-Here's an example Groovy script that show the preview mode concept in action:
+Here's an example Groovy script that sets users to inactive. Clearly, you'd
+want to test this with preview mode before running it: 
 
     import java.util.Calendar
     import com.liferay.portal.kernel.service.*
@@ -176,13 +176,13 @@ not for end users. Limit script console access to portal administrators.
 
 $$$
 
-When a script has been running for a long time, it's possible for the script
-console to return an error even though the script can continue running and
-potentially conclude successfully. But it's impossible to know the outcome
-without the corresponding output!
+When a script has been running for a long time, the console could return an
+error even though the script can continue running and potentially conclude
+successfully. But it's impossible to know the outcome without the corresponding
+output!
 
 To bypass this limitation, you can send the output of the script console to a
-custom file instead of to the console itself or to the Liferay log. For example,
+file instead of to the console itself or to the Liferay log. For example,
 consider this script:
 
     import com.liferay.portal.kernel.service.*
@@ -209,8 +209,8 @@ consider this script:
 The script above creates a subfolder of
 [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 called `scripting` and saves the script output to a file in this folder. After
-running the script above, it's possible to read the generated file without
-direct access to the file system. Here's a second script that demonstrates this:
+running the script above, you can read the generated file without direct access
+to the file system. Here's a second script that demonstrates this:
 
     final def SCRIPT_ID = "MYSCRIPT"
     outputFile = new File("""${System.getProperty("liferay.home")}/scripting/out-${SCRIPT_ID}.txt""")

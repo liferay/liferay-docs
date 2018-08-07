@@ -1,6 +1,8 @@
 # Running Scripts From the Script Console [](id=running-scripts-from-the-script-console)
 
-The script console provides a single view for executing Groovy scripts on @product@ and printing their output. The console has predefined variables that facilitate printing output and working with portlets and @product@ users. Here you'll learn these things:
+The script console provides a single view for executing Groovy scripts and
+printing their output. It has predefined variables that facilitate printing
+output and working with portlets and users. Here you'll learn these things:
 
 - [How to execute a script in the script console](#running-the-sample-script) 
 
@@ -21,9 +23,9 @@ Start with running the script console's sample script.
 
 Here's how to run the sample script in the script console:
 
-1.  Sign in to @product@ as an administrator.
+1.  Sign in as an administrator.
 
-2.  In the *Product Menu*, navigate to *Control Panel* &rarr; *Configuration*
+2.  In the Product Menu, navigate to *Control Panel* &rarr; *Configuration*
     &rarr; *Server Administration*. 
 
 3.  Click on *Script*. This is the script console. The default sample script
@@ -39,8 +41,8 @@ Here's how to run the sample script in the script console:
 
 ![Figure 1: The script console's sample Groovy script prints the User count to the console's *Output* section.](../../../images/groovy-script-sample.png)
 
-The Groovy sample invokes Liferay service utility `UserLocalServiceUtil` to get
-the user count. Then it uses the `out` (a built-in `PrintWriter`) to output the
+The Groovy sample invokes the Liferay service utility `UserLocalServiceUtil` to
+get the user count. Then it uses `out` (a built-in `PrintWriter`) to write the
 count to the script console. 
 
 ## Predefined Variables [](id=predefined-variables)
@@ -71,9 +73,9 @@ instance's `Company`:
 
 ![Figure 1: Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the company and current user.](../../../images/groovy-script-current-user-info.png)
 
-Note that if you use `System.out.println`, for example, your output is printed
-to Liferay's log file. If you use `out.println` instead (using the predefined
-variable), your output is printed to the script console.
+Note that if you use `System.out.println`, your output is printed to Liferay's
+log file. If you use `out.println` instead (using the predefined variable),
+your output is printed to the script console.
 
 ## Tips [](id=tips)
 

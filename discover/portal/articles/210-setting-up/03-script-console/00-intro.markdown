@@ -2,8 +2,9 @@
 
 @product@ provides a robust script engine for executing
 [Groovy](http://groovy-lang.org/)
-scripts. You can execute scripts in the engine from the scripting console.  You can execute scripts to perform maintenance tasks like data cleanup, user maintenance operations, bulk invocations of Liferay's
-API, or even system level operations.
+scripts. You can execute scripts to perform maintenance tasks like data
+cleanup, user maintenance operations, bulk invocations of Liferay's API, or
+even system level operations in the scripting console.
 
 These tutorials cover the following scripting topics: 
 
@@ -15,6 +16,7 @@ These tutorials cover the following scripting topics:
 
 - [Script examples](/discover/portal/-/knowledge_base/7-1/script-examples)
 
-Invoking Liferay's services is discussed first because it's part of the most
-common scripting tasks. If you're familiar with Liferay's API, this will be very
-easy for you. 
+The most common use of the scripting console is to invoke Liferay's services,
+so that's covered first. Familiarity with Liferay's API makes the scripting
+console a useful tool. 
+

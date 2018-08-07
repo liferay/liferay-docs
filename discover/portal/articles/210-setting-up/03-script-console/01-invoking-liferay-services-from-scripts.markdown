@@ -6,12 +6,12 @@ are the fastest and most convenient way to invoke Liferay
 services in the
 [script console](/discover/portal/-/knowledge_base/7-1/running-scripts-from-the-script-console).
 You can use Groovy to invoke Liferay services the same way you would use Java.
-Furthermore, Groovy's syntax facilitates writing concise elegant scripts. 
+Groovy's syntax facilitates writing concise elegant scripts. 
 
 This first example illustrates correct syntax for interacting with Liferay
 services. It uses `UserLocalServiceUtil` to retrieve a list of users and print
-their names to Liferay's log. To accomplish this, you could create and deploy a
-module that has a Java class that has code like this:
+their names to Liferay's log. To do this, you could deploy a module with Java
+code like this:
 
     import com.liferay.portal.kernel.model.User;
     import com.liferay.portal.kernel.service.UserLocalServiceUtil;
@@ -28,8 +28,7 @@ module that has a Java class that has code like this:
 
     ...
 
-Or you could use Groovy---which is based on Java---and do the whole thing right
-from the
+Or you could use Groovy---based on Java---and do the whole thing right from the
 [script console](/discover/portal/-/knowledge_base/7-1/running-scripts-from-the-script-console)
 with the same code:
 
@@ -55,7 +54,9 @@ You can even make the code somewhat Groovier:
     }
 
 Groovy scripts that invoke Liferay services are easy to write and execute in the
-script console. The script console is next. 
+script console. 
+
+How to run scripts is next. 
 
 ## Related Topics [](id=related-topics)
 
