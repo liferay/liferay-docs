@@ -78,7 +78,7 @@ the screen.
 
 2.  Click *Save as Draft*.
 
-    Be sure to save your content frequently because it is not autosaved. 
+    Be sure to save your content frequently, because it is not auto-saved. 
 
 The content can be localized in whatever language you want. You'll learn more 
 about localizing your content later.
