@@ -44,7 +44,7 @@ folder:
 
 ## Build and Deploy the Clustering Modules [](id=build-and-deploy-clustering-modules)
 
-It's time to build and deploy the clustering modules:
+Now build and deploy the clustering modules:
 
 1.  Build and deploy the clustering modules to the `../bundles/osgi/portal` 
     folder:

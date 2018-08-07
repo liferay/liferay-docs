@@ -22,8 +22,7 @@ server node, there are several optimizations that need to be made. At a minimum,
 1.  (Liferay Portal CE only)
     [Build and deploy the cluster modules to all cluster nodes.](/discover/reference/-/knowledge_base/7-0/building-clustering-for-liferay)
 
-2.  All nodes should be pointing to the same @product@ database or database 
-    cluster. 
+2.  All nodes should point to the same @product@ database or database cluster. 
 
 3.  Documents and Media repositories must have the same configuration and be
     accessible to all nodes of the cluster. 
