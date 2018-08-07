@@ -15,7 +15,7 @@ a standalone or remote Elasticsearch server or cluster
 ## Choosing a Search Engine [](id=choosing-a-search-engine)
 
 Elasticsearch and Solr are both supported, but there are some differences in how
-they work with @product@. 
+they work with @product@. In certain cases, you must choose Elasticsearch. 
 
 If you answer _yes_ to either of these questions, you must choose Elasticsearch:
 
