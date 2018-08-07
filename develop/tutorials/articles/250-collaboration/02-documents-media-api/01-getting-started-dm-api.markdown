@@ -6,8 +6,10 @@ main interfaces you'll use.
 -   **Documents and Media Services:** These interfaces expose all the available 
     Documents and Media functionality: 
 
-    -   `DLAppLocalService`: The local service. 
-    -   `DLAppService`: The remote service. This service wraps the local service 
+    -   [`DLAppLocalService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppLocalService.html): 
+        The local service. 
+    -   [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html): 
+        The remote service. This service wraps the local service 
         methods in permission checks. 
 
     Note that Liferay used 
@@ -41,3 +43,24 @@ features. If you need to get a reference somewhere outside of an OSGi component
 (e.g., in a JSP), then you should use a 
 [service tracker](/develop/tutorials/-/knowledge_base/7-1/service-trackers). 
 
+## Specifying Repositories 
+
+Many methods in the Documents and Media API contain a `repositoryId` parameter 
+that identifies the Documents and Media repository in which the operation will 
+be performed. A site (group) can have multiple repositories, but only one can be 
+accessed via the portal UI. This is called the site (group) repository, which is 
+effectively a site's default repository. To access this repository via the API, 
+you must provide the group ID as the `repositoryId`. 
+
+Note that you can use the 
+[`PortletFileRepository`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portletfilerepository/PortletFileRepository.html) 
+API to create repositories programmatically. The tutorials here, however, access 
+the default site repository for simplicity. 
+
+## Specifying Folders
+
+Many API methods require the ID of a folder that they perform operations in or 
+on. For example, such methods may contain parameters like `folderId` or 
+`parentFolderId`. Also note that you can use the constant 
+`DLFolderConstants.DEFAULT_PARENT_FOLDER_ID` to specify the root folder of the 
+repository you're working in. 
