@@ -16,7 +16,7 @@ or
 to create themes.
 
 Themes created with the Liferay Theme Generator give you access to several 
-[theme gulp tasks](/develop/reference/-/knowledge_base/7-1/developing-themes) 
+[theme gulp tasks](/develop/tutorials/-/knowledge_base/7-1/developing-themes) 
 that offer basic functions, such as 
 [`build`](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files) 
 and 

@@ -1,4 +1,4 @@
-# Upgrading Your Theme from Liferay Portal 7.0 to 7.1 [](id=upgrading-7-0-themes-to-7-1)
+# Upgrading Your Theme from Liferay Portal 7.0 to 7.1 [](id=upgrading-7.0-themes-to-7.1)
 
 This section of tutorials guides you through the process of upgrading your 7.0 
 theme to run on @product-ver@. While you're at it, you should leverage theme 
