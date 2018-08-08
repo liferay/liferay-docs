@@ -35,6 +35,15 @@ We recommend enabling transport layer security on each node.
 The following instructions for enabling TLS use `liferay` as the password
 whenever one is needed. Customize these as appropriate for your installation. 
 
++$$$
+
+**Important:** Elasticsearch and @product@ must share the keys and certificates
+used to configure SSL. Copy them between servers and point to the local copy in
+the corresponding configuration files.
+
+$$$
+
+
 ### Generate Node Certificates [](id=generate-node-certificates)
 
 [Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#node-certificates)
