@@ -3,12 +3,18 @@
 To create folders (`Folder` entities) in the Documents and Media Library, you 
 must use the 
 [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
-interface's `addFolder` method. Click this method to see a description of its 
-parameters: 
+interface's `addFolder` method: 
 
-    [addFolder(long repositoryId, long parentFolderId, String name, String description, ServiceContext serviceContext)](http://docs.liferay.com/portal/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#addFolder-long-long-java.lang.String-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-)
+    addFolder(long repositoryId, 
+            long parentFolderId, 
+            String name, 
+            String description, 
+            ServiceContext serviceContext)
 
-Note that the `description` parameter is optional. 
+See 
+[this method's Javadoc](http://docs.liferay.com/portal/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#addFolder-long-long-java.lang.String-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-) 
+for a description of the parameters. Note that the `description` parameter is 
+optional. 
 <!-- Add example -->
 
 ## Folders and External Repositories

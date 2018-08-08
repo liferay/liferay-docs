@@ -3,12 +3,17 @@
 To create file shortcuts (`FileShortcut` entities) in the Documents and Media 
 Library, you must use the 
 [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
-interface's `addFileShortcut` method. Click this method to see a description of 
-its parameters: 
+interface's `addFileShortcut` method: 
 
-    [addFileShortcut(long repositoryId, long folderId, long toFileEntryId, ServiceContext serviceContext)](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#addFileShortcut-long-long-long-com.liferay.portal.kernel.service.ServiceContext-)
+    addFileShortcut(long repositoryId, 
+                    long folderId, 
+                    long toFileEntryId, 
+                    ServiceContext serviceContext)
 
-Note that all this method's parameters are mandatory. 
+See 
+[this method's Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#addFileShortcut-long-long-long-com.liferay.portal.kernel.service.ServiceContext-) 
+for a description of the parameters. Note that all this method's parameters are 
+mandatory. 
 
 Keep in mind the following when creating shortcuts: 
 
