@@ -530,15 +530,16 @@ and not where the content will later be displayed. Liferay WCM supports both
 processes. 
 
 Editing content that's already been published is just as easy as creating new
-content is. Once the content is displayed--whether you've selected content or
-created it in the Web Content Display app--you can edit the content directly
-from the Web Content Display app or from Site Administration. To edit it from
-the Web Content Display app, select the *Options* button
-(![Options](../../../images/icon-app-options.png)) from the app's top panel
-and select the approriate edit action. For example, selecting the *Edit Web
-Content* button launches the WYSIWYG editor and from there you can make any
-necessary changes. You can also select the *Edit Template* button, which
-launches the template editor for the web content article's template.
+content is. Whether content has been displayed or not you can edit it from Site 
+Administration. To edit content,
+
+1.  Go to *Site Administration* &rarr; *Content* &rarr; *Web Content*.
+
+2.  Click the *Options* button (![Options](../../../images/icon-app-options.png)) next to the article that
+    you want to edit and select *Edit*.
+    
+    This launches the WYSIWYG editor and from there you can make any necessary 
+    changes.
 
 ![Figure 14: You can select and edit an article, or edit its template directly from the Web Content Display app.](../../../images/web-content-display-icons.png)
 
