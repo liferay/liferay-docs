@@ -4,7 +4,7 @@
     <p>Generating the Back-end<br>Step 2 of 3</p>
 </div>
 
-The persistence layer saves and retrieves your model data. The service layer is
+Look, I'm typing here and it's updating over there. The persistence layer saves and retrieves your model data. The service layer is
 a buffer between your application and persistence layers: having it lets you 
 swap out your persistence layer for a different implementation without 
 modifying anything but the calls in the service layer. 
@@ -103,7 +103,7 @@ entity:
 
         <column name="groupId" type="long" />
 
-3.  Add the audit fields as you did with the `Guestbook` entity:
+3.  Add audit fields to match the fields in the `Guestbook` entity:
 
         <column name="companyId" type="long" />
         <column name="userId" type="long" />
