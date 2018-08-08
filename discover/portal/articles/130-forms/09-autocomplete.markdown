@@ -3,8 +3,8 @@
 It's been scientifically proven that Internet users are lazy (not you, of 
 course---other Internet users). For example, some users may not fill out your 
 form if you make them type the entire title of their country in an employment
-application. This is especially true if they're filling out the form on their 
-mobile device. In this article, you'll learn to make users' lives easier by 
+application. This is especially true if they're filling out the form on their
+mobile devices. In this article, you'll learn to make users' lives easier by
 configuring autocomplete on a form's text fields. 
 
 Why not just use a select field with a data provider to guide user input? 
@@ -12,11 +12,11 @@ Sometimes a data provider can't encompass all possible field entries. For
 example, if your data provider doesn't include 
 [mythical countries founded on old sea platforms](https://en.wikipedia.org/wiki/Principality_of_Sealand), 
 users from that country wouldn't be able to enter anything into the select 
-field. Alternatively, you can use a text field with autocomplete so users can 
-begin typing their country's name and then select it from a list if it appears. 
-Autocomplete gives you the flexibility of a text field (accepting any response 
-that meets your validation criteria) while giving users common choices to select 
-from. It's a win-win situation. 
+field. Alternatively, you can use a text field with autocomplete so users can
+begin typing their country's name and then select it from a list when it
+appears. Autocomplete combines a text field (accepting any response that meets
+your validation criteria) and common choices to select from. It's a win-win
+situation. 
 
 ## Configuring Autocomplete [](id=configuring-autocomplete)
 

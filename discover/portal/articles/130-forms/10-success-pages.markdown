@@ -6,21 +6,21 @@ submission didn't go through and wonder if they need to fill out the whole form
 again? By default, submitting a form displays the default success message and 
 returns users to the form's now empty first page. Don't leave users feeling 
 equally empty. Instead, configure a *success page*. A success page is a terminal 
-page that gives form users a message that they've finished filling out the form 
-and their submission was successfully received. A success page can even urge 
-users to close the browser window or tab. 
+page showing users they've finished filling out the form and their submission
+was successfully received. A success page can even urge users to close the
+browser window or tab. 
 
 ![Figure 1: The default success message alerts users when their request completes successfully.](../../images/your-request-completed-successfully.png)
 
 A success page is simple. It has a title in bold text and a description beneath 
 the title. A common alternative to using a success page is to 
-[redirect users to a different page in your site](/discover/portal/-/knowledge_base/7-1/redirecting-users). 
+[redirect users to a different page in your Site](/discover/portal/-/knowledge_base/7-1/redirecting-users). 
 What should you put in a success page? Whatever you want. If you can't think
 of anything important or creative to say, use the default message: 
 
 ![Figure 2: There's a default success page message if you can't think of anything else to say.](../../images/forms-success-page-default.png)
 
-To configure a success page: 
+To configure a success page, 
 
 1.  Add a form in *Site Administration* (your site's menu) &rarr; *Content* 
     &rarr; *Forms*. 

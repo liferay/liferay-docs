@@ -22,9 +22,9 @@ Follow these steps to create a form translation:
 
 ![Figure 2: Translate as much of the form as possible into each language you expect users to need.](../../images/forms-translate2.png)
 
-To fill out a translated form in a translated language: 
+To fill out a translated form in a translated language, 
 
-1.  Access the form. If a signed-in user accesses the form, and a translation is 
+1.  Access the form. If a signed-in user accesses the form and a translation is 
     available in the user's language, the user sees the translated form by 
     default. 
 

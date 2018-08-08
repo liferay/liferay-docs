@@ -6,6 +6,7 @@ lets you make your forms user friendly. There are two features are available for
 styling your forms: 
 
 1.  Create rows and columns for form fields. 
+
 2.  Move fields from one location to another. 
 
 Sometimes it doesn't make sense to use the default single-column, 
@@ -16,9 +17,9 @@ examples of these layouts.
 
 ![Figure 1: This is the default single-column, vertically-oriented form.](../../images/forms-form-row.png)
 
-![Figure 2: Putting form fields in multiple columns can give you more space to work with.](../../images/forms-layout-multicolumn.png)
+![Figure 2: Putting form fields in multiple columns can give you more space.](../../images/forms-layout-multicolumn.png)
 
-![Figure 3: In this screenshot, the first row is in two columns and the second row is in three columns.](../../images/forms-layout-mixed.png)
+![Figure 3: The first row is in two columns and the second row is in three columns.](../../images/forms-layout-mixed.png)
 
 By default, dragging a field onto a form page adds a field that occupies an 
 entire row. Follow these steps to resize the field to make room for more fields 

@@ -2,7 +2,7 @@
 
 Form fields can have help text, placeholder text, and predefined values.
 
--   **Help Text:** Text that appears as a sub-heading to the field label, and 
+-   **Help Text:** Text that appears as a sub-heading to the field label, but 
     doesn't appear in the field entry area. Enter help text in the Basic tab of 
     the field's sidebar menu.
 
@@ -16,7 +16,7 @@ All form field types can have help text, and all form field types that accept
 user input can have predefined values. Only text and numeric fields can have 
 placeholder text. 
 
-To enter placeholder text or predefined values: 
+To enter placeholder text or predefined values, 
 
 1.  Open a field's sidebar menu.
 
@@ -24,10 +24,10 @@ To enter placeholder text or predefined values:
 
 ![Figure 1: Predefined values and placeholder text are entered in the Properties tab.](../../images/forms-placeholder-predefined-values.png)
 
-For example, many forms start with a *Full Name* field. You can use help text 
-and/or placeholder text to inform the user that you need their full name, 
-regardless of length. Alternatively, if you're asking users to specify how many 
-sandwiches they need for lunch, a predefined value of *1* probably makes sense. 
+For example, many forms start with a *Full Name* field. You can use help text
+and/or placeholder text to inform users that you need their full names,
+regardless of length. Alternatively, if you're asking users to specify how many
+sandwiches they eat for lunch, a predefined value of *1* probably makes sense. 
 
 ![Figure 2: The Full Name field here uses help text and placeholder text, while the sandwiches field uses a predefined value.](../../images/forms-help-placeholder-predefined.png)
 

@@ -8,26 +8,30 @@ and select *Permissions*.
 
 By default, you can grant these permissions for a form: 
 
--   **Delete:** Delete the form. 
--   **Permissions:** Access and configure the form's permissions. 
--   **Add Record:** Submit form entries. 
--   **Update:** Update form entries. 
--   **View:** View the form. 
+**Delete:** Delete the form. 
+
+**Permissions:** Access and configure the form's permissions. 
+
+**Add Record:** Submit form entries. 
+
+**Update:** Update form entries. 
+
+**View:** View the form. 
 
 ![Figure 1: You can configure a form's permissions.](../../images/forms-form-permissions.png)
 
-Note that guest users can view and fill out forms by default. The *Guest* role 
+Note that guest users can view and fill out forms by default. The *Guest* Role 
 has *View* and *Add Record* permissions. 
 
 +$$$
 
-**Note:** By default, all users inherit the Guest role's permissions. The Guest
-role represents unauthenticated visitors of your site. If you want to let Guest 
-users submit forms, which is the default setting, it makes sense that 
-authenticated users can also. To disable automatic inheritance of the Guest 
-role's permissions, set 
-[this property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Permissions) 
-in your `portal-ext.properties` file: 
+**Note:** By default, all users inherit the Guest Role's permissions. The Guest
+Role represents unauthenticated visitors of your Site.  If you want to let
+Guest users submit forms (the default setting), it makes sense that
+authenticated users can also.  To disable automatic inheritance of the Guest
+Role's permissions, set 
+[thisproperty](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Permissions)
+in your `portal-ext.properties` file:
 
     permissions.check.guest.enabled=false
 

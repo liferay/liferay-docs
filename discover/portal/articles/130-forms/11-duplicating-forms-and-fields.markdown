@@ -4,9 +4,9 @@ Duplicating effort wastes time and increases the likelihood that something won't
 be perfectly replicated. Instead of duplicating effort, duplicate forms and form 
 fields. 
 
-To duplicate a form: 
+To duplicate a form, 
 
-1.  Go to *Site Administration* (your site's menu) &rarr; *Content* &rarr; 
+1.  Go to *Site Administration* (your Site's menu) &rarr; *Content* &rarr; 
     *Forms*. 
 
 2.  Click the *Actions* button 
@@ -21,9 +21,9 @@ The form is duplicated and automatically named *Copy of [Original Form Name]*.
 Once duplicated, you can edit the form however you want. When you duplicate a 
 form, all configurations and form rules are duplicated as well. 
 
-To duplicate a form field: 
+To duplicate a form field, 
 
-1.  Go to *Site Administration* (your site's menu) &rarr; *Content* &rarr; 
+1.  Go to *Site Administration* (your Site's menu) &rarr; *Content* &rarr; 
     *Forms* and open or add a form. 
 
 2.  In the Builder view, hover over the form field to duplicate and click the

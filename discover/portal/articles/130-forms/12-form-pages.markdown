@@ -11,7 +11,7 @@ default, and alternate.
 
 ![Figure 2: The alternate pagination style.](../../images/forms-pagination2.png)
 
-To add a form page: 
+To add a form page, 
 
 1.  Go to a form's builder view. 
 
