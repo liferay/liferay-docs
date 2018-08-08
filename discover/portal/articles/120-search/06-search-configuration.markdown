@@ -134,6 +134,21 @@ However, the use of
 is a way to influence site-specific search behavior. Search pages contain the
 search widgets used to search for content within a particular site.
 
+Because of the modularity of Search, there are some important configuration
+nuances to be aware of. 
+
+1.  The classic Search application is not instanceable. Only one can be added to
+    any page.
+
+2.  The new Search widgets, (for example, the Search Bar) are instanceable. Add
+    as many to a page as you need, and configure them however you'd like.
+
+3.  Configure the Search bar that's embedded in every site page by default
+    (including the default Search page) just by configuring one of these Search
+    Bar's. The configuration of this Search Bar overrides the Search Page's
+    Search Bar, if there's a conflict. However, Search Bar widgets manually
+    placed on a page can be configured differently.
+
 Note that 
 [configuration of a Search Bar](/discover/portal/-/knowledge_base/7-1/searching-for-assets#configuring-the-search-bar) 
 widget added to a page, or configuration of the classic Search Application,
