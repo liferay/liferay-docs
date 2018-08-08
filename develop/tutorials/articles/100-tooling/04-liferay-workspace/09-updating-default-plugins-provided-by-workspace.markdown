@@ -1,4 +1,4 @@
-# Updating Default Plugins Provided by Liferay Workspace
+# Updating Default Plugins Provided by Liferay Workspace [](id=updating-default-plugins-provided-by-liferay-workspace)
 
 Liferay Workspace is bundled with a slew of plugins that provide many features.
 For example,
@@ -42,8 +42,3 @@ To upgrade one of workspace's bundled plugins, follow these steps:
 
 That's it! You're no longer tied to particular plugin versions provided by your
 workspace.
-
-## Related Topics
-
-[Updating Default Plugins for a Project Created Outside of Workspace](/develop/reference/-/knowledge_base/7-1/#updating-default-plugins-for-a-project-created-outside-of-workspace)
-
