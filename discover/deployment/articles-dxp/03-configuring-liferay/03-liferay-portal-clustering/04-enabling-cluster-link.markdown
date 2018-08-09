@@ -32,6 +32,12 @@ for nodes to communicate. It can
 - Invoke methods and retrieve values from all, some, or specific nodes
 - Detect membership and notify when nodes join or leave
 
+When you start @portal@ in a cluster, a log file message shows your cluster's name (e.g., `cluster=liferay-channel-control`): 
+
+    ------------------------------------------------------------------- 
+    GMS: address=oz-52865, cluster=liferay-channel-control, physical address=192.168.1.10:50643 
+    -------------------------------------------------------------------
+
 Cluster Link contains an enhanced algorithm that provides one-to-many type
 communication between the nodes. This is implemented by default with JGroups's
 UDP multicast, but unicast and TCP are also available. 
