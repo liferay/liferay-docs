@@ -78,7 +78,7 @@ display templates:
 2.  Click the widget's *Add Display Template* button. This opens the same form 
     as above for creating a display template for the list's definition. 
 
-## Display Template Editor
+## Display Template Editor [](id=display-template-editor)
 
 Helper variables are available in the template editor. These provide access to
 most of the data that you'll use in creating Display Templates. The variables
@@ -162,6 +162,6 @@ a bulleted list:
 
 Here's what it looks like: 
 
-![Figure x: Extract appropriate display information, rather than spitting out the whole object.](../../../images/ddl-contacts-template.png)
+![Figure 2: Extract appropriate display information, rather than spitting out the whole object.](../../../images/ddl-contacts-template.png)
 
 Now you're prepared to make data lists beautiful using Display Templates.

@@ -75,7 +75,7 @@ many included subprojects like this:
     include images:base:oracle-jdk:oracle-jdk-6
     include images:base:oracle-jdk:oracle-jdk-7
     include images:base:oracle-jdk:oracle-jdk-8
-    include images:base:liferay-portal:liferay-portal-ce-tomcat-7.0-ga1
+    include images:base:liferay-portal:liferay-portal-ce-tomcat-7.1-ga1
     include images:source-bundles:glassfish
     include images:source-bundles:jboss-eap
     include images:source-bundles:tomcat
