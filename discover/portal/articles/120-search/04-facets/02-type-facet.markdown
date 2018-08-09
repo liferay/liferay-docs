@@ -30,7 +30,7 @@ The Type Facet contains several configuration options:
 : Set the URL parameter name for the Facet. The default is *type*. Searching for
 *lunar resort* and clicking on a site facet produces the URL
 
-    http://localhost:8080/web/guest/search?q=lunar resort&type=com.liferay.blogs.model.BlogsEntry
+        http://localhost:8080/web/guest/search?q=lunar resort&type=com.liferay.blogs.model.BlogsEntry
 
 **Frequency Threshold**
 : Set the maximum number of facet terms to display, regardless of how
