@@ -9,6 +9,7 @@ which is enabled by default, can be used to recover deleted items. Also,
 [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 permanently deletes entities. To instead send them to the Recycle Bin, you must 
 use the Capabilities API. 
+<!-- Pending answer from Adolfo on the Capabilities API requirement for Recycle Bin -->
 
 This section of tutorials shows you how to use `DLAppService` to delete entities 
 from the Documents and Media Library. The last tutorial in this section shows 
