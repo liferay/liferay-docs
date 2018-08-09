@@ -15,25 +15,25 @@ you'll add it to the Social category. Only one Guestbook portlet should be added
 to a page, so you'll also define it as a *non-instanceable* portlet. Such a 
 portlet can appear only once on a page or site, depending on its scope. 
 
-Open the `GuestbookPortlet` class and update the component class metadata 
-properties to match this configuration: 
+1.  Open the `GuestbookPortlet` class and update the component class metadata 
+    properties to match this configuration: 
 
-    @Component(
-        immediate = true,
-        property = {
-            "com.liferay.portlet.display-category=category.social",
-            "com.liferay.portlet.instanceable=false",
-            "com.liferay.portlet.scopeable=true",
-            "javax.portlet.display-name=Guestbook",
-            "javax.portlet.expiration-cache=0",
-            "javax.portlet.init-param.template-path=/",
-            "javax.portlet.init-param.view-template=/guestbookwebportlet/view.jsp",
-            "javax.portlet.resource-bundle=content.Language",
-            "javax.portlet.security-role-ref=power-user,user",
-            "javax.portlet.supports.mime-type=text/html"
-        },
-        service = Portlet.class
-    )
+        @Component(
+            immediate = true,
+            property = {
+              "com.liferay.portlet.display-category=category.social",
+              "com.liferay.portlet.instanceable=false",
+              "com.liferay.portlet.scopeable=true",
+              "javax.portlet.display-name=Guestbook",
+              "javax.portlet.expiration-cache=0",
+              "javax.portlet.init-param.template-path=/",
+              "javax.portlet.init-param.view-template=/guestbookwebportlet/view.jsp",
+              "javax.portlet.resource-bundle=content.Language",
+              "javax.portlet.security-role-ref=power-user,user",
+              "javax.portlet.supports.mime-type=text/html"
+            },
+            service = Portlet.class
+        )
 
 The `com.liferay.portlet.display-category=category.social` property sets the 
 Guestbook portlet's display category to *Social*. The 
