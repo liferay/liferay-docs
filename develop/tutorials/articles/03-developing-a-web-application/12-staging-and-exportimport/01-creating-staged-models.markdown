@@ -1,6 +1,6 @@
 # Creating Staged Models
 
-To implement the Staging framework, you must first specify the entities you wan
+To implement the Staging framework, you must first specify the entities you want
 to track. For the Guestbook application, there are two: guestbooks and entries.
 You can register these entities so they're recognizable to the Staging framework
 by implementing the
@@ -11,10 +11,10 @@ Fortunately, Service Builder has the power to generate an app's models as staged
 models when
 [certain attributes](/develop/tutorials/-/knowledge_base/7-1/understanding-staged-models#important-attributes-in-staging)
 are specified in the app's `service.xml` file. The Guestbook app already defines
-the necessary attributes in its `service.xml` file, so both your `GuestbookModel`
-and `EntryModel` interfaces already extend the `StagedModel` interface! For
-example, if you take a look at your Guestbook app's `EntryModel` interface's
-declaration, it looks like this:
+many of the necessary attributes in its `service.xml` file, so both your
+`GuestbookModel` and `EntryModel` interfaces already extend the `StagedModel`
+interface! For example, if you take a look at your Guestbook app's `EntryModel`
+interface's declaration, it looks like this:
 
     public interface EntryModel extends BaseModel<Entry>, GroupedModel, ShardedModel,
         StagedAuditedModel, WorkflowedModel {
@@ -22,10 +22,10 @@ declaration, it looks like this:
 The `StagedModel` interface is implemented by the extension of the
 [StagedAuditedModel](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedAuditedModel.html)
 interface. The `StagedAuditedModel` interface was chosen by Service Builder
-based on the columns you declared.
+based on the columns you declared. You'll update this later.
 
-The following Staging-specific attributes/columns are defined in the Guestbook
-app's `service.xml` file:
+The following Staging-specific attributes/columns are currently defined in the
+Guestbook app's `service.xml` file:
 
 - `uuid` (required)
 - `groupId`
@@ -49,8 +49,31 @@ automatic group mapping or entity level Last Publish Date handling. See the
 [Understanding Staged Models](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models)
 tutorial for more information.
 
-<!-- Need to describe Guestbook adding `lastPublishDate` and implementing
-`GroupedStagedModel` interface. This is Pending Máté's review. -Cody -->
+## Updating the Extended Staged Model Interface
 
+Staged models that extend the `StagedAuditedModel` interface are intended to
+function independent from the group concept (sometimes referred to as company
+models). This means that, for example, your guestbook and entry's scope would
+not be tracked by the Staging framework. You must add one more column to your
+`service.xml` file to convert your models as `StagedGroupedModel`s (i.e.,
+correctly track the scope of your entities):
 
+1.  Open your `guestbook-service` module's `service.xml` file and add the
+    `lastPublishDate` column for both Guestbook and Entry entities:
 
+        <column name="lastPublishDate" type="Date" />
+
+2.  Run Service Builder. Do this by navigating to the Gradle Tasks pane on the
+    right side of IDE and selecting your project's *build* &rarr; *buildService*
+    task.
+
+Service Builder has updated your models to now extend the `StagedGroupedModel`.
+For example,
+
+    public interface EntryModel extends BaseModel<Entry>, ShardedModel,
+        StagedGroupedModel, WorkflowedModel {
+
+For more information on staged model interfaces, see this
+[tutorial](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#staged-model-interfaces)
+
+Excellent! Now it's time to create your staged model data handlers.
