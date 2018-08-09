@@ -1,15 +1,14 @@
-# Workflow Forms [](id=workflow-forms)
+# Kaleo Forms [](id=kaleo-forms)
 
 Business processes are often form-based and workflow-driven. They start with 
-data that needs to be entered, and progress by sending those data to other 
-people or groups. The initial data are processed in some way (for example, 
-further data is entered or approval is granted), and the process moves on until
-completion, when each interested party has seen and manipulated the data. To 
-write an app for each of these processes is laborious. Instead, a tool for 
-quickly defining a process to suit each use case is needed. The process 
-architect must define the data that gets collected and the process the data 
-moves through to reach its final state. To accomplish this, @product@ already 
-includes the 
+entered data and progress by sending that data to other people or groups. Then
+it's processed in some way (for example, further data is entered or approval is
+granted), and the process moves on until completion, when each interested party
+has seen and manipulated the data. To write an app for each of these processes
+is laborious. It's much better to have a tool for quickly defining a process to
+suit each use case. The process architect must define both the data that gets
+collected and the process the data moves through to reach its final state. To
+accomplish this, @product@ already includes the
 [Dynamic Data Lists app](/discover/portal/-/knowledge_base/7-1/creating-data-definitions)
 for defining forms, and the 
 [Kaleo Designer app](/discover/portal/-/knowledge_base/7-1/kaleo-designer) 
@@ -21,7 +20,7 @@ forms through a workflow.
 
 To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin: 
 
-1.  Go to *Site Administration* (your site's menu) &rarr; *Content* &rarr; 
+1.  Go to *Site Administration* (your Site's menu) &rarr; *Content* &rarr; 
     *Kaleo Forms Admin*. The Kaleo Forms app appears with a list of any defined 
     processes. 
 
@@ -29,19 +28,19 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
     (![Add](../../images-dxp/icon-add.png)) 
     to open the New Process Wizard. 
 
-3.  Give the process a name and a description, then click *Next*. 
+3.  Give the process a name and a description and click *Next*. 
 
     ![Figure 1: Add a Kaleo Forms Process to link a form with a workflow definition.](../../images-dxp/kaleo-forms-add.png)
 
 4.  Define the fields that can appear in your process's forms. There are two 
     ways to do this: 
 
-    -   Use an existing field set. To do this, click the field set's Actions 
+    -   Use an existing field set. Click the field set's Actions 
         button 
         (![Actions](../../images-dxp/icon-actions.png)) 
         and select *Choose*.
 
-    -   Create a new field set/data definition. To do this, click the 
+    -   Create a new field set/data definition. Click the 
         *Add Field Set* button. If you need help with this, see the 
         documentation on
         [creating data definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions). 
@@ -94,7 +93,7 @@ To add records to a process, click it in Kaleo Forms Admin and then click the
 (![Add](../../images-dxp/icon-add.png)). 
 This brings up the form you assigned to the workflow's initial state. Fill it 
 out and click *Save*. Once submitting the initial form, the workflow engine then 
-takes over and moves through each task in the workflow. Whatever users or roles 
+takes over and moves through each task in the workflow. Whatever Users or Roles 
 you assigned to the tasks receive notifications, and the task appears in the 
 *Assigned to My Roles* section of the My Workflow Tasks app. A notification also 
 appears in the Notifications app. Once in the task, the user views and approves 
