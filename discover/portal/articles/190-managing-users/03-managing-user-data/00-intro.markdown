@@ -69,7 +69,7 @@ ID.
 To edit an existing configuration:
 
 1.  Go to Control Panel &rarr; Configuration &rarr; System Settings &rarr; Users
-    &rarr; Anonymous Users.
+    &rarr; Anonymous User.
 
 2.  Edit the existing configuration, providing a different User ID.
 

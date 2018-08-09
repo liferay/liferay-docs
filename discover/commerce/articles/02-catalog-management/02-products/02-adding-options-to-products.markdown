@@ -16,7 +16,7 @@ To assign an option template to a product, follow these steps:
 1.  Go to the catalog, open a product, and click on the *Options* tab in the
     product tab menu.
 
-    ![Figure x: It may look like you have two options, but you really only have one. Click
+    ![Figure 1: It may look like you have two options, but you really only have one. Click
     on this one.](../../../images/two-options.png)
 
 2.  Click on the ![Add](../../../images/icon-add.png) button and select option

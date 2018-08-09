@@ -40,9 +40,7 @@ a theme. To include a layout template with a theme, follow these steps:
             /layoutttpl/custom/my_liferay_layout_template.png
         </thumbnail-path>
     
-5.  Place the completed layout in your theme's `src/layouttpl` folder if you 
-    created your theme with the Liferay Theme Generator, or place it in your 
-    theme's `docroot/layouttpl/custom` folder if using the Plugins SDK. Below is 
+5.  Place the completed layout in your theme's `src/layouttpl` folder. Below is 
     an example `liferay-look-and-feel` configuration:
 
         <theme id="my-theme-name" name="My Theme Name">

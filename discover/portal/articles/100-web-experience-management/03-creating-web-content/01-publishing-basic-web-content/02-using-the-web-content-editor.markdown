@@ -71,13 +71,17 @@ arrange the HTML and preview panes horizontally or vertically.
 
 ![Figure 2: You can view how your HTML would render by using the preview pane.](../../../../images/web-content-editor-html.png)
 
-Every 25 seconds, the entry you're creating is automatically saved as a draft.
 You can exit the enlarged editor by clicking the *Done* button at the bottom of
 the screen.
 
-Add a few short sentences announcing the grand opening of the Lunar Resort. The
-content can be localized in whatever language you want. You'll learn more about
-localizing your content later.
+1.  Add a few short sentences announcing the grand opening of the Lunar Resort. 
+
+2.  Click *Save as Draft*.
+
+    Be sure to save your content frequently, because it is not auto-saved. 
+
+The content can be localized in whatever language you want. You'll learn more 
+about localizing your content later.
 
 ## Web Content Options [](id=web-content-options)
 
