@@ -3,16 +3,12 @@
 With calendar resources, you can invite entities other than people to your
 events. This is beneficial for finding the availability of important resources
 your event requires, like a conference room, laptop, or, at The Lunar Resort,
-the Sasquatch Space Suit used scare guests out on Lunar hikes. 
+the Sasquatch Space Suit used to scare guests out on Lunar hikes. 
 
 Another important topic is porting your calendar's data from one installation of
 @product@ to another.
 
 ## Calendar Resources [](id=calendar-resources)
-
-A calendar resource is anything you might need for an event other than the
-actual attendees. For instance, a conference room, A/V equipment, or the
-aforementioned Sasquatch Space Suit. 
 
 Follow these steps to add a new calendar resource:
 
@@ -20,23 +16,23 @@ Follow these steps to add a new calendar resource:
 
     ![Figure 1: Resources are accessed from the tab menu at the top of the widget.](../../images/calendar-resources.png)
 
-2.  Fill in the *New Resource* form. Enter a name, give it a description and
+2.  Fill in the *New Resource* form. Enter a name, give it a description, and
     choose whether to set it as active. You can also tag it, assign it to
     categories, and configure its permissions. Click *Save*.
 
 The resource has its own calendar that was generated automatically (this is how
-users can check its availability when creating events). Just as with users,
-however, it is possible for resources to have more than one calendar. Follow
-these steps to assign a new calendar to the resource:
+users can check its availability when creating events). Just as with Users,
+however, resources can have more than one calendar. Follow these steps to assign
+a new calendar to the resource:
 
 1.  Go to the widget's *Resources* tab, click the
     ![Options](../../images/icon-actions.png) button next to the resource, and
     select *View Calendars*.
 
 2.  Click *Add Calendar* and continue just as if you were creating a calendar
-    for a user or a site.
+    for a user or a Site.
 
-Once a resource is set up, invite it to your events just as you would an
+Once a resource is created, invite it to your events just as you would an
 attendee.
 
 ## Exporting and Importing Calendar Data [](id=exporting-and-importing-calendar-data)
@@ -48,7 +44,7 @@ LAR files. As with all LAR files, data can only be ported between installations
 of the same version.
 
 1.  From the calendar widget, click the
-    ![Options](../../images/icon-app-options.png) button  in the widget header and select
+    ![Options](../../images/icon-app-options.png) button in the widget header and select
     *Export/Import*.
 
 2.  Enter a name for the LAR file (or use the default).
@@ -56,8 +52,8 @@ of the same version.
     Under *Application*, choose whether to include the widget's configuration
     in the LAR.
 
-    Under *Content*, choose how much historical data to export, and select what
-    content types (calendars, resources, and events) will be included. You can
+    Under *Content*, choose how much historical data to export and select the
+    content types (calendars, resources, and events) to include. You can
     also choose whether to include comments and ratings.
 
     Check the appropriate boxes to select whether to include deletions and
@@ -76,7 +72,7 @@ Follow these steps to import a LAR:
 
 2.  Click the *Import* tab.
 
-3.  Click *Choose File* or else drag-and-drop a LAR into the surrounded by
+3.  Click *Choose File* or else drag-and-drop a LAR into the area surrounded by
     a dotted line. Click *Continue*.
 
 4.  Decide how much data you want to import:
