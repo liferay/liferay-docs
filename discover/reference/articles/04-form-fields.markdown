@@ -6,7 +6,7 @@ examples of the form fields described here, visit the
 [Forms](/discover/portal/-/knowledge_base/7-1/forms)
 section of the User Guide.
 
-![Figure 1: Out-of-the-box form field types.](../images/forms-field-types.png)
+![Figure 1: There are many useful out-of-the-box form field types.](../images/forms-field-types.png)
 
 **Paragraph:** This is static text on the form. Users do not enter data into 
 form text fields. The form creator enters text that form users see displayed on 
@@ -45,7 +45,7 @@ field uses the Date field type.
 **Multiple Selection:** Users select one or more options from check boxes (or 
 toggles, if configured).
 
-![Figure 7: A multiple selection field using a toggle.](../images/forms-switcher.png)
+![Figure 7: A multiple selection field can use a toggle.](../images/forms-switcher.png)
 
 **Grid:** Using radio buttons, users select from options laid out in rows and 
 columns. One selection can be made per row. This is useful when the same 
@@ -64,4 +64,4 @@ that accepts integers to ask users how many pets they have.
 **Upload:** Users can select a file from the Documents and Media library or 
 upload a file from their local filesystem. 
 
-![Figure 10: An upload field.](../images/forms-upload.png)
+![Figure 10: Upload fields let Users attach files to the form.](../images/forms-upload.png)
