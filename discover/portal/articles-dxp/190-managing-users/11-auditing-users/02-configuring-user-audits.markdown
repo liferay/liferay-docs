@@ -38,8 +38,7 @@ events in @product@'s log and console:
 Alternatively, you can make the same configuration via an OSGi configuration 
 file: 
 
-1.  Create a file called 
-`com.liferay.portal.security.audit.router.configuration.LoggingAuditMessageProcessorConfiguration.config`. 
+1.  Create a file called `com.liferay.portal.security.audit.router.configuration.LoggingAuditMessageProcessorConfiguration.config`. 
 
 2.  Add these properties to the file: 
 
@@ -55,7 +54,7 @@ file:
     [Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
     is typically the application server's parent folder. 
 
-Regardless of you configuration approach, you must also extend @product@'s 
+Regardless of your configuration approach, you must also extend @product@'s 
 `log4j-ext.xml` file to configure Log4j (@product@'s logging implementation) to
 log messages produced by the appropriate class to the appropriate file. To do
 so, create a `portal-log4j-ext.xml` file in 
@@ -99,7 +98,7 @@ enable them via the Control Panel:
 
 2.  In the *SYSTEM SCOPE* column on the left, select *Scheduler Engine Helper*. 
 
-3.  Select the checkbox for *Audit scheduler job enabled*, and click
+3.  Select the checkbox for *Audit scheduler job enabled* and click
     *Save*. 
 
 Alternatively, you can make the same configuration via an OSGi configuration 
@@ -165,7 +164,7 @@ chair and walks down the row of cubes to the end, where a kid no more than 20
 years old with disheveled hair sits, earbuds in his ears. 
 
 "Hey Melvin," Harry says as Melvin turns around to face him. "Didn't I ask you
-to move that set of users from site membership to organization membership?" 
+to move that set of users from Site membership to Organization membership?" 
 
 "Yeah," Melvin says, "I did that already." 
 
@@ -175,7 +174,7 @@ to move that set of users from site membership to organization membership?"
 executed it in the scripting host," Melvin replies, matter-of-factly. 
 
 "You did, did you? Well, guess what? Your script removed *everybody* from *all*
-sites."
+Sites."
 
 "*What?*" 
 

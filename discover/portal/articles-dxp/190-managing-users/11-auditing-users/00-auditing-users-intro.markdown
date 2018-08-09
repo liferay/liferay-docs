@@ -1,12 +1,12 @@
 # Auditing Users [](id=auditing-users)
 
-You've just finished lunch and are ready to get back to work. You have a site in
-@product@ you use to manage your project, and before you left, you were about to
-create a folder in your Documents and Media library for sharing some
-requirements documentation. Sitting down at your desk, you navigate to the
-repository and attempt to create the folder. 
+You've just finished lunch and are ready to get back to work. You have a Site
+you use to manage your project and before you left, you were about to create a
+folder in your Documents and Media library for sharing some requirements
+documentation. Sitting down at your desk, you navigate to the repository and
+attempt to create the folder.
 
-*You do not have permission to perform this action*, the portal helpfully tells
+*You do not have permission to perform this action*, @product@ helpfully tells
 you. 
 
 "*What?*" you blurt in surprise. "This is *my* project!" 
@@ -34,13 +34,13 @@ I'm assuming you and Dick are here because of the same problem?"
 
 "And I lost access to a wiki," Dick says. 
 
-"It was probably due to some site membership change. Let's take a look at the
-audit app in the Control Panel and see what happened." 
+"It was probably due to some Site membership change. Let's take a look at the
+Audit app in the Control Panel and see what happened." 
 
-Sometimes you need to know what users are doing on your site and exactly who is 
-doing it. If you're a DXP subscriber, you can find this out with the Audit app. 
-In combination with some settings in `portal-ext.properties`, the Audit app lets 
-you see all the activity that occurs in your portal. This lets you quickly find 
-out what changes were made and by whom. If you've delegated permission granting 
-to any group of people, this is an essential feature you're likely to use. 
+Sometimes you need to know what users are doing and exactly who is doing it. If
+you're a DXP subscriber, you can find this out with the Audit app. In
+combination with some settings in `portal-ext.properties`, the Audit app shows
+you all the activity that occurs on your server. You can quickly find out
+what changes were made and by whom. If you've delegated permission granting to
+any group of people, this is an essential feature you're likely to use.
 
