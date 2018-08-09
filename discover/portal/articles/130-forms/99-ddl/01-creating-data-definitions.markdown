@@ -46,7 +46,7 @@ Follow these steps to create a data definition:
 6.  Add the data definition's fields in the data definition designer, below the
     form's Details section. The designer's default *View* tab lets you create
     the definition in a WYSIWYG editor. You can click the *Source* tab to work
-    with the definition's underlying XML, but it's much easier to stick with the
+    with the definition's underlying JSON, but it's much easier to stick with the
     WYSIWYG editor. 
 
     In the *View* tab select the *Fields* tab. Icons representing the field
@@ -70,8 +70,9 @@ Follow these steps to create a data definition:
         `double`. 
     -   **Documents and Media:** Select a file from a Documents and Media 
         library. 
-    -   **Geolocation:** Specify a location to associate with the document.
-    -   **HTML:** An area that uses a WYSIWYG editor to enhance the content. 
+    -   **Geolocation:** Associate a location with the User's form entry.
+    -   **HTML:** An area that uses a WYSIWYG editor to write and display HTML
+        content. 
     -   **Integer:** Enter an integer. The value is persisted as an `int`. 
     -   **Link to Page:** Link to another page in the same site.
     -   **Number:** Enter a decimal number or an integer. The value is
@@ -118,9 +119,6 @@ Follow these steps to create a data definition:
     -   **Indexable:** Whether the field is indexed for search. 
     -   **Localizable:** Whether the field can be translated. 
     -   **Repeatable:** Whether users can make copies of the field. 
-    -   **Width:** The field's width on the page. Possible width values are 
-        *Small*, *Medium* and *Large* (not available for these field types: 
-        Boolean, Documents and Media, Geolocation, Radio, and Select). 
     -   **Multiple:** Whether the user can select more than one option. This is 
         only available for Select fields. 
     -   **Options:** The options available for selection in Radio and Select 

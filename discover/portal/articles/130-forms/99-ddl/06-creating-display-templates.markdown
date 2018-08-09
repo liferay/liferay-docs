@@ -85,19 +85,18 @@ most of the data that you'll use in creating Display Templates. The variables
 under the heading Data List Variables let you inject specific information about
 the data definition the template is being created for:
 
-    reserved_ddm_structure_id
-    
-    reserved_record_set_description
-    
-    reserved_record_set_id
-    
-    reserved_record_set_name
+**Data Definition ID:** `reserved_ddm_structure_id`
 
-    reserved_ddm_template_id
+**Data List Description:** `reserved_record_set_description`
 
-Inside a template, these variables give the ID for the record set (that contains
-all of the volunteers in our list) as well as the name, description, and data
-definition. 
+**Data List ID:** `reserved_record_set_id`
+
+**Data List Name:** `reserved_record_set_name`
+
+**Template ID:** `reserved_ddm_template_id`
+
+Inside a template, these variables give the ID for the record set as well as the
+name, description, and data definition. 
 
 Display the list of records by retrieving them and assigning them to the handy
 `records` variable. Retrieve the list's records from `DDLDisplayTemplateHelper`,
