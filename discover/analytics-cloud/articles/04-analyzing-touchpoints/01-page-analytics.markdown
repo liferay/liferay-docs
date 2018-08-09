@@ -21,12 +21,26 @@ period selector recalculates the metrics based on the time period selected. You
 must specify a time period to view the metrics. The default is 30 days, but this
 is configurable. The following values are supported:
 
-- Last 24 hours
-- Yesterday
-- Last 7 days
-- Last 28 days
-- Last 30 days (default)
-- Last 90 days
+**Last 24 hours:** Displays data generated over the last 24 hours.
+
+**Yesterday:** Displays all data generated yesterday, beginning at 12:00 AM and ending at
+11:59 PM.
+
+**Last 7 days:** Displays data generated for the previous seven full days (the
+current day is excluded), in daily increments.
+
+**Last 28 days:** Displays data generated for the previous 28 full days (the
+current day is excluded), in weekly increments.
+
+**Last 30 days (default):** Displays data generated for the previous 30 full
+days (the current day is excluded), in weekly increments.
+
+**Last 90 days:** Displays data generated over a 13 week period beginning 90
+days prior to the end of the current week. The time period always begins on
+a Sunday, and ends with the current, incomplete week (unless viewed on
+a Saturday approaching midnight). 
+
+Note that the first Sunday of the 90 day time period is not included.
 
 ## Visitor Behavior [](id=visitor-behavior)
 
