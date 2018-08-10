@@ -22,7 +22,7 @@ The Folder Facet contains several configuration options:
 : Set the URL parameter name for the Facet. The default is *folder*. Searching for
 *lunar resort* and clicking on a Folder Facet produces the URL
 
-    http://localhost:8080/web/guest/search?q=lunar resort&folder=38716
+        http://localhost:8080/web/guest/search?q=lunar resort&folder=38716
 
 **Max Terms**
 : Set the maximum number of facet terms to display, regardless of how
