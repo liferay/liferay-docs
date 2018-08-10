@@ -71,7 +71,7 @@ instance's `Company`:
             k,v -> out.println("${k}:${v}") 
     }
 
-![Figure 1: Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the company and current user.](../../../images/groovy-script-current-user-info.png)
+![Figure 2: Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the company and current user.](../../../images/groovy-script-current-user-info.png)
 
 Note that if you use `System.out.println`, your output is printed to Liferay's
 log file. If you use `out.println` instead (using the predefined variable),

@@ -1,4 +1,4 @@
-# Configuring Search
+# Configuring Search [](id=configuring-search)
 
 _Configuring Search_ could mean lots of different things: 
 
@@ -13,7 +13,7 @@ In fact, _Configuring Search_ means all those things. This is a high level
 overview of what search behavior is configurable out of the box, and
 importantly, _where_ to find search configuration options.
 
-## System Scoped Search Configuration
+## System Scoped Search Configuration [](id=system-scoped-search-configuration)
 
 System scoped search configurations are primarily found in 
 [System Settings](/discover/portal/-/knowledge_base/7-1/system-settings).
@@ -24,7 +24,7 @@ System scoped search configurations are primarily found in
 
     Alternatively, search for *Search*.
 
-![Figure x: There are numerous system scoped entries for search in System Settings.](../../images/search-category-system-settings.png)
+![Figure 1: There are numerous system scoped entries for search in System Settings.](../../images/search-category-system-settings.png)
 
 These system scoped configurations are available in System Settings:
 
@@ -122,7 +122,7 @@ Portal properties are system scoped configurations as well. The
 portal properties configure low level search behavior. Review the properties and
 their descriptions and determine if they apply to your search requirements.
 
-## Site Scoped Search Configuration
+## Site Scoped Search Configuration [](id=site-scoped-search-configuration)
 
 Search isn't configurable at the Site Scope by the strict definition of 
 [Site Scoped Configuration](/discover/portal/-/knowledge_base/7-1/setting-up#configuratino-scope).
@@ -137,7 +137,7 @@ widget added to a page or configuration of the classic Search Application,
 (still available for adding to a page in @product-ver@) is page-scoped
 configuration.
 
-## Widget Scoped Search Configuration
+## Widget Scoped Search Configuration [](id=widget-scoped-search-configuration)
 
 Several search widgets are available, and each one has its own configuration
 options:

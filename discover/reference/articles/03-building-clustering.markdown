@@ -28,7 +28,7 @@ work with any branch.
 
 A Liferay Portal bundle is built to the `../bundles/` folder. 
 
-## Blacklist Single Node Modules 
+## Blacklist Single Node Modules [](id=blacklist-single-node-modules)
 
 Prevent the single node modules from deploying by
 [blacklisting](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules-and-components)
@@ -70,7 +70,7 @@ Your cluster nodes have the modules needed for running in a cluster.
 
 $$$
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [@product@ Clustering](/discover/portal/-/knowledge_base/7-1/liferay-clustering)
 

@@ -17,7 +17,7 @@ Sites. For more information on creating Roles, see the
 [Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) 
 article.
 
-## Assigning Permissions for Individual Templates
+## Assigning Permissions for Individual Templates [](id=assigning-permissions-for-individual-templates)
 
 You can also control access to specific templates separately. To determine who 
 can view and interact with a template,

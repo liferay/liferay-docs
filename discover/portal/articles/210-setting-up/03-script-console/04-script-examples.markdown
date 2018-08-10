@@ -89,7 +89,7 @@ example:
                     </div>
             """);
 
-![Figure 2: Here's an example of invoking a Groovy script that embeds HTML markup in the output of the script.](../../../images/groovy-script-embed-html-markup.png)
+![Figure 1: Here's an example of invoking a Groovy script that embeds HTML markup in the output of the script.](../../../images/groovy-script-embed-html-markup.png)
 
 ## Example 3: Show Exceptions in the Script Console [](id=example-3-show-exceptions-in-the-script-console)
 
@@ -114,7 +114,7 @@ technique does not catch script syntax errors. Here's an example:
             e.printStackTrace(out)
     }
 
-![Figure 3: Here's an example of a Groovy script that catches exceptions and prints exception information to the script console.](../../../images/groovy-script-show-exception.png)
+![Figure 2: Here's an example of a Groovy script that catches exceptions and prints exception information to the script console.](../../../images/groovy-script-show-exception.png)
 
 ## Example 4: Implement a Preview Mode [](id=example-4-implement-a-preview-mode)
 
