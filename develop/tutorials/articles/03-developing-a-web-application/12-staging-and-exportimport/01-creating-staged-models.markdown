@@ -13,8 +13,8 @@ models when
 are specified in the app's `service.xml` file. The Guestbook app already defines
 many of the necessary attributes in its `service.xml` file, so both your
 `GuestbookModel` and `EntryModel` interfaces already extend the `StagedModel`
-interface! For example, if you take a look at your Guestbook app's `EntryModel`
-interface's declaration, it looks like this:
+interface! For example, your Guestbook app's `EntryModel` interface's
+declaration looks like this:
 
     public interface EntryModel extends BaseModel<Entry>, GroupedModel, ShardedModel,
         StagedAuditedModel, WorkflowedModel {
@@ -55,7 +55,7 @@ Staged models that extend the `StagedAuditedModel` interface are intended to
 function independent from the group concept (sometimes referred to as company
 models). This means that, for example, your guestbook and entry's scope would
 not be tracked by the Staging framework. You must add one more column to your
-`service.xml` file to convert your models as `StagedGroupedModel`s (i.e.,
+`service.xml` file to convert your models to `StagedGroupedModel`s (i.e.,
 correctly track the scope of your entities):
 
 1.  Open your `guestbook-service` module's `service.xml` file and add the
@@ -68,12 +68,12 @@ correctly track the scope of your entities):
     task.
 
 Service Builder has updated your models to now extend the `StagedGroupedModel`.
-For example,
+For example, your `EntryModel` interface's declaration now looks like this:
 
     public interface EntryModel extends BaseModel<Entry>, ShardedModel,
         StagedGroupedModel, WorkflowedModel {
 
-For more information on staged model interfaces, see this
+For more information on the available staged model interfaces, see this
 [tutorial](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#staged-model-interfaces)
 
 Excellent! Now it's time to create your staged model data handlers.
