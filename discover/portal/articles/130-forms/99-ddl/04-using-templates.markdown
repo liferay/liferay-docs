@@ -2,12 +2,13 @@
 
 After creating data definitions and lists, you can control how the form appears
 to users, and how the resulting list of records is displayed. You do this by
-creating templates for each view (form view and record display, or list, view)
-and selecting them in the DDL Display portlet. For example, you might need to
-create a form with a subset of a data definition's fields. Rather than creating
-a new definition, you can create a template that displays only the fields you
-want from the existing definition. You could also use a template to arrange
-fields differently, and/or with different labels and configuration options. 
+creating templates for each view (form view for displaying the form and display
+view for the list of records) and selecting them in the DDL Display portlet. For
+example, you might need to create a form with a subset of a data definition's
+fields. Rather than creating a new definition, you can create a template that
+displays only the fields you want from the existing definition. You could also
+use a template to arrange fields differently, and/or with different labels and
+configuration options. 
 
 Data definitions can have as many form and display templates as you care to
 create (or none, if you're satisfied with the default templates). You then 
