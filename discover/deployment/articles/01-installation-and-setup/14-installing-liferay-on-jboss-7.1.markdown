@@ -183,6 +183,7 @@ insert the following path names inside the `<paths>...</paths>` element:
         <path name="com/sun/crypto" />
         <path name="com/sun/crypto/provider" />
         <path name="com/sun/image/codec/jpeg" />
+        <path name="com/sun/imageio/plugins/jpeg" />
         <path name="com/sun/org/apache/xml/internal/resolver" />
         <path name="com/sun/org/apache/xml/internal/resolver/tools" />
 
