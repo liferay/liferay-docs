@@ -26,7 +26,7 @@ addresses, etc.) by using the text field's
 ![Figure 3: Text fields can be single line or multi-line.](../images/forms-multiline.png)
 
 **Select from List:** Users select one option (or more, if configured to allow 
-it) from a list of choices. Choices are entered manually, or automatically 
+it) from a list of choices. Choices are entered manually or are automatically 
 populated by a data provider. For example, a Country of Residence field can be 
 selected from list field populated by a Countries of the World data provider. 
 
@@ -62,6 +62,6 @@ that accepts integers to ask users how many pets they have.
 ![Figure 9: Numeric fields accept only numeric input.](../images/forms-numeric.png)
 
 **Upload:** Users can select a file from the Documents and Media library or 
-upload a file from their local filesystem. 
+upload a file from their local filesystems. 
 
 ![Figure 10: Upload fields let Users attach files to the form.](../images/forms-upload.png)
