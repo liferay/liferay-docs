@@ -2,7 +2,7 @@
 
 This tutorial provides examples of invoking Liferay's JSON web services via
 JavaScript, URL, and 
-[cURL](http://curl.haxx.se/). 
+[cURL](http://curl.haxx.se). 
 To illustrate the differences between these, the same two use cases (getting a
 user and adding a user) are shown in each example. This tutorial also includes
 an example of using JavaScript to invoke Liferay's JSON web services from a
@@ -16,21 +16,19 @@ Liferay's API.
 
 Examine the following JSON web service invocation, written in JavaScript: 
 
-    Liferay.Service(
-        '/user/get-user-by-email-address',
-        {
-            companyId: Liferay.ThemeDisplay.getCompanyId(),
-            emailAddress: 'test@liferay.com'
-        },
-        function(obj) {
-            console.log(obj);
-        }
-    );
-
-The simplest way to run this example is to wrap it in a script tag like this:
-
 	<script type="text/javascript">
-	// Liferay service invocation here
+
+      Liferay.Service(
+          '/user/get-user-by-email-address',
+          {
+              companyId: Liferay.ThemeDisplay.getCompanyId(),
+              emailAddress: 'test@liferay.com'
+          },
+          function(obj) {
+              console.log(obj);
+          }
+      );
+
 	</script>
 
 When you run this example, the test@liferay.com user (JSON object) is returned.
@@ -39,7 +37,9 @@ You can examine the returned object from your browser console.
 The `Liferay.Service(...)` function takes three arguments:
 
 1. A string representing the service to invoke
+
 2. A parameters object
+
 3. A callback function
 
 The callback function takes the result of the service invocation as an argument.
@@ -192,12 +192,6 @@ user.
     });
     </aui:script>
 
-In this example, it's assumed that the JSP page is part of a web module with a
-portlet class that extends Liferay's `MVCPortlet` class. This is required since
-the code uses the `mvcPath` URL parameter. It's also assumed that the JSP code 
-is in a file named `view.jsp`, and that there are also `success.jsp` and 
-`failure.jsp` files in the same directory. 
-
 ## Get User JSON Web Service Invocation via URL [](id=get-user-json-web-service-invocation-via-url)
 
 Here's a simple JSON web service invocation via URL that returns the user with
@@ -246,7 +240,7 @@ user with the specified email address:
       -d emailAddress='test@liferay.com'
 
 Note that cURL is a command line tool. You can execute this command from a 
-terminal or command prompt. 
+terminal window. 
 
 ## Add User JSON Web Service Invocation via cURL [](id=add-user-json-web-service-invocation-via-curl)
 
