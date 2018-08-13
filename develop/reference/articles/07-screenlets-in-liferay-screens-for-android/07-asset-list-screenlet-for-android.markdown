@@ -27,30 +27,24 @@ scrollable list of assets. It also implements [fluent pagination](http://www.ios
 with configurable page size. The Asset List Screenlet can show assets belonging 
 to the following classes:
 
-- `Group`
-- `Layout`
-- `Organization`
-- `User`
-- `UserGroup`
 - `BlogsEntry`
 - `BookmarksEntry`
 - `BookmarksFolder`
 - `CalendarEvent`
 - `DLFileEntry`
-- `DLFileEntryMetadata`
-- `DLFileEntryType`
-- `DLFileRank`
-- `DLFileShortcut`
-- `DLFileVersion`
 - `DDLRecord`
 - `DDLRecordSet`
+- `Group`
 - `JournalArticle` (Web Content)
 - `JournalFolder`
-- `MBMessage`
+- `Layout`
+- `LayoutRevision`
 - `MBThread`
 - `MBCategory`
 - `MBDiscussion`
 - `MBMailingList`
+- `Organization`
+- `User`
 - `WikiPage`
 - `WikiPageResource`
 - `WikiNode`
