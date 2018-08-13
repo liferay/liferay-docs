@@ -104,6 +104,12 @@ Start* tab. Enter the following into the *Arguments* field:
 
 Click *Save* when you're finished. 
 
+The UTF-8 file encoding must also be set in your environment's Java properties.
+In your `setDomainEnv.[sh|cmd]` script, append `-Dfile.encoding=utf8` ahead of
+your other Java properties: 
+
+    JAVA_PROPERTIES="-Dfile.encoding=utf8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+
 Next, you'll set some @product@-specific properties for your @product@ installation. 
 
 ## Setting @product@ Properties [](id=setting-liferay-properties)
