@@ -3,10 +3,9 @@
 [Applying social bookmarks](/develop/tutorials/-/knowledge_base/7-1/applying-social-bookmarks) 
 lets you link your app's content to the social networks of your choice. By 
 default, @product@ supports social bookmarks for Twitter, Facebook, LinkedIn, 
-and Google Plus. You can also create your own custom social bookmark by 
-registering a component that implements the `SocialBookmark` interface from the 
-module `com.liferay.social.bookmarks.api`. This tutorial shows you how to do 
-this. 
+and Google Plus. You can also create your own social bookmark by registering a
+component that implements the `SocialBookmark` interface from the module
+`com.liferay.social.bookmarks.api`. This tutorial shows you how to do this.
 
 ## Implementing the SocialBookmark Interface [](id=implementing-the-socialbookmark-interface)
 
@@ -32,7 +31,7 @@ Follow these steps to implement the `SocialBookmark` interface:
         private ResourceBundleLoader _resourceBundleLoader;
 
 3.  Implement the `getName` method to return the social bookmark's name as a 
-    string. This method takes a 
+    `String`. This method takes a 
     [`Locale`](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html) 
     object that you can use for localization via 
     [`LanguageUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/language/LanguageUtil.html) 
@@ -86,14 +85,14 @@ Follow these steps to implement the `SocialBookmark` interface:
                 requestDispatcher.include(request, response);
         }
 
-Next, you'll see an example of how to create such a `page.jsp` file.
+Next, you'll see an example of how to create a `page.jsp` file.
 
 ## Creating Your JSP [](id=creating-your-jsp)
 
 The `page.jsp` file referenced in the above `SocialBookmark` implementation uses 
 [a Clay link](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links) 
 (`clay:link`) to specify and style the Twitter icon included with Clay. Follow 
-these steps to create such a JSP for your own social bookmark:
+these steps to create a JSP for your own social bookmark:
 
 1.  Add the `clay` and `liferay-theme` taglib declarations: 
 
@@ -118,7 +117,7 @@ these steps to create such a JSP for your own social bookmark:
         %>
 
     The title and URL are set via the `liferay-social-bookmarks` 
-    taglib when 
+    tag library when 
     [applying the social bookmark](/develop/tutorials/-/knowledge_base/7-1/applying-social-bookmarks).
 
 4.  Add the Clay link. This example sets the following `clay:link` attributes: 
