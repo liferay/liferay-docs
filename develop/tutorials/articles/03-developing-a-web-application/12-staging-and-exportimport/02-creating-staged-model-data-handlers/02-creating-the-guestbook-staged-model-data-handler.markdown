@@ -1,41 +1,25 @@
-# Creating Staged Model Data Handlers
+# Creating the Guestbook Staged Model Data Handler
 
-A Staged Model Data Handler supplies information about a staged model (entity)
-to the Staging and Export/Import framework. Data handlers replace the need to
-manually access the database directly and run queries to export/import data.
+The guestbook's staged model data handler is similar to the entry's data
+handler. Refer to the previous article for any in-depth code analysis.
 
-You're required to create a staged model data handler for every entity you want
-Staging to track. This means you must create a data handler for both your
-guestbook and entry entities.
+1.  In the `guestbook-service` module's
+    `com.liferay.docs.guestbook.exportimport.data.handler` package, create the
+    `GuestbookStagedModelDataHandler` class.
 
-First, you'll create a staged model data handler for guestbook entries:
-
-1.  In your `guestbook-service` module, create a package named
-    `com.liferay.docs.guestbook.exportimport.data.handler`.
-
-2.  In that package, create the `EntryStagedModelDataHandler` class and have
-    it extend the `BaseStagedModelDataHandler<STAGED_MODEL>` class:
-
-        public class EntryStagedModelDataHandler
-            extends BaseStagedModelDataHandler<Entry> {
-
-3.  Add an `@Component` annotation above the class declaration to declare that
-    the `EntryStagedModelDataHandler` class provides an implementation of
-    the `StagedModelDataHandler` service:
+2.  Declare `BaseStagedModelDataHandler<STAGED_MODEL>` as your extension class
+    and add the `@Component` declaration to declare `StagedModelDataHandler` as
+    your implemented service:
 
         @Component(
             immediate = true, 
             service = StagedModelDataHandler.class
         )
+        public class GuestbookStagedModelDataHandler
+            extends BaseStagedModelDataHandler<Guestbook> {
 
-4.  Set the staged model's local service that you want to provide a data handler
-    for:
-
-        @Reference(unbind = "-")
-        protected void setEntryLocalService(EntryLocalService entryLocalService) {
-
-            _entryLocalService = entryLocalService;
-        }
+3.  Set the staged model's local service you want to leverage in your data
+    handler:
 
         @Reference(unbind = "-")
         protected void setGuestbookLocalService(
@@ -44,186 +28,149 @@ First, you'll create a staged model data handler for guestbook entries:
             _guestbookLocalService = guestbookLocalService;
         }
 
-        private EntryLocalService _entryLocalService;
         private GuestbookLocalService _guestbookLocalService;
 
-    This logic provides access to the entry and guestbook's local services.
-
-5.  You must provide the class names of the models the data handler tracks. You
-    can do this by overriding the `StagedModelDataHandler`'s `getClassnames()`
-    method:
-
-        public static final String[] CLASS_NAMES = {Entry.class.getName()};
+4.  Add the methods to retrieve the guestbook staged model's classes to track
+    and display names:
 
         @Override
         public String[] getClassNames() {
-        		return CLASS_NAMES;
+
+            return CLASS_NAMES;
         }
-
-    As a best practice, you should have one staged model data handler per staged
-    model. It's possible to use multiple class types, but this is not
-    recommended.
-
-6.  Add a method that retrieves the staged model's display name:
 
         @Override
-        public String getDisplayName(Entry entry) {
-            return entry.getName();
+        public String getDisplayName(Guestbook guestbook) {
+
+            return guestbook.getName();
         }
 
-    The display name is presented with the progress bar during the export/import
-    process.
-
-    <!-- Add image here -->
-
-7.  A staged model data handler should ensure everything required for its
-    operation is also exported. For example, an entry requires a guestbook.
-    Therefore, the guestbook should be exported first followed by the entry.
-
-    Add methods that import and export your staged model and its references.
+5.  Add methods to ensure all import/export information is provided to the
+    Staging framework for your guestbook entity:
 
         @Override
         protected void doExportStagedModel(
-                PortletDataContext portletDataContext, Entry entry)
+                PortletDataContext portletDataContext, Guestbook guestbook)
             throws Exception {
-    
-            Guestbook guestbook =
-                _guestbookLocalService.getGuestbook(entry.getGuestbookId());
-    
-            StagedModelDataHandlerUtil.exportReferenceStagedModel(
-                portletDataContext, entry, guestbook,
-                PortletDataContext.REFERENCE_TYPE_PARENT);
-    
-            Element entryElement = portletDataContext.getExportDataElement(entry);
-    
+
+            Element guestbookElement =
+                portletDataContext.getExportDataElement(guestbook);
+
             portletDataContext.addClassedModel(
-                entryElement, ExportImportPathUtil.getModelPath(entry), entry);
-    	}
+                guestbookElement, ExportImportPathUtil.getModelPath(guestbook),
+                guestbook);
+        }
 
         @Override
         protected void doImportStagedModel(
-                PortletDataContext portletDataContext, Entry entry)
+                PortletDataContext portletDataContext, Guestbook guestbook)
             throws Exception {
-      
-            long userId = portletDataContext.getUserId(entry.getUserUuid());
-      
+
+            long userId = portletDataContext.getUserId(guestbook.getUserUuid());
+
             Map<Long, Long> guestbookIds =
                 (Map<Long, Long>) portletDataContext.getNewPrimaryKeysMap(
-                    Guestbook.class);
-      
+                Guestbook.class);
+
             long guestbookId = MapUtil.getLong(
-                guestbookIds, entry.getGuestbookId(), entry.getGuestbookId());
-      
-            Entry importedEntry = null;
-      
+                guestbookIds, guestbook.getGuestbookId(),
+                guestbook.getGuestbookId());
+
+            Guestbook importedGuestbook = null;
+
             ServiceContext serviceContext =
-                portletDataContext.createServiceContext(entry);
-      
+                portletDataContext.createServiceContext(guestbook);
+
             if (portletDataContext.isDataStrategyMirror()) {
-                Entry existingEntry = fetchStagedModelByUuidAndGroupId(
-                    entry.getUuid(), portletDataContext.getScopeGroupId());
-      
-                if (existingEntry == null) {
-                    serviceContext.setUuid(entry.getUuid());
-      
-                    importedEntry = _entryLocalService.addEntry(
-                        userId, guestbookId, entry.getName(), entry.getEmail(),
-                        entry.getMessage(), serviceContext);
+
+                Guestbook existingGuestbook = fetchStagedModelByUuidAndGroupId(
+                    guestbook.getUuid(), portletDataContext.getScopeGroupId());
+
+                if (existingGuestbook == null) {
+                    serviceContext.setUuid(guestbook.getUuid());
+
+                    importedGuestbook = _guestbookLocalService.addGuestbook(
+                        userId, guestbook.getName(), serviceContext);
                 }
                 else {
-                    importedEntry = _entryLocalService.updateEntry(
-                        userId, guestbookId, existingEntry.getEntryId(),
-                        entry.getName(), entry.getEmail(), entry.getMessage(),
-                        serviceContext);
+                    importedGuestbook = _guestbookLocalService.updateGuestbook(
+                        userId, existingGuestbook.getGuestbookId(), guestbook.getName(), serviceContext);
+
                 }
             }
             else {
-                importedEntry = _entryLocalService.addEntry(
-                    userId, guestbookId, entry.getName(), entry.getEmail(),
-                    entry.getMessage(), serviceContext);
+                importedGuestbook = _guestbookLocalService.addGuestbook(
+                    userId, guestbook.getName(), serviceContext);
             }
-      
-            portletDataContext.importClassedModel(entry, importedEntry);
+
+            portletDataContext.importClassedModel(guestbook, importedGuestbook);
         }
 
-    The `doExportStagedModel` method retrieves the entry's data element from the
-    `PortletDataContext` and then adds the class model characterized by that
-    data element to the `PortletDataContext`. The `PortletDataContext` is used
-    to populate the
-    [LAR file](/develop/tutorials/-/knowledge_base/7-0/understanding-data-handlers#liferay-archive-lar-file)
-    with your application's data during the export process. Note that once an
-    entity has been exported, subsequent calls to the export method won't
-    actually repeat the export process multiple times, ensuring optimal
-    performance.
+    Similar to the guestbook entry, these methods add export/import information
+    to the `PortletDataContext`.
 
-    An important feature of the import process is that all exported reference
-    elements are automatically imported when needed. The `doImportStagedModel`
-    method does not need to import the reference elements manually; it must only
-    find the new assigned ID for the guestbook before importing the entry.
-
-    The `PortletDataContext` keeps this information and a slew of other data
-    up-to-date during the import process. The old ID and new ID mapping can be
-    reached by using the `portletDataContext.getNewPrimaryKeysMap()` method as
-    shown in the code snippet. The method proceeds with checking the import mode
-    (e.g., Copy As New or Mirror) and depending on the process configuration and
-    existing environment, the entry is either added or updated.
-
-8.  When importing a LAR that specifies a missing reference, the import process
-    expects the reference to be available and must validate that it's there. You
-    must add a method that maps the missing reference ID from the export to the
-    existing ID during import.
-
-    For example, suppose you export a guestbook entry as a missing reference
-    with an ID of `1`. When importing that information, the LAR only provides
-    the ID but not the entry itself. Therefore, during the import process, the
-    Data Handler framework searches for the entry to replace, but the entry to
-    replace has a different ID of `2`. You must provide a method that maps these
-    two IDs so the import process can recognize the missing reference.
+6.  Add a method that maps the missing reference ID from the export to the
+    existing ID during import:
 
         @Override
         protected void doImportMissingReference(
-            PortletDataContext portletDataContext, String uuid, long groupId,
-            long entryId)
-        throws Exception {
+                PortletDataContext portletDataContext, String uuid, long groupId,
+                long guestbookId)
+            throws Exception {
 
-            Entry existingEntry = fetchMissingReference(uuid, groupId);
+            Guestbook existingGuestbook = fetchMissingReference(uuid, groupId);
 
-            if (existingEntry == null) {
+            if (existingGuestbook == null) {
                 return;
             }
 
-            Map<Long, Long> entryIds =
+            Map<Long, Long> guestbookIds =
                 (Map<Long, Long>) portletDataContext.getNewPrimaryKeysMap(
-                Entry.class);
+                Guestbook.class);
 
-            entryIds.put(entryId, existingEntry.getEntryId());
+            guestbookIds.put(guestbookId, existingGuestbook.getGuestbookId());
         }
 
-    This method maps the existing staged model to the old ID in the reference
-    element. When a reference is exported as missing, the Data Handler framework
-    calls this method during the import process and updates the new primary key
-    map in the portlet data context.
+7.  Provide a way for the staged model data handler to fetch your staged models:
 
+        @Override
+        public Guestbook fetchStagedModelByUuidAndGroupId(
+            String uuid, long groupId) {
 
+            return _guestbookLocalService.fetchGuestbookByUuidAndGroupId(
+                uuid, groupId);
+        }
 
+        @Override
+        public List<Guestbook> fetchStagedModelsByUuidAndCompanyId(
+            String uuid, long companyId) {
 
+            return _guestbookLocalService.getGuestbooksByUuidAndCompanyId(
+                uuid, companyId, QueryUtil.ALL_POS, QueryUtil.ALL_POS,
+                new StagedModelModifiedDateComparator<Guestbook>());
+        }
 
+8.  Override the `BaseStagedModelDataHandler`'s delete methods to leverage your
+    newly created fetch method and custom local service:
 
+        @Override
+        public void deleteStagedModel(
+                String uuid, long groupId, String className, String extraData)
+            throws PortalException {
 
+            Guestbook guestbook = fetchStagedModelByUuidAndGroupId(uuid, groupId);
 
+            if (guestbook != null) {
+                deleteStagedModel(guestbook);
+            }
+        }
 
+        @Override
+        public void deleteStagedModel(Guestbook guestbook)
+            throws PortalException {
 
+            _guestbookLocalService.deleteGuestbook(guestbook);
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Your guestbook staged model data handler is ready to go! Next, you'll begin
+updating your guestbook's permissions to account for staging.

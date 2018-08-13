@@ -21,8 +21,8 @@ handler:
             service = StagedModelDataHandler.class
         )
 
-4.  Set the staged model's local service that you want to provide a data handler
-    for:
+4.  Set the staged model's local services you want to leverage in your data
+    handler:
 
         @Reference(unbind = "-")
         protected void setEntryLocalService(EntryLocalService entryLocalService) {
@@ -70,8 +70,9 @@ handler:
     <!-- Add image here -->
 
 7.  A staged model data handler should ensure everything required for its
-    operation is also exported. For example, an entry requires a guestbook.
-    Therefore, the guestbook should be exported first followed by the entry.
+    operation is also imported/exported. For example, an entry requires a
+    guestbook. Therefore, the guestbook should be exported first followed by the
+    entry.
 
     Add methods that import and export your staged model and its references.
 
@@ -197,26 +198,52 @@ handler:
     calls this method during the import process and updates the new primary key
     map in the portlet data context.
 
+9.  Provide a way for the staged model data handler to fetch your staged models:
 
+        @Override
+        public Entry fetchStagedModelByUuidAndGroupId(String uuid, long groupId) {
 
+            return _entryLocalService.fetchEntryByUuidAndGroupId(uuid, groupId);
+        }
 
+        @Override
+        public List<Entry> fetchStagedModelsByUuidAndCompanyId(
+            String uuid, long companyId) {
 
+            return _entryLocalService.getEntriesByUuidAndCompanyId(
+                uuid, companyId, QueryUtil.ALL_POS, QueryUtil.ALL_POS,
+                new StagedModelModifiedDateComparator<Entry>());
+        }
 
+    These methods use the entry's local service to get the entries by UUID and
+    company ID (i.e., portal instance's primary key) or group ID (i.e., site,
+    organization, or user group's primary key).
 
+10. Override the `BaseStagedModelDataHandler`'s delete methods to leverage your
+    newly created fetch method and custom local service:
 
+        @Override
+        public void deleteStagedModel(
+                String uuid, long groupId, String className, String extraData)
+            throws PortalException {
 
+            Entry entry = fetchStagedModelByUuidAndGroupId(uuid, groupId);
 
+            if (entry != null) {
+                deleteStagedModel(entry);
+            }
 
+        }
 
+        @Override
+        public void deleteStagedModel(Entry entry)
+            throws PortalException {
 
+            _entryLocalService.deleteEntry(entry);
+        }
 
+  	These methods are necessary for the Staging framework to properly delete
+    your entry staged models.
 
-
-
-
-
-
-
-
-
-
+The entry's staged model data handler is complete! Next you can create the
+guestbook's staged model data handler.
