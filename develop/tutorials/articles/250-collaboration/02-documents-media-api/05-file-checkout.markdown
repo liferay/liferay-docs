@@ -11,6 +11,8 @@ operations:
 -   File checkin. 
 -   Cancel a checkout, discarding any changes. 
 -   File checkin and checkout, in a single operation. 
+<!-- Add section for the last item -->
+<!-- Also add examples in each section -->
 
 ## File Checkout
 
