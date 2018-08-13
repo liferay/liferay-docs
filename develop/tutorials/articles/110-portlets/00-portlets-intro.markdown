@@ -39,8 +39,8 @@ define features like inter-portlet communication (IPC) and more. In 2017, Java
 Portlet Specification 3.0 
 ([JSR-362](https://jcp.org/en/jsr/detail?id=362)) 
 continued portal and portlet evolution, bringing features such as configuration
-by annotation and CDI support. Liferay leads in this space by having a  member
-in the Expert Group. 
+by annotation, a Header phase, and CDI integration. Liferay leads in this space
+by having a  member in the Expert Group. 
 
 So what do these specifications define? The links above show the complete
 definition; here we'll briefly summarize how portlets differ from other types of
