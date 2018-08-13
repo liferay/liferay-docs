@@ -22,7 +22,7 @@ customers to pay by money order:
     **Description**: Text entered in this field appears on the screen where
     buyers select a payment method.
 
-    **Image**: Hit *Browse* to upload or select an image to display along with
+    **Icon**: Hit *Browse* to upload or select an image to display along with
     the name and description.
 
     **Priority:** Set a priority to determine the order payment methods appear
@@ -32,7 +32,7 @@ customers to pay by money order:
     money order option. This text tell customers where to send the money order,
     provide a shipping time estimate, or the like.
 
-3.  Check the *Active* Box and click *Save*.
+3.  Set the *Active* toggle to *yes* and click *Save*.
 
 ## Purchase Order [](id=purchase-order)
 
@@ -50,7 +50,7 @@ purchase order:
     **Description**: Text entered in this field appears on the screen where
     buyers select a payment method.
 
-    **Image**: Hit *Browse* to upload or select an image to display along with
+    **Icon**: Hit *Browse* to upload or select an image to display along with
     the name and description.
 
     **Priority:** Set a priority to determine the order payment methods appear
@@ -62,7 +62,7 @@ purchase order:
     correct purchase order number, when to expect an invoice, or other
     information.
 
-3.  Check the *Active* Box and click *Save*.
+3.  Set the *Active* toggle to *yes* and click *Save*.
 
 
 +$$$
@@ -95,7 +95,7 @@ Follow these steps let buyers pay with PayPal:
     **Description:** Text entered in this field appears on the screen where
     buyers a select a payment method.
 
-    **Image**: Hit *Browse* to upload or select an image to display along with
+    **Icon**: Hit *Browse* to upload or select an image to display along with
     the name and description.
 
     **Priority:** Set a priority to determine the order payment methods appear

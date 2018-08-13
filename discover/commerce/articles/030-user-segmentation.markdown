@@ -20,7 +20,7 @@ $$$
 1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *User Segments*.
 
 2.  Click ![Add](../images/icon-add.png) and enter a name for the segment when
-    prompted. Click *Submit*.
+    prompted. Click *Save*.
 
 3.  Click on the user group to edit it. Fill in the following fields:
 

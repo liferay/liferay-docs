@@ -46,7 +46,8 @@ If a product requires multiple SKUs, then you must add them. Follow these steps:
 
 2.  Click on the ![Add](../../../images/icon-add.png) button and select
     *Generate all SKU combinations*. This creates a SKU for each combination of
-    option values a product could take.
+    option values a product could take. This selection is not available if no
+    SKU-generating options have been applied.
 
     Alternatively, you could create a single SKU by selecting *Add SKU*, but
     keep in mind that any product variant without a SKU is not purchasable.
