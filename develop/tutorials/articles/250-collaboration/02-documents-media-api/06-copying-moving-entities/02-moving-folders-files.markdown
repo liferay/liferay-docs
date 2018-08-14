@@ -12,11 +12,18 @@ method `moveFolder`:
 
     moveFolder(long folderId, long parentFolderId, ServiceContext serviceContext)
 
-For a full description of the method and its parameters, see its 
+For a full description of this method and its parameters, see its 
 [Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#moveFolder-long-long-com.liferay.portal.kernel.service.ServiceContext-). 
 This method is similar to `copyFolder`, except it doesn't let you change the 
-folder's name or description, and can move folders between repositories. Also, 
-the move operation is recursive---the folder's contents are moved as well. Note 
-that when moving between repositories, the operation may be transactional 
+folder's name or description, and it can move folders between repositories. 
+Also, the move operation is recursive---the folder's contents are moved as well. 
+Note that when moving between repositories, the operation may be transactional 
 depending on the repository implementation. 
 
+The operation for moving files is almost identical. To do this, use the 
+`DLAppService` method `moveFileEntry`: 
+
+    moveFileEntry(long fileEntryId, long newFolderId, ServiceContext serviceContext)
+
+For a full description of this method and its parameters, see its 
+[Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#moveFileEntry-long-long-com.liferay.portal.kernel.service.ServiceContext-). 
