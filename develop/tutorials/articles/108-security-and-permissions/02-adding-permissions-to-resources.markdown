@@ -83,13 +83,13 @@ known as *DRAC*):
 
 2. <b>R</b>egister all defined resources in the permissions system. This is also
    known as *adding resources*. This step is discussed in the tutorial 
-   [Adding and Deleting Resources](/tutorials/-/knowledge_base/adding-and-deleting-resources).
+   [Adding and Deleting Resources](/develop/tutorials/-/knowledge_base/6-2/adding-and-deleting-resources).
 
 3. <b>A</b>ssociate the necessary permissions with resources. This step is 
-   discussed in the tutorial [Exposing the Permission Interface to Users](/tutorials/-/knowledge_base/exposing-the-permission-interface-to-users).
+   discussed in the tutorial [Exposing the Permission Interface to Users](/develop/tutorials/-/knowledge_base/6-2/exposing-the-permission-interface-to-users).
 
 4. <b>C</b>heck permission before returning resources. This step is described in 
-   the tutorial [Checking Permissions](/tutorials/-/knowledge_base/checking-permissions).
+   the tutorial [Checking Permissions](/develop/tutorials/-/knowledge_base/6-2/checking-permissions).
  
 ## Define All Resources and Permissions [](id=define-all-resources-and-permissions)
 
