@@ -1,4 +1,4 @@
-# Accessing DXP Artifacts for the Target Platform
+# Accessing DXP Artifacts for the Target Platform [](id=accessing-dxp-artifacts-for-the-target-platform)
 
 When targeting a Liferay DXP versioned platform, you must provide your
 credentials to gain access to DXP-only artifacts. Storing your password in plain
