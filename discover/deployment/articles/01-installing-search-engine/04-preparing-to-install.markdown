@@ -1,13 +1,11 @@
 # Preparing to Install Elasticsearch
 
-By default, @product-ver@ and its embedded Elasticsearch engine run in the same 
-JVM. Although this enables out-of-the-box search in @product-ver@, it's only 
-supported for development; production use isn't supported. For production use, 
-Liferay only supports Elasticsearch when it runs in a separate JVM, because
-search engines benefit heavily from caching. This makes their JVM memory
-profiles differ substantially from those of a JVM running @product-ver@.
-Therefore, the two applications should always be kept separate in production
-environments. 
+By default, @product-ver@ and its embedded Elasticsearch engine run in the same
+JVM. Although this enables out-of-the-box search, it's only supported for
+development. For production use, Elasticsearch must run in a separate JVM.
+Because search engines benefit heavily from caching, their JVM memory profiles
+differ substantially from those of a JVM running @product@. Therefore, the two
+applications should always be kept separate in production environments. 
 
 The following sections provide a synopsis of Elasticsearch configurations for 
 @product-ver@. Prior to deployment, we strongly recommend reading 
@@ -15,58 +13,59 @@ The following sections provide a synopsis of Elasticsearch configurations for
 
 ## Sizing Your Deployment [](id=sizing-your-deployment)
 
-When sizing your Elasticsearch deployment, you must carefully consider your CPU, 
-memory, disk, and network capacity. Generally, you should deploy Elasticsearch
-on medium to large machines. This lets you scale effectively and avoid large
-numbers of machines. You should also avoid running multiple Elasticsearch JVMs
-on the same operating system. 
+When sizing your Elasticsearch deployment, carefully consider CPU, memory, disk,
+and network capacity. To scale effectively and avoid using lots of machines,
+deploy Elasticsearch on medium to large machines (for example, machines with two
+to eight CPUs). Avoid running multiple Elasticsearch JVMs on the same operating
+system. 
 
 ## CPU [](id=cpu)
 
-Liferay recommends that you allocate at least 4 CPU cores to the Elasticsearch 
-engine. This assumes only 1 Elasticsearch JVM running on the machine. 
+We recommend allocating at least eight total CPU cores to the Elasticsearch
+engine, assuming only one Elasticsearch JVM is running on the machine. 
 
 ## Memory [](id=memory)
 
-Liferay recommends at least 16 GB of memory, with 64 GB preferred. The memory
-allocation depends upon the amount of index data. For index sizes 500 GB to 1
-TB, 64 GB of memory should suffice. 
+At least 16 GB of memory is recommended, with 64 GB preferred. The precise
+memory allocation required depends on how much data is indexed. For index sizes
+500 GB to 1 TB, 64 GB of memory will suffice. 
 
 ## Disk [](id=disk)
 
-Search engines store their indexes on disk. Disk I/O capacity can therefore 
-impact search performance. Liferay recommends deploying Elasticsearch on SSD 
-when possible. If you are unable to do this, use high-performance traditional
-hard disks (e.g., 15k RPM). Consider using RAID 0 for both SSD and traditional
-hard disks. 
+Search engines store their indexes on disk, so disk I/O capacity can impact
+search performance. Deploy Elasticsearch on SSD whenever possible. Otherwise use
+high-performance traditional hard disks (for example, 15k RPM). In either case,
+consider using RAID 0.
 
-In general, avoid using NAS (network attached storage) for Elasticsearch as the
-network overhead can be large. If you're using public cloud infrastructure like
-Amazon Web Services, use instance local storage and avoid network storage like
+Avoid using Network Attached Storage (NAS) whenever possible as the network
+overhead can be large. If you're using public cloud infrastructure like Amazon
+Web Services, use instance local storage instead of network storage, such as
 Elastic Block Store (EBS). 
 
-Also note that search index sizes vary based on the indexed content. Ensure you
-have at least 25% more disk capacity than the total size of your indexes. For
-example, if your index is 50 GB, you should have at least 75 GB of disk space
-available. To estimate the disk space you need, Liferay recommends that you
-index a representative sample of your production content and then multiply the
-size of that sample index by the fraction of your production content that it
-represents. For example, index 25% of your production content and then multiply
-the resulting index size by 4. Keep in mind that indexing a 1 MB file doesn't
-result in 1 MB of space in the search index. 
+Maintain 25 percent more disk capacity than the total size of your indexes. If
+your index is 60 GB, make sure you have at least 75 GB of disk space available.
+To estimate the disk space you need, you can index a representative sample of
+your production content, and multiply that size the fraction of your production
+content that it represents. For example, index 25 percent of your production
+content and then multiply the resulting index size by four. Just keep in mind
+that indexing a 1 MB file doesn't result in 1 MB of disk space in the search
+index. 
+
+## Cluster Size
+
+While @product@ can work with an Elasticsearch cluster comprised of one or two
+nodes, the minimum cluster size recommended by Elastic for fault tolerance is
+three nodes.
 
 ## Networking [](id=networking)
 
-Elasticsearch relies on clustering and sharding to deliver fast, accurate search 
-results. Therefore, it requires a fast and reliable network. Most modern data 
-centers provide 1 GbE or 10 GbE between machines. Avoid spreading Elasticsearch
-clusters across multiple data centers. Elasticsearch doesn't support multi-data
-center deployments, especially data centers spread across large distances (e.g.,
-cross-continent). To support multi-data center deployments, you must create a
-custom solution that distributes index requests (update, delete, add document)
-to each data center. 
+Elasticsearch relies on clustering and sharding to deliver fast, accurate search
+results, and thus requires a fast and reliable network. Most modern data centers
+provide 1 GbE or 10 GbE between machines. 
 
-## Shards and Replicas [](id=shards-and-replicas)
+Elasticsearch doesn't support multi-data center deployments.
+
+<!-- EXCLUDING FOR NOW: NOT IN 7.1 DEPLOYMENT CHECKLIST ## Shards and Replicas [](id=shards-and-replicas)
 
 Elasticsearch uses shards and replicas to scale. Shards divide a search index 
 into smaller, more manageable chunks. For example, if you have a 500 GB index 
@@ -75,4 +74,4 @@ shouldn't exceed 50 GB. More shards generally mean faster indexing (write)
 performance but slower search (read) performance. In Elasticsearch, an index 
 with multiple shards results in a distributed search and a subsequent result 
 merge. Replicas provide resiliency and improve search performance. A replica 
-helps to load balance search operations across the cluster. 
+helps to load balance search operations across the cluster.  -->
