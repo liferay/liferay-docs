@@ -95,7 +95,8 @@ upgrade configuration options.
 ## Configuring the Core Upgrade [](id=configuring-the-core-upgrade)
 
 The core upgrade requires configuration. You can configure it at runtime via the
-command line interface or pre-configure it in these files:
+command line interface or pre-configure it in these files in `[Liferay
+Home]/tools/portal-tools-db-upgrade-client/`:
 
 -   `app-server.properties`: Specifies the server's location and libraries.
 -   `portal-upgrade-database.properties`: Configures the database connection.
@@ -148,8 +149,6 @@ set to *250* by default *(optional)*
 
 ### Example Upgrade Configuration [](id=example-upgrade-configuration)
 
-You can either configure the upgrade via property files or via the command line interface. 
-
 Here's an example interaction with the upgrade tool's command line interface:
 
     Please enter your application server (tomcat): 
@@ -173,7 +172,8 @@ The command line interface creates the configuration files based on your input.
 If you want to set all of this up ahead of time, however, you'll want to put
 this information into configuration files.
 
-Here are example upgrade configuration files that you can customize: 
+Here are example upgrade configuration files that you can customize and copy
+into `[Liferay Home]/tools/portal-tools-db-upgrade-client/`: 
 
 -   `app-server.properties`:
 

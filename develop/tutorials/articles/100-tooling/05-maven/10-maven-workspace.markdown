@@ -76,7 +76,7 @@ example,
 
     <properties>
         <liferay.workspace.bundle.url>
-            http://downloads.sourceforge.net/project/lportal/Liferay%20Portal/7.0.4%20GA5/liferay-ce-portal-tomcat-7.0-ga5-20171018150113838.zip
+            https://releases-cdn.liferay.com/portal/7.1.0-ga1/liferay-ce-portal-tomcat-7.1.0-ga1-20180703012531655.zip
         </liferay.workspace.bundle.url>
         ...
     </properties>
@@ -132,7 +132,7 @@ Properties can be set by adding tags with the property name. See the property
 configurations below for an example on how these can be set in your POM: 
 
     <properties>
-        <liferay.workspace.bundle.url>http://downloads.sourceforge.net/project/lportal/Liferay%20Portal/7.0.4%20GA5/liferay-ce-portal-tomcat-7.0-ga5-20171018150113838.zip</liferay.workspace.bundle.url>
+        <liferay.workspace.bundle.url>https://releases-cdn.liferay.com/portal/7.1.0-ga1/liferay-ce-portal-tomcat-7.1.0-ga1-20180703012531655.zip</liferay.workspace.bundle.url>
         <liferay.workspace.environment>local</liferay.workspace.environment>
     </properties>
 
