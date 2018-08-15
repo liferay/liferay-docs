@@ -15,18 +15,17 @@ To learn how to work with configuration files, first review
 
 There are two different configuration file formats: 
 
--   `.cfg`: An older, simple format that only supports string values as 
+-   `.cfg`: An older, simple format that only supports `String` values as 
     properties. 
 -   `.config`: A format that supports strings, type information, and other
     non-string values in its properties. 
 
-Although @product@ supports both formats, use `.config` files  for their
+Although @product@ supports both formats, use `.config` files for their
 flexibility and ability to use type information. Since `.cfg` files lack type
-information, if you want to store anything but a String, you must use properties
-utility classes to cast Strings to intended types (and you must carefully
-document properties that aren't Strings). `.config` files eliminate this need by
-letting you include type information. The articles below explain the file
-formats and their syntax: 
+information, if you want to store anything but a `String`, you must use properties
+utility classes to cast `String`s to intended types (and you must carefully
+document properties that aren't `String`s). `.config` files eliminate this need by
+allowing type information. The articles below explain the file formats: 
 
 -   [Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
 -   [Configuration file (`.config`) syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config)
@@ -37,7 +36,7 @@ formats and their syntax:
 Before you
 [create a configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files#creating-configuration-files),
 follow these steps to determine whether multiple instances of the component can
-be created,  or if the component is intended to be a singleton:
+be created or if the component is intended to be a singleton:
 
 1.  Deploy the component's module if you haven't done so already. 
 
@@ -84,16 +83,16 @@ For example, you could configure two different instances of the component
 -   `com.Foo-one.config`
 -   `com.Foo-two.config`
 
-Each configuration file creates and/or updates an instance of the component 
-that matches the PID. The subname is arbitrary--it doesn't have to match a 
-specific component instance. This means you can use whatever subname you like. 
-For example, these configuration files are just as valid as the two above: 
+Each configuration file creates and/or updates an instance of the component that
+matches the PID. The subname is arbitrary---it doesn't have to match a specific
+component instance. This means you can use whatever subname you like. For
+example, these configuration files are just as valid as the two above: 
 
 -   `com.Foo-puppies.config`
 -   `com.Foo-kitties.config`
 
 Using the subname `default`, however, is @product@'s convention for configuring 
-a component's first instance. The file name pattern is therefore: 
+a component's first instance. The file name pattern is therefore 
 
     [PID]-default.config
 
