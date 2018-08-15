@@ -1,4 +1,4 @@
-# Breccia
+# Breccia [](id=breccia)
 
 The Breccia site initializer adopts the site model used by most major retailers.
 Its home page provides the functionality to search for individual products,
@@ -7,7 +7,7 @@ checkout features are also included. Breccia gives you a ready-made theme,
 a complete set of customer-facing pages, a sample catalog divided into basic
 categories, and populated country and currency lists.
 
-## Theme
+## Theme [](id=theme)
 
 Several functions are embedded in the Breccia theme, including a search bar and
 several links. Users can access the site's catalog, their personal accounts, or
@@ -19,7 +19,7 @@ site.
 
 For more on navigating store sites, see [Setting up a Storefront](/web/liferay-emporio/documentation/-/knowledge_base/1-0/setting-up-a-storefront).
 
-## Pages
+## Pages [](id=pages)
 
 Running the Breccia initializer creates several pages and places various
 applications---furnished with appropriate display templates---on them. To see
@@ -52,7 +52,7 @@ onto the page.
 
 ![Figure 5: *Category facets* will still appear---displaying a single option---even when the *Catalog* page is only being used to display a single category.](../../images/breccia-category-facet.png)
 
-## Catalog
+## Catalog [](id=catalog)
 
 Not to be confused with Breccia's catalog page---a display page for
 customers---is the site's actual catalog, which stores data on its products.
@@ -62,7 +62,7 @@ and SKUs.
 
 ![Figure 6: Of course, sample products are no help if you're setting up a live store---but they can save you a lot of time if you're working to understand the functionality described in [Catalog Management](/web/liferay-emporio/documentation/-/knowledge_base/1-0/catalog-management)](../../images/breccia-catalog.png).
 
-## Settings
+## Settings [](id=settings)
 
 Breccia populates some of the fields in *Site Menu* &rarr; *Commerce* &rarr;
 *Settings*.

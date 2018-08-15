@@ -65,7 +65,7 @@ You can install @commerce@ from
 You will also need @product-ver@; see installation instructions 
 [here](/discover/deployment/-/knowledge_base/7-1/deploying-product).
 
-## Site Initializers
+## Site Initializers [](id=site-initializers)
 
 The quickest way to get going with commerce is to use a Site Initializer. A site
 initializer is a type of [Site Template]( /discover/portal/-/knowledge_base/7-1/building-sites-from-templates)

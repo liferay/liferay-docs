@@ -1,4 +1,4 @@
-# Site Initializers
+# Site Initializers [](id=site-initializers)
 
 A site initializer is a type of site template that does much of the work of
 setting up a store. A site initializer is a convenient sandbox for gaining
@@ -8,7 +8,7 @@ site.
 Typically, a site initializer gives you a theme, a set of customer-facing pages
 with a working interface, and a sample catalog.
 
-## Initializing a Site
+## Initializing a Site [](id=initializing-a-site)
 
 To set up a site using an initializer, follow these steps:
 
