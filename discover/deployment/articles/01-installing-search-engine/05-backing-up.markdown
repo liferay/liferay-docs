@@ -12,14 +12,14 @@ steps:
 - Make a snapshot of the cluster
 - Restore from the snapshot
 
-For more detailed information on the process, refer to the [Elasticsearch administration
-guide](https://www.elastic.co/guide/en/elasticsearch/guide/current/administration.html),
-and in particular to the documentation on the [Snapshot/Restore module](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-snapshots.html)
-and on [backing up your cluster.](https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html#_snapshotting_particular_indices)
+For more detailed information, refer to the 
+[Elasticsearch administration guide](https://www.elastic.co/guide/en/elasticsearch/guide/current/administration.html),
+and in particular to the documentation on the 
+[Snapshot/Restore module](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-snapshots.html).
 
-## Configuring a Repository [](id=configuring-a-repository)
+## Creating a Repository [](id=creating-a-repository)
 
-First [configure a repository](https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html#_creating_the_repository)
+First [create a repository](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-snapshots.html#_repositories)
 where your snapshots will be kept. Several repository types are supported:
 
 - Shared file system, such as a Network File System or NAS
@@ -29,44 +29,64 @@ where your snapshots will be kept. Several repository types are supported:
 
 If using a shared file system repository type, first register the path to the
 shared file system in each node's `elasticsearch.yml` using 
-[the path.repo setting](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-snapshots.html#_shared_file_system_repository).
+[the path.repo setting](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-snapshots.html#_shared_file_system_repository).
 
     path.repo: ["path/to/shared/file/system/"]
 
 When you create the repository using the Elasticsearch API, you can now refer to
 this repository location in your PUT command:
 
-    curl -XPUT localhost:9200/_snapshot/test_backup -d '{"type": "fs", "settings": { "location":"/path/to/shared/file/system/" } }'
-
-In production replace `localhost:9200` with the proper `hostname:port`
-combination for your system, and replace `test_backup` with the name of the
-repository you want to create.  Additionally, use the real path to your shared
-file system.
+    curl -X PUT "localhost:9200/_snapshot/test_backup" -H 'Content-Type: application/json' -d'
+    {
+      "type": "fs",
+      "settings": {
+        "location": "/path/to/shared/file/system/"
+      }
+    }
+    '
+Replace `localhost:9200` with the proper `hostname:port` combination for your
+system, replace `test_backup` with the name of the repository to create, and use
+the real path to your shared file system in the `location`.
 
 If the repository is successfully set up you'll see this message in your
 terminal:
 
     {"acknowledged":true}
 
-Once you have a repository, you can start creating snapshots.
+Once the repository exists, you can start creating snapshots.
 
 ## Snapshotting the Cluster [](id=snapshotting-the-cluster)
 
-The easiest approach is to create is a [snapshot of all the indexes in your
-cluster](https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html#_snapshotting_all_open_indices). Here's the basic command for snapshotting everything:
+The easiest approach is to create a 
+[snapshot of all the indexes in your cluster](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-snapshots.html#_snapshot). 
+To snapshot everything, enter
 
     curl -XPUT localhost:9200/_snapshot/test_backup/snapshot_1
 
-If successful you see `{"accepted":true}` in the terminal.
+If `{"accepted":true}` appears in the terminal, the snapshot was a success.
 
-You don't have to include all indexes in a snapshot. For example, if you're
-[using Marvel](/deploy/-/official_documentation/deployment/monitoring-elasticsearch-with-marvel),
-you might not want to include all the Marvel indexes. In this case just
-explicitly declare the indexes you want to include in the snapshot (leaving out
-the `.marvel` indexes):
+It's possible to be more selective when snapshotting. For example, if you're
+[using X-Pack Monitoring](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/installing-x-pack-monitoring),
+you can exclude the monitoring indexes. Explicitly declare the indexes to
+include in the snapshot:
 
     curl -XPUT localhost:9200/_snapshot/test_backup/snapshot_2
     { "indices": "liferay-0,liferay-20116" }
+
++$$$
+
+**Note:** For a list of all the Elasticsearch indexes, use this command:
+
+    curl -X GET "localhost:9200/_cat/indices?v"
+
+The indexes are listed with various metrics reported:
+
+    health status index         uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+    green  open   liferay-20099 obqiNE1_SDqfuz7rincrGQ   1   0        195            0    303.1kb        303.1kb
+    green  open   liferay-47206 3YEjtye1S9OVT0i0EZcXcw   1   0          7            0     69.7kb         69.7kb
+    green  open   liferay-0     shBWwpkXRxuAmGEaE475ug   1   0        147            1    390.9kb        390.9kb
+
+$$$
 
 It's important to note that Elasticsearch uses a *smart snapshotting* approach.
 To understand what that means, consider a single index. The first snapshot
@@ -85,21 +105,22 @@ returns
 
     {"snapshots":[
         {"snapshot":"snapshot_1",
-        "version_id":2020099,
-        "version":"2.4.0",
-        "indices":["liferay-0","liferay-20116"],
+        "uuid":"WlSjvJwHRh-xlAny7zeW3w",
+        "version_id":6010399,
+        "version":"6.1.3",
+        "indices":["liferay-20099","liferay-0","liferay-47206"],
         "state":"SUCCESS",
-        "start_time":"2016-11-29T19:50:12.375Z",
-        "start_time_in_millis":1480449012375,
-        "end_time":"2016-11-29T19:50:13.654Z",
-        "end_time_in_millis":1480449013654,
-        "duration_in_millis":1279,
+        "start_time":"2018-08-15T21:40:17.261Z",
+        "start_time_in_millis":1534369217261,
+        "end_time":"2018-08-15T21:40:17.482Z",
+        "end_time_in_millis":1534369217482,
+        "duration_in_millis":221,
         "failures":[],
         "shards":{
-            "total":10,
+            "total":3,
             "failed":0,
-            "successful":10
-
+            "successful":3
+            
             }
         }
     ]}
@@ -120,13 +141,15 @@ the partial snapshot is deleted from the repository.
 ## Restoring from a Snapshot [](id=restoring-from-a-snapshot)
 
 What good is a snapshot if you can't use it to 
-[restore your search indexes](https://www.elastic.co/guide/en/elasticsearch/guide/current/_restoring_from_a_snapshot.html) in case of catastrophic failure? Restoring your cluster from a snapshot is easy.
-You'll leverage the `_restore` API:
+[restore your search indexes](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-snapshots.html#_restore) 
+in case of catastrophic failure? Use the `_restore` API to restore all the
+snapshot's indexes:
 
     curl -XPOST localhost:9200/_snapshot/test_backup/snapshot_1/_restore
 
-This command restores all the indexes in the snapshot. If you want to restore
-only specific indexes from a snapshot, you can. For example, enter
+Restore only specific indexes from a snapshot by passing in the `indices`
+option, and rename the indexes using the `rename_pattern` and
+`rename_replacement` options:
 
     curl -XPOST
     localhost:9200/_snapshot/test_backup/snapshot_1/_restore
@@ -138,7 +161,7 @@ only specific indexes from a snapshot, you can. For example, enter
 
 This restores only the index named `liferay-20116index_1` from the snapshot. The
 `rename...` settings specify that the beginning `liferayindex_` are replaced
-with `restore_liferayindex_`, so `liferay-20116index_1` becomes
+with `restored_liferayindex_`, so `liferay-20116index_1` becomes
 `restored_liferay-20116index_1`.
 
 As with the snapshotting process, an errant restored index can be canceled with
@@ -148,4 +171,6 @@ the `DELETE` command:
 
 Nobody likes catastrophic failure on a production system, but Elasticsearch's
 API for snapshotting and restoring indexes can help you rest easy knowing that
-your search cluster can be restored if disaster strikes.
+your search cluster can be restored if disaster strikes. For more details and
+options, read Elastic's documentation on the 
+[Snapshot and Restore Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-snapshots.html#modules-snapshots).
