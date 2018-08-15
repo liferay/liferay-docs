@@ -49,10 +49,10 @@ You'll step through an example to see how this is done.
     Content* menu.
 
 3.  Once you've saved the new Web Content Article, select its the *Actions*
-    button (![Actions](../../../images/icon-actions.png)) next to the article
+    button (![Actions](../../../../images/icon-actions.png)) next to the article
     and select *Publish to Live*.
 
-    ![Figure 1: You can publish the single web content article to the live site.](../../../images/single-asset-publish.png)
+    ![Figure 1: You can publish the single web content article to the live site.](../../../../images/single-asset-publish.png)
 
 4.  You're presented a Process Details page where you can view the progress of
     your single asset publication request. Ensure the Web Content Article is
@@ -63,7 +63,7 @@ You'll step through an example to see how this is done.
     **Note:** Sometimes the publication process doesn't start immediately (e.g.,
     if there's another publication running). You can check a specific asset's
     publication progress by navigating to the *Options*
-    (![Options](../../../images/icon-options.png)) &rarr; *Staging* &rarr;
+    (![Options](../../../../images/icon-options.png)) &rarr; *Staging* &rarr;
      *Current and Previous* tab in its Site Admin app.
 
     $$$

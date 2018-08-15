@@ -7,7 +7,7 @@ information. The scheduler is built right into the form your users access to add
 web content. Specifically, it can be found in the bottom panel listed with
 several other configurable settings.
 
-![Figure 1: The web content scheduler can be easily accessed from the right panel of the page.](../../../images/web-content-schedule.png)
+![Figure 1: The web content scheduler can be easily accessed from the right panel of the page.](../../../../images/web-content-schedule.png)
 
 The scheduler offers several configurable options:
 
@@ -27,7 +27,7 @@ article.
 1.  Navigate to the Product Menu &rarr; *Content* &rarr; *Web Content*.
 
 2.  Create a new web content article by selecting the *Add Web Content* button
-    (![Add](../../../images/icon-add.png)) &rarr; *Basic Web Content*.
+    (![Add](../../../../images/icon-add.png)) &rarr; *Basic Web Content*.
 
 3.  Add content for your web content article.
 

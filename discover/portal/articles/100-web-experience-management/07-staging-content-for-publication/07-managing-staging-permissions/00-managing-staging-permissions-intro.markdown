@@ -8,10 +8,10 @@ create/modify a Role, complete the following steps:
 1.  Navigate to the *Control Panel* &rarr; *Users* &rarr; *Roles*.
 
 2.  To create a new Role, select the *Add* button
-    (![Add](../../../images/icon-add.png)) and complete the New Role menu. Once
+    (![Add](../../../../images/icon-add.png)) and complete the New Role menu. Once
     you have a new Role created, or you've decided on the Role you want to
     modify, select the Role's *Actions* icon
-    (![Actions](../../../images/icon-actions.png)) and select *Edit*.
+    (![Actions](../../../../images/icon-actions.png)) and select *Edit*.
 
 3. From the top menu, select *Define Permissions*.
 
@@ -47,13 +47,13 @@ hides/shows the Export/Import app in the Site Administration menu.
 
 **Manage Staging:** Hides/shows the Staging Configuration menu in the
 Site Administration &rarr; *Publishing* &rarr; *Staging* &rarr; *Options*
-(![Options](../../../images/icon-options.png)) menu.
+(![Options](../../../../images/icon-options.png)) menu.
 
 **Publish Application Info:** Hides/shows the application level Staging menu.
 
 **Publish Staging:** Hides/shows the *Publish to Live* button on the Staging Bar
 and hides/shows the *Add Staging Process* button
-(![Add](../../../images/icon-add.png)) in the Site Administration menu's Staging
+(![Add](../../../../images/icon-add.png)) in the Site Administration menu's Staging
 app. This permission automatically applies the *Export/Import Application Info*,
 *Export/Import Pages*, and *Publish Application Info* permission functionality
 regardless of whether they're unselected. 
