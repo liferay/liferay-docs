@@ -1,14 +1,15 @@
 # Data Scopes [](id=data-scopes)
 
-Apps can restrict their data to specific scopes. Scopes provide a context for the application's data.
+Apps can restrict their data to specific scopes. Scopes provide a context for
+the application's data.
 
 *Global:* One data set throughout a portal instance. 
 
-*Site:* Separate data sets for each site it's added to.
+*Site:* Separate data sets for each Site it's added to.
 
 *Page:* Separate data sets for each page it's added to. 
 
-For example, a site-scoped app can display its data across a single site. For a
+For example, a Site-scoped app can display its data across a single Site. For a
 detailed explanation of scopes, see the user guide article 
 [Widget Scope](/discover/portal/-/knowledge_base/7-1/widget-scope). 
 To give your applications scope, you must manually add support for it. This
@@ -18,7 +19,7 @@ tutorial shows you how.
 
 In your service layer, your entities must have a `companyId` attribute of type 
 `long` to enable scoping by portal instance and a `groupId` attribute of type 
-`long` to enable scoping by site. Using 
+`long` to enable scoping by Site. Using 
 [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder) 
 is the simplest way to do this. The 
 [Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-1/service-builder-persistence) 
@@ -49,9 +50,9 @@ That's it! Next, you'll access your app's scope in your code.
 
 ## Accessing Your App's Scope [](id=accessing-your-apps-scope)
 
-Users can typically set an app's scope to a page, a site, or the entire portal. 
-To handle your app's data, you must access it in its current scope. @product@ 
-gives you techniques to do this. Your app's scope is available: 
+Users can typically set an app's scope to a page, a Site, or the entire portal. 
+To handle your app's data, you must access it in its current scope. Your app's
+scope is available in these ways: 
 
 1.  Via the `scopeGroupId` variable that is injected in your JSPs that 
     use the `<liferay-theme:defineObjects />` tag. This variable contains your
@@ -98,21 +99,22 @@ gives you techniques to do this. Your app's scope is available:
     If you know your app always needs the portal instance ID, use the 
     `ServiceContext` object's `getCompanyId()` method. 
 
-Awesome! Now you know how to get your app's scope. Next, you'll learn about a
-special use case: getting the site scope for entities that belong to a different
-app. 
+Awesome! Now you know how to get your app's scope. Next, you'll learn about
+a special use case: getting the Site scope for entities that belong to
+a different app. 
 
 ## Accessing the Site Scope Across Apps [](id=accessing-the-site-scope-across-apps)
 
-There may be times when you need to access a different app's site-scoped data from your app that is scoped to a page or the portal. For example, web 
-content articles can be created in the page, site, or portal scope. 
-[Structures and Templates](/discover/portal/-/knowledge_base/7-1/designing-uniform-content) 
-for such articles, however, exist only in the site scope. The above techniques
-return the app's scope, which might not be the site scope. What a pickle! Never
+There may be times when you must access a different app's Site-scoped data from
+your app that is scoped to a page or the portal. For example, web content
+articles can be created in the page, Site, or portal scope. 
+[Structures and Templates](/discover/portal/-/knowledge_base/7-1/designing-uniform-content) for
+such articles, however, exist only in the Site scope. The above techniques
+return the app's scope, which might not be the Site scope. What a pickle! Never
 fear, the `ThemeDisplay` method `getSiteGroupId()` is here! This method always
-gets the site scope, no matter your app's current scope. For example, 
-[the Web Content app's `edit_feed.jsp`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/journal/journal-web/src/main/resources/META-INF/resources/edit_feed.jsp#L40) 
-uses this method to get the site ID needed to retrieve Structures: 
+gets the Site scope, no matter your app's current scope. For example, 
+[the Web Content app's `edit_feed.jsp`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/journal/journal-web/src/main/resources/META-INF/resources/edit_feed.jsp#L40)
+uses this method to get the Site ID needed to retrieve Structures: 
 
     ...
 
@@ -122,7 +124,7 @@ uses this method to get the site ID needed to retrieve Structures:
     ...
 
 Great! Now you know how to scope your apps, access their scope, and even get the
-site scope of entities that belong to other apps. Now that's minty-fresh breath! 
+Site scope of entities that belong to other apps. 
 
 ## Related Topics [](id=related-topics)
 
