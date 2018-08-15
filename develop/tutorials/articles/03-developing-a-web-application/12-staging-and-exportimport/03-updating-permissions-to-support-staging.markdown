@@ -5,7 +5,7 @@ example, the current configuration would display the *Add Guestbook* and *Add
 Entry* buttons on the live site. These options should only be available on the
 staged site when staging is enabled.
 
-First, edit the guestbook app's permissions helper classes to provide permission
+First, edit the Guestbook app's permissions helper classes to provide permission
 checks to leverage when staging is enabled.
 
 1.  Open the `GuestbookModelPermission` class residing in the
@@ -92,8 +92,81 @@ checks to leverage when staging is enabled.
 
     This is similar to the logic added for the entry's permissions. 
 
-Now leverage those permission checks from your JSPs:
+Your Guestbook app can now display the proper functionality depending on its
+staging context (i.e., staged site or live site).
 
-1.  
+The Guestbook's admin portlet requires additional modifications in its JSPs to
+correctly display options based on staging context.
 
+1.  In your `guestbook-web` module, open the
+    `src/main/resources/META-INF/resources/guestbookadminportlet/guestbook_actions.jsp`
+    file. Directly after the first `<liferay-ui:icon-menu>` tag, add the
+    following `if` statement:
 
+        <c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbook.getGuestbookId(), ActionKeys.UPDATE) %>'>
+
+    Close the `if` statement directly after the `<liferay-ui:icon />` tag. When
+    completed, the `if` statement should look like this:
+
+        <c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbook.getGuestbookId(), ActionKeys.UPDATE) %>'>
+            <portlet:renderURL var="editURL">
+                <portlet:param name="guestbookId"
+                    value="<%=String.valueOf(guestbook.getGuestbookId())%>" />
+                <portlet:param name="mvcPath"
+                    value="/guestbookadminportlet/edit_guestbook.jsp" />
+            </portlet:renderURL>
+
+            <liferay-ui:icon image="edit" message="Edit"
+                url="<%=editURL.toString()%>" />
+        </c:if>
+
+    The new `if` statement hides the Guestbook's editing functionality if the
+    user does not have the permissions to edit a guestbook. Since you added new
+    staging permissions, those are verified too.
+
+2.  Below the `</c:if>` statement, add another `if` statement:
+
+        <c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbook.getGuestbookId(), ActionKeys.DELETE) %>'>
+
+    Close the `if` statement directly after the `<liferay-ui:icon-delete />`
+    tag.When completed, the `if` statement should look like this:
+
+        <c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbook.getGuestbookId(), ActionKeys.DELETE) %>'>
+            <portlet:actionURL name="deleteGuestbook" var="deleteURL">
+                <portlet:param name="guestbookId"
+                    value="<%=String.valueOf(guestbook.getGuestbookId())%>" />
+            </portlet:actionURL>
+
+            <liferay-ui:icon-delete url="<%=deleteURL.toString()%>" />
+        </c:if>
+
+    Similar to the previous `if` statement, this one hides the Guestbook's
+    deletion functionality if the user does not have the permissions to delete a
+    guestbook.
+
+3.  Open the `.../guestbookadminportlet/view.jsp` file and wrap the
+    `<aui:button-row />` tag with the following `if` statement:
+
+        <c:if test='<%= GuestbookModelPermission.contains(permissionChecker, scopeGroupId, "ADD_GUESTBOOK") %>'>
+            ...
+        </c:if>
+
+    When finished, it should look like this:
+
+        <c:if test='<%= GuestbookModelPermission.contains(permissionChecker, scopeGroupId, "ADD_GUESTBOOK") %>'>
+            <aui:button-row cssClass="guestbook-admin-buttons">
+                <portlet:renderURL var="addGuestbookURL">
+                    <portlet:param name="mvcPath"
+                        value="/guestbookadminportlet/edit_guestbook.jsp" />
+                    <portlet:param name="redirect" value="<%="currentURL"%>" />
+                </portlet:renderURL>
+
+                <aui:button onClick="<%= addGuestbookURL.toString() %>"
+                    value="Add Guestbook" />
+            </aui:button-row>
+        </c:if>
+
+    This `if` statement hides the Guestbook's *Add Guestbook* button if the user
+    does not have the permissions to create a new guestbook.
+
+Great! You've updated your Guestbook app's permissions to support Staging!
