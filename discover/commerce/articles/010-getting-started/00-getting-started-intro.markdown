@@ -23,7 +23,7 @@ New search tools, for instance, are designed specifically for product catalogs,
 while customizable widgets make it easy to add common UI elements---such as
 *Checkout* and *View Cart*---to a page.
 
-![Figure 2: Product pages are ready to go out-of-the-box, but can be customized extensively.](../../images/product-detail.png)
+![Figure 2: Product pages are ready to go out-of-the-box, but can be customized extensively.](../../images/breccia-product-detail.png)
 
 @commerce@ is optimized for business-to-business (B2B) transactions, combining
 modern site experiences with features that address B2B needs. For buyers with
@@ -64,3 +64,20 @@ You can install @commerce@ from
 [Github](https://github.com/liferay/com-liferay-commerce).
 You will also need @product-ver@; see installation instructions 
 [here](/discover/deployment/-/knowledge_base/7-1/deploying-product).
+
+## Site Initializers
+
+The quickest way to get going with commerce is to use a Site Initializer. A site
+initializer is a type of [Site Template]( /discover/portal/-/knowledge_base/7-1/building-sites-from-templates)
+that does much of the initial work of setting up a store. Creating a Site with
+a Site Initializer is an easy way to see what @commerce@ can do, and can be used
+to get a head start on a live store: modify the theme to suit your purposes,
+replace the dummy catalog with your own data, and you're well on your way.
+
+At the time of this writing, @commerce@ ships with two site initializers.
+Beryl---available to subscribers only---is geared toward B2B selling, while
+Breccia models a UI similar to that used by most major retailers. Both
+initializers include a theme, a complete user interface, and a catalog populated
+with sample products. See 
+[Site Initializers](/web/liferay-emporio/documentation/-/knowledge_base/1-0/site-initializers)
+for more information.

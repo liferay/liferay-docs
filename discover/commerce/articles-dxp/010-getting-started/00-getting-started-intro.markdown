@@ -27,7 +27,7 @@ while customizable widgets make it easy to add common UI elements---such as
 
 @commerce@ is optimized for business-to-business (B2B) transactions, combining
 modern site experiences with features that address B2B needs. 
-[Customer Portal](/web/liferay-emporio/documentation/-/knowledge_base/1-0/customer-portal)
+[Beryl Customer Portal](/web/liferay-emporio/documentation/-/knowledge_base/1-0/beryl-customer-portal)
 serves the needs of buyers with approval processes to observe before
 making purchases. When buyers places an order, @commerce@ can send an automated
 email to their managers, prompting them to approve the order so it can be
@@ -113,8 +113,10 @@ a Site Initializer is an easy way to see what @commerce@ can do, and can be used
 to get a head start on a live store: modify the theme to suit your purposes,
 replace the dummy catalog with your own data, and you're well on your way.
 
-At the time of this writing, @commerce@ ships with one site initializer, called
-Beryl. It includes a theme, a complete user interface oriented toward B2B
-selling, and a catalog populated with sample products. See 
-[Customer Portal](/web/liferay-emporio/documentation/-/knowledge_base/1-0/customer-portal)
-for for information.
+At the time of this writing, @commerce@ ships with two site initializers.
+Beryl---available to subscribers only---is geared toward B2B selling, while
+Breccia models a UI similar to that used by most major retailers. Both
+initializers include a theme, a complete user interface, and a catalog populated
+with sample products. See 
+[Site Initializers](/web/liferay-emporio/documentation/-/knowledge_base/1-0/site-initializers)
+for more information.
