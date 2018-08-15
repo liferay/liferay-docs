@@ -49,6 +49,23 @@ automatic group mapping or entity level Last Publish Date handling. See the
 [Understanding Staged Models](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models)
 tutorial for more information.
 
+Before adding staging features to your Guestbook app, you must declare some
+necessary dependencies.
+
+## Declaring Staging Dependencies
+
+There are two Staging-specific dependencies you must declare that will be used
+by the Guestbook's Staging functionality.
+
+1.  Open the `guestbook-service` module's `build.gradle` file.
+
+2.  Add the following dependencies within the `dependencies` block:
+
+        compileOnly group: "com.liferay", name: "com.liferay.exportimport.api", version: "2.1.0"
+        compileOnly group: "com.liferay", name: "com.liferay.xstream.configurator.api", version: "2.0.0"
+
+Now you're ready to begin implementing staging in your app.
+
 ## Updating the Extended Staged Model Interface
 
 Staged models that extend the `StagedAuditedModel` interface are intended to

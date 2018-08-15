@@ -7,14 +7,17 @@ handler:
     `com.liferay.docs.guestbook.exportimport.data.handler`.
 
 2.  In that package, create the `EntryStagedModelDataHandler` class and have
-    it extend the `BaseStagedModelDataHandler<STAGED_MODEL>` class:
+    it extend the
+    [`BaseStagedModelDataHandler<STAGED_MODEL>`](@platform-ref@/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BaseStagedModelDataHandler.html)
+    class:
 
         public class EntryStagedModelDataHandler
             extends BaseStagedModelDataHandler<Entry> {
 
 3.  Add an `@Component` annotation above the class declaration to declare that
     the `EntryStagedModelDataHandler` class provides an implementation of
-    the `StagedModelDataHandler` service:
+    the [`StagedModelDataHandler`](@platform-ref@/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandler.html)
+    service:
 
         @Component(
             immediate = true, 
