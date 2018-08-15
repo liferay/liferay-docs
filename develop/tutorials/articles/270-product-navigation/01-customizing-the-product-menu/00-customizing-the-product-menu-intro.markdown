@@ -3,9 +3,8 @@
 By default, Liferay's Product Menu consists of three main sections: Control
 Panel, User Menu, and Site Administration. These sections are called panel
 categories. For instance, the Control Panel is a single panel category, and when
-clicking on it, you're presented with four child panel categories: *Users*,
-*Sites*, *Apps*, and *Configuration*. It you click on a child panel category,
-you're presented with panel apps.
+clicking on it, you see four child panel categories: *Users*, *Sites*, *Apps*,
+and *Configuration*. Clicking a child panel category shows panel apps.
 
 +$$$
 
@@ -19,6 +18,6 @@ $$$
 
 The Product Menu is intuitive and easy to use---but you can still change it any
 way you want. You can reorganize the panel categories and apps, or add
-completely new categories and populate them with custom panel apps. In this
-tutorial, you'll learn how to provide new or modified panel categories and panel
-apps for the Product Menu.
+completely new categories and populate them with custom panel apps. Here you'll
+learn how to provide new or modified panel categories and panel apps for the
+Product Menu.
