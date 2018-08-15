@@ -52,8 +52,10 @@ few useful implementations in the package
 -   `RepositoryModelSizeComparator`: Sorts by file size. 
 -   `RepositoryModelTitleComparator`: Sorts by title. 
 
-As an example, this `getFileEntries` method contains all the above parameters 
-except for `fileEntryTypeId` (it contains `mimeTypes` instead): 
+As an example, this 
+[`getFileEntries`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFileEntries-long-long-java.lang.String:A-int-int-com.liferay.portal.kernel.util.OrderByComparator-) 
+method contains all the above parameters except for `fileEntryTypeId` (it 
+contains `mimeTypes` instead): 
 
     List<FileEntry> getFileEntries(
             long repositoryId, 
@@ -92,12 +94,49 @@ methods. To see all such methods, see the
 ## Getting Folders
 
 The Documents and Media API can also retrieve folders. Getting folders is very 
-similar to getting files. The main difference is that methods that get folders 
-may include an additional argument to tell the system whether to include 
+similar to getting files. The main difference is that folder retrieval methods 
+may have an additional argument to tell the system whether to include 
 *mount folders*. Mount folders are mount points for external repositories (e.g. 
-Alfresco or SharePoint). These folders appear in a site's default repository. 
-This lets users navigate seamlessly between repositories. To account for this, 
-all methods that get folders include the boolean parameter `includeMountFolder`. 
-Setting this parameter to `true` includes mount folders in the results. Omitting 
-the parameter or setting it to `false` excludes mount folders from the results. 
+Alfresco or SharePoint). These folders appear in a site's default repository 
+when an external repository is mounted, letting users navigate seamlessly 
+between repositories. To account for this, some folder retrieval methods include 
+the boolean parameter `includeMountFolders`. Setting this parameter to `true` 
+includes mount folders in the results. Omitting the parameter or setting it to 
+`false` excludes mount folders from the results. 
 
+For example, to get a list of a parent folder's subfolders from a given 
+repository, including any mount folders, you can use this 
+[`getFolders`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFolders-long-long-boolean-) 
+method: 
+
+    getFolders(long repositoryId, long parentFolderId, boolean includeMountFolders)
+
+This example retrieves such folders from the root folder of a site's default 
+repository. Note the similarity to the previous example on retrieving files. In 
+both examples, the `groupId` and `DEFAULT_PARENT_FOLDER_ID` specify the site's 
+default repository and root parent folder, respectively. This example, however, 
+sets `includeMountFolders` to `true` to include any mount folders in the 
+results: 
+
+    getFolders(groupId, DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, true)
+
+This is one of many methods you can use to get folders. The rest are listed in 
+the 
+[`DLAppService` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
+
+## Getting Multiple Entity Types
+
+There are also methods in the Documents and Media API that retrieve lists of 
+several entity types. These methods use many of the same parameters as those 
+already described for retrieving files and folders. For example, 
+[this method](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFileEntriesAndFileShortcuts-long-long-int-int-int-) 
+gets files and shortcuts from a given repository and folder. The `status` 
+parameter specifies a 
+[workflow](/discover/portal/-/knowledge_base/7-1/workflow) 
+status. And as before, the `start` and `end` parameters control pagination of 
+the entities: 
+
+    getFileEntriesAndFileShortcuts(long repositoryId, long folderId, int status, int start, int end)
+
+To see all such methods, see the 
+[`DLAppService` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
