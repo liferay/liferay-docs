@@ -1,26 +1,25 @@
 # Backing Up Elasticsearch
 
-[Elasticsearch replicas](https://www.elastic.co/guide/en/elasticsearch/guide/current/replica-shards.html)
+[Elasticsearch replicas](https://www.elastic.co/guide/en/elasticsearch/guide/master/replica-shards.html)
 protect you against a node going down here or there, but they won't help you in
 the event of a catastrophic failure. Only good backup practices can help you
 in that case.
 
-The process for backing up and restoring your Elasticsearch cluster takes three
-steps: 
+Back up and restore your Elasticsearch cluster in three steps: 
 
-- Configure a repository
-- Make a snapshot of the cluster
-- Restore from the snapshot
+1.  Configure a repository
+2.  Make a snapshot of the cluster
+3.  Restore from the snapshot
 
 For more detailed information, refer to the 
-[Elasticsearch administration guide](https://www.elastic.co/guide/en/elasticsearch/guide/current/administration.html),
+[Elasticsearch administration guide](https://www.elastic.co/guide/en/elasticsearch/guide/master/administration.html),
 and in particular to the documentation on the 
 [Snapshot/Restore module](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-snapshots.html).
 
 ## Creating a Repository [](id=creating-a-repository)
 
 First [create a repository](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-snapshots.html#_repositories)
-where your snapshots will be kept. Several repository types are supported:
+where your snapshots are to be kept. Several repository types are supported:
 
 - Shared file system, such as a Network File System or NAS
 - Amazon S3
@@ -33,8 +32,8 @@ shared file system in each node's `elasticsearch.yml` using
 
     path.repo: ["path/to/shared/file/system/"]
 
-When you create the repository using the Elasticsearch API, you can now refer to
-this repository location in your PUT command:
+Once the path to the folder hosting the repository is registered (make sure the
+folder exists), create the repository with a PUT command:
 
     curl -X PUT "localhost:9200/_snapshot/test_backup" -H 'Content-Type: application/json' -d'
     {
@@ -46,7 +45,7 @@ this repository location in your PUT command:
     '
 Replace `localhost:9200` with the proper `hostname:port` combination for your
 system, replace `test_backup` with the name of the repository to create, and use
-the real path to your shared file system in the `location`.
+the absolute path to your shared file system in the `location`.
 
 If the repository is successfully set up you'll see this message in your
 terminal:
@@ -57,7 +56,7 @@ Once the repository exists, you can start creating snapshots.
 
 ## Snapshotting the Cluster [](id=snapshotting-the-cluster)
 
-The easiest approach is to create a 
+The easiest snapshotting approach is to create a 
 [snapshot of all the indexes in your cluster](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-snapshots.html#_snapshot). 
 To snapshot everything, enter
 
