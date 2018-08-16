@@ -11,9 +11,10 @@ Start with reporting patch levels to Liferay Support.
 
 ## Including support-info in Support Tickets [](id=including-support-info-in-support-tickets)
 
-Providing your environment's patch level to Liferay Support is critical for
-reproducing issues you report. Write your support information (includes your
-patch level) to a file by executing this command: 
+Providing your environment's information (e.g., hardware architecture) and patch
+level to Liferay Support is critical for reproducing issues you report. Write
+your support information (includes your patch level) to a file by executing this
+command: 
 
     patching-tool support-info
 
