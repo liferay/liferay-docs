@@ -175,12 +175,12 @@ indexing to prevent upgrade process performance issues that arise when the
 indexer attempts to reindex content. 
 
 To disable indexing, create a file called
-`com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.cfg` in
-your `[Liferay Home]/osgi/configs` folder and add the following content: 
+`com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config`
+in your `[Liferay Home]/osgi/configs` folder and add the following content: 
 
-    indexReadOnly=true
+    indexReadOnly="true"
 
 After you complete the upgrade (described in the next article), re-enable
-indexing by setting this property to `false`. 
+indexing by removing the `.config` file or setting `indexReadOnly="false"`. 
 
 Ready to upgrade? The next article shows you how. 
