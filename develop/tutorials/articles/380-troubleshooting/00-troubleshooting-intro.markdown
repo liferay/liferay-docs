@@ -1,4 +1,4 @@
-# Troubleshooting [](id=troubleshooting)
+# Troubleshooting OSGi Bundles [](id=troubleshooting-OSGi-Bundles)
 
 When coding on any platform, you can sometimes run into issues that have no
 clear resolution. This can be particularly frustrating. If you have issues
