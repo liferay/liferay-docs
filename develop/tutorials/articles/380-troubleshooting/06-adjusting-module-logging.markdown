@@ -1,7 +1,8 @@
 # Adjusting Module Logging [](id=adjusting-module-logging)
 
 @product@ uses [Log4j](http://logging.apache.org/log4j/1.2/) logging
-services. Here are the ways to configure logging for module classes and class hierarchies.
+services. Here are the ways to configure logging for module classes and class
+hierarchies.
 
 -   *Log Levels* in
     [@product@'s UI](/discover/portal/-/knowledge_base/7-1/server-administration)

@@ -1,10 +1,10 @@
 # Implementing Logging [](id=implementing-logging)
 
-@product-ver@ uses the Log4j logging framework, but a different one may
-eventually replace it. It's a best practice to use
-[Simple Logging Facade for Java \(SLF4J\)](https://www.slf4j.org/)
-to log messages in your modules and traditional plugins. SLF4J is already
-integrated into @product@, so you can focus on logging messages. 
+@product-ver@ uses the Log4j logging framework, but it may be replaced in the
+future. It's a best practice to use [Simple Logging Facade for Java
+\(SLF4J\)](https://www.slf4j.org/) to log messages in your modules and
+traditional plugins. SLF4J is already integrated into @product@, so you can
+focus on logging messages. 
 
 Here's how to use SLF4J to log messages in a class:
 
