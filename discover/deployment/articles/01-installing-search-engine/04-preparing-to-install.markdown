@@ -65,13 +65,3 @@ provide 1 GbE or 10 GbE between machines.
 
 Elasticsearch doesn't support multi-data center deployments.
 
-<!-- EXCLUDING FOR NOW: NOT IN 7.1 DEPLOYMENT CHECKLIST ## Shards and Replicas [](id=shards-and-replicas)
-
-Elasticsearch uses shards and replicas to scale. Shards divide a search index 
-into smaller, more manageable chunks. For example, if you have a 500 GB index 
-you can split it into 10 shards of 50 GB each. For best results, each shard 
-shouldn't exceed 50 GB. More shards generally mean faster indexing (write) 
-performance but slower search (read) performance. In Elasticsearch, an index 
-with multiple shards results in a distributed search and a subsequent result 
-merge. Replicas provide resiliency and improve search performance. A replica 
-helps to load balance search operations across the cluster.  -->
