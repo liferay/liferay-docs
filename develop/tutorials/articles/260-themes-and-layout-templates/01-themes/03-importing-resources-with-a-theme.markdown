@@ -370,7 +370,7 @@ understand. Let's examine a sample `sitemap.json` file:
                 "friendlyURL": "/link-page",
                 "name": "Link to another Page",
                 "title": "Link to another Page",
-                "type": "link_to_layout"
+                "type": "link_to_layout",
                 "typeSettings": "linkToLayoutId=1"
             },
             {
