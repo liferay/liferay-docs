@@ -27,25 +27,16 @@ qualifications. Unlike a price list, a discount always *reduces* the base price.
 
 ## Adding Rules to a Discount [](id=adding-rules-to-a-discount)
 
-You can create rules that limit the buyer's discount conditions. There are six
+You can create rules that limit the buyer's discount conditions. There are three
 types of rules:
 
-**cart-total**: Buyers can benefit from the discount if their orders contain
+**Cart Total**: Buyers can benefit from the discount if their orders contain
 products worth a specified amount.
 
-**purchased-all**: Buyers whose past purchases include specified products can
-benefit from the discount.
-
-**had-purchased-one-of-these-products**: Buyers whose past purchases include at
-least one from a list of specified products can benefit.
-
-**had-spent-amount**: Buyers who have already spent a specified minimum amount
-can benefit.
-
-**has-all-of-these-products**: Buyers can benefit if their orders include all
+**Has all of these products**: Buyers can benefit if their orders include all
 from a list of specified products.
 
-**has-one-of-these-products**: Buyers can benefit if their orders contain at
+**Has one of these products**: Buyers can benefit if their orders contain at
 least one from a list of specified products.
 
 Follow these steps:
@@ -56,8 +47,8 @@ Follow these steps:
 2.  Click the *Rules* tab and select one of the above types from the
     drop-down menu.
 
-3.  If you chose the *cart-total* or the *had-spent-amount* type, enter an
-    amount in the field that appears.
+3.  If you chose the *Cart total* type, enter an amount in the field that
+    appears.
 
     If you chose any other type, click the *Select* button and check the box
     next to each appropriate product. Click *Add*.
@@ -100,22 +91,12 @@ can be discounted. If this field is left at zero, no discount is applied. This
 field only appears when the *Use Percentage* toggle is enabled.
 
 **Level 1**: Set the order discount percentage. Hit the *Add* button next to the
-field to create a discount series up to three levels deep. This field only
+field to create a discount series up to four levels deep. This field only
 appears when the *Use Percentage* toggle is enabled.
 
 **Discount Amount**: Set the currency amount reduced from each discounted
 product or order. This field only appears when the *Use Percentage* toggle is
 disabled.
-
-**Limitation Type**: Choose the number of times buyers can use the discount.
-Choose *Limited* to set a hard limit on how many times the discount can be
-applied. Choose *Limited For Users** to limit the number of times an individual
-buyer can benefit.
-
-**Limitation Times**: Set the limit specified in the previous field.
-
-**Cumulative**: Check to allow this discount to be combined with other
-discounts.
 
 **Active**: This box must be checked for the discount to be applied.
 

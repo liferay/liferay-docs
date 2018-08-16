@@ -37,9 +37,9 @@ Expire* to make it permanent.
 You may have published a price list, but you haven't yet had a chance to add any
 products to it. Follow these steps:
 
-1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Price Lists*. If you just
-    published a list, you're already on this page. Click on the list you want to
-    edit.
+1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Price Lists*. Click on the list
+    you want to edit. If you just published a list, you're already on this
+    page.
 
 2.  Click the *Entries* tab and then the ![Add](../../images/icon-add.png)
     button. In the pop-up, select the SKUs you want to add to the list and click
@@ -50,7 +50,7 @@ products to it. Follow these steps:
 
     If you want, enter a price in the *Promo Price* field as well. A promo price
     overrides the main price, but both prices can appear on the product page so
-    buyers can see the markdown. <!--needs screenshot-->
+    buyers can see the markdown. Click Save.<!--needs screenshot-->
 
 4.  Repeat step 3 until a price has been set for all SKUs you added in step 2.
 

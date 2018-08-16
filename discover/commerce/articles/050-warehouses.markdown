@@ -72,8 +72,8 @@ at [Microsoft Developer Network](https://msdn.microsoft.com/en-us/library/ff4286
 Once you have an API key, follow these steps to set products to ship from the
 closest available warehouse:
 
-1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* and
-    click on *Commerce* &rarr; *Bing Geocoder*.
+1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*. Find the 
+    *Commerce* section and click *Shipping.*
 
 2.  Paste your key from Microsoft into the *API Key* field and click *Save*.
 

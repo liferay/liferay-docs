@@ -13,7 +13,7 @@ tab.
 ## Creating a Flat Rate Shipping Option [](id=creating-a-flat-rate-shipping-option)
 
 1.  Go to *Site Menu* &rarr; *Commerce* &rarr; *Settings* and click the
-    *Shipping Method* tab. Choose the *Flat Rate* method and then the *Shipping
+    *Shipping Methods* tab. Choose the *Flat Rate* method and then the *Shipping
     Options* tab.
 
 2.  Click ![Add](../../images/icon-add.png) and fill in the following fields:
