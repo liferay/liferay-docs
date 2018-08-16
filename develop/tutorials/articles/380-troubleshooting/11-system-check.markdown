@@ -1,9 +1,10 @@
 # System Check [](id=system-check)
 
-As you're developing and deploying modules and apps on @product@, knowing what's wrong in your system right away is invaluable. Liferay's `system:check`
+During development, all kinds of strange things can happen in the OSGi
+container. Liferay's `system:check` 
 [Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
-command gives you that knowledge. You can enable it to run as the last Portal
-startup step and you can execute it any time in Gogo shell. 
+command can help you see what's happening. You can enable it to run as the last
+Portal startup step and you can execute it any time in Gogo shell. 
 
 `system:check` aggregates these commands:
 

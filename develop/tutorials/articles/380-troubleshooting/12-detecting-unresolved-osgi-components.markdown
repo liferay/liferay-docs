@@ -6,7 +6,8 @@ commands that come in handy when trying to diagnose a problem due to an
 unresolved OSGi component. The specific tools to use depend on the component 
 framework of the unresolved component. Most @product@ components are developed 
 using Declarative Services (DS), also known as SCR (Service Component Runtime). 
-An exception to this is @product@'s Service Builder services, which are Dependency Manager (DM) components. Both 
+An exception to this is @product@'s Service Builder services, which are
+Dependency Manager (DM) components. Both 
 [Declarative Services](http://felix.apache.org/documentation/subprojects/apache-felix-service-component-runtime.html) 
 and 
 [Dependency Manager](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager.html) 
@@ -21,7 +22,7 @@ sections:
 -   [Service Builder Components](#service-builder-components)
     -   [Unavailable Component Scanner](#unavailable-component-scanner)
     -   [dm na Command](#dm-na-command)
-    -   [ServiceProxyFactory](#serviceproxyfactory)
+    -   [`ServiceProxyFactory`](#serviceproxyfactory)
 
 ## Declarative Services Components [](id=declarative-services-components)
 
@@ -29,11 +30,11 @@ Start with DS, since most @product@ components, apart from Service Builder
 components, are DS components. Suppose one of your bundle's components has an
 unsatisfied service reference. How can you detect this? Two ways: 
 
--   You can enable a
+-   Enable a
     [Declarative Services Unsatisfied Component Scanner](#declarative-services-unsatisfied-component-scanner)
     to report unsatisfied references automatically or 
 
--   You can use the
+-   Use the
     [Gogo shell command `ds:unsatisfied`](#ds-unsatisfied-command)
     to check for them manually.
 
@@ -44,7 +45,7 @@ Here's how to enable the unsatisfied component scanner:
 1.  Create a file
     `com.liferay.portal.osgi.debug.declarative.service.internal.configuration.UnsatisfiedComponentScannerConfiguration.cfg`. 
 
-2.  Add the following file content:
+2.  Add the following content:
 
     `unsatisfiedComponentScanningInterval=5`
 
@@ -62,7 +63,7 @@ Here's an example scanner message:
             {name: ItemSelectorHelper, target: null}
         }
 
-The message above warns that the `com.liferay.blogs.web` budnle's DS component
+The message above warns that the `com.liferay.blogs.web` bundle's DS component
 `com.liferay.blogs.web.internal.portlet.action.EditEntryMVCRenderCommand` has an
 unsatisfied reference to a component of type `ItemSelectorHelper`. The
 referencing component's ID (SCR ID) is `3333` and its bundle ID is `631`. 
@@ -77,7 +78,7 @@ shell command `ds:unsatisfied`.
 
 To view more detailed information about the unsatisfied DS component, pass the
 component's ID to the command `scr:info [component ID]`. For example, the
-following  command does this for the component whose ID is `1701`: 
+following command does this for a component with ID `1701`: 
 
     g! scr:info 1701
     *** Bundle: org.foo.bar.command (507)
@@ -129,11 +130,11 @@ to manage Service Builder module OSGi components via the
 [Portal Spring Extender](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.spring.extender/) 
 module.
 
-When developing a Liferay Service Builder application, you might  encounter a
-situation where your application has an unresolved Spring-related  OSGi
-component. This can occur, for example, if you update your application's
-database schema but forget to trigger an upgrade (for information on creating
-database upgrade processes for your @product@ applications, see the tutorial 
+When developing a Liferay Service Builder application, you might sometimes have
+an unresolved Spring-related OSGi component. This can occur if you update your
+application's database schema but forget to trigger an upgrade (for information
+on creating database upgrade processes for your @product@ applications, see the
+tutorial 
 [Creating an Upgrade Process for Your App](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)). 
 
 These features detect unresolved Service Builder related components. 
@@ -149,14 +150,14 @@ The
 module's Unavailable Component Scanner reports missing components in modules
 that use Service Builder. Here's how to enable the scanner:
 
-1.  Create configuration file
+1.  Create the configuration file
     `com.liferay.portal.osgi.debug.spring.extender.internal.configuration.UnavailableComponentScannerConfiguration.cfg`.
 
 2.  In the configuration file, set the time interval (in seconds) between scans:
 
     `unavailableComponentScanningInterval=5`
 
-3.  Copy the file into folder `[LIFERAY_HOME]/osgi/configs`.
+3.  Copy the file into `[LIFERAY_HOME]/osgi/configs`.
 
 The scanner reports Spring extender dependency manager component status on the
 set interval. If all components are registered, the scanner sends a confirmation
@@ -164,7 +165,7 @@ message.
 
     11:10:53,817 INFO  [Spring Extender Unavailable Component Scanner][UnavailableComponentScanner:166] All Spring extender dependency manager components are registered
 
-If a component is unavailable, it warns you like this:
+If a component is unavailable, it warns you:
 
     11:13:08,851 WARN  [Spring Extender Unavailable Component Scanner][UnavailableComponentScanner:173] Found unavailable component in bundle com.liferay.screens.service_1.0.28 [516].
     Component ComponentImpl[null com.liferay.portal.spring.extender.internal.context.ModuleApplicationContextRegistrator@1541eee] is unavailable due to missing required dependencies: ServiceDependency[interface com.liferay.blogs.service.BlogsEntryService null].
@@ -185,7 +186,7 @@ To list unresolved components only execute this Gogo shell command:
 
 `dm na`
 
-The `na` option stands for "not available". 
+The `na` option stands for "not available." 
 
 ### ServiceProxyFactory [](id=serviceproxyfactory)
 
