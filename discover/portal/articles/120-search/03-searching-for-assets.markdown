@@ -27,10 +27,10 @@ a [search page](/discover/portal/-/knowledge_base/7-1/configuring-search-pages)
 with various search widgets deployed. 
 
 If using the Search Bar in the legacy 
-[search portlet](discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience),
+[search portlet](/discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience),
 users see a maximized view of the search portlet displaying any results and
 facets that apply. See the article on 
-[configuring search pages](discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience)
+[configuring search pages](/discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience)
 to learn more about these options.
 
 ![Figure 1: The default search configuration displays a search bar in its default view,
@@ -75,7 +75,7 @@ with the exact phrase are returned, enclose it in quotes: _"space vacation"_.
 
 If you're searching in a site for classical musicians, you might search for the
 term *instrument*. This search returns documents with the full word in them, but
-it also returns variants with *instruments* as the prefix. For example, results
+it also returns variants with *instrument* as the prefix. For example, results
 with *instruments*, *instrumental*, and *instrumentation* are also returned.
 
 ![Figure 4: Searching for *data* also returns *database*.](../../images/search-prefix.png)
@@ -103,7 +103,7 @@ Configure the Search Bar's behavior via its portlet configuration screen.
 **Note:** When you configure the globally embedded Search Bar widget at the top
 of one page, it configures the page-top Search Bar widget on all pages in the
 site. It also overrides the destination 
-[Search Page's](discover/portal/-/knowledge_base/7-1/configuring-search-pages) 
+[Search Page's](/discover/portal/-/knowledge_base/7-1/configuring-search-pages) 
 Search Bar portlet, if they're configured differently. However, it does not
 override Search Bar widgets manually placed on other pages.
 

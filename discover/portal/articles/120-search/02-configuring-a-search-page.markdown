@@ -13,9 +13,11 @@ you've always used, use the [legacy approach](#legacy-search-experience).
 If you're in need of a fully customized experience, 
 [manually configure](#manual-search-page-configuration) the search experience. 
 
-After choosing your approach and reading here to get it up and running, find the
-articles on the [Search Bar](), [Search Facets](), and [Search Results]() to
-understand the full suite of configuration options. 
+After choosing your approach and reading here to get it up and running, find
+the articles on the [Search
+Bar](/discover/portal/-/knowledge_base/7-1/searching-for-assets#search-bar),
+[Search Facets](/discover/portal/-/knowledge_base/7-1/facets), and [Search Results](/discover/portal/-/knowledge_base/7-1/search-results) to understand the full suite of
+configuration options. 
 
 Search display pages are where users go to enter search terms and browse search
 results. 
@@ -61,7 +63,7 @@ a new site:
 
 1.  Delete the existent search page by navigating to the default site's menu and
     clicking *Build* &rarr; *Site Pages*. Click the Search page's Options menu
-    icon (![Options](../../images/icon-options.png)) and select *Delete*.
+    icon (![Options](../../images/icon-kebab-blue-on-white.png)) and select *Delete*.
     Confirm you want to delete the page, and it's gone.
 
     Once deleted, the search bar disappears from your site pages, replaced by a
@@ -86,7 +88,7 @@ a new site:
 4.  Configure the search bar at the top of the page, making sure it points to your
     new search page's friendly URL (for example, `/finders-keepers`). 
 
-    Click the Search Bar widget's Actions menu (![Actions](../../images/icon-actions.png)).
+    Click the Search Bar widget's Options menu (![Options](../../images/icon-kebab-blue-on-blue.png)).
 
     Click *Configuration* and set the Destination Page to the search page's
     friendly URL.
@@ -107,7 +109,7 @@ it's difficult to customize. If you liked the old application, it's still
 available. Enable it with these steps:
 
 1.  Delete the default search page. From the site menu, click *Build* &rarr;
-    *Pages*. Click the Options menu (![Options](../../images/icon-options.png))
+    *Pages*. Click the Options menu (![Options](../../images/icon-kebab-blue-on-white.png))
     for the Search page and choose *Delete*. 
 
 2.  Enable the legacy search application. Go to Control Panel &rarr;
