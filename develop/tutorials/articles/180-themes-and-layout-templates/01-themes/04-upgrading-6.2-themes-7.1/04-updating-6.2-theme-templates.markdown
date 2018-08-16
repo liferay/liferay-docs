@@ -6,12 +6,12 @@ theme templates. Here are the main changes:
 -   Velocity templates were deprecated in Liferay Portal CE 7.0 and are now 
     removed in favor of FreeMarker templates in @product@. Below are the key 
     reasons for this move: 
-    
+
     -   FreeMarker is developed and maintained regularly, while Velocity is no 
         longer actively being developed.
-     
+
     -   FreeMarker is faster and supports more sophisticated macros.
-    
+
     -   FreeMarker supports using taglibs directly rather than requiring a 
         method to represent them. You can pass body content to them, parameters, 
         etc.
@@ -19,8 +19,8 @@ theme templates. Here are the main changes:
 -   The Dockbar has been replaced and reorganized into a set of three distinct 
     menus:
 
-    -  *The Product Menu*: Manage site and page navigation, content, settings 
-       and pages for the current site, and navigate to user account settings, 
+    -  *The Product Menu*: Manage Site and page navigation, content, settings 
+       and pages for the current Site, and navigate to user account settings, 
        etc.
 
     -  *The Control Menu*: Configure and add content to the page and view the 
@@ -31,8 +31,8 @@ theme templates. Here are the main changes:
 
     ![Figure 3: The Dockbar was removed in @product-ver@ and must be replaced with the new Control Menu.](../../../../images/upgrading-themes-dockbar.png) 
 
-Start by converting your Velocity theme templates to FreeMarker. The syntax is 
-very similar. You can refer to Apache's 
+Start by converting your Velocity theme templates to FreeMarker. You can refer
+to Apache's 
 [FreeMarker documentation](https://freemarker.apache.org/docs/ref.html) 
 for help. Common @product@ FreeMarker variables and macros can be found in 
 [`FTL_liferay.ftl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl)
@@ -107,7 +107,7 @@ these steps to update `portal_normal.ftl`:
     markup below:
     
         <body class="${css_class}">
-        
+
 4.  Find the 
     `<a href="#main-content" id="skip-to-content"><@liferay.language key="skip-to-content" /></a>` 
     element and replace it with the updated Liferay UI quick access macro shown 
@@ -207,7 +207,7 @@ Updated syntax:
     <#assign theme_setting_variable = 
     themeDisplay.getThemeSetting("theme-setting-key")/>
 
-For example, the Lunar Resort theme's updated theme settings are shown below:
+For example, here are the Lunar Resort theme's updated theme settings:
 
     <#assign show_breadcrumbs = 
     getterUtil.getBoolean(themeDisplay.getThemeSetting("show-breadcrumbs"))/>

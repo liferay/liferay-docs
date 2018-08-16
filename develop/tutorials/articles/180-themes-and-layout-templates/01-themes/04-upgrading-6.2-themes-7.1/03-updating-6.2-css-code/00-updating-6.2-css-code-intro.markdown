@@ -7,5 +7,5 @@
 - Updating CSS rules and imports
 - Modifications to CSS responsiveness tokens
 
-The theme upgrade process involves conforming to these changes. In this section, 
-you'll update your theme's CSS to leverage the styling improvements. 
+The theme upgrade process involves conforming to these changes. Here's how to
+update your theme's CSS to leverage the styling improvements. 

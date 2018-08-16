@@ -15,13 +15,12 @@ renames CSS files automatically.
 
 $$$
 
-If you didn't modify the CSS files mentioned, no action is required. Follow 
-these steps to manually update your CSS file names:
+Follow these steps to update your CSS file names manually: 
 
 1.  Change each CSS file name's suffix in your theme from `.css` to `.scss`, 
     then prepend an underscore (`_`) to all Sass partial file names, except 
-    `main.scss` and `aui.scss`. The Lunar Resort's updated files are shown below 
-    for example:
+    `main.scss` and `aui.scss`. The Lunar Resort's updated files are shown
+    below:
 
         - `css/`
           - `_aui_variables.scss`
@@ -33,7 +32,7 @@ these steps to manually update your CSS file names:
         - `css/`
           - `_clay_variables.scss`
           - `_custom.scss` 
-    
+ 
 The full list of core files to rename is shown below for reference. If you 
 modified a CSS file shown in the table below, **you must** update its name. If 
 you didn't modify the file, no action is required:

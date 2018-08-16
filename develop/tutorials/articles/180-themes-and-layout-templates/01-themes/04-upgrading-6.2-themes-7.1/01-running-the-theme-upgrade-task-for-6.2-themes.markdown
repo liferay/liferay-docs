@@ -1,14 +1,12 @@
 # Running the Gulp Upgrade Task for 6.2 Themes [](id=running-the-upgrade-task-for-6.2-themes)
 
-A Liferay Portal 6.2 theme can be upgraded to @product-ver@, regardless of its 
-project environment (Plugins SDK, Maven, etc.). Themes created with the 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
-or migrated to use the Liferay Themes Node.js SDK that generated themes use, as 
-this tutorial covers, however, can leverage the theme's Gulp `upgrade` task. If 
-you're developing your theme in an environment other than the Liferay Themes 
-Node.js SDK and don't want to migrate your theme to use the Liferay Themes 
-Node.js SDK, follow the directions in the remaining tutorials in this section to 
-upgrade your theme manually. 
+You can upgrade Liferay Portal 6.2 theme @product-ver@, regardless of the
+development environment (Plugins SDK, Maven, etc.) you used. If you migrate your
+theme to the Liferay Themes Node.js SDK first, you can leverage the theme's Gulp
+`upgrade` task. 
+
+Without the Liferay Themes Node.js SDK, you must follow the directions in the
+remaining tutorials in this section to upgrade your theme manually. 
 
 Here's what the Upgrade Task does:
 
@@ -57,7 +55,7 @@ Here are the steps for using the Gulp `upgrade` task:
         gulp upgrade
 
     Here's what the 6.2 to 7.0 upgrade task does:
-    
+ 
     - Updates the theme's Liferay version
     - Updates the CSS
     - Suggests specific code updates
@@ -68,10 +66,10 @@ Here are the steps for using the Gulp `upgrade` task:
     `_custom.scss`). The `upgrade` task prompts you for each CSS file to rename. 
 
     +$$$
-    
+
     **Note**: An upgraded theme can be restored to its original state by 
     executing `gulp upgrade:revert`. 
-    
+
     $$$
 
     The upgrade task automatically upgrades CSS code that it can identify. For 

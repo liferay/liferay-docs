@@ -1,7 +1,6 @@
 # Updating 6.2 CSS Rules and Imports [](id=updating-6.2-css-rules-and-imports)
 
-@product-ver@ uses Bootstrap 4's CSS rule syntax. The new syntax lets developers 
-leverage Bootstrap 4 features and improvements. Font Awesome icons have also 
+@product-ver@ uses Bootstrap 4's CSS rule syntax. Font Awesome icons have also 
 been moved, requiring changes to your imports. If your theme uses the Liferay 
 Themes Node.js SDK, the Gulp `upgrade` task reports automatic CSS updates and 
 suggests manual updates. For example, here is part of the task log for the Lunar 
@@ -68,7 +67,7 @@ Follow these steps to update your theme's CSS rules manually:
     +$$$
 
     **Note:** For individual elements, you can overwrite the 
-    `box-sizing:border-box` rule with `box-sizing: content-box`. 
+    `box-sizing:border-box` rule with `box-sizing:content-box`. 
 
     $$$
 
