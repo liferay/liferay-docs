@@ -20,15 +20,10 @@ but the latest workspace version has not yet been updated to include it.
 To upgrade one of workspace's bundled plugins, follow these steps:
 
 1.  Find the bundle symbolic name (BSN) for the bundled plugin you want to
-    update. You can find this value in the plugin's `bnd.bnd` set by the
-    `Bundle-SymbolicName` header. For example,
-
-        Bundle-SymbolicName: com.liferay.source.formatter
-
-    Most of Liferay tooling plugins (and corresponding `bnd.bnd` files) can be
-    found in the `liferay-portal` repository's
-    [`modules/util`](https://github.com/liferay/liferay-portal/tree/master/modules/util)
-    folder.
+    update. You can find this value in the
+    [`portal-tools.properties`](https://github.com/liferay/liferay-portal/blob/master/modules/sdk/gradle-plugins/src/main/resources/com/liferay/gradle/plugins/dependencies/portal-tools.properties)
+    file. For example, the Source Formatter's BSN is
+    `com.liferay.source.formatter`.
 
 2.  Open your workspace's `build.gradle` file and copy the plugin's BSN followed
     by `.version` and set the desired plugin version you want to use. For
