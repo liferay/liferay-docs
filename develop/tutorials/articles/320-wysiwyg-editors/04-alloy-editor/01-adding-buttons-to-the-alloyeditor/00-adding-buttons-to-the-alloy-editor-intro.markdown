@@ -11,8 +11,8 @@ adding buttons to AlloyEditor's toolbars. [CKEditor Configuration settings](http
 that modify the editor's behavior (excluding UI modifications) can also be 
 passed down through this configuration object as well. 
 
-The `com.liferay.docs.my.button` module is used as an example throughout these 
-tutorials. If you want to use it as a starting point for your own custom 
-configuration, or follow along with the tutorials, you can download the module's 
-zip file from the 
+The `com.liferay.docs.my.button` module is the example throughout these 
+tutorials. If you want to use it as a starting point for your own configuration
+or follow along with the tutorials, you can download the module's zip file from
+the
 [Github repo](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/com.liferay.docs.my.button).

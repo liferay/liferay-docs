@@ -1,13 +1,12 @@
 # Creating the OSGi Module and Configuring the EditorConfigContributor Class [](id=creating-the-osgi-module-and-configuring-the-editorconfigcontributor)
 
-To add a button to the AlloyEditor's toolbars, first you must create an OSGi 
+To add a button to the AlloyEditor's toolbars, you must first create an OSGi 
 component class of service type `EditorConfigContributor.class`. Follow these 
 steps to create and configure the OSGi module:
 
 1.  [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module), 
     using 
-    [Blade's portlet template](/develop/reference/-/knowledge_base/7-1/using-the-portlet-template) 
-    for example:
+    [Blade's portlet template](/develop/reference/-/knowledge_base/7-1/using-the-portlet-template):
 
         blade create -t portlet -p com.liferay.docs.my.button -c 
         MyEditorConfigContributor my-new-button
@@ -16,8 +15,8 @@ steps to create and configure the OSGi module:
     `com.liferay.portal.kernel` `version` to `3.6.2`. This is the version 
     bundled with the @product@ release.
 
-3.  Open the portlet class you created in step one, `MyEditorConfigContributor` 
-    for example, and add the following imports:
+3.  Open the portlet class you created in step one (`MyEditorConfigContributor`) 
+    and add the following imports:
     
         import com.liferay.portal.kernel.editor.configuration.BaseEditorConfigContributor;
         import com.liferay.portal.kernel.editor.configuration.EditorConfigContributor;
@@ -41,9 +40,9 @@ steps to create and configure the OSGi module:
     This targets AlloyEditor for the configuration and overrides the default 
     service by providing a higher 
     [service ranking](/develop/tutorials/-/knowledge_base/7-1/fundamentals#services). 
-    If you would like to target a more specific configuration, you can find the 
+    If you want to target a more specific configuration, you can find the 
     available properties in the 
-    [`EditorConfigContributor` interface's javadoc](https://docs.liferay.com/ce/portal/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.html).
+    [`EditorConfigContributor` interface's Javadoc](https://docs.liferay.com/ce/portal/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.html).
 
 5.  Extend `BaseEditorConfigContributor` instead of `GenericPortlet`.
 
@@ -66,7 +65,7 @@ steps to create and configure the OSGi module:
         if (toolbarsJSONObject == null) {
                 toolbarsJSONObject = JSONFactoryUtil.createJSONObject();
         }
-        
+ 
 8.  If you're adding a button for one of the 
     [CKEditor plugins bundled with the AlloyEditor](/develop/reference/-/knowledge_base/7-1/ckeditor-plugin-reference-guide), 
     add the code below to retrieve the extra plugins and add the plugin to the 
@@ -86,14 +85,14 @@ steps to create and configure the OSGi module:
         }
 
         jsonObject.put("extraPlugins", extraPlugins);
-        
-    @product@'s AlloyEditor also comes with several plugins to bridge the gap 
-    between the CKEditor's UI and the AlloyEditor's UI. These are prefixed with 
-    the `ae_` you see above. We recommend that you include them all to ensure 
+ 
+    AlloyEditor also comes with several plugins to bridge the gap between the
+    CKEditor's UI and the AlloyEditor's UI. These are prefixed with the `ae_`
+    you see above. We recommend that you include them all to ensure
     compatibility. 
 
 The `*EditorConfigContributor` class is prepared. Now you must choose which 
-toolbar you want to add the button(s) to: The 
+toolbar you want to add the button(s) to: the 
 [Add Toolbar](/develop/tutorials/-/knowledge_base/7-1/adding-a-button-to-the-add-toolbar) 
 or one of the 
 [Styles Toolbars](/develop/tutorials/-/knowledge_base/7-1/adding-a-button-to-a-styles-toolbar). 

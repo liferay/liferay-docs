@@ -20,9 +20,9 @@ Follow these steps to add a button to the AlloyEditor's Add Toolbar:
     
         addToolbarButtons.put("camera");
         
-    The camera button is just one of the buttons available by default with the 
-    AlloyEditor, however, they are not all enabled. The full list of available 
-    buttons you can add to the Add Toolbar is shown in the list below:
+    The camera button is just one of the buttons available by default with
+    AlloyEditor, however, they are not all enabled. Here's the full list of
+    available buttons you can add to the Add Toolbar: 
     
     - camera
     - embed
@@ -43,8 +43,8 @@ Follow these steps to add a button to the AlloyEditor's Add Toolbar:
         jsonObject.put("toolbars", toolbarsJSONObject);
 
 5.  [Deploy your module](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-blade-cli) 
-    and create a new piece of content that uses the AlloyEditor---such as a blog 
-    entry or web content article---to see your new configuration in action!
+    and create new content that uses the AlloyEditor---like a blog entry or
+    web content article---to see your new configuration in action!
 
 The `com.liferay.docs.my.button` module's updated Add Toolbar is shown in the 
 figure below:

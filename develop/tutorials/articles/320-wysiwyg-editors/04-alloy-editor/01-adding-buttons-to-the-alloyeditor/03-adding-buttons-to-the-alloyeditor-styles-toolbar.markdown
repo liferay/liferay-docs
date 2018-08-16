@@ -3,23 +3,23 @@
 A Styles Toolbar appears when content is selected or highlighted in AlloyEditor. 
 There are five Styles toolbars to choose from:
 
-- `embedurl`: Appears when embedded content is selected 
+`embedurl`: Appears when embedded content is selected. 
 
 ![Figure 1: The embed URL Styles toolbar lets you format embedded content in the editor.](../../../../images/alloyeditor-embedurl-toolbar.png)
 
-- `image`: Appears when an image is selected
+`image`: Appears when an image is selected.
 
 ![Figure 2: The image Styles toolbar lets you format images in the editor.](../../../../images/alloyeditor-image-toolbar.png)
 
-- `link`: Appears when a hyperlink is selected
+`link`: Appears when a hyperlink is selected.
 
 ![Figure 3: The link Styles toolbar lets you format hyperlinks in the editor.](../../../../images/alloyeditor-link-toolbar.png)
 
-- `table`: Appears when a table is selected
+`table`: Appears when a table is selected.
 
 ![Figure 4: The table Styles toolbar lets you format tables in the editor.](../../../../images/alloyeditor-table-toolbar.png)
 
-- `text`: Appears when text is highlighted
+`text`: Appears when text is highlighted.
 
 ![Figure 5: The text Styles toolbar lets you format highlighted text in the editor.](../../../../images/alloyeditor-text-toolbar.png)
 
@@ -61,9 +61,9 @@ Follow these steps to add a button to one of the Styles toolbars:
 
     The example above adds one of the 
     [CKEditor plugins bundled with @product@'s AlloyEditor](/develop/reference/-/knowledge_base/7-1/ckeditor-plugin-reference-guide). 
-    There are also several buttons available by default with the AlloyEditor, 
-    however, they are not all enabled. The full list of existing buttons you can 
-    add to the Styles toolbars is shown in the table below, ordered by Toolbar:
+    There are also several buttons available by default with the AlloyEditor,
+    but they are not all enabled. The full list of existing buttons you can add
+    to the Styles toolbars is shown in the table below, ordered by Toolbar:
     
     | text | table | image | link |
     | ---- | ----- | ----- | ---- |
