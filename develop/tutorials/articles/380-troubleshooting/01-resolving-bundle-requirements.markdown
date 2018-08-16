@@ -27,9 +27,9 @@ The bundle exception message follows this general pattern:
 -   etc.
 -   Module Z provides `www.xxx` but has an unresolved  requirement `yyy.zzz`.
 
-The pattern stops at the final requirement which no module satisfies. The last
-module's dependencies are key to resolving the bundle exception. There are two
-possible causes:
+The pattern stops at the final unsatisfied requirement. The last module's
+dependencies are key to resolving the bundle exception. There are two possible
+causes:
 
 1.  A dependency that satisfies the final requirement might be missing from the
     build file.
@@ -76,7 +76,7 @@ to verify the dependencies are in Liferay's OSGi Runtime:
 
 The dependency module `org.apache.aries.spifly.dynamic.bundle` is missing
 from the runtime bundle list. The `org.apache.aries.spifly.dynamic.bundle`
-module's `MANIFEST.MF` file shows it  provides the requirement capability
+module's `MANIFEST.MF` file shows it provides the requirement capability
 `osgi.extender; filter:="(osgi.extender=osgi.serviceloader.processor)"`:
 
     Provide-Capability: osgi.extender;osgi.extender="osgi.serviceloader.regi

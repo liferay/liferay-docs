@@ -10,7 +10,7 @@ best practices, use a reverse-domain name in your `Bundle-SymbolicName`. For
 example, a module with the domain `troubleshooting.liferay.com` would be
 reversed to `com.liferay.troubleshooting.`.
 
-There are three ways to specify a bundles `Bundle-SymbolicName`:
+There are three ways to specify a bundle's `Bundle-SymbolicName`:
 
 1.  `Bundle-SymbolicName` header in a bundle's `bnd.bnd` file.
 

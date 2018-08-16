@@ -2,8 +2,8 @@
 
 When you're developing an application using Liferay APIs or tools---for example,
 you might create a Service Builder application or use Message Bus or Asset
-Framework---you need to determine which versions of Liferay artifacts (modules,
-apps, etc.) you application's modules need to specify as dependencies. To learn
+Framework---you must determine which versions of Liferay artifacts (modules,
+apps, etc.) you application's modules must specify as dependencies. To learn
 how to find Liferay artifacts and  configure dependencies on them, see
 [Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies).
 

@@ -1,12 +1,12 @@
 # Resolving ClassNotFoundException and NoClassDefFoundError in OSGi Bundles [](id=resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles)
 
-Understanding a `ClassNotFoundException` or `NoClassDefFoundError` in non-OSGi
-environments is straightforward. 
+``ClassNotFoundException` and `NoClassDefFoundError` are common, well known
+exceptions:
 
--   `ClassNotFoundException`: thrown when looking up a class that isn't on the
+-   `ClassNotFoundException` is thrown when looking up a class that isn't on the
     classpath or using an invalid name to look up a class that isn't on the
     runtime classpath. 
--   `NoClassDefFoundError`: occurs when a compiled class references
+-   `NoClassDefFoundError` occurs when a compiled class references
     another class that isn't on the runtime classpath.
 
 In OSGi environments, however, there are additional cases where a
@@ -33,11 +33,11 @@ In this case, there are two possible causes:
     `ClassNotFoundException` or `NoClassDefFoundError` occurs. 
 
     Check the package name and make sure the consuming module imports the right
-    one. If the package import is correct but you still get the exception or
+    package. If the import is correct but you still get the exception or
     error, the class might no longer exist in the package. 
 
 2.  **The class no longer exists in the imported package:** Modules are changed
-    frequently In OSGi runtime environments. If you reference another module's
+    frequently in OSGi runtime environments. If you reference another module's
     class that its developer removed, a `NoClassDefFoundError` or
     `ClassNotFoundException` occurs. [Semantic Versioning](http://semver.org)
     guards against this scenario: removing a class from an exported package
@@ -57,8 +57,8 @@ In this case, there are two possible causes:
     You have limited options when the class no longer exists in the package: 
 
     -   Adapt to the new API. To learn how to do this, read the 
-        package's/module's Javadoc, release notes, and or formal documentation. 
-        You can also ask the author, or search forums. 
+        package's/module's Javadoc, release notes, and/or formal documentation. 
+        You can also ask the author or search forums. 
 
     -   Revert to the module version you used previously. Deployed module 
         versions reside in `[Liferay_Home]/osgi/`. For details, see
