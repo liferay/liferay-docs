@@ -69,20 +69,19 @@ entering the proper data.
 Numeric field validation is similar to text field validation, but the conditions 
 compare the value of the number entered to some other value. 
 
+![Figure 5: Numeric conditions constrain user-entered numeric data.](../../images/forms-numeric-val2.png)
+
 Available conditions to check include
 
 -   Is greater than or equal to
 -   Is greater than
 -   Is not equal to
 -   Is less than or equal to
--   Is less than or equal to
 -   Is less than
 
 For example, to make sure users don't enter a number over 10, enable validation
 and use *Is greater than* with a value of *10*. Use the message 
 *Please enter 10 or less*. 
-
-![Figure 5: Numeric conditions constrain user-entered numeric data.](../../images/forms-numeric-val2.png)
 
 ![Figure 6: Make sure user-entered numeric data is within reasonable bounds. Nobody needs 11 sandwiches for lunch.](../../images/forms-numeric-val1.png)
 

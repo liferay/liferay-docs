@@ -2,8 +2,8 @@
 
 Let's face it: nobody likes an ugly, confusing form. Styling your 
 [form pages](/discover/portal/-/knowledge_base/7-1/form-pages) 
-lets you make your forms user friendly. There are two features are available for 
-styling your forms: 
+lets you make your forms user friendly. There are two features for styling your
+forms: 
 
 1.  Create rows and columns for form fields. 
 
