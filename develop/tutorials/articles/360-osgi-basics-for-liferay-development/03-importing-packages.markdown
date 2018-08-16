@@ -97,7 +97,7 @@ satisfies. Modules that use these APIs must specify requirements on the API
 contracts. Blade CLI and Liferay @ide@ module projects do this automatically! 
 
 For example, if your Blade CLI or Liferay @ide@ module uses the Java Portlet
-API and you compile against the Java Portlet 3.0 artifact, a contract
+API and you compile against the Java Portlet 2.0 artifact, a contract
 requirement for the package is added to your module's manifest. The contract
 requirement specifies your module's relationship with the imported API packages.
 If the system you're running does *not* provide the exact contract, your module
@@ -118,11 +118,18 @@ adds a requirement for the first version of the API found in your classpath and
 corresponding API packages---the package version information isn't needed. 
 
 Projects that don't use bnd must specify contracts in their module manifest. For
-example, here's the specified contract for `JavaPortlet` 3.0, which goes in your
+example, here's the specified contract for `JavaPortlet` 2.0, which goes in your
 `META-INF/MANIFEST.MF` file:
 
     Import-Package: javax.portlet
-    Require-Capability: osgi.contract;filter:=(&(osgi.contract=JavaPortlet)(version=3.0))
+    Require-Capability: osgi.contract;filter:=(&(osgi.contract=JavaPortlet)(version=2.0))
+
+$$$
+
++$$$
+
+**Note:** @product@ 7.1 GA1 exports the Java Portlet 2.0 API. Until Java Portlet
+3.0 API is supported, make sure to use the 2.0 version. 
 
 $$$
 
