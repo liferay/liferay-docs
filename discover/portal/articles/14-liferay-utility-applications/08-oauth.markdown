@@ -80,7 +80,7 @@ between them.
 Once your OAuth application is placed on a portal page, you'll be asked to
 grant or deny the third-party service provider limited access to your portal.
 
-![Figure 14.38: You can grant or deny the service provider access to your.](../../images/oauth-authorize.png)
+![Figure 14.38: You can grant or deny the service provider access to your application.](../../images/oauth-authorize.png)
 
 Congratulations! You've successfully installed your OAuth app and authorized
 access between a service provider and Liferay Portal!
