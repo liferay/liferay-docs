@@ -56,7 +56,7 @@ Follow the steps below to disable Local Live or Remote Live staging:
 1.  Navigate to the *Publishing* &rarr; *Staging* option, which is only
     available from the staged site.
 
-2.  Click the *Options* icon (![Options](../../../images/icon-options.png))
+2.  Click the *Options* icon (![Options](../../../../images/icon-options.png))
     from the upper right corner of the page and select *Staging Configuration*.
 
 3.  Select the *None* radio button and click *Save*.
