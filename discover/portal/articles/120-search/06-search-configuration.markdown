@@ -139,7 +139,7 @@ nuances to be aware of.
 
 - The classic Search application is not instanceable. Only one can be added to
     any page. When used as the embedded Header Search, configuration of the
-    application is applied sit-wide.
+    application is applied site-wide.
 
 - The new Search widgets, (for example, the Search Bar) are instanceable. Add
     as many to a page as you need, and configure them however you'd like.
@@ -147,14 +147,14 @@ nuances to be aware of.
 - The Header Search (the Search Bar embedded in every site page by default) only
     needs to be configured once site-wide. The Search Bar widget in the default
     Search Page can be configured, but when both are present, its configuration
-    is ignored and the Header Search’s configuration takes precedence. By
+    is ignored and the Header Search's configuration takes precedence. By
     contrast, any Search Bar widgets manually placed on other pages can be
     configured differently.
 
     +$$$
 
     **Note:** On Liferay Portal 7.1 CE GA1 and Liferay DXP 7.1, you must
-    configure both the Search Page’s Search Bar and the Header Search with
+    configure both the Search Page's Search Bar and the Header Search with
     matching configurations to achieve consistent search behavior (otherwise
     either one may take precedence.) This has been fixed in
     [LPS-83193](https://issues.liferay.com/browse/LPS-83193) and will be
