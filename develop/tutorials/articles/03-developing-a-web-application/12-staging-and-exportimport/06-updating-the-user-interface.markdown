@@ -1,2 +1,0 @@
-# Creating Portlet Data Handler
-
