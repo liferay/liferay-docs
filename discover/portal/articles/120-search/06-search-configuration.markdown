@@ -135,25 +135,36 @@ is a way to influence site-specific search behavior. Search pages contain the
 search widgets used to search for content within a particular site.
 
 Because of the modularity of Search, there are some important configuration
-nuances to be aware of. 
+nuances to be aware of.
 
-1.  The classic Search application is not instanceable. Only one can be added to
-    any page.
+- The classic Search application is not instanceable. Only one can be added to
+    any page. When used as the embedded Header Search, configuration of the
+    application is applied sit-wide.
 
-2.  The new Search widgets, (for example, the Search Bar) are instanceable. Add
+- The new Search widgets, (for example, the Search Bar) are instanceable. Add
     as many to a page as you need, and configure them however you'd like.
 
-3.  Configure one site-wide Header Search (the Search Bar---or classic Search
-    Portlet---embedded in every site page by default) and it's configured the
-    same throughout the site. The configuration of Header Search overrides the
-    Search Page's Search Bar, if there's a conflict. However, Search Bar widgets
-    manually placed on a page can be configured differently.
+- The Header Search (the Search Bar embedded in every site page by default) only
+    needs to be configured once site-wide. The Search Bar widget in the default
+    Search Page can be configured, but when both are present, its configuration
+    is ignored and the Header Search’s configuration takes precedence. By
+    contrast, any Search Bar widgets manually placed on other pages can be
+    configured differently.
 
-Note that 
+    +$$$
+
+    **Note:** On Liferay Portal 7.1 CE GA1 and Liferay DXP 7.1, you must
+    configure both the Search Page’s Search Bar and the Header Search with
+    matching configurations to achieve consistent search behavior (otherwise
+    either one may take precedence.) This has been fixed in
+    [LPS-83193](https://issues.liferay.com/browse/LPS-83193) and will be
+    available on the next Fix Pack or GA release.
+
+    $$$
+
+See the documentation on 
 [configuration of a Search Bar](/discover/portal/-/knowledge_base/7-1/searching-for-assets#configuring-the-search-bar) 
-widget added to a page, or configuration of the classic Search Application,
-still available for adding to a page in @product-ver@, is page-scoped
-configuration.
+for more information.
 
 ## Widget Scoped Search Configuration
 
