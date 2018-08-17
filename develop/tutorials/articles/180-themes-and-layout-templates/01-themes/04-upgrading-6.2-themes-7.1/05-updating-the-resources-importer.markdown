@@ -201,13 +201,13 @@ You can also retrieve a portlet's ID from the UI:
 
 1.  In the portlet's *Options* menu, select *Look and Feel Configuration*.
  
-    ![Figure 4: You can find the portlet ID in the *Look and Feel Configuration* menu.](../../../../images/upgrading-themes-look-and-feel-menu.png)
+    ![Figure 1: You can find the portlet ID in the *Look and Feel Configuration* menu.](../../../../images/upgrading-themes-look-and-feel-menu.png)
 
 2.  Select the *Advanced Styling* tab.
 
     The `Portlet ID` value appears in the blue box.
 
-![Figure 5: The portlet ID appears within the blue box in the *Advanced Styling* tab.](../../../../images/upgrading-themes-portlet-id.png)
+![Figure 2: The portlet ID appears within the blue box in the *Advanced Styling* tab.](../../../../images/upgrading-themes-portlet-id.png)
 
 The [Portlet ID Quick Reference Guide](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide)
 shows all the default portlet IDs. Check `liferay-portlet.xml` for the portlet
@@ -221,7 +221,7 @@ in your sitemap.
 
 $$$
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Updating 6.2 CSS Code](/develop/tutorials/-/knowledge_base/7-1/updating-6-2-css-code)
 

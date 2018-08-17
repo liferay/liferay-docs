@@ -29,7 +29,7 @@ theme templates. Here are the main changes:
     -  *The User Personal Bar*: Display notifications and the user's avatar and 
         name. 
 
-    ![Figure 3: The Dockbar was removed in @product-ver@ and must be replaced with the new Control Menu.](../../../../images/upgrading-themes-dockbar.png) 
+    ![Figure 1: The Dockbar was removed in @product-ver@ and must be replaced with the new Control Menu.](../../../../images/upgrading-themes-dockbar.png) 
 
 Start by converting your Velocity theme templates to FreeMarker. You can refer
 to Apache's 

@@ -39,7 +39,7 @@ define information about your entry. This takes only two steps:
 
 Both of these steps are described below. 
 
-### Insert the `@Component` Annotation
+### Insert the `@Component` Annotation [](id=insert-the-component-annotation)
 
 Directly above the class's declaration, insert the following annotation:
 
@@ -93,7 +93,7 @@ a `panel.category.order:Integer` of 150.
 
 $$$
 
-### Implement the `PanelCategory` Interface
+### Implement the `PanelCategory` Interface [](id=implement-the-panelcategory-interface)
 
 The `PanelCategory` interface requires you to implement the following methods:
 

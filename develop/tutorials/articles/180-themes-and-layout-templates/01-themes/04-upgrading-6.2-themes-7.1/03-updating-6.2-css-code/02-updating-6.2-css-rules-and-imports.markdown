@@ -122,7 +122,7 @@ the IE9 CSS selector limitation. If you include these imports in your
     @import "aui/alloy-font-awesome/scss/mixins-alloy";
     @import "aui/alloy-font-awesome/scss/variables";
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Updating 6.2 CSS Responsiveness](/develop/tutorials/-/knowledge_base/7-1/updating-the-6.2-responsiveness)
 

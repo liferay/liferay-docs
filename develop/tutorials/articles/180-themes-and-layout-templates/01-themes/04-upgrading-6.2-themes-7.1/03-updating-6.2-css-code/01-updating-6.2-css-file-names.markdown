@@ -54,7 +54,7 @@ you didn't modify the file, no action is required:
 `portlet.css` | `_portlet.scss`|
 `taglib.css` | `_taglib.scss`|
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Running the Gulp Upgrade Task for 6.2 Themes](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6.2-themes)
 
