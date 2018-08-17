@@ -1,4 +1,4 @@
-# JSP Overrides Using OSGi Fragments [](id=overriding-a-modules-jsps)
+# JSP Overrides Using OSGi Fragments [](id=jsp-overrides-using-osgi-fragments)
 
 OSGi fragments let you override an entire JSP. This approach is powerful but can
 be unstable with respect to new versions of the host module: 
@@ -9,8 +9,15 @@ be unstable with respect to new versions of the host module:
     upgraded, the fragment detaches from it. In this scenario, the original
     JSPs are still available and the module is functional (but lacks your JSP
     enhancements).
+3.  Liferay does not maintain upgradability of JSPs overridden using OSGi 
+    fragments. 
 
-[Liferay's API based approaches to overriding JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps#using-portals-api-to-override-a-jsp),
+Using OSGi fragments to override JSPs is a bad practice, equivalent to using Ext
+plugins to customize @product@. They should only be used as a last resort.
+Liferay's API based approaches to overriding JSPs (i.e.,
+[Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps-with-dynamic-includes)
+and
+[Portlet Filters](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-portlet-filters)),
 on the other hand, provide more stability as they let you customize specific
 parts of the JSP that are safe to override. Also, the API based approaches don't
 limit your override to a specific host module version. In case you're
@@ -24,7 +31,7 @@ An OSGi fragment that overrides a JSP requires these two things:
 
 -  includes the original JSP with any modifications you need to make.
 
-For more information about fragment modules, you can refer to section 3.14 of the [OSGi Alliance's core specification document](https://www.osgi.org/developer/downloads/release-6/).
+For more information about fragment modules, you can refer to section 3.14 of the [OSGi Alliance's core specification document](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html).
 
 ## Declaring a Fragment Host [](id=declaring-a-fragment-host)
 
@@ -120,8 +127,8 @@ Now you can easily modify the JSPs of any application in Liferay.
 <!--https://commons.wikimedia.org/wiki/File:Carcharhinus_perezi_bahamas_feeding.jpg-->
 
 To see a sample JSP-modifying fragment in action, look at the
-[BLADE project named `module-jsp-override`](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/overrides/module-jsp-override).
+[Module JSP Override sample project](/develop/reference/-/knowledge_base/7-1/module-jsp-override).
 
 ## Related Topics [](id=related-topics)
 
-[Upgrading App JSP Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-app-jsp-hook-plugins)
+[Upgrading App JSP Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-app-jsp-hook-plugins)
