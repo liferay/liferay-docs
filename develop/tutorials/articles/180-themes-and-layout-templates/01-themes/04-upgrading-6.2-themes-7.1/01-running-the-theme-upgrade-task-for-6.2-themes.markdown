@@ -1,4 +1,4 @@
-# Running the Gulp Upgrade Task for 6.2 Themes [](id=running-the-upgrade-task-for-6.2-themes)
+# Running the Gulp Upgrade Task for 6.2 Themes [](id=running-the-upgrade-task-for-6-2-themes)
 
 You can upgrade Liferay Portal 6.2 theme @product-ver@, regardless of the
 development environment (Plugins SDK, Maven, etc.) you used. If you migrate your

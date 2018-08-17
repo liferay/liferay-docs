@@ -1,4 +1,4 @@
-## Applying Clay Design Patterns [](id=applying-clay-design-patterns-to-6.2-themes)
+# Applying Clay Design Patterns [](id=applying-clay-design-patterns-to-6-2-themes)
 
 @product-ver@ uses 
 [Clay](https://liferay.github.io/clay/), 

@@ -1,4 +1,4 @@
-# Updating 6.2 Project Metadata [](id=updating-6.2-project-metadata)
+# Updating 6.2 Project Metadata [](id=updating-6-2-project-metadata)
 
 If your theme uses the 
 [Liferay Themes Node.js SDK](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 

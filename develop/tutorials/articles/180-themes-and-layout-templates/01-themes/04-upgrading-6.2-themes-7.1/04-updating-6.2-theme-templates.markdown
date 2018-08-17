@@ -1,4 +1,4 @@
-# Updating 6.2 Theme Templates [](id=updating-6.2-theme-templates)
+# Updating 6.2 Theme Templates [](id=updating-6-2-theme-templates)
 
 @product-ver@ theme templates are essentially the same as Liferay Portal 6.2 
 theme templates. Here are the main changes:

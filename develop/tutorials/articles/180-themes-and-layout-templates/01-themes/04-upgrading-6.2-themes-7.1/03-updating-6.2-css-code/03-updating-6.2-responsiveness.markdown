@@ -1,4 +1,4 @@
-# Updating the Responsiveness [](id=updating-the-6.2-responsiveness)
+# Updating the Responsiveness [](id=updating-the-6-2-responsiveness)
 
 Bootstrap 4 explicit media queries replaced the Bootstrap 2 `respond-to` mixins
 for CSS responsiveness. Follow these steps to update your theme's

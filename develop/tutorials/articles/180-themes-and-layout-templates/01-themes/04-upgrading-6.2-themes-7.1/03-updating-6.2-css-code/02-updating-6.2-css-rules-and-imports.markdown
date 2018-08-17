@@ -1,4 +1,4 @@
-# Updating 6.2 CSS Rules and Imports [](id=updating-6.2-css-rules-and-imports)
+# Updating 6.2 CSS Rules and Imports [](id=updating-6-2-css-rules-and-imports)
 
 @product-ver@ uses Bootstrap 4's CSS rule syntax. Font Awesome icons have also 
 been moved, requiring changes to your imports. If your theme uses the Liferay 
