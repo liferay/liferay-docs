@@ -37,12 +37,6 @@ Test the workflow process:
 
 2.  Click *Submit for Publication* to submit the form entry.
 
-3.  Approve the entry.
-
-    If you're using the Single Approver workflow and you're the administrative
-    user, a notification appears after submitting the form entry, alerting you
-    that there's a form record to review. 
-
 Next go find the form entry in the Forms widget:
 
 1.  Go back to the Forms application in the Menu in your Site's *Content* 
@@ -83,7 +77,7 @@ families. All a user must do is click the *I Want a Free Trip* link from the
 Site home page, to see a form they can fill out and submit in under three
 minutes:
 
-![Figure 5: The Lunar Resort Giveaway form is ready to be filled out.](../../images/lunar-resort-giveaway.png)
+![Figure 5: The Lunar Resort Giveaway form is ready to be filled out.](../../images/forms-workflow-test.png)
 
 The Lunar Resort wants to exclude folks who don't meet certain qualifications:
 
@@ -103,4 +97,4 @@ receives a notification that a form record was submitted. Go to the View Entries
 screen and see that the form record is currently marked as Pending. Once the
 review is completed, it's marked as Approved.
 
-![Figure 6: Assign a workflow to a form in several steps.](../../images/lunar-resort-giveaway-workflow-new.gif)
+![Figure 6: Assign a workflow to a form in several steps.](../../images/forms-workflow-test.gif)

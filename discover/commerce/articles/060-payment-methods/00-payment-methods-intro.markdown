@@ -69,9 +69,7 @@ purchase order:
 
 **Note:** This process does not give buyers an order form or enable buyers to
 submit that order form back to the seller. See
-[Forms](/discover/portal/-/knowledge_base/7-1/forms) and [Customer
-Portal](/web/liferay-emporio/documentation/-/knowledge_base/1-0/customer-portal)
-for more on the submission of form. 
+[Forms](/discover/portal/-/knowledge_base/7-1/forms)for more detail.
 
 $$$
 

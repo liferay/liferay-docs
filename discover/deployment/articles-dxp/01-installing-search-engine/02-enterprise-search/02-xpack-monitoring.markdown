@@ -1,7 +1,7 @@
 # Installing X-Pack Monitoring [](id=installing-x-pack-monitoring)
 
 Monitor Elasticsearch with X-Pack Monitoring. First 
-[install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-1/installing-x-pack-security)
+[install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-1/installing-x-pack)
 and configure security if you're using X-Pack's security features. Then come
 back here for instructions on installing and configuring Kibana (the monitoring
 server) with X-Pack so that Elasticsearch (secured with X-Pack), Kibana (secured
@@ -41,9 +41,6 @@ for details.
 
         ./bin/kibana-plugin install x-pack
 
-    If you're not using X-Pack Security on the Elasticsearch cluster, skip this
-    step.
-
 3.  Tell Kibana where to send monitoring data by setting Elasticsearch's URL in
     `kibana.yml`:
 
@@ -57,8 +54,8 @@ for details.
 
     from Kibana Home.
 
-If you're using X-Pack's security features, there's additional configuration
-required before starting Kibana.
+If you're using X-Pack's security features on the Elasticsearch server, there's
+additional configuration required before starting Kibana.
 
 ### Configure Kibana with Authentication [](id=configure-kibana-with-authentication)
 
@@ -130,14 +127,15 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
 
         kibanaPassword="liferay"
         kibanaUserName="elastic"
-        kibanaURL="https://localhost:5601"
+        kibanaURL="http://localhost:5601"
 
-    Alternatively, configure the monitoring adapter from the Control Panel.
-    Navigate to *Configuration* &rarr; *System Settings* and find the X-Pack
-    Monitoring entry in the Search category. All the configuration 
-    options for the monitoring connector appear there.
+    The values differ depending on your Kibana configuration. For example,
+    `kibanaURL="https://localhost:5601"` if using X-Pack Security features.
 
-    The values differ depending on your Kibana configuration. 
+    Alternatively, configure the monitoring adapter from System Settings.
+    Navigate to Control Panel &rarr; Configuration &rarr; System Settings and
+    find the X-Pack Monitoring entry in the Search category. All the
+    configuration options for the monitoring connector appear there.
 
 3.  Deploy this configuration file to `Liferay Home/osgi/configs`, and the
     settings are picked up by your running instance. There's no need to restart
@@ -158,8 +156,9 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
     [http://localhost:8080/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy/app/monitoring](http://localhost:8080/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy/app/monitoring)
 
 5.  Because you're using the Monitoring portlet in @product@ as a proxy to
-    Kibana's UI, you must configure the application server's startup JVM
-    parameters to recognize a valid *truststore* and *password*.
+    Kibana's UI, if you are using X-Pack Security, you must configure the
+    application server's startup JVM parameters to recognize a valid
+    *truststore* and *password*.
 
     First, navigate to Elasticsearch Home and generate a PKSC#12 certificate
     from the CA you created when setting up X-Pack security:

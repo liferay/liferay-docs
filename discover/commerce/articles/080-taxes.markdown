@@ -20,7 +20,7 @@ these steps:
     a name and a description and then click *Save*.
 
 See
-[Configuration](/web/liferay-emporio/documentation/-/knowledge_base/1-0/configuration#tax-category)
+[Configuration](/web/emporio/documentation/-/knowledge_base/1-0/configuration#tax-category)
 for more on how to assign a tax category to a product.
 
 ## Calculating Taxes [](id=calculating-taxes)

@@ -19,7 +19,7 @@ Follow these steps to create a product image:
    one from the *Options* section of the *Add Image* form. (Variants will only
    be available to choose from if a product has options which are designated as
    SKU contributors. See 
-   [Options](/web/liferay-emporio/documentation/-/knowledge_base/1-0/options)
+   [Options](/web/emporio/documentation/-/knowledge_base/1-0/options)
    for details).
 
 3. If you want the image to be displayed on the product page for a limited
