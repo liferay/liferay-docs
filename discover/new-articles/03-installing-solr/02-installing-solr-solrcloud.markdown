@@ -2,45 +2,45 @@
 
 Use SolrCloud if you need a cluster of Solr servers featuring fault
 tolerance and high availability. Note that to use SolrCloud in production, you
-should set up an [external ZooKeeper
-ensemble](https://cwiki.apache.org/confluence/display/solr/Setting+Up+an+External+ZooKeeper+Ensemble).
+should set up an 
+[external ZooKeeper ensemble](https://cwiki.apache.org/confluence/display/solr/Setting+Up+an+External+ZooKeeper+Ensemble).
 [ZooKeeper](http://zookeeper.apache.org/) is a centralized
 coordination service for managing distributed systems, such as your SolrCloud
 cluster.
 
-The steps included here should be considered the bare minimum of what must be
-done to configure SolrCloud with @product@. For example, these instructions cover
+Consider the steps included here the bare minimum of what must be done to
+configure SolrCloud with @product@. For example, these instructions cover
 configuring SolrCloud on a single machine, whereas a production environment
-would feature multiple physical or virtual machines. These instructions also
-assume you've followed the earlier section on *Installing and Configuring Solr
-7*. Refer to the [SolrCloud guide for more information](https://cwiki.apache.org/confluence/display/solr/SolrCloud).
+features multiple physical or virtual machines. These instructions also assume
+you've followed the earlier section on *Installing and Configuring Solr 7*.
+Refer to the 
+[SolrCloud guide for more information](https://cwiki.apache.org/confluence/display/solr/SolrCloud).
 
-1. Stop the Solr server if it's running.
+1.  Stop the Solr server if it's running.
 
-2. Navigate to the `Solr_Home/configsets` folder and create a folder called 
+2.  Navigate to the `[Solr_Home]/configsets` folder and create a folder called 
 
         liferay_configs
 
-3. Copy the `conf` folder from `Solr_Home/liferay` to the `liferay_configs`
-   folder you just created.
+3.  Copy the `conf` folder from `[Solr_Home]/liferay` to the `liferay_configs`
+    folder you just created.
 
-    The `configset/liferay_configs` folder is used to configure the SolrCloud
-    @product@ collection, and is uploaded to ZooKeeper. By copying the `conf`
-    folder from the `liferay` server configured earlier, you're using the
-    `schema.xml` and `solrconfig.xml` files provided with the Liferay Solr
-    Adapter.
+    The `configset/liferay_configs` folder configures the SolrCloud @product@
+    collection, and is uploaded to ZooKeeper. By copying the `conf` folder from
+    the `liferay` server configured earlier, you're using the `schema.xml` and
+    `solrconfig.xml` files provided with the Liferay Solr Adapter.
 
-4. Next launch an interactive SolrCloud session to configure your SolrCloud
-   cluster. Use this command:
+4.  Next launch an interactive SolrCloud session to configure your SolrCloud
+    cluster. Use this command:
 
         ./bin/solr -e cloud
 
-5. Complete the setup wizard. These steps demonstrate creating a two-node
-   cluster:
+5.  Complete the setup wizard. These steps demonstrate creating a two-node
+    cluster:
 
     -  Enter `2` for the number of nodes.
     -  Specify ports `8983` and `7574` (the defaults). Both nodes are
-        started with the start commands printed in the log:
+       started with the start commands printed in the log:
 
                 Starting up SolrCloud node1 on port 18983 using command:
 
@@ -49,7 +49,7 @@ assume you've followed the earlier section on *Installing and Configuring Solr
     -  Name the collection *liferay*.
     -  Split the collection into two shards.
     -  Specify two replicas per shard.
-    -  When prompted to choose a configuration, enter *liferay_configs*. You
+    -  When prompted to choose a configuration, enter `liferay_configs`. You
         should see a log message that concludes like this when the cluster has
         been started:
 
@@ -91,7 +91,7 @@ You'll see log output like this:
         "liveNodes":"2",
         "collections":"1"}}
 
-To stop Solr while running in SolrCloud mode, use the *stop* command, like this:
+To stop Solr while running in SolrCloud mode, use the *stop* command like this:
 
     bin/solr stop -all
 
@@ -107,17 +107,8 @@ Liferay's Solr connector.
 
 2. Start @product@ if it's not running already.
 
-<!-- +$$$
-
-**Note:** For a complete list of settings available in the Solr connector, see the
-[Solr Settings reference
-article](/discover/reference/-/knowledge_base/7-1/solr-settings).
-
-$$$ -->
-
-Now you're able to configure @product@ for Solr, and Solr for @product@.
-Remember that Elasticsearch is the default search engine for @product@, so if
-you're not constrained to use Solr or already a Solr expert, consider
-Elasticsearch for you search engine requirements. If you do use Solr, tell all
-your colleagues that your @product@ installation's search capability is Solr
-powered (pun intended).
+Now you can configure @product@ for Solr, and Solr for @product@. Remember that
+Elasticsearch is the default search engine, so if you're not constrained to use
+Solr or already a Solr expert, consider Elasticsearch for your search engine
+requirements. If you do use Solr, tell all your colleagues that your @product@
+installation's search capability is Solr powered (pun intended).
