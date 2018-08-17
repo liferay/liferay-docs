@@ -32,7 +32,7 @@ just created as the default category page. When a link in a *Commerce Category
 Navigation* widget is clicked, the navigation widget finds the first page in the
 site with a category content widget and opens that page. Second, the category
 content widget displays the category's
-[image](/web/liferay-emporio/documentation/-/knowledge_base/1-0/product-categories#images).
+[image](/web/emporio/documentation/-/knowledge_base/1-0/product-categories#images).
 
 You can add other content and applications to the page: for instance,
 a *Commerce Search Results* widget automatically displays products from the
@@ -45,7 +45,7 @@ Facets* or *Specification Option Facets*, filter search results.
 the category page. Once the widget is on a page, open its *Configuration*
 dialog. From the *Vocabulary* drop-down, select the vocabulary that contains
 your product category tree. See 
-[Product Categories](/web/liferay-emporio/documentation/-/knowledge_base/1-0/product-categories)
+[Product Categories](/web/emporio/documentation/-/knowledge_base/1-0/product-categories)
 for more detail.
 
 $$$
