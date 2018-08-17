@@ -2,7 +2,7 @@
 
 **An option** is a product feature that a buyer can select or specify. To create
 an option and apply it to a product, you must first create an 
-[option template](/web/liferay-emporio/documentation/-/knowledge_base/1-0/options). 
+[option template](/web/emporio/documentation/-/knowledge_base/1-0/options). 
 Then you can apply that template to any product in your catalog.
 
 Once you apply a template to a product, you can make any changes to the

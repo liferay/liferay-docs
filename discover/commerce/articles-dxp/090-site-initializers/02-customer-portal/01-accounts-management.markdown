@@ -15,7 +15,7 @@ has as its parent your store Site's Organization.
 
 Your store Site's Organization was created automatically when you created the
 Site using the Beryl site initializer (see 
-[Site Initializers](/web/liferay-emporio/documentation/-/knowledge_base/1-0/site-initializers)).
+[Site Initializers](/web/emporio/documentation/-/knowledge_base/1-0/site-initializers)).
 To set up a new account, follow these steps:
 
 1.  Go to *Control Panel* &rarr; *Users* &rarr; *Users and Organizations*. Click

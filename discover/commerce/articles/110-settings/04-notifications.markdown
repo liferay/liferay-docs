@@ -21,7 +21,7 @@ Follow these steps create a notification for a received order:
     **User Segments:** Click **Select** and choose segments from the list to
     determine users that receive notifications. If no segment is selected, then
     all users receive notifications. See 
-    [User Segments](/web/liferay-emporio/documentation/-/knowledge_base/1-0/user-segmentation)
+    [User Segments](/web/emporio/documentation/-/knowledge_base/1-0/user-segmentation)
     for more detail.
 
     **From Address:** Enter the email address that appears in the notification's
