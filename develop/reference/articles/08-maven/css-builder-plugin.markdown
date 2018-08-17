@@ -58,9 +58,9 @@ Parameter Name | Type | Default Value | Description
 `rtlExcludedPathRegexps` | `List<String>` |  | The SCSS file patterns to exclude when converting for right-to-left (RTL) support.
 `sassCompilerClassName` | `String` | `"jni"` | The type of Sass compiler to use. Supported values are `"jni"` and `"ruby"`. The Ruby Sass compiler requires `com.liferay.sass.compiler.ruby.jar`, `com.liferay.ruby.gems.jar`, and `jruby-complete.jar` to be added to the classpath.
  
-You can also configure the `com.liferay.frontend.css.common` theme dependency
-provided by the CSS Builder in your `pom.xml`. This can be done by adding it as
-a project dependency:
+You can also manage the `com.liferay.frontend.css.common` default theme
+dependency provided by the CSS Builder in your `pom.xml`. This can be modified
+by adding it as a project dependency:
 
     <project>
         ...
@@ -75,7 +75,7 @@ a project dependency:
         </dependencies>
     </project>
 
-There are additional Liferay theme-related dependencies you can configure this
-way that's provided by the Theme Builder. See
+There are additional Liferay theme-related dependencies you can manage this way
+that's provided by the Theme Builder. See
 [this section](/develop/reference/-/knowledge_base/7-1/theme-builder-plugin) for
 more information.
