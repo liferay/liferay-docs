@@ -1,7 +1,6 @@
 # Updating Default Plugins Provided by Liferay Workspace [](id=updating-default-plugins-provided-by-liferay-workspace)
 
-Liferay Workspace is bundled with a slew of plugins that provide many features.
-For example,
+Liferay Workspace comes with a slew of plugins like these: 
 
 - [CSS Builder](https://github.com/liferay/liferay-portal/tree/master/modules/util/css-builder)
 - [Javadoc Formatter](https://github.com/liferay/liferay-portal/tree/master/modules/util/javadoc-formatter)
@@ -11,16 +10,16 @@ For example,
 - [Theme Builder](https://github.com/liferay/liferay-portal/tree/master/modules/util/portal-tools-theme-builder)
 - etc.
 
-The bundled plugins are updated with each release of workspace, but what if you
-want workspace to use a different version of a bundled plugin? For example,
-suppose a new feature is developed for the
+Bundled plugins are updated with each release of workspace. Suppose you need
+a new feature in the 
 [Source Formatter plugin](https://github.com/liferay/liferay-portal/tree/master/modules/util/source-formatter),
-but the latest workspace version has not yet been updated to include it.
+but the latest workspace version has not yet been updated to include it. You can
+upgrade it yourself!
 
 To upgrade one of workspace's bundled plugins, follow these steps:
 
-1.  Find the bundle symbolic name (BSN) for the bundled plugin you want to
-    update. You can find this value in the
+1.  Find the bundle symbolic name (BSN) for the plugin you want to update. You
+    can find this value in the
     [`portal-tools.properties`](https://github.com/liferay/liferay-portal/blob/master/modules/sdk/gradle-plugins/src/main/resources/com/liferay/gradle/plugins/dependencies/portal-tools.properties)
     file. For example, the Source Formatter's BSN is
     `com.liferay.source.formatter`.
