@@ -1,4 +1,4 @@
-# Managing Site Settings for Members
+# Managing Site Settings for Members [](id=managing-site-settings-for-members)
 
 You've already covered the basics of managing Site Memberships and Roles, now you'll look at some key configuration options for managing members of your Site.
 

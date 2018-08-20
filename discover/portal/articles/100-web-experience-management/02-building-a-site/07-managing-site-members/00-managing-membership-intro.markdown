@@ -1,4 +1,4 @@
-# Managing Members in Your Site
+# Managing Members in Your Site [](id=managing-members-in-your-site)
 
 Users and Sites are important concepts. Sites are were all of your content and 
 pages are stored, and users are the ones who are  accessing and creating that 

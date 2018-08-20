@@ -1,4 +1,4 @@
-# Adding Members to Sites
+# Adding Members to Sites [](id=adding-members-to-sites)
 
 In [Adding Sites](/discover/portal/-/knowledge_base/7-1/adding-sites) you 
 learned the difference between Site Membership Types and about public and 
@@ -15,7 +15,7 @@ are a few key reasons why Site Membership management is important:
 3.  Site Membership can be associated with Roles that provide privileges for
     the entire instance.
 
-## Administrating Site Membership
+## Administrating Site Membership [](id=administrating-site-membership)
 
 Administrators can manage the users that are members of a Site from that Site's 
 *Site Membership* page.
@@ -30,9 +30,9 @@ Group associations. You can learn more about those in the [Users and Organizatio
 you see a list of all of the current users of the Site and you can add or 
 remove user memberships from the Site.
 
-![Figure X: The current members of the Site as displayed on the *Site Memberships* page. ](../../../../images/orgs-add-organization-site.png)
+![Figure 1: The current members of the Site as displayed on the *Site Memberships* page. ](../../../../images/orgs-add-organization-site.png)
 
-### Adding Members to a Site
+### Adding Members to a Site [](id=adding-members-to-a-site)
 
 Follow these steps to make an existing user a member of the Site:
 
@@ -49,9 +49,9 @@ be added to the Site will appear. Users who are currently deactivated will not
 appear. Users who are already members of the side will appear, but with a 
 greyed-out checkbox which cannot be used.
 
-![Figure X: The list of users available to add to the current Site. Note that the current members are visible but cannot be added or removed here. ](../../../../images/assign-users.png)
+![Figure 2: The list of users available to add to the current Site. Note that the current members are visible but cannot be added or removed here. ](../../../../images/assign-users.png)
 
-### Removing User Membership from a Site
+### Removing User Membership from a Site [](id=removing-user-membership-from-a-site)
 
 There are two ways to remove a user from a Site. You can remove an individual 
 member like this:
@@ -63,7 +63,7 @@ member like this:
 
 3.  In the popup that appears, confirm the removal.
 
-![Figure X: Selecting to remove a user. ](../../../../images/remove-user.png)
+![Figure 3: Selecting to remove a user. ](../../../../images/remove-user.png)
 
 Alternatively, if you need to remove several users at once, you can do this:
 
@@ -76,7 +76,7 @@ Alternatively, if you need to remove several users at once, you can do this:
 
 Users that are removed from the Site will lose access to the Site's private pages, as well as losing membership in any Site roles or teams that were assigned to them through that Site.
 
-### Assigning Site Roles
+### Assigning Site Roles [](id=assigning-site-roles)
 
 Roles are the primary way of assigning permissions in @product@. Roles can be 
 assigned for the entire instance or just for one specific Site or Organization.
@@ -91,7 +91,7 @@ you will be taken to the *Assign Site Roles* screen. From here:
 
 2.  Click *Done*.
 
-![Figure X: Assigning Site Roles. ](../../../../images/assigning-site-roles.png)
+![Figure 4: Assigning Site Roles. ](../../../../images/assigning-site-roles.png)
 
 Site roles are created at a Global level, but when they're assigned they are 
 only provide privileges for the specific Site where they were assigned. Since 
