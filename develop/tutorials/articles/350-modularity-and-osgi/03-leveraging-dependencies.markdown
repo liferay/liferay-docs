@@ -96,9 +96,9 @@ refactored as independent modules that implement APIs you provide. Examples
 might be connectors to third-party systems or support for various data
 export/import formats.
 
-The principles listed above also apply to [developing new modular-based apps](/develop/tutorials/-/knowledge_base/7-1/developing-a-web-application). 
-As you design an app, consider possible implementation variations with respect
-to its features, front-end, and back-end. Encapsulate the variations using APIs.
+The principles listed above also apply to developing new modular-based apps.  As
+you design an app, consider possible implementation variations with respect to
+its features, front-end, and back-end. Encapsulate the variations using APIs.
 Then develop the APIs and implementations as separate modules. You can wire them
 together using dependencies.
 
