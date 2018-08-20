@@ -12,7 +12,6 @@ Any messages the user should see are now stored in either `SessionMessages` or
     `init.jsp` include statement:
     
         <liferay-ui:success key="entryAdded" message="entry-added" />
-        <liferay-ui:success key="guestbookAdded" message="guestbook-added" />
         <liferay-ui:success key="entryDeleted" message="entry-deleted" />
 
     This tag accesses what's stored in `SessionMessages`. It has two attributes. 

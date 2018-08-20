@@ -17,8 +17,8 @@ and `GuestbookAdminPortlet.java`. Start by updating `addEntry` and `deleteEntry`
 in `GuestbookPortlet.java`: 
 
 1.  Find the `addEntry` method in `GuestbookPortlet.java`. In the first
-    `try...catch` block's `try` section, add a success message just before the 
-    closing `}`: 
+    `try...catch` block's `try` section, and add the success message just 
+    before the closing `}`: 
     
         SessionMessages.add(request, "entryAdded");
 

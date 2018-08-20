@@ -80,16 +80,12 @@ services:
                         serviceContext.getUserId(), guestbookId, entryId, userName,
                         email, message, serviceContext);
 
-                    SessionMessages.add(request, "entryAdded");
-
                     response.setRenderParameter(
                         "guestbookId", Long.toString(guestbookId));
 
                 }
                 catch (Exception e) {
                     System.out.println(e);
-
-                    SessionErrors.add(request, e.getClass().getName());
 
                     PortalUtil.copyRequestParameters(request, response);
 
