@@ -225,4 +225,4 @@ $$$
 
 [Updating 6.2 CSS Code](/develop/tutorials/-/knowledge_base/7-1/updating-6-2-css-code)
 
-[Applying Clay Design Patterns to 6.2 Themes](/develop/tutorials/-/knowledge_base/7-1/applying-clay-design-patterns-to-6.2-themes)
+[Applying Clay Design Patterns to 6.2 Themes](/develop/tutorials/-/knowledge_base/7-1/applying-clay-design-patterns-to-6-2-themes)

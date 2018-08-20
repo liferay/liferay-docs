@@ -11,7 +11,7 @@ and *Configuration*. Clicking a child panel category shows panel apps.
 **Note:** The Product Menu cannot be changed by applying a new theme. To change
 the layout/style of the Product Menu, you must create and deploy a theme
 contributor. See the
-[Theme Contributors](/develop/tutorials/-/knowledge_base/7-1/theme-contributors)
+[Theme Contributors](/develop/tutorials/-/knowledge_base/7-1/packaging-independent-ui-resources-for-your-site)
 tutorial for more details.
 
 $$$
