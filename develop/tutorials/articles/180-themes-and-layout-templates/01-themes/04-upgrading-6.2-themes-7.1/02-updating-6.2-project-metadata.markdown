@@ -3,7 +3,7 @@
 If your theme uses the 
 [Liferay Themes Node.js SDK](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
 the 
-[Gulp `upgrade` task](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6.2-themes) 
+[Gulp `upgrade` task](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6-2-themes) 
 automatically updates some of your theme's metadata as part of the upgrade 
 process. Follow the steps below to update your theme's metadata manually:
 

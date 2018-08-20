@@ -42,6 +42,6 @@ Updated:
 
 ## Related Topics [](id=related-topics)
 
-[Updating 6.2 Theme Templates](/develop/tutorials/-/knowledge_base/7-1/updating-6.2-theme-templates)
+[Updating 6.2 Theme Templates](/develop/tutorials/-/knowledge_base/7-1/updating-6-2-theme-templates)
 
 [Updating CSS File Names for Clay and Sass](/develop/tutorials/-/knowledge_base/7-1/updating-css-file-names-for-clay-and-sass)
