@@ -7,7 +7,7 @@ if they worked. Up to now, you've been placing this information in logs
 that only administrators can access. Wouldn't it be better to show users these 
 messages? 
 
-![Figure 1: You can use Liferay's APIs to display helpful messages.](../../../images/guestbook-status-message.png.png)
+![Figure 1: You can use Liferay's APIs to display helpful messages.](../../../images/guestbook-status-message.png)
 
 That's exactly what you'll do next, in three steps: 
 
