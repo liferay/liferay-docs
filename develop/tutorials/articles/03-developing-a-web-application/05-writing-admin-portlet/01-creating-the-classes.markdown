@@ -62,7 +62,9 @@ Follow these steps to create the panel entry for the Guestbook Admin portlet:
     `com.liferay.docs.guestbook.application.list` and click *Finish*. 
 
 4.  Right-click your new package and select *New* &rarr; *Class*. Name the class 
-    `GuestbookAdminPanelApp`. Click *Browse* next to Superclass, search for 
+    `GuestbookAdminPanelApp`.
+    
+5.  Click *Browse* next to Superclass, search for 
     `BasePanelApp`, select it, and click *OK*. Then click *Finish*. 
 
 Great! You've created the classes you need, and you're ready to begin working on

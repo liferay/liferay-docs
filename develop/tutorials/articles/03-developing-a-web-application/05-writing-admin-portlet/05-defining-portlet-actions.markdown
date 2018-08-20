@@ -133,5 +133,5 @@ Open `GuestbookAdminPortlet.java` and follow these steps:
 
 4.  Hit [CTRL]+[SHIFT]+O to organize imports. Save the file. 
 
-You now have your service methods and portlet action methods in place. Your last 
-task is to implement the Guestbook Admin portlet's user interface. 
+You now have your service methods and portlet action methods in place. Your 
+last task is to implement the Guestbook Admin portlet's user interface. 

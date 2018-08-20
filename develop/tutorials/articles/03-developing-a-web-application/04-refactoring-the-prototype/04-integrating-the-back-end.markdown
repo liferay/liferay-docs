@@ -202,5 +202,5 @@ services:
 
 8.  Hit Ctrl-Shift-O to organize your imports. 
 
-Awesome! You've updated your controller to use services. Next, you'll tackle the 
-view. 
+Awesome! You've updated your controller to use services. Next, you'll tackle 
+the view. 

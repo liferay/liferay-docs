@@ -103,5 +103,6 @@ Next, you can configure the Panel app class. Follow these steps:
     `com.liferay.portal.kernel.model.Portlet` instead of 
     `javax.portlet.Portlet`. 
 
-Now that the configuration is out of the way, you're free to implement the app's 
-functionality: adding, editing, and deleting guestbooks. That's the next step. 
+Now that the configuration is out of the way, you're free to implement the 
+app's functionality: adding, editing, and deleting guestbooks. That's the next 
+step. 
