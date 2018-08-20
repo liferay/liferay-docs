@@ -55,4 +55,4 @@ figure below:
 
 [Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor)
 
-[Adding a Button to a Styles Toolbar](/develop/reference/-/knowledge_base/7-1//develop/tutorials/-/knowledge_base/7-1/adding-a-button-to-a-styles-toolbar)
+[Adding a Button to a Styles Toolbar](/develop/tutorials/-/knowledge_base/7-1/adding-a-button-to-a-styles-toolbar)

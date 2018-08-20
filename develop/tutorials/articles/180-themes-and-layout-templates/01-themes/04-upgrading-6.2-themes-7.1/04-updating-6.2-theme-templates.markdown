@@ -1,4 +1,4 @@
-# Updating 6.2 Theme Templates [](id=updating-6.2-theme-templates)
+# Updating 6.2 Theme Templates [](id=updating-6-2-theme-templates)
 
 @product-ver@ theme templates are essentially the same as Liferay Portal 6.2 
 theme templates. Here are the main changes:
@@ -29,7 +29,7 @@ theme templates. Here are the main changes:
     -  *The User Personal Bar*: Display notifications and the user's avatar and 
         name. 
 
-    ![Figure 3: The Dockbar was removed in @product-ver@ and must be replaced with the new Control Menu.](../../../../images/upgrading-themes-dockbar.png) 
+    ![Figure 1: The Dockbar was removed in @product-ver@ and must be replaced with the new Control Menu.](../../../../images/upgrading-themes-dockbar.png) 
 
 Start by converting your Velocity theme templates to FreeMarker. You can refer
 to Apache's 
@@ -223,6 +223,6 @@ changes that the Gulp `upgrade` task reports.
 
 ## Related Topics [](id=related-topics)
 
-[Updating CSS Code](/develop/tutorials/-/knowledge_base/7-1/updating-6.2-css-code)
+[Updating CSS Code](/develop/tutorials/-/knowledge_base/7-1/updating-6-2-css-code)
 
 [Making Configurable Theme Settings](/develop/tutorials/-/knowledge_base/7-1/making-configurable-theme-settings)

@@ -10,7 +10,7 @@ prefixes have been replaced with `clay` to reflect the introduction of
 +$$$
 
 **Note**: The 
-[Gulp `upgrade` task](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6.2-themes) 
+[Gulp `upgrade` task](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6-2-themes) 
 renames CSS files automatically.
 
 $$$
@@ -54,8 +54,8 @@ you didn't modify the file, no action is required:
 `portlet.css` | `_portlet.scss`|
 `taglib.css` | `_taglib.scss`|
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Running the Gulp Upgrade Task for 6.2 Themes](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6.2-themes)
+[Running the Gulp Upgrade Task for 6.2 Themes](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6-2-themes)
 
-[Updating 6.2 CSS Rules](/develop/tutorials/-/knowledge_base/7-1/updating-6.2-css-rules)
+[Updating 6.2 CSS Rules](/develop/tutorials/-/knowledge_base/7-1/updating-6-2-css-rules-and-imports)

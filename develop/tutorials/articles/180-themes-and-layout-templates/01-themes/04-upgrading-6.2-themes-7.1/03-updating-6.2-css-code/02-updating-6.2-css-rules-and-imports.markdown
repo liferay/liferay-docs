@@ -1,4 +1,4 @@
-# Updating 6.2 CSS Rules and Imports [](id=updating-6.2-css-rules-and-imports)
+# Updating 6.2 CSS Rules and Imports [](id=updating-6-2-css-rules-and-imports)
 
 @product-ver@ uses Bootstrap 4's CSS rule syntax. Font Awesome icons have also 
 been moved, requiring changes to your imports. If your theme uses the Liferay 
@@ -122,8 +122,8 @@ the IE9 CSS selector limitation. If you include these imports in your
     @import "aui/alloy-font-awesome/scss/mixins-alloy";
     @import "aui/alloy-font-awesome/scss/variables";
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[Updating 6.2 CSS Responsiveness](/develop/tutorials/-/knowledge_base/7-1/updating-the-6.2-responsiveness)
+[Updating 6.2 CSS Responsiveness](/develop/tutorials/-/knowledge_base/7-1/updating-the-6-2-responsiveness)
 
 [Copying an Existing Theme's Files](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files)
