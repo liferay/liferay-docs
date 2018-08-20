@@ -16,7 +16,7 @@ displayed them in a list. The full application will handle multiple Guestbooks
 and their entries. To make this work, you'll create two tables in the database: 
 one for guestbooks, and one for guestbook entries. 
 
-<!-- Insert screenshot of final application here. --> 
+![Figure 1: When you're done, the Guestbook will be more robust, and make use of many Liferay features.](../../../images/guestbook-final.png)
 
 ## Service Layer [](id=service-layer)
 
