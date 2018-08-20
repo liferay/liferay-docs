@@ -248,5 +248,7 @@ handler:
   	These methods are necessary for the Staging framework to properly delete
     your entry staged models.
 
+11. Organize your imports (*[CTRL]+[SHIFT]+O*), and save the file.
+
 The entry's staged model data handler is complete! Next you can create the
 guestbook's staged model data handler.

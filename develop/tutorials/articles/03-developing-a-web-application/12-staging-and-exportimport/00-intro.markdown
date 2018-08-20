@@ -16,4 +16,4 @@ Staging.
 
 Ready to support Staging in your Guestbook app?
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/creating-model-data-handlers">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/creating-staged-models">Let's Go!<span class="icon-circle-arrow-right"></span></a>

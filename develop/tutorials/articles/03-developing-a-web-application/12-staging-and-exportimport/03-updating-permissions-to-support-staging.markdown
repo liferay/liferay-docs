@@ -2,8 +2,8 @@
 
 The guestbook's current permission handlers do not account for staging. For
 example, the current configuration would display the *Add Guestbook* and *Add
-Entry* buttons on the live site. These options should only be available on the
-staged site when staging is enabled.
+Entry* buttons on the live site while staging was enabled. These options should
+only be available on the staged site when staging is enabled.
 
 First, edit the Guestbook app's permissions helper classes to provide permission
 checks to leverage when staging is enabled.
@@ -59,7 +59,7 @@ checks to leverage when staging is enabled.
 
     Now you'll edit the permissions helper classes for your two entities. These
     are for the model/resource permissions, so you supply the primary key of
-    the entity you're checking permissions for  (e.g., `guestbookId`).
+    the entity you're checking permissions for (e.g., `guestbookId`).
 
 2.  Open the `EntryPermission` class residing in the `guestbook-service`'s
     `com.liferay.docs.guestbook.service.permission` package. In the
@@ -92,6 +92,9 @@ checks to leverage when staging is enabled.
 
     This is similar to the logic added for the entry's permissions. 
 
+4.  Organize your imports ([CTRL]+[SHIFT]+O) for all three classes, and then
+    save them.
+
 Your Guestbook app can now display the proper functionality depending on its
 staging context (i.e., staged site or live site).
 
@@ -100,7 +103,7 @@ correctly display options based on staging context.
 
 1.  In your `guestbook-web` module, open the
     `src/main/resources/META-INF/resources/guestbookadminportlet/guestbook_actions.jsp`
-    file. Directly after the first `<liferay-ui:icon-menu>` tag, add the
+    file. Directly after the opening `<liferay-ui:icon-menu>` tag, add the
     following `if` statement:
 
         <c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbook.getGuestbookId(), ActionKeys.UPDATE) %>'>

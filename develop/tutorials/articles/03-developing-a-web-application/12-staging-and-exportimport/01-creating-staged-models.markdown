@@ -64,6 +64,9 @@ by the Guestbook's Staging functionality.
         compileOnly group: "com.liferay", name: "com.liferay.exportimport.api", version: "2.1.0"
         compileOnly group: "com.liferay", name: "com.liferay.xstream.configurator.api", version: "2.0.0"
 
+3.  Save the file, right-click the Guestbook project, and run *Gradle* &rarr;
+    *Refresh Gradle Project*.
+
 Now you're ready to begin implementing staging in your app.
 
 ## Updating the Extended Staged Model Interface
@@ -72,8 +75,8 @@ Staged models that extend the `StagedAuditedModel` interface are intended to
 function independent from the group concept (sometimes referred to as company
 models). This means that, for example, your guestbook and entry's scope would
 not be tracked by the Staging framework. You must add one more column to your
-`service.xml` file to convert your models to `StagedGroupedModel`s (i.e.,
-correctly track the scope of your entities):
+`service.xml` file to convert your models to `StagedGroupedModel`s, so your
+entities' scope is tracked correctly.
 
 1.  Open your `guestbook-service` module's `service.xml` file and add the
     `lastPublishDate` column for both Guestbook and Entry entities:
@@ -83,6 +86,9 @@ correctly track the scope of your entities):
 2.  Run Service Builder. Do this by navigating to the Gradle Tasks pane on the
     right side of IDE and selecting your project's *build* &rarr; *buildService*
     task.
+
+3.  Run *Gradle* &rarr; *Refresh Gradle Project* to resolve any remaining
+    errors.
 
 Service Builder has updated your models to now extend the `StagedGroupedModel`.
 For example, your `EntryModel` interface's declaration now looks like this:

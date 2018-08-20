@@ -33,6 +33,10 @@ handler. Refer to the previous article for any in-depth code analysis.
 4.  Add the methods to retrieve the guestbook staged model's classes to track
     and display names:
 
+        public static final String[] CLASS_NAMES = {
+            Guestbook.class.getName()
+        };
+
         @Override
         public String[] getClassNames() {
 
@@ -171,6 +175,8 @@ handler. Refer to the previous article for any in-depth code analysis.
 
             _guestbookLocalService.deleteGuestbook(guestbook);
         }
+
+9.  Organize your imports (*[CTRL]+[SHIFT]+O*), and save the file.
 
 Your guestbook staged model data handler is ready to go! Next, you'll begin
 updating your guestbook's permissions to account for staging.
