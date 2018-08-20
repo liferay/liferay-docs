@@ -34,7 +34,7 @@ allowing type information. The articles below explain the file formats:
 ## Naming Configuration Files [](id=naming-configuration-files)
 
 Before you
-[create a configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files#creating-configuration-files),
+[create a configuration file](/discover/portal/-/knowledge_base/7-1/creating-configuration-files),
 follow these steps to determine whether multiple instances of the component can
 be created or if the component is intended to be a singleton:
 

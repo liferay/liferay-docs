@@ -38,7 +38,7 @@ completely optional.
 **Note**: Service Builder generates `*LocalServiceImpl`, `*ServiceImpl`, 
 `*PersistenceImpl`, and `[ENTITY_NAME]Impl` classes for your entities as Service
 Builder Spring Beans---not OSGi Declarative Services. 
-[Service Builder Spring Beans must use means other than the `@Reference` annotation to reference Liferay services and OSGi services](/develop/reference/-/knowledge_base/7-1/invoking-services-from-service-builder-code).
+[Service Builder Spring Beans must use means other than the `@Reference` annotation to reference Liferay services and OSGi services](/develop/tutorials/-/knowledge_base/7-1/invoking-services-from-service-builder-code).
 
 $$$
 
@@ -134,6 +134,6 @@ JSPs access to the component instances via `RenderRequest` attributes.
 
 [Service Security Layers](/develop/tutorials/-/knowledge_base/7-1/service-security-layers)
 
-[Invoking Services from Service Builder Code](/develop/reference/-/knowledge_base/7-1/invoking-services-from-service-builder-code)
+[Invoking Services from Service Builder Code](/develop/tutorials/-/knowledge_base/7-1/invoking-services-from-service-builder-code)
 
 [OSGi Services and Dependency Injection with Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services)
