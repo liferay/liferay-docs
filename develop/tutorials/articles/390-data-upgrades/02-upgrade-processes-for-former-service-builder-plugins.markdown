@@ -180,10 +180,7 @@ The Bundle Activator uses one of the following values to initialize the
     the previous plugin.
 -   `0.0.1`: if there is no existing `Release_` table record.
 
-Optionally, if you want to move users immediately from the schema version
-`0.0.1` to `1.0.0`, for example, you can create an additional dummy upgrade step
-in your module's
-[upgrade step registrator](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app#writing-the-upgrade-step-registrator).  
+You've set your service module's data upgrade process.  
 
 ## Related Topics [](id=related-topics)
 

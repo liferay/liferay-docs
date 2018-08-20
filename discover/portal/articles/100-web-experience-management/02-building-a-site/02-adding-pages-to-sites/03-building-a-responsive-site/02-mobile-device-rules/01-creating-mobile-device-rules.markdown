@@ -27,9 +27,12 @@ You can develop plugins that integrate with other device databases. Even if you
 don't have a device database, you can still set up mobile device rules. They
 won't, however, be effective until a database is deployed, because the portal
 won't have enough information about the devices being used to make page
-requests. To learn how to tap into @product@'s Device API, see the 
-[Using the Device Recognition API](/develop/tutorials/-/knowledge_base/7-1/using-the-device-recognition-api)
+requests.
+<!-- Uncomment when the referenced article is published. Jim
+To learn how to tap into @product@'s Device API, see the 
+Using the Device Recognition API(/develop/tutorials/-/knowledge_base/7-1/using-the-device-recognition-api)
 tutorial.
+-->
 
 To access the Mobile Device Families administrative page,
 
@@ -116,4 +119,3 @@ or page and order them by priority. The families are checked in decreasing order
 of priority: the actions defined by the first family that applies are executed.
 
 ![Figure 3: You can select a mobile device family to apply for a Site or page.](../../../../../../images/mobile-device-selection.png)
-

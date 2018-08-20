@@ -3,16 +3,16 @@
 Once users begin submitting form entries, you'll want to do these things with
 them:
 
-- View form entries
-- Export form entries
-- Delete form entries
+- [View form entries](#viewing-form-entries)
+- [Export form entries](#exporting-form-entries)
+- [Delete form entries](#deleting-form-entries)
 
 Start by learning how to access and view the entries.
 
 ## Viewing Form Entries [](id=viewing-form-entries)
 
-When users fill out forms, they're generating data. You'll want to see it at
-some point. 
+When users fill out forms, they're generating data. You'll want to see that data
+at some point. 
 
 1.  From the Menu, navigate back to the *Content* &rarr; *Forms* section of The
     Lunar Resort site.
@@ -22,10 +22,10 @@ some point.
 
     ![Figure 1: You can view the entries right in the Forms application. ](../../images/forms-view-entries.png)
 
-3.  What if you  have a lot of form fields and you can't see all the data for
+3.  What if you have a lot of form fields and you can't see all the data for
     each entry in the search container? Just click the *Actions*
     (![Actions](../../images/icon-actions.png)) button for the entry and select
-    *View*. You'll be able to see all the specifics for that form entry.
+    *View*. You're shown all the specifics for that form entry.
 
     ![Figure 2: You can view a single entry right in the Forms application.](../../images/forms-view-entry.png)
 
@@ -34,7 +34,7 @@ might need to get all the entries into a spreadsheet so you can work with them.
 
 ## Exporting Form Entries [](id=exporting-form-entries)
 
-So you need to put your form entries in a spreadsheet to do spreadhseet things
+So you need to put your form entries in a spreadsheet to do spreadsheet things
 with them? No problem.
 
 1.  Navigate to the Forms application in The Lunar Resort site's Content section
@@ -43,19 +43,18 @@ with them? No problem.
 2.  Click the *Actions* (![Actions](../../images/icon-actions.png)) button and
     select *Export*. 
 
-3.  Choose a File Extension. You can get entries in CSV, XLS, or XML. For this
-    example, pick CSV.
+3.  Choose a File Extension. You can export entries in CSV, XLS, or XML formats 
+    by default. For this example, pick CSV.
 
 4.  Click *Okay*, and open the file or save it locally. Open it with your
-    favorite spreadsheet program and confirm that your form entries are entered
-    into a spreadsheet for you.
+    favorite spreadsheet program and verify your form entries.
 
 ![Figure 3: You can export entries as CSV, XLS, or XML.](../../images/forms-export-csv.png)
 
 +$$$
 
-**Note:** The Forms application itself has an *Import/Export* window that you can
-access from the application's Configuration menu
+**Note:** The Forms application itself has an *Import/Export* window accessible 
+from the application's Configuration menu
 (![Configuration](../../images/icon-options.png)). This is how you import and
 export the application configuration and its data (forms and form entries). The
 file format for this type of import and export is a LAR file. For more
@@ -64,22 +63,42 @@ information, see the article on
 
 $$$
 
+There's a system level setting to determine whether administrators can export
+entries in CSV format:
+
+1.  Go to Control Panel &rarr; Configuration &rarr; System Settings and click
+    the *Forms* category in the Content section.
+
+2.  Click the *Forms* entry under SITE SCOPE.
+
+3.  The CSV Export property has three options:
+
+    - *Enabled* to enable CSV Export without a warning
+    - *Enabled (Show Warning)* to enable CSV Export with the following warning
+        to administrators:
+            This CSV file contains user supplied inputs. 
+            Opening a CSV file in a spreadsheet program may be dangerous.
+    - *Disabled* to turn off CSV Export.
+
 Once you export a batch of form entries, it can make sense to delete them from
 the database.
 
 ## Deleting Form Entries [](id=deleting-form-entries)
 
-What if you export a form's entries and now you want them to be removed from the
+What if you export a form's entries and now you want to remove them from the
 Liferay database? It's easy to delete all of a form's entries at once.
 
-Navigate back to the Forms application In The Lunar Resort Content section.
-Click the *Actions* (![Actions](../../images/icon-actions.png)) button next
-to the Guest Survey form and select *View Entries* again. Select all entries by
-checking the box next to *Filter and Order*. A trash can icon
-(![Trash](../../images/icon-trash.png)) appears in the top right corner of the
-Form Entries screen. Click it.
+1.  Navigate back to the Forms application In The Lunar Resort Content section.
 
-![Figure 4: Delete all form entries in one fell swoop.](../../images/forms-delete-entries.png)
+2.  Click the *Actions* (![Actions](../../images/icon-actions.png)) button next
+    to the Guest Survey form and select *View Entries* again.
+
+3.  Select all entries by checking the box next to *Filter and Order*. A trash 
+    can icon
+    (![Trash](../../images/icon-trash.png)) appears in the top right corner of 
+    the Form Entries screen. Click it.
+
+    ![Figure 4: Delete all form entries in one fell swoop.](../../images/forms-delete-entries.png)
 
 If you just wanted to delete a single entry, select that entry by checking its
 box; then click the trash can.

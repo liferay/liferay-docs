@@ -22,8 +22,12 @@ Configuration page.
 Choosing content to be staged may sound self-explanatory, but content must have
 specific attributes in @product@ to use it in a staged environment. Content or
 an entity should be site-scoped, so they are always part of a site; otherwise,
-they are not eligible for staging. @product@ by default supports the following
-content groups for staging:
+they are not eligible for staging. For example, page-scoped entities are only
+eligible for staging on published pages. When scoped data is on a page (e.g.,
+Web Content Display widget) and the page is published, the scoped data is
+published with it.
+
+@product@ by default supports the following content groups for staging:
 
 - Application Display Templates
 - Blogs

@@ -32,7 +32,7 @@ Follow these steps to integrate a third party theme with Clay Base:
 
         $FontAwesomePath: "font-awesome/font";
 
-        @import "font-awesome/scss/font-awesome"
+        @import "font-awesome/scss/font-awesome";
 
 3.  In that same folder, add a file named `_clay_variables.scss`. All your
     Atlas, Bootstrap, and Clay Base variable modifications must be placed in 

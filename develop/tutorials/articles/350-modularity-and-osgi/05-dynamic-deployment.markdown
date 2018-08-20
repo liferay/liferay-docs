@@ -98,8 +98,6 @@ $$$
 
 ## Related Topics [](id=related-topics)
 
-[Developing a Web Application](/develop/tutorials/-/knowledge_base/7-1/developing-a-web-application)
-
 [Starting Module Development](/develop/tutorials/-/knowledge_base/7-1/starting-module-development)
 
 [Planning Plugin Upgrades](migrating-existing-code-to-liferay-7/migrating-existing-code-to-liferay-7)
