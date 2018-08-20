@@ -20,10 +20,19 @@ for a description of the parameters.
 
 Note that it's best to get the file version for the `version` parameter from a 
 valid `FileEntry` object. This ensures that the version is valid. You can do 
-this with `FileVersionComparator`. 
-<!-- Further explanation pending more info from Adolfo -->
+this with 
+[`FileVersionVersionComparator`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/util/comparator/FileVersionVersionComparator.html). 
 
-    FileVersionComparator comparator = new FileVersionComparator();
+The following example creates such a comparator and uses its `compare` method to 
+identify old versions of a file. The code does so by iterating through each 
+[approved](/discover/portal/-/knowledge_base/7-1/workflow) 
+version of the file (`fileVersion`). Each iteration uses the `compare` method to 
+test that file version (`fileVersion.getVersion()`) against the same file's 
+current version (`fileEntry.getVersion()`). If this comparison is greater than 
+`0`, then the iteration's file version (`fileVersion`) is old and is deleted by 
+`deleteFileVersion`: 
+
+    FileVersionVersionComparator comparator = new FileVersionVersionComparator();
 
     for (FileVersion fileVersion: fileEntry.getVersions(WorkflowConstants.STATUS_APPROVED)) {
 
@@ -32,5 +41,4 @@ this with `FileVersionComparator`.
             dlAppService.deleteFileVersion(fileVersion.getFileEntryId(), fileVersion.getVersion());
         }
     }
-
 

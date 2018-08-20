@@ -13,6 +13,5 @@ These methods differ only in how they identify a file for deletion. The
 combination of the `folderId` and `title` in `deleteFileEntryByTitle` uniquely 
 identifies a file because it's impossible for two files in the same folder to 
 have the same name. 
-<!-- Pending answer from Adolfo on Recycle Bin behavior with these methods -->
 
 <!-- Add examples -->

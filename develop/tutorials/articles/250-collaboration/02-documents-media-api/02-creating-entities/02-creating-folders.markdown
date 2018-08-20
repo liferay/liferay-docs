@@ -26,20 +26,11 @@ proxy for the remote repository. When users enter this special folder, they're
 directed to the remote repository. These folders are called *mount points*. You 
 can create one via the API by setting the 
 [Service Context's](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext) 
-`mountPoint` attribute to `true`: 
+`mountPoint` attribute to `true`, and then using that Service Context in the 
+`addFolder` method: 
 
     serviceContext.setAttribute("mountPoint", true);
 
-<!-- 
-Add after clarification from Adolfo:
-
-If you do this, the `repositoryId` property of the folder will no longer 
-indicate to which repository the folder belongs, but to which external 
-repository it is pointing to. One non-obvious implication of this is that only 
-folders that belong to the default site repository may contain mount points; if 
-you try to do this to a folder in a private (non default) repository, the folder 
-will be lost forever. The reason for this is that the link between a folder and 
-its repository is the `repositoryId` property of the folder; this is not a 
-problem for the default site repository due to its special treatment. Use this 
-feature with care. 
---> 
+Note that the `repositoryId` of such a folder indicates the external repository 
+the folder points to---not the repository that the folder exists in. Also, mount 
+point folders can only exist in the default site repository. 

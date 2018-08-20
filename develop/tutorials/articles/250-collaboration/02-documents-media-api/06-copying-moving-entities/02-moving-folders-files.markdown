@@ -6,6 +6,19 @@ Copying only works with folders, and you can't copy them between repositories.
 The move operation, however, works with files and folders within or between 
 repositories. 
 
++$$$
+
+**Note:** Depending on the repository implementation, you may get unexpected 
+behavior when moving folders between different repositories. Moving a folder 
+also moves its contents. Behind the scenes, this move operation consists of many 
+smaller such move operations for each item in the folder. In some repository 
+implementations, if any one of these sub-operations fail, then the parent move 
+operation also fails. In other repository implementations, the results of any 
+successful sub-operations remain even if others fail, which leaves you with a 
+partially complete move of the whole folder. 
+
+$$$
+
 To move a folder, use the 
 [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 method `moveFolder`: 

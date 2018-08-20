@@ -4,7 +4,8 @@ Although the Documents and Media API lets you copy and move entities, these
 operations have some important caveats and limitations. Keep in mind the 
 following when copying entities: 
 
--   There's no way to copy files---you can only copy folders. 
+-   There's no way to copy files---you can only copy folders. However, copying a 
+    folder also copies its contents, which can include files. 
 -   Folders can only be copied within their current repository. 
 
 The move operation doesn't have these restrictions. It's possible to move files 
