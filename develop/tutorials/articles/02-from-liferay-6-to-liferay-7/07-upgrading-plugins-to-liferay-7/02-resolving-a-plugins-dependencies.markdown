@@ -94,7 +94,7 @@ to find versions of modules deployed on your @product@ instance.
 +$$$
 
 **Note:** Previous versions of the Plugins SDK made `portal-service.jar` 
-available to projects. The @product-ver@ Plugins SDK similarly makes 
+available to projects. The Liferay Portal 7.0 Plugins SDK similarly makes 
 `portal-kernel.jar` available. If you're using a @product@ bundle (@product@ 
 pre-installed on an app server), the Liferay utility modules are already on your 
 classpath. If you manually installed @product@ on your app server, the Liferay 
@@ -378,6 +378,8 @@ is a sure-fire way to verify existing module installations.
 ## Related Topics [](id=related-topics)
 
 [Development Reference](/develop/reference/-/knowledge_base/7-1/development-reference)
+
+[Classes Moved from portal-serice.jar](/develop/reference/-/knowledge_base/7-1/classes-moved-from-portal-service-jar)
 
 [Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet)
 

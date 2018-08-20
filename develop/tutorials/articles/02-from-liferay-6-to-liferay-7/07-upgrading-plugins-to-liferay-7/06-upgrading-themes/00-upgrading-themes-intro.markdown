@@ -6,5 +6,8 @@ modifications. The
 [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
 helps automate this process. 
 
-The following tutorials show you how to upgrade your Liferay Portal 7.0 themes 
-to @product-ver@. 
+The following tutorials show you how to upgrade your Liferay Portal themes to 
+@product-ver@:
+
+- [Upgrading 6.2 Themes to 7.1](/develop/tutorials/-/knowledge_base/7-1/upgrading-6.2-themes-to-7.1)
+- [Upgrading 7.0 Themes to 7.1](/develop/tutorials/-/knowledge_base/7-1/upgrading-7.0-themes-to-7.1)

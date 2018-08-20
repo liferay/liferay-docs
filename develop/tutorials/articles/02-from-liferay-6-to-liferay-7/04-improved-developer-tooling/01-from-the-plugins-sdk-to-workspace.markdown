@@ -1,7 +1,8 @@
 # From the Plugins SDK to Liferay Workspace [](id=from-the-plugins-sdk-to-liferay-workspace)
 
-The Liferay Plugins SDK is deprecated for @product-ver@. You can continue
-developing on it, but should plan to move to a new environment.
+The Liferay Plugins SDK is not available for @product-ver@. Visit the
+[Deprecated Apps in 7.1: What To Do](/discover/deployment/-/knowledge_base/7-1/deprecated-apps-in-7-1-what-to-do#foundation)
+article for more information on the Plugins SDK removal.
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
 succeeds the Plugins SDK as Liferay's opinionated development environment. You
 should use it if you're not using an alternative build system like Gradle or
@@ -12,18 +13,16 @@ Here are Workspace's key features:
 - [Module and component templates](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli#project-templates)
 - [Sample projects](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 - Portal server configurations
-- [Project validation]()
-- [Integration testing]()
+- [Project validation](/develop/tutorials/-/knowledge_base/7-1/validating-modules-against-the-target-platform)
+- Integration testing
 - Folder structure flexibility
 - [Commands](/develop/tutorials/-/knowledge_base/7-1/blade-cli) to migrate
   plugins, install @product@ bundles, and start/stop Portal instances
 
-<!-- TODO: Add links above, when available. -Cody -->
-
 The
 [plugin upgrade](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
 tutorials later in this series show how 
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
+[Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
 automatically adapts existing plugins to @product-ver@. There's also a tutorial
 that demonstrates how you can optionally
 [migrate traditional plugins to Workspace](/develop/tutorials/-/knowledge_base/7-1/migrating-traditional-plugins-to-workspace-web-applications).
@@ -38,6 +37,7 @@ Here's the Workspace anatomy:
 
 - `bundles/` (generated) &rarr; default folder for @product@ bundles
 - `configs/` &rarr; holds Portal server configurations
+- `ext/` &rarr; holds Ext modules and Ext WAR files
 - `gradle/` &rarr; holds the Gradle wrapper files
 - `modules/` &rarr; holds module projects
 - `plugins-sdk/` (generated) &rarr; holds plugins from previous releases
@@ -75,6 +75,7 @@ section for a list of all available Workspace properties.
  Property | Description |
 :--------- | :------------- |
 `liferay.workspace.environment` | Name of a `configs` subfolder holding the Portal server configuration to use |
+`liferay.workspace.ext.dir` | Ext projects root folder |
 `liferay.workspace.home.dir` | @product@ bundle root folder |
 `liferay.workspace.modules.dir` | Module projects root folder |
 `liferay.workspace.plugins.sdk.dir` | Plugins SDK root folder |

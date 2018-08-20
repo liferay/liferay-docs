@@ -42,7 +42,7 @@ The next three configurations concern results pagination.
 *start* is preserved, this URL displays when the User navigates to the second
 results page after searching for *test*:
 
-    http://localhost:8080/web/guest/search?q=test&start=2
+        http://localhost:8080/web/guest/search?q=test&start=2
 
 **Pagination Delta**
 : Set the number of results to display per results page. Defaults to *20* unless
@@ -55,7 +55,7 @@ becomes visible in the browser if the User changes the number. If the User
 selects 10 results per page and searches for *test*, the Search Page is reloaded
 with this URL:
 
-    http://localhost:8080/web/guest/search?q=test&delta=10
+        http://localhost:8080/web/guest/search?q=test&delta=10
 
 For further reading, check out how to 
 [return suggestions for better search terms](/discover/portal/-/knowledge_base/7-1/searching-for-assets#search-suggestions)

@@ -71,6 +71,18 @@ publish content.
 Awesome! You've created content on the staged site and published it to your live
 site. It's now available for all your site users to see!
 
++$$$
+
+**Note:** Although publishing content is the more well-known function,
+publishing a portlet is also a viable option. You can publish portlets residing
+in the Control Panel and on pages. For example, you can modify a portlet's title
+and publish the change to live. This is possible because portlet configurations
+are always staged.
+
+To publish a portlet that is on a page, you must publish the page first.
+
+$$$
+
 This example explored the Simple Publication menu. If your publication requires
 more advanced configuration like specifying specific content, dates, pages,
 etc., you should click the *Switch to Advanced Publication* button. You'll
