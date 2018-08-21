@@ -262,7 +262,7 @@ Follow the instructions below to create the Guestbook's portlet data handler.
     Staging framework traverses the entity graph during export, the built-in
     components provide an approximate value in some cases.
 
-    ![Figure 3: The number of modified Guestbook entities are displayed in the Export UI..](../../../images/guestbook-staging-entity-counter.png)
+    ![Figure 3: The number of modified Guestbook entities are displayed in the Export UI.](../../../images/guestbook-staging-entity-counter.png)
 
 9.  Organize your imports (*[CTRL]+[SHIFT]+O*), and save the file. **Hint:** Be
     sure to choose the `javax.portlet.PortletPreferences` import package.
