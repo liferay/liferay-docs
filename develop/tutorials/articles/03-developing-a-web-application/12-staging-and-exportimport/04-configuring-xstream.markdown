@@ -39,9 +39,10 @@ Follow the instructions below to create an XStream alias:
     `com.liferay.docs.guestbook.xstream.configurator`. In that package, create
     a class named `GuestbookXStreamConfigurator`.
 
-2.  Modify the class to implement the `XStreamConfigurator` interface and create
-    an `@Component` annotation declaring that same interface as the
-    implementation service:
+2.  Modify the class to implement the
+    [`XStreamConfigurator`](@app-ref@/foundation/latest/javadocs/com/liferay/xstream/configurator/XStreamConfigurator.html)
+    interface and create an `@Component` annotation declaring that same
+    interface as the implementation service:
 
         @Component(
             immediate = true, 
@@ -89,6 +90,8 @@ Follow the instructions below to create an XStream alias:
                 new XStreamAlias(EntryImpl.class, "Entry"),
             };
         }
+
+6.  Organize your imports (*[CTRL]+[SHIFT]+O*), and save the file.
 
 Awesome! You've implemented an XStream Configurator for the Guestbook and have
 created an alias for your guestbook and entry entity declarations.

@@ -9,7 +9,7 @@ the Guestbook application's portlet data handler should
 - track actions dealing with guestbook and entry entities (staged models)
 - configure export/import UI options for the Guestbook app
 
-![Figure 1: The Guestbook's portlet data handler must manage the portlet data, staged model data handlers, and UI configuration.](../../images/guestbook-pdh-diagram.png)
+![Figure 1: The Guestbook's portlet data handler must manage the portlet data, staged model data handlers, and UI configuration.](../../../images/guestbook-pdh-diagram.png)
 
 Follow the instructions below to create the Guestbook's portlet data handler.
 
@@ -81,7 +81,7 @@ Follow the instructions below to create the Guestbook's portlet data handler.
       are rendered in the Import UI. For the Guestbook application, a checkbox
       is added to select Guestbook content (entries) to import.
 
-    ![Figure 2: You can select the content types you'd like to export/import in the UI.](../../images/pdh-entries-ui.png)
+    ![Figure 2: You can select the content types you'd like to export/import in the UI.](../../../images/pdh-entries-ui.png)
 
 4.  Set the entity local services you want to leverage in your portlet data
     handler:
@@ -262,7 +262,10 @@ Follow the instructions below to create the Guestbook's portlet data handler.
     Staging framework traverses the entity graph during export, the built-in
     components provide an approximate value in some cases.
 
-    ![Figure 3: The number of modified Guestbook entities are displayed in the Export UI..](../../images/guestbook-staging-entity-counter.png)
+    ![Figure 3: The number of modified Guestbook entities are displayed in the Export UI..](../../../images/guestbook-staging-entity-counter.png)
+
+9.  Organize your imports (*[CTRL]+[SHIFT]+O*), and save the file. **Hint:** Be
+    sure to choose the `javax.portlet.PortletPreferences` import package.
 
 Excellent! You've set up your Guestbook's portlet data handler and can now
 handle your portlet's data and control its staged model data handlers.

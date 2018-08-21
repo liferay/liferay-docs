@@ -56,7 +56,10 @@ You must define your system events in your local services.
 
     Now all guestbook deletions are tracked via `SystemEvent`.
 
-3.  You must apply the deletion system event to both entities. Open the
+3.  Add the import packages for the new `SystemEvent` annotation
+    (*[CTRL]+[SHIFT]+O*) and then save the file.
+
+4.  You must apply the deletion system event to both entities. Open the
     `com.liferay.docs.guestbook.service.impl.EntryLocalServiceImpl` class and
     add similar delete methods:
 
@@ -81,7 +84,7 @@ You must define your system events in your local services.
     This is the same logic as before, except the delete system event is now
     applied for the entry.
 
-4.  Make sure the other remaining `deleteEntry` method triggers the system
+5.  Make sure the other remaining `deleteEntry` method triggers the system
     event. Within the `deleteEntry(long, ServiceContext)` method, change
 
         entry = deleteEntry(entryId);
@@ -92,7 +95,10 @@ You must define your system events in your local services.
 
     Now all entry deletions are tracked via `SystemEvent`.
 
-5.  Run Service Builder by navigating to the Gradle Tasks pane on the right side
+6.  Add the import packages for the new `SystemEvent` annotation
+    (*[CTRL]+[SHIFT]+O*) and then save the file.
+
+7.  Run Service Builder by navigating to the Gradle Tasks pane on the right side
     of IDE and selecting your project's *build* &rarr; *buildService* task.
 
 Your Guestbook app's deletions are now properly tracked by the Staging
