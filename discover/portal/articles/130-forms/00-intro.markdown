@@ -1,10 +1,10 @@
 # Forms [](id=forms)
 
 Users sometimes must give you information so you can help them. Whether you're
-asking them to submit a brief survey or apply for a mortgage, you must design
-a form. Liferay Forms gives you almost limitless form building capability. <!-- For
-a complete list of the form fields available, visit the 
-form fields reference article(/discover/reference/-/knowledge_base/7-1/form-field-types) -->
+asking them to submit a brief survey or apply for a mortgage, you must design a
+form. Liferay Forms gives you almost limitless form building capability. For a
+complete list of the form fields available, visit the 
+[form fields reference article](/discover/reference/-/knowledge_base/7-1/form-field-types).
 
 Because the complexity of use cases for Forms varies from a single input field
 to many pages of fields with different configurations, it makes sense to show

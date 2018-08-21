@@ -35,11 +35,17 @@ To fill out a translated form in a translated language,
 
 +$$$
 
-**NOTE:** The appropriate language will only be displayed automatically if
-a user navigates to the page where it is displayed. If a user accesses the form
-via its
-[URL](/discover/portal/-/knowledge_base/7-1/creating-and-managing-forms#accessing-forms),
-the translation must be selected manually.
+**Note:** Translations work differently depending on how a User accesses a Form:
+
+1.  If 
+    [accessed in the Form widget on a @product@ page](/discover/portal/-/knowledge_base/7-1/creating-and-managing-forms#accessing-forms), 
+    the Form is displayed in the User's language automatically. If there's no
+    translation available for the User's language, the default language of the
+    Form is displayed. 
+
+2.  If accessed via direct
+    [URL](/discover/portal/-/knowledge_base/7-1/creating-and-managing-forms#accessing-forms),
+    the Form translation must be selected manually.
 
 $$$
 
