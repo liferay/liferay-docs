@@ -151,19 +151,12 @@ public class GuestbookPortlet extends MVCPortlet {
             ServiceContext serviceContext = ServiceContextFactory.getInstance(
                 Guestbook.class.getName(), renderRequest);
 
-            Group group = serviceContext.getScopeGroup();
+            long groupId = serviceContext.getScopeGroupId();
 
             long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
 
             List<Guestbook> guestbooks = _guestbookService.getGuestbooks(
-                group.getGroupId());
-
-            if (guestbooks.isEmpty() && !group.hasStagingGroup()) {
-                Guestbook guestbook = _guestbookService.addGuestbook(
-                    serviceContext.getUserId(), "Main", serviceContext);
-
-                guestbookId = guestbook.getGuestbookId();
-            }
+                groupId);
 
             if (guestbookId == 0 && guestbooks.size() > 0) {
                 guestbookId = guestbooks.get(0).getGuestbookId();
