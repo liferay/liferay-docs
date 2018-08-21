@@ -90,13 +90,7 @@ availability.
 
 | App | &nbsp;Availability | &nbsp;Notes |
 | --- | ------------------ | ----------- |
-| Dynamic Data List Form | Removed* |  |
 | Web Form | Nexus &rarr; Will be removed. | Final version released for 7.0. |
-
-The Dynamic Data List Form application is removed from @product-ver@, but its
-code now lives in another module, Dynamic Data Mapping Form. Therefore, the
-Liferay Forms application present in the previous version is still present, with 
-[lots of improvements](/discover/portal/-/knowledge_base/7-1/whats-new-with-liferay-forms).
 
 ## Security [](id=security)
 
