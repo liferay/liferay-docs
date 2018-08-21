@@ -1,7 +1,14 @@
 # Creating the Entry Staged Model Data Handler
 
-Follow the steps below to create your guestbook entry's staged model data
-handler:
+A Staged Model Data Handler supplies information about a staged model (entity)
+to the Staging and Export/Import framework. Data handlers replace the need to
+manually access the database directly and run queries to export/import data.
+
+You're required to create a staged model data handler for every entity you want
+Staging to track. This means you must create a data handler for both your
+guestbook and entry entities.
+
+First, you'll create a staged model data handler for guestbook entries.
 
 1.  In your `guestbook-service` module, create a package named
     `com.liferay.docs.guestbook.exportimport.data.handler`.
@@ -70,7 +77,7 @@ handler:
     The display name is presented with the progress bar during the export/import
     process.
 
-    <!-- Add image here -->
+    ![Figure 1: Your staged model data handler provides the display name in the Publish to Live UI.](../../../images/guestbook-staging-display-name.png)
 
 7.  A staged model data handler should ensure everything required for its
     operation is also imported/exported. For example, an entry requires a
