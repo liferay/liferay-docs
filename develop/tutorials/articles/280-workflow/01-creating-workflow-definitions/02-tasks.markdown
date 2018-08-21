@@ -268,6 +268,21 @@ Setting blocking to true prevents timer actions from recurring.
 
 The above snippet demonstrates how to set up a reassignment action.
 
+Timer actions can contain scripts.
+
+    <timer-actions>
+        <timer-action>
+            <name>doSomething</name>
+            <description>Do something cool when time runs out.</description>
+            <script>
+               ...
+            </script>
+            <script-language>groovy</script-language>
+            <execution-type>onExit</execution-type>
+           </action>
+        </timer-action>
+    </timer-actions>
+
 Tasks are at the core of the workflow definition. Once you understand how to
 create tasks and the other 
 [workflow
