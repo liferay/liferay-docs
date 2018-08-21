@@ -30,15 +30,22 @@ default Linux value is 1024). Since Elasticsearch uses NioFS and MMapFS, ensure
 there is sufficient virtual memory available for memory-mapped files. Consult
 your system administrator for information on how to configure these values. 
 
-## Tuning an Elasticsearch Cluster
+## Tuning and Scaling an Elasticsearch Cluster
 
-There's nothing so unique about Elasticsearch indexing @product@ data that gives
-Liferay employees special insights on tuning your Elasticsearch cluster.
-Instead, read the 
-[definitive Elasticsearch guide](https://www.elastic.co/guide/en/elasticsearch/guide/master/distributed-cluster.html) 
-to design the optimally scaled and tuned cluster. Just note that the number of
-shards and replicas are actually configured in the Liferay Connector to
-Elasticsearch module, using these settings:
+Proper scaling and tuning of an Elasticsearch cluster primarily depends on the
+type of indexes it holds and how they're intended to be used. Since @product@ is
+a flexible development platform, no two applications will index and search for
+data in exactly the same way. Read the 
+[definitive Elasticsearch guide](https://www.elastic.co/guide/en/elasticsearch/guide/master/distributed-cluster.html),
+and understand the differences between 
+[indexing-intensive applications](https://www.elastic.co/guide/en/elasticsearch/reference/master/tune-for-indexing-speed.html)
+and 
+[search-intensive applications](https://www.elastic.co/guide/en/elasticsearch/reference/master/tune-for-search-speed.html).
+Then you'll be able to predict usage patterns for your @product@ indexes and
+design the optimally scaled and tuned cluster.
+
+Once you determine the appropriate number of shards and replicas, configure them
+in the Liferay Connector to Elasticsearch module, using these settings:
 
 - `indexNumberOfReplicas` corresponds to Elasticsearch's `number_of_replicas`
     property.
