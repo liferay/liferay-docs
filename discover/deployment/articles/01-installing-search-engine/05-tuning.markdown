@@ -3,7 +3,7 @@
 Since search engines benefit heavily from caching, their JVM memory profiles are 
 substantially different from those of a JVM focused on serving content and web 
 views (e.g., a JVM running @product@). In production environments, search 
-engines and @product@ should therefore always be on separate JVMs. 
+engines and @product@ should always be on separate JVMs. 
 
 The following sections provide a synopsis of Elasticsearch configurations. Prior 
 to deployment, we strongly recommend reading 
@@ -25,7 +25,7 @@ by setting the `ES_HEAP_SIZE` environment variable.
 
 ## File System [](id=file-system)
 
-Configure your Operating System for at least 64,000 file descriptors (the
+Configure your operating system for at least 64,000 file descriptors (the
 default Linux value is 1024). Since Elasticsearch uses NioFS and MMapFS, ensure
 there is sufficient virtual memory available for memory-mapped files. Consult
 your system administrator for information on how to configure these values. 
@@ -34,8 +34,8 @@ your system administrator for information on how to configure these values.
 
 Proper scaling and tuning of an Elasticsearch cluster primarily depends on the
 type of indexes it holds and how they're intended to be used. Since @product@ is
-a flexible development platform, no two applications will index and search for
-data in exactly the same way. Read the 
+a flexible development platform, no two applications index and search for data
+in exactly the same way. Read the 
 [definitive Elasticsearch guide](https://www.elastic.co/guide/en/elasticsearch/guide/master/distributed-cluster.html),
 and understand the differences between 
 [indexing-intensive applications](https://www.elastic.co/guide/en/elasticsearch/reference/master/tune-for-indexing-speed.html)
