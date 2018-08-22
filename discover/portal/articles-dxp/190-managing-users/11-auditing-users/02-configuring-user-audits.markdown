@@ -1,4 +1,4 @@
- # Configuring Audits [](id=configuring-audits)
+# Configuring Audits [](id=configuring-audits)
 
 Audits are enabled by default. The Audit app reports audit events, but you can 
 also report them in @product@'s logs or console, enable them for scheduled jobs, 
