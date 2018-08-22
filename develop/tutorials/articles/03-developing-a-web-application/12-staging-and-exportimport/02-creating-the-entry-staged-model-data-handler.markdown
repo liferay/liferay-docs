@@ -1,5 +1,9 @@
 # Creating the Entry Staged Model Data Handler [](id=creating-the-entry-staged-model-data-handler)
 
+<div class="learn-path-step">
+    <p>Enabling Staging and Export/Import<br>Step 2 of 8</p>
+</div>
+
 A Staged Model Data Handler supplies information about a staged model (entity)
 to the Staging and Export/Import framework. Data handlers replace the need to
 manually access the database directly and run queries to export/import data.

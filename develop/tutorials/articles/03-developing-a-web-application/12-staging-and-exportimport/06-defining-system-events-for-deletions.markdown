@@ -1,5 +1,9 @@
 # Defining System Events for Deletions [](id=defining-system-events-for-deletions)
 
+<div class="learn-path-step">
+    <p>Enabling Staging and Export/Import<br>Step 6 of 8</p>
+</div>
+
 The Staging framework tracks entity modifications in a few different ways.
 Actions like *adding* a guestbook or *editing* an entry are tracked
 automatically by the framework with the configuration of staged models and their

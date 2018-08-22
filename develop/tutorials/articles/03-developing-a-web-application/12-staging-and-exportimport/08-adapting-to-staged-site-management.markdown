@@ -1,5 +1,9 @@
 # Adapting to Staged Site Management [](id=adapting-to-staged-site-management)
 
+<div class="learn-path-step">
+    <p>Enabling Staging and Export/Import<br>Step 8 of 8</p>
+</div>
+
 The current Guestbook app is designed to create a *Main* guestbook on startup to
 avoid having an empty display when adding it to a page. Although this is a
 convenient perk, it does not translate well to the staged vs. live site

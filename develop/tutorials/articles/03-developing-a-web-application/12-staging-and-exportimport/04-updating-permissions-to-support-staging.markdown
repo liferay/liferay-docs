@@ -1,5 +1,9 @@
 # Updating Permissions to Support Staging [](id=updating-permissions-to-support-staging)
 
+<div class="learn-path-step">
+    <p>Enabling Staging and Export/Import<br>Step 4 of 8</p>
+</div>
+
 The guestbook's current permission handlers do not account for staging. For
 example, the current configuration would display the *Add Guestbook* and *Add
 Entry* buttons on the live site while staging was enabled. These options should

@@ -1,5 +1,9 @@
 # Creating Staged Models [](id=creating-staged-models)
 
+<div class="learn-path-step">
+    <p>Enabling Staging and Export/Import<br>Step 1 of 8</p>
+</div>
+
 To implement the Staging framework, you must first specify the entities you want
 to track. For the Guestbook application, there are two: guestbooks and entries.
 You can register these entities so they're recognizable to the Staging framework
