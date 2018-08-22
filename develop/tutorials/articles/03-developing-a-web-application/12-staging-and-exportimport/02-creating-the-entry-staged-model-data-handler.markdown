@@ -57,7 +57,7 @@ First, you'll create a staged model data handler for guestbook entries.
     This logic provides access to the entry and guestbook's local services.
 
 5.  You must provide the class names of the models the data handler tracks. You
-    can do this by overriding the `StagedModelDataHandler`'s `getClassnames()`
+    can do this by overriding the `StagedModelDataHandler`'s `getClassNames()`
     method:
 
         public static final String[] CLASS_NAMES = {Entry.class.getName()};
@@ -79,7 +79,7 @@ First, you'll create a staged model data handler for guestbook entries.
         }
 
     The display name is presented with the progress bar during the export/import
-    process.
+    and publication processes.
 
     ![Figure 1: Your staged model data handler provides the display name in the Publish to Live UI.](../../../images/guestbook-staging-display-name.png)
 

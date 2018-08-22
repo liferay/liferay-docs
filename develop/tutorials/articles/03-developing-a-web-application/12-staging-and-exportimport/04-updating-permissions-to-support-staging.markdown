@@ -96,7 +96,7 @@ checks to leverage when staging is enabled.
 
     This is similar to the logic added for the entry's permissions. 
 
-4.  Organize your imports ([CTRL]+[SHIFT]+O) for all three classes, and then
+4.  Organize your imports (*[CTRL]+[SHIFT]+O*) for all three classes, and then
     save them.
 
 Your Guestbook app can now display the proper functionality depending on its
@@ -151,8 +151,9 @@ correctly display options based on staging context.
     deletion functionality if the user does not have the permissions to delete a
     guestbook.
 
-3.  Open the `.../guestbookadminportlet/view.jsp` file and wrap the
-    `<aui:button-row />` tag with the following `if` statement:
+3.  Open the
+    `src/main/resources/META-INF/resources/guestbookadminportlet/view.jsp` file
+    and wrap the `<aui:button-row />` tag with the following `if` statement:
 
         <c:if test='<%= GuestbookModelPermission.contains(permissionChecker, scopeGroupId, "ADD_GUESTBOOK") %>'>
             ...

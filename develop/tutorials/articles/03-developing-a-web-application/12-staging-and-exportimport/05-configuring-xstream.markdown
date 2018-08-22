@@ -55,7 +55,8 @@ Follow the instructions below to create an XStream alias:
         public class GuestbookXStreamConfigurator implements XStreamConfigurator {
 
 3.  Since the Guestbook won't leverage the *Allowed Types* and *Converters*
-    XStream options, override those methods and have them return `null`:
+    XStream options, override their associated methods and have them return
+    `null`:
 
         @Override
         public List<XStreamType> getAllowedXStreamTypes() {

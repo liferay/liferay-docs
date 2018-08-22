@@ -101,6 +101,6 @@ For example, your `EntryModel` interface's declaration now looks like this:
         StagedGroupedModel, WorkflowedModel {
 
 For more information on the available staged model interfaces, see this
-[tutorial](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#staged-model-interfaces)
+[tutorial](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#staged-model-interfaces).
 
 Excellent! Now it's time to create your staged model data handlers.
