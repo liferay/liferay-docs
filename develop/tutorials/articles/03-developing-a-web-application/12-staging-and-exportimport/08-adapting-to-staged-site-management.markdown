@@ -1,4 +1,4 @@
-# Adapting to Staged Site Management
+# Adapting to Staged Site Management [](id=adapting-to-staged-site-management)
 
 The current Guestbook app is designed to create a *Main* guestbook on startup to
 avoid having an empty display when adding it to a page. Although this is a

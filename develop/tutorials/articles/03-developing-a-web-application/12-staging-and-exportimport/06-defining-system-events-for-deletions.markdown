@@ -1,4 +1,4 @@
-# Defining System Events for Deletions
+# Defining System Events for Deletions [](id=defining-system-events-for-deletions)
 
 The Staging framework tracks entity modifications in a few different ways.
 Actions like *adding* a guestbook or *editing* an entry are tracked

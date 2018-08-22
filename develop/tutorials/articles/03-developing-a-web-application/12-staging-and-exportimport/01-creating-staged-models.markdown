@@ -1,4 +1,4 @@
-# Creating Staged Models
+# Creating Staged Models [](id=creating-staged-models)
 
 To implement the Staging framework, you must first specify the entities you want
 to track. For the Guestbook application, there are two: guestbooks and entries.
@@ -52,7 +52,7 @@ tutorial for more information.
 Before adding staging features to your Guestbook app, you must declare some
 necessary dependencies.
 
-## Declaring Staging Dependencies
+## Declaring Staging Dependencies [](id=declaring-staging-dependencies)
 
 There are two Staging-specific dependencies you must declare that will be used
 by the Guestbook's Staging functionality.
@@ -69,7 +69,7 @@ by the Guestbook's Staging functionality.
 
 Now you're ready to begin implementing staging in your app.
 
-## Updating the Extended Staged Model Interface
+## Updating the Extended Staged Model Interface [](id=updating-the-extended-staged-model-interface)
 
 Staged models that extend the `StagedAuditedModel` interface are intended to
 function independent from the group concept (sometimes referred to as company

@@ -1,4 +1,4 @@
-# Configuring XStream
+# Configuring XStream [](id=configuring-xstream)
 
 Configuring [XStream](http://x-stream.github.io/index.html) for your Guestbook
 app provides an easy way to serialize entities to XML and back again. This can

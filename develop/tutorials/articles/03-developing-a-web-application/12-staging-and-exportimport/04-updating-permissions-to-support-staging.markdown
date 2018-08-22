@@ -1,4 +1,4 @@
-# Updating Permissions to Support Staging
+# Updating Permissions to Support Staging [](id=updating-permissions-to-support-staging)
 
 The guestbook's current permission handlers do not account for staging. For
 example, the current configuration would display the *Add Guestbook* and *Add

@@ -1,4 +1,4 @@
-# Creating the Guestbook Staged Model Data Handler
+# Creating the Guestbook Staged Model Data Handler [](id=creating-the-guestbook-staged-model-data-handler)
 
 The guestbook's staged model data handler is similar to the entry's data
 handler. Refer to the previous article for any in-depth code analysis.
