@@ -28,4 +28,51 @@ Note that the following arguments are optional:
 
 This tutorial uses the method that contains `InputStream`, but you can easily 
 adapt the examples to the other methods if you wish. 
-<!-- Add example -->
+
+The following example comes from @product@'s `EditFileEntryMVCActionCommand` 
+class. This class implements almost all the `FileEntry` actions that the 
+Documents and Media UI supports. This class's `updateFileEntry` method contains 
+logic to add and update files. 
+
+This method uses the request to get the data the `addFileEntry` method needs. It 
+then calls the `addFileEntry` method with those data.
+
+    protected FileEntry updateFileEntry(
+            PortletConfig portletConfig, ActionRequest actionRequest, 
+            ActionResponse actionResponse, UploadPortletRequest uploadPortletRequest)
+        throws Exception {
+
+        ...
+
+        long repositoryId = ParamUtil.getLong(uploadPortletRequest, "repositoryId");
+        long folderId = ParamUtil.getLong(uploadPortletRequest, "folderId");
+        String sourceFileName = uploadPortletRequest.getFileName("file");
+        String title = ParamUtil.getString(uploadPortletRequest, "title");
+        String description = ParamUtil.getString(uploadPortletRequest, "description");
+        String changeLog = ParamUtil.getString(uploadPortletRequest, "changeLog");
+        boolean majorVersion = ParamUtil.getBoolean(uploadPortletRequest, "majorVersion");
+
+        ...
+
+        try (InputStream inputStream =
+                uploadPortletRequest.getFileAsStream("file")) {
+
+            String contentType = uploadPortletRequest.getContentType("file");
+            long size = uploadPortletRequest.getSize("file");
+
+            ...
+
+            ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                    DLFileEntry.class.getName(), uploadPortletRequest);
+
+            ...
+
+                fileEntry = _dlAppService.addFileEntry(repositoryId, folderId, sourceFileName, 
+                    contentType, title, description, changeLog, inputStream, size, serviceContext);
+
+            ...
+
+            return fileEntry;
+        }
+
+    }
