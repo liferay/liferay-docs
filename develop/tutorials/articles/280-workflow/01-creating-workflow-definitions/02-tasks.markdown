@@ -268,7 +268,7 @@ Setting blocking to true prevents timer actions from recurring.
 
 The above snippet demonstrates how to set up a reassignment action.
 
-Like any other `<action>`, Timer actions can contain scripts.
+Like `<action>` elements, `<timer-action>` elements can contain scripts.
 
     <timer-actions>
         <timer-action>
@@ -278,8 +278,6 @@ Like any other `<action>`, Timer actions can contain scripts.
                ...
             </script>
             <script-language>groovy</script-language>
-            <execution-type>onExit</execution-type>
-           </action>
         </timer-action>
     </timer-actions>
 
