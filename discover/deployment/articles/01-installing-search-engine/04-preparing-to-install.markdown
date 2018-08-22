@@ -28,7 +28,7 @@ engine, assuming only one Elasticsearch JVM is running on the machine.
 
 At least 16 GB of memory is recommended, with 64 GB preferred. The precise
 memory allocation required depends on how much data is indexed. For index sizes
-500 GB to 1 TB, 64 GB of memory will suffice. 
+500 GB to 1 TB, 64 GB of memory suffices. 
 
 ## Disk [](id=disk)
 
@@ -45,11 +45,11 @@ Elastic Block Store (EBS).
 Maintain 25 percent more disk capacity than the total size of your indexes. If
 your index is 60 GB, make sure you have at least 75 GB of disk space available.
 To estimate the disk space you need, you can index a representative sample of
-your production content, and multiply that size the fraction of your production
-content that it represents. For example, index 25 percent of your production
-content and then multiply the resulting index size by four. Just keep in mind
-that indexing a 1 MB file doesn't result in 1 MB of disk space in the search
-index. 
+your production content and multiply that size by the fraction of your
+production content that it represents. For example, index 25 percent of your
+production content and then multiply the resulting index size by four. Keep in
+mind that indexing a 1 MB file doesn't result in 1 MB of disk space in the
+search index. 
 
 ## Cluster Size
 
