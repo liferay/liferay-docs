@@ -52,6 +52,35 @@ accessed via the portal UI. This is called the site (group) repository, which is
 effectively a site's default repository. To access this repository via the API, 
 you must provide the group ID as the `repositoryId`. 
 
+You can also get the `repositoryId` via file (`FileEntry`), folder (`Folder`), 
+and file shortcut (`FileShortcut`) entities. Each of these entities has a 
+`getRepositoryId` method that gets the ID of the repository the entity resides 
+in. For example, this code gets the repository ID of the `FileEntry` object 
+`fileEntry`: 
+
+    long repositoryId = fileEntry.getRepositoryId();
+
+There may also be cases in which you need to get a `Repository` object. You can 
+do this by getting a `RepositoryProvider` reference and passing the repository 
+ID to its `getRepository` method: 
+
+    @Reference
+    private RepositoryProvider repositoryProvider;
+
+    Repository repository = repositoryProvider.getRepository(repositoryId);
+
+Even if you only have an entity ID (e.g., a file ID or folder ID), you can still 
+use `RepositoryProvider` to get a `Repository` object. To do this, call the 
+`RepositoryProvider` method for the entity type, with the entity ID as its 
+argument. For example, this code gets a `Repository` by calling the 
+`RepositoryProvider` method `getFolderRepository` with a folder ID: 
+
+    Repository repository = repositoryProvider.getFolderRepository(folderId);
+
+See the 
+[`RepositoryProvider` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/RepositoryProvider.html)
+for a list of the other methods you can use. 
+
 Note that you can use the 
 [`PortletFileRepository`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portletfilerepository/PortletFileRepository.html) 
 API to create repositories programmatically. The tutorials here, however, access 

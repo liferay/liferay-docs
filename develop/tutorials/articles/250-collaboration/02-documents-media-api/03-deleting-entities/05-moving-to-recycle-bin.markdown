@@ -14,25 +14,25 @@ entities to the Recycle Bin.
 Follow these steps to use the Capabilities API to move an entity to the Recycle 
 Bin: 
 
-1.  Use the `@Reference` annotation to get a reference to the repository:
+1.  Check to ensure that the repository supports the Recycle Bin. You do this by 
+    calling the 
+    [repository object's](liferay.com) 
+    `isCapabilityProvided` method with `TrashCapability.class` as its argument. 
+    This example does so as an `if` statement's condition: 
 
-        <!-- Insert code example -->
-
-2.  Use an `if` statement to ensure that the repository supports the Recycle 
-    Bin. You do this by calling the repository object's `isCapabilitySupported` 
-    method with `TrashCapability.class` as its argument: 
-
-        if (repository.isCapabilitySupported(TrashCapability.class)) {
-
+        if (repository.isCapabilityProvided(TrashCapability.class)) {
+            // The code to move the entity to the Recycle Bin
+            // You'll write this in the next step
         }
 
-3.  Inside the `if` statement, get a `TrashCapability` reference by calling the 
-    repository object's `getCapability` method with `TrashCapability.class` as 
-    its argument. Then call the `TrashCapability` method that moves the entity 
-    to the Recycle Bin. For example, this code calls `moveFileEntryToTrash` to 
-    move a file to the Recycle Bin: 
+2.  If the check in the first step returns `true`, move the entity to the 
+    Recycle Bin. To do this, first get a `TrashCapability` reference by calling 
+    the repository object's `getCapability` method with `TrashCapability.class` 
+    as its argument. Then call the `TrashCapability` method that moves the 
+    entity to the Recycle Bin. For example, this code calls 
+    `moveFileEntryToTrash` to move a file to the Recycle Bin: 
 
-        if (repository.isCapabilitySupported(TrashCapability.class)) {
+        if (repository.isCapabilityProvided(TrashCapability.class)) {
 
             TrashCapability trashCapability = repository.getCapability(TrashCapability.class);
             trashCapability.moveFileEntryToTrash(user.getUserId(), fileEntry);
