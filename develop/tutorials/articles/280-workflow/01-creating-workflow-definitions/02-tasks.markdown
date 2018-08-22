@@ -1,10 +1,10 @@
 # Workflow Task Nodes [](id=workflow-task-nodes)
 
 Task nodes are fundamental parts of a workflow definition. When you define your
-organization's business processes and planning workflows, you likely first
-envision the tasks. As the name implies, tasks are the part of the workflow
-where *work* is done. A user enters the picture and must interact with the
-submitted asset. Users often take the role of reviewer, deciding if an asset
+organization's business processes and design corresponding workflows, you likely
+first envision the tasks. As the name implies, tasks are the part of the
+workflow where *work* is done. A user enters the picture and must interact with
+the submitted asset. Users often take the role of reviewer, deciding if an asset
 from the workflow is acceptable for publication or needs more work.
 
 Unlike other workflow nodes, task nodes have Assignments, because a user is
@@ -268,7 +268,7 @@ Setting blocking to true prevents timer actions from recurring.
 
 The above snippet demonstrates how to set up a reassignment action.
 
-Timer actions can contain scripts.
+Like any other `<action>`, Timer actions can contain scripts.
 
     <timer-actions>
         <timer-action>
@@ -283,8 +283,13 @@ Timer actions can contain scripts.
         </timer-action>
     </timer-actions>
 
+The above example isn't functional but it demonstrates setting up a `<script>`
+in your task timer. 
+[Read the Scripting in Workflow article](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
+for more information.
+
 Tasks are at the core of the workflow definition. Once you understand how to
 create tasks and the other 
-[workflow
-nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes) and add
-transitions between the nodes, you're on the cusp of workflow wizard-hood.
+[workflow nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes) 
+and add transitions between the nodes, you're on the cusp of workflow
+wizard-hood.
