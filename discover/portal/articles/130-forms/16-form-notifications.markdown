@@ -24,7 +24,7 @@ entry is submitted.
     submitted in The Lunar Resort*. 
 
 Note that if you 
-[enabled workflow for the form](/discover/portal/-/knowledge_base/7-1/workflow-and-forms) 
+[enabled workflow for the form](/discover/portal/-/knowledge_base/7-1/sending-form-entries-through-a-workflow) 
 and it already sends a notification, you might not need to configure the Forms 
 app to generate a notification. 
 

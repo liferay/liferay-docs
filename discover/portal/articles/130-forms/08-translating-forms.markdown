@@ -26,11 +26,27 @@ To fill out a translated form in a translated language,
 
 1.  Access the form. If a signed-in user accesses the form and a translation is 
     available in the user's language, the user sees the translated form by 
-    default. 
+    default.
 
 2.  To see the form in a different language, click the language icon and select
     a language. 
 
 3.  Fill out the form as usual and click *Submit*. 
+
++$$$
+
+**Note:** Translations work differently depending on how a User accesses a Form:
+
+1.  If 
+    [accessed in the Form widget on a @product@ page](/discover/portal/-/knowledge_base/7-1/creating-and-managing-forms#accessing-forms), 
+    the Form is displayed in the User's language automatically. If there's no
+    translation available for the User's language, the default language of the
+    Form is displayed. 
+
+2.  If accessed via direct
+    [URL](/discover/portal/-/knowledge_base/7-1/creating-and-managing-forms#accessing-forms),
+    the Form translation must be selected manually.
+
+$$$
 
 ![Figure 3: Select the form's language.](../../images/forms-translate3.png)

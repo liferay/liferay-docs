@@ -9,7 +9,7 @@ instance or Site level.
 
 Forms is different, and that's why its assets don't appear in the above image.
 There are so many use cases for forms, and there could be so many per site, that
-a site---or instance---scoped workflow configuration won't serve your needs 
+a site- or instance-scoped workflow configuration won't serve your needs 
 well. Instead, configure workflow for *each form* separately.
 
 ## Enabling Workflow in a Form [](id=enabling-workflow-in-a-form)
