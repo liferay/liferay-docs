@@ -76,6 +76,6 @@ by adding it as a project dependency:
     </project>
 
 There are additional Liferay theme-related dependencies you can manage this way
-that's provided by the Theme Builder. See
+that are provided by the Theme Builder. See
 [this section](/develop/reference/-/knowledge_base/7-1/theme-builder-plugin) for
 more information.
