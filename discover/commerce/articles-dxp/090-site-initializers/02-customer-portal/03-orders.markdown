@@ -11,9 +11,9 @@ A buyer or order manager can place an order by selecting items from the
 *Submit*.
 
 Alternatively, an order can be created from the *Orders* tab by clicking
-![Add](../../images/icon-add.png), entering an order number, and clicking *Add
+![Add](../../../images/icon-add.png), entering an order number, and clicking *Add
 Order*. If more than one order is open, users can select the one they want by
-clicking the ![Options](../../images/icon-options.png) button next to the
+clicking the ![Options](../../../images/icon-options.png) button next to the
 desired order and selecting *Set as Current.*
 
 ## Workflow [](id=workflow)
