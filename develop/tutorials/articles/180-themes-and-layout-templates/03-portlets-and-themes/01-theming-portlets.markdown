@@ -19,7 +19,7 @@ site when the theme is applied.
 
 To help you with your bearings as you modify your portlet's template, below is
 a quick look at the
-[`portlet.ftl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-classic/src/templates/portlet.ftl)
+[`portlet.ftl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-theme/frontend-theme-classic/src/templates/portlet.ftl)
 file that's included in the default theme of @product-ver@.
 
     <#assign
@@ -93,13 +93,13 @@ decorators in their `liferay-look-and-feel.xml`:
 
 Now you know how to make your portlets stylish! But if default decorators are
 not stylish enough for you, [EDITOR: Our defaults are always stylish!] go to
-[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/portlet-decorators) to
+[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers) to
 learn how make and apply your own.
 
 ## Related Topics [](id=related-topics)
 
 [Look and Feel Configuration]( https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/look-and-feel-configuration)
 
-[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/portlet-decorators)
+[Creating Configurable Styles For Portlet Wrappers](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers)
 
 [Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/themes-and-layout-templates)

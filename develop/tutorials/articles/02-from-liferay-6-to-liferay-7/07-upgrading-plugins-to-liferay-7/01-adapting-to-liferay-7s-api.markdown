@@ -31,8 +31,8 @@ required to use the Code Upgrade Tool:
 1.  | [Welcome to the Liferay Code Upgrade Tool](#step-1-welcome-to-the-liferay-code-upgrade-tool) | Introduces the Code Upgrade Tool. |
 2.  | [Configure the Project](#step-2-configure-the-project) | Imports an existing Maven project or Plugins SDK project, and prepares its plugins for upgrading. |
 Maven only | [Upgrade POM Files](#upgrade-pom-files) | Upgrades POM files so they use the latest Maven plugins and Liferay dependencies. |
-4.  | [Find Breaking Changes](#step-4-find-breaking-changes) | Finds breaking changes, describes them, and prescribes adaptations (some of which can be applied automatically). |
-3.  | [Upgrade Descriptor Files](#step-3-upgrade-descriptor-files) | Moves descriptor files to their new versions. |
+3.  | [Find Breaking Changes](#step-3-find-breaking-changes) | Finds breaking changes, describes them, and prescribes adaptations (some of which can be applied automatically). |
+4.  | [Upgrade Descriptor Files](#step-4-upgrade-descriptor-files) | Moves descriptor files to their new versions. |
 5.  | [Build Services](#step-5-build-services) | Runs Service Builder on plugins that use it. |
 6.  | [Upgrade Layout Templates](#step-6-upgrade-layout-templates) | Upgrades layout templates. |
 7.  | [Convert Custom JSP Hooks](#step-7-convert-custom-jsp-hooks) | Converts JSP hooks to modules or module fragments. |
@@ -490,6 +490,8 @@ re-open the Code Upgrade Tool to facilitate upgrades.
 ## Related Topics [](id=related-topics)
 
 [Development Reference](/develop/reference/-/knowledge_base/7-1/development-reference)
+
+[Classes Moved from portal-serice.jar](/develop/reference/-/knowledge_base/7-1/classes-moved-from-portal-service-jar)
 
 [Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet)
 

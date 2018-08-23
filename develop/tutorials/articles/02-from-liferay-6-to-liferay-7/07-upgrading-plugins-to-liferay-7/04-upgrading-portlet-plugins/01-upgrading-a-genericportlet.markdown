@@ -18,7 +18,7 @@ The sample portlet lets users view, add, edit, and delete food items from a
 listing. For reference, you can download the
 [pre-upgraded portlet code](https://dev.liferay.com/documents/10184/656312/sample-dao-portlet-pre-7-0-upgrade.zip)
 and the
-[upgraded code](https://dev.liferay.com/documents/10184/656312/sample-dao-portlet-post-7-0-upgrade.zip). 
+[upgraded code](https://dev.liferay.com/documents/10184/1608802/sample-dao-portlet-post-7-1-upgrade.zip). 
 
 The sample portlet has the following characteristics:
  
@@ -66,11 +66,11 @@ following portlet status:
 
 Deploying the sample portlet produces messages like these:
 
-    20:57:02,571 INFO ... [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][AutoDeployDir:252] Processing sample-dao-portlet-7.1.0.0.war
+    2018-03-21 17:44:59.179 INFO  [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][AutoDeployDir:262] Processing sample-dao-portlet-7.1.0.1.war
     ...
-    20:57:12,639 INFO  [fileinstall-C:/portals/liferay-dxp-digital-enterprise-7.1/osgi/war][BundleStartStopLogger:35] STARTED sample-dao-portlet_7.1.0.0 [996]
+    2018-03-21 17:45:09.959 INFO  [Refresh Thread: Equinox Container: 0012cbb0-7e2c-0018-146e-95a4d71cdf95][PortletHotDeployListener:298] 1 portlet for sample-dao-portlet is available for use 
     ...
-    20:57:13,480 INFO  [fileinstall-C:/portals/liferay-dxp-digital-enterprise-7.1/osgi/war][PortletHotDeployListener:313] 1 portlet for sample-dao-portlet is available for use 
+    2018-03-21 17:45:10.151 INFO  [Refresh Thread: Equinox Container: 0012cbb0-7e2c-0018-146e-95a4d71cdf95][BundleStartStopLogger:35] STARTED sample-dao-portlet_7.1.0.1 [655]
 
 The portlet is now available on @product@.
 

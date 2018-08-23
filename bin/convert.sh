@@ -17,9 +17,9 @@ elif [ $# -lt 2 ]; then
 	htmlFile=$1
 	htmlFile=$(echo "${htmlFile}" | sed 's/[^.]*$//')
 	htmlFile=${htmlFile}html
-	java -cp "${classpathDir}/*" com.liferay.documentation.util.MarkdownToHtmlMain $1 ${htmlFile}
+	java -cp "${classpathDir}/*" com.liferay.documentation.util.MarkdownToHtml $1 ${htmlFile}
 	exit 0
 else
-	java -cp "${classpathDir}/*" com.liferay.documentation.util.MarkdownToHtmlMain $1 $2
+	java -cp "${classpathDir}/*" com.liferay.documentation.util.MarkdownToHtml $1 $2
 	exit 0
 fi

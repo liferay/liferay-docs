@@ -5,7 +5,7 @@ set CLASSPATH=%~dp0\..\lib
 if "%1"=="" goto usage
 if "%2"=="" goto convert
 
-java -cp .;%CLASSPATH%\* com.liferay.documentation.util.MarkdownToHtmlMain %1 %2
+java -cp .;%CLASSPATH%\* com.liferay.documentation.util.MarkdownToHtml %1 %2
 
 goto end
 
@@ -26,6 +26,6 @@ goto end
 set htmlFile=%1
 set htmlFile=%htmlFile:markdown=html%
 
-java -cp .;%CLASSPATH%\* com.liferay.documentation.util.MarkdownToHtmlMain %1 %htmlFile%
+java -cp .;%CLASSPATH%\* com.liferay.documentation.util.MarkdownToHtml %1 %htmlFile%
 
 :end

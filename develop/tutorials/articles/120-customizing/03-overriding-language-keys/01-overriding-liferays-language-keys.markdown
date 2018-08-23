@@ -162,7 +162,7 @@ $$$
 **Important**: If your module
 [uses language keys from another module](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-a-language-module)
 and
-[overrides any of that other module's keys](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-other-resource-bundles-in-addition-to-your-own),
+[overrides any of that other module's keys](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-a-language-module-from-a-module),
 make sure to use OSGi headers to specify the capabilities your module requires
 and provides. This lets you prioritize resource bundles from the modules. 
 

@@ -17,7 +17,7 @@ section of the Liferay Portal 6.2 Learning Path
 To get the most from this tutorial, you can download and refer to the
 [original portlet source code](https://dev.liferay.com/documents/10184/656312/guestbook-portlet-pre-7-0-upgrade.zip)
 and the 
-[upgraded source code](https://dev.liferay.com/documents/10184/656312/guestbook-portlet-post-7-0-upgrade.zip).
+[upgraded source code](https://dev.liferay.com/documents/10184/1608802/guestbook-portlet-post-7-1-upgrade.zip).
 
 The Guestbook portlet has the following characteristics:
 
@@ -77,7 +77,7 @@ If you need to adapt a portlet's dependencies, refer to tutorial
 
 ## 3. Build the services [](id=3-build-the-services)
 
-[Build the services](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
+[Build the services](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
 as you did in Liferay Portal 6.2.
 
 The Guestbook portlet's `service.xml` file specifies exception class names in
@@ -123,15 +123,17 @@ the following portlet status:
 
 Deploying the Guestbook portlet produces these messages:
 
-    19:36:27,591 INFO  [RMI TCP Connection(27)-192.168.1.110][BaseAutoDeployListener:42] Copying portlets for C:\portals\liferay-ce-portal-7.1-upgrading-portlets\tomcat-8.0.32\temp\20170710193627556LFQNRFGO\guestbook-portlet-7.1.0.1.war
-    19:36:27,973 INFO  [RMI TCP Connection(27)-192.168.1.110][BaseDeployer:873] Deploying guestbook-portlet-7.1.0.1.war
-    19:36:29,449 INFO  [RMI TCP Connection(27)-192.168.1.110][BaseAutoDeployListener:50] Portlets for C:\portals\liferay-ce-portal-7.1-upgrading-portlets\tomcat-8.0.32\temp\20170710193627556LFQNRFGO\guestbook-portlet-7.1.0.1.war copied successfully
-    19:36:31,231 INFO  [pool-23-thread-2][BundleStartStopLogger:35] STARTED guestbook-portlet_7.1.0.1 [496]
-    19:36:31,459 INFO  [pool-23-thread-2][HotDeployImpl:226] Deploying guestbook-portlet from queue
-    19:36:31,459 INFO  [pool-23-thread-2][PluginPackageUtil:1006] Reading plugin package for guestbook-portlet
-    10-Jul-2017 19:36:31.470 INFO [pool-23-thread-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
-    19:36:31,934 INFO  [pool-23-thread-2][PortletHotDeployListener:202] Registering portlets for guestbook-portlet
-    19:36:32,008 INFO  [pool-23-thread-2][PortletHotDeployListener:331] 1 portlet for guestbook-portlet is available for use
+    2018-03-21 18:23:10.032 INFO  [com.liferay.portal.kernel.deploy.auto.AutoDeployScanner][AutoDeployDir:262] Processing guestbook-portlet-7.1.0.1.war
+    2018-03-21 18:23:15.355 INFO  [fileinstall-C:/portals/liferay-ce-portal-7.1-m1/osgi/war][BaseAutoDeployListener:43] Copying portlets for C:\portals\liferay-ce-portal-7.1-m1\tomcat-8.0.32\temp\20180321182315333UGEPAGTR\guestbook-portlet.war
+    2018-03-21 18:23:15.829 INFO  [fileinstall-C:/portals/liferay-ce-portal-7.1-m1/osgi/war][BaseDeployer:876] Deploying guestbook-portlet.war
+    2018-03-21 18:23:17.797 INFO  [fileinstall-C:/portals/liferay-ce-portal-7.1-m1/osgi/war][BaseAutoDeployListener:50] Portlets for C:\portals\liferay-ce-portal-7.1-m1\tomcat-8.0.32\temp\20180321182315333UGEPAGTR\guestbook-portlet.war copied successfully
+    2018-03-21 18:23:19.621 INFO  [fileinstall-C:/portals/liferay-ce-portal-7.1-m1/osgi/war][HotDeployImpl:226] Deploying guestbook-portlet from queue
+    2018-03-21 18:23:19.621 INFO  [fileinstall-C:/portals/liferay-ce-portal-7.1-m1/osgi/war][PluginPackageUtil:1003] Reading plugin package for guestbook-portlet
+    2018-03-21 18:23:19.642 INFO  [fileinstall-C:/portals/liferay-ce-portal-7.1-m1/osgi/war][ServiceComponentLocalServiceImpl:598] Running GB SQL scripts
+    21-Mar-2018 18:23:19.669 INFO [fileinstall-C:/portals/liferay-ce-portal-7.1-m1/osgi/war] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+    2018-03-21 18:23:20.066 INFO  [fileinstall-C:/portals/liferay-ce-portal-7.1-m1/osgi/war][PortletHotDeployListener:186] Registering portlets for guestbook-portlet
+    2018-03-21 18:23:20.271 INFO  [fileinstall-C:/portals/liferay-ce-portal-7.1-m1/osgi/war][PortletHotDeployListener:298] 1 portlet for guestbook-portlet is available for use
+    2018-03-21 18:23:20.468 INFO  [fileinstall-C:/portals/liferay-ce-portal-7.1-m1/osgi/war][BundleStartStopLogger:35] STARTED guestbook-portlet_7.1.0.1 [657]
 
 The portlet is now available on @product@.
 

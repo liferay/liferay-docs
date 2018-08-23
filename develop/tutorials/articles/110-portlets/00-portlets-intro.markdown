@@ -2,11 +2,11 @@
 
 Web apps in @product@ are called *portlets*. Like many web apps, portlets
 process requests and generate responses. In the response, the portlet returns
-content (e.g. HTML, XHTML) for display in browsers. One key difference between
+content (e.g., HTML, XHTML) for display in browsers. One key difference between
 portlets and other web apps is that portlets run in a portion of the web page.
 When you're writing a portlet application, you only need to worry about that
 application: the rest of the page--the navigation, the top banner, and any other
-global component of the interface--is handled by other components. Another
+global components of the interface--is handled by other components. Another
 difference is that portlets run only in a portal server. Portlets can therefore
 use the portal's existing support for user management, authentication,
 permissions, page management, and more. This frees you to focus on developing
@@ -49,34 +49,35 @@ Portlets handle requests in multiple phases. This makes portlets much more
 flexible than servlets. Each portlet phase executes different operations: 
 
 - **Render:** Generates the portlet's contents based on the portlet's current 
-  state. When this phase runs on one portlet, it also runs on all other portlets 
-  on the page. The Render phase runs when any portlets on the page complete the 
+  state. When this phase runs on one portlet, it also runs on all other portlets
+  on the page. The Render phase runs when any portlets on the page complete the
   Action or Event phases. 
-- **Action:** In response to a user action, performs some operation that changes 
-  the portlet's state. The Action phase can also trigger events that are 
-  processed by the Event phase. Following the Action phase and optional Event 
-  phase, the Render phase then regenerates the portlet's contents. 
-- **Event:** Processes events triggered in the Action phase. Events are used for 
-  IPC. Once the portlet processes all events, the portal calls the Render phase 
-  on all portlets on the page. 
+- **Action:** In response to a user action, the Action phase performs some
+  operations that change  the portlet's state. The Action phase can also trigger
+  events that are  processed by the Event phase. Following the Action phase and
+  optional Event  phase, the Render phase then regenerates the portlet's
+  contents. 
+- **Event:** Processes events triggered in the Action phase. Events are used for
+  inter-process communication (IPC). Once the portlet processes all events, the
+  portal calls the Render phase  on all portlets on the page. 
 - **Resource-serving:** Serves a resource independent from the rest of the 
   lifecycle. This lets a portlet serve dynamic content without running the 
   Render phase on all portlets on a page. The Resource-serving phase handles 
   AJAX requests. 
 
-Compared to servlets, portlets also have some other key differences. Since 
-portlets only render a portion of a page, tags like `<html>`, `<head>`, and 
-`<body>` aren't allowed. And because you don't know the portlet's page ahead of 
-time, you can't create portlet URLs directly. Instead, the portlet API gives you 
-methods to create portlet URLs programmatically. Also, because portlets don't 
-have direct access to the `javax.servlet.ServletRequest`, they can't read query 
-parameters  directly from a URL. Portlets instead access a 
-`javax.portlet.PortletRequest` object. The portlet specification only provides 
-a mechanism for a portlet to read its own URL parameters or those declared as 
-public render parameters. @product@ does, however, provide utility methods that 
-can access the `ServletRequest` and query parameters. Portlets also have a 
-*portlet filter* available for each phase in the portlet lifecycle. Portlet 
-filters are similar to servlet filters in that  they allow request and response
+Compared to servlets, portlets also have some other key differences. Since
+portlets only render a portion of a page, tags like `<html>`, `<head>`, and
+`<body>` aren't allowed. And because you don't know the portlet's page ahead of
+time, you can't create portlet URLs directly. Instead, the portlet API gives you
+methods to create portlet URLs programmatically. Also, because portlets don't
+have direct access to the `javax.servlet.ServletRequest`, they can't read query
+parameters directly from a URL. Portlets instead access a
+`javax.portlet.PortletRequest` object. The portlet specification only provides
+a mechanism for a portlet to read its own URL parameters or those declared as
+public render parameters. @product@ does, however, provide utility methods that
+can access the `ServletRequest` and query parameters. Portlets also have a
+*portlet filter* available for each phase in the portlet lifecycle. Portlet
+filters are similar to servlet filters in that they allow request and response
 modification on the fly. 
 
 Portlets also differ from servlets by having distinct modes and window states. 
@@ -85,7 +86,7 @@ Modes distinguish the portlet's current function:
 - **View mode:** The portlet's standard mode. Use this mode to access the 
   portlet's main functionality. 
 - **Edit mode:** The portlet's configuration mode. Use this mode to configure a 
-  custom view or behavior. For example, the Edit mode of a weather portlet could 
+  custom view or behavior. For example, the Edit mode of a weather portlet could
   let you choose a location to retrieve weather data from. 
 - **Help mode:** A mode that displays the portlet's help information. 
 
@@ -94,7 +95,7 @@ Most modern applications use View Mode only.
 Portlet window states control the amount of space a portlet takes up on a page. 
 Window states mimic window behavior in a traditional desktop environment: 
 
-- **Normal:** The portlet can be on a page that contains other portlets. This is 
+- **Normal:** The portlet can be on a page that contains other portlets. This is
   the default window state. 
 - **Maximized:** The portlet takes up an entire page. 
 - **Minimized:** Only the portlet's title bar shows. 
@@ -122,9 +123,9 @@ modularity features inherent in OSGi. For a detailed description of these
 features, see the tutorial 
 [OSGi and Modularity](/develop/tutorials/-/knowledge_base/7-1/osgi-and-modularity-for-liferay-6-developers). 
 Note, however, that portlets you develop as OSGi modules won't run on 
-other portlet containers that lack an OSGi runtime. Even so, the advantages of 
-modularity are so great that we still recommend you develop your portlets as 
-OSGi modules. 
+other portlet containers that lack an OSGi runtime. Even so, the
+[advantages of modularity](/develop/tutorials/-/knowledge_base/7-1/the-benefits-of-modularity)
+are so great that we still recommend you develop your portlets as OSGi modules. 
 
 So what's the benefit to adopting Liferay's frameworks and APIs? There are
 several: 
@@ -141,12 +142,23 @@ With that said, you can use a variety of technologies to develop portlets. This
 section shows you how to develop portlets using the following frameworks and
 techniques: 
 
-- Liferay's `MVCPortlet`
-- Soy Portlet
-- Spring MVC
-- JavaServer Faces (JSF) Portlets with Liferay Faces
-- Making URLs Friendlier
-- Preparing Your JavaScript Files for ES2015
-- Applying Lexicon Styles to Your App
-- Automatic Single Page Applications
-- Creating Layouts Inside Custom Portlets
+- [Liferay's MVCPortlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
+- [Liferay Soy Portlet](/develop/tutorials/-/knowledge_base/7-1/liferay-soy-portlet)
+- [Spring MVC](/develop/tutorials/-/knowledge_base/7-1/spring-mvc)
+- [Making URLs Friendlier](/develop/tutorials/-/knowledge_base/7-1/making-urls-friendlier)
+- [Automatic Single Page Applications](/develop/tutorials/-/knowledge_base/7-1/automatic-single-page-applications)
+- Applying Clay Styles to Your App
+- [Creating Layouts Inside Portlets](/develop/tutorials/-/knowledge_base/7-1/creating-layouts-inside-custom-portlets)
+- [Using JavaScript Inside Portlets](/develop/tutorials/-/knowledge_base/7-1/using-javascript-in-your-portlets)
+
+<!-- TODO: readd JSF link, when available. -Cody.
+- [JSF Portlets with Liferay Faces](develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
+-->
+
+## Related Topics [](id=related-topics)
+
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
+
+[Importing Packages](/develop/tutorials/-/knowledge_base/7-1/importing-packages)
+
+[Exporting Packages](/develop/tutorials/-/knowledge_base/7-1/exporting-packages)

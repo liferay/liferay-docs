@@ -6,7 +6,7 @@ that you provide a few decorators for your portlets to cover the basic use
 cases.
 
 For example, the Liferay Portal CE 7.1 
-[Classic theme](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-classic)
+[Classic theme](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-classic)
 includes three Portlet Decorators:
 
 -   Decorate: this is the default Application Decorator when using the Classic 
@@ -150,6 +150,6 @@ be your guide.
 
 ## Related Topics [](id=related-topics)
 
-[Themelets](/develop/tutorials/-/knowledge_base/7-1/themelets)
+[Themelets](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes)
 
-[Making Your Applications Configurable](/develop/tutorials/-/knowledge_base/7-1/making-your-applications-configurable)
+[Making Applications Configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable)

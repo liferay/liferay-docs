@@ -1,8 +1,8 @@
 # Importing Clay CSS into a Theme [](id=importing-clay-css-into-a-theme)
 
-As mentioned before, Clay CSS fills the gaps between Bootstrap and the specific 
-needs of @product@. Bootstrap features have been extended to cover more use 
-cases. Here are some of the new components added by Clay CSS:
+Clay CSS fills the gaps between Bootstrap and the specific needs of @product@. 
+Bootstrap features have been extended to cover more use cases. Here are some of 
+the new components added by Clay CSS: 
 
 - Aspect Ratio
 - Cards
@@ -33,18 +33,21 @@ Next you can learn more about Clay's structure.
 
 ## Clay CSS Structure [](id=clay-css-structure)
 
-Clay CSS is bundled with two sub-themes: Clay Base and Atlas. Clay Base is
-@product@'s Bootstrap API extension. It is also the theme that is used in the
-Styled Theme. It adds all the features and components you need and inherits
-Bootstrap's styles. As a result, Clay Base is fully compatible with third party
-themes that leverage Bootstrap's Sass variable API. As a best practice, you
-should use the Clay Base as your base theme to integrate third party themes into
-@product@.
+[Clay CSS](https://claycss.com/) 
+is bundled with two sub-themes: 
+[Clay Base](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay) 
+and 
+[Atlas](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay/atlas). 
+Clay Base is @product@'s Bootstrap API extension. It adds all the features and 
+components you need and inherits Bootstrap's styles. As a result, Clay Base is 
+fully compatible with 
+[third party themes](/develop/tutorials/-/knowledge_base/7-1/integrating-third-party-themes-with-clay) 
+that leverage Bootstrap's Sass variable API.
 
 Atlas is @product@'s custom Bootstrap theme that is used in the Classic Theme. 
-Its purpose is to overwrite and manipulate Bootstrap and Clay Base to create
-@product@'s classic look and feel. Atlas is equivalent to installing a Bootstrap 
-third party theme.
+Its purpose is to overwrite and manipulate Bootstrap and Clay Base to create its 
+classic look and feel. Atlas is equivalent to installing a Bootstrap third party 
+theme.
 
 +$$$
 
@@ -81,7 +84,7 @@ Follow these steps to customize the Atlas theme:
         
         $FontAwesomePath: "font-awesome/font";
         
-        @import "font-awesome/scss/font-awesome"
+        @import "font-awesome/scss/font-awesome";
  
 4.  Add a file named `_clay_variables.scss`. All your Atlas, Bootstrap, and Clay 
     Base variable modifications must be placed in this file.
@@ -110,13 +113,13 @@ these directories into your theme:
     frontend-theme-classic/src/js
     frontend-theme-classic/src/templates
 
-You can also automatically copy these files into your theme using the 
-[Liferay Theme Tasks](/develop/reference/-/knowledge_base/7-1/theme-gulp-tasks) 
-`gulp kickstart` command and following the prompts.
+You can also automatically 
+[copy these files into your theme](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files) 
+using the `gulp kickstart` command and following the prompts. 
 
 Next you can learn how to customize the Clay Base.
 
-## Customizing Clay Base in @product@ [](id=customizing-clay-base-in-liferay)
+## Customizing Clay Base [](id=customizing-clay-base-in-liferay)
 
 You can customize Clay Base with just a few imports.
 
@@ -127,7 +130,7 @@ In your custom theme's `/src/css` folder (legacy ant themes:
     
         $FontAwesomePath: "font-awesome/font";
         
-        @import "font-awesome/scss/font-awesome"
+        @import "font-awesome/scss/font-awesome";
 
 Then in that same folder, add a file named `_clay_variables.scss`. All your
 Atlas, Bootstrap, and Clay Base variable modifications must be placed in this
@@ -140,3 +143,5 @@ Now you know how to use Clay CSS in your theme!
 ## Related Topics [](id=related-topics)
 
 [Applying Clay Styles to Your App](/develop/tutorials/-/knowledge_base/7-1/applying-clay-styles-to-your-app)
+
+[Integrating Third Party Themes with Clay](/develop/tutorials/-/knowledge_base/7-1/integrating-third-party-themes-with-clay)

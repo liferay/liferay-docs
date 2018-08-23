@@ -4,7 +4,7 @@ What do you do if the language keys you want to modify are in one of Liferay's
 applications or another module whose source code you don't control? Since module
 language keys are in the respective module, the process for overriding a
 module's language keys is different from
-[the process of overriding Liferay's language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-liferays-language-keys). 
+[the process of overriding Liferay's language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys). 
 
 Here is the process:
 
@@ -192,7 +192,7 @@ The setter method `setResourceBundleLoader` assigns an aggregate of this class's
 resource bundle loader and the target resource bundle loader to the
 `_resourceBundleLoader` field. 
         
-    @Reference(target = "(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
+    @Reference(target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
     )
     public void setResourceBundleLoader(
         ResourceBundleLoader resourceBundleLoader) {
@@ -229,6 +229,7 @@ Resource bundle loader components have these class imports.
     import com.liferay.portal.kernel.util.ClassResourceBundleLoader;
     import com.liferay.portal.kernel.util.ResourceBundleLoader;
 
+    import java.util.Locale;
     import java.util.ResourceBundle;
 
     import org.osgi.service.component.annotations.Component;
@@ -246,7 +247,7 @@ to provide the classes imported above.
  **Important**: If your module
  [uses language keys from another module](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-a-language-module)
  and
- [overrides any of that other module's keys](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-other-resource-bundles-in-addition-to-your-own),
+ [overrides any of that other module's keys](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-a-language-module-from-a-module),
  make sure to use OSGi headers to specify the capabilities your module requires
  and provides. This lets you prioritize resource bundles from the modules. 
 
@@ -257,7 +258,7 @@ to provide the classes imported above.
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
 core. You can
-[override Liferay's language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-liferays-language-keys)
+[override Liferay's language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys)
 too.
 
 ## Related Topics [](id=related-topics)

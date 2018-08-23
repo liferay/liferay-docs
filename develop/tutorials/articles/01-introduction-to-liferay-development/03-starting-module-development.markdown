@@ -33,10 +33,10 @@ tutorials and samples demonstrate developing in these environments.
 
 -   [Maven in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide),
     [Maven tutorials](/develop/tutorials/-/knowledge_base/7-1/maven),
-    and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-modules)
+    and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 
 -   [Gradle in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/using-gradle-in-liferay-ide)
-    and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-modules)
+    and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 
 $$$
 
@@ -78,7 +78,7 @@ You can create a Workspace in the current directory by executing this command:
 You've created a Workspace! Its folder structure looks like the one shown in
 the figure below.
 
-![Figure 1: Liferay Workspace aggregates projects so they can leverage the Gradle build environment.](../../../images/starting-module-dev-workspace-structure.png)
+![Figure 1: Liferay Workspace aggregates projects so they can leverage the Gradle build environment.](../../images/starting-module-dev-workspace-structure.png)
 
 Workspace can be configured to use a @product@ installation bundle anywhere on
 the local file system. The `liferay.workspace.home.dir` property in
@@ -112,7 +112,7 @@ create modules fast.
 
 The Blade command `blade create -l` lists the project templates.
 
-![Figure 2: Blade's `create` command generates a project based on a template. Executing `create -l` lists the template names.](../../../images/starting-module-dev-blade-templates.png)
+![Figure 2: Blade's `create` command generates a project based on a template. Executing `create -l` lists the template names.](../../images/starting-module-dev-blade-templates.png)
 
 +$$$
 
@@ -151,7 +151,7 @@ Here's the module project anatomy:
 
 The figure below shows an MVC portlet project.
 
-![Figure 3: Liferay modules use the standard Maven folder structure.](../../../images/starting-module-dev-module-structure.png)
+![Figure 3: Liferay modules use the standard Maven folder structure.](../../images/starting-module-dev-module-structure.png)
 
 Sample modules are another helpful development resource.
 
@@ -166,7 +166,7 @@ This command lists the sample names:
 
 The figure below shows the listing.
 
-![Figure 4: The `blade samples` command lists the sample modules you can create, examine, and modify to meet your needs.](../../../images/starting-module-dev-blade-samples.png)
+![Figure 4: The `blade samples` command lists the sample modules you can create, examine, and modify to meet your needs.](../../images/starting-module-dev-blade-samples.png)
 
 Here's the Blade samples command syntax:
 
@@ -238,14 +238,14 @@ folder and its subfolders.
 
 Liferay @ide@ lets you deploy modules by dragging them from the Package Explorer
 onto the Liferay server. @ide@ provides access to
-[Liferay Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-1/managing-module-projects-with-liferay-ide)
+[Liferay Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-1/managing-projects-with-liferay-ide)
 too.
 
-![Figure 5: Liferay @ide@ lets you deploy modules using drag-and-drop.](../../../images/starting-module-dev-drag-module.png)
+![Figure 5: Liferay @ide@ lets you deploy modules using drag-and-drop.](../../images/starting-module-dev-drag-module.png)
 
 +$$$
 
-**Note:** [Blade CLI directly installs modules into the OSGi container](/develop/tutorials/-/knowledge_base/7-1/deploying-modules-with-blade-cli).
+**Note:** [Blade CLI directly installs modules into the OSGi container](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-blade-cli).
 Blade stores the module differently in Liferay than if you were to copy the
 module into the `LIFERAY_HOME/deploy` folder. 
 
@@ -255,7 +255,7 @@ Once you've deployed a portlet module, it's available in the Liferay UI under
 the application category and name you specified via the
 [portlet component's `com.liferay.portlet.display-category` and `javax.portlet.display-name` properties](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet#liferay-mvc-portlet-component).
 
-![Figure 6: Here's a bare-bones portlet based on a project template.](../../../images/starting-module-dev-portlet.png)
+![Figure 6: Here's a bare-bones portlet based on a project template.](../../images/starting-module-dev-portlet.png)
 
 ## Redeploying Module Changes Automatically [](id=redeploying-module-changes-automatically)
 

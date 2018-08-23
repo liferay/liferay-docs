@@ -5,30 +5,5 @@
 	<import file="../build.xml" />
 
 	<property name="doc.dir" value="portal"/>
-	<property name="doc.type" value="useportal"/>
-
-	<taskdef name="numberimgsdiscover" classname="com.liferay.documentation.util.NumberImagesTaskDiscover">
-		<classpath>
-			<fileset dir="${project.dir}/lib" includes="*.jar" />
-			<!-- Use below instead of above fileset when testing changes to classes
-			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
-			-->
-
-			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
-		</classpath>
-	</taskdef>
-	
-	<taskdef name="concatmarkdown" classname="com.liferay.documentation.util.ConcatMarkdown">
-	  <classpath>
-	    <fileset dir="${project.dir}/lib" includes="*.jar" />
-	    
-	    <fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
-	  </classpath>
-	</taskdef>
-
-	<target name="number-images-discover" description="numbers the images in a markdown chapter file">
-		<numberimgsdiscover docdir="${doc.dir}">
-		</numberimgsdiscover>
-	</target>
 
 </project>
