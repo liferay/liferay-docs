@@ -1,20 +1,19 @@
 # Meaningful Schema Versioning [](id=meaningful-schema-versioning)
 
-Data schema version numbers can be as arbitrary as you like; but they are most
-helpful when they provide meaning. Liferay's data schema versioning convention
-facilitates understanding a schema's compatibility with older versions of the
-schema's software. It tells you whether schema changes maintain or break
-compatibility with existing software. For example, if a new data schema removes
-a field your software expects, it breaks compatibility with it. But if a new
-schema's changes are non-breaking (e.g., adds a new field), it is compatible and
-can be used with your software. Since @product@ 7.1, Liferay uses meaningful
-schema versioning convention (similar to
+Data schema versions can be as arbitrary as you like; but they are most helpful
+when they provide meaning. Liferay's data schema version convention communicates
+a schema's compatibility with older versions of the software. It tells you
+whether a schema's changes maintain or break compatibility with existing
+software. For example, if a new data schema removes a field your software
+expects, the schema breaks compatibility. But if a new schema's changes are
+non-breaking (e.g., adds a new field), the schema is compatible and can be used
+with existing software. Since @product@ 7.1, Liferay uses meaningful schema
+versioning convention (similar to
 [Semantic Versioning](http://semver.org))
 to define new
 [upgrade steps](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
-and support rollback of schema micro versions. This schema versioning convention
-is optional but can helps you track backwards compatibility of your module's
-data schema. 
+and support rollback of schema micro versions. The convention is optional but
+tracks data schema backwards compatibility. 
 
 $$$
 
@@ -25,13 +24,14 @@ Here's Liferay's schema versioning convention:
 Each part means something: 
 
 **MAJOR:** Contains breaking schema/data changes that are incompatible with the 
-previous code version. 
+latest version of existing code. 
 
-**MINOR:** Contains schema/data changes that are compatible with the previous 
-code version. The changes typically involve supporting new functionality. 
+**MINOR:** Contains schema/data changes that are compatible with the latest 
+version of existing code. The changes typically involve supporting new
+functionality. 
 
-**MICRO:** Contains schema/data changes that are compatible with the previous 
-code version.
+**MICRO:** Contains schema/data changes that are compatible with the latest 
+version of existing code. 
 
 Next are some concrete examples of micro, minor, and major changes. 
 
