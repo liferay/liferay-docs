@@ -40,5 +40,59 @@ Keep in mind the following when using these methods:
     this parameter, the update increments the file version to the next `.0` 
     value (e.g., from `1.0` to `2.0`, `1.1` to `2.0`, etc.). 
 
-<!-- Add example -->
+The following example comes from @product@'s 
+[`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
+class. This class implements almost all the `FileEntry` actions that the 
+Documents and Media UI supports. This class defines its own `updateFileEntry` 
+method that contains the logic to add and update files. Note that this is the 
+same method from the example in the 
+[tutorial on creating files](liferay.com). The example here, however, focuses on 
+the code that updates the file. 
+
+For the method to add or update a file, it first gets the data needed for those 
+operations from the request. To update a file, it then calls the `DLAppService` 
+method `updateFileEntry` with those data. Note that this example calls the 
+`updateFileEntry` method that takes an `InputStream`: 
+
+    protected FileEntry updateFileEntry(
+            PortletConfig portletConfig, ActionRequest actionRequest, 
+            ActionResponse actionResponse, UploadPortletRequest uploadPortletRequest)
+        throws Exception {
+
+        ...
+
+        long repositoryId = ParamUtil.getLong(uploadPortletRequest, "repositoryId");
+        long folderId = ParamUtil.getLong(uploadPortletRequest, "folderId");
+        String sourceFileName = uploadPortletRequest.getFileName("file");
+        String title = ParamUtil.getString(uploadPortletRequest, "title");
+        String description = ParamUtil.getString(uploadPortletRequest, "description");
+        String changeLog = ParamUtil.getString(uploadPortletRequest, "changeLog");
+        boolean majorVersion = ParamUtil.getBoolean(uploadPortletRequest, "majorVersion");
+
+        ...
+
+        try (InputStream inputStream =
+                uploadPortletRequest.getFileAsStream("file")) {
+
+            String contentType = uploadPortletRequest.getContentType("file");
+            long size = uploadPortletRequest.getSize("file");
+
+            ...
+
+            ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                    DLFileEntry.class.getName(), uploadPortletRequest);
+
+            ...
+
+                fileEntry = _dlAppService.updateFileEntry(
+                        fileEntryId, sourceFileName, contentType, title,
+                        description, changeLog, majorVersion, inputStream, size,
+                        serviceContext);
+
+            ...
+
+            return fileEntry;
+        }
+
+    }
 
