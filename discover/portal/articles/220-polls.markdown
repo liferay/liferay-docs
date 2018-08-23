@@ -79,7 +79,7 @@ choose different polls from the drop-down menu.
 
 All the polls you create appear in the Polls portlet in the Site Menu &rarr;
 *Content* &rarr; *Polls*. When users vote in the poll, the data is collected
-here. Click on a poll see a breakdown of the results.
+here. Click on a poll to see a breakdown of the results.
 
 ![Figure 3: Selecting a poll in the Polls portlet puts the data at your fingertips.](../images/polls-results.png)
 
@@ -92,6 +92,6 @@ represented in various graphs. The graphs are *Area*, *Horizontal Bar*, *Line*,
 
 ![Figure 4: This is what the vertical bar graph for the Lunar Resort poll results looks like.](../images/polls-results-vertical-bar.png)
 
-There is also a listing of the users who voted in your poll, how they voted,
+There is also a listing of the users who voted in the poll, how they voted,
 and a time/date stamp of when their votes were cast. Registered users are
-represented by name, and Guest users are represented by a number.
+represented by name. Guest users have a blank _User_ field.
