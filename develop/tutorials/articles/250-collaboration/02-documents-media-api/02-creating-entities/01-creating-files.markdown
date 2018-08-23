@@ -29,7 +29,8 @@ Note that the following arguments are optional:
 This tutorial uses the method that contains `InputStream`, but you can easily 
 adapt the examples to the other methods if you wish. 
 
-The following example comes from @product@'s `EditFileEntryMVCActionCommand` 
+The following example comes from @product@'s 
+[`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
 class. This class implements almost all the `FileEntry` actions that the 
 Documents and Media UI supports. This class's `updateFileEntry` method contains 
 logic to add and update files. 

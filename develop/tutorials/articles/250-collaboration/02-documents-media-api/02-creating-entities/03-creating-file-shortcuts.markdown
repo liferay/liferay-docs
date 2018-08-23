@@ -26,4 +26,42 @@ Keep in mind the following when creating shortcuts:
     repositories support different features, @product@ only supports the common 
     denominators for all repositories: files and folders. 
 
-<!-- Add example of addFileShortcut --> 
+The following example comes from @product@'s 
+[`EditFileShortcutMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileShortcutMVCActionCommand.java) 
+class. This class implements almost all the `FileShortcut` actions that the 
+Documents and Media UI supports. This class's `updateFileShortcut` method 
+contains logic to add and update file shortcuts. 
+
+This method gets the data from the request that it needs to add or update a 
+shortcut. If there's no existing shortcut (`fileShortcutId <= 0`), it adds a new 
+one by calling the `addFileShortcut` method with required data: 
+
+    protected void updateFileShortcut(ActionRequest actionRequest)
+            throws Exception {
+
+            long fileShortcutId = ParamUtil.getLong(actionRequest, "fileShortcutId");
+
+            long repositoryId = ParamUtil.getLong(actionRequest, "repositoryId");
+            long folderId = ParamUtil.getLong(actionRequest, "folderId");
+            long toFileEntryId = ParamUtil.getLong(actionRequest, "toFileEntryId");
+
+            ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                    DLFileShortcutConstants.getClassName(), actionRequest);
+
+            if (fileShortcutId <= 0) {
+
+                    // Add file shortcut
+
+                    _dlAppService.addFileShortcut(
+                            repositoryId, folderId, toFileEntryId, serviceContext);
+            }
+            else {
+
+                    // Update file shortcut
+                    ...
+            }
+    }
+
+See the tutorial on 
+[updating file shortcuts](liferay.com) 
+for detailed information on that operation. 
