@@ -14,4 +14,40 @@ combination of the `folderId` and `title` in `deleteFileEntryByTitle` uniquely
 identifies a file because it's impossible for two files in the same folder to 
 have the same name. 
 
-<!-- Add examples -->
+The following example comes from @product@'s 
+[`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
+class. This class implements almost all the `FileEntry` actions that the 
+Documents and Media UI supports. It contains its own `deleteFileEntry` method, 
+which calls the `DLAppService` method `deleteFileEntry(long fileEntryId)`. 
+
+The `EditFileEntryMVCActionCommand` class's `deleteFileEntry` method gets the 
+file's ID from the request. If the `moveToTrash` flag is `false`, this indicates 
+that the file should be deleted instead of moved to the 
+[Recycle Bin](/discover/portal/-/knowledge_base/7-1/restoring-deleted-assets). 
+In that case, the `DLAppService` method `deleteFileEntry` is called with the 
+file's ID: 
+
+    protected void deleteFileEntry(
+                    ActionRequest actionRequest, boolean moveToTrash)
+            throws Exception {
+
+            long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+
+            if (fileEntryId == 0) {
+                return;
+            }
+
+            ...
+
+            if (!moveToTrash) {
+                    _dlAppService.deleteFileEntry(fileEntryId);
+
+                    return;
+            }
+
+            ...
+    }
+
+Note that you don't have to support the Recycle Bin in your delete operations. 
+If you want to, however, see the tutorial on 
+[moving entities to the Recycle Bin](liferay.com). 

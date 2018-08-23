@@ -16,11 +16,47 @@ See
 [this method's Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#deleteFileVersion-long-java.lang.String-) 
 for a description of the parameters. 
 
-<!-- Add example -->
+The following example comes from @product@'s 
+[`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
+class. This class implements almost all the `FileEntry` actions that the 
+Documents and Media UI supports. It contains its own `deleteFileEntry` method, 
+which calls the `deleteFileVersion` method. 
 
-Note that it's best to get the file version for the `version` parameter from a 
-valid `FileEntry` object. This ensures that the version is valid. You can do 
-this with 
+This method gets the file's ID and version from the request. After 
+[validating](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/Validator.html) 
+the version, it calls `deleteFileVersion` to delete that version: 
+
+    protected void deleteFileEntry(
+                    ActionRequest actionRequest, boolean moveToTrash)
+            throws Exception {
+
+            long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+
+            if (fileEntryId == 0) {
+                return;
+            }
+
+            String version = ParamUtil.getString(actionRequest, "version");
+
+            if (Validator.isNotNull(version)) {
+                    _dlAppService.deleteFileVersion(fileEntryId, version);
+
+                    return;
+            }
+
+            ...
+    }
+
+Note that this is the same `deleteFileEntry` method from the example in the 
+[tutorial on deleting files](liferay.com). 
+This method contains logic for deleting both files and file versions, depending 
+on what's in the request. 
+
+## Validating File Versions
+
+It's best to ensure that the file version is valid before proceeding with any 
+operations that delete it. The previous example does so with a `Validator`. You 
+can alternatively do this with 
 [`FileVersionVersionComparator`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/util/comparator/FileVersionVersionComparator.html). 
 
 The following example creates such a comparator and uses its `compare` method to 
