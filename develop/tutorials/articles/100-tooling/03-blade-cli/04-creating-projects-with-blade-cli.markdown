@@ -75,7 +75,7 @@ created, provide the name of the host bundle version. This is required when
 using the `fragment` project template.
 
 `-v, --liferay-version`: The version to target when creating a project. The
-default is `7.0`.
+default is `7.1`.
 
 `-l, --list-templates`: Prints a list of available project templates.
 

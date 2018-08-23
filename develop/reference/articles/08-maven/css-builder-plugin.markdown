@@ -13,7 +13,7 @@ To use the plugin, include it in your project's root `pom.xml` file:
             <plugin>
                 <groupId>com.liferay</groupId>
                 <artifactId>com.liferay.css.builder</artifactId>
-                <version>2.1.0</version>
+                <version>2.1.1</version>
                 <executions>
                     <execution>
                         <id>default-build</id>

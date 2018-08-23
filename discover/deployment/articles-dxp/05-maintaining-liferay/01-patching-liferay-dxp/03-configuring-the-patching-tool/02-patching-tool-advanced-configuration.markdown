@@ -77,7 +77,7 @@ property is only valid if your `patching.mode` is `source`.
 +$$$
 
 **Note:** To patch the @product-ver@ source code, please upgrade to
-Patching Tool 2.0.4+.
+the latest 2.0 version of the Patching Tool.
 
 $$$ 
 
