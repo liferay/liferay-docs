@@ -286,6 +286,15 @@ in your task timer.
 [Read the Scripting in Workflow article](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
 for more information.
 
++$$$
+
+**Note:** A `timer-action` can contain all the same tags as an `action`, with
+one exception: `execution-type`. Timer actions are always triggered once the
+time is up, so specifying and execution type of `onEntry`, for example, isn't
+meaningful inside a timer. 
+
+$$$
+
 Tasks are at the core of the workflow definition. Once you understand how to
 create tasks and the other 
 [workflow nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes) 
