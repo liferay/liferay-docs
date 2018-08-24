@@ -123,7 +123,7 @@ manually adding a dependency to the `themeBuilder` configuration:
 
 ```gradle
 dependencies {
-    themeBuilder group: "com.liferay", name: "com.liferay.portal.tools.theme.builder", version: "1.1.5"
+    themeBuilder group: "com.liferay", name: "com.liferay.portal.tools.theme.builder", version: "1.1.6"
 }
 ```
 
