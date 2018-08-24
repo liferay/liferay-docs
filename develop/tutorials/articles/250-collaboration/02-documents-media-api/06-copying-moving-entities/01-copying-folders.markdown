@@ -14,4 +14,25 @@ method `copyFolder`:
 For a full description of the method and its parameters, see its 
 [Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#copyFolder-long-long-long-java.lang.String-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-). 
 
-<!-- Add example --> 
+This example copies a folder to the default site repository's root folder: 
+
+    dlAppService.copyFolder(
+            groupId, folder.getFolderId(), DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, 
+            folder.getName(), folder.getDescription(), serviceContext);
+
+Here's an explanation of the arguments: 
+
+-   `groupId`: As the 
+    [getting started tutorial](liferay.com) 
+    explains, using the `groupId` as the repository ID specifies that the copy 
+    takes place in the default site repository. 
+-   `folder.getFolderId()`: The folder ID of the folder to copy. 
+-   `DLFolderConstants.DEFAULT_PARENT_FOLDER_ID`: The ID of the destination 
+    folder. As the getting started tutorial explains, this constant specifies 
+    the repository's root folder. 
+-   `folder.getName()` and `folder.getDescription()`: The name and description 
+    of the destination folder. Note that this example uses the same values as 
+    the source folder, which is typical for a copy operation. You can, however, 
+    use different values if you wish. 
+-   `serviceContext`: The 
+    [Service Context](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
