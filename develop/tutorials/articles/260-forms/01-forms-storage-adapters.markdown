@@ -18,8 +18,21 @@ implements the `StorageAdapter` interface. The interface follows the *CRUD*
 approach, so implementing it requires that you write methods to create, read,
 update and delete form values.
 
++$$$
+
+**Note:** When you add a new storage adapter, it can only be used with new
+Forms. All existing Forms continue to use the adapter selected (JSON by default)
+at the time of their creation, and a different storage adapter cannot be
+selected.
+
+$$$
+
 The example storage adapter in this tutorial serializes form data to be stored
 in a simple file, stored in the file system.
+
+Note that these code snippets include the references to the services they're
+calling directly beneath the first method that uses the service. It's a Liferay convention to
+place these at the very end of the class.
 
 ## Implementing a Storage Adapter
 
@@ -30,9 +43,12 @@ implementation. To implement a storage adapter, extend the abstract
     @Component(service = StorageAdapter.class)
     public class FileSystemStorageAdapter extends BaseStorageAdapter {
 
+
+### Step 1: Name the Storage Type
+
 The only method without a base implementation in the abstract class is
 `getStorageType`. For the file system storage example, just make it return
-`"FileSystem"`.
+`"File System"`.
 
     @Override
     public String getStorageType() {
@@ -43,6 +59,8 @@ Return a human readable String, as `getStorageType` determines what appears in
 the UI when the form creator is selecting a storage type for their form. The
 String value you return here is added to the `StorageAdapterRegistry`'s Map of
 storage adapters. 
+
+### Step 2: Override the CRUD Methods
 
 Next override the `doCreateMethod` to return a `long` that
 identifies each form record with a unique file ID: 
@@ -68,10 +86,17 @@ identifies each form record with a unique file ID:
         saveFile(
             ddmStructureVersion.getStructureVersionId(), fileId, ddmFormValues);
 
-        long fileId = _counterLocalService.increment();
-
         return fileId;
     }
+
+    @Reference
+    private CounterLocalService _counterLocalService;
+
+    @Reference
+    private DDMStorageLinkLocalService _ddmStorageLinkLocalService;
+
+    @Reference
+    private DDMStructureVersionLocalService _ddmStructureVersionLocalService;
 
 In addition to returning the file ID, add a storage link via the
 `DDMStorageLinkLocalService`. The DDM Storage Link is used to associate each
@@ -81,19 +106,34 @@ The `addStorageLink` method takes class name ID as retrieved by
 `PortalUtil.getClassNameId`, the `fileId` (being used as the primary key for the
 file storage type), the structure version ID, and the service context. There's
 also a call to a `saveFile` method, which serializes the forms record's values
-and uses two additional utility methods to write a `File`:
+and uses two additional utility methods (`getStructureFolder` and `getFile`) to
+write a `java.io.File` object. There are some other utility methods invoked as
+well:
+
+    private File getFile(long structureId, long fileId) {
+        return new File(
+            getStructureFolder(structureId), String.valueOf(fileId));
+    }
+
+    private File getStructureFolder(long structureId) {
+        return new File(String.valueOf(structureId));
+    }
 
     private void saveFile(
             long structureVersionId, long fileId, DDMFormValues formValues)
         throws IOException {
 
-        File formEntryFile = getFile(structureVersionId, fileId);
-
         String serializedDDMFormValues = _ddmFormValuesJSONSerializer.serialize(
             formValues);
 
+        File formEntryFile = getFile(structureVersionId, fileId);
+
         FileUtil.write(formEntryFile, serializedDDMFormValues);
     }
+
+    @Reference
+    private DDMFormValuesJSONSerializer _ddmFormValuesJSONSerializer;
+
 
 Override the `doDeleteByClass` method to delete the `File` using the `classPK`:
 
@@ -138,8 +178,11 @@ written, override `doGetDDMFormValues`:
             structureVersion.getDDMForm(), serializedDDMFormValues);
     }
 
+    @Reference
+    private DDMFormValuesJSONDeserializer _ddmFormValuesJSONDeserializer;
+
 Override the `doUpdate` method so the record's values can be overwritten. This
-example calls a utility method called `saveFile`:
+example calls the `saveFile`  utility method provided earlier:
 
     @Override
     protected void doUpdate(
@@ -155,54 +198,24 @@ example calls a utility method called `saveFile`:
             ddmFormValues);
     }
 
-These utility methods were called in writing the `File` and retrieving it:
-
-    private File getFile(long structureId, long fileId) {
-        return new File(
-            getStructureFolder(structureId), String.valueOf(fileId));
-    }
-
-    private File getStructureFolder(long structureId) {
-        return new File(String.valueOf(structureId));
-    }
-
-    private void saveFile(
-            long structureVersionId, long fileId, DDMFormValues formValues)
-        throws IOException {
-
-        String serializedDDMFormValues = _ddmFormValuesJSONSerializer.serialize(
-            formValues);
-
-        File formEntryFile = getFile(structureVersionId, fileId);
-
-        FileUtil.write(formEntryFile, serializedDDMFormValues);
-    }
-
-For this specific example, here are the required service references:
-
-    @Reference
-    private CounterLocalService _counterLocalService;
-
-    @Reference
-    private DDMFormValuesJSONDeserializer _ddmFormValuesJSONDeserializer;
-
-    @Reference
-    private DDMFormValuesJSONSerializer _ddmFormValuesJSONSerializer;
-
-    @Reference
-    private DDMStorageLinkLocalService _ddmStorageLinkLocalService;
-
-    @Reference
-    private DDMStructureVersionLocalService _ddmStructureVersionLocalService;
-
-}
+Once the CRUD logic is defined, deploy and test the storage adapter.
 
 ## Enabling the Storage Adapter
 
-After writing a new storage adapter and deploying is, you'll want to enable it.
-This is done at the individual form level.
+The storage adapter is enabled at the individual form level. Create a new form,
+and select the Storage Adapter _before saving or publishing the form_. If you
+wait until first Saving the Form, the default Storage Adapter is already
+assigned to the Form, and this setting is no longer editable.
 
-Go into the Form Builder view for a form and click the kebab menu. Open the
-*Settings* window. There's a select list field called *Select a Storage Type*.
-If your storage adapter is deployed, you'll see it in the list of options.
+1.  Go to the Site Menu &rarr; Content &rarr; Forms, and click the Add button
+    (![Add](../../../images/icon-add.png)).
 
+2.  In the Form Builder view, click the Options button
+    (![Options](../../../images/icon-option.png)) and open the *Settings*
+    window. 
+
+3.  From the select list field called *Select a Storage Type*, choose the
+    desired type and click _Done_.
+
+![Figure x: Choose a Storage Type for your form
+records.](../../images/forms-storage-type.png)
