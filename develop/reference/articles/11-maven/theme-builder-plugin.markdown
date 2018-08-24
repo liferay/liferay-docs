@@ -56,3 +56,32 @@ Parameter Name | Type | Default Value | Description
 `parentName` | `String` | `null` | The name of the parent theme.
 `templateExtension` | `String` | `"ftl"` |  The extension of the template files, usually `"ftl"` or `"vm"`.
 `unstyledDir` | `File` | `null` | The directory of [Liferay Frontend Theme Unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-unstyled).
+
+You can also manage the `com.liferay.frontend.theme.styled` and
+`com.liferay.frontend.theme.unstyled` default theme dependencies provided by the
+Theme Builder in your `pom.xml`. They can be modified by adding them as project
+dependencies:
+
+    <project>
+        ...
+        <dependencies>
+            ...
+            <dependency>
+                <groupId>com.liferay</groupId>
+                <artifactId>com.liferay.frontend.theme.styled</artifactId>
+                <version>3.0.4</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.liferay</groupId>
+                <artifactId>com.liferay.frontend.theme.unstyled</artifactId>
+                <version>3.0.4</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </project>
+
+There is an additional Liferay theme-related dependency you can manage this
+way that's provided by the CSS Builder. See
+[this section](/develop/reference/-/knowledge_base/7-1/css-builder-plugin) for
+more information.
