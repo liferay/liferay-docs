@@ -7,17 +7,15 @@ whether a schema's changes maintain or break compatibility with existing
 software. For example, if a new data schema removes a field your software
 expects, the schema breaks compatibility. But if a new schema's changes are
 non-breaking (e.g., adds a new field), the schema is compatible and can be used
-with existing software. Since @product@ 7.1, Liferay uses meaningful schema
-versioning convention (similar to
-[Semantic Versioning](http://semver.org))
-to define new
-[upgrade steps](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
+with existing software. Since @product@ 7.1, Liferay uses a meaningful schema
+version convention (similar to [Semantic Versioning](http://semver.org)) to
+define new [upgrade steps](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
 and support rollback of schema micro versions. The convention is optional but
 tracks data schema backwards compatibility. 
 
 $$$
 
-Here's Liferay's schema versioning convention:
+Here's Liferay's schema version convention:
 
 **MAJOR.MINOR.MICRO**
 
@@ -26,7 +24,7 @@ Each part means something:
 **MAJOR:** Contains breaking schema/data changes that are incompatible with the 
 latest version of existing code. 
 
-**MINOR:** Contains schema/data changes that are compatible with the latest 
+**MINOR:** Contains schema/data changes compatible with the latest 
 version of existing code. The changes typically involve supporting new
 functionality. 
 
