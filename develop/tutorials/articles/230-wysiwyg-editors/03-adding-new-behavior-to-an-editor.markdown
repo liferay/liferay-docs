@@ -10,6 +10,20 @@ This can be done by using the `liferay-util:dynamic-include` JavaScript
 extension point. This allows anyone to inject JavaScript code right after the
 editor instantiation to configure/change the editor.
 
++$$$
+
+**Note:** By default, the CKEditor strips empty `<i>` tags, such as those used 
+for Font Awesome icons, from published content, when switching between the Code 
+View and the Source View of the editor. You can disable this behavior by using 
+the `ckeditor#onEditorCreate` or `alloyeditor#onEditorCreate` extension points 
+to 
+[add the following code](/develop/tutorials/-/knowledge_base/7-0/adding-new-behavior-to-an-editor) 
+to the editor:
+
+    CKEDITOR.dtd.$removeEmpty.i = 0
+
+$$$
+
 In this tutorial, you'll learn how to use the JavaScript extension point in your
 Liferay supported WYSIWYG editor.
 
