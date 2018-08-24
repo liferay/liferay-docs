@@ -15,7 +15,7 @@ To use the plugin, include it in your project's root `pom.xml` file:
             <plugin>
                 <groupId>com.liferay</groupId>
                 <artifactId>com.liferay.portal.tools.theme.builder</artifactId>
-                <version>1.1.5</version>
+                <version>1.1.6</version>
                 <executions>
                     <execution>
                         <phase>generate-resources</phase>
