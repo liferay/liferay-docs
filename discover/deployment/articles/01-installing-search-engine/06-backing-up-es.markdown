@@ -1,4 +1,4 @@
-# Backing Up Elasticsearch
+# Backing Up Elasticsearch [](id=backing-up-elasticsearch)
 
 [Elasticsearch replicas](https://www.elastic.co/guide/en/elasticsearch/guide/master/replica-shards.html)
 protect against a node going down, but they won't help you with a catastrophic

@@ -1,4 +1,4 @@
-# Tuning Elasticsearch
+# Tuning Elasticsearch [](id=tuning-elasticsearch)
 
 Since search engines benefit heavily from caching, their JVM memory profiles are 
 substantially different from those of a JVM focused on serving content and web 
@@ -30,7 +30,7 @@ default Linux value is 1024). Since Elasticsearch uses NioFS and MMapFS, ensure
 there is sufficient virtual memory available for memory-mapped files. Consult
 your system administrator for information on how to configure these values. 
 
-## Tuning and Scaling an Elasticsearch Cluster
+## Tuning and Scaling an Elasticsearch Cluster [](id=tuning-and-scaling-an-elasticsearch-cluster)
 
 Proper scaling and tuning of an Elasticsearch cluster primarily depends on the
 type of indexes it holds and how they're intended to be used. Since @product@ is
