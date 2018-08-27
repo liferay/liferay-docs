@@ -8,8 +8,8 @@ and as its name implies, it implements the `StorageAdapter` interface to provide
 JSON storage of form entry data.
 
 The DDM backend can *adapt* to other data storage formats for form records. Want
-to store your data in XML? YAML? No problem. Because the storage API before is
-separate from the regular service calls used to populate the database table for
+to store your data in XML? YAML? No problem. Because the storage API is
+separated from the regular service calls used to populate the database table for
 form entries, a developer can even choose to store form data outside the Liferay
 database. 
 
@@ -28,11 +28,13 @@ selected.
 $$$
 
 The example storage adapter in this tutorial serializes form data to be stored
-in a simple file, stored in the file system.
+in a simple file, stored on the file system.
+
+![Figure x: Choose a Storage Type for your form records.](../../images/forms-storage-type.png)
 
 Note that these code snippets include the references to the services they're
-calling directly beneath the first method that uses the service. It's a Liferay convention to
-place these at the very end of the class.
+calling directly beneath the first method that uses the service. It's a Liferay
+code convention to place these at the very end of the class.
 
 ## Implementing a Storage Adapter
 
@@ -134,6 +136,9 @@ well:
     @Reference
     private DDMFormValuesJSONSerializer _ddmFormValuesJSONSerializer;
 
+Note the call to the `write` method.`FileUtil` is a Liferay utility class for
+manipulating `java.io.File` objects. The `write` method writes the data into the
+user home folder of your system, by default.
 
 Override the `doDeleteByClass` method to delete the `File` using the `classPK`:
 
@@ -217,5 +222,4 @@ assigned to the Form, and this setting is no longer editable.
 3.  From the select list field called *Select a Storage Type*, choose the
     desired type and click _Done_.
 
-![Figure x: Choose a Storage Type for your form
-records.](../../images/forms-storage-type.png)
+Now all the form's entries will be stored in the desired format.
