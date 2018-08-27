@@ -44,24 +44,42 @@ widget), `im` (instant message), or `private-message` in the
 **Execution Type**
 : Choose to link the sending of the notification to entry into the node
 (`onEntry`), when a task is assigned (`onAssignment`), or when the workflow
-processing is leaving a node (`onExit`). 
+processing is leaving a node (`onExit`). If you specify a notification to
+be sent on assignment, the assignee is automatically notified.
 
 **Recipients**
-: Decide who should receive the notification in the `<recipients>` tag. A
-notification can be sent to the user that sent the asset through the workflow: 
+: Decide who should receive the notification in the `<recipients>` tag.
+Available recipient tags are 
 
-    <recipients>
-        <user />
-    </recipients>
+- `<user />`: notify the User that sent the asset through the workflow using.
 
-A notification can be sent to the task assignees:
+- `<roles>`: notify specific roles, either by ID or by their type and name.
 
-    <recipients>
-        <assignees/>
-    </recipients>
+        <roles>
+            <role>
+                <role-id>33621</role-id>
+            </role>
+            <role>
+                <role-type>regular</role-type>
+                <name>Power User</name>
+                <auto-create>false</auto-create>
+            </role>
+        </roles>
 
-If the notification type is `email`, you can specify the `recipientType` as
-_To_, _CC_, or _BCC_.
+- `<assignees />`: notify the task assignees.
+
+- `<scripted-recipient>`: use a script to identify notification recipients.
+
+        <scripted-recipient>
+            <script>
+                <![CDATA[Script logic goes here]]>
+            </script>
+            <script-language>groovy</script-language>
+        </scripted-recipient>
+
+
+If the notification type is `email`, you can specify the `recipientType`
+attribute as _To_, _CC_, or _BCC_.
 
     <recipients receptionType="cc">
         <roles>
@@ -76,3 +94,4 @@ By default, `recipientType` is `to`.
 
 As always, read the 
 [schema for all the details](https://www.liferay.com/dtd/liferay-workflow-definition_7_1_0.xsd).
+
