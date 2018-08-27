@@ -118,7 +118,7 @@ default repository and root parent folder, respectively. This example, however,
 sets `includeMountFolders` to `true` to include any mount folders in the 
 results: 
 
-    getFolders(groupId, DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, true)
+    dlAppService.getFolders(groupId, DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, true)
 
 This is one of many methods you can use to get folders. The rest are listed in 
 the 
