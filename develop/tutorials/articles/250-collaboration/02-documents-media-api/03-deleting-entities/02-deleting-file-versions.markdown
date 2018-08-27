@@ -1,4 +1,4 @@
-# Deleting File Versions
+# Deleting File Versions [](id=deleting-file-versions)
 
 When a file is modified, @product@ creates a new file version and leaves the 
 previous version intact. Over time, old versions of files can accumulate and 
@@ -52,7 +52,7 @@ Note that this is the same `deleteFileEntry` method from the example in the
 This method contains logic for deleting both files and file versions, depending 
 on what's in the request. 
 
-## Validating File Versions
+## Validating File Versions [](id=validating-file-versions)
 
 It's best to ensure that the file version is valid before proceeding with any 
 operations that delete it. The previous example does so with a `Validator`. You 

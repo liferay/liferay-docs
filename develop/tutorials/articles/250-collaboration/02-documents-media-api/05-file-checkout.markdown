@@ -1,4 +1,4 @@
-# File Checkout and Checkin
+# File Checkout and Checkin [](id=file-checkout-and-checkin)
 
 The Document Library lets users 
 [check out files](/discover/portal/-/knowledge_base/7-1/checking-out-and-editing-files) 
@@ -14,7 +14,7 @@ operations:
 <!-- Add section for the last item -->
 <!-- Also add examples in each section -->
 
-## File Checkout
+## File Checkout [](id=file-checkout)
 
 When you check out a file, the following things happen: 
 
@@ -65,7 +65,7 @@ contains logic to check out one or more files. This method gets one or more
             }
     }
 
-### Fine Tuning Checkout
+### Fine Tuning Checkout [](id=fine-tuning-checkout)
 
 You can also control how the checkout is performed by setting the following 
 attributes in the `ServiceContext` parameter: 
@@ -92,7 +92,7 @@ to set these attributes. Here's such an example of setting the
 
     serviceContext.setAttribute("manualCheckInRequired", Boolean.TRUE)
 
-## File Checkin
+## File Checkin [](id=file-checkin)
 
 After a file has been checked out and edited, you must check it back in for 
 other users to see the new version. Once you do so, you can't access the private 
@@ -148,7 +148,7 @@ from the request. The `checkInFileEntry` method is then called to check in each
             }
     }
 
-## Cancelling a Checkout
+## Cancelling a Checkout [](id=cancelling-a-checkout)
 
 The Documents and Media API also lets you cancel a checkout. Use caution with 
 this operation---it discards any edits made since checkout. If you're sure you 

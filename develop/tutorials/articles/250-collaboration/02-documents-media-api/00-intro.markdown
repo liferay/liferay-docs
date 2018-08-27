@@ -1,4 +1,4 @@
-# Documents and Media API
+# Documents and Media API [](id=documents-and-media-api)
 
 @product@'s Documents and Media library lets users upload files to the portal 
 and then manage and use them as desired. Once uploading files to the portal, for 

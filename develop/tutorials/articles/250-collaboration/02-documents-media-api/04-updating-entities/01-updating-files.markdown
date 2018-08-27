@@ -1,4 +1,4 @@
-# Updating Files
+# Updating Files [](id=updating-files)
 
 Updating a file is a bit more complicated than 
 [creating one](liferay.com). 

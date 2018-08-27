@@ -1,4 +1,4 @@
-# Getting Started with the Documents and Media API
+# Getting Started with the Documents and Media API [](id=getting-started-with-the-documents-and-media-api)
 
 Before you start using the Documents and Media API, you should make note of the 
 main interfaces you'll use. 
@@ -27,7 +27,7 @@ main interfaces you'll use.
     -   `Folder`: Represents a folder.
     -   `FileShortcut`: Represents a shortcut to a file.
 
-## Getting a Service Reference
+## Getting a Service Reference [](id=getting-a-service-reference)
 
 Before you can do anything with the Documents and Media API, you must get a 
 service reference. You must use the `@Reference` annotation to 
@@ -43,7 +43,7 @@ features. If you need to get a reference somewhere outside of an OSGi component
 (e.g., in a JSP), then you should use a 
 [service tracker](/develop/tutorials/-/knowledge_base/7-1/service-trackers). 
 
-## Specifying Repositories 
+## Specifying Repositories [](id=specifying-repositories)
 
 Many methods in the Documents and Media API contain a `repositoryId` parameter 
 that identifies the Documents and Media repository in which the operation will 
@@ -86,7 +86,7 @@ Note that you can use the
 API to create repositories programmatically. The tutorials here, however, access 
 the default site repository for simplicity. 
 
-## Specifying Folders
+## Specifying Folders [](id=specifying-folders)
 
 Many API methods require the ID of a folder that they perform operations in or 
 on. For example, such methods may contain parameters like `folderId` or 

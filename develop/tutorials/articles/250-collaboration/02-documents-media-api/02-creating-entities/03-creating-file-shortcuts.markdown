@@ -1,4 +1,4 @@
-# Creating File Shortcuts
+# Creating File Shortcuts [](id=creating-file-shortcuts)
 
 To create file shortcuts (`FileShortcut` entities) in the Documents and Media 
 Library, you must use the 

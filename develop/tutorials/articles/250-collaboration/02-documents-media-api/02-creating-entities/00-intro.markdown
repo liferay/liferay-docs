@@ -1,4 +1,4 @@
-# Creating Entities
+# Creating Entities [](id=creating-entities)
 
 Creating entities in the Documents and Media Library is a key use case for the 
 Documents and Media API. For example, you can use the API to create files, 

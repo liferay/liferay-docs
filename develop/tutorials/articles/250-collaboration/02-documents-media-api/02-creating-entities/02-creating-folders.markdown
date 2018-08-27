@@ -1,4 +1,4 @@
-# Creating Folders
+# Creating Folders [](id=creating-folders)
 
 To create folders (`Folder` entities) in the Documents and Media Library, you 
 must use the 
@@ -56,7 +56,7 @@ See the tutorial on
 [updating folders](liferay.com) 
 for detailed information on that operation. 
 
-## Folders and External Repositories
+## Folders and External Repositories [](id=folders-and-external-repositories)
 
 A site's default repository can include references to external repositories such 
 as SharePoint. This occurs by effectively mounting the external repository in 

@@ -1,4 +1,4 @@
-# Moving Folders and Files
+# Moving Folders and Files [](id=moving-folders-and-files)
 
 The move operation is much more flexible than the 
 [copy operation](liferay.com). 

@@ -1,4 +1,4 @@
-# Getting Entities
+# Getting Entities [](id=getting-entities)
 
 The Documents and Media API contains many methods for getting entities from a 
 repository. Most methods in 
@@ -9,7 +9,7 @@ Because there are so many such methods, and because they're very similar, this
 tutorial doesn't describe them all in detail. Focus is instead placed on the 
 most common methods and parameters. 
 
-## Getting Files
+## Getting Files [](id=getting-files)
 
 Getting files is one of the most common tasks you'll perform with the Documents 
 and Media API. There are two main method families for getting files: 
@@ -91,7 +91,7 @@ Remember, this is just one of many `getFileEntries` and `getGroupFileEntries`
 methods. To see all such methods, see the 
 [`DLAppService` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
 
-## Getting Folders
+## Getting Folders [](id=getting-folders)
 
 The Documents and Media API can also retrieve folders. Getting folders is very 
 similar to getting files. The main difference is that folder retrieval methods 
@@ -124,7 +124,7 @@ This is one of many methods you can use to get folders. The rest are listed in
 the 
 [`DLAppService` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
 
-## Getting Multiple Entity Types
+## Getting Multiple Entity Types [](id=getting-multiple-entity-types)
 
 There are also methods in the Documents and Media API that retrieve lists of 
 several entity types. These methods use many of the same parameters as those 

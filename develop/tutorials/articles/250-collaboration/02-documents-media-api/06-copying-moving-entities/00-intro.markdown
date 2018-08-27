@@ -1,4 +1,4 @@
-# Copying and Moving Entities
+# Copying and Moving Entities [](id=copying-and-moving-entities)
 
 Although the Documents and Media API lets you copy and move entities, these 
 operations have some important caveats and limitations. Keep in mind the 

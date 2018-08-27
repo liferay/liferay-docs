@@ -1,4 +1,4 @@
-# Updating File Shortcuts
+# Updating File Shortcuts [](id=updating-file-shortcuts)
 
 The Documents and Media API also lets you update file shortcuts. You can update 
 a shortcut to change which file it points to, or which folder it resides in. You 

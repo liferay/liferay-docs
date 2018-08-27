@@ -1,4 +1,4 @@
-# Deleting Entities
+# Deleting Entities [](id=deleting-entities)
 
 Now that you know how to 
 [create Documents and Media entities](liferay.com), you can learn how to delete 

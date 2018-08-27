@@ -1,4 +1,4 @@
-# Moving Entities to the Recycle Bin
+# Moving Entities to the Recycle Bin [](id=moving-entities-to-the-recycle-bin)
 
 Instead of deleting entities, you can move them to the 
 [Recycle Bin](/discover/portal/-/knowledge_base/7-1/restoring-deleted-assets). 

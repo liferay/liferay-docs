@@ -1,4 +1,4 @@
-# Copying Folders
+# Copying Folders [](id=copying-folders)
 
 The Documents and Media API lets you copy folders within a repository. You 
 can't, however, copy a folder between different repositories. Also note that 

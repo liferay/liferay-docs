@@ -1,4 +1,4 @@
-# Deleting File Shortcuts
+# Deleting File Shortcuts [](id=deleting-file-shortcuts)
 
 The Documents and Media API also lets you delete file shortcuts. To do so, use 
 the 

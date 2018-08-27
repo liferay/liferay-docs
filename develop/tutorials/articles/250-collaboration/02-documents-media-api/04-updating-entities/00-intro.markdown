@@ -1,4 +1,4 @@
-# Updating Entities
+# Updating Entities [](id=updating-entities)
 
 Like 
 [creating](liferay.com) 

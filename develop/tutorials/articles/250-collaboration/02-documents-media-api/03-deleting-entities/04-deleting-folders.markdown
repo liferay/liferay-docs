@@ -1,4 +1,4 @@
-# Deleting Folders
+# Deleting Folders [](id=deleting-folders)
 
 Deleting folders is similar to 
 [deleting files](liferay.com). 

@@ -1,4 +1,4 @@
-# Updating Folders
+# Updating Folders [](id=updating-folders)
 
 Once a folder exists, you can copy or move it to a different location. These 
 operations are covered in 
