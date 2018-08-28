@@ -18,7 +18,7 @@ the last step:
 
 The following sections walk you through these steps. 
 
-## Remove the Pre-installed APIO Architect Modules
+## Remove the Pre-installed APIO Architect Modules [](id=remove-the-pre-installed-apio-architect-modules)
 
 Follow these steps to remove the older, pre-installed version of the APIO 
 Architect modules: 
@@ -63,7 +63,7 @@ Architect modules:
 4.  Finally, remove the `*apio*` configuration file in 
     `[Liferay Home]/osgi/configs`. 
 
-## Install the Latest Version of APIO Architect
+## Install the Latest Version of APIO Architect [](id=install-the-latest-version-of-apio-architect)
 
 Now you must download and install the latest version of the APIO Architect 
 modules: 
@@ -89,7 +89,7 @@ modules:
 
     The modules should then appear in `[Liferay Home]/osgi/modules`. 
 
-## Install the API Implementation
+## Install the API Implementation [](id=install-the-api-implementation)
 
 Now you're ready to install the Hypermedia REST APIs. Follow these steps to do 
 so: 
