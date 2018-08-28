@@ -31,20 +31,13 @@ Follow these steps to create the module and configure its metadata for Vue:
     and add the following presets to it:
 
         {
-        	"presets": ["es2015", "liferay-project"]
+        	"presets": ["env"]
         }
 
 4.  Add a 
     [`.npmbundlerrc` file](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler) 
-    to your project's root folder and add the 
-    [`liferay-npm-bundler-preset-vue` preset](https://www.npmjs.com/package/liferay-npm-bundler-preset-vue). 
-    This preset provides the required `.npmbundlerrc` configuration. You can, 
-    however, copy the contents of the preset and add additional configuration 
-    options to the file instead if needed:
-
-        {
-            "preset": "liferay-npm-bundler-preset-vue"
-        }
+    to your project's root folder. This file doesn't need to contain anything. 
+    You can, however, add configuration options to the file if needed. 
 
 5.  Include the following dependency to your `build.gradle` file:
 
@@ -53,22 +46,20 @@ Follow these steps to create the module and configure its metadata for Vue:
         version: "2.0.2"
 
 6.  Create a `package.json` in your project if it doesn't already exist and add 
-    the configuration shown below to it. Update the `"main"` JS path to reflect 
-    your app's main JS file (remember to add the `.es.js` extension if your file 
-    uses it). Note that the `liferay-npm-bundler` is added last to the build 
-    script. List any additional build processes before this that your project 
-    requires:
+    the configuration shown below to it. Update the `"main"` JS path to point to 
+    your app's main JS file. Note that the `liferay-npm-bundler` is added last 
+    to the build script. List any additional build processes before this that 
+    your project requires:
 
         {
         	"dependencies": {
         		"vue": "2.4.4"
         	},
+          "description": "Vue.js Portlet",
         	"devDependencies": {
-        		"babel-cli": "6.26.0",
-        		"babel-preset-es2015": "6.24.1",
-        		"babel-preset-liferay-project": "1.6.1",
-        		"liferay-npm-bundler": "1.6.1",
-        		"liferay-npm-bundler-preset-vue": "1.6.1"
+        		"babel-cli": "^6.26.0",
+        		"babel-preset-env": "^1.7.0",
+        		"liferay-npm-bundler": "^2.0.0"
         	},
         	"main": "js/index.js",
         	"name": "my-npm-vuejs-portlet",
@@ -79,6 +70,9 @@ Follow these steps to create the module and configure its metadata for Vue:
         	},
         	"version": "1.0.0"
         }
+
+To use ES2015+ syntax in your portlet, you must transpile it for the browser. 
+Babel, included in your build script, takes care of this for you. 
 
 Next You can configure the portlet.
 
@@ -148,23 +142,14 @@ Follow these steps to configure your portlet:
         );
         %>
 
-Next you can learn how to render your app's component and transpile your JS 
-files. 
+Next you can learn how to render your app's component. 
 
-## Transpiling your JS and Rendering Your Component [](id=transpiling-your-js-and-rendering-your-component)
+## Rendering Your Component [](id=rendering-your-component)
 
-Follow these steps to transpile your JS files and render your app component:
-
-1.  To use ES2015+ syntax in your portlet, you must transpile it for the 
-    browser. To do this, replace the `.js` extension with `.es.js` for all JS 
-    files that need transpiled to ES2015+. For example the main `index.js` file 
-    would be renamed `index.es.js`. JS files with this extension are 
-    automatically transpiled by Babel before deployment. 
+Follow these steps to render your app component:
    
-2.  Inside your app's main JS file (`index.js` for example), use the function 
-    below to render your component. Note the `.es` extension added to the 
-    `AppComponent` import in the example below. This is required to import JS 
-    files that use the `.es.js` file extension:
+1.  Inside your app's main JS file (`index.js` for example), use the function 
+    below to render your component:
 
         import Vue from 'vue/dist/vue.common';
 
@@ -186,7 +171,7 @@ Follow these steps to transpile your JS files and render your app component:
         	});
         }
 
-3.  Open your `view.jsp` and add an element container to house your component. 
+2.  Open your `view.jsp` and add an element container to house your component. 
     Then, add an `<aui:script>` and pass your aliased module name as the 
     `require` attribute's value. Finally, call your module's `default` function 
     that you exported in the previous step, and pass the container element in as 

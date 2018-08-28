@@ -24,25 +24,35 @@ Follow these steps to create the module and configure its metadata for Angular:
 
         Web-ContextPath: /my-npm-angular-portlet
 
-3.  Create a 
-    [`.babelrc` file](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler) 
-    and add the following presets to it:
+3.  Create a `.tsconfig.json` file and add the following configuration to it:
 
         {
-        	"presets": ["liferay-amd"]
+        	"compilerOptions": {
+        		"emitDecoratorMetadata": true,
+        		"experimentalDecorators": true,
+        		"lib": ["es2015", "dom"],
+        		"moduleResolution": "node",
+        		"outDir": "build/resources/main/META-INF/resources/lib",
+        		"sourceMap": true,
+        		"suppressImplicitAnyIndexErrors": true,
+        		"target": "es5",
+        		"typeRoots": ["./node_modules/@types/"],
+
+        		"module": "commonjs",
+        		"strict": true,
+        		"noFallthroughCasesInSwitch": true,
+        		"inlineSources": true,
+        		"declaration": false,
+        		"skipLibCheck": true,
+        		"types": ["jasmine", "node"]
+        	},
+        	"include": ["src/main/resources/META-INF/resources/**/*.ts"]
         }
 
 4.  Add a 
     [`.npmbundlerrc` file](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler) 
-    to your project's root folder and add the 
-    [`liferay-npm-bundler-preset-angular` preset](https://www.npmjs.com/package/liferay-npm-bundler-preset-angular). 
-    This preset provides the required `.npmbundlerrc` configuration. You can, 
-    however, copy the contents of the preset and add additional configuration 
-    options to the file instead if needed:
-
-        {
-            "preset": "liferay-npm-bundler-preset-angular"
-        }
+    to your project's root folder. This file doesn't need to contain anything. 
+    You can, however, add configuration options to the file if needed. 
 
 5.  Include the following dependency to your `build.gradle` file:
 
@@ -51,64 +61,70 @@ Follow these steps to create the module and configure its metadata for Angular:
         version: "2.0.2"
 
 6.  Create a `package.json` in your project if it doesn't already exist and add 
-    the configuration shown below to it. Update the `"main"` JS path to reflect 
-    your app's main JS file (remember to add the `.es.js` extension if your file 
-    uses it). Note that the `liferay-npm-bundler` is added last to the build 
-    script. List any additional build processes before this that your project 
-    requires, such as the `tsc` (Typescript) process shown below:
+    the configuration shown below to it. Update the `"main"` JS path to point to 
+    your app's main JS file. Note that the `liferay-npm-bundler` is added last 
+    to the build script. List any additional build processes before this that 
+    your project requires, such as the `tsc` (Typescript) process shown below:
 
         {
         	"dependencies": {
-        		"@angular/common": "4.2.6",
-        		"@angular/compiler": "4.2.6",
-        		"@angular/compiler-cli": "4.2.6",
-        		"@angular/core": "4.2.6",
-        		"@angular/forms": "4.2.6",
-        		"@angular/http": "4.2.6",
-        		"@angular/platform-browser": "4.2.6",
-        		"@angular/platform-browser-dynamic": "4.2.6",
-        		"@angular/platform-server": "4.2.6",
-        		"@angular/router": "4.2.6",
-        		"@angular/tsc-wrapped": "4.2.6",
-        		"@angular/upgrade": "4.2.6",
-        		"angular-in-memory-web-api": "0.3.2",
-        		"core-js": "2.5.1",
-        		"reflect-metadata": "0.1.10",
-        		"rxjs": "5.4.1",
-        		"zone.js": "0.8.17"
+        		"@angular/animations": "^5.0.0",
+        		"@angular/common": "^5.0.0",
+        		"@angular/compiler": "^5.0.0",
+        		"@angular/core": "^5.0.0",
+        		"@angular/forms": "^5.0.0",
+        		"@angular/http": "^5.0.0",
+        		"@angular/platform-browser": "^5.0.0",
+        		"@angular/platform-browser-dynamic": "^5.0.0",
+        		"@angular/platform-server": "^5.0.0",
+        		"@angular/router": "^5.0.0",
+        		"@ngx-translate/core": "^9.1.1",
+        		"core-js": "^2.5.1",
+        		"rxjs": "^5.5.2",
+        		"zone.js": "0.8.12"
         	},
+        	"description": "Angular Portlet",
         	"devDependencies": {
-        		"@types/angular": "1.6.32",
-        		"@types/angular-animate": "1.5.8",
-        		"@types/angular-cookies": "1.4.5",
-        		"@types/angular-mocks": "1.5.11",
-        		"@types/angular-resource": "1.5.14",
-        		"@types/angular-route": "1.3.4",
-        		"@types/angular-sanitize": "1.3.6",
-        		"@types/jasmine": "2.5.53",
-        		"@types/node": "8.0.31",
-        		"babel-cli": "6.26.0",
-        		"babel-preset-liferay-amd": "1.6.1",
-        		"canonical-path": "0.0.2",
-        		"concurrently": "3.5.0",
-        		"http-server": "0.10.0",
-        		"jasmine": "2.6.0",
-        		"jasmine-core": "2.6.4",
-        		"karma": "1.7.1",
-        		"karma-chrome-launcher": "2.2.0",
-        		"karma-cli": "1.0.1",
-        		"karma-jasmine": "1.1.0",
-        		"karma-jasmine-html-reporter": "0.2.2",
-        		"karma-phantomjs-launcher": "1.0.4",
-        		"liferay-npm-bundler": "1.6.1",
-        		"liferay-npm-bundler-preset-angular": "1.6.1",
-        		"lite-server": "2.3.0",
-        		"lodash": "4.17.4",
-        		"phantomjs-prebuilt": "2.1.15",
-        		"protractor": "5.1.2",
-        		"source-map-explorer": "1.5.0",
-        		"tslint": "5.7.0",
-        		"typescript": "2.5.2"
+        		"@angular/cli": "^1.6.7",
+        		"@angular/compiler-cli": "^5.0.0",
+        		"@compodoc/compodoc": "1.0.0-beta.10",
+        		"@types/bootstrap": "^3.3.33",
+        		"@types/bootstrap-datepicker": "0.0.6",
+        		"@types/jasmine": "2.5.48",
+        		"@types/jquery": "^2.0.46",
+        		"@types/moment": "^2.13.0",
+        		"@types/node": "~6.0.60",
+        		"@types/toastr": "^2.1.34",
+        		"chalk": "1.1.3",
+        		"codelyzer": "3.1.2",
+        		"del": "^3.0.0",
+        		"gulp": "^3.9.1",
+        		"gulp-flatten": "^0.3.1",
+        		"gulp-sass": "^3.1.0",
+        		"inline-ng2-resources": "^1.1.0",
+        		"jasmine-core": "~2.6.2",
+        		"jasmine-spec-reporter": "~3.2.0",
+        		"karma": "1.7.0",
+        		"karma-chrome-launcher": "~2.1.1",
+        		"karma-cli": "~1.0.1",
+        		"karma-coverage-istanbul-reporter": "^1.1.0",
+        		"karma-jasmine": "~1.1.0",
+        		"karma-jasmine-html-reporter": "^0.2.2",
+        		"karma-junit-reporter": "1.2.0",
+        		"karma-remap-istanbul": "^0.2.1",
+        		"karma-spec-reporter": "0.0.31",
+        		"liferay-npm-bundler": "^2.0.0",
+        		"protractor": "~5.1.0",
+        		"rollup": "0.41.6",
+        		"rollup-plugin-commonjs": "^8.0.2",
+        		"rollup-plugin-node-resolve": "3.0.0",
+        		"shelljs": "0.7.7",
+        		"sorcery": "0.10.0",
+        		"ts-node": "~2.0.0",
+        		"tslint": "5.4.0",
+        		"typescript": "2.4.2",
+        		"webpack": "2.6.1",
+        		"yargs": "8.0.1"
         	},
         	"main": "js/angular-loader.js",
         	"name": "my-npm-angular-portlet",
@@ -189,17 +205,11 @@ Follow these steps to configure your portlet:
 Next you can learn how to render your app's component and transpile your JS 
 files. 
 
-## Transpiling your JS and Rendering Your Component [](id=transpiling-your-js-and-rendering-your-component)
+## Rendering Your Component [](id=rendering-your-component)
 
-Follow these steps to transpile your JS files and render your app component:
-
-1.  To use ES2015+ syntax in your portlet, you must transpile it for the 
-    browser. To do this, replace the `.js` extension with `.es.js` for all JS 
-    files that need transpiled to ES2015+. For example the main `index.js` file 
-    would be renamed `index.es.js`. JS files with this extension are 
-    automatically transpiled by Babel before deployment. 
+Follow these steps to render your app component:
    
-2.  Inside your app's main TS file (`main.ts` for example), use the 
+1.  Inside your app's main TS file (`main.ts` for example), use the 
     function below to render your component:
 
         import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -227,8 +237,8 @@ Follow these steps to transpile your JS files and render your app component:
         		});
         }
 
-    Then in a separate file, such as `angular-loader.ts`, you can add the 
-    following configuration:
+2.  In a separate file, such as `angular-loader.ts`, you can add the following 
+    configuration:
 
         // Import needed polyfills before application is launched
 
