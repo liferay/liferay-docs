@@ -18,7 +18,7 @@ server; it's executing isomorphic JavaScript code in the browser.
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
-[npm development workflow support](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/using-npm-in-your-portlets).
+[npm development workflow support](/develop/tutorials/-/knowledge_base/7-0/using-npm-in-your-portlets).
 
 You can do many things with isomorphic code. You can run it in
 
