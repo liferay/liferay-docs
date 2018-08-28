@@ -1,31 +1,67 @@
 # Index Settings Contributor
 
-This sample shows how to add a custom type mapping on Liferay Portal.
+## What does this sample do when it's deployed?
 
-### What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
+The Index Settings Contributor sample demonstrates how to add a custom type
+mapping to @product@. You can demo this sample by completing the following
+steps:
 
-After you deploy the sample, open your Liferay Portal and go to "Control Panel -> Configuration -> Search -> Reindex all search indexes." click on the "Execute" button.
-After that, the properties you defined on you `.json` file will be added to Liferay's search engine.
+1.  Navigate to the *Control Panel* &rarr; *Configuration* &rarr; *Search* menu.
 
-### What Api(S) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+2.  Click *Execute* for the *Reindex all search indexes* action.
 
-This sample leverages the IndexSettingsContributor API.
+    All properties defined in your `.json` file are added to @product@'s search
+    engine. This sample adds the following index properties:
 
-### How does this sample leverage the api(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+    - `sampleDate`
+    - `sampleDouble`
+    - `sampleLong`
+    - `sampleText`
 
-Liferay's search engine provides an API to define custom mappings. To use it:
+    You'll verify this next.
 
-1. Define the new mapping.
-In this sample, the mapping is defined on `META-INF/mappings/resources/index-type-mappings.json` file.
-Notice that the default document on Liferay is called `LiferayDocumentType`.
-The mapping's features can be found at [elastic search's docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html).
+3.  Find your @product@'s instance ID. This can be found in the *Control Panel*
+    &rarr; *Configuration* &rarr; *Virtual Instances* menu.
 
-2. Put the mapping into Elasticsearch.
-The `IndexSettingsContributor` components are invoked during the reindexing and receive a `TypeMappingsHelper` as a hook to add new mappings.
+4.  Navigate to the following URL:
 
-The `ResourceUtil` is a utility class that read's the `.json` file.
+        http://localhost:9200/liferay-[INSTANCE_ID]/_mapping/LiferayDocumentType?pretty
 
-The `IndexSettingsContributor` is a class that allows the addition of type mappings on Liferay's search engine.
+    Be sure to insert your instance ID into the URL.
+
+5.  Verify the added properties are listed.
+
+    ![Figure 1: This sample added four new index properties.](../../../images/index-settings-contributor.png)
+
+## What API(s) and/or code components does this sample highlight?
+
+This sample leverages the
+[IndexSettingsContributor](@app-ref@/foundation/latest/javadocs/com/liferay/portal/search/elasticsearch/settings/IndexSettingsContributor.html)
+API.
+
+## How does this sample leverage the API(s) and/or code component?
+
+Liferay's search engine provides an API to define custom mappings. To use it,
+follow these fundamental steps:
+
+1.  Define the new mapping. In this sample, the mapping is defined in the
+    `META-INF/mappings/resources/index-type-mappings.json` file. Notice that the
+    default document for @product@ is called `LiferayDocumentType`. The
+    mapping's features can be found in
+    [Elasticsearch's docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html).
+
+2.  Inject the mapping into Elasticsearch. The `IndexSettingsContributor` class'
+    components are invoked during the reindexing stage and receive a
+    `TypeMappingsHelper` as a hook to add new mappings.
+
+This sample has two classes:
+
+- `ResourceUtil`: reads the `.json` file.
+
+- `IndexSettingsContributor`: allows the addition of type mappings on
+  @product@'s search engine.
+
+The `IndexSettingsContributor`'s `contribute` method adds the type mappings:
 
     @Override
     public void contribute(
@@ -41,19 +77,25 @@ The `IndexSettingsContributor` is a class that allows the addition of type mappi
         }
     }
 
-On the `ResourceUtil.readResouceAsString` parameter you should pass the path for the `.json` that contains the properties to be added.
+For the `ResourceUtil.readResouceAsString` parameter, you should pass the path
+for the `.json` file that contains the properties to be added.
 
-Also, it is important to highlight the `@Component` annotation that register a new service to the OSGI:
+Also, it is important to highlight the `IndexSettingsContributor`'s `@Component`
+annotation that registers a new service to the OSGi container:
 
     @Component(
     	immediate = true,
     	service = com.liferay.portal.search.elasticsearch6.settings.IndexSettingsContributor.class
     )
 
-## Where Is This Sample? [](id=where-is-this-sample)
+This sample demonstrates the essentials needed to contribute your own index
+settings.
 
-There are three different versions of this sample, each built with a different build tool:
+## Where Is This Sample?
 
-- [Gradle](https://github.com/luanmaoski/liferay-blade-samples/tree/blade-sample-index-settings-contributor/gradle/extensions/index-settings-contributor)
-- [Liferay Workspace](https://github.com/luanmaoski/liferay-blade-samples/tree/blade-sample-index-settings-contributor/liferay-workspace/extensions/index-settings-contributor)
-- [Maven](https://github.com/luanmaoski/liferay-blade-samples/tree/blade-sample-index-settings-contributor/maven/extensions/index-settings-contributor)
+There are three different versions of this sample, each built with a different
+build tool:
+
+- [Gradle](https://github.com/liferay/liferay-blade-samples/blob/7.1/gradle/extensions/index-settings-contributor)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/blob/7.1/liferay-workspace/extensions/index-settings-contributor)
+- [Maven](https://github.com/liferay/liferay-blade-samples/blob/7.1/maven/extensions/index-settings-contributor)
