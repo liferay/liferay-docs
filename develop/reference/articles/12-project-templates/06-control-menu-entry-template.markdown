@@ -4,7 +4,7 @@ In this article, you'll learn how to create a Liferay Control Menu entry as a
 Liferay module. To create a Liferay Control Menu entry via the command line
 using Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t control-menu-entry [-p packageName] [-c className] projectName
+    blade create -t control-menu-entry -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -13,7 +13,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.control.menu.entry \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -24,7 +25,7 @@ a package name of `com.liferay.docs.entry.control.menu` and a class name of
 `SampleProductNavigationControlMenuEntry`. You could run the following command
 to accomplish this:
 
-    blade create -t control-menu-entry -p com.liferay.docs.entry -c Sample my-control-menu-entry-project
+    blade create -t control-menu-entry -v 7.0 -p com.liferay.docs.entry -c Sample my-control-menu-entry-project
 
 or
 
@@ -36,7 +37,8 @@ or
         -Dpackage=com.liferay.docs.entry \
         -Dversion=1.0 \
         -DclassName=Sample \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.0
 
 After running the command above, your project's directory structure would look
 like this:

@@ -109,9 +109,13 @@ Click a question to view the answer.
   </div>
 </div>
 
-### Why did the entity sort order change when I migrated to a new database type? [](id=why-did-the-entity-sort-order-change-when-i-migrated-to-a-new-database-type)
-
-[Your new database uses a different default query result order--you should be able to configure a different order](/develop/tutorials/-/knowledge_base/7-0/sort-order-changed-with-a-different-database).
+<br/>
+<div class="ldn-faq-question">
+  <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">Why did the entity sort order change when I migrated to a new database type?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
+  <div class="hide">  
+    <p><a href="/develop/tutorials/-/knowledge_base/7-0/sort-order-changed-with-a-different-database">Your new database uses a different default query result order--you should be able to configure a different order</a>.</p>
+  </div>
+</div>
 
 ## Services and Components [](id=troubleshooting-services-and-components)
 

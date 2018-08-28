@@ -2,7 +2,7 @@
 
 This section focuses on Liferay npm sample portlets built with Gradle. You can
 view these samples by visiting the
-[gradle/apps/npm](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm)
+[gradle/apps/npm](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/npm)
 folder in the `liferay-blade-samples` Github repository.
 
 <!-- Readd the below snippet when npm samples are available for all build tools.
@@ -11,9 +11,9 @@ folder in the `liferay-blade-samples` Github repository.
 <!-- `apps/npm` folder corresponding to your preferred
 build tool:
 
-- [Gradle sample apps](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/npm)
-- [Liferay Workspace sample apps](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/apps/npm)
-- [Maven sample apps](https://github.com/liferay/liferay-blade-samples/tree/master/maven/apps/npm)
+- [Gradle sample apps](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/npm)
+- [Liferay Workspace sample apps](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/apps/npm)
+- [Maven sample apps](https://github.com/liferay/liferay-blade-samples/tree/7.0/maven/apps/npm)
 
 -->
 

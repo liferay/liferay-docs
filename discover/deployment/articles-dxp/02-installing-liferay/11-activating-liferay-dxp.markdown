@@ -1,15 +1,22 @@
 # Activating Liferay DXP [](id=activating-liferay-dxp)
 
-Liferay now offers a new way of registering its products. Beginning with 
-@product-ver@, *Liferay Connected Services* (LCS for short) manages activation 
-keys. LCS is a set of tools and services that lets administrators manage and 
-monitor their @product@ instances. LCS can install fix packs, monitor each 
-@product@ instance's performance, activate each @product@ instance, and help 
-manage @product@ subscriptions automatically. To start using @product@, each 
-instance must be associated with the subscriptions on LCS. For instructions on 
-activating your @product@ instance, 
-[click here](/discover/deployment/-/knowledge_base/7-0/licensing-your-dxp-server). 
+There are 2 ways to activate your Liferay DXP instance: 
 
-For more information, 
-[click here](/discover/deployment/-/knowledge_base/7-0/managing-liferay-with-liferay-connected-services) 
-to learn how to manage @product@ with LCS. 
+-   With an XML activation key that you request and receive from Liferay 
+    Support. 
+
+-   Online activation through Liferay Connected Services (LCS). Liferay DXP 7.0 
+    introduced LCS as a way to activate Liferay DXP instances. LCS can also 
+    install fix packs, monitor each instance's performance, and help 
+    administrators automatically manage Liferay DXP subscriptions. See the 
+    [LCS documentation](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services) 
+    for instructions on activating your instances with LCS. 
+
++$$$
+
+**Note:** You must use LCS for activation of containerized instances, cloud 
+deployments, and instances that use Liferay Analytics Cloud and/or elastic 
+subscriptions. Otherwise, you don't have to use LCS for activation. You can 
+instead request an XML activation key from Liferay Support. 
+
+$$$ 

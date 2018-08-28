@@ -139,5 +139,5 @@ and a build tool-specific plugins such as the
 [Gradle Service Builder plugin](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/util/portal-tools-service-builder).
 The Gradle Service Builder plugins includes Liferay's Service Builder plugin as
 a dependency. The `basic-api`, `basic-service`, `basic-web` modules in the
-[Service Builder Blade Sample](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/apps/service-builder/basic)
+[Service Builder Blade Sample](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/apps/service-builder/basic)
 project serve as example Service Builder projects.

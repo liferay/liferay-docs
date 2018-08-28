@@ -120,7 +120,7 @@ Now you can easily modify the JSPs of any application in Liferay.
 <!--https://commons.wikimedia.org/wiki/File:Carcharhinus_perezi_bahamas_feeding.jpg-->
 
 To see a sample JSP-modifying fragment in action, look at the
-[BLADE project named `module-jsp-override`](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/overrides/module-jsp-override).
+[BLADE project named `module-jsp-override`](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/overrides/module-jsp-override).
 
 ## Related Topics [](id=related-topics)
 

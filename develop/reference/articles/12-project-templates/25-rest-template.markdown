@@ -5,7 +5,7 @@ packaged in a Liferay module. To create a Liferay RESTful web service via the
 command line using Blade CLI or Maven, use one of the commands with the
 following parameters:
 
-    blade create -t rest [-p packageName] [-c className] projectName
+    blade create -t rest -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -14,7 +14,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.rest \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -24,7 +25,7 @@ RESTful web service project called `my-rest-project` with a package name of
 `com.liferay.docs.application` and a class name prefix of `Rest`. You could run
 one of the following commands to accomplish this:
 
-    blade create -t rest -p com.liferay.docs -c Rest my-rest-project
+    blade create -t rest -v 7.0 -p com.liferay.docs -c Rest my-rest-project
 
 or
 
@@ -36,7 +37,8 @@ or
         -Dpackage=com.liferay.docs \
         -Dversion=1.0 \
         -DclassName=Rest \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.0
 
 After running the command above, your project's directory structure looks like
 this:

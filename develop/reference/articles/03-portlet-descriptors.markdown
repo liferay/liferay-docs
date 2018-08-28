@@ -20,7 +20,7 @@ The mappings essentially flatten what is found in the XML descriptor, sticking
 relatively closely to the original naming in order to have a memorable
 relationship with those definitions.
 
-### JSR-168 & JSR-286 Descriptor Mappings [](id=jsr-168-jsr-286-descriptor-mappings)
+## JSR-168 & JSR-286 Descriptor Mappings [](id=jsr-168-jsr-286-descriptor-mappings)
 
 **Note:** XPath notation derived from the **Portlet XSD** [4](#four) is used in
 this document for simplicity.
@@ -56,11 +56,20 @@ this document for simplicity.
 |`/portlet-app/filter`<br/>`/portlet-app/filter-mapping`|[3](#three)|
 |`/portlet-app/default-namespace`|not supported|
 |`/portlet-app/event-definition`|not supported|
+|`/portlet-app/filter/init-param/name`|`javax.portlet.init-param.<name>=<value>`|
 |`/portlet-app/public-render-parameter`|not supported|
 |`/portlet-app/listener`|not supported<br/>?`javax.portlet.PortletURLGenerationListener`?|
 |`/portlet-app/container-runtime-option`|not supported|
 
-### Liferay Descriptor Mappings [](id=liferay-descriptor-mappings)
+## Liferay Descriptor Mappings [](id=liferay-descriptor-mappings)
+
+### Liferay Display [](id=liferay-display)
+
+|`liferay-display.xml` XPath | OSGi Portlet Service Property|
+|----|----|
+|`/display/category\[@name\]`|`com.liferay.portlet.display-category=<value>`|
+
+### Liferay Portlet [](id=liferay-portlet)
 
 **Note:** XPath notation derived from **Liferay Portlet** [5](#five) is used in
 this document for simplicity.

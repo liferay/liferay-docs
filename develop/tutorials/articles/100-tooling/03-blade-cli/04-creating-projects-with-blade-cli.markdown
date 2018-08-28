@@ -73,6 +73,8 @@ create` into a terminal. A list of the `create` options are listed below:
   API.
 - `-t, --template <string>`: The project template to use when creating the
   project. Run `blade create -l` for a listing of available Blade CLI templates.
+- `-v, --liferay-version`: The @product@ version to target when creating a
+  project (e.g., `7.0`).
 
 To create a module project, use the following syntax:
 
@@ -129,7 +131,7 @@ this, use the following syntax:
     blade samples <NAME>
 
 For example, if you wanted to generate the
-[portlet-ds](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/ds-portlet)
+[portlet-ds](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/ds-portlet)
 sample, you could execute
 
     blade samples ds-portlet

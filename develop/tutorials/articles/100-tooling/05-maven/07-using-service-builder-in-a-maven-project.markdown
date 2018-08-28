@@ -33,6 +33,7 @@ Time to get started!
                         <hbmFileName>src/main/resources/META-INF/module-hbm.xml</hbmFileName>
                         <implDirName>src/main/java</implDirName>
                         <inputFileName>service.xml</inputFileName>
+                        <mergeModelHintsConfigs>src/main/resources/META-INF/portlet-model-hints.xml</mergeModelHintsConfigs>
                         <modelHintsFileName>src/main/resources/META-INF/portlet-model-hints.xml</modelHintsFileName>
                         <osgiModule>true</osgiModule>
                         <propsUtil>com.liferay.blade.samples.servicebuilder.service.util.PropsUtil</propsUtil>

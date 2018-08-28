@@ -248,6 +248,6 @@ me!".
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/greedy-policy-option-portlet)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/apps/greedy-policy-option-portlet)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/apps/greedy-policy-option-portlet)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/greedy-policy-option-portlet)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/apps/greedy-policy-option-portlet)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.0/maven/apps/greedy-policy-option-portlet)

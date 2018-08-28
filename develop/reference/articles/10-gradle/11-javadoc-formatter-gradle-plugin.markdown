@@ -21,12 +21,12 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.javadoc.formatter", version: "1.0.20"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.javadoc.formatter", version: "1.0.22"
     }
 
     repositories {
         maven {
-            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+            url "https://repository-cdn.liferay.com/nexus/content/groups/public"
         }
     }
 }
@@ -41,7 +41,7 @@ transitive dependencies. The Liferay CDN repository hosts them all:
 ```gradle
 repositories {
     maven {
-        url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+        url "https://repository-cdn.liferay.com/nexus/content/groups/public"
     }
 }
 ```
@@ -102,7 +102,7 @@ manually adding a dependency to the `javadocFormatter` configuration:
 
 ```gradle
 dependencies {
-    javadocFormatter group: "com.liferay", name: "com.liferay.javadoc.formatter", version: "1.0.26"
+    javadocFormatter group: "com.liferay", name: "com.liferay.javadoc.formatter", version: "1.0.29"
 }
 ```
 

@@ -5,7 +5,7 @@ uses Service Builder as Liferay modules. To create a Liferay Service Builder
 project via the command line using Blade CLI or Maven, use one of the commands
 with the following parameters:
 
-    blade create -t service-builder [-p packageName] projectName
+    blade create -t service-builder -v 7.0 [-p packageName] projectName
 
 or
 
@@ -14,7 +14,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.service.builder \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DapiPath=[apiPath]
+        -DapiPath=[apiPath] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -24,7 +25,7 @@ create a Service Builder project called `tasks` with a package name of
 `com.liferay.docs.tasks`. You could run the following command to accomplish
 this:
 
-    blade create -t service-builder -p com.liferay.docs.tasks tasks
+    blade create -t service-builder -v 7.0 -p com.liferay.docs.tasks tasks
 
 or
 
@@ -35,7 +36,8 @@ or
         -DartifactId=tasks \
         -Dpackage=com.liferay.docs.tasks \
         -Dversion=1.0 \
-        -DapiPath=com.liferay.api.path
+        -DapiPath=com.liferay.api.path \
+        -DliferayVersion=7.0
 
 <!-- How do we set apiPath param in blade command? -Cody -->
 

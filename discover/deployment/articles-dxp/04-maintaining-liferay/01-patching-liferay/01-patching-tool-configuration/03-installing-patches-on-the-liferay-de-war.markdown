@@ -42,7 +42,7 @@ Download the necessary artifacts from the
         module.framework.static.path=d:/liferay-de-home/osgi/static	
 
 3.  Download the patch (fix pack or hotfix) that you'd like to install and place
-    it to the Patching Tool's `patches` folder
+    it to the Patching Tool's `patches` folder without unzipping it.
 
 4.  Now the Patching Tool info command shows the following output:
 
@@ -86,4 +86,3 @@ deployed on any supported Application Server.
 [Installing @product@ on WebLogic 12c R2](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp-on-weblogic-12c-r2)
 
 [Installing @product@ on WebSphere 8.5.5](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp-on-websphere-8-5-5)
-

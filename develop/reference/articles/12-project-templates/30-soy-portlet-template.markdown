@@ -5,7 +5,7 @@ a Liferay module. To create a Soy portlet as a module via the command
 line using Blade CLI or Maven, use one of the commands with the following
 parameters:
 
-    blade create -t soy-portlet [-p packageName] [-c className] projectName
+    blade create -t soy-portlet -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -14,7 +14,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.soy.portlet \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -28,7 +29,7 @@ you'd like to create a service of type `javax.portlet.Portlet` that extends the
 type* is to say *component type*. You could run the following command to
 accomplish this:
 
-    blade create -t soy-portlet -p com.liferay.docs.soyportlet -c MySoyPortlet my-soy-portlet-project
+    blade create -t soy-portlet -v 7.0 -p com.liferay.docs.soyportlet -c MySoyPortlet my-soy-portlet-project
 
 or
 
@@ -40,7 +41,8 @@ or
         -Dpackage=com.liferay.docs.soyportlet \
         -Dversion=1.0 \
         -DclassName=MySoyPortlet \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.0
 
 After running the command above, your project's directory structure looks like
 this:

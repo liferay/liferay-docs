@@ -4,7 +4,7 @@ In this article, you'll learn how to create a Liferay portlet provider as a
 Liferay module. To create a Liferay portlet provider via the command line using
 Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t portlet-provider [-p packageName] [-c className] projectName
+    blade create -t portlet-provider -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -13,7 +13,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.portlet.provider \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -23,7 +24,7 @@ create a portlet provider project called `my-portlet-provider-project` with a
 package name of `com.liferay.docs.portlet` and a class name prefix of `Sample`.
 You could run the following command to accomplish this:
 
-    blade create -t portlet-provider -p com.liferay.docs -c Sample my-portlet-provider-project
+    blade create -t portlet-provider -v 7.0 -p com.liferay.docs -c Sample my-portlet-provider-project
 
 or
 
@@ -35,7 +36,8 @@ or
         -Dpackage=com.liferay.docs \
         -Dversion=1.0 \
         -DclassName=Sample \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.0
 
 After running the command above, your project's directory structure would look
 like this

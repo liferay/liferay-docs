@@ -32,7 +32,7 @@ configuration action, follow these steps:
 
 **Note:** To quickly see a working configuration action, deploy the
 `configuration-action` [Blade
-sample](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/configuration-action)
+sample](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/configuration-action)
 and add the *Blade Message Portlet* to a page. Click the *Options* button
 (![Options](../../images/icon-app-options.png)) and select *Configuration*.
 Change the configuration options and save them to see them in action.

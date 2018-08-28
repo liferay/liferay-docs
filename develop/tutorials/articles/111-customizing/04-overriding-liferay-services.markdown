@@ -80,6 +80,14 @@ Each of these methods overrides a Liferay service method. These implementations
 merely add a few print statements that are executed before the original service
 implementations are invoked.
 
+Lastly, you must add the following method to the bottom of your service wrapper
+so it can find the appropriate service it's overriding on deployment.
+
+    @Reference(unbind = "-")
+    private void serviceSetter(UserLocalService userLocalService) {
+        setWrappedService(userLocalService);
+    }
+
 Now you're ready to build your project. Navigate to your project's root folder
 and run `../../gradlew build`. The JAR file representing your portlet module is
 produced in your project's `build/libs` directory.

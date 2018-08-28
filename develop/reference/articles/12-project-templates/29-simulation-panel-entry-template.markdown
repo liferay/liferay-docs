@@ -4,7 +4,7 @@ In this article, you'll learn how to create a Liferay simulation panel entry as
 a Liferay module. To create a simulation panel entry via the command line using
 Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t simulation-panel-entry [-p packageName] [-c className] projectName
+    blade create -t simulation-panel-entry -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -13,7 +13,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.simulation.panel.entry \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -25,7 +26,7 @@ want to create a simulation panel entry project called
 `SampleSimulationPanelApp`. You could run the following command to accomplish
 this:
 
-    blade create -t simulation-panel-entry -p com.liferay.docs -c Sample my-simulation-panel-entry
+    blade create -t simulation-panel-entry -v 7.0 -p com.liferay.docs -c Sample my-simulation-panel-entry
 
 or
 
@@ -37,7 +38,8 @@ or
         -Dpackage=com.liferay.docs \
         -Dversion=1.0 \
         -DclassName=Sample \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.0
 
 After running the command above, your project's directory structure would look
 like this
@@ -65,7 +67,7 @@ like this
 The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
 files to the folders outlined above. You can visit the
-[simulation-panel-app](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/simulation-panel-app)
+[simulation-panel-app](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/simulation-panel-app)
 sample project for a more expanded sample of a control menu entry. Likewise, see
 the
 [Extending the Simulation Menu](/develop/tutorials/-/knowledge_base/7-0/extending-the-simulation-menu)

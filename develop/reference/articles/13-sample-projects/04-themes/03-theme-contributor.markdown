@@ -63,6 +63,6 @@ tutorial.
 There are three different versions of this sample, each built with a different
 build tool:
 
-- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/themes/theme-contributor)
-- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/themes/theme-contributor)
-- [Maven](https://github.com/liferay/liferay-blade-samples/tree/master/maven/themes/theme-contributor)
+- [Gradle](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/themes/theme-contributor)
+- [Liferay Workspace](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/themes/theme-contributor)
+- [Maven](https://github.com/liferay/liferay-blade-samples/tree/7.0/maven/themes/theme-contributor)

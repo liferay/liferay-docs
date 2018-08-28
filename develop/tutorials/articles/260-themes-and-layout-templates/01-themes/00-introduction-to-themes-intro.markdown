@@ -22,9 +22,9 @@ extend a theme. They enable reusable code for themes. Instead of rewriting the
 code each time, you can use the same themelet in each theme.
 
 Liferay has its own set of base themes, called 
-[styled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-styled) 
+[styled](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/foundation/frontend-theme/frontend-theme-styled) 
 and 
-[unstyled](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-unstyled) 
+[unstyled](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/foundation/frontend-theme/frontend-theme-unstyled) 
 that create the default look and feel you see at first start. The *styled* theme 
 inherits from the *unstyled* theme, and simply adds some additional styling on 
 top. These same base themes are used to create a custom theme. See the 

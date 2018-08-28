@@ -4,7 +4,7 @@ In this article, you'll learn how to create an npm Metal.js portlet as a
 Liferay module. To create an npm Metal.js portlet via the command line using
 Blade CLI or Maven, use one of the commands with the following parameters:
 
-    blade create -t npm-metaljs-portlet [-p packageName] [-c className] projectName
+    blade create -t npm-metaljs-portlet -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -13,7 +13,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.npm.metaljs.portlet \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -28,7 +29,7 @@ package name of `com.liferay.npm.metaljs` and a class name of
 type* is to say *component type*. You could run the following command to
 accomplish this:
 
-    blade create -t npm-metaljs-portlet -p com.liferay.npm.metaljs -c MyNpmMetaljsPortlet my-npm-metaljs-portlet
+    blade create -t npm-metaljs-portlet -v 7.0 -p com.liferay.npm.metaljs -c MyNpmMetaljsPortlet my-npm-metaljs-portlet
 
 or
 
@@ -40,7 +41,8 @@ or
         -Dpackage=com.liferay.npm.metaljs \
         -Dversion=1.0 \
         -DclassName=MyNpmMetaljsPortlet \
-        -DpackageJsonVersion=1.0.0
+        -DpackageJsonVersion=1.0.0 \
+        -DliferayVersion=7.0
 
 After running the command above, your project's directory structure looks like
 this:

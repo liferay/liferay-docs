@@ -5,7 +5,7 @@ contributor as a Liferay module. To create a template context contributor via
 the command line using Blade CLI or Maven, use one of the commands with the
 following parameters:
 
-    blade create -t template-context-contributor [-p packageName] [-c className] projectName
+    blade create -t template-context-contributor -v 7.0 [-p packageName] [-c className] projectName
 
 or
 
@@ -14,7 +14,8 @@ or
         -DarchetypeArtifactId=com.liferay.project.templates.template.context.contributor \
         -DartifactId=[projectName] \
         -Dpackage=[packageName] \
-        -DclassName=[className]
+        -DclassName=[className] \
+        -DliferayVersion=7.0
 
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
@@ -26,7 +27,7 @@ you want to create a template context contributor project called
 `SampleTemplateContextContributor`. You could run the following command to
 accomplish this:
 
-    blade create -t template-context-contributor -p com.liferay.docs -c Sample my-template-context-contributor
+    blade create -t template-context-contributor -v 7.0 -p com.liferay.docs -c Sample my-template-context-contributor
 
 or
 
@@ -38,7 +39,8 @@ or
         -Dpackage=com.liferay.docs \
         -Dversion=1.0 \
         -DclassName=Sample \
-        -Dauthor=Joe Bloggs
+        -Dauthor=Joe Bloggs \
+        -DliferayVersion=7.0
 
 After running the command above, your project's directory structure would look
 like this
@@ -60,7 +62,7 @@ like this
 The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
 files to the folders outlined above. You can visit the
-[template-context-contributor](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/themes/template-context-contributor)
+[template-context-contributor](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/themes/template-context-contributor)
 sample project for a more expanded sample of a template context contributor.
 Likewise, see the
 [Context Contributors](/develop/tutorials/-/knowledge_base/7-0/context-contributors)
