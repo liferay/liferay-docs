@@ -86,7 +86,7 @@ Marketplace, uninstall it with Marketplace. If you installed it with the file
 system, use the 
 [file system](/discover/portal/-/knowledge_base/7-1/installing-apps-manually)
 to uninstall it. If you installed it with the App Manager, however, use 
-[Blacklisting](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules)
+[Blacklisting](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules-and-components)
 to uninstall it. 
 
 $$$

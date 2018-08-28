@@ -136,7 +136,7 @@ this document for simplicity.
 |`/liferay-portlet-app/portlet/poller-processor-class`|[3](#three)|
 |`/liferay-portlet-app/portlet/pop-message-listener-class`|[3](#three)|
 |`/liferay-portlet-app/portlet/pop-up-print`|`com.liferay.portlet.pop-up-print=<boolean>`|
-|`/liferay-portlet-app/portlet/portlet-data-handler-class`|[3](#three)|)|
+|`/liferay-portlet-app/portlet/portlet-data-handler-class`|[3](#three)|
 |`/liferay-portlet-app/portlet/portlet-layout-listener-class`|[3](#three)|
 |`/liferay-portlet-app/portlet/portlet-name`|not supported|
 |`/liferay-portlet-app/portlet/portlet-url-class`|[3](#three)|

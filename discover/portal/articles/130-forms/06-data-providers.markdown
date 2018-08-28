@@ -10,7 +10,7 @@ someone else (hopefully a trustworthy expert) to keep the data updated.
 When setting up a data provider, you're accessing a 
 [REST web service](https://en.wikipedia.org/wiki/Representational_state_transfer). 
 Use the 
-[JSON web services registered in Liferay](/develop/tutorials/-/knowledge_base/7-0/registering-json-web-services),
+[JSON web services registered in Liferay](/develop/tutorials/-/knowledge_base/7-1/registering-json-web-services),
 or any other REST web service you can access. To find a list of the ready-to-use
 registered JSON web services in @product@, navigate to
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws) (assuming
@@ -73,7 +73,7 @@ To add a *Countries of the World* Data Provider for use in your Forms,
 
     Label: `Country Name`
 
-    Path: `nameCurrentValue` 
+    Path: `$..nameCurrentValue` 
 
     Type: `List`
 
@@ -81,21 +81,11 @@ To add a *Countries of the World* Data Provider for use in your Forms,
 
 ![Figure 1: Set up a simple data provider in no time.](../../images/forms-simple-data-provider.png)
 
-
-<!--    provides the full, properly capitalized country name, and that’s what you want users of the form to see. We are using JsonPath to navigate the returning xml structure. JsonPath uses special notation to represent nodes and their connections to adjacent nodes in a path. There are two styles of notation, namely dot and bracket.
-You can check more detail on this topic on the links showing in your screen:
-http://jsonpath.com/
-
-http://goessner.net/articles/JsonPath/
-
-https://www.pluralsight.com/blog/tutorials/introduction-to-jsonpath
-
-I'm using the same service but for outputing the EU countries only. The Path in the outputs needs to be Json Path. Use this website http://jsonpath.com/? to test the output and understand the expression you need to have.
-I'm currently recording the videos for our training and the chapter on data providers looks like the text below.
-
-Hope this helps!
-RL
--->
+What's that `$..` before `nameCurrentValue`? It's JsonPath syntax to navigate
+the JSON data structure and specify the path to the output. Learn more about
+JsonPath
+[here](https://github.com/json-path/JsonPath/blob/master/README.md) and
+[here](http://goessner.net/articles/JsonPath/).
 
 ## Using a Data Provider in a Select Field [](id=using-a-data-provider-in-a-select-field)
 
@@ -135,12 +125,37 @@ provided by the data provider. Once you grant permissions, click *Save*.
 
 ## Data Provider Configuration [](id=data-provider-configuration)
 
-The above instructions for adding a basic Data Provider are a good start, but
-there are more options.
+The above instructions cover adding a basic Data Provider. Knowing more about
+each field in the Data Provider setup form opens up more possibilities.
 
-<!-- NOT WORKING, LEAVE OUT UNTIL I CONFIRM IT'S NON-FUNCTIONAL *Support filtering by keyword.*
-: Filter the REST service call's results by a valid parameter from the REST
-service.-->
+**URL**
+: The URL of an internal or external REST service endpoint. Consider the REST
+service at https://restcountries.eu/, which contains a REST API endpoint to find
+countries by `region`:
+
+    `https://restcountries.eu/rest/v2/region/{region}`
+
+Data Provider URLs can take two parameter types: path parameters and
+query parameters. 
+
+Path parameters are part of the URL calling the REST web service, and are added
+using the pattern `https://service-url.com/service/{path_parameter_name}`: 
+
+The `restcountries.eu` service's `region` endpoint's path parameter is
+`{region}`. Path parameters are mandatory parts of the URL, so make sure you
+specify an Input (see below) with a _Parameter_ field value matching the path
+parameter from the URL. 
+
+Query parameters are complementary parts of the URL that filter the output of
+the service call, following the pattern
+`?query_parameter=query_parameter_value`:
+
+    https://restcountries.eu/rest/v2/all?fields=capital
+
+Unlike path parameters, query parameters are optional.
+
+**User Name and Password** 
+: Credentials used to authenticate to the REST Web Service, if necessary.
 
 **Cache data on the first request.**
 : If the data is cached, a second load of the select list field is much faster,
@@ -151,19 +166,21 @@ since a second call to the REST service provider is unnecessary.
 request, if a response is not returned.
 
 **Inputs**
-: Configure parameters from the REST service to use to filter the REST service's
-response (displayed in the Outputs parameter configured below). Specify the
-Label, Parameter, and Type (Text or Number), and Choose whether the input is
-required to use the Data Provider. You can add multiple Inputs. These are used
-in Form Rules. A User enters input into one field, and their input is sent to
-the REST service. The REST service's response data is filtered by the input.
+: Configure path or query parameters from the REST service to filter the REST
+service's response. Specify the Label, Parameter, and Type (Text or Number), and
+choose whether the input is required to use the Data Provider. You can add
+multiple Inputs. To provide a way for users to specify the input value, use an
+[_Autofill_ Form Rule](/discover/portal/-/knowledge_base/7-1/action-autofill).
+A User enters input into one field, and their input is sent to the REST service.
+The REST service's response data is filtered by the input parameter.
 
 **Outputs**
-: The Parameter to display in Select from List fields. You can add multiple
-Outputs. Outputs can be filtered by inputs (see above) but can also be displayed
-without configuring input filtering. Specify the Label, Path, and Type (Text,
-Number, or List). The Path field is specified in JsonPath syntax.
+: The Parameter to display in Select from List or Text fields with autocomplete
+enabled. You can add multiple Outputs. Outputs can be filtered by inputs (see
+above) but can also be displayed without configuring input filtering. Specify
+the Label, Path, and Type (Text, Number, or List). The Path field is specified
+in [JsonPath syntax](https://github.com/json-path/JsonPath/blob/master/README.md). 
+Using the `restcountries.eu` service, specify the `name` field as an Output by
+entering enter `$..name` in the Path field.
 
 ![Figure 3: Set up Data Providers to display data retrieved from a REST service.](../../images/forms-data-provider-configuration.png)
-
-

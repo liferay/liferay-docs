@@ -47,10 +47,8 @@ It's very powerful. Although it was previously difficult to learn and use, its
 modernized standards, such as Declarative Services, have made learning and using
 it much easier.
 
-3. Core Public APIs are provided through 
-[portal-kernel](/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules)
-(previously known as portal-service); all other public APIs are provided by
-their own modules.
+3. Core Public APIs are provided through portal-kernel (previously known as 
+portal-service); all other public APIs are provided by their own modules.
 
 4. You can reuse modules and libraries, and manage the dependencies among
 them.

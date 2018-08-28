@@ -19,7 +19,7 @@ portlets:
 -   [Servlet-based portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-servlet-based-portlet)
 -   [Liferay MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-liferay-mvc-portlet)
 -   [Portlet that uses Service Builder](/develop/tutorials/-/knowledge_base/7-1/upgrading-portlets-that-use-service-builder)
--   [Struts Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-struts-portlet)
+-   [Struts Portlet](/develop/tutorials/-/knowledge_base/7-0/upgrading-a-struts-portlet)
 -   [Spring MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-spring-mvc-portlet)
 
 <!-- TODO: readd JSF link, when available. -Cody

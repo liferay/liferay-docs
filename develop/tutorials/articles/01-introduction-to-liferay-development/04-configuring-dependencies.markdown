@@ -268,11 +268,7 @@ that's a skill you can depend on!
 
 [Reference](/develop/reference/-/knowledge_base/7-1/development-reference)
 
-[Liferay API Modules](/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules)
-
 [Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
-
-[Classes Moved from portal-service.jar](/develop/reference/-/knowledge_base/7-1/classes-moved-from-portal-service-jar)
 
 [Tooling](/develop/tutorials/-/knowledge_base/7-1/tooling)
 

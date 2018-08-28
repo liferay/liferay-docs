@@ -316,6 +316,4 @@ for you to learn more.
 
 [Maven](/develop/tutorials/-/knowledge_base/7-1/maven)
 
-[Developing a Web Application](/develop/tutorials/-/knowledge_base/7-1/developing-a-web-application)
-
 [Planning a Plugin Upgrade to Liferay 7](/develop/tutorials/-/knowledge_base/7-1/migrating-existing-code-to-liferay-7)
