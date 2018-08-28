@@ -164,7 +164,7 @@ parallel destination and manages its resources:
            // Create the destination
 
            Destination destination = _destinationFactory.createDestination(
-                kaleoGraphWalkerDestinationConfiguration);
+                destinationConfiguration);
 
             // Add the destination to the OSGi service registry
 
