@@ -1,5 +1,12 @@
 # Navigating Between Related Resources [](id=navigating-between-related-resources)
 
++$$$
+
+**Note:** Hypermedia REST APIs are currently only available as a limited private 
+alpha. 
+
+$$$
+
 A key benefit of Liferay's hypermedia REST APIs is discovering and navigating 
 all the services from a single starting point, the API's home URL. This is 
 possible because each endpoint contains links to its related resources or 

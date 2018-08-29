@@ -1,5 +1,12 @@
 # Get Started: Invoke a Service [](id=get-started-invoke-a-service)
 
++$$$
+
+**Note:** Hypermedia REST APIs are currently only available as a limited private 
+alpha. 
+
+$$$
+
 Once you identify the resource you want via the 
 [API's root entry point](/develop/tutorials/-/knowledge_base/7-1/get-started-discover-the-api), 
 you can access that resource's URL. Suppose you want to manage organizations. If

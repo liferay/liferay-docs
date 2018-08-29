@@ -1,5 +1,12 @@
 # Enabling Hypermedia REST APIs [](id=enabling-hypermedia-rest-apis)
 
++$$$
+
+**Note:** Hypermedia REST APIs are currently only available as a limited private 
+alpha. 
+
+$$$
+
 Liferay's Hypermedia REST APIs are based on two different components:
 
 -   **APIO Architect:** The modules that support the implementation of 

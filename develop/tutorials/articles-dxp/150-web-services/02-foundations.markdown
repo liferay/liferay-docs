@@ -1,5 +1,12 @@
 # Foundations: JAX-RS, OSGi Whiteboard, and APIO [](id=foundations-jax-rs-osgi-whiteboard-and-apio)
 
++$$$
+
+**Note:** Hypermedia REST APIs are currently only available as a limited private 
+alpha. 
+
+$$$
+
 Hypermedia REST APIs in @product@ are built on these technologies:
 
 -   JAX-RS

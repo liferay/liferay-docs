@@ -1,5 +1,12 @@
 # API Vocabulary [](id=api-vocabulary)
 
++$$$
+
+**Note:** Hypermedia REST APIs are currently only available as a limited private 
+alpha. 
+
+$$$
+
 When defining an API, the developer must decide how to expose the representation
 of its resources. This determines its ease of use and how it can evolve.
 Traditionally, there are two approaches: 

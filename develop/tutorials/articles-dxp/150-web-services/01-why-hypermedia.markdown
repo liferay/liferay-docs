@@ -1,5 +1,12 @@
 # Why Hypermedia REST APIs? [](id=why-hypermedia-rest-apis)
 
++$$$
+
+**Note:** Hypermedia REST APIs are currently only available as a limited private 
+alpha. 
+
+$$$
+
 [Hypermedia](https://en.wikipedia.org/wiki/Hypermedia) is hypertext (the H in
 HTML) extended to other media, like images, audio, video, or links. This isn't
 a new concept. When a browser requests a web page, it retrieves an HTML document
@@ -14,16 +21,6 @@ links to discover the operations available on each resource. Again, this isn't
 a new concept. [Hypermedia as the Engine of Application State
 (HATEOAS)](https://en.wikipedia.org/wiki/HATEOAS) specifies that an API uses
 hypermedia to provide the information that clients need to use the API. 
-
-+$$$
-
-**Note:** Hypermedia REST APIs are available starting with Liferay DXP 7.1 Fix 
-Pack 1, and Liferay Portal CE 7.1 GA2. To work with web services in earlier 
-releases, you must do so via 
-[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services), 
-JAX-RS, or JAX-WS. 
-
-$$$
 
 ## Use Cases for Hypermedia REST APIs [](id=use-cases-for-hypermedia-rest-apis)
 
