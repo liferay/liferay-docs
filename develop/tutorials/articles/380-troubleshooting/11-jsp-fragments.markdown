@@ -2,9 +2,14 @@
 
 +$$$
 
-**Important:** Using OSGi fragments to override JSPs is deprecated as of 
-@product@ 7.0 and is replaced by
-[using portlet filters](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-portlet-filters). 
+**Important:** It's strongly recommended to
+[customize JSPs using @product@'s API](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps).
+Since overriding a JSP using an OSGi fragment is not based on APIs there's no
+way to guarantee that it will fail gracefully. Instead, if your customization is
+buggy (because of your code or because of a change in Liferay), you are most
+likely to find out at runtime, where functionality breaks and nasty log errors
+greet you. Overriding a JSP using a fragment should only be used as a last
+resort. 
 
 $$$
 
