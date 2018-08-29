@@ -52,8 +52,7 @@ Liferay Launch section.
 $$$
 
 When starting your server for the first time, it creates a 
-`portal-ext.properties` file in your server's directory. This properties file 
-contains the property setting `include-and-override=portal-developer.properties`, 
+`portal-setup-wizard.properties` file in your server's directory. Rename this file into `portal-ext.properties` and add the property setting `include-and-override=portal-developer.properties`, 
 which enables Developer Mode. Most of the configuration is provided by the 
 `portal-developer.properties` file, but you still have to configure the 
 FreeMarker template setting. Follow the steps in the 
