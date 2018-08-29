@@ -50,3 +50,9 @@ one. If there's an existing shortcut, it updates it by calling the
                             fileShortcutId, folderId, toFileEntryId, serviceContext);
             }
     }
+
+## Related Topics
+
+[Creating File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/creating-file-shortcuts)
+
+[Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/deleting-file-shortcuts)

@@ -78,3 +78,12 @@ current version (`fileEntry.getVersion()`). If this comparison is greater than
         }
     }
 
+## Related Topics
+
+[Deleting Files](/develop/tutorials/-/knowledge_base/7-1/deleting-files)
+
+[Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/deleting-file-shortcuts)
+
+[Deleting Folders](/develop/tutorials/-/knowledge_base/7-1/deleting-folders)
+
+[Moving Entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-1/moving-entities-to-the-recycle-bin)

@@ -36,3 +36,13 @@ Here's an explanation of the arguments:
     use different values if you wish. 
 -   `serviceContext`: The 
     [Service Context](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
+
+## Related Topics
+
+[Creating Folders](/develop/tutorials/-/knowledge_base/7-1/creating-folders)
+
+[Updating Folders](/develop/tutorials/-/knowledge_base/7-1/updating-folders)
+
+[Deleting Folders](/develop/tutorials/-/knowledge_base/7-1/deleting-folders)
+
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)

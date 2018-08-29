@@ -93,3 +93,13 @@ on. For example, such methods may contain parameters like `folderId` or
 `parentFolderId`. Also note that you can use the constant 
 `DLFolderConstants.DEFAULT_PARENT_FOLDER_ID` to specify the root folder of the 
 repository you're working in. 
+
+## Related Topics
+
+[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+
+[OSGi Services and Dependency Injection with Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services)
+
+[Leveraging Dependencies](/develop/tutorials/-/knowledge_base/7-1/leveraging-dependencies)
+
+[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)

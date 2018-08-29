@@ -1,9 +1,9 @@
 # Updating Entities [](id=updating-entities)
 
 Like 
-[creating](liferay.com) 
+[creating](/develop/tutorials/-/knowledge_base/7-1/creating-entities) 
 and 
-[deleting](liferay.com) 
+[deleting](/develop/tutorials/-/knowledge_base/7-1/deleting-entities) 
 entities, updating entities is a key task when working with Documents and Media. 
 The methods in the Documents and Media API for creating and updating entities 
 are similar. There are, however, a few important differences. The tutorials in 

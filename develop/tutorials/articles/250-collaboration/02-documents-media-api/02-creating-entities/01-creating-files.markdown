@@ -77,3 +77,15 @@ then calls the `addFileEntry` method with those data.
         }
 
     }
+
+## Related Topics
+
+[Updating Files](/develop/tutorials/-/knowledge_base/7-1/updating-files)
+
+[Deleting Files](/develop/tutorials/-/knowledge_base/7-1/deleting-files)
+
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)
+
+[Creating Folders](/develop/tutorials/-/knowledge_base/7-1/creating-folders)
+
+[Creating File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/creating-file-shortcuts)

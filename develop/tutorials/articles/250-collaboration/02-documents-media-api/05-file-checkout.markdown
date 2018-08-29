@@ -10,9 +10,6 @@ operations:
 -   File checkout. 
 -   File checkin. 
 -   Cancel a checkout, discarding any changes. 
--   File checkin and checkout, in a single operation. 
-<!-- Add section for the last item -->
-<!-- Also add examples in each section -->
 
 ## File Checkout [](id=file-checkout)
 
@@ -187,3 +184,9 @@ them to call `cancelCheckOut`:
                     }
             }
     }
+
+## Related Topics
+
+[Checking Out and Editing Files](/discover/portal/-/knowledge_base/7-1/checking-out-and-editing-files)
+
+[Updating Files](/develop/tutorials/-/knowledge_base/7-1/updating-files)

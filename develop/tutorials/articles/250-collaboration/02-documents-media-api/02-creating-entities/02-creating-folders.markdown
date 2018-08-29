@@ -73,3 +73,13 @@ can create one via the API by setting the
 Note that the `repositoryId` of such a folder indicates the external repository 
 the folder points to---not the repository that the folder exists in. Also, mount 
 point folders can only exist in the default site repository. 
+
+## Related Topics
+
+[Updating Folders](/develop/tutorials/-/knowledge_base/7-1/updating-folders)
+
+[Deleting Folders](/develop/tutorials/-/knowledge_base/7-1/deleting-folders)
+
+[Copying Folders](/develop/tutorials/-/knowledge_base/7-1/copying-folders)
+
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)

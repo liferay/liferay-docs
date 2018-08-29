@@ -49,3 +49,13 @@ If there's an existing folder, then it's updated by the `DLAppService` method
                             folderId, name, description, serviceContext);
             }
     }
+
+## Related Topics
+
+[Creating Folders](/develop/tutorials/-/knowledge_base/7-1/creating-folders)
+
+[Deleting Folders](/develop/tutorials/-/knowledge_base/7-1/deleting-folders)
+
+[Copying Folders](/develop/tutorials/-/knowledge_base/7-1/copying-folders)
+
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)

@@ -65,3 +65,9 @@ one by calling the `addFileShortcut` method with required data:
 See the tutorial on 
 [updating file shortcuts](liferay.com) 
 for detailed information on that operation. 
+
+## Related Topics
+
+[Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/deleting-file-shortcuts)
+
+[Updating File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/updating-file-shortcuts)

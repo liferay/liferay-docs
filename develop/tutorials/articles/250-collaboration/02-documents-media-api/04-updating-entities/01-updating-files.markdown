@@ -1,7 +1,7 @@
 # Updating Files [](id=updating-files)
 
 Updating a file is a bit more complicated than 
-[creating one](liferay.com). 
+[creating one](/develop/tutorials/-/knowledge_base/7-1/creating-files). 
 This is because of the way the update operation handles a file's metadata and 
 content. If you only want to update a file's content, you must also supply the 
 file's existing metadata. Otherwise, the update operation could corrupt or lose 
@@ -96,3 +96,10 @@ method `updateFileEntry` with those data. Note that this example calls the
 
     }
 
+## Related Topics
+
+[Creating Files](/develop/tutorials/-/knowledge_base/7-1/creating-files)
+
+[Deleting Files](/develop/tutorials/-/knowledge_base/7-1/deleting-files)
+
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)

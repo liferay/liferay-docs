@@ -43,3 +43,12 @@ Bin:
     for information on the other methods you can use to move entities to the 
     Recycle Bin. 
 
+## Related Topics
+
+[Deleting Files](/develop/tutorials/-/knowledge_base/7-1/deleting-files)
+
+[Deleting Folders](/develop/tutorials/-/knowledge_base/7-1/deleting-folders)
+
+[Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/deleting-file-shortcuts)
+
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)

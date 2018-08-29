@@ -72,3 +72,7 @@ approach is then used with `moveFileEntry` to move several files
 
             ...
     }
+
+## Related Topics
+
+[Copying Folders](/develop/tutorials/-/knowledge_base/7-1/copying-folders)

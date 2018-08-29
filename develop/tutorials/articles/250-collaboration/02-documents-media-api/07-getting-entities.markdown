@@ -140,3 +140,15 @@ the entities:
 
 To see all such methods, see the 
 [`DLAppService` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
+
+## Related Topics
+
+[Getting Started with the Documents and Media API](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
+
+[Creating Entities](/develop/tutorials/-/knowledge_base/7-1/creating-entities)
+
+[Deleting Entities](/develop/tutorials/-/knowledge_base/7-1/deleting-entities)
+
+[Updating Entities](/develop/tutorials/-/knowledge_base/7-1/updating-entities)
+
+[Copying and Moving Entities](/develop/tutorials/-/knowledge_base/7-1/copying-and-moving-entities)

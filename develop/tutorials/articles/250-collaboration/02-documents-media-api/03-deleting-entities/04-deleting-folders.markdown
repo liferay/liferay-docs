@@ -56,3 +56,15 @@ if the `moveToTrash` flag is `true`, or deleting the folder via the
 Note that you don't have to support the Recycle Bin in your delete operations. 
 If you want to, however, see the tutorial on 
 [moving entities to the Recycle Bin](liferay.com). 
+
+## Related Topics
+
+[Moving Entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-1/moving-entities-to-the-recycle-bin)
+
+[Creating Folders](/develop/tutorials/-/knowledge_base/7-1/creating-folders)
+
+[Updating Folders](/develop/tutorials/-/knowledge_base/7-1/updating-folders)
+
+[Copying Folders](/develop/tutorials/-/knowledge_base/7-1/copying-folders)
+
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)
