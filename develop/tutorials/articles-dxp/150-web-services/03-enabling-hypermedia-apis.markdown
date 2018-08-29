@@ -7,34 +7,33 @@ alpha.
 
 $$$
 
-Liferay's Hypermedia REST APIs are based on two different components:
-
--   **APIO Architect:** The modules that support the implementation of 
-    Hypermedia REST APIs. 
--   **The API Implementation:** Contains the code for the specific API 
-    endpoints. 
+Liferay's Hypermedia REST APIs are an implementation of 
+[Apio Architect](https://github.com/liferay/com-liferay-apio-architect). 
+Apio Architect is a server-side library that facilitates the creation of Apio 
+REST APIs. Although Apio Architect is pre-installed in Liferay CE Portal 7.1 and 
+Liferay DXP 7.1, you may need to update it before installing Hypermedia REST 
+APIs. 
 
 To use Hypermedia REST APIs in Liferay CE Portal 7.1 GA1 or versions of Liferay 
 DXP 7.1 prior to Fix Pack 1, you must follow all these steps. To use the APIs in 
 Liferay CE Portal GA2+ or Liferay DXP 7.1 Fix Pack 1+, you only need to follow 
 the last step: 
 
-1.  Remove the pre-installed APIO Architect modules.
-2.  Install the latest version of APIO Architect.
-3.  Install the API implementation.
+1.  Remove the pre-installed Apio Architect modules.
+2.  Install the latest version of Apio Architect.
+3.  Install the Hypermedia REST APIs. 
 
 The following sections walk you through these steps. 
 
-## Remove the Pre-installed APIO Architect Modules [](id=remove-the-pre-installed-apio-architect-modules)
+## Remove the Pre-installed Apio Architect Modules [](id=remove-the-pre-installed-apio-architect-modules)
 
-Follow these steps to remove the older, pre-installed version of the APIO 
-Architect modules: 
+Follow these steps to remove the pre-installed Apio Architect modules: 
 
 1.  Navigate to `[Liferay Home]/osgi/marketplace`. The 
     [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
     folder is typically the application server's parent folder. 
 
-2.  Delete the APIO packages. For example, here are the APIO packages for 
+2.  Delete the Apio packages. For example, here are the Apio packages for 
     Liferay Portal: 
 
         Liferay CE Foundation - Liferay CE APIO Architect - API.lpkg 
@@ -70,9 +69,9 @@ Architect modules:
 4.  Finally, remove the `*apio*` configuration file in 
     `[Liferay Home]/osgi/configs`. 
 
-## Install the Latest Version of APIO Architect [](id=install-the-latest-version-of-apio-architect)
+## Install the Latest Version of Apio Architect [](id=install-the-latest-version-of-apio-architect)
 
-Now you must download and install the latest version of the APIO Architect 
+Now you must download and install the latest version of the Apio Architect 
 modules: 
 
 1.  Download the modules by clicking the link for each: 
@@ -127,7 +126,7 @@ so:
         2018-08-28 12:54:17.101 INFO  [BundleStartStopLogger:35] STARTED com.liferay.media.object.apio.impl_1.0.9 [970]
         [...]
 
-3.  By default, APIO security restricts access to the APIs. To enable access, 
+3.  By default, Apio security restricts access to the APIs. To enable access, 
     you must deploy a specific configuration file. This file is included in the 
     ZIP file you downloaded. Locate the files you unzipped in the first step 
     and copy the file 
