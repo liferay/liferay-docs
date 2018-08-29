@@ -22,41 +22,14 @@ and
 [Clay CSS](https://ui-migration.liferay.com/docs/lexicon/add_menu.html). 
 
 $$$ 
-
+ 
 Follow these guidelines to update your markup:
 
 1.  See how your theme looks with the compatibility layer enabled 
     (it's enabled by default).
 
-2.  Disable the compatibility layer by creating the following empty files in 
-    your theme:
-
-        css/compat/_atlas_variables.scss
-        css/compat/_components.scss
-        css/compat/_mixins.scss
-        css/compat/_variables.scss
-
-    And add the contents below to `css/compat/_mixins.scss`:
-
-        @mixin text-overflow() {
-          @include text-truncate();
-        }
-
-    If your theme doesn't use all the components included in the compatibility 
-    layer, you can configure it to include just the components your theme uses. 
-
-    +$$$
-
-    **Note:** Some @product@ components haven't been migrated to Bootstrap 4. 
-    Disabling certain components might cause portions of the UI to break. 
-    Therefore, after upgrading your markup, we recommend that you re-enable any 
-    components you disable. Proceed with caution. 
-
-    $$$ 
-
-    Alternatively, you can disable the components that your theme doesn't use in 
-    the compatibility layer individually by disabling the component(s) you don't 
-    need in the 
+2.  Individually disable the component(s) in the compatibility layer that you 
+    don't need. These are listed in the 
     [`css/compat/_variables.scss`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/compat/_variables.scss) 
     file. For convenience, the components are listed below:
     
@@ -98,22 +71,32 @@ Follow these guidelines to update your markup:
         $compat-user_icons: true !default;
         $compat-utilities: true !default;
 
-    And add the component(s) you want to remove compatibility for to 
-    `/src/css/_clay_custom.scss` (create this file if it doesn't exist) and set 
-    their value to `false`. The example below removes compatibility for alerts 
-    and cards:
+    To disable a component, add the component you want to remove compatibility 
+    for to `/src/css/_clay_custom.scss` (create this file if it doesn't exist) 
+    and set its value to `false`. The example below removes compatibility for 
+    alerts and cards:
     
         $compat-alerts: false !default;
         $compat-cards: false !default;
 
+    +$$$
+
+    **Note:** Some @product@ components haven't been migrated to Bootstrap 4. 
+    Disabling certain components might cause portions of the UI to break. 
+    Therefore, after upgrading your markup, we recommend that you re-enable any 
+    components you disable. Proceed with caution. 
+
+    $$$
+
 3.  Update your markup to Bootstrap 4 and Clay CSS until you're satisfied with 
     the result.
 
-4.  Re-enable the compatibility layer for @product@ UIs by deleting the files 
-    you created in step 2 and/or removing any components you set to false in 
-    `/src/css/_clay_custom.scss`.
+4.  Re-enable any components you disabled in the compatibility layer by 
+    removing any components you set to false in `/src/css/_clay_custom.scss`. 
+    This ensures that @product@'s UI isn't broken.
 
-Now you know how to use @product@'s compatibility layer in your theme. 
+Now you know how to use the Bootstrap 3 and Lexicon CSS compatibility layer to 
+provide a smooth transition during your theme upgrade. 
     
 ## Related Topics [](id=related-topics)
 
