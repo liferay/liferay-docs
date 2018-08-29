@@ -79,7 +79,7 @@ To add a new form,
 6.  To see additional options, click *Properties*. Close the sidebar when
     finished.
 
-7.  Add another text field, using the same procedure you used for the select
+7.  Add a text field, using the same procedure you used for the select
     field.
 
     **Label:** *Want to tell us more?*
@@ -128,8 +128,7 @@ To display the form on a site page in The Lunar Resort site:
 
 2.  Add the Form widget to the page. If you used a full page application, click
     the *Configure Page* button (![Page Gear](../../images/icon-page-gear.png))
-    and choose *Dynamic Data Mapping Form* from the Full Page Application
-    dropdown.
+    and choose *Form* from the Full Page Application dropdown.
 
 3.  Once the Form widget is on the page, click *Select Form*, choose the 
     *Guest Survey* form, and click *Save*.

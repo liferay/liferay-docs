@@ -64,7 +64,7 @@ class.
         @Modified
         protected void activate(Map<String, Object> properties) {
             _configuration = ConfigurableUtil.createConfigurable(
-            "EXAMPLE_CONFIGRUATION", properties);
+            ExampleConfiguration.class, properties);
         }
 
         private volatile ExampleConfiguration _configuration;

@@ -133,7 +133,7 @@ each field in the Data Provider setup form opens up more possibilities.
 service at https://restcountries.eu/, which contains a REST API endpoint to find
 countries by `region`:
 
-    https://restcountries.eu/rest/v2/region/{region}
+    `https://restcountries.eu/rest/v2/region/{region}`
 
 Data Provider URLs can take two parameter types: path parameters and
 query parameters. 
