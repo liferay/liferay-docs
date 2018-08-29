@@ -1,4 +1,4 @@
-# JAX-WS and JAX-RS
+# JAX-WS 
 
 Liferay supports 
 [JAX-WS](https://en.wikipedia.org/wiki/Java_API_for_XML_Web_Services) and 
@@ -19,17 +19,6 @@ extenders:
    set of 
    [JAX-WS handlers](https://jax-ws.java.net/articles/handlers_introduction.html) 
    to augment the services. 
-
-2. **REST Extenders:** Required to publish JAX-RS web services. REST extenders 
-   for JAX-RS services are analogous to SOAP extenders for JAX-WS services. To 
-   create JAX-RS services that can work across different JAX-RS implementations, 
-   you must provide an implementation of `javax.ws.rs.core.Application` to the 
-   OSGi framework. You can do this by registering an instance of this 
-   implementation as an OSGi service via `BundleContext` or the Declarative 
-   Services `@Component` annotation. The JAX-RS application encompasses the 
-   services that represent JAX-RS endpoints and the services that represent 
-   JAX-RS providers. By specifying OSGi filters in a REST extender, you can also 
-   dynamically add endpoints or JAX-RS providers to a JAX-RS application. 
 
 SOAP extenders and REST extenders are subsystems that track the services the app 
 developer registers in OSGi (those matching the provided 
@@ -132,45 +121,6 @@ fields:
 
 Next, you'll learn how to use the Control Panel to create REST extenders for 
 JAX-RS web services. 
-
-### REST Extenders
-
-To configure a REST extender with the Control Panel, first go to *Control
-Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Web API*. Then
-select *REST Extender* from the list. If there are any existing REST extenders,
-they're shown here. To add a new one, click on the *Add* button. The form that
-appears lets you configure a new REST extender by filling out these fields: 
-
-- **Context paths:** Specify at least one CXF endpoint here. This is where the 
-  services affected by this extender are deployed. In the preceding CXF endpoint 
-  example, this would be `/web-services`. Note that you can specify more than 
-  one CXF endpoint here. This works the same way as the *Context paths* setting 
-  in SOAP Extenders. 
-
-- **jax.rs.application.filters:** Here you can specify a set of OSGi filters 
-  that select services that implement `javax.ws.rs.core.Application`. These
-  JAX-RS applications are deployed to the CXF endpoints specified in the
-  *Context paths* property. 
-
-- **jsx.rs.provider.filters:** Here you can specify a set of OSGi filters that 
-  select services registered in the OSGi framework. The selected services should 
-  implement any of the interfaces supported by JAX-RS for providers. These 
-  JAX-RS providers are added to the JAX-RS application as if they had been 
-  returned by the `getSingletons()` method of `javax.ws.rs.core.Application`. 
-  To learn about supported JAX-RS providers, please refer to the Jersey documentation:
-
-    - [JAX-RS Entity Providers](https://jersey.github.io/documentation/latest/message-body-workers.html) 
-    - [Filters and Interceptors](https://jersey.github.io/documentation/latest/filters-and-interceptors.html) 
-
-- **jax.rs.service.filters:** Here you can specify a set of OSGi filters that 
-  selects services registered in the OSGi framework that are valid JAX-RS 
-  endpoints. These endpoints are added to the JAX-RS application as if they 
-  had been returned by the `getSingletons()` method of 
-  `javax.ws.rs.core.Application`. 
-
-![Figure 3: Fill out this form to create a REST extender.](../../images/rest-extender-form.png)
-
-Next, you'll learn how to configure endpoints and extenders programmatically.
 
 ## Configuring Endpoints and Extenders Programmatically
 
@@ -298,49 +248,3 @@ You should also make sure that you include `org.osgi.core` and
 `org.osgi.service.component.annotations` as dependencies to your project. 
 
 Next, you'll learn how to publish JAX-RS web services. 
-
-## Publishing JAX-RS Web Services
-
-You can publish JAX-RS web services in a Liferay module the same way you would 
-outside of Liferay. You must also, however, register the class in the OSGi 
-framework. Note that the services must match the OSGi filters provided in the 
-respective extenders. This is how the instances that become services are 
-selected. There's no classpath scanning or other automatic mechanism at work 
-here: it's the developer's responsibility to register the services in the OSGi 
-framework. 
-
-The following example registers an OSGi component that publishes a JAX-RS web 
-service at `/application-path/hello`. Get requests to this web service return a 
-simple *"Hello!"*: 
-
-    import org.osgi.service.component.annotations.Component;
-
-    import javax.ws.rs.ApplicationPath;
-    import javax.ws.rs.GET;
-    import javax.ws.rs.Path;
-    import javax.ws.rs.Produces;
-    import javax.ws.rs.core.Application;
-    import java.util.Collections;
-    import java.util.Set;
-
-    @Component(immediate = true, service = Application.class)
-    @ApplicationPath("/application-path")
-    public class RestEndpoint extends Application {
-
-        public Set<Object> getSingletons() {
-            return Collections.<Object>singleton(this);
-        }
-
-        @GET
-        @Path("/hello")
-        @Produces("text/text")
-        public String sayHello() {
-            return "Hello!";
-        }
-    }
-
-Nice work! Now you know how JAX-WS and JAX-RS works in Liferay. 
-
-## Related Topics
-
-[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)
