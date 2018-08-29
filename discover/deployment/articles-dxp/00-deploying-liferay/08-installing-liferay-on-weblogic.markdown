@@ -135,7 +135,13 @@ if you're on Windows.
         WLS_MEM_ARGS_32BIT="-Xms512m -Xmx2048m"
         export WLS_MEM_ARGS_32BIT
 
-4.  You must also ensure that the Node Manager sets @product@'s memory
+4.  Set the Java file encoding to UTF-8 in 
+    `your-domain/bin/SetDomainEnv.[cmd|sh]` by appending `-Dfile.encoding=utf8`
+    ahead of your other Java properties:  
+
+        JAVA_PROPERTIES="-Dfile.encoding=utf8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+
+5.  You must also ensure that the Node Manager sets @product@'s memory
     requirements when starting the Managed Server. In the Admin Server's console
     UI, navigate to the Managed Server you want to deploy @product@ to and
     select the *Server Start* tab. Enter the following parameters into the

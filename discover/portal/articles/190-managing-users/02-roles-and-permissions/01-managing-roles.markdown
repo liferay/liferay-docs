@@ -36,7 +36,7 @@ Now the Role is present in the database and ready for further configuration.
 ## Assigning Users to a Role [](id=assigning-users-to-a-role)
 
 Assign users to a Role in the Assignees tab of the Add/Edit Role
-form. Roles are assigned to to Users, Sites, Organizations, or User Groups.
+form. Roles are assigned to Users, Sites, Organizations, or User Groups.
 Here's how to assign the User Group Manager Role created in the last section to
 Users:
 
@@ -48,7 +48,7 @@ Users:
 3.  Select the Users you want to add to the Role and click *Add*.
 
 If assigning a group, note that all Users assigned to that group inherit the
-role as well. 
+Role as well. 
 
 That's a good start, but your Role isn't worth the database row it occupies
 without defining permissions for the Role. Read the next article to learn

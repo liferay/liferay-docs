@@ -50,7 +50,7 @@ the above dependency JARs.
 The upgraded sample portlet continues to specify these JARs in the
 `portal-dependency-jars` property. They're made available to the portlet at
 compile time. But to keep compile time packages from conflicting with the core
-system's exported packages, the Liferay Plugins SDK 7.1 excludes the JARs from
+system's exported packages, the Liferay Plugins SDK 7.0 excludes the JARs from
 the plugin WAR. 
 
 Next, deploy your portlet as you always have.

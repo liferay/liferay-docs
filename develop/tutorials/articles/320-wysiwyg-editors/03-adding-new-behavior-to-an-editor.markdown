@@ -3,10 +3,25 @@
 You can select from several different WYSIWYG editors for your users, and each
 is configurable and has its strengths and weaknesses. Configuration alone,
 however, doesn't always expose the features you want. In these cases, you can
-programatically access the editor instance to create the editor experience you
+programmatically access the editor instance to create the editor experience you
 want, using the `liferay-util:dynamic-include` JavaScript extension point. It
 injects JavaScript code right after the editor instantiation to configure/change
 the editor.
+
++$$$
+
+**Note:** By default, the CKEditor strips empty `<i>` tags, such as those used 
+for Font Awesome icons, from published content, when switching between the Code 
+View and the Source View of the editor. You can disable this behavior by using 
+the `ckeditor#additionalResources` or `alloyeditor#additionalResources` 
+[extension points](/develop/tutorials/-/knowledge_base/7-1/wysiwyg-editor-dynamic-includes) 
+to 
+[add the following code](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor) 
+to the editor:
+
+    CKEDITOR.dtd.$removeEmpty.i = 0
+
+$$$
 
 In this tutorial, you'll learn how to use this JavaScript extension point.
 
@@ -99,7 +114,7 @@ JSP files: it's the gateway for injecting JavaScript into your editor instance:
     this:
 
         dynamicIncludeRegistry.register(
-            "com.liferay.frontend.editors.web#ckeditor#onEditorCreate");
+            "com.liferay.frontend.editor.ckeditor.web#ckeditor#onEditorCreate");
 
     This registers the CKEditor into the Dynamic Include registry and specifies
     that JS code will be injected into the editor once it's created.
@@ -112,7 +127,7 @@ JSP files: it's the gateway for injecting JavaScript into your editor instance:
     the Creole implementation of the CKEditor, you could use the following
     key:
 
-        "com.liferay.frontend.editors.web#ckeditor_creole#onEditorCreate"
+        "com.liferay.frontend.editor.ckeditor.web#ckeditor_creole#onEditorCreate"
 
 That's it! The JS code that you created is now injected into the editor instance
 you've specified. You're now able to use JavaScript to add new behavior to your
