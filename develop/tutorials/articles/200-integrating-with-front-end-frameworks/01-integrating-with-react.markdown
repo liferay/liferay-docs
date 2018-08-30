@@ -1,4 +1,4 @@
-# Integrating with React [](id=integrating-with-react)
+# Using React in Your Portlets [](id=using-react-in-your-portlets)
 
 You can use the 
 [npm React portlet template](/develop/reference/-/knowledge_base/7-1/npm-react-portlet-template) 
@@ -34,10 +34,11 @@ Follow these steps to create the module and configure its metadata for React:
         	"presets": ["env", "react"]
         }
 
-4.  Add a 
+4.  Optionally add a 
     [`.npmbundlerrc` file](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler) 
-    to your project's root folder. This file doesn't need to contain anything. 
-    You can, however, add configuration options to the file if needed. 
+    to your project's root folder. This file is not required. You can, however, 
+    configure this file to customize the liferay-npm-bundler to suite your 
+    needs, such as to ignore files. 
 
 5.  Include the following dependency to your `build.gradle` file:
 
@@ -177,10 +178,12 @@ Follow these steps to render your app component:
         	bootstrapRequire.default('<portlet:namespace />-root');
         </aui:script>
 
+Now you know how to use React in your projects! 
+
 ## Related Topics [](id=related-topics)
 
-[Integrating with Angular JS](/develop/tutorials/-/knowledge_base/7-1/integrating-with-angular-js)
+[Using Angular JS in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-angular-js-in-your-portlets)
 
-[Integrating with Vue](/develop/tutorials/-/knowledge_base/7-1/integrating-with-vue)
+[Using Vue in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-vue-in-your-portlets)
 
 [Using npm in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-npm-in-your-portlets)

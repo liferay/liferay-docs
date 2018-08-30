@@ -1,12 +1,12 @@
-# Integrating with Vue JS [](id=integrating-with-vue-js)
+# Using Vue in Your Portlets [](id=using-vue-in-your-portlets)
 
 You can use the 
 [npm Vue portlet template](/develop/reference/-/knowledge_base/7-1/npm-vue-js-portlet-template) 
 to automate much of the required configuration for you, or create the module 
 manually if you wish. For convenience, all steps are listed if you want to 
-proceed with a manual configuration. This tutorial shows how to use Vue in your 
-portlets, whether you're migrating an existing Vue project or building a fresh 
-one. See the 
+proceed with a manual configuration. This tutorial shows how to use Vue JS in 
+your portlets, whether you're migrating an existing Vue project or building a 
+fresh one. See the 
 [npm Vue portlet template](/develop/reference/-/knowledge_base/7-1/npm-vue-js-portlet-template) 
 reference docs for more information on the portlet's anatomy or the 
 [npm Vue portlet sample](/develop/reference/-/knowledge_base/7-1/vue-js-npm-portlet) 
@@ -34,10 +34,11 @@ Follow these steps to create the module and configure its metadata for Vue:
         	"presets": ["env"]
         }
 
-4.  Add a 
+4.  Optionally add a 
     [`.npmbundlerrc` file](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler) 
-    to your project's root folder. This file doesn't need to contain anything. 
-    You can, however, add configuration options to the file if needed. 
+    to your project's root folder. This file is not required. You can, however, 
+    configure this file to customize the liferay-npm-bundler to suite your 
+    needs, such as to ignore files. 
 
 5.  Include the following dependency to your `build.gradle` file:
 
@@ -174,10 +175,10 @@ Follow these steps to render your app component:
 2.  Open your `view.jsp` and add an element container to house your component. 
     Then, add an `<aui:script>` and pass your aliased module name as the 
     `require` attribute's value. Finally, call your module's `default` function 
-    that you exported in the previous step, and pass the container element in as 
-    the element ID. Adding the `<portlet:namespace />` to the `<div>`'s `id` 
-    ensures that it is unique to the portlet and doesn't clash with any existing 
-    elements on the page:
+    that you exported in the previous step, and pass the portlet namespace. 
+    Adding the `<portlet:namespace />` to the `<div>`'s `id` ensures that it is 
+    unique to the portlet and doesn't clash with any existing elements on the 
+    page:
 
         <%@ include file="/init.jsp" %>
 
@@ -187,10 +188,12 @@ Follow these steps to render your app component:
         	bootstrapRequire.default('<portlet:namespace />');
         </aui:script>
 
+Now you know how to use Vue in your projects! 
+
 ## Related Topics [](id=related-topics)
 
-[Integrating with Angular JS](/develop/tutorials/-/knowledge_base/7-1/integrating-with-angular-js)
+[Using Angular JS in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-angular-js-in-your-portlets)
 
-[Integrating with React](/develop/tutorials/-/knowledge_base/7-1/integrating-with-react)
+[Using React in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-react-in-your-portlets)
 
 [Using npm in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-npm-in-your-portlets)

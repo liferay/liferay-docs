@@ -1,12 +1,12 @@
-# Integrating with Angular JS [](id=integrating-with-angular-js)
+# Using Angular JS in Your Portlets [](id=using-angular-js-in-your-portlets)
 
 You can use the 
 [npm Angular portlet template](/develop/reference/-/knowledge_base/7-1/npm-angular-portlet-template) 
 to automate much of the required configuration for you, or create the module 
 manually if you wish. For convenience, all steps are listed if you want to 
-proceed with a manual configuration. This tutorial shows how to use Angular in 
-your portlets, whether you're migrating an existing Angular project or building 
-a fresh one. See the 
+proceed with a manual configuration. This tutorial shows how to use Angular JS 
+in your portlets, whether you're migrating an existing Angular project or 
+building a fresh one. See the 
 [npm Angular portlet template](/develop/reference/-/knowledge_base/7-1/npm-angular-portlet-template) 
 reference docs for more information on the portlet's anatomy. Get started by 
 creating your OSGi module and configuring its metadata. 
@@ -49,10 +49,11 @@ Follow these steps to create the module and configure its metadata for Angular:
         	"include": ["src/main/resources/META-INF/resources/**/*.ts"]
         }
 
-4.  Add a 
+4.  Optionally add a 
     [`.npmbundlerrc` file](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler) 
-    to your project's root folder. This file doesn't need to contain anything. 
-    You can, however, add configuration options to the file if needed. 
+    to your project's root folder. This file is not required. You can, however, 
+    configure this file to customize the liferay-npm-bundler to suite your 
+    needs, such as to ignore files. 
 
 5.  Include the following dependency to your `build.gradle` file:
 
@@ -202,8 +203,7 @@ Follow these steps to configure your portlet:
         );
         %>
 
-Next you can learn how to render your app's component and transpile your JS 
-files. 
+Next you can learn how to render your app's component. 
 
 ## Rendering Your Component [](id=rendering-your-component)
 
@@ -262,7 +262,7 @@ Follow these steps to render your app component:
     Then, add an `<aui:script>` and pass your aliased module name as the 
     `require` attribute's value. Finally, call your module's `default` function 
     that you exported in the previous step, and pass the container element in as 
-    the element ID. Adding the `<portlet:namespace />` to the `<div>`'s `id` 
+    the root ID. Adding the `<portlet:namespace />` to the `<div>`'s `id` 
     ensures that it is unique to the portlet and doesn't clash with any existing 
     elements on the page:
 
@@ -274,10 +274,12 @@ Follow these steps to render your app component:
         	bootstrapRequire.default('#<portlet:namespace />-root');
         </aui:script>
 
+Now you know how to use Angular JS in your projects! 
+
 ## Related Topics [](id=related-topics)
 
-[Integrating with React](/develop/tutorials/-/knowledge_base/7-1/integrating-with-react)
+[Using React in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-react-in-your-portlets)
 
-[Integrating with Vue](/develop/tutorials/-/knowledge_base/7-1/integrating-with-vue)
+[Using Vue in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-vue-in-your-portlets)
 
 [Using npm in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-npm-in-your-portlets)
