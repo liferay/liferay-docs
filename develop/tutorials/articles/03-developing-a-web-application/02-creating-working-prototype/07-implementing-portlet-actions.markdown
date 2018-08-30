@@ -104,8 +104,8 @@ called `guestbook-entries`:
 1.  Replace your existing `addEntry` method with the above method.
 
 2.  Press [CTRL]+[SHIFT]+O to organize imports and select the
-    `javax.portlet.PortletPreferences` and `java.util.logging.Logger` when
-	prompted (not their Liferay equivalents). <!--also java.util.logging.Level?-->
+    `javax.portlet.PortletPreferences`, `java.util.logging.Logger`, and 
+    `java.util.logging.Level` when prompted (not their Liferay equivalents).
 
 First, the preferences are retrieved. Then the `guestbook-entries` preference is 
 retrieved and converted to an `ArrayList` so that you can add an entry without 
