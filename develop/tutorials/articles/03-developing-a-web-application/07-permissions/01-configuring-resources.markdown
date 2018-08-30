@@ -183,9 +183,10 @@ portlet class. Follow these steps to add the portlet permissions in the
 1.  In `guestbook-web`'s `src/main/resources` folder, create a file called 
     `portlet.properties`. 
    
-2.  In this file, place the following property: 
+2.  In this file, place the following property:
 
-defa
+        resource.actions.configs=META-INF/resource-actions/default.xml
+
 3.  Create a subfolder called `resource-actions` in the
     `src/main/resources/META-INF` folder. 
 
