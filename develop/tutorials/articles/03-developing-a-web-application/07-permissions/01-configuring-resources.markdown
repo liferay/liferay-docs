@@ -184,6 +184,7 @@ portlet class. Follow these steps to add the portlet permissions in the
     `portlet.properties`. 
    
 2.  In this file, place the following property:
+2.  In this file, place the following property: 
 
         resource.actions.configs=META-INF/resource-actions/default.xml
 
