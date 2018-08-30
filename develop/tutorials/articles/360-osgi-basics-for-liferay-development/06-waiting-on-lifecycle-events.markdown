@@ -108,3 +108,5 @@ events outside of DS components.
 ## Related Topics [](id=related-topics)
 
 [Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
+
+[@product@ Startup Phases](/develop/tutorials/-/knowledge_base/7-1/liferay-startup-phases)

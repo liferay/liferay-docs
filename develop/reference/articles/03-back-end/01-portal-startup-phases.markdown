@@ -1,4 +1,4 @@
-# @product@ Startup Phases [](id=product-startup-phases)
+# @product@ Startup Phases [](id=liferay-startup-phases)
 
 Liferay startup phases are helpful to understand. Knowing them helps you troubleshoot startup failures. Also by learning the phase triggered events, you can listen for and act on them. This article describes the startup phases and identifies 
 [phase events you can implement actions for](acting-on-events). 
@@ -108,3 +108,9 @@ defines the event's default actions.
 initializes. The
 [`application.startup.events` property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Startup%20Events)
 defines the event's default actions. 
+
+## Related Topics 
+
+[Waiting on Lifecycle Events](/develop/tutorials/-/knowledge_base/7-1/waiting-on-lifecycle-events)
+
+[OSGi Services and Dependency Injection with Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services)
