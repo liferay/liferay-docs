@@ -26,7 +26,10 @@ Here's the phase's activity sequence:
 
 2.  OSGi framework is initialized. 
 
-3.  Spring Phase 1: INFRASTRUCTURE beans are loaded. 
+3.  Spring Phase 1: INFRASTRUCTURE beans specified by the Spring context files 
+    listed in Portal property 
+    [`spring.infrastructure.configs`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Spring)
+    are loaded. 
 
 4.  INFRASTRUCTURE beans are published as
     [OSGi services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services). 
@@ -38,9 +41,18 @@ Here's the phase's activity sequence:
 
 6.  OSGi framework starts the runtime.  
 
-7.  Spring Phase 2: MAIN Spring beans are loaded. Triggers the 
-    [`ModuleServiceLifecycle` event](#moduleservicelifecycle-events)
-    `SPRING_INITIALIZED`. 
+7.  Spring Phase 2: MAIN
+
+    1.  Spring beans specified by the Spring context files listed in Portal 
+        property 
+        [`spring.configs`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Spring)
+        are loaded.
+    2.  A 
+        [`ModuleServiceLifecycle` event service](#moduleservicelifecycle-events)
+        with a service property `module.service.lifecycle` value
+        `spring.initialized` (i.e., 
+        [`SPRING_INITIALIZED`](@platform-ref@/7.1-latest/javadocs/portal-kernel/constant-values.html#com.liferay.portal.kernel.module.framework.ModuleServiceLifecycle.SPRING_INITIALIZED))
+        registers. 
 
 8.  MAIN Spring beans are published as 
     [OSGi services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services). 
@@ -50,8 +62,10 @@ Here's the phase's activity sequence:
 Here's the phase's activity sequence:
 
 1.  The 
-    [`ModuleServiceLifecycle` event](#moduleservicelifecycle-events)
-    `DATABASE_INITIALIZED` fires. 
+    [`ModuleServiceLifecycle` event service](#moduleservicelifecycle-events)
+    is updated with the service property `module.service.lifecycle` value
+    `database.initialized` (i.e., 
+    [`DATABASE_INITIALIZED`](@platform-ref@/7.1-latest/javadocs/portal-kernel/constant-values.html#com.liferay.portal.kernel.module.framework.ModuleServiceLifecycle.DATABASE_INITIALIZED)). 
 
 2.  The
     [Global Startup event](#portal-startup-events)
@@ -62,8 +76,10 @@ Here's the phase's activity sequence:
     fire. 
 
 4.  The 
-    [`ModuleServiceLifecycle` event](#moduleservicelifecycle-events)
-    `PORTAL_INITIALIZED` fires.
+    [`ModuleServiceLifecycle` event service](#moduleservicelifecycle-events)
+    is updated with the service property `module.service.lifecycle` value
+    `portal.initialized` (i.e., 
+    [`PORTAL_INITIALIZED`](@platform-ref@/7.1-latest/javadocs/portal-kernel/constant-values.html#com.liferay.portal.kernel.module.framework.ModuleServiceLifecycle.PORTAL_INITIALIZED)).
 
 Now that you're acquainted with the startup phases, you can concentrate on the
 events they fire. 
@@ -75,7 +91,7 @@ the event types.
 
 ### ModuleServiceLifecycle Events [](id=moduleservicelifecycle-events)
 
-[You can wait for and act on `ModuleServiceLifecycle` events.](/develop/tutorials/-/knowledge_base/7-1/waiting-on-lifecycle-events)
+[You can wait for and act on `ModuleServiceLifecycle` event services.](/develop/tutorials/-/knowledge_base/7-1/waiting-on-lifecycle-events) 
 
 ### Portal Startup Events [](id=portal-startup-events)
 
