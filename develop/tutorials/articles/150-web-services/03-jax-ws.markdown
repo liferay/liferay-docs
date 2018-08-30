@@ -1,91 +1,70 @@
 # JAX-WS 
 
 Liferay supports 
-[JAX-WS](https://en.wikipedia.org/wiki/Java_API_for_XML_Web_Services) and 
-[JAX-RS](https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services) 
-via the 
-[Apache CXF](http://cxf.apache.org/) 
-implementation. Apps can publish JAX web services to the CXF endpoints defined 
-in your Liferay instance. CXF endpoints are effectively context paths the JAX 
-web services are deployed to and accessible from. To publish any kind of JAX 
-web service, one or more CXF endpoints must be defined in your Liferay instance. 
-To access JAX web services, an *extender* must also be configured in your 
-Liferay instance. Extenders specify where the services are deployed and whether 
-they are augmented with handlers, providers, and so on. There are two types of 
-extenders: 
+[JAX-WS](https://en.wikipedia.org/wiki/Java_API_for_XML_Web_Services) 
+via the [Apache CXF](http://cxf.apache.org/) implementation. Apps can publish
+JAX-WS web services to the CXF endpoints defined in your Liferay instance. CXF
+endpoints are effectively context paths the JAX-WS web services are deployed to
+and accessible from. To publish any kind of JAX-WS web service, one or more CXF
+endpoints must be defined. To access JAX-WS web services, an *extender* must
+also be configured in your Liferay instance. Extenders specify where the
+services are deployed and whether they are augmented with handlers, providers,
+and so on. 
 
-1. **SOAP Extenders:** Required to publish JAX-WS web services. Each SOAP 
-   extender can deploy the services to one or more CXF endpoints and can use a 
-   set of 
-   [JAX-WS handlers](https://jax-ws.java.net/articles/handlers_introduction.html) 
-   to augment the services. 
+**SOAP Extenders:** Required to publish JAX-WS web services. Each SOAP extender
+can deploy the services to one or more CXF endpoints and can use a set of
+[JAX-WS handlers](https://jax-ws.java.net/articles/handlers_introduction.html)
+to augment the services. 
 
-SOAP extenders and REST extenders are subsystems that track the services the app 
-developer registers in OSGi (those matching the provided 
+SOAP extenders are subsystems that track the services the app developer
+registers in OSGi (those matching the provided 
 [OSGi filters](https://osgi.org/javadoc/r6/core/org/osgi/framework/Filter.html)), 
 and deploy them under the specified CXF endpoints. For example, if you create 
-the CXF endpoints `/soap` and `/rest`, you could later create a REST extender 
-for `/rest` that publishes REST applications, and a SOAP extender for `/soap` 
+the CXF endpoint `/soap`, you could later create a SOAP extender for `/soap` 
 that publishes SOAP services. Of course, this is only a rough example: you can 
 fine tune things to your liking. 
 
-CXF endpoints and both types of extenders can be created programmatically or 
-with Liferay's Control Panel. This tutorial shows you how to do both, and then 
-shows you how to publish JAX-WS and JAX-RS web services. The following topics 
-are covered:
+CXF endpoints and extenders can be created programmatically or with Liferay's
+Control Panel. This tutorial shows you how to do both, and then shows you how to
+publish JAX-WS web services. The following topics are covered:
 
-- [Configuring Endpoints and Extenders with the Control Panel](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#configuring-endpoints-and-extenders-with-the-control-panel)
+- [Configuring Endpoints and Extenders with the Control Panel](/develop/tutorials/-/knowledge_base/7-1/jax-ws#configuring-endpoints-and-extenders-with-the-control-panel)
 
-    - [CXF Endpoints](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#cxf-endpoints)
+- [Configuring Endpoints and Extenders Programmatically](/develop/tutorials/-/knowledge_base/7-1/jax-ws#configuring-endpoints-and-extenders-programmatically)
 
-    - [SOAP Extenders](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#soap-extenders)
-
-    - [REST Extenders](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#rest-extenders)
-
-- [Configuring Endpoints and Extenders Programmatically](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#configuring-endpoints-and-extenders-programmatically)
-
-- [Publishing JAX-WS Web Services](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#publishing-jax-ws-web-services)
-
-- [Publishing JAX-RS Web Services](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs#publishing-jax-rs-web-services)
+- [Publishing JAX-WS Web Services](/develop/tutorials/-/knowledge_base/7-1/jax-ws#publishing-jax-ws-web-services)
 
 ## Configuring Endpoints and Extenders with the Control Panel
 
-Liferay's Control Panel lets administrators configure endpoints and extenders 
-for JAX web services. Note that you must be an administrator in your Liferay
+Liferay's Control Panel lets administrators configure endpoints and extenders
+for JAX-WS web services. Note that you must be an administrator in your Liferay
 instance to access the settings here. First, you'll learn how to create CXF
 endpoints. 
-
-### CXF Endpoints
 
 To configure a CXF endpoint with the Control Panel, first go to *Control Panel*
 &rarr; *Configuration* &rarr; *System Settings* &rarr; *Web API*. Then select
 *CXF Endpoints* from the list. If there are any existing CXF endpoints, they're
-shown here. To add a new one, click on the *Add* button. The form that appears
+shown here. To add a new one, click the *Add* button. The form that appears
 lets you configure a new CXF endpoint by filling out these fields: 
 
-- **Context Path:** The path the JAX web services are deployed to on the Liferay 
-  server. For example, if you define the context path `/web-services`, any 
-  services deployed there are available at 
-  `http://your-server:your-port/o/web-services`. 
+**Context Path:** The path the JAX-WS web services are deployed to on the
+Liferay server. For example, if you define the context path `/web-services`, any
+services deployed there are available at
+`http://your-server:your-port/o/web-services`. 
 
-- **`AuthVerifier` properties:** Any properties defined here are passed as-is to 
-  the `AuthVerifier` filter. See the 
-  [`AuthVerifier` documentation](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-1/authentication-verifiers) 
-  for more details. 
+**`AuthVerifier` properties:** Any properties defined here are passed as-is to 
+the `AuthVerifier` filter. See the 
+[`AuthVerifier` documentation](/discover/deployment/-/knowledge_base/7-1/authentication-verifiers) 
+for more details. 
 
-- **Required Extensions:** CXF normally loads its default extension classes, but 
-  in some cases you can override them to replace the default behavior. In most
-  cases, you can leave this field blank: overriding extensions isn't common. By
-  specifying custom extensions here via [OSGi filters](https://osgi.org/javadoc/r6/core/org/osgi/framework/Filter.html), 
-  Liferay waits until those extensions are registered in the OSGi framework 
-  before creating the CXF servlet and passing the extensions to the servlet. 
+**Required Extensions:** CXF normally loads its default extension classes, but 
+in some cases you can override them to replace the default behavior. In most
+cases, you can leave this field blank: overriding extensions isn't common. By
+specifying custom extensions here via [OSGi filters](https://osgi.org/javadoc/r6/core/org/osgi/framework/Filter.html), 
+Liferay waits until those extensions are registered in the OSGi framework 
+before creating the CXF servlet and passing the extensions to the servlet. 
 
 ![Figure 1: Fill out this form to create a CXF endpoint.](../../images/cxf-endpoint-form.png)
-
-Next, you'll learn how to use the Control Panel to create SOAP extenders for 
-JAX-WS web services. 
-
-### SOAP Extenders
 
 For an app to deploy JAX-WS web services, you must configure a SOAP extender.
 To configure a SOAP extender with the Control Panel, first go to *Control
@@ -95,32 +74,31 @@ extenders, they're shown here. To add a new one, click on the *Add* button. The
 form that appears lets you configure a new SOAP extender by filling out these
 fields: 
 
-- **Context paths:** Specify at least one CXF endpoint here. This is where the 
-  services affected by this extender are deployed. In the preceding CXF endpoint 
-  example, this would be `/web-services`. Note that you can specify more than 
-  one CXF endpoint here. 
+**Context paths:** Specify at least one CXF endpoint here. This is where the 
+services affected by this extender are deployed. In the preceding CXF endpoint 
+example, this would be `/web-services`. Note that you can specify more than 
+one CXF endpoint here. 
 
-- **jax.ws.handler.filters:** Here you can specify a set of 
-  [OSGi filters](https://osgi.org/javadoc/r6/core/org/osgi/framework/Filter.html) 
-  that select certain services registered in the OSGi framework. The selected 
-  services should implement JAX-WS handlers and augment the JAX-WS services 
-  specified in the *jax.ws.service.filters* property. These JAX-WS handlers 
-  apply to each service selected in this extender. 
+**jax.ws.handler.filters:** Here you can specify a set of 
+[OSGi filters](https://osgi.org/javadoc/r6/core/org/osgi/framework/Filter.html) 
+that select certain services registered in the OSGi framework. The selected 
+services should implement JAX-WS handlers and augment the JAX-WS services 
+specified in the *jax.ws.service.filters* property. These JAX-WS handlers 
+apply to each service selected in this extender. 
 
-- **jax.ws.service.filters:** Here you can specify a set of OSGi filters that 
-  select the services registered in the OSGi framework that will be deployed 
-  to the CXF endpoints. These OSGi services must be 
-  [proper JAX-WS services](https://docs.oracle.com/javaee/7/tutorial/jaxws001.htm). 
+**jax.ws.service.filters:** Here you can specify a set of OSGi filters that
+select the services registered in the OSGi framework that are deployed to the
+CXF endpoints. These OSGi services must be 
+[proper JAX-WS services](https://docs.oracle.com/javaee/7/tutorial/jaxws001.htm). 
 
-- **soap.descriptor.builder:** Leave this option empty to use JAX-WS annotations 
-  to describe the SOAP service. To use a different way to describe the SOAP 
-  service, you can provide an OSGi filter here that selects an implementation of 
-  `com.liferay.portal.remote.soap.extender.SoapDescriptorBuilder`. 
+**soap.descriptor.builder:** Leave this option empty to use JAX-WS annotations 
+to describe the SOAP service. To use a different way to describe the SOAP 
+service, you can provide an OSGi filter here that selects an implementation of 
+`com.liferay.portal.remote.soap.extender.SoapDescriptorBuilder`. 
 
 ![Figure 2: Fill out this form to create a SOAP extender.](../../images/soap-extenders-form.png)
 
-Next, you'll learn how to use the Control Panel to create REST extenders for 
-JAX-RS web services. 
+Next, you'll learn how to create endpoints and extenders programmatically. 
 
 ## Configuring Endpoints and Extenders Programmatically
 
@@ -197,10 +175,6 @@ configuration fields `contextPaths`, `jaxWsHandlerFilterStrings`, and
 
     }
 
-You can use similar techniques to create REST extenders. For example, see 
-[the `RestExtenderConfiguration` interface](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/portal-remote/portal-remote-rest-extender/src/main/java/com/liferay/portal/remote/rest/extender/configuration/RestExtenderConfiguration.java) 
-in Liferay's source code. 
-
 Next, you'll learn how to publish JAX-WS web services. 
 
 ## Publishing JAX-WS Web Services
@@ -247,4 +221,3 @@ also set the `jaxws` property to `true` in the OSGi `@Component` annotation:
 You should also make sure that you include `org.osgi.core` and 
 `org.osgi.service.component.annotations` as dependencies to your project. 
 
-Next, you'll learn how to publish JAX-RS web services. 
