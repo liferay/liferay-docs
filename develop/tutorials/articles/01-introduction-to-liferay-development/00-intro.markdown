@@ -80,10 +80,10 @@ expanding or customizing @product@'s features:
     [web service](/develop/tutorials/-/knowledge_base/7-1/web-services)
     for an external system, a mobile app, an IoT
     device, or anything else.
-4.  Developing a [mobile app](/develop/tutorials/-/knowledge_base/7-1/mobile)
+4.  Developing a [mobile app](/develop/tutorials/-/knowledge_base/7-0/mobile)
     that leverages Liferay as its back-end, which you can write in a fraction of
     the normal time thanks to Liferay Screens and
-    [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/mobile-sdk).
+    [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk).
 5.  Developing a custom 
     [theme](/develop/tutorials/-/knowledge_base/7-1/introduction-to-themes)
     that adapts the look and feel of the platform to

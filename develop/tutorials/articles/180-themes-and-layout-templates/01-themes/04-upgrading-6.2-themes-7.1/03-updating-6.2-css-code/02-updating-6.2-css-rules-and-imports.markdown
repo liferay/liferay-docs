@@ -124,6 +124,6 @@ the IE9 CSS selector limitation. If you include these imports in your
 
 ## Related Topics [](id=related-topics)
 
-[Updating 6.2 CSS Responsiveness](/develop/tutorials/-/knowledge_base/7-1/updating-the-6.2-responsiveness)
+[Updating 6.2 CSS Responsiveness](/develop/tutorials/-/knowledge_base/7-1/updating-the-6-2-responsiveness)
 
 [Copying an Existing Theme's Files](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files)

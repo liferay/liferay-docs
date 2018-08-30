@@ -223,6 +223,6 @@ changes that the Gulp `upgrade` task reports.
 
 ## Related Topics [](id=related-topics)
 
-[Updating CSS Code](/develop/tutorials/-/knowledge_base/7-1/updating-6.2-css-code)
+[Updating CSS Code](/develop/tutorials/-/knowledge_base/7-1/updating-6-2-css-code)
 
 [Making Configurable Theme Settings](/develop/tutorials/-/knowledge_base/7-1/making-configurable-theme-settings)

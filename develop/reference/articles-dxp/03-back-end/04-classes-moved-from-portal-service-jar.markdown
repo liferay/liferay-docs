@@ -1,3 +1,4 @@
+# Classes Moved from portal-service.jar [](id=classes-moved-from-portal-service-jar)
 
 To leverage the benefits of modularization in @product-ver@, many classes from
 former Liferay Portal 6 JAR file <em>portal-service.jar</em> have been moved

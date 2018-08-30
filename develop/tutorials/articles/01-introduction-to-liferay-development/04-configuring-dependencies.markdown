@@ -268,8 +268,6 @@ that's a skill you can depend on!
 
 [Reference](/develop/reference/-/knowledge_base/7-1/development-reference)
 
-[Liferay API Modules](/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules)
-
 [Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
 
 [Tooling](/develop/tutorials/-/knowledge_base/7-1/tooling)
