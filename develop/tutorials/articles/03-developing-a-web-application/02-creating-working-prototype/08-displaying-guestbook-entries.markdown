@@ -31,7 +31,7 @@ portlet class). Now you need your model.
 
 4.  Right-click a blank area of the editor and select *Source* &rarr; *Generate 
     Getters and Setters*. Click *Select All* in the dialog that pops up, and 
-    then click *OK*. 
+    then click *Generate*. 
 
 5.  Next, provide two constructors: one that initializes the class with no
     values for the two fields, and one that takes the two fields as parameters
