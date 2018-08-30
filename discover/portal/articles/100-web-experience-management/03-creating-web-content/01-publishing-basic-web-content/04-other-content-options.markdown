@@ -120,7 +120,7 @@ been created this way. But if you want to take advantage of the full power of
 @product@'s WCM, you'll want to use structures and templates or Fragments.
 You'll cover these topics next.
 
-## Organizing Structure Names
+## Organizing Structure Names [](id=organizing-structure-names)
 
 By default, when you select a structure to add a new Web Content article, the 
 structures are ordered by their ID, not their name. This can be confusing in 
@@ -128,7 +128,7 @@ some case, but --- never fear --- there's a configuration property to sort them
 alphabetically. In fact, there are two properties. One for Site Administration, 
 and one for the Web Content Display widget.
 
-![Figure X: The default ordering for Web Content Structures can yield confusing results.](../../../../images/web-content-default-order.png)
+![Figure 5: The default ordering for Web Content Structures can yield confusing results.](../../../../images/web-content-default-order.png)
 
 To enable this property for Site Administration,
 
@@ -137,7 +137,7 @@ To enable this property for Site Administration,
 
 2.  Check the box labeled "Journal Browse by Structures Sorted by Name.
 
-![Figure X: Web Content Administration will now display structures in alphabetical order.](../../../../images/web-content-admin-alphabetical.png)
+![Figure 6: Web Content Administration will now display structures in alphabetical order.](../../../../images/web-content-admin-alphabetical.png)
 
 To enable this property for the Web Content Display,
 
@@ -146,7 +146,8 @@ To enable this property for the Web Content Display,
 
 2.  Check the box labeled "Sort Structures by Name".
 
-![Figure X: The Web Content Display widget will now display structures in alphabetical order.](../../../../images/web-content-display-alphabetical.png)
+![Figure 7: The Web Content Display widget will now display structures in alphabetical order.](../../../../images/web-content-display-alphabetical.png)
 
 After this option is checked, the structures are sorted alphabetically. Note 
-that enabling this property can degrade performance with very large structure libraries.
+that enabling this property can degrade performance with very large structure 
+libraries.
