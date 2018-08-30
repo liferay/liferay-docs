@@ -125,8 +125,7 @@ You'll cover these topics next.
 By default, when you select a structure to add a new Web Content article, the 
 structures are ordered by their ID, not their name. This can be confusing in 
 some case, but --- never fear --- there's a configuration property to sort them 
-alphabetically. In fact, there are two properties. One for Site Administration, 
-and one for the Web Content Display widget.
+alphabetically.
 
 ![Figure 5: The default ordering for Web Content Structures can yield confusing results.](../../../../images/web-content-default-order.png)
 
@@ -139,7 +138,7 @@ To enable this property for Site Administration,
 
 ![Figure 6: Web Content Administration will now display structures in alphabetical order.](../../../../images/web-content-admin-alphabetical.png)
 
-To enable this property for the Web Content Display,
+With @product-ver@ Fix Pack 2 or greater, you can also set this property for the Web Content Display widget. To enable this property for the Web Content Display,
 
 1.  Go to *Configuration* &rarr; *System Settings* &rarr; *Web Content* &rarr; 
     *Web Content Display*.
