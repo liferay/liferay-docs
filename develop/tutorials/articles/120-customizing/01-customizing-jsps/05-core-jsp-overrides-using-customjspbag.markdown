@@ -117,7 +117,7 @@ with three properties:
 -  **`contex.name`:** This should be a more human readable name, like `My Custom
    JSP Bag`.
 
--  **`service.ranking:integer`:** This determines the priority of your
+-  **`service.ranking:Integer`:** This determines the priority of your
    implementation. If you specify `100` here, and one of your coworkers develops
 a separate custom JSP bag implementation and gives theirs a ranking of `101`,
 you're out of luck. Theirs will take precedence. Logically then, you should use
