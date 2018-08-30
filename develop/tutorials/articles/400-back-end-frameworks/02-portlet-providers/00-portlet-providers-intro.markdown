@@ -106,10 +106,11 @@ Here's how to create a portlet provider:
             service = EditPortletProvider.class
         )
 
-4.  In some cases, a default portlet is already in place to handle the entity
-    and action type requested. To override the default portlet with your own
-    custom portlet, specify a `service.ranking:Integer` `@Component`
-    property with a higher integer randing than the default portlet. 
+4.  In some cases, a default portlet provider is already in place to handle the 
+	entity and action type requested. To override the default portlet provider 
+	with your own custom portlet provider, specify a `service.ranking:Integer` 
+	`@Component` property with a higher integer randing than the default portlet
+	provider. 
 
         property= {"service.ranking:Integer=10"}
 
