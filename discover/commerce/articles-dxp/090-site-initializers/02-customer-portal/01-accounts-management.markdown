@@ -22,7 +22,7 @@ To set up a new account, follow these steps:
     on the *Organizations* tab.
 
 2.  Click on the Organization with the name of your store Site. Then click
-    ![Add](../../images/icon-add.png) and select *New Account* from the menu.
+    ![Add](../../../images/icon-add.png) and select *New Account* from the menu.
 
 3.  Complete the *Add Account* form, just as you would to create an
     [Organization](/discover/portal/-/knowledge_base/7-1/managing-organizations).
@@ -43,7 +43,7 @@ Follow these steps to assign existing users to an account:
     on the *Organizations* tab, select your store Site's Organization, and click
     on the account to which you want to add users.
 
-2.  Click [Add](../../images/icon-add.png) and select *Assign Users* from the
+2.  Click [Add](../../../images/icon-add.png) and select *Assign Users* from the
     menu.
 
 3.  In the pop-up that appears, check the box next to each user that should have
@@ -55,7 +55,7 @@ Follow these steps to add a new user to an account:
     on the *Organizations* tab, select your store Site's Organization, and click
     on the account to which you want to add users.
 
-2.  Click [Add](../../images/icon-add.png) and select *New User*
+2.  Click [Add](../../../images/icon-add.png) and select *New User*
     from the menu.
 
 3.  Fill out the *Add User* form. At minimum enter a first and last name,
@@ -94,13 +94,13 @@ An account manager can follow these steps to add a user to an account:
 1.  From the Beryl site's main page, click the *Account Management* tab and then
     the *Members* sub-tab.
 
-2.  Click ![Add](../../images/icon-add.png). Enter the email address of an
+2.  Click ![Add](../../../images/icon-add.png). Enter the email address of an
     existing user and click *Add*. Then click *Save*.
 
 Here's how an account manager can assign a Role to an account member:
 
 1.  From the *Account Management* &rarr; *Members* tab, click 
-    ![Options](../../images/icon-options.png) and select *Edit* from the
+    ![Options](../../../images/icon-options.png) and select *Edit* from the
     menu.
 
 2.  Click on the *Entitlements* sub-tab and check the box next to whichever
