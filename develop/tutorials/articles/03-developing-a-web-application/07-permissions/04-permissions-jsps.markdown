@@ -119,16 +119,6 @@ available actions. To do this, follow these steps:
 
         <liferay-ui:icon-menu>
 
-            <portlet:renderURL var="viewEntryURL">
-                <portlet:param name="entryId" value="<%= String.valueOf(entry.getEntryId()) %>" />
-                <portlet:param name="mvcPath" value="/guestbookwebportlet/view_entry.jsp" />
-            </portlet:renderURL>
-
-            <liferay-ui:icon
-                message="View"
-                url="<%= viewEntryURL.toString() %>"
-            />
-
             <c:if
                 test="<%= EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.UPDATE) %>">
                 <portlet:renderURL var="editURL">
@@ -169,10 +159,9 @@ available actions. To do this, follow these steps:
 
         </liferay-ui:icon-menu>
 
-    This code defines several action buttons for viewing, updating, setting 
-    permissions on, and deleting entities. Each button is protected by a 
-    permissions check. If the current user can't perform the given action, the 
-    action doesn't appear. 
+    This code defines action buttons updating, setting permissions on, and 
+    deleting entities. Each button is protected by a permissions check. If the 
+    current user can't perform the given action, the action doesn't appear. 
 
 5.  Finally, in `view.jsp`, you must add the `entry_actions.jsp` as the last
     column in the Search Container. Find the line defining the Search Container
