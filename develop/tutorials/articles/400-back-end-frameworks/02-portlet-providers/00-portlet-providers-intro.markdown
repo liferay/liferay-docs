@@ -74,8 +74,8 @@ Here's how to create a portlet provider:
     subinterface (e.g.,
     [ViewPortletProvider](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/ViewPortletProvider.html),
     [BrowsePortletProvider](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BrowsePortletProvider.html),
-    etc.) that matches your action type. One portlet provider class can implement 
-    many different *PortletProvider* interfaces at the same time.
+    etc.) that matches your action type. A portlet provider class can implement 
+    multiple `PortletProvider` subinterfaces. 
 
 3.  Make the class an OSGi Component by adding an annotation like this one 
     above the class declaration: 
