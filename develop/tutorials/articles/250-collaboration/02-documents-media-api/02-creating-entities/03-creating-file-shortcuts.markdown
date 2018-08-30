@@ -63,7 +63,7 @@ one by calling the `addFileShortcut` method with required data:
     }
 
 See the tutorial on 
-[updating file shortcuts](liferay.com) 
+[updating file shortcuts](/develop/tutorials/-/knowledge_base/7-1/updating-file-shortcuts) 
 for detailed information on that operation. 
 
 ## Related Topics

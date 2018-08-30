@@ -19,8 +19,8 @@ class. This class implements almost all the `FileShortcut` actions that the
 Documents and Media UI supports. This class defines its own `updateFileShortcut` 
 method that contains logic to add and update file shortcuts. Note that this is 
 the same method from the example in the 
-[tutorial on creating file shortcuts](liferay.com). The example here, however, 
-focuses on the code that updates the shortcut. 
+[tutorial on creating file shortcuts](/develop/tutorials/-/knowledge_base/7-1/creating-file-shortcuts). 
+The example here, however, focuses on the code that updates the shortcut. 
 
 This method gets the data from the request that it needs to add or update a 
 shortcut. If there's no existing shortcut (`fileShortcutId <= 0`), it adds a new 

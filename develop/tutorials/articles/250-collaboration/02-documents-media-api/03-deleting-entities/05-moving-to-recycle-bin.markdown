@@ -16,7 +16,7 @@ Bin:
 
 1.  Check to ensure that the repository supports the Recycle Bin. You do this by 
     calling the 
-    [repository object's](liferay.com) 
+    [repository object's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#specifying-repositories) 
     `isCapabilityProvided` method with `TrashCapability.class` as its argument. 
     This example does so as an `if` statement's condition: 
 

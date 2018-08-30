@@ -1,7 +1,7 @@
 # Moving Folders and Files [](id=moving-folders-and-files)
 
 The move operation is much more flexible than the 
-[copy operation](liferay.com). 
+[copy operation](/develop/tutorials/-/knowledge_base/7-1/copying-folders). 
 Copying only works with folders, and you can't copy them between repositories. 
 The move operation, however, works with files and folders within or between 
 repositories. 

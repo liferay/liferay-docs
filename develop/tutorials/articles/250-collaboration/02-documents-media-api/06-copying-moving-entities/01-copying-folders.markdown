@@ -23,7 +23,7 @@ This example copies a folder to the default site repository's root folder:
 Here's an explanation of the arguments: 
 
 -   `groupId`: As the 
-    [getting started tutorial](liferay.com) 
+    [getting started tutorial](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
     explains, using the `groupId` as the repository ID specifies that the copy 
     takes place in the default site repository. 
 -   `folder.getFolderId()`: The folder ID of the folder to copy. 
@@ -38,6 +38,10 @@ Here's an explanation of the arguments:
     [Service Context](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
 
 ## Related Topics
+
+[Getting Started with the Documents and Media API](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
+
+[Understanding Service Context](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext)
 
 [Creating Folders](/develop/tutorials/-/knowledge_base/7-1/creating-folders)
 

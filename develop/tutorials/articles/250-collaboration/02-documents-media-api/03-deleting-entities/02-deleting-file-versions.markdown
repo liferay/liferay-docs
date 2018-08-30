@@ -48,7 +48,7 @@ the version, it calls `deleteFileVersion` to delete that version:
     }
 
 Note that this is the same `deleteFileEntry` method from the example in the 
-[tutorial on deleting files](liferay.com). 
+[tutorial on deleting files](/develop/tutorials/-/knowledge_base/7-1/deleting-files). 
 This method contains logic for deleting both files and file versions, depending 
 on what's in the request. 
 

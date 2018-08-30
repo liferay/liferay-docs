@@ -46,8 +46,8 @@ class. This class implements almost all the `FileEntry` actions that the
 Documents and Media UI supports. This class defines its own `updateFileEntry` 
 method that contains the logic to add and update files. Note that this is the 
 same method from the example in the 
-[tutorial on creating files](liferay.com). The example here, however, focuses on 
-the code that updates the file. 
+[tutorial on creating files](/develop/tutorials/-/knowledge_base/7-1/creating-files). 
+The example here, however, focuses on the code that updates the file. 
 
 For the method to add or update a file, it first gets the data needed for those 
 operations from the request. To update a file, it then calls the `DLAppService` 

@@ -107,7 +107,7 @@ For a full description of the method and its parameters, see its
 [Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#checkInFileEntry-long-boolean-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-). 
 This method uses the private working copy to create a new version of the file. 
 As explained in the 
-[Updating Files tutorial](liferay.com), 
+[Updating Files tutorial](/develop/tutorials/-/knowledge_base/7-1/updating-files), 
 the `majorVersion` parameter's setting determines how the file's version number 
 is incremented. 
 

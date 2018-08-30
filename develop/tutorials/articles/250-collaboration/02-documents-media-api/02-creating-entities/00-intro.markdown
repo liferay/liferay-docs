@@ -11,7 +11,7 @@ things tend to be named in a similar way. When you need to create an entity
 (whatever it is), you should look for methods that follow the pattern 
 `addModelName`, where `ModelName` is the name of the entity's data model object. 
 As the 
-[getting started tutorial](liferay.com) 
+[getting started tutorial](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
 explains, you'll use 
 [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 to access the API. This service object contains the following methods for adding 

@@ -50,7 +50,7 @@ file's ID:
 
 Note that you don't have to support the Recycle Bin in your delete operations. 
 If you want to, however, see the tutorial on 
-[moving entities to the Recycle Bin](liferay.com). 
+[moving entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-1/moving-entities-to-the-recycle-bin). 
 
 ## Related Topics
 

@@ -1,7 +1,7 @@
 # Deleting Folders [](id=deleting-folders)
 
 Deleting folders is similar to 
-[deleting files](liferay.com). 
+[deleting files](/develop/tutorials/-/knowledge_base/7-1/deleting-files). 
 There are two methods you can use to delete a folder. Click each method to see 
 its Javadoc: 
 
@@ -55,7 +55,7 @@ if the `moveToTrash` flag is `true`, or deleting the folder via the
 
 Note that you don't have to support the Recycle Bin in your delete operations. 
 If you want to, however, see the tutorial on 
-[moving entities to the Recycle Bin](liferay.com). 
+[moving entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-1/moving-entities-to-the-recycle-bin). 
 
 ## Related Topics
 
@@ -68,3 +68,5 @@ If you want to, however, see the tutorial on
 [Copying Folders](/develop/tutorials/-/knowledge_base/7-1/copying-folders)
 
 [Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)
+
+[Deleting Files](/develop/tutorials/-/knowledge_base/7-1/deleting-files)

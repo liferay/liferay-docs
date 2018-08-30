@@ -2,7 +2,7 @@
 
 Once a folder exists, you can copy or move it to a different location. These 
 operations are covered in 
-[other tutorials](liferay.com). 
+[other tutorials](/develop/tutorials/-/knowledge_base/7-1/copying-and-moving-entities). 
 The options for in-place folder updates, however, are limited. You can only 
 update a folder's name and description. You do this with the 
 [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
@@ -20,8 +20,8 @@ class. This class implements almost all the `Folder` actions that the Documents
 and Media UI supports. This class defines its own `updateFolder` method that 
 contains logic to add and update folders. Note that this is the same method from 
 the example in the 
-[tutorial on creating folders](liferay.com). The example here, however, focuses 
-on the code that updates a folder.
+[tutorial on creating folders](/develop/tutorials/-/knowledge_base/7-1/creating-folders). 
+The example here, however, focuses on the code that updates a folder. 
 
 This method gets the data from the request that it needs to add or update a 
 folder. If there's no existing folder (`folderId <= 0`), it adds a new folder. 

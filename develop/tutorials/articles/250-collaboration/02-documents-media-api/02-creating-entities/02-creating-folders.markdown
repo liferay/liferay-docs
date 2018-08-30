@@ -53,7 +53,7 @@ calling the `addFolder` method with required data:
     }
 
 See the tutorial on 
-[updating folders](liferay.com) 
+[updating folders](/develop/tutorials/-/knowledge_base/7-1/updating-folders) 
 for detailed information on that operation. 
 
 ## Folders and External Repositories [](id=folders-and-external-repositories)
