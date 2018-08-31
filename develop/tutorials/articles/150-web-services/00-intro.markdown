@@ -8,8 +8,18 @@ luxury car without wheels. Fortunately, Liferay comes with full set of JSON and
 SOAP web services that you can invoke until your heart's content. Liferay also 
 provides Service Builder to generate local and remote services for your apps. 
 
-The tutorials that follow show you how to work with web services in Liferay.
-You'll learn how to deploy JAX-WS and JAX-RS web service that work with OAuth 2.
-You'll learn how to use Service Builder to generate SOAP and JSONWS services for
-your apps. You'll also learn how to invoke those services, so you can use them
-with the clients you create. 
+The tutorials that follow show you how to work with web services in Liferay:
+
+- [JAX-RS services that work with OAuth 2](/develop/tutorials/-/knowledge_base/7-1/jax-rs)
+
+- [Service Builder JSONWS and SOAP Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)
+
+- [JAX-WS services](/develop/tutorials/-/knowledge_base/7-1/jax-ws)
+
+- [Liferay's JSON Web Service Invoker](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invoker)
+
+- [Configuring Access to JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/configuring-json-web-services)
+
+- [Invoking SOAP Web Services](/develop/tutorials/-/knowledge_base/7-1/soap-web-services)
+
+Read on to learn all about web services on Liferay's development platform. 

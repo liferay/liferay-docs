@@ -1,4 +1,4 @@
-# JAX-WS 
+# JAX-WS [](id=jax-ws)
 
 Liferay supports 
 [JAX-WS](https://en.wikipedia.org/wiki/Java_API_for_XML_Web_Services) 
@@ -34,7 +34,7 @@ publish JAX-WS web services. The following topics are covered:
 
 - [Publishing JAX-WS Web Services](/develop/tutorials/-/knowledge_base/7-1/jax-ws#publishing-jax-ws-web-services)
 
-## Configuring Endpoints and Extenders with the Control Panel
+## Configuring Endpoints and Extenders with the Control Panel [](id=configuring-endpoints-and-extenders-with-the-control-panel)
 
 Liferay's Control Panel lets administrators configure endpoints and extenders
 for JAX-WS web services. Note that you must be an administrator in your Liferay
@@ -100,7 +100,7 @@ service, you can provide an OSGi filter here that selects an implementation of
 
 Next, you'll learn how to create endpoints and extenders programmatically. 
 
-## Configuring Endpoints and Extenders Programmatically
+## Configuring Endpoints and Extenders Programmatically [](id=configuring-endpoints-and-extenders-programmatically)
 
 To configure endpoints or extenders programmatically, you must use Liferay's 
 configurator extender. The configurator extender provides a way for OSGi modules 
@@ -177,7 +177,7 @@ configuration fields `contextPaths`, `jaxWsHandlerFilterStrings`, and
 
 Next, you'll learn how to publish JAX-WS web services. 
 
-## Publishing JAX-WS Web Services
+## Publishing JAX-WS Web Services [](id=publishing-jax-ws-web-services)
 
 To publish JAX-WS web services via SOAP in a module, annotate the class and its
 methods with standard JAX-WS annotations, and then register it as a service in

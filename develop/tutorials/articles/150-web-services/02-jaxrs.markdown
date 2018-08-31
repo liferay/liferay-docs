@@ -1,4 +1,4 @@
-# JAX-RS
+# JAX-RS [](id=jax-rs)
 
 You can publish JAX-RS web services in a Liferay module the same way you would 
 outside of Liferay. You must also, however, register the class in the OSGi
@@ -85,7 +85,7 @@ If you're testing this locally on Tomcat, the URL is
 As you might guess, you don't have access to the service by just calling the URL
 above. You must authenticate first, which you'll learn how to do next. 
 
-## Using OAuth 2.0 to Invoke a JAX-RS Web Service
+## Using OAuth 2.0 to Invoke a JAX-RS Web Service [](id=using-oauth-2-0-to-invoke-a-jax-rs-web-service)
 
 Your JAX-RS web service requires authorization by default. To enable this, you
 must create an 
@@ -93,7 +93,7 @@ must create an
 to provide a way to grant access to your service: 
 
 1.  Go to the *Control Panel* &rarr; *Configuration* &rarr; *OAuth2
-    Administration* and click the ![add](../../../images/icon-add.png) button to
+    Administration* and click the ![add](../../images/icon-add.png) button to
     add an application. 
 
 2.  Give your application a descriptive name. 
@@ -150,6 +150,6 @@ Make sure that in production your server uses HTTPS.
 Great! Now you know how to create, deploy, and invoke JAX-RS web services on
 @product@'s platform! 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)
