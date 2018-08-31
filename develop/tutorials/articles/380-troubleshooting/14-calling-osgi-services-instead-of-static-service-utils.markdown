@@ -21,7 +21,7 @@ The `scr:list` Gogo shell command shows all Declarative Services components,
 including inactive ones from unsatisfied dependencies. To find unsatisfied
 dependencies for Service Builder services, use the Dependency Manager's
 `dependencymanager:dm wtf` command. Note that these commands only show
-components that haven't been activated because of unsatisfied dependencies--they
+components that haven't been activated because of unsatisfied dependencies. They
 don't show pure service trackers that are waiting for a service because of
 unsatisfied dependencies. 
 
