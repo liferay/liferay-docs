@@ -1,27 +1,22 @@
 # Managing Themes in Liferay Workspace
 
-Creating a @product@ theme can be accomplished using several different tools:
+Creating a @product@ theme can be accomplished using two different tools:
 
-- [Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+- [Liferay Themes SDK](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
   (Node.js-based)
 - [Project template/archetype](/develop/reference/-/knowledge_base/7-1/theme-template)
   (Gradle/Maven-based)
-- etc.
 
-Liferay Workspace offers an environment where developers with differing theme
-development expertise can collaborate and work together in one place. For
-example, suppose Tony theme developer is a guru at Gradle-based themes and Tracy
-theme developer is an expert with Node.js-based themes. Both developers can
-create a theme with their preferred tooling and have them both seamlessly
-integrated into workspace.
+Liferay Workspace offers an environment where developers can use the Liferay
+Themes SDK to create Node.js-based themes and their work can be seamlessly
+integrated into their overall DevOps strategy. You can leverage the Liferay
+Themes SDK to create Node.js-based themes inside workspace or you can leverage
+it externally and copy themes into workspace.
 
-On a grander scale, workspace provides the environment necessary for developers
-to stick to what they're comfortable with. It creates a shared space where
-frontend developers can use frontend tools, backend developers can use backend
-tools, etc. Then they can leverage workspace to tie everything together with its
-underlying CI build (e.g., Gradle or Maven).
+Workspace also offers a traditional Java-based theme approach (leveraging
+Gradle/Maven) for those that can't use Node.js tools in their CI environment.
 
-So how does this work with themes? You'll find how Node.js-based themes and
+So how does workspace manage all this? You'll find how Node.js-based themes and
 Gradle/Maven-based themes are managed next.
 
 ## Node.js Themes in Workspace
@@ -29,15 +24,14 @@ Gradle/Maven-based themes are managed next.
 Liferay Workspace reserves the `themes` folder only for Node.js-based themes.
 There are no Blade CLI-provided commands or Maven archetypes to create a Liferay
 Node.js theme. You should leverage Liferay's
-[Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) to
-create them. You can run the Theme Generator from within the `themes` folder or
+[Themes SDK](/develop/tutorials/-/knowledge_base/7-1/creating-themes) to
+create them. You can leverage the Themes SDK from within the `themes` folder or
 the generated theme can be copied into the folder.
 
 You'll demo workspace's Node.js theme management capability next. Be sure the
-Theme Generator's required tooling is installed.
+Theme SDK's required tooling is installed.
 
-1.  Navigate to your workspace's `themes` folder and run the following Theme
-    Generator command:
+1.  Navigate to your workspace's `themes` folder and run the following command:
 
         yo liferay-theme
 
