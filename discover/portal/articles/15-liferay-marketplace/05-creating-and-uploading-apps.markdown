@@ -2,7 +2,7 @@
  
 Creating apps for the Liferay Marketplace is very easy and intuitive. To find
 out more information about creating your own Liferay apps, visit the 
-[Liferay Marketplace Developer Guide](https://dev.liferay.com/distribute) and
+[Liferay Marketplace Developer Guide](/distribute) and
 get started creating apps today!
 
 Next, we'll discuss general Liferay plugin management. We'll explain the

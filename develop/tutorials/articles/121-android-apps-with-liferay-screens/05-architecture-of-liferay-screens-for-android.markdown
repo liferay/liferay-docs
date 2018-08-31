@@ -17,7 +17,7 @@ layer, Interactors, and Server Connectors. Interactors are technically part of
 the core, but are worth covering separately. They facilitate interaction with 
 both local and remote data sources, as well as communication between the 
 Screenlet layer and the 
-[Liferay Mobile SDK](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/mobile). 
+[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile). 
 
 ![Figure 1: Here are the high-level components of Liferay Screens for Android. The dashed arrow connectors represent a "uses" relationship, in which a component uses the component its pointing to.](../../images/screens-android-architecture-01.png)
 
@@ -108,7 +108,7 @@ calls a Liferay instance's remote services in a type-safe and transparent way.
 a singleton class that holds the logged in user's session. Apps can use an
 implicit login, invisible to the user, or a login that relies on explicit user
 input to create the session. User logins can be implemented with the
-[Login Screenlet](https://dev.liferay.com/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android). 
+[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android). 
 This is explained in detail [here](/develop/tutorials/-/knowledge_base/6-2/accessing-the-liferay-session-in-android).
 
 [**LiferayServerContext:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/context/LiferayServerContext.java)

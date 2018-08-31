@@ -252,7 +252,7 @@ them. Therefore, most of the requirements are the same as those that exist for
 other Liferay plugins, as explained in the tutorials on creating
 [MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/creating-a-liferay-mvc-portlet-project)
 and creating
-[JSF Portlets](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-and-deploying-jsf-portlets).
+[JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/creating-and-deploying-jsf-portlets).
 
 In addition to those requirements, there are some Marketplace-specific ones to
 keep in mind:

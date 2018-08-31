@@ -4,7 +4,7 @@ Congratulations! You've learned how to build a theme from start to finish. So
 what's next? Now that you've created a theme, you can publish it to Liferay's
 [Marketplace](https://www.liferay.com/marketplace) for others to download. You
 can read about Marketplace and the requirements for publishing in our 
-[Publishing Your App](https://dev.liferay.com/distribute/how-to-publish)
+[Publishing Your App](/distribute/how-to-publish)
 guide.
 
 Before you publish your theme to Marketplace make sure you update your 

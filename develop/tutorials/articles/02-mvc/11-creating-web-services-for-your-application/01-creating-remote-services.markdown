@@ -11,7 +11,7 @@ published as JSON web services when your application is deployed. You can also
 use Service Builder to generate a WSDL (Web Services Description Language)
 document for your remote services to make them available via SOAP (Simple Object
 Access Protocol). Please refer to the
-[Service Builder tutorial](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
+[Service Builder tutorial](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
 for more information.
 
 To specify whether Service Builder should generate local services, remote

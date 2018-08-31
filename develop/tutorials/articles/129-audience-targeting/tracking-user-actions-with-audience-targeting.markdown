@@ -16,7 +16,7 @@ application.
 
 To learn more about how tracking actions are used in the Audience Targeting
 application, visit the
-[Defining Tracking Actions](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/managing-campaigns#defining-tracking-actions)
+[Defining Tracking Actions](/discover/portal/-/knowledge_base/6-2/managing-campaigns#defining-tracking-actions)
 section.
 
 To follow this tutorial, you must first have the Audience Targeting SDK
@@ -339,7 +339,7 @@ of a deployable sample newsletter tracking action, you can download its
 
 ## Related Topics [](id=related-topics)
 
-[Creating Model Listeners](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-model-listeners)
+[Creating Model Listeners](/develop/tutorials/-/knowledge_base/6-2/creating-model-listeners)
 
 [Web Content Management](/discover/portal/-/knowledge_base/6-2/web-content-management)
 
