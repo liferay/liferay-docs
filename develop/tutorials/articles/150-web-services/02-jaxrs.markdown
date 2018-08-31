@@ -1,7 +1,7 @@
 # JAX-RS [](id=jax-rs)
 
-You can publish JAX-RS web services in a Liferay module the same way you would 
-outside of Liferay. You must also, however, register the class in the OSGi
+JAX-RS web services work in Liferay modules the same way they work outside of
+Liferay. The only difference is that you must register the class in the OSGi
 framework. Liferay's development tools make this easy by providing a template. 
 
 In Liferay Developer Studio, create a new module using the *rest* template: 
@@ -113,9 +113,9 @@ authenticate. You need the two pieces of information generated for your
 application: the Client ID and the Client Secret. For example, say those fields
 contain these values: 
 
-Client ID: `id-12e14a84-e558-35a7-cf9a-c64aafc7f` 
+**Client ID:** `id-12e14a84-e558-35a7-cf9a-c64aafc7f` 
 
-Client Secret: `secret-93f14320-dc39-d67f-9dec-97717b814f`
+**Client Secret:** `secret-93f14320-dc39-d67f-9dec-97717b814f`
 
 First, you must request an OAuth token. If you're testing locally, you'd make
 a request like this: 
