@@ -61,7 +61,7 @@ follow the instructions below:
    to ensure session replication when one node becomes unavailable.
 
 3. As any other Liferay cluster installation, you have to set Liferay to work in
-   a cluster. Visit the [Liferay Clustering](https://dev.liferay.com/discover/portal/-/knowledge_base/6-1/liferay-clustering)
+   a cluster. Visit the [Liferay Clustering](/discover/portal/-/knowledge_base/6-1/liferay-clustering)
    section for more info.
 
 4. Now you'll prepare the Liferay WAR to be cluster-aware with session
