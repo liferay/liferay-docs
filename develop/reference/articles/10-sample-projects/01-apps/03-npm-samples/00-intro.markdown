@@ -15,6 +15,7 @@ preferred build tool:
 The following npm samples are documented:
 
 - [Angular npm Portlet](angular-npm-portlet)
+- [Angular npm Deduplication Portlet](angular-npm-deduplication-portlet)
 - [Billboard.js npm Portlet](billboard-js-npm-portlet)
 - [jQuery npm Portlet](jquery-npm-portlet)
 - [Metal.js npm Portlet](metal-js-npm-portlet)
