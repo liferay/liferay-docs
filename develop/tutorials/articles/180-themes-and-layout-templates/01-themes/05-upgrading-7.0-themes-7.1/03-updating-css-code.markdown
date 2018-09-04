@@ -295,10 +295,11 @@ table below:
 
 |Pattern|Replacement|
 |---|---|
-|@import \aui\lexicon.*|@import clay.*|
-|@import \aui\lexicon\bootstrap\mixins\|removed|
-|@import \aui\lexicon\lexicon-base\mixins\|removed|
-|@import \aui\lexicon\atlas-theme\mixins\|removed|
+|`@import "\aui\lexicon\bootstrap\mixins\";`|removed|
+|`@import "\aui\lexicon\lexicon-base\mixins\";`|removed|
+|`@import "\aui\lexicon\atlas-theme\mixins\";`|removed|
+|`@import "aui\lexicon\atlas-variables";`|`@import "clay\atlas-variables";`|
+|`@import "aui\lexicon\atlas";`|`@import "clay\atlas";`|
 
 ## Related Topics [](id=related-topics)
 
