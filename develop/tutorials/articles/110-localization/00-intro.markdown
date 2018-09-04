@@ -21,4 +21,4 @@ localize your portlets in all of these scenarios.
 
 ## Related Topics [](id=related-topics)
 
-[Localizing JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/tutorials/localizing-jsf-portlets)
+[Localizing JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/localizing-jsf-portlets)

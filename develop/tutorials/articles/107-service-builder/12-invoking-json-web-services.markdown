@@ -41,7 +41,7 @@ parameters doesn't matter either.
 
 **Note:** An authentication related token (`p_auth`) must accompany each Liferay
 web service invocation. For details, please see the
-[Understanding Liferay's Service Security Model](/develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model)
+[Service Security Layers](/develop/tutorials/-/knowledge_base/6-2/service-security-layers)
 tutorial. Also, please see the note in the following section to learn how to
 find the `p_auth` token value that corresponds to your Liferay Portal session.
 
@@ -482,6 +482,6 @@ the following common errors:
 
 [Registering JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/registering-json-web-services)
 
-[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/6-2/json-web-servies-invoker)
+[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/6-2/json-web-services-invoker)
 
 [JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)

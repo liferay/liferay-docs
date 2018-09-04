@@ -474,6 +474,6 @@ basic understanding of how to manipulate the DOM using AlloyUI.
 
 ## Related Topics [](id=related-topics)
 
- [Using AlloyUI Carousel](/develop/tutorials/-/knowledge_base/6-2/using-alloyui-carousel-in-a-portlet)
+ [Using AlloyUI Carousel](/develop/tutorials/-/knowledge_base/6-2/using-alloyui-carousel-in-your-portlet)
 
  [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)

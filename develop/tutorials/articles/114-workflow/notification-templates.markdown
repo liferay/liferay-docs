@@ -403,6 +403,6 @@ ___
 
 Now that the Ticket Process Definition is complete, learn how to publish it and
 configure it inside the portal
-[next](/develop/tutorials/-/knowledge_base/6-2/publishing-and-using-workflows).
+[next](/develop/tutorials/-/knowledge_base/6-2/publishing-and-configuring-workflows).
 
 <!-- ## Recent Articles -->

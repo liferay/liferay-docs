@@ -96,7 +96,7 @@ leverage one of several powerful JSF frameworks.
 
 ## Related Topics [](id=related-topics)
 
-[JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/tutorials/jsf-portlets-with-liferay-faces)
+[JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/jsf-portlets-with-liferay-faces)
 
 [Developing Liferay Plugins with Additional Maven Archetypes](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-plugins-with-additional-maven-ar)
 

@@ -63,8 +63,8 @@ release and removed in the Liferay Faces Alloy 4.2.5-ga6 release:
 
 ## Related Topics [](id=related-topics)
 
-[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/tutorials/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
 
-[Liferay Faces Portal UI Components](/develop/tutorials/-/knowledge_base/6-2/tutorials/liferay-faces-portal-ui-components)
+[Liferay Faces Portal UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-portal-ui-components)
 
 [Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)

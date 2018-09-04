@@ -37,6 +37,6 @@ This knowledge adds just another component tag for your JSF portlet development.
 
 ## Related Topics [](id=related-topics)
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/tutorials/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/tutorials/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)

@@ -72,4 +72,4 @@ You now know how to create Liferay portlet plugins in Maven.
 
 [MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-jsf-portlets)
+[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)

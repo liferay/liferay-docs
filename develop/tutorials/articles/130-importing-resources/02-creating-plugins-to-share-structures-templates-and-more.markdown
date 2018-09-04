@@ -25,7 +25,7 @@ plugin, they're especially useful for Liferay themes. When developers
 upload themes to [Liferay Marketplace](https://www.liferay.com/marketplace),
 it's very convenient for them to be able to bundle sample content with the theme
 so that the theme can be viewed in an appropriate context. Please refer to the
-[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes-liferay-portal-6-2-dev-guide-09-en) tutorial for
+[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes) tutorial for
 instructions on using the Resources Importer with theme plugins. Behind themes,
 portlet plugins are the most common type of plugin used for importing templates.
 Let's build a portlet plugin that imports some web content structures and

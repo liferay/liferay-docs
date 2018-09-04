@@ -164,7 +164,7 @@ Next, notice that the service method adds a new trash entry to the Recycle Bin:
 Lastly, the `moveSongToTrash` service method invokes `TrashUtil`'s [`getTrashTitle`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/trash/util/TrashUtil.html#getTrashTitle(long))
 method to set the entry's *trash title*. The trash title is an alternative
 reference to the entry. The trash title prevents duplicate entry name conflicts,
-discussed in the tutorial [Resolving Recycling Conflicts](/develop/tutorials/-/knowledge_base/resolving-recycling-conflicts-lp-6-2-develop-tutorial).
+discussed in the tutorial [Resolving Recycling Conflicts](/develop/tutorials/-/knowledge_base/6-2/resolving-recycling-conflicts).
 
 ## Step 4: Create a Portlet Action to Initiate Moving Entries to Recycle Bin [](id=step-4-create-a-portlet-action-to-initiate-moving-entries-to-recycle-bin)
 

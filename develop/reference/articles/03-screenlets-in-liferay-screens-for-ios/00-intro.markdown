@@ -3,7 +3,7 @@
 Liferay Screens for iOS contains several Screenlets that you can use in your iOS 
 apps. This section contains the reference documentation for each. If you're 
 looking for instructions on using Screens, see the 
-[Screens tutorials](/develop/tutorials/-/knowledge_base/6-2/mobile-apps-with-liferay-screens). 
+[Screens tutorials](/develop/tutorials/-/knowledge_base/6-2/ios-apps-with-liferay-screens). 
 The Screens tutorials contain instructions on 
 [using Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps) 
 and 

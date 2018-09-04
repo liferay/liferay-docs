@@ -58,7 +58,7 @@ Here's how to generate a PACL policy for your plugin:
     Your app server may require certain startup arguments to be used for
     activiting the security manager. Check the PACL and security manager
     instructions for your app server in the
-    [Installation and Setup](/discover/portal/-/knowledge_base/6-2/installation-and-setup)
+    [Installation and Setup](/discover/deployment/-/knowledge_base/6-2/installation-and-setup)
     chapter of *Using Liferay Portal*. Some app servers, like Tomcat, output
     a terminal message like "Using Security Manager", indicating that it's
     using the security manager. 
@@ -379,4 +379,4 @@ Manager.
 
 [MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-jsf-portlets)
+[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)

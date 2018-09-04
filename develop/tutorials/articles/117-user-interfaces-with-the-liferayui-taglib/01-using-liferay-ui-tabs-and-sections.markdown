@@ -189,5 +189,5 @@ portlet. Now you can "keep tabs on" all kinds of portlets!
 [Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 
 <!--
-[Using Liferay UI Icon](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ui-icon-in-a-portlet)
+[Using Liferay UI Icon](/develop/tutorials/-/knowledge_base/6-2/using-icons-with-the-liferay-ui-taglib)
 -->

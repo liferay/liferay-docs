@@ -196,6 +196,6 @@ your new titles, labels, and message strings in your portal.
 [Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
 
 <!-- TODO Activate topic link when the tutorial is available.
-[Extending your Indexer Post Processor Using a Hook](/develop/tutorials/-/knowledge_base/6-2/extend-indexer-post-processor-hook)
+[Extending your Indexer Post Processor Using a Hook](/develop/tutorials/-/knowledge_base/6-2/extending-the-indexer-post-processor-using-a-hook)
 -->
 

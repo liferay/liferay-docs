@@ -61,7 +61,7 @@ Screenlets in your iOS app. This opens up a world of possibilities--like
 
 [Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-ios-apps)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)
 
 [Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
 

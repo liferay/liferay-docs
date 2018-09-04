@@ -43,7 +43,7 @@ it, create it in your app project.
 
 If you want to reuse your View in another app, create it in a new Android
 application module; the tutorial
-[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-android-screenlets)
+[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-your-android-screenlets)
 explains how. When your View's project is in place, you can start creating it. 
 
 First, you'll learn how to create a Themed View. 

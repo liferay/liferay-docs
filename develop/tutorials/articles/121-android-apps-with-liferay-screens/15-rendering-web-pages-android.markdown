@@ -211,7 +211,7 @@ Great! Now you know how to use Web Screenlet in your Android apps.
 
 [Web Screenlet for Android](/develop/reference/-/knowledge_base/6-2/web-screenlet-for-android)
 
-[Using Web Screenlet with Cordova in Your Android App](/develop/reference/-/knowledge_base/6-2/using-web-screenlet-with-cordova-in-your-android-app)
+[Using Web Screenlet with Cordova in Your Android App](/develop/tutorials/-/knowledge_base/6-2/using-web-screenlet-with-cordova-in-your-android-app)
 
 [Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
 
