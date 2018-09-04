@@ -106,7 +106,7 @@ Studio may opt to use Ruby based Sass and Compass instead of node-sass.
 Generator and specifies the `"liferay-theme-deps-7.0": "1.0.0"` dependency in 
 its `package.json`, `npm install` may fail in Liferay DXP due to its dependency 
 on node-sass `v3.13.1`. To fix this issue, change the dev dependency in your 
-`package.json` to `"liferay-theme-deps-7.0": "*"` and rebuild your theme. We 
+`package.json` to `"liferay-theme-deps-7.0": "7.0.0"` and rebuild your theme. We 
 recommend that you use the latest 7.x.x version of the Theme Generator and 
 dependencies in your `package.json` to ensure full compatibility. 
 
