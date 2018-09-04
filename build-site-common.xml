@@ -137,10 +137,6 @@
 			<arg value="${legacy.links}"/>
 			<arg value="${api.links}"/>
 			<arg value="${doc.dir}"/>
-			<arg value="${product.token.platform.reference}"/>
-			<arg value="${product.token.app.reference}"/>
-			<arg value="${product.platform.reference}"/>
-			<arg value="${product.app.reference}"/>
 		</java>
 	</target>
 	

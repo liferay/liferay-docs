@@ -34,10 +34,6 @@ public class CheckLinks {
 		checkApiLinks = Boolean.parseBoolean(apiLinks);
 
 		String docDir = args[2];
-		platformToken = args[3];
-		appToken = args[4];
-		platformReferenceSite = args[5];
-		appReferenceSite = args[6];
 
 		File currentArticleDir = new File("../" + docDir + "/articles");
 
@@ -628,9 +624,6 @@ public class CheckLinks {
 
 		String urlString = line.substring(begIndex, endIndex);
 
-		urlString = urlString.replace("@" + platformToken + "@", platformReferenceSite);
-		urlString = urlString.replace("@" + appToken + "@", appReferenceSite);
-
 		URL url = null;
 
 		try {
@@ -814,13 +807,9 @@ public class CheckLinks {
 
 	}
 
-	private static String appReferenceSite;
-	private static String appToken;
 	private static boolean checkApiLinks;
 	private static boolean checkLegacyLinks;
 	private static String ldnArticle;
-	private static String platformReferenceSite;
-	private static String platformToken;
 	private static int resultsNumber = 0;
 	private static boolean validUrl;
 
