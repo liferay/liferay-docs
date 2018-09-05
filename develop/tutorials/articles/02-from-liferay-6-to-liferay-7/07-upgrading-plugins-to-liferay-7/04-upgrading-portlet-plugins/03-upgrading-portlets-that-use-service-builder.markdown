@@ -77,7 +77,7 @@ If you need to adapt a portlet's dependencies, refer to tutorial
 
 ## 3. Build the services [](id=3-build-the-services)
 
-[Build the services](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
+[Build the services](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
 as you did in Liferay Portal 6.2.
 
 The Guestbook portlet's `service.xml` file specifies exception class names in

@@ -8,7 +8,7 @@ action class when necessary.
 First, [configure your view layer](configuring-the-view-layer#configuring-the-view-layer)
 and use the [`<portlet:actionURL>` tag](@platform-ref@/7.1-latest/taglibs/util-taglib/portlet/actionURL.html)
 to create the action URL in your JSP.  For example, the Blogs app's
-[`edit_entry.jsp` file](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/blogs/blogs-web/src/main/resources/META-INF/resources/blogs/edit_entry.jsp)
+[`edit_entry.jsp` file](https://github.com/liferay/liferay-portal/blob/master/modules/apps/blogs/blogs-web/src/main/resources/META-INF/resources/blogs/edit_entry.jsp)
 defines the following action URL for editing blog entries:
 
     <portlet:actionURL name="/blogs/edit_entry" var="editEntryURL" />

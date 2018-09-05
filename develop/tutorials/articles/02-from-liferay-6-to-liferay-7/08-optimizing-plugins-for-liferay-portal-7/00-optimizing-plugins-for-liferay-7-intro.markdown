@@ -17,15 +17,14 @@ Here are some common optimizations to consider:
 
 -   Migrating to environments that help you develop and test
     more quickly, such as the
-    [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/migrating-a-6-2-theme-to-liferay-7)
+    [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
     for themes and
     [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/from-the-plugins-sdk-to-liferay-workspace)
     for modules and web applications. 
 -   Adapting plugins to
     [Liferay's modular architecture](/develop/tutorials/-/knowledge_base/7-1/whats-changed-and-what-hasnt#embracing-a-modular-architecture)
     and updated frameworks, such as Service Builder.
--   [Styling your app consistently using Clay](/develop/tutorials/-/knowledge_base/7-1/applying-lexicon-styles-to-your-app)
+-   [Styling your app consistently using Clay](/develop/tutorials/-/knowledge_base/7-1/applying-clay-styles-to-your-app)
     --the web implementation of Lexicon, Liferay's design language.
 -   Modularizing apps to reap the
-    [benefits of modularity](/develop/tutorials/-/knowledge_base/7-1/osgi-and-modularity-for-liferay-6-developers#modules-as-an-improvement-over-traditional-plugins). 
-
+    [benefits of modularity](/develop/tutorials/-/knowledge_base/7-1/benefits-of-liferay-7-for-liferay-6-developers). 

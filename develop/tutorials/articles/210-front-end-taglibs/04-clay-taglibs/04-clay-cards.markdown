@@ -194,6 +194,6 @@ Now you know how to use Cards in your UI to display information in your apps.
 
 [Clay Badges](/develop/tutorials/-/knowledge_base/7-1/clay-badges)
 
-[Clay Labels](/develop/tutorials/-/knowledge_base/7-1/clay-labels)
+[Clay Labels and Links](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links)
 
 [Clay Stickers](/develop/tutorials/-/knowledge_base/7-1/clay-stickers)

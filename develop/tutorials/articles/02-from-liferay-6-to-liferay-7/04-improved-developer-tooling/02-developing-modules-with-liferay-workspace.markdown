@@ -57,9 +57,9 @@ for portlets, service wrappers, Struts actions, and more.
 ![Figure 2: Liferay @ide@'s component wizard facilitates creating component classes.](../../../images/improved-tooling-component-wizard.png)
 
 Building and deploying modules in a Workspace is a snap using
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/deploying-modules-with-liferay-ide)
+[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-liferay-ide)
 and
-[Blade](/develop/tutorials/-/knowledge_base/7-1/deploying-modules-with-blade-cli).
+[Blade](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-blade-cli).
 Workspace uses BndTools to generate each module's OSGi headers in a
 `META-INF/MANIFEST.MF` file. Workspace deploys modules to the OSGi container
 using Felix File Install commands.

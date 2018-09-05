@@ -10,7 +10,7 @@ in the OSGi bundle's `package.json`, you can retrieve the information in your
 portlet with the `NPMResolver` API. For instance, you can use this API to 
 [reference an npm package's static resources](/develop/tutorials/-/knowledge_base/7-1/obtaining-dependency-npm-package-descriptors) 
 (such as CSS files) and even to
-[make your code more maintainable](/develop/tutorials/-/knowledge_base/7-1/obtaining-npm-package-descriptors#using-an-alias-to-reference-a-modules-package). 
+[make your code more maintainable](/develop/tutorials/-/knowledge_base/7-1/referencing-an-npm-modules-package). 
 
 To enable the `NPMResolver` in your portlet, use the `@Reference` annotation to 
 inject the `NPMResolver` OSGi component into your portlet's Component class, as 

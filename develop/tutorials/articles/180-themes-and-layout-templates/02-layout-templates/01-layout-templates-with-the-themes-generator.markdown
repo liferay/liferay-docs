@@ -6,7 +6,7 @@ the *1-2-1 Columns Layout CE* layout below:
 ![Figure 1: The *1-2-1 Columns Layout CE* page layout creates a nice flow for your content.](../../../images/layout-template-1-2-1-columns.png)
 
 The 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator) 
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
 provides a Layouts sub-generator that helps automate layout template creation. 
 This tutorial covers how to use this tool to create layout templates. Install 
 the Liferay Theme Generator if it's not already installed, then follow these 
@@ -65,4 +65,4 @@ steps to create a layout template:
 
 [Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
+[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)

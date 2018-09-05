@@ -105,4 +105,4 @@ Now you know how to alert users!
 
 [Clay Form Elements](/develop/tutorials/-/knowledge_base/7-1/clay-form-elements)
 
-[Clay Labels](/develop/tutorials/-/knowledge_base/7-1/clay-labels)
+[Clay Labels and Links](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links)

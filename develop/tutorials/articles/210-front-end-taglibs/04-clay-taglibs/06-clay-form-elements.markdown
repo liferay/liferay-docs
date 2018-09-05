@@ -109,4 +109,4 @@ Now you know how to use Clay taglibs to add common form elements to your app!
 
 [Clay Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons)
 
-[Clay Labels](/develop/tutorials/-/knowledge_base/7-1/clay-labels)
+[Clay Labels and Links](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links)

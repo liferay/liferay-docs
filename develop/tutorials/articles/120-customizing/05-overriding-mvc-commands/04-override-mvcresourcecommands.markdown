@@ -58,4 +58,4 @@ class name.
 
 [Adding Logic to MVC Commands](/develop/tutorials/-/knowledge_base/7-1/adding-logic-to-mvc-commands)
 
-[Overriding MVCRenderCommands](/develop/tutorials/-/knowledge_base/7-1/redirecting-to-a-new-jsp)
+[Overriding MVCRenderCommands](/develop/tutorials/-/knowledge_base/7-1/overriding-mvcrendercommand)

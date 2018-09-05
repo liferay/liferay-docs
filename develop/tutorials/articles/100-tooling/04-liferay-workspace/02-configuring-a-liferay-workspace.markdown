@@ -11,7 +11,7 @@ The top-level files/folder of a Liferay (Gradle) Workspace are outlined below:
   files serve as your global configuration files for all @product@ servers and
   projects residing in your workspace. To learn more about using the `configs`
   folder, see the
-  [Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-modules)
+  [Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
   section.
 - `gradle`: holds the Gradle Wrapper used by your workspace.
 - `modules`: holds your custom modules.
@@ -61,7 +61,7 @@ of these properties.
 
 **Note:** Liferay Workspace provides many subprojects for you behind the scenes,
 which hides some complexities of Gradle. You can learn more about this in the
-[Building Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#building-modules)
+[Building Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#building-projects)
 section.
 
 $$$
@@ -79,7 +79,7 @@ root folder. There are several configurable properties for your workspace's
 Liferay instance. You can set the version of the Liferay bundle you'd like to
 generate and install by setting the download URL for the
 `liferay.workspace.bundle.url` property
-(e.g., `http://downloads.sourceforge.net/project/lportal/Liferay%20Portal/7.0.4%20GA5/liferay-ce-portal-tomcat-7.0-ga5-20171018150113838.zip`).
+(e.g., `https://releases-cdn.liferay.com/portal/7.1.0-ga1/liferay-ce-portal-tomcat-7.1.0-ga1-20180703012531655.zip`).
 You can also set the folder where your Liferay bundle is generated with the
 `liferay.workspace.home.dir` property. It's set to `bundles` by default.
 
@@ -87,7 +87,7 @@ You can download a Liferay DXP bundle for your workspace if you're a DXP
 subscriber. Do this by setting the `liferay.workspace.bundle.url` property to a
 ZIP hosted on *api.liferay.com*. For example,
 
-`liferay.workspace.bundle.url=https://api.liferay.com/downloads/portal/7.0.10.6/liferay-dxp-digital-enterprise-tomcat-7.0-sp6-20171010144253003.zip`
+`liferay.workspace.bundle.url=https://api.liferay.com/downloads/portal/7.1.10/liferay-dxp-tomcat-7.1.10-ga1-20180703090613030.zip`
 
 <!-- I formatted the above snippet differently to avoid providing a link.
 -Cody-->
@@ -130,7 +130,7 @@ Your distribution file is available from the workspace's `/build` folder.
 
 **Note:** You can define different environments for your Liferay bundle for
 easy testing. You can learn more about this in the
-[Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-modules)
+[Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
 section.
 
 $$$
@@ -235,8 +235,8 @@ The following configurable properties are available in your workspace's
 - `liferay.workspace.bundle.url`: Set the URL pointing to the bundle Zip to
   download. If the URL points to a DXP bundle (e.g.,
   https://api.liferay.com/...), set the `liferay.workspace.bundle.token.download` 
-  property to `true`. The default value is the URL for Liferay Portal CE 7.0.4
-  GA5.
+  property to `true`. The default value is the URL for the latest version of
+  Liferay Portal CE.
 - `liferay.workspace.default.repository.enabled`: Set this to `true` to
   configure Liferay CDN as the default repository in the root project. The
   default value is `true`.

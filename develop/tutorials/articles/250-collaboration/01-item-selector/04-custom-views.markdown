@@ -260,7 +260,7 @@ view's class:
          private ServletContext _servletContext;
 
 For a real-world example of a view class, see the 
-[`SiteNavigationMenuItemItemSelectorView` class](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/web-experience/site-navigation/site-navigation-item-selector-web/src/main/java/com/liferay/site/navigation/item/selector/web/internal/SiteNavigationMenuItemItemSelectorView.java). 
+[`SiteNavigationMenuItemItemSelectorView` class](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/site-navigation/site-navigation-item-selector-web/src/main/java/com/liferay/site/navigation/item/selector/web/internal/SiteNavigationMenuItemItemSelectorView.java). 
 
 ## Writing Your View Markup [](id=writing-your-view-markup)
 
@@ -290,9 +290,9 @@ therefore use this event name in the markup:
     );
 
 For a complete, real-world example, see the 
-[`layouts.jsp` view markup](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web/src/main/resources/META-INF/resources/layouts.jsp)
+[`layouts.jsp` view markup](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/layout/layout-item-selector-web/src/main/resources/META-INF/resources/layouts.jsp)
 for the 
-[`com.liferay.layout.item.selector.web` module](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web). 
+[`com.liferay.layout.item.selector.web` module](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/layout/layout-item-selector-web). 
 Even though this example is for the previous version of @product@, it still 
 applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
 
@@ -323,7 +323,7 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
         </liferay-util:html-top>
     
     You can learn more about using the `liferay-util` taglibs in the tutorial 
-    [Using the Liferay Util Taglib](/develop/tutorials/-/knowledge_base/7-1/using-the-liferay-util-taglib). 
+    [Using the Liferay Util Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-util-taglib). 
 
 3.  This snippet creates the UI to display the layout entities. It uses the 
     [`liferay-layout:layouts-tree` taglib](@platform-ref@/7.0-latest/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/layouts-tree.html) 

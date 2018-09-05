@@ -1,12 +1,12 @@
 # Integrating Third Party Themes with Clay [](id=integrating-third-party-themes-with-clay)
 
-[Clay Base](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay) 
+[Clay Base](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay) 
 provides all the features and components your theme needs and inherits 
 Bootstrap's styles. As a result, Clay Base is fully compatible with third party 
 themes that leverage Bootstrap's Sass variable API. 
 
 The 
-[Styled Theme](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-styled) 
+[Styled Theme](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled) 
 uses Clay Base to provide its styles and components. Therefore, as a best 
 practice, you should use the Styled base theme to integrate third party themes. 
 
@@ -32,7 +32,7 @@ Follow these steps to integrate a third party theme with Clay Base:
 
         $FontAwesomePath: "font-awesome/font";
 
-        @import "font-awesome/scss/font-awesome"
+        @import "font-awesome/scss/font-awesome";
 
 3.  In that same folder, add a file named `_clay_variables.scss`. All your
     Atlas, Bootstrap, and Clay Base variable modifications must be placed in 

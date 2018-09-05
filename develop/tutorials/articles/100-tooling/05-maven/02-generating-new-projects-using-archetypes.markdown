@@ -30,10 +30,8 @@ for upcoming 7.1 Maven archetypes. -Cody -->
 
 Here's a brief list of some popular Maven archetypes provided by Liferay:
 
-- [Activator](/develop/reference/-/knowledge_base/7-1/using-the-activator-template)
+- [Activator](/develop/reference/-/knowledge_base/7-1/activator-template)
 - [Fragment](/develop/reference/-/knowledge_base/7-1/using-the-fragment-template)
-- [Liferay Faces](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
-  portlets
 - [MVC Portlet](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template)
 - [npm Metal.js Portlet](/develop/reference/-/knowledge_base/7-1/npm-metal-js-portlet-template)
 - [npm React Portlet](/develop/reference/-/knowledge_base/7-1/npm-react-portlet-template)
@@ -43,6 +41,13 @@ Here's a brief list of some popular Maven archetypes provided by Liferay:
 - [Soy Portlet](/develop/reference/-/knowledge_base/7-1/soy-portlet-template)
 - [Theme](/develop/reference/-/knowledge_base/7-1/theme-template)
 - and many more...
+
+<!-- TODO: readd JSF archetype, when available -Cody.
+
+- [Liferay Faces](develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
+  portlets
+  
+-->
 
 For documentation on the archetypes (project templates) compatible with
 @product-ver@, see the

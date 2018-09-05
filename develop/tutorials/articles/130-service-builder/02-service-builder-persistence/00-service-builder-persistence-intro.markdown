@@ -12,7 +12,7 @@ generate the layer instantaneously.
 Here's what these tutorials cover:
 
 - [Defining an object-relational map and generating your persistence layer from that map](/tutorials/-/knowledge_base/7-1/defining-an-object-relational-map-with-service-builder)
-- [Understanding and using local and remote services Service Builder generates](/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
+- [Understanding and using local and remote services Service Builder generates](/tutorials/-/knowledge_base/7-1/running-service-builder)
 - [Using the `ServiceContext` class](/tutorials/-/knowledge_base/7-1/understanding-servicecontext)
 - [Customizing model entites with Model Hints](/tutorials/-/knowledge_base/7-1/customizing-model-entities-with-model-hints)
 - [SQL queries](/tutorials/-/knowledge_base/7-1/custom-sql)

@@ -30,7 +30,18 @@ Here are the steps for creating the folder structure:
 
 1.  Create the root folder. It is the new home for your application's
     independent modules and configuration files. For example, if your
-    application's name is *Tasks*, then your root folder could be *tasks*.
+    application's name is *Tasks*, then your root folder could be *tasks*. 
+    
+    If your application uses Liferay Service Builder, use the following
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
+    command to generate the parent folder and service implementation and service
+    API modules in it. If the parent folder already exists, it must be empty.
+    This command names the parent folder after the `APPLICATION_NAME`: 
+
+        blade create -t service-builder -p [ROOT_PACKAGE] [APPLICATION_NAME]
+
+    The `*-service` and `*-api` module folders are described later in this
+    tutorial. 
 
 2.  Create the folder structure for your web client module.
     [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) and
@@ -43,15 +54,6 @@ Here are the steps for creating the folder structure:
     structure:
 
         blade create -t mvc-portlet [APPLICATION_NAME]-web
-
-    If you use Liferay Service Builder, you must create modules for it. This
-    command generates the service API and service implementation modules:
-
-        blade create -t service-builder -p [ROOT_PACKAGE] [APPLICATION_NAME]
-
-    If you generated service API and service implementation modules, ignore the
-    `*-service` and `*-api` folders for now; you'll learn about them in the next
-    tutorial.
 
 3.  In your `*-web` module, replace the `/src/main/java/[APPLICATION_NAME]`
     folder with your root Java package. For example, if your application's root
@@ -220,7 +222,7 @@ Here are the steps for creating the folder structure:
         resource.actions.configs=resource-actions/default.xml
 
     As an example, see the Directory application's
-    [`default.xml`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/collaboration/directory/directory-web/src/main/resources/resource-actions/default.xml).
+    [`default.xml`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/directory/directory-web/src/main/resources/resource-actions/default.xml).
 
     Note that 
     [the permissions API has changed in 7.1](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions);

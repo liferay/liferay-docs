@@ -139,18 +139,22 @@ Bookmarks application.
     The `set` methods must be annotated with the
     [@Reference](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
     annotation. Visit the
-    [Invoking Liferay Services Locally](/develop/tutorials/-/knowledge_base/7-1/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
-    section for more information on using the `@Reference` annotation in
+    [Invoking Local Services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
+    tutorial for more information on using the `@Reference` annotation in
     @product@.
 
     **Important:** @product@'s official Bookmarks app does not use local
     services in its portlet data handler; instead, it uses the
     [StagedModelRepository](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
     framework. This is a new framework, but is a viable option when setting up
-    your portlet data handlers. For more information on this, see the
-    [Using the StagedModelRepository Framework (Coming Soon)](/develop/tutorials/-/knowledge_base/7-1/using-the-stagedmodelrepository-framework)
+    your portlet data handlers.
+    
+    <!-- TODO: Add back when available:
+    For more information on this, see the
+    [Using the StagedModelRepository Framework (Coming Soon)](develop/tutorials/-/knowledge_base/7-1/using-the-stagedmodelrepository-framework)
     section. Since local services are more widely used in custom apps, this
     tutorial covers those instead.
+    -->
 
 6.  You must create a namespace for your entities so the Export/Import framework
     can identify your application's entities from other entities in @product@.
@@ -330,6 +334,15 @@ Bookmarks application.
             return _portletDataHandlerHelper.validateSchemaVersion(
                 schemaVersion, getSchemaVersion());
         }
+
+    The schema version is used to perform component related validation before
+    importing data. It's added to the
+    [LAR file](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers#liferay-archive-lar-file)
+    for each application being processed. During import, the environment's
+    schema version is compared to the LAR file's schema version. Validating the
+    schema version avoids broken data when importing. See the
+    [PortletDataHandler.getVersionScheme()](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html#getSchemaVersion--)
+    method's Javadoc for more information.
 
 Awesome! You've set up your portlet data handler and your application can now
 support the Export/Import framework and display a UI for it. Be sure to also

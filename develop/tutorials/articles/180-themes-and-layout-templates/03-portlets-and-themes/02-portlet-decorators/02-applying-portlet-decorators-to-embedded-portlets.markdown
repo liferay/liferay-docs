@@ -15,7 +15,7 @@ To define a default Application Decorator for your theme's embedded portlets,
 you must set a default decorator in the portlet preferences.
 
 For example, the 
-[Classic theme](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-classic/src/templates/portal_normal.ftl)
+[Classic theme](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-theme/frontend-theme-classic/src/templates/portal_normal.ftl)
 declares an Application Decorator with Id `barebone` and applies it to the
 embedded Search portlet in its `portal_normal.ftl`:
 
@@ -57,4 +57,4 @@ Your embedded portlets now have a custom default Application Decorator!
 
 [Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes-and-layout-templates)
 
-[Providing Portlets to Manage Requests](/develop/tutorials/-/knowledge_base/7-1/providing-portlets-to-manage-requests)
+[Theming Portlets](/develop/tutorials/-/knowledge_base/7-1/theming-portlets)

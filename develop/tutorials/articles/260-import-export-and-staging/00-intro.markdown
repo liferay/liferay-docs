@@ -23,7 +23,7 @@ the LAR and view the student records.
 The Export/Import feature adds another dimension to your application by
 letting you produce reusable content and import content from other places. To
 learn more about using the Export/Import feature, visit the
-[Exporting/Importing App Data](/discover/portal/-/knowledge_base/7-1/exporting-importing-app-data)
+[Exporting/Importing App Data](/discover/portal/-/knowledge_base/7-1/exporting-importing-widget-data)
 User Guide section.
 
 Staging lets you change your site behind the scenes without affecting the live

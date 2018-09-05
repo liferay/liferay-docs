@@ -334,17 +334,26 @@ public class CheckImagesTask extends Task {
 		
 		// Match lines containing expressions of the form ![...](...)
 		String regex = ".*!\\[.*\\]\\(.*\\).*";
+		int lineNumber = 0;
 
 		for (String line : lines) {
+			lineNumber++;
 			line = line.trim();
 			
 			if (line.matches(regex)) {
 				int begin = line.lastIndexOf("(");
 				line = line.substring(begin);
-
 				int end = line.indexOf(")");
-				line = line.substring(0, end);
-				
+
+				try {
+					line = line.substring(0, end);
+				}
+				catch (StringIndexOutOfBoundsException e) {
+					throw new BuildException("ERROR: The following article has multiple "
+							+ "opening parentheses on a line. Please move the "
+							+ "last opening parenthesis to a new line.\n"
+							+ "ARTICLE:LINE - " + article.getPath() + ":" + lineNumber);
+				}
 				line = line.replace("(", "");
 				line = line.replace(")", "");
 				
@@ -353,7 +362,7 @@ public class CheckImagesTask extends Task {
 
 			// Check for <img> elements
 
-			if (line.contains("<img") && line.contains("../images")) {
+			if (line.contains("<img") && line.contains("../images") && !line.contains("<![CDATA[")) {
 				int begin = line.indexOf("<img");
 				int end = line.indexOf(">", begin);
 				int src = line.indexOf("src", begin);

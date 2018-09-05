@@ -1,4 +1,4 @@
-# Installing @product@ [](id=installing-product)
+# Installing @product@ [](id=installing-liferay)
 
 Now that you've performed the steps needed to prepare for your installation,
 you're ready to install @product@! Since bundles are the easiest way to complete
@@ -61,7 +61,7 @@ Liferay Home has folders for various purposes:
         -   `target-platform`: Target platform index
         -   `test`: Modules that support test integration
         -   `war`: WAR plugins you've deployed
-    -   `patching-tool`: (Liferay Digital Enterprise 7.1 only) This folder 
+    -   `patching-tool`: (Liferay DXP only) This folder 
         contains patches for @product@ and files for installing the patches.
     -   `tools`: For @product@ upgrade and target platform indexer.
     -   `work`: Module Jasper work files.
@@ -99,7 +99,7 @@ You can connect to your database with JNDI on your app server or the data source
 shipped with @product@ (recommended). Refer to the article on your app server
 for instructions on using JNDI. For the internal data source, you can configure
 it by specifying the configuration in a `portal-ext.properties` file or the
-[Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-product#using-liferays-setup-wizard):
+[Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard):
 
 1.  Create a `portal-ext.properties` file in your Liferay Home folder.
 

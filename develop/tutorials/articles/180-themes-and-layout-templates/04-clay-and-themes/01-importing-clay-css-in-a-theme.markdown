@@ -35,9 +35,9 @@ Next you can learn more about Clay's structure.
 
 [Clay CSS](https://claycss.com/) 
 is bundled with two sub-themes: 
-[Clay Base](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay) 
+[Clay Base](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay) 
 and 
-[Atlas](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/foundation/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay/atlas). 
+[Atlas](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay/atlas). 
 Clay Base is @product@'s Bootstrap API extension. It adds all the features and 
 components you need and inherits Bootstrap's styles. As a result, Clay Base is 
 fully compatible with 
@@ -84,7 +84,7 @@ Follow these steps to customize the Atlas theme:
         
         $FontAwesomePath: "font-awesome/font";
         
-        @import "font-awesome/scss/font-awesome"
+        @import "font-awesome/scss/font-awesome";
  
 4.  Add a file named `_clay_variables.scss`. All your Atlas, Bootstrap, and Clay 
     Base variable modifications must be placed in this file.
@@ -113,9 +113,9 @@ these directories into your theme:
     frontend-theme-classic/src/js
     frontend-theme-classic/src/templates
 
-You can also automatically copy these files into your theme using the 
-[Liferay Theme Tasks](/develop/reference/-/knowledge_base/7-1/theme-gulp-tasks) 
-`gulp kickstart` command and following the prompts.
+You can also automatically 
+[copy these files into your theme](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files) 
+using the `gulp kickstart` command and following the prompts. 
 
 Next you can learn how to customize the Clay Base.
 
@@ -130,7 +130,7 @@ In your custom theme's `/src/css` folder (legacy ant themes:
     
         $FontAwesomePath: "font-awesome/font";
         
-        @import "font-awesome/scss/font-awesome"
+        @import "font-awesome/scss/font-awesome";
 
 Then in that same folder, add a file named `_clay_variables.scss`. All your
 Atlas, Bootstrap, and Clay Base variable modifications must be placed in this

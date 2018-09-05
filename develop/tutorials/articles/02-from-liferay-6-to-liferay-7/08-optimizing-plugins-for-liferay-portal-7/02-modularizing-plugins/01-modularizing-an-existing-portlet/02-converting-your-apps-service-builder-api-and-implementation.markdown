@@ -67,7 +67,7 @@ code.
     `build.gradle` file. In this file, Service Builder is already configured to
     generate code both in this module and in your service API module. When you
     run Service Builder,
-    [Java classes, interfaces, and related files are generated](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)
+    [Java classes, interfaces, and related files are generated](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
     in your `*api` and `*service` modules. Open your service implementation
     module's `build.gradle` file to view the default configuration.
 

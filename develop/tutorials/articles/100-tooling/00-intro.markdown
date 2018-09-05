@@ -1,6 +1,6 @@
 # Tooling [](id=tooling)
 
-You can write code for Liferay using any any standard toolset. Liferay is
+You can write code for Liferay using any standard toolset. Liferay is
 tool-agnostic, rather than pigeonholing you into something specific. This frees
 you to work with whatever you're already productive using.
 
@@ -15,6 +15,8 @@ They include
   and manage Liferay Workspaces and @product@ projects.
 - [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace):
   a generated environment built to hold and manage @product@ projects.
+- [Liferay IntelliJ plugin](/develop/tutorials/-/knowledge_base/7-1/intellij-idea):
+  a plugin providing support for @product@ development with IntelliJ IDEA.
 
 Liferay also provides a plethora of
 [Gradle](/develop/reference/-/knowledge_base/7-1/gradle) and

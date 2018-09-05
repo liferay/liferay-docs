@@ -293,7 +293,7 @@
 	<target name="dist-article-ce" depends="clean-temp, add-article-to-temp, dist-temp" description="Creates a ZIP file for importing the specified article (-Darticle=...), its images, and supporting structure to a Knowledge Base.">
 	</target>
 
-	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, number-headers" description="Processes the CE articles and images and zips them up for importing.">
+	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, number-headers, number-images" description="Processes the CE articles and images and zips them up for importing.">
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
@@ -315,9 +315,11 @@
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
 					<param type="token" name="${product.token}" value="${product.name}"/>
 					<param type="token" name="${product.token.app.reference}" value="${product.app.reference}"/>
+                    <param type="token" name="${product.token.commerce}" value="${product.commerce.name}"/>
+                    <param type="token" name="${product.token.commerce.version}" value="${product.commerce.name.version}"/>
 					<param type="token" name="${product.token.ide}" value="${product.ide.name}"/>
 					<param type="token" name="${product.token.platform.reference}" value="${product.platform.reference}"/>
-					<param type="token" name="${product.token.version}" value="${product.name.version}"/>
+                    <param type="token" name="${product.token.version}" value="${product.name.version}"/>
 				</filterreader>
 			</filterchain>
 		</copy>
@@ -329,7 +331,7 @@
 		</copy>
 	</target>
 
-	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, number-headers-dxp" description="Processes the article tokens and copies the DXP articles and images to temp/ for zipping up.">
+	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, number-headers-dxp, number-images-dxp" description="Processes the article tokens and copies the DXP articles and images to temp/ for zipping up.">
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
@@ -352,9 +354,11 @@
 				<filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
 					<param type="token" name="${product.token}" value="${product.name.enterprise}"/>
 					<param type="token" name="${product.token.app.reference}" value="${product.app.enterprise.reference}"/>
+                    <param type="token" name="${product.token.commerce}" value="${product.commerce.name.enterprise}"/>
+                    <param type="token" name="${product.token.commerce.version}" value="${product.commerce.name.enterprise.version}"/>
 					<param type="token" name="${product.token.ide}" value="${product.ide.name.enterprise}"/>
 					<param type="token" name="${product.token.platform.reference}" value="${product.platform.enterprise.reference}"/>
-					<param type="token" name="${product.token.version}" value="${product.name.enterprise.version}"/>
+                    <param type="token" name="${product.token.version}" value="${product.name.enterprise.version}"/>
 				</filterreader>
 			</filterchain>
 		</copy>

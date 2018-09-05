@@ -16,7 +16,7 @@ To use the Clay taglib, add the following declaration to your JSP:
     <%@ taglib prefix="clay" uri="http://liferay.com/tld/clay" %>
 
 The 
-[`com.liferay.frontend.taglib.clay.sample.web` portlet](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/foundation/frontend-taglib/frontend-taglib-clay-sample-web) 
+[`com.liferay.frontend.taglib.clay.sample.web` portlet](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-taglib/frontend-taglib-clay-sample-web) 
 is referenced throughout this tutorial as an example. It's included 
 out-of-the-box. Open the Control Menu and add the *Clay Sample* portlet from the 
 *Applications* &rarr; *Sample* menu to see it in action. 
@@ -33,6 +33,7 @@ Clay taglibs provide the following UI components for your apps:
 - [Form Elements](/develop/tutorials/-/knowledge_base/7-1/clay-form-elements)
 - [Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons)
 - [Labels and links](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links)
+- [Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar)
 - [Navigation Bars](/develop/tutorials/-/knowledge_base/7-1/clay-navigation-bars)
 - [Progress Bars](/develop/tutorials/-/knowledge_base/7-1/clay-progress-bars)
 - [Stickers](/develop/tutorials/-/knowledge_base/7-1/clay-stickers)

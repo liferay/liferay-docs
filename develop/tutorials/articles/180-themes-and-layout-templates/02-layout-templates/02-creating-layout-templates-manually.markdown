@@ -63,6 +63,6 @@ Now that you understand a layout template's anatomy, you can write your own
 
 [Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator)
+[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
 
 [Creating Custom Layout Template Thumbnail Previews](/develop/tutorials/-/knowledge_base/7-1/creating-custom-layout-template-thumbnail-previews)
