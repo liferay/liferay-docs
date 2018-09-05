@@ -21,5 +21,18 @@ handlers only expose a specific set of actions, like export and import methods.
 The Staged Model Repository framework provides CRUD operations for a specific
 staged model that are not exposed using local services.
 
+The staged model repository does not avoid using your app's local services. It
+only provides an additional layer that provides Staging-specific functionality.
+So how does this work? A brief Staging process is outlined below:
+
+- `*StagedModelDataHandler` deserializes the provided
+  [LAR file's](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers#liferay-archive-lar-file)
+  XML into a model.
+- `*StagedModelRepository` updates the model based on the environment and
+  business logic, providing entity-specific CRUD operations for Staging purposes
+  (e.g., UUID manipulation).
+- Local services are called from the `*StagedModelRepository` and handles the
+  remainder of the process.
+
 Pretty cool, right? Read on to learn how to implement and use the Staged Model
 Repository framework in your app.

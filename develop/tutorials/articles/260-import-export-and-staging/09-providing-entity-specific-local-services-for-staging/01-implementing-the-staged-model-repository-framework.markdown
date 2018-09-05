@@ -93,7 +93,7 @@ entities.
     This method sets the user ID and service context based on the
     portlet data context. The
     [`PortletDataContext`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataContext.html)
-    is used to populate the LAR file with your application’s data during the
+    is used to populate the LAR file with your application's data during the
     export process. Next it sets the UUID, which is required to differentiate
     staged content between sites. Lastly, the entity's local service is called.
 
