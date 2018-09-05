@@ -1,4 +1,4 @@
-# Providing Entity-Specific Local Services for Staging
+# Providing Entity-Specific Local Services for Staging [](id=providing-entity-specific-local-services-for-staging)
 
 When creating your data handlers, you must leverage your app's local services to
 perform Staging-related tasks for its entities. When the Staging framework

@@ -1,4 +1,4 @@
-# Implementing the Staged Model Repository Framework
+# Implementing the Staged Model Repository Framework [](id=implementing-the-staged-model-repository-framework)
 
 Providing specialized local services for your app's staging functionality lets
 you abstract the additional staging-specific information away from your data
