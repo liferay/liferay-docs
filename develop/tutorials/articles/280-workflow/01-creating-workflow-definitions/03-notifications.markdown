@@ -69,6 +69,8 @@ Available recipient tags are
 
         <recipients>
             <user />
+        </recipients>
+        <recipients>
             <user>
                 <user-id>20139</user-id>
             </user
@@ -81,6 +83,10 @@ Available recipient tags are
                 <role>
                     <role-id>33621</role-id>
                 </role>
+            </roles>
+        </recipients>
+        <recipients>
+            <roles>
                 <role>
                     <role-type>regular</role-type>
                     <name>Power User</name>
