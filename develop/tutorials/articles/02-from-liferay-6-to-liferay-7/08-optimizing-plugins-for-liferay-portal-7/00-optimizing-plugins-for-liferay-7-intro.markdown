@@ -27,5 +27,4 @@ Here are some common optimizations to consider:
 -   [Styling your app consistently using Clay](/develop/tutorials/-/knowledge_base/7-1/applying-clay-styles-to-your-app)
     --the web implementation of Lexicon, Liferay's design language.
 -   Modularizing apps to reap the
-    [benefits of modularity](/develop/tutorials/-/knowledge_base/7-1/osgi-and-modularity-for-liferay-6-developers#modules-as-an-improvement-over-traditional-plugins). 
-
+    [benefits of modularity](/develop/tutorials/-/knowledge_base/7-1/benefits-of-liferay-7-for-liferay-6-developers). 

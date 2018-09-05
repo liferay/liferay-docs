@@ -1,32 +1,30 @@
-# Configuring Search
+# Configuring Search [](id=configuring-search)
 
-_Configuring Search_ is a vague title for an article. It could mean lots of
-different things: 
+_Configuring Search_ could mean lots of different things: 
 
 - System scoped search configuration
 - Reindexing to make sure the search indexes are current with the database
 - Tweaking the search widgets added to pages
 - Creating new Search Pages
 - Configuring the connectors that let @product@ and the search engine
-    communicate
+  communicate
 
-In fact, _Configuring Search_ means all those things. This article provides a
-high level overview of what search behavior is configurable out of the box, and
+In fact, _Configuring Search_ means all those things. This is a high level
+overview of what search behavior is configurable out of the box, and
 importantly, _where_ to find search configuration options.
 
-## System Scoped Search Configuration
+## System Scoped Search Configuration [](id=system-scoped-search-configuration)
 
 System scoped search configurations are primarily found in 
-[System Settings](/discover/portal/-/knowledge_base/7-1/system-settings)
-System Settings.
+[System Settings](/discover/portal/-/knowledge_base/7-1/system-settings).
 
-1.  Go to Control Panel &rarr; configuration &rarr; System Settings.
+1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*.
 
 2.  Click the *Search* category under the Platform section.
 
     Alternatively, search for *Search*.
 
-![Figure x: ](../../images/search-category-system-settings.png)
+![Figure 1: There are numerous system scoped entries for search in System Settings.](../../images/search-category-system-settings.png)
 
 These system scoped configurations are available in System Settings:
 
@@ -58,7 +56,7 @@ The Index Status Manager entry has one setting:
 - `indexReadOnly`: Suspends all indexing operations and writes to the
 search engine. Searches return only the documents already indexed. This is
 useful for speeding up large data imports, but it should be disabled and a full
-reindex executed once the import is finished.
+re-index executed once the import is finished.
 
 ### Indexer Writer Helper
 
@@ -80,6 +78,7 @@ produce any effect. Use `indexReadOnly` from the
     [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html)
 for more information.
 
+<<<<<<< HEAD
 ### Index Registry
 
 Configure the buffering of index requests:
@@ -113,9 +112,31 @@ This entry has one repeatable property (use array syntax if you're defining via
 This entry contains only one property:
 
 - `indexingBatchSizes`: Sets the number of documents indexed
+=======
+**Index Registry**
+: Disable or configure the buffering of indexing requests. To stop the buffering
+of index requests, set the Buffered property to *Disabled*. If buffering is
+enabled, set the Maximum Buffer Size so that additional indexing requests are
+executed immediately. Minimum Buffer Availability Percentage sets a different
+threshold: when the capacity of the buffer has only a certain percent of space
+left, the existing requests in the buffer are executed in one batch and removed
+from the buffer.
+
+**Index Query Preprocessor**
+: Fields with names matching the patterns set here are treated as non-analyzed
+keyword fields. Instead of scored full text queries, matching is performed by
+non-scored wildcard queries. This is a resource intensive operation that
+degrades search engine performance as indexes grow larger. For substring
+matching, relying on the
+[NGram Tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/analysis-ngram-tokenizer.html) 
+usually performs better.
+
+**Reindex**
+: Use the Indexing Batch Sizes property to set the number of documents indexed
+>>>>>>> master
 per batch for model types that support batch indexing. Defaults to 10000. For
 models with large documents, decreasing this value may improve stability when
-executing a full reindex.
+executing a full re-index.
 
 ### Engine Helper
 
@@ -187,21 +208,20 @@ This entry contains one property:
 In addition to the System Settings for Search, the action of recreating the
 search indexes is a system scoped action. 
 
-1.  Go to Control Panel &rarr; Configuration &rarr; Search.
+1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *Search*.
 
-2.  Reindex one of the following:
+2.  Re-index one of these:
 
     - All indexable assets
     - An individual indexable asset
     - All spell check indexes
 
 Portal properties are system scoped configurations as well. The 
-[Lucene Search](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#Lucene%20Search) 
-portal properties are available for configuring low level search behavior.
-Review the properties and their descriptions and determine if they apply to your
-search requirements.
+[Lucene Search](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#Lucene%20Search)
+portal properties configure low level search behavior. Review the properties and
+their descriptions and determine if they apply to your search requirements.
 
-## Site Scoped Search Configuration
+## Site Scoped Search Configuration [](id=site-scoped-search-configuration)
 
 Search isn't configurable at the Site Scope by the strict definition of 
 [Site Scoped Configuration](/discover/portal/-/knowledge_base/7-1/setting-up#configuration-scope)
@@ -256,7 +276,7 @@ See the documentation on
 [configuring of a Search Bar](/discover/portal/-/knowledge_base/7-1/searching-for-assets#configuring-the-search-bar) 
 for more information.
 
-## Widget Scoped Search Configuration
+## Widget Scoped Search Configuration [](id=widget-scoped-search-configuration)
 
 Several search widgets are available, and each one has its own configuration
 options:
@@ -277,15 +297,15 @@ for more information.
 
 **Search Options**
 : This is a special case, where configuring this widget defines page scoped
-behavior. Add the Search Option widget to a page, and define two booleans for
+behavior. Add the Search Option widget to a page and define two booleans for
 the Search Page: 
 
 - Allow Empty Searches: By default, failure to enter a keyword returns no
-    results. Enabling this ensure that _all_ results are returned when no
-    keyword is entered in the Search Bar.
+  results. Enabling this ensure that _all_ results are returned when no
+  keyword is entered in the Search Bar.
 
 - Basic Facet Selection: By default, facet counts are recalculated after each
-    facet selection. Enable this to turn off facet recounting.
+  facet selection. Enable this to turn off facet recounting.
 
 **Search Suggestions**
 : Suggest better queries and spell check queries. See

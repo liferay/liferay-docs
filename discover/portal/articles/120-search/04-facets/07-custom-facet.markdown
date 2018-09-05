@@ -26,7 +26,7 @@ BASIC-WEB-CONTENT, that's what appears in the Custom Facet as a term.
 above, searching for *lunar resort* and clicking on BASIC-WEB-CONTENT produces the
 URL
 
-    http://localhost:8080/web/guest/search?q=lunar&ddmtemplatekey=BASIC-WEB-CONTENT
+        http://localhost:8080/web/guest/search?q=lunar&ddmtemplatekey=BASIC-WEB-CONTENT
 
 **Max Terms**
 : Set the maximum number of facet terms to display, regardless of how

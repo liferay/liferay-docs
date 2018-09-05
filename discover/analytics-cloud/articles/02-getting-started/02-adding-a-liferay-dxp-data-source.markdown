@@ -97,8 +97,8 @@ Here's how to add a Liferay DXP data source:
 
 10. Click *Next* to import the selected contacts. Analytics Cloud imports the
     contact data and attempts to map it to your Analytics Cloud contact data
-    model. The initial import can take a while---it depends on the number of
-    Liferay DXP Users.
+    model. The initial contact data import can take 5 1/2 minutes per 1,000
+    contacts. 
 
 11. Follow instructions for 
     [Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/04-mapping-contact-data.markdown)

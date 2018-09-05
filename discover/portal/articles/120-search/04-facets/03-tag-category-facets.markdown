@@ -16,7 +16,7 @@ Tag and Category Facets contain identical configuration options:
 Searching for *lunar resort* and clicking on a *moon* Tag Facet term produces
 the URL
 
-    http://localhost:8080/web/guest/search?q=lunar resort&tag=moon
+        http://localhost:8080/web/guest/search?q=lunar resort&tag=moon
 
 **Display Style**
 : Choose whether to display the facet terms in Cloud or List style.

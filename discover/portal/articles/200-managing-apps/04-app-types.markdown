@@ -20,9 +20,12 @@ that are packaged together. Also note that apps in OSGi modules aren't required
 to have a UI. For example, @product@ can run OSGi modules that expand built-in 
 APIs without requiring any user interaction. This is crucial for developers that
 must leverage custom APIs. By providing such an API via one or more OSGi
-modules, you can let developers leverage your API. To see a list of @product@'s
-API modules, see the reference article [Finding Liferay API
-Modules](/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules). 
+modules, you can let developers leverage your API. 
+<!-- Uncomment when the article is published. Jim
+To see a list of @product@'s
+API modules, see the reference article
+Finding Liferay API Modules(/develop/reference/-/knowledge_base/7-1/finding-liferay-api-modules). 
+-->
 
 OSGi modules can also contain apps that have a UI: portlets. The next section 
 discusses these. 
