@@ -5,12 +5,15 @@ To activate @product@ and take full advantage of Liferay Connected Services
 there are a few things you must configure. The sections in this guide walk you
 through these steps: 
 
-1. [Downloading the LCS Client App](#downloading-the-lcs-client-app)
-2. [Preconfiguring LCS to Connect Through a Proxy](#preconfiguring-lcs-to-connect-through-a-proxy)
-3. [Ensuring Access to LCS](#ensuring-access-to-lcs)
-4. [NTP Server Synchronization](#ntp-server-synchronization)
-5. [Configuring the Patching Tool](#configuring-the-patching-tool)
-6. [Installing the LCS Client App](#installing-the-lcs-client-app)
+1.  [Downloading the LCS Client App](#downloading-the-lcs-client-app)
+2.  [Preconfiguring LCS to Connect Through a Proxy](#preconfiguring-lcs-to-connect-through-a-proxy)
+3.  [Ensuring Access to LCS](#ensuring-access-to-lcs)
+4.  [NTP Server Synchronization](#ntp-server-synchronization)
+5.  [Configuring the Patching Tool](#configuring-the-patching-tool)
+6.  [Configuring WebSphere](#configuring-websphere): 
+    This is only necessary if you're running @product@ on the WebSphere 
+    application server. 
+7.  [Installing the LCS Client App](#installing-the-lcs-client-app)
 
 [The last section](#upgrading-the-lcs-client-app) 
 in this guide shows you how to upgrade the LCS client app once your server is 
@@ -258,7 +261,7 @@ You can specify these as follows:
 
         -Dpatching.tool.agent.properties=debug,nohalt
 
-## Configuring WebSphere
+## Configuring WebSphere [](id=configuring-websphere)
 
 IBM &reg; WebSphere &reg; is a trademark of International Business Machines 
 Corporation, registered in many jurisdictions worldwide. 
@@ -314,8 +317,9 @@ app:
 
 9.  Click *Save*, then *OK* to apply changes to the master configuration. 
 
-Note that for LCS client app versions prior to 5.0.0, you must also set the 
-following property in the app's `portlet.properties` file: 
+Note that for LCS client app versions prior to 5.0.0, you must also change the 
+value of the `digital.signature.algorithm.provider` property in the app's 
+`portlet.properties` file to `IBMJCE`: 
 
     digital.signature.algorithm.provider=IBMJCE
 
