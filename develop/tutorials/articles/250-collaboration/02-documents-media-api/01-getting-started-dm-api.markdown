@@ -81,10 +81,9 @@ See the
 [`RepositoryProvider` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/RepositoryProvider.html)
 for a list of the other methods you can use. 
 
-Note that you can use the 
-[`PortletFileRepository`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portletfilerepository/PortletFileRepository.html) 
-API to create repositories programmatically. The tutorials here, however, access 
-the default site repository for simplicity. 
+Note that there are ways to create repositories programmatically, including 
+repositories private to specific apps. For simplicity, however, the tutorials 
+here access the default site repository. 
 
 ## Specifying Folders [](id=specifying-folders)
 

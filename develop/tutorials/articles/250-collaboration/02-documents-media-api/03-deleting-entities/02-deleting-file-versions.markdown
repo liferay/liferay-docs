@@ -52,11 +52,10 @@ Note that this is the same `deleteFileEntry` method from the example in the
 This method contains logic for deleting both files and file versions, depending 
 on what's in the request. 
 
-## Validating File Versions [](id=validating-file-versions)
+## Identifying File Versions [](id=identifying-file-versions)
 
-It's best to ensure that the file version is valid before proceeding with any 
-operations that delete it. The previous example does so with a `Validator`. You 
-can alternatively do this with 
+Since there may be many versions of a file, it's useful to programmatically 
+identify old versions for deletion. You can do this with 
 [`FileVersionVersionComparator`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/util/comparator/FileVersionVersionComparator.html). 
 
 The following example creates such a comparator and uses its `compare` method to 
