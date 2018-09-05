@@ -10,7 +10,7 @@ add preferable portlets to the mix.
 Here you'll learn how to
 
 -   [Use `PortletProviderUtil` to request a portlet](#requesting-a-portlet-for-a-desired-behavior)
-    that can perform a specific genre of operations on an entity type.  
+    that can perform a specific genre of operations on an entity type. 
 
 -   [Create a `PortletProvider`](#creating-a-portlet-provider)
     to prioritize preferable portlet ahead of a default portlet. 
@@ -22,7 +22,8 @@ Start with requesting a portlet from `PortletProviderUtil`.
 The
 [`PortletProviderUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProviderUtil.html)
 class finds portlets to execute a particular actions on particular entities. You
-can request the portlet ID or portlet URL, depending on what you prefer. To get the ID of a portlet that can view Recycle Bin
+can request the portlet ID or portlet URL, depending on what you prefer. To get
+the ID of a portlet that can view Recycle Bin
 entries, for example, declare this:
 
     String portletId = PortletProviderUtil.getPortletId(
@@ -36,11 +37,13 @@ The call passes in the name of the entity
 +$$$
 
 **Note:** The `getPortletURL` methods require an additional `HttpServletRequest`
-or `PortletRequest` parameter, depending on which you use. Make sure to include this additional parameter.
+or `PortletRequest` parameter, depending on which you use. Make sure to include
+this additional parameter.
 
 $$$
 
-When you call `PortletProviderUtil` methods, make sure to use the entity's fully qualified class name. For the action, specify one of the 
+When you call `PortletProviderUtil` methods, make sure to use the entity's fully
+qualified class name. For the action, specify one of the
 [`PortletProvider.Action`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProvider.Action.html)
 Enums:
 
@@ -97,7 +100,7 @@ Here's how to create a portlet provider:
     implementing (e.g., `ViewPortletProvider.class`).
 
     Here's an example `@Component` annotation from the
-    [RolesSelectorEditPortletProvider](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/roles/roles-selector-web/src/main/java/com/liferay/roles/selector/web/internal/portlet/RolesSelectorEditPortletProvider.java#L26-L30)
+    [`RolesSelectorEditPortletProvider`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/roles/roles-selector-web/src/main/java/com/liferay/roles/selector/web/internal/portlet/RolesSelectorEditPortletProvider.java#L26-L30)
     class:
 
         @Component(
