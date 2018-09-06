@@ -1,6 +1,6 @@
 # Creating Folders [](id=creating-folders)
 
-To create folders (`Folder` entities) in the Documents and Media Library, you 
+To create folders (`Folder` entities) in the Documents and Media library, you 
 must use the 
 [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 interface's `addFolder` method: 
@@ -20,11 +20,9 @@ The following example comes from @product@'s
 [`EditFolderMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFolderMVCActionCommand.java) 
 class. This class implements almost all the `Folder` actions that the Documents 
 and Media UI supports. This class's `updateFolder` method contains logic to add 
-and update folders. 
-
-This method gets the data from the request that it needs to add or update a 
-folder. If there's no existing folder (`folderId <= 0`), it adds a new folder by 
-calling the `addFolder` method with required data: 
+and update folders. This method uses the request to get the data it needs to 
+add or update a folder. If there's no existing folder (`folderId <= 0`), it adds 
+a new folder by calling the `addFolder` method with required data: 
 
     protected void updateFolder(ActionRequest actionRequest) throws Exception {
             long folderId = ParamUtil.getLong(actionRequest, "folderId");
@@ -58,12 +56,11 @@ for detailed information on that operation.
 
 ## Folders and External Repositories [](id=folders-and-external-repositories)
 
-A site's default repository can include references to external repositories such 
-as SharePoint. This occurs by effectively mounting the external repository in 
-the default one. The mount process involves creating a folder that acts as a 
-proxy for the remote repository. When users enter this special folder, they're 
-directed to the remote repository. These folders are called *mount points*. You 
-can create one via the API by setting the 
+By creating a folder that acts as a proxy for an external repository (e.g., 
+SharePoint), you can effectively mount that repository inside a site's default 
+repository. When users enter this special folder, they're directed to the 
+external repository. These folders are called *mount points*. You can create one 
+via the API by setting the 
 [Service Context's](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext) 
 `mountPoint` attribute to `true`, and then using that Service Context in the 
 `addFolder` method: 
