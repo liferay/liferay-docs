@@ -1,16 +1,15 @@
 # JSP Overrides Using OSGi Fragments [](id=jsp-overrides-using-osgi-fragments)
 
-OSGi fragments let you override an entire JSP. This approach is powerful but can
-be unstable with respect to new versions of the host module: 
+OSGi fragments override an entire JSP. This approach is powerful but can make
+things unstable when the host module is upgraded: 
 
 1.  By overriding an entire JSP, you might not account for new content or new 
-    widgets that are essential to new host module versions. 
+    widgets essential to new host module versions. 
 2.  Fragments are tied to a specific host module version. If the host module is
     upgraded, the fragment detaches from it. In this scenario, the original
     JSPs are still available and the module is functional (but lacks your JSP
     enhancements).
-3.  Liferay does not maintain upgradability of JSPs overridden using OSGi 
-    fragments. 
+3.  Liferay cannot guarantee that JSPs overridden by fragments can be upgraded. 
 
 Using OSGi fragments to override JSPs is a bad practice, equivalent to using Ext
 plugins to customize @product@. They should only be used as a last resort.
@@ -18,20 +17,22 @@ Liferay's API based approaches to overriding JSPs (i.e.,
 [Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps-with-dynamic-includes)
 and
 [Portlet Filters](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-portlet-filters)),
-on the other hand, provide more stability as they let you customize specific
-parts of the JSP that are safe to override. Also, the API based approaches don't
-limit your override to a specific host module version. In case you're
-maintaining existing JSP overrides that use OSGi fragments, however, this
-tutorial explains how they work. 
+on the other hand, provide more stability as they customize specific parts of
+JSPs that are safe to override. Also, the API based approaches don't limit your
+override to a specific host module version. If you are maintaining existing JSP
+overrides that use OSGi fragments, however, this tutorial explains how they
+work. 
 
 An OSGi fragment that overrides a JSP requires these two things:
 
--  Specifies a host module's symbolic name and version in the OSGi header 
+-  The host module's symbolic name and version in the OSGi header 
    `Fragment-Host` declaration.
 
--  includes the original JSP with any modifications you need to make.
+-  The original JSP with any modifications you need to make.
 
-For more information about fragment modules, you can refer to section 3.14 of the [OSGi Alliance's core specification document](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html).
+For more information about fragment modules, you can refer to section 3.14 of
+the 
+[OSGi Alliance's core specification document](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html).
 
 ## Declaring a Fragment Host [](id=declaring-a-fragment-host)
 
@@ -47,11 +48,10 @@ cleanings!). To the OSGi runtime, your fragment is part of the host module.
 Your fragment must declare two things to the OSGi runtime regarding the host
 module:
 
-1. The Bundle Symbolic Name of the host module.
+1.  The Bundle Symbolic Name of the host module. This is the module containing
+    the original JSP.
 
-    This is the module containing the original JSP.
-
-2. The exact version of the host module to which the fragment belongs.
+2.  The exact version of the host module to which the fragment belongs.
 
 Both are declared using the OSGi header `Fragment-Host`.
 
@@ -83,9 +83,9 @@ application's `login.jsp` for example, you'd put your own `login.jsp` in
 
     my-jsp-fragment/src/main/resources/META-INF/resources/login.jsp
 
-If you need to post-process the output, you can update the pattern to include 
-@product@'s buffering mechanism. Below is an example that overrides the 
-original `create_account.jsp`:
+If you must post-process the output, you can update the pattern to include
+@product@'s buffering mechanism. Below is an example that overrides the original
+`create_account.jsp`:
 
     <%@ include file="/init.jsp" %>
     
@@ -93,11 +93,11 @@ original `create_account.jsp`:
         <liferay-util:include page="/create_account.portal.jsp" 
         servletContext="<%= application %>"/>
     </liferay-util:buffer>
-    
+
     <liferay-util:buffer var="openIdFieldHtml"><aui:input name="openId" 
     type="hidden" value="<%= ParamUtil.getString(request, "openId") %>" />
     </liferay-util:buffer>
-    
+
     <liferay-util:buffer var="userNameFieldsHtml"><liferay-ui:user-name-fields />
     </liferay-util:buffer>
 
@@ -105,20 +105,20 @@ original `create_account.jsp`:
         <liferay-ui:error 
         exception="<%= com.liferay.portal.kernel.exception.NoSuchOrganizationException.class %>" message="no-such-registration-code" />
     </liferay-util:buffer>
-    
+
     <liferay-util:buffer var="registrationCodeFieldHtml">
                 <aui:input name="registrationCode" type="text" value="">
                         <aui:validator name="required" />
                 </aui:input>
     </liferay-util:buffer>
-    
+
     <%
         html = com.liferay.portal.kernel.util.StringUtil.replace(html, 
           openIdFieldHtml, openIdFieldHtml + errorMessageHtml);
         html = com.liferay.portal.kernel.util.StringUtil.replace(html, 
           userNameFieldsHtml, userNameFieldsHtml + registrationCodeFieldHtml);
     %>
-    
+ 
     <%=html %>
 
 Now you can easily modify the JSPs of any application in Liferay.
