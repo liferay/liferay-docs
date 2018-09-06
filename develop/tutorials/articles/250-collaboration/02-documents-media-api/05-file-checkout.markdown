@@ -185,7 +185,7 @@ them to call `cancelCheckOut`:
             }
     }
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Checking Out and Editing Files](/discover/portal/-/knowledge_base/7-1/checking-out-and-editing-files)
 

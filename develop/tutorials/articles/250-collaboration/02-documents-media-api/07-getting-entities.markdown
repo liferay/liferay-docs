@@ -141,7 +141,7 @@ the entities:
 To see all such methods, see the 
 [`DLAppService` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Getting Started with the Documents and Media API](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
 

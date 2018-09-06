@@ -1,7 +1,22 @@
 # Getting Started with the Documents and Media API [](id=getting-started-with-the-documents-and-media-api)
 
-Before you start using the Documents and Media API, you should make note of the 
-main interfaces you'll use. 
+Before you start using the Documents and Media API to perform specific tasks, 
+you should learn the basic information and techniques you'll need to use the 
+API: 
+
+-   [**Key Interfaces:**](#key-interfaces) 
+    The interfaces you'll use most while using the API. 
+-   [**Getting a Service Reference:**](#getting-a-service-reference) 
+    How to get a service reference that lets you call the API's services. 
+-   [**Specifying Repositories:**](#specifying-repositories) 
+    How to specify the Documents and Media repository that you want to work 
+    with. 
+-   [**Specifying Folders:**](#specifying-folders) 
+    How to specify a Documents and Media folder to work with. 
+
+## Key Interfaces [](id=key-interfaces)
+
+The Documents and Media API contains several key interfaces that you'll use: 
 
 -   **Documents and Media Services:** These interfaces expose all the available 
     Documents and Media functionality: 
@@ -21,16 +36,16 @@ main interfaces you'll use.
     instructions on getting a service reference. 
 
 -   **Entity Interfaces:** These interfaces represent entities in the Documents 
-    and Media Library. Here are the primary ones you'll work with: 
+    and Media library. Here are the primary ones you'll work with: 
 
     -   `FileEntry`: Represents a file. 
-    -   `Folder`: Represents a folder.
-    -   `FileShortcut`: Represents a shortcut to a file.
+    -   `Folder`: Represents a folder. 
+    -   `FileShortcut`: Represents a shortcut to a file. 
 
 ## Getting a Service Reference [](id=getting-a-service-reference)
 
 Before you can do anything with the Documents and Media API, you must get a 
-service reference. You must use the `@Reference` annotation to 
+service reference. Use the `@Reference` annotation to 
 [get a service reference in an OSGi component via Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services). 
 For example, this code gets such a reference to `DLAppService`: 
 
@@ -50,7 +65,7 @@ that identifies the Documents and Media repository in which the operation will
 be performed. A site (group) can have multiple repositories, but only one can be 
 accessed via the portal UI. This is called the site (group) repository, which is 
 effectively a site's default repository. To access this repository via the API, 
-you must provide the group ID as the `repositoryId`. 
+provide the group ID as the `repositoryId`. 
 
 You can also get the `repositoryId` via file (`FileEntry`), folder (`Folder`), 
 and file shortcut (`FileShortcut`) entities. Each of these entities has a 
@@ -60,9 +75,9 @@ in. For example, this code gets the repository ID of the `FileEntry` object
 
     long repositoryId = fileEntry.getRepositoryId();
 
-There may also be cases in which you need to get a `Repository` object. You can 
-do this by getting a `RepositoryProvider` reference and passing the repository 
-ID to its `getRepository` method: 
+There may also be cases that require a `Repository` object. You can get one by 
+creating a `RepositoryProvider` reference and passing the repository ID to its 
+`getRepository` method: 
 
     @Reference
     private RepositoryProvider repositoryProvider;
@@ -70,16 +85,16 @@ ID to its `getRepository` method:
     Repository repository = repositoryProvider.getRepository(repositoryId);
 
 Even if you only have an entity ID (e.g., a file ID or folder ID), you can still 
-use `RepositoryProvider` to get a `Repository` object. To do this, call the 
-`RepositoryProvider` method for the entity type, with the entity ID as its 
-argument. For example, this code gets a `Repository` by calling the 
-`RepositoryProvider` method `getFolderRepository` with a folder ID: 
+use `RepositoryProvider` to get a `Repository` object. To do so, call the 
+`RepositoryProvider` method for the entity type with the entity ID as its 
+argument. For example, this code gets a folder's `Repository` by calling the 
+`RepositoryProvider` method `getFolderRepository` with the folder's ID: 
 
     Repository repository = repositoryProvider.getFolderRepository(folderId);
 
 See the 
 [`RepositoryProvider` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/RepositoryProvider.html)
-for a list of the other methods you can use. 
+for a list of the methods for other entity types. 
 
 Note that there are ways to create repositories programmatically, including 
 repositories private to specific apps. For simplicity, however, the tutorials 
@@ -93,7 +108,7 @@ on. For example, such methods may contain parameters like `folderId` or
 `DLFolderConstants.DEFAULT_PARENT_FOLDER_ID` to specify the root folder of the 
 repository you're working in. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
 

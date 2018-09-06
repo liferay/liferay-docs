@@ -96,7 +96,7 @@ method `updateFileEntry` with those data. Note that this example calls the
 
     }
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Files](/develop/tutorials/-/knowledge_base/7-1/creating-files)
 

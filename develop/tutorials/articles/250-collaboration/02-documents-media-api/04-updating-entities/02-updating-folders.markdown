@@ -50,7 +50,7 @@ If there's an existing folder, then it's updated by the `DLAppService` method
             }
     }
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating Folders](/develop/tutorials/-/knowledge_base/7-1/creating-folders)
 

@@ -37,7 +37,7 @@ Here's an explanation of the arguments:
 -   `serviceContext`: The 
     [Service Context](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Getting Started with the Documents and Media API](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
 

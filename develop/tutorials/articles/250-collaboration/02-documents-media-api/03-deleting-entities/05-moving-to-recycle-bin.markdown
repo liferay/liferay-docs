@@ -43,7 +43,7 @@ Bin:
     for information on the other methods you can use to move entities to the 
     Recycle Bin. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Deleting Files](/develop/tutorials/-/knowledge_base/7-1/deleting-files)
 

@@ -66,7 +66,7 @@ See the tutorial on
 [updating file shortcuts](/develop/tutorials/-/knowledge_base/7-1/updating-file-shortcuts) 
 for detailed information on that operation. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/deleting-file-shortcuts)
 

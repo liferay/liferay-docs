@@ -78,7 +78,7 @@ then calls the `addFileEntry` method with those data.
 
     }
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Updating Files](/develop/tutorials/-/knowledge_base/7-1/updating-files)
 

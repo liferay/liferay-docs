@@ -77,7 +77,7 @@ current version (`fileEntry.getVersion()`). If this comparison is greater than
         }
     }
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Deleting Files](/develop/tutorials/-/knowledge_base/7-1/deleting-files)
 

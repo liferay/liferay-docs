@@ -74,7 +74,7 @@ Note that the `repositoryId` of such a folder indicates the external repository
 the folder points to---not the repository that the folder exists in. Also, mount 
 point folders can only exist in the default site repository. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Updating Folders](/develop/tutorials/-/knowledge_base/7-1/updating-folders)
 

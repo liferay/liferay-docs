@@ -51,7 +51,7 @@ one. If there's an existing shortcut, it updates it by calling the
             }
     }
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
 [Creating File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/creating-file-shortcuts)
 
