@@ -9,9 +9,15 @@ campaigns.
 A user segment represents a subset of the total group of portal users (logged in
 or not). A user segment is defined by one or more rules that users must match
 to belong to that user segment. Once the user segment is created,
-only users who visit the applicable site(s) are added to it. Open the Site
-Administration menu and click *Configuration* &rarr; *Audience Targeting* &rarr; *Add User Segment*
-(![Add User Segment](../../images-dxp/icon-add.png)) to add a new user segment.
+only users who visit the applicable site(s) are added to it. To add a new User 
+Segment,
+
+1.  Open the Site Administration.
+
+2.  Click *Configuration* &rarr; *Audience Targeting* &rarr; *Add User Segment*
+    (![Add User Segment](../../images-dxp/icon-add.png)).
+
+
 All the rules that have been deployed appear under the Rules heading. Drag a
 rule to the right to apply the rule to the user segment. Once a rule has been
 applied, you can adjust the rule's parameters. For example, once the Gender rule
@@ -50,10 +56,8 @@ available to all of its child sites.
 ## User Segment Rules [](id=user-segment-rules)
 
 Custom rules can be created by developers and deployed as OSGi plugins. See the
-[Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/6-2/creating-new-audience-targeting-rule-types)
+[Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/7-1/creating-new-audience-targeting-rule-types)
 tutorial for details.
-
-<!-- Update tutorial above, when available. -Cody -->
  
 These are some of the rules that are included with the app by default:
 
@@ -75,7 +79,7 @@ These are some of the rules that are included with the app by default:
     - Score Points rule.
 
 For a complete reference of all rules available, see the
-[Liferay Audience Targeting Rules](/develop/tutorials/-/knowledge_base/7-0/liferay-audience-targeting-rules)
+[Liferay Audience Targeting Rules](/develop/tutorials/-/knowledge_base/7-1/liferay-audience-targeting-rules)
 tutorial.
 
 The Score Points rule assigns 1 point to a user each time the user views a page
@@ -98,62 +102,3 @@ related to basketball, the user will belong to the Basketball fans user segment.
 Once the user belongs to a user segment, you can use that information to direct
 more relevant information to the user in your website using the User Segment
 Content Display application.
-
-## Categorizing Pages and Content for User Segments [](id=categorizing-pages-and-content-for-user-segments)
-
-Each new user segment that's created can be used to categorize pages or content.
-The Audience Targeting app adds a new *User Segment* select button to the SEO
-section of pages and Metadata section for assets. These buttons allow you to
-assign one or more site-scoped or global user segments to the content. This
-categorization has mainly two purposes:
-
-- Assigning points to users using the Score Points rule
-- Showing dynamic lists of content in the User Segment Content List application
-
-![Figure 4: Pages and content can be categorized for user segments.](../../images-dxp/audience-targeting-categorization.png)
-
-You don't have to create categories for each of your user segments. User
-segments are distinct from regular vocabularies. The editing screen for both
-pages and assets contain distinct select buttons for user segments and regular
-vocabularies.
-
-Another way to display user segments is through the Asset Publisher app. You can
-enable the Asset Publisher to retrieve assets that have matching categorization
-with the user segments of the current user. This enhances the Asset Publisher to
-only display relevant content to the user. To enable *User Segments Filter*,
-navigate to the Asset Publisher's *Options*
-(![Options](../../images-dxp/icon-app-options.png)) &rarr; *Configuration* menu
-and select the *Audience Targeting* option. Then enable the *User Segments
-Filter*.
-
-![Figure 5: Enabling the User Segments Filter retrieves assets that match the current user's user segments.](../../images-dxp/audience-targeting-asset-publisher-filtering.png)
-
-Next, you'll learn about managing user segment reports.
-
-## Managing User Segment Reports [](id=managing-user-segment-reports)
-
-When managing user segments, you can select the user segment name and then
-select the *Reports* tab to see the list of reports available for each user
-segment. Click the report name to view the report or *Actions*
-(![Actions](../../images-dxp/icon-actions.png)) &rarr; *Update Report* to
-generate a new report. Reports display a summary of interesting information
-related to each user segment. For example, the Content Views report shows the
-asset that's been most viewed by users that belong to the user segment.
-
-![Figure 6: This report displays what pages the user segment has visited.](../../images-dxp/audience-targeting-user-segment-report.png)
-
-Reports also display which users belonged to a user segment. This lets an
-administrator know which users of the site qualified to the particular user
-segment. @product@ provides a convenient way to export a list of user segment
-users. Simply click the user report you're interested in and select the
-*Options* (![Options](../../images-dxp/icon-options.png)) &rarr; *Export*
-button. This downloads a CSV file with the list of users.
-
-Additional reports can be created by developers and deployed as OSGi plugins.
-See the [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/reporting-user-behavior-with-audience-targeting)
-tutorial for details. Reports are generated daily by default. However, you can
-generate a report at any time. To generate a new report when currently viewing a
-report, click on the *Update* button from the *Options* icon 
-(![Options](../../images-dxp/icon-options.png)) in the top right corner.
-
-Next, you'll discover how to use your user segments in a campaign.
