@@ -161,7 +161,7 @@ curl, or click on *URL example* to see how to invoke the web service via a URL.
 ![Figure 1: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../../images/jsonws-simple-example.png)
 
 To learn more about Liferay's JSON web services, see the
-[JSON Web Services](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/registering-json-web-services)
+[JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/registering-json-web-services)
 tutorial.
 
 <!--

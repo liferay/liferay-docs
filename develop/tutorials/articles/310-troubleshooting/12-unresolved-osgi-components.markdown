@@ -148,7 +148,7 @@ situation where your application has an unresolved Spring-related  OSGi
 component. This could occur, for example, if you update your application's
 database schema but forget to trigger an upgrade (for information on creating
 database upgrade processes for your @product@ applications, see the tutorial 
-[Creating an Upgrade Process for Your App](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)). 
+[Creating an Upgrade Process for Your App](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)). 
 
 These features detect unresolved Service Builder related components. 
 

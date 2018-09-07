@@ -156,7 +156,7 @@ requirements for permissions within an organization, you can create custom
 organization-scoped roles to assemble the permissions you wish to grant to
 particular users. Alternatively, you could consider attaching a site to your
 organization and using site teams to assemble the sets of permissions (see
-below). See the [Roles and Permissions article](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/roles-and-permissions) for more detail.
+below). See the [Roles and Permissions article](/discover/portal/-/knowledge_base/6-2/roles-and-permissions) for more detail.
 
 Does your organization need to have its own site? Many organizations don't, but
 since some do, Liferay allows sites to be attached to organizations. If an

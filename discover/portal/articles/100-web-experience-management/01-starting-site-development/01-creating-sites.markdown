@@ -359,7 +359,7 @@ Site resource, you can navigate to the Control Panel &rarr; *Custom Fields*
 located under the *Configuration* tab. The Custom Fields tab does not display in
 Site Settings unless you have existing custom fields. For more information on
 Custom Fields, see the
-[Custom Fields](https://dev.liferay.com/discover/portal/-/knowledge_base/6-2/custom-fields)
+[Custom Fields](/discover/portal/-/knowledge_base/6-2/custom-fields)
 section.
 
 <!-- TODO: replace link above. -Cody -->

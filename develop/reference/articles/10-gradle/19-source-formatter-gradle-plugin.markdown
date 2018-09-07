@@ -58,7 +58,7 @@ check {
 ```
 
 The same can be achieved by adding the following snippet to the `build.gradle`
-file in the root directory of a [*Liferay Workspace*](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace):
+file in the root directory of a [*Liferay Workspace*](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace):
 
 ```gradle
 subprojects {

@@ -215,5 +215,5 @@ visiting the
 tutorial.
 
 To learn how to develop data handlers for your app, visit the
-[Developing Data Handlers](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/data-handlers)
+[Developing Data Handlers](/develop/tutorials/-/knowledge_base/7-0/data-handlers)
 tutorial.

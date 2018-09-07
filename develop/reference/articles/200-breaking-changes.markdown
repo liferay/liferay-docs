@@ -4220,7 +4220,7 @@ Settings* &rarr; *Shopping Cart Images* and editing the settings there.
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+[making your applications configurable in Liferay 7.0](/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-104)
 
@@ -4288,7 +4288,7 @@ Settings* &rarr; *Web Content File Uploads* and editing the settings there.
 
 If you would like to include the new configuration in your application, follow
 the instructions for
-[making your applications configurable in Liferay 7.0](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
+[making your applications configurable in Liferay 7.0](/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable).
 
 #### Why was this change made? [](id=why-was-this-change-made-106)
 

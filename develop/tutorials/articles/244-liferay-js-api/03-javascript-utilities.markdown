@@ -37,4 +37,4 @@ below:
 
 ## Related Topics [](id=related-topics)
 
-[Liferay Theme Display](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/liferay-themedisplay)
+[Liferay Theme Display](/develop/tutorials/-/knowledge_base/7-0/liferay-themedisplay)
