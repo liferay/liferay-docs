@@ -66,12 +66,12 @@ Your cluster nodes have the modules needed for running in a cluster.
 +$$$
 
 **Important:** Make sure to complete the steps for 
-[configuring clustering](/discover/portal/-/knowledge_base/7-0/liferay-clustering).
+[configuring clustering](/discover/deployment/-/knowledge_base/7-0/liferay-clustering).
 
 $$$
 
 ## Related Topics [](id=related-topics)
 
-[@product@ Clustering](/discover/portal/-/knowledge_base/7-0/liferay-clustering)
+[@product@ Clustering](/discover/deployment/-/knowledge_base/7-0/liferay-clustering)
 
 [Blacklisting Modules](/discover/portal/-/knowledge_base/7-0/blacklisting-osgi-modules)
