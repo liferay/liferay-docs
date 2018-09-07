@@ -5,12 +5,15 @@ To activate @product@ and take full advantage of Liferay Connected Services
 there are a few things you must configure. The sections in this guide walk you
 through these steps: 
 
-1. [Downloading the LCS Client App](#downloading-the-lcs-client-app)
-2. [Preconfiguring LCS to Connect Through a Proxy](#preconfiguring-lcs-to-connect-through-a-proxy)
-3. [Ensuring Access to LCS](#ensuring-access-to-lcs)
-4. [NTP Server Synchronization](#ntp-server-synchronization)
-5. [Configuring the Patching Tool](#configuring-the-patching-tool)
-6. [Installing the LCS Client App](#installing-the-lcs-client-app)
+1.  [Downloading the LCS Client App](#downloading-the-lcs-client-app)
+2.  [Preconfiguring LCS to Connect Through a Proxy](#preconfiguring-lcs-to-connect-through-a-proxy)
+3.  [Ensuring Access to LCS](#ensuring-access-to-lcs)
+4.  [NTP Server Synchronization](#ntp-server-synchronization)
+5.  [Configuring the Patching Tool](#configuring-the-patching-tool)
+6.  [Configuring WebSphere](#configuring-websphere): 
+    This is only necessary if you're running @product@ on the WebSphere 
+    application server. 
+7.  [Installing the LCS Client App](#installing-the-lcs-client-app)
 
 [The last section](#upgrading-the-lcs-client-app) 
 in this guide shows you how to upgrade the LCS client app once your server is 
@@ -257,6 +260,68 @@ The agent also has some flags you can set to control how it behaves:
 You can specify these as follows:
 
         -Dpatching.tool.agent.properties=debug,nohalt
+
+## Configuring WebSphere [](id=configuring-websphere)
+
+IBM &reg; WebSphere &reg; is a trademark of International Business Machines 
+Corporation, registered in many jurisdictions worldwide. 
+
+If you're running the WebSphere application server, then there are some 
+additional configuration steps you must take before deploying the LCS client 
+app: 
+
+1.  Shut down the application server. 
+
+2.  Add the following in a `portal-ext.properties` file: 
+
+        module.framework.properties.org.osgi.framework.bootdelegation=\
+            __redirected,\
+            com.sun.ccpp,\
+            com.sun.ccpp.*,\
+            com.liferay.aspectj,\
+            com.liferay.aspectj.*,\
+            com.liferay.portal.servlet.delegate,\
+            com.liferay.portal.servlet.delegate*,\
+            com.sun.crypto.*,\
+            com.sun.image.*,\
+            com.sun.jmx.*,\
+            com.sun.jna,\
+            com.sun.jndi.*,\
+            com.sun.mail.*,\
+            com.sun.management.*,\
+            com.sun.media.*,\
+            com.sun.msv.*,\
+            com.sun.org.*,\
+            com.sun.syndication,\
+            com.sun.tools.*,\
+            com.sun.xml.*,\
+            com.yourkit.*,\
+            com.ibm.*,\
+            sun.*
+
+3.  In your @product@ installation, delete the `osgi/state` folder. 
+
+4.  Start the application server. 
+
+5.  Navigate to the WebSphere console in a browser. 
+
+6.  Select your server and navigate to *Java and Process Management* &rarr; 
+    *Process Definition* &rarr; *Additional Properties*. 
+
+7.  Select *Java Virtual Machine* &rarr; *Custom Properties*. 
+
+8.  Click *New*, and enter the following:
+
+    -   Name: `com.ibm.crypto.provider.DoRSATypeChecking`
+    -   Value: `false`
+
+9.  Click *Save*, then *OK* to apply changes to the master configuration. 
+
+Note that for LCS client app versions prior to 5.0.0, you must also change the 
+value of the `digital.signature.algorithm.provider` property in the app's 
+`portlet.properties` file to `IBMJCE`: 
+
+    digital.signature.algorithm.provider=IBMJCE
 
 ## Installing the LCS Client App [](id=installing-the-lcs-client-app)
 
