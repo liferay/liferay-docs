@@ -110,7 +110,7 @@ initializes. The
 [`application.startup.events` property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Startup%20Events)
 defines the event's default actions. 
 
-## Related Topics 
+## Related Topics [](id=related-topics)
 
 [Waiting on Lifecycle Events](/develop/tutorials/-/knowledge_base/7-1/waiting-on-lifecycle-events)
 
