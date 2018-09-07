@@ -14,14 +14,15 @@ Which method you use is up to you---they both delete a folder.
 The following example comes from @product@'s 
 [`EditFolderMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFolderMVCActionCommand.java) 
 class. This class implements almost all the `Folder` actions that the Documents 
-and Media UI supports. This class's `deleteFolders` method contains logic to 
-delete one or more folders. 
+and Media UI supports. This class contains a `deleteFolders` method that deletes 
+one or more folders by calling the `DLAppService` method 
+`deleteFolder(folderId)`. 
 
-This method first gets one or more folder IDs from the request. It then loops 
-through each, moving the folder to the 
+The `deleteFolders` method first gets any folder IDs in the request. It then 
+iterates through each, moving the folder to the 
 [Recycle Bin](/discover/portal/-/knowledge_base/7-1/restoring-deleted-assets) 
 if the `moveToTrash` flag is `true`, or deleting the folder via the 
-`DLAppService` method `deleteFolder(long folderId)` if the flag is `false`: 
+`DLAppService` method `deleteFolder(folderId)` if the flag is `false`: 
 
     protected void deleteFolders(
                     ActionRequest actionRequest, boolean moveToTrash)

@@ -1,9 +1,9 @@
 # Deleting File Versions [](id=deleting-file-versions)
 
-When a file is modified, @product@ creates a new file version and leaves the 
-previous version intact. Over time, old versions of files can accumulate and 
-consume precious storage space. Fortunately, you can use the Documents and Media 
-API to delete file versions. Note, however, that there's no way to send file 
+When a file is modified, Documents and Media creates a new file version and 
+leaves the previous version intact. Over time, old file versions can accumulate 
+and consume precious storage space. Fortunately, you can use the Documents and 
+Media API to delete them. Note, however, that there's no way to send file 
 versions to the Recycle Bin---once you delete them, they're gone forever. 
 
 You can delete file versions with the 
@@ -20,9 +20,8 @@ The following example comes from @product@'s
 [`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
 class. This class implements almost all the `FileEntry` actions that the 
 Documents and Media UI supports. It contains its own `deleteFileEntry` method, 
-which calls the `deleteFileVersion` method. 
-
-This method gets the file's ID and version from the request. After 
+which calls the `deleteFileVersion` method. This `deleteFileEntry` method gets 
+the file's ID and version from the request. After 
 [validating](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/Validator.html) 
 the version, it calls `deleteFileVersion` to delete that version: 
 
@@ -49,8 +48,8 @@ the version, it calls `deleteFileVersion` to delete that version:
 
 Note that this is the same `deleteFileEntry` method from the example in the 
 [tutorial on deleting files](/develop/tutorials/-/knowledge_base/7-1/deleting-files). 
-This method contains logic for deleting both files and file versions, depending 
-on what's in the request. 
+This method contains logic for deleting files and file versions, depending on 
+what's in the request. 
 
 ## Identifying File Versions [](id=identifying-file-versions)
 
