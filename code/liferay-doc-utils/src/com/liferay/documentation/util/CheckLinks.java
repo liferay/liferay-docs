@@ -25,7 +25,7 @@ import com.liferay.portal.kernel.util.Validator;
 
 public class CheckLinks {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 
 		String legacyLinks = args[0];
 		checkLegacyLinks = Boolean.parseBoolean(legacyLinks);
@@ -129,7 +129,13 @@ public class CheckLinks {
 
 			in.close();
 		}
-		System.out.println("\nTotal Broken Links: " + resultsNumber);
+
+		if (resultsNumber > 0) {
+			throw new Exception("\n\n**Total Broken Links: " + resultsNumber + "**\n");
+		}
+		else {
+			System.out.println("\nNo Broken Links!");
+		}
 	}
 
 	/**
