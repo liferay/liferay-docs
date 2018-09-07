@@ -192,7 +192,7 @@ communicate using the
 through TCP. See the Elasticsearch documentation for the available properties
 (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
 Adapter's settings for the adapter's available settings.
-<!--reference article](https://dev.liferay.com/discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
+<!--reference article](/discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
 
 At a minimum, provide the list of hosts to act as gossip routers during unicast
 discovery in the `elasticsearch.yml`:
