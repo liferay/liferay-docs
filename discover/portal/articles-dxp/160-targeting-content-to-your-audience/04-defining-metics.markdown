@@ -5,7 +5,79 @@ measure the effectiveness of a campaign. This provides your marketing team with
 real feedback from users. When creating a campaign, you can define the user
 actions that you want to track. This can be done by defining *Metrics*.
 
-For example, suppose you want to run a campaign for an event that your company is hosting next month. For this event, you have created a main page for the event which contains a Youtube video and a banner which says *Register Now*. You also have a blog entry about the event displayed on several different pages of your website and a Register page which contains the form to pay for the event. In this campaign, your goal is to get as many people to register as possible. However, you will probably be interested in tracking the following information to ensure that everything is working as expected:
+Metrics enable Audience Targeting administrators to build custom reports and
+measure the effectiveness of a campaign by tracking certain user actions.
+
+Metrics filter the analytics data gathered by the Audience Targeting Analytics
+engine to obtain the number of times that a certain action was performed on a
+given element or content by users and the user segments they belong to.
+
+A custom report may contain multiple metrics of the same type; for instance,
+metrics for different links. The name field in the metric identifies each value
+in the report results (e.g., *Link to Marketplace*, *Link to More Info*, etc.).
+
+Metrics can be created by developers and deployed as extensions. Out of the box,
+Audience Targeting includes metrics to track the most common user actions. These
+metrics are described below.
+
+## Content [](id=content)
+
+Tracks the number of times certain content has been viewed. Use the content
+selector to set the content to be tracked.
+
+## Page [](id=page)
+
+Tracks the number of times a selected page has been viewed. You can track views
+on both both public or private pages.
+
+## Form [](id=form)
+
+Tracks how many users view a form, interact with it (i.e., type or select values
+in the inputs) or submit it. If you select the *All* option from the *Event
+type* field, the custom report will show the figures for the three events
+simultaneously. You must also provide the form you want to track, which is
+selectable from the *Form* metric.
+
+As a use case, suppose a company wants to organize a webinar to promote one of
+their products. The marketing team creates a landing page with a subscription
+form and promotes it on social media. They want to generate a report listing the
+number of visits to the landing page, form interactions, and form submissions to
+measure the success of their campaign. This Form metric would allow campaign
+administrators the ability to track forms in their site.
+
+## Link [](id=link)
+
+Tracks how often links are clicked. This helps campaign administrators determine
+if they're sufficiently visible or helpful.
+
+Similar to forms, you must provide the ID of the link you want to track. If you
+don't know it, you can inspect the HTML of the page where the link is and
+extract this information.
+
+## YouTube Videos [](id=youtube-videos)
+
+Tracks how users interact with embedded YouTube videos. You must enter the ID of
+the YouTube video. You can extract this ID from the video URL as the value for
+the `v` parameter. For instance, in the URL
+`https://www.youtube.com/watch?v=H9xtSO-6aXY` the YouTube video ID is
+`H9xtSO-6aXY`. Then select one of the available events, or *All* to track all of
+them. For further reference on the meaning of these events, read the official
+YouTube API documentation.
+
+Notice that this option only works if the YouTube video is embedded as an
+iframe. The iframe code is available from the YouTube video's *Share* &rarr;
+*Embed* menu.
+
+## Using Metrics
+
+Suppose you want to run a campaign for an event that your company is hosting 
+next month. For this event, you have created a main page for the event which 
+contains a Youtube video and a banner which says *Register Now*. You also have 
+a blog entry about the event displayed on several different pages of your 
+website and a Register page which contains the form to pay for the event. In 
+this campaign, your goal is to get as many people to register as possible. 
+However, you will probably be interested in tracking the following information 
+to ensure that everything is working as expected:
 
  - Visits to the main page of the event
  - Clicks to view the video
@@ -97,52 +169,3 @@ Audience Targeting Analytics component.
 Now your analytics data is stored in an alternative database schema!
 
 Next you'll learn about Campaign Reports.
-
-## Campaign Reports [](id=campaign-reports)
-
-Reports are available for campaigns. You can select the campaign name and click
-the *Reports* tab to see the list of reports available. More reports can be
-created by developers and deployed as OSGi plugins. See the
-[Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/7-1/reporting-user-behavior-with-audience-targeting)
-tutorial for details. You can create a custom report by selecting the a campaign
-and clicking the *Reports* tab &rarr; *Add Custom Report*
-(![Add Custom Report](../../images-dxp/icon-add.png)).
-
-The Content Views report shows the number of times that different assets have
-been viewed via the Campaign Content Display application by users in the context
-of the current campaign. For example, if you configured three Campaign Content
-Display applications around your website to display content for a campaign, the
-Content View report for the campaign would show how many times that content was
-interacted with by different users.
-
-![Figure 6: You can build your own custom campaign report to fit your needs.](../../images-dxp/audience-targeting-report-builder.png)
-
-You can track many other user actions by creating a custom report. You can drag
-and drop different kinds of metrics to track for your campaign, which shows the
-number of times each metric has been triggered by users. For a complete
-reference of all report metrics available, see the
-[Audience Targeting Metrics](/develop/tutorials/-/knowledge_base/7-1/audience-targeting-metrics)
-tutorial.
-
-Consider the example that we introduced earlier in the section on metrics:
-you've created a campaign for an event that your company will host soon. For
-this event, you have created a main page for the event which contains a Youtube
-video and a banner which says "Register Now". You also have created a blog post
-about the event which is displayed on several different pages of your website.
-Lastly, you have a Register page which contains the form to pay for the event.
-For this example, a custom Metrics report could show you how many users visited
-the event page, how many watched the video, how many clicked on the banner, how
-many viewed the blog post about the event, how many started filling the
-registration form, etc. This information helps you measure the effectiveness of
-your campaign. You can use this information to evaluate whether or not the users
-are following the engagement path you had prepared.
-
-![Figure 7: This campaign report displays several event types for content in the campaign.](../../images-dxp/audience-targeting-campaign-report.png)
-
-The metrics you apply to a report can be tracked in several different ways. For
-instance, if you added the *YouTube Videos* metric to your report, you have
-several different event types to track. Some administrators may be interested in
-how many users played the video, while others are only interested in those that
-finished the video. You can track these events with the *Event type* field. You
-even have the option to track *all* events, if your interested in all the
-metrics for an option.
