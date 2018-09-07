@@ -1,10 +1,10 @@
 # Updating Folders [](id=updating-folders)
 
-Once a folder exists, you can copy or move it to a different location. These 
-operations are covered in 
-[other tutorials](/develop/tutorials/-/knowledge_base/7-1/copying-and-moving-entities). 
-The options for in-place folder updates, however, are limited. You can only 
-update a folder's name and description. You do this with the 
+The Documents and Media API lets you 
+[copy or move](/develop/tutorials/-/knowledge_base/7-1/copying-and-moving-entities) 
+folders to a different location. Options for in-place folder updates, however, 
+are limited. You can only update a folder's name and description. You can do 
+this with the 
 [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 method `updateFolder`: 
 
@@ -21,12 +21,12 @@ and Media UI supports. This class defines its own `updateFolder` method that
 contains logic to add and update folders. Note that this is the same method from 
 the example in the 
 [tutorial on creating folders](/develop/tutorials/-/knowledge_base/7-1/creating-folders). 
-The example here, however, focuses on the code that updates a folder. 
+The example here, however, focuses on the folder update. 
 
-This method gets the data from the request that it needs to add or update a 
-folder. If there's no existing folder (`folderId <= 0`), it adds a new folder. 
-If there's an existing folder, then it's updated by the `DLAppService` method 
-`updateFolder`: 
+This method uses the request to get the data it needs to add or update a folder. 
+It creates a new folder if there's no existing folder (`folderId <= 0`). If 
+there's an existing folder, then the `DLAppService` method `updateFolder` 
+updates it: 
 
     protected void updateFolder(ActionRequest actionRequest) throws Exception {
             long folderId = ParamUtil.getLong(actionRequest, "folderId");
