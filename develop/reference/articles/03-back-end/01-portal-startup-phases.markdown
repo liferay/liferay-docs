@@ -1,12 +1,14 @@
 # @product@ Startup Phases [](id=liferay-startup-phases)
 
-Liferay startup phases are helpful to understand. Knowing them helps you troubleshoot startup failures. Also by learning the phase triggered events, you can listen for and act on them. This article describes the startup phases and identifies 
-[phase events you can implement actions for](acting-on-events). 
+Knowing Liferay's startup phases helps you troubleshoot startup failures. By
+learning the phase triggered events, you can listen for phases and act on them.
+This article describes the startup phases and identifies how to [implement
+actions for phase events](#acting-on-events). 
 
 Startup consists of these main phases:
 
-1.  **Portal Context Initialization Phase:** focuses on low level tasks that 
-    don't need to be aware of a web context.
+1.  **Portal Context Initialization Phase:** focuses on low level tasks without
+    a web context.
 
 2.  **Main Servlet Initialization Phase:** focuses on the portlet container and 
     the @product@ web application's UI features such as Struts, Themes, and
@@ -17,7 +19,7 @@ Initialization Phase.
 
 ### Portal Context Initialization Phase [](id=portal-context-initialization-phase)
 
-Here's the phase's activity sequence:
+The Portal Context Initialization phase runs first with these tasks: 
 
 1.  Set up low level utilities such as logging and those in
     [`PortalUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/PortalUtil.html)
@@ -39,14 +41,13 @@ Here's the phase's activity sequence:
     1.  Static bundles are installed and started. 
     2.  Dynamic bundles are started. 
 
-6.  OSGi framework starts the runtime.  
+6.  OSGi framework starts the runtime. 
 
 7.  Spring Phase 2: MAIN
 
-    1.  Spring beans specified by the Spring context files listed in Portal 
+    1.  Load Spring beans specified by the Spring context files listed in Portal 
         property 
-        [`spring.configs`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Spring)
-        are loaded.
+        [`spring.configs`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Spring).
     2.  A 
         [`ModuleServiceLifecycle` event service](#moduleservicelifecycle-events)
         with a service property `module.service.lifecycle` value
@@ -104,7 +105,7 @@ classes to the list of action classes to invoke on the events.
 [`global.startup.events` property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Startup%20Events)
 defines the event's default actions. 
 
-**Application Startup Events** runs once for each site instance @product@ 
+**Application Startup Events** runs once for each Site instance @product@ 
 initializes. The
 [`application.startup.events` property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Startup%20Events)
 defines the event's default actions. 
