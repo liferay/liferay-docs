@@ -27,9 +27,11 @@ click *Configuration*.
 From the *User Settings* tab, customize the calendar's default view and
 settings. 
 
-**Time Format:** Choose *AM/PM* or to *24 Hour*. *AM/PM* is the default,
-displaying times such as 8AM or 11PM. The *24 Hour* time format displays times
-such as 08:00 and 23:00.
+**Time Format:** Choose *Locale*, *AM/PM*, or *24 Hour*. _Locale_ is a dynamic
+setting that chooses whether to display the time in _AM/PM_ or _24 Hour_ format,
+based on the preferences set by the User's locale. *AM/PM* displays times such
+as 8AM or 11PM. The *24 Hour* time format displays times such as 08:00 and
+23:00.
 
 **Default Duration:** Choose an event duration. When you add a new event
 to the calendar, the time you set here specifies how long events last by
