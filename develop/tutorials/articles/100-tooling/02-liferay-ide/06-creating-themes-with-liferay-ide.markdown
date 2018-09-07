@@ -41,7 +41,7 @@ from the
 created with the
 [Liferay Themes Node.js SDK](https://github.com/liferay/liferay-themes-sdk/tree/master/packages).
 Do not mix these two development strategies. See the
-[Themes in Liferay Workspace]()
+[Managing Themes in Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/managing-themes-in-liferay-workspace)
 tutorial for more information on how these two strategies are used in Workspace
 and Dev Studio.
 
