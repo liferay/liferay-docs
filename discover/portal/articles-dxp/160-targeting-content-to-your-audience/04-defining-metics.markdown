@@ -1,20 +1,13 @@
 # Defining Metrics [](id=defining-metrics)
 
-One of the most interesting features of campaigns is that they allow you to
-measure the effectiveness of a campaign. This provides your marketing team with
-real feedback from users. When creating a campaign, you can define the user
-actions that you want to track. This can be done by defining *Metrics*.
-
-Metrics enable Audience Targeting administrators to build custom reports and
-measure the effectiveness of a campaign by tracking certain user actions.
+To provide your marketing team with real feedback from users, you can define 
+the user actions that you want to track using *Metrics*. Metrics enable 
+Audience Targeting administrators to build custom reports and measure the 
+effectiveness of a campaign by tracking certain user actions.
 
 Metrics filter the analytics data gathered by the Audience Targeting Analytics
 engine to obtain the number of times that a certain action was performed on a
 given element or content by users and the user segments they belong to.
-
-A custom report may contain multiple metrics of the same type; for instance,
-metrics for different links. The name field in the metric identifies each value
-in the report results (e.g., *Link to Marketplace*, *Link to More Info*, etc.).
 
 Metrics can be created by developers and deployed as extensions. Out of the box,
 Audience Targeting includes metrics to track the most common user actions. These
@@ -37,13 +30,6 @@ in the inputs) or submit it. If you select the *All* option from the *Event
 type* field, the custom report will show the figures for the three events
 simultaneously. You must also provide the form you want to track, which is
 selectable from the *Form* metric.
-
-As a use case, suppose a company wants to organize a webinar to promote one of
-their products. The marketing team creates a landing page with a subscription
-form and promotes it on social media. They want to generate a report listing the
-number of visits to the landing page, form interactions, and form submissions to
-measure the success of their campaign. This Form metric would allow campaign
-administrators the ability to track forms in their site.
 
 ## Link [](id=link)
 
@@ -71,13 +57,12 @@ iframe. The iframe code is available from the YouTube video's *Share* &rarr;
 ## Using Metrics
 
 Suppose you want to run a campaign for an event that your company is hosting 
-next month. For this event, you have created a main page for the event which 
-contains a Youtube video and a banner which says *Register Now*. You also have 
-a blog entry about the event displayed on several different pages of your 
-website and a Register page which contains the form to pay for the event. In 
-this campaign, your goal is to get as many people to register as possible. 
-However, you will probably be interested in tracking the following information 
-to ensure that everything is working as expected:
+next month. You have created a main page for the event with a Youtube video and 
+a *Register Now* banner. You also have a blog entry about the event displayed 
+on several different pages and a Register page with the form to pay for 
+registration. In this campaign, your goal is to get as many people to register 
+as possible, but there is other information you'll be interested in tracking to 
+ensure that everything is working as expected:
 
  - Visits to the main page of the event
  - Clicks to view the video
@@ -101,13 +86,11 @@ as OSGi plugins. See the
 [Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/tracking-user-actions-with-audience-targeting)
 tutorial for details.
 
-The metrics use an analytics engine called *Audience Targeting Analytics* that
-can be configured per site or per @product@ installation. You'll learn about
-this next.
-
 ### Audience Targeting Analytics [](id=audience-targeting-analytics)
 
-To configure the analytics engine per site,
+Metrics uses the *Audience Targeting Analytics* engine that can be configured 
+per site or per @product@ installation. To configure the analytics engine per 
+site,
 
 1.  Go to Site Administration and click *Configuration* &rarr; *Site Settings* &rarr; *Advanced* &rarr; *Audience Targeting Analytics*.
 
@@ -127,13 +110,12 @@ The following analytics options are available:
 - Links
 - YouTube Videos
 
-Tracking all the actions of all your users (even guest users) can be a heavy
-load for your server. Therefore, it's best to disable tracking any actions about
-which you don't need information. For example, Audience Targeting, by default,
-stores anonymous users' behavior analytics. This stores a large amount of data
-to the database. If you're not interested in tracking anonymous users, you can
-turn that functionality off for your @product@ installation by disabling the
-*Anonymous Users* selector.
+Tracking all the actions of all your users can be a heavy load for your server. 
+Therefore, it's best to disable tracking any actions about which you don't need 
+information. For example, by default, you're storing guest behavior analytics. 
+This stores a large amount of data to the database. If you're not interested in 
+tracking guest users, you can turn that off by disabling the *Anonymous Users* 
+selector.
 
 ![Figure 4: There's no need to track anonymous users if you're not interested in their behavior.](../../images-dxp/anonymous-users-analytics.png)
 
