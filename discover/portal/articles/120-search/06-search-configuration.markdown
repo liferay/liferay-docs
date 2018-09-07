@@ -32,10 +32,10 @@ These system scoped configurations are available in System Settings:
 
 The Default Keyword Query entry contains one setting:
 
-- `disabledEntryClassNames`: The `DefaultKeywordQueryContributor` code
-    automatically adds `description`, `userName`, and `title` fields to the
-    keyword search query. Specify the entry class names
-    `DefaultKeywordQueryContributor` should ignore.
+`disabledEntryClassNames`: The `DefaultKeywordQueryContributor` code
+automatically adds `description`, `userName`, and `title` fields to the
+keyword search query. Specify the entry class names
+`DefaultKeywordQueryContributor` should ignore.
 
 ### Default Search Result Permission Filter
 
@@ -53,7 +53,7 @@ for more information on these settings:
 
 The Index Status Manager entry has one setting:
 
-- `indexReadOnly`: Suspends all indexing operations and writes to the
+`indexReadOnly`: Suspends all indexing operations and writes to the
 search engine. Searches return only the documents already indexed. This is
 useful for speeding up large data imports, but it should be disabled and a full
 re-index executed once the import is finished.
@@ -61,58 +61,56 @@ re-index executed once the import is finished.
 ### Indexer Writer Helper
 
 The Index Writer Helper entry contains only one valid entry. The second,
-`indexReadOnly`, is deprecated and unused anywhere, so setting it does not
-produce any effect. Use `indexReadOnly` from the 
-[Index Status Manager](#index-status-manager) instead.
+`indexReadOnly`, is deprecated and unused, so setting it has no effect. Use
+`indexReadOnly` from the [Index Status Manager](#index-status-manager) instead.
 
-- `indexCommitImmediately`: When *true* (the default), each write request
-    forces the search engine to refresh the index reader, potentially flushing
-    transactions to disk. This may negatively impact search engine performance.
-    The default behavior is to commit immediately for index writing on
-    individual assets (e.g. add blog, update blog) but delay commits for bulk
-    index writing operations (e.g.  index all users, index all form entries)
-    until all entries have been sent to the search engine. Setting this to false
-    changes the behavior for individual index operations, and may cause
-    applications like Asset Publisher to exhibit a delayed response when showing
-    newly added content. See the 
-    [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html)
+`indexCommitImmediately`: When *true* (the default), each write request
+forces the search engine to refresh the index reader, potentially flushing
+transactions to disk. This may negatively impact search engine performance.
+The default behavior is to commit immediately for index writing on
+individual assets (e.g. add blog, update blog) but delay commits for bulk
+index writing operations (e.g.  index all users, index all form entries)
+until all entries have been sent to the search engine. Setting this to false
+changes the behavior for individual index operations, and may cause
+applications like Asset Publisher to exhibit a delayed response when showing
+newly added content. See the 
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html)
 for more information.
 
-<<<<<<< HEAD
 ### Index Registry
 
 Configure the buffering of index requests:
 
-- `buffered`: Disable or configure the buffering of indexing requests. To stop
-    the buffering of index requests, choose *Disabled*. 
+`buffered`: Disable or configure the buffering of indexing requests. To stop
+the buffering of index requests, choose *Disabled*. 
 
-- `maximumBufferSize`: If buffering is
-    enabled, set the Maximum Buffer Size so that any additional indexing
-    requests are executed immediately. 
+`maximumBufferSize`: If buffering is
+enabled, set the Maximum Buffer Size so that any additional indexing
+requests are executed immediately. 
 
-- `minimumBufferAvailabilityPercentage`: When the capacity of the buffer has
-    only the specified percent of space left, the existing requests in the
-    buffer are executed in one batch and removed from the buffer.
+`minimumBufferAvailabilityPercentage`: When the capacity of the buffer has
+only the specified percent of space left, the existing requests in the
+buffer are executed in one batch and removed from the buffer.
 
 ### Index Query Preprocessor
 
 This entry has one repeatable property (use array syntax if you're defining via 
 [OSGi configuration file](/discover/portal/-/knowledge_base/7-1/creating-configuration-file)):
 
-- `fieldNamePatterns`: Fields with names matching the patterns set here are
-    treated as non-analyzed keyword fields. Instead of scored full text queries,
-    matching is performed by non-scored wildcard queries. This is a resource
-    intensive operation that degrades search engine performance as indexes grow
-    larger. For substring matching, relying on the 
-    [ngram tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/analysis-ngram-tokenizer.html)
-    usually performs better.
+`fieldNamePatterns`: Fields with names matching the patterns set here are
+treated as non-analyzed keyword fields. Instead of scored full text queries,
+matching is performed by non-scored wildcard queries. This is a resource
+intensive operation that degrades search engine performance as indexes grow
+larger. For substring matching, relying on the 
+[ngram tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/analysis-ngram-tokenizer.html)
+usually performs better.
 
 ### Reindex
 
 This entry contains only one property:
 
-- `indexingBatchSizes`: Sets the number of documents indexed
-=======
+`indexingBatchSizes`: Sets the number of documents indexed
+
 **Index Registry**
 : Disable or configure the buffering of indexing requests. To stop the buffering
 of index requests, set the Buffered property to *Disabled*. If buffering is
@@ -133,7 +131,6 @@ usually performs better.
 
 **Reindex**
 : Use the Indexing Batch Sizes property to set the number of documents indexed
->>>>>>> master
 per batch for model types that support batch indexing. Defaults to 10000. For
 models with large documents, decreasing this value may improve stability when
 executing a full re-index.
@@ -143,12 +140,12 @@ executing a full re-index.
 This entry has one repeatable property (use array syntax if you're defining via 
 [OSGi configuration file](/discover/portal/-/knowledge_base/7-1/creating-configuration-file)):
 
-- `excludedEntryClassNames`: Exclude an asset type from being
-    searched in the catchall query constructed for the Search application. For
-    example, fields of the Organization asset must be indexed to be searchable
-    from the Users and Organizations application, but should not be searched in
-    the Search application. Thus, Organizations are added to
-    `excludedEntryClassNames`.
+`excludedEntryClassNames`: Exclude an asset type from being
+searched in the catchall query constructed for the Search application. For
+example, fields of the Organization asset must be indexed to be searchable
+from the Users and Organizations application, but should not be searched in
+the Search application. Thus, Organizations are added to
+`excludedEntryClassNames`.
 
 ### Permission Checker
 
@@ -197,11 +194,11 @@ for more information on these properties:
 ### Search Web
 
 This entry contains one property:
-- `classicSearchPortletInFrontPage`: Revert the default search experience from
-    using the new Search Widgets to the classic Search Portlet that was standard
-    in past releases. See
-    [here](/discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience)
-    for more information.
+`classicSearchPortletInFrontPage`: Revert the default search experience from
+using the new Search Widgets to the classic Search Portlet that was standard
+in past releases. See
+[here](/discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience)
+for more information.
 
 ### Reindexing from Search Administration
 
@@ -224,53 +221,51 @@ their descriptions and determine if they apply to your search requirements.
 ## Site Scoped Search Configuration [](id=site-scoped-search-configuration)
 
 Search isn't configurable at the Site Scope by the strict definition of 
-[Site Scoped Configuration](/discover/portal/-/knowledge_base/7-1/setting-up#configuration-scope)
-However, the use of
+[Site Scoped Configuration](/discover/portal/-/knowledge_base/7-1/setting-up#configuration-scope).
+However, 
 [Search Pages](/discover/portal/-/knowledge_base/7-1/configuring-search-pages)
-is a way to influence site-specific search behavior. Commonly, Search Pages will
-contain search widgets configured to search for all content within a particular
-site.
+influence site-specific search behavior. Commonly, Search Pages contain search
+widgets configured to search for all content within a particular Site.
 
-In addition, the Header Search (the Search Bar embedded in every site page by
+In addition, the Header Search (the Search Bar embedded in every Site page by
 default), whether populated by the new Search Bar widget or the legacy Search
-portlet, is site scoped. Only one instance of the Header Search application
-exists per site, and configuring it in one page context configures it for the
-entire site. 
+portlet, is Site scoped. Only one instance of the Header Search application
+exists per Site, and configuring it in one page context configures it for the
+entire Site. 
 
 Because of the modularity of Search, there are some important configuration
 nuances to be aware of when using the new Search widgets:
 
-- If the Header Search is using the Search Bar widget, its configuration
-    always requires a _destination page_ to be set, where Users are redirected
-    to complete their search activity, interacting with the other Search widgets
-    (Results, Facets,
-    Suggestions etc.). 
-    [Search destination pages](/discover/portal/-/knowledge_base/7-1/configuring-search-pages)
-    are just ordinary pages holding the Search widgets. You can have as many
-    pages with Search widgets across the site as you want.
+- If the Header Search uses the Search Bar widget, its configuration
+  always requires a _destination page_ to be set, where Users are redirected
+  to complete their search activity, interacting with the other Search widgets
+  (Results, Facets, Suggestions etc.). 
+  [Search destination pages](/discover/portal/-/knowledge_base/7-1/configuring-search-pages)
+  are ordinary pages holding the Search widgets. You can have as many pages with
+  Search widgets across the Site as you want.
 
-- Unlike the legacy Search portlet, the new Search Bar widget is instance-able,
-    so one page can contain multiple Search Bar widgets configured differently.
-    All Search Bar instances must point to a Search Page to be effective.
+- Unlike the legacy Search portlet, the new Search Bar widget is instanceable,
+  so one page can contain multiple Search Bar widgets configured differently.
+  All Search Bar instances must point to a Search Page to be effective.
 
-- **Important**: If the destination Search Page has a Search Bar widget
-    instance besides the embedded Header Search, the configurations of the
-    Header Search take precedence over the page's widget instance.
+- **Important**: if the destination Search Page has a Search Bar widget
+  instance besides the embedded Header Search, the configurations of the
+  Header Search take precedence over the page's widget instance.
 
-    Conversely, searching from a Search Bar widget instance on other pages will
-    have their configurations honored, even if they differ from the Header
-    Search configuration. 
+  Conversely, searching from a Search Bar widget instance on other pages honors
+  their configurations, even if they differ from the Header Search
+  configuration. 
 
-    +$$$
++$$$
 
-    **Note:** On Liferay Portal 7.1 CE GA1 and Liferay DXP 7.1, you must
-    configure both the Search Page's Search Bar and the Header Search with
-    matching configurations to achieve consistent search behavior (otherwise
-    either one may take precedence.) This has been fixed in
-    [LPS-83193](https://issues.liferay.com/browse/LPS-83193) and will be
-    available on the next Fix Pack or GA release.
+**Note:** On Liferay Portal 7.1 CE GA1 and Liferay DXP 7.1, you must
+configure both the Search Page's Search Bar and the Header Search with
+matching configurations to achieve consistent search behavior (otherwise
+either one may take precedence.) This has been fixed in
+[LPS-83193](https://issues.liferay.com/browse/LPS-83193) and will be
+available on the next Fix Pack or GA release.
 
-    $$$
+$$$
 
 See the documentation on 
 [configuring of a Search Bar](/discover/portal/-/knowledge_base/7-1/searching-for-assets#configuring-the-search-bar) 
@@ -314,6 +309,6 @@ for more information.
 
 **Search Insights**
 : Add this to the Search Page to inspect the full query string that's
-constructed by the backend search code when the User enters a keyword. Only
+constructed by the back-end search code when the User enters a keyword. Only
 useful for testing and development.
 
