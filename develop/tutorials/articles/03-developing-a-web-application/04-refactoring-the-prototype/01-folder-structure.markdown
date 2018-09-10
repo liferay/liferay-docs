@@ -14,7 +14,7 @@ organized. You'll make two changes to help better organize your project:
 2.  Reorganize your JSPs to make room for more JSPs that will be part of the web
     module.
 
-## Moving guestbook-web
+## Moving guestbook-web [](id=moving-guestbook-web)
 
 The best way to move modules around is to your @ide@'s *Refactor* function. The 
 refactor function will check any dependencies or links to the module being 
@@ -34,7 +34,7 @@ Your `guestbook-web` folder will now appear in the structure at the same level a
 
 ![Figure 1: After you move it using the Refactor function, all of your modules will be in the same folder..](../../../images/guestbook-refactor.png)
 
-## Reorganizing JSPs
+## Reorganizing JSPs [](id=reorganizing-jsps)
 
 Currently, all your JSPs sit in your web module's 
 `src/main/resources/META-INF/resources` folder, which serves as the context root 

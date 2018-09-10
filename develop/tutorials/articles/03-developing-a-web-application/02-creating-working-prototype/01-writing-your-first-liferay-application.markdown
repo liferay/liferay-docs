@@ -131,6 +131,6 @@ Even though all you've done is generate it, the `guestbook-web` project is ready
 
 5.  Select *Applications*. In the Applications list, your application should appear in the Sample category. Its name will be `Guestbook`. 
 
-![Figure 4: This is the default Liferay homepage. It contains the Hello World widget the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)
+![Figure 5: This is the default Liferay homepage. It contains the Hello World widget the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)
 
 Now you're ready to jump in and start developing your Guestbook portlet. 
