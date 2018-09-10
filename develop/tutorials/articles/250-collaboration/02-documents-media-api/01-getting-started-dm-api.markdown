@@ -54,9 +54,12 @@ For example, this code gets such a reference to `DLAppService`:
 
 Getting the reference this way ensures that you leverage OSGi's 
 [dependency management](/develop/tutorials/-/knowledge_base/7-1/leveraging-dependencies) 
-features. If you need to get a reference somewhere outside of an OSGi component 
-(e.g., in a JSP), then you should use a 
-[service tracker](/develop/tutorials/-/knowledge_base/7-1/service-trackers). 
+features. If you need to use the Documents and Media services outside of an OSGi 
+component (e.g., in a JSP), then you can use the services' static `*Util` 
+classes: 
+
+-   [`DLAppServiceUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppServiceUtil.html)
+-   [`DLAppLocalServiceUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppLocalServiceUtil.html)
 
 ## Specifying Repositories [](id=specifying-repositories)
 
