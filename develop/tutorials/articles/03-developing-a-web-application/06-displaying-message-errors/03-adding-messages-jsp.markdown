@@ -27,9 +27,6 @@ Any messages the user should see are now stored in either `SessionMessages` or
         <liferay-ui:success key="guestbookAdded" message="guestbook-added" />
         <liferay-ui:success key="guestbookUpdated" message="guestbook-updated" />
         <liferay-ui:success key="guestbookDeleted" message="guestbook-deleted" />
- 
-    Note that one of the `message` values is the same for both portlets. There's 
-    no need to write redundant messages--language keys are reusable. 
 
 ![Figure 1: Now the message will display the value you specified in `Language.properties`.](../../../images/message-complete.png)
 
