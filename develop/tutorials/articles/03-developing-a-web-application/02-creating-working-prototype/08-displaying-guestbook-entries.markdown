@@ -17,9 +17,9 @@ portlet class). Now you need your model.
     right-click your `src/main/java` folder and select *New* &rarr; *Package*. 
     Then enter the package name in the dialog box that appears. 
 
-2.  Next, create your model class. This is a simple class that models a
-    guestbook entry. To do this, right-click your new package and select *New* 
-    &rarr; *Class*. Name the class `Entry`, and click *Finish*. 
+2.  Next, create your model class. This class models a guestbook entry. To do
+    this, right-click your new package and select *New* &rarr; *Class*. Name the
+    class `Entry`, and click *Finish*. 
 
     You now have a Java class for your guestbook entries. Next, you'll give it 
     the fields you need to store entries. 
@@ -92,12 +92,30 @@ guestbook application.
 
 ## Customizing How Your Application is Rendered [](id=customizing-how-your-application-is-rendered)
 
-As mentioned earlier, your application is using two portlet phases: render and
+As mentioned earlier, your application uses two portlet phases: render and
 action. To make the guestbook show the saved guestbook entries when users view
-the application, you need to customize your portlet's render functionality,
-which it's currently inheriting from its parent class, `MVCPortlet`. 
+the application, you must customize your portlet's render functionality, which
+it's currently inheriting from its parent class, `MVCPortlet`. 
 
-1.  Open `GuestbookPortlet` and add the following method below your `addEntry` 
+1.  Add the following method that converts the array to a `List` of your model
+    objects:
+
+        private List<Entry> parseEntries(String[] guestbookEntries) {
+            List<Entry> entries = new ArrayList<Entry>();
+
+            for (String entry : guestbookEntries) {
+                String[] parts = entry.split("\\^", 2);
+                Entry gbEntry = new Entry(parts[0], parts[1]);
+                entries.add(gbEntry);
+            }
+
+            return entries;
+        }
+
+    As you can see, this method splits the entries in the `String` array into two
+    parts based on the caret (`^`) character.
+
+2.  Open `GuestbookPortlet` and add the following method below your `addEntry` 
     method: 
 
         @Override
@@ -115,24 +133,10 @@ which it's currently inheriting from its parent class, `MVCPortlet`.
             super.render(renderRequest, renderResponse);
         }
 
-    This method retrieves the guestbook entries from the configuration, converts 
-    it to a `List` of `Entry` objects, and places that `List` into the request 
-    object. It then calls the parent class's `render` method. 
-
-2.  Beneath the `render` method, add the following method that converts the
-    array to a `List` of your model objects:
-
-        private List<Entry> parseEntries(String[] guestbookEntries) {
-            List<Entry> entries = new ArrayList<Entry>();
-
-            for (String entry : guestbookEntries) {
-                String[] parts = entry.split("\\^", 2);
-                Entry gbEntry = new Entry(parts[0], parts[1]);
-                entries.add(gbEntry);
-            }
-
-            return entries;
-        }
+    This method retrieves the guestbook entries from the configuration, calls
+    `parsEntries` to convert it to a `List` of `Entry` objects, and places that
+    `List` into the request object. It then calls the parent class's `render`
+    method. 
 
 3. Press [CTRL]+[SHIFT]+O to organize imports. 
 
@@ -147,7 +151,7 @@ Note: When you are prompted to choose imports, here are some guidelines:
 * You never use `java.awt...` in this project.
 
 * Only use `com.liferay...` when it is for a Liferay specific implementation or
-    your custom implementation of a concept.
+  your custom implementation of a concept.
  
 For example:
 
@@ -166,9 +170,6 @@ what it might be, you can erase all of the imports from the file and press
 [CTRL]+[SHIFT]+O again and see if you can identify where you went wrong.
 
 $$$
-
-As you can see, this method splits the entries in the `String` array into two
-parts based on the caret (`^`) character.
 
 Now that you have your controller preparing your data for display, your next
 step is to implement the view so users can see guestbook entries. 
@@ -205,8 +206,8 @@ Save your work, deploy your application, and try adding some guestbook entries.
 
 ![Figure 2: Submitted entries are displayed here..](../../../images/guestbook-prototype-container.png)
 
-Awesome! You've finished your working prototype! You have a working application
-that adds and saves guestbook entries. 
+Awesome! You've finished your prototype! You have a working application that
+adds and saves guestbook entries. 
 
 The way you're saving the entries isn't the best way to persist data in your 
 application. Next, you'll use Service Builder to generate your persistence 

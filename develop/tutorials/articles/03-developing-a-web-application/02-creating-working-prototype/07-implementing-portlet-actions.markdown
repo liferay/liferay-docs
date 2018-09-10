@@ -6,10 +6,10 @@
 
 When users submit the form, your application stores the form data for display in 
 the guestbook. To keep this first application simple, you'll implement this 
-using a part of the Portlet API called Portlet Preferences. Normally, of course, 
-you'd use a database. @product@'s Service Builder tool eliminates a great deal 
-of complexity when working with databases. For now, however, you can create the 
-first iteration of your guestbook application using portlet preferences. 
+using a part of the Portlet API called Portlet Preferences. Normally, of course,
+you'd use a database, and you'll refactor this into a database later. For now,
+however, you can create the first iteration of your guestbook application using
+portlet preferences. 
 
 To make your portlet do anything other than re-render itself, you must implement 
 portlet actions. An action defines some processing, usually based on user input, 
@@ -51,7 +51,7 @@ highly unlikely to use that symbol in a guestbook entry.
 
 **Note:** The portlet preferences API is used here for prototyping purposes 
 only. In most cases, you'll need a more robust solution for storing data. You'll 
-learn how to implement such a solution later in the *Service Builder* section.  
+learn how to implement such a solution later in the *Service Builder* section. 
 
 $$$
 
@@ -109,9 +109,9 @@ called `guestbook-entries`:
 
 First, the preferences are retrieved. Then the `guestbook-entries` preference is 
 retrieved and converted to an `ArrayList` so that you can add an entry without 
-worrying about exceeding the size of the array. Next, the name and message 
-fields from your form are retrieved. Note that Liferay's `ParamUtil` class makes 
-it very easy to retrieve URL parameters. 
+worrying about exceeding the size of the array. Next, the name and message
+fields from your form are retrieved. Notice how Liferay's `ParamUtil` class
+makes it easy to retrieve URL parameters. 
 
 Finally, the fields are combined into a `String` delimited by a caret, and the
 new entry is added to the `ArrayList`, which is then converted back to an array
