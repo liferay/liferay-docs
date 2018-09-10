@@ -71,6 +71,7 @@ availability.
 | OpenSocial Gadget | Removed | |
 | Plugins SDK | [GitHub](https://github.com/liferay/liferay-plugins) | Deprecated in 7.0. Replaced by [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace). |
 | Ruby Console | Removed | |
+| Search Portlet | Release (bundle) | Will be removed in a future release. Replaced by the [Search widgets](/discover/portal/-/knowledge_base/7-1/whats-new-with-search). |
 | Shield Integration | Removed | Replaced by X-Pack. |
 | Template Engines | Release (bundle) | Replaced by Freemarker. |
 | vLDAP plugin (Virtual LDAP Server EE) | Removed | |
@@ -90,7 +91,6 @@ availability.
 
 | App | &nbsp;Availability | &nbsp;Notes |
 | --- | ------------------ | ----------- |
-| Dynamic Data List Form | Removed |  |
 | Web Form | Nexus &rarr; Will be removed. | Final version released for 7.0. |
 
 ## Security [](id=security)

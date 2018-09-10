@@ -18,7 +18,7 @@ To add a workflow definition,
 1.  Go to Control Panel &rarr; Configuration &rarr; Workflow.
 
 2.  In the default view (Workflows), click the Add button
-    (![Add](../../../images/icon-add.png)).
+    (![Add](../../images/icon-add.png)).
 
 3.  From here you're either 
     [writing an XML definition](/develop/tutorials/-/knowledge_base/7-1/crafting-xml-workflow-definitions), 
@@ -30,14 +30,14 @@ To edit a definition,
 
 1.  Go to Control Panel &rarr; Configuration &rarr; Workflow.
 
-2.  Click the *Actions* button (![Actions](../../../images/icon-actions.png)) 
+2.  Click the *Actions* button (![Actions](../../images/icon-actions.png)) 
     for the workflow, and click *Edit*.
 
 To delete a definition,
 
 1.  Go to Control Panel &rarr; Configuration &rarr; Workflow.
 
-2.  Click the *Actions* button (![Actions](../../../images/icon-actions.png)) 
+2.  Click the *Actions* button (![Actions](../../images/icon-actions.png)) 
     for the workflow, and click *Unpublish*.
 
     A published workflow cannot be deleted, so you must unpublish its workflow

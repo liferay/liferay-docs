@@ -17,7 +17,7 @@ a summary of the preparation steps:
 
 **Step 6**: Configure your Documents and Media file store
 
-**Step 7**: Install @product-ver@ 
+**Step 7**: Install @product-ver@ and the latest fix pack
 
 **Step 8**: Disable indexing during the upgrade process
 
@@ -151,6 +151,9 @@ Next,
 or
 [use @product@ bundled with your application server of choice](/discover/deployment/-/knowledge_base/7-1/installing-liferay).
 
+Then
+[install the latest fix pack](/discover/deployment/-/knowledge_base/7-1/patching-liferay). 
+
 **Important**: Once you have installed @product-ver@, **DON'T START IT!** In
 previous versions, once you prepared your system for an upgrade, the upgrade
 process ran when you started the new version for the first time. Now
@@ -183,6 +186,6 @@ in your `[Liferay Home]/osgi/configs` folder and add the following content:
     indexReadOnly="true"
 
 After you complete the upgrade (described in the next article), re-enable
-indexing by setting this property to `false`. 
+indexing by removing the `.config` file or setting `indexReadOnly="false"`. 
 
 Ready to upgrade? The next article shows you how. 

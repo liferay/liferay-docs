@@ -28,7 +28,7 @@ Either option leads to the New List form:
 2.  Select the list's data definition: click *Select* under the *Data
     Definition* field, then click the definition you want to use. 
 
-3.  To use a workflow with this list, select it from the *Workflow* menu. 
+3.  To use a workflow with this list, select it from the *Workflow* field. 
 
 4.  To change the list's default permissions, expand the form's *Permissions* 
     section and make your selections. 
@@ -99,13 +99,13 @@ table and click *Save*.
 
 **Optional Configuration:** 
 
-**Display Template:** The widget's display template.
+**Display Template:** Select the display template for the list.
 
-**Form Template:** The widget's form template. 
+**Form Template:** Select the form template for the list.
 
 **Editable:** Whether users can add records to the widget's list. 
 
-**Form View:** Whether to display the Add Record form bey default, instead of
+**Form View:** Whether to display the Add Record form by default, instead of
 the List View. Note that even without this selected, users can still add
 records via the widget's *Add* button
 (![Add](../../../images/icon-add.png)). 

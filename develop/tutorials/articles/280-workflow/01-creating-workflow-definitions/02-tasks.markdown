@@ -1,10 +1,10 @@
 # Workflow Task Nodes [](id=workflow-task-nodes)
 
 Task nodes are fundamental parts of a workflow definition. When you define your
-organization's business processes and planning workflows, you likely first
-envision the tasks. As the name implies, tasks are the part of the workflow
-where *work* is done. A user enters the picture and must interact with the
-submitted asset. Users often take the role of reviewer, deciding if an asset
+organization's business processes and design corresponding workflows, you likely
+first envision the tasks. As the name implies, tasks are the part of the
+workflow where *work* is done. A user enters the picture and must interact with
+the submitted asset. Users often take the role of reviewer, deciding if an asset
 from the workflow is acceptable for publication or needs more work.
 
 Unlike other workflow nodes, task nodes have Assignments, because a user is
@@ -268,8 +268,35 @@ Setting blocking to true prevents timer actions from recurring.
 
 The above snippet demonstrates how to set up a reassignment action.
 
+Like `<action>` elements, `<timer-action>` elements can contain scripts.
+
+    <timer-actions>
+        <timer-action>
+            <name>doSomething</name>
+            <description>Do something cool when time runs out.</description>
+            <script>
+               ...
+            </script>
+            <script-language>groovy</script-language>
+        </timer-action>
+    </timer-actions>
+
+The above example isn't functional but it demonstrates setting up a `<script>`
+in your task timer. 
+[Read the Scripting in Workflow article](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
+for more information.
+
++$$$
+
+**Note:** A `timer-action` can contain all the same tags as an `action`, with
+one exception: `execution-type`. Timer actions are always triggered once the
+time is up, so specifying and execution type of `onEntry`, for example, isn't
+meaningful inside a timer. 
+
+$$$
+
 Tasks are at the core of the workflow definition. Once you understand how to
 create tasks and the other 
-[workflow
-nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes) and add
-transitions between the nodes, you're on the cusp of workflow wizard-hood.
+[workflow nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes) 
+and add transitions between the nodes, you're on the cusp of workflow
+wizard-hood.

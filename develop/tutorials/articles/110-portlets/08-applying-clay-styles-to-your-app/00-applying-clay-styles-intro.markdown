@@ -4,7 +4,7 @@ It's important to have a consistent user experience across your apps.
 Portal's built-in apps achieve this through Liferay's 
 [Lexicon Experience Language](https://lexicondesign.io/) and its web 
 implementation, 
-[Clay](https://clayui.com/docs/getting_started/clay.html). 
+[Clay](https://clayui.com/docs/getting-started/clay.html). 
 
 Clay provides a consistent, user-friendly UI and is 
 included in all themes that are based on the `_styled` base theme, making all 

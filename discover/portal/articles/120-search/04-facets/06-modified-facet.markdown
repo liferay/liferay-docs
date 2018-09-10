@@ -26,7 +26,7 @@ The available time range aliases include:
     past-month
     past-year
 
-![Figure 3: The User Facet is configurable.](../../../images/search-user-facet-config.png)
+![Figure 3: The time ranges are set in the facet's configuration.](../../../images/search-modified-facet-config.png)
 
 Each Range has an alias and a Label.
 

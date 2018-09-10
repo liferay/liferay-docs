@@ -51,11 +51,17 @@ If you're using Liferay DXP, you can set the property like this:
 The versions following a GA1 release of DXP follow service pack versions
 (e.g., `7.1-sp2`, `7.1-sp3`, etc.).
 
-This provides a static *distro* JAR for the specified version of @product@,
-which contains all the metadata (i.e., capabilities, packages, versions, etc.)
-running in that version. The distro JAR is a complete snapshot of everything
-provided in the OSGi runtime; this serves as the target platform's list
-of capabilities that your modules are validated against.
+**Important:** If you're targeting a DXP target platform, you must also pass
+in your credentials to gain access to DXP artifacts. See the
+[Accessing DXP Artifacts for the Target Platform](https://customer.liferay.com/documentation/7.1/develop/tutorials/-/official_documentation/tutorials/accessing-dxp-artifacts-for-the-target-platform)
+for details.
+
+Setting the target platform property provides a static *distro* JAR for the
+specified version of @product@, which contains all the metadata (i.e.,
+capabilities, packages, versions, etc.) running in that version. The distro JAR
+is a complete snapshot of everything provided in the OSGi runtime; this serves
+as the target platform's list of capabilities that your modules are validated
+against.
 
 You can now validate your module projects before deploying them! Sometimes, you
 must modify the `resolve` task's default behavior to successfully validate your
