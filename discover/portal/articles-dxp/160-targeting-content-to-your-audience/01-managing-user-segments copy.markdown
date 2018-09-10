@@ -4,39 +4,45 @@ The *Audience Targeting* section of the Configuration section of the Site
 Administration area of the Menu allows you to manage user segments and
 campaigns.
 
-![Figure 1: Click on *Configuration* &rarr; *Audience Targeting* in Site Administration to manage user segments and campaigns for a site.](../../images-dxp/audience-targeting-admin.png)
-
 A user segment represents a subset of the total group of portal users (logged in
 or not). A user segment is defined by one or more rules that users must match
 to belong to that user segment. Once the user segment is created,
 only users who visit the applicable site(s) are added to it. To add a new User 
 Segment,
 
-1.  Open the Site Administration.
+1.  Open Site Administration.
 
-2.  Click *Configuration* &rarr; *Audience Targeting* &rarr; *Add User Segment*
-    (![Add User Segment](../../images-dxp/icon-add.png)).
+2.  Go to *Configuration* &rarr; *Audience Targeting*
 
+3.  Under the *User Segments* tab, click *Add User Segment* (![Add User Segment](../../images-dxp/icon-add.png)).
 
-All the rules that have been deployed appear under the Rules heading. Drag a
-rule to the right to apply the rule to the user segment. Once a rule has been
-applied, you can adjust the rule's parameters. For example, once the Gender rule
-has been applied, you can select *Male* or *Female*. Once the Age rule has been
-applied, you can select an *Older than* value and a *Younger than* value. For
-example, you could define a *Women over 30* user segment by applying the Gender
-rule and selecting *Female*, and applying the Age rule and setting the *Older
-than* attribute to *30*.
+4.  Enter "Women over 30 who use Safari" in the *Name* field and enter a 
+    *Description*.
 
-Some rules are also instantiable, meaning you can apply more than one of the
-same type of rule to a user segment. This allows you to create scenarios where
-you need to segment your audience based on actions that might occur multiple
-times (e.g., visiting multiple pages, viewing multiple banners, having several
-roles, etc.).
-
-Once you've customized the rules for the new user segment, entered a name and,
-optionally, a description, click *Save* to actually create the user segment.
+5.  Open *Behavior* and click and drag *Browser* to the right side.
 
 ![Figure 2: After applying the rule, click the rule to expland/collapse it.](../../images-dxp/audience-targeting-rules.png)
+
+6.  Select *Safari* in the *Browser* dropdown.
+
+7.  Open *User Attributes* and drag *Age* and *Gender* under where you set the
+    browser.
+    
+8.  Set the *Age* to older than 30 and younger than 100.
+
+9.  Set the *Gender* to *Female*.
+
+10. Click *Save*.
+
+Each rule has parameters that can be adjusted. Those parameters can be in 
+different format. Some rules are also instanceable, meaning you can apply more 
+than one of the same type of rule to a user segment. This allows you to create 
+scenarios where you need to segment your audience based on actions that might 
+occur multiple times (e.g., visiting multiple pages, viewing multiple banners, 
+having several roles, etc.).
+
+![Figure 3: Instanceable and non-instanceable rules have different icons.](../../images-dxp/instanceable-icons.png)
+
 
 Once you've created a user segment, you can open its summary view, which
 displays relevant data and configurations.
@@ -44,9 +50,12 @@ displays relevant data and configurations.
 ![Figure 3: Select a pre-existing user segment to view its Summary page.](../../images-dxp/user-segment-summary.png)
 
 To configure permissions for creating, editing, and deleting user segments,
-visit the *Users* &rarr; *Roles* section of the Control Panel. Then click on the
-*Actions* &rarr; *Define Permissions* button corresponding to the role you'd
-like to configure permissions for, and search for *Audience Targeting*.
+
+1.  Go to *Users* &rarr; *Roles* section of the Control Panel.
+
+2.  Click on the *Actions* &rarr; *Define Permissions* button corresponding to 
+    the role you'd like to configure permissions for, and search for
+    *Audience Targeting*.
 
 Both user segments and campaigns are inherited in your site hierarchy.
 Therefore, user segments and campaigns defined in the Global scope will be
