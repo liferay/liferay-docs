@@ -58,7 +58,7 @@ $$$
 Use the encoded value for the HTTP Authorization header when sending the 
 request: 
 
-    curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/organization
+    curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5Cg==" http://localhost:8080/o/api/p/organization
 
 The response contains significantly more data than the response from an 
 unauthenticated request to the same URL. This is because the authenticated user 
