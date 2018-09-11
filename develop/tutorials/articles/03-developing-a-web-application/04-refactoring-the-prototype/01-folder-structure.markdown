@@ -10,29 +10,28 @@ organized. You'll make two changes to help better organize your project:
 1.  Move the `guestbook-web` module into the `guestbook` folder so that it's in 
     the same place as the `guestbook-service` and `guestbook-api` modules that
     you created.
-    
-2.  Reorganize your JSPs to make room for more JSPs that will be part of the web
-    module.
+ 
+2.  Since you'll now have two portlets, reorganize your JSPs to group them by
+    portlet.
 
 ## Moving guestbook-web [](id=moving-guestbook-web)
 
-The best way to move modules around is to your @ide@'s *Refactor* function. The 
-refactor function will check any dependencies or links to the module being 
-moved and attempt to update those as well.
+The best way to move modules around is to use @ide@'s *Refactor* function. The
+refactor function scans for and updates project dependencies and links.
 
 1.  In the *Project Explorer*, right-click on `guestbook-web` and select
     *Refactor* &rarr; *Move*.
 
 2.  In the window that appears, click *Browse*, navigate to the `guestbook` 
     folder and then click *New Folder*.
-    
+ 
 3.  Name the new folder `guestbook-web`.
 
 4.  Click *Open* and then *OK* to confirm.
 
-Your `guestbook-web` folder will now appear in the structure at the same level as the other modules.
+Your `guestbook-web` folder now appears in the structure with the other modules.
 
-![Figure 1: After you move it using the Refactor function, all of your modules will be in the same folder..](../../../images/guestbook-refactor.png)
+![Figure 1: After you move it using the Refactor function, all of your modules are in the same folder..](../../../images/guestbook-refactor.png)
 
 ## Reorganizing JSPs [](id=reorganizing-jsps)
 

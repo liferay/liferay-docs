@@ -13,7 +13,7 @@ A portlet's display category is defined in its component class as a metadata
 property. Since the Guestbook portlet lets users communicate with each other, 
 you'll add it to the Social category. Only one Guestbook portlet should be added 
 to a page, so you'll also define it as a *non-instanceable* portlet. Such a 
-portlet can appear only once on a page or site, depending on its scope. 
+portlet can appear only once on a page or Site, depending on its scope. 
 
 1.  Open the `GuestbookPortlet` class and update the component class metadata 
     properties to match this configuration: 

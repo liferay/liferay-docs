@@ -136,7 +136,7 @@ all works, it's time to test it.
 
 11. Verify that your entry appears.
 
-![Figure 1: A new guestbook and entry.](../../../images/guestbook-entry-test.png)
+![Figure 1: Your first guestbook and entry appears. Nice job!](../../../images/guestbook-entry-test.png)
 
 ## What's Next? [](id=whats-next)
 
@@ -144,4 +144,4 @@ You've created a working web application and deployed it on @product@. If you've
 created web applications before, though, you know that it's missing some 
 important features: security, front-end validation, and an interface for 
 administrators to create multiple guestbooks per portlet. In the next section, 
-you'll begin adding these (and more) features. 
+you'll begin adding these features. 
