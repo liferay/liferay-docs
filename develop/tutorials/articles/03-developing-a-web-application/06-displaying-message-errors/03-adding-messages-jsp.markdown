@@ -28,8 +28,11 @@ Any messages the user should see are now stored in either `SessionMessages` or
         <liferay-ui:success key="guestbookUpdated" message="guestbook-updated" />
         <liferay-ui:success key="guestbookDeleted" message="guestbook-deleted" />
 
-![Figure 1: Now the message will display the value you specified in `Language.properties`.](../../../images/message-complete.png)
+![Figure 1: Now the message displays the value you specified in `Language.properties`.](../../../images/message-complete.png)
 
 Congratulations! You've added useful feedback for operations in your 
-application. Next, you'll add permission checking for your guestbooks and 
+application. 
+
+Your application is shaping up, but it is missing another important feature:
+permissions. Next, you'll add permission checking for your guestbooks and
 entries. 
