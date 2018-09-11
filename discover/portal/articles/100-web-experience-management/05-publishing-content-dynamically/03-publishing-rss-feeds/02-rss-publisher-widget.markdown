@@ -1,4 +1,4 @@
-# The RSS Publisher Widget
+# The RSS Publisher Widget [](id=the-rss-publisher-widget)
 
 The RSS Publisher widget lets you display any number of RSS feeds and configure 
 how they are displayed. If you're looking for a web-based RSS reader, look no 
@@ -22,13 +22,14 @@ properties, the RSS Publisher widget can't access any RSS feeds.
 $$$
 
 Note that the RSS Publisher widget is deprecated. In Liferay CE Portal 7.1 GA2+, 
-and Liferay DXP 7.1 FP4+, the widget is available from the *Add* &rarr; 
-*Widgets* &rarr; *News* category. However, the widget is hidden in earlier 
+and Liferay DXP 7.1 FP4+, the widget is available from the *Add* 
+(![Add](../../../../images/icon-add-app.png)) 
+&rarr; *Widgets* &rarr; *News* menu. However, the widget is hidden in earlier 
 releases of Liferay CE Portal 7.1 and Liferay DXP 7.1. In these releases, you 
 must therefore make the widget visible via a configuration file. The next 
 section shows you how to do this. 
 
-## Ensuring that the RSS Publisher Widget is Visible
+## Ensuring that the RSS Publisher Widget is Visible [](id=ensuring-that-the-rss-publisher-widget-is-visible)
 
 The RSS Publisher widget is hidden in Liferay CE Portal 7.1 GA1 and versions of 
 Liferay DXP 7.1 prior to Fix Pack 4. If you're running one of these versions, 
@@ -52,7 +53,7 @@ The RSS Publisher widget is now available in the *Add*
 (![Add](../../../../images/icon-add-app.png)) 
 &rarr; *Widgets* &rarr; *News* menu. 
 
-## Using the RSS Publisher Widget
+## Using the RSS Publisher Widget [](id=using-the-rss-publisher-widget)
 
 You can add the RSS Publisher widget to a page from the *Add* 
 (![Add](../../../../images/icon-add-app.png)) 
