@@ -38,7 +38,7 @@ open to reveal its panel apps and categories (yes, you can nest them).
 
 The most natural place for the Guestbook Admin portlet is in the *Content* panel 
 category with @product@'s other content-based apps. This integrates it nicely in 
-the spot where site administrators expect it to be. This also means you don't 
+the spot where Site administrators expect it to be. This also means you don't 
 have to create a new category for it: you can just create the panel entry, which 
 is what you'll do next. If you'd like to learn more about panel categories and 
 apps after this, see the 
@@ -63,7 +63,7 @@ Follow these steps to create the panel entry for the Guestbook Admin portlet:
 
 4.  Right-click your new package and select *New* &rarr; *Class*. Name the class 
     `GuestbookAdminPanelApp`.
-    
+ 
 5.  Click *Browse* next to Superclass, search for 
     `BasePanelApp`, select it, and click *OK*. Then click *Finish*. 
 

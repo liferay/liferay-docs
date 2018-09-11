@@ -7,15 +7,14 @@
 In an earlier section, you wrote an `addGuestbook` service method in
 `GuestbookLocalServiceImpl`, but you never used it. To have full functionality 
 over guestbooks, you must also add methods for updating and deleting guestbooks, 
-as well as for returning the number of guestbooks in a site. 
+as well as for returning the number of guestbooks in a Site. 
 
 ## Adding Guestbook Service Methods [](id=adding-guestbook-service-methods)
 
-Remember that when working with Service Builder, you define your service in the 
-`*Impl` classes. After you add or remove a method from an `*Impl` class, or 
-change the signature of a method in an `*Impl` class, you must run Service 
-Builder. Service Builder updates the affected interfaces and any other generated 
-code. 
+Remember that when working with Service Builder, you define your service in the
+`*Impl` classes. After you add, remove a method, or change the signature of
+a method in an `*Impl` class, you must run Service Builder. Service Builder
+updates the affected interfaces and any other generated code. 
 
 Follow these steps to add the required guestbook service methods: 
 

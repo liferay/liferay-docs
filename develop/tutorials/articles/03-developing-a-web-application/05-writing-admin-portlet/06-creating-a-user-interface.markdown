@@ -81,7 +81,7 @@ Create the default view first:
 
     The `<liferay-ui:search-container-row>` tag defines what rows contain. In 
     this case, the `className` attribute defines 
-    `com.liferay.docs.guestbook.model.Guestbook"`. The `modelVar` attribute 
+    `com.liferay.docs.guestbook.model.Guestbook`. The `modelVar` attribute 
     defines `guestbook` as the variable for the currently iterated guestbook. In 
     the search container row, two columns are defined. The 
     `<liferay-ui:search-container-column-text property="name" />` tag specifies 
@@ -97,10 +97,10 @@ Create the default view first:
     displays the list of guestbooks. Using Liferay's search container makes the 
     Guestbook Admin portlet look like a native @product@ portlet. It also 
     provides built-in pagination so that your portlet can automatically display 
-    large numbers of guestbooks on one site. 
+    large numbers of guestbooks on one Site. 
 
-    Your next step is to add the `guestbook_actions.jsp` file that's responsible 
-    for displaying the list of possible actions for each guestbook. 
+    Your next step is to add the `guestbook_actions.jsp` file that displays the
+    list of possible actions for each guestbook. 
 
 3.  Create a new file called `guestbook_actions.jsp` in your project's 
     `/guestbookadminportlet` folder. Paste in this code: 
@@ -144,7 +144,7 @@ Create the default view first:
     retrieves the guestbook in the current iteration. The scriptlet grabs that 
     guestbook so its ID can be supplied to the menu tags. 
 
-    The `<liferay-ui:icon-menu` tag dominates `guestbook_actions.jsp`. It's a 
+    The `<liferay-ui:icon-menu>` tag dominates `guestbook_actions.jsp`. It's a 
     container for menu items, of which there are currently only two (you'll add 
     more later). The Edit menu item displays the Edit icon and the message 
     *Edit*: 
@@ -169,7 +169,7 @@ Create the default view first:
     `<portlet:actionURL name="deleteGuestbook" var="deleteURL">` creates this 
     action URL, which only takes one parameter: the `guestbookId` of the 
     guestbook to be deleted. 
-    
+ 
     Now there's just one more JSP file left to create: the `edit_guestbook.jsp` 
     that contains the form for adding a new guestbook and editing an existing 
     one. 
@@ -238,7 +238,7 @@ Create the default view first:
     When the form is submitted, the `editGuestbookURL` is invoked, which calls
     the Guestbook Admin portlet's `addGuestbook` or `updateGuestbook` method, as
     discussed above.
-    
+ 
     The `guestbookId` must appear on the form so that it can be submitted.
     The user, however, doesn't need to see it. Thus, you specify 
     `type="hidden"`:
