@@ -82,7 +82,7 @@ Follow these steps to implement services for guestbooks in
         }
 
     These call the finders you generated with Service Builder. The first method 
-    retrieves a list of guestbooks from the site specified by `groupId`. The 
+    retrieves a list of guestbooks from the Site specified by `groupId`. The 
     next two methods get paginated lists, optionally in a particular order. The 
     final method gives you the total number of guestbooks for a given site. 
 
@@ -97,8 +97,8 @@ Follow these steps to implement services for guestbooks in
     This method uses @product@'s `Validator` to make sure the user entered text 
     for the guestbook name. 
 
-4.  Press [CTRL]+[SHIFT]+O to organize imports and select the following when 
-    prompted: 
+4.  Press [CTRL]+[SHIFT]+O to organize imports and select the following classes
+    when prompted: 
 
     - `java.util.Date`
     - `com.liferay.portal.kernel.service.ServiceContext`
@@ -220,7 +220,7 @@ Do so now by following these steps:
 	
     These methods, like the getters in `GuestbookLocalServiceImpl`, call the 
     finders you generated with Service Builder. These `getEntries*` methods, 
-    however, retrieve entries from a specified guestbook and site. The first 
+    however, retrieve entries from a specified guestbook and Site. The first 
     method gets a list of entries. The next method gets a paginated list. The 
     third method sorts the paginated list, and the last method gets the total
     number of entries as an integer. 
@@ -246,8 +246,8 @@ Do so now by following these steps:
     This method makes sure the user entered relevant data when creating an 
     entry. 
 
-5.  Press [CTRL]+[SHIFT]+O to organize imports and select the following when 
-    prompted: 
+5.  Press [CTRL]+[SHIFT]+O to organize imports and select the following classes
+    when prompted: 
 
     - `java.util.Date`
     - `com.liferay.portal.kernel.service.ServiceContext`
@@ -278,7 +278,7 @@ the rest of your application. To do this, run `buildService` again:
 +$$$
 
 **Tip:** If something goes awry when working with Service Builder, repeat these 
-steps to run Service Builder again and refresh your api and service modules. 
+steps to run Service Builder again and refresh your API and service modules. 
 
 $$$
 

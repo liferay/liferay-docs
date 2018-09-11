@@ -4,9 +4,9 @@
     <p>Generating the Back-end<br>Step 2 of 3</p>
 </div>
 
-Look, I'm typing here and it's updating over there. The persistence layer saves and retrieves your model data. The service layer is
-a buffer between your application and persistence layers: having it lets you 
-swap out your persistence layer for a different implementation without 
+The persistence layer saves and retrieves your model data. The service layer is
+a buffer between your application and persistence layers: having it lets you
+swap out your persistence layer for a different implementation without
 modifying anything but the calls in the service layer. 
 
 To model the guestbooks and entries, you'll create guestbook and entry model 
@@ -14,13 +14,14 @@ classes. But you won't do this directly in Java. Instead, you'll define them in
 Service Builder, which generates your object model and maps it to all the SQL 
 databases @product@ supports. 
 
-This application's design lets you create multiple guestbooks, each containing 
+This application's design allows for multiple guestbooks, each containing 
 different sets of entries. All users with permission to access the application 
 can add entries, but only administrative users can add guestbooks. 
 
 It's time to get started. You'll create the `Guestbook` entity first: 
 
-1.  In your `guestbook-service` project, open `service.xml`. 
+1.  In your `guestbook-service` project, open `service.xml`. Make sure the
+    *Source* tab is selected. 
 
 2.  When Liferay @ide@ generated your project, it filled this file with dummy 
     entities, which you'll replace. First replace the file's opening contents 
@@ -41,13 +42,13 @@ It's time to get started. You'll create the `Guestbook` entity first:
 
         <column name="guestbookId" primary="true" type="long" />
 
-    This defines `guestbookId` as the entity's primary key, of the type `long`. 
+    This defines `guestbookId` as the entity's primary key of the type `long`. 
 
 4.  The group instance can be left alone.
 
         <column name="groupId" type="long" />
 
-    This defines the ID of the site in @product@ that the entity instance 
+    This defines the ID of the Site in @product@ that the entity instance 
     belongs to (more on this in a moment). 
 
 5.  Leave the Audit Fields section alone. Add status fields:
@@ -61,14 +62,13 @@ It's time to get started. You'll create the `Guestbook` entity first:
 
     The Audit section defines @product@ metadata. The `companyId` is the primary
     key of a 
-    [portal instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance).
+    [portal instance](/discover/portal/-/knowledge_base/7-1/setting-up-a-liferay-instance).
     The `userId` is the primary key of a user. The `createDate` and
     `modifiedDate` store the respective dates on which the entity instance is
     created and modified. The Status section is used later to implement
     workflow. 
 
-6. In the Other fields section, remove all the generated fields and put this one
-   in their place: 
+6. In the Other fields section, replace the generated fields with this one: 
 
         <column name="name" type="String" />
 
@@ -79,13 +79,12 @@ It's time to get started. You'll create the `Guestbook` entity first:
                 <finder-column name="groupId" />
             </finder>
 
-    This defines a finder that generates a `get` method you'll use to retrieve
-    Guestbook entities. The fields used by the finder define the scope of the
-    data retrieved. This finder gets all Guestbooks by their `groupId`, which
-    corresponds to the
-    [site](/discover/portal/-/knowledge_base/7-0/starting-site-development) the
+    A finder generates a `get` method you'll use to retrieve Guestbook entities.
+    The fields used by the finder define the scope of the data retrieved. This
+    finder gets all Guestbooks by their `groupId`, which corresponds to the
+    [Site](/discover/portal/-/knowledge_base/7-1/starting-site-development) the
     application is on. This lets administrators put Guestbooks on multiple 
-    sites, and each `Guestbook` has its own data scoped to its site. 
+    Sites, and each `Guestbook` has its own data scoped to its Site. 
 
 The `Guestbook` entity is finished for now. Next, you'll create the `Entry` 
 entity: 
@@ -127,11 +126,11 @@ entity:
         <column name="message" type="String" />
         <column name="guestbookId" type="long" />
 
-    The `name`, `email`, and `message` fields comprise an `Entry`. These fields 
-    define the name of the person creating the entry, their email address, and 
-    the Guestbook message, respectively. The `guestbookId` is assigned 
-    automatically by code you'll write, and is a `Guestbook` foreign key. This 
-    ties the `Entry` to a specific `Guestbook`. 
+    The `name`, `email`, and `message` fields comprise an `Entry`. These fields
+    define the name of the person creating the entry, an email address, and the
+    Guestbook message, respectively. The `guestbookId` is assigned automatically
+    by code you'll write, and is a `Guestbook` foreign key. This ties the
+    `Entry` to a specific `Guestbook`. 
 
 6.  Add your finder and closing entity tag:
 
@@ -143,7 +142,7 @@ entity:
 
     Here, you define a finder that gets guestbook entries by `groupId` and 
     `guestbookId`. As before, the `groupId` corresponds to the
-    [site](/discover/portal/-/knowledge_base/7-0/starting-site-development) the
+    [Site](/discover/portal/-/knowledge_base/7-1/starting-site-development) the
     application is on. The `guestbookId` defines the guestbook the entries come 
     from. This finder returns a `Collection` of entries. 
 
@@ -188,7 +187,7 @@ with little to no change in the model and service layers. The model is in the
 `-api` module, and the service and persistence layers are in the `-service` 
 module. 
 
-![Figure 1: The Model, Service, and Persistence Layer.](../../../images/model-service-persistence.png)
+![Figure 1: The Model, Service, and Persistence Layer comprise a loose coupling design.](../../../images/model-service-persistence.png)
 
 Each layer is implemented using Java Interfaces and implementations of those
 interfaces. Rather than have one `Entry` class that represents your model, 
