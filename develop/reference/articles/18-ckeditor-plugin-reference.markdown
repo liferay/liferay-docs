@@ -42,18 +42,18 @@ for reference:
 - [liststyle](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/liststyle/plugin.js)
 - [lfrpopup](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/plugins/lfrpopup/plugin.js)
 - [magicline](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/magicline/plugin.js)
-- [maximize](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/maximize/plugin.js)
+- [maximize](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/maximize/plugin.js) \*
 - [media](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/plugins/media/plugin.js)
 - [newpage](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/newpage/plugin.js)
 - [pagebreak](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/pagebreak/plugin.js)
 - [pastefromword](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/pastefromword/plugin.js)
 - [pastetext](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/pastetext/plugin.js)
 - [preview](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/preview/plugin.js)
-- [print](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/print/plugin.js)
+- [print](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/print/plugin.js) \*
 - [removeformat](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/removeformat/plugin.js)
 - [resize](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/resize/plugin.js)
 - [restore](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/plugins/restore/plugin.js)
-- [save](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/save/plugin.js)
+- [save](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/save/plugin.js) \*
 - [selectall](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/selectall/plugin.js)
 - [showblocks](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/showblocks/plugin.js)
 - [showborders](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/showborders/plugin.js)
@@ -69,3 +69,5 @@ for reference:
 - [undo](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/undo/plugin.js)
 - [wikilink](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/plugins/wikilink/plugin.js)
 - [wysiwygarea](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/wysiwygarea/plugin.js)
+
+\* These plugins don't work with inline editing mode.
