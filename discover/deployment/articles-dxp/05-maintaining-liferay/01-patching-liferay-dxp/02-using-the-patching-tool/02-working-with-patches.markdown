@@ -102,9 +102,9 @@ cannot run most of the Patching Tool commands until the patches are restored.
 
 After the separation process only the following commands can be used:
 
-- auto-discovery
-- info
-- setup
+- `auto-discovery`
+- `info`
+- `setup`
 
 Any other command returns this:
 

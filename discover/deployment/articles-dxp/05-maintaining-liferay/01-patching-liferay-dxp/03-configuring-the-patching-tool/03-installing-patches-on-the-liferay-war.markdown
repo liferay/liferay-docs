@@ -32,9 +32,9 @@ Download the necessary artifacts from the
     like this:
 
         patching.mode=binary
-        war.path=/patching-home/liferay-dxp-digital-enterprise-[version].war
-        global.lib.path=/patching-home/liferay-dxp-digital-enterprise-dependencies-[version]/
-        liferay.home=/patching-home/
+        war.path=../../patching-home/liferay-dxp-[version].war
+        global.lib.path=../../patching-home/liferay-dxp-dependencies-[version]
+        liferay.home=../../patching-home
 
     If you're using a different OSGi folder structure, you can specify it as
     the [Patching Tool Advanced Configuration](/discover/deployment/7-1/knowledge_base/patching-tool-advanced-configuration)
