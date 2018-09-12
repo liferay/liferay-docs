@@ -25,7 +25,7 @@ only display relevant content to the user. To enable *User Segments Filter*,
     (![Options](../../images-dxp/icon-app-options.png)) &rarr; *Configuration* 
     menu.
 
-2.  Select the *Audience Targeting* option.
+2.  Under the *Asset Selection* tab, Open the *User Segments Filter* option.
 
 3.  Enable the *User Segments Filter*.
 
@@ -53,7 +53,7 @@ users. Simply click the user report you're interested in and select the
 button. This downloads a CSV file with the list of users.
 
 Additional reports can be created by developers and deployed as OSGi plugins.
-See the [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/reporting-user-behavior-with-audience-targeting)
+See the [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/7-1/reporting-user-behavior-with-audience-targeting)
 tutorial for details. Reports are generated daily by default. However, you can
 generate a report at any time. To generate a new report when currently viewing a
 report, click on the *Update* button from the *Options* icon 
