@@ -91,7 +91,7 @@ User & Admin, Developer, and Marketplace sections.
 First, you need a copy of the repository on your own machine, and to do that,
 you must [clone](https://help.github.com/articles/fork-a-repo/)
 the project. For information on how to work with Git projects, see
-[*How do I use Git and GitHub?*](/04-faq.markdown#how-do-i-use-git-and-github). 
+[*How do I use Git and GitHub?*](04-faq.markdown#how-do-i-use-git-and-github). 
 
 **To add an article** to LDN's [Develop](https://dev.liferay.com/develop)
 section (as an example), create your article and its images in the
@@ -99,7 +99,7 @@ section (as an example), create your article and its images in the
 [pull request](https://help.github.com/articles/using-pull-requests/) to default
 user `liferay`. For more information on where to place new articles and for
 guidelines on writing them, see
-[*How do I write and submit my own article?*](/04-faq.markdown#how-do-i-write-and-submit-my-own-article). 
+[*How do I write and submit my own article?*](04-faq.markdown#how-do-i-write-and-submit-my-own-article). 
 
 **To modify an article**, you can edit it locally in its repository location, in
 a branch created for that purpose. After you've made your changes, commit them
@@ -107,8 +107,8 @@ and submit a [pull request](https://help.github.com/articles/using-pull-requests
 default user `liferay`. 
 
 **To preview an article**, invoke one of the `convert.[bat|sh]` scripts
-on your Markdown file. The scripts are in the [`bin`](bin/) folder. See
-[*How do I convert my local Markdown to HTML using the provided convert scripts?*](/04-faq.markdown#how-do-i-convert-my-local-markdown-to-html-using-the-provided-convert-scripts)
+on your Markdown file. The scripts are in the [`bin`](../bin) folder. See
+[*How do I convert my local Markdown to HTML using the provided convert scripts?*](04-faq.markdown#how-do-i-convert-my-local-markdown-to-html-using-the-provided-convert-scripts)
 for details on using the script. 
 
 ## Liferay's Doc Standards and Customizations
