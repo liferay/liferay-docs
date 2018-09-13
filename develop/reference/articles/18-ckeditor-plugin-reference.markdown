@@ -77,9 +77,19 @@ CKEditor:
 - [print](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/print/plugin.js)
 - [save](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/save/plugin.js)
 
-To use the Classic CKEditor instead of AlloyEditor, add the following property 
-to your `portal-ext.properties` file:
+To use the Classic CKEditor instead of AlloyEditor, there are a few 
+properties you can use, depending on the portlet. Add the 
+[properties](https://github.com/liferay/liferay-portal/blob/7.0.x/portal-impl/src/portal.properties#L6030-L6039) 
+that you need to your `portal-ext.properties` file:
 
-`editor.wysiwyg.portal-impl.portlet.ddm.text_html.ftl=ckeditor`
+    editor.wysiwyg.default=ckeditor
+    editor.wysiwyg.portal-impl.portlet.ddm.text_html.ftl=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.portlet.announcements.edit_entry.jsp=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.portlet.blogs.edit_entry.jsp=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.portlet.mail.edit.jsp=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.portlet.mail.edit_message.jsp=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.html.jsp=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.taglib.ui.discussion.jsp=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.taglib.ui.email_notification_settings.jsp=ckeditor
 
 $$$
