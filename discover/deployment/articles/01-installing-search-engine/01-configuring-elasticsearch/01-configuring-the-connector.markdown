@@ -126,14 +126,17 @@ configuration file:
 
 As you can see from the System Settings entry for Elasticsearch, there are a lot
 more configuration options available that help you tune your system for optimal
-performance. For a detailed accounting of these, refer to the reference article
-on [Elasticsearch Settings](/discover/reference/-/knowledge_base/7-1/elasticsearch-settings).
+performance. 
+<!-- For a detailed accounting of these, refer to the reference article
+on [Elasticsearch Settings](discover/reference/-/knowledge_base/7-1/elasticsearch-settings).
+-->
 
 What follows here are some known good configurations for clustering
 Elasticsearch. These, however, can't replace the manual process of tuning,
 testing under load, and tuning again, so we encourage you to examine the
-[settings](/discover/reference/-/knowledge_base/7-1/elasticsearch-settings) 
-as well as the 
+<!--
+[settings](discover/reference/-/knowledge_base/7-1/elasticsearch-settings) 
+as well as the -->
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/important-settings.html) 
 and go through that process once you have a working configuration. 
 
@@ -192,7 +195,7 @@ communicate using the
 through TCP. See the Elasticsearch documentation for the available properties
 (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
 Adapter's settings for the adapter's available settings.
-<!--reference article](/discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
+<!--reference article](discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
 
 At a minimum, provide the list of hosts to act as gossip routers during unicast
 discovery in the `elasticsearch.yml`:

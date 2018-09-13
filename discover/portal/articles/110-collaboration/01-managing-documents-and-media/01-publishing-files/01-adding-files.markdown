@@ -102,5 +102,5 @@ for 7.1
         [Liferay Marketplace](https://web.liferay.com/marketplace). 
         This lets you create a file entry that links to a Google document. For 
         more information, see 
-        [the documentation on accessing Google Docs&trade;](/discover/portal/-/knowledge_base/7-1/accessing-google-docs). 
+        [the documentation on accessing Google Docs&trade;](discover/portal/-/knowledge_base/7-1/accessing-google-docs). 
 -->

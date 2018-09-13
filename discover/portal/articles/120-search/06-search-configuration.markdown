@@ -125,7 +125,7 @@ their descriptions and determine if they apply to your search requirements.
 ## Site Scoped Search Configuration [](id=site-scoped-search-configuration)
 
 Search isn't configurable at the Site Scope by the strict definition of 
-[Site Scoped Configuration](/discover/portal/-/knowledge_base/7-1/setting-up#configuratino-scope).
+[Site Scoped Configuration](/discover/portal/-/knowledge_base/7-1/setting-up#configuration-scope).
 However, the use of 
 [Search Pages](/discover/portal/-/knowledge_base/7-1/configuring-search-pages) 
 is a way to influence Site-specific search behavior. Search pages contain the
