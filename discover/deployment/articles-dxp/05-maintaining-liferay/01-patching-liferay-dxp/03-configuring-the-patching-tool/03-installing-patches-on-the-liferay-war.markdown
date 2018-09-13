@@ -47,7 +47,9 @@ Download the necessary artifacts from the
         module.framework.static.path=/osgi-home/osgi/static	
 
 3.  Download the patch (fix pack or hotfix) to install and put it in a folder 
-    called `/patching-home/patches`. 
+    called `patches` in your Patching Tool folder:
+
+        [patching-home]/patching-tool/patches 
 
 4.  Execute the Patching Tool's `info` command:
 
