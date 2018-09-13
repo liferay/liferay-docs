@@ -44,18 +44,15 @@ plugin's name and buttons if applicable:
 - [liststyle](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/liststyle/plugin.js)
 - [lfrpopup](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/plugins/lfrpopup/plugin.js)
 - [magicline](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/magicline/plugin.js)
-- [maximize](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/maximize/plugin.js)
 - [media](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/plugins/media/plugin.js)
 - [newpage](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/newpage/plugin.js)
 - [pagebreak](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/pagebreak/plugin.js)
 - [pastefromword](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/pastefromword/plugin.js)
 - [pastetext](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/pastetext/plugin.js)
 - [preview](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/preview/plugin.js)
-- [print](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/print/plugin.js)
 - [removeformat](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/removeformat/plugin.js)
 - [resize](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/resize/plugin.js)
 - [restore](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/plugins/restore/plugin.js)
-- [save](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/save/plugin.js)
 - [selectall](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/selectall/plugin.js)
 - [showblocks](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/showblocks/plugin.js)
 - [showborders](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/showborders/plugin.js)
@@ -71,3 +68,30 @@ plugin's name and buttons if applicable:
 - [undo](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/undo/plugin.js)
 - [wikilink](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/plugins/wikilink/plugin.js)
 - [wysiwygarea](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/wysiwygarea/plugin.js)
+
++$$$
+
+**Note:** The following CKEditor plugins are not available for inline mode in 
+AlloyEditor at this time, however, you can still use them in the classic 
+CKEditor:
+
+- [maximize](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/maximize/plugin.js)
+- [print](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/print/plugin.js)
+- [save](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/save/plugin.js)
+
+To use the Classic CKEditor instead of AlloyEditor, there are a few 
+properties you can use, depending on the portlet. Add the 
+[properties](https://github.com/liferay/liferay-portal/blob/7.1.x/portal-impl/src/portal.properties#L5484-L5493) 
+that you need to your `portal-ext.properties` file:
+
+    editor.wysiwyg.default=ckeditor
+    editor.wysiwyg.portal-impl.portlet.ddm.text_html.ftl=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.portlet.announcements.edit_entry.jsp=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.portlet.blogs.edit_entry.jsp=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.portlet.mail.edit.jsp=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.portlet.mail.edit_message.jsp=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.html.jsp=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.taglib.ui.discussion.jsp=ckeditor
+    editor.wysiwyg.portal-web.docroot.html.taglib.ui.email_notification_settings.jsp=ckeditor
+
+$$$
