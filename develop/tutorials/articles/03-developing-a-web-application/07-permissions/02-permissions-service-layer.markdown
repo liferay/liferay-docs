@@ -12,9 +12,9 @@ in conjunction with @product@'s permissions system to determine who can do what
 to the entities. 
 
 @product@ provides a complete API for managing resources that's integrated with 
-Service Builder. This API is injected into your implementation classes 
-automatically. To manage the resources, all you must do is call the API in the 
-service's add and delete methods. Follow these steps to do this in your 
+Service Builder. This API is injected into your implementation classes
+automatically. To manage the resources, you need only call the API in the
+service's add and delete methods. Follow these steps to do this in your
 application: 
 
 1.  In your `guestbook-service` module, open `GuestbookLocalServiceImpl.java` 
