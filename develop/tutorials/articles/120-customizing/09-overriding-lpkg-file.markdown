@@ -14,7 +14,7 @@ file. Here are the steps:
 1.  Shut down @product@. 
 
 2.  Create a folder called `override` in the
-    `[Liferay Home]/osgi/marketplace` folder](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home). 
+    `[Liferay Home]/osgi/marketplace` folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home). 
 
 3.  Name your updated .jar the same as the .jar in the original .lpkg, minus the
     version information. For example, if you're overriding the

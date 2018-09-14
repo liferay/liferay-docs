@@ -109,4 +109,4 @@ events outside of DS components.
 
 [Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
 
-[@product@ Startup Phases](/develop/tutorials/-/knowledge_base/7-1/liferay-startup-phases)
+[@product@ Startup Phases](/develop/reference/-/knowledge_base/7-1/liferay-startup-phases)

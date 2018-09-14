@@ -152,7 +152,7 @@ or
 [use @product@ bundled with your application server of choice](/discover/deployment/-/knowledge_base/7-1/installing-liferay).
 
 Then
-[install the latest fix pack](/discover/deployment/-/knowledge_base/7-1/patching-liferay). 
+[install the latest fix pack](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-liferay). 
 
 **Important**: Once you have installed @product-ver@, **DON'T START IT!** In
 previous versions, once you prepared your system for an upgrade, the upgrade

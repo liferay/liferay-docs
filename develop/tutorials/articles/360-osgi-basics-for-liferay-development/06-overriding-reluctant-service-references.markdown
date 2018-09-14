@@ -154,7 +154,7 @@ It's time to create your own service implementation. Refer to the appropriate
 module](@platform-ref@/7.1-latest/javadocs/modules) Javadoc for service
 interface details.
 
-[Create a module](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/starting-module-development)
+[Create a module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development)
 and implement your service in it. Use the `@Component` annotation to make
 the service a Declarative Services component. 
 
