@@ -484,7 +484,7 @@ file](https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.htm
 
 You can manage these properties using a `portal-ext.properties` file in your
 [Liferay
-Home](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/liferay-home).
+Home](/discover/deployment/-/knowledge_base/6-2/liferay-home).
 
 $$$
 

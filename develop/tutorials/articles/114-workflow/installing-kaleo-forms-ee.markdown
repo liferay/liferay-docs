@@ -104,7 +104,7 @@ and outline view.
 $$$
 
 Once you have Kaleo Designer for Java installed, get into the flow (pun
-intended) by [creating your own workflow](/develop/tutorials/-/knowledge_base/6-2/workflow/creating-a-workflow-project-with-kaleo) using the Kaleo Workflow Designer for
+intended) by [creating your own workflow](/develop/tutorials/-/knowledge_base/6-2/creating-a-workflow-definition-with-kaleo-designer-for-java) using the Kaleo Workflow Designer for
 Java. 
 
 <!-- ## Related Topics -->

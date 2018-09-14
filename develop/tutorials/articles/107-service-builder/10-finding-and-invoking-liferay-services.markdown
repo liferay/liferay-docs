@@ -48,7 +48,7 @@ Here's how you find services for a user's blogs statistics:
 Now you're ready to invoke Liferay services. To invoke Liferay services
 remotely, your Liferay instance must be configured to allow remote web service
 access. Please see the
-[Understanding Liferay's Service Security Model](/develop/tutorials/-/knowledge_base/6-2/understanding-liferays-service-security-model) 
+[Service Security Layers](/develop/tutorials/-/knowledge_base/6-2/service-security-layers) 
 tutorial for details.
 
 ## Invoking Liferay Services Locally [](id=invoking-liferay-services-locally)
@@ -126,9 +126,9 @@ applications. Liferay's web services APIs can be accessed by many different
 kinds of clients, including non-portlet and even non-Java clients. For
 information on how to develop client applications that can access Liferay's JSON
 web services, please see the
-[Working With JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/working-with-json-web-services)
+[Working With JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)
 tutorial. For information on how to develop
-client applications that access Liferay's SOAP web services, please see the [Working With SOAP Web Services](/develop/tutorials/-/knowledge_base/6-2/working-with-soap-web-services)
+client applications that access Liferay's SOAP web services, please see the [Working With SOAP Web Services](/develop/tutorials/-/knowledge_base/6-2/soap-web-services)
 tutorial. To learn how to create remote web services for your own application,
 please refer to the
 [Creating Remote Services](/develop/tutorials/-/knowledge_base/6-2/creating-remote-services)

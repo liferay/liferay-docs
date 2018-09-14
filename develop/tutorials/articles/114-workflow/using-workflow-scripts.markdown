@@ -19,7 +19,7 @@ script. It's not guaranteed that every ticket submitted has a resolution. If the
 issue was due to a silly user error, there's no reason to change the product. In
 such cases the developer will resolve the ticket and indicate there is no
 resolution in the product (i.e., no modifications are were made). Regardless,
-we'll have the developer fill out an online Dynamic Data List (DDL; see the tutorial on [Publsihing and Using Workflow](/develop/tutorials/-/knowledge_base/6-2/publishing-and-using-workflows)) form to
+we'll have the developer fill out an online Dynamic Data List (DDL; see the tutorial on [Publsihing and Configuring Workflow](/develop/tutorials/-/knowledge_base/6-2/publishing-and-configuring-workflows)) form to
 initiate a workflow for each of her tickets. Once the workflow is invoked, its
 associated DDL record is accessible from our workflow's context. Let's use a
 condition node to handle the ticket based on the DDL record. 
@@ -236,8 +236,8 @@ and editing them.
 
 We need to create a valid DDL record to invoke this workflow properly. If you've
 never set up a DDL record before, or don't even know what a DDL does, don't
-fret. We've got you covered in the tutorial on [Publishing and Using Workflows](/develop/tutorials/-/knowledge_base/6-2/workflow/publishing-and-using-workflows). 
+fret. We've got you covered in the tutorial on [Publishing and Configuring Workflows](/develop/tutorials/-/knowledge_base/6-2/publishing-and-configuring-workflows). 
 
-Next, you might want to look at the tutorial on [leveraging template editors for notifications](/develop/tutorials/-/knowledge_base/6-2/workflow/notification-templates). 
+Next, you might want to look at the tutorial on [leveraging template editors for notifications](/develop/tutorials/-/knowledge_base/6-2/leveraging-template-editors-for-notifications). 
 
 <!-- ## Related Topics -->

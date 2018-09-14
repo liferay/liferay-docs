@@ -10,7 +10,7 @@ running Liferay EE.
 
 If you're running Liferay on JBoss, make sure to have your
 `jboss-deployment-structure.xml` file configured correctly. See the
-[Installing Liferay on JBoss](https://dev.liferay.com/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-jboss-7-1)
+[Installing Liferay on JBoss](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-jboss-7-1)
 instructions for details.
 
 If you're running Liferay on WebLogic, note that the Audience Targeting app

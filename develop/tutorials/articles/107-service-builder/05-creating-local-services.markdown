@@ -356,7 +356,7 @@ correspond to the methods you implemented in your `*LocalServiceImpl` class. The
 utility service methods invoke the implementation service methods that you
 wrote. In addition to all of the Java classes and interfaces, Service Builder
 also generates a `service.properties` file. To learn about the
-`service.properties` file and how to configure it, please refer to the [Configuring `service.properties`](/develop/tutorials/-/knowledge_base/6-2/configuring-service.properties)
+`service.properties` file and how to configure it, please refer to the [Configuring `service.properties`](/develop/tutorials/-/knowledge_base/6-2/configuring-service-properties)
 tutorial. To learn how to invoke local services, please refer to the
 [Invoking Local Services](/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
 tutorial. 

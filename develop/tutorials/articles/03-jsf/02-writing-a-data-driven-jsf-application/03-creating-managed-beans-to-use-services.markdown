@@ -285,7 +285,7 @@ methods to the guestbook bean.
     methods use
     [LiferayFacesContext](https://github.com/liferay/liferay-faces-portal/blob/3.0.0/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
     to set certain parameters. You can visit the
-    [Using the LiferayFacesContext with Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/using-the-liferayfacescontext-with-liferay-faces-portal)
+    [Using the LiferayFacesContext with Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/leveraging-the-current-theme-with-liferay-faces-portal)
     tutorial for more information on how the `LiferayFacesContext` can be used.
     You'll also notice these methods have many error markings. This is because
     they're referencing setter methods used to encapsulate data. You'll create

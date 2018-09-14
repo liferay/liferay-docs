@@ -410,7 +410,7 @@ Studio's powerful graphical features.
 
 Designing a workflow is good. Creating nodes and transitions is good, too. But
 there's more you can do with it; keep reading to learn about [creating workflow scripts](/develop/tutorials/-/knowledge_base/6-2/using-workflow-scripts), or
-[making your notifications more interesting using Freemarker templates](/develop/tutorials/-/knowledge_base/6-2/notification-templates).
+[making your notifications more interesting using Freemarker templates](/develop/tutorials/-/knowledge_base/6-2/leveraging-template-editors-for-notifications).
 
 <!-- ## Related Topics -->
 

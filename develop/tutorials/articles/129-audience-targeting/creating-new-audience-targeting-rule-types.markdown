@@ -342,7 +342,7 @@ result in slowing down your portal.
 - As an alternative to storing complex information in the `typeSettings` field
 which is managed by the framework in the Rule Instance table, you may want to
 consider persisting to a database by using 
-[Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/service-builder),
+[Service Builder](/develop/tutorials/-/knowledge_base/6-2/service-builder),
 which is supported in the Rule plugins. 
 
 - You can override

@@ -187,7 +187,7 @@ out there and put your newfound skills to use!
 ## Related Topics [](id=related-topics)
 
 <!-- Uncomment when the tutorial is available. Jim
-[Override language.properties using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-props-hook)
+[Override language.properties using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
 -->
 
 [Developing Plugins with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)

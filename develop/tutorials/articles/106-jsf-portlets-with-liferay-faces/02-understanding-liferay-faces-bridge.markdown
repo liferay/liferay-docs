@@ -323,4 +323,4 @@ several key options in Liferay Faces Bridge.
 
 [Developing Liferay Faces Portlets with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-faces-portlets-with-maven)
 
-[Specifying and Using Portlet Preferences with JSF](/develop/tutorials/-/knowledge_base/6-2/specifying-and-using-portlet-preferences-with-jsf)
+[Specifying and Using Portlet Preferences with JSF](/develop/tutorials/-/knowledge_base/6-2/using-portlet-preferences-with-jsf)

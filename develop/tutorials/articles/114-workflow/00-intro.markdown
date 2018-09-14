@@ -47,11 +47,11 @@ definitions must follow the schema
 We'll cover the following workflow topics:
 
 - [Enabling your application's entities for workflow](/develop/tutorials/-/knowledge_base/6-2/workflow-enabling-entities)
-- [Installing Kaleo Designer for Java](/develop/tutorials/-/knowledge_base/6-2/installing-kaleo-forms-ee)
+- [Installing Kaleo Designer for Java](/develop/tutorials/-/knowledge_base/6-2/installing-kaleo-designer-for-java-liferay-portal-6-2-dev-guide-07-en)
 - [Creating workflow projects in Kaleo Designer for Java](creating-a-workflow-project-with-kaleo)
-- [Designing and creating a workflow](/develop/tutorials/-/knowledge_base/6-2/designing-workflow-definitions)
+- [Designing and creating a workflow](/develop/tutorials/-/knowledge_base/6-2/designing-a-kaleo-workflow-definition)
 - [Using workflow scripts](/develop/tutorials/-/knowledge_base/6-2/using-workflow-scripts)
-- [Leveraging template editors for notifications](/develop/tutorials/-/knowledge_base/6-2/notification-templates)
-- [Publishing and using workflows in the portal, including the use of Dynamic Data Lists and Kaleo Forms](/develop/tutorials/-/knowledge_base/6-2/publishing-and-using-workflows)
+- [Leveraging template editors for notifications](/develop/tutorials/-/knowledge_base/6-2/leveraging-template-editors-for-notifications)
+- [Publishing and configuring workflows in the portal, including the use of Dynamic Data Lists and Kaleo Forms](/develop/tutorials/-/knowledge_base/6-2/publishing-and-configuring-workflows)
 
 

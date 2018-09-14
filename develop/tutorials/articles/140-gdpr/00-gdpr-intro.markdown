@@ -40,10 +40,10 @@ data upon request.
 There's no easy way through the UI to export a given user's personal data on
 Liferay Portal 6.2. One straightforward way to fulfill this requirement
 programmatically for applications built using Service Builder is to leverage
-[Actionable Dynamic Queries](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/dynamic-query).
+[Actionable Dynamic Queries](/develop/tutorials/-/knowledge_base/7-0/dynamic-query).
 
 This example exports all of a user's blogs created using Liferay's
-[Blogs](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/publishing-blogs)
+[Blogs](/discover/portal/-/knowledge_base/7-0/publishing-blogs)
 app to a JSON-formatted file. It starts by creating an instance of
 `BlogsEntryActionableDynamicQuery` and overriding the `addCriteria` method to
 grab all `BlogEntries` that match the user by `userId` or `statusByUserId`. This

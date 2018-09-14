@@ -246,7 +246,7 @@ portlet development using IPC!
 
 ## Related Topics [](id=related-topics)
 
-[Contexts and Dependency Injection for JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/contexts-and-dependency-injection-for-jsf-portlets)
+[Contexts and Dependency Injection for JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/contexts-and-dependency-injection-for-jsf-portlets)
 
 [Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
 

@@ -18,4 +18,4 @@ understand.
 
 ## Related Topics [](id=related-topics)
 
-[JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/tutorials/jsf-portlets-with-liferay-faces)
+[JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/jsf-portlets-with-liferay-faces)

@@ -190,7 +190,7 @@ seen how the Suggestions feature lets you and your users collaborate on your
 Knowledge Base content. The next topic for discussion is the Knowledge Base
 application's portlets that display articles, their navigation, how to aggregate
 articles for viewing, and finding articles. The Markdown source file importer
-[section](/discover/portal/-/knowledge_base/6-2/knowledge-base#importing-articles-from-markown-source-files)
+[section](/discover/portal/-/knowledge_base/6-2/knowledge-base#importing-articles-from-markdown-source-files)
 comes after that. 
 
 ## Knowledge Base Display Portlet [](id=knowledge-base-display-portlet)
@@ -662,7 +662,7 @@ location, re-package the application, and then deploy it.
 Don't worry; that's much easier than it sounds. 
 
 1. 
-[Download](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps#downloading-through-liferay) 
+[Download](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps#installing-through-the-control-panel) 
 the Knowledge Base from Liferay Marketplace. You'll get a file with an `.lpkg`
 extension. 
 

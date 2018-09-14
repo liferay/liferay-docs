@@ -94,6 +94,6 @@ Here are your pointer options:
   on the workflow diagram. 
 
 Once you've created a project, you'll want to start really fleshing it out.
-Learn to [design and create workflows in the next tutorial](/develop/tutorials/-/knowledge_base/6-2/designing-workflow-definitions).
+Learn to [design and create workflows in the next tutorial](/develop/tutorials/-/knowledge_base/6-2/designing-a-kaleo-workflow-definition).
 
 <!-- ## Related Topics -->

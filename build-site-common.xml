@@ -126,6 +126,20 @@
 		</checkintros>
 	</target>
 
+	<target name="check-links" description="Checks URL links to see if they're broken.">
+		<property file="${project.dir}/release-site.properties" />
+		<java
+			classname="com.liferay.documentation.util.CheckLinks"
+			classpathref="project.classpath"
+			failonerror="false"
+			fork="true"
+		>
+			<arg value="${legacy.links}"/>
+			<arg value="${api.links}"/>
+			<arg value="${doc.dir}"/>
+		</java>
+	</target>
+	
     <target name="clean-dist" description="Deletes dist directory">
         <echo message="... deleting dist directory"/>
         <delete dir="${dist.dir}"/>

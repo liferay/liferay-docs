@@ -58,7 +58,7 @@ portlet preferences.
 
 ## Related Topics [](id=related-topics)
 
-[Using Portlet Preferences with JSF](/develop/tutorials/-/knowledge_base/6-2/tutorials-jsf-test/-/knowledge_base/tutorials-test-jsf/using-portlet-preferences-with-jsf)
+[Using Portlet Preferences with JSF](/develop/tutorials/-/knowledge_base/6-2/using-portlet-preferences-with-jsf)
 
 [Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
 

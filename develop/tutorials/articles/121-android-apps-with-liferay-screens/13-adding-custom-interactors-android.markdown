@@ -70,7 +70,7 @@ backends with a custom interactor.
 
 Custom interactors are also capable of communicating with non-Liferay backends. 
 The following example illustrates this by creating a custom interactor for the 
-[AddBookmark Screenlet](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets) 
+[AddBookmark Screenlet](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets) 
 that can store bookmarks at 
 [Delicious](https://delicious.com). 
 You can find this example's complete code 

@@ -99,7 +99,7 @@ project's properties. The configurator detects invalid properties and reports
 them as errors in the IDE's POM editor. There are a list of key properties that
 your project must specify in order for it to become a valid Liferay IDE project.
 The
-[Using Maven Parent Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/using-maven-parent-plugin-projects)
+[Using Maven Parent Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects)
 tutorial identifies these properties and explains how they are used. 
 
 Liferay IDE's Quick Fix features provide two options for resolving missing

@@ -132,7 +132,7 @@ articles from a web content folder. Follow these steps to use the Screenlet:
   objects. 
 
 For more information on the Screenlet and its supported functionality, see the 
-[Web Content List Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/webcontentlistscreenlet-for-ios). 
+[Web Content List Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/web-content-list-screenlet-for-ios). 
 
 ### Using Asset List Screenlet [](id=using-asset-list-screenlet)
 

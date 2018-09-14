@@ -93,6 +93,6 @@ As you can see, the `liferay-ui:icon-menu` tag is easy to use.
 
  [Using Liferay UI Tabs and Sections](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
  
- [Creating a Navigation Menu with the Liferay UI Icon List Tag](/develop/tutorials/-/knowledge_base/6-2/creating-a-navigation-menu-with-the-liferay-ui-icon-list-tag)
+ [Creating a Navigation Menu with the Liferay UI Icon List Tag](/develop/tutorials/-/knowledge_base/6-2/creating-a-navigation-menu-with-the-liferay-uiicon-list-tag)
  
  [Using Liferay-UI:Success and Liferay-UI:Error Messages](/develop/tutorials/-/knowledge_base/6-2/using-liferay-uisuccess-and-liferay-uierror-message)

@@ -693,4 +693,4 @@ convenient way to specify default values for a Screenlet's attributes.
 
 [Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-iOS-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
