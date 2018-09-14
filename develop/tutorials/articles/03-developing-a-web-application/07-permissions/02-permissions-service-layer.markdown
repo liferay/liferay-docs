@@ -1,4 +1,4 @@
-# Permissions in the Service Layer [](id=permissions-in-the-service-layer)
+# Registering Your Defined Permissions [](id=registering-your-defined-permissions)
 
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 2 of 4</p>

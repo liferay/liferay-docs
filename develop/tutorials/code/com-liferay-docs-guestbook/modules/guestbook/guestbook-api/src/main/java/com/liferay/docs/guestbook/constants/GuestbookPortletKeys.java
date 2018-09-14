@@ -1,4 +1,4 @@
-package com.liferay.docs.guestbook.portlet.constants;
+package com.liferay.docs.guestbook.constants;
 
 /**
  * @author kosamae

@@ -9,9 +9,10 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 
-import com.liferay.blogs.kernel.model.BlogsEntry;
-import com.liferay.blogs.kernel.service.BlogsEntryLocalService;
+import com.liferay.docs.guestbook.constants.GuestbookConstants;
+import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
 import com.liferay.docs.guestbook.model.Guestbook;
+import com.liferay.docs.guestbook.service.GuestbookLocalService;
 import com.liferay.exportimport.kernel.staging.permission.StagingPermission;
 import com.liferay.portal.kernel.security.permission.resource.ModelResourcePermission;
 import com.liferay.portal.kernel.security.permission.resource.ModelResourcePermissionFactory;
@@ -38,12 +39,12 @@ public class GuestbookModelResourcePermissionRegistrar {
                 (modelResourcePermission, consumer) -> {
                     consumer.accept(
                         new StagedModelPermissionLogic<>(
-                            _stagingPermission, GuestbookPortletKeys.BLOGS,
-                            BlogsEntry::getEntryId));
+                            _stagingPermission, GuestbookPortletKeys.GUESTBOOK,
+                            Guestbook::getGuestbookId));
                     consumer.accept(
                         new WorkflowedModelPermissionLogic<>(
                             _workflowPermission, modelResourcePermission,
-                            BlogsEntry::getEntryId));
+                            Guestbook::getGuestbookId));
                 }),
             properties);
     }
@@ -56,7 +57,7 @@ public class GuestbookModelResourcePermissionRegistrar {
     @Reference
     private GuestbookLocalService _guestbookLocalService;
 
-    @Reference(target = "(resource.name=" + BlogsConstants.RESOURCE_NAME + ")")
+    @Reference(target = "(resource.name=" + GuestbookConstants.RESOURCE_NAME + ")")
     private PortletResourcePermission _portletResourcePermission;
 
     private ServiceRegistration<ModelResourcePermission> _serviceRegistration;
