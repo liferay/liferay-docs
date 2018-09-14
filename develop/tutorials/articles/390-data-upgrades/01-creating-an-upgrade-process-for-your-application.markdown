@@ -67,8 +67,7 @@ on the
 
 In a `build.gradle` file, the dependency would look like this:
 
-    compile group: "com.liferay", name: "com.liferay.portal.upgrade.api",
-	version: "2.0.3"
+    compile group: "com.liferay", name: "com.liferay.portal.upgrade.api", version: "2.0.3"
 
 If there are other modules your upgrade process requires, specify them as
 dependencies. 
