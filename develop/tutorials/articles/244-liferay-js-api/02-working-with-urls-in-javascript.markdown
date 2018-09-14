@@ -55,6 +55,6 @@ JavaScript object.
 
 ## Related Topics [](id=related-topics)
 
-[@product@ JavaScript Utilities](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/javascript-utilities)
+[@product@ JavaScript Utilities](/develop/tutorials/-/knowledge_base/7-0/javascript-utilities)
 
-[Liferay Theme Display](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/liferay-themedisplay)
+[Liferay Theme Display](/develop/tutorials/-/knowledge_base/7-0/liferay-themedisplay)

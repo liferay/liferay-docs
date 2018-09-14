@@ -45,7 +45,7 @@ newsletters, if there's more than one.
 
 To learn more about how metrics are used in the Audience Targeting application,
 visit the
-[Defining Metrics](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/managing-campaigns#defining-metrics)
+[Defining Metrics](/discover/portal/-/knowledge_base/7-0/managing-campaigns#defining-metrics)
 section.
 
 For this tutorial, you'll create a newsletter that can track who views it. This

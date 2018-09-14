@@ -41,7 +41,7 @@ to use the matching MVCCommand shown below:
 -   render &rarr; MVCRenderCommand
 -   serveResource &rarr; MVCResourceCommand
 
-Look at the [ExampleStrutsPortletAction class](https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/overriding-and-adding-struts-actions)
+Look at the [ExampleStrutsPortletAction class](/develop/tutorials/-/knowledge_base/6-2/overriding-and-adding-struts-actions)
 for a `StrutsActionWrapper` example. Depending on the actions overridden, the 
 user must use different `MVCCommands`. In this example, the action and 
 render were overridden, so in order to migrate to the new pattern, you would 
@@ -85,11 +85,11 @@ Once you have this information, you can override the `MVCCommand` by following t
 instructions found in these sections of the Overriding MVC Commands tutorial:
 
 -   [/Overriding MVCActionCommands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcactioncommand)
--   [Overriding MVCResourceCommands](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcresourcecommand)
--   [Overriding MVCRenderCommands](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#adding-logic-to-an-existing-mvc-render-command)
+-   [Overriding MVCResourceCommands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcresourcecommand)
+-   [Overriding MVCRenderCommands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#adding-logic-to-an-existing-mvc-render-command)
 
 Now you know how to convert your `StrutsActionWrapper`s to `MVCCommand`s!
 
 ## Related Topics [](id=related-topics)
 
-[Overriding MVC Commands](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
+[Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)

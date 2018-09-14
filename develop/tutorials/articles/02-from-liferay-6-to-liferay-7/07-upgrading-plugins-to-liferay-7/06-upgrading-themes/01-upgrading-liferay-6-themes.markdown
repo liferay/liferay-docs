@@ -4,7 +4,7 @@ This tutorial guides you through the process of upgrading your 6.1 theme to run
 on @product-ver@.
 
 For a more in depth tutorial that covers upgrading 6.2 themes, please see the 
-[Upgrading Themes](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/upgrading-themes) 
+[Upgrading Themes](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes) 
 tutorial.
 
 ## Setting Up Your Theme With Liferay Theme Generator [](id=setting-up-your-theme-with-liferay-theme-generator)
@@ -229,7 +229,7 @@ If you have any Required Deployment Contexts listed in your
 - `portal-compat-hook`: Because this tutorial is focused on upgrading a theme 
   rather than importing content and assets, it does not cover the Resources 
   Importer. You can learn more about the Resources Importer in the 
-  [Importing Resources with a Theme](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme) tutorial.
+  [Importing Resources with a Theme](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme) tutorial.
 
 ### Upgrading Stylesheets [](id=upgrading-stylesheets)
 
@@ -546,7 +546,7 @@ Here's a comparison:
 Whichever language you decide to use, there are several convenient macros
 included with @product@: 
 
-- [Freemarker macros on LDN](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/freemarker-macros)
+- [Freemarker macros on LDN](/develop/tutorials/-/knowledge_base/7-0/freemarker-macros)
 
 - [Freemarker macros source](https://github.com/liferay/liferay-portal/blob/7.0.2-ga3/modules/apps/foundation/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl)
 

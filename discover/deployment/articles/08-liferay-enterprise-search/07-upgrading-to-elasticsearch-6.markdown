@@ -27,7 +27,7 @@ existing Elasticsearch 2.x server (or cluster) to Elasticsearch 6.1.x:
 **Before Proceeding:** Back up your existing data before upgrading
 Elasticsearch. If something goes wrong during or after the upgrade, roll
 back to 2.x using the uncorrupted index snapshots. See
-[here](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-0/backing-up-elasticsearch)
+[here](/discover/deployment/-/knowledge_base/7-0/backing-up-elasticsearch)
 for more information.
 
 +$$$
@@ -141,7 +141,7 @@ Once the default adapter is stopped, install the Elasticsearch 6 adapter (the
 LPKG you downloaded) by placing it in your Liferay Home folder's `deploy`
 folder.
 See 
-[here](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/installing-apps-manually#using-your-file-system-to-install-apps)
+[here](/discover/portal/-/knowledge_base/7-0/installing-apps-manually#using-your-file-system-to-install-apps)
 for more information.
 
 <!--It starts automatically with log messages like this:

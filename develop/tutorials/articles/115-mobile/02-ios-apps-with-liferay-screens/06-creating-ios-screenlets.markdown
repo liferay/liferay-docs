@@ -22,7 +22,7 @@ In general, you use the following steps to create Screenlets:
    want to learn the steps for 
    [creating a Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes). 
    For more information on Themes in general, see 
-   [the tutorial on using Themes with Screenlets](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets). 
+   [the tutorial on using Themes with Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets). 
 
 3. Create the Screenlet's Interactor. Interactors are Screenlet components that 
    make server calls. 

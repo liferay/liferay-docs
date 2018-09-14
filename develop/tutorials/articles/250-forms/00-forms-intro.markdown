@@ -8,7 +8,7 @@ attributes, look at Liferay's API docs on [docs.liferay.com](@platform-ref@/7.0-
 
 Using a combination of Liferay's `AUI` taglibs and [Lexicon](https://liferay.github.io/clay/)
 classes, you can create forms in your app's JSPs. You can learn how to create
-an MVC portlet project in the [using-the-mvc-portlet-template](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/using-the-mvc-portlet-template) tutorial.
+an MVC portlet project in the [using-the-mvc-portlet-template](/develop/reference/-/knowledge_base/7-0/using-the-mvc-portlet-template) tutorial.
 
 In this section of tutorials, you'll learn how to use the platform features
 to create forms with ease. 

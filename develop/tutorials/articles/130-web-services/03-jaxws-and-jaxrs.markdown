@@ -82,7 +82,7 @@ that appears lets you configure a new CXF endpoint by filling out these fields:
 
 - **`AuthVerifier` properties:** Any properties defined here are passed as-is to 
   the `AuthVerifier` filter. See the 
-  [`AuthVerifier` documentation](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-0/authentication-verifiers) 
+  [`AuthVerifier` documentation](/discover/deployment/-/knowledge_base/7-0/authentication-verifiers) 
   for more details. 
 
 - **Required extensions:** CXF normally loads its default extension classes, but 

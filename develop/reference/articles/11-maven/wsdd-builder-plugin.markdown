@@ -3,7 +3,7 @@
 The WSDD Builder plugin lets you generate the
 [Apache Axis](http://axis.apache.org/axis/) Web Service Deployment Descriptor
 (WSDD) files from a
-[Service Builder](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+[Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 `service.xml` file.
 
 ## Usage [](id=usage)

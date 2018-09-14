@@ -112,7 +112,7 @@ for the `p_auth` URL parameter. You can find such a value by signing in to
 clicking on any function that appears in the list. Use the value for the
 `p_auth` token that appears under the Execute heading. For more examples of
 @product@ web service invocations, please see the [JSON Web
-Services Invocation Examples](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/json-web-services-invocation-examples) documentation.
+Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invocation-examples) documentation.
 
 Some methods of invoking @product@ web services (e.g., using
 [cURL](https://curl.haxx.se/)) allow you to supply a username and password. Note

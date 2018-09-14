@@ -289,7 +289,7 @@ Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-tran
 through TCP. See the Elasticsearch documentation for the available properties
 (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
 Adapter's [reference
-article](https://dev.liferay.com/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
+article](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
 for the adapter's available settings.
 
 At a minimum, provide the list of hosts to act as gossip routers during unicast
