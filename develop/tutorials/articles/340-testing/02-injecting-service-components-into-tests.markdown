@@ -1,20 +1,15 @@
 # Injecting Service Components into Tests [](id=injecting-service-components-into-tests)
 
 You can use @product@'s `@Inject` annotation to inject service components into a
-test, like you use the `@Reference` annotation to inject service components
+test, like you use the
+[`@Reference` annotation to inject service components](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services)
 into a module component.
 
 `@Inject` uses reflection to inject a field with a service component object
 matching the field's interface.
-[Test rule `LiferayIntegrationTestRule`](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-test-integration/com/liferay/portal/test/rule/LiferayIntegrationTestRule.html)
-provides this annotation. The annotation accepts `filter` and `type` parameters,
+[Test rule `LiferayIntegrationTestRule`](@platform-ref@/7.1-latest/javadocs/portal-test-integration/com/liferay/portal/test/rule/LiferayIntegrationTestRule.html)
+provides the annotation. The annotation accepts `filter` and `type` parameters,
 which you can use separately or together.
-
-+$$$
-
-DXP Digital Enterprise 7.0 Fix Pack 30 and Liferay CE Portal 7.0 GA5 introduced the `@Inject` annotation. 
-
-$$$
 
 To fill a field with a particular implementation or sub-class object, set the
 `type` with it. 
@@ -47,7 +42,7 @@ Here's an example test class that injects a `DDLServiceUpgrade` object into an `
 Here's how to inject a service component into a test class:
 
 1.  In your test class, add a rule field of
-    [type `com.liferay.portal.test.rule.LiferayIntegrationTestRule`](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-test-integration/com/liferay/portal/test/rule/LiferayIntegrationTestRule.html).
+    [type `com.liferay.portal.test.rule.LiferayIntegrationTestRule`](@platform-ref@/7.1-latest/javadocs/portal-test-integration/com/liferay/portal/test/rule/LiferayIntegrationTestRule.html).
     For example,
 
         @ClassRule
@@ -74,7 +69,8 @@ regarding the test's unavailable dependencies.
 
 **Important**: If you're publishing the service component you are injecting, the
 test might never run. If you must publish the service component from the test
-class, use [Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
+class, use
+[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
 to access service components.
 
 $$$
@@ -83,8 +79,6 @@ Great! Now you can inject service components into your tests.
 
 ## Related Articles [](id=related-articles)
 
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
+[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
 
-[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services)
-
-[Unit Testing with JUnit](/develop/tutorials/-/knowledge_base/7-0/unit-testing-with-junit)
+Unit Testing with JUnit
