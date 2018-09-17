@@ -70,7 +70,7 @@ for reference:
 +$$$
 
 **Note:** The following CKEditor plugins are not available for inline mode in 
-AlloyEditor at this time, however, you can still use them in the classic 
+AlloyEditor at this time; however, you can still use them in the classic 
 CKEditor:
 
 - [maximize](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/maximize/plugin.js)
