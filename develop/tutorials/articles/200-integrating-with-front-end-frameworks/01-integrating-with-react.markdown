@@ -2,16 +2,15 @@
 
 You can use the 
 [npm React portlet template](/develop/reference/-/knowledge_base/7-1/npm-react-portlet-template) 
-to automate much of the required configuration for you, or create the module 
-manually if you wish. For convenience, all steps are listed if you want to 
-proceed with a manual configuration. This tutorial shows how to use React in 
-your portlets, whether you're migrating an existing React project or building a 
-fresh project. See the 
-[npm React portlet template](/develop/reference/-/knowledge_base/7-1/npm-react-portlet-template) 
-reference docs for more information on the portlet's anatomy or the 
-[react npm portlet sample](/develop/reference/-/knowledge_base/7-1/react-npm-portlet) 
-for a React portlet example that you can test and deploy right now. Get started 
-by creating your OSGi module and configuring its metadata. 
+to automate much of the required configuration for you or create the module
+manually. For convenience, all manual steps are listed below. This tutorial
+shows how to use React in your portlets, whether you're migrating an existing
+React project or building a fresh project. See the [npm React portlet
+template](/develop/reference/-/knowledge_base/7-1/npm-react-portlet-template)
+reference docs for more information on the portlet's anatomy or the [react npm
+portlet sample](/develop/reference/-/knowledge_base/7-1/react-npm-portlet) for
+a React portlet example that you can test and deploy right now. Get started by
+creating your OSGi module and configuring its metadata. 
 
 ## Configuring Metadata [](id=configuring-metadata)
 
@@ -37,19 +36,19 @@ Follow these steps to create the module and configure its metadata for React:
 4.  Optionally add a 
     [`.npmbundlerrc` file](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler) 
     to your project's root folder. This file is not required. You can, however, 
-    configure this file to customize the liferay-npm-bundler to suite your 
+    configure this file to customize the `liferay-npm-bundler` to suit your 
     needs, such as to ignore files. 
 
-5.  Include the following dependency to your `build.gradle` file:
+5.  Include the following dependency in your `build.gradle` file:
 
         compileOnly group: "com.liferay", 
         name: "com.liferay.frontend.js.loader.modules.extender.api", 
         version: "2.0.2"
 
-6.  Create a `package.json` in your project if it doesn't already exist and add 
-    the configuration shown below to it. Update the `"main"` JS path to point to 
-    your app's main JS file. Note that the `liferay-npm-bundler` is added last 
-    to the build script. List any additional build processes before this that 
+6.  Create a `package.json` in your project if it doesn't already exist with the
+    configuration shown below. Update the `"main"` JS path to point to your
+    app's main JS file. Note that the `liferay-npm-bundler` is added last to the
+    build script. List any additional build processes before this that 
     your project requires:
     
         {
@@ -101,7 +100,7 @@ Follow these steps to configure your portlet:
         public class MyNpmReactPortlet extends MVCPortlet {
           ...
         }
-        
+ 
 2.  If your React project includes CSS styling as well, add the following 
     additional property to specify the location of the main CSS file:
     
@@ -150,7 +149,7 @@ Next you can learn how to render your app's component.
 ## Rendering Your Component [](id=rendering-your-component)
 
 Follow these steps to render your app component:
-   
+ 
 1.  Inside your app's main JS file (`index.js` for example), use the function 
     below to render your component:
 
@@ -163,9 +162,9 @@ Follow these steps to render your app component:
         }  
 
 2.  Open your `view.jsp` and add an element container to house your component. 
-    Then, add an `<aui:script>` and pass your aliased module name as the 
+    Then add an `<aui:script>` tag and pass your aliased module name as the 
     `require` attribute's value. Finally, call your module's `default` function 
-    that you exported in the previous step, and pass the container element in as 
+    that you exported in the previous step and pass the container element in as 
     the element ID. Adding the `<portlet:namespace />` to the `<div>`'s `id` 
     ensures that it is unique to the portlet and doesn't clash with any existing 
     elements on the page:
