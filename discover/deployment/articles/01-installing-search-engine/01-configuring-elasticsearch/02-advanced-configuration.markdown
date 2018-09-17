@@ -11,8 +11,10 @@ adapter.
 
 ## Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
 
-The available configuration options <!--available configuration
-options](/discover/reference/-/knowledge_base/7-1/elasticsearch-settings)--> are
+The available configuration options
+<!--available configuration
+options](discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
+are
 divided into two groups: the ones used most often by default and a
 catch-all for everything else. If the necessary setting isn't available by
 default, you can still configure it with the Liferay Elasticsearch adapter.

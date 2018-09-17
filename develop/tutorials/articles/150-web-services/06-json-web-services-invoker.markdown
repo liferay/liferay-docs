@@ -263,5 +263,3 @@ your JSON calls to Liferay.
 [Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services)
 
 [Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/invoking-json-web-services)
-
-[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invocation-examples)

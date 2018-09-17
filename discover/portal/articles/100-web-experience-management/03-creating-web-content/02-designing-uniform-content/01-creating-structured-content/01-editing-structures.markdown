@@ -12,6 +12,7 @@ with a structure, edit the permissions of a structure, and copy or delete
 structures.
 
 ![Figure 1: Structures are not pre-installed. You have to make your own.](../../../../../images/manage-structures.png)
+
 +$$$
 
 Note: When you copy a structure, @product@ generates a unique ID for the copied
@@ -21,8 +22,7 @@ enter a new name for it to avoid confusing it with the original. During the
 copy process, you're prompted to choose whether to copy any detail templates or
 list templates associated with the structure. For information on detail
 templates and list templates, please refer to 
-[Using Web Forms and Dynamic Data Lists](/discover/portal/-/knowledge_base/7-1/using-web-forms-and-dynamic-data-lists)
-.
+[Dynamic Data Lists](/discover/portal/-/knowledge_base/7-1/dynamic-data-lists).
 
 $$$
 

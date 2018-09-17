@@ -123,7 +123,7 @@ and build tool-specific plugins such as the
 which includes Liferay's Service Builder library as a dependency. Service
 Builder supports Liferay 7's modular application development style of keeping
 API and implementation code in separate modules. The 
-[Service Builder sample apps](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/service-builder-samples)
+[Service Builder sample apps](/develop/reference/-/knowledge_base/7-0/service-builder-samples)
 demonstrate this.
 
 $$$

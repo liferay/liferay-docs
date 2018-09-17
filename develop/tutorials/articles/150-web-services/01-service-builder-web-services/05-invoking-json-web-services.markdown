@@ -18,10 +18,7 @@ invoking the web service.
 ![Figure 1: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../../images/jsonws-javascript.png)
 
 This tutorial explains techniques for working with JSON web services and
-includes details about invoking them via URL. For examples of invoking
-Liferay's JSON web services via JavaScript, URL, and cURL, see the
-[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invocation-examples) 
-tutorial. 
+includes details about invoking them via URL.
 
 There are multiple ways to invoke a JSON web service since there are different
 ways to supply parameters. In this tutorial, you'll learn how to include
@@ -470,8 +467,6 @@ errors are listed here:
 ## Related Topics [](id=related-topics)
 
 [JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invoker)
-
-[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invocation-examples)
 
 [Service Security Layers](/develop/tutorials/-/knowledge_base/7-1/service-security-layers)
 

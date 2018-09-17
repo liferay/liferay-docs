@@ -17,20 +17,9 @@ Here's what the Upgrade Task does:
 
 Here are the steps for using the theme Gulp `upgrade` task:
 
-1.  Open your theme's `package.json` file and update the `liferay-theme-deps` 
-    and `liferay-theme-tasks` dependencies to `8.0.0-alpha.6`:
-    
-        "devDependencies": {
-        	"gulp": "^3.8.10",
-        	"liferay-theme-tasks": "8.0.0-alpha.6",
-        	"liferay-theme-deps-7.0": "8.0.0-alpha.6"
-        },
+1.  Navigate to your theme's root directory.
 
-2.  In your theme's root directory, install the updated dependencies:
-
-        npm install
-
-3.  Run the command below to upgrade the theme:
+2.  Run the command below to upgrade the theme:
 
         gulp upgrade
 

@@ -19,7 +19,7 @@ Here are the basic steps for installing @product@ on tc Server:
 +$$$
 
 **Note:** You'll see the term
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 used in this installation guide. *Liferay Home* refers to the folder containing
 your tc Server instance and some @product@-specific folders:. `data`, `deploy`,
 `licenses`, and `osgi` folders. 
