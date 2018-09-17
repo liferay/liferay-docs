@@ -2,13 +2,12 @@
 
 You can use the 
 [npm Angular portlet template](/develop/reference/-/knowledge_base/7-1/npm-angular-portlet-template) 
-to automate much of the required configuration for you, or create the module 
-manually if you wish. For convenience, all steps are listed if you want to 
-proceed with a manual configuration. This tutorial shows how to use Angular JS 
-in your portlets, whether you're migrating an existing Angular project or 
-building a fresh one. See the 
-[npm Angular portlet template](/develop/reference/-/knowledge_base/7-1/npm-angular-portlet-template) 
-reference docs for more information on the portlet's anatomy. Get started by 
+to automate much of the required configuration for you, or create the module
+manually. For convenience, all manual steps are listed below. This tutorial
+shows how to use Angular JS in your portlets, whether you're migrating an
+existing Angular project or building a fresh one. See the [npm Angular portlet
+template](/develop/reference/-/knowledge_base/7-1/npm-angular-portlet-template)
+reference docs for more information on the portlet's anatomy. Get started by
 creating your OSGi module and configuring its metadata. 
 
 ## Configuring Metadata [](id=configuring-metadata)
@@ -52,7 +51,7 @@ Follow these steps to create the module and configure its metadata for Angular:
 4.  Optionally add a 
     [`.npmbundlerrc` file](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler) 
     to your project's root folder. This file is not required. You can, however, 
-    configure this file to customize the liferay-npm-bundler to suite your 
+    configure this file to customize the liferay-npm-bundler to suit your 
     needs, such as to ignore files. 
 
 5.  Include the following dependency to your `build.gradle` file:
@@ -160,8 +159,8 @@ Follow these steps to configure your portlet:
           ...
         }
         
-2.  If your Angular project includes CSS styling as well, add the following 
-    additional property to specify the location of the main CSS file:
+2.  If your Angular project includes CSS styling, add the following additional
+    property to specify the location of the main CSS file:
     
         "com.liferay.portlet.header-portlet-css=/css/main.css"
 

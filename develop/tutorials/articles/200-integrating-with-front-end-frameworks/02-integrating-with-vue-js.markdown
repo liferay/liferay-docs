@@ -36,7 +36,7 @@ Follow these steps to create the module and configure its metadata for Vue:
 4.  Optionally add a 
     [`.npmbundlerrc` file](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler) 
     to your project's root folder. This file is not required. You can, however, 
-    configure this file to customize the liferay-npm-bundler to suite your 
+    configure this file to customize the liferay-npm-bundler to suit your 
     needs, such as to ignore files. 
 
 5.  Include the following dependency to your `build.gradle` file:
