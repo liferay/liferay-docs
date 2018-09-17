@@ -128,7 +128,7 @@ Workspace WAR projects.
 Upgrading a Plugins SDK to Liferay Workspace does these things:
 
 -  Converts the SDK root folder to a new Liferay Workspace.
--  Upgrades the Liferay Plugins SDK 6.2 to Liferay Plugins SDK 7 (if
+-  Upgrades the Liferay Plugins SDK 6.2 to Liferay Plugins SDK 7.0 (if
    applicable).
 -  In the Workspace, migrates the Plugins SDK to a new `plugins-sdk` subfolder.
 -  Installs a @product-ver@ server bundle to a new `bundles` subfolder.
@@ -197,11 +197,11 @@ and explains how to adapt it.
 Breaking changes documentation contains the following information for each 
 change: 
 
--   *Date*: Date the change was introduced	
--   *JIRA Ticket*: Corresponding issue number
--   *What Changed?*: Change summary
--   *How should I update my code?*: Adaptation instructions
--   *Why was the change made?*: Reasons for the change
+- *Date*: Date the change was introduced	
+- *JIRA Ticket*: Corresponding issue number
+- *What Changed?*: Change summary
+- *How should I update my code?*: Adaptation instructions
+- *Why was the change made?*: Reasons for the change
 
 The tool helps you address problems. It offers to auto-correct problems that
 are clearly understood and easy to fix (e.g., package imports and @product@
@@ -211,8 +211,8 @@ problems.
 
 You can use one or both of the following options to resolve problems.
 
--   **Option 1: Correct Problems Automatically First**
--   **Option 2: Address Problems Individually**
+- **Option 1: Correct Problems Automatically First**
+- **Option 2: Address Problems Individually**
 
 The following sections explain each option. 
 
@@ -244,11 +244,11 @@ automatically* option. Follow these steps to address problems individually:
 2.  Select the projects in which to find problems and click on the *OK* button. 
     The Find Breaking Changes window appears: 
 
-    -   Upper-left panel: lists the projects that have outstanding problems. The
-        *Code Problems* folder holds a tree of projects and project files that
-        have code problems. 
-    -   Lower-left panel: lists the currently selected project's problems. 
-    -   Right panel: shows breaking change documentation for selected problems. 
+    - Upper-left panel: lists the projects that have outstanding problems. The
+      *Code Problems* folder holds a tree of projects and project files that
+      have code problems. 
+    - Lower-left panel: lists the currently selected project's problems. 
+    - Right panel: shows breaking change documentation for selected problems. 
 
     ![Figure 8: The Finding Breaking Changes step shows users where breaking changes affect plugins. It describes each change and explains how to adapt to it.](../../../images/code-upgrade-find-breaking-changes.png)
 
@@ -275,7 +275,8 @@ automatically* option. Follow these steps to address problems individually:
 +$$$
 
 **Tip**: To use the entire Code Upgrade Tool view to show breaking change
-documentation, click the Hide Tree icon (![hide tree icon](../../../images/icon-hide-breaking-change-tree.png)). 
+documentation, click the Hide Tree icon
+(![hide tree icon](../../../images/icon-hide-breaking-change-tree.png)). 
 
 $$$
 
@@ -356,10 +357,10 @@ The Code Upgrade Tool helps you review the changes, so you can make any
 additional changes. It lists the 6.2 custom JSPs and the new converted custom 
 JSPs for you to compare with the 6.2 originals: 
 
--   To compare a 6.2 custom JSP with the original, click the custom JSP 
-    filename. 
--   To compare a newly converted 7.x custom JSP with the original, click the 7.x 
-    custom JSP filename. 
+- To compare a 6.2 custom JSP with the original, click the custom JSP 
+  filename. 
+- To compare a newly converted 7.x custom JSP with the original, click the 7.x 
+  custom JSP filename. 
 
 Referring to these comparisons helps you to implement new JSP customizations for 
 @product-ver@. 
