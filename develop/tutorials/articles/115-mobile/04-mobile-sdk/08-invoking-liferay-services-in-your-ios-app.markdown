@@ -1,11 +1,11 @@
 # Invoking Liferay Services in Your iOS App [](id=invoking-liferay-services-in-your-ios-app)
 
 Once the appropriate Mobile SDKs are set up in your iOS project, you can access 
-and invoke @product services in your app. This tutorial takes you through the 
+and invoke @product@ services in your app. This tutorial takes you through the 
 steps you must follow to invoke these services: 
 
 1. Create a session.
-2. Import the @product services you need to call.
+2. Import the @product@ services you need to call.
 3. Create a service object and call the service methods.
 
 Since some service calls require special treatment, this tutorial also shows you 
