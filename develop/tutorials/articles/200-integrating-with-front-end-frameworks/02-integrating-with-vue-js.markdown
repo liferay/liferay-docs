@@ -1,17 +1,16 @@
 # Using Vue in Your Portlets [](id=using-vue-in-your-portlets)
 
-You can use the 
-[npm Vue portlet template](/develop/reference/-/knowledge_base/7-1/npm-vue-js-portlet-template) 
-to automate much of the required configuration for you, or create the module 
-manually if you wish. For convenience, all steps are listed if you want to 
-proceed with a manual configuration. This tutorial shows how to use Vue JS in 
-your portlets, whether you're migrating an existing Vue project or building a 
-fresh one. See the 
-[npm Vue portlet template](/develop/reference/-/knowledge_base/7-1/npm-vue-js-portlet-template) 
-reference docs for more information on the portlet's anatomy or the 
-[npm Vue portlet sample](/develop/reference/-/knowledge_base/7-1/vue-js-npm-portlet) 
-for a Vue portlet example that you can test and deploy right now. Get started 
-by creating your OSGi module and configuring its metadata. 
+You can create a Vue project manually or use the [npm Vue portlet
+template](/develop/reference/-/knowledge_base/7-1/npm-vue-js-portlet-template)
+to automate much of the required configuration for you. For convenience, all
+manual steps are listed below. This tutorial shows how to use Vue JS in your
+portlets, whether you're migrating an existing Vue project or building a fresh
+one. See the [npm Vue portlet
+template](/develop/reference/-/knowledge_base/7-1/npm-vue-js-portlet-template)
+reference docs for more information on the portlet's anatomy or the [npm Vue
+portlet sample](/develop/reference/-/knowledge_base/7-1/vue-js-npm-portlet) for
+a Vue portlet example that you can test and deploy right now. Get started by
+creating your OSGi module and configuring its metadata. 
 
 ## Configuring Metadata [](id=configuring-metadata)
 
@@ -99,9 +98,9 @@ Follow these steps to configure your portlet:
         public class MyNpmVuejsPortlet extends MVCPortlet {
           ...
         }
-        
-2.  If your Vue project includes CSS styling as well, add the following 
-    additional property to specify the location of the main CSS file:
+ 
+2.  If your Vue project includes CSS styling, add the following additional
+    property to specify the location of the main CSS file:
     
         "com.liferay.portlet.header-portlet-css=/css/main.css"
 
@@ -148,7 +147,7 @@ Next you can learn how to render your app's component.
 ## Rendering Your Component [](id=rendering-your-component)
 
 Follow these steps to render your app component:
-   
+ 
 1.  Inside your app's main JS file (`index.js` for example), use the function 
     below to render your component:
 
@@ -175,7 +174,7 @@ Follow these steps to render your app component:
 2.  Open your `view.jsp` and add an element container to house your component. 
     Then, add an `<aui:script>` and pass your aliased module name as the 
     `require` attribute's value. Finally, call your module's `default` function 
-    that you exported in the previous step, and pass the portlet namespace. 
+    that you exported in the previous step and pass the portlet namespace. 
     Adding the `<portlet:namespace />` to the `<div>`'s `id` ensures that it is 
     unique to the portlet and doesn't clash with any existing elements on the 
     page:
