@@ -146,7 +146,7 @@ Under `value`, specify any `@DDMFormLayoutPage`s that you want to use.
 value is one or more `@DDMFormLayoutRow`s.
 
 **Note:** The default title of the layout pages are `%basic` and `%properties` for all of
-@product@'s field types, but Forms allows it to be customized if it's desired. If you want to change the title of one of the layout pages, you just need to create a new key in the language resources files (`src/resources/content/Language_xx_XX.properties`) and replace the current title of a layout page by it. For example, consider you've created the key `advanced=Advanced` in the `src/resources/content/Language.properties` with its respective translations in the other language resources files, then you only need to change the `title` from `%basic` to `%advanced`.
+@product@'s field types, but Forms allows it to be customized if it's desired. If you want to change the title of one of the layout pages, you just need to create a new key in the language resources files (`src/main/resources/content/Language_xx_XX.properties`) and replace the current title of a layout page by it. For example, consider you've created the key `advanced=Advanced` in the `src/main/resources/content/Language.properties` with its respective translations in the other language resources files, then you only need to change the `title` from `%basic` to `%advanced`.
 
 `@DDMFormLayoutRow`
 : Use this to lay out the number of columns you want in the row. Most settings
@@ -159,7 +159,7 @@ settings forms have one row and one column. Each column accepts two argument,
 
 `@DDMFormField`
 : Use this annotation to add new fields to the settings form. In this example,
-the `mask` and `placeholder` settings are configured with this annotation.
+the `mask` and `placeholder` settings are configured with this annotation. Don't forget to add the settings language keys (`mask` and `placeholder-text`) to the language resources files.
 
 $$$
 
@@ -289,10 +289,10 @@ to the `prototype` section of the JavaScript component definition:
     getTemplateContext: function() {
         var instance = this;
 
-    return A.merge(
-        TimeField.superclass.getTemplateContext.apply(instance, arguments),
+        return A.merge(
+            TimeField.superclass.getTemplateContext.apply(instance, arguments),
             {
-            placeholder: instance.get('placeholder')
+                placeholder: instance.get('placeholder')
             }
         );
     },
@@ -345,7 +345,7 @@ value.
     {/deltemplate}
 
     /**
-    * Prints the DDM form time field.
+    * Prints the time field.
     */
     {template .render}
         {@param name: string}
@@ -402,7 +402,7 @@ value.
 
 Why isn't the mask parameter added to the Soy template? The mask is not needed
 in the template because it's only used in the JavaScript for configuring the
-behavior of the timepicker. You don't need the dynamic rendering of the soy
+behavior of the timepicker. You don't need the dynamic rendering of the Soy
 template to take the mask setting and configure it in the form. The mask set by
 the form builder is captured in the rendering of the timepicker itself.
 

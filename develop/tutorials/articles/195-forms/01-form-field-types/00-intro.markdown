@@ -24,8 +24,6 @@ In these tutorials, learn to
 
 +$$$
 
-<!-- TODO: Update the example project code to be compatible with Liferay 7.1. -->
-
 **Example project:** The source code for the example *time* project developed in
 these tutorials can be downloaded for your convenience. Click
 [here](https://dev.liferay.com/documents/10184/656312/Field+Type+Module+Source/de6203af-1bae-4c59-9f90-0ab5e58c5894) to begin downloading the source code zip file.
@@ -91,7 +89,7 @@ need to create:
 - `[name-of-field-type].es.js`: The Javascript file that defines the necessary configurations to allow the template rendering, i.e. the `[name-of-field-type].soy` rendering.
 - `[name-of-field-type].soy`: The template that defines the appearance of the field. 
 - `Language_xx_XX.properties`: Define any terms that need to be 
-    [translated into different languages](/developer/tutorials/-/knowledge_base/7-0/localizing-your-application).
+    [translated into different languages](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application).
 
 <!-- Add the additional classes from the Google doc when this intro is split
 out, according to the form fields tutorial planning section -->

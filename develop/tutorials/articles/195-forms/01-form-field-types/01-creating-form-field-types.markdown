@@ -20,7 +20,7 @@ There are several steps involved in creating a form field type:
 Blade CLI on your machine, there's a template for creating form fields you can
 leverage using the following command syntax:
 
-    blade create -t form-field [ADDITIONAL OPTIONS] [PROJECT NAME]
+    blade create -t form-field -v 7.1 [ADDITIONAL OPTIONS] [PROJECT NAME]
 
 See the [BladeCLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
 documentation for more information, such as the answer to your question "What
@@ -36,7 +36,7 @@ Start by setting up the project's metadata.
 ## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
 
 First specify the necessary OSGi metadata in a `bnd.bnd` file (see
-[here](https://www.google.com/url?q=http://bnd.bndtools.org/chapters/800-headers.html&sa=D&ust=1484604445554000&usg=AFQjCNHA_3LxtNcRBblsT62vG5MoEvs6PQ)
+[here](http://bnd.bndtools.org/chapters/800-headers.html)
 for more information). Here's what it would look like for a module in a folder
 called `dynamic-data-mapping-type-time`:
 
@@ -62,14 +62,12 @@ add this to your `build.gradle` file:
 
     buildscript {
         dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.12.19"
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.12.104"
         }
 
         repositories {
-            mavenLocal()
-
             maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
     }
@@ -83,10 +81,8 @@ add this to your `build.gradle` file:
     }
 
     repositories {
-        mavenLocal()
-
         maven {
-            url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+            url "https://repository-cdn.liferay.com/nexus/content/groups/public"
         }
     }
 
@@ -253,7 +249,7 @@ and populate it with these contents:
     {/deltemplate}
 
     /**
-    * Prints the DDM form time field.
+    * Prints the time field.
     */
     {template .render}
         {@param name: string}
