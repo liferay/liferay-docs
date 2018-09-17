@@ -11,7 +11,7 @@ and
 to explain what changed, why it changed, and how to adapt to it. 
 
 Going above and beyond documentation, Liferay provides the Code Upgrade Tool in 
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/installing-liferay-ide) 
+[Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/installing-liferay-ide) 
 (versions 3.1+). Here's what the Code Upgrade Tool does: 
 
 - Identifies code affected by the API changes.
@@ -19,10 +19,10 @@ Going above and beyond documentation, Liferay provides the Code Upgrade Tool in
 - Suggests how to adapt the code.
 - Provides options, in some cases, to adapt code automatically.
 
-Even if you prefer tools other than Liferay @ide@ (which is based on Eclipse), 
-you should upgrade Plugins SDK plugins using the Code Upgrade Tool first--you 
-can use your favorite tools afterward. This tutorial walks you through the steps 
-required to use the Code Upgrade Tool: 
+Even if you prefer tools other than Liferay Dev Studio (which is based on
+Eclipse), you should upgrade Plugins SDK plugins using the Code Upgrade Tool
+first--you can use your favorite tools afterward. This tutorial walks you
+through the steps required to use the Code Upgrade Tool: 
 
 **Code Upgrade Tool Steps**
 
@@ -42,7 +42,9 @@ Maven only | [Upgrade POM Files](#upgrade-pom-files) | Upgrades POM files so the
 After completing [step 2](#step-2-configure-the-project), you can execute the
 steps in any order. Also, be aware that you may not be presented with all nine
 steps for your project. For example, if you don't have a JSP hook in your
-Plugins SDK, step 7 will not be available.
+Plugins SDK, step 7 will not be available. Likewise, if you're upgrading a 7.0
+project already residing in Liferay Workspace, you'll have fewer upgrade steps
+since fewer changes are required.
 
 Launch the Code Upgrade Tool now. 
 
@@ -51,21 +53,15 @@ Launch the Code Upgrade Tool now.
 Launch the Code Upgrade Tool to start new upgrades or continue previously 
 started upgrades:
 
-1.  Upgrading plugins with the Code Upgrade Tool for first time requires a new
-    empty Eclipse workspace. Bring up the Workspace Launcher by selecting *File
-    &rarr; Launch Workspace &rarr; New...*. Then create a workspace. 
+1.  Upgrading plugins with the Code Upgrade Tool for the first time requires a
+    new empty Eclipse workspace. Bring up the Workspace Launcher by selecting
+    *File &rarr; Launch Workspace &rarr; New...*. Then create a workspace. 
 
     +$$$
 
     **Note**: The current tool requires using a new empty Eclipse workspace.
-    Future tool versions will relax this requirement. 
 
     $$$
-
-    <!-- Greg told me the empty workspace requirement may be relaxed in Liferay
-    IDE 3.2, but it'll stay a requirement for version 3.1. -Cody -->
-
-    <!-- Still a requirement for IDE 3.2. -Cody -->
 
 2.  Select *Project &rarr; Liferay Code Upgrade Tool...* to launch the Code
     Upgrade Tool. 
@@ -90,8 +86,8 @@ This screen describes the tool's navigation and key functions.
  ![left arrow icon](../../../images/icon-code-upgrade-prev-step.png) | Navigate to the previous step. |
  ![right arrow icon](../../../images/icon-code-upgrade-next-step.png) | Advance to the next step. |
 
-Liferay @ide@ tracks each plugin's state. You can close the Code Upgrade Tool 
-view at any step and re-launch it later to resume upgrading plugins. 
+Liferay Dev Studio tracks each plugin's state. You can close the Code Upgrade
+Tool view at any step and re-launch it later to resume upgrading plugins. 
 
 +$$$
 
@@ -107,7 +103,8 @@ $$$
 +$$$
 
 **Tip**: The Code Upgrade Tool view is easiest to work with when it's resizable.
-To enable resizing, minimize the view and then click its icon (![view icon](../../../images/icon-code-upgrade-tool.png)). 
+To enable resizing, minimize the view and then click its icon
+(![view icon](../../../images/icon-code-upgrade-tool.png)). 
 
 $$$
 
@@ -115,11 +112,10 @@ Now you're ready to configure your project.
 
 ## Step 2: Configure the Project [](id=step-2-configure-the-project)
 
-The Code Upgrade Tool can upgrade Liferay 6.2 plugins built with Maven or the
-Plugins SDK. Browse to the Plugins SDK or Maven project root location to proceed
-with importing your plugin into the workspace.
-
-### Plugins SDK Plugin [](id=plugins-sdk-plugin)
+The Code Upgrade Tool can upgrade Liferay 6.2 plugins built with the Plugins
+SDK, Maven, or an older version of Liferay Workspace. Browse to the Plugins SDK,
+Maven parent project, or Liferay Workspace root location to proceed with
+importing your plugin into the workspace.
 
 If you're upgrading a Plugins SDK plugin, you must integrate its Plugins SDK
 with a @product-ver@ server before beginning the upgrade. You can work with
@@ -129,92 +125,40 @@ Liferay Workspace offers the best of both worlds: it lets you continue to work
 with plugins in an SDK while facilitating plugin migration to modules or 
 Workspace WAR projects. 
 
-+$$$
+Upgrading a Plugins SDK to Liferay Workspace does these things:
 
-**Note:** If the *Upgrading to Liferay Plugins SDK 7* option is unavailable to
-select, this means that your Plugins SDK has already been upgraded to version 7.
-To check this, navigate to your Plugins SDK's `build.properties` file; if the
-`lp.version` property is set to `7.1.0`, your Plugins SDK is already upgraded.
-In some cases, the version can be auto-generated if your Plugins SDK was
-mistakenly linked to a @product-ver@ installation.
+-  Converts the SDK root folder to a new Liferay Workspace.
+-  Upgrades the Liferay Plugins SDK 6.2 to Liferay Plugins SDK 7 (if
+   applicable).
+-  In the Workspace, migrates the Plugins SDK to a new `plugins-sdk` subfolder.
+-  Installs a @product-ver@ server bundle to a new `bundles` subfolder.
 
-$$$
+If you're upgrading a traditional Maven project or legacy Liferay Workspace,
+your current project structure will not be reorganized. Only necessary breaking
+changes and file modifications are suggested. For example, a traditional Maven
+project will not be converted to a Liferay Workspace.
 
-Configure the upgrade project using the option you prefer. 
-
-#### Option 1: Upgrading to Liferay Workspace [](id=option-1-upgrading-to-liferay-workspace)
-
-Upgrading to Liferay Workspace does these things:
-
--   Converts the SDK root folder to a new Liferay Workspace
--   Upgrades the Plugins SDK to a Liferay Plugins SDK 7
--   In the Workspace, migrates the Plugins SDK to a new `plugins-sdk` subfolder
--   Installs a @product-ver@ server bundle to a new `bundles` subfolder
-
-Use these steps to do this:
+Use the steps below to import your legacy projects:
 
 1.  Configure the project: 
 
-    -   *Liferay Plugins SDK Location*: Path to the Plugins SDK to upgrade 
-    -   *Select Migrate Layout*: Select *Upgrade to Liferay Workspace* 
-    -   *Server Name*: Arbitrary name for the @product-ver@ server bundle 
-    -   *Bundle URL*: Location of a server bundle to download and install 
-    -   *Backup SDK into Folder*: Whether to copy the original Plugins SDK to
-        the specified folder 
+    - *Project sources*: Path to the project to upgrade 
+    - *Upgrade to Liferay Version*: Version of @product@ to upgrade to
+    - *Server Name*: Arbitrary name for the @product-ver@ server bundle 
+    - *Liferay Server Bundle Download URL*: Location of a server bundle to
+      download and install 
 
     ![Figure 4: The Configure Project step imports Plugins SDK projects and integrates them with a @product-ver@ server.](../../../images/code-upgrade-configure-project.png)
 
 2.  Click the *Import Projects* button. 
 
-The Liferay Workspace and the Plugins SDK projects are imported to Liferay @ide@. 
+The selected projects are imported to Dev Studio. 
 
 To mark the step complete, click the check mark icon (![check mark icon](../../../images/icon-code-upgrade-mark-done.png)). 
 
-#### Option 2: Upgrading to Liferay Plugins SDK 7 [](id=option-2-upgrading-to-liferay-plugins-sdk-7)
+## Upgrade POM Files (Maven Projects Only) [](id=upgrade-pom-files)
 
-Upgrading to Liferay Plugins SDK 7 does these things:
-
--   Upgrades the Plugins SDK to a Liferay Plugins SDK 7
--   Integrates the SDK with the specified @product-ver@ server
-
-Use these steps to do this:
-
-1.  Configure the project: 
-
-    -   *Liferay Plugins SDK Location*: Path to the Plugins SDK to upgrade. 
-    -   *Select Migrate Layout*: Select *Upgrade to Liferay Plugins SDK 7*. 
-    -   *Liferay Server Name*: Select or add a @product-ver@ server. 
-    -   *Backup SDK into Folder*: Whether to copy the original Plugins SDK to 
-        the specified folder. 
-
-    ![Figure 5: Defining a @product@ server is straightforward.](../../../images/code-upgrade-define-new-server.png)
-
-2.  Click the *Import Projects* button. 
-
-The Plugins SDK projects are imported to Liferay @ide@. 
-
-+$$$
-
-**Note**: If the Plugins SDK is the same version as the Liferay Portal bundle, 
-you need only set the SDK's `app.server.parent.dir` property to the  bundle
-path. Otherwise, you must also set the `app.server.type` and
-`app.server.[server-type].dir` properties. 
-
-$$$
-
-To mark the step complete, click the check mark icon
-(![check mark icon](../../../images/icon-code-upgrade-mark-done.png)). 
-
-### Maven Plugin [](id=maven-plugin)
-
-To configure your Maven plugin project(s) in the Code Upgrade Tool, browse to
-the parent project in which they reside. Then select *Import Projects* to import
-the Maven plugins into the Eclipse workspace.
-
-When upgrading a Maven plugin, there is one extra step compared to importing a
-Plugins SDK project: upgrading your POM files. You'll see how this works next.
-
-#### Upgrade POM Files [](id=upgrade-pom-files)
+If you are not upgrading a Maven project, please skip this section.
 
 The Code Upgrade Tool scans through all of your Maven project's POM files. Here
 is an outline of the types of changes it suggests:
