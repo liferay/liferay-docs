@@ -158,7 +158,7 @@ To mark the step complete, click the check mark icon (![check mark icon](../../.
 
 ## Upgrade POM Files (Maven Projects Only) [](id=upgrade-pom-files)
 
-If you are not upgrading a Maven project, please skip this section.
+**Note:** If you are not upgrading a Maven project, please skip this section.
 
 The Code Upgrade Tool scans through all of your Maven project's POM files. Here
 is an outline of the types of changes it suggests:
@@ -173,7 +173,7 @@ is an outline of the types of changes it suggests:
   to `com.liferay.portal.kernel`.
 
 For more information on the upgrade process for your Maven build, see
-[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-1/upgrading-the-liferay-maven-build)
+[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-1/upgrading-the-liferay-maven-build).
 
 If the tool finds any necessary updates, it lists them in the view.
 
