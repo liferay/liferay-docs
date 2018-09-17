@@ -2,7 +2,7 @@
 
 When Audience Targeting is installed on @product@, there are configuration
 options provided in
-[System Settings](/discover/portal/-/knowledge_base/7-0/system-settings).
+[System Settings](/discover/portal/-/knowledge_base/7-1/system-settings).
 Audience Targeting configurations made here take effect system-wide. You can
 find Audience Targeting system settings by navigating to the Control Panel
 &rarr; *Configuration* &rarr; *System Settings* &rarr; *Web Experience*. The

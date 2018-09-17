@@ -13,17 +13,17 @@ Metrics can be created by developers and deployed as extensions. Out of the box,
 Audience Targeting includes metrics to track the most common user actions. These
 metrics are described below.
 
-## Content [](id=content)
+### Content [](id=content)
 
 Tracks the number of times certain content has been viewed. Use the content
 selector to set the content to be tracked.
 
-## Page [](id=page)
+### Page [](id=page)
 
 Tracks the number of times a selected page has been viewed. You can track views
 on both both public or private pages.
 
-## Form [](id=form)
+### Form [](id=form)
 
 Tracks how many users view a form, interact with it (i.e., type or select values
 in the inputs) or submit it. If you select the *All* option from the *Event
@@ -31,7 +31,7 @@ type* field, the custom report will show the figures for the three events
 simultaneously. You must also provide the form you want to track, which is
 selectable from the *Form* metric.
 
-## Link [](id=link)
+### Link [](id=link)
 
 Tracks how often links are clicked. This helps campaign administrators determine
 if they're sufficiently visible or helpful.
@@ -40,7 +40,7 @@ Similar to forms, you must provide the ID of the link you want to track. If you
 don't know it, you can inspect the HTML of the page where the link is and
 extract this information.
 
-## YouTube Videos [](id=youtube-videos)
+### YouTube Videos [](id=youtube-videos)
 
 Tracks how users interact with embedded YouTube videos. You must enter the ID of
 the YouTube video. You can extract this ID from the video URL as the value for
@@ -76,14 +76,20 @@ ensure that everything is working as expected:
 ![Figure 3: Drag and drop metrics to the right to configure a campaign.](../../images-dxp/audience-targeting-metrics.png)
 
 You can assign metrics to a campaign report, which is elaborated on in the next
-section. To access the Metrics palette, select a pre-existing campaign, select
-the *Reports* tab, and then add a custom report. The Metrics palette is
-accessible at the bottom of the *New Report* wizard.
+section. To access the Metrics palette,
+
+1.  Go to a pre-existing campaign.
+
+2.  Select the *Reports* tab. 
+
+3.  Add a custom report.
+
+    The Metrics palette is accessible at the bottom of the *New Report* wizard.
 
 You could drag and drop *metrics* from the palette to track all the actions
 mentioned above. More types of metrics can be created by developers and deployed
 as OSGi plugins. See the
-[Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/tracking-user-actions-with-audience-targeting)
+[Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/7-1/tracking-user-actions-with-audience-targeting)
 tutorial for details.
 
 ### Audience Targeting Analytics [](id=audience-targeting-analytics)

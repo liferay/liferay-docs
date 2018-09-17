@@ -50,28 +50,6 @@ of the configured user segments.
 Administrators can preview the various assets that have been configured for 
 different user segments.
 
-## User Segment Content List [](id=user-segment-content-list)
-
-User Segment Content List displays content categorized for the current user's 
-user segments. For example, if you have several assets categorized under 
-*Tennis fans*, *Soccer fans*, and *Basketball fans*, when a "Tennis fan" views 
-this application, the application displays a list of assets categorized
-for the Tennis fans user segment. If the user belongs to multiple user segments,
-then a list of articles that have been categorized for any of the matching user
-segments will be shown.
-
-![Figure 3: The User Segment Content List application displays content that matches the user segments which fit the current user. You can configure the User Segment Content List application to display assets of any kind or only specific kinds of assets.](../../images-dxp/user-segment-content-list.png)
-
-By default, the User Segment Content List displays assets of any type that have 
-been categorized for any user segment that matches the current user. However, 
-you can configure the User Segment Content List application to display only assets of specific types.
-
-For example, you can configure the User Segment Content List application to 
-only display web content articles and documents. The User Segment Content List 
-application also provides filtering for categories, tags, scopes, etc., 
-offering a wide variety of filtering options so you can display the specific 
-content you want.
-
 ## Campaign Content Display [](id=campaign-content-display)
 
 Campaign Content Display is similar to the User Segment Content Display except 
