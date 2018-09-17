@@ -1,26 +1,36 @@
-# Disabling Cache for Table Mapper Tables
+# Disabling Cache for Table Mapper Tables [](id=disabling-cache-for-table-mapper-tables)
 
-When creating custom service builder entities, you may find it necessary to map
-tables together, in order to create a relational mapping between the two. This
-can be clearly seen when a table has the naming syntax of `table1_table2`, with
-an example being `AssetEntries_AssetCategories`. This particular table maps a
-given `AssetEntry` with a given `AssetCategory`. These table mappings also have
-a cache by default, which makes retrievals much faster. These types of mappings
-are defined in `service.xml`. Here's an example entry in the `AssetCategories`
-entity:
+Service Builder lets you create
+[relational mappings between entities](/develop/tutorials/-/knowledge_base/7-1/defining-relationships-between-service-entities).
+It uses mapping tables to associate the entities. In your `service.xml` file,
+both entities have a `mapping-table` column attribute of the format
+`mapping-table="table1_table2"`. For example, a `service.xml` that maps
+`AssetEntry`s to `AssetCategory`s has an `AssetCategory` entity with this
+column: 
 
-    <column entity="AssetEntry" mapping-table="AssetEntries_AssetCategories" name="entries" type="Collection" />
+    <column entity="AssetEntry" 
+    mapping-table="AssetEntries_AssetCategories" 
+    name="entries" type="Collection" />
 
-Also, a similar entry must exist under the `AssetEntries` entity:
+and an `AssetEntry` entity element with this column: 
 
-    <column entity="AssetCategory" mapping-table="AssetEntries_AssetCategories" name="categories" type="Collection" />
+    <column entity="AssetCategory" 
+    mapping-table="AssetEntries_AssetCategories" 
+    name="categories" type="Collection" />
 
-Note, the only differences are the entity type and name.
+By default, a table mapper cache is associated with each mapping table. The
+cache optimizes object retrieval. In some cases, however, it's best to disable a
+table mapper cache. 
 
-## Why would I want to disable cache on a table mapper?
+## Why would I want to disable cache on a table mapper? [](id=why-would-i-want-to-disable-cache-on-a-table-mapper)
 
-Looking at the portal property which disables table mapper tables, we see there
-are already a few defined:
+Entity tables that are too large, can result in a table mapper cache that hogs
+memory. For this reason, you might want to disable cache on a table mapper. 
+
+The
+[`table.mapper.cacheless.mapping.table.names` Portal property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Table%20Mapper)
+disables cache for table mappers associated with the specified mapping tables.
+Here's the default property setting:
 
     ##
     ## Table Mapper
@@ -37,40 +47,44 @@ are already a few defined:
         Users_Teams,\
         Users_UserGroups
 
-All of the disabled caches pertain to the `User` object. These tables have cache
-disabled because they tend to be much too large to have a useful cache, as each
-user can potentially have several entries in each of the table. So, one reason
-to disable a table mapper cache is due to the table being too large, therefore
-creating a huge cache which can hog memory.
+All of the disabled caches above pertain to the `User` object because the table
+mappers tend to be much too large to have a useful cache---each `User` can
+have several entries in each related table. 
 
-Another reason may be due to race conditions when retrieving objects from the
-cache. Take into consideration LPS-84374, where a client is having troubles
-with their custom portlet. This portlet calls get methods on the
-`AssetEntries_AssetCategories` table mapper, while also possibly publishing
-`AssetEntries`, clearing the table mapper cache. While caching table mapper
-tables is useful for faster retrieves, it has the stipulation of being able to
-be cleared while still in use, and causing transactional rollbacks.
+Potential race conditions retrieving objects from the cache is another reason to
+disable a table mapper.
 
-## How to resolve the issue seen in LPS-84374
+For example,
+[LPS-84374](https://issues.liferay.com/browse/LPS-84374)
+describes a race condition in which a custom portlet's table mapper
+cache can be cleared while in use, causing transactional rollbacks. Publishing
+`AssetEntry`s clears all associated table mapper caches. If they're published at
+the same time getter methods are retrieving objects from the
+`AssetEntries_AssetCategories` mapping table, transaction rollbacks occur. 
 
-While engineering works on a permanent solution, a quick and safe workaround
-would be to simply disable table mapper cache for affected tables. Doing so is
-simple, all which needs to be done is for the table mapper table name to be
-added to the `table.mapper.cacheless.mapping.table.names` property. Make sure it
-is *added*, and not just *overwriting* existing entries. Simple copy/paste
-the entire property (including existing values) from
-`webapps~/ROOT~/WEB-INF~/lib~/portal-impl.jar~/portal.properties` into your
-`portal-ext.properties`, and add the necessary table names to the list. For the
-example in LPS-84374, the property should look like so:
+## Disabling a Table Mapper Cache [](id=disabling-a-table-mapper-cache)
 
+Adding a mapping table name to the `table.mapper.cacheless.mapping.table.names`
+Portal property, disables the associated table mapper cache.
 
-    table.mapper.cacheless.mapping.table.names=\
-        Users_Groups,\
-        Users_Orgs,\
-        Users_Roles,\
-        Users_Teams,\
-        Users_UserGroups,\
-        AssetEntries_AssetCategories
+1.  In your
+    [`[Liferay_Home]/portal-ext.properties` file](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home), 
+    add the current `table.mapper.cacheless.mapping.table.names` property
+    setting. The setting is in your @product@ installation's
+    `portal-impl.jar/portal.properties` file.
 
-After restarting the portal, the cache for the `AssetEntries_AssetCategories`
-table should no longer exist, resolving the transaction issue.
+2.  Append your mapping table name to the list. To disable the cache
+    associated with a mapping table named `AssetEntries_AssetCategories`, for
+    example, add that name to the list. 
+
+        table.mapper.cacheless.mapping.table.names=\
+            Users_Groups,\
+            Users_Orgs,\
+            Users_Roles,\
+            Users_Teams,\
+            Users_UserGroups,\
+            AssetEntries_AssetCategories
+
+3.  Restart the @product@ instance to delete the table mapper cache. 
+
+You've disabled an unwanted table mapper cache. 

@@ -109,6 +109,14 @@ Click a question to view the answer.
   </div>
 </div>
 
+<br/>
+<div class="ldn-faq-question">
+  <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">After creating a relational mapping between Service Builder entities, my portlet is using too much memory. What can I do?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
+  <div class="hide">  
+    <p><a href="/develop/tutorials/-/knowledge_base/7-1/disabling-cache-for-table-mapper-tables">Disabling the cache related to the entity mapping lowers memory usage.</a>.</p>
+</div>
+</div>
+
 ## Services and Components [](id=troubleshooting-services-and-components)
 
 <br/>
