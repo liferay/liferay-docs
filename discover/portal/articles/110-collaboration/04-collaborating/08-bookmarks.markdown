@@ -15,7 +15,15 @@ $$$
 
 ## Creating Bookmarks and Folders [](id=creating-bookmarks-and-folders)
 
-To use the Bookmarks widget, you must first add it to a page. Select *Add* 
+To get started with the Bookmarks widget, first install it from 
+[Liferay Marketplace](https://web.liferay.com/marketplace). 
+See the 
+[Marketplace article](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace) 
+if you need help using Marketplace to install apps. 
+
+After installing the Bookmarks widget, add it to a page in your portal. To do 
+this, select 
+*Add* 
 (![Add](../../../images/icon-add-app.png)) 
 &rarr; *Widgets* &rarr; *Community*, and then drag *Bookmarks* onto the page. 
 
