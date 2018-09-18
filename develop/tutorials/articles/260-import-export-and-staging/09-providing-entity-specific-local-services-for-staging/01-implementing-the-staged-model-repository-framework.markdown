@@ -3,12 +3,11 @@
 Providing specialized local services for your app's staging functionality lets
 you abstract the additional staging-specific information away from your data
 handlers. Before you can begin using the Staged Model Repository framework in
-your app, you'll need to implement it.
+your app, you must implement it.
 
-You'll step through a quick example to demonstrate implementing the
+Below is a quick example that demonstrates implementing the
 `StagedModelRepository` interface to use for a staged model. This example
-references Liferay's Bookmarks app, specifically, for Bookmarks Entry
-entities.
+references Liferay's Bookmarks app and Bookmarks Entry entities.
 
 1.  In your app's `-service` bundle, create a package that holds your Staged
     Model Repository classes (e.g.,
@@ -25,8 +24,8 @@ entities.
         public class BookmarksEntryStagedModelRepository
             implements StagedModelRepository<BookmarksEntry> {
 
-    Be sure to also include the staged model type parameter this repository
-    should operate on (e.g., `BookmarksEntry`).
+    Be sure also to include the staged model type parameter for this repository
+    (e.g., `BookmarksEntry`).
 
 3.  Add an `@Component` annotation for your staged model repository class that
     looks like this:
@@ -95,7 +94,7 @@ entities.
     [`PortletDataContext`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataContext.html)
     is used to populate the LAR file with your application's data during the
     export process. Next it sets the UUID, which is required to differentiate
-    staged content between sites. Lastly, the entity's local service is called.
+    staged content between Sites. Lastly, the entity's local service is called.
 
     Just calling the `BookmarksEntryLocalService.addEntry(...)` method would not
     have been enough to satisfy the staged model data handler's needs (i.e., the
