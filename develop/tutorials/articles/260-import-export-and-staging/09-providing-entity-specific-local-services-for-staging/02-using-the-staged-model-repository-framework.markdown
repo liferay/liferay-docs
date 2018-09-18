@@ -5,8 +5,7 @@ Leveraging the Staged Model Repository framework in your app is easy once you've
 
 You'll step through a quick example to demonstrate leveraging the
 `StagedModelRepository` interface in a staged model data handler. The code
-snippets originate from Liferay's Bookmarks app, specifically, for Bookmarks
-Entries.
+snippets originate from Liferay's Bookmarks app and Bookmarks Entries.
 
 1.  Create a getter and setter method to make a `StagedModelRepository` object
     available for the `BookmarksEntry` entity:
@@ -40,9 +39,8 @@ Entries.
 2.  Call your `_stagedModelRepository` object to leverage its specialized
     staging logic. Now that you have access to CRUD operations via the
     `_stagedModelRepository` object, you can skip the headache of providing a
-    slew of parameters and additional functionality to the local service to, for
-    example, add a Bookmarks entry. For instance, the following code snippet
-    exemplifies adding a Bookmarks Entry only using the provided local services:
+    slew of parameters and additional functionality in the local service to do
+    simple things like add a Bookmarks entry. For example, here's the old way:
 
         serviceContext.setUuid(entry.getUuid());
 
@@ -50,15 +48,15 @@ Entries.
             userId, portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(), serviceContext);
 
     Now with access to the entry's staged model repository, updating an entry
-    usable by the data handler would look like this:
+    the data handler can use looks like this:
 
         newEntry = _stagedModelRepository.updateStagedModel(portletDataContext, importedEntry);
 
-    The large number of parameters and UUID setter required for using the local
-    service method are not required when leveraging the staged model repository.
-    This is because the staged model repository abstracts these requirements
-    away from the data handler. The `_bookmarksEntryLocalService.addEntry(...)`
-    method is called from the `BookmarksEntryStagedModelRepository` class.
+    The large number of parameters and UUID setter the local service method
+    requires aren't needed when leveraging the staged model repository, because
+    the staged model repository abstracts these requirements away from the data
+    handler. The `_bookmarksEntryLocalService.addEntry(...)` method is called
+    from the `BookmarksEntryStagedModelRepository` class.
 
 Great! You've successfully leveraged your staged model repository from a data
 handler!
