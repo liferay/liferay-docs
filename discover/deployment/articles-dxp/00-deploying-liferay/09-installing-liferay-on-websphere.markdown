@@ -26,7 +26,7 @@ You should also read the following articles to familiarize yourself with
 - [Installing @product@](/discover/deployment/-/knowledge_base/7-1/installing-product)
 
 Note that the 
-[*Liferay Home* folder](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+[*Liferay Home* folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 is important to the operation of @product@. In Liferay Home, @product@ creates 
 certain files and folders that it needs to run. On WebSphere, Liferay Home is 
 typically `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 

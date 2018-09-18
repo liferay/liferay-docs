@@ -27,29 +27,7 @@ Here are the steps for using the Gulp `upgrade` task:
     **You must** provide the absolute path to your 6.2 theme's root folder. The 
     import task does not work for relative paths.
 
-2.  Open your theme's `package.json` file and update the `liferay-theme-tasks` 
-    to `8.0.0-beta.1`:
-    
-        "devDependencies": {
-        	"gulp": "^3.8.10",
-        	"liferay-theme-tasks": "8.0.0-beta.1",
-        	"liferay-theme-deps-6.2": "*"
-        },
-
-    +$$$
-
-    **Note:** 8.0.0-beta.1 is the latest version at the time of this writing. We 
-    recommend that you always use the latest version for full compatibility. You 
-    can find the latest version listed in the 
-    [liferay-themes-sdk change log](https://github.com/liferay/liferay-themes-sdk/blob/master/CHANGELOG.md).
-
-    $$$
-
-3.  Install the updated dependency:
-
-        npm install
-
-4.  Navigate to your theme's root directory and run the command below to 
+2.  Navigate to your theme's root directory and run the command below to 
     initially upgrade your 6.2 theme to 7.0:
 
         gulp upgrade
@@ -75,9 +53,7 @@ Here are the steps for using the Gulp `upgrade` task:
     The upgrade task automatically upgrades CSS code that it can identify. For 
     everything else, it suggests upgrades. 
 
-5.  Use the command below to run the 7.0 to 7.1 upgrade task:
-
-        gulp upgrade
+3.  Run the `gulp upgrade` command again to upgrade the 7.0 theme to 7.1.
 
     Here's what it does:
 

@@ -25,7 +25,7 @@ issue the following command:
 
 To make sure the all changed OSGi bundles replace the existing ones, delete the
 `osgi/state` folder from the 
-[Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home). 
+[Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home). 
 
 +$$$
 

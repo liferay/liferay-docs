@@ -58,7 +58,7 @@ For some situations, it might be more convenient to specify the system
 configuration via files on the disk. To do so, create the following
 file:
 
-    {LIFERAY_HOME}/osgi/configs/com.liferay.portal.security.sso.cas.module.configuration.CASConfiguration.cfg
+    {LIFERAY_HOME}/osgi/configs/com.liferay.portal.security.sso.cas.configuration.CASConfiguration.cfg
 
 The format of this file is the same as any properties file. The key to use for
 each property that can be configured is shown below. Enter values in the same

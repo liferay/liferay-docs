@@ -41,7 +41,7 @@ To create a team within a Site,
     It's important to note that configuring other Site membership groupings, 
     such as *Users*, *Organizations*, and *User Groups* can be done in the 
     *Site Memberships* app, which is also in the Members tab. You can 
-    visit [User Management](/discover/portal/-/knowledge_base/7-1/user-management)
+    visit [User Management](/discover/portal/-/knowledge_base/7-1/managing-users)
     for more information on how Site memberships work.
 
 3.  Finally, click the *Add Team* icon (![Add Team](../../../../images/icon-add.png)).

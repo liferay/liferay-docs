@@ -1,7 +1,7 @@
 # Reading Configuration Values from a Configuration Provider [](id=reading-configuration-values-from-a-configuration-provider)
 
 When an application is deployed, it's common to need different configurations
-[depending on the scope](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable/scoping-configurations).
+[depending on the scope]/develop/tutorials/-/knowledge_base/7-1/scoping-configurations).
 That means having different
 configurations for a given application per virtual instance (a.k.a. Company),
 site (a.k.a. Group), or portlet instance. Achieve this with little effort using
@@ -18,7 +18,7 @@ directly, the class that wants to access it must
 2.  Be registered with a `ConfigurationBeanDeclaration`.
 
 The tutorial on 
-[scoping configurations](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable/scoping-configurations) 
+[scoping configurations]/develop/tutorials/-/knowledge_base/7-1/scoping-configurations) 
 demonstrates how to register the configuration with a `ConfigurationBeanDeclaration`.
 
 After registering with a `ConfigurationBeanDeclaration`, you're ready to use a

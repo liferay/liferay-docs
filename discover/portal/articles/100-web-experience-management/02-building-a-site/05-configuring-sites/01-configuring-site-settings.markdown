@@ -106,4 +106,4 @@ learn more about Site Templates and how to create your own, see
 *Custom Fields* only appears if you've created them in Control Panel &rarr;
 *Configuration* &rarr; *Custom Fields*. For more information on Custom Fields,
 see 
-[Custom Fields](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/custom-fields).
+[Custom Fields](/discover/portal/-/knowledge_base/7-1/setting-up).

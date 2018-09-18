@@ -10,7 +10,7 @@ through the process of configuring Elasticsearch.
 If you'd rather use Solr, it's also supported. See the documentation on
 Installing Solr if you're interested.
 
-<!-- See [here](/discover/deployment/-/knowledge_base/7-1/using-solr) for information
+<!-- See [here](discover/deployment/-/knowledge_base/7-1/using-solr) for information
 on installing and configuring Solr. -->
 
 To get up and running quickly with Elasticsearch as a remote server, refer to
@@ -30,7 +30,7 @@ These terms are useful to understand as you read this guide:
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
    installation (for example, `elasticsearch-6.1.3`). 
 
--  [*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+-  [*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
    refers to the root folder of your @product@ installation. It contains the
    `osgi`, `deploy`, `data`, and `license` folders, among others.
 
