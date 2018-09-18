@@ -28,7 +28,8 @@ interface in the following ways:
 
 This method relies on an existing Config Admin configuration class, as described
 [here](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable). 
-Here's an example from Liferay's code base:
+Here's an example configuration class, from Liferay's own Currency Converter
+application:
 
     @ExtendedObjectClassDefinition(category = "localization")
     @Meta.OCD(
@@ -43,20 +44,10 @@ Here's an example from Liferay's code base:
 
     }
 
-Once that's in place, all that's necessary is to customize the auto-generated
-form is one additional class, an implementation of the
-`ConfigurationFormRendered` interface.
+There's one configuration option, symbols, that takes an array of values. 
 
-    public interface ConfigurationFormRenderer {
-
-        public String getPid();
-
-        public Map<String, Object> getRequestParameters(HttpServletRequest request);
-
-        public void render(HttpServletRequest request, HttpServletResponse response)
-            throws IOException;
-
-    }
+All that's necessary is to customize the auto-generated form is one additional
+class, an implementation of the `ConfigurationFormRenderer` interface.
 
 Implement it's three methods:
 
@@ -112,11 +103,10 @@ Here's a complete `ConfigurationFormRenderer` implementation:
 
 The above example ...
 
-
 ## Creating a Completely Custom Configuration UI
 
-Sometimes you want a completely custom UI for your configuration. Some cases
-where this might be true include 
+In some cases, you want a completely custom UI for your configuration. For
+example: 
 
 - Your application doesn't use Config Admin to provide its configuration. You
     have a completely different configuration backend, and you'll write a
@@ -125,7 +115,7 @@ where this might be true include
 - Your application needs more flexibility in its UI, such as multiple
     configuration screens.
 
-To accomplish this, write an `ConfigurationScreen` implementation.
+To accomplish this, write a `ConfigurationScreen` implementation.
 
 At a high level you must
 
@@ -133,23 +123,6 @@ At a high level you must
     `ConfigurationScreen` interface.
 
 2.  Implement `Configurationscreen`'s methods.
-
-Here's the `ConfigurationScreen` interface:
-
-    public interface ConfigurationScreen {
-
-        public String getCategoryKey();
-
-        public String getKey();
-
-        public String getName(Locale locale);
-
-        public String getScope();
-
-        public void render(HttpServletRequest request, HttpServletResponse response)
-            throws IOException;
-
-    }
 
 Here's an example implementation:
 
@@ -177,7 +150,7 @@ First declare the class an implementation of `ConfigurationScreen`.
     public String getName(Locale locale) { 
     
         return "Sample Configuration Screen"; 
-        
+
     }
 
 Second, set the category key, then configuration entry's key and localized name.
