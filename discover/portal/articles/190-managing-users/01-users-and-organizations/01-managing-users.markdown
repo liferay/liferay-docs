@@ -21,7 +21,7 @@ and Organizations*.
     the first form creates the user, and then you'll see a success message
     saying
 
-        The user was created successfully. You can now add additional information about the user.
+        Success. Your request completed successfully. 
 
 After submission of the first form, you see a larger form with many sections.
 The one you're on is the Information section. To the left is a navigation
@@ -35,7 +35,7 @@ click through the tabs at the top. Peruse the sections for the three tabs
 You don't have to fill anything else out right now. Just note that when the user
 account was created, a password was automatically generated. If Liferay was
 correctly installed and a 
-[mail server was set up](/discover/portal/-/knowledge_base/7-1/server-administration#mail), 
+[mail server was set up](/discover/portal/-/knowledge_base/7-1/server-administration), 
 an email message with the User's new password was sent to the User's email
 address.
 
@@ -98,9 +98,9 @@ of Users, a two-step process must be followed: deactivate first, then delete.
 
     You'll see a success message and the User disappears, but isn't gone yet.
 
-3.  By default the Users table displays only Active users. Click on *Active* in
-    the top of the table and a dropdown menu appears. Click *Inactive*, and you
-    can see the User you just deactivated. 
+3.  By default the Users table displays only Active users. Click on *Filter and
+    order* in the top of the table and a dropdown menu appears. Click
+    *Inactive*, and you can see the User you just deactivated. 
 
 4.  Click the Actions menu again, and click *Delete* if you really mean to
     delete the User. Confirm that you want to delete the User, and now the User

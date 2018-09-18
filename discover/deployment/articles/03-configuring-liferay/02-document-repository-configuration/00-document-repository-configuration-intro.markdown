@@ -16,11 +16,11 @@ Configuration &rarr; System Settings*. From System Settings, navigate to
 *Platform* and then search for and click *File Storage*
 (![Folder](../../../images/icon-folder.png)). For the store's *Root directory*
 value, specify a path relative to 
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 or an absolute path; then click the *Save* button. The document library store
 switches immediately to the new folder. 
 
-![Figure x: The File Storage page in System Settings lets you configure document repository storage.](../../../images/file-storage.png)
+![Figure 1: The File Storage page in System Settings lets you configure document repository storage.](../../../images/file-storage.png)
 
 +$$$
 

@@ -4,15 +4,6 @@ The Liferay Theme Generator lets you create themes, themelets, layout templates
 and more. There are a few dependencies required to run the generator. If you 
 have NodeJS installed, you're already one step ahead. 
 
-+$$$
-
-**Note:** The [Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme)
-is not officially supported at this time. If you have any issues with the tool, 
-you can open issues in the 
-[liferay-themes-sdk repo](https://github.com/liferay/liferay-themes-sdk/issues). 
-
-$$$
-
 Follow these steps to install the Liferay Theme Generator and generate a theme:
 
 1.  Install [Node.js](http://nodejs.org/). We recommend installing the Long Term 
@@ -26,7 +17,7 @@ Follow these steps to install the Liferay Theme Generator and generate a theme:
     and the Liferay Theme Generator:
 
         npm install -g yo gulp generator-liferay-theme
-        
+ 
     If you're on Windows, follow the instructions in step 2a to install Sass, 
     otherwise you can skip to step 3.
 
@@ -41,18 +32,34 @@ Follow these steps to install the Liferay Theme Generator and generate a theme:
         and then install the compass gem:
 
         gem install compass
-    
-    The matching sass gem is automatically fetched and installed as well.
-    
+ 
+    The matching sass gem is automatically fetched and installed as well. 
+
 3.  Run the generator and follow the prompts to create your theme:
 
         yo liferay-theme
 
     ![Figure 1: You can generate a theme by answering just a few configuration questions.](../../../../images/theme-generator-theme-prompt.png)
 
-4.  cd into your theme and run `gulp deploy` to deploy your new theme to the 
-    server.
-    
+    **Important**: By default, your theme is based on the styled theme and uses
+    lib-sass/bourbon, instead of Compass. If, however, you are on Windows and
+    are using the Ruby version of Sass, you must configure the theme to support
+    Compass. If you don't use Ruby Sass, you can skip to step six. 
+
+4.  Open the `package.json` file found in the root folder of your theme, and 
+    locate the `rubySass` property and change it from `false` to `true`. 
+ 
+5.  Now that your theme is set to support Compass, you must install the Ruby 
+    Sass middleware and save it as a dependency for your theme:
+
+        npm i --save gulp-ruby-sass
+
+    The `--save` flag adds Ruby Sass to the list of dependencies in your theme's 
+    `package.json` file. Your theme is ready to use. 
+
+6.  Change into your theme folder and run `gulp deploy` to deploy your new theme
+    to the server.
+ 
 Now you have a powerful theme development tool at your disposal. The sky is the 
 limit!
 

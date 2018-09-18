@@ -24,7 +24,7 @@ Control Panel, at the Instance level.
 The central left and right arrows let you add or remove available languages and
 locales. You can also set these as properties in your `portal-ext.properties`
 file in your
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 folder. The `portal.properties` reference document's 
 [Company](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Company) 
 section defines the default locale. The 

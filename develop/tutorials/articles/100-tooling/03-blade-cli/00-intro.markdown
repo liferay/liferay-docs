@@ -1,14 +1,15 @@
 # Blade CLI [](id=blade-cli)
 
 The [Blade CLI](https://github.com/liferay/liferay-blade-cli/) tool is the
-easiest way for Liferay developers to create new Liferay modules. Although the
-Plugins SDK is also supported, Blade CLI lets you create projects that can be
-used with any IDE or development environment. Blade CLI is a command line tool
-used to create/manage @product@ instances. This tool set also provides a host of
-sub-commands that help Liferay developers create and deploy modules (Gradle or
-Maven). The following sub-commands are callable in the Blade CLI environment:
+easiest way for Liferay developers to create new Liferay modules. Blade CLI lets
+you
 
-<!-- TODO: Will Plugins SDK be supported in Liferay 7.1? -Cody -->
+- create projects (Gradle or Maven) that can be used with any IDE or development
+  environment
+- create/manage @product@ instances
+- deploy modules (Gradle or Maven)
+
+The following sub-commands are callable in the Blade CLI environment:
 
 - *convert*: Converts a Plugins SDK plugin project to a Gradle Workspace
   project.

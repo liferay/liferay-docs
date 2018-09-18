@@ -4,7 +4,7 @@ To deploy your theme to your app server, run the `gulp deploy` task. The `gulp
 deploy` task 
 [builds your theme's files](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files), 
 and deploys the generated WAR file to the 
-[app server you configured](/develop/tutorials/-/knowledge_base/7-1/configuring-your-themes-appserver) 
+[app server you configured](/develop/tutorials/-/knowledge_base/7-1/configuring-your-themes-app-server) 
 when you 
 [created the theme](/develop/tutorials/-/knowledge_base/7-1/creating-themes).
 

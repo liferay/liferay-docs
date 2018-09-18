@@ -33,10 +33,10 @@ tutorials and samples demonstrate developing in these environments.
 
 -   [Maven in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide),
     [Maven tutorials](/develop/tutorials/-/knowledge_base/7-1/maven),
-    and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-modules)
+    and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 
 -   [Gradle in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/using-gradle-in-liferay-ide)
-    and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-modules)
+    and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 
 $$$
 
@@ -238,14 +238,14 @@ folder and its subfolders.
 
 Liferay @ide@ lets you deploy modules by dragging them from the Package Explorer
 onto the Liferay server. @ide@ provides access to
-[Liferay Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-1/managing-module-projects-with-liferay-ide)
+[Liferay Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-1/managing-projects-with-liferay-ide)
 too.
 
 ![Figure 5: Liferay @ide@ lets you deploy modules using drag-and-drop.](../../images/starting-module-dev-drag-module.png)
 
 +$$$
 
-**Note:** [Blade CLI directly installs modules into the OSGi container](/develop/tutorials/-/knowledge_base/7-1/deploying-modules-with-blade-cli).
+**Note:** [Blade CLI directly installs modules into the OSGi container](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-blade-cli).
 Blade stores the module differently in Liferay than if you were to copy the
 module into the `LIFERAY_HOME/deploy` folder. 
 

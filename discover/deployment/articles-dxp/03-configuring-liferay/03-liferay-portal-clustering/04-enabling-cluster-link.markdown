@@ -18,7 +18,7 @@ retrieve a new entity on a node which doesn't have that entity cached results in
 a cache *miss*. The miss triggers the node to retrieve the entity from the
 database and store it in its local cache. 
 
-![Figure 2: @product@'s cache algorithm is extremely efficient. ](../../../images-dxp/clustering-cache-efficient-algorithm.png)
+![Figure 1: @product@'s cache algorithm is extremely efficient. ](../../../images-dxp/clustering-cache-efficient-algorithm.png)
 
 To enable Cluster Link, add this property to `portal-ext.properties`: 
 
@@ -31,6 +31,12 @@ for nodes to communicate. It can
 - Send messages to a specific node
 - Invoke methods and retrieve values from all, some, or specific nodes
 - Detect membership and notify when nodes join or leave
+
+When you start @portal@ in a cluster, a log file message shows your cluster's name (e.g., `cluster=liferay-channel-control`): 
+
+    ------------------------------------------------------------------- 
+    GMS: address=oz-52865, cluster=liferay-channel-control, physical address=192.168.1.10:50643 
+    -------------------------------------------------------------------
 
 Cluster Link contains an enhanced algorithm that provides one-to-many type
 communication between the nodes. This is implemented by default with JGroups's
@@ -73,7 +79,7 @@ Your network configuration may preclude the use of multicast over TCP, so below
 are some other ways you can get your cluster communicating. Note that these
 methods are all provided by JGroups. 
 
-### Checkpoint: 
+### Checkpoint: [](id=checkpoint)
 
 1.  If you are using multicast to handle your cluster, add this property to
     `portal-ext.properties`:

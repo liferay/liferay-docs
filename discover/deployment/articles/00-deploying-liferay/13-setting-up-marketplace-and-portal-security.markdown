@@ -22,7 +22,7 @@ Internet. In these cases, you have two options:
     [Marketplace plugin](https://www.liferay.com/marketplace/download).
     Then allow @product@ to auto deploy it by dropping the downloaded `.lpkg`
     file into the `deploy` folder in
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home).
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home).
 
 2.  Alternately, once you have the downloaded `.lpkg` file, deploy it using the
     [App Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps).

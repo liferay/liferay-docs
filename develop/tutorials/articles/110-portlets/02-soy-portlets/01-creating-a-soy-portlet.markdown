@@ -438,5 +438,3 @@ Now you know how to create a Soy Portlet!
 ## Related Topics [](id=related-topics)
 
 [Liferay MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
-
-[JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)

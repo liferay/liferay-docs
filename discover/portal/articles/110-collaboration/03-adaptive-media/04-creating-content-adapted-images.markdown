@@ -102,7 +102,7 @@ resolution (see the `<picture>` example above).
 Adaptive Media is fully integrated with @product@'s 
 [content staging](/discover/portal/-/knowledge_base/7-1/staging-content-for-publication) 
 and 
-[export/import](/discover/portal/-/knowledge_base/7-1/exporting-importing-app-data) 
+[export/import](/discover/portal/-/knowledge_base/7-1/exporting-importing-widget-data) 
 functionality. Adaptive Media includes adapted images in staged content when 
 published, and can update those images to match any new resolutions. 
 

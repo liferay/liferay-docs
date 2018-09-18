@@ -2,7 +2,6 @@
 
 When managing content in Staging's Advanced Publication menu, there are several
 factors to consider when preparing your content for publication. As described in
-
 [Advanced Publication with Staging](/discover/portal/-/knowledge_base/7-1/advanced-publication-with-staging),
 you can navigate to the Content area of the Advanced Publication menu
 to select content you want to publish. There are options attached to each

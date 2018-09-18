@@ -15,7 +15,7 @@ role intended for lots of Users. Recall that Users are grouped in Sites,
 Organizations, and User Groups. Implicitly assign regular scoped permissions to
 Users by assigning a role directly to one of these user groupings.
 
-![Figure x: Assign Users to a role, directly or by their association with a Site, Organization, or User Group.](../../../images/roles-assignees.png)
+![Figure 1: Assign Users to a role, directly or by their association with a Site, Organization, or User Group.](../../../images/roles-assignees.png)
 
 $$$
 
@@ -47,9 +47,9 @@ Team
 : Permissions are defined within a specific Site and are assigned within that
 specific Site.
 
-Read 
-[here](/discover/portal/-/knowledge_base/7-1/creating-teams-for-advanced-site-membership-management) 
-for more information about Teams.
+<!-- Read 
+/discover/portal/-/knowledge_base/7-1/creating-teams-for-advanced-site-membership-management) 
+for more information about Teams. -->
 
 ## Deleting Asset Containers [](id=deleting-asset-containers)
 

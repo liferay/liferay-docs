@@ -39,13 +39,13 @@ portlet:
 
 **portletSetupPortletDecoratorId:** Specifies the portlet decorator to use for 
 the portlet (`borderless` || `barebone` || `decorate`). See the 
-[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/portlet-decorators) 
+[Applying Portlet Decorators to Embedded Portlets](/develop/tutorials/-/knowledge_base/7-1/applying-portlet-decorators-to-embedded-portlets) 
 tutorial for more info. 
 
 +$$$
 
 **Tip:** You can specify an 
-[application display template](/discover/portal/-/knowledge_base/7-1/styling-apps-with-application-display-templates) 
+[application display template](/discover/portal/-/knowledge_base/7-1/styling-apps-and-assets) 
 (ADT) for a portlet in the `sitemap.json` file by setting the `displayStyle` and 
 `displayStyleGroupId` portlet preferences, as shown in the example below:
 
@@ -84,8 +84,8 @@ $$$
 
 ## Related Topics [](id=related-topics)
 
-[Preparing and organizing resources](/develop/tutorials/-/knowledge_base/7-1/preparing-resources-for-the-importer)
+[Preparing and Organizing Web Content for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/preparing-and-organizing-web-content-for-the-resources-importer)
 
 [Defining Pages in a Sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-pages-in-a-sitemap)
 
-[Specifying where to import the resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-resources)
+[Specifying Where to Import Your Theme's Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-your-themes-resources)

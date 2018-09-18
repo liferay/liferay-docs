@@ -52,7 +52,7 @@ The default Maven Workspace contains the following folders/files:
     - `pom.xml`
 
 For more information on the `configs` folder, see the
-[Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-modules)
+[Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
 section. The `modules`, `themes`, and `wars` folders hold projects of that type.
 The parent `pom.xml` configures your workspace as a Maven project and applies
 the
@@ -76,7 +76,7 @@ example,
 
     <properties>
         <liferay.workspace.bundle.url>
-            http://downloads.sourceforge.net/project/lportal/Liferay%20Portal/7.0.4%20GA5/liferay-ce-portal-tomcat-7.0-ga5-20171018150113838.zip
+            https://releases-cdn.liferay.com/portal/7.1.0-ga1/liferay-ce-portal-tomcat-7.1.0-ga1-20180703012531655.zip
         </liferay.workspace.bundle.url>
         ...
     </properties>
@@ -125,14 +125,14 @@ There are some configurable workspace properties you can set in the root
    [Adding a Liferay Bundle to a Maven Workspace](#adding-a-liferay-bundle-to-a-maven-workspace).
 - `liferay.workspace.environment`: the name of a `configs` subfolder holding the
    @product@ server configuration to use. See
-   [Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-modules)
+   [Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
    for more information.
 
 Properties can be set by adding tags with the property name. See the property
 configurations below for an example on how these can be set in your POM: 
 
     <properties>
-        <liferay.workspace.bundle.url>http://downloads.sourceforge.net/project/lportal/Liferay%20Portal/7.0.4%20GA5/liferay-ce-portal-tomcat-7.0-ga5-20171018150113838.zip</liferay.workspace.bundle.url>
+        <liferay.workspace.bundle.url>https://releases-cdn.liferay.com/portal/7.1.0-ga1/liferay-ce-portal-tomcat-7.1.0-ga1-20180703012531655.zip</liferay.workspace.bundle.url>
         <liferay.workspace.environment>local</liferay.workspace.environment>
     </properties>
 
@@ -151,19 +151,19 @@ Workspace's functionality.
 
 Maven Workspace also lets you deploy your projects to @product@ using Maven. See
 the
-[Deploying a Project Built with Maven to @product@](/develop/tutorials/-/knowledge_base/7-1/deploying-a-module-built-with-maven-to-product)
+[Deploying a Project Built with Maven to @product@](/develop/tutorials/-/knowledge_base/7-1/deploying-a-project-built-with-maven-to-product)
 tutorial for more information.
 
 Want to leverage Maven Workspace's testing infrastructure so you can simulate
 your Maven projects in a specific environment? See the
-[Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-modules)
+[Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
 section for more information.
 
 Once you have your Maven projects solidified and ready for the limelight, it'd
 be great to release your projects to the public. Maven Workspace doesn't provide
 this functionality, but there are easy ways to use external release tools with
 workspace. See the
-[Releasing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#releasing-modules)
+[Releasing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#releasing-projects)
 section for more information.
 
 Next, you'll learn how to update a Maven Workspace.

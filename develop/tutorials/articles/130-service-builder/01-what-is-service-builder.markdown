@@ -102,7 +102,7 @@ this is configurable via portal properties. All you have to do to enable entity
 and finder caching for an entity in your project is to set the
 `cache-enabled=true` attribute of your entity's `<entity>` element in your
 `service.xml` configuration file. Please refer to the
-[Liferay Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering#4-enable-cluster-link)
+[Liferay Clustering](/discover/deployment/-/knowledge_base/7-1/enabling-cluster-link)
 documentation for more details about Liferay caching.
 
 Service Builder is a flexible tool. It automates many of the common tasks
@@ -123,7 +123,7 @@ and build tool-specific plugins such as the
 which includes Liferay's Service Builder library as a dependency. Service
 Builder supports Liferay 7's modular application development style of keeping
 API and implementation code in separate modules. The 
-[Service Builder sample apps](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/service-builder-samples)
+[Service Builder sample apps](/develop/reference/-/knowledge_base/7-0/service-builder-samples)
 demonstrate this.
 
 $$$
