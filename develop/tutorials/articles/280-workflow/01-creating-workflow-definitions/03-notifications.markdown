@@ -1,8 +1,8 @@
 # Workflow Notifications
 
-While an asset is in a workflow, it's important that relevant Users are notified
-about certain events, like when a review task is completed. Any workflow node
-that can take an `<actions>` element can have notifications.
+While an asset is in a workflow, relevant Users should be notified about certain
+events, like when a review task is completed. Any workflow node with an
+`<actions>` element can have notifications.
 
     <actions>
         <action>
@@ -19,7 +19,7 @@ that can take an `<actions>` element can have notifications.
 
 The above Creator Modification Notification sends a notification message in two
 ways: via email and via user notification (this goes to the Notifications widget
-in the User's site). The message is defined in a FreeMarker template and sent
+in the User's Site). The message is defined in a FreeMarker template and sent
 once a task assignment is created. But who receives the notification? If no
 recipients are explicitly specified via a `recipients` tag, the asset's creator
 receives the notification.
@@ -31,11 +31,11 @@ There are several elements that can be specified in a `<notification>`:
 **Name**
 : Set the name of the notification in the `<name>` element. This information is
 used to display the notification in the _My Workflow Tasks_ widget of a User's
-personal site.
+personal Site.
 
 **Template**
-: The `<template>` element contains the actual message of the notification. The
-syntax is determined by the template language you're using. 
+: The `<template>` element contains the message of the notification. The syntax
+is determined by the template language you're using. 
 
 **Template Language**
 : Choose from `freemarker`, `velocity`, or plain `text` in the
@@ -51,8 +51,8 @@ widget), `im` (instant message), or `private-message` in the
 **Execution Type**
 : Choose to link the sending of the notification to entry into the node
 (`onEntry`), when a task is assigned (`onAssignment`), or when the workflow
-processing is leaving a node (`onExit`). If you specify a notification to
-be sent on assignment, the assignee is automatically notified.
+processing is leaving a node (`onExit`). If you specify a notification to be
+sent on assignment, the assignee is notified automatically. 
 
 **Recipients**
 : Decide who should receive the notification in the `<recipients>` tag:
@@ -63,9 +63,9 @@ be sent on assignment, the assignee is automatically notified.
 
 Available recipient tags are 
 
-- `<user>`: notify the User that sent the asset through the workflow. Simply
-    specify the tag as `<user />`. To notify a specific user, enter the
-    `userId`:
+- `<user>`: notify the User that sent the asset through the workflow. 
+  Specify the tag as `<user />`. To notify a specific user, enter the
+  `userId`:
 
         <recipients>
             <user />
@@ -76,7 +76,7 @@ Available recipient tags are
             </user
         </recipients>
 
-- `<roles>`: notify specific roles, either by ID or by their type and name.
+- `<roles>`: notify specific Roles, either by ID or by their type and name.
 
         <recipients>
             <roles>
