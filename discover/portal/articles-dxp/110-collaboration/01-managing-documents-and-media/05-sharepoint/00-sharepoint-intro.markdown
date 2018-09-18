@@ -6,13 +6,14 @@ app *Liferay Connector for SharePoint* lets users access SharePoint 2013
 and SharePoint 2016 libraries from @product@'s Documents and Media Library. Once 
 this app is installed, you can add a SharePoint repository type to @product@'s 
 Documents and Media Library to access your SharePoint files. 
-
+<!--
 +$$$
 
 **Note:** To access SharePoint 2010, you must use 
 [the app *Liferay Connector for SharePoint 2010*](https://web.liferay.com/marketplace/-/mp/application/15188537). 
 
 $$$
+-->
 
 +$$$
 
