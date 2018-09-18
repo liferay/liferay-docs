@@ -24,8 +24,8 @@ Follow these steps to install liferay-npm-bundler:
      
     If you don't have a portlet already, create an empty MVC portlet. For 
     convenience, you can use 
-    [Blade CLI](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli) 
-    to create an empty portlet with the [mvc portlet blade template](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/using-the-mvc-portlet-template).
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli) 
+    to create an empty portlet with the [mvc portlet blade template](/develop/reference/-/knowledge_base/7-0/using-the-mvc-portlet-template).
 
 3.  Run the following command to install the liferay-npm-bundler:
 

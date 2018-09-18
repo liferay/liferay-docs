@@ -47,7 +47,7 @@ service(s) permitted by the policy.
 
 Service Access policies are created in the Control Panel by
 administrators. If you want to start creating policies yourself, see
-[this article on service access policies](https://dev.liferay.com/discover/deployment/-/knowledge_base/7-0/service-access-policies)
+[this article on service access policies](/discover/deployment/-/knowledge_base/7-0/service-access-policies)
 that documents creating them in the UI.
 
 There may be cases, however, when your server-side Liferay app needs to use the
@@ -60,7 +60,7 @@ service access policies API. For example, your app may:
 - require its services be made available to guest users, with no authentication
   necessary.
 
-- contain a [remote service authorization layer](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/password-based-authentication-pipelines)
+- contain a [remote service authorization layer](/develop/tutorials/-/knowledge_base/7-0/password-based-authentication-pipelines)
   that needs to drive access to remote services based on granted
   privileges.
 

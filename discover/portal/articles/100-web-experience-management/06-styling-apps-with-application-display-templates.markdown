@@ -96,7 +96,7 @@ ADT from the menu and expanding the *Details* section. With the WebDAV URL, site
 administrators are capable of adding, browsing, editing, and deleting ADTs on a
 remote server. If you'd like to learn more about what the WebDAV URL can do,
 visit the section on
-[WebDAV access](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/publishing-files#desktop-access-to-documents-and-media).
+[WebDAV access](/discover/portal/-/knowledge_base/7-0/publishing-files#desktop-access-to-documents-and-media).
 
 +$$$
 

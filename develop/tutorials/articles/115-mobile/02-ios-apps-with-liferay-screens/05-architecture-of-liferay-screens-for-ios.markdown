@@ -22,7 +22,7 @@ Liferay Screens for iOS is composed of a Core, a Screenlet layer, a View layer,
 and Server Connectors. Server Connectors are technically part of the Core, but
 are worth describing separately. They facilitate interaction with local and
 remote data sources and communication between the Screenlet layer and the
-[Liferay Mobile SDK](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-0/mobile-sdk). 
+[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk). 
 
 ![Figure 1: The high level components of Liferay Screens for iOS.](../../../images/screens-ios-architecture-01.png)
 
@@ -36,7 +36,7 @@ and Server Connector classes.
 selected Theme in the runtime and in Interface Builder. They also react to UI 
 events to start server requests (via Server Connectors), and define a set of
 `@IBInspectable` properties that can be configured from Interface Builder. The
-Screenlets bundled with Liferay Screens are known as the [Screenlet library](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios). 
+Screenlets bundled with Liferay Screens are known as the [Screenlet library](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios). 
 
 **Interactors:** implement specific use cases for communicating with servers or 
 any other data store. Interactors can use local and remote data sources by using 
@@ -109,7 +109,7 @@ classes instantiate and start these Connector classes.
 an object (typically a singleton) that holds the logged in user's session. Apps 
 can use an implicit login, invisible to the user, or a login that relies on 
 explicit user input to create the session. User logins can be implemented with 
-[Login Screenlet](https://dev.liferay.com/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios). 
+[Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios). 
 This is explained in detail [here](/develop/tutorials/-/knowledge_base/7-0/accessing-the-liferay-session-in-ios). 
 
 [**LiferayServerContext**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Context/LiferayServerContext.swift):

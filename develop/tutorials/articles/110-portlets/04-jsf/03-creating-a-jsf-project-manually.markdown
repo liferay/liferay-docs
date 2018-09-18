@@ -261,7 +261,7 @@ WAR-style portlet descriptors.
     expiration cache, and security roles.
 
     <!-- Should probably discuss security settings in more detail elsewhere,
-    similar to https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/using-portal-roles-in-a-portlet.
+    similar to /develop/tutorials/-/knowledge_base/6-2/using-portal-roles-in-a-portlet.
     It would be getting a bit off track talking about it here, though. -Cody -->
 
 3.  Create a `web.xml` file in your JSF application's `webapp/WEB-INF` folder.
