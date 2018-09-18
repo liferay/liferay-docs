@@ -1,18 +1,18 @@
 # Installing Liferay @ide@ [](id=installing-liferay-ide)
 
-**Note:** This tutorial is targeted for developers who are interested in
-installing the latest 3.2.0 Developer Studio milestone. If you're interested in
-the latest 3.1.x GA release of Dev Studio, see the
-[Installing Liferay Developer Studio](/develop/reference/-/knowledge_base/7-0/installing-liferay-ide)
-tutorial.
-
 Liferay @ide@ is a plugin for Eclipse that provides many Liferay-specific
 features and additional enterprise only features. You can install it into your
-existing Eclipse environment, or Liferay provides a bundled version. In this
-tutorial, you'll learn the different methods available for installing Liferay
-Dev Studio. Before beginning the installation process, view Dev Studio's
+existing Eclipse environment, or Liferay provides a bundled version. Before
+beginning the installation process, view Dev Studio's
 [Compatibility Matrix](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix/developer-tools)
 to get acquainted with its supported Liferay versions and application servers.
+
+In this tutorial, you'll learn the different methods available for installing
+Liferay Dev Studio:
+
+- [install the Dev Studio bundle from scratch](#install-the-liferay-developer-studio-bundle)
+- [install Dev Studio into an existing Eclipse instance using an update URL](#install-liferay-developer-studio-into-eclipse-environment)
+- [install Dev Studio into an existing Eclipse instance using a ZIP file](#install-liferay-ide-into-eclipse-from-a-zip-file)
 
 **Important:** If you're installing Dev Studio into an existing Eclipse
 environment, you must be on Eclipse Oxygen or newer. For instructions on
@@ -32,8 +32,8 @@ update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
     [Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
     page. 
 
-2.  Download Liferay's
-    [Project SDK with @ide@](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/3.2.0%20M1/)
+2.  Download Liferay's latest 3.2.x
+    [Project SDK with @ide@](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
     executable that correlates to your operating system. The Project SDK
     includes @ide@,
     [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),

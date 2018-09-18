@@ -69,7 +69,7 @@ padding.
 for multiple navigation levels.
 
 You can also add your own 
-[custom templates](/develop/tutorials/-/knowledge_base/7-1/application-display-templates).
+[custom templates](/develop/tutorials/-/knowledge_base/7-0/application-display-templates).
 
 ### Menu Items to Show [](id=menu-items-to-show)
 

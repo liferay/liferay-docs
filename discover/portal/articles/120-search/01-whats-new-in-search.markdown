@@ -86,6 +86,15 @@ term. The URL is now friendly:
 <!--(/develop/tutorials/-/knowledge_base/7-1/search)--> to learn about the new,
 deprecated, and removed APIs and extension points for search infrastructure.
 
+**Solr 7.x Support**
+: The Solr Connector application was updated to support Solr 7.x. 
+
+<!-- Add link when available (LRDOCS-4745)
+Read
+[here](discover/deployment/-/knowledge_base/7-1/installing-solr) 
+for more information.
+-->
+
 **Legacy Search**
 : We're cheating with this one. It isn't a new feature, but the old way of doing
 search, inside one standalone application, is still just one checkbox away

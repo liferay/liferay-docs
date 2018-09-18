@@ -10,8 +10,8 @@ Liferay distributes all patches (fix packs and hotfixes) as ZIP files. When you
 download a patch, either from a LESA ticket (hotfix) or from the
 [Customer Portal](https://web.liferay.com/group/customer)
 (fix pack), place it in the Patching Tool's `patches` folder (e.g., `[Liferay
-Home]/patching-tool/patches`). To list your installed patches and available
-local patches, execute this command: 
+Home]/patching-tool/patches`) without unzipping it. To list your installed
+patches and available local patches, execute this command:
 
     patching-tool info
  
@@ -25,7 +25,7 @@ issue the following command:
 
 To make sure the all changed OSGi bundles replace the existing ones, delete the
 `osgi/state` folder from the 
-[Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home). 
+[Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home). 
 
 +$$$
 

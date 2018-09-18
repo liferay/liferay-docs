@@ -21,6 +21,12 @@ database and store it in its local cache.
 To enable Cluster Link, add this property to `portal-ext.properties`: 
 
     cluster.link.enabled=true
+    
+When you start @portal@ in a cluster, a log file message shows your cluster's name (e.g., `cluster=liferay-channel-control`): 
+
+    ------------------------------------------------------------------- 
+    GMS: address=oz-52865, cluster=liferay-channel-control, physical address=192.168.1.10:50643 
+    -------------------------------------------------------------------
 
 ## Modifying the Cache Configuration with a Module [](id=modifying-the-cache-configuration-with-a-module)
 

@@ -16,7 +16,7 @@ or
 to create themes.
 
 Themes created with the Liferay Theme Generator give you access to several 
-[theme gulp tasks](/develop/reference/-/knowledge_base/7-1/developing-themes) 
+[theme gulp tasks](/develop/tutorials/-/knowledge_base/7-1/developing-themes) 
 that offer basic functions, such as 
 [`build`](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files) 
 and 
@@ -53,6 +53,6 @@ Once your theme is developed it is packaged as a WAR (Web application ARchive)
 file and can be deployed to the server, either manually or using build tools.
 
 Once your theme is deployed, apply it to your pages through the 
-[Look and Feel menu](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/page-set-look-and-feel).
+[Look and Feel menu](/discover/portal/-/knowledge_base/7-1/page-set-look-and-feel).
 
 The only limitation is your imagination.

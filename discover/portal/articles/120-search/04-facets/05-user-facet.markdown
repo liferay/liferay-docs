@@ -12,7 +12,7 @@ The User Facet contains several configuration options:
 : Set the URL parameter name for the Facet. The default is *user*. Searching for
 *lunar resort* and clicking on a User Facet produces the URL
 
-    http://localhost:8080/web/guest/search?q=lunar resort&user=38716
+        http://localhost:8080/web/guest/search?q=lunar resort&user=38716
 
 **Max Terms**
 : Set the maximum number of facet terms to display, regardless of how

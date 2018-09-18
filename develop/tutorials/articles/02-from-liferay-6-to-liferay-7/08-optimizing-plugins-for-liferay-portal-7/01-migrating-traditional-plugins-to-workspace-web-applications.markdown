@@ -1,10 +1,11 @@
 # Migrating Traditional Plugins to Workspace Web Applications [](id=migrating-traditional-plugins-to-workspace-web-applications)
 
 After you've
-[adapted your traditional plugin](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-to @product@'s API, you can continue maintaining it in the Plugins SDK. The
-Plugins SDK, however, is deprecated as of 7.0. Maintaining plugins in
-the SDK will become increasingly difficult.
+[adapted your traditional plugin](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+to @product@'s API, you can continue maintaining it in the Plugins SDK 7.0. The
+Plugins SDK, however, is no longer available for @product-ver@. Visit the
+[Deprecated Apps in 7.1: What To Do](/discover/deployment/-/knowledge_base/7-1/deprecated-apps-in-7-1-what-to-do#foundation)
+article for more information on the Plugins SDK removal.
 [Liferay Workspace replaces the Plugins SDK](/develop/tutorials/-/knowledge_base/7-1/from-the-plugins-sdk-to-liferay-workspace), 
 providing a comprehensive Gradle development environment and more. A simple
 command migrates traditional plugins (such as portlets) to Gradle-based web

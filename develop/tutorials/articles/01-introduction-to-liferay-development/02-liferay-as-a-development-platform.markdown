@@ -36,9 +36,8 @@ freedom to implement the UI in any other technology.
 Because of this, you can use Liferay as a headless platform, because it's easy
 to create [web services](/develop/tutorials/-/knowledge_base/7-1/web-services)
 based on [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services),
-[JAX-RS, and JAX-WS](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs).
-Then you can build standalone web applications using any front-end technology or
-mobile technology you like. 
+JAX-RS, and JAX-WS. Then you can build standalone web applications using any
+front-end technology or mobile technology you like. 
 
 ## Extensibility [](id=extensibility)
 

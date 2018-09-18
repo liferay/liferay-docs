@@ -36,9 +36,9 @@ accomplish these steps.
 ## Step 1: Specify Your Custom SQL [](id=step-1-specify-your-custom-sql)
 
 After you've tested your SQL, you must specify it in a particular file for
-Liferay to access it. Liferay's
-[`CustomSQLUtil`](@app-ref@/foundation/latest/javadocs/com/liferay/portal/dao/orm/custom/sql/CustomSQLUtil.html)
-class retrieves SQL from a file called `default.xml` in your service module's
+Liferay to access it. `CustomSQL` class (from module
+[`com.liferay.portal.dao.orm.custom.sql.api`](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.dao.orm.custom.sql.api/))
+retrieves SQL from a file called `default.xml` in your service module's
 `src/main/resources/META-INF/custom-sql/` folder. You must create the
 `custom-sql` folder and create the `default.xml` file in that `custom-sql`
 folder. The `default.xml` file must adhere to the following format:
@@ -118,7 +118,7 @@ how you could write the `EntryFinderImpl` class:
         try {
             session = openSession();
 
-            String sql = CustomSQLUtil.get(
+            String sql = _customSQL.get(
                 getClass(),
                 FIND_BY_ENTRYNAME_ENTRYMESSAGE_GUESTBOOKNAME);
 
@@ -152,10 +152,13 @@ how you could write the `EntryFinderImpl` class:
         EntryFinder.class.getName() +
             ".findByEntryNameEntryMessageGuestbookName";
 
+    @ServiceReference(type=CustomSQL.class)
+    private CustomSQL _customSQL;
+
 The custom finder method opens a new Hibernate session and uses Liferay's
-`CustomSQLUtil.get(String id)` method to get the custom SQL to use for the
-database query. The `FIND_BY_ENTRYNAME_ENTRYMESSAGE_GUESTBOOKNAME` static field
-contains the custom SQL query's ID. The
+`CustomSQL.get(Class<?> clazz, String id)` method to get the custom SQL to use
+for the database query. The `FIND_BY_ENTRYNAME_ENTRYMESSAGE_GUESTBOOKNAME`
+static field contains the custom SQL query's ID. The
 `FIND_BY_EVENTNAME_EVENTDESCRIPTON_LOCATIONNAME` string is based on the
 fully-qualified class name of the `*Finder` interface (`EventFinder`) and the
 name of the finder method (`findByEntryNameEntryMessageGuestbookName`).

@@ -47,7 +47,7 @@ given period of time. It's not the same as the number of visitors, because it
 doesn't try to count only unique IP addresses. So over the last 30 days, one
 visitor (IP address) could come back to the Page 100 times. That means there are
 100 Page Views, but only one visitor (assuming the same device was used to
-access the Page each time). However, a unique view isn't be logged for a single
+access the Page each time). However, a unique view isn't logged for a single
 user unless at least 30 minutes of inactivity <!-- need info on whether 30
 minutes is accurate and that this is how views are calculated--> on the Page
 passes before the user interacts with the Page again.

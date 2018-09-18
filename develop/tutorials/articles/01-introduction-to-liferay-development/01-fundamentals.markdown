@@ -82,7 +82,7 @@ Here are some key standards @product@ supports:
     These are the most widely adopted security protocols for SSO and application
     sign in, supported through specific Apps that can be installed from
     [Liferay's Marketplace](http://marketplace.liferay.com).
--   [JAX-WS and JAX-RS](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs):
+-   JAX-WS and JAX-RS:
     Incorporated since Liferay 7 as the preferred tooling to create web
     services.
 -   [OSGi r6](https://www.osgi.org):

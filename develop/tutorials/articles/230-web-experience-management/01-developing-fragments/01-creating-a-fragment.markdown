@@ -53,4 +53,4 @@ As you work, you can observe the preview in the preview pane.
 ![Figure 1: The Fragment editor with HTML and CSS code and a live preview.](../../../images/fragment-editor-basic.png)
 
 From here, the Fragment can be used to create a Content Page. To see this 
-process in action, see the [Building Content Pages from Fragments]()/discover/deployment/-/knowledge_base/7-1/building-content-pages-from-fragments) tutorial. Next, you'll explore some Fragment-specific tags. 
+process in action, see the [Building Content Pages from Fragments](/discover/portal/-/knowledge_base/7-1/building-content-pages-from-fragments) tutorial. Next, you'll explore some Fragment-specific tags. 

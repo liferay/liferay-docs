@@ -23,19 +23,7 @@ should also have the appropriate Tern modules enabled based on the language
 you're writing in. For example, if you're writing in a jQuery file, you must
 apply the Tern *jQuery* module to use code assist for that language. See the
 [Enabling Code Assist Features in your Project](/develop/tutorials/-/knowledge_base/7-1/enabling-code-assist-features-in-your-project)
-tutorial to learn how to enable Tern features for your projects. By default,
-Liferay projects created using the Plugins SDK already have Tern features
-enabled.
-
-+$$$
-
-**Note:** For those developing with the Plugins SDK, the taglib descriptions
-that Dev Studio makes available to users are dependent upon the Plugins SDK
-version. Dev Studio uses taglib descriptions from the current SDK's
-`util-taglib.jar` file, so a more up-to-date Plugins SDK means more up-to-date
-taglib descriptions. 
-
-$$$
+tutorial to learn how to enable Tern features for your projects.
 
 You'll begin testing the AlloyUI code assist features first.
 

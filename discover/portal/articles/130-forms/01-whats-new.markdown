@@ -60,8 +60,8 @@ Fields if you need multiple similarly configured fields.
 
 **Validate Text Field Entries**
 : Add validation logic to a Text field and create custom messages for form
-validation errors.
-<!-- I don't see RegEx Validation. Did that not make it into 7.1? -->
+validation errors. Use regular expressions in your validation by choosing the
+_Does not match_ value in the _If Input_ Select from List field.
 
 ![Figure 9: Validate Text fields to ensure Users enter the correct data.](../../images/forms-text-validation.png)
 

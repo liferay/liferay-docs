@@ -14,10 +14,9 @@ The Control Panel is divided into four main areas: Users, Sites, Apps,
 and Configuration. The Users section lets you create and manage users,
 organizations, user groups, roles, and password policies. If monitoring has been
 enabled for your portal, you can also view all the live portal sessions of your
-users. If the Audit plugins have been installed from Liferay Marketplace, the
-Audit section also appears.
+users.
 
-That's what this section of articles describes: User Management. Use these links
+<!--That's what this section of articles describes: User Management. Use these links
 to navigate quickly to the content you want:
 
 - [Users](/discover/portal/-/knowledge_base/7-1/users-and-organizations)
@@ -30,12 +29,25 @@ to navigate quickly to the content you want:
     - [Defining Role Permissions](/discover/portal/-/knowledge_base/7-1/defining-role-permissions)
 - [User Groups](/discover/portal/-/knowledge_base/7-1/user-groups)
 
-<!--These articles are planned but not yet written:
+These articles are planned but not yet written:
 
 - Password Policies(/discover/portal/-/knowledge_base/7-1/password-policies)
 - Monitoring Users(/discover/portal/-/knowledge_base/7-1/monitoring-users)
 - Auditing Users(/discover/portal/-/knowledge_base/7-1/auditing-users)
 -->
+
++$$$
+
+**Anonymous User:** *Anonymous Anonymous* is used for the new 
+[Managing User Data](/discover/portal/-/knowledge_base/7-1/managing-user-data)
+functionality. Created the first time an administrator clicks *Delete Personal
+Data* for a User, *Anonymous Anonymous* is a deactivated User assigned 
+[anonymized assets](/discover/portal/-/knowledge_base/7-1/managing-user-data#anonymizing-data). 
+The Anonymous User is configurable, so the name and configuration details might
+be different in your virtual instance.
+
+$$$
+
 
 ## What's New with User Management? [](id=whats-new-with-user-management)
 
