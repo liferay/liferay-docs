@@ -102,22 +102,27 @@ a web content article when an image preview is available:
 ## HTML Vertical Card [](id=html-vertical-card)
 
 The HTML Vertical card lets you display custom HTML in the header of the 
-vertical card. Below is an example configuration:
+vertical card. The example below embeds a video:
 
     <liferay-util:buffer var = "customThumbnailHtml">
-    	<h1>Title</h1>
-    	<span>Subtitle</h2>
+    	<div class="embed-responsive embed-responsive-16by9">
+    	  <iframe class="embed-responsive-item" 
+        src="https://www.youtube.com/embed/8Bg9jPJpGOM?rel=0" 
+        allowfullscreen></iframe>
+    	</div>
     </liferay-util:buffer>
 
-    <liferay-frontend:html-vertical-card
-    	actionJsp="/test_action.jsp"
-    	actionJspServletContext="<%= application %>"
-    	html="<%= customThumbnailHtml %>"
-    	title="Card Title"
-    	url="https://www.liferay.com"
-    >
-    	<%@ include file="/file_entry_vertical_card.jspf" %>
-    </liferay-frontend:html-vertical-card>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <liferay-frontend:html-vertical-card
+          	html="<%= customThumbnailHtml %>"
+          	title="My Video"
+          >
+          </liferay-frontend:html-vertical-card>
+        </div>
+      </div>
+    </div>
 
 ![Figure 4: Html vertical cards let you display custom HTML in the card's header.](../../../images/liferay-frontend-taglib-cards-html-vertical.png)
 
