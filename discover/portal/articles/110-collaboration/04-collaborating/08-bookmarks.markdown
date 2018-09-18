@@ -7,6 +7,12 @@ maintenance tips, and more. Administrators can create bookmarks in the widget,
 and users can access them. Both internal pages as well as external sites can be 
 bookmarked. 
 
++$$$
+
+**Note:** The Bookmarks widget is currently available for Liferay DXP only. 
+
+$$$
+
 ## Creating Bookmarks and Folders [](id=creating-bookmarks-and-folders)
 
 To use the Bookmarks widget, you must first add it to a page. Select *Add* 
