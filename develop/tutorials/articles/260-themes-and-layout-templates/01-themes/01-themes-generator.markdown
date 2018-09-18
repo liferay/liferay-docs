@@ -208,14 +208,18 @@ theme. Note that you can switch to using a different base theme by executing the
 [`gulp extend`](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
 command. 
 
-**Important**: The
-[liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled)
-and
-[liferay-theme-unstyled](https://www.npmjs.com/package/liferay-theme-unstyled)
-themes are base themes. They're analogous to Java APIs. Liferay's Classic theme
-and other themes that use liferay-theme-styled or liferay-theme-unstyled as a
-base theme are analogous to API implementations--they're not meant to be
-extended. Extending Liferay's Classic theme is strongly discouraged. 
++$$$
+
+**Note**: The 
+[liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled) 
+and 
+[liferay-theme-unstyled](https://www.npmjs.com/package/liferay-theme-unstyled) 
+themes are base themes. They're analogous to Java APIs. Liferay's Classic theme 
+and other themes that use liferay-theme-styled or liferay-theme-unstyled as a 
+base theme are analogous to API implementations--they're not meant to be 
+extended. Extending Liferay's Classic theme is strongly discouraged.
+
+$$$
 
 **Important**: By default, your theme is based off of the styled theme and uses
 lib-sass/bourbon, instead of Compass. If, however, you are on Windows and are
