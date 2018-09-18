@@ -10,13 +10,13 @@ class).
 
 The *Staged Model Repository* framework removes this barrier by linking an app's
 staged model to a local service. This lets the Staging framework call a
-staged model repository independently based on which entity is currently being
-processed. This gives you access to entity-specific methods tailored
-specifically for the staged model data you're handling.
+staged model repository independently based on the entity being processed. This
+gives you access to entity-specific methods tailored specifically for the
+staged model data you're handling.
 
 ![Figure 1: Staged Model Repositories provide a Staging-specific layer of functionality for your local services.](../../../images/staged-model-repository.png)
 
-So what kind of *entity-specific* methods are we talking about here? Your data
+What kind of *entity-specific* methods are we talking about here? Your data
 handlers only expose a specific set of actions, like export and import methods.
 The Staged Model Repository framework provides CRUD operations for a specific
 staged model that are not exposed using local services.
@@ -25,7 +25,7 @@ The staged model repository does not avoid using your app's local services. It
 only provides an additional layer that provides Staging-specific functionality.
 So how does this work? A brief Staging process is outlined below:
 
-- `*StagedModelDataHandler` deserializes the provided
+- `*StagedModelDataHandler` de-serializes the provided
   [LAR file's](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers#liferay-archive-lar-file)
   XML into a model.
 - `*StagedModelRepository` updates the model based on the environment and
