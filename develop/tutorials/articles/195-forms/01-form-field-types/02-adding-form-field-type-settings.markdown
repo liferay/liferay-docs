@@ -22,6 +22,7 @@ To add settings to form field types, you'll use these steps:
 
 - Write an interface that extends the default field type configuration,
   `DefaultDDMFormFieldTypeSettings`.
+- Update the `*FormFieldType` to refer the new interface created on the previous step.
 - Update the `*FormFieldRenderer` so it makes the new configuration options
   available to the JavaScript component and/or the Soy template for rendering.
 - Update the JavaScript component (defined in `time_field.js` in our example) to
@@ -163,8 +164,52 @@ the `mask` and `placeholder` settings are configured with this annotation. Don't
 
 $$$
 
-Once your `*TypeSettings` class is finished, move on to update the `*Renderer`
+Once your `*TypeSettings` class is finished, move on to update the `*Type`
 class for your form field type.
+
+## Updating the Type Class
+
+Until now, the class `TimeDDMFormFieldType` has just one method (`getName`), which returns the name of the current form field. But, from now on, we need to add a new method to refer the class `TimeDDMFormFieldTypeSettings` that holds the specific settings of the Time field. Actually, this "new method" already exists in the base class (`BaseDDMFormFieldType`) extended by the class `TimeDDMFormFieldType`, therefore you just need to override this method. The name of the method to be overriden is `getDDMFormFieldTypeSettings` and it'll look like the following:
+
+    @Override
+	public Class<? extends DDMFormFieldTypeSettings>
+	    getDDMFormFieldTypeSettings() {
+
+	    return TimeDDMFormFieldTypeSettings.class;
+	}
+
+After include the above code, the class `TimeDDMFormFieldType` should be like this:
+
+    @Component(
+        immediate = true,
+        property = {
+            "ddm.form.field.type.description=time-field-type-description",
+            "ddm.form.field.type.display.order:Integer=10",
+            "ddm.form.field.type.icon=time",
+            "ddm.form.field.type.js.class.name=Liferay.DDM.Field.Time",
+            "ddm.form.field.type.js.module=liferay-ddm-form-field-time",
+            "ddm.form.field.type.label=time-field-type-label",
+            "ddm.form.field.type.name=time"
+        },
+        service = DDMFormFieldType.class
+    )
+    public class TimeDDMFormFieldType extends BaseDDMFormFieldType {
+
+        @Override
+        public Class<? extends DDMFormFieldTypeSettings>
+            getDDMFormFieldTypeSettings() {
+
+            return TimeDDMFormFieldTypeSettings.class;
+        }
+
+        @Override
+        public String getName() {
+            return "time";
+        }
+
+    }
+
+In the next section, you'll find out how to update the `*Renderer` class to allow it get the new Time field settings.
 
 ## Updating the Renderer Class [](id=updating-the-renderer-class)
 
