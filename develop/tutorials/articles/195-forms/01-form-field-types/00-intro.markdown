@@ -36,6 +36,8 @@ Before getting started, learn what @product@'s field types consist of.
 
 The `dynamic-data-mapping-type-*` modules in @product@'s source code are good templates to follow when developing your own field types. For example, look at the directory structure of the `dynamic-data-mapping-type-paragraph` module (version 3.0.0):
 
+    .babelrc
+    .npmbundlerrc
     bnd.bnd
     build.gradle
     package-lock.json
@@ -95,10 +97,14 @@ need to create:
 out, according to the form fields tutorial planning section -->
 
 In addition to the Java classes, Soy templates, and JavaScript files, @product@
-applications contain a `bnd.bnd` file to manage the module's metadata, a
-`build.gradle` file to manage its dependencies and build properties, a `package.json`
-file to manage the npm modules, and a `package-lock.json` file, automatically generated,
-to track the npm modules dependencies. This example follows those patterns.
+applications contain the following files:
+
+- `.babelrc`: [Babel](https://babeljs.io/) configuration file.
+- `.npmbundlerrc`: [liferay-npm-bundler](https://dev.liferay.com/en/develop/tutorials/-/knowledge_base/7-0/liferay-npm-bundler) configuration file.
+- `bnd.bnd`: manages module's metadata.
+- `build.gradle`: manages module's dependencies and build properties.
+- `package.json`: manages the npm modules.
+- `package-lock.json`: file, automatically generated, to track the npm modules dependencies.
 
 <!-- UPDATE WHEN TEMPLATE PROJECT IS PUBLISHED ON repository.liferay.com
 +$$$
