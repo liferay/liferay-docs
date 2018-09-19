@@ -22,7 +22,7 @@ Provides a suite of JSF components that utilize [AlloyUI](http://alloyui.com/).
 
 |Branch|Example Artifact|AlloyUI|JSF API|Additional Info|
 |------|----------------|-------|-------|---------------|
-|[master (3.x)](https://github.com/liferay/liferay-faces-alloy/tree/master)|com.liferay.faces.alloy-3.0.1.jar|3.0.x|2.2+|*AlloyUI 3.0.x is the version that comes bundled with Liferay Portal 7.0.*|
+|[master (3.x)](https://github.com/liferay/liferay-faces-alloy/tree/master)|com.liferay.faces.alloy-3.0.1.jar|3.0.x|2.2+|*AlloyUI 3.0.x is the version that comes bundled with Liferay Portal 7.0/7.1.*|
 |[2.x](https://github.com/liferay/liferay-faces-alloy/tree/2.x)|com.liferay.faces.alloy-2.0.1.jar|2.0.x|2.1+|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
 |[1.x](https://github.com/liferay/liferay-faces-alloy/tree/1.x)|com.liferay.faces.alloy-1.0.1.jar|2.0.x|1.2|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
 
@@ -48,8 +48,8 @@ and also takes advantage of Liferay-specific features such as friendly URLs.
 
 |Branch           |Example Artifact                  |&nbsp;&nbsp;Liferay Portal API&nbsp;&nbsp;|&nbsp;&nbsp;Bridge API&nbsp;&nbsp;|&nbsp;&nbsp;Portlet API&nbsp;&nbsp;|JSF API|
 |-----------------|------------------------------------|:--------------:|:----------:|:-----------:|:-------:|
-|[6.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/6.x)|com.liferay.faces.bridge.ext-6.0.0.jar|*Future*|5.x|3.0|2.2|
-|[5.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/5.x)|com.liferay.faces.bridge.ext-5.0.1.jar|7.0.x|4.x|2.0|2.2|
+|[6.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/6.x)|com.liferay.faces.bridge.ext-6.0.0.jar|7.1.x+|5.x|3.0|2.2|
+|[5.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/5.x)|com.liferay.faces.bridge.ext-5.0.1.jar|7.0.x/7.1.x|4.x|2.0|2.2|
 |[4.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/4.x)|RESERVED|N/A|N/A|N/A|N/A|
 |[3.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/3.x)|com.liferay.faces.bridge.ext-3.0.1.jar|6.2.x|4.x|2.0|2.2|
 |[2.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/2.x)|com.liferay.faces.bridge.ext-2.0.1.jar|6.2.x|3.x|2.0|2.1|
@@ -62,7 +62,7 @@ Provides a suite of JSF components that are based on the JSP tags provided by
 
 |Branch|Example Artifact|Liferay Portal API&nbsp;&nbsp;|&nbsp;&nbsp;JSF API|
 |------|----------------|:------------------:|:-------:|
-|[3.x](https://github.com/liferay/liferay-faces-portal/tree/3.x)|com.liferay.faces.portal-3.0.1.jar|7.0.x|2.2+|
+|[3.x](https://github.com/liferay/liferay-faces-portal/tree/3.x)|com.liferay.faces.portal-3.0.1.jar|7.0.x/7.1.x|2.2+|
 |[2.x](https://github.com/liferay/liferay-faces-portal/tree/2.x)|com.liferay.faces.portal-2.0.1.jar|6.2.x|2.1+|
 |[1.x](https://github.com/liferay/liferay-faces-portal/tree/1.x)|com.liferay.faces.portal-1.0.1.jar|6.2.x|1.2|
 
@@ -85,40 +85,3 @@ following figure to view the Liferay Faces dependency diagram.
 
 Next, you can view some example configurations to see the new versioning scheme
 in action.
-
-## Example Configurations [](id=example-configurations)
-
-### Liferay Portal 7.0: AlloyUI 3.0 / Liferay Faces Portal 3 / Portlet 2.0 / JSF 2.2 [](id=example-configuration-liferay-portal-7-0)
-
-    <dependencies>
-        <dependency>
-            <groupId>com.liferay.faces</groupId>
-            <artifactId>com.liferay.faces.alloy</artifactId>
-            <version>3.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.liferay.faces</groupId>
-            <artifactId>com.liferay.faces.bridge.impl</artifactId>
-            <version>4.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.liferay.faces</groupId>
-            <artifactId>com.liferay.faces.bridge.ext</artifactId>
-            <version>5.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.liferay.faces</groupId>
-            <artifactId>com.liferay.faces.portal</artifactId>
-            <version>3.0.1</version>
-        </dependency>
-    </dependencies>
-
-### Apache Pluto 3.0: Portlet 3.0 / JSF 2.2 [](id=example-configuration-apache-pluto-3-0)
-
-    <dependencies>
-        <dependency>
-            <groupId>com.liferay.faces</groupId>
-            <artifactId>com.liferay.faces.bridge.impl</artifactId>
-            <version>5.0.0</version>
-        </dependency>
-    </dependencies>
