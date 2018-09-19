@@ -1,37 +1,37 @@
 # Adding a Button to the Add Toolbar [](id=adding-a-button-to-the-add-toolbar)
 
-The Add Toolbar appears in the AlloyEditor upon clicking in the editor and 
-clicking the Add button: 
+The Add Toolbar appears in the AlloyEditor when your cursor is in the editor and
+you click the Add button: 
 
 ![Figure 1: The Add toolbar lets you add content to the editor.](../../../../images/alloyeditor-add-toolbar.png)
 
 Follow these steps to add a button to the AlloyEditor's Add Toolbar:
-    
+ 
 1.  Inside the `populateConfigJSONObject()` method, retrieve the Add Toolbar:
     
         JSONObject addToolbar = toolbarsJSONObject.getJSONObject("add");
-    
+ 
 2.  Retrieve the existing Add Toolbar buttons:
     
         JSONArray addToolbarButtons = addToolbar.getJSONArray("buttons");
-        
+ 
 3.  Add the button to the existing buttons. Note that the button's name is case 
     sensitive. The example below adds the `camera` button to the Add Toolbar:
     
         addToolbarButtons.put("camera");
-        
+ 
     The camera button is just one of the buttons available by default with
-    AlloyEditor, however, they are not all enabled. Here's the full list of
-    available buttons you can add to the Add Toolbar: 
+    AlloyEditor, but they are not all enabled. Here's the full list of available
+    buttons you can add to the Add Toolbar: 
     
     - camera
     - embed
     - hline
     - image
     - table
-    
+
     See 
-    [https://alloyeditor.com/docs/features/](https://alloyeditor.com/docs/features/) 
+    [here](https://alloyeditor.com/docs/features/) 
     for an explanation of each button's features.
 
 4.  Update the AlloyEditor's configuration with the changes you made:
