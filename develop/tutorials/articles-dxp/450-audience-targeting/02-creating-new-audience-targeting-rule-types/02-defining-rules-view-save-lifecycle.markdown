@@ -120,7 +120,7 @@ created.
     You can think of the `populateContext` method as the intermediary between
     your JSP and your backend code. You can see how to create the weather rule's
     UI using a JSP by seeing the
-    [Defining the Rule's UI](/develop/tutorials/-/knowledge_base/7-0/creating-new-audience-targeting-rule-types#defining-the-rules-ui)
+    [Defining the Rule's UI](/develop/tutorials/-/knowledge_base/7-1/creating-new-audience-targeting-rule-types#defining-the-rules-ui)
     section. Once the HTML is successfully retrieved and the user has set the
     weather value and clicked *Save*, the action phase begins. 
 

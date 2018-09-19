@@ -4,8 +4,8 @@ Adding a new type of rule to the Audience Targeting application is easy. First,
 you must create a module and ensure it has the necessary Content Targeting API 
 dependencies.
 
-1.  [Create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
-    project for deploying a rule. A Blade CLI [content-targeting-rule](/develop/reference/-/knowledge_base/7-0/content-targeting-rule-template)
+1.  [Create a module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module) 
+    project for deploying a rule. A Blade CLI [content-targeting-rule](/develop/reference/-/knowledge_base/7-1/content-targeting-rule-template)
     template is available to help you get started quickly. It sets the default
     configuration for you, and it contains boilerplate code so you can skip the
     file creation steps and get started right away.
@@ -27,7 +27,7 @@ dependencies.
         }
 
     You can learn more about exposing the Content Targeting API in the
-    [Accessing the Content Targeting API](/develop/tutorials/-/knowledge_base/7-0/accessing-the-content-targeting-api)
+    [Accessing the Content Targeting API](/develop/tutorials/-/knowledge_base/7-1/accessing-the-content-targeting-api)
     tutorial. Once you've created your module and specified its dependencies,
     you'll need to define your rule's behavior. How your rule behaves is
     controlled by a Java class file that you create.
@@ -47,7 +47,7 @@ dependencies.
     class to support generating your rule's UI using JSPs. This tutorial demonstrates implementing the UI using a JSP,
     and assumes the `Rule` interface is implemented by extending the `BaseJSPRule` class. For more information on
     choosing a UI for your rule, see the
-    [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-rules#selecting-a-ui-technology)
+    [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-1/best-practices-for-rules#selecting-a-ui-technology)
     section.
 
 4.  Directly above the class's declaration, insert the following code:
@@ -68,7 +68,7 @@ interface's methods. You'll begin implementing these methods next.
 users based on their social network profile, it's important to remember that
 the specific social network's SSO (Single Sign On) must be enabled and
 configured properly. Visit the
-[Social Rules](/discover/portal/-/knowledge_base/7-0/liferay-audience-targeting-rules#social-rules)
+[Social Rules](/discover/portal/-/knowledge_base/7-1/liferay-audience-targeting-rules#social-rules)
 section for more details.
 
 $$$

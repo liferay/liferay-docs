@@ -1,13 +1,13 @@
 # Accessing the Content Targeting API [](id=accessing-the-content-targeting-api)
 
 The [Audience Targeting](https://www.liferay.com/marketplace/-/mp/application/43707761)
-application can be used to show relevant content to users based on profiles. 
-The Content Targeting API provides the ability to add Audience Targeting 
-features to third party applications, or customize how Liferay's applications 
-interact with Audience Targeting. For instance, you could list user segments in 
-your own application or update a campaign when someone creates a calendar 
-event. Using the Content Targeting API, you can unleash the power of Audience 
-Targeting to the realms outside of Liferay's default applications.
+application shows relevant content to users based on profiles. The Content 
+Targeting API provides the ability to add Audience Targeting features to third 
+party applications, or customize how Liferay's applications interact with 
+Audience Targeting. For example, you could list user segments in your own 
+application or update a campaign when someone creates a calendar event. Using 
+the Content Targeting API, you can unleash the power of Audience Targeting to 
+the realms outside of Liferay's default applications.
 
 In this tutorial, you'll learn how to give your application access to the
 Content Targeting API. Then you can view some examples of how to use the Java
@@ -23,10 +23,10 @@ dependency.
 1. Open the `build.gradle` file in your app's project folder.
 
 2. Find the `dependencies` declaration and add the following line within that
-   declaration:
-
+    declaration:
+   
         provided group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
-
+        
     The complete declaration should look like this:
 
         dependencies {
@@ -43,10 +43,7 @@ how to use the Content Targeting API by studying a few examples.
 There are two ways to call the Content Targeting API: through the Java API or
 through the JSON API. 
 
-Suppose you'd like to display a list of existing user segments in your portlet.
-First you need to obtain an implementation of the `UserSegmentLocalService`
-provided by Audience Targeting. You can do this by adding the following code to
-your Portlet class (e.g., the class that extends the `MVCPortlet` class):
+To display a list of existing user segments in your portlet, first you need to obtain an implementation of the `UserSegmentLocalService` provided by Audience Targeting. You can do this by adding the following code to your Portlet class (e.g., the class that extends the `MVCPortlet` class):
 
     @Reference(unbind = "-")
     protected void setUserSegmentLocalService(
@@ -57,8 +54,8 @@ your Portlet class (e.g., the class that extends the `MVCPortlet` class):
 
     private UserSegmentLocalService _userSegmentLocalService;
 
-When an implementation of the `UserSegmentLocalService` is available (i.e., the
-Audience Targeting app has been installed) the `_userSegmentLocalService` field
+When the Audience Targeting application is installed and an implementation of 
+the `UserSegmentLocalService` is available the `_userSegmentLocalService` field
 is populated. Otherwise, the portlet won't be available till this dependency
 is resolved.
 
@@ -167,11 +164,3 @@ JSON API is just as easy as accessing the related Java API.
 
 You've learned how easy it is to expose the Content Targeting API and use it in
 your application to unleash its power!
-
-## Related Topics [](id=related-topics)
-
-[Creating New Audience Rule Types](/develop/tutorials/-/knowledge_base/7-1/creating-new-audience-targeting-rule-types)
-
-[Targeting Content to Your Audience](/discover/portal/-/knowledge_base/7-1/targeting-content-to-your-audience)
-
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-1/running-service-builder-and-understanding-the-generated-code)

@@ -44,15 +44,3 @@ rule by downloading its
 
 Now you've created and examined a fully functional rule and have the knowledge
 to create your own.
-
-<!-- ## Customize the Rules Engine -->
-
-## Related Topics [](id=related-topics)
-
-[Best Practices for Rules](/develop/tutorials/-/knowledge_base/7-0/best-practices-for-rules)
-
-[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
-
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
-
-[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-0/service-builder-persistence)
