@@ -45,7 +45,7 @@ newsletters, if there's more than one.
 
 To learn more about how metrics are used in the Audience Targeting application,
 visit the
-[Defining Metrics](https://dev.liferay.com/discover/portal/-/knowledge_base/7-0/managing-campaigns#defining-metrics)
+[Defining Metrics](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/managing-campaigns#defining-metrics)
 section.
 
 For this tutorial, you'll create a newsletter that can track who views it. This
@@ -58,3 +58,11 @@ described above.
 
 Now that you have an idea of how to plan your new metric, you'll begin
 creating one next!
+
+## Related Topics [](id=related-topics)
+
+[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-blade-cli)
+
+[Defining Metrics](/discover/portal/-/knowledge_base/7-1/managing-campaigns#defining-metrics)
+
+[Audience Targeting Metrics](/discover/portal/-/knowledge_base/7-1/audience-targeting-metrics)

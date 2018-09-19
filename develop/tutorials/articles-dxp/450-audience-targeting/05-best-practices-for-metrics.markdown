@@ -10,10 +10,10 @@ you should understand the four components you can specify for a metric:
 - *Language Keys (optional)*
 
 You discuss metric behavior and its UI configuration in great detail in the
-[Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting)
+[Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/7-1/tracking-user-actions-with-audience-targeting)
 tutorial. To learn more about language keys and how to create, use, and generate
 them, visit the
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+[Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
 tutorials.
 
 Audience Targeting gives you the option to choose whatever frontend technology
@@ -57,11 +57,3 @@ choose, and to return it as a string that is viewable from your metric's form.
 If you plan, therefore, on using an alternative to JSP or FreeMarker, you
 must override this method by creating and modifying it in your `-TrackingAction`
 class.
-
-## Related Topics [](id=related-topics)
-
-[Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting)
-
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
-
-[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-0/service-builder-persistence)

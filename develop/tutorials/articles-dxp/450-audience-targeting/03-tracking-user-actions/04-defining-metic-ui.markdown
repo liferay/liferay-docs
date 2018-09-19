@@ -83,11 +83,3 @@ You can view the finished version of the newsletter metric by downloading its
 
 Now you've created and examined a fully functional metric and have the knowledge
 to create your own.
-
-## Related Topics [](id=related-topics)
-
-[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
-
-[Defining Metrics](/discover/portal/-/knowledge_base/7-0/managing-campaigns#defining-metrics)
-
-[Audience Targeting Metrics](/discover/portal/-/knowledge_base/7-0/audience-targeting-metrics)

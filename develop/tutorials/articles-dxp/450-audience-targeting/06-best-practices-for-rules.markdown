@@ -85,11 +85,3 @@ it deletes any data associated with the rule that is currently being deleted.
 reference to a page or web content article), you may need to override the
 `BaseRule.exportData` and `BaseRule.importData` methods, to manage the content
 properly.
-
-## Related Topics [](id=related-topics)
-
-[Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/7-1/creating-new-audience-targeting-rule-types)
-
-[Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
-
-[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-1/service-builder-persistence)

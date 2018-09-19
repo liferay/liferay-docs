@@ -112,13 +112,13 @@ file is already created.
     You can think of the `populateContext` method as the intermediary between
     your JSP and your backend code. You can see how to create the newsletter
     metric's UI using a JSP by skipping to the
-    [Defining the Metric's UI](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
+    [Defining the Metric's UI](/develop/tutorials/-/knowledge_base/7-1/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
     section. Once the HTML is successfully retrieved and the user has set the
     newsletter's values and clicked *Save*, the action phase begins. 
 
 3.  Once the action phase begins, AT processes the tracking action (metric). The
     `processTrackingAction(...)` method takes the values from the
-    [metric's UI form](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
+    [metric's UI form](/develop/tutorials/-/knowledge_base/7-1/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
     and stores them in the corresponding fields of the `trackingActionInstance`.
     Since the
     [BaseTrackingAction](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseTrackingAction.html)
@@ -136,7 +136,7 @@ file is already created.
     your metric's information to a database. You should invoke your services'
     update logic within the `processTrackingAction` method. For more information
     on creating services, see the
-    [Service Builder](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)
+    [Service Builder](/develop/tutorials/-/knowledge_base/7-1/business-logic-and-data-access)
     tutorials.
 
     $$$

@@ -4,8 +4,8 @@ Adding a new metric to the Audience Targeting application is easy. First,
 you must create a module and ensure it has the necessary Content Targeting API 
 dependencies.
 
-1.  [Create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
-    project for deploying a metric. A Blade CLI [content-targeting-tracking-action](/develop/reference/-/knowledge_base/7-0/content-targeting-tracking-action-template)
+1.  [Create a module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module) 
+    project for deploying a metric. A Blade CLI [content-targeting-tracking-action](/develop/reference/-/knowledge_base/7-1/content-targeting-tracking-action-template)
     template is available to help you get started quickly. It sets the default
     configuration for you, and it contains boilerplate code so you can skip the
     file creation steps and get started right away.
@@ -50,7 +50,7 @@ dependencies.
     [TrackingAction](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
     interface is implemented by extending the `BaseJSPTrackingAction` class. For
     more information on choosing a UI for your metric, see the
-    [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-metrics#selecting-a-ui-technology)
+    [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-1/best-practices-for-metrics#selecting-a-ui-technology)
     section.
 
 4.  Directly above the class's declaration, insert the following annotation:
