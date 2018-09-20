@@ -139,6 +139,8 @@ and layout. The following steps explain how:
 
         </com.your.package.AddBookmarkView>
 
+![Figure 1: Add Bookmark Screenlet's layout contains two text fields and a button.](../../../images/screens-android-add-bookmark-view.png)
+
 Next, you'll create your Screenlet's View class. 
 
 ### Creating the Screenlet's View Class [](id=creating-the-screenlets-view-class)
