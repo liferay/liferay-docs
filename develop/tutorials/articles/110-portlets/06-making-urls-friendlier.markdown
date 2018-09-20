@@ -58,6 +58,28 @@ Use `<pattern>` tags to define placeholder values for the parameters that
 normally appear in the generated URL. This is just a mask. The beastly URL still
 lurks beneath it.
 
++$$$
+
+**Warning:** Make sure your `pattern` values don't end in a slash `/`. A 
+trailing slash character prevents the request from identifying the correct
+route. 
+
+$$$
+
+**Important:** If your portlet is instanceable, you must use a variant of the 
+`instanceId` in the `pattern` value. If the starting value is `render-it`, for
+example, use one of these patterns:
+
+    <pattern>/{userIdAndInstanceId}/render-it</pattern>
+
+or
+
+    <pattern>/{instanceId}/render-it</pattern>
+
+or
+
+    <pattern>/{p_p_id}/render-it</pattern>
+
 Use `<implicit-parameter>` tags to define parameters that are always the same
 for the URL. For example, for a render URL, you can be certain that the
 `p_p_lifecycle` parameter is always `0`. You don't have to define these types
