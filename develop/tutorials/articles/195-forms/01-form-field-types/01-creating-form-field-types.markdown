@@ -16,13 +16,13 @@ There are several steps involved in creating a form field type:
 +$$$
 
 **Note:** To avoid manually creating your own project, use
-[BladeCLI](/developer/tutorials/-/knowledge_base/7-0/blade-cli). If you have
+[BladeCLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). If you have
 Blade CLI on your machine, there's a template for creating form fields you can
 leverage using the following command syntax:
 
     blade create -t form-field [ADDITIONAL OPTIONS] [PROJECT NAME]
 
-See the [BladeCLI](/developer/tutorials/-/knowledge_base/7-0/blade-cli)
+See the [BladeCLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
 documentation for more information, such as the answer to yuor question, What
 are those additional options?"
 
@@ -36,7 +36,7 @@ Start by setting up the project's metadata.
 ## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
 
 First specify the necessary OSGi metadata in a `bnd.bnd` file (see
-[here](https://www.google.com/url?q=http://bnd.bndtools.org/chapters/800-headers.html&sa=D&ust=1484604445554000&usg=AFQjCNHA_3LxtNcRBblsT62vG5MoEvs6PQ)
+[here](https://bnd.bndtools.org/chapters/800-headers.html)
 for more information). Here's what it would look like for a module in a folder
 called `dynamic-data-mapping-type-time`:
 
@@ -115,7 +115,7 @@ conventions presented here.
 Next craft the OSGi Component that marks your class as an implementation of
 `DDMFormFieldType`. 
 
-## Creating a `DDMFormFieldType` Component [](id=creating-a-ddmformfieldtype-component)
+## Creating a DDMFormFieldType Component [](id=creating-a-ddmformfieldtype-component)
 
 If you're creating a *Time* field type, define the Component at the top of your
 `*DDMFormFieldType` class like this:
@@ -143,7 +143,7 @@ implementing the `DDMFormFieldType` service (`service=...`).
 
 `ddm.form.field.type.icon`
 : The icon to be used for the field type. Choosing one of the 
-[Lexicon icons](https://liferay.github.io/clay/content/icons-lexicon/) makes your form
+[Lexicon icons](https://lexicondesign.io/docs/patterns/icons.html) makes your form
 field blends in with the existing form field types.
 
 `ddm.form.field.type.js.class.name`
@@ -165,7 +165,7 @@ the field's capabilities (for example, rendering and validation).
 
 Next code the `*DDMFormFieldType` class.
 
-## Implementing `DDMFormFieldType` [](id=implementing-ddmformfieldtype)
+## Implementing DDMFormFieldType [](id=implementing-ddmformfieldtype)
 
 Implementing the field type in Java is made easier because of
 `BaseDDMFormFieldType`, an abstract class you can leverage in your code.
@@ -391,7 +391,7 @@ dependencies of the declared JavaScript components (`requires...`), and where
 the files are located (`path...`). The `config.js` is used by the Alloy loader
 when it satisfies dependencies for each JavaScript component. For more
 information about the Alloy loader see the [tutorial on its
-usage](/developer/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader).
+usage](/develop/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader).
 
 [![Figure 1: Add your own form field types to the Forms application.](../../../images/forms-time-field-type.png)
 
