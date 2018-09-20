@@ -60,6 +60,13 @@ Use `<pattern>` tags to define placeholder values for the parameters that
 normally appear in the generated URL. This is just a mask. The beastly URL still
 lurks beneath it.
 
+The `pattern` value `/{entryId:\d+}` matches a `/` followed by an `entryId`
+variable that matches the
+[Java regular expression](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
+`\d+`---one or more numeric digits. For example, a URL `/entryId`, where the
+`entryId` value is `123` results in a URL value `/123`, which matches the
+pattern. 
+
 +$$$
 
 **Warning:** Make sure your `pattern` values don't end in a slash `/`. A 
