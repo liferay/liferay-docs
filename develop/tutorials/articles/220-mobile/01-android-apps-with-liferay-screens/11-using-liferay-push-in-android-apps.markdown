@@ -4,8 +4,6 @@ Liferay Screens supports push notifications in Android apps. To use
 them, you must configure some APIs and modify your app to consume and/or
 produce push notifications. This tutorial shows how to do all these things. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4LjutX0dcRw" frameborder="0" allowfullscreen></iframe>
-
 ## Configuring to Use Liferay Push Notifications [](id=configuring-to-use-liferay-push-notifications)
 
 Your first step is to create and configure a Google project to use Google Cloud
@@ -26,7 +24,7 @@ messaging:
    with. You'll need to use these values later as the push notifications API 
    keys for Liferay Push. 
 
-       ![Figure 1: You need the Server API Key and Sender ID to enable Liferay Push.](../../../images/screens-android-push-project-and-server-key.png)
+   ![Figure 1: You need the Server API Key and Sender ID to enable Liferay Push.](../../../images/screens-android-push-project-and-server-key.png)
 
 Now that you've set up your Google project, you can configure the Liferay Push 
 app to use the project's GCM API. Install the Liferay Push app from the 
