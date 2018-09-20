@@ -60,6 +60,35 @@ Use `<pattern>` tags to define placeholder values for the parameters that
 normally appear in the generated URL. This is just a mask. The beastly URL still
 lurks beneath it.
 
+The `pattern` value `/{entryId:\d+}` matches a `/` followed by an `entryId`
+variable that matches the
+[Java regular expression](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
+`\d+`---one or more numeric digits. For example, a URL `/entryId`, where the
+`entryId` value is `123` results in a URL value `/123`, which matches the
+pattern. 
+
++$$$
+
+**Warning:** Make sure your `pattern` values don't end in a slash `/`. A 
+trailing slash character prevents the request from identifying the correct
+route. 
+
+$$$
+
+**Important:** If your portlet is instanceable, you must use a variant of the 
+`instanceId` in the `pattern` value. If the starting value is `render-it`, for
+example, use one of these patterns:
+
+    <pattern>/{userIdAndInstanceId}/render-it</pattern>
+
+or
+
+    <pattern>/{instanceId}/render-it</pattern>
+
+or
+
+    <pattern>/{p_p_id}/render-it</pattern>
+
 Use `<implicit-parameter>` tags to define parameters that will always be the
 same for the URL. For example, if you're dealing with a render URL, you can be
 certain that the `p_p_lifecycle` parameter will always be `0`. There's no need
