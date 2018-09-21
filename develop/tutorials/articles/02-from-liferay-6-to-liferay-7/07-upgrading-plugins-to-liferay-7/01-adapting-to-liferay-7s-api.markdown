@@ -1,5 +1,15 @@
 # Adapting to @product-ver@'s API with the Code Upgrade Tool [](id=adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 
++$$$
+
+**Note:** This tutorial assumes you're using Liferay @ide@ 3.1.x or 3.2.x. You
+can use later versions of the Code Upgrade Tool to upgrade your 6.2 plugins to
+@product-ver@, but the option to upgrade a Liferay Plugins SDK 6.2 to 7.0 is no
+longer offered. For information on the latest Code Upgrade Tool, see
+[this tutorial](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
+
+$$$
+
 The first and easiest plugin upgrade step is adapting to 
 @product-ver@'s API. @product-ver@ is a major release whose new modular 
 architecture 
@@ -223,7 +233,7 @@ An outline of the types of changes it suggests is below:
   to `com.liferay.portal.kernel`.
 
 For more information on the upgrade process for your Maven build, see the
-[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-0/upgrading-the-liferay-maven-build)
+[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-0/upgrading-the-liferay-maven-build).
 
 If the tool finds any necessary updates, it lists them in the view.
 
