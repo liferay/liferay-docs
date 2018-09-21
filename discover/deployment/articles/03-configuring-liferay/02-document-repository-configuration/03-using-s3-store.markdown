@@ -24,7 +24,7 @@ storage:
     [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
     folder: 
 
-        dl.store.impl=com.liferay.portal.store.cmis.CMISStore
+        dl.store.impl=com.liferay.portal.store.s3.S3Store
 
 4.  Restart @product@.
 
