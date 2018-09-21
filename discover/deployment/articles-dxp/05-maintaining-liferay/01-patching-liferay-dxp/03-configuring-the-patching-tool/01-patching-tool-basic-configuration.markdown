@@ -16,7 +16,7 @@ Patching Tool folder (`patching-tool`):
 
 If @product@ is not installed in the parent folder, specify its location: 
 
-    patching-tool auto-discovery /opt/Liferay/tomcat-8.0.32
+    patching-tool auto-discovery /opt/liferay-dxp
 
 If you specified the wrong location of @product@ or it is not in the parent
 folder, the Patching Tool can't find the
@@ -27,8 +27,8 @@ and reports an error like this:
 
     Configuration:
     patching.mode=binary
-    war.path=../tomcat-8.0.32/webapps/ROOT/
-    global.lib.path=../tomcat-8.0.32/lib/ext/
+    war.path=../tomcat-9.0.6/webapps/ROOT/
+    global.lib.path=../tomcat-9.0.6/lib/ext/
     liferay.home=**[please enter manually]**
 
     The configuration hasn't been saved. Please save this to the default.properties file.
