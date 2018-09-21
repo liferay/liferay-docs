@@ -1,23 +1,22 @@
 # The RSS Publisher Widget [](id=the-rss-publisher-widget)
 
-The RSS Publisher widget lets you display any number of RSS feeds and configure 
-how they are displayed. If you're looking for a web-based RSS reader, look no 
-further: just add the RSS Publisher widget to one your personal site's private 
-pages, and voila! You have your own personal RSS reader. You can select the RSS 
-feeds the widget displays, and how it displays them. The RSS Publisher widget 
-can also be placed on sites' public or private pages to make feeds available to 
-guests or site members, respectively. In these cases, make sure that only site 
-administrators have permission to customize the RSS widget and select feeds to 
-be displayed. 
+The RSS Publisher widget displays RSS feeds. If you're looking for a web-based
+RSS reader, look no further: just add the RSS Publisher widget to one your
+personal Site's private pages, and *voila*! You have your own personal RSS reader.
+You can select the RSS feeds the widget displays and how it displays them. The
+RSS Publisher widget can also be placed on Sites' public or private pages to
+make feeds available to guests or Site members, respectively. In these cases,
+make sure that only Site administrators have permission to customize the RSS
+widget and select feeds to be displayed. 
 
 ![Figure 1: The RSS Publisher widget lets you display RSS feeds of your choosing.](../../../../images/rss-widget-default-view.png)
 
 +$$$
 
-**Note:** If you are running your server behind a proxy, you must set the 
-appropriate Java proxy settings (such as `http.proxyHost=` and `http.proxyPort=`) 
-in your `setenv` script, or in your `system-ext.properties`. Without these 
-properties, the RSS Publisher widget can't access any RSS feeds.
+**Note:** If you run your server behind a proxy, you must set the appropriate
+Java proxy settings (such as `http.proxyHost=` and `http.proxyPort=`) in your
+`setenv` script or in your `system-ext.properties`. Without these properties,
+the RSS Publisher widget can't access any RSS feeds.
 
 $$$
 
@@ -43,11 +42,11 @@ follow these steps to ensure that the widget is visible:
     [Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
     is usually the application server's parent folder. 
 
-3.  Add the following to the file you created in the first step: 
+3.  Add the following configuration to the file you created in the first step: 
 
         com.liferay.portlet.display-category="category.news"
 
-4.  Start up the portal. 
+4.  Start @product@. 
 
 The RSS Publisher widget is now available in the *Add* 
 (![Add](../../../../images/icon-add-app.png)) 
