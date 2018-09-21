@@ -1,4 +1,4 @@
-# Packaging Your Android Screenlets [](id=packaging-your-android-screenlets)
+# Packaging Your Screenlets [](id=packaging-your-screenlets)
 
 To reuse your Screenlet in another app or distribute it, you can package it in a
 module (Android library). You can optionally share it with other developers via

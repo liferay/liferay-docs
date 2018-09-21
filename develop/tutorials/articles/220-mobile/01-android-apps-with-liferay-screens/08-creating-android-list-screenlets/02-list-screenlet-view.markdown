@@ -1,4 +1,4 @@
-# Creating the Screenlet's View [](id=creating-the-screenlets-view)
+# Creating the View [](id=creating-the-view)
 
 Recall from 
 [the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlets-ui) 

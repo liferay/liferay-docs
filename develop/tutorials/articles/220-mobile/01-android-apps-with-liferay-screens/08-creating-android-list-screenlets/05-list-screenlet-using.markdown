@@ -1,4 +1,4 @@
-# Using the Screenlet [](id=using-the-screenlet)
+# Using the List Screenlet [](id=using-the-list-screenlet)
 
 You can now use your new list Screenlet 
 [the same way you use any other Screenlet](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps): 

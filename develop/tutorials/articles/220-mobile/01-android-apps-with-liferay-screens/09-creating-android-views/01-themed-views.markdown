@@ -1,4 +1,4 @@
-# Themed View [](id=themed-view)
+# Themed Views [](id=themed-views)
 
 Screens provides several existing View Sets that you can reuse and customize in 
 your app to create a Themed View. If you use or override the Android color 

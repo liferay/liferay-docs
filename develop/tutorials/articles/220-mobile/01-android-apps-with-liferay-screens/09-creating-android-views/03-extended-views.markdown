@@ -1,4 +1,4 @@
-# Extended View [](id=extended-view)
+# Extended Views [](id=extended-views)
 
 An Extended View inherits the parent View's behavior and appearance, but lets
 you change and add to both. You can do so by writing a custom View class and a

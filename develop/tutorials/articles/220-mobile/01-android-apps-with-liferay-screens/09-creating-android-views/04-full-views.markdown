@@ -1,4 +1,4 @@
-# Full View [](id=full-view)
+# Full Views [](id=full-views)
 
 A Full View has a unique Screenlet class, a View class, and layout XML file.
 It's standalone and doesn't inherit from any View. You should create a Full View

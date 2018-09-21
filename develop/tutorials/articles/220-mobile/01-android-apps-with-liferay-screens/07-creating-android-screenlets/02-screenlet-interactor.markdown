@@ -1,4 +1,4 @@
-# Creating the Screenlet's Interactor
+# Creating the Interactor [](id=creating-the-interactor)
 
 A Screenlet's Interactor makes the service call to retrieve the data you need 
 from a Liferay instance. An Interactor is made up of several components: 

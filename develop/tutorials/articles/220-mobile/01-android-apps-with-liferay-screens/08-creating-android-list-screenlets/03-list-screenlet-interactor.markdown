@@ -1,4 +1,4 @@
-# Creating the Screenlet's Interactor [](id=creating-the-screenlets-interactor)
+# Creating the Interactor [](id=creating-the-interactor-0)
 
 Recall from 
 [the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlets-Interactor-class) 

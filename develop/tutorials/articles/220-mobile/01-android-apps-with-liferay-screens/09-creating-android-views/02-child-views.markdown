@@ -1,4 +1,4 @@
-# Child View [](id=child-view)
+# Child Views [](id=child-views)
 
 A Child View presents the same behavior and UI components as its parent, but can
 change the UI components' appearance and position. It can't add or remove any UI

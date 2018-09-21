@@ -1,4 +1,4 @@
-# Defining Screenlet Attributes in Your App [](id=defining-screenlet-attributes-in-your-app)
+# Defining the Attributes [](id=defining-the-attributes)
 
 Before creating the Screenlet class, you should define its attributes. These are 
 the attributes the app developer can set when inserting the Screenlet's XML in 

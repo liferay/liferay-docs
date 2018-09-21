@@ -1,4 +1,4 @@
-# Creating the Screenlet Class [](id=creating-the-screenlet-class)
+# Creating the Screenlet Class [](id=creating-the-screenlet-class-0)
 
 Recall from 
 [the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlet-class) 

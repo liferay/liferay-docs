@@ -1,4 +1,4 @@
-# Supporting Offline Mode in Your Screenlets
+# Supporting Offline Mode [](id=supporting-offline-mode)
 
 Offline mode lets Screenlets function without a network connection. For offline 
 mode to work with your Screenlet, you must manually add support for it. 
