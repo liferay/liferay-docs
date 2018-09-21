@@ -1,4 +1,4 @@
-# What is @product@? [](id=what-is-liferay)
+# What is @product@ [](id=what-is-liferay)
 
 Let's attempt some mind reading: you're reading this because you need to build
 a website. You're thinking about using @product@ for your site, or you've already
