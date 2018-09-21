@@ -46,7 +46,7 @@ core behavior of a Screenlet by customizing its listeners or calling custom
 Interactors. For example, you could implement a Full View with a new Interactor
 for calling a different Liferay Portal instance. Default Views are Full Views.
 
-![Figure 4: This diagram illustrates the View layer of Liferay Screens for Android.](../../../../images/screens-android-architecture-04.png)
+![Figure 1: This diagram illustrates the View layer of Liferay Screens for Android.](../../../../images/screens-android-architecture-04.png)
 
 Liferay Screens Views are organized into *View sets* that contain Views for
 several Screenlets. Liferay's available View sets are listed here: 

@@ -5,7 +5,7 @@ Android. The following diagram uses Screenlet classes prefixed with
 *MyScreenlet* to show the Screenlet layer's relationship with the core, View,
 and Interactor components. 
 
-![Figure 3: This diagram illustrates the Android Screenlet layer's relationship to other Screens components.](../../../../images/screens-android-architecture-03.png)
+![Figure 1: This diagram illustrates the Android Screenlet layer's relationship to other Screens components.](../../../../images/screens-android-architecture-03.png)
 
 Screenlets are comprised of several Java classes and an XML descriptor file:
 

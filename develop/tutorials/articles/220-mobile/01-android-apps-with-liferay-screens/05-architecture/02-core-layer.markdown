@@ -5,7 +5,7 @@ structured and isolated way. All Screenlets share a common structure based on
 the core classes, but each Screenlet can have a unique purpose and communication
 API. 
 
-![Figure 2: Here's the core layer of Liferay Screens for Android.](../../../../images/screens-android-architecture-02.png)
+![Figure 1: Here's the core layer of Liferay Screens for Android.](../../../../images/screens-android-architecture-02.png)
 
 Here are the core's main components:
 

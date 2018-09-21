@@ -20,7 +20,7 @@ Screenlets in Liferay Screens support the following phases:
 
 The following diagram summarizes these phases:
 
-![Figure 1: A Screenlet's basic phases when requesting and submitting data to the portal.](../../../images/screens-offline-01.png)
+![Figure 1: A Screenlet's basic phases when requesting and submitting data to the portal.](../../../../images/screens-offline-01.png)
 
 Note that not all Screenlets need to execute each phase. For example, the Web
 Content Display Screenlet only needs to retrieve and display portal content.
@@ -34,7 +34,7 @@ coming from the portal. It stores this information in a local data store for use
 when there's no Internet connection. The following diagram illustrates this, 
 with *Local cache* representing the local data store:
 
-![Figure 2: This is the same diagram as before, with the addition of the local cache for offline mode.](../../../images/screens-offline-02.png)
+![Figure 2: This is the same diagram as before, with the addition of the local cache for offline mode.](../../../../images/screens-offline-02.png)
 
 With offline mode enabled, any Screenlet can persist information exchanged with 
 the portal. You can also configure exactly how offline mode works with the 
@@ -124,7 +124,7 @@ version of the data to use. Having offline users complicates things further. The
 following diagram illustrates how the Screenlet retrieves and stores portal 
 data. 
 
-![Figure 3: The Screenlet requests the resource from the portal and stores it in the app's local cache.](../../../images/screens-offline-03.png)
+![Figure 3: The Screenlet requests the resource from the portal and stores it in the app's local cache.](../../../../images/screens-offline-03.png)
 
 When a user edits the data in the app, the Screenlet needs to send the new data 
 to the portal. But what happens if the user is offline? In this case, the new 
@@ -136,9 +136,9 @@ this context, dirty means that the data should be synchronized with the portal
 as soon as possible. When the Screenlet synchronizes the dirty version, it 
 removes the dirty flag from the local data. 
 
-![Figure 4: The updated data is said to be dirty when the Screenlet can't send it to the portal.](../../../images/screens-offline-04.png)
+![Figure 4: The updated data is said to be dirty when the Screenlet can't send it to the portal.](../../../../images/screens-offline-04.png)
 
-![Figure 5: The dirty flag is removed once synchronization completes.](../../../images/screens-offline-05.png)
+![Figure 5: The dirty flag is removed once synchronization completes.](../../../../images/screens-offline-05.png)
 
 There are other complicated synchronization states. For example, portal data may
 change while out-of-sync with a Screenlet's local data. To avoid data loss, the
@@ -146,7 +146,7 @@ local data can't overwrite the portal data, and vice versa. In this situation,
 the synchronization process produces a conflict when it runs.  The following
 diagram illustrates this.
 
-![Figure 6: Users have changed the data independently in the app and in the portal, causing a synchronization conflict.](../../../images/screens-offline-06.png)
+![Figure 6: Users have changed the data independently in the app and in the portal, causing a synchronization conflict.](../../../../images/screens-offline-06.png)
 
 The developer needs to resolve the conflict by choosing the local data or portal 
 data. Synchronization conflicts have four possible resolutions:
