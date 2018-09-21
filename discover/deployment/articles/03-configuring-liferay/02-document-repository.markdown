@@ -284,15 +284,17 @@ that resides in your @product@ installation's class path  (e.g.,
 Consult the Amazon Simple Storage documentation for additional details on using
 Amazon's service.
 
+## Configuration Details [](id=configuration-details)
+
 There are properties related to document library stores that have been moved
 from `portal-ext.properties` to OSGi configuration files. The following mapping
 shows you how to configure those properties if needed:
 
-#### CMIS Store [](id=cmis)
+### CMIS Store [](id=cmis)
 
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.cmis.CMISStore`
 
-To `osgi/configs`: `com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg`
+To `osgi/configs/com.liferay.portal.store.cmis.configuration.CMISStoreConfiguration.cfg`:
 
 Property | Default | Required
 ---------|---------|---------
@@ -301,17 +303,17 @@ Property | Default | Required
 `credentialsPassword` | none | `true`
 `systemRootDir` | Liferay Home | `true`
 
-#### File Store [](id=file-store)
+### File Store [](id=file-store)
 
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore`
 
-To `osgi/configs`: `com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg`
+To `osgi/configs/com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg`:
 
 Property | Default | Required
 ---------|---------|---------
 `rootDir` | `data/document_library` | `false`
 
-#### Advanced File Store [](id=advanced-file-store)
+### Advanced File Store [](id=advanced-file-store)
 
 **Since Liferay DXP Fix Pack 14 and Liferay Portal 7.0 CE GA4, both the 
 `portal-ext.properties` and `.config` files are required to configure the 
@@ -319,17 +321,17 @@ advanced file system store.**
 
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore`
 
-To `osgi/configs`: `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`
+To `osgi/configs/com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`:
 
 Property | Default | Required
 ---------|---------|---------
 `rootDir` | `data/document_library` | `true`
 
-#### JCR [](id=jcr)
+### JCR [](id=jcr)
 
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.jcr.JCRStore`
 
-To `osgi/configs`: `com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg`
+To `osgi/configs/com.liferay.portal.store.jcr.configuration.JCRStoreConfiguration.cfg`:
 
 Property | Default | Required
 ---------|---------|---------
@@ -344,11 +346,11 @@ Property | Default | Required
 `jackrabbitCredentialsUsername` | none | `true`
 `jackrabbitCredentialsPassword` | none | `true`
 
-#### S3 [](id=s3)
+### S3 [](id=s3)
 
 From `portal-ext.properties`: `dl.store.impl=com.liferay.portal.store.s3.S3Store`
 
-To `osgi/configs`: `com.liferay.portal.store.s3.configuration.S3StoreConfiguration.cfg`
+To `osgi/configs/com.liferay.portal.store.s3.configuration.S3StoreConfiguration.cfg`:
 
 Property | Default | Required
 ---------|---------|---------
