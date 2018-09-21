@@ -116,8 +116,9 @@ a permissions registrar class:
     `default.xml`. You'll see why in a moment. 
 
 2.  You have a `GuestbookPortletKeys` class in your web module. These keys must
-    now be accessible to all modules, so drag its whole package from the web
-    module and drop it into your API module. 
+    now be accessible to all modules, so drag this class from the web module and
+    drop it into the new `com.liferay.docs.guestbook.constants` package in your
+    API module. 
 
 3.  In your service bundle, create a package that by convention ends in
     `internal.security.permission.resource`. 
@@ -202,6 +203,12 @@ a permissions registrar class:
 
 This class registers a chain of permission logic classes for checking
 permissions. Since this functionality is the same for all entities, all that's
-necessary is to specify yours. 
+necessary is to specify yours in addition to the standard Liferay ones for
+staging and workflow. Introspection is done on your entity by the factory to
+create the necessary permissions service. You implemented the constants class so
+you can specify the resource model name you defined in `default.xml`. The
+`model.class.name` is set so that any module needing this service can find this
+model resource permission by its type. 
 
-Next, you'll create helper classes to make it easier to check permissions. 
+You've now completed step two: the R in DRAC: registering permissions. Next,
+you'll enable users to associate permissions with resources. 
