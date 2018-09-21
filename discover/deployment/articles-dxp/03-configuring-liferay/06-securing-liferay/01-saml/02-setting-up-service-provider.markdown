@@ -115,7 +115,7 @@ the session on the Service Provider but does not initiate single logout.
 
     c. *Metadata URL*: The IdP's metadata as a URL or as an XML file.
 
-    d. If the IdP is another @product instance, ensure its corresponding
+    d. If the IdP is another @product@ instance, ensure its corresponding
     Service Provider Connection for this SP is enabled.
 
 3. On the *General* tab, the *Enabled* checkbox has been checked.

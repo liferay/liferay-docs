@@ -133,7 +133,7 @@ Checkpoint:
 - `webapps` 
 - `work`
 
-@product dependencies have been placed inside the
+@product@ dependencies have been placed inside the
  `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder:
 
 - `com.liferay.registry.api-1.0.4.jar` 
