@@ -17,6 +17,14 @@ database that can detect which mobile devices are accessing the portal.
 [Click here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace) 
 for instructions on using Liferay Marketplace to find and install apps. 
 
++$$$
+
+**Important:** On Windows, Liferay Mobile Device Detection Enterprise must be 
+run on a 64-bit JVM. On all operating systems, Liferay Mobile Device Detection
+Enterprise requires a JVM minimum memory setting of at least 2 gb. 
+
+$$$
+
 You can create your own plugin that makes use of the device database. This 
 tutorial shows you some of the methods in the Device API that you can use to 
 retrieve device attributes and capabilities. Now go ahead and get started! 
