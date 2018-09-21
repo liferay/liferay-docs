@@ -10,7 +10,7 @@ users flexibility in these situations.
 
 This tutorial shows you how to use offline mode in Screenlets. For an 
 explanation of how offline mode works, see the tutorial 
-[Architecture of Offline Mode in Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[Architecture of Offline Mode in Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 Offline mode's architecture is the same on iOS and Android, although its use on 
 these platforms differs.
 
@@ -26,10 +26,10 @@ This attribute can take four possible values:
 - `CACHE_FIRST`
 
 For a description of these values, see the section 
-[Using Policies with Offline Mode](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens#using-policies-with-offline-mode) 
+[Using Policies with Offline Mode](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens#using-policies-with-offline-mode) 
 in the offline mode architecture tutorial. Note that each Screenlet behaves a 
 bit differently with offline mode. For specific details, see the 
-[Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android). 
+[Screenlet reference documentation](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-android). 
 
 ## Handling Synchronization [](id=handling-synchronization)
 
@@ -66,10 +66,10 @@ will include some kind of control mechanism.
 
 ## Related Topics [](id=related-topics)
 
-[Architecture of Offline Mode in Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens)
+[Architecture of Offline Mode in Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)
 
-[Using Offline Mode in iOS](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-ios)
+[Using Offline Mode in iOS](/develop/tutorials/-/knowledge_base/7-1/using-offline-mode-in-ios)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-ios-apps)

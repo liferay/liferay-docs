@@ -74,7 +74,7 @@ several Screenlets. Liferay's available View sets are listed here:
   sample app.
 
 For information on creating or customizing Views, see the tutorial 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/7-0/creating-android-views). 
+[Creating Android Views](/develop/tutorials/-/knowledge_base/7-1/creating-android-views). 
 
 Great! Now you know how Liferay Screens for Android is composed. However,
 there's something you should know before moving on: how Screenlets interact with

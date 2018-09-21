@@ -1,15 +1,15 @@
 # Rendering Web Content in Your Android App [](id=rendering-web-content-in-your-android-app)
 
 @product@ represents 
-[web content](/discover/portal/-/knowledge_base/7-0/creating-web-content) 
+[web content](/discover/portal/-/knowledge_base/7-1/creating-web-content) 
 articles as `JournalArticle` entities. Liferay Screens provides several ways to 
 render these entities in your apps. 
 
 The simplest way to display a `JournalArticle`'s HTML in your app is to use 
-[Web Content Display Screenlet](/develop/reference/-/knowledge_base/7-0/webcontentdisplayscreenlet-for-android). 
+[Web Content Display Screenlet](/develop/reference/-/knowledge_base/7-1/webcontentdisplayscreenlet-for-android). 
 This Screenlet is very powerful and supports several complex use cases to fit 
 your needs. You can also use 
-[Web Content List Screenlet](/develop/reference/-/knowledge_base/7-0/web-content-list-screenlet-for-android) 
+[Web Content List Screenlet](/develop/reference/-/knowledge_base/7-1/web-content-list-screenlet-for-android) 
 to display lists of web content articles. This tutorial shows you how to use 
 both Screenlets to display web content in your apps. 
 
@@ -32,7 +32,7 @@ must provide the CSS inline or use a template. The HTML returned isn't aware of
 a Liferay instance's global CSS. 
 
 You can also use a listener to modify the HTML, as explained in the 
-[Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/webcontentdisplayscreenlet-for-android).
+[Screenlet reference documentation](/develop/reference/-/knowledge_base/7-1/webcontentdisplayscreenlet-for-android).
 
 In the default security policy, an Android `WebView` doesn't execute a page's 
 JavaScript. You can enable such JavaScript execution by setting the 
@@ -66,7 +66,7 @@ method in the activity or fragment code that uses the Screenlet.
 ## Using Templates [](id=using-templates)
 
 Web Content Display Screenlet can also use 
-[templates](/discover/portal/-/knowledge_base/7-0/designing-uniform-content#designing-web-content-with-templates) 
+[templates](/discover/portal/-/knowledge_base/7-1/designing-web-content-with-templates) 
 to render `JournalArticle` entities. For example, your Liferay instance may have 
 a custom template specifically designed to display content on mobile devices. 
 
@@ -82,7 +82,7 @@ To use a template, specify its ID in the Screenlet XML's `templateId` property:
 
 Since mobile devices have limited screen space, you must often display only the 
 most important parts of a web content article. If your web content is 
-[structured](/discover/portal/-/knowledge_base/7-0/designing-uniform-content#creating-structured-web-content), 
+[structured](/discover/portal/-/knowledge_base/7-1/designing-web-content-with-templates), 
 you can do this by using Web Content Display Screenlet to display only specific 
 fields from a `JournalArticle`'s structure. The simplest way to do this is to 
 specify the structure's ID and a comma-delimited list of fields in the Screenlet 
@@ -175,7 +175,7 @@ want to display a list of articles instead? No problem! You can use Web Content
 List Screenlet for this. Web Content List Screenlet can retrieve the contents of 
 a web content folder and display only the labels you want. The Screenlet is also 
 aware of 
-[structured](/discover/portal/-/knowledge_base/7-0/designing-uniform-content#creating-structured-web-content) 
+[structured](/discover/portal/-/knowledge_base/7-1/designing-web-content-with-templates) 
 content, so you can render each row with certain structure fields. You can also 
 do this via a custom layout. 
 
@@ -207,16 +207,16 @@ articles, you can use Asset List Screenlet. Asset List Screenlet can display a
 list of any assets from a Liferay instance. Like Web Content List Screenlet, you 
 can also access a web content article's structure fields, or use a custom layout 
 to render each asset type. For more information, see the 
-[reference documentation for Asset List Screenlet](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-android). 
+[reference documentation for Asset List Screenlet](/develop/reference/-/knowledge_base/7-1/assetlistscreenlet-for-android). 
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)
 
-[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/using-views-in-android-screenlets)
 
-[Web Content Display Screenlet for Android](/develop/reference/-/knowledge_base/7-0/webcontentdisplayscreenlet-for-android)
+[Web Content Display Screenlet for Android](/develop/reference/-/knowledge_base/7-1/webcontentdisplayscreenlet-for-android)
 
-[Web Content List Screenlet for Android](/develop/reference/-/knowledge_base/7-0/web-content-list-screenlet-for-android)
+[Web Content List Screenlet for Android](/develop/reference/-/knowledge_base/7-1/web-content-list-screenlet-for-android)
 
-[Asset List Screenlet for Android](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-android)
+[Asset List Screenlet for Android](/develop/reference/-/knowledge_base/7-1/assetlistscreenlet-for-android)

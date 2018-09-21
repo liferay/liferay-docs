@@ -73,5 +73,5 @@ Screenlet's View. Here's a skeleton of a Screenlet's layout XML file:
     </com.your.package.MyScreenletView>
 
 Refer to the tutorial
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets)
 for more Screenlet details. Next, the View layer's details are described. 

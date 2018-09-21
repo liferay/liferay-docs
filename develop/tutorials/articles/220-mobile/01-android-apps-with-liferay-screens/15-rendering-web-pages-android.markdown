@@ -1,16 +1,16 @@
 # Rendering Web Pages in Your Android App [](id=rendering-web-pages-in-your-android-app)
 
 The 
-[Rendering Web Content](/develop/tutorials/-/knowledge_base/7-0/rendering-web-content-in-your-android-app) 
+[Rendering Web Content](/develop/tutorials/-/knowledge_base/7-1/rendering-web-content-in-your-android-app) 
 tutorial shows you how to display 
-[web content](/discover/portal/-/knowledge_base/7-0/creating-web-content) 
+[web content](/discover/portal/-/knowledge_base/7-1/introduction-web-content) 
 from a @product@ site in your Android app. Displaying content is great, but what 
 if you want to display an entire page? No problem! 
-[Web Screenlet](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-android) 
+[Web Screenlet](/develop/reference/-/knowledge_base/7-1/web-screenlet-for-android) 
 lets you display any web page. You can even customize the page by injecting 
 local or remote JavaScript and CSS files. When combined with @product@'s 
 server-side customization features (e.g., 
-[Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)), 
+[Application Display Templates](/discover/portal/-/knowledge_base/7-1/styling-apps-and-assets)), 
 Web Screenlet gives you almost limitless possibilities for displaying web pages 
 in your Android apps. 
 
@@ -20,12 +20,12 @@ your Android app.
 ## Inserting Web Screenlet in Your App [](id=inserting-web-screenlet-in-your-app)
 
 Inserting Web Screenlet in your app is the same as 
-[inserting any Screenlet in your app](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps): 
+[inserting any Screenlet in your app](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps): 
 
 1.  Insert the Screenlet's XML in the layout of the activity or fragment you 
     want to use the Screenlet in. Also be sure to set any attributes that you 
     need. For a list of Web Screenlet's available attributes, see 
-    [the Attributes section](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-android#attributes) 
+    [the Attributes section](/develop/reference/-/knowledge_base/7-1/web-screenlet-for-android#attributes) 
     of the Web Screenlet reference doc. 
 
     For example, here's Web Screenlet's XML with the Screenlet's `layoutId` and 
@@ -138,7 +138,7 @@ set most of these parameters via `WebScreenletConfiguration.Builder`'s methods.
 
 **Note:** For a full list of `WebScreenletConfiguration.Builder`'s methods, and 
 a description of each, see the table in 
-[the Configuration section](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-android#configuration) 
+[the Configuration section](/develop/reference/-/knowledge_base/7-1/web-screenlet-for-android#configuration) 
 of Web Screenlet's reference doc. 
 
 $$$
@@ -152,7 +152,7 @@ methods as needed.
     page's URL string, to create a `WebScreenletConfiguration.Builder` object. 
     If the page requires @product@ authentication, then the user must be logged 
     in via 
-    [Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android) 
+    [Login Screenlet](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android) 
     or a `SessionContext` method, and you must provide a relative URL to the 
     `WebScreenletConfiguration.Builder` constructor. For example, if such a 
     page's full URL is `http://your.liferay.instance/web/guest/blog`, then the 
@@ -209,10 +209,10 @@ Great! Now you know how to use Web Screenlet in your Android apps.
 
 ## Related Topics [](id=related-topics)
 
-[Web Screenlet for Android](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-android)
+[Web Screenlet for Android](/develop/reference/-/knowledge_base/7-1/web-screenlet-for-android)
 
-[Using Web Screenlet with Cordova in Your Android App](/develop/tutorials/-/knowledge_base/7-0/using-web-screenlet-with-cordova-in-your-android-app)
+[Using Web Screenlet with Cordova in Your Android App](/develop/tutorials/-/knowledge_base/7-1/using-web-screenlet-with-cordova-in-your-android-app)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)
 
-[Rendering Web Content in Your Android App](/develop/tutorials/-/knowledge_base/7-0/rendering-web-content-in-your-android-app)
+[Rendering Web Content in Your Android App](/develop/tutorials/-/knowledge_base/7-1/rendering-web-content-in-your-android-app)

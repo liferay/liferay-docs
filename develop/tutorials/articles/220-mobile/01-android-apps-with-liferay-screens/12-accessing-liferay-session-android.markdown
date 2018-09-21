@@ -94,7 +94,7 @@ typical implementation of this:
 
 Awesome! Now you know how to implement auto-login in your Liferay Screens apps. 
 For more information on available `SessionContext` methods, see the 
-[Methods section](/develop/tutorials/-/knowledge_base/7-0/accessing-the-liferay-session-in-android#methods) 
+[Methods section](#methods) 
 at the end of this tutorial. Next, you'll learn how to implement relogin for 
 cases where a user's credentials change on the server while they're logged in. 
 
@@ -159,6 +159,6 @@ For more information, see the
 
 ## Related Topics [](id=related-topics)
 
-[Login Screenlet for Android](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android)
+[Login Screenlet for Android](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)

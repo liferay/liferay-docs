@@ -2,7 +2,7 @@
 
 By using 
 [Cordova plugins](https://cordova.apache.org/plugins/) in 
-[Web Screenlet](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-android-app), 
+[Web Screenlet](/develop/tutorials/-/knowledge_base/7-1/rendering-web-pages-in-your-android-app), 
 you can extend the functionality of the web page that the Screenlet renders. 
 This lets you tailor that page to your app's needs. 
 
@@ -70,7 +70,7 @@ To install and configure Cordova manually, follow these steps:
 Now that you've installed and configured Cordova in your Android project, you're 
 ready to use it with Web Screenlet. Follow these steps to do so: 
 
-1.  [Insert and configure Web Screenlet in your app](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-android-app). 
+1.  [Insert and configure Web Screenlet in your app](/develop/tutorials/-/knowledge_base/7-1/rendering-web-pages-in-your-android-app). 
 
 2.  When you set Web Screenlet's parameters via the 
     `WebScreenletConfiguration.Builder` object, you must enable Cordova by 
@@ -179,6 +179,6 @@ Great! Now you know how to use Web Screenlet with Cordova.
 
 ## Related Topics [](id=related-topics)
 
-[Rendering Web Pages in Your Android App](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-android-app)
+[Rendering Web Pages in Your Android App](/develop/tutorials/-/knowledge_base/7-1/rendering-web-pages-in-your-android-app)
 
-[Web Screenlet for Android](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-android)
+[Web Screenlet for Android](/develop/reference/-/knowledge_base/7-1/web-screenlet-for-android)

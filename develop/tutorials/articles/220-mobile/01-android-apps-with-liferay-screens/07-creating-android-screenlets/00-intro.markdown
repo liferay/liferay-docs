@@ -14,7 +14,7 @@ that saves bookmarks to Liferay's Bookmarks portlet.
 
 In general, you use the following steps to create Screenlets: 
 
-1. [Determine your Screenlet's location](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#determining-your-screenlets-location). 
+1. [Determine your Screenlet's location](#determining-your-screenlets-location). 
    Where you create your Screenlet depends on how you'll use it. 
 
 2. [Create the Screenlet's UI (its View)](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlets-ui). 

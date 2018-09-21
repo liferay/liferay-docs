@@ -5,7 +5,7 @@ layer, Interactors, and Server Connectors. Interactors are technically part of
 the core, but are worth covering separately. They facilitate interaction with 
 both local and remote data sources, as well as communication between the 
 Screenlet layer and the 
-[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk). 
+[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/mobile-sdk). 
 
 ![Figure 1: Here are the high-level components of Liferay Screens for Android. The dashed arrow connectors represent a "uses" relationship, in which a component uses the component its pointing to.](../../../../images/screens-android-architecture-01.png)
 
@@ -21,7 +21,7 @@ Studio's visual editor and react to UI events, sending any necessary server
 requests. You can set a Screenlet's properties from its layout XML file and 
 Java classes. The Screenlets bundled with Liferay Screens are known collectively 
 as the 
-[Screenlet Library](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android). 
+[Screenlet Library](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-android). 
 
 **Server Connectors:** a collection of classes that interact with different 
 Liferay versions. These classes abstract away the complexity of communicating 
@@ -31,7 +31,7 @@ and the correct Interactor without worrying about the specific Liferay version
 
 **Interactors:** implement specific use cases for communicating with servers.
 They can use local and remote data sources. Most Interactors use the
-[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk) 
+[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/mobile-sdk) 
 to exchange data with a Liferay instance. If a user action or use case needs to 
 execute more than one query on a local or remote store, the sequence is done 
 in the corresponding Interactor. If a Screenlet supports more than one user 

@@ -169,10 +169,10 @@ Great! Now that you know how offline mode works, you're ready to put it to use.
 
 ## Related Topics [](id=related-topics)
 
-[Using Offline Mode in Android](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android)
+[Using Offline Mode in Android](/develop/tutorials/-/knowledge_base/7-1/using-offline-mode-in-android)
 
-[Using Offline Mode in iOS](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-ios)
+[Using Offline Mode in iOS](/develop/tutorials/-/knowledge_base/7-1/using-offline-mode-in-ios)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-ios-apps)

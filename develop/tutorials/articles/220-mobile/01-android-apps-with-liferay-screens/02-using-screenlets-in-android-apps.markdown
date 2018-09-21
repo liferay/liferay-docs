@@ -1,10 +1,10 @@
 # Using Screenlets in Android Apps [](id=using-screenlets-in-android-apps)
 
 You can start using Screenlets once you've
-[prepared](/develop/tutorials/-/knowledge_base/7-0/preparing-android-projects-for-liferay-screens)
+[prepared](/develop/tutorials/-/knowledge_base/7-1/preparing-android-projects-for-liferay-screens)
 your project to use Liferay Screens. There are plenty of Liferay Screenlets
 available and they're described in the Screenlet
-[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android).
+[reference documentation](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-android).
 It is very straightforward to use Screenlets. This tutorial shows you how to
 insert Screenlets into your android app and configure them. You'll be a
 Screenlet master in no time! 
@@ -20,7 +20,7 @@ inserted in an activity's `FrameLayout`.
 
 Next, set the Screenlet's attributes. If it's a Liferay Screenlet, refer to the
 Screenlet
-[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
+[reference documentation](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-android) 
 to learn the Screenlet's required and supported attributes. This screenshot
 shows the attributes of the Login Screenlet being set:
 
@@ -39,16 +39,16 @@ for the Screenlet's events.
 Make sure to implement all methods required by the Screenlet's listener
 interface. For Liferay's Screenlets, the listener methods are listed in each
 Screenlet's
-[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android).
+[reference documentation](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-android).
 That's all there is to it! Awesome! Now you know how to use Screenlets in your 
 Android apps. 
 
 **Related Topics**
 
-[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-android-projects-for-liferay-screens)
+[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/preparing-android-projects-for-liferay-screens)
 
-[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets)
+[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/using-views-in-android-screenlets)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets)
 
-[Using Screenlets in iOS apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-ios-apps)
