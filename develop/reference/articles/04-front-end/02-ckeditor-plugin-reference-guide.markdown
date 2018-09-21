@@ -72,15 +72,14 @@ plugin's name and buttons if applicable:
 +$$$
 
 **Note:** The following CKEditor plugins are not available for inline mode in 
-AlloyEditor at this time, however, you can still use them in the classic 
-CKEditor:
+AlloyEditor at this time, but you can still use them in the classic CKEditor:
 
 - [maximize](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/maximize/plugin.js)
 - [print](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/print/plugin.js)
 - [save](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/save/plugin.js)
 
 To use the Classic CKEditor instead of AlloyEditor, there are a few 
-properties you can use, depending on the portlet. Add the 
+properties to set, depending on the portlet. Add the 
 [properties](https://github.com/liferay/liferay-portal/blob/7.1.x/portal-impl/src/portal.properties#L5484-L5493) 
 that you need to your `portal-ext.properties` file:
 
