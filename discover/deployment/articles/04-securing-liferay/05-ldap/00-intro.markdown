@@ -111,7 +111,7 @@ Although most LDAP configuration can be done from Instance Settings, there are
 several configuration parameters that are only available in System Settings. 
 
 If you must change any of these options, navigate to *Control Panel* &rarr;
-*Configuration* &rarr; *System Settings*. Go to the *Foundation* section and
+*Configuration* &rarr; *System Settings*. Go to the *Security* section and
 find the entries with LDAP in the title.
 
 

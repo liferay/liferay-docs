@@ -11,10 +11,10 @@ Analytics Cloud data sources. In summary, Assets are
 
 Metrics for these Assets are currently reported in Analytics Cloud:
 
-- [Forms](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/forms)
-- [Blogs](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/publishing-blogs)
-- [Documents and Media](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/managing-documents-and-media)
-- [Web Content](https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/authoring-content-structured-and-inline-content)
+- [Forms](/discover/portal/-/knowledge_base/7-1/forms)
+- [Blogs](/discover/portal/-/knowledge_base/7-1/publishing-blogs)
+- [Documents and Media](/discover/portal/-/knowledge_base/7-1/managing-documents-and-media)
+- [Web Content](/discover/portal/-/knowledge_base/7-1/authoring-content-structured-and-inline-content)
 
 Continue reading for details on how to interpret Analytics Cloud data to better
 understand your assets' performance.

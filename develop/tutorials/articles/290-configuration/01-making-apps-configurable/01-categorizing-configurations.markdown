@@ -60,7 +60,7 @@ This annotation does two things:
 1.  Specifies the `dynamic-data-mapping` category.
 
 2.  Sets the 
-    [scope](/discover/portal/-/knowledge_base/7-1/configuring-liferay#configuration-scope) 
+    [scope](/discover/portal/-/knowledge_base/7-1/system-settings#configuration-scope) 
     of the configuration.
 
 The fully qualified class name of the `@ExtendedObjectClassDefinition` class is

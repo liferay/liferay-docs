@@ -28,7 +28,7 @@ while customizable widgets make it easy to add common UI elements---such as
 @commerce@ is optimized for business-to-business (B2B) transactions, combining
 modern site experiences with features that address B2B needs. For buyers with
 approval processes to observe before making purchases, @commerce@ can provide
-[workflows](/discover/portal/-knowledge_base/7-1/workflow) so that the
+[workflows](/discover/portal/-/knowledge_base/7-1/workflow) so that the
 appropriate manager must approve each order before it can be placed.
 
 In addition, @commerce@ features a user control system integrated with

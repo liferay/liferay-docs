@@ -59,6 +59,23 @@ Click a question to view the answer.
     <p><a href="/develop/tutorials/-/knowledge_base/7-1/resolving-bundle-symbolicname-syntax-issues">Adjust the <code>Bundle-SymbolicName</code> to adhere to the syntax</a>. </p>
   </div>
 </div>
+</div>
+
+<br/>
+<div class="ldn-faq-question">
+  <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">Why aren't my module's JavaScript and CSS changes showing?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
+  <div class="hide">  
+    <p><a href="/develop/tutorials/-/knowledge_base/7-1/why-arent-my-modules-javascript-and-css-changes-showing">Incorrect component properties or stale browser cache can prevent JavaScript and CSS changes from showing</a>. </p>
+  </div>
+</div>
+
+<br/>
+<div class="ldn-faq-question">
+  <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">Why aren't my fragment's JSP overrides showing?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
+  <div class="hide">  
+    <p><a href="/develop/tutorials/-/knowledge_base/7-1/why-arent-jsp-overrides-i-made-using-fragments-showing">Make sure your <code>Fragment-Host</code>'s bundle version is compatible with the host's bundle version</a>. </p>
+  </div>
+</div>
 
 <br/>
 <div class="ldn-faq-question">
@@ -94,6 +111,15 @@ Click a question to view the answer.
 
 ## Services and Components [](id=troubleshooting-services-and-components)
 
+<br/>
+<div class="ldn-faq-question">
+  <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">How can I see what's happening in the OSGi container?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
+  <div class="hide">  
+    <p><a href="/develop/tutorials/-/knowledge_base/7-1/system-check">Run a System Check.</a>. </p>
+  </div>
+</div>
+
+<br/>
 <div class="ldn-faq-question">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">How can I detect unresolved OSGi components?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
   <div class="hide">  
@@ -114,5 +140,13 @@ Click a question to view the answer.
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">How can I use files to configure components?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
   <div class="hide">  
     <p>See <a href="/develop/tutorials/-/knowledge_base/7-1/using-files-to-configure-product-modules">Using Files to Configure Module Components</a>. </p>
+  </div>
+</div>
+
+<br/>
+<div class="ldn-faq-question">
+  <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">How can I access OSGi Services from my Ext plugin?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
+  <div class="hide">  
+    <p><a href="/develop/tutorials/-/knowledge_base/7-1/using-osgi-services-from-ext-plugins">Use `ServiceTrackers`</a>. </p>
   </div>
 </div>
