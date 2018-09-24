@@ -1,4 +1,4 @@
-# Creating the Screenlet's UI [](id=creating-the-screenlets-ui)
+# Creating the Screenlet's UI
 
 In Liferay Screens for iOS, a Screenlet's UI is called a Theme. Every Screenlet 
 must have at least one Theme. A Theme has the following components: 
@@ -27,7 +27,7 @@ action: sending the bookmark to a Liferay instance. The
 defines this UI. Because the button triggers the Screenlet's action, it contains 
 `restorationIdentifier="add-bookmark"`. 
 
-![Figure 1: Here's the sample Add Bookmark Screenlet's XIB file rendered in Interface Builder.](../../../images/screens-ios-xcode-add-bookmark.png)
+![Figure 1: Here's the sample Add Bookmark Screenlet's XIB file rendered in Interface Builder.](../../../../images/screens-ios-xcode-add-bookmark.png)
 
 +$$$
 
@@ -82,6 +82,6 @@ Builder.
 If you're using CocoaPods, make sure to explicitly set a valid module for the 
 custom class--the grayed-out *Current* default value only suggests a module. 
 
-![Figure 2: In this XIB file, the custom class's module is NOT specified.](../../../images/screens-ios-theme-custom-module-wrong.png)
+![Figure 2: In this XIB file, the custom class's module is NOT specified.](../../../../images/screens-ios-theme-custom-module-wrong.png)
 
-![Figure 3: The XIB file is bound to the custom class name, with the specified module.](../../../images/screens-ios-theme-custom-module-right.png)
+![Figure 3: The XIB file is bound to the custom class name, with the specified module.](../../../../images/screens-ios-theme-custom-module-right.png)

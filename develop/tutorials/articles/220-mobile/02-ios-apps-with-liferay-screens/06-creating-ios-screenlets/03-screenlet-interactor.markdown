@@ -1,4 +1,4 @@
-# Creating the Interactor [](id=creating-the-interactor)
+# Creating the Interactor
 
 Create an Interactor class for each of your Screenlet's actions. In the 
 [`Interactor` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/Interactor.swift), 

@@ -1,4 +1,4 @@
-# Creating the Screenlet Class [](id=creating-the-screenlet-class)
+# Creating the Screenlet Class
 
 The Screenlet class is the central hub of a Screenlet. It contains the 
 Screenlet's properties, a reference to the Screenlet's View class, methods for 
