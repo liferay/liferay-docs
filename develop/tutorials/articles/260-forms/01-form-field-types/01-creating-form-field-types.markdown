@@ -86,8 +86,11 @@ add this to your `build.gradle` file:
         }
     }
 
-It's all boilerplate and can be copied directly into your module's `build.gradle` if you follow the
-conventions presented here. 
+It's all boilerplate and can be copied directly into your module's
+`build.gradle` if you follow the conventions presented here. If you're
+developing in a Liferay Workspace, omit the `buildscript {...}` block and the
+`apply plugin` directive. The Liferay Plugin dependency is already configured in
+the Workspace's Gradle files.
 
 Next craft the OSGi Component that marks your class as an implementation of
 `DDMFormFieldType`. 
