@@ -1,4 +1,4 @@
-# Theme Layer of Liferay Screens for iOS
+# Theme Layer of Liferay Screens for iOS [](id=theme-layer-of-liferay-screens-for-ios)
 
 The Theme Layer lets developers set a Screenlet's look and feel. The Screenlet 
 property `themeName` determines the Theme to load. This can be set by the 
@@ -7,7 +7,7 @@ class for Screenlet behavior and an XIB file for the UI. By inheriting one or
 more of these components from another Theme, the different Theme *types* allow 
 varying levels of control over a Screenlet's  UI design and behavior. 
 
-![Figure 4: The Theme Layer of Liferay Screens for iOS.](../../../../images/screens-ios-architecture-04.png)
+![Figure 1: The Theme Layer of Liferay Screens for iOS.](../../../../images/screens-ios-architecture-04.png)
 
 There are several Theme types:
 

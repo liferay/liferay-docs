@@ -1,4 +1,4 @@
-# Creating the iOS List Screenlet's Interactor
+# Creating the iOS List Screenlet's Interactor [](id=creating-the-ios-list-screenlets-interactor)
 
 Recall that Interactors implement your Screenlet's actions. In list Screenlets, 
 loading entities is usually the only action a user can take. The Interactor 

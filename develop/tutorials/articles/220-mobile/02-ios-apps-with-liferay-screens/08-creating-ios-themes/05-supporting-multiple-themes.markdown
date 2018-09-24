@@ -1,4 +1,4 @@
-# Supporting Multiple Themes in Your iOS Screenlet
+# Supporting Multiple Themes in Your iOS Screenlet [](id=supporting-multiple-themes-in-your-ios-screenlet)
 
 Themes let you present the same Screenlet with a different look and feel. For 
 example, if you have multiple apps that use the same Screenlet, you can use 

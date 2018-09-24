@@ -1,4 +1,4 @@
-# Planning Your iOS Screenlet
+# Planning Your iOS Screenlet [](id=planning-your-ios-screenlet)
 
 Before creating your Screenlet, you must determine what it needs to do and how 
 you want developers to use it. This determines where you'll create your 

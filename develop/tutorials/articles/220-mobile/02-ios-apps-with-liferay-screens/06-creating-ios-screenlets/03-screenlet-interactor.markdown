@@ -1,4 +1,4 @@
-# Creating the iOS Screenlet's Interactor
+# Creating the iOS Screenlet's Interactor [](id=creating-the-ios-screenlets-interactor)
 
 Create an Interactor class for each of your Screenlet's actions. In the 
 [`Interactor` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/Interactor.swift), 

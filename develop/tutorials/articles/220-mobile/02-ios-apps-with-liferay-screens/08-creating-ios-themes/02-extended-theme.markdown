@@ -1,4 +1,4 @@
-# Creating an iOS Extended Theme
+# Creating an iOS Extended Theme [](id=creating-an-ios-extended-theme)
 
 An Extended Theme inherits another Theme's UI components and behavior, but lets
 you add to or alter it by extending the parent Theme's View class and
@@ -15,7 +15,7 @@ These steps explain how to create an Extended Theme:
     Theme as a template. Build your UI changes in your new XIB file with
     Interface Builder. 
 
-    ![Figure 2: This example Extended Theme's XIB file extends the Login Portlet's UI and behavior with a switch that lets the user show or hide the password field value.](../../../../images/screens-ios-xcode-ext-theme.png)
+    ![Figure 1: This example Extended Theme's XIB file extends the Login Portlet's UI and behavior with a switch that lets the user show or hide the password field value.](../../../../images/screens-ios-xcode-ext-theme.png)
 
 2.  Create a new View class that extends the parent Theme's View class. You 
     should name this class after the XIB file you just created. You can add or

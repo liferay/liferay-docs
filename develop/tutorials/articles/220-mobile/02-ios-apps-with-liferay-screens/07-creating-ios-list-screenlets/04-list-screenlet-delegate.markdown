@@ -1,4 +1,4 @@
-# Creating the iOS List Screenlet's Delegate
+# Creating the iOS List Screenlet's Delegate [](id=creating-the-ios-list-screenlets-delegate)
 
 Recall that a delegate is required if you want other classes to respond to your 
 Screenlet's actions. Create your delegate by following the first step in 

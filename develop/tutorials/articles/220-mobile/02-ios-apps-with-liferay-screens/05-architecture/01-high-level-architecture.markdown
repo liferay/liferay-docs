@@ -1,4 +1,4 @@
-# High Level Architecture of Liferay Screens for iOS
+# High Level Architecture of Liferay Screens for iOS [](id=high-level-architecture-of-liferay-screens-for-ios)
 
 Liferay Screens for iOS is composed of a Core, a Screenlet layer, a View layer,
 and Server Connectors. Server Connectors are technically part of the Core, but

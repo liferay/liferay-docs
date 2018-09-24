@@ -1,11 +1,11 @@
-# Screenlet Layer of Liferay Screens for iOS
+# Screenlet Layer of Liferay Screens for iOS [](id=screenlet-layer-of-liferay-screens-for-ios)
 
 The Screenlet layer contains the available Screenlets in Liferay Screens for
 iOS. The following diagram shows the Screenlet layer in relation to the Core,
 Interactor, Theme, and Connector layers. The Screenlet classes in the diagram 
 are explained in this section. 
 
-![Figure 3: This diagram illustrates the iOS Screenlet Layer's relationship to other Screens components.](../../../../images/screens-ios-architecture-03.png)
+![Figure 1: This diagram illustrates the iOS Screenlet Layer's relationship to other Screens components.](../../../../images/screens-ios-architecture-03.png)
 
 Screenlets are comprised of several Swift classes and an XIB file:
 

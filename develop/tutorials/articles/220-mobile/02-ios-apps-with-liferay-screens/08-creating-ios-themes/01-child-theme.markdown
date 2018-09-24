@@ -1,4 +1,4 @@
-# Creating an iOS Child Theme
+# Creating an iOS Child Theme [](id=creating-an-ios-child-theme)
 
 In a Child Theme, you leverage a parent Theme's behavior and UI components, but
 you can modify the appearance and position of the UI components. Note that you
