@@ -17,7 +17,7 @@ public class GuestbookPermission {
 	}
 	
 	@Reference(
-			target="(resource.name=" + GuestbookConstants.RESOURCE_NAME + ")"), 
+			target="(resource.name=" + GuestbookConstants.RESOURCE_NAME + ")", 
 			unbind="-"
 			)
 	protected void setPortletResourcePermission(PortletResourcePermission portletResourcePermission) {
