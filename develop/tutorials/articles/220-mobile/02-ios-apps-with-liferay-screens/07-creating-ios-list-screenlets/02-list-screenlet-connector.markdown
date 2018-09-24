@@ -1,4 +1,4 @@
-# Creating the Connector [](id=creating-the-connector)
+# Creating the iOS List Screenlet's Connector
 
 Recall that Connectors make a server call. To support pagination, a List 
 Screenlet's Connector class must extend the 

@@ -1,4 +1,4 @@
-# Creating the Theme [](id=creating-the-view)
+# Creating the iOS List Screenlet's Theme
 
 Recall that each Screenlet needs a Theme to serve as its UI. A Theme needs an 
 XIB file to define the UI's components and layout. Since a list Screenlet 

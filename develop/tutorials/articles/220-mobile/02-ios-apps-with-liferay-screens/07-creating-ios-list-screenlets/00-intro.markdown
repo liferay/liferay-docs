@@ -14,14 +14,15 @@ list Screenlet. A list Screenlet can display any entity from a Liferay instance.
 For example, you can create a list Screenlet that displays standard Liferay 
 entities like `User`, or custom entities from custom Liferay apps. 
 
-This tutorial uses code from the sample Bookmark List Screenlet to show you how 
-to create your own list Screenlet. This Screenlet displays a list of bookmarks 
-from Liferay's Bookmarks portlet. You can find this Screenlet's complete code 
+The tutorials in this section use code from the sample Bookmark List Screenlet 
+to show you how to create your own list Screenlet. This Screenlet displays a 
+list of bookmarks from Liferay's Bookmarks portlet. You can find this 
+Screenlet's complete code 
 [here in GitHub](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/BookmarkListScreenlet). 
 
 Note that because this tutorial focuses on creating a list Screenlet, it doesn't 
 explain general Screenlet concepts and components. Before beginning, you should 
-therefore read the following tutorials: 
+therefore read the following: 
 
 - [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
 - [Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/supporting-multiple-themes-in-your-screenlet)
@@ -29,8 +30,7 @@ therefore read the following tutorials:
 - [Add a Screenlet Delegate](/develop/tutorials/-/knowledge_base/7-0/add-a-screenlet-delegate)
 - [Creating and Using Your Screenlet's Model Class](/develop/tutorials/-/knowledge_base/7-0/creating-and-using-your-screenlets-model-class)
 
-This tutorial uses the following steps to show you how to create a list 
-Screenlet: 
+You'll create a list Screenlet by following these steps: 
 
 1. Creating the Model class
 2. Creating the Theme
@@ -57,3 +57,5 @@ For instructions on creating your model class, see the tutorial
 [Creating and Using Your Screenlet's Model Class](/develop/tutorials/-/knowledge_base/7-0/creating-and-using-your-screenlets-model-class). 
 The example model class in that tutorial is identical to Bookmark List 
 Screenlet's. 
+
+Next, you'll create your list Screenlet's theme. 

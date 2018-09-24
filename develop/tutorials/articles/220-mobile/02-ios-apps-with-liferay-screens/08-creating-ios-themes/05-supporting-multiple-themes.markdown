@@ -1,4 +1,4 @@
-# Supporting Multiple Themes in Your Screenlet [](id=supporting-multiple-themes-in-your-screenlet)
+# Supporting Multiple Themes in Your iOS Screenlet
 
 Themes let you present the same Screenlet with a different look and feel. For 
 example, if you have multiple apps that use the same Screenlet, you can use 
@@ -8,7 +8,7 @@ For your custom Screenlet to support different Themes, however, it must contain
 a *View Model* protocol. A View Model abstracts the Theme used to display the 
 Screenlet, thus letting developers use other Themes. For example, note that the 
 Screenlet class's `createInteractor` method in 
-[the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets) 
+[the Screenlet creation tutorials](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets) 
 accesses the View class (`AddBookmarkView_default`) directly when getting a 
 reference to the View class:
 
@@ -23,8 +23,8 @@ Theme's View class via a View Model protocol.
 This tutorial shows you how to add a View Model to your Screenlet. The Add 
 Bookmark Screenlet created in 
 [the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets) 
-is used as an example. Note that you can also follow these steps to add a View 
-Model while creating your Screenlet. 
+is used as an example. Note that you can also add a View Model while creating 
+your Screenlet. 
 
 ## Creating and Using a View Model [](id=creating-and-using-a-view-model)
 

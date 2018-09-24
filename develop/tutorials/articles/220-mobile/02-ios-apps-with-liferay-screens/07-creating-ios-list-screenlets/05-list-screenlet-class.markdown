@@ -1,4 +1,4 @@
-# Creating the Screenlet Class [](id=creating-the-screenlet-class)
+# Creating the iOS List Screenlet's Class
 
 Now that your list Screenlet's other components exist, you can create the 
 Screenlet class. A list Screenlet's Screenlet class must extend the 

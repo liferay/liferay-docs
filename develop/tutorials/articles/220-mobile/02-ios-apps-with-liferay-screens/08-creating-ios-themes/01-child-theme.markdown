@@ -1,4 +1,4 @@
-# Creating a Child Theme [](id=creating-a-child-theme)
+# Creating an iOS Child Theme
 
 In a Child Theme, you leverage a parent Theme's behavior and UI components, but
 you can modify the appearance and position of the UI components. Note that you
@@ -6,11 +6,11 @@ can't add or remove any components and the parent Theme must be a Full Theme.
 The Child Theme presents visual changes with its own XIB file and inherits the
 parent's View class. 
 
-For example, the Child Theme in Figure 1 presents the same UI components as the
+For example, the Child Theme in Figure 1 presents the same UI components as the 
 [Login Screenlet's](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Core/Auth/LoginScreenlet)
-Default Theme, but enlarges them for viewing on devices with larger screens.
+Default Theme, but enlarges them for viewing on devices with larger screens. 
 
-![Figure 1: The UI components are enlarged in the example Child Theme's XIB file.](../../../images/screens-ios-xcode-child-theme.png)
+![Figure 1: The UI components are enlarged in the example Child Theme's XIB file.](../../../../images/screens-ios-xcode-child-theme.png)
 
 You can follow these steps to create a Child Theme: 
 
@@ -35,8 +35,8 @@ You can follow these steps to create a Child Theme:
 
 	$$$
 
-You can optionally
+You can optionally 
 [package](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes) your
-Theme and/or start
+Theme and/or start 
 [using](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
-it.
+it. 

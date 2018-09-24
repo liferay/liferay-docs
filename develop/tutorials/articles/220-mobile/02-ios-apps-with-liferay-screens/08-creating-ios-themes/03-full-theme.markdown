@@ -1,4 +1,4 @@
-# Full Theme [](id=full-theme)
+# Creating an iOS Full Theme
 
 A Full Theme implements unique behavior and appearance for a Screenlet, without
 using a parent Theme. Its View class must inherit Screens's
@@ -16,7 +16,7 @@ Follow these steps to create a Full Theme:
     `FooScreenletView_barTheme.xib`. You can use the XIB file from the
     Screenlet's default Theme as a template. 
 
-    ![Figure 3: This Full Theme for the Login Screenlet, includes a text field for entering the user name, uses the UDID for the password, and adds a *Sign In* button with the same `restorationIdentifier` as the Default Theme.](../../../images/screens-ios-xcode-full-theme.png)
+    ![Figure 3: This Full Theme for the Login Screenlet, includes a text field for entering the user name, uses the UDID for the password, and adds a *Sign In* button with the same `restorationIdentifier` as the Default Theme.](../../../../images/screens-ios-xcode-full-theme.png)
 
 2.  Create a new View class for your Theme named after the XIB file you just 
     created. As a template, you can use the View class of your Screenlet's
@@ -30,8 +30,8 @@ Follow these steps to create a Full Theme:
 3.  Set your Theme's new View class as your XIB file's custom class and bind 
     any `@IBOutlet` and `@IBAction` actions to your class. 
 
-Super! You can optionally
-[package](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes) your
-Theme and/or start
+Now that your theme is finished, you can optionally 
+[package](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes) 
+and/or start 
 [using](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
 it. Note that a Full Theme can serve as a parent to a Child and Extended Theme. 

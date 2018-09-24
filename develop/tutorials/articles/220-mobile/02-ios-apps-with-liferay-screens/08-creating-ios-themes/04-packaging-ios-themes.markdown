@@ -13,7 +13,7 @@ steps):
 
 1.  Create an empty *Cocoa Touch Framework* Xcode project.
 
-    ![Figure 1: Choose *Cocoa Touch Framework* when creating a project for your Theme.](../../../images/screens-ios-cocoa-touch-framework.png)
+    ![Figure 1: Choose *Cocoa Touch Framework* when creating a project for your Theme.](../../../../images/screens-ios-cocoa-touch-framework.png)
 
 2.  Name your project `LiferayScreensThemeName`, replacing `Name` with your
     Theme's name. You can specify any name, but it's a best practice to use your
@@ -28,11 +28,11 @@ steps):
     for the custom class--the grayed-out *Current* default value only suggests a
     module.
 
-    ![Figure 2: This XIB file's custom class's module is NOT specified.](../../../images/screens-ios-theme-custom-module-wrong.png)
+    ![Figure 2: This XIB file's custom class's module is NOT specified.](../../../../images/screens-ios-theme-custom-module-wrong.png)
 
     In the following screenshot, the setting for the custom class is correct:
 
-    ![Figure 3: The XIB file is bound to the custom class name, with the specified module.](../../../images/screens-ios-theme-custom-module-right.png)
+    ![Figure 3: The XIB file is bound to the custom class name, with the specified module.](../../../../images/screens-ios-theme-custom-module-right.png)
 
 5.  In your project's root folder, add a file named
     `LiferayScreensTheme-Name.podspec` (change `Name` to your Theme's CocoaPods

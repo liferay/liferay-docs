@@ -1,4 +1,4 @@
-# Core Layer
+# Core Layer of Liferay Screens for iOS
 
 The Core is the micro-framework that lets developers write Screenlets in a
 structured and isolated way. All Screenlets share a common structure based on

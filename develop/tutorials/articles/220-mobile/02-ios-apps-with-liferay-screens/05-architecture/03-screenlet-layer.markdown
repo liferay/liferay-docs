@@ -1,4 +1,4 @@
-# Screenlet Layer
+# Screenlet Layer of Liferay Screens for iOS
 
 The Screenlet layer contains the available Screenlets in Liferay Screens for
 iOS. The following diagram shows the Screenlet layer in relation to the Core,
