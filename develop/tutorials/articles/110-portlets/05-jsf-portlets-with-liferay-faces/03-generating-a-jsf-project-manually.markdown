@@ -11,18 +11,18 @@ how to package a JSF application as a module.
 
 ## Packaging a JSF Application [](id=packaging-a-jsf-application)
 
-Developers creating portlets for @product-ver@ can package their portlets as Java
-EE style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR) OSGi
-bundle artifacts. JSF portlet developers, however, must package their portlets
-as WAR artifacts because the JSF framework expects a WAR layout and often
-requires the `WEB-INF/faces-config.xml` descriptor and other Java EE resources
-such as the `WEB-INF/web.xml` descriptor.
+Developers creating portlets for @product-ver@ can package their portlets as
+Java EE style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
+OSGi bundle artifacts. JSF portlet developers, however, must package their
+portlets as WAR artifacts because the JSF framework expects a WAR layout and
+often requires the `WEB-INF/faces-config.xml` descriptor and other Java EE
+resources such as the `WEB-INF/web.xml` descriptor.
 
 Liferay provides a way for these WAR-styled portlets to be deployed and treated
 like OSGi modules by Liferay's OSGi runtime. The WAB Generator does this
 automatically by converting your WAR artifact to a WAB at deployment time. You
 can learn more about WABs and the WAB Generator in the
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
 tutorial.
 
 This is how a JSF WAR artifact is structured: 
@@ -57,7 +57,7 @@ Next, you'll begin creating a simple JSF application that is deployable to
 ## Creating a JSF Application [](id=creating-a-jsf-application)
 
 JSF portlets are supported on Liferay Portal by using
-[Liferay Faces Bridge](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-bridge).
+[Liferay Faces Bridge](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-bridge).
 Liferay Faces Bridge makes developing JSF portlets as similar as possible to JSF
 web app development. 
 
@@ -108,9 +108,9 @@ Bridge.
             <version>1.0-SNAPSHOT</version>
             <properties>
                 <faces.api.version>2.2</faces.api.version>
-                <liferay.faces.bridge.ext.version>5.0.0</liferay.faces.bridge.ext.version>
-                <liferay.faces.bridge.version>4.0.0</liferay.faces.bridge.version>
-                <mojarra.version>2.2.13</mojarra.version>
+                <liferay.faces.bridge.ext.version>5.0.3</liferay.faces.bridge.ext.version>
+                <liferay.faces.bridge.version>4.1.2</liferay.faces.bridge.version>
+                <mojarra.version>2.2.18</mojarra.version>
             </properties>
             <build>
                 <plugins>
@@ -173,13 +173,13 @@ Bridge.
 
     There are several UI component suites that a JSF application can use,
     which include
-    [*Liferay Faces Alloy*](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-alloy),
+    [*Liferay Faces Alloy*](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-alloy),
     [*PrimeFaces*](http://primefaces.org/),
     [*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf),
     and
     [*RichFaces*](http://richfaces.jboss.org/). Furthermore, you can take
     advantage of
-    [*Liferay Faces Portal*](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-portal)
+    [*Liferay Faces Portal*](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-portal)
     in order to use Liferay-specific utilities and UI components. These
     components can be used by specifying them as dependencies in your build
     file, as well.
@@ -351,12 +351,8 @@ WAR-style portlet descriptors.
 Great! You now have a good idea of how to specify and define general descriptor
 files for your JSF portlet. JSF portlets also use Liferay descriptors, which you
 can learn more about in the
-[Liferay Descriptors](/develop/tutorials/-/knowledge_base/7-0/spring-mvc#liferay-descriptors)
+[Liferay Descriptors](/develop/tutorials/-/knowledge_base/7-1/spring-mvc#liferay-descriptors)
 sub-section.
-
-<!-- Pointing to existing Liferay descriptors section. I'll make sure to
-redirect this link once Spring MVC is reorganized and the Liferay Descriptors
-section is (possibly) relocated. -Cody -->
 
 Now that your portlet descriptors are defined, you should begin working on your
 JSF application's resources.
@@ -513,7 +509,7 @@ process.
 Awesome! Your Hello User JSF application is complete! Deploy your WAR to
 @product@. Remember, when your WAR-style portlet is deployed, it's converted to
 a WAB via the WAB Generator. Visit the 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
 tutorial for more information on this process and your portlet's resulting
 folder structure.
 
@@ -530,14 +526,14 @@ To recap, you created your JSF application in the following steps:
 
 You can view the finished version of the Hello User JSF application by
 downloading its
-[ZIP file](https://dev.liferay.com/documents/10184/656312/hello-user-jsf-portlet.zip/4b736126-3267-46fe-8b7c-54a83e305609?download=true).
+[ZIP file](https://dev.liferay.com/documents/10184/1608802/hello-user-jsf-portlet.zip/61e42092-4487-976d-f0f0-841fba0fba33?version=1.0&download=true).
 
 Now you have the knowledge to create your own JSF applications!
 
 ## Related Topics [](id=related-topics)
 
-[Fundamentals](/develop/tutorials/-/knowledge_base/7-0/fundamentals)
+[Fundamentals](/develop/tutorials/-/knowledge_base/7-1/fundamentals)
 
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+[Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
 
-[Configuration](/develop/tutorials/-/knowledge_base/7-0/configuration)
+[Configurable Applications](/develop/tutorials/-/knowledge_base/7-1/configurable-applications)
