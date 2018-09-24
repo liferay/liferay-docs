@@ -10,8 +10,9 @@ canonical implementation of these architectures because they're designed for
 apps. Screens isn't an app; it's a suite of visual components intended for use
 *in* apps. 
 
-This tutorial explains the architecture of Liferay Screens for iOS. It begins 
-with an overview of the high level components that make up the system. This 
-includes the Core, Screenlets, and Themes. These components are then described 
-in detail in the sections that follow. After you get done examining Screens's 
-building blocks, you'll be ready to create some amazing Screenlets and Themes! 
+The tutorials in this section explain the architecture of Liferay Screens for 
+iOS. First is an overview of the high level components that make up the system. 
+This includes the Core, Screenlets, and Themes. These components are then 
+described in detail in the tutorials that follow. After you get done examining 
+these building blocks, you'll be ready to create some amazing Screenlets and 
+Themes! 
