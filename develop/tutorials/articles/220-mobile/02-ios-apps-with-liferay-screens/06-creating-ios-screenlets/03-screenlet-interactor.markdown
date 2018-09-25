@@ -12,7 +12,7 @@ functionality unique to your Screenlet.
 Interactor. Doing so provides an additional abstraction layer for your server 
 call, leaving your Interactor to instantiate your Connector and receive its 
 results. For instructions on this, see the tutorial 
-[Create and Use a Connector with Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/create-and-use-a-connector-with-your-screenlet). 
+[Create and Use a Connector with Your Screenlet](/develop/tutorials/-/knowledge_base/7-1/create-and-use-a-connector-with-your-screenlet). 
 
 $$$
 
@@ -21,7 +21,7 @@ Connectors to run their operations in the background. For example, the Liferay
 Mobile SDK provides the 
 [`LRCallback` protocol](https://github.com/liferay/liferay-mobile-sdk/blob/master/ios/Source/Core/LRCallback.h) 
 for this purpose. This is described in 
-[the Mobile SDK tutorial on invoking Liferay services asynchronously](/develop/tutorials/-/knowledge_base/7-0/invoking-services-asynchronously-from-your-ios-app). 
+[the Mobile SDK tutorial on invoking Liferay services asynchronously](/develop/tutorials/-/knowledge_base/7-1/invoking-services-asynchronously-from-your-ios-app). 
 Screens bridges this protocol to make it available in Swift. Your Interactor 
 class can conform this protocol to make its server calls asynchronously. To 
 implement an Interactor class:

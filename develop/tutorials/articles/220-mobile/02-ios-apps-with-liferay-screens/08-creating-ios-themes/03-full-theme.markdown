@@ -5,7 +5,7 @@ using a parent Theme. Its View class must inherit Screens's
 [`BaseScreenletView`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenletView.swift)
 and conform to the Screenlet's View Model protocol. It must also specify a new
 UI in an XIB file. As you create a Full Theme, you can refer to the tutorial
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets)
 to learn how to create these classes. 
 
 Follow these steps to create a Full Theme:
@@ -31,7 +31,7 @@ Follow these steps to create a Full Theme:
     any `@IBOutlet` and `@IBAction` actions to your class. 
 
 Now that your theme is finished, you can optionally 
-[package](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes) 
+[package](/develop/tutorials/-/knowledge_base/7-1/packaging-ios-themes) 
 and/or start 
-[using](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
-it. Note that a Full Theme can serve as a parent to a Child and Extended Theme. 
+[using it](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-ios-screenlets). 
+Note that a Full Theme can serve as a parent to a Child and Extended Theme. 

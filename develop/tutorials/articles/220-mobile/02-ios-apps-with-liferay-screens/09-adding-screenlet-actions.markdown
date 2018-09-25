@@ -13,19 +13,19 @@ Screenlet, and trigger an action programmatically. As an example, this tutorial
 uses the 
 [advanced version of the sample Add Bookmark Screenlet](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/AddBookmarkScreenlet/Advanced). 
 This Screenlet is similar to the sample Add Bookmark Screenlet created in 
-[the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
+[the Screenlet creation tutorials](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets). 
 The advanced Add Bookmark Screenlet, however, contains two actions: 
 
 1. Add Bookmark: Adds a bookmark to the Bookmarks portlet in a @product@
    installation. This is the Screenlet's main action, created in 
-   [the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
+   [the Screenlet creation tutorials](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets). 
 
 2. Get Title: Retrieves the title from a bookmark URL entered by the user. This 
    tutorial shows you how to implement this action. 
 
 Note that this tutorial doesn't explain Screenlet creation in general. Before 
 proceeding, make sure you've read 
-[the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
+[the Screenlet creation tutorials](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets). 
 And without any further ado, it's time to implement your Screenlet's action! 
 
 ## Implementing Your Action [](id=implementing-your-action)
@@ -67,7 +67,7 @@ Use the following steps to add an action to your your Screenlet:
 4. Update your View class or View Model protocol to account for the new action. 
    For example, Add Bookmark Screenlet contains a View Model 
    (`AddBookmarkViewModel`) so it can 
-   [support multiple Themes](/develop/tutorials/-/knowledge_base/7-0/supporting-multiple-themes-in-your-screenlet). 
+   [support multiple Themes](/develop/tutorials/-/knowledge_base/7-1/supporting-multiple-themes-in-your-ios-screenlet). 
    This View Model must allow the new action to set its `title` variable: 
 
         import UIKit
@@ -93,7 +93,7 @@ Use the following steps to add an action to your your Screenlet:
 
 6. Create a new Interactor class for the new action. To do this, use the same 
    steps detailed in the 
-   [Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets#creating-the-interactor). 
+   [Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-the-ios-screenlets-interactor). 
    For example, here's the Interactor class for Add Bookmark Screenlet's Get 
    Title action: 
 
@@ -239,10 +239,10 @@ That's it! Now you know how to trigger your Screenlet actions programmatically.
 
 ## Related Topics [](id=related-topics)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets)
 
-[Create and Use a Connector with Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/create-and-use-a-connector-with-your-screenlet)
+[Create and Use a Connector with Your Screenlet](/develop/tutorials/-/knowledge_base/7-1/create-and-use-a-connector-with-your-screenlet)
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-list-screenlets)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-ios)

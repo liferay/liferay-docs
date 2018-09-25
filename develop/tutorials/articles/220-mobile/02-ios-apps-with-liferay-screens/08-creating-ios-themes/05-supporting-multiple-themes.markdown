@@ -8,7 +8,7 @@ For your custom Screenlet to support different Themes, however, it must contain
 a *View Model* protocol. A View Model abstracts the Theme used to display the 
 Screenlet, thus letting developers use other Themes. For example, note that the 
 Screenlet class's `createInteractor` method in 
-[the Screenlet creation tutorials](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets) 
+[the Screenlet creation tutorials](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets) 
 accesses the View class (`AddBookmarkView_default`) directly when getting a 
 reference to the View class:
 
@@ -22,7 +22,7 @@ Theme's View class via a View Model protocol.
 
 This tutorial shows you how to add a View Model to your Screenlet. The Add 
 Bookmark Screenlet created in 
-[the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets) 
+[the Screenlet creation tutorials](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets) 
 is used as an example. Note that you can also add a View Model while creating 
 your Screenlet. 
 
@@ -108,16 +108,16 @@ Follow these steps to add and use a View Model in your Screenlet:
         ...
 
 That's it! Now your Screenlet is ready to use other Themes that you create for 
-it. See the tutorial 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes) 
+it. See the tutorials on 
+[creating iOS Themes](/develop/tutorials/-/knowledge_base/7-1/creating-ios-themes) 
 for instructions on creating a Theme. 
 
 ## Related Topics [](id=related-topics)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-1/creating-ios-themes)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-ios)
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-list-screenlets)

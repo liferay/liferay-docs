@@ -52,7 +52,7 @@ Screenlets are comprised of several Swift classes and an XIB file:
     This way, you can implement your own factory class to use to create your own 
     Connector objects. To tell Screens to use your factory class, specify it in 
     the `liferay-server-context.plist` file as described 
-    [in the tutorial on preparing your iOS project for Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-ios-projects-for-liferay-screens#configuring-communication-with-liferay). 
+    [in the tutorial on preparing your iOS project for Screens](/develop/tutorials/-/knowledge_base/7-1/preparing-ios-projects-for-liferay-screens#configuring-communication-with-liferay). 
 
 -   **MyScreenletView_themeX:** A class that belongs to one specific Theme. In 
     the diagram, this Theme is *ThemeX*. The class renders the Screenlet's UI by 
@@ -68,5 +68,5 @@ Screenlets are comprised of several Swift classes and an XIB file:
     with a view class named *FooScreenletView* and a Theme named *BarTheme* must 
     have an XIB file named `FooScreenletView_barTheme.xib`. 
 
-For more details, refer to the tutorial
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
+For more details, refer to the tutorials on 
+[creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets). 

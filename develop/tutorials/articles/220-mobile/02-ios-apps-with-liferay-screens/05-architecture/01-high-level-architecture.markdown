@@ -4,7 +4,7 @@ Liferay Screens for iOS is composed of a Core, a Screenlet layer, a View layer,
 and Server Connectors. Server Connectors are technically part of the Core, but
 are worth describing separately. They facilitate interaction with local and
 remote data sources and communication between the Screenlet layer and the
-[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk). 
+[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/mobile-sdk). 
 
 ![Figure 1: The high level components of Liferay Screens for iOS.](../../../../images/screens-ios-architecture-01.png)
 
@@ -19,7 +19,7 @@ Each component is described here:
     UI events to start server requests (via Server Connectors), and define a set 
     of `@IBInspectable` properties that can be configured from Interface 
     Builder. The Screenlets bundled with Liferay Screens are known as the 
-    [Screenlet library](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios). 
+    [Screenlet library](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-ios). 
 
 -   **Interactors:** Implementations of specific use cases for communicating 
     with servers or any other data store. They can use local and remote data 
@@ -32,7 +32,7 @@ Each component is described here:
 -   **Connectors** (or Server Connectors): A collection of classes that can 
     interact with local and remote data sources and Liferay instances. Liferay's 
     own set of Connectors, Liferay Connectors, use the
-    [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-ios-app). 
+    [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/invoking-liferay-services-in-your-ios-app). 
     All Server Connectors can run concurrently since they use the 
     [`NSOperation` framework](https://developer.apple.com/library/mac/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationObjects/OperationObjects.html#//apple_ref/doc/uid/TP40008091-CH101-SW1). 
     It's straightforward to define priorities and dependencies between 

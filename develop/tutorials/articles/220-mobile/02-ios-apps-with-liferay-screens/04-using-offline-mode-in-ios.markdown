@@ -10,7 +10,7 @@ users flexibility in these situations.
 
 This tutorial shows you how to use offline mode in Screenlets. For an 
 explanation of how offline mode works, see the tutorial 
-[Architecture of Offline Mode in Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[Architecture of Offline Mode in Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 Offline mode's architecture is the same on iOS and Android, although its use on 
 these platforms differs.
 
@@ -19,10 +19,10 @@ these platforms differs.
 If you want to enable the offline mode in any of your screenlets, you must
 configure the attribute `offlinePolicy`. This attribute can take four possible
 values. For a description of these values, see the section 
-[Using Policies with Offline Mode](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens#using-policies-with-offline-mode)
+[Using Policies with Offline Mode](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens#using-policies-with-offline-mode)
 in the offline mode architecture tutorial. Note that each Screenlet behaves a
 bit differently with offline mode. For specific details, see the 
-[Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios). 
+[Screenlet reference documentation](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-ios). 
 
 ## Handling Synchronization [](id=handling-synchronization)
 
@@ -39,17 +39,17 @@ Use the following steps to start a synchronization process:
 
 2.  Set the delegate property. This delegate object receives the events produced 
     in the synchronization process. For more details on the delegate's methods, see 
-    [the API reference documentation for the `SyncManagerDelegate` class](/develop/reference/-/knowledge_base/7-0/syncmanagerdelegate).
+    [the API reference documentation for the `SyncManagerDelegate` class](/develop/reference/-/knowledge_base/7-1/syncmanagerdelegate).
 
 3.  Make sure you keep a strong reference to the `SyncManager` object while the 
     process is running.
 
 ## Related Topics [](id=related-topics)
 
-[Architecture of Offline Mode in Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens)
+[Architecture of Offline Mode in Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-ios-apps)
 
-[Using Offline Mode in Android](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android)
+[Using Offline Mode in Android](/develop/tutorials/-/knowledge_base/7-1/using-offline-mode-in-android)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)

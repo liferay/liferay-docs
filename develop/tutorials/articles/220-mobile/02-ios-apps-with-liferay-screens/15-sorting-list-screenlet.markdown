@@ -11,7 +11,7 @@ for your sorted list.
 
 **Note:** To create a new comparator, you must create a class that extends the 
 portal's 
-[`OrderByComparator` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/OrderByComparator.html) 
+[`OrderByComparator` class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/OrderByComparator.html) 
 with your entity as a type argument. Then you must override the methods that 
 implement the sort. For example, the portal's 
 [`EntryURLComparator` class](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/util/comparator/EntryURLComparator.java) 
@@ -36,7 +36,7 @@ That's it! Note that although all list Screenlets inherit the `obcClassName`
 property from 
 [the `BaseListScreenlet` class](https://github.com/liferay/liferay-screens/blob/develop/ios/Framework/Core/Base/BaseListScreenlet/BaseListScreenlet.swift), 
 the list Screenlet must also make its service call with this property. See the 
-[Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
+[Screenlet reference documentation](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-ios) 
 to see which list Screenlets included with Liferay Screens support the 
 `obcClassName` property. Also, @product@'s comparator classes can change between 
 versions. If you're using one of these comparators, make sure you specify the 
@@ -72,10 +72,10 @@ Screenlet's list.
 
 ## Related Topics [](id=related-topics)
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-list-screenlets)
 
-[Using Custom Cells with List Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-custom-cells-with-list-screenlets)
+[Using Custom Cells with List Screenlets](/develop/tutorials/-/knowledge_base/7-1/using-custom-cells-with-list-screenlets)
 
-[Creating Complex Lists in Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/creating-complex-lists-in-your-list-screenlet)
+[Creating Complex Lists in Your List Screenlet](/develop/tutorials/-/knowledge_base/7-1/creating-complex-lists-in-your-list-screenlet)
 
-[iOS Best Practices](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices)
+[iOS Best Practices](/develop/tutorials/-/knowledge_base/7-1/ios-best-practices)

@@ -42,7 +42,7 @@ arguments:
 
 Next, if you want to validate any of your Screenlet's properties, override the 
 `validateData` method as described in 
-[the tutorial on creating Connectors](/develop/tutorials/-/knowledge_base/7-0/create-and-use-a-connector-with-your-screenlet#creating-connectors). 
+[the tutorial on creating Connectors](/develop/tutorials/-/knowledge_base/7-1/create-and-use-a-connector-with-your-screenlet). 
 Note that Bookmark List Screenlet only needs to validate the `folderId`: 
 
     override public func validateData() -> ValidationError? {

@@ -15,7 +15,7 @@ as an example. First, you'll create the list's cell.
 ## Creating the Cell [](id=creating-the-cell)
 
 You'll create your list's cell with 
-[the same sequence of steps](link-to-custom-cells-tutorial) 
+[the same sequence of steps](/develop/tutorials/-/knowledge_base/7-1/using-custom-cells-with-list-screenlets) 
 used to create any list Screenlet's cell. Note, however, that how you perform 
 these steps is a bit different: 
 
@@ -75,7 +75,7 @@ Now that your cell exists, you can create the rest of your Theme.
 ## Creating the Theme's XIB and View Class [](id=creating-the-themes-xib-and-view-class)
 
 You'll create the rest of your Theme with 
-[the same sequence of steps](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets#creating-the-view) 
+[the same sequence of steps](/develop/tutorials/-/knowledge_base/7-1/creating-the-ios-list-screenlets-theme) 
 used to create any list Screenlet's Theme. Like creating the cell, how you 
 perform these steps is a bit different because your Theme uses 
 `UICollectionView` instead of `UITableView`. 
@@ -166,20 +166,20 @@ more:
     }
 
 Great! You're done! You can now use your new Theme 
-[the same way you would any other](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets). 
+[the same way you would any other](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-ios-screenlets). 
 
 If you want to package your Theme to contribute it to the Liferay Screens 
 project or distribute it with CocoaPods, see 
-[the tutorial on packaging Themes](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes). 
+[the tutorial on packaging Themes](/develop/tutorials/-/knowledge_base/7-1/packaging-ios-themes). 
 
 ## Related Topics [](id=related-topics)
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-list-screenlets)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-1/creating-ios-themes)
 
-[Sorting Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/sorting-your-list-screenlet)
+[Sorting Your List Screenlet](/develop/tutorials/-/knowledge_base/7-1/sorting-your-list-screenlet)
 
-[Using Custom Cells with List Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-custom-cells-with-list-screenlets)
+[Using Custom Cells with List Screenlets](/develop/tutorials/-/knowledge_base/7-1/using-custom-cells-with-list-screenlets)
 
-[iOS Best Practices](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices)
+[iOS Best Practices](/develop/tutorials/-/knowledge_base/7-1/ios-best-practices)

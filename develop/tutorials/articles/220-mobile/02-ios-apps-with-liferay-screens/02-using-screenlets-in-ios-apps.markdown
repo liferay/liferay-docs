@@ -1,18 +1,16 @@
 # Using Screenlets in iOS Apps [](id=using-screenlets-in-ios-apps)
 
 Once you've
-[prepared](/develop/tutorials/-/knowledge_base/7-0/preparing-ios-projects-for-liferay-screens)
+[prepared](/develop/tutorials/-/knowledge_base/7-1/preparing-ios-projects-for-liferay-screens)
 your iOS project to use Liferay Screens, you can use Screenlets in your app.
 There are plenty of Liferay Screenlets available, and they're described in the 
-Screenlet
-[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios).
+Screenlet 
+[reference documentation](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-ios).
 This tutorial shows you how to insert and configure Screenlets in iOS apps
 written in Swift and Objective-C. It also explains how to localize them. You'll
 be a Screenlet master in no time! 
 
 ## Inserting and Configuring Screenlets in iOS Apps [](id=inserting-and-configuring-screenlets-in-ios-apps)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1eUzxIKgzWY" frameborder="0" allowfullscreen></iframe>
 
 The first step to using Screenlets in your iOS project is to add a new UIView to
 your project. In Interface Builder, insert a new UIView into your Storyboard or
@@ -143,10 +141,10 @@ Way to go! You now know how to use Screenlets in your iOS apps.
 
 ## Related Topics [](id=related-topics)
 
-[Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-ios-projects-for-liferay-screens)
+[Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/preparing-ios-projects-for-liferay-screens)
 
-[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
+[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-ios-screenlets)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets)
 
-[Using Screenlets in Android apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
+[Using Screenlets in Android apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)

@@ -1,16 +1,15 @@
 # Rendering Web Pages in Your iOS App [](id=rendering-web-pages-in-your-ios-app)
 
-The 
-[Rendering Web Content](/develop/tutorials/-/knowledge_base/7-0/rendering-web-content-in-your-ios-app) 
+[The Rendering Web Content](/develop/tutorials/-/knowledge_base/7-1/rendering-web-content-in-your-ios-app) 
 tutorial shows you how to display 
-[web content](/discover/portal/-/knowledge_base/7-0/creating-web-content) 
+[web content](/discover/portal/-/knowledge_base/7-1/introduction-web-content) 
 from a @product@ site in your iOS app. Displaying content is great, but what if 
 you want to display an entire page? No problem! 
-[Web Screenlet](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-ios) 
+[Web Screenlet](/develop/reference/-/knowledge_base/7-1/web-screenlet-for-ios) 
 lets you display any web page. You can even customize the page by injecting 
 local or remote JavaScript and CSS files. When combined with @product@'s 
 server-side customization features (e.g., 
-[Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)), 
+[Application Display Templates](/discover/portal/-/knowledge_base/7-1/styling-apps-and-assets)), 
 Web Screenlet gives you almost limitless possibilities for displaying web pages 
 in your iOS apps. 
 
@@ -20,7 +19,7 @@ your iOS app.
 ## Inserting Web Screenlet in Your App [](id=inserting-web-screenlet-in-your-app)
 
 Inserting Web Screenlet in your app is the same as 
-[inserting any Screenlet in your app](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps#inserting-and-configuring-screenlets-in-ios-apps): 
+[inserting any Screenlet in your app](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-ios-apps): 
 
 1.  In Interface Builder, insert a new view (`UIView`) in a new view controller. 
     This new view should be nested under the view controller's existing view. 
@@ -114,7 +113,7 @@ set most of these parameters via `WebScreenletConfigurationBuilder`'s methods.
 
 **Note:** For a full list of `WebScreenletConfigurationBuilder`'s methods, and a 
 description of each, see the table in 
-[the Configuration section](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-ios#configuration) 
+[the Configuration section](/develop/reference/-/knowledge_base/7-1/web-screenlet-for-ios#configuration) 
 of Web Screenlet's reference doc. 
 
 $$$
@@ -126,7 +125,7 @@ method of a view controller that uses Web Screenlet:
     page's URL string, to create a `WebScreenletConfigurationBuilder` object. If 
     the page requires @product@ authentication, then the user must be logged in 
     via 
-    [Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios) 
+    [Login Screenlet](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-ios) 
     or a `SessionContext` method, and you must provide a relative URL to the 
     `WebScreenletConfigurationBuilder` constructor. For example, if such a 
     page's full URL is `http://your.liferay.instance/web/guest/blog`, then the 
@@ -185,10 +184,10 @@ Great! Now you know how to use Web Screenlet in your iOS apps.
 
 ## Related Topics [](id=related-topics)
 
-[Web Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-ios)
+[Web Screenlet for iOS](/develop/reference/-/knowledge_base/7-1/web-screenlet-for-ios)
 
-[Using Web Screenlet with Cordova in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/using-web-screenlet-with-cordova-in-your-ios-app)
+[Using Web Screenlet with Cordova in Your iOS App](/develop/tutorials/-/knowledge_base/7-1/using-web-screenlet-with-cordova-in-your-ios-app)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-ios-apps)
 
-[Rendering Web Content in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/rendering-web-content-in-your-ios-app)
+[Rendering Web Content in Your iOS App](/develop/tutorials/-/knowledge_base/7-1/rendering-web-content-in-your-ios-app)

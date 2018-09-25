@@ -41,13 +41,14 @@ From right to left, these are the main components:
     Connectors retrieve data asynchronously from local or remote data sources. 
     The Interactor classes instantiate and start these Connector classes. 
 
--   [**SessionContext**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Context/SessionContext.swift):
+-   [**SessionContext**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Context/SessionContext.swift): 
     An object (typically a singleton) that holds the logged in user's session. 
     Apps can use an implicit login, invisible to the user, or a login that 
     relies on explicit user input to create the session. User logins can be 
     implemented with 
-    [Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios). 
-    This is explained in detail [here](/develop/tutorials/-/knowledge_base/7-0/accessing-the-liferay-session-in-ios). 
+    [Login Screenlet](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-ios). 
+    For more information, see the 
+    [tutorial on accessing the session in iOS](/develop/tutorials/-/knowledge_base/7-1/accessing-the-liferay-session-in-ios). 
 
 -   [**LiferayServerContext**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Context/LiferayServerContext.swift):
     A singleton object that holds server configuration parameters. It's loaded 

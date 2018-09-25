@@ -6,10 +6,9 @@ is the attribute's value. Although you can use these dictionary objects
 throughout your Screenlet, it's often easier to create a *model class* that 
 converts each into an object that represents the corresponding Liferay entity. 
 This is especially convenient for complex entities composed of many 
-attribute-value pairs. Note that Liferay Screens already provides several model 
-classes for you. 
-[Click here](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Core/Models) 
-to see them. 
+attribute-value pairs. Note that Liferay Screens already provides 
+[several model classes](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Core/Models) 
+for you. 
 
 At this point, you might be saying, "Ugh! I have complex entities and Screens 
 doesn't provide a model class for them! I'm just going to give up and watch 
@@ -197,10 +196,10 @@ Awesome! Now you know how to create and use a model class in your Screenlet.
 
 ## Related Topics [](id=related-topics)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets)
 
-[Adding Screenlet Actions](/develop/tutorials/-/knowledge_base/7-0/adding-screenlet-actions)
+[Adding Screenlet Actions](/develop/tutorials/-/knowledge_base/7-1/adding-screenlet-actions)
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-list-screenlets)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-ios)

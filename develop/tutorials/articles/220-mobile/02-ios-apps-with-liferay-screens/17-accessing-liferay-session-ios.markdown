@@ -60,7 +60,7 @@ credentials. The following code uses `loginWithBasic` to create a session:
 For the `userAttributes` parameter, you must provide some attributes associated 
 with the logged in user, such as their `userId`. For a complete list of 
 attributes, see the 
-[user model interface](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/model/User.html). 
+[user model interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/User.html). 
 
 Super! Now you know how to create a session manually. The next section shows you 
 how to implement auto-login, and save or restore a session. 
@@ -88,7 +88,7 @@ a typical implementation of this:
 
 Awesome! Now you know how to implement auto-login in your Liferay Screens apps. 
 For more information on available `SessionContext` methods, see the 
-[Methods section](/develop/tutorials/-/knowledge_base/7-0/accessing-the-liferay-session-in-ios#methods) 
+[Methods section](#methods) 
 at the end of this tutorial. Next, you'll learn how to implement relogin for 
 cases where a user's credentials change on the server while they're logged in. 
 
@@ -162,6 +162,6 @@ For more information, see the
 
 ## Related Topics [](id=related-topics)
 
-[Login Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios)
+[Login Screenlet for iOS](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-ios)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-ios-apps)

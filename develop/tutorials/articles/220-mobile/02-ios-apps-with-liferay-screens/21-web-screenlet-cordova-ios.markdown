@@ -2,7 +2,7 @@
 
 By using 
 [Cordova plugins](https://cordova.apache.org/plugins/) in 
-[Web Screenlet](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-ios-app), 
+[Web Screenlet](/develop/tutorials/-/knowledge_base/7-1/rendering-web-pages-in-your-ios-app), 
 you can extend the functionality of the web page that the Screenlet renders. 
 This lets you tailor that page to your app's needs. You'll get started by 
 installing Cordova. 
@@ -76,7 +76,7 @@ Follow these steps to install and configure Cordova:
 Now that you've installed and configured Cordova in your iOS project, you're 
 ready to use it with Web Screenlet. Follow these steps to do so: 
 
-1.  [Insert and configure Web Screenlet in your app](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-ios-app). 
+1.  [Insert and configure Web Screenlet in your app](/develop/tutorials/-/knowledge_base/7-1/rendering-web-pages-in-your-ios-app). 
 
 2.  When you set Web Screenlet's parameters via the 
     `WebScreenletConfigurationBuilder` object, call the `enableCordova()` 
@@ -111,6 +111,6 @@ Great! Now you know how to use Web Screenlet with Cordova.
 
 ## Related Topics [](id=related-topics)
 
-[Rendering Web Pages in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-ios-app)
+[Rendering Web Pages in Your iOS App](/develop/tutorials/-/knowledge_base/7-1/rendering-web-pages-in-your-ios-app)
 
-[Web Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-ios)
+[Web Screenlet for iOS](/develop/reference/-/knowledge_base/7-1/web-screenlet-for-ios)

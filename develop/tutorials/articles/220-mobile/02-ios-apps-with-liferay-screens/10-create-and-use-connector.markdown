@@ -5,13 +5,13 @@ local and remote data sources and Liferay instances. Recall that callbacks also
 make asynchronous service calls. So why bother with a Connector? Connectors 
 provide a layer of abstraction by making your service call outside your 
 Interactor. For example, 
-[the Interactor in the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets#creating-the-interactor) 
+[the Interactor in the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-the-ios-screenlets-interactor) 
 makes the server call and and processes its results via `LRCallback`. This 
 Screenlet could instead make its server call in a separate Connector class, 
 leaving the Interactor to instantiate the Connector and receive its results. 
 Connectors also let you validate your Screenlet's data. For more information on 
 Connectors, see the 
-[tutorial on the architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios). 
+[tutorial on the architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-ios). 
 
 This tutorial walks you through the steps required to create and use a Connector 
 with your Screenlets, using the 
@@ -26,13 +26,13 @@ as an example. This Screenlet contains two actions:
    tutorial shows you how to use a pre-existing Connector with this action. 
 
 Before proceeding, make sure you've read 
-[the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
+[the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets). 
 First, you'll learn how to create your Connector. 
 
 ## Creating Connectors [](id=creating-connectors)
 
 When you create your Connector class, be sure to follow the 
-[naming convention](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices#naming-conventions) 
+[naming convention](/develop/tutorials/-/knowledge_base/7-1/ios-best-practices#naming-conventions) 
 specified in the best practices tutorial. 
 
 Use the following steps to implement your Connector class: 
@@ -99,7 +99,7 @@ Use the following steps to implement your Connector class:
     storing the service's results retrieved in the `doRun` method. Note that this 
     method's service call is identical to the one in the `AddBookmarkInteractor` 
     class's `start` method in the 
-    [Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets). 
+    [Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets). 
     The `doRun` method, however, takes the additional step of saving the result 
     to the `resultBookmarkInfo` property. Also note that this `doRun` method 
     handles errors as `NSError` objects: 
@@ -275,10 +275,10 @@ Awesome! Now you know how to create and use Connectors in your Screenlets.
 
 ## Related Topics [](id=related-topics)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
+[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets)
 
-[Adding Screenlet Actions](/develop/tutorials/-/knowledge_base/7-0/adding-screenlet-actions)
+[Adding Screenlet Actions](/develop/tutorials/-/knowledge_base/7-1/adding-screenlet-actions)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-ios)
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-list-screenlets)

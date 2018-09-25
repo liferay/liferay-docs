@@ -24,8 +24,7 @@ These steps explain how to create an Extended Theme:
 3.  Set your new View class as the custom class for your Theme's XIB file. 
     If you added `@IBOutlet` or `@IBAction` actions, bind them to your class. 
 
-Well done! You can optionally
-[package](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes) your
-Theme and/or start
-[using](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
-it.
+Well done! You can optionally 
+[package](/develop/tutorials/-/knowledge_base/7-1/packaging-ios-themes) 
+your Theme and/or start 
+[using it](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-ios-screenlets). 

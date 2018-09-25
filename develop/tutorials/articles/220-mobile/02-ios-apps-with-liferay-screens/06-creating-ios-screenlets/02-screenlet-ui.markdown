@@ -35,7 +35,7 @@ defines this UI. Because the button triggers the Screenlet's action, it contains
 want your Screenlet to support multiple Themes, your View class must also 
 conform a *View Model* protocol that you create. For instructions on this, see 
 the tutorial 
-[Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/supporting-multiple-themes-in-your-screenlet). 
+[Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/7-1/supporting-multiple-themes-in-your-ios-screenlet). 
 
 $$$
 

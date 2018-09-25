@@ -70,7 +70,7 @@ retrieved from the server. For example, `BookmarkListPageLoadInteractor`'s
     }
 
 You may also want to support 
-[offline mode](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens) 
+[offline mode](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens) 
 in your Interactor. To do so, the Interactor must override the `cacheKey` method 
 to return a cache key unique to your Screenlet. For example, 
 `BookmarkListPageLoadInteractor`'s `cacheKey` method returns a cache key that 

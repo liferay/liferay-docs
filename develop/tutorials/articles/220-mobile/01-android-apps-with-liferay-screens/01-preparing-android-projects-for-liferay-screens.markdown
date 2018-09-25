@@ -35,12 +35,12 @@ a sample project. It requires the following software:
     (v7:23.0.1) implements the
     [recycler view](https://developer.android.com/tools/support-library/features.html#v7-recyclerview) 
     and offers older devices a material look and feel.
--   [Liferay Portal 6.2 CE/EE, 7.0 CE, Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases).
--   Liferay Screens Compatibility Plugin (
-    [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
-    [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
-    depending on your portal edition). This app is preinstalled in Liferay 7.0 CE 
-    and Liferay DXP bundles. 
+-   [Liferay Portal 6.2 CE/EE, 7.0 or 7.1 CE, or Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
+-   Liferay Screens Compatibility Plugin 
+    ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+    [DXP/EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
+    depending on your portal edition). This app is preinstalled in Liferay 
+    7.0/7.1 CE and Liferay DXP instances. 
 -   Liferay Screens source code. 
 
 Liferay Screens for Android uses

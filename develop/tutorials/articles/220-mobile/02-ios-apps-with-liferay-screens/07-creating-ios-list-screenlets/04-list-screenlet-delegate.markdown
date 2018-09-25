@@ -2,7 +2,7 @@
 
 Recall that a delegate is required if you want other classes to respond to your 
 Screenlet's actions. Create your delegate by following the first step in 
-[the tutorial on adding a Screenlet delegate](/develop/tutorials/-/knowledge_base/7-0/add-a-screenlet-delegate). 
+[the tutorial on adding a Screenlet delegate](/develop/tutorials/-/knowledge_base/7-1/add-a-screenlet-delegate). 
 A list Screenlet's delegate must also define a method for responding to a list 
 item selection. For example, Bookmark List Screenlet's delegate needs the 
 following methods: 

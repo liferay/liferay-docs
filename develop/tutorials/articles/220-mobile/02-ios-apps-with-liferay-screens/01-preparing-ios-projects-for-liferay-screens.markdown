@@ -24,25 +24,25 @@ Liferay Screens for iOS requires the following software:
 - Xcode 9 or newer
 - iOS 11 SDK
 - [CocoaPods](http://cocoapods.org) 1 or newer
-- [Liferay Portal 6.2 CE/EE, 7.0 CE, Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
+- [Liferay Portal 6.2 CE/EE, 7.0 or 7.1 CE, or Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
 - Liferay Screens Compatibility Plugin 
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
-  [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
-  depending on your portal edition). This app is preinstalled in Liferay 7.0 CE 
-  and Liferay DXP instances. 
+  [DXP/EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
+  depending on your portal edition). This app is preinstalled in Liferay 7.0/7.1 
+  CE and Liferay DXP instances. 
 
 ## Securing JSON Web Services [](id=securing-json-web-services)
 
 Each Screenlet in Liferay Screens calls one or more of @product@'s JSON web 
 services, which are enabled by default. The Screenlet 
-[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
+[reference documentation](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-ios) 
 lists the web services that each Screenlet calls. To use a Screenlet, its web 
 services must be enabled in the portal. It's possible, however, to disable the 
 web services needed by Screenlets you're not using. For instructions on this, 
 see the tutorial 
-[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services). 
+[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/configuring-json-web-services). 
 You can also use 
-[Service Access Policies](/develop/tutorials/-/knowledge_base/7-0/service-access-policies) 
+[Service Access Policies](/develop/tutorials/-/knowledge_base/7-1/service-access-policies) 
 for more fine-grained control over accessible services. 
 
 ## Configuring Your Project with CocoaPods [](id=configuring-your-project-with-cocoapods)
@@ -139,8 +139,9 @@ communicating with your @product@ instance. As an example, refer to
 The values you need to specify in your `liferay-server-context.plist` are:
 
 - `server`: Your @product@ instance's URL.
-- `version`: Your @product@ instance's version. Supported values are `70` for
-  @product-ver@, and `62` for Liferay Portal 6.2.
+- `version`: Your @product@ instance's version. Supported values are `71` for
+  Liferay CE Portal 7.1 or Liferay DXP 7.1, `70` for Liferay CE Portal 7.0 or 
+  Liferay DXP 7.0, and `62` for Liferay Portal 6.2 CE/EE.
 - `companyId`: Your @product@ instance's identifier. You can find this value in
   the *Instance ID* column of *Control Panel* &rarr; *Portal Instances*.
 - `groupId`: The ID of the default site you want Screens to
@@ -154,8 +155,8 @@ Great! Your iOS project is ready for Liferay Screens.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-ios-apps)
 
-[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets)
+[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-ios-screenlets)
 
-[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-android-projects-for-liferay-screens)
+[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/preparing-android-projects-for-liferay-screens)

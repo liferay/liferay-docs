@@ -66,4 +66,4 @@ several Screenlets. Liferay's available Theme sets are listed here:
     sample app. 
 
 For more details on Theme creation, see the tutorial series 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes). 
+[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-1/creating-ios-themes). 
