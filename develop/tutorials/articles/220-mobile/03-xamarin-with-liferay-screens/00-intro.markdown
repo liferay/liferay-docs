@@ -1,12 +1,12 @@
 # Using Xamarin with Liferay Screens [](id=using-xamarin-with-liferay-screens)
 
 Liferay Screens for 
-[Android](/develop/tutorials/-/knowledge_base/7-0/android-apps-with-liferay-screens) 
+[Android](/develop/tutorials/-/knowledge_base/7-1/android-apps-with-liferay-screens) 
 and 
-[iOS](/develop/tutorials/-/knowledge_base/7-0/ios-apps-with-liferay-screens) 
+[iOS](/develop/tutorials/-/knowledge_base/7-1/ios-apps-with-liferay-screens) 
 lets you use *Screenlets* to develop native mobile apps on each platform. 
 Screenlets are complete visual components that you insert in your app to 
-leverage @product@'s content and services. As of Liferay Screens 3.0, you can 
+leverage @product@'s content and services. Since Liferay Screens 3.0, you can 
 use Screenlets with 
 [Xamarin](https://www.xamarin.com/) 
 to develop hybrid mobile apps for Android and iOS. 

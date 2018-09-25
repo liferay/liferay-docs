@@ -40,16 +40,16 @@ contains two sample Xamarin projects that you can reference:
 Each Screenlet in Liferay Screens calls one or more of @product@'s JSON web 
 services, which are enabled by default. The Screenlet reference documentation 
 for 
-[Android](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
+[Android](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-android) 
 and 
-[iOS](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
+[iOS](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-ios) 
 lists the web services that each Screenlet calls. To use a Screenlet, its web 
 services must be enabled in the portal. It's possible, however, to disable the 
 web services needed by Screenlets you're not using. For instructions on this, 
 see the tutorial 
-[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services). 
+[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/configuring-json-web-services). 
 You can also use 
-[Service Access Policies](/develop/tutorials/-/knowledge_base/7-0/service-access-policies) 
+[Service Access Policies](/develop/tutorials/-/knowledge_base/7-1/service-access-policies) 
 for more fine-grained control over accessible services. 
 
 ## Install Liferay Screens in Xamarin Solutions [](id=install-liferay-screens-in-xamarin-solutions)
@@ -174,12 +174,12 @@ Super! Your Xamarin projects are ready for Liferay Screens.
 
 ## Related Topics [](id=related-topics)
 
-[Using Screenlets in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-xamarin-apps)
+[Using Screenlets in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-xamarin-apps)
 
-[Using Views in Xamarin.Android](/develop/tutorials/-/knowledge_base/7-0/using-views-in-xamarin-android)
+[Using Views in Xamarin.Android](/develop/tutorials/-/knowledge_base/7-1/using-views-in-xamarin-android)
 
-[Using Themes in Xamarin.iOS](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-xamarin-ios)
+[Using Themes in Xamarin.iOS](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-xamarin-ios)
 
-[Creating Xamarin Views and Themes](/develop/tutorials/-/knowledge_base/7-0/creating-xamarin-views-and-themes)
+[Creating Xamarin Views and Themes](/develop/tutorials/-/knowledge_base/7-1/creating-xamarin-views-and-themes)
 
-[Liferay Screens for Xamarin Troubleshooting and FAQs](/develop/tutorials/-/knowledge_base/7-0/liferay-screens-for-xamarin-troubleshooting-and-faqs)
+[Liferay Screens for Xamarin Troubleshooting and FAQs](/develop/tutorials/-/knowledge_base/7-1/liferay-screens-for-xamarin-troubleshooting-and-faqs)

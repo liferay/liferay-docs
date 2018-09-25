@@ -10,9 +10,9 @@ Xamarin.
 Before exploring specific issues, you should first make sure that you've 
 installed the correct versions of Visual Studio and the Mono .NET framework. 
 Each Screenlet's reference documentation (available for 
-[Android](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
+[Android](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-android) 
 and 
-[iOS](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios)) 
+[iOS](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-ios)) 
 lists these versions. 
 
 It may also help to investigate the sample Xamarin.Android and Xamarin.iOS apps 
@@ -199,12 +199,12 @@ To learn more about language equivalents between Java and C#, see
 
 ## Related Topics [](id=related-topics)
 
-[Preparing Xamarin Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-xamarin-projects-for-liferay-screens)
+[Preparing Xamarin Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/preparing-xamarin-projects-for-liferay-screens)
 
-[Using Screenlets in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-xamarin-apps)
+[Using Screenlets in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-xamarin-apps)
 
-[Using Views in Xamarin.Android](/develop/tutorials/-/knowledge_base/7-0/using-views-in-xamarin-android)
+[Using Views in Xamarin.Android](/develop/tutorials/-/knowledge_base/7-1/using-views-in-xamarin-android)
 
-[Creating Xamarin Views and Themes](/develop/tutorials/-/knowledge_base/7-0/creating-xamarin-views-and-themes)
+[Creating Xamarin Views and Themes](/develop/tutorials/-/knowledge_base/7-1/creating-xamarin-views-and-themes)
 
-[Using Themes in Xamarin.iOS](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-xamarin-ios)
+[Using Themes in Xamarin.iOS](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-xamarin-ios)

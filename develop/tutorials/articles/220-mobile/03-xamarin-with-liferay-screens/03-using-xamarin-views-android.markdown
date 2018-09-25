@@ -3,7 +3,7 @@
 You can use a Liferay Screens *View* to set a Screenlet's look and feel 
 independent of the Screenlet's core functionality. Liferay's Screenlets come 
 with several Views, and more are being developed by Liferay and the community. 
-[The Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
+[The Screenlet reference documentation](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-android) 
 lists the Views available for each Screenlet included with Screens. This 
 tutorial shows you how to use Views in Xamarin.Android. 
 
@@ -12,10 +12,10 @@ tutorial shows you how to use Views in Xamarin.Android.
 The concepts and components that comprise Views and View Sets in Liferay Screens 
 for Xamarin are the same as they are in Liferay Screens for Android. For a brief 
 description of these components, see 
-[the section on Views and View Sets](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets#views-and-view-sets) 
+[the section on Views and View Sets](/develop/tutorials/-/knowledge_base/7-1/using-views-in-android-screenlets#views-and-view-sets) 
 in the general tutorial on using Views. For a detailed description of the View 
 layer in Liferay Screens, see the tutorial 
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android). 
+[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-android). 
 
 ## Using Views [](id=using-views)
 
@@ -153,12 +153,12 @@ Screenlets.
 
 ## Related Topics [](id=related-topics)
 
-[Preparing Xamarin Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-xamarin-projects-for-liferay-screens)
+[Preparing Xamarin Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/preparing-xamarin-projects-for-liferay-screens)
 
-[Using Screenlets in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-xamarin-apps)
+[Using Screenlets in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-xamarin-apps)
 
-[Using Themes in Xamarin.iOS](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-xamarin-ios)
+[Using Themes in Xamarin.iOS](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-xamarin-ios)
 
-[Creating Xamarin Views and Themes](/develop/tutorials/-/knowledge_base/7-0/creating-xamarin-views-and-themes)
+[Creating Xamarin Views and Themes](/develop/tutorials/-/knowledge_base/7-1/creating-xamarin-views-and-themes)
 
-[Liferay Screens for Xamarin Troubleshooting and FAQs](/develop/tutorials/-/knowledge_base/7-0/liferay-screens-for-xamarin-troubleshooting-and-faqs)
+[Liferay Screens for Xamarin Troubleshooting and FAQs](/develop/tutorials/-/knowledge_base/7-1/liferay-screens-for-xamarin-troubleshooting-and-faqs)
