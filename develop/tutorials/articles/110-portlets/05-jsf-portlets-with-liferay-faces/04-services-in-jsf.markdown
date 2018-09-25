@@ -3,14 +3,15 @@
 Service Builder works the same in a JSF portlet as it would in any other
 standard WAR-style MVC portlet. To learn more about how Service Builder works in
 Liferay, visit the
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
 tutorials. You can create a `service.xml` file and run Service Builder in your
 JSF project to build services.
 
 To call OSGi-based Service Builder services from your JSF portlet, you need a
 mechanism that gives you access to the OSGi service registry, because you can't
 look up services published to the OSGi runtime using Declarative Services.
-Instead, you should open a [ServiceTracker](https://osgi.org/javadoc/r6/core/org/osgi/util/tracker/ServiceTracker.html)
+Instead, you should open a
+[ServiceTracker](https://osgi.org/javadoc/r6/core/org/osgi/util/tracker/ServiceTracker.html)
 when you want to call a service that's in the OSGi service registry.
 
 To implement a service tracker in your JSF portlet, you can add a type-safe
@@ -60,13 +61,13 @@ annotation:
 
 For more information on service trackers and how to use them in WAR-style
 portlets, see the
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
+[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
 tutorial.
 
 ## Related Topics [](id=related-topics)
 
-[Fundamentals](/develop/tutorials/-/knowledge_base/7-0/fundamentals)
+[Fundamentals](/develop/tutorials/-/knowledge_base/7-1/fundamentals)
 
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+[Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
 
-[Configuration](/develop/tutorials/-/knowledge_base/7-0/configuration)
+[Configurable Applications](/develop/tutorials/-/knowledge_base/7-1/configurable-applications)
