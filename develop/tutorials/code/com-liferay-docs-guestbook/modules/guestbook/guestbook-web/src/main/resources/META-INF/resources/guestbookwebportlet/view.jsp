@@ -22,7 +22,7 @@
                             cssClass = "active";
                         }
 
-                        if (GuestbookPermission.contains(
+                        if (GuestbookModelPermission.contains(
                             permissionChecker, curGuestbook.getGuestbookId(), "VIEW")) {
                                                 
             %>
@@ -46,7 +46,8 @@
         </aui:nav>
 		
         <aui:button-row cssClass="guestbook-buttons">
-		        <c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbookId, "ADD_ENTRY") %>'>
+
+		<c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbookId, "ADD_ENTRY") %>'>
 		
             <portlet:renderURL var="addEntryURL">
                 <portlet:param name="mvcPath" value="/guestbookwebportlet/edit_entry.jsp" />

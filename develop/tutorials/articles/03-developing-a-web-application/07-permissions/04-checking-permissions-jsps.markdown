@@ -1,23 +1,11 @@
-# Permissions in JSPs [](id=permissions-in-jsps)
+# Checking for Permission in JSPs
 
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 4 of 4</p>
 </div>
 
-User interface components can be wrapped in permission checks pretty easily. In
-this step, you'll learn how. 
-
-First go to the `init.jsp` in your `guestbook-web` project. Add the following 
-imports to the file:
-
-    <%@ page import="com.liferay.docs.guestbook.service.permission.GuestbookModelPermission" %>
-    <%@ page import="com.liferay.docs.guestbook.service.permission.GuestbookPermission" %>
-    <%@ page import="com.liferay.docs.guestbook.service.permission.EntryPermission" %>
-    <%@ page import="com.liferay.portal.kernel.util.WebKeys" %>
-    <%@ page import="com.liferay.portal.kernel.security.permission.ActionKeys" %>
-
-The first three are the permissions helper classes you just created. Now it's 
-time to implement permission checks. 
+You've already seen how user interface components can be wrapped in permission
+checks pretty easily. In this step, you'll implement the rest. 
 
 ## Checking Permissions in the UI [](id=checking-permissions-in-the-ui)
 
@@ -27,8 +15,7 @@ Recall that you want to restrict access to three areas in your application:
 - The Add Guestbook button
 - The Add Entry button
 
-First, you'll create the guestbook tabs and check permissions for them. Follow 
-these steps to do so: 
+First, you'll create the guestbook tabs and check permissions for them: 
 
 1.  Open `/guestbookwebportlet/view.jsp` and find the scriptlet that gets the 
     `guestbookId` from the request. Just below this, add the following code: 
@@ -47,7 +34,7 @@ these steps to do so:
                             cssClass = "active";
                         }
 
-                        if (GuestbookPermission.contains(
+                        if (GuestbookModelPermission.contains(
                             permissionChecker, curGuestbook.getGuestbookId(), "VIEW")) {
                                                 
             %>
@@ -71,7 +58,7 @@ these steps to do so:
         </aui:nav>
 
     This code gets a list of guestbooks from the database, iterates through 
-    them, checks the permission for each against the current user's roles, and 
+    them, checks the permission for each against the current user's Roles, and 
     adds the guestbooks the user can access to a list of tabs. 
 
     You've now implemented your first permission check. As you can see, it's 
@@ -96,11 +83,11 @@ these steps to do so:
     You've now implemented your permission check for the Add Entry button by 
     using JSTL tags. 
 
-Next, you'll implement an `entry_actions.jsp` that's much like the one in the 
-Guestbook Admin portlet. This will determine what options appear for logged in
-users who can see the actions menu in the portlet. Just like before, you'll wrap
-each `renderURL` in a `if` statement that checks the permissions against 
-available actions. To do this, follow these steps: 
+Next, you'll implement an `entry_actions.jsp` that's much like the one in the
+Guestbook Admin portlet. This determines what options appear for logged in users
+who can see the actions menu in the portlet. Just like before, you'll wrap each
+`renderURL` in a `if` statement that checks the permissions against available
+actions. To do this, follow these steps: 
 
 1.  In `src/main/resources/META-INF/resources/guestbookwebportlet`, create a 
     file called `entry_actions.jsp`. 
@@ -109,55 +96,65 @@ available actions. To do this, follow these steps:
 
         <%@include file="../init.jsp"%>
 
-        <%
-        String mvcPath = ParamUtil.getString(request, "mvcPath");
+            <%
+            String mvcPath = ParamUtil.getString(request, "mvcPath");
 
-        ResultRow row = (ResultRow)request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
+            ResultRow row = (ResultRow)request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
 
-        Entry entry = (Entry)row.getObject(); 
-        %>
+            Entry entry = (Entry)row.getObject(); 
+            %>
 
-        <liferay-ui:icon-menu>
+            <liferay-ui:icon-menu>
 
-            <c:if
-                test="<%= EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.UPDATE) %>">
-                <portlet:renderURL var="editURL">
-                    <portlet:param name="entryId"
-                        value="<%= String.valueOf(entry.getEntryId()) %>" />
-                    <portlet:param name="mvcPath" value="/guestbookwebportlet/edit_entry.jsp" />
+                <portlet:renderURL var="viewEntryURL">
+                    <portlet:param name="entryId" value="<%= String.valueOf(entry.getEntryId()) %>" />
+                    <portlet:param name="mvcPath" value="/guestbookwebportlet/view_entry.jsp" />
                 </portlet:renderURL>
 
-                <liferay-ui:icon image="edit" message="Edit"
-                    url="<%=editURL.toString() %>" />
-            </c:if>
+                <liferay-ui:icon
+                    message="View"
+                    url="<%= viewEntryURL.toString() %>"
+                />
 
-            <c:if
-            test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.PERMISSIONS) %>">
+                <c:if
+                    test="<%= GuestbookEntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.UPDATE) %>">
+                    <portlet:renderURL var="editURL">
+                        <portlet:param name="entryId"
+                            value="<%= String.valueOf(entry.getEntryId()) %>" />
+                        <portlet:param name="mvcPath" value="/guestbookwebportlet/edit_entry.jsp" />
+                    </portlet:renderURL>
 
-                <liferay-security:permissionsURL
-                    modelResource="<%= Entry.class.getName() %>"
-                    modelResourceDescription="<%= entry.getMessage() %>"
-                    resourcePrimKey="<%= String.valueOf(entry.getEntryId()) %>"
-                    var="permissionsURL" />
-            
-                <liferay-ui:icon image="permissions" url="<%= permissionsURL %>" />
+                    <liferay-ui:icon image="edit" message="Edit"
+                        url="<%=editURL.toString() %>" />
+                </c:if>
 
-            </c:if>
+                <c:if
+                test="<%=GuestbookEntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.PERMISSIONS) %>">
 
-            <c:if
-                test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.DELETE) %>">
+                    <liferay-security:permissionsURL
+                        modelResource="<%= Entry.class.getName() %>"
+                        modelResourceDescription="<%= entry.getMessage() %>"
+                        resourcePrimKey="<%= String.valueOf(entry.getEntryId()) %>"
+                        var="permissionsURL" />
+                
+                    <liferay-ui:icon image="permissions" url="<%= permissionsURL %>" />
 
-                <portlet:actionURL name="deleteEntry" var="deleteURL">
-                    <portlet:param name="entryId"
-                        value="<%= String.valueOf(entry.getEntryId()) %>" />
-                    <portlet:param name="guestbookId"
-                        value="<%= String.valueOf(entry.getGuestbookId()) %>" />
-                </portlet:actionURL>
+                </c:if>
 
-                <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
-            </c:if>
+                <c:if
+                    test="<%=GuestbookEntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.DELETE) %>">
 
-        </liferay-ui:icon-menu>
+                    <portlet:actionURL name="deleteEntry" var="deleteURL">
+                        <portlet:param name="entryId"
+                            value="<%= String.valueOf(entry.getEntryId()) %>" />
+                        <portlet:param name="guestbookId"
+                            value="<%= String.valueOf(entry.getGuestbookId()) %>" />
+                    </portlet:actionURL>
+
+                    <liferay-ui:icon-delete url="<%=deleteURL.toString() %>" />
+                </c:if>
+
+            </liferay-ui:icon-menu>
 
     This code defines action buttons updating, setting permissions on, and 
     deleting entities. Each button is protected by a permissions check. If the 
@@ -205,6 +202,5 @@ Now see if you can do the same for the Guestbook Admin portlet. Don't worry if
 you can't: at the end of this Learning Path is a link to the completed project
 for you to examine. 
 
-Great! You're all done with permissions. The next step is to integrate search 
-and indexing into your application. This is a prerequisite for the much more 
-powerful stuff to come. 
+Great! The next step is to integrate search and indexing into your application.
+This is a prerequisite for the much more powerful stuff to come. 
