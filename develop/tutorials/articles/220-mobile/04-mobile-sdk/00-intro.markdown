@@ -41,20 +41,20 @@ This section's tutorials cover using the Mobile SDK in Android and iOS app
 development. The following tutorials introduce these topics and are followed by 
 in-depth tutorials on each: 
 
-- [Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-android-apps-that-use-the-mobile-sdk)
-- [Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-ios-apps-that-use-the-mobile-sdk)
+- [Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/creating-android-apps-that-use-the-mobile-sdk)
+- [Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/creating-ios-apps-that-use-the-mobile-sdk)
 
 In addition, the following tutorial covers building Mobile SDKs to support your 
 custom portlet services: 
 
-- [Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks)
+- [Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks)
 
 Fasten your seatbelt--it's time to go mobile with Liferay's Mobile SDK! 
 
 **Related Topics:**
 
-[Android Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/android-apps-with-liferay-screens)
+[Android Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/android-apps-with-liferay-screens)
 
-[iOS Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/ios-apps-with-liferay-screens)
+[iOS Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/ios-apps-with-liferay-screens)
 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks)
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks)
