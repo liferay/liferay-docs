@@ -7,7 +7,7 @@ UI to support these added features. When you create this UI, you must also make
 sure that only administrators can add guestbooks. 
 
 To accomplish this, you must create a Guestbook Admin portlet and place it in 
-@product@'s administrative interface--specifically, within the Content menu. 
+@product@'s administrative interface---specifically, within the Content menu. 
 This way, the Guestbook Admin portlet is accessible only to Site Administrators, 
 and users can use the Guestbook portlet to create entries. 
 

@@ -23,7 +23,7 @@ Follow these steps to install the Liferay Theme Generator and generate a theme:
 
     a.  To use Sass on Windows, you must use either Sass from node-sass or Sass 
         from Ruby. By default, the generator uses node-sass, but this also 
-        requires that you have Visual Studio on windows, along with 
+        requires that you have Visual Studio on Windows, along with 
         [node-gyp and Python installed](https://github.com/nodejs/node-gyp#installation). 
         Since Visual Studio is a particularly large dependency, **if you don't 
         already have it installed**, we recommend you install Ruby Sass instead. 

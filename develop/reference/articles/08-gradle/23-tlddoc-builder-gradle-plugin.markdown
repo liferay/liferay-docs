@@ -14,7 +14,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.tlddoc.builder", version: "1.3.0"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.tlddoc.builder", version: "1.3.1"
     }
 
     repositories {
@@ -83,8 +83,6 @@ Property Name | Default Value
 ------------- | -------------
 `includes` | <p>**If the `java` plugin is applied:** `["**/*.tld"]`</p><p>**Otherwise:** `[]`</p>
 `source` | <p>**If the `java` plugin is applied:** `project.sourceSets.main.resources.srcDirs`</p><p>**Otherwise:** `null`</p>
-[`xmlParserClassName`](#xmlparserclassname) | `"org.xmlresolver.tools.ResolvingXMLReader"`
-[`xmlParserClasspath`](#xmlparserclasspath) | [`project.configurations.xmlParser`](#xml-parser-dependency)
 
 By default, the `tlddoc` task generates the documentation for all the TLD files
 that are found in the resources directories of the `main` source set. The
@@ -215,18 +213,5 @@ manually adding a dependency to the `tlddoc` configuration:
 ```gradle
 dependencies {
     tlddoc group: "taglibrarydoc", name: "tlddoc", version: "1.3"
-}
-```
-
-### XML Parser Dependency [](id=xml-parser-dependency)
-
-By default, the plugin creates a configuration called `xmlParser` and adds a
-dependency to the 0.12.5 version of the [XML Resolver](http://xmlresolver.org/).
-It is possible to override this setting and use a specific version of the tool
-by manually adding a dependency to the `xmlParser` configuration:
-
-```gradle
-dependencies {
-    xmlParser group: "org.xmlresolver", name: "xmlresolver", version: "0.12.5"
 }
 ```

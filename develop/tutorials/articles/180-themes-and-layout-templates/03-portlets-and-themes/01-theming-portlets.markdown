@@ -98,7 +98,7 @@ learn how make and apply your own.
 
 ## Related Topics [](id=related-topics)
 
-[Look and Feel Configuration]( https://dev.liferay.com/discover/portal/-/knowledge_base/7-1/look-and-feel-configuration)
+[Look and Feel Configuration](/discover/portal/-/knowledge_base/7-1/look-and-feel-configuration)
 
 [Creating Configurable Styles For Portlet Wrappers](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers)
 

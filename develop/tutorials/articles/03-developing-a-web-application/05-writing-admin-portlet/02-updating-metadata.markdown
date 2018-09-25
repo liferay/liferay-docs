@@ -5,8 +5,8 @@
 </div>
 
 Now that you've generated the classes, you must turn them into OSGi components.
-Remember that because components are container-managed objects, you must provide 
-metadata that tells @product@'s OSGi container how to manage their lifecycles. 
+Remember that because components are container-managed objects, you must provide
+metadata that tells @product@'s OSGi container how to manage their life cycles. 
 
 Follow these steps:
 
@@ -75,7 +75,7 @@ Next, you can configure the Panel app class. Follow these steps:
     the Site Administration area. The value of the `panel.category.key` property 
     is `PanelCategoryKeys.SITE_ADMINISTRATION_CONTENT`, which means Guestbook 
     Admin is in *Site Administration* &rarr; *Content*. The key is provided by 
-    [the `PanelCategoryKeys` class](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/application-list/application-list-api/src/main/java/com/liferay/application/list/constants/PanelCategoryKeys.java). 
+    [the `PanelCategoryKeys` class](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/application-list/application-list-api/src/main/java/com/liferay/application/list/constants/PanelCategoryKeys.java). 
     The `panel.app.order` value determines the rank for the Guestbook Admin 
     portlet in the list. 
 

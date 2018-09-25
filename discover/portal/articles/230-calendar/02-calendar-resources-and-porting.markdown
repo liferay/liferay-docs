@@ -88,7 +88,7 @@ Follow these steps to import a LAR:
 
 5.  In the collapsible *Update Data* section, choose how data will be updated.
 
-    **Mirroring:** The data will be imported along with a reference to its
+    **Mirror:** The data will be imported along with a reference to its
     source. This allows data to be updated rather than duplicated if the same
     LAR is imported more than once.
 

@@ -121,7 +121,7 @@ services:
     This `addEntry` method gets the name, message, and email fields that the
     user submits in the JSP and passes them to the service to be stored as entry
     data. The `if-else` logic checks whether there's an existing `entryId`. If
-    there is, the update service method is called, and if not, the add service
+    there is, the `update` service method is called, and if not, the `add` service
     method is called. In both cases, it sets a render parameter with the
     Guestbook ID so the application can display the guestbook's entries after
     this one has been added. This is all done in `try...catch` statements.
@@ -189,7 +189,7 @@ services:
                 super.render(renderRequest, renderResponse);
         }
 
-    This new `render` method checks for any guestbooks in the current site. If 
+    This new `render` method checks for any guestbooks in the current Site. If 
     there aren't any, it creates one. Either way, it grabs the first guestbook 
     so its entries can be displayed by your view layer. 
 

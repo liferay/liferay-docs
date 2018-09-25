@@ -13,8 +13,8 @@ automatically translated language keys,
 
 Language keys are stored in the `Language.properties` file included in your 
 `guestbook-web` module. `Language.properties` is the default, but you can create 
-a number of translations by appending the ISO-639 language code to the file name 
-(e.g., `Language_en.properties` for English or `Language_de.properties` for 
+a number of translations by appending the ISO-639 language code to the file name
+(e.g., `Language_es.properties` for Spanish or `Language_de.properties` for
 German). For now, stick to the default language keys. 
 
 Follow these steps to create your language keys:

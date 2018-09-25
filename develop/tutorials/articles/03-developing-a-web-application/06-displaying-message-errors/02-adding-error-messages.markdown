@@ -4,10 +4,9 @@
     <p>Displaying Messages and Errors<br>Step 2 of 3</p>
 </div>
 
-To display correct feedback to users properly, you must edit your portlet 
-classes to use @product@'s `SessionMessages` and `SessionErrors` classes. These 
-classes collect messages that the view layer shows to the user by using a simple 
-tag. 
+To display feedback to users properly, you must edit your portlet classes to use
+@product@'s `SessionMessages` and `SessionErrors` classes. These classes collect
+messages that the view layer shows to the user through a tag. 
 
 You'll add these messages to code that runs when the user triggers a system 
 function that can succeed or fail, such as creating, editing, or deleting an
@@ -25,7 +24,7 @@ in `GuestbookPortlet.java`:
     This uses Liferay's `SessionMessages` API to add a success message whenever
     a Guestbook is successfully added. It looks up the message you placed in
     the `Language.properties` file and inserts the message for the key
-    `entry-added` (it automatically converts the key to camel case). 
+    `entry-added` (it automatically converts the key from camel case). 
 
 2.  Below that, in the `catch` block, find the following code:
     

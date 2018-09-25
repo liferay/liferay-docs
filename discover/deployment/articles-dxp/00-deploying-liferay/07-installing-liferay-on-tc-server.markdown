@@ -19,7 +19,7 @@ Here are the basic steps for installing @product@ on tc Server:
 +$$$
 
 **Note:** You'll see the term
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 used in this installation guide. *Liferay Home* refers to the folder containing
 your tc Server instance and some @product@-specific folders:. `data`, `deploy`,
 `licenses`, and `osgi` folders. 
@@ -361,3 +361,20 @@ Now you're ready to deploy @product@ using your @product@ WAR file.
         tcserver run -i ../servers dxp-server
 
 Congratulations on successfully installing and deploying @product@ on tc Server!
+
++$$$
+
+After deploying @product@, you may see excessive warnings and log messages, such
+as the ones below, involving `PhaseOptimizer`. These are benign and can be
+ignored. Make sure to adjust your app server's logging level or log filters to
+avoid excessive benign log messages. 
+
+    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+    WARNING: Skipping pass gatherExternProperties
+    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+    WARNING: Skipping pass checkControlFlow
+    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+    INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
+    current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
+
+$$$

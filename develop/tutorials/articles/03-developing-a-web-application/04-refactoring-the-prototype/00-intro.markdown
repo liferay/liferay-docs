@@ -1,19 +1,18 @@
 # Refactoring the Prototype [](id=refactoring-the-prototype)
 
-In an earlier section of this Learning Path, you created a Guestbook portlet 
-prototype. Then you wrote a `service.xml` file to define your application's data 
-model, and used Service Builder to generate the back-end code (the model, 
-service, and persistence layers). You also added service methods using the 
-appropriate extension points: your entities' `*LocalServiceImpl` classes. Now 
-you need to integrate the original prototype with the new back-end to create a 
-fully functional application. 
+Earlier, you created a Guestbook portlet prototype. Then you wrote
+a `service.xml` file to define your application's data model, and used Service
+Builder to generate the back-end code (the model, service, and persistence
+layers). You also added service methods using the appropriate extension points:
+your entities' `*LocalServiceImpl` classes. Now you must integrate the original
+prototype with the new back-end to create a fully functional application. 
 
 There are many differences between the prototype and the application you'll 
 create. In the back-end, you've already accounted for one big difference: users 
 can create multiple Guestbooks that each have their own entries. In the 
-front-end, however, only site administrators should be able to create 
+front-end, however, only Site administrators should be able to create 
 guestbooks. Therefore, you'll create another portlet called Guestbook Admin and 
-place it in the Content menu for sites. 
+place it in the Content menu for Sites. 
 
 To turn this application from a prototype into a full-fledged Liferay web 
 application, you'll make these changes: 
@@ -27,4 +26,4 @@ application, you'll make these changes:
 
 Ready to begin? 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/organizing-folders-for-larger-applications">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-1/organizing-folders-for-larger-applications">Let's Go!<span class="icon-circle-arrow-right"></span></a>

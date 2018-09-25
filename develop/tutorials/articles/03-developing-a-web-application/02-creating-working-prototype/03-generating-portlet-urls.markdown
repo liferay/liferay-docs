@@ -4,26 +4,24 @@
     <p>Developing Your First Portlet<br>Step 3 of 8</p>
 </div>
 
-Recall that users can place multiple portlets on a single page. As a developer, 
-you have no idea what other portlets will share a page with yours. This means 
-that you can't define URLs for various functions in your application like you 
-may be used to.
+Recall that users can place multiple portlets on a single page. As a developer,
+you have no idea what other portlets may share a page with yours. This means
+that you can't define URLs for various functions in your application like you
+otherwise would.
 
 For example, consider a Calendar application that a user puts on the same page 
 as a Blog application. To implement the functionality for deleting calendar 
 events and blog entries in the respective application, both application 
-developers append the `del` parameter to the URL, and give it a primary key 
+developers append the `del` parameter to the URL and give it a primary key 
 value so the application can look up and delete the calendar event or blog 
 entry. Since both applications read this parameter, their delete functionality 
 clashes. 
 
-System-generated URLs are @product@'s solution to this. By generating a unique 
-URL parameter for each piece of functionality, @product@ lets multiple 
-applications with the same or similar functionality coexist in perfect harmony. 
-Unfortunately, for this to work in your portlet you must manually add support 
-for it. Fortunately, doing so is very straightforward. 
+System-generated URLs prevent this. If the system generates a unique URL for
+each piece of functionality, multiple applications can coexist in perfect
+harmony. 
 
-In `view.jsp`, follow these steps to enable system-generated URLs in your 
+In `view.jsp`, follow these steps to create system-generated URLs in your
 portlet: 
 
 1.  Add these tags below `<%@ include file="/init.jsp" %>`, but above the 
@@ -52,7 +50,7 @@ portlet:
 The `<portlet:renderURL>` tag's `var` attribute creates the `addEntryURL` 
 variable to hold the system-generated URL. The `<portlet:param>` tag defines a 
 URL parameter to append to the URL. In this example, a URL parameter named 
-`mvcPath` with a value of `/edit_entry` is appended to the URL. 
+`mvcPath` with a value of `/edit_entry.jsp` is appended to the URL. 
 
 Note that your `GuestbookPortlet` class (located in your `guestbook-web` 
 module's `com.liferay.docs.guestbook.portlet` package) extends Liferay's 

@@ -10,9 +10,14 @@ in the interface.
 Although Liferay's default User Personal Bar is bare-bones, you can
 add more functionality to fit your needs. Unlike other product navigation menus
 (e.g., Product Menu), the User Personal Bar does not require the
-extension/creation of panel categories and panel apps. It uses another common
+extension/creation of panel categories and panel apps.
+
+<!-- Add below reference once portlet providers tutorial is available.
+
+It uses another common
 Liferay framework for providing functionality:
-[Portlet Providers](/develop/tutorials/-/knowledge_base/7-1/portlet-provider-template).
+[Portlet Providers](develop/tutorials/-/knowledge_base/7-1/portlet-providers).
+-->
 
 The User Personal Bar can be seen as a placeholder in every Liferay theme. By
 default, Liferay provides one sample *User Personal Bar* portlet that fills that
@@ -50,10 +55,14 @@ existing default portlet.
      The `model.class.name` property must be set to the class name of the entity
      type you want the portlet to handle. In this case, you want your portlet to
      be provided based on whether it can be displayed in the User Personal Bar.
+
+     <!-- Add below reference once portlet providers tutorial is available.
+
      You may recall from the 
-     [Portlet Providers](/develop/tutorials/-/knowledge_base/7-1/portlet-provider-template)
+     [Portlet Providers](develop/tutorials/-/knowledge_base/7-1/portlet-providers)
      tutorial that you can request portlets in several different ways (e.g.,
      *Edit*, *Browse*, etc.).
+     -->
 
      You should also specify the service rank for your new portlet so it
      overrides the default. Make sure to set the `service.ranking:Integer`

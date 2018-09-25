@@ -12,9 +12,9 @@ the JSPs you write for it.
 
 The other phase is called the *action* phase. This phase runs once, when a user
 triggers a portlet action. The portlet performs whatever action the user
-triggered, such as performing a search or adding a record to a database. Then,
-based on what happened in the action, the portlet goes back to the render phase
-and re-renders itself according to its new state.
+triggered, such as performing a search or adding a record to a database. Then
+the portlet goes back to the render phase and re-renders itself according to its
+new state.
 
 To save a guestbook entry, you must trigger a portlet action. For this, you'll
 create an action URL.

@@ -92,9 +92,13 @@ found to apply.
 
 **Tip:** The Audience Targeting application offers a *Device* rule that
 evaluates whether a User is accessing content using a particular device family.
-This rule is integrated with the Mobile Device Families app. Visit the 
-[Liferay Audience Targeting Rules](/discover/portal/-/knowledge_base/7-1/liferay-audience-targeting-rules#device)
+This rule is integrated with the Mobile Device Families app. 
+
+<!-- Add link once available (LRDOCS-4644)
+Visit the 
+[Liferay Audience Targeting Rules](discover/portal/-/knowledge_base/7-1/liferay-audience-targeting-rules#device)
 section for more details.
+-->
 
 $$$
 

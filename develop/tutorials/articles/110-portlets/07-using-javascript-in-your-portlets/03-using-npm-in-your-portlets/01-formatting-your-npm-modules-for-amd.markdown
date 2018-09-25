@@ -68,9 +68,9 @@ Follow these steps to configure your project to use the liferay-npm-bundler:
 
     If you don't have a portlet already, create an empty MVC portlet project. 
     For convenience, you can use 
-    [Blade CLI](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/installing-blade-cli)
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/installing-blade-cli)
     to create an empty portlet with the 
-    [mvc portlet blade template](https://dev.liferay.com/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template).
+    [mvc portlet blade template](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template).
 
     If you don't have a `package.json` file, you can run `npm init -y` to create 
     an empty one based on the project directory's name. 

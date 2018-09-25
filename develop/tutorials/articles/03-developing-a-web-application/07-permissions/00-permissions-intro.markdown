@@ -7,8 +7,14 @@ permissions.
 
 Thankfully, with @product@ you don't have to write an entire permissions system 
 from scratch: the framework provides a robust and well-tested permissions system 
-that you can implement quickly. 
+that you can implement quickly. You'll follow Liferay's well-defined process for 
+implementing permissions, called *DRAC*: 
+
+- **Define** all resources and permissions
+- **Register** all defined resources in the permissions system
+- **Associate** permissions with resources
+- **Check** for permission before returning resources
 
 Ready to start? 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/configuring-your-permissions-scheme">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-1/defining-permissions">Let's Go!<span class="icon-circle-arrow-right"></span></a>

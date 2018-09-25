@@ -134,7 +134,7 @@ The Plugins SDK is no longer available for @product-ver@.
 is now Liferay's opinionated development environment. You
 can transition from a Plugins SDK by adding it to your workspace and migrating
 projects at your own pace. See the
-[Using a Plugins SDK from Your Workspace](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
+[Using a Plugins SDK from Your Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
 article for more information.
 
 Finally, we have also developed a lightweight tool called

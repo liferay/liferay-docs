@@ -28,5 +28,5 @@ In the same folder your `view.jsp` is in, create the `edit_entry.jsp` file:
             <portlet:param name="mvcPath" value="/view.jsp"></portlet:param>
         </portlet:renderURL>
 
-Next, you must create a new URL for submitting the form. Before you do, some
-explanation is in order. 
+Next, you must create a new URL for submitting the form. Before you do, you must
+learn about portlet actions.

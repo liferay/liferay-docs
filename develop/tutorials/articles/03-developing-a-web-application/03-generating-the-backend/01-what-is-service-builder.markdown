@@ -14,18 +14,19 @@ application. Then you can add your application's necessary business logic.
 In the prototype application, you defined a single guestbook's entries and 
 displayed them in a list. The full application will handle multiple Guestbooks 
 and their entries. To make this work, you'll create two tables in the database: 
-one for guestbooks, and one for guestbook entries. 
+one for guestbooks and one for guestbook entries. 
 
-![Figure 1: When you're done, the Guestbook will be more robust, and make use of many Liferay features.](../../../images/guestbook-final.png)
+![Figure 1: When you're done, the Guestbook supports multiple guestbooks and makes use of many Liferay features.](../../../images/guestbook-final.png)
 
 ## Service Layer [](id=service-layer)
 
 This application is data-driven. It uses services for storing and retrieving 
-data. The application asks for data, and the service fetches it. The application 
-can then display this data to the user, who reads or modifies it. If the data is 
-modified, the application passes it back to the service, and the service stores 
-it. The application doesn't need to know anything about how the service does 
-what it does. 
+data. The application asks for data, and the service fetches it from the
+persistence layer. The application can then display this data to the user, who
+reads or modifies it. If the data is modified, the application passes it back
+to the service, and which calls the persistence layer to store it. The
+application doesn't need to know anything about how the service does what it
+does. 
 
 To get started, you'll create a Service Builder project and populate its 
 `service.xml` file with all the necessary entities to generate this code: 

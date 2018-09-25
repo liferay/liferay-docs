@@ -14,7 +14,7 @@ To use the plugin, include it in the build script of the root project:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.app.docker", version: "1.0.4"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.app.docker", version: "1.0.5"
     }
 
     repositories {

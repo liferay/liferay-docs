@@ -4,11 +4,11 @@
     <p>Refactoring the Prototype<br>Step 3 of 6</p>
 </div>
 
-`PortletKeys` let you manage important things like the portlet name or other 
-repeatable, commonly used variables in one place. This way, if you need to 
-change the portlet's name, you can do it in one place, and then reference it in 
-every class that needs it. Keys must be referenced first as a component 
-property, and then as a class. 
+`PortletKeys` manage important things like the portlet name or other repeatable,
+commonly used variables in one place. This way, if you need to change the
+portlet's name, you can do it in one place, and then reference it in every class
+that needs it. Keys must be referenced first as a component property, and then
+as a class. 
 
 Follow these steps to create your application's `PortletKeys`:
 
@@ -18,8 +18,8 @@ Follow these steps to create your application's `PortletKeys`:
         "javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK,
 
     Note that you need the trailing comma if you've added the property to the
-    middle of the list. If you've added it to the end of the last, leave it off 
-    (but add a trailing comma to property before!). 
+    middle of the list. If you've added it to the end of the last, leave it off
+    (but add a trailing comma to the prior property!). 
 
 2.  Save `GuestbookPortlet`. It now shows an error because you haven't added 
     the key to the class. 

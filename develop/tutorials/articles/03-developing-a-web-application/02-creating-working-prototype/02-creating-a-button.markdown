@@ -9,9 +9,9 @@ post their names and brief messages. Other users can read these entries and post
 their own. 
 
 When you created your project, it generated a file named `view.jsp` in your
-project's `src/main/resources/META-INF/resources` folder. This file creates the 
-default view for users when the portlet is added to the page. Right now it
-only contains some sample content: 
+project's `src/main/resources/META-INF/resources` folder. This file contains the
+default view for users when the portlet is added to the page. Right now it 
+contains sample content: 
 
     <%@ include file="/init.jsp" %>
 
@@ -19,10 +19,10 @@ only contains some sample content:
         <b><liferay-ui:message key="guestbook-web.caption"/></b>
     </p>
 
-First, `view.jsp` imports `init.jsp`. By convention, imports and tag library 
-declarations in @product@ portlet applications should be in an `init.jsp` file. 
-The other JSP files in the application import `init.jsp`. This lets you handle 
-JSP dependency management in a single file. 
+First, `view.jsp` imports `init.jsp`. By convention, imports and tag library
+declarations are in an `init.jsp` file. The other JSP files in the application
+import `init.jsp`. This lets you handle JSP dependency management in a single
+file. 
 
 Besides importing `init.jsp`, `view.jsp` displays a message defined by a
 language key. This key and its value are declared in your project's
