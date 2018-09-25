@@ -21,7 +21,7 @@
             />
 
             <c:if
-                test="<%= EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.UPDATE) %>">
+                test="<%= GuestbookEntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.UPDATE) %>">
                 <portlet:renderURL var="editURL">
                     <portlet:param name="entryId"
                         value="<%= String.valueOf(entry.getEntryId()) %>" />
@@ -33,7 +33,7 @@
             </c:if>
 
             <c:if
-            test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.PERMISSIONS) %>">
+            test="<%=GuestbookEntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.PERMISSIONS) %>">
 
                 <liferay-security:permissionsURL
                     modelResource="<%= Entry.class.getName() %>"
@@ -46,7 +46,7 @@
             </c:if>
 
             <c:if
-                test="<%=EntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.DELETE) %>">
+                test="<%=GuestbookEntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.DELETE) %>">
 
                 <portlet:actionURL name="deleteEntry" var="deleteURL">
                     <portlet:param name="entryId"
