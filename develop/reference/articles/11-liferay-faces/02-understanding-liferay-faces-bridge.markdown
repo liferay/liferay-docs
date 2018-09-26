@@ -10,15 +10,15 @@ applications as portlets within JSR 286 (Portlet 2.0) compliant portlet
 containers, like Liferay Portal 5.2, 6.0, 6.1, 6.2, and 7.0. 
 
 The Liferay Faces Bridge project home page can be found
-[here](https://web.liferay.com/community/liferay-projects/liferay-faces/bridge). 
+[here](https://community.liferay.com/-/faces). 
 
 To fully understand Liferay Faces Bridge, you must first understand the portlet
 bridge standard. Because the Portlet 1.0 and JSF 1.0 specs were being created at
 essentially the same time, the Expert Group (EG) for the JSF specification
 constructed the JSF framework to be compliant with portlets. For example, the
-[ExternalContext.getRequest()](http://docs.oracle.com/javaee/7/api/javax/faces/context/ExternalContext.html#getRequest--)
+[ExternalContext.getRequest()](https://javaee.github.io/javaee-spec/javadocs/javax/faces/context/ExternalContext.html#getRequest--)
 method returns an `Object` instead of an
-[javax.servlet.http.HttpServletRequest](http://download.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html).
+[javax.servlet.http.HttpServletRequest](https://javaee.github.io/javaee-spec/javadocs/javax/servlet/http/HttpServletRequest.html).
 When this method is used in a portal, the `Object` can be cast to a
 [javax.portlet.PortletRequest](http://portals.apache.org/pluto/portlet-2.0-apidocs/javax/portlet/PortletRequest.html).
 Despite the EG's consciousness of portlet compatibility within the design of
@@ -63,7 +63,16 @@ an HTTP POST is executed on a portlet and the portlet enters the `ACTION_PHASE`,
 then the full JSF lifecycle is initiated by the bridge. 
 
 ![Figure 1: The different phases of the JSF Lifecycle are executed depending on which phase of the Portlet lifecycle is being executed.](../../images/lifecycle-bridge.png)
- 
+
+<!-- Neil stated the following about the JSF Lifecycle image above:
+
+"In the following image, we talk about JSR 286 (Portlet 2.0), but once we're
+done with Portlet 3.0 in Liferay 7.1 (very soon) and JSR 378 (Portlet 3.0 Bridge
+for JSF 2.2, not until the end of Q2 2019), we will need to change that to JSR
+362 and also add the HEADER_PHASE."
+
+We'll need to update the image once this is available. -Cody -->
+
 Besides ensuring that the two lifecycles connect correctly, the JSF portlet
 bridge also acts as a mediator between the portal URL generator and JSF
 navigation rules. JSF portlet bridges ensure that URLs created by the portal
@@ -76,14 +85,14 @@ implementation-specific options prefixed with the `com.liferay.faces.bridge`
 namespace. 
 
 Liferay Faces Bridge is an essential part of the JSF development process for
-@product@. <!--Visit the
-[JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
-section of tutorials for more information on JSF development for @product@.-->
+@product@. Visit the
+[JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
+section of tutorials for more information on JSF development for @product@.
 
 ## Related Topics [](id=related-topics)
 
-[Understanding Liferay Faces Alloy](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-alloy)
 
-[Understanding Liferay Faces Portal](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-portal)
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)

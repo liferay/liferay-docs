@@ -83,5 +83,12 @@ following figure to view the Liferay Faces dependency diagram.
 
 ![Figure 1: The Liferay Faces dependency diagram helps visualize how components interact and depend on each other.](../../images/liferay-faces-dependency-diagram.png)
 
+<!-- Neil stated the following about the dependency diagram above:
+
+"In the following image, we talk about Liferay Faces Metal, but that will
+eventually become Liferay Faces Clay once we get to it."
+
+We'll need to update the diagram once this is available. -Cody -->
+
 Next, you can view some example configurations to see the new versioning scheme
 in action.

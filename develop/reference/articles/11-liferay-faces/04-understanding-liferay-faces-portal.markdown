@@ -5,7 +5,7 @@ Faces Portal as a dependency for your portlet projects, in order to use its
 Liferay-specific utilities and UI components. Liferay Faces Portal is included
 in a JSF portlet project automatically when created using Liferay IDE/Developer
 Studio. Examine Figure 1 below and notice you have a
-`liferay-faces-portal-[version].jar` in your portlet's library. 
+`com.liferay.faces.portal.[version].jar` in your portlet's library. 
 
 ![Figure 1: Maven downloads the required `.jar` files for your JSF portlet, depending on the JSF UI Component Suite you selected.](../../images/jsf-jars-package-explorer.png)
 
@@ -26,8 +26,8 @@ it accomplishes in your JSF application.
 
 ## Related Topics [](id=related-topics)
 
-[Creating a JSF Project Manually](/develop/tutorials/-/knowledge_base/7-0/creating-a-jsf-project-manually)
+[Creating a JSF Project Manually](/develop/tutorials/-/knowledge_base/7-1/creating-a-jsf-project-manually)
 
-[Customizing Liferay Search](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-search)
+[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/7-1/understanding-liferay-faces-bridge)
 
-[Understanding Liferay Faces Alloy](/develop/reference/-/knowledge_base/7-0/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-alloy)
