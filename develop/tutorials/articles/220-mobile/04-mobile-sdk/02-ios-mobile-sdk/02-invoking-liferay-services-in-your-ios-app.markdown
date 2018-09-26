@@ -20,9 +20,9 @@ The Liferay Mobile SDK calls @product@'s JSON web services, which are enabled by
 default. The web services you call via the Mobile SDK must remain enabled for 
 those calls to work. It's possible, however, to disable the web services that 
 you don't need to call. For instructions on this, see the tutorial 
-[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services). 
+[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/configuring-json-web-services). 
 You can also use 
-[Service Access Policies](/develop/tutorials/-/knowledge_base/7-0/service-access-policies) 
+[Service Access Policies](/develop/tutorials/-/knowledge_base/7-1/service-access-policies) 
 for more fine-grained control over accessible services. 
 
 ## Step 1: Create a Session [](id=step-1-create-a-session)
@@ -318,6 +318,6 @@ For more examples of this, see the test case
 
 ## Related Topics [](id=related-topics)
 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks)
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks)
 
-[Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-android-apps-that-use-the-mobile-sdk)
+[Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/creating-android-apps-that-use-the-mobile-sdk)

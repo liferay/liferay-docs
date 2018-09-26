@@ -12,7 +12,6 @@ The Liferay Mobile SDK comes with the Liferay Android SDK. The official
 gives you access to the SDK releases, provides the latest SDK news, and has 
 forums for you to engage in mobile app development discussions. Once you 
 configure the Mobile SDK in your app, you can invoke @product@ services in it. 
-The Liferay Android SDK bridges your native app with Liferay services. 
 
 ![Figure 1: Liferay's Mobile SDK enables your native app to communicate with @product@.](../../../../images/mobile-sdk-diagram.png)
 
@@ -24,7 +23,7 @@ The Android Mobile SDK app development tutorials cover these topics:
 -   Sending Your Android App's Requests Using Batch Processing
 
 A great way to start is by setting up the Mobile SDK your Android project. This 
-makes Liferay and custom portlet services available in your app. 
+makes @product@'s services available in your app. 
 
 ## Related Topics [](id=related-topics)
 

@@ -21,7 +21,7 @@ Objective-C is used in the code snippets that follow. Let the requesting begin!
 
 To configure asynchronous requests, first create a class that conforms to the 
 `LRCallback` protocol. When implementing this callback class, you need to 
-implement its `onFailure` and `onSuccess` methods. These methods respectivley 
+implement its `onFailure` and `onSuccess` methods. These methods respectively 
 determine what your app does when the request fails or succeeds. If a server 
 side exception or a connection error occurs during the request, the `onFailure` 
 method is called with an `NSError` instance that contains information about the 
@@ -62,7 +62,7 @@ Awesome! Now you have a callback class that you can use with the session.
 
 Next, create an instance of this callback and set it to the session. If you 
 haven't created a session yet, do so now. The tutorial 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-ios-app) 
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-1/invoking-liferay-services-in-your-ios-app) 
 shows you how to create a session. Now you're ready to set the callback to the 
 session. For example, this is done here for `BlogsEntriesCallback`: 
 
@@ -77,7 +77,7 @@ Pretty simple! Now you're ready to make the service call.
 Last but certainly not least, make the service call. This is done the same as 
 calling any other service: create a service object from the session and use it 
 to make the service call. This is also described in the tutorial 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-ios-app). 
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-1/invoking-liferay-services-in-your-ios-app). 
 Here, an example service call that gets all the blog entries from a site's Blogs 
 portlet is shown: 
 
@@ -115,7 +115,7 @@ make the call:
     [service getUserSites:&error];
 
 When using a block as a callback, take care not to also set an `LRCallback` 
-instance to the session. If you do, it gets overriden. Otherwise, support for 
+instance to the session. If you do, it gets overridden. Otherwise, support for 
 blocks works the same way as described in the previous sections. 
 
 Super! Now you know two different ways to make asynchronous service requests in 
@@ -123,6 +123,6 @@ your iOS apps.
 
 ## Related Topics [](id=related-topics)
 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-ios-app)
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-1/invoking-liferay-services-in-your-ios-app)
 
-[Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-android-apps-that-use-the-mobile-sdk)
+[Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/creating-android-apps-that-use-the-mobile-sdk)

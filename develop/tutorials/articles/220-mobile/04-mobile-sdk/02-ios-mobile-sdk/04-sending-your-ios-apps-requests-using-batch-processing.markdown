@@ -9,7 +9,7 @@ them all together.
 This tutorial shows you how to implement batch processing for your iOS app. It's 
 assumed that you already know how to invoke Liferay services from your iOS app. 
 If you don't, see the tutorial 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-ios-app). 
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-1/invoking-liferay-services-in-your-ios-app). 
 Objective-C is used in the code snippets that follow. Now it's time to whip up a 
 fresh batch of requests! 
 
@@ -61,6 +61,6 @@ requests.
 
 ## Related Topics [](id=related-topics)
 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-ios-app)
+[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-1/invoking-liferay-services-in-your-ios-app)
 
-[Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-android-apps-that-use-the-mobile-sdk)
+[Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/creating-android-apps-that-use-the-mobile-sdk)

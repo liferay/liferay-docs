@@ -8,7 +8,7 @@ install Liferay's prebuilt Mobile SDK. This is required for any app that
 leverages Liferay. To call your custom portlet's services, you also need to 
 install the Mobile SDK that you built for it. For instructions on building a 
 Mobile SDK for your custom portlet, see the tutorial 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks). 
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks). 
 
 This tutorial shows you how to install Liferay's prebuilt Mobile SDK, and any 
 custom built Mobile SDKs. First, you'll learn how to use 
@@ -24,7 +24,7 @@ The steps for doing so are shown here:
 
 1. Make sure you have 
    [CocoaPods](https://cocoapods.org/) 
-   installed.
+   installed. 
 
 2. Create a file called `Podfile` in your project. Add the following line in 
    this file:
@@ -60,7 +60,7 @@ prebuilt Mobile SDK manually if you don't want to use CocoaPods.
    [download](https://github.com/liferay/liferay-mobile-sdk/releases) 
    the latest version of the Liferay iOS Mobile SDK ZIP file. If you built your 
    own Mobile SDK, find its ZIP file on your machine. This is detailed in the 
-   [Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks) 
+   [Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks) 
    tutorial. 
 
 2. Unzip the file into your Xcode project. 
@@ -102,7 +102,7 @@ versions may work, but compatibility is untested.
 If you want to invoke remote web services for your custom portlet, then you need 
 to generate its client libraries by building an iOS Mobile SDK yourself. 
 Building an SDK is covered in the tutorial
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks).
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks).
 Once you build an SDK to a ZIP file, you can install it using the manual 
 installation steps above (make sure to use the ZIP file you built instead of 
 Liferay's prebuilt ZIP file). Note that because your custom built SDKs contain 
@@ -112,6 +112,6 @@ additional classes that are required to construct any remote service call.
 
 ## Related Topics [](id=related-topics)
 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks)
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks)
 
-[Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-android-apps-that-use-the-mobile-sdk)
+[Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/creating-android-apps-that-use-the-mobile-sdk)
