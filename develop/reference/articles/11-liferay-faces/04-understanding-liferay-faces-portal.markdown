@@ -28,6 +28,6 @@ it accomplishes in your JSF application.
 
 [Creating a JSF Project Manually](/develop/tutorials/-/knowledge_base/7-1/creating-a-jsf-project-manually)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/7-1/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-bridge)
 
 [Understanding Liferay Faces Alloy](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-alloy)
