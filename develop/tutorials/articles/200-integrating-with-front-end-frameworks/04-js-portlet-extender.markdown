@@ -128,7 +128,7 @@ Follow these steps to create your JavaScript portlet with 100% JavaScript tools:
     file to be processed by the extender. Defaults to `true` and only needs to 
     be set to `false` when you want to create a bundle without a portlet 
     (for instance, if you want to provide shared npm packages to be used with 
-    [imports](/develop/reference/-/knowledge_base/7-1/changes-between-liferay-npm-bundler-1x-and-2x#manually-deduplicating-through-importing).
+      [imports](/develop/reference/-/knowledge_base/7-1/changes-between-liferay-npm-bundler-1x-and-2x#manually-deduplicating-through-importing)).
     - **output-dir**: specifies where to put the generated JAR file. Defaults to 
     the standard output folder. You may want to specify a different location so 
     that the JAR and intermediate files are not mixed.
@@ -158,9 +158,7 @@ Follow these steps to create your JavaScript portlet with 100% JavaScript tools:
 
     Alternatively, you can run the commands below:
     
-    - `npm run build`: Places the output of liferay-npm-bundler in your 
-    project's build subfolder. The standard output contains the processed files 
-    and a JAR file, named upon the name and version of the project, that can be 
+    - `npm run build`: Places the output of liferay-npm-bundler in the designated output folder. The standard output contains a JAR file, named upon the name and version of the project, that can be
     manually deployed to your @product@ instance.
     
     - `npm run start`: lets you test the application in a local webpack 
