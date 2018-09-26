@@ -49,13 +49,14 @@ Screenlet calls the following services and methods.
 - Default
 - Material
 
-![The Forgot Password Screenlet with the Default (left) and Material (right) Viewsets.](../../../images/screens-android-forgotpwd.png)
+![The Forgot Password Screenlet with the Default (left) and Material (right) Viewsets.](../../../../images/screens-android-forgotpwd.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
 To use Forgot Password Screenlet, the portal must be configured to allow users 
 to request new passwords. The below sections show you how to do this. 
-Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
+Also, 
+[Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
 must be installed. 
 
 ### Authentication Method [](id=authentication-method)
@@ -72,16 +73,16 @@ Control Panel by selecting *Configuration* &rarr; *Instance Settings*, and then
 selecting the *Authentication* section. The Screenlet's password functionality 
 depends on the authentication settings in the portal: 
 
-![Checkboxes for the password recovery features in your Liferay instance.](../../../images/screens-password-reset.png)
+![Checkboxes for the password recovery features in your Liferay instance.](../../../../images/screens-password-reset.png)
 
 If these options are both unchecked, password recovery is disabled. If both
 options are checked, an email containing a password reset link is sent when a
 user requests it. If only the first option is checked, an email containing a new
 password is sent when a user requests it.
 
-For more details on authentication in Liferay Portal, please refer to the 
-[Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 
-section of the User Guide.
+For more details, see the 
+[Authentication](/discover/portal/-/knowledge_base/7-1/authentication) 
+section of the User Guide. 
 
 ### Anonymous Request [](id=anonymous-request)
 

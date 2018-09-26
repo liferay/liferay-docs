@@ -21,7 +21,8 @@
 
 ## Features [](id=features)
 
-The Asset List Screenlet can be used to show [asset](/tutorials/-/knowledge_base/7-0/asset-framework) 
+The Asset List Screenlet can be used to show 
+[asset](/tutorials/-/knowledge_base/7-1/asset-framework) 
 lists from a Liferay instance. For example, you can use the Screenlet to show a 
 scrollable list of assets. It also implements [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
 with configurable page size. The Asset List Screenlet can show assets belonging 
@@ -75,15 +76,15 @@ The Default Views use a standard `RecyclerView` to show the scrollable list.
 Other Views may use a different component, such as `ViewPager` or others, to 
 show the items. 
 
-![Asset List Screenlet using the Default (left) and Material (right) Views.](../../../images/screens-android-assetlist.png)
+![Asset List Screenlet using the Default (left) and Material (right) Views.](../../../../images/screens-android-assetlist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
 Dynamic Data Lists (DDL) and Data Types should be configured properly in the 
 portal. Refer to the 
-[Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions)  
+[Creating Data Definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions)  
 and 
-[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists) 
+[Creating Data Lists](/discover/portal/-/knowledge_base/7-1/creating-data-lists) 
 sections of the User Guide for more details.
 
 Also, to allow remote calls without the `userId`, the Liferay Screens 
@@ -95,7 +96,7 @@ app on
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|
@@ -119,12 +120,12 @@ If you don't set `classNameId`, you must set this attribute instead:
 | `layoutId` | `@layout` | The layout to use to show the View.|
 | `autoLoad` | `boolean` | Whether the list should be loaded when it's presented on the screen. The default value is `true`. |
 | `groupId` | `number` | The asset's group (site) ID. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0 `. |
-| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-android#offline) for details. |
-| `portletItemName` | `string` | The name of the [configuration template](/discover/portal/-/knowledge_base/7-0/configuration-templates) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Configuration Templates* option to save this configuration with a name. Use this name in this attribute. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-1/assetlistscreenlet-for-android#offline) for details. |
+| `portletItemName` | `string` | The name of the [configuration template](/discover/portal/-/knowledge_base/7-1/configuration-templates) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Configuration Templates* option to save this configuration with a name. Use this name in this attribute. |
 | `classNameId` | `number` | The asset class name's ID. Use values from the portal's `classname_` database table. |
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the list's first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
-| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions). Note that the appearance of these values in your app depends on the `layoutId` set. |
+| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [Creating Data Definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions). Note that the appearance of these values in your app depends on the `layoutId` set. |
 | `customEntryQuery` | `HashMap` | The set of keys (string) and values (string or number) to be used in the [`AssetEntryQuery` object](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/service/persistence/AssetEntryQuery.html). These values filter the assets returned by the Liferay instance. | 
 
 ## Methods [](id=methods)

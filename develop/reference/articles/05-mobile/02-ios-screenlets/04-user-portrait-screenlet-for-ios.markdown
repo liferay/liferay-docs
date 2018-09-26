@@ -40,7 +40,7 @@ Screenlet calls the following services and methods.
 - Default (`default`)
 - Flat7 (`flat7`)
 
-![The User Portrait Screenlet using the Default and Flat7 Themes.](../../../images/screens-ios-portrait.png)
+![The User Portrait Screenlet using the Default and Flat7 Themes.](../../../../images/screens-ios-portrait.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -50,7 +50,7 @@ None
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 
 When loading the portrait, the Screenlet supports the following offline mode 
 policies:

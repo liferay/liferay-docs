@@ -56,13 +56,13 @@ This screenlet has four different Themes:
 3. Stars 
 4. Emojis 
 
-![Figure 1: Rating Screenlet's different Themes.](../../../images/screens-ios-ratings.png)
+![Figure 1: Rating Screenlet's different Themes.](../../../../images/screens-ios-ratings.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -92,7 +92,7 @@ If you don't use `entryId`, you must use these attributes:
 | `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.blogs.kernel.model.BlogsEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). The `className` attribute is required when using it with `classPK` to instantiate the Screenlet.. |
 | `classPK` | `number` | The asset's unique identifier. Only use this attribute when also using `className` to instantiate the Screenlet. |
 | `groupId` | `number` | The ID of the site (group) containing the asset. |
-| `offlinePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-0/rating-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-1/rating-screenlet-for-ios#offline) for details. |
 
 ## Methods [](id=methods)
 

@@ -40,7 +40,7 @@ Screenlet calls the following services and methods.
 - Default
 - Material
 
-![The Sign Up Screenlet with the Default (left) and Material (right) Viewsets.](../../../images/screens-android-signup.png)
+![The Sign Up Screenlet with the Default (left) and Material (right) Viewsets.](../../../../images/screens-android-signup.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -48,11 +48,11 @@ Sign Up Screenlet's corresponding configuration in the Liferay instance can be
 set in the Control Panel by selecting *Configuration* &rarr; *Instance 
 Settings*, and then selecting the *Authentication* section. 
 
-![The Liferay instance's authentication settings.](../../../images/screens-portal-signup.png)
+![The Liferay instance's authentication settings.](../../../../images/screens-portal-signup.png)
 
-For more details, refer to the 
-[Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 
-section of the User Guide.
+For more details, see the 
+[Authentication](/discover/portal/-/knowledge_base/7-1/authentication) 
+section of the User Guide. 
 
 ## Anonymous Requests [](id=anonymous-requests)
 

@@ -49,21 +49,21 @@ Screenlet calls the following services and methods.
 
 The Default View uses a standard `WebView` to render the HTML.
 
-![Web Content Display Screenlet using the Default View.](../../../images/screens-android-webcontentdisplay.png)
+![Web Content Display Screenlet using the Default View.](../../../../images/screens-android-webcontentdisplay.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
 For the Web Content Display Screenlet to function properly, there should be web 
 content in the Liferay instance your app connects to. For more details on web 
 content, see the 
-[Creating Web Content](/discover/portal/-/knowledge_base/7-0/creating-web-content) 
-section of the Liferay User Guide. 
+[web content](/discover/portal/-/knowledge_base/7-1/introduction-web-content) 
+section of the User Guide. 
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -78,7 +78,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 - `articleId`
 
 Note that if your web content uses 
-[structures and templates](/discover/portal/-/knowledge_base/7-0/designing-uniform-content), 
+[structures and templates](/discover/portal/-/knowledge_base/7-1/designing-uniform-content), 
 you can use `templateId` or `structureId` in conjunction with `articleId`. 
 
 ## Attributes [](id=attributes)
@@ -89,12 +89,12 @@ you can use `templateId` or `structureId` in conjunction with `articleId`.
 | `groupId` | `number` | The site (group) identifier where the asset is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
 | `articleId` | `string` | The identifier of the web content to display. You can find the identifier by clicking *Edit* on the web content in the portal. |
 | `classPK` | `number` | The corresponding asset's class primary key. If the web content is an asset (from Asset List Screenlet, for example), this is the asset's identifier. This attribute is used only if `articleId` is empty. |
-| `templateId` | `number` | The identifier of the template used to render the web content. This only applies to [structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content). |
+| `templateId` | `number` | The identifier of the template used to render the web content. This only applies to [structured web content](/discover/portal/-/knowledge_base/7-1/designing-uniform-content). |
 | `structureId` | `number` | The identifier of the `DDMStructure` used to model the web content. This parameter lets the Screenlet retrieve and parse the structure. |
 | `labelFields` | `string` | A comma-delimited list of `DDMStructure` fields to display in the Screenlet. |
 | `autoLoad` | `boolean` | Whether the content should be retrieved from the portal as soon as the screenlet appears. Default value is `true`. |
 | `javascriptEnabled` | `boolean` | Enables support for JavaScript. This is disabled by default. |
-| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-0/webcontentdisplayscreenlet-for-android#offline) for details. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-1/webcontentdisplayscreenlet-for-android#offline) for details. |
 
 ## Methods [](id=methods)
 

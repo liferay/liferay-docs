@@ -79,7 +79,7 @@ The Default Theme uses a standard `UITableView` to show a scrollable list of
 fields. Other Themes may use a different component, such as `UICollectionView` 
 or others, to show the fields.
 
-![Figure 1: DDL Form Screenlet using the Default (`default`) Theme.](../../../images/screens-ios-ddlform.png)
+![Figure 1: DDL Form Screenlet using the Default (`default`) Theme.](../../../../images/screens-ios-ddlform.png)
 
 ### Custom Cells [](id=custom-cells)
 
@@ -100,12 +100,12 @@ careful to keep the same components and `IBOutlet` defined in the custom file.
 
 Before using DDL Form Screenlet, you should make sure that Dynamic Data Lists 
 and Data Types are configured properly in the portal. Refer to the 
-[Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions) 
+[Creating Data Definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions) 
 and 
-[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists) 
+[Creating Data Lists](/discover/portal/-/knowledge_base/7-1/creating-data-lists) 
 sections of the User Guide for more details. If Workflow is required, it must 
 also be configured. See the 
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow) 
+[Using Workflow](/discover/portal/-/knowledge_base/7-1/workflow) 
 section of the User Guide for details. 
 
 ### Permissions [](id=permissions)
@@ -116,25 +116,25 @@ Screenlet to view or edit record values, you must also grant the View and Update
 permissions, respectively. The Add Record, View, and Update permissions are 
 highlighted by the red boxes in the following screenshot:
 
-![Figure 2: The permissions for adding, viewing, and editing DDL records.](../../../images/screens-portal-permission-ddl.png)
+![Figure 2: The permissions for adding, viewing, and editing DDL records.](../../../../images/screens-portal-permission-ddl.png)
 
 Also, if your form includes at least one Documents and Media field, you must 
 grant permissions in the target repository and folder. For more details, see the 
 `repositoryId` and `folderId` attributes below.
 
-![Figure 3: The permission for adding a document to a Documents and Media folder.](../../../images/screens-portal-permission-folder-add.png)
+![Figure 3: The permission for adding a document to a Documents and Media folder.](../../../../images/screens-portal-permission-folder-add.png)
 
 For more details, please see the User Guide sections 
-[Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions), 
-[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists), 
+[Creating Data Definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions), 
+[Creating Data Lists](/discover/portal/-/knowledge_base/7-1/creating-data-lists), 
 and 
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow). 
+[Using Workflow](/discover/portal/-/knowledge_base/7-1/workflow). 
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 
 When loading the form or record, the Screenlet supports the following offline 
 mode policies:

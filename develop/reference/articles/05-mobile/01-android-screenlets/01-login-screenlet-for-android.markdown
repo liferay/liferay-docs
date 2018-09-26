@@ -45,9 +45,9 @@ $$$
 
 For instructions on configuring the Screenlet to use these authentication types, 
 see the below 
-[Portal Configuration](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android#portal-configuration) 
+[Portal Configuration](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android#portal-configuration) 
 and 
-[Screenlet Attributes](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android#attributes) 
+[Screenlet Attributes](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android#attributes) 
 sections. 
 
 When a user successfully authenticates, their user attributes are retrieved for 
@@ -85,9 +85,9 @@ Screenlet calls the following services and methods.
 - Material 
 
 For instructions on using these Views, see the `layoutId` attribute in the 
-[Attributes section below](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android#attributes). 
+[Attributes section below](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android#attributes). 
 
-![The Login Screenlet using the Default (left) and Material (right) Viewsets.](../../../images/screens-android-login.png)
+![The Login Screenlet using the Default (left) and Material (right) Viewsets.](../../../../images/screens-android-login.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -100,10 +100,10 @@ screen name, or user ID. You can set this in the Control Panel by selecting
 *Authentication* section. The authentication options are in the *How do users 
 authenticate?* selector menu. 
 
-![Setting the authentication method in your Liferay instance.](../../../images/screens-portal-auth.png)
+![Set the authentication method in your @product@ instance.](../../../../images/screens-portal-auth.png)
 
 For more details, see the 
-[Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 
+[Authentication](/discover/portal/-/knowledge_base/7-1/authentication) 
 section of the User Guide. 
 
 ### OAuth Authentication [](id=oauth-authentication)
@@ -139,7 +139,7 @@ connection, you can use the `credentialsStorage` attribute together with the
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `layoutId` | `@layout` | The ID of the View's layout. You can set this attribute to `@layout/login_default` (Default View) or `@layout/login_material` (Material View). To use the Material View, you must first install the Material View Set. [Click here](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets) for instructions on installing and using Views and View Sets, including the Material View Set. |
+| `layoutId` | `@layout` | The ID of the View's layout. You can set this attribute to `@layout/login_default` (Default View) or `@layout/login_material` (Material View). To use the Material View, you must first install the Material View Set. [Click here](/develop/tutorials/-/knowledge_base/7-1/using-views-in-android-screenlets) for instructions on installing and using Views and View Sets, including the Material View Set. |
 | `companyId` | `number` | The ID of the portal instance to authenticate to. If you don't set this attribute or set it to `0`, the Screenlet uses the `companyId` setting in `LiferayServerContext`. |
 | `loginMode` | `enum` | The Screenlet's authentication type. You can set this attribute to `basic`, `oauth`, or `cookie`. If you don't set this attribute, the Screenlet defaults to basic authentication. |
 | `basicAuthMethod` | `string` | Specifies the authentication option to use with basic or cookie authentication. You can set this attribute to `email`, `screenName` or `userId`. This must match the server's authentication option. If you don't set this attribute, and don't set the `loginMode` attribute to `oauth`, the Screenlet defaults to basic authentication with the `email` option. |

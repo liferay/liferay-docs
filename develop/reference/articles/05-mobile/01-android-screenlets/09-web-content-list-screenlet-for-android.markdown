@@ -19,7 +19,7 @@
 Web Content List Screenlet has the following features:
 
 - Shows a scrollable collection of 
-  [web content](/discover/portal/-/knowledge_base/7-0/creating-web-content) 
+  [web content](/discover/portal/-/knowledge_base/7-1/introduction-web-content) 
   articles. 
 - Implements 
   [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
@@ -48,13 +48,13 @@ The Default View uses a standard `RecyclerView` to show the scrollable list.
 Other Views may use a different component, such as `ViewPager` or others, to 
 show the items. 
 
-![Figure 1: The Web Content List Screenlet using the Default View.](../../../images/screens-android-webcontentlist.png)
+![Figure 1: The Web Content List Screenlet using the Default View.](../../../../images/screens-android-webcontentlist.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -77,10 +77,10 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `autoLoad` | `boolean` | Whether the list loads automatically when the Screenlet appears in the app's UI. The default value is `true`. |
 | `folderId` | `number` | The ID of the web content folder to retrieve content from. |
 | `groupId` | `number` | The ID of the site (group) where the asset is stored. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |
-| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-0/web-content-list-screenlet-for-android#offline) for details. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-1/web-content-list-screenlet-for-android#offline) for details. |
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
-| `labelFields` | `string` | The comma-separated names of the DDM fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content). Note that the appearance of data from a structure's fields depends on the `layoutId`. |
+| `labelFields` | `string` | The comma-separated names of the DDM fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on structured web content](/discover/portal/-/knowledge_base/7-1/designing-uniform-content). Note that the appearance of data from a structure's fields depends on the `layoutId`. |
 | `obcClassName` | `string` | The name of the `OrderByComparator` class to use to sort the results. Omit this property if you don't want to sort the results. [Click here](https://github.com/liferay/liferay-portal/tree/master/modules/apps/web-experience/journal/journal-api/src/main/java/com/liferay/journal/util/comparator) to see some comparator classes. Note, however, that not all of these classes can be used with `obcClassName`. You can only use comparator classes that extend `OrderByComparator<JournalArticle>`. You can also create your own comparator classes that extend `OrderByComparator<JournalArticle>`. |
 
 ## Methods [](id=methods)

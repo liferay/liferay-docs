@@ -50,7 +50,7 @@ Screenlet calls the following services and methods.
 - Default (`default`)
 - Flat7 (`flat7`)
 
-![The Forgot Password Screenlet with the Default and Flat7 Themes.](../../../images/screens-ios-forgotpwd.png)
+![The Forgot Password Screenlet with the Default and Flat7 Themes.](../../../../images/screens-ios-forgotpwd.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -71,15 +71,15 @@ Control Panel by selecting *Configuration* &rarr; *Instance Settings*, and then
 selecting the *Authentication* section. The Screenlet's password functionality 
 depends on the authentication settings in the portal: 
 
-![Checkboxes for the password recovery features in Liferay Portal.](../../../images/screens-password-reset.png)
+![Checkboxes for the password recovery features in Liferay Portal.](../../../../images/screens-password-reset.png)
 
 If both of these options are unchecked, password recovery is disabled. If both
 options are checked, an email containing a password reset link is sent when a
 user requests it. If only the first option is checked, an email containing a new
 password is sent when a user requests it.
 
-For more details on authentication in Liferay Portal, please refer to the 
-[Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 
+For more details, see the 
+[Authentication](/discover/portal/-/knowledge_base/7-1/authentication) 
 section of the User Guide. 
 
 ### Anonymous Request [](id=anonymous-request)

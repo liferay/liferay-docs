@@ -23,7 +23,7 @@
 ## Features [](id=features)
 
 The Asset List Screenlet can be used to show lists of 
-[assets](/develop/tutorials/-/knowledge_base/7-0/asset-framework) 
+[assets](/develop/tutorials/-/knowledge_base/7-1/asset-framework) 
 from a Liferay instance. For example, you can use the Screenlet to show a 
 scrollable collection of assets. It also implements 
 [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
@@ -77,13 +77,13 @@ The Default Theme uses a standard `UITableView` to show the scrollable list.
 Other Themes may use a different component, such as `UICollectionView` or 
 others, to show the items.
 
-![Figure 1: Asset List Screenlet using the Default (`default`) Theme.](../../../images/screens-ios-assetlist.png)
+![Figure 1: Asset List Screenlet using the Default (`default`) Theme.](../../../../images/screens-ios-assetlist.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -107,8 +107,8 @@ If you don't use `classNameId`, you must use this attribute:
 |-----------|-----------|-------------|
 | `groupId` | `number` | The ID of the site (group) where the asset is stored. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |
 | `classNameId` | `number` | The ID of the asset's class name. Use values from the `AssetClassNameId` class or the Liferay Instance's `classname_` database table. |
-| `portletItemName` | `string` | The name of the [configuration template](/discover/portal/-/knowledge_base/7-0/configuration-templates) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Configuration Templates* option to save this configuration with a name. Use this name as this attribute's value. |
-| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-ios#offline) for details. |
+| `portletItemName` | `string` | The name of the [configuration template](/discover/portal/-/knowledge_base/7-1/configuration-templates) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Configuration Templates* option to save this configuration with a name. Use this name as this attribute's value. |
+| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/7-1/assetlistscreenlet-for-ios#offline) for details. |
 | `autoLoad` | `boolean` | Whether the list loads automatically when the Screenlet appears in the app's UI. The default value is `true`. |
 | `refreshControl` | `boolean` | Defines whether a standard [ios `UIRefreshControl`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) appears when the user does the pull to refresh gesture. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items retrieved from the server for display on the first page. The default value is `50`. |

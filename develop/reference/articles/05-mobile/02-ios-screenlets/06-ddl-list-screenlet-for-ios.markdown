@@ -53,21 +53,21 @@ Screenlet calls the following services and methods.
   Other Themes may use a different component, such as `UICollectionView` or 
   others, to show the items.
 
-![The DDL List Screenlet using the Default (`default`) Theme.](../../../images/screens-ios-ddllist.png)
+![The DDL List Screenlet using the Default (`default`) Theme.](../../../../images/screens-ios-ddllist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
 Dynamic Data Lists (DDL) and Data Types should be configured in the portal. For
 more details, please refer to the Liferay User Guide sections 
-[Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions) 
+[Creating Data Definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions) 
 and 
-[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists). 
+[Creating Data Lists](/discover/portal/-/knowledge_base/7-1/creating-data-lists). 
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -88,8 +88,8 @@ Here are the offline mode policies that you can use with this Screenlet:
 |-----------|-----------|-------------| 
 | `recordSetId` | `number` | The ID of the DDL being called. To find the IDs for your DDLs, first open the Product Menu and select the site that contains your DDLs. Then click *Content* &rarr; *Dynamic Data Lists*. Each DDL's ID is in the table's ID column. |
 | `userId` | `number` | The ID of the user to filter records on. Records aren't filtered if the `userId` is `0`. The default value is `0`. |
-| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. To do so, first open the Product Menu and select the site that contains your DDLs. Then click *Content* &rarr; *Dynamic Data Lists*, and find the find the icon (![Configuration Menu](../../../images/icon-options.png)) for the Dynamic Data List configuration menu at the upper right. Click this icon and select *Manage Data Definitions*. You can view the fields by clicking on any of the data definitions in the table that appears. Note that the appearance of these values in your app depends on the Theme selected by the user. |
-| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/7-0/ddllistscreenlet-for-ios#offline) for details. |
+| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. To do so, first open the Product Menu and select the site that contains your DDLs. Then click *Content* &rarr; *Dynamic Data Lists*, and find the find the icon (![Configuration Menu](../../../../images/icon-options.png)) for the Dynamic Data List configuration menu at the upper right. Click this icon and select *Manage Data Definitions*. You can view the fields by clicking on any of the data definitions in the table that appears. Note that the appearance of these values in your app depends on the Theme selected by the user. |
+| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/7-1/ddllistscreenlet-for-ios#offline) for details. |
 | `autoLoad` | `boolean` | Whether the list loads automatically when the Screenlet appears in the app's UI. The default value is `true`. |
 | `refreshControl` | `boolean` | Whether a standard [iOS `UIRefreshControl`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) appears when the user performs the pull to refresh gesture. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items retrieved from the server for display on the first page. The default value is `50`. |

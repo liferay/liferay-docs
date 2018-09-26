@@ -46,9 +46,9 @@ $$$
 
 For instructions on configuring the Screenlet to use these authentication types, 
 see the below 
-[Portal Configuration](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios#portal-configuration) 
+[Portal Configuration](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-ios#portal-configuration) 
 and 
-[Screenlet Attributes](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios#attributes) 
+[Screenlet Attributes](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-ios#attributes) 
 sections. 
 
 When a user successfully authenticates, their attributes are retrieved for use 
@@ -86,9 +86,9 @@ Screenlet calls the following services and methods.
 - Flat7 (`flat7`)
 
 For instructions on using Themes, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets). 
+[click here](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-ios-screenlets). 
 
-![The Login Screenlet using the Default and Flat7 Themes.](../../../images/screens-ios-login.png)
+![The Login Screenlet using the Default and Flat7 Themes.](../../../../images/screens-ios-login.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -101,10 +101,10 @@ screen name, or user ID. You can set this in the Control Panel by selecting
 *Authentication* section. The authentication options are in the *How do users 
 authenticate?* selector menu. 
 
-![Setting the authentication method in your Liferay instance.](../../../images/screens-portal-auth.png)
+![Setting the authentication method in your Liferay instance.](../../../../images/screens-portal-auth.png)
 
-For more details, please refer to the 
-[Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 
+For more details, see the 
+[Authentication](/discover/portal/-/knowledge_base/7-1/authentication) 
 section of the User Guide. 
 
 ### OAuth [](id=oauth)
