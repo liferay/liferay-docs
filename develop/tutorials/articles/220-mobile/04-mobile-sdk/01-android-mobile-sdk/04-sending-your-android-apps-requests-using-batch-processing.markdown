@@ -9,7 +9,7 @@ them all together.
 This tutorial shows you how to implement batch processing for your Android app.
 It's assumed that you already know how to invoke Liferay services from your
 Android app. If you don't, see the tutorial 
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-android-app).
+[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-1/invoking-liferay-services-in-your-android-app). 
 Now get ready to whip up a fresh batch of service calls! 
 
 ## Implementing Batch Processing [](id=implementing-batch-processing)
@@ -67,13 +67,13 @@ the callback as a `BatchAsyncTaskCallback` instance:
 
 This is similar to the procedure for making asynchronous calls as described in 
 the tutorial 
-[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-services-asynchronously-from-your-android-app). 
+[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/7-1/invoking-services-asynchronously-from-your-android-app). 
 Awesome! Now you know how to make efficient service calls in batch! 
 
 ## Related Topics [](id=related-topics)
 
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-android-app)
+[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-1/invoking-liferay-services-in-your-android-app)
 
-[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-services-asynchronously-from-your-android-app)
+[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/7-1/invoking-services-asynchronously-from-your-android-app)
 
-[Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-ios-apps-that-use-the-mobile-sdk)
+[Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/creating-ios-apps-that-use-the-mobile-sdk)

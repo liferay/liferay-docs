@@ -88,7 +88,7 @@ Now that you have your callback class, you can set it to the session.
 Once you've implemented and instantiated your callback class, you're ready to 
 set it to the session. If you haven't created a session yet, do so now. The 
 tutorial 
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-android-app) 
+[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-1/invoking-liferay-services-in-your-android-app) 
 shows you how to create a session. Now you're ready to set the callback to the 
 session. For example, this is done here for `AsyncTaskCallback`: 
 
@@ -101,7 +101,7 @@ Pretty simple! Now you're ready to make the service call.
 Last but certainly not least, make the service call. This is done the same as 
 calling any other service: create a service object from the session and use it 
 to make the service call. This is also described in the tutorial 
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-android-app). 
+[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-1/invoking-liferay-services-in-your-android-app). 
 An example service call that gets all the blog entries from a site's Blogs 
 portlet is shown here: 
 
@@ -137,6 +137,6 @@ app.
 
 ## Related Topics [](id=related-topics)
 
-[Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-ios-apps-that-use-the-mobile-sdk)
+[Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/creating-ios-apps-that-use-the-mobile-sdk)
 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks)
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks)

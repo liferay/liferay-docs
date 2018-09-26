@@ -6,7 +6,7 @@ prebuilt Mobile SDK. This is required for any app that leverages Liferay. To
 call your custom portlet's services, you also need to install the Mobile SDK 
 that you built for it. For instructions on building a Mobile SDK for your custom 
 portlet, see the tutorial 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks). 
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks). 
 
 This tutorial shows you how to install Liferay's prebuilt Mobile SDK, and any 
 custom built Mobile SDKs. First, you'll learn how to use Gradle or Maven to 
@@ -18,7 +18,7 @@ Now go forth and fear no remote service!
 
 If your Android project is using Gradle as the build system, you can add 
 Liferay's prebuilt Mobile SDK as a 
-[dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+[dependency](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
 to your project. All versions are available at the JCenter and Maven Central
 repositories. Both repositories are listed here, but you only need to have one
 in your app: 
@@ -29,7 +29,7 @@ in your app:
     }
 
     dependencies {
-      compile group: 'com.liferay.mobile', name: 'liferay-android-sdk', version: '7.0.+'
+      compile group: 'com.liferay.mobile', name: 'liferay-android-sdk', version: '7.1.+'
     }
 
 If you get errors such as `Duplicate files copied in APK META-INF/NOTICE` when 
@@ -50,9 +50,9 @@ doing this with Maven are shown next.
 
 ## Adding the SDK to Your Maven Project [](id=adding-the-sdk-to-your-maven-project)
 
-You can also add the Liferay's prebuilt Mobile SDK as a
-[dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
-to your project using Maven. To do so, add the following code to your `pom.xml`
+You can also add the Liferay's prebuilt Mobile SDK as a 
+[dependency](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies) 
+to your project using Maven. To do so, add the following code to your `pom.xml` 
 file: 
 
     <dependency>
@@ -73,7 +73,7 @@ Use the following steps to manually set up a Mobile SDK in your Android project:
    [download](https://github.com/liferay/liferay-mobile-sdk/releases/) 
    the latest version of `liferay-android-sdk-[version].jar`. If you built your 
    own Mobile SDK, find its JAR file on your machine. This is detailed in the 
-   [Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks) 
+   [Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks) 
    tutorial. 
 
 2. Copy the JAR into your Android project's `/libs` folder. 
@@ -81,9 +81,9 @@ Use the following steps to manually set up a Mobile SDK in your Android project:
 3. If you're manually installing Liferay's prebuilt Mobile SDK, you also need to 
    download and copy these dependencies to your Android Project's `/libs` 
    folder: 
-   [`httpclient-android-4.3.3.jar`](http://search.maven.org/remotecontent?filepath=org/apache/httpcomponents/httpclient-android/4.3.3/httpclient-android-4.3.3.jar)
-   and 
-   [`httpmime-4.3.3.jar`](http://search.maven.org/remotecontent?filepath=org/apache/httpcomponents/httpmime/4.3.3/httpmime-4.3.3.jar).
+
+    -   [`httpclient-android-4.3.3.jar`](http://search.maven.org/remotecontent?filepath=org/apache/httpcomponents/httpclient-android/4.3.3/httpclient-android-4.3.3.jar) 
+    -   [`httpmime-4.3.3.jar`](http://search.maven.org/remotecontent?filepath=org/apache/httpcomponents/httpmime/4.3.3/httpmime-4.3.3.jar)
 
 4. Start using it!
 
@@ -94,7 +94,7 @@ Great! Now you know how to manually install a Mobile SDK in your Android apps.
 If you want to invoke remote web services for your custom portlet, then you need 
 to generate its client libraries by building an Android Mobile SDK yourself. 
 Building an SDK is covered in the tutorial
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks).
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks).
 Once you build an SDK to a JAR file, you can install it using the manual 
 installation steps above (make sure to use the JAR file you built instead of 
 Liferay's prebuilt JAR file). Note that because your custom built SDKs contain 
@@ -107,8 +107,8 @@ ready to call them.
 
 ## Related Topics [](id=related-topics)
 
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-android-app)
+[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-1/invoking-liferay-services-in-your-android-app)
 
-[Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-ios-apps-that-use-the-mobile-sdk)
+[Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/creating-ios-apps-that-use-the-mobile-sdk)
 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks)
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks)

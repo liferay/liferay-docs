@@ -18,9 +18,9 @@ The Liferay Mobile SDK calls @product@'s JSON web services, which are enabled by
 default. The web services you call via the Mobile SDK must remain enabled for 
 those calls to work. It's possible, however, to disable the web services that 
 you don't need to call. For instructions on this, see the tutorial 
-[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services). 
+[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/configuring-json-web-services). 
 You can also use 
-[Service Access Policies](/develop/tutorials/-/knowledge_base/7-0/service-access-policies) 
+[Service Access Policies](/develop/tutorials/-/knowledge_base/7-1/service-access-policies) 
 for more fine-grained control over accessible services. 
 
 ## Step 1: Create a Session [](id=step-1-create-a-session)
@@ -166,7 +166,7 @@ the method only returns after the request finishes. However, Android doesn't
 allow network communication from an app's main UI thread. Service calls issued 
 from the main UI thread need need to be asynchronous. For instructions on doing 
 this, see the tutorial 
-[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-services-asynchronously-from-your-android-app).
+[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/7-1/invoking-services-asynchronously-from-your-android-app).
 
 Great! Now you're familiar with the basics of accessing Liferay services through 
 the Mobile SDK. However, there are some special cases you may run into when 
@@ -296,15 +296,15 @@ far. For example:
     );
 
 For more examples on this subject, see the `addFileEntry*` methods in 
-  [`DLAppServiceTest.java`](https://github.com/liferay/liferay-mobile-sdk/blob/master/android/src/test/java/com/liferay/mobile/android/DLAppServiceTest.java)
+[`DLAppServiceTest.java`](https://github.com/liferay/liferay-mobile-sdk/blob/master/android/src/test/java/com/liferay/mobile/android/DLAppServiceTest.java).
 
 As you can see, the Mobile SDK does a great deal of work for you even when 
 special service method arguments are required.
 
 ## Related Topics [](id=related-topics)
 
-[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-services-asynchronously-from-your-android-app)
+[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/7-1/invoking-services-asynchronously-from-your-android-app)
 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks)
+[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks)
 
-[Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-ios-apps-that-use-the-mobile-sdk)
+[Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/creating-ios-apps-that-use-the-mobile-sdk)
