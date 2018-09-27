@@ -49,7 +49,7 @@ Screenlet calls the following services and methods.
 
 The Default View uses a standard `WebView` to render the HTML.
 
-![Web Content Display Screenlet using the Default View.](../../../../images/screens-android-webcontentdisplay.png)
+![Web Content Display Screenlet using the Default View.](../../../images/screens-android-webcontentdisplay.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
