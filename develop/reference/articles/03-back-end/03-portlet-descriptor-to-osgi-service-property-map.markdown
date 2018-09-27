@@ -20,7 +20,7 @@ property names resemble the original descriptor names.
 
 This article covers these descriptor mappings:
 
-- [Portlet descriptor mappings from `portlet.xml`](#jsr-168-jsr-286-descriptor-mappings)
+- [Portlet descriptor mappings](#jsr-168-jsr-286-descriptor-mappings)
 
 - [Liferay descriptor mappings](#liferay-descriptor-mappings)
 
@@ -179,7 +179,7 @@ this document for simplicity.
     results in an array of values.
 -   [<a name="three">3</a>] This type is registered as an OSGi service.
 -   [<a name="four">4</a>] 
-    https://github.com/liferay/liferay-portal/blob/7.1.x/definitions/portlet-app_3_0.xsd
+    https://xmlns.jcp.org/xml/ns/portlet/portlet-app_3_0.xsd
 -   [<a name="five">5</a>] 
     [http://www.liferay.com/dtd/liferay-portlet-app_7_1_0.dtd](@platform-ref@/7.1-latest/definitions/liferay-portlet-app_7_1_0.dtd.html)
 -   [<a name="six">6</a>] Here's an example of using multiple 
