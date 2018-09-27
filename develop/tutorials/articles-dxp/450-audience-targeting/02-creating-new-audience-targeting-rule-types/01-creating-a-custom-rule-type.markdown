@@ -73,4 +73,4 @@ section for more details.
 
 $$$
 
-The first thing you'll define in your weather rule is the view/save lifecycle.
+Next you'll define the view/save lifecycle for the weather rule.

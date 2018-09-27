@@ -27,7 +27,7 @@ dependencies.
         }
 
     You can learn more about exposing the Content Targeting API in the
-    [Accessing the Content Targeting API](/develop/tutorials/-/knowledge_base/7-0/accessing-the-content-targeting-api)
+    [Accessing the Content Targeting API](/develop/tutorials/-/knowledge_base/7-1/accessing-the-content-targeting-api)
     tutorial. Once you've created your module and specified its dependencies,
     you'll need to define your metric's behavior. How your metric behaves is
     controlled by a Java class file that you create.
