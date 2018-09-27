@@ -20,7 +20,7 @@ property names resemble the original descriptor names.
 
 This article covers these descriptor mappings:
 
-- [JSR-168 (Portlet 1.0), JSR-286 (Portlet 2.0), JSR 362 (Portlet 3.0) descriptor mappings from `portlet.xml`](#jsr-168-jsr-286-descriptor-mappings)
+- [Portlet descriptor mappings from `portlet.xml`](#jsr-168-jsr-286-descriptor-mappings)
 
 - [Liferay descriptor mappings](#liferay-descriptor-mappings)
 
