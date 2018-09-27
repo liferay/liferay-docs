@@ -60,9 +60,9 @@ This Screenlet can also render other Screenlets as inner Screenlets:
 
 - Images: Image Display Screenlet
 - Videos: Video Display Screenlet
-- Audios: Audio Display Screenlet
+- Audio: Audio Display Screenlet
 - PDFs: PDF Display Screenlet
-- Blogs entries: Blogs Entry Display Screenlet
+- Blog entries: Blogs Entry Display Screenlet
 - Web content: Web Content Display Screenlet
 
 These Screenlets can also be used alone without Asset Display Screenlet. 
