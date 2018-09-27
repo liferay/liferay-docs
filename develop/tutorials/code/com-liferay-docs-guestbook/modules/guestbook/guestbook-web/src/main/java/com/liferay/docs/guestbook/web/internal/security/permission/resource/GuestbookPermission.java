@@ -12,9 +12,8 @@ public class GuestbookPermission {
 
 	public static boolean contains(PermissionChecker permissionChecker, long groupId, String actionId) {
 		
-		boolean permissionContains = _portletResourcePermission.contains(permissionChecker, groupId, actionId);
+		return _portletResourcePermission.contains(permissionChecker, groupId, actionId);
 
-		return 	permissionContains;	
 	}
 	
 	@Reference(
