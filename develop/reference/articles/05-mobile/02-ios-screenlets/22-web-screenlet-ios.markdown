@@ -37,7 +37,7 @@ in your page to customize its content from the server side.
 
 The Default Theme uses an iOS `WKWebView` for displaying the web page. 
 
-![Figure 1: Web Screenlet using the Default Theme.](../../../../images/screens-ios-webscreenlet.png)
+![Figure 1: Web Screenlet using the Default Theme.](../../../images/screens-ios-webscreenlet.png)
 
 ## Configuration [](id=configuration)
 

@@ -43,7 +43,7 @@ Screenlet calls the following services and methods.
 The Default View uses Android's `EditText` and `Button` elements to show an add 
 comment dialog. Other Views may use different components to show this dialog. 
 
-![Figure 1: Comment Add Screenlet using the Default View.](../../../../images/screens-android-commentadd.png)
+![Figure 1: Comment Add Screenlet using the Default View.](../../../images/screens-android-commentadd.png)
 
 ## Offline [](id=offline)
 

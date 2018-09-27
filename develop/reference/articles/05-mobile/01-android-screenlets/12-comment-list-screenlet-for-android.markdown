@@ -47,7 +47,7 @@ The Default View uses an
 to show an asset's comments. Other Views may use a different component, such as 
 `TableView` or others, to show the items. 
 
-![Figure 1: Comment List Screenlet using the Default View.](../../../../images/screens-android-commentlist.png)
+![Figure 1: Comment List Screenlet using the Default View.](../../../images/screens-android-commentlist.png)
 
 ## Offline [](id=offline)
 

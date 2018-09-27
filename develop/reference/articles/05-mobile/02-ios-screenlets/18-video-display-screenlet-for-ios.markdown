@@ -47,7 +47,7 @@ Screenlet calls the following services and methods.
 
 The Default Theme uses an iOS `AVPlayerViewController` to display the video. 
 
-![Figure 1: Video Display Screenlet using the Default Theme.](../../../../images/screens-ios-videodisplay.png)
+![Figure 1: Video Display Screenlet using the Default Theme.](../../../images/screens-ios-videodisplay.png)
 
 ## Offline [](id=offline)
 

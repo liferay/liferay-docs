@@ -48,7 +48,7 @@ Screenlet calls the following services and methods.
 
 The Default View uses an iOS `UIWebView` for displaying the file. 
 
-![Figure 1: File Display Screenlet using the Default View.](../../../../images/screens-ios-filedisplay.png)
+![Figure 1: File Display Screenlet using the Default View.](../../../images/screens-ios-filedisplay.png)
 
 ## Offline [](id=offline)
 

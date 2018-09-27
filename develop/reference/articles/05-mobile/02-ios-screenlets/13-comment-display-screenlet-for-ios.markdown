@@ -49,7 +49,7 @@ The Default Theme uses
 and iOS `UILabel` elements to show an asset's comment. Other Themes may use 
 different components to show the comment. 
 
-![Figure 1: Comment Display Screenlet using the Default Theme.](../../../../images/screens-ios-commentdisplay.png)
+![Figure 1: Comment Display Screenlet using the Default Theme.](../../../images/screens-ios-commentdisplay.png)
 
 ## Offline [](id=offline)
 

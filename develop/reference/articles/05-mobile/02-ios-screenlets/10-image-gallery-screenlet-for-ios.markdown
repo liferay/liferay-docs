@@ -56,7 +56,7 @@ This screenlet has three different Themes:
 2. Slideshow
 3. List
 
-![Figure 1: Image Gallery Screenlet using the Grid, Slideshow, and List Themes.](../../../../images/screens-ios-imagegallery.png)
+![Figure 1: Image Gallery Screenlet using the Grid, Slideshow, and List Themes.](../../../images/screens-ios-imagegallery.png)
 
 ## Offline [](id=offline)
 

@@ -48,7 +48,7 @@ The Default View uses
 and `TextView` and `ImageButton` elements to show an asset's comment. Other 
 Views may different components to show the comment. 
 
-![Figure 1: Comment Display Screenlet using the Default View.](../../../../images/screens-android-commentdisplay.png)
+![Figure 1: Comment Display Screenlet using the Default View.](../../../images/screens-android-commentdisplay.png)
 
 ## Offline [](id=offline)
 

@@ -49,7 +49,7 @@ The Default Theme uses an iOS `AVAudioPlayer` to display the audio player. For
 the player components, this Theme uses `UIButton`, `UISlider`, and several 
 `UILabel` instances. 
 
-![Figure 1: Audio Display Screenlet using the Default Theme.](../../../../images/screens-ios-audiodisplay.png)
+![Figure 1: Audio Display Screenlet using the Default Theme.](../../../images/screens-ios-audiodisplay.png)
 
 ## Offline [](id=offline)
 

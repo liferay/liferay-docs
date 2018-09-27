@@ -54,7 +54,7 @@ This Screenlet has three different Views:
 2. Slideshow
 3. List
 
-![Figure 1: Image Gallery Screenlet using the Grid, Slideshow, and List Views.](../../../../images/screens-android-imagegallery.png)
+![Figure 1: Image Gallery Screenlet using the Grid, Slideshow, and List Views.](../../../images/screens-android-imagegallery.png)
 
 ## Offline [](id=offline)
 

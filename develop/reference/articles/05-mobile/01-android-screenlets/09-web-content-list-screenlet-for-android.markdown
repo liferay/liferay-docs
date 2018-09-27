@@ -48,7 +48,7 @@ The Default View uses a standard `RecyclerView` to show the scrollable list.
 Other Views may use a different component, such as `ViewPager` or others, to 
 show the items. 
 
-![Figure 1: The Web Content List Screenlet using the Default View.](../../../../images/screens-android-webcontentlist.png)
+![Figure 1: The Web Content List Screenlet using the Default View.](../../../images/screens-android-webcontentlist.png)
 
 ## Offline [](id=offline)
 

@@ -65,7 +65,7 @@ This Screenlet can also render other Screenlets:
 
 These Screenlets can also be used alone without Asset Display Screenlet. 
 
-![Figure 1: Asset Display Screenlet using the Default Theme.](../../../../images/screens-ios-assetdisplay.png)
+![Figure 1: Asset Display Screenlet using the Default Theme.](../../../images/screens-ios-assetdisplay.png)
 
 ## Offline [](id=offline)
 

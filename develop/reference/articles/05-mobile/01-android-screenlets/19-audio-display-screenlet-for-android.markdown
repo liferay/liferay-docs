@@ -46,7 +46,7 @@ Screenlet calls the following services and methods.
 
 The Default View uses an Android `VideoView` to display the audio file. 
 
-![Figure 1: Audio Display Screenlet using the Default View.](../../../../images/screens-android-audiodisplay.png)
+![Figure 1: Audio Display Screenlet using the Default View.](../../../images/screens-android-audiodisplay.png)
 
 ## Offline [](id=offline)
 

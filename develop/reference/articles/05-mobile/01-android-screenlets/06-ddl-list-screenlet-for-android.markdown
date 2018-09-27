@@ -54,7 +54,7 @@ The Default View uses a standard `RecyclerView` to show the scrollable list.
 Other Views may use a different component, such as `ViewPager` or others, to 
 show the items. 
 
-![The DDL List Screenlet using the Default and Material Views.](../../../../images/screens-android-ddllist.png)
+![The DDL List Screenlet using the Default and Material Views.](../../../images/screens-android-ddllist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 

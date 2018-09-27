@@ -50,7 +50,7 @@ Screenlet calls the following services and methods.
 
 - Default
 
-![Figure 1: Asset Display Screenlet using the Default View.](../../../../images/screens-android-assetdisplay.png)
+![Figure 1: Asset Display Screenlet using the Default View.](../../../images/screens-android-assetdisplay.png)
 
 The Default View uses different UI elements to show each asset type. For 
 example, it displays images with `ImageView` and blogs with `TextView`. Note 

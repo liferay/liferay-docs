@@ -47,7 +47,7 @@ Screenlet calls the following services and methods.
 
 The Default Theme uses an iOS `UIImageView` for displaying the image. 
 
-![Figure 1: Image Display Screenlet using the Default Theme.](../../../../images/screens-ios-imagedisplay.png)
+![Figure 1: Image Display Screenlet using the Default Theme.](../../../images/screens-ios-imagedisplay.png)
 
 ## Offline [](id=offline)
 

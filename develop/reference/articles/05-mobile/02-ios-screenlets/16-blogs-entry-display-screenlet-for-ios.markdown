@@ -51,7 +51,7 @@ The Default Theme can use different components to show a blogs entry
 to show the profile picture of the Liferay user who posted it. Note that other 
 Themes may use different components. 
 
-![Figure 1: Blogs Entry Display Screenlet using the Default Theme.](../../../../images/screens-ios-blogsentrydisplay.png)
+![Figure 1: Blogs Entry Display Screenlet using the Default Theme.](../../../images/screens-ios-blogsentrydisplay.png)
 
 ## Offline [](id=offline)
 

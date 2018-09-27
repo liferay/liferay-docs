@@ -39,7 +39,7 @@ Screenlet calls the following services and methods.
 - Default
 - Material
 
-![The User Portrait Screenlet using the Default (left) and Material (right) Views.](../../../../images/screens-android-userportrait.png)
+![The User Portrait Screenlet using the Default (left) and Material (right) Views.](../../../images/screens-android-userportrait.png)
 
 ## Portal Configuration [](id=portal-configuration)
 

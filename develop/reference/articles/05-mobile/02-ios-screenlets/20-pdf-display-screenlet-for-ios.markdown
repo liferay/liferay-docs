@@ -47,7 +47,7 @@ Screenlet calls the following services and methods.
 
 The Default Theme uses an iOS `UIWebView` for displaying the PDF file. 
 
-![Figure 1: PDF Display Screenlet using the Default Theme.](../../../../images/screens-ios-pdfdisplay.png)
+![Figure 1: PDF Display Screenlet using the Default Theme.](../../../images/screens-ios-pdfdisplay.png)
 
 ## Offline [](id=offline)
 

@@ -47,7 +47,7 @@ Screenlet calls the following services and methods.
 The Default View uses Android's `PdfRenderer` to display the PDF. Note that 
 `PdfRenderer` requires an Android API level of 21 or higher. 
 
-![Figure 1: PDF Display Screenlet using the Default View.](../../../../images/screens-android-pdfdisplay.png)
+![Figure 1: PDF Display Screenlet using the Default View.](../../../images/screens-android-pdfdisplay.png)
 
 ## Offline [](id=offline)
 

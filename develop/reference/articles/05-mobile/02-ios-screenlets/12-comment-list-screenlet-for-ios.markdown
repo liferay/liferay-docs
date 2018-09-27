@@ -49,7 +49,7 @@ to show an asset's comments. Other Themes may use a different component, such as
 [iOS's `UICollectionView`](https://developer.apple.com/reference/uikit/uicollectionview) 
 or others, to show the items. 
 
-![Figure 1: Comment List Screenlet using the Default Theme.](../../../../images/screens-ios-commentlist.png)
+![Figure 1: Comment List Screenlet using the Default Theme.](../../../images/screens-ios-commentlist.png)
 
 ## Offline [](id=offline)
 

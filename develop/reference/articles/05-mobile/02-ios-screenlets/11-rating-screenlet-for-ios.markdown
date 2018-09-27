@@ -56,7 +56,7 @@ This screenlet has four different Themes:
 3. Stars 
 4. Emojis 
 
-![Figure 1: Rating Screenlet's different Themes.](../../../../images/screens-ios-ratings.png)
+![Figure 1: Rating Screenlet's different Themes.](../../../images/screens-ios-ratings.png)
 
 ## Offline [](id=offline)
 

@@ -40,7 +40,7 @@ Screenlet calls the following services and methods.
 - Default (`default`)
 - Flat7 (`flat7`)
 
-![The User Portrait Screenlet using the Default and Flat7 Themes.](../../../../images/screens-ios-portrait.png)
+![The User Portrait Screenlet using the Default and Flat7 Themes.](../../../images/screens-ios-portrait.png)
 
 ## Portal Configuration [](id=portal-configuration)
 

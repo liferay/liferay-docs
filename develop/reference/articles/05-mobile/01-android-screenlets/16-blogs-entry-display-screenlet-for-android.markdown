@@ -50,7 +50,7 @@ For example, it uses an Android `TextView` to show the blog's text, and
 to show the profile picture of the Liferay user who posted it. Note that other 
 custom Views may use different components. 
 
-![Figure 1: Blogs Entry Display Screenlet using the Default View.](../../../../images/screens-android-blogsentrydisplay.png)
+![Figure 1: Blogs Entry Display Screenlet using the Default View.](../../../images/screens-android-blogsentrydisplay.png)
 
 ## Offline [](id=offline)
 

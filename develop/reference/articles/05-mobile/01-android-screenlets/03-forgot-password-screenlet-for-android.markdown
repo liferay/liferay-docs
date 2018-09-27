@@ -49,7 +49,7 @@ Screenlet calls the following services and methods.
 - Default
 - Material
 
-![The Forgot Password Screenlet with the Default (left) and Material (right) Viewsets.](../../../../images/screens-android-forgotpwd.png)
+![The Forgot Password Screenlet with the Default (left) and Material (right) Viewsets.](../../../images/screens-android-forgotpwd.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -73,7 +73,7 @@ Control Panel by selecting *Configuration* &rarr; *Instance Settings*, and then
 selecting the *Authentication* section. The Screenlet's password functionality 
 depends on the authentication settings in the portal: 
 
-![Checkboxes for the password recovery features in your Liferay instance.](../../../../images/screens-password-reset.png)
+![Checkboxes for the password recovery features in your Liferay instance.](../../../images/screens-password-reset.png)
 
 If these options are both unchecked, password recovery is disabled. If both
 options are checked, an email containing a password reset link is sent when a

@@ -76,7 +76,7 @@ The Default Views use a standard `RecyclerView` to show the scrollable list.
 Other Views may use a different component, such as `ViewPager` or others, to 
 show the items. 
 
-![Asset List Screenlet using the Default (left) and Material (right) Views.](../../../../images/screens-android-assetlist.png)
+![Asset List Screenlet using the Default (left) and Material (right) Views.](../../../images/screens-android-assetlist.png)
 
 ## Portal Configuration [](id=portal-configuration)
 

@@ -51,7 +51,7 @@ Screenlet calls the following services and methods.
 The Default Theme uses a standard `UIWebView` to render the HTML. Other Themes 
 may use a different component, such as iOS 8's. 
 
-![The Web Content Display Screenlet using the Default (`default`) Theme](../../../../images/screens-ios-webcontent.png)
+![The Web Content Display Screenlet using the Default (`default`) Theme](../../../images/screens-ios-webcontent.png)
 
 ## Portal Configuration [](id=portal-configuration)
 

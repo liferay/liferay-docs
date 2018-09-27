@@ -46,7 +46,7 @@ Screenlet calls the following services and methods.
 
 The Default View uses an Android `VideoView` to display the video. 
 
-![Figure 1: Video Display Screenlet using the Default View.](../../../../images/screens-android-videodisplay.png)
+![Figure 1: Video Display Screenlet using the Default View.](../../../images/screens-android-videodisplay.png)
 
 ## Offline [](id=offline)
 

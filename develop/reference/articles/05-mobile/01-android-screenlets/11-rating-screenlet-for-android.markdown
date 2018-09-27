@@ -56,7 +56,7 @@ This Screenlet has five different Views:
 4. Reactions
 5. Emojis
 
-![Figure 1: Rating Screenlet's different Views.](../../../../images/screens-android-ratings.png)
+![Figure 1: Rating Screenlet's different Views.](../../../images/screens-android-ratings.png)
 
 ## Offline [](id=offline)
 

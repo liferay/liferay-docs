@@ -87,7 +87,7 @@ Screenlet calls the following services and methods.
 For instructions on using these Views, see the `layoutId` attribute in the 
 [Attributes section below](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android#attributes). 
 
-![The Login Screenlet using the Default (left) and Material (right) Viewsets.](../../../../images/screens-android-login.png)
+![The Login Screenlet using the Default (left) and Material (right) Viewsets.](../../../images/screens-android-login.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -100,7 +100,7 @@ screen name, or user ID. You can set this in the Control Panel by selecting
 *Authentication* section. The authentication options are in the *How do users 
 authenticate?* selector menu. 
 
-![Set the authentication method in your @product@ instance.](../../../../images/screens-portal-auth.png)
+![Set the authentication method in your @product@ instance.](../../../images/screens-portal-auth.png)
 
 For more details, see the 
 [Authentication](/discover/portal/-/knowledge_base/7-1/authentication) 

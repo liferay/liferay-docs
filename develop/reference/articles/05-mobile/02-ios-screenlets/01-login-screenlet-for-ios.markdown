@@ -88,7 +88,7 @@ Screenlet calls the following services and methods.
 For instructions on using Themes, 
 [click here](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-ios-screenlets). 
 
-![The Login Screenlet using the Default and Flat7 Themes.](../../../../images/screens-ios-login.png)
+![The Login Screenlet using the Default and Flat7 Themes.](../../../images/screens-ios-login.png)
 
 ## Portal Configuration [](id=portal-configuration)
 
@@ -101,7 +101,7 @@ screen name, or user ID. You can set this in the Control Panel by selecting
 *Authentication* section. The authentication options are in the *How do users 
 authenticate?* selector menu. 
 
-![Setting the authentication method in your Liferay instance.](../../../../images/screens-portal-auth.png)
+![Setting the authentication method in your Liferay instance.](../../../images/screens-portal-auth.png)
 
 For more details, see the 
 [Authentication](/discover/portal/-/knowledge_base/7-1/authentication) 

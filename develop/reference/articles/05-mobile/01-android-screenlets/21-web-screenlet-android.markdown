@@ -34,7 +34,7 @@ in your page to customize its content from the server side.
 
 - Default
 
-![Figure 1: The Web Screenlet with the Default View Set.](../../../../images/screens-android-webscreenlet.png)
+![Figure 1: The Web Screenlet with the Default View Set.](../../../images/screens-android-webscreenlet.png)
 
 ## Configuration [](id=configuration)
 

@@ -44,7 +44,7 @@ Screenlet calls the following services and methods.
 The Default Theme uses the iOS elements `UITextField` and `UIButton` to add a 
 comment to an asset. Other Themes may use other components to show the comment.
 
-![Figure 1: Comment Add Screenlet using the Default Theme.](../../../../images/screens-ios-commentadd.png)
+![Figure 1: Comment Add Screenlet using the Default Theme.](../../../images/screens-ios-commentadd.png)
 
 ## Offline [](id=offline)
 

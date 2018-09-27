@@ -46,7 +46,7 @@ Screenlet calls the following services and methods.
 
 The Default View uses an Android `ImageView` to display the image. 
 
-![Figure 1: Image Display Screenlet using the Default View.](../../../../images/screens-android-imagedisplay.png)
+![Figure 1: Image Display Screenlet using the Default View.](../../../images/screens-android-imagedisplay.png)
 
 ## Offline [](id=offline)
 

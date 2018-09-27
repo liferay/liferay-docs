@@ -52,7 +52,7 @@ The Default Theme uses a standard `UITableView` to show the scrollable list.
 Other Themes may use a different component, such as `UICollectionView` or 
 others, to show the contents. 
 
-![Figure 1: Web Content List Screenlet using the Default (`default`) Theme.](../../../../images/screens-ios-webcontent-list.png)
+![Figure 1: Web Content List Screenlet using the Default (`default`) Theme.](../../../images/screens-ios-webcontent-list.png)
 
 ## Offline [](id=offline)
 

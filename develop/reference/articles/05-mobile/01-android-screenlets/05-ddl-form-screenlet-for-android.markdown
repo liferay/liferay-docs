@@ -81,7 +81,7 @@ of fields. Other Views may use different components, such as `ViewPager` or
 others, to show the fields. You can find a sample of this implementation in the 
 `DDLFormScreenletPagerView` class.
 
-![Figure 1: DDL Form Screenlet's Default (left) and Material (right) Views.](../../../../images/screens-android-ddlform.png)
+![Figure 1: DDL Form Screenlet's Default (left) and Material (right) Views.](../../../images/screens-android-ddlform.png)
 
 ### Editor Types [](id=editor-types)
 
@@ -152,13 +152,13 @@ Screenlet to view or edit record values, you must also grant the View and Update
 permissions, respectively. The Add Record, View, and Update permissions are 
 highlighted by the red boxes in the following screenshot:
 
-![Figure 2: The permissions for adding, viewing, and editing DDL records.](../../../../images/screens-portal-permission-ddl.png)
+![Figure 2: The permissions for adding, viewing, and editing DDL records.](../../../images/screens-portal-permission-ddl.png)
 
 Also, if your form includes at least one Documents and Media field, you must 
 grant permissions in the target repository and folder. For more details, see the 
 `repositoryId` and `folderId` attributes below.
 
-![Figure 3: The permission for adding a document to a Documents and Media folder.](../../../../images/screens-portal-permission-folder-add.png)
+![Figure 3: The permission for adding a document to a Documents and Media folder.](../../../images/screens-portal-permission-folder-add.png)
 
 For more details, see the User Guide sections 
 [Creating Data Definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions), 
