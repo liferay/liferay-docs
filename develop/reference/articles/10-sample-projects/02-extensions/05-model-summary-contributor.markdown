@@ -1,10 +1,12 @@
 # Model Summary Contributor
 
-The `ModelSummaryContributor` shows a condensed, text-based version of the entity that can be displayed generically.
+The `ModelSummaryContributor` shows a condensed, text-based version of the
+entity that can be displayed generically.
 
 ### What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
-After you deploy the sample, open your Liferay Portal and type the text you want to search on the "Search Bar".
+After you deploy the sample, open your Liferay Portal and type the text you want
+to search on the "Search Bar".
 
 ### What Api(S) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
@@ -12,7 +14,8 @@ This sample leverages the ModelSummaryContributor API.
 
 ### How does this sample leverage the api(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
-Liferay's search engine provides an API to define custom fields on entities to be displayed on Liferay's Portal search results. To do that:
+Liferay's search engine provides an API to define custom fields on entities to
+be displayed on Liferay's Portal search results. To do that:
 
 Create a class to register your contributor:
 
@@ -48,7 +51,8 @@ Create a class to register your contributor:
 
 The method annotated with `@Activate` will register the contributor to OSGi.
 
-The `ModelSummaryContributor` `@Reference` target attribute should point to the Entity you want to use, in this sample we are using `BlogsEntry`.
+The `ModelSummaryContributor` `@Reference` target attribute should point to the
+Entity you want to use, in this sample we are using `BlogsEntry`.
 
 Create a class to define the custom fields:
 
@@ -58,8 +62,9 @@ Create a class to define the custom fields:
         service = com.liferay.portal.search.spi.model.result.contributor.ModelSummaryContributor.class
     )
 
-The `@Component`  should point is where you define the Entity and the Service that will be used.
-In this sampĺe we are using `BlogsEntry` as the property and `ModelSummaryContributor` as the service.
+The `@Component`  should point is where you define the Entity and the Service
+that will be used. In this sampĺe we are using `BlogsEntry` as the property and
+`ModelSummaryContributor` as the service.
 
     @Override
 	public Summary getSummary(
@@ -85,13 +90,16 @@ In this sampĺe we are using `BlogsEntry` as the property and `ModelSummaryContr
 
 The method `getSummary` will be invoked when you add a blog on Liferay Portal.
 
-In this sample, we are adding `Field.TITLE` and `Field.COMPANY_ID`, but you can change that to use other fields.
+In this sample, we are adding `Field.TITLE` and `Field.COMPANY_ID`, but you can
+change that to use other fields.
 
 To test this feature:
 
-* Open you Liferay Portal, then click on the "+" icon -> "Widgets -> Collaboration -> Blogs" click on the "New Entry" button.
-* Fill the fields with the values you want, click on "Publish" button.
-* Type the value you used before on the "Search Bar". The blog you added should be displayed with the values defined on your `ModelSummaryContributor`.
+- Open you Liferay Portal, then click on the "+" icon -> "Widgets ->
+  Collaboration -> Blogs" click on the "New Entry" button.
+- Fill the fields with the values you want, click on "Publish" button.
+- Type the value you used before on the "Search Bar". The blog you added should
+  be displayed with the values defined on your `ModelSummaryContributor`.
 
 ## Where Is This Sample? [](id=where-is-this-sample)
 
