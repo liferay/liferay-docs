@@ -15,7 +15,9 @@ import com.liferay.portal.kernel.security.permission.resource.PortletResourcePer
 import com.liferay.portal.kernel.security.permission.resource.PortletResourcePermissionFactory;
 import com.liferay.portal.kernel.security.permission.resource.StagedPortletPermissionLogic;
 import com.liferay.portal.kernel.util.HashMapDictionary;
+import org.osgi.service.component.annotations.Component;
 
+@Component (immediate = true)
 public class GuestbookPortletResourcePermissionRegistrar {
 	
 		@Activate
