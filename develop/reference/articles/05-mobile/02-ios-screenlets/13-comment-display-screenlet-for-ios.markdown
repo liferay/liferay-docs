@@ -45,17 +45,17 @@ Screenlet calls the following services and methods.
 - Default
 
 The Default Theme uses 
-[User Portrait Screenlet](/develop/reference/-/knowledge_base/7-0/userportraitscreenlet-for-ios) 
+[User Portrait Screenlet](/develop/reference/-/knowledge_base/7-1/userportraitscreenlet-for-ios) 
 and iOS `UILabel` elements to show an asset's comment. Other Themes may use 
 different components to show the comment. 
 
-![Figure 1: Comment Display Screenlet using the Default Theme.](../../../images/screens-ios-commentdisplay.png)
+![Figure 1: Comment Display Screenlet using the Default Theme.](../../../../images/screens-ios-commentdisplay.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 This Screenlet supports the `remote-only`, `cache-only`, `remote-first`, and 
 `cache-first` offline mode policies. 
 
@@ -90,7 +90,7 @@ a Liferay instance:
 | `commentId` | `number` | The primary key of the comment to display. |
 | `autoLoad` | `boolean` | Whether the list should automatically load when the Screenlet appears in the app's UI. The default value is `true`. |
 | `editable` | `boolean` | Whether the user can edit the comment. |
-| `offlinePolicy` | `string` | The offline mode setting. The default is `remote-first`. See [the Offline section](/develop/reference/-/knowledge_base/7-0/comment-display-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. The default is `remote-first`. See [the Offline section](/develop/reference/-/knowledge_base/7-1/comment-display-screenlet-for-ios#offline) for details. |
 
 ## Methods [](id=methods)
 

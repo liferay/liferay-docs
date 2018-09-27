@@ -48,13 +48,13 @@ Screenlet calls the following services and methods.
 
 The Default View uses an iOS `UIWebView` for displaying the file. 
 
-![Figure 1: File Display Screenlet using the Default View.](../../../images/screens-ios-filedisplay.png)
+![Figure 1: File Display Screenlet using the Default View.](../../../../images/screens-ios-filedisplay.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -72,7 +72,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `className` | `string` | The file's fully qualified class name. Since files in a Documents and Media Library are `DLFileEntry` objects, their `className` is [`com.liferay.document.library.kernel.model.DLFileEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFileEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `classPK` | `number` | The file's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `autoLoad` | `boolean` | Whether the file automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
-| `offlinePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-0/file-display-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-1/file-display-screenlet-for-ios#offline) for details. |
 
 ## Delegate [](id=delegate)
 

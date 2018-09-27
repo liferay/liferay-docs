@@ -47,13 +47,13 @@ The Default View uses an
 to show an asset's comments. Other Views may use a different component, such as 
 `TableView` or others, to show the items. 
 
-![Figure 1: Comment List Screenlet using the Default View.](../../../images/screens-android-commentlist.png)
+![Figure 1: Comment List Screenlet using the Default View.](../../../../images/screens-android-commentlist.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -74,12 +74,12 @@ Here are the offline mode policies that you can use with this Screenlet:
 |-----------|-----------|-------------|
 | `layoutId` | `@layout` | The layout to use to show the View. |
 | `autoLoad` | `boolean` | Whether the list should automatically load when the Screenlet appears in the app's UI. The default value is `true`. |
-| `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-0/comment-list-screenlet-for-android#offline) for details. |
+| `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-1/comment-list-screenlet-for-android#offline) for details. |
 | `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.blogs.kernel.model.BlogsEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `classPK` | `number` | The asset's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
-| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content). Note that the appearance of data from a structure's fields depends on the `layoutId`. |
+| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on structured web content](/discover/portal/-/knowledge_base/7-1/designing-uniform-content). Note that the appearance of data from a structure's fields depends on the `layoutId`. |
 | `editable` | `boolean` | Whether the user can edit the comment. |
 
 ## Methods [](id=methods)

@@ -24,7 +24,7 @@
 Web Screenlet lets you display any web page. It also lets you customize the web 
 page through injection of local and remote JavaScript and CSS files. If you're 
 using @product@ as backend, you can use 
-[Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates) 
+[Application Display Templates](/discover/portal/-/knowledge_base/7-1/styling-apps-and-assets) 
 in your page to customize its content from the server side. 
 
 ## Module [](id=module)
@@ -37,12 +37,12 @@ in your page to customize its content from the server side.
 
 The Default Theme uses an iOS `WKWebView` for displaying the web page. 
 
-![Figure 1: Web Screenlet using the Default Theme.](../../../images/screens-ios-webscreenlet.png)
+![Figure 1: Web Screenlet using the Default Theme.](../../../../images/screens-ios-webscreenlet.png)
 
 ## Configuration [](id=configuration)
 
 To learn how to use Web Screenlet, follow the steps in the tutorial 
-[Rendering Web Pages in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/rendering-web-pages-in-your-ios-app). 
+[Rendering Web Pages in Your iOS App](/develop/tutorials/-/knowledge_base/7-1/rendering-web-pages-in-your-ios-app). 
 That tutorial gives detailed instructions for using the configuration items 
 described here. 
 
@@ -58,7 +58,7 @@ supply the described configuration parameters:
 | `addCss(localFile: String)` | `WebScreenletConfigurationBuilder` | Adds a local CSS file with the supplied filename. |
 | `addJs(url: String)` | `WebScreenletConfigurationBuilder` | Adds a JavaScript file from the supplied URL. |
 | `addCss(url: String)` | `WebScreenletConfigurationBuilder` | Adds a CSS file from the supplied URL. |
-| `set(webType: WebType)` | `WebScreenletConfigurationBuilder` | Sets the [`WebType`](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-ios#webtype). |
+| `set(webType: WebType)` | `WebScreenletConfigurationBuilder` | Sets the [`WebType`](/develop/reference/-/knowledge_base/7-1/web-screenlet-for-ios#webtype). |
 | `enableCordova()` | `WebScreenletConfigurationBuilder` | Enables Cordova inside the Web Screenlet. |
 | `load()` | `WebScreenletConfiguration` | Returns the `WebScreenletConfiguration` object that you can set to the Screenlet instance. |
 

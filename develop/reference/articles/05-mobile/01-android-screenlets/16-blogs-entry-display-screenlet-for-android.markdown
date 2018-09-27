@@ -46,17 +46,17 @@ Screenlet calls the following services and methods.
 
 The Default View uses different components to show a blogs entry (`BlogsEntry`). 
 For example, it uses an Android `TextView` to show the blog's text, and 
-[User Portrait Screenlet](/develop/reference/-/knowledge_base/7-0/userportraitscreenlet-for-android) 
+[User Portrait Screenlet](/develop/reference/-/knowledge_base/7-1/userportraitscreenlet-for-android) 
 to show the profile picture of the Liferay user who posted it. Note that other 
 custom Views may use different components. 
 
-![Figure 1: Blogs Entry Display Screenlet using the Default View.](../../../images/screens-android-blogsentrydisplay.png)
+![Figure 1: Blogs Entry Display Screenlet using the Default View.](../../../../images/screens-android-blogsentrydisplay.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -84,7 +84,7 @@ If you don't use `entryId`, you must use both of the following attributes:
 | `entryId` | `number` | The primary key of the blog entry (`BlogsEntry`). | 
 | `className` | `string` | The `BlogsEntry` object's fully qualified class name. This is [`com.liferay.blogs.kernel.model.BlogsEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). If you don't use `entryId`, the `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `classPK` | `number` | The `BlogsEntry` object's unique identifier. If you don't use `entryId`, the `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-0/blogs-entry-display-screenlet-for-android#offline) for details. |
+| `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-1/blogs-entry-display-screenlet-for-android#offline) for details. |
 
 ## Listener [](id=listener)
 

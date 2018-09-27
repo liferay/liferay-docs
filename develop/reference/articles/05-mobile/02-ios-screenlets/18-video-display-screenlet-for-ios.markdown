@@ -47,13 +47,13 @@ Screenlet calls the following services and methods.
 
 The Default Theme uses an iOS `AVPlayerViewController` to display the video. 
 
-![Figure 1: Video Display Screenlet using the Default Theme.](../../../images/screens-ios-videodisplay.png)
+![Figure 1: Video Display Screenlet using the Default Theme.](../../../../images/screens-ios-videodisplay.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -77,10 +77,10 @@ If you don't use `assetEntryId`, you must use these attributes:
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
 | `assetEntryId` | `number` | The primary key of the video file. | 
-| `className` | `string` | The video file's fully qualified class name. Since files in a Documents and Media Library are `DLFileEntry` objects, the `className` is [`com.liferay.document.library.kernel.model.DLFileEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFileEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `className` | `string` | The video file's fully qualified class name. Since files in a Documents and Media Library are `DLFileEntry` objects, the `className` is [`com.liferay.document.library.kernel.model.DLFileEntry`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFileEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `classPK` | `number` | The video file's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `autoLoad` | `boolean` | Whether the video automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
-| `offlinePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-0/video-display-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-1/video-display-screenlet-for-ios#offline) for details. |
 
 ## Delegate [](id=delegate)
 

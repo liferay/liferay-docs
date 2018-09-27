@@ -49,13 +49,13 @@ to show an asset's comments. Other Themes may use a different component, such as
 [iOS's `UICollectionView`](https://developer.apple.com/reference/uikit/uicollectionview) 
 or others, to show the items. 
 
-![Figure 1: Comment List Screenlet using the Default Theme.](../../../images/screens-ios-commentlist.png)
+![Figure 1: Comment List Screenlet using the Default Theme.](../../../../images/screens-ios-commentlist.png)
 
 ## Offline [](id=offline)
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -76,7 +76,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 |-----------|-----------|-------------|
 | `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.blogs.kernel.model.BlogsEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `classPK` | `number` | The asset's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `offlinePolicy` | `string` | The offline mode setting. The default is `remote-first`. See [the Offline section](/develop/reference/-/knowledge_base/7-0/comment-list-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. The default is `remote-first`. See [the Offline section](/develop/reference/-/knowledge_base/7-1/comment-list-screenlet-for-ios#offline) for details. |
 | `editable` | `boolean` | Whether the user can edit the comment. |
 | `autoLoad` | `boolean` | Whether the list should automatically load when the Screenlet appears in the app's UI. The default value is `true`. |
 | `refreshControl` | `boolean` | Defines whether a standard [iOS `UIRefreshControl`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) is shown when the user does the pull to refresh gesture. The default value is `true`. |
