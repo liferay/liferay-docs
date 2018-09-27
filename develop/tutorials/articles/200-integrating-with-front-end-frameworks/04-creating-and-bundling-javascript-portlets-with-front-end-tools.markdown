@@ -1,41 +1,43 @@
-# Creating JavaScript Portlets with 100% JavaScript Tools
+# Creating and Bundling JavaScript Portlets with JavaScript Tooling [](id=creating-and-bundling-javascript-portlets-with-javascript-tooling)
 
-Portlets are built on Java, and therefore to write one, you must have a 
-knowledge and understanding of how Java works. This can be quite the hurdle for 
-front-end developers who want to create JavaScript portlets. Not to worry 
-though. A knowledge of Java is no longer needed. Thanks to the 
-[JS Portlet Extender](), 
-[Liferay bundle generator](), 
+Portlets are built on Java, and therefore to write one you must have a knowledge 
+and understanding of how Java works. This can be quite the hurdle for front-end 
+developers who want to use JavaScript frameworks in their portlets. Thanks to 
+the JS Portlet Extender, 
+[Liferay Bundle Generator](https://www.npmjs.com/package/generator-liferay-bundle), 
 and 
-[liferay-npm-bundler](), 
-developers can create and develop JavaScript portlets in @product@ using 100% 
-JavaScript tools. This requires no XML or Java to work. The only requirement is 
-the JavaScript entry point for the portlet. 
+[liferay-npm-bundler](/develop/reference/-/knowledge_base/7-1/liferay-npm-bundler), 
+developers can create and develop JavaScript portlets in @product@ using pure 
+JavaScript tooling. 
 
-![Figure 1: Service Definition](../../images/extender-lifecycle.png)
+![Figure 1: The JS Portlet Extender lets you use pure JavaScript tooling to write portlets.](../../images/extender-lifecycle.png)
 
 This tutorial shows how to use the JS Portlet Extender app, Liferay Bundle 
 Generator, and liferay-npm-bundler to create JavaScript Portlets for @product@. 
 
 +$$$
 
-**Important:** The JS Portlet Extender is a Labs application available for 
-Liferay DXP and Liferay Portal CE 7.1 GA6+. Apps designated as Labs are 
-experimental and not supported by Liferay. They're released to accelerate the 
-availability of useful and cutting-edge features. This status may change without 
-notice. Please download and use Labs apps at your own discretion.
+**Important:** The JS Portlet Extender is a Labs application available from 
+[Liferay Marketplace](http://www.liferay.com/marketplace). 
+Apps designated as Labs are experimental and not supported by Liferay. They're 
+released to accelerate the availability of useful and cutting-edge features. 
+This status may change without notice. Please download and use Labs apps at your 
+own discretion.
 
 $$$
 
-Follow these steps to create your JavaScript portlet with 100% JavaScript tools:
+Follow these steps to create your JavaScript portlet:
 
-1.  Install Node.js and npm if you don't already have them installed.
+1.  Install 
+    [Node.js](http://nodejs.org/). 
+    Note that Node Package Manager (npm) is installed with this as well. You’ll 
+    use npm to install the remaining dependencies and generator.
 
-2.  Install Yeoman for the generator:
+2.  Install [Yeoman](http://yeoman.io/) for the generator:
 
         npm install -g yeoman
         
-3.  Install the liferay-bundle generator:
+3.  Install the Liferay Bundle Generator:
 
         npm install -g generator-liferay-bundle
         
@@ -83,7 +85,7 @@ Follow these steps to create your JavaScript portlet with 100% JavaScript tools:
             <div>
             <span class="tag">Portlet Element Id:</span>
             <span class="value">${portletElementId}</span>
-            </div>`
+            </div>`;
             
         }
 
@@ -109,10 +111,11 @@ Follow these steps to create your JavaScript portlet with 100% JavaScript tools:
           "com.liferay.portlet.header-portlet-css": "/css/styles.css"
           },
 
-8.  To create an extender bundle with `liferay-npm-bundler`, follow the standard 
-    process, but provide the extra `create-jar` option to the bundler's 
-    `.npmbundlerrc` file to make it output the final JAR. The 
-    *JavaScript based portlet*'s configuration is shown below:
+8.  To create a JS Portlet Extender bundle with `liferay-npm-bundler`, follow 
+    [the standard process](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler), 
+    but provide the extra `create-jar` option to the bundler's `.npmbundlerrc` 
+    file to make it output the final JAR. The *JavaScript based portlet*'s 
+    `.npmbundlerrc` contents are shown below:
 
         {
             "create-jar": {
@@ -136,13 +139,13 @@ Follow these steps to create your JavaScript portlet with 100% JavaScript tools:
     located in the bundle. Defaults to `<project name>-<project version>`. 
 
 9.  Finally, if you specified your app server information when your portlet was 
-    created with the liferay-bundle generator, you can deploy your portlet by 
+    created with the Liferay Bundle Generator, you can deploy your portlet by 
     running the command below:
 
         npm run deploy
 
     The app server information is defined in the `liferayDir` entry of the 
-    portlet's `.npmbuildrc`:
+    portlet's `.npmbuildrc` file:
     
         {
         	"liferayDir": "C:\\Users\\liferay\\opt\\Liferay\\bundles\\7.1.0-ga1\\liferay-ce-portal-7.1.0-ga1",
@@ -156,10 +159,18 @@ Follow these steps to create your JavaScript portlet with 100% JavaScript tools:
         	}
         }
 
-    Alternatively, you can run the commands below:
+    The only prerequisite to make an OSGi bundle be processed by the extender is 
+    the presence of the MANIFEST header shown below:
     
-    - `npm run build`: Places the output of liferay-npm-bundler in the designated output folder. The standard output contains a JAR file, named upon the name and version of the project, that can be
-    manually deployed to your @product@ instance.
+        Require-Capability: osgi.extender;filter:="(osgi.extender=liferay.npm.portlet)"
+        
+    The generated OSGi bundle automatically includes this for you. The npm 
+    commands shown below are also available:
+    
+    - `npm run build`: Places the output of liferay-npm-bundler in the 
+    designated output folder. The standard output contains a JAR file, named 
+    upon the name and version of the project, that can be manually deployed to 
+    your @product@ instance.
     
     - `npm run start`: lets you test the application in a local webpack 
     installation instead of a @product@ server. This speeds up development 
@@ -167,8 +178,10 @@ Follow these steps to create your JavaScript portlet with 100% JavaScript tools:
     that because this is separate from a Liferay instance, you don't have access 
     to Liferay's APIs. 
 
-## Related Topics
+## Related Topics [](id=related-topics)
 
-[]()
+[liferay-npm-bundler](/develop/reference/-/knowledge_base/7-1/liferay-npm-bundler)
 
-[]()
+[Using npm in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-npm-in-your-portlets)
+
+[Applying Clay Styles to Your App](/develop/tutorials/-/knowledge_base/7-1/applying-clay-styles-to-your-app)
