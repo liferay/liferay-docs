@@ -15,7 +15,7 @@ easy to extend them and create new ones.
 +$$$
 
 **Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha. 
+alpha for Liferay DXP 7.1 Fix Pack 3+. 
 
 $$$
 
