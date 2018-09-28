@@ -2,16 +2,15 @@
 
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
-This sample allows searching for blog entries based on the caption value of the
-blog image. You can demo this sample by completing the following steps:
+This sample adds functionality for searching for blog entries based on the
+caption value of its blog image. You can demo this sample by completing the
+following steps:
 
-1.  Add the *Search Bar* and *Search Results* widgets to a page.
-2.  Add a blog entry filling the field caption located below the blog's image and
-    above the blog's title.
-3.  Try to search by the entry on the search bar portlet using caption value.
-    There are no search results returned.
-4.  Deploy the module.
-5.  Try to search by the entry on the search bar portlet using caption value. The
+1.  Add a blog entry with an image.
+
+2.  After saving the new blog entry, enter a value for the image's caption.
+
+3.  Search for the entry in the search bar by using the caption value. The
     matching blog entry is displayed in the search results.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
@@ -25,7 +24,7 @@ API.
 This sample conveys the recommended approach to adding a field, which may
 contribute to the relevance of the search, in keyword queries.
 
-To achieve this goal, you need to create a component that implements the
+To achieve this goal, you must create a component that implements the
 `com.liferay.portal.search.spi.model.query.contributor.KeywordQueryContributor`.
 
 Specifically, you must implement the `contribute` method, which is invoked when
@@ -56,11 +55,9 @@ new service to OSGi:
     )
 
 You can implement similar functionality by using a `ModelPreFilterContributor`.
-To help you make an informed decision about which to use, information about both
-options is listed below:
-
-To choose between implementing a `KeywordQueryContributor` or a
-`ModelPreFilterContributor`, consider these below items:
+To help you make an informed decision between implementing a
+`KeywordQueryContributor` or a `ModelPreFilterContributor`, consider these below
+items:
 
 - Filters are cached and don't influence the score; therefore, they're faster
   than queries.
