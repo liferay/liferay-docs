@@ -4,9 +4,13 @@ Reports are available for campaigns. You can select the campaign name and click
 the *Reports* tab to see the list of reports available. More reports can be
 created by developers and deployed as OSGi plugins. See the
 [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/7-1/reporting-user-behavior-with-audience-targeting)
-tutorial for details. You can create a custom report by selecting the a campaign
-and clicking the *Reports* tab &rarr; *Add Custom Report*
-(![Add Custom Report](../../images-dxp/icon-add.png)).
+tutorial for details. To create a custom,
+
+1.  Click on a *Campaign* name
+
+2.  Open the *Reports* ta
+
+3.  Click *Add Custom Report* (![Add Custom Report](../../images-dxp/icon-add.png)).
 
 The Content Views report shows the number of times that different assets have
 been viewed via the Campaign Content Display application by users in the context
