@@ -177,12 +177,12 @@ For more information on the upgrade process for your Maven build, see
 
 If the tool finds any necessary updates, it lists them in the view.
 
-![Figure 6: Defining a @product@ server is straightforward.](../../../images/upgrade-tool-pom-list.png)
+![Figure 5: Defining a @product@ server is straightforward.](../../../images/upgrade-tool-pom-list.png)
 
 You can double-click any of the POM files to display a preview of the changes
 that will be made if you upgrade that file.
 
-![Figure 7: Defining a @product@ server is straightforward.](../../../images/code-upgrade-pom-compare.png)
+![Figure 6: Defining a @product@ server is straightforward.](../../../images/code-upgrade-pom-compare.png)
 
 Select the `pom.xml` files you'd like to upgrade and click *Upgrade Selected*.
 
@@ -250,7 +250,7 @@ automatically* option. Follow these steps to address problems individually:
     - Lower-left panel: lists the currently selected project's problems. 
     - Right panel: shows breaking change documentation for selected problems. 
 
-    ![Figure 8: The Finding Breaking Changes step shows users where breaking changes affect plugins. It describes each change and explains how to adapt to it.](../../../images/code-upgrade-find-breaking-changes.png)
+    ![Figure 7: The Finding Breaking Changes step shows users where breaking changes affect plugins. It describes each change and explains how to adapt to it.](../../../images/code-upgrade-find-breaking-changes.png)
 
 3.  In the upper left panel's *Code Problems* tree, select a project file. The 
     bottom left panel lists the file's problems. 
@@ -259,7 +259,7 @@ automatically* option. Follow these steps to address problems individually:
 
 5.  Right click the problem to show options for handling it. 
 
-    ![Figure 9: The Code Upgrade Tool can correct some problems automatically. There are also options to ignore the problem, ignore problems like it, or mark it done/undone.](../../../images/code-upgrade-problem-options.png)
+    ![Figure 8: The Code Upgrade Tool can correct some problems automatically. There are also options to ignore the problem, ignore problems like it, or mark it done/undone.](../../../images/code-upgrade-problem-options.png)
 
 6.  Based on the problem description, handle it using one of the following options: 
 
@@ -292,9 +292,9 @@ click the descriptor entry in the list. To apply all proposed descriptor file
 updates, click *Upgrade...*. To find plugins whose descriptor files need 
 upgrading, click *Find...*. 
 
-![Figure 10: The Upgrade Descriptor Files screen lists Plugins SDK project descriptor files to upgrade.](../../../images/code-upgrade-upgrade-descriptor-files.png)
+![Figure 9: The Upgrade Descriptor Files screen lists Plugins SDK project descriptor files to upgrade.](../../../images/code-upgrade-upgrade-descriptor-files.png)
 
-![Figure 11: The Upgrade Descriptor File step adapts descriptor files to @product-ver@. Clicking a descriptor file opens a window that compares proposed updates to the current content.](../../../images/code-upgrade-compare-descriptor-files.png)
+![Figure 10: The Upgrade Descriptor File step adapts descriptor files to @product-ver@. Clicking a descriptor file opens a window that compares proposed updates to the current content.](../../../images/code-upgrade-compare-descriptor-files.png)
 
 In the next step, you'll build your project's services. 
 
@@ -303,7 +303,7 @@ In the next step, you'll build your project's services.
 The Build Service step re-runs Service Builder on the projects and deletes 
 legacy Service Builder files. To do this, click *Build Services*. 
 
-![Figure 12: The Build Service step re-runs Service Builder on the projects and removes legacy Service Builder files.](../../../images/code-upgrade-build-service.png)
+![Figure 11: The Build Service step re-runs Service Builder on the projects and removes legacy Service Builder files.](../../../images/code-upgrade-build-service.png)
 
 Next, you'll upgrade any layout templates. 
 
@@ -324,7 +324,7 @@ Follow these steps to upgrade your Layout Templates:
 
 *Finished* shows after each upgraded Layout Template. 
 
-![Figure 13: The Upgrade Layout Templates step lists all Layout Templates to upgrade.](../../../images/code-upgrade-upgrade-layout-templates.png)
+![Figure 12: The Upgrade Layout Templates step lists all Layout Templates to upgrade.](../../../images/code-upgrade-upgrade-layout-templates.png)
 
 Next, you'll convert any custom JSP hooks. 
 
@@ -334,7 +334,7 @@ This step converts custom JSP hooks to modules or module fragments. It lets you
 compare your custom JSPs with original Liferay Portal 6.2 JSPs, and newly 
 generated module custom JSPs. 
 
-![Figure 14: The Convert Custom JSP Hooks step lets you select JSP hook plugin projects to convert to modules or module fragments. After they're converted, the originals are available for comparing with the adapted custom JSPs.](../../../images/code-upgrade-convert-custom-jsp-hooks.png)
+![Figure 13: The Convert Custom JSP Hooks step lets you select JSP hook plugin projects to convert to modules or module fragments. After they're converted, the originals are available for comparing with the adapted custom JSPs.](../../../images/code-upgrade-convert-custom-jsp-hooks.png)
 
 Use these steps to convert the Liferay Portal 6.2 custom JSP hooks to new 
 modules or module fragments for @product-ver@: 
@@ -347,11 +347,11 @@ modules or module fragments for @product-ver@:
 3.  In the *Custom JSP Hook Project* window, select projects to convert and
     click *OK*. 
 
-    ![Figure 15: The Code Upgrade Tool lets you select custom JSP hook projects to upgrade.](../../../images/code-upgrade-custom-jsp-hook-project-seclector.png)
+    ![Figure 14: The Code Upgrade Tool lets you select custom JSP hook projects to upgrade.](../../../images/code-upgrade-custom-jsp-hook-project-seclector.png)
 
 The JSP hooks are converted to new modules or module fragments in the Workspace. 
 
-![Figure 16: Custom JSP hook projects are converted to module or module fragment projects.](../../../images/code-upgrade-converted-jsp-hooks-in-modules.png)
+![Figure 15: Custom JSP hook projects are converted to module or module fragment projects.](../../../images/code-upgrade-converted-jsp-hooks-in-modules.png)
 
 The Code Upgrade Tool helps you review the changes, so you can make any 
 additional changes. It lists the 6.2 custom JSPs and the new converted custom 
@@ -365,25 +365,25 @@ JSPs for you to compare with the 6.2 originals:
 Referring to these comparisons helps you to implement new JSP customizations for 
 @product-ver@. 
 
-![Figure 17: The Code Upgrade Tool lets you compare your 6.2 and new 7.x custom JSPs with Liferay Portal 6.2 originals.](../../../images/code-upgrade-convert-jsp-hooks.png)
+![Figure 16: The Code Upgrade Tool lets you compare your 6.2 and new 7.x custom JSPs with Liferay Portal 6.2 originals.](../../../images/code-upgrade-convert-jsp-hooks.png)
 
-![Figure 18: This view compares an original 6.2 JSP with a 6.2 custom JSP.](../../../images/code-upgrade-converted-jsp-hooks-compare-6.2-original.png)
+![Figure 17: This view compares an original 6.2 JSP with a 6.2 custom JSP.](../../../images/code-upgrade-converted-jsp-hooks-compare-6.2-original.png)
 
-![Figure 19: This view compares the new module's 7.x custom JSP with the Liferay Portal 6.2 original. ](../../../images/code-upgrade-converted-jsp-hooks-compare-6.2-original-to-7.0.png)
+![Figure 18: This view compares the new module's 7.x custom JSP with the Liferay Portal 6.2 original. ](../../../images/code-upgrade-converted-jsp-hooks-compare-6.2-original-to-7.0.png)
 
 If the 6.2 hook plugin's JSP didn't customize an existing Liferay Portal 6.2 
 JSP, there's no original and the JSP is marked *unfound*. You must then decide 
 how to implement the customization for @product-ver@. It might make sense to 
 create a similar new JSP in a new or converted module project. 
 
-![Figure 20: The Code Upgrade Tool indicates whether a custom JSP is *found* or *unfound* in Liferay Portal 6.2.](../../../images/code-upgrade-converted-jsp-hooks-found-unfound.png) 
+![Figure 19: The Code Upgrade Tool indicates whether a custom JSP is *found* or *unfound* in Liferay Portal 6.2.](../../../images/code-upgrade-converted-jsp-hooks-found-unfound.png) 
 
 The Code Upgrade Tool creates a `ConvertedCustomJspBag` class in the converted
 module project. It tells the OSGi container that the module modifies a core JSP.
 The class resides in the module's `src/main/java/codeupgrade.corejsphook/`
 folder. 
 
-![Figure 21: Each Portal core JSP customization module's `ConvertedCustomJspBag` class informs the OSGi container about the customized JSP.](../../../images/code-upgrade-converted-core-jsp-hook-module.png)  
+![Figure 20: Each Portal core JSP customization module's `ConvertedCustomJspBag` class informs the OSGi container about the customized JSP.](../../../images/code-upgrade-converted-core-jsp-hook-module.png)  
 
 The new upgraded Portal core JSPs are under the module's 
 `src/main/resources/META-INF/resources/html/` folder. 
@@ -391,7 +391,7 @@ The new upgraded Portal core JSPs are under the module's
 The Code Upgrade Tool converts Liferay Portal 6.2 app custom JSP hooks to
 module fragments. Here's a fragment's `bnd.bnd` file: 
 
-![Figure 22: The `Fragment-Host` header specifies the module on which to apply the fragment.](../../../images/code-upgrade-converted-jsp-hook-fragment-bnd.png)
+![Figure 21: The `Fragment-Host` header specifies the module on which to apply the fragment.](../../../images/code-upgrade-converted-jsp-hook-fragment-bnd.png)
 
 The Code Upgrade Tool also gives you a great deal of flexibility to convert 
 custom JSPs as needed. For example, if you make a mistake or aren't fond of 
@@ -413,7 +413,7 @@ Now you're ready to rebuild your projects.
 You must now rebuild any Plugins SDK projects. To do so, click the *Build...* 
 button. 
 
-![Figure 23: You can build SDK projects any time.](../../../images/code-upgrade-build.png)
+![Figure 22: You can build SDK projects any time.](../../../images/code-upgrade-build.png)
 
 Great, you're almost done! 
 
@@ -423,7 +423,7 @@ The last screen in the Code Upgrade Tool lists each step's status. A check mark
 indicates the step is done, an X indicates it's not done, and a question mark 
 indicates its status is to be determined. To revisit a step, click its name. 
 
-![Figure 24: The Summary step lists each step's status.](../../../images/code-upgrade-summary.png)
+![Figure 23: The Summary step lists each step's status.](../../../images/code-upgrade-summary.png)
 
 You can always revisit the Liferay Code Upgrade view by selecting *Project 
 &rarr; Liferay Code Upgrade Tool...*. 
