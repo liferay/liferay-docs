@@ -1,4 +1,4 @@
-# Assigning Permissions to Resources
+# Assigning Permissions to Resources [](id=assigning-permissions-to-resources)
 
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 3 of 4</p>

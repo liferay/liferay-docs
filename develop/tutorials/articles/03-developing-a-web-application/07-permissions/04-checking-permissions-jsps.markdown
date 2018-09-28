@@ -1,4 +1,4 @@
-# Checking for Permission in JSPs
+# Checking for Permission in JSPs [](id=checking-for-permission-in-jsps)
 
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 4 of 4</p>
