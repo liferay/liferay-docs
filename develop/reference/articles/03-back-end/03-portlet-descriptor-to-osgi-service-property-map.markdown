@@ -67,6 +67,7 @@ this document for simplicity.
 |`/portlet-app/portlet/portlet-info/title`|`javax.portlet.info.title=<String>`|
 |`/portlet-app/portlet/portlet-name`|`javax.portlet.name=<String>`|
 |`/portlet-app/portlet/portlet-preferences`|`javax.portlet.preferences=<String>`<br/>OR<br/>`javax.portlet.preferences=classpath:<path_to_file_in_jar>`|
+|`/portlet-app/portlet/portlet-preferences/preferences-validator`|`javax.portlet.preferences-validator=<String>` [1](#one)|
 |`/portlet-app/portlet/resource-bundle`|`javax.portlet.resource-bundle=<String>`|
 |`/portlet-app/portlet/security-role-ref`|`javax.portlet.security-role-ref=<String>[,<String>]`[2](#two)|
 |`/portlet-app/portlet/supported-locale`|`javax.portlet.supported-locale=<String>` [2](#two)|
