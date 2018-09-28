@@ -43,7 +43,7 @@ this document for simplicity.
 |`/portlet-app/default-namespace`|`javax.portlet.default-namespace=<String>`|
 |`/portlet-app/event-definition`|`javax.portlet.event-definition=<QNameLocalPart>;<QNameURI>[;<PayloadType>][,<AliasQNameLocalPart>;<AliasQNameURI>]` [2](#two)|
 |`/portlet-app/filter`<br/>`/portlet-app/filter/init-param/name`<br/>`/portlet-app/filter-mapping`|[3](#three)<br/>`javax.portlet.init-param.<name>=<value>` [3](#three), [9](#nine)<br/>[3](#three)|
-|`/portlet-app/listener`|not supported<br/>?`javax.portlet.PortletURLGenerationListener`?|
+|`/portlet-app/listener`|`javax.portlet.listener=<listener-class>;<ordinal>` [2](#two),[8](#eight)|
 |`/portlet-app/public-render-parameter`|not supported|
 |`/portlet-app/resource-bundle`|not supported|
 |`/portlet-app/security-constraint`|not supported|
@@ -245,7 +245,7 @@ this document for simplicity.
         } 
         
 -   [<a name="eight">8</a>] Here's an example for the 
-    `javax.portlet.version` property.
+    `javax.portlet.listener` property.
 
     *Old:*
 
@@ -263,7 +263,7 @@ this document for simplicity.
         @Component(
             immediate = true,
             property = {"javax.portlet.name=myPortlet",
-                "javax.portlet.version=com.mycompany.MyPortletURLGenerationListener;1"
+                "javax.portlet.listener=com.mycompany.MyPortletURLGenerationListener;1"
             }, service = Portlet.class
         )
         public class MyPortlet extends GenericPortlet {
