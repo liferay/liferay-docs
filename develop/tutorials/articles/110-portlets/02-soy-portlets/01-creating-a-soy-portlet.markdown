@@ -324,6 +324,12 @@ template should include all its parameters as well:
 
     {call View.render data="all"}{/call}
 
++$$$
+
+**Note:** Template namespaces must be unique.  
+
+$$$
+
 Below is an example `View` Soy template that includes `Header` and `Footer` Soy 
 templates:
 

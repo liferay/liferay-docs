@@ -33,7 +33,7 @@ Follow these steps:
           jsPackage.getResolvedId() + " as bootstrapRequire");
  
 3.  Include the reference to the 
-    [`NPMResolver`](ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html):
+    [`NPMResolver`](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html):
 
         @Reference
         private NPMResolver _npmResolver;

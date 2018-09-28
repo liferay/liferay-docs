@@ -108,16 +108,10 @@ directory was not specified, it is created in the folder you executed the
 command. When generating a project using Blade CLI, there is no downloading,
 which means internet access is not required.
 
-If you want to generate a project for  @product-ver@, you can specify this using
-the `-v` flag. This lets you specify the version you want to build your project
-for. Add the `-v 7.1` to your `create` command sequence to do this.
-
-<!-- TODO: The below text should replace the text above once 7.1 GA is out. -Cody
-
 If you want to generate a project for a previous version (e.g., Liferay Portal
 7.0), you can specify this using the `-v` flag. For example, to create a project
 for Liferay Portal 7.0, you would include `-v 7.0` in your `create` command
-sequence. -->
+sequence.
 
 Blade CLI can also create the same project with Maven by specifying the `-b
 maven` parameter. Using Blade CLI's Maven option isn't the only way to leverage

@@ -39,7 +39,7 @@ You can create profiles for multiple runtimes by running auto-discovery or
 creating them manually. To auto-discover other runtimes, run the Patching Tool
 with parameters like this: 
 
-    ./patching-tool.sh [name of profile] auto-discovery [path/to/runtime]
+    ./patching-tool.sh [name of profile] auto-discovery [path/to/Liferay Home]
 
 This runs the same discovery process, but on the path you specify. It writes the
 profile information to a file called `[name of profile].properties`.
