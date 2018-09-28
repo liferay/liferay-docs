@@ -1,4 +1,4 @@
-# Managing User Data [](id=managing-user-data)
+# GDPR Tools
 
 Internet users are increasingly and justifiably concerned about how their
 personal data is processed by the systems they use. The enforcement of GDPR is
@@ -10,7 +10,7 @@ privacy. The market demands site owners show higher levels of responsiveness to
 User inquiries into how their data is stored and processed.
 
 Liferay is aware of the need for functionality to address User data management,
-and added two important features toward this end:
+and as of Fix Pack 60 has added two important features toward this end:
 
 [Erase and/or anonymize data associated with a User](/discover/portal/-/knowledge_base/7-0/sanitizing-user-data)
 : Administrative Users go through a step by step process, choosing to erase
