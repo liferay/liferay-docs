@@ -21,3 +21,7 @@ file, after entering your bintray api key you can execute `gradlew
 bintrayupload` to upload your project to jCenter. When finished, anyone can use
 the View as they would any Android dependency by adding the repository,
 artifact, group ID, and version to their Gradle file. 
+
+## Related Topics [](id=related-topics)
+
+[Creating Android Views](/develop/tutorials/-/knowledge_base/7-1/creating-android-views)

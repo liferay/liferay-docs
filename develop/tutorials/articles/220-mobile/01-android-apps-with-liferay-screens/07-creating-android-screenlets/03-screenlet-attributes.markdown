@@ -3,7 +3,7 @@
 Before creating the Screenlet class, you should define its attributes. These are 
 the attributes the app developer can set when inserting the Screenlet's XML in 
 an activity or fragment layout. For example, to use 
-[Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android), 
+[Login Screenlet](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android), 
 the app developer could insert the following Login Screenlet XML in an activity 
 or fragment layout: 
 
@@ -41,7 +41,7 @@ Here's a brief description of what each does:
 
 - `layoutId`: Sets the View that displays the Screenlet. This functions the same 
 as the `layoutId` attribute in 
-[Liferay's existing Screenlets](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android). 
+[Liferay's existing Screenlets](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-android). 
 
 - `folderId`: Sets the folder ID in the Bookmarks portlet where the Screenlet 
 adds bookmarks. 
@@ -49,4 +49,14 @@ adds bookmarks.
 - `defaultTitle`: Sets each Bookmark's default title. 
 
 Now that you've defined your Screenlet's attributes, you're ready to create the 
-Screenlet class.
+Screenlet class. 
+
+## Related Topics [](id=related-topics)
+
+[Creating the UI](/develop/tutorials/-/knowledge_base/7-1/creating-the-ui)
+
+[Creating the Interactor](/develop/tutorials/-/knowledge_base/7-1/creating-the-interactor)
+
+[Creating the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/creating-the-screenlet-class)
+
+[Packaging Your Screenlets](/develop/tutorials/-/knowledge_base/7-1/packaging-your-screenlets)

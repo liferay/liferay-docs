@@ -1,7 +1,7 @@
 # Using the List Screenlet [](id=using-the-list-screenlet)
 
 You can now use your new list Screenlet 
-[the same way you use any other Screenlet](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps): 
+[the same way you use any other Screenlet](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps): 
 
 1. Insert the Screenlet's XML in the layout of the activity or fragment you want 
    to use the Screenlet in. For example, here's Bookmark List Screenlet's XML: 
@@ -43,3 +43,7 @@ You can now use your new list Screenlet
     [here in GitHub](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/ListBookmarksActivity.java). 
 
 Well done! Now you know how to create list Screenlets. 
+
+## Related Topics [](id=related-topics)
+
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)

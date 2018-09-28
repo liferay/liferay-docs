@@ -75,3 +75,13 @@ Another good Child View layout file to examine is
 It presents the same UI components and functionality as the Sign Up Screenlet's
 Default View, but using
 [Android's Material design](http://www.google.com/design/spec/material-design/introduction.html). 
+
+## Related Topics [](id=related-topics)
+
+[Themed Views](/develop/tutorials/-/knowledge_base/7-1/themed-views)
+
+[Extended Views](/develop/tutorials/-/knowledge_base/7-1/extended-views)
+
+[Full Views](/develop/tutorials/-/knowledge_base/7-1/full-views)
+
+[Packaging Your Views](/develop/tutorials/-/knowledge_base/7-1/packaging-your-views)

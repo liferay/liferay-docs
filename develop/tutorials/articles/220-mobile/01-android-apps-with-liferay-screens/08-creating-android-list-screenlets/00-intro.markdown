@@ -2,12 +2,12 @@
 
 It's very common for mobile apps to display lists. Liferay Screens 
 lets you display asset lists and DDL lists in your Android app by using 
-[Asset List Screenlet](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-android) 
+[Asset List Screenlet](/develop/reference/-/knowledge_base/7-1/assetlistscreenlet-for-android) 
 and 
-[DDL List Screenlet](/develop/reference/-/knowledge_base/7-0/ddllistscreenlet-for-android), 
+[DDL List Screenlet](/develop/reference/-/knowledge_base/7-1/ddllistscreenlet-for-android), 
 respectively. Screens also includes list Screenlets for displaying lists of 
 other Liferay entities like web content articles, images, and more. 
-[The Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
+[The Screenlet reference documentation](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-android) 
 lists all the Screenlets included with Liferay Screens. If there's not a list 
 Screenlet for the entity you want to display in a list, you must create your 
 own. A list Screenlet can display any entity from a Liferay instance. For 
@@ -23,15 +23,15 @@ Note that because this tutorial focuses on creating a list Screenlet, it doesn't
 explain general Screenlet concepts and components. Before beginning, you should 
 therefore read the following tutorials: 
 
-- [Screens architecture tutorial](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android)
-- [Basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
+- [Screens architecture tutorial](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-android)
+- [Basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets)
 
 You'll create the list Screenlet by following these steps: 
 
-1. [Creating the Model Class](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-model-class)
-2. [Creating the View](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-view)
-3. [Creating the Interactor](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-interactor)
-4. [Creating the Screenlet Class](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlet-class)
+1. [Creating the Model Class](/develop/tutorials/-/knowledge_base/7-1/creating-the-model-class)
+2. [Creating the View](/develop/tutorials/-/knowledge_base/7-1/creating-the-view)
+3. [Creating the Interactor](/develop/tutorials/-/knowledge_base/7-1/creating-the-interactor-0)
+4. [Creating the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/creating-the-screenlet-class-0)
 
 First though, you should understand how pagination works with list Screenlets. 
 

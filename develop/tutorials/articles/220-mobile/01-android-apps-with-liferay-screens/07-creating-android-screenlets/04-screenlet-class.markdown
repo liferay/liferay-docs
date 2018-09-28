@@ -169,9 +169,9 @@ Next, you must implement `BaseScreenlet`'s abstract methods:
         }
 
 Nice! Your Screenlet is finished! You can now use it 
-[the same way you would any other](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps). 
+[the same way you would any other](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps). 
 If you created your Screenlet in its own project, you can also 
-[package and distribute](/develop/tutorials/-/knowledge_base/7-0/packaging-your-android-screenlets)
+[package and distribute](/develop/tutorials/-/knowledge_base/7-1/packaging-your-screenlets)
 it via the Screens project, JCenter, or Maven Central. 
 
 To finish the Add Bookmark Screenlet example, the following section shows you 
@@ -179,3 +179,13 @@ how to use this Screenlet. It also shows how you can set default attribute
 values in an app's `server_context.xml` file. Although you may not need to do 
 this when using your Screenlets, it might come in handy on your way to becoming 
 a master of Screenlets. 
+
+## Related Topics [](id=related-topics)
+
+[Creating the UI](/develop/tutorials/-/knowledge_base/7-1/creating-the-ui)
+
+[Creating the Interactor](/develop/tutorials/-/knowledge_base/7-1/creating-the-interactor)
+
+[Defining the Attributes](/develop/tutorials/-/knowledge_base/7-1/defining-the-attributes)
+
+[Packaging Your Screenlets](/develop/tutorials/-/knowledge_base/7-1/packaging-your-screenlets)

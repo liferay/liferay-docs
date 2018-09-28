@@ -76,3 +76,11 @@ Besides the getters and setter, the rest of this class implements
     }
 
 Now that you have your model class, you can create your Screenlet's View. 
+
+## Related Topics [](id=related-topics)
+
+[Creating the View](/develop/tutorials/-/knowledge_base/7-1/creating-the-view)
+
+[Creating the Interactor](/develop/tutorials/-/knowledge_base/7-1/creating-the-interactor-0)
+
+[Creating the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/creating-the-screenlet-class-0)

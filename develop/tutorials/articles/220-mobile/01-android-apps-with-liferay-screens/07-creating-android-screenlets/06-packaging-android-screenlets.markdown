@@ -76,10 +76,10 @@ publishing your Screenlet!
 
 ## Related Topics [](id=related-topics)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets)
 
-[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-android-projects-for-liferay-screens)
+[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/preparing-android-projects-for-liferay-screens)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)
 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/7-0/creating-android-views)
+[Creating Android Views](/develop/tutorials/-/knowledge_base/7-1/creating-android-views)

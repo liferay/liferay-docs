@@ -13,14 +13,14 @@ the server:
 
 - **Write Screenlets:** Write data to a server. The Add Bookmark Screenlet 
   created in the 
-  [basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets) 
+  [basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets) 
   is a good example of a simple write Screenlet. It asks the user to enter a URL 
   and a title, which it then sends to the Bookmarks portlet in @product@ 
   to create a bookmark. 
 - **Read Screenlets:** Read data from a server. The Web Content Display 
   Screenlet included with Liferay Screens is a good example of a read Screenlet. 
   It retrieves web content from @product@ for display in an Android app. 
-  [Click here](/develop/reference/-/knowledge_base/7-0/webcontentdisplayscreenlet-for-android) 
+  [Click here](/develop/reference/-/knowledge_base/7-1/webcontentdisplayscreenlet-for-android) 
   to see Web Content Display Screenlet's documentation. 
 
 Offline mode implementation differs only slightly between write and read 
@@ -29,5 +29,5 @@ Screenlet) to show you how to support offline mode, and point out any
 differences needed for a read Screenlet. 
 
 Before getting started, be sure to read 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets) 
+[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets) 
 to familiarize yourself with Add Bookmark Screenlet's code. 

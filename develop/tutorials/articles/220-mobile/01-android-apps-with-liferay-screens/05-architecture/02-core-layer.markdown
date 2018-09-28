@@ -77,3 +77,13 @@ version. The `ServiceVersionFactory` is an implementation of an
 
 Now that you know what makes up the core layer, you're ready to learn the 
 Screenlet layer's details. 
+
+## Related Topics [](id=related-topics)
+
+[High-Level Architecture](/develop/tutorials/-/knowledge_base/7-1/high-level-architecture)
+
+[Screenlet Layer](/develop/tutorials/-/knowledge_base/7-1/screenlet-layer)
+
+[View Layer](/develop/tutorials/-/knowledge_base/7-1/view-layer)
+
+[Screenlet Lifecycle](/develop/tutorials/-/knowledge_base/7-1/screenlet-lifecycle)

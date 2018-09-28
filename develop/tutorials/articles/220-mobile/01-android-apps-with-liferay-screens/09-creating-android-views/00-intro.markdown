@@ -29,9 +29,9 @@ from a Screenlet's current theme.
 
 This tutorial explains how to create all four types of Views. To understand
 View concepts and components, you might want to examine the
-[architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-android)
+[architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-android)
 of Liferay Screens for Android. And the tutorial
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
+[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets)
 can help you create or extend any Screenlet classes your View requires. Now get
 ready to create some great Views! 
 
@@ -43,7 +43,7 @@ it, create it in your app project.
 
 If you want to reuse your View in another app, create it in a new Android
 application module; the tutorial
-[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/packaging-your-android-screenlets)
+[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/packaging-your-screenlets) 
 explains how. When your View's project is in place, you can start creating it. 
 
 First, you'll learn how to create a Themed View. 

@@ -27,3 +27,13 @@ Note that you must also remove any failure method implementations (such as in an
 activity or fragment that implements the listener), and replace any failure 
 method calls with `error` method calls. You'll do the latter next when updating 
 the Interactor class. 
+
+## Related Topics [](id=related-topics)
+
+[Create or Update the Event Class](/develop/tutorials/-/knowledge_base/7-1/create-or-update-the-event-class)
+
+[Update the Interactor Class](/develop/tutorials/-/knowledge_base/7-1/update-the-interactor-class)
+
+[Update the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/update-the-screenlet-class)
+
+[Sync the Cache with the Server](/develop/tutorials/-/knowledge_base/7-1/sync-the-cache-with-the-server)

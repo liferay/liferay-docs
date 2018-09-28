@@ -49,3 +49,13 @@ from shared preferences:
 
     SharedPreferences sharedPreferences = getSharedPreferences("MY_PREFERENCES", Context.MODE_PRIVATE); 
     HashSet<String> keysToSync = sharedPreferences.getStringSet("keysToSync", new HashSet<>());
+
+## Related Topics [](id=related-topics)
+
+[Create or Update the Event Class](/develop/tutorials/-/knowledge_base/7-1/create-or-update-the-event-class)
+
+[Update the Listener](/develop/tutorials/-/knowledge_base/7-1/update-the-listener)
+
+[Update the Interactor Class](/develop/tutorials/-/knowledge_base/7-1/update-the-interactor-class)
+
+[Update the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/update-the-screenlet-class)

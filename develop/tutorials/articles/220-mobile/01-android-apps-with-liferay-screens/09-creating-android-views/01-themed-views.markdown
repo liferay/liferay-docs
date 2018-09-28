@@ -65,3 +65,13 @@ the styles and colors defined earlier in `AppTheme.NoActionBar`:
     <application android:theme="@style/AppTheme.NoActionBar"
         ...
     >
+
+## Related Topics [](id=related-topics)
+
+[Child Views](/develop/tutorials/-/knowledge_base/7-1/child-views)
+
+[Extended Views](/develop/tutorials/-/knowledge_base/7-1/extended-views)
+
+[Full Views](/develop/tutorials/-/knowledge_base/7-1/full-views)
+
+[Packaging Your Views](/develop/tutorials/-/knowledge_base/7-1/packaging-your-views)

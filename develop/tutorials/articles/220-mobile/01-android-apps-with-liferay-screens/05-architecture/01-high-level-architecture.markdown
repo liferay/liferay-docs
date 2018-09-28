@@ -44,3 +44,13 @@ intensive operations without blocking the UI thread.
 Screenlets to the user.
 
 Next, the core layer is described in detail. 
+
+## Related Topics [](id=related-topics)
+
+[Core Layer](/develop/tutorials/-/knowledge_base/7-1/core-layer)
+
+[Screenlet Layer](/develop/tutorials/-/knowledge_base/7-1/screenlet-layer)
+
+[View Layer](/develop/tutorials/-/knowledge_base/7-1/view-layer)
+
+[Screenlet Lifecycle](/develop/tutorials/-/knowledge_base/7-1/screenlet-lifecycle)

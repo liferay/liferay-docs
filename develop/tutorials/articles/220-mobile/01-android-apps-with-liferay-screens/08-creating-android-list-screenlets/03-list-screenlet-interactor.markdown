@@ -1,7 +1,7 @@
 # Creating the Interactor [](id=creating-the-interactor-0)
 
 Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlets-Interactor-class) 
+[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-the-interactor) 
 that Interactors retrieve and process a server call's results. Also recall that 
 the following components make up an Interactor: 
 
@@ -14,7 +14,7 @@ in non-list Screenlets. Creating them, however, is a bit different. Each of the
 following sections show you how to create one of these components. First, you'll 
 create the event.
 
-### Creating the Event [](id=creating-the-screenlets-event)
+## Creating the Event [](id=creating-the-screenlets-event)
 
 Screens uses the 
 [EventBus](http://greenrobot.org/eventbus/) 
@@ -45,7 +45,7 @@ its `BookmarkEvent(Bookmark bookmark)` constructor sets:
 
 You must also implement `ListEvent`'s abstract methods in your event class. Note 
 that these methods support 
-[offline mode](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android). 
+[offline mode](/develop/tutorials/-/knowledge_base/7-1/using-offline-mode-in-android). 
 Although these methods are briefly described here, supporting offline mode in 
 your Screenlets is addressed in detail in a separate tutorial. 
 
@@ -69,7 +69,7 @@ your Screenlets is addressed in detail in a separate tutorial.
 
 Next, you'll create your Screenlet's listener. 
 
-### Creating the Listener [](id=creating-the-screenlets-listener)
+## Creating the Listener [](id=creating-the-screenlets-listener)
 
 Recall that listeners let the app developer respond to events that occur in 
 Screenlets. For example, an app developer using Login Screenlet in an activity 
@@ -111,7 +111,7 @@ called:
 
 Next, you'll create the Interactor class. 
 
-### Creating the Interactor Class [](id=creating-the-interactor-class)
+## Creating the Interactor Class [](id=creating-the-interactor-class)
 
 Recall that as an Interactor's central component, the Interactor class makes the 
 service call to retrieve entities from @product@, and processes the results of 
@@ -139,7 +139,7 @@ and process the results:
   the Screenlet XML in a fragment or activity. The `getPageRowsRequest` method 
   finishes by calling `BookmarksEntryService`'s `getEntries` method to retrieve 
   a page of bookmarks. Note that the service call, like the service call in the 
-  [basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets#creating-the-screenlets-Interactor-class), 
+  [basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-the-interactor), 
   uses `LiferayServerContext.isLiferay7()` to check the portal version to make 
   sure the correct service instance is used. This isn't required if you only 
   plan to use your Screenlet with one portal version. Also note that the 
@@ -211,7 +211,7 @@ and process the results:
 
 - `getIdFromArgs`: a boilerplate method that returns the value of the first 
   object argument as a string. This serves as a cache key for 
-  [offline mode](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android): 
+  [offline mode](/develop/tutorials/-/knowledge_base/7-1/using-offline-mode-in-android): 
 
         @Override
         protected String getIdFromArgs(Object... args) {
@@ -227,3 +227,11 @@ To see the complete `BookmarkListInteractor` class,
 [click here](https://github.com/liferay/liferay-screens/blob/master/android/samples/listbookmarkscreenlet/src/main/java/com/liferay/mobile/screens/listbookmark/BookmarkListInteractor.java). 
 
 Next, you'll create the Screenlet class. 
+
+## Related Topics [](id=related-topics)
+
+[Creating the Model Class](/develop/tutorials/-/knowledge_base/7-1/creating-the-model-class)
+
+[Creating the View](/develop/tutorials/-/knowledge_base/7-1/creating-the-view)
+
+[Creating the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/creating-the-screenlet-class-0)

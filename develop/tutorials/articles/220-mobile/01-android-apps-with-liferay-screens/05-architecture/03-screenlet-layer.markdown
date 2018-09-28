@@ -75,3 +75,13 @@ Screenlet's View. Here's a skeleton of a Screenlet's layout XML file:
 Refer to the tutorial
 [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets)
 for more Screenlet details. Next, the View layer's details are described. 
+
+## Related Topics [](id=related-topics)
+
+[High-Level Architecture](/develop/tutorials/-/knowledge_base/7-1/high-level-architecture)
+
+[Core Layer](/develop/tutorials/-/knowledge_base/7-1/core-layer)
+
+[View Layer](/develop/tutorials/-/knowledge_base/7-1/view-layer)
+
+[Screenlet Lifecycle](/develop/tutorials/-/knowledge_base/7-1/screenlet-lifecycle)

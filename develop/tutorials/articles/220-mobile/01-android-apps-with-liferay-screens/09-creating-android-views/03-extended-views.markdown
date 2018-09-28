@@ -75,3 +75,13 @@ picture and it uses the custom layout file
 [`userportrait_westeros.xml`](https://github.com/liferay/liferay-screens/blob/master/android/viewsets/westeros/src/main/res/layout/userportrait_westeros.xml) 
 and the custom View class
 [`UserPortraitView`](https://github.com/liferay/liferay-screens/blob/master/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/userportrait/UserPortraitView.java). 
+
+## Related Topics [](id=related-topics)
+
+[Themed Views](/develop/tutorials/-/knowledge_base/7-1/themed-views)
+
+[Child Views](/develop/tutorials/-/knowledge_base/7-1/child-views)
+
+[Full Views](/develop/tutorials/-/knowledge_base/7-1/full-views)
+
+[Packaging Your Views](/develop/tutorials/-/knowledge_base/7-1/packaging-your-views)

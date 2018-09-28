@@ -83,3 +83,13 @@ trying to add a bookmark to the server:
     @Override public void onFailure(BookmarkEvent event) {
         getListener().error(event.getException(), "ADD_BOOKMARK"); 
     }
+
+## Related Topics [](id=related-topics)
+
+[Create or Update the Event Class](/develop/tutorials/-/knowledge_base/7-1/create-or-update-the-event-class)
+
+[Update the Listener](/develop/tutorials/-/knowledge_base/7-1/update-the-listener)
+
+[Update the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/update-the-screenlet-class)
+
+[Sync the Cache with the Server](/develop/tutorials/-/knowledge_base/7-1/sync-the-cache-with-the-server)

@@ -51,3 +51,13 @@ event class, `BookmarkEvent`:
     }
 
 Next, you'll update the listener. 
+
+## Related Topics [](id=related-topics)
+
+[Update the Listener](/develop/tutorials/-/knowledge_base/7-1/update-the-listener)
+
+[Update the Interactor Class](/develop/tutorials/-/knowledge_base/7-1/update-the-interactor-class)
+
+[Update the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/update-the-screenlet-class)
+
+[Sync the Cache with the Server](/develop/tutorials/-/knowledge_base/7-1/sync-the-cache-with-the-server)

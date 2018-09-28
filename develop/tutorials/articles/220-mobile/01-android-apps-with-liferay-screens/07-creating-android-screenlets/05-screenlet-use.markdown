@@ -1,7 +1,7 @@
 # Using Your Screenlet [](id=using-your-screenlet)
 
 To use any Screenlet, you must follow these 
-[general steps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps): 
+[general steps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps): 
 
 1. Insert the Screenlet's XML in the activity or fragment layout you want the 
    Screenlet to appear in. You can fine-tune the Screenlet's behavior by setting 
@@ -36,8 +36,12 @@ directly, the Test App specifies the value in its
 [`server_context.xml` file](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/res/values/server_context.xml#L23-L24): 
 
     ...
-	<string name="bookmark_folder">20622</string>
-	...
+    <string name="bookmark_folder">20622</string>
+    ...
 
 This `name` attribute's value, `bookmark_folder` is then used in the Screenlet 
 XML to set the `app:folderId` attribute to `20622`. 
+
+## Related Topics [](id=related-topics)
+
+[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)
