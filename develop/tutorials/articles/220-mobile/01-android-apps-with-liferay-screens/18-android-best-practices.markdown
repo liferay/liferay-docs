@@ -10,7 +10,7 @@ You should first make sure that you have the latest tools installed.
 You should use the latest Android API level with the latest version of Android 
 Studio. Although Screens *may* work with Eclipse ADT or manual Gradle builds, 
 Android Studio is the preferred IDE. 
-
+<!--
 ## See the Breaking Changes Document [](id=see-the-breaking-changes-document)
 
 When updating an app or Screenlet to a new version of Liferay Screens, make sure 
@@ -18,6 +18,7 @@ to see the
 [Android breaking changes reference article](/develop/reference/-/knowledge_base/7-0/android-breaking-changes). 
 This article lists changes to Screens that break functionality in prior 
 versions. In most cases, updating your code is relatively straightforward. 
+-->
 
 ## Naming Conventions [](id=naming-conventions)
 
@@ -177,4 +178,6 @@ this.
 
 [Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets)
 
+<!--
 [Android Breaking Changes](/develop/reference/-/knowledge_base/7-0/android-breaking-changes)
+-->
