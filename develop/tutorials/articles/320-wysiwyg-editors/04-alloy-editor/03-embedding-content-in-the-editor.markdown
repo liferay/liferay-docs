@@ -43,7 +43,7 @@ Follow these steps to create an `*EmbedProvider`:
 4.  Optionally set the `type` property to the content's type. If creating a 
     provider for a content type other than video, you can create a new type 
     constant and 
-    [add a new button](/develop/tutorials/-/knowledge_base/7-1/creating-and-contributing-new-buttons-to-alloyeditor) 
+    [add a new button](/develop/tutorials/-/knowledge_base/7-1/creating-new-buttons-for-alloyeditor) 
     for the content type. If you do create your own button, we recommend that 
     you use the existing 
     [embed video button's JSX files](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-editor/frontend-editor-alloyeditor-web/src/main/resources/META-INF/resources/js/extras/buttons/embed) 
