@@ -277,18 +277,15 @@ Your network configuration may preclude the use of multicast over TCP, so below
 are some other ways you can get your cluster communicating. Note that these
 methods are all provided by JGroups. 
 
-Checkpoint: 1. If you are using multicast to handle your cluster, add this
-property to `portal-ext.properties`:
+Checkpoint: 
 
-    `cluster.link.enabled=true`
-
-2. If you are binding the IP address instead of using `localhost`, make sure the
+1. If you are binding the IP address instead of using `localhost`, make sure the
 right IP addresses are declared using: 
 
     `cluster.link.bind.addr["cluster-link-control"]=localhost`    
     `cluster.link.bind.addr["cluster-link-udp"]=localhost`
 
-3. Test your load and then optimize your settings if necessary.
+2. Test your load and then optimize your settings if necessary.
 
 ### Unicast over TCP [](id=unicast-over-tcp)
 
