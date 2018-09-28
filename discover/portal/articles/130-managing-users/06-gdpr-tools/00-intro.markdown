@@ -1,4 +1,4 @@
-# GDPR Tools
+# GDPR Tools [](id=gdpr-tools)
 
 Internet users are increasingly and justifiably concerned about how their
 personal data is processed by the systems they use. The enforcement of GDPR is
