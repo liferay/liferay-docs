@@ -96,13 +96,14 @@ permissions system, so it knows how to check for them.
 
 ## Registering Your Entities with the Permissions Service
 
-A running service checks permissions, but since Guestbooks and Guestbook Entries
-are new to the system, it must be taught about them. You do this by creating
-a permissions registrar class: 
+A running service checks permissions, but since the Guestbook portlet,
+Guestbooks, and Guestbook Entries are new to the system, it must be taught about
+them. You do this by creating permissions registrar classes. These follow what
+you did in `default.xml`: you need one for your portlet permissions and one for
+each of your entities. First, you must do a little reorganization. 
 
-1.  Create a Constants class first. In your API module, create
-    `GuestbookConstants` class in a new package called
-    `com.liferay.docs.guestbook.constants`: 
+1.  In your API module, create a `GuestbookConstants` class in a new package
+    called `com.liferay.docs.guestbook.constants`: 
 
         package com.liferay.docs.guestbook.constants;
 
@@ -119,6 +120,8 @@ a permissions registrar class:
     now be accessible to all modules, so drag this class from the web module and
     drop it into the new `com.liferay.docs.guestbook.constants` package in your
     API module. 
+
+Now you're ready to create your permissions registrar classes. 
 
 3.  In your service bundle, create a package that by convention ends in
     `internal.security.permission.resource`. 
@@ -202,13 +205,110 @@ a permissions registrar class:
         }
 
 This class registers a chain of permission logic classes for checking
-permissions. Since this functionality is the same for all entities, all that's
-necessary is to specify yours in addition to the standard Liferay ones for
-staging and workflow. Introspection is done on your entity by the factory to
-create the necessary permissions service. You implemented the constants class so
-you can specify the resource model name you defined in `default.xml`. The
-`model.class.name` is set so that any module needing this service can find this
-model resource permission by its type. 
+permissions for Guestbook entities. Since this functionality is the same for all
+entities, all that's necessary is to specify yours in addition to the standard
+Liferay ones for staging and workflow. Introspection is done on your entity by
+the factory to create the necessary permissions service. You implemented the
+constants class so you can specify the resource model name you defined in
+`default.xml`. The `model.class.name` is set so that any module needing this
+service can find this model resource permission by its type. 
+
+Now create the registrar for the `Entry` entity: 
+
+1.  Create a class in the same package called
+    `GuestbookEntryModelResourcePermissionRegistrar`. 
+
+2.  The only difference between this class and the one above is that it operates
+    on `Entry` entities instead of `Guestbook` entities (the imports have been
+    left off in the snippet below): 
+    
+        @Component(immediate = true)
+        public class GuestbookEntryModelResourcePermissionRegistrar {
+
+         @Activate
+            public void activate(BundleContext bundleContext) {
+                Dictionary<String, Object> properties = new HashMapDictionary<>();
+
+                properties.put("model.class.name", Entry.class.getName());
+
+                _serviceRegistration = bundleContext.registerService(
+                    ModelResourcePermission.class,
+                    ModelResourcePermissionFactory.create(
+                        Entry.class, Entry::getEntryId,
+                        _entryLocalService::getEntry, _portletResourcePermission,
+                        (modelResourcePermission, consumer) -> {
+                            consumer.accept(
+                                new StagedModelPermissionLogic<>(
+                                    _stagingPermission, GuestbookPortletKeys.GUESTBOOK,
+                                    Entry::getEntryId));
+                            consumer.accept(
+                                new WorkflowedModelPermissionLogic<>(
+                                        _workflowPermission, modelResourcePermission,
+                                        _groupLocalService, Entry::getEntryId));
+                        }),
+                    properties);
+            }
+
+            @Deactivate
+            public void deactivate() {
+                _serviceRegistration.unregister();
+            }
+
+            @Reference
+            private EntryLocalService _entryLocalService;
+
+            @Reference(target = "(resource.name=" + GuestbookConstants.RESOURCE_NAME + ")")
+            private PortletResourcePermission _portletResourcePermission;
+
+            private ServiceRegistration<ModelResourcePermission> _serviceRegistration;
+
+            @Reference
+            private StagingPermission _stagingPermission;
+
+            @Reference
+            private WorkflowPermission _workflowPermission;
+            
+            @Reference
+            private GroupLocalService _groupLocalService;
+        }
+
+Finally, create the registrar for the portlet permissions: 
+
+1.  Create a class in the same package called
+    `GuestbookPortletResourcePermissionRegistrar`. 
+
+2.  This class is simpler because you don't have to tell it how to retrieve
+    primary keys from any entity: 
+    
+        @Component (immediate = true)
+        public class GuestbookPortletResourcePermissionRegistrar {
+            
+                @Activate
+            public void activate(BundleContext bundleContext) {
+                Dictionary<String, Object> properties = new HashMapDictionary<>();
+
+                properties.put("resource.name", GuestbookConstants.RESOURCE_NAME);
+
+                _serviceRegistration = bundleContext.registerService(
+                    PortletResourcePermission.class,
+                    PortletResourcePermissionFactory.create(
+                        GuestbookConstants.RESOURCE_NAME,
+                        new StagedPortletPermissionLogic(
+                            _stagingPermission, GuestbookPortletKeys.Guestbook)),
+                    properties);
+            }
+
+            @Deactivate
+            public void deactivate() {
+                _serviceRegistration.unregister();
+            }
+
+            private ServiceRegistration<PortletResourcePermission> _serviceRegistration;
+
+            @Reference
+            private StagingPermission _stagingPermission;
+
+        }
 
 You've now completed step two: the R in DRAC: registering permissions. Next,
 you'll enable users to associate permissions with resources. 
