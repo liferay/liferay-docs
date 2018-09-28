@@ -25,10 +25,12 @@ Regardless of your specific needs, Liferay has you covered with Liferay Screens
 and the Liferay Mobile SDK. This section of tutorials contains the following 
 sections that show you how to use both:
 
-- [Android Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/android-apps-with-liferay-screens)
+-   [Android Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/android-apps-with-liferay-screens)
 
-- [iOS Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/ios-apps-with-liferay-screens)
+-   [iOS Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/ios-apps-with-liferay-screens)
 
-- [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk)
+-   [Using Xamarin with Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/using-xamarin-with-liferay-screens)
+
+-   [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/mobile-sdk)
 
 Venture forth to become a mobile guru!
