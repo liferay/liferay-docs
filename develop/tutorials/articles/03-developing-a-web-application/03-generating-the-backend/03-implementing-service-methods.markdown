@@ -6,7 +6,7 @@
 
 When you use Service Builder, you implement the services in the service module.
 Because your application's projects are 
-[components](/develop/tutorials/-/knowledge_base/7-0/fundamentals#components), 
+[components](/develop/tutorials/-/knowledge_base/7-1/fundamentals#components), 
 you can reference your service layer from your web module. 
 
 You'll implement services for guestbooks and entries in the `guestbook-service` 
