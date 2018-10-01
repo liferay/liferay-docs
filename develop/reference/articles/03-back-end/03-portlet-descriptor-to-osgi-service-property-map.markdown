@@ -43,7 +43,6 @@ this document for simplicity.
 |`/portlet-app/default-namespace`|`javax.portlet.default-namespace=<String>`|
 |`/portlet-app/event-definition`|`javax.portlet.event-definition=<QNameLocalPart>;<QNameURI>[;<PayloadType>][,<AliasQNameLocalPart>;<AliasQNameURI>]` [2](#two)|
 |`/portlet-app/filter`<br/>`/portlet-app/filter/init-param/name`<br/>`/portlet-app/filter-mapping`|[3](#three)<br/>`javax.portlet.init-param.<name>=<value>` [3](#three), [9](#nine)<br/>[3](#three)|
-|`/portlet-app/listener`|`javax.portlet.listener=<listener-class>;<ordinal>` [2](#two),[8](#eight)|
 |`/portlet-app/public-render-parameter`|not supported|
 |`/portlet-app/resource-bundle`|not supported|
 |`/portlet-app/security-constraint`|not supported|
@@ -57,6 +56,7 @@ this document for simplicity.
 |`/portlet-app/portlet/display-name`|`javax.portlet.display-name=<String>`|
 |`/portlet-app/portlet/expiration-cache`|`javax.portlet.expiration-cache=<int>`|
 |`/portlet-app/portlet/init-param/name`|`javax.portlet.init-param.<name>=<value>`|
+|`/portlet-app/portlet/listener`|`javax.portlet.listener=<listener-class>;<ordinal>` [2](#two),[8](#eight)|
 |`/portlet-app/portlet/multipart-config/file-size-threshold`|`javax.portlet.multipart.file-size-threshold=<Integer>`|
 |`/portlet-app/portlet/multipart-config/location`|`javax.portlet.multipart.location=<String>`|
 |`/portlet-app/portlet/multipart-config/max-file-size`|`javax.portlet.multipart.max-file-size=<Long>`|
@@ -77,7 +77,6 @@ this document for simplicity.
 |`/portlet-app/portlet/supports/mime-type`|`javax.portlet.mime-type=<mime-type>`|
 |`/portlet-app/portlet/supports/portlet-mode`|`javax.portlet.portlet-mode=<mime-type>;<portlet-mode>[,<portlet-mode>]*`|
 |`/portlet-app/portlet/supports/window-state`|`javax.portlet.window-state=<mime-type>;<window-state>[,<window-state>]*`|
-|`/portlet-app/portlet/version`|`javax.portlet.version=<listener-class>;<ordinal>` [8](#eight)|
 
 ## Liferay Descriptor Mappings [](id=liferay-descriptor-mappings)
 
