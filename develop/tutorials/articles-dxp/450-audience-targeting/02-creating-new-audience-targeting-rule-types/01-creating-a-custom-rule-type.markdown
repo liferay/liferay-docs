@@ -36,14 +36,14 @@ dependencies.
     new Java class in that package. To follow naming conventions, your class
     name should begin with the rule name you're creating, and end with *Rule*
     (e.g., `WeatherRule.java`). Your Java class should implement the
-    [`com.liferay.content.targeting.api.model.Rule` interface](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html).
+    [`com.liferay.content.targeting.api.model.Rule` interface](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html).
 
     It is required to implement the
-    [Rule](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
+    [Rule](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
     interface, but there are `Rule`
     extension classes that provide helpful utilities that you can extend. For
     example, your rule can extend the
-    [BaseJSPRule](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
+    [BaseJSPRule](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html)
     class to support generating your rule's UI using JSPs. This tutorial demonstrates implementing the UI using a JSP,
     and assumes the `Rule` interface is implemented by extending the `BaseJSPRule` class. For more information on
     choosing a UI for your rule, see the
@@ -59,7 +59,7 @@ dependencies.
 
 Now that your Java class is set up, you'll need to define how your rule works by
 implementing the
-[Rule](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
+[Rule](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
 interface's methods. You'll begin implementing these methods next.
 
 +$$$

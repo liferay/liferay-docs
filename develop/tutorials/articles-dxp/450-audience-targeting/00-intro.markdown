@@ -27,3 +27,9 @@ the modules any way you want. To use the templates, see the
 
 In this section's tutorials, you'll learn how to create these extension points
 for your Audience Targeting application.
+
++$$$
+
+**Important:** Not all Audience Targeting features will function using the embedded HSQL database, so developers will need to configure MySQL or another database to make full use of Audience Targeting features.
+
+$$$

@@ -37,17 +37,17 @@ dependencies.
     name should begin with the metric's name you're creating and end with
     *TrackingAction* (e.g., `NewsletterTrackingAction.java`). Your Java class
     should implement the
-    [com.liferay.content.targeting.api.model.TrackingAction` interface](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html).
+    [com.liferay.content.targeting.api.model.TrackingAction` interface](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html).
 
     You must implement the
-    [TrackingAction](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html}
+    [TrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html}
     interface, but there are
     `TrackingAction` extension classes that provide helpful utilities that you
     can extend. For example, your metric can extend the
-    [BaseJSPTrackingAction](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html)
+    [BaseJSPTrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html)
     class to support generating your metric's UI using JSPs. This tutorial
     demonstrates implementing the UI using a JSP and assumes the
-    [TrackingAction](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
+    [TrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
     interface is implemented by extending the `BaseJSPTrackingAction` class. For
     more information on choosing a UI for your metric, see the
     [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-1/best-practices-for-metrics#selecting-a-ui-technology)
@@ -62,7 +62,7 @@ dependencies.
 
 Now that your Java class is set up, you'll need to define how your metric works
 by implementing the
-[TrackingAction](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
+[TrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
 interface's methods. You'll begin implementing these methods next.
 
 The first thing you'll define in your newsletter metric is the view/save
