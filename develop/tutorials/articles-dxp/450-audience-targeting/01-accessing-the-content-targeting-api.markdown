@@ -25,13 +25,13 @@ dependency.
 2. Find the `dependencies` declaration and add the following line within that
     declaration:
    
-        provided group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
+        compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
         
     The complete declaration should look like this:
 
         dependencies {
             ...
-            provided group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
+            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
         }
 
 Your app now has access to the Content Targeting API and can take advantage of
