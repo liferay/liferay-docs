@@ -82,7 +82,12 @@ module framework
 `system:getproperties`: lists all of the system properties
 
 `uninstall [BUNDLE_ID]`: uninstalls the specified bundle from Liferay's module
-framework
+framework. This does not remove the specified bundle from Liferay's module
+framework; it's hidden from Gogo's `lb` command, but is still present. Adding
+a new version of the uninstalled bundle, therefore, will not reinstall it; it
+will update the currently hidden uninstalled version. To permanently remove a
+bundle from Liferay's module framework, manually delete it from the
+`LIFERAY_HOME/osgi` folder.
 
 For more information about the Gogo shell, visit
 [Apache's official documentation](http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html).
