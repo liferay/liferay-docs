@@ -162,5 +162,5 @@ JSON API by Audience Targeting, you can visit the `/api/jsonws` URL (e.g.,
 `localhost:8080/api/jsonws`). As you can see, accessing the Content Targeting
 JSON API is just as easy as accessing the related Java API.
 
-You've learned how easy it is to expose the Content Targeting API and use it in
-your application to unleash its power!
+You've learned how to expose the Content Targeting API and use it in
+your application. Next you'll learn to create custom rule types.

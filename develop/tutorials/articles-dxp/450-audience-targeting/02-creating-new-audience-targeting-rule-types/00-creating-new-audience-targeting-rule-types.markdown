@@ -33,7 +33,7 @@ the weather in their current locations with the rule's preset weather value
 of a different User Segment and sees that segment's content, like a promotion
 for sunglasses.
 
-![Figure 1: This diagram breaks down the evaluation process for the weather rule.](../../images-dxp/weather-rule-diagram.png)
+![Figure 1: This diagram breaks down the evaluation process for the weather rule.](../../../images-dxp/weather-rule-diagram.png)
 
 Now that you have an idea of how to plan your custom rule's development, you'll
 begin creating one yourself!
