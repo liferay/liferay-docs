@@ -16,12 +16,12 @@ dependencies.
     `build.gradle` file used from a Gradle based rule:
 
         dependencies {
-            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.analytics.api", version: "3.0.0"
-            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.anonymous.users.api", version: "2.0.2"
-            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "4.0.0"
-            compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.3.0"
+            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.analytics.api", version: "5.0.0"
+            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.anonymous.users.api", version: "3.0.0"
+            compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: "5.0.0"
+            compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.6.2"
             compileOnly group: "com.liferay.portal", name: "com.liferay.util.taglib", version: "2.0.0"
-            compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+            compileOnly group: "javax.portlet", name: "portlet-api", version: "3.0.0"
             compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
             compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
         }
