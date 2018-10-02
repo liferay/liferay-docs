@@ -57,10 +57,10 @@ for detailed information on that operation.
 ## Folders and External Repositories [](id=folders-and-external-repositories)
 
 By creating a folder that acts as a proxy for an external repository (e.g., 
-SharePoint), you can effectively mount that repository inside a site's default 
-repository. When users enter this special folder, they're directed to the 
-external repository. These folders are called *mount points*. You can create one 
-via the API by setting the 
+SharePoint), you can effectively mount that repository inside a Site's default 
+repository. When users enter this special folder, they see the external
+repository. These folders are called *mount points*. You can create one via the
+API by setting the 
 [Service Context's](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext) 
 `mountPoint` attribute to `true`, and then using that Service Context in the 
 `addFolder` method: 
@@ -69,7 +69,7 @@ via the API by setting the
 
 Note that the `repositoryId` of such a folder indicates the external repository 
 the folder points to---not the repository that the folder exists in. Also, mount 
-point folders can only exist in the default site repository. 
+point folders can only exist in the default Site repository. 
 
 ## Related Topics [](id=related-topics)
 

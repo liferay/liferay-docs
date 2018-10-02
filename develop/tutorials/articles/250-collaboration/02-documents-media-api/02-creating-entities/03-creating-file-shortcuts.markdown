@@ -17,12 +17,12 @@ mandatory.
 
 Keep in mind the following when creating shortcuts: 
 
--   You can create a shortcut to a file in a different site, if that file and 
+-   You can create a shortcut to a file in a different Site, if that file and 
     its resulting shortcut are in the same portal instance. 
 -   You can't create folder shortcuts. 
--   Shortcuts can only exist in the default site repository. If you try to 
-    invoke `addFileShortcut` with the repository ID of an external repository 
-    (e.g., a SharePoint repository), the operation will fail. Since different 
+-   Shortcuts can only exist in the default Site repository. If you try to 
+    invoke `addFileShortcut` with an external repository's ID (e.g.,
+    a SharePoint repository), the operation fails. Since different
     repositories support different features, the Documents and Media API only 
     supports the common denominators for all repositories: files and folders. 
 
@@ -30,10 +30,9 @@ The following example comes from @product@'s
 [`EditFileShortcutMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileShortcutMVCActionCommand.java) 
 class. This class implements almost all the `FileShortcut` actions that the 
 Documents and Media UI supports. This class's `updateFileShortcut` method 
-contains logic to add and update file shortcuts. This method uses the request to 
-get the data it needs to add or update a shortcut. If there's no existing 
-shortcut (`fileShortcutId <= 0`), it adds a new one by calling the 
-`addFileShortcut` method with required data: 
+contains logic to add and update file shortcuts. This method gets its data from
+the request. If there's no existing shortcut (`fileShortcutId <= 0`), it adds
+a new one by calling the `addFileShortcut` method with required data: 
 
     protected void updateFileShortcut(ActionRequest actionRequest)
             throws Exception {
