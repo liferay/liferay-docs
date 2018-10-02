@@ -68,11 +68,12 @@ Next override the `doCreateMethod` to return a `long` that
 identifies each form record with a unique file ID: 
 
     @Override
-    protected long doCreate(long companyId, long ddmStructureId,
-            DDMFormValues ddmFormValues, ServiceContext serviceContext)
+    protected long doCreate(
+        long companyId, long ddmStructureId, DDMFormValues ddmFormValues, 
+        ServiceContext serviceContext)
         throws Exception {
 
-		validate(ddmFormValues, serviceContext);
+        validate(ddmFormValues, serviceContext);
 
         long fileId = _counterLocalService.increment();
 
@@ -108,15 +109,15 @@ don't save the class until you've written that method.
 
 In addition to returning the file ID, add a storage link via the
 `DDMStorageLinkLocalService`. The DDM Storage Link is used to associate each
-form record with the form it's being entered for.
+form record with the DDM Structure backing the form.
 
 The `addStorageLink` method takes class name ID as retrieved by
-`PortalUtil.getClassNameId`, the `fileId` (being used as the primary key for the
-file storage type), the structure version ID, and the service context. There's
-also a call to a `saveFile` method, which serializes the forms record's values
-and uses two additional utility methods (`getStructureFolder` and `getFile`) to
-write a `java.io.File` object. There are some other utility methods invoked as
-well:
+`PortalUtil.getClassNameId`, the `fileId` (being used as the primary key for
+the file storage type), the structure version ID, and the service context.
+There's also a call to a `saveFile` method, which serializes the forms record's
+values and uses two additional utility methods (`getStructureFolder` and
+`getFile`) to write a `java.io.File` object. There are some other utility
+methods invoked as well:
 
     private File getFile(long structureId, long fileId) {
         return new File(
@@ -201,7 +202,7 @@ example calls the `saveFile`  utility method provided earlier:
             ServiceContext serviceContext)
         throws Exception {
 
-		validate(ddmFormValues, serviceContext);
+        validate(ddmFormValues, serviceContext);
 
         DDMStorageLink storageLink =
             _ddmStorageLinkLocalService.getClassStorageLink(classPK);
@@ -225,7 +226,7 @@ a `validate` method to the `StorageAdapter`:
 
 
 	protected void validate(
-			DDMFormValues ddmFormValues, ServiceContext serviceContext)
+        DDMFormValues ddmFormValues, ServiceContext serviceContext)
 		throws Exception {
 
 		boolean validateDDMFormValues = GetterUtil.getBoolean(
