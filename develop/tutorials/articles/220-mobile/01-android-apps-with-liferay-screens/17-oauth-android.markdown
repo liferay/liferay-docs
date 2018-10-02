@@ -25,7 +25,10 @@ You can use the following
     Authenticates without requiring user interaction. This is useful when the 
     app needs to access its own resources, not those of a specific user. 
 
-This tutorial shows you how to use these grant types with Login Screenlet. 
+This tutorial shows you how to use these grant types with Login Screenlet. Note 
+that before getting started, you may want to see 
+[@product@'s OAuth 2.0 documentation](/discover/deployment/-/knowledge_base/7-1/oauth-2-0) 
+for instructions on registering an OAuth 2.0 application in the portal. 
 
 ## Authorization Code (PKCE) [](id=authorization-code-pkce)
 
@@ -33,7 +36,7 @@ Follow these steps to use the Authorization Code grant type with Login
 Screenlet: 
 
 1.  Configure the URL that the mobile browser will redirect to after the user 
-    authenticates. To do this, follow the first 2 steps in the 
+    authenticates. To do this, follow the first two steps in the 
     [Mobile SDK's Authorization Code instructions](/develop/tutorials/-/knowledge_base/7-1/using-oauth-2-in-the-android-mobile-sdk#authorization-code-pkce). 
     Note that you must configure this URL in both the portal and your Android 
     app. 
@@ -160,3 +163,5 @@ Follow these steps to use the Client Credentials grant type in your Android app:
 [Using OAuth 2 in the Android Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/using-oauth-2-in-the-android-mobile-sdk)
 
 [Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)
+
+[OAuth 2.0](/discover/deployment/-/knowledge_base/7-1/oauth-2-0)

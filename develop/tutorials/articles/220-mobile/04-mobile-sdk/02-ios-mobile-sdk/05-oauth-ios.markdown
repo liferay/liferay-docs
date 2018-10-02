@@ -23,7 +23,10 @@ to authenticate to the portal. You can use the following
     Authenticates without requiring user interaction. This is useful when the 
     app needs to access its own resources, not those of a specific user. 
 
-This tutorial shows you how to use these grant types with the Mobile SDK. 
+This tutorial shows you how to use these grant types with the Mobile SDK. Note 
+that before getting started, you may want to see 
+[@product@'s OAuth 2.0 documentation](/discover/deployment/-/knowledge_base/7-1/oauth-2-0) 
+for instructions on registering an OAuth 2.0 application in the portal. 
 
 ## Authorization Code (PKCE) [](id=authorization-code-pkce)
 
@@ -59,11 +62,13 @@ an `AppDelegate` property and then call the `LROAuth2AuthorizationFlow` method
 
 Here's an example of this workflow: 
 
-1.  Configure the redirect URL in the portal via the OAuth 2 Admin portlet. In 
-    the portal, navigate to *Control Panel* &rarr; *OAuth 2 Admin* and select 
-    the OAuth 2 application you want to use. Then enter the redirect URL in the 
-    *Callback URIs* field. The redirect URL in this example is 
-    `my-app://my-app`. 
+1.  Configure the redirect URI in the portal via the OAuth2 Administration 
+    portlet. In the portal, navigate to *Control Panel* &rarr; *Configuration* 
+    &rarr; *OAuth2 Administration* and select or 
+    [create](/discover/deployment/-/knowledge_base/7-1/oauth-2-0#creating-an-application) 
+    the OAuth 2 application you want to use. Then enter the redirect URI in the 
+    *Callback URIs* field. The redirect URI in this example is 
+    `my-app://my-app`: 
 
     ![Figure 1: Enter the redirect URL in the portal's OAuth 2 application you want to use.](../../../../images/mobile-oauth2-redirect-url.png)
 
@@ -299,3 +304,5 @@ Credentials grant type:
 ## Related Topics [](id=related-topics)
 
 [Using OAuth 2 in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-1/using-oauth-2-in-liferay-screens-for-ios)
+
+[OAuth 2.0](/discover/deployment/-/knowledge_base/7-1/oauth-2-0)
