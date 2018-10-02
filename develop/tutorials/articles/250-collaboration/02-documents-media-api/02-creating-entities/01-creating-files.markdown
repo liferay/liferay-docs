@@ -32,9 +32,8 @@ The following example comes from @product@'s
 [`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
 class. This class implements almost all the `FileEntry` actions that the 
 Documents and Media UI supports. This class's `updateFileEntry` method contains 
-logic to add and update files. This method uses the request to get the data the 
-`addFileEntry` method needs. It then calls the `addFileEntry` method with those 
-data: 
+logic to add and update files. This method gets its data from the request, and
+then calls the `addFileEntry` method:
 
     protected FileEntry updateFileEntry(
             PortletConfig portletConfig, ActionRequest actionRequest, 
