@@ -10,99 +10,42 @@ Follow these steps:
 
 1.  [Create an MVC portlet project](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template).
 
-2.  Create an additional *ChartDisplayContext* class and add the following 
-    contents to it:
+2.  Add the following dependency to your bundle's `build.gradle` file:
 
-        import com.liferay.frontend.taglib.chart.model.SingleValueColumn;
-        import com.liferay.frontend.taglib.chart.model.gauge.GaugeChartConfig;
+        compileOnly group: "com.liferay",
+        name: "com.liferay.frontend.taglib.chart",
+        version: "1.0.9"
 
-        public class GaugeChartSampleDisplayContext {
+3.  Import the chart taglib along with the `GaugeChartConfig` and 
+    `SingleValueColumn` classes into your bundle's `init.jsp` file:
 
-           public GaugeChartSampleDisplayContext(PortletRequest portletRequest) {
-             _initGaugeChartConfig();
-             _portletRequest = portletRequest;
-           }
+        <%@ taglib prefix="chart" uri="http://liferay.com/tld/chart" %>
+        <%@ page import="com.liferay.frontend.taglib.chart.model.gauge.GaugeChartConfig" %>
+        <%@ page import="com.liferay.frontend.taglib.chart.model.SingleValueColumn" %>
 
-           public GaugeChartConfig getGaugeChartConfig() {
-             return _gaugeChartConfig;
-           }
+4.  Add the following Java scriptlet to the top of your `view.jsp`:
 
-           private void _initGaugeChartConfig() {
-           	_gaugeChartConfig.addColumn(new SingleValueColumn("data1", 85.4));
-           }
+        <%
+        GaugeChartConfig _gaugeChartConfig = new GaugeChartConfig();
 
-           private GaugeChartConfig _gaugeChartConfig = new GaugeChartConfig();
-           private final PortletRequest _portletRequest;
+        _gaugeChartConfig.addColumn(
+          new SingleValueColumn("data1", 85.4)
+        );
 
-        }
+        %>
 
-3.  Open the *Portlet* class and override the `doView()` method to create a new 
-   instance of the *DisplayContext*:
+5.  Add the `<chart>` taglib to the `view.jsp`, passing the `_gaugeChartConfig` 
+    as the `config` attribute's value:
 
-       import com.liferay.docs.mvcportlet.portlet.GaugeChartSampleDisplayContext;
-       import com.liferay.portal.kernel.util.JavaConstants;
-       import java.io.IOException;
-       import javax.portlet.PortletException;
-       import javax.portlet.PortletRequest;
-       import javax.portlet.RenderRequest;
-       import javax.portlet.RenderResponse;
-
-       @Override
-       public void doView(
-           RenderRequest renderRequest, RenderResponse renderResponse)
-         throws IOException, PortletException {
-
-         PortletRequest portletRequest =
-           (PortletRequest)renderRequest.getAttribute(
-             JavaConstants.JAVAX_PORTLET_REQUEST);
-
-         renderRequest.setAttribute(
-           GaugeChartPortletKeys.CHART_SAMPLE_DISPLAY_CONTEXT,
-           new GaugeChartSampleDisplayContext(portletRequest));
-
-         super.doView(renderRequest, renderResponse);
-       }
-
-4.  Add the following String to the generated *PortletKeys* class:
-
-       public static final String CHART_SAMPLE_DISPLAY_CONTEXT =
-         "CHART_SAMPLE_DISPLAY_CONTEXT";
-
-5.  Add the following dependency to your bundle's `build.gradle` file:
-
-       compileOnly group: "com.liferay",
-       name: "com.liferay.frontend.taglib.chart",
-       version: "1.0.9"
-
-6.  Import the chart taglib along with your portlet's display context and 
-   portlet keys into your bundle's `init.jsp` file:
-
-       <%@ taglib prefix="chart" uri="http://liferay.com/tld/chart" %>
-       <%@ page import="com.liferay.docs.mvcportlet.portlet.GaugeChartSampleDisplayContext" %>
-       <%@ page import="com.liferay.docs.mvcportlet.constants.GaugeChartPortletKeys" %>
-
-7.  Add the following Java scriptlet to the bottom of your `init.jsp`:
-
-       <%
-       GaugeChartSampleDisplayContext gaugeChartSampleDisplayContext =
-       (GaugeChartSampleDisplayContext)request.getAttribute(
-         GaugeChartPortletKeys.CHART_SAMPLE_DISPLAY_CONTEXT
-       );
-       %>
-
-8.  Add the `<chart>` taglib to the `view.jsp`. An example configuration is 
-   shown below:
-
-       <chart:gauge
-         config="<%= gaugeChartSampleDisplayContext.getGaugeChartConfig() %>"
-         id="gauge"
-       />
+        <chart:gauge
+          config="<%= _gaugeChartConfig %>"
+        />
     
 ![Figure 1: A gauge chart shows where percentage-based data falls over a given range.](../../../images/chart-taglib-gauge.png)
 
 ## Related Topics [](id=related-topics)
 
-[Donut Charts](/develop/tutorials/-/knowledge_base/7-1/donut-charts)
+[Gauge Charts](/develop/tutorials/-/knowledge_base/7-1/gauge-charts)
 
 [Geomap Charts](/develop/tutorials/-/knowledge_base/7-1/geomap-charts)
 
