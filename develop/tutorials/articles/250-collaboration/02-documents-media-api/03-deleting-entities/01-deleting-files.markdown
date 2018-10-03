@@ -1,9 +1,7 @@
 # Deleting Files [](id=deleting-files)
 
-Deleting files (`FileEntry` entities) via 
-[`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
-is straightforward. There are two methods you can use to delete files. Click 
-each method to see its Javadoc: 
+There are two methods you can use to delete files. Click each method to see its
+Javadoc: 
 
 -   [`deleteFileEntry(long fileEntryId)`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#deleteFileEntry-long-)
 
