@@ -4,7 +4,7 @@
 
 - Xcode 9.0
 - iOS 11 SDK
-- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
+- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
 
 ## Compatibility [](id=compatibility)
 

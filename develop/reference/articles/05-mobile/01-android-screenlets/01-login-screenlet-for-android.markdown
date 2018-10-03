@@ -3,7 +3,7 @@
 ## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 15) or above
-- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP
+- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
 
 ## Compatibility [](id=compatibility)
 

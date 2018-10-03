@@ -1,17 +1,14 @@
 # DDL Form Screenlet for iOS [](id=ddlformscreenlet-for-ios)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z1efQ2-LQQc" frameborder="0" allowfullscreen></iframe>
-
 ## Requirements [](id=requirements)
 
 - Xcode 9.0
 - iOS 11 SDK
-- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
-- Liferay Screens Compatibility Plugin
+- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
+- Liferay Screens Compatibility app
   ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
-  [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
-  depending on your portal edition). This app is preinstalled in Liferay 7.0 CE 
-  and Liferay DXP instances. 
+  [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
+  This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
 ## Compatibility [](id=compatibility)
 

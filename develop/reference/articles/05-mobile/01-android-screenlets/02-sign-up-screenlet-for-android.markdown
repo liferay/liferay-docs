@@ -3,7 +3,7 @@
 ## Requirements [](id=requirements)
 
 - Android SDK 4.0 (API Level 15) or above
-- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
+- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
 
 ## Compatibility [](id=compatibility)
 
@@ -90,7 +90,8 @@ The Sign Up Screenlet delegates some events to an object that implements the
 methods: 
 
 - `onSignUpSuccess(User user)`: Called when sign up successfully completes. The 
-  `user` parameter contains a set of the created user's attributes. The 
-  supported keys are the same as those in the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227).
+  `user` parameter contains a set of the created user's attributes, as defined 
+  in the 
+  [portal's `User` entity](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/User.html). 
 
 - `onSignUpFailure(Exception e)`: Called when an error occurs in the process.
