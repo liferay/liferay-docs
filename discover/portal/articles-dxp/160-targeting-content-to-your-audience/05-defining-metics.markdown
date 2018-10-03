@@ -73,8 +73,6 @@ ensure that everything is working as expected:
  - Number of users who started to fill out the Register form
  - Number of users who completed the registration
 
-![Figure 3: Drag and drop metrics to the right to configure a campaign.](../../images-dxp/audience-targeting-metrics.png)
-
 You can assign metrics to a campaign report, which is elaborated on in the next
 section. To access the Metrics palette,
 
@@ -102,7 +100,7 @@ site,
 
 To configure it per portal instance,
 
-1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *Instance Settings* &rarr; *Audience Targeting Analytics*.
+1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Audience Targeting Analytics*.
 
 The following analytics options are available:
 
@@ -120,10 +118,26 @@ Tracking all the actions of all your users can be a heavy load for your server.
 Therefore, it's best to disable tracking any actions about which you don't need 
 information. For example, by default, you're storing guest behavior analytics. 
 This stores a large amount of data to the database. If you're not interested in 
-tracking guest users, you can turn that off by disabling the *Anonymous Users* 
-selector.
+tracking guest users,
 
-![Figure 4: There's no need to track anonymous users if you're not interested in their behavior.](../../images-dxp/anonymous-users-analytics.png)
+1.  Disable the *Anonymous Users* selector.
+
+2.  Click Save.
+
+If you want to collect anonymous user data, but you are still mindful of 
+database resources, you can change the interval for how often anonymous data is
+cleaned up. You can find the anonymous data storage setting under *Audience Targeting Service*.
+
+*  **Check Interval** and **Check Time Unit** define how often data cleanup 
+    takes place. If interval is set to *1* and unit is set to *Day* then the 
+    clean up task will occur once per day.
+
+*  **Max Age** and **Max Age Time Unit** define how old the data must be to be 
+    deleted, so that data created immediately before the clean up task is not 
+    immediately deleted. If the age was set to *10* and the unti set to *Hour*
+    then any data older than 10 hours will be removed, and any data less than 10 hours old will be preserved until the next cleanup.
+
+![Figure 4: You can manage anonymous data cleanup here.](../../images-dxp/anonymous-users-analytics.png)
 
 Disabling analytics for certain entities means you won't track them using
 Audience Targeting. Carefully manage analytics to optimize your Audience
@@ -153,7 +167,3 @@ Audience Targeting Analytics component.
 
 3.  Select the *Options* (![Options](../../images-dxp/icon-app-options.png))
     button for the Analytics component again and click *Activate*.
-
-Now your analytics data is stored in an alternative database schema!
-
-Next you'll learn about Campaign Reports.

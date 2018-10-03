@@ -21,7 +21,7 @@ Segment,
 
 5.  Open *Behavior* and click and drag *Browser* to the right side.
 
-![Figure 2: After applying the rule, click the rule to expland/collapse it.](../../images-dxp/audience-targeting-rules.png)
+![Figure 2: After applying the rule, click the rule to expand/collapse it.](../../images-dxp/audience-targeting-rules.png)
 
 6.  Select *Safari* in the *Browser* dropdown.
 

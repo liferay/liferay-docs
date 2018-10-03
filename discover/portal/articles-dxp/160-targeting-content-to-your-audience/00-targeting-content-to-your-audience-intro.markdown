@@ -19,6 +19,8 @@ with minimal coding efforts. Audience Targeting also allows you to create campai
 periods of time and each campaign has a priority that determines which
 campaign takes precedence, and you can configure different assets to
 be displayed at different periods of time to the targeted user segment.
+
+Audience Targeting meets all of the requirements for anonymization, erasure, and export for compliance with GDPR. For more information you can see the [Managing User Data tutorial](/develop/tutorials/-/knowledge_base/7-1/tracking-user-actions-with-audience-targeting).
  
 The Audience Targeting App adds an *Audience Targeting* section to the
 Configuration section of the Site Administration area of the Menu and a User
