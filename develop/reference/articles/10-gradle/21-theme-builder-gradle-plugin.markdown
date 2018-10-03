@@ -136,12 +136,23 @@ dependencies to the latest released versions of the
 and [Liferay Frontend Theme Classic](https://github.com/liferay/liferay-portal/tree/master/modules/apps/foundation/frontend-theme/frontend-theme-classic)
 artifacts. It is possible to override this setting and use a specific version of
 the artifacts by manually adding dependencies to the `parentThemes`
-configuration:
+configuration. For example,
 
 ```gradle
 dependencies {
-    parentThemes group: "com.liferay", name: "com.liferay.frontend.theme.styled", version: "2.0.13"
-    parentThemes group: "com.liferay", name: "com.liferay.frontend.theme.unstyled", version: "2.0.13"
-    parentThemes group: "com.liferay.plugins", name: "classic-theme", version: "1.0.29"
+    parentThemes group: "com.liferay", name: "com.liferay.frontend.theme.styled", version: "VERSION"
+    parentThemes group: "com.liferay", name: "com.liferay.frontend.theme.unstyled", version: "VERSION"
+    parentThemes group: "com.liferay.plugins", name: "classic-theme", version: "VERSION"
 }
 ```
+
+You can find the versions used by your specific @product@ instance by leveraging
+the
+[Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+In a Gogo shell prompt, execute the following command:
+
+    lb -s theme
+
+This lists the deployed theme bundles and their versions. Extract the versions
+for the theme dependencies you want to leverage and add them to your
+configuration.
