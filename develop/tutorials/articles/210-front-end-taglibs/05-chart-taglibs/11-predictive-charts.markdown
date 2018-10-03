@@ -8,22 +8,14 @@ data within a given value range.
 This tutorial shows how to configure your portlet to use predictive charts. 
 Follow these steps:
 
-1.  [Create an MVC portlet project](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template).
-
-2.  Add the following dependency to your bundle's `build.gradle` file:
-
-        compileOnly group: "com.liferay",
-        name: "com.liferay.frontend.taglib.chart",
-        version: "1.0.9"
-
-3.  Import the chart taglib along with the `PredictiveChartConfig` and 
+1.  Import the chart taglib along with the `PredictiveChartConfig` and 
     `MixedDataColumn` classes into your bundle's `init.jsp` file:
 
         <%@ taglib prefix="chart" uri="http://liferay.com/tld/chart" %>
         <%@ page import="com.liferay.frontend.taglib.chart.model.predictive.PredictiveChartConfig" %>
         <%@ page import="com.liferay.frontend.taglib.chart.model.MixedDataColumn" %>
 
-4.  Add the following Java scriptlet to the top of your `view.jsp`. Add a 
+2.  Add the following Java scriptlet to the top of your `view.jsp`. Add a 
     [`MixedDataColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/MixedDataColumn.html)
     ---a column that supports both single number values and arrays of three 
     numbers---for each data series. Single number values define existing data. 
@@ -92,7 +84,7 @@ Follow these steps:
     **Time Series:** A timeline for the data which is displayed on the X axis of 
     the chart. This value is set as an array of dates (`2018-01-01` for example). 
 
-5.  Add the `<chart>` taglib to the `view.jsp`, passing the 
+3.  Add the `<chart>` taglib to the `view.jsp`, passing the 
     `_predictiveChartConfig` as the `config` attribute's value:
 
         <chart:predictive

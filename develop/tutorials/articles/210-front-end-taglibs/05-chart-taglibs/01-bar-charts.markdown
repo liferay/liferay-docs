@@ -9,22 +9,14 @@ portlet to use bar charts.
 
 Follow these steps:
 
-1.  [Create an MVC portlet project](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template).
-
-2.  Add the following dependency to your bundle's `build.gradle` file:
-
-        compileOnly group: "com.liferay",
-        name: "com.liferay.frontend.taglib.chart",
-        version: "1.0.9"
-
-3.  Import the chart taglib along with the `BarChartConfig` and 
+1.  Import the chart taglib along with the `BarChartConfig` and 
     `MultiValueColumn` classes into your bundle's `init.jsp` file:
 
         <%@ taglib prefix="chart" uri="http://liferay.com/tld/chart" %>
         <%@ page import="com.liferay.frontend.taglib.chart.model.point.bar.BarChartConfig" %>
         <%@ page import="com.liferay.frontend.taglib.chart.model.MultiValueColumn" %>
 
-4.  Add the following Java scriptlet to the top of your `view.jsp`:
+2.  Add the following Java scriptlet to the top of your `view.jsp`:
 
         <%
         BarChartConfig _barChartConfig = new BarChartConfig();
@@ -36,7 +28,7 @@ Follow these steps:
 
         %>
 
-5.  Add the `<chart>` taglib to the `view.jsp`, passing the `_barChartConfig` as 
+3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_barChartConfig` as 
     the `config` attribute's value:
 
         <chart:bar

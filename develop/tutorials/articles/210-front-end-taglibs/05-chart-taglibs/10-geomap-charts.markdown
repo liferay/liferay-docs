@@ -13,15 +13,7 @@ JSON file).
 This tutorial shows how to configure your portlet to use geomap charts. Follow 
 these steps:
 
-1.  [Create an MVC portlet project](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template).
-
-2.  Add the following dependency to your bundle's `build.gradle` file:
-
-        compileOnly group: "com.liferay",
-        name: "com.liferay.frontend.taglib.chart",
-        version: "1.0.9"
-
-3.  Import the chart taglib along with the `GeomapConfig`, `GeomapColor`, and 
+1.  Import the chart taglib along with the `GeomapConfig`, `GeomapColor`, and 
     `GeomapColorRange` classes into your bundle's `init.jsp` file:
 
         <%@ taglib prefix="chart" uri="http://liferay.com/tld/chart" %>
@@ -29,7 +21,7 @@ these steps:
         <%@ page import="com.liferay.frontend.taglib.chart.model.geomap.GeomapColor" %>
         <%@ page import="com.liferay.frontend.taglib.chart.model.geomap.GeomapColorRange" %>
 
-4.  Add the following Java scriptlet to the top of your `view.jsp`. The 
+2.  Add the following Java scriptlet to the top of your `view.jsp`. The 
     colors---a color for minimum and a color for maximum---are completely 
     configurable, as shown in the second example configuration below: 
     `_geomapConfig2`. Create a new `GeomapColorRange` and set the minimum and 
@@ -77,7 +69,7 @@ these steps:
 
         %>
 
-5.  Add the `<chart>` taglib to the `view.jsp` along with any styling 
+3.  Add the `<chart>` taglib to the `view.jsp` along with any styling 
     information for the geomap, such as the size and margins as shown below:
 
         <style type="text/css">

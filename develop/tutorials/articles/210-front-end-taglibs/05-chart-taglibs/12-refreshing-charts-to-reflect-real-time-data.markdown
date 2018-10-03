@@ -13,11 +13,8 @@ specify the refresh rate. An example `view.jsp` configuration is shown below:
     <%
     LineChartConfig _pollingIntervalLineChartConfig = new LineChartConfig();
 
-    _pollingIntervalLineChartConfig.addColumns(
-      new MultiValueColumn("data1", 100, 20, 30),
-      new MultiValueColumn("data2", 20, 70, 100)
-    );
-
+    _pollingIntervalLineChartConfig.put("data", "/foo.json");
+    
     _pollingIntervalLineChartConfig.setPollingInterval(2000);
 
     %>

@@ -10,15 +10,7 @@ configure your portlet to use combination charts.
 
 Follow these steps:
 
-1.  [Create an MVC portlet project](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template).
-
-2.  Add the following dependency to your bundle's `build.gradle` file:
-
-        compileOnly group: "com.liferay",
-        name: "com.liferay.frontend.taglib.chart",
-        version: "1.0.9"
-
-3.  Import the chart taglib along with the `CombinationChartConfig`, 
+1.  Import the chart taglib along with the `CombinationChartConfig`, 
     `MultiValueColumn`, and `MultiValueColumn.Type` classes into your bundle's 
     `init.jsp` file:
 
@@ -27,7 +19,7 @@ Follow these steps:
         <%@ page import="com.liferay.frontend.taglib.chart.model.MultiValueColumn" %>
         <%@ page import="com.liferay.frontend.taglib.chart.model.TypedMultiValueColumn.Type" %>
 
-4.  Add the following Java scriptlet to the top of your `view.jsp`:
+2.  Add the following Java scriptlet to the top of your `view.jsp`:
 
         <%
         CombinationChartConfig _combinationChartConfig = 
@@ -51,7 +43,7 @@ Follow these steps:
 
         %>
 
-5.  Add the `<chart>` taglib to the `view.jsp`, passing the 
+3.  Add the `<chart>` taglib to the `view.jsp`, passing the 
     `_combinationChartConfig` as the `config` attribute's value:
 
         <chart:combination
