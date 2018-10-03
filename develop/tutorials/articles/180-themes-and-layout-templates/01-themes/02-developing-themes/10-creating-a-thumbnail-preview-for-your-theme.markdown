@@ -20,7 +20,7 @@ Follow these steps to create a thumbnail preview for your theme:
     properly. 
 
 3.  Save the image as a `.png` file named `thumbnail.png` and place it in the
-    theme's `images` folder (create this folder if it doesn't already exist). On 
+    theme's `src/images` folder (create this folder if it doesn't already exist). On 
     redeployment, the `thumbnail.png` file automatically becomes the theme's
     thumbnail.
 
