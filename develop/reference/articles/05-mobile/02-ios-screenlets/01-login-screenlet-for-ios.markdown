@@ -34,14 +34,6 @@ authentication methods are supported:
   portal. The other authentication types require this permission to access such 
   files. 
 
-+$$$
-
-**Note:** Cookie authentication with Login Screenlet is broken in fix packs 14 
-through 18 of Liferay Digital Enterprise 7.0. This issue is fixed in newer fix 
-packs for Liferay Digital Enterprise 7.0. 
-
-$$$
-
 For instructions on configuring the Screenlet to use these authentication types, 
 see the below 
 [Portal Configuration](#portal-configuration) 
@@ -93,13 +85,10 @@ with the authentication option you want to use. You can choose email address,
 screen name, or user ID. You can set this in the Control Panel by selecting 
 *Configuration* &rarr; *Instance Settings*, and then selecting the 
 *Authentication* section. The authentication options are in the *How do users 
-authenticate?* selector menu. 
+authenticate?* selector menu. For more information, see the User Guide's 
+[authentication section](/discover/portal/-/knowledge_base/7-1/authentication). 
 
 ![Setting the authentication method in your Liferay instance.](../../../images/screens-portal-auth.png)
-
-For more details, see the 
-[Authentication](/discover/portal/-/knowledge_base/7-1/authentication) 
-section of the User Guide. 
 
 ### OAuth [](id=oauth)
 

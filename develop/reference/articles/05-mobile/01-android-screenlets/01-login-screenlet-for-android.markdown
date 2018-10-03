@@ -33,14 +33,6 @@ following types of authentication are supported:
   portal. The other authentication types require this permission to access such 
   files. 
 
-+$$$
-
-**Note:** Cookie authentication with Login Screenlet is broken in fix packs 14 
-through 18 of Liferay Digital Enterprise 7.0. This issue is fixed in newer fix 
-packs for Liferay Digital Enterprise 7.0. 
-
-$$$
-
 For instructions on configuring the Screenlet to use these authentication types, 
 see the below 
 [Portal Configuration](#portal-configuration) 
@@ -57,9 +49,7 @@ Note that user credentials and attributes can be stored in an app's data store
 currently the only data store implemented. However, new and more secure data 
 stores will be added in the future. Stored user credentials can be used to 
 automatically log the user in to subsequent sessions. To do this, you can use 
-the method `SessionContext.loadStoredCredentials()`.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kEZEahTzuck" frameborder="0" allowfullscreen></iframe>
+the method `SessionContext.loadStoredCredentials()`. 
 
 ## JSON Services Used [](id=json-services-used)
 
@@ -96,13 +86,10 @@ with the authentication option you want to use. You can choose email address,
 screen name, or user ID. You can set this in the Control Panel by selecting 
 *Configuration* &rarr; *Instance Settings*, and then selecting the 
 *Authentication* section. The authentication options are in the *How do users 
-authenticate?* selector menu. 
+authenticate?* selector menu. For more information, see the User Guide's 
+[authentication section](/discover/portal/-/knowledge_base/7-1/authentication). 
 
 ![Set the authentication method in your @product@ instance.](../../../images/screens-portal-auth.png)
-
-For more details, see the 
-[Authentication](/discover/portal/-/knowledge_base/7-1/authentication) 
-section of the User Guide. 
 
 ### OAuth Authentication [](id=oauth-authentication)
 
