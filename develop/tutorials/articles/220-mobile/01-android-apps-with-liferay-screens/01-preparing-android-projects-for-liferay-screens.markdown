@@ -20,9 +20,6 @@ with your @product@ instance. The last section in this tutorial shows you how to
 do this. 
 
 $$$
-<!--
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ABxCUUg7zhs" frameborder="0" allowfullscreen></iframe>
--->
 
 ## Requirements [](id=requirements)
 
@@ -35,12 +32,12 @@ a sample project. It requires the following software:
     (v7:23.0.1) implements the
     [recycler view](https://developer.android.com/tools/support-library/features.html#v7-recyclerview) 
     and offers older devices a material look and feel.
--   [Liferay Portal 6.2 CE/EE, 7.0 or 7.1 CE, or Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
+-   [Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, or Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
 -   Liferay Screens Compatibility Plugin 
     ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
     [DXP/EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
-    depending on your portal edition). This app is preinstalled in Liferay 
-    7.0/7.1 CE and Liferay DXP instances. 
+    depending on your portal edition). This app is preinstalled in Liferay CE 
+    Portal 7.0/7.1 CE and Liferay DXP. 
 -   Liferay Screens source code. 
 
 Liferay Screens for Android uses

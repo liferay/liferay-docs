@@ -22,7 +22,7 @@ Screenlets included with Screens. The following software is required:
 
 - Visual Studio
 - Android SDK 4.0 (API Level 15) or above
-- [Liferay Portal CE 7.0, or Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
+- [Liferay Portal CE 7.0/7.1, or Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
 - [Liferay Screens NuGet package](https://www.nuget.org/packages/LiferayScreens)
 
 Also note that if you get confused or stuck while using Screens for Xamarin, 
