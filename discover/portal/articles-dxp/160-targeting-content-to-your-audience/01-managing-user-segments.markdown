@@ -75,7 +75,7 @@ These are some of the rules that are included with the app by default:
     - Score Points rule.
 
 For a complete reference of all rules available, see the
-[Liferay Audience Targeting Rules](/develop/tutorials/-/knowledge_base/7-0/liferay-audience-targeting-rules)
+[Liferay Audience Targeting Rules](/discover/tutorials/-/knowledge_base/7-0/liferay-audience-targeting-rules)
 tutorial.
 
 The Score Points rule assigns 1 point to a user each time the user views a page
