@@ -20,9 +20,9 @@ The user segments you select when creating a campaign represents the portal user
 
 ![Figure 1: Navigate to Site Administration and click *Configuration* &rarr; *Audience Targeting* &rarr; *Campaigns* to manage campaigns for a site.](../../images-dxp/audience-targeting-user-campaigns.png)
 
-For example, suppose you wanted the ability to display certain content (for
-example, advertisements about your new Android app) to female baseball fans
-during the months leading up to the World Series. To achieve this, you could use
+For example, suppose you wanted the ability to display certain content (life 
+advertisements for your new Android app) to female baseball fans during the 
+months leading up to the World Series. To achieve this, you could use
 the Gender rule (configured to female), the Device Rule (configured for Android
 devices), and the Score Points rule to define a user segment called *Female
 Baseball Fans*. The Score points rule assigns 1 point to a user each time the

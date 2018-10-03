@@ -1,12 +1,13 @@
 # Targeting Content To Your Audience [](id=targeting-content-to-your-audience)
 
-Audience Targeting provides tools to divide your audience into user segments, 
-target specific content to different user segments, and create campaigns for 
-different user segments. You can also quickly measure the effectiveness of your 
-campaigns. User segments are configured to display different assets to 
-different users. Campaigns display specific content to different user segments 
-for fixed periods of time, and measure the interaction of the targeted user 
-segments with the chosen content.
+Audience Targeting provides tools to customize user experience based on 
+demographics, browsing data, or other criteria. You can divide your audience 
+into user segments, target specific content to different user segments, and 
+create campaigns for different user segments. You can also quickly measure the 
+effectiveness of your campaigns. User segments are configured to display 
+different assets to different users. Campaigns display specific content to 
+different user segments for fixed periods of time, and measure the interaction 
+of the targeted user segments with the chosen content.
 
 You can use Audience Targeting to display one set of advertisements to one user 
 segment and another set of advertisements to another user segment, and this can 
