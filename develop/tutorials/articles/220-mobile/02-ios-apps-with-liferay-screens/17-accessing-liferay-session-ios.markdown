@@ -18,7 +18,7 @@ user without showing Login Screenlet.
 This tutorial explains some common `SessionContext` use cases, and also 
 describes the class's most important methods. 
 
-## Getting the current session [](id=getting-the-current-session)
+## Getting the Current session [](id=getting-the-current-session)
 
 The current session is established after the user successfully logs in with 
 Login Screenlet. Use `SessionContext.currentContext` to retrieve the session. 
@@ -139,7 +139,7 @@ this tutorial.
 | `logout()` | `void` | Clears the stored user attributes and session. |
 | `relogin(closure)` | `void` | Refreshes user data from the server. This recreates `currentContext` if successful, or calls `logout()` on failure. When the server data is received, the closure is called with received user's attributes. If an error occurs, the closure is called with `nil`. |
 | `loginWithBasic(username, password, userAttributes)` | `LRSession` | Creates a Liferay Session using the default server, and the supplied username, password, and user information. |
-| `loginWithOAuth(authentication, userAttributes)` | `LRSession` | Creates a Liferay Session using the default server and the supplied OAuth tokens. This is intended to be used together with the [Liferay iOS OAuth library](https://github.com/brunofarache/liferay-ios-sdk-oauth). |
+| `loginWithOAuth2(authentication, userAttributes)` | `LRSession` | Creates a Liferay Session using the default server and the supplied OAuth 2 tokens. This is intended to be used together with [OAuth 2 for Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/using-oauth-2-in-liferay-screens-for-ios). |
 | `createRequestSession()` | `LRSession` | Creates a Liferay Session based on the current session's server and user credentials. This Liferay Session is intended to be used for only a single request (don't reuse it). |
 | `createEphemeralBasicSession(username, password)` | `LRSession` | Creates a Liferay Session based on the provided username and password. Note that this session isn't stored anywhere. This is the method used to create a session for anonymous access. Anonymous access is used by the Sign Up and Forgot Password Screenlets. |
 | `userAttribute(key: String)` | `AnyObject` | Returns a `User` object with the server attributes of the logged-in user. This includes the user's email, user ID, name, and portrait ID. |
@@ -151,7 +151,7 @@ this tutorial.
 
 | Property | Type | Explanation |
 |--------|-------------|-------------| 
-| `currentContext` | `SessionContext` | The current session established through Login Screenlet, or the `loginWithBasic` or `loginWithOAuth` methods. |
+| `currentContext` | `SessionContext` | The current session established through Login Screenlet, or the `loginWithBasic` or `loginWithOAuth2` methods. |
 | `isLoggedIn` | `Bool` | Returns `true` if `SessionContext` contains a Liferay Session. |
 | `basicAuthUsername` | `String` | The username used to establish the current session (if any).|
 | `basicAuthPassword` | `String` | The password used to establish the current session (if any).|
@@ -165,3 +165,5 @@ For more information, see the
 [Login Screenlet for iOS](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-ios)
 
 [Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-ios-apps)
+
+[Using OAuth 2 in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-1/using-oauth-2-in-liferay-screens-for-ios)
