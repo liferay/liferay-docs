@@ -77,7 +77,7 @@ Follow these steps:
 
         <#assign my_variable_name =
         getterUtil.getString(themeDisplay.getThemeSetting("theme-setting-key"))/>
-        
+ 
     The example configuration below adds the custom text setting:
     
         <#assign my_custom_text =
@@ -94,7 +94,7 @@ Follow these steps:
     Administration* &rarr; *Build* &rarr; *Pages*. From this point, you can 
     configure theme settings for two scopes:
 
-    - **Public or private page set:** *click* the gear icon next to the page set 
+    - **Public or private page set:** *Click* the gear icon next to the page set 
     you want to configure. Then, under the *Look and Feel* tab, choose your 
     settings and click *Save* to apply the changes to the page set. 
 
