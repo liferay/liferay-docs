@@ -1,9 +1,10 @@
 # Upgrading plugins from Liferay 7.0 to 7.1 [](id=upgrading-plugins-from-liferay-7-0-to-7-1)
 
-Liferay Workspace's Target Platform feature and Code Upgrade Tool are the easiest
-way to upgrade plugins to @product-ver@. Target Platforms facilitate updating
-dependencies to @product-ver@ and the Code Upgrade Tool helps you adapt plugins
-to @product-ver@'s API. This tutorial explains the plugin upgrade steps. 
+Liferay Workspace's Target Platform feature and Code Upgrade Tool take a lot of
+manual intervention out of upgrading to @product-ver@. Target Platform
+facilitates updating dependencies to @product-ver@, and the Code Upgrade Tool
+helps you adapt plugins to @product-ver@'s API. This tutorial explains the
+plugin upgrade steps. 
 
 +$$$
 
@@ -27,7 +28,7 @@ Here are the plugin upgrade steps:
 4.  [Adapt your code to @product-ver@'s API using the Upgrade Tool](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
     The Upgrade Tool shows you where
     [breaking changes](/develop/reference/-/knowledge_base/7-1/breaking-changes)
-    affect your code and addresses many of them automatically.  
+    affect your code and addresses many of them automatically.
 
 Congratulations! Your upgraded plugin is ready to
 [deploy to @product-ver@](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module). 
