@@ -10,7 +10,7 @@ essential services and deliver terrific performances of their own. Here are some
 of the frameworks:
 
 - Device Recognition
-- [Portlet Providers](/develop/tutorials/-/knowledge_base/7-1/portlet-providers))
+- [Portlet Providers](/develop/tutorials/-/knowledge_base/7-1/portlet-providers)
 - [Data Scopes](/develop/tutorials/-/knowledge_base/7-1/data-scopes)
 - [Message Bus](/develop/tutorials/-/knowledge_base/7-1/message-bus)
 

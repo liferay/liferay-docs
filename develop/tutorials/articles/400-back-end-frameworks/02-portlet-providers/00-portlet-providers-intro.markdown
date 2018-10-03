@@ -2,15 +2,15 @@
 
 Some apps perform the same operations on different entity types. For example,
 the Asset Publisher lets users browse, add, preview, and view various entities
-as assets including: documents, web content, blogs, and more. The entities vary,
+as assets including documents, web content, blogs, and more. The entities vary,
 while the operations and surrounding business logic stay the same. Apps such as
 the Asset Publisher rely on the Portlet Providers framework to fetch portlets to
-operate on the entities---the apps don't need to know any of these portlets
-ahead of time. In this way, the framework lets you focus on entity operations
-and frees you from concern about portlets that carry out those operations. This
-tutorial shows you how to,
+operate on the entities. In this way, the framework lets you focus on entity
+operations and frees you from concern about portlets that carry out those
+operations. This tutorial shows you how to
 
 -   [Create and register Portlet Providers](#creating-portletproviders) 
+
 -   [Retrieve portlets from the Portlet Providers](#retrieving-portlets-for-desired-behaviors)
 
 ## Creating PortletProviders [](id=creating-portletproviders)
@@ -18,7 +18,7 @@ tutorial shows you how to,
 [`PortletProvider`s](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProvider.html)
 are Component classes associated with an entity type. They
 have methods that return portlet IDs and portlet URLs. Once you've registered a
-`PortletProvider`s, you can invoke the
+`PortletProvider`, you can invoke the
 [`PortletProviderUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProviderUtil.html)
 class to retrieve the portlet ID or portlet URL from the corresponding
 `PortletProvider`. 
@@ -47,14 +47,14 @@ class:
     }
 
 `WikiPortletProvider` extends `BasePortletProvider`, inheriting its
-`getPortletURL` methods. It must however, implement `PortletProvider`'s
+`getPortletURL` methods. It must, however, implement `PortletProvider`'s
 `getPortletName` method, which returns the portlet's name
 `WikiPortletKeys.WIKI`.
 
 +$$$
 
-**Note:** If you're creating a `PortletProvider` for one of Liferay's portlets, 
-make your `getPortletName` method return the portlet name from that portlet's
+**Note:** If you're creating a `PortletProvider` for one of Liferay's portlets,
+make your `getPortletName` method returns the portlet name from that portlet's
 `*PortletKeys` class if it has such a class. 
 
 $$$
@@ -69,7 +69,7 @@ properties:
     prioritizing it above all `PortletProvider`s that specify the same
     `model.class.name` value but have a lower rank. 
 -   `service = {EditPortletProvider.class, ViewPortletProvider.class}` reflects
-    the subinterface `PortletProvider` classes this class implements.  
+    the subinterface `PortletProvider` classes this class implements.
 
 Here's how to create your own `PortletProvider`:
 
@@ -77,17 +77,17 @@ Here's how to create your own `PortletProvider`:
 
 2.  Create a `PortletProvider` class in your module. Use the recommended class 
     naming convention:
-    
+
     `[Entity] + [Action] + PortletProvider`
-    
+
     Example: 
-    
+
     `LanguageEntryViewPortletProvider`
 
 3.  Extend 
     [`BasePortletProvider`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html)
     if you want to use its `getPortletURL` method implementations. 
-    
+ 
 4.  Implement one or more
     [`PortletProvider`](https://docs.liferay.com/ce/portal/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProvider.html) 
     subinterfaces that match your action(s):
@@ -120,13 +120,13 @@ Here's how to create your own `PortletProvider`:
     Replace `INTERFACE_1.class, ...` with a list of the subinterface(s) you're
     implementing. 
 
-4.  In case you want to override an existing `PortletProvider`, outrank it with 
+4.  If you're overriding an existing `PortletProvider`, outrank it with 
     your own custom `PortletProvider` by specifying a `service.ranking:Integer`
     property with a higher integer ranking. 
 
         property= {"service.ranking:Integer=10"}
 
-5.  Implement the provider methods you want making sure to implement 
+5.  Implement the provider methods you want. Make sure you implement 
     [`PortletProvider`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProvider.html)'s 
     `getPortletName` method. If you didn't extend
     [`BasePortletProvider`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html),
@@ -136,14 +136,14 @@ Here's how to create your own `PortletProvider`:
 
 Now your `PortletProvider` is available to return the ID and URL of the portlet
 that provides the desired behaviors. Using `PortletProviderUtil` to fetch the
-portlet IDs and URLs is next.  
+portlet IDs and URLs is next.
 
 ## Retrieving Portlets for Desired Behaviors [](id=retrieving-portlets-for-desired-behaviors)
 
 The
 [`PortletProviderUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProviderUtil.html)
 class facilitates fetching portlets to execute actions on entities. You can
-request the ID or URL of a portlet that performs the entity action you want.  
+request the ID or URL of a portlet that performs the entity action you want.
 
 The Portlet Provider framework's
 [`PortletProvider.Action`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProvider.Action.html)
@@ -170,13 +170,13 @@ For example, this call gets the ID of a portlet for viewing Recycle Bin entries:
         PortletProvider.Action.VIEW);
 
 `PortletProvider.Action.VIEW` is the operation and
-`com.liferay.portlet.trash.model.TrashEntry` is the entity type. 
+`com.liferay.portlet.trash.model.TrashEntry` is the entity type.
 
 Another example is how the Asset Publisher uses the Portlet Provider framework
 to add a previewed asset to a page---it adds the asset to a portlet and adds
 that portlet to the page. The Asset Publisher uses the
 `liferay-asset:asset_display` tag library tag whose `asset_display/preview.jsp`
-shows an *Add* button for adding the portlet. If the previewed asset is a blogs
+shows an *Add* button for adding the portlet. If the previewed asset is a Blogs
 entry, for example, the framework returns a blogs portlet ID or URL for adding
 the portlet to the current page. Here's the relevant code from the 
 [`asset_display/preview.jsp`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/asset/asset-taglib/src/main/resources/META-INF/resources/asset_display/preview.jsp#L75-L91):
@@ -201,11 +201,11 @@ The code above invokes
 PortletProvider.Action.ADD)` to get the ID of a portlet that adds and displays
 the asset of the underlying entity class. 
 
-The JSP stuffs the portlet ID into the `data` map.
+The JSP puts the portlet ID into the `data` map.
 
     data.put("portlet-id", portletId);
 
-Then it passes the `data` map to a new *Add* button, that adds the portlet to
+Then it passes the `data` map to a new *Add* button that adds the portlet to
 the page. 
 
     <aui:button cssClass="add-button-preview" data="<%= data %>" value="add" />
