@@ -167,15 +167,11 @@ of the mode you're using.
 You can even work in a dual pane view that shows your HTML code on the left and
 a preview pane on the right. To open this view, click on the *Enlarge* icon
 (![Enlarge](../../../images/icon-enlarge.png)). You can arrange the HTML and
-preview panes horizonally or vertically. You can also hide the preview pane, if
-preferred.
+preview panes horizontally or vertically. You can also hide the preview pane, if
+preferred. You can exit the enlarged editor by clicking the *Done* button at 
+the bottom of the screen.
 
 ![Figure 4: You can view how your HTML would render by using the preview pane.](../../../images/web-content-editor-html.png)
-
-Every 25 seconds, the entry you're creating is automatically saved as a draft.
-Because of this, you never have to worry about losing your work if something
-unforeseen happens in your browser or on your computer. You can exit the
-enlarged editor by clicking the *Done* button at the bottom of the screen.
 
 Add a few short sentences announcing the grand opening of the Lunar Resort. The
 content can be localized in whatever language you want. You'll learn more about
