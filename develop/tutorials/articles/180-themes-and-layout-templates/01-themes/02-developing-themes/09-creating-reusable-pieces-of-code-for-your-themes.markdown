@@ -6,7 +6,8 @@ extend. This creates a more modular approach to theme design that lends itself
 well to collaboration and reduces the need for duplicated code in your theme.
 
 Themelets let developers easily share code snippets across their themes with 
-other developers. A themelet can consist of CSS and JavaScript.
+other developers. A themelet can consist of CSS and JavaScript. Themelets 
+**do not support** theme templates. 
 
 Themelets are very flexible, and therefore they have a number of possible uses.
 You can make a themelet to modify the appearance of the admin tools, or a 
