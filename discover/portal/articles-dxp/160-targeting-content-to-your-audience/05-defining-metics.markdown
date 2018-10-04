@@ -1,22 +1,21 @@
 # Defining Metrics [](id=defining-metrics)
 
-To provide your marketing team with real feedback from users, you can define 
-the user actions that you want to track using *Metrics*. Metrics enable 
-Audience Targeting administrators to build custom reports and measure the 
-effectiveness of a campaign by tracking certain user actions.
+To provide your marketing team with real feedback from users, you can define the
+user actions you want to track using *Metrics*. Metrics are used in reports to
+measure the effectiveness of a campaign by tracking certain user actions.
 
 Metrics filter the analytics data gathered by the Audience Targeting Analytics
-engine to obtain the number of times that a certain action was performed on a
-given element or content by users and the user segments they belong to.
+engine to obtain the number of times a certain action was performed on a given
+element or content by users and their user segments. 
 
-Metrics can be created by developers and deployed as extensions. Out of the box,
+Metrics are created by developers and deployed as extensions. Out of the box,
 Audience Targeting includes metrics to track the most common user actions. These
 metrics are described below.
 
 ### Content [](id=content)
 
-Tracks the number of times certain content has been viewed. Use the content
-selector to set the content to be tracked.
+Tracks the number of times content has been viewed. Use the content selector to
+set the content to be tracked.
 
 ### Page [](id=page)
 
@@ -26,8 +25,8 @@ on both both public or private pages.
 ### Form [](id=form)
 
 Tracks how many users view a form, interact with it (i.e., type or select values
-in the inputs) or submit it. If you select the *All* option from the *Event
-type* field, the custom report will show the figures for the three events
+in the inputs), or submit it. If you select the *All* option from the *Event
+type* field, the custom report shows the figures for the three events
 simultaneously. You must also provide the form you want to track, which is
 selectable from the *Form* metric.
 
@@ -42,11 +41,11 @@ extract this information.
 
 ### YouTube Videos [](id=youtube-videos)
 
-Tracks how users interact with embedded YouTube videos. You must enter the ID of
-the YouTube video. You can extract this ID from the video URL as the value for
-the `v` parameter. For instance, in the URL
-`https://www.youtube.com/watch?v=H9xtSO-6aXY` the YouTube video ID is
-`H9xtSO-6aXY`. Then select one of the available events, or *All* to track all of
+Tracks how users interact with embedded YouTube videos. You must enter the
+video's ID. You can extract this ID from the video URL as the value for the `v`
+parameter. For instance, in the URL
+`https://www.youtube.com/watch?v=2EPZxIC5ogU` the YouTube video ID is
+`2EPZxIC5ogU`. Then select one of the available events, or *All* to track all of
 them. For further reference on the meaning of these events, read the official
 YouTube API documentation.
 
@@ -57,12 +56,12 @@ iframe. The iframe code is available from the YouTube video's *Share* &rarr;
 ## Using Metrics
 
 Suppose you want to run a campaign for an event that your company is hosting 
-next month. You have created a main page for the event with a Youtube video and 
+next month. You have created a main page for the event with a YouTube video and 
 a *Register Now* banner. You also have a blog entry about the event displayed 
 on several different pages and a Register page with the form to pay for 
-registration. In this campaign, your goal is to get as many people to register 
-as possible, but there is other information you'll be interested in tracking to 
-ensure that everything is working as expected:
+registration. In this campaign, your goal is to get as many people to register
+as possible, but there is other information you want to track to ensure that
+everything is working as expected:
 
  - Visits to the main page of the event
  - Clicks to view the video
@@ -93,14 +92,15 @@ tutorial for details.
 ### Audience Targeting Analytics [](id=audience-targeting-analytics)
 
 Metrics uses the *Audience Targeting Analytics* engine that can be configured 
-per site or per @product@ installation. To configure the analytics engine per 
-site,
+per site or per @product@ installation. 
 
-1.  Go to Site Administration and click *Configuration* &rarr; *Site Settings* &rarr; *Advanced* &rarr; *Audience Targeting Analytics*.
+1.  To configure the analytics engine per Site, go to Site Administration and
+    click *Configuration* &rarr; *Site Settings* &rarr; *Advanced* &rarr;
+    *Audience Targeting Analytics*.
 
-To configure it per portal instance,
-
-1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Audience Targeting Analytics*.
+2.  To configure it per portal instance, Go to *Control Panel* &rarr;
+    *Configuration* &rarr; *System Settings* &rarr; *Audience Targeting
+    Analytics*.
 
 The following analytics options are available:
 
@@ -115,39 +115,41 @@ The following analytics options are available:
 - YouTube Videos
 
 Tracking all the actions of all your users can be a heavy load for your server. 
-Therefore, it's best to disable tracking any actions about which you don't need 
-information. For example, by default, you're storing guest behavior analytics. 
-This stores a large amount of data to the database. If you're not interested in 
+Therefore, it's best to disable tracking any actions about which you don't need
+information. For example, by default, guest behavior analytics are tracked. This
+stores a large amount of data to the database. If you're not interested in
 tracking guest users,
 
 1.  Disable the *Anonymous Users* selector.
 
-2.  Click Save.
+2.  Click *Save*.
 
-If you want to collect anonymous user data, but you are still mindful of 
+If you want to collect anonymous user data, but you are still mindful of
 database resources, you can change the interval for how often anonymous data is
-cleaned up. You can find the anonymous data storage setting under *Audience Targeting Service*.
+cleaned up. You can find the anonymous data storage setting under *Audience
+Targeting Service*.
 
-*  **Check Interval** and **Check Time Unit** define how often data cleanup 
-    takes place. If interval is set to *1* and unit is set to *Day* then the 
-    clean up task will occur once per day.
+*  **Check Interval** and **Check Time Unit** define how often data cleanup
+   takes place. If interval is set to *1* and unit is set to *Day* then the
+   clean up task occurs once per day.
 
-*  **Max Age** and **Max Age Time Unit** define how old the data must be to be 
-    deleted, so that data created immediately before the clean up task is not 
-    immediately deleted. If the age was set to *10* and the unti set to *Hour*
-    then any data older than 10 hours will be removed, and any data less than 10 hours old will be preserved until the next cleanup.
+*  **Max Age** and **Max Age Time Unit** define how old the data must be to be
+   deleted, so that data created immediately before the cleanup task is not
+   immediately deleted. If the age was set to *10* and the unit set to *Hour*,
+   any data older than 10 hours is removed, and any data less than 10 hours old
+   is preserved until the next cleanup.
 
 ![Figure 4: You can manage anonymous data cleanup here.](../../images-dxp/anonymous-users-analytics.png)
 
-Disabling analytics for certain entities means you won't track them using
-Audience Targeting. Carefully manage analytics to optimize your Audience
-Targeting experience.
+Disabling analytics for certain entities means they aren't tracked. Carefully
+manage analytics to optimize your Audience Targeting experience.
 
 You can also store your analytics data in a separate database schema, which
 allows for independent scalability. To separate the storage of analytics data
 from Liferay's database schema,
 
-1.  Navigate to the Control Panel &rarr; *Configuration* &rarr; *System Settings* &rarr; *Web Experience*
+1.  Navigate to the Control Panel &rarr; *Configuration* &rarr; *System
+    Settings* &rarr; *Web Experience*
 
 2.  Select *Audience Targeting Analytics Storage*.
 
