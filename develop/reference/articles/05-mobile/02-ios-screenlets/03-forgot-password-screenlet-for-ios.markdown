@@ -2,7 +2,7 @@
 
 ## Requirements [](id=requirements)
 
-- Xcode 9.0
+- Xcode 9.3 or above
 - iOS 11 SDK
 - Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
 - Liferay Screens Compatibility app
