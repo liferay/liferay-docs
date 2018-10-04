@@ -54,9 +54,6 @@ Screenlet calls the following services and methods.
 
 To use Forgot Password Screenlet, the portal must be configured to allow users 
 to request new passwords. The below sections show you how to do this. 
-Also, 
-[Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
-must be installed. 
 
 ### Authentication Method [](id=authentication-method)
 
