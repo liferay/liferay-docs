@@ -2,9 +2,9 @@
 
 Each new user segment that's created can be used to categorize pages or content.
 The Audience Targeting app adds a new *User Segment* select button to the SEO
-section of pages and Metadata section for assets. These buttons allow you to
-assign one or more site-scoped or global user segments to the content. This
-categorization has mainly two purposes:
+section of pages and Metadata section for assets. These buttons can assign one
+or more Site-scoped or global user segments to the content. This categorization
+has mainly two purposes:
 
 - Assigning points to users using the Score Points rule
 - Showing dynamic lists of content in the User Segment Content List application
@@ -41,22 +41,21 @@ segment. Click the report name to view the report or *Actions*
 (![Actions](../../images-dxp/icon-actions.png)) &rarr; *Update Report* to
 generate a new report. Reports display a summary of interesting information
 related to each user segment. For example, the Content Views report shows the
-asset that's been most viewed by users that belong to the user segment.
+asset viewed the most by users that belong to the user segment.
 
 ![Figure 6: This report displays what pages the user segment has visited.](../../images-dxp/audience-targeting-user-segment-report.png)
 
 Reports also display which users belonged to a user segment. This lets an
-administrator know which users of the site qualified to the particular user
-segment. @product@ provides a convenient way to export a list of user segment
-users. Simply click the user report you're interested in and select the
-*Options* (![Options](../../images-dxp/icon-options.png)) &rarr; *Export*
-button. This downloads a CSV file with the list of users.
+administrator know which users of the Site joined the particular user segment.
+You can export this list by clicking the user report you're interested in and
+selecting the *Options* (![Options](../../images-dxp/icon-options.png)) &rarr;
+*Export* button. This downloads a CSV file with the list of users.
 
 Additional reports can be created by developers and deployed as OSGi plugins.
 See the [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/7-1/reporting-user-behavior-with-audience-targeting)
-tutorial for details. Reports are generated daily by default. However, you can
-generate a report at any time. To generate a new report when currently viewing a
-report, click on the *Update* button from the *Options* icon 
+tutorial for details. Reports are generated daily by default, but you can
+generate a report at any time. To generate a new report when currently viewing
+a report, click the *Update* button from the *Options* icon
 (![Options](../../images-dxp/icon-options.png)) in the top right corner.
 
 Next, you'll discover how to use your user segments in a campaign.
