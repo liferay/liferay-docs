@@ -66,7 +66,7 @@ clauses when configuring the Campaign Content Display widget. An
 manually as they can with the User Segment Content Display widget. The 
 order of the rules is based on the priority of the campaigns.
 
-![Figure 4: The rules for configuring the Campaign Content Display widget to display content are similar to the rules of the User Segment Content Display widget, but simpler.](../../images-dxp/campaign-content-display-config.png)
+![Figure 3: The rules for configuring the Campaign Content Display widget to display content are similar to the rules of the User Segment Content Display widget, but simpler.](../../images-dxp/campaign-content-display-config.png)
 
 For example, if you created two campaigns called *World Cup* and *Stanley Cup*
 that targets users interested in the World Cup of soccer and the Stanley Cup of
@@ -98,7 +98,7 @@ The Campaign Content Display widget, like the User Segment Content Display
 widget, allows Site administrators to preview the different assets that are
 displayed for different campaigns.
 
-## Asset Publisher
+## Asset Publisher [](id=asset-publisher)
 
 For @product-ver@ the Asset Publisher replaces the functionality of the User 
 Segment Content List. When Audience Targeting is installed, the Asset Publisher 

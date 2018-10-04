@@ -53,7 +53,7 @@ Notice that this option only works if the YouTube video is embedded as an
 iframe. The iframe code is available from the YouTube video's *Share* &rarr;
 *Embed* menu.
 
-## Using Metrics
+## Using Metrics [](id=using-metrics)
 
 Suppose you want to run a campaign for an event that your company is hosting 
 next month. You have created a main page for the event with a YouTube video and 
@@ -139,7 +139,7 @@ Targeting Service*.
    any data older than 10 hours is removed, and any data less than 10 hours old
    is preserved until the next cleanup.
 
-![Figure 4: You can manage anonymous data cleanup here.](../../images-dxp/anonymous-users-analytics.png)
+![Figure 1: You can manage anonymous data cleanup here.](../../images-dxp/anonymous-users-analytics.png)
 
 Disabling analytics for certain entities means they aren't tracked. Carefully
 manage analytics to optimize your Audience Targeting experience.
@@ -156,7 +156,7 @@ from Liferay's database schema,
 3.  Fill out the external storage fields to point to your alternative database 
     schema.
 
-![Figure 5: By filling out the external storage requirements, you configure your Audience Targeting analytics data to be stored in an alternative database schema.](../../images-dxp/alternative-analytics-db.png)
+![Figure 2: By filling out the external storage requirements, you configure your Audience Targeting analytics data to be stored in an alternative database schema.](../../images-dxp/alternative-analytics-db.png)
 
 Once you've saved your external datasource configuration, you must restart the
 Audience Targeting Analytics component.

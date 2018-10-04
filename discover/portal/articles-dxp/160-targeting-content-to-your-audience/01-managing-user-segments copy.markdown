@@ -19,7 +19,7 @@ visit the applicable Site(s) are added to it. To add a new User Segment,
 
 5.  Open *Behavior*. Click and drag *Browser* to the right side.
 
-![Figure 2: After applying the rule, click the rule to expand/collapse it.](../../images-dxp/audience-targeting-rules.png)
+![Figure 1: After applying the rule, click the rule to expand/collapse it.](../../images-dxp/audience-targeting-rules.png)
 
 6.  Select *Safari* in the *Browser* selector.
 
@@ -39,7 +39,7 @@ audience must be segmented based on actions that might occur multiple times
 (e.g., visiting multiple pages, viewing multiple banners, having several roles,
 etc.).
 
-![Figure 3: Instanceable and non-instanceable rules have different icons.](../../images-dxp/instanceable-icons.png)
+![Figure 2: Instanceable and non-instanceable rules have different icons.](../../images-dxp/instanceable-icons.png)
 
 Once you've created a user segment, you can open its summary view, which
 displays relevant data and configurations.

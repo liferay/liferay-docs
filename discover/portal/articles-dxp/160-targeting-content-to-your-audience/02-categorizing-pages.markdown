@@ -9,7 +9,7 @@ has mainly two purposes:
 - Assigning points to users using the Score Points rule
 - Showing dynamic lists of content in the User Segment Content List application
 
-![Figure 4: Pages and content can be categorized for user segments.](../../images-dxp/audience-targeting-categorization.png)
+![Figure 1: Pages and content can be categorized for user segments.](../../images-dxp/audience-targeting-categorization.png)
 
 You don't have to create categories for each of your user segments. User
 segments are distinct from regular vocabularies. The editing screen for both
@@ -29,7 +29,7 @@ only display relevant content to the user. To enable *User Segments Filter*,
 
 3.  Enable the *User Segments Filter*.
 
-![Figure 5: Enabling the User Segments Filter retrieves assets that match the current user's user segments.](../../images-dxp/audience-targeting-asset-publisher-filtering.png)
+![Figure 2: Enabling the User Segments Filter retrieves assets that match the current user's user segments.](../../images-dxp/audience-targeting-asset-publisher-filtering.png)
 
 Next, you'll learn about managing user segment reports.
 
@@ -43,7 +43,7 @@ generate a new report. Reports display a summary of interesting information
 related to each user segment. For example, the Content Views report shows the
 asset viewed the most by users that belong to the user segment.
 
-![Figure 6: This report displays what pages the user segment has visited.](../../images-dxp/audience-targeting-user-segment-report.png)
+![Figure 3: This report displays what pages the user segment has visited.](../../images-dxp/audience-targeting-user-segment-report.png)
 
 Reports also display which users belonged to a user segment. This lets an
 administrator know which users of the Site joined the particular user segment.

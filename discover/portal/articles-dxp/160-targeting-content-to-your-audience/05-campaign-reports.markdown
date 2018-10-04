@@ -18,7 +18,7 @@ campaign. For example, if you placed three Campaign Content Display
 widgets on your website to display content for a campaign, the Content
 View report would show how many times users interacted with that content.
 
-![Figure 6: You can build your own custom campaign report to fit your needs.](../../images-dxp/audience-targeting-report-builder.png)
+![Figure 1: You can build your own custom campaign report to fit your needs.](../../images-dxp/audience-targeting-report-builder.png)
 
 You can track many other user actions by creating a custom report. You can drag
 and drop different kinds of metrics to track for your campaign, and the report
@@ -38,7 +38,7 @@ started filling the registration form, etc. This information helps you measure
 the effectiveness of your campaign. You can use this information to evaluate
 if users are following the engagement path you had prepared.
 
-![Figure 7: This campaign report displays several event types for content in
+![Figure 2: This campaign report displays several event types for content in
 the campaign.](../../images-dxp/audience-targeting-campaign-report.png)
 
 The metrics you apply to a report can be tracked in several different ways. For
