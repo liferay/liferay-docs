@@ -21,7 +21,7 @@ Liferay Screens for Xamarin includes the bindings necessary to use all
 Screenlets included with Screens. The following software is required: 
 
 - Visual Studio
-- Android SDK 4.0 (API Level 15) or above
+- Android SDK 4.1 (API Level 16) or above
 - [Liferay Portal CE 7.0/7.1, or Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
 - [Liferay Screens NuGet package](https://www.nuget.org/packages/LiferayScreens)
 
@@ -109,7 +109,7 @@ Fortunately, this is straightforward. Do the following in your Xamarin projects:
             <integer name="liferay_company_id">20116</integer>
             <integer name="liferay_group_id">20143</integer>
 
-            <integer name="liferay_portal_version">70</integer>
+            <integer name="liferay_portal_version">71</integer>
 
         </resources>
 
@@ -123,7 +123,7 @@ Fortunately, this is straightforward. Do the following in your Xamarin projects:
             <key>server</key>
             <string>http://localhost:8080</string>
             <key>version</key>
-            <integer>70</integer>
+            <integer>71</integer>
             <key>companyId</key>
             <real>20116</real>
             <key>groupId</key>
@@ -148,10 +148,13 @@ needs to communicate with. To find this value, first go to the site in your
 Administration* menu, select *Configuration* &rarr; *Site Settings*. The site 
 ID is listed at the top of the *General* tab. 
 
-The `liferay_portal_version` and `version` value `70` tells Screens that it's 
-communicating with a @product-ver@ instance. Supported values are `62` for 
-Liferay Portal 6.2, and `70` for @product-ver@. Note that if you omit 
-`liferay_portal_version` or `version` from these files, they default to `62`. 
+The `liferay_portal_version` and `version` value `71` tells Screens that it's 
+communicating with a Liferay CE Portal 7.1 or Liferay DXP 7.1 instance. Here are 
+the supported values and the portal versions they correspond to: 
+
+-   `71`: Liferay CE Portal 7.1 or Liferay DXP 7.1
+-   `70`: Liferay CE Portal 7.0 or Liferay DXP 7.0
+-   `62`: Liferay Portal 6.2 CE/EE
 
 You can also configure Screenlet properties in `server_context.xml` and 
 `liferay-server-context.plist`. The example `server_context.xml` properties 
