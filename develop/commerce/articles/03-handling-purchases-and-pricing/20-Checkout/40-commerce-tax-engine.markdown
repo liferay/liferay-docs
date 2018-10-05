@@ -1,11 +1,9 @@
 # Creating New Tax Options
 
 Out of the box, @commerce@ offers two methods for calculating
-[taxes](/web/emporio/documentation/-/knowledge_base/1-0/taxes). These options
-may not meet every user's needs: suppose you want to connect your tax
-calculation to a database you maintain with up-to-date tax information by
-region?  To make it easy to a custom tax solution, @commerce@ exposes an
-extension point, `CommerceTaxEngine`.
+[taxes](/web/emporio/documentation/-/knowledge_base/1-0/taxes). Since these
+options may not meet every user's needs, @commerce@ exposes an exension point,
+`CommerceTaxEngine`, to make it easy to use a custom tax solution.
 
 This tutorial describes how to implement a custom tax calculation that
 administrators can activate from *Commerce* &rarr; *Settings* &rarr; *Taxes*.
@@ -43,7 +41,7 @@ Next, create your component class to implement the interface.
 
         public static final String KEY = "sample-tax";
 
-The class's `KEY` constant identifies the tax method and---when mapped to your
+The class's `KEY` constant identifies the tax calculation and---when mapped to your
 module's `language.properties` file---provides its label in the UI. (See
 [Localizing Your Application](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application)
 for more information on language properties.)
