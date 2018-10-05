@@ -62,7 +62,7 @@ First, you must create a new criterion for your entity:
             BaseItemSelectorCriterionHandler<TaskItemSelectorCriterion> {
 
             public Class <TaskItemSelectorCriterion> getItemSelectorCriterionClass() {
-                return TasksItemSelectorCriterionHandler.class;
+                return TaskItemSelectorCriterion.class;
             }
 
             @Activate
