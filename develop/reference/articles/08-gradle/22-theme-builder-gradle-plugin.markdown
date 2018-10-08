@@ -146,8 +146,13 @@ dependencies {
 }
 ```
 
-You can find the versions used by your specific @product@ instance by leveraging
-the
+Specifying dependency versions is not required when leveraging workspace's
+[Target Platform](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace)
+functionality. All dependencies with the group ID `com.liferay` or
+`com.liferay.portal` are automatically set when targeting a platform. For
+external theme dependencies (e.g., `classic-theme` with the group ID
+`com.liferay.plugins`), you can find the version used by your specific @product@
+instance by leveraging the
 [Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
 In a Gogo shell prompt, execute the following command:
 
