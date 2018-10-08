@@ -1,7 +1,7 @@
 # Creating and Bundling JavaScript Portlets with JavaScript Tooling [](id=creating-and-bundling-javascript-portlets-with-javascript-tooling)
 
-Portlets are built on Java, and therefore to write one you must have a knowledge 
-and understanding of how Java works. This can be quite the hurdle for front-end 
+Portlets are a Java standard, so you must have a knowledge and understanding of
+how Java works to write one. This can be quite the hurdle for front-end
 developers who want to use JavaScript frameworks in their portlets. Thanks to 
 the JS Portlet Extender, 
 [Liferay Bundle Generator](https://www.npmjs.com/package/generator-liferay-bundle), 
@@ -36,11 +36,11 @@ Follow these steps to create your JavaScript portlet:
 2.  Install [Yeoman](http://yeoman.io/) for the generator:
 
         npm install -g yeoman
-        
+
 3.  Install the Liferay Bundle Generator:
 
         npm install -g generator-liferay-bundle
-        
+
 4.  Run the generator, selecting the JavaScript portlet you want to create, and 
     answer the prompts that follow:
 
@@ -57,15 +57,15 @@ Follow these steps to create your JavaScript portlet:
 
     The entry point function receives one object parameter with three fields:
 
-    - **portletNamespace**: the unique namespace of the portlet as defined in 
+    - `portletNamespace`: the unique namespace of the portlet as defined in 
     the Portlet specification.
-    - **contextPath**: the URL path that can be used to retrieve bundle 
+    - `contextPath`: the URL path that can be used to retrieve bundle 
     resources from the browser (it doesn't contain the protocol, host, or port, 
     just the absolute path).
-    - **portletElementId**: the DOM identifier of the portlet's `<div>` node 
+    - `portletElementId`: the DOM identifier of the portlet's `<div>` node 
     that can be used to render HTML.
 
-    The *JavaScript based portlet*'s main `index.js` file configuration is shown 
+    The JavaScript-based portlet's main `index.js` file configuration is shown 
     below:
     
         export default function main({portletNamespace, contextPath, 
@@ -89,16 +89,16 @@ Follow these steps to create your JavaScript portlet:
             
         }
 
-6.  Specify the portlet's initial JS module in the `main` entry of the 
-    `package.json`. Below is the `main` entry for the 
-    *JavaScript based portlet*:
+6.  Specify the portlet's initial JavaScript module in the `main` entry of the
+    `package.json` file. Below is the `main` entry for the 
+    JavaScript based portlet:
     
         "main": "index.js"
-        
-7.  Specify any portlet properties you want to configure, under the `portlet` 
-    section of your portlet's `package.json` file. Note that these are the same 
-    properties you would define in the Java `@Component` annotation of a 
-    portlet, as defined in the 
+
+7.  Specify portlet properties to configure, under the `portlet` section of
+    your portlet's `package.json` file. Note that these are the same properties
+    you would define in the Java `@Component` annotation of a portlet, as
+    defined in the
     [liferay-portlet-app_7_1_0.dtd](@platform-ref@/7.1-latest/definitions/liferay-portlet-app_7_1_0.dtd.html). 
     The configuration for the *JavaScript based portlet* liferay-bundle 
     generator option is shown below:
@@ -114,7 +114,7 @@ Follow these steps to create your JavaScript portlet:
 8.  To create a JS Portlet Extender bundle with `liferay-npm-bundler`, follow 
     [the standard process](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler), 
     but provide the extra `create-jar` option to the bundler's `.npmbundlerrc` 
-    file to make it output the final JAR. The *JavaScript based portlet*'s 
+    file to make it output the final JAR. The JavaScript based portlet's 
     `.npmbundlerrc` contents are shown below:
 
         {
@@ -125,17 +125,17 @@ Follow these steps to create your JavaScript portlet:
             }
         }
 
-    Valid options are:
+    Valid options are
 
-    - **auto-deploy-portlet**: specifies that the bundler should create a JAR 
-    file to be processed by the extender. Defaults to `true` and only needs to 
+    - **auto-deploy-portlet**: Specifies that the bundler should create a JAR 
+    file to be processed by the extender. Defaults to `true` and must only 
     be set to `false` when you want to create a bundle without a portlet 
     (for instance, if you want to provide shared npm packages to be used with 
       [imports](/develop/reference/-/knowledge_base/7-1/changes-between-liferay-npm-bundler-1x-and-2x#manually-deduplicating-through-importing)).
-    - **output-dir**: specifies where to put the generated JAR file. Defaults to 
+    - **output-dir**: Specifies where to put the generated JAR file. Defaults to 
     the standard output folder. You may want to specify a different location so 
     that the JAR and intermediate files are not mixed.
-    - **web-context-path**: specifies the URL path where static resources are 
+    - **web-context-path**: Specifies the URL path where static resources are 
     located in the bundle. Defaults to `<project name>-<project version>`. 
 
 9.  Finally, if you specified your app server information when your portlet was 
@@ -168,11 +168,10 @@ Follow these steps to create your JavaScript portlet:
     commands shown below are also available:
     
     - `npm run build`: Places the output of liferay-npm-bundler in the 
-    designated output folder. The standard output contains a JAR file, named 
-    upon the name and version of the project, that can be manually deployed to 
-    your @product@ instance.
+    designated output folder. The standard output is a JAR file that can be
+    deployed manually to @product@.
     
-    - `npm run start`: lets you test the application in a local webpack 
+    - `npm run start`: Tests the application in a local webpack 
     installation instead of a @product@ server. This speeds up development 
     because you can see live changes without any need to deploy. Note, however, 
     that because this is separate from a Liferay instance, you don't have access 
