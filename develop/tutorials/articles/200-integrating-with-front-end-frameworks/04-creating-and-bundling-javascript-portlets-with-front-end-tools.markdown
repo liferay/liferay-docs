@@ -18,7 +18,10 @@ Generator, and liferay-npm-bundler to create JavaScript Portlets for @product@.
 +$$$
 
 **Important:** The JS Portlet Extender is a Labs application available from 
-[Liferay Marketplace](http://www.liferay.com/marketplace). 
+Liferay Marketplace for 
+[Liferay Digital Enterprise 7.1](https://web.liferay.com/marketplace/-/mp/application/115543020) 
+and 
+[Liferay Portal CE 7.1](https://web.liferay.com/marketplace/-/mp/application/115542926). 
 Apps designated as Labs are experimental and not supported by Liferay. They're 
 released to accelerate the availability of useful and cutting-edge features. 
 This status may change without notice. Please download and use Labs apps at your 
