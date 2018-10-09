@@ -75,8 +75,8 @@ should be sufficient for all your needs.
 
 ## Tutorials 
 
-Tutorials should be in the neighborhood of 1000-2000 words. If you have more
-material than that, you should consider breaking it up. 
+Tutorials should be no longer than 1000 words. If you have more material
+than that, break it up. 
 
 ### Tutorial Intro 
 
