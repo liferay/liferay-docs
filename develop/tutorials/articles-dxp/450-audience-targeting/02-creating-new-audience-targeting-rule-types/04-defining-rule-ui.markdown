@@ -26,7 +26,7 @@ The `weather` variable in the `context` map should be set for the weather rule.
 When the user selects an option, it's passed from the view template to the
 `populateContext` method.
 
-![Figure 4: The weather rule uses a `select` drop-down box to set the weather value.](../../images-dxp/select-box-rule.png)
+![Figure 4: The weather rule uses a `select` drop-down box to set the weather value.](../../../images-dxp/select-box-rule.png)
 
 +$$$
 
@@ -37,10 +37,8 @@ section for details on how to use other UI technologies like FreeMarker.
 
 $$$
 
-Congratulations! You've created the weather rule and can now target users based
-on their weather conditions. You can view the finished version of the weather
-rule by downloading its
-[ZIP file](https://customer.liferay.com/documents/10738/200086/weather.zip).
+You've created the weather rule and can now target users based on their weather conditions. You can view the finished version of the weather rule by downloading its
+[ZIP file](https://dev.liferay.com/documents/10184/2061898/weather-7-1.zip/cefa8c43-1188-49b2-b400-57228d1423fd?version=1.0&download=true).
 
 Now you've created and examined a fully functional rule and have the knowledge
 to create your own.

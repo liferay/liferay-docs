@@ -51,7 +51,7 @@ created.
     and
     [UserAttributesRoleCategory](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/rule/categories/UserAttributesRuleCategory.html).
 
-    ![Figure 2: This example Weather rule was modified to reside in the Session Attributes category.](../../images-dxp/new-category-rule.png)
+    ![Figure 2: This example Weather rule was modified to reside in the Session Attributes category.](../../../images-dxp/new-category-rule.png)
 
 3.  Add the following method:
 
@@ -75,7 +75,7 @@ created.
     To understand what this method accomplishes, you'll need to examine the
     rule's configuration lifecycle.
 
-    ![Figure 3: An Audience Targeting rule must be configured by the user and processed before it can become part of a User Segment.](../../images-dxp/rule-lifecycle.png)
+    ![Figure 3: An Audience Targeting rule must be configured by the user and processed before it can become part of a User Segment.](../../../images-dxp/rule-lifecycle.png)
 
     When the user opens the User Segment Editor, the render phase begins for the
     rule. The `getFormHTML(...)` method retrieves the HTML to display. You don't

@@ -52,9 +52,11 @@ Targeting API dependencies.
 4.  Directly above the class's declaration, insert the following code:
 
         @Component(immediate = true, service = Rule.class)
-
-    This annotation declares the implementation class of the Component and
-    specifies to immediately start the module once deployed to @product@.
+        
+    This annotation declares the implementation class of the Component,
+    specifies to immediately start the module once deployed to @product@, and
+    points to the location of the resource bundle which contains your language 
+    keys.
 
 Now that your Java class is set up, you'll need to define how your rule works by
 implementing the
