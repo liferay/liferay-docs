@@ -15,7 +15,7 @@ $$$
 ## Creating Bookmarks and Folders [](id=creating-bookmarks-and-folders)
 
 To get started with the Bookmarks widget, first install it from 
-[Liferay Marketplace](https://web.liferay.com/marketplace). 
+[Liferay Marketplace](https://web.liferay.com/marketplace/-/mp/application/106221974). 
 See the 
 [Marketplace article](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace) 
 if you need help using Marketplace to install apps. 
