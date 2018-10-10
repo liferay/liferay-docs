@@ -1,11 +1,12 @@
 # Defining a Rule's View/Save Lifecycle [](id=defining-a-rules-view-save-lifecycle)
 
-This section covers how to define a rule's view/save lifecycle. This is when
-a user applies a rule to a user segment using the User Segment Editor.
+The view/save lifecycle describes the process behind the scenes when an 
+administrator applies a rule to a user segment using the User Segment Editor. 
+You'll implement that now.
 
 In this section, you'll begin defining the weather rule's Java class. This
-assumes that you followed the instructions above, creating the `WeatherRule`
-class and extending
+assumes that you followed the instructions in the previous [tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-a-custom-rule-type),
+creating the `WeatherRule` class and extending
 [BaseJSPRule](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPRule.html).
 If you used the `content-targeting-rule` Blade CLI template, your project is
 already extending `BaseJSPRule` and has a default `view.jsp` file already

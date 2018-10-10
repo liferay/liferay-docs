@@ -1,8 +1,7 @@
 # Creating a Custom Rule Type [](id=creating-a-custom-rule-type)
 
-Adding a new type of rule to the Audience Targeting application is easy. First,
-you must create a module and ensure it has the necessary Content Targeting API 
-dependencies.
+First, you must create a module and ensure it has the necessary Content 
+Targeting API dependencies.
 
 1.  [Create a module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module) 
     project for deploying a rule. A Blade CLI [content-targeting-rule](/develop/reference/-/knowledge_base/7-1/content-targeting-rule-template)

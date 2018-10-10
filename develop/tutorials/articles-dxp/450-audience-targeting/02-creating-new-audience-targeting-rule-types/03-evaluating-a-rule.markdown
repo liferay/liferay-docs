@@ -1,8 +1,8 @@
 # Evaluating a Rule [](id=evaluating-a-rule)
 
-Imagine an administrator has successfully configured and saved your custom rule
-to his or her user segment. Now what? Your rule needs to fulfill its purpose,
-which is to evaluate the preset weather value compared to a user's weather value
+After the administrator has successfully configured and saved your custom rule
+to his or her user segment, your rule needs to fulfill its purpose:
+to evaluate the preset weather value compared to a user's weather value
 visiting the site. If the user's value matches the preset value (along with the
 segment's other rules), that user is added to the user segment. 
 
