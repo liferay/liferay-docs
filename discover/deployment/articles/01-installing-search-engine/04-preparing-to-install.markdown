@@ -1,4 +1,4 @@
-# Preparing to Install Elasticsearch
+# Preparing to Install Elasticsearch [](id=preparing-to-install-elasticsearch)
 
 By default, @product-ver@ and its embedded Elasticsearch engine run in the same
 JVM. Although this enables out-of-the-box search, it's only supported for
@@ -51,7 +51,7 @@ production content and then multiply the resulting index size by four. Keep in
 mind that indexing a 1 MB file doesn't result in 1 MB of disk space in the
 search index. 
 
-## Cluster Size
+## Cluster Size [](id=cluster-size)
 
 While @product@ can work with an Elasticsearch cluster comprised of one or two
 nodes, the minimum cluster size recommended by Elastic for fault tolerance is

@@ -16,7 +16,7 @@ this means there could be multiple configuration values for the application, all
 scoped to the site level, because the values set in one site don't matter if the
 context in which you need the value is a different site. This is covered in more
 detail
-[here](/discover/portal/-/knowledge_base/7-1/configuring-liferay#configuration-scope).
+[here](/discover/portal/-/knowledge_base/7-1/system-settings#configuration-scope).
 
 Here's how to scope a configuration: 
 

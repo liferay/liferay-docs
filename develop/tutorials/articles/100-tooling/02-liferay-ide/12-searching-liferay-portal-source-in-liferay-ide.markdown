@@ -4,7 +4,7 @@ In Liferay Dev Studio, you can search through @product@'s source code to aid in
 the development of your project. Liferay provides great resources to help with
 development (e.g., official documentation,
 [docs.liferay.com](https://docs.liferay.com/),
-[sample projects](/develop/reference/-/knowledge_base/7-1/liferay-sample-projects),
+[sample projects](/develop/reference/-/knowledge_base/7-1/sample-projects),
 etc.), but sometimes, searching through Liferay's codebase (i.e., platform and
 official apps) for patterns is just as useful. For example, if you're creating a
 custom app that extends a class provided in Liferay's `portal-kernel` JAR, you

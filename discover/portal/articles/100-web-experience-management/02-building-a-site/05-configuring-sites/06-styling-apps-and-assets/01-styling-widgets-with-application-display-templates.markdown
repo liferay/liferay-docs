@@ -76,7 +76,7 @@ into your new one and build off of it. In other words, you can utilize ADTs as
 generic templates which allow for reusable code to be imported by Velocity or
 FreeMarker templates in the system. For more information on how to create
 a custom template, visit the 
-[Implementing Application Display Templates](/develop/tutorials/-/knowledge_base/7-1/implementing-application-display-templates)
+[Styling Widgets with Application Display Templates](/discover/portal/-/knowledge_base/7-1/styling-widgets-with-application-display-templates)
 tutorial.
 
 ## Configuring ADTs [](id=configuring-adts)

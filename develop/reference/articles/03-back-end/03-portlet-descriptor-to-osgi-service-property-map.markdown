@@ -20,9 +20,9 @@ property names resemble the original descriptor names.
 
 This article covers these descriptor mappings:
 
-- [JSR-168 & JSR-286 Descriptor Mappings from `portlet.xml`](#jsr-168-jsr-286-descriptor-mappings)
+- [Portlet descriptor mappings](#jsr-168-jsr-286-descriptor-mappings)
 
-- [Liferay Descriptor Mappings](#liferay-descriptor-mappings)
+- [Liferay descriptor mappings](#liferay-descriptor-mappings)
 
     - [From `liferay-display.xml`](#liferay-display)
 
@@ -30,7 +30,7 @@ This article covers these descriptor mappings:
 
 The standard portlet descriptor mappings are first. 
 
-## JSR-168 & JSR-286 Descriptor Mappings [](id=jsr-168-jsr-286-descriptor-mappings)
+## Portlet Descriptor Mappings [](id=jsr-168-jsr-286-descriptor-mappings)
 
 **Note:** XPath notation derived from the **Portlet XSD** [4](#four) is used in
 this document for simplicity.
@@ -41,9 +41,8 @@ this document for simplicity.
 |`/portlet-app/custom-portlet-mode`|not supported|
 |`/portlet-app/custom-window-state`|not supported|
 |`/portlet-app/default-namespace`|`javax.portlet.default-namespace=<String>`|
-|`/portlet-app/event-definition`|not supported|
+|`/portlet-app/event-definition`|`javax.portlet.event-definition=<QNameLocalPart>;<QNameURI>[;<PayloadType>][,<AliasQNameLocalPart>;<AliasQNameURI>]` [2](#two)|
 |`/portlet-app/filter`<br/>`/portlet-app/filter/init-param/name`<br/>`/portlet-app/filter-mapping`|[3](#three)<br/>`javax.portlet.init-param.<name>=<value>` [3](#three), [9](#nine)<br/>[3](#three)|
-|`/portlet-app/listener`|not supported<br/>?`javax.portlet.PortletURLGenerationListener`?|
 |`/portlet-app/public-render-parameter`|not supported|
 |`/portlet-app/resource-bundle`|not supported|
 |`/portlet-app/security-constraint`|not supported|
@@ -57,6 +56,7 @@ this document for simplicity.
 |`/portlet-app/portlet/display-name`|`javax.portlet.display-name=<String>`|
 |`/portlet-app/portlet/expiration-cache`|`javax.portlet.expiration-cache=<int>`|
 |`/portlet-app/portlet/init-param/name`|`javax.portlet.init-param.<name>=<value>`|
+|`/portlet-app/portlet/listener`|`javax.portlet.listener=<listener-class>;<ordinal>` [2](#two),[8](#eight)|
 |`/portlet-app/portlet/multipart-config/file-size-threshold`|`javax.portlet.multipart.file-size-threshold=<Integer>`|
 |`/portlet-app/portlet/multipart-config/location`|`javax.portlet.multipart.location=<String>`|
 |`/portlet-app/portlet/multipart-config/max-file-size`|`javax.portlet.multipart.max-file-size=<Long>`|
@@ -67,16 +67,16 @@ this document for simplicity.
 |`/portlet-app/portlet/portlet-info/title`|`javax.portlet.info.title=<String>`|
 |`/portlet-app/portlet/portlet-name`|`javax.portlet.name=<String>`|
 |`/portlet-app/portlet/portlet-preferences`|`javax.portlet.preferences=<String>`<br/>OR<br/>`javax.portlet.preferences=classpath:<path_to_file_in_jar>`|
+|`/portlet-app/portlet/portlet-preferences/preferences-validator`|`javax.portlet.preferences-validator=<String>` [1](#one)|
 |`/portlet-app/portlet/resource-bundle`|`javax.portlet.resource-bundle=<String>`|
 |`/portlet-app/portlet/security-role-ref`|`javax.portlet.security-role-ref=<String>[,<String>]`[2](#two)|
 |`/portlet-app/portlet/supported-locale`|`javax.portlet.supported-locale=<String>` [2](#two)|
-|`/portlet-app/portlet/supported-processing-event/name`|`javax.portlet.supported-processing-event=<String>`<br/>OR<br/>`javax.portlet.supported-processing-event=<String>;<QName>`[2](#two)|
+|`/portlet-app/portlet/supported-processing-event`|`javax.portlet.supported-processing-event=<QNameLocalPart>` OR `javax.portlet.supported-processing-event=<QNameLocalPart>;<QNameURI>`  [2](#two)|
 |`/portlet-app/portlet/supported-public-render-parameter`|`javax.portlet.supported-public-render-parameter=<String>`[2](#two)|
-|`/portlet-app/portlet/supported-publishing-event`|`javax.portlet.supported-publishing-event=<String>`<br/>OR<br/>`javax.portlet.supported-publishing-event=<String>;<QName>`[2](#two)|
+|`/portlet-app/portlet/supported-publishing-event`|`javax.portlet.supported-publishing-event=<QNameLocalPart>` OR `javax.portlet.supported-publishing-event=<QNameLocalPart>;<QNameURI>` [2](#two)|
 |`/portlet-app/portlet/supports/mime-type`|`javax.portlet.mime-type=<mime-type>`|
 |`/portlet-app/portlet/supports/portlet-mode`|`javax.portlet.portlet-mode=<mime-type>;<portlet-mode>[,<portlet-mode>]*`|
 |`/portlet-app/portlet/supports/window-state`|`javax.portlet.window-state=<mime-type>;<window-state>[,<window-state>]*`|
-|`/portlet-app/portlet/version`|`javax.portlet.version=<listener-class>;<ordinal>` [8](#eight)|
 
 ## Liferay Descriptor Mappings [](id=liferay-descriptor-mappings)
 
@@ -84,7 +84,7 @@ this document for simplicity.
 
 |liferay-display.xml XPath | OSGi Portlet Service Property|
 |----|----|
-|`/display/category\[@name\]`|`com.liferay.portlet.display-category=<value>`|
+|`/display/category[@name]`|`com.liferay.portlet.display-category=<value>`|
 
 ### Liferay Portlet [](id=liferay-portlet)
 
@@ -179,7 +179,7 @@ this document for simplicity.
     results in an array of values.
 -   [<a name="three">3</a>] This type is registered as an OSGi service.
 -   [<a name="four">4</a>] 
-    http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
+    https://xmlns.jcp.org/xml/ns/portlet/portlet-app_3_0.xsd
 -   [<a name="five">5</a>] 
     [http://www.liferay.com/dtd/liferay-portlet-app_7_1_0.dtd](@platform-ref@/7.1-latest/definitions/liferay-portlet-app_7_1_0.dtd.html)
 -   [<a name="six">6</a>] Here's an example of using multiple 
@@ -244,7 +244,7 @@ this document for simplicity.
         } 
         
 -   [<a name="eight">8</a>] Here's an example for the 
-    `javax.portlet.version` property.
+    `javax.portlet.listener` property.
 
     *Old:*
 
@@ -262,7 +262,7 @@ this document for simplicity.
         @Component(
             immediate = true,
             property = {"javax.portlet.name=myPortlet",
-                "javax.portlet.version=com.mycompany.MyPortletURLGenerationListener;1"
+                "javax.portlet.listener=com.mycompany.MyPortletURLGenerationListener;1"
             }, service = Portlet.class
         )
         public class MyPortlet extends GenericPortlet {

@@ -38,7 +38,7 @@ Follow these steps to add a button to one of the Styles toolbars:
         JSONArray selectionsJSONArray = stylesToolbar.getJSONArray(
         "selections");
 
-3.  Iterate through the selection toolbars and select the one you want to add 
+3.  Iterate through the selection toolbars, select the one you want to add 
     the button(s) to (`embedurl`, `image`, `link`, `table`, or `text`), retrieve 
     the existing buttons, and add your button. The example below adds the 
     `clipboard` plugin's `Copy`, `Cut`, and `Paste` buttons to the `text` 
@@ -64,7 +64,7 @@ Follow these steps to add a button to one of the Styles toolbars:
     There are also several buttons available by default with the AlloyEditor,
     but they are not all enabled. The full list of existing buttons you can add
     to the Styles toolbars is shown in the table below, ordered by Toolbar:
-    
+
     | text | table | image | link |
     | ---- | ----- | ----- | ---- |
     | bold | tableHeading | imageCenter | linkEdit |
@@ -89,9 +89,9 @@ Follow these steps to add a button to one of the Styles toolbars:
     | twitter | | | |
     | ul | | | |
     | underline | | | |
-    
+ 
     See 
-    [https://alloyeditor.com/docs/features/](https://alloyeditor.com/docs/features/) 
+    [here](https://alloyeditor.com/docs/features/) 
     for an explanation of each button's features.
 
 4.  Update the AlloyEditor's configuration with the changes you made:

@@ -27,7 +27,7 @@ Workspace.
 Want samples or predefined project templates? Liferay has you covered with 30+
 [project templates](/develop/reference/-/knowledge_base/7-1/project-templates)
 and many more
-[project samples](/develop/reference/-/knowledge_base/7-1/liferay-sample-projects).
+[project samples](/develop/reference/-/knowledge_base/7-1/sample-projects).
 
 If you're a newbie looking for the best development tool for @product@, or even
 a seasoned veteran looking for a tool you may like more than your current setup,

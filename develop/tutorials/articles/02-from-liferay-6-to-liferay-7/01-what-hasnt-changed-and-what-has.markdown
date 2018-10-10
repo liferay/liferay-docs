@@ -100,7 +100,7 @@ embraced throughout the modularization effort.
 The most significant change (and improvement) over this architecture is that the
 portal is no longer a single large Java EE Web Application. Liferay Portal has
 been broken down into many modules to benefit from the
-[Modular Development Paradigm](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/the-benefits-of-modularity).
+[Modular Development Paradigm](/develop/tutorials/-/knowledge_base/7-1/the-benefits-of-modularity).
 Those benefits are described in the next section. The modules are often grouped
 into apps (such as Wiki or Message Boards) and the main apps are grouped into
 suites (such as Web Experience, Collaboration, and Forms & Workflow).

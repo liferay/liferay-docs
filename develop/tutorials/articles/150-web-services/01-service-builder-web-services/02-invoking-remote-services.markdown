@@ -116,8 +116,6 @@ For more information on Liferay services, see the Liferay Portal CE Javadocs at
 
 [JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invoker)
 
-[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invocation-examples)
-
 [SOAP Web Services](/develop/tutorials/-/knowledge_base/7-1/soap-web-services)
 
 [Creating Remote Services](/develop/tutorials/-/knowledge_base/7-1/creating-remote-services)

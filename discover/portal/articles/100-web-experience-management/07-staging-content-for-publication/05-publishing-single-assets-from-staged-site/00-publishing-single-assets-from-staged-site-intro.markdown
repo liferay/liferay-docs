@@ -63,7 +63,7 @@ You'll step through an example to see how this is done.
     **Note:** Sometimes the publication process doesn't start immediately (e.g.,
     if there's another publication running). You can check a specific asset's
     publication progress by navigating to the *Options*
-    (![Options](../../../../images/icon-options.png)) &rarr; *Staging* &rarr;
+    (![Options](../../../images/icon-options.png)) &rarr; *Staging* &rarr;
      *Current and Previous* tab in its Site Admin app.
 
     $$$
@@ -94,8 +94,8 @@ assets. Follow the steps below to modify these permissions for a Role:
 
 Granting a Role the *Publish Staging* permission lets users assigned the Role
 publish single assets. 
-[Managing Permissions](/develop/tutorials/-/knowledge_base/7-1/managing-permissions)
-tutorial for more information.
+[Managing Permissions](/discover/portal/-/knowledge_base/7-1/managing-permissions)
+article for more information.
 
 Great! Now you know how to publish single assets and manage the permissions for
 who can do it.

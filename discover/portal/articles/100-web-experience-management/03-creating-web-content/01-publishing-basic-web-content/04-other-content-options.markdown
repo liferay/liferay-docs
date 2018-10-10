@@ -119,3 +119,34 @@ That's pretty much all there is to basic content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
 @product@'s WCM, you'll want to use structures and templates or Fragments.
 You'll cover these topics next.
+
+## Organizing Structure Names [](id=organizing-structure-names)
+
+By default, when you select a structure to add a new Web Content article, the
+structures are ordered by their IDs, not their names. This can be confusing,
+but---never fear---there's a configuration property to sort them alphabetically.
+
+![Figure 5: The default ordering for Web Content Structures can yield confusing results.](../../../../images/web-content-default-order.png)
+
+To enable this property for Site Administration,
+
+1.  Go to *Configuration* &rarr; *System Settings* &rarr; *Web Content* &rarr; 
+    *Web Content Administration*.
+
+2.  Check the box labeled *Journal Browse by Structures Sorted by Name*.
+
+![Figure 6: Web Content Administration will now display structures in alphabetical order.](../../../../images/web-content-admin-alphabetical.png)
+
+With @product-ver@ Fix Pack 2 or greater, you can also set this property for the
+Web Content Display widget. To enable this property for the Web Content Display,
+
+1.  Go to *Configuration* &rarr; *System Settings* &rarr; *Web Content* &rarr; 
+    *Web Content Display*.
+
+2.  Check the box labeled *Sort Structures by Name*.
+
+![Figure 7: The Web Content Display widget will now display structures in alphabetical order.](../../../../images/web-content-display-alphabetical.png)
+
+After this option is checked, the structures are sorted alphabetically. Note 
+that enabling this property can degrade performance with large structure 
+libraries.
