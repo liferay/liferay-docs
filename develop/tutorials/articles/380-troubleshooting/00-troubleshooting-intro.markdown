@@ -1,15 +1,16 @@
-# Troubleshooting OSGi Bundles [](id=troubleshooting-OSGi-Bundles)
+# Troubleshooting FAQ [](id=troubleshooting-FAQ)
 
 When coding on any platform, you can sometimes run into issues that have no
 clear resolution. This can be particularly frustrating. If you have issues
-building, deploying, or running modules, you want to resolve them fast. These
-frequently asked questions and answers help you troubleshoot and correct
-problems that arise based on the underlying OSGi platform.
+building, deploying, or running apps and modules, you want to resolve them
+fast. These frequently asked questions and answers help you troubleshoot and
+correct problems. 
 
 Here are the troubleshooting sections:
 
 -   [Modules](#troubleshooting-modules)
 -   [Services and Components](#troubleshooting-services-and-components)
+-   [Front-end](/develop/tutorials/-/knowledge_base/7-1/troubleshooting-front-end-development-issues)
 
 Click a question to view the answer.
 
