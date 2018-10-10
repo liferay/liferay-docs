@@ -36,10 +36,10 @@ folder set by the `liferay.workspace.wars.dir` property in the
 that create WAR-style projects, which should be stored in the `wars` folder.
 
 To learn more about creating projects in a workspace using Blade CLI or Liferay
-@ide@, visit the
+Dev Studio, visit the
 [Creating Projects with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli)
 and
-[Creating Modules with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide)
+[Creating Modules with Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide)
 tutorials, respectively.
 
 ## Building Projects [](id=building-projects)

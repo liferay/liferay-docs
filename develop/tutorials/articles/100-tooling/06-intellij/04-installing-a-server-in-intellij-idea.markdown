@@ -5,8 +5,8 @@ have your server up and running.
 
 +$$$
 
-**Note:** Tomcat is the only supported Liferay app server bundle available to
-install in IntelliJ.
+**Note:** Tomcat and Wildfly are the only supported Liferay app server bundles
+available to install in IntelliJ.
 
 $$$
 
@@ -16,8 +16,9 @@ Follow these steps to install your server:
 
     This downloads the @product@ bundle specified in your workspace's
     `gradle.properties` file. You can change the default bundle by updating the
-    `liferay.workspace.bundle.url` property. The downloaded bundle is stored in
-    the workspace's `bundles` folder.
+    `liferay.workspace.bundle.url` property. For example, this is required to
+    update the default bundle version and/or type (e.g., Wildfly). The
+    downloaded bundle is stored in the workspace's `bundles` folder.
 
 2.  Navigate to the top right Configurations dropdown menu and select *Edit
     Configurations*. From here, you can configure your server's run and debug

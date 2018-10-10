@@ -147,14 +147,10 @@ Bookmarks application.
     services in its portlet data handler; instead, it uses the
     [StagedModelRepository](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
     framework. This is a new framework, but is a viable option when setting up
-    your portlet data handlers.
-    
-    <!-- TODO: Add back when available:
-    For more information on this, see the
-    [Using the StagedModelRepository Framework (Coming Soon)](develop/tutorials/-/knowledge_base/7-1/using-the-stagedmodelrepository-framework)
-    section. Since local services are more widely used in custom apps, this
-    tutorial covers those instead.
-    -->
+    your portlet data handlers. For more information on this, see the
+    [Providing Entity-Specific Local Services for Staging](/develop/tutorials/-/knowledge_base/7-1/providing-entity-specific-local-services-for-staging)
+    tutorial section. Since local services are more widely used in custom apps,
+    this tutorial covers those instead.
 
 6.  You must create a namespace for your entities so the Export/Import framework
     can identify your application's entities from other entities in @product@.
