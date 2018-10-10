@@ -31,7 +31,7 @@ tracker is ready to use in your managed bean.
 In a managed bean, whenever you need to call a service, open the service
 tracker. For example, this is done in the same demo JSF portlet to open the
 service tracker, using the
-[@PostContruct](http://docs.oracle.com/javaee/7/api/javax/annotation/PostConstruct.html)
+[`@PostContruct`](http://docs.oracle.com/javaee/7/api/javax/annotation/PostConstruct.html)
 annotation:
 
     @PostConstruct
@@ -51,7 +51,7 @@ Then the service can be called:
 
 When it's time for the managed bean to go out of scope, you must close the
 service tracker using the
-[@PreDestroy](http://docs.oracle.com/javaee/7/api/javax/annotation/PreDestroy.html)
+[`@PreDestroy`](http://docs.oracle.com/javaee/7/api/javax/annotation/PreDestroy.html)
 annotation:
 
     @PreDestroy
