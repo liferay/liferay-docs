@@ -9,8 +9,8 @@ Lucene search library, to implement its search and indexing functionality. To
 avoid the resource-hogging table merges necessary to search the database, using 
 a search engine like Elasticsearch lets you convert searchable entities into 
 *documents*. In Elasticsearch, documents are searchable database entities 
-converted into JSON objects. After you implement an indexer for guestbook 
-entries, @product@ creates a document for each entry. This indexer specifies 
+converted into JSON objects. After you implement indexing for guestbook 
+entries, @product@ creates a document for each entry. The indexing code specifies 
 which guestbook entry fields to add to each guestbook entry document. All the 
 guestbook entry documents are then added to an index. When the index is 
 searched, a *hits* object is returned that contains pointers to the documents 
@@ -30,4 +30,4 @@ Along with the search engine, @product@ has its own search infrastructure.
 -   To provide permission checking and hit summaries to display in the search 
     portlet. 
 
-Next, you'll create the indexer for guestbooks. 
+Let's index some Guestbooks, shall we? 

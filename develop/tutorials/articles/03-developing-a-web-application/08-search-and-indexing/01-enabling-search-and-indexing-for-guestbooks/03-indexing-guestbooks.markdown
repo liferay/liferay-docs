@@ -1,0 +1,106 @@
+# Indexing Guestbooks
+
+To control how Guestbook objects are translated into search engine documents,
+create two classes in the new search package:
+
+1.  Implement a `ModelDocumentContributor` to select the Guestbook entity's
+    fields that populate a search document indexed by the search engine.
+    The main searchable field for guestbooks is the guestbook name. 
+
+2.  `ModelIndexerWriterContributor` configures the batch indexing behavior for
+    Guestbooks. This code is executed when Guestbooks are re-indexed from the
+    Search administration section of the Control Panel.
+
+## Implementing `ModelDocumentContributor`
+
+Create `GuestbookModelDocumentContributor` and populate it with these contents:
+
+
+    @Component(
+            immediate = true,
+            property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
+            service = ModelDocumentContributor.class
+    )
+    public class GuestbookModelDocumentContributor
+        implements ModelDocumentContributor<Guestbook> {
+
+        @Override
+        public void contribute(Document document, Guestbook guestbook) {
+            try {
+                document.addDate(Field.MODIFIED_DATE, guestbook.getModifiedDate());
+
+                Locale defaultLocale = PortalUtil.getSiteDefaultLocale(
+        guestbook.getGroupId());
+
+                String localizedTitle = LocalizationUtil.getLocalizedName(
+        Field.TITLE, defaultLocale.toString());
+
+                document.addText(localizedTitle, guestbook.getName());
+            } catch (PortalException pe) {
+                if (_log.isWarnEnabled()) {
+                    _log.warn(
+        "Unable to index guestbook " + guestbook.getGuestbookId(), pe);
+                }
+            }
+        }
+
+        private static final Log _log = LogFactoryUtil.getLog(
+        GuestbookModelDocumentContributor.class);
+
+    }
+
+
+## Implementing `ModelIndexerWriterContributor`
+
+Create `GuestbookModelIndexerWriterContributor` and populate it with these
+contents:
+
+    @Component(
+            immediate = true,
+            property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
+            service = ModelIndexerWriterContributor.class
+    )
+    public class GuestbookModelIndexerWriterContributor
+        implements ModelIndexerWriterContributor<Guestbook> {
+
+        @Override
+        public void customize(
+            BatchIndexingActionable batchIndexingActionable,
+            ModelIndexerWriterDocumentHelper modelIndexerWriterDocumentHelper) {
+
+            batchIndexingActionable.setPerformActionMethod((Guestbook guestbook) -> {
+                Document document = modelIndexerWriterDocumentHelper.getDocument(
+        guestbook);
+
+                batchIndexingActionable.addDocuments(document);
+            });
+        }
+
+        @Override
+        public BatchIndexingActionable getBatchIndexingActionable() {
+            return dynamicQueryBatchIndexingActionableFactory.getBatchIndexingActionable(
+        guestbookLocalService.getIndexableActionableDynamicQuery());
+        }
+
+        @Override
+        public long getCompanyId(Guestbook guestbook) {
+            return guestbook.getCompanyId();
+        }
+
+    	@Override
+        public void modelIndexed(Guestbook guestbook) {
+            entryBatchReindexer.reindex(
+        guestbook.getGuestbookId(), guestbook.getCompanyId());
+        }
+
+        @Reference
+        protected DynamicQueryBatchIndexingActionableFactory
+        dynamicQueryBatchIndexingActionableFactory;
+
+    	@Reference
+        protected EntryBatchReindexer entryBatchReindexer;
+    
+        @Reference
+        protected GuestbookLocalService guestbookLocalService;
+
+    }

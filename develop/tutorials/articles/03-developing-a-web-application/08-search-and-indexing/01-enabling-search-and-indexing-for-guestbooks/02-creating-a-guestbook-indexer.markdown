@@ -1,55 +1,161 @@
-# Creating a Guestbook Indexer [](id=creating-a-guestbook-indexer)
+# Querying for Guestbook Documents
 
-<div class="learn-path-step">
-    <p>Enabling Search and Indexing for Guestbooks<br>Step 2 of 3</p>
-</div>
+The code is in place for for indexing Guestbooks the search engine. Next code
+the behavior necessary for querying the indexed documents.
 
-First, update your `build.gradle` to have all of the necessary imports.
+Implement two classes:
 
-1.  Open the `build.gradle` file in your `guestbook-service` project.
+1.  `GuestbookKeywordQueryContributor`  contributes clauses to the ongoing
+search query.
 
-2.  Add the following line below the other imports:
+2.  `GuestbookModelPreFilterContributor` controls how search results are filtered
+before they're returned from the search engine.
 
-        compileOnly group: "com.liferay", name: "com.liferay.registry.api", version: "1.0.0"
-        compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
-        compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+## Implementing `KeywordQueryContributor`
 
-3.  Save the file and run `Refresh Gradle Project`.
+Create `GuestbookKeywordQueryContributor` and populate it with these
+contents:
 
-Now that you have the additional dependencies configured, follow these steps to create the indexer for guestbooks:
-
-1.  Create a new package in the `guestbook-service` module project's
-    `src/main/java` folder called `com.liferay.docs.guestbook.search`. In this
-    package, create a new class called `GuestbookIndexer` that extends
-    `com.liferay.portal.kernel.search.BaseIndexer` with `Guestbook` as a type 
-    argument. Add an `@Component` annotation to declare that the 
-    `GuestbookIndexer` class provides an implementation of the `Indexer` 
-    service. Also, define the `CLASS_NAME` variable by getting the name of the 
-    `Guestbook` model class. This is necessary to override the `getClassName` 
-    method from `BaseIndexer`. @product@ uses this method to determine the 
-    object this Indexer indexes: 
-
-        @Component(
+    @Component(
             immediate = true,
-            service = Indexer.class
-        )
-        public class GuestbookIndexer extends BaseIndexer<Guestbook> {
+            property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
+            service = KeywordQueryContributor.class
+    )
+    public class GuestbookKeywordQueryContributor
+        implements KeywordQueryContributor {
 
-            public static final String CLASS_NAME = Guestbook.class.getName();
+        @Override
+        public void contribute(
+            String keywords, BooleanQuery booleanQuery,
+            KeywordQueryContributorHelper keywordQueryContributorHelper) {
+
+            SearchContext searchContext =
+        keywordQueryContributorHelper.getSearchContext();
+
+            queryHelper.addSearchLocalizedTerm(
+        booleanQuery, searchContext, Field.TITLE, false);
         }
 
-2.  Add the `GuestbookIndexer` constructor: 
+        @Reference
+        protected QueryHelper queryHelper;
 
-        public GuestbookIndexer() {
-            setDefaultSelectedFieldNames(
-                Field.ASSET_TAG_NAMES, Field.COMPANY_ID, Field.CONTENT,
-                Field.ENTRY_CLASS_NAME, Field.ENTRY_CLASS_PK, Field.GROUP_ID,
-                Field.MODIFIED_DATE, Field.SCOPE_GROUP_ID, Field.TITLE, Field.UID);
-            setPermissionAware(true);
-            setFilterSearch(true);
+    }
+
+Get the `SearchContext` object, which contains lots of information Adding the localized search term is important. Since the localized Guestbook
+title was indexed, retrieve the localized value from the search engine.
+
+## Implementing `ModelPreFilterContributor`
+
+Create `GuestbookKeywordQueryContributor` and populate it with these
+contents:
+
+    @Component(
+            immediate = true,
+            property = "indexer.class.name=com.liferay.docs.guestbook.model.Entry",
+            service = KeywordQueryContributor.class
+    )
+    public class EntryKeywordQueryContributor implements KeywordQueryContributor {
+
+        @Override
+        public void contribute(
+            String keywords, BooleanQuery booleanQuery,
+            KeywordQueryContributorHelper keywordQueryContributorHelper) {
+
+            SearchContext searchContext =
+        keywordQueryContributorHelper.getSearchContext();
+
+            queryHelper.addSearchLocalizedTerm(
+        booleanQuery, searchContext, Field.TITLE, false);
+            queryHelper.addSearchLocalizedTerm(
+        booleanQuery, searchContext, Field.CONTENT, false);
+            queryHelper.addSearchLocalizedTerm(
+        booleanQuery, searchContext, "entryEmail", false);
         }
 
-    This constructor does several things:
+        @Reference
+        protected QueryHelper queryHelper;
+
+    }
+
+# Generating Results Summaries
+
+The Search application and the Asset Publisher application need to know how
+results retrieved from the search engine are to be displayed. Control this by
+implementing a `ModelSummaryContributor`.
+
+A summary is a condensed, text-based version of the entity that can be displayed
+generically. You create it by combining key parts of the entity's data so users
+can browse through search results to find the entity they want. Call
+`BaseIndexer`'s `createSummary` method, then use `summary.setMaxContentLength`
+to set the summary content's maximum size. Most @product@ applications use a
+value of `200`, so it's a good idea to use the same to ensure uniform result
+summaries. 
+
+Create a `GuestbookModelSummarySummaryContributor`:
+
+    @Component(
+            immediate = true,
+            property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
+            service = ModelSummaryContributor.class
+    )
+    public class GuestbookModelSummaryContributor
+        implements ModelSummaryContributor {
+
+        @Override
+        public Summary getSummary(
+            Document document, Locale locale, String snippet) {
+
+            Summary summary = createSummary(document);
+
+            summary.setMaxContentLength(200);
+
+            return summary;
+        }
+
+        private Summary createSummary(Document document) {
+            String prefix = Field.SNIPPET + StringPool.UNDERLINE;
+
+            String title = document.get(prefix + Field.TITLE, Field.TITLE);
+
+            return new Summary(title, StringPool.BLANK);
+        }
+
+    }
+
+First override `getSummary`, and set the maximum summary length on the summary
+returned. The value `200` is a Liferay standard. Control the summary creation in
+a utility method called `createSummary`. Create a `prefix` variable using two
+constants, `Field.SNIPPET` and `Stringpool.UNDERLINE`. The `snippet_title` field
+is returned from the `document.get` call, and added to the summary. Using the
+snippet field provides two benefits:
+
+1.  Snippet text can be highlighted so matching keywords are emphasized.
+
+2.  Snippet text can be automatically shortened by the Search application so a
+    sensible portion of the field's text is displayed in the search results. 
+
+Guestbook titles are likely short, so only the highlighting behavior is likely
+to be useful for the title field of Guestbooks. For longer fields (like some
+`content` fields), the clipping behavior is more useful.  Additional
+highlighting behavior can be configured via the `index.search.highlight.*`
+properties in
+[portal.properties](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#Lucene%20Search).
+
+Create summaries by combining key parts of the entity's data so users can browse
+through search results to find the entity they want.
+
+Once the search and indexing logic is in place, it's time to update the service
+layer so `add`, `update`, and `delete` service calls trigger the new logic.
+
+9.  Implement the `doGetSummary` method to return a *summary*. A summary is a 
+    condensed, text-based version of the entity that can be displayed 
+    generically. Create it by combining key parts of the entity's data so 
+    users can browse through search results to find the entity they want. Call 
+    `BaseIndexer`'s `createSummary` method, then use 
+    `summary.setMaxContentLength` to set the summary content's maximum size. 
+    Most @product@ applications use a value of `200`, so it's a good idea to use 
+    the same to ensure uniform result summaries: 
+<!--    This constructor does several things:
 
     - Sets the default selected field names. These fields are used to retrieve 
       results documents from the search engine. 
@@ -64,6 +170,8 @@ Now that you have the additional dependencies configured, follow these steps to 
       stale, or if permission inheritance doesn't happen fast enough. Most of 
       @product@'s internal apps use this setting. If not set, the indexer relies 
       on the permissions information indexed in the search engine. 
+
+-->
 
 3.  Since you extend the abstract class `BaseIndexer` instead of implementing 
     the `Indexer` interface directly, you must override its abstract methods. In 
@@ -278,12 +386,3 @@ Now that you have the additional dependencies configured, follow these steps to 
 14. Organize your imports ([CTRL]+[SHIFT]+O), and save the file. It will have
     errors. 
 
-15. Export the `com.liferay.docs.guestbook.search` package in the 
-    `guestbook-service` module's `bnd.bnd` file. The export section should look
-    like this: 
-
-        Export-Package:
-          com.liferay.docs.guestbook.service.permission,\
-          com.liferay.docs.guestbook.search
-
-The guestbook indexer class is complete! Next, you can update the service layer. 
