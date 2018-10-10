@@ -13,8 +13,9 @@ separated from the regular service calls used to populate the database table for
 form entries, a developer can even choose to store form data outside the Liferay
 database. 
 
-Define your own format to save form entries by writing an OSGi component which
-implements the `StorageAdapter` interface. The interface follows the *CRUD*
+Define your own format to save form entries by 
+[writing an OSGi component](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli)
+that implements the `StorageAdapter` interface. The interface follows the *CRUD*
 approach, so implementing it requires that you write methods to create, read,
 update and delete form values.
 
@@ -108,11 +109,11 @@ The first line in this method (and the subsequent `doUpdate` method) calls a
 don't save the class until you've written that method. 
 
 In addition to returning the file ID, add a storage link via the
-`DDMStorageLinkLocalService`. The DDM Storage Link is used to associate each
-form record with the DDM Structure backing the form.
+`DDMStorageLinkLocalService`. The DDM Storage Link associates each form record
+with the DDM Structure backing the form.
 
 The `addStorageLink` method takes class name ID as retrieved by
-`PortalUtil.getClassNameId`, the `fileId` (being used as the primary key for
+`PortalUtil.getClassNameId`, the `fileId` (used as the primary key for
 the file storage type), the structure version ID, and the service context.
 There's also a call to a `saveFile` method, which serializes the forms record's
 values and uses two additional utility methods (`getStructureFolder` and
@@ -144,8 +145,8 @@ methods invoked as well:
     private DDMFormValuesJSONSerializer _ddmFormValuesJSONSerializer;
 
 Note the call to the `write` method.`FileUtil` is a Liferay utility class for
-manipulating `java.io.File` objects. The `write` method writes the data into the
-user home folder of your system, by default.
+manipulating `java.io.File` objects. By default, the `write` method writes the
+data into the user home folder of your system.
 
 Override the `doDeleteByClass` method to delete the `File` using the `classPK`:
 
@@ -216,14 +217,13 @@ Once the CRUD logic is defined, deploy and test the storage adapter.
 
 ## Step 3: Validating Form Entries [](id=step-3-validating-form-entries)
 
-The `doCreate` and `doUpdate` methods above both include this line;
+The `doCreate` and `doUpdate` methods above both include this line:
 
     validate(ddmFormValues, serviceContext);
 
 Because the Storage Adapter handles User entered data, it's important to
 validate that the entries include only appropriate data. Add
 a `validate` method to the `StorageAdapter`:
-
 
 	protected void validate(
         DDMFormValues ddmFormValues, ServiceContext serviceContext)
@@ -263,14 +263,14 @@ and select the Storage Adapter _before saving or publishing the form_. If you
 wait until first Saving the Form, the default Storage Adapter is already
 assigned to the Form, and this setting is no longer editable.
 
-1.  Go to the Site Menu &rarr; Content &rarr; Forms, and click the Add button
+1.  Go to the Site Menu &rarr; Content &rarr; Forms, and click the *Add* button
     (![Add](../../images/icon-add.png)).
 
-2.  In the Form Builder view, click the Options button
+2.  In the Form Builder view, click the *Options* button
     (![Options](../../images/icon-options.png)) and open the *Settings*
     window. 
 
 3.  From the select list field called *Select a Storage Type*, choose the
     desired type and click _Done_.
 
-Now all the form's entries will be stored in the desired format.
+Now all the form's entries are stored in the desired format.
