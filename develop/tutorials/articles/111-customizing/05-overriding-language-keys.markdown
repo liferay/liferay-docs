@@ -315,11 +315,6 @@ and applies them to the `com.liferay.blogs.web` module.
     		return _resourceBundleLoader.loadResourceBundle(locale);
     	}
 
-    	@Override
-    	public ResourceBundle loadResourceBundle(String languageId) {
-    		return _resourceBundleLoader.loadResourceBundle(languageId);
-    	}
-
     	@Reference(
     		target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
     	)
@@ -371,16 +366,11 @@ target module's resource bundle loader together.
 
     private AggregateResourceBundleLoader _resourceBundleLoader;
 
-The `loadResourceBundle` methods return a resource bundle based on the locale and language. 
+The `loadResourceBundle` methods return a resource bundle based on the locale. 
 
     @Override
     public ResourceBundle loadResourceBundle(Locale locale) {
         return _resourceBundleLoader.loadResourceBundle(locale);
-    }
-
-    @Override
-    public ResourceBundle loadResourceBundle(String languageId) {
-       return _resourceBundleLoader.loadResourceBundle(languageId);
     }
 
 +$$$
