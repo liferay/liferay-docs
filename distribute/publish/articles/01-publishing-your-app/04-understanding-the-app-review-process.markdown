@@ -200,7 +200,7 @@ table td {
 			</td>
 			<td class="third-column">
 				<ul>
-					<li> Windows 7 x64 </li>
+					<li> Windows 10 x64 </li>
 				</ul>
 			</td>
 		</tr>
