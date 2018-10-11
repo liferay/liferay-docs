@@ -1,4 +1,4 @@
-# Product Types [](id=product-types)
+# Products [](id=products)
 
 The catalog supports three product types: simple, grouped and virtual.
 
