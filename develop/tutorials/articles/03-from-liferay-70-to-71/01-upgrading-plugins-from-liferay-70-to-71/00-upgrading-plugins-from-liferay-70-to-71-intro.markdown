@@ -1,4 +1,4 @@
-# Upgrading plugins from Liferay 7.0 to 7.1 [](id=upgrading-plugins-from-liferay-7-0-to-7-1)
+# Upgrading plugins from @product@ 7.0 to 7.1 [](id=upgrading-plugins-from-liferay-7-0-to-7-1)
 
 Liferay Workspace's Target Platform feature and Code Upgrade Tool take a lot of
 manual intervention out of upgrading to @product-ver@. Target Platform
