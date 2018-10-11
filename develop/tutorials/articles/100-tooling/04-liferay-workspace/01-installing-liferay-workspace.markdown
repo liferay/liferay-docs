@@ -10,8 +10,8 @@ tutorial.
 
 Follow the steps below to download and install Liferay Workspace:
 
-1.  Download the
-    [Liferay Project SDK installer](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/3.2.0%20M1/).
+1.  Download the latest
+    [Liferay Project SDK installer](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/).
     The Project SDK installer is currently listed under *Liferay IDE*, so select
     the latest IDE version for the latest Project SDK installer. You can select
     an installer that includes @ide@, depending on your needs. Do **not**
