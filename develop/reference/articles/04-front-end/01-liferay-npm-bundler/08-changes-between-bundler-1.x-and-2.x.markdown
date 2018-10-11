@@ -51,3 +51,8 @@ external OSGi bundle, instead of using your own. This lets you put shared
 dependencies in one project, and reference them from the rest. Though This new 
 way of de-duplication is not automatic, it leads to full control 
 (during build time) of how each package is resolved.
+
+Now that you understand what changed between version 1.x and 2.x of the 
+liferay-npm-bundler, you can follow the steps in the 
+[Migrating a liferay-npm-bundler Project from 1.x to 2.x](/develop/tutorials/-/knowledge_base/7-1/migrating-a-liferay-npm-bundler-project-from-1-x-to-2-x) 
+tutorial to migrate your 1.x projects to 2.x.
