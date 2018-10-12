@@ -25,22 +25,27 @@ Note that the following arguments are optional:
     `null` for the `is` parameter. If you do this, however, you must use `0` for 
     the `size` parameter. 
 
-This tutorial uses the method that contains `InputStream`, but you can adapt the 
-examples to the other methods if you wish. 
+Follow these steps to create a file via the `DLAppService` method 
+`addFileEntry`. Note that these steps use the method that contains 
+`InputStream`, but you can adapt the example to the other methods if you wish: 
 
-The following example comes from @product@'s 
-[`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
-class. This class implements almost all the `FileEntry` actions that the 
-Documents and Media UI supports. This class's `updateFileEntry` method contains 
-logic to add and update files. This method gets its data from the request, and
-then calls the `addFileEntry` method:
+1.  Get a reference to `DLAppService`: 
 
-    protected FileEntry updateFileEntry(
-            PortletConfig portletConfig, ActionRequest actionRequest, 
-            ActionResponse actionResponse, UploadPortletRequest uploadPortletRequest)
-        throws Exception {
+        @Reference
+        private DLAppService _dlAppService;
 
-        ...
+    For more information on this, see the section on 
+    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    in the getting started tutorial. 
+
+2.  Get data for the method's arguments. Obviously, if you want to call the 
+    method then you must populate its arguments. You'll typically create a file 
+    with data submitted by the end user. This means you can extract the data 
+    from the request. This example does so via 
+    [UploadPortletRequest](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/upload/UploadPortletRequest.html) 
+    and 
+    [PortalUtil](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/PortalUtil.html). 
+    However, you can get these data any way you wish:
 
         long repositoryId = ParamUtil.getLong(uploadPortletRequest, "repositoryId");
         long folderId = ParamUtil.getLong(uploadPortletRequest, "folderId");
@@ -50,30 +55,44 @@ then calls the `addFileEntry` method:
         String changeLog = ParamUtil.getString(uploadPortletRequest, "changeLog");
         boolean majorVersion = ParamUtil.getBoolean(uploadPortletRequest, "majorVersion");
 
-        ...
-
-        try (InputStream inputStream =
-                uploadPortletRequest.getFileAsStream("file")) {
+        try (InputStream inputStream = uploadPortletRequest.getFileAsStream("file")) {
 
             String contentType = uploadPortletRequest.getContentType("file");
             long size = uploadPortletRequest.getSize("file");
 
-            ...
-
             ServiceContext serviceContext = ServiceContextFactory.getInstance(
                     DLFileEntry.class.getName(), uploadPortletRequest);
-
-            ...
-
-                fileEntry = _dlAppService.addFileEntry(repositoryId, folderId, sourceFileName, 
-                    contentType, title, description, changeLog, inputStream, size, serviceContext);
-
-            ...
-
-            return fileEntry;
         }
 
-    }
+    For more information on getting repository and folder IDs, see the sections 
+    on specifying repositories and folders in the 
+    [getting started tutorial](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api). 
+    For more information on `ServiceContext` see the tutorial 
+    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
+
+3.  Call the service reference's `addFileEntry` method. Note that this example 
+    does so inside the try-with-resources statement from the previous step: 
+
+        try (InputStream inputStream = uploadPortletRequest.getFileAsStream("file")) {
+
+            ...
+
+            FileEntry fileEntry = _dlAppService.addFileEntry(
+                                repositoryId, folderId, sourceFileName, contentType, title, 
+                                description, changeLog, inputStream, size, serviceContext);
+        }
+
+    The method returns a `FileEntry` object, which this example sets to a 
+    variable for later use. Note, however, that you don't have to do this. 
+
+You can find the full code for this example in the `updateFileEntry` method of 
+@product@'s 
+[`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
+class. This class uses the Documents and Media API to implement almost all the 
+`FileEntry` actions that the Documents and Media app supports. Also note that 
+this `updateFileEntry` method, as well as the rest of 
+`EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
+needs of the Documents and Media app. 
 
 ## Related Topics [](id=related-topics)
 

@@ -19,3 +19,7 @@ methods or classes with similar functionality. Fortunately, you don't need to
 learn all of them. These tutorials therefore focus on the API's most useful
 classes and methods. 
 
+Also note that the Documents and Media app in @product@ is itself a consumer of 
+this API---Liferay's developers used the API to implement the app's 
+functionality. Therefore, these tutorials use code from this app as an example 
+of how to use the API. 
