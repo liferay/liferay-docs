@@ -1,4 +1,4 @@
-# Liferay Forms
+# Liferay Forms [](id=liferay-forms)
 
 The 
 [Liferay Forms](/discover/portal/-/knowledge_base/7-1/liferay-forms) 
