@@ -63,7 +63,7 @@ You'll step through an example to see how this is done.
     **Note:** Sometimes the publication process doesn't start immediately (e.g.,
     if there's another publication running). You can check a specific asset's
     publication progress by navigating to the *Options*
-    (![Options](../../../images/icon-options.png)) &rarr; *Staging* &rarr;
+    (![Options](../../../../images/icon-options.png)) &rarr; *Staging* &rarr;
      *Current and Previous* tab in its Site Admin app.
 
     $$$
