@@ -16,43 +16,58 @@ See
 for a description of the parameters. Note that the `description` parameter is 
 optional. 
 
-The following example comes from @product@'s 
-[`EditFolderMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFolderMVCActionCommand.java) 
-class. This class implements almost all the `Folder` actions that the Documents 
-and Media UI supports. This class's `updateFolder` method contains logic to add 
-and update folders. This method uses the request to get the data it needs to 
-add or update a folder. If there's no existing folder (`folderId <= 0`), it adds 
-a new folder by calling the `addFolder` method with required data: 
+Follow these steps to create a folder with the `DLAppService` method 
+`addFolder`: 
 
-    protected void updateFolder(ActionRequest actionRequest) throws Exception {
-            long folderId = ParamUtil.getLong(actionRequest, "folderId");
+1.  Get a reference to `DLAppService`: 
 
-            long repositoryId = ParamUtil.getLong(actionRequest, "repositoryId");
-            long parentFolderId = ParamUtil.getLong(actionRequest, "parentFolderId");
-            String name = ParamUtil.getString(actionRequest, "name");
-            String description = ParamUtil.getString(actionRequest, "description");
+        @Reference
+        private DLAppService _dlAppService;
 
-            ServiceContext serviceContext = ServiceContextFactory.getInstance(
+    For more information on this, see the section on 
+    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    in the getting started tutorial. 
+
+2.  Get the data for the `addFolder` method's arguments. Obviously, if you want 
+    to call the method then you must populate its arguments. Since it's common 
+    to create a folder with data submitted by the end user, you can extract 
+    those data from the request. This example does so via 
+    `javax.portlet.ActionRequest` and 
+    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
+    but you can get these data any way you wish: 
+
+        long repositoryId = ParamUtil.getLong(actionRequest, "repositoryId");
+        long parentFolderId = ParamUtil.getLong(actionRequest, "parentFolderId");
+        String name = ParamUtil.getString(actionRequest, "name");
+        String description = ParamUtil.getString(actionRequest, "description");
+
+        ServiceContext serviceContext = ServiceContextFactory.getInstance(
                     DLFolder.class.getName(), actionRequest);
 
-            if (folderId <= 0) {
+    For more information on getting repository and folder IDs, see the 
+    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    sections on specifying repositories and folders. For more information on 
+    `ServiceContext` see the tutorial 
+    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
 
-                    // Add folder
+3.  Call the service reference's `addFolder` method with the data from the 
+    previous step: 
 
-                    _dlAppService.addFolder(
-                            repositoryId, parentFolderId, name, description,
-                            serviceContext);
-            }
-            else {
+        Folder folder = _dlAppService.addFolder(
+                                repositoryId, parentFolderId, name, description, 
+                                serviceContext);
 
-                    // Update folder
-                    ...
-            }
-    }
+    The method returns a `Folder` object, which this example sets to a variable 
+    for later use. Note, however, that you don't have to do this. 
 
-See the tutorial on 
-[updating folders](/develop/tutorials/-/knowledge_base/7-1/updating-folders) 
-for detailed information on that operation. 
+You can find the full code for this example in the `updateFolder` method of 
+@product@'s 
+[`EditFolderMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFolderMVCActionCommand.java) 
+class. This class uses the Documents and Media API to implement almost all the 
+`Folder` actions that the Documents and Media app supports. Also note that 
+this `updateFolder` method, as well as the rest of `EditFolderMVCActionCommand`, 
+contains additional logic to suit the specific needs of the Documents and Media 
+app. 
 
 ## Folders and External Repositories [](id=folders-and-external-repositories)
 

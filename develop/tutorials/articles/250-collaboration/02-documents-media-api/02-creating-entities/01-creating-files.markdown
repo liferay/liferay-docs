@@ -38,14 +38,14 @@ Follow these steps to create a file via the `DLAppService` method
     [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
-2.  Get data for the method's arguments. Obviously, if you want to call the 
-    method then you must populate its arguments. You'll typically create a file 
-    with data submitted by the end user. This means you can extract the data 
-    from the request. This example does so via 
-    [UploadPortletRequest](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/upload/UploadPortletRequest.html) 
+2.  Get the data for the `addFileEntry` method's arguments. Obviously, if you 
+    want to call the method then you must populate its arguments. Since it's 
+    common to create a file with data submitted by the end user, you can extract 
+    those data from the request. This example does so via 
+    [`UploadPortletRequest`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/upload/UploadPortletRequest.html) 
     and 
-    [PortalUtil](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/PortalUtil.html). 
-    However, you can get these data any way you wish:
+    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
+    but you can get these data any way you wish: 
 
         long repositoryId = ParamUtil.getLong(uploadPortletRequest, "repositoryId");
         long folderId = ParamUtil.getLong(uploadPortletRequest, "folderId");
@@ -64,14 +64,15 @@ Follow these steps to create a file via the `DLAppService` method
                     DLFileEntry.class.getName(), uploadPortletRequest);
         }
 
-    For more information on getting repository and folder IDs, see the sections 
-    on specifying repositories and folders in the 
-    [getting started tutorial](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api). 
-    For more information on `ServiceContext` see the tutorial 
+    For more information on getting repository and folder IDs, see the
+    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    sections on specifying repositories and folders. For more information on 
+    `ServiceContext` see the tutorial 
     [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
 
-3.  Call the service reference's `addFileEntry` method. Note that this example 
-    does so inside the try-with-resources statement from the previous step: 
+3.  Call the service reference's `addFileEntry` method with the data from the 
+    previous step. Note that this example does so inside the previous step's 
+    try-with-resources statement: 
 
         try (InputStream inputStream = uploadPortletRequest.getFileAsStream("file")) {
 
