@@ -9,54 +9,50 @@ its Javadoc:
 
 -   [`deleteFolder(long repositoryId, long parentFolderId, String name)`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#deleteFolder-long-long-java.lang.String-) 
 
-Which method you use is up to you---they both delete a folder. 
+Which method you use is up to you---they both delete a folder. Follow these 
+steps to use one of these methods to delete a folder: 
 
-The following example comes from @product@'s 
+1.  Get a reference to `DLAppService`: 
+
+        @Reference
+        private DLAppService _dlAppService;
+
+    For more information on this, see the section on 
+    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    in the getting started tutorial. 
+
+2.  Get the data for the `deleteFolder*` method you wish to use. Obviously, if
+    you want to call the method then you must populate its arguments. Since it's 
+    common to delete a folder specified by the end user, you can extract the 
+    data you need from the request. This example does so via 
+    `javax.portlet.ActionRequest` and 
+    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
+    but you can get the data any way you wish. Also note that this example gets 
+    only the folder ID because the next step deletes the folder with 
+    `deleteFolder(folderId)`: 
+
+        long folderId = ParamUtil.getLong(actionRequest, "folderId");
+
+    If you want to use the other `deleteFolder` method instead, you can also get 
+    the repository ID, parent folder ID, and folder name from the request. For 
+    more information on getting repository and folder IDs, see the 
+    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    sections on specifying repositories and folders. 
+
+3.  Call the service reference's `deleteFolder*` method you wish to use with the 
+    data from the previous step. This example calls `deleteFolder` with the 
+    folder's ID: 
+
+        _dlAppService.deleteFolder(folderId);
+
+You can find the full code for this example in the `deleteFolders` method of 
+@product@'s 
 [`EditFolderMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFolderMVCActionCommand.java) 
-class. This class implements almost all the `Folder` actions that the Documents 
-and Media UI supports. This class contains a `deleteFolders` method that deletes 
-one or more folders by calling the `DLAppService` method 
-`deleteFolder(folderId)`. 
-
-The `deleteFolders` method first gets any folder IDs in the request. It then 
-iterates through each, moving the folder to the 
-[Recycle Bin](/discover/portal/-/knowledge_base/7-1/restoring-deleted-assets) 
-if the `moveToTrash` flag is `true`, or deleting the folder via the 
-`DLAppService` method `deleteFolder(folderId)` if the flag is `false`: 
-
-    protected void deleteFolders(
-                    ActionRequest actionRequest, boolean moveToTrash)
-            throws Exception {
-
-            long[] deleteFolderIds = null;
-
-            long folderId = ParamUtil.getLong(actionRequest, "folderId");
-
-            if (folderId > 0) {
-                    deleteFolderIds = new long[] {folderId};
-            }
-            else {
-                    deleteFolderIds = ParamUtil.getLongValues(
-                            actionRequest, "rowIdsFolder");
-            }
-
-            ...
-
-            for (long deleteFolderId : deleteFolderIds) {
-                    if (moveToTrash) {
-                            // Move the folder to the Recycle Bin
-                    }
-                    else {
-                            _dlAppService.deleteFolder(deleteFolderId);
-                    }
-            }
-
-            ...
-    }
-
-Note that you don't have to support the Recycle Bin in your delete operations. 
-If you want to, however, see the tutorial on 
-[moving entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-1/moving-entities-to-the-recycle-bin). 
+class. This class uses the Documents and Media API to implement almost all the 
+`Folder` actions that the Documents and Media app supports. Also note that this 
+`deleteFolders` method, as well as the rest of `EditFolderMVCActionCommand`, 
+contains additional logic to suit the specific needs of the Documents and Media 
+app. 
 
 ## Related Topics [](id=related-topics)
 

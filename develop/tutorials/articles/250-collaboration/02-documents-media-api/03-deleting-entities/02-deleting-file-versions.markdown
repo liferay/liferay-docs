@@ -16,40 +16,40 @@ See
 [this method's Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#deleteFileVersion-long-java.lang.String-) 
 for a description of the parameters. 
 
-The following example comes from @product@'s 
+Follow these steps to use `deleteFileVersion` to delete a file version:
+
+1.  Get a reference to `DLAppService`: 
+
+        @Reference
+        private DLAppService _dlAppService;
+
+    For more information on this, see the section on 
+    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    in the getting started tutorial. 
+
+2.  Get the file entry ID and version for the file you want to delete. Since 
+    it's common to delete a file specified by the end user, you can extract 
+    those data from the request. This example does so via 
+    `javax.portlet.ActionRequest` and 
+    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
+    but you can do this any way you wish: 
+
+        long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+        String version = ParamUtil.getString(actionRequest, "version");
+
+3.  Use the service reference to call the `deleteFileVersion` method with the 
+    file entry ID and version from the previous step: 
+
+        _dlAppService.deleteFileVersion(fileEntryId, version);
+
+You can find the full code for this example in the `deleteFileEntry` method of 
+@product@'s 
 [`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
-class. This class implements almost all the `FileEntry` actions that the 
-Documents and Media UI supports. It contains its own `deleteFileEntry` method, 
-which calls the `deleteFileVersion` method. This `deleteFileEntry` method gets 
-the file's ID and version from the request. After 
-[validating](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/Validator.html) 
-the version, it calls `deleteFileVersion` to delete that version: 
-
-    protected void deleteFileEntry(
-                    ActionRequest actionRequest, boolean moveToTrash)
-            throws Exception {
-
-            long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
-
-            if (fileEntryId == 0) {
-                return;
-            }
-
-            String version = ParamUtil.getString(actionRequest, "version");
-
-            if (Validator.isNotNull(version)) {
-                    _dlAppService.deleteFileVersion(fileEntryId, version);
-
-                    return;
-            }
-
-            ...
-    }
-
-Note that this is the same `deleteFileEntry` method from the example in the 
-[tutorial on deleting files](/develop/tutorials/-/knowledge_base/7-1/deleting-files). 
-This method contains logic for deleting files and file versions, depending on 
-what's in the request. 
+class. This class uses the Documents and Media API to implement almost all the 
+`FileEntry` actions that the Documents and Media app supports. Also note that 
+this `deleteFileEntry` method, as well as the rest of 
+`EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
+needs of the Documents and Media app. 
 
 ## Identifying File Versions [](id=identifying-file-versions)
 

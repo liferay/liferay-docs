@@ -12,43 +12,49 @@ combination of the `folderId` and `title` parameters in `deleteFileEntryByTitle`
 uniquely identify a file because it's impossible for two files in the same 
 folder to share a name. 
 
-The following example comes from @product@'s 
+Follow these steps to delete a file: 
+
+1.  Get a reference to `DLAppService`: 
+
+        @Reference
+        private DLAppService _dlAppService;
+
+    For more information on this, see the section on 
+    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    in the getting started tutorial. 
+
+2.  Get the data for the `deleteFileEntry*` method you wish to use. Obviously, 
+    if you want to call the method then you must populate its arguments. Since 
+    it's common to delete a file specified by the end user, you can extract 
+    the data you need from the request. This example does so via 
+    `javax.portlet.ActionRequest` and 
+    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
+    but you can get the data any way you wish. Also note that this example gets 
+    only the file entry ID because the next step deletes the file with 
+    `deleteFileEntry`: 
+
+        long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+
+    If you want to use `deleteFileEntryByTitle` instead, you can also get the 
+    repository ID, folder ID, and title from the request. For more information 
+    on getting repository and folder IDs, see the 
+    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    sections on specifying repositories and folders. 
+
+3.  Call the service reference's `deleteFileEntry*` method you wish to use with 
+    the data from the previous step. This example calls `deleteFileEntry` with 
+    the file entry's ID:
+
+        _dlAppService.deleteFileEntry(fileEntryId);
+
+You can find the full code for this example in the `deleteFileEntry` method of 
+@product@'s 
 [`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
-class. This class implements almost all the `FileEntry` actions that the 
-Documents and Media UI supports. It contains its own `deleteFileEntry` method, 
-which calls the `DLAppService` method `deleteFileEntry(fileEntryId)`. 
-
-The `EditFileEntryMVCActionCommand` class's `deleteFileEntry` method gets the 
-file's ID from the request. If the `moveToTrash` flag is `false`, the file 
-should be deleted instead of moved to the 
-[Recycle Bin](/discover/portal/-/knowledge_base/7-1/restoring-deleted-assets). 
-To delete the file, the `DLAppService` method `deleteFileEntry` is called with 
-the file's ID: 
-
-    protected void deleteFileEntry(
-                    ActionRequest actionRequest, boolean moveToTrash)
-            throws Exception {
-
-            long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
-
-            if (fileEntryId == 0) {
-                return;
-            }
-
-            ...
-
-            if (!moveToTrash) {
-                    _dlAppService.deleteFileEntry(fileEntryId);
-
-                    return;
-            }
-
-            ...
-    }
-
-Note that you don't have to support the Recycle Bin in your delete operations. 
-If you want to, however, see the tutorial on 
-[moving entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-1/moving-entities-to-the-recycle-bin). 
+class. This class uses the Documents and Media API to implement almost all the 
+`FileEntry` actions that the Documents and Media app supports. Also note that 
+this `deleteFileEntry` method, as well as the rest of 
+`EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
+needs of the Documents and Media app. 
 
 ## Related Topics [](id=related-topics)
 
