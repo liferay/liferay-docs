@@ -12,6 +12,25 @@ preferred build tool:
 - [Maven sample apps](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/apps/npm)
 -->
 
++$$$
+
+**Note:** When building the npm samples, an error can occur caused by the limit
+of open files allowed by your operating system:
+
+    Error: ENFILE: file table overflow
+
+You can fix this issue by running this set of commands:
+
+    $ echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
+    $ echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
+    $ sudo sysctl -w kern.maxfiles=65536
+    $ sudo sysctl -w kern.maxfilesperproc=65536
+    $ ulimit -n 65536
+
+This fix only pertains to macOS and Linux.
+
+$$$
+
 The following npm samples are documented:
 
 - [Angular npm Portlet](angular-npm-portlet)
