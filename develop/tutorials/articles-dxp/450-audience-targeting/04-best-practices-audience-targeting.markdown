@@ -1,7 +1,7 @@
-# Best Practices for Rules [](id=best-practices-for-rules)
+# Best Practices for Audience Targeting
 
-In this tutorial, you'll learn about best practices to keep in mind when
-creating Audience Targeting Rules. Before going through some best practices, you
+Now that you've created a rule, here are some best practices to keep in mind 
+when creating additional rules. Before going through some best practices, you
 should understand the three components you can specify for a rule:
 
 - *Rule Behavior*
@@ -9,24 +9,19 @@ should understand the three components you can specify for a rule:
 - *Language Keys (optional)*
 
 You discuss rule behavior and its UI configuration in great detail in the
-[Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/7-1/creating-new-audience-targeting-rule-types)
-tutorial. To learn more about language keys and how to create, use, and generate
-them, visit the
-[Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
+To learn more about language keys and how to create, use, and generate
+them, visit the [Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
 tutorials.
-
-Audience Targeting gives you the option to choose whatever frontend technology
-you like. In the next section, you'll learn how to use your preferred technology
-for displaying content in Audience Targeting rules.
 
 ## Selecting a UI Technology [](id=selecting-a-ui-technology)
 
-Since @product-ver@, JSP is the preferred technology for Audience Targeting
+Audience Targeting gives you the option to choose whatever frontend technology
+you like, but JSP is the preferred technology for Audience Targeting
 extension views. FreeMarker views, however, are still supported through their
-respective base classes (e.g., `BaseFreemarkerRule`). If you're interested in
-using a technology besides JSP or FreeMarker to implement your UI, you can add a
-method `getFormHTML` to your `-Rule` class. Here's an example of implementing
-the `getFormHTML` method:
+respective base classes (e.g., `BaseFreemarkerRule` or 
+`BaseFreemarkerTrackingAction`). If you're interested in using a technology 
+besides JSP or FreeMarker to implement your UI, you can add a method 
+`getFormHTML` to your `-Rule` or `-TrackingAction` class. Here's an example of implementing the `getFormHTML` method:
 
     @Override
     public String getFormHTML(
@@ -52,7 +47,7 @@ the `getFormHTML` method:
 The `getFormHTML` is used to retrieve the HTML created by the technology you
 choose, and to return it as a string that is viewable from your rule's form.
 If you plan, therefore, on using an alternative to JSP or FreeMarker, you
-must override this method by creating and modifying it in your `-Rule` class.
+must override this method by creating and modifying it in your `-Rule` or `-TrackingAction` class.
 
 ## Other Best Practices [](id=other-best-practices)
 
@@ -74,9 +69,6 @@ and the time at which the user first visited the page. Then you could evaluate
 the rule only when the cached time is over three hours old. This would prevent
 the rule from evaluating every time the user visited the page. This is best done
 using services.
-
-<!-- No code examples for adding values to cache because this is not implemented
-in any custom rules yet. -Cody -->
 
 - You can override the `BaseJSPRule.deleteData` method in your `-Rule`, so that
 it deletes any data associated with the rule that is currently being deleted.
