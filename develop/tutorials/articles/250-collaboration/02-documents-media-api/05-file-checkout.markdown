@@ -6,9 +6,9 @@ for editing. Only the user who checked out the file can edit it. This prevents
 conflicting edits on the same file from multiple users. The Documents and Media 
 API allows these checkin/checkout operations: 
 
--   File checkout. 
--   File checkin. 
--   Cancel a checkout, discarding any changes. 
+-   [File checkout](#file-checkout)
+-   [File checkin](#file-checkin) 
+-   [Cancel a checkout, discarding any changes](#cancelling-a-checkout)
 
 ## File Checkout [](id=file-checkout)
 
@@ -32,34 +32,45 @@ and repeat the operation. For a full description of the method and its
 parameters, see its 
 [Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#checkOutFileEntry-long-com.liferay.portal.kernel.service.ServiceContext-). 
 
-The following example comes from @product@'s 
+Follow these steps to use this method to check out a file: 
+
+1.  Get a reference to `DLAppService`: 
+
+        @Reference
+        private DLAppService _dlAppService;
+
+    For more information on this, see the section on 
+    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    in the getting started tutorial. 
+
+2.  Get the data for the `checkOutFileEntry` method's arguments. Obviously, if 
+    you want to call the method then you must populate its arguments. Since it's 
+    common to check out a file in response to an action by the end user, you can 
+    extract those data from the request. This example does so via 
+    `javax.portlet.ActionRequest` and 
+    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
+    but you can get these data any way you wish: 
+
+        long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+
+        ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
+
+    For more information on `ServiceContext` see the tutorial 
+    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
+
+3.  Call the service reference's `checkOutFileEntry` method with the data from 
+    the previous step: 
+
+        _dlAppService.checkOutFileEntry(fileEntryId, serviceContext);
+
+You can find the full code for this example in the `checkOutFileEntries` method 
+of @product@'s 
 [`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
-class. This class implements almost all the `FileEntry` actions that the 
-Documents and Media UI supports. This class's `checkOutFileEntries` method 
-checks out files. This method uses the request to get one or more `FileEntry` 
-IDs and a `ServiceContext`. It then calls `checkOutFileEntry` with each 
-`FileEntry` ID and the `ServiceContext`: 
-
-    protected void checkOutFileEntries(ActionRequest actionRequest)
-            throws Exception {
-
-            long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
-
-            ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                    actionRequest);
-
-            if (fileEntryId > 0) {
-                    _dlAppService.checkOutFileEntry(fileEntryId, serviceContext);
-            }
-            else {
-                    long[] fileEntryIds = ParamUtil.getLongValues(
-                            actionRequest, "rowIdsFileEntry");
-
-                    for (long curFileEntryId : fileEntryIds) {
-                            _dlAppService.checkOutFileEntry(curFileEntryId, serviceContext);
-                    }
-            }
-    }
+class. This class uses the Documents and Media API to implement almost all the 
+`FileEntry` actions that the Documents and Media app supports. Also note that 
+this `checkOutFileEntries` method, as well as the rest of 
+`EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
+needs of the Documents and Media app. 
 
 ### Fine-tuning Checkout [](id=fine-tuning-checkout)
 
@@ -109,38 +120,48 @@ As the
 explains, the `majorVersion` parameter's setting determines how the file's 
 version number is incremented. 
 
-As with the file checkin example above, the following example comes from 
-`EditFileEntryMVCActionCommand`. This class's `checkInFileEntries` method checks 
-in files. The `FileEntry` IDs, `majorVersion`, `changeLog`, and `ServiceContext` 
-are retrieved from the request. The `checkInFileEntry` method is then called to 
-check in each `FileEntry`: 
+Follow these steps to use `checkInFileEntry` to check in a file:
 
-    protected void checkInFileEntries(ActionRequest actionRequest)
-            throws Exception {
+1.  Get a reference to `DLAppService`: 
 
-            long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+        @Reference
+        private DLAppService _dlAppService;
 
-            boolean majorVersion = ParamUtil.getBoolean(
-                    actionRequest, "majorVersion");
-            String changeLog = ParamUtil.getString(actionRequest, "changeLog");
+    For more information on this, see the section on 
+    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    in the getting started tutorial. 
 
-            ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                    actionRequest);
+2.  Get the data for the `checkInFileEntry` method's arguments. Obviously, if 
+    you want to call the method then you must populate its arguments. Since it's 
+    common to check in a file in response to an action by the end user, you can 
+    extract those data from the request. This example does so via 
+    `javax.portlet.ActionRequest` and 
+    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
+    but you can get these data any way you wish: 
 
-            if (fileEntryId > 0) {
-                    _dlAppService.checkInFileEntry(
-                            fileEntryId, majorVersion, changeLog, serviceContext);
-            }
-            else {
-                    long[] fileEntryIds = ParamUtil.getLongValues(
-                            actionRequest, "rowIdsFileEntry");
+        long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+        boolean majorVersion = ParamUtil.getBoolean(actionRequest, "majorVersion");
+        String changeLog = ParamUtil.getString(actionRequest, "changeLog");
 
-                    for (long curFileEntryId : fileEntryIds) {
-                            _dlAppService.checkInFileEntry(
-                                    curFileEntryId, majorVersion, changeLog, serviceContext);
-                    }
-            }
-    }
+        ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
+
+    For more information on `ServiceContext` see the tutorial 
+    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
+
+3.  Call the service reference's `checkInFileEntry` method with the data from 
+    the previous step: 
+
+        _dlAppService.checkInFileEntry(
+                fileEntryId, majorVersion, changeLog, serviceContext);
+
+You can find the full code for this example in the `checkInFileEntries` method 
+of @product@'s 
+[`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
+class. This class uses the Documents and Media API to implement almost all the 
+`FileEntry` actions that the Documents and Media app supports. Also note that 
+this `checkInFileEntries` method, as well as the rest of 
+`EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
+needs of the Documents and Media app. 
 
 ## Cancelling a Checkout [](id=cancelling-a-checkout)
 
@@ -158,28 +179,38 @@ If you invoke this method without error, you can safely assume that it discarded
 the private working copy and unlocked the file. Other users should now be able 
 to check out and edit the file. 
 
-Like the above examples, the following example comes from 
-`EditFileEntryMVCActionCommand`. This class's `cancelFileEntriesCheckOut` method 
-cancels the checkout of one or more files. This method gets `FileEntry` IDs from 
-the request and then uses them to call `cancelCheckOut`: 
+Follow these steps to cancel a checkout: 
 
-    protected void cancelFileEntriesCheckOut(ActionRequest actionRequest)
-            throws Exception {
+1.  Get a reference to `DLAppService`: 
 
-            long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+        @Reference
+        private DLAppService _dlAppService;
 
-            if (fileEntryId > 0) {
-                    _dlAppService.cancelCheckOut(fileEntryId);
-            }
-            else {
-                    long[] fileEntryIds = ParamUtil.getLongValues(
-                            actionRequest, "rowIdsFileEntry");
+    For more information on this, see the section on 
+    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    in the getting started tutorial. 
 
-                    for (long curFileEntryId : fileEntryIds) {
-                            _dlAppService.cancelCheckOut(curFileEntryId);
-                    }
-            }
-    }
+2.  Get the ID of the file whose checkout you want to cancel. Since it's common 
+    to cancel a checkout in response to a user action, you can extract the file 
+    ID from the request. This example does so via `javax.portlet.ActionRequest` 
+    and 
+    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
+    but you can get these data any way you wish: 
+
+        long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+
+3.  Call the service reference's `cancelCheckOut` method with the file's ID: 
+
+        _dlAppService.cancelCheckOut(fileEntryId);
+
+You can find the full code for this example in the `cancelFileEntriesCheckOut` 
+method of @product@'s 
+[`EditFileEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditFileEntryMVCActionCommand.java) 
+class. This class uses the Documents and Media API to implement almost all the 
+`FileEntry` actions that the Documents and Media app supports. Also note that 
+this `cancelFileEntriesCheckOut` method, as well as the rest of 
+`EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
+needs of the Documents and Media app. 
 
 ## Related Topics [](id=related-topics)
 

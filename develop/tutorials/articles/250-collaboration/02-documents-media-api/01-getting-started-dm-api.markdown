@@ -103,7 +103,7 @@ here access the default site repository.
 
 Many API methods require the ID of a folder that they perform operations in or 
 on. For example, such methods may contain parameters like `folderId` or 
-`parentFolderId`. Also note that you can use the constant
+`parentFolderId`. Also note that you can use the constant 
 `DLFolderConstants.DEFAULT_PARENT_FOLDER_ID` to specify the root folder of your
 current repository. 
 
