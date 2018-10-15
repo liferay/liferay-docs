@@ -1,11 +1,11 @@
 # Defining a Metric's View/Save Lifecycle [](id=defining-a-metrics-view-save-lifecycle)
 
-This section covers how to define a metric's view/save lifecycle. This is when
-a user applies a metric to a report using the Report Editor.
+In this section you will define the metric's view/save lifecycle: what happens 
+when a user applies a metric to a report using the Report Editor.
 
-In this section, you'll begin defining the newsletter metric's Java class. This
-assumes that you followed the instructions above, creating the
-`NewsletterTrackingAction` class and extending
+You'll begin defining the newsletter metric's Java class. This assumes that you 
+followed the instructions in the previous article to create the 
+`NewsletterTrackingAction` class and extend
 [BaseJSPTrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/BaseJSPTrackingAction.html).
 If you used the `content-targeting-tracking-action` Blade CLI template, your
 project is already extending `BaseJSPTrackingAction` and a default `view.jsp`
@@ -62,10 +62,10 @@ file is already created.
             context.put("eventTypes", getEventTypes());
         }
 
-    To understand what this method accomplishes, you should understand the
+    To understand what this method accomplishes, you should look at the
     metric's configuration lifecycle.
 
-    ![Figure 2: An Audience Targeting metric must be configured by the user and processed before it can become part of a Report.](../../images-dxp/metric-lifecycle.png)
+    ![Figure 2: An Audience Targeting metric must be configured by the user and processed before it can become part of a Report.](../../../images-dxp/metric-lifecycle.png)
 
     When the user opens the Report Editor, the render phase begins for the
     metric. The `getFormHTML(...)` method retrieves the HTML to display. You
@@ -81,14 +81,7 @@ file is already created.
     It's available by extending the `BaseJSPTrackingAction` class, and you'll
     need to add more logic to it for the newsletter metric.
     
-    The goal of the `populateContext` method is to generate a map with all the
-    parameters your JSP view needs to render the metric's HTML. This map is
-    stored in the `context` variable, which is pre-populated with basic values
-    in the Portlet logic, and then each metric contributes its specific
-    parameters to it. The `populateContext` method above populates the `alias`,
-    `elementId`, `eventType`, and `eventTypes` context variables with the
-    adjacent values from the `values` map parameter, which is then passed to the
-    JSP.
+    The `populateContext` method generates a map with all the parameters your JSP view needs to render the metric's HTML. This map is stored in the `context` variable, which is pre-populated with basic values in the Portlet logic, and then each metric contributes its specific parameters to it. The `populateContext` method above populates the `alias`, `elementId`, `eventType`, and `eventTypes` context variables with the adjacent values from the `values` map parameter, which is then passed to the JSP.
 
     For the newsletter metric, the `populateContext` method accounts for three
     use cases:

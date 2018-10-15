@@ -1,8 +1,6 @@
 # Creating a Metric [](id=creating-a-metric)
 
-Adding a new metric to the Audience Targeting application is easy. First,
-you must create a module and ensure it has the necessary Content Targeting API 
-dependencies.
+Now that all of your criteria has been defined, you can get started developing the actual metric:
 
 1.  [Create a module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module) 
     project for deploying a metric. A Blade CLI [content-targeting-tracking-action](/develop/reference/-/knowledge_base/7-1/content-targeting-tracking-action-template)
@@ -65,5 +63,4 @@ by implementing the
 [TrackingAction](@app-ref@/content-targeting/3.0.0/javadocs/com/liferay/content/targeting/api/model/TrackingAction.html)
 interface's methods. You'll begin implementing these methods next.
 
-The first thing you'll define in your newsletter metric is the view/save
-lifecycle.
+Now that the module is created, you'll define the view/save lifecycle.

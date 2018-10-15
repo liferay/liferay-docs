@@ -1,17 +1,17 @@
 # Using a Tracking Mechanism [](id=using-a-tracking-mechanism)
 
-Imagine an administrator has successfully configured and saved your custom
-metric to his or her report. Now what? Your metric needs to fulfill its
-purpose, which is to track the `view` event type for the defined newsletter. To
-do this, you must define a tracking mechanism. For your newsletter, you'll use a
-transparent image as the tracking mechanism, which would have the *View*
-tracking event capability. Whenever the image is viewed, the newsletter metric
-computes and stores the information.
+An administrator has successfully configured and saved your custom metric to 
+his or her report. Now what? Your metric needs to fulfill its purpose, which is 
+to track the `view` event type for the defined newsletter. To do this, you must 
+define a tracking mechanism. For your newsletter, you'll use a transparent 
+image as the tracking mechanism, which would have the *View* tracking event 
+capability. Whenever the image is viewed, the newsletter metric computes and 
+stores the information.
 
 For the newsletter metric, you'll use a tracking mechanism provided by the
 Audience Targeting app.
 
-1.  You must set the analytics processor that the Content Targeting API provides
+1.  Set the analytics processor that the Content Targeting API provides
     for tracking events. Add the following method and private field:
 
         @Reference
@@ -21,14 +21,14 @@ Audience Targeting app.
 
         private AnalyticsProcessor _analyticsProcessor;
 
-    The analytics processor is a module of the Audience Targeting Analytics
-    system. It contains a servlet to track analytics from Liferay pages (views,
-    clicks, etc.) and an API to leverage this tracking mechanism. In the
-    `setAnalyticsProcesoor(...)` method, you're obtaining a reference of the
-    current analytics processor to build the URL used to generate a transparent
-    image. All you have to do is insert the generated URL into your newsletter's
-    HTML, and the transparent image tracks who reads it. Everything is processed
-    by the default Audience Targeting Analytics system automatically.
+    The analytics processor contains a servlet to track analytics from Liferay 
+    pages (views, clicks, etc.) and an API to leverage this tracking mechanism. 
+    In the `setAnalyticsProcesoor(...)` method, you're obtaining a reference of 
+    the current analytics processor to build the URL used to generate a 
+    transparent image. All you have to do is insert the generated URL into your 
+    newsletter's HTML, and the transparent image tracks who reads it. 
+    Everything is processed by the default Audience Targeting Analytics system 
+    automatically.
 
     Now that you've obtained a reference of the analytics processor, you need to
     add logic for generating the appropriate tracking URL.
