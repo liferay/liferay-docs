@@ -6,16 +6,36 @@ and feel. This tutorial covers both these options.
 
 ## Defining Portlets on a Page [](id=defining-portlets-on-a-page)
 
-To add a portlet to a sitemap, provide its portlet ID. You can find this in the
-App Manager of the Control Panel. Select the suite containing the App, click the
-App, click the App's web module link, and open the *Portlets* tab that appears.
-The portlet ID is displayed below the name of the App:
+To add a portlet to a sitemap, provide its portlet ID. You can find this through 
+the 
+[Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell). 
+Follow these steps:
 
-    {
-        "portletId": "com_liferay_journal_content_web_portlet_JournalContentPortlet"
-    }
+1.  Open the Control Panel and go to Configuration &rarr; Gogo Shell.
 
-![Figure 1: Portlet IDs are listed in the App Manager.](../../../../../images/resources-importer-app-manager-configuration.png)
+2.  Run the command `lb [app prefix]`, and locate the app's web bundle. For 
+    example, run `lb blogs` to find the blogs web bundle.
+    
+        100|Active     |   10|Liferay Blogs Web (3.0.7)
+
+3.  Run the command `scr:list [bundle ID]`, and locate the app's component ID. 
+    The blogs portlet entry is shown below. The last number preceding the 
+    bundle's state is the component ID:
+
+        [ 100] com.liferay.blogs.web.internal.portlet.BlogsPortlet enabled 
+        [ 196] [active] 
+
+4.  Run the command `scr:info [component ID]`. For example, to list the info for 
+    the blogs portlet component, run `scr:info 196`. Note that the bundle and/or 
+    component ID may be different for your instance.
+
+5.  Search for `javax.portlet.name` in the results. `javax.portlet.name`'s value 
+    is the portlet ID required for the sitemap. The blogs portlet's ID is shown 
+    below:
+    
+        javax.portlet.name = com_liferay_blogs_web_portlet_BlogsPortlet
+
+![Figure 1: Portlet IDs can be found via the Gogo Shell.](../../../../../images/resources-importer-gogo-shell.png)
 
 This approach embeds the portlet with its default settings. To customize the 
 portlet, you must configure the portlet's preferences. 
