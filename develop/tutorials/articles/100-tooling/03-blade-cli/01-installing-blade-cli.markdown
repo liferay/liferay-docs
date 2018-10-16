@@ -22,15 +22,14 @@ If you need to configure proxy settings for Blade CLI, follow the
 
 Follow the steps below to download and install Blade CLI:
 
-1.  Download the
-    [Liferay Project SDK installer](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/3.2.0%20M1/)
+1.  Download the latest
+    [Liferay Project SDK installer](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
     that corresponds with your operating system (e.g., Windows, MacOS, or
-    Linux). The Project SDK installer is currently listed under *Liferay IDE*,
-    so select the latest IDE version for the latest Project SDK installer. You
-    can select an installer that includes @ide@, depending on your needs. 
-
-    <!-- The Project SDK location on SF will likely change. Update above step
-    when it does. -Cody -->
+    Linux). The Project SDK installer is listed under *Liferay IDE*, so the
+    folder versions are based on IDE releases. You can select an installer that
+    does not include @ide@, if you don't intend to use it. The Project SDK
+    installer is available for versions 3.2.0+. Do **not** select the large
+    green download button; this downloads Liferay Portal instead.
 
 2.  Run the installer. Click *Next* to step through the installer's
     introduction.
