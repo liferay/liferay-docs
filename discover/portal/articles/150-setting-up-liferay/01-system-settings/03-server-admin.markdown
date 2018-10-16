@@ -247,7 +247,16 @@ saved in the @product@ temp folder `/liferay/document_conversion/`. When
 @product@ receives a conversion request, it checks this folder to see if the
 converted document already exists. If the converted document is found, @product@
 returns it to the user. Otherwise, it performs a fresh conversion and saves
-a copy in the temp folder. If the cache is turned off, @product@ always
+a copy in the temp folder. 
+
++$$$
+
+**Note:** Since OpenOffice functions using local server caching operating a remote instance of OpenOffice is not recommended.  Please use a local instance to prevent any limitations.
+
+$$$
+
+
+If the cache is turned off, @product@ always
 regenerates the file even if a previously existing conversion already exists in
 the temp folder. You can turn the cache off by setting the following property:
 
