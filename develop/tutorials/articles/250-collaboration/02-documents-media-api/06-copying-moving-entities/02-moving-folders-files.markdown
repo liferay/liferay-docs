@@ -38,39 +38,43 @@ The operation for moving files is almost identical. To move files, use the
 For a full description of this method and its parameters, see its 
 [Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#moveFileEntry-long-long-com.liferay.portal.kernel.service.ServiceContext-). 
 
-The Documents and Media Library's 
-[`EditEntryMVCActionCommand`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/document-library/document-library-web/src/main/java/com/liferay/document/library/web/internal/portlet/action/EditEntryMVCActionCommand.java) 
-class contains an example of both methods. This class's `moveEntries` method 
-iterates over the IDs of several existing folders (`folderIds`), calling 
-`moveFolder` to move each folder to a different folder (`newFolderId`). The same 
-approach is then used with `moveFileEntry` to move several files 
-(`fileEntryIds`) to the same folder: 
+Follow these steps to use `moveFolder` and `moveFileEntry` to move a folder and 
+a file, respectively. Although this example does both, you can omit one 
+operation if you don't need to perform it. 
 
-    protected void moveEntries(ActionRequest actionRequest) throws Exception {
+1.  Get a reference to `DLAppService`: 
 
-            long newFolderId = ParamUtil.getLong(actionRequest, "newFolderId");
+        @Reference
+        private DLAppService _dlAppService;
 
-            ServiceContext serviceContext = ServiceContextFactory.getInstance(
-                    DLFileEntry.class.getName(), actionRequest);
+    For more information on this, see the section on 
+    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    in the getting started tutorial. 
 
-            long[] folderIds = ParamUtil.getLongValues(
-                    actionRequest, "rowIdsFolder");
+2.  Get the data you need to call the methods. Since moving folders and files is 
+    typically done in response to a user action, you can get these data from the 
+    request. This example does so via `javax.portlet.ActionRequest` and 
+    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
+    but you can get these data any way you wish: 
 
-            // Move the folders
-            for (long folderId : folderIds) {
-                    _dlAppService.moveFolder(folderId, newFolderId, serviceContext);
-            }
+        // Get the folder IDs
+        long folderId = ParamUtil.getLong(actionRequest, "folderId");
+        long newFolderId = ParamUtil.getLong(actionRequest, "newFolderId");
 
-            long[] fileEntryIds = ParamUtil.getLongValues(
-                    actionRequest, "rowIdsFileEntry");
+        // Get the file ID
+        long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
 
-            // Move the files
-            for (long fileEntryId : fileEntryIds) {
-                    _dlAppService.moveFileEntry(fileEntryId, newFolderId, serviceContext);
-            }
+        ServiceContext serviceContext = ServiceContextFactory.getInstance(
+                DLFileEntry.class.getName(), actionRequest);
 
-            ...
-    }
+3.  Call the service reference method(s). This example calls `moveFolder` to 
+    move a folder (`folderId`) to a different folder (`newFolderId`). It then 
+    calls `moveFileEntry` to move a file (`fileEntryId`) to the same destination 
+    folder: 
+
+        _dlAppService.moveFolder(folderId, newFolderId, serviceContext);
+
+        _dlAppService.moveFileEntry(fileEntryId, newFolderId, serviceContext);
 
 ## Related Topics [](id=related-topics)
 
