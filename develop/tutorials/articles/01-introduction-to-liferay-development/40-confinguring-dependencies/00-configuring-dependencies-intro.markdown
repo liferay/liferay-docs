@@ -1,14 +1,14 @@
 # Configuring Dependencies [](id=configuring-dependencies)
 
-Using external modules in your project requires configuring their dependencies.
-To do this, look up the modules' attributes and plug them into dependency
-entries for your build system (either 
+Using external artifacts in your project requires configuring their
+dependencies. To do this, look up the artifact's attributes and plug them into
+dependency entries for your build system (either 
 [Gradle](https://gradle.org/), 
 [Maven](https://maven.apache.org/), or 
 [Ant/Ivy](http://ant.apache.org/ivy/)). Your build system downloads the 
 dependency artifacts your project needs to compile successfully. 
 
-Before specifying a module as a dependency, you must first find its artifact 
+Before specifying an artifact as a dependency, you must first find its
 attributes. Artifacts have these attributes: 
 
 -   *Group ID*: Authoring organization 
@@ -24,14 +24,22 @@ dependencies:
 
 ## Finding Core @product@ Artifacts [](id=finding-core-liferay-portal-artifacts)
 
-Each module is composed of a `jar` file that contains the module's OSGi metadata
-in a `MANIFEST.MF` file. You can find the artifact attributes for @product@'s
-core modules inside this file. The manifest also specifies the module's artifact
-attributes. For example, these two OSGi headers specify the module's artifact ID
-and version: 
+Each Liferay artifact is a JAR file whose `META-INF/MANIFEST.MF` file contains
+the artifact's OSGi metadata. The manifest also specifies the artifact's
+attributes. For example, these two OSGi headers specify the artifact ID and
+version: 
 
-    Bundle-SymbolicName:  artifact ID
-    Bundle-Version: version
+    Bundle-SymbolicName:  [artifact ID]
+    Bundle-Version: [version]
+
++$$$
+
+**Important:** Artifacts in @product@ fix packs override @product@ 
+installation artifacts. Subfolders of a fix pack ZIP file's `binaries` folder
+hold the artifacts. If an installed fix pack provides an artifact you depend on,
+specify the version of that fix pack artifact in your dependency. 
+
+$$$
 
 This table lists the group ID, artifact ID, version, and origin for each core
 @product@ artifact: 
@@ -40,15 +48,15 @@ This table lists the group ID, artifact ID, version, and origin for each core
 
  File          | Group ID | Artifact ID | Version | Origin | 
 :------------ | :--------------- | :-------- | :--------- | :------ |
- `portal-kernel.jar` | `com.liferay.portal` | `com.liferay.portal.kernel` | (see JAR's `MANIFEST.MF`) | @product@ dependencies ZIP |
- `portal-impl.jar` | `com.liferay.portal` |  `com.liferay.portal.impl` | (see JAR's `MANIFEST.MF`) | @product@ `.war` |
- `portal-test.jar` | `com.liferay.portal` |  `com.liferay.portal.test` | (see JAR's `MANIFEST.MF`) | @product@ `.war` |
- `portal-test-integration.jar` | `com.liferay.portal` |  `com.liferay.portal.test.integration` | (see JAR's `MANIFEST.MF`) | @product@ `.war` |
- `util-bridges.jar` | `com.liferay.portal` | `com.liferay.util.bridges` | (see JAR's `MANIFEST.MF`) |  @product@ `.war` |
- `util-java.jar` | `com.liferay.portal` |  `com.liferay.util.java` | (see JAR's `MANIFEST.MF`) |  @product@ `.war` |
- `util-slf4j.jar` | `com.liferay.portal` |  `com.liferay.util.slf4j` | (see JAR's `MANIFEST.MF`) |  @product@ `.war` |
- `util-taglibs.jar` | `com.liferay.portal` | `com.liferay.util.taglib` | (see JAR's `MANIFEST.MF`) | @product@ `.war` |
- `com.liferay.*` JAR files | `com.liferay` | (see JAR's `MANIFEST.MF`) | (see JAR's `MANIFEST.MF`) | @product@ dependencies ZIP and the OSGi ZIP |
+ `portal-kernel.jar` | `com.liferay.portal` | `com.liferay.portal.kernel` | (see JAR's `MANIFEST.MF`) | fix pack ZIP, @product@ installation, or @product@ dependencies ZIP |
+ `portal-impl.jar` | `com.liferay.portal` |  `com.liferay.portal.impl` | (see JAR's `MANIFEST.MF`) | fix pack ZIP or @product@ `.war` |
+ `portal-test.jar` | `com.liferay.portal` |  `com.liferay.portal.test` | (see JAR's `MANIFEST.MF`) | fix pack ZIP or @product@ `.war` |
+ `portal-test-integration.jar` | `com.liferay.portal` |  `com.liferay.portal.test.integration` | (see JAR's `MANIFEST.MF`) | fix pack ZIP or @product@ `.war` |
+ `util-bridges.jar` | `com.liferay.portal` | `com.liferay.util.bridges` | (see JAR's `MANIFEST.MF`) |  fix pack ZIP or @product@ `.war` |
+ `util-java.jar` | `com.liferay.portal` |  `com.liferay.util.java` | (see JAR's `MANIFEST.MF`) |  fix pack ZIP or @product@ `.war` |
+ `util-slf4j.jar` | `com.liferay.portal` |  `com.liferay.util.slf4j` | (see JAR's `MANIFEST.MF`) | fix pack ZIP or  @product@ `.war` |
+ `util-taglibs.jar` | `com.liferay.portal` | `com.liferay.util.taglib` | (see JAR's `MANIFEST.MF`) | fix pack ZIP or @product@ `.war` |
+ `com.liferay.*` JAR files | `com.liferay` | (see JAR's `MANIFEST.MF`) | (see JAR's `MANIFEST.MF`) | fix pack ZIP, @product@ installation, @product@ dependencies ZIP, or the OSGi ZIP |
 
 Next, you'll learn how to find artifacts for @product@ apps and independent 
 modules. 
@@ -88,9 +96,9 @@ Follow these steps to get a deployed module's information:
     Manager*. 
 
 2.  Search for the module by its display name, symbolic name, or related
-    keywords. You can also browse for the module in its app or app suite. 
-    Whether browsing or searching, the App Manager shows the module's artifact 
-    ID and version number. 
+    keywords. You can also browse for the module in its app. Whether browsing
+    or searching, the App Manager shows the module's artifact ID and version
+    number. 
 
 ![Figure 1: You can inspect deployed module artifact IDs and version numbers.](../../../images/intro-configuring-dependencies-search-app-manager-for-module.png)
 
@@ -136,8 +144,9 @@ to find it:
 
         g! disconnect
 
-5.  On [Maven Central](https://search.maven.org/), search for the module by its
-    artifact ID. 
+5.  On [Maven Central](https://search.maven.org/) or
+    [MVNRepository](https://mvnrepository.com),
+    search for the module by its artifact ID. 
 
 6.  Determine the group ID by matching the `Bundle-Vendor` value from step 3 
     with a group listed that provides the artifact. 
@@ -147,9 +156,17 @@ Next, you'll learn how to use @product@'s reference documentation to find a
 
 ### Reference Docs [](id=reference-docs)
 
-@product@'s app Javadoc lists each module's artifact ID, version number, and 
-display name. This is the best place to look up @product@ modules that aren't 
-yet deployed to your @product@ instance. 
+@product@'s app Javadoc lists each app module's artifact ID, version number, and
+display name. This is the best place to look up @product@ app modules that
+aren't yet deployed to your @product@ instance. 
+
++$$$
+
+**Note:** To find artifact information on a Core @product@ artifact, refer to 
+the previous section
+[Finding Core @product@ artifacts](#finding-core-liferay-portal-artifacts).  
+
+$$$
 
 Follow these steps to find a @product@ app module's attributes in the Javadoc: 
 
@@ -167,7 +184,7 @@ The heading above the package name shows the module's artifact ID, version
 number, and display name. Remember, the group ID for all app modules is 
 `com.liferay`. 
 
-![Figure 3: @product@ app Javadoc overviews list each module's display name, followed by its group ID, artifact ID, and version number in a colon-separated string.  It's a Gradle artifact syntax.](../../../images/intro-configuring-dependencies-module-info-in-javadoc-overview.png)
+![Figure 3: @product@ app Javadoc overviews list each app module's display name, followed by its group ID, artifact ID, and version number in a colon-separated string.  It's a Gradle artifact syntax.](../../../images/intro-configuring-dependencies-module-info-in-javadoc-overview.png)
 
 +$$$
 
@@ -176,29 +193,26 @@ reference docs.
 
 $$$
 
-Next, you'll learn how to look up Liferay and non-Liferay artifacts on Maven 
-Central. 
+Next, you'll learn how to look up artifacts on MVNRepository and Maven  Central. 
 
 ### Maven Central [](id=maven-central)
 
-Most artifacts, regardless of type or origin, are on Maven Central. Use these 
-steps to find an artifact on Maven Central: 
-
-1.  Go to Maven Central at 
-    [https://search.maven.org/](https://search.maven.org/). 
-
-2.  Search for the artifact. The search results list each artifact's attributes. 
+Most artifacts, regardless of type or origin, are on 
+[MVNRepository](https://mvnrepository.com/)
+and
+[Maven Central](https://search.maven.org/).
+These sites can help you find artifacts based on class packages. It's common to
+include an artifact's ID in the start of an artifact's package names. For
+example, if you depend on the class
+`org.osgi.service.component.annotations.Component`, search for the package name
+`org.osgi.service.component.annotations` on one of the Maven sites. 
 
 +$$$
 
-**Tip**: The best way to find an artifact on Maven Central is to search for one 
-of its Java packages. For example, to find an artifact containing the class 
-`org.osgi.service.component.annotations.Component`, search for the package 
-`org.osgi.service.component.annotations`. 
+**Note:** Make sure to follow the instructions listed earlier to determine the 
+version of Liferay artifacts you need. 
 
 $$$
-
-![Figure 4: You can search for artifacts on Maven Central.](../../../images/intro-configuring-dependencies-search-maven-central.png)
 
 Now that you have your artifact's attribute values, you're ready to configure a 
 dependency on it. 
