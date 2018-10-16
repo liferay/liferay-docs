@@ -212,7 +212,7 @@ $$$
 Once you've installed these tools, you can use the Control Panel's External
 Services tab to configure @product@ to use them.
 
-### OpenOffice/LibreOffice configuration [](id=openoffice-libreoffice-configuration)
+### OpenOffice/LibreOffice Configuration [](id=openoffice-libreoffice-configuration)
 
 OpenOffice and LibreOffice are open source office suites which are usually run
 in graphical mode to create documents, but they can also be run in server
@@ -221,6 +221,15 @@ documents to and from all of the file types it supports. Once configured,
 @product@ uses this feature to convert content on the fly automatically. You can
 install OpenOffice or LibreOffice on the same machine where @product@ is running
 or you can connect to a separate host. 
+
++$$$
+
+**Note:** Running OpenOffice or LibreOffice in server mode on a remote host is 
+not recommended for converting documents in @product@, and is not fully 
+supported. To avoid unexpected behavior during document conversions, you should 
+run OpenOffice or LibreOffice in server mode on the same machine as @product@. 
+
+$$$
 
 You can start LibreOffice or OpenOffice in server mode with the following
 command:
