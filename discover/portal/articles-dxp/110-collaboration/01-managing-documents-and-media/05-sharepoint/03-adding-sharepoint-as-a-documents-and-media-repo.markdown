@@ -16,13 +16,13 @@ Follow these steps to add your SharePoint Library to Documents and Media in
 
 4.  Specify values for these fields: 
 
-    - **Site Absolute URL:** Resolves relative URLs. For SharePoint Online, the 
+    **Site Absolute URL:** Resolves relative URLs. For SharePoint Online, the 
     value follows this pattern: `https://[your-site-name].sharepoint.com`.
 
-    - **Library Path:** A relative path from the *Site Absolute URL* that points 
+    **Library Path:** A relative path from the *Site Absolute URL* that points 
     to the SharePoint Document Library you want to mount in Documents and Media 
     (an example path could be `Shared Documents`).
-    
+
     ![Figure 1: The Repository Configuration form is where you specify access to the SharePoint Library you want to use.](../../../../images-dxp/sharepoint-repo-configuration-form.png)
 
 5.  Click *Save*.
