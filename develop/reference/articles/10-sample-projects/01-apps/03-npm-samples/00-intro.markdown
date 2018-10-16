@@ -15,12 +15,9 @@ preferred build tool:
 +$$$
 
 **Note:** When building the npm samples, an error can occur caused by the limit
-of open files allowed by your operating system:
-
-    Error: ENFILE: file table overflow
-
-Consult your operating system vendor's documentation to learn how to configure
-the maximum number of open files for your OS.
+of open files allowed by your operating system. Consult your operating system
+vendor's documentation to learn how to configure the maximum number of open
+files for your OS.
 
 $$$
 
