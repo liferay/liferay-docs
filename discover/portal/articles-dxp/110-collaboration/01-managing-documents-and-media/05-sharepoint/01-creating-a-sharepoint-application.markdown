@@ -47,7 +47,7 @@ instance:
                 Right="QueryAsUserIgnoreAppPrincipal" 
             />
         </AppPermissionRequests>
-    
+
 4.  Once you provide the permissions XML, click *Create*.
 
 5.  Next, go to *Settings* &rarr; *Site App Permissions* in your SharePoint 
@@ -58,6 +58,6 @@ instance:
     example app identifier: 
     
         i:0i.t|ms.sp.ext|6123d38d-2998-4972-9aaa-71a4da9f3a5a@b9c24ab3-ad34-4943-ab57-729d8c329053
-        
+ 
 Great! Now @product@ is registered as an application in your SharePoint 
 instance. Next, you must create a new SharePoint repository type. 
