@@ -29,7 +29,7 @@ Follow these steps to create a thumbnail preview for your theme:
 **Note:** The 
 [Theme Builder Gradle plugin](/develop/reference/-/knowledge_base/7-1/theme-builder-gradle-plugin) 
 doesn't recognize a `thumbnail.png` file. If you're using this plugin to build 
-your theme, instead, you must create a `screenshot.png` file in your theme's 
+your theme instead, you must create a `screenshot.png` file in your theme's 
 `images` folder that is 1080 pixels high by 864 pixels wide. The thumbnail is 
 automatically generated from the screenshot for you when the theme is built.
 
