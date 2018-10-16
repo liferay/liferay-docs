@@ -40,6 +40,16 @@ recommended Liferay annotations a Service Builder Spring Bean can use.
 - [Use `@BeanReference` to reference a Spring Bean that is in the Application Context.](#referencing-a-spring-bean-that-is-in-the-application-context)
 - [Use `@ServiceReference` to reference an OSGi service.](#referencing-an-osgi-service)
 
++$$$
+
+**Important:** When invoking service entity updates (e.g., 
+`fooService.update(object)`) for services that have MVCC enabled, make sure to
+do so in transactions. Propagate rejected transactions to the UI for the user to
+handle. For details, see
+[Multiversion concurrency control (MVCC)](/develop/tutorials/-/knowledge_base/7-1/defining-global-service-information#multiversion-concurrency-control-mvcc).
+
+$$$
+
 The `@BeanReference` annotation is explained first. 
 
 ## Referencing a Spring Bean that is in the Application Context [](id=referencing-a-spring-bean-that-is-in-the-application-context)
