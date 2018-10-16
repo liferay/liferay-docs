@@ -4,7 +4,7 @@ A service's global information applies to all its entities, so it's a good place
 to start. In Liferay @ide@, select the *Service Builder* node in the upper left
 corner of the Overview mode of your `service.xml` file. The main section of the
 view now shows the Service Builder form in which to enter your service's global
-information. The fields include the service's,
+information. The fields include the service's
 
 - [Package path](#package-path)
 - [Namespace options](#namespace-options)
@@ -79,14 +79,15 @@ number. When Hibernate receives the update, it generates an `update` SQL
 statement that uses a `where` clause to make sure the current data version is
 the version you expect. 
 
-If the current data version:
+If the current data version
  
 - **matches the expected version**, your data operation is based on up-to-date 
-data and is accepted.
-- **doesn't match the expected version**, the data you're operating on is 
-outdated and @product@ rejects your data operation and throws an exception---you
-can prompt the user on how to handle the exception (e.g., suggest retrying the
-operation). 
+  data and is accepted.
+
+- **doesn't match the expected version**, the data you're operating on is
+  outdated. @product@ rejects your data operation and throws an exception,
+  which you can catch to help the user handle the exception (e.g., suggest
+  retrying the operation). 
 
 **Important:** Enable MVCC for all your services by setting 
 `mvcc-enabled="true"` in your `<service-builder/>` element. When invoking
