@@ -15,6 +15,60 @@ entities:
 To see all such methods, see the 
 [`DLAppService` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
 
+Follow these steps to use the above `getFileEntriesAndFileShortcuts` method. 
+Note that the example in these steps gets all files and shortcuts from the 
+default site repository's root folder: 
+
+1.  Get a reference to `DLAppService`: 
+
+        @Reference
+        private DLAppService _dlAppService;
+
+    For more information on this, see the section on 
+    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    in the getting started tutorial. 
+
+2.  Get the data needed to populate the method's arguments. You can get these 
+    data any way you wish. To specify the default site repository, you can use 
+    the group ID as the repository ID. This example gets the group ID from the 
+    request 
+    (`javax.portlet.ActionRequest`) via 
+    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html): 
+
+        long groupId = ParamUtil.getLong(actionRequest, "groupId");
+
+    Getting the parent folder ID, workflow status, and start and end parameters 
+    isn't necessary because @product@ provides a constants for them. The next 
+    step shows this in detail. 
+
+3.  Call the service reference's `getFileEntriesAndFileShortcuts` method with 
+    the data from the previous step and any other values you want to provide. 
+
+        _dlAppService.getFileEntriesAndFileShortcuts(
+                groupId, 
+                DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, 
+                WorkflowConstants.STATUS_APPROVED, 
+                QueryUtil.ALL_POS, 
+                QueryUtil.ALL_POS
+        )
+
+    Here's a description of the arguments used in this example: 
+
+    -   `groupId`: Using the group ID as the repository ID specifies that the 
+        operation takes place in the default site repository. 
+    -   `DLFolderConstants.DEFAULT_PARENT_FOLDER_ID`: Uses the 
+        [`DLFolderConstants`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFolderConstants.html) 
+        constant `DEFAULT_PARENT_FOLDER_ID` to specify the repository's root 
+        folder. 
+    -   `WorkflowConstants.STATUS_APPROVED`: Uses the 
+        [`WorkflowConstants`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/workflow/WorkflowConstants.html) 
+        constant `STATUS_APPROVED` to specify only files/folders that have been 
+        approved via workflow. 
+    -   `QueryUtil.ALL_POS`: Uses the 
+        [`QueryUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/QueryUtil.html) 
+        constant `ALL_POS` for the start and end positions in the results. This 
+        specifies all results, bypassing pagination. 
+
 ## Related Topics [](id=related-topics)
 
 [Getting Started with the Documents and Media API](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
