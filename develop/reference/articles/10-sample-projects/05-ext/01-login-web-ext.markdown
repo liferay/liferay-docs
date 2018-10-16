@@ -37,13 +37,12 @@ do this:
 
         stop 423
 
-Once the original bundle is stopped, deploy the Ext module. Note that you can
-not leverage Blade or Gradle's `deploy` command to do this. The `deploy` command
+Once the original bundle is stopped, deploy the Ext module. Note that you cannot
+leverage Blade or Gradle's `deploy` command to do this. The `deploy` command
 deploys the module to the `osgi\marketplace\override` folder by default, which
-does not properly configure Ext modules for usage. It's recommended to manually
-build and copy the Ext module's JAR to the `deploy` folder, or leverage Liferay
-Dev Studio's
-[drag-and-drop deployment](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-liferay-ide)
+does not configure Ext modules properly for usage. You should build and copy the
+Ext module's JAR to the `deploy` folder manually, or leverage Liferay Dev
+Studio's [drag-and-drop deployment](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-liferay-ide)
 feature.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
@@ -58,7 +57,7 @@ You can create your own Ext module project by
 - Declaring the original module name and version.
 - Providing the source code that will replace the original.
 
-To properly declare the original module in the `build.gradle` file (only
+To declare the original module in the `build.gradle` file properly (only
 supports Gradle), you must specify the original module's Bundle Symbolic Name
 and the original module's exact version. In this example, this is configured
 like this:
