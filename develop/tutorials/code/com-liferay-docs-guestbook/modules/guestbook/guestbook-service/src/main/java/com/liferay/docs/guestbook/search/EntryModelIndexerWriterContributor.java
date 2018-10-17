@@ -28,13 +28,7 @@ public class EntryModelIndexerWriterContributor
 			Document document = modelIndexerWriterDocumentHelper.getDocument(
 	entry);
 			
-			// Call `setPerformActionMethod`, and pass it the Entry's document using the
-			// lambda expression. Call the `getDocument` method of the
-			// ModelIndexerWriterDocumentHelper class.
-
 			batchIndexingActionable.addDocuments(document);
-			
-			// Conclude the lambda expression, adding the entry document to the collection of Documents for batch indexing.
 			
 		});
 	}

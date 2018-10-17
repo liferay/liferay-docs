@@ -22,8 +22,6 @@ public class GuestbookModelSummaryContributor
 	public Summary getSummary(
 		Document document, Locale locale, String snippet) {
 
-		System.out.println("GuestbookModelSummaryContributor.getSummarySummary()");
-
 		Summary summary = createSummary(document);
 
 		summary.setMaxContentLength(128);
@@ -33,8 +31,6 @@ public class GuestbookModelSummaryContributor
 
 	private Summary createSummary(Document document) {
 		
-		System.out.println("GuestbookModelSummaryContributor.createSummary()");
-
 		String prefix = Field.SNIPPET + StringPool.UNDERLINE;
 
 		String title = document.get(prefix + Field.TITLE, Field.TITLE);

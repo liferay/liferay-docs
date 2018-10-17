@@ -18,20 +18,18 @@ public class EntrySearchRegistrar {
 
 	@Activate
 	protected void activate(BundleContext bundleContext) {
-		_serviceRegistration = modelSearchRegistrarHelper.register(Entry.class, bundleContext, modelSearchDefinition -> {
-			modelSearchDefinition.setDefaultSelectedFieldNames(
-					Field.COMPANY_ID, Field.ENTRY_CLASS_NAME,
-Field.ENTRY_CLASS_PK, Field.UID, Field.SCOPE_GROUP_ID, Field.GROUP_ID);
+		_serviceRegistration = modelSearchRegistrarHelper.register(Entry.class, bundleContext,
+				modelSearchDefinition -> {
+					modelSearchDefinition.setDefaultSelectedFieldNames(Field.COMPANY_ID, Field.ENTRY_CLASS_NAME,
+							Field.ENTRY_CLASS_PK, Field.UID, Field.SCOPE_GROUP_ID, Field.GROUP_ID);
 
-			modelSearchDefinition.setDefaultSelectedLocalizedFieldNames(
-				Field.TITLE, Field.CONTENT);
+					modelSearchDefinition.setDefaultSelectedLocalizedFieldNames(Field.TITLE, Field.CONTENT);
 
-			modelSearchDefinition.setModelIndexWriteContributor(
-	modelIndexWriterContributor);
-			modelSearchDefinition.setModelSummaryContributor(
-	modelSummaryContributor); modelSearchDefinition.setSelectAllLocales(true);
+					modelSearchDefinition.setModelIndexWriteContributor(modelIndexWriterContributor);
+					modelSearchDefinition.setModelSummaryContributor(modelSummaryContributor);
+					modelSearchDefinition.setSelectAllLocales(true);
 
-		});
+				});
 	}
 
 	@Deactivate

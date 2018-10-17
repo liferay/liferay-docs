@@ -24,8 +24,6 @@ public class GuestbookModelIndexerWriterContributor
 		BatchIndexingActionable batchIndexingActionable,
 		ModelIndexerWriterDocumentHelper modelIndexerWriterDocumentHelper) {
 
-		System.out.println("customize method of GuestbookModelIndexWriterContributor was called");
-
 		batchIndexingActionable.setPerformActionMethod((Guestbook guestbook) -> {
 			Document document = modelIndexerWriterDocumentHelper.getDocument(
 	guestbook);

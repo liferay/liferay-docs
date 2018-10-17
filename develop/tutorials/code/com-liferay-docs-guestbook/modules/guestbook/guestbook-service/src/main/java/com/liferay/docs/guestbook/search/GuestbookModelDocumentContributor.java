@@ -24,7 +24,6 @@ public class GuestbookModelDocumentContributor
 
 	@Override
 	public void contribute(Document document, Guestbook guestbook) {
-		System.out.println("contribute method of GuestbookModelDocumentContributor was called");
 		try {
 			document.addDate(Field.MODIFIED_DATE, guestbook.getModifiedDate());
 

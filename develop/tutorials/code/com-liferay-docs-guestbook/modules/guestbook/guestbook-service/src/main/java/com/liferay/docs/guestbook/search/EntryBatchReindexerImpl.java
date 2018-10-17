@@ -35,6 +35,7 @@ public class EntryBatchReindexerImpl implements EntryBatchReindexer {
 		});
 
 		batchIndexingActionable.performActions();
+		
 	}
 
 	@Reference(target = "(indexer.class.name=com.liferay.docs.guestbook.model.Entry)")
