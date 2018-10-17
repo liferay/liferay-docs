@@ -16,8 +16,7 @@ $$$
 Adaptive Media integrates with Documents and Media, Blogs, and Web Content. It
 generates a set of images for use on various screens. When the content is
 accessed, Adaptive Media checks the screen type and resolution and selects
-appropriate the appropriate image. You can find the Adaptive Media app on
-[Liferay Marketplace](https://web.liferay.com/marketplace), for Liferay Portal
-CE 7.1 and Liferay DXP 7.1. 
+appropriate the appropriate image. Adaptive Media comes preinstalled in Liferay 
+Portal CE 7.1 and Liferay DXP 7.1. 
 
 In this section, you'll learn how to manage and use Adaptive Media in @product@. 
