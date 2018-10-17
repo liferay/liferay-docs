@@ -136,7 +136,7 @@ correctly display options based on staging context.
         <c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbook.getGuestbookId(), ActionKeys.DELETE) %>'>
 
     Close the `if` statement directly after the `<liferay-ui:icon-delete />`
-    tag.When completed, the `if` statement should look like this:
+    tag. When completed, the `if` statement should look like this:
 
         <c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbook.getGuestbookId(), ActionKeys.DELETE) %>'>
             <portlet:actionURL name="deleteGuestbook" var="deleteURL">
