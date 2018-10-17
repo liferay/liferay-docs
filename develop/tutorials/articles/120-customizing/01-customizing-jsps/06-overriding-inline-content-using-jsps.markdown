@@ -209,7 +209,7 @@ before. This is expected because it uses the same logic as `FieldsetTag`'s
 
 ![Figure 1: @product@'s homepage's search and sign in components are in a `fieldset`.](../../../images/jsp-readme-inline-fieldset.png)
 
-The `fieldset` star logic is ready for customization. Before the end of the
+The `fieldset` starting logic is ready for customization. Before the end of the
 `fieldset` tag's starting logic, for example, let's print the word *test*
 surrounded by asterisks. Insert this line before the `start.jsp`'s last `div`
 tag: 
