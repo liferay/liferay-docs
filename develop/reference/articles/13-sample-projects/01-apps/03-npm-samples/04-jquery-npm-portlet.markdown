@@ -1,8 +1,5 @@
 # jQuery npm Portlet [](id=jquery-npm-portlet)
 
-**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
-CE GA7+.
-
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The jQuery npm Portlet sample provides a portlet that uses the
@@ -11,6 +8,9 @@ The jQuery npm Portlet sample provides a portlet that uses the
 ![Figure 1: Clicking on the portlet's hand symbol displays a message.](../../../../images/jquery-npm-sample.png)
 
 This portlet showcases the fast HTML document traversal jQuery offers.
+
+**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
+CE GA7+.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 

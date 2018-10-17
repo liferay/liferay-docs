@@ -1,8 +1,5 @@
 # Metal.js npm Portlet [](id=metal-js-npm-portlet)
 
-**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
-CE GA7+.
-
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Metal.js npm Portlet sample provides a portlet that uses the
@@ -12,6 +9,9 @@ The Metal.js npm Portlet sample provides a portlet that uses the
 
 This portlet displays a Metal.js based dialog that has been rendered using SOY
 templates.
+
+**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
+CE GA7+.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 

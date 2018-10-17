@@ -1,8 +1,5 @@
 # Vue.js npm Portlet [](id=vue-js-npm-portlet)
 
-**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
-CE GA7+.
-
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Vue.js npm Portlet sample provides a portlet that uses the
@@ -12,6 +9,9 @@ The Vue.js npm Portlet sample provides a portlet that uses the
 
 This portlet showcases Vue.js's speed and performance when rendering a user
 interface.
+
+**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
+CE GA7+.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 

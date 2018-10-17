@@ -1,8 +1,5 @@
 # Simple npm Portlet [](id=simple-npm-portlet)
 
-**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
-CE GA7+.
-
 ## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
 
 The Simple npm Portlet sample provides a portlet that uses the
@@ -10,6 +7,9 @@ The Simple npm Portlet sample provides a portlet that uses the
 output.
 
 ![Figure 1: The portlet's status and actions are displayed as output.](../../../../images/simple-npm-sample.png)
+
+**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
+CE GA7+.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
