@@ -41,8 +41,10 @@ default site repository's root folder:
     isn't necessary because @product@ provides a constants for them. The next 
     step shows this in detail. 
 
-3.  Call the service reference's `getFileEntriesAndFileShortcuts` method with 
-    the data from the previous step and any other values you want to provide. 
+3.  Call the service reference method with the data from the previous step and 
+    any other values you want to provide. This example calls 
+    `getFileEntriesAndFileShortcuts` with the group ID from the previous step, 
+    and constants for the remaining arguments: 
 
         _dlAppService.getFileEntriesAndFileShortcuts(
                 groupId, 
@@ -73,10 +75,6 @@ default site repository's root folder:
 
 [Getting Started with the Documents and Media API](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
 
-[Creating Entities](/develop/tutorials/-/knowledge_base/7-1/creating-entities)
+[Getting Files](/develop/tutorials/-/knowledge_base/7-1/getting-files)
 
-[Deleting Entities](/develop/tutorials/-/knowledge_base/7-1/deleting-entities)
-
-[Updating Entities](/develop/tutorials/-/knowledge_base/7-1/updating-entities)
-
-[Copying and Moving Entities](/develop/tutorials/-/knowledge_base/7-1/copying-and-moving-entities)
+[Getting Folders](/develop/tutorials/-/knowledge_base/7-1/getting-folders)

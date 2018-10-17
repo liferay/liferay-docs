@@ -117,10 +117,6 @@ methods. To see all such methods, see the
 
 [Getting Started with the Documents and Media API](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
 
-[Creating Entities](/develop/tutorials/-/knowledge_base/7-1/creating-entities)
+[Getting Folders](/develop/tutorials/-/knowledge_base/7-1/getting-folders)
 
-[Deleting Entities](/develop/tutorials/-/knowledge_base/7-1/deleting-entities)
-
-[Updating Entities](/develop/tutorials/-/knowledge_base/7-1/updating-entities)
-
-[Copying and Moving Entities](/develop/tutorials/-/knowledge_base/7-1/copying-and-moving-entities)
+[Getting Multiple Entity Types](/develop/tutorials/-/knowledge_base/7-1/getting-multiple-entity-types)
