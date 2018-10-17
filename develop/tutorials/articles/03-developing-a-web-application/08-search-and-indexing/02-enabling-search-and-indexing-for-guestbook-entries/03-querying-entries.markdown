@@ -1,5 +1,9 @@
 # Querying for Entry Documents
 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Entries<br>Step 3 of 5</p>
+</div>
+
 The code is in place for for indexing Entries the search engine. Next code
 the behavior necessary for querying the indexed documents.
 

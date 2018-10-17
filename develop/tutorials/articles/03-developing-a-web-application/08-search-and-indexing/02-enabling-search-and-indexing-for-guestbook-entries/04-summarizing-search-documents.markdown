@@ -1,5 +1,9 @@
 # Generating Results Summaries
 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Entries<br>Step 3 of 5</p>
+</div>
+
 The Search application and the Asset Publisher application display results
 retrieved from the search engine. Control the display by implementing a
 `ModelSummaryContributor`.

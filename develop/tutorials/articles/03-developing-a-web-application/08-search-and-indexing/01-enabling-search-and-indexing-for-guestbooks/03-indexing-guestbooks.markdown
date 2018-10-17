@@ -1,5 +1,9 @@
 # Indexing Guestbooks
 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Guestbooks<br>Step 3 of 6</p>
+</div>
+
 To control how Guestbook objects are translated into search engine documents,
 create two classes in the new search package:
 

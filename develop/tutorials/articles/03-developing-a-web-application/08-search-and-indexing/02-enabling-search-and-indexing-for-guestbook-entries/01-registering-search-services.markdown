@@ -1,5 +1,9 @@
 # Registering Entries with the Search Framework
 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Entries<br>Step 1 of 5</p>
+</div>
+
 The search registrar for Entries is very similar to the one created for
 Guestbooks.
 

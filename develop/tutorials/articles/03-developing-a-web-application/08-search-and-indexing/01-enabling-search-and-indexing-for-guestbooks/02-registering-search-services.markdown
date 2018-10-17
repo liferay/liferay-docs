@@ -1,7 +1,7 @@
 # Registering Guestbooks with the Search Framework
 
 <div class="learn-path-step">
-    <p>Enabling Search and Indexing for Guestbooks<br>Step 2 of 3</p>
+    <p>Enabling Search and Indexing for Guestbooks<br>Step 2 of 6</p>
 </div>
 
 First, update your `build.gradle` to have all of the necessary imports.

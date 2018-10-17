@@ -1,5 +1,9 @@
 # Querying for Guestbook Documents
 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Guestbooks<br>Step 4 of 6</p>
+</div>
+
 The code is in place for for indexing Guestbooks the search engine. Next code
 the behavior necessary for querying the indexed documents.
 

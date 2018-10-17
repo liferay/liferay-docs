@@ -1,5 +1,9 @@
 # Indexing Entries
 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Entries<br>Step 2 of 5</p>
+</div>
+
 To control how Entry objects are translated into search engine documents,
 create two classes in the new search package. The classes were explained in
 more detail for Guestbooks:

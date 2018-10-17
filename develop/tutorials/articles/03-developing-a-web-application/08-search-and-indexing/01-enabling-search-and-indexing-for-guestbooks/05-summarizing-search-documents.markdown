@@ -1,5 +1,9 @@
 # Generating Results Summaries
 
+<div class="learn-path-step">
+    <p>Enabling Search and Indexing for Guestbooks<br>Step 5 of 6</p>
+</div>
+
 The Search application and the Asset Publisher application must display results
 retrieved from the search engine. Control the summarized content by implementing
 a `ModelSummaryContributor`.

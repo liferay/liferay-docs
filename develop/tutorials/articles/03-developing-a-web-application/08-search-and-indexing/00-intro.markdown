@@ -10,12 +10,28 @@ that mentioned the delicious low-gravity ham that was served (melts in your
 mouth). Searching for the word *ham* should display these Entries. In short,
 Guestbook Entries must be searchable via a search bar in the Guestbook portlet. 
 
-To enable search, you'll index Guestbooks and their Entries.  Although you
-probably won't have enough Guestbooks in a site to warrant searching the
-Guestbook Admin portlet, indexing Guestbooks has other benefits. In a later
-section, you'll asset-enable Guestbooks and Guestbook Entries so @product@'s
-Asset Publisher can display them. Enabling search is a prerequisite for
-this--you must index any entity that you want to make an asset. 
++$$$
+
+**Note:** In previous versions of @product@, search was only _permissions aware_
+(indexed with the entity's permissions and searched with those permissions
+intact) if the developer of the application specified this line in the `Indexer`
+class's constructor:
+
+    setPermissionAware(true);
+
+Now, search is permissions aware by default _if the new permissions approach_,
+as described in the previous step of this Learning Path and in 
+[these tutorials](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions), 
+is implemented for an application.
+
+$$$
+
+To enable search, index Guestbooks and their Entries.  Although you probably
+won't have enough Guestbooks in a site to warrant searching the Guestbook Admin
+portlet, indexing Guestbooks has other benefits. In a later section, you'll
+asset-enable Guestbooks and Guestbook Entries so @product@'s Asset Publisher can
+display them. Enabling search is a prerequisite for this--you must index any
+entity that you want to make an asset. 
 
 But assets are for later. Right now it's time to index those Guestbooks. Ready? 
 
@@ -25,15 +41,3 @@ But assets are for later. Right now it's time to index those Guestbooks. Ready?
 
 
 
-NOTES: must mention, here and in the permissions articles, that search is
-permissions aware by default, IF the new permissions approach is used. See
-BEngler's post in slack
-
-heres my attempt at explaining #1: the registrar basically defines the
-contributor that builds (or contributes to) a `ModelSearchDefinition`. the
-`ModelSearchDefinition` is used to initialize a `ModelSearchConfigurator`. the
-`ModelSearchRegistrarHelper` registers that `ModelSearchConfigurator`, which
-causes the `ModelSearchConfiguratorServiceTrackerCustomizer` to pick up the
-`ModelSearchConfigurator` and build a `DefaultIndexer` with it. that
-`DefaultIndexer` is then registered under the classname that was defined in the
-registrar, and then used for indexing/searching objects of that class

@@ -1,7 +1,7 @@
 # Handling Indexing in the Entry Service Layer [](id=handling-indexing-in-the-entry-service-layer)
 
 <div class="learn-path-step">
-    <p>Enabling Search and Indexing for Guestbook Entries<br>Step 2 of 2</p>
+    <p>Enabling Search and Indexing for Entries<br>Step 5 of 5</p>
 </div>
 
 Whenever an Entry is added, updated, or deleted, the corresponding document

@@ -1,7 +1,7 @@
 # Handling Indexing in the Guestbook Service Layer [](id=handling-indexing-in-the-guestbook-service-layer)
 
 <div class="learn-path-step">
-    <p>Enabling Search and Indexing for Guestbooks<br>Step 3 of 3</p>
+    <p>Enabling Search and Indexing for Guestbooks<br>Step 6 of 6</p>
 </div>
 
 Whenever a Guestbook database entity is added, updated, or deleted, the search
