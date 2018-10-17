@@ -22,18 +22,20 @@ dependency.
     within that section:
    
         compileOnly group: "com.liferay.content-targeting", name: "com.liferay.content.targeting.api", version: 5.0.0"
-        
+
 Your app now has access to the Content Targeting API and can take advantage of
-everything Audience Targeting has to offer. In the next section, you'll learn
-how to use the Content Targeting API by studying a few examples.
+everything Audience Targeting has to offer. Next, you'll learn how to use the
+Content Targeting API by studying a few examples.
 
 ## Using the Content Targeting Java API [](id=using-the-content-targeting-java-api)
 
-You can to call the Content Targeting API through Java or through JSON. 
+You can call the Content Targeting API through Java or through JSON. 
 
 To display a list of existing user segments in your portlet using Java,
 
-1. Obtain an implementation of the `UserSegmentLocalService` provided by Audience Targeting by adding the following code to your Portlet class (e.g., the class that extends the `MVCPortlet` class):
+1.  Obtain an implementation of the `UserSegmentLocalService` provided by
+    Audience Targeting by adding the following code to your Portlet class (e.g.,
+    the class that extends the `MVCPortlet` class):
 
         @Reference(unbind = "-")
         protected void setUserSegmentLocalService(
@@ -46,10 +48,13 @@ To display a list of existing user segments in your portlet using Java,
 
     When the Audience Targeting application is installed and an implementation 
     of the `UserSegmentLocalService` is available the 
-    `_userSegmentLocalService` field is populated. Otherwise, the portlet won't 
-    be available till this dependency is resolved.
+    `_userSegmentLocalService` field is populated. Otherwise, the portlet is
+    unavailable till this dependency is resolved.
 
-2.  Use the service to obtain a list of existing user segments and make it available to your view layer as a request attribute. To do this, add logic to your portlet class that obtains user segments and exposes them as a request attribute, like this:
+2.  Use the service to obtain a list of existing user segments and make it
+    available to your view layer as a request attribute. To do this, add logic
+    to your portlet class that obtains user segments and exposes them in
+    a request attribute, like this:
 
         ThemeDisplay themeDisplay = (ThemeDisplay)renderRequest.getAttribute(
           WebKeys.THEME_DISPLAY);
@@ -138,7 +143,7 @@ You could do the same thing using the JSON API.
     Then, each campaign is listed in the `campaignsList` and displayed in your
     portlet for users to see.
 
-If you'd like to view all the available methods (with examples) exposed in the
+If you want to view all the available methods (with examples) exposed in the
 JSON API by Audience Targeting, you can visit the `/api/jsonws` URL (e.g.,
 `localhost:8080/api/jsonws`). As you can see, accessing the Content Targeting
 JSON API is just as easy as accessing the related Java API.
