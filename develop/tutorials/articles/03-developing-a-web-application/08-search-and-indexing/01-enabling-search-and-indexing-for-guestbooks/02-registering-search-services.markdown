@@ -15,17 +15,15 @@ First, update your `build.gradle` to have all of the necessary imports.
 
 3.  Save the file and run `Refresh Gradle Project`.
 
-Once the dependency is configured, register the Search services.
+Once the dependency is configured, register the Search services that build the
+entity's `ModelSearchDefinition`.
 
-<!-- Needs work -->
 A `*SearchRegistrar` specifies the classes that the entity uses to contribute to
-building a `ModelSearchDefinition`. The `ModelSearchDefinition` initializes a
-`ModelSearchConfigurator`. The `ModelSearchRegistrarHelper` registers that
-`ModelSearchConfigurator`, which causes the
-`ModelSearchConfiguratorServiceTrackerCustomizer` to pick up the
-`ModelSearchConfigurator` and build a `DefaultIndexer` with it. that
-`DefaultIndexer` is then registered under the classname that was defined in the
-registrar, and then used for indexing/searching objects of that class.
+building a `ModelSearchDefinition`. Activation of the `SearchRegistrar`
+component results in a cascade of activity in the search framework, culminating
+with the building of a `DefaultIndexer`. The `DefaultIndexer` is registered
+under the class name defined in the registrar, and then used for
+indexing/searching objects of that class.
 
 Create the `GuestbookSearchRegistrar`:
 
@@ -70,18 +68,18 @@ Create the `GuestbookSearchRegistrar`:
 
 2.  Specify the service references for the class:
 
-        @Reference(target = "(indexer.class.name=com.liferay.docs.guestbook.model.Guestbook)")
-        protected ModelIndexerWriterContributor<Guestbook> modelIndexWriterContributor;
+            @Reference(target = "(indexer.class.name=com.liferay.docs.guestbook.model.Guestbook)")
+            protected ModelIndexerWriterContributor<Guestbook> modelIndexWriterContributor;
 
-        @Reference
-        protected ModelSearchRegistrarHelper modelSearchRegistrarHelper;
+            @Reference
+            protected ModelSearchRegistrarHelper modelSearchRegistrarHelper;
 
-        @Reference(target = "(indexer.class.name=com.liferay.docs.guestbook.model.Guestbook)")
-        protected ModelSummaryContributor modelSummaryContributor;
+            @Reference(target = "(indexer.class.name=com.liferay.docs.guestbook.model.Guestbook)")
+            protected ModelSummaryContributor modelSummaryContributor;
 
-        private ServiceRegistration<?> _serviceRegistration;
+            private ServiceRegistration<?> _serviceRegistration;
 
-    }
+        }
 
     Target the `Guestbook` model while looking up a reference to the contributor
     classes. Later, when you create these contributor classes, you'll specify

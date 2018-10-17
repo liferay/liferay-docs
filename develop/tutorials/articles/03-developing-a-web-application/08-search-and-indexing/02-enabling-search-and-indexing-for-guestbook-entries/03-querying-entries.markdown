@@ -1,27 +1,27 @@
-# Querying for Guestbook Documents
+# Querying for Entry Documents
 
-The code is in place for for indexing Guestbooks the search engine. Next code
+The code is in place for for indexing Entries the search engine. Next code
 the behavior necessary for querying the indexed documents.
 
-Implement two interfaces:
+Implement two classes:
 
-1.  `KeywordQueryContributor`  contributes clauses to the ongoing search query.
+1.  `EntryKeywordQueryContributor`  contributes clauses to the ongoing
+search query.
 
-2.  `ModelPreFilterContributor` controls how search results are filtered before
-    they're returned from the search engine.
+2.  `EntryModelPreFilterContributor` controls how search results are filtered
+before they're returned from the search engine.
 
 ## Implementing `KeywordQueryContributor`
 
-Create `GuestbookKeywordQueryContributor` and populate it with these
+Create `EntryKeywordQueryContributor` and populate it with these
 contents:
 
     @Component(
             immediate = true,
-            property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
+            property = "indexer.class.name=com.liferay.docs.guestbook.model.Entry",
             service = KeywordQueryContributor.class
     )
-    public class GuestbookKeywordQueryContributor
-        implements KeywordQueryContributor {
+    public class EntryKeywordQueryContributor implements KeywordQueryContributor {
 
         @Override
         public void contribute(
@@ -33,6 +33,10 @@ contents:
 
             queryHelper.addSearchLocalizedTerm(
         booleanQuery, searchContext, Field.TITLE, false);
+            queryHelper.addSearchLocalizedTerm(
+        booleanQuery, searchContext, Field.CONTENT, false);
+            queryHelper.addSearchLocalizedTerm(
+        booleanQuery, searchContext, "entryEmail", false);
         }
 
         @Reference
@@ -40,21 +44,20 @@ contents:
 
     }
 
-Get the `SearchContext` object, which contains lots of information about the
-ongoing search query. Use the query helper to add search terms. Adding the
-localized search term is important. Since the localized Guestbook title was
-indexed, you must retrieve the localized value from the search engine.
+Adding the localized search terms is important. For all localized Entry fields
+in the index, retrieve the localized value from the search engine.
 
 ## Implementing `ModelPreFilterContributor`
 
-Create `GuestbookModelPreFilterContributor` and populate it with these contents:
+Create `EntryKeywordQueryContributor` and populate it with these
+contents:
 
     @Component(
             immediate = true,
-            property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
+            property = "indexer.class.name=com.liferay.docs.guestbook.model.Entry",
             service = ModelPreFilterContributor.class
     )
-    public class GuestbookModelPreFilterContributor
+    public class EntryModelPreFilterContributor
         implements ModelPreFilterContributor {
 
         @Override
@@ -72,8 +75,8 @@ Create `GuestbookModelPreFilterContributor` and populate it with these contents:
     }
 
 You don't want results with a workflow status of `STATUS_IN_TRASH` queried, so
-add the workflow status of the Guestbook to the query. You'll learn more about
+add the workflow status of the Entry to the query. You'll learn more about
 workflow in a later section.
 
-Once the query code is in place, define how returned Guestbook documents are
+Once the query code is in place, define how returned Entry documents are
 summarized. 

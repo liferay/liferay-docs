@@ -1,16 +1,12 @@
 # Generating Results Summaries
 
-The Search application and the Asset Publisher application need to know how
-results retrieved from the search engine are to be displayed. Control this by
-implementing a `ModelSummaryContributor`.
+The Search application and the Asset Publisher application must display results
+retrieved from the search engine. Control the summarized content by implementing
+a `ModelSummaryContributor`.
 
-A summary is a condensed, text-based version of the entity that can be displayed
-generically. You create it by combining key parts of the entity's data so users
-can browse through search results to find the entity they want. Call
-`BaseIndexer`'s `createSummary` method, then use `summary.setMaxContentLength`
-to set the summary content's maximum size. Most @product@ applications use a
-value of `200`, so it's a good idea to use the same to ensure uniform result
-summaries. 
+A summary is a condensed, text-based version of the entity's document that can
+be displayed generically. You create it by combining key parts of the entity's
+data so users can browse through search results to find the entity they want.
 
 Create a `GuestbookModelSummarySummaryContributor`:
 
@@ -65,5 +61,5 @@ properties in
 Create summaries by combining key parts of the entity's data so users can browse
 through search results to find the entity they want.
 
-Once the search and indexing logic is in place, it's time to update the service
-layer so `add`, `update`, and `delete` service calls trigger the new logic.
+Once all the search and indexing logic is in place, update the service layer so
+`add`, `update`, and `delete` service calls trigger the new logic.

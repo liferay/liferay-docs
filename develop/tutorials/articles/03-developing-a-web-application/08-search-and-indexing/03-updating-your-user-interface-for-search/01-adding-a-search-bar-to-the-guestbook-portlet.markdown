@@ -4,7 +4,7 @@
     <p>Updating Your UI for Search<br>Step 1 of 2</p>
 </div>
 
-Follow these steps to create the search bar UI for the Guestbook portlet:
+Create the search bar UI for the Guestbook portlet:
 
 1.  In `guestbook-web`, open the file 
     `src/main/resources/META-INF/resources/guestbookwebportlet/view.jsp`. Add a 
@@ -16,12 +16,26 @@ Follow these steps to create the search bar UI for the Guestbook portlet:
             value="/guestbookwebportlet/view_search.jsp" />
         </liferay-portlet:renderURL>
 
-    The render URL points to `/guestbookwebportlet/view_search.jsp` (created in 
-    the next step). You construct the URL first because you must specify what 
+    The render URL points to `/guestbookwebportlet/view_search.jsp` (created in
+    the next Learning Path step). You construct the URL first to specify what
     happens when the user submits a search query. 
 
-2.  Right after the render URL, create an AUI form that directs the user to the
-    `view_search.jsp` page for viewing search results:
+2.  Right after the render URL, create an AUI form that adds an input field for
+    search keywords and a *Submit* button that executes the form action, which
+    is mapped to the `searchURL`.
+
+        <aui:form action="${searchURL}" name="fm">
+
+            <div class="row">
+                <div class="col-md-8">
+                    <aui:input inlineLabel="left" label="" name="keywords" placeholder="search-entries" size="256" />
+                </div>
+
+                <div class="col-md-4">
+                    <aui:button type="submit" value="search" />
+                </div>
+            </div>
+        </aui:form>
 
         <aui:form action="<%= searchURL %>" method="get" name="fm">
             <liferay-portlet:renderURLParams varImpl="searchURL" />
@@ -37,21 +51,15 @@ Follow these steps to create the search bar UI for the Guestbook portlet:
             </div>
         </aui:form>
 
-    The tag `<liferay-portlet:renderURLParams varImpl="searchURL" />` includes 
-    the URL parameters of the `searchURL` as hidden input fields in the AUI 
-    form. This is important since the parameters of the `searchURL` are 
-    overwritten when the search query is submitted as a URL parameter. 
+    The body of the search form consists of a `<div>` with one row containing
+    two fields: an input field, named `keywords` and a _Submit_ button. Its
+    `name="keywords"` attribute specifies the name of the URL parameter that
+    contains the search query. The `<aui:button>` tag defines the search button.
+    The `type="submit"` attribute specifies that when the button is clicked (or
+    the *Enter* key is pressed), the AUI form is submitted. The `value="search"`
+    attribute specifies the name that appears on the button. 
 
-    The body of the search form consists of a `<div>` containing a `<span>` that
-    contains two elements: the search bar and the search button. The 
-    `<aui:input>` tag defines the search bar. Its `name="keywords"` attribute 
-    specifies the name of the URL parameter that contains the search 
-    query. The `<aui:button>` tag defines the search button. The `type="submit"` 
-    attribute specifies that when the button is clicked (or the *Enter* key is 
-    pressed), the AUI form is submitted. The `value="search"` attribute 
-    specifies the name that appears on the button. 
-
-That's all there is to the search form! When the form is submitted, the 
-`mvcPath` parameter pointing to the `view_search.jsp` is included in the URL 
-along with the `keywords` parameter containing the search query. Now it's time 
-to create the `view_search.jsp` form to display the search results. 
+That's all there is to the search form! When the form is submitted, the
+`mvcPath` parameter pointing to the `view_search.jsp` is included in the URL
+along with the `keywords` parameter containing the search query. Next create the
+`view_search.jsp` file to display the search results. 

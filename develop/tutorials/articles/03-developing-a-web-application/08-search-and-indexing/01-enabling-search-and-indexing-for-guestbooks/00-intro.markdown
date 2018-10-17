@@ -13,8 +13,8 @@ functionality:
     - `GuestbookModelDocumentContributor` controls which Guestbook fields are
         indexed in the search engine.
 
-    - `GuestbookModelIndexerWriterContributor` configures the batch indexing
-        behavior for Guestbooks.
+    - `GuestbookModelIndexerWriterContributor` configures the re-indexing and
+        batch re-indexing behavior for Guestbooks.
 
 - Querying:
 
@@ -32,7 +32,7 @@ functionality:
 After creating the search classes, modify the service layer to update the search
 index when a guestbook is persisted:
 
-2. Update `GuestbookLocalServiceImpl`'s `addGuestbook`, `updateGuestbook`, and
+- Update `GuestbookLocalServiceImpl`'s `addGuestbook`, `updateGuestbook`, and
    `deleteGuestbook` methods to invoke the guestbook indexer.
 
 +$$$

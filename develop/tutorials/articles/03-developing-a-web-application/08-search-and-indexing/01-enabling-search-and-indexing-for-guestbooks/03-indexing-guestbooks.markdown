@@ -49,6 +49,13 @@ Create `GuestbookModelDocumentContributor` and populate it with these contents:
 
     }
 
+Because @product@ supports localization, you should too. The above code gets 
+the default locale from the site by passing the `Guestbook`'s group ID to 
+the `getSiteDefaultLocale` method, then using it to get the localized name
+of the Guestbook's title field. The retrieved site locale is appended to the
+field (e.g., `title_en_US`), so the field gets passed to the search engine
+and goes through the right analysis and
+[tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/analysis-tokenizers.html). 
 
 ## Implementing `ModelIndexerWriterContributor`
 
@@ -104,3 +111,14 @@ contents:
         protected GuestbookLocalService guestbookLocalService;
 
     }
+
+The interesting work is done in the `customize` method. Configure the batch
+indexing behavior for the entity's documents by calling
+`BatchIndexingActionable` methods. This code uses the Guestbook's actionable
+dynamic query helper method to retrieve all Guestbooks in the virtual instance
+(identified by the Company ID). Service Builder generated this query method for
+you when you built the services. Each Guestbook's document is then retrieved and
+added to a collection.
+
+Once the re-indexing behavior is in place, move on to the code for controlling
+how Guestbook documents are queried from the search engine.

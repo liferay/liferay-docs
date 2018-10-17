@@ -1,14 +1,51 @@
-# Enabling Search and Indexing for Guestbook Entries [](id=enabling-search-and-indexing-for-guestbook-entries)
+# Enabling Search and Indexing for Entries
 
-Enabling search for guestbook entries in the Guestbook portlet takes two steps: 
+In this section, create the classes that control these aspects of the search
+functionality:
 
-1.  Create an `EntryIndexer` class that extends @product@'s `BaseIndexer` 
-    abstract class. 
+- Registration:
 
-2.  Update `EntryLocalServiceImpl`'s `addEntry` and `deleteEntry` methods to
-    invoke the guestbook entry indexer. 
+    - `EntrySearchRegistrar` registers the search service for the Entry
+        entity.
 
-When you finish, all the back-end search and indexing work for both entities 
-will be complete, leaving only the UI changes to complete. 
+- Indexing:
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/creating-an-entry-indexer">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+    - `EntryModelDocumentContributor` controls which Entry fields are
+        indexed in the search engine.
+
+    - `EntryModelIndexerWriterContributor` configures the re-indexing and
+        batch re-indexing behavior for Entries.
+
+- Querying:
+
+    - `EntryKeywordQueryContributor`  contributes clauses to the ongoing
+        search query.
+
+    - `EntryModelPreFilterContributor` controls how search results are filtered
+        before they're returned from the search engine.
+
+- Generating Result Summaries:
+
+    - `EntryModelSummaryContributor` constructs the result summary for
+        Entries, including specifying which fields to use.
+
+After creating the search classes, modify the service layer to update the search
+index when an Entry is persisted:
+
+- Update `EntryLocalServiceImpl`'s `addEntry`, `updateEntry`, and
+   `deleteEntry` methods to update the index so it matches the databse.
+
++$$$
+
+**Note:** In prior versions of @product@, search and indexing was accomplished
+with one `*Indexer` class that extended `BaseIndexer`. This Learning Path
+demonstrates a new pattern that relies on composition instead of inheritance. If
+you desire to use the old approach, feel free to extend `BaseIndexer`. It's
+still supported. 
+
+$$$
+
+Since there's no reason to search for Entries in the UI, only back-end work
+is necessary. 
+
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/understanding-search-and-indexing">Let's Go!<span class="icon-circle-arrow-right"></span></a>

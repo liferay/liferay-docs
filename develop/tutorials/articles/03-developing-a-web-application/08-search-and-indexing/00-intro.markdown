@@ -1,24 +1,39 @@
-# Leveraging Search [](id=leveraging-search)
+# Search and Indexing
 
-Now you have working Guestbook and Guestbook Admin portlets. The Guestbook 
-portlet lets users add, edit, delete, and configure permissions for guestbook 
-entries. The Guestbook Admin portlet lets site administrators create, edit, 
-delete, and configure permissions for guestbooks. In the case of a very popular 
-event (maybe a *Lunar Luau* dinner at the Lunar Resort), there could be many 
-guestbook entries in the portlet, and users might want to search for entries 
-that mentioned the delicious low-gravity ham that was served (melts in your 
-mouth). Searching for the word *ham* should display these entries. In short, 
-guestbook entries must be searchable via a search bar in the Guestbook portlet. 
+The Guestbook and Guestbook Admin portlets are up and running. The Guestbook
+portlet lets users add, edit, delete, and configure permissions for Guestbook
+Entries. The Guestbook Admin portlet lets site administrators create, edit,
+delete, and configure permissions for Guestbooks. In the case of a very popular
+event (maybe a *Lunar Luau* dinner at the Lunar Resort), there could be many
+Guestbook Entries in the portlet, and users might want to search for Entries
+that mentioned the delicious low-gravity ham that was served (melts in your
+mouth). Searching for the word *ham* should display these Entries. In short,
+Guestbook Entries must be searchable via a search bar in the Guestbook portlet. 
 
-To enable search, you'll add an indexer for guestbooks and their entries. 
-Although you probably won't have enough guestbooks in a site to warrant 
-searching the Guestbook Admin portlet, creating a guestbook indexer has other 
-benefits. In a later section, you'll asset-enable guestbooks and guestbook 
-entries so @product@'s Asset Publisher can display them. Enabling search is a 
-prerequisite for this--you must index any entity that you want to make an asset. 
+To enable search, you'll index Guestbooks and their Entries.  Although you
+probably won't have enough Guestbooks in a site to warrant searching the
+Guestbook Admin portlet, indexing Guestbooks has other benefits. In a later
+section, you'll asset-enable Guestbooks and Guestbook Entries so @product@'s
+Asset Publisher can display them. Enabling search is a prerequisite for
+this--you must index any entity that you want to make an asset. 
 
-But assets are for later. Right now it's time to create those indexers. Ready? 
+But assets are for later. Right now it's time to index those Guestbooks. Ready? 
 
-![Figure 1: You'll add a search bar to the Guestbook portlet so that users can search for guestbook entries. If a guestbook entry's message or name matches the search query, the entry is displayed in the search results.](../../../images/guestbook-portlet-search.png)
+![Figure 1: Add a search bar so users can search for Guestbook Entries. If a message or name matches the search query, the Entry is displayed in the search results.](../../../images/guestbook-portlet-search.png)
 
 <a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/enabling-search-and-indexing-for-guestbooks">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+
+
+
+NOTES: must mention, here and in the permissions articles, that search is
+permissions aware by default, IF the new permissions approach is used. See
+BEngler's post in slack
+
+heres my attempt at explaining #1: the registrar basically defines the
+contributor that builds (or contributes to) a `ModelSearchDefinition`. the
+`ModelSearchDefinition` is used to initialize a `ModelSearchConfigurator`. the
+`ModelSearchRegistrarHelper` registers that `ModelSearchConfigurator`, which
+causes the `ModelSearchConfiguratorServiceTrackerCustomizer` to pick up the
+`ModelSearchConfigurator` and build a `DefaultIndexer` with it. that
+`DefaultIndexer` is then registered under the classname that was defined in the
+registrar, and then used for indexing/searching objects of that class

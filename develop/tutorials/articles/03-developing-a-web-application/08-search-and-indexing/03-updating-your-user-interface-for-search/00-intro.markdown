@@ -7,6 +7,6 @@ Updating the Guestbook portlet's user interface for search takes two steps:
 
 2.  Create a new JSP for the Guestbook portlet to display search results.
 
-You'll start by updating the Guestbook portlet's view JSP.
+Start by updating the Guestbook portlet's view JSP.
 
 <a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/adding-a-search-bar-to-the-guestbook-portlet">Let's Go!<span class="icon-circle-arrow-right"></span></a>
