@@ -1,7 +1,7 @@
 # Updating Entities [](id=updating-entities)
 
 Like 
-[creating](/develop/tutorials/-/knowledge_base/7-1/creating-entities) 
+[creating](/develop/tutorials/-/knowledge_base/7-1/creating-files-folders-and-shortcuts) 
 and 
 [deleting](/develop/tutorials/-/knowledge_base/7-1/deleting-entities) 
 entities, updating entities is a key task when working with Documents and Media. 

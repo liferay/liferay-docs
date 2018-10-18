@@ -1,4 +1,4 @@
-# Creating Files, Folders, and Shortcuts
+# Creating Files, Folders, and Shortcuts [](id=creating-files-folders-and-shortcuts)
 
 Creating entities in the Documents and Media library is a key use case for the 
 Documents and Media API. For example, you can use the API to create files, 

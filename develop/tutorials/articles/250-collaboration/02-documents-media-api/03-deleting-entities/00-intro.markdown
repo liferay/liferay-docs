@@ -1,7 +1,7 @@
 # Deleting Entities [](id=deleting-entities)
 
 Now that you know how to 
-[create Documents and Media entities](/develop/tutorials/-/knowledge_base/7-1/creating-entities), 
+[create Documents and Media entities](/develop/tutorials/-/knowledge_base/7-1/creating-files-folders-and-shortcuts), 
 you can learn how to delete them. Note that the exact meaning of *delete* 
 depends on the portal configuration and the delete operation you choose. This is 
 because the 
