@@ -28,13 +28,12 @@ Follow these steps to create a folder with the `DLAppService` method
     [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
-2.  Get the data for the `addFolder` method's arguments. Obviously, if you want 
-    to call the method then you must populate its arguments. Since it's common 
-    to create a folder with data submitted by the end user, you can extract 
-    those data from the request. This example does so via 
+2.  Get the data needed to populate the `addFolder` method's arguments. Since 
+    it's common to create a folder with data submitted by the end user, you can 
+    extract the data from the request. This example does so via 
     `javax.portlet.ActionRequest` and 
     [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
-    but you can get these data any way you wish: 
+    but you can get the data any way you wish: 
 
         long repositoryId = ParamUtil.getLong(actionRequest, "repositoryId");
         long parentFolderId = ParamUtil.getLong(actionRequest, "parentFolderId");
@@ -47,7 +46,7 @@ Follow these steps to create a folder with the `DLAppService` method
     For more information on getting repository and folder IDs, see the 
     [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
     sections on specifying repositories and folders. For more information on 
-    `ServiceContext` see the tutorial 
+    `ServiceContext`, see the tutorial 
     [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
 
 3.  Call the service reference's `addFolder` method with the data from the 
@@ -73,7 +72,7 @@ app.
 
 By creating a folder that acts as a proxy for an external repository (e.g., 
 SharePoint), you can effectively mount that repository inside a Site's default 
-repository. When users enter this special folder, they see the external
+repository. When users enter this special folder, they see the external 
 repository. These folders are called *mount points*. You can create one via the
 API by setting the 
 [Service Context's](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext) 

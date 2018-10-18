@@ -53,7 +53,9 @@ method contains all the above parameters except `fileEntryTypeId` (it contains
             OrderByComparator<FileEntry> obc
     )
 
-Follow these steps to use this method to get a list of files:
+Follow these steps to use this method to get a list of files. Note that the 
+example in these steps gets all the PNG images from the root folder of a Site's 
+default repository, sorted by title: 
 
 1.  Get a reference to `DLAppService`: 
 
@@ -65,20 +67,18 @@ Follow these steps to use this method to get a list of files:
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the method's arguments. You can do this any 
-    way you wish. This example will get all the PNG images from the root folder 
-    of a site's default repository, sorted by title. @product@ provides 
-    constants for specifying the root folder, PNG images, and no pagination, as 
-    well as a comparator for sorting by title. Therefore, the only piece of data 
-    this example needs to get is the group ID, which it does so by using 
+    way you wish. As the next step describes, @product@ provides constants and a 
+    comparator for all the arguments this example needs besides the group ID. 
+    This example gets the group ID by using 
     [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html) 
     with the request (`javax.portlet.ActionRequest`): 
 
         long groupId = ParamUtil.getLong(actionRequest, "groupId");
 
-3.  Use the data from the previous step to call the service reference method you 
-    wish to use to get the files. This example calls the above `getFileEntries` 
-    method to get all the PNG images from the root folder of a site's default 
-    repository, sorted by title: 
+3.  Use the data from the previous step and any other values you want to provide 
+    to call the service reference method you want to use to get the files. This 
+    example calls the above `getFileEntries` method with the group ID from the 
+    previous step, and constants and a comparator for the remaining arguments: 
 
         List<FileEntry> fileEntries = 
                 _dlAppService.getFileEntries(

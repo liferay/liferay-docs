@@ -39,8 +39,8 @@ Keep in mind the following when using these methods:
     this parameter, the update increments the file version to the next `.0` 
     value (e.g., from `1.0` to `2.0`, `1.1` to `2.0`, etc.). 
 
-Follow these steps to update a file. Note that these steps use the 
-`updateFileEntry` method that contains `InputStream`, but you can adapt the 
+Follow these steps to update a file. Note that the example in these steps uses 
+the `updateFileEntry` method that contains `InputStream`, but you can adapt the 
 example to the other methods if you wish: 
 
 1.  Get a reference to `DLAppService`: 
@@ -52,14 +52,13 @@ example to the other methods if you wish:
     [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
-2.  Get the data for the `updateFileEntry` method's arguments. Obviously, if you 
-    want to call the method then you must populate its arguments. Since it's 
-    common to update a file with data submitted by the end user, you can extract 
-    those data from the request. This example does so via 
+2.  Get the data needed to populate the `updateFileEntry` method's arguments. 
+    Since it's common to update a file with data submitted by the end user, you 
+    can extract the data from the request. This example does so via 
     [`UploadPortletRequest`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/upload/UploadPortletRequest.html) 
     and 
     [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
-    but you can get these data any way you wish: 
+    but you can get the data any way you wish: 
 
         long repositoryId = ParamUtil.getLong(uploadPortletRequest, "repositoryId");
         long folderId = ParamUtil.getLong(uploadPortletRequest, "folderId");
@@ -81,7 +80,7 @@ example to the other methods if you wish:
     For more information on getting repository and folder IDs, see the
     [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
     sections on specifying repositories and folders. For more information on 
-    `ServiceContext` see the tutorial 
+    `ServiceContext`, see the tutorial 
     [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
 
 3.  Call the service reference's `updateFileEntry` method with the data from the 

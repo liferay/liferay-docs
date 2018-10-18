@@ -30,8 +30,8 @@ This method is similar to `copyFolder`, but it doesn't let you change the
 folder's name or description, and it can move folders between repositories. 
 Also, the move operation is recursive---it also moves the folder's contents. 
 
-The operation for moving files is almost identical. To move files, use the 
-`DLAppService` method `moveFileEntry`: 
+The operation for moving a file is almost identical to moving a folder. To move 
+a file, use the `DLAppService` method `moveFileEntry`: 
 
     moveFileEntry(long fileEntryId, long newFolderId, ServiceContext serviceContext)
 
@@ -40,7 +40,7 @@ For a full description of this method and its parameters, see its
 
 Follow these steps to use `moveFolder` and `moveFileEntry` to move a folder and 
 a file, respectively. Although this example does both, you can omit one 
-operation if you don't need to perform it. 
+operation if you don't need to perform it: 
 
 1.  Get a reference to `DLAppService`: 
 
@@ -51,11 +51,12 @@ operation if you don't need to perform it.
     [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
-2.  Get the data you need to call the methods. Since moving folders and files is 
-    typically done in response to a user action, you can get these data from the 
-    request. This example does so via `javax.portlet.ActionRequest` and 
+2.  Get the data needed to populate the method arguments. Since moving folders 
+    and files is typically done in response to a user action, you can get the 
+    data from the request. This example does so via 
+    `javax.portlet.ActionRequest` and 
     [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
-    but you can get these data any way you wish: 
+    but you can get the data any way you wish: 
 
         // Get the folder IDs
         long folderId = ParamUtil.getLong(actionRequest, "folderId");
@@ -67,7 +68,13 @@ operation if you don't need to perform it.
         ServiceContext serviceContext = ServiceContextFactory.getInstance(
                 DLFileEntry.class.getName(), actionRequest);
 
-3.  Call the service reference method(s). This example calls `moveFolder` to 
+    For more information on getting folder IDs, see the 
+    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    section on specifying folders. For more information on `ServiceContext`, see 
+    the tutorial 
+    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
+
+3.  Call the service reference's method(s). This example calls `moveFolder` to 
     move a folder (`folderId`) to a different folder (`newFolderId`). It then 
     calls `moveFileEntry` to move a file (`fileEntryId`) to the same destination 
     folder: 

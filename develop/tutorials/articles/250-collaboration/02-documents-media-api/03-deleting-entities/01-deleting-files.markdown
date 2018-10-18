@@ -23,15 +23,13 @@ Follow these steps to delete a file:
     [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
-2.  Get the data for the `deleteFileEntry*` method you wish to use. Obviously, 
-    if you want to call the method then you must populate its arguments. Since 
-    it's common to delete a file specified by the end user, you can extract 
-    the data you need from the request. This example does so via 
-    `javax.portlet.ActionRequest` and 
+2.  Get the data needed to populate the arguments of the `deleteFileEntry*` 
+    method you wish to use. Since it's common to delete a file specified by the 
+    end user, you can extract the data you need from the request. This example 
+    does so via `javax.portlet.ActionRequest` and 
     [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can get the data any way you wish. Also note that this example gets 
-    only the file entry ID because the next step deletes the file with 
-    `deleteFileEntry`: 
+    only the file entry ID because it uses `deleteFileEntry`: 
 
         long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
 
@@ -43,7 +41,7 @@ Follow these steps to delete a file:
 
 3.  Call the service reference's `deleteFileEntry*` method you wish to use with 
     the data from the previous step. This example calls `deleteFileEntry` with 
-    the file entry's ID:
+    the file entry's ID: 
 
         _dlAppService.deleteFileEntry(fileEntryId);
 

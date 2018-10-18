@@ -21,11 +21,10 @@ steps to use one of these methods to delete a folder:
     [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
-2.  Get the data for the `deleteFolder*` method you wish to use. Obviously, if
-    you want to call the method then you must populate its arguments. Since it's 
-    common to delete a folder specified by the end user, you can extract the 
-    data you need from the request. This example does so via 
-    `javax.portlet.ActionRequest` and 
+2.  Get the data needed to populate the arguments of the `deleteFolder*` method 
+    you wish to use. Since it's common to delete a folder specified by the end 
+    user, you can extract the data you need from the request. This example does 
+    so via `javax.portlet.ActionRequest` and 
     [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can get the data any way you wish. Also note that this example gets 
     only the folder ID because the next step deletes the folder with 
@@ -33,9 +32,9 @@ steps to use one of these methods to delete a folder:
 
         long folderId = ParamUtil.getLong(actionRequest, "folderId");
 
-    If you want to use the other `deleteFolder` method instead, you can also get 
-    the repository ID, parent folder ID, and folder name from the request. For 
-    more information on getting repository and folder IDs, see the 
+    If you want to use the other `deleteFolder` method, you can also get the 
+    repository ID, parent folder ID, and folder name from the request. For more 
+    information on getting repository and folder IDs, see the 
     [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
     sections on specifying repositories and folders. 
 

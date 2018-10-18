@@ -25,16 +25,19 @@ Follow these steps to use this method to copy a folder:
     [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
-2.  Get the data needed to populate the `copyFolder` method's arguments. You can 
-    do this any way you wish. The copy operation in this example takes place in 
-    the default site repository and retains the folder's existing name and 
-    description. It therefore needs the folder's group ID (to specify the 
-    default site repository), name, and description. 
+2.  Get the data needed to populate the `copyFolder` method's arguments. How you 
+    do this depends on your use case. The copy operation in this example takes 
+    place in the default Site repository and retains the folder's existing name 
+    and description. It therefore needs the folder's group ID (to specify the 
+    default site repository), name, and description. Also note that because the 
+    destination folder in this example is the repository's root folder, the 
+    parent folder ID isn't needed---@product@ supplies a constant for specifying 
+    a repository's root folder. 
 
-    After 
+    In the following code, 
     [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html) 
-    gets the folder's ID from the request (`javax.portlet.ActionRequest`), the 
-    service reference's 
+    gets the folder's ID from the request (`javax.portlet.ActionRequest`), and 
+    the service reference's 
     [`getFolder`](/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFolder-long-) 
     method gets the corresponding folder object. The folder's `getGroupId()`, 
     `getName()`, and `getDescription()` methods then get the folder's group ID, 
@@ -53,13 +56,14 @@ Follow these steps to use this method to copy a folder:
     For more information on getting repository and folder IDs, see the 
     [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
     sections on specifying repositories and folders. For more information on 
-    `ServiceContext` see the tutorial 
+    `ServiceContext`, see the tutorial 
     [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
 
 3.  Call the service reference's `copyFolder` method with the data from the 
-    previous step. Note that this example uses 
-    `DLFolderConstants.DEFAULT_PARENT_FOLDER_ID` to specify the repository's 
-    root folder as the destination folder: 
+    previous step. Note that this example uses the 
+    [`DLFolderConstants`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFolderConstants.html) 
+    constant `DEFAULT_PARENT_FOLDER_ID` to specify the repository's root folder 
+    as the destination folder: 
 
         _dlAppService.copyFolder(
                 groupId, folderId, DLFolderConstants.DEFAULT_PARENT_FOLDER_ID, 
@@ -67,7 +71,7 @@ Follow these steps to use this method to copy a folder:
 
 Keep in mind that you can change any of these values to suit your copy 
 operation. For example, if your copy takes place in a repository other than the 
-default site repository, you would specify that repository's ID in place of the 
+default Site repository, you would specify that repository's ID in place of the 
 group ID. You could also specify a different destination folder, and/or change 
 the new folder's name and/or description. 
 

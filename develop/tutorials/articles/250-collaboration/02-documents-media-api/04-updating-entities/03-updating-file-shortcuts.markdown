@@ -24,13 +24,12 @@ Follow these steps to use this method to update a file shortcut:
     [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
-2.  Get the data for the `updateFileShortcut` method's arguments. Obviously, if 
-    you want to call the method then you must populate its arguments. Since it's 
-    common to update a file shortcut with data submitted by the end user, you 
-    can extract those data from the request. This example does so via 
+2.  Get the data needed to populate the `updateFileShortcut` method's arguments. 
+    Since it's common to update a file shortcut with data submitted by the end 
+    user, you can extract the data from the request. This example does so via 
     `javax.portlet.ActionRequest` and 
     [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
-    but you can get these data any way you wish: 
+    but you can get the data any way you wish: 
 
         long fileShortcutId = ParamUtil.getLong(actionRequest, "fileShortcutId");
         long folderId = ParamUtil.getLong(actionRequest, "folderId");
@@ -41,7 +40,7 @@ Follow these steps to use this method to update a file shortcut:
 
     For more information on getting folder IDs, see the 
     [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
-    section on specifying folders. For more information on `ServiceContext` see 
+    section on specifying folders. For more information on `ServiceContext`, see 
     the tutorial 
     [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
 

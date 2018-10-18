@@ -18,7 +18,7 @@ method:
     getFolders(long repositoryId, long parentFolderId, boolean includeMountFolders)
 
 Follow these steps to use this method to get the folders from a parent folder. 
-Note that the example in these steps gets the folders of the default site 
+Note that the example in these steps gets the folders of the default Site 
 repository's root folder: 
 
 1.  Get a reference to `DLAppService`: 

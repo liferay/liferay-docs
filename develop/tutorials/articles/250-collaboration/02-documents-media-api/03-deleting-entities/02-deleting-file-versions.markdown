@@ -28,8 +28,8 @@ Follow these steps to use `deleteFileVersion` to delete a file version:
     in the getting started tutorial. 
 
 2.  Get the file entry ID and version for the file you want to delete. Since 
-    it's common to delete a file specified by the end user, you can extract 
-    those data from the request. This example does so via 
+    it's common to delete a file version specified by the end user, you can 
+    extract these parameters from the request. This example does so via 
     `javax.portlet.ActionRequest` and 
     [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
     but you can do this any way you wish: 

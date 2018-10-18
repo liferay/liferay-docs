@@ -16,8 +16,8 @@ To see all such methods, see the
 [`DLAppService` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
 
 Follow these steps to use the above `getFileEntriesAndFileShortcuts` method. 
-Note that the example in these steps gets all files and shortcuts from the 
-default site repository's root folder: 
+Note that the example in these steps gets all the files and shortcuts in the 
+default Site repository's root folder: 
 
 1.  Get a reference to `DLAppService`: 
 
@@ -29,7 +29,7 @@ default site repository's root folder:
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the method's arguments. You can get these 
-    data any way you wish. To specify the default site repository, you can use 
+    data any way you wish. To specify the default Site repository, you can use 
     the group ID as the repository ID. This example gets the group ID from the 
     request 
     (`javax.portlet.ActionRequest`) via 
@@ -38,12 +38,12 @@ default site repository's root folder:
         long groupId = ParamUtil.getLong(actionRequest, "groupId");
 
     Getting the parent folder ID, workflow status, and start and end parameters 
-    isn't necessary because @product@ provides a constants for them. The next 
-    step shows this in detail. 
+    isn't necessary because @product@ provides constants for them. The next step 
+    shows this in detail. 
 
 3.  Call the service reference method with the data from the previous step and 
     any other values you want to provide. This example calls 
-    `getFileEntriesAndFileShortcuts` with the group ID from the previous step, 
+    `getFileEntriesAndFileShortcuts` with the group ID from the previous step 
     and constants for the remaining arguments: 
 
         _dlAppService.getFileEntriesAndFileShortcuts(
