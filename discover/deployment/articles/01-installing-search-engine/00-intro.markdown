@@ -19,7 +19,8 @@ they work with @product@. In certain cases, you must choose Elasticsearch.
 
 If you answer _yes_ to either of these questions, you must choose Elasticsearch:
 
-1.  You're using @commerce@.
+1.  You're using 
+    [@commerce@, Liferay's commerce solution](/web/emporio/documentation/-/knowledge_base/1-0/getting-started).
 
 2.  Your custom search code requires the use of the `TermsSetFilter` API or the
     Geolocation APIs that are implemented in the Liferay Connector to
@@ -32,6 +33,6 @@ Elasticsearch connector, so you must use Elasticsearch if you're using
 Both of these Elasticsearch-only developer features are not currently
 implemented in the Liferay Connector to Solr, but may be added in the future.
 If you must use either of those features in your search solution's code, use
-Elasticsearch. If you're using Liferay's Commerce solution, use Elasticsearch.
+Elasticsearch. If you're using @commerce@, use Elasticsearch.
 Otherwise, feel free to use Elasticsearch or Solr to index your portal content.
 

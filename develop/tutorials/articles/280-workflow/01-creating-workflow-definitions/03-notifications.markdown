@@ -1,4 +1,4 @@
-# Workflow Notifications
+# Workflow Notifications [](id=workflow-notifications)
 
 While an asset is in a workflow, relevant Users should be notified about certain
 events, like when a review task is completed. Any workflow node with an
@@ -24,7 +24,7 @@ once a task assignment is created. But who receives the notification? If no
 recipients are explicitly specified via a `recipients` tag, the asset's creator
 receives the notification.
 
-## Notification Options
+## Notification Options [](id=notification-options)
 
 There are several elements that can be specified in a `<notification>`:
 

@@ -2,36 +2,35 @@
 
 Pie charts are percentage-based. A pie chart models percentage-based data as 
 individual slices of pie. Each data set must be defined as a new instance of the 
-[`SingleValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html).
+[`SingleValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html). 
+This tutorial shows how to configure your portlet to use pie charts. 
 
-Java sample data:
+Follow these steps:
 
-    import com.liferay.frontend.taglib.chart.model.SingleValueColumn;
-    import com.liferay.frontend.taglib.chart.model.percentage.pie.PieChartConfig;
+1.  Import the chart taglib along with the `PieChartConfig` and 
+    `SingleValueColumn` classes into your bundle's `init.jsp` file:
 
-    public class ChartSampleDisplayContext {
+        <%@ taglib prefix="chart" uri="http://liferay.com/tld/chart" %>
+        <%@ page import="com.liferay.frontend.taglib.chart.model.percentage.pie.PieChartConfig" %>
+        <%@ page import="com.liferay.frontend.taglib.chart.model.SingleValueColumn" %>
 
-        public ChartSampleDisplayContext() {
-          _initPieChartConfig();
-        }
+2.  Add the following Java scriptlet to the top of your `view.jsp`:
 
-        public pieChartConfig getPieChartConfig() {
-          return _pieChartConfig;
-        }
+        <%
+        PieChartConfig _pieChartConfig = new PieChartConfig();
 
-        private void _initPieChartConfig() {
-          _pieChartConfig.addColumns(
-            new SingleValueColumn("data1", 30),
-            new SingleValueColumn("data2", 70));
-        }
-        
-        private PieChartConfig _pieChartConfig = new PieChartConfig();
+        _pieChartConfig.addColumn(
+          new SingleValueColumn("data1", 85.4)
+        );
 
-    }
+        %>
 
-JSP:
+3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_pieChartConfig` 
+    as the `config` attribute's value:
 
-    <chart:pie config="<%= chartSampleDisplayContext.getPieChartConfig() %>" id="pie" />
+        <chart:pie
+          config="<%= _pieChartConfig %>"
+        />
 
 ![Figure 1: A pie chart models percentage-based data as individual slices of pie.](../../../images/chart-taglib-pie.png)
 
@@ -39,6 +38,6 @@ JSP:
 
 [Donut Charts](/develop/tutorials/-/knowledge_base/7-1/donut-charts)
 
-[Gauge Charts](/develop/tutorials/-/knowledge_base/7-1/gauge-charts)
+[Pie Charts](/develop/tutorials/-/knowledge_base/7-1/pie-charts)
 
 [Using Clay Taglibs in Your Portlet](/develop/tutorials/-/knowledge_base/7-1/using-the-clay-taglib-in-your-portlets)
