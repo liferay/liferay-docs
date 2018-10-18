@@ -35,15 +35,10 @@ index when a guestbook is persisted:
 - Update `GuestbookLocalServiceImpl`'s `addGuestbook`, `updateGuestbook`, and
    `deleteGuestbook` methods to invoke the guestbook indexer.
 
-+$$$
-
-**Note:** In prior versions of @product@, search and indexing was accomplished
-with one `*Indexer` class that extended `BaseIndexer`. This Learning Path
-demonstrates a new pattern that relies on composition instead of inheritance. If
-you desire to use the old approach, feel free to extend `BaseIndexer`. It's
-still supported. 
-
-$$$
+In prior versions of @product@, search and indexing was accomplished with one
+`*Indexer` class that extended `BaseIndexer`. This Learning Path demonstrates a
+new pattern that relies on composition instead of inheritance. If you desire to
+use the old approach, feel free to extend `BaseIndexer`. It's still supported. 
 
 Since there's no reason to search for guestbooks in the UI, only back-end work
 is necessary. 

@@ -21,8 +21,6 @@ public class GuestbookModelPreFilterContributor
 		BooleanFilter booleanFilter, ModelSearchSettings modelSearchSettings,
 		SearchContext searchContext) {
 
-		System.out.println("Query code called: GuestbookModelPreFilterContributor.contribute()");
-
 		workflowStatusModelPreFilterContributor.contribute(
 	booleanFilter, modelSearchSettings, searchContext);
 	}

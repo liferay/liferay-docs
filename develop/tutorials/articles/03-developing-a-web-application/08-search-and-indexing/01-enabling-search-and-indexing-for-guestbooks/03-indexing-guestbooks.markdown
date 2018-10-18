@@ -116,13 +116,18 @@ contents:
 
     }
 
-The interesting work is done in the `customize` method. Configure the batch
-indexing behavior for the entity's documents by calling
-`BatchIndexingActionable` methods. This code uses the Guestbook's actionable
-dynamic query helper method to retrieve all Guestbooks in the virtual instance
-(identified by the Company ID). Service Builder generated this query method for
-you when you built the services. Each Guestbook's document is then retrieved and
-added to a collection.
+First look at the `customize` method. Configure the batch indexing behavior for
+the entity's documents by calling `BatchIndexingActionable` methods. This code
+uses the Guestbook's actionable dynamic query helper method to retrieve all
+Guestbooks in the virtual instance (identified by the Company ID). Service
+Builder generated this query method for you when you built the services. Each
+Guestbook's document is then retrieved and added to a collection.
+
+When you write the indexing classes for Entries, you'll add the Guestbook title
+to the Entry document. Thus, you must provide a way to update the indexed Entry
+documents if a Guestbook title is changed.  The `modelIndexed` method is used
+to call a `reindex`  method form an interface that will be created later for
+Entries. 
 
 Once the re-indexing behavior is in place, move on to the code for controlling
 how Guestbook documents are queried from the search engine.

@@ -16,6 +16,9 @@ functionality:
     - `EntryModelIndexerWriterContributor` configures the re-indexing and
         batch re-indexing behavior for Entries.
 
+    - `EntryBatchReindexer`, an interface, and its `EntryBatchReindexerImpl`,
+        for reindexing Entries when their Guestbook is updated.
+
 - Querying:
 
     - `EntryKeywordQueryContributor`  contributes clauses to the ongoing

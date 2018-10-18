@@ -23,8 +23,6 @@ public class GuestbookKeywordQueryContributor
 		String keywords, BooleanQuery booleanQuery,
 		KeywordQueryContributorHelper keywordQueryContributorHelper) {
 
-		System.out.println("Query code called: GuestbookKeywordQueryContributor.contribute()");
-
 		SearchContext searchContext =
 	keywordQueryContributorHelper.getSearchContext();
 

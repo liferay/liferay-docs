@@ -12,10 +12,10 @@ Guestbook Entries must be searchable via a search bar in the Guestbook portlet.
 
 +$$$
 
-**Note:** In previous versions of @product@, search was only _permissions aware_
-(indexed with the entity's permissions and searched with those permissions
-intact) if the developer of the application specified this line in the `Indexer`
-class's constructor:
+**Note:** In previous versions of @product@, search was only _permissions
+aware_ (indexed with the entity's permissions and searched with those
+permissions intact) if the application developer specified this line in the
+`Indexer` class's constructor:
 
     setPermissionAware(true);
 
@@ -38,6 +38,4 @@ But assets are for later. Right now it's time to index those Guestbooks. Ready?
 ![Figure 1: Add a search bar so users can search for Guestbook Entries. If a message or name matches the search query, the Entry is displayed in the search results.](../../../images/guestbook-portlet-search.png)
 
 <a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/enabling-search-and-indexing-for-guestbooks">Let's Go!<span class="icon-circle-arrow-right"></span></a>
-
-
 

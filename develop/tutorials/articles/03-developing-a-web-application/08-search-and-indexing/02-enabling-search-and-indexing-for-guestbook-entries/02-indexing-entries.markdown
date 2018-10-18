@@ -5,8 +5,7 @@
 </div>
 
 To control how Entry objects are translated into search engine documents,
-create two classes in the new search package. The classes were explained in
-more detail for Guestbooks:
+create these classes in the new search package:
 
 1.  `ModelDocumentContributor`: The main searchable fields for Entries are
     _Name_ and _Message_. The Guestbook name associated with the entry is
@@ -15,6 +14,10 @@ more detail for Guestbooks:
 2.  `ModelIndexerWriterContributor` configures the batch indexing behavior for
     Entries. This code is executed when Entries are re-indexed from the
     Search administration section of the Control Panel.
+
+3.  A new interface, `EntryBatchReindexer`, with its iplementation,
+    `EntryBatchReindexerImpl`. These classes contain code to ensure that
+    Entries are reindexed when their Guestbook is updated.
 
 ## Implementing `ModelDocumentContributor`
 
@@ -128,6 +131,61 @@ contents:
 
 The interesting work is done in the `customize` method, where all Entries are
 retrieved and added to a collection. 
+
+## Implementing `EntryBatchReindexer`
+
+Create a new interface class, `EntryBatchReindexer`, with one method called
+`reindex`:
+
+
+    package com.liferay.docs.guestbook.search;
+
+    public interface EntryBatchReindexer {
+
+        public void reindex(long guestbookId, long companyId);
+
+    }
+
+Then create the implementation class, `EntryBatchReindexerImpl`:
+
+    @Component(immediate = true, service = EntryBatchReindexer.class)
+    public class EntryBatchReindexerImpl implements EntryBatchReindexer {
+
+        @Override
+        public void reindex(long guestbookId, long companyId) {
+            BatchIndexingActionable batchIndexingActionable =
+        indexerWriter.getBatchIndexingActionable();
+
+            batchIndexingActionable.setAddCriteriaMethod(dynamicQuery -> {
+                Property guestbookIdPropery = PropertyFactoryUtil.forName(
+        "guestbookId");
+
+                dynamicQuery.add(guestbookIdPropery.eq(guestbookId));
+            });
+
+            batchIndexingActionable.setCompanyId(companyId);
+
+            batchIndexingActionable.setPerformActionMethod((Entry entry) -> {
+                Document document = indexerDocumentBuilder.getDocument(entry);
+
+                batchIndexingActionable.addDocuments(document);
+            });
+
+            batchIndexingActionable.performActions();
+            
+        }
+
+        @Reference(target = "(indexer.class.name=com.liferay.docs.guestbook.model.Entry)")
+        protected IndexerDocumentBuilder indexerDocumentBuilder;
+
+        @Reference(target = "(indexer.class.name=com.liferay.docs.guestbook.model.Entry)")
+        protected IndexerWriter<Entry> indexerWriter;
+
+    }
+
+    The `reindex` method of the interface is called when a Guestbook is
+    updated. The entry documents are reindexed to include the update Guestbook
+    title.
 
 Once the re-indexing behavior is in place, move on to the code for controlling
 how Entry documents are queried from the search engine.
