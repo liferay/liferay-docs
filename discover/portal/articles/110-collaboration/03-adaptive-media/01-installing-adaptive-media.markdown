@@ -6,9 +6,8 @@ Media to handle animated GIFs.
 
 +$$$
 
-**Note:** Since the Adaptive Media app is installed by default, Liferay DXP Fix 
-Packs and Liferay Portal CE GA releases will contain any updates to the app. 
-Using 
+**Note:** Since the Adaptive Media app is installed by default, it's updated via 
+Liferay DXP Fix Packs and Liferay Portal CE GA releases. Using 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
 to update the app on Liferay DXP 7.1 causes an error. 
 
