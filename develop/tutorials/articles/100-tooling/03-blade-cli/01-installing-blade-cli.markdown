@@ -62,15 +62,20 @@ CLI tutorials to learn how.
 
 ## Installer Issues on macOS [](id=installer-issues-on-macos)
 
-If you're using macOS, you could experience an issue where the `blade` command
-is not available in your terminal:
+If you're using macOS or Linux, you could experience an issue where the `blade`
+command is not available via command line. This is caused by the installer being
+unable to add JPM's `bin` folder to your user path. JPM is a Java package
+manager used in Blade CLI.
 
-    command not found: blade
+To add the required `bin` folder, execute the appropriate command based on your
+operating system.
 
-This is caused by the installer being unable to add JPM's `bin` folder to your
-user path. JPM is a Java package manager used in Blade CLI. To add the required
-`bin` folder, execute the following command in your terminal:
+macOS:
 
     echo 'export PATH="$PATH:$HOME/Library/PackageManager/bin"' >> ~/.bash_profile
 
-Once you restart your terminal, the `blade` command should be available.
+Linux:
+
+    echo 'export PATH="$PATH:$HOME/jpm/bin"' >> ~/.bash_profile
+
+Once you restart the command line, the `blade` command should be available.
