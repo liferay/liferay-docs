@@ -2,7 +2,7 @@
 
 Once you develop a 
 [Form Field Type](/develop/tutorials/-/knowledge_base/7-1/creating-form-field-types), 
-you might need to add settings to it. For example, A Time field could be
+you might need to add settings to it. For example, a Time field could be
 configured to accept different time formats. Here you'll learn how to add
 settings to form field types by adding a *mask* and a *placeholder* to the Time
 field type created in the previous tutorial. 
@@ -198,12 +198,12 @@ to the end user. Create a new Java class implementing the interface
 `DDMFormFieldTemplateContextContributor` and modify the existing class
 `*DDMFormFieldRenderer`.
 
-The `DDMFormFieldTemplateContextContributor` interface has a single method named
-`getParameters`. It gets the new configuration settings, specific for a form
-field type, and sends for the resources which need them, like the Soy template.
-To get these settings, create a new class,
-`TimeDDMFormFieldTemplateContextContributor`. First create its OSGI
-component annotation:
+The `DDMFormFieldTemplateContextContributor` interface has a single method
+named `getParameters`. It gets the new configuration settings, specific for a
+form field type, and sends for the resources which need them, like the Soy
+template.  To get these settings, create a new class,
+`TimeDDMFormFieldTemplateContextContributor`. First create its OSGI component
+annotation and the class declaration:
 
     @Component(
         immediate = true,
@@ -213,12 +213,11 @@ component annotation:
             TimeDDMFormFieldTemplateContextContributor.class
         }
     )
+    public class TimeDDMFormFieldTemplateContextContributor
+        implements DDMFormFieldTemplateContextContributor {
 
 Then override `getParameters` to get the new configurations settings,
 `placeholder` and `mask`:
-
-    public class TimeDDMFormFieldTemplateContextContributor
-        implements DDMFormFieldTemplateContextContributor {
 
         @Override
         public Map<String, Object> getParameters(

@@ -37,10 +37,8 @@ Before getting started, learn the structure of a form field type.
 
 ## Anatomy of a Field Type Module [](id=anatomy-of-a-field-type-module)
 
-The `dynamic-data-mapping-type-*` modules in @product@'s source code are good
-templates to follow when developing your own field types. For example, look at
-the directory structure of the `dynamic-data-mapping-type-paragraph` module
-(version 3.0.0):
+All form field type modules have a similar structure. Here's the directory
+structure of the `dynamic-data-mapping-type-time` module (version 3.0.0):
 
     .babelrc
     .npmbundlerrc
@@ -51,34 +49,31 @@ the directory structure of the `dynamic-data-mapping-type-paragraph` module
     src
     └── main
         ├── java
-        │   └── com
-        │       └── liferay
-        │           └── dynamic
-        │               └── data
-        │                   └── mapping
-        │                       └── type
-        │                           └── paragraph
-        │                               └── internal
-        │                                   ├── ParagraphDDMFormFieldRenderer.java
-        |                                   ├── ParagraphDDMFormFieldTemplateContextContributor.java
-        │                                   ├── ParagraphDDMFormFieldType.java
-        │                                   └── ParagraphDDMFormFieldTypeSettings.java
+        │   └── com
+        │       └── liferay
+        │           └── dynamic
+        │               └── data
+        │                   └── mapping
+        │                       └── type
+        │                           └── time
+        │                               ├── TimeDDMFormFieldRenderer.java
+        │                               ├── TimeDDMFormFieldTemplateContextContributor.java
+        │                               ├── TimeDDMFormFieldType.java
+        │                               └── TimeDDMFormFieldTypeSettings.java
         └── resources
             ├── content
-            │   ├── Language.properties
-            │   └── Language_xx_XX.properties
-            │   └── ...
+            │   └── Language.properties
             └── META-INF
                 └── resources
                     ├── config.js
-                    ├── paragraph_field.js
-                    ├── paragraph.es.js
-                    └── paragraph.soy
+                    ├── time.es.js
+                    ├── time_field.js
+                    └── time.soy
 
-You don't need `*TemplateContextContributor.java` or `*TypeSettings.java`
-in your initial module (see the tutorial on adding settings to your form field
-types to learn more about these classes). The initial module consists of these
-Java classes and resources:
+You don't need `*TemplateContextContributor.java` or `*TypeSettings.java` in the
+initial module (see the tutorial on adding settings to your form field types to
+learn more about these classes). The initial module consists of these Java
+classes and resources:
 
 - `*DDMFormFieldRenderer.java`: Controls the rendering of the template. Sets the
     language, declares the namespace, and loads the template resources on

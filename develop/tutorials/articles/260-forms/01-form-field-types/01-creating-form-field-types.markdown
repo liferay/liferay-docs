@@ -96,7 +96,7 @@ makes your form field blends in with the existing form field types.
 type's behavior.
 
 `ddm.form.field.type.js.module`
-: The name of the JavaScript module is provided to the Form engine so the module
+: The name of the JavaScript module provided to the Form engine so the module
 can be loaded when needed.
 
 `ddm.form.field.type.label`
@@ -409,7 +409,7 @@ JavaScript file that defines the dependencies of the declared JavaScript
 components (`requires...`), and where the files are located (`path...`). The
 `config.js` is used by the Alloy loader when it satisfies dependencies for each
 JavaScript component. For more information about the Alloy loader see the
-[tutorial on its usage](/develop/tutorials/-/knowledge_base/7-0/loading-amd-modules-in-liferay).
+[tutorial on its usage](/develop/tutorials/-/knowledge_base/7-1/loading-amd-modules-in-liferay).
 
 ![Figure 1: Add your own form field types to the Forms application.](../../../images/forms-time-field-type.png)
 
