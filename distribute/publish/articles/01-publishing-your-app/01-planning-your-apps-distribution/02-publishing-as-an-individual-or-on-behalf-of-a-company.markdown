@@ -1,13 +1,13 @@
 # Publishing as an Individual or on Behalf of a Company [](id=publishing-as-an-individual-or-on-behalf-of-a-company)
 
 You can publish an app as yourself (an individual) or on behalf of a *company*.
-This determines the who is shown as the app's author and owner. Your selection
-also determines who can access the app behind the scenes, once it's published. 
+This determines who is shown as the app's author and owner. Your selection also
+determines who can access the app behind the scenes, once it's published. 
 
 The default option is publishing on behalf of yourself. If you go with this
-option, your name is shown as the app's author/owner in the Marketplace. The
-term *personal app* refers to an app published by an individual. That individual
-is the only one who can manage the personal app. Managing an app includes such
+option, your name shows as the app's author/owner in the Marketplace. The term
+*personal app* refers to an app published by an individual. That individual is
+the only one who can manage the personal app. Managing an app includes such
 duties as adding new releases to it, adding new versions of it, and editing its
 details. 
 
@@ -15,10 +15,11 @@ Publishing on behalf of a company effectively hands the keys over to the
 company's administrators. The app shows on the company's Marketplace app
 development page and in the company's list of apps on the company's public
 profile page. Company admins have the same permission that an individual author
-has to manage the app (add new releases, new versions, edit details, etc). The
+has to manage the app (add new releases, new versions, edit details, etc.). The
 company's name alone is shown as the app's author/owner. 
 
-You can [register](https://www.liferay.com/marketplace/become-a-developer)
+You can
+[register](https://www.liferay.com/marketplace/become-a-developer)
 yourself as a Marketplace Developer or one of your company's administrators can
 register the company as a Marketplace Developer. You can either register for a
 Free Basic Account or register for a Paid App Developer Account. A Paid App
@@ -38,7 +39,7 @@ developer account options:
 <ul class="text-left">
 	<li>No cost to register as a Marketplace developer</li>
 	<li>Distribute free apps on the Marketplace</li>
-	<li>Access to developer-only resources (e.g., Developer Portal, Liferay IDE, Liferay Developer License)</li>
+	<li>Access to developer-only resources (e.g., Liferay Dev Studio, Liferay Developer License)</li>
 	<li>Participate in Marketplace promotions</li>
 </ul>
 </div>

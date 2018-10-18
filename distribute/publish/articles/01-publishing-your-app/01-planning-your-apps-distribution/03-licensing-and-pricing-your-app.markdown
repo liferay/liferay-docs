@@ -4,7 +4,8 @@ You have significant control over how to price your app. You choose the license
 term (perpetual vs. annual), choose the license type (standard vs. developer),
 define a pricing structure (pricing and bundled discounting based on a license
 unit), and specify regional availability. Even after your app is on the
-Marketplace, you can tweak general pricing or modify regional pricing. 
+Marketplace, you can tweak general pricing or modify regional pricing. Here
+you'll learn how to do all these things. 
 
 ## Determining a License Term [](id=determining-a-license-term)
 
@@ -15,9 +16,9 @@ Here are the license term options:
 - Non-perpetual license: must be renewed annually.
 
 Importantly, you can't change your app's license terms once the app is approved.
-In order to release an approved app under a different license term you must
-submit another app under a new name (title). So make sure you think through the
-license term that makes the most sense for your app. 
+Releasing an approved app under a different license term requires submitting
+another app under a new name (title). So make sure to think through the license
+term that makes the most sense for your app. 
 
 +$$$
 
@@ -32,10 +33,10 @@ $$$
 ## Determining License Type and License Unit Pricing [](id=determining-license-type-and-license-unit-pricing)
 
 Licenses are set to run on a permitted number of Instance Units (defined as a
-single installation of the Liferay Portal, which corresponds to one (1) Liferay
-Portal `.war` file). You can create tiers of bundled options to accommodate the
-number of Instance Units to offer to customers. You can also offer a discounted
-price for a bundle of multiple Instance Units.
+single installation of the Liferay, which corresponds to one (1) Liferay `.war`
+file). You can create tiers of bundled options to accommodate the number of
+Instance Units to offer to customers. You can also offer a discounted price for
+a bundle of multiple Instance Units.
 
 There are two types of licenses that you can offer for your app: standard
 licenses and developer licenses. Standard licenses are intended for production
@@ -72,7 +73,7 @@ submission process if you choose to *offer subscription services*, you should
 build the price of subscription services into the annual price of the
 non-perpetual license; please take this into account as you price non-perpetual
 licenses. In effect, the customer pays one price annually for both the app
-license and subscription services. Customers is entitled to support,
+license and subscription services. The customer is entitled to support,
 maintenance, and updates as long as they continue to renew their non-perpetual
 license.
 
@@ -92,8 +93,8 @@ Choose the currency to use with your pricing options. Decide on the renewal cost
 for any support services you offer. The support services price is per instance,
 so if you specify $100 USD and the customer is running 10 instances, their
 annual support services renewal cost will be $1000. Note: This only applies to
-perpetual licenses. For non-perpetual licenses, you should include any support
-services cost in the annual license price. 
+perpetual licenses. For non-perpetual licenses, include any support services
+cost in the annual license price. 
 
 Even after an app has been approved, you can change the currency type and
 currency price of its license bundles, and you can modify regional availability
@@ -153,9 +154,9 @@ Marketplaces**
 
 As you can see, Liferay's fee is reasonable. 
 
-You need a valid Paypal account to receive payment; you're asked to provide this
+You need a valid PayPal account to receive payment; you're asked to provide this
 info when registering for or converting to a Paid App Developer Account.
 Payments are issued no later than 90 days after the transaction. 
 
 Now that you've decided on licensing options and pricing, you can concentrate on
-what versions of Liferay your app will run on. 
+the Liferay versions your app runs on. 
