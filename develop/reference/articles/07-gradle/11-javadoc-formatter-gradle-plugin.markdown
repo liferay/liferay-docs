@@ -12,7 +12,7 @@ The tool lets you generate:
 - An XML representation of the Javadoc comments, which can be used by tools in
   order to index the Javadocs of the project.
 
-The plugin has been successfully tested with Gradle 2.5 up to 3.3.
+The plugin has been successfully tested with Gradle 2.5 up to 3.5.1.
 
 ## Usage [](id=usage)
 
