@@ -2,16 +2,16 @@
 
 The following app metadata guidelines are intended to ensure that apps are
 submitted with important and necessary supporting information. The metadata that
-you submit with your app will serve both as necessary information for your app's
+you submit with your app serves both as necessary information for your app's
 buyers (e.g., your contact info) and as promotional assets (e.g., description,
 screenshots, etc.) that can help drive traffic to and downloads of your app!
 
 ![Figure 1: Check out how good your app can look on the Markeplace.](../../images/dev-portal-app-metadata-guidelines.png)
 
-You'll want to think of a good name and description of your app. If you haven't
-already done so, take some screenshots, design an icon, and create a website for 
-your app. The table below can help guide you address the Marketplace app 
-metadata requirements and produce an appealing advertisement for your app.
+Think of a good name and description for your app. If you haven't already done
+so, take some screenshots, design an icon, and create a website for  your app.
+The table below helps you address the Marketplace app metadata requirements and
+produce an appealing app advertisement.
 
 **Marketplace App Metadata Guidelines:**
 
@@ -68,7 +68,7 @@ metadata requirements and produce an appealing advertisement for your app.
 				<ul>
 					<li>
 						In some views within the Marketplace, app titles longer 
-						than 18 characters will be shortened with an ellipsis. 
+						than 18 characters are shortened with an ellipsis. 
 					</li>
 					<li>Titles must not be longer than 50 characters.</li>
 					<li>
@@ -98,29 +98,31 @@ metadata requirements and produce an appealing advertisement for your app.
 					Please include an email address, contact information, and/or
 					website URL for the "Support" field. If someone encounters
 					an issue with your app, they will need a way to contact you.
+                </p>
 				<p>
 				    Even if you choose not to offer Support Services (by
 				    unchecking "Offer Support" during the app submission
-				    process), we require that you provide support contact
-				    information so that buyers can reach you with general
-				    questions about your app.
+				    process), you must provide support contact information so
+				    that buyers can ask you general questions about your app.
+                </p>
 			</td>
 		</tr>
 		<tr>
 			<td class="table-header left-header"> Description </td>
-			<td class="">
-				Using English as the default langauge, you must provide a
-				description for your app. After providing the description in
-				English, you can provide other translations of the text.
-				<p>
-				At a minimum, the description should provide a concise overview
-				of what the app does. Great descriptions also list key
-				functionalities and what customers can expect to gain by
-				deploying your app. If you'd like to see an example, you can
-				see our description of the
-				<a href="https://web.liferay.com/marketplace/-/mp/application/43707761">Audience Targeting</a>
-				app on the
-				<a href="https://web.liferay.com/marketplace">Markeplace</a>.
+			<td class
+                <p>
+				    Using English as the default language, you must provide a
+				    description for your app. After providing the description in
+				    English, you can provide other translations of the text. <p>
+				    At a minimum, the description should provide a concise
+				    overview of what the app does. Great descriptions also list
+				    key functionalities and what customers can expect to gain by
+				    deploying your app. For a good description example, see the
+				    <a
+				    href="https://web.liferay.com/marketplace/-/mp/application/43707761">Audience
+				    Targeting</a> app on the
+				    <a href="https://web.liferay.com/marketplace">Markeplace</a>.
+                </p>
 				<p>
 					It's important that you specify any plugin dependencies
 					(e.g., plugins that must be installed prior to running your
@@ -128,6 +130,7 @@ metadata requirements and produce an appealing advertisement for your app.
 					with specific app servers) here, so that potential buyers 
 					and the Liferay app review team are aware of these 
 					requirements.
+                </p>
 			</td>
 		</tr>
 		<tr>
@@ -142,58 +145,63 @@ metadata requirements and produce an appealing advertisement for your app.
 		</tr>
 		<tr>
 			<td class="table-header left-header">
-				Compatibility with Future Minor Releases of Liferay Portal
+				Compatibility with Future Minor Releases of Liferay
 			</td>
 			<td class="">
 				Please include a "+" at the end of the latest version when
 				specifying version constraints in your
 				liferay-plugin-package.properties file (e.g.,
-				"liferay-versions=6.1.1+, 6.1.20+"). This will ensure that your
-				app will continue to be deployable to future versions of Liferay
-				within a minor release. If, in the future, you discover your app
-				does NOT work with a particular Liferay version, you can modify
-				the list to exclude that version.
+				"liferay-versions=6.1.1+, 6.1.20+"). This ensures that the app
+				continues to be deployable to future versions of Liferay within
+				a minor release. If, in the future, you discover your app does
+				NOT work with a particular Liferay version, you can modify the
+				list to exclude that version.
 			</td>
 		</tr>
 		<tr>
 			<td class="table-header left-header">
 				Increase Your Potential User Base </td>
 			<td class="">
-				In most cases, an app that is compatible with CE portal will
-				also run under Liferay Digital Enterprise (DE) or  EE portal,
-				and vice versa. Specifying compatibility with both DE/EE and CE
-				versions of the portal will ensure that a wider audience has
-				access to your app!
+                <p>
+				    In most cases, an app that is compatible with Liferay Portal
+				    CE will also run on Liferay Digital Experience Platform
+				    (DXP) (or Liferay Portal EE), and vice versa. Specifying
+				    compatibility with both DXP/EE and CE versions of Liferay
+				    ensures that a wider audience has access to your app!
+                </p>
 				<p>
-					You can <a href="https://www.liferay.com/web/developer/marketplace/license">request
-					a Liferay DE/EE Developer License </a> to support testing and
-					confirm compatibility.
+					You can <a
+					href="https://www.liferay.com/web/developer/marketplace/license">request
+					a Developer License </a> to support testing and confirm
+					compatibility.
 				</p>
 			</td>
 		</tr>
 		<tr>
 			<td class="table-header left-header"> Icon </td>
 			<td class="">
-				Icons for your app must be exactly 90 pixels in both height and
-				width and must be in PNG, JPG, or GIF format. The image size
-				cannot exceed 512kb. Animated images are prohibited.
 				<p>
-					The use of the Liferay logo, including any permitted
-					alternate versions of the Liferay logo, is permitted only
-					with Liferay's explicit approval. Please refer to our <a
-					href="https://www.liferay.com/trademark">trademark
-					policy</a> for details.
+                    App icons must be exactly 90 pixels in both height and
+                    width and must be in PNG, JPG, or GIF format. The image size
+                    cannot exceed 512kb. Animated images are prohibited.
+                </p>
+				<p>
+                    The use of the Liferay logo, including any permitted
+                    alternate versions of the Liferay logo, is permitted only
+                    with Liferay's explicit approval. Please refer to our <a
+                    href="https://www.liferay.com/trademark">trademark
+                    policy</a> for details.
 				</p>
 			</td>
 		</tr>
 		<tr>
 			<td class="table-header left-header"> Screenshots </td>
-			<td class=""> Screenshots for your app must not exceed 1080 pixels
+			<td class=""> App screenshots must not exceed 1080 pixels
 				in width x 678 pixels in height and must be in the JPG format.
-				The file size of each screenshot must not exceed 384KB. Each
+				Each screenshot's file size must not exceed 384KB. Each
 				screenshot should preferably be the same size (each will be
 				automatically scaled to match the aspect ratio of the above
-				dimensions), and it is preferable if they are named
+				dimensions), and it is preferable to name screenshots
 				sequentially, for example fluffy-puppies-01.jpg,
 				fluffy-puppies-02.jpg, and so on.
 			</td>
@@ -218,15 +226,16 @@ version, icon, etc.).
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
 However, staging the house with some furniture and decorations helps prospective
-buyers imagine what the house might look like with their belongings. Liferay's
-resources importer application is a tool that allows a theme developer to have
-files and web content automatically imported into the portal when a theme is
-deployed.
+buyers imagine what the house might look like with their belongings. The
+[Resources Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
+lets theme developers specify files and web content to import automatically into
+Liferay on theme deployment. 
 
 All standalone themes that are uploaded to Liferay Marketplace must use the
-resources importer to include files/web content to provide a sample context for
+Resources Importer to include files/web content to provide a sample context for
 their theme. This ensures a uniform experience for Marketplace users: a user can
 download a theme from Marketplace, install it on their portal, go to Sites or
 Site Templates in the Control Panel and immediately see their new theme in
-action. You can read more about themes in the 
-[Themes and Layout Templates tutorials](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates).
+action. The 
+[Themes tutorials](/develop/tutorials/-/knowledge_base/7-1/introduction-to-themes)
+provide details. 
