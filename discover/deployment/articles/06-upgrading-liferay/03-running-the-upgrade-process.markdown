@@ -89,6 +89,20 @@ Here are all the upgrade tool command line options:
 **--shell** or **-s**: Automatically connects you to the Gogo shell after
 finishing the upgrade process.
 
++$$$
+
+**Note:** It is ideal to execute the upgrade process in a separate server that 
+has good infrastructure conditions regarding memory, CPU, and database
+connection. It is common to connect to such servers via SSH. As you execute an
+upgrade remotely, make sure to guard against interruptions: 
+
+- If you're executing the upgrade using `ssh`, ignore hangups (connection loss) 
+by using `nohup` or something similar. 
+- On the machine you're connecting from, disable settings that shutdown or sleep
+that machine. 
+
+$$$
+
 ### Configuring the Upgrade [](id=configuring-the-core-upgrade)
 
 The core upgrade requires configuration. You can configure it at runtime via the
