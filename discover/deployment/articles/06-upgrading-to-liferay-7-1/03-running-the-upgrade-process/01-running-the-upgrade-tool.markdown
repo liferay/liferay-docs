@@ -87,7 +87,7 @@ that machine.
 If upgrade execution is interrupted, check your log file (default file is
 `upgrade.log`) for where execution stopped. 
 
-- If execution stopped during an upgrade process for Core 7.1 or higher, or a 
+- If execution stopped during an upgrade process for Core 7.1 or higher, or any 
 module upgrade process, restart the upgrade tool to continue the upgrade from
 that point. 
 - If execution stopped during an upgrade process for Core 7.0 or lower, you must
