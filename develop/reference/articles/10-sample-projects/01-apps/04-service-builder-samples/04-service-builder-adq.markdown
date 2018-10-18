@@ -1,7 +1,5 @@
 # Service Builder Application Demonstrating Actionable Dynamic Query [](id=service-builder-application-demonstrating-actionable-dynamic-query)
 
-## What does this sample do when deployed? [](id=what-does-this-sample-do-when-deployed)
-
 This sample is similar to the
 [`basic` Service Builder sample](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/service-builder/basic),
 which lets you perform CRUD (create, read, update, delete) operations on service

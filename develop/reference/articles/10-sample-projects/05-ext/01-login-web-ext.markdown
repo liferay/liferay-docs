@@ -1,7 +1,5 @@
 # Login Web Ext [](id=login-web-ext)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Login Ext Module sample demonstrates how to customize a default Liferay
 module's source code. This example replaces the default `login.jsp` file in the
 `com.liferay.login.web` bundle by adding the text *Hello from
