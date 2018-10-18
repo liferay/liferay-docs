@@ -1,7 +1,5 @@
 # Vue.js npm Portlet [](id=vue-js-npm-portlet)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Vue.js npm Portlet sample provides a portlet that uses the
 [Vue.js](https://vuejs.org/) framework to render its output.
 

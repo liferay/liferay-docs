@@ -1,7 +1,5 @@
 # Template Context Contributor [](id=template-context-contributor)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Template Context Contributor sample injects a new variable into @product@'s
 theme context. When deploying this sample with no customizations, you can use
 the `${sample_text}` variable from any theme.

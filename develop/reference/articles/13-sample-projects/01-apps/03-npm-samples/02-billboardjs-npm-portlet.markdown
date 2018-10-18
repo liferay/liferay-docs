@@ -1,7 +1,5 @@
 # Billboard.js npm Portlet [](id=billboard-js-npm-portlet)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Billboard.js npm Portlet sample provides a portlet that uses the
 [Billboard.js](https://naver.github.io/billboard.js/) framework to render its
 output.

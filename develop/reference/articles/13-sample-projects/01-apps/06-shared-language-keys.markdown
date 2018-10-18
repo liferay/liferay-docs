@@ -1,7 +1,5 @@
 # Shared Language Keys [](id=shared-language-keys)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Shared Language Keys sample provides a JSP portlet that displays language
 keys.
 

@@ -1,7 +1,5 @@
 # Isomorphic npm Portlet [](id=isomorphic-npm-portlet)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Isomorphic npm Portlet sample provides a portlet that uses
 [isomorphic](https://en.wikipedia.org/wiki/Isomorphic_JavaScript) code (i.e.,
 can run from client and/or server side) on the client side. 

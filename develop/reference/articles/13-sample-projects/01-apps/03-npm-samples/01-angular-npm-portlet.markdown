@@ -1,7 +1,5 @@
 # Angular npm Portlet [](id=angular-npm-portlet)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Angular npm Portlet sample provides a portlet that uses the
 [Angular](https://angular.io/) framework to render its output.
 

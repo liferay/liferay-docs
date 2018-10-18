@@ -1,7 +1,5 @@
 # Simple npm Portlet [](id=simple-npm-portlet)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Simple npm Portlet sample provides a portlet that uses the
 [isarray npm package](https://www.npmjs.com/package/isarray) when rendering its
 output.
