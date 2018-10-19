@@ -38,7 +38,8 @@ Before getting started, learn the structure of a form field type.
 ## Anatomy of a Field Type Module [](id=anatomy-of-a-field-type-module)
 
 All form field type modules have a similar structure. Here's the directory
-structure of the `dynamic-data-mapping-type-time` module (version 3.0.0):
+structure of the `dynamic-data-mapping-type-time` module developed in these
+tutorials:
 
     .babelrc
     .npmbundlerrc
@@ -100,9 +101,6 @@ classes and resources:
 
 - `Language_xx_XX.properties`: Define any terms that need to be 
     [translated into different languages](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application).
-
-<!-- Add the additional classes from the Google doc when this intro is split
-out, according to the form fields tutorial planning section -->
 
 In addition to the Java classes, Soy templates, and JavaScript files, a form
 field type contains the following files:
