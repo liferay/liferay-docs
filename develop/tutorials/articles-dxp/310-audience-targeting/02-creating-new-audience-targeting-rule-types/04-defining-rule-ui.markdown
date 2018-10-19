@@ -1,4 +1,4 @@
-## Defining the Rule's UI [](id=defining-the-rules-ui)
+# Defining the Rule's UI [](id=defining-the-rules-ui)
 
 The Java code you've added to this point has assumed that a preset weather value
 is available for comparing during the evaluation process. To let administrators

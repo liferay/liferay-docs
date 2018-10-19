@@ -10,7 +10,7 @@ Targeting API dependencies.
     file creation steps and get started right away. To use it, use this Blade
     command: 
 
-        blade create -t content-targeting-rule [project-name]
+        blade create -t content-targeting-rule weather-rule
 
 2.  Make sure the dependencies are up to date, as sometimes the template gets
     out of sync with the latest release. Here are the dependency versions you
@@ -33,8 +33,7 @@ Targeting API dependencies.
     you must define your rule's behavior. How your rule behaves is controlled
     by a Java class file that you create.
 
-3.  In the module's `src` directory appears a generated class. If necessary,
-    create or change a package and name for this class. To follow naming
+3.  In the module's `src` directory appears a generated class. To follow naming
     conventions, your class name should begin with the rule name you're
     creating, and end with *Rule* (e.g., `WeatherRule.java`). Your Java class
     should implement the 
