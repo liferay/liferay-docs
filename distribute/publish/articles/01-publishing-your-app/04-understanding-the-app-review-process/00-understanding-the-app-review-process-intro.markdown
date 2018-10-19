@@ -4,9 +4,9 @@ The Liferay Marketplace app QA/review process begins as soon as you submit your
 app for review. Every third-party app submitted to the Liferay Marketplace is
 reviewed by our team to ensure that certain standards for information are upheld
 and the app installs as expected. *However, Liferay cannot be a substitute for
-your own testing and debugging team*. Ultimately, it is the responsibility of
-the developer to test, refine, and ensure that the app functions as promised and
-performs as expected.
+your own testing and debugging team*. Ultimately, it is your responsibility to
+test, refine, and ensure that the app functions as promised and performs as
+expected.
 
 +$$$
 
@@ -17,19 +17,18 @@ User Agreement*, *Liferay Marketplace Developer Agreement*, and the individual
 
 $$$
 
-Once you've submitted your app for review, your app will change its status as it
-moves through the review process. You will be updated via email as your app's
-status changes, and we will try to provide as much detail as we can if we
-discover a potential issue with your app. Overall, we don't want our app review
-process to feel like a barrier or a black box. We love having new apps in the
-Marketplace, and we'll try to be as helpful as we can to bring your app to
-approval!
+Once you've submitted your app for review, your app's status changes as it moves
+through the review process. We email you on status changes and provide as much
+detail as we can if we discover potential issues with your app. Overall, we
+don't want our app review process to feel like a barrier or a black box. We love
+having new apps in the Marketplace, and we try to be as helpful as we can
+throughout the approval process!
 
 ![Figure 1: Here's a diagram of the QA/review process.](../../../images/app_review_process.png)
 
-If you submit an updated version of a previously approved app, the app
-statuses will display as: Approved (Version Unsubmitted), Approved (Version
-Pending), Approved (Version Pending QA), and Approved (Version Denied).
+If you submit an updated version of a previously approved app, the app statuses
+display as: Approved (Version Unsubmitted), Approved (Version Pending), Approved
+(Version Pending QA), and Approved (Version Denied).
 
 The app review process consists of **Two Major Phases**:
 
@@ -78,9 +77,9 @@ The app review process consists of **Two Major Phases**:
 			<td class="first-column">
 				<strong> App metadata review </strong>
 				<p>
-					Our team will
+					Our team
 					<a href="/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app#marketplace-app-metadata-guidelines">
-					review your app's metadata</a>
+					reviews your app's metadata</a>
 					to confirm that titles, descriptions, images, etc. are
 					appropriate.
 				</p>
@@ -90,7 +89,7 @@ The app review process consists of **Two Major Phases**:
 		<tr>
 			<td class="first-column">
 				<strong> App QA test </strong>
-				<p> Liferay will ensure that apps meet a minimal set of
+				<p> Liferay ensures that apps meet a minimal set of
 					requirements: </p>
 				<ul>
 					<li>Passes anti-virus scan</li>
@@ -99,7 +98,7 @@ The app review process consists of **Two Major Phases**:
 					<li>Basic functionality "smoke" test.</li>
 				</ul>
 				<p>
-					Liferay does not do source code review and will not ask for
+					Liferay does not do source code review and does not ask for
 					your source code. Further, Liferay is not responsible for
 					the behavior (or misbehavior) of apps on the Marketplace.
 					Please consult the Liferay Marketplace User Agreement,
@@ -117,12 +116,12 @@ The app review process consists of **Two Major Phases**:
 </div>
 </div>
 
-**Our QA Test Environments** are summarized below. At a minimum, your app should
-be tested against these environments prior to submission. If technical reasons
-prevent your app from running on certain platforms (e.g., app server-specific
-issues), please specify your app's requirements in the app description and
-documentation so that our review team can test accordingly and exclude certain
-test conditions, if necessary.
+**Our QA Test Environments** are summarized below. At a minimum, test your 
+against these environments prior to submission. If technical reasons prevent
+your app from running on certain platforms (e.g., app server-specific issues),
+please specify your app's requirements in the app description and documentation
+so that our review team can test accordingly and exclude certain test
+conditions, if necessary.
 
 <style>
 table td {
@@ -177,17 +176,17 @@ table td {
 	</thead>
 	<tbody>
 		<tr>
-			<td class="first-column"> Liferay Portal </td>
+			<td class="first-column"> Liferay DXP, Liferay DE, and Liferay Portal </td>
 			<td class="">
 				<ul>
-					<li> QA'ed against Liferay Portal version specified in app
-						submission up to Liferay Portal 7. </li>
+					<li> QA'ed against Liferay DXP/DE/Portal version specified in app
+						submission up to and including Liferay DXP/Portal 7.1. </li>
 				</ul>
 			</td>
 			<td class="third-column">
 				<ul>
-					<li> QA'ed against Liferay Portal version specified in app
-						submission up to Liferay Portal 7. </li>
+					<li> QA'ed against Liferay DXP/DE/Portal version specified in app
+						submission up to and including Liferay DXP/Portal 7.1. </li>
 				</ul>
 			</td>
 		</tr>
@@ -200,59 +199,67 @@ table td {
 			</td>
 			<td class="third-column">
 				<ul>
-					<li> Windows 7 x64 </li>
+					<li> Windows 10 x64 </li>
 				</ul>
 			</td>
 		</tr>
-		<tr>
+        <tr>
 			<td class="first-column"> Database </td>
 			<td class="">
-				<span>For versions up to Liferay Portal 6.2</span>
+				<span>For versions up to and including Liferay Portal 6.2</span>
 				<ul>
 					<li> MySQL 5.5.x </li>
 				</ul>
 
-				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
+				<span>For Liferay DE 7.0 and Liferay Portal CE 7.0</span>
 				<ul>
 					<li> MySQL 5.6.x </li>
 				</ul>
+
+				<span>For Liferay DXP 7.1 and Liferay Portal CE 7.1</span>
+				<ul>
+					<li> MySQL 5.7.x </li>
+				</ul>
 			</td>
 			<td class="third-column">
+				<span>For versions up to and including Liferay Portal 6.2</span>
 				<ul>
-					<span>For versions up to Liferay Portal 6.2</span>
-					<ul>
-						<li> MySQL 5.5.x </li>
-					</ul>
+					<li> MySQL 5.5.x </li>
+				</ul>
 
-					<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
-					<ul>
-						<li> MySQL 5.6.x </li>
-					</ul>
+				<span>For Liferay DE 7.0 and Liferay Portal CE 7.0</span>
+				<ul>
+					<li> MySQL 5.6.x </li>
+				</ul>
+				<span>For Liferay DXP 7.1 and Liferay Portal CE 7.1</span>
+				<ul>
+					<li> MySQL 5.7.x </li>
 				</ul>
 			</td>
 		</tr>
 		<tr>
 			<td class="first-column"> Application Server* </td>
 			<td class="">
-				<span>For versions up to Liferay Portal 6.2</span>
+				<span>For versions up to and including Liferay Portal 6.2</span>
 				<ul>
 					<li> Tomcat 7 </li>
 					<li> Glassfish 3.1 </li>
 					<li> Wildfly 10 </li>
 				</ul>
 
-				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
+				<span>For Liferay DXP 7.1, Liferay Portal CE 7.1, Liferay DE 7.0, and Liferay Portal CE 7.0</span>
 				<ul>
 					<li> Tomcat 8 </li>
 					<li> Wildfly 10 </li>
 				</ul>
 			</td>
 			<td class="third-column">
+				<span>For versions up to and including Liferay Portal 6.2</span>
 				<ul>
 					<li> Tomcat 7 </li>
 				</ul>
 
-				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
+				<span>For Liferay DXP 7.1, Liferay Portal CE 7.1, Liferay DE 7.0, and Liferay Portal CE 7.0</span>
 				<ul>
 					<li> Tomcat 8 </li>
 					<li> Wildfly 10 </li>
@@ -262,25 +269,25 @@ table td {
 		<tr>
 			<td class="first-column"> JDK </td>
 			<td class="">
-				<span>For versions up to Liferay Portal 6.2</span>
+				<span>For versions up to and including Liferay Portal 6.2</span>
 				<ul>
 					<li> Oracle JDK 6 </li>
 					<li> Oracle JDK 7 </li>
 				</ul>
 
-				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
+				<span>For Liferay DXP 7.1, Liferay Portal CE 7.1, Liferay DE 7.0, and Liferay Portal CE 7.0</span>
 				<ul>
 					<li>Oracle JDK 8</li>
 				</ul>
 			</td>
 			<td class="third-column">
-				<span>For versions up to Liferay Portal 6.2</span>
+				<span>For versions up to and including Liferay Portal 6.2</span>
 				<ul>
 					<li> Oracle JDK 6 </li>
 					<li> Oracle JDK 7 </li>
 				</ul>
 
-				<span>For Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0</span>
+				<span>For Liferay DXP 7.1, Liferay Portal CE 7.1, Liferay DE 7.0, and Liferay Portal CE 7.0</span>
 				<ul>
 					<li>Oracle JDK 8</li>
 				</ul>
@@ -311,15 +318,15 @@ table td {
 documentation, your app must run under all specified app servers in order to be
 approved.
 
-You'll receive an email confirmation, once your app is approved by Marketplace
-staff. And the moment your app is approved, it is made available on Marketplace.
-The app is also shown on your public Profile page, which lists all apps that you
-or your company's developed and published.
+An email confirmation is sent, once your app is approved by Marketplace staff.
+And the moment your app is approved, it is made available on Marketplace. The
+app is also shown on your public Profile page, which lists all apps that you or
+your company's developed and published.
 
 If your app is rejected, an email is sent to the email address associated with
 the app, along with a note explaining the reasons for rejection. At that point,
 you can make the requested changes, and re-submit the app for approval.
 
-After you've successfully published your app, you'll likely get all kinds
-of feedback from users and yourself about what's right and wrong with it. The
-next article explores how to make changes once you have published your app.
+After you've successfully published your app, you might get all kinds of
+feedback from users and yourself about what's right and wrong with it. The next
+article explores how to make changes once you have published your app.
