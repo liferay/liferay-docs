@@ -1,7 +1,5 @@
 # Index Settings Contributor
 
-## What does this sample do when it's deployed?
-
 The Index Settings Contributor sample demonstrates how to add a custom type
 mapping to @product@. You can demo this sample by completing the following
 steps:
