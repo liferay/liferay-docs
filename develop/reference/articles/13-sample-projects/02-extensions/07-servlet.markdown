@@ -1,7 +1,5 @@
 # Servlet [](id=servlet)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Servlet sample provides an OSGi Whiteboard Servlet in @product@. When
 deploying this sample and configuring the servlet, a *Hello World* message is
 displayed when accessing the servlet page URL. Log info is also outputted to

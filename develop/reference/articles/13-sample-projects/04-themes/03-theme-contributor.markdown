@@ -1,7 +1,5 @@
 # Theme Contributor [](id=theme-contributor)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Theme Contributor sample contributes updates to the UI of the theme
 body, Control Menu, Product Menu, and Simulation Panel. When deploying this
 sample with no customizations, the colors of the theme and aforementioned menus

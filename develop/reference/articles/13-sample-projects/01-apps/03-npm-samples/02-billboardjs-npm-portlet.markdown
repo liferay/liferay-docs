@@ -1,10 +1,5 @@
 # Billboard.js npm Portlet [](id=billboard-js-npm-portlet)
 
-**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
-CE GA7+.
-
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Billboard.js npm Portlet sample provides a portlet that uses the
 [Billboard.js](https://naver.github.io/billboard.js/) framework to render its
 output.
@@ -13,6 +8,9 @@ output.
 
 This portlet showcases the power of graphing by displaying a set of default
 charts and a more advanced custom chart. These are all built using Billboard.js.
+
+**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
+CE GA7+.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 

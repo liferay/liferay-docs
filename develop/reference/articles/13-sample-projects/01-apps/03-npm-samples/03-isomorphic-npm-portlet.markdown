@@ -1,10 +1,5 @@
 # Isomorphic npm Portlet [](id=isomorphic-npm-portlet)
 
-**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
-CE GA7+.
-
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Isomorphic npm Portlet sample provides a portlet that uses
 [isomorphic](https://en.wikipedia.org/wiki/Isomorphic_JavaScript) code (i.e.,
 can run from client and/or server side) on the client side. 
@@ -14,6 +9,9 @@ can run from client and/or server side) on the client side.
 This portlet showcases running code designed to execute in the server
 in the browser. Note that this portlet does **not** run JavaScript code in the
 server; it's executing isomorphic JavaScript code in the browser.
+
+**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
+CE GA7+.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
