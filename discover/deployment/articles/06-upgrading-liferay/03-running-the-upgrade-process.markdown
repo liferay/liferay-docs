@@ -30,8 +30,15 @@ line interface. The upgrade tool lets you upgrade everything--the core and all
 the modules--together or separately. 
 
 @product-ver@ bundles include the upgrade tool. If you installed @product-ver@
-manually, you can download the upgrade tool separately from the same location on
-[liferay.com](https://www.liferay.com/). 
+manually, you can download the upgrade tool separately.
+
+- *Liferay DXP 7.0*: Go to the
+[*Liferay DXP 7.0 Downloads* page](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise),
+select *Admin Tools*, and click *Download*. 
+
+- *Liferay Portal CE 7.0*: Go to
+[SourceForge](https://sourceforge.net/projects/lportal/files/Liferay%20Portal/),
+select *7.0 GA[version]*, and click `liferay-ce-portal-tools-[version].zip`. 
 
 To upgrade only the core, add a file called
 `com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
