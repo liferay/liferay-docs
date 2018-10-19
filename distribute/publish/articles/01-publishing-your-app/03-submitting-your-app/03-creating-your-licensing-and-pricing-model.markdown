@@ -6,7 +6,7 @@ changed.
 
 **Choose a license term:**
 
-![Figure 4: Choosing license terms for Marketplace apps is easy.](../../../images/marketplace-configure-app-license.png)
+![Figure 1: Choosing license terms for Marketplace apps is easy.](../../../images/marketplace-configure-app-license.png)
 
 Choosing *Perpetual* allows the app to continue running without expiration.
 Choosing *Non-Perpetual* expires the app's license one year from the purchase
@@ -23,7 +23,7 @@ sense for your app.
 
 **Creating license options:**
 
-![Figure 5: You can create multiple license options for your Marketplace apps.](../../../images/marketplace-create-license-types.png)
+![Figure 2: You can create multiple license options for your Marketplace apps.](../../../images/marketplace-create-license-types.png)
 
 Creating license options allows you to design license bundles and to specify
 discounts for customers who purchase more Liferay Instances for your app (a
@@ -52,7 +52,7 @@ next page to determine the app's pricing and availability.
 
 **Pricing:**
 
-![Figure 6: Liferay makes it easy to price your app's license types and specify their availability to countries around the world.](../../../images/marketplace-app-pricing.png) 
+![Figure 3: Liferay makes it easy to price your app's license types and specify their availability to countries around the world.](../../../images/marketplace-app-pricing.png) 
 
 Based on your selections from the previous page, you'll have price fields for
 each license option and for any support option you offered. 

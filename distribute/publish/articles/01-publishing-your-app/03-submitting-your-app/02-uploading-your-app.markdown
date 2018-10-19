@@ -14,7 +14,7 @@ advancing beyond this screen. Once the files are successfully uploaded, a check
 mark appears next to each plugin, and the plugins are displayed based on their 
 compatibility information. 
 
-![Figure 3: Specify a set of files for each Liferay version you wish to support.](../../../images/marketplace-app-version-and-upload-files.png) 
+![Figure 1: Specify a set of files for each Liferay version you wish to support.](../../../images/marketplace-app-version-and-upload-files.png) 
 
 If you selected *Free* for your app pricing, click *Next* to advance to the 
 final screen. If you selected *Paid*, you'll be presented with additional 

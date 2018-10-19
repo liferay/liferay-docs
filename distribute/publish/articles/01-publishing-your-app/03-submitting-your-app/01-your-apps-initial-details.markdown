@@ -8,7 +8,7 @@ helped prepare you for filling in these details.
 
 The top portion of the app wizard's initial screen is shown in the figure below.
 
-![Figure 2: The app wizard lets you add details about your app, an icon, and screen shots. Scroll down further to see options for specifying relevant URLs, adding tags, and specifying the editions of Liferay that your app supports.](../../../images/marketplace-add-app-details.png) 
+![Figure 1: The app wizard lets you add details about your app, an icon, and screen shots. Scroll down further to see options for specifying relevant URLs, adding tags, and specifying the editions of Liferay that your app supports.](../../../images/marketplace-add-app-details.png) 
 
 Here are descriptions of this screen's fields:
 
@@ -39,6 +39,9 @@ put anything you want here, but a good guideline is no more than 4-5 paragraphs.
 This field does not allow any markup tags or other textual adornments--it's just
 text.
 
+**Localized:** Selecting this displays an *Add Translation* button that lets 
+you denote translations your app provides.
+
 **Icon:** Upload an icon image to represent your app.
 
 **Screen Captures:** Upload one or more screenshots of your app. The screenshots
@@ -64,25 +67,27 @@ your app than to have a live, running version of it for potential buyers to see
 and use? This field can house a URL pointing to something as exciting as that
 and/or documentation for using your app. 
 
+**API Reference URL:** This is a URL that should reference your app's API 
+documentation (e.g., Javadoc). 
+
 **Source Code URL:** If you'd to provide a link to the source code of your app,
 do so here.
 
 **Labs:** You can denote an app as experimental by checking the appropriate box.
 
-**Security:** If your app does *not* use Liferay's PACL Security Manager, check
-the appropriate box. Otherwise, make sure to enable the security manager in your
-app by including the setting `security-manager-enabled=true` in the
+**Security:** If your app is for Liferay 7.x or does *not* use Liferay's PACL 
+Security Manager, check the appropriate box. Otherwise, make sure to enable the
+security manager in your app by including the setting
+`security-manager-enabled=true` in the
 [`liferay-plugin-package.properties`](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
-file in your WAR files and specify a `OSGI-INF/permissions.perm` file in your
-module JAR files. 
+file in your WAR files. 
 
 **Tags:** A set of descriptive words that categorize your app. These tags are
 free-form and can help potential purchasers find your app through keyword
 searches, tag clouds, and other search mechanisms. You can click on
 *Suggestions* to let Marketplace suggest some tags for you based on the data
 you've already entered. Click *Select* to select from existing tags, or you can
-manually type in new tags. See the *Marketplace Basics* section of this chapter
-for detailed requirements for tags.
+manually type in new tags. 
 
 **EULA:** You can use the default end user license agreement (EULA) or provide
 your own. There's a link to the minimum terms which custom EULAs must satisfy.
