@@ -24,14 +24,14 @@ To adjust logging for a remote Elasticsearch server, see
 
 $$$
 
-Here's an example log message that _is_ displayed by default:
+Here's an example @product@ log message that _is_ displayed by default:
 
     2018-09-13 16:49:24.442 WARN  [Elasticsearch initialization thread][EmbeddedElasticsearchConnection:315]
 
 Manage the log levels for the `EmbeddedElasticsearchConnection` in Server
 Administration.
 
-Here's an example log message that _isn't_ displayed by default:
+Here's an example Elasticsearch log message that _isn't_ displayed by default:
 
     [2018-09-05T17:25:30,107][WARN ][o.e.d.i.m.MapperService  ] [unmapped_type:string] should be replaced with [unmapped_type:keyword]
 
@@ -77,8 +77,6 @@ To adjust logging for the `o.e.d.i.m.MapperService` and other Elasticsearch clas
 Once this is accomplished, the embedded Elasticsearch server is properly set up
 to display Elasticsearch logs at the INFO level and above.
 
-<!-- Do we want to say a little more about what we're doing here? -->
-
 Two common Elasticsearch logs can be configured further in @product@: the Slow
 Log and the JVM's Garbage Collection log.
 
@@ -88,8 +86,8 @@ Read about Elasticsearch's Slow Log
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/index-modules-slowlog.html). 
 
 Configure the Slow Log for the embedded Elasticsearch server in the
-Elasticsearch 6 entry in System Settings. Add these properties to the
-Additional Index Configurations property:
+Elasticsearch 6 entry in System Settings. Add these settings to the Additional
+Index Configurations property:
 
 
     index.indexing.slowlog.threshold.index.debug: 2s
@@ -113,7 +111,7 @@ These are example values. Adjust as needed.
 
 As with the Slow Log configuration, Elasticsearch's JVM Garbage Collection
 logging is adjustable in the Elasticsearch 6 entry in System Settings. Add these
-properties to the Additional Index Configurations property:
+settings to the Additional Index Configurations property:
 
     monitor.jvm.gc.enabled: true
     monitor.jvm.gc.overhead.debug: 40
