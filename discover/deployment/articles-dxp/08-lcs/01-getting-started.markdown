@@ -63,7 +63,7 @@ Each of these steps corresponds to a step in the wizard:
     -   **Liferay Instance Activation:** Enabling this lets LCS activate any 
         @product@ instances that connect to the environment. If you disable this 
         service, you must activate via an XML file from Liferay support, and 
-        such instances must run version 5.0.0 or newer of the LCS Client app. 
+        such instances must run version 5.0.0 or newer of the LCS client app. 
 
         Note that you **must** use LCS for activation of containerized 
         instances, cloud deployments, and instances that use Liferay Analytics 
@@ -94,7 +94,7 @@ Each of these steps corresponds to a step in the wizard:
     ![Figure 8: This form contains each of your selections from the previous steps. Make any changes you want, then click *Create Environment*.](../../images-dxp/lcs-onboarding-07.png)
 
 After creating your environment, the wizard presents you with a screen that lets 
-you download the LCS Client app, download the environment's token file, and go 
+you download the LCS client app, download the environment's token file, and go 
 to your project's dashboard in LCS. Before registering a server in your new 
 environment, however, you must complete the 
 [preconfiguration steps](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/lcs-preconfiguration) 
