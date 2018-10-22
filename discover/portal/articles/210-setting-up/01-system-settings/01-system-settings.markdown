@@ -32,6 +32,17 @@ Changing a configuration isn't difficult:
 3.  Make any changes you'd like, then click *Save*. Your configuration changes
     are saved and applied throughout the system. 
 
++$$$
+
+**Important:** Cached content, including content generated using templates 
+(e.g., FreeMarker templates and Application Display Templates), might not
+reflect configuration changes until that cached content is invalidated
+(cleared). The
+[Server Administration &rarr; Resources tab](/discover/portal/-/knowledge_base/7-1/server-administration-resources)
+provides options for clearing cache. 
+
+$$$
+
 ![Figure 3: After saving changes to a configuration, the actions *Reset Default Values* and *Export* are available for it.](../../../images/system-settings-actions.png)
 
 If you make some regrettable configuration decisions and can't recall exactly
