@@ -20,7 +20,7 @@ configuration:
 
     **Authorization grant endpoint:** The URL used to request OAuth2 
     authorization grants. The URL follows this pattern in SharePoint Online: 
-    `https://[your-site-name]/sharepoint.com/_layouts/oauthauthorize.aspx`. 
+    `https://[your-site-name]/_layouts/oauthauthorize.aspx`. 
 
     **Authorization token endpoint:** The ACS URL. In SharePoint Online with 
     Azure ACS, the URL follows this pattern: 
@@ -31,7 +31,7 @@ configuration:
     **Client Secret:** The client secret. 
 
     **Scope:** The permission set required for your tokens. Valid scopes are 
-    configured during your app's SharePoint registration. 
+    configured during your app's SharePoint registration. For example List.Write if you want write rights
 
     **Tenant ID:** The Tenant ID. If you're using SharePoint Online, you can 
     use the same App ID you embedded in the *Authorization token endpoint*. 
