@@ -42,9 +42,15 @@ Each of these steps corresponds to a step in the wizard:
     cluster. LCS provides additional tools in clustered environments that help 
     you manage the cluster. For example, in clustered environments you can view 
     cluster-specific metrics and simultaneously download fix packs to all 
-    cluster nodes. Note that each clustered environment can only support nodes 
-    that belong to a single cluster. To connect a different cluster's nodes, you 
-    must create a separate clustered environment exclusively for those nodes. 
+    cluster nodes. There are a few things to keep in mind if you set the 
+    environment as clustered: 
+
+    -   You can't change this setting after creating the environment.
+    -   Each clustered environment can only support nodes that belong to a 
+        single cluster. To connect a different cluster's nodes, you must create 
+        a separate clustered environment exclusively for those nodes. 
+    -   You must set the portal property `cluster.link.enabled` to `true` in any 
+        servers that connect to a clustered environment. 
 
     ![Figure 5: Select whether this is a clustered environment, then click *Next*.](../../images-dxp/lcs-onboarding-04.png)
 
@@ -53,7 +59,11 @@ Each of these steps corresponds to a step in the wizard:
     critical for auto-scaling situations in which servers are created and 
     destroyed automatically in response to demand. Elastic environments are also 
     useful for bringing additional servers online on a temporary basis for any 
-    other purpose, such as business continuity planning. 
+    other purpose, such as business continuity planning. For more information, 
+    see 
+    [the documentation on elastic subscriptions](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/managing-liferay-dxp-subscriptions#elastic-subscriptions). 
+    Also note that you can't change this selection after creating the 
+    environment. 
 
     ![Figure 6: Select whether this is an elastic environment, then click *Next*.](../../images-dxp/lcs-onboarding-05.png)
 
