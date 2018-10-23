@@ -74,10 +74,9 @@ finishing the upgrade process.
 
 +$$$
 
-**Note:** It is ideal to execute the upgrade process in a separate server that 
-has good infrastructure conditions regarding memory, CPU, and database
-connection. It is common to connect to such servers via SSH. As you execute an
-upgrade remotely, make sure to guard against interruptions: 
+**Note:** Only execute the upgrade process on a server with ideal memory, CPU,
+and database connection configuration. If executing an upgrade remotely using
+`ssh`, make sure to guard against interruptions: 
 
 - If you're executing the upgrade using `ssh`, ignore hangups (connection loss) 
 by using `nohup` or something similar. 
@@ -87,12 +86,12 @@ that machine.
 If upgrade execution is interrupted, check your log file (default file is
 `upgrade.log`) for where execution stopped. 
 
-- If execution stopped during an upgrade process for Core 7.1 or higher, or any 
-module upgrade process, restart the upgrade tool to continue the upgrade from
-that point. 
+- If execution stopped during an upgrade process for Core 7.1 or higher, or any
+  module upgrade process, restart the upgrade tool to continue the upgrade from
+  that point. 
 - If execution stopped during an upgrade process for Core 7.0 or lower, you must
-[restore the data from a backup](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
-and start the upgrade again. 
+  [restore the data from a backup](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
+  and start the upgrade again. 
 
 $$$
 
