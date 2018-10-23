@@ -131,7 +131,7 @@ Support team can also assist you with.
 make sure that you've followed the LCS 
 [preconfiguration](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/lcs-preconfiguration) 
 and 
-[activation](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/activating-your-liferay-dxp-server-with-lcs) 
+[registration](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/activating-your-liferay-dxp-server-with-lcs) 
 steps correctly. 
 
 $$$
@@ -166,7 +166,7 @@ If the environment in which you're trying to activate a server isn't assigned
 the subscription you want to use, then you must create a new environment and 
 assign it the correct subscription. Once assigned, you can't change an 
 environment's subscription. Follow 
-[the initial activation steps](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/activating-your-liferay-dxp-server-with-lcs) 
+[the initial registration steps](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/activating-your-liferay-dxp-server-with-lcs) 
 for instructions on creating a new environment and activating a new server. 
 
 +$$$
@@ -218,7 +218,7 @@ There are 2 ways to increase the log levels:
 1.  **In your @product@ instance's Control Panel:** This is a temporary 
     configuration that resets upon shutting down the server. Note that if the 
     server isn't activated, you can't access the Control Panel. In that case,
-    Liferay Support can provide a temporary activation key. 
+    Liferay Support can provide an XML activation key. 
 
 2.  **In a Log4j configuration:** This is a permanent configuration that 
     persists through server shutdown and restart. 
