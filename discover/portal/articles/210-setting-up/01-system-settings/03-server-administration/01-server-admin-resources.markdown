@@ -58,7 +58,7 @@ portlet preferences become orphaned in the @product@ database.
 
 ![Figure 1: The Resources tab of Server Administration lets you execute several server maintenance tasks.](../../../../images/server-admin-resources.png)
 
-[<a name="one">1</a>] Caching occurs at multiple levels. Sometimes higher
-caching layers aren't aware of lower caching layers. Always clear the cache at
-the lowest (most granular) layer possible, even if you've already cleared a
-higher level cache.
+[<a name="one">1</a>] Caching occurs at multiple levels. Some higher caching 
+layers aren't aware of lower caching layers. Always clear the cache at the
+lowest (most granular) layer possible, even if you've already cleared a higher
+level cache.
