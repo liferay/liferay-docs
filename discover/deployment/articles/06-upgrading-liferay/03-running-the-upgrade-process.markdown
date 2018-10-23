@@ -91,15 +91,14 @@ finishing the upgrade process.
 
 +$$$
 
-**Note:** It is ideal to execute the upgrade process in a separate server that 
-has good infrastructure conditions regarding memory, CPU, and database
-connection. It is common to connect to such servers via SSH. As you execute an
-upgrade remotely, make sure to guard against interruptions: 
+**Note:** Only execute the upgrade process on a server with ideal memory, CPU,
+and database connection configuration. If executing an upgrade remotely using
+`ssh`, make sure to guard against interruptions: 
 
 - If you're executing the upgrade using `ssh`, ignore hangups (connection loss) 
-by using `nohup` or something similar. 
+  by using `nohup` or something similar. 
 - On the machine you're connecting from, disable settings that shutdown or sleep
-that machine. 
+  that machine. 
 
 $$$
 
