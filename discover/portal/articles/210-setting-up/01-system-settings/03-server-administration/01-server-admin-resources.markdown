@@ -58,6 +58,7 @@ portlet preferences become orphaned in the @product@ database.
 
 ![Figure 1: The Resources tab of Server Administration lets you execute several server maintenance tasks.](../../../../images/server-admin-resources.png)
 
-[<a name="one">1</a>] There can be layers of @product@'s caching that aren't 
-aware of layers of caching below it (based on it). For this reason, clearing
-cache at affected individual layers might be necessary. 
+[<a name="one">1</a>] Caching occurs at multiple levels. Sometimes higher
+caching layers aren't aware of lower caching layers. Always clear the cache at
+the lowest (most granular) layer possible, even if you've already cleared a
+higher level cache.

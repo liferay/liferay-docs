@@ -16,12 +16,11 @@ Configuration files use the `.config` property value format defined by the
 
 +$$$
 
-**Important:** Cached content, including content generated using templates 
-(e.g., FreeMarker templates and Application Display Templates), might not
-reflect configuration changes until that cached content is invalidated
-(cleared). The
+**Important:** Content generated using templates (e.g., FreeMarker templates and
+Application Display Templates) is cached. Cached content might not reflect
+configuration changes until the cache is invalidated (cleared). The 
 [Server Administration &rarr; Resources tab](/discover/portal/-/knowledge_base/7-1/server-administration-resources)
-provides options for clearing cache. 
+provides cache clearing options.
 
 $$$
 
