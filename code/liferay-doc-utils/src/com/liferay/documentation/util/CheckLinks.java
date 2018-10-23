@@ -147,7 +147,7 @@ public class CheckLinks {
 	}
 
 	/**
-	 * Add new DXP articles and apply DXP overrides to the article list.
+	 * Adds new DXP articles and applies DXP overrides to the article list.
 	 *
 	 * @param  articles the CE articles
 	 * @param  path the partial folder path with the DXP articles to acquire
