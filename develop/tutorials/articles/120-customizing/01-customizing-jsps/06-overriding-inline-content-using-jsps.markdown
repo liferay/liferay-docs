@@ -1,27 +1,26 @@
 # Overriding Inline Content Using JSPs [](id=overriding-inline-content-using-jsps)
 
 Some @product@ core content, such as tag library tags, can only be overridden
-using specific JSPs that end in `.readme`. The suffix `.readme` facilitates
-finding them. The content that these JSPs previously provided is now inlined
-(brought into @product@ Java source files) to improve performance. While the JSP
-files have the `.readme` suffix, @product@ ignores them. But adding your own
-content to a JSP `.readme` file and then dropping the `.readme` suffix causes
-@product@ to use that JSP instead of the core inline content. This tutorial
-demonstrates using these JSPs to override inline content. 
+using JSPs ending in `.readme`. The suffix `.readme` facilitates finding them.
+The code from these JSPs is now inlined (brought into @product@ Java source
+files) to improve performance. @product@ ignores JSP files with the `.readme`
+suffix. If you add code to a JSP `.readme` file and remove the `.readme` suffix,
+@product@ uses that JSP instead of the core inline content. This tutorial shows
+you how to make these customizations. 
 
 +$$$
 
 **Important:** This type of customization is a last resort. Your override may 
-break due to the nature of this implementation, and core functionality in
-Liferay can go down with it. Also, Liferay cannot guarantee that content
-overridden using JSP `.readme` files can be upgraded. 
+break due to the nature of this implementation, and core functionality can go
+down with it. Liferay cannot guarantee that content overridden using JSP
+`.readme` files can be upgraded. 
 
 $$$
 
 +$$$
 
-**Warning:** Modifying a @product@ tag library tag affects all uses of that tag 
-in your @product@ instance. 
+**Warning:** Modifying a @product@ tag library tag affects all uses of that tag
+in your @product@ installation. 
 
 $$$
 
@@ -29,30 +28,29 @@ Here's how to override inline content using JSPs:
 
 1.  Create a
     [Custom JSP Bag](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-custom-jsp-bag)
-    for deploying your custom JSP. Note the module folder you're storing the
-    JSPs in--the default folder is `[your
+    for deploying your JSP. Note the module folder you're storing the
+    JSPs in: the default folder is `[your
     module]/src/main/resources/META-INF/jsps/`
 
     +$$$
 
     **Note:** you can develop your JSP anywhere, but a Custom JSP Bag module 
-    provides a straightforward way to build and deploy it.  
+    provides a straightforward way to build and deploy it.
 
     $$$
 
 2.  Download the @product@ source code or browse the source code on
     [GitHub (Liferay Portal CE)](https://github.com/liferay/liferay-portal/tree/7.1.x). 
-    
-    
-3.  Search the source code for a `.jsp.readme` file that overrides the tag 
-    library tag you're customizing. 
+
+3.  Search the source code for a `.jsp.readme` file that overrides the tag
+    you're customizing. 
 
     +$$$
 
     **Note:** Files ending in `-ext.jsp.readme` let you prepend or 
     append new content to existing content. Examples include the
     `bottom-test.jsp.readme`, `bottom-ext.jsp.readme`,
-    `body_top-ext.jsp.readme`, and `body_bottom-ext.jsp.readme` files found in
+    `body_top-ext.jsp.readme`, and `body_bottom-ext.jsp.readme` files in
     the @product@ application's `portal-web/docroot/html/common/themes` folder. 
 
     $$$
@@ -75,9 +73,9 @@ Here's how to override inline content using JSPs:
 6.  Develop your new logic, keeping in mind the current inline logic you're 
     replacing. 
 
-7.  Deploy your custom JSP. 
+7.  Deploy your JSP. 
 
-@product@ uses your custom JSP in place of the current inline logic. If you want
+@product@ uses your JSP in place of the current inline logic. If you want
 to walk through an example override, continue with this tutorial. Otherwise,
 congratulations on a modified `.jsp.readme` file to override core inline
 content! 
@@ -157,22 +155,32 @@ method:
 The code above does this:
 
 1.  Write `<fieldset class=\"fieldset `starting tag. 
+
 2.  Write the CSS class name attribute. 
+
 3.  If the tag has an ID, add the `id` as an attribute. 
+
 4.  Write the tag's dynamic attribute (map). 
-5.  Close the starting `fieldset` tag with a greater than angle bracket. 
+
+5.  Close the starting `fieldset` tag. 
+
 6.  Get the tag's `label` attribute. 
+
 7.  Write the starting `legend` element. 
-8.  Use `getLocalizeLabel()` to add the localized label in the `legend`.  
+
+8.  Use `getLocalizeLabel()` to add the localized label in the `legend`.
+
 9.  If there's a help message (retrieved from `getHelpMessage()`), write it in 
     an `icon-help-tag`. 
+
 10. Write the closing `legend` tag. 
+
 11. If there's a column attribute, write `<div class=\"row\">`; else write 
     `<div class=\"\">`. 
 
 Replicating the current logic in your custom JSP helps you set up the tag
 properly for customizing. The `init.jsp` for `fieldset` initializes all the
-variables required to create the starting tag---you can use the variables in the
+variables required to create the starting tag. You can use the variables in the
 `start.jsp`. The logic from `FieldsetTag`'s `processStart` method converted to
 JSP code for `start.jsp` (renamed from `start.jsp.readme`) would look like this: 
 
@@ -207,12 +215,12 @@ On deploying the `start.jsp`, the `fieldset` tags render the same as they did
 before. This is expected because it uses the same logic as `FieldsetTag`'s
 `processStart` method. 
 
-![Figure 1: @product@'s homepage's search and sign in components are in a `fieldset`.](../../../images/jsp-readme-inline-fieldset.png)
+![Figure 1: @product@'s home page's search and sign in components are in a `fieldset`.](../../../images/jsp-readme-inline-fieldset.png)
 
-The `fieldset` starting logic is ready for customization. Before the end of the
-`fieldset` tag's starting logic, for example, let's print the word *test*
-surrounded by asterisks. Insert this line before the `start.jsp`'s last `div`
-tag: 
+The `fieldset` starting logic is ready for customization. To test that this
+works, you'll print the word *test* surrounded by asterisks before the end of
+the `fieldset` tag's starting logic. Insert this line before the `start.jsp`'s
+last `div` tag: 
 
     <c:out value="**********test**********"/>
 
