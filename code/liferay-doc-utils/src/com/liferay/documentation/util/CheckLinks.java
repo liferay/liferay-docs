@@ -146,11 +146,21 @@ public class CheckLinks {
 		}
 	}
 
+	/**
+	 * Add new DXP articles and apply DXP overrides to the article list.
+	 *
+	 * @param  articles the CE articles
+	 * @param  path the partial folder path with the DXP articles to acquire
+	 * @param  currentDir whether the DXP articles are being returned for the
+	 *         folder the command was executed from
+	 * @return the new list of articles containing the new DXP articles and DXP
+	 *         overrides
+	 */
 	private static List<File> addDxpOnlyArticles(List<File> articles, String path, boolean currentDir) {
 
 		List<File> dxpArticles = getDxpArticles(path, currentDir);
 
-		articles = includeDxpOverrides(articles, dxpArticles, path, currentDir);
+		articles = includeDxpOverrides(articles, dxpArticles);
 
 		List<File> dxpArticlesToDelete = new ArrayList<File>();
 
@@ -168,7 +178,6 @@ public class CheckLinks {
 
 		for (File dxpArticle : dxpArticles) {
 			articles.add(dxpArticle);
-			//System.out.println("dxpArticle: " + dxpArticle.getPath());
 		}
 
 		return articles;
@@ -669,6 +678,14 @@ public class CheckLinks {
 		return headers;
 	}
 
+	/**
+	 * Returns the DXP articles contained in the folder.
+	 *
+	 * @param  path the partial folder path with the DXP articles to acquire
+	 * @param  currentDir whether the DXP articles are being returned for the
+	 *         folder the command was executed from
+	 * @return the DXP articles contained in the folder
+	 */
 	private static List<File> getDxpArticles(String path, boolean currentDir) {
 
 		List<File> dxpArticles = new ArrayList<File>();
@@ -693,7 +710,14 @@ public class CheckLinks {
 		return dxpArticles;
 	}
 
-	private static List<File> includeDxpOverrides(List<File> articles, List<File> dxpArticles, String path, boolean currentDir) {
+	/**
+	 * Overrides the CE articles with their DXP article counterparts.
+	 *
+	 * @param  articles the CE articles
+	 * @param  dxpArticles the DXP articles
+	 * @return the new list of articles containing the DXP article overrides
+	 */
+	private static List<File> includeDxpOverrides(List<File> articles, List<File> dxpArticles) {
 
 		if (Validator.isNotNull(dxpArticles)) {
 
