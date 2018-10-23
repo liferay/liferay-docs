@@ -87,12 +87,10 @@ implementing a custom JSP bag refer to that sample class code.
     - **`immediate = true`:** Makes the service available on module activation. 
     -  **`context.id`:** Your custom JSP bag class name. Replace 
     `BladeCustomJspBag` with your class name.
-    -  **`contex.name`:** A more human readable name for your service. Replace 
+    -  **`context.name`:** A more human readable name for your service. Replace 
     it with a name of your own. 
-    -  **`service.ranking:Integer`:** A priority for your implementation. If you
-       specify `100` here, and one of your coworkers develops a separate custom
-       JSP bag implementation and gives theirs a ranking of `101`, you're out of
-       luck. Theirs will take precedence. Logically then, you should use `102`.
+    -  **`service.ranking:Integer`:** A priority for your implementation. The
+    container chooses the implementation with the highest priority.
 
 3.  Implement the `getCustomJspDir` method to return the folder path in your 
     module's JAR  where the JSPs reside (for example, `META-INF/jsps`). 
