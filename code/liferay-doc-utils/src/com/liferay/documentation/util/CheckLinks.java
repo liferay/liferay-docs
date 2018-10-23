@@ -39,9 +39,74 @@ public class CheckLinks {
 		platformReferenceSite = args[5];
 		appReferenceSite = args[6];
 
-		File currentArticleDir = new File("../" + docDir + "/articles");
+		String dxpLinks = args[7];
+		checkDxpLinks = Boolean.parseBoolean(dxpLinks);
 
+		// e.g., docDir = tutorials
+		File currentArticleDir = new File("../" + docDir + "/articles");
 		List<File> currentArticles = findCurrentDirArticles(currentArticleDir);
+
+		if (checkDxpLinks) {
+
+			List<File> currentDxpArticles = new ArrayList<File>();
+
+			try {
+				File currentDxpArticleDir = new File("../" + docDir + "/articles-dxp");
+				currentDxpArticles = findCurrentDirArticles(currentDxpArticleDir);
+			} catch(NullPointerException e) {
+				System.out.println("No DXP articles to check!");
+			}
+
+			if (Validator.isNotNull(currentDxpArticles)) {
+
+				List<String> currentArticlePathStrings = new ArrayList<String>();
+				List<String> currentDxpArticlePathStrings = new ArrayList<String>();
+
+				for (File articleDxp : currentDxpArticles) {
+
+					// Convert all DXP articles to String paths, edit path to CE, and add to new list
+					String articleDxpPathString = articleDxp.getPath();
+					articleDxpPathString = articleDxpPathString.replace(File.separator + "articles-dxp" + File.separator, File.separator + "articles" + File.separator);
+
+					currentDxpArticlePathStrings.add(articleDxpPathString);
+
+				}
+
+				for (File article : currentArticles) {
+
+					// Convert all DXP articles to String paths, edit path to CE, and add to new list
+					String articlePathString = article.getPath();
+
+					currentArticlePathStrings.add(articlePathString);
+
+				}
+
+				List<Integer> articleIndexes = new ArrayList<Integer>();
+
+				for (String articleDxpPath : currentDxpArticlePathStrings) {
+					int count = 0;
+					for (String articlePath : currentArticlePathStrings) {
+
+						if (articlePath.equals(articleDxpPath)) {
+							articleIndexes.add(count);
+						}
+						count++;
+					}
+				}
+
+				for (int i = 0; i < articleIndexes.size(); i++) {
+					File fileOverride = currentArticles.get(articleIndexes.get(i));
+					String fileOverrideString = fileOverride.getPath();
+					fileOverrideString = fileOverrideString.replace(File.separator + "articles" + File.separator, File.separator + "articles-dxp" + File.separator);
+					fileOverride = new File(fileOverrideString);
+					currentArticles.set(articleIndexes.get(i), fileOverride);
+				}
+
+				for (File article: currentArticles) {
+					System.out.println(article.getPath());
+				}
+			}
+		}
 
 		assignReferencedDirArticles(articleDirs);
 
@@ -847,6 +912,7 @@ public class CheckLinks {
 	private static String appReferenceSite;
 	private static String appToken;
 	private static boolean checkApiLinks;
+	private static boolean checkDxpLinks;
 	private static boolean checkLegacyLinks;
 	private static String ldnArticle;
 	private static String platformReferenceSite;
