@@ -47,65 +47,7 @@ public class CheckLinks {
 		List<File> currentArticles = findCurrentDirArticles(currentArticleDir);
 
 		if (checkDxpLinks) {
-
-			List<File> currentDxpArticles = new ArrayList<File>();
-
-			try {
-				File currentDxpArticleDir = new File("../" + docDir + "/articles-dxp");
-				currentDxpArticles = findCurrentDirArticles(currentDxpArticleDir);
-			} catch(NullPointerException e) {
-				System.out.println("No DXP articles to check!");
-			}
-
-			if (Validator.isNotNull(currentDxpArticles)) {
-
-				List<String> currentArticlePathStrings = new ArrayList<String>();
-				List<String> currentDxpArticlePathStrings = new ArrayList<String>();
-
-				for (File articleDxp : currentDxpArticles) {
-
-					// Convert all DXP articles to String paths, edit path to CE, and add to new list
-					String articleDxpPathString = articleDxp.getPath();
-					articleDxpPathString = articleDxpPathString.replace(File.separator + "articles-dxp" + File.separator, File.separator + "articles" + File.separator);
-
-					currentDxpArticlePathStrings.add(articleDxpPathString);
-
-				}
-
-				for (File article : currentArticles) {
-
-					// Convert all DXP articles to String paths, edit path to CE, and add to new list
-					String articlePathString = article.getPath();
-
-					currentArticlePathStrings.add(articlePathString);
-
-				}
-
-				List<Integer> articleIndexes = new ArrayList<Integer>();
-
-				for (String articleDxpPath : currentDxpArticlePathStrings) {
-					int count = 0;
-					for (String articlePath : currentArticlePathStrings) {
-
-						if (articlePath.equals(articleDxpPath)) {
-							articleIndexes.add(count);
-						}
-						count++;
-					}
-				}
-
-				for (int i = 0; i < articleIndexes.size(); i++) {
-					File fileOverride = currentArticles.get(articleIndexes.get(i));
-					String fileOverrideString = fileOverride.getPath();
-					fileOverrideString = fileOverrideString.replace(File.separator + "articles" + File.separator, File.separator + "articles-dxp" + File.separator);
-					fileOverride = new File(fileOverrideString);
-					currentArticles.set(articleIndexes.get(i), fileOverride);
-				}
-
-				for (File article: currentArticles) {
-					System.out.println(article.getPath());
-				}
-			}
+			currentArticles = includeDxpOverrides(docDir, currentArticles, true);
 		}
 
 		assignReferencedDirArticles(articleDirs);
@@ -609,6 +551,10 @@ public class CheckLinks {
 			}
 		}
 
+		if (checkDxpLinks) {
+			articles = includeDxpOverrides(path, articles, false);
+		}
+
 		return articles;
 	}
 
@@ -693,6 +639,77 @@ public class CheckLinks {
 		headers.add(secondaryHeaders);
 
 		return headers;
+	}
+
+	private static List<File> includeDxpOverrides(String path, List<File> articles, boolean currentDir) {
+
+		List<File> currentDxpArticles = new ArrayList<File>();
+		File dxpArticleDir = new File("");
+
+		// Ensure "articles-dxp" folder exists
+		try {
+			if (currentDir) {
+				dxpArticleDir = new File("../" + path + "/articles-dxp");
+			}
+			else {
+				dxpArticleDir = new File("../../" + path + "/articles-dxp");
+			}
+			currentDxpArticles = findCurrentDirArticles(dxpArticleDir);
+		} catch(NullPointerException e) {
+			System.out.println("No DXP articles to check!");
+		}
+
+		if (Validator.isNotNull(currentDxpArticles)) {
+
+			List<String> currentArticlePathStrings = new ArrayList<String>();
+			List<String> currentDxpArticlePathStrings = new ArrayList<String>();
+
+			// Find DXP-only articles and convert paths to strings
+			for (File articleDxp : currentDxpArticles) {
+
+				String articleDxpPathString = articleDxp.getPath();
+				articleDxpPathString = articleDxpPathString.replace(File.separator + "articles-dxp" + File.separator, File.separator + "articles" + File.separator);
+
+				currentDxpArticlePathStrings.add(articleDxpPathString);
+
+			}
+
+			// Convert regular article paths to strings
+			for (File article : articles) {
+
+				String articlePathString = article.getPath();
+
+				currentArticlePathStrings.add(articlePathString);
+
+			}
+
+			List<Integer> articleIndexes = new ArrayList<Integer>();
+
+			// Find article indexes that should be replaced with DXP override
+			for (String articleDxpPath : currentDxpArticlePathStrings) {
+				int count = 0;
+				for (String articlePath : currentArticlePathStrings) {
+
+					if (articlePath.equals(articleDxpPath)) {
+						articleIndexes.add(count);
+					}
+					count++;
+				}
+			}
+
+			// Apply DXP overrides to current article list
+			for (int i = 0; i < articleIndexes.size(); i++) {
+				File fileOverride =articles.get(articleIndexes.get(i));
+				String fileOverrideString = fileOverride.getPath();
+
+				fileOverrideString = fileOverrideString.replace(File.separator + "articles" + File.separator, File.separator + "articles-dxp" + File.separator);
+				fileOverride = new File(fileOverrideString);
+				//System.out.println("fileOverride: " + fileOverride.getPath());
+				articles.set(articleIndexes.get(i), fileOverride);
+			}
+		}
+
+		return articles;
 	}
 
 	/**
