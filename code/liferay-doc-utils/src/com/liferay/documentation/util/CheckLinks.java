@@ -892,6 +892,9 @@ public class CheckLinks {
 			else if (line.contains("<a name=" + quotation + secondaryHeader + quotation + ">")) {
 				validUrl = true;
 			}
+			else if (line.contains("<div") && line.contains("id=" + quotation + secondaryHeader + quotation + ">")) {
+				validUrl = true;
+			}
 		}
 
 		in.close();
