@@ -99,6 +99,33 @@ a web content article when an image preview is available:
 
 ![Figure 3: Vertical cards are perfect to display files and documents.](../../../images/liferay-frontend-taglib-cards-vertical.png)
 
+## HTML Vertical Card [](id=html-vertical-card)
+
+The HTML Vertical card lets you display custom HTML in the header of the 
+vertical card. The example below embeds a video:
+
+    <liferay-util:buffer var = "customThumbnailHtml">
+    	<div class="embed-responsive embed-responsive-16by9">
+    	  <iframe class="embed-responsive-item" 
+        src="https://www.youtube.com/embed/8Bg9jPJpGOM?rel=0" 
+        allowfullscreen></iframe>
+    	</div>
+    </liferay-util:buffer>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <liferay-frontend:html-vertical-card
+          	html="<%= customThumbnailHtml %>"
+          	title="My Video"
+          >
+          </liferay-frontend:html-vertical-card>
+        </div>
+      </div>
+    </div>
+
+![Figure 4: Html vertical cards let you display custom HTML in the card's header.](../../../images/liferay-frontend-taglib-cards-html-vertical.png)
+
 ## User Vertical Card [](id=user-vertical-card)
 
 The User Vertical card displays user profile selections in the icon view of the
@@ -124,7 +151,7 @@ Management Bar. Below is an example snippet from the User Admin portlet:
       </liferay-frontend:vertical-card-header>
     </liferay-frontend:user-vertical-card>
 
-![Figure 4: User vertical cards are perfect to display files and documents.](../../../images/liferay-frontend-taglib-cards-user-vertical.png)
+![Figure 5: User vertical cards are perfect to display files and documents.](../../../images/liferay-frontend-taglib-cards-user-vertical.png)
 
 ## Related Topics [](id=related-topics)
 
