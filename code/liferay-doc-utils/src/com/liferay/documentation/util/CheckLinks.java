@@ -152,6 +152,20 @@ public class CheckLinks {
 
 		articles = includeDxpOverrides(articles, dxpArticles, path, currentDir);
 
+		List<File> dxpArticlesToDelete = new ArrayList<File>();
+
+		// DXP articles that override existing CE articles are removed from DXP list so
+		// they're not added as new articles
+		for (File dxpArticle : dxpArticles) {
+			if (fileOverrides.contains(dxpArticle)) {
+				dxpArticlesToDelete.add(dxpArticle);
+			}
+		}
+
+		for (File dxpArticleToDelete : dxpArticlesToDelete) {
+			dxpArticles.remove(dxpArticleToDelete);
+		}
+
 		for (File dxpArticle : dxpArticles) {
 			articles.add(dxpArticle);
 			//System.out.println("dxpArticle: " + dxpArticle.getPath());
@@ -671,7 +685,9 @@ public class CheckLinks {
 
 			dxpArticles = findCurrentDirArticles(dxpArticleDir);
 		} catch(NullPointerException e) {
-			System.out.println("No DXP articles in " + dxpArticleDir.getParent());
+			if (currentDir) {
+				System.out.println("No DXP articles in " + dxpArticleDir.getParent());
+			}
 		}
 
 		return dxpArticles;
@@ -691,7 +707,6 @@ public class CheckLinks {
 				articleDxpPathString = articleDxpPathString.replace(File.separator + "articles-dxp" + File.separator, File.separator + "articles" + File.separator);
 
 				currentDxpArticlePathStrings.add(articleDxpPathString);
-
 			}
 
 			// Convert regular article paths to strings
@@ -700,7 +715,6 @@ public class CheckLinks {
 				String articlePathString = article.getPath();
 
 				currentArticlePathStrings.add(articlePathString);
-
 			}
 
 			List<Integer> articleIndexes = new ArrayList<Integer>();
@@ -724,7 +738,9 @@ public class CheckLinks {
 
 				fileOverrideString = fileOverrideString.replace(File.separator + "articles" + File.separator, File.separator + "articles-dxp" + File.separator);
 				fileOverride = new File(fileOverrideString);
-				//System.out.println("fileOverride: " + fileOverride.getPath());
+
+				fileOverrides.add(fileOverride);
+
 				articles.set(articleIndexes.get(i), fileOverride);
 			}
 		}
@@ -951,6 +967,7 @@ public class CheckLinks {
 	private static boolean checkApiLinks;
 	private static boolean checkDxpLinks;
 	private static boolean checkLegacyLinks;
+	private static List<File> fileOverrides = new ArrayList<File>();
 	private static String ldnArticle;
 	private static String platformReferenceSite;
 	private static String platformToken;
