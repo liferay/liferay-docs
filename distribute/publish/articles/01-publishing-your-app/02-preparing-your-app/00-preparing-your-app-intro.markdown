@@ -23,8 +23,7 @@ The publication process is described in detail later.
 
 At this point in preparing to publish your app, you've developed your app. And
 if you're preparing a paid app for Liferay Portal 6.2, you've specified a
-permission descriptor (a portal access control list
-[\(PACL\)](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+permission descriptor (a [portal access control list](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
 for traditional plugins), so that your app can be deployed on Liferay instances
 that have their
 [Plugin Security Manager](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl#enabling-the-security-manager) 
