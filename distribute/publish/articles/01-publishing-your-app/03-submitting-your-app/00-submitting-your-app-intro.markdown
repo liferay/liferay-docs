@@ -6,8 +6,8 @@ Marketplace app submission process.
 Go to your *Account Home* on 
 [liferay.com](http://www.liferay.com). 
 In the left side navigation panel of your profile page, there are links to pages
-related to using apps and developing apps. Links to *Apps* and *Metrics* are
-listed in the *Development* section of the navigation panel. You'll use these
+related to using apps and developing apps. Links to *Apps* and *Metrics* appear
+in the *Development* section of the navigation panel. You'll use these
 links heavily during development, so you may want to bookmark this page too.
 Click *Apps* from the *Development* section to access your app development page. 
 
