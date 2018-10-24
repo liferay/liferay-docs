@@ -1,32 +1,25 @@
 # Administering Liferay Sync [](id=administering-liferay-sync)
 
-Liferay Sync is an add-on product for @product@ that synchronizes files 
-between your @product@ server and users' desktop and mobile environments. With 
-Liferay Sync, users can publish and access shared documents and files from 
-their 
-native environments without using a browser. Clients for Windows and Mac OS 
-desktops and Android and iOS mobile platforms are supported. As users add and 
-collaborate on documents and files, Liferay Sync automatically synchronizes 
-them 
-across all configured Sync clients and in your @product@ installation. Liferay
-Sync integrates completely with @product@ so that features such as 
-authentication
-and versioning function in the supported environments. The Liferay Sync desktop
-client stores files locally so they're always available, even when users are
-offline, and when they go back online, it automatically synchronizes files upon
-client reconnection. The Liferay Sync mobile client saves storage space on
+Liferay Sync is an add-on product for @product@ that synchronizes files between 
+your @product@ server and users' desktop and mobile environments. With Liferay 
+Sync, users can publish and access shared documents and files from their native 
+environments without using a browser. Clients for Windows and Mac OS desktops 
+and Android and iOS mobile platforms are supported. As users add and collaborate 
+on documents and files, Liferay Sync automatically synchronizes them across all 
+configured Sync clients and in your @product@ installation. Liferay Sync 
+integrates completely with @product@ so that features such as authentication and 
+versioning function in the supported environments. The Liferay Sync desktop 
+client stores files locally so they're always available, even when users are 
+offline, and when they go back online, it automatically synchronizes files upon 
+client reconnection. The Liferay Sync mobile client saves storage space on 
 users' devices by downloading only the files they choose. 
 
 This guide walks you through setting up Sync for your @product@ installation 
-and its 
-sites. In addition to basic configuration, important topics such as security 
-and 
-accidental data loss are covered. Note, you must be an administrator to set up 
-your @product@ installation for Sync. If you're not an instance or site
-administrator, you can skip this guide and move on to 
-[installing and using the Sync desktop 
-client](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop
-). 
+and its sites. In addition to basic configuration, important topics such as 
+security and accidental data loss are covered. Note, you must be an 
+administrator to set up your @product@ installation for Sync. If you're not an 
+instance or site administrator, you can skip this guide and move on to 
+[installing and using the Sync desktop client](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop). 
 
 To prepare your @product@ installation for Sync, you must first install Sync's 
 prerequisite apps. 
@@ -36,33 +29,28 @@ prerequisite apps.
 Liferay Sync requires that your @product@ installation contains the most recent 
 versions of the following Liferay Marketplace apps: 
 
-- [Liferay IP 
-Geocoder](https://web.liferay.com/marketplace/-/mp/application/15100579): 
+- [Liferay IP Geocoder](https://web.liferay.com/marketplace/-/mp/application/15100579): 
   Uses geographic IP lookup to get the approximate location of devices that 
   register with Sync. This is a security measure that lets you see where the 
   devices are that connect to your @product@ installation via Sync. 
 
-- [Liferay OAuth 
-Provider](https://web.liferay.com/marketplace/-/mp/application/45261909): 
+- [Liferay OAuth Provider](https://web.liferay.com/marketplace/-/mp/application/45261909): 
   Enables OAuth in your @product@ installation. OAuth is required to use Sync 
   with SSO (single sign-on). The next section details additional steps that are 
-required 
-  to use Sync with SSO. 
+  required to use Sync with SSO. 
 
-- [Liferay Sync 
-Connector](https://web.liferay.com/marketplace/-/mp/application/31709100): 
+- [Liferay Sync Connector](https://web.liferay.com/marketplace/-/mp/application/31709100): 
   Lets you enable and configure Sync in your @product@ installation. For 
   example, you can disable Sync across the instance or on a site-by-site basis. 
-Note that 
-  Sync is enabled by default for all your @product@ installation's sites. 
+  Note that Sync is enabled by default for all your @product@ installation's 
+  sites. 
 
 These apps are preinstalled in the latest @product@ releases. To verify that 
 you have them, navigate to *Control Panel* &rarr; *Apps* &rarr; *App Manager*.
 You can search for them in the *Search* field at the upper right. If your
 @product@ installation doesn't contain these apps, install them from Liferay
 Marketplace. 
-[Click here for instructions on installing apps from Liferay 
-Marketplace](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace
+[Click here for instructions on installing apps from Liferay Marketplace](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace
 ). 
 
 Note that older Sync 1.x clients can't connect to the latest Sync Connector 
@@ -98,7 +86,7 @@ therefore whitelist these URLs:
     http(s)://<portal-address>/api/jsonws/sync-web.*
     http(s)://<portal-address>/sync-web/*
 
-For example, if your @product@ installation's address is
+For example, if your @product@ installation's address is 
 `https://www.joesblog.com`, then you must whitelist the following URLs: 
 
     https://www.joesblog.com/c/portal/oauth/*
@@ -122,17 +110,14 @@ access Sync Connector, select *Control Panel* &rarr; *Configuration* &rarr;
 
 Sync Connector Admin has three tabs: 
 
-1.  **Settings:** Control Sync's general behavior. These settings apply 
-globally 
+1.  **Settings:** Control Sync's general behavior. These settings apply globally 
     to Sync. 
 
-    ![Figure 1: The Control Panel's Configuration section contains Sync 
-Connector Admin.](../../../images-dxp/sync-admin-01.png)
+    ![Figure 1: The Control Panel's Configuration section contains Sync Connector Admin.](../../../images-dxp/sync-admin-01.png)
 
-    - **Allow the use of Sync?:** Whether Sync is enabled.
+    - **Allow the use of Sync?:** Whether Sync is enabled. 
 
-    - **Allow users to sync their personal sites?:** Whether users can sync 
-data 
+    - **Allow users to sync their personal sites?:** Whether users can sync data 
       with their personal sites. 
 
     - **OAuth Enabled:** Whether clients use OAuth and any configured SSO 
@@ -140,69 +125,57 @@ data
 
     - **Allow LAN Syncing?:** Whether desktop clients attempt to download 
       updates from other desktop clients on the same local network before 
-      downloading from the server. This can help reduce server load and 
-increase 
+      downloading from the server. This can help reduce server load and increase 
       data transfer speeds. Note that LAN syncing only works with clients that 
       also enable it. 
 
     - **Max Connections:** The maximum number of simultaneous connections each 
-      client is allowed per account. For example, if Max Connections is three, 
-a 
+      client is allowed per account. For example, if Max Connections is three, a 
       client can simultaneously upload or download up to three files for each 
       account. Note, this setting operates on a per client basis. If Max 
       Connections is set to three and a user has two clients connected to an 
-      account (which is possible if Sync is installed on two different 
-      devices), then the user is effectively allowed six simultaneous 
-      connections. While increasing Max Connections can speed up file transfers 
-      it also places a heavier load on the server. *Max Connections* is set to 
-      one by default. 
+      account (which is possible if Sync is installed on two different devices), 
+      then the user is effectively allowed six simultaneous connections. While 
+      increasing Max Connections can speed up file transfers it also places a 
+      heavier load on the server. *Max Connections* is set to one by default. 
 
     - **Poll Interval:** The frequency in seconds that clients automatically 
-      check the server for updates. For example, if set to ten, 
-      connected clients check the server for updates every ten seconds. The 
-      default Poll Interval is five. 
+      check the server for updates. For example, if set to ten, connected 
+      clients check the server for updates every ten seconds. The default Poll 
+      Interval is five. 
 
     - **Max Download Rate:** The maximum transfer rate, in bytes, at which 
       clients can download. A value of `0` specifies no limit. This setting 
-takes 
-      precedence over clients' download rate setting. 
+      takes precedence over clients' download rate setting. 
 
-    - **Max Upload Rate:** The maximum transfer rate, in bytes, at which 
-clients 
+    - **Max Upload Rate:** The maximum transfer rate, in bytes, at which clients 
       can upload. A value of `0` specifies no limit. This setting takes 
-precedence 
-      over clients' upload rate setting. 
+      precedence over clients' upload rate setting. 
 
-    - **Force Security Mode:** Whether to force security mode on mobile 
-clients. 
+    - **Force Security Mode:** Whether to force security mode on mobile clients. 
       Security mode encrypts Sync files on the device and requires a passcode 
       when accessing the Sync mobile app. 
 
 2.  **Sites:** Control Sync on a per-site basis. 
 
-    ![Figure 2: Sync Connector Admin's Sites tab lets you manage Sync on a 
-per-site basis.](../../../images-dxp/sync-admin-02.png)
- 
-    For each site in the @product@ installation, the Sites tab lists each 
-site's 
+    ![Figure 2: Sync Connector Admin's Sites tab lets you manage Sync on a per-site basis.](../../../images-dxp/sync-admin-02.png)
+
+    For each site in the @product@ installation, the Sites tab lists each site's 
     default file permissions (more on this in a moment) and whether Sync is 
     enabled for that site. Sync is enabled by default for all sites. To disable 
     Sync for a site, click the site's *Actions* button 
-(![Actions](../../../images-dxp/icon-actions.png)) 
+    (![Actions](../../../images-dxp/icon-actions.png)) 
     and select *Disable Sync Site*. To disable multiple sites at once, select 
     their checkboxes and click the *Disable Sync Sites* link that appears above 
     the table. **Please use caution** when disabling Sync for a site, as doing 
-    so **deletes** files for that site from the Sync clients. Disabling Sync 
-for 
-    a site, however, doesn't affect the site's files in the @product@
+    so **deletes** files for that site from the Sync clients. Disabling Sync for 
+    a site, however, doesn't affect the site's files in the @product@ 
     installation. 
 
     +$$$
 
-    **Warning:** Disabling Sync for specific sites from Sync Connector Admin 
-can 
-    result in data loss across clients. If Sync is disabled for a site users 
-are 
+    **Warning:** Disabling Sync for specific sites from Sync Connector Admin can 
+    result in data loss across clients. If Sync is disabled for a site users are 
     currently syncing, any files in the clients' sync folders for that site are 
     automatically deleted from their clients. If a user is offline when Sync is 
     disabled for a site, any offline changes or additions they make are deleted 
@@ -214,28 +187,22 @@ are
     Actions button. To enable Sync for multiple sites, select their checkboxes 
     and click the *Enable Sync Sites* link that appears above the table. 
 
-    Make sure that each site for which Sync is enabled has a Documents and 
-Media 
+    Make sure that each site for which Sync is enabled has a Documents and Media 
     app on at least one of its pages. If a site doesn't have the app on any of 
-    its pages and users click the *Open Website* link from their Sync menus, 
-the 
+    its pages and users click the *Open Website* link from their Sync menus, the 
     error message *The requested resource was not found* appears. 
 
     The Sites tab also lets you set default file permissions for files uploaded 
-    from Sync clients. The process for setting permissions is nearly the same 
-as 
+    from Sync clients. The process for setting permissions is nearly the same as 
     for enabling or disabling Sync for sites. To set the default file 
     permissions for a single site, click its Actions button and select *Default 
-    File Permissions*. This opens a window that lets you select the default 
-file 
+    File Permissions*. This opens a window that lets you select the default file 
     permissions for that site. Click *Choose* for the permissions you want to 
     use. 
 
-    ![Figure 3: Click *Choose* to select the default file permissions for a site 
-in Sync.](../../../images-dxp/sync-admin-03.png)
+    ![Figure 3: Click *Choose* to select the default file permissions for a site in Sync.](../../../images-dxp/sync-admin-03.png)
 
-    To set the default file permissions for several sites, select the 
-checkboxes 
+    To set the default file permissions for several sites, select the checkboxes 
     for the sites, click the *Default File Permissions* link that appears above 
     the table, and select the permissions you want to use. Default file 
     permissions might behave differently than you'd expect. They control *only* 
@@ -248,17 +215,14 @@ checkboxes
 
 3.  **Devices:** View and manage the devices registered with Sync. 
 
-    ![Figure 4: Sync Connector Admin's Devices tab lists all the devices Sync 
-has registered for the @product@ 
-installation.](../../../images-dxp/sync-admin-devices.png)
+    ![Figure 4: Sync Connector Admin's Devices tab lists all the devices Sync has registered for the @product@ installation.](../../../images-dxp/sync-admin-devices.png)
 
     Each row in the Devices tab's table represents a device. The *Name* column 
     lists the user that registered the device. The remaining columns list each 
     device's location, client type, client build number, last connection date, 
     and status. Each device's Actions button 
-(![Actions](../../../images-dxp/icon-actions.png)) 
-    lets you manage that device. You can change a device's status from Active 
-to 
+    (![Actions](../../../images-dxp/icon-actions.png)) 
+    lets you manage that device. You can change a device's status from Active to 
     Inactive by selecting *Actions* &rarr; *Disable Sync Device*. Inactive 
     devices can't sync with the @product@ installation. Inactive mobile devices
     also can't access local Sync files. Once a device is Inactive, you can erase
@@ -311,7 +275,6 @@ section demonstrates how Sync's permissions work with your @product@
 installation's permissions. 
 
 ## Liferay Sync Permissions Demonstration [](id=liferay-sync-permissions-demonstration)
-[](id=liferay-sync-permissions-demonstration)
 
 Sync uses @product@'s default permissions to determine files and folders to sync
 with the user's devices. It can only sync files a user can access in the 
@@ -350,8 +313,7 @@ site's default file permissions are View Only. After attempting the sync, a red
 *x* appears next to the file in the local Sync folder. Right click the file to 
 see the error. It confirms the user doesn't have the required permissions. 
 
-![Figure 5: The upload error occurs because the user only has permission to view 
-files.](../../../images-dxp/sync-file-permissions-error.png)
+![Figure 5: The upload error occurs because the user only has permission to view files.](../../../images-dxp/sync-file-permissions-error.png)
 
 To confirm that the error didn't propagate through Sync, open the file in the 
 secretagent user's local Sync folder. It still contains the original text. 
