@@ -27,6 +27,14 @@ Start with the tool's usage.
 
 ## Upgrade Tool Usage [](id=upgrade-tool-usage)
 
+The `db_upgrade.sh` script (`db_upgrade.bat` on Windows) invokes the upgrade
+tool. It resides in the  `[Liferay Home]/tools/portal-tools-db-upgrade-client`
+folder. 
+
+This command prints the upgrade tool usage: 
+
+    db_upgrade.sh --help
+
 To upgrade only the core, add a file called
 `com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.config`
 to the `[Liferay Home]/osgi/configs` folder with the following content:
@@ -37,22 +45,6 @@ This configuration prevents automatic module upgrade, but causes the upgrade
 tool to open a Gogo shell for
 [upgrading modules](/discover/deployment/-/knowledge_base/7-1/gogo-shell-commands-for-module-upgrades)
 after finishing the core upgrade. 
-
-The `db_upgrade.sh` script (`db_upgrade.bat` on Windows) invokes the upgrade
-tool. It resides in the  `[Liferay Home]/tools/portal-tools-db-upgrade-client`
-folder. 
-
-This command prints the upgrade tool usage: 
-
-    db_upgrade.sh --help
-
-+$$$
-
-**Warning**: To prevent the tool's expanded command from growing too large for
-Windows, execute the upgrade tool script from the `[Liferay
-Home]/tools/portal-tools-db-upgrade-client` folder.
-
-$$$
  
 Here are the tool's default Java parameters:
     
@@ -74,10 +66,42 @@ Here are all the upgrade tool command line options:
 
 **--jvm-opts** or **-j** + **[arg]**: Sets any JVM options for the upgrade process.
 
-**--log-file** or **-l** + **[arg]**: Specifies the tool's log file name.
+**--log-file** or **-l** + **[arg]**: Specifies the tool's log file name---the 
+default name is `upgrade.log`.
 
 **--shell** or **-s**: Automatically connects you to the Gogo shell after
 finishing the upgrade process.
+
++$$$
+
+**Note:** Only execute the upgrade process on a server with ideal memory, CPU,
+and database connection configuration. If executing an upgrade remotely using
+`ssh`, make sure to guard against interruptions: 
+
+- If you're executing the upgrade using `ssh`, ignore hangups (connection loss) 
+by using `nohup` or something similar. 
+- On the machine you're connecting from, disable settings that shutdown or sleep
+that machine. 
+
+If upgrade execution is interrupted, check your log file (default file is
+`upgrade.log`) for where execution stopped. 
+
+- If execution stopped during an upgrade process for Core 7.1 or higher, or any
+  module upgrade process, restart the upgrade tool to continue the upgrade from
+  that point. 
+- If execution stopped during an upgrade process for Core 7.0 or lower, you must
+  [restore the data from a backup](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
+  and start the upgrade again. 
+
+$$$
+
++$$$
+
+**Warning:** To prevent the tool's expanded command from growing too large for
+Windows, execute the upgrade tool script from the `[Liferay
+Home]/tools/portal-tools-db-upgrade-client` folder.
+
+$$$
 
 Before starting the upgrade, decide how to execute non-core module upgrades. 
 

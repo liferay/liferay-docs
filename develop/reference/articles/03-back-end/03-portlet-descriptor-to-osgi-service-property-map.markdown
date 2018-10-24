@@ -242,7 +242,7 @@ this document for simplicity.
         public class MyPortlet extends GenericPortlet {
             ...
         } 
-        
+
 -   [<a name="eight">8</a>] Here's an example for the 
     `javax.portlet.listener` property.
 
