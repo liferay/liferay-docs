@@ -10,11 +10,23 @@ keep in mind:
 
 - **Target the Appropriate Java JRE**: Regardless of the tools you use to 
   develop your app, your app's bytecode must be compatible with the target Java
-  JRE for your version of Liferay. Apps are rejected if their bytecode is  not
+  JRE for your version of Liferay. Apps are rejected if their bytecode is not
   compatible with the Java JRE for the intended version of Liferay. In the
   Compatibility Matrix for your Liferay version, make sure your app's bytecode
-  is compatible with the latest certified Java JDK version.   
-  
+  is compatible with the latest certified Java JDK version.
+
+  If you use any Gradle-based build environment like 
+  [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace), make
+  sure your `targetCompatibility` is set to the latest certified Java JDK
+  version. 
+
+  Similarly, if you use Maven, you can set the bytecode compatibility like this: 
+
+    <properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>  
+	</properties>
+
   If you use the 
   [Liferay Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
   to develop your app for Liferay Portal 6.2 or 6.1, you can set the Java
@@ -39,7 +51,7 @@ keep in mind:
     - *plugin_type*: one of the following: `hook`, `layouttpl`,
       `portlet`, `theme`, or `web`.
 
-    - `A.B.C.D`: The 4 digit version of your WAR file.  4 digits must
+    - `A.B.C.D`: The four digit version of your WAR file. Four digits must
        be used.
 
         Example: `myapp-portlet-1.0.0.0.war`
@@ -104,9 +116,8 @@ that works across both Liferay versions. In this case, you must compile your app
 twice: once against Liferay Portal 6.1 and once against 6.2, producing two
 different *packages* (also called variations) of your version 1.0 app. Each
 package has the same functionality, but they're different files. You can upload
-such  packages to support your app on different Liferay versions. With regards
-to  Liferay apps, packages are sometimes referred to as files that make up your
-app. 
+such packages to support your app on different Liferay versions. Packages are
+sometimes referred to as files that make up your app. 
 
 Now that you've prepared your app's files and specified its metadata, it's
-time to get it to submit it to Liferay for publishing on the Marketplace! 
+time to submit it to Liferay for publishing on the Marketplace! 
