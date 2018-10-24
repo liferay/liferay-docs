@@ -60,11 +60,6 @@ String productType = _productType;
 				}
 			}
 
-
-			if (articles.isEmpty()) {
-				throw new BuildException("FAILURE - no markdown files found in " + articleDir.getAbsolutePath());
-			}
-
 			for (File article : articles) {
 				String articlePath = article.getAbsolutePath();
 
