@@ -12,7 +12,7 @@ be tracked during the Staging phase of your publishing process.
 
 ![Figure 1: Once Staging is implemented in your Guestbook app, you can have its data tracked by the Staging framework.](../../../images/guestbook-staging.png)
 
-![Figure 2: A Staging-enabled Guestbook app can be modified on the staged site first without any users seeing it on the live site.](../../../images/guestbook-staging-page.png)
+![Figure 2: A Staging-enabled Guestbook app can be modified on the staged site first without any users seeing it on the live Site.](../../../images/guestbook-staging-page.png)
 
 Export/Import facilitates extracting data so it can be imported into another
 @product@ installation. Since the Export/Import framework is programmatically
