@@ -6,17 +6,25 @@ allowing you to use OpenAM to integrate @product@ into an infrastructure that
 contains a multitude of different authentication schemes against different
 repositories of identities.
 
-Note that OpenAM relies on cookie sharing between applications. Thus, in order
-for OpenAM to work, all applications that require SSO must be in the same web
-domain.
+In order for OpenAM to work, **all applications that require SSO must be in the 
+same web domain**.
 
-You can set up OpenAM on the same or different server as @product@ . If you
-are using the same @product@ server to host OpenAM, you must deploy the OpenAM
+You can set up OpenAM on the same or different server as @product@, 
+so it can be necessary to change hostnames and context of OpenAM. 
+If you are using the same @product@ server to host OpenAM, you must deploy the OpenAM
 `.war`. The `.war` is available
-[here](https://www.forgerock.com/platform/access-management/). Otherwise, follow
-the instructions at the
-[OpenAM site](https://backstage.forgerock.com/docs/openam/12.0.4/install-guide)
-to install OpenAM. Once you have it installed, create the @product@
+[here](https://backstage.forgerock.com/downloads/browse/am/archive/productId:openam). 
+Otherwise, follow the instructions at the
+[OpenAM 13 site](https://backstage.forgerock.com/docs/openam/13/install-guide/) 
+to install OpenAM. 
+
+OpenAM relies on cookie sharing between applications. Thus, you must activate the 
+"Encode Cookie Value" checkbok in the *Cookie* section of *Security* 
+inside OpenAM *Configuration*.
+Also note that the only current officially **supported version is OpenAM 13**, @product@ 
+allows you to work with older versions although the support for them is limited.
+
+Once you have it installed, create the @product@
 administrative user in it. Users are mapped back and forth by screen names. By
 default, the @product@ administrative user has a screen name of *test*, so if
 you were to use that account, in OpenAM, register the user with the ID of *test*
@@ -26,7 +34,11 @@ in to OpenAM using this user.
 In the same browser window, log in to @product@ as the administrative user (using
 the email address *test@liferay.com*). Go to the Control Panel and click
 *Configuration* &rarr; *Instance Settings* &rarr; *Authentication* &rarr;
-*OpenSSO* at the top. Modify the three URL fields (Login URL, Logout URL, and
+*OpenSSO* at the top. 
+
+![Figure 1: OpenSSO Configuration.](../../images/opensso-configuration.png)
+
+Modify the three URL fields (Login URL, Logout URL, and
 Service URL) so they point to your OpenAM server (in other words, only modify the host
 name portion of the URLs), check the *Enabled* box, and click *Save*.
 @product@ then redirects users to OpenAM when they request the `/c/portal/login`
@@ -42,6 +54,7 @@ initializing a Java primitive type with a literal value.
 
 Property Label | Property Key | Description | Type
 ----- | ----- | ----- | -----
+**Version** | `version` | OpenAM version to use (12 and bellow or 13) | `String`
 **Enabled** | `enabled` | Check this box to enable OpenAM authentication. Note that OpenAM will work only if LDAP authentication is also enabled and @product@'s authentication type is set to screen name. | `boolean`
 **Import from LDAP** | `importFromLDAP` | If this is checked, users authenticated from OpenAM that do not exist in @product@ are imported from LDAP. LDAP must be enabled. | `boolean`
 **Login URL** | `loginURL` | The URL to the login page of the OpenAM server | `String`
