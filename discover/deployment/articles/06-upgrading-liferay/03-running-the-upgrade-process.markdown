@@ -119,18 +119,28 @@ Each file's properties are described next.
 
 #### Configuring app-server.properties [](id=configuring-app-server-properties)
 
-Specify the following information to configure the app server on which @product-ver@ is installed: 
+Specify the following information to configure the app server on which 
+@product-ver@ is installed: 
 
-**dir:**  the application server directory *(required)*
+**dir:**  the absolute path of the application server directory. *(required)*
 
 **extra.lib.dirs:**  a comma delimited list of extra directories containing any
-binaries or resources to add to the  class path *(required)*
+binaries or resources to add to the class path. Use all absolute OR all relative
+paths. *(required)*
 
-**global.lib.dir:**  the application server's global library directory 
-*(required)*
+**global.lib.dir:**  the application server's global library directory. Use 
+absolute or relative path. *(required)*
 
-**portal.dir:**  the directory where portal is installed in your app server
-*(required)*
+**portal.dir:**  the directory where portal is installed in your app server. Use
+absolute or relative path. *(required)*
+
+Relative paths are based on the *dir* value and must use Unix style format. The
+following properties, for example, are for Windows and use relative paths:
+
+    dir=D:\
+    extra.lib.dirs=Liferay/liferay-portal-master/tomcat-9.0.10/bin
+    global.lib.dir=Liferay/liferay-portal-master/tomcat-9.0.10/lib
+    portal.dir=Liferay/liferay-portal-master/tomcat-9.0.10/webapps/ROOT
 
 #### Configuring portal-upgrade-database.properties [](id=configuring-portal-upgrade-database-properties)
 
