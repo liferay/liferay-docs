@@ -20,6 +20,16 @@ No matter how you access Marketplace, you'll see the same content. Note that to
 download apps, you must have a [liferay.com](https://www.liferay.com) account
 and agree to the Marketplace Terms of Use. 
 
+Here you'll learn how to,
+
+- [Find and purchase apps](#finding-and-purchasing-apps) 
+
+- [Manage purchased apps](#managing-purchased-apps) 
+
+- [Renew purchased apps](#renewing-a-purchased-app) 
+
+Start with finding and purchasing the apps you want. 
+
 ## Finding and Purchasing Apps [](id=finding-and-purchasing-apps)
 
 If you've used an app store before, Marketplace should be familiar. You'll see
@@ -114,3 +124,37 @@ There are two places to manage your purchased apps:
     title. Clicking the app takes you to its Marketplace entry. 
 
     ![Figure 4: You can also manage your purchased apps from within a running Liferay instance.](../../images/marketplace-purchased.png)
+
+## Renewing a Purchased App [](id=renewing-a-purchased-app)
+
+To continue using a purchased app whose license terms are non-perpetual, you
+must renew your app subscription, register your server to use the app, and
+generate a new activation key to use on your server. Here are the steps:
+
+1. Go to 
+[https://web.liferay.com/marketplace](https://web.liferay.com/marketplace). 
+
+2. Click your profile picture in the upper right corner and select *Purchased 
+Apps*. The Purchased Apps page appears and shows your app icons organized by
+project. 
+
+3. Click your app's icon. Your app's details page appears. 
+
+4. Click *Manage Licenses*. 
+
+5. Select *Register New Server*. 
+
+6. Select the most recent *Order ID* (typically the order that has no registered
+servers). 
+
+7. Fill in your server's details. 
+
+8. Click *Register*. 
+
+9. Click *Download*. The new app activation key to use on your server downloads.
+
+10. Copy the activation key file to your
+[`[Liferay Home]/deploy`](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+folder. 
+
+You can continue using the application on your server. 
