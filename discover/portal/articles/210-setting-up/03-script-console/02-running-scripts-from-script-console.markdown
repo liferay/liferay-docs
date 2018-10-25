@@ -43,7 +43,9 @@ Here's how to run the sample script in the script console:
 
 The Groovy sample invokes the Liferay service utility `UserLocalServiceUtil` to
 get the user count. Then it uses `out` (a built-in `PrintWriter`) to write the
-count to the script console. 
+count to the script console. Note that if you use `System.out.println` instead
+of `out.println`, your output is printed to Liferay's log file rather than to
+the script console.
 
 ## Predefined Variables [](id=predefined-variables)
 
@@ -72,10 +74,6 @@ instance's `Company`:
     }
 
 ![Figure 2: Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the company and current user.](../../../images/groovy-script-current-user-info.png)
-
-Note that if you use `System.out.println`, your output is printed to Liferay's
-log file. If you use `out.println` instead (using the predefined variable),
-your output is printed to the script console.
 
 ## Tips [](id=tips)
 
