@@ -13,7 +13,9 @@ Depending on your subscription agreement, LCS also lets you register servers via
 number servers. This is invaluable in auto-scaling environments, where servers 
 are automatically created and destroyed in response to load. Note that to use 
 elastic subscriptions, you must set the environment as elastic when you create 
-it. 
+it. Also note that LCS only uses elastic subscriptions for servers that exceed 
+the number that the environment's subscription type allows. In other words, LCS 
+uses the environment's regular subscriptions before any elastic subscriptions. 
 
 You can access these features from the *Subscriptions* tab on the upper-left of 
 the LCS site. This tab contains two other tabs: *Details* and *Elastic 
