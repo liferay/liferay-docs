@@ -1,7 +1,5 @@
 # Shared Language Keys [](id=shared-language-keys)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Shared Language Keys sample provides a JSP portlet that displays language
 keys.
 
@@ -72,7 +70,7 @@ republishing an aggregate `ResourceBundleLoader`. This can be done two ways:
 
     You can get a reference to the registered service in your components as
     detailed in the
-		[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys#overriding-a-modules-language-keys)
+		[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-language-keys)
 		tutorial. The main disadvantage of this approach is that it forces you to
 		provide a specific implementation of the `ResourceBundleLoader`, making it
 		harder to modularize in the future.

@@ -20,7 +20,7 @@ If you installed @product@ manually, however, you must also install the Patching
 Tool manually. 
 
 1.  Download the Patching Tool from the
-    [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1/patching-tool).
+    [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool).
 
 2.  Unzip the Patching Tool to your
     [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-portal#liferay-home)

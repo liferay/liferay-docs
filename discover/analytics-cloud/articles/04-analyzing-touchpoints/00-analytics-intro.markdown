@@ -1,4 +1,4 @@
-# Finding Touchpoint Data
+# Finding Analytics Data
 
 Combining traditional Page Analytics with Path and Asset Analytics sets Liferay
 Analytics Cloud apart from other analytics tools.
@@ -10,7 +10,7 @@ for your site pages in the form of Path Analytics. In addition, several
 @product@ Assets have even more fine-grained metrics to drill deeper than the
 page level to determine how you can improve the performance of your site.
 
-![Figure 1: Pages and Assets are important Touchpoints in Analytics Cloud.](../../images/pages-touchpoints-menu.png)
+![Figure 1: Analytics Cloud provides important data for Pages and Assets.](../../images/pages-touchpoints-menu.png)
 
 This tutorial shows where to find the analytics for Pages and Assets. The
 remaining tutorials explain their metrics.
@@ -33,9 +33,9 @@ Order Pages in ascending or descending order based on any one of these metrics:
 
 <!--SCREENSHOT:currently there's no data to screenshot-->
 
-<!-- In addition to ordering the Touchpoints, filter them by entering search terms.
-There's a prominent search bar at the top of the Touchpoints table. Run a basic
-search and see the matching Touchpoints returned.
+<!-- In addition to ordering Pages and Assets, filter them by entering search terms.
+There's a prominent search bar at the top of the table. Run a basic
+search and see the matches returned.
 
 Once you have some returned results, perhaps being ordered by one of the
 available metrics in descending order, turn your attention to the Time Period

@@ -95,7 +95,7 @@ buffer are executed in one batch and removed from the buffer.
 ### Index Query Preprocessor [](id=index-query-preprocessor)
 
 This entry has one repeatable property (use array syntax if you're defining via 
-[OSGi configuration file](/discover/portal/-/knowledge_base/7-1/creating-configuration-file)):
+[OSGi configuration file](/discover/portal/-/knowledge_base/7-1/creating-configuration-files)):
 
 `fieldNamePatterns`: Fields with names matching the patterns set here are
 treated as non-analyzed keyword fields. Instead of scored full text queries,
@@ -138,7 +138,7 @@ executing a full re-index.
 ### Engine Helper [](id=engine-helper)
 
 This entry has one repeatable property (use array syntax if you're defining via 
-[OSGi configuration file](/discover/portal/-/knowledge_base/7-1/creating-configuration-file)):
+[OSGi configuration file](/discover/portal/-/knowledge_base/7-1/creating-configuration-files)):
 
 `excludedEntryClassNames`: Exclude an asset type from being
 searched in the catchall query constructed for the Search application. For

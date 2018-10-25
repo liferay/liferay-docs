@@ -86,7 +86,7 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
 
     ![Figure 4: Assign a form to each task in the workflow, and for the initial state.](../../images-dxp/kaleo-forms-task-forms.png)
 
-## Adding Records to a Process
+## Adding Records to a Process [](id=adding-records-to-a-process)
 
 To add records to a process, click it in Kaleo Forms Admin and then click the 
 *Add* button 

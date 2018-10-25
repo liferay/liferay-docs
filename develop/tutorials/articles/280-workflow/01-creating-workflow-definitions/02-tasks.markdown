@@ -168,7 +168,7 @@ entity. For example, a user might have permission to update Message Boards
 Messages. This is called an UPDATE resource action, because the user can update
 the resource. If you're uncertain about what resource actions are, refer to the
 developer tutorial on the 
-[permission system](/develop/tutorials/-/knowledge_base/7-1/adding-permissions-to-resources)
+[permission system](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions)
 for a more detailed explanation.
 
 To find all the resource actions that have been created, you need access to the
@@ -296,7 +296,7 @@ meaningful inside a timer.
 $$$
 
 Tasks are at the core of the workflow definition. Once you understand how to
-create tasks and the other 
-[workflow nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes) 
-and add transitions between the nodes, you're on the cusp of workflow
-wizard-hood.
+create tasks and the other
+[workflow
+nodes](/develop/tutorials/-/knowledge_base/7-1/workflow-definition-nodes) and add
+transitions between the nodes, you're on the cusp of workflow wizard-hood.

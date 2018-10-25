@@ -82,6 +82,7 @@ availability.
 
 | App | &nbsp;Availability | &nbsp;Notes |
 | --- | ------------------ | ----------- |
+| RSS Publisher | Release (bundle) | See [the article](/discover/portal/-/knowledge_base/7-1/the-rss-publisher-widget) on enabling and using this widget. |
 | User Group Pages (Copy Mode) | Release (bundle) |  |
 | Web Proxy Portlet | [Nexus](https://repository.liferay.com/nexus/service/local/repositories/liferay-public-releases/content/com/liferay/com.liferay.web.proxy.web/2.0.0/com.liferay.web.proxy.web-2.0.0.jar) |  |
 | Web Content Search Portlet | [Nexus](https://repository.liferay.com/nexus/service/local/repositories/liferay-public-releases/content/com/liferay/com.liferay.journal.content.search.web/2.0.0/com.liferay.journal.content.search.web-2.0.0.jar) | The new Search widget can be configured to replace all the unique functionality of the Web Content Search |
