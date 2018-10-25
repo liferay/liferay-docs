@@ -175,16 +175,17 @@ First, you'll create a staged model data handler for guestbook entries.
     updated.
 
 8.  When importing a LAR, the import process expects all references to be
-    available and must validate their existence. To handle missing references,
-    you must add a method that maps the missing reference ID from the export to
-    the existing ID during import.
+    available and validates their existence. To handle missing references, you
+    must add a method that maps the missing reference ID from the export to the
+    existing ID during import.
 
     For example, suppose you export a guestbook entry as a missing reference
-    with an ID of `1`. When importing that information, the LAR only provides
-    the ID but not the entry itself. Therefore, during the import process, the
-    Data Handler framework searches for the entry to replace, but the entry to
-    replace has a different ID of `2`. You must provide a method that maps these
-    two IDs so the import process can recognize the missing reference.
+    with a primary key (ID) of `1`. When importing that information, the LAR
+    only provides the ID but not the entry itself. Therefore, during the import
+    process, the Data Handler framework searches for the entry to replace, but
+    the entry to replace has a different ID of `2`. You must provide a method
+    that maps these two IDs so the import process can recognize the missing
+    reference.
 
         @Override
         protected void doImportMissingReference(
