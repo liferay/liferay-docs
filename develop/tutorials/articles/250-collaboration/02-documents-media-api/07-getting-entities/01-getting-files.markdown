@@ -75,6 +75,17 @@ default repository, sorted by title:
 
         long groupId = ParamUtil.getLong(actionRequest, "groupId");
 
+    It's also possible to get the group ID via the 
+    [`ThemeDisplay`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html). 
+    Calling the `ThemeDisplay` method `getScopeGroupId()` gets the ID of your 
+    app's current site (group): 
+
+        ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
+        long groupId = themeDisplay.getScopeGroupId();
+
+    For more information, see the 
+    [Data Scopes tutorial](/develop/tutorials/-/knowledge_base/7-1/data-scopes). 
+
 3.  Use the data from the previous step and any other values you want to provide 
     to call the service reference method you want to use to get the files. This 
     example calls the above `getFileEntries` method with the group ID from the 

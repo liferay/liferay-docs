@@ -41,11 +41,20 @@ repository's root folder:
 
         long groupId = ParamUtil.getLong(actionRequest, "groupId");
 
-    Getting the parent folder ID isn't necessary because this example uses the 
-    root folder, for which @product@ provides a constant. Also, the boolean 
-    value can be provided directly---it doesn't need to be retrieved from 
-    somewhere. For more information on getting repository and folder IDs, see 
-    the 
+    It's also possible to get the group ID via the 
+    [`ThemeDisplay`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html). 
+    Calling the `ThemeDisplay` method `getScopeGroupId()` gets the ID of your 
+    app's current site (group). For more information, see the 
+    [Data Scopes tutorial](/develop/tutorials/-/knowledge_base/7-1/data-scopes). 
+
+        ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
+        long groupId = themeDisplay.getScopeGroupId();
+
+    Note that getting the parent folder ID isn't necessary because this example 
+    uses the root folder, for which @product@ provides a constant. Also, the 
+    boolean value can be provided directly---it doesn't need to be retrieved 
+    from somewhere. For more information on getting repository and folder IDs, 
+    see the 
     [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
     sections on specifying repositories and folders. 
 
