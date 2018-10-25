@@ -6,8 +6,13 @@ allowing you to use OpenAM to integrate @product@ into an infrastructure that
 contains a multitude of different authentication schemes against different
 repositories of identities.
 
-In order for OpenAM to work, **all applications that require SSO must be in the 
-same web domain**.
+Note that OpenAM relies on cookie sharing between applications. Thus, in order
+for OpenAM to work, **all applications that require SSO must be in the same web
+domain**.
+It is recommended that you also add the following property if you have enabled 
+HTTPOnly cookies due to the way some web containers (like Apache Tomcat™) parse cookies 
+that contain special characters:
+`com.iplanet.am.cookie.encode=true`
 
 You can set up OpenAM on the same or different server as @product@, 
 so it can be necessary to change hostnames and context of OpenAM. 
@@ -18,11 +23,12 @@ Otherwise, follow the instructions at the
 [OpenAM 13 site](https://backstage.forgerock.com/docs/openam/13/install-guide/) 
 to install OpenAM. 
 
-OpenAM relies on cookie sharing between applications. Thus, you must activate the 
-"Encode Cookie Value" checkbok in the *Cookie* section of *Security* 
-inside OpenAM *Configuration*.
-Also note that the only current officially **supported version is OpenAM 13**, @product@ 
++$$$
+
+**Note**: the only current officially **supported version is OpenAM 13**, @product@ 
 allows you to work with older versions although the support for them is limited.
+
+$$$
 
 Once you have it installed, create the @product@
 administrative user in it. Users are mapped back and forth by screen names. By
