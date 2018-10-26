@@ -49,6 +49,13 @@ it doesn't **add** dependencies to your project; it only **provides** your build
 tool (e.g., Gradle or Maven) the versions needed for the project's defined
 artifacts. This means you don't need to specify your dependency versions; the
 BOM automatically defines the appropriate artifact versions based on the BOM.
+
+You can override a BOM's defined artifact versions by specifying its version in
+your project's `build.gradle`. Artifact versions defined in your project's build
+files override those specified in the predefined BOM. Note that overriding the
+BOM can be dangerous; make sure the new version is compatible in the targeted
+platform.
+
 For more information on BOMs, see the
 [Importing Dependencies](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism#Importing_Dependencies)
 section in Maven's official documentation.
