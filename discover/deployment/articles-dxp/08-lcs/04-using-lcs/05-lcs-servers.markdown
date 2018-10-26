@@ -23,11 +23,11 @@ description. You can also unregister the server from LCS.
 
 +$$$
 
-**Note:** LCS doesn't support Snapshot Metrics for servers running on JBoss or 
-WildFly. In this scenario, you may see a console message indicating that LCS 
-doesn't support server metrics for your application server. You may also see a 
-benign `NullPointerException` for the LCS `TaskSchedulerServiceImpl` and 
-`ScheduleTasksCommand`. 
+**Note:** LCS only supports Snapshot Metrics for servers running on Tomcat or 
+WebLogic. On other application servers you may see a console message indicating 
+that LCS doesn't support server metrics for your application server. You may 
+also see a benign `NullPointerException` for the LCS `TaskSchedulerServiceImpl` 
+and `ScheduleTasksCommand`. 
 
 $$$
 
