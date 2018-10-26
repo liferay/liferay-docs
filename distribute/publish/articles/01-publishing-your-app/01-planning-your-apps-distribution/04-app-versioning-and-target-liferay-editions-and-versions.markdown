@@ -25,12 +25,12 @@ files that are designed for those different versions. The next article in this
 guide explains how to go about
 [specifying packaging directives](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app). 
 
-Note that apps on the Liferay Marketplace must be designed for Liferay Portal 6.1 or
-later. That's not to say that they can't work with prior versions. However, only
-Liferay Portal 6.1 and later versions support installing apps directly from the
-Marketplace and provide safeguards against malicious apps. If you want to use an
-app with an earlier version of Liferay, make sure that version of Liferay
-provides what your app needs from Liferay. 
+Note that apps on the Liferay Marketplace must be designed for Liferay Portal
+6.1 GA3 or later. That's not to say that they can't work with prior versions.
+However, only Liferay Portal 6.1 GA3 and later versions support installing apps
+directly from the Marketplace and provide safeguards against malicious apps. If
+you want to use an app with an earlier version of Liferay, make sure that
+version of Liferay provides what your app needs from Liferay. 
 
 Lastly, you should determine a versioning scheme for your app. How will you
 refer to the first version of your app, the second version, and so on. 
