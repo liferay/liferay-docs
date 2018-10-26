@@ -6,11 +6,11 @@
 
 A Staged Model Data Handler supplies information about a staged model (entity)
 to the Staging and Export/Import framework. Data handlers replace the need to
-manually access the database directly and run queries to export/import data.
+access the database directly and run queries to export/import data.
 
-You're required to create a staged model data handler for every entity you want
-Staging to track. This means you must create a data handler for both your
-guestbook and entry entities.
+You must create a staged model data handler for every entity you want Staging to
+track. This means you must create a data handler for both your guestbook and
+entry entities.
 
 First, you'll create a staged model data handler for guestbook entries.
 
@@ -35,8 +35,7 @@ First, you'll create a staged model data handler for guestbook entries.
             service = StagedModelDataHandler.class
         )
 
-4.  Set the staged model's local services you want to leverage in your data
-    handler:
+4.  Set the staged model's local services you need in your data handler:
 
         @Reference(unbind = "-")
         protected void setEntryLocalService(EntryLocalService entryLocalService) {
@@ -54,7 +53,7 @@ First, you'll create a staged model data handler for guestbook entries.
         private EntryLocalService _entryLocalService;
         private GuestbookLocalService _guestbookLocalService;
 
-    This logic provides access to the entry and guestbook's local services.
+    This injects the entry and guestbook's local services.
 
 5.  You must provide the class names of the models the data handler tracks. You
     can do this by overriding the `StagedModelDataHandler`'s `getClassNames()`
@@ -156,13 +155,11 @@ First, you'll create a staged model data handler for guestbook entries.
 
     The `doExportStagedModel` method retrieves the entry's data element from the
     `PortletDataContext` and then adds the class model characterized by that
-    data element to the `PortletDataContext`. The `PortletDataContext` is used
-    to populate the
-    [LAR file](/develop/tutorials/-/knowledge_base/7-0/understanding-data-handlers#liferay-archive-lar-file)
+    data element to the `PortletDataContext`. The `PortletDataContext` populates
+    the [LAR file](/develop/tutorials/-/knowledge_base/7-0/understanding-data-handlers#liferay-archive-lar-file)
     with your application's data during the export process. Note that once an
-    entity has been exported, subsequent calls to the export method won't
-    actually repeat the export process multiple times, ensuring optimal
-    performance.
+    entity has been exported, subsequent calls to the export method don't
+    repeat the export process multiple times, ensuring optimal performance.
 
     An important feature of the import process is that all exported reference
     elements are automatically imported when needed. The `doImportStagedModel`
@@ -170,23 +167,25 @@ First, you'll create a staged model data handler for guestbook entries.
     find the new assigned ID for the guestbook before importing the entry.
 
     The `PortletDataContext` keeps this information and a slew of other data
-    up-to-date during the import process. The old ID and new ID mapping can be
-    reached by using the `portletDataContext.getNewPrimaryKeysMap()` method as
-    shown in the code snippet. The method proceeds with checking the import mode
-    (e.g., Copy As New or Mirror) and depending on the process configuration and
-    existing environment, the entry is either added or updated.
+    up-to-date during the import process. The code snippet shows how to access
+    the old ID and new ID mapping, by using the
+    `portletDataContext.getNewPrimaryKeysMap()` method. The method proceeds with
+    checking the import mode (e.g., Copy As New or Mirror) and depending on the
+    process configuration and existing environment, the entry is either added or
+    updated.
 
-8.  When importing a LAR that specifies a missing reference, the import process
-    expects the reference to be available and must validate that it's there. You
+8.  When importing a LAR, the import process expects all references to be
+    available and validates their existence. To handle missing references, you
     must add a method that maps the missing reference ID from the export to the
     existing ID during import.
 
     For example, suppose you export a guestbook entry as a missing reference
-    with an ID of `1`. When importing that information, the LAR only provides
-    the ID but not the entry itself. Therefore, during the import process, the
-    Data Handler framework searches for the entry to replace, but the entry to
-    replace has a different ID of `2`. You must provide a method that maps these
-    two IDs so the import process can recognize the missing reference.
+    with a primary key (ID) of `1`. When importing that information, the LAR
+    only provides the ID but not the entry itself. Therefore, during the import
+    process, the Data Handler framework searches for the entry to replace, but
+    the entry to replace has a different ID of `2`. You must provide a method
+    that maps these two IDs so the import process can recognize the missing
+    reference.
 
         @Override
         protected void doImportMissingReference(
@@ -230,8 +229,8 @@ First, you'll create a staged model data handler for guestbook entries.
         }
 
     These methods use the entry's local service to get the entries by UUID and
-    company ID (i.e., portal instance's primary key) or group ID (i.e., site,
-    organization, or user group's primary key).
+    company ID (i.e., portal instance's primary key) or group ID (i.e., Site,
+    Organization, or User Group's primary key).
 
 10. Override the `BaseStagedModelDataHandler`'s delete methods to leverage your
     newly created fetch method and custom local service:
