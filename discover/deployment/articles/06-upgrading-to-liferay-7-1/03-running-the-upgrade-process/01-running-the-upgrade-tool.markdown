@@ -147,22 +147,42 @@ Specify the following information to configure the app server on which
 **dir:**  the absolute path of the application server directory. *(required)*
 
 **extra.lib.dirs:**  a comma delimited list of extra directories containing any
-binaries or resources to add to the class path. Use all absolute OR all relative
-paths. *(required)*
+binaries or resources to add to the class path. Use all absolute paths OR all 
+paths relative to **dir**. *(required)*
 
 **global.lib.dir:**  the application server's global library directory. Use 
-absolute or relative path. *(required)*
+the absolute path or a path relative to **dir**. *(required)*
 
 **portal.dir:**  the directory where portal is installed in your app server. Use
-absolute or relative path. *(required)*
+the absolute path or a path relative to **dir**. *(required)*
 
-Relative paths are based on the *dir* value and must use Unix style format. The
-following properties, for example, are for Windows and use relative paths:
+**server.detector.server.id:** ID of a supported application server. 
+(*required*) Here are the IDs:
+
+- `jboss`
+- `jonas`
+- `resin`
+- `tomcat`
+- `weblogic`
+- `websphere`
+- `wildfly`
+
+Relative paths must use Unix style format. The following properties, for
+example, are for Windows and use relative paths:
 
     dir=D:\
     extra.lib.dirs=Liferay/liferay-portal-master/tomcat-9.0.10/bin
     global.lib.dir=Liferay/liferay-portal-master/tomcat-9.0.10/lib
     portal.dir=Liferay/liferay-portal-master/tomcat-9.0.10/webapps/ROOT
+    server.detector.server.id=tomcat
+
+These properties, for example, are for Unix and use all absolute paths:
+
+    dir=/
+    extra.lib.dirs=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/bin
+    global.lib.dir=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/lib
+    portal.dir=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/webapps/ROOT
+    server.detector.server.id=tomcat
 
 ### Configuring portal-upgrade-database.properties [](id=configuring-portal-upgrade-database-properties)
 
