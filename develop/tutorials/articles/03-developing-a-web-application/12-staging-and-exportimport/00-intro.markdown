@@ -15,8 +15,11 @@ be tracked during the Staging phase of your publishing process.
 ![Figure 2: A Staging-enabled Guestbook app can be modified on the staged site first without any users seeing it on the live Site.](../../../images/guestbook-staging-page.png)
 
 Export/Import facilitates extracting data so it can be imported into another
-@product@ installation. Since the Export/Import framework is programmatically
-similar to Staging, you can implement it with Staging.
+@product@ installation. Behind the scenes, Export/Import is used during the
+Staging process. When publishing your staged content to the live Site, you're
+essentially importing content from the staged Site and exporting it to the live
+Site. Since the Export/Import framework is programmatically similar to Staging,
+you can implement it with Staging.
 
 Ready to support Staging in your Guestbook app?
 

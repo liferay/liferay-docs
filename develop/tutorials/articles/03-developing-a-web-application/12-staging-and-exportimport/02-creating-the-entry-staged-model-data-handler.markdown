@@ -174,18 +174,36 @@ First, you'll create a staged model data handler for guestbook entries.
     process configuration and existing environment, the entry is either added or
     updated.
 
-8.  When importing a LAR, the import process expects all references to be
-    available and validates their existence. To handle missing references, you
-    must add a method that maps the missing reference ID from the export to the
-    existing ID during import.
+8.  When importing a LAR (i.e., publishing to the live Site), the import process
+    expects all of an entity's references to be available and validates their
+    existence.
+    
+    For example, if you republish an updated guestbook to the live Site and did
+    not include some of its existing entries in the publication, these entries
+    are considered missing references. A more practical example of this would be
+    an image included in a web content article. If the image included in the web
+    content lives on a different site (i.e., the image is contained in a
+    different group) or was not included in the publication process, it's
+    considered a missing reference of the web content article.
+    
+    Since you're dealing with references on two separate sites that have
+    differing IDs, the system can't easily match them during publication.
+    Consider this scenario for the Guestbook app; suppose you export a guestbook
+    entry as a missing reference with a primary key (ID) of `1`. When importing
+    that information, the LAR only provides the ID but not the entry itself.
+    Therefore, during the import process, the Data Handler framework searches
+    for the entry to replace, but the entry to replace has a different ID of
+    `2`. You must provide a way to handle these missing references.
 
-    For example, suppose you export a guestbook entry as a missing reference
-    with a primary key (ID) of `1`. When importing that information, the LAR
-    only provides the ID but not the entry itself. Therefore, during the import
-    process, the Data Handler framework searches for the entry to replace, but
-    the entry to replace has a different ID of `2`. You must provide a method
-    that maps these two IDs so the import process can recognize the missing
-    reference.
+    To do this, you must add a method that maps the missing reference's primary
+    key from the export to the existing primary key during import. Since the
+    reference's UUID is constant across systems, it's used to complete the
+    mapping of differing primary keys. Note that a reference can only be missing
+    on the live Site if it has already been published previously. Therefore,
+    when publishing a guestbook for the first time, the system doesn't check for
+    missing references.
+
+    Add this method to your class: 
 
         @Override
         protected void doImportMissingReference(

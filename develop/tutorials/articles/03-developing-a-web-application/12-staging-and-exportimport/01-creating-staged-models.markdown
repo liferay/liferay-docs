@@ -74,7 +74,7 @@ Now you're ready to begin implementing staging in your app.
 
 ## Updating the Extended Staged Model Interface [](id=updating-the-extended-staged-model-interface)
 
-Staged models that extend the `StagedAuditedModel` interface functions
+Staged models that extend the `StagedAuditedModel` interface function
 independently from the group concept (sometimes referred to as company models).
 This means that, for example, your guestbook and entry's scope would not be
 tracked by the Staging framework. You must add one more column to your
