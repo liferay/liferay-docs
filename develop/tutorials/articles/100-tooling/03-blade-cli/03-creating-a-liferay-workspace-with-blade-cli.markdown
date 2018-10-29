@@ -23,7 +23,17 @@ To create a Maven based workspace, run this instead:
 
 +$$$
 
-**Note:**
+**Note:** Workspace automatically sets the default @product@ version to develop
+against when it's first initialized. The default version is set to `7.1`. This
+is applied to create projects using appropriately versioned project templates.
+If you wish to develop projects for a different @product@ version, you can pass
+the version in the Blade init command. For example,
+
+    blade init -v 7.0 [WORKSPACE_NAME]
+
+You can update the default version after it has been set by opening your
+workspace's `.blade/settings.properties` file and setting the
+`liferay.version.default` property.
 
 $$$
 
