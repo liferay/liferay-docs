@@ -1,4 +1,4 @@
-# Creating New Tax Options
+# Creating New Tax Methods
 
 Out of the box, @commerce@ offers two methods for calculating
 [taxes](/web/emporio/documentation/-/knowledge_base/1-0/taxes). Since these
