@@ -21,6 +21,12 @@ To create a Maven based workspace, run this instead:
 
     blade init -b maven [WORKSPACE_NAME]
 
++$$$
+
+**Note:**
+
+$$$
+
 Initializing a workspace requires no downloading or access to the internet.
 
 If you have a Plugins SDK and are looking to migrate to Liferay Workspace using

@@ -227,7 +227,7 @@ certificates and their compatibility, see
 
 Not accounting for these certificates could lead to broken executables in
 workspace that rely on Gradle services. For example, downloading a @product@
-bundle via `./gradlew initBundle` without an updated JDK causes the following
+bundle via `blade server init` without an updated JDK causes the following
 error:
 
     Execution failed for task ':downloadBundle'.
