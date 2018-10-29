@@ -90,12 +90,14 @@ You must also set the `liferay.workspace.bundle.token.download` property to
 Once you've finalized your Gradle properties, navigate to your workspace's root
 folder and run
 
-    ./gradlew initBundle
+    blade server init
 
-As you read earlier, the workspace uses a Gradle wrapper to download and use
-Gradle build tools. This command downloads the version of Liferay you specified
+This uses workspace's pre-bundled Gradle build tools. This command downloads the
+version of Liferay you specified
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) tool to download
 in your Gradle properties and installs your Liferay instance in the `bundles`
-folder.
+the version of @product@ you specified in your Gradle properties and installs
+folder.	your Liferay instance in the `bundles` folder.
 
 If you run into errors during the bundle downloading process, check to make sure
 your workspace is accounting for the
@@ -203,7 +205,7 @@ certificates and their compatibility, see
 
 Not accounting for these certificates could lead to broken executables in
 workspace that rely on Gradle services. For example, downloading a @product@
-bundle via `./gradlew initBundle` without an updated JDK causes the following
+bundle via `blade server init` without an updated JDK causes the following
 error:
 
     Execution failed for task ':downloadBundle'.
