@@ -13,6 +13,7 @@ The top-level files/folder of a Liferay (Gradle) Workspace are outlined below:
   folder, see the
   [Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
   section.
+- `ext` (generated): holds the Ext OSGi modules and Ext plugins.
 - `gradle`: holds the Gradle Wrapper used by your workspace.
 - `modules`: holds your custom modules.
 - `plugins-sdk` (generated): holds plugins to migrate from previous releases.
@@ -98,9 +99,6 @@ ZIP hosted on *api.liferay.com*. For example,
 
 `liferay.workspace.bundle.url=https://api.liferay.com/downloads/portal/7.1.10/liferay-dxp-tomcat-7.1.10-ga1-20180703090613030.zip`
 
-<!-- I formatted the above snippet differently to avoid providing a link.
--Cody-->
-
 It can be tricky to find the fully qualified ZIP name/number for the DXP bundle
 you want. You cannot access Liferay's API site directly to find it, so you must
 start to download DXP manually, take note of the file name, and append it to
@@ -112,12 +110,12 @@ You must also set the `liferay.workspace.bundle.token.download` property to
 Once you've finalized your Gradle properties, navigate to your workspace's root
 folder and run
 
-    ./gradlew initBundle
+    blade server init
 
-As you read earlier, the workspace uses a Gradle wrapper to download and use
-Gradle build tools. This command downloads the version of Liferay you specified
-in your Gradle properties and installs your Liferay instance in the `bundles`
-folder.
+This uses workspace's pre-bundled
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) tool to download
+the version of @product@ you specified in your Gradle properties and installs
+your Liferay instance in the `bundles` folder.
 
 If you run into errors during the bundle downloading process, check to make sure
 your workspace is accounting for the
