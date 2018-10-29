@@ -3,10 +3,9 @@
 The Liferay Marketplace app QA/review process begins as soon as you submit your
 app for review. Every third-party app submitted to the Liferay Marketplace is
 reviewed by our team to ensure that certain standards for information are upheld
-and the app installs as expected. *However, Liferay cannot be a substitute for
-your own testing and debugging team*. Ultimately, it is your responsibility to
-test, refine, and ensure that the app functions as promised and performs as
-expected.
+and the app installs as expected. *Liferay cannot, however, be a substitute for
+your own testing and debugging team*. Ultimately, you must test, refine, and
+ensure that your app functions as promised and performs as expected.
 
 +$$$
 
@@ -24,10 +23,10 @@ don't want our app review process to feel like a barrier or a black box. We love
 having new apps in the Marketplace, and we try to be as helpful as we can
 throughout the approval process!
 
-![Figure 1: Here's a diagram of the QA/review process.](../../../images/app_review_process.png)
+![Figure 1: Liferay informs you at every step during the QA/review process.](../../../images/app_review_process.png)
 
-If you submit an updated version of a previously approved app, the app statuses
-display as: Approved (Version Unsubmitted), Approved (Version Pending), Approved
+If you submit an updated version of a previously approved app, you'll see these
+statuses: Approved (Version Unsubmitted), Approved (Version Pending), Approved
 (Version Pending QA), and Approved (Version Denied).
 
 The app review process consists of **Two Major Phases**:
@@ -116,12 +115,11 @@ The app review process consists of **Two Major Phases**:
 </div>
 </div>
 
-**Our QA Test Environments** are summarized below. At a minimum, test your 
+**Our QA Test Environments** are summarized below. At a minimum, test your app
 against these environments prior to submission. If technical reasons prevent
 your app from running on certain platforms (e.g., app server-specific issues),
-please specify your app's requirements in the app description and documentation
-so that our review team can test accordingly and exclude certain test
-conditions, if necessary.
+specify compatibility in the app description and documentation so that our
+review team can exclude certain test conditions, if necessary.
 
 <style>
 table td {
@@ -179,13 +177,13 @@ table td {
 			<td class="first-column"> Liferay DXP, Liferay DE, and Liferay Portal </td>
 			<td class="">
 				<ul>
-					<li> QA'ed against Liferay DXP/DE/Portal version specified in app
+					<li> QA-ed against Liferay DXP/DE/Portal version specified in app
 						submission up to and including Liferay DXP/Portal 7.1. </li>
 				</ul>
 			</td>
 			<td class="third-column">
 				<ul>
-					<li> QA'ed against Liferay DXP/DE/Portal version specified in app
+					<li> QA-ed against Liferay DXP/DE/Portal version specified in app
 						submission up to and including Liferay DXP/Portal 7.1. </li>
 				</ul>
 			</td>
@@ -315,17 +313,16 @@ table td {
 </div>
 
 **Important:** Unless specified otherwise in your app description or
-documentation, your app must run under all specified app servers in order to be
-approved.
+documentation, your app must run under all specified app servers to be approved.
 
-An email confirmation is sent, once your app is approved by Marketplace staff.
-And the moment your app is approved, it is made available on Marketplace. The
-app is also shown on your public Profile page, which lists all apps that you or
-your company's developed and published.
+Once your app is approved by Marketplace staff, you'll get email notification.
+When your app is approved, it is made available on Marketplace. The app also
+appears on your public Profile page, which lists all apps that you or your
+company developed and published.
 
-If your app is rejected, an email is sent to the email address associated with
-the app, along with a note explaining the reasons for rejection. At that point,
-you can make the requested changes, and re-submit the app for approval.
+If your app is rejected, you receive an email explaining the reasons for
+rejection. You can then make the requested changes and re-submit the app for
+approval.
 
 After you've successfully published your app, you might get all kinds of
 feedback from users and yourself about what's right and wrong with it. The next
