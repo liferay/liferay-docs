@@ -156,10 +156,10 @@ First declare the class an implementation of `ConfigurationScreen`.
 
     }
 
-Second, set the category key, then configuration entry's key and localized name.
-This example puts the configuration entry, keyed `sample-cofniguration-screen`,
-into the `third-party` System Settings section. The String that appears in
-System Settings is _Sample Configuration Screen_.
+Second, set the category key, the configuration entry's key, and its localized
+name. This example puts the configuration entry, keyed
+`sample-cofniguration-screen`, into the `third-party` System Settings section.
+The String that appears in System Settings is _Sample Configuration Screen_.
 
     @Override 
     public String getScope() { 
@@ -190,7 +190,10 @@ Third, set the
 The most important step is to write the `render` method.This example relies on
 the `JSPRenderer` service to delegate rendering to a JSP.
 
-<!--Should we provide some sample JSP markup?-->
+It's beyond the scope of this tutorial to write the JSP markup. A separate
+tutorial will provide a complete demonstration of the `ConfigurationScreen` and
+implementation and the JSP markup to enhance the configuration screen for an
+existing @product@ application.
 
 ## Excluding a Configuration UI from System Settings
 
