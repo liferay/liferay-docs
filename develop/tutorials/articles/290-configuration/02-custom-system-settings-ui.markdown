@@ -101,7 +101,9 @@ Here's a complete `ConfigurationFormRenderer` implementation:
             }
         }
 
-The above example ...
+The above example generates a custom rendering (HTML) for the form in the
+`render()` method and reads the information entered in the custom form in the
+`getRequestParameters()` method.
 
 ## Creating a Completely Custom Configuration UI
 
@@ -124,8 +126,9 @@ At a high level you must
 
 2.  Implement `Configurationscreen`'s methods.
 
-Here's an example implementation:
+3.  Create the UI by hand.
 
+Here's an example implementation:
 
     @Component(immediate = true, service = ConfigurationScreen.class) 
     public class SampleConfigurationScreen implements ConfigurationScreen {
@@ -168,7 +171,6 @@ System Settings is _Sample Configuration Screen_.
 Third, set the 
 [configuration scope](/develop/tutorials/-/knowledge_base/7-1/scoping-configurations).
 
-
     @Override 
     public void render(HttpServletRequest request, HttpServletResponse response) 
         throws IOException {
@@ -200,7 +202,7 @@ Settings entries: the custom one you wrote _and_ the auto-generated UI from
 Config Admin. Other times, a configuration is required to be present for backend
 developers but isn't intended to be changed in the UI.
 
-To exlcude the UI entry, use the `ExtendedObjectClassDefinition` annotation
+To exclude the UI entry, use the `ExtendedObjectClassDefinition` annotation
 property called `generateUI`. It defaults to `true`, so set it to `false` to
 suppress the auto-generated UI. Here is an example:
 
