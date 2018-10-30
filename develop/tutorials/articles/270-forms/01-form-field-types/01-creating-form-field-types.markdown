@@ -2,8 +2,8 @@
 
 Liferay's Forms application does not contain a dedicated time field
 out-of-the-box. For ease of use and to ensure proper time data is collected,
-develop a time field and learn how @product@'s field types work at the same
-time.
+you'll develop a time field and learn how @product@'s field types work at the
+same time.
 
 There are several steps involved in creating a form field type:
 
@@ -16,14 +16,14 @@ There are several steps involved in creating a form field type:
 +$$$
 
 **Note:** To jump-start your project, use
-[BladeCLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) 
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) 
 or 
 [Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide). 
 There's a Blade template for creating form fields. Using the CLI, enter
 
     blade create -t form-field -v 7.1 [ADDITIONAL OPTIONS] [PROJECT NAME]
 
-See the [BladeCLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
+See the [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
 documentation for more information, such as the answer to your question "What
 are those additional options?"
 
@@ -48,7 +48,7 @@ called `dynamic-data-mapping-type-time`:
     Web-ContextPath: /dynamic-data-mapping-type-time
 
 Point to the JavaScript configuration file (`config.js`) that defines JavaScript
-modules added by your module (you'll get to that later), and set the Web Context
+modules added by your module (you'll get to that later) and set the Web Context
 Path to the modules root folder, so your module's resources are made available
 upon module activation. 
 
@@ -89,7 +89,7 @@ the form builder's sidebar, just below the field's label.
 `ddm.form.field.type.icon`
 : The icon for the field type. Choosing one of the 
 [Lexicon icons](https://lexicondesign.io/docs/patterns/icons.html) 
-makes your form field blends in with the existing form field types.
+makes your form field blend in with the existing form field types.
 
 `ddm.form.field.type.js.class.name`
 : The field type's JavaScript class name---the JavaScript file defines the field
