@@ -6,7 +6,7 @@
 
 The current Guestbook app is designed to create a *Main* guestbook on startup to
 avoid having an empty display when adding it to a page. Although this is a
-convenient perk, it does not translate well to the staged vs. live site
+convenient perk, it does not translate well to the staged vs. live Site
 paradigm. To follow best practice for production apps leveraging staging, all
 content should only be added manually through the staged site. This forces
 content to be reviewed without any system-generated surprises.

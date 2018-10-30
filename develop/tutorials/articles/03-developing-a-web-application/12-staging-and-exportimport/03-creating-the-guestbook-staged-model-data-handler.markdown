@@ -139,6 +139,9 @@ handler. Refer to the previous article for any in-depth code analysis.
             guestbookIds.put(guestbookId, existingGuestbook.getGuestbookId());
         }
 
+    Remember, this is not called for new entities being published/imported since
+    all of an entity's references are new to the live Site.
+
 7.  Provide a way for the staged model data handler to fetch your staged models:
 
         @Override

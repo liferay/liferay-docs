@@ -24,7 +24,7 @@ Follow the instructions below to create the Guestbook's portlet data handler.
 2.  Extend the
     [`BasePortletDataHandler`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BasePortletDataHandler.html)
     class and add the `@Component` annotation to the class declaration with
-    several configurated properties like this:
+    several configured properties like this:
 
         @Component(
             immediate = true,
@@ -241,6 +241,18 @@ Follow the instructions below to create the Guestbook's portlet data handler.
 
     This method can also return a modified version of the portlet preferences if
     it contains references to data that no longer exists.
+
+    +$$$
+
+    **Note:** This is a legacy feature that was useful when deletions were not
+    propagated between sites. This cleaned the portlet's data, allowing you to
+    see everything associated with the portlet during every publication. This is
+    now an unnecessary process now that Staging can recognize deletions across
+    all sites. It's, however, still included as a feature of Staging, and can
+    still be beneficial when viewing everything associated with the portlet
+    during a publication, so we've implemented it here.
+
+    $$$
 
 8.  Add a method that counts the number of affected entities based on the
     current export or staging process:

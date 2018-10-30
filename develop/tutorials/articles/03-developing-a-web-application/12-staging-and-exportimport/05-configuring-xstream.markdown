@@ -12,11 +12,14 @@ required. There are three ways to leverage Liferay's offering of XStream via the
 
 - *Allowed Types:* whitelists entities so everything is forbidden except a
   certain set of items. All staged models are allowed by default; this would be
-  in addition to the default functionality.
+  in addition to the default functionality. @product@ defines a default list of
+  allowed types, which are available in the portlet data context.
 - *Aliases:* helps with the readability and char length of
   [LAR files](/develop/tutorials/-/knowledge_base/7-0/understanding-data-handlers#liferay-archive-lar-file)
   by creating an alias for an otherwise longwinded entity name.
-- *Converters:* converts configured objects to and from XML.
+- *Converters:* converts configured objects to and from XML. This is primarily
+  used to protect sensitive data; when serialized this way, sensitive data
+  cannot be extracted from the generated LAR.
 
 In the Guestbook, you'll leverage XStream by creating an alias, which will
 modify the LAR file produced by your app during the staging and export
