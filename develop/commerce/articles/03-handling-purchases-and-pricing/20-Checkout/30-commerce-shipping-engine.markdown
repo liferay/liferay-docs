@@ -3,10 +3,14 @@
 @commerce@ includes three shipping methods out of the box: *fixed*- and
 *variable*-rate methods give you a wide range of options for calculating shipping
 costs in-house, while the FedEx method provides an option for you to integrate
-your system with the multinational courier of the same name. Since you may want
-a similar solution to provide integration with other shipping companies,
-@commerce@ exposes an extension point to allow new shipping methods to be
-developed.
+your system with the multinational courier of the same name. 
+
+![Figure 1: Administrators can configure these out-of-the-box shipping methods
+to provide shipping choices to buyers.](../../../images/shipping-methods.png)
+
+Since you may want a similar solution to provide integration with other shipping
+companies, @commerce@ exposes an extension point to allow new shipping methods
+to be developed.
 
 Creating a new shipping method requires you to implement the
 `CommerceShippingEngine` interface. This creates a new method that
@@ -83,13 +87,13 @@ The main business logic of the shipping method is handled by the
                    return commerceShippingOptions;
         }
 
-This method must recieve all the information necessary to calcuate the shipping
+This method must receive all the information necessary to calculate the shipping
 cost in order to return a `CommerceShippingOptions` object. In this case, the
-object's parameters reference the "sameple-option" language key---this will be
-used by `getCommerceShippingOptionsLabel` to identify the shipping method in
-the UI---and specify a fixed cost of 10 (in your store's primary currency).
+object's parameters reference the "sample-option" language key---this will be
+used by `getCommerceShippingOptionsLabel` to identify the shipping method in the
+UI---and specify a fixed cost of 10 (in your store's primary currency).
 
-The component's final methods provide addtional labelling information:
+The component's final methods provide additional labelling information:
 
     @Override
         public String getDescription(Locale locale) {
