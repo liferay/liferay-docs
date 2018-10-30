@@ -1,14 +1,17 @@
 # Installing Adaptive Media [](id=installing-adaptive-media)
 
-The Adaptive Media app is installed in @product@ by default. The app is also 
-available on 
-[Liferay Marketplace](https://web.liferay.com/marketplace) 
-if you need to update or reinstall it (search for *Adaptive Media* in the 
-Marketplace and follow the app installation instructions at 
-[Using the Liferay Marketplace](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace)). 
+The Adaptive Media app is installed in @product@ by default. The following 
+sections describe the Adaptive Media app's modules, and how to prepare Adaptive 
+Media to handle animated GIFs. 
 
-The following sections describe the Adaptive Media app's modules, and how to 
-prepare Adaptive Media to handle animated GIFs. 
++$$$
+
+**Note:** Since the Adaptive Media app is installed by default, it's updated via 
+Liferay DXP Fix Packs and Liferay Portal CE GA releases. Using 
+[Liferay Marketplace](https://web.liferay.com/marketplace) 
+to update the app on Liferay DXP 7.1 causes an error. 
+
+$$$
 
 ## Adaptive Media's Modules [](id=adaptive-medias-modules)
 

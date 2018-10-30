@@ -1,7 +1,5 @@
 # Service Builder Application Using External Database via JDBC [](id=service-builder-application-using-external-database-via-jdbc)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 This sample demonstrates how to connect a Liferay Service Builder application to
 an external database via a JDBC connection. Here, an external database means any
 database other than @product@'s database. For this sample to work correctly, you

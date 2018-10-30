@@ -1,7 +1,5 @@
 # Gogo Shell Command [](id=gogo-shell-command)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Gogo Shell Command sample demonstrates adding a custom command to
 @product@'s Gogo shell environment. All @product@ installations have a Gogo
 shell environment, which lets system administrators interact with @product@'s
