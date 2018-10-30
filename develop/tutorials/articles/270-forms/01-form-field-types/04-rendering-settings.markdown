@@ -1,9 +1,9 @@
-# Rendering Form Field Settings
+# Rendering Form Field Settings [](id=rendering-form-field-settings)
 
 Once the settings are added to the class backing the field's settings, make
 sure the `*Renderer` can get the settings, and update the frontend code.
 
-## Passing Settings to the Renderer Class
+## Passing Settings to the Renderer Class [](id=passing-settings-to-the-renderer-class)
 
 Send the new configuration settings to the Soy template so they can be displayed
 to the end user. Create a new Java class implementing the interface

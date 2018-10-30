@@ -174,7 +174,7 @@ $$$
 Once your `*TypeSettings` class is finished, update the `*Type` class for your
 form field type.
 
-## Updating the Type Class
+## Updating the Type Class [](id=updating-the-type-class)
 
 The class `TimeDDMFormFieldType` currently has one method, `getName`, returning
 the name of the current form field. Add a new method to reference

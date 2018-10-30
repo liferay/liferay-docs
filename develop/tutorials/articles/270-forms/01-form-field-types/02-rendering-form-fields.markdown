@@ -3,7 +3,7 @@
 Before you get to the frontend coding necessary to render your field type,
 there's another Component to define and a Java class to code.
 
-## Implementing a `DDMFormFieldRenderer`
+## Implementing a `DDMFormFieldRenderer` [](id=implementing-a-ddmformfieldrenderer)
 
 The Component only has one property, `ddm.form.field.type.name`, and then you
 declare that you're adding a `DDMFormFieldRenderer` implementation to the OSGi
@@ -51,7 +51,7 @@ Set the templating language (Soy closure templates), the template namespace
 (`DDMTime`) and name (`render`), and point to the location of the templates
 within your module (`/META-INF/resources/time.soy`).
 
-## Writing the Soy Template
+## Writing the Soy Template [](id=writing-the-soy-template)
 
 Now it's time to write the template you referenced in the renderer class:
 `time.soy` in the case of the time field type.
@@ -187,7 +187,7 @@ There are four important things to do in the template:
 
 Once the template is defined, write the JavaScript file modeling your field.
 
-## Writing the JavaScript Files
+## Writing the JavaScript Files [](id=writing-the-javascript-files)
 
 Create a `time_field.js` file and give it these contents:
 
