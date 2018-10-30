@@ -92,7 +92,7 @@ root folder and run
 
 This uses workspace's pre-bundled and installs your @product@ instance in the
 `bundles` folder.
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) tool to download
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) tool to download
 the version of @product@ you specified in your POM file and installs your
 @product@ instance in the `bundles` folder. If you prefer to not use Blade CLI
 or do not have it installed, the pure Maven equivalent for this command is `mvn

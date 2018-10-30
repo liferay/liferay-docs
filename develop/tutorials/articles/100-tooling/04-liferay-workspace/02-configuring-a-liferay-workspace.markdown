@@ -92,12 +92,10 @@ folder and run
 
     blade server init
 
-This uses workspace's pre-bundled Gradle build tools. This command downloads the
-version of Liferay you specified
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) tool to download
-in your Gradle properties and installs your Liferay instance in the `bundles`
+This uses workspace's pre-bundled
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) tool to download
 the version of @product@ you specified in your Gradle properties and installs
-folder.	your Liferay instance in the `bundles` folder.
+your Liferay instance in the `bundles` folder.
 
 If you run into errors during the bundle downloading process, check to make sure
 your workspace is accounting for the
