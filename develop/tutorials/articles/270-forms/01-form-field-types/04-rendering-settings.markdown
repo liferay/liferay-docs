@@ -1,7 +1,7 @@
 # Rendering Form Field Settings [](id=rendering-form-field-settings)
 
-Once the settings are added to the class backing the field's settings, make
-sure the `*Renderer` can get the settings, and update the frontend code.
+Once the settings are added to the class backing the field's settings, make sure
+the `*Renderer` can get the settings and update the front-end code.
 
 ## Passing Settings to the Renderer Class [](id=passing-settings-to-the-renderer-class)
 
@@ -11,9 +11,9 @@ to the end user. Create a new Java class implementing the interface
 `*DDMFormFieldRenderer`.
 
 The `DDMFormFieldTemplateContextContributor` interface has a single method
-named `getParameters`. It gets the new configuration settings, specific for a
-form field type, and sends for the resources which need them, like the Soy
-template.  To get these settings, create a new class,
+named `getParameters`. It gets the new configuration settings, specific for
+a form field type, and sends for the resources that need them, like the Soy
+template. To get these settings, create a new class,
 `TimeDDMFormFieldTemplateContextContributor`. First create its OSGI component
 annotation and the class declaration:
 
@@ -71,13 +71,13 @@ object, the `DDMFormField`, and the `DDMFormFieldRenderingContext`. The
 `DDMFormField` represents the definition of the field type instance: you can use
 this object to access the configurations set for the field type (the mask and
 placeholder settings in our case). The `DDMFormFieldRenderingContext` object
-contains extra information about the form such as the user's locale, the HTTP
+contains extra information about the form like the user's locale, the HTTP
 request and response objects, the portlet namespace, and more (all of its
 included properties can be found
 [here](https://docs.liferay.com/ce/apps/forms-and-workflow/latest/javadocs/com/liferay/dynamic/data/mapping/render/DDMFormFieldRenderingContext.html)).
 
-The OSGI reference (`@Reference`) provides access to
-the `TimeDDMFormFieldTemplateContextContributor` service.
+The OSGI reference (`@Reference`) provides access to the
+`TimeDDMFormFieldTemplateContextContributor` service.
 
 Now the JavaScript component and the Soy template can access the new settings.
 Next, update the JavaScript Component so it handles these properties and can use
@@ -90,9 +90,9 @@ behavior of the JavaScript component itself.
 **Note:** Remember that the Soy template is used for server side and client
 side rendering. By defining the settings you're adding in both the Java Renderer
 and the JavaScript Renderer, you're allowing for the best possible user
-experience. For example, if a form builder is in the form builder, configuring a
-form field type, the configuration they enter can be directly passed to the
-template, and become visible in the UI, almost instantly. However, when the user
+experience. For example, if a form builder is in the form builder configuring
+a form field type, the configuration entered can be directly passed to the
+template and become visible in the UI almost instantly. However, when the user
 clicks into a form field initially to begin editing, the rendering occurs from
 the server side.
 
@@ -102,8 +102,8 @@ Next configure the JavaScript component to include the new settings.
 
 ## Adding Settings to the JavaScript Component [](id=adding-settings-to-the-javascript-component)
 
-The JavaScript component needs to know about the new settings. First configure
-them as attributes of the component:
+The JavaScript component must know about the new settings. First configure them
+as attributes of the component:
 
     ATTRS: {
         mask: {
@@ -169,7 +169,7 @@ rendered in the form with the time field.
 Add the placeholder setting to your Soy template's logic.
 
 The whole template is included below, but the only additions are in the list of
-parameters (adds the placeholder to the list of parameters--the `?` indicates
+parameters (adds the placeholder to the list of parameters---the `?` indicates
 that the placeholder is not required), and then in the `<input>` tag, where you
 use the parameter value to configure the placeholder HTML property with the
 proper value.
