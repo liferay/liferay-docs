@@ -1,7 +1,5 @@
 # Model Listener [](id=model-listener)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Model Listener sample demonstrates adding a custom model listener to a
 Liferay Portal out-of-the-box entity. When deploying this sample with no
 customizations, a custom model listener is added to the portal's layouts,

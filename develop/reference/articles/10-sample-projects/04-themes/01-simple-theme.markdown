@@ -1,7 +1,5 @@
 # Simple Theme [](id=theme)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Simple Theme sample provides the base files for a theme, using the
 [Theme Builder Gradle plugin](/develop/reference/-/knowledge_base/7-1/theme-builder-gradle-plugin).
 When deploying this sample with no customizations, a theme based off of the 

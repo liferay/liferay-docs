@@ -1,6 +1,4 @@
-# Index Settings Contributor
-
-## What does this sample do when it's deployed?
+# Index Settings Contributor [](id=index-settings-contributor)
 
 The Index Settings Contributor sample demonstrates how to add a custom type
 mapping to @product@. You can demo this sample by completing the following
@@ -33,13 +31,13 @@ steps:
 
     ![Figure 1: This sample added four new index properties.](../../../images/index-settings-contributor.png)
 
-## What API(s) and/or code components does this sample highlight?
+## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 
 This sample leverages the
 [IndexSettingsContributor](@app-ref@/foundation/latest/javadocs/com/liferay/portal/search/elasticsearch/settings/IndexSettingsContributor.html)
 API.
 
-## How does this sample leverage the API(s) and/or code component?
+## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
 
 Liferay's search engine provides an API to define custom mappings. To use it,
 follow these fundamental steps:
@@ -91,7 +89,7 @@ annotation that registers a new service to the OSGi container:
 This sample demonstrates the essentials needed to contribute your own index
 settings.
 
-## Where Is This Sample?
+## Where Is This Sample? [](id=where-is-this-sample)
 
 There are three different versions of this sample, each built with a different
 build tool:

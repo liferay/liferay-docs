@@ -4,7 +4,7 @@ The Service Builder Gradle plugin lets you generate a service layer defined in a
 [Service Builder](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
 `service.xml` file.
 
-The plugin has been successfully tested with Gradle 2.5 up to 3.3.
+The plugin has been successfully tested with Gradle 2.5 up to 3.5.1.
 
 ## Usage [](id=usage)
 
@@ -13,7 +13,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "2.1.56"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "2.1.60"
     }
 
     repositories {
@@ -57,7 +57,7 @@ plugin is applied, or whether the [`osgiModule`](#osgimodule) property is `true`
 Property Name | Default Value
 ------------- | -------------
 [`apiDir`](#apidir) | <p>**If the `war` plugin is applied:** `${project.webAppDir}/WEB-INF/service`</p><p>**Otherwise:** `null`</p>
-[`hbmFile`](#hbmfile) | <p>**If `osgiModule` is `true`:** `${buildService.resourcesDir}/META-INF/module-hbm.xml`</p><p>**Otherwise:** `${buildService.resourcesDir}/META-INF/module-hbm.xml`</p>
+[`hbmFile`](#hbmfile) | <p>**If `osgiModule` is `true`:** `${buildService.resourcesDir}/META-INF/module-hbm.xml`</p><p>**Otherwise:** `${buildService.resourcesDir}/META-INF/portlet-hbm.xml`</p>
 [`implDir`](#impldir) | The first `java` directory of the `main` source set (by default: `src/main/java`).
 [`inputFile`](#inputfile) | <p>**If the `war` plugin is applied:** `${project.webAppDir}/WEB-INF/service.xml`</p><p>**Otherwise:** `${project.projectDir}/service.xml`</p>
 [`modelHintsFile`](#modelhintsfile) | The file `META-INF/portlet-model-hints.xml` in the first `resources` directory of the `main` source set (by default: `src/main/resources/META-INF/portlet-model-hints.xml`).
@@ -148,7 +148,7 @@ manually adding a dependency to the `serviceBuilder` configuration:
 
 ```gradle
 dependencies {
-    serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.239"
+    serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.243"
 }
 ```
 

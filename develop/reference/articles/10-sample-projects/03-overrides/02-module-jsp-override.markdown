@@ -1,7 +1,5 @@
 # Module JSP Override [](id=module-jsp-override)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Module JSP Override sample conveys Liferay's recommended approach to
 override an application's JSP by leveraging OSGi fragment modules. This example
 overrides the default `login.jsp` file in the `com.liferay.login.web` bundle by
