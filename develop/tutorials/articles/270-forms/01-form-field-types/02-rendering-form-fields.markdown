@@ -1,6 +1,6 @@
 # Rendering Field Types [](id=rendering-field-types)
 
-Before you get to the frontend coding necessary to render your field type,
+Before you get to the front-end coding necessary to render your field type,
 there's another Component to define and a Java class to code.
 
 ## Implementing a `DDMFormFieldRenderer` [](id=implementing-a-ddmformfieldrenderer)
@@ -62,9 +62,9 @@ Now it's time to write the template you referenced in the renderer class:
 are a templating system for building UI elements. @product@ developers chose to
 build the Forms UI with closure templates because they enable a smooth,
 responsive repainting of the UI as a user enters data. With closure templates
-there's no need to reload the entire page from the server side when the UI is
-updated by the user: only the relevant portion of the page is updated from the
-server. This makes for a smooth user experience.
+there's no need to reload the entire page from the server when the UI is updated
+by the user: only the relevant portion of the page is updated from the server.
+This makes for a smooth user experience.
 
 $$$
 
@@ -72,7 +72,7 @@ Create
 
     src/main/resources/META-INF/resources/time.soy
 
-and populate it with these contents:
+and populate it with this:
 
     {namespace DDMTime}
 
@@ -139,15 +139,15 @@ and populate it with these contents:
 
 There are four important things to do in the template:
 
-1.  Define the template namespace. The template namespace allows you to define
-    multiple templates for your field type by adding the namespace as a prefix.
+1.  Define the template namespace. The template namespace can define multiple
+    templates for your field type by adding the namespace as a prefix.
 
         {namespace DDMTime}
 
-2.  Set the template that will be called to render the time field. The
-    `variant="'time'"` identifies the time field and the `.render` names the
-    template in charge to render it. The template comes just below this part and
-    is defined through the block `{template .render}...{/template}`.
+2.  Set the template that's called to render the time field. The
+    `variant="'time'"` identifies the time field, and the `.render` names the
+    template that renders it. The template itself follows and is defined through
+    the block `{template .render}...{/template}`.
 
         /**
         * Defines the delegated template for the time field.
@@ -176,11 +176,11 @@ There are four important things to do in the template:
     `{template .render}...{/template}` block). In the above example the template does
     these things:
 
-    - Checks whether to show the label of the field, and if so, adds it.
+    - Checks whether to show the label of the field and if so, adds it.
 
-    - Checks if the field is required, and adds `asterisk` if it is.
+    - Checks if the field is required and adds `asterisk` if it is.
 
-    - Checks if a tip is provided, and displays it.
+    - Checks if a tip is provided and displays it.
 
     - Provides the markup for the time field in the `<input>` tag. In this case
     a text input field is defined.
@@ -275,19 +275,19 @@ This file is entirely boilerplate. In fact, if you use Blade CLI to generate a
 field type module, you won't need to touch this file. Functionally, it's a
 JavaScript file that defines the dependencies of the declared JavaScript
 components (`requires...`), and where the files are located (`path...`). The
-`config.js` is used by the Alloy loader when it satisfies dependencies for each
-JavaScript component. For more information about the Alloy loader see the
-[tutorial on its usage](/develop/tutorials/-/knowledge_base/7-1/loading-amd-modules-in-liferay).
+Alloy loader uses `config.js` when it satisfies dependencies for each JavaScript
+component. For more information about the Alloy loader see its 
+[tutorial](/develop/tutorials/-/knowledge_base/7-1/loading-amd-modules-in-liferay).
 
 ![Figure 1: Add your own form field types to the Forms application.](../../../images/forms-time-field-type.png)
 
-If you build and deploy your new field type module, you'll see that you get
-exactly what you described in the `time.soy` file: a single text input field. Of
-course, that's not what you want! You need a time picker.
+If you build and deploy your new field type module, you get exactly what you
+described in the `time.soy` file: a single text input field. Of course, that's
+not what you want! You need a time picker.
 
 ## Adding Behavior to the Field [](id=adding-behavior-to-the-field)
 
-To do more than simply provide a text input field, define additional behavior in
+To do more than provide a text input field, define additional behavior in
 the `time_field.js` file. 
 
 To add an AlloyUI timepicker, first specify that your component requires the
@@ -333,8 +333,8 @@ This occurs in the `prototype` block:
 Invoke the original render method---it prints markup required by the Alloy time
 picker. Then instantiate the time picker, passing the field type input as a
 `trigger`. In addition, add a callback method (`afterSelectionChange`) to be
-executed `after` the time is chosen in the time picker. This method is
-responsible for updating the field's value. See the 
+executed `after` the time is chosen in the time picker. This method updates the
+field's value. See the 
 [Alloy documentation for more information](http://alloyui.com/tutorials/timepicker/). 
 
 Now when the field is rendered, there's a real time picker.
