@@ -1,11 +1,11 @@
 # Adding Settings to Form Field Types [](id=adding-settings-to-form-field-types)
 
 Once you develop a 
-[Form Field Type](/develop/tutorials/-/knowledge_base/7-1/creating-form-field-types), 
-you might need to add settings to it. For example, a Time field could be
-configured to accept different time formats. Here you'll learn how to add
-settings to form field types by adding a *mask* and a *placeholder* to the Time
-field type created in the previous tutorial. 
+[Form Field Type](/develop/tutorials/-/knowledge_base/7-1/creating-form-field-types), you
+might need to add settings to it. For example, a Time field might accept
+different time formats. Here you'll learn how to add settings to form field
+types by adding a *mask* and a *placeholder* to the Time field type created in
+the previous tutorial. 
 
 +$$$
 
@@ -17,7 +17,7 @@ to pick the mask you want.
 
 $$$
 
-To add settings to form field types, you'll use these steps:
+To add settings to form field types, take these steps:
 
 - Write an interface that extends the default field type configuration,
   `DefaultDDMFormFieldTypeSettings`.
@@ -30,10 +30,10 @@ To add settings to form field types, you'll use these steps:
 - Update the JavaScript component (defined in `time_field.js` in our example) to
   configure the new settings and their default values.
 
-- Update the Soy template to include any settings that need to be rendered
+- Update the Soy template to include settings that must be rendered
   in a form (the placeholder, in our example).
 
-First craft the interface that controls what settings your field has.
+First craft the interface that controls your field's settings.
 
 ## Extending the Default Type Settings [](id=extending-the-default-type-settings)
 
@@ -106,8 +106,7 @@ Here's what it looks like:
         
     }
 
-Would you look at that! Most of the work you need to do is in the class's
-annotations. 
+Most of the work you need to do is in the class's annotations. 
 
 This class sets up a dynamic form with all the settings the form field type
 needs. The form layout presented here gives your form the look and feel of a
@@ -116,14 +115,13 @@ annotations used in this form.
 
 One thing to note is that all the default settings must be present in your
 settings form. Note the list of settings present for each tab (each
-`@DDMFormLayoutPage`) above. If you need to make one of the default settings
+`@DDMFormLayoutPage`) above. If you must make one of the default settings
 unusable in the settings form for your field type, configure a *hide rule* for
-the field. Form field rules are configured using the `@DDMFormRule`
-annotation. More information on configuring form rules will be written soon.
+the field. Form field rules are configured using the `@DDMFormRule` annotation.
 
 The interface extends `DefaultDDMFormFieldTypeSettings`. That's why the default
-settings are available to use in the class annotation, without setting them up
-in the class, as was necessary for the mask and placeholder.
+settings can be used in the class annotation without setting them up in the
+class, as was necessary for the mask and placeholder.
 
 +$$$
 
@@ -139,20 +137,21 @@ example:
 
 `@DDMFormLayout`
 : Takes two variables: `paginationMode` and `value`. The pagination mode is a
-String that controls how the layout pages are displayed. The `pagionationMode`
+String that controls how the layout pages are displayed. The `paginationMode`
 can be `TABBED_MODE`, `SINGLE_PAGE_MODE`, `SETTINGS_MODE`, or `WIZARD_MODE`.
 Under `value`, specify any `@DDMFormLayoutPage`s that you want to use.
 
-`@DDMFormLayoutPage`
-: The sections of the type settings form. Takes two variables: `title` and
-`value`, where title is a String value that names the section of the form and
-value is one or more `@DDMFormLayoutRow`s.
+`@DDMFormLayoutPage` 
+: The sections of the type settings form. It takes two
+variables: `title` and `value`, where title is a String value that names the
+section of the form and value is one or more `@DDMFormLayoutRow`s.
 
 The layout page titles `%basic` and `%properties` are common to all of
 @product@'s field types, but you can use whatever titles you want. To change the
-title of a layout page, specify the title in the annotation properties (`title =
-"%advanced"`, for example), then create a new key in the language resources
-files. For example, use `advanced=Advanced` in the `Language.properties`.
+title of a layout page, specify the title in the annotation properties (`title
+= "%advanced"`, for example), and then create a new key in the language
+resources files. For example, use `advanced=Advanced` in the
+`Language.properties`.
 
 `@DDMFormLayoutRow`
 : Lay out the number of columns you want in the row. Most settings
