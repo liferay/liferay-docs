@@ -12,35 +12,35 @@ project.
 
 Follow these steps to connect your project to your Liferay DXP instance.
 
-### Step 1: Register your Liferay DXP instance with Liferay Connected Services [](id=step-1-register-your-liferay-dxp-instance-with-liferay-connected-services)
+### Step 1: Install Required Liferay DXP Fix Packs [](id=step-2-install-required-liferay-dxp-fix-packs)
 
-Register your Liferay DXP instance with Liferay Connected Services:
-
-- [Liferay Connected Services for Liferay DXP 7.0](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services) 
-
-- [Liferay Connected Services for Liferay DXP 7.1](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/managing-liferay-dxp-with-liferay-connected-services)
-
-### Step 2: Install Required Liferay DXP Fix Packs [](id=step-2-install-required-liferay-dxp-fix-packs)
+For Liferay DXP 7.1, 
+[install fix pack 3](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-liferay). 
 
 For Liferay DXP 7.0, 
-[install fix pack 52](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-liferay). 
+[install fix pack 60](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-liferay). 
 
-### Step 3: Install the Liferay Analytics Cloud Connector [](id=step-3-install-the-liferay-analytics-cloud-connector)
+### Step 2: Register Analytics Cloud with your Liferay DXP instance 
 
-1. Go to the
-[downloads page](https://web.liferay.com/group/customer/dxp/downloads/analytics-cloud). 
+Liferay DXP 7.1: 
 
-2. Download the Connector ZIP file for your Liferay DXP version.
+1.  Download and install the
+    [Liferay Plugin for OAuth 2.0](https://web.liferay.com/marketplace/-/mp/application/109571986).
 
-3. Stop your server. 
+2.  The plugin comes with Analytics Cloud pre-registered. Copy the *Client ID*
+    and *Client Secret*  for connecting DXP with Analytics Cloud as a data
+    source, as described in the next section.
 
-4. Unzip the Connector ZIP file to your `[Liferay Home]/deploy` folder.
+Liferay DXP 7.0:
 
-5. Start your server.
+1.  Download and install the
+    [Liferay Connector for OAuth 1.0a](https://web.liferay.com/marketplace/-/mp/application/45261909).
 
-**Note:** If you’re running Liferay DXP in a cluster, install the Connector 
-using 
-[rolling restarts](https://customer.liferay.com/documentation/7-1/deploy/-/official_documentation/deployment/using-rolling-restarts). 
+2.  [Register](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/oauth)
+    Analytics Cloud as an OAuth application. 
+
+3.  Copy the *Consumer ID* and *Consumer Secret* for connecting DXP with 
+    Analytics Cloud as a data source, as described in the next section. 
 
 Congratulations on setting up your Liferay DXP instance to be an Analytics Cloud
 data source! It's time to add your Liferay DXP instance as a data source. 
@@ -50,41 +50,53 @@ data source! It's time to add your Liferay DXP instance as a data source.
 Adding a Liferay DXP Data Source connects your Analytics Cloud project with
 a Liferay DXP instance. 
 
-Here's how to add a Liferay DXP data source:
+Here's how to start adding your Liferay DXP data source:
 
-1.  If you haven't already, configure your Liferay DXP instance to connect with
-    Liferay Analytics Cloud (see above).
+1.  Select *Settings* in the navigation panel.
 
-2.  Select *Settings* in the navigation panel.
+2.  Click *Data Sources*. A listing of your existing data sources appears.
 
-3.  Click *Data Sources*. A listing of your existing data sources appears.
+3.  Click *Add Data Source*. The *Add Data Source* page appears. 
 
-4.  Click *Add Data Sources*. The *Connect Data Source* page appears. 
+4.  Select the *Liferay DXP* icon. The *Configure Liferay DXP* page appears. The
+    Authorization tab (selected by default) shows data source and client
+    credentials fields. 
 
-5.  Select the *Liferay DXP* icon. The *Connect to Instance* page appears and
-    lists your available Liferay DXP instances. 
+    *Description* 
 
-6.  Select the instance to connect. The Liferay DXP Data Sources page appears, 
-    showing the instance description fields and configuration options. 
+    - *Name:* A name for your data source.
+    - *URL:* The Liferay DXP instance URL. 
 
-    *Description*
+    *Client Credentials*
 
-    - *URL:* The Liferay DXP instance URL.
-    - *Name:* A name for your data source. 
+    - *Consumer Key/Client ID:* Key/ID for Analytics Cloud to access your Liferay DXP instance. 
+    - *Consumer Secret/Client Secret:* Secret for Analytics Cloud to access your
+    Liferay DXP instance. 
 
-    *Configuration Options*
+    In Liferay DXP 7.1, you can find the Client ID and Secret by navigating to 
+    *Control Panel* &rarr; *Configuration* &rarr; *OAuth 2 Admin*.
 
-    - *Configure All:* Launches a wizard for configuring assets, touchpoints, 
-    and contacts from the instance. 
-    - *Configure Contacts:* Configures the contact data only.
-    - *Configure Analytics:* Configures the assets and touchpoints only.
+    In Liferay DXP 7.0, you can find the Consumer Key and Secret on the *OAuth
+    Admin* page of the *Control Panel*. 
 
-7.  Name your data source.
+5.  Click *Authorize*. A window appears and asks if you want to authorize 
+    Analytics Cloud. 
 
-8.  Click *Configure All*. The Liferay DXP data source wizard appears, showing
+6.  Click *Authorize*. You've advanced to the *Configure Data Source* tab. 
+
+Here are the configuration options:
+
+- *Configure All:* Launches a wizard for configuring assets, touchpoints, 
+and contacts from the instance. 
+- *Configure Contacts:* Configures the contact data only.
+- *Configure Analytics:* Configures the assets and touchpoints only.
+
+Configure everything at once:
+
+1.  Click *Configure All*. The Liferay DXP data source wizard appears, showing
     the page for configuring contacts. 
 
-9.  Configuring contacts involves selecting contacts to sync from the Liferay
+2.  Configuring contacts involves selecting contacts to sync from the Liferay
     DXP instance and its Organizations and User Groups. 
 
     - *Sync All Contacts*: Selects all Liferay DXP instance contacts and disables options for selecting specific Organizations and User Groups.
@@ -95,31 +107,17 @@ Here's how to add a Liferay DXP data source:
 
     ![Figure 1: Analytics Cloud lets you select and import contacts from a Liferay DXP instance and its Organizations and User Groups.](../../images/select-dxp-contacts-by-org.png)
 
-10. Click *Next* to import the selected contacts. Analytics Cloud imports the
+3. Click *Next* to import the selected contacts. Analytics Cloud imports the
     contact data and attempts to map it to your Analytics Cloud contact data
     model. The initial contact data import can take 5 1/2 minutes per 1,000
     contacts. 
 
-11. Follow instructions for 
+4. Follow instructions for 
     [Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/04-mapping-contact-data.markdown)
     to  map contact data from your Liferay DXP instance to your Analytics Cloud
-    contact data model. Once you've mapped the data, click *Next*. The Liferay
-    DXP site analytics registration page appears. 
+    contact data model. Once you've mapped the data, click *Next*. 
 
-12. Select the Liferay DXP sites to register for analytics and click *Next*.
-    The analytics key page appears. 
-
-13. Integrate your Liferay DXP instance with Analytics Cloud by addressing
-    these options: 
-
-    - *Analytics Key:* This key is generated automatically and used to 
-      communicate with your Liferay DXP instance. 
-    - *Send Code:* Send the code hash to your web administrator to integrate 
-      your instance with Analytics Cloud.
-    - *Connection Status:* Test communication between your Liferay DXP instance 
-      and Analytics Cloud. 
-
-14. Click the *Done* button. 
+5. Click the *Done* button. 
 
 The Contacts and Analytics data start syncing into Analytics Cloud. **Initially 
 the sync takes a while. After the initial sync, changes are synced 
