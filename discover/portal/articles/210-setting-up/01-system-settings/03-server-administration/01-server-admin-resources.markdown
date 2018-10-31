@@ -14,13 +14,13 @@ and set it to `INFO` before executing.
 
 **Clear content cached by this VM:** Clears content stored in the local 
 cache. Only local JVM scope Ehcache content is cleared, not clustered 
-Ehcache.
+Ehcache. [1](#one)
 
 **Clear content cached across the cluster:** Clears the content of the 
-entire clustered Ehcache.
+entire clustered Ehcache. [1](#one)
 
 **Clear the database cache:** Clears the database cache. Does not clear any 
-Ehcache content except database results at the persistence layer.
+Ehcache content except database results at the persistence layer. [1](#one)
 
 **Clear the direct servlet cache:** Clears the direct servlet cache. In case 
 emergency fixes must be applied, this action allows an administrator to 
@@ -32,7 +32,7 @@ application server's dispatcher chain. This function is only suitable for
 cases where no filter is required for the JSPs; it should be enabled for 
 production mode to improve performance, but disabled for development mode to 
 allow JSP servlets to be reloaded on the fly. See the Direct Servlet Context 
-section of the `portal.properties` file for details. 
+section of the `portal.properties` file for details. [1](#one)
 
 **Verify database tables of all plugins:** Checks all tables against their 
 indexes for data retrieval accuracy. 
@@ -57,3 +57,8 @@ Site.
 portlet preferences become orphaned in the @product@ database. 
 
 ![Figure 1: The Resources tab of Server Administration lets you execute several server maintenance tasks.](../../../../images/server-admin-resources.png)
+
+[<a name="one">1</a>] Caching occurs at multiple levels. Some higher caching 
+layers aren't aware of lower caching layers. Always clear the cache at the
+lowest (most granular) layer possible, even if you've already cleared a higher
+level cache.
