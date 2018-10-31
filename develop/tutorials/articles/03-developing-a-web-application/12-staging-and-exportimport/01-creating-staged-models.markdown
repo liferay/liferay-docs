@@ -52,7 +52,7 @@ mapping or entity level Last Publish Date handling. See the
 [Understanding Staged Models](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models)
 tutorial for more information.
 
-Before adding staging features to your Guestbook app, you must declare some
+Before adding Staging features to your Guestbook app, you must declare some
 necessary dependencies.
 
 ## Declaring Staging Dependencies [](id=declaring-staging-dependencies)

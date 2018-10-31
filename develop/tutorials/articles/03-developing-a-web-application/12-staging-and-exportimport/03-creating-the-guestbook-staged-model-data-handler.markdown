@@ -186,4 +186,4 @@ handler. Refer to the previous article for any in-depth code analysis.
 9.  Organize your imports (*[CTRL]+[SHIFT]+O*), and save the file.
 
 Your guestbook staged model data handler is ready to go! Next, you'll begin
-updating your guestbook's permissions to account for staging.
+updating your guestbook's permissions to account for Staging.

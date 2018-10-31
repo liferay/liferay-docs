@@ -114,7 +114,7 @@ Follow the instructions below to create the Guestbook's portlet data handler.
         public static final String NAMESPACE = "guestbook";
 
 6.  Your portlet data handler should retrieve the data related to its staged
-    model entities so it can properly export/import it. Add this functionality
+    model entities so it can properly export/import them. Add this functionality
     by inserting the following methods:
 
         @Override
@@ -247,10 +247,10 @@ Follow the instructions below to create the Guestbook's portlet data handler.
     **Note:** This is a legacy feature that was useful when deletions were not
     propagated between sites. This cleaned the portlet's data, allowing you to
     see everything associated with the portlet during every publication. This is
-    now an unnecessary process now that Staging can recognize deletions across
-    all sites. It's, however, still included as a feature of Staging, so to
-    offer all the included Staging features in the Guestbook app, we've
-    implemented it here.
+    an unnecessary process now that Staging can recognize deletions across all
+    sites. It's, however, still included as a feature of Staging, so to offer
+    all the included Staging features in the Guestbook app, we've implemented it
+    here.
 
     $$$
 

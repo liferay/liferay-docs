@@ -4,13 +4,13 @@
     <p>Enabling Staging and Export/Import<br>Step 4 of 8</p>
 </div>
 
-The guestbook's current permission handlers do not account for staging. For
+The guestbook's current permission handlers do not account for Staging. For
 example, the current configuration would display the *Add Guestbook* and *Add
-Entry* buttons on the live site while staging was enabled. These options should
-only be available on the staged site when staging is enabled.
+Entry* buttons on the live site while Staging was enabled. These options should
+only be available on the staged site when Staging is enabled.
 
 First, edit the Guestbook app's permissions helper classes to provide permission
-checks to leverage when staging is enabled.
+checks to leverage when Staging is enabled.
 
 1.  Open the `GuestbookModelPermission` class residing in the
     `guestbook-service`'s `com.liferay.docs.guestbook.service.permission`
