@@ -1,7 +1,5 @@
 # Control Menu Entry [](id=control-menu-entry)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Control Menu Entry sample provides a customizable button that is added to
 Liferay Portal's default Control Menu. When deploying this sample with no
 customizations, an additional button is added to the User (right side) portion

@@ -1,7 +1,5 @@
 # Resource Bundle Override [](id=resource-bundle-override)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 This example overrides the default `add-blog-entry` language key (English and
 Spanish) for @product@'s default Blogs Admin portlet. After deploying this
 sample to @product@, the Blogs Admin portlet's *Add Blog Entry* button is

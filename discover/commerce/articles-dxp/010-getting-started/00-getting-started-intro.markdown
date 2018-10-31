@@ -103,20 +103,20 @@ Follow these steps if you have an order number that includes @commerce@:
 6.  Go to *Control Panel* &rarr; *Configuration* &rarr; *Search* and reindex all
     search indexes.
 
-## Site Initializers [](id=site-initializers)
+## Accelerators [](id=accelerators)
 
-The quickest way to get going with @commerce@ is to use a Site Initializer.
-A site initializer is a type of 
+The quickest way to get going with @commerce@ is to use an Accelerator.
+An accelerator is a type of 
 [Site Template]( /discover/portal/-/knowledge_base/7-1/building-sites-from-templates)
 that does much of the initial work of setting up a store. Creating a Site with
-a Site Initializer is an easy way to see what @commerce@ can do, and can be used
+an Accelerator is an easy way to see what @commerce@ can do, and can be used
 to get a head start on a live store: modify the theme to suit your purposes,
 replace the dummy catalog with your own data, and you're well on your way.
 
-At the time of this writing, @commerce@ ships with two site initializers.
+At the time of this writing, @commerce@ ships with two Accelerators.
 Beryl---available to subscribers only---is geared toward B2B selling, while
 Breccia models a UI similar to that used by most major retailers. Both
-initializers include a theme, a complete user interface, and a catalog populated
+Accelerators include a theme, a complete user interface, and a catalog populated
 with sample products. See 
-[Site Initializers](/web/emporio/documentation/-/knowledge_base/1-0/site-initializers)
+[Accelerators](/web/emporio/documentation/-/knowledge_base/1-0/accelerators)
 for more information.

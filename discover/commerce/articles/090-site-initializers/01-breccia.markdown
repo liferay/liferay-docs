@@ -1,6 +1,6 @@
 # Breccia [](id=breccia)
 
-The Breccia Site Initializer adopts the site model used by most major retailers.
+The Breccia Accelerator adopts the site model used by most major retailers.
 Its home page enables searching for individual products, while a series of
 links connect to product category pages. Familiar cart and checkout features
 are also included. Breccia gives you a ready-made theme, a complete set of
@@ -20,7 +20,7 @@ For more on navigating store sites, see [Setting up a Storefront](/web/emporio/d
 
 ## Pages [](id=pages)
 
-Running the Breccia initializer creates several pages and places various
+Running the Breccia Accelerator creates several pages and places various
 applications---furnished with appropriate display templates---on them. To see
 Breccia's pages, go to *Site Menu* &rarr; *Build* &rarr; *Pages*.
 
