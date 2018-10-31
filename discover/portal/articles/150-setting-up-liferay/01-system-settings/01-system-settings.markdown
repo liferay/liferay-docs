@@ -37,6 +37,16 @@ component you want to configure, or click the actions button
 changes you'd like, then click *Save*. Your configuration changes are saved and 
 applied throughout the system. 
 
++$$$
+
+**Important:** Content generated using templates (e.g., FreeMarker templates and
+Application Display Templates) is cached. Cached content might not reflect
+configuration changes until the cache is invalidated (cleared). The 
+[Server Administration &rarr; Resources tab](/discover/portal/-/knowledge_base/7-0/server-administration)
+provides cache clearing options.
+
+$$$
+
 ![Figure 3: After saving changes to a configuration, the actions *Reset Default Values* and *Export* are available for it.](../../../images/system-settings-actions.png)
 
 If you make some regrettable configuration decisions and can't recall exactly
