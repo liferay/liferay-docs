@@ -8,25 +8,25 @@ repositories of identities.
 
 Note that OpenAM relies on cookie sharing between applications. Thus, in order
 for OpenAM to work, **all applications that require SSO must be in the same web
-domain**.
-It is recommended that you also add the following property if you have enabled 
-HTTPOnly cookies due to the way some web containers (like Apache Tomcat™) parse cookies 
-that contain special characters:
-`com.iplanet.am.cookie.encode=true`
+domain**. You should  also add the following property if you have enabled
+HTTPOnly cookies due to the way some web containers (like Apache Tomcat™) parse
+cookies that contain special characters: 
 
-You can set up OpenAM on the same or different server as @product@, 
-so it can be necessary to change hostnames and context of OpenAM. 
-If you are using the same @product@ server to host OpenAM, you must deploy the OpenAM
-`.war`. The `.war` is available
-[here](https://backstage.forgerock.com/downloads/browse/am/archive/productId:openam). 
-Otherwise, follow the instructions at the
-[OpenAM 13 site](https://backstage.forgerock.com/docs/openam/13/install-guide/) 
-to install OpenAM. 
+com.iplanet.am.cookie.encode=true
+
+You can install  OpenAM on the same or different server as @product@. Be sure to
+review the context path and server hostname for your OpenAM server. 
+
+If you want to install OpenAM on the same server as @product@, you must deploy
+the OpenAM `.war`, downloadable from 
+[here](https://backstage.forgerock.com/downloads/browse/am/archive/productId:openam).
+Otherwise, follow the instructions at the 
+[OpenAM 13 site](https://backstage.forgerock.com/docs/openam/13/install-guide/) to install
+OpenAM. 
 
 +$$$
 
-**Note**: the only current officially **supported version is OpenAM 13**, @product@ 
-allows you to work with older versions although the support for them is limited.
+**Note**: the only current officially **supported version is OpenAM 13**. 
 
 $$$
 
@@ -60,7 +60,7 @@ initializing a Java primitive type with a literal value.
 
 Property Label | Property Key | Description | Type
 ----- | ----- | ----- | -----
-**Version** | `version` | OpenAM version to use (12 and bellow or 13) | `String`
+**Version** | `version` | OpenAM version to use (12 and below or 13) | `String`
 **Enabled** | `enabled` | Check this box to enable OpenAM authentication. Note that OpenAM will work only if LDAP authentication is also enabled and @product@'s authentication type is set to screen name. | `boolean`
 **Import from LDAP** | `importFromLDAP` | If this is checked, users authenticated from OpenAM that do not exist in @product@ are imported from LDAP. LDAP must be enabled. | `boolean`
 **Login URL** | `loginURL` | The URL to the login page of the OpenAM server | `String`
