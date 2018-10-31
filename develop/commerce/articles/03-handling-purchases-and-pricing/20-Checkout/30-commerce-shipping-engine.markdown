@@ -1,25 +1,32 @@
 # Creating New Shipping Methods
 
 @commerce@ includes three shipping methods out of the box: *fixed*- and
-*variable*-rate methods give you a wide range of options for calculating shipping
-costs in-house, while the FedEx method provides an option for you to integrate
-your system with the multinational courier of the same name. 
+*variable*-rate methods give you a wide range of options for calculating
+shipping costs in-house, while the FedEx method (subscribers only) provides an
+option for you to integrate your system with the multinational courier of the
+same name. Administrators can create any number of shipping options for buyers
+to select, but all of them will will rely on one of these methods to calculate
+costs.
 
-![Figure 1: Administrators can configure these out-of-the-box shipping methods
-to provide shipping choices to buyers.](../../../images/shipping-methods.png)
+![Figure 1: Buyers can choose from among various shipping options at checkout.](../../../images/shipping-options.png)
 
-Since you may want a similar solution to provide integration with other shipping
-companies, @commerce@ exposes an extension point to allow new shipping methods
-to be developed.
+![Figure 2: But every option relies on a cost calculation provided by a shipping method at *Site Menu* &rarr; *Commerce* &rarr; *Settings* &rarr; *Shipping
+Methods*.](../../../images/shipping-methods.png)
 
-Creating a new shipping method requires you to implement the
-`CommerceShippingEngine` interface. This creates a new method that
-administrators can select from *Site Menu* &rarr; *Commerce* &rarr; *Settings*
-&rarr; *Shipping Methods*.
+Shipping options are created when the `getCommerceShippingOptions` method from
+the `CommerceShippingEngine` interface is called from an appropriate context.
 
-This tutorial covers the creation of new shipping methods. Business logic to
-integrate with any particular shipping company (UPS, DHL, etc.) is the
-responsibility of the developer.
+Since the provided shipping methods may not meet every user's needs---suppose
+you want to integrate with a shipping company other than FedEx, for
+example---commerce exposes an extension point to allow new methods to be
+developed. This involves implementing the `CommerceShippingEngine` interface and
+writing your own logic for the `getCommerceShippingOptions` method. This creates
+a new method that administrators can select from *Site Menu* &rarr; *Commerce*
+&rarr; *Settings* &rarr; *Shipping Methods*.
+
+The following instructions cover the creation of new shipping methods.
+Business logic to integrate with any particular shipping company (UPS, DHL,
+etc.) is outside the scope of this tutorial.
 
 Follow these steps:
 
@@ -87,13 +94,13 @@ The main business logic of the shipping method is handled by the
                    return commerceShippingOptions;
         }
 
-This method must receive all the information necessary to calculate the shipping
-cost in order to return a `CommerceShippingOptions` object. In this case, the
-object's parameters reference the "sample-option" language key---this will be
-used by `getCommerceShippingOptionsLabel` to identify the shipping method in the
-UI---and specify a fixed cost of 10 (in your store's primary currency).
+This method calculates the shipping cost and passes it in as a parameter of
+a `CommerceShippingOptions` object. In this case, the method specifies a fixed
+cost of 10. The method also passes in a name, `"sample-option"`, that
+identifies the option in the checkout UI when an administrator activates the
+method.
 
-The component's final methods provide additional labelling information:
+The component's final methods provide additional labeling information:
 
     @Override
         public String getDescription(Locale locale) {
