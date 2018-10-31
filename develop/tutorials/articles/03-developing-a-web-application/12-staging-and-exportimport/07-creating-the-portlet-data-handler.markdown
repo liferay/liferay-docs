@@ -248,9 +248,9 @@ Follow the instructions below to create the Guestbook's portlet data handler.
     propagated between sites. This cleaned the portlet's data, allowing you to
     see everything associated with the portlet during every publication. This is
     now an unnecessary process now that Staging can recognize deletions across
-    all sites. It's, however, still included as a feature of Staging, and can
-    still be beneficial when viewing everything associated with the portlet
-    during a publication, so we've implemented it here.
+    all sites. It's, however, still included as a feature of Staging, so to
+    offer all the included Staging features in the Guestbook app, we've
+    implemented it here.
 
     $$$
 
