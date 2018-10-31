@@ -1,12 +1,12 @@
 # Retrieving Portlet IDs with the Gogo Shell [](id=retrieving-portlet-ids-with-the-gogo-shell)
 
 To 
-[include a portlet in a sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-portlets-in-a-sitemap), 
-you must have its ID. For convenience, The IDs for portlets available 
-out-of-the-box are listed in the 
-[Fully Qualified Portlet IDs](/develop/reference/-/knowledge_base/7-1/fully-qualified-portlet-ids) 
-reference guide. You can retrieve portlet IDs for custom portlets or 
-purchased portlets using the Gogo Shell, as this tutorial instructs. 
+[include a portlet in
+a sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-portlets-in-a-sitemap),
+you must have its ID. For convenience, IDs for out-of-the-box portlets appear in
+the [Fully Qualified Portlet IDs](/develop/reference/-/knowledge_base/7-1/fully-qualified-portlet-ids)
+reference guide. If you've installed purchased or developed portlets, you can
+retrieve their IDs using the Gogo Shell, as this tutorial instructs. 
 
 Follow these steps to use the Gogo Shell to retrieve a portlet ID:
 
