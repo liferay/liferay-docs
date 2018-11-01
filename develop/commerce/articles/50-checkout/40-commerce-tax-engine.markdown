@@ -1,4 +1,4 @@
-# Creating New Tax Methods
+# Creating New Tax Methods [](id=creating-new-tax-methods)
 
 Out of the box, @commerce@ offers two methods for calculating
 [taxes](/web/emporio/documentation/-/knowledge_base/1-0/taxes).
@@ -118,7 +118,7 @@ for administrators' benefit:
 
         return LanguageUtil.get(resourceBundle, KEY);
 
-![The *Name* and *Description* fields are set by the `getName` and `getDescription` methods.](../../../images/taxengine-name-description.png)
+![The *Name* and *Description* fields are set by the `getName` and `getDescription` methods.](../../images/taxengine-name-description.png)
 
 The `_getResourceBundle` method is not required by the `CommerceTaxEngine`
 interface, but supports `getName` and `getDescription` by providing the language
