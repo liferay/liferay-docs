@@ -15,10 +15,10 @@ Follow these steps to connect your project to your Liferay DXP instance.
 ### Step 1: Install Required Liferay DXP Fix Packs [](id=step-2-install-required-liferay-dxp-fix-packs)
 
 Liferay DXP 7.1: 
-[install fix pack 3](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-liferay). 
+[install fix pack 3](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-liferay) 
 
 Liferay DXP 7.0: 
-[install fix pack 60](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-liferay). 
+[install fix pack 60](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-liferay) 
 
 ### Step 2: Register Analytics Cloud with your Liferay DXP instance [](id=step-2-register-analytics-cloud-with-your-liferay-dxp-instance)
 
@@ -28,8 +28,8 @@ Liferay DXP 7.1:
     [Liferay Plugin for OAuth 2.0](https://web.liferay.com/marketplace/-/mp/application/109571986).
 
 2.  The plugin comes with Analytics Cloud pre-registered. Copy the *Client ID*
-    and *Client Secret*  for connecting DXP with Analytics Cloud as a data
-    source, as described in the next section.
+    and *Client Secret*  for connecting DXP with Analytics Cloud, as described
+    in the next section.
 
 Liferay DXP 7.0:
 
@@ -40,30 +40,29 @@ Liferay DXP 7.0:
     Analytics Cloud as an OAuth application. 
 
 3.  Copy the *Consumer ID* and *Consumer Secret* for connecting DXP with 
-    Analytics Cloud as a data source, as described in the next section. 
+    Analytics Cloud, as described in the next section. 
 
-Congratulations on setting up your Liferay DXP instance to be an Analytics Cloud
-data source! It's time to add your Liferay DXP instance as a data source. 
+Congratulations on authorizing Analytics Cloud to connect to your Liferay DXP
+instance! It's time to add your DXP instance as a data source. 
 
 ## Adding the DXP Data Source [](id=adding-the-dxp-data-source)
 
 Adding a Liferay DXP data source connects your Analytics Cloud project with
 a Liferay DXP instance. 
 
-1.  Select *Settings* in the navigation panel.
+1.  Select *Settings* &rarr; *Data Sources*. A listing of your data sources 
+    appears.
 
-2.  Click *Data Sources*. A listing of your existing data sources appears.
+2.  Click *Add Data Source*. The *Add Data Source* page appears. 
 
-3.  Click *Add Data Source*. The *Add Data Source* page appears. 
+3.  Select the *Liferay DXP* icon. The *Configure Liferay DXP* page appears.
 
-4.  Select the *Liferay DXP* icon. The *Configure Liferay DXP* page appears.
-
-The Authorization tab is selected by default. It's time to connect with and
-specify authorization to your Liferay DXP instance. 
+The Authorization tab is selected by default. It's time to authorize your DXP
+instance as a data source. 
 
 ### DXP Data Source Authorization [](id=dxp-data-source-authorization)
 
-Here's how to authorize your DXP instance as an Analytics Cloud data source: 
+Here's how to authorize your DXP instance as a data source: 
 
 1.  Fill in the data source and client credentials fields. 
 
@@ -87,8 +86,8 @@ Here's how to authorize your DXP instance as an Analytics Cloud data source:
 2.  Click *Authorize*. A window appears and prompts you to sign in to the DXP 
     instance. 
 
-3.  Sign in as a DXP admin (user that has the Admin role) and click 
-    *Authorize*. 
+3.  Sign in by entering your DXP admin (user that has the Admin role) 
+    credentials and clicking *Authorize*. 
 
 4.  Click *Save* to save the authorization options. Analytics Cloud advances you
     to the Configure Data Source tab's Data Configuration page. The data
@@ -109,7 +108,7 @@ Configuring contacts imports DXP user data.
     configuration options appear. 
 
 2.  Configuring contacts involves selecting contacts to sync from the Liferay
-    DXP instance and its Organizations and User Groups. Contacts belonging to
+    DXP instance and its User Groups and Organizations. Contacts belonging to
     multiple User Groups and Organizations are only counted once. 
 
     - *Sync All Contacts*: Selects all Liferay DXP instance contacts and disables options for selecting specific User Groups and Organizations.
