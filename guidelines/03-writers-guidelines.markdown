@@ -75,17 +75,16 @@ should be sufficient for all your needs.
 
 ## Tutorials 
 
-Tutorials should be in the neighborhood of 1000-2000 words. If you have more
-material than that, you should consider breaking it up. 
+Tutorials should be no longer than 1000 words. If you have more material
+than that, break it up. 
 
 ### Tutorial Intro 
 
 A tutorial should begin with an unlabeled section that serves as your
 introduction. You can use an anecdote, a story, or industry information to
-provide your introduction. This introduction, however, needs to lead up to a
-series of bullet points that summarize what the tutorial is about. This enables
-the reader to quickly glance over the topics to see if the tutorial covers the 
-information the reader is looking for. 
+provide your introduction. This introduction, however, must lead to a series of
+bullet points that summarize what the tutorial is about, so the reader can
+glance over the topics to see if the tutorial covers what he/she wants. 
 
 Don't end your intro with the bullet points themselves; always provide some
 summary text after the bullet points. 
@@ -104,7 +103,7 @@ what was covered in the tutorial.
 
 If you're a programmer, think of sections like linked lists. While each section
 needs to cover its own material, at the end of a section you should point to
-what's coming next. This is called a *segue*, and it generally sounds like: 
+what's coming next. This is called a *segue*, and it generally sounds like this: 
 
 You can see from this how easy it is to do. Next, we'll look at this other
 thing. 
@@ -122,7 +121,7 @@ they're in a hierarchy, there should always be at least two children: otherwise,
 you don't have a true hierarchy. 
 
 Because of the way Markdown is often parsed, header lines should never break. If
-you have set your text editor to automatically break lines, and you have a long
+you have set your text editor to break lines automatically, and you have a long
 header, make sure your header does not break. 
 
 ### Segues
@@ -139,7 +138,7 @@ you have to do....
 
 ## Text Conventions 
 
-There are several text conventions that will help to ensure a consistent
+There are several text conventions that help to ensure a consistent
 documentation style. Please follow these conventions when entering
 documentation. 
 
@@ -174,16 +173,16 @@ Set this property to `false` for easier debugging for development. You can also
 disable fast loading by setting the URL parameter `css_fast_load` to `0`. 
 
 Always set off code so that it is clear it's code and not text. This makes it so
-that people can easily copy/paste from the documentation whatever code you are
-providing. Of course, make sure your code works. 
+that people can easily copy/paste your code from the documentation. Of course,
+make sure your code works. 
 
 ### File Names 
 
 When you need to refer to a file name, put the file name in a code font as well. 
 
-**Example:** You will want to use the Software Catalog portlet if you will
-have multiple users submitting portlets into the repository, and if you don't
-want to worry about creating the `liferay-plugin-repository.xml` file yourself. 
+**Example:** Use the Software Catalog portlet if you have multiple users
+submitting portlets into the repository, and if you don't want to worry about
+creating the `liferay-plugin-repository.xml` file yourself. 
 
 ### Quotation Marks 
 
@@ -194,7 +193,7 @@ not to include the quotation marks when copying and pasting these values.
 
 Programmers are used to writing code, not prose. Because of this, programmers
 like to put periods, commas, and other punctuation outside the quotation marks,
-which is incorrect punctuation--but good programming syntax. If you do need to
+which is incorrect punctuation---but good programming syntax. If you do need to
 use quotes for something, please remember the punctuation goes *inside* the
 quotes. 
 
@@ -262,13 +261,13 @@ Bullet points are strange animals. They can be lists of things. They can be
 lists of arguments. Here's a good rule for bullet points: if it's a sentence,
 use a period. If it's not a sentence, don't. 
 
-**Examples:** Don't use a period for bullets that are not sentences, like: 
+**Examples:** Don't use a period for bullets that are not sentences, like these: 
 
 *  Shoes
 *  Pants
 *  Shirt
 
-Use a period for bullets that are sentences, like: 
+Use a period for bullets that are sentences, like these: 
 
 *  Roll your mouse over the Dock and click *Sign In*. 
 *  Enter your email address and password.
@@ -279,8 +278,8 @@ this sentence.
 ### Trailing Spaces 
 
 The Markdown source files for the documentation should be clean. Every sentence,
-regardless of whether it ends a paragraph or not, should end with one--and only
-one--trailing space. This is so that paragraphs can be combined more easily
+regardless of whether it ends a paragraph or not, should end with one---and only
+one---trailing space. This is so that paragraphs can be combined more easily
 during the editing process, when this becomes necessary. 
 
 There should never be more than one trailing space after a sentence, paragraph,
@@ -305,7 +304,7 @@ text, you want to specify that as a "variable" of sorts. When you do this,
     Inside the bundle folder, you'll find a `tomcat-[version]` folder. 
 
 Why straight brackets? To avoid confusion with markup languages and also to
-avoid accidentally triggering the Markdown parser to pass through the text
+avoid accidentally triggering the Markdown parser to pass the text through
 (because it might think it's HTML). 
 
 ## Images and Captions 
@@ -335,19 +334,16 @@ dashes (-) to replace spaces in multi-word file names.
 
 ## Capitalization 
 
-Platform: Always platform
-
-Configuration: Always Configuration
-
-Site: Always Site
+Site: Capitalized when referring to Liferay Sites. When using the term
+generically, no capital is needed. 
 
 Site Administration: Always Site Administration
 
 Personal Site: Always Personal Site
 
-Role: Always Role
+Role: Always Role when referring to Liferay Roles. 
 
-User: Always User
+User: Always User when referring to Liferay Users. 
 
 User Group: Always User Group
 
@@ -355,15 +351,11 @@ Organization: Always Organization
 
 Control Menu: Always Control Menu
 
-Navigation: Always Navigation
-
-Account Settings: Always Account Settings
-
 ## Common Documentation and Phraseology Issues 
 
 Explain every option, no matter how redundant and stupid it seems. Yes, most
-forms in the product ask for a name and a description, but you need to explain
-them anyway. 
+forms in the product ask for a name and a description, but you must explain them
+anyway. 
 
 Never, ever, ever say something is "self-explanatory." It isn't. All you're
 doing is insulting the reader who doesn't understand the same things you
@@ -374,12 +366,14 @@ something, something else *appears*. You don't want to say it will appear, and
 you especially don't want to say you *are going to* do something else after it
 appears. 
 
+Never say something is simple or straightforward. If it were, the reader
+wouldn't be reading documentation on it. 
+
 ## Know your audience! 
 
-You have at least two types of people to whom you are writing: the person who is
-reading the book cover to cover (rare), and the person who is flipping or
-clicking through trying to find a specific section that tells him or her
-everything necessary (more common). 
+You have at least two types of people to whom you are writing: the person who
+reads the docs cover to cover (rare), and the person who clicks through trying
+to find a specific section that has the information she wants (more common). 
 
 It's better to write for this second type of reader. Many features in the
 product overlap (message board threads can be tagged; wiki articles can be
@@ -391,23 +385,23 @@ wiki articles. You can then point readers to the specific place where tagging in
 general is explained. 
 
 With that in mind, another thing you want to avoid is *mind reading*. It's easy
-to fall into making statements like: "You probably aren't interested in blah
+to fall into making statements like, "You probably aren't interested in blah
 blah now, but you will be once you finish this section." As the writer, you
-actually have no idea what your readers might be thinking, so avoid mind reading
-at all costs. 
+actually have no idea what your readers might be thinking, so avoid mind
+reading. 
 
-The Golden Rule says "Do unto others as you would have them do unto you." That's
-a great way to approach documentation. Write something you'd want to read.
-Include all the details you would want if you were newly approaching the topic. 
+The Golden Rule says "Do unto others as you would have them do unto you." The
+doc version is write something you'd want to read. Include all the details you
+would want if you were newly approaching the topic. 
 
 ## Be Creative! 
 
 Use jokes. Add anecdotes. Write stories. Do whatever you can to keep the text
 from being regular, old, dry, boring documentation. One of our authors (Stephen
-Kostas) came up with the Nosester Social Network. That's awesome. I (Rich Sezov)
-wrote a story as the intro and summary of the Audit section. Do this sort of
-thing. It makes the text more interesting to read, and that causes people to
-actually read the documentation. Let's make sure Liferay's docs don't sound like
+Kostas) came up with Nosester: a social network for your nose. That's awesome.
+I (Rich Sezov) wrote a story as the intro and summary of the Audit section. Do
+this sort of thing. It surprises people, makes the text more interesting to
+read, and generally creates goodwill. We don't want Liferay's docs to sound like
 everybody else's. Let's be recognized as much for our cool documentation as for
 our cool product.
 
@@ -417,13 +411,11 @@ We all make grammatical errors sometimes. I'm sure that even J.R.R. Tolkien had
 to correct some grammatical errors before publishing *Lord of the Rings*. What
 separates the men from the boys (or women from the girls) here, though, is
 whether or not you are willing to look at your text a second, third, or fourth
-time and find those grammatical errors to which you are prone (See? I didn't end
-that sentence with a preposition--even though that's not always wrong). You can
-then try to be more aware of those errors as you write and thereby avoid them.
-It also helps to read your text after you have written it. This sounds like
-common sense, but you'd be surprised at how many people just write something and
-send it off like it's email. To get good prose, you have to go over it several
-times. 
+time and find those grammatical errors to which you are prone. You can then try
+to be more aware of those errors as you write and thereby avoid them. It also
+helps to read your text after you have written it. This sounds like common
+sense, but you'd be surprised at how many people just write something and send
+it off like it's email. To get good prose, you have to go over it several times. 
 
 What follows is a list of common grammatical mistakes.
 
@@ -446,11 +438,11 @@ singular and another be plural. For example, you never say, "If you configure
 this permission for the user, they cannot access the resource." You have to say,
 "If you configure this permission for the user, he or she cannot access the
 resource." Since you're talking about a single user, it's either *he* or *she*
-(or both), but not *they*. Some people, in order to try to be fair to the
-genders, alternate genders as they go ("If you configure this permission for the
-user, she cannot access the resource.").  That's also correct. Others try to
-make the sentence plural ("If you configure this permission for users, they
-cannot access the resource."). Again, this is correct. 
+(or both), but not *they*. Some people, to try to be fair to the genders,
+alternate genders as they go ("If you configure this permission for the user,
+she cannot access the resource.").  That's also correct. Others try to make the
+sentence plural ("If you configure this permission for users, they cannot access
+the resource."). Again, this is correct. 
 
 ### Notes on Commas 
 
@@ -465,9 +457,9 @@ use it. The decision has been made, and it's not changing.
 
 For those who don't know what an oxford comma is, it's a standard for using
 commas in a series. If you have a series of three or more things, there is
-disagreement in the English language writing community on whether or not to
-include the comma for the last item in the series. Excluding the comma can lead
-to a lack of clarity, as illustrated in this example: 
+disagreement in the English language writing community on whether the comma
+should be included for the last item in the series. Excluding the
+comma can lead to a lack of clarity, as illustrated in this example: 
 
     I want to thank my mentors, my parents and the President for their help. 
 
@@ -483,12 +475,12 @@ The oxford comma makes the sentence clear.
 You only use a comma after a conjunction (i.e., "and," "or," "but," etc.) if it
 is separating two independent clauses. If you have a compound verb, you don't
 need a comma. So you'd use a comma with "Click on the button, and the portal
-will refresh." But you wouldn't use a comma with "Select option three and click
-save." In the first instance, you have two independent clauses; in the second,
+refreshes." But you wouldn't use a comma with "Select option three and click
+Save." In the first instance, you have two independent clauses; in the second,
 you have a compound verb ("select and click"). One easy way to tell which one
 you're dealing with is to find the subject(s). If you have two different
 subjects, you have two independent clauses. If you have one subject sharing two
-verbs, you have a compound verb. 
+verbs, you probably have a compound verb. 
 
 
 So in our first example, our two subjects were *you* and *portal* (the you is
@@ -522,15 +514,15 @@ purpose in life is to separate two independent clauses:
 *Don't try doing it all yourself; it's better to work as a team.*
 
 If you write it this way, your punctuation is correct, and you have just become
-one of those few who know how to use a semicolon! 
+one of the few who know how to use a semicolon! 
 
-It's also important to note that the em-dash (--) can also be used in this way: 
+It's also important to note that the em-dash (---) can also be used in this way: 
 
-*Don't try doing it all yourself--it's better to work as a team.*
+*Don't try doing it all yourself---it's better to work as a team.*
 
-Em-dashes have no spaces around them and always consist of *two* dash
-characters. Our Markdown parser will convert that into a proper em-dash
-character, but it won't convert any of the other variants. 
+Em-dashes have no spaces around them and always consist of *three* dash
+characters in Markdown. Our Markdown parser converts that into a proper em-dash
+character, but it doesn't convert any of the other variants. 
 
 ## Terminology
 

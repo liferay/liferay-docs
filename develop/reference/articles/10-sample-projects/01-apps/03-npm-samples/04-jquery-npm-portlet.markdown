@@ -1,7 +1,5 @@
 # jQuery npm Portlet [](id=jquery-npm-portlet)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The jQuery npm Portlet sample provides a portlet that uses the
 [jQuery](https://jquery.com/) framework to render its output.
 

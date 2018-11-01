@@ -100,7 +100,7 @@ As a regular user,
 
 1.  Navigate to the *Welcome* page.
 
-2.  Click *Add* &rarr; *Applications*.
+2.  Click *Add* &rarr; *Widgets*.
 
 3.  Locate the *Language Selector* widget and add it to the page.
 
