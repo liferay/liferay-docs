@@ -17,7 +17,7 @@ To use the plugin, include it in your project's root `pom.xml` file:
             <plugin>
                 <groupId>com.liferay</groupId>
                 <artifactId>com.liferay.portal.tools.bundle.support</artifactId>
-                <version>3.2.1</version>
+                <version>3.2.5</version>
                 <executions>
                     <execution>
                         <id>clean</id>

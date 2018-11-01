@@ -1,7 +1,5 @@
 # Metal.js npm Portlet [](id=metal-js-npm-portlet)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Metal.js npm Portlet sample provides a portlet that uses the
 [Metal.js](https://metaljs.com/) framework to render its output.
 
