@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<project name="portal Conversion" basedir=".">
+
+	<import file="../build.xml" />
+
+	<property name="doc.dir" value="commerce"/>
+
+</project>
