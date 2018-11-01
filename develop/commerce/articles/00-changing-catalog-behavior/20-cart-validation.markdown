@@ -1,8 +1,8 @@
 # Customizing Cart Validation[](id=customizing-cart-validation)
 
 Whenever a buyer adds a product to his cart or attempts to checkout, @commerce@
-checks to make sure that the transaction is permissible. This tutorial
-describes how to inject custom behavior into the validation check.
+checks to make sure that the transaction is permissible. This tutorial describes
+how to inject custom behavior into the validation check.
 
 In each product's
 [*Configuration*](/web/emporio/documentation/-/knowledge_base/1-0/configuration)
@@ -64,12 +64,12 @@ Then implement the interface:
             return KEY;
         }
 
-The interface requires two more methods after the `getKey` method. These
-methods contain the actual logic of the validating check---this is where you'll
-want to insert your own code. The following method is called whenever a buyer
-procedes to a new step in the checkout process, and validates products that are
-already in the cart. It then returns the `CommerceOrderValidatorResult` object
-to display the outcome to the user:
+The interface requires two more methods after the `getKey` method. These methods
+contain the actual logic of the validation check---this is where you'll want to
+insert your own code. The following method is called whenever a buyer proceeds
+to a new step in the checkout process, and validates products that are already
+in the cart. It then returns the `CommerceOrderValidatorResult` object to
+display the outcome to the user:
 
     @Override
     public CommerceOrderValidatorResult validate(
@@ -106,6 +106,6 @@ this case, however, the method checks products as they are added to the cart:
         }
     }
 
-In this is example, the validator checks whether an an order's quanitity is 100
-and rejects any other quanitity. For a real-world example see
+In this is example, the validator checks whether an order's quantity is 100
+and rejects any other quantity. For a real-world example see
 `DefaultCommerceOrderValidatorImpl.java`.
