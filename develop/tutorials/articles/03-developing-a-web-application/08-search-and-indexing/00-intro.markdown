@@ -2,7 +2,7 @@
 
 The Guestbook and Guestbook Admin portlets are up and running. The Guestbook
 portlet lets users add, edit, delete, and configure permissions for Guestbook
-Entries. The Guestbook Admin portlet lets site administrators create, edit,
+Entries. The Guestbook Admin portlet lets Site administrators create, edit,
 delete, and configure permissions for Guestbooks. In the case of a very popular
 event (maybe a *Lunar Luau* dinner at the Lunar Resort), there could be many
 Guestbook Entries in the portlet, and users might want to search for Entries
@@ -26,12 +26,12 @@ is implemented for an application.
 
 $$$
 
-To enable search, index Guestbooks and their Entries.  Although you probably
-won't have enough Guestbooks in a site to warrant searching the Guestbook Admin
-portlet, indexing Guestbooks has other benefits. In a later section, you'll
-asset-enable Guestbooks and Guestbook Entries so @product@'s Asset Publisher can
-display them. Enabling search is a prerequisite for this--you must index any
-entity that you want to make an asset. 
+To enable search, you must index Guestbooks and their Entries. Although you
+probably won't have enough Guestbooks in a Site to warrant searching the
+Guestbook Admin portlet, indexing Guestbooks has other benefits. In a later
+section, you'll asset-enable Guestbooks and Guestbook Entries so the Asset
+Publisher can display them. Enabling search is a prerequisite for this---you
+must index any entity that you want to make an asset. 
 
 But assets are for later. Right now it's time to index those Guestbooks. Ready? 
 
