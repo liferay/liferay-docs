@@ -28,7 +28,7 @@ Liferay DXP 7.1:
     [Liferay Plugin for OAuth 2.0](https://web.liferay.com/marketplace/-/mp/application/109571986).
 
 2.  The plugin comes with Analytics Cloud pre-registered. Copy the *Client ID*
-    and *Client Secret*  for connecting DXP with Analytics Cloud, as described
+    and *Client Secret* for connecting DXP with Analytics Cloud, as described
     in the next section.
 
 Liferay DXP 7.0:
@@ -68,13 +68,15 @@ Here's how to authorize your DXP instance as a data source:
 
     *Description* 
 
-    - *Name:* A name for your data source.
-    - *URL:* The Liferay DXP instance URL. 
+    **Name:** A name for your data source.
+
+    **URL:** The Liferay DXP instance URL. 
 
     *Client Credentials*
 
-    - *Consumer Key/Client ID:* Key/ID for Analytics Cloud to access your Liferay DXP instance. 
-    - *Consumer Secret/Client Secret:* Secret for Analytics Cloud to access your
+    **Consumer Key/Client ID:** Key/ID for Analytics Cloud to access your Liferay DXP instance. 
+
+    **Consumer Secret/Client Secret:** Secret for Analytics Cloud to access your
     Liferay DXP instance. 
 
     In Liferay DXP 7.1, the Client ID and Secret are found at *Control Panel*
@@ -95,8 +97,9 @@ Here's how to authorize your DXP instance as a data source:
 
 Here are the Configure Data Source options:
  
-- *Configure Contacts:* Configures the contact data only.
-- *Configure Analytics:* Configures the assets and touchpoints only.
+**Configure Contacts:** Configures the contact data only.
+
+**Configure Analytics:** Configures the assets and touchpoints only.
 
 Start with configuring contacts. 
 
@@ -111,25 +114,26 @@ Configuring contacts imports DXP user data.
     DXP instance and its User Groups and Organizations. Contacts belonging to
     multiple User Groups and Organizations are only counted once. 
 
-    - *Sync All Contacts*: Selects all Liferay DXP instance contacts and disables options for selecting specific User Groups and Organizations.
+    **Sync All Contacts:** Selects all Liferay DXP instance contacts and disables
+    options for selecting specific User Groups and Organizations.
 
-    - *Sync By User Groups*: Selects contacts by User Group.
+    **Sync By User Groups:** Selects contacts by User Group.
 
-    - *Sync By Organizations*: Selects contacts by Organization. 
+    **Sync By Organizations:** Selects contacts by Organization. 
 
     ![Figure 1: Analytics Cloud lets you select and import contacts from a Liferay DXP instance and its Organizations and User Groups.](../../images/select-dxp-contacts-by-org.png)
 
 3.  Click *Save and Continue* to import the selected contacts. Analytics Cloud
-    imports the contact data and attempts to map it to your Analytics Cloud
-    contact data model. The initial contact data import can take 5 1/2 minutes
-    per 1,000 contacts. 
+    imports the contact data and maps it to your Analytics Cloud contact data
+    model. The initial contact data import can take 5 1/2 minutes per 1,000
+    contacts. 
 
 4.  Follow instructions for 
     [Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/04-mapping-contact-data.markdown)
     to  map contact data from your Liferay DXP instance to your Analytics Cloud
     contact data model. Once you've mapped the data, click *Save*. The Data
     Configuration page appears again; the button for Configure Contacts is
-    labelled *Edit*. 
+    labeled *Edit*. 
 
 You've configured Analytics Cloud to use your Liferay DXP contacts. 
 
@@ -141,7 +145,7 @@ contacts you've imported.
 1.  Click *Configure* for *Configure Analytics*. The Liferay DXP site analytics
     registration page appears. 
 
-2.  Select the Liferay DXP sites to register for analytics and click 
+2.  Select the Liferay DXP Sites to register for analytics and click 
     *Configure*.
 
 5. Click the *Done* button. 
