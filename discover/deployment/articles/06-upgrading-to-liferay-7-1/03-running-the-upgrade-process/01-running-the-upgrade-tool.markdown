@@ -6,8 +6,15 @@ line interface. The upgrade tool lets you upgrade everything--the core and all
 the modules--together or separately. 
 
 @product-ver@ bundles include the upgrade tool. If you installed @product-ver@
-manually, you can download the upgrade tool separately from the same location on
-[liferay.com](https://www.liferay.com/). 
+manually, you can download the upgrade tool separately. 
+
+- *Liferay DXP 7.1*: Go to the
+[*Liferay DXP 7.1 Downloads* page](https://web.liferay.com/group/customer/dxp/downloads/7-1),
+select *Admin Tools*, and click *Download*. 
+
+- *Liferay Portal CE 7.1*: Go to the
+[*Downloads* page](https://www.liferay.com/downloads-community)
+and select *Download* for *Liferay Portal Tools for 7.1*. 
 
 Before running the upgrade tool, learn the tool's usage and how to configure the
 core upgrade and non-core module upgrades. 
@@ -20,6 +27,14 @@ Start with the tool's usage.
 
 ## Upgrade Tool Usage [](id=upgrade-tool-usage)
 
+The `db_upgrade.sh` script (`db_upgrade.bat` on Windows) invokes the upgrade
+tool. It resides in the  `[Liferay Home]/tools/portal-tools-db-upgrade-client`
+folder. 
+
+This command prints the upgrade tool usage: 
+
+    db_upgrade.sh --help
+
 To upgrade only the core, add a file called
 `com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.config`
 to the `[Liferay Home]/osgi/configs` folder with the following content:
@@ -30,22 +45,6 @@ This configuration prevents automatic module upgrade, but causes the upgrade
 tool to open a Gogo shell for
 [upgrading modules](/discover/deployment/-/knowledge_base/7-1/gogo-shell-commands-for-module-upgrades)
 after finishing the core upgrade. 
-
-The `db_upgrade.sh` script (`db_upgrade.bat` on Windows) invokes the upgrade
-tool. It resides in the  `[Liferay Home]/tools/portal-tools-db-upgrade-client`
-folder. 
-
-This command prints the upgrade tool usage: 
-
-    db_upgrade.sh --help
-
-+$$$
-
-**Warning**: To prevent the tool's expanded command from growing too large for
-Windows, execute the upgrade tool script from the `[Liferay
-Home]/tools/portal-tools-db-upgrade-client` folder.
-
-$$$
  
 Here are the tool's default Java parameters:
     
@@ -67,10 +66,42 @@ Here are all the upgrade tool command line options:
 
 **--jvm-opts** or **-j** + **[arg]**: Sets any JVM options for the upgrade process.
 
-**--log-file** or **-l** + **[arg]**: Specifies the tool's log file name.
+**--log-file** or **-l** + **[arg]**: Specifies the tool's log file name---the 
+default name is `upgrade.log`.
 
 **--shell** or **-s**: Automatically connects you to the Gogo shell after
 finishing the upgrade process.
+
++$$$
+
+**Note:** Only execute the upgrade process on a server with ideal memory, CPU,
+and database connection configuration. If executing an upgrade remotely using
+`ssh`, make sure to guard against interruptions: 
+
+- If you're executing the upgrade using `ssh`, ignore hangups (connection loss) 
+by using `nohup` or something similar. 
+- On the machine you're connecting from, disable settings that shutdown or sleep
+that machine. 
+
+If upgrade execution is interrupted, check your log file (default file is
+`upgrade.log`) for where execution stopped. 
+
+- If execution stopped during an upgrade process for Core 7.1 or higher, or any
+  module upgrade process, restart the upgrade tool to continue the upgrade from
+  that point. 
+- If execution stopped during an upgrade process for Core 7.0 or lower, you must
+  [restore the data from a backup](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
+  and start the upgrade again. 
+
+$$$
+
++$$$
+
+**Warning:** To prevent the tool's expanded command from growing too large for
+Windows, execute the upgrade tool script from the `[Liferay
+Home]/tools/portal-tools-db-upgrade-client` folder.
+
+$$$
 
 Before starting the upgrade, decide how to execute non-core module upgrades. 
 
@@ -110,18 +141,48 @@ Each file's properties are described next.
 
 ### Configuring app-server.properties [](id=configuring-app-server-properties)
 
-Specify the following information to configure the app server on which @product-ver@ is installed: 
+Specify the following information to configure the app server on which 
+@product-ver@ is installed: 
 
-**dir:**  the application server directory *(required)*
+**dir:**  the absolute path of the application server directory. *(required)*
 
 **extra.lib.dirs:**  a comma delimited list of extra directories containing any
-binaries or resources to add to the  class path *(required)*
+binaries or resources to add to the class path. Use all absolute paths OR all 
+paths relative to **dir**. *(required)*
 
-**global.lib.dir:**  the application server's global library directory 
-*(required)*
+**global.lib.dir:**  the application server's global library directory. Use 
+the absolute path or a path relative to **dir**. *(required)*
 
-**portal.dir:**  the directory where portal is installed in your app server
-*(required)*
+**portal.dir:**  the directory where portal is installed in your app server. Use
+the absolute path or a path relative to **dir**. *(required)*
+
+**server.detector.server.id:** ID of a supported application server. 
+(*required*) Here are the IDs:
+
+- `jboss`
+- `jonas`
+- `resin`
+- `tomcat`
+- `weblogic`
+- `websphere`
+- `wildfly`
+
+Relative paths must use Unix style format. The following properties, for
+example, are for Windows and use relative paths:
+
+    dir=D:\
+    extra.lib.dirs=Liferay/liferay-portal-master/tomcat-9.0.10/bin
+    global.lib.dir=Liferay/liferay-portal-master/tomcat-9.0.10/lib
+    portal.dir=Liferay/liferay-portal-master/tomcat-9.0.10/webapps/ROOT
+    server.detector.server.id=tomcat
+
+These properties, for example, are for Unix and use all absolute paths:
+
+    dir=/
+    extra.lib.dirs=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/bin
+    global.lib.dir=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/lib
+    portal.dir=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/webapps/ROOT
+    server.detector.server.id=tomcat
 
 ### Configuring portal-upgrade-database.properties [](id=configuring-portal-upgrade-database-properties)
 

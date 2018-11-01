@@ -63,6 +63,11 @@ Give the definition a name, description, and version:
     <description>A single approver can approve a workflow content.</description>
 	<version>1</version>
 
+All these tags are optional. If present the first time a definition is saved,
+the `<name>` tag serves as a unique identifier for the definition. If not
+specified (or added sometime after the first save), a random unique name is
+generated and used to identify the workflow. 
+
 Once the schema and metadata are in place, it's time to turn up the funky beats
 and get into the flow (the workflow). Learn about workflow nodes in the next
 article.

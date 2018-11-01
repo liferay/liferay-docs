@@ -1,7 +1,5 @@
 # Screen Name Validator [](id=screen-name-validator)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Screen Name Validator sample provides a way to validate a user's inputted
 screen name. During validation, the screen name is tested client-side and
 server-side.

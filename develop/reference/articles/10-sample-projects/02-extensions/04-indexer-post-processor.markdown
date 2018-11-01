@@ -1,7 +1,5 @@
 # Indexer Post Processor [](id=indexer-post-processor)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Indexer Post Processor sample demonstrates using the `IndexerPostProcessor`
 interface, which is provided to customize search queries and documents before
 they're sent to the search engine, and/or customize result summaries when

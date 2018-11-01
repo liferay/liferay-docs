@@ -61,6 +61,7 @@ like this:
                         - `config.js`
                         - `my-form-field-project.soy`
                         - `my-form-field-project_field.js`
+                        - `my-form-field-project_field.es.js`
     - `bnd.bnd`
     - `build.gradle`
     - `gradlew`
