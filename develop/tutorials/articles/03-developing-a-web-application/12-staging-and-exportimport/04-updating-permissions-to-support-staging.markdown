@@ -6,15 +6,15 @@
 
 The guestbook's current permission handlers do not account for Staging. For
 example, the current configuration would display the *Add Guestbook* and *Add
-Entry* buttons on the live site while Staging was enabled. These options should
-only be available on the staged site when Staging is enabled.
+Entry* buttons on the live Site while Staging was enabled. These options should
+only be available on the staged Site when Staging is enabled.
 
 First, edit the Guestbook app's permissions helper classes to provide permission
 checks to leverage when Staging is enabled.
 
 1.  Open the `GuestbookModelPermission` class residing in the
     `guestbook-service`'s `com.liferay.docs.guestbook.service.permission`
-    package. Replace the `contains(...)` method with the following code snippet:
+    package. Replace the `contains(...)` methods with those below:
 
         public static boolean contains(
             PermissionChecker permissionChecker, long groupId, String actionId) {
@@ -55,11 +55,11 @@ checks to leverage when Staging is enabled.
     This adds two additional `contains` methods. The original `contains` method
     now redirects to a new method that instantiates a `hasPermission` field
     using the staging permission checker. If it returns as a non-null value
-    (i.e., the app is rendered on the staged site), the appropriate boolean
+    (i.e., the app is rendered on the staged Site), the appropriate boolean
     value is returned based on the user's permissions. If the `hasPermission`
-    field is null (i.e., the app is rendered on the live site), the third
+    field is null (i.e., the app is rendered on the live Site), the third
     `contains` method is invoked, which calls the permission checker with group
-    info from the live site.
+    info from the live Site.
 
     Now you'll edit the permissions helper classes for your two entities. These
     are for the model/resource permissions, so you supply the primary key of
@@ -67,8 +67,7 @@ checks to leverage when Staging is enabled.
 
 2.  Open the `EntryPermission` class residing in the `guestbook-service`'s
     `com.liferay.docs.guestbook.service.permission` package. In the
-    `contains(PermissionChecker, Entry, String)` method, add the following
-    logic:
+    `contains(PermissionChecker, Entry, String)` method, add this logic:
 
         Boolean hasPermission = StagingPermissionUtil.hasPermission(
             permissionChecker, entry.getGroupId(), Entry.class.getName(),
@@ -79,7 +78,7 @@ checks to leverage when Staging is enabled.
             }
 
     If the new `hasPermission` field is returned as a non-null value (i.e., the
-    app is rendered on the staged site), the appropriate boolean value is
+    app is rendered on the staged Site), the appropriate boolean value is
     returned based on the staging context.
 
 3.  Open the `GuestbookPermission` class and add the following code in the
@@ -100,10 +99,10 @@ checks to leverage when Staging is enabled.
     save them.
 
 Your Guestbook app can now display the proper functionality depending on its
-staging context (i.e., staged site or live site).
+staging context (i.e., staged Site or live Site).
 
 The Guestbook's admin portlet requires additional modifications in its JSPs to
-correctly display options based on staging context.
+display options correctly based on staging context.
 
 1.  In your `guestbook-web` module, open the
     `src/main/resources/META-INF/resources/guestbookadminportlet/guestbook_actions.jsp`
@@ -148,8 +147,8 @@ correctly display options based on staging context.
         </c:if>
 
     Similar to the previous `if` statement, this one hides the Guestbook's
-    deletion functionality if the user does not have the permissions to delete a
-    guestbook.
+    delete functionality if the user does not have the permissions to delete
+    a guestbook.
 
 3.  Open the
     `src/main/resources/META-INF/resources/guestbookadminportlet/view.jsp` file
