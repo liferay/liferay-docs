@@ -18,19 +18,28 @@ The rest of this article describes each kind of change.
 ## Editing Your App's Metadata [](id=editing-your-app-details)
 
 App metadata includes the name, description, icon, screenshots, and other
-information you supplied during the app creation process. To make changes
-to this content for your app, navigate to *Account Home* &rarr; *Apps* and
-select the app you wish to edit. Click the *Edit* button to edit that app. 
+information you supplied during the app creation process. Here's how to edit
+your app's metadata:
 
-This screen shows you what the app looks like on Marketplace. To edit the detail
-information, click the *Edit* button at the bottom of the preview. Now you can
-edit details and add new files to your existing version. The current values as
-they appear in your app pre-populate the form. Make any changes as needed on
-this screen and click *Next*. If you don't need to edit any more variations,
-you can continue clicking *Next* until you reach the final preview screen. Click
-*Submit for Review* to submit your changes for review. All changes must go
-through the submission process. If your app revision only consists of metadata
-changes, it need only go through the 
+1.  Navigate to *Account Home* &rarr; *Development* &rarr; *Apps*. A listing of 
+    your published apps appears. 
+
+2.  Select the app you wish to edit. This screen shows you what the app looks 
+    like on Marketplace. 
+
+3.  Click the *Edit* button at the bottom of the preview. Now you can edit 
+    details and add new files to the your existing version of your app. The
+    current values as they appear in your app pre-populate the form. 
+
+4.  Make any changes as needed on this screen.
+
+5.  Click *Next*. If you don't need to edit any more variations, you can 
+    continue clicking *Next* until you reach the final preview screen.
+
+6.  Click *Submit for Review* to submit your changes for review.
+
+All changes must go through the submission process. If your app revision only
+consists of metadata changes, it need only go through the 
 [*App metadata review*](/distribute/how-to-publish/-/knowledge_base/how-to-publish/understanding-the-app-review-process)
 phase of the review process. 
 
@@ -40,13 +49,23 @@ Once approved, the changes you request appear for your app on the Marketplace.
 
 You can change your app's prices, add or remove bundles, and modify regional
 availability for a variety of reasons, whether it's to run a promotional offer,
-or to adjust your pricing model to better account for app demand. To make
-changes to your app, navigate to *Company Profile Home* &rarr; *Apps*, then
-click the app you wish to edit, and then at the bottom, click *Edit* &rarr;
-*Pricing*. When you've finished editing your app's prices, click *Next*. 
+or to adjust your pricing model to better account for app demand. Here's how to
+edit app prices:
 
-These changes do not require Liferay verification process to approve. Make the
-changes you wish and save your app. The new prices show immediately. 
+1.  Navigate to *Company Profile Home* &rarr; *Apps*. A listing of your 
+    published apps appears. 
+
+2.  Select the app you wish to edit.
+
+3.  At the bottom, click *Edit* &rarr; *Pricing*.
+
+4.  Edit your app's prices.
+
+5.  When you've finished editing your app's prices, click *Next* and save your 
+    app. 
+
+These changes do not require Liferay verification process to approve. The
+changes show immediately. 
 
 You cannot however, modify the following attributes of an approved app: 
 
@@ -58,28 +77,42 @@ Next, you can consider adding support for new versions of Liferay.
 
 ## Adding Support for New Versions of Liferay [](id=adding-support-for-new-versions-of-liferay-portal)
 
-If you must add files to support another Liferay release, the process is
-similar. Navigate to *Account Home* &rarr; *Apps* and select the app you wish to
-edit. Click the *Edit* button to edit that app. Click *Next* to advance past the
-details screen (making any changes as needed), and click *Next* to advance past
-the version edit screen (you can't actually edit the version number of an
-already-approved version, but you can edit the "What's New" information).
+If you must add files to support another Liferay release, the process is similar
+to editing an app.
 
-Once you advance past the version edit screen, the File Upload screen appears.
-This screen should look familiar---it's the same workflow used when you
-initially created your app! The difference is that you can't edit pre-approved
-files for specific Liferay releases. You can only add *new* files for
-a different Liferay release (if you must update existing files, you must create
-a new version of the app---see the later section on adding versions for details
-on how to do this).
+1.  Navigate to *Account Home* &rarr; *Apps*. A listing of your published apps 
+    appears. 
 
-Upload your new files (ensuring that your new plugins have updated compatibility
-information: see the
-[Marketplace App Metadata Guidelines](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app)
-for details on versions), click *Next*, and observe the newly-added files listed
-at the bottom of the preview screen. Click *Submit for Review* to submit your
-requested change (adding files). Liferay reviews the files, and once approved,
-the new package becomes available for download in the Marketplace.
+2.  Select the app you wish to edit. 
+
+3.  Click the *Edit* button to edit that app. 
+
+4.  Click *Next* to advance past the details screen (make any necessary 
+    changes). The version edit screen appears. 
+
+5.  Click *Next* to advance past the version edit screen (you can't actually 
+    edit the version number of an already-approved version, but you can edit the
+    "What's New" information). The File Upload screen appears.
+
+    This screen should look familiar---it's the same workflow used when you
+    initially created your app! The difference is that you can't edit
+    pre-approved files for specific Liferay releases. You can only add *new*
+    files for a different Liferay release (if you must update existing files,
+    you must create a new version of the app---see the later section on adding
+    versions for details on how to do this).
+
+6.  Upload your new files (ensuring that your new plugins have updated 
+    compatibility information: see the
+    [Marketplace App Metadata Guidelines](/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app)
+    for details on versions). 
+
+7.  Click *Next*, and observe the newly-added files listed at the bottom of the 
+    preview screen.
+
+8.  Click *Submit for Review* to submit your requested change (adding files). 
+
+Liferay reviews the files, and once approved, the new package becomes available
+for download in the Marketplace.
 
 ## Releasing a New Version of your App [](id=releasing-a-new-version-of-your-app)
 
@@ -90,27 +123,44 @@ generally encouraged to use the latest version. In addition, when a new version
 of your app becomes available, Marketplace notifies existing users. 
 
 New versions of your apps are created in a similar fashion to creating new apps.
-To add a new version, navigate to *Account Home* &rarr; *Apps* and select the
-app you wish to edit. Click the *Edit* button to edit that app. The Details
-screen appears. At the bottom of the Details screen, click the *Add New Version*
-button. This button begins the process of adding a new version, starting with
-the App Details screen. In this case, data from the current version of the app
-pre-populates the screen. 
 
-You can modify the screen's pre-populated data. Since this is a new version of
-an existing app, making major changes (such as completely changing the name or
-description) might unsettle existing users. Uploading new screenshots and
-refreshing app icons is common. Note that you cannot change the app owner (such
-as moving from a personally-developed app to a company-developed app).
+1.  Navigate to *Account Home* &rarr; *Apps*. A listing of your published apps 
+    appears. 
 
-Clicking *Next* takes you through the same screens you've already seen. On the
-*Add App Version* screen, you can specify a new version name for this version of
-your app. Also, note that when adding new versions to an existing app, you can
-add *What's New* text. This typically lists changes for this version, such as
-significant new features or bug fix information. Clicking *Next* from here lets
-you upload the files associated with the new version of the app. For a new
-version of the app, you must upload all files for all supported Liferay versions
-again, even if they have not changed since the last version.
+2.  Select the app you wish to edit. 
+
+3.  Click the *Edit* button to edit that app. The Details screen appears.
+
+4.  At the bottom of the Details screen, click the *Add New Version* button. The
+    process of adding a new version begins, starting with the App Details
+    screen. Data from the current version of the app pre-populates the screen. 
+
+    You can modify the screen's pre-populated data. Since this is a new version
+    of an existing app, making major changes (such as completely changing the
+    name or description) might unsettle existing users. Uploading new
+    screenshots and refreshing app icons is common. Note that you cannot change
+    the app owner (such as moving from a personally-developed app to a
+    company-developed app).
+
+5.  Click *Next* until you get to the *Add App Version* screen. 
+
+6.  Specify a new version name for this version of your app.
+
+7.  Add *What's New* text (optional). Common changes to mention are new features
+    and bug fix information. 
+
+8.  Click *Next*. The file upload screen appears. 
+
+9.  Upload the files associated with the new version of the app. You must upload
+    all files for all supported Liferay versions again, even if they have not
+    changed since the last version of your app. 
+
+10. Continue clicking *Next* until you reach the final preview screen.
+    
+11. Click *Submit for Review* to submit the new version of your app for review.
+
+The Liferay Marketplace staff starts to review your app's new version and test
+it. 
 
 ## Deactivating Your App [](id=deactivating-your-app)
 
@@ -122,8 +172,14 @@ acquired, but they can't download any versions they've not already received. The
 app remains in your inventory, with all of its history, in case you choose to
 re-activate or reference it.
 
-To deactivate your app, navigate to *Account Home* &rarr; *Apps* and select the
-app you wish to deactivate. Click the *Deactivate* button.
+Here's how to deactivate your app:
+
+1.  Navigate to *Account Home* &rarr; *Apps*. A listing of your published apps 
+    appears. 
+
+2.  Select the app you wish to deactivate. 
+
+3.  Click the *Deactivate* button. 
 
 In this set of articles, we looked at how to create, publish, maintain, and
 track Liferay Marketplace apps. You can do this through the App Manager that's
