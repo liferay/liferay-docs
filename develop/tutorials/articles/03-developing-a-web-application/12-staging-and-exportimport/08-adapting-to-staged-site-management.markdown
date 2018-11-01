@@ -4,14 +4,14 @@
     <p>Enabling Staging and Export/Import<br>Step 8 of 8</p>
 </div>
 
-The current Guestbook app is designed to create a *Main* guestbook on startup to
-avoid having an empty display when adding it to a page. Although this is a
-convenient perk, it does not translate well to the staged vs. live Site
-paradigm. To follow best practice for production apps leveraging staging, all
-content should only be added manually through the staged site. This forces
-content to be reviewed without any system-generated surprises.
+The current Guestbook app creates a *Main* guestbook on startup to avoid having
+an empty display when adding it to a page. Although this is a convenient perk,
+it does not translate well to the staged vs. live Site paradigm. To follow best
+practice for production apps leveraging staging, all content should only be
+added manually through the staged Site. This forces content to be reviewed
+without any system-generated surprises.
 
-To ensure the auto-generated guestbook functionality is removed, and the
+To ensure the auto-generated guestbook functionality is removed and the
 Guestbook app is ready for staging, complete the following steps:
 
 1.  Add a new language key that can display when no guestbooks are available to
@@ -23,7 +23,7 @@ Guestbook app is ready for staging, complete the following steps:
 
 2.  Open the `src/main/resources/META-INF/resources/guestbookwebportlet/view.jsp`
     file. Add the following code below the `guestbookId` instantiation, within
-    the scriplet:
+    the scriptlet:
 
         if (guestbookId == 0) {
             %>
