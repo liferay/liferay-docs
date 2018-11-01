@@ -51,4 +51,4 @@ $$$
 Since there's no reason to search for Entries in the UI, only back-end work
 is necessary. 
 
-<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-0/understanding-search-and-indexing">Let's Go!<span class="icon-circle-arrow-right"></span></a>
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-1/registering-entries-with-the-search-framework">Let's Go!<span class="icon-circle-arrow-right"></span></a>
