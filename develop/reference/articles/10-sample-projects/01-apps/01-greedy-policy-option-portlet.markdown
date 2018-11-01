@@ -1,7 +1,5 @@
 # Greedy Policy Option Application [](id=greedy-policy-option-portlet)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Greedy Policy Option sample provides two portlets that can be added to a
 @product@ page: Greedy Portlet and Reluctant Portlet.
 

@@ -1,8 +1,8 @@
 # Setting up a Storefront [](id=setting-up-a-storefront)
 
 Once the catalog is populated, you need a way to display its contents to buyers,
-along with an interface for placing orders. If you choose not to use a Site
-Initializer such as Breccia, you must set this up manually. 
+along with an interface for placing orders. If you choose not to use an Accelerator 
+such as Breccia, you must set this up manually. 
 
 Here are the components you need:
 

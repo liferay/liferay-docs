@@ -1,10 +1,5 @@
 # Angular 6 npm Portlet [](id=angular-6-npm-portlet)
 
-**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
-CE GA7+.
-
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Angular 6 npm Portlet sample provides a portlet that uses the
 [Angular](https://angular.io/) framework (version 6) to render its output.
 

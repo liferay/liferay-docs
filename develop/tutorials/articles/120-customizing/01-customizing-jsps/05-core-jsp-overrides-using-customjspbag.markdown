@@ -22,105 +22,161 @@ $$$
 
 A Custom JSP Bag module must satisfy these criteria: 
 
--   Includes a class that implements the
-    [`CustomJspBag` interface](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html).
+-   Provides and specifies a custom JSP for the JSP you're extending.
 
--   Registers the service in the OSGi runtime.
-
--   Provides the JSP you're extending.
+-   Includes a
+    [`CustomJspBag`](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html)
+    implementation for serving the custom JSPs.
 
 The module provides transportation for this code into Liferay's OSGi runtime.
-When configuring it to build a proper JAR, map the path of the JSPs in the JAR
-to their path in your module. In a `bnd.bnd` file you could specify 
+After you
+[create your new module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module),
+continue with providing your custom JSP. 
 
-    -includeresource: META-INF/jsps=src/META-INF/custom_jsps
+## Providing a Custom JSP [](id=providing-a-custom-jsp)
 
-If you're using the Maven [Standard Directory Layout](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html)
-and placing your JSPs under `src/main/resources`, you can ignore the
-`-includeresource` directive.
-
-Any core JSPs you're customizing should be put into this folder, and the rest of
-the path and name must match exactly the path and name of the JSP that's nested
-underneath `portal-web/docroot/html`. For example, if you're overriding
+Create your JSPs to override @product@ core JSPs. If you're using the Maven
+[Standard Directory Layout](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html),
+place your JSPs under `src/main/resources/META-INF/jsps`. For example, if you're
+overriding
 
     portal-web/docroot/html/common/themes/bottom-ext.jsp 
 
-and you used the `includeresource` directive above, put the overridden JSP in
-this folder of your module:
+place your custom JSP at
 
-    my-module/src/META-INF/custom_jsps/html/common/themes/bottom-ext.jsp
+    [your module]/src/main/resources/META-INF/jsps/html/common/themes/bottom-ext.jsp
+
++$$$
+
+**Note:** If you place custom JSPs somewhere other than 
+`src/main/resources/META-INF/jsps` in your module, assign that location to a
+`-includeresource: META-INF/jsps=` directive in your module's `bnd.bnd` file.
+For example, if you place custom JSPs in a folder `src/META-INF/custom_jsps` in
+your module, specify this in your `bnd.bnd`:
+
+    -includeresource: META-INF/jsps=src/META-INF/custom_jsps
+
+$$$
 
 ## Implement a Custom JSP Bag [](id=implement-a-custom-jsp-bag)
 
-Create a class that implements `CustomJspBag`. The goal is to make sure that
-Liferay (specifically the
+@product@ (specifically the
 [`CustomJspBagRegistryUtil` class](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBagRegistryUtil.html))
-loads the JSPs from your module upon activation.
+loads JSPs from
+[`CustomJspBag`](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html)
+services. The
+[Core Override JSP sample project](/develop/reference/-/knowledge_base/7-1/core-jsp-hook)
+provides a working custom JSP bag implementation. The following steps for
+implementing a custom JSP bag refer to that sample class code. 
 
-    public class MyCustomJspBag implements CustomJspBag {
+1.  In your module, create a class that implements   
+    [`CustomJspBag`](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html).
 
-When the Component is activated, you must add the URL path for all your custom
-core JSPs (by directory path) to a `List`.
+2.  Register your class as an OSGi service by adding an `@Component` annotation
+    to it, like this: 
 
-        @Activate
-        protected void activate(BundleContext bundleContext) {
-            bundle = bundleContext.getBundle();
-
-            _customJsps = new ArrayList<>();
-
-            Enumeration<URL> entries = bundle.findEntries(
-                getCustomJspDir(), "*.jsp", true);
-
-            while (entries.hasMoreElements()) {
-                URL url = entries.nextElement();
-
-                _customJsps.add(url.getPath());
+        @Component(
+            immediate = true,
+            property = {
+            	"context.id=BladeCustomJspBag",
+                "context.name=Test Custom JSP Bag",
+            	"service.ranking:Integer=100"
             }
+        )
+
+    - **`immediate = true`:** Makes the service available on module activation. 
+    -  **`context.id`:** Your custom JSP bag class name. Replace 
+    `BladeCustomJspBag` with your class name.
+    -  **`context.name`:** A more human readable name for your service. Replace 
+    it with a name of your own. 
+    -  **`service.ranking:Integer`:** A priority for your implementation. The
+    container chooses the implementation with the highest priority.
+
+3.  Implement the `getCustomJspDir` method to return the folder path in your 
+    module's JAR  where the JSPs reside (for example, `META-INF/jsps`). 
+    
+        @Override
+        public String getCustomJspDir() {
+            return "META-INF/jsps/";
         }
 
-        ...
+4.  Create an `activate` method and the following fields. The method adds the 
+    URL paths of all your custom JSPs to a list when the module is activated.
 
-        private List<String> _customJsps;
+        @Activate
+    	protected void activate(BundleContext bundleContext) {
+    		_bundle = bundleContext.getBundle();
 
-        private Bundle bundle;
+    		_customJsps = new ArrayList<>();
 
-In the custom JSP bag you must override the following methods:
+    		Enumeration<URL> entries = _bundle.findEntries(
+    			getCustomJspDir(), "*.jsp", true);
 
--  **`getCustomJspDir`:** Return the directory path in your
-module's JAR where the JSPs are placed (for example, `META-INF/jsps`).
+    		while (entries.hasMoreElements()) {
+    			URL url = entries.nextElement();
 
--  **`getCustomJsps`:** Return a List of the custom JSP URL paths.
+    			_customJsps.add(url.getPath());
+    		}
+    	}
 
--  **`getURLContainer`:** Return a new
-   `com.liferay.portal.kernel.url.URLContainer`. Instantiate the URL container
-   and override its `getResources` and `getResource` methods. The `getResources`
-   method looks up all the paths to resources in the container by a given path.
-   It returns a `HashSet` of `Strings` for the matching custom JSP paths. The
-   `getResource` method returns one specific resource by its name (the path
-   included).
+    	private Bundle _bundle;
+    	private List<String> _customJsps;
 
--  **`isCustomJspGlobal`:** Return `true`.
+5.  Implement the `getCustomJsps` method to return the list of this module's 
+    custom JSP URL paths.
 
-For an example of a full class that provides a working implementation of a
-custom JSP bag, refer to the
+        @Override
+        public List<String> getCustomJsps() {
+            return _customJsps;
+        }
+
+6.  Implement the `getURLContainer` method to return a new
+    `com.liferay.portal.kernel.url.URLContainer`. Instantiate the URL container
+    and override its `getResources` and `getResource` methods. The
+    `getResources` method looks up all the paths to resources in the container
+    by a given path. It returns a `HashSet` of `Strings` for the matching custom
+    JSP paths. The `getResource` method returns one specific resource by its
+    name (the path included). The sample's `BladeCustomJspBag` class implements
+    `getURLContainer` like this: 
+
+        @Override
+        public URLContainer getURLContainer() {
+            return _urlContainer;
+        }
+
+        private final URLContainer _urlContainer = new URLContainer() {
+
+            @Override
+            public URL getResource(String name) {
+                return _bundle.getEntry(name);
+            }
+
+            @Override
+            public Set<String> getResources(String path) {
+                Set<String> paths = new HashSet<>();
+
+                for (String entry : _customJsps) {
+                    if (entry.startsWith(path)) {
+                       paths.add(entry);
+                    }
+                }
+
+                return paths;
+            }
+
+        };
+
+7.  Implement the `isCustomJspGlobal` method to return `true`.
+
+        @Override
+        public boolean isCustomJspGlobal() {
+            return true;
+        }
+
+Now your module provides custom JSPs and a custom JSP bag implementation. When
+you deploy it, @product@ uses its custom JSPs in place of the core JSPs they
+override. For a working example, examine the
 [Core Override JSP sample project](/develop/reference/-/knowledge_base/7-1/core-jsp-hook).
-
-## Register the Custom JSP Bag [](id=register-the-custom-jsp-bag)
-
-Register the custom JSP bag implementation from your module in the OSGi runtime
-with three properties:
-
--  **`context.id`:** Specify your custom JSP bag class name. For example,
-   `MyCustomJspBag`.
-
--  **`contex.name`:** This should be a more human readable name, like `My Custom
-   JSP Bag`.
-
--  **`service.ranking:Integer`:** This determines the priority of your
-   implementation. If you specify `100` here, and one of your coworkers develops
-   a separate custom JSP bag implementation and gives theirs a ranking of `101`,
-   you're out of luck. Theirs will take precedence. Logically then, you should
-   use `102`.
 
 ## Extend a JSP [](id=extend-a-jsp)
 
@@ -172,5 +228,7 @@ another story. See the documentation on [using Dynamic Include](/develop/tutoria
 -->
 
 ## Related Topics [](id=related-topics)
+
+[Core Override JSP sample project](/develop/reference/-/knowledge_base/7-1/core-jsp-hook)
 
 [Upgrading Core JSP Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-core-jsp-hooks)

@@ -28,20 +28,17 @@ On the General tab are the following options:
 title box is displayed on widget's decorator. The title is localizable, so you
 can provide translations of the title for different languages.
 
-**Link Portlet URLs to Page** configures all URLs inside the widget (including
-pagination URLs) to link to the context of the selected page. The current page
-is the default. This is an elegant way to show web content articles' full view
-from the Asset Publisher. If you use the View in a Specific Portlet feature or
-web content articles' Display Page attribute, you must be careful since it
-redirects all links and not just links to assets. See the 
-[Configuring Display Settings](/discover/portal/-/knowledge_base/7-1/configuring-display-settings)
-article for more details.
-
 **Application Decorators** gives you the choice between three decorators: 
 *Barebone*, *Borderless*, and *Decorate*. The Decorate application decorator is
 the default. Be careful about turning widget borders off; some themes assume
 widget borders are turned on and may not display correctly with them turned
 off.
+
++$$$
+
+**Note:** The *Link Portlet URLs to Page* option has been deprecated in @product-ver@. It can be enabled through system settings in *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Widget Tools* &rarr; Look and Feel Configuration*.
+
+$$$
 
 ![Figure 1: The General tab of the Look and Feel Configuration menu allows you to define a custom widget title, link widget URLs to a specific page, and select the widget contrast option using decorators.](../../../images/look-and-feel-portlet-configuration-menu.png)
 

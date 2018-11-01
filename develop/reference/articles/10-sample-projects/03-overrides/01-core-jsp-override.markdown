@@ -1,7 +1,5 @@
 # Core JSP Override [](id=core-jsp-hook)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Core JSP Override sample lets you override core/kernel JSPs by adding them
 to the module's `META-INF/jsps` folder. This module overrides the @product@'s
 `bottom.jsp` file by inserting the `bottom-ext.jsp` file in the

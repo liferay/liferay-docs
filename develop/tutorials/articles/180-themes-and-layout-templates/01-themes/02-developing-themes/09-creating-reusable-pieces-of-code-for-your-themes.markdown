@@ -5,9 +5,9 @@ require multiple components, a themelet only requires the files you wish to
 extend. This creates a more modular approach to theme design that lends itself
 well to collaboration and reduces the need for duplicated code in your theme.
 
-Themelets let developers easily share code snippets across their themes and with 
-other developers. A themelet can consist of CSS, JavaScript, and templates, just 
-like a theme.
+Themelets let developers easily share code snippets across their themes with 
+other developers. A themelet can consist of CSS and JavaScript. Themelets 
+**do not support** theme templates. 
 
 Themelets are very flexible, and therefore they have a number of possible uses.
 You can make a themelet to modify the appearance of the admin tools, or a 
@@ -19,7 +19,7 @@ simply alters the animation for the Product Menu.
 ![Figure 1: Themelets can be used to modify one aspect of the UI, that you can then reuse in your other themes.](../../../../images/product-menu-animation-themelet.png)
 
 If there is something you have to manually code for every theme you create, it's 
-a good candidate for a themelet.
+a good candidate for a themelet. 
 
 This tutorial demonstrates how to:
 
@@ -43,21 +43,20 @@ Follow these steps to create a themelet:
     themelet.
 
     ![Figure 2: The Themelet sub-generator automates the themelet creation process, making it quick and easy.](../../../../images/themelet-prompt.png)
-   
-    The generated themelet contains a `package.json` file with configuration 
-    information and a `src/css` folder that contains a `_custom.scss` file. Just 
-    like a theme, all of your updated files go into the `src` folder. 
 
-3.  To use your themelet, you must install it globally first. This makes the 
+3.  The generated themelet contains a `package.json` file with configuration 
+    information and a `src/css` folder that contains a `_custom.scss` file. Just 
+    like a theme, add your CSS changes to the `src/css` folder, and add your 
+    JavaScript changes to the `src/js` folder.
+
+4.  To use your themelet, you must install it globally first. This makes the 
     themelet visible to the generator. To install your themelet globally, 
     navigate into its root folder and run `npm link`. Note, you may need to run 
     the command using `sudo npm link`. This creates a globally-installed 
     symbolic link for the themelet in your npm packages folder. Now your 
     themelet is available to install in your themes. 
-    
-That's all you need to do to prepare your themelet to use in theme development.
-Now you can develop your theme, making sure to add the files/folders to the 
-`src` folder of the themelet. 
+
+Now that your themelet is developed, you can install it in your theme. 
 
 ## Installing a Themelet [](id=installing-a-themelet)
 
