@@ -67,7 +67,7 @@ as a provided module, it would look like this:
 
 This both provides the third party dependency to the resolver, and it downloads
 and includes it in your @product@ bundle's `osgi/modules` folder when you
-initialize it (e.g., `gradlew initBundle`).
+initialize it (e.g., `blade server init`).
 
 ### Skip the Resolving Process for Your Module [](id=skip-the-resolving-process-for-your-module)
 
