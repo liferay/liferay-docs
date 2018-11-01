@@ -37,7 +37,7 @@ Liferay DXP 7.0:
     [Liferay Connector for OAuth 1.0a](https://web.liferay.com/marketplace/-/mp/application/45261909).
 
 2.  [Register](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/oauth)
-    Analytics Cloud as an OAuth application. 
+    Analytics Cloud as an OAuth application with the *Write* access level. 
 
 3.  Copy the *Consumer ID* and *Consumer Secret* for connecting DXP with 
     Analytics Cloud, as described in the next section. 
