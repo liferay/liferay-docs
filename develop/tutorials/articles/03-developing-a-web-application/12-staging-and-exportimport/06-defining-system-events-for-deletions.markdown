@@ -7,19 +7,20 @@
 The Staging framework tracks entity modifications in a few different ways.
 Actions like *adding* a guestbook or *editing* an entry are tracked
 automatically by the framework with the configuration of staged models and their
-data handlers. Tracking entity deletions are done slightly different with
-system events.
+data handlers. Entity deletions are handled slightly differently using system
+events.
 
 For the Guestbook app, you must define system events for entity deletions so
 they're appropriately tracked by the Staging framework. If Staging can't track
-your entity deletions, they can't be managed on the staged site; this means you
-can only delete entities from the live site.
+your entity deletions, they can't be managed on the staged Site, which means you
+can only delete entities from the live Site.
 
 You must define your system events in your local services.
 
 1.  Open the `guestbook-service` module's
     `com.liferay.docs.guestbook.service.impl.GuestbookLocalServiceImpl` class
-    and add the following `deleteGuestbook` methods:
+    and add the following `deleteGuestbook` methods. These override the default
+    Service Builder generated methods the application has been using:
 
         @Indexable(type = IndexableType.DELETE)
         @Override
@@ -49,7 +50,7 @@ You must define your system events in your local services.
     The `deleteGuestbook(long)` method is rerouted to call the `SystemEvent`
     tracked method, so all deletions are accounted for.
 
-2.  Ensure that the other remaining `deleteGuestbook` method triggers the system
+2.  Ensure that the remaining `deleteGuestbook` method triggers the system
     event. Within the `deleteGuestbook(long, ServiceContext)` method, change
 
         guestbook = deleteGuestbook(guestbook);
@@ -88,7 +89,7 @@ You must define your system events in your local services.
     This is the same logic as before, except the delete system event is now
     applied for the entry.
 
-5.  Make sure the other remaining `deleteEntry` method triggers the system
+5.  Make sure the remaining `deleteEntry` method triggers the system
     event. Within the `deleteEntry(long, ServiceContext)` method, change
 
         entry = deleteEntry(entryId);
@@ -103,7 +104,7 @@ You must define your system events in your local services.
     (*[CTRL]+[SHIFT]+O*) and then save the file.
 
 7.  Run Service Builder by navigating to the Gradle Tasks pane on the right side
-    of IDE and selecting your project's *build* &rarr; *buildService* task.
+    of @ide@ and selecting your project's *build* &rarr; *buildService* task.
 
 Your Guestbook app's deletions are now properly tracked by the Staging
 framework.
