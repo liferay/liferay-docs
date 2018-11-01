@@ -1,9 +1,10 @@
 # Creating New Tax Methods
 
 Out of the box, @commerce@ offers two methods for calculating
-[taxes](/web/emporio/documentation/-/knowledge_base/1-0/taxes). Since these
-options may not meet every user's needs, @commerce@ exposes an exension point,
-`CommerceTaxEngine`, to make it easy to use a custom tax solution.
+[taxes](/web/emporio/documentation/-/knowledge_base/1-0/taxes).
+Since these options may not meet every user's needs, @commerce@ exposes an
+extension point, `CommerceTaxEngine`, to make it easy to use a custom tax
+solution.
 
 This tutorial describes how to implement a custom tax calculation that
 administrators can activate from *Commerce* &rarr; *Settings* &rarr; *Taxes*.
@@ -90,8 +91,8 @@ the purchase price.
 The above example calls `CommerceTaxCalculateRequest`'s `getPrice` method to
 retrieve the value of the `_price` variable, calculates 10%, and assigns the
 result to the `taxValue` variable. It then returns a `CommerceTaxValue` object,
-passing `taxValue` as one of its parameters. This particular method requires the
-constant `_ONE_HUNDRED`, which is declared outside the method:
+passing in `taxValue` as one of its parameters. This particular method requires
+the constant `_ONE_HUNDRED`, which is declared outside the method:
 
         private static final BigDecimal _ONE_HUNDRED = BigDecimal.valueOf(100);
     }
