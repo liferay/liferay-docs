@@ -1,0 +1,64 @@
+{namespace DDMTime}
+
+/**
+ * Defines the delegated template for the time field.
+ */
+{deltemplate ddm.field variant="'time'"}
+	{call .render data="all" /}
+{/deltemplate}
+
+/**
+ * Prints the time field.
+ */
+{template .render}
+	{@param name: string}
+	{@param pathThemeImages: string}
+	{@param value: ?}
+	{@param visible: bool}
+	{@param? placeholder: string}
+	{@param? dir: string}
+	{@param? label: string}
+	{@param? predefinedValue: string}
+	{@param? readOnly: bool}
+	{@param? required: bool}
+	{@param? showLabel: bool}
+	{@param? tip: string}
+
+	{let $displayValue: $value ? $value : $predefinedValue ? $predefinedValue : '' /}
+
+	<div class="form-group {$visible ? '' : 'hide'} liferay-ddm-form-field-time"
+		data-fieldname="{$name}">
+		{if $showLabel or $required}
+			<label for="{$name}">
+				{if $showLabel}
+					{$label}{sp}
+				{/if}
+
+				{if $required}
+					<svg aria-hidden="true" class="lexicon-icon lexicon-icon-asterisk reference-mark">
+						<use xlink:href="{$pathThemeImages}/lexicon/icons.svg#asterisk" />
+					</svg>
+				{/if}
+			</label>
+		{/if}
+
+		{if $showLabel}
+			{if $tip}
+				<span class="form-text">{$tip}</span>
+			{/if}
+		{/if}
+
+		<div class="input-group">
+			<div class="input-group-item">
+				<input class="field form-control"
+					{if $dir}dir="{$dir}"{/if}
+					{if $readOnly}disabled{/if}
+					id="{$name}"
+					name="{$name}"
+					placeholder="{$placeholder}"
+					type="text"
+					value="{$displayValue}">
+			</div>
+		</div>
+	</div>
+{/template}

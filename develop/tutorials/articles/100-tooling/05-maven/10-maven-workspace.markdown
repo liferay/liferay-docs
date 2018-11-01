@@ -94,10 +94,14 @@ instructions on how to update the plugin.
 Once you've finalized your workspace properties, navigate to your workspace's
 root folder and run
 
-    mvn bundle-support:init
+    blade server init
 
-This command downloads the version of @product@ you specified in your POM file
-and installs your @product@ instance in the `bundles` folder.
+This uses workspace's pre-bundled
+[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) tool to download
+the version of @product@ you specified in your POM file and installs your
+@product@ instance in the `bundles` folder. If you prefer to not use Blade CLI
+or do not have it installed, the pure Maven equivalent for this command is `mvn
+bundle-support:init`.
 
 If you run into errors during the bundle downloading process, check to make sure
 your workspace is accounting for the
@@ -178,7 +182,7 @@ must update the Bundle Support plugin configured in your workspace's root
     <plugin>
         <groupId>com.liferay</groupId>
         <artifactId>com.liferay.portal.tools.bundle.support</artifactId>
-        <version>3.2.1</version>
+        <version>3.2.5</version>
         ...
     </plugin>
 
