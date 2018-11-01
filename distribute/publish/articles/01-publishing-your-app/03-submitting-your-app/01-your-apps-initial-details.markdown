@@ -75,12 +75,12 @@ do so here.
 
 **Labs:** You can denote an app as experimental by checking the appropriate box.
 
-**Security:** If your app is for Liferay 7.x or does *not* use Liferay's PACL 
-Security Manager, check the appropriate box. Otherwise, make sure to enable the
-security manager in your app by including the setting
-`security-manager-enabled=true` in the
+**Security:** If your app is only for Liferay 7.0 or later, or does not contain 
+WAR-style plugins, or does *not* use Liferay's PACL Security Manager, check the
+appropriate box. Otherwise, enable the security manager in your app by including
+the setting `security-manager-enabled=true` in the
 [`liferay-plugin-package.properties`](http://docs.liferay.com/portal/6.2/propertiesdoc/liferay-plugin-package_6_2_0.properties.html)
-file in your WAR files. 
+file in your plugin WAR files. 
 
 **Tags:** A set of descriptive words that categorize your app. These tags are
 free-form and can help potential purchasers find your app through keyword
