@@ -1,4 +1,4 @@
-# Generating Results Summaries
+# Generating Results Summaries [](id=generating-results-summaries)
 
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Guestbooks<br>Step 5 of 6</p>

@@ -1,4 +1,4 @@
-# Enabling Search and Indexing for Entries
+# Enabling Search and Indexing for Entries [](id=enabling-search-and-indexing-for-entries)
 
 In this section, create the classes that control these aspects of the search
 functionality:

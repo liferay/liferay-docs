@@ -1,4 +1,4 @@
-# Querying for Guestbook Documents
+# Querying for Guestbook Documents [](id=querying-for-guestbook-documents)
 
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Guestbooks<br>Step 4 of 6</p>
@@ -14,7 +14,7 @@ Implement two interfaces:
 2.  `ModelPreFilterContributor` controls how search results are filtered before
     they're returned from the search engine.
 
-## Implementing `KeywordQueryContributor`
+## Implementing `KeywordQueryContributor` [](id=implementing-keywordquerycontributor)
 
 Create `GuestbookKeywordQueryContributor` and populate it with these
 contents:
@@ -49,7 +49,7 @@ ongoing search query. Use the query helper to add search terms. Adding the
 localized search term is important. Since the localized Guestbook title was
 indexed, you must retrieve the localized value from the search engine.
 
-## Implementing `ModelPreFilterContributor`
+## Implementing `ModelPreFilterContributor` [](id=implementing-modelprefiltercontributor)
 
 Create `GuestbookModelPreFilterContributor` and populate it with these contents:
 

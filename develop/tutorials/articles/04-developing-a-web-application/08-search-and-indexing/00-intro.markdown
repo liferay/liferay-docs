@@ -1,4 +1,4 @@
-# Search and Indexing
+# Search and Indexing [](id=search-and-indexing)
 
 The Guestbook and Guestbook Admin portlets are up and running. The Guestbook
 portlet lets users add, edit, delete, and configure permissions for Guestbook

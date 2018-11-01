@@ -1,4 +1,4 @@
-# Indexing Entries
+# Indexing Entries [](id=indexing-entries)
 
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Entries<br>Step 2 of 5</p>
@@ -19,7 +19,7 @@ create these classes in the new search package:
     `EntryBatchReindexerImpl`. These classes contain code to ensure that
     Entries are reindexed when their Guestbook is updated.
 
-## Implementing `ModelDocumentContributor`
+## Implementing `ModelDocumentContributor` [](id=implementing-modeldocumentcontributor)
 
 Create `EntryModelDocumentContributor` and populate it with these contents:
 
@@ -82,7 +82,7 @@ the field gets passed to the search engine and goes through the right analysis
 and
 [tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/analysis-tokenizers.html). 
 
-## Implementing `ModelIndexerWriterContributor`
+## Implementing `ModelIndexerWriterContributor` [](id=implementing-modelindexerwritercontributor)
 
 Create `EntryModelIndexerWriterContributor` and populate it with these
 contents:
@@ -132,7 +132,7 @@ contents:
 The interesting work is done in the `customize` method, where all Entries are
 retrieved and added to a collection. 
 
-## Implementing `EntryBatchReindexer`
+## Implementing `EntryBatchReindexer` [](id=implementing-entrybatchreindexer)
 
 Create a new interface class, `EntryBatchReindexer`, with one method called
 `reindex`:

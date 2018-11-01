@@ -1,4 +1,4 @@
-# Querying for Entry Documents
+# Querying for Entry Documents [](id=querying-for-entry-documents)
 
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Entries<br>Step 3 of 5</p>
@@ -15,7 +15,7 @@ search query.
 2.  `EntryModelPreFilterContributor` controls how search results are filtered
 before they're returned from the search engine.
 
-## Implementing `KeywordQueryContributor`
+## Implementing `KeywordQueryContributor` [](id=implementing-keywordquerycontributor)
 
 Create `EntryKeywordQueryContributor` and populate it with these
 contents:
@@ -51,7 +51,7 @@ contents:
 Adding the localized search terms is important. For all localized Entry fields
 in the index, retrieve the localized value from the search engine.
 
-## Implementing `ModelPreFilterContributor`
+## Implementing `ModelPreFilterContributor` [](id=implementing-modelprefiltercontributor)
 
 Create `EntryKeywordQueryContributor` and populate it with these
 contents:

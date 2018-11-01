@@ -1,4 +1,4 @@
-# Registering Entries with the Search Framework
+# Registering Entries with the Search Framework [](id=registering-entries-with-the-search-framework)
 
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Entries<br>Step 1 of 5</p>

@@ -1,4 +1,4 @@
-# Registering Guestbooks with the Search Framework
+# Registering Guestbooks with the Search Framework [](id=registering-guestbooks-with-the-search-framework)
 
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Guestbooks<br>Step 2 of 6</p>
