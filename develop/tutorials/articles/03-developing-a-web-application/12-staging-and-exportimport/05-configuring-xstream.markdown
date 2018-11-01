@@ -5,9 +5,10 @@
 </div>
 
 Configuring [XStream](http://x-stream.github.io/index.html) for your Guestbook
-app provides an easy way to serialize entities to XML and back again. This can
-be used to enhance the Guestbook's Staging implementation; however, it's not
-required. There are three ways to leverage Liferay's offering of XStream via the
+app provides an easy way to customize how entities are serialized to XML and
+back again. You can use it to enhance the Guestbook's Staging implementation;
+however, it's not required. There are three ways to leverage Liferay's offering
+of XStream via the
 [XStreamConfigurator](@app-ref@/foundation/latest/javadocs/com/liferay/xstream/configurator/XStreamConfigurator.html):
 
 - *Allowed Types:* whitelists entities so everything is forbidden except a
@@ -21,10 +22,17 @@ required. There are three ways to leverage Liferay's offering of XStream via the
   used to protect sensitive data; when serialized this way, sensitive data
   cannot be extracted from the generated LAR.
 
-In the Guestbook, you'll leverage XStream by creating an alias, which modifies
-the LAR file produced by your app during the staging and export processes.
+Since Allowed Types don't make sense in this context (there are no additional
+entities to allow), you don't need them for Guestbook. Converters let you
+re-write the serialization process from scratch---for example, to add
+encryption. This is a tutorial on Staging, not serialization, so the default
+serialization implementation is fine. That leaves aliases. 
 
-For example, by default your generated LAR is structured like this:
+In the Guestbook, you'll leverage XStream by creating an alias that modifies the
+XML in the LAR file produced by your app during the staging and export
+processes.
+
+For example, by default your generated data has this structure:
 
     <com.liferay.docs.guestbook.model.impl.GuestBookImpl>
         <field1>...</field1>
