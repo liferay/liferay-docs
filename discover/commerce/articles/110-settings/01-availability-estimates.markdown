@@ -22,6 +22,6 @@ Follow these steps to create an availability estimate:
 To apply an availability estimate to a product, go to the product's
 *Configuration* tab and make a selection from the *Availability Estimate*
 drop-down. See
-[Configuration](/web/emporio/documentation/-/knowledge_base/1_0/configuration#inventory)
+[Configuration](/web/commerce/documentation/-/knowledge_base/1_0/configuration#inventory)
 for more information. The estimate is displayed automatically whenever the
 product is out of stock.

@@ -59,7 +59,7 @@ Follow these steps:
 
 You can display product relations on a product display page by configuring
 a product publisher widget. You must have a 
-[product display page](web/emporio/documentation/-/knowledge_base/1-0/displaying-product-pages)
+[product display page](web/commerce/documentation/-/knowledge_base/1-0/displaying-product-pages)
 in place first.
 
 Follow these steps:

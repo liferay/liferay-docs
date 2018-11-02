@@ -1,7 +1,7 @@
 # Catalog Rules [](id=catalog-rules)
 
 Catalog Rules manage the catalog's visibility. They work with 
-[user segments](/web/emporio/documentation/-/knowledge_base/1-0/user-segmentation)
+[user segments](/web/commerce/documentation/-/knowledge_base/1-0/user-segmentation)
 to restrict specified buyers so they can only see a limited portion of the
 catalog. This can help focus the attention of customers only authorized
 to purchase products associated with a particular support plan, or who want the
