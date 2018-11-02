@@ -177,23 +177,24 @@ First, you'll create a staged model data handler for guestbook entries.
 8.  When importing a LAR (i.e., publishing to the live Site), the import process
     expects all of an entity's references to be available and validates their
     existence.
-    
+
     For example, if you republish an updated guestbook to the live Site and did
     not include some of its existing entries in the publication, these entries
     are considered missing references. A more practical example of this would be
     an image included in a web content article. If the image included in the web
-    content lives on a different site (i.e., the image is contained in a
+    content lives on a different Site (i.e., the image is contained in a
     different group) or was not included in the publication process, it's
     considered a missing reference of the web content article.
-    
-    Since you're dealing with references on two separate sites that have
+
+    Since you're dealing with references on two separate Sites that have
     differing IDs, the system can't easily match them during publication.
     Consider this scenario for the Guestbook app; suppose you export a guestbook
     entry as a missing reference with a primary key (ID) of `1`. When importing
     that information, the LAR only provides the ID but not the entry itself.
     Therefore, during the import process, the Data Handler framework searches
-    for the entry to replace, but the entry to replace has a different ID of
-    `2`. You must provide a way to handle these missing references.
+    for the entry to replace by its UUID, but the entry to replace has
+    a different ID (primary key) of `2`. You must provide a way to handle these
+    missing references.
 
     To do this, you must add a method that maps the missing reference's primary
     key from the export to the existing primary key during import. Since the

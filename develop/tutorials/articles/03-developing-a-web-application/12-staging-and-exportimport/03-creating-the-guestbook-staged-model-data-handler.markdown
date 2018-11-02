@@ -5,7 +5,7 @@
 </div>
 
 The guestbook's staged model data handler is similar to the entry's data
-handler. Refer to the previous article for any in-depth code analysis.
+handler. Refer to the previous article for how this works.
 
 1.  In the `guestbook-service` module's
     `com.liferay.docs.guestbook.exportimport.data.handler` package, create the
