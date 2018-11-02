@@ -158,7 +158,13 @@ public class GuestbookPortlet extends MVCPortlet {
             List<Guestbook> guestbooks = _guestbookService.getGuestbooks(
                 groupId);
 
-            if (guestbookId == 0 && guestbooks.size() > 0) {
+            if (guestbooks.isEmpty()) {
+                Guestbook guestbook = _guestbookService.addGuestbook(	
+                    serviceContext.getUserId(), "Main", serviceContext);	
+                 guestbookId = guestbook.getGuestbookId();	
+            }
+
+            if (guestbookId == 0) {
                 guestbookId = guestbooks.get(0).getGuestbookId();
             }
 

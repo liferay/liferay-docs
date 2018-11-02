@@ -9,14 +9,6 @@
         long guestbookId = Long.valueOf((Long) renderRequest
                 .getAttribute("guestbookId"));
 
-        if (guestbookId == 0) {
-        	%>
-        		<div class="alert alert-info">
-					<liferay-ui:message key="there-are-no-guestbooks-available" />
-				</div>
-			<%
-			return;
-        }
         %>
         
         <liferay-portlet:renderURL varImpl="searchURL">

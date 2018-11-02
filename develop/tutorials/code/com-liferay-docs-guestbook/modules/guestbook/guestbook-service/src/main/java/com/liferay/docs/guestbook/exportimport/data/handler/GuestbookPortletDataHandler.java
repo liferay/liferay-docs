@@ -49,37 +49,6 @@ public class GuestbookPortletDataHandler extends BasePortletDataHandler {
 	}
 
 	@Override
-	protected PortletPreferences doDeleteData(
-		PortletDataContext portletDataContext, String portletId,
-		PortletPreferences portletPreferences)
-		throws Exception {
-
-		if (portletDataContext.addPrimaryKey(
-			GuestbookPortletDataHandler.class, "deleteData")) {
-
-			return portletPreferences;
-		}
-
-		List<Guestbook> guestbooks = _guestbookLocalService.getGuestbooks(
-			portletDataContext.getScopeGroupId());
-
-		for (Guestbook guestbook : guestbooks) {
-
-			List<Entry> entries = _entryLocalService.getEntries(
-				portletDataContext.getScopeGroupId(),
-				guestbook.getGuestbookId());
-
-			for (Entry entry : entries) {
-
-				_entryLocalService.deleteEntry(entry);
-			}
-			_guestbookLocalService.deleteGuestbook(guestbook.getGuestbookId());
-		}
-
-		return portletPreferences;
-	}
-
-	@Override
 	protected String doExportData(
 		final PortletDataContext portletDataContext, String portletId,
 		PortletPreferences portletPreferences)
