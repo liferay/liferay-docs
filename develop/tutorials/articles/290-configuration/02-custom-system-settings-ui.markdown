@@ -1,4 +1,4 @@
-# Customizing the System Settings User Interface
+# Customizing the System Settings User Interface [](id=customizing-the-system-settings-user-interface)
 
 @product@ applications use the Apache Felix Configuration Admin Service to
 provide application configuration. By specifying a single Configuration
@@ -7,7 +7,7 @@ has an auto-generated configuration user interface, available in Control Panel &
 Configuration &rarr; System Settings as soon as the configuration is registered.
 If this is new information for you, consider first reading the set of tutorials
 on 
-[Making Applications Configurable](/discover/deployment/-/knowledge_base/7-1/making-applications-configurable).
+[Making Applications Configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 This tutorial describes how to customize the System Settings entry's user
 interface in the following ways:
@@ -24,7 +24,7 @@ interface in the following ways:
     meant to be accessible to administrative Users (perhaps because it's too low
     level), you might want to exclude it from the System Settings UI.
 
-## Providing Custom Configuration Forms
+## Providing Custom Configuration Forms [](id=providing-custom-configuration-forms)
 
 This method relies on an existing Config Admin configuration class, as described
 [here](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable). 
@@ -105,7 +105,7 @@ The above example generates a custom rendering (HTML) for the form in the
 `render()` method and reads the information entered in the custom form in the
 `getRequestParameters()` method.
 
-## Creating a Completely Custom Configuration UI
+## Creating a Completely Custom Configuration UI [](id=creating-a-completely-custom-configuration-ui)
 
 In some cases, you want a completely custom UI for your configuration. For
 example: 
@@ -195,7 +195,7 @@ tutorial will provide a complete demonstration of the `ConfigurationScreen` and
 implementation and the JSP markup to enhance the configuration screen for an
 existing @product@ application.
 
-## Excluding a Configuration UI from System Settings
+## Excluding a Configuration UI from System Settings [](id=excluding-a-configuration-ui-from-system-settings)
 
 Providing a custom UI in System Settings is well and good, but what if you
 instead must exclude your configuration from the System Settings UI? For
