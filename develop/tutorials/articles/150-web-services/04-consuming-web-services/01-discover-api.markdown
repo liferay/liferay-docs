@@ -1,12 +1,5 @@
 # Get Started: Discover the API [](id=get-started-discover-the-api)
 
-+$$$
-
-**Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha for Liferay DXP 7.1 Fix Pack 3+. 
-
-$$$
-
 To begin consuming web services, you must first know where they are (e.g.,
 a service catalog), what operations you can invoke, and how to invoke them.
 Because hypermedia REST APIs leverage

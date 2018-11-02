@@ -1,18 +1,11 @@
 # Enabling Hypermedia REST APIs [](id=enabling-hypermedia-rest-apis)
 
-+$$$
-
-**Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha for Liferay DXP 7.1 Fix Pack 3+. 
-
-$$$
-
 Liferay's Hypermedia REST APIs are an implementation of 
 [Apio Architect](https://github.com/liferay/com-liferay-apio-architect), 
-which is pre-installed in Liferay DXP. Apio Architect is a server-side library 
+which is pre-installed @product@. Apio Architect is a server-side library 
 that facilitates the creation of Apio REST APIs. 
 
-To use Liferay's Hypermedia REST APIs, you must install them in your Liferay DXP 
+To use Liferay's Hypermedia REST APIs, you must install them in your @product@ 
 instance. Follow these steps to do so: 
 
 1.  Download the Hypermedia REST APIs ZIP file from the link you received via 

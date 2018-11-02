@@ -1,16 +1,17 @@
 # Consuming Web Services [](id=consuming-web-services)
 
-+$$$
-
-**Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha for Liferay DXP 7.1 Fix Pack 3+. 
-
-$$$
-
 Client apps can't work without web services to consume. Since @product@'s web
 services are implemented via hypermedia REST APIs, developers can discover and
 traverse the APIs using the hypermedia URLs that the server returns in response
 to one or more requests. 
+
++$$$
+
+**Note:** Hypermedia REST APIs are currently available in beta. To use them, you
+must download and install the Hypermedia REST APIs app from 
+[Liferay Marketplace](https://web.liferay.com/marketplace). 
+
+$$$
 
 This section of tutorials shows you how to discover and consume @product@'s web 
 services via hypermedia REST APIs. The following topics are covered:

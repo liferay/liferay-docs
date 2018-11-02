@@ -1,12 +1,5 @@
 # Making Authenticated Requests [](id=making-authenticated-requests)
 
-+$$$
-
-**Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha for Liferay DXP 7.1 Fix Pack 3+. 
-
-$$$
-
 When you make an unauthenticated request, you do so as a guest user and receive 
 only public information in the response. To make an authenticated request, you 
 must authenticate as a specific user. 

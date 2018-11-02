@@ -1,12 +1,5 @@
 # Foundations: JAX-RS, OSGi Whiteboard, and APIO [](id=foundations-jax-rs-osgi-whiteboard-and-apio)
 
-+$$$
-
-**Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha for Liferay DXP 7.1 Fix Pack 3+. 
-
-$$$
-
 Hypermedia REST APIs in @product@ are built on these technologies:
 
 -   JAX-RS

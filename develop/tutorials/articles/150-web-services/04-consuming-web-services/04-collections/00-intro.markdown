@@ -1,12 +1,5 @@
 # Working with Collections of Data [](id=working-with-collections-of-data)
 
-+$$$
-
-**Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha for Liferay DXP 7.1 Fix Pack 3+. 
-
-$$$
-
 Collection resources are common in @product@ web APIs. If you followed along 
 with the previous examples that sent requests to the portal's `organization` 
 resource URL, you've already seen collections in action: the `organization`

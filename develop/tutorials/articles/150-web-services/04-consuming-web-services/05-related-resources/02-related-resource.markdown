@@ -1,12 +1,5 @@
 # Navigating to a Related Resource [](id=navigating-to-a-related-resource)
 
-+$$$
-
-**Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha for Liferay DXP 7.1 Fix Pack 3+. 
-
-$$$
-
 When you get a resource, you can use the response to get related resources. For
 example, the GET request to the *Livingstone Hotels & Resorts* Site in the 
 [previous tutorial](/develop/tutorials/-/knowledge_base/7-1/navigating-from-a-collection-to-its-elements)

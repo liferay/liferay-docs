@@ -1,12 +1,5 @@
 # Hypermedia Formats and Content Negotiation [](id=hypermedia-formats-and-content-negotiation)
 
-+$$$
-
-**Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha for Liferay DXP 7.1 Fix Pack 3+. 
-
-$$$
-
 The responses in the preceding examples use the 
 [JSON-LD hypermedia format](https://json-ld.org/), 
 which is the default response format for @product@'s hypermedia REST APIs. 

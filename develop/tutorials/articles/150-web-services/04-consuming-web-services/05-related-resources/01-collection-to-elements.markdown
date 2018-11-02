@@ -1,12 +1,5 @@
 # Navigating from a Collection to its Elements [](id=navigating-from-a-collection-to-its-elements)
 
-+$$$
-
-**Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha for Liferay DXP 7.1 Fix Pack 3+. 
-
-$$$
-
 When you 
 [get a collection](/develop/tutorials/-/knowledge_base/7-1/getting-collections), 
 you can use the response to get an element of that collection. Follow these 

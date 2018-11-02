@@ -1,12 +1,5 @@
 # Embedding Related Resources [](id=embedding-related-resources)
 
-+$$$
-
-**Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha for Liferay DXP 7.1 Fix Pack 3+. 
-
-$$$
-
 [The tutorial on related resources](/develop/tutorials/-/knowledge_base/7-1/navigating-to-a-related-resource) 
 shows you how to request a resource and identify related resources in the 
 response. Getting a related resource, however, requires that you send another

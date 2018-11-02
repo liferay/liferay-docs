@@ -14,18 +14,19 @@ easy to extend them and create new ones.
 
 +$$$
 
-**Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha for Liferay DXP 7.1 Fix Pack 3+. 
+**Note:** Hypermedia REST APIs are currently available in beta. To use them, you
+must download and install the Hypermedia REST APIs app from 
+[Liferay Marketplace](https://web.liferay.com/marketplace). 
 
 $$$
 
 There are two different approaches for clients to connect to @product@'s web 
 APIs: 
 
--   **Hypermedia REST APIs (private alpha):** These services are designed and 
-    built in an opinionated way, and thus decoupled from the internal model. 
-    They follow well-known industry standards and allow evolution of the APIs 
-    without breaking clients. This is the modern, preferred way to work with web 
+-   **Hypermedia REST APIs (beta):** These services are designed and built in an 
+    opinionated way, and thus decoupled from the internal model. They follow 
+    well-known industry standards and allow evolution of the APIs without 
+    breaking clients. This is the modern, preferred way to work with web 
     services in @product@. 
 
 -   **Plain Web/REST Services:** This is the old way to build and consume web 

@@ -1,12 +1,5 @@
 # Getting Collections [](id=getting-collections)
 
-+$$$
-
-**Note:** Hypermedia REST APIs are currently only available as a limited private 
-alpha for Liferay DXP 7.1 Fix Pack 3+. 
-
-$$$
-
 Requests for collection resources are the same as those for non-collection 
 resources. For example, an 
 [authenticated request](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests)
