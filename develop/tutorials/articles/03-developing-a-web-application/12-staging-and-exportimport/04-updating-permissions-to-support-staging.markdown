@@ -1,7 +1,7 @@
 # Updating Permissions to Support Staging [](id=updating-permissions-to-support-staging)
 
 <div class="learn-path-step">
-    <p>Enabling Staging and Export/Import<br>Step 4 of 8</p>
+    <p>Enabling Staging and Export/Import<br>Step 4 of 7</p>
 </div>
 
 The guestbook's current permission handlers do not account for Staging. For

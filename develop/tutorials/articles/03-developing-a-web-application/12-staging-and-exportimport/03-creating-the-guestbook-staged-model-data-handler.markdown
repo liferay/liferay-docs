@@ -1,7 +1,7 @@
 # Creating the Guestbook Staged Model Data Handler [](id=creating-the-guestbook-staged-model-data-handler)
 
 <div class="learn-path-step">
-    <p>Enabling Staging and Export/Import<br>Step 3 of 8</p>
+    <p>Enabling Staging and Export/Import<br>Step 3 of 7</p>
 </div>
 
 The guestbook's staged model data handler is similar to the entry's data

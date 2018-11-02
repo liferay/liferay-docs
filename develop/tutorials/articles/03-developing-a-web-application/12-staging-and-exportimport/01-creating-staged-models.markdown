@@ -1,7 +1,7 @@
 # Creating Staged Models [](id=creating-staged-models)
 
 <div class="learn-path-step">
-    <p>Enabling Staging and Export/Import<br>Step 1 of 8</p>
+    <p>Enabling Staging and Export/Import<br>Step 1 of 7</p>
 </div>
 
 To implement the Staging framework, you must first specify the entities you want

@@ -1,7 +1,7 @@
 # Creating the Portlet Data Handler [](id=creating-the-portlet-data-handler)
 
 <div class="learn-path-step">
-    <p>Enabling Staging and Export/Import<br>Step 7 of 8</p>
+    <p>Enabling Staging and Export/Import<br>Step 7 of 7</p>
 </div>
 
 A Portlet Data Handler imports/exports portlet-specific data to a LAR file. Its
@@ -248,4 +248,4 @@ Guestbook LAR files.
 
 ![Figure 6: You can manually export and import Guestbook LAR files from the Guestbook Admin portlet.](../../../images/guestbook-export-import.png)
 
-The Guestbook is now ready for the staging process!
+The Guestbook is ready for the staging process!

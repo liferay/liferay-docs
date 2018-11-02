@@ -1,7 +1,7 @@
 # Configuring XStream [](id=configuring-xstream)
 
 <div class="learn-path-step">
-    <p>Enabling Staging and Export/Import<br>Step 5 of 8</p>
+    <p>Enabling Staging and Export/Import<br>Step 5 of 7</p>
 </div>
 
 Configuring [XStream](http://x-stream.github.io/index.html) for your Guestbook
