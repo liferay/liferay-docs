@@ -160,7 +160,8 @@ public class GuestbookPortlet extends MVCPortlet {
 
             if (guestbooks.isEmpty()) {
                 Guestbook guestbook = _guestbookService.addGuestbook(	
-                    serviceContext.getUserId(), "Main", serviceContext);	
+                    serviceContext.getUserId(), "Main", serviceContext);
+
                  guestbookId = guestbook.getGuestbookId();	
             }
 
