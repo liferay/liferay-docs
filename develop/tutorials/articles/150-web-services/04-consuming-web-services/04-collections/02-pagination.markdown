@@ -56,7 +56,7 @@ in the `first` attribute, the *1* button to the URL in the `@id` attribute, the
 *Next* button to the URL in the `next` attribute, and the *Last* button to the
 URL in the `last` attribute. 
 
-![Figure 1: This simple UI lets users navigate the pages of data that the server returns.](../../../../images-dxp/apio-pagination-01.png)
+![Figure 1: This simple UI lets users navigate the pages of data that the server returns.](../../../../images/apio-pagination-01.png)
 
 If the user clicks the *Next* button, the client app could make this request: 
 
@@ -86,7 +86,7 @@ The response includes updated page navigation info:
 This response includes a navigation link to go back a page (`previous`). The 
 client app's navigation bar could then show a button for this action: 
 
-![Figure 2: You can update the pagination UI as the user traverses the pages.](../../../../images-dxp/apio-pagination-02.png)
+![Figure 2: You can update the pagination UI as the user traverses the pages.](../../../../images/apio-pagination-02.png)
 
 When the user reaches the last page, the client should send this request: 
 
@@ -117,7 +117,7 @@ Also note that the last page in this example includes only three elements. You
 can reflect this (and remove the *Next* button) in the client's page navigation
 UI: 
 
-![Figure 3: The last page lists the number of items it displays, and no longer includes a *Next* button.](../../../../images-dxp/apio-pagination-03.png)
+![Figure 3: The last page lists the number of items it displays, and no longer includes a *Next* button.](../../../../images/apio-pagination-03.png)
 
 ## Related Topics [](id=related-topics)
 
