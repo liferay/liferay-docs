@@ -60,10 +60,22 @@ accordingly.
 
 ## Installation [](id=installation)
 
-You can install @commerce@ from 
-[Github](https://github.com/liferay/com-liferay-commerce).
-You will also need @product-ver@; see installation instructions 
+@commerce@ can be installed from an `.lpkg` file you can download
+[here](https://dev.liferay.com/en/web/emporio/downloads). You will also need
+@product-ver@; see installation instructions
 [here](/discover/deployment/-/knowledge_base/7-1/deploying-product).
+
+Once you have the `.lpkg`, follow these steps:
+
+1.  Start @product-ver@. 
+
+2.  Drop the @commerce@ `.lpkg` into the `deploy` folder in Liferay Home. Wait for the
+    log to show that your instance must be restarted.
+
+3.  Restart your instance.
+
+4.  Go to *Control Panel* &rarr; *Configuration* &rarr; *Search* and reindex all
+    search indexes.
 
 ## Accelerators [](id=accelerators)
 
