@@ -161,148 +161,42 @@ table td {
 <div class="content-column-content">
 <table>
 	<thead>
-		<td class="empty">
+		<td class="first-column">Liferay Version
 		</td>
-		<td class="">
-			<strong>Automated QA</strong>
-			<p>(Anti-virus & Deployment)</p>
+		<td class="second-column">
+			<strong>6.1.x</strong>
 		</td>
 		<td class="third-column">
-			<strong>Manual QA</strong>
-			<p>(Deployment & Basic Functionality)</p>
+			<strong>7.0.x</strong>
+		</td>
+		<td class="fourth-column">
+			<strong>7.1.x</strong>
 		</td>
 	</thead>
 	<tbody>
 		<tr>
-			<td class="first-column"> Liferay DXP, Liferay DE, and Liferay Portal </td>
-			<td class="">
-				<ul>
-					<li> QA-ed against Liferay DXP/DE/Portal version specified in app
-						submission up to and including Liferay DXP/Portal 7.1. </li>
-				</ul>
-			</td>
-			<td class="third-column">
-				<ul>
-					<li> QA-ed against Liferay DXP/DE/Portal version specified in app
-						submission up to and including Liferay DXP/Portal 7.1. </li>
-				</ul>
-			</td>
+			<td class="first-column"> Operating Systems </td>
+			<td class="second-column" colspan="3">Ubuntu 11x && Windows 10 x64</td>
 		</tr>
 		<tr>
-			<td class="first-column"> Operating System </td>
-			<td class="">
-				<ul>
-					<li> Ubuntu 11x </li>
-				</ul>
-			</td>
-			<td class="third-column">
-				<ul>
-					<li> Windows 10 x64 </li>
-				</ul>
-			</td>
+			<td class="first-column"> Database </td>
+			<td class="second-column">MySQL 5.5.x</td>
+			<td class="third-column">MySQL 5.6.x</td>
+			<td class="fourth-column">MySQL 5.7.x</td>
 		</tr>
         <tr>
-			<td class="first-column"> Database </td>
-			<td class="">
-				<span>For versions up to and including Liferay Portal 6.2</span>
-				<ul>
-					<li> MySQL 5.5.x </li>
-				</ul>
-
-				<span>For Liferay DE 7.0 and Liferay Portal CE 7.0</span>
-				<ul>
-					<li> MySQL 5.6.x </li>
-				</ul>
-
-				<span>For Liferay DXP 7.1 and Liferay Portal CE 7.1</span>
-				<ul>
-					<li> MySQL 5.7.x </li>
-				</ul>
-			</td>
-			<td class="third-column">
-				<span>For versions up to and including Liferay Portal 6.2</span>
-				<ul>
-					<li> MySQL 5.5.x </li>
-				</ul>
-
-				<span>For Liferay DE 7.0 and Liferay Portal CE 7.0</span>
-				<ul>
-					<li> MySQL 5.6.x </li>
-				</ul>
-				<span>For Liferay DXP 7.1 and Liferay Portal CE 7.1</span>
-				<ul>
-					<li> MySQL 5.7.x </li>
-				</ul>
-			</td>
-		</tr>
-		<tr>
 			<td class="first-column"> Application Server* </td>
-			<td class="">
-				<span>For versions up to and including Liferay Portal 6.2</span>
-				<ul>
-					<li> Tomcat 7 </li>
-					<li> Glassfish 3.1 </li>
-					<li> Wildfly 10 </li>
-				</ul>
-
-				<span>For Liferay DXP 7.1, Liferay Portal CE 7.1, Liferay DE 7.0, and Liferay Portal CE 7.0</span>
-				<ul>
-					<li> Tomcat 8 </li>
-					<li> Wildfly 10 </li>
-				</ul>
-			</td>
-			<td class="third-column">
-				<span>For versions up to and including Liferay Portal 6.2</span>
-				<ul>
-					<li> Tomcat 7 </li>
-				</ul>
-
-				<span>For Liferay DXP 7.1, Liferay Portal CE 7.1, Liferay DE 7.0, and Liferay Portal CE 7.0</span>
-				<ul>
-					<li> Tomcat 8 </li>
-					<li> Wildfly 10 </li>
-				</ul>
-			</td>
+			<td class="second-column">Tomcat 7</td>
+			<td class="third-column" colspan="2">Tomcat 8</td>
 		</tr>
 		<tr>
 			<td class="first-column"> JDK </td>
-			<td class="">
-				<span>For versions up to and including Liferay Portal 6.2</span>
-				<ul>
-					<li> Oracle JDK 6 </li>
-					<li> Oracle JDK 7 </li>
-				</ul>
-
-				<span>For Liferay DXP 7.1, Liferay Portal CE 7.1, Liferay DE 7.0, and Liferay Portal CE 7.0</span>
-				<ul>
-					<li>Oracle JDK 8</li>
-				</ul>
-			</td>
-			<td class="third-column">
-				<span>For versions up to and including Liferay Portal 6.2</span>
-				<ul>
-					<li> Oracle JDK 6 </li>
-					<li> Oracle JDK 7 </li>
-				</ul>
-
-				<span>For Liferay DXP 7.1, Liferay Portal CE 7.1, Liferay DE 7.0, and Liferay Portal CE 7.0</span>
-				<ul>
-					<li>Oracle JDK 8</li>
-				</ul>
-			</td>
+			<td class="second-column">Oracle JDK 6, 7</td>
+			<td class="third-column" colspan="2">Oracle JDK 8</td>
 		</tr>
 		<tr>
 			<td class="first-column"> Browser </td>
-			<td class="">
-				<ul>
-					<li> Firefox </li>
-				</ul>
-			</td>
-			<td class="third-column">
-				<ul>
-					<li> Firefox </li>
-				</ul>
-			</td>
+			<td class="second-column" colspan="3">Chrome</td>
 		</tr>
 	</tbody>
 </table>
@@ -312,8 +206,7 @@ table td {
 </div>
 </div>
 
-**Important:** Unless specified otherwise in your app description or
-documentation, your app must run under all specified app servers to be approved.
+**Important:** There are additional, optional application servers you can request to be certified for. For all Liferay versions, Wildfly 10 is available. For Liferay 6.x, Glassfish 3.1 is also available. Please add the request in the "Note to testers" section in the app submission panel.
 
 Once your app is approved by Marketplace staff, you'll get email notification.
 When your app is approved, it is made available on Marketplace. The app also
