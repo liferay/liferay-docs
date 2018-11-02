@@ -203,58 +203,7 @@ Follow the instructions below to create the Guestbook's portlet data handler.
     class. The extracted elements tell @product@ what data to import from the
     LAR file.
 
-7.  Add a method that deletes the portlet's data. The Staging framework has an
-    option called *Delete Portlet Data Before Importing* that lets the user
-    delete portlet data before importing any new data. The `doDeleteData(...)`
-    method is called to execute this deletion operation.
-
-        @Override
-        protected PortletPreferences doDeleteData(
-                PortletDataContext portletDataContext, String portletId,
-                PortletPreferences portletPreferences)
-            throws Exception {
-
-            if (portletDataContext.addPrimaryKey(
-                GuestbookPortletDataHandler.class, "deleteData")) {
-
-                return portletPreferences;
-            }
-
-            List<Guestbook> guestbooks = _guestbookLocalService.getGuestbooks(
-                portletDataContext.getScopeGroupId());
-
-            for (Guestbook guestbook : guestbooks) {
-
-                List<Entry> entries = _entryLocalService.getEntries(
-                    portletDataContext.getScopeGroupId(),
-                    guestbook.getGuestbookId());
-
-                for (Entry entry : entries) {
-
-                    _entryLocalService.deleteEntry(entry);
-                }
-                _guestbookLocalService.deleteGuestbook(guestbook.getGuestbookId());
-            }
-
-             return portletPreferences;
-        }
-
-    This method can also return a modified version of the portlet preferences if
-    it contains references to data that no longer exists.
-
-    +$$$
-
-    **Note:** This is a legacy feature that was useful when deletions were not
-    propagated between Sites. This cleaned the portlet's data, allowing you to
-    see everything associated with the portlet during every publication. This is
-    an unnecessary process now that Staging can recognize deletions across all
-    Sites. It's, however, still included as a feature of Staging, so to offer
-    all the included Staging features in the Guestbook app, we've implemented it
-    here.
-
-    $$$
-
-8.  Add a method that counts the number of affected entities based on the
+7.  Add a method that counts the number of affected entities based on the
     current export or staging process:
 
         @Override
@@ -278,10 +227,25 @@ Follow the instructions below to create the Guestbook's portlet data handler.
     Staging framework traverses the entity graph during export, the built-in
     components provide an approximate value in some cases.
 
-    ![Figure 3: The number of modified Guestbook entities are displayed in the Export UI.](../../../images/guestbook-staging-entity-counter.png)
+    ![Figure 4: The number of modified Guestbook entities are displayed in the Export UI.](../../../images/guestbook-staging-entity-counter.png)
 
-9.  Organize your imports (*[CTRL]+[SHIFT]+O*), and save the file. **Hint:** Be
+8.  Organize your imports (*[CTRL]+[SHIFT]+O*), and save the file. **Hint:** Be
     sure to choose the `javax.portlet.PortletPreferences` import package.
 
 Excellent! You've set up your Guestbook's portlet data handler and can now
 handle your portlet's data and control its staged model data handlers.
+
+Your Guestbook app is now leveraging the Staging and Export/Import frameworks!
+To verify this, when you go to
+[enable Staging](/discover/portal/-/knowledge_base/7-0/enabling-staging), you
+now have the option to enable it for your Guestbook app.
+
+![Figure 5: Enable the Guestbook Staging functionality.](../../../images/guestbook-staging-enable.png)
+
+You can also navigate to the Guestbook Admin portlet and manage Staging from the
+Options menu. This menu also offers a way to manually export and import
+Guestbook LAR files.
+
+![Figure 6: You can manually export and import Guestbook LAR files from the Guestbook Admin portlet.](../../../images/guestbook-export-import.png)
+
+The Guestbook is now ready for the staging process!
