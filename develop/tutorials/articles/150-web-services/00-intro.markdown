@@ -1,14 +1,38 @@
 # Web Services [](id=web-services)
 
-Generating and invoking web services is a central part of the Liferay 
-development experience. After all, what good is it if you can't generate remote 
-services for an app you're developing, or call Liferay's built-in remote 
-services? It's no good at all! Liferay without web services would be like a 
-luxury car without wheels. Fortunately, Liferay comes with full set of JSON and 
-SOAP web services that you can invoke until your heart's content. Liferay also 
-provides Service Builder to generate local and remote services for your apps. 
+It's important for apps on different machines to communicate. To enable this, an
+app can expose APIs so remote components (other apps or devices) can access the
+app's features. For example, one service could have a client app presenting
+information to users, a server app processing data in B2B setting, and an IoT
+device requesting data to do its work. Exposing web APIs lets external
+applications or devices communicate with yours. 
 
-The tutorials that follow show you how to work with web services in Liferay. 
-You'll learn how to use Service Builder to generate remote services for your 
-apps. You'll also learn how to invoke those services, and any other Liferay web 
-services. 
+Because @product@ contains so many apps and features, it's prudent for Liferay
+to let developers access those apps and features from external apps and devices
+by exposing their APIs. Additionally, Liferay's development platform makes it
+easy to extend them and create new ones. 
+
++$$$
+
+**Note:** Hypermedia REST APIs are currently only available as a limited private 
+alpha for Liferay DXP 7.1 Fix Pack 3+. 
+
+$$$
+
+There are two different approaches for clients to connect to @product@'s web 
+APIs: 
+
+-   **Hypermedia REST APIs (private alpha):** These services are designed and 
+    built in an opinionated way, and thus decoupled from the internal model. 
+    They follow well-known industry standards and allow evolution of the APIs 
+    without breaking clients. This is the modern, preferred way to work with web 
+    services in @product@. 
+
+-   **Plain Web/REST Services:** This is the old way to build and consume web 
+    services in @product@, but is still supported. For example, you can use 
+    JAX-RS, JAX-WS, or 
+    [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services) 
+    to implement plain REST or SOAP web services. 
+
+The tutorials that follow show you how to consume and create web services in 
+@product@, beginning with hypermedia REST APIs. 
