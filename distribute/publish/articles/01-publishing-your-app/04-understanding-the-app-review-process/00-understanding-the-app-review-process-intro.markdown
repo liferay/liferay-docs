@@ -33,32 +33,32 @@ The app review process consists of **Two Major Phases**:
 
 <style>
 .lego-image {
-	max-height: 100%;
-	max-width: 100%;
+    max-height: 100%;
+    max-width: 100%;
 }
 .max-960 {
-	margin: 0 auto;
-	max-width: 960px;
+    margin: 0 auto;
+    max-width: 960px;
 }
 .no-max .max-960 {
-	max-width: none;
+    max-width: none;
 }
 .app-review-process-table {
-	padding-bottom: 40px;
+    padding-bottom: 40px;
 }
 .app-review-process-table thead td {
-	font-weight: bold;
+    font-weight: bold;
 }
 .app-review-process-table .first-column {
-	border-left: none;
+    border-left: none;
 }
 .app-review-process-table .second-column {
-	border-right: none;
-	width: 156px;
+    border-right: none;
+    width: 156px;
 }
 .app-review-process-table td {
-	border : 1px solid;
-	padding: 15px;
+    border : 1px solid;
+    padding: 15px;
 }
 </style>
 <div class="lego-article app-review-process-table" id="article-33460874">
@@ -67,47 +67,47 @@ The app review process consists of **Two Major Phases**:
 <div class="aui-w100 block-1 content-column lego-block" >
 <div class="content-column-content">
 <table>
-	<thead>
-		<td class="first-column"> <strong> Review Phase </strong> </td>
-		<td class="second-column"> <strong> Est. Time Frame </strong> </td>
-	</thead>
-	<tbody>
-		<tr>
-			<td class="first-column">
-				<strong> App metadata review </strong>
-				<p>
-					Our team
-					<a href="/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app#marketplace-app-metadata-guidelines">
-					reviews your app's metadata</a>
-					to confirm that titles, descriptions, images, etc. are
-					appropriate.
-				</p>
-			</td>
-			<td class="second-column"> ~1 week </td>
-		</tr>
-		<tr>
-			<td class="first-column">
-				<strong> App QA test </strong>
-				<p> Liferay ensures that apps meet a minimal set of
-					requirements: </p>
-				<ul>
-					<li>Passes anti-virus scan</li>
-					<li>Deploys successfully on standard Liferay supported
-						environments/platforms without errors.</li>
-					<li>Basic functionality "smoke" test.</li>
-				</ul>
-				<p>
-					Liferay does not do source code review and does not ask for
-					your source code. Further, Liferay is not responsible for
-					the behavior (or misbehavior) of apps on the Marketplace.
-					Please consult the Liferay Marketplace User Agreement,
-					Liferay Marketplace Developer Agreement, and the individual
-					End User License Agreements associated with each app.
-				</p>
-			</td>
-			<td class="second-column"> ~1-2 weeks </td>
-		</tr>
-	</tbody>
+    <thead>
+        <td class="first-column"> <strong> Review Phase </strong> </td>
+        <td class="second-column"> <strong> Est. Time Frame </strong> </td>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="first-column">
+                <strong> App metadata review </strong>
+                <p>
+                    Our team
+                    <a href="/distribute/how-to-publish/-/knowledge_base/how-to-publish/preparing-your-app#marketplace-app-metadata-guidelines">
+                    reviews your app's metadata</a>
+                    to confirm that titles, descriptions, images, etc. are
+                    appropriate.
+                </p>
+            </td>
+            <td class="second-column"> ~1 week </td>
+        </tr>
+        <tr>
+            <td class="first-column">
+                <strong> App QA test </strong>
+                <p> Liferay ensures that apps meet a minimal set of
+                    requirements: </p>
+                <ul>
+                    <li>Passes anti-virus scan</li>
+                    <li>Deploys successfully on standard Liferay supported
+                        environments/platforms without errors.</li>
+                    <li>Basic functionality "smoke" test.</li>
+                </ul>
+                <p>
+                    Liferay does not do source code review and does not ask for
+                    your source code. Further, Liferay is not responsible for
+                    the behavior (or misbehavior) of apps on the Marketplace.
+                    Please consult the Liferay Marketplace User Agreement,
+                    Liferay Marketplace Developer Agreement, and the individual
+                    End User License Agreements associated with each app.
+                </p>
+            </td>
+            <td class="second-column"> ~1-2 weeks </td>
+        </tr>
+    </tbody>
 </table>
 </div>
 </div>
@@ -123,35 +123,35 @@ review team can exclude certain test conditions, if necessary.
 
 <style>
 table td {
-	vertical-align: top;
+    vertical-align: top;
 }
 .lego-image {
-	max-height: 100%;
-	max-width: 100%;
+    max-height: 100%;
+    max-width: 100%;
 }
 .max-960 {
-	margin: 0 auto;
-	max-width: 960px;
+    margin: 0 auto;
+    max-width: 960px;
 }
 .no-max .max-960 {
-	max-width: none;
+    max-width: none;
 }
 .test-environments-table td {
-	border : 1px solid;
-	padding: 15px;
+    border : 1px solid;
+    padding: 15px;
 }
 .test-environments-table td.empty {
-	border-left: none;
+    border-left: none;
 }
 .test-environments-table thead td {
-	text-align: center;
+    text-align: center;
 }
 .test-environments-table .first-column {
-	border-left: none;
-	font-weight: bold;
+    border-left: none;
+    font-weight: bold;
 }
 .test-environments-table .third-column {
-	border-right: none;
+    border-right: none;
 }
 </style>
 <div class="lego-article test-environments-table" id="article-33460919">
@@ -160,45 +160,46 @@ table td {
 <div class="aui-w100 block-1 content-column lego-block" >
 <div class="content-column-content">
 <table>
-	<thead>
-		<td class="first-column">Liferay Version
-		</td>
-		<td class="second-column">
-			<strong>6.1.x</strong>
-		</td>
-		<td class="third-column">
-			<strong>7.0.x</strong>
-		</td>
-		<td class="fourth-column">
-			<strong>7.1.x</strong>
-		</td>
-	</thead>
-	<tbody>
-		<tr>
-			<td class="first-column"> Operating Systems </td>
-			<td class="second-column" colspan="3">Ubuntu 11x && Windows 10 x64</td>
-		</tr>
-		<tr>
-			<td class="first-column"> Database </td>
-			<td class="second-column">MySQL 5.5.x</td>
-			<td class="third-column">MySQL 5.6.x</td>
-			<td class="fourth-column">MySQL 5.7.x</td>
-		</tr>
+    <thead>
+        <td class="first-column">
+            <strong>Liferay Version</strong>
+        </td>
+        <td class="second-column">
+            <strong>6.1.x</strong>
+        </td>
+        <td class="third-column">
+            <strong>7.0.x</strong>
+        </td>
+        <td class="fourth-column">
+            <strong>7.1.x</strong>
+        </td>
+    </thead>
+    <tbody>
         <tr>
-			<td class="first-column"> Application Server* </td>
-			<td class="second-column">Tomcat 7</td>
-			<td class="third-column" colspan="2">Tomcat 8</td>
-		</tr>
-		<tr>
-			<td class="first-column"> JDK </td>
-			<td class="second-column">Oracle JDK 6, 7</td>
-			<td class="third-column" colspan="2">Oracle JDK 8</td>
-		</tr>
-		<tr>
-			<td class="first-column"> Browser </td>
-			<td class="second-column" colspan="3">Chrome</td>
-		</tr>
-	</tbody>
+            <td class="first-column"> Operating Systems </td>
+            <td class="second-column" colspan="3">Ubuntu 11x and Windows 10 x64</td>
+        </tr>
+        <tr>
+            <td class="first-column"> Database </td>
+            <td class="second-column">MySQL 5.5.x</td>
+            <td class="third-column">MySQL 5.6.x</td>
+            <td class="fourth-column">MySQL 5.7.x</td>
+        </tr>
+        <tr>
+            <td class="first-column"> Application Server * </td>
+            <td class="second-column">Tomcat 7</td>
+            <td class="third-column" colspan="2">Tomcat 8</td>
+        </tr>
+        <tr>
+            <td class="first-column"> JDK </td>
+            <td class="second-column">Oracle JDK 6, 7</td>
+            <td class="third-column" colspan="2">Oracle JDK 8</td>
+        </tr>
+        <tr>
+            <td class="first-column"> Browser </td>
+            <td class="second-column" colspan="3">Chrome</td>
+        </tr>
+    </tbody>
 </table>
 </div>
 </div>
@@ -206,7 +207,10 @@ table td {
 </div>
 </div>
 
-**Important:** There are additional, optional application servers you can request to be certified for. For all Liferay versions, Wildfly 10 is available. For Liferay 6.x, Glassfish 3.1 is also available. Please add the request in the "Note to testers" section in the app submission panel.
+** \* ** You can request certification on additional, optional application 
+servers. For all Liferay versions, Wildfly 10 is available. For Liferay 6.x,
+Glassfish 3.1 is also available. Please add the request in the app submission
+panel's *Note to testers* section.
 
 Once your app is approved by Marketplace staff, you'll get email notification.
 When your app is approved, it is made available on Marketplace. The app also
