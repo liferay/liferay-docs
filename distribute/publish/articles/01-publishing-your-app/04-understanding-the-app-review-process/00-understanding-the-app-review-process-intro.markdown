@@ -207,10 +207,10 @@ table td {
 </div>
 </div>
 
-** \* ** You can request certification on additional, optional application 
-servers. For all Liferay versions, Wildfly 10 is available. For Liferay 6.x,
-Glassfish 3.1 is also available. Please add the request in the app submission
-panel's *Note to testers* section.
+**\*** You can request certification on additional, optional application 
+servers. For Liferay 7.x, Wildfly 10 is available. For Liferay 6.x, Glassfish
+3.1 and an appropriate JBoss version are available. Please add the request in
+the app submission panel's *Note to testers* section.
 
 Once your app is approved by Marketplace staff, you'll get email notification.
 When your app is approved, it is made available on Marketplace. The app also
