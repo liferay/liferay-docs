@@ -9,10 +9,11 @@ provides a full demonstration using these steps:
     JSP markup.
 2.  Implement the `ConfigurationScreen` interface.
 3.  Implement a `MVCActionCommand` to create the method called from the JSP.
-4.  Register the action command with the System Settings application.
-5.  Render the configuration form. This tutorial demonstrates the use of a JSP
+4.  Render the configuration form. This tutorial demonstrates the use of a JSP
     and the previously created  `DisplayContext` class that holds much of the
     Java needed for use in the JSP.
+5.  Remove the auto-generated UI to avoid duplicate configuration screens in
+    System Settings.
 
 The generalized discussion of System Settings UI customization is found in a
 [separate tutorial](/develop/tutorials/-/knowledge_base/7-1/customizing-the-system-settings-user-interface).
@@ -30,9 +31,9 @@ auto-generated UI will be replaced with a select list field type.
 
 ## Creating a `DisplayContext` [](id=creating-a-displaycontext)
 
-A `DisplayContext` class is a POJO meant to simplify and minimize the use of
-Java logic in JSPs. Using a display context isn't required, but it's a nice
-convention to follow. Think of it like a data transfer object, where the
+A `DisplayContext` class is a POJO that simplifies and minimizes the use of
+Java logic in JSPs. Display context usage isn't required, but it's a nice
+convention to follow. It's a kind of data transfer object, where the
 `DisplayContext`'s setters are called from the Java class providing the render
 logic (in this case the `ConfigurationScreen`'s `render` method), and the
 getters are called from the JSP, removing the need for the Java logic to be
@@ -94,9 +95,9 @@ For this example, create a `LanguageTemplateConfigurationDisplayContext` class:
 
 ## Implementing a `ConfigurationScreen` [](id=implementing-a-configurationscreen)
 
-First create the Component declaration. Set the `configurationPid` property to
-match the configuration whose UI you're writing, and the `service` property to
-`ConfigurationScreen.class`:
+First create the component and class declarations. Set the `configurationPid`
+property to match the configuration whose UI you're writing, and the `service`
+property to `ConfigurationScreen.class`:
 
     @Component(
         configurationPid = "com.liferay.site.navigation.language.web.configuration.SiteNavigationLanguageWebTemplateConfiguration",
@@ -105,11 +106,11 @@ match the configuration whose UI you're writing, and the `service` property to
     public class LanguageTemplateConfigurationScreen
         implements ConfigurationScreen {
 
-Next, write an `activate` method (decorated with `@Activate` and `@Modified`to
-to convert a map of the configuration's properties to a typed class. The
-configuration is stored in a volatile field.  Don’t forget to make it volatile
+Next, write an `activate` method (decorated with `@Activate` and `@Modified`)
+to to convert a map of the configuration's properties to a typed class. The
+configuration is stored in a volatile field. Don't forget to make it volatile
 to prevent thread safety problems. See the article on
-[reading configuration values form a component class](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-component)
+[reading configuration values from a component class](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-component)
 for more information.
 
     @Activate
@@ -162,21 +163,21 @@ Set the scope of the entry with the `getScope` method:
         return "system";
     }
 
-Provide the render logic via a `render` method. The rendering approach
-demonstrated here uses a JSP backed by a `DisplayContext` class that's set into
-the request object so the values set from this `render` method are available in
-the JSP via the `DisplayContext` object's getters. Here, loop through the DDM
-Template Keys for the given `groupId` and set them into the display context with
-the `addTemplateKey` method. Then set the other necessary values that the JSP
-will need. In this case, set the title, the field label, and the redirect URL.
-Lastly, call `renderJSP` and pass in the `servletContext`, request, response,
-and the path to the JSP: 
+Provide the render logic via the overridden `render` method. The rendering
+approach demonstrated here uses a JSP. Recall that it's backed by a
+`DisplayContext` class set into the request object. The values set
+from this `render` method are available in the JSP via the `DisplayContext`
+object's getters. 
+
+Loop through the DDM Template Keys for the given `groupId` and set them into
+the display context with the `addTemplateKey` method. Then set the other
+necessary values that the JSP will need. In this case, set the title, the field
+label, and the redirect URL.  Lastly, call `renderJSP` and pass in the
+`servletContext`, request, response, and the path to the JSP: 
 
     @Override
     public void render(HttpServletRequest request, HttpServletResponse response)
         throws IOException {
-
-        Locale locale = LocaleThreadLocal.getThemeDisplayLocale();
 
         LanguageTemplateConfigurationDisplayContext
             languageTemplateConfigurationDisplayContext =
@@ -194,6 +195,8 @@ and the path to the JSP:
             groupId = group.getGroupId();
         }
 
+        Locale locale = LocaleThreadLocal.getThemeDisplayLocale();
+
         List<DDMTemplate> ddmTemplates = _ddmTemplateLocalService.getTemplates(
             groupId, _portal.getClassNameId(LanguageEntry.class));
 
@@ -208,7 +211,7 @@ and the path to the JSP:
         languageTemplateConfigurationDisplayContext.setTitle(getName(locale));
 
         languageTemplateConfigurationDisplayContext.setFieldLabel(
-            "Language Selection Style");
+            "language-selection-style");
 
         request.setAttribute(
             LanguageTemplateConfigurationDisplayContext.class.getName(),
@@ -242,12 +245,11 @@ of the reference target:
     )
     private ServletContext _servletContext;
 
-Once the configuration screen is implemented, render the form. This example
-uses a JSP.
+Once the configuration screen is implemented, create an MVC Action Command.
 
 ## Implementing an `MVCActionCommand` [](id=implementing-an-mvcactioncommand)
 
-For more detailed information on MVC Action Commnds, reea
+For more detailed information on MVC Action Commands, read
 [here](/develop/tutorials/-/knowledge_base/7-1/mvc-action-command). If you're
 using some other paradigm for writing your portlet's action methods, adapt
 accordingly.
@@ -333,7 +335,7 @@ Now write the JSP:
 
     <portlet:actionURL name="/site_navigation_language/update_language_template_configuration" var="editURL" />
 
-    <div class="sheet sheet-lb">
+    <div class="sheet sheet-lg">
         <div class="sheet-header">
             <h2><%= languageTemplateConfigurationDisplayContext.getTitle() %></h2>
         </div>
@@ -361,16 +363,16 @@ Now write the JSP:
         </aui:form>
     </div>
 
-Note that the action URL has the same value as that entered in the action
-command component's `mvc.command.name` property, and that the opening scriptlet
-gets the display context object from the request so that all its getters are
-invoked whenever information from the backend is required. The `div` is set up
-to renders the HTML, with the title serving as the second level heading. An
-`aui:form` provides the rendering of the configuration form. A select field uses
-the field label and current template name (as coded in the
-`ConfigurationScreen`) to define the default selected value. All existing
-templates are retrieved from the display context and displayed as options within
-the select list, via the `for...` scriptlet and the `<aui:option>` tag.
+The action URL has the same value as that entered in the action command
+component's `mvc.command.name` property, and the opening scriptlet gets the
+display context object from the request so that all its getters are invoked
+whenever information from the backend is required. The `div` renders the HTML,
+with the title serving as the second level heading. An `aui:form` provides the
+rendering of the configuration form. A select field uses the field label and
+current template name (as coded in the `ConfigurationScreen`) to define the
+default selected value. All existing templates are retrieved from the display
+context and displayed as options within the select list, via the `for...`
+scriptlet and the `<aui:option>` tag.
 
 So what does this example look like when all is said and done?
 
