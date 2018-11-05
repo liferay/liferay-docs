@@ -24,7 +24,7 @@ Template System Settings entry, found at  Control Panel &rarr; Configuration
 same steps within your custom application. 
 
 ![Figure 1: The auto-generated UI for the Language Template configuration screen
-is sub-optimal. A select list with more sensible option labels is preferable.](../../images/sys-settings-lang-template-default.png)
+is sub-optimal. A select list with more sensible option labels is preferable.](../../../images/sys-settings-lang-template-default.png)
 
 Specifically, the text input field labeled DDM Template Key in the
 auto-generated UI will be replaced with a select list field type.
@@ -376,7 +376,7 @@ scriptlet and the `<aui:option>` tag.
 
 So what does this example look like when all is said and done?
 
-![Figure 2: A select list provides a more user friendly configuration experience than a text field.](../../images/sys-settings-lang-template-custom.png)
+![Figure 2: A select list provides a more user friendly configuration experience than a text field.](../../../images/sys-settings-lang-template-custom.png)
 
 If you read the overview article on 
 [custom configuration screens](/develop/tutorials/-/knowledge_base/7-1/customizing-the-system-settings-user-interface), 
