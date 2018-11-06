@@ -154,12 +154,12 @@ For issues related to your subscription, first review the documentation on
 [managing your subscription](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/managing-liferay-dxp-subscriptions). 
 Subscription errors usually involve one of these problems:
 
--   Your server can reach LCS, but can't locate a subscription.
+-   Your server can reach LCS, but can't locate a subscription. 
 -   Your server can reach LCS and locate a subscription, but activating your 
-    server would exceed the subscription's allowed number of servers or cores. 
+    server would exceed the subscription's number of activation keys or cores. 
 
 In either case, you must verify that a subscription is available and that you're 
-not exceeding its allowed number of servers or cores. You can find this 
+not exceeding its number of activation keys or cores. You can find this 
 information on the LCS site's Subscriptions page, as described in 
 [the documentation on managing subscriptions](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/managing-liferay-dxp-subscriptions). 
 If the environment in which you're trying to activate a server isn't assigned 
@@ -174,9 +174,9 @@ for instructions on creating a new environment and activating a new server.
 **Note:** When shutting down servers, you must ensure that the LCS site receives 
 the server shutdown commands. Otherwise, LCS may not release that server's 
 activation key for reuse and attempts to activate additional servers may exceed 
-the subscription's allowed number of servers. There's a higher 
-likelihood of this happening in rolling deployments and/or when using 
-containers. For more information, see the 
+the subscription's number of activation keys. There's a higher likelihood of 
+this happening in rolling deployments and/or when using containers. For more 
+information, see the 
 [KB article on properly unregistering subscriptions](https://customer.liferay.com/documentation/knowledge-base/-/kb/1464875). 
 
 $$$

@@ -5,8 +5,8 @@ LCS lets you use and view your @product@ subscriptions. Recall that when you
 you assign its subscription type and choose whether LCS activates servers that 
 connect to that environment. If you use LCS for activation, registering a server 
 in that environment consumes an activation key from the environment's 
-subscription type. You can also view your project's available subscriptions and 
-see how they're being used. 
+subscription type. You can also view your project's available activation keys 
+and see how they're being used. 
 
 Depending on your subscription agreement, LCS also lets you register servers via 
 *elastic subscriptions*. Elastic subscriptions let you register an unlimited 
@@ -35,15 +35,15 @@ There are four tables in the *Details* tab:
     - Platform
     - Product
     - Processor Cores Allowed
-    - Servers Allowed
-    - Servers Used
+    - Activation Keys
+    - Used Activation Keys
 
     Note that *Processor Cores Allowed* shows the number of processor cores that 
     the subscription allows for each server. 
 
 2.  **Subscriptions Summary:** Shows how your subscriptions are currently used 
     in your project. For each subscription type, this table shows the number of 
-    servers allowed, used, and available. 
+    activation keys allowed, used, and available. 
 
 3.  **Project Environments:** Shows your project's environments and their 
     assigned subscription types. Each environment must have a subscription type. 
@@ -53,6 +53,13 @@ There are four tables in the *Details* tab:
 
 If any of the information in these tables is missing or incorrect, contact 
 Liferay Support. 
+
++$$$
+
+**Note:** If you don't use LCS for activating your servers, then you can 
+register as many servers as you want in LCS. 
+
+$$$
 
 +$$$
 
