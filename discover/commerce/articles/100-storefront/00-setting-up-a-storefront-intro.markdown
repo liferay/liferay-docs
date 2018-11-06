@@ -19,14 +19,14 @@ Here are the components you need:
 - A compare products page
 
 The product and product category landing pages are described in 
-[Displaying Product Pages](/web/emporio/documentation/-/knowledge_base/1-0/displaying-product-pages)
+[Displaying Product Pages](/web/commerce/documentation/-/knowledge_base/1-0/displaying-product-pages)
 and [Displaying Category
-Pages](/web/emporio/documentation/-/knowledge_base/1-0/displaying-category-pages).
+Pages](/web/commerce/documentation/-/knowledge_base/1-0/displaying-category-pages).
 
 ## Shopping Cart [](id=shopping-cart)
 
 The product detail widget (see 
-[Displaying Product Pages](/web/emporio/documentation/-/knowledge_base/1-0/displaying-product-pages))
+[Displaying Product Pages](/web/commerce/documentation/-/knowledge_base/1-0/displaying-product-pages))
 lets users add products to the cart, but it doesn't make the cart visible.
 A cart widget does that. 
 
@@ -72,9 +72,9 @@ Without any further configuration, the *Checkout* widget features a four-step
 process: users are prompted to enter a shipping address, a billing
 address, an order summary, and finally an order confirmation. When you
 configure 
-[Shipping Methods](/web/emporio/documentation/-/knowledge_base/1-0/shipping-methods)
+[Shipping Methods](/web/commerce/documentation/-/knowledge_base/1-0/shipping-methods)
 and 
-[Payment Methods](/web/emporio/documentation/-/knowledge_base/1-0/payment-methods),
+[Payment Methods](/web/commerce/documentation/-/knowledge_base/1-0/payment-methods),
 additional steps are added automatically to the checkout portlet's process,
 prompting users to select one of each.
 
@@ -101,7 +101,7 @@ Category navigation always searches by category. When a user clicks on
 a link in the navigation widget, the appropriate category page is displayed. If
 there is a search results portlet on that page, it shows the products assigned
 to that category. See 
-[Displaying Category Pages](/web/emporio/documentation/-/knowledge_base/1-0/displaying-category-pages)
+[Displaying Category Pages](/web/commerce/documentation/-/knowledge_base/1-0/displaying-category-pages)
 for details.
 
 ### The Search Bar [](id=the-search-bar)
@@ -124,8 +124,8 @@ The two facet widgets that filter the catalog are *Specification Option Facets*
 and *Option Facets*, both of which are in *Add Menu* &rarr; *Widgets* &rarr;
 *Commerce*. Place either widget onto a page that also contains a search results
 portlet to filter results by
-[specification](/web/emporio/documentation/-/knowledge_base/1-0/specifications)
-or [option](/web/emporio/documentation/-/knowledge_base/1-0/options),
+[specification](/web/commerce/documentation/-/knowledge_base/1-0/specifications)
+or [option](/web/commerce/documentation/-/knowledge_base/1-0/options),
 respectively.
 
 ## Compare Products [](id=compare-products)
@@ -139,7 +139,7 @@ a single page. Follow these steps to enable this feature:
     Products* widget to the page.
 
 3.  Go to your 
-    [product page](/web/emporio/documentation/-/knowledge_base/1-0/displaying-product-pages) 
+    [product page](/web/commerce/documentation/-/knowledge_base/1-0/displaying-product-pages) 
     and add a *Compare Products Mini* widget to the page.
 
 When a user clicks on the *Compare* box in the *Product Detail* widget, the
