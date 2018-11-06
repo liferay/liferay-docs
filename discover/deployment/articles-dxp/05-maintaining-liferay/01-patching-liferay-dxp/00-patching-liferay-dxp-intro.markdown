@@ -5,3 +5,19 @@ human condition dictates that releases may not be as perfect as originally
 intended. But we've planned for that. Included with every @product@ bundle is a
 Patching Tool that handles installing two types of patches: fix packs and
 hotfixes. 
+
++$$$
+
+**Important:** Make sure to
+[back up your @product@ installation and database](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
+regularly, especially before patching. Patches can contain @product@ Core data
+changes---the patching tool applies them automatically. 
+
+$$$
+
++$$$
+
+**Note:** [Patching a cluster](/discover/deployment/-/knowledge_base/7-1/updating-a-cluster)
+requires additional considerations. 
+
+$$$
