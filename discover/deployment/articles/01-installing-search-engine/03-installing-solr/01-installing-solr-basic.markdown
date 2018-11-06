@@ -1,4 +1,4 @@
-# Installing Solr: Basic Installation
+# Installing Solr: Basic Installation [](id=installing-solr-basic-installation)
 
 There are two ways to install the Liferay Connector to Solr 7:
 
@@ -115,8 +115,8 @@ reinstalled and started automatically.
 Navigate to Control Panel &rarr; Apps &rarr; App Manager.
 
 Once in the App Manager, search for *elasticsearch*. Find the Liferay CE
-Connector to Elasticsearch 6 module and click the edit
-((![Edit](../../images/icon-edit.png))) button. Choose the Deactivate option.
+Connector to Elasticsearch 6 module and click the Actions
+((![Actions](../../../images/icon-actions.png))) button. Choose the Deactivate option.
 This leaves the bundle installed, but stops it in the OSGi runtime.
 
 Alternatively, use the 
@@ -143,7 +143,7 @@ In the example above, the `[bundle ID]` is `476`.
 +$$$
 
 **Liferay Digital Enterprise:** Digital Enterprise customers should 
-[blacklist](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules) 
+[blacklist](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules-and-components) 
 the Elasticsearch, Shield, and Marvel plugins. 
 
 1.  Create a 

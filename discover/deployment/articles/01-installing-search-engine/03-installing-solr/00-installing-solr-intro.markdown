@@ -1,4 +1,4 @@
-# Installing Solr
+# Installing Solr [](id=installing-solr)
 
 Solr is a popular enterprise search platform build on Apache Lucene. It's
 popular for its reliability, scalability, and fault tolerance. Read more about
