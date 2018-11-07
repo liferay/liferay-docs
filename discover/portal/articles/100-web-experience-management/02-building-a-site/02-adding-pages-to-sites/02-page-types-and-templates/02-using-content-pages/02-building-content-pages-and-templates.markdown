@@ -99,4 +99,36 @@ creation screen,
 5.  Add Fragments to create your new page.
  
 By default, your new page is added to the Navigation Menu and users can access
-the page you created. Next you'll learn how to import and export Page Fragments.
+the page you created.
+
+## Propagation of Page Fragment Changes
+
+If you make an update to a Page Fragments or Content Page Templates it will not 
+automatically propagate changes, but you can access the *Usages and 
+Propagation* page to selectively propagate changes.
+
+1.  From you site configuration menu, go to *Build* &rarr; *Page Fragments*
+
+2.  Select the *Collection* which contains the changed fragment.
+
+3.  Open the menu for the fragment and select *View Usages*.
+
+![Figure 5: Selecting *View Usages* for a Page Fragment.](../../../../../../images/fragment-view-usages.png)
+
+The *Usages and Propagation* Page shows a list of every Page, Page Template, 
+and Display Page that uses the selected Page Fragment. You can then selectively 
+propagate changes to the fragment to any or all of the pages listed. You can 
+use the various filters and selection options to easily apply updates to pages 
+quickly.
+
+![Figure 6: Viewing the Usages and Propagation page.](../../../../../../images/fragment-usages-and-propagation.png)
+
+To update a page or template,
+
+1.  Select the page or pages you want to update by checking the box next to the page name.
+
+2.  Click the *Propagate* icon (
+    ![Propagate](../../../../../../images/icon-propagate.png))
+    
+After you propagate changes, visit any effected pages to verify there were no 
+unexpected side effects of the changes. Next you'll learn how to import and export Page Fragments.
