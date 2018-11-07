@@ -15,17 +15,24 @@ There are several steps involved in creating a form field type:
 
 +$$$
 
-**Note:** To jump-start your project, use
+**Blade Template:**  To jump-start your project, use
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) 
 or 
 [Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide). 
 There's a Blade template for creating form fields. Using the CLI, enter
 
-    blade create -t form-field -v 7.1 [ADDITIONAL OPTIONS] [PROJECT NAME]
+    blade create -t form-field -v 7.1 -p com.liferay.docs.formfieldtype -c Time DDMTypeTime
 
-See the [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
-documentation for more information, such as the answer to your question "What
-are those additional options?"
+This gives you a `DDMTypeTime` module with a similar structure to the one
+outlined above. The Java classes will be in the package
+`com.liferay.docs.formfield` under `src/main/java/` and the frontend resources
+(JavaScript and Soy files) are in `sr/main/resources/META-INF/resources`.
+
+A known limitation in the form-field template requires the use of camel case in
+the project name (`DDMTypeTime`). Trying to use kebab case insted
+(`ddm-type-time`) will generate a non-functioning module. This will be fixed
+with the release of  Blade 3.3. Run `blade version` form the command line to
+see which version of Blade you're running.
 
 Using Blade CLI or Liferay Dev Studio, you get a project skeleton with much of
 the boilerplate filled in, so you can focus immediately on coding.
