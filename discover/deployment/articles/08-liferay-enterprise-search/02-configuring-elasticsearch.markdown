@@ -207,11 +207,14 @@ configuration file:
 
 2. Add this to the configuration file you just created:
 
-        operationMode="REMOTE"
+        # Use the same name as in your elasticsearch configuration above
+        clusterName=LiferayElasticsearchCluster
+        # Tell Liferay to connect to the elasticsearch cluster outside the bundle
+        operationMode=REMOTE
         # If running Elasticsearch from a different computer:
-        #transportAddresses="ip.of.elasticsearch.node:9300"
+        #transportAddresses=ip.of.elasticsearch.node:9300
         # Highly recommended for all non-prodcution usage (e.g., practice, tests, diagnostics):
-        #logExceptionsOnly="false"
+        #logExceptionsOnly=false
 
 3. Start @product@ or re-index if already running.
 
