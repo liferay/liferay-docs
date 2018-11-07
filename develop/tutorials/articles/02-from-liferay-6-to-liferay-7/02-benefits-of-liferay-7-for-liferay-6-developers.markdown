@@ -129,17 +129,18 @@ developing on Liferay will be easier than ever before. We have built
 for typical Liferay-specific development tasks (such as using Service Builder)
 and provide a collection of new archetypes.
 
-And if you want to continue using the Plugins SDK, we've got you covered. The
-Plugins SDK is available to facilitate your transition to @product-ver@. In
-fact, a
-[Plugins SDK structure can reside in a Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
-alongside new developments that use the new build environment; you can switch
-between traditional projects and new projects at your own pace.
+The Plugins SDK is no longer available for @product-ver@.
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+is now Liferay's opinionated development environment. You
+can transition from a Plugins SDK by adding it to your workspace and migrating
+projects at your own pace. See the
+[Using a Plugins SDK from Your Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
+article for more information.
 
 Finally, we have also developed a lightweight tool called
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli),
 which facilitates
-[starting new projects from templates](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-blade-cli) -- it's
+[starting new projects from templates](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli) -- it's
 especially useful for Gradle which doesn't have Maven's concept of archetypes.
 Blade CLI also offers 
 [commands](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
@@ -148,7 +149,7 @@ to start/stop the server and deploy and administer modules.
 ## Powerful Configurability [](id=powerful-configurability)
 
 Creating
-[configurable code](/develop/tutorials/-/knowledge_base/7-1/configuration)
+[configurable code](/develop/tutorials/-/knowledge_base/7-1/configurable-applications)
 is a breeze with @product-ver@. And applications that use Liferay's new
 Configuration API allow administrators to change the configuration on the fly,
 through an auto-generated user interface called

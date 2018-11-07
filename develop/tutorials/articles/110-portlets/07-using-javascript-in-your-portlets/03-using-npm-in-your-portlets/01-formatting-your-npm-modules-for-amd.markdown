@@ -33,7 +33,6 @@ if you want to follow along:
                             - @angular/compiler: ^5.0.0
                         - "" :
                             - npm-angular5-provider: ^1.0.0
-                        
             - `js/`
                 - `indigo-pink.css`
                 - `angular.pre.loader.ts`
@@ -69,9 +68,9 @@ Follow these steps to configure your project to use the liferay-npm-bundler:
 
     If you don't have a portlet already, create an empty MVC portlet project. 
     For convenience, you can use 
-    [Blade CLI](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/installing-blade-cli)
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/installing-blade-cli)
     to create an empty portlet with the 
-    [mvc portlet blade template](https://dev.liferay.com/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template).
+    [mvc portlet blade template](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template).
 
     If you don't have a `package.json` file, you can run `npm init -y` to create 
     an empty one based on the project directory's name. 
@@ -107,9 +106,7 @@ Follow these steps to configure your project to use the liferay-npm-bundler:
     transpiled to ECMAscript 5 or higher. The only requirements are:
 
     - That Babel can convert them to an AST to be able to process it
-
     - That your browser can execute it.
-
     - That modules are loaded using `require()` calls (this requirement can be 
       relaxed by using customized plugins, but is mandatory for the default 
       out-of-the-box configuration).
@@ -144,9 +141,9 @@ Follow these steps to configure your project to use the liferay-npm-bundler:
                 "imports": {
                     "npm-angular5-provider": {
                         "@angular/animations": "^5.0.0",
-                    		"@angular/cdk": "^5.0.0",
-                    		"@angular/common": "^5.0.0",
-                    		"@angular/compiler": "^5.0.0",
+                        "@angular/cdk": "^5.0.0",
+                        "@angular/common": "^5.0.0",
+                        "@angular/compiler": "^5.0.0",
                         ...
                     },
                     "": {
@@ -182,7 +179,6 @@ for the example widget is shown below:
                     - @npm-angular5-provider$angular/cdk: ^5.0.0
                     - @npm-angular5-provider$angular/common: ^5.0.0
                     - @npm-angular5-provider$angular/compiler: ^5.0.0
-                        
             - `js/`
                 - `angular.loader.js`
                     - Liferay.Loader.define("npm-angular5-portlet-say-hello@1.0.0/js/angular.loader"

@@ -4,9 +4,7 @@ A *Liferay Workspace* is a generated environment that is built to hold and
 manage your Liferay projects. This workspace is intended to aid in the
 management of Liferay projects by providing various Gradle build scripts and
 configured properties. This is the official way to create @product-ver@ modules
-using Gradle. For those developers that still want to develop WAR-style plugins
-using the Plugins SDK, this way is also supported using a Liferay Workspace. Do
-you prefer Maven over Gradle? See the
+using Gradle. Do you prefer Maven over Gradle? See the
 [Maven Workspace](/develop/tutorials/-/knowledge_base/7-1/maven-workspace)
 tutorial to learn about using Liferay Workspace with Maven.
 

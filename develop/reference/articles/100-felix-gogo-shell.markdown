@@ -1,23 +1,36 @@
 # Felix Gogo Shell [](id=using-the-felix-gogo-shell)
 
-To interact with @product@'s module framework on a local server machine, you can
-leverage a local telnet session:
+To interact with @product@'s module framework, you can leverage the Gogo shell
+portlet. You can access this portlet in the Control Panel &rarr; *Configuration*
+&rarr; *Gogo Shell*.
+
++$$$
+
+**Note:** You can also interact with @product@'s module framework via a local
+telnet session. To do this, you must have
+[Developer Mode enabled](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes#setting-developer-mode-for-your-server-using-portal-developer-properties).
+
+To open the Gogo shell via telnet, execute the following command:
 
     telnet localhost 11311
 
 Running this command requires a local running instance of @product@ and your
 machine's telnet command line utilities enabled.
 
-To disconnect the session, execute the `disconnect` command. 
+To disconnect the session, execute the `disconnect` command. Avoid using the
+following commands, which stop the OSGi framework:
 
-**Warning**: Commands  `shutdown`, `close`, and `exit` stop the OSGi framework.
-So make sure to use the `disconnect` command to end the telnet Gogo Shell
-session. 
+- `close`
+- `exit`
+- `shutdown`
 
 If you have [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
-installed, you can run the Felix Gogo shell via Blade command:
+installed and the telnet capability enabled, you can run the Gogo shell via
+Blade command too:
 
     blade sh <gogoShellCommand>
+
+$$$
 
 Here are some useful Gogo shell commands:
 
@@ -69,7 +82,15 @@ module framework
 `system:getproperties`: lists all of the system properties
 
 `uninstall [BUNDLE_ID]`: uninstalls the specified bundle from Liferay's module
-framework
+framework. This does not remove the specified bundle from Liferay's module
+framework; it's hidden from Gogo's `lb` command, but is still present. Adding
+a new version of the uninstalled bundle, therefore, will not reinstall it; it
+will update the currently hidden uninstalled version. To remove a
+bundle from Liferay's module framework permanently, manually delete it from the
+`LIFERAY_HOME/osgi` folder. For more information on the `uninstall` command, see
+OSGi's
+[uninstall](https://osgi.org/javadoc/r6/core/org/osgi/framework/Bundle.html#uninstall\(\))
+documentation.
 
 For more information about the Gogo shell, visit
 [Apache's official documentation](http://felix.apache.org/documentation/subprojects/apache-felix-gogo.html).

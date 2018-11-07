@@ -85,10 +85,10 @@ Follow these steps:
 
 1.  Open the Control Panel and go to *Configuration* &rarr; *System Settings*.
 
-2.  Click the *Foundation* tab and select *FreeMarker Engine*.
+2.  Select *Template Engines* under the *PLATFORM* heading.
 
 3.  By default, the *Resource modification check* (the time in milliseconds that
-    the template is cached) is set to `60`. Set this value to `0` to disable
+    the template is cached) is set to `60000`. Set this value to `0` to disable
     caching.
 
 Your FreeMarker templates are ready for development. Next you can learn how you 

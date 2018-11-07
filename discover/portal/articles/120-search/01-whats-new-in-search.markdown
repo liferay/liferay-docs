@@ -54,11 +54,13 @@ could be used at a time.
 ![Figure 6: Facets and their terms can be selected in multiples to refine search results.](../../images/search-multiple-facet-selection.png)
 
 **Search System Settings**
-: Configure system wide search behavior from the Search Web System Settings
-entry and other search-related System Settings entries, all found in Control
-Panel &rarr; Configuration &rarr; System Settings &rarr; Search.
+: Configure system wide search behavior from the Search System Settings category
+found in Control Panel &rarr; Configuration &rarr; System Settings &rarr;
+Search. The Search Web entry reverts the default search experience from using
+the new Search Widgets to the classic Search Portlet that was standard in past
+releases. 
 
-![Figure 7: Use the Search Web entry in System Settings to configure system wide search behavior.](../../images/search-system-settings.png)
+![Figure 7: Use the Search Web entry in System Settings to enable the classic, monolithic Search widget.](../../images/search-web-system-settings.png)
 
 **Custom Facets**
 : Configure a custom facet to create a new result aggregation on any
@@ -73,11 +75,25 @@ the Add Widget menu.
 ![Figure 9: The Search Options widget configures the search experience for
 the page it's deployed on.](../../images/search-options.png)
 
+**Search Facet Friendly URLs**
+: Using the new Search widgets, filter some search results by applying a facet
+term. The URL is now friendly:
+
+    http://localhost:8080/web/guest/search?q=test&modified=past-hour
+
 **Code Changes and Improvements**
-: See the 
-[developer guide](/develop/tutorials/-/knowledge_base/7-1/search) 
-to learn about the new, deprecated, and removed APIs and extension points for
-search infrastructure.
+: See the developer guide
+<!--(/develop/tutorials/-/knowledge_base/7-1/search)--> to learn about the new,
+deprecated, and removed APIs and extension points for search infrastructure.
+
+**Solr 7.x Support**
+: The Solr Connector application was updated to support Solr 7.x. 
+
+<!-- Add link when available (LRDOCS-4745)
+Read
+[here](discover/deployment/-/knowledge_base/7-1/installing-solr) 
+for more information.
+-->
 
 **Legacy Search**
 : We're cheating with this one. It isn't a new feature, but the old way of doing

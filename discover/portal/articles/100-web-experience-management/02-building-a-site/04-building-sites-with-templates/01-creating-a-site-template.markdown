@@ -59,7 +59,7 @@ $$$
 The changes you made to your Site template above are completed in real time, so 
 there's no *Save* button.
 
-![Figure 2: You can see the name of the Site template you're currently editing.](../../../../images/editing-site-template.png)
+![Figure 1: You can see the name of the Site template you're currently editing.](../../../../images/editing-site-template.png)
 
 Next, you'll use your Site template to create the Engineering, Marketing and
 Legal Sites.

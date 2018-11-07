@@ -1,0 +1,22 @@
+{
+	"dependencies": {
+		"metal-component": "^2.14.0",
+		"metal-soy": "^2.14.0"
+	},
+	"devDependencies": {
+		"babel-cli": "6.26.0",
+		"babel-preset-es2015": "6.24.1",
+		"babel-preset-liferay-project": "1.6.1",
+		"liferay-module-config-generator": "^1.2.1",
+		"liferay-npm-bundler": "1.6.1",
+		"liferay-npm-bundler-preset-amd": "1.6.1",
+		"liferay-npm-bundler-preset-standard": "^1.3.0",
+		"metal-tools-soy": "^4.2.1",
+		"rimraf": "^2.6.2"
+	},
+	"name": "dynamic-data-time-form-field",
+	"scripts": {
+		"build": "metalsoy && babel -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources --ignore config.js,time_field.js && liferay-npm-bundler && rimraf src/**/*.soy.js"
+	},
+	"version": "1.0.0"
+}

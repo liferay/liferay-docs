@@ -82,13 +82,9 @@ Here are some key standards @product@ supports:
     These are the most widely adopted security protocols for SSO and application
     sign in, supported through specific Apps that can be installed from
     [Liferay's Marketplace](http://marketplace.liferay.com).
--   [JAX-WS and JAX-RS](/develop/tutorials/-/knowledge_base/7-1/jax-ws-and-jax-rs):
+-   JAX-WS and JAX-RS:
     Incorporated since Liferay 7 as the preferred tooling to create web
     services.
-<!--
-    -   [WSRP](https://www.oasis-open.org/committees/wsrp) 1
-    and 2: Allows execution of portlets running in a remote container. TODO uncomment once the WSRP app is released on Marketplace.
--->
 -   [OSGi r6](https://www.osgi.org):
     Liferay supports a wide range of the OSGi family of standards through its
     own implementations and also integrates the high quality implementations of
@@ -156,11 +152,19 @@ know that most if not all of the tools you're familiar with are there. If you're
 writing applications on Liferay, the sky's the limit: you can use any
 web framework you like, and you can write both servlet and portlet-based
 applications. If you're looking for a recommendation, though, we're happy to
-point you to either our
+point you to our
+[MVCPortlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
+framework.
+
+
+<!-- TODO: readd JSF article when available. -Cody
+
+either our
 [MVCPortlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
 or our JSF-based
-[LiferayFaces](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
+[LiferayFaces](develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
 frameworks. 
+-->
 
 On the front-end, Liferay has kept pace with the most recent progressions in
 that space. If you've used Liferay in the past, you can of course continue to
@@ -176,7 +180,7 @@ You can also use any JavaScript library, including
 -   [Metal.js](http://metaljs.com/) (developed by Liferay)
 -   [jQuery](https://jquery.com/) (included) 
 -   Lodash (included)
--   Angular 1 or 2
+-   Angular JS or Angular
 -   React
 -   Your library of choice
 

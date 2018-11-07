@@ -220,11 +220,11 @@ Once you've gathered this information, you're ready to move on to the next step.
 ## Step 3: Install [](id=step-3-install)
 
 The next step is to install @product@. You can do this in one of two ways: by
-[installing @product@ bundled with an application server](/discover/deployment/-/knowledge_base/7-1/installing-product),
+[installing @product@ bundled with an application server](/discover/deployment/-/knowledge_base/7-1/installing-liferay),
 or by
 [installing @product@ manually on an existing application server](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually).
 Each @product@ installation's 
-[Liferay Home contains several folders](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home).
+[Liferay Home contains several folders](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home).
 
 By far the easiest way to get @product@ installed is to use a bundle. Though
 bundles are pre-packaged for demo purposes, it is very easy to turn them into
@@ -240,7 +240,7 @@ By default, @product@ uses IPv4 addresses. If you are using IPv6, you will have 
     `-Djava.net.preferIPv4Stack=false`. 
 
 2.  Create a `portal-ext.properties` file in your portal's
-    [Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+    [Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
     (if one does not already exist) and set the `tunnel.servlet.hosts.allowed`
     property to the target hosts you want to allow (e.g., _0:0:0:0:0:0:0:1_). 
 
@@ -277,7 +277,7 @@ decided to install @product@ using a bundle, continue with the next section. If
 you're installing @product@ manually, skip to the section for your application
 server of choice. Once you have @product@ installed manually or via a bundle,
 you can move on to 
-[using @product@'s Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-product##using-liferays-setup-wizard),
-[configuring mail](/discover/deployment/-/knowledge_base/7-1/installing-product#configuring-mail),
+[using @product@'s Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-liferay##using-liferays-setup-wizard),
+[configuring mail](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail),
 and 
 [installing Elasticsearch](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch). 

@@ -189,7 +189,7 @@ example `sitemap.json` file is shown below:
                 "friendlyURL": "/link-page",
                 "name": "Link to another Page",
                 "title": "Link to another Page",
-                "type": "link_to_layout"
+                "type": "link_to_layout",
                 "typeSettings": "linkToLayoutId=1"
             },
             {
@@ -203,6 +203,6 @@ example `sitemap.json` file is shown below:
 
 If you don't understand the sitemap at this point, don't worry. This section of 
 tutorials covers how to create a sitemap for your theme, from 
-[defining pages](/discover/portal/-/knowledge_base/7-1/defining-pages-in-a-sitemap) 
+[defining pages](/develop/tutorials/-/knowledge_base/7-1/defining-pages-in-a-sitemap) 
 to 
-[configuring portlets](/discover/portal/-/knowledge_base/7-1/configuring-portlets-in-a-sitemap). 
+[defining portlets](/develop/tutorials/-/knowledge_base/7-1/defining-portlets-in-a-sitemap). 

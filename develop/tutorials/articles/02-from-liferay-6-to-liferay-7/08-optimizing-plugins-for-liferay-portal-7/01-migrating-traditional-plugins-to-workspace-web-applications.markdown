@@ -1,11 +1,12 @@
 # Migrating Traditional Plugins to Workspace Web Applications [](id=migrating-traditional-plugins-to-workspace-web-applications)
 
 After you've
-[adapted your traditional plugin](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-to @product@'s API, you can continue maintaining it in the Plugins SDK. The
-Plugins SDK, however, is deprecated as of 7.0. Maintaining plugins in
-the SDK will become increasingly difficult.
-[Liferay Workspace replaces the Plugins SDK](/develop/tutorials/-/knowledge_base/7-1/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#from-the-plugins-sdk-to-liferay-workspace), 
+[adapted your traditional plugin](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+to @product@'s API, you can continue maintaining it in the Plugins SDK 7.0. The
+Plugins SDK, however, is no longer available for @product-ver@. Visit the
+[Deprecated Apps in 7.1: What To Do](/discover/deployment/-/knowledge_base/7-1/deprecated-apps-in-7-1-what-to-do#foundation)
+article for more information on the Plugins SDK removal.
+[Liferay Workspace replaces the Plugins SDK](/develop/tutorials/-/knowledge_base/7-1/from-the-plugins-sdk-to-liferay-workspace), 
 providing a comprehensive Gradle development environment and more. A simple
 command migrates traditional plugins (such as portlets) to Gradle-based web
 application projects. From there you can build and deploy them to @product@ as
@@ -68,7 +69,7 @@ application folder structure Workspace uses.
   libraries   | `docroot/WEB-INF/lib`    | `src/main/webapp/lib`    
 
 From your plugin's new location, you can invoke 
-[Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-1/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#plugins-sdk-to-workspace-task-map)
+[Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-1/from-the-plugins-sdk-to-liferay-workspace#plugins-sdk-to-workspace-task-map)
 on it and build its `.war` file.
 
   blade gw war 
@@ -80,6 +81,6 @@ Welcome to your plugin's new home in Workspace!
 
 ## Related Topics [](id=related-topics)
 
-[Workspace Development lifecycle](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#building-modules)
+[Workspace Development lifecycle](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#building-projects)
 
-[Workspace Gradle Tasks](/develop/tutorials/-/knowledge_base/7-1/improved-developer-tooling-liferay-workspace-maven-plugins-and-more#plugins-sdk-to-workspace-task-map)
+[Workspace Gradle Tasks](/develop/tutorials/-/knowledge_base/7-1/from-the-plugins-sdk-to-liferay-workspace#plugins-sdk-to-workspace-task-map)

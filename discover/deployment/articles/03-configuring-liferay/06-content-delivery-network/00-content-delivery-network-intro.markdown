@@ -69,7 +69,7 @@ different methods:
 
 To configure your CDN via a properties file, create a
 `portal-ext.properties` file in your
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 folder and set the appropriate
 [Content Delivery Network properties](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Content%20Delivery%20Network).
 

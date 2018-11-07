@@ -1,7 +1,7 @@
 # Referencing an npm Module's Package to Improve Code Maintenance [](id=referencing-an-npm-modules-package)
 
 Once you've 
-[exposed your modules](/develop/tutorials/-/knowledge_base/7-1/preparing-your-javascript-files-for-es2015), 
+[exposed your modules](/develop/tutorials/-/knowledge_base/7-1/preparing-your-javascript-files-for-esplus), 
 you can use them in your portlet via the `aui:script` tag's `require` attribute. 
 By default, @product@ automatically composes an npm module's JavaScript variable 
 based on its name. For example, the module `my-package@1.0.0` translates to the 
@@ -33,7 +33,7 @@ Follow these steps:
           jsPackage.getResolvedId() + " as bootstrapRequire");
  
 3.  Include the reference to the 
-    [`NPMResolver`](ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html):
+    [`NPMResolver`](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/js/loader/modules/extender/npm/NPMResolver.html):
 
         @Reference
         private NPMResolver _npmResolver;
@@ -97,6 +97,6 @@ Now you know how to reference an npm module's package!
 
 [Obtaining an OSGi bundle's Dependency npm Package Descriptors](/develop/tutorials/-/knowledge_base/7-1/obtaining-dependency-npm-package-descriptors)
 
-[liferay-npm-bundler](/develop/tutorials/-/knowledge_base/7-1/liferay-npm-bundler)
+[liferay-npm-bundler](/develop/reference/-/knowledge_base/7-1/liferay-npm-bundler)
 
-[How @product@ Publishes npm Packages](/develop/tutorials/-/knowledge_base/7-1/how-liferay-portal-publishes-npm-packages)
+[How @product@ Publishes npm Packages](/develop/reference/-/knowledge_base/7-1/how-liferay-portal-publishes-npm-packages)

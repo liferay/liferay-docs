@@ -99,7 +99,7 @@ You can connect to your database with JNDI on your app server or the data source
 shipped with @product@ (recommended). Refer to the article on your app server
 for instructions on using JNDI. For the internal data source, you can configure
 it by specifying the configuration in a `portal-ext.properties` file or the
-[Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-product#using-liferays-setup-wizard):
+[Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard):
 
 1.  Create a `portal-ext.properties` file in your Liferay Home folder.
 

@@ -15,7 +15,7 @@ in your theme. To do this, add the following property to your theme's
     `resources-importer-developer-mode-enabled=true`
 
 This is enabled by default for themes generated with the 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/themes-generator). 
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes). 
 This is a convenience feature for theme developers. With this setting enabled,
 importing resources into a site or site template that already exists recreates
 the site or site template. Importing resources into a site template reapplies
@@ -90,8 +90,8 @@ It's just that easy to import resources with your theme!
 
 ## Related Topics [](id=related-topics)
 
-[Preparing and organizing resources](/develop/tutorials/-/knowledge_base/7-1/preparing-resources-for-the-importer)
+[Preparing and Organizing Web Content for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/preparing-and-organizing-web-content-for-the-resources-importer)
 
-[Defining the Sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-the-sitemap)
+[Creating a Sitemap for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/creating-a-sitemap-for-the-resources-importer)
 
-[Defining the Assets](/develop/tutorials/-/knowledge_base/7-1/defining-the-assets)
+[Defining Assets for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/defining-assets-for-the-resources-importer)

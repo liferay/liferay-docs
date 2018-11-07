@@ -75,7 +75,7 @@ created, provide the name of the host bundle version. This is required when
 using the `fragment` project template.
 
 `-v, --liferay-version`: The version to target when creating a project. The
-default is `7.0`.
+default is `7.1`.
 
 `-l, --list-templates`: Prints a list of available project templates.
 
@@ -108,16 +108,10 @@ directory was not specified, it is created in the folder you executed the
 command. When generating a project using Blade CLI, there is no downloading,
 which means internet access is not required.
 
-If you want to generate a project for  @product-ver@, you can specify this using
-the `-v` flag. This lets you specify the version you want to build your project
-for. Add the `-v 7.1` to your `create` command sequence to do this.
-
-<!-- TODO: The below text should replace the text above once 7.1 GA is out. -Cody
-
 If you want to generate a project for a previous version (e.g., Liferay Portal
 7.0), you can specify this using the `-v` flag. For example, to create a project
 for Liferay Portal 7.0, you would include `-v 7.0` in your `create` command
-sequence. -->
+sequence.
 
 Blade CLI can also create the same project with Maven by specifying the `-b
 maven` parameter. Using Blade CLI's Maven option isn't the only way to leverage
@@ -149,7 +143,7 @@ learning best practices on structuring their projects to accomplish specific
 tasks. These samples can be found in the
 [liferay-blade-samples](https://github.com/liferay/liferay-blade-samples) Github
 repository. You can also learn more about these samples by visiting the
-[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-modules)
+[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 article.
 
 You can generate these samples using Blade CLI for convenience, instead of
@@ -163,6 +157,15 @@ For example, if you wanted to generate the
 sample, you could execute
 
     blade samples ds-portlet
+
++$$$
+
+**Note:** Interested in generating legacy versions of Blade samples? Pass in the
+`-v` param followed by the @product@ version to target. For example,
+
+    blade samples -v 7.0 ds-portlet
+
+$$$
 
 For a full listing of all the available Blade samples, run
 

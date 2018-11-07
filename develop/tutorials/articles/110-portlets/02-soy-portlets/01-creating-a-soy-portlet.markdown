@@ -324,6 +324,12 @@ template should include all its parameters as well:
 
     {call View.render data="all"}{/call}
 
++$$$
+
+**Note:** Template namespaces must be unique.  
+
+$$$
+
 Below is an example `View` Soy template that includes `Header` and `Footer` Soy 
 templates:
 
@@ -438,5 +444,3 @@ Now you know how to create a Soy Portlet!
 ## Related Topics [](id=related-topics)
 
 [Liferay MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
-
-[JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)

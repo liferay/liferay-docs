@@ -20,9 +20,20 @@ Follow these steps to create a thumbnail preview for your theme:
     properly. 
 
 3.  Save the image as a `.png` file named `thumbnail.png` and place it in the
-    theme's `images` folder (create this folder if it doesn't already exist). On 
+    theme's `src/images` folder (create this folder if it doesn't already exist). On 
     redeployment, the `thumbnail.png` file automatically becomes the theme's
     thumbnail.
+
++$$$
+
+**Note:** The 
+[Theme Builder Gradle plugin](/develop/reference/-/knowledge_base/7-1/theme-builder-gradle-plugin) 
+doesn't recognize a `thumbnail.png` file. If you're using this plugin to build 
+your theme instead, you must create a `screenshot.png` file in your theme's 
+`images` folder that is 1080 pixels high by 864 pixels wide. The thumbnail is 
+automatically generated from the screenshot for you when the theme is built.
+
+$$$
 
 Now, when you apply the theme, its thumbnail displays along with the other
 themes that are available to your site.

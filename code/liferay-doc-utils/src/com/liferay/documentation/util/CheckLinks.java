@@ -25,7 +25,7 @@ import com.liferay.portal.kernel.util.Validator;
 
 public class CheckLinks {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 
 		String legacyLinks = args[0];
 		checkLegacyLinks = Boolean.parseBoolean(legacyLinks);
@@ -39,14 +39,23 @@ public class CheckLinks {
 		platformReferenceSite = args[5];
 		appReferenceSite = args[6];
 
-		File currentArticleDir = new File("../" + docDir + "/articles");
+		String dxpLinks = args[7];
+		checkDxpLinks = Boolean.parseBoolean(dxpLinks);
 
+		// e.g., docDir = tutorials
+		File currentArticleDir = new File("../" + docDir + "/articles");
 		List<File> currentArticles = findCurrentDirArticles(currentArticleDir);
+
+		if (checkDxpLinks) {
+			currentArticles = addDxpOnlyArticles(currentArticles, docDir, true);
+		}
 
 		assignReferencedDirArticles(articleDirs);
 
 		userGuideHeaders = findHeaders(userGuideArticles);
 		adminGuideHeaders = findHeaders(adminGuideArticles);
+		analyticsCloudHeaders = findHeaders(analyticsCloudArticles);
+		commerceHeaders = findHeaders(commerceArticles);
 		userGuideReferenceHeaders = findHeaders(userGuideReferenceArticles);
 		tutorialHeaders = findHeaders(tutorialArticles);
 		devGuideReferenceHeaders = findHeaders(devGuideReferenceArticles);
@@ -77,7 +86,7 @@ public class CheckLinks {
 							primaryHeader = splitHeaders[0];
 							String secondaryHeader = splitHeaders[1];
 
-							validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader, 0);
+							validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader, 0, false);
 						}
 						else if (header.equals("")) {
 							continue;
@@ -85,7 +94,7 @@ public class CheckLinks {
 						else {
 
 							primaryHeader = header;
-							validUrl = isUrlValid(line, article, in, primaryHeader, null, 0);
+							validUrl = isUrlValid(line, article, in, primaryHeader, null, 0, false);
 						}
 
 						if (!validUrl) {
@@ -129,7 +138,49 @@ public class CheckLinks {
 
 			in.close();
 		}
-		System.out.println("\nTotal Broken Links: " + resultsNumber);
+		if (resultsNumber > 0) {
+			throw new Exception("\n\n**Total Broken Links: " + resultsNumber + "**\n");
+		}
+		else {
+			System.out.println("\nNo Broken Links!");
+		}
+	}
+
+	/**
+	 * Adds new DXP articles and applies DXP overrides to the article list.
+	 *
+	 * @param  articles the CE articles
+	 * @param  path the partial folder path with the DXP articles to acquire
+	 * @param  currentDir whether the DXP articles are being returned for the
+	 *         folder the command was executed from
+	 * @return the new list of articles containing the new DXP articles and DXP
+	 *         overrides
+	 */
+	private static List<File> addDxpOnlyArticles(List<File> articles, String path, boolean currentDir) {
+
+		List<File> dxpArticles = getDxpArticles(path, currentDir);
+
+		articles = includeDxpOverrides(articles, dxpArticles);
+
+		List<File> dxpArticlesToDelete = new ArrayList<File>();
+
+		// DXP articles that override existing CE articles are removed from DXP list so
+		// they're not added as new articles
+		for (File dxpArticle : dxpArticles) {
+			if (fileOverrides.contains(dxpArticle)) {
+				dxpArticlesToDelete.add(dxpArticle);
+			}
+		}
+
+		for (File dxpArticleToDelete : dxpArticlesToDelete) {
+			dxpArticles.remove(dxpArticleToDelete);
+		}
+
+		for (File dxpArticle : dxpArticles) {
+			articles.add(dxpArticle);
+		}
+
+		return articles;
 	}
 
 	/**
@@ -154,6 +205,14 @@ public class CheckLinks {
 
 		else if (lineSubstring.contains(adminGuideDir)) {
 			headers = adminGuideHeaders;
+		}
+
+		else if (lineSubstring.contains(commerceDir)) {
+			headers = commerceHeaders;
+		}
+
+		else if (lineSubstring.contains(analyticsCloudDir)) {
+			headers = analyticsCloudHeaders;
 		}
 
 		else if (lineSubstring.contains(userGuideReferenceDir)) {
@@ -188,6 +247,14 @@ public class CheckLinks {
 
 			if (articleDir.equals(adminGuideDir)) {
 				adminGuideArticles = findArticles(adminGuideDir);
+			}
+
+			if (articleDir.equals(commerceDir)) {
+				commerceArticles = findArticles(commerceDir);
+			}
+
+			if (articleDir.equals(analyticsCloudDir)) {
+				analyticsCloudArticles = findArticles(analyticsCloudDir);
 			}
 
 			if (articleDir.equals(userGuideReferenceDir)) {
@@ -233,6 +300,16 @@ public class CheckLinks {
 			String headerValue = pair.getValue().toString();
 			int headerIndex = Integer.parseInt(headerValue);
 
+			// Find version for each header so we can accurately check them
+			String substringLineStart = line.substring(headerIndex);
+			int headerStart = substringLineStart.indexOf(findStr) + findStr.length();
+			String version = substringLineStart.substring(headerStart, headerStart + 3);
+			boolean differingDefaultVersion = false;
+
+			if (!version.equals("7-1")) {
+				differingDefaultVersion = true;
+			}
+
 			// end of >1 logic
 
 			String primaryHeader = null;
@@ -244,7 +321,7 @@ public class CheckLinks {
 				primaryHeader = splitHeaders[0];
 				String secondaryHeader = splitHeaders[1];
 
-				validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader, headerIndex);
+				validUrl = isUrlValid(line, article, in, primaryHeader, secondaryHeader, headerIndex, differingDefaultVersion);
 			}
 			else if (header.equals("")) {
 				continue;
@@ -252,12 +329,12 @@ public class CheckLinks {
 			else {
 
 				primaryHeader = header;
-				validUrl = isUrlValid(line, article, in, primaryHeader, null, headerIndex);
+				validUrl = isUrlValid(line, article, in, primaryHeader, null, headerIndex, differingDefaultVersion);
 			}
 
 			if (!validUrl) {
 				logInvalidUrl(article, in.getLineNumber(), line, false);
-				System.out.println("Invalid Header: " + header);
+				System.out.println("Invalid Header: " + header + "\n");
 			}
 		}
 
@@ -293,7 +370,7 @@ public class CheckLinks {
 
 			if (!validUrl) {
 				logInvalidUrl(article, in.getLineNumber(), line, false);
-				System.out.println("Invalid Subheader: #" + secondaryHeader);
+				System.out.println("Invalid Subheader: #" + secondaryHeader + "\n");
 			}
 	    }
 	}
@@ -511,6 +588,10 @@ public class CheckLinks {
 			}
 		}
 
+		if (checkDxpLinks) {
+			articles = addDxpOnlyArticles(articles, path, false);
+		}
+
 		return articles;
 	}
 
@@ -595,6 +676,100 @@ public class CheckLinks {
 		headers.add(secondaryHeaders);
 
 		return headers;
+	}
+
+	/**
+	 * Returns the DXP articles contained in the folder.
+	 *
+	 * @param  path the partial folder path with the DXP articles to acquire
+	 * @param  currentDir whether the DXP articles are being returned for the
+	 *         folder the command was executed from
+	 * @return the DXP articles contained in the folder
+	 */
+	private static List<File> getDxpArticles(String path, boolean currentDir) {
+
+		List<File> dxpArticles = new ArrayList<File>();
+		File dxpArticleDir = new File("");
+
+		// Ensure "articles-dxp" folder exists
+		try {
+			if (currentDir) {
+				dxpArticleDir = new File("../" + path + "/articles-dxp");
+			}
+			else {
+				dxpArticleDir = new File("../../" + path + "/articles-dxp");
+			}
+
+			dxpArticles = findCurrentDirArticles(dxpArticleDir);
+		} catch(NullPointerException e) {
+			if (currentDir) {
+				System.out.println("No DXP articles in " + dxpArticleDir.getParent());
+			}
+		}
+
+		return dxpArticles;
+	}
+
+	/**
+	 * Overrides the CE articles with their DXP article counterparts.
+	 *
+	 * @param  articles the CE articles
+	 * @param  dxpArticles the DXP articles
+	 * @return the new list of articles containing the DXP article overrides
+	 */
+	private static List<File> includeDxpOverrides(List<File> articles, List<File> dxpArticles) {
+
+		if (Validator.isNotNull(dxpArticles)) {
+
+			List<String> currentArticlePathStrings = new ArrayList<String>();
+			List<String> currentDxpArticlePathStrings = new ArrayList<String>();
+
+			// Find DXP-only articles and convert paths to strings
+			for (File articleDxp : dxpArticles) {
+
+				String articleDxpPathString = articleDxp.getPath();
+				articleDxpPathString = articleDxpPathString.replace(File.separator + "articles-dxp" + File.separator, File.separator + "articles" + File.separator);
+
+				currentDxpArticlePathStrings.add(articleDxpPathString);
+			}
+
+			// Convert regular article paths to strings
+			for (File article : articles) {
+
+				String articlePathString = article.getPath();
+
+				currentArticlePathStrings.add(articlePathString);
+			}
+
+			List<Integer> articleIndexes = new ArrayList<Integer>();
+
+			// Find article indexes that should be replaced with DXP override
+			for (String articleDxpPath : currentDxpArticlePathStrings) {
+				int count = 0;
+				for (String articlePath : currentArticlePathStrings) {
+
+					if (articlePath.equals(articleDxpPath)) {
+						articleIndexes.add(count);
+					}
+					count++;
+				}
+			}
+
+			// Apply DXP overrides to current article list
+			for (int i = 0; i < articleIndexes.size(); i++) {
+				File fileOverride =articles.get(articleIndexes.get(i));
+				String fileOverrideString = fileOverride.getPath();
+
+				fileOverrideString = fileOverrideString.replace(File.separator + "articles" + File.separator, File.separator + "articles-dxp" + File.separator);
+				fileOverride = new File(fileOverrideString);
+
+				fileOverrides.add(fileOverride);
+
+				articles.set(articleIndexes.get(i), fileOverride);
+			}
+		}
+
+		return articles;
 	}
 
 	/**
@@ -717,6 +892,9 @@ public class CheckLinks {
 			else if (line.contains("<a name=" + quotation + secondaryHeader + quotation + ">")) {
 				validUrl = true;
 			}
+			else if (line.contains("<div") && line.contains("id=" + quotation + secondaryHeader + quotation + ">")) {
+				validUrl = true;
+			}
 		}
 
 		in.close();
@@ -741,7 +919,8 @@ public class CheckLinks {
 	 * @throws IOException if an IO exception occurred
 	 */
 	private static boolean isUrlValid(String line, File article, LineNumberReader in,
-			String primaryHeader, String secondaryHeader, int lineIndex) throws IOException {
+			String primaryHeader, String secondaryHeader, int lineIndex,
+			boolean differingDefaultVersion) throws IOException {
 
 		boolean validURL = false;
 		ArrayList<List<String>> headers = new ArrayList<List<String>>();
@@ -749,7 +928,7 @@ public class CheckLinks {
 		headers = assignDirHeaders(line, lineIndex);
 
 		// Check 7.1 links from local liferay-docs repo
-		if (line.contains("/7-1/")) {
+		if (line.contains("/7-1/") && !differingDefaultVersion) {
 
 			if (Validator.isNull(secondaryHeader)) {
 
@@ -806,14 +985,16 @@ public class CheckLinks {
 
 		System.out.println(resultsNumber + ". " + "**" + message + "**\n File: " +
 				article.getPath() + ":" + lineNumber + "\n" +
-				" Line: " + line);
+				" Line: " + line + "\n");
 
 	}
 
 	private static String appReferenceSite;
 	private static String appToken;
 	private static boolean checkApiLinks;
+	private static boolean checkDxpLinks;
 	private static boolean checkLegacyLinks;
+	private static List<File> fileOverrides = new ArrayList<File>();
 	private static String ldnArticle;
 	private static String platformReferenceSite;
 	private static String platformToken;
@@ -830,6 +1011,14 @@ public class CheckLinks {
 	private static List<File> adminGuideArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> adminGuideHeaders = new ArrayList<List<String>>();
 
+	private static String commerceDir = "discover/commerce";
+	private static List<File> commerceArticles = new ArrayList<File>();
+	private static ArrayList<List<String>> commerceHeaders = new ArrayList<List<String>>();
+
+	private static String analyticsCloudDir = "discover/analytics-cloud";
+	private static List<File> analyticsCloudArticles = new ArrayList<File>();
+	private static ArrayList<List<String>> analyticsCloudHeaders = new ArrayList<List<String>>();
+
 	private static String userGuideReferenceDir = "discover/reference";
 	private static List<File> userGuideReferenceArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> userGuideReferenceHeaders = new ArrayList<List<String>>();
@@ -844,6 +1033,6 @@ public class CheckLinks {
 	private static List<File> devGuideReferenceArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> devGuideReferenceHeaders = new ArrayList<List<String>>();
 
-	private static String[] articleDirs = {userGuideDir, adminGuideDir, userGuideReferenceDir,
+	private static String[] articleDirs = {userGuideDir, adminGuideDir, commerceDir, analyticsCloudDir, userGuideReferenceDir,
 			tutorialDir, devGuideReferenceDir};
 }

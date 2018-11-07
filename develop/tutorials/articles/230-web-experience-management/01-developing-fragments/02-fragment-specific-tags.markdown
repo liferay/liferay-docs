@@ -22,6 +22,25 @@ You can make any text of a fragment editable by enclosing it in an
  
 The `lfr-editable` tag doesn't render without a unique `id`. 
 
+The following three `type` options are available inside of of `lfr-editable` tag:
+
+`text`: Creates a space for plain text that can be edited before publishing. 
+
+`image`: Must contain a valid `<img>` tag which can then be replaced with any
+image before publishing---including those from Documents and Media.
+ 
+`rich-text`: Similar to the text field, but provides an WYSIWYG editor for
+editing before publication.
+
++$$$
+
+**WARNING:** Be careful with the `rich-text` type. Users can use the editor to
+provide their own HTML in the provided field which may have catastrophic results
+for your layout if misused. Be sure that your content creators understand the
+responsibility that must come with such great power.
+
+$$$
+
 Now add editable text to a Fragment, add the Fragment to a Content Page, 
 and then edit the text before publishing:
 
@@ -54,6 +73,9 @@ published:
 
 ![Figure 1: You can edit text in the Page Template editor.](../../../images/editing-fragment-text.png)
 
+Similarly, the `rich-text` type provides the same functionality with additional
+features in the editor.
+
 The template saves automatically, and when it is turned into a page, the new
 text is displayed.
 
@@ -65,18 +87,16 @@ You must be careful with defining styles for editable images since an image that
 without the proper dimensions or that is forced into a poorly sized space can
 have major negative effects on your layout. 
 
-Images use the same `<lfr-editable>` tag as text, but with the `img` type, like 
+Images use the same `<lfr-editable>` tag as text, but with the `image` type, like 
 this:
     
-    <lfr-editable id="unique-id" type="img">
+    <lfr-editable id="unique-id" type="image">
        <img src="...">
     </lfr-editable>
 
-After you add the `lfr-editable` tag with the type `img` to a Fragment, when 
+After you add the `lfr-editable` tag with the type `image` to a Fragment, when 
 you add that Fragment to a page, you can then click on the editable image and 
 select a replacement.
-
-<!--Figure X: You can replace images in the Page Template editor.../../../images/editing-fragment-image.png -->
 
 ## Including Widgets Within A Fragment [](id=including-widgets-within-a-fragment)
 
@@ -86,11 +106,12 @@ will be available in the future.
 
 To include a widget you need to know its registered name. For example, the Site 
 Navigation Menu portlet is registered as `nav`. Each portlet which is registered
-has an `lfr-app-[name]` tag that's used to embed it. For example: the Navigation
-Menu tag is `<lfr-app-nav />`. You could embed it in a block like this:
+has an `lfr-widget-[name]` tag that's used to embed it. For example: the Navigation
+Menu tag is `<lfr-widget-nav />`. You could embed it in a block like this:
 
     <div class=”nav-widget”>
-        <lfr-app-nav />
+        <lfr-widget-nav>
+        </lfr-widget-nav>
     </div>
 
 Implement this in your Fragment:
@@ -105,7 +126,8 @@ Implement this in your Fragment:
         <div class=”container-fluid”>
           <div class=”row”>
             <div class=”col-md-10”>
-               <lfr-widget-nav />
+               <lfr-widget-nav>
+               </lfr-widget-nav>
             </div>
           </div>
         </div>
@@ -147,7 +169,18 @@ that you want to embed, add this property:
 When you deploy your widget, it's available to add. The name you specify in the
 property must be appended to the `lfr-widget` tag like this:
 
-    <lfr-widget-app-name /> 
+    <lfr-widget-app-name>
+    </lfr-widget-app-name>
+
+
++$$$
+
+**NOTE:** According to the W3C HTML standards, custom elements cannot be self 
+closing. Therefore, even though you cannot add anything between the opening and
+closing `<lfr-widget...>` tags, you cannot use the self closing notation for 
+the tag.
+
+$$$
 
 Embedding widgets in Fragments opens a world of options. Now that you've
 explored some of the power of Fragments, next you'll learn about best practices

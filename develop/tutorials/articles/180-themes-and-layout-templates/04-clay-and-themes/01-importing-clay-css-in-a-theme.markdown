@@ -84,7 +84,7 @@ Follow these steps to customize the Atlas theme:
         
         $FontAwesomePath: "font-awesome/font";
         
-        @import "font-awesome/scss/font-awesome"
+        @import "font-awesome/scss/font-awesome";
  
 4.  Add a file named `_clay_variables.scss`. All your Atlas, Bootstrap, and Clay 
     Base variable modifications must be placed in this file.
@@ -113,9 +113,9 @@ these directories into your theme:
     frontend-theme-classic/src/js
     frontend-theme-classic/src/templates
 
-You can also automatically copy these files into your theme using the 
-[Liferay Theme Tasks](/develop/reference/-/knowledge_base/7-1/theme-gulp-tasks) 
-`gulp kickstart` command and following the prompts.
+You can also automatically 
+[copy these files into your theme](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files) 
+using the `gulp kickstart` command and following the prompts. 
 
 Next you can learn how to customize the Clay Base.
 
@@ -130,7 +130,7 @@ In your custom theme's `/src/css` folder (legacy ant themes:
     
         $FontAwesomePath: "font-awesome/font";
         
-        @import "font-awesome/scss/font-awesome"
+        @import "font-awesome/scss/font-awesome";
 
 Then in that same folder, add a file named `_clay_variables.scss`. All your
 Atlas, Bootstrap, and Clay Base variable modifications must be placed in this

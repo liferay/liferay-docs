@@ -18,7 +18,7 @@ retrieve a new entity on a node which doesn't have that entity cached results in
 a cache *miss*. The miss triggers the node to retrieve the entity from the
 database and store it in its local cache. 
 
-![Figure 2: @product@'s cache algorithm is extremely efficient. ](../../../images-dxp/clustering-cache-efficient-algorithm.png)
+![Figure 1: @product@'s cache algorithm is extremely efficient. ](../../../images-dxp/clustering-cache-efficient-algorithm.png)
 
 To enable Cluster Link, add this property to `portal-ext.properties`: 
 
@@ -31,6 +31,12 @@ for nodes to communicate. It can
 - Send messages to a specific node
 - Invoke methods and retrieve values from all, some, or specific nodes
 - Detect membership and notify when nodes join or leave
+
+When you start @portal@ in a cluster, a log file message shows your cluster's name (e.g., `cluster=liferay-channel-control`): 
+
+    ------------------------------------------------------------------- 
+    GMS: address=oz-52865, cluster=liferay-channel-control, physical address=192.168.1.10:50643 
+    -------------------------------------------------------------------
 
 Cluster Link contains an enhanced algorithm that provides one-to-many type
 communication between the nodes. This is implemented by default with JGroups's
@@ -73,14 +79,9 @@ Your network configuration may preclude the use of multicast over TCP, so below
 are some other ways you can get your cluster communicating. Note that these
 methods are all provided by JGroups. 
 
-### Checkpoint: 
+### Checkpoint: [](id=checkpoint)
 
-1.  If you are using multicast to handle your cluster, add this property to
-    `portal-ext.properties`:
-
-        `cluster.link.enabled=true`
-
-2.  If you are binding the IP address instead of using `localhost`, make sure
+1.  If you are binding the IP address instead of using `localhost`, make sure
     the right IP addresses are declared using these properties: 
 
         `cluster.link.bind.addr["cluster-link-control"]=localhost` 
@@ -112,14 +113,12 @@ different geographical locations.
     If you aren't sure which one to choose, use `TCPPing`. This is used in the
     rest of these steps; the others are covered below. 
 
-3.  Download the OSGi Dependencies from the Customer Portal or access them from
-    your existing installation. In the dependencies' `portal` folder is a .jar
-    file called `com.liferay.portal.cluster.multiple-[version].jar`. In this
-    .jar's `lib` folder is a file called `jgroups-[version].Final.jar`. Open it
-    and find `tcp.xml`. Extract this file to a location accessible to @product@.
-    Use this file on all your nodes.
-
-    <!-- TODO Check for the com.liferay.portal.cluster.multiple JAR in the downloadable OSGi Dependencies. - Jim -->
+3.  Download the latest `com.liferay.portal.cluster.multiple-[version].jar` 
+    files from
+    [Liferay's Nexus repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.cluster.multiple).
+    In this JAR's `lib` folder is a file called `jgroups-[version].Final.jar`.
+    Open it and find `tcp.xml`. Extract this file to a location accessible to
+    @product@. Use this file on all your nodes.
 
 4.  If you're vertically clustering (i.e., you have multiple servers running on
     the same physical or virtual system), you must change the port on which

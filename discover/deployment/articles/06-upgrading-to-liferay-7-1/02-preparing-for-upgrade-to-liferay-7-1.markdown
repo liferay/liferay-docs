@@ -7,17 +7,19 @@ a summary of the preparation steps:
 
 **Step 1**: Upgrade your Marketplace apps 
 
-**Step 2**: Remove duplicate web content structure field names
+**Step 2**: Publish all changes from the staged site to the live site
 
-**Step 3**: Synchronize a complete @product@ backup
+**Step 3**: Remove duplicate web content structure field names
 
-**Step 4**: Update your portal properties
+**Step 4**: Synchronize a complete @product@ backup
 
-**Step 5**: Configure your Documents and Media file store
+**Step 5**: Update your portal properties
 
-**Step 6**: Install @product-ver@ 
+**Step 6**: Configure your Documents and Media file store
 
-**Step 7**: Disable indexing during the upgrade process
+**Step 7**: Install @product-ver@ and the latest fix pack
+
+**Step 8**: Disable indexing during the upgrade process
 
 This tutorial describes these steps in detail. 
 
@@ -27,7 +29,17 @@ Upgrade each Marketplace app (Kaleo, Calendar, Notifications, etc.) that you're
 using to its latest version for your installation. Before proceeding with the
 upgrade, troubleshoot any issues regarding these apps. 
 
-## Step 2: Remove Duplicate Web Content Structure Field Names [](id=step-2-remove-duplicate-web-content-structure-field-namesidstep-2-remove-du)
+## Step 2: Publish All Changes from the Staged Site to the Live Site [](id=publish-all-changes-from-the-staged-site-to-the-live-site)
+
+If you have
+[local/remote staging enabled](/discover/portal/-/knowledge_base/7-1/enabling-staging)
+and have content or data saved on the staged site, you must
+[publish](/discover/portal/-/knowledge_base/7-1/publishing-staged-content-efficiently)
+it to the live site. If you skip this step, you must run a full publish (or
+manually publish changes) after the upgrade, since the system won't know what
+content changed since the last publishing date.
+
+## Step 3: Remove Duplicate Web Content Structure Field Names [](id=remove-duplicate-web-content-structure-field-names)
 
 If you've used Web Content Management extensively, you might have structures
 whose field names aren't unique. You must 
@@ -40,11 +52,11 @@ before upgrading. If you upgraded to Liferay Portal 6.2 previously and skipped d
 If this is the case, roll back to your previous backup of Liferay 6.2 and 
 [find and remove duplicate field names](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#find-and-remove-duplicate-field-names). 
 
-## Step 3: Synchronize a Complete Backup @product@ [](id=step-2-synchronize-a-complete-backup-product)
+## Step 4: Synchronize a Complete Backup @product@ [](id=step-2-synchronize-a-complete-backup-product)
 
 [Back up your @product@ database, installation, and Document Library store](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation). 
 
-## Step 4: Update Your Portal Properties [](id=step-4-update-your-portal-properties)
+## Step 5: Update Your Portal Properties [](id=step-4-update-your-portal-properties)
 
 It is likely that you have overridden portal properties to customize your
 installation to your requirements. If so, you must update the properties files
@@ -63,7 +75,7 @@ these property-related updates:
     [migrate the Image Gallery](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay#migrate-your-image-gallery-images).
 
 -   If you have a sharded environment,
-    [configure your upgrade for sharding](/discover/deployment/-/knowledge_base/7-1/upgrading-sharded-environment).
+    [configure your upgrade for sharding](/discover/deployment/-/knowledge_base/7-0/upgrading-sharded-environment).
 
 When a new version of @product@ is released, there are often changes to default
 settings, and this release is no different. If you rely on the defaults from
@@ -98,10 +110,10 @@ The
 [7.1 portal properties reference docs](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html)
 provide property details and examples. 
 
-## Step 5: Configuring Your Documents and Media File Store [](id=configuring-your-documents-and-media-file-store)
+## Step 6: Configuring Your Documents and Media File Store [](id=configuring-your-documents-and-media-file-store)
 
 Your next task is to review your Documents and Media configuration. Look at
-[Document Library documentation](/discover/portal/-/knowledge_base/7-1/liferay-repository-types)
+[Document Library documentation](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
 to see all the options in @product-ver@ before executing an upgrade process.
 There are, however, two important pieces of configuration that have changed: 
 
@@ -114,14 +126,16 @@ There are, however, two important pieces of configuration that have changed:
 
 If you use the default store but don't want to store the files in the default
 location (`[Liferay Home]/data/document_library`), you must create a file called
-`com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.cfg`
+`com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.config`
 in your `[Liferay Home]/osgi/configs` folder and add the following content:
 
-    rootDir={document_library_path}
+    rootDir="{document_library_path}"
+
+Replace `{document_library_path}` with the path to your document library. 
 
 If you use the Advanced File System Store method to persist document library
 files, you'd call that file
-`com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.cfg`.
+`com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.config`.
 
 The configuration file name must match the name of the class that implements the
 configuration. 
@@ -130,12 +144,15 @@ The
 [Document Repository Configuration documentation](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
 provides more information.
 
-## Step 6: Install @product-ver@ [](id=install-the-new-version-of-product)
+## Step 7: Install @product-ver@ [](id=install-the-new-version-of-product)
 
 Next,
 [install @product@ on your application server](/discover/deployment/-/knowledge_base/7-1/deploying-product)
 or
-[use @product@ bundled with your application server of choice](/discover/deployment/-/knowledge_base/7-1/installing-product).
+[use @product@ bundled with your application server of choice](/discover/deployment/-/knowledge_base/7-1/installing-liferay).
+
+Then
+[install the latest fix pack](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-liferay). 
 
 **Important**: Once you have installed @product-ver@, **DON'T START IT!** In
 previous versions, once you prepared your system for an upgrade, the upgrade
@@ -156,19 +173,19 @@ Copy your custom portal properties files (e.g., `portal-ext.properties`) that
 you updated in previous steps and your Documents and Media store into your new
 installation. 
 
-## Step 7: Disable Indexing During the Upgrade Process [](id=disable-indexing-during-the-upgrade-process)
+## Step 8: Disable Indexing During the Upgrade Process [](id=disable-indexing-during-the-upgrade-process)
 
 Before starting the upgrade process in your new installation, you must disable
 indexing to prevent upgrade process performance issues that arise when the
 indexer attempts to reindex content. 
 
 To disable indexing, create a file called
-`com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.cfg` in
-your `[Liferay Home]/osgi/configs` folder and add the following content: 
+`com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config`
+in your `[Liferay Home]/osgi/configs` folder and add the following content: 
 
-    indexReadOnly=true
+    indexReadOnly="true"
 
 After you complete the upgrade (described in the next article), re-enable
-indexing by setting this property to `false`. 
+indexing by removing the `.config` file or setting `indexReadOnly="false"`. 
 
 Ready to upgrade? The next article shows you how. 

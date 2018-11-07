@@ -54,6 +54,6 @@ maintains loose coupling between new and old code.
 
 [Adding Logic to MVC Commands](/develop/tutorials/-/knowledge_base/7-1/adding-logic-to-mvc-commands)
 
-[Overriding MVCRenderCommands](/develop/tutorials/-/knowledge_base/7-1/redirecting-to-a-new-jsp)
+[Overriding MVCRenderCommands](/develop/tutorials/-/knowledge_base/7-1/overriding-mvcrendercommand)
 
 [Converting StrutsActionWrappers to MVCCommands](/develop/tutorials/-/knowledge_base/7-1/converting-strutsactionwrappers-to-mvccommands)

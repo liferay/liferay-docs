@@ -145,9 +145,20 @@ techniques:
 - [Liferay's MVCPortlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
 - [Liferay Soy Portlet](/develop/tutorials/-/knowledge_base/7-1/liferay-soy-portlet)
 - [Spring MVC](/develop/tutorials/-/knowledge_base/7-1/spring-mvc)
-- [JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
 - [Making URLs Friendlier](/develop/tutorials/-/knowledge_base/7-1/making-urls-friendlier)
 - [Automatic Single Page Applications](/develop/tutorials/-/knowledge_base/7-1/automatic-single-page-applications)
 - Applying Clay Styles to Your App
 - [Creating Layouts Inside Portlets](/develop/tutorials/-/knowledge_base/7-1/creating-layouts-inside-custom-portlets)
 - [Using JavaScript Inside Portlets](/develop/tutorials/-/knowledge_base/7-1/using-javascript-in-your-portlets)
+
+<!-- TODO: readd JSF link, when available. -Cody.
+- [JSF Portlets with Liferay Faces](develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
+-->
+
+## Related Topics [](id=related-topics)
+
+[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
+
+[Importing Packages](/develop/tutorials/-/knowledge_base/7-1/importing-packages)
+
+[Exporting Packages](/develop/tutorials/-/knowledge_base/7-1/exporting-packages)
