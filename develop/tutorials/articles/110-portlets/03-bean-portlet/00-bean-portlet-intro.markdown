@@ -1,12 +1,20 @@
 # Portlet 3: Bean Portlet [](id=bean-portlet-portlet-3)
 
-@product-ver@ GA2 onward supports the
+Liferay DXP Fix Pack 3 and Liferay Portal CE GA2 onward provide a development
+preview of the
 [JSR 362](https://jcp.org/en/jsr/detail?id=362)
 Portlet 3.0 standard from the Java Community Process (JCP). Portlet 3.0 features
 a new style of portlet development called "bean portlets" that use Contexts and
 Dependency Injection (CDI). Bean portlets fully leverage
 [all the new Portlet 3.0 features](https://portals.apache.org/pluto/v301/v3Features.html)
 in compliant portals, such as Liferay.
+
++$$$
+
+**Important:** @product-ver@'s development preview of the Portlet 3.0 standard 
+is not yet supported.  
+
+$$$
 
 Here you'll learn how to create and deploy a bean portlet. And if you're
 familiar with developing OSGi portlets, we'll help you relate what you already
