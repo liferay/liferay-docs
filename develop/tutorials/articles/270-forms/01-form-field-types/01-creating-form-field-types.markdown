@@ -29,9 +29,9 @@ outlined above. The Java classes will be in the package
 (JavaScript and Soy files) are in `sr/main/resources/META-INF/resources`.
 
 A known limitation in the form-field template requires the use of camel case in
-the project name (`DDMTypeTime`). Trying to use kebab case insted
+the project name (`DDMTypeTime`). Trying to use kebab case instead
 (`ddm-type-time`) will generate a non-functioning module. This will be fixed
-with the release of  Blade 3.3. Run `blade version` form the command line to
+with the release of Blade 3.3. Run `blade version` form the command line to
 see which version of Blade you're running.
 
 Using Blade CLI or Liferay Dev Studio, you get a project skeleton with much of
