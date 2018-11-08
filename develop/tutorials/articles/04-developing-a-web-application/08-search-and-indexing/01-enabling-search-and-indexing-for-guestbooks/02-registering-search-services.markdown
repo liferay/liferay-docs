@@ -89,9 +89,7 @@ Create the `GuestbookSearchRegistrar`:
     `guestbook-service` module's `bnd.bnd` file. The export section should look
     like this: 
 
-        Export-Package:
-          com.liferay.docs.guestbook.service.permission,\
-          com.liferay.docs.guestbook.search
+        Export-Package: com.liferay.docs.guestbook.search
 
 The Guestbook search and indexing class registration is completed. Next write
 the search and indexing logic.
