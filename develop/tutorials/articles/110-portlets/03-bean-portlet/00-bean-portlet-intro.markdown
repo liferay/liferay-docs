@@ -55,9 +55,9 @@ all the dependencies.
 
 +$$$
 
-**Note:** A bean portlet is packaged as a WAR. The bean portlet project that was
-generated using the above archetype differs from a traditional  portlet and
-Liferay portlet project in that it doesn't have a `portlet.xml` and
+**Note:** A bean portlet is packaged as a WAR. The bean portlet project created 
+using the above archetype differs from a traditional  portlet and Liferay
+portlet project in that it doesn't have a `portlet.xml` and
 `liferay-portlet.xml` descriptor. You can configure bean portlets using either
 configuration annotations (described next), descriptors, or both. If using
 annotations and descriptors, the descriptors take precedence. Annotations,
