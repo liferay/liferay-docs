@@ -23,16 +23,16 @@ There's a Blade template for creating form fields. Using the CLI, enter
 
     blade create -t form-field -v 7.1 -p com.liferay.docs.formfieldtype -c Time DDMTypeTime
 
-This gives you a `DDMTypeTime` module with a similar structure to the one
-outlined above. The Java classes will be in the package
-`com.liferay.docs.formfield` under `src/main/java/` and the frontend resources
-(JavaScript and Soy files) are in `sr/main/resources/META-INF/resources`.
+This gives you a `DDMTypeTime` module with a similar structure to what's above.
+The Java classes are in the package `com.liferay.docs.formfield` under
+`src/main/java/` and the frontend resources (JavaScript and Soy files) are in
+`sr/main/resources/META-INF/resources`.
 
 A known limitation in the form-field template requires the use of camel case in
 the project name (`DDMTypeTime`). Trying to use kebab case instead
-(`ddm-type-time`) will generate a non-functioning module. This will be fixed
-with the release of Blade 3.3. Run `blade version` form the command line to
-see which version of Blade you're running.
+(`ddm-type-time`) generates a non-functioning module. This is fixed with the
+release of Blade 3.3. Run `blade version` from the command line to see the
+version of Blade you're running.
 
 Using Blade CLI or Liferay Dev Studio, you get a project skeleton with much of
 the boilerplate filled in, so you can focus immediately on coding.
