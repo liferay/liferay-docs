@@ -7,9 +7,9 @@
 To control how Guestbook objects are translated into search engine documents,
 create two classes in the new search package:
 
-1.  Implement a `ModelDocumentContributor` to select the Guestbook entity's
-    fields that populate a search document indexed by the search engine.
-    The main searchable field for guestbooks is the guestbook name. 
+1.  Implement a `ModelDocumentContributor` that "contributes" fields to a search
+    document indexed by the search engine. The main searchable field for
+    guestbooks is the guestbook name. 
 
 2.  `ModelIndexerWriterContributor` configures the batch indexing behavior for
     Guestbooks. This code is executed when Guestbooks are re-indexed from the
@@ -18,7 +18,6 @@ create two classes in the new search package:
 ## Implementing `ModelDocumentContributor` [](id=implementing-modeldocumentcontributor)
 
 Create `GuestbookModelDocumentContributor` and populate it with these contents:
-
 
     @Component(
             immediate = true,
@@ -54,9 +53,9 @@ Create `GuestbookModelDocumentContributor` and populate it with these contents:
     }
 
 Because @product@ supports localization, you should too. The above code gets 
-the default locale from the site by passing the `Guestbook`'s group ID to 
+the default locale from the Site by passing the `Guestbook`'s group ID to 
 the `getSiteDefaultLocale` method, then using it to get the localized name
-of the Guestbook's title field. The retrieved site locale is appended to the
+of the Guestbook's title field. The retrieved Site locale is appended to the
 field (e.g., `title_en_US`), so the field gets passed to the search engine
 and goes through the right analysis and
 [tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/analysis-tokenizers.html). 
@@ -125,9 +124,8 @@ Guestbook's document is then retrieved and added to a collection.
 
 When you write the indexing classes for Entries, you'll add the Guestbook title
 to the Entry document. Thus, you must provide a way to update the indexed Entry
-documents if a Guestbook title is changed.  The `modelIndexed` method is used
-to call a `reindex`  method form an interface that will be created later for
-Entries. 
+documents if a Guestbook title is changed.  The `modelIndexed` method calls
+a `reindex` method from an interface that will be created later for Entries. 
 
-Once the re-indexing behavior is in place, move on to the code for controlling
-how Guestbook documents are queried from the search engine.
+Once the re-indexing behavior is in place, you can move on to controlling how
+Guestbook documents are queried from the search engine.

@@ -8,10 +8,11 @@ First, update your `build.gradle` to have all of the necessary imports.
 
 1.  Open the `build.gradle` file in your `guestbook-service` project.
 
-2.  Add the Search Service Provider Interface dependency to the `build.gradle`
-    file:
+2.  Add the Search Service Provider Interface and API dependencies to the
+	`build.gradle` file:
 
         compileOnly group: "com.liferay", name: "com.liferay.portal.search.spi", version: "2.0.0"
+		compileOnly group: "com.liferay", name: "com.liferay.portal.search.api", version: "2.0.0"
 
 3.  Save the file and run `Refresh Gradle Project`.
 
@@ -85,7 +86,9 @@ Create the `GuestbookSearchRegistrar`:
     classes. Later, when you create these contributor classes, you'll specify
     the model name again to complete the circle.
 
-3. Export the `com.liferay.docs.guestbook.search` package in the 
+3.  Add the imports by Organizing Imports (Ctrl-Shift-O). 
+
+4. Export the `com.liferay.docs.guestbook.search` package in the 
     `guestbook-service` module's `bnd.bnd` file. The export section should look
     like this: 
 
