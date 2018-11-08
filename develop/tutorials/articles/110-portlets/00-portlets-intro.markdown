@@ -34,13 +34,12 @@ Specification 1.0
 first defined portal and portlet behavior. In 2008, Java Portlet Specification 
 2.0 
 ([JSR-286](https://jcp.org/en/jsr/detail?id=286)) 
-refined and built on JSR-168, while maintaining backwards compatibility, to
-define features like inter-portlet communication (IPC) and more. In 2017, Java
-Portlet Specification 3.0 
+refined and built on JSR-168, while maintaining backwards compatibility, to 
+define features like inter-portlet communication (IPC) and more. The recently 
+released Java Portlet Specification 3.0 
 ([JSR-362](https://jcp.org/en/jsr/detail?id=362)) 
-continued portal and portlet evolution, bringing features such as configuration
-by annotation and CDI support. Liferay leads in this space by having a  member
-in the Expert Group. 
+continues portal and portlet evolution. Liferay leads in this space by having a 
+member in the Expert Group. 
 
 So what do these specifications define? The links above show the complete
 definition; here we'll briefly summarize how portlets differ from other types of
@@ -65,8 +64,6 @@ flexible than servlets. Each portlet phase executes different operations:
   lifecycle. This lets a portlet serve dynamic content without running the 
   Render phase on all portlets on a page. The Resource-serving phase handles 
   AJAX requests. 
-- **Header:** Loads resource dependencies, such as CSS, prior to the Render 
-  phase. 
 
 Compared to servlets, portlets also have some other key differences. Since
 portlets only render a portion of a page, tags like `<html>`, `<head>`, and
@@ -147,7 +144,6 @@ techniques:
 
 - [Liferay's MVCPortlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
 - [Liferay Soy Portlet](/develop/tutorials/-/knowledge_base/7-1/liferay-soy-portlet)
-- [Bean Portlet](/develop/tutorials/-/knowledge_base/7-1/bean-portlet-portlet-3)
 - [Spring MVC](/develop/tutorials/-/knowledge_base/7-1/spring-mvc)
 - [Making URLs Friendlier](/develop/tutorials/-/knowledge_base/7-1/making-urls-friendlier)
 - [Automatic Single Page Applications](/develop/tutorials/-/knowledge_base/7-1/automatic-single-page-applications)
