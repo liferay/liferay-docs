@@ -5,29 +5,28 @@
 </div>
 
 By default, @product@ uses Elasticsearch, a search engine backed by the popular
-Lucene search library, to implement its search and indexing functionality. To 
-avoid the resource-hogging table merges necessary to search the database, using 
-a search engine like Elasticsearch lets you convert searchable entities into 
-*documents*. In Elasticsearch, documents are searchable database entities 
-converted into JSON objects. After you implement indexing for guestbook 
-entries, @product@ creates a document for each entry. The indexing code specifies 
-which guestbook entry fields to add to each guestbook entry document. All the 
-guestbook entry documents are then added to an index. When the index is 
-searched, a *hits* object is returned that contains pointers to the documents 
-matching the search query. Searching for entities with a search engine via an 
-index is faster than searching for entities in the database. Elasticsearch 
-provides some additional features like relevancy scoring and fuzzy search 
-queries. 
+Lucene search library, to implement its search and indexing functionality. You
+could search the database, but that requires resource-hogging table merges.
+Instead, a search engine like Elasticsearch converts searchable entities into
+*documents*. In Elasticsearch, documents are searchable database entities
+converted into JSON objects. After you implement indexing for guestbook entries,
+@product@ creates a document for each entry. The indexing code specifies which
+guestbook entry fields to add to each guestbook entry document, and it adds all
+the guestbook entry documents to an index. A search returns a *hits* object
+containing pointers to documents matching the search query. Searching for
+entities with a search engine via an index is faster than searching for entities
+in the database. Elasticsearch provides some additional features like relevancy
+scoring and fuzzy search queries. 
 
-Along with the search engine, @product@ has its own search infrastructure. 
-@product@ adds to the existing Elasticsearch API for a few reasons: 
+Along with the search engine, @product@ has its own search infrastructure.
+@product@ adds the following features to the existing Elasticsearch API: 
 
--   To ensure indexed documents include the fields needed by @product@ (e.g., 
+-   Indexed documents include the fields needed by @product@ (e.g., 
     `entryClassName`, `entryClassPK`, `assetTagNames`, `assetCategories`, 
     `companyId`, `groupId`, staging status). 
--   To ensure the scope of returned search results is appropriate by applying 
+-   Ensures the scope of returned search results is appropriate by applying 
     the right filters to search requests. 
--   To provide permission checking and hit summaries to display in the search 
+-   Provides permission checking and hit summaries to display in the search 
     portlet. 
 
 Let's index some Guestbooks, shall we? 
