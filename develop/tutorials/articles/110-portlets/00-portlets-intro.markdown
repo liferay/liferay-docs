@@ -38,9 +38,9 @@ refined and built on JSR-168, while maintaining backwards compatibility, to
 define features like inter-portlet communication (IPC) and more. In 2017, Java
 Portlet Specification 3.0 
 ([JSR-362](https://jcp.org/en/jsr/detail?id=362)) 
-continued to improve the portlet standard, bringing features such as
-configuration by annotation, a Header phase, and CDI integration. Liferay leads
-in this space by having a member in the Expert Group. 
+continued portal and portlet evolution, bringing features such as configuration
+by annotation, a Header phase, and CDI integration. Liferay leads in this space
+by having a  member in the Expert Group. 
 
 So what do these specifications define? The links above show the complete
 definition; here we'll briefly summarize how portlets differ from other types of
@@ -65,8 +65,8 @@ flexible than servlets. Each portlet phase executes different operations:
   lifecycle. This lets a portlet serve dynamic content without running the 
   Render phase on all portlets on a page. The Resource-serving phase handles 
   AJAX requests. 
-- **Header:** Lets you specify resource dependencies, such as CSS, prior to the 
-  Render phase. 
+- **Header:** Loads resource dependencies, such as CSS, prior to the Render 
+  phase. 
 
 Compared to servlets, portlets also have some other key differences. Since
 portlets only render a portion of a page, tags like `<html>`, `<head>`, and
