@@ -17,6 +17,8 @@ easy to extend them and create new ones.
 **Note:** Hypermedia REST APIs are currently available in beta. To use them, you
 must download and install the Hypermedia REST APIs app from 
 [Liferay Marketplace](https://web.liferay.com/marketplace). 
+You must also be running Liferay CE Portal 7.1 GA2+, or Liferay DXP 7.1 Fix Pack 
+3+.
 
 $$$
 

@@ -5,37 +5,23 @@ Liferay's Hypermedia REST APIs are an implementation of
 which is pre-installed @product@. Apio Architect is a server-side library 
 that facilitates the creation of Apio REST APIs. 
 
++$$$
+
+**Note:** To install Liferay's Hypermedia REST APIs, you must be running 
+Liferay CE Portal 7.1 GA2+, or Liferay DXP 7.1 Fix Pack 3+.
+
+$$$
+
 To use Liferay's Hypermedia REST APIs, you must install them in your @product@ 
 instance. Follow these steps to do so: 
 
-1.  Download the Hypermedia REST APIs ZIP file from the link you received via 
-    your participation in the private alpha release. Unzip the file to a 
-    temporary folder. 
+1.  Download and install the Hypermedia REST APIs app from 
+    [Liferay Marketplace](https://web.liferay.com/marketplace). 
+    If you need help installing the app from Marketplace, see the 
+    [documentation on using Marketplace](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace). 
 
-2.  Copy all the unzipped JAR files to the `[Liferay Home]/deploy` folder. The 
-    console should show that the modules are starting: 
-
-        2018-08-28 12:54:16.635 INFO  [BundleStartStopLogger:35] STARTED com.liferay.portal.apio.impl_1.0.6 [978]
-        2018-08-28 12:54:16.640 INFO  [BundleStartStopLogger:35] STARTED com.liferay.role.apio.api_1.0.1 [979]
-        2018-08-28 12:54:16.669 INFO  [BundleStartStopLogger:35] STARTED com.liferay.site.apio.impl_1.0.5 [982]
-        2018-08-28 12:54:16.719 INFO  [BundleStartStopLogger:35] STARTED com.liferay.workflow.apio.impl_1.0.5 [996]
-        2018-08-28 12:54:16.754 INFO  [BundleStartStopLogger:35] STARTED com.liferay.web.page.element.apio.impl_1.0.5 [992]
-        2018-08-28 12:54:16.757 INFO  [BundleStartStopLogger:35] STARTED com.liferay.keyword.apio.api_1.0.1 [965]
-        2018-08-28 12:54:16.780 INFO  [BundleStartStopLogger:35] STARTED com.liferay.layout.apio.impl_1.0.3 [968]
-        2018-08-28 12:54:16.784 INFO  [BundleStartStopLogger:35] STARTED com.liferay.category.apio.api_1.0.1 [953]
-        2018-08-28 12:54:16.786 INFO  [BundleStartStopLogger:35] STARTED com.liferay.workflow.apio.api_1.1.3 [995]
-        2018-08-28 12:54:16.927 INFO  [BundleStartStopLogger:35] STARTED com.liferay.category.apio.impl_1.0.9 [954]
-        2018-08-28 12:54:16.994 INFO  [BundleStartStopLogger:35] STARTED com.liferay.folder.apio.impl_1.0.4 [962]
-        2018-08-28 12:54:16.997 INFO  [BundleStartStopLogger:35] STARTED com.liferay.vocabulary.apio.api_1.0.1 [989]
-        2018-08-28 12:54:17.006 INFO  [BundleStartStopLogger:35] STARTED com.liferay.forms.apio.api_1.1.0 [963]
-        2018-08-28 12:54:17.009 INFO  [BundleStartStopLogger:35] STARTED com.liferay.organization.apio.api_1.0.1 [971]
-        2018-08-28 12:54:17.047 INFO  [BundleStartStopLogger:35] STARTED com.liferay.phone.apio.impl_1.0.1 [976]
-        2018-08-28 12:54:17.049 INFO  [BundleStartStopLogger:35] STARTED com.liferay.web.page.element.apio.api_1.0.1 [991]
-        2018-08-28 12:54:17.101 INFO  [BundleStartStopLogger:35] STARTED com.liferay.media.object.apio.impl_1.0.9 [970]
-        [...]
-
-3.  Once the OSGi container loads the configuration, make a request to the API's 
-    root URL: 
+2.  After installing the app, test the installation by making a request to the 
+    API's root URL: 
 
         curl http://localhost:8080/o/api
 
