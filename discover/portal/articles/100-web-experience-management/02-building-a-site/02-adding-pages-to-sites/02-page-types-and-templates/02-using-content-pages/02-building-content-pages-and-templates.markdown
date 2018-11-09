@@ -101,7 +101,7 @@ creation screen,
 By default, your new page is added to the Navigation Menu and users can access
 the page you created.
 
-## Propagation of Page Fragment Changes
+## Propagation of Page Fragment Changes [](id=propagation-of-page-fragment-changes)
 
 If you make an update to a Page Fragment or Content Page Templates it doesn't
 automatically propagate changes, but you can access the *Usages and Propagation*
