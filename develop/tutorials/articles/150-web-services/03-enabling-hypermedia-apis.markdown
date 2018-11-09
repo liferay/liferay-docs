@@ -15,8 +15,12 @@ $$$
 To use Liferay's Hypermedia REST APIs, you must install them in your @product@ 
 instance. Follow these steps to do so: 
 
-1.  Download and install the Hypermedia REST APIs app from 
-    [Liferay Marketplace](https://web.liferay.com/marketplace). 
+1.  Download and install the Hypermedia REST APIs app from Liferay Marketplace. 
+    Be sure to install the app that matches your Liferay product (CE or DXP): 
+
+    -   [Liferay Hypermedia REST APIs - CE](https://web.liferay.com/marketplace/-/mp/application/116742743)
+    -   [Liferay Hypermedia REST APIs - DXP](https://web.liferay.com/marketplace/-/mp/application/116775839)
+
     If you need help installing the app from Marketplace, see the 
     [documentation on using Marketplace](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace). 
 
