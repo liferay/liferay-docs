@@ -6,15 +6,14 @@ how to inject custom behavior into the validation check.
 
 In each product's
 [*Configuration*](/web/emporio/documentation/-/knowledge_base/1-0/configuration)
-page, there are several settings which administrators can adjust to govern the
-conditions under which the product can be purchased---minimum order quantities
-can be set, out-of-stock items may or may not be backordered, etc. Out of the
-box, @commerce@ performs a validation check on each transaction to ensure these
-conditions are met. An initial check is made when an item is added to the cart,
-and again as the buyer checks out, revalidating the cart at each step in the
-checkout process. This ensures that conditions have not changed (for example, a
-product my have run out of stock) between the first validation and order
-placement.
+page, there are several settings administrators can adjust to govern how the
+product can be purchased. Minimum order quantities can be set, out-of-stock
+items may or may not be back-ordered, etc. Out of the box, @commerce@ performs
+a validation check on each transaction to ensure these conditions are met. An
+initial check is made when an item is added to the cart and again as the buyer
+checks out, revalidating the cart at each step in the checkout process. This
+ensures that conditions haven't changed (for example, a product may have run out
+of stock) between the first validation and order placement.
 
 Cart validation is handled by `DefaultCommerceOrderValidatorImpl`, which
 implements `CommerceOrderValidator`. To impose new conditions on purchases, you
@@ -24,7 +23,7 @@ interface, adding its functionality on top of
 
 Follow these steps:
 
-1.  Create a new module an add a dependencies on `com.liferay.commerce.api` and
+1.  Create a new module and add dependencies on `com.liferay.commerce.api` and
     `com.liferay.commerce.product.api` to the `build.gradle` file.
 
 2.  Create a new component to implement the `CommerceOrderValidator` interface.
@@ -65,11 +64,10 @@ Then implement the interface:
         }
 
 The interface requires two more methods after the `getKey` method. These methods
-contain the actual logic of the validation check---this is where you'll want to
-insert your own code. The following method is called whenever a buyer proceeds
-to a new step in the checkout process, and validates products that are already
-in the cart. It then returns the `CommerceOrderValidatorResult` object to
-display the outcome to the user:
+contain the logic of the validation check---this is where to insert your own
+code. The following method is called whenever a buyer proceeds to a new step in
+the checkout process. It validates products that are already in the cart and
+returns the `CommerceOrderValidatorResult` object for display to the user:
 
     @Override
     public CommerceOrderValidatorResult validate(
@@ -106,6 +104,6 @@ this case, however, the method checks products as they are added to the cart:
         }
     }
 
-In this is example, the validator checks whether an order's quantity is 100
-and rejects any other quantity. For a real-world example see
+In this simplified example, the validator checks whether an order's quantity is
+100 and rejects any other quantity. For a real-world example see
 `DefaultCommerceOrderValidatorImpl.java`.
