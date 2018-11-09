@@ -21,9 +21,8 @@ import com.liferay.expando.kernel.model.ExpandoBridge;
 import com.liferay.portal.kernel.bean.AutoEscape;
 import com.liferay.portal.kernel.model.BaseModel;
 import com.liferay.portal.kernel.model.CacheModel;
-import com.liferay.portal.kernel.model.GroupedModel;
 import com.liferay.portal.kernel.model.ShardedModel;
-import com.liferay.portal.kernel.model.StagedAuditedModel;
+import com.liferay.portal.kernel.model.StagedGroupedModel;
 import com.liferay.portal.kernel.model.WorkflowedModel;
 import com.liferay.portal.kernel.service.ServiceContext;
 
@@ -45,8 +44,8 @@ import java.util.Date;
  * @generated
  */
 @ProviderType
-public interface EntryModel extends BaseModel<Entry>, GroupedModel, ShardedModel,
-	StagedAuditedModel, WorkflowedModel {
+public interface EntryModel extends BaseModel<Entry>, ShardedModel,
+	StagedGroupedModel, WorkflowedModel {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
@@ -210,6 +209,22 @@ public interface EntryModel extends BaseModel<Entry>, GroupedModel, ShardedModel
 	 */
 	@Override
 	public void setModifiedDate(Date modifiedDate);
+
+	/**
+	 * Returns the last publish date of this entry.
+	 *
+	 * @return the last publish date of this entry
+	 */
+	@Override
+	public Date getLastPublishDate();
+
+	/**
+	 * Sets the last publish date of this entry.
+	 *
+	 * @param lastPublishDate the last publish date of this entry
+	 */
+	@Override
+	public void setLastPublishDate(Date lastPublishDate);
 
 	/**
 	 * Returns the status of this entry.

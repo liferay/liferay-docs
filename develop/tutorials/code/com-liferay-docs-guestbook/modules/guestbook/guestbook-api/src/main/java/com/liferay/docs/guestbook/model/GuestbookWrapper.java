@@ -67,6 +67,7 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 		attributes.put("userName", getUserName());
 		attributes.put("createDate", getCreateDate());
 		attributes.put("modifiedDate", getModifiedDate());
+		attributes.put("lastPublishDate", getLastPublishDate());
 		attributes.put("status", getStatus());
 		attributes.put("statusByUserId", getStatusByUserId());
 		attributes.put("statusByUserName", getStatusByUserName());
@@ -124,6 +125,12 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 
 		if (modifiedDate != null) {
 			setModifiedDate(modifiedDate);
+		}
+
+		Date lastPublishDate = (Date)attributes.get("lastPublishDate");
+
+		if (lastPublishDate != null) {
+			setLastPublishDate(lastPublishDate);
 		}
 
 		Integer status = (Integer)attributes.get("status");
@@ -383,6 +390,16 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 	}
 
 	/**
+	* Returns the last publish date of this guestbook.
+	*
+	* @return the last publish date of this guestbook
+	*/
+	@Override
+	public Date getLastPublishDate() {
+		return _guestbook.getLastPublishDate();
+	}
+
+	/**
 	* Returns the modified date of this guestbook.
 	*
 	* @return the modified date of this guestbook
@@ -526,6 +543,16 @@ public class GuestbookWrapper implements Guestbook, ModelWrapper<Guestbook> {
 	@Override
 	public void setGuestbookId(long guestbookId) {
 		_guestbook.setGuestbookId(guestbookId);
+	}
+
+	/**
+	* Sets the last publish date of this guestbook.
+	*
+	* @param lastPublishDate the last publish date of this guestbook
+	*/
+	@Override
+	public void setLastPublishDate(Date lastPublishDate) {
+		_guestbook.setLastPublishDate(lastPublishDate);
 	}
 
 	/**
