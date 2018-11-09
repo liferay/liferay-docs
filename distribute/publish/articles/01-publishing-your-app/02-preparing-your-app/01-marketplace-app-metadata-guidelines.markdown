@@ -6,7 +6,7 @@ with your app serves both as necessary information for your app's buyers (e.g.,
 your contact info) and as promotional assets (e.g., description, screenshots,
 etc.) that can help drive traffic to and downloads of your app!
 
-![Figure 1: Check out how good your app can look on the Marketplace.](../../images/dev-portal-app-metadata-guidelines.png)
+![Figure 1: Check out how good your app can look on the Marketplace.](../../../images/dev-portal-app-metadata-guidelines.png)
 
 Think of a good name and description for your app. If you haven't already done
 so, take some screenshots, design an icon, and create a website for your app.
@@ -219,7 +219,7 @@ During the publication process, you upload your app's individual plugin WAR
 files and module JAR files along with the app's metadata (name, description,
 version, icon, etc.).
 
-## Additional Requirements for Themes/Site Templates
+## Additional Requirements for Themes/Site Templates [](id=additional-requirements-for-themes-site-templates)
 
 The
 [Resources Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)

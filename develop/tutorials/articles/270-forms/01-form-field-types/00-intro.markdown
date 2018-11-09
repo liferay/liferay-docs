@@ -118,22 +118,4 @@ configuration file.
 
 `package-lock.json`: Automatically generated to track the npm modules dependencies.
 
-<!-- UPDATE WHEN TEMPLATE PROJECT IS PUBLISHED ON repository.liferay.com
-+$$$
-
-**Blade Template:** There's a [Blade
-CLI](/developer/tutorials/-/knowledge_base/7-0/blade-cli) template you can use
-to generate the project skeleton, some basic configuration, and give you a head
-start on dependency management. To generate your form field type project with
-Blade CLI, enter
-
-    blade create -t form-field-type -p com.liferay.docs.formfieldtype -c Time ddm-type-time
-
-This gives you a `ddm-type-time` module with a similar structure to the one
-outlined above. The Java classes will be in the package
-`com.liferay.docs.formfield` under `src/main/java/` and the frontend resources
-(JavaScript and Soy files) are in `sr/main/resources/META-INF/resources`.
-
-$$$
--->
-
+Get started creating the time field in the next tutorial.
