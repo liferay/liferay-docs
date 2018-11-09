@@ -70,14 +70,16 @@ joins the `GB_Entry` and `GB_Guestbook` tables:
     <?xml version="1.0" encoding="UTF-8"?>
     <custom-sql>
         <sql id="com.liferay.docs.guestbook.service.persistence.EntryFinder.findByEntryNameEntryMessageGuestbookName">
-            SELECT GB_Entry.*
-            FROM GB_Entry
-            INNER JOIN 
-                GB_Guestbook ON GB_Entry.guestbookId = GB_Guestbook.guestbookId
-            WHERE
-                (GB_Entry.name LIKE ?) AND
-                (GB_Entry.message LIKE ?) AND
-                (GB_Guestbook.name LIKE ?)
+            <![CDATA[
+                SELECT GB_Entry.*
+                FROM GB_Entry
+                INNER JOIN 
+                    GB_Guestbook ON GB_Entry.guestbookId = GB_Guestbook.guestbookId
+                WHERE
+                    (GB_Entry.name LIKE ?) AND
+                    (GB_Entry.message LIKE ?) AND
+                    (GB_Guestbook.name LIKE ?)
+            ]]>
         </sql>
     </custom-sql>
 
