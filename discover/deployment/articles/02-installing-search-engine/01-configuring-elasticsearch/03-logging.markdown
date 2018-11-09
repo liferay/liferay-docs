@@ -4,10 +4,10 @@ When you first start @product@, an embedded Elasticsearch server starts so that
 search works out of the box. The embedded search engine is not suitable for
 production, but is useful for testing and development.
 
-The @product@ log was slimmed down by removing INFO level Elasticsearch logs for
-the embedded Elasticsearch. WARN and ERROR logs are still displayed. If you
-miss hearing from Elasticsearch during portal startup, this article shows you
-how to enable the INFO log level for the embedded Elasticsearch server.
+In Fix Pack 3 and CE GA2, the Liferay log was slimmed down by removing INFO
+level Elasticsearch logs for the embedded Elasticsearch. WARN and ERROR logs are
+still displayed. If you miss hearing from Elasticsearch during startup, you can
+enable the INFO log level for the embedded Elasticsearch server.
 
 +$$$
 
@@ -24,7 +24,7 @@ To adjust logging for a remote Elasticsearch server, see
 
 $$$
 
-Here's an example @product@ log message that _is_ displayed by default:
+Here's an example log message that _is_ displayed by default:
 
     2018-09-13 16:49:24.442 WARN  [Elasticsearch initialization thread][EmbeddedElasticsearchConnection:315]
 
@@ -37,7 +37,7 @@ Here's an example Elasticsearch log message that _isn't_ displayed by default:
 
 To adjust logging for the `o.e.d.i.m.MapperService` and other Elasticsearch classes, 
 
-1.  Create a `/config` folder in `Liferay Home/data/elasticsearch6/`.
+1.  Create a `config` folder in `Liferay Home/data/elasticsearch6/`.
 
 2.  Create a `log4j2.properties` file in the new folder.
 
@@ -58,7 +58,7 @@ To adjust logging for the `o.e.d.i.m.MapperService` and other Elasticsearch clas
     [logging documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.x/logging.html) 
     for more information.
 
-4.  Restart the @product@ server, or just the embedded Elasticsearch.
+4.  Restart the @product@ server or just the embedded Elasticsearch.
 
 5.  To restart just the embedded Elasticsearch server, create a file called
 
@@ -74,11 +74,11 @@ To adjust logging for the `o.e.d.i.m.MapperService` and other Elasticsearch clas
 
         #blacklistBundleSymbolicNames="com.liferay.portal.search.elasticsearch6.impl"
 
-Once this is accomplished, the embedded Elasticsearch server is properly set up
-to display Elasticsearch logs at the INFO level and above.
+Once this is accomplished, the embedded Elasticsearch server displays
+Elasticsearch logs at the INFO level and above.
 
-Two common Elasticsearch logs can be configured further in @product@: the Slow
-Log and the JVM's Garbage Collection log.
+Two common Elasticsearch logs can be configured further: the Slow Log and the
+JVM's Garbage Collection log.
 
 ## Configuring Slow Log
 
@@ -88,7 +88,6 @@ Read about Elasticsearch's Slow Log
 Configure the Slow Log for the embedded Elasticsearch server in the
 Elasticsearch 6 entry in System Settings. Add these settings to the Additional
 Index Configurations property:
-
 
     index.indexing.slowlog.threshold.index.debug: 2s
     index.indexing.slowlog.threshold.index.info: 5s
