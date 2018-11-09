@@ -4,20 +4,19 @@
     <p>Enabling Search and Indexing for Guestbooks<br>Step 4 of 6</p>
 </div>
 
-The code is in place for for indexing Guestbooks the search engine. Next code
-the behavior necessary for querying the indexed documents.
+The code is in place for for indexing Guestbooks to the search engine. Next,
+you'll code the behavior necessary for querying the indexed documents.
 
 Implement two interfaces:
 
-1.  `KeywordQueryContributor`  contributes clauses to the ongoing search query.
+1.  `KeywordQueryContributor` contributes clauses to the ongoing search query.
 
 2.  `ModelPreFilterContributor` controls how search results are filtered before
     they're returned from the search engine.
 
 ## Implementing `KeywordQueryContributor` [](id=implementing-keywordquerycontributor)
 
-Create `GuestbookKeywordQueryContributor` and populate it with these
-contents:
+Create `GuestbookKeywordQueryContributor`: 
 
     @Component(
             immediate = true,
@@ -44,14 +43,15 @@ contents:
 
     }
 
-Get the `SearchContext` object, which contains lots of information about the
-ongoing search query. Use the query helper to add search terms. Adding the
-localized search term is important. Since the localized Guestbook title was
-indexed, you must retrieve the localized value from the search engine.
+When a search is submitted, a `SearchContext` object is created. It contains
+lots of information about the ongoing search query. Use the query helper to add
+search terms. Adding the localized search term is important. Since the localized
+Guestbook title was indexed, you must retrieve the localized value from the
+search engine.
 
 ## Implementing `ModelPreFilterContributor` [](id=implementing-modelprefiltercontributor)
 
-Create `GuestbookModelPreFilterContributor` and populate it with these contents:
+Create `GuestbookModelPreFilterContributor`: 
 
     @Component(
             immediate = true,

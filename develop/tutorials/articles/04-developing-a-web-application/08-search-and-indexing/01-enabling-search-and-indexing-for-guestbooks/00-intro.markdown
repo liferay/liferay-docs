@@ -35,9 +35,9 @@ search index when a guestbook is persisted. Specifically,
 `deleteGuestbook` methods are updated to invoke the guestbook indexer.
 
 In prior versions of @product@, search and indexing was accomplished with one
-`*Indexer` class that extended `BaseIndexer`. This Learning Path demonstrates
-a new pattern that relies on composition instead of inheritance. If you want to
-use the old approach, feel free to extend `BaseIndexer`. It's still supported. 
+`*Indexer` class that extended `BaseIndexer`. In @product-ver@ is a new pattern
+that relies on composition instead of inheritance. If you want to use the old
+approach, feel free to extend `BaseIndexer`. It's still supported. 
 
 Since there's no reason to search for guestbooks in the UI, only back-end work
 is necessary. 
