@@ -1,4 +1,4 @@
-# Acclerators [](id=accelerators)
+# Accelerators [](id=accelerators)
 
 An Accelerator is a type of Site template that does much of the work of
 setting up a store. An Accelerator is a convenient sandbox for gaining

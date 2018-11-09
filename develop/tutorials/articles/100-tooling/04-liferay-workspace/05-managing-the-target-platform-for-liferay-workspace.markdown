@@ -129,7 +129,7 @@ To do this, your `build.gradle` file should look similar to this:
 
     buildscript {
         dependencies {
-            classpath group: "com.liferay", name: "com.lifereay.gradle.plugins.target.platform", version "1.0.1"
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "1.0.1"
         }
         repositories {
             maven {
