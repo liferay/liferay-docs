@@ -106,8 +106,10 @@ Liferay's Solr connector.
 
 2. Start @product@ if it's not running already.
 
-<!-- +$$$
+![Figure 1: From the Solr 7 System Settings entry, set the _Client Type_ to _Cloud_.](../../../images/solr-client-type.png)
 
+<!-- +$$$
+UNCOMMENT WHEN WRITTEN
 **Note:** For a complete list of settings available in the Solr connector, see the
 Solr Settings reference
 article(/discover/reference/-/knowledge_base/7-1/solr-settings).

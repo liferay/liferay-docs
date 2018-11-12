@@ -106,7 +106,7 @@ connector is already installed and running. Stop it before configuring the Solr
 connector.
 
 Stop the Elasticsearch connector bundle using the App Manager, the Felix Gogo
-shell, or the bundle blacklist. If you're a Digital Enterprise customer, use the
+shell, or the bundle blacklist. If you're a Liferay DXP customer, use the
 blacklist feature as described below. The App Manager and Gogo shell rely on the
 `osgi/state` folder to "remember" the state of the bundle. If you delete this
 folder (recommended during patching) the Elasticsearch connector will be
@@ -142,7 +142,7 @@ In the example above, the `[bundle ID]` is `476`.
 
 +$$$
 
-**Liferay Digital Enterprise:** Digital Enterprise customers should 
+**Liferay DXP:** DXP customers should 
 [blacklist](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules-and-components) 
 the Elasticsearch, Shield, and Marvel plugins. 
 
@@ -165,7 +165,7 @@ Install and configure the Solr connector:
 1. Start @product@, then deploy the Solr connector by copying the LPKG you
    downloaded to `Liferay_Home/deploy`.
 
-    You'll see a `STARTED` message in your @product@ log once the solr connector is
+    You'll see a `STARTED` message in your @product@ log once the Solr connector is
     installed. Here's what the log message looks like:
 
         2018-11-06 19:59:49.396 INFO  [pipe-start 943 944][BundleStartStopLogger:39] STARTED com.liferay.portal.search.solr7.api_1.0.0 [943]
@@ -184,7 +184,7 @@ folder. Name the file
 
     com.liferay.portal.search.solr7.configuration.SolrConfiguration.config
 
-During testing and development, use the SOLR 7 System Settings entry Control
+During testing and development, use the Solr 7 System Settings entry Control
 Panel &rarr; Configuration &rarr; System Settings for editing the default
 configurations.
 
