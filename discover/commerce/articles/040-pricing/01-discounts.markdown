@@ -3,7 +3,7 @@
 A discount applies a modifier to a product's base price. It can be an absolute
 number or a percentage, and can be applied to a limited number of products or to
 the entire catalog. It can be available to all buyers or to a defined 
-[user segment](/web/emporio/documentation/-/knowledge_base/1-0/user-segmentation),
+[user segment](/web/commerce/documentation/-/knowledge_base/1-0/user-segmentation),
 or to a more narrowly defined group of customers that meet certain
 qualifications. Unlike a price list, a discount always *reduces* the base price.
 
@@ -77,7 +77,7 @@ added.
 
 **User Segment**: To allow only certain customers to take advantage of the
 discount, click *Select* and choose a segment or segments. See 
-[user segmentation](/web/emporio/documentation/-/knowledge_base/7-1/user-segmentation)
+[user segmentation](/web/commerce/documentation/-/knowledge_base/7-1/user-segmentation)
 for details.
 
 **Coupon Code**: Set the toggle to *Yes* and enter text in the field that

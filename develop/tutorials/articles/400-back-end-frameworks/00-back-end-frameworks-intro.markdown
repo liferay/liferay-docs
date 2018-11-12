@@ -7,9 +7,9 @@ essential services and deliver terrific performances of their own. Here are some
 of the frameworks:
 
 - Device Recognition
-- Portlet Providers
-- Data Scopes
-- Message Bus
+- [Portlet Providers](/develop/tutorials/-/knowledge_base/7-1/portlet-providers)
+- [Data Scopes](/develop/tutorials/-/knowledge_base/7-1/data-scopes)
+- [Message Bus](/develop/tutorials/-/knowledge_base/7-1/message-bus)
 
 These frameworks and more deliver smashing performances and are stars in their
 own right. 

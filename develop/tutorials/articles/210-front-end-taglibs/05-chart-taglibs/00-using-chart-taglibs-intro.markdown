@@ -9,14 +9,8 @@ To use the Chart taglib, add the following declaration to your JSP:
 
     <%@ taglib prefix="chart" uri="http://liferay.com/tld/chart" %>
 
-The 
-[`com.liferay.frontend.taglib.chart.sample.web` widget](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-taglib/frontend-taglib-chart-sample-web) 
-is referenced throughout this section of tutorials as an example. It's included 
-out-of-the-box. Open the Control Menu and add the *Chart Sample* widget from the 
-*Widgets* &rarr; *Sample* menu to see it in action. 
-
-![Figure 1: The Chart Sample widget demonstrates the various types of charts you can create with the chart taglbs.](../../../images/chart-taglib-sample-portlet.png)
-
 This section of tutorials covers the types of charts you can create with the 
 Chart taglibs. Each tutorial contains a set of chart examples along with sample 
 Java data and a figure displaying the rendered results.
+
+![Figure 1: You can create many different types of charts with the chart taglibs.](../../../images/chart-taglib-sample-portlet.png)

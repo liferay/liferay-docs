@@ -8,6 +8,16 @@ procedures here to install any app.
 
 +$$$
 
+**Warning:** Not all apps are designed to be "hot deployed"---deployed while the
+server is running. Deploying that way can cause instabilities, such as class
+loading leaks and memory leaks. On production systems, avoid "hot deploying"
+apps whenever possible. See the
+[best practices for managing apps in production](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps#managing-apps-in-production).
+
+$$$
+
++$$$
+
 **Important**: When uninstalling an app or module, make sure to use the same 
 agent you used to install the app. For example, if you installed it with 
 Marketplace, uninstall it with
