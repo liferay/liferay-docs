@@ -10,14 +10,16 @@ hotfixes.
 
 **Important:** Make sure to
 [back up your @product@ installation and database](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
-regularly, especially before patching. Certain fix packs (service packs) can
-contain data changes in @product@ modules (micro changes in their schema
-version which are revertibles) which are applied by the patching tool
-automatically. From 7.1 also micro data changes in @product@ Core can be
-included on fix packs and they are able to be executed on demand using the db
-upgrade tool. Please, review the release notes and the documentation for the
-fix pack and previous fix packs to be installed to know if data changes are
-applied.
+regularly, especially before patching. The patching tool installs the code
+changes and the @product@ server executes data changes (if any) automatically on
+startup. 
+
+Fix packs (and service packs) can include data/schema
+[micro changes](/develop/tutorials/-/knowledge_base/7-1/meaningful-schema-versioning#micro-change-examples)---they're
+optional and revertible. To facilitate fast server startup, startup does not
+apply micro changes. Instead, before server startup, you can use the
+[upgrade tool](/discover/deployment/-/knowledge_base/7-1/upgrading-to-liferay-71)
+to apply micro changes. 
 
 $$$
 

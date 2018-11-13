@@ -157,8 +157,8 @@ Then
 **Important**: Once you have installed @product-ver@, **DON'T START IT!** In
 Liferay Portal 6.2 and earlier, once you prepared your system for an upgrade,
 the upgrade process ran when you started the new version for the first time. Now
-@product@ ships with an upgrade tool (described in the next article) that you
-must use to upgrade your database.
+to streamline server startup, @product@ ships with an upgrade tool (described in
+the next article) that you must use to upgrade your database.
 
 +$$$
 
