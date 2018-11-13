@@ -175,8 +175,7 @@ Install and configure the Solr connector:
    &rarr; *Server Administration*, and click *Execute* next to the *Reindex all
    search indexes* option.
 
-   ![Figure 1: Once the Solr connector is installed, you can reindex your @product@
-   data against your Solr server.](../../../images/solr-reindex.png)
+   ![Figure 1: Once the Solr connector is installed, you can reindex your @product@ data against your Solr server.](../../../images/solr-reindex.png)
 
 In production deployments, specify your edits to the Solr connector's default
 configurations using a configuration file deployed to the `Liferay_Home/osgi/configs`
@@ -188,5 +187,6 @@ During testing and development, use the Solr 7 System Settings entry Control
 Panel &rarr; Configuration &rarr; System Settings for editing the default
 configurations.
 
-![Figure 2: You can configure Solr from @product@'s System Settings application.
-This is most useful during development and testing.](../../../images/solr-system-settings.png)
+![Figure 2: You can configure Solr from @product@'s System Settings application. This is most useful during development and testing.](../../../images/solr-system-settings.png)
+
+The next article covers clustering Solr with SolrCloud.
