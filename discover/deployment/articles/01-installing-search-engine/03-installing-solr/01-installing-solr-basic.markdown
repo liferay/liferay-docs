@@ -33,7 +33,7 @@ Before configuring @product@ for Solr, install and set up Solr.
 To install and properly configure Solr for @product@:
 
 1. Download 
-    [Solr](http://www.apache.org/dyn/closer.lua/lucene/solr/7.4.0) 
+    [Solr](http://archive.apache.org/dist/lucene/solr/7.4.0) 
     and unzip it.
 
 2. Navigate to `solr-[version]/server/solr`. This is Solr Home.
