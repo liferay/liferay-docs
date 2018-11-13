@@ -47,7 +47,9 @@ select *Configuration*. The display settings are in the *Setup* tab:
     buttons on each blog entry. To move social networking sites between the 
     *Current* and *Available* columns, select the sites and use the arrows 
     between those columns. Similarly, use the up/down arrows beneath the 
-    *Current* column to reorder the sites as they appear on each blog entry. 
+    *Current* column to reorder the sites as they appear on each blog entry. For 
+    more information, see 
+    [the social bookmarks documentation](/discover/portal/-/knowledge_base/7-1/integrating-with-facebook#using-social-bookmarks).
 
 -   **Display Style:** The display style for social bookmarks. *Inline* is the 
     default and displays the social bookmark icons in a row. *Menu* hides them 

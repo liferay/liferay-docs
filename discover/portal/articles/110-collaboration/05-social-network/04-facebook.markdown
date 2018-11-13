@@ -29,12 +29,20 @@ already have a billion users on your site, in which case, kudos to you). If
 you're a developer, you can implement your widget on @product@ and then publish 
 it to Facebook. 
 
-## Using Social Bookmarks
+## Using Social Bookmarks [](id=using-social-bookmarks)
 
 Social bookmarks appear below content as buttons that let users share that 
 content on social networks. For example, social bookmarks are enabled by default 
-in the Blogs widget. The default social bookmarks for Twitter, Facebook, 
-LinkedIn, and Google Plus therefore appear below each blog post. 
+in the Blogs widget and appear below each blog post. For more information on 
+configuring social bookmarks in the Blogs widget, see the documentation on 
+[displaying blogs](/discover/portal/-/knowledge_base/7-1/displaying-blogs). 
+
+These social bookmarks are available by default: 
+
+-   Twitter
+-   Facebook
+-   LinkedIn
+-   Google Plus
 
 ![Figure 1: The default social bookmarks appear inline below content.](../../../images/social-bookmarks-inline.png)
 
