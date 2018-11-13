@@ -1,4 +1,4 @@
-# Elasticsearch Logging
+# Elasticsearch Logging [](id=elasticsearch-logging)
 
 When you first start @product@, an embedded Elasticsearch server starts so that
 search works out of the box. The embedded search engine is not suitable for
@@ -80,7 +80,7 @@ Elasticsearch logs at the INFO level and above.
 Two common Elasticsearch logs can be configured further: the Slow Log and the
 JVM's Garbage Collection log.
 
-## Configuring Slow Log
+## Configuring Slow Log [](id=configuring-slow-log)
 
 Read about Elasticsearch's Slow Log
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/index-modules-slowlog.html). 
@@ -106,7 +106,7 @@ Index Configurations property:
 
 These are example values. Adjust as needed.
 
-## Configuring JVM Garbage Collection Logging
+## Configuring JVM Garbage Collection Logging [](id=configuring-jvm-garbage-collection-logging)
 
 As with the Slow Log configuration, Elasticsearch's JVM Garbage Collection
 logging is adjustable in the Elasticsearch 6 entry in System Settings. Add these
