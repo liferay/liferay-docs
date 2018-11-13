@@ -44,19 +44,20 @@ analysis can be configured for each field (see Mapping Definitions).
 
 ## Mapping Definitions [](id=mapping-definitions)
 
-Most search engines can be semi-intelligent in automatically deciphering how to
-process documents passed to them. However, there are many instances where it's
-desirable to explicitly configure how a field should be processed.
+Search engines are semi-intelligent, automatically deciphering how to
+process documents passed to them. However, there are instances where it's
+desirable to configure explicitly how to process a field.
 
-Mappings allow users to control how a search engine processes a given field.
-For instance, for all field names that end in "es_ES", we want to process the
-field values as Spanish, removing any common Spanish words like "si".
+_Mappings_ control how a search engine processes a given field. For instance,
+if a field name ends in "es_ES", we want to process the field values as
+Spanish, removing any common Spanish words like "si".
 
 In Elasticsearch and Solr, the two supported search engines for Liferay Portal,
-we define mappings using `liferay-type-mappings.json` and `schema.xml`,
+mappings are defined in `liferay-type-mappings.json` and `schema.xml`,
 respectively.
 
-The Elasticsearch mapping JSON file can be seen in the @product@ source code,
+The Elasticsearch mapping JSON file can be seen in the @product@ 
+[source code](https://www.liferay.com/downloads-community),
 in the `portal-search-elasticsearch6`  module:
 
     portal-search-elasticsearch6-impl/src/main/resources/META-INF/mappings/liferay-type-mappings.json
@@ -65,7 +66,7 @@ The Solr `schema.xml` can be seen in the `portal-search-solr7` module's source c
 
     portal-search-solr7-impl/src/main/resources/META-INF/resources/schema.xml
 
-Access the Solr 7 module's source code form the `liferay-portal` repo 
+Access the Solr 7 module's source code from the `liferay-portal` repository 
 [here](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/portal-search-solr7/portal-search-solr7-impl/src/main/resources/META-INF/resources/schema.xml)
 
 These are default mapping files that are shipped with the product. You can
