@@ -1,10 +1,10 @@
-# Integrating with Facebook [](id=integrating-with-facebook)
+# Integrating with Facebook and Other Social Networks [](id=integrating-with-facebook)
 
-Facebook is currently the number one social network in the world with somewhere
-over 1 billion active users. If you're trying to build a community on your site, 
-you don't want to neglect a bridge to that many possible users. With that in 
-mind, @product@ provides a few easy ways for you to integrate your Site with 
-Facebook.
+@product@ provides tools for integrating your portal and its content with 
+Facebook and other social networks. For example, you can use Facebook for 
+authentication and even export widgets as Facebook applications. You can also 
+leverage *social bookmarks* to let your users share portal content on a variety 
+of social networks. This article shows you how to do these things. 
 
 ## Facebook Sign On [](id=facebook-sign-on)
 
@@ -28,3 +28,29 @@ other content on your website available to a much larger audience (unless you
 already have a billion users on your site, in which case, kudos to you). If 
 you're a developer, you can implement your widget on @product@ and then publish 
 it to Facebook. 
+
+## Using Social Bookmarks
+
+Social bookmarks appear below content as buttons that let users share that 
+content on social networks. For example, social bookmarks are enabled by default 
+in the Blogs widget. The default social bookmarks for Twitter, Facebook, 
+LinkedIn, and Google Plus therefore appear below each blog post. 
+
+![Figure 1: The default social bookmarks appear inline below content.](../../../images/social-bookmarks-inline.png)
+
+If you want more social bookmarks than the default ones, install the Social 
+Bookmarks app from Liferay Marketplace. This app is available for 
+[Liferay CE Portal](https://web.liferay.com/marketplace/-/mp/application/15194315) 
+and 
+[Liferay DXP](https://web.liferay.com/marketplace/-/mp/application/15188453). 
+It adds the following social bookmarks: 
+
+-   AddThis
+-   Delicious
+-   Digg
+-   Evernote
+-   Reddit
+-   Slashdot
+
+If you need help installing apps from Liferay Marketplace, see 
+[the article on using Marketplace](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace). 
