@@ -46,24 +46,21 @@ Use the following steps to add an action to your your Screenlet:
     ![Figure 1: The sample Add Bookmark Screenlet's XIB file contains a new button next to the *Title* field for retrieving the URL's title.](../../../images/screens-ios-xcode-add-bookmark-advanced.png)
 
 3. Wire the UI components in your XIB file to your View class. In your View 
-   class, you must also set each component's `restorationIdentifier` to its 
-   related action. For example, the following code in the Add Bookmark 
-   Screenlet's View class (`AddBookmarkView_default`) specifies an `@IBOutlet` 
-   for each button. The `didSet` observer for each property sets the 
-   `restorationIdentifier` to the appropriate constant you created in the first 
-   step: 
+   class, you must also register the events you want to react to, like a button click. The [`BaseScreenletView` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenletView.swift) 
+	contains a set of `userAction` methods that you can call in your View class to 
+	perform actions programmatically. For example, it's possible to trigger Add
+	Bookmark Screenlet's Get Title action automatically whenever the user leaves the
+	`URLTextField`. Since `BaseScreenletView` is the delegate for all `UITextField` 
+	objects by default, This is done in the View class (`AddBookmarkView_default`) 
+	by implementing the 
+	[`textFieldDidEndEditing` method](https://developer.apple.com/reference/uikit/uitextfielddelegate/1619591-textfielddidendediting) 
+	to call the `userAction` method with the action name: 
 
-        @IBOutlet weak var addBookmarkButton: UIButton? {
-            didSet {
-                addBookmarkButton?.restorationIdentifier = AddBookmarkScreenlet.AddBookmarkAction
-            }
-        }
-        @IBOutlet weak var getTitleButton: UIButton? {
-            didSet {
-                getTitleButton?.restorationIdentifier = AddBookmarkScreenlet.GetTitleAction
-            }
-        }
-
+	    func textFieldDidEndEditing(textField: UITextField) {
+	        if textField == URLTextField {
+	            userAction(name: AddBookmarkScreenlet.GetTitleAction)
+	        }
+	    }
 4. Update your View class or View Model protocol to account for the new action. 
    For example, Add Bookmark Screenlet contains a View Model 
    (`AddBookmarkViewModel`) so it can 
@@ -214,28 +211,6 @@ Use the following steps to add an action to your your Screenlet:
 
 Great! Now you know how to support multiple actions in your Screenlets. The next 
 section shows you how to trigger your actions programmatically. 
-
-## Triggering Actions Programmatically [](id=triggering-actions-programmatically)
-
-The user triggers Add Bookmark Screenlet's actions when they press buttons in 
-the UI. What if you need to trigger the action programmatically? No problem! The 
-[`BaseScreenletView` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenletView.swift) 
-contains a set of `userAction` methods that you can call in your View class to 
-perform actions programmatically. For example, it's possible to trigger Add
-Bookmark Screenlet's Get Title action automatically whenever the user leaves the
-`URLTextField`. Since `BaseScreenletView` is the delegate for all `UITextField` 
-objects by default, This is done in the View class (`AddBookmarkView_default`) 
-by implementing the 
-[`textFieldDidEndEditing` method](https://developer.apple.com/reference/uikit/uitextfielddelegate/1619591-textfielddidendediting) 
-to call the `userAction` method with the action name: 
-
-    func textFieldDidEndEditing(textField: UITextField) {
-        if textField == URLTextField {
-            userAction(name: AddBookmarkScreenlet.GetTitleAction)
-        }
-    }
-
-That's it! Now you know how to trigger your Screenlet actions programmatically. 
 
 ## Related Topics [](id=related-topics)
 
