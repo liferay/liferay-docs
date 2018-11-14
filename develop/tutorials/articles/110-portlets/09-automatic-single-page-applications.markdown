@@ -119,7 +119,7 @@ To configure system settings for SPA, follow these steps:
 
 1.  In the Control Panel, navigate to *Configuration* &rarr; *System Settings*.
 
-2.  Select the *Foundation* tab at the top of the page.
+2.  Select *Infrastructure* under the *PLATFORM* heading.
 
 3.  Click *Frontend SPA Infrastructure*.
 
@@ -134,9 +134,9 @@ ignore.
 **Request Timeout Time**: The time, in milliseconds, in which a SPA request
 times out. A zero value means the request should never timeout.
 
-**User Notification Time**: The time, in milliseconds, in which a notification
-is shown to the user stating that the request is taking longer than expected. A
-zero value means no notification should be shown.
+**User Notification Timeout**: The time, in milliseconds, in which a 
+notification is shown to the user stating that the request is taking longer than 
+expected. A zero value means no notification should be shown.
 
 Now that you know how to configure system settings for SPA, you can learn how to
 disable SPA for elements in your site next.

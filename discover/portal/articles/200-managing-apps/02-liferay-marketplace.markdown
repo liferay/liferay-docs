@@ -66,12 +66,23 @@ Terms of Service, and click *Purchase*.
 
 ![Figure 2: Click an app to view its details.](../../images/marketplace-app-details.png)
 
-Once you purchase an app, you can download and install it. An app downloads and
-installs immediately if you purchase it from the Control Panel. If you purchase
-the app on the Marketplace website, however, your receipt is displayed
-immediately after purchase. To download the app, click the *See Purchased*
-button on the bottom of the receipt, and then click the *App* button to start
-the download. You must then 
+Once you purchase an app, you can download and install it.
+
++$$$
+
+**Warning:** Not all apps are designed to be "hot deployed"---deployed while the
+server is running. Deploying that way can cause instabilities, such as class
+loading leaks and memory leaks. On production systems, avoid "hot deploying"
+apps whenever possible. See the
+[best practices for managing apps in production](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps#managing-apps-in-production).
+
+$$$
+
+An app downloads and installs immediately if you purchase it from the Control
+Panel. If you purchase the app on the Marketplace website, however, your receipt
+is displayed immediately after purchase. To download the app, click the *See
+Purchased* button on the bottom of the receipt, and then click the *App* button
+to start the download. You must then 
 [install the app manually](/discover/portal/-/knowledge_base/7-1/installing-apps-manually).
 Alternatively, you can use Marketplace from the Control Panel to download and
 install the app after purchase on the Marketplace website. The next section
