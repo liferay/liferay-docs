@@ -72,19 +72,20 @@ install them:
 
         npm install -g yo gulp
 
-You've completed installing the Liferay Theme Generator's dependencies.
+    You've completed installing the Liferay Theme Generator's dependencies. 
 
-Now you're ready to install the Liferay Theme Generator. 7.x.x versions of the 
-Theme Generator let you create themes for 6.2 and 7.0. Versions 8.x.x and up 
-let you create themes for later versions of @product@.
+4.  Install the Liferay Theme Generator. 7.x.x versions of the Theme Generator 
+    let you create themes for 6.2 and 7.0. Versions 8.x.x and up let you create 
+    themes for 7.0 and later versions of @product@.
 
-To create themes for **6.2** and **7.0**:
+    To create themes for **6.2** and **7.0**, run the following command:
 
-    npm install -g generator-liferay-theme@^7.x.x
+        npm install -g generator-liferay-theme@^7.x.x
     
-To create themes for **7.0** / **7.1** / later versions of @product@:
+    To create themes for **7.0**, **7.1**, and later versions of @product@, run 
+    this command:
     
-    npm install -g generator-liferay-theme
+        npm install -g generator-liferay-theme
     
 If you are on Windows, you must do additional setup for generated themes to use
 Sass. 
