@@ -83,6 +83,8 @@ these steps or refer to
     who has the `kibana_user` 
     [role](https://www.elastic.co/guide/en/x-pack/6.1/built-in-roles.html).
 
+*doesnt have to be kibana_user role, could also be superuser role like the elastic user.*
+
 ### Configuring Kibana with Encryption [](id=configuring-kibana-with-encryption)
 
 Follow these steps to configure Kibana if X-Pack encrypts communication with the

@@ -137,7 +137,7 @@ these contents:
 Note that the `password` should match what you set during the X-Pack password
 setup above. 
 
-Enable authentication by setting authentication to `required` and providing the
+Enable authentication by setting `requiresAuthentication` to `true` and providing the
 credentials for the Elasticsearch user. For SSL, enable transport SSL, set the
 certificate verification mode and certificate format, and provide the path to
 the certificate, key, and certificate authority. Of course, the exact values
