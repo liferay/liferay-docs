@@ -94,7 +94,7 @@ created in the previous step:
 
 5.  *Save* your changes. 
 
-## Linking to Google Drive&trade; [](id=linking-to-google-drivetrade)
+## Creating Linked Files [](id=creating-linked-files)
 
 With the preceding configuration steps complete, you can create files in your 
 Document Library that link to files in Google Drive&trade; or images in Google 
