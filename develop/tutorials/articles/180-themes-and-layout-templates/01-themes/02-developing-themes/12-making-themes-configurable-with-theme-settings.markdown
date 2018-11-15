@@ -40,6 +40,13 @@ Follow these steps:
         	</theme>
         </look-and-feel>
 
+    The example configuration below adds a text input setting for custom text:
+    
+        <settings>
+          <setting configurable="true" key="my-custom-text"
+          type="text" value="Liferay rocks!" />
+        </settings>
+
     The available theme `<setting>` attributes are shown below:
 
     `configurable`: whether the setting is configurable or static 
@@ -70,22 +77,26 @@ Follow these steps:
 
         <#assign my_variable_name =
         getterUtil.getString(themeDisplay.getThemeSetting("theme-setting-key"))/>
+ 
+    The example configuration below adds the custom text setting:
+    
+        <#assign my_custom_text =
+        getterUtil.getString(themeDisplay.getThemeSetting("my-custom-text"))/>
 
 3.  Apply your theme settings to the theme template. The example configuration 
-    below prints the value for the `custom_text` variable in a `<p>` element:
+    below prints the value for the `my_custom_text` variable in a `<p>` element:
 
     `portal_normal.ftl`:
 
-        <p>${custom_text}</p>
+        <p>${my_custom_text}</p>
 
 4.  Deploy and install the theme, and open the *Control Menu* &rarr; *Site 
-    Administration* &rarr; *Build* &rarr; *Site Pages*. From this point, you 
-    can configure theme settings for two scopes:
+    Administration* &rarr; *Build* &rarr; *Pages*. From this point, you can 
+    configure theme settings for two scopes:
 
-    - **The entire site:** open the Options menu in the top right, and select 
-      *Configure*. Then, click the *Look and Feel* tab and select the 
-      *Define a Specific look and feel for this page* option. Choose your 
-      settings and click *Save* to apply the changes to the site. 
+    - **Public or private page set:** *Click* the gear icon next to the page set 
+    you want to configure. Then, under the *Look and Feel* tab, choose your 
+    settings and click *Save* to apply the changes to the page set. 
 
     - **An individual page:** Open the Actions menu next to the page and select 
     *Configure*. Then, click the *Look and Feel* tab and select the 

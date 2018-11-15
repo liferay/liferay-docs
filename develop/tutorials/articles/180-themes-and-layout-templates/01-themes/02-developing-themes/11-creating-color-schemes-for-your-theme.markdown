@@ -65,10 +65,10 @@ Follow these steps to create color schemes for your theme:
     +$$$
  
     **Note:** Color schemes are sorted alphabetically by `name` rather than `id`. 
-    For example, a color scheme named `Day` and `id` `02` would be selected by 
-    default over a color scheme named `Clouds` with `id` `01`. The `<default-cs>` 
-    element overrides the alphabetical sorting and sets the color scheme that is 
-    selected by default when the theme is chosen. 
+    For example, a color scheme named `Clouds` and `id` `02` would be selected 
+    by default over a color scheme named `Day` with `id` `01`. The 
+    `<default-cs>` element overrides the alphabetical sorting and sets the color 
+    scheme that is selected by default when the theme is chosen. 
  
     $$$ 
  

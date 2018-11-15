@@ -181,7 +181,7 @@ Restart @product@ and Kibana.
 Once Kibana and X-Pack are successfully installed and configured and all the
 servers are up and running, add the X-Pack Monitoring portlet to a page:
 
-1.  Open the *Add* menu on a page and choose *Applications*
+1.  Open the *Add* menu on a page and choose *Widgets*
 
 2.  Search for *monitoring* and drag the *X-Pack Monitoring* application from
     the Search category onto the page.

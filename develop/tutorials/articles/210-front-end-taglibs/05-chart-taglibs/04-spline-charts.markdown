@@ -4,70 +4,44 @@ Spline charts contain multiple sets of data. A spline chart connects points of
 data with a smooth curve. Each data series 
 (created with the `addColumns()` method) is defined with a new instance of the 
 [`MultiValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/MultiValueColumn.html), 
-which takes an ID and a set of values. 
+which takes an ID and a set of values. This tutorial shows how to configure your 
+portlet to use spline charts. 
 
-Java sample data:
+Follow these steps:
 
-    import com.liferay.frontend.taglib.chart.model.MultiValueColumn;
-    import com.liferay.frontend.taglib.chart.model.point.spline.SplineChartConfig;
+1.  Import the chart taglib along with the `SplineChartConfig` and 
+    `MultiValueColumn` classes into your bundle's `init.jsp` file:
 
-    public class ChartSampleDisplayContext {
+        <%@ taglib prefix="chart" uri="http://liferay.com/tld/chart" %>
+        <%@ page import="com.liferay.frontend.taglib.chart.model.point.spline.SplineChartConfig" %>
+        <%@ page import="com.liferay.frontend.taglib.chart.model.MultiValueColumn" %>
 
-        public ChartSampleDisplayContext() {
-          _initSplineChartConfig();
-        }
+2.  Add the following Java scriptlet to the top of your `view.jsp`:
 
-        public splineChartConfig getSplineChartConfig() {
-          return _splineChartConfig;
-        }
-
-        private void _initSplineChartConfig() {
-          _splineChartConfig.addColumns(
-            new MultiValueColumn("data1", 100, 20, 30),
-            new MultiValueColumn("data2", 20, 70, 100));
-        }
+        <%
+        SplineChartConfig _splineChartConfig = new SplineChartConfig();
         
-        private SplineChartConfig _splineChartConfig = new SplineChartConfig();
+        _splineChartConfig.addColumns(
+          new MultiValueColumn("data1", 100, 20, 30),
+          new MultiValueColumn("data2", 20, 70, 100));
+        }
+        %>
 
-    }
+3.  Add the `<chart>` taglib to the `view.jsp`, passing the `_splineChartConfig` 
+    as the `config` attribute's value:
 
-JSP:
-
-    <chart:spline config="<%= chartSampleDisplayContext.getSplineChartConfig() %>" id="spline" />
+        <chart:spline
+          config="<%= _splineChartConfig %>"
+        />
 
 ![Figure 1: A spline chart connects points of data with a smooth curve.](../../../images/chart-taglib-spline.png)
 
 You can also use an area spline chart if you prefer. An area spline chart 
 highlights the area under the spline curve.
 
-Java sample data:
-
-    import com.liferay.frontend.taglib.chart.model.MultiValueColumn;
-    import com.liferay.frontend.taglib.chart.model.area.spline.AreaSplineChartConfig;
-
-    public class ChartSampleDisplayContext {
-
-        public ChartSampleDisplayContext() {
-          _initAreaSplineChartConfig();
-        }
-
-        public areaSplineChartConfig getAreaSplineChartConfig() {
-          return _areaSplineChartConfig;
-        }
-
-        private void _initAreaSplineChartConfig() {
-          _areaSplineChartConfig.addColumns(
-            new MultiValueColumn("data1", 100, 20, 30),
-            new MultiValueColumn("data2", 20, 70, 100));
-        }
-        
-        private AreaSplineChartConfig _areaSplineChartConfig = new AreaSplineChartConfig();
-
-    }
-
-JSP:
-
-    <chart:area-spline config="<%= chartSampleDisplayContext.getAreaSplineChartConfig() %>" id="area-spline" />
+    <chart:area-spline 
+      config="<%= _splineChartConfig %>" 
+    />
 
 ![Figure 2: An area spline chart highlights the area under the spline curve.](../../../images/chart-taglib-area-spline.png)
 

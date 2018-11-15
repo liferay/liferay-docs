@@ -1,4 +1,4 @@
-# AlloyEditor Button Reference Guide
+# AlloyEditor Button Reference Guide [](id=alloyeditor-button-reference-guide)
 
 This reference guide provides additional information that you may find helpful 
 while 
@@ -7,7 +7,7 @@ In this guide provides useful information on the following topics:
 
 - Mixins
 
-## Mixins
+## Mixins [](id=mixins)
 
 When creating a new button for the Alloy Editor, several mixins are available 
 that make it easy to provide additional functionality. The available mixins, 

@@ -119,6 +119,16 @@ on the entity instance's ID.
     	foo = fooLocalService.getFoo(fooId);
     }
 
++$$$
+
+**Important:** When invoking service entity updates (e.g., 
+`fooService.update(object)`) for services that have MVCC enabled, make sure to
+do so in transactions. Propagate rejected transactions to the UI for the user to
+handle. For details, see
+[Multiversion concurrency control (MVCC)](/develop/tutorials/-/knowledge_base/7-1/defining-global-service-information#multiversion-concurrency-control-mvcc).
+
+$$$
+
 Using the `@Reference` annotation, you can inject your application's OSGi DS
 components (such as a portlet DS component) with instances of your application's
 Service Builder-generated local service components. Also you can provide your

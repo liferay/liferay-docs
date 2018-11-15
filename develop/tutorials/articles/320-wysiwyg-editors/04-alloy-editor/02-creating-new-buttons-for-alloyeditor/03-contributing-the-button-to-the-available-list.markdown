@@ -17,7 +17,7 @@ Below is an example configuration that extends this class:
     file. You can use the `StringBundler` to concatenate the script. Note the 
     `sb.append("/js/buttons.js")` line below. This is the `bundleFileName` you 
     defined in your 
-    [bundle's `build.gradle` `transpileJS` task](/develop/tutorials/-/knowledge_base/7-1/creating-the-buttons-osgi-bundle):
+    [bundle's `build.gradle` `transpileJS` task](/develop/tutorials/-/knowledge_base/7-1/creating-the-alloyeditor-buttons-osgi-bundle):
 
         @Override
         public void include(
