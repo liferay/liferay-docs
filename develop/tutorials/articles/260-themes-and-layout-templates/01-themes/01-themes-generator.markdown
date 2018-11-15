@@ -76,19 +76,16 @@ You've completed installing the Liferay Theme Generator's dependencies.
 
 Now you're ready to install the Liferay Theme Generator. 7.x.x versions of the 
 Theme Generator let you create themes for 6.2 and 7.0. Versions 8.x.x and up 
-let you create themes for later versions of @product@. Install version 7.2.0 
-globally by executing this command:
+let you create themes for later versions of @product@.
 
-    npm install -g generator-liferay-theme@7.2.0
+To create themes for **6.2** and **7.0**:
+
+    npm install -g generator-liferay-theme@^7.x.x
     
-+$$$
-
-**Note:** Version 7.2.0 is the latest 7.x.x Theme Generator version at the time 
-of this writing. Always use the latest 7.x.x version to build with the most 
-recent fixes and updates.
-
-$$$
-
+To create themes for **7.0** / **7.1** / later versions of @product@:
+    
+    npm install -g generator-liferay-theme
+    
 If you are on Windows, you must do additional setup for generated themes to use
 Sass. 
 
