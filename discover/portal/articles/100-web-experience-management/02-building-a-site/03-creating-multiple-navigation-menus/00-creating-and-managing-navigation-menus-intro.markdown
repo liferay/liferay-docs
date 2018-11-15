@@ -1,6 +1,6 @@
-# Creating and Managing Site Navigation Menus [](id=creating-and-managing-site-navigation-menus)
+# Managing Site Navigation [](id=managing-site-navigation)
 
-With @product-ver@, pages are now decoupled from menus. Navigation Menus let you
+With @product-ver@, pages can be decoupled from menus. Navigation Menus let you
 arrange your page taxonomy any way you want. Marketers can leave one-off
 marketing landing pages out of the navigation, and you can create 
 multiple navigation menus: a main menu, secondary menus, footer menus, and
@@ -13,10 +13,10 @@ direct users to content that is relevant to them.
 
 The default menu functions just like it always has: when you add a page, it's
 added to the menu. You can create sub-pages and build the page hierarchy any way
-you like. Go to *Navigation* &rarr; *Site Pages* to view the existing pages or
+you like. Go to *Navigation* &rarr; *Pages* to view the existing pages or
 create new pages.
 
-The site hierarchy as displayed on *Site Pages* is the main reference for the
+The site hierarchy as displayed on *Pages* is the main reference for the
 organization of pages on that Site. While Navigation menus can customize their
 organization and what appears and what doesn't appear, this menu is always the
 primary reference for the pages on your Site.
