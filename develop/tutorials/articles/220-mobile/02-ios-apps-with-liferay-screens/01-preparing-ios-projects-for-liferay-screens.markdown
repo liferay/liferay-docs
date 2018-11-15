@@ -66,11 +66,11 @@ follow these steps:
         # the rest of your podfile
 
     Note that Liferay Screens and some of its dependencies aren't compatible 
-    with Swift 3.2 nor Swift 4.0. If your iOS project is compiled in Swift 3.2 or 4.0, then your 
-    `Podfile` must specify Screens and those dependencies for compilation in 
-    Swift 4.2. The `post_install` code in the following `Podfile` does this. You 
-    must therefore use this `Podfile` if you want to use Screens in a Swift 3.2 or 4.0
-    app: 
+    with Swift 3.2 or Swift 4.0. If your iOS project is compiled in Swift 3.2 or 
+    Swift 4.0, then your `Podfile` must specify Screens and those dependencies 
+    for compilation in Swift 4.2. The `post_install` code in the following 
+    `Podfile` does this. You must therefore use this `Podfile` if you want to 
+    use Screens in a Swift 3.2 or Swift 4.0 app: 
 
     	source 'https://github.com/CocoaPods/Specs.git'
 
