@@ -171,7 +171,7 @@ To blacklist a portlet from SPA, follow these steps:
 
         com.liferay.portlet.single-page-application=false
         
-   If you prefer, you can set this property to false in your `portlet.xml` 
+   If you prefer, you can set this property to false in your `liferay-portlet.xml` 
    instead by adding the following property to the `<portlet>` section:
    
         <single-page-application>false</single-page-application>
