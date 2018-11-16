@@ -118,7 +118,7 @@ extension point, you should follow these steps:
     this:
 
         dynamicIncludeRegistry.register(
-            "com.liferay.frontend.editors.web#ckeditor#onEditorCreate");
+            "com.liferay.frontend.editor.ckeditor.web#ckeditor#onEditorCreate");
 
     This registers the CKEditor into the Dynamic Include registry and specifies
     that JS code will be injected into the editor once it's created.
@@ -131,7 +131,7 @@ extension point, you should follow these steps:
     the Creole implementation of the CKEditor, you could use the following
     key:
 
-        "com.liferay.frontend.editors.web#ckeditor_creole#onEditorCreate"
+        "com.liferay.frontend.editor.ckeditor.web#ckeditor_creole#onEditorCreate"
 
 That's it! The JS code that you created is now injected into the editor instance
 you've specified. You're now able to use JavaScript to add new behavior to your
