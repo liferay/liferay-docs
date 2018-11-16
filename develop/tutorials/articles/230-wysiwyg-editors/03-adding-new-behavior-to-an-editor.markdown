@@ -52,7 +52,37 @@ extension point, you should follow these steps:
     the user when running in Creole mode.
 
 2.  [Create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
-    that can register your new JS file and inject it into your editor instance.
+    that can register your new JS file and inject it into your editor instance. 
+    The module should have a structure similar to this:
+    
+        ├── bnd.bnd
+        ├── build.gradle
+        ├── gradle
+        │   └── wrapper
+        │       ├── gradle-wrapper.jar  
+        │       └── gradle-wrapper.properties
+        ├── gradlew
+        ├── gradlew.bat
+        └── src
+            └── main
+                ├── java
+                │   └── com
+                │       └── liferay
+                │           └── editor
+                │               └── myeditormodule
+                │                   ├── constants
+                │                   │   └── MyEditorModulePortletKeys.java
+                │                   └── internal
+                │                       └── CKEditorOnDialogDefinitionCreateDynamicInclude.java
+                └── resources
+                    ├── META-INF
+                    │   └── resources
+                    │       └── ckeditor
+                    │           └── extension
+                    │               └── ckeditor_dialog_definition.js
+                    └── content
+                        └── Language.properties
+                
 
 3.  Create a unique package name in the module's `src` directory, and create a
     new Java class in that package. To follow naming conventions, your class name
