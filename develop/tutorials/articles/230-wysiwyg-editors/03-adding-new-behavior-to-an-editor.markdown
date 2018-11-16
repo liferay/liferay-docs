@@ -3,7 +3,7 @@
 With the support of several kinds of WYSIWYG editors, Liferay gives you many
 options to support your users' editing needs. Sometimes, however, you can't get
 what you want with configuration alone. To help developers in these situations,
-Liferay provides a way to programatically access the editor instance to create
+Liferay provides a way to programmatically access the editor instance to create
 the editor experience you want.
 
 This can be done by using the `liferay-util:dynamic-include` JavaScript
@@ -54,35 +54,26 @@ extension point, you should follow these steps:
 2.  [Create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
     that can register your new JS file and inject it into your editor instance. 
     The module should have a structure similar to this:
-    
-        ├── bnd.bnd
-        ├── build.gradle
-        ├── gradle
-        │   └── wrapper
-        │       ├── gradle-wrapper.jar  
-        │       └── gradle-wrapper.properties
-        ├── gradlew
-        ├── gradlew.bat
-        └── src
-            └── main
-                ├── java
-                │   └── com
-                │       └── liferay
-                │           └── editor
-                │               └── myeditormodule
-                │                   ├── constants
-                │                   │   └── MyEditorModulePortletKeys.java
-                │                   └── internal
-                │                       └── CKEditorOnDialogDefinitionCreateDynamicInclude.java
-                └── resources
-                    ├── META-INF
-                    │   └── resources
-                    │       └── ckeditor
-                    │           └── extension
-                    │               └── ckeditor_dialog_definition.js
-                    └── content
-                        └── Language.properties
-                
+
+    - `bnd.bnd`
+    - `build.gradle`
+    - `gradle/`
+      - `wrapper/`
+        - `gradle-wrapper.jar`  
+        - `gradle-wrapper.properties`
+    - `gradlew`
+    - `gradlew.bat`
+    - `src/main/`
+      - `java/com/liferay/editor/myeditormodule/`
+        - `constants/`
+          - `MyEditorModulePortletKeys.java`
+        - `internal/`
+          - `CKEditorOnDialogDefinitionCreateDynamicInclude.java`
+      - `resources/`
+        - `META-INF/resources/ckeditor/extension/`
+          - `ckeditor_dialog_definition.js`
+        - `content/`
+          - `Language.properties`
 
 3.  Create a unique package name in the module's `src` directory, and create a
     new Java class in that package. To follow naming conventions, your class name
