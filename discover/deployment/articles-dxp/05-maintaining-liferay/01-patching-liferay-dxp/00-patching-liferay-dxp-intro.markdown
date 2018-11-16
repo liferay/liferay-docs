@@ -14,12 +14,12 @@ regularly, especially before patching. The patching tool installs the code
 changes and the @product@ server executes data changes (if any) automatically on
 startup. 
 
-Fix packs (and service packs) can include data/schema
+Certain fix packs (service packs) can include data/schema
 [micro changes](/develop/tutorials/-/knowledge_base/7-1/meaningful-schema-versioning#micro-change-examples)---they're
 optional and revertible. To facilitate fast server startup, startup does not
-apply micro changes. Instead, before server startup, you can use the
-[upgrade tool](/discover/deployment/-/knowledge_base/7-1/upgrading-to-liferay-71)
-to apply micro changes. 
+apply micro changes for the Core, only for modules (using the default
+configuration for the [autoUpgrade property](/discover/deployment/-/knowledge_base/7-0/running-the-upgrade-process#running-the-upgrade)). Instead, before server startup, you can use the [upgrade tool](/discover/deployment/-/knowledge_base/7-1/upgrading-to-liferay-71)
+to apply micro changes.
 
 $$$
 
