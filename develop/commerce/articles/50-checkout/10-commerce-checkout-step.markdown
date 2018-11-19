@@ -29,7 +29,7 @@ this:
     targetCompatibility = "1.8"
 
     dependencies {
-        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.product.api", version: "2.0.0-SNAPSHOT"
+        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.product.api", version: "2.0.0"
         compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.5.0"
         compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
         compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.checkout.web", version: "1.0.2"
