@@ -16,7 +16,7 @@ build a form:
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
     
 2.  Build your form using the tags shown below. Each tag links to the 
-    corresponding taglibdoc, which list the available attributes: 
+    corresponding taglibdoc that list the available attributes:
 
     - [`<aui:input>`](https://docs.liferay.com/ce/portal/7.1-latest/taglibs/util-taglib/aui/input.html)
     - [`<aui:button>`](https://docs.liferay.com/ce/portal/7.1-latest/taglibs/util-taglib/aui/button.html)
@@ -92,8 +92,8 @@ build a form:
 
     | Rule | Description | Default Error Message |
     | --- | --- | --- |
-    | `acceptFiles` | Specifies that the field can contain only the file types given. Each file extension must be separated by a comma. For example </br> `<aui:validator name="acceptFiles">'jpg,png,tif,gif'</aui:validator>` | 'Please enter a file with a valid extension ([supported extensions]).' |
-    | `alpha` | Only alphabetic characters are permitted | 'Please enter only alpha characters.' |
+    | `acceptFiles` | Specifies that the field can only contain the file types given. Each file extension must be separated by a comma. For example </br> `<aui:validator name="acceptFiles">'jpg,png,tif,gif'</aui:validator>` | 'Please enter a file with a valid extension ([supported extensions]).' |
+    | `alpha` | Permits alphabetic characters | 'Please enter only alpha characters.' |
     | `alphanum` | Permits alphanumeric characters | 'Please enter only alphanumeric characters.' |
     | `date` | Permits dates | 'Please enter a valid date.' |
     | `digits` | Permits digits | 'Please enter only digits.' |
