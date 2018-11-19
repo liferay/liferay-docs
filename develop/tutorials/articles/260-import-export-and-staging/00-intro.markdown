@@ -28,9 +28,10 @@ User Guide section.
 
 Staging lets you change your site behind the scenes without affecting the live
 site, and then you can publish all the changes in one fell swoop. Keep in mind
-that Staging leverages the Export/Import framework, which is an essential part
-of the publishing process. If you include staging support in your application,
-your users can stage its content until it's ready.
+that Staging leverages the Export/Import framework. When publishing your staged
+content to the live Site, you're essentially importing content from the staged
+Site and exporting it to the live Site. If you include staging support in your
+application, your users can stage its content until it's ready.
 
 For example, if you have an application that provides information intended only
 during a specific holiday, supporting the Staging environment lets users save

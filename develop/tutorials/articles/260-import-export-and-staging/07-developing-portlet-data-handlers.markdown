@@ -287,6 +287,17 @@ Bookmarks application.
     This method can also return a modified version of the portlet preferences if
     it contains references to data that no longer exists.
 
+    +$$$
+
+    **Note:** This is a legacy feature that was useful when deletions were not
+    propagated between sites. This cleaned the portlet's data, allowing you to
+    see everything associated with the portlet during every publication. This is
+    now an unnecessary process now that Staging can recognize deletions across
+    all sites. It's, however, still offered as a feature of Staging and is
+    implemented in Liferay's Bookmarks app, so it's included here.
+
+    $$$
+
 9.  Add a method that counts the number of affected entities based on the
     current export or staging process:
 
