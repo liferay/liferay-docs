@@ -38,16 +38,16 @@ Follow these steps:
     `com.liferay.commerce.model.CommerceShippingEngine` interface.
 
 First, add dependencies to `build.gradle`. The build script should look like
-this<!--in DXP GA1, Commerce 1.0.0-->
+this:
 
     sourceCompatibility = "1.8"
     targetCompatibility = "1.8"
 
     dependencies {
-        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.product.api", version: "1.1.0"
+        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.product.api", version: "2.0.0"
         compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.5.0"
         compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
-        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.api", version: "1.1.0"
+        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.api", version: "3.0.0"
         compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
     }
 
