@@ -43,11 +43,14 @@ Create `GuestbookKeywordQueryContributor`:
 
     }
 
-When a search is submitted, a `SearchContext` object is created. It contains
-lots of information about the ongoing search query. Use the query helper to add
-search terms. Adding the localized search term is important. Since the localized
-Guestbook title was indexed, you must retrieve the localized value from the
-search engine.
+The overall goal of this class is to add Guestbook fields to the search query
+constructed by the Search application in @product@. Later, when you asset enable
+Guestbooks, this code will allow indexed Guestbooks to be searched from the
+Search application when a keyword is entered into the search bar. Use the query
+helper to add search terms to the query that will allow Guestbooks to be found.
+Here it's important to note that adding the localized search term is important.
+Since the localized Guestbook title was indexed, you must retrieve the localized
+value from the search engine.
 
 Once the query code is in place, define how returned Guestbook documents are
 summarized. 
