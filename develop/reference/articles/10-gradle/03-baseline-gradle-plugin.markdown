@@ -10,7 +10,7 @@ the baseline. If there are any changes, it uses the OSGi semantic versioning
 rules to calculate the minimum new version. If the new bundle has a lower
 version, errors are thrown.
 
-The plugin has been successfully tested with Gradle 2.5 up to 3.5.1.
+The plugin has been successfully tested with Gradle 3.5.1 up to 4.10.2.
 
 ## Usage [](id=usage)
 
