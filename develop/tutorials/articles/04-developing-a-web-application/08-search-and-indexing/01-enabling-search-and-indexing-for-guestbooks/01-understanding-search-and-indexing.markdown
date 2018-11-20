@@ -30,10 +30,9 @@ Along with the search engine, @product@ has its own search infrastructure.
     portlet. 
 
 To understand the purpose of the search and indexing code required for making
-your custom models seamlessly searchable in @product@, understanding each
-portion of the search and indexing cycle, along with the Java classes you can
-write to exert control during each step, will go a long way toward preparing you
-for the code that follow in the subsequent lessons:
+your custom models seamlessly searchable in @product@, understanding how to
+influence each portion of the search and indexing cycle will go a long way
+toward preparing you for the code that follow in the subsequent lessons:
 
 **Indexing**: Model entities store data field's in the database. Guestbooks
 store the _name_ field, for example. In the indexing portion of the cycle,
