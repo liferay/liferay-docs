@@ -14,7 +14,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.soy", version: "3.1.6"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.soy", version: "3.1.8"
     }
 
     repositories {
