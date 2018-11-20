@@ -15,16 +15,16 @@ See
 for a description of the parameters. Note that all this method's parameters are 
 mandatory. 
 
-Keep in mind the following when creating shortcuts: 
+Keep these things in mind when creating shortcuts: 
 
 -   You can create a shortcut to a file in a different Site, if that file and 
     its resulting shortcut are in the same portal instance. 
 -   You can't create folder shortcuts. 
 -   Shortcuts can only exist in the default Site repository. If you try to 
     invoke `addFileShortcut` with an external repository's ID (e.g.,
-    a SharePoint repository), the operation fails. Since different
-    repositories support different features, the Documents and Media API only 
-    supports the common denominators for all repositories: files and folders. 
+    a SharePoint repository), the operation fails. Because not all repositories
+    have the same features, the Documents and Media API only supports the
+    common denominators for all repositories: files and folders. 
 
 Follow these steps to create a file shortcut with the `DLAppService` method 
 `addFileShortcut`: 

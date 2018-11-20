@@ -15,8 +15,8 @@ full description of the method and its parameters:
 
 Note that the following arguments are optional: 
 
--   `sourceFileName`: This is used to keep track of the file being uploaded and 
-    infer the content type if that file has an extension. 
+-   `sourceFileName`: This keeps track of the uploaded file. It 
+    infers the content type if that file has an extension. 
 -   `mimeType`: Defaults to a binary stream. If omitted, Documents and Media 
     tries to infer the type from the file extension. 
 -   `description`: The file's description to display in the portal. 
@@ -27,7 +27,7 @@ Note that the following arguments are optional:
 
 Follow these steps to create a file via the `DLAppService` method 
 `addFileEntry`. Note that these steps use the method that contains 
-`InputStream`, but you can adapt the example to the other methods if you wish: 
+`InputStream`: 
 
 1.  Get a reference to `DLAppService`: 
 

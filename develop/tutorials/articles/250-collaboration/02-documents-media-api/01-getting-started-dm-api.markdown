@@ -27,13 +27,13 @@ The Documents and Media API contains several key interfaces:
     Note that Liferay used 
     [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder) 
     to create these services. Because the remote service contains permission 
-    checks, it's 
+    checks, it's a 
     [best practice](/develop/tutorials/-/knowledge_base/7-1/creating-remote-services#using-service-builder-to-generate-remote-services) 
     to call it instead of the local service. See the section below for 
     instructions on getting a service reference. 
 
 -   **Entity Interfaces:** These interfaces represent entities in the Documents 
-    and Media library. Here are the primary ones you'll work with: 
+    and Media library. Here are the primary ones you'll use: 
 
     -   `FileEntry`: Represents a file. 
     -   `Folder`: Represents a folder. 
@@ -41,18 +41,23 @@ The Documents and Media API contains several key interfaces:
 
 ## Getting a Service Reference [](id=getting-a-service-reference)
 
-Before you can do anything with the Documents and Media API, you must get a 
-service reference. Use the `@Reference` annotation to 
-[get a service reference in an OSGi component via Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services). 
-For example, this code gets such a reference to `DLAppService`: 
+Before you can do anything with the Documents and Media API, you must get
+a service reference. If you're using OSGi modules, use the `@Reference`
+annotation to 
+[get a service reference in an OSGi component via Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services).
+For example, this code gets a reference to `DLAppService`: 
 
     @Reference
     private DLAppService _dlAppService;
 
+If you're using a standard web module (WAR file), use a 
+[Service Tracker](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/service-trackers)
+to get a reference to the service instead. 
+
 Getting the reference this way ensures that you leverage OSGi's 
-[dependency management](/develop/tutorials/-/knowledge_base/7-1/leveraging-dependencies) 
-features. If you need to use the Documents and Media services outside of an OSGi 
-component (e.g., in a JSP), then you can use the services' static `*Util` 
+[dependency management](/develop/tutorials/-/knowledge_base/7-1/leveraging-dependencies)
+features. If you must use the Documents and Media services outside of an OSGi
+component (e.g., in a JSP), then you can use the services' static `*Util`
 classes: 
 
 -   [`DLAppServiceUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppServiceUtil.html)
@@ -61,7 +66,7 @@ classes:
 ## Specifying Repositories [](id=specifying-repositories)
 
 Many methods in the Documents and Media API contain a `repositoryId` parameter
-that identifies the Documents and Media repository where the operation will be
+that identifies the Documents and Media repository where the operation is
 performed. A Site (group) can have multiple repositories, but only one can be
 accessed via the portal UI. This is called the Site (group) repository, which is
 effectively a Site's default repository. To access this repository via the API,

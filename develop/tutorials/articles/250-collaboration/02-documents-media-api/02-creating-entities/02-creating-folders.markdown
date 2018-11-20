@@ -32,8 +32,7 @@ Follow these steps to create a folder with the `DLAppService` method
     it's common to create a folder with data submitted by the end user, you can 
     extract the data from the request. This example does so via 
     `javax.portlet.ActionRequest` and 
-    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html), 
-    but you can get the data any way you wish: 
+    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html): 
 
         long repositoryId = ParamUtil.getLong(actionRequest, "repositoryId");
         long parentFolderId = ParamUtil.getLong(actionRequest, "parentFolderId");
@@ -82,7 +81,7 @@ API by setting the
     serviceContext.setAttribute("mountPoint", true);
 
 Note that the `repositoryId` of such a folder indicates the external repository 
-the folder points to---not the repository that the folder exists in. Also, mount 
+the folder points to---not the repository the folder exists. Also, mount 
 point folders can only exist in the default Site repository. 
 
 ## Related Topics [](id=related-topics)

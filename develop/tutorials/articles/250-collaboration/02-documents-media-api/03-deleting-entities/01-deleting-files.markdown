@@ -1,7 +1,6 @@
 # Deleting Files [](id=deleting-files)
 
-There are two methods you can use to delete files. Click each method to see its
-Javadoc: 
+There are two methods you can use to delete files: 
 
 -   [`deleteFileEntry(long fileEntryId)`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#deleteFileEntry-long-)
 

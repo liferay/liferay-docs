@@ -24,15 +24,15 @@ Javadoc, which contains a full description of its parameters:
 
 -   [`updateFileEntry(..., InputStream is, long size, ...)`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#updateFileEntry-long-java.lang.String-java.lang.String-java.lang.String-java.lang.String-java.lang.String-boolean-java.io.InputStream-long-com.liferay.portal.kernel.service.ServiceContext-)
 
-Keep in mind the following when using these methods: 
+Keep these things in mind when using these methods: 
 
 -   To retain the original file's title and description, you must provide those 
-    parameters to `updateFileEntry`. Omitting them will delete any existing 
+    parameters to `updateFileEntry`. Omitting them deletes any existing 
     title and description. 
 
 -   If you supply `null` in place of the file's content (e.g., `bytes`, `file`, 
-    or `is`), then the update automatically uses the file's existing content. 
-    This is what you should do if you only want to update the file's metadata. 
+    or `is`), the update automatically uses the file's existing content. Do this
+    only if you want to update the file's metadata. 
 
 -   If you use `false` for the `majorVersion` parameter, the update increments 
     the file version by `0.1` (e.g., from `1.0` to `1.1`). If you use `true` for 

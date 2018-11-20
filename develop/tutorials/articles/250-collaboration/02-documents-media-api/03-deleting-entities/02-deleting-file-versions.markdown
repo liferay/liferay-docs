@@ -53,8 +53,8 @@ needs of the Documents and Media app.
 
 ## Identifying File Versions [](id=identifying-file-versions)
 
-Since there may be many versions of a file, it's useful to programmatically 
-identify old versions for deletion. You can do this with 
+Since there may be many versions of a file, it's useful to 
+identify programmatically old versions for deletion. You can do this with 
 [`FileVersionVersionComparator`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/util/comparator/FileVersionVersionComparator.html). 
 
 The following example creates such a comparator and uses its `compare` method to 
