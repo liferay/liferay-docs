@@ -5,7 +5,7 @@ tool to generate the [Apache Axis](http://axis.apache.org/axis/) Web Service
 Deployment Descriptor (WSDD) files from a [Service Builder](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
 `service.xml` file.
 
-The plugin has been successfully tested with Gradle 2.5 up to 3.5.1.
+The plugin has been successfully tested with Gradle 3.5.1 up to 4.10.2.
 
 ## Usage [](id=usage)
 

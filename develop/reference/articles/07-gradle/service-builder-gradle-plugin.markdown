@@ -4,7 +4,7 @@ The Service Builder Gradle plugin lets you generate a service layer defined in a
 [Service Builder](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
 `service.xml` file.
 
-The plugin has been successfully tested with Gradle 2.5 up to 3.5.1.
+The plugin has been successfully tested with Gradle 3.5.1 up to 4.10.2.
 
 ## Usage [](id=usage)
 
