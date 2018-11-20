@@ -49,35 +49,5 @@ search terms. Adding the localized search term is important. Since the localized
 Guestbook title was indexed, you must retrieve the localized value from the
 search engine.
 
-## Implementing `ModelPreFilterContributor` [](id=implementing-modelprefiltercontributor)
-
-Create `GuestbookModelPreFilterContributor`: 
-
-    @Component(
-            immediate = true,
-            property = "indexer.class.name=com.liferay.docs.guestbook.model.Guestbook",
-            service = ModelPreFilterContributor.class
-    )
-    public class GuestbookModelPreFilterContributor
-        implements ModelPreFilterContributor {
-
-        @Override
-        public void contribute(
-            BooleanFilter booleanFilter, ModelSearchSettings modelSearchSettings,
-            SearchContext searchContext) {
-
-            workflowStatusModelPreFilterContributor.contribute(
-        booleanFilter, modelSearchSettings, searchContext);
-        }
-
-        @Reference(target = "(model.pre.filter.contributor.id=WorkflowStatus)")
-        protected ModelPreFilterContributor workflowStatusModelPreFilterContributor;
-
-    }
-
-You don't want results with a workflow status of `STATUS_IN_TRASH` queried, so
-add the workflow status of the Guestbook to the query. You'll learn more about
-workflow in a later section.
-
 Once the query code is in place, define how returned Guestbook documents are
 summarized. 

@@ -51,36 +51,5 @@ contents:
 Adding the localized search terms is important. For all localized Entry fields
 in the index, retrieve the localized value from the search engine.
 
-## Implementing `ModelPreFilterContributor` [](id=implementing-modelprefiltercontributor)
-
-Create `EntryKeywordQueryContributor` and populate it with these
-contents:
-
-    @Component(
-            immediate = true,
-            property = "indexer.class.name=com.liferay.docs.guestbook.model.Entry",
-            service = ModelPreFilterContributor.class
-    )
-    public class EntryModelPreFilterContributor
-        implements ModelPreFilterContributor {
-
-        @Override
-        public void contribute(
-            BooleanFilter booleanFilter, ModelSearchSettings modelSearchSettings,
-            SearchContext searchContext) {
-
-            workflowStatusModelPreFilterContributor.contribute(
-        booleanFilter, modelSearchSettings, searchContext);
-        }
-
-        @Reference(target = "(model.pre.filter.contributor.id=WorkflowStatus)")
-        protected ModelPreFilterContributor workflowStatusModelPreFilterContributor;
-
-    }
-
-You don't want results with a workflow status of `STATUS_IN_TRASH` queried, so
-add the workflow status of the Entry to the query. You'll learn more about
-workflow in a later section.
-
 Once the query code is in place, define how returned Entry documents are
 summarized. 
