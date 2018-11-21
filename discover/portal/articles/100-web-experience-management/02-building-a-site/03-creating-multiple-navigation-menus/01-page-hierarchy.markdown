@@ -1,8 +1,8 @@
-# Page Hierarchy
+# Page Hierarchy [](id=page-hierarchy)
 
 Using the Page Hierarchy, you create public and private pages, and organize those pages in whatever order or structure that you see fit.
 
-## Creating a Page
+## Creating a Page [](id=creating-a-page)
 
 New pages are created on the *Build* &rarr; *Pages* page in Site 
 Administration. Pages can be created as *Public Pages* which anyone can view, 
@@ -30,7 +30,7 @@ page,
 
 Now that the page is created, it will appear in the Hierarchy, and you can move or organize its position there.
 
-## Organizing Pages
+## Organizing Pages [](id=organizing-pages)
 
 Pages can be dragged and dropped to reorder there position in the page 
 hierarchy (and subsequently the default navigation that users will see), and to 
@@ -51,26 +51,26 @@ assigned to whichever page is at the top of the list. Take a look at how this wo
 
 4.  Now click *Go to Site* again to see the effect this change has on your menu.
 
-![Figure 3: *About Us* is now the home page, and *Welcome* is second in the nav.](../../../../images/navigation-practical2.png)
+![Figure 4: *About Us* is now the home page, and *Welcome* is second in the nav.](../../../../images/navigation-practical2.png)
 
 5.  For your final trick, drag *About Us* directly on top of *Welcome* which will "nest."
 
 6.  Click *Go to Site* one more time to see how nested pages will appear in your
     site.
 
-![Figure 4: *About Us* is now nested under *Welcome* and will appear when you mouse-over *Welcome*.](../../../../images/navigation-practical3.png)
+![Figure 5: *About Us* is now nested under *Welcome* and will appear when you mouse-over *Welcome*.](../../../../images/navigation-practical3.png)
 
 As you've just demonstrated, organizing pages in the default menu is simple, 
 but very powerful.
 
-### Public and Private Pages
+### Public and Private Pages [](id=public-and-private-pages)
 
 As noted above, Private Pages work just like Public Pages, only they can only 
 be viewed by registered members of a site. In the default configuration, Public 
 Pages can be found at the URL `[web-address]/`**web**`/[site-name]` while 
 Private Pages are found at `[web-address]/`**group**`/[site-name]`. Other than the membership distinctions, Public and Private Pages share the same behavior.
 
-## Page Options
+## Page Options [](id=page-options)
 
 While managing the default menu, you can also access options for the page. 
 Clicking on the *Options* icon [Option](../../../../images/icon-options.png) 
