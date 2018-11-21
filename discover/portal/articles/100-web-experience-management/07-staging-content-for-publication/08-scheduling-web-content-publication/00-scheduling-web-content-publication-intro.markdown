@@ -36,6 +36,12 @@ article.
 
 5.  Click *Publish*. Your web content article is now created and abides by
     the scheduling parameters you've set.
+    
++$$$
+
+**Note:** When you set a Display Date for an existing article it does not effect previous versions of the article. It will determine when the new version will display. However, setting an expiration date effects all versions of the article.
+
+$$$
 
 The scheduling feature gives you great control in managing when, and for how
 long, your web content is displayed on your Site. Additionally, you can
