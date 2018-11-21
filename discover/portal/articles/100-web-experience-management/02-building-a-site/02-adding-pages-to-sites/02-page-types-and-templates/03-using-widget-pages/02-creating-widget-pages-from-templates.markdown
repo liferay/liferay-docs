@@ -92,10 +92,11 @@ You can read more about staging in the
 
 ## Sharing Widget Page Templates [](id=sharing-widget-page-templates)
 
-If you need to export page templates, you must export at the Collection level. 
-If you don't want to export all of the templates in the Collection, you can 
-manually deselect templates that you don't want to export. To export page 
-templates use the following process:
+When importing pages to a new site or environment, you will also need to import 
+any templates associated with those pages. Generally the templates will be 
+automatically included when an associated page is exported, but if it's not you 
+can export the template collection separately so that the page can be imported 
+to the new environment. To export page templates use the following process:
 
 1.  Go to *Site Management* &rarr; *Build* &rarr; *Pages*.
 
