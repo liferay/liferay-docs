@@ -4,13 +4,13 @@ Getting files is one of the most common tasks you'll perform with the Documents
 and Media API. There are two main method families for getting files: 
 
 -   `getFileEntries`: Gets files from a specific repository. 
--   `getGroupFileEntries`: Gets files from a site (group), regardless of 
+-   `getGroupFileEntries`: Gets files from a Site (group), regardless of 
     repository. 
 
 Since these method families are common, their methods share many parameters: 
 
 -   `repositoryId`: The ID of the repository to get files from. To specify the 
-    default site repository, use the `groupId` (site ID). 
+    default Site repository, use the `groupId` (Site ID). 
 -   `folderId`: The ID of the folder to get files from. Note that these methods 
     don't traverse the folder structure---they only get files directly from the 
     specified folder. To specify the repository's root folder, use the constant 
@@ -86,10 +86,10 @@ default repository, sorted by title:
     For more information, see the 
     [Data Scopes tutorial](/develop/tutorials/-/knowledge_base/7-1/data-scopes). 
 
-3.  Use the data from the previous step and any other values you want to provide 
-    to call the service reference method you want to use to get the files. This 
-    example calls the above `getFileEntries` method with the group ID from the 
-    previous step, and constants and a comparator for the remaining arguments: 
+3.  Use the data from the previous step to call the service reference method you
+    want to use to get the files. This example calls the above `getFileEntries`
+    method with the group ID from the previous step, and constants and
+    a comparator for the remaining arguments: 
 
         List<FileEntry> fileEntries = 
                 _dlAppService.getFileEntries(

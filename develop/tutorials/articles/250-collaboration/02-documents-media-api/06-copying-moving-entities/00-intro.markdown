@@ -1,8 +1,8 @@
 # Copying and Moving Entities [](id=copying-and-moving-entities)
 
-Although the Documents and Media API lets you copy and move entities, these 
-operations have some important caveats and limitations. Keep in mind the 
-following when copying entities: 
+Although the Documents and Media API lets you copy and move entities, these
+operations have some important caveats and limitations. Keep these things in
+mind when copying entities: 
 
 -   There's no way to copy files---you can only copy folders. However, copying a 
     folder also copies its contents, which can include files. 

@@ -28,10 +28,9 @@ default Site repository's root folder:
     [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
-2.  Get the data needed to populate the method's arguments. You can get these 
-    data any way you wish. To specify the default Site repository, you can use 
-    the group ID as the repository ID. This example gets the group ID from the 
-    request 
+2.  Get the data needed to populate the method's arguments any way you wish. To
+    specify the default Site repository, you can use the group ID as the
+    repository ID. This example gets the group ID from the request 
     (`javax.portlet.ActionRequest`) via 
     [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html): 
 

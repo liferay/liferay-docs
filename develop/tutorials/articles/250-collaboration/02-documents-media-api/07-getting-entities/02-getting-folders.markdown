@@ -1,24 +1,24 @@
 # Getting Folders [](id=getting-folders)
 
-The Documents and Media API can also get folders. This is very similar to 
-getting files. The main difference is that folder retrieval methods may have an 
-additional argument to tell the system whether to include *mount folders*. Mount 
-folders are mount points for external repositories (e.g. Alfresco or 
-SharePoint) that appear as regular folders in a site's default repository. They 
-let users navigate seamlessly between repositories. To account for this, some 
-folder retrieval methods include the boolean parameter `includeMountFolders`. 
-Setting this parameter to `true` includes mount folders in the results, while 
-omitting it or setting it to `false` excludes them. 
+The Documents and Media API can get folders in a similar way to getting files.
+The main difference is that folder retrieval methods may have an additional
+argument to tell the system whether to include *mount folders*. Mount folders
+are mount points for external repositories (e.g. Alfresco or SharePoint) that
+appear as regular folders in a Site's default repository. They let users
+navigate seamlessly between repositories. To account for this, some folder
+retrieval methods include the boolean parameter `includeMountFolders`. Setting
+this parameter to `true` includes mount folders in the results, while omitting
+it or setting it to `false` excludes them. 
 
 For example, to get a list of a parent folder's subfolders from a repository, 
-including any mount folders, use this 
+including any mount folders, use the 
 [`getFolders`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFolders-long-long-boolean-) 
 method: 
 
     getFolders(long repositoryId, long parentFolderId, boolean includeMountFolders)
 
 Follow these steps to use this method to get the folders from a parent folder. 
-Note that the example in these steps gets the folders of the default Site 
+Note that the example in these steps gets the folders in the default Site 
 repository's root folder: 
 
 1.  Get a reference to `DLAppService`: 
@@ -30,12 +30,11 @@ repository's root folder:
     [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
-2.  Get the data needed to populate the method's arguments. You can get these 
-    data any way you wish. This `getFolders` method needs a repository ID, a 
-    parent folder ID, and a boolean value that indicates whether to include 
-    mount folders in the results. To specify the default site repository, you 
-    can use the group ID as the repository ID. This example gets the group ID 
-    from the request 
+2.  Get the data needed to populate the method's arguments any way you wish.
+    This `getFolders` method needs a repository ID, a parent folder ID, and
+    a boolean value that indicates whether to include mount folders in the
+    results. To specify the default site repository, you can use the group ID
+    as the repository ID. This example gets the group ID from the request
     (`javax.portlet.ActionRequest`) via 
     [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html): 
 

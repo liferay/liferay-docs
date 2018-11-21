@@ -1,6 +1,6 @@
-# File Checkout [](id=file-checkout)
+# File Check-out [](id=file-checkout)
 
-When you check out a file, the following occurs: 
+Here's what happens when you check out a file: 
 
 -   A private working copy of the file is created that only you and 
     administrators can access. Until you check the file back in or cancel your 
@@ -65,13 +65,13 @@ You can control how the checkout is performed by setting the following
 attributes in the `ServiceContext` parameter: 
 
 -   `manualCheckInRequired`: By default, the system automatically checks out/in 
-    a file when a user edits it. Setting this attribute to `true` prevents this, 
-    therefore requiring manual checkout and checkin. 
+    a file when a user edits it. Setting this attribute to `true` prevents this,
+    therefore requiring manual check-out and check-in. 
 
--   `existingDLFileVersionId`: The system typically reuses the private working 
-    copy across different checkout/checkin sequences. There's little chance for 
-    conflicting edits because only one user at a time can access the private 
-    working copy. To force the system to create a new private working copy each 
+-   `existingDLFileVersionId`: The system typically reuses the private working
+    copy across different check-out/check-in sequences. There's little chance
+    for conflicting edits because only one user at a time can access the private
+    working copy. To force the system to create a new private working copy each
     time, omit this attribute or set it to `0`. 
 
 -   `fileVersionUuid`: This is used by 
@@ -87,8 +87,8 @@ Here's an example of setting the `manualCheckInRequired` attribute to `true`:
 
 ## Related Topics [](id=related-topics)
 
-[File Checkin](/develop/tutorials/-/knowledge_base/7-1/file-checkin)
+[File Check-in](/develop/tutorials/-/knowledge_base/7-1/file-checkin)
 
-[Cancelling a Checkout](/develop/tutorials/-/knowledge_base/7-1/cancelling-a-checkout)
+[Cancelling a Check-out](/develop/tutorials/-/knowledge_base/7-1/cancelling-a-checkout)
 
 [Updating Files](/develop/tutorials/-/knowledge_base/7-1/updating-files)

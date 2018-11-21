@@ -1,4 +1,4 @@
-# File Checkin [](id=file-checkin)
+# File Check-in [](id=file-checkin)
 
 After checking out and editing a file, you must check it back in for other users 
 to see the new version. Once you do so, you can't access the private working 
@@ -64,8 +64,8 @@ needs of the Documents and Media app.
 
 ## Related Topics [](id=related-topics)
 
-[File Checkout](/develop/tutorials/-/knowledge_base/7-1/file-checkout)
+[File Check-out](/develop/tutorials/-/knowledge_base/7-1/file-checkout)
 
-[Cancelling a Checkout](/develop/tutorials/-/knowledge_base/7-1/cancelling-a-checkout)
+[Cancelling a Check-out](/develop/tutorials/-/knowledge_base/7-1/cancelling-a-checkout)
 
 [Updating Files](/develop/tutorials/-/knowledge_base/7-1/updating-files)

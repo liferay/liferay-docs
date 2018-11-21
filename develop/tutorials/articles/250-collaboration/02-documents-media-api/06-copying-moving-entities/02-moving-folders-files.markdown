@@ -1,8 +1,8 @@
 # Moving Folders and Files [](id=moving-folders-and-files)
 
-The move operation is much more flexible than the 
+The move operation is more flexible than the 
 [copy operation](/develop/tutorials/-/knowledge_base/7-1/copying-folders). 
-Copying only works with folders, and you can't copy them between repositories. 
+Copying only works with folders, and you can't copy between repositories. 
 The move operation, however, works with files and folders within or between 
 repositories. 
 
@@ -10,10 +10,10 @@ repositories.
 
 **Note:** Depending on the repository implementation, you may get unexpected 
 behavior when moving folders between repositories. Moving a folder also moves 
-its contents via separate move operations for each item in the folder. In some 
-repository implementations, if any move sub-operation fails then the parent move 
-operation also fails. In other repository implementations, the results of 
-successful sub-operations remain even if others fail, which leaves a partially 
+its contents via separate move operations for each item in the folder. In some
+repository implementations, if any move sub-operation fails, the parent move
+operation also fails. In other repository implementations, the results of
+successful sub-operations remain even if others fail, which leaves a partially
 complete move of the whole folder. 
 
 $$$
@@ -26,9 +26,9 @@ method `moveFolder`:
 
 For a full description of this method and its parameters, see its 
 [Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#moveFolder-long-long-com.liferay.portal.kernel.service.ServiceContext-). 
-This method is similar to `copyFolder`, but it doesn't let you change the 
-folder's name or description, and it can move folders between repositories. 
-Also, the move operation is recursive---it also moves the folder's contents. 
+This method is similar to `copyFolder`, but it doesn't let you change the
+folder's name or description, and it can move folders between repositories.
+Folder contents are moved with the folder. 
 
 The operation for moving a file is almost identical to moving a folder. To move 
 a file, use the `DLAppService` method `moveFileEntry`: 
@@ -38,9 +38,9 @@ a file, use the `DLAppService` method `moveFileEntry`:
 For a full description of this method and its parameters, see its 
 [Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#moveFileEntry-long-long-com.liferay.portal.kernel.service.ServiceContext-). 
 
-Follow these steps to use `moveFolder` and `moveFileEntry` to move a folder and 
-a file, respectively. Although this example does both, you can omit one 
-operation if you don't need to perform it: 
+Follow these steps to use `moveFolder` and `moveFileEntry` to move a folder and
+a file, respectively. Although this example does both just to demonstrate the
+procedure: 
 
 1.  Get a reference to `DLAppService`: 
 
