@@ -1,7 +1,6 @@
-# Default Navigation
+# Site Navigation
 
-The most straighforward way to manage your site navigation is to use the default
-navigation. With the default navigation, you create public and private pages, and organize those pages in whatever order or structure that you see fit.
+Using the primary navigation, you create public and private pages, and organize those pages in whatever order or structure that you see fit.
 
 ## Creating a Page
 
