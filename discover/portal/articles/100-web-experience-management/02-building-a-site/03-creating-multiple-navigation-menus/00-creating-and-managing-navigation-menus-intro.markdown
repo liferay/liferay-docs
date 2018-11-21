@@ -5,7 +5,7 @@ pages. You can create pages in a simple, flat site navigation, or you can
 create sub-pages and build the page hierarchy any way you like.
 
 With @product-ver@, you can create Navigation Menus that are separate from your 
-primary navigation. Navigation Menus let you arrange pages any way you want. 
+site hierarchy. Navigation Menus let you arrange pages any way you want. 
 Marketers can leave one-off marketing landing pages out of the navigation, and 
 you can create  multiple navigation menus: a main menu, secondary menus, footer 
 menus, and custom menus for anything that you can dream up.

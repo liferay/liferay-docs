@@ -1,6 +1,6 @@
-# Site Navigation
+# Page Hierarchy
 
-Using the primary navigation, you create public and private pages, and organize those pages in whatever order or structure that you see fit.
+Using the Page Hierarchy, you create public and private pages, and organize those pages in whatever order or structure that you see fit.
 
 ## Creating a Page
 
@@ -26,7 +26,7 @@ page,
 6.  On the next page, note the *Show in Public Page Hierarchy Menu* selection, 
     leave the defaults and click *Save*.
 
-![Figure 2: When you create a page, by default it is added to the default navigation, called the Public (or Private) Pages Hierarchy Menu.](../../../../images/page-hierarchy-menu.png)
+![Figure 2: When you create a page, by default it is added to the site hierarchy.](../../../../images/page-hierarchy-menu.png)
 
 Now that the page is created, it will appear in the Hierarchy, and you can move or organize its position there.
 
@@ -91,7 +91,6 @@ allows you to access several configuration tools:
     
 * **Delete** will delete the page and all of its data.
 
-Creating and managing pages using the default page hierarchy is simple but very 
-powerful. However, if you need more options and flexibility you can use 
-Navigation Menus either in conjunction with the default hierarchy or to 
-completely replace it.
+Creating and managing pages using the page hierarchy is simple but very 
+powerful. However, if you need more options for your pages are displayed you 
+can use Navigation Menus to provide more flexibility.
