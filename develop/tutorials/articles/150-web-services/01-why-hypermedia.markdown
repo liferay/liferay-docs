@@ -26,10 +26,8 @@ once it exists. -->
 
 There are two kinds of @product@ hypermedia REST APIs:
 
-1.  **Management API:** Clients can administrative functions in the portal. This
-    is not the typical use case: normally, you'd use the native UI. 
 
-2.  **Delivery API:** Clients can access and manipulate portal content. This is
+1.  **Delivery API:** Clients can access portal content. This is
     the typical use case. Here are some specific examples: 
 
     -   Retrieve portal content (e.g., blog posts, web content, media files, 
@@ -37,13 +35,16 @@ There are two kinds of @product@ hypermedia REST APIs:
     -   Access 
         [Documents and Media](/discover/portal/-/knowledge_base/7-1/managing-documents-and-media) 
         assets from a remote client, using the portal as a content repository. 
-    -   Retrieve and modify portal content metadata, such as asset 
+    -   Retrieve content metadata, such as asset 
         [tags and categories](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories). 
     -   Access forms created with 
         [Liferay Forms](/discover/portal/-/knowledge_base/7-1/forms). 
     -   And much more! API consumers can discover API features by navigating 
         hypermedia links in the responses. You'll see examples of this in the 
         [Consuming Web Services tutorials](/develop/tutorials/-/knowledge_base/7-1/consuming-web-services). 
+        
+ 2.  **Management API:** Clients can perform administrative functions in the portal. This
+    is not the typical use case: normally, you'd use the native UI. 
 
 ## Related Topics [](id=related-topics)
 
