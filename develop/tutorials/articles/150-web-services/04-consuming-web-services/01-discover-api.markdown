@@ -47,8 +47,8 @@ You should get a response like this:
     }
 
 This response follows the JSON-LD/Hydra syntax to specify the root (or entry
-point) of the web API. It specifies four root resources and their accompanying
-links: `person`, `content-space`, `web-site`, and `organization`. You can
+point) of the web API. It specifies several root resources and their accompanying
+links such as: `person`, `content-space`, `web-site`, `organization`, etc. You can
 traverse the resource URLs much like the links on a web site's home page. For
 example, if you want the `person` resource, send a GET request to
 `http://localhost:8080/o/api/p/person`. You can send such requests to any of the
