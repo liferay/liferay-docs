@@ -1,16 +1,15 @@
 # Creating New Tax Methods [](id=creating-new-tax-methods)
 
 Out of the box, @commerce@ offers two methods for calculating
-[taxes](/web/emporio/documentation/-/knowledge_base/1-0/taxes).
-Since these options may not meet every user's needs, @commerce@ exposes an
-extension point, `CommerceTaxEngine`, to make it easy to use a custom tax
-solution.
+[taxes](/web/commerce/documentation/-/knowledge_base/1-0/taxes). Since these
+options may not meet every user's needs, @commerce@ exposes an extension point,
+`CommerceTaxEngine`, so you can specify your own tax solution.
 
 This tutorial describes how to implement a custom tax calculation that
 administrators can activate from *Commerce* &rarr; *Settings* &rarr; *Taxes*.
 For the sake of simplicity, the example below imposes a flat 10% tax rate on
-every product. Of course, your real-world solution should be more
-sophisticated---@commerce@ doesn't require customization to charge a flat tax.
+every product. Your real-world solution is likely more sophisticated, especially
+since @commerce@ doesn't require customization to charge a flat tax.
 
 Follow these steps:
 
@@ -43,12 +42,11 @@ Next, create your component class to implement the interface.
         public static final String KEY = "sample-tax";
 
 The class's `KEY` constant identifies the tax calculation and---when mapped to your
-module's `language.properties` file---provides its label in the UI. (See
+module's `language.properties` file---provides its label in the UI (see
 [Localizing Your Application](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application)
-for more information on language properties.)
+for more information on language properties).
 
-The business logic of your tax method is contained in the `getCommerceTaxValue`
-method:
+The `getCommerceTaxValue` method contains your business logic:
 
     @Override public CommerceTaxValue
     getCommerceTaxValue(CommerceTaxCalculateRequest commerceTaxCalculateRequest)
@@ -73,8 +71,8 @@ method:
 		return commerceTaxValue;
 	}
 
-`GetCommerceTaxValue` takes a `CommerceTaxCalculateRequest` object as
-a parameter. The object provides the following variables which can be used to
+The `getCommerceTaxValue` method takes a `CommerceTaxCalculateRequest` object as
+a parameter. The object provides these variables which can be used to
 calculate tax:
 
 `_commerceAddressId` stores an identifier for the buyer's billing address.
@@ -108,9 +106,9 @@ method that administrators will see in the UI:
 		return LanguageUtil.get(resourceBundle, "sample-tax-description");
 	}
 
-Meanwhile the `getName` method retrieves the language key assigned to your `KEY`
-constant. This language key should provide the name of your tax method---again,
-for administrators' benefit:
+The `getName` method retrieves the language key assigned to your `KEY` constant.
+This language key should provide the name of your tax method---again, for
+administrators' benefit:
 
 	@Override
 	public String getName(Locale locale) {
