@@ -26,7 +26,6 @@ once it exists. -->
 
 There are two kinds of @product@ hypermedia REST APIs:
 
-
 1.  **Delivery API:** Clients can access portal content. This is
     the typical use case. Here are some specific examples: 
 
@@ -43,8 +42,8 @@ There are two kinds of @product@ hypermedia REST APIs:
         hypermedia links in the responses. You'll see examples of this in the 
         [Consuming Web Services tutorials](/develop/tutorials/-/knowledge_base/7-1/consuming-web-services). 
         
- 2.  **Management API:** Clients can perform administrative functions in the portal. This
-    is not the typical use case: normally, you'd use the native UI. 
+ 2. **Management API:** Clients can perform administrative functions in the 
+    portal. This is not the typical use case: normally, you'd use the native UI. 
 
 ## Related Topics [](id=related-topics)
 

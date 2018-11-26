@@ -47,12 +47,12 @@ You should get a response like this:
     }
 
 This response follows the JSON-LD/Hydra syntax to specify the root (or entry
-point) of the web API. It specifies several root resources and their accompanying
-links such as: `person`, `content-space`, `web-site`, `organization`, etc. You can
-traverse the resource URLs much like the links on a web site's home page. For
-example, if you want the `person` resource, send a GET request to
-`http://localhost:8080/o/api/p/person`. You can send such requests to any of the
-listed resource URLs. 
+point) of the web API. It specifies several root resources and their 
+accompanying links (e.g., `person`, `content-space`, `web-site`, 
+`organization`). You can traverse the resource URLs much like the links on a web 
+site's home page. For example, if you want the `person` resource, send a GET 
+request to `http://localhost:8080/o/api/p/person`. You can send such requests to 
+any of the listed resource URLs. 
 
 The home URL shows the API's root resources and includes URLs to access them.
 You don't need to remember specific URLs other than the home URL. This dynamic
