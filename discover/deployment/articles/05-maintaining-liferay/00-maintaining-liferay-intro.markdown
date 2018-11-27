@@ -8,7 +8,7 @@ latest bug fixes to your running instance.
 
 +$$$
 
-Upgrading your @product-ver@ to a new GA version can require
+Upgrading @product-ver@ to a new GA version can require 
 [data upgrade](/discover/deployment/-/knowledge_base/7-1/upgrading-to-liferay-71). 
 Until you perform all required data upgrades (if any), @product@ startup fails
 with messages like these: 
