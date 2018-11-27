@@ -1,4 +1,4 @@
-# Handling Low Inventories
+# Handling Low Inventories [](id=handling-low-inventories)
 
 On a product's
 [*Configuration*](/web/emporio/documentation/-/knowledge_base/1-0/configuration)
