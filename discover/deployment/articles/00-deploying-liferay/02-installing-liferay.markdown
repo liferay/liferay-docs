@@ -1,7 +1,7 @@
 # Installing @product@ [](id=installing-liferay)
 
-Now that you've performed the steps needed to
-[prepare for your installation](/discover/deployment/-/knowledge_base/7-1/preparing-for-install),
+Now that you've performed the steps needed to [prepare for your
+installation](/discover/deployment/-/knowledge_base/7-1/preparing-for-install),
 you're ready to install @product@! Since bundles are the easiest way to complete
 an installation, all the installation steps below assume you're installing a
 @product@ bundle. If you plan to install @product@ manually, please refer to the
@@ -80,12 +80,7 @@ Getting a @product@ bundle up and running involves uncompressing the archive,
 possibly copying a JDBC driver, and then starting the application server. Let's
 use the @product@ Tomcat bundle as an example.
 
-1.  Extract your @product@ bundle. On Windows, extract the 7-Zip (`.7z`) bundle 
-    using
-    [7-Zip](https://www.7-zip.org/).
-    On Unix, extract the TGZ (`.tar.gz`) bundle using `gunzip` and `tar`
-    commands.
-
+1.  Extract your @product@ bundle. 
 2.  If you're using a supported open source database or if you're setting up
     @product@ for demo purposes, you can skip this step. Otherwise, copy your
     database's JDBC driver `.jar` file to `[Tomcat]/lib/ext`. 

@@ -26,23 +26,23 @@ Liferay enterprise subscribers can download Liferay DXP from the
 [Customer Portal](https://www.liferay.com/group/customer).
 
 So what is a @product@ bundle anyway? A @product@ bundle is an application
-server with @product@ pre-installed. Each bundle after Liferay DXP 7.1 GA1 and
-Liferay Portal CE 7.1 GA1 is released in compressed file archive formats 7-Zip
-(`.7z`) for Windows and TGZ (`.tar.gz`) for Unix. Using a bundle is the easiest
-way to install @product@. @product@ is bundled with a number of application
-servers; all you need to do is choose the one that best fits your needs. If you
-don't currently have an application server preference, consider starting with
-the Tomcat bundle. Tomcat is one of the most lightweight and straightforward
-bundles to configure. If you have an open source application server preference,
-choose the server you prefer from the available @product@ bundles. You must have
-a JDK (Java Development Kit) installed prior to launching @product@.
+server with @product@ pre-installed. Bundles after Liferay DXP 7.1 GA1 and
+Liferay Portal CE 7.1 GA1 are released in 7-Zip (`.7z`) and gzipped tar
+(`.tar.gz`) compressed file archive formats. Bundles are the easiest way to
+install @product@. @product@ is bundled with a number of application servers;
+choose the one that best fits your needs. If you don't currently have an
+application server preference, consider starting with the Tomcat bundle. Tomcat
+is one of the most lightweight and straightforward bundles to configure. If you
+have an open source application server preference, choose the server you prefer
+from the available @product@ bundles. You must have a JDK (Java Development Kit)
+installed prior to launching @product@.
 
 Please note that @product@ is not able to provide application server bundles for
 proprietary application servers such as WebLogic or WebSphere, because the
 licenses for these servers don't allow for redistribution. @product@'s
 commercial offering, however, runs just as well on these application servers as
-it does on the others. You'll need to follow our manual installation procedure
-using a `.war` file to install @product@ on proprietary application servers.
+it does on the others. You must follow our manual installation procedure using
+a `.war` file to install @product@ on proprietary application servers.
 
 <!-- Reinstate once PACL is supported. Jim
 Once you have @product@, you can plan out your installation. First, determine if
