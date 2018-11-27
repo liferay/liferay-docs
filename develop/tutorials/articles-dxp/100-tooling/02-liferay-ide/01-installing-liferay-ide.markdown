@@ -51,7 +51,7 @@ update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
     your `~/.liferay/bundles` folder, so if you decide to initialize another
     @product@ instance of the same version, the bundle is not re-downloaded. See
     the
-    [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-1/adding-a-liferay-bundle-to-a-workspace)
+    [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
     for more information on this topic.
 
     **Important:** The token generator sometimes has issues generating a token

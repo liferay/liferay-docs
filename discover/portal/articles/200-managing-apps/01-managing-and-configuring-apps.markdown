@@ -39,7 +39,7 @@ and stopping the server is feasible, follow these steps:
 2.  Copy your app (`.lpkg`, module `.jar`, or plugin `.war`) to your `[Liferay 
 Home]/deploy` folder, or copy your component configuration (`.config` file) to
 the `[Liferay Home]/osgi/configs` folder. The
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-product#liferay-home)
+[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 folder is typically the app server's parent folder. 
 
 3.  Start your server. 
