@@ -78,10 +78,10 @@ useful and interactive. Keep reading to learn about these features.
 
 <!-- ## Related Topics [](id=related-topics)
 
-[Workflow Forms](/discover/portal/-/knowledge_base/7-0/workflow-forms)
+[Workflow Forms](discover/portal/-/knowledge_base/7-1/workflow-forms)
 
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/enabling-workflow)
+[Using Workflow](discover/portal/-/knowledge_base/7-1/enabling-workflow)
 
-[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-0/liferays-workflow-framework)
+[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
 
-[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications) -->
+[Creating Simple Applications](discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->
