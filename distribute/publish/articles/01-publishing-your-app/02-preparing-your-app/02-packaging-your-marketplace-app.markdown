@@ -60,10 +60,11 @@ keep in mind:
   file:**
     - Property `recommended.deployment.context` must not be set.
     - Setting property `security-manager-enabled` to `true` is mandatory for all
-      paid apps on 6.1 EE/CE GA3 and later and on 6.2 EE/CE; the setting is
-      optional for free apps. Setting this property to `true` enables Liferay's
-      Plugin Security Manager. If you're enabling the security manager, you must
-      also define your Portal Access Control List (PACL) in this file. Read
+      paid apps that contain WAR-style plugins and that are for 6.1 EE/CE GA3
+      and 6.2 EE/CE; the setting is optional for free apps. Setting this
+      property to `true` enables Liferay's Plugin Security Manager. If you're
+      enabling the security manager, you must also define your Portal Access
+      Control List (PACL) in this file. Read
       [Plugins Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
       for information on developing secure apps.
 - **Deployment contexts**:
@@ -93,8 +94,8 @@ Portal CE 7.x apps:
 +$$$
 
 **Important:** If you're developing a paid app or want your free app to satisfy
-Plugin Security Manager on Liferay 6.2 or 6.1, make sure to specify PACLs for
-your traditional plugins. See the article
+Plugin Security Manager on Liferay 6.2 or 6.1 GA3, make sure to specify PACLs
+for your traditional WAR-style plugins. See the article
 [Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl) 
 for details. Give yourself adequate time to develop your app's permission
 descriptors and time to test your app thoroughly with the security manager

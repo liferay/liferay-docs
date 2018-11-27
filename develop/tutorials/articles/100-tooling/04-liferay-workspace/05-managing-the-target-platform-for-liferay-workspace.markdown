@@ -18,7 +18,7 @@ tutorial for more details.
 $$$
 
 [Liferay @ide@ 3.2+](/develop/tutorials/-/knowledge_base/7-1/liferay-ide) 
-helps you streamline targeting a specific version eve more. @ide@ can index the
+helps you streamline targeting a specific version even more. @ide@ can index the
 configured @product@ source code to
 
 - provide advanced Java search (Open Type and Reference Searching)
@@ -49,6 +49,13 @@ it doesn't **add** dependencies to your project; it only **provides** your build
 tool (e.g., Gradle or Maven) the versions needed for the project's defined
 artifacts. This means you don't need to specify your dependency versions; the
 BOM automatically defines the appropriate artifact versions based on the BOM.
+
+You can override a BOM's defined artifact version by specifying a different
+version in your project's `build.gradle`. Artifact versions defined in your
+project's build files override those specified in the predefined BOM. Note that
+overriding the BOM can be dangerous; make sure the new version is compatible in
+the targeted platform.
+
 For more information on BOMs, see the
 [Importing Dependencies](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism#Importing_Dependencies)
 section in Maven's official documentation.
@@ -122,7 +129,7 @@ To do this, your `build.gradle` file should look similar to this:
 
     buildscript {
         dependencies {
-            classpath group: "com.liferay", name: "com.lifereay.gradle.plugins.target.platform", version "1.0.1"
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "1.0.1"
         }
         repositories {
             maven {

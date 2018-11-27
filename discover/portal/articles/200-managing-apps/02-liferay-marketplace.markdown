@@ -20,6 +20,16 @@ No matter how you access Marketplace, you'll see the same content. Note that to
 download apps, you must have a [liferay.com](https://www.liferay.com) account
 and agree to the Marketplace Terms of Use. 
 
+Here you'll learn how to,
+
+- [Find and purchase apps](#finding-and-purchasing-apps) 
+
+- [Manage purchased apps](#managing-purchased-apps) 
+
+- [Renew purchased apps](#renewing-a-purchased-app) 
+
+Start with finding and purchasing the apps you want. 
+
 ## Finding and Purchasing Apps [](id=finding-and-purchasing-apps)
 
 If you've used an app store before, Marketplace should be familiar. You'll see
@@ -56,12 +66,23 @@ Terms of Service, and click *Purchase*.
 
 ![Figure 2: Click an app to view its details.](../../images/marketplace-app-details.png)
 
-Once you purchase an app, you can download and install it. An app downloads and
-installs immediately if you purchase it from the Control Panel. If you purchase
-the app on the Marketplace website, however, your receipt is displayed
-immediately after purchase. To download the app, click the *See Purchased*
-button on the bottom of the receipt, and then click the *App* button to start
-the download. You must then 
+Once you purchase an app, you can download and install it.
+
++$$$
+
+**Warning:** Not all apps are designed to be "hot deployed"---deployed while the
+server is running. Deploying that way can cause instabilities, such as class
+loading leaks and memory leaks. On production systems, avoid "hot deploying"
+apps whenever possible. See the
+[best practices for managing apps in production](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps#managing-apps-in-production).
+
+$$$
+
+An app downloads and installs immediately if you purchase it from the Control
+Panel. If you purchase the app on the Marketplace website, however, your receipt
+is displayed immediately after purchase. To download the app, click the *See
+Purchased* button on the bottom of the receipt, and then click the *App* button
+to start the download. You must then 
 [install the app manually](/discover/portal/-/knowledge_base/7-1/installing-apps-manually).
 Alternatively, you can use Marketplace from the Control Panel to download and
 install the app after purchase on the Marketplace website. The next section
@@ -114,3 +135,37 @@ There are two places to manage your purchased apps:
     title. Clicking the app takes you to its Marketplace entry. 
 
     ![Figure 4: You can also manage your purchased apps from within a running Liferay instance.](../../images/marketplace-purchased.png)
+
+## Renewing a Purchased App [](id=renewing-a-purchased-app)
+
+To continue using a purchased app whose license terms are non-perpetual, you
+must renew your app subscription, register your server to use the app, and
+generate a new activation key to use on your server. Here are the steps:
+
+1. Go to 
+[https://web.liferay.com/marketplace](https://web.liferay.com/marketplace). 
+
+2. Click your profile picture in the upper right corner and select *Purchased 
+Apps*. The Purchased Apps page appears and shows your app icons organized by
+project. 
+
+3. Click your app's icon. Your app's details page appears. 
+
+4. Click *Manage Licenses*. 
+
+5. Select *Register New Server*. 
+
+6. Select the most recent *Order ID* (typically the order that has no registered
+servers). 
+
+7. Fill in your server's details. 
+
+8. Click *Register*. 
+
+9. Click *Download*. The new app activation key to use on your server downloads.
+
+10. Copy the activation key file to your
+[`[Liferay Home]/deploy`](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+folder. 
+
+You can continue using the application on your server. 

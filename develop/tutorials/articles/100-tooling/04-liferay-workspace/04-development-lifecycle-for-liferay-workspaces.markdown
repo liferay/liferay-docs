@@ -159,6 +159,9 @@ workspace's `/bundles` folder, run
 
     ./gradlew initBundle -Pliferay.workspace.environment=[ENVIRONMENT]
 
+    <!-- `blade server init` is not able to pass the environment param in
+    currently. This new feature is requested in BLADE-343. -Cody -->
+
 To generate a distributable @product@ installation to the workspace's `/build`
 folder, run
 
