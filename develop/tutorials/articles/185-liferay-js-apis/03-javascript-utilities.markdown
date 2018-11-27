@@ -27,12 +27,12 @@ below:
 | isLinux | boolean | Returns whether the browser is being viewed on Linux |
 | isMac | boolean | Returns whether the browser is being viewed on Mac |
 | isMobile | boolean | Returns whether the browser is being viewed on a mobile device |
-| isMozilla | boolean | Returns whether the browser is  |
+| isMozilla | boolean | Returns whether the browser is Mozilla |
 | isOpera | boolean | Returns whether the browser is Opera |
 | isRtf | boolean | Returns whether the browser is  |
 | isSafari | boolean | Returns whether the browser is Safari |
 | isSun | boolean | Returns whether the browser is being viewed on Sun OS |
-| isWebKit | boolean | Returns whether the browser is  |
+| isWebKit | boolean | Returns whether the browser is WebKit |
 | isWindows | boolean | Returns whether the browser is being viewed on Windows |
 
 ## Related Topics [](id=related-topics)

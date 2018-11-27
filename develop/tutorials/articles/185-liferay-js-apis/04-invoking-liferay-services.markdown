@@ -1,14 +1,14 @@
 # Invoking Liferay Services [](id=invoking-liferay-services)
 
-@product@ provides many web services out-of-the-box to you. These services 
-include retrieving data and information about various assets, creating new 
-assets, and even editing existing assets. 
+@product@ provides many web services out-of-the-box. 
 
-To see a comprehensive list of the available web services, start up a bundle and 
-navigate to `http://localhost:8080/api/jsonws`. This list includes any custom 
-web services that have been deployed to the bundle. These services are useful 
-for creating single page applications, and can even be used to create custom 
-front-ends, both inside and outside of @product@. 
+To see a comprehensive list of the available web services, navigate to
+`http://localhost:8080/api/jsonws`. If you've deployed your own Service
+Builder-generated JSON web services, 
+[follow these guidelines](/develop/tutorials/-/knowledge_base/7-1/registering-json-web-services#mapping-and-naming-conventions)
+for invoking them. These services are useful for creating single page
+applications, and can even be used to create custom front-ends, both inside and
+outside of @product@. 
 
 This tutorial explains how to invoke these web services using JavaScript. 
 
@@ -16,29 +16,29 @@ Go ahead and get started.
 
 ## Invoking Web Services via JavaScript [](id=invoking-web-services-via-javascript)
 
-@product-ver@ contains a global JavaScript object called `Liferay` that has 
-many useful utilities. One method is `Liferay.Service`, which is used for 
-invoking JSON web services. 
+@product-ver@ contains a global JavaScript object called `Liferay` that has many
+useful utilities. One method is `Liferay.Service`, which invokes JSON web
+services. 
 
 The `Liferay.Service` method takes four possible arguments:
 
-**service {string|object}:** Either the service name, or an object with the keys 
-as the service to call, and the value as the service configuration object. 
+**service {string|object}:** Specify the service name or an object with the
+keys as the service to call, and the value as the service configuration object.
 (Required)
 
-**data {object|node|string}:** The data to send to the service. If the object 
-passed is the ID of a form or a form element, the form fields will be serialized 
-and used as the data. 
+**data {object|node|string}:** Specify the data to send to the service. If the
+object passed is the ID of a form or a form element, the form fields will be
+serialized and used as the data. 
 
 **successCallback {function}:** A function to execute when the server returns a 
-response. It receives a JSON object as it's first parameter. 
+response. It receives a JSON object as its first parameter. 
 
 **exceptionCallback {function}:** A function to execute when the response from 
 the server contains a service exception. It receives an exception message as 
-it's first parameter. 
+its first parameter. 
 
-One of the major benefits of using the `Liferay.Service` method versus using a 
-standard AJAX request is that it handles the authentication for you. 
+One of the benefits of using the `Liferay.Service` method versus using
+a standard AJAX request is that it handles the authentication for you. 
 
 Below is an example configuration of the `Liferay.Service` method:
 
@@ -101,8 +101,8 @@ requests.
 
 ## Batching Requests [](id=batching-requests)
 
-Another format for invoking the `Liferay.Service` method is by passing an object 
-with the keys of the service to call and the value of the service configuration 
+Another way to invoke the `Liferay.Service` method is by passing an object with
+the keys of the service to call and the value of the service configuration
 object. 
 
 Below is an example configuration for a batch request:
@@ -119,8 +119,8 @@ Below is an example configuration for a batch request:
             }
     );
 
-You can use this format to invoke multiple services with the same request by 
-passing in an array of service objects. Here's an example:
+You can invoke multiple services with the same request by passing in an array of
+service objects. Here's an example:
 
     Liferay.Service(
             [
@@ -149,14 +149,14 @@ Next you can learn how to nest your requests.
 
 ## Nesting Requests [](id=nesting-requests)
 
-Nested service calls allow you to bind information from related objects together 
-in a JSON object. You can call other services in the same HTTP request and 
-conveniently nest returned objects. 
+Nested service calls bind information from related objects together in a JSON
+object. You can call other services in the same HTTP request and conveniently
+nest returned objects. 
 
 You can use variables to reference objects returned from service calls. Variable 
 names must start with a dollar sign (`$`). 
 
-The example in this section retrieves user data with `/user/get-user-by-id`, and 
+The example in this section retrieves user data with `/user/get-user-by-id` and 
 uses the `contactId` returned from that service to then invoke 
 `/contact/get-contact` in the same request. 
 
@@ -167,8 +167,7 @@ flag a parameter, insert the `@` prefix before the parameter name.
 
 $$$
 
-Below is an example configuration that demonstrates the concepts covered in this 
-section:
+Below is an example configuration that demonstrates these concepts:
 
     Liferay.Service(
             {
@@ -232,7 +231,7 @@ Here is what the response data would look like for the request above:
     }
  
 Now that you know how to process requests, you can learn how to filter the 
-results next. 
+results. 
 
 ## Filtering Results [](id=filtering-results)
 
@@ -273,7 +272,7 @@ parameters (i.e., fields).
 
 Consider a default parameter `serviceContext` of type `ServiceContext`. To make 
 an appropriate call to JSON web services you might need to set `serviceContext` 
-fields such as`scopeGroupId`, as shown below:
+fields such as `scopeGroupId`, as shown below:
 
     Liferay.Service(
             '/example/some-web-service',

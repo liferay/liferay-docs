@@ -5,8 +5,8 @@ JavaScript by hand, have used Liferay's front-end frameworks in the past, or
 prefer jQuery, Lodash, or modules, you can use your front-end framework of 
 choice. 
 
-Prior users of @product@ can continue to use Liferay's venerable Alloy UI, but 
-you are also free to use the front-end technologies you love the most:
+Prior users of @product@ can continue to use Liferay's venerable Alloy UI, but
+you can also use the front-end technologies you love the most:
 
 -   EcmaScript ES2015+
 -   [Metal.js](https://metaljs.com/) (developed by Liferay)
@@ -14,26 +14,26 @@ you are also free to use the front-end technologies you love the most:
 -   jQuery (included)
 -   Lodash (included)
 
-To load modules, you must know when they are needed, where they are located at 
-build time, if you want to bundle them together or load them independently, and 
-you must assemble them at runtime. Keeping track of these tasks can be a hassle. 
-@product@'s Loaders (YUI/AUI, AMD, and npm in AMD format) handle loading for 
-you, so you don't have to worry about all the details. Just provide a small bit 
-of information about your module and @product@'s loaders take care of the rest. 
+To load modules, you must know when they are needed, where they are at build
+time, if you want to bundle them together or load them independently, and you
+must assemble them at runtime. Keeping track of these tasks can be a hassle.
+@product@'s Loaders (YUI/AUI, AMD, and npm in AMD format) handle loading for
+you, so you don't have to worry about all the details. Just provide a small bit
+of information about your module, and @product@'s loaders take care of the rest. 
 
-If you want to use npm packages in your applications, not to worry, 
-[`liferay-npm-bundler`](/develop/reference/-/knowledge_base/7-1/liferay-npm-bundler) 
-has you covered! It is built for just this purpose, and even provides several 
-presets for common module types (AMD, React, Angular JS,  etc.) to save you 
-time. It creates an OSGi bundle for you, extracts all of the npm dependencies, 
-and transpiles your code for the Liferay AMD Loader. 
+If you want to use npm packages in your applications, you can use
+[`liferay-npm-bundler`](/develop/reference/-/knowledge_base/7-1/liferay-npm-bundler). 
+It is built for just this purpose, and even provides several presets for common
+module types (AMD, React, Angular JS,  etc.) to save you time. It creates an
+OSGi bundle for you, extracts all npm dependencies, and transpiles your
+code for the Liferay AMD Loader. 
 
 While developing JavaScript applications for @product@, you may need to access 
 @product@-specific information or web services. The `Liferay` global JavaScript 
 Object 
 [exposes this information for you](/develop/tutorials/-/knowledge_base/7-1/liferay-javascript-apis), 
 letting you harness the power of @product@ in your JavaScript applications, 
-while still using the Front-End frameworks and technologies that you love. 
+while still using the front-end frameworks and technologies that you love. 
 
 ## Lexicon and Clay [](id=lexicon)
 
@@ -47,15 +47,14 @@ application developers through a set of CSS classes or our
 
 ## Templates [](id=templates)
 
-For templating, you can use Java EE's JSP as well as FreeMarker, but the 
-platform's modularity enables using Google's 
-[Soy (aka Closure Templates)](/develop/tutorials/-/knowledge_base/7-1/liferay-soy-portlet), 
-or whatever else you like. 
+For templating, you can use Java EE's JSP, FreeMarker, Google's 
+[Soy (aka Closure Templates)](/develop/tutorials/-/knowledge_base/7-1/liferay-soy-portlet), or
+whatever else you like. 
 
 ## Themes [](id=themes)
 
-A @product@ Theme provides the overall look and feel for a site. Themes are a 
-combination of CSS, JavaScript, HTML, and FreeMarker templates. Although the 
+A @product@ Theme provides the look and feel for a site. Themes are
+a combination of CSS, JavaScript, HTML, and FreeMarker templates. Although the
 default themes are nice, you may wish to create your own look and feel for your 
 site. 
 
@@ -67,9 +66,9 @@ to
 [@ide@](/develop/tutorials/-/knowledge_base/7-1/creating-themes-with-liferay-ide), 
 to 
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)'s 
-[Theme Template](/develop/reference/-/knowledge_base/7-1/theme-template), 
-@product@ lets choose the development tools you're most comfortable with so you 
-can focus on creating a well designed theme. 
+[Theme Template](/develop/reference/-/knowledge_base/7-1/theme-template), you
+can choose the development tools you like best, so you can focus on creating
+a well designed theme. 
 
 ## Front-End Extensions [](id=frontend-extensions)
 

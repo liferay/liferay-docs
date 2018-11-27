@@ -1,17 +1,16 @@
 # Accessing ThemeDisplay Information [](id=liferay-themedisplay)
 
-The `Liferay` global JavaScript Object exposes several useful methods, objects, 
-and properties, each containing a wealth of information, one of which is 
-`ThemeDisplay`. If you have experience with Java development in @product@, you 
-may be familiar with ThemeDisplay. The JavaScript object exposes the same 
-information as the ThemeDisplay Java Class. It gives you access to valuable 
-information that you can use in your applications, such as the Portal instance, 
-the current user, the user's language, whether the user is signed in or being 
+The `Liferay` global JavaScript Object exposes useful methods, objects, and
+properties, each containing a wealth of information, one of which is
+`ThemeDisplay`. If you have experience with Java development in @product@, you
+may be familiar with ThemeDisplay. The JavaScript object exposes the same
+information as the ThemeDisplay Java Class. It gives you access to valuable
+information that you can use in your applications, such as the Portal instance,
+the current user, the user's language, whether the user is signed in or being
 impersonated, the file path to the theme's resources, and much more. 
 
 The `Liferay` global object is automatically available in @product@ at runtime. 
-To access the `ThemeDisplay` object, simply use the following dot notation in 
-your app:
+To access the `ThemeDisplay` object, use the following dot notation in your app:
 
         `Liferay.ThemeDisplay.method-name`
 
@@ -68,10 +67,10 @@ act as another user to test that user's account.
 
 **isSignedIn:** Returns `true` if the user is logged in to the portal. 
 
-The example configuration below alerts the user with a standard message if they 
-are a guest or a personal greeting if they are signed in. This is a basic 
-example, and perhaps a bit invasive, but it illustrates how you can create 
-unique experiences for each user with the `ThemeDisplay` APIs:
+The example configuration below alerts users with a standard message if they are
+a guest or a personal greeting if they are signed in. This is a basic example,
+and perhaps a bit invasive, but it illustrates how you can create unique
+experiences for each user with the `ThemeDisplay` APIs:
 
     if(Liferay.ThemeDisplay.isSignedIn()){
         alert('Hello ' + Liferay.ThemeDisplay.getUserName() + '. Welcome Back.')
