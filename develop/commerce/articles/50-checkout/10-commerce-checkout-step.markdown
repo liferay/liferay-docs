@@ -80,8 +80,8 @@ first four steps---*Billing Address*, *Shipping Address*, *Shipping Method*, and
 *Order Confirmation*, which are intended to be the final two steps, have
 `order:Integer` properties of `Integer.MAX_VALUE - 100` and
 `Integer.MAX_VALUE`,respectively. In the example above, the value of
-`Integer.MAX_VALUE
-- 101` will put the demo step in fifth position, right before the Order Summary.
+`Integer.MAX_VALUE - 101` will put the demo step in fifth position, right before
+the Order Summary.
 
 ![Figure 2: An `order:Integer` value of 41 would have the same effect.](../../../images/newcheckoutstep.png)
 
