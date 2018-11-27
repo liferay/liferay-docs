@@ -23,7 +23,7 @@ your marketing goals. Or you can display news articles to users based on all
 the user segments to which they belong. 
 
 Audience Targeting meets all of the requirements for anonymization, erasure,
-and export for compliance with [GDPR](/develop/tutorials/-/knowledge_base/7-1/tracking-user-actions-with-audience-targeting).
+and export for compliance with [GDPR](/discover/portal/-/knowledge_base/7-1/managing-user-data).
  
 The Audience Targeting App appears in the Configuration section of Site
 Administration. It also adds a User Segments Simulator in the Simulation

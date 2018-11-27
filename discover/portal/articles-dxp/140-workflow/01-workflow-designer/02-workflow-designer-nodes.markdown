@@ -1,6 +1,6 @@
 # Workflow Definition Nodes [](id=workflow-definition-nodes)
 
-Once you know the basics of [creating workflow definitions](/discover/portal/-/knowledge_base/7-1/managing-workflow-definitions-with-workflow-designer)
+Once you know the basics of [creating workflow definitions](/discover/portal/-/knowledge_base/7-1/managing-workflows-with-kaleo-designer)
 with the workflow Designer, you can get into the details. In this tutorial
 you'll learn about Actions and Notifications, two important features your
 workflow nodes can use. You'll also learn how to affect the processing of the
@@ -155,10 +155,10 @@ Next, you'll learn to do parallel processing using fork and join nodes.
 
 <!-- ## Related Topics [](id=related-topics)
 
-[Workflow Forms](/discover/portal/-/knowledge_base/7-1/workflow-forms)
+[Workflow Forms](discover/portal/-/knowledge_base/7-1/workflow-forms)
 
-[Using Workflow](/discover/portal/-/knowledge_base/7-1/enabling-workflow)
+[Using Workflow](discover/portal/-/knowledge_base/7-1/enabling-workflow)
 
 [Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
 
-[Creating Simple Applications](/discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->
+[Creating Simple Applications](discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->
