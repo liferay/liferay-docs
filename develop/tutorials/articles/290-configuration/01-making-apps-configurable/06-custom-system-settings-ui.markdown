@@ -65,45 +65,49 @@ Implement it's three methods:
 
 Here's a complete `ConfigurationFormRenderer` implementation:
 
-        @Component(immediate = true, service = ConfigurationFormRenderer.class)
-        public class CurrencyConverterConfigurationFormRenderer
-            implements ConfigurationFormRenderer {
+    @Component(immediate = true, service = ConfigurationFormRenderer.class)
+    public class CurrencyConverterConfigurationFormRenderer
+        implements ConfigurationFormRenderer {
 
-            @Override
-            public String getPid() {
+        @Override
+        public String getPid() {
 
-                return "com.liferay.currency.converter.web.configuration.CurrencyConverterConfiguration";
-            }
-
-            @Override
-            public void render(HttpServletRequest request, HttpServletResponse response)
-                throws IOException {
-
-                String formHtml = "<input name=\"mysymbols\" />";
-
-                PrintWriter writer = response.getWriter();
-
-                writer.print(formHtml);
-
-            }
-
-            @Override
-            public Map<String, Object> getRequestParameters(
-                HttpServletRequest request) {
-
-                Map<String, Object> params = new HashMap<>();
-
-                String[] mysymbols = ParamUtil.getParameterValues(request, "mysymbols");
-
-                params.put("symbols", mysymbols);
-
-                return params;
-            }
+            return "com.liferay.currency.converter.web.configuration.CurrencyConverterConfiguration";
         }
+
+        @Override
+        public void render(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
+
+            String formHtml = "<input name=\"mysymbols\" />";
+
+            PrintWriter writer = response.getWriter();
+
+            writer.print(formHtml);
+
+        }
+
+        @Override
+        public Map<String, Object> getRequestParameters(
+            HttpServletRequest request) {
+
+            Map<String, Object> params = new HashMap<>();
+
+            String[] mysymbols = ParamUtil.getParameterValues(request, "mysymbols");
+
+            params.put("symbols", mysymbols);
+
+            return params;
+        }
+    }
 
 The above example generates a custom rendering (HTML) for the form in the
 `render()` method and reads the information entered in the custom form in the
 `getRequestParameters()` method.
+
+To see a complete demonstration, including JSP markup, read the dedicated
+tutorial on creating a 
+[configuration form renderer](/develop/tutorials/-/knowledge_base/7-1/configuration-form-renderer).
 
 ## Creating a Completely Custom Configuration UI [](id=creating-a-completely-custom-configuration-ui)
 

@@ -1,18 +1,17 @@
-# Providing a Fully Customized Configuration Form [](id=providing-a-fully-customized-configuration-form)
+# Configuration Form Renderer
 
 There are various approaches to customizing the auto-generated System Settings
-UI for your configurable application. To fully replace an application's
+UI for your configurable application. To replace an application's
 configuration screen with a form that you build from scratch, this tutorial
 provides a full demonstration using these steps:
 
 1.  Use a `DisplayContext` class to transfer data between backend code and the
     JSP markup.
-2.  Implement the `ConfigurationScreen` interface.
-3.  Implement a `MVCActionCommand` to create the method called from the JSP.
-4.  Render the configuration form. This tutorial demonstrates the use of a JSP
-    and the previously created  `DisplayContext` class that holds much of the
+2.  Implement the `ConfigurationFormRenderer` interface.
+3.  Render the configuration form. This tutorial demonstrates the use of a JSP
+    and the previously created `DisplayContext` class that holds much of the
     Java needed for use in the JSP.
-5.  Remove the auto-generated UI to avoid duplicate configuration screens in
+4.  Remove the auto-generated UI to avoid duplicate configuration screens in
     System Settings.
 
 The generalized discussion of System Settings UI customization is found in a
@@ -23,8 +22,7 @@ Template System Settings entry, found at  Control Panel &rarr; Configuration
 &rarr; System Settings &rarr; Localization &rarr; Language Template. Apply the
 same steps within your custom application. 
 
-![Figure 1: The auto-generated UI for the Language Template configuration screen
-is sub-optimal. A select list with more sensible option labels is preferable.](../../../images/sys-settings-lang-template-default.png)
+![Figure 1: The auto-generated UI for the Language Template configuration screen is sub-optimal. A select list with more sensible option labels is preferable.](../../../images/sys-settings-lang-template-default.png)
 
 Specifically, the text input field labeled DDM Template Key in the
 auto-generated UI will be replaced with a select list field type.
