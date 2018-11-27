@@ -155,10 +155,10 @@ Then
 [install the latest fix pack](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-liferay). 
 
 **Important**: Once you have installed @product-ver@, **DON'T START IT!** In
-previous versions, once you prepared your system for an upgrade, the upgrade
-process ran when you started the new version for the first time. Now
-@product-ver@ ships with an upgrade tool (described in the next article) that
-you must use to upgrade your database.
+Liferay Portal 6.2 and earlier, once you prepared your system for an upgrade,
+the upgrade process ran when you started the new version for the first time. Now
+to streamline server startup, @product@ ships with an upgrade tool (described in
+the next article) that you must use to upgrade your database.
 
 +$$$
 
