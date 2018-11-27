@@ -28,12 +28,12 @@ This article covers two basic installation steps:
 
 Before configuring @product@ for Solr, install and set up Solr.
 
-## Installing and Configuring Solr 7 [](id=installing-and-configuring-solr-5)
+## Installing and Configuring Solr 7
 
 To install and properly configure Solr for @product@:
 
 1. Download 
-    [Solr](http://archive.apache.org/dist/lucene/solr/7.4.0) 
+    [Solr](http://archive.apache.org/dist/lucene/solr/7.5.0/) 
     and unzip it.
 
 2. Navigate to `solr-[version]/server/solr`. This is Solr Home.
