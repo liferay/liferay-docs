@@ -223,13 +223,12 @@ done for Bookmark entries.
     in a different group) or was not included in the publication process, it's
     considered a missing reference of the web content article.
 
-    Since you're dealing with references on two separate Sites that have
-    differing IDs, the system can't easily match them during publication.
-    Consider this scenario for the Bookmarks app; suppose you export a bookmark
-    entry as a missing reference with a primary key (ID) of `1`. When importing
-    that information, the LAR only provides the ID but not the entry itself.
-    Therefore, during the import process, the Data Handler framework searches
-    for the entry to replace by its UUID, but the entry to replace has
+    Since you have references from two separate Sites with differing IDs, the
+    system can't match them during publication. For example, suppose you export
+    a bookmark entry as a missing reference with a primary key (ID) of `1`. When
+    importing that information, the LAR only provides the ID but not the entry
+    itself. Therefore, during the import process, the Data Handler framework
+    searches for the entry to replace by its UUID, but the entry to replace has
     a different ID (primary key) of `2`. You must provide a way to handle these
     missing references.
 

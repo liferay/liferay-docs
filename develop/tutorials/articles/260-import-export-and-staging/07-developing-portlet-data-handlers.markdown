@@ -290,11 +290,11 @@ Bookmarks application.
     +$$$
 
     **Note:** This is a legacy feature that was useful when deletions were not
-    propagated between sites. This cleaned the portlet's data, allowing you to
-    see everything associated with the portlet during every publication. This is
-    now an unnecessary process now that Staging can recognize deletions across
-    all sites. It's, however, still offered as a feature of Staging and is
-    implemented in Liferay's Bookmarks app, so it's included here.
+    propagated between Sites. This cleaned the portlet's data, allowing you to
+    see everything associated with the portlet during every publication. It's
+    unnecessary now that Staging can recognize deletions across all Sites. It's,
+    however, still offered as a feature of Staging and is implemented in
+    Liferay's Bookmarks app, so it's included here.
 
     $$$
 
