@@ -3,14 +3,14 @@
 Initially, inventory levels for all products must be entered manually. From then
 on, inventory levels are tracked automatically as orders are filled. To set
 a product's inventory level, see
-[SKUs](/web/emporio/documentation/-/knowledge_base/1-0/skus#inventory).
+[SKUs](/web/commerce/documentation/-/knowledge_base/1-0/skus#inventory).
 First, however, you must have your warehouses in order.
 
 ## Using a Single Warehouse [](id=using-a-single-warehouse)
 
 If you have only one warehouse, there is no need to geocode its location.
 However, if you integrate your system with a shipping company's (see 
-[Shipping Methods](/web/emporio/documentation/-/knowledge_base/1-0/shipping-methods)
+[Shipping Methods](/web/commerce/documentation/-/knowledge_base/1-0/shipping-methods)
 for details), you must enter your warehouse's address to calculate shipping
 costs.
 
@@ -20,7 +20,7 @@ Before you can enter the address for a warehouse, you may need to enter and
 activate the applicable country and region (state or province) at the
 *Countries* tab at *Site Menu* &rarr; *Commerce* &rarr; *Settings*. For more
 detail see
-[Settings](/web/emporio/documentation/-knowledge_base/1-0/countries).
+[Settings](/web/commerce/documentation/-knowledge_base/1-0/countries).
 
 $$$
 

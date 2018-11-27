@@ -30,7 +30,7 @@ triggers this action below, in the *Minimum Stock Quantity* field.
 long it should take to resupply the product if inventory is depleted. This
 estimate is displayed on the product's page whenever it is out of stock. The
 drop-down menu is populated from *Settings* &rarr; *Availability Estimates*. See
-[Settings](/web/emporio/documentation/-/knowledge_base/1-0/settings) for
+[Settings](/web/commerce/documentation/-/knowledge_base/1-0/settings) for
 details.
 
 **Display Availability:** Check this box to display an in stock/out of stock
@@ -63,7 +63,7 @@ contains these fields:
 this for virtual products.
 
 **Free Shipping:** Enable to override 
-[Shipping Methods](/web/emporio/documentation/-/knowledge_base/1-0/shipping-methods)
+[Shipping Methods](/web/commerce/documentation/-/knowledge_base/1-0/shipping-methods)
 and ship for free.
 
 **Ship Separately:** Enable to require this product be shipped in its own
@@ -73,7 +73,7 @@ package.
 
 **Width, Height, Depth and Weight:** If you are calculating shipping charges by
 weight (see 
-[Variable Rate Shipping](/web/emporio/documentation/-/knowledge_base/1-0/variable-rate-shipping))
+[Variable Rate Shipping](/web/commerce/documentation/-/knowledge_base/1-0/variable-rate-shipping))
 enter the product's weight. Other dimensions can be entered for reference
 purposes, or---with the development of custom code---to calculate shipping
 costs.
@@ -83,7 +83,7 @@ costs.
 Designating a unique product display page creates a relationship between the
 product and the specified page. For a less labor intensive way to create
 a generic product page, see 
-[Displaying Product Pages](/web/emporio/documentation/-/knowledge_base/1-0/displaying-product-pages).
+[Displaying Product Pages](/web/commerce/documentation/-/knowledge_base/1-0/displaying-product-pages).
 To create a unique product page for this product, follow these steps:
 
 1.  Create a page.
@@ -105,7 +105,7 @@ contains these fields:
 
 **Tax Category:** Select from available tax categories in the drop-down menu.
 This determines the amount of tax that's charged when this product is purchased.
-See [Taxes](/web/emporio/documentation/-/knowledge_base/1-0/taxes) for
+See [Taxes](/web/commerce/documentation/-/knowledge_base/1-0/taxes) for
 details on creating and using tax categories.
 
 **Tax Exempt:** If this box is checked, no tax is charged on this product.
