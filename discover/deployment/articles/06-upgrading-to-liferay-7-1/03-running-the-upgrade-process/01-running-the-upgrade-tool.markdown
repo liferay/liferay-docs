@@ -86,16 +86,16 @@ that machine.
 Since DB Upgrade Tool 2.0.1 (included in Liferay Portal CE 7.1 GA2 and
 downloadable from customer portal for EE subscribers), the upgrade process
 continues on the server even if you lose connection to it. If you lose
-connection, reconnect and monitor upgrade status in your log file(default file
-is `upgrade.log`). After that, you can connect to Gogo shell or restart the
-process from the last point of failure executing the tool again. 
-
-If you're using an earlier version of @product-ver@ and upgrade execution is
-interrupted, check your log file for where execution stopped. 
+connection, reconnect and monitor upgrade status via the log (default log file
+is `upgrade.log`). If you're using an earlier version of @product-ver@ and
+upgrade execution is interrupted, check your log file for where execution
+stopped. 
 
 - If execution stopped during an upgrade process for Core 7.1 or higher, or any
   module upgrade process, restart the upgrade tool to continue the upgrade from
-  that point. 
+  that point. You can also use Gogo shell to
+  [check module upgrade status](/discover/deployment/-/knowledge_base/7-1/gogo-shell-commands-for-module-upgrades#checking-the-upgrade-status)
+  and continue upgrading modules. 
 - If execution stopped during an upgrade process for Core 7.0 or lower, you must
   [restore the data from a backup](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
   and start the upgrade again. 
