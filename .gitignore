@@ -13,8 +13,8 @@ nbbuild.xml
 properties/
 .DS_Store
 .directory 
-.gradle
-.nb-gradle
+**/.gradle
+**/.nb-gradle
 
 /*.ipr
 /*.iws
