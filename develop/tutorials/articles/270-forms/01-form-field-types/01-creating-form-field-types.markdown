@@ -19,7 +19,8 @@ There are several steps involved in creating a form field type:
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) 
 or 
 [Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide). 
-There's a Blade template for creating form fields. Using the CLI, enter
+There's a Blade template for creating form fields. Using the CLI, enter:
+
 
     blade create -t form-field -v 7.1 -p com.liferay.docs.formfieldtype -c Time DDMTypeTime
 
@@ -62,7 +63,7 @@ upon module activation.
 Next craft the OSGi Component that marks your class as an implementation of
 `DDMFormFieldType`. 
 
-## Creating a `DDMFormFieldType` Component [](id=creating-a-ddmformfieldtype-component)
+## Creating a DDMFormFieldType Component [](id=creating-a-ddmformfieldtype-component)
 
 If you're creating a *Time* field type, define the Component at the top of your
 `*DDMFormFieldType` class like this:
@@ -117,7 +118,7 @@ the field's capabilities (for example, rendering and validation).
 
 Next code the `*DDMFormFieldType` class.
 
-## Implementing `DDMFormFieldType` [](id=implementing-ddmformfieldtype)
+## Implementing DDMFormFieldType [](id=implementing-ddmformfieldtype)
 
 Implementing the field type in Java is made easier because of
 `BaseDDMFormFieldType`, an abstract class you can leverage in your code.
