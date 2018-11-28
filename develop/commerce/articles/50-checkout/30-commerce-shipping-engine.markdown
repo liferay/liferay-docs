@@ -8,10 +8,10 @@ same name. Administrators can create any number of shipping options for buyers
 to select, but all of them will will rely on one of these methods to calculate
 costs.
 
-![Figure 1: Buyers can choose from among various shipping options at checkout.](../../../images/shipping-options.png)
+![Figure 1: Buyers can choose from among various shipping options at checkout.](../../images/shipping-options.png)
 
 ![Figure 2: But every option relies on a cost calculation provided by a shipping method at *Site Menu* &rarr; *Commerce* &rarr; *Settings* &rarr; *Shipping
-Methods*.](../../../images/shipping-methods.png)
+Methods*.](../../images/shipping-methods.png)
 
 Shipping options are created when the `getCommerceShippingOptions` method from
 the `CommerceShippingEngine` interface is called from an appropriate context.
