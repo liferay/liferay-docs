@@ -158,6 +158,15 @@ sample, you could execute
 
     blade samples ds-portlet
 
++$$$
+
+**Note:** Interested in generating legacy versions of Blade samples? Pass in the
+`-v` param followed by the @product@ version to target. For example,
+
+    blade samples -v 7.0 ds-portlet
+
+$$$
+
 For a full listing of all the available Blade samples, run
 
     blade samples

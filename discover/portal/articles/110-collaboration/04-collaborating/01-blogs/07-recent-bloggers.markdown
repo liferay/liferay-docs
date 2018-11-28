@@ -4,7 +4,7 @@ The Recent Bloggers widget lets you highlight the work of your site's most
 recent blog authors. This widget lists each recent author's name, profile 
 picture, and number of posts. You can add the Recent Bloggers widget to a page 
 from the *Collaboration* category in the *Add* 
-(![Add](../../../../images/icon-add-app.png)) &rarr; *Applications* menu. 
+(![Add](../../../../images/icon-add-app.png)) &rarr; *Widgets* menu. 
 
 To access the widget's configuration options, click *Configuration* from the 
 *Options* menu 

@@ -92,11 +92,6 @@ public class CheckHeaders {
 				}
 			}
 
-			if (fileList.isEmpty()) {
-				throw new Exception(
-						"FAILURE - no markdown files found in " + articlesDir);
-			}
-
 			for (int i = 0; i < fileList.size(); i++) {
 				String filename = fileList.get(i);
 				File inFile = new File(filename);

@@ -4,43 +4,71 @@ You can embed portlets in a sitemap for the pages you define. You can embed them
 with the default settings or provide portlet preferences for a more custom look 
 and feel. This tutorial covers both these options. 
 
-## Defining Portlets on a Page [](id=defining-portlets-on-a-page)
+Follow these steps:
 
-To add a portlet to a sitemap, provide its portlet ID. You can find this in the
-App Manager of the Control Panel. Select the suite containing the App, click the
-App, click the App's web module link, and open the *Portlets* tab that appears.
-The portlet ID is displayed below the name of the App:
-
-    {
-        "portletId": "com_liferay_journal_content_web_portlet_JournalContentPortlet"
-    }
-
-![Figure 1: Portlet IDs are listed in the App Manager.](../../../../../images/resources-importer-app-manager-configuration.png)
-
-This approach embeds the portlet with its default settings. To customize the 
-portlet, you must configure the portlet's preferences. 
-
-## Configuring Portlet Preferences [](id=configuring-portlet-preferences)
-
-You can specify portlet preferences for each portlet with the 
-`portletPreferences` key. Below is an example for the Web Content Display 
-portlet:
-
-    {
-        "portletId": "com_liferay_journal_content_web_portlet_JournalContentPortlet",
-        "portletPreferences": {
-            "articleId": "Custom Title.xml",
-            "groupId": "${groupId}",
-            "portletSetupPortletDecoratorId": "decorate",
-            "portletSetupTitle_en_US": "Web Content Display with Custom Title",
-            "portletSetupUseCustomTitle": "true"
+1.  Note the portlet's ID. This is the `javax.portlet.name` attribute of the 
+    portlet spec. For convenience, The IDs for portlets available out-of-the-box 
+    are listed in the 
+    [Fully Qualified Portlet IDs](/develop/reference/-/knowledge_base/7-1/fully-qualified-portlet-ids) 
+    reference guide. For custom portlets, this property is listed in the portlet 
+    class as the `javax.portlet.name=` service property.
+    
+2.  List the portlet ID in the column of the layout you want to display the 
+    portlet on. An example configuration is shown below:
+    
+        {
+            "layoutTemplateId": "2_columns_ii",
+            "publicPages": [
+                {
+                    "columns": [
+                        [
+                            {
+                                "portletId": "com_liferay_login_web_portlet_LoginPortlet"
+                            },
+                            {
+                                "portletId": 
+                                "com_liferay_site_navigation_menu_web_portlet_SiteNavigationMenuPortlet"
+                            }
+                        ],
+                        [
+                            {
+                                "portletId": "com_liferay_hello_world_web_portlet_HelloWorldPortlet"
+                            }
+                        ]
+                    ],
+                    "friendlyURL": "/home",
+                    "nameMap": {
+                        "en_US": "Welcome",
+                        "fr_FR": "Bienvenue"
+                    },
+                    "title": "Welcome"
+                }
+            ]
         }
-    }
 
-**portletSetupPortletDecoratorId:** Specifies the portlet decorator to use for 
-the portlet (`borderless` || `barebone` || `decorate`). See the 
-[Applying Portlet Decorators to Embedded Portlets](/develop/tutorials/-/knowledge_base/7-1/applying-portlet-decorators-to-embedded-portlets) 
-tutorial for more info. 
+    This approach embeds the portlet with its default settings. To customize the 
+    portlet, you must configure the portlet's preferences, as described in the 
+    next step. 
+    
+3.  Optionally specify portlet preferences for a portlet with the 
+    `portletPreferences` key. Below is an example for the Web Content Display 
+    portlet:
+
+        {
+            "portletId": "com_liferay_journal_content_web_portlet_JournalContentPortlet",
+            "portletPreferences": {
+                "articleId": "Custom Title.xml",
+                "groupId": "${groupId}",
+                "portletSetupPortletDecoratorId": "decorate",
+                "portletSetupTitle_en_US": "Web Content Display with Custom Title",
+                "portletSetupUseCustomTitle": "true"
+            }
+        }
+
+    **portletSetupPortletDecoratorId:** Specifies the portlet decorator to use 
+    for the portlet (`borderless` || `barebone` || `decorate`). See the 
+    [Applying Portlet Decorators to Embedded Portlets](/develop/tutorials/-/knowledge_base/7-1/applying-portlet-decorators-to-embedded-portlets) 
+    tutorial for more info. 
 
 +$$$
 

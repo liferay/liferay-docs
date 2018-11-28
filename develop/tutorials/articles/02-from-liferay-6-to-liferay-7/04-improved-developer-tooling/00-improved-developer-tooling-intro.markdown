@@ -39,7 +39,7 @@ adapts traditional plugins to @product-ver@ APIs. The
 tool
 [migrates](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
 themes and layout templates to the new Node.js-based environment and
-[adapts](/develop/tutorials/-/knowledge_base/7-1/upgrading-themes-intro) 
+[adapts](/develop/tutorials/-/knowledge_base/7-1/upgrading-6-2-themes-intro) 
 them to @product-ver@.
 
 Here are the tooling improvement topics:

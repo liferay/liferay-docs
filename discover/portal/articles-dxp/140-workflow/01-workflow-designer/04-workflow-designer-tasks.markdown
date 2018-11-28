@@ -51,7 +51,7 @@ entity. For example, a User might have permission to update Message Boards
 Messages. This is called an UPDATE resource action, because the User can update
 the resource. If you're still uncertain about what resource actions are, refer
 to the developer tutorial on the 
-[permission system](/develop/tutorials/-/knowledge_base/7-1/adding-permissions-to-resources)
+[permission system](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions)
 for a more detailed explanation.
 
 To find all the resource actions that have been configured, you need access to
@@ -158,10 +158,10 @@ to the assignment.
 
 <!-- ## Related Topics [](id=related-topics)
 
-[Workflow Forms](/discover/portal/-/knowledge_base/7-1/workflow-forms)
+[Workflow Forms](discover/portal/-/knowledge_base/7-1/workflow-forms)
 
-[Using Workflow](/discover/portal/-/knowledge_base/7-1/enabling-workflow)
+[Using Workflow](discover/portal/-/knowledge_base/7-1/enabling-workflow)
 
 [Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
 
-[Creating Simple Applications](/discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->
+[Creating Simple Applications](discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->

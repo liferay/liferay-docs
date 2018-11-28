@@ -58,15 +58,15 @@ alongside the clicked asset. Here's how to do it:
 
 4.  You've now defined relationship with your three assets. Click the *Add* icon
     (![Add](../../../images/icon-control-menu-add.png)) at the top of your page
-    in the Control Menu, select *Applications*, and add the Related Assets and
-    Asset Publisher applications to the page. Don't panic: related assets don't
+    in the Control Menu, select *Widgets*, and add the Related Assets and
+    Asset Publisher widgets to the page. Don't panic: related assets don't
     appear until you select an asset in the Asset Publisher.
 
 ![Figure 1: Select an asset in the Asset Publisher to see its related assets displayed in the Related Assets application.](../../../images/related-assets-app-1.png)
 
 Once you select an asset, its related assets appear in the Related Assets app,
 as in the image above. If you want more detail, you can place two Related Assets
-applications on the page and name one *Related Blogs* and the other *Related
+widgets on the page and name one *Related Blogs* and the other *Related
 Photos*. 
 
 ![Figure 2: Related Assets applications can be configured to display specific content.](../../../images/related-assets-app-2.png)
