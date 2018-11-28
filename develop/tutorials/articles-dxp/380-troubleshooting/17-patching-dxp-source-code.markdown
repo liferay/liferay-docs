@@ -183,8 +183,8 @@ your debugger's documentation for configuration details.
 
 Congratulations! You're free to explore DXP inside and out!
 
-## Related Topics (id=related-topics) [](id=related-topics-idrelated-topics)
+## Related Topics [](id=related-topics)
 
-[Troubleshooting](/develop/tutorials/-/knowledge_base/7-1/troubleshooting)
+[Troubleshooting FAQ](/develop/tutorials/-/knowledge_base/7-1/troubleshooting-faq)
 
 [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)

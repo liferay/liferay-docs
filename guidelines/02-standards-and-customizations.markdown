@@ -569,6 +569,11 @@ receives the notification text.
 View the video by clicking the thumbnail on the right-side 
 (or bottom on mobile) of the article.
 
+**Note:** WEBM format is not native to [Blender](https://www.blender.org/) 
+(our video editor of choice), but you can convert an MP4 
+(which is native to Blender) to WEBM with [Handbrake](https://handbrake.fr/). 
+Set the export to VP9 with an MKV container and Opus audio. 
+
 ### Markdown Metadata
 
 Our build process supports conversion from Markdown to html, odt, and epub

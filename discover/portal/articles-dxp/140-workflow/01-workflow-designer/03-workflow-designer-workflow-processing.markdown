@@ -116,7 +116,7 @@ transition to the *Legal Review* task or the *Content Review* task.
 You may be wondering what that `returnValue` variable is. It's the variable that
 points from the condition to a transition, and its value must match a valid
 transition in the workflow definition. This script looks up the asset in
-question, retrieves its [asset category](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories#defining-categories-for-content),
+question, retrieves its [asset category](/discover/portal/-/knowledge_base/7-1/defining-categories-for-content),
 and sets an initial `returnValue`. Then it checks to see if the asset has been
 marked with the *legal* category. If not it goes through *Content Review* (the
 content-review task in the workflow), and if it does it goes through *Legal
@@ -128,10 +128,10 @@ in your sites.
 
 <!-- ## Related Topics [](id=related-topics)
 
-[Workflow Forms](/discover/portal/-/knowledge_base/7-1/workflow-forms)
+[Workflow Forms](discover/portal/-/knowledge_base/7-1/workflow-forms)
 
-[Using Workflow](/discover/portal/-/knowledge_base/7-1/enabling-workflow)
+[Using Workflow](discover/portal/-/knowledge_base/7-1/enabling-workflow)
 
 [Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
 
-[Creating Simple Applications](/discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->
+[Creating Simple Applications](discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->
