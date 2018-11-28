@@ -211,17 +211,36 @@ done for Bookmark entries.
     configuration and existing environment, the entry is either added or
     updated.
 
-8.  When importing a LAR that specifies a missing reference, the import process
-    expects the reference to be available and must validate that it's there. You
-    must add a method that maps the missing reference ID from the export to the
-    existing ID during import.
+8.  When importing a LAR (i.e., publishing to the live Site), the import process
+    expects all of an entity's references to be available and validates their
+    existence.
 
-    For example, suppose you export a `FileEntry` as a missing reference with an
-    ID of `1`. When importing that information, the LAR only provides the ID but
-    not the entry itself. Therefore, during the import process, the Data Handler
-    framework searches for the entry to replace, but the entry to replace has a
-    different ID of `2`. You must provide a method that maps these two IDs so
-    the import process can recognize the missing reference.
+    For example, if you republish an updated bookmarks folder to the live Site
+    and did not include some of its existing entries in the publication, these
+    entries are considered missing references. A more practical example of this
+    would be an image included in a web content article. If the image included
+    in the web content lives on a different Site (i.e., the image is contained
+    in a different group) or was not included in the publication process, it's
+    considered a missing reference of the web content article.
+
+    Since you have references from two separate Sites with differing IDs, the
+    system can't match them during publication. For example, suppose you export
+    a bookmark entry as a missing reference with a primary key (ID) of `1`. When
+    importing that information, the LAR only provides the ID but not the entry
+    itself. Therefore, during the import process, the Data Handler framework
+    searches for the entry to replace by its UUID, but the entry to replace has
+    a different ID (primary key) of `2`. You must provide a way to handle these
+    missing references.
+
+    To do this, you must add a method that maps the missing reference's primary
+    key from the export to the existing primary key during import. Since the
+    reference's UUID is constant across systems, it's used to complete the
+    mapping of differing primary keys. Note that a reference can only be missing
+    on the live Site if it has already been published previously. Therefore,
+    when publishing a bookmarks folder for the first time, the system doesn't
+    check for missing references.
+
+    Add this method to your class:
 
         @Override
         protected void doImportMissingReference(
