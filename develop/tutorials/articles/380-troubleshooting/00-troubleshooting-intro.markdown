@@ -1,15 +1,16 @@
-# Troubleshooting OSGi Bundles [](id=troubleshooting-OSGi-Bundles)
+# Troubleshooting FAQ [](id=troubleshooting-faq)
 
 When coding on any platform, you can sometimes run into issues that have no
 clear resolution. This can be particularly frustrating. If you have issues
-building, deploying, or running modules, you want to resolve them fast. These
-frequently asked questions and answers help you troubleshoot and correct
-problems that arise based on the underlying OSGi platform.
+building, deploying, or running apps and modules, you want to resolve them
+fast. These frequently asked questions and answers help you troubleshoot and
+correct problems. 
 
 Here are the troubleshooting sections:
 
 -   [Modules](#troubleshooting-modules)
 -   [Services and Components](#troubleshooting-services-and-components)
+-   [Front-end](/develop/tutorials/-/knowledge_base/7-1/troubleshooting-front-end-development-issues)
 
 Click a question to view the answer.
 
@@ -107,6 +108,14 @@ Click a question to view the answer.
   <div class="hide">  
     <p><a href="/develop/tutorials/-/knowledge_base/7-1/sort-order-changed-with-a-different-database">Your new database uses a different default query result order--you should be able to configure a different order</a>.</p>
   </div>
+</div>
+
+<br/>
+<div class="ldn-faq-question">
+  <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">After creating a relational mapping between Service Builder entities, my portlet is using too much memory. What can I do?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
+  <div class="hide">  
+    <p><a href="/develop/tutorials/-/knowledge_base/7-1/disabling-cache-for-table-mapper-tables">Disabling the cache related to the entity mapping lowers memory usage.</a>.</p>
+</div>
 </div>
 
 ## Services and Components [](id=troubleshooting-services-and-components)
