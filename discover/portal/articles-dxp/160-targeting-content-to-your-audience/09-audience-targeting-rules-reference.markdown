@@ -56,8 +56,8 @@ Facebook).
 
 These rules do not work properly if login through the specific social network
 (Single Sign On) is not enabled and properly configured. You can learn more
-about using Single Sign On in the [Facebook Connect
-SSO](/discover/portal/-/knowledge_base/7-1/facebook-connect-single-sign-on-authentication).
+about using Single Sign On in the
+[Facebook Connect SSO](/discover/deployment/-/knowledge_base/7-1/facebook-connect-single-sign-on-authentication).
 
 ### Facebook Age [](id=facebook-age)
 

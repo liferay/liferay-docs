@@ -209,6 +209,17 @@ for the example widget is shown below:
             - require('core-js/es7/reflect');
             - require('zone-js/dist/zone');
 
++$$$
+
+**Note:** By default, the AMD Loader times out in seven seconds. Since Liferay 
+DXP Fix Pack 3 and Liferay Portal 7.1 CE GA 2, you can configure this value 
+through System Settings. Open the Control Panel and navigate to *Configuration* 
+&rarr; *System Settings* &rarr; *PLATFORM* &rarr; *Infrastructure*, and select 
+*JavaScript Loader*. Set the *Module Definition Timeout* configuration to the 
+time you want and click *Save*.
+
+$$$
+
 Now you know how to use the liferay-npm-bundler to bundle your npm-based 
 portlets for the Liferay AMD Loader!
 
