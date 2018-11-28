@@ -1,6 +1,8 @@
-# Creating New Shipping Methods
+# Creating New Shipping Methods [](id=creating-new-shipping-methods)
 
-@commerce@ includes three shipping methods out of the box: *fixed*- and
+@commerce@ includes three
+[shipping methods](/web/commerce/documentation/-/knowledge_base/1-0/shipping-methods)
+out of the box: *fixed*- and
 *variable*-rate methods give you a wide range of options for calculating
 shipping costs in-house, while the FedEx method (subscribers only) provides an
 option for you to integrate your system with the multinational courier of the
@@ -13,7 +15,7 @@ The following instructions cover the creation of new shipping methods.
 Business logic to integrate with any particular shipping company (UPS, DHL,
 etc.) is outside the scope of this tutorial.
 
-## Shipping Options and Shipping Methods
+## Shipping Options and Shipping Methods [](id=shipping-options-and-shipping-methods)
 
 Before we dive in, it's important to understand the difference between a
 *shipping option* and a *shipping method*:
@@ -32,7 +34,7 @@ create the options to present to buyers.
 Administrators can create any number of shipping options for buyers to select,
 but all of them will will rely on a shipping method to calculate costs.
 
-## Creating a Custom Method
+## Creating a Custom Method [](id=creating-a-custom-method)
 
 Creating a new shipping method involves implementing the
 `CommerceShippingEngine` interface and writing your own logic for the
