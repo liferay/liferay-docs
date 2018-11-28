@@ -87,18 +87,18 @@ table below:
 | Method | Type | Description |
 | --- | --- | --- |
 | getLayoutId | number | |
-| getLayoutRelativeURL | string | |
+| getLayoutRelativeURL | string | Returns the relative URL for the page |
 | getLayoutURL | string | |
 | getParentLayoutId | number | |
 | isControlPanel | boolean | |
 | isPrivateLayout | boolean | |
 | isVirtualLayout | boolean | |
 | getBCP47LanguageId | number | |
-| getCDNBaseURL | string | |
-| getCDNDynamicResourcesHost | string | |
-| getCDNHost | string | |
+| getCDNBaseURL | string | Returns the content delivery network (CDN) base URL, or the current portal URL if the CDN base URL is null |
+| getCDNDynamicResourcesHost | string | Returns the content delivery network (CDN) dynamic resources host, or the current portal URL if the CDN dynamic resources host is null |
+| getCDNHost | string |  |
 | getCompanyGroupId | number | |
-| getCompanyId | number | Returns the [company ID](/participate/liferaypedia/-/wiki/Main/Company+ID) |
+| getCompanyId | number | Returns the portal instance ID |
 | getDefaultLanguageId | number | |
 | getDoAsUserIdEncoded | string | |
 | getLanguageId | number | Returns the user's language ID |
@@ -111,15 +111,15 @@ portlet's JavaScript source files |
 | getPathThemeImages | string | Returns the path of the current theme's image directory |
 | getPathThemeRoot | string | Returns the relative path of the current theme's root
 directory |
-| getPlid | string | |
-| getPortalURL | string | |
-| getScopeGroupId | number | Returns the [group ID](/participate/liferaypedia/-/wiki/Main/Group+ID) of the current site |
+| getPlid | string | Returns the primary key of the page |
+| getPortalURL | string | Returns the portal instance's base URL |
+| getScopeGroupId | number | Returns the ID of the scoped or sub-scoped active group (e.g. site) |
 | getScopeGroupIdOrLiveGroupId | number | |
-| getSessionId | number | |
+| getSessionId | number | Returns the session ID, or a blank string if the session ID is not available to the application |
 | getSiteGroupId | number | |
 | getURLControlPanel | string | |
 | getURLHome | string | |
-| getUserId | number | Returns the [user's ID](/participate/liferaypedia/-/wiki/Main/User+ID) |
+| getUserId | number | Returns the ID of the user for which the current request is being handled |
 | getUserName | string | Returns the user's name |
 | isAddSessionIdToURL | boolean | |
 | isFreeformLayout | boolean | |

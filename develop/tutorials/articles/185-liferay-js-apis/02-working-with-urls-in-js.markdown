@@ -34,9 +34,11 @@ example above.
 ## Liferay AuthToken [](id=liferay-auth-token)
 
 The `Liferay.authToken` property holds the current authentication token value as 
-a String. Below is an example configuration for the `Liferay.authToken` property:
+a String. The `authToken` is used to validate permissions when you make calls to 
+services. To use the `authToken` in a URL, pass `Liferay.authToken` as the URL's 
+`p_auth` parameter, as shown in the example below:
 
-    Liferay.authToken = '<%= AuthTokenUtil.getToken(request) %>';
+    portletURL.setParameter('p_auth', Liferay.authToken);
 
 ## Liferay CurrentURL [](id=liferay-current-url)
 

@@ -14,7 +14,7 @@ below:
 
 | Method | Return Type | Description |
 | --- | --- | --- |
-| acceptsGzip | boolean | Returns whether  |
+| acceptsGzip | boolean | Returns whether the browser accepts gzip file compression |
 | getMajorVersion | number | Returns the major version of the browser |
 | getRevision | number | Returns the revision version of the browser |
 | getVersion | number | Returns the major.minor version of the browser |
@@ -29,7 +29,7 @@ below:
 | isMobile | boolean | Returns whether the browser is being viewed on a mobile device |
 | isMozilla | boolean | Returns whether the browser is Mozilla |
 | isOpera | boolean | Returns whether the browser is Opera |
-| isRtf | boolean | Returns whether the browser is  |
+| isRtf | boolean | Returns whether the browser supports RTF |
 | isSafari | boolean | Returns whether the browser is Safari |
 | isSun | boolean | Returns whether the browser is being viewed on Sun OS |
 | isWebKit | boolean | Returns whether the browser is WebKit |
