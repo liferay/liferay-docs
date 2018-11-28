@@ -46,7 +46,7 @@ application:
 
 There's one configuration option, symbols, that takes an array of values. 
 
-All that's necessary is to customize the auto-generated form is one additional
+All that's necessary is to customize an auto-generated form is one additional
 class, an implementation of the `ConfigurationFormRenderer` interface.
 
 Implement it's three methods:
@@ -196,8 +196,7 @@ the `JSPRenderer` service to delegate rendering to a JSP.
 
 It's beyond the scope of this tutorial to write the JSP markup. A separate
 tutorial will provide a complete demonstration of the `ConfigurationScreen` and
-implementation and the JSP markup to enhance the configuration screen for an
-existing @product@ application.
+implementation and the JSP markup to demonstrate it's usage.
 
 ## Excluding a Configuration UI from System Settings [](id=excluding-a-configuration-ui-from-system-settings)
 
