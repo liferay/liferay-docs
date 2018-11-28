@@ -1,12 +1,12 @@
 # Adding Regions to @commerce@'s Country List
 
 @commerce@ stores a country list that is used wherever a user is prompted to
-select a country (typically to enter an address). @commerce@ also stores lists of
-regions (states or provinces) for each country, but out of the box, only the
+select a country (typically to enter an address). @commerce@ also stores lists
+of regions (states or provinces) for each country, but out of the box, only the
 region lists for Italy and the USA are populated. Administrators can populate
 these lists manually, (see
-[Countries](web/emporio/documentation/-/knowledge_base/1-0/countries))
-but a developer can populate them automatically by implementing the
+[Countries](web/emporio/documentation/-/knowledge_base/1-0/countries)) but a
+developer can populate them automatically by implementing the
 `CommerceRegionsStarter` interface.
 
 Follow these steps:
@@ -24,18 +24,18 @@ First, add dependencies to `build.gradle`. It should look like this:
     targetCompatibility = "1.8"
 
     dependencies {
-        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.product.api", version: "2.0.0-SNAPSHOT"
+        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.product.api", version: "2.0.0"
         compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.5.0"
         compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
-        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.api", version: "2.0.0"
+        compileOnly group: "com.liferay.commerce", name: "com.liferay.commerce.api", version: "3.0.0"
     }
 
-Then create a component to implement the interface. In
-the example below, the class `CanadaCommerceRegionsStarter` contains the the
-constant `CANADA_NUMERIC_ISO_CODE`. This constant must be set to the country's
-3-digit ISO code and provides the value for the `commerce.region.starter.key`
-property. This connects the region starter with the correct country in
-@commerce@'s country list.
+Then create a component to implement the interface. In the example below, the
+class `CanadaCommerceRegionsStarter` contains the the constant
+`CANADA_NUMERIC_ISO_CODE`. This constant must be set to the country's 3-digit
+numeric ISO code and provides the value for the `commerce.region.starter.key` property.
+This connects the region starter with the correct country in @commerce@'s
+country list.
 
 
     package com.liferay.commerce.sample;
