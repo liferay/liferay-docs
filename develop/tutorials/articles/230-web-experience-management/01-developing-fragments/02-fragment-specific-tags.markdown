@@ -32,15 +32,6 @@ image before publishing---including those from Documents and Media.
 `rich-text`: Similar to the text field, but provides an WYSIWYG editor for
 editing before publication.
 
-+$$$
-
-**WARNING:** Be careful with the `rich-text` type. Users can use the editor to
-provide their own HTML in the provided field which may have catastrophic results
-for your layout if misused. Be sure that your content creators understand the
-responsibility that must come with such great power.
-
-$$$
-
 Now add editable text to a Fragment, add the Fragment to a Content Page, 
 and then edit the text before publishing:
 
